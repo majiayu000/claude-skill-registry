@@ -1,0 +1,11 @@
+{
+  "name": "project-management-specialist",
+  "description": "提供项目管理、任务跟踪、团队协调和项目交付能力。当需要管理项目、跟踪进度或协调团队时使用。",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/project-management-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "project-management-specialist-prorise-cool-claude-code-multi-ag-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "design-sync",
+  "description": "Sync design docs with codebase state. Use when verifying documentation accuracy, after code changes, or when last-synced is stale.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/design-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "design-sync-spencerbeggs-claude-design-coordi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ui-ux",
+  "description": "共通UIコンポーネント、カラーパレット、タイポグラフィ、スペーシング、空状態デザイン。UI実装、コンポーネント作成、スタイリング時に使用。",
+  "repo": "Takashi-Matsumura/box-frame",
+  "path": ".claude/skills/ui-ux",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Takashi-Matsumura/box-frame",
+  "dir_name": "ui-ux-takashi-matsumura-box-frame-2"
+}

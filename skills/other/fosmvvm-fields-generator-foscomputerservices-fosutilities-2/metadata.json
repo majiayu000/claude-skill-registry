@@ -1,0 +1,11 @@
+{
+  "name": "fosmvvm-fields-generator",
+  "description": "Generate FOSMVVM Form Specifications (Fields protocols) with validation and localization. Use when defining user input contracts for forms, request bodies, or any ValidatableModel.",
+  "repo": "foscomputerservices/FOSUtilities",
+  "path": ".claude/skills/fosmvvm-fields-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/foscomputerservices/FOSUtilities",
+  "dir_name": "fosmvvm-fields-generator-foscomputerservices-fosutilities-2"
+}

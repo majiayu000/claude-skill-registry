@@ -1,0 +1,11 @@
+{
+  "name": "errors-confirmations",
+  "description": "This skill should be used when implementing graceful error handling and user confirmations in both backend and frontend, including friendly tool not found messages, action confirmations, error toasts,",
+  "repo": "Sobansaud/Hackhathon---2",
+  "path": "Phase 4/.claude/skills/errors-confirmations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sobansaud/Hackhathon---2",
+  "dir_name": "errors-confirmations-sobansaud-hackhathon-2-2"
+}

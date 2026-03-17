@@ -1,0 +1,11 @@
+{
+  "name": "agent-self-correction",
+  "description": "Protocols for the agent to autonomously detect failures, analyze root causes, and attempt recovery strategies before requesting user intervention.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "72-metacognitive-skill-architect/agent-self-correction",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "agent-self-correction-amnadtaowsoam-cerebratechai-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "bedrock-agentcore-memory",
+  "description": "Amazon Bedrock AgentCore Memory for persistent agent knowledge across sessions. Episodic memory for learning from interactions, short-term for session context. Use when building agents that remember u",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/bedrock-agentcore-memory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "bedrock-agentcore-memory-adaptationio-skrillz-2"
+}

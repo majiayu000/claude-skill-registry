@@ -1,0 +1,11 @@
+{
+  "name": "openapi-schema-patterns",
+  "description": "Advanced OpenAPI schema patterns including allOf, naming hierarchies, and context separation",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/openapi-schema-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "openapi-schema-patterns-zerobias-org-module-2"
+}

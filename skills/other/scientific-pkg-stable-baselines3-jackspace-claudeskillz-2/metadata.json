@@ -1,0 +1,11 @@
+{
+  "name": "scientific-pkg-stable-baselines3",
+  "description": "Use this skill for reinforcement learning tasks including training RL agents (PPO, SAC, DQN, TD3, DDPG, A2C, etc.), creating custom Gym environments, implementing callbacks for monitoring and control,",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/scientific-pkg-stable-baselines3",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "scientific-pkg-stable-baselines3-jackspace-claudeskillz-2"
+}

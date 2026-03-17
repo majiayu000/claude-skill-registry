@@ -1,0 +1,11 @@
+{
+  "name": "sonar-properties",
+  "description": "Generates sonar-project.properties for SonarQube code quality analysis and coverage reporting. Auto-detects test framework (Jest/Vitest) and configures coverage paths.",
+  "repo": "sayali-ingle-pdl/adusa-ai-vuejs-app-template",
+  "path": ".github/agents/app-starter/agents-context/skills/sonar-properties",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sayali-ingle-pdl/adusa-ai-vuejs-app-template",
+  "dir_name": "sonar-properties-sayali-ingle-pdl-adusa-ai-vuejs-app-t-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "generate-lectures-bulk-and-render",
+  "repo": "The-Human-Company/ai-receptionist",
+  "path": ".claude/skills/generate-lectures-bulk-and-render/SKILL.md",
+  "category": "other",
+  "source": "github.com/The-Human-Company/ai-receptionist",
+  "dir_name": "generate-lectures-bulk-and-render",
+  "downloaded_at": "2026-02-22T05:49:21.128614Z"
+}

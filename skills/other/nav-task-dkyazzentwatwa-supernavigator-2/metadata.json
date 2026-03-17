@@ -1,0 +1,11 @@
+{
+  "name": "nav-task",
+  "description": "Manage Navigator task documentation - create implementation plans, archive completed tasks, update task index. Use when user starts new feature, completes work, or says \"document this feature\".",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "skills/os-layer/documentation/nav-task",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "nav-task-dkyazzentwatwa-supernavigator-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "terra-troubleshooting",
+  "description": "Terra API troubleshooting and debugging. Use when experiencing connection issues, data sync problems, webhook failures, SDK errors, or provider-specific issues.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/terra-troubleshooting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "terra-troubleshooting-adaptationio-skrillz-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "nav-marker",
+  "description": "Create context save points to preserve conversation state before breaks, risky changes, or compaction. Use when user says \"save my progress\", \"create checkpoint\", \"mark this point\", or before clearing",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "skills/os-layer/context-memory/nav-marker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "nav-marker-dkyazzentwatwa-supernavigator-2"
+}

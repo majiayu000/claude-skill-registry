@@ -1,0 +1,11 @@
+{
+  "name": "ai-ad-test-gen",
+  "description": "测试用例生成 Skill，负责根据 SoT 文档和业务代码生成 pytest 测试用例。",
+  "repo": "wade56754/AI_ad_spend02",
+  "path": ".claude/skills/ai-ad-test-gen",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wade56754/AI_ad_spend02",
+  "dir_name": "ai-ad-test-gen-wade56754-ai-ad-spend02-2"
+}

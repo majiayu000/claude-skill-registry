@@ -1,0 +1,11 @@
+{
+  "name": "ubs-scanner",
+  "description": "Run Ultimate Bug Scanner for automated bug detection across multiple languages.\nDetects 1000+ bug patterns including null pointers, security vulnerabilities,\nasync/await issues, and resource leaks. In",
+  "repo": "terraphim/codex-skills",
+  "path": "skills/ubs-scanner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terraphim/codex-skills",
+  "dir_name": "ubs-scanner-terraphim-codex-skills-2"
+}

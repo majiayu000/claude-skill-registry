@@ -1,0 +1,11 @@
+{
+  "name": "paw-review-critic",
+  "description": "Critically assesses generated review comments for usefulness, accuracy, and appropriateness, adding assessment sections.",
+  "repo": "lossyrob/phased-agent-workflow",
+  "path": "skills/paw-review-critic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lossyrob/phased-agent-workflow",
+  "dir_name": "paw-review-critic-lossyrob-phased-agent-workflo-2"
+}

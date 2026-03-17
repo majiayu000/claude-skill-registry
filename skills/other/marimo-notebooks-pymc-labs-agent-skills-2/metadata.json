@@ -1,0 +1,11 @@
+{
+  "name": "marimo-notebooks",
+  "description": "ALWAYS use when: creating/editing marimo notebooks, working with any .py file containing @app.cell decorators, building reactive Python notebooks, doing exploratory data analysis in notebook form, con",
+  "repo": "pymc-labs/agent-skills",
+  "path": "skills/marimo-notebooks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pymc-labs/agent-skills",
+  "dir_name": "marimo-notebooks-pymc-labs-agent-skills-2"
+}

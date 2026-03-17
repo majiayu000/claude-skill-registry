@@ -1,0 +1,11 @@
+{
+  "name": "vtm-expert",
+  "description": "Virtual Task Manager domain expert.\n\nKnows about:\n- Next, Context, Task, Start, Complete, Stats, List operations\n\nUse when:\n- User asks about task management operations\n- Context needed before startin",
+  "repo": "nathanvale/vtm-cli",
+  "path": ".claude/skills/vtm-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nathanvale/vtm-cli",
+  "dir_name": "vtm-expert-nathanvale-vtm-cli-2"
+}

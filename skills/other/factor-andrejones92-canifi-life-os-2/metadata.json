@@ -1,0 +1,11 @@
+{
+  "name": "factor",
+  "description": "Enables Claude to browse Factor prepared meals and manage subscriptions",
+  "repo": "Andrejones92/canifi-life-os",
+  "path": "skills/factor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Andrejones92/canifi-life-os",
+  "dir_name": "factor-andrejones92-canifi-life-os-2"
+}

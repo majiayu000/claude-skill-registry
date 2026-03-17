@@ -1,0 +1,11 @@
+{
+  "name": "orcaflex-line-wizard",
+  "description": "Configure OrcaFlex line properties and use the Line Setup Wizard for automatic tension/length calculations. Use for mooring line configuration, riser setup, and achieving target line properties.",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcaflex-line-wizard",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcaflex-line-wizard-vamseeachanta-digitalmodel-2"
+}

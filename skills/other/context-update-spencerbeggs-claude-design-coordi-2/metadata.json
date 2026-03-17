@@ -1,0 +1,11 @@
+{
+  "name": "context-update",
+  "description": "Update CLAUDE.md files to improve efficiency and structure. Use when optimizing LLM context files, implementing review recommendations, splitting large files, or adding design doc pointers.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/context-update",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "context-update-spencerbeggs-claude-design-coordi-2"
+}

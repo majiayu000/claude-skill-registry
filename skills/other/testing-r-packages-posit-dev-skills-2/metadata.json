@@ -1,0 +1,11 @@
+{
+  "name": "testing-r-packages",
+  "description": "Best practices for writing R package tests using testthat version 3+. Use when writing, organizing, or improving tests for R packages. Covers test structure, expectations, fixtures, snapshots, mocking",
+  "repo": "posit-dev/skills",
+  "path": "r-lib/testing-r-packages",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/posit-dev/skills",
+  "dir_name": "testing-r-packages-posit-dev-skills-2"
+}

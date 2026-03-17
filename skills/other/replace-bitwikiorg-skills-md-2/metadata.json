@@ -1,0 +1,11 @@
+{
+  "name": "replace",
+  "description": "Imported skill replace from anthropic",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/anthropic/replace",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "replace-bitwikiorg-skills-md-2"
+}

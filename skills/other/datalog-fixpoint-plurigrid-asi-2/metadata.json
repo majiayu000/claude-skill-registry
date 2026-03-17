@@ -1,0 +1,11 @@
+{
+  "name": "datalog-fixpoint",
+  "description": "Datalog bottom-up fixpoint iteration for recursive queries",
+  "repo": "plurigrid/asi",
+  "path": "skills/datalog-fixpoint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "datalog-fixpoint-plurigrid-asi-2"
+}

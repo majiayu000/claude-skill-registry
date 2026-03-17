@@ -1,0 +1,17 @@
+{
+  "name": "pr",
+  "repo": "g-zenr/relay-api",
+  "path": ".claude/skills/pr/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/g-zenr/relay-api",
+  "dir_name": "pr-g-zenr-relay-api",
+  "downloaded_at": "2026-03-01T07:48:41.412986Z",
+  "author": "g-zenr",
+  "source_url": "https://github.com/g-zenr/relay-api/blob/main/.claude/skills/pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/g-zenr/relay-api/blob/main/.claude/skills/pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

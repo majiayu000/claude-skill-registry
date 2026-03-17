@@ -1,0 +1,11 @@
+{
+  "name": "youtube-processor",
+  "description": "Process YouTube videos into summarized Obsidian notes. Use when given a YouTube URL to summarize, extract insights, or turn videos into notes. Triggers on \"summarize this video\", \"process this YouTube",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/content-creator-workflow/.claude/skills/youtube-processor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "youtube-processor-nicepkg-ai-workflow-2"
+}

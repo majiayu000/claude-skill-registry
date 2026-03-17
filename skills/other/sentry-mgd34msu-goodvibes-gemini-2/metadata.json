@@ -1,0 +1,11 @@
+{
+  "name": "sentry",
+  "description": "Monitors applications with Sentry including error tracking, performance monitoring, and alerting. Use when tracking errors, monitoring performance, setting up alerts, or debugging production issues.",
+  "repo": "mgd34msu/goodvibes-gemini",
+  "path": "skills/sentry",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-gemini",
+  "dir_name": "sentry-mgd34msu-goodvibes-gemini-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "api-changelog-versioning",
+  "description": "Creates comprehensive API changelogs documenting breaking changes, deprecations, and migration strategies for API consumers. Use when managing API versions, communicating breaking changes, or creating",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/api-changelog-versioning/skills/api-changelog-versioning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "api-changelog-versioning-secondsky-claude-skills-2"
+}

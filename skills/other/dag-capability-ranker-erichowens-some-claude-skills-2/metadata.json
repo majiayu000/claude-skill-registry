@@ -1,0 +1,11 @@
+{
+  "name": "dag-capability-ranker",
+  "description": "Ranks skill matches by fit, performance history, and contextual relevance. Applies multi-factor scoring including success rate, resource usage, and task alignment. Activate on 'rank skills', 'best ski",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-capability-ranker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-capability-ranker-erichowens-some-claude-skills-2"
+}

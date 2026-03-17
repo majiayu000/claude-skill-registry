@@ -1,0 +1,11 @@
+{
+  "name": "rfdiffusion",
+  "description": "Generate protein backbones using RFdiffusion, a diffusion-based generative model for de novo protein structure generation. Use this skill when: (1) Designing binder scaffolds for a target protein, (2)",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/rfdiffusion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "rfdiffusion-adaptyvbio-protein-design-skill-2"
+}

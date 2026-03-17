@@ -1,0 +1,11 @@
+{
+  "name": "moai-docs-linting",
+  "description": "Enhanced docs linting with AI-powered features. Enhanced with Context7 MCP for up-to-date documentation.",
+  "repo": "dolsoon/my-awesome-project",
+  "path": ".claude/skills/moai-docs-linting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dolsoon/my-awesome-project",
+  "dir_name": "moai-docs-linting-dolsoon-my-awesome-project-2"
+}

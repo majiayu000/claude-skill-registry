@@ -1,0 +1,11 @@
+{
+  "name": "clickhouse-operations",
+  "description": "Complete ClickHouse operations guide for DevOps and SRE teams managing production deployments.\nProvides practical guidance on monitoring essential metrics (query latency, throughput, memory, disk),\nin",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/clickhouse-operations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "clickhouse-operations-dawiddutoit-custom-claude-2"
+}

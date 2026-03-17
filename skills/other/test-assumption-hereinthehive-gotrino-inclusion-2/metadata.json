@@ -1,0 +1,11 @@
+{
+  "name": "test-assumption",
+  "description": "Identify hidden assumptions about users in code that could exclude or harm. A focused analysis asking \"What am I assuming about the person using this?\"",
+  "repo": "hereinthehive/gotrino-inclusion",
+  "path": "skills/test-assumption",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hereinthehive/gotrino-inclusion",
+  "dir_name": "test-assumption-hereinthehive-gotrino-inclusion-2"
+}

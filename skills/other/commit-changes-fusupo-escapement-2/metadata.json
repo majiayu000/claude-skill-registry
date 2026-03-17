@@ -1,0 +1,11 @@
+{
+  "name": "commit-changes",
+  "description": "Create thoughtful git commits with conventional commits format. Invoke when user says \"commit\", \"commit these changes\", \"create a commit\", \"save my changes\", or after completing a task.",
+  "repo": "fusupo/escapement",
+  "path": "skills/commit-changes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fusupo/escapement",
+  "dir_name": "commit-changes-fusupo-escapement-2"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "xcode-management",
+  "repo": "ProjAnvil/MindForge",
+  "path": "skills/en/xcode-management/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ProjAnvil/MindForge",
+  "dir_name": "xcode-management",
+  "downloaded_at": "2026-03-17T14:16:14.240371Z",
+  "author": "ProjAnvil",
+  "source_url": "https://github.com/ProjAnvil/MindForge/blob/main/skills/en/xcode-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ProjAnvil/MindForge/blob/main/skills/en/xcode-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

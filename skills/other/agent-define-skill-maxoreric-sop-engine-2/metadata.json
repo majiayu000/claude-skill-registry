@@ -1,0 +1,11 @@
+{
+  "name": "agent-define-skill",
+  "description": "用途: 定义 Agent（Subagent）的职责、擅长领域和配置",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/agent-define-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "agent-define-skill-maxoreric-sop-engine-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "foundation-models",
+  "description": "Apple Foundation Models framework for on-device AI, @Generable macro, guided generation, tool calling, and streaming. Use when user asks about on-device AI, Apple Intelligence, Foundation Models, @Gen",
+  "repo": "bluewaves-creations/bluewaves-skills",
+  "path": "plugins/swift-apple-dev/skills/foundation-models",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bluewaves-creations/bluewaves-skills",
+  "dir_name": "foundation-models-bluewaves-creations-bluewaves-skills-2"
+}

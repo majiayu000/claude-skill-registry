@@ -1,0 +1,11 @@
+{
+  "name": "clay-cost-tuning",
+  "description": "Optimize Clay costs through tier selection, sampling, and usage monitoring.\nUse when analyzing Clay billing, reducing API costs,\nor implementing usage monitoring and budget alerts.\nTrigger with phrase",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/clay-pack/clay-cost-tuning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "clay-cost-tuning-vasic-digital-superagent-2"
+}

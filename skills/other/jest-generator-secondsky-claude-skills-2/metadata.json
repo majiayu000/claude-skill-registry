@@ -1,0 +1,11 @@
+{
+  "name": "jest-generator",
+  "description": "Generate Jest unit tests for JavaScript/TypeScript with mocking, coverage. Use for JS/TS modules, React components, test generation, or encountering missing coverage, improper mocking, test structure ",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/jest-generator/skills/jest-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "jest-generator-secondsky-claude-skills-2"
+}

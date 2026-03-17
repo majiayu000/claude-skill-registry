@@ -1,0 +1,11 @@
+{
+  "name": "project-time-tracker",
+  "description": "프로젝트별 Claude Code 세션 시간을 집계하여 리포트 생성.\n일별/주별/월별 시간 분포를 Obsidian 테이블로 시각화.\n\"시간 추적\", \"프로젝트 시간\", \"time tracking\" 등의 요청 시 자동 적용.",
+  "repo": "msbaek/dotfiles",
+  "path": ".claude/skills/project-time-tracker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/msbaek/dotfiles",
+  "dir_name": "project-time-tracker-msbaek-dotfiles-2"
+}

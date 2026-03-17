@@ -1,0 +1,11 @@
+{
+  "name": "openspec-continue-change",
+  "description": "Continue working on an OpenSpec change by creating the next artifact. Use when the user wants to progress their change, create the next artifact, or continue their workflow.",
+  "repo": "durandom/layton",
+  "path": ".claude/skills/openspec-continue-change",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/durandom/layton",
+  "dir_name": "openspec-continue-change-durandom-layton-2"
+}

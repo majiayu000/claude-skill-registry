@@ -1,0 +1,17 @@
+{
+  "name": "aget-record-lesson",
+  "repo": "aget-framework/template-analyst-aget",
+  "path": ".claude/skills/aget-record-lesson/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aget-framework/template-analyst-aget",
+  "dir_name": "aget-record-lesson-aget-framework-template-analyst-age",
+  "downloaded_at": "2026-03-01T06:30:31.122540Z",
+  "author": "aget-framework",
+  "source_url": "https://github.com/aget-framework/template-analyst-aget/blob/main/.claude/skills/aget-record-lesson/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aget-framework/template-analyst-aget/blob/main/.claude/skills/aget-record-lesson/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

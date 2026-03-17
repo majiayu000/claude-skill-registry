@@ -1,0 +1,11 @@
+{
+  "name": "codex-test-integration",
+  "description": "Validate integration impact and regression risks via claude-delegator (Code Reviewer expert). Use for complex tasks or API integration.",
+  "repo": "munlucky/code-cafe-manager",
+  "path": ".claude/skills/codex-test-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/munlucky/code-cafe-manager",
+  "dir_name": "codex-test-integration-munlucky-code-cafe-manager-2"
+}

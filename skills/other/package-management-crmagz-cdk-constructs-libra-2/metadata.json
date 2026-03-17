@@ -1,0 +1,11 @@
+{
+  "name": "package-management",
+  "description": "Package configuration, dependencies, workspace references, and CDK version management. Use when creating packages or managing dependencies.",
+  "repo": "crmagz/cdk-constructs-library",
+  "path": ".claude/skills/package-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/crmagz/cdk-constructs-library",
+  "dir_name": "package-management-crmagz-cdk-constructs-libra-2"
+}

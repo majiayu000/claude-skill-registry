@@ -1,0 +1,11 @@
+{
+  "name": "ai-agent-orchestrator",
+  "description": "Эксперт по оркестрации AI агентов. Используй для multi-agent systems, agent coordination, task delegation и agent workflows.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/ai-agent-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "ai-agent-orchestrator-dengineproblem-agents-monorepo-2"
+}

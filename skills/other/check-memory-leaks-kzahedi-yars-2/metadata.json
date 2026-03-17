@@ -1,0 +1,11 @@
+{
+  "name": "check-memory-leaks",
+  "description": "Runs valgrind memory leak detection on YARS to identify memory issues",
+  "repo": "kzahedi/YARS",
+  "path": ".claude/skills/check-memory-leaks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kzahedi/YARS",
+  "dir_name": "check-memory-leaks-kzahedi-yars-2"
+}

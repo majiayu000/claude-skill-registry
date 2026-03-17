@@ -1,0 +1,11 @@
+{
+  "name": "cost-guardrails",
+  "description": "See the main Budget Guardrails skill for comprehensive coverage of cost controls and governance.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "42-cost-engineering/cost-guardrails",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "cost-guardrails-amnadtaowsoam-cerebratechai-claude-2"
+}

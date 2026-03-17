@@ -1,0 +1,9 @@
+{
+  "name": "plugin-creator",
+  "repo": "Dicklesworthstone/pi_agent_rust",
+  "path": "tests/ext_conformance/artifacts/plugins-ariff/plugin-creator/skills/plugin-creator/SKILL.md",
+  "category": "other",
+  "source": "github.com/Dicklesworthstone/pi_agent_rust",
+  "dir_name": "plugin-creator",
+  "downloaded_at": "2026-02-15T05:02:01.731600Z"
+}

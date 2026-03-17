@@ -1,0 +1,11 @@
+{
+  "name": "find-hypertable-candidates",
+  "description": "Analyze an existing PostgreSQL database to identify tables that would benefit from conversion to TimescaleDB hypertables",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/postgres-mcp/find-hypertable-candidates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "find-hypertable-candidates-vasic-digital-superagent-2"
+}

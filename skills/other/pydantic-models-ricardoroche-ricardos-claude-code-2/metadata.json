@@ -1,0 +1,11 @@
+{
+  "name": "pydantic-models",
+  "description": "Automatically applies when creating data models for API responses and validation. Uses Pydantic BaseModel with validators, field definitions, and proper serialization.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/pydantic-models",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "pydantic-models-ricardoroche-ricardos-claude-code-2"
+}

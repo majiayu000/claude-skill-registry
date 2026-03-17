@@ -1,0 +1,11 @@
+{
+  "name": "security-threat-detector",
+  "description": "Scans code for security vulnerabilities and unsafe patterns. Use when the user asks about security, mentions OWASP, credentials, secrets, XSS, SQL injection, or wants to audit code for threats.",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/security-threat-detector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "security-threat-detector-wesleysmits-agent-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "bbc-news",
+  "description": "Fetch and display BBC News stories from various sections and regions via RSS feeds. Use when the user asks for BBC news, UK news headlines, world news from BBC, or news from specific BBC sections (tec",
+  "repo": "clawdbot/skills",
+  "path": "skills/ddrayne/bbc-news",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "bbc-news-clawdbot-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "state_management",
+  "description": "State persistence patterns for autonomous-dev including JSON persistence, atomic writes, file locking, crash recovery, and state versioning. Use when implementing stateful libraries or features requir",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/state_management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "state-management-vuralserhat86-antigravity-agentic--2"
+}

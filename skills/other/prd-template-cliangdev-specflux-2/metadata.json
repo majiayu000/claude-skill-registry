@@ -1,0 +1,11 @@
+{
+  "name": "prd-template",
+  "description": "PRD structure and patterns for SpecFlux. Use when creating or refining product requirement documents. PRDs should be concise for humans but detailed enough for AI agents to implement.",
+  "repo": "cliangdev/specflux",
+  "path": "src/plugin/skills/prd-template",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cliangdev/specflux",
+  "dir_name": "prd-template-cliangdev-specflux-2"
+}

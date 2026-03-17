@@ -1,0 +1,11 @@
+{
+  "name": "regenerate-types",
+  "description": "CRITICAL: After ANY changes to api.yml, TypeScript interfaces MUST be regenerated before proceeding to implementation.",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/regenerate-types",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "regenerate-types-zerobias-org-module-2"
+}

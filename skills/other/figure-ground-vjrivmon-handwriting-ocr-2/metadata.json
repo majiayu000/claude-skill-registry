@@ -1,0 +1,11 @@
+{
+  "name": "figure-ground",
+  "description": "El cerebro separa elementos en primer plano y fondo. Use cuando diseñe modales, overlays, focus states, o jerarquía visual de capas.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/gestalt/figure-ground",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "figure-ground-vjrivmon-handwriting-ocr-2"
+}

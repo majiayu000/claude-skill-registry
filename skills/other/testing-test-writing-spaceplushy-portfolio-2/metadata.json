@@ -1,0 +1,11 @@
+{
+  "name": "testing-test-writing",
+  "description": "Write strategic, behavior-focused tests for core user flows and critical functionality using Vitest for unit tests and Playwright for end-to-end testing. Use this skill when writing test files, testin",
+  "repo": "SpacePlushy/portfolio",
+  "path": ".claude/skills/testing-test-writing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpacePlushy/portfolio",
+  "dir_name": "testing-test-writing-spaceplushy-portfolio-2"
+}

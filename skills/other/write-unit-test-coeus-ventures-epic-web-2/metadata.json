@@ -1,0 +1,11 @@
+{
+  "name": "write-unit-test",
+  "description": "Generate behavioral unit tests from functional specifications using PreDB/PostDB pattern. Use when user provides specs with PreDB/Workflow/PostDB structure or asks to write tests for a specification b",
+  "repo": "coeus-ventures/epic-web",
+  "path": ".claude/skills/write-unit-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/coeus-ventures/epic-web",
+  "dir_name": "write-unit-test-coeus-ventures-epic-web-2"
+}

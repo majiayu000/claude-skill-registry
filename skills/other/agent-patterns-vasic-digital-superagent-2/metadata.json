@@ -1,0 +1,11 @@
+{
+  "name": "agent-patterns",
+  "description": "Execute this skill should be used when the user asks about \"SPAWN REQUEST format\", \"agent reports\", \"agent coordination\", \"parallel agents\", \"report format\", \"agent communication\", or needs to underst",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/community/sprint/agent-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "agent-patterns-vasic-digital-superagent-2"
+}

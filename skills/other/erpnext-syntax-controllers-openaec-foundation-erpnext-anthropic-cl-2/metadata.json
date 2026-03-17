@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-syntax-controllers",
+  "description": "Deterministic syntax for Frappe Document Controllers (Python server-side). Use when Claude needs to generate code for DocType controllers, lifecycle hooks (validate, on_update, on_submit, etc.), docum",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/syntax/erpnext-syntax-controllers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-syntax-controllers-openaec-foundation-erpnext-anthropic-cl-2"
+}

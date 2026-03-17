@@ -1,0 +1,11 @@
+{
+  "name": "nuvoton",
+  "description": "Nuvoton Technology MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Nuvoton MCUs, audio codecs, TPM chips, or NuvotonHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/nuvoton",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "nuvoton-cantara-lib-electronic-compo-2"
+}

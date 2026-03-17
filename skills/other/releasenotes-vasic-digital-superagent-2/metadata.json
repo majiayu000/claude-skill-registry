@@ -1,0 +1,11 @@
+{
+  "name": "releasenotes",
+  "description": "Generate formatted changelogs from git history since the last release tag. Use when preparing release notes that categorize changes into breaking changes, features, fixes, and other sections.",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/openhands/releasenotes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "releasenotes-vasic-digital-superagent-2"
+}

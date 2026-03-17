@@ -1,0 +1,11 @@
+{
+  "name": "github-issue-query",
+  "description": "Query GitHub issues efficiently with jq argument support for filtering",
+  "repo": "githubnext/gh-aw",
+  "path": "skills/github-issue-query",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/githubnext/gh-aw",
+  "dir_name": "github-issue-query-githubnext-gh-aw-2"
+}

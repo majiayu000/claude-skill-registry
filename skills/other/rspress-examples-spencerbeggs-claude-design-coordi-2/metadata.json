@@ -1,0 +1,11 @@
+{
+  "name": "rspress-examples",
+  "description": "Generate Twoslash code examples for RSPress documentation. Use when adding type-rich, interactive code examples to documentation pages.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/rspress-examples",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "rspress-examples-spencerbeggs-claude-design-coordi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "solana-agent-kit",
+  "description": "Comprehensive guide for building AI agents that interact with Solana blockchain using SendAI's Solana Agent Kit. Covers 60+ actions, LangChain/Vercel AI integration, MCP server setup, and autonomous a",
+  "repo": "sendaifun/skills",
+  "path": "skills/solana-agent-kit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "solana-agent-kit-sendaifun-skills-2"
+}

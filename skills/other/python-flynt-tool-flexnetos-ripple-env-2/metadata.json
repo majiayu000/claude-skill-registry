@@ -1,0 +1,11 @@
+{
+  "name": "python-flynt-tool",
+  "description": "Use flynt to convert old Python string formatting to f-strings. Activate when: (1) Converting %-formatting to f-strings, (2) Converting .format() calls to f-strings, (3) Modernizing string concatenati",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/python-flynt-tool",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FlexNetOS/ripple-env",
+  "dir_name": "python-flynt-tool-flexnetos-ripple-env-2"
+}

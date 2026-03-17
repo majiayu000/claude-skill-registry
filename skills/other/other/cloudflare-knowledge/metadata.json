@@ -1,0 +1,9 @@
+{
+  "name": "cloudflare-knowledge",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/cloudflare-master/skills/cloudflare-knowledge/SKILL.md",
+  "category": "other",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "cloudflare-knowledge",
+  "downloaded_at": "2026-02-22T05:14:37.639280Z"
+}

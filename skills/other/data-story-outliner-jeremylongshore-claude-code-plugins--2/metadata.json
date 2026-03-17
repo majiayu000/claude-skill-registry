@@ -1,0 +1,11 @@
+{
+  "name": "data-story-outliner",
+  "description": "Data Story Outliner - Auto-activating skill for Data Analytics.\nTriggers on: data story outliner, data story outliner\nPart of the Data Analytics skill category.\n",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "planned-skills/generated/12-data-analytics/data-story-outliner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "data-story-outliner-jeremylongshore-claude-code-plugins--2"
+}

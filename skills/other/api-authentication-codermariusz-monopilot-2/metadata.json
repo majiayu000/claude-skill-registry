@@ -1,0 +1,11 @@
+{
+  "name": "api-authentication",
+  "description": "Apply when implementing API authentication: JWT tokens, session management, API keys, and auth middleware. Follows JWT Best Current Practices (RFC 8725).",
+  "repo": "CoderMariusz/MonoPilot",
+  "path": ".claude/skills/api-authentication",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CoderMariusz/MonoPilot",
+  "dir_name": "api-authentication-codermariusz-monopilot-2"
+}

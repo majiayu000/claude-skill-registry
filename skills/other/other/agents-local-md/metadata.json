@@ -1,0 +1,9 @@
+{
+  "name": "agents-local-md",
+  "repo": "ivy/dotfiles",
+  "path": ".claude/skills/agents-local-md/SKILL.md",
+  "category": "other",
+  "source": "github.com/ivy/dotfiles",
+  "dir_name": "agents-local-md",
+  "downloaded_at": "2026-02-22T07:35:10.159195Z"
+}

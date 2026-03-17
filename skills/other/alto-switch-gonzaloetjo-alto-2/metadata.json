@@ -1,0 +1,11 @@
+{
+  "name": "alto-switch",
+  "description": "Use when switching ALTO orchestrator modes (dev/build/setup). Guides mode transitions and session management via the alto command.",
+  "repo": "gonzaloetjo/alto",
+  "path": "skills/alto-switch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gonzaloetjo/alto",
+  "dir_name": "alto-switch-gonzaloetjo-alto-2"
+}

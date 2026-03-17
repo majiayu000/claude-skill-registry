@@ -1,0 +1,11 @@
+{
+  "name": "database-optimizer",
+  "description": "Use when investigating slow queries, analyzing execution plans, or optimizing database performance. Invoke for index design, query rewrites, configuration tuning, partitioning strategies, lock content",
+  "repo": "Jeffallan/claude-skills",
+  "path": "skills/database-optimizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Jeffallan/claude-skills",
+  "dir_name": "database-optimizer-jeffallan-claude-skills-2"
+}

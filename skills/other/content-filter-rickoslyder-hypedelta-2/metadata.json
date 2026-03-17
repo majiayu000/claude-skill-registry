@@ -1,0 +1,11 @@
+{
+  "name": "content-filter",
+  "description": "Filter and classify AI research content for relevance, topic, and author category. Use for bulk triage of raw content before detailed claim extraction.",
+  "repo": "rickoslyder/HypeDelta",
+  "path": ".claude/skills/content-filter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rickoslyder/HypeDelta",
+  "dir_name": "content-filter-rickoslyder-hypedelta-2"
+}

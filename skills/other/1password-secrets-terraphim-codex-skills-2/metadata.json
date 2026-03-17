@@ -1,0 +1,11 @@
+{
+  "name": "1password-secrets",
+  "description": "Secure secret management using 1Password CLI. Detect plaintext secrets in files\nand codebases, convert environment files to 1Password templates, inject secrets\nsecurely using op inject, and audit code",
+  "repo": "terraphim/codex-skills",
+  "path": "skills/1password-secrets",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terraphim/codex-skills",
+  "dir_name": "1password-secrets-terraphim-codex-skills-2"
+}

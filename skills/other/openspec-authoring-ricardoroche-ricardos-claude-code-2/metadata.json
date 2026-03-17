@@ -1,0 +1,11 @@
+{
+  "name": "openspec-authoring",
+  "description": "Enforces OpenSpec authoring conventions including metadata blocks, section ordering, requirement/scenario structure, and validation steps.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/openspec-authoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "openspec-authoring-ricardoroche-ricardos-claude-code-2"
+}

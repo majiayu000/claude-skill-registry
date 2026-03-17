@@ -1,0 +1,11 @@
+{
+  "name": "frontend-quality",
+  "description": "Runs frontend quality checks including TypeScript, ESLint, and tests. Use before commits, PRs, or when the user says \"check frontend\", \"run frontend tests\", \"lint frontend\".",
+  "repo": "MenadBt/prospection",
+  "path": ".claude/skills/frontend-quality",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MenadBt/prospection",
+  "dir_name": "frontend-quality-menadbt-prospection-2"
+}

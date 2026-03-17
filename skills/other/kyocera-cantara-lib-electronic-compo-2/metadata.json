@@ -1,0 +1,11 @@
+{
+  "name": "kyocera",
+  "description": "Kyocera Corporation MPN encoding patterns, ceramic resonator and capacitor decoding, and handler guidance. Use when working with Kyocera timing devices, capacitors, or connectors.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/kyocera",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "kyocera-cantara-lib-electronic-compo-2"
+}

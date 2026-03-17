@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-keyvalue-stats",
+  "description": "Get statistics for keyvalue storage. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-keyvalue-stats",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-keyvalue-stats-agentuity-sdk-explorer-2"
+}

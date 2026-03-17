@@ -1,0 +1,11 @@
+{
+  "name": "graphql",
+  "description": "Provides GraphQL API schema design and implementation expertise. Ensures proper type definitions, query/mutation patterns, pagination strategies, and error handling standards. Specializes in schema-fi",
+  "repo": "KubrickCode/Repo-Management",
+  "path": ".claude/skills/graphql",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KubrickCode/Repo-Management",
+  "dir_name": "graphql-kubrickcode-repo-management-2"
+}

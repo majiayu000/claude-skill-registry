@@ -1,0 +1,11 @@
+{
+  "name": "dialogue-resolve-reference",
+  "description": "Resolves framework reference IDs to their content. Use when you need to look up a document, decision, observation, task, or ADR by its ID. Triggers on \"resolve reference\", \"look up THY-001\", \"find DEC",
+  "repo": "pidster/project-2501",
+  "path": "claude-plugin-evo/skills/dialogue-resolve-reference",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pidster/project-2501",
+  "dir_name": "dialogue-resolve-reference-pidster-project-2501-2"
+}

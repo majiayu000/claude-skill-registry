@@ -1,0 +1,11 @@
+{
+  "name": "moai-lang-shell",
+  "description": "Enterprise Shell scripting with Bash 5.2, ShellCheck, bats-core testing, POSIX compliance, and Context7 MCP integration for defensive scripting patterns.",
+  "repo": "dolsoon/my-awesome-project",
+  "path": ".claude/skills/moai-lang-shell",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dolsoon/my-awesome-project",
+  "dir_name": "moai-lang-shell-dolsoon-my-awesome-project-2"
+}

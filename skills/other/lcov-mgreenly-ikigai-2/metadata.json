@@ -1,0 +1,11 @@
+{
+  "name": "lcov",
+  "description": "LCOV tooling - finding gaps, parsing coverage files, marker syntax",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/lcov",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "lcov-mgreenly-ikigai-2"
+}

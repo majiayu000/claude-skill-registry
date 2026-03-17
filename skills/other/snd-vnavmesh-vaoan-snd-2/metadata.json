@@ -1,0 +1,11 @@
+{
+  "name": "snd-vnavmesh",
+  "description": "Use this skill when implementing navigation or movement in SND macros using the vnavmesh plugin. Covers pathfinding, movement control, navmesh utilities, and movement patterns.",
+  "repo": "vaoan/SND",
+  "path": ".claude/skills/snd-vnavmesh",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vaoan/SND",
+  "dir_name": "snd-vnavmesh-vaoan-snd-2"
+}

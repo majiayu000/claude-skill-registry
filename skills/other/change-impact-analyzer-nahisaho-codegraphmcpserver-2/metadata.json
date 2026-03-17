@@ -1,0 +1,11 @@
+{
+  "name": "change-impact-analyzer",
+  "description": "Analyzes impact of proposed changes on existing systems (brownfield projects) with delta spec validation.\n\nTrigger terms: change impact, impact analysis, brownfield, delta spec, change proposal,\nchang",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/change-impact-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "dir_name": "change-impact-analyzer-nahisaho-codegraphmcpserver-2"
+}

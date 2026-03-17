@@ -1,0 +1,11 @@
+{
+  "name": "csrf-testing",
+  "description": "Provide systematic methodologies for identifying and exploiting Cross-Site Request Forgery (CSRF) vulnerabilities in web applications. This skill covers CSRF attack mechanics, proof-of-concept creatio",
+  "repo": "zebbern/SecOps-CLI-Guides",
+  "path": "skills/csrf-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zebbern/SecOps-CLI-Guides",
+  "dir_name": "csrf-testing-zebbern-secops-cli-guides-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "kitt-create-agent-skills",
+  "description": "Expert guidance for creating, writing, building, and refining Claude Code Skills. Use when working with SKILL.md files, authoring new skills, improving existing skills, or understanding skill structur",
+  "repo": "utahdws/webteam-ai-tools",
+  "path": ".ai-cli/shared/skills/kitt-create-agent-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/utahdws/webteam-ai-tools",
+  "dir_name": "kitt-create-agent-skills-utahdws-webteam-ai-tools-2"
+}

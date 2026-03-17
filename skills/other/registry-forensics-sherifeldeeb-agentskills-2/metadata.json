@@ -1,0 +1,11 @@
+{
+  "name": "registry-forensics",
+  "description": "Analyze Windows Registry hives for forensic investigation. Use when investigating\nmalware persistence, user activity, system configuration changes, or evidence of\nprogram execution. Supports offline r",
+  "repo": "SherifEldeeb/agentskills",
+  "path": "skills/forensics/registry-forensics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SherifEldeeb/agentskills",
+  "dir_name": "registry-forensics-sherifeldeeb-agentskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "model-architecture-rwkv",
+  "description": "RNN+Transformer hybrid with O(n) inference. Linear time, infinite context, no KV cache. Train like GPT (parallel), infer like RNN (sequential). Linux Foundation AI project. Production at Windows, Offi",
+  "repo": "davila7/claude-code-templates",
+  "path": "cli-tool/components/skills/ai-research/model-architecture-rwkv",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davila7/claude-code-templates",
+  "dir_name": "model-architecture-rwkv-davila7-claude-code-template-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "backend-java",
+  "description": "Java Developer Agent. Java/Spring Boot 기반 백엔드 개발을 담당합니다. Spring, JPA, Hibernate, Maven, Gradle 전문.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/backend-java",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "backend-java-shaul1991-shaul-agents-plugin-2"
+}

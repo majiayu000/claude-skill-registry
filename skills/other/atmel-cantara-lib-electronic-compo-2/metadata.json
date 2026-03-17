@@ -1,0 +1,11 @@
+{
+  "name": "atmel",
+  "description": "Atmel/Microchip AVR MPN encoding patterns, suffix decoding, and handler guidance. Use when working with ATmega, ATtiny, SAM, or other Atmel components.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/atmel",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "atmel-cantara-lib-electronic-compo-2"
+}

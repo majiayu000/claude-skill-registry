@@ -1,0 +1,11 @@
+{
+  "name": "clarify-skill",
+  "description": "澄清用户意图的 Skill。当用户给出模糊想法、需要脑暴、需要讨论设计时触发。触发词：帮我想想、我想做、讨论一下、澄清、clarify。",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/clarify-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "clarify-skill-maxoreric-sop-engine-2"
+}

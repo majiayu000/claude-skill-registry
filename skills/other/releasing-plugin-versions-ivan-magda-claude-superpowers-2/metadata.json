@@ -1,0 +1,11 @@
+{
+  "name": "releasing-plugin-versions",
+  "description": "Use when releasing a new plugin version, bumping versions, creating git tags, or publishing GitHub releases for this marketplace",
+  "repo": "ivan-magda/claude-superpowers",
+  "path": ".claude/skills/releasing-plugin-versions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ivan-magda/claude-superpowers",
+  "dir_name": "releasing-plugin-versions-ivan-magda-claude-superpowers-2"
+}

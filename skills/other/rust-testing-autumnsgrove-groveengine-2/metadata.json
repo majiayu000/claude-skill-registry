@@ -1,0 +1,11 @@
+{
+  "name": "rust-testing",
+  "description": "Write and run Rust tests using cargo test with unit tests, integration tests, doc tests, and property-based testing. Use when writing Rust tests or setting up test infrastructure.",
+  "repo": "AutumnsGrove/GroveEngine",
+  "path": ".claude/skills/rust-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AutumnsGrove/GroveEngine",
+  "dir_name": "rust-testing-autumnsgrove-groveengine-2"
+}

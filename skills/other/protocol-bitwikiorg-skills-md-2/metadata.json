@@ -1,0 +1,11 @@
+{
+  "name": "protocol",
+  "description": "Imported skill protocol from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/langchain/protocol",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "protocol-bitwikiorg-skills-md-2"
+}

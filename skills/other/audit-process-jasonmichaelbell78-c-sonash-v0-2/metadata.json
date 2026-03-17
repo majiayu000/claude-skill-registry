@@ -1,0 +1,11 @@
+{
+  "name": "audit-process",
+  "description": "Run a single-session process and automation audit on the codebase",
+  "repo": "jasonmichaelbell78-creator/sonash-v0",
+  "path": ".claude/skills/audit-process",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonmichaelbell78-creator/sonash-v0",
+  "dir_name": "audit-process-jasonmichaelbell78-c-sonash-v0-2"
+}

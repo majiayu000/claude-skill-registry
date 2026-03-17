@@ -1,0 +1,11 @@
+{
+  "name": "extracting-dss-results",
+  "description": "Extracts and analyzes HEC-HMS simulation results from DSS files using HmsDss and\nHmsResults classes. Handles peak flows, hydrographs, volume summaries, and time series\ndata. Leverages ras-commander's ",
+  "repo": "gpt-cmdr/hms-commander",
+  "path": ".claude/skills/extracting-dss-results",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gpt-cmdr/hms-commander",
+  "dir_name": "extracting-dss-results-gpt-cmdr-hms-commander-2"
+}

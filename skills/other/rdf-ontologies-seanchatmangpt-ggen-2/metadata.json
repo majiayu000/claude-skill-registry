@@ -1,0 +1,11 @@
+{
+  "name": "rdf-ontologies",
+  "description": "Master RDF ontologies and Turtle (TTL) syntax. Use for creating feature specifications, domain models, architecture plans with semantic web standards. Covers: Turtle syntax, SPARQL queries, Oxigraph R",
+  "repo": "seanchatmangpt/ggen",
+  "path": ".claude/skills/rdf-ontologies",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/seanchatmangpt/ggen",
+  "dir_name": "rdf-ontologies-seanchatmangpt-ggen-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "exa-hello-world",
+  "description": "Create a minimal working Exa example.\nUse when starting a new Exa integration, testing your setup,\nor learning basic Exa API patterns.\nTrigger with phrases like \"exa hello world\", \"exa example\",\n\"exa ",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-hello-world",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-hello-world-vasic-digital-superagent-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "clean-slop",
+  "description": "Find and remove AI-generated slop (useless comments, verbose patterns, unnecessary abstractions).",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/vibe-extras/skills/clean-slop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "clean-slop-doodledood-claude-code-plugins-2"
+}

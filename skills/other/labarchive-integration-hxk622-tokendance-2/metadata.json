@@ -1,0 +1,11 @@
+{
+  "name": "labarchive-integration",
+  "description": "Electronic lab notebook API integration. Access notebooks, manage entries/attachments, backup notebooks, integrate with Protocols.io/Jupyter/REDCap, for programmatic ELN workflows.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/lab-automation/labarchive-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "labarchive-integration-hxk622-tokendance-2"
+}

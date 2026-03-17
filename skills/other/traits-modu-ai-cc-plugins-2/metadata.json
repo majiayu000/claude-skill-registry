@@ -1,0 +1,11 @@
+{
+  "name": "traits",
+  "description": "고유한 저자 페르소나를 구성하기 위한 특성 DNA 라이브러리. 목소리 패턴(격식체, 대화체, 서사체, 기술체), 전문성 영역(아키텍처, 구현, 산업, 교육), 관점 스타일(분석적, 경험적, 비판적, 비전적), 어조 특성(권위적, 공감적, 도발적, 양육적)을 포함한다. 페르소나를 정의하거나 커스터마이징할 때, 저자 특성을 이해할 때, 콘텐츠 전반에 일관된 특",
+  "repo": "modu-ai/cc-plugins",
+  "path": "plugins/astory-blog-writers/skills/traits",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/modu-ai/cc-plugins",
+  "dir_name": "traits-modu-ai-cc-plugins-2"
+}

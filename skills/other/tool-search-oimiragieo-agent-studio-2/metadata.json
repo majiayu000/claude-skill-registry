@@ -1,0 +1,11 @@
+{
+  "name": "tool-search",
+  "description": "Semantic tool search with embeddings for scalable tool discovery. Enables on-demand tool loading to reduce context usage by 90%+ for large tool libraries.",
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/tool-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oimiragieo/agent-studio",
+  "dir_name": "tool-search-oimiragieo-agent-studio-2"
+}

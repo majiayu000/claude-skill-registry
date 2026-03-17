@@ -1,0 +1,11 @@
+{
+  "name": "wheels-routing-generator",
+  "description": "Generate RESTful routes, nested routes, and custom routing patterns for Wheels applications. Use when defining URL structure, creating RESTful resources, or implementing custom route patterns. Ensures",
+  "repo": "wheels-dev/wheels",
+  "path": ".claude/skills/wheels-routing-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wheels-dev/wheels",
+  "dir_name": "wheels-routing-generator-wheels-dev-wheels-2"
+}

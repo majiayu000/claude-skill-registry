@@ -1,0 +1,9 @@
+{
+  "name": "repo-issue",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/repo:issue/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "repo-issue",
+  "downloaded_at": "2026-02-15T07:49:43.832089Z"
+}

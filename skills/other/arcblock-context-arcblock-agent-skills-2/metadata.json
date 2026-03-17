@@ -1,0 +1,11 @@
+{
+  "name": "arcblock-context",
+  "description": "Load ArcBlock company context (products, technical architecture, strategy) on demand. Use `/arcblock-context` to see available topics, or `/arcblock-context <topic>` to load specific context.",
+  "repo": "ArcBlock/agent-skills",
+  "path": "plugins/arcblock-context/skills/arcblock-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ArcBlock/agent-skills",
+  "dir_name": "arcblock-context-arcblock-agent-skills-2"
+}

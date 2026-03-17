@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-impl-controllers",
+  "description": "Implementation workflows and decision trees for Frappe Document Controllers. Use when determining HOW to implement server-side DocType logic: lifecycle hooks, validation patterns, autoname, submittabl",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/impl/erpnext-impl-controllers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-impl-controllers-openaec-foundation-erpnext-anthropic-cl-2"
+}

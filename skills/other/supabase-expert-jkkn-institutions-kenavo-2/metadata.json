@@ -1,0 +1,11 @@
+{
+  "name": "supabase-expert",
+  "description": "This skill should be used when working with Supabase database operations in the MyJKKN project, including creating modules, updating schemas, writing RLS policies, creating database functions, impleme",
+  "repo": "JKKN-Institutions/Kenavo",
+  "path": ".claude/skills/supabase-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JKKN-Institutions/Kenavo",
+  "dir_name": "supabase-expert-jkkn-institutions-kenavo-2"
+}

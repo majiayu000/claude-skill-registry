@@ -1,0 +1,11 @@
+{
+  "name": "holtek",
+  "description": "Holtek Semiconductor MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Holtek MCUs, touch controllers, LCD drivers, or HoltekHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/holtek",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "holtek-cantara-lib-electronic-compo-2"
+}

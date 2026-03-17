@@ -1,0 +1,9 @@
+{
+  "name": "ollama-setup",
+  "repo": "HelixDevelopment/HelixAgent",
+  "path": "skills/plugins/ai-ml/ollama-local-ai/ollama-setup/SKILL.md",
+  "category": "other",
+  "source": "github.com/HelixDevelopment/HelixAgent",
+  "dir_name": "ollama-setup",
+  "downloaded_at": "2026-02-15T05:12:35.369953Z"
+}

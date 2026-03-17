@@ -1,0 +1,11 @@
+{
+  "name": "releasing-macos-apps",
+  "description": "Create notarized macOS app releases with Sparkle auto-updates, DMG installers, and GitHub releases. Use when releasing macOS apps, creating DMG files, notarizing apps, or setting up Sparkle updates. H",
+  "repo": "jamesrochabrun/skills",
+  "path": "skills/releasing-macos-apps",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jamesrochabrun/skills",
+  "dir_name": "releasing-macos-apps-jamesrochabrun-skills-2"
+}

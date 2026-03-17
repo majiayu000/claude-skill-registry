@@ -1,0 +1,11 @@
+{
+  "name": "state",
+  "description": "Imported skill state from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/vercel/rerender_derived_state",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "state-bitwikiorg-skills-md-2"
+}

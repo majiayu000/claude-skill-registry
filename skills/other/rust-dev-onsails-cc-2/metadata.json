@@ -1,0 +1,11 @@
+{
+  "name": "rust-dev",
+  "description": "This skill should be used when working with Rust code, reviewing Rust code, managing Rust dependencies, creating Rust projects, or fixing Rust compilation errors. It provides strict coding standards (",
+  "repo": "onsails/cc",
+  "path": "rust-dev/skills/rust-dev",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/onsails/cc",
+  "dir_name": "rust-dev-onsails-cc-2"
+}

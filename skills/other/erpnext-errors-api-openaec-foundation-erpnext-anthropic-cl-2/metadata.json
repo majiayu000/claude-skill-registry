@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-errors-api",
+  "description": "Error handling patterns for ERPNext/Frappe API development (v14/v15/v16). Covers whitelisted method errors, REST API errors, client-side handling, external integrations, and webhooks. Triggers: API er",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/errors/erpnext-errors-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-errors-api-openaec-foundation-erpnext-anthropic-cl-2"
+}

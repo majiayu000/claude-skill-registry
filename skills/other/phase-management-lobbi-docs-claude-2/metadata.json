@@ -1,0 +1,11 @@
+{
+  "name": "phase-management",
+  "description": "This skill should be used when the user asks about \"phase management\", \"6-phase protocol\", \"explore phase\", \"plan phase\", \"code phase\", \"test phase\", \"fix phase\", \"document phase\", \"phase transitions\"",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/orchestrate-complex/skills/phase-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "phase-management-lobbi-docs-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "coequalizers",
+  "description": "Quotient redundant skill paths via coequalizers, preserving GF(3) conservation",
+  "repo": "plurigrid/asi",
+  "path": "skills/coequalizers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "coequalizers-plurigrid-asi-2"
+}

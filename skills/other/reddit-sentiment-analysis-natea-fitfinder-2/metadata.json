@@ -1,0 +1,11 @@
+{
+  "name": "reddit-sentiment-analysis",
+  "description": "Conduct comprehensive sentiment analysis of Reddit discussions for any product, brand, company, or topic. Analyzes what people like, dislike, and wish were different with structured output summaries.",
+  "repo": "natea/fitfinder",
+  "path": ".claude/skills/reddit-sentiment-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/natea/fitfinder",
+  "dir_name": "reddit-sentiment-analysis-natea-fitfinder-2"
+}

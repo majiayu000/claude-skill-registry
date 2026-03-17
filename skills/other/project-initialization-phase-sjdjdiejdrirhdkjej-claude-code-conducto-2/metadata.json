@@ -1,0 +1,11 @@
+{
+  "name": "project-initialization-phase",
+  "description": "Orchestrates /init-project command execution through interactive questionnaire (15 questions), brownfield codebase scanning (tech stack detection, ERD from migrations), and 8-document generation (over",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/project-initialization-phase",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "project-initialization-phase-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+}

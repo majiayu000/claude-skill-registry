@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-errors-hooks",
+  "description": "Error handling patterns for ERPNext hooks.py configurations. Use when debugging doc_events errors, scheduler failures, boot session issues, and app initialization problems. V14/V15/V16 compatible. Tri",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/errors/erpnext-errors-hooks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-errors-hooks-openaec-foundation-erpnext-anthropic-cl-2"
+}

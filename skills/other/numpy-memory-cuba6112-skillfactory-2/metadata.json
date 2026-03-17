@@ -1,0 +1,11 @@
+{
+  "name": "numpy-memory",
+  "description": "NumPy memory management revolves around the concept of \"strides.\" Strides define the number of bytes to skip in a flat 1D buffer to move to the next element in an N-dimensional space. Understanding th",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/numpy-memory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "numpy-memory-cuba6112-skillfactory-2"
+}

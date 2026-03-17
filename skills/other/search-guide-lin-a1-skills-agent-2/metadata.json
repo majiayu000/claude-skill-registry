@@ -1,0 +1,11 @@
+{
+  "name": "search_guide",
+  "description": "搜索工具调用决策指南。明确定义 Agent 何时应调用搜索工具（如实时信息、具体事实），何时应依赖内部知识。作为参考规范，优化 Agent 的工具使用策略。",
+  "repo": "Lin-A1/skills-agent",
+  "path": "services/search_guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lin-A1/skills-agent",
+  "dir_name": "search-guide-lin-a1-skills-agent-2"
+}

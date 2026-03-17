@@ -1,0 +1,11 @@
+{
+  "name": "serena-mcp-agent-skill",
+  "description": "Expert integration for the Serena MCP Server - a powerful coding agent toolkit providing IDE-like semantic code understanding to LLMs. This skill should be used when working with codebases through Ser",
+  "repo": "mamba-mental/agent-skill-manager",
+  "path": "skills/serena-mcp-agent-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mamba-mental/agent-skill-manager",
+  "dir_name": "serena-mcp-agent-skill-mamba-mental-agent-skill-manager-2"
+}

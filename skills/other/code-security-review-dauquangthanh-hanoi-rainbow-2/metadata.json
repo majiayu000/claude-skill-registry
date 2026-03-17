@@ -1,0 +1,11 @@
+{
+  "name": "code-security-review",
+  "description": "Conducts comprehensive security code reviews including vulnerability detection (OWASP Top 10, CWE), authentication/authorization flaws, injection attacks, cryptography issues, sensitive data exposure,",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/code-security-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "dir_name": "code-security-review-dauquangthanh-hanoi-rainbow-2"
+}

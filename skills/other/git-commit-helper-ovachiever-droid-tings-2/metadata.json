@@ -1,0 +1,11 @@
+{
+  "name": "git-commit-helper",
+  "description": "Generate conventional commit messages automatically. Use when user runs git commit, stages changes, or asks for commit message help. Analyzes git diff to create clear, descriptive conventional commit ",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/git-commit-helper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "git-commit-helper-ovachiever-droid-tings-2"
+}

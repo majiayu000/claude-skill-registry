@@ -1,0 +1,11 @@
+{
+  "name": "check-tenets",
+  "description": "Verify all site content aligns with the five foundational tenets. Use monthly or after major content additions.",
+  "repo": "unfinishablemap/unfinishablemap",
+  "path": ".claude/skills/check-tenets",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/unfinishablemap/unfinishablemap",
+  "dir_name": "check-tenets-unfinishablemap-unfinishablemap-2"
+}

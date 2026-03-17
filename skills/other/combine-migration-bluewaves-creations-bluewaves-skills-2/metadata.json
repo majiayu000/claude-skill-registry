@@ -1,0 +1,11 @@
+{
+  "name": "combine-migration",
+  "description": "Migrating from Combine to Swift Observation framework and modern async/await patterns. Covers Publisher to AsyncSequence conversion, ObservableObject to @Observable migration, bridging patterns, and r",
+  "repo": "bluewaves-creations/bluewaves-skills",
+  "path": "plugins/swift-apple-dev/skills/combine-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bluewaves-creations/bluewaves-skills",
+  "dir_name": "combine-migration-bluewaves-creations-bluewaves-skills-2"
+}

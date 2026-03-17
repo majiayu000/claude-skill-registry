@@ -1,0 +1,11 @@
+{
+  "name": "handoff-skill",
+  "description": "Agent 间任务交接的 Skill。当需要把任务交给另一个 Agent 时触发。触发词：交接、handoff、交给、让 xxx 来处理。",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/handoff-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "handoff-skill-maxoreric-sop-engine-2"
+}

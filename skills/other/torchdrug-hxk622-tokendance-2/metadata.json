@@ -1,0 +1,11 @@
+{
+  "name": "torchdrug",
+  "description": "PyTorch-native graph neural networks for molecules and proteins. Use when building custom GNN architectures for drug discovery, protein modeling, or knowledge graph reasoning. Best for custom model de",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/chemistry/torchdrug",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "torchdrug-hxk622-tokendance-2"
+}

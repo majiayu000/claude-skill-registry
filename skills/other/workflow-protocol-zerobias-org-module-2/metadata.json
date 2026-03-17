@@ -1,0 +1,11 @@
+{
+  "name": "workflow-protocol",
+  "description": "Workflow execution protocol and phase transition rules",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/workflow-protocol",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "workflow-protocol-zerobias-org-module-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "axiom-auto-layout-debugging",
+  "description": "Use when encountering \"Unable to simultaneously satisfy constraints\" errors, constraint conflicts, ambiguous layout warnings, or views positioned incorrectly - systematic debugging workflow for Auto L",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-auto-layout-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-auto-layout-debugging-charleswiltgen-axiom-2"
+}

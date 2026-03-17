@@ -1,0 +1,11 @@
+{
+  "name": "content-repurposing-engine",
+  "description": "Transforms single pieces of content into multiple formats across platforms. Use when the user asks about content repurposing, atomizing content, multi-format content, or creating social posts from blo",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/content-repurposing-engine",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "content-repurposing-engine-wesleysmits-agent-skills-2"
+}

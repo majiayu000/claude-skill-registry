@@ -1,0 +1,11 @@
+{
+  "name": "skill-judge",
+  "description": "Evaluate Agent Skill design quality against official specifications and best practices. Use when reviewing, auditing, or improving SKILL.md files and skill packages. Provides multi-dimensional scoring",
+  "repo": "pianzhu/my-claude-skills",
+  "path": "skills/skill-judge",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pianzhu/my-claude-skills",
+  "dir_name": "skill-judge-pianzhu-my-claude-skills-2"
+}

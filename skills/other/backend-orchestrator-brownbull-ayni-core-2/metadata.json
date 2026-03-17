@@ -1,0 +1,11 @@
+{
+  "name": "backend-orchestrator",
+  "description": "Coordinates backend development tasks (APIs, services, databases). Use when implementing REST APIs, business logic, data models, or service integrations. Applies backend-standard.md for quality gates.",
+  "repo": "Brownbull/ayni_core",
+  "path": ".claude/skills/backend-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Brownbull/ayni_core",
+  "dir_name": "backend-orchestrator-brownbull-ayni-core-2"
+}

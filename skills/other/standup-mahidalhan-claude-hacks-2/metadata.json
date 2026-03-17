@@ -1,0 +1,11 @@
+{
+  "name": "standup",
+  "description": "USE WHEN: returning to a project after time away (1 day to 30 days), needing project status briefing, understanding where work left off, determining next steps.\nDO NOT USE WHEN: actively working on a ",
+  "repo": "mahidalhan/claude-hacks",
+  "path": "skills/standup/skills/standup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mahidalhan/claude-hacks",
+  "dir_name": "standup-mahidalhan-claude-hacks-2"
+}

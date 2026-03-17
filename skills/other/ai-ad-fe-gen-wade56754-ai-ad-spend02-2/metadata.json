@@ -1,0 +1,11 @@
+{
+  "name": "ai-ad-fe-gen",
+  "description": "前端代码生成 Skill，负责在 SoT 约束下生成 Next.js/React 前端代码。",
+  "repo": "wade56754/AI_ad_spend02",
+  "path": ".claude/skills/ai-ad-fe-gen",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wade56754/AI_ad_spend02",
+  "dir_name": "ai-ad-fe-gen-wade56754-ai-ad-spend02-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "py-start-local",
+  "description": "Start Flask server locally for development. Runs server in foreground or background with nohup. Use when starting local Python server for testing or development.",
+  "repo": "asnar00/miso",
+  "path": ".claude/skills/py-start-local",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/asnar00/miso",
+  "dir_name": "py-start-local-asnar00-miso-2"
+}

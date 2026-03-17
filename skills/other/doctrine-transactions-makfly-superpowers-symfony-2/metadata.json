@@ -1,0 +1,11 @@
+{
+  "name": "doctrine-transactions",
+  "description": "Use when symfony doctrine transactions",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/doctrine-transactions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "doctrine-transactions-makfly-superpowers-symfony-2"
+}

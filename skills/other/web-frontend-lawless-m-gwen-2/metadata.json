@@ -1,0 +1,11 @@
+{
+  "name": "Web Frontend",
+  "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state manag",
+  "repo": "lawless-m/Gwen",
+  "path": ".claude/skills/Web Frontend",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lawless-m/Gwen",
+  "dir_name": "web-frontend-lawless-m-gwen-2"
+}

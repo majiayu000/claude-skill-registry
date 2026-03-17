@@ -1,0 +1,11 @@
+{
+  "name": "test-plan-generator",
+  "description": "Automatically generate comprehensive QA test plans when user mentions testing requirements, QA needs, or asks what should be tested. Analyzes code changes and features to create structured test scenar",
+  "repo": "kanopi/cms-cultivator",
+  "path": "skills/test-plan-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kanopi/cms-cultivator",
+  "dir_name": "test-plan-generator-kanopi-cms-cultivator-2"
+}

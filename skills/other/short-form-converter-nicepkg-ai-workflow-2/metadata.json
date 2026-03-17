@@ -1,0 +1,11 @@
+{
+  "name": "short-form-converter",
+  "description": "Convert long-form videos into short-form content for TikTok, YouTube Shorts, and Instagram Reels. Identifies viral moments, creates hooks, and adapts scripts for vertical format. Use when repurposing ",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/video-creator-workflow/.claude/skills/short-form-converter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "short-form-converter-nicepkg-ai-workflow-2"
+}

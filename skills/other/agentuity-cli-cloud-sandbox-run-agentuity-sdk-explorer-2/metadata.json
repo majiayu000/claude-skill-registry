@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-sandbox-run",
+  "description": "Run a one-shot command in a sandbox (creates, executes, destroys). Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-sandbox-run",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-sandbox-run-agentuity-sdk-explorer-2"
+}

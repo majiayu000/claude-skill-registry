@@ -1,0 +1,11 @@
+{
+  "name": "summarizing-websites",
+  "description": "Extract clean article content from URLs (blog posts, articles, tutorials). Use when user wants to download, extract, or save an article/blog post from a URL without ads, navigation, or clutter.",
+  "repo": "mgomes/3xo-suit",
+  "path": "plugins/dotfiles/skills/summarizing-websites",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgomes/3xo-suit",
+  "dir_name": "summarizing-websites-mgomes-3xo-suit-2"
+}

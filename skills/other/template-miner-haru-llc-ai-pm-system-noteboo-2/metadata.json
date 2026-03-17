@@ -1,0 +1,11 @@
+{
+  "name": "template-miner",
+  "description": "過去資料からテンプレ・スタイルガイド・チェックリストを抽出して資産化する。テンプレが無い、文書品質がバラつく、過去資料を活用したいときに使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/meta/template-miner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "template-miner-haru-llc-ai-pm-system-noteboo-2"
+}

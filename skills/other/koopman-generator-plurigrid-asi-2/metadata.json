@@ -1,0 +1,11 @@
+{
+  "name": "koopman-generator",
+  "description": "Koopman operator theory for infinite-dimensional linear lifting of nonlinear dynamics. Generates dynamics from observables.",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.agents/skills/koopman-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "koopman-generator-plurigrid-asi-2"
+}

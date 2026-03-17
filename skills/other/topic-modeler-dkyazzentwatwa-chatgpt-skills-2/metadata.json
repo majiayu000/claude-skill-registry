@@ -1,0 +1,11 @@
+{
+  "name": "topic-modeler",
+  "description": "Extract topics from text collections using LDA (Latent Dirichlet Allocation) with keyword extraction and topic visualization.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "topic-modeler",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "topic-modeler-dkyazzentwatwa-chatgpt-skills-2"
+}

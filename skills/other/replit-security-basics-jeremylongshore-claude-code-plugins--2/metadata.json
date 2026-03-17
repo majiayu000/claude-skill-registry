@@ -1,0 +1,11 @@
+{
+  "name": "replit-security-basics",
+  "description": "Apply Replit security best practices for secrets and access control.\nUse when securing API keys, implementing least privilege access,\nor auditing Replit security configuration.\nTrigger with phrases li",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/replit-pack/skills/replit-security-basics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "replit-security-basics-jeremylongshore-claude-code-plugins--2"
+}

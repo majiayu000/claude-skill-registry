@@ -1,0 +1,11 @@
+{
+  "name": "page-reviewer",
+  "description": "Review pages visually and test accessibility using agent-browser CLI",
+  "repo": "Acurioustractor/justicehub-platform",
+  "path": ".claude/skills/page-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Acurioustractor/justicehub-platform",
+  "dir_name": "page-reviewer-acurioustractor-justicehub-platform-2"
+}

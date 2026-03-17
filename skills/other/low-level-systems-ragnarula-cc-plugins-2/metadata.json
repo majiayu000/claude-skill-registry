@@ -1,0 +1,11 @@
+{
+  "name": "low-level-systems",
+  "description": "Use this skill when designing or reviewing systems programming, embedded systems, performance-critical code, or anything involving direct memory management, OS interfaces, or hardware interaction. App",
+  "repo": "ragnarula/cc-plugins",
+  "path": "sdd/skills/low-level-systems",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ragnarula/cc-plugins",
+  "dir_name": "low-level-systems-ragnarula-cc-plugins-2"
+}

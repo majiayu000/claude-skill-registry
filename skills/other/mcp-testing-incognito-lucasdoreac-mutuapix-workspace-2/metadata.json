@@ -1,0 +1,11 @@
+{
+  "name": "mcp-testing-incognito",
+  "description": "Automated testing with Chrome DevTools MCP server ALWAYS in incognito mode to avoid cache issues",
+  "repo": "Lucasdoreac/mutuapix-workspace",
+  "path": ".claude/skills/mcp-testing-incognito",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lucasdoreac/mutuapix-workspace",
+  "dir_name": "mcp-testing-incognito-lucasdoreac-mutuapix-workspace-2"
+}

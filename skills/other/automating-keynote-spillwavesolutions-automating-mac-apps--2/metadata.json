@@ -1,0 +1,11 @@
+{
+  "name": "automating-keynote",
+  "description": "Automates Apple Keynote using JXA with AppleScript dictionary discovery. Use when asked to \"create Keynote presentations\", \"automate slide decks\", \"JXA Keynote scripting\", or \"generate presentations p",
+  "repo": "SpillwaveSolutions/automating-mac-apps-plugin",
+  "path": "plugins/automating-mac-apps-plugin/skills/automating-keynote",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
+  "dir_name": "automating-keynote-spillwavesolutions-automating-mac-apps--2"
+}

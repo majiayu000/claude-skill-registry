@@ -1,0 +1,11 @@
+{
+  "name": "verification-loops",
+  "description": "Verify changes work before completing. Use browser testing, test suites, and manual checks.",
+  "repo": "kamushadenes/nix",
+  "path": "home/common/ai/resources/claude-code/skills/verification-loops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kamushadenes/nix",
+  "dir_name": "verification-loops-kamushadenes-nix-2"
+}

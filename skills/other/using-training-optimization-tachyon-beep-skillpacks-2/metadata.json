@@ -1,0 +1,11 @@
+{
+  "name": "using-training-optimization",
+  "description": "Router to training optimization skills based on symptoms and training problems",
+  "repo": "tachyon-beep/skillpacks",
+  "path": "plugins/yzmir-training-optimization/skills/using-training-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tachyon-beep/skillpacks",
+  "dir_name": "using-training-optimization-tachyon-beep-skillpacks-2"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "cluster-inspection",
+  "repo": "futuretea/rancher-assistant",
+  "path": "skills/cluster-inspection/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/futuretea/rancher-assistant",
+  "dir_name": "cluster-inspection",
+  "downloaded_at": "2026-03-01T07:48:04.074560Z",
+  "author": "futuretea",
+  "source_url": "https://github.com/futuretea/rancher-assistant/blob/main/skills/cluster-inspection/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/futuretea/rancher-assistant/blob/main/skills/cluster-inspection/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

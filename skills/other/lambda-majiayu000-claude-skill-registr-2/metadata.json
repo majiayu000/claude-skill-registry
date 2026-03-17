@@ -1,0 +1,11 @@
+{
+  "name": "lambda",
+  "description": "AWS Lambda serverless functions for event-driven compute. Use when creating functions, configuring triggers, debugging invocations, optimizing cold starts, setting up event source mappings, or managin",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/devops/lambda-optimization-advisor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "lambda-majiayu000-claude-skill-registr-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sensor-management",
+  "description": "Home Assistant sensor configuration and analytics patterns.",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/home-assistant-architect/skills/sensor-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "sensor-management-lobbi-docs-claude-2"
+}

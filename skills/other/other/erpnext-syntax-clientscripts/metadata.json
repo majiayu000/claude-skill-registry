@@ -1,0 +1,9 @@
+{
+  "name": "erpnext-syntax-clientscripts",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/syntax/erpnext-syntax-clientscripts/SKILL.md",
+  "category": "other",
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-syntax-clientscripts",
+  "downloaded_at": "2026-02-22T05:29:40.457219Z"
+}

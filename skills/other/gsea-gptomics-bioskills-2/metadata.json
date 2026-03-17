@@ -1,0 +1,11 @@
+{
+  "name": "gsea",
+  "description": "Gene Set Enrichment Analysis using clusterProfiler gseGO and gseKEGG. Uses a ranked gene list to find coordinated changes in gene sets without requiring arbitrary significance cutoffs. Detects subtle ",
+  "repo": "GPTomics/bioSkills",
+  "path": "pathway-analysis/gsea",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "gsea-gptomics-bioskills-2"
+}

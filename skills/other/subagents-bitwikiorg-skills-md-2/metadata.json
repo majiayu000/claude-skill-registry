@@ -1,0 +1,11 @@
+{
+  "name": "subagents",
+  "description": "Imported skill subagents from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/langchain/subagents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "subagents-bitwikiorg-skills-md-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "neon-test-branches",
+  "description": "Create isolated Neon database branches for testing. Schema-only branches with auto-cleanup via TTL, test server orchestration, and environment variable management.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/neon-test-branches",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "neon-test-branches-andrelandgraf-fullstackrecipes-2"
+}

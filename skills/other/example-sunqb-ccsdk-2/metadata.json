@@ -1,0 +1,11 @@
+{
+  "name": "example",
+  "description": "这是一个示例 Skill，演示如何创建自定义 Skill。",
+  "repo": "sunqb/ccsdk",
+  "path": ".claude/skills/example",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunqb/ccsdk",
+  "dir_name": "example-sunqb-ccsdk-2"
+}

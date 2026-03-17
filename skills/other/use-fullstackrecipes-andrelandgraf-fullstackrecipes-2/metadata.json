@@ -1,0 +1,11 @@
+{
+  "name": "use-fullstackrecipes",
+  "description": "Discover and follow recipes via MCP resources for setup guides, skills, and cookbooks. The meta-skill for using fullstackrecipes effectively.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/use-fullstackrecipes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "use-fullstackrecipes-andrelandgraf-fullstackrecipes-2"
+}

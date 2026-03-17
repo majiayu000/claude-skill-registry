@@ -1,0 +1,11 @@
+{
+  "name": "scaffold-rules",
+  "description": "Scaffold development rules for AI coding agents. Auto-invoked when user asks about setting up rules, coding conventions, or configuring their AI agent environment.",
+  "repo": "plaited/development-skills",
+  "path": ".claude/skills/scaffold-rules",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plaited/development-skills",
+  "dir_name": "scaffold-rules-plaited-development-skills-2"
+}

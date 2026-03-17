@@ -1,0 +1,11 @@
+{
+  "name": "delete-entry",
+  "description": "Guidelines for safely deleting dictionary entries while properly updating indexes and cross-references.",
+  "repo": "tkgally/je-dict-1",
+  "path": ".claude/skills/delete-entry",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tkgally/je-dict-1",
+  "dir_name": "delete-entry-tkgally-je-dict-1-2"
+}

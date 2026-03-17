@@ -1,0 +1,11 @@
+{
+  "name": "huggingface_transformers",
+  "description": "Hugging Face Transformers best practices including model loading, tokenization, fine-tuning workflows, and inference optimization. Use when working with transformer models, fine-tuning LLMs, implement",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/huggingface_transformers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "huggingface-transformers-vuralserhat86-antigravity-agentic--2"
+}

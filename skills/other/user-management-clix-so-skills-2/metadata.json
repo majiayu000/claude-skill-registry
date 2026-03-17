@@ -1,0 +1,11 @@
+{
+  "name": "user-management",
+  "description": "Implements Clix user identification and user properties (setUserId, removeUserId, setUserProperty/setUserProperties, removeUserProperty/removeUserProperties) with safe schemas, logout best practices, ",
+  "repo": "clix-so/skills",
+  "path": "skills/user-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clix-so/skills",
+  "dir_name": "user-management-clix-so-skills-2"
+}

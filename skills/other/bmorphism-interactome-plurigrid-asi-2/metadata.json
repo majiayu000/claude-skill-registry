@@ -1,0 +1,11 @@
+{
+  "name": "bmorphism-interactome",
+  "description": "GitHub interactome explorer for bmorphism/plurigrid ecosystem. Maps collaborations across AlgebraicJulia, Topos Institute, Anthropic, and MCP servers. Use for discovering cobordisms between research c",
+  "repo": "plurigrid/asi",
+  "path": "skills/bmorphism-interactome",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "bmorphism-interactome-plurigrid-asi-2"
+}

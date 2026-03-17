@@ -1,0 +1,11 @@
+{
+  "name": "lispsyntax-acset",
+  "description": "LispSyntax.jl ↔ ACSets.jl bidirectional bridge with OCaml ppx_sexp_conv-style deriving",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.agents/skills/lispsyntax-acset",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "lispsyntax-acset-plurigrid-asi-2"
+}

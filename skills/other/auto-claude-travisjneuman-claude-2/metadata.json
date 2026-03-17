@@ -1,0 +1,11 @@
+{
+  "name": "auto-claude",
+  "description": "Autonomous multi-agent coding with git worktree isolation, QA validation, and memory. Use for complex features requiring autonomous implementation.",
+  "repo": "travisjneuman/.claude",
+  "path": "skills/auto-claude",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/travisjneuman/.claude",
+  "dir_name": "auto-claude-travisjneuman-claude-2"
+}

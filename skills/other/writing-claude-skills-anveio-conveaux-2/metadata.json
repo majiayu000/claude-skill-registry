@@ -1,0 +1,11 @@
+{
+  "name": "writing-claude-skills",
+  "description": "Create properly formatted Claude Code skills with YAML frontmatter, directory structure, and best practices. Use when creating new skills, converting documentation to skills, or learning how to write ",
+  "repo": "Anveio/conveaux",
+  "path": ".claude/skills/writing-claude-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Anveio/conveaux",
+  "dir_name": "writing-claude-skills-anveio-conveaux-2"
+}

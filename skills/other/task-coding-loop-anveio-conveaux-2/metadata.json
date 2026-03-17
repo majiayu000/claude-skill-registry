@@ -1,0 +1,11 @@
+{
+  "name": "task-coding-loop",
+  "description": "Earn trust through verification. Invoke at session start to establish verifiable checkpoints (environment, baseline, completion). Trust comes from gates, not claims.",
+  "repo": "Anveio/conveaux",
+  "path": ".claude/skills/task-coding-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Anveio/conveaux",
+  "dir_name": "task-coding-loop-anveio-conveaux-2"
+}

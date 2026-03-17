@@ -1,0 +1,17 @@
+{
+  "name": "ln-911-github-triager",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-911-github-triager/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-911-github-triager",
+  "downloaded_at": "2026-03-17T14:32:31.805891Z",
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/ln-911-github-triager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/ln-911-github-triager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

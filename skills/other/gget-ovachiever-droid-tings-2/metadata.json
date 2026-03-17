@@ -1,0 +1,11 @@
+{
+  "name": "gget",
+  "description": "CLI/Python toolkit for rapid bioinformatics queries. Preferred for quick BLAST searches. Access to 20+ databases: gene info (Ensembl/UniProt), AlphaFold, ARCHS4, Enrichr, OpenTargets, COSMIC, genome d",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/gget",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "gget-ovachiever-droid-tings-2"
+}

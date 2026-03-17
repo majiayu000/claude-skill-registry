@@ -1,0 +1,11 @@
+{
+  "name": "akm",
+  "description": "AKM (Asahi Kasei Microdevices) MPN encoding patterns, suffix decoding, and handler guidance. Use when working with AKM audio ICs, magnetic sensors, or electronic compasses.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/akm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "akm-cantara-lib-electronic-compo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "csharp-async-patterns",
+  "description": "Modern C# asynchronous programming patterns using async/await, proper CancellationToken usage, and error handling in async code. Use when guidance needed on async/await best practices, Task compositio",
+  "repo": "creator-hian/claude-code-plugins",
+  "path": "csharp-plugin/skills/csharp-async-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/creator-hian/claude-code-plugins",
+  "dir_name": "csharp-async-patterns-creator-hian-claude-code-plugins-2"
+}

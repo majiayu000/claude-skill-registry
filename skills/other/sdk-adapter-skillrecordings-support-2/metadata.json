@@ -1,0 +1,11 @@
+{
+  "name": "sdk-adapter",
+  "description": "Create SDK adapters for new app integrations. Use when onboarding a new Skill Recordings product, implementing the SupportIntegration interface, or scaffolding a new app.",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/sdk-adapter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "sdk-adapter-skillrecordings-support-2"
+}

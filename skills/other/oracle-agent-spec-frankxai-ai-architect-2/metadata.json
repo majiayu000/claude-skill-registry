@@ -1,0 +1,11 @@
+{
+  "name": "oracle-agent-spec",
+  "description": "Design framework-agnostic AI agents using Oracle's Open Agent Specification for portable, interoperable agentic systems with JSON/YAML definitions",
+  "repo": "frankxai/ai-architect",
+  "path": "skills/oracle-agent-spec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/ai-architect",
+  "dir_name": "oracle-agent-spec-frankxai-ai-architect-2"
+}

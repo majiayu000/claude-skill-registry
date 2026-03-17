@@ -1,0 +1,11 @@
+{
+  "name": "testing-pest",
+  "description": "Generate comprehensive Pest test suites for Laravel projects including tests for controllers, services, Livewire components, commands, jobs, and models with proper describe blocks for organization, mo",
+  "repo": "FlorianRiquelme/statamic-assets",
+  "path": ".claude/skills/testing-pest",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FlorianRiquelme/statamic-assets",
+  "dir_name": "testing-pest-florianriquelme-statamic-assets-2"
+}

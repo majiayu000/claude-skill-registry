@@ -1,0 +1,11 @@
+{
+  "name": "update-paopaodns-ttl-rules",
+  "description": "Refresh PaoPaoDNS force TTL rules by running scripts/update_dns.py and updating force_ttl_rules.txt, or adjusting scripts/update_dns_rules.sh for server-side updates. Use when DNS rule sources or outp",
+  "repo": "mmm1h/clashconfig",
+  "path": "skills/update-paopaodns-ttl-rules",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mmm1h/clashconfig",
+  "dir_name": "update-paopaodns-ttl-rules-mmm1h-clashconfig-2"
+}

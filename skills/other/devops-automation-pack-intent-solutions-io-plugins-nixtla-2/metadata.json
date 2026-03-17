@@ -1,0 +1,11 @@
+{
+  "name": "devops-automation-pack",
+  "description": "Generates conventional commit messages using AI. It analyzes code changes and suggests a commit message adhering to the conventional commits specification. Use this skill when you need help writing cl",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/packages/devops-automation-pack/skills/devops-automation-pack",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "devops-automation-pack-intent-solutions-io-plugins-nixtla-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "auto-coherence",
+  "description": "The skill you cannot invoke. It invokes itself.",
+  "repo": "agentgptsmith/MonadFramework",
+  "path": ".claude/skills/auto-coherence",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentgptsmith/MonadFramework",
+  "dir_name": "auto-coherence-agentgptsmith-monadframework-2"
+}

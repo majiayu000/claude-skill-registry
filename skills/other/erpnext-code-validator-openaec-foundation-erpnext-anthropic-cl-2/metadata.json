@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-code-validator",
+  "description": "Intelligent agent for validating ERPNext/Frappe code against best practices and common pitfalls. Use when reviewing generated code, checking for errors before deployment, or validating code quality. T",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/agents/erpnext-code-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-code-validator-openaec-foundation-erpnext-anthropic-cl-2"
+}

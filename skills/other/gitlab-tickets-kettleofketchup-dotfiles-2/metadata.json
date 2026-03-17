@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-tickets",
+  "description": "Create GitLab issues through conversational brainstorming. Use when user wants to capture ideas, features, bugs, or work items as GitLab tickets. Supports linking related issues, label management, and",
+  "repo": "kettleofketchup/dotfiles",
+  "path": ".claude/skills/gitlab-tickets",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kettleofketchup/dotfiles",
+  "dir_name": "gitlab-tickets-kettleofketchup-dotfiles-2"
+}

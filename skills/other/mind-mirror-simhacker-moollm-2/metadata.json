@@ -1,0 +1,11 @@
+{
+  "name": "mind-mirror",
+  "description": "Personality modeling system based on Timothy Leary's 1985 software + The Sims traits",
+  "repo": "SimHacker/moollm",
+  "path": "skills/mind-mirror",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "mind-mirror-simhacker-moollm-2"
+}

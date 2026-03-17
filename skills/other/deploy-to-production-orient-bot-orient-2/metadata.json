@@ -1,0 +1,11 @@
+{
+  "name": "deploy-to-production",
+  "description": "Comprehensive guide for deploying Orient to production. Use this skill when deploying changes, updating production, fixing deployment failures, or rolling back. Covers pre-flight checks, environment v",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/deploy-to-production",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "deploy-to-production-orient-bot-orient-2"
+}

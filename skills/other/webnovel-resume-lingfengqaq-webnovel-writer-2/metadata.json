@@ -1,0 +1,11 @@
+{
+  "name": "webnovel-resume",
+  "description": "Recovers interrupted webnovel tasks with precise workflow state tracking. Detects interruption point and provides safe recovery options. Activates when user wants to resume or /webnovel-resume.",
+  "repo": "lingfengQAQ/webnovel-writer",
+  "path": ".claude/skills/webnovel-resume",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lingfengQAQ/webnovel-writer",
+  "dir_name": "webnovel-resume-lingfengqaq-webnovel-writer-2"
+}

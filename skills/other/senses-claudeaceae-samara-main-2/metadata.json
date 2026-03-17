@@ -1,0 +1,11 @@
+{
+  "name": "senses",
+  "description": "Monitor the background services that extend the organism's sensory capabilities.",
+  "repo": "claudeaceae/samara-main",
+  "path": ".claude/skills/senses",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/claudeaceae/samara-main",
+  "dir_name": "senses-claudeaceae-samara-main-2"
+}

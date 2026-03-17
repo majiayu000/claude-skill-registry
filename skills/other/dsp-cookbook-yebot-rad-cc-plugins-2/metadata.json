@@ -1,0 +1,11 @@
+{
+  "name": "dsp-cookbook",
+  "description": "Production-ready DSP algorithms including filters, compressors, delays, modulation effects, saturation, and distortion with JUCE integration and optimization techniques. Use when implementing audio pr",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/juce-dev-team/skills/dsp-cookbook",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "dsp-cookbook-yebot-rad-cc-plugins-2"
+}

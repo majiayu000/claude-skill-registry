@@ -1,0 +1,11 @@
+{
+  "name": "rules-organizer",
+  "description": "Organize Claude Code instructions into modular rule files in .claude/rules/. Use when setting up project standards, adding team conventions, creating domain-specific rules, or managing shared coding g",
+  "repo": "jdeweedata/circletel",
+  "path": ".claude/skills/rules-organizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jdeweedata/circletel",
+  "dir_name": "rules-organizer-jdeweedata-circletel-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "room",
+  "description": "Rooms are intertwingled navigable activation context maps. Entering = calling. Exiting = returning.",
+  "repo": "SimHacker/moollm",
+  "path": "skills/room",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "room-simhacker-moollm-2"
+}

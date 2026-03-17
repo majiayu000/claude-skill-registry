@@ -1,0 +1,11 @@
+{
+  "name": "pli-migration-analyzer",
+  "description": "Analyzes legacy PL/I (Programming Language One) programs to assist with migration to modern Java applications. Extracts business logic, data structures, procedure definitions, and file operations from",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/pli-migration-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "dir_name": "pli-migration-analyzer-dauquangthanh-hanoi-rainbow-2"
+}

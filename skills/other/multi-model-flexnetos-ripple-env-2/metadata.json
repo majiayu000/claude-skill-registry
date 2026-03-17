@@ -1,0 +1,11 @@
+{
+  "name": "multi-model",
+  "description": "Multi-model orchestration for ARIA. Activate when dispatching tasks to different LLM providers (OpenAI, local models, cloud providers) or when optimizing cost/latency tradeoffs.",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/multi-model",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FlexNetOS/ripple-env",
+  "dir_name": "multi-model-flexnetos-ripple-env-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "gsea-enrichment",
+  "description": "Gene set enrichment analysis with correct geneset format handling. Critical guidance for loading pathway databases and running enrichment in OmicVerse.",
+  "repo": "Starlitnightly/omicverse",
+  "path": ".claude/skills/gsea-enrichment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Starlitnightly/omicverse",
+  "dir_name": "gsea-enrichment-starlitnightly-omicverse-2"
+}

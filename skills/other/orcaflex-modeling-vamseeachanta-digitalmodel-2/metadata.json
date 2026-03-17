@@ -1,0 +1,11 @@
+{
+  "name": "orcaflex-modeling",
+  "description": "Setup, configure, and run OrcaFlex hydrodynamic simulations using the universal runner. Use for marine/offshore analysis including static analysis, dynamic simulations, mooring analysis, and batch pro",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcaflex-modeling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcaflex-modeling-vamseeachanta-digitalmodel-2"
+}

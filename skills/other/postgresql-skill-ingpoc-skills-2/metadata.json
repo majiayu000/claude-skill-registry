@@ -1,0 +1,11 @@
+{
+  "name": "postgresql-skill",
+  "description": "This skill provides PostgreSQL-specific patterns for database design, optimization, and transaction management",
+  "repo": "ingpoc/SKILLS",
+  "path": "postgresql-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ingpoc/SKILLS",
+  "dir_name": "postgresql-skill-ingpoc-skills-2"
+}

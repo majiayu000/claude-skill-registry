@@ -1,0 +1,11 @@
+{
+  "name": "dag-semantic-matcher",
+  "description": "Matches natural language task descriptions to appropriate skills using semantic similarity. Handles fuzzy matching, intent extraction, and capability alignment. Activate on 'find skill', 'match task',",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-semantic-matcher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-semantic-matcher-erichowens-some-claude-skills-2"
+}

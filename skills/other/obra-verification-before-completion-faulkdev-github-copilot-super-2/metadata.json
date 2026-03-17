@@ -1,0 +1,11 @@
+{
+  "name": "obra-verification-before-completion",
+  "description": "Claiming work is complete without verification is dishonesty, not efficiency.",
+  "repo": "faulkdev/github-copilot-superpowers",
+  "path": "scripts/overrides/obra/obra-verification-before-completion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/faulkdev/github-copilot-superpowers",
+  "dir_name": "obra-verification-before-completion-faulkdev-github-copilot-super-2"
+}

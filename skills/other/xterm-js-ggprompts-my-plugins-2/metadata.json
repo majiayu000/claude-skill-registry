@@ -1,0 +1,11 @@
+{
+  "name": "xterm-js",
+  "description": "This skill should be used when working with xterm.js terminal implementations, React-based terminal applications, WebSocket terminal communication, or refactoring terminal-related code. It provides ba",
+  "repo": "GGPrompts/my-plugins",
+  "path": "plugins/terminal/xterm-js/skills/xterm-js",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GGPrompts/my-plugins",
+  "dir_name": "xterm-js-ggprompts-my-plugins-2"
+}

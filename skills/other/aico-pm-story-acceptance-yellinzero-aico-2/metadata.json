@@ -1,0 +1,11 @@
+{
+  "name": "aico-pm-story-acceptance",
+  "description": "Verify and close stories after frontend/backend tasks are completed. Check ALL related task files, update story acceptance criteria checkboxes.\n\nUNIQUE VALUE: Ensures BOTH frontend AND backend tasks a",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-pm-story-acceptance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-pm-story-acceptance-yellinzero-aico-2"
+}

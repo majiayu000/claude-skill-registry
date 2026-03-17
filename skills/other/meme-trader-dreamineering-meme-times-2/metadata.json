@@ -1,0 +1,11 @@
+{
+  "name": "meme-trader",
+  "description": "Solana memecoin trading analysis and execution support. Use when analyzing tokens, detecting rugs, finding alpha, or planning trades on pump.fun, Raydium, Jupiter. Covers: token metrics, liquidity ana",
+  "repo": "dreamineering/meme-times",
+  "path": ".claude/skills/meme-trader",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dreamineering/meme-times",
+  "dir_name": "meme-trader-dreamineering-meme-times-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "privacylrs-test-runner",
+  "description": "Run PlatformIO tests for PrivacyLRS to validate code changes and security fixes",
+  "repo": "sensei-hacker/inav-claude",
+  "path": ".claude/skills/privacylrs-test-runner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sensei-hacker/inav-claude",
+  "dir_name": "privacylrs-test-runner-sensei-hacker-inav-claude-2"
+}

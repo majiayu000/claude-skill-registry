@@ -1,0 +1,11 @@
+{
+  "name": "planning-inventory",
+  "description": "Scans and reports all planning-related components across marketplace bundles",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-workflow/skills/planning-inventory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "planning-inventory-cuioss-plan-marshall-2"
+}

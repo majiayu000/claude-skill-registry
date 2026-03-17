@@ -1,0 +1,11 @@
+{
+  "name": "bknd-repo-search-with-opencode",
+  "description": "Use when querying the bknd source repository with btca CLI. Covers setup, configuration, and query patterns for learning bknd internals including data module, authentication, media handling, and adapt",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-repo-search-with-opencode",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-repo-search-with-opencode-cameronapak-freedom-stack-v3-2"
+}

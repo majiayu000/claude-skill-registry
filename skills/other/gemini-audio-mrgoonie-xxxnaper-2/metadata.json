@@ -1,0 +1,11 @@
+{
+  "name": "gemini-audio",
+  "description": "Guide for implementing Google Gemini API audio capabilities - analyze audio with transcription, summarization, and understanding (up to 9.5 hours), plus generate speech with controllable TTS. Use when",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/gemini-audio",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "gemini-audio-mrgoonie-xxxnaper-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "candidate-evaluation",
+  "description": "Evaluate GitHub contributors for MLOps/engineering roles. Use when analyzing candidates, researching GitHub profiles, or updating CONTRIBUTORS.md with hiring assessments.",
+  "repo": "pollinations/pollinations",
+  "path": ".claude/skills/candidate-evaluation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pollinations/pollinations",
+  "dir_name": "candidate-evaluation-pollinations-pollinations-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "moai-project-batch-questions",
+  "description": "Standardize AskUserQuestion patterns and provide reusable question templates for batch optimization",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-project-batch-questions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-project-batch-questions-jg-chalk-io-nora-livekit-2"
+}

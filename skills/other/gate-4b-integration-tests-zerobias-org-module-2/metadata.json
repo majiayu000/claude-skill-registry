@@ -1,0 +1,11 @@
+{
+  "name": "gate-4b-integration-tests",
+  "description": "Purpose: Validate integration test quality, test data management, and credential handling",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/gate-4b-integration-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "gate-4b-integration-tests-zerobias-org-module-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "set-secret",
+  "description": "Sets SST secrets for deployed environments. Use when configuring Clerk, database, Stripe, or webhook secrets.",
+  "repo": "MenadBt/prospection",
+  "path": ".claude/skills/set-secret",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MenadBt/prospection",
+  "dir_name": "set-secret-menadbt-prospection-2"
+}

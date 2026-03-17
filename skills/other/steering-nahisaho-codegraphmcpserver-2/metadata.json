@@ -1,0 +1,11 @@
+{
+  "name": "steering",
+  "description": "steering skill\n\nTrigger terms: steering, project memory, codebase analysis, auto-update context, generate steering, architecture patterns, tech stack analysis, project structure, analyze codebase, und",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/steering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "dir_name": "steering-nahisaho-codegraphmcpserver-2"
+}

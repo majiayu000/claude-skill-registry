@@ -1,0 +1,11 @@
+{
+  "name": "doc-blueprint",
+  "description": "Gera blueprints de documentacao usando templates padronizados.\nSuporta README, API docs, arquitetura, e guias.\nUse quando: criar README, documentar API, gerar arquitetura.\n",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/doc-blueprint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "doc-blueprint-arbgjr-satra-2"
+}

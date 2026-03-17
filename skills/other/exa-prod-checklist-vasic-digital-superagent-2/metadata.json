@@ -1,0 +1,11 @@
+{
+  "name": "exa-prod-checklist",
+  "description": "Execute Exa production deployment checklist and rollback procedures.\nUse when deploying Exa integrations to production, preparing for launch,\nor implementing go-live procedures.\nTrigger with phrases l",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-prod-checklist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-prod-checklist-vasic-digital-superagent-2"
+}

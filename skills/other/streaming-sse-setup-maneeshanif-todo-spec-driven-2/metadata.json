@@ -1,0 +1,11 @@
+{
+  "name": "streaming-sse-setup",
+  "description": "DEPRECATED - Use chatkit-backend skill instead. SSE streaming is now part of the chatkit-backend skill for ChatKit integration.",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/streaming-sse-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "streaming-sse-setup-maneeshanif-todo-spec-driven-2"
+}

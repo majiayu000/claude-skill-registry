@@ -1,0 +1,11 @@
+{
+  "name": "openharmony-testing-apis",
+  "description": "当开发 OpenHarmony 应用需要使用 JsUnit、UiTest 或 PerfTest 框架进行测试时，或需要模拟 UI 交互、测量性能指标、实现自定义测试运行器时使用",
+  "repo": "mengfei0053/skills",
+  "path": "skills/openharmony-testing-apis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mengfei0053/skills",
+  "dir_name": "openharmony-testing-apis-mengfei0053-skills-2"
+}

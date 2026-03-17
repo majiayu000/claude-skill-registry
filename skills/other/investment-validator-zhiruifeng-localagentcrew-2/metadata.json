@@ -1,0 +1,11 @@
+{
+  "name": "investment-validator",
+  "description": "Validates investment data accuracy by cross-referencing authorized APIs and financial sources",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/investment-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "dir_name": "investment-validator-zhiruifeng-localagentcrew-2"
+}

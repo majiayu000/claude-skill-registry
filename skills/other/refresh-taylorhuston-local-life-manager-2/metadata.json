@@ -1,0 +1,11 @@
+{
+  "name": "refresh",
+  "description": "Silently refresh AI context by reading project configuration and guidelines. Use when starting a new conversation, after context loss, or before major tasks.",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/refresh",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "refresh-taylorhuston-local-life-manager-2"
+}

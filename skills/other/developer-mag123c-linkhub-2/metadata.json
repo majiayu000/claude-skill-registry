@@ -1,0 +1,11 @@
+{
+  "name": "developer",
+  "description": "기능 개발 스킬. 타입 정의, Storage API, 비즈니스 로직. 코드 작성 시 사용.",
+  "repo": "mag123c/linkhub",
+  "path": ".claude/skills/developer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mag123c/linkhub",
+  "dir_name": "developer-mag123c-linkhub-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "plugin-maintain",
+  "description": "Comprehensive maintenance skill for marketplace components - update components, manage knowledge, maintain READMEs, restructure, and apply orchestration compliance",
+  "repo": "cuioss/plan-marshall",
+  "path": "test/pm-plugin-development/plugin-maintain/fixtures/knowledge/skill-with-references",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "plugin-maintain-cuioss-plan-marshall-2"
+}

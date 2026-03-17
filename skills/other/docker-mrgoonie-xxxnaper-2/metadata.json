@@ -1,0 +1,11 @@
+{
+  "name": "docker",
+  "description": "Guide for using Docker - a containerization platform for building, running, and deploying applications in isolated containers. Use when containerizing applications, creating Dockerfiles, working with ",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/docker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "docker-mrgoonie-xxxnaper-2"
+}

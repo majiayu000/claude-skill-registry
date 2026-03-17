@@ -1,0 +1,9 @@
+{
+  "name": "security-review",
+  "repo": "Async-IO/pierre_mcp_server",
+  "path": ".claude/skills/security-review/SKILL.md",
+  "category": "other",
+  "source": "github.com/Async-IO/pierre_mcp_server",
+  "dir_name": "security-review",
+  "downloaded_at": "2026-02-15T04:46:17.028340Z"
+}

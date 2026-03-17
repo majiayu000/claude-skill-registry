@@ -1,0 +1,11 @@
+{
+  "name": "python-venv-manager",
+  "description": "Python 虚拟环境自动化管理工具。当项目需要创建或管理 Python 虚拟环境（.venv）时使用此技能：检测现有环境、创建新环境、生成 requirements.txt、安装依赖包、配置 Git 忽略规则。",
+  "repo": "fsyyft-go/kratos-layout",
+  "path": ".claude/skills/python-venv-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fsyyft-go/kratos-layout",
+  "dir_name": "python-venv-manager-fsyyft-go-kratos-layout-2"
+}

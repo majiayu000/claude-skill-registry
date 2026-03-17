@@ -1,0 +1,11 @@
+{
+  "name": "skill-planner",
+  "description": "Create phased implementation plans from research findings. Invoke when a task needs an implementation plan.",
+  "repo": "benbrastmckie/.config",
+  "path": ".claude/skills/skill-planner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benbrastmckie/.config",
+  "dir_name": "skill-planner-benbrastmckie-config-2"
+}

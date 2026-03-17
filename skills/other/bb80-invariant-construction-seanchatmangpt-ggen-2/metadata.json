@@ -1,0 +1,11 @@
+{
+  "name": "bb80-invariant-construction",
+  "description": "Extract invariants from specification, encode in types/structure, enable single-pass construction.",
+  "repo": "seanchatmangpt/ggen",
+  "path": ".claude/skills/bb80-invariant-construction",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/seanchatmangpt/ggen",
+  "dir_name": "bb80-invariant-construction-seanchatmangpt-ggen-2"
+}

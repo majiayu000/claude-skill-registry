@@ -1,0 +1,11 @@
+{
+  "name": "test-and-break",
+  "description": "Autonomous testing skill that opens a deployed app, goes through user flows, tries to break things, and writes detailed bug reports. Use after deploying to staging. Triggers on: test the app, find bug",
+  "repo": "rohunj/claude-build-workflow",
+  "path": "skills/test-and-break",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rohunj/claude-build-workflow",
+  "dir_name": "test-and-break-rohunj-claude-build-workflo-2"
+}

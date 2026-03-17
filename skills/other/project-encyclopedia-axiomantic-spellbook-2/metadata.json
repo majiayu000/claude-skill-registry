@@ -1,0 +1,11 @@
+{
+  "name": "project-encyclopedia",
+  "description": "<ONBOARD> Use on first session in a project, or when user asks for codebase overview. Creates persistent glossary, architecture maps, and decision records to solve agent amnesia.",
+  "repo": "axiomantic/spellbook",
+  "path": "skills/project-encyclopedia",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/axiomantic/spellbook",
+  "dir_name": "project-encyclopedia-axiomantic-spellbook-2"
+}

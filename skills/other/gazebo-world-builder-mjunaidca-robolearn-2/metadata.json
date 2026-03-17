@@ -1,0 +1,11 @@
+{
+  "name": "gazebo-world-builder",
+  "description": "Design simulation worlds using SDF with ground planes, models, physics configuration, and lighting",
+  "repo": "mjunaidca/robolearn",
+  "path": ".claude/skills/gazebo-world-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mjunaidca/robolearn",
+  "dir_name": "gazebo-world-builder-mjunaidca-robolearn-2"
+}

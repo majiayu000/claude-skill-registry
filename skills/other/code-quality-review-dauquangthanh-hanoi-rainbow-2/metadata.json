@@ -1,0 +1,11 @@
+{
+  "name": "code-quality-review",
+  "description": "Conducts comprehensive code quality reviews including code smells detection, maintainability assessment, complexity analysis, design pattern evaluation, naming conventions, code duplication, technical",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/code-quality-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "dir_name": "code-quality-review-dauquangthanh-hanoi-rainbow-2"
+}

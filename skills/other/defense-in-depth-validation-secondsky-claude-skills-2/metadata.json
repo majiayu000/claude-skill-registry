@@ -1,0 +1,11 @@
+{
+  "name": "defense-in-depth-validation",
+  "description": "Validate at every layer data passes through to make bugs impossible. Use when invalid data causes failures deep in execution, requiring validation at multiple system layers.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/defense-in-depth-validation/skills/defense-in-depth-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "defense-in-depth-validation-secondsky-claude-skills-2"
+}

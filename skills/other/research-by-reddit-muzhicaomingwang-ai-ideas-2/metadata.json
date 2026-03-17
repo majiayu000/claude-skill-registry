@@ -1,0 +1,11 @@
+{
+  "name": "research-by-reddit",
+  "description": "基于 Reddit API 进行深度调研并生成研究报告。支持搜索、获取帖子、评论分析、情感分析等功能",
+  "repo": "muzhicaomingwang/ai-ideas",
+  "path": ".claude/skills/research-by-reddit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/muzhicaomingwang/ai-ideas",
+  "dir_name": "research-by-reddit-muzhicaomingwang-ai-ideas-2"
+}

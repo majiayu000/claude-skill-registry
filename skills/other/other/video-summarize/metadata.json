@@ -1,0 +1,9 @@
+{
+  "name": "video-summarize",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/video-summarize/SKILL.md",
+  "category": "other",
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "video-summarize",
+  "downloaded_at": "2026-02-22T05:48:24.844524Z"
+}

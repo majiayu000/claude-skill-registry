@@ -1,0 +1,11 @@
+{
+  "name": "cfn-skill-management",
+  "description": "Skill loading, propagation, and building for CFN. Use when dynamically discovering and loading skills, deploying skills across environments, or creating new skill scaffolding.",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-skill-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "cfn-skill-management-masharratt-claude-flow-novice-2"
+}

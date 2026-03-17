@@ -1,0 +1,11 @@
+{
+  "name": "dependency-resolver",
+  "description": "Automated dependency conflict detection and resolution. Detects local vs CI environment mismatches, compares versions, and generates pinning recommendations. Run as pre-push check to catch issues earl",
+  "repo": "rysweet/azlin",
+  "path": ".claude/skills/dependency-resolver",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/azlin",
+  "dir_name": "dependency-resolver-rysweet-azlin-2"
+}

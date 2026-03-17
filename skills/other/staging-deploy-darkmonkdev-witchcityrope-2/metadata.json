@@ -1,0 +1,11 @@
+{
+  "name": "staging-deploy",
+  "description": "Deploys WitchCityRope to staging environment on DigitalOcean. Automates build, registry push, server deployment, database migrations (if needed), health verification, and rollback capability. SINGLE S",
+  "repo": "DarkMonkDev/WitchCityRope",
+  "path": ".claude/skills/staging-deploy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DarkMonkDev/WitchCityRope",
+  "dir_name": "staging-deploy-darkmonkdev-witchcityrope-2"
+}

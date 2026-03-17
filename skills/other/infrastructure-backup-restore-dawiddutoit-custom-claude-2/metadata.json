@@ -1,0 +1,11 @@
+{
+  "name": "infrastructure-backup-restore",
+  "description": "Performs backup and restoration operations for network infrastructure including Docker\nvolumes (Pi-hole, Caddy certificates), configuration files, and .env secrets. Use when\nbacking up infrastructure ",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/infrastructure-backup-restore",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "infrastructure-backup-restore-dawiddutoit-custom-claude-2"
+}

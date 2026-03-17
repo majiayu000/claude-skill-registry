@@ -1,0 +1,11 @@
+{
+  "name": "convex-cron-jobs",
+  "description": "Scheduled function patterns for background tasks including interval scheduling, cron expressions, job monitoring, retry strategies, and best practices for long-running tasks",
+  "repo": "waynesutton/convexskills",
+  "path": "skills/convex-cron-jobs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/waynesutton/convexskills",
+  "dir_name": "convex-cron-jobs-waynesutton-convexskills-2"
+}

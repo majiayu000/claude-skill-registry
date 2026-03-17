@@ -1,0 +1,11 @@
+{
+  "name": "vasp",
+  "description": "Expert assistant for VASP (Vienna Ab initio Simulation Package) calculations - input file generation, parameter selection, workflow setup, and best practices for accurate DFT calculations",
+  "repo": "jkitchin/skillz",
+  "path": "skills/programming/vasp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jkitchin/skillz",
+  "dir_name": "vasp-jkitchin-skillz-2"
+}

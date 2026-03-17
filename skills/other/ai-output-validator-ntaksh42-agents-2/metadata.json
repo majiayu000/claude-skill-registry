@@ -1,0 +1,11 @@
+{
+  "name": "ai-output-validator",
+  "description": "AI出力の品質を自動検証するスキル。事実確認、論理性、一貫性、幻覚（ハルシネーション）検出、バイアス分析、安全性チェックを実施し、改善提案を提供。",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/ai-output-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "ai-output-validator-ntaksh42-agents-2"
+}

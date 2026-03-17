@@ -1,0 +1,17 @@
+{
+  "name": "agent-browser",
+  "repo": "avibebuilder/claude-prime",
+  "path": ".claude/skills/agent-browser/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/avibebuilder/claude-prime",
+  "dir_name": "agent-browser-avibebuilder-claude-prime",
+  "downloaded_at": "2026-03-17T14:22:39.327691Z",
+  "author": "avibebuilder",
+  "source_url": "https://github.com/avibebuilder/claude-prime/blob/main/.claude/skills/agent-browser/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/avibebuilder/claude-prime/blob/main/.claude/skills/agent-browser/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

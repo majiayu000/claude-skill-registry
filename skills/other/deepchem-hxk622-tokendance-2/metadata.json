@@ -1,0 +1,11 @@
+{
+  "name": "deepchem",
+  "description": "Molecular ML with diverse featurizers and pre-built datasets. Use for property prediction (ADMET, toxicity) with traditional ML or GNNs when you want extensive featurization options and MoleculeNet be",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/chemistry/deepchem",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "deepchem-hxk622-tokendance-2"
+}

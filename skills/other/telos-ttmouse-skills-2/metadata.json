@@ -1,0 +1,11 @@
+{
+  "name": "telos",
+  "description": "个人认知框架系统。当涉及目标规划、决策建议、项目方向、工作方式优化时触发，或用户显式调用\"/telos\"。加载完整画像提供个性化响应，支持画像进化和定期复盘。",
+  "repo": "ttmouse/skills",
+  "path": "telos",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ttmouse/skills",
+  "dir_name": "telos-ttmouse-skills-2"
+}

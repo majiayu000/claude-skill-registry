@@ -1,0 +1,11 @@
+{
+  "name": "agent-prompts",
+  "description": "This skill should be used when the user asks to \"generate tasks\", \"create implementation plan\", \"break down feature\", \"write agent prompts\", \"decompose into tasks\", \"create work items\", or when creati",
+  "repo": "jsegov/shipspec-claude-code-plugin",
+  "path": "skills/agent-prompts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jsegov/shipspec-claude-code-plugin",
+  "dir_name": "agent-prompts-jsegov-shipspec-claude-code-2"
+}

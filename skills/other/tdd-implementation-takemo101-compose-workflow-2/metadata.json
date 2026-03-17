@@ -1,0 +1,11 @@
+{
+  "name": "tdd-implementation",
+  "description": "container-use環境内でのTDD実装フロー（Red→Green→Refactor）、テスト項目書の活用、DBマイグレーションテストを定義",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/tdd-implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "tdd-implementation-takemo101-compose-workflow-2"
+}

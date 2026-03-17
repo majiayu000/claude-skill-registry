@@ -1,0 +1,11 @@
+{
+  "name": "translator",
+  "description": "Translate code comments, documentation, and UI strings between multiple languages. Use when internationalizing applications or translating technical documentation.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/translator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "translator-ntaksh42-agents-2"
+}

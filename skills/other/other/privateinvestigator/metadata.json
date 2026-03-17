@@ -1,0 +1,9 @@
+{
+  "name": "privateinvestigator",
+  "repo": "danielmiessler/Personal_AI_Infrastructure",
+  "path": "Packs/pai-privateinvestigator-skill/src/skills/PrivateInvestigator/SKILL.md",
+  "category": "other",
+  "source": "github.com/danielmiessler/Personal_AI_Infrastructure",
+  "dir_name": "privateinvestigator",
+  "downloaded_at": "2026-02-15T06:53:09.165436Z"
+}

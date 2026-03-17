@@ -1,0 +1,11 @@
+{
+  "name": "universal-templating",
+  "description": "Master all templating formats - Handlebars, Cookiecutter, Copier, Maven, and Harness - with format selection matrix, generation workflows, and best practices",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/claude-code-templating-plugin/skills/universal-templating",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "universal-templating-lobbi-docs-claude-2"
+}

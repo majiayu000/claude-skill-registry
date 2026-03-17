@@ -1,0 +1,11 @@
+{
+  "name": "fixup-commit",
+  "description": "Execute /fixup-commit <commit-hash> slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/fixup-commit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "fixup-commit-sasamuku-dotfiles-2"
+}

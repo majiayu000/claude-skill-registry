@@ -1,0 +1,11 @@
+{
+  "name": "scout",
+  "description": "Find and document external code patterns from public sources. Use when user mentions 'find examples', 'scout patterns', 'research implementations', or starting new feature without precedent.",
+  "repo": "HR-AR/Project-Conductor",
+  "path": ".claude/skills/scout",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HR-AR/Project-Conductor",
+  "dir_name": "scout-hr-ar-project-conductor-2"
+}

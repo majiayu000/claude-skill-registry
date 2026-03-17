@@ -1,0 +1,11 @@
+{
+  "name": "create_plan",
+  "description": "Create detailed implementation plans through interactive research and iteration",
+  "repo": "tfunk1030/vibe",
+  "path": ".claude/skills/create_plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tfunk1030/vibe",
+  "dir_name": "create-plan-tfunk1030-vibe-2"
+}

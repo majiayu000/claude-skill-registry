@@ -1,0 +1,11 @@
+{
+  "name": "privacy",
+  "description": "Privacy and data protection - GDPR, CCPA, consent. Use when handling user data.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/privacy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "privacy-sylphxai-flow-2"
+}

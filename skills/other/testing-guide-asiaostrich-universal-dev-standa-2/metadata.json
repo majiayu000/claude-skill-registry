@@ -1,0 +1,11 @@
+{
+  "name": "testing-guide",
+  "description": "Testing pyramid and test writing standards for UT/IT/ST/E2E.\nSupports ISTQB and Industry Pyramid frameworks.\nUse when: writing tests, discussing test coverage, test strategy, or test naming.\nKeywords:",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "path": "locales/zh-CN/skills/claude-code/testing-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AsiaOstrich/universal-dev-standards",
+  "dir_name": "testing-guide-asiaostrich-universal-dev-standa-2"
+}

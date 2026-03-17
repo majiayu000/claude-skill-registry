@@ -1,0 +1,11 @@
+{
+  "name": "rspress-frontmatter",
+  "description": "Configure RSPress frontmatter for documentation pages. Use when setting up page metadata, controlling layout options, or configuring home page hero/features sections.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/rspress-frontmatter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "rspress-frontmatter-spencerbeggs-claude-design-coordi-2"
+}

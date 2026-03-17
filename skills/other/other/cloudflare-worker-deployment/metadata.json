@@ -1,0 +1,9 @@
+{
+  "name": "cloudflare-worker-deployment",
+  "repo": "AgentiveCity/SkillFactory",
+  "path": ".claude/skills/cloudflare-worker-deployment/SKILL.md",
+  "category": "other",
+  "source": "github.com/AgentiveCity/SkillFactory",
+  "dir_name": "cloudflare-worker-deployment",
+  "downloaded_at": "2026-02-22T04:39:02.118350Z"
+}

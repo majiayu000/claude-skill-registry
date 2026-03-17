@@ -1,0 +1,11 @@
+{
+  "name": "dev-delegate",
+  "description": "Internal skill used by dev-implement during Phase 5 of /dev workflow. NOT user-facing - should only be invoked by dev-ralph-loop inside each implementation iteration. Handles Task agent spawning with ",
+  "repo": "edwinhu/workflows",
+  "path": "lib/skills/dev-delegate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "dev-delegate-edwinhu-workflows-2"
+}

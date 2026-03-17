@@ -1,0 +1,9 @@
+{
+  "name": "integrations",
+  "repo": "Automattic/wordpress-activitypub",
+  "path": ".claude/skills/integrations/SKILL.md",
+  "category": "other",
+  "source": "github.com/Automattic/wordpress-activitypub",
+  "dir_name": "integrations",
+  "downloaded_at": "2026-02-15T04:48:15.726285Z"
+}

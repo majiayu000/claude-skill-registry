@@ -1,0 +1,11 @@
+{
+  "name": "auth-verify",
+  "description": "Authenticate to web app and verify session state with Chrome DevTools session sharing",
+  "repo": "rayzru/info-web",
+  "path": ".claude/skills/auth-verify",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rayzru/info-web",
+  "dir_name": "auth-verify-rayzru-info-web-2"
+}

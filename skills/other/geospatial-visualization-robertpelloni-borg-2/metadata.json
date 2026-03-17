@@ -1,0 +1,11 @@
+{
+  "name": "geospatial-visualization",
+  "description": "Master geographic and mapping visualizations with GeoViews. Use this skill when creating interactive maps, visualizing point/polygon/line geographic data, building choropleth maps, performing spatial ",
+  "repo": "robertpelloni/borg",
+  "path": "agents/rse-agents/plugins/holoviz-visualization/skills/geospatial-visualization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertpelloni/borg",
+  "dir_name": "geospatial-visualization-robertpelloni-borg-2"
+}

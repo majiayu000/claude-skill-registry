@@ -1,0 +1,11 @@
+{
+  "name": "pattern-critic",
+  "description": "Critic agent that reviews pattern code for violations of documented rules, gotchas, and anti-patterns. Produces categorized checklist output with [PASS]/[FAIL] for each rule.",
+  "repo": "commontoolsinc/labs",
+  "path": ".claude/skills/pattern-critic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/commontoolsinc/labs",
+  "dir_name": "pattern-critic-commontoolsinc-labs-2"
+}

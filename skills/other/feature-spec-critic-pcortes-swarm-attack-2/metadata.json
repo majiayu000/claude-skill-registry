@@ -1,0 +1,11 @@
+{
+  "name": "feature-spec-critic",
+  "description": "Review and score engineering specs against a startup-focused quality rubric. Penalize over-engineering and reward simplicity.\n",
+  "repo": "pcortes/swarm-attack",
+  "path": ".claude/skills/feature-spec-critic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pcortes/swarm-attack",
+  "dir_name": "feature-spec-critic-pcortes-swarm-attack-2"
+}

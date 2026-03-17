@@ -1,0 +1,11 @@
+{
+  "name": "moonshot-ai",
+  "description": "Moonshot AI Kimi API - Trillion-parameter MoE model with 256K context, tool calling, and agentic capabilities for chat, coding, and autonomous task execution",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/moonshot-ai",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "moonshot-ai-enuno-claude-command-and-c-2"
+}

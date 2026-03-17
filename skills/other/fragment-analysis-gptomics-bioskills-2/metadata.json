@@ -1,0 +1,11 @@
+{
+  "name": "fragment-analysis",
+  "description": "Analyze restriction digest fragments using Biopython Bio.Restriction. Predict fragment sizes, get fragment sequences, simulate gel electrophoresis patterns, and perform double digests.",
+  "repo": "GPTomics/bioSkills",
+  "path": "restriction-analysis/fragment-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "fragment-analysis-gptomics-bioskills-2"
+}

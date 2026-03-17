@@ -1,0 +1,11 @@
+{
+  "name": "kanban-management",
+  "description": "Manages the Anubis Issue Tracker GitHub project board. Use when you need to organize issues by difficulty/status, move issues through workflow stages, or generate board status reports.",
+  "repo": "forrestthewoods/anubis",
+  "path": ".claude/skills/kanban-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/forrestthewoods/anubis",
+  "dir_name": "kanban-management-forrestthewoods-anubis-2"
+}

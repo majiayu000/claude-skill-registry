@@ -1,0 +1,17 @@
+{
+  "name": "stepback",
+  "repo": "anombyte93/atlas-session-lifecycle",
+  "path": "skills/stepback/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/anombyte93/atlas-session-lifecycle",
+  "dir_name": "stepback",
+  "downloaded_at": "2026-03-01T06:42:53.463924Z",
+  "author": "anombyte93",
+  "source_url": "https://github.com/anombyte93/atlas-session-lifecycle/blob/main/skills/stepback/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anombyte93/atlas-session-lifecycle/blob/main/skills/stepback/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

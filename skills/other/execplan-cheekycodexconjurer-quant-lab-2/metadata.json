@@ -1,0 +1,11 @@
+{
+  "name": "execplan",
+  "description": "Create and maintain PLANS.md for long-running or risky tasks.",
+  "repo": "CheekyCodexConjurer/quant-lab",
+  "path": ".agent-docs/templates/.codex/skills/execplan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CheekyCodexConjurer/quant-lab",
+  "dir_name": "execplan-cheekycodexconjurer-quant-lab-2"
+}

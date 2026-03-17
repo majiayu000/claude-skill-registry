@@ -1,0 +1,11 @@
+{
+  "name": "release-checklist",
+  "description": "Run a final release checklist before shipping. Verifies no TODOs, no debug code, docs updated, tests passing, dependencies justified, and security reviewed.",
+  "repo": "zbruhnke/claude-code-starter",
+  "path": ".claude/skills/release-checklist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zbruhnke/claude-code-starter",
+  "dir_name": "release-checklist-zbruhnke-claude-code-starter-2"
+}

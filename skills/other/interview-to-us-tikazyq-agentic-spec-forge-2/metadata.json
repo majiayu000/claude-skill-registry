@@ -1,0 +1,11 @@
+{
+  "name": "interview-to-us",
+  "description": "将访谈记录、会议纪要、邮件沟通等非结构化内容快速转换为符合CRAFT标准的User Story草稿。适合在需求调研阶段使用，当有大量访谈笔记需要结构化时。帮助不会写US的PM/BA快速上手，从自然语言访谈记录自动提取As-Want-So结构，节省手动整理时间（1小时→10分钟）。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/requirements/interview-to-us",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "interview-to-us-tikazyq-agentic-spec-forge-2"
+}

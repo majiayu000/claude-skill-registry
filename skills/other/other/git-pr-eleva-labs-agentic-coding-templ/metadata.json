@@ -1,0 +1,9 @@
+{
+  "name": "git-pr",
+  "repo": "eleva-labs/agentic-coding-templates",
+  "path": ".claude/skills/shared/git-pr/SKILL.md",
+  "category": "other",
+  "source": "github.com/eleva-labs/agentic-coding-templates",
+  "dir_name": "git-pr-eleva-labs-agentic-coding-templ",
+  "downloaded_at": "2026-02-22T07:03:43.886265Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "backend-php",
+  "description": "PHP Developer Agent. Laravel 기반 백엔드 개발을 담당합니다. Eloquent ORM, Artisan, Queue, Sanctum 전문.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/backend-php",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "backend-php-shaul1991-shaul-agents-plugin-2"
+}

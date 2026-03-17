@@ -1,0 +1,11 @@
+{
+  "name": "sentry-error-manager",
+  "description": "Fetch, analyze, and resolve Sentry errors with CLI integration; use when reviewing production errors, resolving issues, analyzing error patterns, or managing Sentry configuration",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/sentry-error-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "sentry-error-manager-javeedishaq-ai-workflow-orchestr-2"
+}

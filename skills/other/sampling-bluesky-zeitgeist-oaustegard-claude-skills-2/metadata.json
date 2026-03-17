@@ -1,0 +1,11 @@
+{
+  "name": "sampling-bluesky-zeitgeist",
+  "description": "DEPRECATED - Use browsing-bluesky skill instead. Sample and analyze Bluesky firehose to identify trending topics and content clusters. Use when user asks about \"what's happening on Bluesky\", \"Bluesky ",
+  "repo": "oaustegard/claude-skills",
+  "path": "sampling-bluesky-zeitgeist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "sampling-bluesky-zeitgeist-oaustegard-claude-skills-2"
+}

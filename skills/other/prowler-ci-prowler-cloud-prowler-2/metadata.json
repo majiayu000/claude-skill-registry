@@ -1,0 +1,11 @@
+{
+  "name": "prowler-ci",
+  "description": "Helps with Prowler repository CI and PR gates (GitHub Actions workflows). Trigger: When investigating CI checks failing on a PR, PR title validation, changelog gate/no-changelog label, conflict marker",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/prowler-ci",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/prowler-cloud/prowler",
+  "dir_name": "prowler-ci-prowler-cloud-prowler-2"
+}

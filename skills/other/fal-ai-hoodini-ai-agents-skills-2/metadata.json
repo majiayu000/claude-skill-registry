@@ -1,0 +1,11 @@
+{
+  "name": "fal-ai",
+  "description": "Generate images, videos, and audio with fal.ai serverless AI. Use when building AI image generation, video generation, image editing, or real-time AI features. Triggers on fal.ai, fal, AI image genera",
+  "repo": "hoodini/ai-agents-skills",
+  "path": "skills/fal-ai",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hoodini/ai-agents-skills",
+  "dir_name": "fal-ai-hoodini-ai-agents-skills-2"
+}

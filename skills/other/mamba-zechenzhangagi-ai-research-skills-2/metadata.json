@@ -1,0 +1,11 @@
+{
+  "name": "mamba",
+  "description": "State-space model with O(n) complexity vs Transformers' O(n²). 5× faster inference, million-token sequences, no KV cache. Selective SSM with hardware-aware design. Mamba-1 (d_state=16) and Mamba-2 (d_",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "01-model-architecture/mamba",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "mamba-zechenzhangagi-ai-research-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "osram",
+  "description": "OSRAM Opto Semiconductors MPN encoding patterns, LED color/package decoding, and handler guidance. Use when working with OSRAM LEDs or OSRAMHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/osram",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "osram-cantara-lib-electronic-compo-2"
+}

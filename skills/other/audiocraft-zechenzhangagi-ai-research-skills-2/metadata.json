@@ -1,0 +1,11 @@
+{
+  "name": "audiocraft",
+  "description": "PyTorch library for audio generation including text-to-music (MusicGen) and text-to-sound (AudioGen). Use when you need to generate music from text descriptions, create sound effects, or perform melod",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "18-multimodal/audiocraft",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "audiocraft-zechenzhangagi-ai-research-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "SPH0645-Microphone-Integration",
+  "description": "SPH0645 is a digital MEMS microphone that outputs PDM (Pulse Density Modulation) audio via I2S interface. Convert PDM to PCM for DSP processing.",
+  "repo": "synqing/K1.hardware",
+  "path": ".claude/skills/SPH0645-Microphone-Integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/synqing/K1.hardware",
+  "dir_name": "sph0645-microphone-integration-synqing-k1-hardware-2"
+}

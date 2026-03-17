@@ -1,0 +1,11 @@
+{
+  "name": "skill-template",
+  "description": "Brief description of what this skill enables. Include trigger keywords that should activate this skill. Triggers on keyword1, keyword2, keyword3.",
+  "repo": "hoodini/ai-agents-skills",
+  "path": "templates/skill-template",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hoodini/ai-agents-skills",
+  "dir_name": "skill-template-hoodini-ai-agents-skills-2"
+}

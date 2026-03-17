@@ -1,0 +1,11 @@
+{
+  "name": "audio-analyzer",
+  "description": "Comprehensive audio analysis with waveform visualization, spectrogram, BPM detection, key detection, frequency analysis, and loudness metrics.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "audio-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "audio-analyzer-dkyazzentwatwa-chatgpt-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "snd-artisan",
+  "description": "Use this skill when implementing crafting automation in SND macros using the Artisan plugin. Covers crafting lists, endurance mode, and crafting state management.",
+  "repo": "vaoan/SND",
+  "path": ".claude/skills/snd-artisan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vaoan/SND",
+  "dir_name": "snd-artisan-vaoan-snd-2"
+}

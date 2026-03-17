@@ -1,0 +1,11 @@
+{
+  "name": "artifact-tracking",
+  "description": "Token-efficient tracking for AI orchestration. CLI-first for status updates (~50 tokens), agent fallback for complex ops (~1KB). Use when: updating task status, querying blockers, creating progress fi",
+  "repo": "miethe/skillmeat",
+  "path": ".claude/skills/artifact-tracking",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/miethe/skillmeat",
+  "dir_name": "artifact-tracking-miethe-skillmeat-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "update-planning-docs",
+  "description": "When the user says \"@update planning docs\" or \"update planning docs\", execute this command.",
+  "repo": "kmylpenter/KFG-CCv2-Installer-Stable",
+  "path": ".claude/skills/update-planning-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kmylpenter/KFG-CCv2-Installer-Stable",
+  "dir_name": "update-planning-docs-kmylpenter-kfg-ccv2-installer-s-2"
+}

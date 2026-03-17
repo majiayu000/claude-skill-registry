@@ -1,0 +1,11 @@
+{
+  "name": "bundle-barrel-imports",
+  "description": "Import directly from source files instead of barrel files. Apply when using libraries like lucide-react, @mui/material, or @radix-ui/react-* to reduce bundle size and improve dev boot time.",
+  "repo": "TheOrcDev/8bitcn-ui",
+  "path": ".claude/skills/bundle-barrel-imports",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TheOrcDev/8bitcn-ui",
+  "dir_name": "bundle-barrel-imports-theorcdev-8bitcn-ui-2"
+}

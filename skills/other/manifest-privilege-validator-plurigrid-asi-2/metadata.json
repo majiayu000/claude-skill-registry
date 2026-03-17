@@ -1,0 +1,11 @@
+{
+  "name": "manifest-privilege-validator",
+  "description": "Validates tizen-manifest.xml privilege declarations. Checks privilege correctness, required privilege levels, and manifest conformance.",
+  "repo": "plurigrid/asi",
+  "path": "skills/manifest-privilege-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "manifest-privilege-validator-plurigrid-asi-2"
+}

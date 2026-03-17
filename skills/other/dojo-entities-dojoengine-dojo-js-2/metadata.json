@@ -1,0 +1,11 @@
+{
+  "name": "dojo-entities",
+  "description": "Use when querying, fetching, or subscribing to game entities in dojo.js.\nTriggers: entity query, fetch entities, useModel, useEntityQuery, ToriiQueryBuilder,\nsubscribe entities, getEntities, entity su",
+  "repo": "dojoengine/dojo.js",
+  "path": ".claude/skills/dojo-entities",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dojoengine/dojo.js",
+  "dir_name": "dojo-entities-dojoengine-dojo-js-2"
+}

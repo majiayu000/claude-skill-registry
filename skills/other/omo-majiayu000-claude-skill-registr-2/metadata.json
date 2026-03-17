@@ -1,0 +1,11 @@
+{
+  "name": "omo",
+  "description": "Use this skill when you see `/omo`. Multi-agent orchestration for \"code analysis / bug investigation / fix planning / implementation\". Choose the minimal agent set and order based on task type + risk;",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/design/autonomous-ui-inspection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "omo-majiayu000-claude-skill-registr-2"
+}

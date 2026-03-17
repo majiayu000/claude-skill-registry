@@ -1,0 +1,11 @@
+{
+  "name": "theme-consistency",
+  "description": "Enforce consistent theming across all prototype mockup screens. Auto-loads theme.yaml, validates CSS variable usage, prevents hardcoded values, and maintains visual consistency session-to-session. Use",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/theme-consistency",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "theme-consistency-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+}

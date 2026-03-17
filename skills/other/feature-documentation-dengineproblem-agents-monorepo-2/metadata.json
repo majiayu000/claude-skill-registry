@@ -1,0 +1,11 @@
+{
+  "name": "feature-documentation",
+  "description": "Эксперт feature documentation. Используй для документации функций, release notes, user guides и product documentation.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/feature-documentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "feature-documentation-dengineproblem-agents-monorepo-2"
+}

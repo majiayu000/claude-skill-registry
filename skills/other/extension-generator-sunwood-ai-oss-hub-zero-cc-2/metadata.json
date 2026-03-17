@@ -1,0 +1,11 @@
+{
+  "name": "extension-generator",
+  "description": "Claude Codeの拡張機能（スキル、サブエージェント、プロジェクト設定）をユーザーの自然言語指示から自動生成するスキル。「○○を作るスキルを作って」「○○エージェントを作って」「CLAUDE.mdを設定して」などのリクエスト時に使用。v2.1.1以降、スラッシュコマンドとスキルは統合されたため、すべてスキルとして作成。",
+  "repo": "Sunwood-AI-OSS-Hub/zero-cc",
+  "path": ".claude/skills/extension-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sunwood-AI-OSS-Hub/zero-cc",
+  "dir_name": "extension-generator-sunwood-ai-oss-hub-zero-cc-2"
+}

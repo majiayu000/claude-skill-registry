@@ -1,0 +1,9 @@
+{
+  "name": "lobe-tts",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/lobe-tts/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "lobe-tts",
+  "downloaded_at": "2026-02-15T07:07:01.253574Z"
+}

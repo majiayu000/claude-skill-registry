@@ -1,0 +1,11 @@
+{
+  "name": "doc-writer",
+  "description": "ドキュメント執筆をサポートするスキル。ユーザーがPRDに基づいてドキュメントを作成、編集、または更新したい場合に使用します。このスキルは、docs/prd.md に記載されたプロダクト要求仕様書を参照しながら、技術ドキュメント、設計ドキュメント、ユーザーガイド、APIドキュメントなどの執筆を支援します。「ドキュメントを書く」「仕様書を作成」「ガイドを作る」などのドキュメント作成タスクに言及した場合",
+  "repo": "ks6088ts-labs/skills",
+  "path": "skills/doc-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ks6088ts-labs/skills",
+  "dir_name": "doc-writer-ks6088ts-labs-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ai-procedure-maintenance",
+  "description": "Ensure the AI coding procedure ecosystem stays current and consistent when new elements are introduced. This skill provides a checklist-driven approach to propagating updates across all affected files",
+  "repo": "spaarke-dev/spaarke",
+  "path": ".claude/skills/ai-procedure-maintenance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spaarke-dev/spaarke",
+  "dir_name": "ai-procedure-maintenance-spaarke-dev-spaarke-2"
+}

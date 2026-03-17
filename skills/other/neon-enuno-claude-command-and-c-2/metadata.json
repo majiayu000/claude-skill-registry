@@ -1,0 +1,11 @@
+{
+  "name": "neon",
+  "description": "Neon serverless Postgres platform with branching, autoscaling, scale-to-zero, and edge-compatible drivers for modern application development",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/neon",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "neon-enuno-claude-command-and-c-2"
+}

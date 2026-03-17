@@ -1,0 +1,11 @@
+{
+  "name": "ai-video-production-master",
+  "description": "Expert in script-to-video production pipelines for Apple Silicon Macs. Specializes in hybrid local/cloud workflows, LoRA training for character consistency, motion graphics generation, and artist comm",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/ai-video-production-master",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "ai-video-production-master-erichowens-some-claude-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "juce-best-practices",
+  "description": "Professional JUCE development guide covering realtime safety, threading, memory management, modern C++, and audio plugin best practices. Use when writing JUCE code, reviewing for realtime safety, impl",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/juce-dev-team/skills/juce-best-practices",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "juce-best-practices-yebot-rad-cc-plugins-2"
+}

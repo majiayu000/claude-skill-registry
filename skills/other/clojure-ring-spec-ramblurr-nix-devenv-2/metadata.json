@@ -1,0 +1,11 @@
+{
+  "name": "clojure-ring-spec",
+  "description": "Ring specification for HTTP server applications in Clojure. Use when working with: (1) Ring handlers (sync or async), (2) Ring request maps and their keys, (3) Ring response maps and their keys, (4) R",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/clojure-ring-spec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "clojure-ring-spec-ramblurr-nix-devenv-2"
+}

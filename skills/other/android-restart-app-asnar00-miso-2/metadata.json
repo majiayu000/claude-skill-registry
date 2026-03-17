@@ -1,0 +1,11 @@
+{
+  "name": "android-restart-app",
+  "description": "Restart the Android app on connected device without rebuilding. Force-stops and relaunches the app remotely. Use when testing changes that don't require rebuild, or refreshing app state.",
+  "repo": "asnar00/miso",
+  "path": ".claude/skills/android-restart-app",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/asnar00/miso",
+  "dir_name": "android-restart-app-asnar00-miso-2"
+}

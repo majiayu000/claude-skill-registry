@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-manifest-picker",
+  "description": "Use umb-input-manifest to pick registered extensions in Umbraco backoffice",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-manifest-picker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-manifest-picker-umbraco-umbraco-cms-backoffi-2"
+}

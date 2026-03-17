@@ -1,0 +1,17 @@
+{
+  "name": "changelog-generator",
+  "repo": "decebals/claude-code-java",
+  "path": ".claude/skills/changelog-generator/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/decebals/claude-code-java",
+  "dir_name": "changelog-generator",
+  "downloaded_at": "2026-03-02T08:44:14.682862Z",
+  "author": "decebals",
+  "source_url": "https://github.com/decebals/claude-code-java/blob/main/.claude/skills/changelog-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/decebals/claude-code-java/blob/main/.claude/skills/changelog-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

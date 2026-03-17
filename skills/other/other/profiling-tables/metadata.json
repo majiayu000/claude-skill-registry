@@ -1,0 +1,17 @@
+{
+  "name": "profiling-tables",
+  "repo": "astronomer/agents",
+  "path": "skills/profiling-tables/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/astronomer/agents",
+  "dir_name": "profiling-tables",
+  "downloaded_at": "2026-03-01T06:50:04.259385Z",
+  "author": "astronomer",
+  "source_url": "https://github.com/astronomer/agents/blob/main/skills/profiling-tables/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/astronomer/agents/blob/main/skills/profiling-tables/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

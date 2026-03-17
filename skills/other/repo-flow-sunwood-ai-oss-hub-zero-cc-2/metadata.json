@@ -1,0 +1,11 @@
+{
+  "name": "repo-flow",
+  "description": "Git Flow ワークフローで開発からdevelopへのマージまでを実行。\n「フィーチャーブランチ作って」「PR出して」「コードレビューして」「マージして」などのリクエスト時に使用。\n開発中の差分がある状態からブランチを作成します。\ndevelop → main のリリースフローもサポート。\n※ develop → main のマージは人間が実行します。\n",
+  "repo": "Sunwood-AI-OSS-Hub/zero-cc",
+  "path": ".claude/skills/repo-flow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sunwood-AI-OSS-Hub/zero-cc",
+  "dir_name": "repo-flow-sunwood-ai-oss-hub-zero-cc-2"
+}

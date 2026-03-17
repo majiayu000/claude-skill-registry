@@ -1,0 +1,11 @@
+{
+  "name": "governed-dev",
+  "description": "Evidence-first development with fail-closed behavior",
+  "repo": "CULPRITCHAOS/Interlock",
+  "path": ".claude/skills/governed-dev",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CULPRITCHAOS/Interlock",
+  "dir_name": "governed-dev-culpritchaos-interlock-2"
+}

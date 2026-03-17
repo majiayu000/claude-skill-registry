@@ -1,0 +1,11 @@
+{
+  "name": "log-learning",
+  "description": "Log key learnings to progress.txt during PRD iteration. Use when you discover codebase patterns, encounter gotchas, make important decisions, or learn something that would help future work sessions. T",
+  "repo": "bearbinary/Jarvy",
+  "path": ".claude/skills/log-learning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bearbinary/Jarvy",
+  "dir_name": "log-learning-bearbinary-jarvy-2"
+}

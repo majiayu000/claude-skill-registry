@@ -1,0 +1,11 @@
+{
+  "name": "calctl",
+  "description": "Manage Apple Calendar events via icalBuddy + AppleScript CLI",
+  "repo": "clawdbot/skills",
+  "path": "skills/rainbat/calctl",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "calctl-clawdbot-skills-2"
+}

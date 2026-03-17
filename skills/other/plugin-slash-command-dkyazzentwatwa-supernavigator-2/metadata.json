@@ -1,0 +1,11 @@
+{
+  "name": "plugin-slash-command",
+  "description": "Generate new Navigator slash commands following project conventions. Use when user says \"add slash command\", \"create command\", \"new /nav command\", or \"add /nav:[name] command\".",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "skills/os-layer/plugin/plugin-slash-command",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "plugin-slash-command-dkyazzentwatwa-supernavigator-2"
+}

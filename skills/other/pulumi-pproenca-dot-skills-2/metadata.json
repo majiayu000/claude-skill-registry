@@ -1,0 +1,11 @@
+{
+  "name": "pulumi",
+  "description": "Pulumi infrastructure as code performance and reliability guidelines. This skill should be used when writing, reviewing, or refactoring Pulumi code to ensure optimal deployment performance and infrast",
+  "repo": "pproenca/dot-skills",
+  "path": "skills/.experimental/pulumi",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pproenca/dot-skills",
+  "dir_name": "pulumi-pproenca-dot-skills-2"
+}

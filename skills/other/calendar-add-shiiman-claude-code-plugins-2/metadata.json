@@ -1,0 +1,11 @@
+{
+  "name": "calendar-add",
+  "description": "Google Calendar に予定を追加する。「予定追加」「カレンダーに追加」「予定を入れて」「スケジュール登録」「予定作成」などで起動。",
+  "repo": "shiiman/claude-code-plugins",
+  "path": "plugins/shiiman-google/skills/calendar-add",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shiiman/claude-code-plugins",
+  "dir_name": "calendar-add-shiiman-claude-code-plugins-2"
+}

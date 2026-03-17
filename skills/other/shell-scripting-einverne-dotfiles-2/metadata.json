@@ -1,0 +1,11 @@
+{
+  "name": "shell-scripting",
+  "description": "Specialized knowledge of Bash and Zsh scripting, shell automation, command-line tools, and scripting best practices. Use when the user needs to write, debug, or optimize shell scripts or work with com",
+  "repo": "einverne/dotfiles",
+  "path": "claude/skills/shell-scripting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/einverne/dotfiles",
+  "dir_name": "shell-scripting-einverne-dotfiles-2"
+}

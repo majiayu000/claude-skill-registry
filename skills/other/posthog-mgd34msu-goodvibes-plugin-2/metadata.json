@@ -1,0 +1,11 @@
+{
+  "name": "posthog",
+  "description": "Implements product analytics with PostHog including event tracking, feature flags, and session replay. Use when adding analytics, A/B testing, or user behavior tracking to React and Next.js applicatio",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/skills/posthog",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "posthog-mgd34msu-goodvibes-plugin-2"
+}

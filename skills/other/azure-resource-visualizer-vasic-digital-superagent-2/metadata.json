@@ -1,0 +1,11 @@
+{
+  "name": "azure-resource-visualizer",
+  "description": "Analyze Azure resource groups and generate detailed Mermaid architecture diagrams showing the relationships between individual resources. Use this skill when the user asks for a diagram of their Azure",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/github-copilot/azure-resource-visualizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "azure-resource-visualizer-vasic-digital-superagent-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "design-document-types",
+  "description": "詳細設計書の種類と判定基準を定義し、基本設計書の内容から必要な設計書タイプを動的に決定するためのカタログ",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/design-document-types",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "design-document-types-takemo101-compose-workflow-2"
+}

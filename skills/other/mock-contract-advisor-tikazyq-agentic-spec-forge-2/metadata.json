@@ -1,0 +1,11 @@
+{
+  "name": "mock-contract-advisor",
+  "description": "生成Mock/Stub契约检查清单，enforcing test_suites.md的Mock策略规则。当TS中Mock策略确定后使用。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/implementation_planning/mock-contract-advisor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "mock-contract-advisor-tikazyq-agentic-spec-forge-2"
+}

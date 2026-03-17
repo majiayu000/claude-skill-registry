@@ -1,0 +1,11 @@
+{
+  "name": "tesseract",
+  "description": "Pull and start Tesseract - the Information Mapping Knowledge Engine with Firebase backend. Provides localhost and Tailscale URLs.",
+  "repo": "yousufjoyian/claude-skills",
+  "path": "tesseract",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yousufjoyian/claude-skills",
+  "dir_name": "tesseract-yousufjoyian-claude-skills-2"
+}

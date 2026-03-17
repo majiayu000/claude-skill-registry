@@ -1,0 +1,11 @@
+{
+  "name": "mvp-generator",
+  "description": "Genera MVPs completos desde SPEC.md orquestando todos los agentes especializados",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/mvp-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "mvp-generator-vjrivmon-handwriting-ocr-2"
+}

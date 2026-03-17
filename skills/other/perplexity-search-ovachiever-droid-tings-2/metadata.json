@@ -1,0 +1,11 @@
+{
+  "name": "perplexity-search",
+  "description": "Perform AI-powered web searches with real-time information using Perplexity models via LiteLLM and OpenRouter. This skill should be used when conducting web searches for current information, finding r",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/perplexity-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "perplexity-search-ovachiever-droid-tings-2"
+}

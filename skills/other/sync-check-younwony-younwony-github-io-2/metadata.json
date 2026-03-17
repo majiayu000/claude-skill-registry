@@ -1,0 +1,11 @@
+{
+  "name": "sync-check",
+  "description": "원본과 생성 파일의 동기화 검증이 필요할 때",
+  "repo": "younwony/younwony.github.io",
+  "path": ".claude/skills/data/sync-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/younwony/younwony.github.io",
+  "dir_name": "sync-check-younwony-younwony-github-io-2"
+}

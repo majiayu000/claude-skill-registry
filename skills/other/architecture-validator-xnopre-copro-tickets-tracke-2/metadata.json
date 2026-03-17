@@ -1,0 +1,11 @@
+{
+  "name": "architecture-validator",
+  "description": "Validate hexagonal architecture (Domain, Application, Infrastructure, Presentation). Use when creating new files in src/, reorganizing code, or when the user requests architecture validation.",
+  "repo": "xnopre/copro-tickets-tracker",
+  "path": ".claude/skills/architecture-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/xnopre/copro-tickets-tracker",
+  "dir_name": "architecture-validator-xnopre-copro-tickets-tracke-2"
+}

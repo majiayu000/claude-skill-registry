@@ -1,0 +1,11 @@
+{
+  "name": "film-storyboard-skill",
+  "description": "Use when creating storyboards from scripts, generating visual prompts for beat boards or sequence boards, or converting narrative beats into AI-generated images across platforms (Nano Banner, Midjourn",
+  "repo": "RainLib/AI-Storyboard",
+  "path": ".claude/skills/film-storyboard-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RainLib/AI-Storyboard",
+  "dir_name": "film-storyboard-skill-rainlib-ai-storyboard-2"
+}

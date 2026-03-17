@@ -1,0 +1,11 @@
+{
+  "name": "workflows-patterns",
+  "description": "Use when asking about \"Workflows\", \"durable workflows\", \"multi-step processing\", \"WorkflowEntrypoint\", \"WorkflowStep\", \"data pipelines\", \"background jobs\", \"ingestion pipeline\", or orchestrating multi",
+  "repo": "SteveLeve/claude-marketplace",
+  "path": "plugins/cloudflare-expert/skills/workflows-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SteveLeve/claude-marketplace",
+  "dir_name": "workflows-patterns-steveleve-claude-marketplace-2"
+}

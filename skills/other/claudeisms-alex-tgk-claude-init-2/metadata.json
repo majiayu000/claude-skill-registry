@@ -1,0 +1,11 @@
+{
+  "name": "claudeisms",
+  "description": "Apply strict operational protocols for AI task execution including sequential processing, minimal responses, no destructive operations without confirmation",
+  "repo": "alex-tgk/claude-init",
+  "path": ".claude/skills/claudeisms",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alex-tgk/claude-init",
+  "dir_name": "claudeisms-alex-tgk-claude-init-2"
+}

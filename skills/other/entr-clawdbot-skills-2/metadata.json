@@ -1,0 +1,11 @@
+{
+  "name": "entr",
+  "description": "Run arbitrary commands when files change. Useful for watching files and triggering builds or tests.",
+  "repo": "clawdbot/skills",
+  "path": "skills/gumadeiras/entr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "entr-clawdbot-skills-2"
+}

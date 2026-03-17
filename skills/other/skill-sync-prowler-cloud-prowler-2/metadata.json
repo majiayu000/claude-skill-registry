@@ -1,0 +1,11 @@
+{
+  "name": "skill-sync",
+  "description": "Syncs skill metadata to AGENTS.md Auto-invoke sections. Trigger: When updating skill metadata (metadata.scope/metadata.auto_invoke), regenerating Auto-invoke tables, or running ./skills/skill-sync/ass",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/skill-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/prowler-cloud/prowler",
+  "dir_name": "skill-sync-prowler-cloud-prowler-2"
+}

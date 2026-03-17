@@ -1,0 +1,11 @@
+{
+  "name": "secrets",
+  "description": "Secrets Management security skill",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/security/secrets",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "secrets-mgreenly-ikigai-2"
+}

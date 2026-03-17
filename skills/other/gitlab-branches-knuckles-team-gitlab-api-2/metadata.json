@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-branches",
+  "description": "Manages GitLab branches. Use for listing, creating, deleting, or querying branches in projects. Triggers: branch operations, git branching.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-branches",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-branches-knuckles-team-gitlab-api-2"
+}

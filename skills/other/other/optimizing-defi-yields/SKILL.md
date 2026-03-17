@@ -1,0 +1,204 @@
+---
+name: optimizing-defi-yields
+description: |
+  Find and compare DeFi yield opportunities across protocols with APY calculations, risk assessment, and optimization recommendations.
+  Use when searching for yield farming opportunities, comparing DeFi protocols, or analyzing APY/APR rates.
+  Trigger with phrases like "find DeFi yields", "compare APY", "best yield farming", "optimize DeFi returns", "stablecoin yields", or "liquidity pool rates".
+
+allowed-tools: Read, Write, Bash(crypto:yield-*)
+version: 2.0.0
+author: Jeremy Longshore <jeremy@intentsolutions.io>
+license: MIT
+---
+
+# Optimizing DeFi Yields
+
+## Overview
+
+Find and compare DeFi yield opportunities across protocols. Aggregates data from DeFiLlama and other sources to provide APY/APR comparisons, risk assessments, and optimization recommendations for yield farming strategies.
+
+## Prerequisites
+
+Before using this skill, ensure you have:
+
+- Python 3.8+ installed
+- Internet access for API queries
+- Understanding of DeFi concepts (APY, APR, TVL, impermanent loss)
+
+## Instructions
+
+### Step 1: Search for Yield Opportunities
+
+Find top yields across all chains:
+
+```bash
+python {baseDir}/scripts/yield_optimizer.py --top 20
+```
+
+Filter by specific chain:
+
+```bash
+python {baseDir}/scripts/yield_optimizer.py --chain ethereum --top 10
+```
+
+### Step 2: Filter by Criteria
+
+Filter by minimum TVL (for safety):
+
+```bash
+python {baseDir}/scripts/yield_optimizer.py --min-tvl 10000000 --top 15
+```
+
+Filter by asset type:
+
+```bash
+python {baseDir}/scripts/yield_optimizer.py --asset USDC --chain ethereum
+```
+
+Filter by protocol:
+
+```bash
+python {baseDir}/scripts/yield_optimizer.py --protocol aave,compound,curve
+```
+
+### Step 3: Apply Risk Filters
+
+Show only audited protocols:
+
+```bash
+python {baseDir}/scripts/yield_optimizer.py --audited-only --min-tvl 1000000
+```
+
+Filter by risk level:
+
+| Level | Flag | Description |
+|-------|------|-------------|
+| Low | `--risk low` | Blue-chip, battle-tested protocols |
+| Medium | `--risk medium` | Established protocols, moderate risk |
+| High | `--risk high` | Newer protocols, higher yields |
+
+```bash
+python {baseDir}/scripts/yield_optimizer.py --risk low --min-apy 3
+```
+
+### Step 4: Analyze Specific Opportunities
+
+Get detailed breakdown for a pool:
+
+```bash
+python {baseDir}/scripts/yield_optimizer.py --pool "aave-v3-usdc-ethereum" --detailed
+```
+
+Compare specific protocols:
+
+```bash
+python {baseDir}/scripts/yield_optimizer.py --compare aave,compound,spark --asset USDC
+```
+
+### Step 5: Export Results
+
+Export to JSON for further analysis:
+
+```bash
+python {baseDir}/scripts/yield_optimizer.py --top 50 --format json --output yields.json
+```
+
+Export to CSV:
+
+```bash
+python {baseDir}/scripts/yield_optimizer.py --chain ethereum --format csv --output eth_yields.csv
+```
+
+## Output
+
+### Yield Summary Table
+```
+==============================================================================
+  DEFI YIELD OPTIMIZER                              2026-01-15 15:30 UTC
+==============================================================================
+
+  TOP YIELD OPPORTUNITIES
+------------------------------------------------------------------------------
+  Protocol       Pool          Chain      TVL        APY    Risk    Score
+  Convex        cvxCRV        Ethereum   $450M    12.5%    Low     9.2
+  Aave v3       USDC          Ethereum   $2.1B     4.2%    Low     9.8
+  Curve         3pool         Ethereum   $890M     3.8%    Low     9.5
+  Compound v3   USDC          Ethereum   $1.5B     3.2%    Low     9.6
+  Yearn         yvUSDC        Ethereum   $120M     5.1%    Medium  7.8
+------------------------------------------------------------------------------
+
+  APY BREAKDOWN (Top Result)
+------------------------------------------------------------------------------
+  Base APY:     4.5%
+  Reward APY:   8.0% (CRV + CVX)
+  Total APY:    12.5%
+  IL Risk:      None (single-sided)
+==============================================================================
+```
+
+### Risk Assessment
+```
+  RISK ANALYSIS: Convex cvxCRV
+------------------------------------------------------------------------------
+  Audit Status:    ✓ Audited (Trail of Bits, OpenZeppelin)
+  Protocol Age:    3+ years
+  TVL:             $450M (stable)
+  TVL Trend:       +5% (30d)
+  Risk Score:      9.2/10 (Low Risk)
+
+  Risk Factors:
+  • Smart contract dependency on Curve
+  • CRV/CVX reward token volatility
+  • Vote-lock mechanics
+==============================================================================
+```
+
+## Error Handling
+
+See `{baseDir}/references/errors.md` for comprehensive error handling.
+
+Common issues:
+- **API timeout**: Uses cached data with staleness warning
+- **No pools found**: Broaden search criteria
+- **Invalid protocol**: Check supported protocols list
+
+## Examples
+
+See `{baseDir}/references/examples.md` for detailed usage examples.
+
+### Quick Examples
+
+**Find stablecoin yields**:
+```bash
+python yield_optimizer.py --asset USDC,USDT,DAI --min-tvl 10000000
+```
+
+**Low-risk opportunities**:
+```bash
+python yield_optimizer.py --risk low --audited-only --min-apy 2
+```
+
+**Multi-chain search**:
+```bash
+python yield_optimizer.py --chain ethereum,arbitrum,polygon --top 20
+```
+
+**Export top yields**:
+```bash
+python yield_optimizer.py --top 100 --format json --output all_yields.json
+```
+
+## Configuration
+
+Settings in `{baseDir}/config/settings.yaml`:
+
+- **Default chain**: Primary chain to search
+- **Cache TTL**: How long to cache API responses
+- **Risk weights**: Customize risk scoring factors
+- **Min TVL default**: Default minimum TVL filter
+
+## Resources
+
+- DeFiLlama: https://defillama.com/yields - Yield data source
+- DeFi Safety: https://defisafety.com/ - Protocol security scores
+- Impermanent Loss Calculator: Understand LP risks

@@ -1,0 +1,11 @@
+{
+  "name": "craft-docs",
+  "description": "Enables Claude to create and manage documents in Craft via Playwright MCP",
+  "repo": "Andrejones92/canifi-life-os",
+  "path": "skills/craft-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Andrejones92/canifi-life-os",
+  "dir_name": "craft-docs-andrejones92-canifi-life-os-2"
+}

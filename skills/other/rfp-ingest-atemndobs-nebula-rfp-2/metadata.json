@@ -1,0 +1,11 @@
+{
+  "name": "rfp-ingest",
+  "description": "Ingest RFP opportunities from multiple data sources (SAM.gov, eMMA, RFPMart). Use when adding new data sources, modifying ingestion logic, or debugging data fetching issues.",
+  "repo": "Atemndobs/nebula-rfp",
+  "path": ".claude/skills/rfp-ingest",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Atemndobs/nebula-rfp",
+  "dir_name": "rfp-ingest-atemndobs-nebula-rfp-2"
+}

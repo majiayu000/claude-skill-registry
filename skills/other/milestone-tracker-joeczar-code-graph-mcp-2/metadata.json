@@ -1,0 +1,11 @@
+{
+  "name": "milestone-tracker",
+  "description": "Track GitHub milestone progress and issue completion. Use when user asks about milestone status, how many issues done, sprint progress, or completion percentage.",
+  "repo": "joeczar/code-graph-mcp",
+  "path": ".claude/skills/milestone-tracker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joeczar/code-graph-mcp",
+  "dir_name": "milestone-tracker-joeczar-code-graph-mcp-2"
+}

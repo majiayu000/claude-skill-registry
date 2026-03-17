@@ -1,0 +1,11 @@
+{
+  "name": "mcp-management",
+  "description": "Manage Model Context Protocol (MCP) servers - discover, analyze, and execute tools/prompts/resources from configured MCP servers. Use when working with MCP integrations, need to discover available MCP",
+  "repo": "sourman-dev/mianix-userscript",
+  "path": ".claude/skills/mcp-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sourman-dev/mianix-userscript",
+  "dir_name": "mcp-management-sourman-dev-mianix-userscript-2"
+}

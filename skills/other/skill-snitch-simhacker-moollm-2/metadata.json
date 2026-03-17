@@ -1,0 +1,11 @@
+{
+  "name": "skill-snitch",
+  "description": "Security auditing for MOOLLM skills - static analysis and runtime surveillance",
+  "repo": "SimHacker/moollm",
+  "path": "skills/skill-snitch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "skill-snitch-simhacker-moollm-2"
+}

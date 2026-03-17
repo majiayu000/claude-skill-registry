@@ -1,0 +1,11 @@
+{
+  "name": "feature-spec-orchestrator",
+  "description": "Create feature spec files from project docs, commit and push to main, and create matching feature branches from main.",
+  "repo": "mattg101/SolidLink",
+  "path": "docs/dev/.agent/skills/feature-spec-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattg101/SolidLink",
+  "dir_name": "feature-spec-orchestrator-mattg101-solidlink-2"
+}

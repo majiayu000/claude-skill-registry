@@ -1,0 +1,11 @@
+{
+  "name": "validate-build",
+  "description": "Validates YARS build by running braitenberg test and comparing logfile output with reference",
+  "repo": "kzahedi/YARS",
+  "path": ".claude/skills/validate-build",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kzahedi/YARS",
+  "dir_name": "validate-build-kzahedi-yars-2"
+}

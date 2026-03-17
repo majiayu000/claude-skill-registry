@@ -1,0 +1,11 @@
+{
+  "name": "openalex-database",
+  "description": "Query and analyze scholarly literature using the OpenAlex database. This skill should be used when searching for academic papers, analyzing research trends, finding works by authors or institutions, t",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/openalex-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "openalex-database-ovachiever-droid-tings-2"
+}

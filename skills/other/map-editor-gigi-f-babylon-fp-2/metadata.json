@@ -1,0 +1,11 @@
+{
+  "name": "map-editor",
+  "description": "Comprehensive guide for using the visual map editor. Use when designing game worlds, placing buildings, NPCs, or managing map JSON files.",
+  "repo": "gigi-f/babylon_fp",
+  "path": ".claude/skills/map-editor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gigi-f/babylon_fp",
+  "dir_name": "map-editor-gigi-f-babylon-fp-2"
+}

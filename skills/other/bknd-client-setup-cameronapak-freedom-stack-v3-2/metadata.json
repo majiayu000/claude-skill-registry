@@ -1,0 +1,11 @@
+{
+  "name": "bknd-client-setup",
+  "description": "Use when setting up Bknd SDK in a frontend application. Covers Api class initialization, token storage, auth state handling, React integration with BkndBrowserApp and useApp hook, framework-specific s",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-client-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-client-setup-cameronapak-freedom-stack-v3-2"
+}

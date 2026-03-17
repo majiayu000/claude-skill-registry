@@ -1,0 +1,11 @@
+{
+  "name": "homey",
+  "description": "Control Athom Homey smart home devices via local (LAN/VPN) or cloud APIs. List/control devices, trigger flows, query zones. Works with Homey Pro, Cloud, and Bridge.",
+  "repo": "clawdbot/skills",
+  "path": "skills/maxsumrall/homey",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "homey-clawdbot-skills-2"
+}

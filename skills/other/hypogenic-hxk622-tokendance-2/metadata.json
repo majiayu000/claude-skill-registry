@@ -1,0 +1,11 @@
+{
+  "name": "hypogenic",
+  "description": "Automated LLM-driven hypothesis generation and testing on tabular datasets. Use when you want to systematically explore hypotheses about patterns in empirical data (e.g., deception detection, content ",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/research-tools/hypogenic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "hypogenic-hxk622-tokendance-2"
+}

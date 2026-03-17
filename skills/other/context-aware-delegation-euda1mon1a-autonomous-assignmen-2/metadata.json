@@ -1,0 +1,19 @@
+{
+  "name": "context-aware-delegation",
+  "description": "Understand agent context isolation and write effective prompts for spawned agents. Use when orchestrating multi-agent workflows to ensure subagents receive complete, self-contained context.",
+  "repo": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
+  "path": ".claude/skills/context-aware-delegation",
+  "github_branch": "main",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager",
+  "dir_name": "context-aware-delegation-euda1mon1a-autonomous-assignmen-2",
+  "author": "Euda1mon1a",
+  "source_url": "https://github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager/blob/main/.claude/skills/context-aware-delegation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager/blob/main/.claude/skills/context-aware-delegation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

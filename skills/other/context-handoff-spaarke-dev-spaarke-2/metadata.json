@@ -1,0 +1,11 @@
+{
+  "name": "context-handoff",
+  "description": "Save working state before compaction or session end for reliable recovery",
+  "repo": "spaarke-dev/spaarke",
+  "path": ".claude/skills/context-handoff",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spaarke-dev/spaarke",
+  "dir_name": "context-handoff-spaarke-dev-spaarke-2"
+}

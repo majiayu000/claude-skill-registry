@@ -1,0 +1,11 @@
+{
+  "name": "ai-analyzer",
+  "description": "AI驱动的综合健康分析系统，整合多维度健康数据、识别异常模式、预测健康风险、提供个性化建议。支持智能问答和AI健康报告生成。",
+  "repo": "huifer/WellAlly-health",
+  "path": ".claude/skills/ai-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/huifer/WellAlly-health",
+  "dir_name": "ai-analyzer-huifer-wellally-health-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "email-newsletter-builder",
+  "description": "Scaffolds email campaigns with content blocks and copy. Use when the user asks about email templates, newsletter content, subject lines, email marketing, or campaign copy.",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/email-newsletter-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "email-newsletter-builder-wesleysmits-agent-skills-2"
+}

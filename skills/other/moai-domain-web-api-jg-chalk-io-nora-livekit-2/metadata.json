@@ -1,0 +1,11 @@
+{
+  "name": "moai-domain-web-api",
+  "description": "REST API and GraphQL design with OpenAPI 3.1, authentication, versioning, and rate limiting.",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-domain-web-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-domain-web-api-jg-chalk-io-nora-livekit-2"
+}

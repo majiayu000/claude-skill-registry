@@ -1,0 +1,11 @@
+{
+  "name": "build123d",
+  "description": "This skill should be used when the user asks to \"create a 3D model with build123d\", \"design parametric parts\", \"use builder mode\", \"use algebra mode\", \"select faces or edges\", \"export STEP or STL\", or",
+  "repo": "helmecke/dotfiles",
+  "path": "dot_config/opencode/skill/build123d",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/helmecke/dotfiles",
+  "dir_name": "build123d-helmecke-dotfiles-2"
+}

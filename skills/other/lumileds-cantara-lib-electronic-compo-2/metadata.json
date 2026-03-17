@@ -1,0 +1,11 @@
+{
+  "name": "lumileds",
+  "description": "Lumileds MPN encoding patterns for LUXEON LEDs, automotive LEDs, and handler guidance. Use when working with Lumileds LED components or LumiledsHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/lumileds",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "lumileds-cantara-lib-electronic-compo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sanity-publisher",
+  "description": "Publishes blog content to Sanity CMS with dual-mode support (markdown output or API publishing)",
+  "repo": "Zura1555/agents",
+  "path": ".claude/skills/sanity-publisher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Zura1555/agents",
+  "dir_name": "sanity-publisher-zura1555-agents-2"
+}

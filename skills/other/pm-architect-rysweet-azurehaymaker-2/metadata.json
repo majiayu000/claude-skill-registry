@@ -1,0 +1,11 @@
+{
+  "name": "pm-architect",
+  "description": "Expert project manager orchestrating backlog-curator, work-delegator, workstream-coordinator, and roadmap-strategist sub-skills. Coordinates complex software projects through delegation and strategic ",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/pm-architect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "pm-architect-rysweet-azurehaymaker-2"
+}

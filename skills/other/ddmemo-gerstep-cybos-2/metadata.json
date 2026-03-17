@@ -1,0 +1,11 @@
+{
+  "name": "DDMemo",
+  "description": "Generate comprehensive investment memos for cyber•Fund investment committee decisions. Use when creating DD memos or investment analysis documents.",
+  "repo": "Gerstep/cybos",
+  "path": ".claude/skills/DDMemo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Gerstep/cybos",
+  "dir_name": "ddmemo-gerstep-cybos-2"
+}

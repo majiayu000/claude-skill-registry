@@ -1,0 +1,11 @@
+{
+  "name": "db-anti-patterns",
+  "description": "Detection rules and grep patterns for database performance anti-patterns. Use when scanning codebase for N+1 queries, sequential queries, or connection pool issues.",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "templates/skills/db-anti-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "db-anti-patterns-javeedishaq-ai-workflow-orchestr-2"
+}

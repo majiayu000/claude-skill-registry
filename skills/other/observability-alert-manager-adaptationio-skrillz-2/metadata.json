@@ -1,0 +1,11 @@
+{
+  "name": "observability-alert-manager",
+  "description": "Configure Grafana alerts for Claude Code anomalies and thresholds. Use when setting up monitoring alerts for sessions, errors, context usage, or subagents.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/observability-alert-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "observability-alert-manager-adaptationio-skrillz-2"
+}

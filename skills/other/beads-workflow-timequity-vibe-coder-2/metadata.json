@@ -1,0 +1,11 @@
+{
+  "name": "beads-workflow",
+  "description": "Proactive workflow for projects using beads issue tracker.\nACTIVATE AUTOMATICALLY when session starts in directory with .beads/.\nUse when: starting work session, selecting tasks, completing tasks, cre",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/beads-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "beads-workflow-timequity-vibe-coder-2"
+}

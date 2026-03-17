@@ -1,0 +1,11 @@
+{
+  "name": "game-vision-designer",
+  "description": "Evolve and maintain game vision through Q&A interviews and decision tracking. Use when exploring game concepts, validating feature alignment, or making design decisions.",
+  "repo": "sunholo-data/stapledons_voyage",
+  "path": ".claude/skills/game-vision-designer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunholo-data/stapledons_voyage",
+  "dir_name": "game-vision-designer-sunholo-data-stapledons-voyage-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "reflect",
+  "description": "CRITICAL learning capture. Extracts HIGH/MED/LOW confidence patterns from conversations to prevent repeating mistakes and preserve what works. Use PROACTIVELY after user corrections (\"no\", \"wrong\"), a",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/reflect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "reflect-rjmurillo-ai-agents-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "deployment-pipeline-design",
+  "description": "Design multi-stage CI/CD pipelines with approval gates, security checks, and deployment orchestration. Use when architecting deployment workflows, setting up continuous delivery, or implementing GitOp",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".ai/plugins/cicd-automation/skills/deployment-pipeline-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "deployment-pipeline-design-arustydev-dotfiles-2"
+}

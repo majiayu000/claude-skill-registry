@@ -1,0 +1,11 @@
+{
+  "name": "doc-maintenance",
+  "description": "Guide documentation updates when changing versions, adding content, or preparing releases",
+  "repo": "ksoichiro/ChronoDawn",
+  "path": ".claude/skills/doc-maintenance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ksoichiro/ChronoDawn",
+  "dir_name": "doc-maintenance-ksoichiro-chronodawn-2"
+}

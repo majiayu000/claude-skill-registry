@@ -1,0 +1,11 @@
+{
+  "name": "m07-concurrency",
+  "description": "CRITICAL: Use for concurrency/async. Triggers: E0277 Send Sync, cannot be sent between threads, thread, spawn, channel, mpsc, Mutex, RwLock, Atomic, async, await, Future, tokio, deadlock, race conditi",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/m07-concurrency",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "m07-concurrency-majiayu000-claude-skill-registr-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "manage-tasks",
+  "description": "Manage implementation tasks with sequential sub-steps within a plan",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-workflow/skills/manage-tasks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "manage-tasks-cuioss-plan-marshall-2"
+}

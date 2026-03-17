@@ -1,0 +1,11 @@
+{
+  "name": "tool-discovery",
+  "description": "Guide for discovering and using MCP tools via the discover_tools meta-tool. Use this skill when asked to perform tasks that require finding the right tools, when you see only discover_tools in your av",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/tool-discovery",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "tool-discovery-orient-bot-orient-2"
+}

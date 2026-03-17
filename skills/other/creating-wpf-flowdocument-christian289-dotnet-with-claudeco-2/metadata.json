@@ -1,0 +1,11 @@
+{
+  "name": "creating-wpf-flowdocument",
+  "description": "Creates WPF FlowDocument for rich text display with Paragraph, Table, List elements. Use when building document viewers, rich text editors, or printable reports.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/creating-wpf-flowdocument",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "creating-wpf-flowdocument-christian289-dotnet-with-claudeco-2"
+}

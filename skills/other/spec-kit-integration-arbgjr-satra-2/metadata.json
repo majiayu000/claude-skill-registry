@@ -1,0 +1,11 @@
+{
+  "name": "spec-kit-integration",
+  "description": "Integracao com GitHub Spec Kit para Spec-Driven Development.\nGera specs, technical plans e tasks usando templates padronizados.\nUse quando: criar specs, gerar technical plans, quebrar em tasks.\n",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/spec-kit-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "spec-kit-integration-arbgjr-satra-2"
+}

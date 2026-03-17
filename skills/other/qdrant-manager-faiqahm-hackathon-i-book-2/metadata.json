@@ -1,0 +1,11 @@
+{
+  "name": "qdrant-manager",
+  "description": "Manage Qdrant Cloud collections, including vectorization of textbook chapters and metadata tagging for RAG retrieval.\nAgent: AIEngineer\n",
+  "repo": "FAIQahm/hackathon_I_book",
+  "path": ".claude/skills/qdrant-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FAIQahm/hackathon_I_book",
+  "dir_name": "qdrant-manager-faiqahm-hackathon-i-book-2"
+}

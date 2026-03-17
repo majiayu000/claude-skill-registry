@@ -1,0 +1,11 @@
+{
+  "name": "api-platform-serialization",
+  "description": "Use when symfony api platform serialization",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/api-platform-serialization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "api-platform-serialization-makfly-superpowers-symfony-2"
+}

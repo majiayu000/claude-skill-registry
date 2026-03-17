@@ -1,0 +1,9 @@
+{
+  "name": "cli-mock-stdin",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/cli-mcp-development/skills/cli-mock-stdin/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "cli-mock-stdin",
+  "downloaded_at": "2026-02-16T01:16:15.568623Z"
+}

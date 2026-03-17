@@ -1,0 +1,9 @@
+{
+  "name": "pre-commit",
+  "repo": "HouseGarofalo/claude-code-base",
+  "path": ".claude/skills/pre-commit/SKILL.md",
+  "category": "other",
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "dir_name": "pre-commit",
+  "downloaded_at": "2026-02-22T05:09:38.650707Z"
+}

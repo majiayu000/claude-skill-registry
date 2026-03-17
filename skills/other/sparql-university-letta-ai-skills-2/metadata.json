@@ -1,0 +1,11 @@
+{
+  "name": "sparql-university",
+  "description": "Guidance for writing and verifying SPARQL queries against RDF datasets, particularly university/academic ontologies. This skill should be used when tasks involve querying RDF data with SPARQL, working",
+  "repo": "letta-ai/skills",
+  "path": "letta/benchmarks/trajectory-only/sparql-university",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/letta-ai/skills",
+  "dir_name": "sparql-university-letta-ai-skills-2"
+}

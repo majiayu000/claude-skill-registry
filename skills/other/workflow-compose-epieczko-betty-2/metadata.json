@@ -1,0 +1,11 @@
+{
+  "name": "workflow.compose",
+  "description": "Executes multi-step workflows by chaining Betty Framework skills.",
+  "repo": "epieczko/betty",
+  "path": "skills/workflow.compose",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/epieczko/betty",
+  "dir_name": "workflow-compose-epieczko-betty-2"
+}

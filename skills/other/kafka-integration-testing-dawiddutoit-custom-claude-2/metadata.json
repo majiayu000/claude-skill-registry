@@ -1,0 +1,11 @@
+{
+  "name": "kafka-integration-testing",
+  "description": "Write integration tests for Kafka producers and consumers using testcontainers.\nUse when testing producer/consumer workflows, verifying message ordering, testing\nerror scenarios, and validating exactl",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/kafka-integration-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "kafka-integration-testing-dawiddutoit-custom-claude-2"
+}

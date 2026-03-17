@@ -1,0 +1,9 @@
+{
+  "name": "git-wizard-agent",
+  "repo": "HouseGarofalo/claude-code-base",
+  "path": ".claude/skills/git-wizard-agent/SKILL.md",
+  "category": "other",
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "dir_name": "git-wizard-agent",
+  "downloaded_at": "2026-02-22T05:09:44.909055Z"
+}

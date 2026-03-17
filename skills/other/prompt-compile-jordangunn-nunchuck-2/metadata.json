@@ -1,0 +1,11 @@
+{
+  "name": "prompt-compile",
+  "description": "Compile the YAML artifact into PROMPT.md with deterministic structure. A final agent pass polishes for fluidity, conciseness, and correctness.\n",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/prompt/prompt-compile",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "prompt-compile-jordangunn-nunchuck-2"
+}

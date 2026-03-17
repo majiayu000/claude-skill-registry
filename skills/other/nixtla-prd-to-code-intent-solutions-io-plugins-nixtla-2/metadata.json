@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-prd-to-code",
+  "description": "Transform PRD documents into actionable implementation tasks with TodoWrite integration. Use when planning development work, converting requirements to tasks, or creating implementation roadmaps. Trig",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "003-skills/.claude/skills/nixtla-prd-to-code",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-prd-to-code-intent-solutions-io-plugins-nixtla-2"
+}

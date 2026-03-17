@@ -1,0 +1,11 @@
+{
+  "name": "sync",
+  "description": "Real-time sync with Supabase, Loro CRDT, and IndexedDB. Use when working on files in src/lib/sync/.",
+  "repo": "bentefay/moneyflow",
+  "path": ".claude/skills/sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bentefay/moneyflow",
+  "dir_name": "sync-bentefay-moneyflow-2"
+}

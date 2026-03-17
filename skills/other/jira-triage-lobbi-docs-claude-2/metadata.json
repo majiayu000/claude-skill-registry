@@ -1,0 +1,11 @@
+{
+  "name": "jira-triage",
+  "description": "Triage and analyze Jira issues. Use when the user wants to \"triage issues\", \"analyze backlog\", \"assess tickets\", or \"jira triage\".",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/jira-triage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "jira-triage-lobbi-docs-claude-2"
+}

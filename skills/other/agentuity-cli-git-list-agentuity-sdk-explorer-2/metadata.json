@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-git-list",
+  "description": "List GitHub repositories accessible to your organization. Requires authentication",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-git-list",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-git-list-agentuity-sdk-explorer-2"
+}

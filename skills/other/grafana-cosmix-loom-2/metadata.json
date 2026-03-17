@@ -1,0 +1,11 @@
+{
+  "name": "grafana",
+  "description": "Observability visualization with Grafana and LGTM stack. Dashboard design, panel configuration, alerting, variables/templating, and data sources.\n\nUSE WHEN: Creating Grafana dashboards, configuring pa",
+  "repo": "cosmix/loom",
+  "path": "skills/grafana",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "grafana-cosmix-loom-2"
+}

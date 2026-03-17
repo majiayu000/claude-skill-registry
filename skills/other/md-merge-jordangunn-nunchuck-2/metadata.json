@@ -1,0 +1,11 @@
+{
+  "name": "md-merge",
+  "description": "Merges markdown chunks back into a single document, reversing the split operation with integrity checks.\n",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/md/md-merge",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "md-merge-jordangunn-nunchuck-2"
+}

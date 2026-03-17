@@ -1,0 +1,9 @@
+{
+  "name": "simple-math",
+  "repo": "cisco-ai-defense/skill-scanner",
+  "path": "evals/skills/safe-skills/simple-math/SKILL.md",
+  "category": "other",
+  "source": "github.com/cisco-ai-defense/skill-scanner",
+  "dir_name": "simple-math",
+  "downloaded_at": "2026-02-22T06:42:47.855912Z"
+}

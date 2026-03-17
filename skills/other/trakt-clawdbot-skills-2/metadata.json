@@ -1,0 +1,11 @@
+{
+  "name": "trakt",
+  "description": "Track and view your watched movies and TV shows via trakt.tv. Use when user asks about their watch history, what they've been watching, or wants to search for movies/shows.",
+  "repo": "clawdbot/skills",
+  "path": "skills/mjrussell/trakt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "trakt-clawdbot-skills-2"
+}

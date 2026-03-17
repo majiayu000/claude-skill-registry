@@ -1,0 +1,11 @@
+{
+  "name": "numpy-core",
+  "description": "NumPy Core focuses on the foundational architecture of the ndarray. This includes how data types (dtypes) interpret raw memory, how shapes are manipulated without copying data through \"views,\" and how",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/numpy-core",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "numpy-core-cuba6112-skillfactory-2"
+}

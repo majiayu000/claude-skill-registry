@@ -1,0 +1,11 @@
+{
+  "name": "generate-docstrings",
+  "description": "Create docstrings for functions and classes. Use when documenting code APIs.",
+  "repo": "mvillmow/ProjectOdyssey",
+  "path": ".claude/skills/tier-2/generate-docstrings",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mvillmow/ProjectOdyssey",
+  "dir_name": "generate-docstrings-mvillmow-projectodyssey-2"
+}

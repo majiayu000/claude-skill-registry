@@ -1,0 +1,11 @@
+{
+  "name": "handling-wpf-input-commands",
+  "description": "Implements WPF input handling with RoutedCommand, ICommand, CommandBinding, and InputBinding patterns. Use when creating keyboard shortcuts, menu commands, or custom command implementations.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/handling-wpf-input-commands",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "handling-wpf-input-commands-christian289-dotnet-with-claudeco-2"
+}

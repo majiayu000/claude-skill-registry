@@ -1,0 +1,11 @@
+{
+  "name": "pm-orchestrator",
+  "description": "Central orchestrator for multi-agent development. Manages task distribution, context passing, iteration cycles, and Gantt scheduling. Use this skill when coordinating team work, assigning tasks, or ma",
+  "repo": "Denissvgn/project-team-ag",
+  "path": ".agent/skills/pm-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Denissvgn/project-team-ag",
+  "dir_name": "pm-orchestrator-denissvgn-project-team-ag-2"
+}

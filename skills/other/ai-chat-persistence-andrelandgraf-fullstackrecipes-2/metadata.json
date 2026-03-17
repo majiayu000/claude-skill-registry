@@ -1,0 +1,11 @@
+{
+  "name": "ai-chat-persistence",
+  "description": "Persist AI chat conversations to Neon Postgres with full support for AI SDK message parts including tools, reasoning, and streaming. Uses UUID v7 for chronologically-sortable IDs.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/ai-chat-persistence",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "ai-chat-persistence-andrelandgraf-fullstackrecipes-2"
+}

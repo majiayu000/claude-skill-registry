@@ -1,0 +1,11 @@
+{
+  "name": "sentry-observability",
+  "description": "Sentry error tracking and production observability. Invoke when:\n- New Next.js project without error tracking → Suggest setup\n- Deploying to Vercel → \"Add observability before deploying\"\n- Discussing ",
+  "repo": "phrazzld/claude-config",
+  "path": "skills/sentry-observability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/phrazzld/claude-config",
+  "dir_name": "sentry-observability-phrazzld-claude-config-2"
+}

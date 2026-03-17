@@ -1,0 +1,11 @@
+{
+  "name": "upload-prepare",
+  "description": "Prepare YouTube upload for bilingual audiobook video. Runs youtube-metadata skill, builds upload command, validates all files, checks languages by reading translations from middle of book, verifies wo",
+  "repo": "smoreg/biLangGen",
+  "path": ".claude/skills/upload-prepare",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/smoreg/biLangGen",
+  "dir_name": "upload-prepare-smoreg-bilanggen-2"
+}

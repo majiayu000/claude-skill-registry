@@ -1,0 +1,11 @@
+{
+  "name": "api-boilerplate",
+  "description": "生成 REST API 样板代码，支持 Express、FastAPI、Next.js 等框架",
+  "repo": "atovk/skillx",
+  "path": "skills/03-code-generation/api-boilerplate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/atovk/skillx",
+  "dir_name": "api-boilerplate-atovk-skillx-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "conductor",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/conductor/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "conductor",
+  "downloaded_at": "2026-02-15T07:06:56.642653Z"
+}

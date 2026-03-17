@@ -1,0 +1,9 @@
+{
+  "name": "physician-feedback-agent",
+  "repo": "The-Human-Company/ai-receptionist",
+  "path": ".claude/skills/physician-feedback-agent/SKILL.md",
+  "category": "other",
+  "source": "github.com/The-Human-Company/ai-receptionist",
+  "dir_name": "physician-feedback-agent",
+  "downloaded_at": "2026-02-22T05:49:20.115262Z"
+}

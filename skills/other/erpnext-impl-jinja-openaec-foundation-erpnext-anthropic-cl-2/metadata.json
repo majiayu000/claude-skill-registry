@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-impl-jinja",
+  "description": "Implementation workflows and decision trees for Jinja templates in ERPNext/Frappe. Use when determining HOW to implement Print Formats, Email Templates, Portal Pages, or custom Jinja methods. Covers t",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/impl/erpnext-impl-jinja",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-impl-jinja-openaec-foundation-erpnext-anthropic-cl-2"
+}

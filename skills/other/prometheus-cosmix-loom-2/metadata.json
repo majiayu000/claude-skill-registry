@@ -1,0 +1,11 @@
+{
+  "name": "prometheus",
+  "description": "Prometheus monitoring and alerting for cloud-native observability.\n\nUSE WHEN: Writing PromQL queries, configuring Prometheus scrape targets, creating alerting rules, setting up recording rules, instru",
+  "repo": "cosmix/loom",
+  "path": "skills/prometheus",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "prometheus-cosmix-loom-2"
+}

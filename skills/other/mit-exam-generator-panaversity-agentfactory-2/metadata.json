@@ -1,0 +1,11 @@
+{
+  "name": "mit-exam-generator",
+  "description": "Generate rigorous MIT PhD-level qualifying examinations from Markdown/Obsidian notes.\nThis skill should be used when users request quiz creation, exam generation, assessment\nmaterials, practice questi",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/cold/mit-exam-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "mit-exam-generator-panaversity-agentfactory-2"
+}

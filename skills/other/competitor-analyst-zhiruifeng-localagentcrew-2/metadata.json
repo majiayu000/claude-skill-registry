@@ -1,0 +1,11 @@
+{
+  "name": "competitor-analyst",
+  "description": "Analyzes competitors, competitive landscape, market positioning, and competitive advantages",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/competitor-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "dir_name": "competitor-analyst-zhiruifeng-localagentcrew-2"
+}

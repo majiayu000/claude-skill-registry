@@ -1,0 +1,11 @@
+{
+  "name": "cran-extrachecks",
+  "description": "Prepare R packages for CRAN submission by checking for common ad-hoc requirements not caught by devtools::check(). Use when: (1) Preparing a package for first CRAN release, (2) Preparing a package upd",
+  "repo": "posit-dev/skills",
+  "path": "r-lib/cran-extrachecks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/posit-dev/skills",
+  "dir_name": "cran-extrachecks-posit-dev-skills-2"
+}

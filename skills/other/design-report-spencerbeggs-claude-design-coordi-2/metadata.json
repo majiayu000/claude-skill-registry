@@ -1,0 +1,11 @@
+{
+  "name": "design-report",
+  "description": "Generate status reports for design documentation. Use when creating documentation summaries, tracking progress, or preparing documentation reviews.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/design-report",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "design-report-spencerbeggs-claude-design-coordi-2"
+}

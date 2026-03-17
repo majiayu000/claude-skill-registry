@@ -1,0 +1,11 @@
+{
+  "name": "backend-architect",
+  "description": "Backend Architect Agent. 시스템 설계, 아키텍처 결정, 기술 선택을 담당합니다. 설계, 아키텍처, 구조, 패턴, 기술 선택 관련 요청 시 사용됩니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/backend-architect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "backend-architect-shaul1991-shaul-agents-plugin-2"
+}

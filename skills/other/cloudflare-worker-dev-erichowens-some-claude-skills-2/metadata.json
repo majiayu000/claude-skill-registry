@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-worker-dev",
+  "description": "Cloudflare Workers, KV, Durable Objects, and edge computing development. Use for serverless APIs, caching, rate limiting, real-time features. Activate on \"Workers\", \"KV\", \"Durable Objects\", \"wrangler\"",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/cloudflare-worker-dev",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "cloudflare-worker-dev-erichowens-some-claude-skills-2"
+}

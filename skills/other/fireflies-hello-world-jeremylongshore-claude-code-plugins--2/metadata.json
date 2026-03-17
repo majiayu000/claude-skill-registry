@@ -1,0 +1,11 @@
+{
+  "name": "fireflies-hello-world",
+  "description": "Create a minimal working Fireflies.ai example.\nUse when starting a new Fireflies.ai integration, testing your setup,\nor learning basic Fireflies.ai API patterns.\nTrigger with phrases like \"fireflies h",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/fireflies-pack/skills/fireflies-hello-world",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "fireflies-hello-world-jeremylongshore-claude-code-plugins--2"
+}

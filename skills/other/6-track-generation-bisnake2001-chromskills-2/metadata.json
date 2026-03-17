@@ -1,0 +1,11 @@
+{
+  "name": "6.track-generation",
+  "description": "This skill generates normalized BigWig (.bw) tracks (and/or fold-change tracks) from BAM files for ATAC-seq and ChIP-seq visualization. It handles normalization (RPM or fold-change) and Tn5 offset cor",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "6.track-generation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "6-track-generation-bisnake2001-chromskills-2"
+}

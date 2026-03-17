@@ -1,0 +1,11 @@
+{
+  "name": "ffmpeg-media",
+  "description": "FFmpeg media processing. Video/audio transcoding, stream manipulation, and filter graphs.",
+  "repo": "plurigrid/asi",
+  "path": "skills/ffmpeg-media",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "ffmpeg-media-plurigrid-asi-2"
+}

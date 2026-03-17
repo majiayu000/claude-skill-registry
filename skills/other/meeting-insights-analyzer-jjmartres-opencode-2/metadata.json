@@ -1,0 +1,11 @@
+{
+  "name": "meeting-insights-analyzer",
+  "description": "Analyzes meeting transcripts and recordings to uncover behavioral patterns, communication insights, and actionable feedback. Identifies when you avoid conflict, use filler words, dominate conversation",
+  "repo": "jjmartres/opencode",
+  "path": "opencode/skill/meeting-insights-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jjmartres/opencode",
+  "dir_name": "meeting-insights-analyzer-jjmartres-opencode-2"
+}

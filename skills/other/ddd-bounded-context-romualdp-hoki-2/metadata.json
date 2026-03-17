@@ -1,0 +1,11 @@
+{
+  "name": "ddd-bounded-context",
+  "description": "Génère des bounded contexts DDD complets avec architecture en couches (Domain, Application, Infrastructure, Presentation). À utiliser lors de la création de nouvelles features backend, bounded context",
+  "repo": "RomualdP/hoki",
+  "path": ".claude/skills/ddd-bounded-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RomualdP/hoki",
+  "dir_name": "ddd-bounded-context-romualdp-hoki-2"
+}

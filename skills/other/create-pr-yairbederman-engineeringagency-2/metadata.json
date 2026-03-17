@@ -1,0 +1,11 @@
+{
+  "name": "create-pr",
+  "description": "Creates GitHub pull requests with properly formatted titles. Use when creating PRs, submitting changes for review, or when the user says /pr or asks to create a pull request.",
+  "repo": "yairbederman/EngineeringAgency",
+  "path": "skills/create-pr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yairbederman/EngineeringAgency",
+  "dir_name": "create-pr-yairbederman-engineeringagency-2"
+}

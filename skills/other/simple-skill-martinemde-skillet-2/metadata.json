@@ -1,0 +1,11 @@
+{
+  "name": "simple-skill",
+  "description": "A simple skill for testing basic functionality. Use when you need to test the skillet CLI.",
+  "repo": "martinemde/skillet",
+  "path": "testdata/simple-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/martinemde/skillet",
+  "dir_name": "simple-skill-martinemde-skillet-2"
+}

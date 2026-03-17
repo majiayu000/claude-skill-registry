@@ -1,0 +1,11 @@
+{
+  "name": "summarize-session",
+  "description": "Use at the end of a Claude Code session to create a comprehensive summary note in Obsidian and add a brief reference to the daily note",
+  "repo": "ebinnion/dotfiles",
+  "path": "skills/summarize-session",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ebinnion/dotfiles",
+  "dir_name": "summarize-session-ebinnion-dotfiles-2"
+}

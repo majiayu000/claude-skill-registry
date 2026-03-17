@@ -1,0 +1,11 @@
+{
+  "name": "automating-notes",
+  "description": "Automates Apple Notes via JXA. Use when asked to \"create notes programmatically\", \"automate Notes app\", \"JXA notes scripting\", or \"organize notes with automation\". Covers accounts/folders/notes, HTML ",
+  "repo": "SpillwaveSolutions/automating-mac-apps-plugin",
+  "path": "plugins/automating-mac-apps-plugin/skills/automating-notes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
+  "dir_name": "automating-notes-spillwavesolutions-automating-mac-apps--2"
+}

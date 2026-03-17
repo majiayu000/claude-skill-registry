@@ -1,0 +1,11 @@
+{
+  "name": "hn",
+  "description": "Browse Hacker News - top stories, new, best, ask, show, jobs, and story details with comments.",
+  "repo": "clawdbot/skills",
+  "path": "skills/johntheyoung/comfy-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "hn-clawdbot-skills-2"
+}

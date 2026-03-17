@@ -1,0 +1,11 @@
+{
+  "name": "session-analyzer",
+  "description": "Analisa sessoes do Claude Code para extrair learnings e persistir conhecimento.\nLe arquivos de sessao em ~/.claude/projects/ e extrai decisoes, bloqueios e resolucoes.\nInvocado automaticamente pelo ga",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/session-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "session-analyzer-arbgjr-satra-2"
+}

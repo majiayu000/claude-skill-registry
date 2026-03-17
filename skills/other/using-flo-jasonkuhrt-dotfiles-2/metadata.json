@@ -1,0 +1,11 @@
+{
+  "name": "using-flo",
+  "description": "Guidance for using the flo CLI to manage git worktrees from GitHub issues. Use when starting work on issues, cleaning up finished work, or managing multiple parallel workstreams.",
+  "repo": "jasonkuhrt/dotfiles",
+  "path": "claude/todo/flo/skills/using-flo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonkuhrt/dotfiles",
+  "dir_name": "using-flo-jasonkuhrt-dotfiles-2"
+}

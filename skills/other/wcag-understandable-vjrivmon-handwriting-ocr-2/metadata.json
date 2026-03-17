@@ -1,0 +1,11 @@
+{
+  "name": "wcag-understandable",
+  "description": "Principio 3 de WCAG - contenido comprensible para todos. Use cuando escriba contenido, diseñe flujos, o implemente comportamientos predecibles.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/accessibility/wcag-understandable",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "wcag-understandable-vjrivmon-handwriting-ocr-2"
+}

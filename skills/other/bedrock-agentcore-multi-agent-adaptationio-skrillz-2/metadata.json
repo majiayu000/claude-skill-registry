@@ -1,0 +1,11 @@
+{
+  "name": "bedrock-agentcore-multi-agent",
+  "description": "Amazon Bedrock AgentCore multi-agent orchestration with Agent-to-Agent (A2A) protocol. Supervisor-worker patterns, agent collaboration, and hierarchical delegation. Use when building multi-agent syste",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/bedrock-agentcore-multi-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "bedrock-agentcore-multi-agent-adaptationio-skrillz-2"
+}

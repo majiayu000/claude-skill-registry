@@ -1,0 +1,11 @@
+{
+  "name": "coilcraft",
+  "description": "Coilcraft MPN encoding patterns, inductance value decoding, and handler guidance. Use when working with Coilcraft inductors, transformers, or RF components.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/coilcraft",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "coilcraft-cantara-lib-electronic-compo-2"
+}

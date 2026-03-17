@@ -1,0 +1,11 @@
+{
+  "name": "scientific-pkg-geniml",
+  "description": "This skill should be used when working with genomic interval data (BED files) for machine learning tasks. Use for training region embeddings (Region2Vec, BEDspace), single-cell ATAC-seq analysis (scEm",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/scientific-pkg-geniml",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "scientific-pkg-geniml-jackspace-claudeskillz-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "manage-conversation-db",
+  "description": "This skill should be used when implementing stateless conversation persistence, creating/loading conversations by ID, saving user/assistant messages, fetching history for agent input, and handling asy",
+  "repo": "Sobansaud/Hackhathon---2",
+  "path": "Phase 4/.claude/skills/manage-conversation-db",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sobansaud/Hackhathon---2",
+  "dir_name": "manage-conversation-db-sobansaud-hackhathon-2-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "root-cause-analysis",
+  "description": "Problem solving using Fishbone (Ishikawa) diagrams and 5 Whys technique. Identifies root causes systematically and recommends corrective actions.",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/business-analysis/root-cause-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "root-cause-analysis-prorise-cool-claude-code-multi-ag-2"
+}

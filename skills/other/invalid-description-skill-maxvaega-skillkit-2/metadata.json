@@ -1,0 +1,11 @@
+{
+  "name": "invalid-description-skill",
+  "description": "This skill should fail parsing because it's description field is misspelled.",
+  "repo": "maxvaega/skillkit",
+  "path": "tests/fixtures/skills/invalid-description-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "invalid-description-skill-maxvaega-skillkit-2"
+}

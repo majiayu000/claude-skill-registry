@@ -1,0 +1,11 @@
+{
+  "name": "workflow-extension-api",
+  "description": "Defines extension points for domain-specific workflow customization. Covers profile overrides (implementation, testing) and extensions (outline, triage).",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-workflow/skills/workflow-extension-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "workflow-extension-api-cuioss-plan-marshall-2"
+}

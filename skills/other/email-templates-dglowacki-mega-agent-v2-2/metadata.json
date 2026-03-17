@@ -1,0 +1,11 @@
+{
+  "name": "email-templates",
+  "description": "Professional HTML email templates for reports, summaries, and notifications. Includes daily summaries, GitHub digests, App Store metrics, and calendar reminders. Use when creating formatted email comm",
+  "repo": "dglowacki/mega-agent-v2",
+  "path": ".claude/skills/email-templates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dglowacki/mega-agent-v2",
+  "dir_name": "email-templates-dglowacki-mega-agent-v2-2"
+}

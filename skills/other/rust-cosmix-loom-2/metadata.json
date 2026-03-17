@@ -1,0 +1,11 @@
+{
+  "name": "rust",
+  "description": "This skill provides guidance for writing safe, efficient, and idiomatic Rust code. As the primary language for the Loom project, this skill covers:",
+  "repo": "cosmix/loom",
+  "path": "skills/rust",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "rust-cosmix-loom-2"
+}

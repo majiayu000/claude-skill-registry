@@ -1,0 +1,11 @@
+{
+  "name": "attribution-patching",
+  "description": "Gradient-based approximation to activation patching for scalable circuit analysis. Use when activation patching is too slow or when analyzing many components simultaneously.",
+  "repo": "ndif-team/skills",
+  "path": "plugins/nnsight/skills/attribution-patching",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ndif-team/skills",
+  "dir_name": "attribution-patching-ndif-team-skills-2"
+}

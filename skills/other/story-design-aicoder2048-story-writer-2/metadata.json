@@ -1,0 +1,11 @@
+{
+  "name": "story-design",
+  "description": "Generate story specification markdown files for various fiction genres. Use when:\n(1) User says \"write a [genre] story\" in pinyin (e.g., \"tonghua\", \"wuxia\", \"kehuan\")\n(2) User says \"策划/设计一个[类型]类别的小说\" ",
+  "repo": "aicoder2048/story-writer",
+  "path": ".claude/skills/story-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aicoder2048/story-writer",
+  "dir_name": "story-design-aicoder2048-story-writer-2"
+}

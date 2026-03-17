@@ -1,0 +1,9 @@
+{
+  "name": "judge-llm",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave/skills/judge-llm/SKILL.md",
+  "category": "other",
+  "source": "github.com/anton-abyzov/specweave",
+  "dir_name": "judge-llm",
+  "downloaded_at": "2026-02-22T06:18:48.447532Z"
+}

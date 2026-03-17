@@ -1,0 +1,11 @@
+{
+  "name": "env-matrix-dev-stg-prod",
+  "description": "มาตรฐานการจัดการ environments (development, staging, production) รวมถึง configs, data policies, access controls ที่แตกต่างกันแต่ละ environment",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "69-platform-engineering-lite/env-matrix-dev-stg-prod",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "env-matrix-dev-stg-prod-amnadtaowsoam-cerebratechai-claude-2"
+}

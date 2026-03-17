@@ -1,0 +1,11 @@
+{
+  "name": "serena_memory",
+  "description": "Interface for long-term memory and context management. Use to store and retrieve user preferences, project context, and past learnings.",
+  "repo": "Verridian-ai/life-os-Pulse-banner-generator",
+  "path": ".claude/skills/serena_memory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Verridian-ai/life-os-Pulse-banner-generator",
+  "dir_name": "serena-memory-verridian-ai-life-os-pulse-banner-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "infrastructure-as-code-generator",
+  "description": "This skill enables Claude to generate Infrastructure as Code (IaC) configurations. It uses the infrastructure-as-code-generator plugin to create production-ready IaC for Terraform, CloudFormation, Pul",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/devops/infrastructure-as-code-generator/skills/infrastructure-as-code-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "infrastructure-as-code-generator-intent-solutions-io-plugins-nixtla-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "python-code",
+  "description": "Python coding conventions, tooling, and style guide. Auto-loads when writing or reviewing Python code.",
+  "repo": "kpeez/agentspec",
+  "path": "skills/python-code",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kpeez/agentspec",
+  "dir_name": "python-code-kpeez-agentspec-2"
+}

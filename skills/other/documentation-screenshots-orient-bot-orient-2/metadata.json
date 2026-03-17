@@ -1,0 +1,11 @@
+{
+  "name": "documentation-screenshots",
+  "description": "Capture browser screenshots and add them to documentation. Use this skill when asked to \"add screenshots to docs\", \"capture screenshots for documentation\", \"take screenshots of the dashboard\", \"replac",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/documentation-screenshots",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "documentation-screenshots-orient-bot-orient-2"
+}

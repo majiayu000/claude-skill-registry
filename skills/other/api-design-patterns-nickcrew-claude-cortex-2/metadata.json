@@ -1,0 +1,11 @@
+{
+  "name": "api-design-patterns",
+  "description": "Comprehensive REST and GraphQL API design patterns with versioning, pagination, error handling, and HATEOAS principles. Use when designing APIs, defining endpoints, or architecting service contracts r",
+  "repo": "NickCrew/claude-cortex",
+  "path": "claude_ctx_py/assets/skills/api-design-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NickCrew/claude-cortex",
+  "dir_name": "api-design-patterns-nickcrew-claude-cortex-2"
+}

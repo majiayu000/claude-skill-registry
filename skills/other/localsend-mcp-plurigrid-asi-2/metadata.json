@@ -1,0 +1,11 @@
+{
+  "name": "localsend-mcp",
+  "description": "LocalSend-based P2P transfer with MCP server design for NATS/Tailscale",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.codex/skills/localsend-mcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "localsend-mcp-plurigrid-asi-2"
+}

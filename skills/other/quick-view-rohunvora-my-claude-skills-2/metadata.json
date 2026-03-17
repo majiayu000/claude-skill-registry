@@ -1,0 +1,11 @@
+{
+  "name": "quick-view",
+  "description": "Generate minimal HTML pages to review Claude Code output in a browser. Use when terminal output is hard to read, when reviewing lists/tables/drafts, or when user says \"show me\", \"make this reviewable\"",
+  "repo": "rohunvora/my-claude-skills",
+  "path": ".claude/skills/quick-view",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rohunvora/my-claude-skills",
+  "dir_name": "quick-view-rohunvora-my-claude-skills-2"
+}

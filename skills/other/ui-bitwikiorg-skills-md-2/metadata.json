@@ -1,0 +1,11 @@
+{
+  "name": "ui",
+  "description": "Imported skill ui from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/vercel/build",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "ui-bitwikiorg-skills-md-2"
+}

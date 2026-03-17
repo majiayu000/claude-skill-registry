@@ -1,0 +1,11 @@
+{
+  "name": "bitsandbytes",
+  "description": "Quantizes LLMs to 8-bit or 4-bit for 50-75% memory reduction with minimal accuracy loss. Use when GPU memory is limited, need to fit larger models, or want faster inference. Supports INT8, NF4, FP4 fo",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "10-optimization/bitsandbytes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "bitsandbytes-zechenzhangagi-ai-research-skills-2"
+}

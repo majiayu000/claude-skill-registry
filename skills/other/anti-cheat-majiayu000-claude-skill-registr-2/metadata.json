@@ -1,0 +1,11 @@
+{
+  "name": "anti-cheat",
+  "description": "Guide for understanding anti-cheat systems and bypass techniques. Use this skill when researching game protection systems (EAC, BattlEye, Vanguard), anti-cheat architecture, detection methods, or bypa",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/anti-cheat",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "anti-cheat-majiayu000-claude-skill-registr-2"
+}

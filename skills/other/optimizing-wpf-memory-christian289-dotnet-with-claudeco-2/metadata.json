@@ -1,0 +1,11 @@
+{
+  "name": "optimizing-wpf-memory",
+  "description": "Covers WPF memory optimization including Freezable patterns, common memory leak causes, and diagnostic techniques. Use when experiencing memory growth, implementing resource caching, or debugging memo",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/optimizing-wpf-memory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "optimizing-wpf-memory-christian289-dotnet-with-claudeco-2"
+}

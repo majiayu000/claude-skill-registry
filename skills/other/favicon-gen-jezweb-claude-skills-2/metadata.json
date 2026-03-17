@@ -1,0 +1,11 @@
+{
+  "name": "favicon-gen",
+  "description": "Generate custom favicons from logos, text, or brand colors - prevents launching with CMS defaults. Extract icons from logos, create monogram favicons from initials, or use branded shapes. Outputs all ",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/favicon-gen",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "favicon-gen-jezweb-claude-skills-2"
+}

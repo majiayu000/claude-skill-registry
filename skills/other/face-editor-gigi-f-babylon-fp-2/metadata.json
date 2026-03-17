@@ -1,0 +1,11 @@
+{
+  "name": "face-editor",
+  "description": "Guide for creating custom pixel art faces for NPCs. Use when designing NPC appearances or working with face customization.",
+  "repo": "gigi-f/babylon_fp",
+  "path": ".claude/skills/face-editor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gigi-f/babylon_fp",
+  "dir_name": "face-editor-gigi-f-babylon-fp-2"
+}

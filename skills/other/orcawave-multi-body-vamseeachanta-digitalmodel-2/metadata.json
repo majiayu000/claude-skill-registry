@@ -1,0 +1,11 @@
+{
+  "name": "orcawave-multi-body",
+  "description": "Multi-body hydrodynamic interaction specialist for OrcaWave. Handles coupled vessel analysis, side-by-side operations, FPSO-tanker interactions, gap resonance, and hydrodynamic shielding effects.",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcawave-multi-body",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcawave-multi-body-vamseeachanta-digitalmodel-2"
+}

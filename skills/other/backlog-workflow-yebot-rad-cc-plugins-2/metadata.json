@@ -1,0 +1,11 @@
+{
+  "name": "backlog-workflow",
+  "description": "Expert knowledge for working with Backlog.md task management. Use when managing tasks, organizing epics, handling dependencies, or tracking project progress. Automatically applies Backlog.md best prac",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/backlog-md/skills/backlog-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "backlog-workflow-yebot-rad-cc-plugins-2"
+}

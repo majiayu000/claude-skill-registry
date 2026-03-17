@@ -1,0 +1,11 @@
+{
+  "name": "vibe-coding-yaml",
+  "description": "AI outputs YAML descriptors instead of code, CLI executes deterministically for 100% auditable behavior with zero slop. Use when auditability is critical, generated code review needed, or deterministi",
+  "repo": "dredd-us/seashells",
+  "path": ".claude/skills/vibe-coding-yaml",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dredd-us/seashells",
+  "dir_name": "vibe-coding-yaml-dredd-us-seashells-2"
+}

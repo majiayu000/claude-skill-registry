@@ -1,0 +1,11 @@
+{
+  "name": "prompt-template-designer",
+  "description": "Design reusable prompt templates that encode domain-specific patterns for recurring AI tasks. Use when you've executed similar prompts 2+ times and need to capture the pattern as reusable intelligence",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/cold/prompt-template-designer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "prompt-template-designer-panaversity-agentfactory-2"
+}

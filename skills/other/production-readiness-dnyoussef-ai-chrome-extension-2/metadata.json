@@ -1,0 +1,11 @@
+{
+  "name": "production-readiness",
+  "description": "Comprehensive pre-deployment validation ensuring code is production-ready. Runs complete audit pipeline, performance benchmarks, security scan, documentation check, and generates deployment checklist.",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/production-readiness",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "dir_name": "production-readiness-dnyoussef-ai-chrome-extension-2"
+}

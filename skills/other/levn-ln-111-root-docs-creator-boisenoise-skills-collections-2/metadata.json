@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-111-root-docs-creator",
+  "description": "Creates 4 root documentation files (CLAUDE.md, docs/README.md, documentation_standards.md, principles.md). L3 Worker invoked by ln-110-project-docs-coordinator.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-111-root-docs-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-111-root-docs-creator-boisenoise-skills-collections-2"
+}

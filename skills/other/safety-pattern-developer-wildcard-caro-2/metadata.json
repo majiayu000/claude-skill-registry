@@ -1,0 +1,11 @@
+{
+  "name": "safety-pattern-developer",
+  "description": "Guide through TDD process for adding new safety patterns - from threat identification to commit",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/safety-pattern-developer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildcard/caro",
+  "dir_name": "safety-pattern-developer-wildcard-caro-2"
+}

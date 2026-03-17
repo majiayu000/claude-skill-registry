@@ -1,0 +1,11 @@
+{
+  "name": "swot-analyst",
+  "description": "Conducts SWOT analysis, strategic assessment, and provides strategic recommendations",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/swot-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "dir_name": "swot-analyst-zhiruifeng-localagentcrew-2"
+}

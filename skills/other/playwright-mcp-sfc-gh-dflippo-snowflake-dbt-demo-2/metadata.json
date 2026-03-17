@@ -1,0 +1,11 @@
+{
+  "name": "playwright-mcp",
+  "description": "Browser testing, web scraping, and UI validation using Playwright MCP. Use this skill when you need to test Streamlit apps, validate web interfaces, test responsive design, check accessibility, or aut",
+  "repo": "sfc-gh-dflippo/snowflake-dbt-demo",
+  "path": ".claude/skills/playwright-mcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sfc-gh-dflippo/snowflake-dbt-demo",
+  "dir_name": "playwright-mcp-sfc-gh-dflippo-snowflake-dbt-demo-2"
+}

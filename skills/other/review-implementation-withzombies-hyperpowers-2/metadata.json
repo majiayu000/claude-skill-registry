@@ -1,0 +1,11 @@
+{
+  "name": "review-implementation",
+  "description": "Use after hyperpowers:executing-plans completes all tasks - verifies implementation against bd spec, all success criteria met, anti-patterns avoided",
+  "repo": "withzombies/hyperpowers",
+  "path": "skills/review-implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/withzombies/hyperpowers",
+  "dir_name": "review-implementation-withzombies-hyperpowers-2"
+}

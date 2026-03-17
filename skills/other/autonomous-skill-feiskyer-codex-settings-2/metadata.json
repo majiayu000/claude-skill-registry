@@ -1,0 +1,11 @@
+{
+  "name": "autonomous-skill",
+  "description": "Use when user wants to execute long-running tasks that require multiple sessions to complete. This skill manages task decomposition, progress tracking, and autonomous execution using Codex non-interac",
+  "repo": "feiskyer/codex-settings",
+  "path": "skills/autonomous-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/feiskyer/codex-settings",
+  "dir_name": "autonomous-skill-feiskyer-codex-settings-2"
+}

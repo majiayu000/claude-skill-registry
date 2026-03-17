@@ -1,0 +1,11 @@
+{
+  "name": "project-management",
+  "description": "研究專案的建立、切換、設定管理。\nLOAD THIS SKILL WHEN: 新專案、切換專案、專案設定、paper type、start exploration、convert exploration\nCAPABILITIES: create_project, list_projects, switch_project, get_current_project, setup_project_in",
+  "repo": "u9401066/med-paper-assistant",
+  "path": ".claude/skills/project-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/u9401066/med-paper-assistant",
+  "dir_name": "project-management-u9401066-med-paper-assistant-2"
+}

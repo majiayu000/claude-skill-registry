@@ -1,0 +1,11 @@
+{
+  "name": "claude-md-memory",
+  "description": "Central CLAUDE.md file with project guidelines auto-injected into system prompt, achieving 10% accuracy lift in multi-hop reasoning through consistent context. Use for repo-wide context, coding standa",
+  "repo": "dredd-us/seashells",
+  "path": ".claude/skills/claude-md-memory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dredd-us/seashells",
+  "dir_name": "claude-md-memory-dredd-us-seashells-2"
+}

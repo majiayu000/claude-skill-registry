@@ -1,0 +1,11 @@
+{
+  "name": "legal-pages",
+  "description": "Create Impressum and Datenschutz pages with legally required content for German/Swiss websites. Provides templates with all mandatory sections for DSG/DSGVO compliance. Use when creating legal pages, ",
+  "repo": "deomiarn/website-template",
+  "path": ".claude/skills/legal-pages",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/deomiarn/website-template",
+  "dir_name": "legal-pages-deomiarn-website-template-2"
+}

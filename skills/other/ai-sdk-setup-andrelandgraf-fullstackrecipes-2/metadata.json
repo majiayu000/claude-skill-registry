@@ -1,0 +1,11 @@
+{
+  "name": "ai-sdk-setup",
+  "description": "Install the Vercel AI SDK with AI Elements components. Build a streaming chat interface with the useChat hook.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/ai-sdk-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "ai-sdk-setup-andrelandgraf-fullstackrecipes-2"
+}

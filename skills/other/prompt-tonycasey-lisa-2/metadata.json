@@ -1,0 +1,11 @@
+{
+  "name": "prompt",
+  "description": "Capture each prompt into Graphiti memory (episodes) for this repo/user.",
+  "repo": "TonyCasey/lisa",
+  "path": "src/project/.lisa/skills/prompt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TonyCasey/lisa",
+  "dir_name": "prompt-tonycasey-lisa-2"
+}

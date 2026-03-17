@@ -1,0 +1,11 @@
+{
+  "name": "dad-joke-validator",
+  "description": "Analyze and score jokes on the dad joke quality spectrum with multi-dimensional feedback on pun quality, groan factor, wholesomeness, and structure. Can also generate dad jokes.",
+  "repo": "leegonzales/AISkills",
+  "path": "DadJokeValidator/dad-joke-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leegonzales/AISkills",
+  "dir_name": "dad-joke-validator-leegonzales-aiskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "advanced-rendering",
+  "description": "Master high-performance rendering for large datasets with Datashader. Use this skill when working with datasets exceeding 100M+ points, optimizing visualization performance, or implementing efficient ",
+  "repo": "robertpelloni/borg",
+  "path": "agents/rse-agents/plugins/holoviz-visualization/skills/advanced-rendering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertpelloni/borg",
+  "dir_name": "advanced-rendering-robertpelloni-borg-2"
+}

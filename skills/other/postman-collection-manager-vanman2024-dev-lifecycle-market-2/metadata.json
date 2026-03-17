@@ -1,0 +1,11 @@
+{
+  "name": "postman-collection-manager",
+  "description": "Import, export, and manage Postman collections. Use when working with Postman collections, importing OpenAPI specs, exporting collections, or when user mentions Postman import, collection management, ",
+  "repo": "vanman2024/dev-lifecycle-marketplace",
+  "path": "plugins/testing/skills/postman-collection-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vanman2024/dev-lifecycle-marketplace",
+  "dir_name": "postman-collection-manager-vanman2024-dev-lifecycle-market-2"
+}

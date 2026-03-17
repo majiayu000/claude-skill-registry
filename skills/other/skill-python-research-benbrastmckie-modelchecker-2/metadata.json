@@ -1,0 +1,11 @@
+{
+  "name": "skill-python-research",
+  "description": "Research Python/Z3 patterns and APIs for semantic theory development. Invoke for Python-language research tasks.",
+  "repo": "benbrastmckie/ModelChecker",
+  "path": ".claude/skills/skill-python-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benbrastmckie/ModelChecker",
+  "dir_name": "skill-python-research-benbrastmckie-modelchecker-2"
+}

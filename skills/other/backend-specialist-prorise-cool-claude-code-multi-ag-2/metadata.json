@@ -1,0 +1,11 @@
+{
+  "name": "backend-specialist",
+  "description": "提供后端开发、API 设计、数据库交互和框架特定开发能力。当需要实现后端功能、设计 API 或处理数据层逻辑时使用。",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/backend-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "backend-specialist-prorise-cool-claude-code-multi-ag-2"
+}

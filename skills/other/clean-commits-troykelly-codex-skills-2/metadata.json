@@ -1,0 +1,11 @@
+{
+  "name": "clean-commits",
+  "description": "Use when committing code - ensures atomic, descriptive commits that leave the codebase in a merge-ready state at every point",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/clean-commits",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "clean-commits-troykelly-codex-skills-2"
+}

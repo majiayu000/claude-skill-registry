@@ -1,0 +1,11 @@
+{
+  "name": "valgrind",
+  "description": "Valgrind skill for the ikigai project",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/valgrind",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "valgrind-mgreenly-ikigai-2"
+}

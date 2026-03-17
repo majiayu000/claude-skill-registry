@@ -1,0 +1,11 @@
+{
+  "name": "financial_research",
+  "description": "面向股票/行业/宏观的金融研究技能，结合结构化金融数据（OpenBB/AkShare）与多源信息验证，生成带引用与免责声明的研究报告。",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/financial_research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "financial-research-hxk622-tokendance-2"
+}

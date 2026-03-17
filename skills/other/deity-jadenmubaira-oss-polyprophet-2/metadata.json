@@ -1,0 +1,11 @@
+{
+  "name": "DEITY",
+  "description": "The unified AI agent for Polyprophet - combines deep analysis, precise execution, and atomic-level investigation. One agent, one skill, one mission.",
+  "repo": "jadenmubaira-oss/POLYPROPHET",
+  "path": ".agent/skills/DEITY",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jadenmubaira-oss/POLYPROPHET",
+  "dir_name": "deity-jadenmubaira-oss-polyprophet-2"
+}

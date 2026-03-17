@@ -1,0 +1,11 @@
+{
+  "name": "backend-models",
+  "description": "Define database models and schemas with proper data types, constraints, relationships, and validation rules. Use this skill when creating or modifying database models, ORM entities, schema definitions",
+  "repo": "SpacePlushy/portfolio",
+  "path": ".claude/skills/backend-models",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpacePlushy/portfolio",
+  "dir_name": "backend-models-spaceplushy-portfolio-2"
+}

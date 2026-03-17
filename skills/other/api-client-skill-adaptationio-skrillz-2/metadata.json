@@ -1,0 +1,11 @@
+{
+  "name": "api-client-skill",
+  "description": "REST API client builder with authentication, error handling, retry logic, and request management. Supports OAuth, JWT, API keys. Use when building API integrations, creating API clients, or working wi",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/skill-builder-generic/examples/api-client-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "api-client-skill-adaptationio-skrillz-2"
+}

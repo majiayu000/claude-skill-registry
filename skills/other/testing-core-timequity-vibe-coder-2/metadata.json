@@ -1,0 +1,11 @@
+{
+  "name": "testing-core",
+  "description": "Cross-language testing patterns: unit, integration, E2E testing strategies.\nUse when: writing tests, setting up test infrastructure, or improving coverage.\nTriggers: \"test\", \"testing\", \"unit test\", \"i",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/testing-core",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "testing-core-timequity-vibe-coder-2"
+}

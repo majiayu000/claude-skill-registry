@@ -1,0 +1,11 @@
+{
+  "name": "skill-review",
+  "description": "Audit claude-skills repository documentation with systematic 9-phase review: standards compliance, official docs verification via Context7/WebFetch, code examples accuracy, cross-file consistency, and",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/skill-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "skill-review-ovachiever-droid-tings-2"
+}

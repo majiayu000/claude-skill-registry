@@ -1,0 +1,11 @@
+{
+  "name": "world-extractable-value",
+  "description": "Extract value from world transitions via Markov blanket arbitrage. WEV = PoA - 1. Paradigm Multiverse Finance integration.",
+  "repo": "plurigrid/asi",
+  "path": "skills/world-extractable-value",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "world-extractable-value-plurigrid-asi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "glossary-creator",
+  "description": "プロジェクト用語集を作成するスキル。docs/prd.md や docs/functional-design.md が存在する場合に、ドメイン用語、技術用語、略語、アーキテクチャ用語等を体系的に定義した用語集を作成します。「用語集を作成して」「glossary を作って」「用語を定義して」等のリクエストで使用してください。",
+  "repo": "ks6088ts-labs/skills",
+  "path": "skills/glossary-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ks6088ts-labs/skills",
+  "dir_name": "glossary-creator-ks6088ts-labs-skills-2"
+}

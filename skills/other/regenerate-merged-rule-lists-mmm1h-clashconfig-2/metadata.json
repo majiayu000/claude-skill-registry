@@ -1,0 +1,11 @@
+{
+  "name": "regenerate-merged-rule-lists",
+  "description": "Regenerate aggregated *Merged.list files from their source headers in this repo. Use when refreshing upstream sources or rebuilding merged rule lists.",
+  "repo": "mmm1h/clashconfig",
+  "path": "skills/regenerate-merged-rule-lists",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mmm1h/clashconfig",
+  "dir_name": "regenerate-merged-rule-lists-mmm1h-clashconfig-2"
+}

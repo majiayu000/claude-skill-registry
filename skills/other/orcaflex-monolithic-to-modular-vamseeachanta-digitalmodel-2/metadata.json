@@ -1,0 +1,11 @@
+{
+  "name": "orcaflex-monolithic-to-modular",
+  "description": "Convert monolithic OrcaFlex YAML files to modular include format for maintainability, reusability, and parametric analysis.",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcaflex-monolithic-to-modular",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcaflex-monolithic-to-modular-vamseeachanta-digitalmodel-2"
+}

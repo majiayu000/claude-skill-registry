@@ -1,0 +1,11 @@
+{
+  "name": "config-skills",
+  "description": "Configuration module patterns for LlamaFarm. Covers Pydantic v2 models, JSONSchema generation, YAML processing, and validation.",
+  "repo": "llama-farm/llamafarm",
+  "path": ".claude/skills/config-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/llama-farm/llamafarm",
+  "dir_name": "config-skills-llama-farm-llamafarm-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "audio-playback",
+  "description": "Audio playback using Tone.js including players, transport, scheduling, and loading audio. Use when implementing background music, sound effects, audio synchronization, or timed audio events. Essential",
+  "repo": "Bbeierle12/Skill-MCP-Claude",
+  "path": "skills/audio-playback",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Bbeierle12/Skill-MCP-Claude",
+  "dir_name": "audio-playback-bbeierle12-skill-mcp-claude-2"
+}

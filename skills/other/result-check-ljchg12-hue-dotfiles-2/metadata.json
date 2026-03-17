@@ -1,0 +1,11 @@
+{
+  "name": "result-check",
+  "description": "내가 만든 파일이 제대로 됐는지 확인해주는 도구. 빈 칸, 중복, 오류를 자동으로 찾아줘요!",
+  "repo": "ljchg12-hue/dotfiles",
+  "path": "skills/result-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ljchg12-hue/dotfiles",
+  "dir_name": "result-check-ljchg12-hue-dotfiles-2"
+}

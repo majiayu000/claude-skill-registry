@@ -1,0 +1,11 @@
+{
+  "name": "image-generator",
+  "description": "Generate professional visuals using Gemini via browser automation with 6-gate quality control. Use when creating chapter illustrations, diagrams, or teaching visuals. NOT for stock photos or decorativ",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/cold/image-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "image-generator-panaversity-agentfactory-2"
+}

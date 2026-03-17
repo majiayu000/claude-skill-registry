@@ -1,0 +1,11 @@
+{
+  "name": "non_destructive_bootstrap",
+  "description": "Install agent docs without overwriting or deleting existing content.",
+  "repo": "CheekyCodexConjurer/quant-lab",
+  "path": ".agent-docs/templates/.codex/skills/non_destructive_bootstrap",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CheekyCodexConjurer/quant-lab",
+  "dir_name": "non-destructive-bootstrap-cheekycodexconjurer-quant-lab-2"
+}

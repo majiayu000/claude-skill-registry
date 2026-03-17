@@ -1,0 +1,11 @@
+{
+  "name": "dbt-migration-teradata",
+  "description": "Convert Teradata DDL to dbt models compatible with Snowflake. This skill should be used when converting views, tables, or stored procedures from Teradata to dbt code, generating schema.yml files with ",
+  "repo": "sfc-gh-dflippo/snowflake-dbt-demo",
+  "path": ".claude/skills/dbt-migration-teradata",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sfc-gh-dflippo/snowflake-dbt-demo",
+  "dir_name": "dbt-migration-teradata-sfc-gh-dflippo-snowflake-dbt-demo-2"
+}

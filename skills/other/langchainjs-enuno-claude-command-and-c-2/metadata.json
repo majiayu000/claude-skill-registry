@@ -1,0 +1,11 @@
+{
+  "name": "langchainjs",
+  "description": "LangChain.js - TypeScript framework for building LLM-powered applications with agents, chains, RAG, tools, memory, and integrations for OpenAI, Anthropic, Google, and hundreds of other providers",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/langchainjs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "langchainjs-enuno-claude-command-and-c-2"
+}

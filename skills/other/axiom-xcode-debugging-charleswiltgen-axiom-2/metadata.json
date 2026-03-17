@@ -1,0 +1,11 @@
+{
+  "name": "axiom-xcode-debugging",
+  "description": "Use when encountering BUILD FAILED, test crashes, simulator hangs, stale builds, zombie xcodebuild processes, \"Unable to boot simulator\", \"No such module\" after SPM changes, or mysterious test failure",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-xcode-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-xcode-debugging-charleswiltgen-axiom-2"
+}

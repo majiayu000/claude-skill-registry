@@ -1,0 +1,11 @@
+{
+  "name": "compression-optimizer",
+  "description": "Optimize compression optimizer operations. Auto-activating skill for Data Pipelines.\nTriggers on: compression optimizer, compression optimizer\nPart of the Data Pipelines skill category. Use when worki",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "planned-skills/generated/11-data-pipelines/compression-optimizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "compression-optimizer-jeremylongshore-claude-code-plugins--2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "fact-checker",
+  "description": "Verifies factual claims in documents using web search and official sources, then proposes corrections with user confirmation. Use when the user asks to fact-check, verify information, validate claims,",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/content-creator-workflow/.claude/skills/fact-checker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "fact-checker-nicepkg-ai-workflow-2"
+}

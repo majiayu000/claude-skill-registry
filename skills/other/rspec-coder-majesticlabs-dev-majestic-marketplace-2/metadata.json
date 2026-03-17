@@ -1,0 +1,11 @@
+{
+  "name": "rspec-coder",
+  "description": "This skill guides writing comprehensive RSpec tests for Ruby and Rails applications. Use when creating spec files, writing test cases, or testing new features. Covers RSpec syntax, describe/context or",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": "plugins/majestic-rails/skills/rspec-coder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "dir_name": "rspec-coder-majesticlabs-dev-majestic-marketplace-2"
+}

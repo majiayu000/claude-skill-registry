@@ -1,0 +1,9 @@
+{
+  "name": "pkg-binary-builder",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/cli-mcp-development/skills/pkg-binary-builder/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "pkg-binary-builder",
+  "downloaded_at": "2026-02-18T01:16:54.913419Z"
+}

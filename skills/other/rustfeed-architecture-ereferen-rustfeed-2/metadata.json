@@ -1,0 +1,11 @@
+{
+  "name": "rustfeed-architecture",
+  "description": "rustfeed プロジェクトのCargoワークスペース構成、クレート間の依存関係、データベーススキーマ、新機能追加時の配置ルールについて説明します。アーキテクチャに関する質問や新機能追加時に使用します。",
+  "repo": "ereferen/rustfeed",
+  "path": ".claude/skills/rustfeed-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ereferen/rustfeed",
+  "dir_name": "rustfeed-architecture-ereferen-rustfeed-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "django-allauth",
+  "description": "Configure django-allauth with headless API, MFA, social authentication, and CORS for React frontends. This skill should be used when setting up authentication for a new Django project or adding django",
+  "repo": "otoshek/Claude-Code-Toolkit",
+  "path": "skills/django-allauth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/otoshek/Claude-Code-Toolkit",
+  "dir_name": "django-allauth-otoshek-claude-code-toolkit-2"
+}

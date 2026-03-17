@@ -1,0 +1,11 @@
+{
+  "name": "redis-expert",
+  "description": "Expert-level Redis for caching, pub/sub, data structures, and high-performance applications",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/data/redis-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "redis-expert-personamanagmentlaye-pcl-2"
+}

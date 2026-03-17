@@ -1,0 +1,11 @@
+{
+  "name": "background-remover",
+  "description": "Remove backgrounds from images using segmentation. Support for color-based, edge detection, and AI-assisted removal methods. Batch processing available.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "background-remover",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "background-remover-dkyazzentwatwa-chatgpt-skills-2"
+}

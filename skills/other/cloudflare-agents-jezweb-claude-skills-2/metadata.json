@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-agents",
+  "description": "Build AI agents with Cloudflare Agents SDK on Workers + Durable Objects. Provides WebSockets, state persistence, scheduling, and multi-agent coordination. Prevents 23 documented errors.\n\nUse when: bui",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/cloudflare-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "cloudflare-agents-jezweb-claude-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "dotfiles-manage",
+  "description": "Manage dotfiles using dotter (symlink manager and templater). Use when deploying, adding, removing, or organizing configuration files in ~/dotfiles.",
+  "repo": "srnnkls/tropos",
+  "path": "skills/dotfiles-manage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/srnnkls/tropos",
+  "dir_name": "dotfiles-manage-srnnkls-tropos-2"
+}

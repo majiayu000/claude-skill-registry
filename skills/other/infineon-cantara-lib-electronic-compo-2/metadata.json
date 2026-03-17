@@ -1,0 +1,11 @@
+{
+  "name": "infineon",
+  "description": "Infineon Technologies MPN encoding patterns, package codes, and handler guidance. Use when working with Infineon MOSFETs, IGBTs, MCUs, or InfineonHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/infineon",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "infineon-cantara-lib-electronic-compo-2"
+}

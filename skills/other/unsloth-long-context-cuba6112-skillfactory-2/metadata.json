@@ -1,0 +1,11 @@
+{
+  "name": "unsloth-long-context",
+  "description": "Unsloth enables training on extreme context lengths (up to 89K+ on a single 80GB GPU) by utilizing manually derived Triton kernels for RoPE and attention. It optimizes memory usage by a further 30% co",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/unsloth-long-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "unsloth-long-context-cuba6112-skillfactory-2"
+}

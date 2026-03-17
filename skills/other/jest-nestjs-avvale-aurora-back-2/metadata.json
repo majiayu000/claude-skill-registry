@@ -1,0 +1,11 @@
+{
+  "name": "jest-nestjs",
+  "description": "Jest + NestJS testing patterns for unit and e2e tests in Aurora projects. Trigger: When writing tests, mocking dependencies, or implementing test coverage in NestJS/Aurora.\n",
+  "repo": "avvale/aurora-back",
+  "path": ".claude/skills/jest-nestjs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/avvale/aurora-back",
+  "dir_name": "jest-nestjs-avvale-aurora-back-2"
+}

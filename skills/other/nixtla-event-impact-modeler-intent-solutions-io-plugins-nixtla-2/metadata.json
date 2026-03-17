@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-event-impact-modeler",
+  "description": "Quantifies the impact of exogenous events on contract prices using TimeGPT and CausalImpact. Triggers on \"event impact analysis\", \"model event effects\", \"quantify event impact\", or \"causal analysis\".\n",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "000-docs/000a-planned-skills/prediction-markets/nixtla-event-impact-modeler",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-event-impact-modeler-intent-solutions-io-plugins-nixtla-2"
+}

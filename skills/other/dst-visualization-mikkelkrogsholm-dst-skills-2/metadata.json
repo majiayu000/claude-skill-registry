@@ -1,0 +1,11 @@
+{
+  "name": "dst-visualization",
+  "description": "Create interactive Chart.js visualizations for DST data analysis. Use when generating charts, creating visual reports, building dashboards, or displaying trends from database tables.",
+  "repo": "mikkelkrogsholm/dst-skills",
+  "path": ".claude/skills/dst-visualization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mikkelkrogsholm/dst-skills",
+  "dir_name": "dst-visualization-mikkelkrogsholm-dst-skills-2"
+}

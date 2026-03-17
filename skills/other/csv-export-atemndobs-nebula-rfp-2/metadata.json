@@ -1,0 +1,11 @@
+{
+  "name": "csv-export",
+  "description": "Export RFP data, evaluations, and pursuits in CSV and other formats. Use when implementing data export features, building reports, or extracting data for analysis.",
+  "repo": "Atemndobs/nebula-rfp",
+  "path": ".claude/skills/csv-export",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Atemndobs/nebula-rfp",
+  "dir_name": "csv-export-atemndobs-nebula-rfp-2"
+}

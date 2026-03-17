@@ -1,0 +1,9 @@
+{
+  "name": "docker",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/docker/SKILL.md",
+  "category": "other",
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "docker-lobbi-docs-claude",
+  "downloaded_at": "2026-02-15T05:23:04.769363Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rules-maintenance",
+  "description": "检查和更新 Claude Rules 内容。包括格式检查、统计数据同步、过时内容清理。使用 /rules-cleanup 或 /rules-update 调用。",
+  "repo": "j4xie/my-prototype-logistics",
+  "path": ".claude/skills/rules-maintenance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/j4xie/my-prototype-logistics",
+  "dir_name": "rules-maintenance-j4xie-my-prototype-logisti-2"
+}

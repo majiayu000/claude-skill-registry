@@ -1,0 +1,11 @@
+{
+  "name": "vitest-config",
+  "description": "Generates vitest.config.ts for unit testing configuration. Configures Vitest with Vue, TypeScript support, coverage thresholds, and test environment settings.",
+  "repo": "sayali-ingle-pdl/adusa-ai-vuejs-app-template",
+  "path": ".github/agents/app-starter/agents-context/skills/vitest-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sayali-ingle-pdl/adusa-ai-vuejs-app-template",
+  "dir_name": "vitest-config-sayali-ingle-pdl-adusa-ai-vuejs-app-t-2"
+}

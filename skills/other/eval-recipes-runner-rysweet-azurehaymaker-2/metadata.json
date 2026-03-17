@@ -1,0 +1,11 @@
+{
+  "name": "eval-recipes-runner",
+  "description": "Run Microsoft's eval-recipes benchmarks to validate amplihack improvements against baseline agents. Activates when testing with eval-recipes, running evals, or benchmarking changes.",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/eval-recipes-runner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "eval-recipes-runner-rysweet-azurehaymaker-2"
+}

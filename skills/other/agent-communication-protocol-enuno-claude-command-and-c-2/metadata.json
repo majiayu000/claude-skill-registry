@@ -1,0 +1,11 @@
+{
+  "name": "agent-communication-protocol",
+  "description": "Open protocol for AI agent interoperability enabling standardized communication between agents, applications, and humans across different frameworks",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/agent-communication-protocol",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "agent-communication-protocol-enuno-claude-command-and-c-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "jcl-migration-analyzer",
+  "description": "Analyzes legacy JCL (Job Control Language) scripts to assist with migration to modern workflow orchestration and batch processing systems. Extracts job flows, step sequences, data dependencies, condit",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/jcl-migration-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "dir_name": "jcl-migration-analyzer-dauquangthanh-hanoi-rainbow-2"
+}

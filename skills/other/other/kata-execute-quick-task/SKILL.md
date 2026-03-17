@@ -1,0 +1,447 @@
+---
+name: kata-execute-quick-task
+description: Execute small ad-hoc tasks with Kata guarantees, running quick tasks without full planning, or handling one-off work outside the roadmap. Triggers include "quick task", "quick mode", "quick fix", "ad-hoc task", "small task", and "one-off task".
+metadata:
+  version: "0.1.0"
+allowed-tools: Read Write Bash
+---
+
+<objective>
+Execute small, ad-hoc tasks with Kata guarantees (atomic commits, STATE.md tracking) while skipping optional agents (research, plan-checker, verifier).
+
+Quick mode is the same system with a shorter path:
+
+- Spawns kata-planner (quick mode) + kata-executor(s)
+- Skips kata-phase-researcher, kata-plan-checker, kata-verifier
+- Quick tasks live in `.planning/quick/` separate from planned phases
+- Updates STATE.md "Quick Tasks Completed" table (NOT ROADMAP.md)
+
+Use when: You know exactly what to do and the task is small enough to not need research or verification.
+</objective>
+
+<execution_context>
+Orchestration is inline - no separate workflow file. Quick mode is deliberately simpler than full Kata.
+</execution_context>
+
+<context>
+@.planning/STATE.md
+</context>
+
+<process>
+**Step 0: Resolve Model Profile**
+
+Read model profile for agent spawning:
+
+```bash
+MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+```
+
+Default to "balanced" if not set.
+
+**Model lookup table:**
+
+| Agent         | quality | balanced | budget |
+| ------------- | ------- | -------- | ------ |
+| kata-planner  | opus    | opus     | sonnet |
+| kata-executor | opus    | sonnet   | sonnet |
+
+Store resolved models for use in Task calls below.
+
+---
+
+**Step 1: Pre-flight validation**
+
+Check that an active Kata project exists:
+
+```bash
+if [ ! -f .planning/ROADMAP.md ]; then
+  echo "Quick mode requires an active project with ROADMAP.md."
+  echo "Run /kata-new-project first."
+  exit 1
+fi
+```
+
+If validation fails, stop immediately with the error message.
+
+Quick tasks can run mid-phase - validation only checks ROADMAP.md exists, not phase status.
+
+---
+
+**Step 1.5: Parse issue argument (optional)**
+
+Check for issue file path argument:
+
+```bash
+ISSUE_FILE=""
+ISSUE_NUMBER=""
+ISSUE_TITLE=""
+ISSUE_PROBLEM=""
+
+# Check for --issue flag
+if echo "$ARGUMENTS" | grep -q -- "--issue"; then
+  ISSUE_FILE=$(echo "$ARGUMENTS" | grep -oE '\-\-issue [^ ]+' | cut -d' ' -f2)
+
+  if [ -f "$ISSUE_FILE" ]; then
+    # Extract issue metadata
+    ISSUE_TITLE=$(grep "^title:" "$ISSUE_FILE" | cut -d':' -f2- | xargs)
+    PROVENANCE=$(grep "^provenance:" "$ISSUE_FILE" | cut -d' ' -f2)
+
+    if echo "$PROVENANCE" | grep -q "^github:"; then
+      ISSUE_NUMBER=$(echo "$PROVENANCE" | grep -oE '#[0-9]+' | tr -d '#')
+    fi
+
+    # Extract problem section for context
+    ISSUE_PROBLEM=$(sed -n '/^## Problem/,/^## /p' "$ISSUE_FILE" | tail -n +2 | head -n -1)
+  fi
+fi
+```
+
+If `ISSUE_FILE` provided but file not found: error and exit.
+If `ISSUE_FILE` provided and valid: Use issue title as description (skip Step 2 prompt).
+
+---
+
+**Step 2: Get task description**
+
+**If `$ISSUE_FILE` is set (issue-driven quick task):**
+
+```bash
+DESCRIPTION="$ISSUE_TITLE"
+echo "Using issue title: $DESCRIPTION"
+```
+
+Skip the AskUserQuestion prompt — use the issue title as the description.
+
+**If no issue context (standard quick task):**
+
+Prompt user interactively for the task description:
+
+```
+AskUserQuestion(
+  header: "Quick Task",
+  question: "What do you want to do?",
+  followUp: null
+)
+```
+
+Store response as `$DESCRIPTION`.
+
+If empty, re-prompt: "Please provide a task description."
+
+**Generate slug from description (both paths):**
+
+Generate slug from description:
+
+```bash
+slug=$(echo "$DESCRIPTION" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//;s/-$//' | cut -c1-40)
+```
+
+---
+
+**Step 3: Calculate next quick task number**
+
+Ensure `.planning/quick/` directory exists and find the next sequential number:
+
+```bash
+# Ensure .planning/quick/ exists
+mkdir -p .planning/quick
+
+# Find highest existing number and increment
+last=$(ls -1d .planning/quick/[0-9][0-9][0-9]-* 2>/dev/null | sort -r | head -1 | xargs -I{} basename {} | grep -oE '^[0-9]+')
+
+if [ -z "$last" ]; then
+  next_num="001"
+else
+  next_num=$(printf "%03d" $((10#$last + 1)))
+fi
+```
+
+---
+
+**Step 4: Create quick task directory**
+
+Create the directory for this quick task:
+
+```bash
+QUICK_DIR=".planning/quick/${next_num}-${slug}"
+mkdir -p "$QUICK_DIR"
+```
+
+Report to user:
+
+```
+Creating quick task ${next_num}: ${DESCRIPTION}
+Directory: ${QUICK_DIR}
+```
+
+Store `$QUICK_DIR` for use in orchestration.
+
+---
+
+**Step 4.5: Read context files**
+
+Read files before spawning agents using the Read tool. The `@` syntax does not work across Task() boundaries - content must be inlined.
+
+**Read these files:**
+
+- `.planning/STATE.md` (required) — store as `STATE_CONTENT`
+- `skills/kata-plan-phase/references/planner-instructions.md` (cross-skill reference) — store as `planner_instructions_content`
+- `skills/kata-execute-phase/references/executor-instructions.md` (cross-skill reference) — store as `executor_instructions_content`
+
+Store content for use in Task prompts below.
+
+---
+
+**Step 5: Spawn planner (quick mode)**
+
+Spawn kata-planner with quick mode context:
+
+```
+Task(
+  prompt="<agent-instructions>\n{planner_instructions_content}\n</agent-instructions>\n\n" +
+"<planning_context>
+
+**Mode:** quick
+**Directory:** ${QUICK_DIR}
+**Description:** ${DESCRIPTION}
+
+**Project State:**
+${STATE_CONTENT}
+
+**Issue Context (if from issue):**
+${ISSUE_FILE:+Issue File: $ISSUE_FILE}
+${ISSUE_NUMBER:+GitHub Issue: #$ISSUE_NUMBER}
+${ISSUE_PROBLEM:+
+Problem:
+$ISSUE_PROBLEM}
+
+</planning_context>
+
+<constraints>
+- Create a SINGLE plan with 1-3 focused tasks
+- Quick tasks should be atomic and self-contained
+- No research phase, no checker phase
+- Target ~30% context usage (simple, focused)
+</constraints>
+
+<output>
+Write plan to: ${QUICK_DIR}/${next_num}-PLAN.md
+Return: ## PLANNING COMPLETE with plan path
+</output>
+",
+  subagent_type="general-purpose",
+  model="{planner_model}",
+  description="Quick plan: ${DESCRIPTION}"
+)
+```
+
+After planner returns:
+
+1. Verify plan exists at `${QUICK_DIR}/${next_num}-PLAN.md`
+2. Extract plan count (typically 1 for quick tasks)
+3. Report: "Plan created: ${QUICK_DIR}/${next_num}-PLAN.md"
+
+If plan not found, error: "Planner failed to create ${next_num}-PLAN.md"
+
+---
+
+**Step 6: Spawn executor**
+
+Read the plan content before spawning using the Read tool:
+
+- `${QUICK_DIR}/${next_num}-PLAN.md`
+
+Spawn kata-executor with inlined plan (use the STATE_CONTENT from step 4.5):
+
+```
+Task(
+  prompt="<agent-instructions>\n{executor_instructions_content}\n</agent-instructions>\n\n" +
+"Execute quick task ${next_num}.
+
+<plan>
+${PLAN_CONTENT}
+</plan>
+
+<project_state>
+${STATE_CONTENT}
+</project_state>
+
+<constraints>
+- Execute all tasks in the plan
+- Commit each task atomically
+- Create summary at: ${QUICK_DIR}/${next_num}-SUMMARY.md
+- Do NOT update ROADMAP.md (quick tasks are separate from planned phases)
+</constraints>
+",
+  subagent_type="general-purpose",
+  model="{executor_model}",
+  description="Execute: ${DESCRIPTION}"
+)
+```
+
+After executor returns:
+
+1. Verify summary exists at `${QUICK_DIR}/${next_num}-SUMMARY.md`
+2. Extract commit hash from executor output
+3. Report completion status
+
+If summary not found, error: "Executor failed to create ${next_num}-SUMMARY.md"
+
+Note: For quick tasks producing multiple plans (rare), spawn executors in parallel waves per phase-execute patterns.
+
+---
+
+**Step 7: Update STATE.md**
+
+Update STATE.md with quick task completion record.
+
+**7a. Check if "Quick Tasks Completed" section exists:**
+
+Read STATE.md and check for `### Quick Tasks Completed` section.
+
+**7b. If section doesn't exist, create it:**
+
+Insert after `### Blockers/Concerns` section:
+
+```markdown
+### Quick Tasks Completed
+
+| #   | Description | Date | Commit | Directory |
+| --- | ----------- | ---- | ------ | --------- |
+```
+
+**7c. Append new row to table:**
+
+```markdown
+| ${next_num} | ${DESCRIPTION} | $(date +%Y-%m-%d) | ${commit_hash} | [${next_num}-${slug}](./quick/${next_num}-${slug}/) |
+```
+
+**7d. Update "Last activity" line:**
+
+Find and update the line:
+
+```
+Last activity: $(date +%Y-%m-%d) - Completed quick task ${next_num}: ${DESCRIPTION}
+```
+
+Use Edit tool to make these changes atomically
+
+---
+
+**Step 7.5: Create PR with issue closure (if issue-driven)**
+
+**Check pr_workflow config:**
+
+```bash
+PR_WORKFLOW=$(cat .planning/config.json 2>/dev/null | grep -o '"pr_workflow"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "false")
+```
+
+**If `$ISSUE_NUMBER` is set (issue-driven quick task):**
+
+**If `PR_WORKFLOW=true`:**
+
+```bash
+# Create branch for this quick task
+BRANCH="fix/quick-${next_num}-${slug}"
+git checkout -b "$BRANCH"
+
+# Push branch
+git push -u origin "$BRANCH"
+
+# Build PR body
+cat > /tmp/quick-pr-body.md << PR_EOF
+## Summary
+
+Completes issue #${ISSUE_NUMBER}: ${ISSUE_TITLE}
+
+## Changes
+
+Quick task ${next_num}: ${DESCRIPTION}
+
+See: ${QUICK_DIR}/${next_num}-SUMMARY.md
+
+Closes #${ISSUE_NUMBER}
+PR_EOF
+
+# Create PR
+gh pr create \
+  --title "fix: ${ISSUE_TITLE}" \
+  --body-file /tmp/quick-pr-body.md
+
+echo "PR created with Closes #${ISSUE_NUMBER}"
+```
+
+**If `PR_WORKFLOW=false`:**
+
+```bash
+# Close issue directly (no PR workflow)
+gh issue close "$ISSUE_NUMBER" --comment "Completed via quick task ${next_num}"
+echo "Issue #${ISSUE_NUMBER} closed directly (pr_workflow=false)"
+```
+
+**If no `$ISSUE_NUMBER`:**
+Skip PR creation (standard quick task, not issue-driven).
+
+---
+
+**Step 8: Final commit and completion**
+
+Stage and commit quick task artifacts:
+
+```bash
+# Stage quick task artifacts
+git add ${QUICK_DIR}/${next_num}-PLAN.md
+git add ${QUICK_DIR}/${next_num}-SUMMARY.md
+git add .planning/STATE.md
+
+# Commit with quick task format
+git commit -m "$(cat <<'EOF'
+docs(quick-${next_num}): ${DESCRIPTION}
+
+Quick task completed.
+
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+EOF
+)"
+```
+
+Get final commit hash:
+
+```bash
+commit_hash=$(git rev-parse --short HEAD)
+```
+
+Display completion output:
+
+```
+---
+
+Kata > QUICK TASK COMPLETE
+
+Quick Task ${next_num}: ${DESCRIPTION}
+
+Summary: ${QUICK_DIR}/${next_num}-SUMMARY.md
+Commit: ${commit_hash}
+
+---
+
+Ready for next task: /kata-execute-quick-task
+```
+
+</process>
+
+<success_criteria>
+
+- [ ] ROADMAP.md validation passes
+- [ ] User provides task description (or uses issue title if --issue flag)
+- [ ] Slug generated (lowercase, hyphens, max 40 chars)
+- [ ] Next number calculated (001, 002, 003...)
+- [ ] Directory created at `.planning/quick/NNN-slug/`
+- [ ] `${next_num}-PLAN.md` created by planner
+- [ ] `${next_num}-SUMMARY.md` created by executor
+- [ ] STATE.md updated with quick task row
+- [ ] Artifacts committed
+- [ ] Issue context parsed from --issue flag (if provided)
+- [ ] PR created with `Closes #X` (if issue-driven and pr_workflow=true)
+- [ ] Issue closed directly (if issue-driven and pr_workflow=false)
+      </success_criteria>

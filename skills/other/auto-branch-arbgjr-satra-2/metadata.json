@@ -1,0 +1,11 @@
+{
+  "name": "auto-branch",
+  "description": "Automacao de criacao de branches baseado em tipo de trabalho.\nIntegra com SpecKit para criar branches automaticamente ao iniciar features.\nUse quando: iniciar novo trabalho, criar feature, corrigir bu",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/auto-branch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "auto-branch-arbgjr-satra-2"
+}

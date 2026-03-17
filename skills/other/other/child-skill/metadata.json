@@ -1,0 +1,9 @@
+{
+  "name": "child-skill",
+  "repo": "can1357/oh-my-pi",
+  "path": "packages/coding-agent/test/fixtures/skills/nested/child-skill/SKILL.md",
+  "category": "other",
+  "source": "github.com/can1357/oh-my-pi",
+  "dir_name": "child-skill",
+  "downloaded_at": "2026-02-15T06:40:38.611933Z"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "deploy",
+  "repo": "echennells/sparkbtcbot-proxy",
+  "path": "skills/deploy/SKILL.md",
+  "category": "other",
+  "source": "github.com/echennells/sparkbtcbot-proxy",
+  "dir_name": "deploy-echennells-sparkbtcbot-proxy",
+  "downloaded_at": "2026-02-22T07:01:37.449779Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "skill-anatomy",
+  "description": "Comprehensive guide for understanding and fixing skill structure issues. Use this skill when skills aren't loading, when creating new skills, when organizing skills for open-source vs personal use, or",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/skill-anatomy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "skill-anatomy-orient-bot-orient-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "documentation-management",
+  "description": "Keep project documentation accurate when behavior changes. EXCLUSIVE to project-manager agent.",
+  "repo": "htooayelwinict/claude-config",
+  "path": "skills/documentation-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/htooayelwinict/claude-config",
+  "dir_name": "documentation-management-htooayelwinict-claude-config-2"
+}

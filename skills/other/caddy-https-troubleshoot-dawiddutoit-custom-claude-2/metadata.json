@@ -1,0 +1,11 @@
+{
+  "name": "caddy-https-troubleshoot",
+  "description": "Diagnoses and fixes HTTPS/SSL certificate issues in the network infrastructure by checking\nAPI tokens, validating Caddy configuration, and testing certificates. Use when certificates\nare not obtained,",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/caddy-https-troubleshoot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "caddy-https-troubleshoot-dawiddutoit-custom-claude-2"
+}

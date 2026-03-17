@@ -1,0 +1,11 @@
+{
+  "name": "registration-ops",
+  "description": "Use when configuring registration flows, reminders, and data sync for webinars.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/webinar-automation/skills/registration-ops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "registration-ops-gtmagents-gtm-agents-2"
+}

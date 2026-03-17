@@ -1,0 +1,11 @@
+{
+  "name": "summarize_robotics_text",
+  "description": "Summarize robotics-related text, research papers, or lecture notes into concise, clear, and structured summaries. Use when user asks to condense or simplify robotics content.",
+  "repo": "MuhammadHassaanArain/Book-PAI",
+  "path": ".claude/skills/summarize_robotics_text",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MuhammadHassaanArain/Book-PAI",
+  "dir_name": "summarize-robotics-text-muhammadhassaanarain-book-pai-2"
+}

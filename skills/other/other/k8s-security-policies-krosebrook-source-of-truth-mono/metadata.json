@@ -1,0 +1,9 @@
+{
+  "name": "k8s-security-policies",
+  "repo": "Krosebrook/source-of-truth-monorepo",
+  "path": "plugins/marketplaces/ando-marketplace/plugins/kubernetes-operations/skills/k8s-security-policies/SKILL.md",
+  "category": "other",
+  "source": "github.com/Krosebrook/source-of-truth-monorepo",
+  "dir_name": "k8s-security-policies-krosebrook-source-of-truth-mono",
+  "downloaded_at": "2026-02-22T05:17:57.815612Z"
+}

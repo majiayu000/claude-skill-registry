@@ -1,0 +1,11 @@
+{
+  "name": "prompt-tuner",
+  "description": "Improve embedded LLM system prompt based on evaluation test failures",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/prompt-tuner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildcard/caro",
+  "dir_name": "prompt-tuner-wildcard-caro-2"
+}

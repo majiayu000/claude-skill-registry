@@ -1,0 +1,11 @@
+{
+  "name": "swiftlint-autofix",
+  "description": "Run SwiftFormat and fix all auto-correctable SwiftLint issues",
+  "repo": "willsigmon/sigstack-site",
+  "path": "claude/skills/swiftlint-autofix",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/willsigmon/sigstack-site",
+  "dir_name": "swiftlint-autofix-willsigmon-sigstack-site-2"
+}

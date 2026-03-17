@@ -1,0 +1,11 @@
+{
+  "name": "create-resource",
+  "description": "Orchestrator skill for creating a complete CRUD resource with all layers. Use when creating a new domain entity like notes, users, or courses from scratch. Triggers on \"create resource\", \"new entity\",",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/create-resource",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "create-resource-madooei-backend-template-2"
+}

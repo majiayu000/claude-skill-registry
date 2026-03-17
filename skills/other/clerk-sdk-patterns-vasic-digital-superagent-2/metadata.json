@@ -1,0 +1,11 @@
+{
+  "name": "clerk-sdk-patterns",
+  "description": "Common Clerk SDK patterns and best practices.\nUse when implementing authentication flows, accessing user data,\nor integrating Clerk SDK methods in your application.\nTrigger with phrases like \"clerk SD",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/clerk-pack/clerk-sdk-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "clerk-sdk-patterns-vasic-digital-superagent-2"
+}

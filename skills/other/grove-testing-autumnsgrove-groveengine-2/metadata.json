@@ -1,0 +1,11 @@
+{
+  "name": "grove-testing",
+  "description": "Write effective, maintainable tests that catch real bugs and enable confident refactoring. Use when deciding what to test, reviewing test quality, or writing tests for Grove features. Focuses on philo",
+  "repo": "AutumnsGrove/GroveEngine",
+  "path": ".claude/skills/grove-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AutumnsGrove/GroveEngine",
+  "dir_name": "grove-testing-autumnsgrove-groveengine-2"
+}

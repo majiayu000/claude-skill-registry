@@ -1,0 +1,11 @@
+{
+  "name": "1k-i18n",
+  "description": "Internationalization and translation guidelines for OneKey. Use when adding text strings, using translations, or working with locales. Triggers on i18n, translation, locale, intl, formatMessage, ETran",
+  "repo": "OneKeyHQ/app-monorepo",
+  "path": ".claude/skills/1k-i18n",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OneKeyHQ/app-monorepo",
+  "dir_name": "1k-i18n-onekeyhq-app-monorepo-2"
+}

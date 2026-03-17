@@ -1,0 +1,11 @@
+{
+  "name": "nav-loop",
+  "description": "Run tasks until complete with structured completion signals. Auto-invoke when user says \"run until done\", \"keep going until complete\", \"iterate until finished\", \"loop mode\", \"autonomous mode\".",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "skills/os-layer/core/nav-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "nav-loop-dkyazzentwatwa-supernavigator-2"
+}

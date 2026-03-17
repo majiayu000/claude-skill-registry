@@ -1,0 +1,11 @@
+{
+  "name": "axiom-memory-debugging",
+  "description": "Use when you see memory warnings, 'retain cycle', app crashes from memory pressure, or when asking 'why is my app using so much memory', 'how do I find memory leaks', 'my deinit is never called', 'Ins",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-memory-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-memory-debugging-charleswiltgen-axiom-2"
+}

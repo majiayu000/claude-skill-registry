@@ -1,0 +1,11 @@
+{
+  "name": "analyzing-research-papers",
+  "description": "Expert methodology for analyzing and summarizing research papers, extracting key contributions, methodological details, and contextualizing findings. Use when reading papers from PDFs, DOIs, or URLs t",
+  "repo": "seabbs/claude-code-config",
+  "path": "skills/analyzing-research-papers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/seabbs/claude-code-config",
+  "dir_name": "analyzing-research-papers-seabbs-claude-code-config-2"
+}

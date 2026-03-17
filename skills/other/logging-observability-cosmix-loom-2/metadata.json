@@ -1,0 +1,11 @@
+{
+  "name": "logging-observability",
+  "description": "Comprehensive logging and observability patterns for production systems including structured logging, distributed tracing, metrics collection, log aggregation, and alerting. Triggers for this skill - ",
+  "repo": "cosmix/loom",
+  "path": "skills/logging-observability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "logging-observability-cosmix-loom-2"
+}

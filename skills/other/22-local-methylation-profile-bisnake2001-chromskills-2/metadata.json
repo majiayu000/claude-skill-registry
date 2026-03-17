@@ -1,0 +1,11 @@
+{
+  "name": "22.local-methylation-profile",
+  "description": "This skill analyzes the local DNA methylation profiles around target genomic regions provide by user. Use this skill when you want to vasulize the average methylation profile around target regions (e.",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "22.local-methylation-profile",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "22-local-methylation-profile-bisnake2001-chromskills-2"
+}

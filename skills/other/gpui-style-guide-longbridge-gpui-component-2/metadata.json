@@ -1,0 +1,11 @@
+{
+  "name": "gpui-style-guide",
+  "description": "GPUI Component project style guide based on gpui-component code patterns. Use when writing new components, reviewing code, or ensuring consistency with existing gpui-component implementations. Covers ",
+  "repo": "longbridge/gpui-component",
+  "path": ".claude/skills/gpui-style-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/longbridge/gpui-component",
+  "dir_name": "gpui-style-guide-longbridge-gpui-component-2"
+}

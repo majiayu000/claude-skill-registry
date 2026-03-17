@@ -1,0 +1,11 @@
+{
+  "name": "posthog-cost-tuning",
+  "description": "Optimize PostHog costs through tier selection, sampling, and usage monitoring.\nUse when analyzing PostHog billing, reducing API costs,\nor implementing usage monitoring and budget alerts.\nTrigger with ",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/posthog-pack/skills/posthog-cost-tuning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "posthog-cost-tuning-jeremylongshore-claude-code-plugins--2"
+}

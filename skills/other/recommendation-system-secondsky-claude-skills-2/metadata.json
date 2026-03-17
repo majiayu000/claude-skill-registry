@@ -1,0 +1,11 @@
+{
+  "name": "recommendation-system",
+  "description": "Deploy production recommendation systems with feature stores, caching, A/B testing. Use for personalization APIs, low latency serving, or encountering cache invalidation, experiment tracking, quality ",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/recommendation-system/skills/recommendation-system",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "recommendation-system-secondsky-claude-skills-2"
+}

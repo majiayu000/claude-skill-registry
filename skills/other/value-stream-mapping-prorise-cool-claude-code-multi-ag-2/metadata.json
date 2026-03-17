@@ -1,0 +1,11 @@
+{
+  "name": "value-stream-mapping",
+  "description": "Lean value stream mapping for identifying waste and optimization opportunities. Creates current/future state maps with cycle time analysis and improvement recommendations.",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/business-analysis/value-stream-mapping",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "value-stream-mapping-prorise-cool-claude-code-multi-ag-2"
+}

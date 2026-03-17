@@ -1,0 +1,11 @@
+{
+  "name": "refine-draft",
+  "description": "Improve the quality of draft content. Runs review and applies improvements while preserving voice.",
+  "repo": "unfinishablemap/unfinishablemap",
+  "path": ".claude/skills/refine-draft",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/unfinishablemap/unfinishablemap",
+  "dir_name": "refine-draft-unfinishablemap-unfinishablemap-2"
+}

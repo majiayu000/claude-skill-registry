@@ -1,0 +1,11 @@
+{
+  "name": "sec-edgar-skill",
+  "description": "SEC EDGAR filing analysis using EdgarTools. Use when user asks about SEC filings, company financials, 10-K/10-Q analysis, insider trading, revenue trends, or financial comparisons. Triggers include \"S",
+  "repo": "rebyteai-template/rebyte-skills",
+  "path": "sec-edgar-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rebyteai-template/rebyte-skills",
+  "dir_name": "sec-edgar-skill-rebyteai-template-rebyte-skills-2"
+}

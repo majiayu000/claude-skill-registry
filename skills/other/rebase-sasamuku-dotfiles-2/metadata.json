@@ -1,0 +1,11 @@
+{
+  "name": "rebase",
+  "description": "Execute /rebase or /rebase <branch> slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/rebase",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "rebase-sasamuku-dotfiles-2"
+}

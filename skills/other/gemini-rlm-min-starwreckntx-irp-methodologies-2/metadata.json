@@ -1,0 +1,11 @@
+{
+  "name": "gemini-rlm-min",
+  "description": "Minimal implementation of Recursive Language Models (RLM) using Gemini 2.0 Flash and a local Python REPL. Enables processing of massive contexts via the Gemini CLI.",
+  "repo": "starwreckntx/IRP__METHODOLOGIES-",
+  "path": "skills/gemini-rlm-min",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/starwreckntx/IRP__METHODOLOGIES-",
+  "dir_name": "gemini-rlm-min-starwreckntx-irp-methodologies-2"
+}

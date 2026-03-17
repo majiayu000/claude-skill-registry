@@ -1,0 +1,11 @@
+{
+  "name": "skill-theory-implementation",
+  "description": "Implement semantic theories and Python/Z3 code with TDD. Invoke for Python-language implementation tasks.",
+  "repo": "benbrastmckie/ModelChecker",
+  "path": ".claude/skills/skill-theory-implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benbrastmckie/ModelChecker",
+  "dir_name": "skill-theory-implementation-benbrastmckie-modelchecker-2"
+}

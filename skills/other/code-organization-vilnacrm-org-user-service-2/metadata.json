@@ -1,0 +1,11 @@
+{
+  "name": "code-organization",
+  "description": "Enforce code organization principles - \"Directory X contains ONLY class type X\", DDD naming patterns, PHP best practices, type safety, and SOLID principles. Use when reviewing code structure, placing ",
+  "repo": "VilnaCRM-Org/user-service",
+  "path": ".claude/skills/code-organization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VilnaCRM-Org/user-service",
+  "dir_name": "code-organization-vilnacrm-org-user-service-2"
+}

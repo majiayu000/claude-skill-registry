@@ -1,0 +1,11 @@
+{
+  "name": "debug-systematic",
+  "description": "Systematic 4-phase debugging methodology for complex, intermittent, or mysterious issues. Use when investigating bugs, race conditions, or unexplained failures.",
+  "repo": "travisjneuman/.claude",
+  "path": "skills/debug-systematic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/travisjneuman/.claude",
+  "dir_name": "debug-systematic-travisjneuman-claude-2"
+}

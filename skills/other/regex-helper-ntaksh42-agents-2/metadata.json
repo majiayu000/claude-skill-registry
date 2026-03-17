@@ -1,0 +1,11 @@
+{
+  "name": "regex-helper",
+  "description": "Generate, explain, and test regular expressions with examples and test cases. Use when creating regex patterns or understanding complex regular expressions.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/regex-helper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "regex-helper-ntaksh42-agents-2"
+}

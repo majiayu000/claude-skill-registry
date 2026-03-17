@@ -1,0 +1,11 @@
+{
+  "name": "generate-store-action",
+  "description": "Generate Zustand async action with loading/error states and toast notifications. Use when adding new API calls to the health store.",
+  "repo": "marcd35/health-tracker-9000",
+  "path": ".claude/skills/generate-store-action",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/marcd35/health-tracker-9000",
+  "dir_name": "generate-store-action-marcd35-health-tracker-9000-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "briefing-format",
+  "description": "Standard structure and style for sales call briefings including templates for full briefings and quick-reference cheat sheets. Triggers when generating or formatting prospect briefings.",
+  "repo": "jeffrschneider/OpenHarness",
+  "path": "examples/sales-call-prep/package/skills/briefing-format",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeffrschneider/OpenHarness",
+  "dir_name": "briefing-format-jeffrschneider-openharness-2"
+}

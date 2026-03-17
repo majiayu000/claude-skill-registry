@@ -1,0 +1,11 @@
+{
+  "name": "database_migration",
+  "description": "Execute database migrations across ORMs and platforms with zero-downtime strategies, data transformation, and rollback procedures. Use when migrating databases, changing schemas, performing data trans",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/database_migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "database-migration-vuralserhat86-antigravity-agentic--2"
+}

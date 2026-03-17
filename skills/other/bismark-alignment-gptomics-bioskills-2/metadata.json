@@ -1,0 +1,11 @@
+{
+  "name": "bismark-alignment",
+  "description": "Bisulfite sequencing read alignment using Bismark with bowtie2/hisat2. Handles genome preparation and produces BAM files with methylation information. Use when aligning WGBS, RRBS, or other bisulfite-",
+  "repo": "GPTomics/bioSkills",
+  "path": "methylation-analysis/bismark-alignment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "bismark-alignment-gptomics-bioskills-2"
+}

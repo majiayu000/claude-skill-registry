@@ -1,0 +1,11 @@
+{
+  "name": "data-specialist",
+  "description": "提供数据库设计、优化、数据工程和数据分析能力。当需要处理数据库操作、数据管道或数据分析时使用。",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/data-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "data-specialist-prorise-cool-claude-code-multi-ag-2"
+}

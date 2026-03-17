@@ -1,0 +1,11 @@
+{
+  "name": "pdb-database",
+  "description": "Access RCSB PDB for 3D protein/nucleic acid structures. Search by text/sequence/structure, download coordinates (PDB/mmCIF), retrieve metadata, for structural biology and drug discovery.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/database/pdb-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "pdb-database-hxk622-tokendance-2"
+}

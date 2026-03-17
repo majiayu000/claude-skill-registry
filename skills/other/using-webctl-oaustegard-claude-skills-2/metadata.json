@@ -1,0 +1,11 @@
+{
+  "name": "using-webctl",
+  "description": "Browser automation via webctl CLI in Claude.ai containers with authenticated proxy support. Use when users mention webctl, browser automation, Playwright browsing, web scraping, or headless Chrome in ",
+  "repo": "oaustegard/claude-skills",
+  "path": "using-webctl",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "using-webctl-oaustegard-claude-skills-2"
+}

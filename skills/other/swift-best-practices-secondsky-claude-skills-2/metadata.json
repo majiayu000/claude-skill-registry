@@ -1,0 +1,11 @@
+{
+  "name": "swift-best-practices",
+  "description": "This skill should be used when writing or reviewing Swift code for iOS or macOS projects. Apply modern Swift 6+ best practices, concurrency patterns, API design guidelines, and migration strategies. C",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/swift-best-practices/skills/swift-best-practices",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "swift-best-practices-secondsky-claude-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "excel-data-analyzer",
+  "description": "Analyze messy and unstructured Excel files to identify data quality issues, detect format inconsistencies, find missing values, and generate comprehensive analysis reports. Use when Claude needs to wo",
+  "repo": "Mineru98/skills-store",
+  "path": ".claude/skills/excel-data-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Mineru98/skills-store",
+  "dir_name": "excel-data-analyzer-mineru98-skills-store-2"
+}

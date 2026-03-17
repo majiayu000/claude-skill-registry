@@ -1,0 +1,11 @@
+{
+  "name": "bun-sqlite",
+  "description": "Use for bun:sqlite, SQLite operations, prepared statements, transactions, and queries.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/bun/skills/bun-sqlite",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "bun-sqlite-secondsky-claude-skills-2"
+}

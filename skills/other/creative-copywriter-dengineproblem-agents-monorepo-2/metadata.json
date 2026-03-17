@@ -1,0 +1,11 @@
+{
+  "name": "creative-copywriter",
+  "description": "Эксперт по написанию рекламных текстов. Используй для создания storytelling, офферов, постов и текстов для видео.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/creative-copywriter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "creative-copywriter-dengineproblem-agents-monorepo-2"
+}

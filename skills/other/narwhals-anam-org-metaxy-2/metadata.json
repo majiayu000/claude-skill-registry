@@ -1,0 +1,11 @@
+{
+  "name": "narwhals",
+  "description": "Effectively use Narwhals to write dataframe-agnostic code that works seamlessly across multiple Python dataframe libraries. Write correct type annotations for code using Narwhals.",
+  "repo": "anam-org/metaxy",
+  "path": ".claude/skills/narwhals",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/anam-org/metaxy",
+  "dir_name": "narwhals-anam-org-metaxy-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "edge-rendering-strategies",
+  "description": "Distribute rendering logic to edge nodes to minimize TTFB and support personalized caching.",
+  "repo": "harborgrid-justin/lexiflow-premium",
+  "path": "frontend/.github-skills/edge-rendering-strategies",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/harborgrid-justin/lexiflow-premium",
+  "dir_name": "edge-rendering-strategies-harborgrid-justin-lexiflow-premium-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "1.alignment-level-QC",
+  "description": "Calculates technical mapping statistics for any aligned BAM file (ChIP or ATAC). It assesses the performance of the aligner itself by generating metrics on read depth, mapping quality, error rates, an",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "1.alignment-level-QC",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "1-alignment-level-qc-bisnake2001-chromskills-2"
+}

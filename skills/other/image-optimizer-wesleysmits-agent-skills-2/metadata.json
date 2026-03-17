@@ -1,0 +1,11 @@
+{
+  "name": "image-optimizer",
+  "description": "Optimizes images and generates responsive markup. Use when the user asks about image formats (WebP, AVIF), srcset, responsive images, Next.js Image, or reducing image file sizes.",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/image-optimizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "image-optimizer-wesleysmits-agent-skills-2"
+}

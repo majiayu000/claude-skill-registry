@@ -1,0 +1,11 @@
+{
+  "name": "performance_engineering",
+  "description": "When validating system performance under load, identifying bottlenecks through profiling, or optimizing application responsiveness. Covers load testing (k6, Locust), profiling (CPU, memory, I/O), and ",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/performance_engineering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "performance-engineering-vuralserhat86-antigravity-agentic--2"
+}

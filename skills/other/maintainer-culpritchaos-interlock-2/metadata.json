@@ -1,0 +1,11 @@
+{
+  "name": "maintainer",
+  "description": "PR triage, merge receipts, CI sanity, artifact/PII hygiene",
+  "repo": "CULPRITCHAOS/Interlock",
+  "path": ".claude/skills/maintainer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CULPRITCHAOS/Interlock",
+  "dir_name": "maintainer-culpritchaos-interlock-2"
+}

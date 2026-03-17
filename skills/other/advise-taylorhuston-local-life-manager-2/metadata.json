@@ -1,0 +1,11 @@
+{
+  "name": "advise",
+  "description": "Interactive conversational guidance - user implements with step-by-step advice. Use when you want hands-on implementation with expert guidance while maintaining control.",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/advise",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "advise-taylorhuston-local-life-manager-2"
+}

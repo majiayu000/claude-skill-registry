@@ -1,0 +1,11 @@
+{
+  "name": "nestjs-backend",
+  "description": "Use this skill whenever the user wants to set up, configure, or refactor TypeORM within a NestJS TypeScript project, including data sources, entities, migrations, repositories, relations, and transact",
+  "repo": "Vong3432/vibemark",
+  "path": ".claude/skills/nestjs-backend",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Vong3432/vibemark",
+  "dir_name": "nestjs-backend-vong3432-vibemark-2"
+}

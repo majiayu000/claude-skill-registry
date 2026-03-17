@@ -1,0 +1,11 @@
+{
+  "name": "artifact",
+  "description": "Add images, documents, or other non-text files to a person's artifacts folder.",
+  "repo": "claudeaceae/samara-main",
+  "path": ".claude/skills/artifact",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/claudeaceae/samara-main",
+  "dir_name": "artifact-claudeaceae-samara-main-2"
+}

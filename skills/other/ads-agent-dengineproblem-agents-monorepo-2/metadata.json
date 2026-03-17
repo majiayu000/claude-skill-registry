@@ -1,0 +1,11 @@
+{
+  "name": "ads-agent",
+  "description": "AI-агент для управления Facebook рекламой. Вызывай для анализа, оптимизации, создания кампаний и отчётов.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/ads-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "ads-agent-dengineproblem-agents-monorepo-2"
+}

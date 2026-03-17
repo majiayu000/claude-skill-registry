@@ -1,0 +1,11 @@
+{
+  "name": "pact-prepare-research",
+  "description": "Research methodologies and documentation gathering workflows for PACT Prepare phase.\nUse when: conducting technology research, evaluating API documentation,\ncomparing framework options, analyzing libr",
+  "repo": "ProfSynapse/PACT-prompt",
+  "path": "pact-plugin/skills/pact-prepare-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ProfSynapse/PACT-prompt",
+  "dir_name": "pact-prepare-research-profsynapse-pact-prompt-2"
+}

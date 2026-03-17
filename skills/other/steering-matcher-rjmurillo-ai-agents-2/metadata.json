@@ -1,0 +1,11 @@
+{
+  "name": "steering-matcher",
+  "description": "Match file paths against steering file glob patterns to determine applicable steering guidance. Use when orchestrator needs to inject context-aware guidance based on files being modified.",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/steering-matcher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "steering-matcher-rjmurillo-ai-agents-2"
+}

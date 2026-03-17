@@ -1,0 +1,11 @@
+{
+  "name": "vitepress",
+  "description": "处理 VitePress 站点配置、构建和部署相关任务。使用时涉及站点配置、主题定制、构建优化、部署配置时。",
+  "repo": "rockyflux/xf-blog",
+  "path": ".claude/skills/vitepress",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rockyflux/xf-blog",
+  "dir_name": "vitepress-rockyflux-xf-blog-2"
+}

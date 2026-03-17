@@ -1,0 +1,11 @@
+{
+  "name": "agent-registry",
+  "description": "Guide for managing the Agent Registry - database-backed agent configuration system. Use when asked to \"configure agents\", \"manage skills\", \"set tool permissions\", \"create context rules\", or when worki",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/agent-registry",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "agent-registry-orient-bot-orient-2"
+}

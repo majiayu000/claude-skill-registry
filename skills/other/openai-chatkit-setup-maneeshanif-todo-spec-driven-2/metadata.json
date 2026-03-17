@@ -1,0 +1,11 @@
+{
+  "name": "openai-chatkit-setup",
+  "description": "DEPRECATED - Use chatkit-frontend skill instead. This skill has been consolidated into the chatkit-frontend skill for better organization.",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/openai-chatkit-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "openai-chatkit-setup-maneeshanif-todo-spec-driven-2"
+}

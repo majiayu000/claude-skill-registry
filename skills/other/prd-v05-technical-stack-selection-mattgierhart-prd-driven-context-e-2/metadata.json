@@ -1,0 +1,11 @@
+{
+  "name": "prd-v05-technical-stack-selection",
+  "description": "Determine technologies needed to build the product, making build/buy/integrate decisions during PRD v0.5 Red Team Review. Triggers on requests to select tech stack, evaluate technologies, make build v",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v05-technical-stack-selection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v05-technical-stack-selection-mattgierhart-prd-driven-context-e-2"
+}

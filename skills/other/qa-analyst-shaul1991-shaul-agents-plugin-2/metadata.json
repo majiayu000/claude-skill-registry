@@ -1,0 +1,11 @@
+{
+  "name": "qa-analyst",
+  "description": "QA Analyst Agent. 성능 분석, 부하 테스트, 품질 메트릭 분석을 담당합니다. 성능, 부하(load), 분석, 메트릭 관련 요청 시 사용됩니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/qa-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "qa-analyst-shaul1991-shaul-agents-plugin-2"
+}

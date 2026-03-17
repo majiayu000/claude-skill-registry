@@ -1,0 +1,11 @@
+{
+  "name": "cui-logging",
+  "description": "CUI logging standards with CuiLogger, LogRecord patterns, and DSL-style LogMessages classes",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-java-cui/skills/cui-logging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "cui-logging-cuioss-plan-marshall-2"
+}

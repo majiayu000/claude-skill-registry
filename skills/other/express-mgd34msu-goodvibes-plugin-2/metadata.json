@@ -1,0 +1,11 @@
+{
+  "name": "express",
+  "description": "Builds APIs with Express including routing, middleware, error handling, and security. Use when creating Node.js APIs, building REST services, or adding middleware-based server functionality.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/api-layer/express",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "express-mgd34msu-goodvibes-plugin-2"
+}

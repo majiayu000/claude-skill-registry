@@ -1,0 +1,11 @@
+{
+  "name": "observability-debugging",
+  "description": "Systematic debugging methodology that eliminates guessing and speculation. Add instrumentation to gather specific data that fully explains the problem. Evidence before hypothesis. Observation before s",
+  "repo": "audunstrand/status-app",
+  "path": ".github/skills/observability-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/audunstrand/status-app",
+  "dir_name": "observability-debugging-audunstrand-status-app-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-db-create",
+  "description": "Create a new database resource. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/examples",
+  "path": "training-v1/concierge-ts-v1/.agents/skills/agentuity-cli-cloud-db-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/examples",
+  "dir_name": "agentuity-cli-cloud-db-create-agentuity-examples-2"
+}

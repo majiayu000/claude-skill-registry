@@ -1,0 +1,11 @@
+{
+  "name": "postgres-pro-skill",
+  "description": "Use when user needs PostgreSQL database administration, performance optimization, high availability setup, backup/recovery, or advanced PostgreSQL feature implementation.",
+  "repo": "404kidwiz/claude-supercode-skills",
+  "path": "postgres-pro-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/404kidwiz/claude-supercode-skills",
+  "dir_name": "postgres-pro-skill-404kidwiz-claude-supercode-ski-2"
+}

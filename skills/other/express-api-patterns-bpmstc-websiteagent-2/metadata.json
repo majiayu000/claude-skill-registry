@@ -1,0 +1,11 @@
+{
+  "name": "express-api-patterns",
+  "description": "Express.js API development, route handling, middleware, error handling, request validation, CORS. Use when building Express routes, implementing middleware, handling API requests, or setting up the ba",
+  "repo": "BPMSTC/websiteagent",
+  "path": ".claude/skills/express-api-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BPMSTC/websiteagent",
+  "dir_name": "express-api-patterns-bpmstc-websiteagent-2"
+}

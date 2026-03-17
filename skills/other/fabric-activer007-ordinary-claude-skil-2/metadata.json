@@ -1,0 +1,11 @@
+{
+  "name": "fabric",
+  "description": "Intelligent pattern selection for Fabric CLI. Automatically selects the right pattern from 242+ specialized prompts based on your intent - threat modeling, analysis, summarization, content creation, e",
+  "repo": "Activer007/ordinary-claude-skills",
+  "path": "skills_all/fabric",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Activer007/ordinary-claude-skills",
+  "dir_name": "fabric-activer007-ordinary-claude-skil-2"
+}

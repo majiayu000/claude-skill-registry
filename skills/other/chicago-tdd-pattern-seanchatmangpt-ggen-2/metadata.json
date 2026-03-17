@@ -1,0 +1,11 @@
+{
+  "name": "chicago-tdd-pattern",
+  "description": "Master Chicago TDD (state-based testing). Create tests that verify observable behavior with real collaborators. Use chicago-tdd-tools 1.4.0 AAA pattern. When writing tests, verifying implementation co",
+  "repo": "seanchatmangpt/ggen",
+  "path": ".claude/skills/chicago-tdd-pattern",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/seanchatmangpt/ggen",
+  "dir_name": "chicago-tdd-pattern-seanchatmangpt-ggen-2"
+}

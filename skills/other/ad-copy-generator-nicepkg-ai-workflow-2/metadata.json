@@ -1,0 +1,11 @@
+{
+  "name": "ad-copy-generator",
+  "description": "Generate high-converting ad copy for Google Ads, Meta (Facebook/Instagram), LinkedIn, and TikTok. Creates multiple variations with A/B testing in mind. Includes headlines, descriptions, CTAs, and plat",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/marketing-pro-workflow/.claude/skills/ad-copy-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "ad-copy-generator-nicepkg-ai-workflow-2"
+}

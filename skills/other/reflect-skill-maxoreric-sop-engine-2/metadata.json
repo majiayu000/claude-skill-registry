@@ -1,0 +1,11 @@
+{
+  "name": "reflect-skill",
+  "description": "反思总结的 Skill。当任务完成或失败后需要复盘时触发。触发词：反思、复盘、总结、reflect、回顾、lessons learned。",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/reflect-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "reflect-skill-maxoreric-sop-engine-2"
+}

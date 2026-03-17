@@ -1,0 +1,11 @@
+{
+  "name": "obsidian-plugin",
+  "description": "Guide Obsidian plugin development following official guidelines. Use when creating/modifying Obsidian plugins, implementing commands, creating UI elements, or handling file operations.",
+  "repo": "staticWagomU/dotfiles",
+  "path": "config/claude/skills/obsidian-plugin",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/staticWagomU/dotfiles",
+  "dir_name": "obsidian-plugin-staticwagomu-dotfiles-2"
+}

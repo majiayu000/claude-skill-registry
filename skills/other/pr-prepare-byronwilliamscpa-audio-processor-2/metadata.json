@@ -1,0 +1,11 @@
+{
+  "name": "pr-prepare",
+  "description": "Prepare pull request descriptions following project template. Activates on: prepare PR, create PR, pull request, ready for PR, draft PR, write PR",
+  "repo": "ByronWilliamsCPA/audio-processor",
+  "path": ".claude/skills/pr-prepare",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ByronWilliamsCPA/audio-processor",
+  "dir_name": "pr-prepare-byronwilliamscpa-audio-processor-2"
+}

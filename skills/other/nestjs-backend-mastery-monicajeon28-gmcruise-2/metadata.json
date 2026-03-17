@@ -1,0 +1,11 @@
+{
+  "name": "nestjs-backend-mastery",
+  "description": "**NESTJS BACKEND MASTERY** - 'NestJS', 'Zod', 'shared 패키지', 'DTO', '스키마', '타입 공유', 'controller', 'service', '백엔드' 요청 시 자동 발동. *.controller.ts/*.service.ts/*.dto.ts/*.schema.ts 작업 시 적용. Zod 기반 type-saf",
+  "repo": "monicajeon28/GMcruise",
+  "path": ".claude/skills/nestjs-backend-mastery",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/monicajeon28/GMcruise",
+  "dir_name": "nestjs-backend-mastery-monicajeon28-gmcruise-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ack-resources",
+  "description": "AWS Controllers for Kubernetes (ACK) for Kubernetes-native AWS resource management. Use when managing AWS resources via kubectl, implementing GitOps for infrastructure, creating self-service developer",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/ack-resources",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "ack-resources-adaptationio-skrillz-2"
+}

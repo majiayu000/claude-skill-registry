@@ -1,0 +1,11 @@
+{
+  "name": "bknd-deploy-hosting",
+  "description": "Use when deploying a Bknd application to production hosting. Covers Cloudflare Workers/Pages, Node.js/Bun servers, Docker, Vercel, AWS Lambda, and other platforms.",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-deploy-hosting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-deploy-hosting-cameronapak-freedom-stack-v3-2"
+}

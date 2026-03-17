@@ -1,0 +1,11 @@
+{
+  "name": "security-hardening",
+  "description": "Review code for application-level security hardening issues beyond framework checklists. Focuses on abuse prevention, API protection, business logic exploitation, rate limiting, input validation, and ",
+  "repo": "colinmollenhour/dotfiles",
+  "path": ".claude/skills/security-hardening",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/colinmollenhour/dotfiles",
+  "dir_name": "security-hardening-colinmollenhour-dotfiles-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "pm-plan",
+  "description": "プロジェクトマネジメント計画書を作成する。PM計画、統合計画、プロジェクト計画の策定時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/planning/pm-plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "pm-plan-haru-llc-ai-pm-system-noteboo-2"
+}

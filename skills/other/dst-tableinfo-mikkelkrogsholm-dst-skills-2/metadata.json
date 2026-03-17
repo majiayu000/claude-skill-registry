@@ -1,0 +1,11 @@
+{
+  "name": "dst-tableinfo",
+  "description": "Get detailed metadata for a specific Danmarks Statistik table including variables, dimensions, and structure. Use before fetching data to understand table schema.",
+  "repo": "mikkelkrogsholm/dst-skills",
+  "path": ".claude/skills/dst-tableinfo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mikkelkrogsholm/dst-skills",
+  "dir_name": "dst-tableinfo-mikkelkrogsholm-dst-skills-2"
+}

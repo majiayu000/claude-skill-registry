@@ -1,0 +1,11 @@
+{
+  "name": "toxic-manager-translator",
+  "description": "Transform emotional reactions or venting messages from collaborators into professional, diplomatic responses suitable for difficult workplace situations with toxic managers.",
+  "repo": "Dedalus-ERP-PAS/foundation-skills",
+  "path": "skills/toxic-manager-translator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Dedalus-ERP-PAS/foundation-skills",
+  "dir_name": "toxic-manager-translator-dedalus-erp-pas-foundation-skills-2"
+}

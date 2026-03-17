@@ -1,0 +1,11 @@
+{
+  "name": "modern-python-stack",
+  "description": "Astral社製ツール（uv, Ruff, ty）でPython開発環境を構築。プロジェクト作成、依存関係管理、コード品質改善、CI/CD設定時に使用。",
+  "repo": "YunosukeYoshino/ImageScraper",
+  "path": ".claude/skills/modern-python-stack",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/YunosukeYoshino/ImageScraper",
+  "dir_name": "modern-python-stack-yunosukeyoshino-imagescraper-2"
+}

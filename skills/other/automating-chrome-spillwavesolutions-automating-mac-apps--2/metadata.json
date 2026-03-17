@@ -1,0 +1,11 @@
+{
+  "name": "automating-chrome",
+  "description": "Automates Google Chrome and Chromium-based browsers via JXA with AppleScript dictionary discovery. Use when asked to \"automate Chrome tabs\", \"control browser with JXA\", \"Chrome AppleScript automation\"",
+  "repo": "SpillwaveSolutions/automating-mac-apps-plugin",
+  "path": "plugins/automating-mac-apps-plugin/skills/automating-chrome",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
+  "dir_name": "automating-chrome-spillwavesolutions-automating-mac-apps--2"
+}

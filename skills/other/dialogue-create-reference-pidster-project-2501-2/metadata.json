@@ -1,0 +1,11 @@
+{
+  "name": "dialogue-create-reference",
+  "description": "Create Reference (REF) documents for conceptual models, glossaries, and catalogues. Triggers on \"create reference\", \"document concepts\", \"make glossary\", \"catalogue these\", \"create lookup\".",
+  "repo": "pidster/project-2501",
+  "path": "claude-plugin-evo/skills/dialogue-create-reference",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pidster/project-2501",
+  "dir_name": "dialogue-create-reference-pidster-project-2501-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "load-skills",
+  "description": "Bootstrap skill loader for instance startup. Pulls fresh skills from plurigrid/asi and loads GF(3)-balanced startup triads. MUST run at beginning of every new instance.",
+  "repo": "plurigrid/asi",
+  "path": "skills/load-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "load-skills-plurigrid-asi-2"
+}

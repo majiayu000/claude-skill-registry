@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-mcp-server-builder",
+  "description": "Generate production-ready MCP server implementations from PRD tool specifications with schema validation, error handling, and testing infrastructure. Use when building MCP servers for Nixtla plugins, ",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "003-skills/.claude/skills/nixtla-mcp-server-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-mcp-server-builder-intent-solutions-io-plugins-nixtla-2"
+}

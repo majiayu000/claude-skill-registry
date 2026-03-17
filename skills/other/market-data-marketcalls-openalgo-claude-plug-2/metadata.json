@@ -1,0 +1,11 @@
+{
+  "name": "market-data",
+  "description": "Market data retrieval with OpenAlgo - real-time quotes, historical OHLCV, market depth, option chains, WebSocket streaming, and symbol search",
+  "repo": "marketcalls/openalgo-claude-plugin",
+  "path": "plugins/openalgo-python/skills/market-data",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/marketcalls/openalgo-claude-plugin",
+  "dir_name": "market-data-marketcalls-openalgo-claude-plug-2"
+}

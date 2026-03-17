@@ -1,0 +1,11 @@
+{
+  "name": "post-release",
+  "description": "Run automated post-release workflow (eval baselines, dashboard, docs) for AILANG releases. Executes 46-benchmark suite (medium/hard/stretch) + full standard eval with validation and progress reporting",
+  "repo": "sunholo-data/ailang",
+  "path": ".claude/skills/post-release",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunholo-data/ailang",
+  "dir_name": "post-release-sunholo-data-ailang-2"
+}

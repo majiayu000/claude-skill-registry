@@ -1,0 +1,11 @@
+{
+  "name": "android-ci-tests",
+  "description": "Setup GitHub Actions workflow for running Android tests in CI",
+  "repo": "hitoshura25/claude-devtools",
+  "path": "skills/android-ci-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hitoshura25/claude-devtools",
+  "dir_name": "android-ci-tests-hitoshura25-claude-devtools-2"
+}

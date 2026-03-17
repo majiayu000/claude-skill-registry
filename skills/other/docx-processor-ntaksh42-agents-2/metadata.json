@@ -1,0 +1,11 @@
+{
+  "name": "docx-processor",
+  "description": "Process and generate Word documents with formatting, tables, and images. Use when working with Word documents or generating reports.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/docx-processor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "docx-processor-ntaksh42-agents-2"
+}

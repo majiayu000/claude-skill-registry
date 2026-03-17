@@ -1,0 +1,11 @@
+{
+  "name": "stock-screener",
+  "description": "Filter and screen stocks by financial metrics like P/E ratio, market cap, dividend yield, and growth rates. Analyze and compare stocks from CSV data.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "stock-screener",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "stock-screener-dkyazzentwatwa-chatgpt-skills-2"
+}

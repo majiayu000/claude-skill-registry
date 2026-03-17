@@ -1,0 +1,11 @@
+{
+  "name": "similarity-regulator",
+  "description": "Use when working with voltage regulator similarity calculations - comparing 78xx/79xx fixed regulators, LM317/LM337 adjustable regulators, or voltage regulator-specific similarity logic.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/similarity-regulator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "similarity-regulator-cantara-lib-electronic-compo-2"
+}

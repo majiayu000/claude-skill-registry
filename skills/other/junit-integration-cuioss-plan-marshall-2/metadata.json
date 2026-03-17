@@ -1,0 +1,11 @@
+{
+  "name": "junit-integration",
+  "description": "Maven integration testing with Failsafe plugin, IT naming conventions, and profile configuration",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-java/skills/junit-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "junit-integration-cuioss-plan-marshall-2"
+}

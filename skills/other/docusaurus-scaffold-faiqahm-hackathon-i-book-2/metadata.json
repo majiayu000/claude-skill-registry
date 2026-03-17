@@ -1,0 +1,11 @@
+{
+  "name": "docusaurus-scaffold",
+  "description": "Scaffold and initialize a Docusaurus project with the specific structure for the Physical AI textbook.\nAgent: BookArchitect\n",
+  "repo": "FAIQahm/hackathon_I_book",
+  "path": ".claude/skills/docusaurus-scaffold",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FAIQahm/hackathon_I_book",
+  "dir_name": "docusaurus-scaffold-faiqahm-hackathon-i-book-2"
+}

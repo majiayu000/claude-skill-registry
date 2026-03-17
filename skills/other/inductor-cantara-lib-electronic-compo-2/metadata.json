@@ -1,0 +1,11 @@
+{
+  "name": "inductor",
+  "description": "Use when working with inductor components - adding inductor patterns, parsing inductor MPNs, extracting inductance values, current ratings, or package codes from inductor part numbers.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/inductor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "inductor-cantara-lib-electronic-compo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "og-image-generation",
+  "description": "Generate dynamic social preview images using Next.js file conventions and the next/og library. Server-rendered JSX images cached at build time.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/og-image-generation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "og-image-generation-andrelandgraf-fullstackrecipes-2"
+}

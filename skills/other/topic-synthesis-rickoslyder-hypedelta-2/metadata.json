@@ -1,0 +1,11 @@
+{
+  "name": "topic-synthesis",
+  "description": "Synthesize claims across multiple sources to identify consensus, disagreements, and emerging narratives on AI research topics. Use when you have claims from both lab researchers and critics on the sam",
+  "repo": "rickoslyder/HypeDelta",
+  "path": ".claude/skills/topic-synthesis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rickoslyder/HypeDelta",
+  "dir_name": "topic-synthesis-rickoslyder-hypedelta-2"
+}

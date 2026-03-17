@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-git-link",
+  "description": "Link a project to a GitHub repository. Requires authentication",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-git-link",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-git-link-agentuity-sdk-explorer-2"
+}

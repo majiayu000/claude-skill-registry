@@ -1,0 +1,11 @@
+{
+  "name": "database-schema",
+  "description": "Schema awareness - read before coding, type generation, prevent column errors",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/database-schema",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "dir_name": "database-schema-alinaqi-claude-bootstrap-2"
+}

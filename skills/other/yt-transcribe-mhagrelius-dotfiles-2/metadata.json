@@ -1,0 +1,11 @@
+{
+  "name": "yt-transcribe",
+  "description": "Use when user asks about YouTube video content, wants to know what a video says, needs information from a YouTube URL, or when video transcription would answer their question",
+  "repo": "mhagrelius/dotfiles",
+  "path": ".claude/skills/yt-transcribe",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhagrelius/dotfiles",
+  "dir_name": "yt-transcribe-mhagrelius-dotfiles-2"
+}

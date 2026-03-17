@@ -1,0 +1,11 @@
+{
+  "name": "newsletter-events-remove-source",
+  "description": "Remove Instagram accounts or web aggregators from sources.yaml configuration",
+  "repo": "aniketpanjwani/local_media_tools",
+  "path": "skills/newsletter-events-remove-source",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aniketpanjwani/local_media_tools",
+  "dir_name": "newsletter-events-remove-source-aniketpanjwani-local-media-tools-2"
+}

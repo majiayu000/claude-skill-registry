@@ -1,0 +1,11 @@
+{
+  "name": "the-committer",
+  "description": "Creates well-structured git commits with conventional commit messages and proper attribution.",
+  "repo": "dupipcom/morpheus",
+  "path": ".claude/skills/the-committer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dupipcom/morpheus",
+  "dir_name": "the-committer-dupipcom-morpheus-2"
+}

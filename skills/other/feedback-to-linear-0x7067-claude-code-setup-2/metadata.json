@@ -1,0 +1,11 @@
+{
+  "name": "feedback-to-linear",
+  "description": "Transform user feedback into structured Linear issues with AI-enhanced parsing for labels, priority, acceptance criteria, and estimates",
+  "repo": "0x7067/claude-code-setup",
+  "path": ".claude/skills/feedback-to-linear",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/0x7067/claude-code-setup",
+  "dir_name": "feedback-to-linear-0x7067-claude-code-setup-2"
+}

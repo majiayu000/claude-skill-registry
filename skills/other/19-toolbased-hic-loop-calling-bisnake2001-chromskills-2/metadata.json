@@ -1,0 +1,11 @@
+{
+  "name": "19_toolBased.hic-loop-calling",
+  "description": "This skill performs chromatin loop detection from Hi-C .mcool files using cooltools.",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "19_toolBased.hic-loop-calling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "19-toolbased-hic-loop-calling-bisnake2001-chromskills-2"
+}

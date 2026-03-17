@@ -1,0 +1,11 @@
+{
+  "name": "airtable-sync-specialist",
+  "description": "Debug and implement Airtable synchronization logic including duplicate prevention, cache management, change detection, and RLS considerations; use when debugging sync failures, stale cache issues, or ",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/airtable-sync-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "airtable-sync-specialist-javeedishaq-ai-workflow-orchestr-2"
+}

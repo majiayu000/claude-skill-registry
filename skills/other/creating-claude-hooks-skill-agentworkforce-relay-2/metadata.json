@@ -1,0 +1,11 @@
+{
+  "name": "creating-claude-hooks-skill",
+  "description": "Use when creating or publishing Claude Code hooks - covers executable format, event types, JSON I/O, exit codes, security requirements, and PRPM package structure",
+  "repo": "AgentWorkforce/relay",
+  "path": ".claude/skills/creating-claude-hooks-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AgentWorkforce/relay",
+  "dir_name": "creating-claude-hooks-skill-agentworkforce-relay-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "jupytext",
+  "description": "This skill should be used when the user asks to \"convert notebook to text\", \"use jupytext\", \"version control notebooks\", \"share data between kernels\", \"set up multi-kernel project\", \"pair notebooks wi",
+  "repo": "edwinhu/workflows",
+  "path": "skills/jupytext",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "jupytext-edwinhu-workflows-2"
+}

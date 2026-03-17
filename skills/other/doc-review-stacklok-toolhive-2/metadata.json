@@ -1,0 +1,11 @@
+{
+  "name": "doc-review",
+  "description": "Reviews documentation for factual accuracy",
+  "repo": "stacklok/toolhive",
+  "path": ".claude/skills/doc-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/stacklok/toolhive",
+  "dir_name": "doc-review-stacklok-toolhive-2"
+}

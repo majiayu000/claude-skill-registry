@@ -1,0 +1,11 @@
+{
+  "name": "bug-bounty-program",
+  "description": "Эксперт по bug bounty. Используй для поиска уязвимостей, написания отчётов, responsible disclosure и penetration testing.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/bug-bounty-program",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "bug-bounty-program-dengineproblem-agents-monorepo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "mise-runtime",
+  "description": "ランタイム管理（mise）。Go, Node.js, Python, Rubyのバージョン管理。トリガー: mise, runtime, node, go, python, ruby, version",
+  "repo": "snkrheadz/laptop",
+  "path": ".claude/skills/mise-runtime",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/snkrheadz/laptop",
+  "dir_name": "mise-runtime-snkrheadz-laptop-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "containment",
+  "description": "Security incident containment playbooks for isolating threats across network,\nendpoint, identity, cloud, and application layers. Use for active incident\nresponse to limit threat spread and impact.\n",
+  "repo": "SherifEldeeb/agentskills",
+  "path": "skills/cybersecurity/containment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SherifEldeeb/agentskills",
+  "dir_name": "containment-sherifeldeeb-agentskills-2"
+}

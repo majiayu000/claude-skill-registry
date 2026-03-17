@@ -1,0 +1,11 @@
+{
+  "name": "finance-manager",
+  "description": "Comprehensive personal finance management system for analyzing transaction data, generating insights, creating visualizations, and providing actionable financial recommendations. Use when users need t",
+  "repo": "mamba-mental/agent-skill-manager",
+  "path": ".claude/skills/finance-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mamba-mental/agent-skill-manager",
+  "dir_name": "finance-manager-mamba-mental-agent-skill-manager-2"
+}

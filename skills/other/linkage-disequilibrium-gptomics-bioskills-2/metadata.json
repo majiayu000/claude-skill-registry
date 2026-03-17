@@ -1,0 +1,11 @@
+{
+  "name": "linkage-disequilibrium",
+  "description": "Calculate linkage disequilibrium statistics (r², D'), perform LD pruning for population structure analysis, identify haplotype blocks, and visualize LD patterns using PLINK, scikit-allel, and LDBlockS",
+  "repo": "GPTomics/bioSkills",
+  "path": "population-genetics/linkage-disequilibrium",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "linkage-disequilibrium-gptomics-bioskills-2"
+}

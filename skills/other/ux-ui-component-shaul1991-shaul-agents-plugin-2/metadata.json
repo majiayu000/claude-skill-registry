@@ -1,0 +1,11 @@
+{
+  "name": "ux-ui-component",
+  "description": "UI 컴포넌트 명세 에이전트. 컴포넌트의 UI/UX 명세를 작성합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/ux-ui-component",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "ux-ui-component-shaul1991-shaul-agents-plugin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "compliance-matrix",
+  "description": "Generate and track compliance matrices for RFP requirements. Use when building requirements tracking features, implementing compliance checklists, or ensuring proposal coverage.",
+  "repo": "Atemndobs/nebula-rfp",
+  "path": ".claude/skills/compliance-matrix",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Atemndobs/nebula-rfp",
+  "dir_name": "compliance-matrix-atemndobs-nebula-rfp-2"
+}

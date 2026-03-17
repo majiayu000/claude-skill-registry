@@ -1,0 +1,11 @@
+{
+  "name": "factory-spec",
+  "description": "Phase MODEL - Génère specs + ADR + rules",
+  "repo": "SylvainChabaud/spec-to-code-factory",
+  "path": ".claude/skills/factory-spec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylvainChabaud/spec-to-code-factory",
+  "dir_name": "factory-spec-sylvainchabaud-spec-to-code-factory-2"
+}

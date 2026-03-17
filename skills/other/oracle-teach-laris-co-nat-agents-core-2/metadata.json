@@ -1,0 +1,11 @@
+{
+  "name": "oracle-teach",
+  "description": "Generate learning materials from mature patterns. Use when user says \"teach me\", \"explain this pattern\", \"create a guide\", \"how does X work\", \"document this for others\". Auto-trigger when sharing know",
+  "repo": "laris-co/nat-agents-core",
+  "path": "bundles/skills/oracle-teach",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/laris-co/nat-agents-core",
+  "dir_name": "oracle-teach-laris-co-nat-agents-core-2"
+}

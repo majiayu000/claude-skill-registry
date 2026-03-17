@@ -1,0 +1,11 @@
+{
+  "name": "24.global-methylation-profile",
+  "description": "This skill performs genome-wide DNA methylation profiling. It supports single-sample and multi-sample workflows to compute methylation density distributions, genomic feature distribution of the methyl",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "24.global-methylation-profile",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "24-global-methylation-profile-bisnake2001-chromskills-2"
+}

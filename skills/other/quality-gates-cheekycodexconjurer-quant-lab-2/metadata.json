@@ -1,0 +1,11 @@
+{
+  "name": "quality_gates",
+  "description": "Enforce Definition of Done checks from QUALITY_GATES.md.",
+  "repo": "CheekyCodexConjurer/quant-lab",
+  "path": ".agent-docs/templates/.codex/skills/quality_gates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CheekyCodexConjurer/quant-lab",
+  "dir_name": "quality-gates-cheekycodexconjurer-quant-lab-2"
+}

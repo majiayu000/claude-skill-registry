@@ -1,0 +1,11 @@
+{
+  "name": "orcaflex-mooring-iteration",
+  "description": "Iterate mooring line lengths to achieve target pretensions using scipy optimization, Newton-Raphson, or EA-based methods. Use for mooring system design, pretension optimization, and CALM/SALM buoy con",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcaflex-mooring-iteration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcaflex-mooring-iteration-vamseeachanta-digitalmodel-2"
+}

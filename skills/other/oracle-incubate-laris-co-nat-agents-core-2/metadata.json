@@ -1,0 +1,11 @@
+{
+  "name": "oracle-incubate",
+  "description": "Track and nurture knowledge maturation. Use when user mentions \"incubate\", \"mature\", \"grow knowledge\", \"promotion\", \"level up learning\". Auto-trigger at end of sessions or when pattern is repeated mul",
+  "repo": "laris-co/nat-agents-core",
+  "path": "bundles/skills/oracle-incubate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/laris-co/nat-agents-core",
+  "dir_name": "oracle-incubate-laris-co-nat-agents-core-2"
+}

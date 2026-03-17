@@ -1,0 +1,11 @@
+{
+  "name": "plan-agent",
+  "description": "Planning agent that creates implementation plans and handoffs from conversation context",
+  "repo": "tfunk1030/vibe",
+  "path": ".claude/skills/plan-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tfunk1030/vibe",
+  "dir_name": "plan-agent-tfunk1030-vibe-2"
+}

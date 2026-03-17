@@ -1,0 +1,11 @@
+{
+  "name": "standard-skill",
+  "description": "This skill should be used when the user asks to \"perform standard task\", \"follow best practices\", \"implement common pattern\", or needs comprehensive guidance. Demonstrates recommended skill structure ",
+  "repo": "helmecke/dotfiles",
+  "path": "dot_config/opencode/skill/skill-development/examples/standard-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/helmecke/dotfiles",
+  "dir_name": "standard-skill-helmecke-dotfiles-2"
+}

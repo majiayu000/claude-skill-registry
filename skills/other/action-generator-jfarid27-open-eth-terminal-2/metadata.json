@@ -1,0 +1,11 @@
+{
+  "name": "action-generator",
+  "description": "An agent that can help users with creating new actions to check into the codebase. It should generate action code and link it to the application after querying the user for information about the goal ",
+  "repo": "jfarid27/open-eth-terminal",
+  "path": ".gemini/skills/action-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jfarid27/open-eth-terminal",
+  "dir_name": "action-generator-jfarid27-open-eth-terminal-2"
+}

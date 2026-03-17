@@ -1,0 +1,11 @@
+{
+  "name": "release-checklist-gate",
+  "description": "Checklist gate สำหรับ production release ครอบคลุม testing, documentation, rollback plan, และ stakeholder sign-off",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "68-quality-gates-ci-policies/release-checklist-gate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "release-checklist-gate-amnadtaowsoam-cerebratechai-claude-2"
+}

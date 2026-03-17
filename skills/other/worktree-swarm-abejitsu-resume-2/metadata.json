@@ -1,0 +1,11 @@
+{
+  "name": "worktree-swarm",
+  "description": "Set up and orchestrate parallel Claude Code agents using git worktrees. Use this skill when the user wants to parallelize a feature across multiple agents, spawn worktrees, or merge agent work back to",
+  "repo": "AbeJitsu/Resume",
+  "path": ".claude/skills/worktree-swarm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AbeJitsu/Resume",
+  "dir_name": "worktree-swarm-abejitsu-resume-2"
+}

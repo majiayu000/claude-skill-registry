@@ -1,0 +1,11 @@
+{
+  "name": "git-worktree-workflow",
+  "description": "Use git worktrees for parallel Claude Code workflows. Run multiple Claude instances on different features simultaneously without merge conflicts. Use for parallel development, multi-branch testing, an",
+  "repo": "vamseeachanta/workspace-hub",
+  "path": ".claude/skills/development/git-worktree-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/workspace-hub",
+  "dir_name": "git-worktree-workflow-vamseeachanta-workspace-hub-2"
+}

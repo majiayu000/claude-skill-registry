@@ -1,0 +1,11 @@
+{
+  "name": "reviewing-silent-failures",
+  "description": "Silent failure detection patterns for frontend code. Triggers: silent failure, empty catch, エラーハンドリング, 握りつぶし, swallowed error.\n",
+  "repo": "thkt/claude-config",
+  "path": ".ja/skills/reviewing-silent-failures",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/thkt/claude-config",
+  "dir_name": "reviewing-silent-failures-thkt-claude-config-2"
+}

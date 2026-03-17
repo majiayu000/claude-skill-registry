@@ -1,0 +1,11 @@
+{
+  "name": "file-search",
+  "description": "Modern file and content search using fd, ripgrep (rg), and fzf. Triggers on: fd, ripgrep, rg, find files, search code, fzf, fuzzy find, search codebase.",
+  "repo": "0xDarkMatter/claude-mods",
+  "path": "skills/file-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/0xDarkMatter/claude-mods",
+  "dir_name": "file-search-0xdarkmatter-claude-mods-2"
+}

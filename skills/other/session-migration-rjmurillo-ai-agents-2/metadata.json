@@ -1,0 +1,11 @@
+{
+  "name": "session-migration",
+  "description": "Migrate session logs from markdown to JSON format. Use when PRs contain markdown session logs that need conversion to the new JSON schema, or when batch-migrating historical sessions.",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/session-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "session-migration-rjmurillo-ai-agents-2"
+}

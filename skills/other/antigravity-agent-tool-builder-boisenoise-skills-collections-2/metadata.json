@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-agent-tool-builder",
+  "description": "Tools are how AI agents interact with the world. A well-designed tool is the difference between an agent that works and one that hallucinates, fails silently, or costs 10x more tokens than necessary. ",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-agent-tool-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-agent-tool-builder-boisenoise-skills-collections-2"
+}

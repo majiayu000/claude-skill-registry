@@ -1,0 +1,9 @@
+{
+  "name": "fix-build",
+  "repo": "WhatIfWeDigDeeper/claude-template",
+  "path": ".claude/skills/fix-build/SKILL.md",
+  "category": "other",
+  "source": "github.com/WhatIfWeDigDeeper/claude-template",
+  "dir_name": "fix-build",
+  "downloaded_at": "2026-02-22T05:56:47.132503Z"
+}

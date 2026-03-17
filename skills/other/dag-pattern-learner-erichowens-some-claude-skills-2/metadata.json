@@ -1,0 +1,11 @@
+{
+  "name": "dag-pattern-learner",
+  "description": "Learns from DAG execution history to improve future performance. Identifies successful patterns, detects anti-patterns, and provides recommendations. Activate on 'learn patterns', 'execution patterns'",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-pattern-learner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-pattern-learner-erichowens-some-claude-skills-2"
+}

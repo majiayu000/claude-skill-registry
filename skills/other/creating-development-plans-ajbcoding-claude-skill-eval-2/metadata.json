@@ -1,0 +1,11 @@
+{
+  "name": "creating-development-plans",
+  "description": "Creates structured development plans with phased task breakdowns, requirements, and QA checklists. Use when the user explicitly asks to create a dev plan, development plan, or document development req",
+  "repo": "AJBcoding/claude-skill-eval",
+  "path": "agentic-coding-main/Claude/skills/creating-development-plans",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AJBcoding/claude-skill-eval",
+  "dir_name": "creating-development-plans-ajbcoding-claude-skill-eval-2"
+}

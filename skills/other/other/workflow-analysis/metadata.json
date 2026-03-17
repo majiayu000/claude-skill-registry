@@ -1,0 +1,9 @@
+{
+  "name": "workflow-analysis",
+  "repo": "TheBeardedBearSAS/claude-craft",
+  "path": ".claude/skills/workflow-analysis/SKILL.md",
+  "category": "other",
+  "source": "github.com/TheBeardedBearSAS/claude-craft",
+  "dir_name": "workflow-analysis",
+  "downloaded_at": "2026-02-22T05:49:40.376995Z"
+}

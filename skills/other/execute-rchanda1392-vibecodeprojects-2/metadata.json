@@ -1,0 +1,11 @@
+{
+  "name": "execute",
+  "description": "Execute implementation plans phase-by-phase with progress tracking and automatic checkpoints. Use after /plan to implement the execution roadmap.",
+  "repo": "rchanda1392/VibeCodeProjects",
+  "path": ".claude/skills/execute",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rchanda1392/VibeCodeProjects",
+  "dir_name": "execute-rchanda1392-vibecodeprojects-2"
+}

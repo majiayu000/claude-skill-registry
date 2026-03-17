@@ -1,0 +1,11 @@
+{
+  "name": "aurora-schema",
+  "description": "Aurora YAML schema analysis and editing. Validates field names, descriptions, types, and module semantics following DDD best practices. Trigger: When analyzing or editing *.aurora.yaml files, improvin",
+  "repo": "avvale/aurora-back",
+  "path": ".claude/skills/aurora-schema",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/avvale/aurora-back",
+  "dir_name": "aurora-schema-avvale-aurora-back-2"
+}

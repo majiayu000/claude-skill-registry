@@ -1,0 +1,11 @@
+{
+  "name": "project-md-refresh",
+  "description": "Analyze the current repository and create or refresh .claude/PROJECT.md to match the project. Use when PROJECT.md is missing, stale, or the user asks to generate/update project-specific rules, structu",
+  "repo": "munlucky/code-cafe-manager",
+  "path": ".claude/skills/project-md-refresh",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/munlucky/code-cafe-manager",
+  "dir_name": "project-md-refresh-munlucky-code-cafe-manager-2"
+}

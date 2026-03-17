@@ -1,0 +1,11 @@
+{
+  "name": "groq-observability",
+  "description": "Set up comprehensive observability for Groq integrations with metrics, traces, and alerts.\nUse when implementing monitoring for Groq operations, setting up dashboards,\nor configuring alerting for Groq",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/groq-pack/groq-observability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "groq-observability-vasic-digital-superagent-2"
+}

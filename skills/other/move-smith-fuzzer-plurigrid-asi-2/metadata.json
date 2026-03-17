@@ -1,0 +1,11 @@
+{
+  "name": "move-smith-fuzzer",
+  "description": "Move Smith Fuzzer Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/move-smith-fuzzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "move-smith-fuzzer-plurigrid-asi-2"
+}

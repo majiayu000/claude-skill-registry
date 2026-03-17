@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-behavioral-modes",
+  "description": "AI operational modes (brainstorm, implement, debug, review, teach, ship, orchestrate). Use to adapt behavior based on task type.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-behavioral-modes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-behavioral-modes-boisenoise-skills-collections-2"
+}

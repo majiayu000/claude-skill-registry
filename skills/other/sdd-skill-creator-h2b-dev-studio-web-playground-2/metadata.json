@@ -1,0 +1,11 @@
+{
+  "name": "sdd-skill-creator",
+  "description": "Generate project-specific SDD skills for a repository.\nUse when: setting up SDD for a new project, customizing SDD for a domain,\ncreating repo-local skills that implement sdd-guidelines.\nTriggers: \"cr",
+  "repo": "h2b-dev-studio/web-playground",
+  "path": ".claude/skills/sdd-skill-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/h2b-dev-studio/web-playground",
+  "dir_name": "sdd-skill-creator-h2b-dev-studio-web-playground-2"
+}

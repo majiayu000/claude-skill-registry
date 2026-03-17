@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-761-secret-scanner",
+  "description": "Scans codebase for hardcoded secrets. Returns normalized findings with severity and remediation guidance. Pre-commit hook integration.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-761-secret-scanner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-761-secret-scanner-boisenoise-skills-collections-2"
+}

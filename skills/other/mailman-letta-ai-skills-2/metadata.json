@@ -1,0 +1,11 @@
+{
+  "name": "mailman",
+  "description": "Guidance for setting up and configuring mailing list servers with Postfix and Mailman3. This skill should be used when tasks involve configuring email servers, mailing list management, LMTP integratio",
+  "repo": "letta-ai/skills",
+  "path": "letta/benchmarks/trajectory-only/mailman",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/letta-ai/skills",
+  "dir_name": "mailman-letta-ai-skills-2"
+}

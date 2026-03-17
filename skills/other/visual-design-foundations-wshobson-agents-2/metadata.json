@@ -1,0 +1,11 @@
+{
+  "name": "visual-design-foundations",
+  "description": "Apply typography, color theory, spacing systems, and iconography principles to create cohesive visual designs. Use when establishing design tokens, building style guides, or improving visual hierarchy",
+  "repo": "wshobson/agents",
+  "path": "plugins/ui-design/skills/visual-design-foundations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wshobson/agents",
+  "dir_name": "visual-design-foundations-wshobson-agents-2"
+}

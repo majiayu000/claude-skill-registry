@@ -1,0 +1,9 @@
+{
+  "name": "check-upstream-flake",
+  "repo": "brave-experiments/brave-core-bot",
+  "path": ".claude/skills/check-upstream-flake/SKILL.md",
+  "category": "other",
+  "source": "github.com/brave-experiments/brave-core-bot",
+  "dir_name": "check-upstream-flake",
+  "downloaded_at": "2026-02-22T06:35:30.986534Z"
+}

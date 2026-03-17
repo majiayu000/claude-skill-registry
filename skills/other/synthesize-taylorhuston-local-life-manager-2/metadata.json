@@ -1,0 +1,11 @@
+{
+  "name": "synthesize",
+  "description": "Synthesize information across multiple sources into a structured document. Processes sources in batches across sessions to handle more data than fits in context. Discovers and queues related sources a",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/synthesize",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "synthesize-taylorhuston-local-life-manager-2"
+}

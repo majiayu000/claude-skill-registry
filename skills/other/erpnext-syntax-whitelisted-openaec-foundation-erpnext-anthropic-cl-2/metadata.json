@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-syntax-whitelisted",
+  "description": "Deterministic syntax for Frappe Whitelisted Methods (Python API endpoints) for v14/v15/v16. Use when Claude needs to generate code for API functions, REST endpoints, @frappe.whitelist() decorator, fra",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/syntax/erpnext-syntax-whitelisted",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-syntax-whitelisted-openaec-foundation-erpnext-anthropic-cl-2"
+}

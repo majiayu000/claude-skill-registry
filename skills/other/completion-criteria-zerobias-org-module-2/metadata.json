@@ -1,0 +1,11 @@
+{
+  "name": "completion-criteria",
+  "description": "Completion checklist - when is a task truly done",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/completion-criteria",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "completion-criteria-zerobias-org-module-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-market-risk-analyzer",
+  "description": "Analyze market risk with VaR, volatility, and position sizing using forecast data. Use when assessing investment risk. Trigger with 'analyze market risk' or 'calculate VaR'.",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "000-docs/000a-planned-skills/prediction-markets/nixtla-market-risk-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-market-risk-analyzer-intent-solutions-io-plugins-nixtla-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "complete",
+  "description": "Complete task: validate, document, review, commit, and merge to develop. Use when all implementation is done and ready to finalize.",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/complete",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "complete-taylorhuston-local-life-manager-2"
+}

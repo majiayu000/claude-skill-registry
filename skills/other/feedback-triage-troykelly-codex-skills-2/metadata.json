@@ -1,0 +1,11 @@
+{
+  "name": "feedback-triage",
+  "description": "Use when receiving UAT feedback, bug reports, user testing results, stakeholder feedback, QA findings, or any batch of issues to investigate. Investigates each item BEFORE creating issues, classifies ",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/feedback-triage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "feedback-triage-troykelly-codex-skills-2"
+}

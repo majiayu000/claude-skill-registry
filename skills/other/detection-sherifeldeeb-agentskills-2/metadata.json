@@ -1,0 +1,11 @@
+{
+  "name": "detection",
+  "description": "Security detection use cases for identifying threats across network, endpoint,\nidentity, cloud, application, and email vectors. Use for building detection\nrules, analyzing security events, and threat ",
+  "repo": "SherifEldeeb/agentskills",
+  "path": "skills/cybersecurity/detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SherifEldeeb/agentskills",
+  "dir_name": "detection-sherifeldeeb-agentskills-2"
+}

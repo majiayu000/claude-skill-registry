@@ -1,0 +1,11 @@
+{
+  "name": "unsloth-core",
+  "description": "Unsloth-core provides the foundational framework for accelerating Large Language Model (LLM) fine-tuning. It leverages specialized kernels and optimized gradient checkpointing to achieve up to 2x fast",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/unsloth-core",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "unsloth-core-cuba6112-skillfactory-2"
+}

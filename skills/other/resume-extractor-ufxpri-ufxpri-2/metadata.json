@@ -1,0 +1,11 @@
+{
+  "name": "resume-extractor",
+  "description": "Extract and categorize yearly career data into structured components (what_i_did, my_thoughts, performance). Use when processing raw yearly markdown files into organized sections.",
+  "repo": "ufxpri/UfXpri",
+  "path": ".claude/skills/resume-extractor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ufxpri/UfXpri",
+  "dir_name": "resume-extractor-ufxpri-ufxpri-2"
+}

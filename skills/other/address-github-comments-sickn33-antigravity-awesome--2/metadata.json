@@ -1,0 +1,11 @@
+{
+  "name": "address-github-comments",
+  "description": "Use when you need to address review or issue comments on an open GitHub Pull Request using the gh CLI.",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/address-github-comments",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "address-github-comments-sickn33-antigravity-awesome--2"
+}

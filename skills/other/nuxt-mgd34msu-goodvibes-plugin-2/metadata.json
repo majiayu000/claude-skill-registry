@@ -1,0 +1,11 @@
+{
+  "name": "nuxt",
+  "description": "Builds applications with Nuxt 3 including pages, layouts, composables, server routes, and data fetching. Use when creating Vue applications with SSR, building full-stack Vue apps, or needing file-base",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/meta-frameworks/nuxt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "nuxt-mgd34msu-goodvibes-plugin-2"
+}

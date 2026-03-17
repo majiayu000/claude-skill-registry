@@ -1,0 +1,11 @@
+{
+  "name": "docker-expert",
+  "description": "Expert-level Docker containerization, image optimization, and container orchestration. Use this skill for building efficient Docker images, managing containers, and implementing Docker best practices.",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/devops/docker-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "docker-expert-personamanagmentlaye-pcl-2"
+}

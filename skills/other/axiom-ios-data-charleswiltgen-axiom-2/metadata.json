@@ -1,0 +1,11 @@
+{
+  "name": "axiom-ios-data",
+  "description": "Use when working with ANY data persistence, database, axiom-storage, CloudKit, migration, or serialization. Covers SwiftData, Core Data, GRDB, SQLite, CloudKit sync, file storage, Codable, migrations.",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-ios-data",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-ios-data-charleswiltgen-axiom-2"
+}

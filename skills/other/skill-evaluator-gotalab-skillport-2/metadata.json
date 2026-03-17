@@ -1,0 +1,11 @@
+{
+  "name": "skill-evaluator",
+  "description": "Evaluates agent skills against Anthropic's best practices. Use when asked to review, evaluate, assess, or audit a skill for quality. Analyzes SKILL.md structure, naming conventions, description qualit",
+  "repo": "gotalab/skillport",
+  "path": ".skills/experimental/skill-evaluator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gotalab/skillport",
+  "dir_name": "skill-evaluator-gotalab-skillport-2"
+}

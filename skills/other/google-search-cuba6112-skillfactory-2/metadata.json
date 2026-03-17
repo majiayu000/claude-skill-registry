@@ -1,0 +1,11 @@
+{
+  "name": "google-search",
+  "description": "Google Search grounding allows LLM applications to access real-time information and provide verifiable citations. This skill covers both direct tool integration (like Gemini's googlesearch) and custom",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/google-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "google-search-cuba6112-skillfactory-2"
+}

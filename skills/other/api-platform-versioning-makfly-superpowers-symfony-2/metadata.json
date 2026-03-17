@@ -1,0 +1,11 @@
+{
+  "name": "api-platform-versioning",
+  "description": "Use when symfony api platform versioning",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/api-platform-versioning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "api-platform-versioning-makfly-superpowers-symfony-2"
+}

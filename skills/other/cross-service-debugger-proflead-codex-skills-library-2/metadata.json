@@ -1,0 +1,11 @@
+{
+  "name": "cross-service-debugger",
+  "description": "Coordinate debugging across multiple services. Use when a senior developer needs to trace a distributed issue.",
+  "repo": "proflead/codex-skills-library",
+  "path": "skills/infra/cross-service-debugger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proflead/codex-skills-library",
+  "dir_name": "cross-service-debugger-proflead-codex-skills-library-2"
+}

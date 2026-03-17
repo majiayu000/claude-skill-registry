@@ -1,0 +1,11 @@
+{
+  "name": "file-organizer",
+  "description": "Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load and",
+  "repo": "jjmartres/opencode",
+  "path": "opencode/skill/file-organizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jjmartres/opencode",
+  "dir_name": "file-organizer-jjmartres-opencode-2"
+}

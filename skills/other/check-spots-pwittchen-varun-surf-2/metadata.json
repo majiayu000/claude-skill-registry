@@ -1,0 +1,11 @@
+{
+  "name": "check-spots",
+  "description": "Validate spots.json for common issues including missing fields, invalid URLs, duplicate entries, and data consistency problems",
+  "repo": "pwittchen/varun.surf",
+  "path": ".claude/skills/check-spots",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pwittchen/varun.surf",
+  "dir_name": "check-spots-pwittchen-varun-surf-2"
+}

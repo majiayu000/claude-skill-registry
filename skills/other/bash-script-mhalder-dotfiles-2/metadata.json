@@ -1,0 +1,11 @@
+{
+  "name": "bash-script",
+  "description": "Write robust bash scripts with proper error handling. Use when the user says \"write a script\", \"bash script\", \"shell script\", \"automate this\", \"create a backup script\", or asks to script a task.",
+  "repo": "mhalder/dotfiles",
+  "path": "claude/.claude/skills/bash-script",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhalder/dotfiles",
+  "dir_name": "bash-script-mhalder-dotfiles-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "python-packaging",
+  "description": "Automatically applies when configuring Python project packaging. Ensures proper pyproject.toml setup, project layout, build configuration, metadata, and distribution best practices.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/python-packaging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "python-packaging-ricardoroche-ricardos-claude-code-2"
+}

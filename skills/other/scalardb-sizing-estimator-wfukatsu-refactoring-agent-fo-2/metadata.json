@@ -1,0 +1,11 @@
+{
+  "name": "scalardb-sizing-estimator",
+  "description": "ScalarDB Cluster および ScalarDB Analytics のアーキテクチャ、サイジング、構成を見積もるスキル。\n性能要件、可用性要件、クラウド環境からScalarDB Cluster Pod数、Kubernetes構成、\nバックエンドDB、API Gateway、監視システム等の全体構成を見積もる。\nScalarDB Analyticsを使用する場合はEMR/Databric",
+  "repo": "wfukatsu/refactoring-agent-for-claude-code",
+  "path": ".claude/skills/scalardb-sizing-estimator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wfukatsu/refactoring-agent-for-claude-code",
+  "dir_name": "scalardb-sizing-estimator-wfukatsu-refactoring-agent-fo-2"
+}

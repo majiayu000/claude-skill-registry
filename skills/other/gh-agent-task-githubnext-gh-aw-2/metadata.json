@@ -1,0 +1,11 @@
+{
+  "name": "gh-agent-task",
+  "description": "GitHub CLI Agent Task Extension",
+  "repo": "githubnext/gh-aw",
+  "path": "skills/gh-agent-task",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/githubnext/gh-aw",
+  "dir_name": "gh-agent-task-githubnext-gh-aw-2"
+}

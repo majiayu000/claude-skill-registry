@@ -1,0 +1,11 @@
+{
+  "name": "pytest-test",
+  "description": "Execute and generate pytest tests for Python projects with fixtures, parametrization, and mocking support",
+  "repo": "FortiumPartners/ai-mesh",
+  "path": "skills/pytest-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FortiumPartners/ai-mesh",
+  "dir_name": "pytest-test-fortiumpartners-ai-mesh-2"
+}

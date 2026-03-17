@@ -1,0 +1,11 @@
+{
+  "name": "personal-assistant",
+  "description": "This skill should be used whenever users request personal assistance tasks such as schedule management, task tracking, reminder setting, habit monitoring, productivity advice, time management, or any ",
+  "repo": "mamba-mental/agent-skill-manager",
+  "path": ".claude/skills/personal-assistant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mamba-mental/agent-skill-manager",
+  "dir_name": "personal-assistant-mamba-mental-agent-skill-manager-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ui-contract",
+  "description": "Frontend/backend API contract definitions. Use for defining API endpoints, Pydantic to TypeScript mapping, schema validation, error responses, and pagination contracts.",
+  "repo": "krazyuniks/guitar-tone-shootout",
+  "path": ".claude/skills/ui-contract",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/krazyuniks/guitar-tone-shootout",
+  "dir_name": "ui-contract-krazyuniks-guitar-tone-shootout-2"
+}

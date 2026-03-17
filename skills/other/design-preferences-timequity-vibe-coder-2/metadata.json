@@ -1,0 +1,11 @@
+{
+  "name": "design-preferences",
+  "description": "Gather user design preferences before building UI.\nUse when: starting a project with visual interface (Web App, Mobile, Browser Extension).\nTriggers: \"design preferences\", \"visual style\", \"choose them",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/design-preferences",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "design-preferences-timequity-vibe-coder-2"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "linear-claude-skill",
+  "repo": "wrsmith108/linear-claude-skill",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wrsmith108/linear-claude-skill",
+  "dir_name": "linear-claude-skill",
+  "downloaded_at": "2026-03-02T08:50:19.960706Z",
+  "author": "wrsmith108",
+  "source_url": "https://github.com/wrsmith108/linear-claude-skill/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wrsmith108/linear-claude-skill/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

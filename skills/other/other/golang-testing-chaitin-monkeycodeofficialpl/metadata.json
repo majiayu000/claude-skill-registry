@@ -1,0 +1,17 @@
+{
+  "name": "golang-testing",
+  "repo": "chaitin/MonkeyCodeOfficialPlugins",
+  "path": "skills/golang-testing/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/chaitin/MonkeyCodeOfficialPlugins",
+  "dir_name": "golang-testing-chaitin-monkeycodeofficialpl",
+  "downloaded_at": "2026-03-01T07:09:54.242255Z",
+  "author": "chaitin",
+  "source_url": "https://github.com/chaitin/MonkeyCodeOfficialPlugins/blob/main/skills/golang-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chaitin/MonkeyCodeOfficialPlugins/blob/main/skills/golang-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

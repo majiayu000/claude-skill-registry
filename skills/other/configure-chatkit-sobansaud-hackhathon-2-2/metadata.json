@@ -1,0 +1,11 @@
+{
+  "name": "configure-chatkit",
+  "description": "This skill should be used when setting up OpenAI ChatKit in Next.js, adding domain allowlist to environment, building chat UI component, integrating with /api/chat endpoint, displaying history and too",
+  "repo": "Sobansaud/Hackhathon---2",
+  "path": "Phase 4/.claude/skills/configure-chatkit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sobansaud/Hackhathon---2",
+  "dir_name": "configure-chatkit-sobansaud-hackhathon-2-2"
+}

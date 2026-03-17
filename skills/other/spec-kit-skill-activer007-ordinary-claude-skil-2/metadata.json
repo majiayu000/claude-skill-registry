@@ -1,0 +1,11 @@
+{
+  "name": "spec-kit-skill",
+  "description": "GitHub Spec-Kit integration for constitution-based spec-driven development. 7-phase workflow (constitution, specify, clarify, plan, tasks, analyze, implement). Use when working with spec-kit CLI, .spe",
+  "repo": "Activer007/ordinary-claude-skills",
+  "path": "skills_all/spec-kit-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Activer007/ordinary-claude-skills",
+  "dir_name": "spec-kit-skill-activer007-ordinary-claude-skil-2"
+}

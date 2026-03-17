@@ -1,0 +1,11 @@
+{
+  "name": "test-idea-rewriting",
+  "description": "Transform passive 'Verify X' test descriptions into active, observable test actions. Use when test ideas lack specificity, use vague language, or fail quality validation. Converts to action-verb forma",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": "v3/assets/skills/test-idea-rewriting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "test-idea-rewriting-proffesor-for-testin-agentic-qe-2"
+}

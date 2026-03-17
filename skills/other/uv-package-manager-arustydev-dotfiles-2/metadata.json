@@ -1,0 +1,11 @@
+{
+  "name": "uv-package-manager",
+  "description": "Master the uv package manager for fast Python dependency management, virtual environments, and modern Python project workflows. Use when setting up Python projects, managing dependencies, or optimizin",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".ai/plugins/python-development/skills/uv-package-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "uv-package-manager-arustydev-dotfiles-2"
+}

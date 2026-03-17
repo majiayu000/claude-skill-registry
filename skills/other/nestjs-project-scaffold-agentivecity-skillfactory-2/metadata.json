@@ -1,0 +1,11 @@
+{
+  "name": "nestjs-project-scaffold",
+  "description": "Use this skill whenever the user wants to create, restructure, or standardize a NestJS backend project in TypeScript, including folder layout, config, environment setup, tooling, and initial integrati",
+  "repo": "AgentiveCity/SkillFactory",
+  "path": ".claude/skills/nestjs-project-scaffold",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AgentiveCity/SkillFactory",
+  "dir_name": "nestjs-project-scaffold-agentivecity-skillfactory-2"
+}

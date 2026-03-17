@@ -1,0 +1,11 @@
+{
+  "name": "spec-gen",
+  "description": "Generates OpenSpec proposals from TaskMaster tasks based on coupling analysis.\nActivates via codeword [ACTIVATE:SPEC_GEN_V1] injected by hooks when\nmoving to Phase 2 specification generation.\n\nActivat",
+  "repo": "turbobeest/cursor-dev-system",
+  "path": "skills/spec-gen",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/turbobeest/cursor-dev-system",
+  "dir_name": "spec-gen-turbobeest-cursor-dev-system-2"
+}

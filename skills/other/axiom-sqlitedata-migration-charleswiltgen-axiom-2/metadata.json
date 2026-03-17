@@ -1,0 +1,11 @@
+{
+  "name": "axiom-sqlitedata-migration",
+  "description": "Use when migrating from SwiftData to SQLiteData — decision guide, pattern equivalents, code examples, CloudKit sharing (SwiftData can't), performance benchmarks, gradual migration strategy",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-sqlitedata-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-sqlitedata-migration-charleswiltgen-axiom-2"
+}

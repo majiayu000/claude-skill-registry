@@ -1,0 +1,11 @@
+{
+  "name": "ui-prototype-prompt-generator",
+  "description": "This skill should be used when users need to generate detailed, structured prompts for creating UI/UX prototypes. Trigger when users request help with \"create a prototype prompt\", \"design a mobile app",
+  "repo": "chaorenex1/coding-workflow",
+  "path": "skills/ui-prototype-prompt-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chaorenex1/coding-workflow",
+  "dir_name": "ui-prototype-prompt-generator-chaorenex1-coding-workflow-2"
+}

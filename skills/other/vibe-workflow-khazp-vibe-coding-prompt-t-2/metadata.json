@@ -1,0 +1,11 @@
+{
+  "name": "vibe-workflow",
+  "description": "Complete 5-step workflow to build an MVP from idea to launch. Use when the user wants to start a new project from scratch, go through the full workflow, or says \"help me build an MVP\", \"start new proj",
+  "repo": "KhazP/vibe-coding-prompt-template",
+  "path": ".claude/skills/vibe-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KhazP/vibe-coding-prompt-template",
+  "dir_name": "vibe-workflow-khazp-vibe-coding-prompt-t-2"
+}

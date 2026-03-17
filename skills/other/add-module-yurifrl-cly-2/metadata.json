@@ -1,0 +1,11 @@
+{
+  "name": "add-module",
+  "description": "Create new demo or utility modules following CLY project patterns. Use when adding TUI demonstration modules to modules/demo/ or utility modules to modules/, following Bubbletea/Bubbles conventions wi",
+  "repo": "yurifrl/cly",
+  "path": ".claude/skills/add-module",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yurifrl/cly",
+  "dir_name": "add-module-yurifrl-cly-2"
+}

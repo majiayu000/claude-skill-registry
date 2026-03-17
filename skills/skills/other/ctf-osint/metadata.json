@@ -1,0 +1,17 @@
+{
+  "name": "ctf-osint",
+  "repo": "ljagiello/ctf-skills",
+  "path": "ctf-osint/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ljagiello/ctf-skills",
+  "dir_name": "ctf-osint",
+  "downloaded_at": "2026-03-02T08:47:04.279540Z",
+  "author": "ljagiello",
+  "source_url": "https://github.com/ljagiello/ctf-skills/blob/main/ctf-osint/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ljagiello/ctf-skills/blob/main/ctf-osint/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "create-resource-service",
+  "description": "Create a resource service for CRUD operations on domain entities. Use when creating services for entities like notes, users, courses that need data operations, authorization, and event emission. Trigg",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/create-resource-service",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "create-resource-service-madooei-backend-template-2"
+}

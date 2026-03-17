@@ -1,0 +1,11 @@
+{
+  "name": "discover-important-function",
+  "description": "When given a project codebase, this skill observes the important functions in the codebase for future action.",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/setup-fuzzing-py/environment/skills/discover-important-function",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "discover-important-function-benchflow-ai-skillsbench-2"
+}

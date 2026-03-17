@@ -1,0 +1,11 @@
+{
+  "name": "financial-data-fetch",
+  "description": "获取中国A股和ETF市场数据。使用场景：(1) 查询股票历史数据，(2) 获取ETF净值走势，(3) 指定时间范围的数据提取。支持通过股票代码和天数参数获取OHLCV（开盘价、最高价、最低价、收盘价、成交量）数据。",
+  "repo": "YFOOOO/financial_agent",
+  "path": "skills/financial-data-fetch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/YFOOOO/financial_agent",
+  "dir_name": "financial-data-fetch-yfoooo-financial-agent-2"
+}

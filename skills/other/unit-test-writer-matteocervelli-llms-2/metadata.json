@@ -1,0 +1,11 @@
+{
+  "name": "unit-test-writer",
+  "description": "Generate comprehensive unit tests with proper structure, mocking, and coverage. Use for general unit testing guidance across languages.",
+  "repo": "matteocervelli/llms",
+  "path": ".claude/skills/unit-test-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/matteocervelli/llms",
+  "dir_name": "unit-test-writer-matteocervelli-llms-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "confidence-honesty",
+  "description": "Force honest confidence assessment before claiming conclusions. Triggers on 'root cause identified', 'problem identified', 'complete clarity'. Express confidence as percentage, explain what's stopping",
+  "repo": "audunstrand/status-app",
+  "path": ".github/skills/confidence-honesty",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/audunstrand/status-app",
+  "dir_name": "confidence-honesty-audunstrand-status-app-2"
+}

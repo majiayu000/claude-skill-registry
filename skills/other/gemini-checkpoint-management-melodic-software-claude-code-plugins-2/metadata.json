@@ -1,0 +1,11 @@
+{
+  "name": "gemini-checkpoint-management",
+  "description": "Central authority for Gemini CLI Checkpointing. Covers git-based file snapshots, automatic state saving, /restore command, and rollback. Use when enabling checkpointing, restoring previous states, und",
+  "repo": "melodic-software/claude-code-plugins",
+  "path": "plugins/google-ecosystem/skills/gemini-checkpoint-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/melodic-software/claude-code-plugins",
+  "dir_name": "gemini-checkpoint-management-melodic-software-claude-code-plugins-2"
+}

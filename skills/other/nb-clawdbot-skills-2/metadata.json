@@ -1,0 +1,11 @@
+{
+  "name": "nb",
+  "description": "Manage notes, bookmarks, and notebooks using the nb CLI. Create, list, search, and organize notes across multiple notebooks with Git-backed versioning.",
+  "repo": "clawdbot/skills",
+  "path": "skills/bjesuiter/nb",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "nb-clawdbot-skills-2"
+}

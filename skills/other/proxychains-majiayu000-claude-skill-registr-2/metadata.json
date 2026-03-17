@@ -1,0 +1,11 @@
+{
+  "name": "proxychains",
+  "description": "Auto-detect network issues and force proxy usage with proxychains4. Use this skill when encountering connection timeouts, DNS failures, or blocked network access. Default proxy is http://127.0.0.1:991",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/proxychains",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "proxychains-majiayu000-claude-skill-registr-2"
+}

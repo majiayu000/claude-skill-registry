@@ -1,0 +1,11 @@
+{
+  "name": "agent-organizer-skill",
+  "description": "Expert in designing, orchestrating, and managing multi-agent systems (MAS). Specializes in agent collaboration patterns, hierarchical structures, and swarm intelligence. Use when building agent teams,",
+  "repo": "404kidwiz/claude-supercode-skills",
+  "path": "agent-organizer-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/404kidwiz/claude-supercode-skills",
+  "dir_name": "agent-organizer-skill-404kidwiz-claude-supercode-ski-2"
+}

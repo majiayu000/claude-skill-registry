@@ -1,0 +1,11 @@
+{
+  "name": "production-ops",
+  "description": "Use when coordinating shoots, vendors, budgets, and compliance for video projects.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/video-marketing/skills/production-ops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "production-ops-gtmagents-gtm-agents-2"
+}

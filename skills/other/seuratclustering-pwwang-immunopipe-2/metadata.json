@@ -1,0 +1,11 @@
+{
+  "name": "seuratclustering",
+  "description": "Performs unsupervised clustering on single-cell RNA-seq data using Seurat. This process finds nearest neighbors, computes UMAP for visualization, and applies Louvain/Leiden algorithms to identify cell",
+  "repo": "pwwang/immunopipe",
+  "path": "skills/seuratclusteringofallcells",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pwwang/immunopipe",
+  "dir_name": "seuratclustering-pwwang-immunopipe-2"
+}

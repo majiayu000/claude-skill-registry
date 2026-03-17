@@ -1,0 +1,11 @@
+{
+  "name": "csv-data-visualizer",
+  "description": "This skill should be used when working with CSV files to create interactive data visualizations, generate statistical plots, analyze data distributions, create dashboards, or perform automatic data pr",
+  "repo": "mamba-mental/agent-skill-manager",
+  "path": ".claude/skills/csv-data-visualizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mamba-mental/agent-skill-manager",
+  "dir_name": "csv-data-visualizer-mamba-mental-agent-skill-manager-2"
+}

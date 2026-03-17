@@ -1,0 +1,11 @@
+{
+  "name": "cookbook-audit",
+  "description": "Audit an Anthropic Cookbook notebook based on a rubric. Use whenever a notebook review or audit is requested.",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".claude/.wip/skills/cookbook-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "cookbook-audit-arustydev-dotfiles-2"
+}

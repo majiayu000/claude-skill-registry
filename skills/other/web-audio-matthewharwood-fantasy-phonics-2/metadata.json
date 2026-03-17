@@ -1,0 +1,11 @@
+{
+  "name": "web-audio",
+  "description": "Production-tested patterns for fault-tolerant browser audio with zero-lag rapid-fire support. Use when implementing sound effects, background music, voice feedback, or any audio playback in web applic",
+  "repo": "matthewharwood/fantasy-phonics",
+  "path": ".claude/skills/web-audio",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/matthewharwood/fantasy-phonics",
+  "dir_name": "web-audio-matthewharwood-fantasy-phonics-2"
+}

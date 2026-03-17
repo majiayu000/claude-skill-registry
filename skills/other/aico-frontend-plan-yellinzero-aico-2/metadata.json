@@ -1,0 +1,11 @@
+{
+  "name": "aico-frontend-plan",
+  "description": "Create or enhance frontend tasks with detailed implementation steps. Supports TWO modes:\n\nMODE A: Enhance existing task file with detailed atomic steps\nMODE B: Create new standalone task with complete",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-frontend-plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-frontend-plan-yellinzero-aico-2"
+}

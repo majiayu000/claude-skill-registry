@@ -1,0 +1,11 @@
+{
+  "name": "langchain_patterns",
+  "description": "Implement Retrieval-Augmented Generation (RAG) systems with LangChain4j. Build document ingestion pipelines, embedding stores, vector search strategies, and knowledge-enhanced AI applications. Use whe",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/langchain_patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "langchain-patterns-vuralserhat86-antigravity-agentic--2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "problem-framing",
+  "description": "Мета-фреймворк структурированного решения любых задач. Определяет область знаний, находит существующие фреймворки через web research, валидирует подходы, выявляет типичные ошибки и constraints. ОБЯЗАТ",
+  "repo": "merllinsbeard/ai-claude-skills-collection",
+  "path": "meta/problem-framing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/merllinsbeard/ai-claude-skills-collection",
+  "dir_name": "problem-framing-merllinsbeard-ai-claude-skills-col-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "qwen_training_data_miner_prototype",
+  "description": "Qwen Training Data Miner (Prototype)",
+  "repo": "Foundup/Foundups-Agent",
+  "path": ".claude/skills/qwen_training_data_miner_prototype",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Foundup/Foundups-Agent",
+  "dir_name": "qwen-training-data-miner-prototype-foundup-foundups-agent-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rename",
+  "description": "⚡ ULTRA-FAST skill - executes in seconds using pure Bash (no file reading to context).",
+  "repo": "kmylpenter/KFG-CCv2-Installer-Stable",
+  "path": ".claude/skills/rename",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kmylpenter/KFG-CCv2-Installer-Stable",
+  "dir_name": "rename-kmylpenter-kfg-ccv2-installer-s-2"
+}

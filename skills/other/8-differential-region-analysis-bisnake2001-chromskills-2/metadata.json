@@ -1,0 +1,11 @@
+{
+  "name": "8.differential-region-analysis",
+  "description": "The differential-region-analysis pipeline identifies genomic regions exhibiting significant differences in signal intensity between experimental conditions using a count-based framework and DESeq2. It",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "8.differential-region-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "8-differential-region-analysis-bisnake2001-chromskills-2"
+}

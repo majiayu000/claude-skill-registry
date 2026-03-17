@@ -1,0 +1,11 @@
+{
+  "name": "improve-instructions",
+  "description": "Analyzes conversation history to improve CLAUDE.md files. Use when you notice patterns in how Claude misunderstands requests, want to consolidate repeated guidance, or improve instruction clarity base",
+  "repo": "philoserf/claude-code-setup",
+  "path": "skills/improve-instructions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/philoserf/claude-code-setup",
+  "dir_name": "improve-instructions-philoserf-claude-code-setup-2"
+}

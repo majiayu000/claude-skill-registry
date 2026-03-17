@@ -1,0 +1,11 @@
+{
+  "name": "StoryExplanation",
+  "description": "Create compelling story-format summaries using UltraThink to find the best narrative framing. Support multiple formats - 3-part narrative, n-length with inline links, abridged 5-line, or comprehensive",
+  "repo": "blackpwnguin/Personal-AI",
+  "path": ".claude/skills/StoryExplanation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/blackpwnguin/Personal-AI",
+  "dir_name": "storyexplanation-blackpwnguin-personal-ai-2"
+}

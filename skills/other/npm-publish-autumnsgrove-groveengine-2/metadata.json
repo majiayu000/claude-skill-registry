@@ -1,0 +1,11 @@
+{
+  "name": "npm-publish",
+  "description": "Publish @autumnsgrove/groveengine to npm with proper registry swap workflow. Use when releasing a new version of the engine package to npm.",
+  "repo": "AutumnsGrove/GroveEngine",
+  "path": ".claude/skills/npm-publish",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AutumnsGrove/GroveEngine",
+  "dir_name": "npm-publish-autumnsgrove-groveengine-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "alignment-validation",
+  "description": "Validate alignment quality with insert size distribution, proper pairing rates, GC bias, strand balance, and other post-alignment metrics. Use after alignment to verify data quality before variant cal",
+  "repo": "GPTomics/bioSkills",
+  "path": "alignment-files/alignment-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "alignment-validation-gptomics-bioskills-2"
+}

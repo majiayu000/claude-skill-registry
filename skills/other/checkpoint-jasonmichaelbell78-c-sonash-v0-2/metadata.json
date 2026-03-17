@@ -1,0 +1,11 @@
+{
+  "name": "checkpoint",
+  "description": "Quick save of current session state for recovery after failures",
+  "repo": "jasonmichaelbell78-creator/sonash-v0",
+  "path": ".claude/skills/checkpoint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonmichaelbell78-creator/sonash-v0",
+  "dir_name": "checkpoint-jasonmichaelbell78-c-sonash-v0-2"
+}

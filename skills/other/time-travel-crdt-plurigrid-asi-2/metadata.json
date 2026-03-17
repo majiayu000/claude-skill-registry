@@ -1,0 +1,11 @@
+{
+  "name": "time-travel-crdt",
+  "description": "Time Travel CRDT Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/time-travel-crdt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "time-travel-crdt-plurigrid-asi-2"
+}

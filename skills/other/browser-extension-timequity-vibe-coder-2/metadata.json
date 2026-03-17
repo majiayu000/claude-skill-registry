@@ -1,0 +1,11 @@
+{
+  "name": "browser-extension",
+  "description": "Build browser extensions with WXT framework, Manifest V3, and TypeScript.\nUse when: creating Chrome extension, Firefox addon, browser plugin.\nTriggers: \"extension\", \"browser extension\", \"chrome extens",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/browser-extension",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "browser-extension-timequity-vibe-coder-2"
+}

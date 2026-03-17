@@ -1,0 +1,11 @@
+{
+  "name": "mermaid-reverse-attempt",
+  "description": "Mermaid URL codec - encodes/decodes #base64: (amp CLI) and #pako: (mermaid.live) formats",
+  "repo": "plurigrid/asi",
+  "path": "skills/mermaid-reverse-attempt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "mermaid-reverse-attempt-plurigrid-asi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "eks-observability",
+  "description": "EKS observability with metrics, logging, and tracing. Use when setting up monitoring, configuring logging pipelines, implementing distributed tracing, building production dashboards, troubleshooting E",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/eks-observability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "eks-observability-adaptationio-skrillz-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "worktrees",
+  "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with beads integration via bd worktree commands",
+  "repo": "rbergman/dark-matter-marketplace",
+  "path": "plugins/workflow/skills/worktrees",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rbergman/dark-matter-marketplace",
+  "dir_name": "worktrees-rbergman-dark-matter-marketpl-2"
+}

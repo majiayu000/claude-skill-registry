@@ -1,0 +1,11 @@
+{
+  "name": "gtars",
+  "description": "High-performance toolkit for genomic interval analysis in Rust with Python bindings. Use when working with genomic regions, BED files, coverage tracks, overlap detection, tokenization for ML models, o",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/research-tools/gtars",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "gtars-hxk622-tokendance-2"
+}

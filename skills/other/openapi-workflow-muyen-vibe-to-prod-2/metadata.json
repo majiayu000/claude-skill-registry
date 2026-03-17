@@ -1,0 +1,11 @@
+{
+  "name": "openapi-workflow",
+  "description": "Proactive OpenAPI workflow. Triggers when OpenAPI spec files are modified to validate, regenerate code, and verify builds.",
+  "repo": "muyen/vibe-to-prod",
+  "path": ".claude/skills/openapi-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/muyen/vibe-to-prod",
+  "dir_name": "openapi-workflow-muyen-vibe-to-prod-2"
+}

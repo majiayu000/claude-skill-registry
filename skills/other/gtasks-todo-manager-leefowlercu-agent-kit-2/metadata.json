@@ -1,0 +1,11 @@
+{
+  "name": "gtasks-todo-manager",
+  "description": "Manages to-do items across multiple Google accounts using the Google Tasks API. Use when the user needs to create, update, complete, or organize tasks in Google Tasks, manage task lists, or view tasks",
+  "repo": "leefowlercu/agent-kit",
+  "path": "plugins/gtasks-todo-manager/skills/gtasks-todo-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leefowlercu/agent-kit",
+  "dir_name": "gtasks-todo-manager-leefowlercu-agent-kit-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-skill-developer",
+  "description": "Create and manage Claude Code skills following Anthropic best practices. Use when creating new skills, modifying skill-rules.json, understanding trigger patterns, working with hooks, debugging skill a",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-skill-developer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-skill-developer-boisenoise-skills-collections-2"
+}

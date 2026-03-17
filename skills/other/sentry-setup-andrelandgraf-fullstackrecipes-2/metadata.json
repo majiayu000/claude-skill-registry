@@ -1,0 +1,11 @@
+{
+  "name": "sentry-setup",
+  "description": "Configure Sentry for error tracking, performance monitoring, and log aggregation. Integrates with Pino to forward logs to Sentry automatically.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/sentry-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "sentry-setup-andrelandgraf-fullstackrecipes-2"
+}

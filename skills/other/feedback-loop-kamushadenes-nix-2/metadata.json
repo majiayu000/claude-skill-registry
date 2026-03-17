@@ -1,0 +1,11 @@
+{
+  "name": "feedback-loop",
+  "description": "Update CLAUDE.md or rules when patterns of errors emerge",
+  "repo": "kamushadenes/nix",
+  "path": "home/common/ai/resources/claude-code/skills/feedback-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kamushadenes/nix",
+  "dir_name": "feedback-loop-kamushadenes-nix-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ha-dashboard-cards",
+  "description": "Create Home Assistant Lovelace dashboard cards programmatically with static titles,\ncolor gradients, and section organization. Use when building HA dashboards with\nmini-graph-card showing multiple ent",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/ha-dashboard-cards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "ha-dashboard-cards-dawiddutoit-custom-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "use-subagents-dispatch",
+  "description": "Use when executing implementation plans with independent tasks in the current session",
+  "repo": "mtthsnc/autonome",
+  "path": "skills/use-subagents-dispatch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mtthsnc/autonome",
+  "dir_name": "use-subagents-dispatch-mtthsnc-autonome-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "testing-patterns-vitest",
+  "description": "Vitest testing conventions and patterns for @j0kz/mcp-agents including test organization, naming, assertion patterns, mocking strategies, and coverage targets (75%). Use when writing tests, organiz...",
+  "repo": "j0KZ/mcp-agents",
+  "path": "starter-kit/template/.claude/skills/testing-patterns-vitest",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/j0KZ/mcp-agents",
+  "dir_name": "testing-patterns-vitest-j0kz-mcp-agents-2"
+}

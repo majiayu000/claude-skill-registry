@@ -1,0 +1,11 @@
+{
+  "name": "skill-lookup",
+  "description": "Activates when the user asks about Agent Skills, wants to find reusable AI capabilities, needs to install skills, or mentions skills for Claude. Use for discovering, retrieving, and installing skills.",
+  "repo": "aLittlecrocodile/coding-agent",
+  "path": ".claude/skills/skill-lookup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aLittlecrocodile/coding-agent",
+  "dir_name": "skill-lookup-alittlecrocodile-coding-agent-2"
+}

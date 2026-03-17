@@ -1,0 +1,11 @@
+{
+  "name": "requirements-clarification",
+  "description": "Force requirements clarification BEFORE implementation to prevent misunderstandings.\nAuto-activates on \"需求\", \"requirement\", \"客戶要\", \"新功能\", \"案主說\", \"用戶想要\" keywords.\nUses structured CARIO format to clarif",
+  "repo": "Youngger9765/career_ios_backend",
+  "path": ".claude/skills/requirements-clarification",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Youngger9765/career_ios_backend",
+  "dir_name": "requirements-clarification-youngger9765-career-ios-backend-2"
+}

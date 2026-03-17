@@ -1,0 +1,11 @@
+{
+  "name": "vendix-multi-tenant-context",
+  "description": "Explains the 'Context Bridge' pattern where Middleware resolves the tenant (domain/store), stores it in the Request object, and an Interceptor unifies it with user authentication into AsyncLocalStorag",
+  "repo": "Rzyfront/Vendix",
+  "path": "skills/vendix-multi-tenant-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Rzyfront/Vendix",
+  "dir_name": "vendix-multi-tenant-context-rzyfront-vendix-2"
+}

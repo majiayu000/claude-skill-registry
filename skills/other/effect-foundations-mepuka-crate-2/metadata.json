@@ -1,0 +1,11 @@
+{
+  "name": "effect-foundations",
+  "description": "Core Effect foundations and style for a coding agent. Use when starting an Effect task, choosing operators, or structuring a small pipeline.",
+  "repo": "mepuka/crate",
+  "path": ".claude/skills/effect-foundations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mepuka/crate",
+  "dir_name": "effect-foundations-mepuka-crate-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "tdd-migrate",
+  "description": "TDD workflow for migrations - orchestrate agents, zero main context growth",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/tdd-migrate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "tdd-migrate-parcadei-continuous-claude-v3-2"
+}

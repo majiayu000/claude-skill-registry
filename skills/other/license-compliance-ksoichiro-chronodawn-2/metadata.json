@@ -1,0 +1,11 @@
+{
+  "name": "license-compliance",
+  "description": "LGPL-3.0 license compliance guidelines for Chrono Dawn mod",
+  "repo": "ksoichiro/ChronoDawn",
+  "path": ".claude/skills/license-compliance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ksoichiro/ChronoDawn",
+  "dir_name": "license-compliance-ksoichiro-chronodawn-2"
+}

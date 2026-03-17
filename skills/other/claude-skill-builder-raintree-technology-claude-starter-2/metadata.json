@@ -1,0 +1,11 @@
+{
+  "name": "claude-skill-builder",
+  "description": "Interactive skill creator for Claude Code. Triggers when user mentions creating skills, building skills, skill templates, skill frontmatter, allowed-tools, or wants to scaffold a new skill.",
+  "repo": "raintree-technology/claude-starter",
+  "path": ".claude/skills/anthropic/claude-skill-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/raintree-technology/claude-starter",
+  "dir_name": "claude-skill-builder-raintree-technology-claude-starter-2"
+}

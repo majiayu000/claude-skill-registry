@@ -1,0 +1,11 @@
+{
+  "name": "agent-assistant",
+  "description": "Agent assistance skill that provides stuck detection, memory management, and session learning capabilities for AI agents\n\nTrigger terms: agent stuck, loop detected, session memory, agent learning, con",
+  "repo": "ref-docs/sdd-stl",
+  "path": "src/templates/agents/claude-code/skills/agent-assistant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ref-docs/sdd-stl",
+  "dir_name": "agent-assistant-ref-docs-sdd-stl-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "worm",
+  "description": "Two-pointer reversible cursor worms for traversal and dataflow",
+  "repo": "SimHacker/moollm",
+  "path": "skills/worm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "worm-simhacker-moollm-2"
+}

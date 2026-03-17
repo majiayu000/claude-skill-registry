@@ -1,0 +1,11 @@
+{
+  "name": "interview-master",
+  "description": "This skill should be used when the user asks to \"generate interview questions\", \"prepare for interview\", \"optimize resume\", \"conduct mock interview\", \"analyze git commits for resume\", \"generate resume",
+  "repo": "chaorenex1/coding-workflow",
+  "path": "skills/interview-master",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chaorenex1/coding-workflow",
+  "dir_name": "interview-master-chaorenex1-coding-workflow-2"
+}

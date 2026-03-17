@@ -1,0 +1,11 @@
+{
+  "name": "refactoring-detection",
+  "description": "リファクタリング候補検出のast-grepパターン、推定工数算出、言語別設定を定義",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/refactoring-detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "refactoring-detection-takemo101-compose-workflow-2"
+}

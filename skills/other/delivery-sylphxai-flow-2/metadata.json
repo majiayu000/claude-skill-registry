@@ -1,0 +1,11 @@
+{
+  "name": "delivery",
+  "description": "Delivery - CI/CD, testing, releases. Use when improving pipelines.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/delivery",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "delivery-sylphxai-flow-2"
+}

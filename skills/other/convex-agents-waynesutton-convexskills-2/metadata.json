@@ -1,0 +1,11 @@
+{
+  "name": "convex-agents",
+  "description": "Building AI agents with the Convex Agent component including thread management, tool integration, streaming responses, RAG patterns, and workflow orchestration",
+  "repo": "waynesutton/convexskills",
+  "path": "skills/convex-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/waynesutton/convexskills",
+  "dir_name": "convex-agents-waynesutton-convexskills-2"
+}

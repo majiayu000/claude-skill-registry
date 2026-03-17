@@ -1,0 +1,11 @@
+{
+  "name": "geopandas",
+  "description": "Python library for working with geospatial vector data including shapefiles, GeoJSON, and GeoPackage files. Use when working with geographic data for spatial analysis, geometric operations, coordinate",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/scientific-geopandas",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "geopandas-majiayu000-claude-skill-registr-2"
+}

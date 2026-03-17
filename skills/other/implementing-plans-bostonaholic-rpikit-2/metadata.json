@@ -1,0 +1,11 @@
+{
+  "name": "implementing-plans",
+  "description": "This skill should be used when the user asks to \"implement the plan\", \"execute the plan\", \"start implementation\", \"build the feature\", \"make the changes\", or invokes the rpikit:implement command. Prov",
+  "repo": "bostonaholic/rpikit",
+  "path": "skills/implementing-plans",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bostonaholic/rpikit",
+  "dir_name": "implementing-plans-bostonaholic-rpikit-2"
+}

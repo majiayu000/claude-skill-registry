@@ -1,0 +1,11 @@
+{
+  "name": "twitter-reader",
+  "description": "Fetch Twitter/X post content by URL using jina.ai API to bypass JavaScript restrictions. Use when Claude needs to retrieve tweet content including author, timestamp, post text, images, and thread repl",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/content-creator-workflow/.claude/skills/twitter-reader",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "twitter-reader-nicepkg-ai-workflow-2"
+}

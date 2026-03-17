@@ -1,0 +1,9 @@
+{
+  "name": "pr-review",
+  "repo": "howarewoo/monorepo-template",
+  "path": ".claude/skills/pr-review/SKILL.md",
+  "category": "other",
+  "source": "github.com/howarewoo/monorepo-template",
+  "dir_name": "pr-review-howarewoo-monorepo-template",
+  "downloaded_at": "2026-02-22T07:29:08.881011Z"
+}

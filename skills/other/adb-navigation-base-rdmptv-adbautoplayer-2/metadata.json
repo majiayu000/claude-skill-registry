@@ -1,0 +1,11 @@
+{
+  "name": "adb-navigation-base",
+  "description": "Base navigation patterns for Android device automation - gestures, waits, and UI interaction",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".claude/skills/adb/adb-foundation/adb-navigation-base",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "dir_name": "adb-navigation-base-rdmptv-adbautoplayer-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "attractor",
+  "description": "Invariant set attracting nearby trajectories",
+  "repo": "plurigrid/asi",
+  "path": "skills/attractor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "attractor-plurigrid-asi-2"
+}

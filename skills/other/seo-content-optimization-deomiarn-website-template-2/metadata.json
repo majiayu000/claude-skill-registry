@@ -1,0 +1,11 @@
+{
+  "name": "seo-content-optimization",
+  "description": "Optimize page content for target keywords. Use per page after building to integrate keywords naturally into headings, text, and i18n files. Reads docs/seo-analysis.md for keyword targets. Triggers on ",
+  "repo": "deomiarn/website-template",
+  "path": ".claude/skills/seo-content-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/deomiarn/website-template",
+  "dir_name": "seo-content-optimization-deomiarn-website-template-2"
+}

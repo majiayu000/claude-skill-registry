@@ -1,0 +1,11 @@
+{
+  "name": "benchling-integration",
+  "description": "Benchling R&D platform integration. Access registry (DNA, proteins), inventory, ELN entries, workflows via API, build Benchling Apps, query Data Warehouse, for lab data management automation.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/lab-automation/benchling-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "benchling-integration-hxk622-tokendance-2"
+}

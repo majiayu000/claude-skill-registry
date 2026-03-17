@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-skill-code-analyzer",
+  "description": "Analyze code examples in SKILL.md files for correctness using static analysis and TypeScript compilation",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": ".claude/skills/umbraco-skill-code-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-skill-code-analyzer-umbraco-umbraco-cms-backoffi-2"
+}

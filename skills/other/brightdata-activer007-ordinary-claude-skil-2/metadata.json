@@ -1,0 +1,11 @@
+{
+  "name": "brightdata",
+  "description": "Progressive four-tier URL content scraping with automatic fallback strategy.\n\nUSE WHEN user says \"scrape this URL\", \"fetch this page\", \"get content from\",\n\"can't access this site\", \"use Bright Data\", ",
+  "repo": "Activer007/ordinary-claude-skills",
+  "path": "skills_all/brightdata",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Activer007/ordinary-claude-skills",
+  "dir_name": "brightdata-activer007-ordinary-claude-skil-2"
+}

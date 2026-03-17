@@ -1,0 +1,11 @@
+{
+  "name": "issue-templates",
+  "description": "Templates for creating well-structured GitHub issues for bugs, features, and tasks",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/github-issues/skills/issue-templates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "issue-templates-yebot-rad-cc-plugins-2"
+}

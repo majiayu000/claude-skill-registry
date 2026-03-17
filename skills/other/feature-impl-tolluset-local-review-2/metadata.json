@@ -1,0 +1,11 @@
+{
+  "name": "feature-impl",
+  "description": "New feature implementation. Use for 'add feature', 'implement', 'new feature' requests",
+  "repo": "tolluset/local-review",
+  "path": ".claude/skills/feature-impl",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tolluset/local-review",
+  "dir_name": "feature-impl-tolluset-local-review-2"
+}

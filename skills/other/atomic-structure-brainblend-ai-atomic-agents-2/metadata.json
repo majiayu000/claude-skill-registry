@@ -1,0 +1,11 @@
+{
+  "name": "atomic-structure",
+  "description": "This skill should be used when the user asks to \"create project structure\", \"organize atomic agents project\", \"pyproject.toml\", \"project layout\", \"directory structure\", or needs guidance on organizing",
+  "repo": "BrainBlend-AI/atomic-agents",
+  "path": "claude-plugin/atomic-agents/skills/atomic-structure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BrainBlend-AI/atomic-agents",
+  "dir_name": "atomic-structure-brainblend-ai-atomic-agents-2"
+}

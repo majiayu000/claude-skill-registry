@@ -1,0 +1,11 @@
+{
+  "name": "socratic-teaching",
+  "description": "实现苏格拉底式引导教学，通过提问引导学生思考，支持7种引导类型和错误类型映射。",
+  "repo": "lwpk110/sprout-chat",
+  "path": ".claude/skills/socratic-teaching",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lwpk110/sprout-chat",
+  "dir_name": "socratic-teaching-lwpk110-sprout-chat-2"
+}

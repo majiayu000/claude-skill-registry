@@ -1,0 +1,11 @@
+{
+  "name": "ess",
+  "description": "ESS Technology MPN encoding patterns, high-end audio DAC decoding, and handler guidance. Use when working with ESS Sabre DACs or ESSHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/cypress",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "ess-cantara-lib-electronic-compo-2"
+}

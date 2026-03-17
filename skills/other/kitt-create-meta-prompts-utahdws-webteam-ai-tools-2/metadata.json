@@ -1,0 +1,11 @@
+{
+  "name": "kitt-create-meta-prompts",
+  "description": "Create optimized prompts for agent-to-agent pipelines with research, planning, and execution stages. Use when building prompts that produce outputs for other prompts to consume, or when running multi-",
+  "repo": "utahdws/webteam-ai-tools",
+  "path": ".ai-cli/shared/skills/kitt-create-meta-prompts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/utahdws/webteam-ai-tools",
+  "dir_name": "kitt-create-meta-prompts-utahdws-webteam-ai-tools-2"
+}

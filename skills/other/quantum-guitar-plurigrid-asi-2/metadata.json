@@ -1,0 +1,11 @@
+{
+  "name": "quantum-guitar",
+  "description": "Coecke's Quantum Guitar: quantising guitar strings via qubit association, ZX-calculus notation, Moth Actias synth integration",
+  "repo": "plurigrid/asi",
+  "path": "skills/quantum-guitar",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "quantum-guitar-plurigrid-asi-2"
+}

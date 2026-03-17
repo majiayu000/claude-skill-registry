@@ -1,0 +1,11 @@
+{
+  "name": "video-analysis-workflow",
+  "description": "Guides video analysis for CMJ and drop jump. Use when processing athlete videos, debugging pose detection, troubleshooting analysis failures, or running kinemotion CLI commands.",
+  "repo": "feniix/kinemotion",
+  "path": ".claude/skills/video-analysis-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/feniix/kinemotion",
+  "dir_name": "video-analysis-workflow-feniix-kinemotion-2"
+}

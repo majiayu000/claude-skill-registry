@@ -1,0 +1,11 @@
+{
+  "name": "clojure-paren-repair",
+  "description": "Repair unbalanced parentheses, brackets, and braces in Clojure, ClojureScript, and EDN files. Use when you encounter delimiter mismatch syntax errors after editing .clj, .cljs, .cljc, or .edn files, o",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/clojure-paren-repair",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "clojure-paren-repair-ramblurr-nix-devenv-2"
+}

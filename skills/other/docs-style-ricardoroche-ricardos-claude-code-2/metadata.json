@@ -1,0 +1,11 @@
+{
+  "name": "docs-style",
+  "description": "Automatically applies when drafting or revising documentation to enforce repository voice, clarity, and navigation patterns.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/docs-style",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "docs-style-ricardoroche-ricardos-claude-code-2"
+}

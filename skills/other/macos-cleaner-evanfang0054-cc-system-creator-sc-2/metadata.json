@@ -1,0 +1,11 @@
+{
+  "name": "macos-cleaner",
+  "description": "分析并通过智能清理建议回收 macOS 磁盘空间。当用户报告磁盘空间问题、需要清理 Mac 或想了解什么占用了存储空间时，应使用此技能。专注于安全的交互式分析，在执行任何删除操作前需要用户确认。",
+  "repo": "evanfang0054/cc-system-creator-scripts",
+  "path": "skills/macos-cleaner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/evanfang0054/cc-system-creator-scripts",
+  "dir_name": "macos-cleaner-evanfang0054-cc-system-creator-sc-2"
+}

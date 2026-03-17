@@ -1,0 +1,11 @@
+{
+  "name": "inngest-workflow",
+  "description": "Create Inngest workflows for durable execution. Use when building agent workflows, approval flows, scheduled tasks, or any multi-step async process.",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/inngest-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "inngest-workflow-skillrecordings-support-2"
+}

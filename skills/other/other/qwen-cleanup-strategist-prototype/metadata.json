@@ -1,0 +1,9 @@
+{
+  "name": "qwen-cleanup-strategist-prototype",
+  "repo": "Foundup/Foundups-Agent",
+  "path": ".claude/skills/qwen_cleanup_strategist_prototype/SKILL.md",
+  "category": "other",
+  "source": "github.com/Foundup/Foundups-Agent",
+  "dir_name": "qwen-cleanup-strategist-prototype",
+  "downloaded_at": "2026-02-15T05:08:00.140154Z"
+}

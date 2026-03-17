@@ -1,0 +1,11 @@
+{
+  "name": "windows-remote",
+  "description": "Windows remote administration via PowerShell over SSH tunnel for filesystem and service operations",
+  "repo": "BreakerOfStems/claude-skills",
+  "path": "skills/windows-remote",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BreakerOfStems/claude-skills",
+  "dir_name": "windows-remote-breakerofstems-claude-skills-2"
+}

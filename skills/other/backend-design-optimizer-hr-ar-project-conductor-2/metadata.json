@@ -1,0 +1,11 @@
+{
+  "name": "backend-design-optimizer",
+  "description": "Find the best backend architecture, database design, and API patterns using deep research. Use when user asks \"best database for...\", \"optimize API\", \"backend architecture for...\", or \"scale this serv",
+  "repo": "HR-AR/Project-Conductor",
+  "path": ".claude/skills/backend-design-optimizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HR-AR/Project-Conductor",
+  "dir_name": "backend-design-optimizer-hr-ar-project-conductor-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "clj-kondo-3color",
+  "description": "clj-kondo linter with Gay.jl 3-color integration for GF(3) conservation",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.ruler/skills/clj-kondo-3color",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "clj-kondo-3color-plurigrid-asi-2"
+}

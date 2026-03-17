@@ -1,0 +1,11 @@
+{
+  "name": "performance-benchmark",
+  "description": "Runs performance benchmarks on YARS with long simulations to detect performance regressions",
+  "repo": "kzahedi/YARS",
+  "path": ".claude/skills/performance-benchmark",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kzahedi/YARS",
+  "dir_name": "performance-benchmark-kzahedi-yars-2"
+}

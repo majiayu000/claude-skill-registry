@@ -1,0 +1,11 @@
+{
+  "name": "wrong",
+  "description": "Provides an incorrect answer",
+  "repo": "gaearon/woodshed",
+  "path": "test/root/skills/mul/wrong",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gaearon/woodshed",
+  "dir_name": "wrong-gaearon-woodshed-2"
+}

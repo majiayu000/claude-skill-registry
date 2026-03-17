@@ -1,0 +1,11 @@
+{
+  "name": "second-brain-debugging",
+  "description": "Debug issues in the Second Brain Nuxt 4 + @nuxt/content v3 project. Use for any bug, test failure, or unexpected behavior.",
+  "repo": "alexanderop/second-brain-nuxt",
+  "path": ".claude/skills/second-brain-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alexanderop/second-brain-nuxt",
+  "dir_name": "second-brain-debugging-alexanderop-second-brain-nuxt-2"
+}

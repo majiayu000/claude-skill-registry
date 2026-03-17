@@ -1,0 +1,11 @@
+{
+  "name": "google-slides-tables",
+  "description": "Create proper tables in Google Slides presentations using the Slides API. Use when building tabular data, metrics, comparisons, or any slide that needs rows and columns.",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/google-slides-tables",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "google-slides-tables-orient-bot-orient-2"
+}

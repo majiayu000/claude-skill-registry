@@ -1,0 +1,11 @@
+{
+  "name": "pumpfun",
+  "description": "Complete PumpFun Protocol guide for building token launches, bonding curves, and AMM integrations on Solana. Covers Pump Program (token creation, buy/sell on bonding curves), PumpSwap AMM (liquidity p",
+  "repo": "sendaifun/skills",
+  "path": "skills/pumpfun",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "pumpfun-sendaifun-skills-2"
+}

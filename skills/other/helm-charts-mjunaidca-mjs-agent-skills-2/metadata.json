@@ -1,0 +1,11 @@
+{
+  "name": "helm-charts",
+  "description": "Creates and manages Helm charts for Kubernetes deployments. This skill should be used when packaging applications for Kubernetes using Helm, creating Chart.yaml, values.yaml, and templates. It covers ",
+  "repo": "mjunaidca/mjs-agent-skills",
+  "path": "docs/taskflow-vault/skills/engineering/helm-charts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mjunaidca/mjs-agent-skills",
+  "dir_name": "helm-charts-mjunaidca-mjs-agent-skills-2"
+}

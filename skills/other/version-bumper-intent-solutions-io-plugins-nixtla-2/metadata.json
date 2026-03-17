@@ -1,0 +1,11 @@
+{
+  "name": "version-bumper",
+  "description": "Automatically handles semantic version updates across plugin.json and marketplace catalog when user mentions version bump, update version, or release. Ensures version consistency in claude-code-plugin",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/examples/skills-powerkit/skills/version-bumper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "version-bumper-intent-solutions-io-plugins-nixtla-2"
+}

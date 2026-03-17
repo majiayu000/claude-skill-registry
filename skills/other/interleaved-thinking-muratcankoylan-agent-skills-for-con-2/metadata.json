@@ -1,0 +1,11 @@
+{
+  "name": "interleaved_thinking",
+  "description": "Debug and optimize AI agents by analyzing reasoning traces. Activates on 'debug agent', 'optimize prompt', 'analyze reasoning', 'why did the agent fail', 'improve agent performance', or when diagnosin",
+  "repo": "muratcankoylan/Agent-Skills-for-Context-Engineering",
+  "path": "examples/interleaved_thinking",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+  "dir_name": "interleaved-thinking-muratcankoylan-agent-skills-for-con-2"
+}

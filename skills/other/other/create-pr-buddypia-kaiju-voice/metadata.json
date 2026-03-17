@@ -1,0 +1,17 @@
+{
+  "name": "create-pr",
+  "repo": "buddypia/kaiju-voice",
+  "path": ".claude/skills/create-pr/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/buddypia/kaiju-voice",
+  "dir_name": "create-pr-buddypia-kaiju-voice",
+  "downloaded_at": "2026-03-01T07:05:47.075025Z",
+  "author": "buddypia",
+  "source_url": "https://github.com/buddypia/kaiju-voice/blob/master/.claude/skills/create-pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/buddypia/kaiju-voice/blob/master/.claude/skills/create-pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

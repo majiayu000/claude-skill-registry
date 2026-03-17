@@ -1,0 +1,11 @@
+{
+  "name": "validation-policy",
+  "description": "数値の入出力バリデーション方針。関数の引数・戻り値の妥当性チェック規約を定義。test-writer, implement, reviewerの各観点で参照。",
+  "repo": "shiroinock/Darts-Score-Trainer",
+  "path": ".claude/skills/validation-policy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shiroinock/Darts-Score-Trainer",
+  "dir_name": "validation-policy-shiroinock-darts-score-trainer-2"
+}

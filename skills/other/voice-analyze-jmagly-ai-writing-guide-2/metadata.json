@@ -1,0 +1,11 @@
+{
+  "name": "voice-analyze",
+  "description": "Reverse-engineer voice profiles from sample content by analyzing writing patterns. Use when relevant to the task.",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "plugins/voice/skills/voice-analyze",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jmagly/ai-writing-guide",
+  "dir_name": "voice-analyze-jmagly-ai-writing-guide-2"
+}

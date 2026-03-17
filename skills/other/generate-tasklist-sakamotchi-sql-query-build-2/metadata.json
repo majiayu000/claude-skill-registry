@@ -1,0 +1,11 @@
+{
+  "name": "generate-tasklist",
+  "description": "開発作業のタスクリスト（tasklist.md）を生成します。このスキルは単独で使用することも、generate-working-docsから呼び出されることもあります。",
+  "repo": "sakamotchi/sql-query-build",
+  "path": ".claude/skills/generate-tasklist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sakamotchi/sql-query-build",
+  "dir_name": "generate-tasklist-sakamotchi-sql-query-build-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "workflow-enforcement",
+  "description": "Workflow step compliance guidance with mandatory step reminders and visual progress tracking. Reminds Claude to complete all workflow steps before PR creation.",
+  "repo": "rysweet/azlin",
+  "path": ".claude/skills/workflow-enforcement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/azlin",
+  "dir_name": "workflow-enforcement-rysweet-azlin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "slidev",
+  "description": "Create and edit presentation slides using Slidev framework when user requests slides, presentations, or deck modifications",
+  "repo": "LuoAndOrder/AgentScripts",
+  "path": ".claude/skills/slidev",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/LuoAndOrder/AgentScripts",
+  "dir_name": "slidev-luoandorder-agentscripts-2"
+}

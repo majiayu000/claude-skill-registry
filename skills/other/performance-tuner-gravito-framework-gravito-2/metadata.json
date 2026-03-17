@@ -1,0 +1,11 @@
+{
+  "name": "performance-tuner",
+  "description": "Specialized in speed and resource optimization for Gravito. Trigger this for query profiling, caching strategies, or frontend performance audits.",
+  "repo": "gravito-framework/gravito",
+  "path": "packages/scaffold/templates/skills/performance-tuner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gravito-framework/gravito",
+  "dir_name": "performance-tuner-gravito-framework-gravito-2"
+}

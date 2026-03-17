@@ -1,0 +1,11 @@
+{
+  "name": "miniapp-design",
+  "description": "小程序页面设计与代码生成工作流。\n触发场景：用户提到\"修改页面\"、\"更新UI\"、\"添加组件\"、\"调整布局\"、\"生成代码\"、\"小程序设计\"。\n适用于：TeamVenture 小程序的页面设计迭代、UI 组件开发、样式调整。",
+  "repo": "muzhicaomingwang/ai-ideas",
+  "path": ".claude/skills/miniapp-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/muzhicaomingwang/ai-ideas",
+  "dir_name": "miniapp-design-muzhicaomingwang-ai-ideas-2"
+}

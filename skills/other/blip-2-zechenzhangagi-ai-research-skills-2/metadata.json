@@ -1,0 +1,11 @@
+{
+  "name": "blip-2",
+  "description": "Vision-language pre-training framework bridging frozen image encoders and LLMs. Use when you need image captioning, visual question answering, image-text retrieval, or multimodal chat with state-of-th",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "18-multimodal/blip-2",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "blip-2-zechenzhangagi-ai-research-skills-2"
+}

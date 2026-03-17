@@ -1,0 +1,11 @@
+{
+  "name": "dmr-detection",
+  "description": "Differentially methylated region (DMR) detection using methylKit tiles, bsseq BSmooth, and DMRcate. Use when identifying contiguous genomic regions with methylation differences between experimental co",
+  "repo": "GPTomics/bioSkills",
+  "path": "methylation-analysis/dmr-detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "dmr-detection-gptomics-bioskills-2"
+}

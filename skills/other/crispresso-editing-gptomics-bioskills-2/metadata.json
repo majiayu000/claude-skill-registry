@@ -1,0 +1,11 @@
+{
+  "name": "crispresso-editing",
+  "description": "CRISPResso2 for analyzing CRISPR gene editing outcomes. Quantifies indels, HDR efficiency, and generates comprehensive editing reports. Use when analyzing amplicon sequencing data from CRISPR editing ",
+  "repo": "GPTomics/bioSkills",
+  "path": "crispr-screens/crispresso-editing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "crispresso-editing-gptomics-bioskills-2"
+}

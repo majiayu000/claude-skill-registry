@@ -1,0 +1,11 @@
+{
+  "name": "invalid-version-type",
+  "description": "A skill with non-string version for testing",
+  "repo": "maxvaega/skillkit",
+  "path": "tests/fixtures/skills/invalid-version-type",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "invalid-version-type-maxvaega-skillkit-2"
+}

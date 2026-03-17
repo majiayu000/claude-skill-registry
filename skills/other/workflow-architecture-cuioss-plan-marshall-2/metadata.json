@@ -1,0 +1,11 @@
+{
+  "name": "workflow-architecture",
+  "description": "Centralized architecture documentation for the pm-workflow bundle with visual diagrams",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-workflow/skills/workflow-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "workflow-architecture-cuioss-plan-marshall-2"
+}

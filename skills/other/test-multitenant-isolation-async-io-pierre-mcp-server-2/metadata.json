@@ -1,0 +1,11 @@
+{
+  "name": "test-multitenant-isolation",
+  "description": "Validates complete data isolation between tenants, tests cross-tenant access, ensures proper query scoping",
+  "repo": "Async-IO/pierre_mcp_server",
+  "path": ".claude/skills/test-multitenant-isolation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Async-IO/pierre_mcp_server",
+  "dir_name": "test-multitenant-isolation-async-io-pierre-mcp-server-2"
+}

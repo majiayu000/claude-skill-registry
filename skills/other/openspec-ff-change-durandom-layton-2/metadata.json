@@ -1,0 +1,11 @@
+{
+  "name": "openspec-ff-change",
+  "description": "Fast-forward through OpenSpec artifact creation. Use when the user wants to quickly create all artifacts needed for implementation without stepping through each one individually.",
+  "repo": "durandom/layton",
+  "path": ".claude/skills/openspec-ff-change",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/durandom/layton",
+  "dir_name": "openspec-ff-change-durandom-layton-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "agent-browser",
+  "description": "Automates browser interactions for web testing, form filling, screenshots, and data extraction. Use when the user needs to navigate websites, interact with web pages, fill forms, take screenshots, tes",
+  "repo": "ninehills/skills",
+  "path": "skills/agent-browser",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ninehills/skills",
+  "dir_name": "agent-browser-ninehills-skills-2"
+}

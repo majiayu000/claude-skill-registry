@@ -1,0 +1,11 @@
+{
+  "name": "youtube_dae",
+  "description": "Generate YouTube Live stream content, consciousness responses, and engagement prompts. Use when creating stream announcements, chat responses, moderation messages, community engagement prompts, or eme",
+  "repo": "Foundup/Foundups-Agent",
+  "path": ".claude/skills/youtube_dae",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Foundup/Foundups-Agent",
+  "dir_name": "youtube-dae-foundup-foundups-agent-2"
+}

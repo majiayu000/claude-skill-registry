@@ -2,11 +2,11 @@
   "category": "orchestration",
   "code": "oth",
   "count": 6,
-  "updated_at": "2026-03-07T01:45:30.679859Z",
+  "updated_at": "2026-03-17T14:53:47.939805Z",
   "skills": [
     {
       "name": "agent-communication",
-      "description": "Comprehensive inter-agent messaging and coordination system providing protocol-based communication, shared context management, event broadcasting with subscriptions, automated handoff documentation...",
+      "description": "Comprehensive inter-agent messaging and coordination system providing protocol-based communication, shared context management, event broadcasting with subscriptions, automated handoff documentation, a",
       "repo": "majiayu000/claude-skill-registry",
       "path": "",
       "branch": "main",
@@ -18,7 +18,7 @@
     },
     {
       "name": "agent-communication",
-      "description": "Comprehensive inter-agent messaging and coordination system providing protocol-based communication, shared context management, event broadcasting with subscriptions, automated handoff documentation...",
+      "description": "Comprehensive inter-agent messaging and coordination system providing protocol-based communication, shared context management, event broadcasting with subscriptions, automated handoff documentation, a",
       "repo": "majiayu000/claude-skill-registry",
       "path": "",
       "branch": "main",

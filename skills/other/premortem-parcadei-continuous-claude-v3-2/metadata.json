@@ -1,0 +1,11 @@
+{
+  "name": "premortem",
+  "description": "Identify failure modes before they occur using structured risk analysis",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/premortem",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "premortem-parcadei-continuous-claude-v3-2"
+}

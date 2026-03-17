@@ -1,0 +1,11 @@
+{
+  "name": "skill-adapter",
+  "description": "This skill enables Claude to manage database replication, failover, and high availability configurations using the database-replication-manager plugin. It is designed to assist with tasks such as sett",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/plugin-enhancements/plugin-backups/sentiment-analysis-tool_20251020_024426/skills/skill-adapter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "skill-adapter-intent-solutions-io-plugins-nixtla-2"
+}

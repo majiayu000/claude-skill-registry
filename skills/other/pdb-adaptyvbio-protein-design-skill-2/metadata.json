@@ -1,0 +1,11 @@
+{
+  "name": "pdb",
+  "description": "Fetch and analyze protein structures from RCSB PDB. Use this skill when: (1) Need to download a structure by PDB ID, (2) Search for similar structures, (3) Prepare target for binder design, (4) Extrac",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/pdb",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "pdb-adaptyvbio-protein-design-skill-2"
+}

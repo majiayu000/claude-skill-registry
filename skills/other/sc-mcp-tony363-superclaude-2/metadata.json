@@ -1,0 +1,11 @@
+{
+  "name": "sc-mcp",
+  "description": "Comprehensive MCP orchestration skill integrating PAL MCP (reasoning, consensus, debugging) and Rube MCP (500+ app automations). Central hub for all MCP-powered workflows.",
+  "repo": "Tony363/SuperClaude",
+  "path": ".claude/skills/sc-mcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Tony363/SuperClaude",
+  "dir_name": "sc-mcp-tony363-superclaude-2"
+}

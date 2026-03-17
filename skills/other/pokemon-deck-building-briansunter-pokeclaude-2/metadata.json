@@ -1,0 +1,11 @@
+{
+  "name": "pokemon-deck-building",
+  "description": "Use when building, analyzing, or optimizing Pokemon TCG Pocket decks.\n\n**Activates when user mentions:**\n- Deck building (\"build a deck\", \"create deck\")\n- Deck analysis (\"analyze my deck\", \"check deck",
+  "repo": "briansunter/pokeclaude",
+  "path": "skills/pokemon-deck-building",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/briansunter/pokeclaude",
+  "dir_name": "pokemon-deck-building-briansunter-pokeclaude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "using-authentication",
+  "description": "Use Better Auth for client and server-side authentication. Covers session access, protected routes, sign in/out, and fetching user data.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/using-authentication",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "using-authentication-andrelandgraf-fullstackrecipes-2"
+}

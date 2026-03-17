@@ -1,0 +1,17 @@
+{
+  "name": "update-workspace",
+  "repo": "AoEiuV020/video_concat",
+  "path": ".claude/skills/update-workspace/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/AoEiuV020/video_concat",
+  "dir_name": "update-workspace-aoeiuv020-video-concat",
+  "downloaded_at": "2026-03-01T04:51:24.581725Z",
+  "author": "AoEiuV020",
+  "source_url": "https://github.com/AoEiuV020/video_concat/blob/main/.claude/skills/update-workspace/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AoEiuV020/video_concat/blob/main/.claude/skills/update-workspace/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

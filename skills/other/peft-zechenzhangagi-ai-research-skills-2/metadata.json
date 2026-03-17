@@ -1,0 +1,11 @@
+{
+  "name": "peft",
+  "description": "Parameter-efficient fine-tuning for LLMs using LoRA, QLoRA, and 25+ methods. Use when fine-tuning large models (7B-70B) with limited GPU memory, when you need to train <1% of parameters with minimal a",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "03-fine-tuning/peft",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "peft-zechenzhangagi-ai-research-skills-2"
+}

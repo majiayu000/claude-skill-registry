@@ -1,0 +1,11 @@
+{
+  "name": "clay-known-pitfalls",
+  "description": "Identify and avoid Clay anti-patterns and common integration mistakes.\nUse when reviewing Clay code for issues, onboarding new developers,\nor auditing existing Clay integrations for best practices vio",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/clay-pack/clay-known-pitfalls",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "clay-known-pitfalls-vasic-digital-superagent-2"
+}

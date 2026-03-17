@@ -1,0 +1,11 @@
+{
+  "name": "email-drafter",
+  "description": "Generates professional emails from bullet points or conversation summaries.\nUse when you need to draft emails quickly with consistent style and tone.\nSupports multiple tones: formal, casual, technical",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/email-drafter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "email-drafter-rysweet-azurehaymaker-2"
+}

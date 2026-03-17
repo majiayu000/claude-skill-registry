@@ -1,0 +1,11 @@
+{
+  "name": "exunit-test",
+  "description": "Execute and generate ExUnit tests for Elixir projects with setup callbacks, describe blocks, and async testing support",
+  "repo": "FortiumPartners/ai-mesh",
+  "path": "skills/exunit-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FortiumPartners/ai-mesh",
+  "dir_name": "exunit-test-fortiumpartners-ai-mesh-2"
+}

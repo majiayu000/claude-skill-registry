@@ -1,0 +1,11 @@
+{
+  "name": "plugin-creator",
+  "description": "Automatically creates new Claude Code plugins with proper structure, validation, and marketplace integration when user mentions creating a plugin, new plugin, or plugin from template. Specific to clau",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/examples/skills-powerkit/skills/plugin-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "plugin-creator-intent-solutions-io-plugins-nixtla-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "context_management",
+  "description": "Proactive context window management via token monitoring, intelligent extraction, and selective rehydration.\nUse when approaching token limits or needing to preserve essential context.\nComplements /tr",
+  "repo": "rysweet/amplihack",
+  "path": "docs/claude/skills/context_management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/amplihack",
+  "dir_name": "context-management-rysweet-amplihack-3"
+}

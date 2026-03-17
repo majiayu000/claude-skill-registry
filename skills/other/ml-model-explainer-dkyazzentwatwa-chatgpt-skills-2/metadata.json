@@ -1,0 +1,11 @@
+{
+  "name": "ml-model-explainer",
+  "description": "Explain ML model predictions using SHAP values, feature importance, and decision paths with visualizations.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "ml-model-explainer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "ml-model-explainer-dkyazzentwatwa-chatgpt-skills-2"
+}

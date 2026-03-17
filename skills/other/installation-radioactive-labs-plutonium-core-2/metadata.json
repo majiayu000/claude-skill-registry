@@ -1,0 +1,11 @@
+{
+  "name": "installation",
+  "description": "Installing Plutonium in a Rails application - setup, generators, and configuration",
+  "repo": "radioactive-labs/plutonium-core",
+  "path": ".claude/skills/plutonium-installation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/radioactive-labs/plutonium-core",
+  "dir_name": "installation-radioactive-labs-plutonium-core-2"
+}

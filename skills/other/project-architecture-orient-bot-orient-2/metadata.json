@@ -1,0 +1,11 @@
+{
+  "name": "project-architecture",
+  "description": "Understand the Orient monorepo architecture for making technical decisions. Use this skill when onboarding, adding new features, modifying services, or evaluating design choices. Covers packages, bots",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/project-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "project-architecture-orient-bot-orient-2"
+}

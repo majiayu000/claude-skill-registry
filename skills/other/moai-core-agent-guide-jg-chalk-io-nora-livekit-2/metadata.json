@@ -1,0 +1,11 @@
+{
+  "name": "moai-core-agent-guide",
+  "description": "Complete guide to MoAI-ADK agents, delegation patterns, and agent orchestration for intelligent task distribution",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-core-agent-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-core-agent-guide-jg-chalk-io-nora-livekit-2"
+}

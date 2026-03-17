@@ -1,0 +1,11 @@
+{
+  "name": "pdf-processor",
+  "description": "Process, extract, and generate PDF documents with text extraction and form handling. Use when working with PDF files or extracting PDF content.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/pdf-processor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "pdf-processor-ntaksh42-agents-2"
+}

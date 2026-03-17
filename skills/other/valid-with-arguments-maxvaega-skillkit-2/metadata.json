@@ -1,0 +1,11 @@
+{
+  "name": "valid-with-arguments",
+  "description": "A valid skill that uses $ARGUMENTS placeholder",
+  "repo": "maxvaega/skillkit",
+  "path": "tests/fixtures/skills/valid-with-arguments",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "valid-with-arguments-maxvaega-skillkit-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "sendgrid-webhooks",
+  "repo": "hookdeck/webhook-skills",
+  "path": "skills/sendgrid-webhooks/SKILL.md",
+  "category": "other",
+  "source": "github.com/hookdeck/webhook-skills",
+  "dir_name": "sendgrid-webhooks",
+  "downloaded_at": "2026-02-22T07:28:23.674158Z"
+}

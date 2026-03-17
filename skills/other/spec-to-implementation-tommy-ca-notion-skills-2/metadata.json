@@ -1,0 +1,11 @@
+{
+  "name": "spec-to-implementation",
+  "description": "Parse specifications and create implementation plans with task tracking in Notion",
+  "repo": "tommy-ca/notion-skills",
+  "path": "plugins/notion-skills/skills/spec-to-implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tommy-ca/notion-skills",
+  "dir_name": "spec-to-implementation-tommy-ca-notion-skills-2"
+}

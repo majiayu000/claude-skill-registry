@@ -1,0 +1,11 @@
+{
+  "name": "msa-parsing",
+  "description": "Parse and analyze multiple sequence alignments using Biopython. Extract sequences, identify conserved regions, analyze gaps, work with annotations, and manipulate alignment data for downstream analysi",
+  "repo": "GPTomics/bioSkills",
+  "path": "alignment/msa-parsing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "msa-parsing-gptomics-bioskills-2"
+}

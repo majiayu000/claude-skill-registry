@@ -1,0 +1,9 @@
+{
+  "name": "dependency-upgrade",
+  "repo": "NovaAI-innovation/Infinite-Agency",
+  "path": ".qwen/skills/dependency-upgrade/SKILL.md",
+  "category": "other",
+  "source": "github.com/NovaAI-innovation/Infinite-Agency",
+  "dir_name": "dependency-upgrade-novaai-innovation-infinite-agency",
+  "downloaded_at": "2026-02-15T05:32:25.349477Z"
+}

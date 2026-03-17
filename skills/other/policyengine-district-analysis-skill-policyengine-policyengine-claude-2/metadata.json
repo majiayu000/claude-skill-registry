@@ -1,0 +1,11 @@
+{
+  "name": "policyengine-district-analysis-skill",
+  "description": "Analyze policy impacts for congressional districts and representatives' constituents. Use when the user mentions a specific district (NY-17, CA-52), a representative's name, or asks about geographic p",
+  "repo": "PolicyEngine/policyengine-claude",
+  "path": "skills/analysis/policyengine-district-analysis-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PolicyEngine/policyengine-claude",
+  "dir_name": "policyengine-district-analysis-skill-policyengine-policyengine-claude-2"
+}

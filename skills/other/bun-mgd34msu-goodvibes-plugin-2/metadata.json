@@ -1,0 +1,11 @@
+{
+  "name": "bun",
+  "description": "Configures Bun as an all-in-one JavaScript runtime, bundler, package manager, and test runner with native TypeScript support. Use when building fast applications, bundling for production, or replacing",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/build-tools/bun",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "bun-mgd34msu-goodvibes-plugin-2"
+}

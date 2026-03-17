@@ -1,0 +1,11 @@
+{
+  "name": "kirby-core",
+  "description": "Kirby CMS plugin and template development for Cloodle platform. Use when creating Kirby plugins, blueprints, templates, snippets, or working with Kirby content structure.",
+  "repo": "astoeffer/plugin-marketplace",
+  "path": "plugins/cloodle-kirby-dev/skills/kirby-core",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/astoeffer/plugin-marketplace",
+  "dir_name": "kirby-core-astoeffer-plugin-marketplace-2"
+}

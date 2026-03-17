@@ -1,0 +1,11 @@
+{
+  "name": "footer-configuration",
+  "description": "Configure footer navigation links for SEO completeness. Sets up all pages (Homepage, Services, About, Contact, Impressum, Datenschutz) in organized groups. Dynamically finds footer*.tsx component. Upd",
+  "repo": "deomiarn/website-template",
+  "path": ".claude/skills/footer-configuration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/deomiarn/website-template",
+  "dir_name": "footer-configuration-deomiarn-website-template-2"
+}

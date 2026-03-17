@@ -1,0 +1,11 @@
+{
+  "name": "migration-assistant",
+  "description": "ช่วย migrate ระหว่าง frameworks, libraries, และ versions อย่างปลอดภัย พร้อม automated refactoring",
+  "repo": "lovedragonball/power-ranger-toolkit",
+  "path": "src/skills/migration-assistant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lovedragonball/power-ranger-toolkit",
+  "dir_name": "migration-assistant-lovedragonball-power-ranger-toolkit-2"
+}

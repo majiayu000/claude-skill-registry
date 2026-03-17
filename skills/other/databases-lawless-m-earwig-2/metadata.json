@@ -1,0 +1,11 @@
+{
+  "name": "Databases",
+  "description": "RDBMS access patterns for DuckDB, MySQL (keycloak), PostgreSQL (dw, x3rocs), SQL Server (sage1000, x3), and DBISAM (Exportmaster) using ODBC and native drivers",
+  "repo": "lawless-m/Earwig",
+  "path": ".claude/skills/Databases",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lawless-m/Earwig",
+  "dir_name": "databases-lawless-m-earwig-2"
+}

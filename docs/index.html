@@ -100,6 +100,10 @@
                 <span class="tab-icon">📊</span>
                 <span class="tab-label">Stats</span>
             </button>
+            <button class="nav-tab" data-view="collections">
+                <span class="tab-icon">📦</span>
+                <span class="tab-label">Collections</span>
+            </button>
             <button class="nav-tab" data-view="favorites">
                 <span class="tab-icon">💾</span>
                 <span class="tab-label">Favorites</span>
@@ -167,6 +171,10 @@
                         <div class="stat-label">Official Skills</div>
                     </div>
                     <div class="stat-card">
+                        <div class="stat-number" id="stat-collections">0</div>
+                        <div class="stat-label">Collections</div>
+                    </div>
+                    <div class="stat-card">
                         <div class="stat-number" id="stat-categories">0</div>
                         <div class="stat-label">Categories</div>
                     </div>
@@ -180,6 +188,18 @@
                         <h3>Top Repositories</h3>
                         <div id="repos-chart" class="chart"></div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Collections Section -->
+            <div id="collections-section" class="collections-section hidden">
+                <h2>📦 Skill Collections</h2>
+                <p class="collections-hint">Curated skill packs — bundled skills, commands, and hooks in one install</p>
+                <div id="collections-list" class="collections-grid"></div>
+                <div id="collections-empty" class="empty-state hidden">
+                    <span class="empty-icon">📦</span>
+                    <h3>No collections yet</h3>
+                    <p>Submit yours via <a href="https://github.com/majiayu000/claude-skill-registry/issues" target="_blank">GitHub Issues</a></p>
                 </div>
             </div>
 

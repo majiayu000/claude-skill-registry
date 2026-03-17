@@ -1,0 +1,11 @@
+{
+  "name": "feedback-analyzer",
+  "description": "Analyze skill effectiveness through usage feedback, metrics analysis, and outcome assessment. Task-based operations for feedback collection, effectiveness measurement, trend analysis, and insight extr",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/feedback-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "feedback-analyzer-adaptationio-skrillz-2"
+}

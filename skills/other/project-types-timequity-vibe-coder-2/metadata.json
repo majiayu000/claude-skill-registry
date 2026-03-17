@@ -1,0 +1,11 @@
+{
+  "name": "project-types",
+  "description": "Project type definitions with type-specific questions, patterns, and stacks.\nUse when: determining project architecture, asking type-specific questions.\nReferenced by: idea-validation, brainstorming, ",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/project-types",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "project-types-timequity-vibe-coder-2"
+}

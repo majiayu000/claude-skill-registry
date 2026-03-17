@@ -1,0 +1,11 @@
+{
+  "name": "bifurcation",
+  "description": "Hopf bifurcation detection for dynamical system state transitions with GF(3) phase portraits",
+  "repo": "plurigrid/asi",
+  "path": "skills/bifurcation-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "bifurcation-plurigrid-asi-2"
+}

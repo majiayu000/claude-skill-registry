@@ -1,0 +1,9 @@
+{
+  "name": "ffmpeg-pyav-integration",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/ffmpeg-master/skills/ffmpeg-pyav-integration/SKILL.md",
+  "category": "other",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "ffmpeg-pyav-integration",
+  "downloaded_at": "2026-02-22T05:14:37.452508Z"
+}

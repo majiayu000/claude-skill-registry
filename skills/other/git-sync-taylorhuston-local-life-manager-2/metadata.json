@@ -1,0 +1,11 @@
+{
+  "name": "git-sync",
+  "description": "Sync all git repos - my-life top repo and spaces/ projects",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/git-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "git-sync-taylorhuston-local-life-manager-2"
+}

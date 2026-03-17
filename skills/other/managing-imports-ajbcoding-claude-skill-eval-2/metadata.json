@@ -1,0 +1,11 @@
+{
+  "name": "managing-imports",
+  "description": "Organize incoming files and track import status through the file staging workflow",
+  "repo": "AJBcoding/claude-skill-eval",
+  "path": ".claude/skills/managing-imports",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AJBcoding/claude-skill-eval",
+  "dir_name": "managing-imports-ajbcoding-claude-skill-eval-2"
+}

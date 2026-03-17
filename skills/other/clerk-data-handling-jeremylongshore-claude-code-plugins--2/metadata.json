@@ -1,0 +1,11 @@
+{
+  "name": "clerk-data-handling",
+  "description": "Handle user data, privacy, and GDPR compliance with Clerk.\nUse when implementing data export, user deletion,\nor privacy compliance features.\nTrigger with phrases like \"clerk user data\", \"clerk GDPR\",\n",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/clerk-pack/skills/clerk-data-handling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "clerk-data-handling-jeremylongshore-claude-code-plugins--2"
+}

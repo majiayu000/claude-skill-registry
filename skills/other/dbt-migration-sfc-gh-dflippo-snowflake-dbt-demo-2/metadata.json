@@ -1,0 +1,11 @@
+{
+  "name": "dbt-migration",
+  "description": "Convert database DDL from any source platform to dbt models compatible with Snowflake. This skill should be used when converting views, tables, or stored procedures from Snowflake, Teradata, Oracle, S",
+  "repo": "sfc-gh-dflippo/snowflake-dbt-demo",
+  "path": ".claude/skills/dbt-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sfc-gh-dflippo/snowflake-dbt-demo",
+  "dir_name": "dbt-migration-sfc-gh-dflippo-snowflake-dbt-demo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "daily-note",
+  "description": "Create or update today's private journal entry. Use when asked to \"daily note\", \"journal\", \"log today\", \"morning pages\", or \"capture thoughts\".",
+  "repo": "alexanderop/second-brain-nuxt",
+  "path": ".claude/skills/daily-note",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alexanderop/second-brain-nuxt",
+  "dir_name": "daily-note-alexanderop-second-brain-nuxt-2"
+}

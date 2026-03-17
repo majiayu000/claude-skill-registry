@@ -1,0 +1,11 @@
+{
+  "name": "payloads",
+  "description": "Essential exploitation payloads: anti-virus test files, file name exploits, malicious files. Curated for testing.",
+  "repo": "Eyadkelleh/awesome-claude-skills-security",
+  "path": "seclists-categories payloads/payloads",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Eyadkelleh/awesome-claude-skills-security",
+  "dir_name": "payloads-eyadkelleh-awesome-claude-skill-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "developing-nextjs",
+  "description": "Guides Next.js 16 / React 19 development. Use when package.json contains 'next' or next.config.* is detected. Supports App Router, Server Components, Cache Components, strict TypeScript, Tailwind CSS ",
+  "repo": "sumik5/sumik-claude-plugin",
+  "path": "skills/developing-nextjs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sumik5/sumik-claude-plugin",
+  "dir_name": "developing-nextjs-sumik5-sumik-claude-plugin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "using-forgetful-memory",
+  "description": "Guidance for using Forgetful semantic memory effectively. Applies Zettelkasten atomic memory principles. Use when deciding whether to query or create memories, structuring memory content, or understan",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/using-forgetful-memory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "using-forgetful-memory-rjmurillo-ai-agents-2"
+}

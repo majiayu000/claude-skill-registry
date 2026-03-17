@@ -1,0 +1,11 @@
+{
+  "name": "workstream-coordinator",
+  "description": "Expert workstream coordinator managing multiple concurrent tasks, tracking progress, detecting conflicts and stalls, analyzing dependencies, and ensuring smooth parallel execution. Activates when coor",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/workstream-coordinator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "workstream-coordinator-rysweet-azurehaymaker-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "panjit",
+  "description": "Panjit International MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Panjit diodes, transistors, MOSFETs, or PanjitHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/panjit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "panjit-cantara-lib-electronic-compo-2"
+}

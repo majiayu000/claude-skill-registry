@@ -1,0 +1,11 @@
+{
+  "name": "code-quality-tools",
+  "description": "Automated code quality fixes for linting, types, unused variables, and error handling; use when fixing code quality issues in bulk",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/code-quality-tools",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "code-quality-tools-javeedishaq-ai-workflow-orchestr-2"
+}

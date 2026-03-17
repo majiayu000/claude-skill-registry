@@ -1,0 +1,11 @@
+{
+  "name": "platform-frameworks",
+  "description": "Use when tailoring content formats, hooks, and publishing mechanics for each social platform.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/social-media/skills/platform-frameworks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "platform-frameworks-gtmagents-gtm-agents-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ai-response-refiner",
+  "description": "AI応答を洗練・改善するスキル。粗い出力を流暢で専門的な文章に変換。構造化、明確化、詳細化、トーン調整、専門性向上、読みやすさ改善を実施。",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/ai-response-refiner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "ai-response-refiner-ntaksh42-agents-2"
+}

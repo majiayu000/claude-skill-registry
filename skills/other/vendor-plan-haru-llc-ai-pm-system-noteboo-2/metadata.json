@@ -1,0 +1,11 @@
+{
+  "name": "vendor-plan",
+  "description": "ベンダー管理計画書を作成する。調達計画、外注管理計画の策定時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/planning/vendor-plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "vendor-plan-haru-llc-ai-pm-system-noteboo-2"
+}

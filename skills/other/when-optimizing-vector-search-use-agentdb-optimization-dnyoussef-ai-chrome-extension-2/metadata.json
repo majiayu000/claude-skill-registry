@@ -1,0 +1,11 @@
+{
+  "name": "when-optimizing-vector-search-use-agentdb-optimization",
+  "description": "Optimize AgentDB performance with quantization (4-32x memory reduction), HNSW indexing (150x faster search), caching, and batch operations for scaling to millions of vectors.",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/agentdb/when-optimizing-vector-search-use-agentdb-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "dir_name": "when-optimizing-vector-search-use-agentdb-optimization-dnyoussef-ai-chrome-extension-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "wp-performance-review",
+  "description": "WordPress performance code review and optimization analysis. Use when reviewing WordPress PHP code for performance issues, auditing themes/plugins for scalability, optimizing WP_Query, analyzing cachi",
+  "repo": "elvismdev/claude-wordpress-skills",
+  "path": "skills/wp-performance-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/elvismdev/claude-wordpress-skills",
+  "dir_name": "wp-performance-review-elvismdev-claude-wordpress-ski-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "skill-structure",
+  "description": "Skill file structure, naming conventions, directory layout, and frontmatter requirements. Use when creating skill files to ensure correct format and validation.",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": "plugins/majestic-tools/skills/skill-structure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "dir_name": "skill-structure-majesticlabs-dev-majestic-marketplace-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ably-realtime",
+  "description": "Ably real-time messaging patterns, WebSocket channel management, message validation and processing, staleness filtering, error recovery strategies, collaborative editing with drag-and-drop, optimistic",
+  "repo": "DW225/ree-board",
+  "path": ".claude/skills/ably-realtime",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DW225/ree-board",
+  "dir_name": "ably-realtime-dw225-ree-board-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "adr",
+  "description": "Create Architecture Decision Records for important technical decisions. Guides you through trade-off analysis, fact-checks claims, and generates a structured ADR document. Triggers on: create adr, arc",
+  "repo": "bearbinary/Jarvy",
+  "path": ".claude/skills/adr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bearbinary/Jarvy",
+  "dir_name": "adr-bearbinary-jarvy-2"
+}

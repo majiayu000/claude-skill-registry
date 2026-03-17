@@ -1,0 +1,11 @@
+{
+  "name": "pull",
+  "description": "Execute /pull or /pull <branch> slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/pull",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "pull-sasamuku-dotfiles-2"
+}

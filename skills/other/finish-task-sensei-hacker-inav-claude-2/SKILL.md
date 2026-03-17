@@ -1,0 +1,279 @@
+---
+description: Close task or complete task/project with commit, PR, and completion report
+triggers:
+  - finish task
+  - close task
+  - complete task
+  - close project
+  - complete project
+  - task done
+---
+
+# Finish Task Skill
+
+Use this skill when completing a task that involved code modifications.
+
+## Completion Checklist
+
+Complete ALL steps in order:
+
+### 1. Verify All Changes Are Ready
+
+```bash
+# Check what's changed
+git status
+git diff --stat
+```
+
+Review that all intended changes are present and no unintended files are modified.
+
+### 2. Run Tests (if applicable)
+
+```bash
+# For configurator
+cd inav-configurator
+npm test
+
+# For firmware - build check
+cd inav
+make SITL
+```
+
+### 3. Stage Changes
+
+Stage files selectively:
+```bash
+git add <specific-files>
+```
+
+Review what's staged:
+```bash
+git diff --cached --stat
+```
+
+### 4. Create Commit Message
+
+Write a clear commit message. **Do NOT mention Claude, AI, or automation.**
+
+**Format:**
+```
+<short summary - what changed>
+
+<detailed explanation if needed>
+- bullet points for multiple changes
+- explain the "why" not just the "what"
+
+Fixes #<issue-number>  (if applicable)
+```
+
+**Open in gedit for review:**
+```bash
+# Write message to temp file and open in gedit
+cat > /tmp/commit_msg.txt << 'EOF'
+<your commit message here>
+EOF
+
+gedit /tmp/commit_msg.txt
+```
+
+After reviewing/editing in gedit, commit:
+```bash
+git commit -F /tmp/commit_msg.txt
+```
+
+### 5. Push to Remote
+
+```bash
+git push origin <branch-name>
+
+# If new branch, set upstream:
+git push -u origin <branch-name>
+```
+
+### 6. Create PR (if appropriate)
+
+**When to create a PR:**
+- Task is complete and ready for upstream review
+- Branch contains a coherent, reviewable set of changes
+
+**When NOT to create a PR:**
+- Work is still in progress
+- Changes are local-only or experimental
+
+**Check if PR already exists:**
+```bash
+gh pr list --head <branch-name>
+```
+
+**Create PR using gh CLI:**
+```bash
+# For configurator
+cd inav-configurator
+gh pr create --title "<descriptive title>" --body "$(cat << 'EOF'
+## Summary
+
+<Brief description of changes>
+
+## Changes
+
+- Change 1
+- Change 2
+
+## Testing
+
+<How this was tested>
+
+## Related Issues
+
+Fixes #<issue-number> (if applicable)
+EOF
+)"
+
+# For firmware
+cd inav
+gh pr create --title "<descriptive title>" --body "$(cat << 'EOF'
+## Summary
+
+<Brief description of changes>
+
+## Changes
+
+- Change 1
+- Change 2
+
+## Testing
+
+<How this was tested>
+
+## Related Issues
+
+Fixes #<issue-number> (if applicable)
+EOF
+)"
+```
+
+### 7. Release the Lock
+
+```bash
+# For firmware
+rm claude/locks/inav.lock
+
+# For configurator
+rm claude/locks/inav-configurator.lock
+```
+
+### 8. Send Completion Report
+
+Create a comprehensive completion report in `claude/developer/email/sent/`. The manager will use this to update `claude/projects/<project-name>/`.
+
+**Filename:** `YYYY-MM-DD-HHMM-completed-<task-name>.md`
+
+```markdown
+# Task Completion: <Task Name>
+
+**Date:** <date>
+**From:** Developer
+**Task:** <task-name>
+**Project:** <project-name in claude/projects/>
+
+## Status: COMPLETE
+
+## Summary
+
+<Brief summary of what was accomplished>
+
+## Implementation Approach
+
+<How you implemented it and key technical decisions>
+
+## Changes Made
+
+- <change 1>
+- <change 2>
+
+## Test Results
+
+<What testing was done, results>
+
+## Known Limitations / Follow-up
+
+<Any limitations or future work needed>
+
+## Commit
+
+- **Branch:** <branch-name>
+- **Commit:** <commit-hash>
+
+## PR (if created)
+
+- **PR:** #<number>
+- **URL:** <url>
+
+## Lock Released
+
+Released <repo>.lock
+
+---
+**Developer**
+```
+
+Copy to manager inbox:
+```bash
+cp claude/developer/email/sent/<report>.md claude/manager/email/inbox/
+```
+
+### Role Separation
+
+**Developer responsibilities:**
+- Complete the code work
+- Add reports, analysis, or notes to the project directory (`active/<project>/`)
+- Create commit and PR
+- Release the lock
+- Send completion report to manager inbox
+
+**Manager responsibilities (after receiving report):**
+- Verify work is complete
+- Move project directory from `active/` to `completed/`
+- Update `INDEX.md` (remove entry)
+- Update `completed/INDEX.md` (add entry)
+- Archive the completion report
+
+The developer updates project content. The manager handles project lifecycle (moving directories, updating indexes).
+
+## Commit Message Guidelines
+
+**Good:**
+```
+Fix GPS recovery after signal loss
+
+Move lastUpdateTime update outside isFirstGPSUpdate block so timestamp
+is recorded on first reading after recovery, preventing position
+estimate timeout.
+
+Fixes #11049
+```
+
+**Bad:**
+```
+🤖 Generated with Claude Code
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+**Never include:**
+- References to Claude, AI, LLM, or automation
+- Emojis (unless project convention)
+- Co-authored-by AI lines
+- "Generated by" attributions
+
+---
+
+Be sure any files you created are organized properly according to claude/developer/INDEX.md
+
+
+## Related Skills
+
+- **start-task** - Begin tasks with proper setup
+- **create-pr** - Create pull request after task completion
+- **check-builds** - Verify builds pass before finishing
+- **git-workflow** - Commit changes and manage branches

@@ -2,7 +2,7 @@
   "category": "development",
   "code": "dev",
   "count": 18547,
-  "updated_at": "2026-03-07T01:45:30.342572Z",
+  "updated_at": "2026-03-17T14:53:47.613679Z",
   "skills": [
     {
       "name": "fix",
@@ -3921,7 +3921,7 @@
     },
     {
       "name": "visitor-pattern-usage",
-      "description": "The visitor pattern in html-to-markdown provides extensible hooks into the HTML-to-Markdown conversion pipeline. Custom visitors can inspect, modify, or replace the default conversion behavior for ...",
+      "description": "The visitor pattern in html-to-markdown provides extensible hooks into the HTML-to-Markdown conversion pipeline. Custom visitors can inspect, modify, or replace the default conversion behavior for any",
       "repo": "kreuzberg-dev/html-to-markdown",
       "path": "",
       "branch": "main",
@@ -3945,7 +3945,7 @@
     },
     {
       "name": "conversion-mapping-rules",
-      "description": "This skill documents how html-to-markdown maps 60+ HTML element types to their Markdown equivalents. The conversion logic respects Markdown syntax variations (ATX vs Setext headings, fenced vs inde...",
+      "description": "This skill documents how html-to-markdown maps 60+ HTML element types to their Markdown equivalents. The conversion logic respects Markdown syntax variations (ATX vs Setext headings, fenced vs indente",
       "repo": "kreuzberg-dev/html-to-markdown",
       "path": "",
       "branch": "main",
@@ -4089,7 +4089,7 @@
     },
     {
       "name": "edge-case-handling",
-      "description": "The html-to-markdown converter handles numerous edge cases and adversarial inputs with robust validation, error recovery, and fallback mechanisms. This skill documents binary detection, encoding is...",
+      "description": "The html-to-markdown converter handles numerous edge cases and adversarial inputs with robust validation, error recovery, and fallback mechanisms. This skill documents binary detection, encoding issue",
       "repo": "kreuzberg-dev/html-to-markdown",
       "path": "",
       "branch": "main",
@@ -5753,7 +5753,7 @@
     },
     {
       "name": "docs",
-      "description": "The AEA gym skill demonstrates how a custom Reinforcement Learning agent, that uses OpenAI's <a href=\"https://www.gymlibrary.dev/\" target=\"blank\">gym</a> library, may be embedded into an AEA skill ...",
+      "description": "The AEA gym skill demonstrates how a custom Reinforcement Learning agent, that uses OpenAI's <a href=\"https://www.gymlibrary.dev/\" target=\"blank\">gym</a> library, may be embedded into an AEA skill and",
       "repo": "fetchai/agents-aea",
       "path": "",
       "branch": "main",
@@ -7022,7 +7022,7 @@
     },
     {
       "name": "guides",
-      "description": "Recall that the {{fsmapp}} skill is the core part of the agent blueprint that encodes the business logic of the AI agent. Developing the {{fsmapp}} is possibly most demanding step in the developmen...",
+      "description": "Recall that the {{fsmapp}} skill is the core part of the agent blueprint that encodes the business logic of the AI agent. Developing the {{fsmapp}} is possibly most demanding step in the development p",
       "repo": "valory-xyz/open-autonomy",
       "path": "",
       "branch": "main",
@@ -13914,7 +13914,7 @@
     },
     {
       "name": "agent-ops-lint-instructionsdescription-validate-and-lint-agentop",
-      "description": "---name: agent-ops-lint-instructionsdescription: \"Validate and lint AgentOps instruction files (skills, prompts, agents). Checks formatting, structure, and consistency.\"category: utilityinvokes: []...",
+      "description": "---name: agent-ops-lint-instructionsdescription: \"Validate and lint AgentOps instruction files (skills, prompts, agents). Checks formatting, structure, and consistency.\"category: utilityinvokes: []inv",
       "repo": "majiayu000/claude-skill-registry",
       "path": "",
       "branch": "main",
@@ -16494,7 +16494,7 @@
     },
     {
       "name": "handling-pr-comments",
-      "description": "Use when addressing PR review feedback, after receiving review comments from CodeRabbit, Cursor, or human reviewers - ensures systematic responses to each comment thread with proper attribution and...",
+      "description": "Use when addressing PR review feedback, after receiving review comments from CodeRabbit, Cursor, or human reviewers - ensures systematic responses to each comment thread with proper attribution and th",
       "repo": "dsifry/goodtogo",
       "path": "",
       "branch": "main",
@@ -18008,7 +18008,7 @@
     },
     {
       "name": "docs",
-      "description": "The Custom Skill is used instead of the Home Skill because the Home skill assumes you have a OAuth service managing the IoT devices where the Custom Skill can just invoke a Lambda function with a c...",
+      "description": "The Custom Skill is used instead of the Home Skill because the Home skill assumes you have a OAuth service managing the IoT devices where the Custom Skill can just invoke a Lambda function with a cust",
       "repo": "danisla/iot-bed",
       "path": "",
       "branch": "main",
@@ -31470,7 +31470,7 @@
     },
     {
       "name": "agent-orchestrate",
-      "description": "Multi-agent task orchestration for Claude Code. When given multiple tasks to execute, use this skill to spawn parallel worker agents through Sibyl's MetaOrchestrator instead of Claude Code's built-...",
+      "description": "Multi-agent task orchestration for Claude Code. When given multiple tasks to execute, use this skill to spawn parallel worker agents through Sibyl's MetaOrchestrator instead of Claude Code's built-in",
       "repo": "hyperb1iss/sibyl",
       "path": "",
       "branch": "main",
@@ -36149,7 +36149,7 @@
     },
     {
       "name": "labs",
-      "description": "Alexa is Amazon's cloud-based voice service. Most people are familiar with the service through using an Amazon Echo or Echo dot but the service can also be integrated in to custom internet-connecte...",
+      "description": "Alexa is Amazon's cloud-based voice service. Most people are familiar with the service through using an Amazon Echo or Echo dot but the service can also be integrated in to custom internet-connected d",
       "repo": "IBMDeveloperUK/Serverless-Voice-Assistants",
       "path": "",
       "branch": "main",
@@ -36517,7 +36517,7 @@
     },
     {
       "name": "xlsx",
-      "description": "description: \"Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Codex needs to work with spreadsheets (.xlsx, ....",
+      "description": "description: \"Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Codex needs to work with spreadsheets (.xlsx, .xls",
       "repo": "CongDon1207/AGENTS.md",
       "path": "",
       "branch": "main",
@@ -36859,7 +36859,7 @@
     },
     {
       "name": "pptx",
-      "description": "description: \"Presentation creation, editing, and analysis. When Codex needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Work...",
+      "description": "description: \"Presentation creation, editing, and analysis. When Codex needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working",
       "repo": "CongDon1207/AGENTS.md",
       "path": "",
       "branch": "main",
@@ -39685,7 +39685,7 @@
     },
     {
       "name": "qa-auditor",
-      "description": "You are an expert QA auditor specializing in comprehensive Flutter application audits for production readiness, compliance certification, and enterprise deployment. This skill performs deep audits ...",
+      "description": "You are an expert QA auditor specializing in comprehensive Flutter application audits for production readiness, compliance certification, and enterprise deployment. This skill performs deep audits cov",
       "repo": "Kandil7/prprompts-flutter-generator",
       "path": "",
       "branch": "main",
@@ -47141,7 +47141,7 @@
     },
     {
       "name": "etcd",
-      "description": "This document defines the Claude Code skill for troubleshooting etcd issues on two-node OpenShift clusters with fencing topology. When activated, Claude becomes an expert etcd/Pacemaker troubleshoo...",
+      "description": "This document defines the Claude Code skill for troubleshooting etcd issues on two-node OpenShift clusters with fencing topology. When activated, Claude becomes an expert etcd/Pacemaker troubleshooter",
       "repo": "openshift-eng/two-node-toolbox",
       "path": "",
       "branch": "main",
@@ -51926,7 +51926,7 @@
     },
     {
       "name": "skills",
-      "description": "Purpose: Automatically processes daily notes when users mention diary extraction, end-of-day workflows, or ask \"what did I work on today\". Extracts entries from ### 🧠 Notes sections, classifies the...",
+      "description": "Purpose: Automatically processes daily notes when users mention diary extraction, end-of-day workflows, or ask \"what did I work on today\". Extracts entries from ### 🧠 Notes sections, classifies them u",
       "repo": "harrysayers7/claudelife",
       "path": "",
       "branch": "main",
@@ -66567,7 +66567,7 @@
     },
     {
       "name": "docs-tinkermill-workshop-ess-alexa-",
-      "description": "In this module, you will build the Alexa Skill in the Amazon Developer console and test the intent programmed. The skill, locally running on your laptop, will publish a message to CloudMQTT to turn...",
+      "description": "In this module, you will build the Alexa Skill in the Amazon Developer console and test the intent programmed. The skill, locally running on your laptop, will publish a message to CloudMQTT to turn on",
       "repo": "TinkerMill/workshop-ess-alexa-controlled-device",
       "path": "",
       "branch": "main",
@@ -70804,7 +70804,7 @@
     },
     {
       "name": "prompt-engineering-patterns",
-      "description": "Master advanced prompt engineering techniques to maximize LLM performance, reliability, and controllability in production. Use when optimizing prompts, improving LLM outputs, or designing productio...",
+      "description": "Master advanced prompt engineering techniques to maximize LLM performance, reliability, and controllability in production. Use when optimizing prompts, improving LLM outputs, or designing production p",
       "repo": "wshobson/agents",
       "path": "plugins/llm-application-dev/skills/prompt-engineering-patterns",
       "branch": "main",
@@ -91787,7 +91787,7 @@
     },
     {
       "name": "ai-agent-skills",
-      "description": "Here’s a complete breakdown of how to configure and set up the SMS Skill in raiaAI’s Launch Pad. This skill allows your AI agent to engage with users through two-way text messaging using a phone nu...",
+      "description": "Here’s a complete breakdown of how to configure and set up the SMS Skill in raiaAI’s Launch Pad. This skill allows your AI agent to engage with users through two-way text messaging using a phone numbe",
       "repo": "raia-ai/raia-v2-docs",
       "path": "",
       "branch": "main",
@@ -91883,7 +91883,7 @@
     },
     {
       "name": "dependency-security-check",
-      "description": "You are an expert in dependency security analysis, vulnerability assessment, and supply chain security. You specialize in identifying security risks in project dependencies, implementing automated ...",
+      "description": "You are an expert in dependency security analysis, vulnerability assessment, and supply chain security. You specialize in identifying security risks in project dependencies, implementing automated sec",
       "repo": "Razmik-Kutinava/test.admin_logistic_v8",
       "path": "",
       "branch": "main",
@@ -108145,7 +108145,7 @@
     },
     {
       "name": "kompletacja-wysy-ek",
-      "description": "This is a desktop application for warehouse packing operations built with Electron + React + TypeScript. The app helps workers efficiently pack shipments by scanning QR codes, weighing items, captu...",
+      "description": "This is a desktop application for warehouse packing operations built with Electron + React + TypeScript. The app helps workers efficiently pack shipments by scanning QR codes, weighing items, capturin",
       "repo": "j-pacura/Kompletacja-wysy-ek",
       "path": "",
       "branch": "main",
@@ -127973,7 +127973,7 @@
     },
     {
       "name": "jwt-verification",
-      "description": "Verify JWT tokens in backend services and enforce authenticated user context. This skill establishes patterns for token validation, claim extraction, and user context propagation throughout the bac...",
+      "description": "Verify JWT tokens in backend services and enforce authenticated user context. This skill establishes patterns for token validation, claim extraction, and user context propagation throughout the backen",
       "repo": "HasnainCodeHub/todo-evaluation",
       "path": "",
       "branch": "main",
@@ -134769,7 +134769,7 @@
     },
     {
       "name": "architecture-patterns",
-      "description": "Implement proven backend architecture patterns including Clean Architecture, Hexagonal Architecture, and Domain-Driven Design. Use when architecting complex backend systems or refactoring existing ...",
+      "description": "Implement proven backend architecture patterns including Clean Architecture, Hexagonal Architecture, and Domain-Driven Design. Use when architecting complex backend systems or refactoring existing app",
       "repo": "wshobson/agents",
       "path": "plugins/backend-development/skills/architecture-patterns",
       "branch": "main",
@@ -137431,7 +137431,7 @@
     },
     {
       "name": "senior-frontend",
-      "description": "Comprehensive frontend development skill for building modern, performant web applications using ReactJS, NextJS, TypeScript, Tailwind CSS. Includes component scaffolding, performance optimization, ...",
+      "description": "Comprehensive frontend development skill for building modern, performant web applications using ReactJS, NextJS, TypeScript, Tailwind CSS. Includes component scaffolding, performance optimization, bun",
       "repo": "alirezarezvani/claude-skills",
       "path": "engineering-team/senior-frontend",
       "branch": "main",
@@ -141216,7 +141216,7 @@
     },
     {
       "name": "skill-creator",
-      "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Codex's capabilities with specialized knowledge, work...",
+      "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Codex's capabilities with specialized knowledge, workflo",
       "repo": "",
       "path": "",
       "branch": "main",
@@ -143970,7 +143970,7 @@
     },
     {
       "name": "api-design-principles",
-      "description": "Master REST and GraphQL API design principles to build intuitive, scalable, and maintainable APIs that delight developers. Use when designing new APIs, reviewing API specifications, or establishing...",
+      "description": "Master REST and GraphQL API design principles to build intuitive, scalable, and maintainable APIs that delight developers. Use when designing new APIs, reviewing API specifications, or establishing AP",
       "repo": "wshobson/agents",
       "path": "plugins/backend-development/skills/api-design-principles",
       "branch": "main",
@@ -168015,7 +168015,7 @@
     },
     {
       "name": "skills",
-      "description": "This skill helps maintainers and contributors build the TogetherOS Reward System module efficiently. It provides templates, patterns, and guidance for creating well-structured, contributor-friendly...",
+      "description": "This skill helps maintainers and contributors build the TogetherOS Reward System module efficiently. It provides templates, patterns, and guidance for creating well-structured, contributor-friendly is",
       "repo": "coopeverything/TogetherOS",
       "path": "",
       "branch": "main",
@@ -179288,7 +179288,7 @@
     },
     {
       "name": "github-repo-governance",
-      "description": "Repository governance covers policies, standards, and controls for managing GitHub repositories effectively. This skill includes repository settings, access controls, branch protection, security po...",
+      "description": "Repository governance covers policies, standards, and controls for managing GitHub repositories effectively. This skill includes repository settings, access controls, branch protection, security polic",
       "repo": "AmnadTaowsoam/CerebraSkills",
       "path": "",
       "branch": "main",
@@ -193432,7 +193432,7 @@
     },
     {
       "name": "40-claude-plugin",
-      "description": "Claude Skills are a set of Markdown files that live in your .claude folder (or that you can upload in your Claude web/desktop). They are automatically loaded by Claude when it thinks they are appro...",
+      "description": "Claude Skills are a set of Markdown files that live in your .claude folder (or that you can upload in your Claude web/desktop). They are automatically loaded by Claude when it thinks they are appropri",
       "repo": "yorickvandervis/.support-agents",
       "path": "",
       "branch": "main",
@@ -201879,7 +201879,7 @@
     },
     {
       "name": "agent-development",
-      "description": "This skill should be used when the user asks to \"create an agent\", \"add an agent\", \"write a subagent\", \"agent frontmatter\", \"when to use description\", \"agent examples\", \"agent tools\", \"agent colors...",
+      "description": "This skill should be used when the user asks to \"create an agent\", \"add an agent\", \"write a subagent\", \"agent frontmatter\", \"when to use description\", \"agent examples\", \"agent tools\", \"agent colors\",",
       "repo": "anthropics/claude-code",
       "path": "plugins/plugin-dev/skills/agent-development",
       "branch": "main",
@@ -203952,7 +203952,7 @@
     },
     {
       "name": "scholar-evaluation-davila7-claude-code-templates",
-      "description": "Apply the ScholarEval framework to systematically evaluate scholarly and research work. This skill provides structured evaluation methodology based on peer-reviewed research assessment criteria, en...",
+      "description": "Apply the ScholarEval framework to systematically evaluate scholarly and research work. This skill provides structured evaluation methodology based on peer-reviewed research assessment criteria, enabl",
       "repo": "",
       "path": "",
       "branch": "main",
@@ -206885,7 +206885,7 @@
     },
     {
       "name": "skill-installer",
-      "description": "Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another rep...",
+      "description": "Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (",
       "repo": "",
       "path": "",
       "branch": "main",
@@ -228454,7 +228454,7 @@
     },
     {
       "name": "git-workflow",
-      "description": "Create GitHub pull requests with auto-generated titles and descriptions based on commit analysis. Analyzes commit history, identifies related issues, and creates well-formatted PRs with proper link...",
+      "description": "Create GitHub pull requests with auto-generated titles and descriptions based on commit analysis. Analyzes commit history, identifies related issues, and creates well-formatted PRs with proper linking",
       "repo": "epieczko/betty",
       "path": "",
       "branch": "main",
@@ -229798,7 +229798,7 @@
     },
     {
       "name": "senior-backend",
-      "description": "Comprehensive backend development skill for building scalable backend systems using NodeJS, Express, Go, Python, Postgres, GraphQL, REST APIs. Includes API scaffolding, database optimization, secur...",
+      "description": "Comprehensive backend development skill for building scalable backend systems using NodeJS, Express, Go, Python, Postgres, GraphQL, REST APIs. Includes API scaffolding, database optimization, security",
       "repo": "alirezarezvani/claude-skills",
       "path": "engineering-team/senior-backend",
       "branch": "main",
@@ -232316,7 +232316,7 @@
     },
     {
       "name": "code-reviewer",
-      "description": "Comprehensive code review skill for TypeScript, JavaScript, Python, Swift, Kotlin, Go. Includes automated code analysis, best practice checking, security scanning, and review checklist generation. ...",
+      "description": "Comprehensive code review skill for TypeScript, JavaScript, Python, Swift, Kotlin, Go. Includes automated code analysis, best practice checking, security scanning, and review checklist generation. Use",
       "repo": "alirezarezvani/claude-skills",
       "path": "engineering-team/code-reviewer",
       "branch": "main",

@@ -1,0 +1,11 @@
+{
+  "name": "understand-context",
+  "description": "Execute /understand-context slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/understand-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "understand-context-sasamuku-dotfiles-2"
+}

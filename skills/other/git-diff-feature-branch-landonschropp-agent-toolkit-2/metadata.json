@@ -1,0 +1,11 @@
+{
+  "name": "git-diff-feature-branch",
+  "description": "Use when asked to show fetch the context of the current branch",
+  "repo": "LandonSchropp/agent-toolkit",
+  "path": "skills/git-diff-feature-branch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/LandonSchropp/agent-toolkit",
+  "dir_name": "git-diff-feature-branch-landonschropp-agent-toolkit-2"
+}

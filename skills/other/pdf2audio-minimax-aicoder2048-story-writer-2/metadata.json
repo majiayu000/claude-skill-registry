@@ -1,0 +1,11 @@
+{
+  "name": "pdf2audio-minimax",
+  "description": "Convert PDF files to MP3 audio using MiniMax MCP Server's text-to-audio tool. Use when user wants to convert a PDF to audio/MP3, create audiobook from PDF, or text-to-speech for PDF documents. Require",
+  "repo": "aicoder2048/story-writer",
+  "path": ".claude/skills/pdf2audio-minimax",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aicoder2048/story-writer",
+  "dir_name": "pdf2audio-minimax-aicoder2048-story-writer-2"
+}

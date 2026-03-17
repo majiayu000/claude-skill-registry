@@ -1,0 +1,11 @@
+{
+  "name": "revise-entries",
+  "description": "Checklist for revising existing je-dict-1 entries to v2 quality standards. Use when improving existing entries rather than creating new ones.",
+  "repo": "tkgally/je-dict-1",
+  "path": ".claude/skills/revise-entries",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tkgally/je-dict-1",
+  "dir_name": "revise-entries-tkgally-je-dict-1-2"
+}

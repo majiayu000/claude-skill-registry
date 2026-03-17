@@ -1,0 +1,11 @@
+{
+  "name": "ask-council",
+  "description": "Multi-model ensemble consultation. Runs 3 models in parallel for diverse perspectives.",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/consultant/skills/ask-council",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "ask-council-doodledood-claude-code-plugins-2"
+}

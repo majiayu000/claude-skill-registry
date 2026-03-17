@@ -1,0 +1,11 @@
+{
+  "name": "diff-review-doc",
+  "description": "Generate comprehensive, reviewer-ready code review documents from git diffs. Use this when the user provides code changes (git diff output, file changes, or asks to review code changes) and wants a st",
+  "repo": "ArcBlock/agent-skills",
+  "path": "plugins/devflow/skills/diff-review-doc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ArcBlock/agent-skills",
+  "dir_name": "diff-review-doc-arcblock-agent-skills-2"
+}

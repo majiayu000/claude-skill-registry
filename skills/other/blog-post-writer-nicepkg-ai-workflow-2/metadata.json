@@ -1,0 +1,11 @@
+{
+  "name": "blog-post-writer",
+  "description": "Transform brain dumps into polished blog posts in Nick Nisi's voice. Use when the user wants to write a blog post with scattered ideas, talking points, and conclusions that need organization into a co",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/content-creator-workflow/.claude/skills/blog-post-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "blog-post-writer-nicepkg-ai-workflow-2"
+}

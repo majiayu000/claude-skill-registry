@@ -1,0 +1,11 @@
+{
+  "name": "evm-gas-price",
+  "description": "Use this skill when the user asks \"gas price\", \"how much is gas\", \"current gas\", \"check gas fees\", or mentions checking gas costs on EVM chains (Ethereum, Polygon, Arbitrum, etc.). Optional chain para",
+  "repo": "cheolwanpark/claude-plugins",
+  "path": "plugins/crypto/skills/evm-gas-price",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cheolwanpark/claude-plugins",
+  "dir_name": "evm-gas-price-cheolwanpark-claude-plugins-2"
+}

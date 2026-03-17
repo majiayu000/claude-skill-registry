@@ -1,0 +1,11 @@
+{
+  "name": "convex-file-storage",
+  "description": "Complete file handling including upload flows, serving files via URL, storing generated files from actions, deletion, and accessing file metadata from system tables",
+  "repo": "waynesutton/convexskills",
+  "path": "skills/convex-file-storage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/waynesutton/convexskills",
+  "dir_name": "convex-file-storage-waynesutton-convexskills-2"
+}

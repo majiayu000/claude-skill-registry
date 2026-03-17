@@ -1,0 +1,11 @@
+{
+  "name": "task-starter",
+  "description": "Web開発プロジェクト・タスクの開始時に必要なドキュメント群を作成するスキル。\n以下の状況で使用:\n(1) ユーザーが「新しいプロジェクトを始めたい」「タスクを開始したい」「プロジェクトをセットアップして」と依頼した時\n(2) ユーザーが明示的に「/task-starter」を実行した時\n(3) 新機能開発、リファクタリング、バグ修正などのタスクで計画・ドキュメント整備が必要な時\n(4) 「ドキュ",
+  "repo": "goldeneggg/dotfiles",
+  "path": "claude-linux/.claude/skills/task-starter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/goldeneggg/dotfiles",
+  "dir_name": "task-starter-goldeneggg-dotfiles-2"
+}

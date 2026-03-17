@@ -1,0 +1,11 @@
+{
+  "name": "registry-consistency-check",
+  "description": "审计spec_artifacts_registry.md的Stage 3条目一致性，确保AICTXT/GOAL/SC等都已注册。当IMPLEMENTATION artifact创建完成后使用。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/implementation_planning/registry-consistency-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "registry-consistency-check-tikazyq-agentic-spec-forge-2"
+}

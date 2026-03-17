@@ -1,0 +1,11 @@
+{
+  "name": "docs-generator",
+  "description": "Generate hierarchical documentation structures (AGENTS.md, agent.d, and custom docs) for codebases. Use when user asks to create documentation files, analyze codebase for AI agent documentation, set u",
+  "repo": "ajianaz/skills-collection",
+  "path": "skills/docs-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ajianaz/skills-collection",
+  "dir_name": "docs-generator-ajianaz-skills-collection-2"
+}

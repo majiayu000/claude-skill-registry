@@ -1,0 +1,11 @@
+{
+  "name": "plantuml-diagram",
+  "description": "Generate PlantUML diagrams including UML class, sequence, and component diagrams. Use when creating UML diagrams or system architecture visualizations.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/plantuml-diagram",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "plantuml-diagram-ntaksh42-agents-2"
+}

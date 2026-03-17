@@ -1,0 +1,11 @@
+{
+  "name": "podcast-writer",
+  "description": "根据用户给出的文字或者用户指定的txt/md文件内容，从类型列表中选择合适的文本类型，按照指定的格式给出podcast直播口述稿",
+  "repo": "flyingtimes/podcast-using-skill",
+  "path": ".claude/skills/podcast-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/flyingtimes/podcast-using-skill",
+  "dir_name": "podcast-writer-flyingtimes-podcast-using-skill-2"
+}

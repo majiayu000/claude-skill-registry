@@ -1,0 +1,11 @@
+{
+  "name": "股票分析",
+  "description": "提供获取用户自选分组(LongPort)、股票市场数据(LongPort + AkShare)、技术指标计算（ta-lib）的技能。分析数并与用户研究交易策略，形成买卖点建议，并可做回测、寻优与报告输出。",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/stock-trader-workflow/.claude/skills/股票分析",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "unknown-nicepkg-ai-workflow-2"
+}

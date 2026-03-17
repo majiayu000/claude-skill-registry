@@ -1,0 +1,11 @@
+{
+  "name": "test-feedback",
+  "description": "File structured GitHub issues for testing feedback on prototype releases. Use when testing a new prototype build and need to report bugs, usability issues, or feature requests. Guides through creating",
+  "repo": "MQFacultyOfArts/PromptGrimoireTool",
+  "path": ".claude/skills/test-feedback",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MQFacultyOfArts/PromptGrimoireTool",
+  "dir_name": "test-feedback-mqfacultyofarts-promptgrimoiretool-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "game-systems-code-review",
+  "description": "Review code changes for game/engine systems with a focused Game Systems Engineer mindset. Use when the user asks to review code, check consistency, or validate changes against AGENTS.md standards, esp",
+  "repo": "Ronin15/SDL3_HammerEngine_Template",
+  "path": "tools/skills/game-systems-code-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ronin15/SDL3_HammerEngine_Template",
+  "dir_name": "game-systems-code-review-ronin15-sdl3-hammerengine-te-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "lightfriend-db-migration",
+  "description": "Step-by-step guide for modifying database schema using Diesel migrations",
+  "repo": "ahtavarasmus/lightfriend-cloud",
+  "path": ".claude/skills/lightfriend-db-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ahtavarasmus/lightfriend-cloud",
+  "dir_name": "lightfriend-db-migration-ahtavarasmus-lightfriend-cloud-2"
+}

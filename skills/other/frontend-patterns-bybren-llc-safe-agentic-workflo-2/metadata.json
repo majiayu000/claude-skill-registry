@@ -1,0 +1,11 @@
+{
+  "name": "frontend-patterns",
+  "description": "Frontend patterns for Next.js App Router, Clerk auth, shadcn/Radix UI, and PostHog analytics. Use when building UI components, creating pages, implementing auth flows, or adding analytics events. Ensu",
+  "repo": "bybren-llc/safe-agentic-workflow",
+  "path": ".claude/skills/frontend-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bybren-llc/safe-agentic-workflow",
+  "dir_name": "frontend-patterns-bybren-llc-safe-agentic-workflo-2"
+}

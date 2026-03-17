@@ -1,0 +1,11 @@
+{
+  "name": "replit-prod-checklist",
+  "description": "Execute Replit production deployment checklist and rollback procedures.\nUse when deploying Replit integrations to production, preparing for launch,\nor implementing go-live procedures.\nTrigger with phr",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/replit-pack/skills/replit-prod-checklist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "replit-prod-checklist-jeremylongshore-claude-code-plugins--2"
+}

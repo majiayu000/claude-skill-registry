@@ -1,0 +1,11 @@
+{
+  "name": "neon-vercel-postgres",
+  "description": "Set up serverless Postgres with Neon or Vercel Postgres for Cloudflare Workers/Edge. Includes connection pooling, git-like branching for preview environments, and Drizzle/Prisma integration.\n\nUse when",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/neon-vercel-postgres",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "neon-vercel-postgres-ovachiever-droid-tings-2"
+}

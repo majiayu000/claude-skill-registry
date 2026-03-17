@@ -1,0 +1,11 @@
+{
+  "name": "cloud-forensics",
+  "description": "Investigate cloud platform environments for forensic analysis. Use when investigating\nincidents in AWS, Azure, GCP, or M365 environments. Supports log analysis, resource\ninventory, configuration revie",
+  "repo": "SherifEldeeb/agentskills",
+  "path": "skills/forensics/cloud-forensics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SherifEldeeb/agentskills",
+  "dir_name": "cloud-forensics-sherifeldeeb-agentskills-2"
+}

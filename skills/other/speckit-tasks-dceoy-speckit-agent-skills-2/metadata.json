@@ -1,0 +1,11 @@
+{
+  "name": "speckit-tasks",
+  "description": "Generate an actionable, dependency-ordered tasks.md for the feature based on available design artifacts.",
+  "repo": "dceoy/speckit-agent-skills",
+  "path": "skills/speckit-taskstoissues",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dceoy/speckit-agent-skills",
+  "dir_name": "speckit-tasks-dceoy-speckit-agent-skills-2"
+}

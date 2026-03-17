@@ -1,0 +1,11 @@
+{
+  "name": "neurokit2",
+  "description": "Comprehensive biosignal processing toolkit for analyzing physiological data including ECG, EEG, EDA, RSP, PPG, EMG, and EOG signals. Use this skill when processing cardiovascular signals, brain activi",
+  "repo": "davila7/claude-code-templates",
+  "path": "cli-tool/components/skills/scientific/neurokit2",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davila7/claude-code-templates",
+  "dir_name": "neurokit2-davila7-claude-code-template-2"
+}

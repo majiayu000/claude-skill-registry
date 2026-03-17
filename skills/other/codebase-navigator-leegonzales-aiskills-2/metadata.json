@@ -1,0 +1,11 @@
+{
+  "name": "codebase-navigator",
+  "description": "Semantic code search using osgrep for understanding codebases, finding implementations, and navigating large projects. Use when asked \"where is\", \"how does\", \"find the code that\", or any question abou",
+  "repo": "leegonzales/AISkills",
+  "path": "CodebaseNavigator/codebase-navigator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leegonzales/AISkills",
+  "dir_name": "codebase-navigator-leegonzales-aiskills-2"
+}

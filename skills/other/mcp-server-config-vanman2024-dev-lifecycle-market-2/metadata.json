@@ -1,0 +1,11 @@
+{
+  "name": "mcp-server-config",
+  "description": "Manage .mcp.json MCP server configurations. Use when configuring MCP servers, adding server entries, managing MCP config files, or when user mentions .mcp.json, MCP server setup, server configuration.",
+  "repo": "vanman2024/dev-lifecycle-marketplace",
+  "path": "plugins/foundation/skills/mcp-server-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vanman2024/dev-lifecycle-marketplace",
+  "dir_name": "mcp-server-config-vanman2024-dev-lifecycle-market-2"
+}

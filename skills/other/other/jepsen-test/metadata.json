@@ -1,0 +1,17 @@
+{
+  "name": "jepsen-test",
+  "repo": "ahrav/Gossip-rs",
+  "path": ".codex/skills/jepsen-test/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ahrav/Gossip-rs",
+  "dir_name": "jepsen-test",
+  "downloaded_at": "2026-03-01T06:32:26.522492Z",
+  "author": "ahrav",
+  "source_url": "https://github.com/ahrav/Gossip-rs/blob/main/.codex/skills/jepsen-test/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ahrav/Gossip-rs/blob/main/.codex/skills/jepsen-test/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

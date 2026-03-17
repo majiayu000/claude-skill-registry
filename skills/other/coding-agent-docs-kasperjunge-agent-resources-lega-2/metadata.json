@@ -1,0 +1,11 @@
+{
+  "name": "coding-agent-docs",
+  "description": "Stay current with how OpenCode, OpenAI Codex, and Claude Code implement extensibility features (skills, slash commands, subagents, custom prompts). Use when comparing implementations across AI coding ",
+  "repo": "kasperjunge/agent-resources-legacy",
+  "path": ".claude/skills/coding-agent-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kasperjunge/agent-resources-legacy",
+  "dir_name": "coding-agent-docs-kasperjunge-agent-resources-lega-2"
+}

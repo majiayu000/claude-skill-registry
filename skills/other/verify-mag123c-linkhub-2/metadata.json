@@ -1,0 +1,11 @@
+{
+  "name": "verify",
+  "description": "검증 스킬. 빌드, 린트, 테스트 검증. 커밋/PR 전 필수 실행. AI가 스스로 코드를 검증하는 자체 검증 루프.",
+  "repo": "mag123c/linkhub",
+  "path": ".claude/skills/verify",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mag123c/linkhub",
+  "dir_name": "verify-mag123c-linkhub-2"
+}

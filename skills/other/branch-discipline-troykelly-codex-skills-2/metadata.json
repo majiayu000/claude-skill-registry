@@ -1,0 +1,11 @@
+{
+  "name": "branch-discipline",
+  "description": "Use before any code changes - hard gate ensuring work never happens on main branch, with proper feature branch creation from correct base",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/branch-discipline",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "branch-discipline-troykelly-codex-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "install-sections",
+  "description": "Build pages by installing shadcnblocks sections and implementing i18n. Use for each page after branding is defined. Takes page route and list of sections to install. Installs sections in order, create",
+  "repo": "deomiarn/website-template",
+  "path": ".claude/skills/install-sections",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/deomiarn/website-template",
+  "dir_name": "install-sections-deomiarn-website-template-2"
+}

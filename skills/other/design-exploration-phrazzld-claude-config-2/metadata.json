@@ -1,0 +1,11 @@
+{
+  "name": "design-exploration",
+  "description": "Generate visual design proposal catalogues for existing projects. Use when:\n- User wants to explore design directions before implementation\n- Redesigning or refreshing an existing interface\n- Starting",
+  "repo": "phrazzld/claude-config",
+  "path": "skills/design-exploration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/phrazzld/claude-config",
+  "dir_name": "design-exploration-phrazzld-claude-config-2"
+}

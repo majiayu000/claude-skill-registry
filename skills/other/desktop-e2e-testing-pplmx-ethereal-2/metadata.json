@@ -1,0 +1,11 @@
+{
+  "name": "desktop-e2e-testing",
+  "description": "Generate end-to-end tests for the complete Desktop Ethereal application, including UI interactions, system integration, and user workflows. Triggers on E2E testing, Playwright, system testing, or comp",
+  "repo": "pplmx/ethereal",
+  "path": ".claude/skills/desktop-e2e-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pplmx/ethereal",
+  "dir_name": "desktop-e2e-testing-pplmx-ethereal-2"
+}

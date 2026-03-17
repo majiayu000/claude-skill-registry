@@ -1,0 +1,11 @@
+{
+  "name": "plugin-architecture-patterns",
+  "description": "Clean architecture patterns for JUCE plugins including separation of concerns, APVTS patterns, state management, preset systems, MIDI handling, and modulation routing. Use when designing plugin archit",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/juce-dev-team/skills/plugin-architecture-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "plugin-architecture-patterns-yebot-rad-cc-plugins-2"
+}

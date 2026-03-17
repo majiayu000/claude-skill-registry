@@ -1,0 +1,11 @@
+{
+  "name": "branded-document-suite",
+  "description": "Unified document generation system producing professionally styled PDF, DOCX, PPTX,\nand XLSX files with consistent branding through a single configuration.\n",
+  "repo": "chaserbreitenbach/claude-skills-and-agents",
+  "path": "skills/tooling/branded-document-suite",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chaserbreitenbach/claude-skills-and-agents",
+  "dir_name": "branded-document-suite-chaserbreitenbach-claude-skills-and-ag-2"
+}

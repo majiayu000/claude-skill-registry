@@ -1,0 +1,11 @@
+{
+  "name": "figma-design",
+  "description": "Use this skill when working with Figma designs to generate code. Converts Figma layouts, components, and styles into production-ready code. Triggers on keywords like \"Figma\", \"design to code\", \"implem",
+  "repo": "taiyousan15/taisun_agent",
+  "path": ".claude/skills/figma-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/taiyousan15/taisun_agent",
+  "dir_name": "figma-design-taiyousan15-taisun-agent-2"
+}

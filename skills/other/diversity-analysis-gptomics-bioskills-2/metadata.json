@@ -1,0 +1,11 @@
+{
+  "name": "diversity-analysis",
+  "description": "Alpha and beta diversity analysis for microbiome data. Calculate within-sample richness, evenness, and between-sample dissimilarity with phyloseq and vegan. Use when comparing community composition ac",
+  "repo": "GPTomics/bioSkills",
+  "path": "microbiome/diversity-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "diversity-analysis-gptomics-bioskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "bmad-parallel",
+  "description": "Auto-detect and parallelize BMAD story tasks",
+  "repo": "kingpinzs/claude_parallel_templates",
+  "path": "bmad/.claude/skills/bmad-parallel",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kingpinzs/claude_parallel_templates",
+  "dir_name": "bmad-parallel-kingpinzs-claude-parallel-temp-2"
+}

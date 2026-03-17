@@ -1,0 +1,11 @@
+{
+  "name": "agent-builder-skill",
+  "description": "Use when creating, improving, or troubleshooting Claude Code subagents. Expert guidance on agent design, system prompts, tool access, model selection, and best practices for building specialized AI as",
+  "repo": "NangoHQ/ai-ide-prompts",
+  "path": ".claude/skills/agent-builder-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NangoHQ/ai-ide-prompts",
+  "dir_name": "agent-builder-skill-nangohq-ai-ide-prompts-2"
+}

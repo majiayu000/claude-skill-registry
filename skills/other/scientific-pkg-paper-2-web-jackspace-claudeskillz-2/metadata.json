@@ -1,0 +1,11 @@
+{
+  "name": "scientific-pkg-paper-2-web",
+  "description": "This skill should be used when converting academic papers into promotional and presentation formats including interactive websites (Paper2Web), presentation videos (Paper2Video), and conference poster",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/scientific-pkg-paper-2-web",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "scientific-pkg-paper-2-web-jackspace-claudeskillz-2"
+}

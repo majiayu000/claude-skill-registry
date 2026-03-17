@@ -1,0 +1,11 @@
+{
+  "name": "pop-complexity-analyzer",
+  "description": "Analyzes task/feature complexity (1-10) and recommends subtask breakdown for planning and prioritization. Provides actionable recommendations for agent selection, phase distribution, and risk assessme",
+  "repo": "jrc1883/popkit-claude",
+  "path": "packages/popkit-dev/skills/pop-complexity-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jrc1883/popkit-claude",
+  "dir_name": "pop-complexity-analyzer-jrc1883-popkit-claude-2"
+}

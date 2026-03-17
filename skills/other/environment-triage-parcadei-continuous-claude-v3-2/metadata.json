@@ -1,0 +1,11 @@
+{
+  "name": "environment-triage",
+  "description": "Environment Triage",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/environment-triage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "environment-triage-parcadei-continuous-claude-v3-2"
+}

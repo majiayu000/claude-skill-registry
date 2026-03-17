@@ -1,0 +1,11 @@
+{
+  "name": "ssh-key-authentication",
+  "description": "This skill should be used when the user asks to \"configure SSH key authentication\", \"set up SSH keys\", \"generate SSH key pairs\", \"copy SSH keys to servers\", \"configure SSH config file\", \"troubleshoot ",
+  "repo": "zebbern/SecOps-CLI-Guides",
+  "path": "skills/ssh-key-authentication",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zebbern/SecOps-CLI-Guides",
+  "dir_name": "ssh-key-authentication-zebbern-secops-cli-guides-2"
+}

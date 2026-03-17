@@ -1,0 +1,11 @@
+{
+  "name": "content-repurposer",
+  "description": "Master skill that transforms ANY content into 8+ formats: slides, infographic, video script, podcast, social posts, email series, flashcards, quiz, one-pager, interactive game.",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/content-creator-workflow/.claude/skills/content-repurposer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "content-repurposer-nicepkg-ai-workflow-2"
+}

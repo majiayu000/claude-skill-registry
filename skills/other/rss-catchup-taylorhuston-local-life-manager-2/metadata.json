@@ -1,0 +1,11 @@
+{
+  "name": "rss-catchup",
+  "description": "Fetch and summarize latest articles from RSS feeds. Creates notes with article summaries as bullet points. Use to catch up on blogs without reading everything. Triggers on \"rss catchup\", \"blog catchup",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/rss-catchup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "rss-catchup-taylorhuston-local-life-manager-2"
+}

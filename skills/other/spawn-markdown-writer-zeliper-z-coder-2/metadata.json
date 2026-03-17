@@ -1,0 +1,11 @@
+{
+  "name": "spawn-markdown-writer",
+  "description": "비정형 마크다운 작성을 markdown-writer-agent에 위임",
+  "repo": "Zeliper/z-coder",
+  "path": ".claude/skills/spawn-markdown-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Zeliper/z-coder",
+  "dir_name": "spawn-markdown-writer-zeliper-z-coder-2"
+}

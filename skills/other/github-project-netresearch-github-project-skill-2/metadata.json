@@ -1,0 +1,11 @@
+{
+  "name": "github-project",
+  "description": "GitHub repository setup and configuration. This skill should be used when creating new GitHub repositories, configuring branch protection or rulesets, setting up CODEOWNERS, or troubleshooting PR merg",
+  "repo": "netresearch/github-project-skill",
+  "path": "skills/github-project",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/netresearch/github-project-skill",
+  "dir_name": "github-project-netresearch-github-project-skill-2"
+}

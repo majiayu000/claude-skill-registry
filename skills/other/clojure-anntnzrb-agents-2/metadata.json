@@ -1,0 +1,11 @@
+{
+  "name": "clojure",
+  "description": "Develop Clojure applications using deps.edn, tools.deps, and functional patterns. Activate when working with .clj/.cljc/.cljs files, deps.edn, or user mentions Clojure, REPL, spec, transducers, reduce",
+  "repo": "anntnzrb/agents",
+  "path": "assets/skills/clojure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/anntnzrb/agents",
+  "dir_name": "clojure-anntnzrb-agents-2"
+}

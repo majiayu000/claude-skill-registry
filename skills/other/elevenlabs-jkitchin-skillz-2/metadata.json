@@ -1,0 +1,11 @@
+{
+  "name": "elevenlabs",
+  "description": "AI-powered audio generation using ElevenLabs API - text-to-speech with lifelike voices,\nsound effects generation, and music creation from text descriptions. Generate natural-sounding\nspeech in 32 lang",
+  "repo": "jkitchin/skillz",
+  "path": "skills/creative/elevenlabs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jkitchin/skillz",
+  "dir_name": "elevenlabs-jkitchin-skillz-2"
+}

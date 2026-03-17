@@ -1,0 +1,11 @@
+{
+  "name": "sqlmodel",
+  "description": "Expert guidance for SQLModel - the Python library combining SQLAlchemy and Pydantic for database models. Use when (1) creating database models that work as both SQLAlchemy ORM and Pydantic schemas, (2",
+  "repo": "Salmanferozkhan/Cloud-and-fast-api",
+  "path": ".claude/skills/sqlmodel",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Salmanferozkhan/Cloud-and-fast-api",
+  "dir_name": "sqlmodel-salmanferozkhan-cloud-and-fast-api-2"
+}

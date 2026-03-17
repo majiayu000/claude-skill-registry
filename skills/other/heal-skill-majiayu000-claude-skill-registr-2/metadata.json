@@ -1,0 +1,11 @@
+{
+  "name": "heal-skill",
+  "description": "Fix incorrect SKILL.md files when a skill has wrong instructions or outdated API references",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/heal-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "heal-skill-majiayu000-claude-skill-registr-2"
+}

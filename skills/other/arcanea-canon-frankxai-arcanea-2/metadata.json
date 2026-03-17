@@ -1,0 +1,11 @@
+{
+  "name": "arcanea-canon",
+  "description": "Canon consistency enforcement for Arcanea universe - tracks facts, prevents contradictions, maintains timeline, ensures lore integrity",
+  "repo": "frankxai/arcanea",
+  "path": ".claude/skills/arcanea/arcanea-canon",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/arcanea",
+  "dir_name": "arcanea-canon-frankxai-arcanea-2"
+}

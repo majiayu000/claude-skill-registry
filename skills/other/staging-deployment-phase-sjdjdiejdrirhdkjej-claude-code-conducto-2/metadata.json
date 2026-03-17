@@ -1,0 +1,11 @@
+{
+  "name": "staging-deployment-phase",
+  "description": "Deploys features to staging environment with database migrations, health checks, and deployment verification. Use during /ship-staging phase or when deploying to staging environments for validation be",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/staging-deployment-phase",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "staging-deployment-phase-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+}

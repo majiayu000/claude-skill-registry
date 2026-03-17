@@ -1,0 +1,11 @@
+{
+  "name": "press-release-creator",
+  "description": "Amazon の Working Backwards 手法に基づいたプレスリリース＋FAQ を作成するスキル。新サービスや新機能の企画段階で、顧客視点から価値を明文化し、開発の方向性を定めるために使用します。「プレスリリースを作成」「PR/FAQ を書いて」「Working Backwards で企画」「顧客中心でサービスを設計」などのリクエストでトリガーします。ITサービス、製品、新機能の企画・",
+  "repo": "ks6088ts-labs/skills",
+  "path": "skills/press-release-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ks6088ts-labs/skills",
+  "dir_name": "press-release-creator-ks6088ts-labs-skills-2"
+}

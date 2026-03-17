@@ -1,0 +1,11 @@
+{
+  "name": "moai-project-language-initializer",
+  "description": "Handle comprehensive project language and user setup workflows including language selection, agent prompt configuration, user profiles, team settings, and domain selection",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-project-language-initializer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-project-language-initializer-jg-chalk-io-nora-livekit-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ledger",
+  "description": "Financial ledger - transactions, audit trails. Use when tracking money.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/ledger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "ledger-sylphxai-flow-2"
+}

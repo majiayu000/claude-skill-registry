@@ -1,0 +1,11 @@
+{
+  "name": "acm-config",
+  "description": "Use when the user wants to customize Claudikins Automatic Context Manager behavior, configure trigger threshold, snooze duration, summary length, or runs '/acm:config'. Interactively asks questions an",
+  "repo": "elb-pr/claudikins-automatic-context-manager",
+  "path": "skills/acm-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/elb-pr/claudikins-automatic-context-manager",
+  "dir_name": "acm-config-elb-pr-claudikins-automatic-2"
+}

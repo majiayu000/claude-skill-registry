@@ -1,0 +1,11 @@
+{
+  "name": "rehabilitation-analyzer",
+  "description": "分析康复训练数据、识别康复模式、评估康复进展，并提供个性化康复建议",
+  "repo": "huifer/WellAlly-health",
+  "path": ".claude/skills/rehabilitation-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/huifer/WellAlly-health",
+  "dir_name": "rehabilitation-analyzer-huifer-wellally-health-2"
+}

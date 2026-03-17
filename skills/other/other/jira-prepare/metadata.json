@@ -1,0 +1,9 @@
+{
+  "name": "jira-prepare",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/jira-prepare/SKILL.md",
+  "category": "other",
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "jira-prepare",
+  "downloaded_at": "2026-02-15T05:22:57.834530Z"
+}

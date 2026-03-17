@@ -1,0 +1,11 @@
+{
+  "name": "md-book",
+  "description": "MD-Book documentation generator skill. Use when working with MD-Book, a modern\nmdbook replacement for generating HTML documentation from Markdown files.\nSupports syntax highlighting, live reload, Page",
+  "repo": "terraphim/codex-skills",
+  "path": "skills/md-book",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terraphim/codex-skills",
+  "dir_name": "md-book-terraphim-codex-skills-2"
+}

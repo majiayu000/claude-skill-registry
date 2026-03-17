@@ -1,0 +1,11 @@
+{
+  "name": "release-manager",
+  "description": "Ship features safely with progressive rollouts, feature flags, and canary deployments. Use when deploying risky features or need gradual rollouts.",
+  "repo": "daffy0208/ai-dev-standards",
+  "path": "skills/release-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/daffy0208/ai-dev-standards",
+  "dir_name": "release-manager-daffy0208-ai-dev-standards-2"
+}

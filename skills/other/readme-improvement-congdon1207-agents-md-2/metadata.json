@@ -1,0 +1,11 @@
+{
+  "name": "readme-improvement",
+  "description": "Use when the user asks to create or improve a README file, project documentation, getting started guide, or installation instructions. Triggers on keywords like \"README\", \"getting started\", \"installat",
+  "repo": "CongDon1207/AGENTS.md",
+  "path": ".claude/skills/readme-improvement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CongDon1207/AGENTS.md",
+  "dir_name": "readme-improvement-congdon1207-agents-md-2"
+}

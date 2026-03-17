@@ -1,0 +1,11 @@
+{
+  "name": "concept-scaffolding",
+  "description": "Design progressive learning sequences that build foundational understanding before complexity. Use when breaking complex concepts into steps, managing cognitive load, or validating prerequisite unders",
+  "repo": "panaversity/agentfactory",
+  "path": ".claude/skills/concept-scaffolding",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "concept-scaffolding-panaversity-agentfactory-2"
+}

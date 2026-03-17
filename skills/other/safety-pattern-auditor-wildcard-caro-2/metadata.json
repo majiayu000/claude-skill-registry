@@ -1,0 +1,11 @@
+{
+  "name": "safety-pattern-auditor",
+  "description": "Systematic audit of safety patterns to identify gaps, regressions, and improvement opportunities",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/safety-pattern-auditor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildcard/caro",
+  "dir_name": "safety-pattern-auditor-wildcard-caro-2"
+}

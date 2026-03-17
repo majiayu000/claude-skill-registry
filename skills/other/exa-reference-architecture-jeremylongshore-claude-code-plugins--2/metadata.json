@@ -1,0 +1,11 @@
+{
+  "name": "exa-reference-architecture",
+  "description": "Implement Exa reference architecture with best-practice project layout.\nUse when designing new Exa integrations, reviewing project structure,\nor establishing architecture standards for Exa application",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/exa-pack/skills/exa-reference-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "exa-reference-architecture-jeremylongshore-claude-code-plugins--2"
+}

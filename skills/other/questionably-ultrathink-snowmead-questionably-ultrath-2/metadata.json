@@ -1,0 +1,11 @@
+{
+  "name": "questionably-ultrathink",
+  "description": "Advanced reasoning skill integrating Atom of Thoughts (AoT) and Chain of Verification (CoVe) frameworks.\n\nUse when facing complex problems requiring rigorous reasoning, systematic decomposition, or fa",
+  "repo": "snowmead/questionably-ultrathink",
+  "path": "claude-code/skills/questionably-ultrathink-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/snowmead/questionably-ultrathink",
+  "dir_name": "questionably-ultrathink-snowmead-questionably-ultrath-2"
+}

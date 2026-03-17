@@ -1,0 +1,11 @@
+{
+  "name": "webnovel-query",
+  "description": "Queries project settings for characters, powers, factions, items, and foreshadowing. Supports urgency analysis and golden finger status. Activates when user asks about story elements or /webnovel-quer",
+  "repo": "lingfengQAQ/webnovel-writer",
+  "path": ".claude/skills/webnovel-query",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lingfengQAQ/webnovel-writer",
+  "dir_name": "webnovel-query-lingfengqaq-webnovel-writer-2"
+}

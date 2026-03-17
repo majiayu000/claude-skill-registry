@@ -1,0 +1,9 @@
+{
+  "name": "sonarcloud-security-audit",
+  "repo": "NASA-PDS/pds-claude-skills",
+  "path": "sonarcloud-security-audit/SKILL.md",
+  "category": "other",
+  "source": "github.com/NASA-PDS/pds-claude-skills",
+  "dir_name": "sonarcloud-security-audit",
+  "downloaded_at": "2026-02-22T05:26:16.729900Z"
+}

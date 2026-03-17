@@ -1,0 +1,11 @@
+{
+  "name": "don-infra",
+  "description": "Infrastructure and deployment standards for Dutch government systems. Use when deploying to Haven (government Kubernetes), setting up FSC (Federated Service Connectivity), or checking infrastructure c",
+  "repo": "dstotijn/developer-overheid-nl-agent-skills",
+  "path": "skills/don-infra",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dstotijn/developer-overheid-nl-agent-skills",
+  "dir_name": "don-infra-dstotijn-developer-overheid-n-2"
+}

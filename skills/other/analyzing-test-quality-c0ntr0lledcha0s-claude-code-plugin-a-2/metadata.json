@@ -1,0 +1,11 @@
+{
+  "name": "analyzing-test-quality",
+  "description": "Automatically activated when user asks about test quality, code coverage, test reliability, test maintainability, or wants to analyze their test suite. Provides framework-agnostic test quality analysi",
+  "repo": "C0ntr0lledCha0s/claude-code-plugin-automations",
+  "path": "testing-expert/skills/analyzing-test-quality",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/C0ntr0lledCha0s/claude-code-plugin-automations",
+  "dir_name": "analyzing-test-quality-c0ntr0lledcha0s-claude-code-plugin-a-2"
+}

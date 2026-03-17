@@ -1,0 +1,11 @@
+{
+  "name": "episode-log-steps",
+  "description": "Log execution steps during episode execution for detailed tracking and learning. Use when recording tool usage, decision points, errors, or milestones during task execution.",
+  "repo": "d-o-hub/rust-self-learning-memory",
+  "path": ".claude/skills/episode-log-steps",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/d-o-hub/rust-self-learning-memory",
+  "dir_name": "episode-log-steps-d-o-hub-rust-self-learning-m-2"
+}

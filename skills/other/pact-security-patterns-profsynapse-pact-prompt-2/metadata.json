@@ -1,0 +1,11 @@
+{
+  "name": "pact-security-patterns",
+  "description": "Security best practices and threat mitigation patterns for PACT framework development.\nUse when: implementing authentication or authorization, handling API credentials,\nintegrating external APIs, proc",
+  "repo": "ProfSynapse/PACT-prompt",
+  "path": "pact-plugin/skills/pact-security-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ProfSynapse/PACT-prompt",
+  "dir_name": "pact-security-patterns-profsynapse-pact-prompt-2"
+}

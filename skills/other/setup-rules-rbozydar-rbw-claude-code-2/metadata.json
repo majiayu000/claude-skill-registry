@@ -1,0 +1,11 @@
+{
+  "name": "setup-rules",
+  "description": "Set up Claude Code rules in a project by symlinking from the rbw-claude-code templates. Use this skill when users want to add Python coding standards, anti-slop rules, or other shared rules to their p",
+  "repo": "RBozydar/rbw-claude-code",
+  "path": "plugins/core/skills/setup-rules",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RBozydar/rbw-claude-code",
+  "dir_name": "setup-rules-rbozydar-rbw-claude-code-2"
+}

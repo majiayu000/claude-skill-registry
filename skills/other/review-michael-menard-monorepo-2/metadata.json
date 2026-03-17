@@ -1,0 +1,11 @@
+{
+  "name": "review",
+  "description": "Comprehensive code review with parallel specialist sub-agents. Analyzes requirements traceability, code quality, security, performance, accessibility, test coverage, and technical debt. Produces detai",
+  "repo": "michael-menard/monorepo",
+  "path": ".claude/skills/review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/michael-menard/monorepo",
+  "dir_name": "review-michael-menard-monorepo-2"
+}

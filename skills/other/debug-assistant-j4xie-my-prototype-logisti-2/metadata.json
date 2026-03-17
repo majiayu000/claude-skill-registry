@@ -1,0 +1,11 @@
+{
+  "name": "debug-assistant",
+  "description": "调试辅助工具。快速诊断后端、前端和数据库问题。适用于 API 失败、日志分析、服务健康检查等场景。",
+  "repo": "j4xie/my-prototype-logistics",
+  "path": ".claude/skills/debug-assistant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/j4xie/my-prototype-logistics",
+  "dir_name": "debug-assistant-j4xie-my-prototype-logisti-2"
+}

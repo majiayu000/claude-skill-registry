@@ -1,0 +1,11 @@
+{
+  "name": "concatenative",
+  "description": "Forth/Factor/Joy: stack-based concatenative programming where composition replaces application.",
+  "repo": "plurigrid/asi",
+  "path": "skills/concatenative",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "concatenative-plurigrid-asi-2"
+}

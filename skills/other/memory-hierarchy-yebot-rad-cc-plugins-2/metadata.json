@@ -1,0 +1,11 @@
+{
+  "name": "memory-hierarchy",
+  "description": "Complete reference for Claude Code's memory management system including all file types, locations, import syntax, and best practices. Use when planning or managing CLAUDE.md and related memory files.",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/documentation-tools/skills/memory-hierarchy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "memory-hierarchy-yebot-rad-cc-plugins-2"
+}

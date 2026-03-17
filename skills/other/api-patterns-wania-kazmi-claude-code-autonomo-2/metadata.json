@@ -1,0 +1,11 @@
+{
+  "name": "api-patterns",
+  "description": "REST API and GraphQL design patterns, authentication, error handling, and best practices.\nUse when building APIs, designing endpoints, or implementing backend services.\n",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/api-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "api-patterns-wania-kazmi-claude-code-autonomo-2"
+}

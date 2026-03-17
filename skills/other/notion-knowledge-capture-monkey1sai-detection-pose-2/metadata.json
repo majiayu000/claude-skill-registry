@@ -1,0 +1,11 @@
+{
+  "name": "notion-knowledge-capture",
+  "description": "Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking.",
+  "repo": "monkey1sai/detection_pose",
+  "path": "skills/notion-knowledge-capture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/monkey1sai/detection_pose",
+  "dir_name": "notion-knowledge-capture-monkey1sai-detection-pose-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "api-platform-tests",
+  "description": "Use when symfony api platform tests",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/api-platform-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "api-platform-tests-makfly-superpowers-symfony-2"
+}

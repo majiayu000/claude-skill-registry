@@ -1,0 +1,11 @@
+{
+  "name": "python-code-patterns",
+  "description": "Python code style and type hinting patterns. Use when writing or reviewing Python code to ensure consistent, modern type annotations, clean code structure, and proper separation of concerns. Covers mo",
+  "repo": "ederheisler/agent-skills",
+  "path": ".claude/skills/python-code-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ederheisler/agent-skills",
+  "dir_name": "python-code-patterns-ederheisler-agent-skills-2"
+}

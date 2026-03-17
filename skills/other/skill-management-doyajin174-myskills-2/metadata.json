@@ -1,0 +1,11 @@
+{
+  "name": "skill-management",
+  "description": "Create, update, test, and manage Agent Skills. Use when creating new skills, debugging existing ones, or organizing skill libraries. Based on official Claude Code documentation.",
+  "repo": "Doyajin174/myskills",
+  "path": ".public/skills/skill-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Doyajin174/myskills",
+  "dir_name": "skill-management-doyajin174-myskills-2"
+}

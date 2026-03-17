@@ -1,0 +1,11 @@
+{
+  "name": "supabase-sql-skill",
+  "description": "Clean and format SQL migrations for Supabase - idempotency, RLS policies, formatting, schema fixes. Use when: fix this SQL, clean migration, RLS policy, Supabase schema, format postgres, prepare for S",
+  "repo": "ScientiaCapital/skills",
+  "path": "active/supabase-sql-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ScientiaCapital/skills",
+  "dir_name": "supabase-sql-skill-scientiacapital-skills-2"
+}

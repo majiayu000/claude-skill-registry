@@ -1,0 +1,11 @@
+{
+  "name": "env-validation",
+  "description": "Validate environment variables on server start and before builds. Catch missing or invalid variables early with clear error messages.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/env-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "env-validation-andrelandgraf-fullstackrecipes-2"
+}

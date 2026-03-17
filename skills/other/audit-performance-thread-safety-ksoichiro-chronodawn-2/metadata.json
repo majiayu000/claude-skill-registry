@@ -1,0 +1,11 @@
+{
+  "name": "audit-performance-thread-safety",
+  "description": "Audit codebase for performance bottlenecks and thread-safety issues",
+  "repo": "ksoichiro/ChronoDawn",
+  "path": ".claude/skills/audit-performance-thread-safety",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ksoichiro/ChronoDawn",
+  "dir_name": "audit-performance-thread-safety-ksoichiro-chronodawn-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "make_notebook",
+  "description": "機能やテーマについて解説付きのJupyter Notebook (.ipynb) を生成する",
+  "repo": "tatsuki-washimi/gwexpy",
+  "path": ".agent/skills/make_notebook",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tatsuki-washimi/gwexpy",
+  "dir_name": "make-notebook-tatsuki-washimi-gwexpy-2"
+}

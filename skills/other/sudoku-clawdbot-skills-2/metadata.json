@@ -1,0 +1,11 @@
+{
+  "name": "sudoku",
+  "description": "Fetch Sudoku puzzles and store them as JSON in the workspace; render images on demand; reveal solutions later.",
+  "repo": "clawdbot/skills",
+  "path": "skills/odrobnik/sudoku",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "sudoku-clawdbot-skills-2"
+}

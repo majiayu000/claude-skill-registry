@@ -1,0 +1,11 @@
+{
+  "name": "prompt-generator",
+  "description": "提示词生成器 - 根据用户主题描述智能生成完整的AI图像提示词，基于元素数据库",
+  "repo": "ttmouse/skills",
+  "path": "intelligent-prompt-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ttmouse/skills",
+  "dir_name": "prompt-generator-ttmouse-skills-2"
+}

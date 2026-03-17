@@ -1,0 +1,11 @@
+{
+  "name": "e2e-writer",
+  "description": "Write E2E tests with Playwright using selector best practices. Use when you need to write end-to-end integration tests, user scenarios, or complete workflows.",
+  "repo": "xnopre/copro-tickets-tracker",
+  "path": ".claude/skills/e2e-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/xnopre/copro-tickets-tracker",
+  "dir_name": "e2e-writer-xnopre-copro-tickets-tracke-2"
+}

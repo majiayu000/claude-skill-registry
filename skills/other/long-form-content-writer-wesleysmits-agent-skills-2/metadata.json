@@ -1,0 +1,11 @@
+{
+  "name": "long-form-content-writer",
+  "description": "Generates comprehensive blog post drafts with proper structure. Use when the user asks to write a full article, create blog content, draft long-form posts, or needs complete written content with SEO o",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/long-form-content-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "long-form-content-writer-wesleysmits-agent-skills-2"
+}

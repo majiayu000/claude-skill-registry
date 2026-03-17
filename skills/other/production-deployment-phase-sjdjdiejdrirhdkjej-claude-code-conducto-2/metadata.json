@@ -1,0 +1,11 @@
+{
+  "name": "production-deployment-phase",
+  "description": "Executes production deployment workflow by promoting validated staging builds to production with semantic versioning, health checks, and release tagging. Use when running /ship-prod command, deploying",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/production-deployment-phase",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "production-deployment-phase-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+}

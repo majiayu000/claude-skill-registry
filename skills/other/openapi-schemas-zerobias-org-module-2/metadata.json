@@ -1,0 +1,11 @@
+{
+  "name": "openapi-schemas",
+  "description": "OpenAPI schema rules 14-24 for response models, nullable handling, and data modeling",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/openapi-schemas",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "openapi-schemas-zerobias-org-module-2"
+}

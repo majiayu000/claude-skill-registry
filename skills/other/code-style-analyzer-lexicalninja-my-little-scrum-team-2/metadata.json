@@ -1,0 +1,11 @@
+{
+  "name": "code-style-analyzer",
+  "description": "Analyzes code for style and formatting issues including inconsistent formatting, naming conventions, code organization, comment quality, unused code, and magic numbers. Returns structured style issue ",
+  "repo": "lexicalninja/my-little-scrum-team",
+  "path": "skills/code-style-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lexicalninja/my-little-scrum-team",
+  "dir_name": "code-style-analyzer-lexicalninja-my-little-scrum-team-2"
+}

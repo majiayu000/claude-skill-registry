@@ -1,0 +1,11 @@
+{
+  "name": "sqlite",
+  "description": "Integrates SQLite embedded database with Node.js using better-sqlite3 for synchronous operations or the native Node.js SQLite module. Use when building applications with local storage, embedded databa",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/databases-orms/sqlite",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "sqlite-mgd34msu-goodvibes-plugin-2"
+}

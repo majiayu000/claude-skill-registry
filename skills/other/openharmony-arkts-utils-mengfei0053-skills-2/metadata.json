@@ -1,0 +1,11 @@
+{
+  "name": "openharmony-arkts-utils",
+  "description": "OpenHarmony ArkTS工具库快速参考 - 并发、TaskPool、Worker、Sendable、XML、Buffer、JSON、容器和运行时特性",
+  "repo": "mengfei0053/skills",
+  "path": "skills/openharmony-arkts-utils",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mengfei0053/skills",
+  "dir_name": "openharmony-arkts-utils-mengfei0053-skills-2"
+}

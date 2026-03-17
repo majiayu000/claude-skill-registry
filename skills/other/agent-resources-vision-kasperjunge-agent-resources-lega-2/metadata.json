@@ -1,0 +1,11 @@
+{
+  "name": "agent-resources-vision",
+  "description": "North star guidance for the agent-resources project. Use this skill to understand project context, get inspiration for development decisions, and resolve uncertainty about feature priorities or design",
+  "repo": "kasperjunge/agent-resources-legacy",
+  "path": ".claude/skills/agent-resources-vision",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kasperjunge/agent-resources-legacy",
+  "dir_name": "agent-resources-vision-kasperjunge-agent-resources-lega-2"
+}

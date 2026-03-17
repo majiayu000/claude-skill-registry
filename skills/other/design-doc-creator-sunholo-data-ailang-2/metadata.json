@@ -1,0 +1,11 @@
+{
+  "name": "design-doc-creator",
+  "description": "Create AILANG design documents in the correct format and location. Use when user asks to create a design doc, plan a feature, or document a design. Handles both planned/ and implemented/ docs with pro",
+  "repo": "sunholo-data/ailang",
+  "path": ".claude/skills/design-doc-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunholo-data/ailang",
+  "dir_name": "design-doc-creator-sunholo-data-ailang-2"
+}

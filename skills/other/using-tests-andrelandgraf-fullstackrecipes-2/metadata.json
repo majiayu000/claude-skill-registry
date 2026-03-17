@@ -1,0 +1,11 @@
+{
+  "name": "using-tests",
+  "description": "Testing strategy and workflow. Tests run in parallel with isolated data per suite. Prioritize Playwright for UI, integration tests for APIs, unit tests for logic.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/using-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "using-tests-andrelandgraf-fullstackrecipes-2"
+}

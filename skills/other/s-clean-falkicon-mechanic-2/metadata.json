@@ -1,0 +1,11 @@
+{
+  "name": "s-clean",
+  "description": "Find and remove dead code and stale documentation. Covers unused functions, orphaned files, dead links, and outdated references. Use for maintenance, pre-release cleanup, or codebase hygiene. Triggers",
+  "repo": "Falkicon/Mechanic",
+  "path": ".claude/skills/s-clean",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Falkicon/Mechanic",
+  "dir_name": "s-clean-falkicon-mechanic-2"
+}

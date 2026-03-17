@@ -1,0 +1,11 @@
+{
+  "name": "worktree-workflow",
+  "description": "Git worktree を使用したホスト環境での並行開発ワークフロー。プラットフォーム固有コード（macOS API等）の開発時に使用。",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/worktree-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "worktree-workflow-takemo101-compose-workflow-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "bias-and-fairness-auditing",
+  "description": "Audit pilot data, models, and workflows for bias and inclusivity issues. Use when evaluating fairness across demographic groups, identifying algorithmic biases, and recommending mitigation strategies ",
+  "repo": "profmikegreene/gotei",
+  "path": "Gotei_Skills/bias-and-fairness-auditing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/profmikegreene/gotei",
+  "dir_name": "bias-and-fairness-auditing-profmikegreene-gotei-2"
+}

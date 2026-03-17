@@ -1,0 +1,11 @@
+{
+  "name": "estimation",
+  "description": "Estimation techniques including analogous, parametric, three-point, and expert judgment methods. Provides effort, cost, duration, and complexity estimates for projects, features, and tasks.",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/business-analysis/estimation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "estimation-prorise-cool-claude-code-multi-ag-2"
+}

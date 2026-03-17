@@ -1,0 +1,11 @@
+{
+  "name": "score-analyzer",
+  "description": "Analyze multi-round evaluation result scoring data, calculate various metrics, calculate rating grades. Suitable for analyzing scoring trends, calculating S/A/B ratings",
+  "repo": "VanGongwanxiaowan/screen-creative-skills",
+  "path": "category/novel-screening/score-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VanGongwanxiaowan/screen-creative-skills",
+  "dir_name": "score-analyzer-vangongwanxiaowan-screen-creative-skil-2"
+}

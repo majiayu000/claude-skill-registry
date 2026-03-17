@@ -1,0 +1,11 @@
+{
+  "name": "quality-capture-baseline",
+  "description": "Captures quality metrics baseline (tests, coverage, type errors, linting) by running quality gates and storing results in memory. PROACTIVELY invoked at feature start, before refactor work, or after m",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/quality-capture-baseline",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "quality-capture-baseline-dawiddutoit-custom-claude-2"
+}

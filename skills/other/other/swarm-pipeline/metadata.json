@@ -1,0 +1,17 @@
+{
+  "name": "swarm-pipeline",
+  "repo": "ben-alkov/the_swarm",
+  "path": "src/skills/swarm-pipeline/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ben-alkov/the_swarm",
+  "dir_name": "swarm-pipeline",
+  "downloaded_at": "2026-03-17T14:22:58.133633Z",
+  "author": "ben-alkov",
+  "source_url": "https://github.com/ben-alkov/the_swarm/blob/main/src/skills/swarm-pipeline/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ben-alkov/the_swarm/blob/main/src/skills/swarm-pipeline/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

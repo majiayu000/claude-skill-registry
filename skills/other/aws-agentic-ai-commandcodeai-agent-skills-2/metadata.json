@@ -1,0 +1,11 @@
+{
+  "name": "aws-agentic-ai",
+  "description": "AWS Bedrock AgentCore comprehensive expert for deploying and managing all AgentCore services. Use when working with Gateway, Runtime, Memory, Identity, or any AgentCore component. Covers MCP target de",
+  "repo": "CommandCodeAI/agent-skills",
+  "path": "skills/aws-agentic-ai",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CommandCodeAI/agent-skills",
+  "dir_name": "aws-agentic-ai-commandcodeai-agent-skills-2"
+}

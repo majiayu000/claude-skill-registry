@@ -1,0 +1,11 @@
+{
+  "name": "backend-golang",
+  "description": "Golang Developer Agent. Go 언어 기반 백엔드 개발을 담당합니다. Gin, Echo, GORM, 고성능 마이크로서비스 전문.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/backend-golang",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "backend-golang-shaul1991-shaul-agents-plugin-2"
+}

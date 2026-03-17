@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-testing-patterns",
+  "description": "Jest testing patterns, factory functions, mocking strategies, and TDD workflow. Use when writing unit tests, creating test factories, or following TDD red-green-refactor cycle.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-testing-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-testing-patterns-boisenoise-skills-collections-2"
+}

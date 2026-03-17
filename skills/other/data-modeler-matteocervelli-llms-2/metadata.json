@@ -1,0 +1,11 @@
+{
+  "name": "data-modeler",
+  "description": "Design data models with Pydantic schemas, comprehensive validation rules, type annotations, and relationship mappings.",
+  "repo": "matteocervelli/llms",
+  "path": ".claude/skills/data-modeler",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/matteocervelli/llms",
+  "dir_name": "data-modeler-matteocervelli-llms-2"
+}

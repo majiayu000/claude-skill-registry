@@ -1,0 +1,17 @@
+{
+  "name": "quick-quality-check",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/quick-quality-check/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "dir_name": "quick-quality-check",
+  "downloaded_at": "2026-03-01T05:07:33.723651Z",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/quick-quality-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/quick-quality-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

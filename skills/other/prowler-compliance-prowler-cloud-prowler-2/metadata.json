@@ -1,0 +1,11 @@
+{
+  "name": "prowler-compliance",
+  "description": "Creates and manages Prowler compliance frameworks. Trigger: When working with compliance frameworks (CIS, NIST, PCI-DSS, SOC2, GDPR, ISO27001, ENS, MITRE ATT&CK).\n",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/prowler-compliance-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/prowler-cloud/prowler",
+  "dir_name": "prowler-compliance-prowler-cloud-prowler-2"
+}

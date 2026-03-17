@@ -1,0 +1,11 @@
+{
+  "name": "atdd-assistant",
+  "description": "Guide teams through Acceptance Test-Driven Development workflow.\nUse when: defining acceptance criteria, running specification workshops, writing user stories with acceptance tests, PO sign-off.\nKeywo",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "path": "skills/claude-code/atdd-assistant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AsiaOstrich/universal-dev-standards",
+  "dir_name": "atdd-assistant-asiaostrich-universal-dev-standa-2"
+}

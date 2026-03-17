@@ -1,0 +1,11 @@
+{
+  "name": "slides-create",
+  "description": "Google Slides プレゼンテーションを新規作成する。「プレゼン作成」「Slides 作成」「新しいスライド」「プレゼンを作って」などで起動。",
+  "repo": "shiiman/claude-code-plugins",
+  "path": "plugins/shiiman-google/skills/slides-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shiiman/claude-code-plugins",
+  "dir_name": "slides-create-shiiman-claude-code-plugins-2"
+}

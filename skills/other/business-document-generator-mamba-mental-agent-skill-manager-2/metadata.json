@@ -1,0 +1,11 @@
+{
+  "name": "business-document-generator",
+  "description": "This skill should be used when the user requests to create professional business documents (proposals, business plans, or budgets) from templates. It provides PDF templates and a Python script for gen",
+  "repo": "mamba-mental/agent-skill-manager",
+  "path": ".claude/skills/business-document-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mamba-mental/agent-skill-manager",
+  "dir_name": "business-document-generator-mamba-mental-agent-skill-manager-2"
+}

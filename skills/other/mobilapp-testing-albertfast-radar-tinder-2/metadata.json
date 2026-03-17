@@ -1,0 +1,11 @@
+{
+  "name": "mobilapp-testing",
+  "description": "Testing and validation workflows for the Radar Tinder mobile application built with Expo + React Native, Firebase (Auth, Firestore, Realtime/Cloud Functions), Maps APIs, and on-device ONNX inference. ",
+  "repo": "albertfast/radar_tinder",
+  "path": ".github/skills/mobilapp-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/albertfast/radar_tinder",
+  "dir_name": "mobilapp-testing-albertfast-radar-tinder-2"
+}

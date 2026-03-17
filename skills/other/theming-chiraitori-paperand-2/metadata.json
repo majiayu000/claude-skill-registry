@@ -1,0 +1,11 @@
+{
+  "name": "theming",
+  "description": "Theme management with dark mode and custom .pbcolors themes",
+  "repo": "chiraitori/paperand",
+  "path": ".agent/skills/theming",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chiraitori/paperand",
+  "dir_name": "theming-chiraitori-paperand-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "adb-bypass",
+  "description": "PlayIntegrityFork bypass verification and validation for Play Integrity spoofing detection",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".claude/skills/adb/adb-utility/adb-bypass",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "dir_name": "adb-bypass-rdmptv-adbautoplayer-2"
+}

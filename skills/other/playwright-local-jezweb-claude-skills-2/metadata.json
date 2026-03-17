@@ -1,0 +1,11 @@
+{
+  "name": "playwright-local",
+  "description": "Build browser automation and web scraping with Playwright on your local machine. Prevents 10 documented errors including CI timeout hangs, extension testing failures, and Ubuntu compatibility issues. ",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/playwright-local",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "playwright-local-jezweb-claude-skills-2"
+}

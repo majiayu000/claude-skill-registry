@@ -1,0 +1,11 @@
+{
+  "name": "api-integration-builder",
+  "description": "Build reliable third-party API integrations including OAuth, webhooks, rate limiting, error handling, and data sync. Use when integrating with external services (Slack, Stripe, Gmail, etc.), building ",
+  "repo": "daffy0208/ai-dev-standards",
+  "path": "skills/api-integration-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/daffy0208/ai-dev-standards",
+  "dir_name": "api-integration-builder-daffy0208-ai-dev-standards-2"
+}

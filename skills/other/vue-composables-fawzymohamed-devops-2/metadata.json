@@ -1,0 +1,11 @@
+{
+  "name": "vue-composables",
+  "description": "Patterns for Vue 3 composables with localStorage persistence in Nuxt 4. Activate when creating composables, working with useProgress, useQuiz, useCertificate, or localStorage.",
+  "repo": "fawzymohamed/devops",
+  "path": ".claude/skills/vue-composables",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fawzymohamed/devops",
+  "dir_name": "vue-composables-fawzymohamed-devops-2"
+}

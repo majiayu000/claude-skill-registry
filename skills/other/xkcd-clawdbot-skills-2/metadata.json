@@ -1,0 +1,11 @@
+{
+  "name": "xkcd",
+  "description": "Fetch xkcd comics - latest, random, by number, or search by keyword. Display comics with title, image, and alt text (the hidden joke). Generate custom xkcd-style stick figure comics using image genera",
+  "repo": "clawdbot/skills",
+  "path": "skills/dbhurley/xkcd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "xkcd-clawdbot-skills-2"
+}

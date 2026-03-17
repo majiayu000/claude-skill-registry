@@ -1,0 +1,11 @@
+{
+  "name": "html-presentation",
+  "description": "Generate HTML-based presentations with reveal.js or similar frameworks. Use when creating web-based presentations.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/html-presentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "html-presentation-ntaksh42-agents-2"
+}

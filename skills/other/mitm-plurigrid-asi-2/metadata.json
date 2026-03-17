@@ -1,0 +1,11 @@
+{
+  "name": "mitm",
+  "description": "Track and summarize man-in-the-middle mentions across local corpora and history; use for MITM audits, searches, and reporting.",
+  "repo": "plurigrid/asi",
+  "path": "skills/mitm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "mitm-plurigrid-asi-2"
+}

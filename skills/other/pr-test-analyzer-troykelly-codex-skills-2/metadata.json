@@ -1,0 +1,11 @@
+{
+  "name": "pr-test-analyzer",
+  "description": "Use when asked to evaluate PR test coverage or explicitly asked to run the pr-test-analyzer subagent.",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/pr-test-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "pr-test-analyzer-troykelly-codex-skills-2"
+}

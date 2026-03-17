@@ -1,0 +1,11 @@
+{
+  "name": "cube-iml",
+  "description": "Check and repair PyCharm/IntelliJ module configuration (.iml file).\nTriggered by \"/cube-iml\" or when user reports PyCharm doesn't recognize src/tests folders.",
+  "repo": "boaznahum/cubesolve",
+  "path": ".claude/skills/cube-iml",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boaznahum/cubesolve",
+  "dir_name": "cube-iml-boaznahum-cubesolve-2"
+}

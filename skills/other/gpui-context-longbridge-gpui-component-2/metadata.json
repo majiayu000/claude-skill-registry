@@ -1,0 +1,11 @@
+{
+  "name": "gpui-context",
+  "description": "Context management in GPUI including App, Window, and AsyncApp. Use when working with contexts, entity updates, or window operations. Different context types provide different capabilities for UI rend",
+  "repo": "longbridge/gpui-component",
+  "path": ".claude/skills/gpui-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/longbridge/gpui-component",
+  "dir_name": "gpui-context-longbridge-gpui-component-2"
+}

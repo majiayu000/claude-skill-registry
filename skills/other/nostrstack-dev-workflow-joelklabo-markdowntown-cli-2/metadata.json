@@ -1,0 +1,11 @@
+{
+  "name": "nostrstack-dev-workflow",
+  "description": "Local development workflow for nostrstack, including running API/gallery with logs, regtest stack usage, MCP Chrome DevTools verification, QA fallback, and environment/setup troubleshooting. Use when ",
+  "repo": "joelklabo/markdowntown-cli",
+  "path": "codex/skills/nostrstack-dev-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown-cli",
+  "dir_name": "nostrstack-dev-workflow-joelklabo-markdowntown-cli-2"
+}

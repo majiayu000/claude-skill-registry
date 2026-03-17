@@ -1,0 +1,11 @@
+{
+  "name": "happiness-dashboard",
+  "description": "Evidence framework data dashboard with DuckDB. Write SQL in markdown to create visualizations.",
+  "repo": "rebyteai-template/rebyte-skills",
+  "path": "happiness-dashboard",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rebyteai-template/rebyte-skills",
+  "dir_name": "happiness-dashboard-rebyteai-template-rebyte-skills-2"
+}

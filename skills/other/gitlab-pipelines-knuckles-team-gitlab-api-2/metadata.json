@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-pipelines",
+  "description": "Manages GitLab pipelines. Use for listing, running pipelines. Triggers: CI triggers.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-pipelines",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-pipelines-knuckles-team-gitlab-api-2"
+}

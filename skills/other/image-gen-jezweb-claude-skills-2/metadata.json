@@ -1,0 +1,11 @@
+{
+  "name": "image-gen",
+  "description": "Generate website images with Gemini 3 Native Image Generation. Covers hero banners, service cards, infographics with legible text, and multi-turn editing. Includes Australian-specific imagery patterns",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/image-gen",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "image-gen-jezweb-claude-skills-2"
+}

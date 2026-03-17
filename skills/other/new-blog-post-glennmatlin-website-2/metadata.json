@@ -1,0 +1,11 @@
+{
+  "name": "new-blog-post",
+  "description": "Create a new blog post with proper Quarto structure, frontmatter, and directory layout. Use when adding articles, tutorials, thoughts, or any blog content.",
+  "repo": "glennmatlin/website",
+  "path": ".claude/skills/new-blog-post",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/glennmatlin/website",
+  "dir_name": "new-blog-post-glennmatlin-website-2"
+}

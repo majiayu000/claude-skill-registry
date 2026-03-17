@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-icons",
+  "description": "Implement custom icons in Umbraco backoffice using official docs",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-icons",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-icons-umbraco-umbraco-cms-backoffi-2"
+}

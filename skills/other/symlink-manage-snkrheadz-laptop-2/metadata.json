@@ -1,0 +1,11 @@
+{
+  "name": "symlink-manage",
+  "description": "シンボリックリンクの状態確認・再作成。リンク切れの検出と修復。トリガー: symlink, link, リンク切れ, リンク, シンボリック",
+  "repo": "snkrheadz/laptop",
+  "path": ".claude/skills/symlink-manage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/snkrheadz/laptop",
+  "dir_name": "symlink-manage-snkrheadz-laptop-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rag-query",
+  "description": "Consulta ao corpus RAG do projeto. Busca conhecimento em decisoes,\ndocumentacao, learnings e padroes armazenados.\nUse quando: buscar decisoes passadas, encontrar documentacao, recuperar padroes.\n",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/rag-query",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "rag-query-arbgjr-satra-2"
+}

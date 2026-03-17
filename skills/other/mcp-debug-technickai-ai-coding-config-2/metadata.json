@@ -1,0 +1,11 @@
+{
+  "name": "mcp-debug",
+  "description": "Use when testing MCP servers, debugging MCP tool responses, exploring MCP capabilities, or diagnosing why an MCP tool returns unexpected data",
+  "repo": "TechNickAI/ai-coding-config",
+  "path": "plugins/core/skills/mcp-debug",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TechNickAI/ai-coding-config",
+  "dir_name": "mcp-debug-technickai-ai-coding-config-2"
+}

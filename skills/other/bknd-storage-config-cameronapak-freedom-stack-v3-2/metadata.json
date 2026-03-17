@@ -1,0 +1,11 @@
+{
+  "name": "bknd-storage-config",
+  "description": "Use when configuring storage backends for file uploads. Covers S3-compatible storage (AWS S3, Cloudflare R2, DigitalOcean Spaces), Cloudinary media storage, local filesystem adapter for development, a",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-storage-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-storage-config-cameronapak-freedom-stack-v3-2"
+}

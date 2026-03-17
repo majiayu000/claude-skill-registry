@@ -1,0 +1,11 @@
+{
+  "name": "web-design-reviewer",
+  "description": "This skill enables visual inspection of websites running locally or remotely to identify and fix design issues. Triggers on requests like \"review website design\", \"check the UI\", \"fix the layout\", \"fi",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/github-copilot/web-design-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "web-design-reviewer-vasic-digital-superagent-2"
+}

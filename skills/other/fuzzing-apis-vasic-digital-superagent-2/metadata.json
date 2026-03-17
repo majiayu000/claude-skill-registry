@@ -1,0 +1,11 @@
+{
+  "name": "fuzzing-apis",
+  "description": "Configure perform API fuzzing to discover edge cases, crashes, and security vulnerabilities.\nUse when performing specialized testing.\nTrigger with phrases like \"fuzz the API\", \"run fuzzing tests\", or ",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/testing/api-fuzzer/fuzzing-apis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "fuzzing-apis-vasic-digital-superagent-2"
+}

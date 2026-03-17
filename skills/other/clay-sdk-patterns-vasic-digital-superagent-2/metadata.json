@@ -1,0 +1,11 @@
+{
+  "name": "clay-sdk-patterns",
+  "description": "Apply production-ready Clay SDK patterns for TypeScript and Python.\nUse when implementing Clay integrations, refactoring SDK usage,\nor establishing team coding standards for Clay.\nTrigger with phrases",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/clay-pack/clay-sdk-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "clay-sdk-patterns-vasic-digital-superagent-2"
+}

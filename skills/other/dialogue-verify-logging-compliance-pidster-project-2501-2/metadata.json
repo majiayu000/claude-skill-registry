@@ -1,0 +1,11 @@
+{
+  "name": "dialogue-verify-logging-compliance",
+  "description": "Verify that required logging occurred during a process execution. Use before presenting work for approval to ensure decisions and observations were captured. Triggers on \"verify logging\", \"check compl",
+  "repo": "pidster/project-2501",
+  "path": "claude-plugin-evo/skills/dialogue-verify-logging-compliance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pidster/project-2501",
+  "dir_name": "dialogue-verify-logging-compliance-pidster-project-2501-2"
+}

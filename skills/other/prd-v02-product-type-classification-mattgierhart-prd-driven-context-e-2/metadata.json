@@ -1,0 +1,11 @@
+{
+  "name": "prd-v02-product-type-classification",
+  "description": "Classify product approach into one of six types (Clone, Unbundle, Undercut, Slice, Wrapper, Innovation) based on competitive landscape. Triggers on PRD v0.2 work after competitive analysis, or when us",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v02-product-type-classification",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v02-product-type-classification-mattgierhart-prd-driven-context-e-2"
+}

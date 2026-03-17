@@ -1,0 +1,11 @@
+{
+  "name": "azure-role-selector",
+  "description": "When user is asking for guidance for which role to assign to an identity given desired permissions, this agent helps them understand the role that will meet the requirements with least privilege acces",
+  "repo": "github/awesome-copilot",
+  "path": "skills/azure-role-selector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/github/awesome-copilot",
+  "dir_name": "azure-role-selector-github-awesome-copilot-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "performance-regression-detector",
+  "description": "This skill enables Claude to automatically detect performance regressions in a CI/CD pipeline. It analyzes performance metrics, such as response time and throughput, and compares them against baseline",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/performance/performance-regression-detector/skills/performance-regression-detector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "performance-regression-detector-intent-solutions-io-plugins-nixtla-2"
+}

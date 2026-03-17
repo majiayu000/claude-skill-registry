@@ -1,0 +1,11 @@
+{
+  "name": "view-components",
+  "description": "Generates initial view components with mandatory unit tests. Creates HomeView.vue, PageNotFoundView.vue, and their .spec.ts test files (4 files total).",
+  "repo": "sayali-ingle-pdl/adusa-ai-vuejs-app-template",
+  "path": ".github/agents/app-starter/agents-context/skills/view-components",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sayali-ingle-pdl/adusa-ai-vuejs-app-template",
+  "dir_name": "view-components-sayali-ingle-pdl-adusa-ai-vuejs-app-t-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "skill-gap-analyzer",
+  "description": "Analyzes project requirements to identify missing skills and automatically creates them.\nEnforces MCP Code Execution pattern for skills that use external tools.\nThis skill should be used when starting",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/skill-gap-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "skill-gap-analyzer-wania-kazmi-claude-code-autonomo-2"
+}

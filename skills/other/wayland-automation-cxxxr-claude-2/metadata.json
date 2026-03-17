@@ -1,0 +1,11 @@
+{
+  "name": "wayland-automation",
+  "description": "Wayland環境でのGUI自動化。スクリーンショット取得、テキスト入力、クリップボード操作のパターン集",
+  "repo": "cxxxr/.claude",
+  "path": "skills/wayland-automation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cxxxr/.claude",
+  "dir_name": "wayland-automation-cxxxr-claude-2"
+}

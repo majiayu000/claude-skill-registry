@@ -1,0 +1,11 @@
+{
+  "name": "detox-mobile-test",
+  "description": "Эксперт Detox тестирования. Используй для React Native E2E tests и mobile automation.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/detox-mobile-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "detox-mobile-test-dengineproblem-agents-monorepo-2"
+}

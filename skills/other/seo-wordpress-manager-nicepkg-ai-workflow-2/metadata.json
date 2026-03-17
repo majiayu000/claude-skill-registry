@@ -1,0 +1,11 @@
+{
+  "name": "seo-wordpress-manager",
+  "description": "Batch update Yoast SEO metadata (titles, descriptions, focus keyphrases) in WordPress via GraphQL. Use when the user wants to update SEO metadata, optimize titles, fix meta descriptions, or manage Yoa",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/content-creator-workflow/.claude/skills/seo-wordpress-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "seo-wordpress-manager-nicepkg-ai-workflow-2"
+}

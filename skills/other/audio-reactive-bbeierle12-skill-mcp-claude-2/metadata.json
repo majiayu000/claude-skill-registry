@@ -1,0 +1,11 @@
+{
+  "name": "audio-reactive",
+  "description": "Binding audio analysis data to visual parameters including smoothing, beat detection responses, and frequency-to-visual mappings. Use when creating audio visualizers, music-reactive animations, or any",
+  "repo": "Bbeierle12/Skill-MCP-Claude",
+  "path": "skills/audio-reactive",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Bbeierle12/Skill-MCP-Claude",
+  "dir_name": "audio-reactive-bbeierle12-skill-mcp-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "numpy-datetime",
+  "description": "NumPy implements datetime64 for fixed-point dates and timedelta64 for durations. Unlike Python's standard datetime, NumPy's implementation is \"naive\" (no timezones) and designed for high-performance v",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/numpy-datetime",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "numpy-datetime-cuba6112-skillfactory-2"
+}

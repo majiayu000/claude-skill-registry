@@ -1,0 +1,11 @@
+{
+  "name": "architecture-documentation",
+  "description": "Use this skill when modifying or creating architecture documentation.",
+  "repo": "wmeints/promptyard",
+  "path": ".claude/skills/architecture-documentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wmeints/promptyard",
+  "dir_name": "architecture-documentation-wmeints-promptyard-2"
+}

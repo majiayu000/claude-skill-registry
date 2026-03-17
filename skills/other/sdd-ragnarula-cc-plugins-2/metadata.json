@@ -1,0 +1,11 @@
+{
+  "name": "sdd",
+  "description": "This skill outlines how to follow the spec driven development workflow. The workflow is non-negotiable and must be followed for sdd or Spec Driven Development. Use this for writing, refining and revie",
+  "repo": "ragnarula/cc-plugins",
+  "path": "sdd/skills/distributed-systems",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ragnarula/cc-plugins",
+  "dir_name": "sdd-ragnarula-cc-plugins-2"
+}

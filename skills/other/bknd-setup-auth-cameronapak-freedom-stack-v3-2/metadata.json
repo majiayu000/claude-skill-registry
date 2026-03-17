@@ -1,0 +1,11 @@
+{
+  "name": "bknd-setup-auth",
+  "description": "Use when initializing or configuring the Bknd authentication system. Covers enabling auth, configuring password strategy, setting up JWT and cookie options, defining roles, and production security set",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-setup-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-setup-auth-cameronapak-freedom-stack-v3-2"
+}

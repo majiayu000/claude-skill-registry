@@ -1,0 +1,17 @@
+{
+  "name": "hive-mesh-grpc",
+  "repo": "MidOSresearch/midos",
+  "path": "knowledge/skills/hive_mesh_grpc/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MidOSresearch/midos",
+  "dir_name": "hive-mesh-grpc",
+  "downloaded_at": "2026-03-01T05:43:05.588841Z",
+  "author": "MidOSresearch",
+  "source_url": "https://github.com/MidOSresearch/midos/blob/main/knowledge/skills/hive_mesh_grpc/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MidOSresearch/midos/blob/main/knowledge/skills/hive_mesh_grpc/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

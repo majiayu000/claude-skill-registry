@@ -1,0 +1,11 @@
+{
+  "name": "workflow-integration-sonar",
+  "description": "Sonar issue workflow - fetch issues, triage, and fix or suppress based on context",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-workflow/skills/workflow-integration-sonar",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "workflow-integration-sonar-cuioss-plan-marshall-2"
+}

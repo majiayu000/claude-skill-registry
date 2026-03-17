@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-skill-validator",
+  "description": "Validate links and references in SKILL.md files using deterministic scripts",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": ".claude/skills/umbraco-skill-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-skill-validator-umbraco-umbraco-cms-backoffi-2"
+}

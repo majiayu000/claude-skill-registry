@@ -1,0 +1,9 @@
+{
+  "name": "prometheus-configuration",
+  "repo": "Krosebrook/source-of-truth-monorepo",
+  "path": "plugins/marketplaces/ando-marketplace/plugins/observability-monitoring/skills/prometheus-configuration/SKILL.md",
+  "category": "other",
+  "source": "github.com/Krosebrook/source-of-truth-monorepo",
+  "dir_name": "prometheus-configuration",
+  "downloaded_at": "2026-02-22T05:17:52.962526Z"
+}

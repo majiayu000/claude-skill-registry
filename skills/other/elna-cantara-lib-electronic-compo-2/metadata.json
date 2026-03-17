@@ -1,0 +1,11 @@
+{
+  "name": "elna",
+  "description": "Elna Company MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Elna audio-grade aluminum electrolytic capacitors and supercapacitors.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/elna",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "elna-cantara-lib-electronic-compo-2"
+}

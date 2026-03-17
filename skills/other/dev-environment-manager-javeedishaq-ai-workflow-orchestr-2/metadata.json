@@ -1,0 +1,11 @@
+{
+  "name": "dev-environment-manager",
+  "description": "Manage local development environment, database resets, health checks, deployment validation, production data sync, and Vercel environment variables; use when setting up dev environment, resetting data",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/dev-environment-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "dev-environment-manager-javeedishaq-ai-workflow-orchestr-2"
+}

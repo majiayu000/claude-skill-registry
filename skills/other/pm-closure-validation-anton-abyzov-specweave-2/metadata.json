@@ -1,0 +1,11 @@
+{
+  "name": "pm-closure-validation",
+  "description": "Expert PM validation for increment closure with 3-gate quality checks (tasks, tests, documentation). Acts as final quality gate before closing increments. Validates task completion, test coverage, doc",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave/skills/pm-closure-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/anton-abyzov/specweave",
+  "dir_name": "pm-closure-validation-anton-abyzov-specweave-2"
+}

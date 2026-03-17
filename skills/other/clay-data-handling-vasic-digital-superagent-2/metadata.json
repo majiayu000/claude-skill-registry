@@ -1,0 +1,11 @@
+{
+  "name": "clay-data-handling",
+  "description": "Implement Clay PII handling, data retention, and GDPR/CCPA compliance patterns.\nUse when handling sensitive data, implementing data redaction, configuring retention policies,\nor ensuring compliance wi",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/clay-pack/clay-data-handling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "clay-data-handling-vasic-digital-superagent-2"
+}

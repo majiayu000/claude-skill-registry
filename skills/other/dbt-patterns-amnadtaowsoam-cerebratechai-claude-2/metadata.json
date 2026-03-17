@@ -1,0 +1,11 @@
+{
+  "name": "dbt-patterns",
+  "description": "Comprehensive guide to dbt (data build tool) patterns, modeling best practices, testing strategies, and production workflows for modern data transformation",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "53-data-engineering/dbt-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "dbt-patterns-amnadtaowsoam-cerebratechai-claude-2"
+}

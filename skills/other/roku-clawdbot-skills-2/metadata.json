@@ -1,0 +1,11 @@
+{
+  "name": "roku",
+  "description": "CLI interface to control Roku devices via python-roku.",
+  "repo": "clawdbot/skills",
+  "path": "skills/gumadeiras/roku",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "roku-clawdbot-skills-2"
+}

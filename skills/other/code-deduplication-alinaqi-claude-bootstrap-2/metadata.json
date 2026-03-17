@@ -1,0 +1,11 @@
+{
+  "name": "code-deduplication",
+  "description": "Prevent semantic code duplication with capability index and check-before-write",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/code-deduplication",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "dir_name": "code-deduplication-alinaqi-claude-bootstrap-2"
+}

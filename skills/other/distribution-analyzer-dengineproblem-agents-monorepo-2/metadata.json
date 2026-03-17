@@ -1,0 +1,11 @@
+{
+  "name": "distribution-analyzer",
+  "description": "Эксперт анализа распределений. Используй для statistical distributions, data analysis и hypothesis testing.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/distribution-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "distribution-analyzer-dengineproblem-agents-monorepo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "dbt-migration-sybase",
+  "description": "Convert Sybase IQ DDL to dbt models compatible with Snowflake. This skill should be used when converting views, tables, or stored procedures from Sybase IQ to dbt code, generating schema.yml files wit",
+  "repo": "sfc-gh-dflippo/snowflake-dbt-demo",
+  "path": ".claude/skills/dbt-migration-sybase",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sfc-gh-dflippo/snowflake-dbt-demo",
+  "dir_name": "dbt-migration-sybase-sfc-gh-dflippo-snowflake-dbt-demo-2"
+}

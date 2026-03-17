@@ -1,0 +1,11 @@
+{
+  "name": "dojo-state",
+  "description": "Use when managing game state with Zustand in dojo.js.\nTriggers: dojo state, zustand dojo, game state, createDojoStore, optimistic update,\ngetEntity, mergeEntities, state management, revert transaction",
+  "repo": "dojoengine/dojo.js",
+  "path": ".claude/skills/dojo-state",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dojoengine/dojo.js",
+  "dir_name": "dojo-state-dojoengine-dojo-js-2"
+}

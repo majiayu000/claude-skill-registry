@@ -1,0 +1,11 @@
+{
+  "name": "oracle-cloud",
+  "description": "Provides comprehensive Oracle Cloud Infrastructure (OCI) guidance including compute instances, networking (VCN, load balancers, VPN), storage (block, object, file), database services (Autonomous Datab",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/oracle-cloud",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "dir_name": "oracle-cloud-dauquangthanh-hanoi-rainbow-2"
+}

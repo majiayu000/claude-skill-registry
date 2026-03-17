@@ -1,0 +1,11 @@
+{
+  "name": "api-fuzzing-bug-bounty",
+  "description": "This skill should be used when the user asks to \"test API security\", \"fuzz APIs\", \"find IDOR vulnerabilities\", \"test REST API\", \"test GraphQL\", \"API penetration testing\", \"bug bounty API testing\", or ",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/api-fuzzing-bug-bounty",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "api-fuzzing-bug-bounty-sickn33-antigravity-awesome--2"
+}

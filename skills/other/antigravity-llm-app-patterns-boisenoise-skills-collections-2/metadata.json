@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-llm-app-patterns",
+  "description": "Production-ready patterns for building LLM applications. Covers RAG pipelines, agent architectures, prompt IDEs, and LLMOps monitoring. Use when designing AI applications, implementing RAG, building a",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-llm-app-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-llm-app-patterns-boisenoise-skills-collections-2"
+}

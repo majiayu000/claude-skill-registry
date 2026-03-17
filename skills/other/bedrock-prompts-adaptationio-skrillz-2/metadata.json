@@ -1,0 +1,11 @@
+{
+  "name": "bedrock-prompts",
+  "description": "Amazon Bedrock Prompt Management for creating, versioning, and managing prompt templates with variables, multi-variant A/B testing, and flow integration. Use when creating reusable prompt templates, m",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/bedrock-prompts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "bedrock-prompts-adaptationio-skrillz-2"
+}

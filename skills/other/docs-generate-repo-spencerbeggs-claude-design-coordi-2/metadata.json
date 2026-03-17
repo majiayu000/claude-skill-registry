@@ -1,0 +1,11 @@
+{
+  "name": "docs-generate-repo",
+  "description": "Generate Level 2 (repository docs) from design docs. Use when creating comprehensive topic-based documentation for developers.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/docs-generate-repo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "docs-generate-repo-spencerbeggs-claude-design-coordi-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "deploy",
+  "repo": "finlaysonstudio/jaypie",
+  "path": ".claude/skills/deploy/SKILL.md",
+  "category": "other",
+  "source": "github.com/finlaysonstudio/jaypie",
+  "dir_name": "deploy-finlaysonstudio-jaypie",
+  "downloaded_at": "2026-02-22T07:09:59.696407Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "migrating-to-swift-concurrency",
+  "description": "Provides the complete Swift Concurrency Migration Guide. Use when migrating to Swift 6, resolving data-race safety errors, understanding Sendable and actor isolation, or incrementally adopting async/a",
+  "repo": "kylehughes/the-unofficial-swift-concurrency-migration-skill",
+  "path": "migrating-to-swift-concurrency",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kylehughes/the-unofficial-swift-concurrency-migration-skill",
+  "dir_name": "migrating-to-swift-concurrency-kylehughes-the-unofficial-swift-2"
+}

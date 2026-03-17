@@ -1,0 +1,11 @@
+{
+  "name": "write-e2e-tests",
+  "description": "Writing Playwright E2E tests for tldraw. Use when creating browser tests, testing UI interactions, or adding E2E coverage in apps/examples/e2e or apps/dotcom/client/e2e.",
+  "repo": "tldraw/tldraw",
+  "path": ".claude/skills/write-e2e-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tldraw/tldraw",
+  "dir_name": "write-e2e-tests-tldraw-tldraw-2"
+}

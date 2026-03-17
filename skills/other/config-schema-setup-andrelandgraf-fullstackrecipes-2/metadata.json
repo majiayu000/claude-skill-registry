@@ -1,0 +1,11 @@
+{
+  "name": "config-schema-setup",
+  "description": "Type-safe environment variable validation using Zod with a Drizzle-like schema API. Supports server/public fields, feature flags, either-or constraints, and client-side protection.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/config-schema-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "config-schema-setup-andrelandgraf-fullstackrecipes-2"
+}

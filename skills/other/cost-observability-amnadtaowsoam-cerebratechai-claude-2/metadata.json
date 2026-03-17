@@ -1,0 +1,11 @@
+{
+  "name": "cost-observability",
+  "description": "Techniques for gaining visibility into cloud spending, attributing costs to business units, and detecting financial anomalies.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "42-cost-engineering/cost-observability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "cost-observability-amnadtaowsoam-cerebratechai-claude-2"
+}

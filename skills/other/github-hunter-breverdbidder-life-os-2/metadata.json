@@ -1,0 +1,11 @@
+{
+  "name": "github-hunter",
+  "description": "Automatically discover, score, and archive relevant GitHub repositories for BidDeed.AI and Life OS projects. Use this skill when the user requests to find GitHub repositories for specific topics, tech",
+  "repo": "breverdbidder/life-os",
+  "path": ".claude/skills/github-hunter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/breverdbidder/life-os",
+  "dir_name": "github-hunter-breverdbidder-life-os-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "dbt-migration-redshift",
+  "description": "Convert Amazon Redshift DDL to dbt models compatible with Snowflake. This skill should be used when converting views, tables, or stored procedures from Redshift to dbt code, generating schema.yml file",
+  "repo": "sfc-gh-dflippo/snowflake-dbt-demo",
+  "path": ".claude/skills/dbt-migration-redshift",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sfc-gh-dflippo/snowflake-dbt-demo",
+  "dir_name": "dbt-migration-redshift-sfc-gh-dflippo-snowflake-dbt-demo-2"
+}

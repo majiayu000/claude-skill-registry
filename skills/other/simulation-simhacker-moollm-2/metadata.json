@@ -1,0 +1,11 @@
+{
+  "name": "simulation",
+  "description": "Abstract base for runtime state — adventure, city-sim, ecosystem all inherit from this",
+  "repo": "SimHacker/moollm",
+  "path": "skills/simulation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "simulation-simhacker-moollm-2"
+}

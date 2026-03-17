@@ -1,0 +1,11 @@
+{
+  "name": "top-web-vulnerabilities",
+  "description": "This skill should be used when the user asks to \"identify web application vulnerabilities\", \"explain common security flaws\", \"understand vulnerability categories\", \"learn about injection attacks\", \"re",
+  "repo": "zebbern/claude-code-guide",
+  "path": "skills/top-web-vulnerabilities",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zebbern/claude-code-guide",
+  "dir_name": "top-web-vulnerabilities-zebbern-claude-code-guide-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "documenting-code",
+  "description": "Update project documentation based on recent changes. Use when user says \"update docs\", \"document\", \"add documentation\", \"update readme\", \"write docs\", or wants to improve documentation.",
+  "repo": "alexei-led/claude-code-config",
+  "path": "skills/documenting-code",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alexei-led/claude-code-config",
+  "dir_name": "documenting-code-alexei-led-claude-code-config-2"
+}

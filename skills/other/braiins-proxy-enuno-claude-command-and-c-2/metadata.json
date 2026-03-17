@@ -1,0 +1,11 @@
+{
+  "name": "braiins-proxy",
+  "description": "Braiins Farm Proxy - high-performance Stratum V2 mining proxy for large-scale Bitcoin mining operations with aggregation and fallback features",
+  "repo": "enuno/claude-command-and-control",
+  "path": "INTEGRATION/processed/braiins-proxy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "braiins-proxy-enuno-claude-command-and-c-2"
+}

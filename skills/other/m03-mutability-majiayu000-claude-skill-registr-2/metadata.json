@@ -1,0 +1,11 @@
+{
+  "name": "m03-mutability",
+  "description": "CRITICAL: Use for mutability issues. Triggers: E0596, E0499, E0502, cannot borrow as mutable, already borrowed as immutable, mut, &mut, interior mutability, Cell, RefCell, Mutex, RwLock, 可变性, 内部可变性, 借",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/m03-mutability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "m03-mutability-majiayu000-claude-skill-registr-2"
+}

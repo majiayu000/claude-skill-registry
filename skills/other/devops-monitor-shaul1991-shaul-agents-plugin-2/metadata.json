@@ -1,0 +1,11 @@
+{
+  "name": "devops-monitor",
+  "description": "DevOps Monitor Agent. 시스템 모니터링, 로그 분석, 상태 확인을 담당합니다. 모니터링, 상태(status), 로그(logs), 알림 관련 요청 시 사용됩니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/devops-monitor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "devops-monitor-shaul1991-shaul-agents-plugin-2"
+}

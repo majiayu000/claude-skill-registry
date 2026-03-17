@@ -1,0 +1,11 @@
+{
+  "name": "pix-validation",
+  "description": "Validates PIX key requirements for MutuaPIX platform, ensuring email used for login matches PIX key email for payment processing",
+  "repo": "Lucasdoreac/mutuapix-workspace",
+  "path": ".claude/skills/pix-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lucasdoreac/mutuapix-workspace",
+  "dir_name": "pix-validation-lucasdoreac-mutuapix-workspace-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ghm-gate-check",
+  "description": "Validates gate criteria before PRD lifecycle advancement. Triggers before advancing from v0.X to v0.Y or explicit `/ghm-gate-check` invocation. Outputs pass/block summary with missing artifacts list.",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/ghm-gate-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "ghm-gate-check-mattgierhart-prd-driven-context-e-2"
+}

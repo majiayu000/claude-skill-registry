@@ -1,0 +1,11 @@
+{
+  "name": "obra-systematic-debugging",
+  "description": "Use when errors are unclear, flaky, or regressions occur; apply a disciplined debugging loop in VS Code Copilot Agent mode.",
+  "repo": "faulkdev/github-copilot-superpowers",
+  "path": "scripts/overrides/obra/obra-systematic-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/faulkdev/github-copilot-superpowers",
+  "dir_name": "obra-systematic-debugging-faulkdev-github-copilot-super-2"
+}

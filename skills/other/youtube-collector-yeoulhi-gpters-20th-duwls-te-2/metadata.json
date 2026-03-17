@@ -1,0 +1,11 @@
+{
+  "name": "youtube-collector",
+  "description": "유튜브 채널을 등록하고 새 컨텐츠를 수집하여 자막 기반 요약을 생성하는 skill. 사용자가 (1) 유튜브 채널 등록/관리를 요청하거나, (2) 등록된 채널의 새 영상 수집을 요청하거나, (3) 유튜브 영상 요약을 요청할 때 사용. 데이터는 .reference/ 폴더에 YAML 형식으로 저장됨.",
+  "repo": "YeoulHi/gpters-20th-duwls-templates",
+  "path": ".claude/skills/youtube-collector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/YeoulHi/gpters-20th-duwls-templates",
+  "dir_name": "youtube-collector-yeoulhi-gpters-20th-duwls-te-2"
+}

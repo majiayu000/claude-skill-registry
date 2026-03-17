@@ -1,0 +1,11 @@
+{
+  "name": "gmsh-meshing",
+  "description": "Specialized AI agent for finite element mesh generation and manipulation using GMSH. Use for 1D/2D/3D mesh generation, geometry processing, quality assessment, optimization, and integration with OrcaF",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/gmsh-meshing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "gmsh-meshing-vamseeachanta-digitalmodel-2"
+}

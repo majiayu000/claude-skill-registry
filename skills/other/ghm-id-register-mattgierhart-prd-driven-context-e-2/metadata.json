@@ -1,0 +1,11 @@
+{
+  "name": "ghm-id-register",
+  "description": "Validates and registers new SoT IDs with cross-reference integrity. Triggers when creating BR-XXX, UJ-XXX, API-XXX, or CFD-XXX entries. Outputs formatted SoT entry with validated cross-references.",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/ghm-id-register",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "ghm-id-register-mattgierhart-prd-driven-context-e-2"
+}

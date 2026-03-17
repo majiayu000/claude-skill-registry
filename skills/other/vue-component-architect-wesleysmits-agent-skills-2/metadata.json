@@ -1,0 +1,11 @@
+{
+  "name": "vue-component-architect",
+  "description": "Scaffolds Vue/Nuxt components with Composition API, CSS modules, Vitest tests, and Storybook stories. Use when the user asks to create a Vue component, generate component boilerplate, or mentions Vue ",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/vue-component-architect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "vue-component-architect-wesleysmits-agent-skills-2"
+}

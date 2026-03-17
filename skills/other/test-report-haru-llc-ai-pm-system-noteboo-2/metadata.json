@@ -1,0 +1,11 @@
+{
+  "name": "test-report",
+  "description": "テスト結果報告書を作成する。テスト完了後の結果報告、品質レビュー時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/executing/test-report",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "test-report-haru-llc-ai-pm-system-noteboo-2"
+}

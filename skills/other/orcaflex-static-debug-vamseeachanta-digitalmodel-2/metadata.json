@@ -1,0 +1,11 @@
+{
+  "name": "orcaflex-static-debug",
+  "description": "Troubleshoot and resolve OrcaFlex static analysis convergence issues. Diagnose common problems including line connectivity, tensions, environmental conditions, and numerical instabilities.",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcaflex-static-debug",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcaflex-static-debug-vamseeachanta-digitalmodel-2"
+}

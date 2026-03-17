@@ -1,0 +1,11 @@
+{
+  "name": "paw-review-impact",
+  "description": "Analyzes system-wide impact of PR changes including integration effects, breaking changes, performance, and security implications.",
+  "repo": "lossyrob/phased-agent-workflow",
+  "path": "skills/paw-review-impact",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lossyrob/phased-agent-workflow",
+  "dir_name": "paw-review-impact-lossyrob-phased-agent-workflo-2"
+}

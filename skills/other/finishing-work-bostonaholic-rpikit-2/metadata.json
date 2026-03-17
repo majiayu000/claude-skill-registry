@@ -1,0 +1,11 @@
+{
+  "name": "finishing-work",
+  "description": "Structured completion workflow for implementation work. Use when implementation is complete, all tests pass, and you need to decide how to integrate the work. Guides merge, PR creation, or cleanup dec",
+  "repo": "bostonaholic/rpikit",
+  "path": "skills/finishing-work",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bostonaholic/rpikit",
+  "dir_name": "finishing-work-bostonaholic-rpikit-2"
+}

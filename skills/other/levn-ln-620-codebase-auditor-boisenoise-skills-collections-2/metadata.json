@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-620-codebase-auditor",
+  "description": "Coordinates 9 specialized audit workers (security, build, architecture, code quality, dependencies, dead code, observability, concurrency, lifecycle). Researches best practices, delegates parallel aud",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-620-codebase-auditor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-620-codebase-auditor-boisenoise-skills-collections-2"
+}

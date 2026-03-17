@@ -1,0 +1,11 @@
+{
+  "name": "python-development",
+  "description": "Modern Python development with Python 3.12+, Django, FastAPI, async patterns,",
+  "repo": "plurigrid/asi",
+  "path": "skills/python-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "python-development-plurigrid-asi-2"
+}

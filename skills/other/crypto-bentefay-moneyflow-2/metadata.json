@@ -1,0 +1,11 @@
+{
+  "name": "crypto",
+  "description": "Client-side cryptography with libsodium. Use when working on files in src/lib/crypto/.",
+  "repo": "bentefay/moneyflow",
+  "path": ".claude/skills/crypto",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bentefay/moneyflow",
+  "dir_name": "crypto-bentefay-moneyflow-2"
+}

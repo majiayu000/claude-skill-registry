@@ -1,0 +1,11 @@
+{
+  "name": "scrum-event-sprint-review",
+  "description": "Verify Definition of Done and acceptance criteria for Sprint increments. Use when completing sprints, running verification commands, or preparing for acceptance.",
+  "repo": "staticWagomU/dotfiles",
+  "path": "config/claude/skills/scrum-event-sprint-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/staticWagomU/dotfiles",
+  "dir_name": "scrum-event-sprint-review-staticwagomu-dotfiles-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "fmp-api",
+  "description": "Financial Modeling Prep API for stocks, fundamentals, SEC filings, institutional holdings (13F), and congressional trading. Use when fetching financial statements, ratios, DCF valuations, insider/inst",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/fmp-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "fmp-api-adaptationio-skrillz-2"
+}

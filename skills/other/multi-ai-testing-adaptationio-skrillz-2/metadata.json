@@ -1,0 +1,11 @@
+{
+  "name": "multi-ai-testing",
+  "description": "Test-driven development with independent verification to prevent test gaming. TDD workflows, test generation, coverage validation (≥80% gate, ≥95% target), property-based testing, edge case discovery.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/multi-ai-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "multi-ai-testing-adaptationio-skrillz-2"
+}

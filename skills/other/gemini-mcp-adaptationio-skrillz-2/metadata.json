@@ -1,0 +1,11 @@
+{
+  "name": "gemini-mcp",
+  "description": "Manage MCP (Model Context Protocol) servers with Gemini CLI for extended tool capabilities, custom integrations, and enterprise workflows. Use when integrating external tools, databases, or APIs with ",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/gemini-mcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "gemini-mcp-adaptationio-skrillz-2"
+}

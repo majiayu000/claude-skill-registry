@@ -1,0 +1,11 @@
+{
+  "name": "using-gremlins",
+  "description": "Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions",
+  "repo": "brmatola/gremlins",
+  "path": "skills/using-gremlins",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/brmatola/gremlins",
+  "dir_name": "using-gremlins-brmatola-gremlins-2"
+}

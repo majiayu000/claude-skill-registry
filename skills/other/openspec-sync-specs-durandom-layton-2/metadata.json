@@ -1,0 +1,11 @@
+{
+  "name": "openspec-sync-specs",
+  "description": "Sync delta specs from a change to main specs. Use when the user wants to update main specs with changes from a delta spec, without archiving the change.",
+  "repo": "durandom/layton",
+  "path": ".claude/skills/openspec-sync-specs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/durandom/layton",
+  "dir_name": "openspec-sync-specs-durandom-layton-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "using-ai-engineering",
+  "description": "Route AI/ML tasks to correct Yzmir pack - frameworks, training, RL, LLMs, architectures, production",
+  "repo": "tachyon-beep/skillpacks",
+  "path": "plugins/yzmir-ai-engineering-expert/skills/using-ai-engineering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tachyon-beep/skillpacks",
+  "dir_name": "using-ai-engineering-tachyon-beep-skillpacks-2"
+}

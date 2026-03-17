@@ -1,0 +1,11 @@
+{
+  "name": "threat-model",
+  "description": "This skill provides structured methodologies for identifying, analyzing, and mitigating security threats in system designs. Use it when designing new systems, reviewing existing architectures, or asse",
+  "repo": "cosmix/loom",
+  "path": "skills/threat-model",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "threat-model-cosmix-loom-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "expansion-evaluation",
+  "description": "Manage the SoNash expansion evaluation process for reviewing ~280 feature and technical ideas across 21 modules. This skill should be used when the user wants to evaluate expansion ideas, track progre",
+  "repo": "jasonmichaelbell78-creator/sonash-v0",
+  "path": ".claude/skills/expansion-evaluation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonmichaelbell78-creator/sonash-v0",
+  "dir_name": "expansion-evaluation-jasonmichaelbell78-c-sonash-v0-2"
+}

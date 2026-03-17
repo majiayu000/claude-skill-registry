@@ -1,0 +1,11 @@
+{
+  "name": "concurrent-render-budgeting",
+  "description": "Design render budget systems that prevent UI regressions under heavy load.",
+  "repo": "harborgrid-justin/lexiflow-premium",
+  "path": "frontend/.github-skills/concurrent-render-budgeting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/harborgrid-justin/lexiflow-premium",
+  "dir_name": "concurrent-render-budgeting-harborgrid-justin-lexiflow-premium-2"
+}

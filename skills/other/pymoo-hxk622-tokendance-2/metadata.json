@@ -1,0 +1,11 @@
+{
+  "name": "pymoo",
+  "description": "Multi-objective optimization framework. NSGA-II, NSGA-III, MOEA/D, Pareto fronts, constraint handling, benchmarks (ZDT, DTLZ), for engineering design and optimization problems.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/research-tools/pymoo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "pymoo-hxk622-tokendance-2"
+}

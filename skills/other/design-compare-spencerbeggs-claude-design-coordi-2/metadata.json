@@ -1,0 +1,11 @@
+{
+  "name": "design-compare",
+  "description": "Compare doc versions across git history. Use when reviewing changes, tracking evolution, or understanding modifications.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/design-compare",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "design-compare-spencerbeggs-claude-design-coordi-2"
+}

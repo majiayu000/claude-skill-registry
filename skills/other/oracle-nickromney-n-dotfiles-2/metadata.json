@@ -1,0 +1,11 @@
+{
+  "name": "oracle",
+  "description": "Use the @steipete/oracle CLI to bundle a prompt plus the right files and get a second-model review (API or browser) for debugging, refactors, design checks, or cross-validation.",
+  "repo": "nickromney/n-dotfiles",
+  "path": "skills/oracle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nickromney/n-dotfiles",
+  "dir_name": "oracle-nickromney-n-dotfiles-2"
+}

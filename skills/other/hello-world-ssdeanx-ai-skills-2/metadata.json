@@ -1,0 +1,11 @@
+{
+  "name": "hello-world",
+  "description": "A simple introductory skill that demonstrates basic OpenCode skill functionality and provides a starting template",
+  "repo": "ssdeanx/AI-Skills",
+  "path": "skills/hello-world",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ssdeanx/AI-Skills",
+  "dir_name": "hello-world-ssdeanx-ai-skills-2"
+}

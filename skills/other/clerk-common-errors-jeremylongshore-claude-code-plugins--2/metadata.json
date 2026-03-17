@@ -1,0 +1,11 @@
+{
+  "name": "clerk-common-errors",
+  "description": "Troubleshoot common Clerk errors and issues.\nUse when encountering authentication errors, SDK issues,\nor configuration problems with Clerk.\nTrigger with phrases like \"clerk error\", \"clerk not working\"",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/clerk-pack/skills/clerk-common-errors",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "clerk-common-errors-jeremylongshore-claude-code-plugins--2"
+}

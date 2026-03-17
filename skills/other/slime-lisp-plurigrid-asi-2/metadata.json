@@ -1,0 +1,11 @@
+{
+  "name": "slime-lisp",
+  "description": "SLIME integration for Common Lisp development",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.ruler/skills/slime-lisp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "slime-lisp-plurigrid-asi-2"
+}

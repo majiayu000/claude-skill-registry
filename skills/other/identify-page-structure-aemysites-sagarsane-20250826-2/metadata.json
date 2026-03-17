@@ -1,0 +1,11 @@
+{
+  "name": "identify-page-structure",
+  "description": "Identify section boundaries and content sequences within a scraped webpage for AEM Edge Delivery Services import. Performs two-level analysis (sections, then sequences per section) and surveys availab",
+  "repo": "aemysites/sagarsane-20250826",
+  "path": ".claude/skills/identify-page-structure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aemysites/sagarsane-20250826",
+  "dir_name": "identify-page-structure-aemysites-sagarsane-20250826-2"
+}

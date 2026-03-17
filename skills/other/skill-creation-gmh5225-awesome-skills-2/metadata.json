@@ -1,0 +1,11 @@
+{
+  "name": "skill-creation",
+  "description": "Guide for creating Agent Skills: structure, best practices, and SKILL.md format for Claude Code, Codex, Gemini CLI, and other AI agents.",
+  "repo": "gmh5225/awesome-skills",
+  "path": ".claude/skills/skill-creation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gmh5225/awesome-skills",
+  "dir_name": "skill-creation-gmh5225-awesome-skills-2"
+}

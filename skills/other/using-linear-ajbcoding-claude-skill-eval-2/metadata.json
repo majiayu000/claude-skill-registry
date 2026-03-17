@@ -1,0 +1,11 @@
+{
+  "name": "using-linear",
+  "description": "Use when working with Linear tickets/issues - establishes workflows for creating and updating tickets (issues)",
+  "repo": "AJBcoding/claude-skill-eval",
+  "path": "claude-code-stuff-main/skills/using-linear",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AJBcoding/claude-skill-eval",
+  "dir_name": "using-linear-ajbcoding-claude-skill-eval-2"
+}

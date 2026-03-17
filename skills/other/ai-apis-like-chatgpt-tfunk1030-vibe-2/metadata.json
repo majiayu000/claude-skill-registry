@@ -1,0 +1,11 @@
+{
+  "name": "ai-apis-like-chatgpt",
+  "description": "How to use AI APIs like OpenAI, ChatGPT, Elevenlabs, etc. When a user asks you to make an app that requires an AI API, use this skill to understand how to use the API or how to respond to the user.",
+  "repo": "tfunk1030/vibe",
+  "path": ".claude/skills/ai-apis-like-chatgpt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tfunk1030/vibe",
+  "dir_name": "ai-apis-like-chatgpt-tfunk1030-vibe-2"
+}

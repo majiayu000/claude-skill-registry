@@ -1,0 +1,11 @@
+{
+  "name": "vercel-cli",
+  "description": "Deploy and manage Vercel projects via CLI. Use when deploying apps, managing environment variables, configuring domains, or pushing secrets to Vercel. Triggers on deploy, vercel, env vars, production.",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/vercel-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "vercel-cli-skillrecordings-support-2"
+}

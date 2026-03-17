@@ -1,0 +1,11 @@
+{
+  "name": "validate-skill",
+  "description": "Validate skill directories against AgentSkills spec",
+  "repo": "plaited/development-skills",
+  "path": ".claude/skills/validate-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plaited/development-skills",
+  "dir_name": "validate-skill-plaited-development-skills-2"
+}

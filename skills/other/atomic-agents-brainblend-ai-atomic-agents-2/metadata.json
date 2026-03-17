@@ -1,0 +1,11 @@
+{
+  "name": "atomic-agents",
+  "description": "This skill should be used when the user asks to \"create an agent\", \"configure AtomicAgent\", \"set up agent\", \"agent configuration\", \"AgentConfig\", \"ChatHistory\", or needs guidance on agent initializati",
+  "repo": "BrainBlend-AI/atomic-agents",
+  "path": "claude-plugin/atomic-agents/skills/atomic-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BrainBlend-AI/atomic-agents",
+  "dir_name": "atomic-agents-brainblend-ai-atomic-agents-2"
+}

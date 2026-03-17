@@ -1,0 +1,11 @@
+{
+  "name": "nielsen-match-real-world",
+  "description": "Asegura que el sistema use lenguaje y conceptos familiares para los usuarios. Use cuando escriba copy, diseñe iconografía, o estructure información para que coincida con modelos mentales del usuario.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/heuristics/nielsen-match-real-world",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "nielsen-match-real-world-vjrivmon-handwriting-ocr-2"
+}

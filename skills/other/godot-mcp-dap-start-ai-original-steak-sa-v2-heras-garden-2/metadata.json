@@ -1,0 +1,11 @@
+{
+  "name": "godot-mcp-dap-start",
+  "description": "Start or restart the Godot editor MCP server and debugger/DAP ports for this project. Use when MCP tools are missing, handshake fails, or the debug port is absent; includes a single-editor restart wor",
+  "repo": "AI-Original-Steak-Sauce/v2_heras_garden",
+  "path": ".claude/skills/godot-mcp-dap-start",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AI-Original-Steak-Sauce/v2_heras_garden",
+  "dir_name": "godot-mcp-dap-start-ai-original-steak-sa-v2-heras-garden-2"
+}

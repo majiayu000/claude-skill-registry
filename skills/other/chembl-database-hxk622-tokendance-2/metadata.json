@@ -1,0 +1,11 @@
+{
+  "name": "chembl-database",
+  "description": "Query ChEMBL bioactive molecules and drug discovery data. Search compounds by structure/properties, retrieve bioactivity data (IC50, Ki), find inhibitors, perform SAR studies, for medicinal chemistry.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/chemistry/chembl-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "chembl-database-hxk622-tokendance-2"
+}

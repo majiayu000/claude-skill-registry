@@ -1,0 +1,11 @@
+{
+  "name": "inline-documentation",
+  "description": "Use when writing code - ensure complete JSDoc, docstrings, and inline comments assuming documentation will be generated from code",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/inline-documentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "inline-documentation-troykelly-codex-skills-2"
+}

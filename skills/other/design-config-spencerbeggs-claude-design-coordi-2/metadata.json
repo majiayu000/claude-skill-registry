@@ -1,0 +1,11 @@
+{
+  "name": "design-config",
+  "description": "Manage design documentation system configuration. Use when initializing the system, adding modules, or updating quality standards.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/design-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "design-config-spencerbeggs-claude-design-coordi-2"
+}

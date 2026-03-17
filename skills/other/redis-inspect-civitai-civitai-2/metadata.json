@@ -1,0 +1,11 @@
+{
+  "name": "redis-inspect",
+  "description": "Inspect Redis cache keys, values, and TTLs for debugging. Supports both main cache and system cache. Use for debugging cache issues, checking cached values, and monitoring cache state. Read-only by de",
+  "repo": "civitai/civitai",
+  "path": ".claude/skills/redis-inspect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/civitai/civitai",
+  "dir_name": "redis-inspect-civitai-civitai-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "interview-analyst",
+  "description": "Pragmatic qualitative analysis for interview data in sociology research. Guides you through systematic coding, interpretation, and synthesis with quality checkpoints. Supports theory-informed (Track A",
+  "repo": "nealcaren/sociology-analysis-agents",
+  "path": "plugins/interview-analyst/skills/interview-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nealcaren/sociology-analysis-agents",
+  "dir_name": "interview-analyst-nealcaren-sociology-analysis-a-2"
+}

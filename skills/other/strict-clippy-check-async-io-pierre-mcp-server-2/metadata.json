@@ -1,0 +1,11 @@
+{
+  "name": "strict-clippy-check",
+  "description": "Enforces zero-tolerance code quality policy using Clippy with strict lints, all warnings treated as errors",
+  "repo": "Async-IO/pierre_mcp_server",
+  "path": ".claude/skills/strict-clippy-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Async-IO/pierre_mcp_server",
+  "dir_name": "strict-clippy-check-async-io-pierre-mcp-server-2"
+}

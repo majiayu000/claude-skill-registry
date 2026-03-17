@@ -1,0 +1,11 @@
+{
+  "name": "fuzzing-harness",
+  "description": "Building effective fuzzing harnesses to maximize code coverage and vulnerability discovery through automated input generation",
+  "repo": "macaugh/super-rouge-hunter-skills",
+  "path": "skills/exploitation/fuzzing-harness",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/macaugh/super-rouge-hunter-skills",
+  "dir_name": "fuzzing-harness-macaugh-super-rouge-hunter-s-2"
+}

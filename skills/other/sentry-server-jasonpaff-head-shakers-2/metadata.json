@@ -1,0 +1,11 @@
+{
+  "name": "sentry-server",
+  "description": "Enforces project server-side Sentry monitoring conventions when implementing error tracking, performance monitoring, and breadcrumb logging in server actions, facades, middleware, and API routes. This",
+  "repo": "JasonPaff/head-shakers",
+  "path": ".claude/skills/sentry-server",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JasonPaff/head-shakers",
+  "dir_name": "sentry-server-jasonpaff-head-shakers-2"
+}

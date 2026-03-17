@@ -1,0 +1,11 @@
+{
+  "name": "code-documentation",
+  "description": "TSDoc standards for TypeScript/JavaScript code. Automatically invoked when writing, reviewing, or editing any TSDoc comments, code documentation, or API documentation. (project)",
+  "repo": "plaited/development-skills",
+  "path": ".claude/skills/code-documentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plaited/development-skills",
+  "dir_name": "code-documentation-plaited-development-skills-2"
+}

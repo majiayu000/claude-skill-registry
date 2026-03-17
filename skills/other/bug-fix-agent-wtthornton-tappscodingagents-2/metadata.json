@@ -1,0 +1,11 @@
+{
+  "name": "bug-fix-agent",
+  "description": "Bug Fix Agent - Automated bug fixing with review loopback and auto-commit to main branch. Fixes bugs, tests them, reviews quality, and commits when quality gates pass.",
+  "repo": "wtthornton/TappsCodingAgents",
+  "path": ".claude/skills/bug-fix-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wtthornton/TappsCodingAgents",
+  "dir_name": "bug-fix-agent-wtthornton-tappscodingagents-2"
+}

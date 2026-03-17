@@ -1,0 +1,9 @@
+{
+  "name": "gpg-multi-key",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/github-specialist/gpg-multi-key/SKILL.md",
+  "category": "other",
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "gpg-multi-key",
+  "downloaded_at": "2026-02-22T05:35:39.356066Z"
+}

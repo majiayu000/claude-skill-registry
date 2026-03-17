@@ -1,0 +1,11 @@
+{
+  "name": "asi-agent-orama",
+  "description": "ASI Agent-O-Rama Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/asi-agent-orama",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "asi-agent-orama-plurigrid-asi-2"
+}

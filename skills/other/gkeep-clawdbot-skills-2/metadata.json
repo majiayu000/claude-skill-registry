@@ -1,0 +1,11 @@
+{
+  "name": "gkeep",
+  "description": "Google Keep notes via gkeepapi. List, search, create, and manage notes.",
+  "repo": "clawdbot/skills",
+  "path": "skills/vacinc/gkeep",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "gkeep-clawdbot-skills-2"
+}

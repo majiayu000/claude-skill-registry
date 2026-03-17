@@ -1,0 +1,11 @@
+{
+  "name": "bknd-delete-entity",
+  "description": "Use when removing an entity from Bknd. Covers safely deleting entities, handling relationships and dependencies, data backup, the sync workflow with --drop flag, and cleaning up orphaned data.",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-delete-entity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-delete-entity-cameronapak-freedom-stack-v3-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "chilisin",
+  "description": "Chilisin Electronics inductor MPN encoding patterns, value decoding, and handler guidance. Use when working with Chilisin inductors or ChilisinHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/chilisin",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "chilisin-cantara-lib-electronic-compo-2"
+}

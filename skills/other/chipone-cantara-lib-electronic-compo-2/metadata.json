@@ -1,0 +1,11 @@
+{
+  "name": "chipone",
+  "description": "Chipone Technology MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Chipone LED driver components or ChiponeHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/chipone",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "chipone-cantara-lib-electronic-compo-2"
+}

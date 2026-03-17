@@ -1,0 +1,11 @@
+{
+  "name": "interaction-nets",
+  "description": "Lafont's interaction nets for optimal parallel λ-reduction. Graph rewriting",
+  "repo": "plurigrid/asi",
+  "path": "skills/interaction-nets",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "interaction-nets-plurigrid-asi-2"
+}

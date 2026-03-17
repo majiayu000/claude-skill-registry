@@ -1,0 +1,11 @@
+{
+  "name": "file-analyzer",
+  "description": "分析文件内容、结构和统计信息，支持多种文件格式",
+  "repo": "atovk/skillx",
+  "path": "skills/02-file-operations/file-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/atovk/skillx",
+  "dir_name": "file-analyzer-atovk-skillx-2"
+}

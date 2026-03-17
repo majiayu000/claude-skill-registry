@@ -1,0 +1,11 @@
+{
+  "name": "marktplaats",
+  "description": "Search Marktplaats.nl classifieds across all categories with filtering support.",
+  "repo": "clawdbot/skills",
+  "path": "skills/pvoo/marktplaats",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "marktplaats-clawdbot-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "atlas-expert",
+  "description": "Specialized in Atlas ORM and database design for Gravito. Trigger this for schema design, migrations, or complex query building.",
+  "repo": "gravito-framework/gravito",
+  "path": "packages/scaffold/templates/skills/atlas-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gravito-framework/gravito",
+  "dir_name": "atlas-expert-gravito-framework-gravito-2"
+}

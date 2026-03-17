@@ -1,0 +1,11 @@
+{
+  "name": "technical-indicators",
+  "description": "Technical analysis with TA-Lib - Moving averages, RSI, MACD, Bollinger Bands, Stochastic, ATR, candlestick patterns, and strategy signals using OpenAlgo market data",
+  "repo": "marketcalls/openalgo-claude-plugin",
+  "path": "plugins/openalgo-python/skills/technical-indicators",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/marketcalls/openalgo-claude-plugin",
+  "dir_name": "technical-indicators-marketcalls-openalgo-claude-plug-2"
+}

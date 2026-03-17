@@ -1,0 +1,11 @@
+{
+  "name": "ln-630-test-auditor",
+  "description": "Test suite audit coordinator (L2). Delegates to 5 workers (Business Logic, E2E, Value, Coverage, Isolation). Aggregates results, creates Linear task in Epic 0.",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-630-test-auditor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-630-test-auditor-levnikolaevich-claude-code-skills-2"
+}

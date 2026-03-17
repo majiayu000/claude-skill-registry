@@ -1,0 +1,11 @@
+{
+  "name": "auto-merge",
+  "description": "Merge an existing PR after rebasing, running review-pass, ensuring CI passes, and addressing review comments.",
+  "repo": "joeczar/code-graph-mcp",
+  "path": ".claude/skills/auto-merge",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joeczar/code-graph-mcp",
+  "dir_name": "auto-merge-joeczar-code-graph-mcp-2"
+}

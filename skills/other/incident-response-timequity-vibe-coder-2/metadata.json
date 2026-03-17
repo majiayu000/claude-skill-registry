@@ -1,0 +1,11 @@
+{
+  "name": "incident-response",
+  "description": "Incident management, on-call procedures, and runbook execution.",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/infra/incident-response",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "incident-response-timequity-vibe-coder-2"
+}

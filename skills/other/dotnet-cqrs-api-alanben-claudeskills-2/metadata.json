@@ -1,0 +1,11 @@
+{
+  "name": "dotnet-cqrs-api",
+  "description": "Guide for building .NET APIs using CQRS pattern with MediatR, FluentValidation, and Carter modules",
+  "repo": "alanben/ClaudeSkills",
+  "path": "dotnet-cqrs-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alanben/ClaudeSkills",
+  "dir_name": "dotnet-cqrs-api-alanben-claudeskills-2"
+}

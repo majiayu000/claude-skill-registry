@@ -1,0 +1,11 @@
+{
+  "name": "jira-review",
+  "description": "Review code changes for Jira issue. Use when the user wants to \"review code\", \"code review\", \"jira review\", or \"check implementation\".",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/jira-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "jira-review-lobbi-docs-claude-2"
+}

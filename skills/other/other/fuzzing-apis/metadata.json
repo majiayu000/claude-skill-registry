@@ -1,0 +1,9 @@
+{
+  "name": "fuzzing-apis",
+  "repo": "HelixDevelopment/HelixAgent",
+  "path": "skills/plugins/testing/api-fuzzer/fuzzing-apis/SKILL.md",
+  "category": "other",
+  "source": "github.com/HelixDevelopment/HelixAgent",
+  "dir_name": "fuzzing-apis",
+  "downloaded_at": "2026-02-15T05:12:34.910984Z"
+}

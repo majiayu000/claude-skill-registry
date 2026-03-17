@@ -1,0 +1,11 @@
+{
+  "name": "spawn",
+  "description": "Skills for spawning external processes - AI coding agents and generic CLI commands in new terminal windows. Parent skill category for agent and terminal spawning.",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/consiliency/spawn-terminal",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "spawn-aiskillstore-marketplace-2"
+}

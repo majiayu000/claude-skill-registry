@@ -1,0 +1,11 @@
+{
+  "name": "tanstack-hook",
+  "description": "Generates TanStack Query hooks following project patterns with useQuery. Creates hooks in src/hooks/ with typed return values. Use when creating data fetching logic.",
+  "repo": "eug-subscription/ERP_v3",
+  "path": ".agent/skills/tanstack-hook",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/eug-subscription/ERP_v3",
+  "dir_name": "tanstack-hook-eug-subscription-erp-v3-2"
+}

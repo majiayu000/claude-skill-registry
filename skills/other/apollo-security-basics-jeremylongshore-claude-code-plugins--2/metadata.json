@@ -1,0 +1,11 @@
+{
+  "name": "apollo-security-basics",
+  "description": "Apply Apollo.io API security best practices.\nUse when securing Apollo integrations, managing API keys,\nor implementing secure data handling.\nTrigger with phrases like \"apollo security\", \"secure apollo",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/apollo-pack/skills/apollo-security-basics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "apollo-security-basics-jeremylongshore-claude-code-plugins--2"
+}

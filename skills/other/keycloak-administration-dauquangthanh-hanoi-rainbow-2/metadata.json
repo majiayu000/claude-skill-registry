@@ -1,0 +1,11 @@
+{
+  "name": "keycloak-administration",
+  "description": "Provides comprehensive KeyCloak administration guidance including realm management, user/group administration, client configuration, authentication flows, identity brokering, authorization policies, s",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/keycloak-administration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "dir_name": "keycloak-administration-dauquangthanh-hanoi-rainbow-2"
+}

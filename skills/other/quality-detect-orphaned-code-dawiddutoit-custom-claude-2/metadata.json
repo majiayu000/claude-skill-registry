@@ -1,0 +1,11 @@
+{
+  "name": "quality-detect-orphaned-code",
+  "description": "Detects orphaned code (files/functions that exist but are never imported or called in production),\npreventing \"created but not integrated\" failures. Use before marking features complete, before moving",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/quality-detect-orphaned-code",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "quality-detect-orphaned-code-dawiddutoit-custom-claude-2"
+}

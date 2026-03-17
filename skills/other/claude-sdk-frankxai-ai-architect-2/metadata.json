@@ -1,0 +1,11 @@
+{
+  "name": "claude-sdk",
+  "description": "Build autonomous AI agents using Claude Agent SDK with computer use, tool calling, MCP integration, and production best practices",
+  "repo": "frankxai/ai-architect",
+  "path": "skills/claude-sdk",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/ai-architect",
+  "dir_name": "claude-sdk-frankxai-ai-architect-2"
+}

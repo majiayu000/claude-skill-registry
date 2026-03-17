@@ -1,0 +1,11 @@
+{
+  "name": "backend-endpoint",
+  "description": "Create REST/GraphQL API endpoint with validation, error handling, and tests. Auto-invoke when user says \"add endpoint\", \"create API\", \"new route\", or \"add route\".",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "navigator-main/skills/backend-endpoint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "backend-endpoint-dkyazzentwatwa-supernavigator-2"
+}

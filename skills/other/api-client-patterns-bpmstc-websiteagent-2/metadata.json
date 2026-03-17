@@ -1,0 +1,11 @@
+{
+  "name": "api-client-patterns",
+  "description": "HTTP client patterns, API integration, request/response handling, error handling, retry logic, axios usage. Use when building API clients, integrating external services, handling API errors, or making",
+  "repo": "BPMSTC/websiteagent",
+  "path": ".claude/skills/api-client-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BPMSTC/websiteagent",
+  "dir_name": "api-client-patterns-bpmstc-websiteagent-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-sandbox",
+  "description": "Status: Production Ready (Open Beta)",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-sandbox/skills/cloudflare-sandbox",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "cloudflare-sandbox-secondsky-claude-skills-2"
+}

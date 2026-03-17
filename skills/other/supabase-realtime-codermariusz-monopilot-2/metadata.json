@@ -1,0 +1,11 @@
+{
+  "name": "supabase-realtime",
+  "description": "Apply when implementing real-time features: live updates, presence, broadcast messages, or database change subscriptions.",
+  "repo": "CoderMariusz/MonoPilot",
+  "path": ".claude/skills/supabase-realtime",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CoderMariusz/MonoPilot",
+  "dir_name": "supabase-realtime-codermariusz-monopilot-2"
+}

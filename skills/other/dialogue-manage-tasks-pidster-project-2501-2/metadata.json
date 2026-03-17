@@ -1,0 +1,11 @@
+{
+  "name": "dialogue-manage-tasks",
+  "description": "Always use this skill to manage tasks in .dialogue/tasks/. Each task is a separate YAML file for merge-friendly multi-user workflows. Triggers on \"create task\", \"new task\", \"next task\", \"update task\",",
+  "repo": "pidster/project-2501",
+  "path": "claude-plugin-evo/skills/dialogue-manage-tasks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pidster/project-2501",
+  "dir_name": "dialogue-manage-tasks-pidster-project-2501-2"
+}

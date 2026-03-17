@@ -1,0 +1,9 @@
+{
+  "name": "k8s-pods",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/k8s:pods/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "k8s-pods",
+  "downloaded_at": "2026-02-15T07:49:43.671575Z"
+}

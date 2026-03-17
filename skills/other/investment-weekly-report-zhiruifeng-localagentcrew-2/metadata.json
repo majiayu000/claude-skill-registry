@@ -1,0 +1,11 @@
+{
+  "name": "investment-weekly-report",
+  "description": "Generates comprehensive weekly investment reports aggregating daily data, analyzing weekly trends, and providing strategic outlook",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/investment-weekly-report",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "dir_name": "investment-weekly-report-zhiruifeng-localagentcrew-2"
+}

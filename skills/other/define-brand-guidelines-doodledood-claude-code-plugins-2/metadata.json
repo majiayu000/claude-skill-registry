@@ -1,0 +1,11 @@
+{
+  "name": "define-brand-guidelines",
+  "description": "Create a BRAND_GUIDELINES.md that defines how to communicate with your customer. Requires CUSTOMER.md to exist first. Covers voice, tone, language rules, messaging framework, and copy patterns.",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/solo-dev/skills/define-brand-guidelines",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "define-brand-guidelines-doodledood-claude-code-plugins-2"
+}

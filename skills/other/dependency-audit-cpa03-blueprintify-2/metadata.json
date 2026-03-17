@@ -1,0 +1,11 @@
+{
+  "name": "dependency-audit",
+  "description": "Audit npm dependencies for security vulnerabilities, outdated packages, and license compliance.",
+  "repo": "cpa03/blueprintify",
+  "path": ".opencode/skill/dependency-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cpa03/blueprintify",
+  "dir_name": "dependency-audit-cpa03-blueprintify-2"
+}

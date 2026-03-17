@@ -1,0 +1,11 @@
+{
+  "name": "rust-development",
+  "description": "Idiomatic Rust development with focus on safety, performance, and ergonomics.\nExpert in async/await, error handling, trait design, and the Rust ecosystem.\n",
+  "repo": "terraphim/codex-skills",
+  "path": "skills/rust-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terraphim/codex-skills",
+  "dir_name": "rust-development-terraphim-codex-skills-2"
+}

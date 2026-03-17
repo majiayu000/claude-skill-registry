@@ -1,0 +1,11 @@
+{
+  "name": "go-security-audit",
+  "description": "Security audit for Go backend code and SDKs. Covers Go-specific vulnerabilities, common security pitfalls, and best practices. Use when auditing Go codebases.",
+  "repo": "MAF2414/kyco",
+  "path": ".claude/skills/go-security-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MAF2414/kyco",
+  "dir_name": "go-security-audit-maf2414-kyco-2"
+}

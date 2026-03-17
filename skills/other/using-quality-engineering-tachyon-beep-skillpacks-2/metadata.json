@@ -1,0 +1,11 @@
+{
+  "name": "using-quality-engineering",
+  "description": "Use when user asks about E2E testing, performance testing, chaos engineering, test automation, flaky tests, test data management, or quality practices - routes to specialist reference sheets with deep",
+  "repo": "tachyon-beep/skillpacks",
+  "path": "plugins/ordis-quality-engineering/skills/using-quality-engineering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tachyon-beep/skillpacks",
+  "dir_name": "using-quality-engineering-tachyon-beep-skillpacks-2"
+}

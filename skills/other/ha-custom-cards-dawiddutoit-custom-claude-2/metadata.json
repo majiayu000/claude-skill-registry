@@ -1,0 +1,11 @@
+{
+  "name": "ha-custom-cards",
+  "description": "Configure HACS custom cards for beautiful Home Assistant dashboards including ApexCharts, modern-circular-gauge, bubble-card, mini-graph-card, and mushroom. Use when creating visually rich dashboards ",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/ha-custom-cards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "ha-custom-cards-dawiddutoit-custom-claude-2"
+}

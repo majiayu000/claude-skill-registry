@@ -1,0 +1,11 @@
+{
+  "name": "logic-testing",
+  "description": "Pure logic and math testing with Vitest. Use for single-point assertions on functions, state transitions, and physics calculations. Auto-apply when editing *.test.ts files (except *Progressions.test.t",
+  "repo": "surfdeeper/surfing-game",
+  "path": ".claude/skills/logic-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/surfdeeper/surfing-game",
+  "dir_name": "logic-testing-surfdeeper-surfing-game-2"
+}

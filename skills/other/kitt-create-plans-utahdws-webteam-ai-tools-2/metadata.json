@@ -1,0 +1,11 @@
+{
+  "name": "kitt-create-plans",
+  "description": "Create hierarchical project plans optimized for solo agentic development. Use when planning projects, phases, or tasks that the AI agent will execute. Produces agent-executable plans with verification",
+  "repo": "utahdws/webteam-ai-tools",
+  "path": ".ai-cli/shared/skills/kitt-create-plans",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/utahdws/webteam-ai-tools",
+  "dir_name": "kitt-create-plans-utahdws-webteam-ai-tools-2"
+}

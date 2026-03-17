@@ -1,0 +1,11 @@
+{
+  "name": "dotenvx",
+  "description": "dotenvx - secure environment variable management with encryption. Use for encrypting .env files, multi-environment configuration, cross-platform secret management, and migrating from plaintext dotenv.",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/dotenvx",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "dotenvx-enuno-claude-command-and-c-2"
+}

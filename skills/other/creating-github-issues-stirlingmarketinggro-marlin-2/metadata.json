@@ -1,0 +1,11 @@
+{
+  "name": "creating-github-issues",
+  "description": "Use when creating GitHub issues, making new issues, filing bugs, requesting features, or before running `gh issue create`. Triggers on \"new issue\", \"create issue\", \"file issue\", \"gh issue\", \"open issu",
+  "repo": "StirlingMarketingGroup/marlin",
+  "path": ".claude/skills/creating-github-issues",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/StirlingMarketingGroup/marlin",
+  "dir_name": "creating-github-issues-stirlingmarketinggro-marlin-2"
+}

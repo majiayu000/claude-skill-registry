@@ -1,0 +1,11 @@
+{
+  "name": "mps",
+  "description": "Monolithic Power Systems MPN encoding patterns, suffix decoding, and handler guidance. Use when working with MPS power components or MPSHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/mps",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "mps-cantara-lib-electronic-compo-2"
+}

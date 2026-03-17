@@ -1,0 +1,11 @@
+{
+  "name": "css-standards",
+  "description": "CSS coding standards for Oh My Brand! theme. BEM methodology, custom properties, theme.json integration, responsive design, and accessibility. Use when styling blocks, templates or components.",
+  "repo": "WesleySmits/oh-my-brand-wp-fse",
+  "path": ".github/skills/css-standards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/oh-my-brand-wp-fse",
+  "dir_name": "css-standards-wesleysmits-oh-my-brand-wp-fse-2"
+}

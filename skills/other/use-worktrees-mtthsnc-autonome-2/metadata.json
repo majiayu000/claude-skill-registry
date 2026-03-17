@@ -1,0 +1,11 @@
+{
+  "name": "use-worktrees",
+  "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans",
+  "repo": "mtthsnc/autonome",
+  "path": "skills/use-worktrees",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mtthsnc/autonome",
+  "dir_name": "use-worktrees-mtthsnc-autonome-2"
+}

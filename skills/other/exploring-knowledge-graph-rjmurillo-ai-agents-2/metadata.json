@@ -1,0 +1,11 @@
+{
+  "name": "exploring-knowledge-graph",
+  "description": "Guidance for deep knowledge graph traversal across memories, entities, and relationships. Use when needing comprehensive context before planning, investigating connections between concepts, or answeri",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/exploring-knowledge-graph",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "exploring-knowledge-graph-rjmurillo-ai-agents-2"
+}

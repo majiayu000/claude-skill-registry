@@ -1,0 +1,11 @@
+{
+  "name": "task-pull-request",
+  "description": "Author pull requests and respond to review feedback. Use when creating PRs, requesting reviews, reading comments, addressing feedback, or merging changes.",
+  "repo": "Anveio/conveaux",
+  "path": ".claude/skills/task-pull-request",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Anveio/conveaux",
+  "dir_name": "task-pull-request-anveio-conveaux-2"
+}

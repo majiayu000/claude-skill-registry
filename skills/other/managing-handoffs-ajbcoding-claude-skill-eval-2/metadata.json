@@ -1,0 +1,11 @@
+{
+  "name": "managing-handoffs",
+  "description": "Create, update, and archive handoffs with proper metadata and verification",
+  "repo": "AJBcoding/claude-skill-eval",
+  "path": ".claude/skills/managing-handoffs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AJBcoding/claude-skill-eval",
+  "dir_name": "managing-handoffs-ajbcoding-claude-skill-eval-2"
+}

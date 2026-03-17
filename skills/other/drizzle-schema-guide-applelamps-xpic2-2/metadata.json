@@ -1,0 +1,11 @@
+{
+  "name": "drizzle-schema-guide",
+  "description": "Modify Drizzle ORM database schema safely. Use when user mentions \"add table\", \"new column\", \"database schema\", \"migration\", or \"drizzle\".",
+  "repo": "AppleLamps/xpic2",
+  "path": ".claude/skills/drizzle-schema-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AppleLamps/xpic2",
+  "dir_name": "drizzle-schema-guide-applelamps-xpic2-2"
+}

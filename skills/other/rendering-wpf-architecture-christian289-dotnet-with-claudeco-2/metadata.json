@@ -1,0 +1,11 @@
+{
+  "name": "rendering-wpf-architecture",
+  "description": "Explains WPF rendering pipeline (Measure/Arrange/Render passes) and hardware acceleration tiers. Use when debugging layout issues, optimizing render performance, or understanding why software renderin",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/rendering-wpf-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "rendering-wpf-architecture-christian289-dotnet-with-claudeco-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "testing-expert",
+  "description": "Expert-level software testing with unit tests, integration tests, E2E tests, TDD/BDD, and testing best practices",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/tools/testing-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "testing-expert-personamanagmentlaye-pcl-2"
+}

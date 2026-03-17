@@ -1,0 +1,11 @@
+{
+  "name": "device-testing",
+  "description": "Interact with iOS simulators and verify app behavior using xcobra",
+  "repo": "EvanBacon/apple-health",
+  "path": ".claude/skills/device-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/EvanBacon/apple-health",
+  "dir_name": "device-testing-evanbacon-apple-health-2"
+}

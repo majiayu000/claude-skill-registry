@@ -1,0 +1,11 @@
+{
+  "name": "health-analyze",
+  "description": "分析健康数据，计算健康评分并识别异常指标",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/health-analyze",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "health-analyze-maxoreric-sop-engine-2"
+}

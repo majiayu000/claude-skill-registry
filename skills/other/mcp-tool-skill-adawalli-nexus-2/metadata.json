@@ -1,0 +1,11 @@
+{
+  "name": "mcp-tool-skill",
+  "description": "Write effective MCP server instructions for tool compaction support. Use when creating or updating the `instructions` parameter in MaaSProtectedFastMCP server initialization. Helps LLMs understand whe",
+  "repo": "adawalli/nexus",
+  "path": ".claude/skills/mcp-tool-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adawalli/nexus",
+  "dir_name": "mcp-tool-skill-adawalli-nexus-2"
+}

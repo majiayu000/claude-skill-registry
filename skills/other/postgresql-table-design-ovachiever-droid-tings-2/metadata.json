@@ -1,0 +1,11 @@
+{
+  "name": "postgresql-table-design",
+  "description": "Design a PostgreSQL-specific schema. Covers best-practices, data types, indexing, constraints, performance patterns, and advanced features",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/postgresql-table-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "postgresql-table-design-ovachiever-droid-tings-2"
+}

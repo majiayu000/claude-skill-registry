@@ -1,0 +1,11 @@
+{
+  "name": "writing-for-llms",
+  "description": "Use when writing prompts, agent instructions, SKILL.md, commands, system prompts, Task tool prompts, prompt engineering, or LLM-to-LLM content",
+  "repo": "TechNickAI/ai-coding-config",
+  "path": "plugins/core/skills/writing-for-llms",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TechNickAI/ai-coding-config",
+  "dir_name": "writing-for-llms-technickai-ai-coding-config-2"
+}

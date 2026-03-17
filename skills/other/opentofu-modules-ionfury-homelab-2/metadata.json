@@ -1,0 +1,11 @@
+{
+  "name": "opentofu-modules",
+  "description": "Write OpenTofu/Terraform modules and comprehensive tests for homelab infrastructure.\n\nUse when: (1) Creating new OpenTofu or Terraform modules, (2) Writing or modifying .tftest.hcl test files,\n(3) Add",
+  "repo": "ionfury/homelab",
+  "path": ".claude/skills/opentofu-modules",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ionfury/homelab",
+  "dir_name": "opentofu-modules-ionfury-homelab-2"
+}

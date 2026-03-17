@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-scp-upload",
+  "description": "Upload a file using security copy. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-scp-upload",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-scp-upload-agentuity-sdk-explorer-2"
+}

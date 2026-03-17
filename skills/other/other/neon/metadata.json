@@ -1,0 +1,9 @@
+{
+  "name": "neon",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/neon/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "neon",
+  "downloaded_at": "2026-02-15T07:07:00.545868Z"
+}

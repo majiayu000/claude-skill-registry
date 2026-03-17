@@ -1,0 +1,11 @@
+{
+  "name": "auto-update-systems",
+  "description": "Expert in Tauri auto-update implementation with focus on signature verification, rollback mechanisms, staged rollouts, and secure update distribution",
+  "repo": "martinholovsky/claude-skills-generator",
+  "path": "skills/auto-update-systems",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/martinholovsky/claude-skills-generator",
+  "dir_name": "auto-update-systems-martinholovsky-claude-skills-genera-2"
+}

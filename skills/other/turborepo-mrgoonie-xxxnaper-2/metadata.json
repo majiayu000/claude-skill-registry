@@ -1,0 +1,11 @@
+{
+  "name": "turborepo",
+  "description": "Guide for implementing Turborepo - a high-performance build system for JavaScript and TypeScript monorepos. Use when setting up monorepos, optimizing build performance, implementing task pipelines, co",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/turborepo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "turborepo-mrgoonie-xxxnaper-2"
+}

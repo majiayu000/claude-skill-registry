@@ -1,0 +1,11 @@
+{
+  "name": "supabase-storage",
+  "description": "Supabase Storage for file uploads, downloads, buckets, and signed URLs. Use when uploading files, managing storage buckets, generating signed URLs, or handling images.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/supabase-storage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "supabase-storage-adaptationio-skrillz-2"
+}

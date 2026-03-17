@@ -1,0 +1,11 @@
+{
+  "name": "flow-tdd",
+  "description": "Enforces TDD Iron Law in flow-dev. NO PRODUCTION CODE WITHOUT A FAILING TEST FIRST.",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/dimon94/devflow-tdd-enforcer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "flow-tdd-aiskillstore-marketplace-2"
+}

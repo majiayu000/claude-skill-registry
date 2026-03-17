@@ -1,0 +1,11 @@
+{
+  "name": "process-ambiguous-task",
+  "description": "指示の最初でコンテキストが不足している場合に自動的に呼び出す必要があるスキルです",
+  "repo": "KanayaActa/ai-driven-dev-template",
+  "path": ".claude/skills/process-ambiguous-task",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KanayaActa/ai-driven-dev-template",
+  "dir_name": "process-ambiguous-task-kanayaacta-ai-driven-dev-templa-2"
+}

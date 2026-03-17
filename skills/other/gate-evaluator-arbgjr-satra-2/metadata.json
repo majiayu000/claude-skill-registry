@@ -1,0 +1,11 @@
+{
+  "name": "gate-evaluator",
+  "description": "Avalia quality gates entre fases do SDLC. Verifica artefatos obrigatorios,\ncriterios de qualidade, e aprovacoes necessarias antes de permitir transicao.\nUse quando: transicao entre fases, verificacao ",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/gate-evaluator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "gate-evaluator-arbgjr-satra-2"
+}

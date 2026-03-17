@@ -1,0 +1,11 @@
+{
+  "name": "snd-wrath",
+  "description": "Use this skill when implementing combat rotation automation in SND macros using the WrathCombo plugin. Covers auto-rotation control, combo state management, job configuration, and IPC leasing system.",
+  "repo": "vaoan/SND",
+  "path": ".claude/skills/snd-wrath",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vaoan/SND",
+  "dir_name": "snd-wrath-vaoan-snd-2"
+}

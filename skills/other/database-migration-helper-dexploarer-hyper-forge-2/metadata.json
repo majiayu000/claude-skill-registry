@@ -1,0 +1,11 @@
+{
+  "name": "database-migration-helper",
+  "description": "Creates database migrations with proper schema changes, data migrations, and rollback support for various ORMs (Prisma, TypeORM, Alembic, etc.). Use when managing database schema changes.",
+  "repo": "Dexploarer/hyper-forge",
+  "path": ".claude/skills/database-migration-helper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Dexploarer/hyper-forge",
+  "dir_name": "database-migration-helper-dexploarer-hyper-forge-2"
+}

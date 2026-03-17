@@ -1,0 +1,11 @@
+{
+  "name": "alphafold-database",
+  "description": "Access AlphaFold's 200M+ AI-predicted protein structures. Retrieve structures by UniProt ID, download PDB/mmCIF files, analyze confidence metrics (pLDDT, PAE), for drug discovery and structural biolog",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/alphafold-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "alphafold-database-ovachiever-droid-tings-2"
+}

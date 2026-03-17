@@ -1,0 +1,11 @@
+{
+  "name": "sre-oncall",
+  "description": "SRE Oncall Agent. 장애 대응, 에스컬레이션, 포스트모템을 담당합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/sre-oncall",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "sre-oncall-shaul1991-shaul-agents-plugin-2"
+}

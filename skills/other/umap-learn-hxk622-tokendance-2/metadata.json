@@ -1,0 +1,11 @@
+{
+  "name": "umap-learn",
+  "description": "UMAP dimensionality reduction. Fast nonlinear manifold learning for 2D/3D visualization, clustering preprocessing (HDBSCAN), supervised/parametric UMAP, for high-dimensional data.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/data-science/umap-learn",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "umap-learn-hxk622-tokendance-2"
+}

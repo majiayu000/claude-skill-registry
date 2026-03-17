@@ -1,0 +1,11 @@
+{
+  "name": "kirby-upgrade-and-maintenance",
+  "description": "Upgrades Kirby and maintains dependencies safely using composer audit, plugin compatibility checks, and official docs. Use when updating Kirby versions or making maintenance changes that affect runtim",
+  "repo": "bnomei/kirby-mcp",
+  "path": "skills/kirby-upgrade-and-maintenance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bnomei/kirby-mcp",
+  "dir_name": "kirby-upgrade-and-maintenance-bnomei-kirby-mcp-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "code-cleanup-agent",
+  "description": "Code cleanup agent that organizes codebase by moving inline CSS to external files, extracting functions to proper locations, and removing unused code. Use when refactoring, cleaning up technical debt,",
+  "repo": "rwHiveAqua/advisor",
+  "path": ".claude/skills/code-cleanup-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rwHiveAqua/advisor",
+  "dir_name": "code-cleanup-agent-rwhiveaqua-advisor-2"
+}

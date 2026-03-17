@@ -1,0 +1,11 @@
+{
+  "name": "equilibrium",
+  "description": "Fixed points where vector field vanishes",
+  "repo": "plurigrid/asi",
+  "path": "skills/equilibrium",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "equilibrium-plurigrid-asi-2"
+}

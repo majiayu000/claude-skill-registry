@@ -1,0 +1,11 @@
+{
+  "name": "browser-ext-creator",
+  "description": "ブラウザ拡張機能の開発を支援するスキル。Chrome (Manifest V3) と Firefox に対応したブラウザ拡張を設計・実装する。以下の状況で使用: (1) ユーザーが「ブラウザ拡張を作って」「Chrome拡張を実装して」「Firefox拡張を開発して」と依頼した時、(2) ユーザーが明示的に「/browser-ext-creator」を実行した時、(3) 特定のウェブサイトの機能拡張",
+  "repo": "goldeneggg/dotfiles",
+  "path": "claude-linux/.claude/skills/browser-ext-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/goldeneggg/dotfiles",
+  "dir_name": "browser-ext-creator-goldeneggg-dotfiles-2"
+}

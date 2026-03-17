@@ -1,0 +1,11 @@
+{
+  "name": "similarity-led",
+  "description": "Use when working with LED similarity calculations - comparing LED MPNs, understanding color bins, brightness bins, families, or LED-specific similarity logic.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/similarity-led",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "similarity-led-cantara-lib-electronic-compo-2"
+}

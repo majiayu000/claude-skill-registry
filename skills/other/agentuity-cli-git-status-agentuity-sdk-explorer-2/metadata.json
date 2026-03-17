@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-git-status",
+  "description": "Show GitHub connection status for current project. Requires authentication",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-git-status",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-git-status-agentuity-sdk-explorer-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "jwt-attack-surface",
+  "description": "Audit JWT implementation for algorithm confusion, secret weakness, claim validation issues, and token handling vulnerabilities. Use when reviewing authentication systems using JWT.",
+  "repo": "MAF2414/kyco",
+  "path": ".claude/skills/jwt-attack-surface",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MAF2414/kyco",
+  "dir_name": "jwt-attack-surface-maf2414-kyco-2"
+}

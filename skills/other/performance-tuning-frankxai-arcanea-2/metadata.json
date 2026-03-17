@@ -1,0 +1,11 @@
+{
+  "name": "performance-tuning",
+  "description": "Master the art of making systems fast. Profiling, optimization, caching, and the wisdom to know when performance matters and when it doesn't. Measure twice, optimize once.",
+  "repo": "frankxai/arcanea",
+  "path": ".claude/skills/development/performance-tuning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/arcanea",
+  "dir_name": "performance-tuning-frankxai-arcanea-2"
+}

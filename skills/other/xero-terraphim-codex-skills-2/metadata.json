@@ -1,0 +1,11 @@
+{
+  "name": "xero",
+  "description": "Xero Accounting API integration skill. Helps with OAuth2 authentication setup,\ninvoice management, contact management, and accounting operations. Provides\nguidance on rate limits, token refresh, and A",
+  "repo": "terraphim/codex-skills",
+  "path": "skills/xero",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terraphim/codex-skills",
+  "dir_name": "xero-terraphim-codex-skills-2"
+}

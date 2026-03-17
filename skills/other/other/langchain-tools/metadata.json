@@ -1,0 +1,9 @@
+{
+  "name": "langchain-tools",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/ai-agents-conversational/skills/langchain-tools/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "langchain-tools",
+  "downloaded_at": "2026-02-19T01:16:45.884448Z"
+}

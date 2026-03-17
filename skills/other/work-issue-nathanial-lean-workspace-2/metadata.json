@@ -1,0 +1,11 @@
+{
+  "name": "work-issue",
+  "description": "Start working on a tracked issue. Use when beginning work on an issue, logging progress, or managing issue workflow.",
+  "repo": "nathanial/lean-workspace",
+  "path": ".claude/skills/work-issue",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nathanial/lean-workspace",
+  "dir_name": "work-issue-nathanial-lean-workspace-2"
+}

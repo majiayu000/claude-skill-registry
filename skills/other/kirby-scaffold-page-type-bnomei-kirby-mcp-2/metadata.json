@@ -1,0 +1,11 @@
+{
+  "name": "kirby-scaffold-page-type",
+  "description": "Scaffolds a new Kirby page type (blueprint + template, optional controller/model) using project roots, index tools, and Panel field/section references. Use when creating a new page type or extending a",
+  "repo": "bnomei/kirby-mcp",
+  "path": "skills/kirby-scaffold-page-type",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bnomei/kirby-mcp",
+  "dir_name": "kirby-scaffold-page-type-bnomei-kirby-mcp-2"
+}

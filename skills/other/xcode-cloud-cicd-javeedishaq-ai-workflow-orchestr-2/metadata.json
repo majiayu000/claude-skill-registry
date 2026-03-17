@@ -1,0 +1,11 @@
+{
+  "name": "xcode-cloud-cicd",
+  "description": "Xcode Cloud CI/CD setup for Flutter iOS apps. Covers ci_post_clone.sh scripts, workflow configuration, TestFlight deployment, environment secrets, App Store distribution, and API management. Use when ",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/xcode-cloud-cicd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "xcode-cloud-cicd-javeedishaq-ai-workflow-orchestr-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "security-advisor",
+  "description": "Security Advisor for vulnerability analysis and risk assessment. Reviews code and architecture for security issues. Use this skill for security review, vulnerability assessment, or risk analysis.",
+  "repo": "Denissvgn/project-team-ag",
+  "path": ".agent/skills/security-advisor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Denissvgn/project-team-ag",
+  "dir_name": "security-advisor-denissvgn-project-team-ag-2"
+}

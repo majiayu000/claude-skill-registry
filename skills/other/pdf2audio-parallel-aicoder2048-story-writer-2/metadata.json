@@ -1,0 +1,11 @@
+{
+  "name": "pdf2audio-parallel",
+  "description": "Parallel PDF to MP3 conversion using MiniMax. Convert multiple PDF chapters to audio simultaneously using parallel subagents. Use when: (1) User says 'generate mp3 for the story of [STORY_NAME]', (2) ",
+  "repo": "aicoder2048/story-writer",
+  "path": ".claude/skills/pdf2audio-parallel",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aicoder2048/story-writer",
+  "dir_name": "pdf2audio-parallel-aicoder2048-story-writer-2"
+}

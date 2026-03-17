@@ -1,0 +1,11 @@
+{
+  "name": "datadog-entity-generator",
+  "description": "Generate exhaustively complete and accurate Datadog Software Catalog entity YAML files (v3 schema) by examining project source code and interviewing engineers. Use when engineers need to create or upd",
+  "repo": "zircote/.claude",
+  "path": "skills/datadog-entity-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zircote/.claude",
+  "dir_name": "datadog-entity-generator-zircote-claude-2"
+}

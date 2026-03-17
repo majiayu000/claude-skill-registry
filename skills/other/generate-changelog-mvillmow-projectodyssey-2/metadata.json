@@ -1,0 +1,11 @@
+{
+  "name": "generate-changelog",
+  "description": "Create changelog from git commits. Use when preparing release notes.",
+  "repo": "mvillmow/ProjectOdyssey",
+  "path": ".claude/skills/tier-2/generate-changelog",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mvillmow/ProjectOdyssey",
+  "dir_name": "generate-changelog-mvillmow-projectodyssey-2"
+}

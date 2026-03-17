@@ -1,0 +1,11 @@
+{
+  "name": "browser-test",
+  "description": "Execute browser-based UI testing using Chrome MCP tools. Tests user interactions, visual outcomes, captures evidence. Use for UI features after implementation and security review.",
+  "repo": "matthew-plusprogramming/monorepo",
+  "path": ".claude/skills/browser-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/matthew-plusprogramming/monorepo",
+  "dir_name": "browser-test-matthew-plusprogramm-monorepo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "growth-retention",
+  "description": "Retention Manager Agent. 사용자 유지, 참여도 향상, 이탈 방지를 담당합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/growth-retention",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "growth-retention-shaul1991-shaul-agents-plugin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "multi-tenant",
+  "description": "Multi-tenant architecture patterns including org_id claim management, JWT token structure with organization context, database isolation strategies for MongoDB and PostgreSQL, theme switching per organ",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/lobbi-platform-manager/skills/multi-tenant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "multi-tenant-lobbi-docs-claude-2"
+}

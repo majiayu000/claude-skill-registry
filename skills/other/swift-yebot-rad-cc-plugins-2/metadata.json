@@ -1,0 +1,11 @@
+{
+  "name": "swift",
+  "description": "Comprehensive Swift and Apple platform development skill for building native iOS, macOS, tvOS, and iPadOS apps. Use when creating Swift projects, building SwiftUI views, implementing Swift concurrency",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/apps-dev-team/skills/swift",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "swift-yebot-rad-cc-plugins-2"
+}

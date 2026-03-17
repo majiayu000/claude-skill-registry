@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-keyvalue-delete-namespace",
+  "description": "Delete a keyvalue namespace and all its keys. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/discord-help-agent",
+  "path": ".agents/skills/agentuity-cli-cloud-keyvalue-delete-namespace",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/discord-help-agent",
+  "dir_name": "agentuity-cli-cloud-keyvalue-delete-namespace-agentuity-discord-help-agent-2"
+}

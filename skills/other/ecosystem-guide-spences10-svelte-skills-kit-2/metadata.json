@@ -1,0 +1,11 @@
+{
+  "name": "ecosystem-guide",
+  "description": "Guide to spences10's Claude Code ecosystem. Use when user asks which tool to use, how tools relate, or needs help choosing between MCP servers, skills, or CLIs.",
+  "repo": "spences10/svelte-skills-kit",
+  "path": "plugins/svelte-skills/skills/ecosystem-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spences10/svelte-skills-kit",
+  "dir_name": "ecosystem-guide-spences10-svelte-skills-kit-2"
+}

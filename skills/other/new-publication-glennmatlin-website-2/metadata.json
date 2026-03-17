@@ -1,0 +1,11 @@
+{
+  "name": "new-publication",
+  "description": "Add an academic publication entry with proper metadata, links, and optional academic badges. Use when adding papers, preprints, or other scholarly works.",
+  "repo": "glennmatlin/website",
+  "path": ".claude/skills/new-publication",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/glennmatlin/website",
+  "dir_name": "new-publication-glennmatlin-website-2"
+}

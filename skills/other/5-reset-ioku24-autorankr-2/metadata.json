@@ -1,0 +1,11 @@
+{
+  "name": "5.reset",
+  "description": "Reset after failures, blockers, or when stuck. Use when execution hits a wall, something breaks, or we need to step back and reassess. This is the fifth system in the 5-system framework.",
+  "repo": "ioku24/autorankr",
+  "path": ".claude/skills/5-system-framework/5.reset",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ioku24/autorankr",
+  "dir_name": "5-reset-ioku24-autorankr-2"
+}

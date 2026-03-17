@@ -1,0 +1,11 @@
+{
+  "name": "rot13-encryption",
+  "description": "This skill helps encrypt and decrypt messages using ROT13 cipher. Use when the user asks to \"encrypt\" or \"decrypt\" a message.\n",
+  "repo": "robertpelloni/borg",
+  "path": "agents/software-agent-sdk/examples/05_skills_and_plugins/01_loading_agentskills/example_skills/rot13-encryption",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertpelloni/borg",
+  "dir_name": "rot13-encryption-robertpelloni-borg-2"
+}

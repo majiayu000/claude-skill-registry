@@ -1,0 +1,11 @@
+{
+  "name": "book-research-assistant",
+  "description": "Plan, orchestrate, and validate deep research for nonfiction books. Use when an author has completed book architecture and needs to fill research gaps before outlining chapters. Triggers include reque",
+  "repo": "robertguss/claude-code-toolkit",
+  "path": "skills/non-fiction-book-factory/book-research-assistant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertguss/claude-code-toolkit",
+  "dir_name": "book-research-assistant-robertguss-claude-code-toolkit-2"
+}

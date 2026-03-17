@@ -1,0 +1,11 @@
+{
+  "name": "airflow-dag-patterns",
+  "description": "Build production Apache Airflow DAGs with best practices for operators, sensors, testing, and deployment. Use when creating data pipelines, orchestrating workflows, or scheduling batch jobs.",
+  "repo": "wshobson/agents",
+  "path": "plugins/data-engineering/skills/airflow-dag-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wshobson/agents",
+  "dir_name": "airflow-dag-patterns-wshobson-agents-2"
+}

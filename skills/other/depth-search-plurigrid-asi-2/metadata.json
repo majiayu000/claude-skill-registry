@@ -1,0 +1,11 @@
+{
+  "name": "depth-search",
+  "description": "Deep multi-source research combining academic MCPs (arxiv, semantic-scholar, paper-search, deepwiki), Exa semantic search, and local ~/.topos knowledge base. Use for comprehensive research requiring m",
+  "repo": "plurigrid/asi",
+  "path": "skills/depth-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "depth-search-plurigrid-asi-2"
+}

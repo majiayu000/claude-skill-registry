@@ -1,0 +1,11 @@
+{
+  "name": "naki-mcp-proxy",
+  "description": "Token-efficient proxy for Naki's 47 MCP tools. Routes user intent to optimal MCP tool via agent isolation, saving 40-70% tokens. Use for any Naki game control, bot status, or UI operation.",
+  "repo": "Sunalamye/Naki",
+  "path": ".claude/skills/naki-mcp-proxy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sunalamye/Naki",
+  "dir_name": "naki-mcp-proxy-sunalamye-naki-2"
+}

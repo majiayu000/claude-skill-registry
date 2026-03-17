@@ -1,0 +1,11 @@
+{
+  "name": "generate-api-route",
+  "description": "Generate Next.js API route handler with repository integration, error handling, and TypeScript types. Use when creating new API endpoints for meals, supplements, profile, analytics, or other resources",
+  "repo": "marcd35/health-tracker-9000",
+  "path": ".claude/skills/generate-api-route",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/marcd35/health-tracker-9000",
+  "dir_name": "generate-api-route-marcd35-health-tracker-9000-2"
+}

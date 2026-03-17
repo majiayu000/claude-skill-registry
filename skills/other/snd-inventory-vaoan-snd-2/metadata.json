@@ -1,0 +1,11 @@
+{
+  "name": "snd-inventory",
+  "description": "Use this skill when working with player inventory, item management, and container operations in SND macros. Covers inventory queries, item counts, container types, and item manipulation.",
+  "repo": "vaoan/SND",
+  "path": ".claude/skills/snd-inventory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vaoan/SND",
+  "dir_name": "snd-inventory-vaoan-snd-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "invalid-skill",
+  "description": "This skill has an invalid name format",
+  "repo": "martinemde/skillet",
+  "path": "testdata/invalid-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/martinemde/skillet",
+  "dir_name": "invalid-skill-martinemde-skillet-2"
+}

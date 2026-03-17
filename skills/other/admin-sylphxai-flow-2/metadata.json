@@ -1,0 +1,11 @@
+{
+  "name": "admin",
+  "description": "Admin panel - RBAC, config, admin tools. Use when building admin UI.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/admin",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "admin-sylphxai-flow-2"
+}

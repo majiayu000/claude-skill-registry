@@ -1,0 +1,11 @@
+{
+  "name": "workflow-monitor",
+  "description": "Triggers: workflow error, inefficient execution, workflow failure, execution monitor\nMonitor workflow executions for errors and inefficiencies. When issues are detected,\nautomatically create GitHub is",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/imbue/skills/workflow-monitor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "workflow-monitor-athola-claude-night-market-2"
+}

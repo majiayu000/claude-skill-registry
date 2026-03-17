@@ -1,0 +1,11 @@
+{
+  "name": "codex-validate-plan",
+  "description": "Validate architecture/plan quality via claude-delegator (Plan Reviewer expert). Use after writing context.md for complex feature/refactor work.",
+  "repo": "munlucky/code-cafe-manager",
+  "path": ".claude/skills/codex-validate-plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/munlucky/code-cafe-manager",
+  "dir_name": "codex-validate-plan-munlucky-code-cafe-manager-2"
+}

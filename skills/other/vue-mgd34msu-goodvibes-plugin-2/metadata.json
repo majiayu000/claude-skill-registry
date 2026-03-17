@@ -1,0 +1,11 @@
+{
+  "name": "vue",
+  "description": "Builds UIs with Vue 3 including Composition API, reactivity, components, and state management. Use when creating Vue applications, building reactive interfaces, or working with the Vue ecosystem.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/frontend-core/vue",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "vue-mgd34msu-goodvibes-plugin-2"
+}

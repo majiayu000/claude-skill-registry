@@ -1,0 +1,11 @@
+{
+  "name": "apollo-sdk-patterns",
+  "description": "Apply production-ready Apollo.io SDK patterns.\nUse when implementing Apollo integrations, refactoring API usage,\nor establishing team coding standards.\nTrigger with phrases like \"apollo sdk patterns\",",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/apollo-pack/skills/apollo-sdk-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "apollo-sdk-patterns-jeremylongshore-claude-code-plugins--2"
+}

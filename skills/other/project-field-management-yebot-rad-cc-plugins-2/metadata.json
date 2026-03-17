@@ -1,0 +1,11 @@
+{
+  "name": "project-field-management",
+  "description": "Comprehensive guide to GitHub Projects field types, configuration, and management strategies. Use when setting up fields, troubleshooting field issues, or optimizing field structures.",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/github-project-manager/skills/project-field-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "project-field-management-yebot-rad-cc-plugins-2"
+}

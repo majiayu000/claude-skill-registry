@@ -1,0 +1,11 @@
+{
+  "name": "accessibility-checker",
+  "description": "Verify accessibility (WCAG 2.1 Level AA) of React components. Use when creating UI components, forms, or when the user requests accessibility verification.",
+  "repo": "xnopre/copro-tickets-tracker",
+  "path": ".claude/skills/accessibility-checker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/xnopre/copro-tickets-tracker",
+  "dir_name": "accessibility-checker-xnopre-copro-tickets-tracke-2"
+}

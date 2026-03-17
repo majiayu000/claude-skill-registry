@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-collection-action",
+  "description": "Implement collection actions in Umbraco backoffice using official docs",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-collection-action",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-collection-action-umbraco-umbraco-cms-backoffi-2"
+}

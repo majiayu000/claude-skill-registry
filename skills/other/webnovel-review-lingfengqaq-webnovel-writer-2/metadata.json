@@ -1,0 +1,11 @@
+{
+  "name": "webnovel-review",
+  "description": "Reviews chapter quality using 5 specialized checkers and generates comprehensive reports. Activates when user requests chapter review or /webnovel-review.",
+  "repo": "lingfengQAQ/webnovel-writer",
+  "path": ".claude/skills/webnovel-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lingfengQAQ/webnovel-writer",
+  "dir_name": "webnovel-review-lingfengqaq-webnovel-writer-2"
+}

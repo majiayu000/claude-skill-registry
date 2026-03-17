@@ -1,0 +1,11 @@
+{
+  "name": "docs-page-frontmatter",
+  "description": "Write YAML front matter for documentation pages with appropriate titles and descriptions for social cards.",
+  "repo": "anam-org/metaxy",
+  "path": ".claude/skills/docs-page-frontmatter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/anam-org/metaxy",
+  "dir_name": "docs-page-frontmatter-anam-org-metaxy-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "bun-file-io",
+  "description": "Bun provides fast, optimized file operations via Bun.file() and Bun.write().",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/bun/skills/bun-file-io",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "bun-file-io-secondsky-claude-skills-2"
+}

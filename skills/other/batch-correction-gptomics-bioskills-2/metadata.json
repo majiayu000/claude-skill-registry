@@ -1,0 +1,11 @@
+{
+  "name": "batch-correction",
+  "description": "Batch effect correction for CRISPR screens. Covers normalization across batches, technical replicate handling, and batch-aware analysis. Use when combining screens from multiple batches or correcting ",
+  "repo": "GPTomics/bioSkills",
+  "path": "differential-expression/batch-correction",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "batch-correction-gptomics-bioskills-2"
+}

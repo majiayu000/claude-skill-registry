@@ -1,0 +1,11 @@
+{
+  "name": "doctrine-batch-processing",
+  "description": "Use when symfony doctrine batch processing",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/doctrine-batch-processing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "doctrine-batch-processing-makfly-superpowers-symfony-2"
+}

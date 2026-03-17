@@ -1,0 +1,11 @@
+{
+  "name": "api-gateway-configuration",
+  "description": "Configures API gateways for routing, authentication, rate limiting, and request transformation in microservice architectures. Use when setting up Kong, Nginx, AWS API Gateway, or Traefik for centraliz",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/api-gateway-configuration/skills/api-gateway-configuration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "api-gateway-configuration-secondsky-claude-skills-2"
+}

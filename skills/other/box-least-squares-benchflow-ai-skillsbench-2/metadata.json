@@ -1,0 +1,11 @@
+{
+  "name": "box-least-squares",
+  "description": "Box Least Squares (BLS) periodogram for detecting transiting exoplanets and eclipsing binaries. Use when searching for periodic box-shaped dips in light curves. Alternative to Transit Least Squares, a",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/exoplanet-detection-period/environment/skills/box-least-squares",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "box-least-squares-benchflow-ai-skillsbench-2"
+}

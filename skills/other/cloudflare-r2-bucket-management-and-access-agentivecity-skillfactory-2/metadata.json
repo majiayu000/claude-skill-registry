@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-r2-bucket-management-and-access",
+  "description": "Use this skill to configure Cloudflare R2 buckets, access control, lifecycle policies, public/private assets, and integration with Hono Workers using read/write/delete/list operations and signed-acces",
+  "repo": "AgentiveCity/SkillFactory",
+  "path": ".claude/skills/cloudflare-r2-bucket-management-and-access",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AgentiveCity/SkillFactory",
+  "dir_name": "cloudflare-r2-bucket-management-and-access-agentivecity-skillfactory-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "typescript-mcp",
+  "description": "Build production-ready Model Context Protocol (MCP) servers using TypeScript and deploy them on Cloudflare Workers. This skill covers the official @modelcontextprotocol/sdk, HTTP transport setup, auth",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/typescript-mcp/skills/typescript-mcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "typescript-mcp-secondsky-claude-skills-2"
+}

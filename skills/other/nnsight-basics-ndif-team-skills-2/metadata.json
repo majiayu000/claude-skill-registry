@@ -1,0 +1,11 @@
+{
+  "name": "nnsight-basics",
+  "description": "Core nnsight concepts for neural network interpretability. Use when setting up models, tracing activations, saving values, or making basic interventions on model internals.",
+  "repo": "ndif-team/skills",
+  "path": "plugins/nnsight/skills/nnsight-basics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ndif-team/skills",
+  "dir_name": "nnsight-basics-ndif-team-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sam-ceo-communication",
+  "description": "Explain technical work and give feedback to Sam (non-technical owner/CEO) in clear, respectful, simple language, with gentle corrections of terms like git/push/pull/commit when misused. Use in chat on",
+  "repo": "AI-Original-Steak-Sauce/v2_heras_garden",
+  "path": ".claude/skills/sam-ceo-communication",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AI-Original-Steak-Sauce/v2_heras_garden",
+  "dir_name": "sam-ceo-communication-ai-original-steak-sa-v2-heras-garden-2"
+}

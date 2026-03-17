@@ -1,0 +1,11 @@
+{
+  "name": "feature-structure",
+  "description": "Architecture patterns for organizing feature modules in the codebase. Use when creating new files, brand new features or pages.",
+  "repo": "antoncoding/monarch",
+  "path": ".claude/skills/feature-structure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/antoncoding/monarch",
+  "dir_name": "feature-structure-antoncoding-monarch-2"
+}

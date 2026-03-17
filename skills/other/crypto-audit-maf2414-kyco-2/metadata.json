@@ -1,0 +1,11 @@
+{
+  "name": "crypto-audit",
+  "description": "Audit cryptographic implementations for weak algorithms, insecure defaults, predictable randomness, key management issues, and timing attacks. Use when reviewing security-critical crypto code.",
+  "repo": "MAF2414/kyco",
+  "path": ".claude/skills/crypto-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MAF2414/kyco",
+  "dir_name": "crypto-audit-maf2414-kyco-2"
+}

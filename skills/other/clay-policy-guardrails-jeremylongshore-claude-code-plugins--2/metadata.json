@@ -1,0 +1,11 @@
+{
+  "name": "clay-policy-guardrails",
+  "description": "Implement Clay lint rules, policy enforcement, and automated guardrails.\nUse when setting up code quality rules for Clay integrations, implementing\npre-commit hooks, or configuring CI policy checks fo",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/clay-pack/skills/clay-policy-guardrails",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "clay-policy-guardrails-jeremylongshore-claude-code-plugins--2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "single-annotation",
+  "description": "Guide Claude through SCSA, MetaTiME, CellVote, CellMatch, GPTAnno, and weighted KNN transfer workflows for annotating single-cell modalities.",
+  "repo": "Starlitnightly/omicverse",
+  "path": ".claude/skills/single-annotation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Starlitnightly/omicverse",
+  "dir_name": "single-annotation-starlitnightly-omicverse-2"
+}

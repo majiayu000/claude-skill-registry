@@ -1,0 +1,11 @@
+{
+  "name": "hicks-law",
+  "description": "Predice el tiempo de decisión basado en número de opciones. Use cuando diseñe menús, navegación, formularios con múltiples opciones, o simplifique interfaces.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/cognitive-laws/hicks-law",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "hicks-law-vjrivmon-handwriting-ocr-2"
+}

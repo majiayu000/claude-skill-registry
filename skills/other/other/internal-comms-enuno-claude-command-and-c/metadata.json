@@ -1,0 +1,9 @@
+{
+  "name": "internal-comms",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills/internal-comms/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "internal-comms-enuno-claude-command-and-c",
+  "downloaded_at": "2026-02-15T07:06:59.785853Z"
+}

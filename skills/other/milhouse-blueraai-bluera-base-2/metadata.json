@@ -1,0 +1,11 @@
+{
+  "name": "milhouse",
+  "description": "Iterative development loop that feeds the same prompt back after each iteration until task completion. Use /bluera-base:milhouse-loop to start.",
+  "repo": "blueraai/bluera-base",
+  "path": "skills/milhouse",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/blueraai/bluera-base",
+  "dir_name": "milhouse-blueraai-bluera-base-2"
+}

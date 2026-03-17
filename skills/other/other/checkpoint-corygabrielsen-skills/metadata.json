@@ -1,0 +1,17 @@
+{
+  "name": "checkpoint",
+  "repo": "corygabrielsen/skills",
+  "path": "checkpoint/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/corygabrielsen/skills",
+  "dir_name": "checkpoint-corygabrielsen-skills",
+  "downloaded_at": "2026-03-01T07:17:32.938100Z",
+  "author": "corygabrielsen",
+  "source_url": "https://github.com/corygabrielsen/skills/blob/master/checkpoint/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/corygabrielsen/skills/blob/master/checkpoint/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

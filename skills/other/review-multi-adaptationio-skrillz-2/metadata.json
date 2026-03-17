@@ -1,0 +1,11 @@
+{
+  "name": "review-multi",
+  "description": "Comprehensive multi-dimensional skill reviews across structure, content, quality, usability, and integration. Task-based operations with automated validation, manual assessment, scoring rubrics, and i",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/review-multi",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "review-multi-adaptationio-skrillz-2"
+}

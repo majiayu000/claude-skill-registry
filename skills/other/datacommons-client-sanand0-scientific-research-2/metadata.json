@@ -1,0 +1,11 @@
+{
+  "name": "datacommons-client",
+  "description": "Work with Data Commons, a platform providing programmatic access to public statistical data from global sources. Use this skill when working with demographic data, economic indicators, health statisti",
+  "repo": "sanand0/scientific-research",
+  "path": ".claude/skills/datacommons-client",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sanand0/scientific-research",
+  "dir_name": "datacommons-client-sanand0-scientific-research-2"
+}

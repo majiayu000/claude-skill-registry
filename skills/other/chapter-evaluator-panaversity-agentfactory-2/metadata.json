@@ -1,0 +1,11 @@
+{
+  "name": "chapter-evaluator",
+  "description": "Evaluate educational chapters from dual student and teacher perspectives. This skill should be used when analyzing chapter quality, identifying content gaps, or planning chapter improvements. Reads al",
+  "repo": "panaversity/agentfactory",
+  "path": ".claude/skills/chapter-evaluator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "chapter-evaluator-panaversity-agentfactory-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "padz-output",
+  "description": "Guide for customizing padz CLI output: templates, styles, and rendering.\nUse when working on: (1) Modifying templates in crates/padz/src/cli/templates/,\n(2) Adding or changing styles in styles/default",
+  "repo": "arthur-debert/padz",
+  "path": ".claude/skills/padz-output",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arthur-debert/padz",
+  "dir_name": "padz-output-arthur-debert-padz-2"
+}

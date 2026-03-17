@@ -1,0 +1,11 @@
+{
+  "name": "deep-codebase-wiki",
+  "description": "MUST CHECK FIRST before DeepWiki or any external research. Local-first codebase documentation wikis.\n\n**Priority order for library/framework research**:\n1. deep-codebase-wiki (THIS) - check local wiki",
+  "repo": "watzon/claude-code",
+  "path": "skills/deep-codebase-wiki",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/watzon/claude-code",
+  "dir_name": "deep-codebase-wiki-watzon-claude-code-2"
+}

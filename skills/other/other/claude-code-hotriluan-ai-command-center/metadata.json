@@ -1,0 +1,9 @@
+{
+  "name": "claude-code",
+  "repo": "hotriluan/ai-command-center",
+  "path": ".claude/skills/claude-code/skill.md",
+  "category": "other",
+  "source": "github.com/hotriluan/ai-command-center",
+  "dir_name": "claude-code-hotriluan-ai-command-center",
+  "downloaded_at": "2026-02-22T07:28:53.674034Z"
+}

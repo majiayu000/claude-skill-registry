@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-durable-objects",
+  "description": "Status: Production Ready ✅",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-durable-objects/skills/cloudflare-durable-objects",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "cloudflare-durable-objects-secondsky-claude-skills-2"
+}

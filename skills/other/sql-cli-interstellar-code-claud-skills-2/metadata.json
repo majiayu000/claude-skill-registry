@@ -1,0 +1,11 @@
+{
+  "name": "sql-cli",
+  "description": "Token-efficient MySQL/PostgreSQL operations using mycli and native CLI tools (Windows/Mac/Linux compatible). Replaces Artisan Tinker for database queries with 87% token savings.",
+  "repo": "Interstellar-code/claud-skills",
+  "path": "generic-claude-framework/skills/sql-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Interstellar-code/claud-skills",
+  "dir_name": "sql-cli-interstellar-code-claud-skills-2"
+}

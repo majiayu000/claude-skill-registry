@@ -1,0 +1,11 @@
+{
+  "name": "cost-estimate",
+  "description": "コスト見積書を作成する。予算策定、見積もり、コスト計画時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/planning/cost-estimate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "cost-estimate-haru-llc-ai-pm-system-noteboo-2"
+}

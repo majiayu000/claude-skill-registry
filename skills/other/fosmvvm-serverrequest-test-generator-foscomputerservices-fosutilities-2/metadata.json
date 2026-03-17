@@ -1,0 +1,11 @@
+{
+  "name": "fosmvvm-serverrequest-test-generator",
+  "description": "Generate comprehensive ServerRequest tests using VaporTesting infrastructure. Use when testing any ServerRequest type (ShowRequest, ViewModelRequest, CreateRequest, UpdateRequest, DeleteRequest) again",
+  "repo": "foscomputerservices/FOSUtilities",
+  "path": ".claude/skills/fosmvvm-serverrequest-test-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/foscomputerservices/FOSUtilities",
+  "dir_name": "fosmvvm-serverrequest-test-generator-foscomputerservices-fosutilities-2"
+}

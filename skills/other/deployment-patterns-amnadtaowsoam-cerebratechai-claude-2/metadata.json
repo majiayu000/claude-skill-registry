@@ -1,0 +1,11 @@
+{
+  "name": "deployment-patterns",
+  "description": "Practical deployment strategies (rolling, blue-green, canary) for safe releases with rollback, health checks, and database compatibility guidance—without requiring full Kubernetes complexity",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "69-platform-engineering-lite/deployment-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "deployment-patterns-amnadtaowsoam-cerebratechai-claude-2"
+}

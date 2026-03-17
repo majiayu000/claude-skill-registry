@@ -1,0 +1,11 @@
+{
+  "name": "skill-doc-generator",
+  "description": "Auto-generates standardized README documentation from SKILL.md files, validates consistency (frontmatter, descriptions, terminology), and creates usage examples. Use when documenting individual skills",
+  "repo": "freitasp1/claude-code-skills",
+  "path": "skills/doc-generator/skill-doc-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/freitasp1/claude-code-skills",
+  "dir_name": "skill-doc-generator-freitasp1-claude-code-skills-2"
+}

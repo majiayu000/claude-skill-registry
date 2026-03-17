@@ -1,0 +1,11 @@
+{
+  "name": "commit-coauthor",
+  "description": "Create git commit with co-author attribution and comprehensive safety checks",
+  "repo": "rayzru/info-web",
+  "path": ".claude/skills/commit-coauthor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rayzru/info-web",
+  "dir_name": "commit-coauthor-rayzru-info-web-2"
+}

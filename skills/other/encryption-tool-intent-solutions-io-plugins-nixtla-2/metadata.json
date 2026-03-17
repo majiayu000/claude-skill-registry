@@ -1,0 +1,11 @@
+{
+  "name": "encryption-tool",
+  "description": "This skill enables Claude to encrypt and decrypt data using various algorithms provided by the encryption-tool plugin. It should be used when the user requests to \"encrypt data\", \"decrypt a file\", \"ge",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/security/encryption-tool/skills/encryption-tool",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "encryption-tool-intent-solutions-io-plugins-nixtla-2"
+}

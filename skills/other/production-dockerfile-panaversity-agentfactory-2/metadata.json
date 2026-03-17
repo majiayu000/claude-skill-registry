@@ -1,0 +1,11 @@
+{
+  "name": "production-dockerfile",
+  "description": "Generate production-ready Dockerfiles with multi-stage builds, security best practices, and optimization. Use when containerizing Python applications for production deployment.",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/cold/production-dockerfile",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "production-dockerfile-panaversity-agentfactory-2"
+}

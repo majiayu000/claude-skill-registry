@@ -1,0 +1,11 @@
+{
+  "name": "playwright-browser",
+  "description": "Use when automating browsers, testing pages, taking screenshots, checking UI, verifying login flows, or testing responsive behavior",
+  "repo": "Light-Brands/base-ai",
+  "path": "plugins/core/skills/playwright-browser",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Light-Brands/base-ai",
+  "dir_name": "playwright-browser-light-brands-base-ai-2"
+}

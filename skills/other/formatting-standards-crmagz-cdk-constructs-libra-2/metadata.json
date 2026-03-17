@@ -1,0 +1,11 @@
+{
+  "name": "formatting-standards",
+  "description": "Formatting and linting standards using GTS, ESLint, and Prettier. Use when writing or formatting TypeScript code in this project.",
+  "repo": "crmagz/cdk-constructs-library",
+  "path": ".claude/skills/formatting-standards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/crmagz/cdk-constructs-library",
+  "dir_name": "formatting-standards-crmagz-cdk-constructs-libra-2"
+}

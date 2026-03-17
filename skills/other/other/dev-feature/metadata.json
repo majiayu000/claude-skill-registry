@@ -1,0 +1,9 @@
+{
+  "name": "dev-feature",
+  "repo": "eleva-labs/agentic-coding-templates",
+  "path": ".claude/skills/shared/dev-feature/SKILL.md",
+  "category": "other",
+  "source": "github.com/eleva-labs/agentic-coding-templates",
+  "dir_name": "dev-feature",
+  "downloaded_at": "2026-02-22T07:03:43.967681Z"
+}

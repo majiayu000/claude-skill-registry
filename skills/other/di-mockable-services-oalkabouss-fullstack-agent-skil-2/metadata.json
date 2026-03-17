@@ -1,0 +1,11 @@
+{
+  "name": "di-mockable-services",
+  "description": "Design injectable, mockable services (interfaces + composition root)",
+  "repo": "oalkabouss/fullstack-agent-skills",
+  "path": ".opencode/skills/di-mockable-services",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oalkabouss/fullstack-agent-skills",
+  "dir_name": "di-mockable-services-oalkabouss-fullstack-agent-skil-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "video-to-content",
+  "description": "Convert video transcripts, podcasts, and SRT files into blog posts, social clips, and other content formats. Use for repurposing video content.",
+  "repo": "mattppal/prompts",
+  "path": ".claude/skills/video-to-content",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattppal/prompts",
+  "dir_name": "video-to-content-mattppal-prompts-2"
+}

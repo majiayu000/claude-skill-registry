@@ -1,0 +1,11 @@
+{
+  "name": "api-platform-dto-resources",
+  "description": "Use when symfony api platform dto resources",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/api-platform-dto-resources",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "api-platform-dto-resources-makfly-superpowers-symfony-2"
+}

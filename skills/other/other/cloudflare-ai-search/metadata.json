@@ -1,0 +1,9 @@
+{
+  "name": "cloudflare-ai-search",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/cloudflare-ai-search/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "cloudflare-ai-search",
+  "downloaded_at": "2026-02-15T07:06:58.362352Z"
+}

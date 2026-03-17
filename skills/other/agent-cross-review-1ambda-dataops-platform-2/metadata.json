@@ -1,0 +1,11 @@
+{
+  "name": "agent-cross-review",
+  "description": "Structured cross-review protocol between specialized agents. Ensures scope alignment, priority calibration, and domain-aware feedback. Use when one agent reviews another's work, during handoffs, or wh",
+  "repo": "1ambda/dataops-platform",
+  "path": ".claude/skills/agent-cross-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/1ambda/dataops-platform",
+  "dir_name": "agent-cross-review-1ambda-dataops-platform-2"
+}

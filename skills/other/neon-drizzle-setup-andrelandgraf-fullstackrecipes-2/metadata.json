@@ -1,0 +1,11 @@
+{
+  "name": "neon-drizzle-setup",
+  "description": "Connect a Next.js app to Neon Postgres using Drizzle ORM with optimized connection pooling for Vercel serverless functions.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/neon-drizzle-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "neon-drizzle-setup-andrelandgraf-fullstackrecipes-2"
+}

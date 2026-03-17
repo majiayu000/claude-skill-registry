@@ -1,0 +1,9 @@
+{
+  "name": "git-commit",
+  "repo": "sequenzia/claude-alchemy",
+  "path": "plugins/tools/skills/git-commit/SKILL.md",
+  "category": "other",
+  "source": "github.com/sequenzia/claude-alchemy",
+  "dir_name": "git-commit-sequenzia-claude-alchemy",
+  "downloaded_at": "2026-02-15T01:37:39.026280Z"
+}

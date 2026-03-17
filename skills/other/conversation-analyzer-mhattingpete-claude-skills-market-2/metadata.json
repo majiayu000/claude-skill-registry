@@ -1,0 +1,11 @@
+{
+  "name": "conversation-analyzer",
+  "description": "Analyzes your Claude Code conversation history to identify patterns, common mistakes, and opportunities for workflow improvement. Use when user wants to understand usage patterns, optimize workflow, i",
+  "repo": "mhattingpete/claude-skills-marketplace",
+  "path": "productivity-skills-plugin/skills/conversation-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhattingpete/claude-skills-marketplace",
+  "dir_name": "conversation-analyzer-mhattingpete-claude-skills-market-2"
+}

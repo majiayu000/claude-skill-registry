@@ -1,0 +1,9 @@
+{
+  "name": "gitlab-webhooks",
+  "repo": "hookdeck/webhook-skills",
+  "path": "skills/gitlab-webhooks/SKILL.md",
+  "category": "other",
+  "source": "github.com/hookdeck/webhook-skills",
+  "dir_name": "gitlab-webhooks",
+  "downloaded_at": "2026-02-22T07:28:23.486810Z"
+}

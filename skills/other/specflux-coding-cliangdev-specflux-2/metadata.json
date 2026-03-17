@@ -1,0 +1,11 @@
+{
+  "name": "specflux-coding",
+  "description": "Implementation workflow for SpecFlux projects. Enforces test-first development, one commit per task, and API status updates. This skill is always active when writing code in SpecFlux projects.",
+  "repo": "cliangdev/specflux",
+  "path": "src/plugin/skills/specflux-coding",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cliangdev/specflux",
+  "dir_name": "specflux-coding-cliangdev-specflux-2"
+}

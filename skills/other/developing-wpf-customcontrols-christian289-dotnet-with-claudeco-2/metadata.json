@@ -1,0 +1,11 @@
+{
+  "name": "developing-wpf-customcontrols",
+  "description": "Develops WPF CustomControls using Parts and States Model best practices. Use when creating templatable controls with TemplatePart, TemplateVisualState, OnApplyTemplate, or VisualStateManager.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/developing-wpf-customcontrols",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "developing-wpf-customcontrols-christian289-dotnet-with-claudeco-2"
+}

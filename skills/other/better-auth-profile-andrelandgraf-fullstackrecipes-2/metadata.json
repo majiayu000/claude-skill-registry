@@ -1,0 +1,11 @@
+{
+  "name": "better-auth-profile",
+  "description": "Add a complete account settings page with profile editing, password changes, email updates, session management, and account deletion.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/better-auth-profile",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "better-auth-profile-andrelandgraf-fullstackrecipes-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "features-documentation",
+  "description": "Use when user-facing features change. Ensures features documentation is updated. Pauses work if documentation has drifted, triggering documentation-audit skill.",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/features-documentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "features-documentation-troykelly-codex-skills-2"
+}

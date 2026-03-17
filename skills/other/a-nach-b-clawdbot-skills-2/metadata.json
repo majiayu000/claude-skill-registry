@@ -1,0 +1,11 @@
+{
+  "name": "a-nach-b",
+  "description": "Austrian public transport (VOR AnachB) for all of Austria. Query real-time departures, search stations/stops, plan routes between locations, and check service disruptions. Use when asking about Austri",
+  "repo": "clawdbot/skills",
+  "path": "skills/manmal/a-nach-b",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "a-nach-b-clawdbot-skills-2"
+}

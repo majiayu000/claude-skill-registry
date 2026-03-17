@@ -1,0 +1,11 @@
+{
+  "name": "design-tool-picker",
+  "description": "Help choose the right design tool based on your current task. Use when unsure whether to use frontend-design, ui-ux-designer, visual-validator, or ui-code-auditor.",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": "plugins/majestic-engineer/skills/design-tool-picker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "dir_name": "design-tool-picker-majesticlabs-dev-majestic-marketplace-2"
+}

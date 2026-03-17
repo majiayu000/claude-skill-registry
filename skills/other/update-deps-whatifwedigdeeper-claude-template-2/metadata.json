@@ -1,0 +1,11 @@
+{
+  "name": "update-deps",
+  "description": "Update npm packages to latest versions with validation in isolated worktree",
+  "repo": "WhatIfWeDigDeeper/claude-template",
+  "path": ".claude/skills/update-deps",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WhatIfWeDigDeeper/claude-template",
+  "dir_name": "update-deps-whatifwedigdeeper-claude-template-2"
+}

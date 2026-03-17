@@ -1,0 +1,11 @@
+{
+  "name": "examples-audit",
+  "description": "Analyze mock data and examples for cultural assumptions, understanding what they communicate about who the product is for. Use when reviewing test data, documentation, or seed data.",
+  "repo": "hereinthehive/gotrino-inclusion",
+  "path": "skills/examples-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hereinthehive/gotrino-inclusion",
+  "dir_name": "examples-audit-hereinthehive-gotrino-inclusion-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "design-postgres-tables",
+  "description": "Comprehensive PostgreSQL-specific table design reference covering data types, indexing, constraints, performance patterns, and advanced features",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/postgres-mcp/design-postgres-tables",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "design-postgres-tables-vasic-digital-superagent-2"
+}

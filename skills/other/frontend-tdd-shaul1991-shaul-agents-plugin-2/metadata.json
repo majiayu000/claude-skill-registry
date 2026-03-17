@@ -1,0 +1,11 @@
+{
+  "name": "frontend-tdd",
+  "description": "Frontend TDD Agent. React/Next.js 기반 TDD 테스트 작성 및 구현을 담당합니다. 테스트 먼저 작성 후 구현하는 Red-Green-Refactor 사이클을 따릅니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/frontend-tdd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "frontend-tdd-shaul1991-shaul-agents-plugin-2"
+}

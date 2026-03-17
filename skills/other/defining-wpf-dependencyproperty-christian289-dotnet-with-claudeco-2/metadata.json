@@ -1,0 +1,11 @@
+{
+  "name": "defining-wpf-dependencyproperty",
+  "description": "Defines WPF DependencyProperty with Register, PropertyMetadata, callbacks, and validation. Use when creating custom controls, attached properties, or properties that support data binding and styling.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/defining-wpf-dependencyproperty",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "defining-wpf-dependencyproperty-christian289-dotnet-with-claudeco-2"
+}

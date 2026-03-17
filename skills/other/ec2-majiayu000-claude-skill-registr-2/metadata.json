@@ -1,0 +1,11 @@
+{
+  "name": "ec2",
+  "description": "AWS EC2 virtual machine management for instances, AMIs, and networking. Use when launching instances, configuring security groups, managing key pairs, troubleshooting connectivity, or automating insta",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/devops/aws-ec2-deployment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "ec2-majiayu000-claude-skill-registr-2"
+}

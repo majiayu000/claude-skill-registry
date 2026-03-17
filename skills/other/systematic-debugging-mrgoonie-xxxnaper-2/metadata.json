@@ -1,0 +1,11 @@
+{
+  "name": "systematic-debugging",
+  "description": "Four-phase debugging framework that ensures root cause investigation before attempting fixes. Never jump to solutions.",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/debugging/systematic-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "systematic-debugging-mrgoonie-xxxnaper-2"
+}

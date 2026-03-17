@@ -1,0 +1,11 @@
+{
+  "name": "catskill-research",
+  "description": "Research events and conditions data for Catskill Crew newsletter. Use when gathering Instagram events, fetching sun/moon/weather data, or preparing data for newsletter writing.",
+  "repo": "aniketpanjwani/automated_catskill_crew",
+  "path": ".claude/skills/catskill-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aniketpanjwani/automated_catskill_crew",
+  "dir_name": "catskill-research-aniketpanjwani-automated-catskill-c-2"
+}

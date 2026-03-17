@@ -1,0 +1,11 @@
+{
+  "name": "musical-dna",
+  "description": "Extract descriptive musical characteristics from any artist or band without using their name, building a vocabulary of sonic qualities for AI music generation, music description, or creative recombina",
+  "repo": "jwynia/agent-skills",
+  "path": "skills/creative/music/musical-dna",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jwynia/agent-skills",
+  "dir_name": "musical-dna-jwynia-agent-skills-2"
+}

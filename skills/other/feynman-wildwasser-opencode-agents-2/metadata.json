@@ -1,0 +1,11 @@
+{
+  "name": "feynman",
+  "description": "Feynman Technique for deep learning—explain a concept simply, identify gaps, fill them, then refine. Use when learning something new, testing understanding, or preparing to teach.",
+  "repo": "wildwasser/opencode-agents",
+  "path": ".opencode/skills/feynman",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildwasser/opencode-agents",
+  "dir_name": "feynman-wildwasser-opencode-agents-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "miso",
+  "description": "Implement feature changes by updating pseudocode, platform code, and product code from modified feature markdown files. Use when user asks to \"implement features\", \"run miso\", \"update implementations\"",
+  "repo": "asnar00/miso",
+  "path": ".claude/skills/miso",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/asnar00/miso",
+  "dir_name": "miso-asnar00-miso-2"
+}

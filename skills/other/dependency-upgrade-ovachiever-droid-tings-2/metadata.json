@@ -1,0 +1,11 @@
+{
+  "name": "dependency-upgrade",
+  "description": "Manage major dependency version upgrades with compatibility analysis, staged rollout, and comprehensive testing. Use when upgrading framework versions, updating major dependencies, or managing breakin",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/dependency-upgrade",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "dependency-upgrade-ovachiever-droid-tings-2"
+}

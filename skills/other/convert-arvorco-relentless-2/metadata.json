@@ -1,0 +1,11 @@
+{
+  "name": "convert",
+  "description": "Convert tasks.md to prd.json with smart routing classification. Use after creating tasks. Triggers on: convert to prd, generate prd.json, convert tasks.",
+  "repo": "ArvorCo/Relentless",
+  "path": ".claude/skills/convert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ArvorCo/Relentless",
+  "dir_name": "convert-arvorco-relentless-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "agent-mesh-coordinator",
+  "repo": "ruvnet/claude-flow",
+  "path": ".agents/skills/agent-mesh-coordinator/SKILL.md",
+  "category": "other",
+  "source": "github.com/ruvnet/claude-flow",
+  "dir_name": "agent-mesh-coordinator",
+  "downloaded_at": "2026-02-24T01:32:06.887096Z"
+}

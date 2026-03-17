@@ -1,0 +1,11 @@
+{
+  "name": "metrics",
+  "description": "Collect and report metrics on agent usage from git history implementing the 8 key metrics defined in agent-metrics.md for measuring agent system health effectiveness and adoption.",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/metrics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "metrics-rjmurillo-ai-agents-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "mcp-code-execution-template",
+  "description": "Template skill demonstrating the MCP Code Execution pattern for 98%+ token efficiency.\nUse this as a reference when creating skills that interact with MCP servers.\nTriggers: mcp, code execution, token",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/mcp-code-execution-template",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "mcp-code-execution-template-wania-kazmi-claude-code-autonomo-2"
+}

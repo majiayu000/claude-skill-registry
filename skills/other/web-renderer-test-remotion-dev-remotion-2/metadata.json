@@ -1,0 +1,11 @@
+{
+  "name": "web-renderer-test",
+  "description": "Add a test case to the web renderer",
+  "repo": "remotion-dev/remotion",
+  "path": ".claude/skills/web-renderer-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/remotion-dev/remotion",
+  "dir_name": "web-renderer-test-remotion-dev-remotion-2"
+}

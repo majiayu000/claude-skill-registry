@@ -1,0 +1,11 @@
+{
+  "name": "commit-standards",
+  "description": "遵循約定式提交标准格式化提交消息。\n使用时机：撰写提交消息、git commit、檢视提交历史。\n关鍵字：commit、git、message、conventional、feat、fix、refactor。",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "path": "locales/zh-CN/skills/claude-code/commit-standards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AsiaOstrich/universal-dev-standards",
+  "dir_name": "commit-standards-asiaostrich-universal-dev-standa-2"
+}

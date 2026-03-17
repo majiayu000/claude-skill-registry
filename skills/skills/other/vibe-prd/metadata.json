@@ -1,0 +1,17 @@
+{
+  "name": "vibe-prd",
+  "repo": "KhazP/vibe-coding-prompt-template",
+  "path": ".claude/skills/vibe-prd/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/KhazP/vibe-coding-prompt-template",
+  "dir_name": "vibe-prd",
+  "downloaded_at": "2026-03-02T08:41:06.302433Z",
+  "author": "KhazP",
+  "source_url": "https://github.com/KhazP/vibe-coding-prompt-template/blob/main/.claude/skills/vibe-prd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/KhazP/vibe-coding-prompt-template/blob/main/.claude/skills/vibe-prd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

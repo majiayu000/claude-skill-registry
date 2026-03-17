@@ -1,0 +1,11 @@
+{
+  "name": "glab",
+  "description": "GitLab CLI (glab) for merge requests, issues, and CI/CD pipelines. Use when working with GitLab repositories for MR creation/review, issue management, pipeline debugging, or any GitLab API operations.",
+  "repo": "ianphil/my-skills",
+  "path": "skills/glab",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ianphil/my-skills",
+  "dir_name": "glab-ianphil-my-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "doc-splitter",
+  "description": "Split large documentation (10K+ pages) into focused sub-skills with intelligent routing. Use for massive doc sites like Godot, AWS, or MSDN.",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "agentic/code/addons/doc-intelligence/skills/doc-splitter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jmagly/ai-writing-guide",
+  "dir_name": "doc-splitter-jmagly-ai-writing-guide-2"
+}

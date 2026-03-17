@@ -1,0 +1,9 @@
+{
+  "name": "ddd-feature",
+  "repo": "danielsogl/copilot-workflow-demo",
+  "path": ".claude/skills/ddd-feature/SKILL.md",
+  "category": "other",
+  "source": "github.com/danielsogl/copilot-workflow-demo",
+  "dir_name": "ddd-feature",
+  "downloaded_at": "2026-02-15T06:53:21.528085Z"
+}

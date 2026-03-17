@@ -1,0 +1,11 @@
+{
+  "name": "troubleshooting",
+  "description": "A robust troubleshooting framework. Use this skill anytime the user reports something isn't working, is buggy, or is throwing errors.",
+  "repo": "BearFlinn/claude-stuff",
+  "path": "active/skills/troubleshooting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BearFlinn/claude-stuff",
+  "dir_name": "troubleshooting-bearflinn-claude-stuff-2"
+}

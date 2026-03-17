@@ -1,0 +1,11 @@
+{
+  "name": "running-examples",
+  "description": "Breakdown の examples/ を実行し、ユーザー視点での動作確認を行う。",
+  "repo": "tettuan/breakdown",
+  "path": ".claude/skills/running-examples",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tettuan/breakdown",
+  "dir_name": "running-examples-tettuan-breakdown-2"
+}

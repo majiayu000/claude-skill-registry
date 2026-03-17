@@ -1,0 +1,11 @@
+{
+  "name": "refacter",
+  "description": "Refacter code using complexity analysis and hotspot detection. Use when asked to refactor code, improve code quality, reduce complexity, or identify high-risk areas that need attention.",
+  "repo": "Awannaphasch2016/jousef-landing",
+  "path": ".claude/skills/refacter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Awannaphasch2016/jousef-landing",
+  "dir_name": "refacter-awannaphasch2016-jousef-landing-2"
+}

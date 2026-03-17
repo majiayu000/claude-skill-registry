@@ -1,0 +1,11 @@
+{
+  "name": "qe-security-compliance",
+  "description": "Security auditing, vulnerability scanning, and compliance validation for OWASP, SOC2, GDPR, and other standards.",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/qe-security-compliance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "qe-security-compliance-proffesor-for-testin-agentic-qe-2"
+}

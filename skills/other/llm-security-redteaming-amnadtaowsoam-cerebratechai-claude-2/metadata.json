@@ -1,0 +1,11 @@
+{
+  "name": "llm-security-redteaming",
+  "description": "Comprehensive guide to securing LLM applications including prompt injection prevention, jailbreak detection, guardrails, and red teaming methodologies",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "61-ai-production/llm-security-redteaming",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "llm-security-redteaming-amnadtaowsoam-cerebratechai-claude-2"
+}

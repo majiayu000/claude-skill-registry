@@ -1,0 +1,11 @@
+{
+  "name": "v3-cli-modernization",
+  "description": "CLI modernization and hooks system enhancement for claude-flow v3. Implements interactive prompts, command decomposition, enhanced hooks integration, and intelligent workflow automation.",
+  "repo": "ricable/ruvector-edge",
+  "path": ".claude/skills/v3-cli-modernization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricable/ruvector-edge",
+  "dir_name": "v3-cli-modernization-ricable-ruvector-edge-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ast-grep",
+  "description": "Guide for writing ast-grep rules to perform structural code search and analysis. Use when users need to search codebases using Abstract Syntax Tree (AST) patterns, find specific code structures, or pe",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/ast-grep",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "ast-grep-outlinedriven-odin-claude-plugin-2"
+}

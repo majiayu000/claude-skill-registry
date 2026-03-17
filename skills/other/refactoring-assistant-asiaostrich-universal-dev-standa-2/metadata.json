@@ -1,0 +1,11 @@
+{
+  "name": "refactoring-assistant",
+  "description": "引导重构决策和大规模代码改进。\n使用时机：重构代码、遗留系统现代化、技术债、重写决策。\n关键字：refactor, rewrite, legacy, strangler, technical debt, 重构, 重写, 技术债.",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "path": "locales/zh-CN/skills/claude-code/refactoring-assistant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AsiaOstrich/universal-dev-standards",
+  "dir_name": "refactoring-assistant-asiaostrich-universal-dev-standa-2"
+}

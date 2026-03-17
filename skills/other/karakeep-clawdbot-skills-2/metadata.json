@@ -1,0 +1,11 @@
+{
+  "name": "karakeep",
+  "description": "Manage bookmarks and links in a Karakeep instance. Use when the user wants to save links, list recent bookmarks, or search their collection. Triggers on phrases like \"hoard this link\", \"save to karake",
+  "repo": "clawdbot/skills",
+  "path": "skills/jayphen/karakeep",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "karakeep-clawdbot-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "imis-api",
+  "description": "Do NOT rely on web searches for iMIS API information. Instead, use the reference implementation:",
+  "repo": "codythatsme/i-migrate",
+  "path": ".claude/skills/imis-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/codythatsme/i-migrate",
+  "dir_name": "imis-api-codythatsme-i-migrate-2"
+}

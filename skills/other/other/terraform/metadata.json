@@ -1,0 +1,9 @@
+{
+  "name": "terraform",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/terraform/SKILL.md",
+  "category": "other",
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "terraform",
+  "downloaded_at": "2026-02-15T05:22:56.560928Z"
+}

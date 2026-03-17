@@ -1,0 +1,11 @@
+{
+  "name": "particles-gpu",
+  "description": "GPU-based particle systems using instanced rendering, buffer attributes, Points geometry, and custom shaders. Use when rendering thousands to millions of particles efficiently, creating particle effec",
+  "repo": "Bbeierle12/Skill-MCP-Claude",
+  "path": "skills/particles-gpu",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Bbeierle12/Skill-MCP-Claude",
+  "dir_name": "particles-gpu-bbeierle12-skill-mcp-claude-2"
+}

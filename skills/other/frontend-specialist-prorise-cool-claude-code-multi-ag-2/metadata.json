@@ -1,0 +1,11 @@
+{
+  "name": "frontend-specialist",
+  "description": "提供前端开发、UI 实现、移动应用开发和现代前端框架能力。当需要实现用户界面、构建组件或开发移动应用时使用。",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/frontend-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "frontend-specialist-prorise-cool-claude-code-multi-ag-2"
+}

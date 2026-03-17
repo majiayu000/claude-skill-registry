@@ -1,0 +1,11 @@
+{
+  "name": "api-reference-documentation",
+  "description": "Creates professional API documentation using OpenAPI specifications with endpoints, authentication, and interactive examples. Use when documenting REST APIs, creating SDK references, or building devel",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/api-reference-documentation/skills/api-reference-documentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "api-reference-documentation-secondsky-claude-skills-2"
+}

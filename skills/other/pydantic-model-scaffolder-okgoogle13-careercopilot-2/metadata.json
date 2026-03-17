@@ -1,0 +1,11 @@
+{
+  "name": "pydantic-model-scaffolder",
+  "description": "Scaffolds Pydantic models for request/response validation with advanced validation rules. Use for complex data models. Related: fastapi-endpoint-scaffolder for quick endpoint creation.",
+  "repo": "okgoogle13/careercopilot",
+  "path": ".claude/skills/pydantic-model-scaffolder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/okgoogle13/careercopilot",
+  "dir_name": "pydantic-model-scaffolder-okgoogle13-careercopilot-2"
+}

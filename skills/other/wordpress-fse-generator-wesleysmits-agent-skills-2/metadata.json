@@ -1,0 +1,11 @@
+{
+  "name": "wordpress-fse-generator",
+  "description": "Generates WordPress Full Site Editing blocks and theme files. Use when the user asks about block.json, Gutenberg blocks, FSE themes, WordPress block development, or theme.json configuration.",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/wordpress-fse-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "wordpress-fse-generator-wesleysmits-agent-skills-2"
+}

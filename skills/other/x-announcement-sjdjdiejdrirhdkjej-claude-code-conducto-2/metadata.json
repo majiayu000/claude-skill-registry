@@ -1,0 +1,11 @@
+{
+  "name": "x-announcement",
+  "description": "Post release announcements to X (Twitter) with automated GitHub link reply. Auto-trigger after /release command completion or manual invocation. Generates engaging posts from CHANGELOG, posts via API,",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/x-announcement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "x-announcement-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+}

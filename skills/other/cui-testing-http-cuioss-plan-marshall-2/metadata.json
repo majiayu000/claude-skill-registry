@@ -1,0 +1,11 @@
+{
+  "name": "cui-testing-http",
+  "description": "CUI MockWebServer standards for HTTP client testing with JUnit 5 integration",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-java-cui/skills/cui-testing-http",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "cui-testing-http-cuioss-plan-marshall-2"
+}

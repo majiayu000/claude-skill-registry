@@ -1,0 +1,11 @@
+{
+  "name": "svelte",
+  "description": "Builds UIs with Svelte 5 including runes, components, reactivity, and stores. Use when creating Svelte applications, building reactive interfaces, or working with compile-time frameworks.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/meta-frameworks/sveltekit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "svelte-mgd34msu-goodvibes-plugin-2"
+}

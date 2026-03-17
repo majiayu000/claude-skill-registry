@@ -1,0 +1,11 @@
+{
+  "name": "claude-speak",
+  "description": "Speak text aloud using high-quality AI voice synthesis (Kokoro TTS on Apple Silicon). Use when user asks to vocalize, narrate, or speak text out loud.",
+  "repo": "leegonzales/AISkills",
+  "path": "ClaudeSpeak/claude-speak",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leegonzales/AISkills",
+  "dir_name": "claude-speak-leegonzales-aiskills-2"
+}

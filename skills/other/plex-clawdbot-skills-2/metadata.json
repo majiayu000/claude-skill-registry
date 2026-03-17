@@ -1,0 +1,11 @@
+{
+  "name": "plex",
+  "description": "Control Plex Media Server - browse libraries, search, play media, manage playback.",
+  "repo": "clawdbot/skills",
+  "path": "skills/zats/perplexity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "plex-clawdbot-skills-2"
+}

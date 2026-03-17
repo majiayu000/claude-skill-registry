@@ -1,0 +1,11 @@
+{
+  "name": "knowledge-capture",
+  "description": "Transform conversations and discussions into structured Notion documentation",
+  "repo": "tommy-ca/notion-skills",
+  "path": "plugins/notion-skills/skills/knowledge-capture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tommy-ca/notion-skills",
+  "dir_name": "knowledge-capture-tommy-ca-notion-skills-2"
+}

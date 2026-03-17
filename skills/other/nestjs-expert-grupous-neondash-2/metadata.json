@@ -1,0 +1,11 @@
+{
+  "name": "nestjs-expert",
+  "description": "Nest.js framework expert specializing in module architecture, dependency injection, middleware, guards, interceptors, testing with Jest/Supertest, TypeORM/Mongoose integration, and Passport.js authent",
+  "repo": "GrupoUS/neondash",
+  "path": ".claude/skills/nestjs-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GrupoUS/neondash",
+  "dir_name": "nestjs-expert-grupous-neondash-2"
+}

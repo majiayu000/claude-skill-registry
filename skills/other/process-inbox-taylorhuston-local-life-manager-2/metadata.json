@@ -1,0 +1,11 @@
+{
+  "name": "process-inbox",
+  "description": "Process notes in inbox folder. Use when user wants to organize inbox, triage notes, or clean up captured items. Triggers on \"process inbox\", \"organize notes\", \"inbox zero\", \"triage\".",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/process-inbox",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "process-inbox-taylorhuston-local-life-manager-2"
+}

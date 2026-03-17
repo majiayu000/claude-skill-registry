@@ -1,0 +1,11 @@
+{
+  "name": "speckit-plan",
+  "description": "Execute the implementation planning workflow using the plan template to generate design artifacts.",
+  "repo": "dceoy/speckit-agent-skills",
+  "path": "skills/speckit-plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dceoy/speckit-agent-skills",
+  "dir_name": "speckit-plan-dceoy-speckit-agent-skills-2"
+}

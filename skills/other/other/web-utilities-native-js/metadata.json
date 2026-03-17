@@ -1,0 +1,17 @@
+{
+  "name": "web-utilities-native-js",
+  "repo": "agents-inc/skills",
+  "path": "src/skills/web-utilities-native-js/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/agents-inc/skills",
+  "dir_name": "web-utilities-native-js",
+  "downloaded_at": "2026-03-01T06:30:04.294820Z",
+  "author": "agents-inc",
+  "source_url": "https://github.com/agents-inc/skills/blob/main/src/skills/web-utilities-native-js/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agents-inc/skills/blob/main/src/skills/web-utilities-native-js/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

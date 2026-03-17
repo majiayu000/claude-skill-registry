@@ -1,0 +1,11 @@
+{
+  "name": "looker-expert",
+  "description": "Expert-level Looker BI, LookML, explores, dimensions, measures, dashboards, and data modeling",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/data/looker-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "looker-expert-personamanagmentlaye-pcl-2"
+}

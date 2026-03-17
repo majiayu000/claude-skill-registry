@@ -1,0 +1,11 @@
+{
+  "name": "morning-paper-generator",
+  "description": "Generate Julia Cameron-style morning paper prompts and scaffold daily journal entries. Use when someone requests a new morning pages session and needs a dated markdown file seeded with a reflective pr",
+  "repo": "tjmaynes/skills",
+  "path": "skills/morning-paper-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tjmaynes/skills",
+  "dir_name": "morning-paper-generator-tjmaynes-skills-2"
+}

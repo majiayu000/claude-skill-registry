@@ -1,0 +1,11 @@
+{
+  "name": "clinical-value",
+  "description": "研究案の臨床的価値を評価する。患者アウトカム改善への貢献度、臨床意思決定への影響、\nガイドライン・治療戦略変更の可能性を多角的に評価。\n",
+  "repo": "tito-gh/healthcare",
+  "path": ".claude/skills/clinical-value",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tito-gh/healthcare",
+  "dir_name": "clinical-value-tito-gh-healthcare-2"
+}

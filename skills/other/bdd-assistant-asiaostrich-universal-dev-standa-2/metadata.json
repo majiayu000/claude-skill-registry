@@ -1,0 +1,11 @@
+{
+  "name": "bdd-assistant",
+  "description": "Guide developers through Behavior-Driven Development workflow.\nUse when: writing BDD scenarios, using Gherkin syntax, Given-When-Then format, feature files, Three Amigos collaboration.\nKeywords: BDD, ",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "path": "skills/claude-code/bdd-assistant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AsiaOstrich/universal-dev-standards",
+  "dir_name": "bdd-assistant-asiaostrich-universal-dev-standa-2"
+}

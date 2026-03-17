@@ -1,0 +1,11 @@
+{
+  "name": "one-ui-migration",
+  "description": "Migrating Angular 16 to 20 with DDD architecture and SignalStore patterns. Use when converting components, structuring features, or following One-UI migration standards.",
+  "repo": "Michael0520/milo-claudekit",
+  "path": "plugins/one-ui-migration/skills/one-ui-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Michael0520/milo-claudekit",
+  "dir_name": "one-ui-migration-michael0520-milo-claudekit-2"
+}

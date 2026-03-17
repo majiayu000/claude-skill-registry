@@ -1,0 +1,11 @@
+{
+  "name": "duplicate-handling",
+  "description": "Mark and remove PCR/optical duplicates using samtools fixmate and markdup. Use when preparing alignments for variant calling or when duplicate reads would bias analysis.",
+  "repo": "GPTomics/bioSkills",
+  "path": "alignment-files/duplicate-handling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "duplicate-handling-gptomics-bioskills-2"
+}

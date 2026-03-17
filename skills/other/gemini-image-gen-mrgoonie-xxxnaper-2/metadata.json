@@ -1,0 +1,11 @@
+{
+  "name": "gemini-image-gen",
+  "description": "Guide for implementing Google Gemini API image generation - create high-quality images from text prompts using gemini-2.5-flash-image model. Use when generating images, creating visual content, or imp",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/gemini-image-gen",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "gemini-image-gen-mrgoonie-xxxnaper-2"
+}

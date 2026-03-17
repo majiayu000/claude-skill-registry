@@ -1,0 +1,11 @@
+{
+  "name": "dbt-migration-hive",
+  "description": "Convert Hive/Spark/Databricks DDL to dbt models compatible with Snowflake. This skill should be used when converting views, tables, or UDFs from Hive, Spark, or Databricks to dbt code, generating sche",
+  "repo": "sfc-gh-dflippo/snowflake-dbt-demo",
+  "path": ".claude/skills/dbt-migration-hive",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sfc-gh-dflippo/snowflake-dbt-demo",
+  "dir_name": "dbt-migration-hive-sfc-gh-dflippo-snowflake-dbt-demo-2"
+}

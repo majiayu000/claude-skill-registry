@@ -1,0 +1,11 @@
+{
+  "name": "incident_response",
+  "description": "This skill empowers Claude to guide you through the security incident response process, ensuring a structured and effective approach to handling security breaches and attacks. It helps you classify in",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/incident_response",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "incident-response-vuralserhat86-antigravity-agentic--2"
+}

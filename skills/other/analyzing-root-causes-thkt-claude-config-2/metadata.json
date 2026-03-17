@@ -1,0 +1,11 @@
+{
+  "name": "analyzing-root-causes",
+  "description": "Root cause analysis with 5 Whys methodology. Triggers: root cause, 5 Whys, なぜなぜ分析, 根本原因, 原因分析, symptom fix, 対症療法.\n",
+  "repo": "thkt/claude-config",
+  "path": ".ja/skills/analyzing-root-causes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/thkt/claude-config",
+  "dir_name": "analyzing-root-causes-thkt-claude-config-2"
+}

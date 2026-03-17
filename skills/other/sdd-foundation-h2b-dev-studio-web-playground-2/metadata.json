@@ -1,0 +1,11 @@
+{
+  "name": "sdd-foundation",
+  "description": "Create Foundation documents defining web-playground identity.\nUse when: starting a new package, defining project scope, establishing identity anchors.\nTriggers: \"create foundation\", \"define identity\",",
+  "repo": "h2b-dev-studio/web-playground",
+  "path": ".claude/skills/sdd-foundation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/h2b-dev-studio/web-playground",
+  "dir_name": "sdd-foundation-h2b-dev-studio-web-playground-2"
+}

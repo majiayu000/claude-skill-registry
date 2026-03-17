@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-queues",
+  "description": "Status: Production Ready ✅ | Last Verified: 2025-12-27",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-queues/skills/cloudflare-queues",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "cloudflare-queues-secondsky-claude-skills-2"
+}

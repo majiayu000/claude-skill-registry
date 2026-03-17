@@ -1,0 +1,9 @@
+{
+  "name": "gemma-noise-detector-prototype",
+  "repo": "Foundup/Foundups-Agent",
+  "path": ".claude/skills/gemma_noise_detector_prototype/SKILL.md",
+  "category": "other",
+  "source": "github.com/Foundup/Foundups-Agent",
+  "dir_name": "gemma-noise-detector-prototype",
+  "downloaded_at": "2026-02-15T05:07:59.969792Z"
+}

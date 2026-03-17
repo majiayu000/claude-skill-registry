@@ -1,0 +1,11 @@
+{
+  "name": "obsidian-extract-inbox",
+  "description": "Extract structured document proposals from messy inbox notes. Use when processing raw notes in _inbox folders to prepare them for canonical documentation.",
+  "repo": "BreakerOfStems/claude-skills",
+  "path": "skills/obsidian-extract-inbox",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BreakerOfStems/claude-skills",
+  "dir_name": "obsidian-extract-inbox-breakerofstems-claude-skills-2"
+}

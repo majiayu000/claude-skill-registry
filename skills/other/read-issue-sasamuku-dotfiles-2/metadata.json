@@ -1,0 +1,11 @@
+{
+  "name": "read-issue",
+  "description": "Execute /read-issue <issue-number> slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/read-issue",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "read-issue-sasamuku-dotfiles-2"
+}

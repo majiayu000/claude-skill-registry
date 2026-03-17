@@ -1,0 +1,11 @@
+{
+  "name": "context-status",
+  "description": "Checks current context window usage and provides recommendations. Use when sessions feel slow, responses seem degraded, or before starting complex work.",
+  "repo": "RustyLindquist/EnhancedHR",
+  "path": ".claude/skills/context-status",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RustyLindquist/EnhancedHR",
+  "dir_name": "context-status-rustylindquist-enhancedhr-2"
+}

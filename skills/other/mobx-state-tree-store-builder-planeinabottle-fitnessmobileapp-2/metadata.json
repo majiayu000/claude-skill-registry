@@ -1,0 +1,11 @@
+{
+  "name": "mobx-state-tree-store-builder",
+  "description": "Automates creation of MobX State Tree stores following Fitness Tracker App patterns for domain models, collections, and root store integration. Use when creating new MST stores, models, or extending e",
+  "repo": "PlaneInABottle/fitnessMobileApp",
+  "path": ".claude/skills/mobx-state-tree-store-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PlaneInABottle/fitnessMobileApp",
+  "dir_name": "mobx-state-tree-store-builder-planeinabottle-fitnessmobileapp-2"
+}

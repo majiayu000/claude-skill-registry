@@ -1,0 +1,11 @@
+{
+  "name": "org-babel-execution",
+  "description": "Literate programming execution engine via org-babel for polyglot skill execution",
+  "repo": "plurigrid/asi",
+  "path": "skills/org-babel-execution",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "org-babel-execution-plurigrid-asi-2"
+}

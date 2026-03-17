@@ -1,0 +1,11 @@
+{
+  "name": "insurance-weekly-report",
+  "description": "华安保险车险周报自动生成器（麦肯锡风格）。将周度车险数据（支持Excel/CSV/JSON/DuckDB）转化为12-13页董事会级经营分析报告。采用问题导向标题、16:9宽屏、四象限/气泡图可视化、深红#a02724配色。报告结构：经营概览、保费进度、变动成本、损失暴露、费用支出，每个章节分机构和分客户类别双维度分析。支持自定义阈值配置和保费计划。触发场景：用户上传车险周报数据文件（.xlsx/",
+  "repo": "alongor666/chexianduoweifenxi",
+  "path": ".claude/skills/insurance-weekly-report",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alongor666/chexianduoweifenxi",
+  "dir_name": "insurance-weekly-report-alongor666-chexianduoweifenxi-2"
+}

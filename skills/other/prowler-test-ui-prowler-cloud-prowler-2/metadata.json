@@ -1,0 +1,11 @@
+{
+  "name": "prowler-test-ui",
+  "description": "E2E testing patterns for Prowler UI (Playwright). Trigger: When writing Playwright E2E tests under ui/tests in the Prowler UI (Prowler-specific base page/helpers, tags, flows).\n",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/prowler-test-ui",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/prowler-cloud/prowler",
+  "dir_name": "prowler-test-ui-prowler-cloud-prowler-2"
+}

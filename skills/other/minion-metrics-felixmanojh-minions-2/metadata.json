@@ -1,0 +1,11 @@
+{
+  "name": "minion-metrics",
+  "description": "View analytics and performance data for minions. Shows success rates, latency, and session history.\n",
+  "repo": "felixmanojh/minions",
+  "path": "skills/minion-metrics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/felixmanojh/minions",
+  "dir_name": "minion-metrics-felixmanojh-minions-2"
+}

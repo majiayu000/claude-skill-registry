@@ -1,0 +1,11 @@
+{
+  "name": "similarity-opamp",
+  "description": "Use when working with op-amp similarity calculations - comparing op-amp MPNs, understanding single/dual/quad configurations, equivalent families like LM358/MC1458, or op-amp-specific similarity logic.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/similarity-opamp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "similarity-opamp-cantara-lib-electronic-compo-2"
+}

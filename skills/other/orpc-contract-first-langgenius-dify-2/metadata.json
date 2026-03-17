@@ -1,0 +1,11 @@
+{
+  "name": "orpc-contract-first",
+  "description": "Guide for implementing oRPC contract-first API patterns in Dify frontend. Triggers when creating new API contracts, adding service endpoints, integrating TanStack Query with typed contracts, or migrat",
+  "repo": "langgenius/dify",
+  "path": ".agents/skills/orpc-contract-first",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/langgenius/dify",
+  "dir_name": "orpc-contract-first-langgenius-dify-2"
+}

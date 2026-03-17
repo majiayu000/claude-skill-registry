@@ -1,0 +1,11 @@
+{
+  "name": "mathpix-ocr",
+  "description": "Mathpix OCR for LaTeX extraction with balanced ternary checkpoints",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.ruler/skills/mathpix-ocr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "mathpix-ocr-plurigrid-asi-2"
+}

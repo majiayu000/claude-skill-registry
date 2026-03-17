@@ -1,0 +1,11 @@
+{
+  "name": "aws-deployment",
+  "description": "Deploys AWS infrastructure with research-first approach. Uses AWS MCP tools for documentation, regional availability, and resource management. ALWAYS searches AWS documentation before writing code, ex",
+  "repo": "Danik911/thesis_project",
+  "path": ".claude/skills/aws-deployment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Danik911/thesis_project",
+  "dir_name": "aws-deployment-danik911-thesis-project-2"
+}

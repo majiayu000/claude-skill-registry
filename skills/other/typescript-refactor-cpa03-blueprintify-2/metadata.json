@@ -1,0 +1,11 @@
+{
+  "name": "typescript-refactor",
+  "description": "Safely refactor TypeScript code while maintaining type safety and test coverage. Includes verification steps.",
+  "repo": "cpa03/blueprintify",
+  "path": ".opencode/skill/typescript-refactor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cpa03/blueprintify",
+  "dir_name": "typescript-refactor-cpa03-blueprintify-2"
+}

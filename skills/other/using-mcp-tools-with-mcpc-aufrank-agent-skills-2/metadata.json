@@ -1,0 +1,11 @@
+{
+  "name": "using-mcp-tools-with-mcpc",
+  "description": "Use mcpc CLI to interact with MCP servers - call tools, read resources, get prompts. Use when working with Model Context Protocol servers, calling MCP tools, or accessing MCP resources programmaticall",
+  "repo": "aufrank/agent-skills",
+  "path": "skills/using-mcp-tools-with-mcpc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aufrank/agent-skills",
+  "dir_name": "using-mcp-tools-with-mcpc-aufrank-agent-skills-2"
+}

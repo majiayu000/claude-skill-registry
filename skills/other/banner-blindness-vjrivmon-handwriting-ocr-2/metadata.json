@@ -1,0 +1,11 @@
+{
+  "name": "banner-blindness",
+  "description": "Los usuarios ignoran elementos que parecen anuncios. Use cuando diseñe CTAs, notificaciones importantes, o elementos promocionales dentro de la interfaz.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/perception/banner-blindness",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "banner-blindness-vjrivmon-handwriting-ocr-2"
+}

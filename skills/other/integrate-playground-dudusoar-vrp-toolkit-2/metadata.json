@@ -1,0 +1,11 @@
+{
+  "name": "integrate-playground",
+  "description": "Systematic workflow and API reference for integrating Streamlit playground with vrp-toolkit modules. Use when developing playground features, connecting UI to vrp-toolkit APIs, or encountering API sig",
+  "repo": "dudusoar/VRP-Toolkit",
+  "path": ".claude/skills/integrate-playground",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dudusoar/VRP-Toolkit",
+  "dir_name": "integrate-playground-dudusoar-vrp-toolkit-2"
+}

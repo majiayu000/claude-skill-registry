@@ -1,0 +1,11 @@
+{
+  "name": "claudemem-orchestration",
+  "description": "Multi-agent code analysis orchestration using claudemem. Share claudemem output across parallel agents. Enables parallel investigation, consensus analysis, and role-based command mapping.",
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/code-analysis/skills/claudemem-orchestration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "dir_name": "claudemem-orchestration-involvex-involvex-claude-mark-2"
+}

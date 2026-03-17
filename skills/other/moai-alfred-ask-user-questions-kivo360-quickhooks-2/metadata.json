@@ -1,0 +1,11 @@
+{
+  "name": "moai-alfred-ask-user-questions",
+  "description": "Guide Alfred sub-agents to actively invoke AskUserQuestion for ambiguous decisions.",
+  "repo": "kivo360/quickhooks",
+  "path": ".claude/skills/moai-alfred-ask-user-questions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kivo360/quickhooks",
+  "dir_name": "moai-alfred-ask-user-questions-kivo360-quickhooks-2"
+}

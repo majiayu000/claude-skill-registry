@@ -1,0 +1,11 @@
+{
+  "name": "implementing-io-pipelines",
+  "description": "Implements high-performance streaming using System.IO.Pipelines in .NET. Use when building network protocols, parsing binary data, or processing large streams efficiently.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/implementing-io-pipelines",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "implementing-io-pipelines-christian289-dotnet-with-claudeco-2"
+}

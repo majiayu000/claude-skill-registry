@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-api-patterns",
+  "description": "Complete guide for ERPNext/Frappe API integrations (v14/v15/v16) including REST API, RPC API, authentication, webhooks, and rate limiting. Use when code is needed for external API calls to ERPNext, de",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/core/erpnext-api-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-api-patterns-openaec-foundation-erpnext-anthropic-cl-2"
+}

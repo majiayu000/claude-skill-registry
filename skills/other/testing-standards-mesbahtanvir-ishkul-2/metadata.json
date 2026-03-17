@@ -1,0 +1,11 @@
+{
+  "name": "testing-standards",
+  "description": "Ensures all new screens/components have unit tests with proper coverage. Validates test files exist for loading, error, success, and state-transition states. Checks that backend handlers have correspo",
+  "repo": "mesbahtanvir/ishkul",
+  "path": ".claude/skills/testing-standards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mesbahtanvir/ishkul",
+  "dir_name": "testing-standards-mesbahtanvir-ishkul-2"
+}

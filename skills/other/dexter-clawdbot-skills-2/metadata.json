@@ -1,0 +1,11 @@
+{
+  "name": "dexter",
+  "description": "Autonomous financial research agent for stock analysis, financial statements, metrics, prices, SEC filings, and crypto data.",
+  "repo": "clawdbot/skills",
+  "path": "skills/igorhvr/dexter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "dexter-clawdbot-skills-2"
+}

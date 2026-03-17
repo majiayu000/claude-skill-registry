@@ -1,0 +1,11 @@
+{
+  "name": "codebase-context",
+  "description": "This skill should be used when the user asks to \"analyze the codebase\", \"understand the tech stack\", \"extract project patterns\", \"get codebase context\", \"what technologies are used\", or when preparing",
+  "repo": "jsegov/shipspec-claude-code-plugin",
+  "path": "skills/codebase-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jsegov/shipspec-claude-code-plugin",
+  "dir_name": "codebase-context-jsegov-shipspec-claude-code-2"
+}

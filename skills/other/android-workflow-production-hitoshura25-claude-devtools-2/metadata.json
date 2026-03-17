@@ -1,0 +1,11 @@
+{
+  "name": "android-workflow-production",
+  "description": "Generate GitHub Actions workflows for production deployment with staged rollout",
+  "repo": "hitoshura25/claude-devtools",
+  "path": "skills/android-workflow-production",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hitoshura25/claude-devtools",
+  "dir_name": "android-workflow-production-hitoshura25-claude-devtools-2"
+}

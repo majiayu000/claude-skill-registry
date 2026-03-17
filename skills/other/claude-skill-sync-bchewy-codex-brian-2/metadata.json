@@ -1,0 +1,11 @@
+{
+  "name": "claude-skill-sync",
+  "description": "Copy or sync Claude skills from ~/.claude/skills into ~/.codex/skills so they are available in Codex. Use when asked to import, migrate, copy, or sync Claude skills, or when moving skills between Clau",
+  "repo": "bchewy/codex-brian",
+  "path": "skills/claude-skill-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bchewy/codex-brian",
+  "dir_name": "claude-skill-sync-bchewy-codex-brian-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "gameplan",
+  "description": "Guides creating detailed execution plans for features, refactors, and code changes. Use when user requests a gameplan, or when user invokes /gameplan.",
+  "repo": "simonbw/tack-and-trim",
+  "path": ".claude/skills/gameplan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/simonbw/tack-and-trim",
+  "dir_name": "gameplan-simonbw-tack-and-trim-2"
+}

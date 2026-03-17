@@ -1,0 +1,11 @@
+{
+  "name": "form-security",
+  "description": "Security patterns for web forms including autocomplete attributes for password managers, CSRF protection, XSS prevention, and input sanitization. Use when implementing authentication forms, payment fo",
+  "repo": "Bbeierle12/Skill-MCP-Claude",
+  "path": "skills/form-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Bbeierle12/Skill-MCP-Claude",
+  "dir_name": "form-security-bbeierle12-skill-mcp-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ugc-content-curator",
+  "description": "Finds, organizes, and repurposes customer photos, videos, reviews, and testimonials for marketing use. Use when the user asks about UGC, user-generated content, customer photos, social proof, brand me",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/ugc-content-curator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "ugc-content-curator-wesleysmits-agent-skills-2"
+}

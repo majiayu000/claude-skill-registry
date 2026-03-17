@@ -1,0 +1,9 @@
+{
+  "name": "mcp-code-execution-template",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/mcp-code-execution-template/SKILL.md",
+  "category": "other",
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "mcp-code-execution-template",
+  "downloaded_at": "2026-02-22T05:55:48.144609Z"
+}

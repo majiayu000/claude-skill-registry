@@ -1,0 +1,11 @@
+{
+  "name": "resume-alignment",
+  "description": "Tailor resumes to job descriptions using verified achievements from your lexicon - never fabricates, always traceable to source",
+  "repo": "AJBcoding/claude-skill-eval",
+  "path": ".claude/skills/resume-alignment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AJBcoding/claude-skill-eval",
+  "dir_name": "resume-alignment-ajbcoding-claude-skill-eval-2"
+}

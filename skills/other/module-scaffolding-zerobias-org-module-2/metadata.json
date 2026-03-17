@@ -1,0 +1,11 @@
+{
+  "name": "module-scaffolding",
+  "description": "Module scaffolding using Yeoman generator including validation and sync-meta",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/module-scaffolding",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "module-scaffolding-zerobias-org-module-2"
+}

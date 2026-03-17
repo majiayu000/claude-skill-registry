@@ -1,0 +1,11 @@
+{
+  "name": "plan-list",
+  "description": "List and filter plan documents. Use when exploring plans, checking status, finding plans by module, or reviewing plan health.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/plan-list",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "plan-list-spencerbeggs-claude-design-coordi-2"
+}

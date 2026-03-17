@@ -1,0 +1,9 @@
+{
+  "name": "multi-file-exfiltration",
+  "repo": "cisco-ai-defense/skill-scanner",
+  "path": "evals/skills/behavioral-analysis/multi-file-exfiltration/SKILL.md",
+  "category": "other",
+  "source": "github.com/cisco-ai-defense/skill-scanner",
+  "dir_name": "multi-file-exfiltration",
+  "downloaded_at": "2026-02-22T06:42:48.296760Z"
+}

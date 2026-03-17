@@ -1,0 +1,11 @@
+{
+  "name": "moai-core-ask-user-questions",
+  "description": "Enterprise interactive survey orchestrator with AskUserQuestion tool integration, multi-select support, conditional branching, error recovery, and production-grade decision automation across all Alfre",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-core-ask-user-questions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-core-ask-user-questions-jg-chalk-io-nora-livekit-2"
+}

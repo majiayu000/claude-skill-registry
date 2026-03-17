@@ -1,0 +1,11 @@
+{
+  "name": "adynato-cloudflare",
+  "description": "Cloudflare Workers and Pages deployment for Adynato projects. Covers wrangler CLI, reading logs for debugging, KV/D1/R2 storage, environment variables, and common errors. Use when deploying to Cloudfl",
+  "repo": "adynato/skills",
+  "path": "skills/adynato-cloudflare",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adynato/skills",
+  "dir_name": "adynato-cloudflare-adynato-skills-2"
+}

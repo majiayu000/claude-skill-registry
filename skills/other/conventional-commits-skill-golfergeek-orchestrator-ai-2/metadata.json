@@ -1,0 +1,11 @@
+{
+  "name": "conventional-commits-skill",
+  "description": "CRITICAL: All commits must follow Conventional Commits format: <type>(<scope>): <description>",
+  "repo": "GolferGeek/orchestrator-ai",
+  "path": ".claude/skills/conventional-commits-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GolferGeek/orchestrator-ai",
+  "dir_name": "conventional-commits-skill-golfergeek-orchestrator-ai-2"
+}

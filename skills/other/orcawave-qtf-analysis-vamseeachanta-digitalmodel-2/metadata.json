@@ -1,0 +1,11 @@
+{
+  "name": "orcawave-qtf-analysis",
+  "description": "Second-order wave force specialist for QTF (Quadratic Transfer Function) computation in OrcaWave. Handles mean drift, difference-frequency, sum-frequency forces, and slow-drift response analysis for o",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcawave-qtf-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcawave-qtf-analysis-vamseeachanta-digitalmodel-2"
+}

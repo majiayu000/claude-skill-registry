@@ -1,0 +1,11 @@
+{
+  "name": "Coinank数据接口",
+  "description": "使用 Coinank MCP 工具进行加密货币衍生品市场分析",
+  "repo": "phpmac/trader",
+  "path": ".claude/skills/Coinank数据接口",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/phpmac/trader",
+  "dir_name": "coinank-phpmac-trader-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "project-workflow",
+  "description": "Guides AI agents through TDD workflow, build system safety, git operations, and TODO management for gem development. Use this when starting development sessions, managing tasks, or needing workflow cl",
+  "repo": "bash0C7/picotorokko",
+  "path": ".claude/skills/project-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bash0C7/picotorokko",
+  "dir_name": "project-workflow-bash0c7-picotorokko-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "gentleman-installer",
+  "description": "Installation step patterns for Gentleman.Dots TUI installer. Trigger: When editing installer.go, adding installation steps, or modifying the installation flow.\n",
+  "repo": "Gentleman-Programming/Gentleman.Dots",
+  "path": "skills/gentleman-installer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Gentleman-Programming/Gentleman.Dots",
+  "dir_name": "gentleman-installer-gentleman-programmin-gentleman-dots-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "preflight",
+  "repo": "brave-experiments/brave-core-bot",
+  "path": ".claude/skills/preflight/SKILL.md",
+  "category": "other",
+  "source": "github.com/brave-experiments/brave-core-bot",
+  "dir_name": "preflight",
+  "downloaded_at": "2026-02-22T06:35:30.251250Z"
+}

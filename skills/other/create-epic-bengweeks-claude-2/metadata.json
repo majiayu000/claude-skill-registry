@@ -1,0 +1,11 @@
+{
+  "name": "create-epic",
+  "description": "Creates Epics following the T-Minus-15 process template. Epics are large bodies of work containing multiple Features. Includes comprehensive metadata for background, objectives, hypothesis, analysis, ",
+  "repo": "BenGWeeks/.claude",
+  "path": "skills/create-epic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BenGWeeks/.claude",
+  "dir_name": "create-epic-bengweeks-claude-2"
+}

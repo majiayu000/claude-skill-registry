@@ -1,0 +1,11 @@
+{
+  "name": "traceability-auditor",
+  "description": "Validates complete requirements traceability across EARS requirements → design → tasks → code → tests.\n\nTrigger terms: traceability, requirements coverage, coverage matrix, traceability matrix,\nrequir",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/traceability-auditor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "dir_name": "traceability-auditor-nahisaho-codegraphmcpserver-2"
+}

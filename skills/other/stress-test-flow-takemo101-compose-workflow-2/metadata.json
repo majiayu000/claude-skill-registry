@@ -1,0 +1,11 @@
+{
+  "name": "stress-test-flow",
+  "description": "実装完了後のマルチ視点ストレステストフロー。複数の検証エージェントが並列で品質を検証し、コード生成なしで問題を検出",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/stress-test-flow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "stress-test-flow-takemo101-compose-workflow-2"
+}

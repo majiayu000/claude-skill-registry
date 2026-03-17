@@ -1,0 +1,11 @@
+{
+  "name": "devops-database",
+  "description": "Manages PostgreSQL database operations including Alembic migrations (creation, application, rollback), database backups and restoration for both development and production environments, shell access, ",
+  "repo": "shredbx/demo-3d-model",
+  "path": ".claude/skills/devops-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shredbx/demo-3d-model",
+  "dir_name": "devops-database-shredbx-demo-3d-model-2"
+}

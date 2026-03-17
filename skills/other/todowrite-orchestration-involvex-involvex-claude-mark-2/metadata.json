@@ -1,0 +1,11 @@
+{
+  "name": "todowrite-orchestration",
+  "description": "Track progress in multi-phase workflows with TodoWrite. Use when orchestrating 5+ phase commands, managing iteration loops, tracking parallel tasks, or providing real-time progress visibility. Trigger",
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/orchestration/skills/todowrite-orchestration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "dir_name": "todowrite-orchestration-involvex-involvex-claude-mark-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "changelog-update",
+  "description": "Update CHANGELOG.md [Unreleased] section with business-focused entries via systematic file review",
+  "repo": "CongDon1207/AGENTS.md",
+  "path": ".claude/skills/changelog-update",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CongDon1207/AGENTS.md",
+  "dir_name": "changelog-update-congdon1207-agents-md-2"
+}

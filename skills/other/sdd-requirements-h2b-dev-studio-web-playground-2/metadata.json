@@ -1,0 +1,11 @@
+{
+  "name": "sdd-requirements",
+  "description": "Create Requirements documents with alignment to Foundation anchors.\nUse when: defining success criteria, writing verifiable requirements.\nTriggers: \"create requirements\", \"write reqs\", \"sdd requiremen",
+  "repo": "h2b-dev-studio/web-playground",
+  "path": ".claude/skills/sdd-requirements",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/h2b-dev-studio/web-playground",
+  "dir_name": "sdd-requirements-h2b-dev-studio-web-playground-2"
+}

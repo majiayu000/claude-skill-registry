@@ -1,0 +1,11 @@
+{
+  "name": "rls-patterns",
+  "description": "Row Level Security patterns for database operations. Use when writing Prisma/database code, creating API routes that access data, or implementing webhooks. Enforces withUserContext, withAdminContext, ",
+  "repo": "bybren-llc/safe-agentic-workflow",
+  "path": ".claude/skills/rls-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bybren-llc/safe-agentic-workflow",
+  "dir_name": "rls-patterns-bybren-llc-safe-agentic-workflo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "review-sonnet",
+  "description": "Fast code/plan review for quality, security, and tests. Use for quick reviews before deeper analysis.",
+  "repo": "cskwork/llm-review",
+  "path": "skill/review-sonnet",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cskwork/llm-review",
+  "dir_name": "review-sonnet-cskwork-llm-review-2"
+}

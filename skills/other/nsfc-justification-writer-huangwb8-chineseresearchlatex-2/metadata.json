@@ -1,0 +1,11 @@
+{
+  "name": "nsfc-justification-writer",
+  "description": "为科研申请书\"立项依据\"章节写作/重构 LaTeX 正文内容，基于最小信息表输出价值与必要性、现状不足、科学问题/假说与项目切入点，并保持模板结构不被破坏。适用于 NSFC 及各类科研基金申请书的立项依据写作场景。",
+  "repo": "huangwb8/ChineseResearchLaTeX",
+  "path": "skills/nsfc-justification-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/huangwb8/ChineseResearchLaTeX",
+  "dir_name": "nsfc-justification-writer-huangwb8-chineseresearchlatex-2"
+}

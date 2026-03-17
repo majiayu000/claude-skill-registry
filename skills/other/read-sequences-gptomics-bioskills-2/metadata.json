@@ -1,0 +1,11 @@
+{
+  "name": "read-sequences",
+  "description": "Read biological sequence files (FASTA, FASTQ, GenBank, EMBL, ABI, SFF) using Biopython Bio.SeqIO. Use when parsing sequence files, iterating multi-sequence files, random access to large files, or high",
+  "repo": "GPTomics/bioSkills",
+  "path": "sequence-io/read-sequences",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "read-sequences-gptomics-bioskills-2"
+}

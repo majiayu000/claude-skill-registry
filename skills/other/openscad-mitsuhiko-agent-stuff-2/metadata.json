@@ -1,0 +1,11 @@
+{
+  "name": "openscad",
+  "description": "Create and render OpenSCAD 3D models. Generate preview images from multiple angles, extract customizable parameters, validate syntax, and export STL files for 3D printing platforms like MakerWorld.",
+  "repo": "mitsuhiko/agent-stuff",
+  "path": "skills/openscad",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mitsuhiko/agent-stuff",
+  "dir_name": "openscad-mitsuhiko-agent-stuff-2"
+}

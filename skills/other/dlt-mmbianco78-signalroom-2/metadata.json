@@ -1,0 +1,11 @@
+{
+  "name": "dlt",
+  "description": "dlt (data load tool) patterns for SignalRoom ETL pipelines. Use when creating sources, debugging pipeline failures, understanding schema evolution, or implementing incremental loading.",
+  "repo": "mmbianco78/signalroom",
+  "path": ".claude/skills/dlt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mmbianco78/signalroom",
+  "dir_name": "dlt-mmbianco78-signalroom-2"
+}

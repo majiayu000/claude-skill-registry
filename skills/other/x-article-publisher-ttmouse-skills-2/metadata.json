@@ -1,0 +1,11 @@
+{
+  "name": "x-article-publisher",
+  "description": "Publish Markdown articles to X (Twitter) Articles editor with proper formatting. Use when user wants to publish a Markdown file/URL to X Articles, or mentions \"publish to X\", \"post article to Twitter\"",
+  "repo": "ttmouse/skills",
+  "path": "x-article-publisher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ttmouse/skills",
+  "dir_name": "x-article-publisher-ttmouse-skills-2"
+}

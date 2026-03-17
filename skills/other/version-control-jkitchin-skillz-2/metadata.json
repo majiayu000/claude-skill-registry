@@ -1,0 +1,11 @@
+{
+  "name": "version-control",
+  "description": "Expert guidance for Git version control, trunk-based development workflows, and GitHub best practices.\nEmphasizes Conventional Commits for clean history, short-lived feature branches, frequent integra",
+  "repo": "jkitchin/skillz",
+  "path": "skills/development/version-control",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jkitchin/skillz",
+  "dir_name": "version-control-jkitchin-skillz-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "failure-mode-analysis",
+  "description": "Identify potential failure modes and assess system vulnerabilities for pilot workflows and integrations. Use when anticipating risks, modeling breakdown scenarios, or designing mitigation strategies b",
+  "repo": "profmikegreene/gotei",
+  "path": "Gotei_Skills/failure-mode-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/profmikegreene/gotei",
+  "dir_name": "failure-mode-analysis-profmikegreene-gotei-2"
+}

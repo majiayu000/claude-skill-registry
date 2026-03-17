@@ -1,0 +1,11 @@
+{
+  "name": "terra-sdk",
+  "description": "Terra SDK integration for Python, JavaScript, iOS, Android, React Native, and Flutter. Use when implementing Terra in applications, choosing SDKs, or integrating mobile health sources.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/terra-sdk",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "terra-sdk-adaptationio-skrillz-2"
+}

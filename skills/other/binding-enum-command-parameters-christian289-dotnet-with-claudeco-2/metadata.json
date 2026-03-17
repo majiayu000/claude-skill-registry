@@ -1,0 +1,11 @@
+{
+  "name": "binding-enum-command-parameters",
+  "description": "Binds enum values to WPF CommandParameter using x:Static markup extension. Use when passing enum types to commands or avoiding string-based command parameter errors.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/binding-enum-command-parameters",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "binding-enum-command-parameters-christian289-dotnet-with-claudeco-2"
+}

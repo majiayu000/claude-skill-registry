@@ -1,0 +1,11 @@
+{
+  "name": "platform-support",
+  "description": "Use this skill when the user asks about \"Storybook with Tauri\", \"Storybook with Electron\", \"desktop app components\", \"Tauri IPC mocking\", \"Electron limitations\", mentions \"cross-platform development\",",
+  "repo": "flight505/storybook-assistant",
+  "path": "skills/platform-support",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/flight505/storybook-assistant",
+  "dir_name": "platform-support-flight505-storybook-assistant-2"
+}

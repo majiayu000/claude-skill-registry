@@ -1,0 +1,11 @@
+{
+  "name": "ai-mlops",
+  "description": "Complete MLOps skill covering production ML lifecycle and security. Includes data ingestion, model deployment, drift detection, monitoring, plus ML security (prompt injection, jailbreak defense, RAG s",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/ai-mlops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "ai-mlops-vasilyu1983-ai-agents-public-2"
+}

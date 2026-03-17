@@ -1,0 +1,11 @@
+{
+  "name": "grape",
+  "description": "AI-enabled, deterministic codebase search. Converts vague intent into explicit, auditable grep parameters and executes a stable surface scan over disk.\n",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/grape",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "grape-jordangunn-nunchuck-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "accessibility-wcag",
+  "description": "Enforce WCAG 2.2 accessibility standards. Use when creating UI components, reviewing frontend code, or when accessibility issues are detected. Covers semantic HTML, ARIA, keyboard navigation, and colo",
+  "repo": "Doyajin174/myskills",
+  "path": ".public/skills/accessibility-wcag",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Doyajin174/myskills",
+  "dir_name": "accessibility-wcag-doyajin174-myskills-2"
+}

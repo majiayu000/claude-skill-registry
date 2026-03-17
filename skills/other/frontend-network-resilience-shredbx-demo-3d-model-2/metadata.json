@@ -1,0 +1,11 @@
+{
+  "name": "frontend-network-resilience",
+  "description": "Network resilience patterns for frontend - retry logic, exponential backoff, error handling, offline detection",
+  "repo": "shredbx/demo-3d-model",
+  "path": ".claude/skills/frontend-network-resilience",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shredbx/demo-3d-model",
+  "dir_name": "frontend-network-resilience-shredbx-demo-3d-model-2"
+}

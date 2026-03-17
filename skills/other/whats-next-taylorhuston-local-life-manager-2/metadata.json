@@ -1,0 +1,11 @@
+{
+  "name": "whats-next",
+  "description": "Quick prioritization of what to work on. Use when unsure what to do next, need help deciding, or want a quick recommendation. Triggers on \"what's next\", \"what should I do\", \"prioritize\", \"what now\".",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/whats-next",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "whats-next-taylorhuston-local-life-manager-2"
+}

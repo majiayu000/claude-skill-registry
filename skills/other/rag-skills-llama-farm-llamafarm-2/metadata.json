@@ -1,0 +1,11 @@
+{
+  "name": "rag-skills",
+  "description": "RAG-specific best practices for LlamaIndex, ChromaDB, and Celery workers. Covers ingestion, retrieval, embeddings, and performance.",
+  "repo": "llama-farm/llamafarm",
+  "path": ".claude/skills/rag-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/llama-farm/llamafarm",
+  "dir_name": "rag-skills-llama-farm-llamafarm-2"
+}

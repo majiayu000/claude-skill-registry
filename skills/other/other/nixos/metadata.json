@@ -1,0 +1,9 @@
+{
+  "name": "nixos",
+  "repo": "jwiegley/claude-prompts",
+  "path": "skills/nixos/SKILL.md",
+  "category": "other",
+  "source": "github.com/jwiegley/claude-prompts",
+  "dir_name": "nixos",
+  "downloaded_at": "2026-02-15T07:48:45.909860Z"
+}

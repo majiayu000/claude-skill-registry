@@ -1,0 +1,11 @@
+{
+  "name": "plan-on-md",
+  "description": "A skill to save plans to local Markdown after creating them in plan mode",
+  "repo": "uuta/dotfiles",
+  "path": "skills/plan-on-md",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/uuta/dotfiles",
+  "dir_name": "plan-on-md-uuta-dotfiles-2"
+}

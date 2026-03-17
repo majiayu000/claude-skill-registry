@@ -1,0 +1,11 @@
+{
+  "name": "qe-coverage-analysis",
+  "description": "O(log n) sublinear coverage gap detection with risk-weighted analysis and intelligent test prioritization.",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/qe-coverage-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "qe-coverage-analysis-proffesor-for-testin-agentic-qe-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "database-backup",
+  "description": "Backup database before tests, migrations, or other database operations",
+  "repo": "Smooth-Operation/household-expense-tracker",
+  "path": ".claude/skills/safety/database-backup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Smooth-Operation/household-expense-tracker",
+  "dir_name": "database-backup-smooth-operation-household-expense-tr-2"
+}

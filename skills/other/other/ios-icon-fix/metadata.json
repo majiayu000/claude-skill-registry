@@ -1,0 +1,17 @@
+{
+  "name": "ios-icon-fix",
+  "repo": "decentpaste/decentpaste",
+  "path": ".claude/skills/ios-icon-fix/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/decentpaste/decentpaste",
+  "dir_name": "ios-icon-fix",
+  "downloaded_at": "2026-03-01T07:25:47.431406Z",
+  "author": "decentpaste",
+  "source_url": "https://github.com/decentpaste/decentpaste/blob/main/.claude/skills/ios-icon-fix/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/decentpaste/decentpaste/blob/main/.claude/skills/ios-icon-fix/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

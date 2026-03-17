@@ -1,0 +1,11 @@
+{
+  "name": "route-generator",
+  "description": "Adds new routes to TanStack Router in src/router.tsx. Creates route definitions following project patterns. Use when adding new pages or sections.",
+  "repo": "eug-subscription/ERP_v3",
+  "path": ".agent/skills/route-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/eug-subscription/ERP_v3",
+  "dir_name": "route-generator-eug-subscription-erp-v3-2"
+}

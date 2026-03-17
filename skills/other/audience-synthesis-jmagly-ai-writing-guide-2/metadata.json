@@ -1,0 +1,11 @@
+{
+  "name": "audience-synthesis",
+  "description": "Synthesize audience insights from multiple data sources into unified personas and segments. Use when relevant to the task.",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "plugins/marketing/skills/audience-synthesis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jmagly/ai-writing-guide",
+  "dir_name": "audience-synthesis-jmagly-ai-writing-guide-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ai-doc-writing",
+  "description": "This skill should be used when writing, reviewing, or refactoring documentation that will be consumed as AI context. Optimizes documentation for LLM comprehension using principles of completeness, eff",
+  "repo": "vinceh/recipe",
+  "path": ".claude/skills/ai-doc-writing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vinceh/recipe",
+  "dir_name": "ai-doc-writing-vinceh-recipe-2"
+}

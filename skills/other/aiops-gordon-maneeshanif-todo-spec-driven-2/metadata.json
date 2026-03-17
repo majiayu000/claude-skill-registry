@@ -1,0 +1,11 @@
+{
+  "name": "aiops-gordon",
+  "description": "Setup and use Docker AI (Gordon) for intelligent container operations",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/aiops-gordon",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "aiops-gordon-maneeshanif-todo-spec-driven-2"
+}

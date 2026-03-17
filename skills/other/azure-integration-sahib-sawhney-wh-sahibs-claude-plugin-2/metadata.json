@@ -1,0 +1,11 @@
+{
+  "name": "azure-integration",
+  "description": "Configure Azure services as DAPR components with best practices. Supports Azure Cosmos DB, Service Bus, Key Vault, Blob Storage, Event Grid, and Container Apps. Automatically generates component YAML ",
+  "repo": "Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace",
+  "path": "plugins/dapr/skills/azure-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace",
+  "dir_name": "azure-integration-sahib-sawhney-wh-sahibs-claude-plugin-2"
+}

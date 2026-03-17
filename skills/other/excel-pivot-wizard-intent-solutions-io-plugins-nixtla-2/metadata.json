@@ -1,0 +1,11 @@
+{
+  "name": "excel-pivot-wizard",
+  "description": "Generate pivot tables and charts from raw data using natural language - analyze sales by region, summarize data by category, and create visualizations effortlessly",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/business-tools/excel-analyst-pro/skills/excel-pivot-wizard",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "excel-pivot-wizard-intent-solutions-io-plugins-nixtla-2"
+}

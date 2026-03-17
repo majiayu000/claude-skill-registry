@@ -1,0 +1,11 @@
+{
+  "name": "skill-no-references",
+  "description": "Skill without references directory",
+  "repo": "cuioss/plan-marshall",
+  "path": "test/pm-plugin-development/plugin-maintain/fixtures/knowledge/skill-no-references",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "skill-no-references-cuioss-plan-marshall-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "convert-to-docker",
+  "repo": "cosmin/microclaw",
+  "path": ".claude/skills/convert-to-docker/SKILL.md",
+  "category": "other",
+  "source": "github.com/cosmin/microclaw",
+  "dir_name": "convert-to-docker-cosmin-microclaw",
+  "downloaded_at": "2026-02-15T06:49:49.369191Z"
+}

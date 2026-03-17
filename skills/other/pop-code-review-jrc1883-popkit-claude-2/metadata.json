@@ -1,0 +1,11 @@
+{
+  "name": "pop-code-review",
+  "description": "Confidence-based code review that filters issues to 80+ threshold, eliminating false positives and noise. Reviews implementation against plan or requirements for bugs, quality issues, and project conv",
+  "repo": "jrc1883/popkit-claude",
+  "path": "packages/popkit-ops/skills/pop-code-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jrc1883/popkit-claude",
+  "dir_name": "pop-code-review-jrc1883-popkit-claude-2"
+}

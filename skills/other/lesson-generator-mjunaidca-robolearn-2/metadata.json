@@ -1,0 +1,11 @@
+{
+  "name": "lesson-generator",
+  "description": "Generate lesson content following 4-Layer Teaching Framework with standardized metadata and Docusaurus conventions",
+  "repo": "mjunaidca/robolearn",
+  "path": ".claude/skills/lesson-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mjunaidca/robolearn",
+  "dir_name": "lesson-generator-mjunaidca-robolearn-2"
+}

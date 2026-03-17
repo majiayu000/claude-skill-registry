@@ -1,0 +1,11 @@
+{
+  "name": "credentials",
+  "description": "Centralized API key management from Access.txt",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/credentials",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "dir_name": "credentials-alinaqi-claude-bootstrap-2"
+}

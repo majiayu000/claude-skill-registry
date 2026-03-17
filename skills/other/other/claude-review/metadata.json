@@ -1,0 +1,9 @@
+{
+  "name": "claude-review",
+  "repo": "hyperlane-xyz/hyperlane-monorepo",
+  "path": ".claude/skills/claude-review/SKILL.md",
+  "category": "other",
+  "source": "github.com/hyperlane-xyz/hyperlane-monorepo",
+  "dir_name": "claude-review",
+  "downloaded_at": "2026-02-22T07:30:09.136061Z"
+}

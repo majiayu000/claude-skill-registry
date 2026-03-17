@@ -1,0 +1,9 @@
+{
+  "name": "validate-skills",
+  "repo": "callstackincubator/agent-skills",
+  "path": ".claude/skills/validate-skills/SKILL.md",
+  "category": "other",
+  "source": "github.com/callstackincubator/agent-skills",
+  "dir_name": "validate-skills",
+  "downloaded_at": "2026-02-15T06:40:33.315772Z"
+}

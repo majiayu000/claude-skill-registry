@@ -1,0 +1,11 @@
+{
+  "name": "async-await-checker",
+  "description": "Automatically applies when writing Python functions that call async operations. Ensures proper async/await pattern usage (not asyncio.run) to prevent event loop errors.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/async-await-checker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "async-await-checker-ricardoroche-ricardos-claude-code-2"
+}

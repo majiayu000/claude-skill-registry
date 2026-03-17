@@ -1,0 +1,11 @@
+{
+  "name": "change-logger",
+  "description": "Generate and maintain the root CHANGELOG.md in a beginner-friendly, analogy-rich format from git state or a commit range.",
+  "repo": "doubleflannel/12-30-test-codex-ip",
+  "path": "skills/change-logger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doubleflannel/12-30-test-codex-ip",
+  "dir_name": "change-logger-doubleflannel-12-30-test-codex-ip-2"
+}

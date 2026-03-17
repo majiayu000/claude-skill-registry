@@ -1,0 +1,11 @@
+{
+  "name": "anndata",
+  "description": "Data structure for annotated matrices in single-cell analysis. Use when working with .h5ad files or integrating with the scverse ecosystem. This is the data format skill—for analysis workflows use sca",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/bioinformatics/anndata",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "anndata-hxk622-tokendance-2"
+}

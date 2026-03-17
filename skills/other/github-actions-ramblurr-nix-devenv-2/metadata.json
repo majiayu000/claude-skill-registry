@@ -1,0 +1,11 @@
+{
+  "name": "github-actions",
+  "description": "Use when writing or updating GitHub Actions workflow files (.github/workflows/*.yml) - provides latest version tags for official and popular third-party actions to avoid using outdated versions",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/github-actions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "github-actions-ramblurr-nix-devenv-2"
+}

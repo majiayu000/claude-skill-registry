@@ -1,0 +1,11 @@
+{
+  "name": "eeat-analyzer",
+  "description": "Analyze and optimize E-E-A-T signals (Experience, Expertise, Authority, Trust) for content credibility.",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": "plugins/majestic-marketing/skills/seo/eeat-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "dir_name": "eeat-analyzer-majesticlabs-dev-majestic-marketplace-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "jira-builders",
+  "description": "Guide for using jira-tool CLI correctly to create and manage Jira tickets with rich formatting.\nUse when working with Jira tickets, epics, or exports. Triggers on \"create Jira ticket\",\n\"search Jira\", ",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/jira-builders",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "jira-builders-dawiddutoit-custom-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "answer-collector",
+  "description": "TODO: Brief description of what the Skill does and when to use it",
+  "repo": "matteocervelli/llms",
+  "path": ".claude/skills/answer-collector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/matteocervelli/llms",
+  "dir_name": "answer-collector-matteocervelli-llms-2"
+}

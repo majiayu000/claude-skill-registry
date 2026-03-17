@@ -1,0 +1,11 @@
+{
+  "name": "alto-self-fix",
+  "description": "Use when ALTO needs to fix itself via GitHub issues. Procedural workflow for running /alto-self-fix or solving issues through ALTO's self-improvement process.",
+  "repo": "gonzaloetjo/alto",
+  "path": "skills/alto-self-fix",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gonzaloetjo/alto",
+  "dir_name": "alto-self-fix-gonzaloetjo-alto-2"
+}

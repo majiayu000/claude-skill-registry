@@ -1,0 +1,11 @@
+{
+  "name": "handle-large-tasks",
+  "description": "Use this skill to split large plans into smaller chunks. This skill manages your context window for large tasks. Use it when a task will take a long time and cause context issues.",
+  "repo": "tilework-tech/nori-cli",
+  "path": ".claude/skills/handle-large-tasks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tilework-tech/nori-cli",
+  "dir_name": "handle-large-tasks-tilework-tech-nori-cli-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "剪口播",
+  "description": "口播视频转录和口误识别。生成审查稿和删除任务清单。触发词：剪口播、处理视频、识别口误",
+  "repo": "Ceeon/videocut-skills",
+  "path": "剪口播",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ceeon/videocut-skills",
+  "dir_name": "unknown-ceeon-videocut-skills-2"
+}

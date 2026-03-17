@@ -1,0 +1,9 @@
+{
+  "name": "deployment-validator",
+  "repo": "HR-AR/Project-Conductor",
+  "path": ".claude/skills/deployment-validator/SKILL.md",
+  "category": "other",
+  "source": "github.com/HR-AR/Project-Conductor",
+  "dir_name": "deployment-validator",
+  "downloaded_at": "2026-02-22T05:07:06.637993Z"
+}

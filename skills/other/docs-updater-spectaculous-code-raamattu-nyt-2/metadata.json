@@ -1,0 +1,11 @@
+{
+  "name": "docs-updater",
+  "description": "Expert assistant for keeping documentation synchronized with code changes in the KR92 Bible Voice project. Use when updating API docs, maintaining architecture diagrams, syncing README, updating CLAUD",
+  "repo": "Spectaculous-Code/raamattu-nyt",
+  "path": ".claude/skills/docs-updater",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Spectaculous-Code/raamattu-nyt",
+  "dir_name": "docs-updater-spectaculous-code-raamattu-nyt-2"
+}

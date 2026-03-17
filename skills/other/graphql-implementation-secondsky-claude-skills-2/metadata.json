@@ -1,0 +1,11 @@
+{
+  "name": "graphql-implementation",
+  "description": "Builds GraphQL APIs with schema design, resolvers, error handling, and performance optimization using Apollo or Graphene. Use when creating flexible query APIs, migrating from REST, or implementing re",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/graphql-implementation/skills/graphql-implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "graphql-implementation-secondsky-claude-skills-2"
+}

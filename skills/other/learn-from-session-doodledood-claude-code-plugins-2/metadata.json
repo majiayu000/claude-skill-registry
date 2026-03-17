@@ -1,0 +1,11 @@
+{
+  "name": "learn-from-session",
+  "description": "Analyze Claude Code sessions to learn what went right/wrong and suggest high-confidence improvements to skills. Use when asked to analyze a session, learn from a session, or review workflow effectiven",
+  "repo": "doodledood/claude-code-plugins",
+  "path": ".claude/skills/learn-from-session",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "learn-from-session-doodledood-claude-code-plugins-2"
+}

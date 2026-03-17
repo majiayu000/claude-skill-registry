@@ -1,0 +1,11 @@
+{
+  "name": "feedback-patterns",
+  "description": "User feedback patterns for interactions - loading states, success/error messages,\nform validation, empty states. Ensures users understand system state and next steps.\n\nUse when implementing user-facin",
+  "repo": "phananhtuan09/ai-agent-workflow",
+  "path": ".opencode/skill/ux-feedback-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/phananhtuan09/ai-agent-workflow",
+  "dir_name": "feedback-patterns-phananhtuan09-ai-agent-workflow-2"
+}

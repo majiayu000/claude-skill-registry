@@ -1,0 +1,11 @@
+{
+  "name": "map-codebase",
+  "description": "Analyze codebase with parallel Explore agents to produce .planning/codebase/ documents. Use for brownfield project onboarding, refreshing codebase understanding after significant changes, before major",
+  "repo": "philoserf/claude-code-setup",
+  "path": "skills/map-codebase",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/philoserf/claude-code-setup",
+  "dir_name": "map-codebase-philoserf-claude-code-setup-2"
+}

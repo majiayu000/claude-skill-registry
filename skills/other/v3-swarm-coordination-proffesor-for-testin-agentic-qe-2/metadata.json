@@ -1,0 +1,11 @@
+{
+  "name": "v3-swarm-coordination",
+  "description": "15-agent hierarchical mesh coordination for v3 implementation. Orchestrates parallel execution across security, core, and integration domains following 10 ADRs with 14-week timeline.",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/v3-swarm-coordination",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "v3-swarm-coordination-proffesor-for-testin-agentic-qe-2"
+}

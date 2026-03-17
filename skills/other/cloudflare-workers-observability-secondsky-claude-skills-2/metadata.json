@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-workers-observability",
+  "description": "Cloudflare Workers observability with logging, Analytics Engine, Tail Workers, metrics, and alerting. Use for monitoring, debugging, tracing, or encountering log parsing, metric aggregation, alert con",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-workers/skills/cloudflare-workers-observability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "cloudflare-workers-observability-secondsky-claude-skills-2"
+}

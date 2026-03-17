@@ -1,0 +1,11 @@
+{
+  "name": "dart-build",
+  "description": "DART build system knowledge - CMake, pixi, dependencies, troubleshooting",
+  "repo": "dartsim/dart",
+  "path": ".claude/skills/dart-build",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dartsim/dart",
+  "dir_name": "dart-build-dartsim-dart-2"
+}

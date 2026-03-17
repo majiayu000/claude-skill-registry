@@ -1,0 +1,9 @@
+{
+  "name": "ffmpeg-video-analysis",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/ffmpeg-master/skills/ffmpeg-video-analysis/SKILL.md",
+  "category": "other",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "ffmpeg-video-analysis",
+  "downloaded_at": "2026-02-22T05:14:36.948653Z"
+}

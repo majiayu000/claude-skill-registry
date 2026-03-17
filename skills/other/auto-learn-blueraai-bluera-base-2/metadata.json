@@ -1,0 +1,11 @@
+{
+  "name": "auto-learn",
+  "description": "Automatic learning from session command patterns",
+  "repo": "blueraai/bluera-base",
+  "path": "skills/auto-learn",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/blueraai/bluera-base",
+  "dir_name": "auto-learn-blueraai-bluera-base-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "analyze-code",
+  "description": "Deep code analysis using consultant agent. Identifies technical debt, risks, and improvement opportunities.",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/consultant/skills/analyze-code",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "analyze-code-doodledood-claude-code-plugins-2"
+}

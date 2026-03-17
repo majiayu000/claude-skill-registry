@@ -1,0 +1,11 @@
+{
+  "name": "aeo-audit",
+  "description": "Answer Engine Optimization (AEO) audit methodology for LLM visibility. Use when auditing brands for ChatGPT/Gemini mentions, checking LLM citations, analyzing AI search visibility, or when user mentio",
+  "repo": "NoCodeify/aeo",
+  "path": ".claude/skills/aeo-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NoCodeify/aeo",
+  "dir_name": "aeo-audit-nocodeify-aeo-2"
+}

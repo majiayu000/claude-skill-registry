@@ -1,0 +1,11 @@
+{
+  "name": "create-mongodb-repository",
+  "description": "Create MongoDB repository implementation for production database. Use when implementing repository interface with MongoDB, setting up document mapping, creating indexes, or connecting to real database",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/create-mongodb-repository",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "create-mongodb-repository-madooei-backend-template-2"
+}

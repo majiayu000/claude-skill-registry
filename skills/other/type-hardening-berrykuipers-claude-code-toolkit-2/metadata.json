@@ -1,0 +1,11 @@
+{
+  "name": "type-hardening",
+  "description": "Incrementally improve type safety by replacing string literals with enums, narrowing `any` types, and using shared types. Works in small verified batches. Preserves functionality while improving code ",
+  "repo": "BerryKuipers/claude-code-toolkit",
+  "path": ".claude/skills/quality/type-hardening",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BerryKuipers/claude-code-toolkit",
+  "dir_name": "type-hardening-berrykuipers-claude-code-toolkit-2"
+}

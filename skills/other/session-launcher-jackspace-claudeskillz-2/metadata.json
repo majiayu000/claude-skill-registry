@@ -1,0 +1,11 @@
+{
+  "name": "session-launcher",
+  "description": "Restores full context when user says \"hi-ai\" or starts a new conversation. Searches project files, loads memory indexes, reads session state, and creates visual dashboard showing current project, rece",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/session-launcher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "session-launcher-jackspace-claudeskillz-2"
+}

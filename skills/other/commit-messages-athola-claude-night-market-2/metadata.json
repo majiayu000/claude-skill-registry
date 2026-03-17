@@ -1,0 +1,11 @@
+{
+  "name": "commit-messages",
+  "description": "Use this skill to write a commit message for staged changes.",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/sanctum/skills/commit-messages",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "commit-messages-athola-claude-night-market-2"
+}

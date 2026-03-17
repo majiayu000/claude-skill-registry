@@ -1,0 +1,11 @@
+{
+  "name": "arcanea-lore",
+  "description": "Maintains consistency in Arcanea world-building, including academy systems, magical mechanics, character lore, and narrative coherence across the fantasy multiverse platform",
+  "repo": "frankxai/arcanea",
+  "path": ".claude/skills/arcanea/arcanea-lore",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/arcanea",
+  "dir_name": "arcanea-lore-frankxai-arcanea-2"
+}

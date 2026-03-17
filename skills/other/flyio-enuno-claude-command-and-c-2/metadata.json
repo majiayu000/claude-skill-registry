@@ -1,0 +1,11 @@
+{
+  "name": "flyio",
+  "description": "Deploy and scale full-stack applications globally on Fly.io platform",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/flyio",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "flyio-enuno-claude-command-and-c-2"
+}

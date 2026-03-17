@@ -1,0 +1,11 @@
+{
+  "name": "passwords",
+  "description": "Top password lists for authorized security testing: common passwords, darkweb leaks, worst passwords. Curated essentials (<10MB).",
+  "repo": "Eyadkelleh/awesome-claude-skills-security",
+  "path": "seclists-categories passwords/passwords",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Eyadkelleh/awesome-claude-skills-security",
+  "dir_name": "passwords-eyadkelleh-awesome-claude-skill-2"
+}

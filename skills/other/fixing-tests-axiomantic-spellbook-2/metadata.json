@@ -1,0 +1,11 @@
+{
+  "name": "fixing-tests",
+  "description": "Use when tests are failing, test quality issues were identified, or user wants to fix/improve specific tests",
+  "repo": "axiomantic/spellbook",
+  "path": "skills/fixing-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/axiomantic/spellbook",
+  "dir_name": "fixing-tests-axiomantic-spellbook-2"
+}

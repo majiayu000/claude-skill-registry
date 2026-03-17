@@ -1,0 +1,11 @@
+{
+  "name": "chatbot-analytics",
+  "description": "Implement AI chatbot analytics and conversation monitoring. Use when adding conversation metrics, tracking AI usage, measuring user engagement with chat, or building conversation dashboards. Activates",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/chatbot-analytics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "chatbot-analytics-erichowens-some-claude-skills-2"
+}

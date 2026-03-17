@@ -1,0 +1,11 @@
+{
+  "name": "the-i18n",
+  "description": "Manages internationalization - adds translations, fixes missing keys, and ensures locale consistency.",
+  "repo": "dupipcom/morpheus",
+  "path": ".claude/skills/the-i18n",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dupipcom/morpheus",
+  "dir_name": "the-i18n-dupipcom-morpheus-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ci-cd-pipelines",
+  "description": "CI/CD pipeline design with GitHub Actions, GitLab CI, and best practices.",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/infra/ci-cd-pipelines",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "ci-cd-pipelines-timequity-vibe-coder-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "workflow-phase-convention",
+  "description": "全ワークフローで一貫したPhase番号体系、承認ゲート規約、最大リトライ回数の標準を定義",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/workflow-phase-convention",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "workflow-phase-convention-takemo101-compose-workflow-2"
+}

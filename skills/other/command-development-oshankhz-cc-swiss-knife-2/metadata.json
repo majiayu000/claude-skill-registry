@@ -1,0 +1,11 @@
+{
+  "name": "command-development",
+  "description": "This skill should be used when the user asks to \"create a slash command\", \"add a command\", \"write a custom command\", \"define command arguments\", \"use command frontmatter\", \"organize commands\", \"create",
+  "repo": "OshanKHZ/cc-swiss-knife",
+  "path": "plugins/claude-code-forge/skills/command-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OshanKHZ/cc-swiss-knife",
+  "dir_name": "command-development-oshankhz-cc-swiss-knife-2"
+}

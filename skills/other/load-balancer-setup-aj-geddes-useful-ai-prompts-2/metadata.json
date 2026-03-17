@@ -1,0 +1,11 @@
+{
+  "name": "load-balancer-setup",
+  "description": "Configure and deploy load balancers (HAProxy, AWS ELB/ALB/NLB) for distributing traffic, session management, and high availability.",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/load-balancer-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "dir_name": "load-balancer-setup-aj-geddes-useful-ai-prompts-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ai-assisted-operations",
+  "description": "AI-powered issue summarization, auto-labeling, and Q&A using gh-models with 88% effectiveness. Use when analyzing issue content, suggesting labels, or extracting insights.",
+  "repo": "terrylica/claude-code-skills-github-issues",
+  "path": "skills/github-issues/ai-assisted-operations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terrylica/claude-code-skills-github-issues",
+  "dir_name": "ai-assisted-operations-terrylica-claude-code-skills-g-2"
+}

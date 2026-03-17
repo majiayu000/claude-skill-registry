@@ -1,0 +1,11 @@
+{
+  "name": "create-subagents",
+  "description": "Expert guidance for creating, building, and using Claude Code subagents and the Task tool. Use when working with subagents, setting up agent configurations, understanding how agents work, or using the",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/create-subagents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "create-subagents-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+}

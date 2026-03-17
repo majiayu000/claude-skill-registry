@@ -1,0 +1,11 @@
+{
+  "name": "moai-ml-rag",
+  "description": "Retrieval-Augmented Generation systems, vector databases, embedding strategies, and production RAG architectures for enterprise LLM applications. Use when building RAG, semantic search, or knowledge-a",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-ml-rag",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-ml-rag-jg-chalk-io-nora-livekit-2"
+}

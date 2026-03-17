@@ -1,0 +1,9 @@
+{
+  "name": "hookdeck-event-gateway",
+  "repo": "hookdeck/webhook-skills",
+  "path": "skills/hookdeck-event-gateway/SKILL.md",
+  "category": "other",
+  "source": "github.com/hookdeck/webhook-skills",
+  "dir_name": "hookdeck-event-gateway",
+  "downloaded_at": "2026-02-22T07:28:24.187313Z"
+}

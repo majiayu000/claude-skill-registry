@@ -1,0 +1,11 @@
+{
+  "name": "invalid-missing-name",
+  "description": "This skill is missing the required name field",
+  "repo": "maxvaega/skillkit",
+  "path": "tests/fixtures/skills/invalid-missing-name",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "invalid-missing-name-maxvaega-skillkit-2"
+}

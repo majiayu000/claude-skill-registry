@@ -1,0 +1,11 @@
+{
+  "name": "install-skill",
+  "description": "This skill should be used when the user asks to \"install a skill\", \"add a skill to the project\", \"unpack a skill\", or \"integrate a new skill\". Automates the full workflow of unpacking .skill packages ",
+  "repo": "schwepps/skills",
+  "path": "install-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/schwepps/skills",
+  "dir_name": "install-skill-schwepps-skills-2"
+}

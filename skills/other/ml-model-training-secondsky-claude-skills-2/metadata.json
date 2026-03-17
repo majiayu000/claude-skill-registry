@@ -1,0 +1,11 @@
+{
+  "name": "ml-model-training",
+  "description": "Train ML models with scikit-learn, PyTorch, TensorFlow. Use for classification/regression, neural networks, hyperparameter tuning, or encountering overfitting, underfitting, convergence issues.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/ml-model-training/skills/ml-model-training",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "ml-model-training-secondsky-claude-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "async-repl-protocol",
+  "description": "Async REPL Protocol",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/async-repl-protocol",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "async-repl-protocol-parcadei-continuous-claude-v3-2"
+}

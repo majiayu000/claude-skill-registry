@@ -1,0 +1,11 @@
+{
+  "name": "gamma-observability",
+  "description": "Implement comprehensive observability for Gamma integrations.\nUse when setting up monitoring, logging, tracing,\nor building dashboards for Gamma API usage.\nTrigger with phrases like \"gamma monitoring\"",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/gamma-pack/skills/gamma-observability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "gamma-observability-jeremylongshore-claude-code-plugins--2"
+}

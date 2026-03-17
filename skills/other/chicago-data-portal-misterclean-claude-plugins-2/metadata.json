@@ -1,0 +1,11 @@
+{
+  "name": "chicago-data-portal",
+  "description": "This skill should be used when the user asks to \"query Chicago data\", \"find Chicago datasets\", \"get Chicago crime data\", \"download Chicago permits\", \"write a SODA query for Chicago\", \"search data.city",
+  "repo": "MisterClean/claude-plugins",
+  "path": "skills/chicago-data-portal",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MisterClean/claude-plugins",
+  "dir_name": "chicago-data-portal-misterclean-claude-plugins-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "database-management",
+  "description": "Implement SQLite database patterns using the database.py interface with complete SQL isolation. MANDATORY for all database projects. Use when working with databases, data persistence, or SQLite.",
+  "repo": "AutumnsGrove/GroveEngine",
+  "path": ".claude/skills/database-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AutumnsGrove/GroveEngine",
+  "dir_name": "database-management-autumnsgrove-groveengine-2"
+}

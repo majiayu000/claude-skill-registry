@@ -1,0 +1,11 @@
+{
+  "name": "classifier",
+  "description": "Analyzes task descriptions and classifies them into categories for agent selection",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-task-intelligence/lib/classifier",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "classifier-masharratt-claude-flow-novice-2"
+}

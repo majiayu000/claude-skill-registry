@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-auth-ssh-add",
+  "description": "Add an SSH public key to your account (reads from file or stdin). Requires authentication. Use for managing authentication credentials",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-auth-ssh-add",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-auth-ssh-add-agentuity-sdk-explorer-2"
+}

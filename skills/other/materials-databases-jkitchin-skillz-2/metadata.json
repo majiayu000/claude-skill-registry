@@ -1,0 +1,11 @@
+{
+  "name": "materials-databases",
+  "description": "Expert assistant for accessing materials databases (AFLOW and Materials Project) - query crystal structures, materials properties, thermodynamic data, and computational results from comprehensive data",
+  "repo": "jkitchin/skillz",
+  "path": "skills/research/materials-databases",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jkitchin/skillz",
+  "dir_name": "materials-databases-jkitchin-skillz-2"
+}

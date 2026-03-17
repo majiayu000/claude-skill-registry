@@ -1,0 +1,11 @@
+{
+  "name": "taiyo-style-bullet",
+  "description": "太陽スタイル完全準拠のブレット（箇条書き）・ベネフィットリスト生成。特徴→ベネフィット変換で購買意欲を最大化。",
+  "repo": "taiyousan15/taisun_agent",
+  "path": ".claude/skills/taiyo-style-bullet",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/taiyousan15/taisun_agent",
+  "dir_name": "taiyo-style-bullet-taiyousan15-taisun-agent-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "caddy",
+  "description": "Comprehensive Caddy web server management across multiple environments.\nHandles multi-server operations, zero-downtime deployments, secret management\nwith 1Password, custom builds with plugins, and sy",
+  "repo": "terraphim/codex-skills",
+  "path": "skills/caddy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terraphim/codex-skills",
+  "dir_name": "caddy-terraphim-codex-skills-2"
+}

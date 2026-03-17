@@ -1,0 +1,11 @@
+{
+  "name": "goal-sc-coverage-check",
+  "description": "检查VS→GOAL→SC覆盖完整性，确保每个VS都有对应的GOAL和SC。当GOAL和SC创建完成后使用，避免覆盖缺口导致验收失败。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/implementation_planning/goal-sc-coverage-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "goal-sc-coverage-check-tikazyq-agentic-spec-forge-2"
+}

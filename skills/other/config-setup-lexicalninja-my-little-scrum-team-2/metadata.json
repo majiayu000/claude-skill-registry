@@ -1,0 +1,11 @@
+{
+  "name": "config-setup",
+  "description": "Sets up configuration files, environment variables, and project configuration. Use when setting up project configuration, environment setup, or configuration management. Creates config files, .env exa",
+  "repo": "lexicalninja/my-little-scrum-team",
+  "path": "skills/config-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lexicalninja/my-little-scrum-team",
+  "dir_name": "config-setup-lexicalninja-my-little-scrum-team-2"
+}

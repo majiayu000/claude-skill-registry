@@ -1,0 +1,17 @@
+{
+  "name": "braintrust-analyze",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/braintrust-analyze/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "braintrust-analyze",
+  "downloaded_at": "2026-03-02T08:47:44.890178Z",
+  "author": "parcadei",
+  "source_url": "https://github.com/parcadei/Continuous-Claude-v3/blob/main/.claude/skills/braintrust-analyze/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/parcadei/Continuous-Claude-v3/blob/main/.claude/skills/braintrust-analyze/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

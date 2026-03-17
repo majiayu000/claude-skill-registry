@@ -1,0 +1,11 @@
+{
+  "name": "drizzle-orm-d1",
+  "description": "Type-safe ORM for Cloudflare D1 databases using Drizzle. Use when: building D1 database schemas, writing type-safe SQL queries, managing migrations with Drizzle Kit, defining table relations, implemen",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/drizzle-orm-d1/skills/drizzle-orm-d1",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "drizzle-orm-d1-secondsky-claude-skills-2"
+}

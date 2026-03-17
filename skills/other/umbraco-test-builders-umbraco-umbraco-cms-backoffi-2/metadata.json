@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-test-builders",
+  "description": "JsonModels.Builders for creating test data in Umbraco tests",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-testing-skills/skills/umbraco-test-builders",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-test-builders-umbraco-umbraco-cms-backoffi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "performance-test-generator",
+  "description": "基于NFR性能要求，生成性能测试场景和关键性能指标（KPI）。L3级别专用，当性能需求明确后使用。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/implementation_planning/performance-test-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "performance-test-generator-tikazyq-agentic-spec-forge-2"
+}

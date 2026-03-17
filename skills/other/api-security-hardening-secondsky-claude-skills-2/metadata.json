@@ -1,0 +1,11 @@
+{
+  "name": "api-security-hardening",
+  "description": "REST API security hardening with authentication, rate limiting, input validation, security headers. Use for production APIs, security audits, defense-in-depth, or encountering vulnerabilities, injecti",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/api-security-hardening/skills/api-security-hardening",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "api-security-hardening-secondsky-claude-skills-2"
+}

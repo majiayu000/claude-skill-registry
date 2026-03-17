@@ -1,0 +1,11 @@
+{
+  "name": "implement-retry-logic",
+  "description": "Add retry logic with exponential backoff to async operations. Use when implementing\nexternal service calls, database operations, network requests, or any operation that\nmay fail transiently. Follows p",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/implement-retry-logic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "implement-retry-logic-dawiddutoit-custom-claude-2"
+}

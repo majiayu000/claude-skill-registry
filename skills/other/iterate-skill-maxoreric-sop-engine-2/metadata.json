@@ -1,0 +1,11 @@
+{
+  "name": "iterate-skill",
+  "description": "迭代改进 Skill 的 Skill。当评价不通过或需要优化时触发。触发词：迭代、改进、优化、iterate、improve。",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/iterate-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "iterate-skill-maxoreric-sop-engine-2"
+}

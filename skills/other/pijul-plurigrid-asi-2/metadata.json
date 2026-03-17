@@ -1,0 +1,11 @@
+{
+  "name": "pijul",
+  "description": "Pijul patch-based VCS with categorical patch theory for skill versioning",
+  "repo": "plurigrid/asi",
+  "path": "skills/pijul",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "pijul-plurigrid-asi-2"
+}

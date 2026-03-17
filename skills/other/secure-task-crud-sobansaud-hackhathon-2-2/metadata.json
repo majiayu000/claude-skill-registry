@@ -1,0 +1,11 @@
+{
+  "name": "secure-task-crud",
+  "description": "This skill should be used when implementing secure, high-performance REST API endpoints for task management with strictly enforced multi-tenant isolation and async performance.",
+  "repo": "Sobansaud/Hackhathon---2",
+  "path": "Phase 4/.claude/skills/secure-task-crud",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sobansaud/Hackhathon---2",
+  "dir_name": "secure-task-crud-sobansaud-hackhathon-2-2"
+}

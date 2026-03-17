@@ -1,0 +1,11 @@
+{
+  "name": "mcp-manager",
+  "description": "Conversational interface for managing MCP (Model Context Protocol) server configurations in Claude Code",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/mcp-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "mcp-manager-rysweet-azurehaymaker-2"
+}

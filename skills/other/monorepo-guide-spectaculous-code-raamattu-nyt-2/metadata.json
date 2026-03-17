@@ -1,0 +1,11 @@
+{
+  "name": "monorepo-guide",
+  "description": "Guide for working with the Raamattu Nyt monorepo structure. Use when creating new packages, adding apps, managing workspace dependencies, understanding import patterns, or troubleshooting monorepo iss",
+  "repo": "Spectaculous-Code/raamattu-nyt",
+  "path": ".claude/skills/monorepo-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Spectaculous-Code/raamattu-nyt",
+  "dir_name": "monorepo-guide-spectaculous-code-raamattu-nyt-2"
+}

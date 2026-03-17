@@ -1,0 +1,11 @@
+{
+  "name": "flox",
+  "description": "Reproducible development environments powered by Nix.",
+  "repo": "plurigrid/asi",
+  "path": "skills/ies-flox",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "flox-plurigrid-asi-2"
+}

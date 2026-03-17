@@ -1,0 +1,11 @@
+{
+  "name": "invalid-name-consecutive-hyphens",
+  "description": "This skill has consecutive hyphens in the name which should fail validation.",
+  "repo": "pproenca/dot-skills",
+  "path": "tests/fixtures/invalid-name-consecutive-hyphens",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pproenca/dot-skills",
+  "dir_name": "invalid-name-consecutive-hyphens-pproenca-dot-skills-2"
+}

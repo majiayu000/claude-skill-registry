@@ -1,0 +1,11 @@
+{
+  "name": "exa-code-context",
+  "description": "USE WHEN: needing real code examples from GitHub, finding API usage patterns, looking up framework setup, verifying library implementations, eliminating hallucinations with working code.\nDO NOT USE WH",
+  "repo": "mahidalhan/claude-hacks",
+  "path": ".claude/skills/exa-code-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mahidalhan/claude-hacks",
+  "dir_name": "exa-code-context-mahidalhan-claude-hacks-2"
+}

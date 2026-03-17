@@ -1,0 +1,11 @@
+{
+  "name": "starship-config",
+  "description": "Manages complete Starship prompt configuration lifecycle including setup, customization, and optimization.",
+  "repo": "wcygan/dotfiles",
+  "path": ".claude/skills/starship-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wcygan/dotfiles",
+  "dir_name": "starship-config-wcygan-dotfiles-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "train-model",
+  "description": "Execute model training with optimization algorithms. Use when running training loops on datasets.",
+  "repo": "mvillmow/ProjectOdyssey",
+  "path": ".claude/skills/tier-2/train-model",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mvillmow/ProjectOdyssey",
+  "dir_name": "train-model-mvillmow-projectodyssey-2"
+}

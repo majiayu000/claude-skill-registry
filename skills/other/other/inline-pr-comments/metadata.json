@@ -1,0 +1,9 @@
+{
+  "name": "inline-pr-comments",
+  "repo": "hyperlane-xyz/hyperlane-monorepo",
+  "path": ".claude/skills/inline-pr-comments/SKILL.md",
+  "category": "other",
+  "source": "github.com/hyperlane-xyz/hyperlane-monorepo",
+  "dir_name": "inline-pr-comments",
+  "downloaded_at": "2026-02-22T07:30:09.291673Z"
+}

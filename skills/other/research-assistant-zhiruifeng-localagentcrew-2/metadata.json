@@ -1,0 +1,11 @@
+{
+  "name": "research-assistant",
+  "description": "Conducts general research, summarizes information, compares options, provides insights",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/research-assistant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "dir_name": "research-assistant-zhiruifeng-localagentcrew-2"
+}

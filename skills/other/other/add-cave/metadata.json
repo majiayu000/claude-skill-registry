@@ -1,0 +1,17 @@
+{
+  "name": "add-cave",
+  "repo": "dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich",
+  "path": ".claude/skills/add-cave/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich",
+  "dir_name": "add-cave",
+  "downloaded_at": "2026-03-01T07:28:44.439280Z",
+  "author": "dlubom",
+  "source_url": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/master/.claude/skills/add-cave/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/master/.claude/skills/add-cave/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

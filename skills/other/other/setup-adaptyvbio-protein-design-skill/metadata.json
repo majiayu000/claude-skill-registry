@@ -1,0 +1,17 @@
+{
+  "name": "setup",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/setup/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "setup-adaptyvbio-protein-design-skill",
+  "downloaded_at": "2026-03-01T06:27:15.001541Z",
+  "author": "adaptyvbio",
+  "source_url": "https://github.com/adaptyvbio/protein-design-skills/blob/main/skills/setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptyvbio/protein-design-skills/blob/main/skills/setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

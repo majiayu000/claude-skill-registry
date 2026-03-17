@@ -1,0 +1,11 @@
+{
+  "name": "saga-pattern",
+  "description": "Implementing distributed transactions across microservices using the Saga pattern with choreography and orchestration approaches.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "09-microservices/saga-pattern",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "saga-pattern-amnadtaowsoam-cerebratechai-claude-2"
+}

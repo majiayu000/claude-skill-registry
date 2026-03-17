@@ -1,0 +1,11 @@
+{
+  "name": "local-ci",
+  "description": "remote CI (GitHub Actions) 相当のチェックをローカルで実行。Biome check、テスト、ビルドを並列実行し、全てのチェックが成功したことを確認する。PR作成前の事前チェックに使用。",
+  "repo": "shiroinock/Darts-Score-Trainer",
+  "path": ".claude/skills/local-ci",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shiroinock/Darts-Score-Trainer",
+  "dir_name": "local-ci-shiroinock-darts-score-trainer-2"
+}

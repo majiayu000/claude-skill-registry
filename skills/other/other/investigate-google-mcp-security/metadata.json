@@ -1,0 +1,9 @@
+{
+  "name": "investigate",
+  "repo": "google/mcp-security",
+  "path": "extensions/google-secops/skills/investigate/SKILL.md",
+  "category": "other",
+  "source": "github.com/google/mcp-security",
+  "dir_name": "investigate-google-mcp-security",
+  "downloaded_at": "2026-02-22T07:20:31.784505Z"
+}

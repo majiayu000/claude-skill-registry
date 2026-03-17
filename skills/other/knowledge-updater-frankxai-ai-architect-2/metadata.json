@@ -1,0 +1,11 @@
+{
+  "name": "knowledge-updater",
+  "description": "Automated skill for keeping AI knowledge bases current with latest model versions, framework updates, and best practices",
+  "repo": "frankxai/ai-architect",
+  "path": "skills/knowledge-updater",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/ai-architect",
+  "dir_name": "knowledge-updater-frankxai-ai-architect-2"
+}

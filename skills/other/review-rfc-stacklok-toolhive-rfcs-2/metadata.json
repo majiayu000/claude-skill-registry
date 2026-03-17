@@ -1,0 +1,11 @@
+{
+  "name": "review-rfc",
+  "description": "Review RFCs for the ToolHive ecosystem. Use when the user wants to review, critique, or provide feedback on an RFC for toolhive, toolhive-studio, toolhive-registry, toolhive-registry-server, toolhive-",
+  "repo": "stacklok/toolhive-rfcs",
+  "path": ".claude/skills/review-rfc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/stacklok/toolhive-rfcs",
+  "dir_name": "review-rfc-stacklok-toolhive-rfcs-2"
+}

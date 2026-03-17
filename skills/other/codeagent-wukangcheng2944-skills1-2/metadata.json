@@ -1,0 +1,11 @@
+{
+  "name": "codeagent",
+  "description": "Execute codeagent-wrapper for multi-backend AI code tasks. Supports Codex, Claude, and Gemini backends with file references (@syntax) and structured output.",
+  "repo": "wukangcheng2944/skills1",
+  "path": "codeagent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wukangcheng2944/skills1",
+  "dir_name": "codeagent-wukangcheng2944-skills1-2"
+}

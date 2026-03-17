@@ -1,0 +1,11 @@
+{
+  "name": "dag-scope-enforcer",
+  "description": "Runtime enforcement of file system boundaries and tool access restrictions. Blocks unauthorized operations and logs violations. Activate on 'enforce scope', 'access control', 'boundary enforcement', '",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-scope-enforcer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-scope-enforcer-erichowens-some-claude-skills-2"
+}

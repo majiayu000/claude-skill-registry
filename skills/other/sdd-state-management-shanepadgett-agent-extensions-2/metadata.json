@@ -1,0 +1,11 @@
+{
+  "name": "sdd-state-management",
+  "description": "SDD state tracking - phases, gates, lanes, and state.md structure",
+  "repo": "shanepadgett/agent-extensions",
+  "path": "skills/sdd-state-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shanepadgett/agent-extensions",
+  "dir_name": "sdd-state-management-shanepadgett-agent-extensions-2"
+}

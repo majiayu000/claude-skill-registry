@@ -1,0 +1,11 @@
+{
+  "name": "git-workflow-and-deployment-skill",
+  "description": "Git branching strategy, CI/CD pipeline, quality gates, and deployment procedures for the omer-akben portfolio project. Use when working with git operations, deployments, or CI/CD workflows.",
+  "repo": "omerakben/omer-akben",
+  "path": ".claude/skills/git-workflow-and-deployment-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/omerakben/omer-akben",
+  "dir_name": "git-workflow-and-deployment-skill-omerakben-omer-akben-2"
+}

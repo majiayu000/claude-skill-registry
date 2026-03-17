@@ -1,0 +1,11 @@
+{
+  "name": "carlin-audit",
+  "description": "George Carlin BS Detector. Auto-activates on: \"BS\", \"bullshit\", \"jargon\", \"marketing speak\", \"what does this mean\", \"sounds fake\", \"corporate speak\", \"buzzwords\", \"overpromising\", \"skeptical about\"",
+  "repo": "nalyk/nalyk-skills-demo",
+  "path": "plugins/audit-agent/skills/carlin-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nalyk/nalyk-skills-demo",
+  "dir_name": "carlin-audit-nalyk-nalyk-skills-demo-2"
+}

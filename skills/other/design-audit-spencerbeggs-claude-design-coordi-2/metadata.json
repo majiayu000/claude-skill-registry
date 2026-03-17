@@ -1,0 +1,11 @@
+{
+  "name": "design-audit",
+  "description": "Comprehensive health audit for design documentation. Use when performing thorough quality checks, preparing for releases, or ensuring documentation compliance.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/design-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "design-audit-spencerbeggs-claude-design-coordi-2"
+}

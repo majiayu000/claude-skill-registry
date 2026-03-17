@@ -1,0 +1,11 @@
+{
+  "name": "metagenome-visualization",
+  "description": "Visualize metagenomic profiles using R (phyloseq, microbiome) and Python (matplotlib, seaborn). Create stacked bar plots, heatmaps, PCA plots, and diversity analyses. Use when creating publication-qua",
+  "repo": "GPTomics/bioSkills",
+  "path": "metagenomics/metagenome-visualization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "metagenome-visualization-gptomics-bioskills-2"
+}

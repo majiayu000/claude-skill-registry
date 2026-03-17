@@ -1,0 +1,11 @@
+{
+  "name": "query-designer",
+  "description": "SQL Query Designer skill that generates optimized SQL queries from natural language requests and table schemas.\n\nTrigger terms: SQL, query, database, SELECT, JOIN, INSERT, UPDATE, DELETE, WHERE, GROUP",
+  "repo": "Eigo-Mt-Fuji/portfolio-2026",
+  "path": ".claude/skills/query-designer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Eigo-Mt-Fuji/portfolio-2026",
+  "dir_name": "query-designer-eigo-mt-fuji-portfolio-2026-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "reasoning-patterns-v2",
+  "description": "Use this skill for rigorous theoretical derivation with supercollider mode (G1-G7 simultaneous), diffusion reasoning, and synthesis engine. Applies enhanced Dokkado Protocol with generator hooks, meta",
+  "repo": "agentgptsmith/MonadFramework",
+  "path": ".claude/skills/reasoning-pentad/components/reasoning-patterns-v2",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentgptsmith/MonadFramework",
+  "dir_name": "reasoning-patterns-v2-agentgptsmith-monadframework-2"
+}

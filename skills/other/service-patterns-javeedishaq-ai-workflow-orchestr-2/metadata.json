@@ -1,0 +1,11 @@
+{
+  "name": "service-patterns",
+  "description": "Service layer patterns for Ballee using BaseService, Result types, mappers, storage operations, soft delete handling, and proper error handling. Use when creating services, implementing CRUD operation",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "templates/skills/service-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "service-patterns-javeedishaq-ai-workflow-orchestr-2"
+}

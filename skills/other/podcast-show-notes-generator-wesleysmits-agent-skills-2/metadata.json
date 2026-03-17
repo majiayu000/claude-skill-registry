@@ -1,0 +1,11 @@
+{
+  "name": "podcast-show-notes-generator",
+  "description": "Generates timestamped show notes, key takeaways, and formatted transcripts from podcast episodes. Use when the user asks about podcast show notes, episode summaries, timestamps, transcriptions, or pod",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/podcast-show-notes-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "podcast-show-notes-generator-wesleysmits-agent-skills-2"
+}

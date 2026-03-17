@@ -1,0 +1,11 @@
+{
+  "name": "rigorous-reasoning",
+  "description": "\nTriggers: conflict, disagreement, debate, ethical, controversial, pushback\nPrevents sycophantic reasoning through checklist-based analysis, categorical\nintegrity, and evidence-following to uncomforta",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/imbue/skills/rigorous-reasoning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "rigorous-reasoning-athola-claude-night-market-2"
+}

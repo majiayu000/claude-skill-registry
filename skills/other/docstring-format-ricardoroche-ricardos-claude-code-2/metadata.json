@@ -1,0 +1,11 @@
+{
+  "name": "docstring-format",
+  "description": "Automatically applies when writing function docstrings. Uses Google-style format with Args, Returns, Raises, Examples, and Security Note sections for proper documentation.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/docstring-format",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "docstring-format-ricardoroche-ricardos-claude-code-2"
+}

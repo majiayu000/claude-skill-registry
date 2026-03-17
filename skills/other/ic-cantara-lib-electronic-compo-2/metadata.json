@@ -1,0 +1,11 @@
+{
+  "name": "ic",
+  "description": "Use when working with integrated circuits - microcontrollers, op-amps, voltage regulators, logic ICs. Includes adding patterns, parsing MPNs, extracting specifications like voltage, package, and serie",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/ic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "ic-cantara-lib-electronic-compo-2"
+}

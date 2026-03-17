@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-msw-testing",
+  "description": "MSW (Mock Service Worker) patterns for testing Umbraco backoffice extensions with mocked APIs",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-testing-skills/skills/umbraco-msw-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-msw-testing-umbraco-umbraco-cms-backoffi-2"
+}

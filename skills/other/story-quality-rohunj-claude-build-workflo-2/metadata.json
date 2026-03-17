@@ -1,0 +1,11 @@
+{
+  "name": "story-quality",
+  "description": "Review user stories for quality, proper sizing, sequencing, and acceptance criteria. Use before converting to prd.json. Triggers on: review stories, check user stories, story quality, validate stories",
+  "repo": "rohunj/claude-build-workflow",
+  "path": "skills/story-quality",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rohunj/claude-build-workflow",
+  "dir_name": "story-quality-rohunj-claude-build-workflo-2"
+}

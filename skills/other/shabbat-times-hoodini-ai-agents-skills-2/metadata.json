@@ -1,0 +1,11 @@
+{
+  "name": "shabbat-times",
+  "description": "Access Jewish calendar data and Shabbat times via Hebcal API. Use when building apps with Shabbat times, Jewish holidays, Hebrew dates, or Zmanim. Triggers on Shabbat times, Hebcal, Jewish calendar, H",
+  "repo": "hoodini/ai-agents-skills",
+  "path": "skills/shabbat-times",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hoodini/ai-agents-skills",
+  "dir_name": "shabbat-times-hoodini-ai-agents-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "decide",
+  "description": "Personal decision advisor for QUALITY over speed. Exhaustive discovery, option finding, sequential elimination, structured analysis. Use for investments, purchases, career, life decisions. Surfaces hi",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/life-ops/skills/decide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "decide-doodledood-claude-code-plugins-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "v3-qe-mcp-optimization",
+  "description": "Optimized MCP server for QE with connection pooling, O(1) tool lookup, load balancing, and <100ms response times.",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": "v2/docs/internal/archived-v3-development-skills/v3-qe-mcp-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "v3-qe-mcp-optimization-proffesor-for-testin-agentic-qe-2"
+}

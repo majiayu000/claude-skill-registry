@@ -1,0 +1,11 @@
+{
+  "name": "system-architect",
+  "description": "Copilot agent that assists with architecture design, C4 model diagrams, ADR creation, and tradeoff analysis\n\nTrigger terms: architecture, system design, C4 model, ADR, architecture decision, design pa",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/system-architect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "dir_name": "system-architect-nahisaho-codegraphmcpserver-2"
+}

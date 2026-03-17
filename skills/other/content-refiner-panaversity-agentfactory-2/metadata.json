@@ -1,0 +1,11 @@
+{
+  "name": "content-refiner",
+  "description": "Refine verbose educational content by eliminating redundancy, tightening prose, and strengthening lesson connections. Use when content is wordy, repetitive, or lacks narrative flow between sections.",
+  "repo": "panaversity/agentfactory",
+  "path": ".gemini/skills/content-refiner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "content-refiner-panaversity-agentfactory-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "codex-chat",
+  "description": "Interactive REPL workflows with Codex CLI including session management, multimodal conversations, and automated execution. Use for extended development sessions, debugging, or collaborative problem-so",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/codex-chat",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "codex-chat-adaptationio-skrillz-2"
+}

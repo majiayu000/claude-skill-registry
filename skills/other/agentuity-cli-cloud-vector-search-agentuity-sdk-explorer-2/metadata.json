@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-vector-search",
+  "description": "Search for vectors using semantic similarity. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-vector-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-vector-search-agentuity-sdk-explorer-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "fastp-workflow",
+  "description": "All-in-one read preprocessing with fastp including adapter trimming, quality filtering, deduplication, base correction, and HTML report generation. Use when preprocessing Illumina data and wanting a s",
+  "repo": "GPTomics/bioSkills",
+  "path": "read-qc/fastp-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "fastp-workflow-gptomics-bioskills-2"
+}

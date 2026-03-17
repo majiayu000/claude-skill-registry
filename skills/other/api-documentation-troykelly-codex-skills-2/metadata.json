@@ -1,0 +1,11 @@
+{
+  "name": "api-documentation",
+  "description": "Use when API code changes (routes, endpoints, schemas). Enforces Swagger/OpenAPI sync. Pauses work if documentation has drifted, triggering documentation-audit skill.",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/api-documentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "api-documentation-troykelly-codex-skills-2"
+}

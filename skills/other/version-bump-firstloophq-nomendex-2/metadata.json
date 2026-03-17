@@ -1,0 +1,11 @@
+{
+  "name": "version-bump",
+  "description": "Increment app version numbers. Use when user asks to bump version, increment version, or prepare a release.",
+  "repo": "firstloophq/nomendex",
+  "path": ".claude/skills/version-bump",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/firstloophq/nomendex",
+  "dir_name": "version-bump-firstloophq-nomendex-2"
+}

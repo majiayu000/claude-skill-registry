@@ -1,0 +1,11 @@
+{
+  "name": "atlassian-api",
+  "description": "Atlassian API integration for Jira and Confluence automation. Activate for Atlassian REST APIs, webhooks, and platform integration.",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/atlassian-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "atlassian-api-lobbi-docs-claude-2"
+}

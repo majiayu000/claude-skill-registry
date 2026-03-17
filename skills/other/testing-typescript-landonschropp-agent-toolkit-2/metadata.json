@@ -1,0 +1,11 @@
+{
+  "name": "testing-typescript",
+  "description": "Use when writing tests for TypeScript or JavaScript code in frameworks such as Jest, Vitest, Bun, etc.",
+  "repo": "LandonSchropp/agent-toolkit",
+  "path": "skills/testing-typescript",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/LandonSchropp/agent-toolkit",
+  "dir_name": "testing-typescript-landonschropp-agent-toolkit-2"
+}

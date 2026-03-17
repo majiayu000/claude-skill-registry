@@ -1,0 +1,11 @@
+{
+  "name": "cqrs-mediatr-guidelines",
+  "description": "CQRS (Command Query Responsibility Segregation) patterns with MediatR for ISLAMU Event. Covers commands, queries, handlers, validation, and pipeline behaviors.",
+  "repo": "islamu-ngo/Explore",
+  "path": ".claude/skills/cqrs-mediatr-guidelines",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/islamu-ngo/Explore",
+  "dir_name": "cqrs-mediatr-guidelines-islamu-ngo-explore-2"
+}

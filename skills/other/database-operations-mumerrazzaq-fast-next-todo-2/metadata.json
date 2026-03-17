@@ -1,0 +1,11 @@
+{
+  "name": "database-operations",
+  "description": "A skill for performing database CRUD operations following best practices. Includes guidance on session management, query building (filters, joins, aggregations), transaction handling, bulk operations,",
+  "repo": "MUmerRazzaq/fast-next-todo",
+  "path": ".claude/skills/database-operations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MUmerRazzaq/fast-next-todo",
+  "dir_name": "database-operations-mumerrazzaq-fast-next-todo-2"
+}

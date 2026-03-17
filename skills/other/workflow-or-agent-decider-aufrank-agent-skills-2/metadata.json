@@ -1,0 +1,11 @@
+{
+  "name": "workflow-or-agent-decider",
+  "description": "Decide between a scripted workflow and an autonomous agent harness, then scaffold the chosen path. Use when scoping new agentic systems or tool integrations.",
+  "repo": "aufrank/agent-skills",
+  "path": "skills/workflow-or-agent-decider",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aufrank/agent-skills",
+  "dir_name": "workflow-or-agent-decider-aufrank-agent-skills-2"
+}

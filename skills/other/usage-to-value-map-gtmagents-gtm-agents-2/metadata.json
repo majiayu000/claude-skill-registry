@@ -1,0 +1,11 @@
+{
+  "name": "usage-to-value-map",
+  "description": "Method for translating product telemetry into ROI narratives and expansion triggers.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/b2b-saas/skills/usage-to-value-map",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "usage-to-value-map-gtmagents-gtm-agents-2"
+}

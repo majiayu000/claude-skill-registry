@@ -1,0 +1,11 @@
+{
+  "name": "runloop",
+  "description": "Imported skill runloop from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/langchain/runloop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "runloop-bitwikiorg-skills-md-2"
+}

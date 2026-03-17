@@ -1,0 +1,11 @@
+{
+  "name": "confidence-scoring",
+  "description": "See the main Model Explainability skill for comprehensive coverage of confidence scoring and calibration.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "44-ai-governance/confidence-scoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "confidence-scoring-amnadtaowsoam-cerebratechai-claude-2"
+}

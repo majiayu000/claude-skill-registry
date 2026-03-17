@@ -1,0 +1,11 @@
+{
+  "name": "lhott-cohesive-linear",
+  "description": "Cohesive Linear HoTT patterns for interaction entropy with diagram generation. Implements Schreiber's cohesive modalities (♯,♭,ʃ) and Riley's linear modality (♮) for quantum-classical bridging.",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.agents/skills/lhott-cohesive-linear",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "lhott-cohesive-linear-plurigrid-asi-2"
+}

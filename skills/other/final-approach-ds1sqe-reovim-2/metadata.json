@@ -1,0 +1,11 @@
+{
+  "name": "final-approach",
+  "description": "Final Approach - the landing sequence. Runs Go Poll with review agents (mission-control, telemetry, flight-director) using Haiku model. Supports A+ skip rule for efficient re-reviews.",
+  "repo": "ds1sqe/reovim",
+  "path": ".claude/skills/final-approach",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ds1sqe/reovim",
+  "dir_name": "final-approach-ds1sqe-reovim-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "geospatial-data-pipeline",
+  "description": "Process, analyze, and visualize geospatial data at scale. Handles drone imagery, GPS tracks, GeoJSON optimization, coordinate transformations, and tile generation. Use for mapping apps, drone data pro",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/geospatial-data-pipeline",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "geospatial-data-pipeline-erichowens-some-claude-skills-2"
+}

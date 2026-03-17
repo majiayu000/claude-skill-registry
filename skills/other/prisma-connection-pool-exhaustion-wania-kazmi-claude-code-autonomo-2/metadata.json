@@ -1,0 +1,11 @@
+{
+  "name": "prisma-connection-pool-exhaustion",
+  "description": "Fix Prisma \"Too many connections\" and connection pool exhaustion errors in \nserverless environments (Vercel, AWS Lambda, Netlify). Use when: (1) Error \n\"P2024: Timed out fetching a new connection from",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/claudeception/examples/prisma-connection-pool-exhaustion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "prisma-connection-pool-exhaustion-wania-kazmi-claude-code-autonomo-2"
+}

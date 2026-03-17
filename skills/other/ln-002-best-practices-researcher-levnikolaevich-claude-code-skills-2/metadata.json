@@ -1,0 +1,11 @@
+{
+  "name": "ln-002-best-practices-researcher",
+  "description": "Research best practices via MCP Ref/Context7/WebSearch and create documentation (guide/manual/ADR/research). Single research, multiple output types.",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-002-best-practices-researcher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-002-best-practices-researcher-levnikolaevich-claude-code-skills-2"
+}

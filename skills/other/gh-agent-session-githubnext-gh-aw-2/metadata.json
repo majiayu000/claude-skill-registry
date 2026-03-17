@@ -1,0 +1,11 @@
+{
+  "name": "gh-agent-session",
+  "description": "GitHub CLI Agent Session Extension",
+  "repo": "githubnext/gh-aw",
+  "path": "skills/gh-agent-session",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/githubnext/gh-aw",
+  "dir_name": "gh-agent-session-githubnext-gh-aw-2"
+}

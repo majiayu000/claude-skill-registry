@@ -1,0 +1,9 @@
+{
+  "name": "anthropic-mcp-builder",
+  "repo": "davekilleen/Dex",
+  "path": ".claude/skills/anthropic-mcp-builder/SKILL.md",
+  "category": "other",
+  "source": "github.com/davekilleen/Dex",
+  "dir_name": "anthropic-mcp-builder",
+  "downloaded_at": "2026-02-22T06:51:25.140714Z"
+}

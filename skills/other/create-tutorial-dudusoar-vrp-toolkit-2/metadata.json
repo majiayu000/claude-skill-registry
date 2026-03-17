@@ -1,0 +1,11 @@
+{
+  "name": "create-tutorial",
+  "description": "Create high-quality, progressive learning tutorials for VRP Toolkit. Use when the user requests creating tutorials, educational content, or learning materials for any VRP toolkit feature (problem crea",
+  "repo": "dudusoar/VRP-Toolkit",
+  "path": ".claude/skills/create-tutorial",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dudusoar/VRP-Toolkit",
+  "dir_name": "create-tutorial-dudusoar-vrp-toolkit-2"
+}

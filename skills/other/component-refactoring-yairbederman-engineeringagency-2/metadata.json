@@ -1,0 +1,11 @@
+{
+  "name": "component-refactoring",
+  "description": "Refactor high-complexity React components. Use when complexity is high, when the user asks for code splitting, hook extraction, or complexity reduction.",
+  "repo": "yairbederman/EngineeringAgency",
+  "path": "skills/component-refactoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yairbederman/EngineeringAgency",
+  "dir_name": "component-refactoring-yairbederman-engineeringagency-2"
+}

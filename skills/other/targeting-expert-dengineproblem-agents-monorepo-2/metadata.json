@@ -1,0 +1,11 @@
+{
+  "name": "targeting-expert",
+  "description": "Эксперт по таргетингу Facebook Ads. Используй для поиска интересов, создания Lookalike аудиторий, настройки гео и демографии.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/targeting-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "targeting-expert-dengineproblem-agents-monorepo-2"
+}

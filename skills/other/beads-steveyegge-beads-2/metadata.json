@@ -1,0 +1,11 @@
+{
+  "name": "beads",
+  "description": "Git-backed issue tracker for multi-session work with dependencies and persistent memory across conversation compaction. Use when work spans sessions, has blockers, or needs context recovery after comp",
+  "repo": "steveyegge/beads",
+  "path": "claude-plugin/skills/beads",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/steveyegge/beads",
+  "dir_name": "beads-steveyegge-beads-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "runi-design",
+  "description": "This skill guides creation of UI components and pages that follow runi's design system.",
+  "repo": "paulbreuler/runi",
+  "path": ".cursor/skills/runi-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/paulbreuler/runi",
+  "dir_name": "runi-design-paulbreuler-runi-2"
+}

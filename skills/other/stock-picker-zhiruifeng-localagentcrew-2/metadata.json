@@ -1,0 +1,11 @@
+{
+  "name": "stock-picker",
+  "description": "Screens and selects stocks based on customizable quantitative criteria including value, growth, quality, and momentum factors",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/stock-picker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "dir_name": "stock-picker-zhiruifeng-localagentcrew-2"
+}

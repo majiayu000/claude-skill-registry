@@ -1,0 +1,17 @@
+{
+  "name": "translate",
+  "repo": "emavgl/oinkoin",
+  "path": ".claude/skills/translate/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/emavgl/oinkoin",
+  "dir_name": "translate-emavgl-oinkoin",
+  "downloaded_at": "2026-03-01T07:37:08.588542Z",
+  "author": "emavgl",
+  "source_url": "https://github.com/emavgl/oinkoin/blob/master/.claude/skills/translate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/emavgl/oinkoin/blob/master/.claude/skills/translate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

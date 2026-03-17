@@ -1,0 +1,11 @@
+{
+  "name": "task-workflow",
+  "description": "> Note: This skill has been adapted from claude-skillz",
+  "repo": "audunstrand/status-app",
+  "path": ".github/skills/task-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/audunstrand/status-app",
+  "dir_name": "task-workflow-audunstrand-status-app-2"
+}

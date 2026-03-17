@@ -1,0 +1,11 @@
+{
+  "name": "powershell_build",
+  "description": "Guide and commands for building PowerShell Core on Windows from source. Use when working in the PowerShell repository.",
+  "repo": "Verridian-ai/life-os-Pulse-banner-generator",
+  "path": ".claude/skills/powershell_build",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Verridian-ai/life-os-Pulse-banner-generator",
+  "dir_name": "powershell-build-verridian-ai-life-os-pulse-banner-2"
+}

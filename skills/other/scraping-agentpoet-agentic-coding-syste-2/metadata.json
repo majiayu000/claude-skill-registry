@@ -1,0 +1,11 @@
+{
+  "name": "scraping",
+  "description": "Extract structured data from websites using Playwright browser automation",
+  "repo": "agentpoet/Agentic-Coding-System-Self-Improving-Framework",
+  "path": ".claude/skills/scraping",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentpoet/Agentic-Coding-System-Self-Improving-Framework",
+  "dir_name": "scraping-agentpoet-agentic-coding-syste-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "task-create",
+  "description": "Create a new task file in `.tasks/<id>.md` from template. Sets timestamps, computes initial intent hash, and optionally auto-selects the task.\n",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/task/task-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "task-create-jordangunn-nunchuck-2"
+}

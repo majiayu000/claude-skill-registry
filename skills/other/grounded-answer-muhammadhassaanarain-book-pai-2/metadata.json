@@ -1,0 +1,11 @@
+{
+  "name": "grounded_answer",
+  "description": "Provide accurate, evidence-based answers by referencing sources from documents, textbooks, or research papers. Use when user asks for factual or source-backed responses.",
+  "repo": "MuhammadHassaanArain/Book-PAI",
+  "path": ".claude/skills/grounded_answer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MuhammadHassaanArain/Book-PAI",
+  "dir_name": "grounded-answer-muhammadhassaanarain-book-pai-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "countdown",
+  "description": "Countdown - pre-implementation validation. Runs oracle (Opus) for planning, then Go Poll with review agents (Haiku) to validate before coding starts.",
+  "repo": "ds1sqe/reovim",
+  "path": ".claude/skills/countdown",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ds1sqe/reovim",
+  "dir_name": "countdown-ds1sqe-reovim-2"
+}

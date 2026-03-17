@@ -1,0 +1,11 @@
+{
+  "name": "vscode-extension",
+  "description": "Use when developing VSCode extensions - covers language support, LSP integration, and packaging",
+  "repo": "mcclowes/lea",
+  "path": ".claude/skills/vscode-extension",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mcclowes/lea",
+  "dir_name": "vscode-extension-mcclowes-lea-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "enter-services",
+  "description": "Deploy and manage enter.pollinations.ai text/image services on EC2 and Cloudflare Workers. Requires: SSH keys, sops, wrangler.",
+  "repo": "pollinations/pollinations",
+  "path": ".claude/skills/enter-services",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pollinations/pollinations",
+  "dir_name": "enter-services-pollinations-pollinations-2"
+}

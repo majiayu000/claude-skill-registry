@@ -1,0 +1,11 @@
+{
+  "name": "codeql",
+  "description": "CodeQL is a static analysis framework that queries code as a database. Use when you need interprocedural analysis or complex data flow tracking.",
+  "repo": "trailofbits/skills",
+  "path": "plugins/static-analysis/skills/codeql",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/trailofbits/skills",
+  "dir_name": "codeql-trailofbits-skills-2"
+}

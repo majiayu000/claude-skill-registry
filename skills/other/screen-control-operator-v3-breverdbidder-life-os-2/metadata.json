@@ -1,0 +1,11 @@
+{
+  "name": "screen-control-operator-v3",
+  "description": "Autonomous browser control with Cowork-style skill recording. Use when user requests \"control my screen\", \"record workflow\", \"verify Lovable\", \"test scrapers\", \"debug DOM\", \"autonomous testing\", or an",
+  "repo": "breverdbidder/life-os",
+  "path": ".claude/skills/screen-control-operator-v3",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/breverdbidder/life-os",
+  "dir_name": "screen-control-operator-v3-breverdbidder-life-os-2"
+}

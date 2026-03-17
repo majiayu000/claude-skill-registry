@@ -1,0 +1,11 @@
+{
+  "name": "pulse-mcp-stream",
+  "description": " Layer 1: Real-Time Social Stream Monitoring via MCP",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.agents/skills/pulse-mcp-stream",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "pulse-mcp-stream-plurigrid-asi-2"
+}

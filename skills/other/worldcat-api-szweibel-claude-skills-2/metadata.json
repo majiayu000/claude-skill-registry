@@ -1,0 +1,11 @@
+{
+  "name": "worldcat-api",
+  "description": "Use OCLC WorldCat APIs to search for books and scholarly materials, retrieve bibliographic metadata, check library holdings worldwide, and get classification data. Use when working with ISBNs, DOIs, O",
+  "repo": "szweibel/claude-skills",
+  "path": "worldcat-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/szweibel/claude-skills",
+  "dir_name": "worldcat-api-szweibel-claude-skills-2"
+}

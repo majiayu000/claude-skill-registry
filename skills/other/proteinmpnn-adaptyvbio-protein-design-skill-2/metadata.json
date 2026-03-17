@@ -1,0 +1,11 @@
+{
+  "name": "proteinmpnn",
+  "description": "Design protein sequences using ProteinMPNN inverse folding. Use this skill when: (1) Designing sequences for RFdiffusion backbones, (2) Redesigning existing protein sequences, (3) Fixing specific resi",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/proteinmpnn",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "proteinmpnn-adaptyvbio-protein-design-skill-2"
+}

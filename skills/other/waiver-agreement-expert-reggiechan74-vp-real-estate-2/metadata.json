@@ -1,0 +1,11 @@
+{
+  "name": "waiver-agreement-expert",
+  "description": "Expert in waiver agreements where a landlord waives conditions in an offer to lease (often adding new conditions as the price of acceptance). Use when landlord is accepting tenant's offer subject to c",
+  "repo": "reggiechan74/vp-real-estate",
+  "path": ".claude/skills/waiver-agreement-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/reggiechan74/vp-real-estate",
+  "dir_name": "waiver-agreement-expert-reggiechan74-vp-real-estate-2"
+}

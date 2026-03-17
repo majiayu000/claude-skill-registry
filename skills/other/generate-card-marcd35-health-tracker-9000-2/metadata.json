@@ -1,0 +1,11 @@
+{
+  "name": "generate-card",
+  "description": "Generate dashboard card component with shadcn Card structure, TypeScript props, and optional sub-components. Use when creating new dashboard widgets or stat cards.",
+  "repo": "marcd35/health-tracker-9000",
+  "path": ".claude/skills/generate-card",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/marcd35/health-tracker-9000",
+  "dir_name": "generate-card-marcd35-health-tracker-9000-2"
+}

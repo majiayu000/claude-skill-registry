@@ -1,0 +1,11 @@
+{
+  "name": "hqq",
+  "description": "Half-Quadratic Quantization for LLMs without calibration data. Use when quantizing models to 4/3/2-bit precision without needing calibration datasets, for fast quantization workflows, or when deployin",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "10-optimization/hqq",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "hqq-zechenzhangagi-ai-research-skills-2"
+}

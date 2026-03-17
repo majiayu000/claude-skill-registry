@@ -1,0 +1,11 @@
+{
+  "name": "xss-prevention",
+  "description": "Implement comprehensive Cross-Site Scripting attack prevention through input sanitization, output encoding, Content Security Policy headers, and secure coding practices.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/xss-prevention/skills/xss-prevention",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "xss-prevention-secondsky-claude-skills-2"
+}

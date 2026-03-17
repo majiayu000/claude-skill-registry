@@ -1,0 +1,11 @@
+{
+  "name": "commerce-blueprint",
+  "description": "Deep expertise in E-commerce domain logic (Cart, Checkout, SKU). Trigger this when building shopping features on top of MVC or ADR.",
+  "repo": "gravito-framework/gravito",
+  "path": "packages/scaffold/templates/skills/commerce-blueprint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gravito-framework/gravito",
+  "dir_name": "commerce-blueprint-gravito-framework-gravito-2"
+}

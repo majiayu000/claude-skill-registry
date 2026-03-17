@@ -1,0 +1,11 @@
+{
+  "name": "moai-domain-notion",
+  "description": "Enterprise Notion integration with MCP server architecture, database operations, and content management",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-domain-notion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-domain-notion-jg-chalk-io-nora-livekit-2"
+}

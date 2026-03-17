@@ -1,0 +1,11 @@
+{
+  "name": "solid-cache-coder",
+  "description": "Use when configuring or working with Solid Cache for database-backed caching. Applies Rails 8 conventions, cache key design, expiration strategies, database setup, and performance tuning patterns.",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": "plugins/majestic-rails/skills/solid-cache-coder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "dir_name": "solid-cache-coder-majesticlabs-dev-majestic-marketplace-2"
+}

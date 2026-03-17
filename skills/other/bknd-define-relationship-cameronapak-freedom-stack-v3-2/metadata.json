@@ -1,0 +1,11 @@
+{
+  "name": "bknd-define-relationship",
+  "description": "Use when defining relationships between Bknd entities. Covers many-to-one, one-to-one, many-to-many, self-referencing relationships, junction tables, options like mappedBy and inversedBy, and UI vs co",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-define-relationship",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-define-relationship-cameronapak-freedom-stack-v3-2"
+}

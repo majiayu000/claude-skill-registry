@@ -1,0 +1,11 @@
+{
+  "name": "session-manager",
+  "description": "Manage named Claude Code sessions for CircleTel workflows. Use when starting feature work, resuming previous sessions, organizing multi-day tasks, or switching between different work contexts like adm",
+  "repo": "jdeweedata/circletel",
+  "path": ".claude/skills/session-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jdeweedata/circletel",
+  "dir_name": "session-manager-jdeweedata-circletel-2"
+}

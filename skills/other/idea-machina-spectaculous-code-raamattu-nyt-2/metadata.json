@@ -1,0 +1,11 @@
+{
+  "name": "idea-machina",
+  "description": "Expert assistant for developing the IdeaMachina app - an ideas management system with CRUD, tagging, ratings, and \"Continue to...\" actions that convert ideas into projects, goals, workflows, or prompt",
+  "repo": "Spectaculous-Code/raamattu-nyt",
+  "path": ".claude/skills/idea-machina",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Spectaculous-Code/raamattu-nyt",
+  "dir_name": "idea-machina-spectaculous-code-raamattu-nyt-2"
+}

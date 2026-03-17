@@ -1,0 +1,11 @@
+{
+  "name": "rls-policy-generator",
+  "description": "Generate production-ready Row Level Security (RLS) policies for Supabase tables with is_super_admin() bypass, proper USING/WITH CHECK, and common relationship patterns; use when creating RLS policies,",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/rls-policy-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "rls-policy-generator-javeedishaq-ai-workflow-orchestr-2"
+}

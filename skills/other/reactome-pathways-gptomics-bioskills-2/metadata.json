@@ -1,0 +1,11 @@
+{
+  "name": "reactome-pathways",
+  "description": "Reactome pathway enrichment using ReactomePA package. Performs over-representation analysis and GSEA on Reactome pathways, a curated peer-reviewed knowledgebase of biological pathways. Supports visual",
+  "repo": "GPTomics/bioSkills",
+  "path": "pathway-analysis/reactome-pathways",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "reactome-pathways-gptomics-bioskills-2"
+}

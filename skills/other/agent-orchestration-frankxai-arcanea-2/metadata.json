@@ -1,0 +1,11 @@
+{
+  "name": "agent-orchestration",
+  "description": "Multi-agent coordination patterns for building effective AI teams",
+  "repo": "frankxai/arcanea",
+  "path": ".claude/skills/community/agent-orchestration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/arcanea",
+  "dir_name": "agent-orchestration-frankxai-arcanea-2"
+}

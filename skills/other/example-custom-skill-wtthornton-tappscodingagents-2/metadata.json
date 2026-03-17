@@ -1,0 +1,11 @@
+{
+  "name": "example-custom-skill",
+  "description": "Example custom Skill demonstrating template generation and best practices. Use this as a reference when creating your own custom Skills.",
+  "repo": "wtthornton/TappsCodingAgents",
+  "path": ".claude/skills/example-custom-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wtthornton/TappsCodingAgents",
+  "dir_name": "example-custom-skill-wtthornton-tappscodingagents-2"
+}

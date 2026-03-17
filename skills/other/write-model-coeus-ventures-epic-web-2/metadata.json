@@ -1,0 +1,11 @@
+{
+  "name": "write-model",
+  "description": "Write database models following the Epic architecture patterns. Use when creating Active Record models for database tables with CRUD operations. Triggers on \"create a model\", \"add a model\", or \"write ",
+  "repo": "coeus-ventures/epic-web",
+  "path": ".claude/skills/write-model",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/coeus-ventures/epic-web",
+  "dir_name": "write-model-coeus-ventures-epic-web-2"
+}

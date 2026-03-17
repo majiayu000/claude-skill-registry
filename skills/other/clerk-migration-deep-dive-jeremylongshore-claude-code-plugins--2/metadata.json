@@ -1,0 +1,11 @@
+{
+  "name": "clerk-migration-deep-dive",
+  "description": "Migrate from other authentication providers to Clerk.\nUse when migrating from Auth0, Firebase, Supabase Auth, NextAuth,\nor custom authentication solutions.\nTrigger with phrases like \"migrate to clerk\"",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/clerk-pack/skills/clerk-migration-deep-dive",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "clerk-migration-deep-dive-jeremylongshore-claude-code-plugins--2"
+}

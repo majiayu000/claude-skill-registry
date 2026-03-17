@@ -1,0 +1,11 @@
+{
+  "name": "coalesce",
+  "description": "Combine multiple related articles into one unified piece. Archives originals to preserve URLs.",
+  "repo": "unfinishablemap/unfinishablemap",
+  "path": ".claude/skills/coalesce",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/unfinishablemap/unfinishablemap",
+  "dir_name": "coalesce-unfinishablemap-unfinishablemap-2"
+}

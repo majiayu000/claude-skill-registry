@@ -1,0 +1,11 @@
+{
+  "name": "global-hook-setup",
+  "description": "Use when setting up global hooks for Claude Code enforcement. Load when ~/.claude/hooks/ is missing or incomplete, or when explicitly requested. Installs 7 project-agnostic hooks (state transitions, g",
+  "repo": "ingpoc/SKILLS",
+  "path": "global-hook-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ingpoc/SKILLS",
+  "dir_name": "global-hook-setup-ingpoc-skills-2"
+}

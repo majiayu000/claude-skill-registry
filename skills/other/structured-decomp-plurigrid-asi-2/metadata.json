@@ -1,0 +1,11 @@
+{
+  "name": "structured-decomp",
+  "description": "StructuredDecompositions.jl sheaves on tree decompositions for FPT algorithms with bidirectional navigation",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.agents/skills/structured-decomp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "structured-decomp-plurigrid-asi-2"
+}

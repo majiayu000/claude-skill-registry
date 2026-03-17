@@ -1,0 +1,11 @@
+{
+  "name": "pr-description",
+  "description": "ユーザーが「PR説明を生成」「PR本文を作って」「プルリクエストの説明が欲しい」等と要求した時、または他のスキル（issue-fixなど）から呼び出された時に発動。 git diffから変更内容を分析し、詳細なPR本文を生成する。 チームの規約に準拠したフォーマットで出力する。",
+  "repo": "kis9a/claude-skills-demo",
+  "path": ".claude/skills/pr-description",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kis9a/claude-skills-demo",
+  "dir_name": "pr-description-kis9a-claude-skills-demo-2"
+}

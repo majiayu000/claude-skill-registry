@@ -1,0 +1,9 @@
+{
+  "name": "cloudflare-worker-builder",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/cloudflare-worker-builder/SKILL.md",
+  "category": "other",
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "cloudflare-worker-builder",
+  "downloaded_at": "2026-02-22T07:39:30.511986Z"
+}

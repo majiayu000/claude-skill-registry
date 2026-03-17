@@ -1,0 +1,11 @@
+{
+  "name": "page-import",
+  "description": "Import a single webpage from any URL to structured HTML content for authoring in AEM Edge Delivery Services. Scrapes the page, analyzes structure, maps to existing blocks, and generates HTML for immed",
+  "repo": "aemysites/sagarsane-20250826",
+  "path": ".claude/skills/page-import",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aemysites/sagarsane-20250826",
+  "dir_name": "page-import-aemysites-sagarsane-20250826-2"
+}

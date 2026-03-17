@@ -1,0 +1,11 @@
+{
+  "name": "figma",
+  "description": "Integrate with Figma API for design automation and code generation. Use when extracting design tokens, generating React/CSS code from Figma components, syncing design systems, building Figma plugins, ",
+  "repo": "hoodini/ai-agents-skills",
+  "path": "skills/figma",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hoodini/ai-agents-skills",
+  "dir_name": "figma-hoodini-ai-agents-skills-2"
+}

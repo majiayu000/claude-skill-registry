@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-plugin-scaffolder",
+  "description": "Generate production-ready plugin structures from PRD documents with enterprise-compliant files. Use when scaffolding new plugins, converting PRDs to plugin skeletons, or initializing plugin projects. ",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "003-skills/.claude/skills/nixtla-plugin-scaffolder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-plugin-scaffolder-intent-solutions-io-plugins-nixtla-2"
+}

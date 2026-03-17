@@ -1,0 +1,11 @@
+{
+  "name": "flipt",
+  "description": "Manage Flipt feature flags - list, create, enable/disable, and configure rollout rules. Use when you need to control feature flag state or set up segmented rollouts.",
+  "repo": "civitai/civitai",
+  "path": ".claude/skills/flipt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/civitai/civitai",
+  "dir_name": "flipt-civitai-civitai-2"
+}

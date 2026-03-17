@@ -1,0 +1,11 @@
+{
+  "name": "add-domain-entity",
+  "description": "Create domain layer components: models, repository interfaces, marshallers, and implementations.\nUse when: (1) adding domain model in internal/domain/model/, (2) creating repository interface in inter",
+  "repo": "abyssparanoia/rapid-go",
+  "path": ".claude/skills/add-domain-entity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/abyssparanoia/rapid-go",
+  "dir_name": "add-domain-entity-abyssparanoia-rapid-go-2"
+}

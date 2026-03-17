@@ -1,0 +1,11 @@
+{
+  "name": "problem-solution-dialogue",
+  "description": "Use when 需要讨论方案权衡/架构选型/需求澄清，且目标/约束/成功标准不清或存在多解权衡时。",
+  "repo": "pianzhu/my-claude-skills",
+  "path": "skills/problem-solution-dialogue",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pianzhu/my-claude-skills",
+  "dir_name": "problem-solution-dialogue-pianzhu-my-claude-skills-2"
+}

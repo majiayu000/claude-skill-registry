@@ -1,0 +1,11 @@
+{
+  "name": "latex-posters",
+  "description": "Create professional research posters in LaTeX using beamerposter, tikzposter, or baposter. Support for conference presentations, academic posters, and scientific communication. Includes layout design,",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/writing/latex-posters",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "latex-posters-hxk622-tokendance-2"
+}

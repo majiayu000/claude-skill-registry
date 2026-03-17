@@ -1,0 +1,11 @@
+{
+  "name": "data-aggregation",
+  "description": "Aggregate and merge data from multiple sources including App Store sales, GitHub commits, Skillz events, and more. Use when combining data for reports, dashboards, or analysis.",
+  "repo": "dglowacki/mega-agent-v2",
+  "path": ".claude/skills/data-aggregation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dglowacki/mega-agent-v2",
+  "dir_name": "data-aggregation-dglowacki-mega-agent-v2-2"
+}

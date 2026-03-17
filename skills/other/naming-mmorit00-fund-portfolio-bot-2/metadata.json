@@ -1,0 +1,11 @@
+{
+  "name": "naming",
+  "description": "命名规范 / Naming conventions。在创建类、函数、变量，或重命名、检查命名时使用。核心原则：简洁优先，上下文消歧义，类型提示已提供足够信息。Use when naming classes/functions/variables, renaming code, or reviewing names. Prioritizes brevity over self-documentati",
+  "repo": "MMorit00/fund-portfolio-bot",
+  "path": ".claude/skills/naming",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MMorit00/fund-portfolio-bot",
+  "dir_name": "naming-mmorit00-fund-portfolio-bot-2"
+}

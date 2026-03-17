@@ -1,0 +1,11 @@
+{
+  "name": "orcaflex-visualization",
+  "description": "Generate visualizations from OrcaFlex simulations including model views, time series plots, range graphs, and interactive HTML reports using Plotly for comprehensive analysis presentation.",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcaflex-visualization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcaflex-visualization-vamseeachanta-digitalmodel-2"
+}

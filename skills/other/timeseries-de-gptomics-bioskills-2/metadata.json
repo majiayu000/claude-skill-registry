@@ -1,0 +1,11 @@
+{
+  "name": "timeseries-de",
+  "description": "Analyze time-series RNA-seq data using limma voom with splines, maSigPro, and ImpulseDE2. Identify genes with dynamic expression patterns.",
+  "repo": "GPTomics/bioSkills",
+  "path": "differential-expression/timeseries-de",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "timeseries-de-gptomics-bioskills-2"
+}

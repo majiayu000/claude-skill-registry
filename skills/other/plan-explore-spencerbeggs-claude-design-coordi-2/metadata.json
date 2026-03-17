@@ -1,0 +1,11 @@
+{
+  "name": "plan-explore",
+  "description": "Explore implementation plans, status, and relationships. Provides comprehensive plan ecosystem navigation with filtering, health analysis, and actionable recommendations.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/plan-explore",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "plan-explore-spencerbeggs-claude-design-coordi-2"
+}

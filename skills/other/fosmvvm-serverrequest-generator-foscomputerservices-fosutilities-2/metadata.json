@@ -1,0 +1,11 @@
+{
+  "name": "fosmvvm-serverrequest-generator",
+  "description": "Generate ServerRequest types for client-server communication in FOSMVVM. Use when implementing any operation that talks to the server - CRUD operations, data sync, actions, etc. ServerRequest is THE w",
+  "repo": "foscomputerservices/FOSUtilities",
+  "path": ".claude/skills/fosmvvm-serverrequest-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/foscomputerservices/FOSUtilities",
+  "dir_name": "fosmvvm-serverrequest-generator-foscomputerservices-fosutilities-2"
+}

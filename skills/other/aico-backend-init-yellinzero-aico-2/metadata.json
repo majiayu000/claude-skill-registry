@@ -1,0 +1,11 @@
+{
+  "name": "aico-backend-init",
+  "description": "Initialize backend environment by creating constraints document from template.\n\nUse this skill when:\n- Running /backend.init command\n- User asks to \"initialize backend\", \"setup backend environment\"\n- ",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-backend-init",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-backend-init-yellinzero-aico-2"
+}

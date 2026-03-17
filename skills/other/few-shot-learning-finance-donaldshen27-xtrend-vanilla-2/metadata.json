@@ -1,0 +1,11 @@
+{
+  "name": "few-shot-learning-finance",
+  "description": "Use when implementing models that learn from minimal data or need to adapt to new market regimes rapidly. Covers episodic learning, context sets, support and query sequences, zero-shot vs few-shot lea",
+  "repo": "Donaldshen27/xtrend-vanilla",
+  "path": ".claude/skills/few-shot-learning-finance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Donaldshen27/xtrend-vanilla",
+  "dir_name": "few-shot-learning-finance-donaldshen27-xtrend-vanilla-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "plan-expert",
+  "description": "Planning and architecture decision domain expert.\n\nKnows about:\n- Creating ADRs (Architecture Decision Records)\n- Creating technical specifications\n- Listing and discovering planning artifacts\n- Trans",
+  "repo": "nathanvale/vtm-cli",
+  "path": ".claude/skills/plan-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nathanvale/vtm-cli",
+  "dir_name": "plan-expert-nathanvale-vtm-cli-2"
+}

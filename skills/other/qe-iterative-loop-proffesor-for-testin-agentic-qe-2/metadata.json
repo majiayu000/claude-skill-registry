@@ -1,0 +1,11 @@
+{
+  "name": "qe-iterative-loop",
+  "description": "Quality Engineering iteration loops for autonomous test improvement, coverage achievement, and quality gate compliance. Use when tests need to pass, coverage targets must be met, quality gates require",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/qe-iterative-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "qe-iterative-loop-proffesor-for-testin-agentic-qe-2"
+}

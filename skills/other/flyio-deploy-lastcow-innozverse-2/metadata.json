@@ -1,0 +1,11 @@
+{
+  "name": "flyio-deploy",
+  "description": "Deploy the innozverse API to Fly.io, manage deployments, check status, view logs, and troubleshoot deployment issues. Use when deploying the API or debugging Fly.io deployment problems.",
+  "repo": "lastcow/innozverse",
+  "path": ".claude/skills/flyio-deploy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lastcow/innozverse",
+  "dir_name": "flyio-deploy-lastcow-innozverse-2"
+}

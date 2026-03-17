@@ -1,0 +1,11 @@
+{
+  "name": "convex-http-actions",
+  "description": "External API integration and webhook handling including HTTP endpoint routing, request/response handling, authentication, CORS configuration, and webhook signature validation",
+  "repo": "waynesutton/convexskills",
+  "path": "skills/convex-http-actions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/waynesutton/convexskills",
+  "dir_name": "convex-http-actions-waynesutton-convexskills-2"
+}

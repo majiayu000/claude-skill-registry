@@ -1,0 +1,11 @@
+{
+  "name": "disk-forensics",
+  "description": "Analyze disk images and file systems for forensic investigation. Use when investigating\ndata theft, insider threats, malware persistence, deleted file recovery, or any incident\nrequiring analysis of s",
+  "repo": "SherifEldeeb/agentskills",
+  "path": "skills/forensics/disk-forensics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SherifEldeeb/agentskills",
+  "dir_name": "disk-forensics-sherifeldeeb-agentskills-2"
+}

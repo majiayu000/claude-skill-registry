@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-routing",
+  "description": "Understand and use routing in Umbraco backoffice (foundational concept)",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-routing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-routing-umbraco-umbraco-cms-backoffi-2"
+}

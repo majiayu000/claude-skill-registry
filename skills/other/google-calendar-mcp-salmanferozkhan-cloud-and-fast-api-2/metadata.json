@@ -1,0 +1,11 @@
+{
+  "name": "google-calendar-mcp",
+  "description": "Step-by-step guide for setting up Google Calendar MCP server in Claude Code CLI. Use when users want to (1) connect Google Calendar to Claude Code, (2) set up the @cocal/google-calendar-mcp server, (3",
+  "repo": "Salmanferozkhan/Cloud-and-fast-api",
+  "path": ".claude/skills/google-calendar-mcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Salmanferozkhan/Cloud-and-fast-api",
+  "dir_name": "google-calendar-mcp-salmanferozkhan-cloud-and-fast-api-2"
+}

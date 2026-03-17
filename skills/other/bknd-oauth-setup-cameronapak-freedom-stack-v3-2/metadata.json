@@ -1,0 +1,11 @@
+{
+  "name": "bknd-oauth-setup",
+  "description": "Use when configuring OAuth or social login providers in a Bknd application. Covers Google OAuth, GitHub OAuth, custom OAuth providers, callback URLs, environment variables, and frontend OAuth integrat",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-oauth-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-oauth-setup-cameronapak-freedom-stack-v3-2"
+}

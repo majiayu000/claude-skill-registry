@@ -1,0 +1,11 @@
+{
+  "name": "bulk-combat-correction",
+  "description": "Use omicverse's pyComBat wrapper to remove batch effects from merged bulk RNA-seq or microarray cohorts, export corrected matrices, and benchmark pre/post correction visualisations.",
+  "repo": "Starlitnightly/omicverse",
+  "path": ".claude/skills/bulk-combat-correction",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Starlitnightly/omicverse",
+  "dir_name": "bulk-combat-correction-starlitnightly-omicverse-2"
+}

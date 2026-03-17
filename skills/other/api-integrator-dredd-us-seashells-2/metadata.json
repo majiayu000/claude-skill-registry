@@ -1,0 +1,11 @@
+{
+  "name": "api-integrator",
+  "description": "Integrate external REST and GraphQL APIs with proper authentication (Bearer, Basic, OAuth), error handling, retry logic, and JSON schema validation. Use when making API calls, database queries, or int",
+  "repo": "dredd-us/seashells",
+  "path": ".claude/skills/api-integrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dredd-us/seashells",
+  "dir_name": "api-integrator-dredd-us-seashells-2"
+}

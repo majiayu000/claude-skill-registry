@@ -1,0 +1,9 @@
+{
+  "name": "orchestration",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/orchestration/circuit-breaker-skill.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "orchestration",
+  "downloaded_at": "2026-02-15T07:06:53.407304Z"
+}

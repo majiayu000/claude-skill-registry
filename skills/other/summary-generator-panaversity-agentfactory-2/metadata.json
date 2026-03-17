@@ -1,0 +1,11 @@
+{
+  "name": "summary-generator",
+  "description": "This skill should be used when generating lesson summaries for educational content. It extracts key concepts, mental models, patterns, and common mistakes from lesson markdown files using a Socratic e",
+  "repo": "panaversity/agentfactory",
+  "path": ".claude/skills/summary-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "summary-generator-panaversity-agentfactory-2"
+}

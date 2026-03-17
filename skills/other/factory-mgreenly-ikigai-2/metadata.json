@@ -1,0 +1,11 @@
+{
+  "name": "factory",
+  "description": "Factory Pattern pattern for C development",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/patterns/factory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "factory-mgreenly-ikigai-2"
+}

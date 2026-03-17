@@ -1,0 +1,11 @@
+{
+  "name": "fetch-url",
+  "description": "渲染网页 URL，去噪提取正文并输出为 Markdown（默认）或其他格式/原始 HTML，以减少 Token。",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/dcjanus/fetch-url",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "fetch-url-aiskillstore-marketplace-2"
+}

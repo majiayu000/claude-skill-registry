@@ -1,0 +1,11 @@
+{
+  "name": "pdf-extractor",
+  "description": "Extract text, tables, and images from PDF files. Use when converting PDF documentation, manuals, or reports to searchable text.",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "agentic/code/addons/doc-intelligence/skills/pdf-extractor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jmagly/ai-writing-guide",
+  "dir_name": "pdf-extractor-jmagly-ai-writing-guide-2"
+}

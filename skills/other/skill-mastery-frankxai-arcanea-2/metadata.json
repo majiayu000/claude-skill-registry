@@ -1,0 +1,11 @@
+{
+  "name": "skill-mastery",
+  "description": "The meta-skill of using skills effectively. Learn when to invoke which skill, how to chain them together, and how to develop your own. Master the Arcanea skill system itself.",
+  "repo": "frankxai/arcanea",
+  "path": ".claude/skills/meta/skill-mastery",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/arcanea",
+  "dir_name": "skill-mastery-frankxai-arcanea-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "huggingface-js",
+  "description": "Runs ML models in the browser and Node.js with Transformers.js and Hugging Face Inference API. Use when adding local inference, embeddings, or calling hosted models without GPU servers.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/skills/huggingface-js",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "huggingface-js-mgd34msu-goodvibes-plugin-2"
+}

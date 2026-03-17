@@ -1,0 +1,11 @@
+{
+  "name": "spellbook-auditing",
+  "description": "Meta-audit skill for spellbook development. Spawns parallel subagents to factcheck docs, optimize instructions, find token savings, and identify MCP candidates. Produces actionable report.",
+  "repo": "axiomantic/spellbook",
+  "path": ".claude/skills/spellbook-auditing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/axiomantic/spellbook",
+  "dir_name": "spellbook-auditing-axiomantic-spellbook-2"
+}

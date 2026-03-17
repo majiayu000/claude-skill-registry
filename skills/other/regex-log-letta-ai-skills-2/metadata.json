@@ -1,0 +1,11 @@
+{
+  "name": "regex-log",
+  "description": "Guidance for constructing complex regular expressions that extract and validate data from log files. This skill applies when building regex patterns to parse log entries with requirements like IP addr",
+  "repo": "letta-ai/skills",
+  "path": "letta/benchmarks/trajectory-only/regex-log",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/letta-ai/skills",
+  "dir_name": "regex-log-letta-ai-skills-2"
+}

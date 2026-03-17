@@ -1,0 +1,11 @@
+{
+  "name": "writing-quality-tests",
+  "description": "Use when designing or refactoring automated tests to make them high-signal, reliable, and maintainable across unit, integration, and end-to-end suites.",
+  "repo": "ederheisler/agent-skills",
+  "path": ".claude/skills/writing-quality-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ederheisler/agent-skills",
+  "dir_name": "writing-quality-tests-ederheisler-agent-skills-2"
+}

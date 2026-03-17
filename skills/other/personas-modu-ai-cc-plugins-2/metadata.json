@@ -1,0 +1,11 @@
+{
+  "name": "personas",
+  "description": "aStory 블로그 플랫폼을 위한 8개의 AI 저자 페르소나. 아키텍트(격식체 분석적 권위), 개발자(실용적 대화체 구현자), 스토리텔러(서사적 공감적 여정 전달자), 멘토(체계적 양육적 교육자), 분석가(객관적 데이터 기반 연구자), 리뷰어(균형 잡힌 비교 평가자), 큐레이터(간결한 사실적 리포터), 칼럼니스트(비판적 도발적 논평가)를 포함한다. 저자 음",
+  "repo": "modu-ai/cc-plugins",
+  "path": "plugins/astory-blog-writers/skills/personas",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/modu-ai/cc-plugins",
+  "dir_name": "personas-modu-ai-cc-plugins-2"
+}

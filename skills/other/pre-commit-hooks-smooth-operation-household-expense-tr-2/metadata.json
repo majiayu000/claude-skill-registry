@@ -1,0 +1,11 @@
+{
+  "name": "pre-commit-hooks",
+  "description": "MANDATORY setup for all projects. Automated code quality enforcement before commits. Prevents bad code from entering repository.",
+  "repo": "Smooth-Operation/household-expense-tracker",
+  "path": ".claude/skills/safety/pre-commit-hooks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Smooth-Operation/household-expense-tracker",
+  "dir_name": "pre-commit-hooks-smooth-operation-household-expense-tr-2"
+}

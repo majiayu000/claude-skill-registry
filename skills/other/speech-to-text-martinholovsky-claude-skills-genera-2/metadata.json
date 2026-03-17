@@ -1,0 +1,11 @@
+{
+  "name": "speech-to-text",
+  "description": "Expert skill for implementing speech-to-text with Faster Whisper. Covers audio processing, transcription optimization, privacy protection, and secure handling of voice data for JARVIS voice assistant.",
+  "repo": "martinholovsky/claude-skills-generator",
+  "path": "skills/speech-to-text",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/martinholovsky/claude-skills-generator",
+  "dir_name": "speech-to-text-martinholovsky-claude-skills-genera-2"
+}

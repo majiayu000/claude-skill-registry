@@ -1,0 +1,11 @@
+{
+  "name": "block-editor-components",
+  "description": "React editor components for WordPress blocks in Oh My Brand! theme. useBlockProps, InspectorControls, MediaUpload, and attributes. Use when writing edit.tsx files.",
+  "repo": "WesleySmits/oh-my-brand-wp-fse",
+  "path": ".github/skills/block-editor-components",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/oh-my-brand-wp-fse",
+  "dir_name": "block-editor-components-wesleysmits-oh-my-brand-wp-fse-2"
+}

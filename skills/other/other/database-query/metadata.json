@@ -1,0 +1,9 @@
+{
+  "name": "database-query",
+  "repo": "cisco-ai-defense/skill-scanner",
+  "path": "evals/skills/sql-injection/database-query/SKILL.md",
+  "category": "other",
+  "source": "github.com/cisco-ai-defense/skill-scanner",
+  "dir_name": "database-query",
+  "downloaded_at": "2026-02-22T06:42:48.574507Z"
+}

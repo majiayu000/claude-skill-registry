@@ -1,0 +1,11 @@
+{
+  "name": "debrief",
+  "description": "End-of-session reflection. Extracts memories, suggests updates to about-taylor.md and CLAUDE.md. Run before ending a long session or when context is getting full. Triggers on \"debrief\", \"extract memor",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/debrief",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "debrief-taylorhuston-local-life-manager-2"
+}

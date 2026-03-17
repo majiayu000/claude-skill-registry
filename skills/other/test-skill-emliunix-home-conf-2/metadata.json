@@ -1,0 +1,11 @@
+{
+  "name": "test_skill",
+  "description": "Local skill in working directory",
+  "repo": "emliunix/home.conf",
+  "path": "tskill/tests/fixtures/test_parent_repo/skills/test_skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/emliunix/home.conf",
+  "dir_name": "test-skill-emliunix-home-conf-2"
+}

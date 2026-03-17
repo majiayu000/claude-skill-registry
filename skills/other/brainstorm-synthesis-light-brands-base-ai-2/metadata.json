@@ -1,0 +1,11 @@
+{
+  "name": "brainstorm-synthesis",
+  "description": "Use when facing hard architectural decisions, multiple valid approaches exist, need diverse perspectives before committing, or want M-of-N synthesis on complex problems",
+  "repo": "Light-Brands/base-ai",
+  "path": "plugins/core/skills/brainstorm-synthesis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Light-Brands/base-ai",
+  "dir_name": "brainstorm-synthesis-light-brands-base-ai-2"
+}

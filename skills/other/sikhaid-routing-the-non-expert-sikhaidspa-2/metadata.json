@@ -1,0 +1,11 @@
+{
+  "name": "sikhaid-routing",
+  "description": "Use when adding routes, navigation, or understanding URL structure in SikhAid project. Covers SvelteKit file-based routing, dynamic routes with slugs, layout hierarchy, admin routes, and navigation pa",
+  "repo": "the-non-expert/SikhAidSPA",
+  "path": ".claude/skills/sikhaid-routing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/the-non-expert/SikhAidSPA",
+  "dir_name": "sikhaid-routing-the-non-expert-sikhaidspa-2"
+}

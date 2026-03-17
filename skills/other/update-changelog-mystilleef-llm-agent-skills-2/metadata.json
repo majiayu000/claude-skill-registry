@@ -1,0 +1,11 @@
+{
+  "name": "update-changelog",
+  "description": "Orchestrate complete changelog workflow. Invoke `init-changelog` (if needed), `edit-changelog`, and `cleanup-changelog` skills in sequence. Use when the user or agent needs to update the changelog.",
+  "repo": "mystilleef/llm-agent-skills",
+  "path": "skills/update-changelog",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mystilleef/llm-agent-skills",
+  "dir_name": "update-changelog-mystilleef-llm-agent-skills-2"
+}

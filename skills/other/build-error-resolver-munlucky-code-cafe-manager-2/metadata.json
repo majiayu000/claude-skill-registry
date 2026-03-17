@@ -1,0 +1,11 @@
+{
+  "name": "build-error-resolver",
+  "description": "Resolves build and compilation errors. Use when build fails or type errors occur.",
+  "repo": "munlucky/code-cafe-manager",
+  "path": ".claude/skills/build-error-resolver",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/munlucky/code-cafe-manager",
+  "dir_name": "build-error-resolver-munlucky-code-cafe-manager-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "database-implementer",
+  "description": "Creates database schemas, migrations, queries, and data access layers. Use when implementing database-related tasks. Handles schema design, migrations, CRUD operations, and database optimization.",
+  "repo": "lexicalninja/my-little-scrum-team",
+  "path": "skills/database-implementer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lexicalninja/my-little-scrum-team",
+  "dir_name": "database-implementer-lexicalninja-my-little-scrum-team-2"
+}

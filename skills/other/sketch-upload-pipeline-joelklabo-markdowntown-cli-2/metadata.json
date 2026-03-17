@@ -1,0 +1,11 @@
+{
+  "name": "sketch-upload-pipeline",
+  "description": "Upload pipeline troubleshooting for Sketch Magic. Use when HEIC uploads fail, previews don’t render, files are too large, or upload validation errors appear.",
+  "repo": "joelklabo/markdowntown-cli",
+  "path": "codex/skills/sketch-upload-pipeline",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown-cli",
+  "dir_name": "sketch-upload-pipeline-joelklabo-markdowntown-cli-2"
+}

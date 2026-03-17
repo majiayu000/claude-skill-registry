@@ -1,0 +1,11 @@
+{
+  "name": "fullstory-stable-selectors",
+  "description": "Framework-agnostic guide for implementing stable, semantic selectors in any web application. Solves the dynamic class name problem caused by CSS-in-JS, CSS Modules, and build tools. Includes patterns ",
+  "repo": "rcmaples/btx",
+  "path": ".claude/skills/fullstory-stable-selectors",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rcmaples/btx",
+  "dir_name": "fullstory-stable-selectors-rcmaples-btx-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-sandbox-upload",
+  "description": "Upload a compressed archive to a sandbox and extract it. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-sandbox-upload",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-sandbox-upload-agentuity-sdk-explorer-2"
+}

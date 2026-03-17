@@ -1,0 +1,17 @@
+{
+  "name": "ln-513-agent-reviewer",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-513-agent-reviewer/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-513-agent-reviewer",
+  "downloaded_at": "2026-03-02T08:45:53.906996Z",
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/ln-513-agent-reviewer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/ln-513-agent-reviewer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

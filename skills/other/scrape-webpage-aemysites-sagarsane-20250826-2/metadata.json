@@ -1,0 +1,11 @@
+{
+  "name": "scrape-webpage",
+  "description": "Scrape webpage content, extract metadata, download images, and prepare for import/migration to AEM Edge Delivery Services. Returns analysis JSON with paths, metadata, cleaned HTML, and local images.",
+  "repo": "aemysites/sagarsane-20250826",
+  "path": ".claude/skills/scrape-webpage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aemysites/sagarsane-20250826",
+  "dir_name": "scrape-webpage-aemysites-sagarsane-20250826-2"
+}

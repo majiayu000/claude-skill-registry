@@ -1,0 +1,11 @@
+{
+  "name": "api-versioning-strategy",
+  "description": "Implements API versioning using URL paths, headers, or query parameters with backward compatibility and deprecation strategies. Use when managing multiple API versions, planning breaking changes, or d",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/api-versioning-strategy/skills/api-versioning-strategy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "api-versioning-strategy-secondsky-claude-skills-2"
+}

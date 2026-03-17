@@ -1,0 +1,11 @@
+{
+  "name": "moai-worktree",
+  "description": "Git worktree management for parallel SPEC development with isolated workspaces, automatic registration, and seamless MoAI-ADK integration",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".claude/skills/moai-worktree",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "dir_name": "moai-worktree-rdmptv-adbautoplayer-2"
+}

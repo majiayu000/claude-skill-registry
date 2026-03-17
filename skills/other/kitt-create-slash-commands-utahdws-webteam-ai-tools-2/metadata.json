@@ -1,0 +1,11 @@
+{
+  "name": "kitt-create-slash-commands",
+  "description": "Expert guidance for creating Claude Code slash commands. Use when working with slash commands, creating custom commands, understanding command structure, or learning YAML configuration.",
+  "repo": "utahdws/webteam-ai-tools",
+  "path": ".ai-cli/shared/skills/kitt-create-slash-commands",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/utahdws/webteam-ai-tools",
+  "dir_name": "kitt-create-slash-commands-utahdws-webteam-ai-tools-2"
+}

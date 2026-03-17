@@ -1,0 +1,11 @@
+{
+  "name": "change-request-form",
+  "description": "Эксперт по заявкам на изменения. Используй для форм CR, impact analysis, approval workflows и change control.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/change-request-form",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "change-request-form-dengineproblem-agents-monorepo-2"
+}

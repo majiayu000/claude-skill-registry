@@ -1,0 +1,11 @@
+{
+  "name": "design-archive",
+  "description": "Archive outdated design documentation. Use when design docs are no longer relevant, have been superseded, or document deprecated features.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/design-archive",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "design-archive-spencerbeggs-claude-design-coordi-2"
+}

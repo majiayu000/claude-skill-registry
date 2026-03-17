@@ -1,0 +1,11 @@
+{
+  "name": "drive-acset",
+  "description": "Google Drive management via DriveACSet schema with GF(3) triadic routing. Transforms files/folders into typed Interactions, routes to queue fibers, detects saturation for organized-drive-as-condensed-",
+  "repo": "plurigrid/asi",
+  "path": "skills/drive-acset",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "drive-acset-plurigrid-asi-2"
+}

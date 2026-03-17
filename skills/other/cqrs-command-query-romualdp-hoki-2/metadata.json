@@ -1,0 +1,11 @@
+{
+  "name": "cqrs-command-query",
+  "description": "Génère des Commands, Queries et Handlers suivant le pattern CQRS (Command Query Responsibility Segregation). À utiliser lors de la création de use cases, commands, queries, handlers, read models, ou q",
+  "repo": "RomualdP/hoki",
+  "path": ".claude/skills/cqrs-command-query",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RomualdP/hoki",
+  "dir_name": "cqrs-command-query-romualdp-hoki-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "social-media-marketing",
+  "description": "Эксперт по SMM. Используй для стратегий в Instagram, Facebook, TikTok, LinkedIn, контент-планов и community management.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/social-media-marketing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "social-media-marketing-dengineproblem-agents-monorepo-2"
+}

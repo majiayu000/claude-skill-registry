@@ -1,0 +1,11 @@
+{
+  "name": "frontend-backend-mapper",
+  "description": "Analyzes and maps frontend API calls to backend endpoints. Detects missing endpoints, unused endpoints, and integration gaps. Optional: trace complete data flows to database and design tokens. Related",
+  "repo": "okgoogle13/careercopilot",
+  "path": ".claude/skills/frontend-backend-mapper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/okgoogle13/careercopilot",
+  "dir_name": "frontend-backend-mapper-okgoogle13-careercopilot-2"
+}

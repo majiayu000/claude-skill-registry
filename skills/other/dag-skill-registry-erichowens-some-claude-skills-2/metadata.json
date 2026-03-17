@@ -1,0 +1,11 @@
+{
+  "name": "dag-skill-registry",
+  "description": "Central catalog of available skills with metadata, capabilities, and performance history. Provides skill discovery and lookup services. Activate on 'skill registry', 'list skills', 'skill catalog', 'a",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-skill-registry",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-skill-registry-erichowens-some-claude-skills-2"
+}

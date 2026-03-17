@@ -1,0 +1,11 @@
+{
+  "name": "device-management",
+  "description": "Manage device adoption and onboarding, maintain device inventory, and monitor device configurations across your UniFi Protect infrastructure.",
+  "repo": "DataKnifeAI/unifi-protect-mcp",
+  "path": ".github/skills/device-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DataKnifeAI/unifi-protect-mcp",
+  "dir_name": "device-management-dataknifeai-unifi-protect-mcp-2"
+}

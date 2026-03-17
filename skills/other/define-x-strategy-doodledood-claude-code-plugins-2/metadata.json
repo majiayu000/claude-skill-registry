@@ -1,0 +1,11 @@
+{
+  "name": "define-x-strategy",
+  "description": "Creates personalized X/Twitter growth strategy through guided interview. Based on algorithm-derived principles (exposure equation, phase model). Use when asked about X growth, Twitter strategy, buildi",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/solo-dev/skills/define-x-strategy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "define-x-strategy-doodledood-claude-code-plugins-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "completion-check",
+  "description": "Completion Check: Verify Infrastructure Is Wired",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/completion-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "completion-check-parcadei-continuous-claude-v3-2"
+}

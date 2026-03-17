@@ -1,0 +1,11 @@
+{
+  "name": "rails-rails-testing",
+  "description": "Specialized skill for Rails testing with RSpec, FactoryBot, and TDD workflows. Use when writing tests, setting up test coverage, creating factories, or implementing test-driven development. Covers uni",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/rails-rails-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "rails-rails-testing-boisenoise-skills-collections-2"
+}

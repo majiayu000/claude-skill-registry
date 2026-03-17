@@ -1,0 +1,11 @@
+{
+  "name": "database-patterns",
+  "description": "Database design patterns, SQL best practices, ORM usage (Prisma/Drizzle), and migration strategies.\nUse when designing schemas, writing queries, or optimizing database operations.\n",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/database-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "database-patterns-wania-kazmi-claude-code-autonomo-2"
+}

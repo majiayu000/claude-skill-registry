@@ -1,0 +1,11 @@
+{
+  "name": "code-block-examples",
+  "description": "Test skill with example code blocks that should NOT be detected as real references",
+  "repo": "cuioss/plan-marshall",
+  "path": "test/pm-plugin-development/plugin-doctor/fixtures/skill-structure/code-block-examples",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "code-block-examples-cuioss-plan-marshall-2"
+}

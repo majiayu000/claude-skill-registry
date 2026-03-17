@@ -1,0 +1,11 @@
+{
+  "name": "fullstory-logging",
+  "description": "Comprehensive guide for implementing Fullstory's Logging API (log method) for web applications. Teaches proper log level usage, message formatting, and capturing application logs in session replay. In",
+  "repo": "rcmaples/btx",
+  "path": ".claude/skills/fullstory-logging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rcmaples/btx",
+  "dir_name": "fullstory-logging-rcmaples-btx-2"
+}

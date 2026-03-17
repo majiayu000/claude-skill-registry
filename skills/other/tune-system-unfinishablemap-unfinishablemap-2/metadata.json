@@ -1,0 +1,11 @@
+{
+  "name": "tune-system",
+  "description": "Review automation system operation and make conservative adjustments to cadences and thresholds when clearly warranted. Monthly maintenance task.",
+  "repo": "unfinishablemap/unfinishablemap",
+  "path": ".claude/skills/tune-system",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/unfinishablemap/unfinishablemap",
+  "dir_name": "tune-system-unfinishablemap-unfinishablemap-2"
+}

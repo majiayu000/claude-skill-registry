@@ -1,0 +1,11 @@
+{
+  "name": "youtube-downloader",
+  "description": "Download videos, audio, playlists, and channels from YouTube and 1000+ websites using yt-dlp. Supports quality selection, format conversion, subtitle download, playlist filtering, metadata extraction,",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/youtube-downloader",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "youtube-downloader-jackspace-claudeskillz-2"
+}

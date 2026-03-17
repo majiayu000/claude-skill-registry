@@ -1,0 +1,11 @@
+{
+  "name": "skill-router",
+  "description": "Analyzes tasks to find the optimal workflow of skills, presents the recommended sequence with rationale, and lets user approve/modify before execution. Use when starting any complex task, wanting help",
+  "repo": "laurenj3250-debug/vethub2.0",
+  "path": ".claude/skills/skill-router",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/laurenj3250-debug/vethub2.0",
+  "dir_name": "skill-router-laurenj3250-debug-vethub2-0-2"
+}

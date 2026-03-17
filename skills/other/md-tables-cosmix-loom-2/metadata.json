@@ -1,0 +1,11 @@
+{
+  "name": "md-tables",
+  "description": "Utility for fixing markdown table alignment and spacing. Normalizes column widths, ensures consistent padding, and preserves alignment markers.",
+  "repo": "cosmix/loom",
+  "path": "skills/md-tables",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "md-tables-cosmix-loom-2"
+}

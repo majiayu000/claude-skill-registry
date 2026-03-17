@@ -1,0 +1,11 @@
+{
+  "name": "vibery-manager",
+  "description": "Unified management for Vibery monorepo (templates, kits, CLI, website). Use /template, /kit, /sync, /publish, /deploy commands.",
+  "repo": "vibery-studio/templates",
+  "path": "skills/vibery-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vibery-studio/templates",
+  "dir_name": "vibery-manager-vibery-studio-templates-2"
+}

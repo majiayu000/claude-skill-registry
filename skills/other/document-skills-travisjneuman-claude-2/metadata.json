@@ -1,0 +1,11 @@
+{
+  "name": "document-skills",
+  "description": "Professional document creation, editing, and analysis for Office formats (docx, pdf, pptx, xlsx). Use when working with Word documents, PDFs, PowerPoint presentations, or Excel spreadsheets.",
+  "repo": "travisjneuman/.claude",
+  "path": "skills/document-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/travisjneuman/.claude",
+  "dir_name": "document-skills-travisjneuman-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "deptrac-fixer",
+  "description": "Diagnose and fix Deptrac architectural violations automatically. Use when Deptrac reports dependency violations, layers are incorrectly coupled, or when refactoring code to respect hexagonal architect",
+  "repo": "VilnaCRM-Org/user-service",
+  "path": ".claude/skills/deptrac-fixer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VilnaCRM-Org/user-service",
+  "dir_name": "deptrac-fixer-vilnacrm-org-user-service-2"
+}

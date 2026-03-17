@@ -1,0 +1,11 @@
+{
+  "name": "jupyter-notebook-testing",
+  "description": "Create and manage Jupyter notebooks for testing Adobe Edge Delivery Services (EDS) blocks interactively in the browser using the ipynb-viewer block. Interactive JavaScript execution, overlay previews ",
+  "repo": "ddttom/allaboutv2",
+  "path": ".claude/skills/jupyter-notebook-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ddttom/allaboutv2",
+  "dir_name": "jupyter-notebook-testing-ddttom-allaboutv2-2"
+}

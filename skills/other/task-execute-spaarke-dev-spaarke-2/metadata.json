@@ -1,0 +1,11 @@
+{
+  "name": "task-execute",
+  "description": "Execute a POML task file with proper context loading and verification",
+  "repo": "spaarke-dev/spaarke",
+  "path": ".claude/skills/task-execute",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spaarke-dev/spaarke",
+  "dir_name": "task-execute-spaarke-dev-spaarke-2"
+}

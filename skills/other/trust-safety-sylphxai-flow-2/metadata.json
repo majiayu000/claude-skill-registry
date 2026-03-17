@@ -1,0 +1,11 @@
+{
+  "name": "trust-safety",
+  "description": "Trust and safety - abuse prevention, rate limiting. Use when fighting bad actors.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/trust-safety",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "trust-safety-sylphxai-flow-2"
+}

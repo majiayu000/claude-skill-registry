@@ -1,0 +1,11 @@
+{
+  "name": "vilt-standards",
+  "description": "Apply VILT stack coding standards when writing Vue, Laravel, or TypeScript code. Automatically enforces patterns for Composition API, Form Requests, Inertia navigation, and component hierarchy. Activa",
+  "repo": "richardhowes/self-improvement-code-quality-plugin",
+  "path": "code-quality/skills/vilt-standards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/richardhowes/self-improvement-code-quality-plugin",
+  "dir_name": "vilt-standards-richardhowes-self-improvement-cod-2"
+}

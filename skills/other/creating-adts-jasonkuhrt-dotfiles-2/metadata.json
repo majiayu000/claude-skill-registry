@@ -1,0 +1,11 @@
+{
+  "name": "creating-adts",
+  "description": "This skill should be used when the user asks to \"create an ADT\", \"scaffold a discriminated union\", \"add a tagged union\", \"create Effect Schema union\", or needs to create algebraic data types following",
+  "repo": "jasonkuhrt/dotfiles",
+  "path": "claude/todo/library-adt/skills/creating-adts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonkuhrt/dotfiles",
+  "dir_name": "creating-adts-jasonkuhrt-dotfiles-2"
+}

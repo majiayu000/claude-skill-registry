@@ -1,0 +1,11 @@
+{
+  "name": "ai-sdk",
+  "description": "Comprehensive guide to AI SDK v6 for agent development, tool definitions, multi-step agentic workflows, and result extraction patterns",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/ai-sdk",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "ai-sdk-skillrecordings-support-2"
+}

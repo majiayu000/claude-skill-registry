@@ -1,0 +1,11 @@
+{
+  "name": "story-validator",
+  "description": "Validate user stories against INVEST criteria and suggest improvements",
+  "repo": "matteocervelli/llms",
+  "path": "user-story-system/.claude/skills/story-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/matteocervelli/llms",
+  "dir_name": "story-validator-matteocervelli-llms-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ac-workspace-manager",
+  "description": "Manage git worktrees for isolated development. Use when creating isolated workspaces, managing parallel development, handling worktree lifecycle, or merging completed work.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/ac-workspace-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "ac-workspace-manager-adaptationio-skrillz-2"
+}

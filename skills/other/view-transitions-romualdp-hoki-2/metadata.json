@@ -1,0 +1,11 @@
+{
+  "name": "view-transitions",
+  "description": "Implémente l'API View Transitions pour des transitions fluides entre pages et états. MANDATORY pour toutes navigations. À utiliser lors de navigation, page transitions, ou quand l'utilisateur mentionn",
+  "repo": "RomualdP/hoki",
+  "path": ".claude/skills/view-transitions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RomualdP/hoki",
+  "dir_name": "view-transitions-romualdp-hoki-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "playwright-frontend-testing",
+  "description": "Use when testing frontend applications. AI-assisted browser testing with Playwright MCP. Fast, deterministic, no vision models needed.",
+  "repo": "Smooth-Operation/household-expense-tracker",
+  "path": ".claude/skills/testing/playwright-frontend-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Smooth-Operation/household-expense-tracker",
+  "dir_name": "playwright-frontend-testing-smooth-operation-household-expense-tr-2"
+}

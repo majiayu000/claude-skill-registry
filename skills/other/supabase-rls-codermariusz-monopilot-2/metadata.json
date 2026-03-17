@@ -1,0 +1,11 @@
+{
+  "name": "supabase-rls",
+  "description": "Apply when implementing multi-tenant data isolation, user-specific data access, or any scenario requiring row-level authorization in Supabase.",
+  "repo": "CoderMariusz/MonoPilot",
+  "path": ".claude/skills/supabase-rls",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CoderMariusz/MonoPilot",
+  "dir_name": "supabase-rls-codermariusz-monopilot-2"
+}

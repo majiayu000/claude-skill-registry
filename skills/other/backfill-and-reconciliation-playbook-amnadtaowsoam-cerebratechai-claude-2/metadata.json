@@ -1,0 +1,11 @@
+{
+  "name": "backfill-and-reconciliation-playbook",
+  "description": "Playbook สำหรับ backfill historical data และ reconcile inconsistencies ระหว่าง data sources",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "70-data-platform-governance/backfill-and-reconciliation-playbook",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "backfill-and-reconciliation-playbook-amnadtaowsoam-cerebratechai-claude-2"
+}

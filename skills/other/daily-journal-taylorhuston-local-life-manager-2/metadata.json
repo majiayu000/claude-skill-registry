@@ -1,0 +1,11 @@
+{
+  "name": "daily-journal",
+  "description": "Daily journal management for the my-vault Obsidian vault. Use for morning routines, daily reviews, quick journal updates, checking yesterday's entry, or setting today's highlight. Triggers on \"good mo",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/daily-journal",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "daily-journal-taylorhuston-local-life-manager-2"
+}

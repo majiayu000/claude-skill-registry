@@ -1,0 +1,11 @@
+{
+  "name": "zig",
+  "description": "zig skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/zig-programming",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "zig-plurigrid-asi-2"
+}

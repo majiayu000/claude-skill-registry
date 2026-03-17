@@ -1,0 +1,11 @@
+{
+  "name": "discovery-calls",
+  "description": "Use when planning, running, or summarizing discovery calls to uncover pain, timeline, and authority.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/sales-prospecting/skills/discovery-calls",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "discovery-calls-gtmagents-gtm-agents-2"
+}

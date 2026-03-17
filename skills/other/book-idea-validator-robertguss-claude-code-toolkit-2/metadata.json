@@ -1,0 +1,11 @@
+{
+  "name": "book-idea-validator",
+  "description": "Stress-test book concepts against existing research before committing to architecture. Use when the user has a Book Concept Document ready for validation, wants to verify their thesis is defensible, n",
+  "repo": "robertguss/claude-code-toolkit",
+  "path": "skills/non-fiction-book-factory/book-idea-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertguss/claude-code-toolkit",
+  "dir_name": "book-idea-validator-robertguss-claude-code-toolkit-2"
+}

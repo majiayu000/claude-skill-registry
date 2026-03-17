@@ -1,0 +1,9 @@
+{
+  "name": "ai-testcase-generator-mcp",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/testing/ai-testcase-generator-mcp/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "ai-testcase-generator-mcp",
+  "downloaded_at": "2026-02-15T07:07:01.595939Z"
+}

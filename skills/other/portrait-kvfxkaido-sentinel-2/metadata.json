@@ -1,0 +1,11 @@
+{
+  "name": "portrait",
+  "description": "Generate character portraits using Gemini NanoBanana. Reads from character YAML and calls gemini directly with full guardrails.",
+  "repo": "KvFxKaido/SENTINEL",
+  "path": ".claude/skills/portrait",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KvFxKaido/SENTINEL",
+  "dir_name": "portrait-kvfxkaido-sentinel-2"
+}

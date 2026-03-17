@@ -1,0 +1,11 @@
+{
+  "name": "azure-admin",
+  "description": "name: azure-admin",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/azure-admin",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "azure-admin-rysweet-azurehaymaker-2"
+}

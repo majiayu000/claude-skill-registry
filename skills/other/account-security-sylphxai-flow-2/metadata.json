@@ -1,0 +1,11 @@
+{
+  "name": "account-security",
+  "description": "Account security - MFA, sessions, recovery. Use when protecting user accounts.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/account-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "account-security-sylphxai-flow-2"
+}

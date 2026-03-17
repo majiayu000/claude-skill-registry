@@ -1,0 +1,11 @@
+{
+  "name": "psql",
+  "description": "Execute SQL queries against the local PostgreSQL database. Accepts raw SQL or natural language queries that get converted to SQL automatically. Use for inspecting data, running queries, or managing th",
+  "repo": "dfujiwara/kindle-notes-reminder",
+  "path": ".claude/skills/psql",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dfujiwara/kindle-notes-reminder",
+  "dir_name": "psql-dfujiwara-kindle-notes-reminde-2"
+}

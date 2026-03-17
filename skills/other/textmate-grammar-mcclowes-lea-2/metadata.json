@@ -1,0 +1,11 @@
+{
+  "name": "textmate-grammar",
+  "description": "Use when authoring TextMate grammars for syntax highlighting - covers scopes, patterns, and language injection",
+  "repo": "mcclowes/lea",
+  "path": ".claude/skills/textmate-grammar",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mcclowes/lea",
+  "dir_name": "textmate-grammar-mcclowes-lea-2"
+}

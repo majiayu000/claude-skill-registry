@@ -1,0 +1,11 @@
+{
+  "name": "jwt-security-testing",
+  "description": "This skill should be used when the user asks to \"test JWT security\", \"hack JWT tokens\", \"bypass JWT authentication\", \"crack JWT secrets\", or \"exploit JWT vulnerabilities\". It provides comprehensive JS",
+  "repo": "zebbern/SecOps-CLI-Guides",
+  "path": "skills/jwt-security-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zebbern/SecOps-CLI-Guides",
+  "dir_name": "jwt-security-testing-zebbern-secops-cli-guides-2"
+}

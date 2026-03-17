@@ -1,0 +1,17 @@
+{
+  "name": "chronos-durability",
+  "repo": "all-source-os/all-source",
+  "path": ".claude/skills/chronos-durability/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/all-source-os/all-source",
+  "dir_name": "chronos-durability",
+  "downloaded_at": "2026-03-01T06:39:41.836011Z",
+  "author": "all-source-os",
+  "source_url": "https://github.com/all-source-os/all-source/blob/main/.claude/skills/chronos-durability/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/all-source-os/all-source/blob/main/.claude/skills/chronos-durability/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

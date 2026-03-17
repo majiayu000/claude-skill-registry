@@ -1,0 +1,11 @@
+{
+  "name": "project-creation",
+  "description": "สร้างโปรเจคใหม่ทุก Tech Stack พร้อม setup ที่สมบูรณ์",
+  "repo": "saknarinZ/agent_skills_gemini",
+  "path": ".agent/skills/project-creation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/saknarinZ/agent_skills_gemini",
+  "dir_name": "project-creation-saknarinz-agent-skills-gemini-2"
+}

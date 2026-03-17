@@ -1,0 +1,11 @@
+{
+  "name": "cv-data-ingestion",
+  "description": "Ingest and organize raw career data from Obsidian notes, CSV files, zip archives, and markdown documents into the Universal CV portfolio system. Use when processing career history, work experience, te",
+  "repo": "fotescodev/portfolio",
+  "path": ".claude/skills/cv-data-ingestion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fotescodev/portfolio",
+  "dir_name": "cv-data-ingestion-fotescodev-portfolio-2"
+}

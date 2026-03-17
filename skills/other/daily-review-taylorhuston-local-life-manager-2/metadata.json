@@ -1,0 +1,11 @@
+{
+  "name": "daily-review",
+  "description": "Complete daily journal review. Use at end of day or next morning to fill in journal sections, review highlights, and plan tomorrow. Triggers on \"daily review\", \"end of day\", \"journal review\", \"what di",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/daily-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "daily-review-taylorhuston-local-life-manager-2"
+}

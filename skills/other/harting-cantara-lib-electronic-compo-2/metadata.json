@@ -1,0 +1,11 @@
+{
+  "name": "harting",
+  "description": "Harting industrial connector MPN encoding patterns, series decoding, and handler guidance. Use when working with Harting Han, M12, M8, har-bus, or har-flex connectors.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/harting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "harting-cantara-lib-electronic-compo-2"
+}

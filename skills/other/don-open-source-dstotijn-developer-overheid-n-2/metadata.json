@@ -1,0 +1,11 @@
+{
+  "name": "don-open-source",
+  "description": "Open source standards and practices for Dutch government projects. Use when setting up an open source repository, choosing licenses, creating publiccode.yml, or following the Standard for Public Code.",
+  "repo": "dstotijn/developer-overheid-nl-agent-skills",
+  "path": "skills/don-open-source",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dstotijn/developer-overheid-nl-agent-skills",
+  "dir_name": "don-open-source-dstotijn-developer-overheid-n-2"
+}

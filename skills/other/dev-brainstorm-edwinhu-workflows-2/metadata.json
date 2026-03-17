@@ -1,0 +1,11 @@
+{
+  "name": "dev-brainstorm",
+  "description": "REQUIRED Phase 1 of /dev workflow. Uses Socratic questioning to understand requirements before exploration.",
+  "repo": "edwinhu/workflows",
+  "path": "lib/skills/dev-brainstorm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "dev-brainstorm-edwinhu-workflows-2"
+}

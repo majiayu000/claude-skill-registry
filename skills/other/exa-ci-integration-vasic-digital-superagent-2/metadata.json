@@ -1,0 +1,11 @@
+{
+  "name": "exa-ci-integration",
+  "description": "Configure Exa CI/CD integration with GitHub Actions and testing.\nUse when setting up automated testing, configuring CI pipelines,\nor integrating Exa tests into your build process.\nTrigger with phrases",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-ci-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-ci-integration-vasic-digital-superagent-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "alto-configure",
+  "description": "Use when configuring ALTO settings including arbiter thresholds, permissions, or verification hooks. Applies during setup orchestrator \"Configure ALTO\" selection, build orchestrator checkpoints, or wh",
+  "repo": "gonzaloetjo/alto",
+  "path": "skills/alto-configure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gonzaloetjo/alto",
+  "dir_name": "alto-configure-gonzaloetjo-alto-2"
+}

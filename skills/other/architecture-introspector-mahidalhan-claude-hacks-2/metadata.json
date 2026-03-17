@@ -1,0 +1,11 @@
+{
+  "name": "architecture-introspector",
+  "description": "USE WHEN: analyzing existing architectures, evaluating architectural decisions, identifying technical debt, planning refactoring, assessing whether patterns are justified, onboarding to complex codeba",
+  "repo": "mahidalhan/claude-hacks",
+  "path": "skills/architecture-introspector/skills/architecture-introspector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mahidalhan/claude-hacks",
+  "dir_name": "architecture-introspector-mahidalhan-claude-hacks-2"
+}

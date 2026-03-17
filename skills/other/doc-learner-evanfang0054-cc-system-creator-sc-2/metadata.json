@@ -1,0 +1,11 @@
+{
+  "name": "doc-learner",
+  "description": "智能文档学习和内容模仿技能。当需要：(1) 分析和学习优秀文档的结构、风格和写作模式，(2) 从文档中提炼关键要素和模板，(3) 基于学习内容生成模仿材料，或 (4) 创建新的提示词或技术文档时使用此技能。支持提示词工程、技术文档、API文档、用户手册等多种文档类型的学习和模仿。",
+  "repo": "evanfang0054/cc-system-creator-scripts",
+  "path": ".claude/skills/doc-learner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/evanfang0054/cc-system-creator-scripts",
+  "dir_name": "doc-learner-evanfang0054-cc-system-creator-sc-2"
+}

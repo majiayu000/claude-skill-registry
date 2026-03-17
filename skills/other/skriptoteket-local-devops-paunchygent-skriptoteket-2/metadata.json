@@ -1,0 +1,11 @@
+{
+  "name": "skriptoteket-local-devops",
+  "description": "Local development + build/devops workflow for Skriptoteket (FastAPI + Vue/Vite) using PDM. Use when setting up or troubleshooting local dev (`pdm install`, `.env`, `pdm run dev`, frontend proxy/logs, ",
+  "repo": "paunchygent/skriptoteket",
+  "path": ".claude/skills/skriptoteket-local-devops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/paunchygent/skriptoteket",
+  "dir_name": "skriptoteket-local-devops-paunchygent-skriptoteket-2"
+}

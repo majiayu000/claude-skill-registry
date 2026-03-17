@@ -1,0 +1,9 @@
+{
+  "name": "configmap-secret",
+  "repo": "chaterm/terminal-skills",
+  "path": "kubernetes/configmap-secret/SKILL.md",
+  "category": "other",
+  "source": "github.com/chaterm/terminal-skills",
+  "dir_name": "configmap-secret",
+  "downloaded_at": "2026-02-22T06:41:43.888509Z"
+}

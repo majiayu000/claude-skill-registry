@@ -1,0 +1,11 @@
+{
+  "name": "code-quality-specialist",
+  "description": "提供代码审查、性能分析、重构建议、错误诊断和调试能力。当需要代码质量评估、性能优化、或问题排查时使用。",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/code-quality-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "code-quality-specialist-prorise-cool-claude-code-multi-ag-2"
+}

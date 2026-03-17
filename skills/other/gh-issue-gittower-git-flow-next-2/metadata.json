@@ -1,0 +1,11 @@
+{
+  "name": "gh-issue",
+  "description": "Create a GitHub issue following project guidelines",
+  "repo": "gittower/git-flow-next",
+  "path": ".claude/skills/gh-issue",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gittower/git-flow-next",
+  "dir_name": "gh-issue-gittower-git-flow-next-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "subagent",
+  "description": "Activate when you are a delegated subagent (not the orchestrator). Establishes subagent protocol with terse returns, details to history/, file ownership boundaries, and escalation rules. You implement",
+  "repo": "rbergman/dark-matter-marketplace",
+  "path": "plugins/workflow/skills/subagent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rbergman/dark-matter-marketplace",
+  "dir_name": "subagent-rbergman-dark-matter-marketpl-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "empathic-templates",
+  "description": "Smart templates that understand semantic intent, not just string substitution",
+  "repo": "SimHacker/moollm",
+  "path": "skills/empathic-templates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "empathic-templates-simhacker-moollm-2"
+}

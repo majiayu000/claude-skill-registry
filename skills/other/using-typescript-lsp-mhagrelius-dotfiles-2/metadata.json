@@ -1,0 +1,11 @@
+{
+  "name": "using-typescript-lsp",
+  "description": "Use when working with TypeScript or JavaScript code and typescript-lsp plugin is enabled - for finding references, checking types, navigating definitions, or verifying type correctness",
+  "repo": "mhagrelius/dotfiles",
+  "path": ".claude/skills/using-typescript-lsp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhagrelius/dotfiles",
+  "dir_name": "using-typescript-lsp-mhagrelius-dotfiles-2"
+}

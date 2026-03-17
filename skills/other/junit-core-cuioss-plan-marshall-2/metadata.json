@@ -1,0 +1,11 @@
+{
+  "name": "junit-core",
+  "description": "JUnit 5 core testing patterns with AAA structure, test organization, and coverage standards",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-java/skills/junit-core",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "junit-core-cuioss-plan-marshall-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "docs-generate-readme",
+  "description": "Generate Level 1 (README.md) user documentation from design docs. Use when creating or updating package README files for npm/GitHub.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/docs-generate-readme",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "docs-generate-readme-spencerbeggs-claude-design-coordi-2"
+}

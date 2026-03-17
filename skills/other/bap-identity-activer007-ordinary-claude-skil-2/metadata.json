@@ -1,0 +1,11 @@
+{
+  "name": "bap-identity",
+  "description": "Manage BAP (Bitcoin Attestation Protocol) identity files using bap-cli. This skill should be used when users need to create, decrypt, list, or extract BAP identity backups, work with .bep encrypted fi",
+  "repo": "Activer007/ordinary-claude-skills",
+  "path": "skills_all/bap-identity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Activer007/ordinary-claude-skills",
+  "dir_name": "bap-identity-activer007-ordinary-claude-skil-2"
+}

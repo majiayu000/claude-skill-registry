@@ -1,0 +1,11 @@
+{
+  "name": "worktree-setup",
+  "description": "Create and manage git worktrees for parallel project development",
+  "repo": "spaarke-dev/spaarke",
+  "path": ".claude/skills/worktree-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spaarke-dev/spaarke",
+  "dir_name": "worktree-setup-spaarke-dev-spaarke-2"
+}

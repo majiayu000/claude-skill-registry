@@ -1,0 +1,11 @@
+{
+  "name": "search-driving-distance",
+  "description": "Estimate driving/taxi duration, distance, and rough cost between two cities using the bundled distance matrix CSV. Use this skill when comparing ground travel options or validating itinerary legs.",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/travel-planning/environment/skills/search-driving-distance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "search-driving-distance-benchflow-ai-skillsbench-2"
+}

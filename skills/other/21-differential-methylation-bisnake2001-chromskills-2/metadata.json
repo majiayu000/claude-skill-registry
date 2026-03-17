@@ -1,0 +1,11 @@
+{
+  "name": "21.differential-methylation",
+  "description": "This skill performs differential DNA methylation analysis (DMRs and DMCs) between experimental conditions using WGBS methylation tracks (BED/BedGraph). It standardizes input files into per-sample four",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "21.differential-methylation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "21-differential-methylation-bisnake2001-chromskills-2"
+}

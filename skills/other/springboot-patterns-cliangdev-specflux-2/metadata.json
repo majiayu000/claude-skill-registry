@@ -1,0 +1,11 @@
+{
+  "name": "springboot-patterns",
+  "description": "Spring Boot and Java best practices. Use when developing REST APIs, services, repositories, or any Java code. Applies DDD architecture, transaction management, and code style conventions.",
+  "repo": "cliangdev/specflux",
+  "path": ".claude/skills/springboot-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cliangdev/specflux",
+  "dir_name": "springboot-patterns-cliangdev-specflux-2"
+}

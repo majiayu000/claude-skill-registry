@@ -1,0 +1,11 @@
+{
+  "name": "functional-tests",
+  "description": "Use when symfony functional tests",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/functional-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "functional-tests-makfly-superpowers-symfony-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "s-research",
+  "description": "Research WoW addon development topics using CLI tools, Blizzard UI source, and documentation. Covers API discovery, pattern research, and Ace3 usage. Use when investigating unfamiliar APIs, finding Bl",
+  "repo": "Falkicon/Mechanic",
+  "path": ".claude/skills/s-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Falkicon/Mechanic",
+  "dir_name": "s-research-falkicon-mechanic-2"
+}

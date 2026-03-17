@@ -1,0 +1,11 @@
+{
+  "name": "agent-development",
+  "description": "This skill should be used when the user asks to \"create an agent\", \"add an agent\", \"write a subagent\", \"agent frontmatter\", \"when to use description\", \"agent examples\", \"agent tools\", \"agent colors\", ",
+  "repo": "OshanKHZ/cc-swiss-knife",
+  "path": "plugins/claude-code-forge/skills/agent-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OshanKHZ/cc-swiss-knife",
+  "dir_name": "agent-development-oshankhz-cc-swiss-knife-2"
+}

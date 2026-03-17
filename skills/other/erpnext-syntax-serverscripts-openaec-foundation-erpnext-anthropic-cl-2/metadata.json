@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-syntax-serverscripts",
+  "description": "Complete syntax reference for Frappe Server Scripts. Use this skill when Claude needs to write Python code for Server Scripts in ERPNext/Frappe, including Document Events, API endpoints, Scheduler Eve",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/syntax/erpnext-syntax-serverscripts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-syntax-serverscripts-openaec-foundation-erpnext-anthropic-cl-2"
+}

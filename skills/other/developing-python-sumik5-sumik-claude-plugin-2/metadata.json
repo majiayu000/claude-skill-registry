@@ -1,0 +1,11 @@
+{
+  "name": "developing-python",
+  "description": "Guides modern Python project development. Use when pyproject.toml or requirements.txt is detected. Supports Python 3.13 + uv + ruff + mypy environment, FastAPI/FastMCP implementation, pytest, and Dock",
+  "repo": "sumik5/sumik-claude-plugin",
+  "path": "skills/developing-python",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sumik5/sumik-claude-plugin",
+  "dir_name": "developing-python-sumik5-sumik-claude-plugin-2"
+}

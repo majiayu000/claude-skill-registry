@@ -1,0 +1,11 @@
+{
+  "name": "release-version",
+  "description": "Guide for creating new Orient releases with proper versioning, changelogs, and Docker image tags",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/release-version",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "release-version-orient-bot-orient-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "geo-data",
+  "description": "Query NCBI Gene Expression Omnibus (GEO) for expression datasets using Biopython Bio.Entrez. Use for finding microarray/RNA-seq datasets, downloading expression data, and linking GEO to SRA.",
+  "repo": "GPTomics/bioSkills",
+  "path": "database-access/geo-data",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "geo-data-gptomics-bioskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "backend-nodejs",
+  "description": "Modern Node.js backend stack: NestJS/Hono, Drizzle ORM, Vitest, TypeScript.\nUse when: building Node.js APIs, TypeScript backends, or serverless functions.\nTriggers: \"nestjs\", \"node backend\", \"express\"",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/backend-nodejs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "backend-nodejs-timequity-vibe-coder-2"
+}

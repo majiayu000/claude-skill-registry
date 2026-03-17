@@ -1,0 +1,11 @@
+{
+  "name": "speckit-clarify",
+  "description": "Identify underspecified areas in the current feature spec by asking up to 5 highly targeted clarification questions and encoding answers back into the spec.",
+  "repo": "dceoy/speckit-agent-skills",
+  "path": "skills/speckit-clarify",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dceoy/speckit-agent-skills",
+  "dir_name": "speckit-clarify-dceoy-speckit-agent-skills-2"
+}

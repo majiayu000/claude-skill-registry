@@ -1,0 +1,11 @@
+{
+  "name": "mascot-generator",
+  "description": "Generate variations of the Orient mascot (border collie dog with blue bandana). Use transparent=true for web/UI images. Use when asked to generate mascot, create avatar variation, make mascot image, m",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/mascot-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "mascot-generator-orient-bot-orient-2"
+}

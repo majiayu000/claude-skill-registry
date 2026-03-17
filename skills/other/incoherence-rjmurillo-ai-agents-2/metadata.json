@@ -1,0 +1,11 @@
+{
+  "name": "incoherence",
+  "description": "Detect and resolve incoherence in documentation, code, specs vs implementation. Includes reconciliation phase for applying user-provided resolutions.",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/incoherence",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "incoherence-rjmurillo-ai-agents-2"
+}

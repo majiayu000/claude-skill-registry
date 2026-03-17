@@ -1,0 +1,11 @@
+{
+  "name": "remember",
+  "description": "Reloads critical instructions when behavior degrades. Use when forgetting tools, not delegating, or missing safety rules. Refreshes orchestration mode, tool awareness, and safety constraints.",
+  "repo": "RustyLindquist/EnhancedHR",
+  "path": ".claude/skills/remember",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RustyLindquist/EnhancedHR",
+  "dir_name": "remember-rustylindquist-enhancedhr-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "TribalKnowledge",
+  "description": "Capture and preserve machinist expertise before it retires. Structured knowledge extraction\nfor CNC operations, troubleshooting, and process optimization.\nUSE WHEN user says 'capture knowledge', 'docu",
+  "repo": "robdtaylor/personal-ai-infrastructure",
+  "path": "skills/TribalKnowledge",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robdtaylor/personal-ai-infrastructure",
+  "dir_name": "tribalknowledge-robdtaylor-personal-ai-infrastr-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "data-fetching",
+  "description": "Data fetching patterns for server/client components using fetch API, TanStack Query, useSuspenseQuery, apiRouteWrapper, and apiRequestWrapper. Use when implementing data loading, API calls, server fun",
+  "repo": "QingqiShi/shiqingqi.com",
+  "path": ".claude/skills/data-fetching",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/QingqiShi/shiqingqi.com",
+  "dir_name": "data-fetching-qingqishi-shiqingqi-com-2"
+}

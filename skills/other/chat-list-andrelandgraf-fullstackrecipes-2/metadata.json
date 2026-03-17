@@ -1,0 +1,11 @@
+{
+  "name": "chat-list",
+  "description": "Build a chat list page with search, rename, and delete functionality. Uses nuqs for URL-synced filters and deep-linkable modal dialogs.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/chat-list",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "chat-list-andrelandgraf-fullstackrecipes-2"
+}

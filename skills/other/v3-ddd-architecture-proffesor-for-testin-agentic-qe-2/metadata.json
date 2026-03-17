@@ -1,0 +1,11 @@
+{
+  "name": "v3-ddd-architecture",
+  "description": "Domain-Driven Design architecture for claude-flow v3. Implements modular, bounded context architecture with clean separation of concerns and microkernel pattern.",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/v3-ddd-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "v3-ddd-architecture-proffesor-for-testin-agentic-qe-2"
+}

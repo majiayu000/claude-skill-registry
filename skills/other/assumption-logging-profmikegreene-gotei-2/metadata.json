@@ -1,0 +1,11 @@
+{
+  "name": "assumption-logging",
+  "description": "Capture and structure assumptions from pilot plans and hypotheses into a centralized log for ongoing risk monitoring and stakeholder alerts. Use when extracting, tracking, and signaling assumption cha",
+  "repo": "profmikegreene/gotei",
+  "path": "Gotei_Skills/assumption-logging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/profmikegreene/gotei",
+  "dir_name": "assumption-logging-profmikegreene-gotei-2"
+}

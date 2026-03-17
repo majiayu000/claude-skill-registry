@@ -1,0 +1,11 @@
+{
+  "name": "nuxt-server",
+  "description": "Nuxt 4 server-side development with Nitro: API routes, server middleware,\ndatabase integration, and backend patterns.\n\nUse when: creating server API routes, implementing server middleware,\nintegrating",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/nuxt-v4/skills/nuxt-server",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "nuxt-server-secondsky-claude-skills-2"
+}

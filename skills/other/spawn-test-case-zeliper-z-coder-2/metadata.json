@@ -1,0 +1,11 @@
+{
+  "name": "spawn-test-case",
+  "description": "테스트 케이스 생성을 test-case-agent에 위임",
+  "repo": "Zeliper/z-coder",
+  "path": ".claude/skills/spawn-test-case",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Zeliper/z-coder",
+  "dir_name": "spawn-test-case-zeliper-z-coder-2"
+}

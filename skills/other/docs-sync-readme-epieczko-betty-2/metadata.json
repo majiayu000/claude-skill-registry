@@ -1,0 +1,11 @@
+{
+  "name": "docs.sync.readme",
+  "description": "Automatically regenerate README.md from Betty Framework registries",
+  "repo": "epieczko/betty",
+  "path": "skills/docs.sync.readme",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/epieczko/betty",
+  "dir_name": "docs-sync-readme-epieczko-betty-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "gpui-action",
+  "description": "Action definitions and keyboard shortcuts in GPUI. Use when implementing actions, keyboard shortcuts, or key bindings.",
+  "repo": "longbridge/gpui-component",
+  "path": ".claude/skills/gpui-action",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/longbridge/gpui-component",
+  "dir_name": "gpui-action-longbridge-gpui-component-2"
+}

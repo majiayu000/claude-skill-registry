@@ -1,0 +1,11 @@
+{
+  "name": "alma-scraper",
+  "description": "Intelligent scraper for Australian youth justice sources. Discovers, extracts, and learns from government, Indigenous, research, and media sources.",
+  "repo": "Acurioustractor/justicehub-platform",
+  "path": ".claude/skills/alma-scraper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Acurioustractor/justicehub-platform",
+  "dir_name": "alma-scraper-acurioustractor-justicehub-platform-2"
+}

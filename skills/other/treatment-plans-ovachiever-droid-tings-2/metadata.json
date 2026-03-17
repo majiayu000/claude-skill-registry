@@ -1,0 +1,11 @@
+{
+  "name": "treatment-plans",
+  "description": "Generate concise (3-4 page), focused medical treatment plans in LaTeX/PDF format for all clinical specialties. Supports general medical treatment, rehabilitation therapy, mental health care, chronic d",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/treatment-plans",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "treatment-plans-ovachiever-droid-tings-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rbac-security",
+  "description": "Role-based access control (RBAC) patterns, authentication wrappers, authorization checks, input validation with Zod schemas, security boundaries, server action security, real-time message validation, ",
+  "repo": "DW225/ree-board",
+  "path": ".claude/skills/rbac-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DW225/ree-board",
+  "dir_name": "rbac-security-dw225-ree-board-2"
+}

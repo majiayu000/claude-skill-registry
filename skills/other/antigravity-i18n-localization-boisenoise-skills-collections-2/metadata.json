@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-i18n-localization",
+  "description": "Internationalization and localization patterns. Detecting hardcoded strings, managing translations, locale files, RTL support.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-i18n-localization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-i18n-localization-boisenoise-skills-collections-2"
+}

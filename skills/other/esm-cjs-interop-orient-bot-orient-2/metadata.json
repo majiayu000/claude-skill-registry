@@ -1,0 +1,11 @@
+{
+  "name": "esm-cjs-interop",
+  "description": "Handle ESM/CJS module interoperability in the Orient monorepo. Use when encountering import errors, circular dependencies, module resolution issues, or \"does not provide an export named\" errors. Cover",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/esm-cjs-interop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "esm-cjs-interop-orient-bot-orient-2"
+}

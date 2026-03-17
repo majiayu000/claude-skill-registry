@@ -1,0 +1,11 @@
+{
+  "name": "test-patterns",
+  "description": "Testing patterns for Ballee using Vitest E2E tests with dual-client architecture, RLS validation, and authentication patterns. Use when writing tests, validating RLS policies, or debugging test failur",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "templates/skills/test-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "test-patterns-javeedishaq-ai-workflow-orchestr-2"
+}

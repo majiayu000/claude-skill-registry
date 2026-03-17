@@ -1,0 +1,17 @@
+{
+  "name": "elixir",
+  "repo": "agnaldo4j/kanban_vision_api_iex",
+  "path": ".claude/skills/elixir/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/agnaldo4j/kanban_vision_api_iex",
+  "dir_name": "elixir",
+  "downloaded_at": "2026-03-01T06:31:11.786756Z",
+  "author": "agnaldo4j",
+  "source_url": "https://github.com/agnaldo4j/kanban_vision_api_iex/blob/main/.claude/skills/elixir/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agnaldo4j/kanban_vision_api_iex/blob/main/.claude/skills/elixir/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

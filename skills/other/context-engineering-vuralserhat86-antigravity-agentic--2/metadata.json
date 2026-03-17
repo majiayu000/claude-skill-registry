@@ -1,0 +1,11 @@
+{
+  "name": "context_engineering",
+  "description": "Context optimization extends the effective capacity of limited context windows through strategic compression, masking, caching, and partitioning. The goal is not to magically increase context windows ",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/context_engineering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "context-engineering-vuralserhat86-antigravity-agentic--2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "local-finetune",
+  "description": "local-finetune",
+  "repo": "plurigrid/asi",
+  "path": "skills/local-finetune",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "local-finetune-plurigrid-asi-2"
+}

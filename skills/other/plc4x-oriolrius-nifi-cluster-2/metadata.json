@@ -1,0 +1,11 @@
+{
+  "name": "plc4x",
+  "description": "Expert guidance for Apache PLC4X industrial protocols library including Siemens S7, Modbus, OPC-UA, integration with Apache NiFi, connection strings, and field addressing. Use this when working with i",
+  "repo": "oriolrius/nifi-cluster",
+  "path": ".claude/skills/plc4x",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oriolrius/nifi-cluster",
+  "dir_name": "plc4x-oriolrius-nifi-cluster-2"
+}

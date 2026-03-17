@@ -1,0 +1,9 @@
+{
+  "name": "wix-toolset-config",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/desktop-development/skills/wix-toolset-config/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "wix-toolset-config",
+  "downloaded_at": "2026-02-10T16:27:52.388847Z"
+}

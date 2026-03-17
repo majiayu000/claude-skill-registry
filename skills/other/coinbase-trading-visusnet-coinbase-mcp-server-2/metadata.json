@@ -1,0 +1,11 @@
+{
+  "name": "coinbase-trading",
+  "description": "Autonomous crypto trading with technical and sentiment analysis. Use when executing trades, analyzing markets, or managing positions on Coinbase.",
+  "repo": "visusnet/coinbase-mcp-server",
+  "path": ".claude/skills/coinbase-trading",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/visusnet/coinbase-mcp-server",
+  "dir_name": "coinbase-trading-visusnet-coinbase-mcp-server-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "webinar-slide-deck-generator",
+  "description": "Creates structured presentation slides with speaker notes, visual suggestions, and engagement elements for webinars. Use when the user asks about webinar slides, presentation decks, slide content, spe",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/webinar-slide-deck-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "webinar-slide-deck-generator-wesleysmits-agent-skills-2"
+}

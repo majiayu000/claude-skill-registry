@@ -1,0 +1,11 @@
+{
+  "name": "deploy-react-frontend",
+  "description": "Create React frontends for Algorand dApps with wallet integration. Use when creating React frontends that interact with smart contracts, setting up wallet connections (Pera, Defly, Exodus), integratin",
+  "repo": "gabrielkuettel/vibegallery",
+  "path": ".claude/skills/deploy-react-frontend",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gabrielkuettel/vibegallery",
+  "dir_name": "deploy-react-frontend-gabrielkuettel-vibegallery-2"
+}

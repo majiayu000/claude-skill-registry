@@ -1,0 +1,11 @@
+{
+  "name": "claude-reflect",
+  "description": "Execute self-learning system that captures corrections during sessions and syncs them to CLAUDE.md.\nUse when discussing learnings, corrections, or when the user mentions remembering something.\nTrigger",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/community/claude-reflect/claude-reflect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "claude-reflect-vasic-digital-superagent-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "errors",
+  "description": "Error Handling skill for the ikigai project",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/errors",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "errors-mgreenly-ikigai-2"
+}

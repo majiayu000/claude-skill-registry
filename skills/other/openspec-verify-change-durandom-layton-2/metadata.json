@@ -1,0 +1,11 @@
+{
+  "name": "openspec-verify-change",
+  "description": "Verify implementation matches change artifacts. Use when the user wants to validate that implementation is complete, correct, and coherent before archiving.",
+  "repo": "durandom/layton",
+  "path": ".claude/skills/openspec-verify-change",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/durandom/layton",
+  "dir_name": "openspec-verify-change-durandom-layton-2"
+}

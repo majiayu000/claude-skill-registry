@@ -1,0 +1,11 @@
+{
+  "name": "nielsen-consistency",
+  "description": "Mantiene patrones visuales y de comportamiento uniformes en toda la interfaz. Use cuando diseñe sistemas de diseño, defina patrones de interacción, o evalúe coherencia entre pantallas.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/heuristics/nielsen-consistency",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "nielsen-consistency-vjrivmon-handwriting-ocr-2"
+}

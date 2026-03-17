@@ -1,0 +1,11 @@
+{
+  "name": "aico-pm-clarification",
+  "description": "Resolve requirement ambiguities through STRUCTURED questioning: one question at a time, with recommended options and reasoning.\n\nUNIQUE VALUE: Prevents overwhelming users with multiple questions. Prov",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-pm-clarification",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-pm-clarification-yellinzero-aico-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "anthropic-docx",
+  "repo": "davekilleen/Dex",
+  "path": ".claude/skills/anthropic-docx/SKILL.md",
+  "category": "other",
+  "source": "github.com/davekilleen/Dex",
+  "dir_name": "anthropic-docx",
+  "downloaded_at": "2026-02-22T06:51:24.602703Z"
+}

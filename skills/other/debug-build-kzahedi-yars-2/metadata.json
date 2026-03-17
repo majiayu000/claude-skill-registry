@@ -1,0 +1,11 @@
+{
+  "name": "debug-build",
+  "description": "Configures and builds YARS with debug symbols for debugging with valgrind or gdb",
+  "repo": "kzahedi/YARS",
+  "path": ".claude/skills/debug-build",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kzahedi/YARS",
+  "dir_name": "debug-build-kzahedi-yars-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "typescript-skills",
+  "description": "Shared TypeScript best practices for Designer and Electron subsystems.",
+  "repo": "llama-farm/llamafarm",
+  "path": ".claude/skills/typescript-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/llama-farm/llamafarm",
+  "dir_name": "typescript-skills-llama-farm-llamafarm-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rag_service",
+  "description": "高性能 RAG 多路检索服务。集成 Milvus 向量数据库进行语义检索，并结合 Rerank 模型进行精准重排序，支持海量文档的高效存储与历史内容召回。",
+  "repo": "Lin-A1/skills-agent",
+  "path": "services/rag_service",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lin-A1/skills-agent",
+  "dir_name": "rag-service-lin-a1-skills-agent-2"
+}

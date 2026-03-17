@@ -1,0 +1,11 @@
+{
+  "name": "questions-are-not-instructions",
+  "description": "Ensures questions are answered literally before taking action. Triggers on user input containing '?' or patterns like 'why did you...?', 'will that work?', 'have you considered...?'. Use when user ask",
+  "repo": "audunstrand/status-app",
+  "path": ".github/skills/questions-are-not-instructions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/audunstrand/status-app",
+  "dir_name": "questions-are-not-instructions-audunstrand-status-app-2"
+}

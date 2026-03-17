@@ -1,0 +1,11 @@
+{
+  "name": "faq-help-center-generator",
+  "description": "Builds comprehensive FAQs and help center articles from customer questions and product documentation. Use when the user asks about FAQ pages, help centers, knowledge bases, support documentation, or c",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/faq-help-center-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "faq-help-center-generator-wesleysmits-agent-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "v3-security-overhaul",
+  "description": "Complete security architecture overhaul for claude-flow v3. Addresses critical CVEs (CVE-1, CVE-2, CVE-3) and implements secure-by-default patterns. Use for security-first v3 implementation.",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/v3-security-overhaul",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "v3-security-overhaul-proffesor-for-testin-agentic-qe-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "template",
+  "repo": "jwilger/agent-skills",
+  "path": "skills/.template/SKILL.md.example",
+  "category": "other",
+  "source": "github.com/jwilger/agent-skills",
+  "dir_name": "template-jwilger-agent-skills",
+  "downloaded_at": "2026-02-15T07:48:48.873089Z"
+}

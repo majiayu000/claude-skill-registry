@@ -1,0 +1,11 @@
+{
+  "name": "fullstory-analytics-events",
+  "description": "Comprehensive guide for implementing Fullstory's Analytics Events API (trackEvent) for web applications. Teaches proper event naming, property structuring, type handling, and e-commerce event patterns",
+  "repo": "rcmaples/btx",
+  "path": ".claude/skills/fullstory-analytics-events",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rcmaples/btx",
+  "dir_name": "fullstory-analytics-events-rcmaples-btx-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "unsloth-training-skill",
+  "description": "Fine-tune LLMs with Unsloth using GRPO or SFT. Supports FP8, vision models, mobile deployment, Docker, packing, GGUF export. Use when: train with GRPO, fine-tune, reward functions, SFT training, FP8 t",
+  "repo": "ScientiaCapital/skills",
+  "path": "active/unsloth-training-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ScientiaCapital/skills",
+  "dir_name": "unsloth-training-skill-scientiacapital-skills-2"
+}

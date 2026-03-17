@@ -1,0 +1,11 @@
+{
+  "name": "frontend-enhancer",
+  "description": "This skill should be used when enhancing the visual design and aesthetics of web applications. It provides modern UI components, design patterns, color palettes, animations, and layout templates. REQU",
+  "repo": "travisjneuman/.claude",
+  "path": "skills/frontend-enhancer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/travisjneuman/.claude",
+  "dir_name": "frontend-enhancer-travisjneuman-claude-2"
+}

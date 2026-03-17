@@ -1,0 +1,11 @@
+{
+  "name": "playwright-tests",
+  "description": "End-to-end browser testing with Playwright. Test user interactions, form validation, navigation, and visual feedback with full browser automation.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/playwright-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "playwright-tests-andrelandgraf-fullstackrecipes-2"
+}

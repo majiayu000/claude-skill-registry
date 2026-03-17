@@ -1,0 +1,11 @@
+{
+  "name": "profile",
+  "description": "Generate full NPC profiles using Codex. Reads from character YAML and generates agenda, disposition modifiers, dialogue, secrets, and hooks.",
+  "repo": "KvFxKaido/SENTINEL",
+  "path": ".claude/skills/profile",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KvFxKaido/SENTINEL",
+  "dir_name": "profile-kvfxkaido-sentinel-2"
+}

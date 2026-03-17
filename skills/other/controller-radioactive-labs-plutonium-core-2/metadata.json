@@ -1,0 +1,11 @@
+{
+  "name": "controller",
+  "description": "Plutonium resource controllers - CRUD actions, customization, and integration",
+  "repo": "radioactive-labs/plutonium-core",
+  "path": ".claude/skills/plutonium-controller",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/radioactive-labs/plutonium-core",
+  "dir_name": "controller-radioactive-labs-plutonium-core-2"
+}

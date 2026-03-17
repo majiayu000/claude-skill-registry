@@ -1,0 +1,9 @@
+{
+  "name": "groq-debug-bundle",
+  "repo": "HelixDevelopment/HelixAgent",
+  "path": "skills/plugins/saas-packs/groq-pack/groq-debug-bundle/SKILL.md",
+  "category": "other",
+  "source": "github.com/HelixDevelopment/HelixAgent",
+  "dir_name": "groq-debug-bundle",
+  "downloaded_at": "2026-02-15T05:12:37.931051Z"
+}

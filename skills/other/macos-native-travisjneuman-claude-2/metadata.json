@@ -1,0 +1,11 @@
+{
+  "name": "macos-native",
+  "description": "Native macOS development with AppKit, Catalyst, and macOS-specific APIs. Use when building Mac-native apps, menu bar apps, system extensions, or macOS-specific features.",
+  "repo": "travisjneuman/.claude",
+  "path": "skills/macos-native",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/travisjneuman/.claude",
+  "dir_name": "macos-native-travisjneuman-claude-2"
+}

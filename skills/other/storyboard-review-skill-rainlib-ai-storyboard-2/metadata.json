@@ -1,0 +1,11 @@
+{
+  "name": "storyboard-review-skill",
+  "description": "Use when reviewing storyboard outputs at any production stage (beat breakdown, beat board, sequence board, motion prompts), providing quality assurance feedback, or identifying revision requirements f",
+  "repo": "RainLib/AI-Storyboard",
+  "path": ".claude/skills/storyboard-review-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RainLib/AI-Storyboard",
+  "dir_name": "storyboard-review-skill-rainlib-ai-storyboard-2"
+}

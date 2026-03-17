@@ -1,0 +1,11 @@
+{
+  "name": "designing-assertions",
+  "description": "Designs Phylax Credible Layer assertion invariants and trigger mapping. Use when scoping protocols, selecting invariants, or mapping functions to checks.",
+  "repo": "phylaxsystems/agent-skills",
+  "path": "skills/designing-assertions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/phylaxsystems/agent-skills",
+  "dir_name": "designing-assertions-phylaxsystems-agent-skills-2"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "blog-production",
+  "repo": "Abhi5415/clarido-marketing",
+  "path": ".claude/skills/blog-production/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Abhi5415/clarido-marketing",
+  "dir_name": "blog-production",
+  "downloaded_at": "2026-03-01T04:46:57.213303Z",
+  "author": "Abhi5415",
+  "source_url": "https://github.com/Abhi5415/clarido-marketing/blob/main/.claude/skills/blog-production/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Abhi5415/clarido-marketing/blob/main/.claude/skills/blog-production/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

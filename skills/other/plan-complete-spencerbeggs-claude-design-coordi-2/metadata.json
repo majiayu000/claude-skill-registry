@@ -1,0 +1,11 @@
+{
+  "name": "plan-complete",
+  "description": "Complete a plan by updating design docs and removing the transitory plan file. Use when implementation is finished and knowledge should be persisted to design documentation.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/plan-complete",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "plan-complete-spencerbeggs-claude-design-coordi-2"
+}

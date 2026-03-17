@@ -1,0 +1,11 @@
+{
+  "name": "designing-wpf-customcontrol-architecture",
+  "description": "Designs stand-alone control styles using WPF CustomControl and ResourceDictionary. Use when creating reusable custom controls or organizing control themes in Generic.xaml.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/designing-wpf-customcontrol-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "designing-wpf-customcontrol-architecture-christian289-dotnet-with-claudeco-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "dag-context-bridger",
+  "description": "Manages context passing between DAG nodes and spawned agents. Handles context summarization, selective forwarding, and token budget optimization. Activate on 'bridge context', 'pass context', 'summari",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-context-bridger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-context-bridger-erichowens-some-claude-skills-2"
+}

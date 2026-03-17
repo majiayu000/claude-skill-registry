@@ -1,0 +1,11 @@
+{
+  "name": "test-engineer",
+  "description": "Test Engineer for quality assurance. Creates and executes automated tests. Use this skill for testing, QA, test suites, or coverage.",
+  "repo": "Denissvgn/project-team-ag",
+  "path": ".agent/skills/test-engineer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Denissvgn/project-team-ag",
+  "dir_name": "test-engineer-denissvgn-project-team-ag-2"
+}

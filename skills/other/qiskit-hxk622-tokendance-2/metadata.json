@@ -1,0 +1,11 @@
+{
+  "name": "qiskit",
+  "description": "IBM quantum computing framework. Use when targeting IBM Quantum hardware, working with Qiskit Runtime for production workloads, or needing IBM optimization tools. Best for IBM hardware execution, quan",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/physics/qiskit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "qiskit-hxk622-tokendance-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "global-validation",
+  "description": "Implement runtime validation and type safety using Zod schemas for Content Collections, API inputs, form data, and environment variables. Use this skill when validating user input, API requests, conte",
+  "repo": "SpacePlushy/portfolio",
+  "path": ".claude/skills/global-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpacePlushy/portfolio",
+  "dir_name": "global-validation-spaceplushy-portfolio-2"
+}

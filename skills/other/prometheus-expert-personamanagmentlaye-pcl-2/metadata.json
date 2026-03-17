@@ -1,0 +1,11 @@
+{
+  "name": "prometheus-expert",
+  "description": "Expert-level Prometheus monitoring, metrics collection, PromQL queries, alerting, and production operations",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/devops/prometheus-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "prometheus-expert-personamanagmentlaye-pcl-2"
+}

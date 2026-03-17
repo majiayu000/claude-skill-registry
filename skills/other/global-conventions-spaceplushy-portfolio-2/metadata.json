@@ -1,0 +1,11 @@
+{
+  "name": "global-conventions",
+  "description": "Follow project structure standards, environment variable management, Content Collections setup, version control practices, and build/deployment conventions. Use this skill when setting up project stru",
+  "repo": "SpacePlushy/portfolio",
+  "path": ".claude/skills/global-conventions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpacePlushy/portfolio",
+  "dir_name": "global-conventions-spaceplushy-portfolio-2"
+}

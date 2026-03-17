@@ -1,0 +1,11 @@
+{
+  "name": "understanding-wpf-content-model",
+  "description": "Explains WPF content model hierarchy including ContentControl, ItemsControl, and Headered variants. Use when selecting base classes for custom controls or understanding content/items properties.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/understanding-wpf-content-model",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "understanding-wpf-content-model-christian289-dotnet-with-claudeco-2"
+}

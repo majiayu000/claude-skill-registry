@@ -1,0 +1,11 @@
+{
+  "name": "experience-library",
+  "description": "Capture task outcomes, score performance, and derive rules as token priors for continual learning without model weight changes. Use for post-task feedback, experience capture, pattern extraction, and ",
+  "repo": "dredd-us/seashells",
+  "path": ".claude/skills/experience-library",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dredd-us/seashells",
+  "dir_name": "experience-library-dredd-us-seashells-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "chrome-devtools-mcp-singleton",
+  "description": "Run and manage a single-instance Chrome DevTools MCP server on this machine, including start/stop/status/dedupe workflows and safe cleanup to prevent multiple chrome-devtools-mcp processes from runnin",
+  "repo": "joelklabo/markdowntown-cli",
+  "path": "codex/skills/chrome-devtools-mcp-singleton",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown-cli",
+  "dir_name": "chrome-devtools-mcp-singleton-joelklabo-markdowntown-cli-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ln-730-devops-setup",
+  "description": "Coordinates Docker, CI/CD, and environment configuration setup via auto-detection",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-730-devops-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-730-devops-setup-levnikolaevich-claude-code-skills-2"
+}

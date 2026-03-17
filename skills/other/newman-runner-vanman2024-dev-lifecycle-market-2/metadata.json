@@ -1,0 +1,11 @@
+{
+  "name": "newman-runner",
+  "description": "Run and analyze Newman (Postman CLI) tests. Use when running API tests, validating Postman collections, testing HTTP endpoints, or when user mentions Newman, Postman tests, API validation.",
+  "repo": "vanman2024/dev-lifecycle-marketplace",
+  "path": "plugins/testing/skills/newman-runner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vanman2024/dev-lifecycle-marketplace",
+  "dir_name": "newman-runner-vanman2024-dev-lifecycle-market-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sketch-playwright-qa",
+  "description": "Playwright QA workflow for Sketch Magic. Use when running mobile flow tests, visual baselines, snapshot updates, or debugging flaky WebKit/Chromium runs and port conflicts.",
+  "repo": "joelklabo/markdowntown-cli",
+  "path": "codex/skills/sketch-playwright-qa",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown-cli",
+  "dir_name": "sketch-playwright-qa-joelklabo-markdowntown-cli-2"
+}

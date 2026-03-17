@@ -1,0 +1,11 @@
+{
+  "name": "kasperjunge-writing-style",
+  "description": "Write LinkedIn posts in Kasper Junge's distinctive Danish style. Use when asked to write LinkedIn content, social media posts, or project announcements in Kasper's voice. Triggers include \"skriv i min",
+  "repo": "kasperjunge/agent-resources-legacy",
+  "path": ".claude/skills/kasperjunge-writing-style",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kasperjunge/agent-resources-legacy",
+  "dir_name": "kasperjunge-writing-style-kasperjunge-agent-resources-lega-2"
+}

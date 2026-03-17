@@ -1,0 +1,11 @@
+{
+  "name": "sdlc-reports",
+  "description": "Generate comprehensive SDLC reports including iteration status, metrics dashboards, and executive summaries. Use when relevant to the task.",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "plugins/sdlc/skills/sdlc-reports",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jmagly/ai-writing-guide",
+  "dir_name": "sdlc-reports-jmagly-ai-writing-guide-2"
+}

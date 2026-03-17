@@ -1,0 +1,11 @@
+{
+  "name": "work-command-center",
+  "description": "Primary orchestration hub that FIRST enforces skill discipline (checking for applicable skills before any action), then manages deliverables, deadlines, team coordination, priority coaching, and work-",
+  "repo": "mbcoalson/skills",
+  "path": ".claude/skills/work-command-center",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mbcoalson/skills",
+  "dir_name": "work-command-center-mbcoalson-skills-2"
+}

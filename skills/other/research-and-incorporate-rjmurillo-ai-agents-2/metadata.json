@@ -1,0 +1,11 @@
+{
+  "name": "research-and-incorporate",
+  "description": "Research external topics, create comprehensive analysis, determine project applicability, and incorporate learnings into Serena and Forgetful memory systems. Transforms knowledge into searchable, acti",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/research-and-incorporate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "research-and-incorporate-rjmurillo-ai-agents-2"
+}

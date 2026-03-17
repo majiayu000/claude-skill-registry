@@ -1,0 +1,11 @@
+{
+  "name": "generate-sdk-types",
+  "description": "Generates TypeScript type definitions for SDK from Rust tool schemas, ensuring type safety between server and client",
+  "repo": "Async-IO/pierre_mcp_server",
+  "path": ".claude/skills/generate-sdk-types",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Async-IO/pierre_mcp_server",
+  "dir_name": "generate-sdk-types-async-io-pierre-mcp-server-2"
+}

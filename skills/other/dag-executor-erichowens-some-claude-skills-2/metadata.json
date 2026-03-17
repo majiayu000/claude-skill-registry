@@ -1,0 +1,11 @@
+{
+  "name": "dag-executor",
+  "description": "End-to-end DAG execution orchestrator that decomposes arbitrary tasks into agent graphs and executes them in parallel. The intelligence layer that makes DAG Framework operational.",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-executor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-executor-erichowens-some-claude-skills-2"
+}

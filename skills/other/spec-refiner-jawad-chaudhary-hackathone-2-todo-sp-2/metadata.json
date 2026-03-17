@@ -1,0 +1,11 @@
+{
+  "name": "spec-refiner",
+  "description": "Iterate on specs for better code generation. Use when Claude output needs refinement.",
+  "repo": "Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development",
+  "path": "Phase02/.claude/skills/spec-refiner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development",
+  "dir_name": "spec-refiner-jawad-chaudhary-hackathone-2-todo-sp-2"
+}

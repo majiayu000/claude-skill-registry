@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-impl-whitelisted",
+  "description": "Implementation workflows and decision trees for Frappe Whitelisted Methods (REST APIs). Use when determining HOW to implement API endpoints: public vs authenticated, permission patterns, error handlin",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/impl/erpnext-impl-whitelisted",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-impl-whitelisted-openaec-foundation-erpnext-anthropic-cl-2"
+}

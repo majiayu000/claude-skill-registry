@@ -1,0 +1,11 @@
+{
+  "name": "prd-documentation",
+  "description": "Product Requirements Document creation and feature specification writing. Use when writing PRDs, technical specs, feature documentation, or requirements. Triggers on \"PRD\", \"product requirements\", \"fe",
+  "repo": "foolpoet44/ai-pm-agent",
+  "path": ".claude/skills/prd-documentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/foolpoet44/ai-pm-agent",
+  "dir_name": "prd-documentation-foolpoet44-ai-pm-agent-2"
+}

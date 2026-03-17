@@ -1,0 +1,11 @@
+{
+  "name": "stripe-supabase-webhooks",
+  "description": "This skill should be used when implementing Stripe webhook handlers in Next.js App Router with Supabase database integration. It applies when handling subscription lifecycle events, syncing payment st",
+  "repo": "rrh1441/firstserveseattle",
+  "path": ".claude/skills/stripe-supabase-webhooks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rrh1441/firstserveseattle",
+  "dir_name": "stripe-supabase-webhooks-rrh1441-firstserveseattle-2"
+}

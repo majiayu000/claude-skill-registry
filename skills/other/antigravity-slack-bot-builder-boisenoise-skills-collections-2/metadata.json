@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-slack-bot-builder",
+  "description": "Build Slack apps using the Bolt framework across Python, JavaScript, and Java. Covers Block Kit for rich UIs, interactive components, slash commands, event handling, OAuth installation flows, and Work",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-slack-bot-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-slack-bot-builder-boisenoise-skills-collections-2"
+}

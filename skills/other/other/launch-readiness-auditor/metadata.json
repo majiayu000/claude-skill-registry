@@ -1,0 +1,9 @@
+{
+  "name": "launch-readiness-auditor",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/launch-readiness-auditor/SKILL.md",
+  "category": "other",
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "launch-readiness-auditor",
+  "downloaded_at": "2026-02-15T07:07:44.417734Z"
+}

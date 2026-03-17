@@ -1,0 +1,11 @@
+{
+  "name": "saga-orchestrator",
+  "description": "處理跨 Frame 的複雜業務流程，協調多個 Sub-agent (command/query/reactor) 完成 Saga/Choreography 模式的分散式交易。當需求涉及多個狀態變更、事件反應與查詢的組合時使用。",
+  "repo": "knowlet/skills",
+  "path": "skills/saga-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/knowlet/skills",
+  "dir_name": "saga-orchestrator-knowlet-skills-2"
+}

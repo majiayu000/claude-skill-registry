@@ -1,0 +1,9 @@
+{
+  "name": "pr-feedback-classifier",
+  "repo": "dagster-io/erk",
+  "path": ".claude/skills/pr-feedback-classifier/SKILL.md",
+  "category": "other",
+  "source": "github.com/dagster-io/erk",
+  "dir_name": "pr-feedback-classifier",
+  "downloaded_at": "2026-02-15T06:52:06.841255Z"
+}

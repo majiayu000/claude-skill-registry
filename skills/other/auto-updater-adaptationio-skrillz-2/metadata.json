@@ -1,0 +1,11 @@
+{
+  "name": "auto-updater",
+  "description": "Automatically apply improvements to skills and the ecosystem based on system-reviewer findings and best-practices-learner insights. Workflow for automated improvement identification, priority assessme",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/auto-updater",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "auto-updater-adaptationio-skrillz-2"
+}

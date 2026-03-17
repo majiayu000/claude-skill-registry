@@ -1,0 +1,11 @@
+{
+  "name": "acf-block-registration",
+  "description": "Guide for creating ACF PRO blocks with field groups in Oh My Brand! FSE theme. Use this when registering ACF blocks, creating field groups, or working with ACF-specific render templates.",
+  "repo": "WesleySmits/oh-my-brand-wp-fse",
+  "path": ".github/skills/acf-block-registration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/oh-my-brand-wp-fse",
+  "dir_name": "acf-block-registration-wesleysmits-oh-my-brand-wp-fse-2"
+}

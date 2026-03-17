@@ -1,0 +1,11 @@
+{
+  "name": "solidity-security",
+  "description": "Master smart contract security best practices to prevent common vulnerabilities and implement secure Solidity patterns. Use when writing smart contracts, auditing existing contracts, or implementing s",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".ai/plugins/blockchain-web3/skills/solidity-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "solidity-security-arustydev-dotfiles-2"
+}

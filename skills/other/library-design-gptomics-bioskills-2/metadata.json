@@ -1,0 +1,11 @@
+{
+  "name": "library-design",
+  "description": "CRISPR library design for genetic screens. Covers sgRNA selection, library composition, control design, and oligo ordering. Use when designing custom sgRNA libraries for knockout, activation, or inter",
+  "repo": "GPTomics/bioSkills",
+  "path": "crispr-screens/library-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "library-design-gptomics-bioskills-2"
+}

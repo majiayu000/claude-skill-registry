@@ -1,0 +1,11 @@
+{
+  "name": "proximity",
+  "description": "Elementos cercanos se perciben como relacionados. Use cuando agrupe controles, organice formularios, o diseñe layouts que comuniquen relaciones.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/gestalt/proximity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "proximity-vjrivmon-handwriting-ocr-2"
+}

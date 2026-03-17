@@ -1,0 +1,11 @@
+{
+  "name": "deployments",
+  "description": "Deployments - rollback, feature flags, ops tooling. Use when shipping to production.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/deployments",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "deployments-sylphxai-flow-2"
+}

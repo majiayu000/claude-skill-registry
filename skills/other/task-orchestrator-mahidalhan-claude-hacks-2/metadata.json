@@ -1,0 +1,11 @@
+{
+  "name": "task-orchestrator",
+  "description": "USE WHEN: planning complex multi-step tasks, organizing work with dependencies, identifying parallelization opportunities, breaking down large features into atomic tasks.\nDO NOT USE WHEN: single simpl",
+  "repo": "mahidalhan/claude-hacks",
+  "path": "skills/task-orchestrator/skills/task-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mahidalhan/claude-hacks",
+  "dir_name": "task-orchestrator-mahidalhan-claude-hacks-2"
+}

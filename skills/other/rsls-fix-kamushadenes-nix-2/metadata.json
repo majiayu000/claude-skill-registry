@@ -1,0 +1,11 @@
+{
+  "name": "rsls-fix",
+  "description": "Fix errors caused by corrupted rsls* files. Use when any operation fails mentioning rsls* files (e.g., \"bad object *.rslsc\", \"missing *.rslsd\", file not found *.rsls*).",
+  "repo": "kamushadenes/nix",
+  "path": "home/common/ai/resources/claude-code/skills/rsls-fix",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kamushadenes/nix",
+  "dir_name": "rsls-fix-kamushadenes-nix-2"
+}

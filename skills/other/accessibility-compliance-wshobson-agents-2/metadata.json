@@ -1,0 +1,11 @@
+{
+  "name": "accessibility-compliance",
+  "description": "Implement WCAG 2.2 compliant interfaces with mobile accessibility, inclusive design patterns, and assistive technology support. Use when auditing accessibility, implementing ARIA patterns, building fo",
+  "repo": "wshobson/agents",
+  "path": "plugins/ui-design/skills/accessibility-compliance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wshobson/agents",
+  "dir_name": "accessibility-compliance-wshobson-agents-2"
+}

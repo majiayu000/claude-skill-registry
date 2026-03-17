@@ -1,0 +1,11 @@
+{
+  "name": "docs-acset",
+  "description": "Google Docs/Sheets management via ACSet condensation. Transforms documents into GF(3)-typed Interactions, tracks comments/cells, detects saturation when all comments resolved. Use for document workflo",
+  "repo": "plurigrid/asi",
+  "path": "skills/docs-acset",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "docs-acset-plurigrid-asi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "fastapi-caching",
+  "description": "This skill should be used when the user asks to \"add caching\", \"implement Redis cache\", \"cache API response\", \"invalidate cache\", \"add cache layer\", \"optimize with caching\", or mentions Redis, caching",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/fastapi-backend/skills/fastapi-caching",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "fastapi-caching-lobbi-docs-claude-2"
+}

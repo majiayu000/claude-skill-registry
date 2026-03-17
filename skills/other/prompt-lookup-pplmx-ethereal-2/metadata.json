@@ -1,0 +1,11 @@
+{
+  "name": "prompt-lookup",
+  "description": "Activates when the user asks about AI prompts, needs prompt templates, wants to search for prompts, or mentions prompts.chat. Use for discovering, retrieving, and improving prompts.",
+  "repo": "pplmx/ethereal",
+  "path": ".claude/skills/prompt-lookup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pplmx/ethereal",
+  "dir_name": "prompt-lookup-pplmx-ethereal-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "investigating-hms-internals",
+  "repo": "gpt-cmdr/hms-commander",
+  "path": ".claude/skills/investigating-hms-internals/skill.md",
+  "category": "other",
+  "source": "github.com/gpt-cmdr/hms-commander",
+  "dir_name": "investigating-hms-internals",
+  "downloaded_at": "2026-02-15T07:22:36.517988Z"
+}

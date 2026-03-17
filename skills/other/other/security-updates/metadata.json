@@ -1,0 +1,9 @@
+{
+  "name": "security-updates",
+  "repo": "beriberikix/zephyr-agent-skills",
+  "path": "skills/security-updates/SKILL.md",
+  "category": "other",
+  "source": "github.com/beriberikix/zephyr-agent-skills",
+  "dir_name": "security-updates",
+  "downloaded_at": "2026-02-22T06:31:28.223224Z"
+}

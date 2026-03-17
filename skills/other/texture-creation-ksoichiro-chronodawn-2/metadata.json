@@ -1,0 +1,11 @@
+{
+  "name": "texture-creation",
+  "description": "Guide for creating mod textures using vanilla texture reuse and color transformation",
+  "repo": "ksoichiro/ChronoDawn",
+  "path": ".claude/skills/texture-creation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ksoichiro/ChronoDawn",
+  "dir_name": "texture-creation-ksoichiro-chronodawn-2"
+}

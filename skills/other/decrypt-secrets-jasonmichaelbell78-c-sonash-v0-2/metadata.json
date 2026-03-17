@@ -1,0 +1,11 @@
+{
+  "name": "decrypt-secrets",
+  "description": "Decrypt MCP tokens for remote sessions",
+  "repo": "jasonmichaelbell78-creator/sonash-v0",
+  "path": ".claude/skills/decrypt-secrets",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonmichaelbell78-creator/sonash-v0",
+  "dir_name": "decrypt-secrets-jasonmichaelbell78-c-sonash-v0-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "better-auth-integration",
+  "description": "Integrate Better Auth for JWT-based authentication in Next.js frontend and FastAPI backend. Handles signup, login, logout, token management, and protected routes. Use when implementing authentication ",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/better-auth-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "better-auth-integration-maneeshanif-todo-spec-driven-2"
+}

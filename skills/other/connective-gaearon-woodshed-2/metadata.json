@@ -1,0 +1,11 @@
+{
+  "name": "connective",
+  "description": "Use when building a deciduous decision graph to capture design evolution, architecture history, or how a codebase's design changed over time. Provides the deciduous CLI commands and graph structure gu",
+  "repo": "gaearon/woodshed",
+  "path": "example/skills/decision-graph/connective",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gaearon/woodshed",
+  "dir_name": "connective-gaearon-woodshed-2"
+}

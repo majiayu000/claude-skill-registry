@@ -1,0 +1,11 @@
+{
+  "name": "api-handler",
+  "description": "Use withApiHandler for all API routes. It eliminates boilerplate and ensures consistent auth, validation, and error handling.",
+  "repo": "vassovass/scl-v3",
+  "path": ".claude/skills/api-handler",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vassovass/scl-v3",
+  "dir_name": "api-handler-vassovass-scl-v3-2"
+}

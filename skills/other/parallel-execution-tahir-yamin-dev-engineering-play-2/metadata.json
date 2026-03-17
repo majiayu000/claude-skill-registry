@@ -1,0 +1,11 @@
+{
+  "name": "parallel-execution",
+  "description": "Patterns for parallel subagent execution using Task tool with run_in_background. Use when coordinating multiple independent tasks, spawning dynamic subagents, or implementing features that can be para",
+  "repo": "Tahir-yamin/dev-engineering-playbook",
+  "path": "agents/cloudai/skills/parallel-execution",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Tahir-yamin/dev-engineering-playbook",
+  "dir_name": "parallel-execution-tahir-yamin-dev-engineering-play-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "context-eng-context-fundamentals",
+  "description": "This skill should be used when the user asks to \"understand context\", \"explain context windows\", \"design agent architecture\", \"debug context issues\", \"optimize context usage\", or discusses context com",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/context-eng-context-fundamentals",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "context-eng-context-fundamentals-boisenoise-skills-collections-2"
+}

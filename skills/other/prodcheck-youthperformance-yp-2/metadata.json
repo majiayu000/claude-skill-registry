@@ -1,0 +1,11 @@
+{
+  "name": "prodcheck",
+  "description": "Release Wolf - Pre-deployment QA gatekeeper. Run before any production deploy. Checks for exposed secrets, broken links, Lighthouse performance scores, and visual regressions. Invoke with /prodcheck o",
+  "repo": "YouthPerformance/yp",
+  "path": ".claude/skills/prodcheck",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/YouthPerformance/yp",
+  "dir_name": "prodcheck-youthperformance-yp-2"
+}

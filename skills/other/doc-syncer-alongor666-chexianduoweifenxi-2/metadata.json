@@ -1,0 +1,11 @@
+{
+  "name": "doc-syncer",
+  "description": "代码变更后自动同步开发文档。支持功能文档、技术设计、决策记录的智能更新。当用户提到更新文档、同步文档、完成功能、修改数据结构或新增KPI时激活。",
+  "repo": "alongor666/chexianduoweifenxi",
+  "path": ".claude/skills/doc-syncer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alongor666/chexianduoweifenxi",
+  "dir_name": "doc-syncer-alongor666-chexianduoweifenxi-2"
+}

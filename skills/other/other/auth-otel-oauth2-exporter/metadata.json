@@ -1,0 +1,9 @@
+{
+  "name": "auth-otel-oauth2-exporter",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/auth:otel-oauth2-exporter/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "auth-otel-oauth2-exporter",
+  "downloaded_at": "2026-02-15T07:49:46.823777Z"
+}

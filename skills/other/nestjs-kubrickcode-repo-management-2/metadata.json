@@ -1,0 +1,11 @@
+{
+  "name": "nestjs",
+  "description": "Provides NestJS framework development standards and architectural patterns. Ensures domain-centric architecture, proper dependency injection, and decorator pattern utilization. Specializes in modular ",
+  "repo": "KubrickCode/Repo-Management",
+  "path": ".claude/skills/nestjs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KubrickCode/Repo-Management",
+  "dir_name": "nestjs-kubrickcode-repo-management-2"
+}

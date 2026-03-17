@@ -1,0 +1,11 @@
+{
+  "name": "cross-repo-coordination",
+  "description": "Coordinate changes across project-beta repositories when updating runner configurations. Ensures workflow labels match runner scale set names. Use when changing runnerScaleSetName or deploying new run",
+  "repo": "Matchpoint-AI/matchpoint-github-runners-helm",
+  "path": ".claude/skills/cross-repo-coordination",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Matchpoint-AI/matchpoint-github-runners-helm",
+  "dir_name": "cross-repo-coordination-matchpoint-ai-matchpoint-github-ru-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "manage-localmemory",
+  "description": "Local memory storage patterns, file coordination, and cleanup",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/manage-localmemory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "manage-localmemory-zerobias-org-module-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rust-review",
+  "description": "- Quick Start",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/pensive/skills/rust-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "rust-review-athola-claude-night-market-2"
+}

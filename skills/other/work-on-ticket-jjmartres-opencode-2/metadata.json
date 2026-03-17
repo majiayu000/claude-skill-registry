@@ -1,0 +1,11 @@
+{
+  "name": "work-on-ticket",
+  "description": "Fetches Jira ticket details, creates an appropriately named branch, and initiates the task planning workflow. Use when the user says \"work on [TICKET_ID]\" or similar phrases.",
+  "repo": "jjmartres/opencode",
+  "path": "opencode/skill/work-on-ticket",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jjmartres/opencode",
+  "dir_name": "work-on-ticket-jjmartres-opencode-2"
+}

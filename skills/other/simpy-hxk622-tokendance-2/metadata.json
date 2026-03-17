@@ -1,0 +1,11 @@
+{
+  "name": "simpy",
+  "description": "Process-based discrete-event simulation framework in Python. Use this skill when building simulations of systems with processes, queues, resources, and time-based events such as manufacturing systems,",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/physics/simpy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "simpy-hxk622-tokendance-2"
+}

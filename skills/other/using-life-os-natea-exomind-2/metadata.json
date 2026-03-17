@@ -1,0 +1,11 @@
+{
+  "name": "using-life-os",
+  "description": "Entry point skill - introduces available Life OS skills, provides command reference, and guides users through the system",
+  "repo": "natea/ExoMind",
+  "path": "skills/using-life-os",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/natea/ExoMind",
+  "dir_name": "using-life-os-natea-exomind-2"
+}

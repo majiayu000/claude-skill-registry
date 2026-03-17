@@ -1,0 +1,11 @@
+{
+  "name": "language-check",
+  "description": "Analyze code and documentation for non-inclusive language, understanding context and intent before flagging issues. Use when reviewing code for biased terms, gendered language, or problematic terminol",
+  "repo": "hereinthehive/gotrino-inclusion",
+  "path": "skills/language-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hereinthehive/gotrino-inclusion",
+  "dir_name": "language-check-hereinthehive-gotrino-inclusion-2"
+}

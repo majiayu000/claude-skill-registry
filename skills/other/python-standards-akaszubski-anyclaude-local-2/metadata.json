@@ -1,0 +1,11 @@
+{
+  "name": "python-standards",
+  "description": "Python code quality standards (PEP 8, type hints, docstrings). Use when writing Python code.",
+  "repo": "akaszubski/anyclaude-local",
+  "path": "plugins/autonomous-dev/skills/python-standards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/akaszubski/anyclaude-local",
+  "dir_name": "python-standards-akaszubski-anyclaude-local-2"
+}

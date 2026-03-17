@@ -1,0 +1,11 @@
+{
+  "name": "linear-local-dev-loop",
+  "description": "Set up local Linear development environment and testing workflow.\nUse when configuring local development, testing integrations,\nor setting up a development workflow with Linear.\nTrigger with phrases l",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/linear-pack/skills/linear-local-dev-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "linear-local-dev-loop-jeremylongshore-claude-code-plugins--2"
+}

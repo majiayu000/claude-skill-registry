@@ -1,0 +1,11 @@
+{
+  "name": "speech",
+  "description": "Use when implementing speech-to-text, live transcription, or audio transcription. Covers SpeechAnalyzer (iOS 26+), SpeechTranscriber, volatile/finalized results, AssetInventory model management, audio",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-ios-ml/speech",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "speech-charleswiltgen-axiom-2"
+}

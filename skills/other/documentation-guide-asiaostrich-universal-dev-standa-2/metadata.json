@@ -1,0 +1,11 @@
+{
+  "name": "documentation-guide",
+  "description": "引導文件结构、内容需求和项目文件最佳实踐。\n使用时机：建立 README、文件、docs 目录、项目设置、技術文件。\n关鍵字：README, docs, documentation, CONTRIBUTING, CHANGELOG, ARCHITECTURE, API docs, 文件, 说明文件, 技術文件.",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "path": "locales/zh-CN/skills/claude-code/documentation-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AsiaOstrich/universal-dev-standards",
+  "dir_name": "documentation-guide-asiaostrich-universal-dev-standa-2"
+}

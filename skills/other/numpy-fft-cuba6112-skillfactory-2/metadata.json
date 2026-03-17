@@ -1,0 +1,11 @@
+{
+  "name": "numpy-fft",
+  "description": "NumPy's fft module provides routines for computing Discrete Fourier Transforms (DFT). It is widely used for signal processing, image frequency analysis, and solving differential equations in the frequ",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/numpy-fft",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "numpy-fft-cuba6112-skillfactory-2"
+}

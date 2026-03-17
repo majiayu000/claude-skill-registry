@@ -1,0 +1,11 @@
+{
+  "name": "adynato-mobile",
+  "description": "Mobile app development conventions for Adynato projects using React Native and Expo. Covers navigation patterns, native APIs, performance optimization, and platform-specific considerations. Use when b",
+  "repo": "adynato/skills",
+  "path": "skills/adynato-mobile",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adynato/skills",
+  "dir_name": "adynato-mobile-adynato-skills-2"
+}

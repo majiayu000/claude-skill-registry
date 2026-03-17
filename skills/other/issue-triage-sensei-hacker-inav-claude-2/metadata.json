@@ -1,0 +1,11 @@
+{
+  "name": "issue-triage",
+  "description": "Triage and analyze GitHub issues from iNavFlight/inav repository",
+  "repo": "sensei-hacker/inav-claude",
+  "path": ".claude/skills/issue-triage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sensei-hacker/inav-claude",
+  "dir_name": "issue-triage-sensei-hacker-inav-claude-2"
+}

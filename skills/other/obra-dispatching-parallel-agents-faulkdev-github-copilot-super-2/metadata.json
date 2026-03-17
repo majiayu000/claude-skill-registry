@@ -1,0 +1,11 @@
+{
+  "name": "obra-dispatching-parallel-agents",
+  "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies",
+  "repo": "faulkdev/github-copilot-superpowers",
+  "path": ".github/skills/obra/obra-dispatching-parallel-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/faulkdev/github-copilot-superpowers",
+  "dir_name": "obra-dispatching-parallel-agents-faulkdev-github-copilot-super-2"
+}

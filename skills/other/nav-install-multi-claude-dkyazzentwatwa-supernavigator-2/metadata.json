@@ -1,0 +1,11 @@
+{
+  "name": "nav-install-multi-claude",
+  "description": "Install Navigator multi-Claude workflow orchestration scripts. Auto-invokes when user says \"install multi-Claude workflows\", \"set up multi-Claude\", or \"enable parallel execution\".",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "skills/os-layer/project-management/nav-install-multi-claude",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "nav-install-multi-claude-dkyazzentwatwa-supernavigator-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "line-execution-checker",
+  "description": "Check if specific lines were executed using gcov data",
+  "repo": "gadievron/raptor",
+  "path": ".claude/skills/crash-analysis/line-execution-checker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gadievron/raptor",
+  "dir_name": "line-execution-checker-gadievron-raptor-2"
+}

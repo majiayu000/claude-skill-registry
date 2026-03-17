@@ -1,0 +1,11 @@
+{
+  "name": "ideogram-install-auth",
+  "description": "Install and configure Ideogram SDK/CLI authentication.\nUse when setting up a new Ideogram integration, configuring API keys,\nor initializing Ideogram in your project.\nTrigger with phrases like \"instal",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/ideogram-pack/skills/ideogram-install-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "ideogram-install-auth-jeremylongshore-claude-code-plugins--2"
+}

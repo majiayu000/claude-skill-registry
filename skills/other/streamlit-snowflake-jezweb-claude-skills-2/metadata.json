@@ -1,0 +1,11 @@
+{
+  "name": "streamlit-snowflake",
+  "description": "Build and deploy Streamlit apps natively in Snowflake. Covers snowflake.yml scaffolding, Snowpark sessions, multi-page structure, Marketplace publishing as Native Apps, and caller's rights connections",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/streamlit-snowflake",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "streamlit-snowflake-jezweb-claude-skills-2"
+}

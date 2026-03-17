@@ -1,0 +1,11 @@
+{
+  "name": "citations",
+  "description": "Imported skill citations from openai",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/openai/citations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "citations-bitwikiorg-skills-md-2"
+}

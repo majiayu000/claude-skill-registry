@@ -1,0 +1,11 @@
+{
+  "name": "finer-gate",
+  "description": "FINER基準（Feasible, Interesting, Novel, Ethical, Relevant）で研究案を評価し、\nGo/No-Go判定と改善提案を行う。RWD特有のバイアス・限界も評価項目に含む。\n",
+  "repo": "tito-gh/healthcare",
+  "path": ".claude/skills/finer-gate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tito-gh/healthcare",
+  "dir_name": "finer-gate-tito-gh-healthcare-2"
+}

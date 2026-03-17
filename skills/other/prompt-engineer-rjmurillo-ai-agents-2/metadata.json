@@ -1,0 +1,11 @@
+{
+  "name": "prompt-engineer",
+  "description": "Optimize system prompts for Claude Code agents using proven prompt engineering patterns. Use when users request prompt improvement, optimization, or refinement for agent workflows, tool instructions, ",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/prompt-engineer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "prompt-engineer-rjmurillo-ai-agents-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ibm-cloud",
+  "description": "Provides comprehensive IBM Cloud platform guidance including compute services (VPC, Virtual Servers, IKS, OpenShift, Code Engine, Cloud Functions), storage (Object Storage, Block Storage, File Storage",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/ibm-cloud",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "dir_name": "ibm-cloud-dauquangthanh-hanoi-rainbow-2"
+}

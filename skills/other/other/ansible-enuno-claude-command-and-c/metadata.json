@@ -1,0 +1,9 @@
+{
+  "name": "ansible",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/development/ansible/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "ansible-enuno-claude-command-and-c",
+  "downloaded_at": "2026-02-15T07:07:00.200230Z"
+}

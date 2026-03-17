@@ -1,0 +1,11 @@
+{
+  "name": "log-analyzer",
+  "description": "Analyze application logs to detect errors, patterns, anomalies, and generate insights. Use when troubleshooting issues or analyzing system behavior.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/log-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "log-analyzer-ntaksh42-agents-2"
+}

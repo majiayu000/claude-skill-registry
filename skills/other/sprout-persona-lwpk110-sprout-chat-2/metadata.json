@@ -1,0 +1,11 @@
+{
+  "name": "sprout-persona",
+  "description": "定义小芽家教 AI 助手的核心人格特质、教学风格和语言规范，确保\"温柔耐心、会引导、不给答案\"的教学理念。",
+  "repo": "lwpk110/sprout-chat",
+  "path": ".claude/skills/sprout-persona",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lwpk110/sprout-chat",
+  "dir_name": "sprout-persona-lwpk110-sprout-chat-2"
+}

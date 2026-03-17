@@ -1,0 +1,11 @@
+{
+  "name": "optimizing-fast-lookup",
+  "description": "Implements fast O(1) lookup patterns using HashSet, FrozenSet, and optimized Dictionary in .NET. Use when building high-performance search or membership testing operations.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/optimizing-fast-lookup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "optimizing-fast-lookup-christian289-dotnet-with-claudeco-2"
+}

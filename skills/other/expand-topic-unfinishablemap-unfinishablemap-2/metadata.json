@@ -1,0 +1,11 @@
+{
+  "name": "expand-topic",
+  "description": "Generate a new article on a topic. Content is published directly.",
+  "repo": "unfinishablemap/unfinishablemap",
+  "path": ".claude/skills/expand-topic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/unfinishablemap/unfinishablemap",
+  "dir_name": "expand-topic-unfinishablemap-unfinishablemap-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "run-configurator",
+  "description": "Launch INAV Configurator in development mode for testing",
+  "repo": "sensei-hacker/inav-claude",
+  "path": ".claude/skills/run-configurator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sensei-hacker/inav-claude",
+  "dir_name": "run-configurator-sensei-hacker-inav-claude-2"
+}

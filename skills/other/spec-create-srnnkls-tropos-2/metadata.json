@@ -1,0 +1,11 @@
+{
+  "name": "spec-create",
+  "description": "Create spec documents (spec.md, context.md, tasks.yaml, dependencies.yaml, validation.yaml). Receives validation data from spec-validate.",
+  "repo": "srnnkls/tropos",
+  "path": "skills/spec-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/srnnkls/tropos",
+  "dir_name": "spec-create-srnnkls-tropos-2"
+}

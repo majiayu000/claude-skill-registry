@@ -1,0 +1,11 @@
+{
+  "name": "gtm-management",
+  "description": "Manage Google Tag Manager containers, tags, triggers, and variables. Use when working with GTM configuration, analytics tracking, conversion tracking, or event management. Triggers on \"GTM\", \"Google T",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/analytics/gtm-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "gtm-management-javeedishaq-ai-workflow-orchestr-2"
+}

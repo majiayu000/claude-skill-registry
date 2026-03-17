@@ -1,0 +1,11 @@
+{
+  "name": "debugging-workflows",
+  "description": "Guide for debugging GitHub Agentic Workflows - analyzing logs, auditing runs, and troubleshooting issues",
+  "repo": "githubnext/gh-aw",
+  "path": ".github/skills/debugging-workflows",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/githubnext/gh-aw",
+  "dir_name": "debugging-workflows-githubnext-gh-aw-2"
+}

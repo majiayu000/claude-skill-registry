@@ -1,0 +1,11 @@
+{
+  "name": "adb-magisk-installer",
+  "description": "Complete Magisk system installation - from initial app setup to full system integration",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".claude/skills/adb/adb-game-magisk-installer/adb-magisk-installer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "dir_name": "adb-magisk-installer-rdmptv-adbautoplayer-2"
+}

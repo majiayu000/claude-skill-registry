@@ -1,0 +1,11 @@
+{
+  "name": "snd-ice",
+  "description": "Use this skill when implementing Cosmic Exploration automation in SND macros using the Ice plugin. Covers starting/stopping Ice, IPC API, and integration with leveling workflows.",
+  "repo": "vaoan/SND",
+  "path": ".claude/skills/snd-ice",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vaoan/SND",
+  "dir_name": "snd-ice-vaoan-snd-2"
+}

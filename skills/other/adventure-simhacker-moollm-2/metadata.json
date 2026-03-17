@@ -1,0 +1,11 @@
+{
+  "name": "adventure",
+  "description": "Room-based exploration with narrative evidence collection",
+  "repo": "SimHacker/moollm",
+  "path": "skills/adventure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "adventure-simhacker-moollm-2"
+}

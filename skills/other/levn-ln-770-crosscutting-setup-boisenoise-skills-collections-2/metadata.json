@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-770-crosscutting-setup",
+  "description": "Coordinates logging, error handling, CORS, health checks, and API docs",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-770-crosscutting-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-770-crosscutting-setup-boisenoise-skills-collections-2"
+}

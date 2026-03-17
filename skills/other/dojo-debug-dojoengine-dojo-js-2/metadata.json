@@ -1,0 +1,11 @@
+{
+  "name": "dojo-debug",
+  "description": "Use when debugging and troubleshooting dojo.js applications.\nTriggers: dojo error, torii connection, entity not found, type mismatch, debug dojo,\ntroubleshoot, subscription error, sync issues",
+  "repo": "dojoengine/dojo.js",
+  "path": ".claude/skills/dojo-debug",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dojoengine/dojo.js",
+  "dir_name": "dojo-debug-dojoengine-dojo-js-2"
+}

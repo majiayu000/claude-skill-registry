@@ -1,0 +1,11 @@
+{
+  "name": "exa-incident-runbook",
+  "description": "Execute Exa incident response procedures with triage, mitigation, and postmortem.\nUse when responding to Exa-related outages, investigating errors,\nor running post-incident reviews for Exa integration",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/exa-pack/skills/exa-incident-runbook",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "exa-incident-runbook-jeremylongshore-claude-code-plugins--2"
+}

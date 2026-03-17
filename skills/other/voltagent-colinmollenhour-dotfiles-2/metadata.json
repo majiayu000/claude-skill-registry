@@ -1,0 +1,11 @@
+{
+  "name": "voltagent",
+  "description": "Create and configure VoltAgent AI agents with tools, memory, hooks, and sub-agents. Use when building AI agents, adding agent tools, configuring VoltAgent memory, creating multi-agent workflows, or de",
+  "repo": "colinmollenhour/dotfiles",
+  "path": ".claude/skills/voltagent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/colinmollenhour/dotfiles",
+  "dir_name": "voltagent-colinmollenhour-dotfiles-2"
+}

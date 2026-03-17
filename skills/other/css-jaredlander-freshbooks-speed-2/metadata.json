@@ -1,0 +1,11 @@
+{
+  "name": "css",
+  "description": "Expert-level CSS development with modern features and best practices. Use when asked to (1) write or debug CSS, (2) implement layouts with flexbox, grid, or container queries, (3) create animations an",
+  "repo": "jaredlander/freshbooks-speed",
+  "path": ".claude/skills/css",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jaredlander/freshbooks-speed",
+  "dir_name": "css-jaredlander-freshbooks-speed-2"
+}

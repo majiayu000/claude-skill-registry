@@ -1,0 +1,11 @@
+{
+  "name": "label-context-mapping",
+  "description": "Maps GitHub labels to Skills and Context documents. Use when creating issues (github-issue-creation) or working on issues (fix-issue command).",
+  "repo": "hiromaily/go-crypto-wallet",
+  "path": ".claude/skills/label-context-mapping",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hiromaily/go-crypto-wallet",
+  "dir_name": "label-context-mapping-hiromaily-go-crypto-wallet-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "arweave-bridge",
+  "description": "ZigZag Exchange Arweave Bridge - Pay with zkSync stablecoins (USDC/USDT/DAI) for permanent Arweave storage. Use for building dApps needing decentralized file storage, NFT metadata permanence, or Layer",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/arweave-bridge",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "arweave-bridge-enuno-claude-command-and-c-2"
+}

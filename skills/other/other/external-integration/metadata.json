@@ -1,0 +1,9 @@
+{
+  "name": "external-integration",
+  "repo": "hirokazu-kobayashi-koba-hiro/idp-server",
+  "path": ".claude/skills/external-integration/skill.md",
+  "category": "other",
+  "source": "github.com/hirokazu-kobayashi-koba-hiro/idp-server",
+  "dir_name": "external-integration",
+  "downloaded_at": "2026-02-22T07:26:55.314683Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "library-curator",
+  "description": "Autonomous curator for Source Library - discover, evaluate, and import historical texts in alchemy, Hermetica, Kabbalah, Rosicrucianism, and early modern knowledge. Use when asked to curate books, fin",
+  "repo": "Embassy-of-the-Free-Mind/sourcelibrary-v2",
+  "path": ".claude/skills/library-curator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Embassy-of-the-Free-Mind/sourcelibrary-v2",
+  "dir_name": "library-curator-embassy-of-the-free--sourcelibrary-v2-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "workflow-automation-n8n",
+  "description": "n8nで業務フローを設計・実装する。トリガー→処理→例外→通知まで一気通貫で提案する時に使う。",
+  "repo": "taiyousan15/taisun_agent",
+  "path": ".claude/skills/workflow-automation-n8n",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/taiyousan15/taisun_agent",
+  "dir_name": "workflow-automation-n8n-taiyousan15-taisun-agent-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "automating-excel",
+  "description": "Automates Microsoft Excel on macOS via JXA with AppleScript dictionary discovery. Use when asked to \"automate Excel spreadsheets\", \"JXA Excel scripting\", \"Excel macOS automation\", or \"bulk Excel data ",
+  "repo": "SpillwaveSolutions/automating-mac-apps-plugin",
+  "path": "plugins/automating-mac-apps-plugin/skills/automating-excel",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
+  "dir_name": "automating-excel-spillwavesolutions-automating-mac-apps--2"
+}

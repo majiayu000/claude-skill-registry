@@ -1,0 +1,11 @@
+{
+  "name": "bknd-login-flow",
+  "description": "Use when implementing login and logout functionality in a Bknd application. Covers SDK authentication methods, REST API endpoints, React integration, session checking, and error handling.",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-login-flow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-login-flow-cameronapak-freedom-stack-v3-2"
+}

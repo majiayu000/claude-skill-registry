@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-130-tasks-docs-creator",
+  "description": "Creates task management documentation (docs/tasks/README.md + kanban_board.md). L2 Worker in ln-100-documents-pipeline. Sets up Linear integration and task tracking rules.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-130-tasks-docs-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-130-tasks-docs-creator-boisenoise-skills-collections-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-mocked-backoffice",
+  "description": "Run Umbraco backoffice with mocked APIs for visual extension testing",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-testing-skills/skills/umbraco-mocked-backoffice",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-mocked-backoffice-umbraco-umbraco-cms-backoffi-2"
+}

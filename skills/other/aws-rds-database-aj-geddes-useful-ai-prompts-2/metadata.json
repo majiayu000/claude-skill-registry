@@ -1,0 +1,11 @@
+{
+  "name": "aws-rds-database",
+  "description": "Deploy and manage relational databases using RDS with Multi-AZ, read replicas, backups, and encryption. Use for PostgreSQL, MySQL, MariaDB, and Oracle.",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/aws-rds-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "dir_name": "aws-rds-database-aj-geddes-useful-ai-prompts-2"
+}

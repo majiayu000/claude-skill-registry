@@ -1,0 +1,11 @@
+{
+  "name": "dbt-migration-oracle",
+  "description": "Convert Oracle DDL to dbt models compatible with Snowflake. This skill should be used when converting views, tables, or stored procedures from Oracle to dbt code, generating schema.yml files with test",
+  "repo": "sfc-gh-dflippo/snowflake-dbt-demo",
+  "path": ".claude/skills/dbt-migration-oracle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sfc-gh-dflippo/snowflake-dbt-demo",
+  "dir_name": "dbt-migration-oracle-sfc-gh-dflippo-snowflake-dbt-demo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ux-ui-layout",
+  "description": "레이아웃 시스템 에이전트. 페이지 레이아웃과 그리드 시스템을 설계합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/ux-ui-layout",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "ux-ui-layout-shaul1991-shaul-agents-plugin-2"
+}

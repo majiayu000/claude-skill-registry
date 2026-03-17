@@ -18,10 +18,8 @@ from datetime import datetime
 from typing import Any, Dict, List, Optional
 import argparse
 import logging
-import re
-import yaml
 
-from utils import get_repo_suffix
+from utils import get_repo_suffix, extract_description, load_metadata
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 logger = logging.getLogger(__name__)
@@ -65,41 +63,6 @@ def get_category_code(category: str) -> str:
     return CATEGORY_CODES.get(category.lower(), "oth")
 
 
-def extract_description(skill_content: str) -> str:
-    """Extract description from SKILL.md content."""
-    # Try YAML frontmatter
-    if skill_content.startswith("---"):
-        try:
-            end_idx = skill_content.find("---", 3)
-            if end_idx > 0:
-                frontmatter = skill_content[3:end_idx].strip()
-                data = yaml.safe_load(frontmatter)
-                if data and data.get("description"):
-                    return data["description"]
-        except Exception:
-            pass
-
-    # Try first paragraph
-    lines = skill_content.split("\n")
-    in_frontmatter = False
-
-    for line in lines:
-        line = line.strip()
-        if line == "---":
-            in_frontmatter = not in_frontmatter
-            continue
-        if in_frontmatter:
-            continue
-        if line.startswith("#"):
-            continue
-        if line and not line.startswith("```") and len(line) > 20:
-            line = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', line)
-            line = re.sub(r'[*_`]', '', line)
-            return line
-
-    return ""
-
-
 def scan_skills_v2(skills_dir: Path) -> List[Dict]:
     """Scan skills directory with structure: skills/{category}/{skill-name}/"""
     skills = []
@@ -129,12 +92,7 @@ def scan_skills_v2(skills_dir: Path) -> List[Dict]:
             dir_name = skill_dir.name
 
             # Load metadata
-            metadata = {}
-            if metadata_file.exists():
-                try:
-                    metadata = json.loads(metadata_file.read_text(encoding='utf-8'))
-                except Exception:
-                    pass
+            metadata = load_metadata(skill_dir) if metadata_file.exists() else {}
 
             # Get skill name (from metadata or directory)
             name = metadata.get("name") or dir_name
@@ -380,9 +338,19 @@ def build_search_index(
     logger.info(f"  featured.json: {len(featured_skills)} skills")
 
     # Write stats
+    collections_count_path = output_dir / "collections.json"
+    collection_count = 0
+    if collections_count_path.exists():
+        try:
+            with open(collections_count_path, 'r', encoding='utf-8') as f:
+                collection_count = json.load(f).get("count", 0)
+        except Exception:
+            pass
+
     stats = {
         "updated_at": datetime.utcnow().isoformat() + "Z",
         "total_skills": len(skills),
+        "total_collections": collection_count,
         "raw_skill_count": raw_skill_count,
         "dedup_skill_count": dedup_skill_count,
         "categories": len(categories),
@@ -436,6 +404,51 @@ def load_from_registry(registry_path: Path) -> List[Dict]:
     return skills
 
 
+def load_collections_from_registry(registry_path: Path) -> List[Dict]:
+    """Load collections from registry.json."""
+    if not registry_path.exists():
+        return []
+    try:
+        with open(registry_path, 'r', encoding='utf-8') as f:
+            registry = json.load(f)
+        return registry.get('collections', [])
+    except Exception:
+        return []
+
+
+def load_collections_from_source(sources_dir: Path) -> List[Dict]:
+    """Load collections from sources/collections.json."""
+    collections_path = sources_dir / "collections.json"
+    if not collections_path.exists():
+        return []
+    try:
+        with open(collections_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return data.get('collections', [])
+    except Exception:
+        return []
+
+
+def build_collections_index(
+    collections: List[Dict],
+    output_dir: Path,
+) -> None:
+    """Write collections.json to output directory."""
+    if not collections:
+        return
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    collections_data = {
+        "updated_at": datetime.utcnow().isoformat() + "Z",
+        "count": len(collections),
+        "collections": collections,
+    }
+    with open(output_dir / "collections.json", 'w', encoding='utf-8') as f:
+        json.dump(collections_data, f, ensure_ascii=False, indent=2)
+
+    logger.info(f"  collections.json: {len(collections)} collections")
+
+
 def main():
     parser = argparse.ArgumentParser(description='Build search index for skill registry')
     parser.add_argument('--skills-dir', '-s', default='skills', help='Skills directory')
@@ -478,6 +491,17 @@ def main():
     if not skills:
         logger.error("No skills found!")
         exit(1)
+
+    # Load collections
+    sources_dir = Path(__file__).parent.parent / "sources"
+    collections = load_collections_from_source(sources_dir)
+    if not collections:
+        collections = load_collections_from_registry(registry_path)
+    if collections:
+        logger.info(f"Loaded {len(collections)} collections")
+
+    # Build collections index first (so stats can read it)
+    build_collections_index(collections, output_dir)
 
     build_search_index(
         skills,

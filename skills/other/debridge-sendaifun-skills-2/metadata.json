@@ -1,0 +1,11 @@
+{
+  "name": "debridge",
+  "description": "Complete deBridge Protocol SDK for building cross-chain bridges, message passing, and token transfers on Solana. Use when building cross-chain applications, bridging assets between Solana and EVM chai",
+  "repo": "sendaifun/skills",
+  "path": "skills/debridge",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "debridge-sendaifun-skills-2"
+}

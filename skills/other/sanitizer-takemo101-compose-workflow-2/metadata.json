@@ -1,0 +1,11 @@
+{
+  "name": "sanitizer",
+  "description": "外部入力（Issue/PRの本文）からプロンプトインジェクション対策としてサニタイズを行う",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/sanitizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "sanitizer-takemo101-compose-workflow-2"
+}

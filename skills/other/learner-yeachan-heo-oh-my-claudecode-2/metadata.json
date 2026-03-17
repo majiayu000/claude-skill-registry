@@ -1,0 +1,11 @@
+{
+  "name": "learner",
+  "description": "Extract a learned skill from the current conversation",
+  "repo": "Yeachan-Heo/oh-my-claudecode",
+  "path": "skills/learner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Yeachan-Heo/oh-my-claudecode",
+  "dir_name": "learner-yeachan-heo-oh-my-claudecode-2"
+}

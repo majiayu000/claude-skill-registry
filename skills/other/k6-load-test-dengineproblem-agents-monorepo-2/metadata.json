@@ -1,0 +1,11 @@
+{
+  "name": "k6-load-test",
+  "description": "Эксперт k6 нагрузочного тестирования. Используй для performance testing, load scenarios и stress tests.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/k6-load-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "k6-load-test-dengineproblem-agents-monorepo-2"
+}

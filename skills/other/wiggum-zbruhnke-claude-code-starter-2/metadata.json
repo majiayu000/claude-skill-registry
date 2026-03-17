@@ -1,0 +1,11 @@
+{
+  "name": "wiggum",
+  "description": "Start an autonomous implementation loop from a spec or PRD. Enters plan mode for user approval, enforces command gates (test/lint/typecheck/build), validates dependencies, commits incrementally, and m",
+  "repo": "zbruhnke/claude-code-starter",
+  "path": ".claude/skills/wiggum",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zbruhnke/claude-code-starter",
+  "dir_name": "wiggum-zbruhnke-claude-code-starter-2"
+}

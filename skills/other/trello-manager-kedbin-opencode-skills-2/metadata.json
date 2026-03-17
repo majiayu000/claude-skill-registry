@@ -1,0 +1,11 @@
+{
+  "name": "trello-manager",
+  "description": "Manage Trello boards, lists, and cards. Use this skill when the user wants to view, create, or update their Trello tasks, boards, or project status.",
+  "repo": "kedbin/opencode-skills",
+  "path": "skills/trello-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kedbin/opencode-skills",
+  "dir_name": "trello-manager-kedbin-opencode-skills-2"
+}

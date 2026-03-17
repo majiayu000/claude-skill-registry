@@ -1,0 +1,11 @@
+{
+  "name": "hooks-manager",
+  "description": "Create, validate, and deploy Claude Code hooks for workflow automation. Hooks enable event-driven automation at 8 lifecycle points (PreToolUse, PostToolUse, UserPromptSubmit, etc.) with structured JSO",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/hooks-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "hooks-manager-adaptationio-skrillz-2"
+}

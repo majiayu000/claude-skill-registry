@@ -1,0 +1,11 @@
+{
+  "name": "api-contract-testing",
+  "description": "Verifies API contracts between services using consumer-driven contracts, schema validation, and tools like Pact. Use when testing microservices communication, preventing breaking changes, or validatin",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/api-contract-testing/skills/api-contract-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "api-contract-testing-secondsky-claude-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "web-testing",
+  "description": "Web testing with Playwright, Vitest, k6. E2E/unit/integration/load/security/visual/a11y testing. Use for test automation, flakiness, Core Web Vitals, mobile gestures, cross-browser.",
+  "repo": "mrgoonie/claudekit-skills",
+  "path": ".claude/skills/web-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/claudekit-skills",
+  "dir_name": "web-testing-mrgoonie-claudekit-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "weathercli",
+  "description": "Get current weather conditions and forecasts for any location worldwide. Returns structured data with temperature, humidity, wind, precipitation, and more. No API key required.",
+  "repo": "clawdbot/skills",
+  "path": "skills/pjtf93/weathercli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "weathercli-clawdbot-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "scriptwriter-skill",
+  "description": "Use when creating episodic scripts, ensuring series continuity, adapting story concepts into visual narratives, or preparing scripts with sufficient beats for storyboarding",
+  "repo": "RainLib/AI-Storyboard",
+  "path": ".claude/skills/scriptwriter-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RainLib/AI-Storyboard",
+  "dir_name": "scriptwriter-skill-rainlib-ai-storyboard-2"
+}

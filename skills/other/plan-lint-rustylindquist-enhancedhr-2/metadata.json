@@ -1,0 +1,11 @@
+{
+  "name": "plan-lint",
+  "description": "Validates a plan against documentation constraints before coding. Use after doc-discovery and before implementation. Returns PASS, WARN, or FAIL with specific issues. Gate 1 of 2-gate flow.",
+  "repo": "RustyLindquist/EnhancedHR",
+  "path": ".claude/skills/plan-lint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RustyLindquist/EnhancedHR",
+  "dir_name": "plan-lint-rustylindquist-enhancedhr-2"
+}

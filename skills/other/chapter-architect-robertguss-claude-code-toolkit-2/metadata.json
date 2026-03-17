@@ -1,0 +1,11 @@
+{
+  "name": "chapter-architect",
+  "description": "Plan and architect a single chapter at beat-level granularity. Use when you have a chapter from the Architecture Document and need to create a detailed outline before drafting. Produces a Chapter Outl",
+  "repo": "robertguss/claude-code-toolkit",
+  "path": "skills/non-fiction-book-factory/chapter-architect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertguss/claude-code-toolkit",
+  "dir_name": "chapter-architect-robertguss-claude-code-toolkit-2"
+}

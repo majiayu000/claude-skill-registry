@@ -1,0 +1,11 @@
+{
+  "name": "convex-security-audit",
+  "description": "Deep security review patterns for authorization logic, data access boundaries, action isolation, rate limiting, and protecting sensitive operations",
+  "repo": "waynesutton/convexskills",
+  "path": "skills/convex-security-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/waynesutton/convexskills",
+  "dir_name": "convex-security-audit-waynesutton-convexskills-2"
+}

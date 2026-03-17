@@ -1,0 +1,11 @@
+{
+  "name": "bash-defensive-patterns",
+  "description": "Master defensive Bash programming techniques for production-grade scripts. Use when writing robust shell scripts, CI/CD pipelines, or system utilities requiring fault tolerance and safety.",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".ai/plugins/shell-scripting/skills/bash-defensive-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "bash-defensive-patterns-arustydev-dotfiles-2"
+}

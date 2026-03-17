@@ -1,0 +1,11 @@
+{
+  "name": "preview-testing",
+  "description": "Comprehensive E2E + Security Tests for Vercel Preview Deployments. Combines Playwright automation with Claude-in-Chrome MCP for interactive debugging. Activate on PR creation, before merge, or manual ",
+  "repo": "freitasp1/claude-code-skills",
+  "path": "skills/preview-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/freitasp1/claude-code-skills",
+  "dir_name": "preview-testing-freitasp1-claude-code-skills-2"
+}

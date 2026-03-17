@@ -1,0 +1,11 @@
+{
+  "name": "naming-convention-guard",
+  "description": "**NAMING CONVENTION GUARD** - 코드 작성 시 자동 발동. 변수, 함수, 클래스, 파일명의 일관된 네이밍 규칙 적용. camelCase, PascalCase, snake_case 언어별 자동 적용. 나쁜 이름 탐지 및 개선 제안.",
+  "repo": "monicajeon28/GMcruise",
+  "path": ".claude/skills/naming-convention-guard",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/monicajeon28/GMcruise",
+  "dir_name": "naming-convention-guard-monicajeon28-gmcruise-2"
+}

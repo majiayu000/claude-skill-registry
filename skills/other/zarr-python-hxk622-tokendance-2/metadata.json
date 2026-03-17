@@ -1,0 +1,11 @@
+{
+  "name": "zarr-python",
+  "description": "Chunked N-D arrays for cloud storage. Compressed arrays, parallel I/O, S3/GCS integration, NumPy/Dask/Xarray compatible, for large-scale scientific computing pipelines.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/physics/zarr-python",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "zarr-python-hxk622-tokendance-2"
+}

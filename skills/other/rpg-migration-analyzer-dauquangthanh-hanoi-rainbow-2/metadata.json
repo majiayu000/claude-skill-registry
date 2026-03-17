@@ -1,0 +1,11 @@
+{
+  "name": "rpg-migration-analyzer",
+  "description": "Analyzes legacy RPG (Report Program Generator) programs from AS/400 and IBM i systems for migration to modern Java applications. Extracts business logic from RPG III/IV/ILE source code, identifies dat",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/rpg-migration-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "dir_name": "rpg-migration-analyzer-dauquangthanh-hanoi-rainbow-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "clerk-auth",
+  "description": "Clerk authentication patterns and integration with Convex. Use when implementing sign-in/sign-out, protected routes, user profile sync, or role-based access control.",
+  "repo": "Atemndobs/nebula-rfp",
+  "path": ".claude/skills/clerk-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Atemndobs/nebula-rfp",
+  "dir_name": "clerk-auth-atemndobs-nebula-rfp-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "say-ducklake-xor",
+  "description": "Parallel thread/DuckLake discovery with XOR uniqueness from gay_seed. Finds \"say\" or MCP usage, cross-refs with all DuckDB sources, launches bounded parallel ops.",
+  "repo": "plurigrid/asi",
+  "path": "skills/say-ducklake-xor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "say-ducklake-xor-plurigrid-asi-2"
+}

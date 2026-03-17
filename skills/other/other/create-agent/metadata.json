@@ -1,0 +1,9 @@
+{
+  "name": "create-agent",
+  "repo": "JoernStoehler/dnd-claude-code",
+  "path": ".claude/skills/create-agent/SKILL.md",
+  "category": "other",
+  "source": "github.com/JoernStoehler/dnd-claude-code",
+  "dir_name": "create-agent",
+  "downloaded_at": "2026-02-22T05:13:33.207029Z"
+}

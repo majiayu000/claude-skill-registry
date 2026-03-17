@@ -1,0 +1,11 @@
+{
+  "name": "skill-improvement-from-observability",
+  "description": "Complete feedback loop from observability insights to skill updates. Use when analyzing enhanced telemetry patterns and automatically improving skills.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/skill-improvement-from-observability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "skill-improvement-from-observability-adaptationio-skrillz-2"
+}

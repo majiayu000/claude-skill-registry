@@ -1,0 +1,11 @@
+{
+  "name": "learning-objectives",
+  "description": "Generate measurable learning outcomes aligned with Bloom's taxonomy and CEFR proficiency levels for educational content. Use when educators need to define what students will achieve, create learning o",
+  "repo": "panaversity/agentfactory",
+  "path": ".claude/skills/learning-objectives",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "learning-objectives-panaversity-agentfactory-2"
+}

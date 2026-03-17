@@ -1,0 +1,11 @@
+{
+  "name": "substitute-eraser",
+  "description": "This skill should be used when the user asks to \"scan for TODOs\", \"find placeholders\", \"clean up stubs\", \"remove temporary code\", \"audit for incomplete code\", or \"erase substitutions from codebase\". S",
+  "repo": "plurigrid/asi",
+  "path": "skills/substitute-eraser",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "substitute-eraser-plurigrid-asi-2"
+}

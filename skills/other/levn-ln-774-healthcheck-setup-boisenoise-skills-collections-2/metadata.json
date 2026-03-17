@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-774-healthcheck-setup",
+  "description": "Configures health check endpoints for Kubernetes readiness/liveness/startup",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-774-healthcheck-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-774-healthcheck-setup-boisenoise-skills-collections-2"
+}

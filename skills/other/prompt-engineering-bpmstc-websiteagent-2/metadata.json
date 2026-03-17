@@ -1,0 +1,11 @@
+{
+  "name": "prompt-engineering",
+  "description": "Prompt engineering for Claude API, system prompts, context management, instruction design, depth levels, HTML generation. Use when working with Claude API integration, designing prompts, managing conv",
+  "repo": "BPMSTC/websiteagent",
+  "path": ".claude/skills/prompt-engineering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BPMSTC/websiteagent",
+  "dir_name": "prompt-engineering-bpmstc-websiteagent-2"
+}

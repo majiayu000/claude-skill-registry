@@ -1,0 +1,11 @@
+{
+  "name": "nav-onboard",
+  "description": "Interactive onboarding for Navigator - learn by doing. Auto-invoke when user says \"onboard me\", \"teach me Navigator\", \"how do I use Navigator\", \"Navigator tutorial\", \"learn Navigator\", \"new to Navigat",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "skills/os-layer/core/nav-onboard",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "nav-onboard-dkyazzentwatwa-supernavigator-2"
+}

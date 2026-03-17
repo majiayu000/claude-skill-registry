@@ -1,0 +1,11 @@
+{
+  "name": "milestone-management",
+  "description": "Use for time-based grouping of issues into delivery phases. Creates, updates, and tracks milestones, associates issues and epics, monitors progress toward milestone completion.",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/milestone-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "milestone-management-troykelly-codex-skills-2"
+}

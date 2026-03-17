@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-add-extension-reference",
+  "description": "Add a new Umbraco extension project reference to the main Umbraco instance",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-add-extension-reference",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-add-extension-reference-umbraco-umbraco-cms-backoffi-2"
+}

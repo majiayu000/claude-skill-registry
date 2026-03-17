@@ -1,0 +1,11 @@
+{
+  "name": "ty-pro",
+  "description": "Python型安全性をtyで強化。型アノテーション追加、型エラー修正、境界バリデーション実装時に使用。",
+  "repo": "YunosukeYoshino/ImageScraper",
+  "path": ".claude/skills/ty-pro",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/YunosukeYoshino/ImageScraper",
+  "dir_name": "ty-pro-yunosukeyoshino-imagescraper-2"
+}

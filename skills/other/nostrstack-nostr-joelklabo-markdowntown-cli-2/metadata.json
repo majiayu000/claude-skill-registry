@@ -1,0 +1,11 @@
+{
+  "name": "nostrstack-nostr",
+  "description": "Nostr-specific workflows in nostrstack: identifier parsing, event/profile landing pages, relay fetch/caching rules, NIP-05 identity resolution, and reference rendering. Use when working on Nostr event",
+  "repo": "joelklabo/markdowntown-cli",
+  "path": "codex/skills/nostrstack-nostr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown-cli",
+  "dir_name": "nostrstack-nostr-joelklabo-markdowntown-cli-2"
+}

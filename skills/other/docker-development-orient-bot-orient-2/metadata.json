@@ -1,0 +1,11 @@
+{
+  "name": "docker-development",
+  "description": "Local Docker development workflow for the Orient. Use when asked to build Docker images, run containers locally, debug container issues, optimize builds, use docker-compose, or troubleshoot containeri",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/docker-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "docker-development-orient-bot-orient-2"
+}

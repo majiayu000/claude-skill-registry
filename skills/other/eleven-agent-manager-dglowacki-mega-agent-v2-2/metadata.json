@@ -1,0 +1,11 @@
+{
+  "name": "eleven-agent-manager",
+  "description": "Manage ElevenLabs Conversational AI agent configuration including prompts, voice settings, MCP servers, and conversation settings. Use when updating agent behavior, voice, or integrations.",
+  "repo": "dglowacki/mega-agent-v2",
+  "path": ".claude/skills/eleven-agent-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dglowacki/mega-agent-v2",
+  "dir_name": "eleven-agent-manager-dglowacki-mega-agent-v2-2"
+}

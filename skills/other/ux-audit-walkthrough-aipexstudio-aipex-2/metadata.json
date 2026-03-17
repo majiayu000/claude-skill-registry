@@ -1,0 +1,11 @@
+{
+  "name": "ux-audit-walkthrough",
+  "description": "Minimalist UX/Interaction Audit Expert that deconstructs complex interactions through cognitive load and operational efficiency lenses. Use this skill when you need to perform a UX walkthrough audit o",
+  "repo": "AIPexStudio/AIPex",
+  "path": "packages/browser-runtime/src/skill/built-in/ux-audit-walkthrough",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AIPexStudio/AIPex",
+  "dir_name": "ux-audit-walkthrough-aipexstudio-aipex-2"
+}

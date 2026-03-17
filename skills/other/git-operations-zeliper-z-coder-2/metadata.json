@@ -1,0 +1,11 @@
+{
+  "name": "git-operations",
+  "description": "git 명령어 사용 및 커밋 생성 가이드",
+  "repo": "Zeliper/z-coder",
+  "path": ".claude/skills/git-operations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Zeliper/z-coder",
+  "dir_name": "git-operations-zeliper-z-coder-2"
+}

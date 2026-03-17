@@ -1,0 +1,11 @@
+{
+  "name": "az-cli-ops",
+  "description": "Azure CLI (az) operations for resource groups, deployments (ARM/Bicep), app services/container apps, ACR images, Key Vault secrets, role assignments, and operational checks. Use when a request involve",
+  "repo": "joelklabo/markdowntown-cli",
+  "path": "codex/skills/az-cli-ops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown-cli",
+  "dir_name": "az-cli-ops-joelklabo-markdowntown-cli-2"
+}

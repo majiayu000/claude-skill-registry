@@ -1,0 +1,11 @@
+{
+  "name": "daem0nmcp-protocol",
+  "description": "Use when Daem0nMCP tools are available - enforces the sacred covenant (commune at session start, seek counsel before changes, inscribe decisions, seal outcomes)",
+  "repo": "DasBluEyedDevil/Daem0n-MCP",
+  "path": ".claude/skills/daem0nmcp-protocol",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DasBluEyedDevil/Daem0n-MCP",
+  "dir_name": "daem0nmcp-protocol-dasblueyeddevil-daem0n-mcp-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "scaffolding-fastapi-dapr",
+  "description": "Build production-grade FastAPI backends with SQLModel, Dapr integration, and JWT authentication.\nUse when building REST APIs with Neon PostgreSQL, implementing event-driven microservices with\nDapr pub",
+  "repo": "AbdullahMalik17/Hacathan-2-",
+  "path": ".claude/skills/scaffolding-fastapi-dapr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AbdullahMalik17/Hacathan-2-",
+  "dir_name": "scaffolding-fastapi-dapr-abdullahmalik17-hacathan-2-2"
+}

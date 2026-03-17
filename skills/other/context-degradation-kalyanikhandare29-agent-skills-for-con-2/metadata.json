@@ -1,0 +1,11 @@
+{
+  "name": "context-degradation",
+  "description": "This skill should be used when the user asks to \"diagnose context problems\", \"fix lost-in-middle issues\", \"debug agent failures\", \"understand context poisoning\", or mentions context degradation, atten",
+  "repo": "Kalyanikhandare29/Agent-Skills-for-Context-Engineering",
+  "path": "skills/context-degradation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Kalyanikhandare29/Agent-Skills-for-Context-Engineering",
+  "dir_name": "context-degradation-kalyanikhandare29-agent-skills-for-con-2"
+}

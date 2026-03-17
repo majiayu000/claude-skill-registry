@@ -1,0 +1,11 @@
+{
+  "name": "research-handoff-oracle",
+  "description": "Use when asked to create a deep-research handoff bundle: do web research, codebase analysis, Gemini Oracle critique, and produce a prompt + context folder on Desktop for another AI agent (include a zi",
+  "repo": "joelklabo/markdowntown-cli",
+  "path": "codex/skills/research-handoff-oracle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown-cli",
+  "dir_name": "research-handoff-oracle-joelklabo-markdowntown-cli-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "timegpt-lab-bootstrap",
+  "description": "Guides TimeGPT lab environment setup including Python dependencies, API key configuration, smoke testing, experiment workflows, and optional CI/CD integration. Inspects environment docs and scripts to",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "002-workspaces/timegpt-lab/skills/timegpt-lab-bootstrap",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "timegpt-lab-bootstrap-intent-solutions-io-plugins-nixtla-2"
+}

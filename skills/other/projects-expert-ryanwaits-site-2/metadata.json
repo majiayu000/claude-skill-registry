@@ -1,0 +1,11 @@
+{
+  "name": "projects-expert",
+  "description": "Deep knowledge about Ryan's open source projects (openpkg-ts, doccov, secondlayer). Use when users ask about these tools, their features, usage, or output.",
+  "repo": "ryanwaits/site",
+  "path": ".claude/skills/projects-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ryanwaits/site",
+  "dir_name": "projects-expert-ryanwaits-site-2"
+}

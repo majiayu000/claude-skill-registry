@@ -1,0 +1,11 @@
+{
+  "name": "webf-infinite-scrolling",
+  "description": "Create high-performance infinite scrolling lists with pull-to-refresh and load-more capabilities using WebFListView. Use when building feed-style UIs, product catalogs, chat messages, or any scrollabl",
+  "repo": "openwebf/webf",
+  "path": "skills/webf-infinite-scrolling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/openwebf/webf",
+  "dir_name": "webf-infinite-scrolling-openwebf-webf-2"
+}

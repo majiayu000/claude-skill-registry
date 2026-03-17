@@ -1,0 +1,11 @@
+{
+  "name": "base",
+  "description": "Universal coding patterns, constraints, TDD workflow, atomic todos",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/supabase-python",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "dir_name": "base-alinaqi-claude-bootstrap-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "api-gateway",
+  "description": "AWS API Gateway for REST and HTTP API management. Use when creating APIs, configuring integrations, setting up authorization, managing stages, implementing rate limiting, or troubleshooting API issues",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/design/go-api-gateway",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "api-gateway-majiayu000-claude-skill-registr-2"
+}

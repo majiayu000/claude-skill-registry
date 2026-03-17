@@ -1,0 +1,11 @@
+{
+  "name": "plan-marshall-config",
+  "description": "Project-level infrastructure configuration for marshal.json",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/plan-marshall/skills/manage-plan-marshall-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "plan-marshall-config-cuioss-plan-marshall-2"
+}

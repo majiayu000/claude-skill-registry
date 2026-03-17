@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-workers-ci-cd",
+  "description": "Complete CI/CD guide for Cloudflare Workers using GitHub Actions and GitLab CI. Use for automated testing, deployment pipelines, preview environments, secrets management, or encountering deployment fa",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-workers/skills/cloudflare-workers-ci-cd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "cloudflare-workers-ci-cd-secondsky-claude-skills-2"
+}

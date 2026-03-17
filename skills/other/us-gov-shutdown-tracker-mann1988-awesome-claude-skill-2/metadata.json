@@ -1,0 +1,11 @@
+{
+  "name": "us-gov-shutdown-tracker",
+  "description": "Track and analyze US government shutdown liquidity impacts by monitoring TGA (Treasury General Account), bank reserves, EFFR, and SOFR data from FRED API. Use when user wants to (1) analyze current or",
+  "repo": "Mann1988/awesome-claude-skills",
+  "path": "us-gov-shutdown-tracker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Mann1988/awesome-claude-skills",
+  "dir_name": "us-gov-shutdown-tracker-mann1988-awesome-claude-skill-2"
+}

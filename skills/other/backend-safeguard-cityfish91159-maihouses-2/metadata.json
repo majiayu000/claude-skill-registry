@@ -1,0 +1,11 @@
+{
+  "name": "backend_safeguard",
+  "description": "Supabase schema validation, RLS enforcement, and API security best practices.",
+  "repo": "cityfish91159/maihouses",
+  "path": ".claude/skills/backend_safeguard",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cityfish91159/maihouses",
+  "dir_name": "backend-safeguard-cityfish91159-maihouses-2"
+}

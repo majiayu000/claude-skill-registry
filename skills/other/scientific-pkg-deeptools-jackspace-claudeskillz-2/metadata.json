@@ -1,0 +1,11 @@
+{
+  "name": "scientific-pkg-deeptools",
+  "description": "NGS analysis toolkit. BAM to bigWig conversion, QC (correlation, PCA, fingerprints), heatmaps/profiles (TSS, peaks), for ChIP-seq, RNA-seq, ATAC-seq visualization.",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/scientific-pkg-deeptools",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "scientific-pkg-deeptools-jackspace-claudeskillz-2"
+}

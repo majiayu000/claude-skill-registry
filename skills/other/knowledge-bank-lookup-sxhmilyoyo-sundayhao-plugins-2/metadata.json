@@ -1,0 +1,11 @@
+{
+  "name": "knowledge-bank-lookup",
+  "description": "Delegates knowledge bank lookups to Explore subagents with reflections-first strategy that learns from past mistakes. Checks /reflections/ directory before documentation to extract documented failures",
+  "repo": "sxhmilyoyo/sundayhao-plugins",
+  "path": "second-brain/skills/knowledge-bank-lookup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sxhmilyoyo/sundayhao-plugins",
+  "dir_name": "knowledge-bank-lookup-sxhmilyoyo-sundayhao-plugins-2"
+}

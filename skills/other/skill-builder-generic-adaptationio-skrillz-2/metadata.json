@@ -1,0 +1,11 @@
+{
+  "name": "skill-builder-generic",
+  "description": "Universal guide for creating production-ready Claude Code skills for any project. Includes 6-step workflow (understand, plan, initialize, edit, package, iterate), progressive disclosure design, YAML f",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/skill-builder-generic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "skill-builder-generic-adaptationio-skrillz-2"
+}

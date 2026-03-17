@@ -1,0 +1,11 @@
+{
+  "name": "gitlab",
+  "description": "Interact with GitLab repositories, merge requests, and APIs using the GITLAB_TOKEN environment variable. Use when working with code hosted on GitLab or managing GitLab resources.",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/openhands/gitlab",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "gitlab-vasic-digital-superagent-2"
+}

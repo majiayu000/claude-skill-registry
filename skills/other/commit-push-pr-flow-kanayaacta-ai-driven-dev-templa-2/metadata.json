@@ -1,0 +1,11 @@
+{
+  "name": "commit-push-pr-flow",
+  "description": "タスク完了後に自動的に実行する必要があるフロースキルです",
+  "repo": "KanayaActa/ai-driven-dev-template",
+  "path": ".claude/skills/commit-push-pr-flow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KanayaActa/ai-driven-dev-template",
+  "dir_name": "commit-push-pr-flow-kanayaacta-ai-driven-dev-templa-2"
+}

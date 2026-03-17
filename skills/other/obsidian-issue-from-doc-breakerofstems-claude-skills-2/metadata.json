@@ -1,0 +1,11 @@
+{
+  "name": "obsidian-issue-from-doc",
+  "description": "Convert Obsidian documents into GitHub-ready issues with structured format. Use when transforming specs or design docs into actionable GitHub issues.",
+  "repo": "BreakerOfStems/claude-skills",
+  "path": "skills/obsidian-issue-from-doc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BreakerOfStems/claude-skills",
+  "dir_name": "obsidian-issue-from-doc-breakerofstems-claude-skills-2"
+}

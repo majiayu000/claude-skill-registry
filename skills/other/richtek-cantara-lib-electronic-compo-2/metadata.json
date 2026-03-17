@@ -1,0 +1,11 @@
+{
+  "name": "richtek",
+  "description": "Richtek Technology MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Richtek power management ICs.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/richtek",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "richtek-cantara-lib-electronic-compo-2"
+}

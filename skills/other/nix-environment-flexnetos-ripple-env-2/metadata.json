@@ -1,0 +1,11 @@
+{
+  "name": "nix-environment",
+  "description": "Nix flakes, home-manager, and reproducible environment management",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/nix-environment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FlexNetOS/ripple-env",
+  "dir_name": "nix-environment-flexnetos-ripple-env-2"
+}

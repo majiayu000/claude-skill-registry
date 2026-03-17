@@ -1,0 +1,11 @@
+{
+  "name": "frontend-implementation",
+  "description": "Frontend Implementation Workflow Agent. Frontend만 구현이 필요한 경우 사용합니다. UI 컴포넌트, 페이지, 상태 관리, API 연동 등을 오케스트레이션합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/frontend-implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "frontend-implementation-shaul1991-shaul-agents-plugin-2"
+}

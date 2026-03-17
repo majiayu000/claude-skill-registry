@@ -1,0 +1,11 @@
+{
+  "name": "backlog-management",
+  "description": "Use this skill when creating or editing issues on Github or when asked to write user-stories or record bugs.",
+  "repo": "wmeints/promptyard",
+  "path": ".claude/skills/backlog-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wmeints/promptyard",
+  "dir_name": "backlog-management-wmeints-promptyard-2"
+}

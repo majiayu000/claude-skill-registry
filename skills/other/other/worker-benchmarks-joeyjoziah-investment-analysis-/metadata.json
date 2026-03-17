@@ -1,0 +1,17 @@
+{
+  "name": "worker-benchmarks",
+  "repo": "JoeyJoziah/investment-analysis-platform",
+  "path": ".claude/v3/@claude-flow/cli/.claude/skills/worker-benchmarks/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/JoeyJoziah/investment-analysis-platform",
+  "dir_name": "worker-benchmarks-joeyjoziah-investment-analysis-",
+  "downloaded_at": "2026-03-01T05:30:28.166254Z",
+  "author": "JoeyJoziah",
+  "source_url": "https://github.com/JoeyJoziah/investment-analysis-platform/blob/main/.claude/v3/@claude-flow/cli/.claude/skills/worker-benchmarks/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JoeyJoziah/investment-analysis-platform/blob/main/.claude/v3/@claude-flow/cli/.claude/skills/worker-benchmarks/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

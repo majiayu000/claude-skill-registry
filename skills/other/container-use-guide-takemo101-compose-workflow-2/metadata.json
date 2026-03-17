@@ -1,0 +1,11 @@
+{
+  "name": "container-use-guide",
+  "description": "container-useを使用したクローズドな開発・テスト環境の構築手順、並行作業ガイドライン、技術スタック別設定例を提供",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/container-use-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "container-use-guide-takemo101-compose-workflow-2"
+}

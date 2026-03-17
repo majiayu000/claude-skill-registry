@@ -1,0 +1,9 @@
+{
+  "name": "security-specialist",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/security-specialist/SKILL.md",
+  "category": "other",
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "security-specialist",
+  "downloaded_at": "2026-02-22T05:35:37.094795Z"
+}

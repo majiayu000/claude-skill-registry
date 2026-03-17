@@ -1,0 +1,11 @@
+{
+  "name": "equation-solver",
+  "description": "A production-grade algebraic equation solver with comprehensive security hardening to prevent template injection, command injection, and other code execution vulnerabilities.",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/cfn-extras/skills/deprecated/equation-solver",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "equation-solver-masharratt-claude-flow-novice-2"
+}

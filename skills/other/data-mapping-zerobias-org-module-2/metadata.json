@@ -1,0 +1,11 @@
+{
+  "name": "data-mapping",
+  "description": "Data mapping patterns for transforming API responses to internal types",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/data-mapping",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "data-mapping-zerobias-org-module-2"
+}

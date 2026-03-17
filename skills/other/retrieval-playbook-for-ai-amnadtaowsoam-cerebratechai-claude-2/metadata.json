@@ -1,0 +1,11 @@
+{
+  "name": "retrieval-playbook-for-ai",
+  "description": "กลยุทธ์การ retrieve context ให้ AI อย่างมีประสิทธิภาพ - เลือกอะไร ไม่เลือกอะไร และจัดลำดับอย่างไร",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "65-context-token-optimization/retrieval-playbook-for-ai",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "retrieval-playbook-for-ai-amnadtaowsoam-cerebratechai-claude-2"
+}

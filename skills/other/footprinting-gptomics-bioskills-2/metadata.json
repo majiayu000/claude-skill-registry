@@ -1,0 +1,11 @@
+{
+  "name": "footprinting",
+  "description": "Detect transcription factor binding sites through footprinting analysis in ATAC-seq data using TOBIAS. Use when identifying TF occupancy patterns within accessible regions, as TF binding protects DNA ",
+  "repo": "GPTomics/bioSkills",
+  "path": "atac-seq/footprinting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "footprinting-gptomics-bioskills-2"
+}

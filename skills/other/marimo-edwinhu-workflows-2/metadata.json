@@ -1,0 +1,11 @@
+{
+  "name": "marimo",
+  "description": "This skill should be used when the user asks to \"use marimo\", \"create a marimo notebook\", \"debug a marimo notebook\", \"inspect cells\", \"understand reactive execution\", \"fix marimo errors\", \"convert fro",
+  "repo": "edwinhu/workflows",
+  "path": "skills/marimo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "marimo-edwinhu-workflows-2"
+}

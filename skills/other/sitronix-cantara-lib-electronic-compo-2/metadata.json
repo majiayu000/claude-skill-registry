@@ -1,0 +1,11 @@
+{
+  "name": "sitronix",
+  "description": "Sitronix Technology MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Sitronix display controllers or SitronixHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/sitronix",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "sitronix-cantara-lib-electronic-compo-2"
+}

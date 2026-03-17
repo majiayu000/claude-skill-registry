@@ -1,0 +1,11 @@
+{
+  "name": "ci-cd-builder",
+  "description": "CI/CD 流水线配置指南。当用户需要配置 GitHub Actions、GitLab CI、自动化测试、自动部署或持续集成/持续部署流程时使用此技能。",
+  "repo": "enoch-robinson/agent-skill-collection",
+  "path": "skills/development/ci-cd-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enoch-robinson/agent-skill-collection",
+  "dir_name": "ci-cd-builder-enoch-robinson-agent-skill-collecti-2"
+}

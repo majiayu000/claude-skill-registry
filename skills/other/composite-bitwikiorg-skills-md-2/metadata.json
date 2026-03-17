@@ -1,0 +1,11 @@
+{
+  "name": "composite",
+  "description": "Imported skill composite from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/langchain/composite",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "composite-bitwikiorg-skills-md-2"
+}

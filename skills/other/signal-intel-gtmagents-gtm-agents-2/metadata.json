@@ -1,0 +1,11 @@
+{
+  "name": "signal-intel",
+  "description": "Use when consolidating intent, product usage, and third-party signals to prioritize ABM actions.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/abm-orchestration/skills/signal-intel",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "signal-intel-gtmagents-gtm-agents-2"
+}

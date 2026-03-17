@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-sorter",
+  "description": "Implement drag-and-drop sorting with UmbSorterController in Umbraco backoffice",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-sorter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-sorter-umbraco-umbraco-cms-backoffi-2"
+}

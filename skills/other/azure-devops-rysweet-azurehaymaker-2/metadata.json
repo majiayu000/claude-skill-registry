@@ -1,0 +1,11 @@
+{
+  "name": "azure-devops",
+  "description": "Complete Azure DevOps automation - boards, repos, pipelines, artifacts",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/azure-devops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "azure-devops-rysweet-azurehaymaker-2"
+}

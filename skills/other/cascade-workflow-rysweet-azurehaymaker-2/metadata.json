@@ -1,0 +1,11 @@
+{
+  "name": "cascade-workflow",
+  "description": "Graceful degradation through cascading fallback strategies - ensures system always completes while maintaining acceptable functionality",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/cascade-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "cascade-workflow-rysweet-azurehaymaker-2"
+}

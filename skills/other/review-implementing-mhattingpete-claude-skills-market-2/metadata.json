@@ -1,0 +1,11 @@
+{
+  "name": "review-implementing",
+  "description": "Process and implement code review feedback systematically. Use when user provides reviewer comments, PR feedback, code review notes, or asks to implement suggestions from reviews.",
+  "repo": "mhattingpete/claude-skills-marketplace",
+  "path": "engineering-workflow-plugin/skills/review-implementing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhattingpete/claude-skills-marketplace",
+  "dir_name": "review-implementing-mhattingpete-claude-skills-market-2"
+}

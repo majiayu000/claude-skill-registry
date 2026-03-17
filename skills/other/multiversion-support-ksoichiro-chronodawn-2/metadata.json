@@ -1,0 +1,11 @@
+{
+  "name": "multiversion-support",
+  "description": "Guide for multi-version Minecraft mod development (1.20.1 + 1.21.1)",
+  "repo": "ksoichiro/ChronoDawn",
+  "path": ".claude/skills/multiversion-support",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ksoichiro/ChronoDawn",
+  "dir_name": "multiversion-support-ksoichiro-chronodawn-2"
+}

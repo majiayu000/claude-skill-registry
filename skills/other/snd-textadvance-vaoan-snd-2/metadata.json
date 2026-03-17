@@ -1,0 +1,11 @@
+{
+  "name": "snd-textadvance",
+  "description": "Use this skill when implementing automatic dialog/cutscene advancement in SND macros using the TextAdvance plugin. Covers dialog control, cutscene skipping, and quest interaction automation.",
+  "repo": "vaoan/SND",
+  "path": ".claude/skills/snd-textadvance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vaoan/SND",
+  "dir_name": "snd-textadvance-vaoan-snd-2"
+}

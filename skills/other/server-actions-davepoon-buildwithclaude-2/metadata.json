@@ -1,0 +1,11 @@
+{
+  "name": "server-actions",
+  "description": "This skill should be used when the user asks about \"Server Actions\", \"form handling in Next.js\", \"mutations\", \"useFormState\", \"useFormStatus\", \"revalidatePath\", \"revalidateTag\", or needs guidance on d",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/nextjs-expert/skills/server-actions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "server-actions-davepoon-buildwithclaude-2"
+}

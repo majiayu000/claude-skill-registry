@@ -1,0 +1,11 @@
+{
+  "name": "journey-mapping",
+  "description": "User and customer journey mapping for experience analysis. Creates journey maps with touchpoints, emotions, pain points, and opportunity identification.",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/business-analysis/journey-mapping",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "journey-mapping-prorise-cool-claude-code-multi-ag-2"
+}

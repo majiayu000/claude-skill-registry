@@ -1,0 +1,9 @@
+{
+  "name": "gpg-signing",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/github-specialist/gpg-signing/SKILL.md",
+  "category": "other",
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "gpg-signing",
+  "downloaded_at": "2026-02-22T05:35:38.576483Z"
+}

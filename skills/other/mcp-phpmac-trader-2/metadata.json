@@ -1,0 +1,11 @@
+{
+  "name": "MCP工具编写",
+  "description": "使用 FastMCP 框架开发交易相关的 MCP 工具, 包括交易所 API 集成(币安/OKX等)、行情数据获取、订单管理等.当需要创建 MCP 服务器或交易工具时触发此技能.",
+  "repo": "phpmac/trader",
+  "path": ".claude/skills/MCP工具编写",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/phpmac/trader",
+  "dir_name": "mcp-phpmac-trader-2"
+}

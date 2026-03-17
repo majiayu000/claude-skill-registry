@@ -1,0 +1,11 @@
+{
+  "name": "automating-calendar",
+  "description": "Automates macOS Calendar via JXA with AppleScript dictionary discovery. Use when asked to \"create calendar events\", \"automate calendar\", \"JXA calendar scripting\", \"EventKit automation\", or \"PyXA calen",
+  "repo": "SpillwaveSolutions/automating-mac-apps-plugin",
+  "path": "plugins/automating-mac-apps-plugin/skills/automating-calendar",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
+  "dir_name": "automating-calendar-spillwavesolutions-automating-mac-apps--2"
+}

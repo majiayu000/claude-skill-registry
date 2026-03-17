@@ -1,0 +1,11 @@
+{
+  "name": "fse-git-workflow",
+  "description": "Guide for committing to Oh My Brand! using Conventional Commits, Husky hooks, and linting. Use this when making commits, pushing to remote, or fixing pre-commit linting failures.",
+  "repo": "WesleySmits/oh-my-brand-wp-fse",
+  "path": ".github/skills/fse-git-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/oh-my-brand-wp-fse",
+  "dir_name": "fse-git-workflow-wesleysmits-oh-my-brand-wp-fse-2"
+}

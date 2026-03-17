@@ -1,0 +1,11 @@
+{
+  "name": "telink",
+  "description": "Telink Semiconductor MPN encoding patterns, BLE/Zigbee SoC decoding, and handler guidance. Use when working with Telink wireless components or TelinkHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/telink",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "telink-cantara-lib-electronic-compo-2"
+}

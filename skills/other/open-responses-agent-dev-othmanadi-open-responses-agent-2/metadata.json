@@ -1,0 +1,11 @@
+{
+  "name": "open-responses-agent-dev",
+  "description": "Build autonomous agents using Open Responses API via HuggingFace Inference Providers. Single unified endpoint with multi-provider routing via model suffixes. Use the OpenAI SDK with custom base_url fo",
+  "repo": "OthmanAdi/open-responses-agent-skill",
+  "path": "skills/open-responses-agent-dev",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OthmanAdi/open-responses-agent-skill",
+  "dir_name": "open-responses-agent-dev-othmanadi-open-responses-agent-2"
+}

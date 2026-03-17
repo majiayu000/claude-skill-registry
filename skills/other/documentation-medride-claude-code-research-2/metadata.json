@@ -1,0 +1,11 @@
+{
+  "name": "documentation",
+  "description": "Write clear documentation following team standards",
+  "repo": "medride/claude-code-research",
+  "path": ".claude/skills/documentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/medride/claude-code-research",
+  "dir_name": "documentation-medride-claude-code-research-2"
+}

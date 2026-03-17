@@ -1,0 +1,11 @@
+{
+  "name": "timeline-forensics",
+  "description": "Create comprehensive forensic timelines from multiple data sources. Use when\nreconstructing event sequences, correlating activities across sources, or\nvisualizing incident progression. Supports super ",
+  "repo": "SherifEldeeb/agentskills",
+  "path": "skills/forensics/timeline-forensics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SherifEldeeb/agentskills",
+  "dir_name": "timeline-forensics-sherifeldeeb-agentskills-2"
+}

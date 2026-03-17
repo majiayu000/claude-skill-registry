@@ -1,0 +1,11 @@
+{
+  "name": "k8s-sre",
+  "description": "Kubernetes SRE debugging and incident investigation for pod failures, crashes, and service issues.\n\nUse when: (1) Pods not starting, stuck, or failing (CrashLoopBackOff, ImagePullBackOff, OOMKilled, P",
+  "repo": "ionfury/homelab",
+  "path": ".claude/skills/k8s-sre",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ionfury/homelab",
+  "dir_name": "k8s-sre-ionfury-homelab-2"
+}

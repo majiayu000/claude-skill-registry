@@ -1,0 +1,11 @@
+{
+  "name": "review-synthesis",
+  "description": "Aggregate multi-reviewer feedback into consolidated, actionable recommendations. Use when relevant to the task.",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "plugins/marketing/skills/review-synthesis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jmagly/ai-writing-guide",
+  "dir_name": "review-synthesis-jmagly-ai-writing-guide-2"
+}

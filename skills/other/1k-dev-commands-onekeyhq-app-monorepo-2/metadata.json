@@ -1,0 +1,11 @@
+{
+  "name": "1k-dev-commands",
+  "description": "Development commands for OneKey monorepo. Use when running dev servers, building apps, linting, testing, or troubleshooting build issues. Triggers on yarn, dev, build, lint, test, desktop, mobile, web",
+  "repo": "OneKeyHQ/app-monorepo",
+  "path": ".claude/skills/1k-dev-commands",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OneKeyHQ/app-monorepo",
+  "dir_name": "1k-dev-commands-onekeyhq-app-monorepo-2"
+}

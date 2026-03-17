@@ -1,0 +1,11 @@
+{
+  "name": "reviewing-notes",
+  "description": "Audit notes for quality issues. Use when asked to \"review notes\", \"check content quality\", \"audit my knowledge base\", or \"find broken links\".",
+  "repo": "alexanderop/second-brain-nuxt",
+  "path": ".claude/skills/reviewing-notes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alexanderop/second-brain-nuxt",
+  "dir_name": "reviewing-notes-alexanderop-second-brain-nuxt-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "edge-stack",
+  "description": "Modern edge-native web stack: Hono + htmx + UnoCSS + Cloudflare D1. Use when: building\nserver-rendered apps with interactivity, rapid prototyping, CRUD apps, landing pages,\nmarketplaces. Zero cold sta",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/edge-stack",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "edge-stack-timequity-vibe-coder-2"
+}

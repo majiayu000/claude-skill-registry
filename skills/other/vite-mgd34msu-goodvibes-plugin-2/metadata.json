@@ -1,0 +1,11 @@
+{
+  "name": "vite",
+  "description": "Builds web applications with Vite including dev server, production builds, plugins, and configuration. Use when scaffolding projects, configuring build tools, optimizing bundles, or setting up develop",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/testing/vitest",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "vite-mgd34msu-goodvibes-plugin-2"
+}

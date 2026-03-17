@@ -1,0 +1,11 @@
+{
+  "name": "cli-patterns",
+  "description": "Patterns for building Battery CLI commands with Commander.js. Use this skill when creating new CLI commands, adding options/flags, formatting output, handling errors, or implementing interactive promp",
+  "repo": "ADLenehan/battery",
+  "path": ".claude/skills/cli-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ADLenehan/battery",
+  "dir_name": "cli-patterns-adlenehan-battery-2"
+}

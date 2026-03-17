@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-preview-app-provider",
+  "description": "Implement preview app providers in Umbraco backoffice using official docs",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-preview-app-provider",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-preview-app-provider-umbraco-umbraco-cms-backoffi-2"
+}

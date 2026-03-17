@@ -1,0 +1,11 @@
+{
+  "name": "beeper",
+  "description": "Search and browse local Beeper chat history (threads, messages, full-text search).",
+  "repo": "clawdbot/skills",
+  "path": "skills/krausefx/beeper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "beeper-clawdbot-skills-2"
+}

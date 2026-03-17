@@ -1,0 +1,11 @@
+{
+  "name": "pre-flight-check",
+  "description": "Checks essential information and project status before starting a task.",
+  "repo": "munlucky/code-cafe-manager",
+  "path": ".claude/skills/pre-flight-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/munlucky/code-cafe-manager",
+  "dir_name": "pre-flight-check-munlucky-code-cafe-manager-2"
+}

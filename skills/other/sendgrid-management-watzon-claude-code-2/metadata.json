@@ -1,0 +1,11 @@
+{
+  "name": "sendgrid-management",
+  "description": "Use when managing SendGrid email services via CLI - sending emails, managing templates, contacts, lists,\nsuppressions, domains, API keys, webhooks, and viewing stats.\nTriggers: \"sendgrid send\", \"manag",
+  "repo": "watzon/claude-code",
+  "path": "skills/sendgrid-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/watzon/claude-code",
+  "dir_name": "sendgrid-management-watzon-claude-code-2"
+}

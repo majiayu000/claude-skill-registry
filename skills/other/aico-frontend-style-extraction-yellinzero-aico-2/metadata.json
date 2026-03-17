@@ -1,0 +1,11 @@
+{
+  "name": "aico-frontend-style-extraction",
+  "description": "Extract design tokens (colors, typography, spacing, effects) from reference website or screenshot to create project design system.\n\nUNIQUE VALUE: Creates standardized design-system.md file with all de",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-frontend-style-extraction",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-frontend-style-extraction-yellinzero-aico-2"
+}

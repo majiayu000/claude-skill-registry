@@ -1,0 +1,11 @@
+{
+  "name": "dst-data",
+  "description": "Fetch actual data from Danmarks Statistik API and store in DuckDB. Use when user wants to download and store specific DST table data for analysis.",
+  "repo": "mikkelkrogsholm/dst-skills",
+  "path": ".claude/skills/dst-data",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mikkelkrogsholm/dst-skills",
+  "dir_name": "dst-data-mikkelkrogsholm-dst-skills-2"
+}

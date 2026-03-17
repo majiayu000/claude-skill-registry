@@ -1,0 +1,11 @@
+{
+  "name": "exo-distributed",
+  "description": "Distributed LLM inference across Apple Silicon clusters with exo. Run models across Mac Studios via Thunderbolt RDMA, auto peer discovery, and MLX sharding. Use for multi-device inference, model paral",
+  "repo": "plurigrid/asi",
+  "path": "skills/exo-distributed",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "exo-distributed-plurigrid-asi-2"
+}

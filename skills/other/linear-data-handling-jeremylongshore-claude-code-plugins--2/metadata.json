@@ -1,0 +1,11 @@
+{
+  "name": "linear-data-handling",
+  "description": "Data synchronization, backup, and consistency patterns for Linear.\nUse when implementing data sync, creating backups,\nor ensuring data consistency across systems.\nTrigger with phrases like \"linear dat",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/linear-pack/skills/linear-data-handling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "linear-data-handling-jeremylongshore-claude-code-plugins--2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "pr-workflow",
+  "description": "Comprehensive knowledge for creating, managing, and merging pull requests with Jira integration, following best practices for code review, deployment, and team collaboration",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/jira-orchestrator/skills/pr-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "pr-workflow-lobbi-docs-claude-2"
+}

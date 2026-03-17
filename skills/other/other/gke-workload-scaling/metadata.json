@@ -1,0 +1,9 @@
+{
+  "name": "gke-workload-scaling",
+  "repo": "GoogleCloudPlatform/gke-mcp",
+  "path": "skills/gke-workload-scaling/SKILL.md",
+  "category": "other",
+  "source": "github.com/GoogleCloudPlatform/gke-mcp",
+  "dir_name": "gke-workload-scaling",
+  "downloaded_at": "2026-02-15T05:10:07.240201Z"
+}

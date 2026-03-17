@@ -1,0 +1,11 @@
+{
+  "name": "travel-planner",
+  "description": "This skill should be used whenever users need help planning trips, creating travel itineraries, managing travel budgets, or seeking destination advice. On first use, collects comprehensive travel pref",
+  "repo": "merllinsbeard/ai-claude-skills-collection",
+  "path": "meta/travel-planner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/merllinsbeard/ai-claude-skills-collection",
+  "dir_name": "travel-planner-merllinsbeard-ai-claude-skills-col-2"
+}

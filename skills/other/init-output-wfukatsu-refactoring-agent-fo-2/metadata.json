@@ -1,0 +1,11 @@
+{
+  "name": "init-output",
+  "description": "出力ディレクトリ初期化 - リファクタリング分析用の出力ディレクトリ構造を作成。/init-output [出力パス] で呼び出し。",
+  "repo": "wfukatsu/refactoring-agent-for-claude-code",
+  "path": ".claude/skills/init-output",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wfukatsu/refactoring-agent-for-claude-code",
+  "dir_name": "init-output-wfukatsu-refactoring-agent-fo-2"
+}

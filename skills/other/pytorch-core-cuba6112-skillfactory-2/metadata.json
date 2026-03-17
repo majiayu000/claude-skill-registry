@@ -1,0 +1,11 @@
+{
+  "name": "pytorch-core",
+  "description": "Core PyTorch fundamentals including tensor operations, autograd, nn.Module architecture, and training loop orchestration. Covers optimizations like pin_memory and lazy module initialization. (pytorch,",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/pytorch-core",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "pytorch-core-cuba6112-skillfactory-2"
+}

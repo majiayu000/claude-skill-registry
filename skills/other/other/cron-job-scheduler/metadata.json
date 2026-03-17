@@ -1,0 +1,9 @@
+{
+  "name": "cron-job-scheduler",
+  "repo": "Dicklesworthstone/pi_agent_rust",
+  "path": "tests/ext_conformance/artifacts/plugins-community/skills/06-backend-dev/cron-job-scheduler/SKILL.md",
+  "category": "other",
+  "source": "github.com/Dicklesworthstone/pi_agent_rust",
+  "dir_name": "cron-job-scheduler",
+  "downloaded_at": "2026-02-15T05:02:06.216419Z"
+}

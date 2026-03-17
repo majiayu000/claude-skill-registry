@@ -1,0 +1,11 @@
+{
+  "name": "read-external",
+  "description": "Read-only access to external repositories for cross-repo context. Use when you need to reference code, patterns, or documentation from other local repositories.",
+  "repo": "UnaMentis/unamentis",
+  "path": ".claude/skills/read-external",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/UnaMentis/unamentis",
+  "dir_name": "read-external-unamentis-unamentis-2"
+}

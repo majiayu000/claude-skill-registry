@@ -1,0 +1,11 @@
+{
+  "name": "fever-sync-specialist",
+  "description": "Sync and integrate Fever Partners API for plans, reviews, attendees, and venues. Use when implementing Fever data sync, debugging API issues, or building review/analytics features.",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/fever-sync-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "fever-sync-specialist-javeedishaq-ai-workflow-orchestr-2"
+}

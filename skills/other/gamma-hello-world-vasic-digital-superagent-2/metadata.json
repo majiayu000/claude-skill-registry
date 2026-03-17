@@ -1,0 +1,11 @@
+{
+  "name": "gamma-hello-world",
+  "description": "Create a minimal working Gamma example.\nUse when starting a new Gamma integration, testing your setup,\nor learning basic Gamma API patterns.\nTrigger with phrases like \"gamma hello world\", \"gamma examp",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/gamma-pack/gamma-hello-world",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "gamma-hello-world-vasic-digital-superagent-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "langchain-deep-research",
+  "description": "Run LangChain Open Deep Research agent for iterative web research and comprehensive reports. Requires LLM API keys and search API (e.g., OPENAI_API_KEY, TAVILY_API_KEY).",
+  "repo": "closedloop-technologies/awesome-deep-researchers",
+  "path": ".claude/skills/langchain-deep-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/closedloop-technologies/awesome-deep-researchers",
+  "dir_name": "langchain-deep-research-closedloop-technolog-awesome-deep-researc-2"
+}

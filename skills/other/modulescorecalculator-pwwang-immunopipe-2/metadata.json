@@ -1,0 +1,11 @@
+{
+  "name": "modulescorecalculator",
+  "description": "Configuration skill for immunopipe process",
+  "repo": "pwwang/immunopipe",
+  "path": "skills/modulescorecalculator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pwwang/immunopipe",
+  "dir_name": "modulescorecalculator-pwwang-immunopipe-2"
+}

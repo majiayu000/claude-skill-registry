@@ -1,0 +1,11 @@
+{
+  "name": "uv-dependency-management",
+  "description": "Manage Python project dependencies with uv. Learn how to add, remove, and update\ndependencies, organize them into groups (dev, test, lint, docs), pin versions,\nhandle conflicts, and manage lock files ",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/uv-dependency-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "uv-dependency-management-dawiddutoit-custom-claude-2"
+}

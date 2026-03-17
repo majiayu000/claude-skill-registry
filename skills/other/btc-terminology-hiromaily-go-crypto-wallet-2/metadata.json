@@ -1,0 +1,11 @@
+{
+  "name": "btc-terminology",
+  "description": "Critical Bitcoin terminology rules to prevent confusion between bech32m (encoding) and taproot (address type). Use when working on BTC-related code, config files, or shell scripts.",
+  "repo": "hiromaily/go-crypto-wallet",
+  "path": ".claude/skills/btc-terminology",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hiromaily/go-crypto-wallet",
+  "dir_name": "btc-terminology-hiromaily-go-crypto-wallet-2"
+}

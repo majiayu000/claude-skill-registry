@@ -1,0 +1,11 @@
+{
+  "name": "app-intents",
+  "description": "App Intents framework for Siri, Shortcuts, Spotlight, Action Button, and system integration. Use when user asks about Siri, Shortcuts, App Intents, voice commands, Action Button, or system integration",
+  "repo": "bluewaves-creations/bluewaves-skills",
+  "path": "plugins/swift-apple-dev/skills/app-intents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bluewaves-creations/bluewaves-skills",
+  "dir_name": "app-intents-bluewaves-creations-bluewaves-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "review-opus",
+  "description": "Deep code/plan review for architecture, subtle bugs, and test quality. Use after sonnet review for thorough analysis.",
+  "repo": "cskwork/llm-review",
+  "path": "plugins/claude-codex/skills/review-opus",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cskwork/llm-review",
+  "dir_name": "review-opus-cskwork-llm-review-2"
+}

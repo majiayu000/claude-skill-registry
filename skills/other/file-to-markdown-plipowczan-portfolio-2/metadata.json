@@ -1,0 +1,11 @@
+{
+  "name": "file-to-markdown",
+  "description": "Convert any file to markdown format using the markitdown library. Use this skill when users need to convert documents (PDF, DOCX, XLSX, PPTX, images, HTML, CSV, JSON, XML, audio files, etc.) into mark",
+  "repo": "plipowczan/portfolio",
+  "path": ".claude/skills/file-to-markdown",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plipowczan/portfolio",
+  "dir_name": "file-to-markdown-plipowczan-portfolio-2"
+}

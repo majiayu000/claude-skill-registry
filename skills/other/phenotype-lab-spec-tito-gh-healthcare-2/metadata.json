@@ -1,0 +1,11 @@
+{
+  "name": "phenotype-lab-spec",
+  "description": "研究対象集団・アウトカムのフェノタイプ定義と検査値活用仕様を作成する。\nコンピューター実行可能なアルゴリズム形式で記述し、バリデーション計画を含める。\n",
+  "repo": "tito-gh/healthcare",
+  "path": ".claude/skills/phenotype-lab-spec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tito-gh/healthcare",
+  "dir_name": "phenotype-lab-spec-tito-gh-healthcare-2"
+}

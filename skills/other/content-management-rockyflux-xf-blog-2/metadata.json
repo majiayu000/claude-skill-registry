@@ -1,0 +1,11 @@
+{
+  "name": "content-management",
+  "description": "管理博客内容发布流程，包括文章分类、标签管理、归档更新、内容审核等。使用时发布新文章、更新内容索引、管理内容组织时。",
+  "repo": "rockyflux/xf-blog",
+  "path": ".claude/skills/content-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rockyflux/xf-blog",
+  "dir_name": "content-management-rockyflux-xf-blog-2"
+}

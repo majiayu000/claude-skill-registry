@@ -1,0 +1,11 @@
+{
+  "name": "web-scraping",
+  "description": "Structured data extraction from web pages using claude-in-chrome MCP with sequential-thinking planning. Focus on READ operations, data transformation, and pagination handling for multi-page extraction",
+  "repo": "DNYoussef/context-cascade",
+  "path": "skills/tooling/web-scraping",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DNYoussef/context-cascade",
+  "dir_name": "web-scraping-dnyoussef-context-cascade-2"
+}

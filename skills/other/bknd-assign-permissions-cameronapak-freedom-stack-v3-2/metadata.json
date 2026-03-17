@@ -1,0 +1,11 @@
+{
+  "name": "bknd-assign-permissions",
+  "description": "Use when assigning permissions to roles in Bknd. Covers permission syntax (simple strings, extended format), permission effects (allow/deny), policies with conditions, entity-specific permissions, and",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-assign-permissions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-assign-permissions-cameronapak-freedom-stack-v3-2"
+}

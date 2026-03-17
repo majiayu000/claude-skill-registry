@@ -1,0 +1,11 @@
+{
+  "name": "groq-install-auth",
+  "description": "Install and configure Groq SDK/CLI authentication.\nUse when setting up a new Groq integration, configuring API keys,\nor initializing Groq in your project.\nTrigger with phrases like \"install groq\", \"se",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/groq-pack/groq-install-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "groq-install-auth-vasic-digital-superagent-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "auditing-permission-ux",
+  "description": "Audits notification permission request flows. Use when reviewing or improving permission prompts, settings paths, or denial handling.",
+  "repo": "clix-so/skills",
+  "path": "skills/auditing-permission-ux",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clix-so/skills",
+  "dir_name": "auditing-permission-ux-clix-so-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "networking-essentials",
+  "description": "The assistant provides comprehensive networking fundamentals including OSI model, TCP/IP, cabling, VLAN configuration, and Cisco router/switch commands. Activate when users ask about \"network basics,\"",
+  "repo": "zebbern/SecOps-CLI-Guides",
+  "path": "skills/networking-essentials",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zebbern/SecOps-CLI-Guides",
+  "dir_name": "networking-essentials-zebbern-secops-cli-guides-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "design-microservices",
+  "description": "マイクロサービス設計エージェント - ターゲットアーキテクチャ、変換計画、運用計画の策定。/design-microservices [対象パス] で呼び出し。",
+  "repo": "wfukatsu/refactoring-agent-for-claude-code",
+  "path": ".claude/skills/design-microservices",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wfukatsu/refactoring-agent-for-claude-code",
+  "dir_name": "design-microservices-wfukatsu-refactoring-agent-fo-2"
+}

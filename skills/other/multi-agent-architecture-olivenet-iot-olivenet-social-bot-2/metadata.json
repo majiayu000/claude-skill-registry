@@ -1,0 +1,11 @@
+{
+  "name": "multi-agent-architecture",
+  "description": "Multi-agent sistem mimarisi referansi. Use when working with agents, pipelines, or understanding the content generation workflow.",
+  "repo": "olivenet-iot/olivenet-social-bot",
+  "path": ".claude/skills/multi-agent-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/olivenet-iot/olivenet-social-bot",
+  "dir_name": "multi-agent-architecture-olivenet-iot-olivenet-social-bot-2"
+}

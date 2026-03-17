@@ -1,0 +1,11 @@
+{
+  "name": "querying-notion-programmatically",
+  "description": "Run Notion MCP searches for pages/blocks and fetch page comments via mcpc-backed Python wrappers. Use when Codex needs deterministic, file-backed Notion queries (filters come later).\n",
+  "repo": "aufrank/agent-skills",
+  "path": "skills/querying-notion-programmatically",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aufrank/agent-skills",
+  "dir_name": "querying-notion-programmatically-aufrank-agent-skills-2"
+}

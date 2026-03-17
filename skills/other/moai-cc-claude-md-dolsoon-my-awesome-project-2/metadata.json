@@ -1,0 +1,11 @@
+{
+  "name": "moai-cc-claude-md",
+  "description": "Claude Code Markdown integration, documentation generation, and structured content patterns. Use when generating documentation, managing markdown content, or creating structured reports.",
+  "repo": "dolsoon/my-awesome-project",
+  "path": ".claude/skills/moai-cc-claude-md",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dolsoon/my-awesome-project",
+  "dir_name": "moai-cc-claude-md-dolsoon-my-awesome-project-2"
+}

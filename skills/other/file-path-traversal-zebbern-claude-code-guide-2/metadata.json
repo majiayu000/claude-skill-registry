@@ -1,0 +1,11 @@
+{
+  "name": "file-path-traversal",
+  "description": "This skill should be used when the user asks to \"test for directory traversal\", \"exploit path traversal vulnerabilities\", \"read arbitrary files through web applications\", \"find LFI vulnerabilities\", o",
+  "repo": "zebbern/claude-code-guide",
+  "path": "skills/file-path-traversal",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zebbern/claude-code-guide",
+  "dir_name": "file-path-traversal-zebbern-claude-code-guide-2"
+}

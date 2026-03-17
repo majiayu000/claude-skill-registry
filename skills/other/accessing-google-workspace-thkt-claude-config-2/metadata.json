@@ -1,0 +1,11 @@
+{
+  "name": "accessing-google-workspace",
+  "description": "Access Google Sheets and Docs via gcloud CLI. Use when user shares a Google Sheets/Docs URL or mentions スプレッドシート, Sheets, Docs, Google ドキュメント.\n",
+  "repo": "thkt/claude-config",
+  "path": ".ja/skills/accessing-google-workspace",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/thkt/claude-config",
+  "dir_name": "accessing-google-workspace-thkt-claude-config-2"
+}

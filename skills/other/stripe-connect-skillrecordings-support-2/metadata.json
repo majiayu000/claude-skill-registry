@@ -1,0 +1,11 @@
+{
+  "name": "stripe-connect",
+  "description": "Implement Stripe Connect OAuth for querying connected accounts. Use when onboarding apps to Connect or querying payment/subscription data on their behalf.",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/stripe-connect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "stripe-connect-skillrecordings-support-2"
+}

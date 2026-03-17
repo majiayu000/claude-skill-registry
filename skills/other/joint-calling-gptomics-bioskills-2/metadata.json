@@ -1,0 +1,11 @@
+{
+  "name": "joint-calling",
+  "description": "Joint genotype calling across multiple samples using GATK CombineGVCFs and GenotypeGVCFs. Essential for cohort studies, population genetics, and leveraging VQSR.",
+  "repo": "GPTomics/bioSkills",
+  "path": "variant-calling/joint-calling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "joint-calling-gptomics-bioskills-2"
+}

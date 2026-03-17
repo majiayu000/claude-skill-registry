@@ -1,0 +1,11 @@
+{
+  "name": "adynato-mobile-api",
+  "description": "API integration patterns for Adynato mobile apps. Covers data fetching with TanStack Query, authentication flows, offline support, error handling, and optimistic updates in React Native/Expo apps. Use",
+  "repo": "adynato/skills",
+  "path": "skills/adynato-mobile-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adynato/skills",
+  "dir_name": "adynato-mobile-api-adynato-skills-2"
+}

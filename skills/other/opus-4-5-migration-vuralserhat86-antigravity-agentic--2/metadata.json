@@ -1,0 +1,11 @@
+{
+  "name": "opus_4_5_migration",
+  "description": "Migrate prompts and code from Claude Sonnet 4.0, Sonnet 4.5, or Opus 4.1 to Opus 4.5. Use when the user wants to update their codebase, prompts, or API calls to use Opus 4.5. Handles model string upda",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/opus_4_5_migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "opus-4-5-migration-vuralserhat86-antigravity-agentic--2"
+}

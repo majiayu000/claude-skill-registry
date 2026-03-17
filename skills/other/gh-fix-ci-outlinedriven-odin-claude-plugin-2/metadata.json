@@ -1,0 +1,11 @@
+{
+  "name": "gh-fix-ci",
+  "description": "Inspect GitHub PR checks with gh, pull failing GitHub Actions logs, summarize failure context, then create a fix plan and implement after user approval. Use when a user asks to debug or fix failing PR",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/gh-fix-ci",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "gh-fix-ci-outlinedriven-odin-claude-plugin-2"
+}

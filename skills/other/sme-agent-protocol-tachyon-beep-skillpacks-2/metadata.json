@@ -1,0 +1,11 @@
+{
+  "name": "sme-agent-protocol",
+  "description": "Mandatory protocol for all SME (Subject Matter Expert) agents. Defines fact-finding requirements, output contracts, confidence/risk assessment, and qualification of advice.",
+  "repo": "tachyon-beep/skillpacks",
+  "path": "plugins/meta-sme-protocol/skills/sme-agent-protocol",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tachyon-beep/skillpacks",
+  "dir_name": "sme-agent-protocol-tachyon-beep-skillpacks-2"
+}

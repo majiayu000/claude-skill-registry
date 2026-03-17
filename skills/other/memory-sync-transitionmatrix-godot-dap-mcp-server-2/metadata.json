@@ -1,0 +1,11 @@
+{
+  "name": "memory-sync",
+  "description": "Guided workflow for maintaining strategic redundancy between Serena memories and project documentation. Use after significant code changes, phase completions, or when new architectural patterns are di",
+  "repo": "TransitionMatrix/godot-dap-mcp-server",
+  "path": ".claude/skills/memory-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TransitionMatrix/godot-dap-mcp-server",
+  "dir_name": "memory-sync-transitionmatrix-godot-dap-mcp-server-2"
+}

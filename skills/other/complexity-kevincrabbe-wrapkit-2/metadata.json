@@ -1,0 +1,11 @@
+{
+  "name": "complexity",
+  "description": "Code complexity guidelines to keep cyclomatic complexity below 6 using strategy patterns or dispatch tables. Use when writing or refactoring functions with complex branching logic.",
+  "repo": "kevincrabbe/wrapkit",
+  "path": ".claude/skills/complexity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kevincrabbe/wrapkit",
+  "dir_name": "complexity-kevincrabbe-wrapkit-2"
+}

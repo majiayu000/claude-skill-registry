@@ -1,0 +1,11 @@
+{
+  "name": "vercel-blob",
+  "description": "Integrate Vercel Blob for file uploads and CDN-delivered assets in Next.js. Supports client-side uploads with presigned URLs and multipart transfers for large files.\n\nUse when implementing file upload",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/vercel-blob",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "vercel-blob-jezweb-claude-skills-2"
+}

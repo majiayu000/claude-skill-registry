@@ -1,0 +1,11 @@
+{
+  "name": "github-repo-hunter",
+  "description": "Autonomous GitHub repository discovery and integration agent that hunts relevant open-source projects for BidDeed.AI (foreclosure auctions) and Life OS (productivity/ADHD). Searches GitHub for repos m",
+  "repo": "breverdbidder/life-os",
+  "path": ".claude/skills/github-repo-hunter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/breverdbidder/life-os",
+  "dir_name": "github-repo-hunter-breverdbidder-life-os-2"
+}

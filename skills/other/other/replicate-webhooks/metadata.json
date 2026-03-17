@@ -1,0 +1,9 @@
+{
+  "name": "replicate-webhooks",
+  "repo": "hookdeck/webhook-skills",
+  "path": "skills/replicate-webhooks/SKILL.md",
+  "category": "other",
+  "source": "github.com/hookdeck/webhook-skills",
+  "dir_name": "replicate-webhooks",
+  "downloaded_at": "2026-02-22T07:28:24.380359Z"
+}

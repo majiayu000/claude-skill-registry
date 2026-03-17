@@ -1,0 +1,11 @@
+{
+  "name": "autoskill",
+  "description": "Analyze coding sessions to detect corrections and preferences, then propose targeted improvements to Skills used in the session. Use this skill when the user asks to \"learn from this session\", \"update",
+  "repo": "mhalder/dotfiles",
+  "path": "claude/.claude/skills/autoskill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhalder/dotfiles",
+  "dir_name": "autoskill-mhalder-dotfiles-2"
+}

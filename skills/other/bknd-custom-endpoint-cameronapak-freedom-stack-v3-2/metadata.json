@@ -1,0 +1,11 @@
+{
+  "name": "bknd-custom-endpoint",
+  "description": "Use when creating custom API endpoints in Bknd. Covers HTTP triggers with Flows, plugin routes via onServerInit, request/response handling, sync vs async modes, accessing request data, and returning c",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-custom-endpoint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-custom-endpoint-cameronapak-freedom-stack-v3-2"
+}

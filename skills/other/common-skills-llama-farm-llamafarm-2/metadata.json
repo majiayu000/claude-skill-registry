@@ -1,0 +1,11 @@
+{
+  "name": "common-skills",
+  "description": "Best practices for the Common utilities package in LlamaFarm. Covers HuggingFace Hub integration, GGUF model management, and shared utilities.",
+  "repo": "llama-farm/llamafarm",
+  "path": ".claude/skills/common-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/llama-farm/llamafarm",
+  "dir_name": "common-skills-llama-farm-llamafarm-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "monorepo-architect",
+  "description": "**MONOREPO ARCHITECT**: '모노레포', '워크스페이스', '패키지 구조', '폴더 구조', 'shared', '공유 코드', '의존성', 'turborepo', 'pnpm' 요청 시 자동 발동. pnpm-workspace.yaml/turbo.json/packages/** 작업 시 자동 적용. 의존성 방향 규칙 검증.",
+  "repo": "monicajeon28/GMcruise",
+  "path": ".claude/skills/monorepo-architect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/monicajeon28/GMcruise",
+  "dir_name": "monorepo-architect-monicajeon28-gmcruise-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "wget-reader",
+  "description": "Fetch data from URLs. Use when asked to download content, fetch remote files, or read web data.",
+  "repo": "beshkenadze/claude-skills-marketplace",
+  "path": "skills/utility/wget-reader",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/beshkenadze/claude-skills-marketplace",
+  "dir_name": "wget-reader-beshkenadze-claude-skills-market-2"
+}

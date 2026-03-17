@@ -1,0 +1,11 @@
+{
+  "name": "anthropic-prompt-engineer",
+  "description": "Master Anthropic's prompt engineering techniques to generate new prompts or improve existing ones using best practices for Claude AI models.",
+  "repo": "zircote/.claude",
+  "path": "skills/anthropic-prompt-engineer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zircote/.claude",
+  "dir_name": "anthropic-prompt-engineer-zircote-claude-2"
+}

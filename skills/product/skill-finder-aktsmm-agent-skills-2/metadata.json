@@ -1,0 +1,22 @@
+{
+  "name": "skill-finder",
+  "description": "Full-featured Agent Skills management: Search 35+ skills, install locally, star favorites, update from sources. Supports tag search (#azure #bicep), category filtering, and similar skill recommendatio",
+  "repo": "aktsmm/Agent-Skills",
+  "path": "skill-finder/SKILL.md",
+  "github_branch": "master",
+  "category": "product",
+  "tags": [
+    "skill",
+    "finder"
+  ],
+  "stars": 0,
+  "source": "local",
+  "dir_name": "skill-finder-aktsmm-agent-skills-2",
+  "author": "aktsmm",
+  "source_url": "https://github.com/aktsmm/Agent-Skills/blob/master/skill-finder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aktsmm/Agent-Skills/blob/master/skill-finder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

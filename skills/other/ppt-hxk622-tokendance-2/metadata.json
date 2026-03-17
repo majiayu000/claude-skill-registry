@@ -1,0 +1,11 @@
+{
+  "name": "ppt",
+  "description": "智能 PPT 生成能力，支持从研究报告一键生成演示文稿。基于 Marp Markdown 引擎，支持专业模板、数据图表、PDF 导出。适用于商业提案、项目汇报、产品介绍、培训课件、融资路演等场景。",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/ppt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "ppt-hxk622-tokendance-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "capability-mapping",
+  "description": "Business capability modeling using BABOK Business Capability Analysis. Creates hierarchical capability maps (L1-L3) linking strategy to architecture with Mermaid visualization.",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/business-analysis/capability-mapping",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "capability-mapping-prorise-cool-claude-code-multi-ag-2"
+}

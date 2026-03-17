@@ -1,0 +1,9 @@
+{
+  "name": "test-playwright",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/test:playwright/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "test-playwright",
+  "downloaded_at": "2026-02-15T07:49:48.354380Z"
+}

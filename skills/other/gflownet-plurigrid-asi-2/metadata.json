@@ -1,0 +1,11 @@
+{
+  "name": "gflownet",
+  "description": "Bengio's GFlowNets: Generative Flow Networks that sample proportionally to reward. Diversity over maximization for causal discovery and molecule design.",
+  "repo": "plurigrid/asi",
+  "path": "skills/gflownet",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "gflownet-plurigrid-asi-2"
+}

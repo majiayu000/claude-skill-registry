@@ -1,0 +1,11 @@
+{
+  "name": "pokemon-meta-analysis",
+  "description": "Use when analyzing Pokemon TCG Pocket meta trends, competitive tier lists, deck archetypes, or strategic matchups. Activates when user asks about meta analysis, tier lists, competitive play, or strate",
+  "repo": "briansunter/pokeclaude",
+  "path": "skills/pokemon-meta-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/briansunter/pokeclaude",
+  "dir_name": "pokemon-meta-analysis-briansunter-pokeclaude-2"
+}

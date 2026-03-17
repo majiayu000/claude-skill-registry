@@ -1,0 +1,11 @@
+{
+  "name": "jaxlife-open-ended",
+  "description": "JaxLife open-ended agentic simulator for emergent behavior, tool use,",
+  "repo": "plurigrid/asi",
+  "path": "skills/jaxlife-open-ended",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "jaxlife-open-ended-plurigrid-asi-2"
+}

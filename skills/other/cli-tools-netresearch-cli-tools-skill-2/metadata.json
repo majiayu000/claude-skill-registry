@@ -1,0 +1,11 @@
+{
+  "name": "cli-tools",
+  "description": "Agent Skill: CLI tool management. Use when commands fail with 'command not found', installing tools, or checking project environments. By Netresearch.",
+  "repo": "netresearch/cli-tools-skill",
+  "path": "skills/cli-tools",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/netresearch/cli-tools-skill",
+  "dir_name": "cli-tools-netresearch-cli-tools-skill-2"
+}

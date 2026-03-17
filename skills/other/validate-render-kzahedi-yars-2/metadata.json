@@ -1,0 +1,11 @@
+{
+  "name": "validate-render",
+  "description": "Validates YARS rendering by exporting first frame as PNG and comparing with reference screenshot",
+  "repo": "kzahedi/YARS",
+  "path": ".claude/skills/validate-render",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kzahedi/YARS",
+  "dir_name": "validate-render-kzahedi-yars-2"
+}

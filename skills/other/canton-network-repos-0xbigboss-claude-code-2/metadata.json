@@ -1,0 +1,11 @@
+{
+  "name": "canton-network-repos",
+  "description": "Canton Network, DAML, and Splice repository knowledge. Use when working with Canton participants, DAML smart contracts, Splice applications, LF version compatibility, or package ID mismatches. Trigger",
+  "repo": "0xBigBoss/claude-code",
+  "path": ".claude/skills/canton-network-repos",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/0xBigBoss/claude-code",
+  "dir_name": "canton-network-repos-0xbigboss-claude-code-2"
+}

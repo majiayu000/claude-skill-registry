@@ -1,0 +1,11 @@
+{
+  "name": "convex-best-practices",
+  "description": "Guidelines for building production-ready Convex apps covering function organization, query patterns, validation, TypeScript usage, error handling, and the Zen of Convex design philosophy",
+  "repo": "waynesutton/convexskills",
+  "path": "skills/convex-best-practices",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/waynesutton/convexskills",
+  "dir_name": "convex-best-practices-waynesutton-convexskills-2"
+}

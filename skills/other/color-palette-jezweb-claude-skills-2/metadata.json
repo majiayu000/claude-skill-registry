@@ -1,0 +1,11 @@
+{
+  "name": "color-palette",
+  "description": "Generate complete, accessible color palettes from a single brand hex. Creates 11-shade scale (50-950), semantic tokens (background, foreground, card, muted), and dark mode variants. Includes WCAG cont",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/color-palette",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "color-palette-jezweb-claude-skills-2"
+}

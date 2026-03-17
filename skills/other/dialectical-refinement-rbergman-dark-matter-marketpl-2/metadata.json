@@ -1,0 +1,11 @@
+{
+  "name": "dialectical-refinement",
+  "description": "Transform ambiguous specs into implementable work items through adversarial refinement. This skill should be used PROACTIVELY when receiving specs, claiming epics, or starting work on complex (l/xl) t",
+  "repo": "rbergman/dark-matter-marketplace",
+  "path": "plugins/workflow/skills/dialectical-refinement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rbergman/dark-matter-marketplace",
+  "dir_name": "dialectical-refinement-rbergman-dark-matter-marketpl-2"
+}

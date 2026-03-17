@@ -1,0 +1,11 @@
+{
+  "name": "slo-designer",
+  "description": "Design Service Level Objectives (SLOs) with SLIs, targets, alerting thresholds, and error budget calculations following Google SRE best practices. Use when defining reliability targets, designing SLOs",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/slo-designer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "slo-designer-rjmurillo-ai-agents-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "observability-pattern-detector",
+  "description": "Automated pattern recognition in Claude Code telemetry. Use when detecting failures, slowness, anomalies, trends, inefficiencies, conversation patterns, or tool sequences.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/observability-pattern-detector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "observability-pattern-detector-adaptationio-skrillz-2"
+}

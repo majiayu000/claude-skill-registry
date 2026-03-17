@@ -1,0 +1,11 @@
+{
+  "name": "harness-keycloak-auth",
+  "description": "Keycloak OIDC integration with Harness pipelines, EKS IRSA, service account authentication, and realm-as-code patterns",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/aws-eks-helm-keycloak/skills/harness-keycloak-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "harness-keycloak-auth-lobbi-docs-claude-2"
+}

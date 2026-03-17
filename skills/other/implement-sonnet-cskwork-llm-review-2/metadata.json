@@ -1,0 +1,11 @@
+{
+  "name": "implement-sonnet",
+  "description": "Implement code using sonnet model with full main context access",
+  "repo": "cskwork/llm-review",
+  "path": ".claude/skills/implement-sonnet",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cskwork/llm-review",
+  "dir_name": "implement-sonnet-cskwork-llm-review-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "adjective-entry",
+  "description": "Requirements for creating or revising adjective entries in je-dict-1. Covers forms, conjugations, predicate vs modifier usage, and similar word distinctions.",
+  "repo": "tkgally/je-dict-1",
+  "path": ".claude/skills/adjective-entry",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tkgally/je-dict-1",
+  "dir_name": "adjective-entry-tkgally-je-dict-1-2"
+}

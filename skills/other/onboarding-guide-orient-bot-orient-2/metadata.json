@@ -1,0 +1,11 @@
+{
+  "name": "onboarding-guide",
+  "description": "Orient onboarding guide with quickstart, setup, and navigation help.",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/onboarding-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "onboarding-guide-orient-bot-orient-2"
+}

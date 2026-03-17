@@ -1,0 +1,11 @@
+{
+  "name": "clinical-interpretation",
+  "description": "Clinical variant interpretation using ClinVar, ACMG guidelines, and pathogenicity predictors. Prioritize variants for diagnostic and research applications.",
+  "repo": "GPTomics/bioSkills",
+  "path": "variant-calling/clinical-interpretation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "clinical-interpretation-gptomics-bioskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "technical-discussion",
+  "description": "Document technical discussions as expert architect and meeting assistant. Capture context, decisions, edge cases, debates, and rationale without jumping to specification or implementation. Second phas",
+  "repo": "leeovery/claude-technical-workflows",
+  "path": "skills/technical-discussion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leeovery/claude-technical-workflows",
+  "dir_name": "technical-discussion-leeovery-claude-technical-wor-2"
+}

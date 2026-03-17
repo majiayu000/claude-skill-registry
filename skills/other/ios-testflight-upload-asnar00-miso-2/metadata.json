@@ -1,0 +1,11 @@
+{
+  "name": "ios-testflight-upload",
+  "description": "Build, archive, upload iOS app to TestFlight, auto-distribute to external testers, submit for Beta App Review, and update server version. Full automated pipeline via App Store Connect API.",
+  "repo": "asnar00/miso",
+  "path": ".claude/skills/ios-testflight-upload",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/asnar00/miso",
+  "dir_name": "ios-testflight-upload-asnar00-miso-2"
+}

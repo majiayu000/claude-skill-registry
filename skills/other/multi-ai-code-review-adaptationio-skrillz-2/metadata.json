@@ -1,0 +1,11 @@
+{
+  "name": "multi-ai-code-review",
+  "description": "Multi-perspective code review using Claude, Gemini, and Codex as specialized agents. 5-dimensional analysis (security, performance, maintainability, correctness, style) with LLM-as-judge consensus, qu",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/multi-ai-code-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "multi-ai-code-review-adaptationio-skrillz-2"
+}

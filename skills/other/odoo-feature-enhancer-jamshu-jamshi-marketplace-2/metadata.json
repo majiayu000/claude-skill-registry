@@ -1,0 +1,11 @@
+{
+  "name": "odoo-feature-enhancer",
+  "description": "Extends existing Odoo 16.0 modules with new features, fields, views, business logic, wizards, and reports. This skill should be used when the user requests enhancements to existing functionality, such",
+  "repo": "jamshu/jamshi-marketplace",
+  "path": "plugins/odoo-dev/skills/odoo-feature-enhancer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jamshu/jamshi-marketplace",
+  "dir_name": "odoo-feature-enhancer-jamshu-jamshi-marketplace-2"
+}

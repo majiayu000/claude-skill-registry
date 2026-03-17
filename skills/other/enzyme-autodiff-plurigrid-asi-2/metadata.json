@@ -1,0 +1,11 @@
+{
+  "name": "enzyme-autodiff",
+  "description": "Enzyme.jl Automatic Differentiation Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/enzyme-autodiff",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "enzyme-autodiff-plurigrid-asi-2"
+}

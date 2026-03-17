@@ -1,0 +1,11 @@
+{
+  "name": "project-tester",
+  "description": "執行專案測試，分析測試結果和覆蓋率。",
+  "repo": "u9401066/copilot-capability-manager",
+  "path": ".claude/skills/project-tester",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/u9401066/copilot-capability-manager",
+  "dir_name": "project-tester-u9401066-copilot-capability-m-2"
+}

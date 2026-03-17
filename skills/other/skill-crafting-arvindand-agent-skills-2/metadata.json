@@ -1,0 +1,11 @@
+{
+  "name": "skill-crafting",
+  "description": "Create, fix, and validate skills for AI agents. Use when user says 'create a skill', 'write a skill', 'build a skill', 'fix my skill', 'skill not working', 'analyze my skill', 'run skill analysis', 'v",
+  "repo": "arvindand/agent-skills",
+  "path": "skills/skill-crafting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arvindand/agent-skills",
+  "dir_name": "skill-crafting-arvindand-agent-skills-2"
+}

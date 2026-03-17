@@ -1,0 +1,11 @@
+{
+  "name": "geo-database",
+  "description": "Access NCBI GEO for gene expression/genomics data. Search/download microarray and RNA-seq datasets (GSE, GSM, GPL), retrieve SOFT/Matrix files, for transcriptomics and expression analysis.",
+  "repo": "sanand0/scientific-research",
+  "path": ".claude/skills/geo-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sanand0/scientific-research",
+  "dir_name": "geo-database-sanand0-scientific-research-2"
+}

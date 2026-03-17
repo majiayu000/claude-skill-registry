@@ -1,0 +1,11 @@
+{
+  "name": "linter",
+  "description": "Initialize or update golangci-lint configuration for Go projects with comprehensive code quality checks, static analysis, and best practices enforcement",
+  "repo": "sgaunet/claude-plugins",
+  "path": "plugins/go-specialist/skills/linter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sgaunet/claude-plugins",
+  "dir_name": "linter-sgaunet-claude-plugins-2"
+}

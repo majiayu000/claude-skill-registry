@@ -1,0 +1,11 @@
+{
+  "name": "query-dependencies",
+  "description": "Shows what blocks an issue and what it blocks.",
+  "repo": "joeczar/code-graph-mcp",
+  "path": ".claude/skills/query-dependencies",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joeczar/code-graph-mcp",
+  "dir_name": "query-dependencies-joeczar-code-graph-mcp-2"
+}

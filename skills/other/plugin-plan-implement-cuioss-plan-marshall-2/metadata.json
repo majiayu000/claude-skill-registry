@@ -1,0 +1,11 @@
+{
+  "name": "plugin-plan-implement",
+  "description": "Implement plugin tasks from plan with step iteration and progress tracking",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-plugin-development/skills/plugin-plan-implement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "plugin-plan-implement-cuioss-plan-marshall-2"
+}

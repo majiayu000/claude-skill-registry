@@ -1,0 +1,11 @@
+{
+  "name": "microsoft-agent-framework",
+  "description": "Expert knowledge of Microsoft Agent Framework for building production AI agents and workflows. Use when building agents with Microsoft's framework, multi-agent orchestration, or tool integration.",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/microsoft-agent-framework",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "microsoft-agent-framework-rysweet-azurehaymaker-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-extension-registry",
+  "description": "Understand and use extension registry in Umbraco backoffice (foundational concept)",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-extension-registry",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-extension-registry-umbraco-umbraco-cms-backoffi-2"
+}

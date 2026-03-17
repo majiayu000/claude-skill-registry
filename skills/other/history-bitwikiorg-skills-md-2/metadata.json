@@ -1,0 +1,11 @@
+{
+  "name": "history",
+  "description": "Imported skill history from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/langchain/history",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "history-bitwikiorg-skills-md-2"
+}

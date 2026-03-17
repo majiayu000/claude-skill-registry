@@ -1,0 +1,11 @@
+{
+  "name": "fda-database",
+  "description": "Query openFDA API for drugs, devices, adverse events, recalls, regulatory submissions (510k, PMA), substance identification (UNII), for FDA regulatory data analysis and safety research.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/database/fda-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "fda-database-hxk622-tokendance-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "github-workflow-skill",
+  "description": "CRITICAL: Follow GitHub workflow patterns: conventional branch names, PR process, quality gates, code review.",
+  "repo": "GolferGeek/orchestrator-ai",
+  "path": ".claude/skills/github-workflow-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GolferGeek/orchestrator-ai",
+  "dir_name": "github-workflow-skill-golfergeek-orchestrator-ai-2"
+}

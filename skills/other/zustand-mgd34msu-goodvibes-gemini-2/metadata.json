@@ -1,0 +1,11 @@
+{
+  "name": "zustand",
+  "description": "Manages application state with Zustand including stores, selectors, actions, and middleware. Use when managing client-side state, creating global stores, persisting state, or replacing Redux/Context.",
+  "repo": "mgd34msu/goodvibes-gemini",
+  "path": "skills/zustand",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-gemini",
+  "dir_name": "zustand-mgd34msu-goodvibes-gemini-2"
+}

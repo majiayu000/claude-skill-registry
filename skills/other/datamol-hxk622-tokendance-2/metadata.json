@@ -1,0 +1,11 @@
+{
+  "name": "datamol",
+  "description": "Pythonic wrapper around RDKit with simplified interface and sensible defaults. Preferred for standard drug discovery including SMILES parsing, standardization, descriptors, fingerprints, clustering, 3",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/chemistry/datamol",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "datamol-hxk622-tokendance-2"
+}

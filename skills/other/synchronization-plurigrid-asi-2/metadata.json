@@ -1,0 +1,11 @@
+{
+  "name": "synchronization",
+  "description": "Convergence to common trajectory in coupled systems",
+  "repo": "plurigrid/asi",
+  "path": "skills/synchronization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "synchronization-plurigrid-asi-2"
+}

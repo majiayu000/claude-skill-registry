@@ -1,0 +1,11 @@
+{
+  "name": "wbs",
+  "description": "WBS（作業分解構成表）を作成する。タスク分解、スコープ分解、作業定義時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/planning/wbs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "wbs-haru-llc-ai-pm-system-noteboo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "issue-decomposition",
+  "description": "Use when an issue is too large for a single task - breaks into linked sub-issues with full documentation, ensuring manageable work units",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/issue-decomposition",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "issue-decomposition-troykelly-codex-skills-2"
+}

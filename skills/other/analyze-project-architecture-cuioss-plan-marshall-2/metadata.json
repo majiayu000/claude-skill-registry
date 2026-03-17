@@ -1,0 +1,11 @@
+{
+  "name": "analyze-project-architecture",
+  "description": "LLM-based architectural analysis that transforms raw project data into meaningful structure",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/plan-marshall/skills/analyze-project-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "analyze-project-architecture-cuioss-plan-marshall-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "alerting",
+  "description": "Real-time alerting and notification system for Univers infrastructure. Use this when you need to monitor system health, service status, and send proactive alerts when thresholds are exceeded or servic",
+  "repo": "hsudatalks/univers-container",
+  "path": ".claude/skills/alerting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hsudatalks/univers-container",
+  "dir_name": "alerting-hsudatalks-univers-container-2"
+}

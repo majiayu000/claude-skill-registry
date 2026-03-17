@@ -1,0 +1,11 @@
+{
+  "name": "xarray-for-multidimensional-data",
+  "description": "Work with labeled multidimensional arrays for scientific data analysis using Xarray. Use when handling climate data, satellite imagery, oceanographic data, or any multidimensional datasets with coordi",
+  "repo": "robertpelloni/borg",
+  "path": "agents/rse-agents/plugins/skills/xarray-for-multidimensional-data",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertpelloni/borg",
+  "dir_name": "xarray-for-multidimensional-data-robertpelloni-borg-2"
+}

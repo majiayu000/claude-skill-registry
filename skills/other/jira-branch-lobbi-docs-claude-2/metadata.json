@@ -1,0 +1,11 @@
+{
+  "name": "jira-branch",
+  "description": "Create git branch linked to Jira issue. Use when the user wants to \"create branch\", \"new branch for issue\", \"jira branch\", or \"feature branch\".",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/jira-branch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "jira-branch-lobbi-docs-claude-2"
+}

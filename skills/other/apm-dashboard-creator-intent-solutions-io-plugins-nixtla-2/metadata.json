@@ -1,0 +1,11 @@
+{
+  "name": "apm-dashboard-creator",
+  "description": "This skill enables Claude to create Application Performance Monitoring (APM) dashboards. It is triggered when the user requests the creation of a new APM dashboard, monitoring dashboard, or a dashboar",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/performance/apm-dashboard-creator/skills/apm-dashboard-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "apm-dashboard-creator-intent-solutions-io-plugins-nixtla-2"
+}

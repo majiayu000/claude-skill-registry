@@ -1,0 +1,11 @@
+{
+  "name": "vault-management",
+  "description": "Manages the Obsidian vault structure, file operations, and folder organization for the Personal AI Employee. Use when creating, moving, or organizing files in the vault, managing folder structures, or",
+  "repo": "maneeshanif/AI-Employee-Hackathon-spec-driven",
+  "path": ".claude/skills/vault-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/AI-Employee-Hackathon-spec-driven",
+  "dir_name": "vault-management-maneeshanif-ai-employee-hackatho-2"
+}

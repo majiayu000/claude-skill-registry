@@ -1,0 +1,11 @@
+{
+  "name": "pijul-sparse-skills",
+  "description": "Sparsity-preserving skill versioning via Pijul patches with GF(3) projection gates",
+  "repo": "plurigrid/asi",
+  "path": "skills/pijul-sparse-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "pijul-sparse-skills-plurigrid-asi-2"
+}

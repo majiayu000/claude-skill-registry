@@ -1,0 +1,11 @@
+{
+  "name": "html-css-to-wpf-xaml",
+  "description": "Converts HTML/CSS to WPF CustomControl XAML with correct patterns and common pitfall solutions. Use when transforming web designs to WPF, converting CSS animations to Storyboards, implementing CSS bor",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": ".claude/skills/converting-html-css-to-wpf-xaml",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "html-css-to-wpf-xaml-christian289-dotnet-with-claudeco-2"
+}

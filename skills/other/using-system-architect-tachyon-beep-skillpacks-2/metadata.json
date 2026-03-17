@@ -1,0 +1,11 @@
+{
+  "name": "using-system-architect",
+  "description": "Use when you have architecture documentation from system-archaeologist and need critical assessment, refactoring recommendations, or improvement prioritization - routes to appropriate architect specia",
+  "repo": "tachyon-beep/skillpacks",
+  "path": "plugins/axiom-system-architect/skills/using-system-architect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tachyon-beep/skillpacks",
+  "dir_name": "using-system-architect-tachyon-beep-skillpacks-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "moscow",
+  "description": "MoSCoW prioritization categorizing items as Must have, Should have, Could have, or Won't have. Use for scope definition, feature prioritization, or when everything feels equally important.",
+  "repo": "wildwasser/opencode-agents",
+  "path": ".opencode/skills/moscow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildwasser/opencode-agents",
+  "dir_name": "moscow-wildwasser-opencode-agents-2"
+}

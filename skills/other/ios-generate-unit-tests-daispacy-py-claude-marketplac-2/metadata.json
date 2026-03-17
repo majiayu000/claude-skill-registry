@@ -1,0 +1,11 @@
+{
+  "name": "ios-generate-unit-tests",
+  "description": "Generate comprehensive unit tests for iOS RxSwift project files (ViewModels, UseCases, Services). Creates complete test files with nested mocks, RxTest patterns, session error handling, and memory lea",
+  "repo": "daispacy/py-claude-marketplace",
+  "path": "py-plugin/skills/ios-generate-unit-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/daispacy/py-claude-marketplace",
+  "dir_name": "ios-generate-unit-tests-daispacy-py-claude-marketplac-2"
+}

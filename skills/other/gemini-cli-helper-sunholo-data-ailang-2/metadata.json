@@ -1,0 +1,11 @@
+{
+  "name": "gemini-cli-helper",
+  "description": "Run Gemini CLI commands from Claude with correct Node version. Use when user asks to run Gemini CLI, test Gemini traces, or debug Gemini telemetry.",
+  "repo": "sunholo-data/ailang",
+  "path": ".claude/skills/gemini-cli-helper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunholo-data/ailang",
+  "dir_name": "gemini-cli-helper-sunholo-data-ailang-2"
+}

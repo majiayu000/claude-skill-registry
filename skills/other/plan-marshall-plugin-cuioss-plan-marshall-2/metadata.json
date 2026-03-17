@@ -1,0 +1,11 @@
+{
+  "name": "plan-marshall-plugin",
+  "description": "Java domain extension with Maven/Gradle build operations and workflow integration",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-python/skills/plan-marshall-plugin",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "plan-marshall-plugin-cuioss-plan-marshall-2"
+}

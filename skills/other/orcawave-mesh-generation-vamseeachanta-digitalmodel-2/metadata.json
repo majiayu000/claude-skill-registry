@@ -1,0 +1,11 @@
+{
+  "name": "orcawave-mesh-generation",
+  "description": "Panel mesh generation and optimization specialist for OrcaWave diffraction analysis. Handles CAD-to-panel mesh conversion, mesh quality validation, convergence studies, and GDF file generation for hyd",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcawave-mesh-generation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcawave-mesh-generation-vamseeachanta-digitalmodel-2"
+}

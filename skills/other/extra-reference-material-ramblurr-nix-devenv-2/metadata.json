@@ -1,0 +1,11 @@
+{
+  "name": "extra-reference-material",
+  "description": "Manage offline reference material in the `extra/` directory. Use when needing external documentation, library source code, screenshots, PDFs, or API specs. ALWAYS check `extra/` before web searches. H",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/extra-reference-material",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "extra-reference-material-ramblurr-nix-devenv-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "coding-patterns",
+  "description": "TypeScript monorepo patterns including contract-port architecture, dependency injection, hermetic primitive ports, and composition root. Use when creating packages, designing contracts/interfaces, imp",
+  "repo": "Anveio/conveaux",
+  "path": ".claude/skills/coding-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Anveio/conveaux",
+  "dir_name": "coding-patterns-anveio-conveaux-2"
+}

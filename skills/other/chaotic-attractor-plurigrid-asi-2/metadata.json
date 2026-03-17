@@ -1,0 +1,11 @@
+{
+  "name": "chaotic-attractor",
+  "description": "Strange attractor with sensitive dependence on initial conditions",
+  "repo": "plurigrid/asi",
+  "path": "skills/chaotic-attractor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "chaotic-attractor-plurigrid-asi-2"
+}

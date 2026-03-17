@@ -1,0 +1,11 @@
+{
+  "name": "guru-mcp",
+  "description": "Access Guru knowledge base via MCP - ask AI questions, search documents, create drafts, and update cards. Connects to all your Guru sources including Slack, Drive, Confluence, and SharePoint.",
+  "repo": "clawdbot/skills",
+  "path": "skills/pvoo/guru-mcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "guru-mcp-clawdbot-skills-2"
+}

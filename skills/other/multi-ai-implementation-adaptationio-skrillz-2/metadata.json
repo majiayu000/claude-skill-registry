@@ -1,0 +1,11 @@
+{
+  "name": "multi-ai-implementation",
+  "description": "Production-ready code generation and incremental development using Explore-Plan-Code-Commit workflow. TDD-driven with <200 line changes, automatic rollback, and multi-agent coordination. Use when impl",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/multi-ai-implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "multi-ai-implementation-adaptationio-skrillz-2"
+}

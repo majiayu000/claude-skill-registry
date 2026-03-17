@@ -1,0 +1,11 @@
+{
+  "name": "jobs-audit",
+  "description": "Steve Jobs Design Thinking Audit. Auto-activates on: \"simplify\", \"too complex\", \"UX review\", \"design audit\", \"user experience\", \"feature bloat\", \"streamline\", \"make it simpler\", \"overwhelmed users\", \"",
+  "repo": "nalyk/nalyk-skills-demo",
+  "path": "plugins/audit-agent/skills/jobs-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nalyk/nalyk-skills-demo",
+  "dir_name": "jobs-audit-nalyk-nalyk-skills-demo-2"
+}

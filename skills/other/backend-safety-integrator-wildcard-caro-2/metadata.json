@@ -1,0 +1,11 @@
+{
+  "name": "backend-safety-integrator",
+  "description": "Guide for integrating safety validation into new inference backends",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/backend-safety-integrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildcard/caro",
+  "dir_name": "backend-safety-integrator-wildcard-caro-2"
+}

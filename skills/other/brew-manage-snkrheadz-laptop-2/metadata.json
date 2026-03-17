@@ -1,0 +1,11 @@
+{
+  "name": "brew-manage",
+  "description": "Homebrewパッケージ管理。パッケージの追加・削除・検索、Brewfile更新。トリガー: brew, homebrew, package, cask, install, uninstall",
+  "repo": "snkrheadz/laptop",
+  "path": ".claude/skills/brew-manage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/snkrheadz/laptop",
+  "dir_name": "brew-manage-snkrheadz-laptop-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "translation",
+  "description": "Guidelines for translating and localizing the Kilo Code extension, including language-specific rules for German, Simplified Chinese, and Traditional Chinese.",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/misc/kilo-code/translation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "translation-vasic-digital-superagent-2"
+}

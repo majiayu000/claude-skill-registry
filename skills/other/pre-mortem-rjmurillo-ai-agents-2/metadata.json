@@ -1,0 +1,11 @@
+{
+  "name": "pre-mortem",
+  "description": "Guide prospective hindsight analysis to identify project risks before failure occurs. Teams imagine the project has failed spectacularly, then work backward to identify causes. Increases risk identifi",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/pre-mortem",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "pre-mortem-rjmurillo-ai-agents-2"
+}

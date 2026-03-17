@@ -1,0 +1,11 @@
+{
+  "name": "PlantCapability",
+  "description": "MNMUK machine shop capability checker. Answers \"can we make this?\" queries against the plant list.\nRecommends optimal machine selection based on part requirements.\nUSE WHEN user asks 'can we make', 'w",
+  "repo": "robdtaylor/personal-ai-infrastructure",
+  "path": "skills/PlantCapability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robdtaylor/personal-ai-infrastructure",
+  "dir_name": "plantcapability-robdtaylor-personal-ai-infrastr-2"
+}

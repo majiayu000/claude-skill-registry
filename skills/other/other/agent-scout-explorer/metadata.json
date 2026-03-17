@@ -1,0 +1,9 @@
+{
+  "name": "agent-scout-explorer",
+  "repo": "ruvnet/claude-flow",
+  "path": ".agents/skills/agent-scout-explorer/SKILL.md",
+  "category": "other",
+  "source": "github.com/ruvnet/claude-flow",
+  "dir_name": "agent-scout-explorer",
+  "downloaded_at": "2026-02-18T01:34:36.250150Z"
+}

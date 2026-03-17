@@ -1,0 +1,11 @@
+{
+  "name": "dexcom",
+  "description": "Monitor blood glucose via Dexcom G7/G6 CGM",
+  "repo": "clawdbot/skills",
+  "path": "skills/chris-clem/dexcom",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "dexcom-clawdbot-skills-2"
+}

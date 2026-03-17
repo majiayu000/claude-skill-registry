@@ -1,0 +1,11 @@
+{
+  "name": "iterative-loop",
+  "description": "Implement continuous AI iteration loops for complex development tasks. Use when building features requiring test-driven refinement, implementing tasks with clear success criteria, or automating iterat",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/iterative-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "iterative-loop-proffesor-for-testin-agentic-qe-2"
+}

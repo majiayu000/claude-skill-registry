@@ -1,0 +1,11 @@
+{
+  "name": "deepchat-settings",
+  "description": "DeepChat app settings modification (DeepChat 设置/偏好) skill. Activate ONLY when the user explicitly asks to change DeepChat's own settings/preferences (e.g., theme, language, font size...). Do NOT activ",
+  "repo": "ThinkInAIXYZ/deepchat",
+  "path": "resources/skills/deepchat-settings",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ThinkInAIXYZ/deepchat",
+  "dir_name": "deepchat-settings-thinkinaixyz-deepchat-2"
+}

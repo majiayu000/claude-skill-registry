@@ -1,0 +1,11 @@
+{
+  "name": "doc-brd",
+  "description": "Create Business Requirements Documents (BRD) following SDD methodology - Layer 1 artifact defining business needs and objectives",
+  "repo": "vladm3105/aidoc-flow-framework",
+  "path": ".claude/skills/doc-brd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vladm3105/aidoc-flow-framework",
+  "dir_name": "doc-brd-vladm3105-aidoc-flow-framework-2"
+}

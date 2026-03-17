@@ -1,0 +1,11 @@
+{
+  "name": "implementation-context",
+  "description": "実装開始時のコンテキストセットアップ。関連ナレッジを検索し、効率的な実装開始を支援。新規実装タスク開始時に自動トリガーまたは明示的に呼び出し可能。",
+  "repo": "Umisyo/Lorepedia",
+  "path": ".claude/skills/implementation-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Umisyo/Lorepedia",
+  "dir_name": "implementation-context-umisyo-lorepedia-2"
+}

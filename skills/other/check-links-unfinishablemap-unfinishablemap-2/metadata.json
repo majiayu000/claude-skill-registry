@@ -1,0 +1,11 @@
+{
+  "name": "check-links",
+  "description": "Check all internal links on the local Hugo site for broken links. Use before pushing to verify site integrity.",
+  "repo": "unfinishablemap/unfinishablemap",
+  "path": ".claude/skills/check-links",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/unfinishablemap/unfinishablemap",
+  "dir_name": "check-links-unfinishablemap-unfinishablemap-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "log-skill",
+  "description": "记录执行过程的 Skill。当需要保存执行记录、工作日志时触发。触发词：记录、log、日志、work log、保存记录。",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/log-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "log-skill-maxoreric-sop-engine-2"
+}

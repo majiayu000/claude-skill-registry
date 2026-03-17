@@ -1,0 +1,11 @@
+{
+  "name": "code-review-skill",
+  "description": "Comprehensive code review and analysis. AUTO-TRIGGERS when user asks to review, refactor, debug, critique, or analyze code.",
+  "repo": "yoshiwatanabe/yw-claude-marketplace-development",
+  "path": ".claude/skills/code-review-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yoshiwatanabe/yw-claude-marketplace-development",
+  "dir_name": "code-review-skill-yoshiwatanabe-yw-claude-marketplac-2"
+}

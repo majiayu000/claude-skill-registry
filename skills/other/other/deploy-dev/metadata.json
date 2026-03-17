@@ -1,0 +1,9 @@
+{
+  "name": "deploy-dev",
+  "repo": "METR/inspect-action",
+  "path": ".claude/skills/deploy-dev/SKILL.md",
+  "category": "other",
+  "source": "github.com/METR/inspect-action",
+  "dir_name": "deploy-dev",
+  "downloaded_at": "2026-02-22T05:21:03.758403Z"
+}

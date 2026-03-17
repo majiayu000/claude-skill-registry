@@ -1,0 +1,11 @@
+{
+  "name": "session-recap",
+  "description": "Document Claude Code sessions by extracting knowledge into cross-referenced documentation. Triggers on \"recap the session\", \"summarize the work\", or after significant code changes.",
+  "repo": "sxhmilyoyo/sundayhao-plugins",
+  "path": "second-brain/skills/session-recap",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sxhmilyoyo/sundayhao-plugins",
+  "dir_name": "session-recap-sxhmilyoyo-sundayhao-plugins-2"
+}

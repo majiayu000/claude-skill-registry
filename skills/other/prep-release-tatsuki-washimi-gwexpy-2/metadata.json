@@ -1,0 +1,11 @@
+{
+  "name": "prep_release",
+  "description": "バージョン更新、CHANGELOG整備、パッケージビルドなど、リリース前の準備を行う",
+  "repo": "tatsuki-washimi/gwexpy",
+  "path": ".agent/skills/prep_release",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tatsuki-washimi/gwexpy",
+  "dir_name": "prep-release-tatsuki-washimi-gwexpy-2"
+}

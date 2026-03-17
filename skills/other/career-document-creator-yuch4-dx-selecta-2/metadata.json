@@ -1,0 +1,11 @@
+{
+  "name": "career-document-creator",
+  "description": "職務経歴書・履歴書の作成・改善を支援するスキル。「職務経歴書を作りたい」「履歴書を書きたい」「経歴書をブラッシュアップしたい」「転職用の書類を作成したい」などのリクエストに使用。IT/セキュリティ/エンジニア向けの推奨スキル・資格のレコメンド機能も含む。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/career-document-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "career-document-creator-yuch4-dx-selecta-2"
+}

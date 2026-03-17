@@ -1,0 +1,11 @@
+{
+  "name": "spansion",
+  "description": "Spansion (now Infineon) MPN encoding patterns for Flash memory and MCUs. Use when working with Spansion components or SpansionHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/spansion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "spansion-cantara-lib-electronic-compo-2"
+}

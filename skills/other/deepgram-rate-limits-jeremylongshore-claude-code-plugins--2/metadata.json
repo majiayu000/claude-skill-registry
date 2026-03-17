@@ -1,0 +1,11 @@
+{
+  "name": "deepgram-rate-limits",
+  "description": "Implement Deepgram rate limiting and backoff strategies.\nUse when handling API quotas, implementing request throttling,\nor dealing with rate limit errors.\nTrigger with phrases like \"deepgram rate limi",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/deepgram-pack/skills/deepgram-rate-limits",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "deepgram-rate-limits-jeremylongshore-claude-code-plugins--2"
+}

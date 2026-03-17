@@ -1,0 +1,11 @@
+{
+  "name": "tmdb",
+  "description": "Search movies/TV, get cast, ratings, streaming info, and personalized recommendations via TMDb API.",
+  "repo": "clawdbot/skills",
+  "path": "skills/dbhurley/tmdb",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "tmdb-clawdbot-skills-2"
+}

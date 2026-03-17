@@ -1,0 +1,11 @@
+{
+  "name": "testing-workflow",
+  "description": "Write comprehensive tests following project conventions (tiers, patterns, anti-patterns). Use when writing tests, improving test coverage, fixing failing tests, or reviewing test quality.",
+  "repo": "Awannaphasch2016/jousef-landing",
+  "path": ".claude/skills/testing-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Awannaphasch2016/jousef-landing",
+  "dir_name": "testing-workflow-awannaphasch2016-jousef-landing-2"
+}

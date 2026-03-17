@@ -1,0 +1,11 @@
+{
+  "name": "personalization-at-scale",
+  "description": "Generate unique personalized first lines for hundreds of prospects using company news, LinkedIn activity, and mutual connections. Saves 10+ hours of manual research per campaign. Use when you need per",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/marketing-pro-workflow/.claude/skills/personalization-at-scale",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "personalization-at-scale-nicepkg-ai-workflow-2"
+}

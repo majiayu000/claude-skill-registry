@@ -1,0 +1,11 @@
+{
+  "name": "istio",
+  "description": "Istio is an open-source service mesh that provides traffic management, security, and observability for microservices architectures. It uses a sidecar proxy pattern with Envoy proxies to intercept and ",
+  "repo": "cosmix/loom",
+  "path": "skills/istio",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "istio-cosmix-loom-2"
+}

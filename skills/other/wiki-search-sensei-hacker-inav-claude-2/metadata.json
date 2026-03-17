@@ -1,0 +1,11 @@
+{
+  "name": "wiki-search",
+  "description": "Search INAV wiki documentation for implementation guidance",
+  "repo": "sensei-hacker/inav-claude",
+  "path": ".claude/skills/wiki-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sensei-hacker/inav-claude",
+  "dir_name": "wiki-search-sensei-hacker-inav-claude-2"
+}

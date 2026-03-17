@@ -1,0 +1,11 @@
+{
+  "name": "brand-voice-guide-generator",
+  "description": "Creates comprehensive brand voice and tone documentation with messaging pillars, vocabulary guidelines, and writing examples. Use when the user asks about brand voice, tone guides, writing style, bran",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/brand-voice-guide-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "brand-voice-guide-generator-wesleysmits-agent-skills-2"
+}

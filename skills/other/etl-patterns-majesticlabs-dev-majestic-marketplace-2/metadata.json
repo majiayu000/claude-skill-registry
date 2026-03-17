@@ -1,0 +1,11 @@
+{
+  "name": "etl-patterns",
+  "description": "Production ETL patterns orchestrator. Routes to core reliability patterns and incremental load strategies.",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": "plugins/majestic-data/skills/etl-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "dir_name": "etl-patterns-majesticlabs-dev-majestic-marketplace-2"
+}

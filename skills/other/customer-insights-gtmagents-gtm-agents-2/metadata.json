@@ -1,0 +1,11 @@
+{
+  "name": "customer-insights",
+  "description": "Use when consolidating product usage, health, and sentiment signals for lifecycle programs.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/customer-marketing/skills/customer-insights",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "customer-insights-gtmagents-gtm-agents-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "wcag-aria-lookup",
+  "description": "Looks up WCAG 2.1 AA criteria and WAI-ARIA patterns, returning official W3C URLs with concise summaries. Use when user asks about accessibility standards, WCAG criteria (e.g., \"1.4.3\", \"contrast\"), AR",
+  "repo": "naporin0624/claude-web-audit-plugins",
+  "path": "skills/wcag-aria-lookup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/naporin0624/claude-web-audit-plugins",
+  "dir_name": "wcag-aria-lookup-naporin0624-claude-web-audit-plu-2"
+}

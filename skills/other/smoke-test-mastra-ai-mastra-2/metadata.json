@@ -1,0 +1,11 @@
+{
+  "name": "smoke-test",
+  "description": "Create a Mastra project using create-mastra and smoke test the studio in Chrome",
+  "repo": "mastra-ai/mastra",
+  "path": ".claude/skills/smoke-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mastra-ai/mastra",
+  "dir_name": "smoke-test-mastra-ai-mastra-2"
+}

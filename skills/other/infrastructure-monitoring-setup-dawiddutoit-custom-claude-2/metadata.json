@@ -1,0 +1,11 @@
+{
+  "name": "infrastructure-monitoring-setup",
+  "description": "Configures automated infrastructure monitoring with mobile alerts (ntfy.sh and Home\nAssistant) and auto-recovery for common failures. Use when setting up monitoring,\nconfiguring mobile notifications, ",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/infrastructure-monitoring-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "infrastructure-monitoring-setup-dawiddutoit-custom-claude-2"
+}

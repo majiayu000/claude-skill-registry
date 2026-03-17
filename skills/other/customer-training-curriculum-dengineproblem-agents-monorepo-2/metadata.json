@@ -1,0 +1,11 @@
+{
+  "name": "customer-training-curriculum",
+  "description": "Эксперт customer training. Используй для onboarding программ, training materials и certification paths.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/customer-training-curriculum",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "customer-training-curriculum-dengineproblem-agents-monorepo-2"
+}

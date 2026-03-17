@@ -1,0 +1,11 @@
+{
+  "name": "ci-cd",
+  "description": "Designs and implements CI/CD pipelines for automated testing, building, deployment, and security scanning across multiple platforms. Covers pipeline optimization, test integration, artifact management",
+  "repo": "cosmix/loom",
+  "path": "skills/ci-cd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "ci-cd-cosmix-loom-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ops-setup",
+  "description": "Guide user through support platform setup. Use when user says \"set up\", \"configure\", \"I'm on step X\", or provides API keys/credentials.",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/ops-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "ops-setup-skillrecordings-support-2"
+}

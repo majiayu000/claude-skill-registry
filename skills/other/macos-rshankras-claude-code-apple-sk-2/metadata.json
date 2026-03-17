@@ -1,0 +1,11 @@
+{
+  "name": "macos",
+  "description": "Comprehensive macOS development guidance including Swift 6+, SwiftUI, SwiftData, architecture patterns, AppKit bridging, and macOS 26 Tahoe APIs. Use for macOS code review, best practices, UI review, ",
+  "repo": "rshankras/claude-code-apple-skills",
+  "path": "skills/macos",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rshankras/claude-code-apple-skills",
+  "dir_name": "macos-rshankras-claude-code-apple-sk-2"
+}

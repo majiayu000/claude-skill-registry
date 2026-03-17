@@ -1,0 +1,11 @@
+{
+  "name": "check-repository-pattern",
+  "description": "Validates database access follows repository pattern, detects god-trait regression, ensures focused repositories",
+  "repo": "Async-IO/pierre_mcp_server",
+  "path": ".claude/skills/check-repository-pattern",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Async-IO/pierre_mcp_server",
+  "dir_name": "check-repository-pattern-async-io-pierre-mcp-server-2"
+}

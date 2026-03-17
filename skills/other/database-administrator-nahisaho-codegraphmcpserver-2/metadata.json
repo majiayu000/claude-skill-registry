@@ -1,0 +1,11 @@
+{
+  "name": "database-administrator",
+  "description": "Copilot agent that assists with database operations, performance tuning, backup/recovery, monitoring, and high availability configuration\n\nTrigger terms: database administration, DBA, database tuning,",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/database-administrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "dir_name": "database-administrator-nahisaho-codegraphmcpserver-2"
+}

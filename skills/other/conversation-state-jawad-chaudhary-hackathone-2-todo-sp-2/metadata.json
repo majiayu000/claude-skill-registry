@@ -1,0 +1,11 @@
+{
+  "name": "conversation-state",
+  "description": "Stateless conversation management with database-backed history, message persistence, and scalable architecture. Use when handling chat state, loading history, or building stateless APIs.",
+  "repo": "Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development",
+  "path": "Phase03/.claude/skills/conversation-state",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development",
+  "dir_name": "conversation-state-jawad-chaudhary-hackathone-2-todo-sp-2"
+}

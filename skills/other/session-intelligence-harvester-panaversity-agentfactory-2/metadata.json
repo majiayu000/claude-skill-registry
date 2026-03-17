@@ -1,0 +1,11 @@
+{
+  "name": "session-intelligence-harvester",
+  "description": "This skill should be used after productive sessions to extract learnings and route them to appropriate Reusable Intelligence Infrastructure (RII) components. Use when corrections were made, format dri",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/rare/session-intelligence-harvester",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "session-intelligence-harvester-panaversity-agentfactory-2"
+}

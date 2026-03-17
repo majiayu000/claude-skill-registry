@@ -1,0 +1,11 @@
+{
+  "name": "project-api",
+  "description": "Guide for creating API client packages from OpenAPI specs using the api_client brick in app_api (project)",
+  "repo": "gsmlg-app/flutter-app-template",
+  "path": ".claude/skills/project-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gsmlg-app/flutter-app-template",
+  "dir_name": "project-api-gsmlg-app-flutter-app-template-2"
+}

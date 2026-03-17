@@ -1,0 +1,11 @@
+{
+  "name": "hetzner-cloud-management",
+  "description": "Use when deploying, managing, or troubleshooting Hetzner Cloud infrastructure via hcloud CLI.\nTriggers: \"hetzner cloud\", \"hcloud\", \"hetzner server\", \"create server on hetzner\",\n\"hetzner network\", \"het",
+  "repo": "watzon/claude-code",
+  "path": "skills/hetzner-cloud-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/watzon/claude-code",
+  "dir_name": "hetzner-cloud-management-watzon-claude-code-2"
+}

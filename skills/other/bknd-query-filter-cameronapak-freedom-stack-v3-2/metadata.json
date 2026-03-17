@@ -1,0 +1,11 @@
+{
+  "name": "bknd-query-filter",
+  "description": "Use when building advanced queries with complex filtering conditions in Bknd. Covers all filter operators ($eq, $ne, $gt, $lt, $like, $ilike, $in, $nin, $isnull, $between), logical operators ($or, $an",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-query-filter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-query-filter-cameronapak-freedom-stack-v3-2"
+}

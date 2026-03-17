@@ -1,0 +1,11 @@
+{
+  "name": "op-secrets-updater",
+  "description": "Updates existing secrets in 1Password using the op CLI. Use when the user needs to modify passwords, edit field values, add or remove fields, rename items, move items between vaults, or manage tags on",
+  "repo": "leefowlercu/agent-kit",
+  "path": "plugins/op-secrets-manager/skills/op-secrets-updater",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leefowlercu/agent-kit",
+  "dir_name": "op-secrets-updater-leefowlercu-agent-kit-2"
+}

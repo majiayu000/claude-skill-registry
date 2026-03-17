@@ -1,0 +1,11 @@
+{
+  "name": "test-expert",
+  "description": "Testing methodologies, test-driven development (TDD), unit and integration testing, and testing best practices across multiple frameworks. Use when the user needs to write tests, implement TDD, or imp",
+  "repo": "einverne/dotfiles",
+  "path": "claude/skills/test-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/einverne/dotfiles",
+  "dir_name": "test-expert-einverne-dotfiles-2"
+}

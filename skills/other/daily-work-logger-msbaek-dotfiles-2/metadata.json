@@ -1,0 +1,11 @@
+{
+  "name": "daily-work-logger",
+  "description": "매일 아침 업무 시작 전 어제 작업 내역을 정리하여 Daily Note에 반영.\n서브 에이전트 기반 병렬 처리로 메인 컨텍스트 절약.\n\"어제 작업 정리해줘\", \"daily log\", \"업무 내역 정리\" 등의 요청 시 자동 적용.",
+  "repo": "msbaek/dotfiles",
+  "path": ".claude/skills/daily-work-logger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/msbaek/dotfiles",
+  "dir_name": "daily-work-logger-msbaek-dotfiles-2"
+}

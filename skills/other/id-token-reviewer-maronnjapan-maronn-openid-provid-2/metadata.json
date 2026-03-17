@@ -1,0 +1,11 @@
+{
+  "name": "id-token-reviewer",
+  "description": "Review test cases for ID Token validation. Covers ID Token structure, required/conditional claims, signature validation (RS256), and all validation rules per OIDC Core 1.0 Section 2 and 3.1.3.7.",
+  "repo": "maronnjapan/maronn-openid-provider",
+  "path": ".claude/skills/id-token-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maronnjapan/maronn-openid-provider",
+  "dir_name": "id-token-reviewer-maronnjapan-maronn-openid-provid-2"
+}

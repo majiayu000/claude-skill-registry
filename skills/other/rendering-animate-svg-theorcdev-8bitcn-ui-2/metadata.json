@@ -1,0 +1,11 @@
+{
+  "name": "rendering-animate-svg",
+  "description": "Wrap animated SVG elements in a div to enable hardware acceleration. Apply when animating SVG icons or elements, especially in 8-bit retro components with pixel art animations.",
+  "repo": "TheOrcDev/8bitcn-ui",
+  "path": ".claude/skills/rendering-animate-svg",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TheOrcDev/8bitcn-ui",
+  "dir_name": "rendering-animate-svg-theorcdev-8bitcn-ui-2"
+}

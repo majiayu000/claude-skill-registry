@@ -1,0 +1,11 @@
+{
+  "name": "skillsbench",
+  "description": "SkillsBench contribution workflow. Use when: (1) Creating benchmark tasks, (2) Understanding repo structure, (3) Preparing PRs for task submission.",
+  "repo": "benchflow-ai/skillsbench",
+  "path": ".claude/skills/skillsbench",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "skillsbench-benchflow-ai-skillsbench-2"
+}

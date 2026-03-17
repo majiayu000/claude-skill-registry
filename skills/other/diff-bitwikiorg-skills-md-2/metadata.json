@@ -1,0 +1,11 @@
+{
+  "name": "diff",
+  "description": "Imported skill diff from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/langchain/diff",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "diff-bitwikiorg-skills-md-2"
+}

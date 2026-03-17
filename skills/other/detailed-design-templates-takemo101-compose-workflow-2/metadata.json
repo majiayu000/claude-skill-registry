@@ -1,0 +1,11 @@
+{
+  "name": "detailed-design-templates",
+  "description": "詳細設計書作成時のテンプレート集（フロントエンド設計書、Issue作成テンプレート等）",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/detailed-design-templates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "detailed-design-templates-takemo101-compose-workflow-2"
+}

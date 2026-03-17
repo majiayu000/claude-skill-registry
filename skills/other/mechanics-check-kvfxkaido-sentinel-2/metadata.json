@@ -1,0 +1,11 @@
+{
+  "name": "mechanics-check",
+  "description": "Audit SENTINEL game data integrity. Validates regions, jobs, vehicles, and favors against schema enums.",
+  "repo": "KvFxKaido/SENTINEL",
+  "path": ".claude/skills/mechanics-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KvFxKaido/SENTINEL",
+  "dir_name": "mechanics-check-kvfxkaido-sentinel-2"
+}

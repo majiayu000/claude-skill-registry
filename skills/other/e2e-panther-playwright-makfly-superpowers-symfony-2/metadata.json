@@ -1,0 +1,11 @@
+{
+  "name": "e2e-panther-playwright",
+  "description": "Use when symfony e2e panther playwright",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/e2e-panther-playwright",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "e2e-panther-playwright-makfly-superpowers-symfony-2"
+}

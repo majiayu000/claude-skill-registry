@@ -1,0 +1,11 @@
+{
+  "name": "markdown-lint",
+  "description": "Markdown ファイル編集後のリント実行。Markdown を作成・編集したら必ず実行。",
+  "repo": "tqer39/blog",
+  "path": ".claude/skills/markdown-lint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tqer39/blog",
+  "dir_name": "markdown-lint-tqer39-blog-2"
+}

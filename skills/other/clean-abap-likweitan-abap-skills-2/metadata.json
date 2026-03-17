@@ -1,0 +1,11 @@
+{
+  "name": "clean-abap",
+  "description": "Check ABAP code for compliance with Clean ABAP principles. Use this skill when users ask to check, validate, review, or analyze ABAP code for clean code compliance, code quality, best practices, or ad",
+  "repo": "likweitan/abap-skills",
+  "path": "skills/clean-abap",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/likweitan/abap-skills",
+  "dir_name": "clean-abap-likweitan-abap-skills-2"
+}

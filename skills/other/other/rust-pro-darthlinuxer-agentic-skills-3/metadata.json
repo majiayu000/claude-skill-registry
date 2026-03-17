@@ -1,0 +1,17 @@
+{
+  "name": "rust-pro",
+  "repo": "darthlinuxer/Agentic-Skills",
+  "path": ".claude/skills/rust-pro/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/darthlinuxer/Agentic-Skills",
+  "dir_name": "rust-pro-darthlinuxer-agentic-skills-3",
+  "downloaded_at": "2026-03-01T07:22:45.508978Z",
+  "author": "darthlinuxer",
+  "source_url": "https://github.com/darthlinuxer/Agentic-Skills/blob/main/.claude/skills/rust-pro/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/darthlinuxer/Agentic-Skills/blob/main/.claude/skills/rust-pro/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

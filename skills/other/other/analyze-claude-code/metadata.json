@@ -1,0 +1,9 @@
+{
+  "name": "analyze-claude-code",
+  "repo": "kaichen/agent-skillset",
+  "path": "plugins/analyze-claude-code/skills/analyze-claude-code/SKILL.md",
+  "category": "other",
+  "source": "github.com/kaichen/agent-skillset",
+  "dir_name": "analyze-claude-code",
+  "downloaded_at": "2026-02-15T07:49:51.377222Z"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "azure-well-architected-framework",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/azure-master/skills/azure-well-architected-framework/SKILL.md",
+  "category": "other",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "azure-well-architected-framework",
+  "downloaded_at": "2026-02-22T05:14:35.306952Z"
+}

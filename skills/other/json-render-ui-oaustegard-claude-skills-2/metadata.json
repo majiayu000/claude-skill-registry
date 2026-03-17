@@ -1,0 +1,11 @@
+{
+  "name": "json-render-ui",
+  "description": "Transform natural language UI requests into working dashboards and applications. Claude acts as the translation layer (prompt → JSON), the skill provides the rendering runtime (JSON → UI).",
+  "repo": "oaustegard/claude-skills",
+  "path": "json-render-ui",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "json-render-ui-oaustegard-claude-skills-2"
+}

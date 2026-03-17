@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-302-task-replanner",
+  "description": "Updates ALL task types (implementation/refactoring/test). Compares IDEAL plan vs existing tasks, categorizes KEEP/UPDATE/OBSOLETE/CREATE, applies changes in Linear and kanban.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-302-task-replanner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-302-task-replanner-boisenoise-skills-collections-2"
+}

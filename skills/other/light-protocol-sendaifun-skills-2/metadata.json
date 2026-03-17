@@ -1,0 +1,11 @@
+{
+  "name": "light-protocol",
+  "description": "Complete guide for Light Protocol on Solana - includes ZK Compression for rent-free compressed tokens and PDAs using zero-knowledge proofs, and the Light Token Program for high-performance token stand",
+  "repo": "sendaifun/skills",
+  "path": "skills/light-protocol",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "light-protocol-sendaifun-skills-2"
+}

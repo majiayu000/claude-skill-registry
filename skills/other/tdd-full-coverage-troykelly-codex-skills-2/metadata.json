@@ -1,0 +1,11 @@
+{
+  "name": "tdd-full-coverage",
+  "description": "Use when implementing features or fixes - test-driven development with RED-GREEN-REFACTOR cycle and full code coverage requirement",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/tdd-full-coverage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "tdd-full-coverage-troykelly-codex-skills-2"
+}

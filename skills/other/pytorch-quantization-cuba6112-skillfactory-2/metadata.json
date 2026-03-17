@@ -1,0 +1,11 @@
+{
+  "name": "pytorch-quantization",
+  "description": "Techniques for model size reduction and inference acceleration using INT8 quantization, including Post-Training Quantization (PTQ) and Quantization Aware Training (QAT). (quantization, int8, qat, fbge",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/pytorch-quantization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "pytorch-quantization-cuba6112-skillfactory-2"
+}

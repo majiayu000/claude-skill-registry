@@ -1,0 +1,11 @@
+{
+  "name": "merge-agent",
+  "description": "Merge Agent with exclusive write access to main branch. Performs final merge after all approvals. Use this skill ONLY for merging approved code to main.",
+  "repo": "Denissvgn/project-team-ag",
+  "path": ".agent/skills/merge-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Denissvgn/project-team-ag",
+  "dir_name": "merge-agent-denissvgn-project-team-ag-2"
+}

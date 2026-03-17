@@ -1,0 +1,11 @@
+{
+  "name": "auto-ralph",
+  "description": "PROACTIVELY activates for ANY task with clear success criteria. This skill should be used when the user provides tasks like: \"fix the bug\", \"add tests\", \"implement feature X\", \"refactor Y\".\nExplicit t",
+  "repo": "nalyk/nalyk-skills-demo",
+  "path": "plugins/auto-ralph/skills/auto-ralph",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nalyk/nalyk-skills-demo",
+  "dir_name": "auto-ralph-nalyk-nalyk-skills-demo-2"
+}

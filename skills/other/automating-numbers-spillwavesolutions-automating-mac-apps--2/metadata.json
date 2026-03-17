@@ -1,0 +1,11 @@
+{
+  "name": "automating-numbers",
+  "description": "Automates Apple Numbers via JXA with AppleScript dictionary discovery. Use when asked to \"automate Numbers spreadsheets\", \"create spreadsheets programmatically\", \"JXA Numbers scripting\", or \"bulk data",
+  "repo": "SpillwaveSolutions/automating-mac-apps-plugin",
+  "path": "plugins/automating-mac-apps-plugin/skills/automating-numbers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
+  "dir_name": "automating-numbers-spillwavesolutions-automating-mac-apps--2"
+}

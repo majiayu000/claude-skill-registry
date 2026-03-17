@@ -1,0 +1,11 @@
+{
+  "name": "write-unit-tests",
+  "description": "Writing unit and integration tests for the tldraw SDK. Use when creating new tests, adding test coverage, or fixing failing tests in packages/editor or packages/tldraw. Covers Vitest patterns, TestEdi",
+  "repo": "tldraw/tldraw",
+  "path": ".claude/skills/write-unit-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tldraw/tldraw",
+  "dir_name": "write-unit-tests-tldraw-tldraw-2"
+}

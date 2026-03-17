@@ -1,0 +1,11 @@
+{
+  "name": "ecosystem-managing",
+  "description": "系统生态工程师 - 发布(Release) | 维护(Maintain) | 清理(Purge)",
+  "repo": "VidyFoo/antigravity-skill-engine",
+  "path": ".agent/skills/3-sys/ecosystem-managing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VidyFoo/antigravity-skill-engine",
+  "dir_name": "ecosystem-managing-vidyfoo-antigravity-skill-en-2"
+}

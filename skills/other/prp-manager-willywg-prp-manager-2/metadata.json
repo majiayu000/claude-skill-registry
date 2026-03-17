@@ -1,0 +1,11 @@
+{
+  "name": "prp-manager",
+  "description": "Create and execute PRPs (Product Requirements Prompts) for feature implementation using Context Engineering principles. Use when planning new features, initializing PRP setup, executing existing PRPs,",
+  "repo": "willywg/prp-manager",
+  "path": "prp-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/willywg/prp-manager",
+  "dir_name": "prp-manager-willywg-prp-manager-2"
+}

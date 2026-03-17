@@ -1,0 +1,11 @@
+{
+  "name": "systematic-debug",
+  "description": "Systematic debugging methodology - scientific approach to finding and fixing bugs using hypothesis testing, isolation, and root cause analysis. Based on the Arcanean principle that understanding prece",
+  "repo": "frankxai/arcanea",
+  "path": ".claude/skills/development/systematic-debug",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/arcanea",
+  "dir_name": "systematic-debug-frankxai-arcanea-2"
+}

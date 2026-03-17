@@ -1,0 +1,11 @@
+{
+  "name": "museum-documentation",
+  "description": "Write elegant, narrative-driven documentation that treats codebases and systems as exhibits worth exploring. Use when creating documentation for Wanderers and visitors who want to understand how Grove",
+  "repo": "AutumnsGrove/GroveEngine",
+  "path": ".claude/skills/museum-documentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AutumnsGrove/GroveEngine",
+  "dir_name": "museum-documentation-autumnsgrove-groveengine-2"
+}

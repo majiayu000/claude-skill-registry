@@ -1,0 +1,11 @@
+{
+  "name": "jetbrains-workflow",
+  "description": "JetBrains MCP 도구를 활용한 빠른 개발 워크플로우. IDE 검사, Run Configuration 실행, 리팩토링, 파일 검색 등을 통해 Gradle 의존도를 줄이고 개발 속도를 10배 향상시킵니다. Kotlin/Spring 개발 시 필수로 사용하세요.",
+  "repo": "1ambda/dataops-platform",
+  "path": ".claude/skills/jetbrains-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/1ambda/dataops-platform",
+  "dir_name": "jetbrains-workflow-1ambda-dataops-platform-2"
+}

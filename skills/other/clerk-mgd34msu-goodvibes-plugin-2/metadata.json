@@ -1,0 +1,11 @@
+{
+  "name": "clerk",
+  "description": "Implements authentication with Clerk including user management, protected routes, middleware, and React components. Use when adding authentication, managing users, protecting routes, or implementing s",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/authentication/clerk",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "clerk-mgd34msu-goodvibes-plugin-2"
+}

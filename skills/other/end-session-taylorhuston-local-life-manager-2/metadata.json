@@ -1,0 +1,11 @@
+{
+  "name": "end-session",
+  "description": "End the current learning session. Use when done studying to generate summary, update learning plan, and log final entries. Triggers on \"end session\", \"done learning\", \"finish studying\", \"wrap up\".",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/end-session",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "end-session-taylorhuston-local-life-manager-2"
+}

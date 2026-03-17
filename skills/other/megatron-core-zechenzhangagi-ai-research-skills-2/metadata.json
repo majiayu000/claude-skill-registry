@@ -1,0 +1,11 @@
+{
+  "name": "megatron-core",
+  "description": "Trains large language models (2B-462B parameters) using NVIDIA Megatron-Core with advanced parallelism strategies. Use when training models >1B parameters, need maximum GPU efficiency (47% MFU on H100",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "08-distributed-training/megatron-core",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "megatron-core-zechenzhangagi-ai-research-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "curator",
+  "description": "Autonomous curator for Source Library. Discover, evaluate, and import historical texts from digital archives (Archive.org, Gallica, MDZ). Use for acquisition sessions, collection gap analysis, or buil",
+  "repo": "Embassy-of-the-Free-Mind/sourcelibrary-v2",
+  "path": ".claude/skills/curator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Embassy-of-the-Free-Mind/sourcelibrary-v2",
+  "dir_name": "curator-embassy-of-the-free--sourcelibrary-v2-2"
+}

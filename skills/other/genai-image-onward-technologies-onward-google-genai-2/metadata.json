@@ -1,0 +1,11 @@
+{
+  "name": "genai-image",
+  "description": "Generate images using Google GenAI Nano Banana Pro model via CLI. Use when the user asks to create images, generate pictures, make AI art, do image-to-image transformations, place people in scenes, or",
+  "repo": "Onward-Technologies/onward-google-genai",
+  "path": ".claude/skills/genai-image",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Onward-Technologies/onward-google-genai",
+  "dir_name": "genai-image-onward-technologies-onward-google-genai-2"
+}

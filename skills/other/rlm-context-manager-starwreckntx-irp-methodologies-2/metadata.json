@@ -1,0 +1,11 @@
+{
+  "name": "rlm-context-manager",
+  "description": "Recursive Language Model context management for processing documents exceeding context window limits. Enables Claude to match Gemini's 2M token context capability through chunking, sub-LLM delegation,",
+  "repo": "starwreckntx/IRP__METHODOLOGIES-",
+  "path": "skills/rlm-context-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/starwreckntx/IRP__METHODOLOGIES-",
+  "dir_name": "rlm-context-manager-starwreckntx-irp-methodologies-2"
+}

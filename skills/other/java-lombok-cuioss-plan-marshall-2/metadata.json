@@ -1,0 +1,11 @@
+{
+  "name": "java-lombok",
+  "description": "Lombok patterns including @Delegate, @Builder, @Value, @UtilityClass for reducing boilerplate",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-java/skills/java-lombok",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "java-lombok-cuioss-plan-marshall-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "service-implementation",
+  "description": "Implement Effect services as fine-grained capabilities avoiding monolithic designs",
+  "repo": "front-depiction/cli-stock",
+  "path": ".claude/skills/service-implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/front-depiction/cli-stock",
+  "dir_name": "service-implementation-front-depiction-cli-stock-2"
+}

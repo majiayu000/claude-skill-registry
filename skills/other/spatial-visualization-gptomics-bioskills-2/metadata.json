@@ -1,0 +1,11 @@
+{
+  "name": "spatial-visualization",
+  "description": "Visualize spatial transcriptomics data using Squidpy and Scanpy. Create tissue plots with gene expression, clusters, and annotations overlaid on histology images.",
+  "repo": "GPTomics/bioSkills",
+  "path": "spatial-transcriptomics/spatial-visualization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "spatial-visualization-gptomics-bioskills-2"
+}

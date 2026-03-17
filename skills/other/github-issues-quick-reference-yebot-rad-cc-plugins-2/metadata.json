@@ -1,0 +1,11 @@
+{
+  "name": "github-issues-quick-reference",
+  "description": "Quick reference for GitHub Issues management via gh CLI with priority workflow",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/github-issues/skills/github-issues-quick-reference",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "github-issues-quick-reference-yebot-rad-cc-plugins-2"
+}

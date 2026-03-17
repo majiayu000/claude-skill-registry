@@ -1,0 +1,11 @@
+{
+  "name": "openapi-operations",
+  "description": "OpenAPI operation rules 11-13 for naming, pagination, and responses",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/openapi-operations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "openapi-operations-zerobias-org-module-2"
+}

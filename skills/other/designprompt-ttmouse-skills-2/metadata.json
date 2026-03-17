@@ -1,0 +1,11 @@
+{
+  "name": "designprompt",
+  "description": "AI驱动的设计系统构建器。基于项目特征智能推荐最合适的设计风格（从30+专业设计系统中选择），或使用用户指定的风格。自动应用完整的设计系统规范（颜色、字体、组件、动效等）来实现界面。",
+  "repo": "ttmouse/skills",
+  "path": "designprompt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ttmouse/skills",
+  "dir_name": "designprompt-ttmouse-skills-2"
+}

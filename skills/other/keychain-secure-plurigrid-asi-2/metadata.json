@@ -1,0 +1,11 @@
+{
+  "name": "keychain-secure",
+  "description": "macOS Keychain credential management with GF(3) balanced operations",
+  "repo": "plurigrid/asi",
+  "path": "skills/keychain-secure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "keychain-secure-plurigrid-asi-2"
+}

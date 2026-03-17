@@ -1,0 +1,17 @@
+{
+  "name": "self-heal-openclaw",
+  "repo": "AIDEN0602/openclaw",
+  "path": "skills/self-heal-openclaw/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/AIDEN0602/openclaw",
+  "dir_name": "self-heal-openclaw",
+  "downloaded_at": "2026-03-01T04:44:00.775005Z",
+  "author": "AIDEN0602",
+  "source_url": "https://github.com/AIDEN0602/openclaw/blob/main/skills/self-heal-openclaw/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AIDEN0602/openclaw/blob/main/skills/self-heal-openclaw/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

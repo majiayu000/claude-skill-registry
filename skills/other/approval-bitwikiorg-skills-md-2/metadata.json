@@ -1,0 +1,11 @@
+{
+  "name": "approval",
+  "description": "Imported skill approval from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/langchain/approval",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "approval-bitwikiorg-skills-md-2"
+}

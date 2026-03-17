@@ -1,0 +1,11 @@
+{
+  "name": "blog-repurposer",
+  "description": "Repurpose blog content into multiple formats (X threads, newsletters, summaries). USE WHEN user says 'create thread from post', 'repurpose blog', 'newsletter version', 'multi-format output', OR wants ",
+  "repo": "Zura1555/agents",
+  "path": ".claude/skills/blog-repurposer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Zura1555/agents",
+  "dir_name": "blog-repurposer-zura1555-agents-2"
+}

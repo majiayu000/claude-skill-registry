@@ -1,0 +1,9 @@
+{
+  "name": "pr-workflow",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/jira-orchestrator/skills/pr-workflow/SKILL.md",
+  "category": "other",
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "pr-workflow-lobbi-docs-claude",
+  "downloaded_at": "2026-02-15T05:23:01.509699Z"
+}

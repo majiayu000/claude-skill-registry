@@ -1,0 +1,9 @@
+{
+  "name": "agent-client-protocol",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/agent-client-protocol/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "agent-client-protocol",
+  "downloaded_at": "2026-02-15T07:06:58.445949Z"
+}

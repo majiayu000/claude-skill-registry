@@ -1,0 +1,11 @@
+{
+  "name": "ha-voice",
+  "description": "Configure Home Assistant Assist voice control with pipelines, intents, wake words, and speech processing. Use when setting up voice control, creating custom intents, configuring TTS/STT, or building v",
+  "repo": "nodnarbnitram/claude-code-extensions",
+  "path": ".claude/skills/ha-voice",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nodnarbnitram/claude-code-extensions",
+  "dir_name": "ha-voice-nodnarbnitram-claude-code-extensio-2"
+}

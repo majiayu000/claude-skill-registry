@@ -1,0 +1,11 @@
+{
+  "name": "experiment-workflow",
+  "description": "Run thesis experiments from ideation through publication. Use when brainstorming research questions, writing specs, executing experiments, or polishing for thesis.",
+  "repo": "JoernStoehler/msc-viterbo",
+  "path": ".claude/skills/experiment-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JoernStoehler/msc-viterbo",
+  "dir_name": "experiment-workflow-joernstoehler-msc-viterbo-2"
+}

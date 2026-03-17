@@ -1,0 +1,11 @@
+{
+  "name": "olivenet-brand",
+  "description": "Olivenet marka sesi ve icerik stratejisi. Use when creating content, captions, hooks, or understanding brand voice.",
+  "repo": "olivenet-iot/olivenet-social-bot",
+  "path": ".claude/skills/olivenet-brand",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/olivenet-iot/olivenet-social-bot",
+  "dir_name": "olivenet-brand-olivenet-iot-olivenet-social-bot-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "axiom-foundation-models-diag",
+  "description": "Use when debugging Foundation Models issues — context exceeded, guardrail violations, slow generation, availability problems, unsupported language, or unexpected output. Systematic diagnostics with pr",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-foundation-models-diag",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-foundation-models-diag-charleswiltgen-axiom-2"
+}

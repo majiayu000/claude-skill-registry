@@ -1,0 +1,11 @@
+{
+  "name": "continuous-improvement",
+  "description": "Capture learnings after tasks. Triggers on task completion, repeated mistakes, retrospective requests, or \"what did I learn\".",
+  "repo": "muyen/vibe-to-prod",
+  "path": ".claude/skills/continuous-improvement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/muyen/vibe-to-prod",
+  "dir_name": "continuous-improvement-muyen-vibe-to-prod-2"
+}

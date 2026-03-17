@@ -1,0 +1,11 @@
+{
+  "name": "ecs",
+  "description": "AWS ECS container orchestration for running Docker containers. Use when deploying containerized applications, configuring task definitions, setting up services, managing clusters, or troubleshooting c",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/design/specs-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "ecs-majiayu000-claude-skill-registr-2"
+}

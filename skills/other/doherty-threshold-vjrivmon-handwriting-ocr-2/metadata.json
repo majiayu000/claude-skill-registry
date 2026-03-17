@@ -1,0 +1,11 @@
+{
+  "name": "doherty-threshold",
+  "description": "Mantén tiempos de respuesta bajo 400ms para mantener la atención del usuario. Use cuando optimice performance, diseñe feedback de carga, o evalúe latencia percibida.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/cognitive-laws/doherty-threshold",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "doherty-threshold-vjrivmon-handwriting-ocr-2"
+}

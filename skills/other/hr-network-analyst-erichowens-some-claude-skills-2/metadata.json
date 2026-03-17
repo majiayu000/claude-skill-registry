@@ -1,0 +1,11 @@
+{
+  "name": "hr-network-analyst",
+  "description": "Professional network graph analyst identifying Gladwellian superconnectors, mavens, and influence brokers using betweenness centrality, structural holes theory, and multi-source network reconstruction",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/hr-network-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "hr-network-analyst-erichowens-some-claude-skills-2"
+}

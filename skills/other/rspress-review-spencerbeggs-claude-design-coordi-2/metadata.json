@@ -1,0 +1,11 @@
+{
+  "name": "rspress-review",
+  "description": "Review RSPress documentation for quality and Twoslash issues. Use when checking docs for completeness, accuracy, and code example quality.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/rspress-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "rspress-review-spencerbeggs-claude-design-coordi-2"
+}

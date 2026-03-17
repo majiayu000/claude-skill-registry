@@ -1,0 +1,11 @@
+{
+  "name": "dev-server",
+  "description": "Manage Next.js dev servers across worktrees. Start, stop, and read logs from dev servers. Agents can access logs from any running session, regardless of who started it.",
+  "repo": "civitai/civitai",
+  "path": ".claude/skills/dev-server",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/civitai/civitai",
+  "dir_name": "dev-server-civitai-civitai-2"
+}

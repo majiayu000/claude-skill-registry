@@ -1,0 +1,17 @@
+{
+  "name": "twilio-api",
+  "repo": "tdimino/claude-code-minoan",
+  "path": "skills/integration-automation/twilio-api/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/tdimino/claude-code-minoan",
+  "dir_name": "twilio-api",
+  "downloaded_at": "2026-03-02T08:49:50.979585Z",
+  "author": "tdimino",
+  "source_url": "https://github.com/tdimino/claude-code-minoan/blob/main/skills/integration-automation/twilio-api/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tdimino/claude-code-minoan/blob/main/skills/integration-automation/twilio-api/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

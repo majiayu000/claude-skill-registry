@@ -1,0 +1,11 @@
+{
+  "name": "omcc-workflow",
+  "description": "OMCC (Coder-Codex-Gemini) collaboration for code and document tasks.\nUse when: writing/modifying code, editing documents, implementing features, fixing bugs, refactoring, or code review.\n协调 Coder 执行代码",
+  "repo": "Lynricsy/Oh-My-ClaudeCode",
+  "path": "skills/omcc-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lynricsy/Oh-My-ClaudeCode",
+  "dir_name": "omcc-workflow-lynricsy-oh-my-claudecode-2"
+}

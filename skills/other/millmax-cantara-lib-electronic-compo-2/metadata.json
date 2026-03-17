@@ -1,0 +1,11 @@
+{
+  "name": "millmax",
+  "description": "Mill-Max precision connectors MPN encoding patterns, series decoding, and handler guidance. Use when working with Mill-Max components or MillMaxHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/millmax",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "millmax-cantara-lib-electronic-compo-2"
+}

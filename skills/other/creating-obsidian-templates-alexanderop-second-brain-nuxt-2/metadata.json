@@ -1,0 +1,11 @@
+{
+  "name": "creating-obsidian-templates",
+  "description": "Create Obsidian templates for the Second Brain vault. Use when asked to \"create a template\", \"make a template for\", \"add an Obsidian template\", or \"template for X\".",
+  "repo": "alexanderop/second-brain-nuxt",
+  "path": ".claude/skills/creating-obsidian-templates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alexanderop/second-brain-nuxt",
+  "dir_name": "creating-obsidian-templates-alexanderop-second-brain-nuxt-2"
+}

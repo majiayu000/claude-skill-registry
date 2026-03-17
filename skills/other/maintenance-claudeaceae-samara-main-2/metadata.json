@@ -1,0 +1,11 @@
+{
+  "name": "maintenance",
+  "description": "Run organism maintenance checks - drift detection, symlink repair, service verification. Use for health checks and maintenance tasks.",
+  "repo": "claudeaceae/samara-main",
+  "path": ".claude/skills/maintenance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/claudeaceae/samara-main",
+  "dir_name": "maintenance-claudeaceae-samara-main-2"
+}

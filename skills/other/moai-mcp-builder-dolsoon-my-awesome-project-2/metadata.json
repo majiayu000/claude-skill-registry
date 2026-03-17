@@ -1,0 +1,11 @@
+{
+  "name": "moai-mcp-builder",
+  "description": "Enterprise MCP (Model Context Protocol) server development using FastMCP 2.0 with production-grade tools, resources, prompts, and intelligent agent-first design. Use when building MCP servers, integra",
+  "repo": "dolsoon/my-awesome-project",
+  "path": ".claude/skills/moai-mcp-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dolsoon/my-awesome-project",
+  "dir_name": "moai-mcp-builder-dolsoon-my-awesome-project-2"
+}

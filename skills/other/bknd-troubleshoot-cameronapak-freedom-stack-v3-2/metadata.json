@@ -1,0 +1,11 @@
+{
+  "name": "bknd-troubleshoot",
+  "description": "Use when encountering Bknd errors, getting error messages, something not working, or needing quick fixes. Covers error code reference, quick solutions, and common mistake patterns.",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-troubleshoot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-troubleshoot-cameronapak-freedom-stack-v3-2"
+}

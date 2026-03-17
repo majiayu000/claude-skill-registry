@@ -1,0 +1,11 @@
+{
+  "name": "biorxiv-database",
+  "description": "Efficient database search tool for bioRxiv preprint server. Use this skill when searching for life sciences preprints by keywords, authors, date ranges, or categories, retrieving paper metadata, downl",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/bioinformatics/biorxiv-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "biorxiv-database-hxk622-tokendance-2"
+}

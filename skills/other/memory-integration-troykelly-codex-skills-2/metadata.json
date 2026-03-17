@@ -1,0 +1,11 @@
+{
+  "name": "memory-integration",
+  "description": "Use to maintain context across sessions - integrates episodic-memory for conversation recall and mcp__memory knowledge graph for persistent facts",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/memory-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "memory-integration-troykelly-codex-skills-2"
+}

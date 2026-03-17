@@ -1,0 +1,11 @@
+{
+  "name": "infra-workflow",
+  "description": "Terraform/Docker Composeによるインフラ構築のワークフロー、ベストプラクティス、Well-Architected Framework対応を定義",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/infra-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "infra-workflow-takemo101-compose-workflow-2"
+}

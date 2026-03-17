@@ -1,0 +1,11 @@
+{
+  "name": "learning",
+  "description": "Provides on-demand access to accumulated learnings stored in ~/.claude-mind/memory/learnings.md.",
+  "repo": "claudeaceae/samara-main",
+  "path": ".claude/skills/learning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/claudeaceae/samara-main",
+  "dir_name": "learning-claudeaceae-samara-main-2"
+}

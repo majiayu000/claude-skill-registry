@@ -1,0 +1,11 @@
+{
+  "name": "aristotle-lean",
+  "description": "IMO Gold Medal level Lean4 theorem proving via Harmonic API",
+  "repo": "plurigrid/asi",
+  "path": "skills/aristotle-lean",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "aristotle-lean-plurigrid-asi-2"
+}

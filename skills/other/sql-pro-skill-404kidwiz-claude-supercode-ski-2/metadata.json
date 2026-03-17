@@ -1,0 +1,11 @@
+{
+  "name": "sql-pro-skill",
+  "description": "Use when user needs SQL development, database design, query optimization, performance tuning, or database administration across PostgreSQL, MySQL, SQL Server, and Oracle platforms.",
+  "repo": "404kidwiz/claude-supercode-skills",
+  "path": "sql-pro-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/404kidwiz/claude-supercode-skills",
+  "dir_name": "sql-pro-skill-404kidwiz-claude-supercode-ski-2"
+}

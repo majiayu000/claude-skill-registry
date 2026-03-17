@@ -1,0 +1,11 @@
+{
+  "name": "nav-diagnose",
+  "description": "Detect quality drops in AI output and prompt re-anchoring. Auto-triggers after repeated corrections, context confusion, or when user says \"something seems off\", \"you're not getting this\".",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "skills/os-layer/context-memory/nav-diagnose",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "nav-diagnose-dkyazzentwatwa-supernavigator-2"
+}

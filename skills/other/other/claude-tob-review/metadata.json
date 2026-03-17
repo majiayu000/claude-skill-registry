@@ -1,0 +1,9 @@
+{
+  "name": "claude-tob-review",
+  "repo": "hyperlane-xyz/hyperlane-monorepo",
+  "path": ".claude/skills/claude-tob-review/SKILL.md",
+  "category": "other",
+  "source": "github.com/hyperlane-xyz/hyperlane-monorepo",
+  "dir_name": "claude-tob-review",
+  "downloaded_at": "2026-02-22T07:30:09.218652Z"
+}

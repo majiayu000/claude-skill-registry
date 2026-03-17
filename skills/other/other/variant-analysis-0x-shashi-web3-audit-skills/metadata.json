@@ -1,0 +1,17 @@
+{
+  "name": "variant-analysis",
+  "repo": "0x-Shashi/WEB3-AUDIT-SKILLS",
+  "path": "skills/variant-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/0x-Shashi/WEB3-AUDIT-SKILLS",
+  "dir_name": "variant-analysis-0x-shashi-web3-audit-skills",
+  "downloaded_at": "2026-03-01T04:39:42.926273Z",
+  "author": "0x-Shashi",
+  "source_url": "https://github.com/0x-Shashi/WEB3-AUDIT-SKILLS/blob/main/skills/variant-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0x-Shashi/WEB3-AUDIT-SKILLS/blob/main/skills/variant-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "moai-docs-generation",
+  "repo": "hnabyz-bot/mcp-agent-server",
+  "path": ".claude/skills/moai-docs-generation/SKILL.md",
+  "category": "other",
+  "source": "github.com/hnabyz-bot/mcp-agent-server",
+  "dir_name": "moai-docs-generation-hnabyz-bot-mcp-agent-server",
+  "downloaded_at": "2026-02-15T07:30:00.476438Z"
+}

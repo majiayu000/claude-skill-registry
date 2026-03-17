@@ -1,0 +1,11 @@
+{
+  "name": "web-development",
+  "description": "Web frontend project development rules. Use this skill when developing web frontend pages, deploying static hosting, and integrating CloudBase Web SDK.",
+  "repo": "baiyongping/cowork-platform",
+  "path": ".claude/skills/web-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/baiyongping/cowork-platform",
+  "dir_name": "web-development-baiyongping-cowork-platform-2"
+}

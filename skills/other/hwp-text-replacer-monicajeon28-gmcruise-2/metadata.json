@@ -1,0 +1,11 @@
+{
+  "name": "hwp-text-replacer",
+  "description": "HWP/HWPX 한글 문서 텍스트 자동 치환 도구. 한글 파일에서 특정 텍스트를 찾아 치환할 때 사용. 템플릿 문서 자동화, 대량 문서 수정에 활용.",
+  "repo": "monicajeon28/GMcruise",
+  "path": ".claude/skills/hwp-text-replacer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/monicajeon28/GMcruise",
+  "dir_name": "hwp-text-replacer-monicajeon28-gmcruise-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "push-notifications",
+  "description": "Firebase Cloud Messaging and Apple Push Notification Service setup.",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/mobile/push-notifications",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "push-notifications-timequity-vibe-coder-2"
+}

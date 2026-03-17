@@ -1,0 +1,11 @@
+{
+  "name": "nuxt-production",
+  "description": "Nuxt 4 production optimization: hydration, performance, testing with Vitest,\ndeployment to Cloudflare/Vercel/Netlify, and v4 migration.\n\nUse when: debugging hydration mismatches, optimizing performanc",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/nuxt-v4/skills/nuxt-production",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "nuxt-production-secondsky-claude-skills-2"
+}

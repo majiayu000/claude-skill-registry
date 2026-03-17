@@ -1,0 +1,11 @@
+{
+  "name": "scholar-evaluation",
+  "description": "Systematically evaluate scholarly work using the ScholarEval framework, providing structured assessment across research quality dimensions including problem formulation, methodology, analysis, and wri",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/research-tools/scholar-evaluation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "scholar-evaluation-hxk622-tokendance-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "devops-jenkins",
+  "description": "DevOps Jenkins Agent. Jenkins CI/CD 파이프라인 관리, 빌드 트리거, 로그 조회, Job 관리를 담당합니다. jenkins, 빌드(build), 파이프라인, CI/CD, job 관련 요청 시 사용됩니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/devops-jenkins",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "devops-jenkins-shaul1991-shaul-agents-plugin-2"
+}

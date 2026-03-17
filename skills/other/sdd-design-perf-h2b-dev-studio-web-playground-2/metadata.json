@@ -1,0 +1,11 @@
+{
+  "name": "sdd-design-perf",
+  "description": "Design bundle strategy, lazy loading, and render optimization.\nUse when: sdd-design assigns Performance Strategy section.\nTriggers: \"performance design\", \"bundle size\", \"lazy loading\", \"optimization\"",
+  "repo": "h2b-dev-studio/web-playground",
+  "path": ".claude/skills/sdd-design-perf",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/h2b-dev-studio/web-playground",
+  "dir_name": "sdd-design-perf-h2b-dev-studio-web-playground-2"
+}

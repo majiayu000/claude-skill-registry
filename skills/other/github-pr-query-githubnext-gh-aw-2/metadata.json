@@ -1,0 +1,11 @@
+{
+  "name": "github-pr-query",
+  "description": "Query GitHub pull requests efficiently with jq argument support for filtering",
+  "repo": "githubnext/gh-aw",
+  "path": "skills/github-pr-query",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/githubnext/gh-aw",
+  "dir_name": "github-pr-query-githubnext-gh-aw-2"
+}

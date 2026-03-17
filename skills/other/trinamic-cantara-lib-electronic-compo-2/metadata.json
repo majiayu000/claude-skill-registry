@@ -1,0 +1,11 @@
+{
+  "name": "trinamic",
+  "description": "Trinamic Motion Control MPN encoding patterns, motor driver series decoding, and handler guidance. Use when working with Trinamic stepper drivers and motion controllers (TMC series).",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/trinamic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "trinamic-cantara-lib-electronic-compo-2"
+}

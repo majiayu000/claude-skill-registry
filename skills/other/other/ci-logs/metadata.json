@@ -1,0 +1,9 @@
+{
+  "name": "ci-logs",
+  "repo": "AztecProtocol/aztec-packages",
+  "path": ".claude/skills/ci-logs/SKILL.md",
+  "category": "other",
+  "source": "github.com/AztecProtocol/aztec-packages",
+  "dir_name": "ci-logs",
+  "downloaded_at": "2026-02-15T04:49:30.203910Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "trigger-migration",
+  "description": "Manually triggers the migration Lambda for deployed environments. Use when migrations need to be run outside of CI/CD.",
+  "repo": "MenadBt/prospection",
+  "path": ".claude/skills/trigger-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MenadBt/prospection",
+  "dir_name": "trigger-migration-menadbt-prospection-2"
+}

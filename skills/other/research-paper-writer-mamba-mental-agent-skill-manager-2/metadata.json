@@ -1,0 +1,11 @@
+{
+  "name": "research-paper-writer",
+  "description": "Creates formal academic research papers following IEEE/ACM formatting standards with proper structure, citations, and scholarly writing style. Use when the user asks to write a research paper, academi",
+  "repo": "mamba-mental/agent-skill-manager",
+  "path": ".claude/skills/research-paper-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mamba-mental/agent-skill-manager",
+  "dir_name": "research-paper-writer-mamba-mental-agent-skill-manager-2"
+}

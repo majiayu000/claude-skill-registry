@@ -1,0 +1,11 @@
+{
+  "name": "story-generation",
+  "description": "Use this skill when the user asks to \"generate stories for components\", \"parse component props\", \"detect component variants\", \"analyze components\", \"create stories automatically\", mentions \"component ",
+  "repo": "flight505/storybook-assistant",
+  "path": "skills/story-generation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/flight505/storybook-assistant",
+  "dir_name": "story-generation-flight505-storybook-assistant-2"
+}

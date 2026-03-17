@@ -1,0 +1,11 @@
+{
+  "name": "sicmutils",
+  "description": "SICMUtils/Emmy - Clojure library for symbolic mathematics, automatic differentiation, and classical mechanics. Bridges SICM concepts to executable computation via SRFI-compatible abstractions.",
+  "repo": "plurigrid/asi",
+  "path": "skills/sicmutils",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "sicmutils-plurigrid-asi-2"
+}

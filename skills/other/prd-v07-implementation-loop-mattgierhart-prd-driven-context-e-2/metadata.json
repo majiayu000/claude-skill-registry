@@ -1,0 +1,11 @@
+{
+  "name": "prd-v07-implementation-loop",
+  "description": "Execute implementation within EPICs following test-first development, continuous SoT updates, and code traceability during PRD v0.7 Build Execution. Triggers on requests to start building, implement a",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v07-implementation-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v07-implementation-loop-mattgierhart-prd-driven-context-e-2"
+}

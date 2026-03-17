@@ -1,0 +1,11 @@
+{
+  "name": "cloud-api-integration",
+  "description": "Expert skill for integrating cloud AI APIs (Claude, GPT-4, Gemini). Covers secure API key management, prompt injection prevention, rate limiting, cost optimization, and protection against data exfiltr",
+  "repo": "martinholovsky/claude-skills-generator",
+  "path": "skills/cloud-api-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/martinholovsky/claude-skills-generator",
+  "dir_name": "cloud-api-integration-martinholovsky-claude-skills-genera-2"
+}

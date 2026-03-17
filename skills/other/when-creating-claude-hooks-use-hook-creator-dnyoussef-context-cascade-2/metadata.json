@@ -1,0 +1,11 @@
+{
+  "name": "when-creating-claude-hooks-use-hook-creator",
+  "description": "Create Claude Code hooks with proper schemas, RBAC integration, and performance requirements. Use when implementing PreToolUse, PostToolUse, SessionStart, or any of the 10 hook event types for automat",
+  "repo": "DNYoussef/context-cascade",
+  "path": "skills/foundry/when-creating-claude-hooks-use-hook-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DNYoussef/context-cascade",
+  "dir_name": "when-creating-claude-hooks-use-hook-creator-dnyoussef-context-cascade-2"
+}

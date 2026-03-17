@@ -1,0 +1,11 @@
+{
+  "name": "skill-dispatch",
+  "description": "GF(3) Triadic Task Routing for Subagent Orchestration",
+  "repo": "plurigrid/asi",
+  "path": "skills/skill-dispatch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "skill-dispatch-plurigrid-asi-2"
+}

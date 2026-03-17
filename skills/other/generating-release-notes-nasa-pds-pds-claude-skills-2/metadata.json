@@ -1,0 +1,11 @@
+{
+  "name": "generating-release-notes",
+  "description": "Generates GitHub release notes from merged PRs and issues with automated categorization, breaking change detection, and optional upload via gh CLI. Use when creating releases, publishing new versions,",
+  "repo": "NASA-PDS/pds-claude-skills",
+  "path": "generating-release-notes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NASA-PDS/pds-claude-skills",
+  "dir_name": "generating-release-notes-nasa-pds-pds-claude-skills-2"
+}

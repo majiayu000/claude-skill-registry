@@ -1,0 +1,9 @@
+{
+  "name": "auth-keycloak-confidential-client",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/auth:keycloak-confidential-client/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "auth-keycloak-confidential-client",
+  "downloaded_at": "2026-02-15T07:49:47.071670Z"
+}

@@ -25,17 +25,8 @@ from utils import (
     get_repo_suffix,
     short_hash,
     build_legal_metadata,
+    load_metadata,
 )
-
-
-def load_metadata(skill_dir: Path) -> dict:
-    meta_path = skill_dir / "metadata.json"
-    if not meta_path.exists():
-        return {}
-    try:
-        return json.loads(meta_path.read_text(encoding="utf-8"))
-    except Exception:
-        return {}
 
 
 def iter_skills(root: Path, layout: str = "auto") -> Iterable[Tuple[str, Path]]:

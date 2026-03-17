@@ -1,0 +1,11 @@
+{
+  "name": "datadog",
+  "description": "Use this skill when you need to search Datadog logs, query metrics, tail logs in real-time, trace distributed requests, investigate errors, compare time periods, find log patterns, check service healt",
+  "repo": "jjmartres/opencode",
+  "path": "opencode/skill/datadog",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jjmartres/opencode",
+  "dir_name": "datadog-jjmartres-opencode-2"
+}

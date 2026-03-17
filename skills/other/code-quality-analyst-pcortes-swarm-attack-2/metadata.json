@@ -1,0 +1,11 @@
+{
+  "name": "code-quality-analyst",
+  "description": "Analyzes code changes for quality issues, code smells, SOLID violations, LLM-generated code problems, and refactoring opportunities. Reports findings with severity, evidence, and suggested fixes.\n",
+  "repo": "pcortes/swarm-attack",
+  "path": ".claude/skills/code-quality-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pcortes/swarm-attack",
+  "dir_name": "code-quality-analyst-pcortes-swarm-attack-2"
+}

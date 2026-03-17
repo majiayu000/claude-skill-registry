@@ -1,0 +1,11 @@
+{
+  "name": "powersync",
+  "description": "Build local-first, offline-capable TypeScript apps with PowerSync. Use when implementing real-time sync between SQLite and backend databases (Postgres, MongoDB, MySQL, SQL Server). Covers schema defin",
+  "repo": "guillempuche/ai-standards",
+  "path": "skills/powersync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/guillempuche/ai-standards",
+  "dir_name": "powersync-guillempuche-ai-standards-2"
+}

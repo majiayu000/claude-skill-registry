@@ -1,0 +1,11 @@
+{
+  "name": "google-docs",
+  "description": "Manage Google Docs with full document operations including reading content, inserting/appending text, find and replace, text formatting (bold, italic, underline), page breaks, document structure, and ",
+  "repo": "arlenagreer/claude_configuration_docs",
+  "path": "skills/google-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arlenagreer/claude_configuration_docs",
+  "dir_name": "google-docs-arlenagreer-claude-configuration-2"
+}

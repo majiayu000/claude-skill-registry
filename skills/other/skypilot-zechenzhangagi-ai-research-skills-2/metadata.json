@@ -1,0 +1,11 @@
+{
+  "name": "skypilot",
+  "description": "Multi-cloud orchestration for ML workloads with automatic cost optimization. Use when you need to run training or batch jobs across multiple clouds, leverage spot instances with auto-recovery, or opti",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "09-infrastructure/skypilot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "skypilot-zechenzhangagi-ai-research-skills-2"
+}

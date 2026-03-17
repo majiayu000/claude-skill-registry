@@ -1,0 +1,11 @@
+{
+  "name": "hardware-integration",
+  "description": "Camera, GPIO, and hardware integration for Raspberry Pi 5. Use for camera testing, hardware diagnostics, GPIO troubleshooting, and sensor issues.",
+  "repo": "Toragonite/photobooth",
+  "path": ".claude/skills/hardware-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Toragonite/photobooth",
+  "dir_name": "hardware-integration-toragonite-photobooth-2"
+}

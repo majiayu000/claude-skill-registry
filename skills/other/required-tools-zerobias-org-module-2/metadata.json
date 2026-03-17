@@ -1,0 +1,11 @@
+{
+  "name": "required-tools",
+  "description": "Required tools and version requirements for module development",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/required-tools",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "required-tools-zerobias-org-module-2"
+}

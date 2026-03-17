@@ -1,0 +1,11 @@
+{
+  "name": "clickup-mcp",
+  "description": "Manage ClickUp tasks, docs, time tracking, comments, chat, and search via official MCP. OAuth authentication required.",
+  "repo": "clawdbot/skills",
+  "path": "skills/pvoo/clickup-mcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "clickup-mcp-clawdbot-skills-2"
+}

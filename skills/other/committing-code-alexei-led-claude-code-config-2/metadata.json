@@ -1,0 +1,11 @@
+{
+  "name": "committing-code",
+  "description": "Smart git commits with logical grouping. Use when user says \"commit\", \"commit changes\", \"save changes\", \"create commit\", \"bundle commits\", \"git commit\", or wants to commit their work.",
+  "repo": "alexei-led/claude-code-config",
+  "path": "skills/committing-code",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alexei-led/claude-code-config",
+  "dir_name": "committing-code-alexei-led-claude-code-config-2"
+}

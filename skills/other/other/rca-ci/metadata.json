@@ -1,0 +1,9 @@
+{
+  "name": "rca-ci",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/rca:ci/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "rca-ci",
+  "downloaded_at": "2026-02-15T07:49:43.316819Z"
+}

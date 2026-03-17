@@ -1,0 +1,11 @@
+{
+  "name": "vocabulary-tiers",
+  "description": "Guidelines for assigning vocabulary to the three-tier system (basic, core, general). Covers tier criteria, word counts, self-containment principles, and semantic grouping.",
+  "repo": "tkgally/je-dict-1",
+  "path": ".claude/skills/vocabulary-tiers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tkgally/je-dict-1",
+  "dir_name": "vocabulary-tiers-tkgally-je-dict-1-2"
+}

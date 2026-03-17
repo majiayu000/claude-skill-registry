@@ -1,0 +1,11 @@
+{
+  "name": "pipeline-orchestration",
+  "description": "Master orchestrator for the entire development pipeline from Phase 1-12.\nActivates via codeword [ACTIVATE:PIPELINE_ORCHESTRATION_V1] injected by hooks\nwhen user wants to start automated development.\n\n",
+  "repo": "turbobeest/cursor-dev-system",
+  "path": "skills/pipeline-orchestration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/turbobeest/cursor-dev-system",
+  "dir_name": "pipeline-orchestration-turbobeest-cursor-dev-system-2"
+}

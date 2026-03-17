@@ -1,0 +1,11 @@
+{
+  "name": "activate-lightning-page",
+  "description": "Activates a newly deployed Lightning App Page so it appears in the App Launcher. Use when you've deployed a new flexipage and need to make it accessible to users.",
+  "repo": "MenachemShanowitz/LubavitchRV",
+  "path": ".claude/skills/activate-lightning-page",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MenachemShanowitz/LubavitchRV",
+  "dir_name": "activate-lightning-page-menachemshanowitz-lubavitchrv-2"
+}

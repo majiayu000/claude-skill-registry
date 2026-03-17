@@ -1,0 +1,11 @@
+{
+  "name": "bknd-public-vs-auth",
+  "description": "Use when configuring public vs authenticated access in Bknd. Covers anonymous role setup, unauthenticated data access, public/private entity patterns, mixed access modes, and protecting sensitive enti",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-public-vs-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-public-vs-auth-cameronapak-freedom-stack-v3-2"
+}

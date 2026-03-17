@@ -1,0 +1,11 @@
+{
+  "name": "enterprise-orchestration",
+  "description": "Advanced multi-agent coordination at scale for complex organizations",
+  "repo": "frankxai/arcanea",
+  "path": ".claude/skills/premium/enterprise-orchestration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/arcanea",
+  "dir_name": "enterprise-orchestration-frankxai-arcanea-2"
+}

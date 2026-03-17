@@ -1,0 +1,11 @@
+{
+  "name": "hook-skill",
+  "description": "Claude Code Hook 开发专家。当需要创建、调试、配置 Hook 时触发。触发词：创建 hook、写 hook、hook 配置、stop hook、pre tool use、post tool use、session start。",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/hook-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "hook-skill-maxoreric-sop-engine-2"
+}

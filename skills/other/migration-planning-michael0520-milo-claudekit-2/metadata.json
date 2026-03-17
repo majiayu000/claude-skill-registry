@@ -1,0 +1,11 @@
+{
+  "name": "migration-planning",
+  "description": "Planning One-UI migrations with superpowers workflow integration. Ensures tool references are included in brainstorming and plan writing.",
+  "repo": "Michael0520/milo-claudekit",
+  "path": "plugins/one-ui-migration/skills/migration-planning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Michael0520/milo-claudekit",
+  "dir_name": "migration-planning-michael0520-milo-claudekit-2"
+}

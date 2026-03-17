@@ -1,0 +1,11 @@
+{
+  "name": "design-prune",
+  "description": "Remove historical cruft from design docs. Use when docs accumulate outdated content, after major refactorings, or when preparing for releases.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/design-prune",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "design-prune-spencerbeggs-claude-design-coordi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "create-feature-branch",
+  "description": "Create a new feature branch following Git Flow strategy. Use when starting new feature development, creating a branch for an issue, or when user says \"create branch\", \"new feature\", \"start working on ",
+  "repo": "tettuan/breakdown",
+  "path": ".claude/skills/create-feature-branch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tettuan/breakdown",
+  "dir_name": "create-feature-branch-tettuan-breakdown-2"
+}

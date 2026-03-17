@@ -1,0 +1,11 @@
+{
+  "name": "Logging",
+  "description": "UTF-8 file logging with automatic date-based filenames and thread-safe operations for RocsMiddleware services",
+  "repo": "lawless-m/Earwig",
+  "path": ".claude/skills/Logging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lawless-m/Earwig",
+  "dir_name": "logging-lawless-m-earwig-2"
+}

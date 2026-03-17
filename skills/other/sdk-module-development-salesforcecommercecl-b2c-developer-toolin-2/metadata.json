@@ -1,0 +1,11 @@
+{
+  "name": "sdk-module-development",
+  "description": "Adding new modules and exports to the @salesforce/b2c-tooling-sdk package",
+  "repo": "SalesforceCommerceCloud/b2c-developer-tooling",
+  "path": ".claude/skills/sdk-module-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SalesforceCommerceCloud/b2c-developer-tooling",
+  "dir_name": "sdk-module-development-salesforcecommercecl-b2c-developer-toolin-2"
+}

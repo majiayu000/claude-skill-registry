@@ -1,0 +1,11 @@
+{
+  "name": "pytorch-lightning",
+  "description": "Deep learning framework (PyTorch Lightning). Organize PyTorch code into LightningModules, configure Trainers for multi-GPU/TPU, implement data pipelines, callbacks, logging (W&B, TensorBoard), distrib",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/data-science/pytorch-lightning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "pytorch-lightning-hxk622-tokendance-2"
+}

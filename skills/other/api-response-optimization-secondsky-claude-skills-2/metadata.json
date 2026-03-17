@@ -1,0 +1,11 @@
+{
+  "name": "api-response-optimization",
+  "description": "Optimizes API performance through payload reduction, caching strategies, and compression techniques. Use when improving API response times, reducing bandwidth usage, or implementing efficient caching.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/api-response-optimization/skills/api-response-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "api-response-optimization-secondsky-claude-skills-2"
+}

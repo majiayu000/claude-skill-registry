@@ -1,0 +1,11 @@
+{
+  "name": "openapi-foundations",
+  "description": "OpenAPI core rules 1-10 covering servers, naming, parameters, and basic patterns",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/openapi-foundations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "openapi-foundations-zerobias-org-module-2"
+}

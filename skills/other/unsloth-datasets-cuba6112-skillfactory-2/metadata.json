@@ -1,0 +1,11 @@
+{
+  "name": "unsloth-datasets",
+  "description": "Unsloth-datasets provides tools to prepare and optimize data for fine-tuning. Key features include standardizing external datasets (like ShareGPT/Alpaca) into a unified format, synthetically extending",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/unsloth-datasets",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "unsloth-datasets-cuba6112-skillfactory-2"
+}

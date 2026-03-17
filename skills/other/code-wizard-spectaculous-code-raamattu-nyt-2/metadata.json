@@ -1,0 +1,11 @@
+{
+  "name": "code-wizard",
+  "description": "Codebase exploration and location finder for the Raamattu Nyt monorepo. Use when finding where specific functionality is implemented, locating constants/tokens/config values, discovering file patterns",
+  "repo": "Spectaculous-Code/raamattu-nyt",
+  "path": ".claude/skills/code-wizard",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Spectaculous-Code/raamattu-nyt",
+  "dir_name": "code-wizard-spectaculous-code-raamattu-nyt-2"
+}

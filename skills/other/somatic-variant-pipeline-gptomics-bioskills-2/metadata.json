@@ -1,0 +1,11 @@
+{
+  "name": "somatic-variant-pipeline",
+  "description": "End-to-end somatic variant calling from tumor-normal paired samples using Mutect2 or Strelka2. Covers preprocessing, variant calling, filtering, and annotation for cancer genomics.",
+  "repo": "GPTomics/bioSkills",
+  "path": "workflows/somatic-variant-pipeline",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "somatic-variant-pipeline-gptomics-bioskills-2"
+}

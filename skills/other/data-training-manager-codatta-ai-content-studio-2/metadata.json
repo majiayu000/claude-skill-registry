@@ -1,0 +1,11 @@
+{
+  "name": "data-training-manager",
+  "description": "Manage AI training data, monitor content freshness, detect repetition, and update training samples for continuous learning. Use when managing training data, checking content quality, updating AI model",
+  "repo": "codatta/ai-content-studio",
+  "path": "skills/data-training-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/codatta/ai-content-studio",
+  "dir_name": "data-training-manager-codatta-ai-content-studio-2"
+}

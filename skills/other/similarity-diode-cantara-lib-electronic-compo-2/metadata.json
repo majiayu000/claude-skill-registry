@@ -1,0 +1,11 @@
+{
+  "name": "similarity-diode",
+  "description": "Use when working with diode similarity calculations - comparing signal/rectifier/zener/Schottky diode MPNs, understanding equivalent groups like 1N4148/1N914, or diode-specific similarity logic.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/similarity-diode",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "similarity-diode-cantara-lib-electronic-compo-2"
+}

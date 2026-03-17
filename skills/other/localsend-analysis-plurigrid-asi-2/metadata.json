@@ -1,0 +1,11 @@
+{
+  "name": "localsend-analysis",
+  "description": "Analyze LocalSend repos with tree-sitter tags, gh GraphQL contributor snapshots, and protocol safety notes.",
+  "repo": "plurigrid/asi",
+  "path": "skills/localsend-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "localsend-analysis-plurigrid-asi-2"
+}

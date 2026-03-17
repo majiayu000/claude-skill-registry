@@ -1,0 +1,11 @@
+{
+  "name": "zero-one-patterns",
+  "description": "UIkit patterns and Zero One theme customization for Kirby CMS. Use when styling components with UIkit, customizing the Zero One theme, or building responsive layouts.",
+  "repo": "astoeffer/plugin-marketplace",
+  "path": "plugins/cloodle-kirby-dev/skills/zero-one-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/astoeffer/plugin-marketplace",
+  "dir_name": "zero-one-patterns-astoeffer-plugin-marketplace-2"
+}

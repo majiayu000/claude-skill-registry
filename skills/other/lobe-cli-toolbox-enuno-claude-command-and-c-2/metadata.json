@@ -1,0 +1,11 @@
+{
+  "name": "lobe-cli-toolbox",
+  "description": "LobeHub CLI Toolbox - AI-powered command-line tools including lobe-commit (ChatGPT Git commits with Gitmoji), lobe-i18n (automated internationalization), and lobe-label (GitHub label management)",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/lobe-cli-toolbox",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "lobe-cli-toolbox-enuno-claude-command-and-c-2"
+}

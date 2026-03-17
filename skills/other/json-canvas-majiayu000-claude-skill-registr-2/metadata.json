@@ -1,0 +1,11 @@
+{
+  "name": "json-canvas",
+  "description": "Create and edit JSON Canvas files (.canvas) with nodes, edges, groups, and connections. Use when working with .canvas files, creating visual canvases, mind maps, flowcharts, or when the user mentions ",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/json-canvas",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "json-canvas-majiayu000-claude-skill-registr-2"
+}

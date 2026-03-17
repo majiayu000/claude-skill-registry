@@ -1,0 +1,11 @@
+{
+  "name": "evidence-scout",
+  "description": "指定薬剤・適応・国・データベース特性に基づき、PubMed/Web検索で先行RWD研究・RCT・ガイドラインを調査し、\nエビデンスランドスケープを要約する。JMDC/MDV等クレームDBとの差別化観点を必ず含める。\n",
+  "repo": "tito-gh/healthcare",
+  "path": ".claude/skills/evidence-scout",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tito-gh/healthcare",
+  "dir_name": "evidence-scout-tito-gh-healthcare-2"
+}

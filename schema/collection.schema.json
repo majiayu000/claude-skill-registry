@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Claude Skill Collection Schema",
+  "description": "JSON Schema for validating skill collections (bundled skill packs)",
+  "type": "object",
+  "required": ["name", "description", "repo"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,63}$",
+      "description": "Collection name (lowercase, alphanumeric, hyphens only)"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 500,
+      "description": "Brief description of the collection"
+    },
+    "repo": {
+      "type": "string",
+      "description": "GitHub repository (owner/repo format)"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "development", "testing", "data", "design",
+        "documents", "productivity", "devops", "security",
+        "marketing", "product", "communication", "creative"
+      ],
+      "description": "Primary category"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$",
+        "maxLength": 30
+      },
+      "maxItems": 10,
+      "uniqueItems": true
+    },
+    "install": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Install command (e.g., npx pm-ai-partner@latest)"
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri",
+      "maxLength": 500,
+      "description": "Project homepage or npm page URL"
+    },
+    "author": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "skills": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of skill names contained in this collection"
+    },
+    "commands": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of slash commands provided"
+    },
+    "hooks": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of hooks provided"
+    },
+    "license": {
+      "type": "string",
+      "description": "Software license (SPDX identifier)"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    }
+  },
+  "additionalProperties": true
+}

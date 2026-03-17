@@ -1,0 +1,11 @@
+{
+  "name": "shell",
+  "description": "Shell scripting best practices for writing safe, portable, and maintainable bash/sh scripts (formerly shell-scripts). Use when writing, reviewing, or refactoring shell scripts. Triggers on shell scrip",
+  "repo": "pproenca/dot-skills",
+  "path": "skills/.experimental/shell",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pproenca/dot-skills",
+  "dir_name": "shell-pproenca-dot-skills-2"
+}

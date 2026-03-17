@@ -1,0 +1,11 @@
+{
+  "name": "hvm-runtime",
+  "description": "HVM Runtime Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/hvm-runtime",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "hvm-runtime-plurigrid-asi-2"
+}

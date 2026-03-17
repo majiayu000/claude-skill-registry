@@ -1,0 +1,11 @@
+{
+  "name": "managing-plugins",
+  "description": "Creates, packs, bundles, and manages Claude Code plugins with manifest generation, directory structure, marketplace configuration. Use when user asks how plugins work, what plugins are, explaining plu",
+  "repo": "thoeltig/claude-code-toolkit",
+  "path": "plugins/claude-code-capabilities/skills/managing-plugins",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/thoeltig/claude-code-toolkit",
+  "dir_name": "managing-plugins-thoeltig-claude-code-toolkit-2"
+}

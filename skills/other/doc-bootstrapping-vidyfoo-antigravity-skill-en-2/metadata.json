@@ -1,0 +1,11 @@
+{
+  "name": "doc-bootstrapping",
+  "description": "一键建立项目文档系统。初始化 Rule1, Memory 以及基于 Diátaxis 的目录结构。",
+  "repo": "VidyFoo/antigravity-skill-engine",
+  "path": ".agent/skills/3-sys/doc-bootstrapping",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VidyFoo/antigravity-skill-engine",
+  "dir_name": "doc-bootstrapping-vidyfoo-antigravity-skill-en-2"
+}

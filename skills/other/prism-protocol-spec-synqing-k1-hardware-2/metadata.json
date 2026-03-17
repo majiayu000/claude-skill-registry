@@ -1,0 +1,11 @@
+{
+  "name": "prism-protocol-spec",
+  "description": "Wire protocol for PRISM K1 device communication, frame structure, and CRC32 validation",
+  "repo": "synqing/K1.hardware",
+  "path": ".claude/skills/prism-protocol-spec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/synqing/K1.hardware",
+  "dir_name": "prism-protocol-spec-synqing-k1-hardware-2"
+}

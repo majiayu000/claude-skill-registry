@@ -1,0 +1,11 @@
+{
+  "name": "trend-forecaster",
+  "description": "Identifies emerging trends, predicts market movements, forecasts future opportunities",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/trend-forecaster",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "dir_name": "trend-forecaster-zhiruifeng-localagentcrew-2"
+}

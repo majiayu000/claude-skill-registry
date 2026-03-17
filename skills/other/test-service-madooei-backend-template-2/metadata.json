@@ -1,0 +1,11 @@
+{
+  "name": "test-service",
+  "description": "Guide for testing service layer. Use when asked to test services. Directs to implementation-specific testing skills.",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/test-service",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "test-service-madooei-backend-template-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "skill-orchestrator",
+  "description": "Coordinates execution of multiple specialized skills in complex workflows, managing dependencies, parallel execution, and result synthesis.",
+  "repo": "Ryno-Crypto-Mining-Services/braiins-insights-mcp-server",
+  "path": ".claude/skills/skill-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ryno-Crypto-Mining-Services/braiins-insights-mcp-server",
+  "dir_name": "skill-orchestrator-ryno-crypto-mining-s-braiins-insights-mcp-2"
+}

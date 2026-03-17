@@ -1,0 +1,11 @@
+{
+  "name": "pg-data",
+  "description": "Generate safe, read-only PostgreSQL queries from natural language. Use when users need to query blog_small, ecommerce_medium, or saas_crm_large databases. Supports query generation, execution, and res",
+  "repo": "tyrchen/geektime-bootcamp-ai",
+  "path": ".claude/skills/pg-data",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tyrchen/geektime-bootcamp-ai",
+  "dir_name": "pg-data-tyrchen-geektime-bootcamp-ai-2"
+}

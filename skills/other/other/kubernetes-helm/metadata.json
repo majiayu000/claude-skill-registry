@@ -1,0 +1,9 @@
+{
+  "name": "kubernetes-helm",
+  "repo": "HouseGarofalo/claude-code-base",
+  "path": ".claude/skills/kubernetes-helm/SKILL.md",
+  "category": "other",
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "dir_name": "kubernetes-helm",
+  "downloaded_at": "2026-02-22T05:09:44.299090Z"
+}

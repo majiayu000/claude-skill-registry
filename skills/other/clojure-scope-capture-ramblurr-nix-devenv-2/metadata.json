@@ -1,0 +1,11 @@
+{
+  "name": "clojure-scope-capture",
+  "description": "REPL debugging tool for capturing and inspecting local scope at runtime.\nUse when debugging functions, investigating test failures, understanding intermediate values,\nor when you need to recreate the ",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/clojure-scope-capture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "clojure-scope-capture-ramblurr-nix-devenv-2"
+}

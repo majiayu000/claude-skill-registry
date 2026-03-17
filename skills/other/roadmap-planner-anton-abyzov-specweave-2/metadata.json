@@ -1,0 +1,11 @@
+{
+  "name": "roadmap-planner",
+  "description": "Product roadmap and feature prioritization expert. Creates product roadmaps, prioritizes features using RICE/MoSCoW/Kano frameworks, defines success metrics and KPIs, and translates technical decision",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave/skills/roadmap-planner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/anton-abyzov/specweave",
+  "dir_name": "roadmap-planner-anton-abyzov-specweave-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "managing-literal-strings",
+  "description": "Manages literal strings by pre-defining them as const string in C#. Use when organizing string constants, log messages, exception messages, or UI texts across the codebase.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/managing-literal-strings",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "managing-literal-strings-christian289-dotnet-with-claudeco-2"
+}

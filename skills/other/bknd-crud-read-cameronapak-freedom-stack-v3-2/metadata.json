@@ -1,0 +1,11 @@
+{
+  "name": "bknd-crud-read",
+  "description": "Use when querying and retrieving data from Bknd entities via SDK or REST API. Covers readOne, readMany, readOneBy, filtering (where clause), sorting, field selection, loading relations (with/join), an",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-crud-read",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-crud-read-cameronapak-freedom-stack-v3-2"
+}

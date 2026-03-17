@@ -1,0 +1,11 @@
+{
+  "name": "budget-optimization",
+  "description": "Use when reallocating spend across channels/ad sets or setting guardrails to stay on plan.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/paid-media/skills/budget-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "budget-optimization-gtmagents-gtm-agents-2"
+}

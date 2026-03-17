@@ -1,0 +1,11 @@
+{
+  "name": "pr-creation",
+  "description": "Use after completing implementation - create pull request with complete documentation, proper labels, linked issues, and verification summary",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/pr-creation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "pr-creation-troykelly-codex-skills-2"
+}

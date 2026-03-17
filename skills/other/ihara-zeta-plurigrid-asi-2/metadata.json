@@ -1,0 +1,11 @@
+{
+  "name": "ihara-zeta",
+  "description": "Ihara zeta function for graphs: non-backtracking walks, prime cycles, and spectral analysis via det(I - uB).",
+  "repo": "plurigrid/asi",
+  "path": "skills/ihara-zeta",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "ihara-zeta-plurigrid-asi-2"
+}

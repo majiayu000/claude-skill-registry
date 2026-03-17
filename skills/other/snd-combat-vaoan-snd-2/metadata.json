@@ -1,0 +1,11 @@
+{
+  "name": "snd-combat",
+  "description": "Use this skill when implementing combat automation in SND macros using rotation plugins like BossMod, RSR (RotationSolver Reborn), or Wrath. Covers plugin control, state management, and combat pattern",
+  "repo": "vaoan/SND",
+  "path": ".claude/skills/snd-combat",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vaoan/SND",
+  "dir_name": "snd-combat-vaoan-snd-2"
+}

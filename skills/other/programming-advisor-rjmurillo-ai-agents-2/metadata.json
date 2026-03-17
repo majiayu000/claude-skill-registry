@@ -1,0 +1,11 @@
+{
+  "name": "programming-advisor",
+  "description": "Evaluate existing solutions (libraries, SaaS, open source) before custom development to avoid reinventing the wheel. Use when considering building new features, asking \"should I build or use existing\"",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/programming-advisor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "programming-advisor-rjmurillo-ai-agents-2"
+}

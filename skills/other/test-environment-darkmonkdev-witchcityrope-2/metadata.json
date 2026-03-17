@@ -1,0 +1,11 @@
+{
+  "name": "test-environment",
+  "description": "Run all tests (unit, integration, E2E) in isolated containers separate from dev environment. Handles build, container startup, health checks, test execution, and cleanup. SINGLE SOURCE OF TRUTH for ru",
+  "repo": "DarkMonkDev/WitchCityRope",
+  "path": ".claude/skills/test-environment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DarkMonkDev/WitchCityRope",
+  "dir_name": "test-environment-darkmonkdev-witchcityrope-2"
+}

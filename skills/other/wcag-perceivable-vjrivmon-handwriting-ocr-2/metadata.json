@@ -1,0 +1,11 @@
+{
+  "name": "wcag-perceivable",
+  "description": "Principio 1 de WCAG - contenido perceptible por todos los usuarios. Use cuando diseñe contenido multimedia, imágenes, o cualquier información visual o auditiva.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/accessibility/wcag-perceivable",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "wcag-perceivable-vjrivmon-handwriting-ocr-2"
+}

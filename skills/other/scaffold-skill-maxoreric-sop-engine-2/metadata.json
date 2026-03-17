@@ -1,0 +1,11 @@
+{
+  "name": "scaffold-skill",
+  "description": "系统初始化脚手架。用于在新项目中克隆和初始化 sop-engine 内核。",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/scaffold-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "scaffold-skill-maxoreric-sop-engine-2"
+}

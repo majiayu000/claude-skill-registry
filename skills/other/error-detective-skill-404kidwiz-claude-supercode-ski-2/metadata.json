@@ -1,0 +1,11 @@
+{
+  "name": "error-detective-skill",
+  "description": "Use when user needs complex error pattern analysis, distributed system debugging, error correlation, root cause discovery, or predictive error prevention across microservices.",
+  "repo": "404kidwiz/claude-supercode-skills",
+  "path": "error-detective-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/404kidwiz/claude-supercode-skills",
+  "dir_name": "error-detective-skill-404kidwiz-claude-supercode-ski-2"
+}

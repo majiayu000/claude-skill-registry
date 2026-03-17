@@ -1,0 +1,11 @@
+{
+  "name": "mapping-invariants",
+  "description": "Intro skill for designing and implementing assertions. Use when starting a new protocol to map invariants before writing assertions or tests.",
+  "repo": "phylaxsystems/agent-skills",
+  "path": "skills/mapping-invariants",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/phylaxsystems/agent-skills",
+  "dir_name": "mapping-invariants-phylaxsystems-agent-skills-2"
+}

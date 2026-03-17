@@ -1,0 +1,11 @@
+{
+  "name": "dart-contribute",
+  "description": "DART contribution workflow - branching, PRs, code review, dual-PR for bugfixes",
+  "repo": "dartsim/dart",
+  "path": ".claude/skills/dart-contribute",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dartsim/dart",
+  "dir_name": "dart-contribute-dartsim-dart-2"
+}

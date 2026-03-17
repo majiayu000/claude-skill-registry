@@ -1,0 +1,11 @@
+{
+  "name": "breakpoints",
+  "description": "Use this skill when implementing responsive design, optimizing layouts for different screen sizes, or working on responsive components for the EVOLEA website. Provides the EVOLEA breakpoint system, fl",
+  "repo": "cgjen-box/evolea-website",
+  "path": ".claude/skills/breakpoints",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cgjen-box/evolea-website",
+  "dir_name": "breakpoints-cgjen-box-evolea-website-2"
+}

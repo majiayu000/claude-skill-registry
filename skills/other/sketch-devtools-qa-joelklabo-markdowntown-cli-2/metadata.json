@@ -1,0 +1,11 @@
+{
+  "name": "sketch-devtools-qa",
+  "description": "Chrome DevTools QA workflow for the Sketch Magic kid-first UI. Use when validating Console/Network/Performance, investigating “tap doesn’t work”, /api/convert failures, mobile touch issues, or when a ",
+  "repo": "joelklabo/markdowntown-cli",
+  "path": "codex/skills/sketch-devtools-qa",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown-cli",
+  "dir_name": "sketch-devtools-qa-joelklabo-markdowntown-cli-2"
+}

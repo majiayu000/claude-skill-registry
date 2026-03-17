@@ -1,0 +1,11 @@
+{
+  "name": "versioning-skills",
+  "description": "REQUIRED for all skill development. Automatically version control every skill file modification for rollback/comparison. Use after init_skill.sh, after every str_replace/create_file, and before packag",
+  "repo": "oaustegard/claude-skills",
+  "path": "versioning-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "versioning-skills-oaustegard-claude-skills-2"
+}

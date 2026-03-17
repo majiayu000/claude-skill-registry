@@ -1,0 +1,11 @@
+{
+  "name": "sheaf-cohomology",
+  "description": "Čech cohomology for local-to-global consistency verification in code",
+  "repo": "plurigrid/asi",
+  "path": "skills/sheaf-cohomology",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "sheaf-cohomology-plurigrid-asi-2"
+}

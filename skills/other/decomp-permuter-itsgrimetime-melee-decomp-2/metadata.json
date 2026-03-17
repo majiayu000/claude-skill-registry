@@ -1,0 +1,11 @@
+{
+  "name": "decomp-permuter",
+  "description": "Use the decomp-permuter to automatically find C code variations that match target assembly. Useful when stuck at 99%+ match with stubborn register allocation issues. Invoked with /decomp-permuter <fun",
+  "repo": "itsgrimetime/melee-decomp",
+  "path": ".claude/skills/decomp-permuter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/itsgrimetime/melee-decomp",
+  "dir_name": "decomp-permuter-itsgrimetime-melee-decomp-2"
+}

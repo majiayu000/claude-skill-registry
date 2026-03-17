@@ -1,0 +1,11 @@
+{
+  "name": "visual-regression-setup",
+  "description": "Sets up visual regression testing using Percy, Chromatic, or Playwright to catch unintended UI changes through screenshot comparison. Use when user asks to \"setup visual testing\", \"add screenshot test",
+  "repo": "Dexploarer/hyper-forge",
+  "path": ".claude/skills/visual-regression-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Dexploarer/hyper-forge",
+  "dir_name": "visual-regression-setup-dexploarer-hyper-forge-2"
+}

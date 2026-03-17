@@ -1,0 +1,17 @@
+{
+  "name": "angular-forms",
+  "repo": "danielsogl/copilot-workflow-demo",
+  "path": ".agents/skills/angular-forms/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/danielsogl/copilot-workflow-demo",
+  "dir_name": "angular-forms-danielsogl-copilot-workflow-dem",
+  "downloaded_at": "2026-03-01T07:22:27.952102Z",
+  "author": "danielsogl",
+  "source_url": "https://github.com/danielsogl/copilot-workflow-demo/blob/main/.agents/skills/angular-forms/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/danielsogl/copilot-workflow-demo/blob/main/.agents/skills/angular-forms/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

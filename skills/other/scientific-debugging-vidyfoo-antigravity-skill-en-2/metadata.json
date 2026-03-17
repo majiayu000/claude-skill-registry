@@ -1,0 +1,11 @@
+{
+  "name": "scientific-debugging",
+  "description": "科学调试专家 - 观察(Observe) -> 假设(Hypothesize) -> 实验(Experiment) -> 修复(Fix)",
+  "repo": "VidyFoo/antigravity-skill-engine",
+  "path": ".agent/skills/2-audit/scientific-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VidyFoo/antigravity-skill-engine",
+  "dir_name": "scientific-debugging-vidyfoo-antigravity-skill-en-2"
+}

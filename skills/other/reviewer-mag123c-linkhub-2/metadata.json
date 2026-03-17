@@ -1,0 +1,11 @@
+{
+  "name": "reviewer",
+  "description": "코드 리뷰 스킬. 버그, 보안, 성능, 가독성 체크. PR 리뷰, 자기 검토 시 사용.",
+  "repo": "mag123c/linkhub",
+  "path": ".claude/skills/reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mag123c/linkhub",
+  "dir_name": "reviewer-mag123c-linkhub-2"
+}

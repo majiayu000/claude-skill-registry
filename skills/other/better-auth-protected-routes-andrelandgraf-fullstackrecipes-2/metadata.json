@@ -1,0 +1,11 @@
+{
+  "name": "better-auth-protected-routes",
+  "description": "Add server-side route protection to enforce authentication on specific pages while keeping others public.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/better-auth-protected-routes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "better-auth-protected-routes-andrelandgraf-fullstackrecipes-2"
+}

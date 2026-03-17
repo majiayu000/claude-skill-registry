@@ -1,0 +1,11 @@
+{
+  "name": "xunit-test",
+  "description": "Execute and generate xUnit tests for C#/.NET projects with FluentAssertions and Moq support",
+  "repo": "FortiumPartners/ai-mesh",
+  "path": "skills/xunit-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FortiumPartners/ai-mesh",
+  "dir_name": "xunit-test-fortiumpartners-ai-mesh-2"
+}

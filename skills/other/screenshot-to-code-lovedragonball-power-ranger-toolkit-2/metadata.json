@@ -1,0 +1,11 @@
+{
+  "name": "screenshot-to-code",
+  "description": "แปลง screenshots หรือ design mockups เป็น working code (HTML/CSS/React)",
+  "repo": "lovedragonball/power-ranger-toolkit",
+  "path": "src/skills/screenshot-to-code",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lovedragonball/power-ranger-toolkit",
+  "dir_name": "screenshot-to-code-lovedragonball-power-ranger-toolkit-2"
+}

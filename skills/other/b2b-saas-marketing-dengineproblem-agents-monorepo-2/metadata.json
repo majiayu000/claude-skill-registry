@@ -1,0 +1,11 @@
+{
+  "name": "b2b-saas-marketing",
+  "description": "Эксперт по B2B SaaS маркетингу. Используй для стратегий генерации спроса, growth-маркетинга, PLG, расчёта CAC/LTV, оптимизации воронки и маркетинговых операций.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/b2b-saas-marketing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "b2b-saas-marketing-dengineproblem-agents-monorepo-2"
+}

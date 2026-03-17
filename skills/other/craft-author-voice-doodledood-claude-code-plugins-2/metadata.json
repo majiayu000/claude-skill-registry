@@ -1,0 +1,11 @@
+{
+  "name": "craft-author-voice",
+  "description": "Captures writing style/voice into AUTHOR_VOICE.md so AI can write like the user. Use when asked to match tone, write like me, replicate voice, or capture writing style for content generation.",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/solo-dev/skills/craft-author-voice",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "craft-author-voice-doodledood-claude-code-plugins-2"
+}

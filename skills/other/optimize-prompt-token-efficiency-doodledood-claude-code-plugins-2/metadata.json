@@ -1,0 +1,11 @@
+{
+  "name": "optimize-prompt-token-efficiency",
+  "description": "Iteratively optimizes prompts for token efficiency by maximizing information density - reduces verbosity, removes redundancy, tightens phrasing while preserving semantic content. Use when asked to com",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/prompt-engineering/skills/optimize-prompt-token-efficiency",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "optimize-prompt-token-efficiency-doodledood-claude-code-plugins-2"
+}

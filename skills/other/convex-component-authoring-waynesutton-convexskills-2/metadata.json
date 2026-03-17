@@ -1,0 +1,11 @@
+{
+  "name": "convex-component-authoring",
+  "description": "How to create, structure, and publish self-contained Convex components with proper isolation, exports, and dependency management",
+  "repo": "waynesutton/convexskills",
+  "path": "skills/convex-component-authoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/waynesutton/convexskills",
+  "dir_name": "convex-component-authoring-waynesutton-convexskills-2"
+}

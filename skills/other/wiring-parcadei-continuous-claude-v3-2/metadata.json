@@ -1,0 +1,11 @@
+{
+  "name": "wiring",
+  "description": "Wiring Verification",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/wiring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "wiring-parcadei-continuous-claude-v3-2"
+}

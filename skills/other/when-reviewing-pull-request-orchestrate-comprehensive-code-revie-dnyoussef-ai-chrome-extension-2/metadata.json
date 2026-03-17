@@ -1,0 +1,11 @@
+{
+  "name": "when-reviewing-pull-request-orchestrate-comprehensive-code-review",
+  "description": "Use when conducting comprehensive code review for pull requests across multiple quality dimensions.\nOrchestrates 12-15 specialized reviewer agents across 4 phases using star topology coordination.\nCov",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/when-reviewing-pull-request-orchestrate-comprehensive-code-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "dir_name": "when-reviewing-pull-request-orchestrate-comprehensive-code-revie-dnyoussef-ai-chrome-extension-2"
+}

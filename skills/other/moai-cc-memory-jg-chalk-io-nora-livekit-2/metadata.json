@@ -1,0 +1,11 @@
+{
+  "name": "moai-cc-memory",
+  "description": "Claude Code memory management, context persistence, and knowledge retention. Use when managing session memory, persisting context, or optimizing knowledge retention.",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-cc-memory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-cc-memory-jg-chalk-io-nora-livekit-2"
+}

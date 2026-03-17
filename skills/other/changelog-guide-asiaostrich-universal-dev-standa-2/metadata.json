@@ -1,0 +1,11 @@
+{
+  "name": "changelog-guide",
+  "description": "Write and maintain CHANGELOG.md following Keep a Changelog format.\nUse when: creating changelog entries, preparing releases, documenting changes.\nKeywords: changelog, release notes, CHANGELOG.md, keep",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "path": "locales/zh-CN/skills/claude-code/changelog-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AsiaOstrich/universal-dev-standards",
+  "dir_name": "changelog-guide-asiaostrich-universal-dev-standa-2"
+}

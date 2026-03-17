@@ -1,0 +1,11 @@
+{
+  "name": "front-webhook",
+  "description": "Handle Front webhook events for the support platform. Use when implementing conversation ingestion, message handlers, Front API integrations, or webhook signature verification.",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/front-webhook",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "front-webhook-skillrecordings-support-2"
+}

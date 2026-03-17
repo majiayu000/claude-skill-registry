@@ -1,0 +1,11 @@
+{
+  "name": "pymc-modeling",
+  "description": "Bayesian statistical modeling with PyMC v5+. Use when building probabilistic models, specifying priors, running MCMC inference, diagnosing convergence, or comparing models. Covers PyMC, ArviZ, pymc-ba",
+  "repo": "pymc-labs/agent-skills",
+  "path": "skills/pymc-modeling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pymc-labs/agent-skills",
+  "dir_name": "pymc-modeling-pymc-labs-agent-skills-2"
+}

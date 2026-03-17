@@ -1,0 +1,11 @@
+{
+  "name": "memory-documentary",
+  "description": "Generate evidence-based documentary reports by searching across all 4 memory systems (Claude-Mem, Forgetful, Serena, DeepWiki), .agents/ artifacts, and GitHub issues. Produces investigative journalism",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/memory-documentary",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "memory-documentary-rjmurillo-ai-agents-2"
+}

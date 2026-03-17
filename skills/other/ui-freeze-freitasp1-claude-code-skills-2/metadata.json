@@ -1,0 +1,11 @@
+{
+  "name": "ui-freeze",
+  "description": "Protects design and theme files from unintended changes. Locks tailwind.config, global CSS, and theme variables. Requires explicit confirmation before modifying UI components. Activate on changes to C",
+  "repo": "freitasp1/claude-code-skills",
+  "path": "skills/ui-freeze",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/freitasp1/claude-code-skills",
+  "dir_name": "ui-freeze-freitasp1-claude-code-skills-2"
+}

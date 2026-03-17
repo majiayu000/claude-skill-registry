@@ -1,0 +1,11 @@
+{
+  "name": "clean-architecture-review",
+  "description": "Validate Clean Architecture implementation in iOS. Checks layer separation (Presentation/Domain/Data), MVVM patterns, dependency injection with Swinject, and UseCase/Repository patterns. Use when revi",
+  "repo": "daispacy/py-claude-marketplace",
+  "path": "py-plugin/skills/clean-architecture-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/daispacy/py-claude-marketplace",
+  "dir_name": "clean-architecture-review-daispacy-py-claude-marketplac-2"
+}

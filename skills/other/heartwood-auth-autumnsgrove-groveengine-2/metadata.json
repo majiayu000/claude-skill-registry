@@ -1,0 +1,11 @@
+{
+  "name": "heartwood-auth",
+  "description": "Integrate Heartwood (GroveAuth) authentication into Grove applications. Use when adding sign-in, protecting routes, or validating sessions in any Grove property.",
+  "repo": "AutumnsGrove/GroveEngine",
+  "path": ".claude/skills/heartwood-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AutumnsGrove/GroveEngine",
+  "dir_name": "heartwood-auth-autumnsgrove-groveengine-2"
+}

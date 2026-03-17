@@ -1,0 +1,11 @@
+{
+  "name": "calculator",
+  "description": "Performs arbitrary-precision arithmetic calculations including addition, subtraction, multiplication, division, and exponents. Use when the user asks to calculate, compute, or evaluate math expression",
+  "repo": "Code-and-Sorts/awesome-copilot-agents",
+  "path": "skills/calculator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Code-and-Sorts/awesome-copilot-agents",
+  "dir_name": "calculator-code-and-sorts-awesome-copilot-agen-2"
+}

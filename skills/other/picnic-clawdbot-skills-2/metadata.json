@@ -1,0 +1,11 @@
+{
+  "name": "picnic",
+  "description": "Order groceries from Picnic supermarket - search products, manage cart, schedule delivery.",
+  "repo": "clawdbot/skills",
+  "path": "skills/mpociot/picnic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "picnic-clawdbot-skills-2"
+}

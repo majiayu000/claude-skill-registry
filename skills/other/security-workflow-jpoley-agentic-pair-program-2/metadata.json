@@ -1,0 +1,11 @@
+{
+  "name": "security-workflow",
+  "description": "Use when creating backlog tasks from security findings, integrating security scans into workflow states, or managing security remediation tracking. Invoked for security workflow integration and task a",
+  "repo": "jpoley/agentic-pair-programming",
+  "path": ".claude/skills/security-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jpoley/agentic-pair-programming",
+  "dir_name": "security-workflow-jpoley-agentic-pair-program-2"
+}

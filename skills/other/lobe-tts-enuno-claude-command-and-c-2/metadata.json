@@ -1,0 +1,11 @@
+{
+  "name": "lobe-tts",
+  "description": "LobeTTS - High-quality TypeScript TTS/STT toolkit with EdgeSpeech, Microsoft, OpenAI engines, React hooks, audio visualization components, and both server and browser support",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/lobe-tts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "lobe-tts-enuno-claude-command-and-c-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "edge-special-chars",
+  "description": "A skill for testing special characters and injection patterns",
+  "repo": "maxvaega/skillkit",
+  "path": "tests/fixtures/skills/edge-special-chars",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "edge-special-chars-maxvaega-skillkit-2"
+}

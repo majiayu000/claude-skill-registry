@@ -1,0 +1,11 @@
+{
+  "name": "task-segmentation",
+  "description": "[Task Mgmt] A Skill that segments subtasks into more granular, actionable items before starting work. AI agent MUST invoke this skill AUTOMATICALLY when moving a task to In Progress. Break down existi",
+  "repo": "CANTAGESTUDIO/CosmicAtlasPacker",
+  "path": ".claude/skills/task-segmentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CANTAGESTUDIO/CosmicAtlasPacker",
+  "dir_name": "task-segmentation-cantagestudio-cosmicatlaspacker-2"
+}

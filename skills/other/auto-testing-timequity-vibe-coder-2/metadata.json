@@ -1,0 +1,11 @@
+{
+  "name": "auto-testing",
+  "description": "Automatically generate and run tests after each code change.\nUse when: any code is generated or modified in the pipeline.\nTriggers: internal use only.",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/auto-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "auto-testing-timequity-vibe-coder-2"
+}

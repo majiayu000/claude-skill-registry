@@ -1,0 +1,11 @@
+{
+  "name": "sponsor-pitch-generator",
+  "description": "Generate professional sponsorship pitches and media kits for brands. Creates compelling proposals highlighting channel value, audience demographics, and collaboration ideas. Use when seeking sponsorsh",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/video-creator-workflow/.claude/skills/sponsor-pitch-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "sponsor-pitch-generator-nicepkg-ai-workflow-2"
+}

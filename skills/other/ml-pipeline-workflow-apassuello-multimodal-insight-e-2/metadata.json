@@ -1,0 +1,11 @@
+{
+  "name": "ml-pipeline-workflow",
+  "description": "Build end-to-end MLOps pipelines from data preparation through model training, validation, and production deployment. Use when creating ML pipelines, implementing MLOps practices, or automating model ",
+  "repo": "apassuello/multimodal_insight_engine",
+  "path": ".claude/skills/ml-pipeline-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/apassuello/multimodal_insight_engine",
+  "dir_name": "ml-pipeline-workflow-apassuello-multimodal-insight-e-2"
+}

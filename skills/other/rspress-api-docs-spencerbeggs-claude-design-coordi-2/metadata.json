@@ -1,0 +1,11 @@
+{
+  "name": "rspress-api-docs",
+  "description": "Generate API documentation from TypeScript source code for RSPress. Use when documenting package APIs, extracting types from source code, or creating function/class reference pages.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/rspress-api-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "rspress-api-docs-spencerbeggs-claude-design-coordi-2"
+}

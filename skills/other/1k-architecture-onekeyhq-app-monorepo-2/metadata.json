@@ -1,0 +1,11 @@
+{
+  "name": "1k-architecture",
+  "description": "OneKey monorepo architecture and code organization. Use when understanding project structure, package relationships, import rules, or component organization. Triggers on architecture, structure, packa",
+  "repo": "OneKeyHQ/app-monorepo",
+  "path": ".claude/skills/1k-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OneKeyHQ/app-monorepo",
+  "dir_name": "1k-architecture-onekeyhq-app-monorepo-2"
+}

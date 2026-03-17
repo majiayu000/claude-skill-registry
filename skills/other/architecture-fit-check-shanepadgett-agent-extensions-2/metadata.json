@@ -1,0 +1,11 @@
+{
+  "name": "architecture-fit-check",
+  "description": "Framework for evaluating if change-set specs fit existing codebase architecture",
+  "repo": "shanepadgett/agent-extensions",
+  "path": "skills/architecture-fit-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shanepadgett/agent-extensions",
+  "dir_name": "architecture-fit-check-shanepadgett-agent-extensions-2"
+}

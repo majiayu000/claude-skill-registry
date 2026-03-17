@@ -1,0 +1,11 @@
+{
+  "name": "axiom-objc-block-retain-cycles",
+  "description": "Use when debugging memory leaks from blocks, blocks assigned to self or properties, network callbacks, or crashes from deallocated objects - systematic weak-strong pattern diagnosis with mandatory dia",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-objc-block-retain-cycles",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-objc-block-retain-cycles-charleswiltgen-axiom-2"
+}

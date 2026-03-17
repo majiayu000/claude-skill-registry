@@ -1,0 +1,11 @@
+{
+  "name": "database-design-patterns",
+  "description": "Database schema design patterns and optimization strategies for relational and NoSQL databases. Use when designing database schemas, optimizing query performance, or implementing data persistence laye",
+  "repo": "NickCrew/claude-cortex",
+  "path": "claude_ctx_py/assets/skills/database-design-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NickCrew/claude-cortex",
+  "dir_name": "database-design-patterns-nickcrew-claude-cortex-2"
+}

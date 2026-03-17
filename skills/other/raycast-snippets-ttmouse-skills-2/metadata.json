@@ -1,0 +1,11 @@
+{
+  "name": "raycast-snippets",
+  "description": "Create and manage Raycast Snippets automatically. Use this skill when the user wants to save a prompt, template, or text snippet to their Raycast configuration.",
+  "repo": "ttmouse/skills",
+  "path": "raycast-snippets",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ttmouse/skills",
+  "dir_name": "raycast-snippets-ttmouse-skills-2"
+}

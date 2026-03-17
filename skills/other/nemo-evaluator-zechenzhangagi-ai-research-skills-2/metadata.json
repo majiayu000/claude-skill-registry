@@ -1,0 +1,11 @@
+{
+  "name": "nemo-evaluator",
+  "description": "Evaluates LLMs across 100+ benchmarks from 18+ harnesses (MMLU, HumanEval, GSM8K, safety, VLM) with multi-backend execution. Use when needing scalable evaluation on local Docker, Slurm HPC, or cloud p",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "11-evaluation/nemo-evaluator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "nemo-evaluator-zechenzhangagi-ai-research-skills-2"
+}

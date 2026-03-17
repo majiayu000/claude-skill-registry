@@ -1,0 +1,11 @@
+{
+  "name": "add-api-endpoint",
+  "description": "Add a new minimal API endpoint to NovaTune with service, models, and tests",
+  "repo": "Tassadar2499/NovaTune",
+  "path": ".claude/skills/add-api-endpoint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Tassadar2499/NovaTune",
+  "dir_name": "add-api-endpoint-tassadar2499-novatune-2"
+}

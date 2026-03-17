@@ -1,0 +1,11 @@
+{
+  "name": "rust-workflow",
+  "description": "Rust project workflow guidelines. Activate when working with Rust files (.rs), Cargo.toml, Cargo.lock, or Rust-specific tooling.",
+  "repo": "ilude/claude-code-config",
+  "path": "skills/rust-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ilude/claude-code-config",
+  "dir_name": "rust-workflow-ilude-claude-code-config-2"
+}

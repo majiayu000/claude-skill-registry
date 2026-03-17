@@ -1,0 +1,11 @@
+{
+  "name": "ansible-expert",
+  "description": "Expert-level Ansible for configuration management, automation, and infrastructure as code",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/devops/ansible-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "ansible-expert-personamanagmentlaye-pcl-2"
+}

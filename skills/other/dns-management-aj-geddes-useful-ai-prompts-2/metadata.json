@@ -1,0 +1,11 @@
+{
+  "name": "dns-management",
+  "description": "Manage DNS records, routing policies, and failover configurations for high availability and disaster recovery.",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/dns-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "dir_name": "dns-management-aj-geddes-useful-ai-prompts-2"
+}

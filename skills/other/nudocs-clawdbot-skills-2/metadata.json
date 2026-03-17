@@ -1,0 +1,11 @@
+{
+  "name": "nudocs",
+  "description": "Upload, edit, and export documents via Nudocs.ai. Use when creating shareable document links for collaborative editing, uploading markdown/docs to Nudocs for rich editing, or pulling back edited conte",
+  "repo": "clawdbot/skills",
+  "path": "skills/jdrhyne/nudocs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "nudocs-clawdbot-skills-2"
+}

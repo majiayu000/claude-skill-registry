@@ -1,0 +1,11 @@
+{
+  "name": "memory-forensics",
+  "description": "Master memory forensics techniques including memory acquisition, process analysis, and artifact extraction using Volatility and related tools. Use when analyzing memory dumps, investigating incidents,",
+  "repo": "wshobson/agents",
+  "path": "plugins/reverse-engineering/skills/memory-forensics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wshobson/agents",
+  "dir_name": "memory-forensics-wshobson-agents-2"
+}

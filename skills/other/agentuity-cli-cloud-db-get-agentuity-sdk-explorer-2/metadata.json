@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-db-get",
+  "description": "Show details about a specific database. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-db-get",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-db-get-agentuity-sdk-explorer-2"
+}

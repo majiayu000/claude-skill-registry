@@ -1,0 +1,11 @@
+{
+  "name": "abracon",
+  "description": "Abracon MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Abracon timing devices, crystals, oscillators, RF components, or AbraconHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/abracon",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "abracon-cantara-lib-electronic-compo-2"
+}

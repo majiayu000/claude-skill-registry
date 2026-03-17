@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-errors-serverscripts",
+  "description": "Error handling patterns for ERPNext Server Scripts. Use when handling sandbox errors, frappe.throw usage, validation in server scripts, and debugging. V14/V15/V16 compatible. Triggers: server script e",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/errors/erpnext-errors-serverscripts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-errors-serverscripts-openaec-foundation-erpnext-anthropic-cl-2"
+}

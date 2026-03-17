@@ -1,0 +1,11 @@
+{
+  "name": "bch-development",
+  "description": "Bitcoin Cash (BCH) API implementation rules. Critical pattern for embedding Bitcoin struct and overriding BCH-specific methods. Use when working on BCH-related code in internal/infrastructure/api/btc/",
+  "repo": "hiromaily/go-crypto-wallet",
+  "path": ".claude/skills/bch-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hiromaily/go-crypto-wallet",
+  "dir_name": "bch-development-hiromaily-go-crypto-wallet-2"
+}

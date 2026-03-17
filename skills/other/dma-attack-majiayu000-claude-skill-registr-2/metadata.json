@@ -1,0 +1,11 @@
+{
+  "name": "dma-attack",
+  "description": "Guide for Direct Memory Access (DMA) attack techniques using FPGA hardware. Use this skill when researching PCIe DMA attacks, pcileech, FPGA firmware development, or hardware-based memory access for g",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/dma-attack",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "dma-attack-majiayu000-claude-skill-registr-2"
+}

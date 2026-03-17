@@ -1,0 +1,11 @@
+{
+  "name": "policyengine-code-organization-skill",
+  "description": "Code organization patterns for PolicyEngine - variable naming conventions, folder structure, file organization",
+  "repo": "PolicyEngine/policyengine-claude",
+  "path": "skills/technical-patterns/policyengine-code-organization-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PolicyEngine/policyengine-claude",
+  "dir_name": "policyengine-code-organization-skill-policyengine-policyengine-claude-2"
+}

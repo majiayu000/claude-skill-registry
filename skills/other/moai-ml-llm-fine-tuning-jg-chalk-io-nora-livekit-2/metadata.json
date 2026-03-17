@@ -1,0 +1,11 @@
+{
+  "name": "moai-ml-llm-fine-tuning",
+  "description": "Enterprise LLM Fine-Tuning with LoRA, QLoRA, and PEFT techniques",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-ml-llm-fine-tuning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-ml-llm-fine-tuning-jg-chalk-io-nora-livekit-2"
+}

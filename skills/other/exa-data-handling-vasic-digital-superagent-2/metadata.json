@@ -1,0 +1,11 @@
+{
+  "name": "exa-data-handling",
+  "description": "Implement Exa PII handling, data retention, and GDPR/CCPA compliance patterns.\nUse when handling sensitive data, implementing data redaction, configuring retention policies,\nor ensuring compliance wit",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-data-handling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-data-handling-vasic-digital-superagent-2"
+}

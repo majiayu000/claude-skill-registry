@@ -1,0 +1,11 @@
+{
+  "name": "standards",
+  "description": "Plaited code conventions and development standards. Use when writing or editing TypeScript code in Plaited projects, following code conventions (type system, function style, imports), generating code,",
+  "repo": "plaited/plaited",
+  "path": ".claude/skills/standards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plaited/plaited",
+  "dir_name": "standards-plaited-plaited-2"
+}

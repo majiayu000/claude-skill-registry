@@ -1,0 +1,11 @@
+{
+  "name": "dbt-migration-vertica",
+  "description": "Convert Vertica DDL to dbt models compatible with Snowflake. This skill should be used when converting views, tables, or stored procedures from Vertica to dbt code, generating schema.yml files with te",
+  "repo": "sfc-gh-dflippo/snowflake-dbt-demo",
+  "path": ".claude/skills/dbt-migration-vertica",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sfc-gh-dflippo/snowflake-dbt-demo",
+  "dir_name": "dbt-migration-vertica-sfc-gh-dflippo-snowflake-dbt-demo-2"
+}

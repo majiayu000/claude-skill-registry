@@ -1,0 +1,11 @@
+{
+  "name": "integrate-openai-agents",
+  "description": "This skill should be used when integrating OpenAI Agents SDK with FastAPI, building message arrays from database history, running agents with MCP tools, parsing tool calls, executing them, and saving ",
+  "repo": "Sobansaud/Hackhathon---2",
+  "path": "Phase 4/.claude/skills/integrate-openai-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sobansaud/Hackhathon---2",
+  "dir_name": "integrate-openai-agents-sobansaud-hackhathon-2-2"
+}

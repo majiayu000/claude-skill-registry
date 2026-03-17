@@ -1,0 +1,11 @@
+{
+  "name": "pyth",
+  "description": "Complete guide for Pyth Network - decentralized oracle providing real-time price feeds for DeFi. Covers price feed integration, confidence intervals, EMA prices, on-chain CPI, off-chain fetching, and ",
+  "repo": "sendaifun/skills",
+  "path": "skills/pyth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "pyth-sendaifun-skills-2"
+}

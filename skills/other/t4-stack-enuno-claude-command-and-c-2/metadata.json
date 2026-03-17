@@ -1,0 +1,11 @@
+{
+  "name": "t4-stack",
+  "description": "T4 Stack - Full-stack TypeScript starter for React Native + Web with Tamagui, tRPC, Cloudflare edge deployment, and universal code sharing across iOS, Android, and PWA",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/t4-stack",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "t4-stack-enuno-claude-command-and-c-2"
+}

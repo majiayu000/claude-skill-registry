@@ -1,0 +1,11 @@
+{
+  "name": "db-migration-check",
+  "description": "Detect dangerous operations in database migrations before deployment",
+  "repo": "mehdic/bazinga",
+  "path": ".claude/skills/db-migration-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mehdic/bazinga",
+  "dir_name": "db-migration-check-mehdic-bazinga-2"
+}

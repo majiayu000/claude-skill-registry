@@ -1,0 +1,11 @@
+{
+  "name": "rust-tooling",
+  "description": "Rust development tools including PyO3 bindings, sqlx database access, AGiXT SDK, and Rust-Python interop",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/rust-tooling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FlexNetOS/ripple-env",
+  "dir_name": "rust-tooling-flexnetos-ripple-env-2"
+}

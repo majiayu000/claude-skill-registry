@@ -1,0 +1,11 @@
+{
+  "name": "cfn-codesearch",
+  "description": "MANDATORY: Query CodeSearch BEFORE using grep, glob, find, or search. Performs 400x faster semantic and structural code search via SQL on indexed codebase. Use for finding functions, classes, patterns",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-codesearch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "cfn-codesearch-masharratt-claude-flow-novice-2"
+}

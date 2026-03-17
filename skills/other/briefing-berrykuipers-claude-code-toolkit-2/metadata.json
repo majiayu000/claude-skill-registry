@@ -1,0 +1,11 @@
+{
+  "name": "briefing",
+  "description": "Generate a session briefing from development memory (events.jsonl, sessions.jsonl). Shows recent timeline, open questions, and suggested focus areas.",
+  "repo": "BerryKuipers/claude-code-toolkit",
+  "path": ".claude/skills/memory/dev-memory/briefing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BerryKuipers/claude-code-toolkit",
+  "dir_name": "briefing-berrykuipers-claude-code-toolkit-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "moebius-inversion",
+  "description": "Möbius inversion on posets and lattices: alternating sums, chromatic polynomials, incidence algebras, and centrality predicates.",
+  "repo": "plurigrid/asi",
+  "path": "skills/moebius-inversion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "moebius-inversion-plurigrid-asi-2"
+}

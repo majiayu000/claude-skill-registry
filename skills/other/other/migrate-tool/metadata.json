@@ -1,0 +1,9 @@
+{
+  "name": "migrate-tool",
+  "repo": "expeor/aws-automation",
+  "path": ".claude/skills/migrate-tool/SKILL.md",
+  "category": "other",
+  "source": "github.com/expeor/aws-automation",
+  "dir_name": "migrate-tool",
+  "downloaded_at": "2026-02-22T07:07:11.476823Z"
+}

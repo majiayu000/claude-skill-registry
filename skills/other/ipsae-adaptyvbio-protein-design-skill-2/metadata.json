@@ -1,0 +1,11 @@
+{
+  "name": "ipsae",
+  "description": "Binder design ranking using ipSAE (interprotein Score from Aligned Errors). Use this skill when: (1) Ranking binder designs for experimental testing, (2) Filtering BindCraft or RFdiffusion outputs, (3",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/ipsae",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "ipsae-adaptyvbio-protein-design-skill-2"
+}

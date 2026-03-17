@@ -1,0 +1,11 @@
+{
+  "name": "test-mongodb-repository",
+  "description": "Write tests for MongoDB repository implementations. Use when testing MongoDB repositories, setting up MongoDB test infrastructure, or testing database operations. Triggers on \"test mongodb\", \"mongodb ",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/test-mongodb-repository",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "test-mongodb-repository-madooei-backend-template-2"
+}

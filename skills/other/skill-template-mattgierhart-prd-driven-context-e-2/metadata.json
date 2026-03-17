@@ -1,0 +1,11 @@
+{
+  "name": "SKILL_TEMPLATE",
+  "description": "[1-2 sentence description of what this skill does]. Triggers on [specific phrases/contexts that should activate this skill]. Outputs [what the skill produces].",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/SKILL_TEMPLATE",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "skill-template-mattgierhart-prd-driven-context-e-2"
+}

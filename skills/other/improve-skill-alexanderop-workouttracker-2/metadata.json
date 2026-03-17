@@ -1,0 +1,11 @@
+{
+  "name": "improve-skill",
+  "description": "Analyze coding agent session transcripts to improve existing skills or create new ones. Use when asked to improve a skill based on a session, or extract a new skill from session history.",
+  "repo": "alexanderop/workoutTracker",
+  "path": ".claude/skills/improve-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alexanderop/workoutTracker",
+  "dir_name": "improve-skill-alexanderop-workouttracker-2"
+}

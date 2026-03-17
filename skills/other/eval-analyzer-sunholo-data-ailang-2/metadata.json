@@ -1,0 +1,11 @@
+{
+  "name": "eval-analyzer",
+  "description": "Analyze evaluation baseline results, identify failure patterns, and generate actionable insights. Use after running eval baselines or when user asks to analyze eval results, check benchmarks, investig",
+  "repo": "sunholo-data/ailang",
+  "path": ".claude/skills/eval-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunholo-data/ailang",
+  "dir_name": "eval-analyzer-sunholo-data-ailang-2"
+}

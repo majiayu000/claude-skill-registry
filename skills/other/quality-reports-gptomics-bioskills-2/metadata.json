@@ -1,0 +1,11 @@
+{
+  "name": "quality-reports",
+  "description": "Generate and interpret quality reports from FASTQ files using FastQC and MultiQC. Assess per-base quality, adapter content, GC bias, duplication levels, and overrepresented sequences. Use when perform",
+  "repo": "GPTomics/bioSkills",
+  "path": "read-qc/quality-reports",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "quality-reports-gptomics-bioskills-2"
+}

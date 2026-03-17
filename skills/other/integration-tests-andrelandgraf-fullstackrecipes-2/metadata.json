@@ -1,0 +1,11 @@
+{
+  "name": "integration-tests",
+  "description": "Test API routes by importing handlers directly with Bun's test runner. Fast, reliable tests without HTTP overhead.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/integration-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "integration-tests-andrelandgraf-fullstackrecipes-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "backlog-curator",
+  "description": "Expert backlog manager that prioritizes work using multi-criteria scoring, analyzes dependencies, and recommends optimal next tasks. Activates when managing backlogs, prioritizing work, adding items, ",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/backlog-curator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "backlog-curator-rysweet-azurehaymaker-2"
+}

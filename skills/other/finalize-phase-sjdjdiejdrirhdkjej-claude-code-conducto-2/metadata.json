@@ -1,0 +1,11 @@
+{
+  "name": "finalize-phase",
+  "description": "Completes feature/epic workflows after deployment with comprehensive walkthrough generation for epics (v5.0+), roadmap updates, artifact archival, documentation, and branch cleanup. Use after /ship-pr",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/finalize-phase",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "finalize-phase-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+}

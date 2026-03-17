@@ -1,0 +1,11 @@
+{
+  "name": "plutonium-assets",
+  "description": "Plutonium asset setup - TailwindCSS configuration, Stimulus controllers, and Phlexi component themes",
+  "repo": "radioactive-labs/plutonium-core",
+  "path": ".claude/skills/plutonium-assets",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/radioactive-labs/plutonium-core",
+  "dir_name": "plutonium-assets-radioactive-labs-plutonium-core-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "crud-implementation",
+  "description": "Entry point for implementing a new entity with full CRUD operations.",
+  "repo": "abyssparanoia/rapid-go",
+  "path": ".claude/skills/crud-implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/abyssparanoia/rapid-go",
+  "dir_name": "crud-implementation-abyssparanoia-rapid-go-2"
+}

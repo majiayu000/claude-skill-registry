@@ -1,0 +1,11 @@
+{
+  "name": "llamaindex-wolfram-alpha",
+  "description": "The LlamaIndex Wolfram Alpha tool enables agents to interface with the Wolfram|Alpha LLM API for computational knowledge queries. It provides concise text-based answers optimized for LLM consumption, ",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/llamaindex-wolfram-alpha",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "llamaindex-wolfram-alpha-cuba6112-skillfactory-2"
+}

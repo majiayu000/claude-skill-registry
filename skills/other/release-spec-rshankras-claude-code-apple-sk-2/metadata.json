@@ -1,0 +1,11 @@
+{
+  "name": "release-spec",
+  "description": "Generates App Store release documentation including submission guide, assets, privacy compliance, and marketing strategy. Creates RELEASE_SPEC.md for app launch. Use when preparing for App Store submi",
+  "repo": "rshankras/claude-code-apple-skills",
+  "path": "skills/product/release-spec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rshankras/claude-code-apple-skills",
+  "dir_name": "release-spec-rshankras-claude-code-apple-sk-2"
+}

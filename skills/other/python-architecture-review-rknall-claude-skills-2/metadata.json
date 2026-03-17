@@ -1,0 +1,11 @@
+{
+  "name": "python-architecture-review",
+  "description": "Comprehensive design architecture review for Python backend applications. Use this skill when users ask you to review, analyze, or provide feedback on backend architecture designs, system design docum",
+  "repo": "rknall/claude-skills",
+  "path": "python-architecture-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rknall/claude-skills",
+  "dir_name": "python-architecture-review-rknall-claude-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "receiving-code-review",
+  "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/receiving-code-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "receiving-code-review-ramblurr-nix-devenv-2"
+}

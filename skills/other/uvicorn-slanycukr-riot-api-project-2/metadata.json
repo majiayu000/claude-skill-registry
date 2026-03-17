@@ -1,0 +1,11 @@
+{
+  "name": "uvicorn",
+  "description": "ASGI server for Python web applications - Fast, production-ready server for async frameworks",
+  "repo": "SlanyCukr/riot-api-project",
+  "path": ".claude/skills/backend/uvicorn",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SlanyCukr/riot-api-project",
+  "dir_name": "uvicorn-slanycukr-riot-api-project-2"
+}

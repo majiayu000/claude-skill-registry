@@ -1,0 +1,11 @@
+{
+  "name": "gemini-vision",
+  "description": "Guide for implementing Google Gemini API image understanding - analyze images with captioning, classification, visual QA, object detection, segmentation, and multi-image comparison. Use when analyzing",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/gemini-vision",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "gemini-vision-mrgoonie-xxxnaper-2"
+}

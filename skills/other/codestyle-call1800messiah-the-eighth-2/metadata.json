@@ -1,0 +1,11 @@
+{
+  "name": "codestyle",
+  "description": "Analyze code for style violations, pattern compliance, and quality issues",
+  "repo": "call1800messiah/The-Eighth",
+  "path": ".claude/skills/codestyle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/call1800messiah/The-Eighth",
+  "dir_name": "codestyle-call1800messiah-the-eighth-2"
+}

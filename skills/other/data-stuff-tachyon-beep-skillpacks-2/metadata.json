@@ -1,0 +1,11 @@
+{
+  "name": "data-stuff",
+  "description": "For data",
+  "repo": "tachyon-beep/skillpacks",
+  "path": "plugins/meta-skillpack-maintenance/.test-fixtures/flawed-plugin/skills/data-stuff",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tachyon-beep/skillpacks",
+  "dir_name": "data-stuff-tachyon-beep-skillpacks-2"
+}

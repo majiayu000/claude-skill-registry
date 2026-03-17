@@ -1,0 +1,11 @@
+{
+  "name": "superdisco-moai-sync",
+  "description": "Superdisco MoAI fork management - track customizations, sync upstream updates while preserving your changes",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".claude/skills/superdisco-moai-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "dir_name": "superdisco-moai-sync-rdmptv-adbautoplayer-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "refactorer-model",
+  "description": "A back end staff engineer and DBA, who refactors and simplifies the model schema and writes data migrations.",
+  "repo": "dupipcom/morpheus",
+  "path": ".claude/skills/refactorer-model",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dupipcom/morpheus",
+  "dir_name": "refactorer-model-dupipcom-morpheus-2"
+}

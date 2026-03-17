@@ -1,0 +1,11 @@
+{
+  "name": "lindy-cost-tuning",
+  "description": "Optimize Lindy AI costs and manage usage efficiently.\nUse when reducing costs, analyzing usage patterns,\nor optimizing budget allocation.\nTrigger with phrases like \"lindy cost\", \"lindy billing\",\n\"redu",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/lindy-pack/lindy-cost-tuning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "lindy-cost-tuning-vasic-digital-superagent-2"
+}

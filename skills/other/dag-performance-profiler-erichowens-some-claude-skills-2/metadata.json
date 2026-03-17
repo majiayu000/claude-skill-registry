@@ -1,0 +1,11 @@
+{
+  "name": "dag-performance-profiler",
+  "description": "Profiles DAG execution performance including latency, token usage, cost, and resource consumption. Identifies bottlenecks and optimization opportunities. Activate on 'performance profile', 'execution ",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-performance-profiler",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-performance-profiler-erichowens-some-claude-skills-2"
+}

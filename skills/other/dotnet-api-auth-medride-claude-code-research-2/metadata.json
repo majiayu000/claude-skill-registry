@@ -1,0 +1,11 @@
+{
+  "name": "dotnet-api-auth",
+  "description": "Authentication and authorization patterns for ASP.NET Core Web APIs",
+  "repo": "medride/claude-code-research",
+  "path": ".claude/skills/dotnet-api-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/medride/claude-code-research",
+  "dir_name": "dotnet-api-auth-medride-claude-code-research-2"
+}

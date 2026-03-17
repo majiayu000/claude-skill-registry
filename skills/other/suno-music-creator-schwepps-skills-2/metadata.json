@@ -1,0 +1,11 @@
+{
+  "name": "suno-music-creator",
+  "description": "Professional music creation with Suno AI V5 and Suno Studio. Use this skill when users want to create songs, playlists, corporate anthems, jingles, workout music, ambient soundscapes, or any AI-genera",
+  "repo": "schwepps/skills",
+  "path": "suno-music-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/schwepps/skills",
+  "dir_name": "suno-music-creator-schwepps-skills-2"
+}

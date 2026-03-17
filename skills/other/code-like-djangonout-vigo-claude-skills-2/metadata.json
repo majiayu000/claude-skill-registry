@@ -1,0 +1,11 @@
+{
+  "name": "code-like-djangonout",
+  "description": "Provides Django web framework expertise including project structure, models, views, admin, Celery tasks, testing, and Python best practices. Use when generating, analyzing, refactoring, or reviewing D",
+  "repo": "vigo/claude-skills",
+  "path": "code-like-djangonout",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vigo/claude-skills",
+  "dir_name": "code-like-djangonout-vigo-claude-skills-2"
+}

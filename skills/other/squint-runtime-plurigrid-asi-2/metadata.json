@@ -1,0 +1,11 @@
+{
+  "name": "squint-runtime",
+  "description": "Squint ClojureScript runtime for minimal JS output compilation",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.ruler/skills/squint-runtime",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "squint-runtime-plurigrid-asi-2"
+}

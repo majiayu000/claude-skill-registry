@@ -1,0 +1,11 @@
+{
+  "name": "lambda-calculus",
+  "description": "Lambda Calculus Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/lambda-calculus",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "lambda-calculus-plurigrid-asi-2"
+}

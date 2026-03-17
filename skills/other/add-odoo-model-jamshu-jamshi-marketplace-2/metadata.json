@@ -1,0 +1,11 @@
+{
+  "name": "add-odoo-model",
+  "description": "Add integration for an additional Odoo Studio model to an existing Odoo PWA project. Use when user wants to add support for another model, mentions \"add new model\", \"integrate another Odoo model\", or ",
+  "repo": "jamshu/jamshi-marketplace",
+  "path": "plugins/odoo-pwa-generator/skills/add-odoo-model",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jamshu/jamshi-marketplace",
+  "dir_name": "add-odoo-model-jamshu-jamshi-marketplace-2"
+}

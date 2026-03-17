@@ -1,0 +1,11 @@
+{
+  "name": "troubleshoot",
+  "description": "Systematic debugging with 5-step loop for issues in spaces/[project]/. Use when encountering bugs, test failures, or unexpected behavior.",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/troubleshoot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "troubleshoot-taylorhuston-local-life-manager-2"
+}

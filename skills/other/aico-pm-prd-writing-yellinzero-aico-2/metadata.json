@@ -1,0 +1,11 @@
+{
+  "name": "aico-pm-prd-writing",
+  "description": "Create comprehensive Product Requirements Documents (PRD) that define what to build and why, focusing on goals, scope, user stories, and success criteria without implementation details.\n\nUse this skil",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-pm-prd-writing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-pm-prd-writing-yellinzero-aico-2"
+}

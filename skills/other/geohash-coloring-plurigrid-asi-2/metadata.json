@@ -1,0 +1,11 @@
+{
+  "name": "geohash-coloring",
+  "description": "Geohash Coloring Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/geohash-coloring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "geohash-coloring-plurigrid-asi-2"
+}

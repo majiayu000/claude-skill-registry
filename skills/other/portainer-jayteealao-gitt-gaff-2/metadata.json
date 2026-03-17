@@ -1,0 +1,11 @@
+{
+  "name": "portainer",
+  "description": "Manage Portainer deployments - create stacks from Git repos, check deployment status, redeploy, view logs. Use when user asks about deploying to Portainer, checking stack status, or managing Docker de",
+  "repo": "jayteealao/gitt-gaff",
+  "path": ".claude/skills/portainer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jayteealao/gitt-gaff",
+  "dir_name": "portainer-jayteealao-gitt-gaff-2"
+}

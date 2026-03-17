@@ -1,0 +1,11 @@
+{
+  "name": "distributed-tracing-setup",
+  "description": "Configure distributed tracing with Jaeger, Zipkin, or Datadog for microservices observability",
+  "repo": "Dexploarer/hyper-forge",
+  "path": ".claude/skills/distributed-tracing-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Dexploarer/hyper-forge",
+  "dir_name": "distributed-tracing-setup-dexploarer-hyper-forge-2"
+}

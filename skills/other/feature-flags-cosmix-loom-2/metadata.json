@@ -1,0 +1,11 @@
+{
+  "name": "feature-flags",
+  "description": "Feature flag patterns for controlled rollouts, A/B testing, kill switches, and runtime configuration. Use when implementing feature toggles, feature flags, gradual rollouts, canary releases, percentag",
+  "repo": "cosmix/loom",
+  "path": "skills/feature-flags",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "feature-flags-cosmix-loom-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "task-breakdown",
+  "description": "专业的任务拆解器，将复杂需求拆分成\"独立可运行与可演示\"的最小闭环任务卡。严格按照纵向切片、单一数据变化、单一入口原则，确保每张任务卡都能在单回合实现并验证。当用户说\"帮我拆解一下任务\"、\"用任务拆解器分析\"、\"按规范拆分\"或需要将一个大的开发需求拆分成可执行的小任务时使用。输出格式严格按照[src/renderer/TODO.md]标准存储。",
+  "repo": "ttmouse/skills",
+  "path": "task-breakdown",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ttmouse/skills",
+  "dir_name": "task-breakdown-ttmouse-skills-2"
+}

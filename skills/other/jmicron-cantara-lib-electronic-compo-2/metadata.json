@@ -1,0 +1,11 @@
+{
+  "name": "jmicron",
+  "description": "JMicron Technology MPN encoding patterns, series identification, and handler guidance. Use when working with storage controller ICs or JMicronHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/jmicron",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "jmicron-cantara-lib-electronic-compo-2"
+}

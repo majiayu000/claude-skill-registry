@@ -1,0 +1,11 @@
+{
+  "name": "task-list",
+  "description": "List tasks in `.tasks/` with derived flags (stale, hash mismatch). Supports filtering by state and staleness. Stable ordering by updated_at.\n",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/task/task-list",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "task-list-jordangunn-nunchuck-2"
+}

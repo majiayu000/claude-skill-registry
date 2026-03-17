@@ -1,0 +1,11 @@
+{
+  "name": "infographic-syntax-creator",
+  "description": "Generate AntV Infographic syntax outputs. Use when asked to turn user content into the Infographic DSL (template selection, data structuring, theme), or to output `infographic <template>` plain syntax",
+  "repo": "ThinkInAIXYZ/deepchat",
+  "path": "resources/skills/infographic-syntax-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ThinkInAIXYZ/deepchat",
+  "dir_name": "infographic-syntax-creator-thinkinaixyz-deepchat-2"
+}

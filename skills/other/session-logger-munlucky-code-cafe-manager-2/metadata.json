@@ -1,0 +1,11 @@
+{
+  "name": "session-logger",
+  "description": "Logs development sessions in real-time to track decisions and issues.",
+  "repo": "munlucky/code-cafe-manager",
+  "path": ".claude/skills/session-logger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/munlucky/code-cafe-manager",
+  "dir_name": "session-logger-munlucky-code-cafe-manager-2"
+}

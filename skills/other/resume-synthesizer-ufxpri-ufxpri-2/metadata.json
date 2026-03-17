@@ -1,0 +1,11 @@
+{
+  "name": "resume-synthesizer",
+  "description": "Synthesize structured career components (what_i_did, my_thoughts, performance files) into a cohesive professional resume. Use when generating resumes from extracted yearly data.",
+  "repo": "ufxpri/UfXpri",
+  "path": ".claude/skills/resume-synthesizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ufxpri/UfXpri",
+  "dir_name": "resume-synthesizer-ufxpri-ufxpri-2"
+}

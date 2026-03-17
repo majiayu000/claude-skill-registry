@@ -1,0 +1,11 @@
+{
+  "name": "tier3-production",
+  "description": "Complete production pipeline for creating hypnotic audio/video sessions",
+  "repo": "randysalars/dreamweaving",
+  "path": ".claude/skills/tier3-production",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/randysalars/dreamweaving",
+  "dir_name": "tier3-production-randysalars-dreamweaving-2"
+}

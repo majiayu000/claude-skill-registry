@@ -1,0 +1,9 @@
+{
+  "name": "gitops-patterns",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/tools/plugin-cli/infrastructure-template-generator/skills/gitops-patterns/SKILL.md",
+  "category": "other",
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "gitops-patterns",
+  "downloaded_at": "2026-02-15T05:22:58.180824Z"
+}

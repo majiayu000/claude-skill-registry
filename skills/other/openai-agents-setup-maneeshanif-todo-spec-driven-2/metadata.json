@@ -1,0 +1,11 @@
+{
+  "name": "openai-agents-setup",
+  "description": "Initialize and configure OpenAI Agents SDK for building AI-powered chatbots. Uses NATIVE MCP integration via MCPServerStreamableHttp - no @function_tool wrappers needed! Use when setting up AI agents ",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/openai-agents-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "openai-agents-setup-maneeshanif-todo-spec-driven-2"
+}

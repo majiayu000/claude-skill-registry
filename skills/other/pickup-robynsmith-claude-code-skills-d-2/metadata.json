@@ -1,0 +1,11 @@
+{
+  "name": "pickup",
+  "description": "Load session context from handoff files",
+  "repo": "robynsmith/claude-code-skills-demo",
+  "path": ".claude/skills/pickup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robynsmith/claude-code-skills-demo",
+  "dir_name": "pickup-robynsmith-claude-code-skills-d-2"
+}

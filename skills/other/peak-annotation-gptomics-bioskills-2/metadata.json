@@ -1,0 +1,11 @@
+{
+  "name": "peak-annotation",
+  "description": "Annotate ChIP-seq peaks to genomic features and genes using ChIPseeker. Assign peaks to promoters, exons, introns, and intergenic regions. Find nearest genes and calculate distance to TSS. Generate an",
+  "repo": "GPTomics/bioSkills",
+  "path": "chip-seq/peak-annotation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "peak-annotation-gptomics-bioskills-2"
+}

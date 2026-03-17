@@ -1,0 +1,11 @@
+{
+  "name": "lindy-local-dev-loop",
+  "description": "Set up local development workflow for Lindy AI agents.\nUse when configuring local testing, hot reload, or development environment.\nTrigger with phrases like \"lindy local dev\", \"lindy development\",\n\"li",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/lindy-pack/skills/lindy-local-dev-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "lindy-local-dev-loop-jeremylongshore-claude-code-plugins--2"
+}

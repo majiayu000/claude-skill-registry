@@ -1,0 +1,11 @@
+{
+  "name": "tailscale-file-transfer",
+  "description": "Tailscale mesh VPN file transfer with open games semantics (play/coplay)",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.ruler/skills/tailscale-file-transfer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "tailscale-file-transfer-plurigrid-asi-2"
+}

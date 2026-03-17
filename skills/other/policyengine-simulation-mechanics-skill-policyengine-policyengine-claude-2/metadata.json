@@ -1,0 +1,11 @@
+{
+  "name": "policyengine-simulation-mechanics-skill",
+  "description": "Advanced simulation patterns with policyengine.py - ensure(), output_dataset.data, and map_to_entity()",
+  "repo": "PolicyEngine/policyengine-claude",
+  "path": "skills/tools-and-apis/policyengine-simulation-mechanics-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PolicyEngine/policyengine-claude",
+  "dir_name": "policyengine-simulation-mechanics-skill-policyengine-policyengine-claude-2"
+}

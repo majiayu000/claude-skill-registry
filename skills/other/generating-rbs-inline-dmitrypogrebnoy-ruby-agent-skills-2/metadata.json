@@ -1,0 +1,11 @@
+{
+  "name": "generating-rbs-inline",
+  "description": "Generates RBS-inline type annotations directly in Ruby source files as comments. Triggers when adding inline type signatures, annotating Ruby methods with rbs-inline syntax, or generating type comment",
+  "repo": "DmitryPogrebnoy/ruby-agent-skills",
+  "path": "plugins/ruby-type-signature-skills/skills/generating-rbs-inline",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DmitryPogrebnoy/ruby-agent-skills",
+  "dir_name": "generating-rbs-inline-dmitrypogrebnoy-ruby-agent-skills-2"
+}

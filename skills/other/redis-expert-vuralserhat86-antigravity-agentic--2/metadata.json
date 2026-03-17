@@ -1,0 +1,11 @@
+{
+  "name": "redis_expert",
+  "description": "> Düşük gecikmeli veri depolama, önbellekleme ve mesajlaşma çözümleri.",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/redis_expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "redis-expert-vuralserhat86-antigravity-agentic--2"
+}

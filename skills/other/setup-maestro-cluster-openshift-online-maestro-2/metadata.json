@@ -1,0 +1,11 @@
+{
+  "name": "setup-maestro-cluster",
+  "description": "Sets up a long-running Maestro cluster environment using Azure ARO-HCP infrastructure with both service and management clusters",
+  "repo": "openshift-online/maestro",
+  "path": ".claude/skills/setup-maestro-cluster",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/openshift-online/maestro",
+  "dir_name": "setup-maestro-cluster-openshift-online-maestro-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "paw-review-gap",
+  "description": "Systematically identifies gaps in correctness, safety, testing, and maintainability, categorizing findings by severity.",
+  "repo": "lossyrob/phased-agent-workflow",
+  "path": "skills/paw-review-gap",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lossyrob/phased-agent-workflow",
+  "dir_name": "paw-review-gap-lossyrob-phased-agent-workflo-2"
+}

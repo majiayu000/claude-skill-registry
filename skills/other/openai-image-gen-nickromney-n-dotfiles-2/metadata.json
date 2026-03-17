@@ -1,0 +1,11 @@
+{
+  "name": "openai-image-gen",
+  "description": "Batch-generate images via OpenAI Images API. Random prompt sampler + `index.html` gallery.",
+  "repo": "nickromney/n-dotfiles",
+  "path": "skills/openai-image-gen",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nickromney/n-dotfiles",
+  "dir_name": "openai-image-gen-nickromney-n-dotfiles-2"
+}

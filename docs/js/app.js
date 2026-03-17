@@ -8,6 +8,7 @@ const CONFIG = {
     INDEX_URL: 'search-index.json',
     FEATURED_URL: 'featured.json',
     CATEGORIES_URL: 'categories/index.json',
+    COLLECTIONS_URL: 'collections.json',
     PAGE_SIZE: 20,
     LEADERBOARD_SIZE: 50,
     DEBOUNCE_MS: 300,
@@ -62,6 +63,7 @@ let state = {
     index: null,
     fuse: null,
     featured: [],
+    collections: [],
     categories: [],
     results: [],
     displayedCount: 0,
@@ -93,6 +95,9 @@ const elements = {
     leaderboardList: document.getElementById('leaderboard-list'),
     leaderboardCategory: document.getElementById('leaderboard-category'),
     statsSection: document.getElementById('stats-section'),
+    collectionsSection: document.getElementById('collections-section'),
+    collectionsList: document.getElementById('collections-list'),
+    collectionsEmpty: document.getElementById('collections-empty'),
     favoritesSection: document.getElementById('favorites-section'),
     favoritesList: document.getElementById('favorites-list'),
     favoritesEmpty: document.getElementById('favorites-empty'),
@@ -124,14 +129,16 @@ const elements = {
 async function init() {
     try {
         // Load index and featured in parallel
-        const [indexData, featuredData, categoriesData] = await Promise.all([
+        const [indexData, featuredData, categoriesData, collectionsData] = await Promise.all([
             fetch(CONFIG.INDEX_URL).then(r => r.json()),
             fetch(CONFIG.FEATURED_URL).then(r => r.json()).catch(() => ({ skills: [] })),
-            fetch(CONFIG.CATEGORIES_URL).then(r => r.json()).catch(() => ({ categories: [] }))
+            fetch(CONFIG.CATEGORIES_URL).then(r => r.json()).catch(() => ({ categories: [] })),
+            fetch(CONFIG.COLLECTIONS_URL).then(r => r.json()).catch(() => ({ collections: [] }))
         ]);
 
         state.index = indexData;
         state.featured = featuredData.skills || [];
+        state.collections = collectionsData.collections || [];
         state.categories = categoriesData.categories || [];
 
         // Initialize Fuse.js
@@ -195,6 +202,7 @@ function switchView(view) {
     elements.featuredSection.classList.add('hidden');
     elements.leaderboardSection.classList.add('hidden');
     elements.statsSection.classList.add('hidden');
+    elements.collectionsSection.classList.add('hidden');
     elements.favoritesSection.classList.add('hidden');
     elements.searchResults.classList.add('hidden');
     elements.emptyState.classList.add('hidden');
@@ -211,6 +219,9 @@ function switchView(view) {
             break;
         case 'stats':
             showStats();
+            break;
+        case 'collections':
+            showCollections();
             break;
         case 'favorites':
             showFavorites();
@@ -306,6 +317,7 @@ function showStats() {
     document.getElementById('stat-total').textContent = totalSkills.toLocaleString();
     document.getElementById('stat-repos').textContent = uniqueRepos.toLocaleString();
     document.getElementById('stat-official').textContent = officialCount.toLocaleString();
+    document.getElementById('stat-collections').textContent = state.collections.length;
     document.getElementById('stat-categories').textContent = categoryCount;
 
     // Render category chart
@@ -386,6 +398,102 @@ function renderReposChart() {
             </div>
         `;
     }).join('');
+}
+
+// Show collections
+function showCollections() {
+    elements.collectionsSection.classList.remove('hidden');
+
+    if (state.collections.length === 0) {
+        elements.collectionsList.classList.add('hidden');
+        elements.collectionsEmpty.classList.remove('hidden');
+        return;
+    }
+
+    elements.collectionsEmpty.classList.add('hidden');
+    elements.collectionsList.classList.remove('hidden');
+    elements.collectionsList.innerHTML = state.collections.map(createCollectionCard).join('');
+}
+
+// Create collection card HTML
+function createCollectionCard(collection) {
+    const skills = collection.skills || [];
+    const commands = collection.commands || [];
+    const hooks = collection.hooks || [];
+    const tags = collection.tags || [];
+    const category = CATEGORY_NAMES[CATEGORY_CODES_REVERSE[collection.category]] || collection.category || 'Other';
+
+    const skillsHtml = skills.slice(0, 6).map(s =>
+        `<span class="collection-skill-tag">${escapeHtml(s)}</span>`
+    ).join('');
+    const moreSkills = skills.length > 6 ? `<span class="collection-skill-tag more">+${skills.length - 6} more</span>` : '';
+
+    const commandsHtml = commands.slice(0, 3).map(c =>
+        `<code class="collection-cmd">${escapeHtml(c)}</code>`
+    ).join('');
+    const moreCommands = commands.length > 3 ? `<span class="collection-skill-tag more">+${commands.length - 3}</span>` : '';
+
+    const tagsHtml = tags.slice(0, 4).map(tag =>
+        `<span class="skill-tag">#${escapeHtml(tag)}</span>`
+    ).join('');
+
+    return `
+        <div class="collection-card">
+            <div class="collection-header">
+                <span class="collection-icon">📦</span>
+                <span class="collection-name">${escapeHtml(collection.name)}</span>
+                <span class="skill-category">${escapeHtml(category)}</span>
+            </div>
+            <p class="skill-description">${escapeHtml(collection.description)}</p>
+            <div class="collection-contents">
+                <div class="collection-row">
+                    <span class="collection-label">Skills (${skills.length}):</span>
+                    <div class="collection-items">${skillsHtml}${moreSkills}</div>
+                </div>
+                ${commands.length > 0 ? `
+                <div class="collection-row">
+                    <span class="collection-label">Commands (${commands.length}):</span>
+                    <div class="collection-items">${commandsHtml}${moreCommands}</div>
+                </div>
+                ` : ''}
+                ${hooks.length > 0 ? `
+                <div class="collection-row">
+                    <span class="collection-label">Hooks:</span>
+                    <div class="collection-items">${hooks.map(h => `<code class="collection-cmd">${escapeHtml(h)}</code>`).join('')}</div>
+                </div>
+                ` : ''}
+            </div>
+            <div class="skill-meta">${tagsHtml}</div>
+            <div class="skill-install">
+                <div class="install-cmd">
+                    <span class="prefix">$</span>
+                    <span>${escapeHtml(collection.install || 'See repository')}</span>
+                    ${collection.install ? `<button class="copy-btn" onclick="copyToClipboard(event, '${escapeHtml(collection.install)}')" title="Copy">📋</button>` : ''}
+                </div>
+            </div>
+            <div class="collection-footer">
+                <a href="https://github.com/${escapeHtml(collection.repo)}" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">
+                    View on GitHub →
+                </a>
+                ${collection.homepage ? `<a href="${escapeHtml(collection.homepage)}" target="_blank" style="color: var(--text-secondary); font-size: 0.85rem;">npm →</a>` : ''}
+            </div>
+        </div>
+    `;
+}
+
+// Reverse category code lookup
+const CATEGORY_CODES_REVERSE = Object.fromEntries(
+    Object.entries(CATEGORY_NAMES).map(([code, name]) => [name.toLowerCase(), code])
+);
+
+// Copy text to clipboard
+function copyToClipboard(event, text) {
+    event.stopPropagation();
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = event.target;
+        btn.textContent = '✓';
+        setTimeout(() => btn.textContent = '📋', 1500);
+    });
 }
 
 // Show favorites
@@ -515,6 +623,7 @@ function search(query) {
     elements.featuredSection.classList.add('hidden');
     elements.leaderboardSection.classList.add('hidden');
     elements.statsSection.classList.add('hidden');
+    elements.collectionsSection.classList.add('hidden');
     elements.favoritesSection.classList.add('hidden');
     elements.searchResults.classList.remove('hidden');
     elements.statsBar.classList.remove('hidden');
@@ -1033,20 +1142,22 @@ elements.tagFilter.addEventListener('keydown', (e) => {
 
 // Render active tag filters
 function renderActiveTags() {
-    elements.activeTags.innerHTML = state.currentTagFilters.map(tag => `
-        <span class="active-tag">
-            #${tag}
-            <button onclick="removeTagFilter('${tag}')">&times;</button>
-        </span>
-    `).join('');
+    elements.activeTags.innerHTML = state.currentTagFilters.map(tag => {
+        const safe = escapeHtml(tag);
+        return `<span class="active-tag">#${safe}<button class="remove-tag-btn" data-tag="${safe}">&times;</button></span>`;
+    }).join('');
 }
 
-// Remove tag filter
-function removeTagFilter(tag) {
-    state.currentTagFilters = state.currentTagFilters.filter(t => t !== tag);
-    renderActiveTags();
-    applyFiltersAndSearch();
-}
+// Delegate click for tag removal (avoids inline onclick XSS risk)
+elements.activeTags.addEventListener('click', (e) => {
+    const btn = e.target.closest('.remove-tag-btn');
+    if (btn) {
+        const tag = btn.dataset.tag;
+        state.currentTagFilters = state.currentTagFilters.filter(t => t !== tag);
+        renderActiveTags();
+        applyFiltersAndSearch();
+    }
+});
 
 // Clear all filters
 elements.clearFilters.addEventListener('click', () => {
@@ -1105,6 +1216,7 @@ function searchWithFiltersOnly() {
     elements.featuredSection.classList.add('hidden');
     elements.leaderboardSection.classList.add('hidden');
     elements.statsSection.classList.add('hidden');
+    elements.collectionsSection.classList.add('hidden');
     elements.favoritesSection.classList.add('hidden');
     elements.searchResults.classList.remove('hidden');
     elements.statsBar.classList.remove('hidden');

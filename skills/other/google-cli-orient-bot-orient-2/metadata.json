@@ -1,0 +1,11 @@
+{
+  "name": "google-cli",
+  "description": "Use the gog CLI to interact with Google Workspace services (Calendar, Gmail, Tasks, Drive, Docs, Slides, Sheets). This skill is for coding agents that have Bash access and prefer CLI tools over MCP to",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/google-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "google-cli-orient-bot-orient-2"
+}

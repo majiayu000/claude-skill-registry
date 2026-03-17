@@ -1,0 +1,11 @@
+{
+  "name": "vibe-techdesign",
+  "description": "Create a Technical Design Document for your MVP. Use when the user wants to plan architecture, choose tech stack, or says \"plan technical design\", \"choose tech stack\", or \"how should I build this\".",
+  "repo": "KhazP/vibe-coding-prompt-template",
+  "path": ".claude/skills/vibe-techdesign",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KhazP/vibe-coding-prompt-template",
+  "dir_name": "vibe-techdesign-khazp-vibe-coding-prompt-t-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "similarity-mcu",
+  "description": "Use when working with MCU/microcontroller similarity calculations - comparing microcontroller MPNs, understanding family/series/feature matching, or MCU-specific similarity logic.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/similarity-mcu",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "similarity-mcu-cantara-lib-electronic-compo-2"
+}

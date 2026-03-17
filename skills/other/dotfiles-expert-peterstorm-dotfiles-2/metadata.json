@@ -1,0 +1,11 @@
+{
+  "name": "dotfiles-expert",
+  "description": "Expert guidance for peterstorm's NixOS dotfiles repository using flake-parts architecture. Use this skill when working with: NixOS system configuration, home-manager user configurations, flake-parts m",
+  "repo": "peterstorm/.dotfiles",
+  "path": ".claude/skills/dotfiles-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/peterstorm/.dotfiles",
+  "dir_name": "dotfiles-expert-peterstorm-dotfiles-2"
+}

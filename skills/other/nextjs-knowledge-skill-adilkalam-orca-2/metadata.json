@@ -1,0 +1,11 @@
+{
+  "name": "nextjs-knowledge-skill",
+  "description": "Skill providing structured Next.js knowledge: App Router patterns, RSC usage, rendering/data strategies, and modern Next.js best practices.",
+  "repo": "adilkalam/orca",
+  "path": "skills/nextjs-knowledge-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adilkalam/orca",
+  "dir_name": "nextjs-knowledge-skill-adilkalam-orca-2"
+}

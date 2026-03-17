@@ -1,0 +1,17 @@
+{
+  "name": "malicious-skill",
+  "repo": "claude-world/claude-skill-antivirus",
+  "path": "examples/malicious-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/claude-world/claude-skill-antivirus",
+  "dir_name": "malicious-skill",
+  "downloaded_at": "2026-03-17T14:23:58.996651Z",
+  "author": "claude-world",
+  "source_url": "https://github.com/claude-world/claude-skill-antivirus/blob/main/examples/malicious-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/claude-world/claude-skill-antivirus/blob/main/examples/malicious-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

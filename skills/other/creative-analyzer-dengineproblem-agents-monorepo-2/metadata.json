@@ -1,0 +1,11 @@
+{
+  "name": "creative-analyzer",
+  "description": "Эксперт по анализу креативов Facebook Ads. Используй для оценки эффективности креативов, Risk Score, A/B тестирования и рекомендаций по улучшению.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/creative-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "creative-analyzer-dengineproblem-agents-monorepo-2"
+}

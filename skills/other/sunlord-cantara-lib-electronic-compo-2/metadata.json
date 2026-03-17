@@ -1,0 +1,11 @@
+{
+  "name": "sunlord",
+  "description": "Sunlord Electronics inductor and ferrite bead MPN encoding patterns, value decoding, and handler guidance. Use when working with Sunlord inductors or SunlordHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/sunlord",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "sunlord-cantara-lib-electronic-compo-2"
+}

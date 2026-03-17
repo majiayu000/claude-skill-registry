@@ -1,0 +1,11 @@
+{
+  "name": "assessment-builder",
+  "description": "Creates assessments with varied question types (MCQ, code-completion, debugging, projects) aligned to learning objectives. Use when educators design quizzes/exams, need questions at appropriate Bloom'",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/rare/assessment-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "assessment-builder-panaversity-agentfactory-2"
+}

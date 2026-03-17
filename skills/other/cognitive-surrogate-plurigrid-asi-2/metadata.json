@@ -1,0 +1,11 @@
+{
+  "name": "cognitive-surrogate",
+  "description": "cognitive-surrogate skill",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.agents/skills/cognitive-surrogate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "cognitive-surrogate-plurigrid-asi-2"
+}

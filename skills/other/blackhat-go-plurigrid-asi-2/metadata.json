@@ -1,0 +1,11 @@
+{
+  "name": "blackhat-go",
+  "description": "Go-based security techniques from \"Black Hat Go\" extended with macOS, Cloud, Mobile, IoT, Supply Chain, API, Web3, AI/ML, Red Team, ATT&CK, and LLM chapters. 186 techniques, 36 tools, 33 defenses acro",
+  "repo": "plurigrid/asi",
+  "path": "skills/blackhat-go",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "blackhat-go-plurigrid-asi-2"
+}

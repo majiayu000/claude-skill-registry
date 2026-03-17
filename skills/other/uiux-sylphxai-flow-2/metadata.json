@@ -1,0 +1,11 @@
+{
+  "name": "uiux",
+  "description": "UI/UX - design system, accessibility. Use when building interfaces.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/uiux",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "uiux-sylphxai-flow-2"
+}

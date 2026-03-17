@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-wireshark-analysis",
+  "description": "This skill should be used when the user asks to \"analyze network traffic with Wireshark\", \"capture packets for troubleshooting\", \"filter PCAP files\", \"follow TCP/UDP streams\", \"detect network anomalie",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-wireshark-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-wireshark-analysis-boisenoise-skills-collections-2"
+}

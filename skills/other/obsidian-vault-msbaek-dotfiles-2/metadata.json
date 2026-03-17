@@ -1,0 +1,11 @@
+{
+  "name": "obsidian-vault",
+  "description": "Obsidian vault 및 마크다운 문서 작업 시 사용. markdown-oxide LSP를 통한 효율적인 검색,\n백링크 탐색, 태그 관리 지원. vault 경로, 태그 체계, vault-intelligence CLI, 토큰 최적화 전략 제공.\nObsidian, vault, 마크다운, 태그, 노트 정리, zettelkasten, 백링크, wiki-lin",
+  "repo": "msbaek/dotfiles",
+  "path": ".claude/skills/obsidian-vault",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/msbaek/dotfiles",
+  "dir_name": "obsidian-vault-msbaek-dotfiles-2"
+}

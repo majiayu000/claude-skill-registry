@@ -1,0 +1,11 @@
+{
+  "name": "review-guidelines",
+  "description": "各レビュアーエージェントが参照する詳細なレビュー観点（DB設計、セキュリティ、バックエンド、フロントエンド、インフラ）を定義",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/review-guidelines",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "review-guidelines-takemo101-compose-workflow-2"
+}

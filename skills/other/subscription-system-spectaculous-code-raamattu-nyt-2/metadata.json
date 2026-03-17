@@ -1,0 +1,11 @@
+{
+  "name": "subscription-system",
+  "description": "Expert assistant for designing and implementing subscription features across the Raamattu Nyt monorepo. Use when adding feature limits, implementing quota checks, creating plan-based access controls, ",
+  "repo": "Spectaculous-Code/raamattu-nyt",
+  "path": ".claude/skills/subscription-system",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Spectaculous-Code/raamattu-nyt",
+  "dir_name": "subscription-system-spectaculous-code-raamattu-nyt-2"
+}

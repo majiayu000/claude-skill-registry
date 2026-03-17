@@ -1,0 +1,11 @@
+{
+  "name": "prisma",
+  "description": "Provides type-safe database access with Prisma ORM including schema definition, migrations, queries, and relations. Use when setting up database connections, defining data models, writing queries, or ",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/databases-orms/prisma",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "prisma-mgd34msu-goodvibes-plugin-2"
+}

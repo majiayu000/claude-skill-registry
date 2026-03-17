@@ -1,0 +1,11 @@
+{
+  "name": "10_toolBased.genomic-feature-annotation",
+  "description": "This skill is used to perform genomic feature annotation and visualization for any file containing genomic region information using Homer (Hypergeometric Optimization of Motif EnRichment). It annotate",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "10_toolBased.genomic-feature-annotation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "10-toolbased-genomic-feature-annotation-bisnake2001-chromskills-2"
+}

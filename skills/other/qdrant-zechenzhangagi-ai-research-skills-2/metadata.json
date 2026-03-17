@@ -1,0 +1,11 @@
+{
+  "name": "qdrant",
+  "description": "High-performance vector similarity search engine for RAG and semantic search. Use when building production RAG systems requiring fast nearest neighbor search, hybrid search with filtering, or scalable",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "15-rag/qdrant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "qdrant-zechenzhangagi-ai-research-skills-2"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "github-issue-creator",
+  "repo": "diegosouzapw/awesome-omni-skill",
+  "path": "skills/cli-automation/github-issue-creator/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/diegosouzapw/awesome-omni-skill",
+  "dir_name": "github-issue-creator-diegosouzapw-awesome-omni-skill",
+  "downloaded_at": "2026-03-01T07:27:43.448204Z",
+  "author": "diegosouzapw",
+  "source_url": "https://github.com/diegosouzapw/awesome-omni-skill/blob/main/skills/cli-automation/github-issue-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/diegosouzapw/awesome-omni-skill/blob/main/skills/cli-automation/github-issue-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

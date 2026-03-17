@@ -1,0 +1,11 @@
+{
+  "name": "app-router",
+  "description": "This skill should be used when the user asks to \"create a Next.js route\", \"add a page\", \"set up layouts\", \"implement loading states\", \"add error boundaries\", \"organize routes\", \"create dynamic routes\"",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/nextjs-expert/skills/app-router",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "app-router-davepoon-buildwithclaude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "stripe_integration",
+  "description": "Implement Stripe payment processing for robust, PCI-compliant payment flows including checkout, subscriptions, and webhooks. Use when integrating Stripe payments, building subscription systems, or imp",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/stripe_integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "stripe-integration-vuralserhat86-antigravity-agentic--2"
+}

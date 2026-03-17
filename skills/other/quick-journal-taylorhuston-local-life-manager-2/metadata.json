@@ -1,0 +1,11 @@
+{
+  "name": "quick-journal",
+  "description": "Quick update to today's journal without full review. Use when user wants to quickly log something they did, add a journal entry, or note an activity. Triggers on \"log this\", \"add to journal\", \"I just ",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/quick-journal",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "quick-journal-taylorhuston-local-life-manager-2"
+}

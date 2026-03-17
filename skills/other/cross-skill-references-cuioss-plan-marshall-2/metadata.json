@@ -1,0 +1,11 @@
+{
+  "name": "cross-skill-references",
+  "description": "Test skill with cross-skill reference notation",
+  "repo": "cuioss/plan-marshall",
+  "path": "test/pm-plugin-development/plugin-doctor/fixtures/skill-structure/cross-skill-references",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "cross-skill-references-cuioss-plan-marshall-2"
+}

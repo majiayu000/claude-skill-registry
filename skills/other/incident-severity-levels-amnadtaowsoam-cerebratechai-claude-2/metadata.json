@@ -1,0 +1,11 @@
+{
+  "name": "incident-severity-levels",
+  "description": "See the main Severity Levels skill for comprehensive coverage.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "41-incident-management/incident-severity-levels",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "incident-severity-levels-amnadtaowsoam-cerebratechai-claude-2"
+}

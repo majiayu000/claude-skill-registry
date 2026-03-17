@@ -1,0 +1,11 @@
+{
+  "name": "millers-law",
+  "description": "Limita información a 7±2 (o 4±1) chunks para memoria de trabajo. Use cuando organice navegación, formularios, dashboards, o cualquier lista de elementos.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/cognitive-laws/millers-law",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "millers-law-vjrivmon-handwriting-ocr-2"
+}

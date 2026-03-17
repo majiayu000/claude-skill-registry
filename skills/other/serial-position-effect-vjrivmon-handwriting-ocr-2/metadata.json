@@ -1,0 +1,11 @@
+{
+  "name": "serial-position-effect",
+  "description": "Los items al inicio y final de listas se recuerdan mejor. Use cuando ordene menús, listas, navegación, o cualquier secuencia de elementos.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/behavioral-effects/serial-position-effect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "serial-position-effect-vjrivmon-handwriting-ocr-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "pre-commit-check",
+  "description": "提交前檢查程式碼品質。此 Skill 由 /commit-session 和 /commit-all 自動引用。",
+  "repo": "johnny-PcP/wer-tool",
+  "path": ".claude/skills/pre-commit-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/johnny-PcP/wer-tool",
+  "dir_name": "pre-commit-check-johnny-pcp-wer-tool-2"
+}

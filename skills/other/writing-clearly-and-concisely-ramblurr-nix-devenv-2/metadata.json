@@ -1,0 +1,11 @@
+{
+  "name": "writing-clearly-and-concisely",
+  "description": "Apply Strunk's timeless writing rules to ANY prose humans will read—documentation, commit messages, error messages, explanations, reports, or UI text. Makes your writing clearer, stronger, and more pr",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/writing-clearly-and-concisely",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "writing-clearly-and-concisely-ramblurr-nix-devenv-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "exa-known-pitfalls",
+  "description": "Identify and avoid Exa anti-patterns and common integration mistakes.\nUse when reviewing Exa code for issues, onboarding new developers,\nor auditing existing Exa integrations for best practices violat",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-known-pitfalls",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-known-pitfalls-vasic-digital-superagent-2"
+}

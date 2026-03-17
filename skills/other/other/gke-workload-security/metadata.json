@@ -1,0 +1,9 @@
+{
+  "name": "gke-workload-security",
+  "repo": "GoogleCloudPlatform/gke-mcp",
+  "path": "skills/gke-workload-security/SKILL.md",
+  "category": "other",
+  "source": "github.com/GoogleCloudPlatform/gke-mcp",
+  "dir_name": "gke-workload-security",
+  "downloaded_at": "2026-02-15T05:10:07.318759Z"
+}

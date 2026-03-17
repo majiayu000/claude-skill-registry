@@ -1,0 +1,11 @@
+{
+  "name": "pact-coding-standards",
+  "description": "Clean code principles, error handling patterns, and coding standards for PACT Code phase.\nUse when: implementing features, refactoring code, reviewing code quality,\nestablishing coding conventions, or",
+  "repo": "ProfSynapse/PACT-prompt",
+  "path": "pact-plugin/skills/pact-coding-standards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ProfSynapse/PACT-prompt",
+  "dir_name": "pact-coding-standards-profsynapse-pact-prompt-2"
+}

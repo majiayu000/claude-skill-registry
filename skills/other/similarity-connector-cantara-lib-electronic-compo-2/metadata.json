@@ -1,0 +1,11 @@
+{
+  "name": "similarity-connector",
+  "description": "Use when working with connector similarity calculations - comparing connector MPNs, understanding pin count/pitch/family matching, or connector-specific similarity logic.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/similarity-connector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "similarity-connector-cantara-lib-electronic-compo-2"
+}

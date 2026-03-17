@@ -1,0 +1,11 @@
+{
+  "name": "trioexplorer",
+  "description": "Search clinical notes using the Trioexplorer CLI. Use when the user wants to search patient notes, list cohorts, view search history, or explore the clinical notes database.",
+  "repo": "triohealth/explorer-search-api",
+  "path": ".claude/skills/trioexplorer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/triohealth/explorer-search-api",
+  "dir_name": "trioexplorer-triohealth-explorer-search-api-2"
+}

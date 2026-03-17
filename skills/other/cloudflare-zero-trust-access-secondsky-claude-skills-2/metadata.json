@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-zero-trust-access",
+  "description": "Integrate Cloudflare Zero Trust Access authentication with Cloudflare Workers applications using proven patterns and templates.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-zero-trust-access/skills/cloudflare-zero-trust-access",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "cloudflare-zero-trust-access-secondsky-claude-skills-2"
+}

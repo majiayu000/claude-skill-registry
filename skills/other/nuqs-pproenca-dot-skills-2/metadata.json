@@ -1,0 +1,11 @@
+{
+  "name": "nuqs",
+  "description": "nuqs (type-safe URL query state) best practices for Next.js applications. This skill should be used when writing, reviewing, or refactoring code that uses nuqs for URL state management. Triggers on ta",
+  "repo": "pproenca/dot-skills",
+  "path": "skills/.curated/nuqs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pproenca/dot-skills",
+  "dir_name": "nuqs-pproenca-dot-skills-2"
+}

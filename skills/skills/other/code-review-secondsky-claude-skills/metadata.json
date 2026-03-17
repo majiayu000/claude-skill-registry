@@ -1,0 +1,17 @@
+{
+  "name": "code-review",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/code-review/skills/code-review/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "code-review-secondsky-claude-skills",
+  "downloaded_at": "2026-03-02T08:49:11.925381Z",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/code-review/skills/code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/secondsky/claude-skills/blob/main/plugins/code-review/skills/code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

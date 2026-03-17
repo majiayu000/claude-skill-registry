@@ -1,0 +1,11 @@
+{
+  "name": "issue-lifecycle",
+  "description": "Use throughout all work - ensures GitHub issues are updated continuously as work happens, not batched at the end",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/issue-lifecycle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "issue-lifecycle-troykelly-codex-skills-2"
+}

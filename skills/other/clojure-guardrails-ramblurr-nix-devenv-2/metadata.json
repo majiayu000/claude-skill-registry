@@ -1,0 +1,11 @@
+{
+  "name": "clojure-guardrails",
+  "description": "Reference for Guardrails library with Malli in Clojure. Use when working with `>defn`, `>defn-`, `>def`, `>fdef` macros, gspec syntax, or function validation. Triggers on guardrails imports, `com.fulc",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/clojure-guardrails",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "clojure-guardrails-ramblurr-nix-devenv-2"
+}

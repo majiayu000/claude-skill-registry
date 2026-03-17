@@ -1,0 +1,11 @@
+{
+  "name": "create-release-checklist",
+  "description": "Create a release checklist and GitHub issue for an R package. Use when the user asks to \"create a release checklist\" or \"start a release\" for an R package.\n",
+  "repo": "posit-dev/skills",
+  "path": "open-source/create-release-checklist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/posit-dev/skills",
+  "dir_name": "create-release-checklist-posit-dev-skills-2"
+}

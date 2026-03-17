@@ -1,0 +1,11 @@
+{
+  "name": "postgres-rls",
+  "description": "MANDATORY when touching auth tables, tenant isolation, RLS policies, or multi-tenant database code - enforces Row Level Security best practices and catches common bypass vulnerabilities",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/postgres-rls",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "postgres-rls-troykelly-codex-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "story-based-framing",
+  "description": "This skill should be used when describing patterns or anti-patterns for detection by LLM agents across any domain (code analysis, business processes, security audits, UX design, data quality, medical ",
+  "repo": "BbgnsurfTech/claude-skills-collection",
+  "path": "community/jamie-bitflight-claude-skills/story-based-framing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BbgnsurfTech/claude-skills-collection",
+  "dir_name": "story-based-framing-bbgnsurftech-claude-skills-collec-2"
+}

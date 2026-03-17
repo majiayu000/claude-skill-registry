@@ -1,0 +1,11 @@
+{
+  "name": "tdd-with-phpunit",
+  "description": "Use when symfony tdd with phpunit",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/tdd-with-phpunit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "tdd-with-phpunit-makfly-superpowers-symfony-2"
+}

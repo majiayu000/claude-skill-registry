@@ -1,0 +1,11 @@
+{
+  "name": "boltz",
+  "description": "Structure prediction using Boltz-1/Boltz-2, an open biomolecular structure predictor. Use this skill when: (1) Predicting protein complex structures, (2) Validating designed binders, (3) Need open-sou",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/boltz",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "boltz-adaptyvbio-protein-design-skill-2"
+}

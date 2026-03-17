@@ -1,0 +1,9 @@
+{
+  "name": "schema-validator",
+  "repo": "Dicklesworthstone/pi_agent_rust",
+  "path": "tests/ext_conformance/artifacts/plugins-community/skills/11-data-pipelines/schema-validator/SKILL.md",
+  "category": "other",
+  "source": "github.com/Dicklesworthstone/pi_agent_rust",
+  "dir_name": "schema-validator",
+  "downloaded_at": "2026-02-22T04:57:50.920478Z"
+}

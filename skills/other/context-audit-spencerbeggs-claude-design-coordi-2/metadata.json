@@ -1,0 +1,11 @@
+{
+  "name": "context-audit",
+  "description": "Comprehensive quality audit for CLAUDE.md context files. Use when performing thorough quality checks, preparing for releases, ensuring context efficiency, or verifying token optimization.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/context-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "context-audit-spencerbeggs-claude-design-coordi-2"
+}

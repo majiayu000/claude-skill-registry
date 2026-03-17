@@ -1,0 +1,11 @@
+{
+  "name": "refactor-guide",
+  "description": "代码重构指南技能。当用户需要优化代码结构、消除代码异味、改进设计模式、提升代码可维护性或进行架构改进时使用此技能。",
+  "repo": "enoch-robinson/agent-skill-collection",
+  "path": "skills/development/refactor-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enoch-robinson/agent-skill-collection",
+  "dir_name": "refactor-guide-enoch-robinson-agent-skill-collecti-2"
+}

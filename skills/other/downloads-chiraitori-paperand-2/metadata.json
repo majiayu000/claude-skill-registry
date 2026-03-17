@@ -1,0 +1,11 @@
+{
+  "name": "downloads",
+  "description": "Background chapter downloads and offline reading",
+  "repo": "chiraitori/paperand",
+  "path": ".agent/skills/downloads",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chiraitori/paperand",
+  "dir_name": "downloads-chiraitori-paperand-2"
+}

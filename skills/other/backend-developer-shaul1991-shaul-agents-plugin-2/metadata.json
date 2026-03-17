@@ -1,0 +1,11 @@
+{
+  "name": "backend-developer",
+  "description": "Backend Developer Agent. 코드 개발, 디버깅, 기능 구현을 담당합니다. 개발, 코딩, 디버그(debug), 버그 수정, 기능 구현 관련 요청 시 사용됩니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/backend-developer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "backend-developer-shaul1991-shaul-agents-plugin-2"
+}

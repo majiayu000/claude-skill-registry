@@ -1,0 +1,11 @@
+{
+  "name": "account-onboarding",
+  "description": "Онбординг нового рекламного аккаунта. Создаёт конфигурацию для оптимизации.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/account-onboarding",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "account-onboarding-dengineproblem-agents-monorepo-2"
+}

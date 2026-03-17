@@ -1,0 +1,17 @@
+{
+  "name": "auth-implementation-patterns",
+  "repo": "Claude-Code-Community-Ireland/claude-code-resources",
+  "path": "skills/general/auth-implementation-patterns/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Claude-Code-Community-Ireland/claude-code-resources",
+  "dir_name": "auth-implementation-patterns-claude-code-communit-claude-code-resource",
+  "downloaded_at": "2026-03-01T05:03:59.541848Z",
+  "author": "Claude-Code-Community-Ireland",
+  "source_url": "https://github.com/Claude-Code-Community-Ireland/claude-code-resources/blob/main/skills/general/auth-implementation-patterns/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Claude-Code-Community-Ireland/claude-code-resources/blob/main/skills/general/auth-implementation-patterns/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "prism-loop",
+  "description": "Start PRISM TDD workflow loop using Ralph Wiggum pattern. Auto-progresses through Planning, TDD RED (failing tests), TDD GREEN (implementation), and Review phases. Use when user wants to run the core ",
+  "repo": "resolve-io/.prism",
+  "path": "plugins/prism-devtools/skills/prism-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/resolve-io/.prism",
+  "dir_name": "prism-loop-resolve-io-prism-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "local-review",
+  "description": "Review current changes against project guidelines before PR",
+  "repo": "gittower/git-flow-next",
+  "path": ".claude/skills/local-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gittower/git-flow-next",
+  "dir_name": "local-review-gittower-git-flow-next-2"
+}

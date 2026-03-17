@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-syntax-clientscripts",
+  "description": "Exact JavaScript syntax for ERPNext/Frappe Client Scripts. Use when writing client-side code for form events, field manipulation, server calls, or child table handling in ERPNext v14/v15/v16. Triggers",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/syntax/erpnext-syntax-clientscripts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-syntax-clientscripts-openaec-foundation-erpnext-anthropic-cl-2"
+}

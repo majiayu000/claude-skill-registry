@@ -1,0 +1,11 @@
+{
+  "name": "uspto-database",
+  "description": "Access USPTO APIs for patent/trademark searches, examination history (PEDS), assignments, citations, office actions, TSDR, for IP analysis and prior art searches.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/database/uspto-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "uspto-database-hxk622-tokendance-2"
+}

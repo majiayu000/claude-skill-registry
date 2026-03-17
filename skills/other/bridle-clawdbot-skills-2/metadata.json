@@ -1,0 +1,11 @@
+{
+  "name": "bridle",
+  "description": "Unified configuration manager for AI coding assistants. Manage profiles, install skills/agents/commands, and switch configurations across Claude Code, OpenCode, Goose, and Amp.",
+  "repo": "clawdbot/skills",
+  "path": "skills/bjesuiter/bridle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "bridle-clawdbot-skills-2"
+}

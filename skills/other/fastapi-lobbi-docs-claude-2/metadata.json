@@ -1,0 +1,11 @@
+{
+  "name": "fastapi",
+  "description": "FastAPI development including async endpoints, Pydantic models, dependency injection, and OpenAPI documentation. Activate for FastAPI apps, async Python APIs, and modern Python web services.",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/fastapi",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "fastapi-lobbi-docs-claude-2"
+}

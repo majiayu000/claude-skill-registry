@@ -1,0 +1,11 @@
+{
+  "name": "document-formatter",
+  "description": "Format and style documents with consistent formatting. Use when standardizing document formatting or cleaning up text.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/document-formatter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "document-formatter-ntaksh42-agents-2"
+}

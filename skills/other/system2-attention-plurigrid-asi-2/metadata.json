@@ -1,0 +1,11 @@
+{
+  "name": "system2-attention",
+  "description": "System 2 attention mechanisms for deliberate, slow reasoning in transformer",
+  "repo": "plurigrid/asi",
+  "path": "skills/system2-attention",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "system2-attention-plurigrid-asi-2"
+}

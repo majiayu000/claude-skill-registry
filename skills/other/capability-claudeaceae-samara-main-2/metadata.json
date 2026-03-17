@@ -1,0 +1,11 @@
+{
+  "name": "capability",
+  "description": "Verify if a specific action is possible and diagnose any blockers.",
+  "repo": "claudeaceae/samara-main",
+  "path": ".claude/skills/capability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/claudeaceae/samara-main",
+  "dir_name": "capability-claudeaceae-samara-main-2"
+}

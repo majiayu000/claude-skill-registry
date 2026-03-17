@@ -1,0 +1,11 @@
+{
+  "name": "ddos-attack-testing",
+  "description": "This skill should be used when the user asks to \"test for DDoS vulnerabilities\", \"perform denial of service testing\", \"simulate traffic floods\", \"assess network resilience\", \"configure DDoS detection ",
+  "repo": "zebbern/SecOps-CLI-Guides",
+  "path": "skills/ddos-attack-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zebbern/SecOps-CLI-Guides",
+  "dir_name": "ddos-attack-testing-zebbern-secops-cli-guides-2"
+}

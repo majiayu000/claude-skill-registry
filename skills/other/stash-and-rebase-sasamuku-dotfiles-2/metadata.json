@@ -1,0 +1,11 @@
+{
+  "name": "stash-and-rebase",
+  "description": "Execute /stash-and-rebase slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/stash-and-rebase",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "stash-and-rebase-sasamuku-dotfiles-2"
+}

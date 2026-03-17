@@ -1,0 +1,11 @@
+{
+  "name": "apollo-data-handling",
+  "description": "Apollo.io data management and compliance.\nUse when handling contact data, implementing GDPR compliance,\nor managing data exports and retention.\nTrigger with phrases like \"apollo data\", \"apollo gdpr\", ",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/apollo-pack/skills/apollo-data-handling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "apollo-data-handling-jeremylongshore-claude-code-plugins--2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "frontend-dev-guidelines",
+  "description": "Frontend development guidelines for React/TypeScript applications. Modern patterns including Suspense, lazy loading, useSuspenseQuery, file organization with features directory, MUI v7 styling, TanSta",
+  "repo": "ddttom/allaboutv2",
+  "path": ".claude/skills/frontend-dev-guidelines",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ddttom/allaboutv2",
+  "dir_name": "frontend-dev-guidelines-ddttom-allaboutv2-2"
+}

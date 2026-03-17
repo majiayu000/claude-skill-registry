@@ -1,0 +1,11 @@
+{
+  "name": "android-deploy-usb",
+  "description": "Build and deploy Android app to connected device via USB. Fast deployment (~2-5 seconds) using Gradle and ADB. Use when deploying, installing, or building Android apps to physical devices.",
+  "repo": "asnar00/miso",
+  "path": ".claude/skills/android-deploy-usb",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/asnar00/miso",
+  "dir_name": "android-deploy-usb-asnar00-miso-2"
+}

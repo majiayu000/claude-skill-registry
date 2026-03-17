@@ -1,0 +1,11 @@
+{
+  "name": "qe-quality-assessment",
+  "description": "Comprehensive quality gates, metrics analysis, and deployment readiness assessment for continuous quality assurance.",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/qe-quality-assessment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "qe-quality-assessment-proffesor-for-testin-agentic-qe-2"
+}

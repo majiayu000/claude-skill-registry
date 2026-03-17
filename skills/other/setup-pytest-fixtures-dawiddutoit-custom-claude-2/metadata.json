@@ -1,0 +1,11 @@
+{
+  "name": "setup-pytest-fixtures",
+  "description": "Create pytest fixtures following project patterns including factory fixtures,\nasync fixtures, and multi-layer organization. Use when setting up test fixtures,\ncreating test data, organizing test utili",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/setup-pytest-fixtures",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "setup-pytest-fixtures-dawiddutoit-custom-claude-2"
+}

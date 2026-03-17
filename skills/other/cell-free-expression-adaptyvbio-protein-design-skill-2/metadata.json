@@ -1,0 +1,11 @@
+{
+  "name": "cell-free-expression",
+  "description": "Guidance for cell-free protein synthesis (CFPS) optimization. Use when: (1) Planning CFPS experiments, (2) Troubleshooting low yield or aggregation, (3) Optimizing DNA template design for CFPS, (4) Ex",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/cell-free-expression",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "cell-free-expression-adaptyvbio-protein-design-skill-2"
+}

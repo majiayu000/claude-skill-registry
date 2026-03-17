@@ -1,0 +1,11 @@
+{
+  "name": "search-flights",
+  "description": "Search flights by origin, destination, and departure date using the bundled flights dataset. Use this skill when proposing flight options or checking whether a route/date combination exists.",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/travel-planning/environment/skills/search-flights",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "search-flights-benchflow-ai-skillsbench-2"
+}

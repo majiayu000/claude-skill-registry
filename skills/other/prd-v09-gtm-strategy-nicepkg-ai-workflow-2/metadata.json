@@ -1,0 +1,11 @@
+{
+  "name": "prd-v09-gtm-strategy",
+  "description": "Define go-to-market strategy including launch plan, messaging, channels, and timing during PRD v0.9 Go-to-Market. Triggers on requests to plan launch, define GTM strategy, or when user asks \"how do we",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/marketing-pro-workflow/.claude/skills/prd-v09-gtm-strategy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "prd-v09-gtm-strategy-nicepkg-ai-workflow-2"
+}

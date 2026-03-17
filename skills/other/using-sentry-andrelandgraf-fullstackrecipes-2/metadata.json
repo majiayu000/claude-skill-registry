@@ -1,0 +1,11 @@
+{
+  "name": "using-sentry",
+  "description": "Capture exceptions, add context, create performance spans, and use structured logging with Sentry.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/using-sentry",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "using-sentry-andrelandgraf-fullstackrecipes-2"
+}

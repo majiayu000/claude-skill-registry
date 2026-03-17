@@ -1,0 +1,11 @@
+{
+  "name": "subagent-testing",
+  "description": "TDD-style testing methodology for skills using fresh subagent instances\nto prevent priming bias and validate skill effectiveness.\n\nTriggers: test skill, validate skill, skill testing, subagent testing",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/abstract/skills/subagent-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "subagent-testing-athola-claude-night-market-2"
+}

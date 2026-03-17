@@ -1,0 +1,9 @@
+{
+  "name": "clean-branches",
+  "repo": "brave-experiments/brave-core-bot",
+  "path": ".claude/skills/clean-branches/SKILL.md",
+  "category": "other",
+  "source": "github.com/brave-experiments/brave-core-bot",
+  "dir_name": "clean-branches",
+  "downloaded_at": "2026-02-22T06:35:31.482560Z"
+}

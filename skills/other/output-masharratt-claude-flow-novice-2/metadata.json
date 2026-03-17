@@ -1,0 +1,11 @@
+{
+  "name": "output",
+  "description": "Type-safe output processing for Loop 2 validators and Loop 3 implementers. Use when parsing agent confidence scores, feedback, or calculating consensus from multiple validators.",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-loop-orchestration-v2/lib/output",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "output-masharratt-claude-flow-novice-2"
+}

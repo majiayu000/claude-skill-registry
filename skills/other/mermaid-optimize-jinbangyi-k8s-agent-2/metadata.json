@@ -1,0 +1,11 @@
+{
+  "name": "mermaid-optimize",
+  "description": "Improve readability, consistency, and completeness of Mermaid diagrams. Use when Claude needs to optimize Mermaid diagrams for visual clarity, better layout, missing components, or standardization acr",
+  "repo": "jinbangyi/k8s-agent",
+  "path": ".claude/skills/mermaid-optimize",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jinbangyi/k8s-agent",
+  "dir_name": "mermaid-optimize-jinbangyi-k8s-agent-2"
+}

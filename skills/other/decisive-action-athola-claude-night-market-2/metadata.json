@@ -1,0 +1,11 @@
+{
+  "name": "decisive-action",
+  "description": "Triggers: question threshold, decisive, autonomous, clarifying questions\nGuidance on when to ask clarifying questions vs proceed with standard approaches.\nReduces interaction rounds while preventing w",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/conserve/skills/decisive-action",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "decisive-action-athola-claude-night-market-2"
+}

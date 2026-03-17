@@ -1,0 +1,11 @@
+{
+  "name": "database-ops",
+  "description": "SQLModel async database operations with Neon PostgreSQL, migrations, user isolation, and proper indexing. Use when defining models, queries, or database operations.",
+  "repo": "Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development",
+  "path": "Phase03/.claude/skills/database-ops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development",
+  "dir_name": "database-ops-jawad-chaudhary-hackathone-2-todo-sp-2"
+}

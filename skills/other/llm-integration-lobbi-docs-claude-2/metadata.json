@@ -1,0 +1,11 @@
+{
+  "name": "llm-integration",
+  "description": "LLM integration patterns for Claude, GPT, Gemini, and Ollama. Activate for AI API integration, prompt engineering, token management, extended thinking, and multi-model orchestration.",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/llm-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "llm-integration-lobbi-docs-claude-2"
+}

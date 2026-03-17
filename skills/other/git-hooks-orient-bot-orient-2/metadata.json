@@ -1,0 +1,11 @@
+{
+  "name": "git-hooks",
+  "description": "Manage pre-commit hooks, performance optimization, and temp commits. Use when asked about \"pre-commit slow\", \"commit taking forever\", \"skip hooks\", \"bypass pre-commit\", \"optimize commits\", or multi-ag",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/git-hooks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "git-hooks-orient-bot-orient-2"
+}

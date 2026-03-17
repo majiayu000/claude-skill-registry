@@ -1,0 +1,11 @@
+{
+  "name": "execution-tracking",
+  "description": "Execution status management and reporting for implementation plugin. Use when initializing execution tracking, updating task status, generating progress reports, calculating completion metrics, tracki",
+  "repo": "vanman2024/dev-lifecycle-marketplace",
+  "path": "plugins/implementation/skills/execution-tracking",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vanman2024/dev-lifecycle-marketplace",
+  "dir_name": "execution-tracking-vanman2024-dev-lifecycle-market-2"
+}

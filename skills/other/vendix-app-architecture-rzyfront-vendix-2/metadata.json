@@ -1,0 +1,11 @@
+{
+  "name": "vendix-app-architecture",
+  "description": "Explains the Vendix Public and Private App architecture, Domain Types, and App Environments. Trigger: When asking about different apps, environments (ORG_ADMIN, STORE_ADMIN), or domain logic.\n",
+  "repo": "Rzyfront/Vendix",
+  "path": "skills/vendix-app-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Rzyfront/Vendix",
+  "dir_name": "vendix-app-architecture-rzyfront-vendix-2"
+}

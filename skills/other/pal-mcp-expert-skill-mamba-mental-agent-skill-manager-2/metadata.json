@@ -1,0 +1,11 @@
+{
+  "name": "pal-mcp-expert-skill",
+  "description": "Expert guidance for using the Pal MCP Server (zen-pal-nas). This skill should be used when working with multi-model AI orchestration, tool workflows (chat, thinkdeep, planner, consensus, debug, codere",
+  "repo": "mamba-mental/agent-skill-manager",
+  "path": "skills/pal-mcp-expert-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mamba-mental/agent-skill-manager",
+  "dir_name": "pal-mcp-expert-skill-mamba-mental-agent-skill-manager-2"
+}

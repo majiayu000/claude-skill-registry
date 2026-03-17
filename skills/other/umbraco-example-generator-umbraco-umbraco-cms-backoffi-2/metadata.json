@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-example-generator",
+  "description": "Generate testable example extensions and run them in the Umbraco backoffice",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-testing-skills/skills/umbraco-example-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-example-generator-umbraco-umbraco-cms-backoffi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "test-plan",
+  "description": "テスト計画書を作成する。テスト戦略、品質検証計画の策定時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/planning/test-plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "test-plan-haru-llc-ai-pm-system-noteboo-2"
+}

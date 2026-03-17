@@ -1,0 +1,11 @@
+{
+  "name": "multi-model-writer",
+  "description": "Unified writing system with intelligent model routing. Default: Claude. Options: GLM-4.7 (cheapest), GPT-4o/mini, Gemini, Grok. Includes browser automation for web interfaces. Cost-aware routing based",
+  "repo": "drshailesh88/integrated_content_OS",
+  "path": "skills/cardiology/multi-model-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/drshailesh88/integrated_content_OS",
+  "dir_name": "multi-model-writer-drshailesh88-integrated-content-o-2"
+}

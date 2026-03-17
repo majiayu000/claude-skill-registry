@@ -1,0 +1,11 @@
+{
+  "name": "approval-gate",
+  "description": "ワークフローの重要なフェーズ移行前にユーザーの明示的な承認を必要とする承認ゲートの共通フォーマットとパターンを定義",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/approval-gate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "approval-gate-takemo101-compose-workflow-2"
+}

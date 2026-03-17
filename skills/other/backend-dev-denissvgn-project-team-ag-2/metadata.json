@@ -1,0 +1,11 @@
+{
+  "name": "backend-dev",
+  "description": "Backend Developer for server-side implementation. Builds APIs, services, and data layer. Use this skill for API development, database work, or server logic.",
+  "repo": "Denissvgn/project-team-ag",
+  "path": ".agent/skills/backend-dev",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Denissvgn/project-team-ag",
+  "dir_name": "backend-dev-denissvgn-project-team-ag-2"
+}

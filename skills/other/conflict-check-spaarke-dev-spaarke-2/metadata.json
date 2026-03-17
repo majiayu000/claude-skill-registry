@@ -1,0 +1,11 @@
+{
+  "name": "conflict-check",
+  "description": "Detect potential file conflicts between active PRs and current work",
+  "repo": "spaarke-dev/spaarke",
+  "path": ".claude/skills/conflict-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spaarke-dev/spaarke",
+  "dir_name": "conflict-check-spaarke-dev-spaarke-2"
+}

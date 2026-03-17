@@ -1,0 +1,11 @@
+{
+  "name": "medarbejdere",
+  "description": "Activates when querying employee and workplace safety data from GCS.\nUse this skill for: Arbejdstilsynet inspections, work permits, safety violations,\nworkplace accidents, compliance rates, foreign wo",
+  "repo": "Klimabevaegelsen/landbruget.dk",
+  "path": ".claude/skills/gcs-data-catalog/medarbejdere",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Klimabevaegelsen/landbruget.dk",
+  "dir_name": "medarbejdere-klimabevaegelsen-landbruget-dk-2"
+}

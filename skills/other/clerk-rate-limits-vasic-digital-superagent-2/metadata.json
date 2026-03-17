@@ -1,0 +1,11 @@
+{
+  "name": "clerk-rate-limits",
+  "description": "Understand and manage Clerk rate limits and quotas.\nUse when hitting rate limits, optimizing API usage,\nor planning for high-traffic scenarios.\nTrigger with phrases like \"clerk rate limit\", \"clerk quo",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/clerk-pack/clerk-rate-limits",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "clerk-rate-limits-vasic-digital-superagent-2"
+}

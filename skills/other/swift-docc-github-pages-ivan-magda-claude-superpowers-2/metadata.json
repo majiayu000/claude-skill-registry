@@ -1,0 +1,11 @@
+{
+  "name": "swift-docc-github-pages",
+  "description": "Use when setting up DocC documentation for a Swift package, deploying to GitHub Pages, or encountering \"no such module 'UIKit'\" during doc generation",
+  "repo": "ivan-magda/claude-superpowers",
+  "path": "plugins/swift/skills/swift-docc-github-pages",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ivan-magda/claude-superpowers",
+  "dir_name": "swift-docc-github-pages-ivan-magda-claude-superpowers-2"
+}

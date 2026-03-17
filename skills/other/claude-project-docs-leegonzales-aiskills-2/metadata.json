@@ -1,0 +1,11 @@
+{
+  "name": "claude-project-docs",
+  "description": "Generate concise CLAUDE.md files and agent documentation following best practices. Use when setting up a new project for Claude Code, auditing existing CLAUDE.md, or creating progressive disclosure do",
+  "repo": "leegonzales/AISkills",
+  "path": "ClaudeProjectDocs/claude-project-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leegonzales/AISkills",
+  "dir_name": "claude-project-docs-leegonzales-aiskills-2"
+}

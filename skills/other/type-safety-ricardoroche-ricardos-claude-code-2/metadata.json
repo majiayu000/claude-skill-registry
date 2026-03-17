@@ -1,0 +1,11 @@
+{
+  "name": "type-safety",
+  "description": "Automatically applies when writing Python code to enforce comprehensive type hints. Ensures mypy compatibility, proper generic types, and type safety best practices.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/type-safety",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "type-safety-ricardoroche-ricardos-claude-code-2"
+}

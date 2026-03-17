@@ -1,0 +1,11 @@
+{
+  "name": "atac-qc",
+  "description": "Quality control metrics for ATAC-seq data including fragment size distribution, TSS enrichment, FRiP, and library complexity. Use when assessing ATAC-seq library quality before or after peak calling t",
+  "repo": "GPTomics/bioSkills",
+  "path": "atac-seq/atac-qc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "atac-qc-gptomics-bioskills-2"
+}

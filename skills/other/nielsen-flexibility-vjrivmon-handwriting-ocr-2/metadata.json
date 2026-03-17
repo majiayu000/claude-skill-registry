@@ -1,0 +1,11 @@
+{
+  "name": "nielsen-flexibility",
+  "description": "Proporciona atajos para usuarios expertos sin afectar a novatos. Use cuando diseñe interfaces que serán usadas repetidamente o por usuarios con diferentes niveles de experiencia.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/heuristics/nielsen-flexibility",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "nielsen-flexibility-vjrivmon-handwriting-ocr-2"
+}

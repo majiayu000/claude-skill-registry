@@ -1,0 +1,11 @@
+{
+  "name": "gpui-global",
+  "description": "Global state management in GPUI. Use when implementing global state, app-wide configuration, or shared resources.",
+  "repo": "longbridge/gpui-component",
+  "path": ".claude/skills/gpui-global",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/longbridge/gpui-component",
+  "dir_name": "gpui-global-longbridge-gpui-component-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "context-eng-project-development",
+  "description": "This skill should be used when the user asks to \"start an LLM project\", \"design batch pipeline\", \"evaluate task-model fit\", \"structure agent project\", or mentions pipeline architecture, agent-assisted",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/context-eng-project-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "context-eng-project-development-boisenoise-skills-collections-2"
+}

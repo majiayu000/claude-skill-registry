@@ -1,0 +1,11 @@
+{
+  "name": "1k-coding-patterns",
+  "description": "Coding patterns and best practices for OneKey development. Use when writing React components, handling promises, error handling, or following code conventions. Triggers on react, component, hooks, pro",
+  "repo": "OneKeyHQ/app-monorepo",
+  "path": ".claude/skills/1k-coding-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OneKeyHQ/app-monorepo",
+  "dir_name": "1k-coding-patterns-onekeyhq-app-monorepo-2"
+}

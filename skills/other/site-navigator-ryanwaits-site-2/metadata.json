@@ -1,0 +1,11 @@
+{
+  "name": "site-navigator",
+  "description": "Use this skill to help users find content on Ryan's site, navigate between sections, or discover relevant posts based on their interests.",
+  "repo": "ryanwaits/site",
+  "path": ".claude/skills/site-navigator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ryanwaits/site",
+  "dir_name": "site-navigator-ryanwaits-site-2"
+}

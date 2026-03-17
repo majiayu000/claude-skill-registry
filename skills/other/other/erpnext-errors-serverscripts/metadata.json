@@ -1,0 +1,9 @@
+{
+  "name": "erpnext-errors-serverscripts",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/errors/erpnext-errors-serverscripts/SKILL.md",
+  "category": "other",
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-errors-serverscripts",
+  "downloaded_at": "2026-02-22T05:29:40.321199Z"
+}

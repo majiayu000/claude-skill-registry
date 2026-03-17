@@ -1,0 +1,11 @@
+{
+  "name": "update-migration-log",
+  "description": "Log migration details to MIGRATION_LOG.md only. Use after completing a file migration to record details, issues, and solutions. Does NOT modify CLAUDE.md or TASK_BOARD.md - those are managed by other ",
+  "repo": "dudusoar/VRP-Toolkit",
+  "path": ".claude/skills/update-migration-log",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dudusoar/VRP-Toolkit",
+  "dir_name": "update-migration-log-dudusoar-vrp-toolkit-2"
+}

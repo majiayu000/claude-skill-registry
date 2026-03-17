@@ -1,0 +1,11 @@
+{
+  "name": "clay-multi-env-setup",
+  "description": "Configure Clay across development, staging, and production environments.\nUse when setting up multi-environment deployments, configuring per-environment secrets,\nor implementing environment-specific Cl",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/clay-pack/skills/clay-multi-env-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "clay-multi-env-setup-jeremylongshore-claude-code-plugins--2"
+}

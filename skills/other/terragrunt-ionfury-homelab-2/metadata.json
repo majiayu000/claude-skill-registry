@@ -1,0 +1,11 @@
+{
+  "name": "terragrunt",
+  "description": "Homelab infrastructure management with Terragrunt, OpenTofu, and Terraform patterns.\n\nUse when: (1) Planning or applying infrastructure changes to dev/integration/live clusters,\n(2) Adding/modifying m",
+  "repo": "ionfury/homelab",
+  "path": ".claude/skills/terragrunt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ionfury/homelab",
+  "dir_name": "terragrunt-ionfury-homelab-2"
+}

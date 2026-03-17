@@ -1,0 +1,11 @@
+{
+  "name": "validation-expert",
+  "description": "Comprehensive validation for Project Conductor using deep research for best practices. Use when user mentions \"validate\", \"check quality\", \"review code\", \"test coverage\", or before deployment.",
+  "repo": "HR-AR/Project-Conductor",
+  "path": ".claude/skills/validation-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HR-AR/Project-Conductor",
+  "dir_name": "validation-expert-hr-ar-project-conductor-2"
+}

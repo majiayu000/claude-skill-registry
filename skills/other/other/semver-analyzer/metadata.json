@@ -1,0 +1,9 @@
+{
+  "name": "semver-analyzer",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/sdk-platform-development/skills/semver-analyzer/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "semver-analyzer",
+  "downloaded_at": "2026-02-10T16:27:58.781803Z"
+}

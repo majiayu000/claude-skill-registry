@@ -1,0 +1,11 @@
+{
+  "name": "typescript-test",
+  "description": "Provides Jest-based TypeScript testing expertise and best practices. Ensures proper test structure, mocking strategies, async handling patterns, and coverage optimization. Specializes in unit testing,",
+  "repo": "KubrickCode/Repo-Management",
+  "path": ".claude/skills/typescript-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KubrickCode/Repo-Management",
+  "dir_name": "typescript-test-kubrickcode-repo-management-2"
+}

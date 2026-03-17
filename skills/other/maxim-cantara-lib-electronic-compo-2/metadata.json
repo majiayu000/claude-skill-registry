@@ -1,0 +1,11 @@
+{
+  "name": "maxim",
+  "description": "Maxim Integrated (now Analog Devices) MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Maxim/Dallas components or MaximHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/maxim",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "maxim-cantara-lib-electronic-compo-2"
+}

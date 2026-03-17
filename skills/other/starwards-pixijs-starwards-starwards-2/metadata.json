@@ -1,0 +1,11 @@
+{
+  "name": "starwards-pixijs",
+  "description": "PixiJS v8 patterns for Starwards - Containers, Sprites, Graphics, Textures, ticker integration, event handling, and testing with Playwright data-id selectors",
+  "repo": "starwards/starwards",
+  "path": ".claude/skills/starwards-pixijs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/starwards/starwards",
+  "dir_name": "starwards-pixijs-starwards-starwards-2"
+}

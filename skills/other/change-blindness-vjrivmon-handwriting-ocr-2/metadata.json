@@ -1,0 +1,11 @@
+{
+  "name": "change-blindness",
+  "description": "Los usuarios no notan cambios que ocurren fuera de su foco de atención. Use cuando diseñe actualizaciones de estado, notificaciones, o cambios dinámicos en la UI.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/perception/change-blindness",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "change-blindness-vjrivmon-handwriting-ocr-2"
+}

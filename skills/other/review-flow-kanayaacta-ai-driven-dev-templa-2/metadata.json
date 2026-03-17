@@ -1,0 +1,11 @@
+{
+  "name": "review-flow",
+  "description": "PR作成後に自動的に実行する必要があるフロースキルです",
+  "repo": "KanayaActa/ai-driven-dev-template",
+  "path": ".claude/skills/review-flow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KanayaActa/ai-driven-dev-template",
+  "dir_name": "review-flow-kanayaacta-ai-driven-dev-templa-2"
+}

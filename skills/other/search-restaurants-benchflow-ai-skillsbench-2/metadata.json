@@ -1,0 +1,11 @@
+{
+  "name": "search-restaurants",
+  "description": "Retrieve restaurants by city from the bundled dataset. Use this skill when recommending places to eat or validating dining options for a destination.",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/travel-planning/environment/skills/search-restaurants",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "search-restaurants-benchflow-ai-skillsbench-2"
+}

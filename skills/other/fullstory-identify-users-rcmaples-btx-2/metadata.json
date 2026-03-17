@@ -1,0 +1,11 @@
+{
+  "name": "fullstory-identify-users",
+  "description": "Comprehensive guide for implementing Fullstory's User Identification API (setIdentity) across web applications. Teaches proper uid handling, property passing, re-identification behavior, and session m",
+  "repo": "rcmaples/btx",
+  "path": ".claude/skills/fullstory-identify-users",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rcmaples/btx",
+  "dir_name": "fullstory-identify-users-rcmaples-btx-2"
+}

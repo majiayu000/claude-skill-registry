@@ -1,0 +1,11 @@
+{
+  "name": "account-tiering",
+  "description": "Use when defining ABM tiers, scoring logic, and coverage rules.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/abm-orchestration/skills/account-tiering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "account-tiering-gtmagents-gtm-agents-2"
+}

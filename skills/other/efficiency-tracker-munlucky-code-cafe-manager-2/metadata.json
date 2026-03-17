@@ -1,0 +1,11 @@
+{
+  "name": "efficiency-tracker",
+  "description": "Tracks workflow status and generates a flow report.",
+  "repo": "munlucky/code-cafe-manager",
+  "path": ".claude/skills/efficiency-tracker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/munlucky/code-cafe-manager",
+  "dir_name": "efficiency-tracker-munlucky-code-cafe-manager-2"
+}

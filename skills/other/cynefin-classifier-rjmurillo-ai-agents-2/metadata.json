@@ -1,0 +1,11 @@
+{
+  "name": "cynefin-classifier",
+  "description": "Classify problems into Cynefin Framework domains (Clear, Complicated, Complex, Chaotic, Confusion) and recommend appropriate response strategies. Use when unsure how to approach a problem, facing anal",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/cynefin-classifier",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "cynefin-classifier-rjmurillo-ai-agents-2"
+}

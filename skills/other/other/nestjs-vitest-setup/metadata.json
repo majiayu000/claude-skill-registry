@@ -1,0 +1,17 @@
+{
+  "name": "nestjs-vitest-setup",
+  "repo": "cromesdk/ai-skills",
+  "path": "skills/nestjs/nestjs-vitest-setup/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cromesdk/ai-skills",
+  "dir_name": "nestjs-vitest-setup",
+  "downloaded_at": "2026-03-01T07:18:58.142442Z",
+  "author": "cromesdk",
+  "source_url": "https://github.com/cromesdk/ai-skills/blob/main/skills/nestjs/nestjs-vitest-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cromesdk/ai-skills/blob/main/skills/nestjs/nestjs-vitest-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

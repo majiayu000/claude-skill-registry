@@ -1,0 +1,11 @@
+{
+  "name": "dnd5e-srd",
+  "description": "Retrieval-augmented generation (RAG) skill for the D&D 5e System Reference Document (SRD). Use when answering questions about D&D 5e core rules, spells, combat, equipment, conditions, monsters, and ot",
+  "repo": "Activer007/ordinary-claude-skills",
+  "path": "skills_all/dnd5e-srd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Activer007/ordinary-claude-skills",
+  "dir_name": "dnd5e-srd-activer007-ordinary-claude-skil-2"
+}

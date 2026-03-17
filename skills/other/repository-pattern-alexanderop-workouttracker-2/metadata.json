@@ -1,0 +1,11 @@
+{
+  "name": "repository-pattern",
+  "description": "Create and manage Dexie/IndexedDB repositories with type-safe interfaces, converters, and standardized CRUD operations. Use when (1) adding entity storage, (2) implementing save/load/delete operations",
+  "repo": "alexanderop/workoutTracker",
+  "path": ".claude/skills/repository-pattern",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alexanderop/workoutTracker",
+  "dir_name": "repository-pattern-alexanderop-workouttracker-2"
+}

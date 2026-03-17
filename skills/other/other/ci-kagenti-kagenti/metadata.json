@@ -1,0 +1,9 @@
+{
+  "name": "ci",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/ci/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "ci-kagenti-kagenti",
+  "downloaded_at": "2026-02-15T07:49:42.491389Z"
+}

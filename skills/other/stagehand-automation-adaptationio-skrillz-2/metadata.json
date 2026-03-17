@@ -1,0 +1,11 @@
+{
+  "name": "stagehand-automation",
+  "description": "AI-powered browser automation using Stagehand v3 and Claude. Use when building self-healing tests, AI agents, dynamic web automation, or when traditional selectors break frequently due to UI changes.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/stagehand-automation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "stagehand-automation-adaptationio-skrillz-2"
+}

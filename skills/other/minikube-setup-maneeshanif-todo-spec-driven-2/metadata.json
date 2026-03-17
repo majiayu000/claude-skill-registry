@@ -1,0 +1,11 @@
+{
+  "name": "minikube-setup",
+  "description": "Setup and configure Minikube for local Kubernetes development",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/minikube-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "minikube-setup-maneeshanif-todo-spec-driven-2"
+}

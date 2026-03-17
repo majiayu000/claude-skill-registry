@@ -1,0 +1,11 @@
+{
+  "name": "global-coding-style",
+  "description": "Follow consistent code formatting, naming conventions, TypeScript standards, and Astro component structure patterns across the entire codebase. Use this skill when writing any code file to ensure prop",
+  "repo": "SpacePlushy/portfolio",
+  "path": ".claude/skills/global-coding-style",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpacePlushy/portfolio",
+  "dir_name": "global-coding-style-spaceplushy-portfolio-2"
+}

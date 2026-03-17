@@ -1,0 +1,11 @@
+{
+  "name": "cloud-k8s-deployment",
+  "description": "Deploy to cloud Kubernetes clusters - DigitalOcean DOKS primary, with multi-cloud patterns for AWS EKS and GKE. Use when deploying Phase 5 to production cloud environments. (project)",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/cloud-k8s-deployment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "cloud-k8s-deployment-maneeshanif-todo-spec-driven-2"
+}

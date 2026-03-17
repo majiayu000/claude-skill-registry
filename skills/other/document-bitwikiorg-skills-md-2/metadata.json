@@ -1,0 +1,11 @@
+{
+  "name": "document",
+  "description": "Imported skill document from anthropic",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/anthropic/document",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "document-bitwikiorg-skills-md-2"
+}

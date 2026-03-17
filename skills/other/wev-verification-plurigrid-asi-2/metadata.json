@@ -1,0 +1,11 @@
+{
+  "name": "wev-verification",
+  "description": "WEV Verification Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/wev-verification",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "wev-verification-plurigrid-asi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "conventional-commits",
+  "description": "Format commit messages using the Conventional Commits specification. Use when creating commits, writing commit messages, or when the user mentions commits, git commits, or commit messages. Ensures com",
+  "repo": "bastos/skills",
+  "path": "conventional-commits",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bastos/skills",
+  "dir_name": "conventional-commits-bastos-skills-2"
+}

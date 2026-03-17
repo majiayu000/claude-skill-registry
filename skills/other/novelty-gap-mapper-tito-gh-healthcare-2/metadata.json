@@ -1,0 +1,11 @@
+{
+  "name": "novelty-gap-mapper",
+  "description": "evidence-scoutの結果を受け、研究ギャップを体系的にマッピングし、\n新規性の高い研究機会を特定・スコアリングする。EHR-RWDの優位性を活かした差別化ポイントを明確化。\n",
+  "repo": "tito-gh/healthcare",
+  "path": ".claude/skills/novelty-gap-mapper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tito-gh/healthcare",
+  "dir_name": "novelty-gap-mapper-tito-gh-healthcare-2"
+}

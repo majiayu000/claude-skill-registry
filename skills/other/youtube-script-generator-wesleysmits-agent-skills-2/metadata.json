@@ -1,0 +1,11 @@
+{
+  "name": "youtube-script-generator",
+  "description": "Creates structured video scripts with hooks, segments, and CTAs. Use when the user asks about YouTube scripts, video content, video outlines, talking points, or video intros.",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/youtube-script-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "youtube-script-generator-wesleysmits-agent-skills-2"
+}

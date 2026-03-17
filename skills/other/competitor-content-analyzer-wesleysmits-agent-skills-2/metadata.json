@@ -1,0 +1,11 @@
+{
+  "name": "competitor-content-analyzer",
+  "description": "Analyzes competitor content strategy and identifies differentiation opportunities. Use when the user asks about competitor analysis, content gaps, competitive research, or finding unique angles.",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/competitor-content-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "competitor-content-analyzer-wesleysmits-agent-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-anomaly-detector",
+  "description": "Detects anomalies in time series data using TimeGPT. Identifies outliers, level shifts, and trend breaks without model training. Use when identifying anomalies, outliers, or unusual patterns in time s",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "000-docs/000a-planned-skills/core-forecasting/nixtla-anomaly-detector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-anomaly-detector-intent-solutions-io-plugins-nixtla-2"
+}

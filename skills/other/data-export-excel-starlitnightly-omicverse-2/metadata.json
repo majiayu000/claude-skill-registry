@@ -1,0 +1,11 @@
+{
+  "name": "data-export-excel",
+  "description": "Export analysis results, data tables, and formatted spreadsheets to Excel files using openpyxl. Works with ANY LLM provider (GPT, Gemini, Claude, etc.).",
+  "repo": "Starlitnightly/omicverse",
+  "path": ".claude/skills/data-export-excel",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Starlitnightly/omicverse",
+  "dir_name": "data-export-excel-starlitnightly-omicverse-2"
+}

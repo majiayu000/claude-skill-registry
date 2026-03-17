@@ -1,0 +1,11 @@
+{
+  "name": "multi-model-reviewer",
+  "description": "協調多個 AI 模型（ChatGPT、Gemini、Codex、QWEN、Claude）進行三角驗證，確保「Specification == Program == Test」一致性。過濾假警報後輸出報告，大幅減少人工介入時間。",
+  "repo": "knowlet/skills",
+  "path": "skills/multi-model-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/knowlet/skills",
+  "dir_name": "multi-model-reviewer-knowlet-skills-2"
+}

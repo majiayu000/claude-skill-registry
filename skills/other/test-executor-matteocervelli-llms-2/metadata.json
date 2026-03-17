@@ -1,0 +1,11 @@
+{
+  "name": "test-executor",
+  "description": "Execute test suites with proper configuration, parallel execution, and detailed reporting. Use when running unit tests, integration tests, or full test suites.",
+  "repo": "matteocervelli/llms",
+  "path": ".claude/skills/test-executor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/matteocervelli/llms",
+  "dir_name": "test-executor-matteocervelli-llms-2"
+}

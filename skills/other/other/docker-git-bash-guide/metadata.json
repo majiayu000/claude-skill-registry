@@ -1,0 +1,9 @@
+{
+  "name": "docker-git-bash-guide",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/docker-master/skills/docker-git-bash-guide/SKILL.md",
+  "category": "other",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "docker-git-bash-guide",
+  "downloaded_at": "2026-02-22T05:14:35.630077Z"
+}

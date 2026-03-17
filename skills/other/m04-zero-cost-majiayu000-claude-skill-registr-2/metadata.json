@@ -1,0 +1,11 @@
+{
+  "name": "m04-zero-cost",
+  "description": "CRITICAL: Use for generics, traits, zero-cost abstraction. Triggers: E0277, E0308, E0599, generic, trait, impl, dyn, where, monomorphization, static dispatch, dynamic dispatch, impl Trait, trait bound",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/m04-zero-cost",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "m04-zero-cost-majiayu000-claude-skill-registr-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "wireframe-generator",
+  "description": "YAML定義からChakra UIベースのワイヤーフレーム画像を自動生成する",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/wireframe-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "wireframe-generator-takemo101-compose-workflow-2"
+}

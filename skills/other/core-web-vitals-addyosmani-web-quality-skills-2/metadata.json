@@ -1,0 +1,11 @@
+{
+  "name": "core-web-vitals",
+  "description": "Optimize Core Web Vitals (LCP, INP, CLS) for better page experience and search ranking. Use when asked to \"improve Core Web Vitals\", \"fix LCP\", \"reduce CLS\", \"optimize INP\", \"page experience optimizat",
+  "repo": "addyosmani/web-quality-skills",
+  "path": "skills/core-web-vitals",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/addyosmani/web-quality-skills",
+  "dir_name": "core-web-vitals-addyosmani-web-quality-skills-2"
+}

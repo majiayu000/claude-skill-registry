@@ -1,0 +1,11 @@
+{
+  "name": "torchvision",
+  "description": "Computer vision library for PyTorch featuring pretrained models, advanced image transforms (v2), and utilities for handling complex data types like bounding boxes and masks. (torchvision, transforms, ",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/torchvision",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "torchvision-cuba6112-skillfactory-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "codebase-locator",
+  "description": "Find and document file locations in the codebase. Use this when you need to locate implementation files, tests, configurations, or any code artifacts by feature or topic. Works with Grep, Glob, and LS",
+  "repo": "d-o-hub/rust-self-learning-memory",
+  "path": ".claude/skills/codebase-locator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/d-o-hub/rust-self-learning-memory",
+  "dir_name": "codebase-locator-d-o-hub-rust-self-learning-m-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "jira-pr",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/jira-pr/SKILL.md",
+  "category": "other",
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "jira-pr",
+  "downloaded_at": "2026-02-15T05:23:05.070429Z"
+}

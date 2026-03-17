@@ -1,0 +1,11 @@
+{
+  "name": "gcloud-secrets",
+  "description": "Manage Google Cloud Secret Manager for storing and fetching environment secrets. Use when working with deployment, secrets, or gcloud commands.",
+  "repo": "jonit-dev/pixelperfect",
+  "path": ".claude/skills/gcloud-secrets",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jonit-dev/pixelperfect",
+  "dir_name": "gcloud-secrets-jonit-dev-pixelperfect-2"
+}

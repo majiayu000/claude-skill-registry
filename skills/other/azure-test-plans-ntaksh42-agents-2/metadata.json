@@ -1,0 +1,11 @@
+{
+  "name": "azure-test-plans",
+  "description": "Create and manage Azure Test Plans including test cases, suites, and execution. Use when setting up test plans or managing QA processes.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/azure-test-plans",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "azure-test-plans-ntaksh42-agents-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "project-validation",
+  "description": "Validates project after initialization. Checks static files, endpoints, CSS, health.\nUse when: after rust-project-init, before TDD loop.\nTriggers: \"validate project\", \"check project\", \"verify init\".",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/project-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "project-validation-timequity-vibe-coder-2"
+}

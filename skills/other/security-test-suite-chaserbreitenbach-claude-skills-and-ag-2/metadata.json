@@ -1,0 +1,11 @@
+{
+  "name": "security-test-suite",
+  "description": "Comprehensive security testing framework aligned with OWASP Top 10 and CWE/SANS Top 25.\nPerforms static analysis (SAST), dependency auditing (SCA), secret scanning, and infrastructure\nsecurity checks.",
+  "repo": "chaserbreitenbach/claude-skills-and-agents",
+  "path": "skills/testing/security-test-suite",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chaserbreitenbach/claude-skills-and-agents",
+  "dir_name": "security-test-suite-chaserbreitenbach-claude-skills-and-ag-2"
+}

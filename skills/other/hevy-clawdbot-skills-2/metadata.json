@@ -1,0 +1,11 @@
+{
+  "name": "hevy",
+  "description": "Query workout data from Hevy including workouts, routines, exercises, and history. Use when user asks about their workouts, gym sessions, exercise progress, or fitness routines.",
+  "repo": "clawdbot/skills",
+  "path": "skills/mjrussell/hevy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "hevy-clawdbot-skills-2"
+}

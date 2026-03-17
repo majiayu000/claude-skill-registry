@@ -1,0 +1,11 @@
+{
+  "name": "repeller",
+  "description": "Invariant set repelling nearby trajectories",
+  "repo": "plurigrid/asi",
+  "path": "skills/repeller",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "repeller-plurigrid-asi-2"
+}

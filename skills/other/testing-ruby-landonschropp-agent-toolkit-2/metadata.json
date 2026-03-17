@@ -1,0 +1,11 @@
+{
+  "name": "testing-ruby",
+  "description": "Use when writing tests for Ruby code in frameworks such as RSpec or Minitest.",
+  "repo": "LandonSchropp/agent-toolkit",
+  "path": "skills/testing-ruby",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/LandonSchropp/agent-toolkit",
+  "dir_name": "testing-ruby-landonschropp-agent-toolkit-2"
+}

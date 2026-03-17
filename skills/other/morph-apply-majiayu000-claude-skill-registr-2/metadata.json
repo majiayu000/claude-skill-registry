@@ -1,0 +1,11 @@
+{
+  "name": "morph-apply",
+  "description": "Fast file editing via Morph Apply API (10,500 tokens/sec, 98% accuracy)",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/development/morph-apply",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "morph-apply-majiayu000-claude-skill-registr-2"
+}

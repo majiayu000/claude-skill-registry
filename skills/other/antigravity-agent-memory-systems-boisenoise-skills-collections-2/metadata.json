@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-agent-memory-systems",
+  "description": "Memory is the cornerstone of intelligent agents. Without it, every interaction starts from zero. This skill covers the architecture of agent memory: short-term (context window), long-term (vector stor",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-agent-memory-systems",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-agent-memory-systems-boisenoise-skills-collections-2"
+}

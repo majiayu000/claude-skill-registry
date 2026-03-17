@@ -1,0 +1,11 @@
+{
+  "name": "search-tools",
+  "description": "Search Tool Hierarchy",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/search-tools",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "search-tools-parcadei-continuous-claude-v3-2"
+}

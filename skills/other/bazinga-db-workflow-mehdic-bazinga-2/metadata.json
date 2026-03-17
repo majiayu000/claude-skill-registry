@@ -1,0 +1,11 @@
+{
+  "name": "bazinga-db-workflow",
+  "description": "Task groups and development planning. Use when managing task groups, development plans, or success criteria.",
+  "repo": "mehdic/bazinga",
+  "path": ".claude/skills/bazinga-db-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mehdic/bazinga",
+  "dir_name": "bazinga-db-workflow-mehdic-bazinga-2"
+}

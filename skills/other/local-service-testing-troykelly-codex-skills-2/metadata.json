@@ -1,0 +1,11 @@
+{
+  "name": "local-service-testing",
+  "description": "Use when code changes touch database, cache, queue, or other service-dependent components - enforces testing against real local services instead of mocks",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/local-service-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "local-service-testing-troykelly-codex-skills-2"
+}

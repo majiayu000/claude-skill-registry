@@ -1,0 +1,9 @@
+{
+  "name": "post-deploy",
+  "repo": "eleva-labs/agentic-coding-templates",
+  "path": ".claude/skills/devops/post-deploy/SKILL.md",
+  "category": "other",
+  "source": "github.com/eleva-labs/agentic-coding-templates",
+  "dir_name": "post-deploy-eleva-labs-agentic-coding-templ-4",
+  "downloaded_at": "2026-02-22T07:03:45.593403Z"
+}

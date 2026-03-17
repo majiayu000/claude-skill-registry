@@ -1,0 +1,11 @@
+{
+  "name": "wandb-plot",
+  "description": "Shared skill entrypoint for Claude Code. See the canonical skill file at:\nwandb-plot/SKILL.md\n",
+  "repo": "RubenBranco/WANDB-Plot-Skill",
+  "path": "wandb-plot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RubenBranco/WANDB-Plot-Skill",
+  "dir_name": "wandb-plot-rubenbranco-wandb-plot-skill-2"
+}

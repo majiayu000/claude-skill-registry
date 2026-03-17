@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-115-devops-docs-creator",
+  "description": "Creates runbook.md for DevOps setup. L3 Worker invoked CONDITIONALLY when hasDocker detected.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-115-devops-docs-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-115-devops-docs-creator-boisenoise-skills-collections-2"
+}

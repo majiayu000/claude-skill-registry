@@ -1,0 +1,11 @@
+{
+  "name": "geo-visualizer",
+  "description": "Create interactive maps with markers, heatmaps, routes, and choropleth layers. Use when visualizing geographic data, plotting locations, or creating map-based reports.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "geo-visualizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "geo-visualizer-dkyazzentwatwa-chatgpt-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "investigate",
+  "description": "Expert guidance for deep security investigations. Use this when the user asks to \"investigate\" a case, entity, or incident.",
+  "repo": "google/mcp-security",
+  "path": "extensions/google-secops/skills/investigate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/google/mcp-security",
+  "dir_name": "investigate-google-mcp-security-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "skill-a",
+  "description": "Skill A from skills directory",
+  "repo": "maxvaega/skillkit",
+  "path": "tests/fixtures/plugins/multi-dir-plugin/skills/skill-a",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "skill-a-maxvaega-skillkit-2"
+}

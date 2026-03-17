@@ -1,0 +1,11 @@
+{
+  "name": "dnanexus-integration",
+  "description": "DNAnexus cloud genomics platform. Build apps/applets, manage data (upload/download), dxpy Python SDK, run workflows, FASTQ/BAM/VCF, for genomics pipeline development and execution.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/lab-automation/dnanexus-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "dnanexus-integration-hxk622-tokendance-2"
+}

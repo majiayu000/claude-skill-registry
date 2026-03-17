@@ -1,0 +1,11 @@
+{
+  "name": "sdk-e2e-testing",
+  "description": "Strategy and patterns for designing and implementing End-to-End scenario tests using the Python SDK. Focuses on full-stack verification and SDK usability.",
+  "repo": "colingwuyu/optaic-trading",
+  "path": ".claude/skills/sdk-e2e-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/colingwuyu/optaic-trading",
+  "dir_name": "sdk-e2e-testing-colingwuyu-optaic-trading-2"
+}

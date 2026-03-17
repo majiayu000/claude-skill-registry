@@ -1,0 +1,11 @@
+{
+  "name": "moai-core-env-security",
+  "description": "Environment variable security, secrets management, and secure credential handling for MoAI-ADK projects",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-core-env-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-core-env-security-jg-chalk-io-nora-livekit-2"
+}

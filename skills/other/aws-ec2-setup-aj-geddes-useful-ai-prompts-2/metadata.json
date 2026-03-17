@@ -1,0 +1,11 @@
+{
+  "name": "aws-ec2-setup",
+  "description": "Launch and configure EC2 instances with security groups, IAM roles, key pairs, AMIs, and auto-scaling. Use for virtual servers and managed infrastructure.",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/aws-ec2-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "dir_name": "aws-ec2-setup-aj-geddes-useful-ai-prompts-2"
+}

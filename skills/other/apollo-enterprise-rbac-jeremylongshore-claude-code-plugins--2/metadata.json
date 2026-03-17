@@ -1,0 +1,11 @@
+{
+  "name": "apollo-enterprise-rbac",
+  "description": "Enterprise role-based access control for Apollo.io.\nUse when implementing team permissions, restricting data access,\nor setting up enterprise security controls.\nTrigger with phrases like \"apollo rbac\"",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/apollo-pack/skills/apollo-enterprise-rbac",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "apollo-enterprise-rbac-jeremylongshore-claude-code-plugins--2"
+}

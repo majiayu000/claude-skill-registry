@@ -1,0 +1,11 @@
+{
+  "name": "plan-app",
+  "description": "MANDATORY INVOCATION: This skill MUST be invoked for building workshop apps. Guides the full flow from idea to deployed app: interview, screen flows, decomposition into sub-agents, parallel build, and",
+  "repo": "teren-papercutlabs/pcl-workshop-setup",
+  "path": ".claude/skills/plan-app",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/teren-papercutlabs/pcl-workshop-setup",
+  "dir_name": "plan-app-teren-papercutlabs-pcl-workshop-setup-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "doc-generator",
+  "description": "\nTriggers: documentation, generate docs, write docs, technical writing\nGenerate or remediate documentation with human-quality writing and style adherence.\n\nTriggers: generate documentation, write read",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/scribe/skills/doc-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "doc-generator-athola-claude-night-market-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "signal-messaging",
+  "description": "Send and receive Signal messages via MCP. Use this skill when you need to interact with Signal messenger - sending messages, reading conversations, or automating Signal-based workflows.",
+  "repo": "plurigrid/asi",
+  "path": "skills/signal-messaging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "signal-messaging-plurigrid-asi-2"
+}

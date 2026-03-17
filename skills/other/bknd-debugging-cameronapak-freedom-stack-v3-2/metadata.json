@@ -1,0 +1,11 @@
+{
+  "name": "bknd-debugging",
+  "description": "Use when troubleshooting Bknd issues, debugging errors, fixing common problems, or diagnosing why something isn't working. Covers CLI debug commands, error codes, logging, common issues and solutions.",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-debugging-cameronapak-freedom-stack-v3-2"
+}

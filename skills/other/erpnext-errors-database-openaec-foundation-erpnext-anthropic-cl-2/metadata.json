@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-errors-database",
+  "description": "Error handling patterns for ERPNext/Frappe database operations. Use when handling DoesNotExistError, DuplicateEntryError, transaction failures, and query errors. Covers retry patterns and data integri",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/errors/erpnext-errors-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-errors-database-openaec-foundation-erpnext-anthropic-cl-2"
+}

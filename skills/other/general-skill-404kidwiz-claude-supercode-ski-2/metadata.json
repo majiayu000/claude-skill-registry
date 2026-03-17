@@ -1,0 +1,11 @@
+{
+  "name": "general-skill",
+  "description": "General-purpose agent for researching complex questions and executing multi-step tasks. Versatile problem-solver that combines research capabilities, analytical thinking, and systematic task execution",
+  "repo": "404kidwiz/claude-supercode-skills",
+  "path": "general-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/404kidwiz/claude-supercode-skills",
+  "dir_name": "general-skill-404kidwiz-claude-supercode-ski-2"
+}

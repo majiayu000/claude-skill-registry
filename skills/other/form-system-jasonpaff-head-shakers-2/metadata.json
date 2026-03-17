@@ -1,0 +1,11 @@
+{
+  "name": "form-system",
+  "description": "Enforces project form system conventions when creating or modifying forms using the custom TanStack Form integration. This skill covers useAppForm hook usage, field components, focus management, valid",
+  "repo": "JasonPaff/head-shakers",
+  "path": ".claude/skills/form-system",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JasonPaff/head-shakers",
+  "dir_name": "form-system-jasonpaff-head-shakers-2"
+}

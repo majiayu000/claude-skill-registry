@@ -1,0 +1,11 @@
+{
+  "name": "vercel-api",
+  "description": "Patterns for programmatic deployment via Vercel API. Use this skill when implementing deployment workflows, managing projects, configuring environment variables, or setting up domains.",
+  "repo": "ADLenehan/battery",
+  "path": ".claude/skills/vercel-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ADLenehan/battery",
+  "dir_name": "vercel-api-adlenehan-battery-2"
+}

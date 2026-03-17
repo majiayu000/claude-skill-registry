@@ -1,0 +1,11 @@
+{
+  "name": "weekly-newsletter",
+  "description": "Obsidian vault에서 이번 주(토~금) 작성/수정된 글들을 모아 뉴스레터 생성.\n서브 에이전트 기반 병렬 처리로 메인 컨텍스트 절약.\n기술적, 리더십적으로 외부에 공유할 만한 내용을 선별하여 정리.\n\"뉴스레터 만들어줘\", \"이번 주 글 정리해줘\", \"weekly digest\" 등의 요청 시 자동 적용.",
+  "repo": "msbaek/dotfiles",
+  "path": ".claude/skills/weekly-newsletter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/msbaek/dotfiles",
+  "dir_name": "weekly-newsletter-msbaek-dotfiles-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "metric-calculator",
+  "description": "Metric Calculator - Auto-activating skill for Data Analytics.\nTriggers on: metric calculator, metric calculator\nPart of the Data Analytics skill category.\n",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "planned-skills/generated/12-data-analytics/metric-calculator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "metric-calculator-jeremylongshore-claude-code-plugins--2"
+}

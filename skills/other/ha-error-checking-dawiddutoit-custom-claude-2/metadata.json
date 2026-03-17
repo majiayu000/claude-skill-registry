@@ -1,0 +1,11 @@
+{
+  "name": "ha-error-checking",
+  "description": "Debug and validate Home Assistant dashboards, configurations, and entity usage via WebSocket API. Use when troubleshooting dashboard errors, validating entity IDs, checking HACS card installations, or",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/ha-error-checking",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "ha-error-checking-dawiddutoit-custom-claude-2"
+}

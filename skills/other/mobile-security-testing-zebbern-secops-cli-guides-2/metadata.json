@@ -1,0 +1,11 @@
+{
+  "name": "mobile-security-testing",
+  "description": "This skill should be used when the user asks to \"perform mobile application penetration testing\", \"test Android app security\", \"bypass SSL pinning\", \"analyze APK files\", \"reverse engineer mobile apps\"",
+  "repo": "zebbern/SecOps-CLI-Guides",
+  "path": "skills/mobile-security-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zebbern/SecOps-CLI-Guides",
+  "dir_name": "mobile-security-testing-zebbern-secops-cli-guides-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "active-learning-system",
+  "description": "Эксперт active learning. Используй для ML с участием человека, uncertainty sampling, annotation workflows и labeling optimization.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/active-learning-system",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "active-learning-system-dengineproblem-agents-monorepo-2"
+}

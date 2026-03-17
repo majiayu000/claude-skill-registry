@@ -1,0 +1,11 @@
+{
+  "name": "app-comprehensive-test-generator",
+  "description": "Generate exhaustive user-flow and edge-case test scenarios from an app's codebase, produce scenario .md files, execute tests using connected or newly created MCPs, and produce an app.qa.report.md summ",
+  "repo": "stravinest/house-hold-account",
+  "path": ".claude/skills/app-comprehensive-test-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/stravinest/house-hold-account",
+  "dir_name": "app-comprehensive-test-generator-stravinest-house-hold-account-2"
+}

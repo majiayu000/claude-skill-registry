@@ -1,0 +1,11 @@
+{
+  "name": "start",
+  "description": "Lean session start. Asks focus area first, then loads only relevant context. Use when \"start\" is said at session beginning.",
+  "repo": "joshuacook/motoko",
+  "path": ".claude/skills/start",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joshuacook/motoko",
+  "dir_name": "start-joshuacook-motoko-2"
+}

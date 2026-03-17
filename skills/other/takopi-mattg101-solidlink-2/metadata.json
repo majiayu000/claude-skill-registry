@@ -1,0 +1,11 @@
+{
+  "name": "takopi",
+  "description": "Use when working through Takopi (Telegram bridge) to route Codex tasks by project, branch worktree, or topic; covers directives like /project, @branch, engine prefixes, ctx footer behavior, and /new r",
+  "repo": "mattg101/SolidLink",
+  "path": "docs/dev/.agent/skills/takopi",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattg101/SolidLink",
+  "dir_name": "takopi-mattg101-solidlink-2"
+}

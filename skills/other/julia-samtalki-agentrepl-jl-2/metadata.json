@@ -1,0 +1,11 @@
+{
+  "name": "julia",
+  "description": "This skill should be used when the user asks to \"run Julia code\", \"evaluate Julia\", \"use Julia\", mentions \"persistent Julia session\", \"TTFX\", or wants to work with Julia for data analysis, scientific ",
+  "repo": "samtalki/AgentREPL.jl",
+  "path": "claude-plugin/skills/julia",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/samtalki/AgentREPL.jl",
+  "dir_name": "julia-samtalki-agentrepl-jl-2"
+}

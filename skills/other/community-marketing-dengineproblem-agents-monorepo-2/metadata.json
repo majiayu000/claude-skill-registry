@@ -1,0 +1,11 @@
+{
+  "name": "community-marketing",
+  "description": "Эксперт по community-маркетингу. Используй для построения сообществ, engagement стратегий, community-led growth и модерации.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/community-marketing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "community-marketing-dengineproblem-agents-monorepo-2"
+}

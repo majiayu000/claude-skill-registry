@@ -1,0 +1,11 @@
+{
+  "name": "birkhoff-average",
+  "description": "Time average of observable along trajectory",
+  "repo": "plurigrid/asi",
+  "path": "skills/birkhoff-average",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "birkhoff-average-plurigrid-asi-2"
+}

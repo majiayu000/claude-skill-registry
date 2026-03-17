@@ -1,0 +1,11 @@
+{
+  "name": "istio-expert",
+  "description": "Expert-level Istio service mesh management, traffic control, security, and observability for Kubernetes",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/devops/istio-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "istio-expert-personamanagmentlaye-pcl-2"
+}

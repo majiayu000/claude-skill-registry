@@ -1,0 +1,11 @@
+{
+  "name": "code-migration",
+  "description": "Code migration involves moving codebases between versions, frameworks, or technologies while maintaining stability. This skill covers version upgrade strategies, framework migrations, deprecation hand",
+  "repo": "cosmix/loom",
+  "path": "skills/code-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "code-migration-cosmix-loom-2"
+}

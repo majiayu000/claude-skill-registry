@@ -1,0 +1,11 @@
+{
+  "name": "usability-testing",
+  "description": "Design and plan usability tests - task creation, think-aloud protocols, moderator scripts, metrics definition, and analysis frameworks.",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/ux-research/usability-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "usability-testing-prorise-cool-claude-code-multi-ag-2"
+}

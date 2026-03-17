@@ -1,0 +1,11 @@
+{
+  "name": "bknd-env-config",
+  "description": "Use when configuring environment variables for Bknd projects. Covers .env files, secrets management, env injection in config, platform-specific variables, and production security.",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-env-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-env-config-cameronapak-freedom-stack-v3-2"
+}

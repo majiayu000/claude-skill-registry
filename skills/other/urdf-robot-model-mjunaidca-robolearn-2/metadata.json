@@ -1,0 +1,11 @@
+{
+  "name": "urdf-robot-model",
+  "description": "Create robot models using URDF with proper links, joints, visual geometry, collision shapes, and physical properties",
+  "repo": "mjunaidca/robolearn",
+  "path": ".claude/skills/urdf-robot-model",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mjunaidca/robolearn",
+  "dir_name": "urdf-robot-model-mjunaidca-robolearn-2"
+}

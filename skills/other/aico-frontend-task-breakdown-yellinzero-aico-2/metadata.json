@@ -1,0 +1,11 @@
+{
+  "name": "aico-frontend-task-breakdown",
+  "description": "Break down PM story into independent frontend task files following UI DEVELOPMENT order: Setup → Static UI → Dynamic Logic → Interactions → Testing.\n\nUNIQUE VALUE: Creates independent task files (stor",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-frontend-task-breakdown",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-frontend-task-breakdown-yellinzero-aico-2"
+}

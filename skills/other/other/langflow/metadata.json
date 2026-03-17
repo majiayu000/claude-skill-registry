@@ -1,0 +1,9 @@
+{
+  "name": "langflow",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/ai-workflow/langflow/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "langflow",
+  "downloaded_at": "2026-02-15T07:06:58.270436Z"
+}

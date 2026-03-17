@@ -1,0 +1,11 @@
+{
+  "name": "implementing-hit-testing",
+  "description": "Enables mouse event reception for WPF FrameworkElement using DrawingContext by drawing transparent backgrounds. Use when custom-drawn elements don't receive mouse events.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/implementing-hit-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "implementing-hit-testing-christian289-dotnet-with-claudeco-2"
+}

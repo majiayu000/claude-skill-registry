@@ -1,0 +1,11 @@
+{
+  "name": "unity-scene-optimizer",
+  "description": "Analyzes scenes for performance bottlenecks (draw calls, batching, textures, GameObjects). Use when optimizing scenes or investigating performance issues.",
+  "repo": "zsutxz/ClaudeLearning",
+  "path": ".claude/skills/unity-scene-optimizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zsutxz/ClaudeLearning",
+  "dir_name": "unity-scene-optimizer-zsutxz-claudelearning-2"
+}

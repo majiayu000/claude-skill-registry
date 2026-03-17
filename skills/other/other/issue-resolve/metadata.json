@@ -1,0 +1,9 @@
+{
+  "name": "issue-resolve",
+  "repo": "catlog22/Claude-Code-Workflow",
+  "path": ".claude/skills/issue-resolve/SKILL.md",
+  "category": "other",
+  "source": "github.com/catlog22/Claude-Code-Workflow",
+  "dir_name": "issue-resolve",
+  "downloaded_at": "2026-02-15T06:41:48.374271Z"
+}

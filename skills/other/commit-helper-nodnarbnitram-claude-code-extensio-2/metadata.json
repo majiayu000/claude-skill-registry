@@ -1,0 +1,11 @@
+{
+  "name": "commit-helper",
+  "description": "Generate clear, conventional commit messages from git diffs. Use when writing commit messages, reviewing staged changes, or preparing commits.",
+  "repo": "nodnarbnitram/claude-code-extensions",
+  "path": ".claude/skills/commit-helper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nodnarbnitram/claude-code-extensions",
+  "dir_name": "commit-helper-nodnarbnitram-claude-code-extensio-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ln-402-task-reviewer",
+  "description": "MANDATORY after every task execution. Reviews a single task in To Review and decides Done vs To Rework with immediate fixes or clear rework notes.",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-402-task-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-402-task-reviewer-levnikolaevich-claude-code-skills-2"
+}

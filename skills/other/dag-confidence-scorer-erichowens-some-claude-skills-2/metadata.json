@@ -1,0 +1,11 @@
+{
+  "name": "dag-confidence-scorer",
+  "description": "Assigns confidence scores to agent outputs based on multiple factors including source quality, consistency, and reasoning depth. Produces calibrated confidence estimates. Activate on 'confidence score",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-confidence-scorer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-confidence-scorer-erichowens-some-claude-skills-2"
+}

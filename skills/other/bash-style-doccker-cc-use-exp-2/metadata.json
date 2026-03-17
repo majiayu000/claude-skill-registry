@@ -1,0 +1,11 @@
+{
+  "name": "bash-style",
+  "description": "当用户操作 .sh、Dockerfile、Makefile、.yml、.yaml 文件，或在 Markdown 中编写 bash 代码块时触发。提供 Bash 编写规范。",
+  "repo": "doccker/cc-use-exp",
+  "path": ".claude/skills/bash-style",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doccker/cc-use-exp",
+  "dir_name": "bash-style-doccker-cc-use-exp-2"
+}

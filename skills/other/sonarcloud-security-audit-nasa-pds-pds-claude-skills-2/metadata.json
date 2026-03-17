@@ -1,0 +1,11 @@
+{
+  "name": "sonarcloud-security-audit",
+  "description": "Audit SonarCloud security issues (vulnerabilities and hotspots) for NASA PDS repositories and export to CSV for triage. Use when the user requests SonarCloud security scans, vulnerability reports, or ",
+  "repo": "NASA-PDS/pds-claude-skills",
+  "path": "sonarcloud-security-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NASA-PDS/pds-claude-skills",
+  "dir_name": "sonarcloud-security-audit-nasa-pds-pds-claude-skills-2"
+}

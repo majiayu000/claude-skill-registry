@@ -1,0 +1,11 @@
+{
+  "name": "using-technical-writer",
+  "description": "Router for documentation tasks - routes to ADRs, APIs, runbooks, security docs, or governance docs",
+  "repo": "tachyon-beep/skillpacks",
+  "path": "plugins/muna-technical-writer/skills/using-technical-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tachyon-beep/skillpacks",
+  "dir_name": "using-technical-writer-tachyon-beep-skillpacks-2"
+}

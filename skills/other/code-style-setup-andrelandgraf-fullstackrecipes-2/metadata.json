@@ -1,0 +1,11 @@
+{
+  "name": "code-style-setup",
+  "description": "Configure Prettier for code formatting and TypeScript for typechecking. Includes VSCode settings and EditorConfig for consistent code style. Skips ESLint/Biome to avoid config complexity.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/code-style-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "code-style-setup-andrelandgraf-fullstackrecipes-2"
+}

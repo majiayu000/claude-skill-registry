@@ -1,0 +1,11 @@
+{
+  "name": "webnovel-plan",
+  "description": "Plans detailed volume outlines with chapter-by-chapter breakdown, cool-point distribution, and Strand Weave pacing. Activates when user requests outline planning or /webnovel-plan.",
+  "repo": "lingfengQAQ/webnovel-writer",
+  "path": ".claude/skills/webnovel-plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lingfengQAQ/webnovel-writer",
+  "dir_name": "webnovel-plan-lingfengqaq-webnovel-writer-2"
+}

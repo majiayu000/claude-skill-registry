@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-build",
+  "description": "Build Agentuity application for deployment",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-build",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-build-agentuity-sdk-explorer-2"
+}

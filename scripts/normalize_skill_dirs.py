@@ -27,19 +27,10 @@ from utils import (
     short_hash,
     normalize_repo,
     build_legal_metadata,
+    load_metadata,
 )
 
 OFFICIAL_REPOS = {"anthropics/skills", "anthropics/claude-code"}
-
-
-def load_metadata(skill_dir: Path) -> dict:
-    meta_path = skill_dir / "metadata.json"
-    if not meta_path.exists():
-        return {}
-    try:
-        return json.loads(meta_path.read_text(encoding="utf-8"))
-    except Exception:
-        return {}
 
 
 def derive_base_name(dir_name: str, meta: dict) -> str:

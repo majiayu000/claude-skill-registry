@@ -1,0 +1,11 @@
+{
+  "name": "inclusion-audit",
+  "description": "Comprehensive inclusion analysis of code, examining language, internationalization, assumptions, and who might be excluded. Thorough review for releases or major features.",
+  "repo": "hereinthehive/gotrino-inclusion",
+  "path": "skills/inclusion-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hereinthehive/gotrino-inclusion",
+  "dir_name": "inclusion-audit-hereinthehive-gotrino-inclusion-2"
+}

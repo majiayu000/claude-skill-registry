@@ -1,0 +1,11 @@
+{
+  "name": "paw-review-correlation",
+  "description": "Synthesizes findings across multiple PRs to identify cross-repository dependencies, interface mismatches, and coordination gaps.",
+  "repo": "lossyrob/phased-agent-workflow",
+  "path": "skills/paw-review-correlation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lossyrob/phased-agent-workflow",
+  "dir_name": "paw-review-correlation-lossyrob-phased-agent-workflo-2"
+}

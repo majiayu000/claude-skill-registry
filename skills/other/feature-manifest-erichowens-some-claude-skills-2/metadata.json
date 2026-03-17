@@ -1,0 +1,11 @@
+{
+  "name": "feature-manifest",
+  "description": "Manage feature manifests for code traceability. Use when creating new features, updating existing features, checking feature health, or exploring the feature-to-code relationship. Activates for manife",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/feature-manifest",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "feature-manifest-erichowens-some-claude-skills-2"
+}

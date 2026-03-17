@@ -1,0 +1,11 @@
+{
+  "name": "content-calendar-planner",
+  "description": "Creates strategic content schedules with themes, dates, and publishing cadence. Use when the user asks about content calendars, publishing schedules, content planning, editorial calendars, or content ",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/content-calendar-planner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "content-calendar-planner-wesleysmits-agent-skills-2"
+}

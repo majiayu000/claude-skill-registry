@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-git-unlink",
+  "description": "Unlink a project from its GitHub repository. Requires authentication",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-git-unlink",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-git-unlink-agentuity-sdk-explorer-2"
+}

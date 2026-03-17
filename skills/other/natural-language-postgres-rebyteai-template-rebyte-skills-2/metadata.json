@@ -1,0 +1,11 @@
+{
+  "name": "natural-language-postgres",
+  "description": "Chat app that lets you ask questions in plain English and query your PostgreSQL database.",
+  "repo": "rebyteai-template/rebyte-skills",
+  "path": "natural-language-postgres-presentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rebyteai-template/rebyte-skills",
+  "dir_name": "natural-language-postgres-rebyteai-template-rebyte-skills-2"
+}

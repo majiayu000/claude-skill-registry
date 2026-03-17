@@ -1,0 +1,11 @@
+{
+  "name": "always-init",
+  "description": "Universal task initializer that automatically loads PAI context for all user requests. Ensures complete context availability (contacts, preferences, protocols) before responding to any task. (project,",
+  "repo": "danielmiessler/PAIPlugin",
+  "path": "skills/always-init",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/danielmiessler/PAIPlugin",
+  "dir_name": "always-init-danielmiessler-paiplugin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "book-market-research",
+  "description": "Assess commercial viability of book concepts for Amazon KDP self-publishing. Use when the user has a Book Concept Document and wants to understand market demand, competition, pricing, and positioning ",
+  "repo": "robertguss/claude-code-toolkit",
+  "path": "skills/non-fiction-book-factory/book-market-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertguss/claude-code-toolkit",
+  "dir_name": "book-market-research-robertguss-claude-code-toolkit-2"
+}

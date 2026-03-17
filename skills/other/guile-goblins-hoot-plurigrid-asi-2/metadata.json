@@ -1,0 +1,11 @@
+{
+  "name": "guile-goblins-hoot",
+  "description": "Spritely Goblins distributed actor system with Hoot WebAssembly compiler. Secure capability-based programming in Guile Scheme.",
+  "repo": "plurigrid/asi",
+  "path": "skills/guile-goblins-hoot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "guile-goblins-hoot-plurigrid-asi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "change-impact-map",
+  "description": "A practical framework to map change dependencies and blast radius, including who/what is affected, what to test, rollout/rollback strategies, and stakeholder ownership",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "66-repo-navigation-knowledge-map/change-impact-map",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "change-impact-map-amnadtaowsoam-cerebratechai-claude-2"
+}

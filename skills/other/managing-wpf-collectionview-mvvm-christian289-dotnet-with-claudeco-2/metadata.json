@@ -1,0 +1,11 @@
+{
+  "name": "managing-wpf-collectionview-mvvm",
+  "description": "Encapsulates CollectionView in Service Layer to maintain MVVM principles in WPF. Use when implementing filtering, sorting, or grouping while keeping ViewModels free of WPF dependencies.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/managing-wpf-collectionview-mvvm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "managing-wpf-collectionview-mvvm-christian289-dotnet-with-claudeco-2"
+}

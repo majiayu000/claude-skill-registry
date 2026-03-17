@@ -1,0 +1,11 @@
+{
+  "name": "kirby-ide-support",
+  "description": "Improves IDE autocomplete and static analysis in Kirby projects with PHPDoc hints and Kirby IDE helper generation. Use when types are missing or IDE support is degraded.",
+  "repo": "bnomei/kirby-mcp",
+  "path": "skills/kirby-ide-support",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bnomei/kirby-mcp",
+  "dir_name": "kirby-ide-support-bnomei-kirby-mcp-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "bug-fix",
+  "description": "結構化的 Bug 修復流程，包含根因分析和回歸測試。",
+  "repo": "u9401066/rootcause-mcp",
+  "path": ".claude/skills/bug-fix",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/u9401066/rootcause-mcp",
+  "dir_name": "bug-fix-u9401066-rootcause-mcp-2"
+}

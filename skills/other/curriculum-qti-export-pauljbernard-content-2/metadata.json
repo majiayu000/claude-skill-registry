@@ -1,0 +1,11 @@
+{
+  "name": "curriculum.qti-export",
+  "description": "Exports assessments to QTI (Question and Test Interoperability) format for LMS compatibility.",
+  "repo": "pauljbernard/content",
+  "path": ".claude/skills/curriculum.qti-export",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pauljbernard/content",
+  "dir_name": "curriculum-qti-export-pauljbernard-content-2"
+}

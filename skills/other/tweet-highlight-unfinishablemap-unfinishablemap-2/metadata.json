@@ -1,0 +1,11 @@
+{
+  "name": "tweet-highlight",
+  "description": "Tweet the most recent untweeted highlight. Scheduled for 7am UTC daily.",
+  "repo": "unfinishablemap/unfinishablemap",
+  "path": ".claude/skills/tweet-highlight",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/unfinishablemap/unfinishablemap",
+  "dir_name": "tweet-highlight-unfinishablemap-unfinishablemap-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "integration-development",
+  "description": "Guide for creating new OAuth-based integrations in the Orient codebase. Use when adding external service integrations (APIs like Linear, GitHub, Slack, Notion, etc.), implementing OAuth flows, or crea",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/integration-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "integration-development-orient-bot-orient-2"
+}

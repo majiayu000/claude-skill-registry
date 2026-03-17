@@ -1,0 +1,11 @@
+{
+  "name": "payload-v3-endpoints",
+  "description": "Provides correct Payload CMS v3 endpoint patterns and logger API usage. Use when writing or fixing REST API endpoints, custom handlers, or when encountering TypeScript errors with req.data, req.cookie",
+  "repo": "aniketpanjwani/payload-plugin-email-newsletter",
+  "path": ".claude/skills/payload-v3-endpoints",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aniketpanjwani/payload-plugin-email-newsletter",
+  "dir_name": "payload-v3-endpoints-aniketpanjwani-payload-plugin-email-2"
+}

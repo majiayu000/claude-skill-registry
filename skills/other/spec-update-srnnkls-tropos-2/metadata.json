@@ -1,0 +1,11 @@
+{
+  "name": "spec-update",
+  "description": "Update spec documents by analyzing git history to sync task status with reality.",
+  "repo": "srnnkls/tropos",
+  "path": "skills/spec-update",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/srnnkls/tropos",
+  "dir_name": "spec-update-srnnkls-tropos-2"
+}

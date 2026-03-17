@@ -1,0 +1,11 @@
+{
+  "name": "review-prompt",
+  "description": "Review and analyze LLM prompts using the 10-Layer Architecture. Provides detailed assessment without modifying files.",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/prompt-engineering/skills/review-prompt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "review-prompt-doodledood-claude-code-plugins-2"
+}

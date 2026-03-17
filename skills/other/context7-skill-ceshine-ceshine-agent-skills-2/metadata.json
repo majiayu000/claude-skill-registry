@@ -1,0 +1,11 @@
+{
+  "name": "context7-skill",
+  "description": "Access up-to-date, version-specific documentation and code examples from Context7. Use this skill to verify library and framework details.",
+  "repo": "ceshine/ceshine-agent-skills",
+  "path": "context7-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ceshine/ceshine-agent-skills",
+  "dir_name": "context7-skill-ceshine-ceshine-agent-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sanctum",
+  "description": "Complete Sanctum SDK for liquid staking, LST swaps, and Infinity pool operations on Solana. Use when working with LSTs (mSOL, jitoSOL, bSOL, INF), staking SOL, swapping between liquid staking tokens, ",
+  "repo": "sendaifun/skills",
+  "path": "skills/sanctum",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "sanctum-sendaifun-skills-2"
+}

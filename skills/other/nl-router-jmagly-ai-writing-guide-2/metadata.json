@@ -1,0 +1,11 @@
+{
+  "name": "nl-router",
+  "description": "Route natural language requests to appropriate skills and workflows. Use when relevant to the task.",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "plugins/utils/skills/nl-router",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jmagly/ai-writing-guide",
+  "dir_name": "nl-router-jmagly-ai-writing-guide-2"
+}

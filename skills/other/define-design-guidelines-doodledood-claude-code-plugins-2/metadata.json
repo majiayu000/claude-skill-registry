@@ -1,0 +1,11 @@
+{
+  "name": "define-design-guidelines",
+  "description": "Create a DESIGN_GUIDELINES.md that defines how to design UI/UX for your customer. Requires CUSTOMER.md to exist first. Covers aesthetic direction, design tokens, typography, color, motion, components,",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/solo-dev/skills/define-design-guidelines",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "define-design-guidelines-doodledood-claude-code-plugins-2"
+}

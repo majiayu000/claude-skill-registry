@@ -1,0 +1,11 @@
+{
+  "name": "plan-then-execute",
+  "description": "Frozen plans with human approval gates.",
+  "repo": "SimHacker/moollm",
+  "path": "skills/plan-then-execute",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "plan-then-execute-simhacker-moollm-2"
+}

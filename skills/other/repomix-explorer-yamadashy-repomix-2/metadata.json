@@ -1,0 +1,11 @@
+{
+  "name": "repomix-explorer",
+  "description": "Use this skill when the user wants to analyze or explore a codebase (remote repository or local repository) using Repomix. Triggers on: 'analyze this repo', 'explore codebase', 'what's the structure',",
+  "repo": "yamadashy/repomix",
+  "path": ".claude/skills/repomix-explorer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yamadashy/repomix",
+  "dir_name": "repomix-explorer-yamadashy-repomix-2"
+}

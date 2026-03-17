@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-dns-operations",
+  "description": "Performs low-level Cloudflare DNS operations including adding, updating, deleting DNS\nrecords, managing zone settings, and dynamic DNS updates via Cloudflare API. Use when\nneed manual DNS record manag",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/cloudflare-dns-operations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "cloudflare-dns-operations-dawiddutoit-custom-claude-2"
+}

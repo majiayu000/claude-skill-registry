@@ -1,0 +1,11 @@
+{
+  "name": "dagster-skill",
+  "description": "ALWAYS USE when working with Dagster assets, resources, IO managers, schedules, sensors, or dbt integration.\nCRITICAL for: @asset decorators, @dbt_assets, DbtCliResource, ConfigurableResource, IO mana",
+  "repo": "Obsidian-Owl/floe",
+  "path": ".claude/skills/dagster-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Obsidian-Owl/floe",
+  "dir_name": "dagster-skill-obsidian-owl-floe-2"
+}

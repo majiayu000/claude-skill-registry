@@ -1,0 +1,11 @@
+{
+  "name": "searching-issues",
+  "description": "Search GitHub Issues and PRs with 30+ qualifiers including labels, dates, users, state, milestones, and content. Use when searching for issues by keywords, metadata, or complex filters.",
+  "repo": "terrylica/claude-code-skills-github-issues",
+  "path": "skills/github-issues/searching-issues",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terrylica/claude-code-skills-github-issues",
+  "dir_name": "searching-issues-terrylica-claude-code-skills-g-2"
+}

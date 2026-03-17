@@ -1,0 +1,11 @@
+{
+  "name": "project-plugin",
+  "description": "Guide for creating native plugins in app_plugin with platform-specific implementations (project)",
+  "repo": "gsmlg-app/flutter-app-template",
+  "path": ".claude/skills/project-plugin",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gsmlg-app/flutter-app-template",
+  "dir_name": "project-plugin-gsmlg-app-flutter-app-template-2"
+}

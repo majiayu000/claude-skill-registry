@@ -1,0 +1,11 @@
+{
+  "name": "prd-writer",
+  "description": "Full 5-stage PRD framework for complex features. Use for deep PRD work via /spec --deep full-prd. For quick feature specs, use /spec --feature instead.",
+  "repo": "breethomas/pm-thought-partner",
+  "path": "skills/prd-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/breethomas/pm-thought-partner",
+  "dir_name": "prd-writer-breethomas-pm-thought-partner-2"
+}

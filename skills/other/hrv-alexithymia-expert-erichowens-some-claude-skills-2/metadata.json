@@ -1,0 +1,11 @@
+{
+  "name": "hrv-alexithymia-expert",
+  "description": "Heart rate variability biometrics and emotional awareness training. Expert in HRV analysis, interoception training, biofeedback, and emotional intelligence. Activate on 'HRV', 'heart rate variability'",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/hrv-alexithymia-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "hrv-alexithymia-expert-erichowens-some-claude-skills-2"
+}

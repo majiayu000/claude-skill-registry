@@ -1,0 +1,11 @@
+{
+  "name": "github-workflows",
+  "description": "Initialize or update GitHub Actions workflows for Go projects with comprehensive CI/CD pipelines including linting, testing, coverage, snapshot builds, and releases",
+  "repo": "sgaunet/claude-plugins",
+  "path": "plugins/go-specialist/skills/github-workflows",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sgaunet/claude-plugins",
+  "dir_name": "github-workflows-sgaunet-claude-plugins-2"
+}

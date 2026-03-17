@@ -1,0 +1,11 @@
+{
+  "name": "config-env-conventions",
+  "description": "มาตรฐานการจัดการ configuration และ environment variables ทุก service: naming, validation, defaults, และ secret handling ที่ทำให้ deploy ข้าม environments ได้อย่างมั่นใจ",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "64-meta-standards/config-env-conventions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "config-env-conventions-amnadtaowsoam-cerebratechai-claude-2"
+}

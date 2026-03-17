@@ -1,0 +1,11 @@
+{
+  "name": "data-pipeline-monitoring",
+  "description": "Monitor and troubleshoot dual-pipeline data collection systems on GCP. This skill should be used when checking pipeline health, viewing logs, diagnosing failures, or monitoring long-running operations",
+  "repo": "terrylica/gapless-network-data",
+  "path": ".claude/skills/data-pipeline-monitoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terrylica/gapless-network-data",
+  "dir_name": "data-pipeline-monitoring-terrylica-gapless-network-data-2"
+}

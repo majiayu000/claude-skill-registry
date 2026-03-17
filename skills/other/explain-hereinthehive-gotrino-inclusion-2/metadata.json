@@ -1,0 +1,11 @@
+{
+  "name": "explain",
+  "description": "Document the reasoning behind implementation decisions as markdown files. Creates decision records that future developers can reference.",
+  "repo": "hereinthehive/gotrino-inclusion",
+  "path": "skills/explain",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hereinthehive/gotrino-inclusion",
+  "dir_name": "explain-hereinthehive-gotrino-inclusion-2"
+}

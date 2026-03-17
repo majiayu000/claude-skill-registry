@@ -1,0 +1,9 @@
+{
+  "name": "commit-push-pr-flow",
+  "repo": "HikaruEgashira/agent-skills",
+  "path": "wf/skills/commit-push-pr-flow/SKILL.md",
+  "category": "other",
+  "source": "github.com/HikaruEgashira/agent-skills",
+  "dir_name": "commit-push-pr-flow",
+  "downloaded_at": "2026-02-22T05:09:12.641332Z"
+}

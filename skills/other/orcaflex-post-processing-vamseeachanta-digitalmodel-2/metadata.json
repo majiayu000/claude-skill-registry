@@ -1,0 +1,11 @@
+{
+  "name": "orcaflex-post-processing",
+  "description": "Post-process OrcaFlex simulation results using OPP (OrcaFlex Post-Process). Use for extracting summary statistics, linked statistics, range graphs, time series, histograms, and generating interactive ",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcaflex-post-processing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcaflex-post-processing-vamseeachanta-digitalmodel-2"
+}

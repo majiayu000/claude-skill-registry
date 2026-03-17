@@ -1,0 +1,11 @@
+{
+  "name": "resistor",
+  "description": "Use when working with resistor components - adding resistor patterns, parsing resistor MPNs, extracting resistance values, tolerance, or package codes from resistor part numbers.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/similarity-resistor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "resistor-cantara-lib-electronic-compo-2"
+}

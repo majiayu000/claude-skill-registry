@@ -1,0 +1,11 @@
+{
+  "name": "eval-gap-finder",
+  "description": "Find AILANG vs Python eval gaps and improve prompts/language. Use when user says 'find eval gaps', 'analyze benchmark failures', 'close Python-AILANG gap', or after running evals.",
+  "repo": "sunholo-data/ailang",
+  "path": ".claude/skills/eval-gap-finder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunholo-data/ailang",
+  "dir_name": "eval-gap-finder-sunholo-data-ailang-2"
+}

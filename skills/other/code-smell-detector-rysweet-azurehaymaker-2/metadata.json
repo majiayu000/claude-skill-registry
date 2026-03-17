@@ -1,0 +1,11 @@
+{
+  "name": "code-smell-detector",
+  "description": "Identifies anti-patterns specific to amplihack philosophy.\nUse when reviewing code for quality issues or refactoring.\nDetects: over-abstraction, complex inheritance, large functions (>50 lines), tight",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/code-smell-detector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "code-smell-detector-rysweet-azurehaymaker-2"
+}

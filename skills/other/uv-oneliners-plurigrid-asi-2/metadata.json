@@ -1,0 +1,11 @@
+{
+  "name": "uv-oneliners",
+  "description": "UV/UVX awesome one-liners for ephemeral Python environments with multi-package",
+  "repo": "plurigrid/asi",
+  "path": "skills/uv-oneliners",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "uv-oneliners-plurigrid-asi-2"
+}

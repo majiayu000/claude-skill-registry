@@ -1,0 +1,11 @@
+{
+  "name": "trpc",
+  "description": "Builds type-safe APIs with tRPC including routers, procedures, context, and client integration. Use when creating end-to-end type-safe APIs, building full-stack TypeScript applications, or replacing R",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/api-layer/trpc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "trpc-mgd34msu-goodvibes-plugin-2"
+}

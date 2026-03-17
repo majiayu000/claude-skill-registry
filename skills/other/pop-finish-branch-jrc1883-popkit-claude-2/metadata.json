@@ -1,0 +1,11 @@
+{
+  "name": "pop-finish-branch",
+  "description": "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting structured options for merge, PR, or cleanup",
+  "repo": "jrc1883/popkit-claude",
+  "path": "packages/popkit-dev/skills/pop-finish-branch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jrc1883/popkit-claude",
+  "dir_name": "pop-finish-branch-jrc1883-popkit-claude-2"
+}

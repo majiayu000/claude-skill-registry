@@ -1,0 +1,9 @@
+{
+  "name": "lobe-cli-toolbox",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/lobe-cli-toolbox/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "lobe-cli-toolbox",
+  "downloaded_at": "2026-02-15T07:07:02.046622Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "filesystem",
+  "description": "Filesystem Security security skill",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/security/filesystem",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "filesystem-mgreenly-ikigai-2"
+}

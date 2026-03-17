@@ -1,0 +1,11 @@
+{
+  "name": "audit",
+  "description": "Run comprehensive codebase audit for gaps, deprecated code, TODOs, FIXMEs, architectural anti-patterns, type issues, and code smells. Use when user asks to audit code, find issues, check code quality,",
+  "repo": "Cygnusfear/claude-stuff",
+  "path": "skills/audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cygnusfear/claude-stuff",
+  "dir_name": "audit-cygnusfear-claude-stuff-2"
+}

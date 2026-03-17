@@ -1,0 +1,11 @@
+{
+  "name": "dag-hallucination-detector",
+  "description": "Detects fabricated content, false citations, and unverifiable claims in agent outputs. Uses source verification and consistency checking. Activate on 'detect hallucination', 'fact check', 'verify clai",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-hallucination-detector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-hallucination-detector-erichowens-some-claude-skills-2"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "product-management",
+  "repo": "ProjAnvil/MindForge",
+  "path": "skills/en/product-management/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ProjAnvil/MindForge",
+  "dir_name": "product-management-projanvil-mindforge-2",
+  "downloaded_at": "2026-03-17T14:16:16.290769Z",
+  "author": "ProjAnvil",
+  "source_url": "https://github.com/ProjAnvil/MindForge/blob/main/skills/en/product-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ProjAnvil/MindForge/blob/main/skills/en/product-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

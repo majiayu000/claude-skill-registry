@@ -1,0 +1,11 @@
+{
+  "name": "tab-control",
+  "description": "Guide for implementing keyboard navigation and focus indicators across macOS native app (WKWebView) and web browser versions. Use when adding focusable elements, fixing Tab key navigation, or debuggin",
+  "repo": "firstloophq/nomendex",
+  "path": ".claude/skills/tab-control",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/firstloophq/nomendex",
+  "dir_name": "tab-control-firstloophq-nomendex-2"
+}

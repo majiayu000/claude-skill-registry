@@ -1,0 +1,11 @@
+{
+  "name": "add-rate-limiting",
+  "description": "Configure rate limiting policies for API endpoints with sliding window limits",
+  "repo": "Tassadar2499/NovaTune",
+  "path": ".claude/skills/add-rate-limiting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Tassadar2499/NovaTune",
+  "dir_name": "add-rate-limiting-tassadar2499-novatune-2"
+}

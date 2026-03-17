@@ -1,0 +1,11 @@
+{
+  "name": "nextjs-on-vercel",
+  "description": "Create a Next.js app running on Bun, configure the development environment, and deploy to Vercel with automatic deployments on push.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/nextjs-on-vercel",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "nextjs-on-vercel-andrelandgraf-fullstackrecipes-2"
+}

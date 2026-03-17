@@ -1,0 +1,11 @@
+{
+  "name": "dataset-loader-creator",
+  "description": "Dataset Loader Creator - Auto-activating skill for ML Training.\nTriggers on: dataset loader creator, dataset loader creator\nPart of the ML Training skill category.\n",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "planned-skills/generated/07-ml-training/dataset-loader-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "dataset-loader-creator-jeremylongshore-claude-code-plugins--2"
+}

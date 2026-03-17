@@ -1,0 +1,11 @@
+{
+  "name": "ln-712-nuget-upgrader",
+  "description": "Upgrades .NET NuGet packages with breaking change handling",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-712-nuget-upgrader",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-712-nuget-upgrader-levnikolaevich-claude-code-skills-2"
+}

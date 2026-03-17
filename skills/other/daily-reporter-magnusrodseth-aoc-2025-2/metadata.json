@@ -1,0 +1,11 @@
+{
+  "name": "daily-reporter",
+  "description": "Generate comprehensive daily status reports after solving AoC puzzles. Documents success/failure, challenges faced, retry attempts, execution time, and insights for workflow tuning. Use after completi",
+  "repo": "magnusrodseth/aoc-2025",
+  "path": ".claude/skills/daily-reporter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/magnusrodseth/aoc-2025",
+  "dir_name": "daily-reporter-magnusrodseth-aoc-2025-2"
+}

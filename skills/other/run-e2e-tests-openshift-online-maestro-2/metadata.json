@@ -1,0 +1,11 @@
+{
+  "name": "run-e2e-tests",
+  "description": "Runs end-to-end or upgrade tests on existing long-running Maestro clusters deployed in Azure AKS",
+  "repo": "openshift-online/maestro",
+  "path": ".claude/skills/run-e2e-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/openshift-online/maestro",
+  "dir_name": "run-e2e-tests-openshift-online-maestro-2"
+}

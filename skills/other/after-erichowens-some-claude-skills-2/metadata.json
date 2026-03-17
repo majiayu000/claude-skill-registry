@@ -1,0 +1,11 @@
+{
+  "name": "after",
+  "description": "Guides creation of high-quality Agent Skills with domain expertise, anti-pattern detection, and progressive disclosure best practices. Use when creating skills, reviewing existing skills, or when user",
+  "repo": "erichowens/some_claude_skills",
+  "path": "website/static/data/artifacts/single-skill/skill-coach/001-self-improvement/after",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "after-erichowens-some-claude-skills-2"
+}

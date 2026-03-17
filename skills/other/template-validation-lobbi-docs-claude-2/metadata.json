@@ -1,0 +1,11 @@
+{
+  "name": "template-validation",
+  "description": "Validate Cookiecutter templates, Terraform modules, and Harness pipelines",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/tools/plugin-cli/infrastructure-template-generator/skills/template-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "template-validation-lobbi-docs-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "zod",
+  "description": "Validates data with Zod schemas including type inference, transformations, error handling, and form integration. Use when validating API inputs, form data, environment variables, or any runtime data v",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/forms-validation/zod",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "zod-mgd34msu-goodvibes-plugin-2"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "steve-jobs",
+  "repo": "criptogus/liquid-ai",
+  "path": ".claude/skills/steve-jobs/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/criptogus/liquid-ai",
+  "dir_name": "steve-jobs-criptogus-liquid-ai",
+  "downloaded_at": "2026-03-01T07:18:33.585037Z",
+  "author": "criptogus",
+  "source_url": "https://github.com/criptogus/liquid-ai/blob/main/.claude/skills/steve-jobs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/criptogus/liquid-ai/blob/main/.claude/skills/steve-jobs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

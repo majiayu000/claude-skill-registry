@@ -1,0 +1,11 @@
+{
+  "name": "ac-handoff-creator",
+  "description": "Create handoff packages for session transitions. Use when ending sessions, preparing for continuation, saving session state, or creating resumable context.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/ac-handoff-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "ac-handoff-creator-adaptationio-skrillz-2"
+}

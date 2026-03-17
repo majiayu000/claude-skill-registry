@@ -1,0 +1,11 @@
+{
+  "name": "gantt-chart-creator",
+  "description": "Create project timeline Gantt charts with dependencies, milestones, and progress tracking. Supports static (PNG/SVG) and interactive (HTML) output.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "gantt-chart-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "gantt-chart-creator-dkyazzentwatwa-chatgpt-skills-2"
+}

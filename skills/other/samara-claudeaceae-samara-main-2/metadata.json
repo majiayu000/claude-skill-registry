@@ -1,0 +1,11 @@
+{
+  "name": "samara",
+  "description": "Diagnose and manage Samara.app, the message broker that connects iMessage to Claude.",
+  "repo": "claudeaceae/samara-main",
+  "path": ".claude/skills/samara",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/claudeaceae/samara-main",
+  "dir_name": "samara-claudeaceae-samara-main-2"
+}

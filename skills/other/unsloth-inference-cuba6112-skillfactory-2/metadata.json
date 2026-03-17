@@ -1,0 +1,11 @@
+{
+  "name": "unsloth-inference",
+  "description": "Unsloth models can be deployed using native optimized inference or through production serving engines like vLLM and SGLang. Native inference is accelerated 2x via forinference(), while production serv",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/unsloth-inference",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "unsloth-inference-cuba6112-skillfactory-2"
+}

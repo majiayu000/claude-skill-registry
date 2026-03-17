@@ -1,0 +1,11 @@
+{
+  "name": "skills-audit",
+  "description": "Audit skill folders for guideline compliance and portability. Use when validating SKILL.md files against skill_development_guidelines.md or checking for non-portable examples, hard-coded paths, or mis",
+  "repo": "aufrank/agent-skills",
+  "path": "skills/skills-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aufrank/agent-skills",
+  "dir_name": "skills-audit-aufrank-agent-skills-2"
+}

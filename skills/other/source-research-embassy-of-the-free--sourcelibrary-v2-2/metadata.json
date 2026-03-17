@@ -1,0 +1,11 @@
+{
+  "name": "source-research",
+  "description": "Search and cite primary sources from Source Library. Use when asked what historical authors wrote, to find quotes from old texts, investigate alchemical or philosophical works, or cite translated Lati",
+  "repo": "Embassy-of-the-Free-Mind/sourcelibrary-v2",
+  "path": ".claude/skills/source-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Embassy-of-the-Free-Mind/sourcelibrary-v2",
+  "dir_name": "source-research-embassy-of-the-free--sourcelibrary-v2-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rigorous_testing",
+  "description": "嚴格測試協議。強制執行「如果沒測試，就不算完成」原則。\n\n觸發時機：\n- 修復 bug 時（必須新增回歸測試）\n- 實作新功能時（必須有對應測試）\n- 修改現有代碼時（確保測試仍通過）\n- 用戶提到「測試」、「test」、「驗證功能」\n",
+  "repo": "cityfish91159/maihouses",
+  "path": ".claude/skills/rigorous_testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cityfish91159/maihouses",
+  "dir_name": "rigorous-testing-cityfish91159-maihouses-2"
+}

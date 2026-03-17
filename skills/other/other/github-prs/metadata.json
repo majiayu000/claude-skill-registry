@@ -1,0 +1,9 @@
+{
+  "name": "github-prs",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/github:prs/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "github-prs",
+  "downloaded_at": "2026-02-15T07:49:47.151668Z"
+}

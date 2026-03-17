@@ -1,0 +1,11 @@
+{
+  "name": "auditing-pre-release-security",
+  "description": "Audits security and supply-chain risk between two git refs, 预发布安全审计",
+  "repo": "OneKeyHQ/app-monorepo",
+  "path": ".claude/skills/auditing-pre-release-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OneKeyHQ/app-monorepo",
+  "dir_name": "auditing-pre-release-security-onekeyhq-app-monorepo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "python-venv",
+  "description": "Manage Python virtual environments and dependencies. Use when setting up projects or installing packages.",
+  "repo": "wildwasser/opencode-agents",
+  "path": ".opencode/skills/python-venv",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildwasser/opencode-agents",
+  "dir_name": "python-venv-wildwasser-opencode-agents-2"
+}

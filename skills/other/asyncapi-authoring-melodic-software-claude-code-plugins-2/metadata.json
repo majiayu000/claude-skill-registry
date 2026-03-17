@@ -1,0 +1,11 @@
+{
+  "name": "asyncapi-authoring",
+  "description": "Author and validate AsyncAPI 3.0 specifications for event-driven API design, message brokers, and async communication patterns",
+  "repo": "melodic-software/claude-code-plugins",
+  "path": "plugins/spec-driven-development/skills/asyncapi-authoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/melodic-software/claude-code-plugins",
+  "dir_name": "asyncapi-authoring-melodic-software-claude-code-plugins-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "runpod-deployment-skill",
+  "description": "Deploy GPU workloads to RunPod serverless and pods - vLLM endpoints, A100/H100 setup, scale-to-zero, cost optimization. Use when: deploy to RunPod, GPU serverless, vLLM endpoint, scale to zero, A100 d",
+  "repo": "ScientiaCapital/skills",
+  "path": "active/runpod-deployment-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ScientiaCapital/skills",
+  "dir_name": "runpod-deployment-skill-scientiacapital-skills-2"
+}

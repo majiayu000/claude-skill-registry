@@ -1,0 +1,11 @@
+{
+  "name": "dag-parallel-executor",
+  "description": "Executes DAG waves with controlled parallelism using the Task tool. Manages concurrent agent spawning, resource limits, and execution coordination. Activate on 'execute dag', 'parallel execution', 'co",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-parallel-executor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-parallel-executor-erichowens-some-claude-skills-2"
+}

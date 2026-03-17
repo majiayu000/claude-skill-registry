@@ -1,0 +1,11 @@
+{
+  "name": "architecture-patterns",
+  "description": "Master software architecture patterns for scalable, maintainable systems. From monoliths to microservices, from MVC to hexagonal - choose the right structure for every challenge.",
+  "repo": "frankxai/arcanea",
+  "path": ".claude/skills/development/architecture-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/arcanea",
+  "dir_name": "architecture-patterns-frankxai-arcanea-2"
+}

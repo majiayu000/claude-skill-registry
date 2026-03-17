@@ -1,0 +1,11 @@
+{
+  "name": "error-code-guide",
+  "description": "设计一致的错误码，遵循 PREFIX_CATEGORY_NUMBER 格式。\n使用时机：定義错误码、建立错误处理、设计 API。\n关鍵字：error code, error handling, error format, API errors, 错误码, 错误处理。\n",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "path": "locales/zh-CN/skills/claude-code/error-code-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AsiaOstrich/universal-dev-standards",
+  "dir_name": "error-code-guide-asiaostrich-universal-dev-standa-2"
+}

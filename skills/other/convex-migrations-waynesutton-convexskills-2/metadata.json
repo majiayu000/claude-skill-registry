@@ -1,0 +1,11 @@
+{
+  "name": "convex-migrations",
+  "description": "Schema migration strategies for evolving applications including adding new fields, backfilling data, removing deprecated fields, index migrations, and zero-downtime migration patterns",
+  "repo": "waynesutton/convexskills",
+  "path": "skills/convex-migrations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/waynesutton/convexskills",
+  "dir_name": "convex-migrations-waynesutton-convexskills-2"
+}

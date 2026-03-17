@@ -1,0 +1,11 @@
+{
+  "name": "lotus-analyze-nsf-structure",
+  "description": "Analyze Lotus Notes NSF database file structure, data models, views, forms, and relationships.\nUse when understanding NSF database composition, mapping field structures, identifying data dependencies,",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/lotus-analyze-nsf-structure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "lotus-analyze-nsf-structure-dawiddutoit-custom-claude-2"
+}

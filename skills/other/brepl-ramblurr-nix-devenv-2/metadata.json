@@ -1,0 +1,11 @@
+{
+  "name": "brepl",
+  "description": "You MUST load this skill before using brepl. Do NOT attempt to use brepl without loading this skill first, or you will use incorrect syntax.",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/brepl",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "brepl-ramblurr-nix-devenv-2"
+}

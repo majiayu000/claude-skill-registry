@@ -1,0 +1,11 @@
+{
+  "name": "index-docs",
+  "description": "Create searchable knowledge base from existing documentation and code for fast context lookup in brownfield projects. Indexes .md files with sections/keywords, maps code exports to documentation, gene",
+  "repo": "adolfoaranaes12/BMAD-ENHANCED",
+  "path": ".claude/skills/index-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adolfoaranaes12/BMAD-ENHANCED",
+  "dir_name": "index-docs-adolfoaranaes12-bmad-enhanced-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "agent-skill-bridge",
+  "description": "Facilitates seamless integration between Claude Skills and the existing Agent framework, enabling skills to invoke agents and vice versa with proper context handoffs.",
+  "repo": "Ryno-Crypto-Mining-Services/braiins-insights-mcp-server",
+  "path": ".claude/skills/agent-skill-bridge",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ryno-Crypto-Mining-Services/braiins-insights-mcp-server",
+  "dir_name": "agent-skill-bridge-ryno-crypto-mining-s-braiins-insights-mcp-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "implementation-guide",
+  "description": "Generates detailed implementation guide with pseudo-code and step-by-step development instructions. Creates IMPLEMENTATION_GUIDE.md from PRD, Architecture, and UX specs. Use when creating development ",
+  "repo": "rshankras/claude-code-apple-skills",
+  "path": "skills/product/implementation-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rshankras/claude-code-apple-skills",
+  "dir_name": "implementation-guide-rshankras-claude-code-apple-sk-2"
+}

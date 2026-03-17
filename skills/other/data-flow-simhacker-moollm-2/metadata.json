@@ -1,0 +1,11 @@
+{
+  "name": "data-flow",
+  "description": "Rooms as pipeline nodes, exits as edges, objects as messages",
+  "repo": "SimHacker/moollm",
+  "path": "skills/data-flow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "data-flow-simhacker-moollm-2"
+}

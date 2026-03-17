@@ -1,0 +1,11 @@
+{
+  "name": "ddd-testing",
+  "description": "Standards de tests exhaustifs pour les bounded contexts DDD (Domain, Application, Integration). À utiliser lors de l'écriture de tests backend, tests unitaires, tests d'intégration, ou quand l'utilisa",
+  "repo": "RomualdP/hoki",
+  "path": ".claude/skills/ddd-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RomualdP/hoki",
+  "dir_name": "ddd-testing-romualdp-hoki-2"
+}

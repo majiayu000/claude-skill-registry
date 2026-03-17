@@ -1,0 +1,11 @@
+{
+  "name": "implementation",
+  "description": "Use when implementing features from feature-list.json, writing code following project patterns, or using MCP tools efficiently. Load in IMPLEMENT state. Covers coding patterns, test writing, health ch",
+  "repo": "ingpoc/SKILLS",
+  "path": "implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ingpoc/SKILLS",
+  "dir_name": "implementation-ingpoc-skills-2"
+}

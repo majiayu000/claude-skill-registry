@@ -1,0 +1,11 @@
+{
+  "name": "coherence-engine",
+  "description": "The LLM as consistency maintainer and orchestrator",
+  "repo": "SimHacker/moollm",
+  "path": "skills/coherence-engine",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "coherence-engine-simhacker-moollm-2"
+}

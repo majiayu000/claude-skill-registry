@@ -1,0 +1,11 @@
+{
+  "name": "multi-agent-patterns",
+  "description": "This skill should be used when the user asks to \"design multi-agent system\", \"implement supervisor pattern\", \"create swarm architecture\", \"coordinate multiple agents\", or mentions multi-agent patterns",
+  "repo": "Kalyanikhandare29/Agent-Skills-for-Context-Engineering",
+  "path": "skills/multi-agent-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Kalyanikhandare29/Agent-Skills-for-Context-Engineering",
+  "dir_name": "multi-agent-patterns-kalyanikhandare29-agent-skills-for-con-2"
+}

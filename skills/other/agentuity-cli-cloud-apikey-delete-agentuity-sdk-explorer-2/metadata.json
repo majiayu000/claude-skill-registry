@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-apikey-delete",
+  "description": "Delete an API key (soft delete). Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-apikey-delete",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-apikey-delete-agentuity-sdk-explorer-2"
+}

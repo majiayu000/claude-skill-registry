@@ -1,0 +1,11 @@
+{
+  "name": "clean-architecture",
+  "description": "Clean Architecture and SOLID principles implementation including dependency injection, layer separation, domain-driven design, hexagonal architecture, and code quality patterns",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/jira-orchestrator/skills/clean-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "clean-architecture-lobbi-docs-claude-2"
+}

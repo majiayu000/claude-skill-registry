@@ -1,0 +1,11 @@
+{
+  "name": "dialogue-create-theory",
+  "description": "Create Theory (THY) documents that capture integrated understanding. Triggers on \"capture theory\", \"document understanding\", \"write theory\", \"explain why this works\", \"record the mental model\".",
+  "repo": "pidster/project-2501",
+  "path": "claude-plugin-evo/skills/dialogue-create-theory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pidster/project-2501",
+  "dir_name": "dialogue-create-theory-pidster-project-2501-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "program-ops",
+  "description": "Use when standardizing event workflows, tooling, and routing across portfolios.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/event-marketing/skills/program-ops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "program-ops-gtmagents-gtm-agents-2"
+}

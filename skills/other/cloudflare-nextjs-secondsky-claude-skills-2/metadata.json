@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-nextjs",
+  "description": "Deploy Next.js applications to Cloudflare Workers using the OpenNext Cloudflare adapter for production-ready serverless Next.js hosting.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-nextjs/skills/cloudflare-nextjs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "cloudflare-nextjs-secondsky-claude-skills-2"
+}

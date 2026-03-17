@@ -1,0 +1,11 @@
+{
+  "name": "meta-skill-creator",
+  "description": "スキルを作成・更新・プロンプト改善するためのメタスキル。\n**collaborative**モードでユーザーと対話しながら共創し、\n抽象的なアイデアから具体的な実装まで柔軟に対応する。\n**orchestrate**モードでタスクの実行エンジン（Claude Code / Codex / 連携）を選択。\n\nAnchors:\n• Continuous Delivery (Jez Humble) / ",
+  "repo": "ryryo/dot-claude-dev",
+  "path": ".claude/skills/meta-skill-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ryryo/dot-claude-dev",
+  "dir_name": "meta-skill-creator-ryryo-dot-claude-dev-2"
+}

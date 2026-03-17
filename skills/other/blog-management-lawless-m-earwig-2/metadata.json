@@ -1,0 +1,11 @@
+{
+  "name": "Blog Management",
+  "description": "Managing Cyril's Workshop blog posts and devblog via API - creating, editing, publishing, and updating content programmatically",
+  "repo": "lawless-m/Earwig",
+  "path": ".claude/skills/Blog Management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lawless-m/Earwig",
+  "dir_name": "blog-management-lawless-m-earwig-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "polysimy-effect-chains",
+  "description": "Verify multiple effect interpretations through propagator networks with temporal coalgebra bisimulation and common fixpoint solutions.",
+  "repo": "plurigrid/asi",
+  "path": "skills/polysimy-effect-chains",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "polysimy-effect-chains-plurigrid-asi-2"
+}

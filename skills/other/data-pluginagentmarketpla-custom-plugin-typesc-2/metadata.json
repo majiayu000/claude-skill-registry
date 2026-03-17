@@ -1,0 +1,11 @@
+{
+  "name": "data",
+  "description": "Master data engineering, ETL/ELT, data warehousing, SQL optimization, and analytics. Use when building data pipelines, designing data systems, or working with large datasets.",
+  "repo": "pluginagentmarketplace/custom-plugin-typescript",
+  "path": "skills/data",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pluginagentmarketplace/custom-plugin-typescript",
+  "dir_name": "data-pluginagentmarketpla-custom-plugin-typesc-2"
+}

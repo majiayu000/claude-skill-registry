@@ -1,0 +1,11 @@
+{
+  "name": "ux-feedback-patterns",
+  "description": "User feedback patterns including success/error messages, loading states, confirmations, and progress indicators. Use when implementing notifications, toasts, or status updates. (project)",
+  "repo": "matthewharwood/fantasy-phonics",
+  "path": ".claude/skills/ux-feedback-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/matthewharwood/fantasy-phonics",
+  "dir_name": "ux-feedback-patterns-matthewharwood-fantasy-phonics-2"
+}

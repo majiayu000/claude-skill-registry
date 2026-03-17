@@ -1,0 +1,11 @@
+{
+  "name": "rsc-data-optimizer",
+  "description": "Optimize Next.js App Router data fetching by converting slow client-side \nfetching to fast server-side fetching using React Server Components (RSC).\n\nUse when:\n- User reports slow initial page load wi",
+  "repo": "araaking/opencode-kuli-pro",
+  "path": "skills/rsc-data-optimizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/araaking/opencode-kuli-pro",
+  "dir_name": "rsc-data-optimizer-araaking-opencode-kuli-pro-2"
+}

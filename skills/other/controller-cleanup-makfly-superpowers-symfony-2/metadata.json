@@ -1,0 +1,11 @@
+{
+  "name": "controller-cleanup",
+  "description": "Use when symfony controller cleanup",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/controller-cleanup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "controller-cleanup-makfly-superpowers-symfony-2"
+}

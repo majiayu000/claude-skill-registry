@@ -1,0 +1,11 @@
+{
+  "name": "ds-verify",
+  "description": "This skill should be used when the user asks to 'verify analysis results', 'check reproducibility', 'validate data science output', 'confirm completion', or as Phase 5 of the /ds workflow (final). Enf",
+  "repo": "edwinhu/workflows",
+  "path": "lib/skills/ds-verify",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "ds-verify-edwinhu-workflows-2"
+}

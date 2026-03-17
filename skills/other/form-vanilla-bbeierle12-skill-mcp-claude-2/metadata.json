@@ -1,0 +1,11 @@
+{
+  "name": "form-vanilla",
+  "description": "Framework-free form validation using HTML5 Constraint Validation API enhanced with Zod for complex rules. Use when building forms without React/Vue or for progressive enhancement.",
+  "repo": "Bbeierle12/Skill-MCP-Claude",
+  "path": "skills/form-vanilla",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Bbeierle12/Skill-MCP-Claude",
+  "dir_name": "form-vanilla-bbeierle12-skill-mcp-claude-2"
+}

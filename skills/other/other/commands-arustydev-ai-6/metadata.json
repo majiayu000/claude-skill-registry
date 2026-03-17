@@ -1,0 +1,17 @@
+{
+  "name": "commands",
+  "repo": "aRustyDev/ai",
+  "path": "context/commands/validate-lang-conversion-skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aRustyDev/ai",
+  "dir_name": "commands-arustydev-ai-6",
+  "downloaded_at": "2026-03-01T06:24:08.647613Z",
+  "author": "aRustyDev",
+  "source_url": "https://github.com/aRustyDev/ai/blob/main/context/commands/validate-lang-conversion-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aRustyDev/ai/blob/main/context/commands/validate-lang-conversion-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

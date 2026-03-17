@@ -1,0 +1,9 @@
+{
+  "name": "meta-write-docs",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/meta:write-docs/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "meta-write-docs",
+  "downloaded_at": "2026-02-15T07:49:45.102490Z"
+}

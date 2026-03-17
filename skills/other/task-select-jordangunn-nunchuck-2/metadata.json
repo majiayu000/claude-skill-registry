@@ -1,0 +1,11 @@
+{
+  "name": "task-select",
+  "description": "Select a task by writing its ID to `.tasks/.active`. Prints the selected task path and any suspicion flags (stale, hash mismatch) to encourage skepticism.\n",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/task/task-select",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "task-select-jordangunn-nunchuck-2"
+}

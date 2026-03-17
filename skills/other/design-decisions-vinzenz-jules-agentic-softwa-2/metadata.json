@@ -1,0 +1,11 @@
+{
+  "name": "design-decisions",
+  "description": "Forces documentation of the reasoning behind every significant design decision. Creates a decision log that explains WHY choices were made, alternatives considered, and trade-offs accepted. Prevents u",
+  "repo": "vinzenz/jules-agentic-software-builder-for-claude",
+  "path": ".claude/skills/design-decisions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vinzenz/jules-agentic-software-builder-for-claude",
+  "dir_name": "design-decisions-vinzenz-jules-agentic-softwa-2"
+}

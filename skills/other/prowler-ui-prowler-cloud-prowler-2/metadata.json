@@ -1,0 +1,11 @@
+{
+  "name": "prowler-ui",
+  "description": "Prowler UI-specific patterns. For generic patterns, see: typescript, react-19, nextjs-15, tailwind-4. Trigger: When working inside ui/ on Prowler-specific conventions (shadcn vs HeroUI legacy, folder ",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/prowler-ui",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/prowler-cloud/prowler",
+  "dir_name": "prowler-ui-prowler-cloud-prowler-2"
+}

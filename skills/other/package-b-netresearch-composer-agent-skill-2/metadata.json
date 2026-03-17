@@ -1,0 +1,11 @@
+{
+  "name": "package-b",
+  "description": "Second version of duplicate skill from package B (should win)",
+  "repo": "netresearch/composer-agent-skill-plugin",
+  "path": "tests/Fixtures/duplicate-names/package-b",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/netresearch/composer-agent-skill-plugin",
+  "dir_name": "package-b-netresearch-composer-agent-skill-2"
+}

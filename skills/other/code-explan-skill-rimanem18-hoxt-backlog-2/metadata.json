@@ -1,0 +1,11 @@
+{
+  "name": "code-explan-skill",
+  "description": "明示的に呼び出されたときのみ使用します。自律的にエージェントが使用する必要はありません。",
+  "repo": "rimanem18/hoxt-backlog",
+  "path": ".claude/skills/code-explan-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rimanem18/hoxt-backlog",
+  "dir_name": "code-explan-skill-rimanem18-hoxt-backlog-2"
+}

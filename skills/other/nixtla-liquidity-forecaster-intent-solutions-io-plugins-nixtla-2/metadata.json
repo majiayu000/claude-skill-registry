@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-liquidity-forecaster",
+  "description": "Forecasts orderbook depth and spreads to optimize trade execution timing. Use when needing to estimate market liquidity for large orders. Trigger with 'forecast liquidity', 'predict orderbook', 'estim",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "000-docs/000a-planned-skills/prediction-markets/nixtla-liquidity-forecaster",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-liquidity-forecaster-intent-solutions-io-plugins-nixtla-2"
+}

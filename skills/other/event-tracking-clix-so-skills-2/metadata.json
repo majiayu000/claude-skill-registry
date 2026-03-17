@@ -1,0 +1,11 @@
+{
+  "name": "event-tracking",
+  "description": "Implements Clix event tracking (Clix.trackEvent) with consistent naming, safe property schemas, and campaign-ready validation. Use when adding, reviewing, or debugging event tracking; when configuring",
+  "repo": "clix-so/skills",
+  "path": "skills/event-tracking",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clix-so/skills",
+  "dir_name": "event-tracking-clix-so-skills-2"
+}

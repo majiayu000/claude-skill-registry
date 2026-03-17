@@ -1,0 +1,9 @@
+{
+  "name": "run-github-ci-before-commit",
+  "repo": "BaqiF2/Synapse-Agent",
+  "path": ".claude/skills/run-github-ci-before-commit/SKILL.md",
+  "category": "other",
+  "source": "github.com/BaqiF2/Synapse-Agent",
+  "dir_name": "run-github-ci-before-commit",
+  "downloaded_at": "2026-02-22T04:46:28.453717Z"
+}

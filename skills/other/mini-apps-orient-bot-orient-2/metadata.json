@@ -1,0 +1,11 @@
+{
+  "name": "mini-apps",
+  "description": "Create standalone React mini-apps via the Mini-Apps toolchain. Use when asked to build apps, forms, schedulers, dashboards, or shareable web components. Do not write app code directly to the repo.",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/mini-apps",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "mini-apps-orient-bot-orient-2"
+}

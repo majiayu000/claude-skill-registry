@@ -1,0 +1,11 @@
+{
+  "name": "api-generator",
+  "description": "Generate CRUD API endpoints automatically. User doesn't see routes.\nUse when: features need backend logic.\nTriggers: internal use only.",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/api-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "api-generator-timequity-vibe-coder-2"
+}

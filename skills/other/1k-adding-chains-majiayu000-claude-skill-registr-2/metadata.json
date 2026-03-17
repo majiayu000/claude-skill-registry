@@ -1,0 +1,11 @@
+{
+  "name": "1k-adding-chains",
+  "description": "Guide for adding new blockchain chains to OneKey. Use when implementing new chain support, adding blockchain protocols, or understanding chain architecture. Triggers on chain, blockchain, protocol, ne",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/1k-adding-chains",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "1k-adding-chains-majiayu000-claude-skill-registr-2"
+}

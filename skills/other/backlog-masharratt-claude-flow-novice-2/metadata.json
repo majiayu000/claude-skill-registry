@@ -1,0 +1,11 @@
+{
+  "name": "backlog",
+  "description": "Systematically capture and track backlogged items during CFN sprints to prevent work from being forgotten. Provides centralized documentation of deferred tasks with context, rationale, and proposed so",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-project-management/lib/backlog",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "backlog-masharratt-claude-flow-novice-2"
+}

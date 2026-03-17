@@ -1,0 +1,11 @@
+{
+  "name": "sentiment-analyzer",
+  "description": "Analyze text sentiment (positive/negative/neutral) with confidence scores, emotion detection, and visualization. Supports single text, CSV batch, and trend analysis.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "sentiment-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "sentiment-analyzer-dkyazzentwatwa-chatgpt-skills-2"
+}

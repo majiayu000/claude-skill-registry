@@ -1,0 +1,11 @@
+{
+  "name": "report-bug",
+  "description": "Quickly report bugs and minor issues to GitHub Issues",
+  "repo": "tidemann/st44-home",
+  "path": ".claude/skills/report-bug",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tidemann/st44-home",
+  "dir_name": "report-bug-tidemann-st44-home-2"
+}

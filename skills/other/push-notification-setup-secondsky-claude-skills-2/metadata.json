@@ -1,0 +1,11 @@
+{
+  "name": "push-notification-setup",
+  "description": "Implements push notifications across iOS, Android, and web using Firebase Cloud Messaging and native services. Use when adding notification capabilities, handling background messages, or setting up no",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/push-notification-setup/skills/push-notification-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "push-notification-setup-secondsky-claude-skills-2"
+}

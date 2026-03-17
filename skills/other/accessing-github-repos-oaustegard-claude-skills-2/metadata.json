@@ -1,0 +1,11 @@
+{
+  "name": "accessing-github-repos",
+  "description": "GitHub repository access in containerized environments using REST API and credential detection. Use when git clone fails, or when accessing private repos/writing files via API.",
+  "repo": "oaustegard/claude-skills",
+  "path": "accessing-github-repos",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "accessing-github-repos-oaustegard-claude-skills-2"
+}

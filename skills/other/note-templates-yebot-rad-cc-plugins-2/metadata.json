@@ -1,0 +1,11 @@
+{
+  "name": "note-templates",
+  "description": "Collection of reusable templates for common Apple Notes use cases. Use when creating structured notes for meetings, journals, projects, or references.",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/apple-notes-cli/skills/note-templates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "note-templates-yebot-rad-cc-plugins-2"
+}

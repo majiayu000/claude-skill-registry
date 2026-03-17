@@ -1,0 +1,11 @@
+{
+  "name": "quality-audit",
+  "description": "Meta-skill for auditing and validating skill quality. Use when reviewing skills for consistency, completeness, accuracy, and adherence to standards. Provides structured rubrics, scoring frameworks, an",
+  "repo": "NickCrew/claude-cortex",
+  "path": "claude_ctx_py/assets/skills/quality-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NickCrew/claude-cortex",
+  "dir_name": "quality-audit-nickcrew-claude-cortex-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sumida",
+  "description": "Sumida Corporation MPN encoding patterns, inductance value decoding, and handler guidance. Use when working with Sumida inductors, transformers, or common mode chokes.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/sumida",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "sumida-cantara-lib-electronic-compo-2"
+}

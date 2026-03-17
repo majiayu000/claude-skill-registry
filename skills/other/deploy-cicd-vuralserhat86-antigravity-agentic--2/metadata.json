@@ -1,0 +1,11 @@
+{
+  "name": "deploy_cicd",
+  "description": "> CI/CD pipeline ve automated deployment.",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/deploy_cicd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "deploy-cicd-vuralserhat86-antigravity-agentic--2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "when-implementing-persistent-memory-use-agentdb-memory",
+  "description": "Implement persistent memory patterns for AI agents using AgentDB - session memory, long-term storage, pattern learning, and context management for stateful agents, chat systems, and intelligent assist",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/agentdb/when-implementing-persistent-memory-use-agentdb-memory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "dir_name": "when-implementing-persistent-memory-use-agentdb-memory-dnyoussef-ai-chrome-extension-2"
+}

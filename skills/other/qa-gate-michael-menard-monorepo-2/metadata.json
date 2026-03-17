@@ -1,0 +1,11 @@
+{
+  "name": "qa-gate",
+  "description": "Create or update a quality gate decision for a story or code changes. Runs quality checks, specialist reviews, and produces a persistent YAML gate file with actionable findings. Supports PASS, CONCERN",
+  "repo": "michael-menard/monorepo",
+  "path": ".claude/skills/qa-gate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/michael-menard/monorepo",
+  "dir_name": "qa-gate-michael-menard-monorepo-2"
+}

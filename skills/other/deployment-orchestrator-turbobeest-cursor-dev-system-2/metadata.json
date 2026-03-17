@@ -1,0 +1,11 @@
+{
+  "name": "deployment-orchestrator",
+  "description": "Orchestrates deployment to production after all validations pass.\nActivates via codeword [ACTIVATE:DEPLOYMENT_ORCHESTRATOR_V1] injected by hooks\nautomatically after Phase 10 completes.\n\nActivation tri",
+  "repo": "turbobeest/cursor-dev-system",
+  "path": "skills/deployment-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/turbobeest/cursor-dev-system",
+  "dir_name": "deployment-orchestrator-turbobeest-cursor-dev-system-2"
+}

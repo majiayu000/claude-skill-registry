@@ -1,0 +1,11 @@
+{
+  "name": "claude-template-skill",
+  "description": "Replace with description of the skill and when Claude should use it.",
+  "repo": "ManuelKugelmann/BitBot",
+  "path": ".bitbot/internal/bitbot-config/.claude/skills/claude-template-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ManuelKugelmann/BitBot",
+  "dir_name": "claude-template-skill-manuelkugelmann-bitbot-2"
+}

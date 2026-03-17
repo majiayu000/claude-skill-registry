@@ -1,0 +1,11 @@
+{
+  "name": "kitt-create-subagents",
+  "description": "Expert guidance for creating, building, and using Claude Code subagents and the Task tool. Use when working with subagents, setting up agent configurations, understanding how agents work, or using the",
+  "repo": "utahdws/webteam-ai-tools",
+  "path": ".ai-cli/shared/skills/kitt-create-subagents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/utahdws/webteam-ai-tools",
+  "dir_name": "kitt-create-subagents-utahdws-webteam-ai-tools-2"
+}

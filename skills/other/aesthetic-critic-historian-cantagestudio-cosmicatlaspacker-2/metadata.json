@@ -1,0 +1,11 @@
+{
+  "name": "aesthetic-critic-historian",
+  "description": "[Aesthetics] Positions aesthetics within art/design history, identifies what traditions it echoes, and spots clichés, generic trends, and AI-slop patterns to avoid. Outputs Critical Notes as Memo node",
+  "repo": "CANTAGESTUDIO/CosmicAtlasPacker",
+  "path": ".claude/skills/aesthetic-critic-historian",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CANTAGESTUDIO/CosmicAtlasPacker",
+  "dir_name": "aesthetic-critic-historian-cantagestudio-cosmicatlaspacker-2"
+}

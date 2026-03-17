@@ -1,0 +1,11 @@
+{
+  "name": "plugin-guide",
+  "description": "Use this skill when users ask specifically about the Storybook Assistant plugin - \"what can the storybook assistant do\", \"storybook plugin features\", \"storybook assistant commands\", \"help with storybo",
+  "repo": "flight505/storybook-assistant",
+  "path": "skills/plugin-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/flight505/storybook-assistant",
+  "dir_name": "plugin-guide-flight505-storybook-assistant-2"
+}

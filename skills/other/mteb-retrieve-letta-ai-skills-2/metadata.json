@@ -1,0 +1,11 @@
+{
+  "name": "mteb-retrieve",
+  "description": "Guidance for text embedding retrieval tasks using sentence transformers or similar embedding models. This skill should be used when the task involves loading documents, encoding text with embedding mo",
+  "repo": "letta-ai/skills",
+  "path": "letta/benchmarks/trajectory-only/mteb-retrieve",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/letta-ai/skills",
+  "dir_name": "mteb-retrieve-letta-ai-skills-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "slither-analysis",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/cryptography-blockchain/skills/slither-analysis/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "slither-analysis",
+  "downloaded_at": "2026-02-11T01:23:55.016239Z"
+}

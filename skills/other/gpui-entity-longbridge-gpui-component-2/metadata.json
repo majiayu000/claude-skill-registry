@@ -1,0 +1,11 @@
+{
+  "name": "gpui-entity",
+  "description": "Entity management and state handling in GPUI. Use when working with entities, managing component state, coordinating between components, handling async operations with state updates, or implementing r",
+  "repo": "longbridge/gpui-component",
+  "path": ".claude/skills/gpui-entity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/longbridge/gpui-component",
+  "dir_name": "gpui-entity-longbridge-gpui-component-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "kpi-verification-pass-rate",
+  "description": "KPI for measuring first-pass verification success. Tracks how often verification passes on the first attempt. Use to reduce wasted cycles from verification failures.",
+  "repo": "Anveio/conveaux",
+  "path": ".claude/skills/kpi-verification-pass-rate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Anveio/conveaux",
+  "dir_name": "kpi-verification-pass-rate-anveio-conveaux-2"
+}

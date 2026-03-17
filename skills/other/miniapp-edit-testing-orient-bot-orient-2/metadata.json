@@ -1,0 +1,11 @@
+{
+  "name": "miniapp-edit-testing",
+  "description": "Test and debug the Dashboard “Edit with AI” mini-app editor flow (start edit session, build, history, close session) and write automated tests that simulate agent-driven mini-app edits like adding dar",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/miniapp-edit-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "miniapp-edit-testing-orient-bot-orient-2"
+}

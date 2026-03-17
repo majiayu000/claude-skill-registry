@@ -1,0 +1,11 @@
+{
+  "name": "nielsen-visibility",
+  "description": "Garantiza que el sistema informe constantemente al usuario sobre su estado. Use cuando diseñe feedback visual, loaders, estados de progreso o cualquier interacción que requiera confirmación.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/heuristics/nielsen-visibility",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "nielsen-visibility-vjrivmon-handwriting-ocr-2"
+}

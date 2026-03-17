@@ -1,0 +1,11 @@
+{
+  "name": "quick-mockups",
+  "description": "Create multiple UI design mockups in parallel. Use when asked to create mockups, wireframes, or design variations for a feature. Creates HTML files using Mantine v7 + Tailwind following Civitai's desi",
+  "repo": "civitai/civitai",
+  "path": ".claude/skills/quick-mockups",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/civitai/civitai",
+  "dir_name": "quick-mockups-civitai-civitai-2"
+}

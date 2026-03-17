@@ -1,0 +1,11 @@
+{
+  "name": "skill-status-sync",
+  "description": "Atomically update task status across TODO.md and state.json. Invoke when task status changes.",
+  "repo": "benbrastmckie/.config",
+  "path": ".claude/skills/skill-status-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benbrastmckie/.config",
+  "dir_name": "skill-status-sync-benbrastmckie-config-2"
+}

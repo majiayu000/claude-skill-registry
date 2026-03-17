@@ -1,0 +1,11 @@
+{
+  "name": "ksim-rl",
+  "description": "RL training library for humanoid locomotion and manipulation built on MuJoCo and JAX. Provides PPO, AMP, and custom task abstractions for sim-to-real robotics policy training.",
+  "repo": "plurigrid/asi",
+  "path": "skills/ksim-rl",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "ksim-rl-plurigrid-asi-2"
+}

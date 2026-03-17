@@ -1,0 +1,11 @@
+{
+  "name": "script-best-practices",
+  "description": "Best practices for bundling scripts in skills including error handling, constants documentation, and execution patterns. Use when creating script-enabled skills.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/create/script-best-practices",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "script-best-practices-mgd34msu-goodvibes-plugin-2"
+}

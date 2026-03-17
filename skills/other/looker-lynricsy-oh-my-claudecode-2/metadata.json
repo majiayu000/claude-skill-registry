@@ -1,0 +1,11 @@
+{
+  "name": "looker",
+  "description": "Multimodal analysis agent for PDF, images, charts, and screenshots.\nUse when: analyzing documents, describing images, explaining diagrams, or extracting data from charts.\n多模态分析专家，分析 PDF/图片/图表/架构图/截图。",
+  "repo": "Lynricsy/Oh-My-ClaudeCode",
+  "path": "skills/looker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lynricsy/Oh-My-ClaudeCode",
+  "dir_name": "looker-lynricsy-oh-my-claudecode-2"
+}

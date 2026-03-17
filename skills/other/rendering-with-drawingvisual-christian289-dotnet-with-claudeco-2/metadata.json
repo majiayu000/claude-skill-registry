@@ -1,0 +1,11 @@
+{
+  "name": "rendering-with-drawingvisual",
+  "description": "Implements lightweight rendering using WPF DrawingVisual with ContainerVisual, VisualCollection, and DrawingContext. Use when rendering large-scale graphics, charts, game graphics, or custom visuals.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/rendering-with-drawingvisual",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "rendering-with-drawingvisual-christian289-dotnet-with-claudeco-2"
+}

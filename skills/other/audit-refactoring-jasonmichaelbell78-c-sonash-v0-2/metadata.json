@@ -1,0 +1,11 @@
+{
+  "name": "audit-refactoring",
+  "description": "Run a single-session refactoring audit on the codebase",
+  "repo": "jasonmichaelbell78-creator/sonash-v0",
+  "path": ".claude/skills/audit-refactoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonmichaelbell78-creator/sonash-v0",
+  "dir_name": "audit-refactoring-jasonmichaelbell78-c-sonash-v0-2"
+}

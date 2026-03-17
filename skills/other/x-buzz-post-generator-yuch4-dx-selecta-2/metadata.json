@@ -1,0 +1,11 @@
+{
+  "name": "x-buzz-post-generator",
+  "description": "X（旧Twitter）投稿文を生成するスキル。2つのモードを提供：(1)バズモード - 話題に乗っかりエンゲージメントを最大化する投稿を23パターンから生成 (2)アップデート共有モード - VSCode/SaaS等の製品アップデート情報を構造的にわかりやすく整理した投稿を生成。「Xで投稿を作って」「アップデート情報を共有したい」「バズりたい」「新機能を紹介したい」などのリクエストに使用。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/x-buzz-post-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "x-buzz-post-generator-yuch4-dx-selecta-2"
+}

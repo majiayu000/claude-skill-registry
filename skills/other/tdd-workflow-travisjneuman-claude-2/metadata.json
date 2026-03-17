@@ -1,0 +1,11 @@
+{
+  "name": "tdd-workflow",
+  "description": "Test-Driven Development workflow enforcement with RED-GREEN-REFACTOR cycle. Use when implementing features test-first or improving test coverage.",
+  "repo": "travisjneuman/.claude",
+  "path": "skills/tdd-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/travisjneuman/.claude",
+  "dir_name": "tdd-workflow-travisjneuman-claude-2"
+}

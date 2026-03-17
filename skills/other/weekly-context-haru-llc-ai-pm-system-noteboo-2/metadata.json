@@ -1,0 +1,11 @@
+{
+  "name": "weekly-context",
+  "description": "週次コンテキストを生成する。NotebookLM連携、週次サマリー自動生成時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/cross-cutting/weekly-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "weekly-context-haru-llc-ai-pm-system-noteboo-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "anthropic-web-artifacts-builder",
+  "repo": "davekilleen/Dex",
+  "path": ".claude/skills/anthropic-web-artifacts-builder/SKILL.md",
+  "category": "other",
+  "source": "github.com/davekilleen/Dex",
+  "dir_name": "anthropic-web-artifacts-builder",
+  "downloaded_at": "2026-02-22T06:51:26.414432Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "campaign-architecture",
+  "description": "Use when structuring paid media campaigns/ad sets to balance testing, delivery, and optimization constraints.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/paid-media/skills/campaign-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "campaign-architecture-gtmagents-gtm-agents-2"
+}

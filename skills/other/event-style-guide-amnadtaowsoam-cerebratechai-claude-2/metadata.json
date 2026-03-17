@@ -1,0 +1,11 @@
+{
+  "name": "event-style-guide",
+  "description": "มาตรฐานการออกแบบ events สำหรับ event-driven architecture: envelope format, naming, versioning, และ schema evolution ที่ทำให้ระบบ decouple ได้อย่างปลอดภัย",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "64-meta-standards/event-style-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "event-style-guide-amnadtaowsoam-cerebratechai-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "create-utility-service",
+  "description": "Create a utility service for cross-cutting concerns. Use when creating services for authentication, authorization, email, notifications, or other shared functionality that doesn't directly map to a do",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/create-utility-service",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "create-utility-service-madooei-backend-template-2"
+}

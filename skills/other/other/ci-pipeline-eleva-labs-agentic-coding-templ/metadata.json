@@ -1,0 +1,9 @@
+{
+  "name": "ci-pipeline",
+  "repo": "eleva-labs/agentic-coding-templates",
+  "path": ".claude/skills/devops/ci-pipeline/SKILL.md",
+  "category": "other",
+  "source": "github.com/eleva-labs/agentic-coding-templates",
+  "dir_name": "ci-pipeline-eleva-labs-agentic-coding-templ",
+  "downloaded_at": "2026-02-22T07:03:45.313722Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "api-pagination",
+  "description": "Implements efficient API pagination using offset, cursor, and keyset strategies for large datasets. Use when building paginated endpoints, implementing infinite scroll, or optimizing database queries ",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/api-pagination/skills/api-pagination",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "api-pagination-secondsky-claude-skills-2"
+}

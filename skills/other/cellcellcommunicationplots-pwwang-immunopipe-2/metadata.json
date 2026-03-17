@@ -1,0 +1,11 @@
+{
+  "name": "cellcellcommunicationplots",
+  "description": "Visualize cell-cell communication inference results from CellCellCommunication process. Creates publication-ready network diagrams, heatmaps, and interaction plots to help interpret ligand-receptor in",
+  "repo": "pwwang/immunopipe",
+  "path": "skills/cellcellcommunicationplots",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pwwang/immunopipe",
+  "dir_name": "cellcellcommunicationplots-pwwang-immunopipe-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "stellogen",
+  "description": "Stellogen Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/stellogen",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "stellogen-plurigrid-asi-2"
+}

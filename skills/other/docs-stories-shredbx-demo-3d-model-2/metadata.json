@@ -1,0 +1,11 @@
+{
+  "name": "docs-stories",
+  "description": "Complete CRUD for SDLC documentation (stories, tasks, context retrieval). Use when creating/managing stories, creating/managing tasks, updating task state, or retrieving full context for any user stor",
+  "repo": "shredbx/demo-3d-model",
+  "path": ".claude/skills/docs-stories",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shredbx/demo-3d-model",
+  "dir_name": "docs-stories-shredbx-demo-3d-model-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "test-smart-contracts",
+  "description": "Testing patterns for Algorand smart contracts using generated clients and algorandFixture. Use when writing tests for smart contracts, setting up test fixtures and deployment, debugging failing tests,",
+  "repo": "gabrielkuettel/vibegallery",
+  "path": ".claude/skills/test-smart-contracts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gabrielkuettel/vibegallery",
+  "dir_name": "test-smart-contracts-gabrielkuettel-vibegallery-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "HelloAgents",
+  "description": "用于处理软件开发/维护类请求（常见说法包括但不限于：修改、修复 bug、新增功能、开发模块、重构/优化、补充/编写/运行测试、生成并执行计划）。会自动判定是问答/改动/命令（~auto/~plan/~exec/~init），并选择咨询问答/微调/轻量迭代/标准开发/完整研发路径；需要写入时生成方案包（why/how/task）、执行与验证、同步知识库（helloagents/wiki、CHANGE",
+  "repo": "pianzhu/my-claude-skills",
+  "path": "skills/HelloAgents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pianzhu/my-claude-skills",
+  "dir_name": "helloagents-pianzhu-my-claude-skills-2"
+}

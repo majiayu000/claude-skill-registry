@@ -1,0 +1,11 @@
+{
+  "name": "harness-api-operations",
+  "description": "Comprehensive guide for Harness Platform API authentication, rate limiting, error handling, and endpoint operations",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/tools/plugin-cli/infrastructure-template-generator/skills/harness-api-operations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "harness-api-operations-lobbi-docs-claude-2"
+}

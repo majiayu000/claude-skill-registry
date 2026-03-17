@@ -1,0 +1,11 @@
+{
+  "name": "kirby-routing-and-representations",
+  "description": "Implements custom Kirby routes and content representations (.json/.xml/.rss), including redirects, sitemap endpoints, and URL pattern filtering. Use when building endpoints, redirects, or representati",
+  "repo": "bnomei/kirby-mcp",
+  "path": "skills/kirby-routing-and-representations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bnomei/kirby-mcp",
+  "dir_name": "kirby-routing-and-representations-bnomei-kirby-mcp-2"
+}

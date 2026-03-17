@@ -1,0 +1,11 @@
+{
+  "name": "platforms",
+  "description": "Guide for multi-platform skill compatibility across Claude Code, Codex, Gemini CLI, Cursor, GitHub Copilot, and other AI coding agents.",
+  "repo": "gmh5225/awesome-skills",
+  "path": ".claude/skills/platforms",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gmh5225/awesome-skills",
+  "dir_name": "platforms-gmh5225-awesome-skills-2"
+}

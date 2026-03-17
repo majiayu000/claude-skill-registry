@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-112-project-core-creator",
+  "description": "Creates 3 core project docs (requirements.md, architecture.md, tech_stack.md). L3 Worker invoked by ln-110-project-docs-coordinator. ALWAYS created.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-112-project-core-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-112-project-core-creator-boisenoise-skills-collections-2"
+}

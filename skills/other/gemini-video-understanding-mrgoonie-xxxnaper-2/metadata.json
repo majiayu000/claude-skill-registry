@@ -1,0 +1,11 @@
+{
+  "name": "gemini-video-understanding",
+  "description": "Analyze videos using Google's Gemini API - describe content, answer questions, transcribe audio with visual descriptions, reference timestamps, clip videos, and process YouTube URLs. Supports 9 video ",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/gemini-video-understanding",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "gemini-video-understanding-mrgoonie-xxxnaper-2"
+}

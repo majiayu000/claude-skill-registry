@@ -1,0 +1,11 @@
+{
+  "name": "authz-bypass-hunter",
+  "description": "Hunt for authorization bypass vulnerabilities including IDOR, privilege escalation, missing access controls, broken object-level authorization. Use when auditing authentication/authorization code or A",
+  "repo": "MAF2414/kyco",
+  "path": ".claude/skills/authz-bypass-hunter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MAF2414/kyco",
+  "dir_name": "authz-bypass-hunter-maf2414-kyco-2"
+}

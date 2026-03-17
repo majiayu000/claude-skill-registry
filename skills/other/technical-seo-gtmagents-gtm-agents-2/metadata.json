@@ -1,0 +1,11 @@
+{
+  "name": "technical-seo",
+  "description": "Use when diagnosing crawl/index issues, performance regressions, or structured data gaps.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/seo/skills/technical-seo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "technical-seo-gtmagents-gtm-agents-2"
+}

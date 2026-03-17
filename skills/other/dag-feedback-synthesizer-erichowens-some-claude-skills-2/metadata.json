@@ -1,0 +1,11 @@
+{
+  "name": "dag-feedback-synthesizer",
+  "description": "Synthesizes actionable feedback from validation results, confidence scores, and iteration triggers. Creates structured improvement guidance for re-execution. Activate on 'synthesize feedback', 'improv",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-feedback-synthesizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-feedback-synthesizer-erichowens-some-claude-skills-2"
+}

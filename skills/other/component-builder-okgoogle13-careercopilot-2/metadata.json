@@ -1,0 +1,11 @@
+{
+  "name": "component-builder",
+  "description": "The core engine that generates production-ready, M3-compliant React components using MUI and Design Tokens. Use when creating new React components, building UI elements with Material Design 3, or scaf",
+  "repo": "okgoogle13/careercopilot",
+  "path": ".claude/skills/_legacy_archive/component-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/okgoogle13/careercopilot",
+  "dir_name": "component-builder-okgoogle13-careercopilot-2"
+}

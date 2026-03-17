@@ -1,0 +1,11 @@
+{
+  "name": "tidal-api",
+  "description": "Navigate the Tidal API specification (23,000+ lines OpenAPI spec). Use when implementing Tidal API integrations, adding new endpoints, or understanding API structure.",
+  "repo": "anton-pt/algojuke",
+  "path": ".claude/skills/tidal-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/anton-pt/algojuke",
+  "dir_name": "tidal-api-anton-pt-algojuke-2"
+}

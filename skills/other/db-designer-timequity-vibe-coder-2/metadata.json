@@ -1,0 +1,11 @@
+{
+  "name": "db-designer",
+  "description": "Generate database schema from feature descriptions. User doesn't see SQL.\nUse when: features require data persistence.\nTriggers: internal use only.",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/db-designer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "db-designer-timequity-vibe-coder-2"
+}

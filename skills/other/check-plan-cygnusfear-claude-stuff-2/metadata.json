@@ -1,0 +1,11 @@
+{
+  "name": "check-plan",
+  "description": "Audit implementation progress against a plan, verify completed work, identify remaining tasks, and validate quality. Use when user asks to check plan status, verify implementation, see what's left to ",
+  "repo": "Cygnusfear/claude-stuff",
+  "path": "skills/check-plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cygnusfear/claude-stuff",
+  "dir_name": "check-plan-cygnusfear-claude-stuff-2"
+}

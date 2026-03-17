@@ -1,0 +1,11 @@
+{
+  "name": "data-profiler",
+  "description": "Generate comprehensive data profiles for DataFrames. Use for EDA, data discovery, and understanding dataset characteristics.",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": "plugins/majestic-data/skills/data-profiler",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "dir_name": "data-profiler-majesticlabs-dev-majestic-marketplace-2"
+}

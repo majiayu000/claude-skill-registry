@@ -1,0 +1,11 @@
+{
+  "name": "copilot",
+  "description": "Hand off a task to GitHub Copilot.",
+  "repo": "mlflow/mlflow",
+  "path": ".claude/skills/copilot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mlflow/mlflow",
+  "dir_name": "copilot-mlflow-mlflow-2"
+}

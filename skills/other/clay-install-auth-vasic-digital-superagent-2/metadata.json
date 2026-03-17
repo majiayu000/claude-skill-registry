@@ -1,0 +1,11 @@
+{
+  "name": "clay-install-auth",
+  "description": "Install and configure Clay SDK/CLI authentication.\nUse when setting up a new Clay integration, configuring API keys,\nor initializing Clay in your project.\nTrigger with phrases like \"install clay\", \"se",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/clay-pack/clay-install-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "clay-install-auth-vasic-digital-superagent-2"
+}

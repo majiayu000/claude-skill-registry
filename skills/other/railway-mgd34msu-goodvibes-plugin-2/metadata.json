@@ -1,0 +1,11 @@
+{
+  "name": "railway",
+  "description": "Deploys applications on Railway with zero-config detection, databases, and automatic CI/CD. Use when deploying Node.js apps, setting up databases, or needing simple PaaS deployment.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/deployment/railway",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "railway-mgd34msu-goodvibes-plugin-2"
+}

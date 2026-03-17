@@ -1,0 +1,11 @@
+{
+  "name": "meta-cognition-parallel",
+  "description": "EXPERIMENTAL: Three-layer parallel meta-cognition analysis. Triggers on: /meta-parallel, 三层分析, parallel analysis, 并行元认知",
+  "repo": "ZhangHanDong/rust-skills",
+  "path": "skills/meta-cognition-parallel",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhangHanDong/rust-skills",
+  "dir_name": "meta-cognition-parallel-zhanghandong-rust-skills-2"
+}

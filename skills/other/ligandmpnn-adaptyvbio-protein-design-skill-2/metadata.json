@@ -1,0 +1,11 @@
+{
+  "name": "ligandmpnn",
+  "description": "Ligand-aware protein sequence design using LigandMPNN. Use this skill when: (1) Designing sequences around small molecules, (2) Enzyme active site design, (3) Ligand binding pocket optimization, (4) M",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/ligandmpnn",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "ligandmpnn-adaptyvbio-protein-design-skill-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "git-commit-writer",
+  "description": "Git 提交信息智能生成工具。基于 Claude 对代码改动和用户意图的深度分析，自动生成符合项目规范的 commit message，支持四层验证机制确保质量。",
+  "repo": "fsyyft-go/kratos-layout",
+  "path": ".claude/skills/git-commit-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fsyyft-go/kratos-layout",
+  "dir_name": "git-commit-writer-fsyyft-go-kratos-layout-2"
+}

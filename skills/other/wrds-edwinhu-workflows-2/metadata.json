@@ -1,0 +1,11 @@
+{
+  "name": "wrds",
+  "description": "This skill should be used when the user asks to \"query WRDS\", \"access Compustat\", \"get CRSP data\", \"pull Form 4 insider data\", \"query ISS compensation\", \"download SEC EDGAR filings\", \"get ExecuComp da",
+  "repo": "edwinhu/workflows",
+  "path": "skills/wrds",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "wrds-edwinhu-workflows-2"
+}

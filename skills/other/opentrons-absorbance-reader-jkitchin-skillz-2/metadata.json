@@ -1,0 +1,11 @@
+{
+  "name": "opentrons-absorbance-reader",
+  "description": "Opentrons Absorbance Plate Reader Module for Flex - on-deck microplate spectrophotometry with single/multi-wavelength reading (450, 562, 600, 650nm), automated lid control, and CSV data export for ELI",
+  "repo": "jkitchin/skillz",
+  "path": "skills/laboratory/opentrons-absorbance-reader",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jkitchin/skillz",
+  "dir_name": "opentrons-absorbance-reader-jkitchin-skillz-2"
+}

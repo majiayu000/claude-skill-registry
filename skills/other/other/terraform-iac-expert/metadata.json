@@ -1,0 +1,9 @@
+{
+  "name": "terraform-iac-expert",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/terraform-iac-expert/SKILL.md",
+  "category": "other",
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "terraform-iac-expert",
+  "downloaded_at": "2026-02-15T07:07:43.931630Z"
+}

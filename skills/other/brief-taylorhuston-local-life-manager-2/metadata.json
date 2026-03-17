@@ -1,0 +1,11 @@
+{
+  "name": "brief",
+  "description": "Create or update project brief through interactive discovery. Use when starting any new idea, revisiting an idea after time away, or when vision feels unclear.",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/brief",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "brief-taylorhuston-local-life-manager-2"
+}

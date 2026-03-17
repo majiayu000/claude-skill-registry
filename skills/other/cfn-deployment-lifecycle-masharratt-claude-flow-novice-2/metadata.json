@@ -1,0 +1,11 @@
+{
+  "name": "cfn-deployment-lifecycle",
+  "description": "Skill deployment and promotion lifecycle management. Use when transitioning skills from APPROVED to DEPLOYED status, or promoting skills from staging to production with SLA enforcement.",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-deployment-lifecycle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "cfn-deployment-lifecycle-masharratt-claude-flow-novice-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "create-hook",
+  "description": "Create Claude Code hooks with proper patterns, security best practices, and configuration. Use this skill when building PreToolUse, PostToolUse, SessionStart, or other hook types for plugins.",
+  "repo": "RBozydar/rbw-claude-code",
+  "path": "plugins/core/skills/create-hook",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RBozydar/rbw-claude-code",
+  "dir_name": "create-hook-rbozydar-rbw-claude-code-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "infrastructure",
+  "description": "Use this skill when designing or reviewing cloud infrastructure, networking, compute resources, storage systems, or any system involving resource provisioning and management. Applies infrastructure th",
+  "repo": "ragnarula/cc-plugins",
+  "path": "sdd/skills/infrastructure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ragnarula/cc-plugins",
+  "dir_name": "infrastructure-ragnarula-cc-plugins-2"
+}

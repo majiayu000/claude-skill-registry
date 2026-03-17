@@ -1,0 +1,11 @@
+{
+  "name": "jira-prepare",
+  "description": "Prepare a Jira task with enrichment and subtask creation. Use when the user wants to \"prepare task\", \"enrich issue\", \"create subtasks\", or \"prepare for development\".",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/jira-prepare",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "jira-prepare-lobbi-docs-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "adb-uiautomator",
+  "description": "Semantic UI element detection via uiautomator2",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".claude/skills/adb/adb-foundation/adb-uiautomator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "dir_name": "adb-uiautomator-rdmptv-adbautoplayer-2"
+}

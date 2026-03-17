@@ -1,0 +1,11 @@
+{
+  "name": "test-controller",
+  "description": "Test controllers that handle HTTP requests. Use when testing controller methods that call services and return responses. Triggers on \"test controller\", \"test note controller\".",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/test-controller",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "test-controller-madooei-backend-template-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ascii-art-explainer",
+  "description": "USE WHEN: visualizing algorithms, data structures, architecture, control flow with ASCII art, or when terminal-friendly diagrams are needed.\nDO NOT USE WHEN: Mermaid diagrams are better suited, rich g",
+  "repo": "mahidalhan/claude-hacks",
+  "path": "skills/ascii-art-explainer/skills/ascii-art-explainer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mahidalhan/claude-hacks",
+  "dir_name": "ascii-art-explainer-mahidalhan-claude-hacks-2"
+}

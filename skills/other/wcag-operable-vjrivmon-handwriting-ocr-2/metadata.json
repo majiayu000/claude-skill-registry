@@ -1,0 +1,11 @@
+{
+  "name": "wcag-operable",
+  "description": "Principio 2 de WCAG - interfaces operables por todos. Use cuando diseñe navegación, interacciones, o cualquier componente que requiera input del usuario.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/accessibility/wcag-operable",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "wcag-operable-vjrivmon-handwriting-ocr-2"
+}

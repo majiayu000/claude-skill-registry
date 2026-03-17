@@ -1,0 +1,11 @@
+{
+  "name": "performance-test",
+  "description": "Performance Test Agent. 성능 테스트 계획 및 실행을 담당합니다. Load Test, Lighthouse, Core Web Vitals 측정을 수행합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/performance-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "performance-test-shaul1991-shaul-agents-plugin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "octave-mastery",
+  "description": "Advanced semantic vocabulary and architectural patterns for the OCTAVE format. REQUIRES octave-literacy to be loaded first",
+  "repo": "elevanaltd/octave-mcp",
+  "path": "src/octave_mcp/resources/skills/octave-mastery",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/elevanaltd/octave-mcp",
+  "dir_name": "octave-mastery-elevanaltd-octave-mcp-2"
+}

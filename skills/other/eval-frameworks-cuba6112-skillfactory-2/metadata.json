@@ -1,0 +1,11 @@
+{
+  "name": "eval-frameworks",
+  "description": "Traditional software metrics (accuracy, F1) fail to capture the quality of LLM outputs. Evaluation frameworks like Ragas and DeepEval use \"LLM-as-a-judge\" to quantify subjective qualities like faithfu",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/eval-frameworks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "eval-frameworks-cuba6112-skillfactory-2"
+}

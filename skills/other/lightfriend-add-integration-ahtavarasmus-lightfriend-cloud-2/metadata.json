@@ -1,0 +1,11 @@
+{
+  "name": "lightfriend-add-integration",
+  "description": "Step-by-step guide for adding new OAuth integrations to Lightfriend",
+  "repo": "ahtavarasmus/lightfriend-cloud",
+  "path": ".claude/skills/lightfriend-add-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ahtavarasmus/lightfriend-cloud",
+  "dir_name": "lightfriend-add-integration-ahtavarasmus-lightfriend-cloud-2"
+}

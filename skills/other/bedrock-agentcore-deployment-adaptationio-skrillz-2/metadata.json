@@ -1,0 +1,11 @@
+{
+  "name": "bedrock-agentcore-deployment",
+  "description": "Amazon Bedrock AgentCore deployment patterns for production AI agents. Covers starter toolkit, direct code deploy, container deploy, CI/CD pipelines, and infrastructure as code. Use when deploying age",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/bedrock-agentcore-deployment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "bedrock-agentcore-deployment-adaptationio-skrillz-2"
+}

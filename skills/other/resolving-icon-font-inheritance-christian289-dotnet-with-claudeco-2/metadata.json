@@ -1,0 +1,11 @@
+{
+  "name": "resolving-icon-font-inheritance",
+  "description": "Resolves text font inheritance issues when using Segoe Fluent Icons in WPF CustomControl. Use when TextBlocks inherit icon fonts unexpectedly within ControlTemplate.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/resolving-icon-font-inheritance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "resolving-icon-font-inheritance-christian289-dotnet-with-claudeco-2"
+}

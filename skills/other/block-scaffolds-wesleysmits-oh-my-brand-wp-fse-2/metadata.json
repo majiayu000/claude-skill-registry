@@ -1,0 +1,11 @@
+{
+  "name": "block-scaffolds",
+  "description": "Copy-paste scaffolds for Oh My Brand! blocks. Templates for block.json, render.php, helpers.php, view.ts, style.css, and tests. Use when creating new blocks.",
+  "repo": "WesleySmits/oh-my-brand-wp-fse",
+  "path": ".github/skills/block-scaffolds",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/oh-my-brand-wp-fse",
+  "dir_name": "block-scaffolds-wesleysmits-oh-my-brand-wp-fse-2"
+}

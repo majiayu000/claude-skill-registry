@@ -1,0 +1,11 @@
+{
+  "name": "validate-workflow",
+  "description": "Validate GitHub Actions workflow files for syntax, best practices, and correctness. Use before committing workflow changes or when workflows fail.",
+  "repo": "mvillmow/ProjectOdyssey",
+  "path": ".claude/skills/validate-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mvillmow/ProjectOdyssey",
+  "dir_name": "validate-workflow-mvillmow-projectodyssey-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ghe-checkpoint",
+  "description": "POST a progress checkpoint to the CURRENTLY ACTIVE thread. Saves work state without changing phases. Requires an already-claimed in-progress thread.\n\nUSE THIS SKILL WHEN:\n- User says \"post a checkpoin",
+  "repo": "Emasoft/ghe-marketplace",
+  "path": "plugins/ghe/skills/ghe-checkpoint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Emasoft/ghe-marketplace",
+  "dir_name": "ghe-checkpoint-emasoft-ghe-marketplace-2"
+}

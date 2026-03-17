@@ -1,0 +1,11 @@
+{
+  "name": "design-scalardb-analytics",
+  "description": "ScalarDB Analytics設計エージェント - ScalarDB Analyticsを使用した分析基盤の設計。Apache Sparkベースの分析クエリ、マルチDB横断分析を策定。/design-scalardb-analytics [対象パス] で呼び出し。",
+  "repo": "wfukatsu/refactoring-agent-for-claude-code",
+  "path": ".claude/skills/design-scalardb-analytics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wfukatsu/refactoring-agent-for-claude-code",
+  "dir_name": "design-scalardb-analytics-wfukatsu-refactoring-agent-fo-2"
+}

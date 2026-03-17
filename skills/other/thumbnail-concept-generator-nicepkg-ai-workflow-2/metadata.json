@@ -1,0 +1,11 @@
+{
+  "name": "thumbnail-concept-generator",
+  "description": "Generate thumbnail concepts and ideas for YouTube, TikTok, and other video platforms. Creates detailed visual briefs with composition, text, colors, and emotion suggestions. Use when planning thumbnai",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/video-creator-workflow/.claude/skills/thumbnail-concept-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "thumbnail-concept-generator-nicepkg-ai-workflow-2"
+}

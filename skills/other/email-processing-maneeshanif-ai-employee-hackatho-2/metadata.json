@@ -1,0 +1,11 @@
+{
+  "name": "email-processing",
+  "description": "Handles Gmail integration, email parsing, drafting, and sending workflows. Use when processing emails, composing responses, managing email threads, or integrating with Gmail API.",
+  "repo": "maneeshanif/AI-Employee-Hackathon-spec-driven",
+  "path": ".claude/skills/email-processing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/AI-Employee-Hackathon-spec-driven",
+  "dir_name": "email-processing-maneeshanif-ai-employee-hackatho-2"
+}

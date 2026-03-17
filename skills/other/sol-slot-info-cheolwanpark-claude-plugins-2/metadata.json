@@ -1,0 +1,11 @@
+{
+  "name": "sol-slot-info",
+  "description": "Use this skill when the user asks \"solana slot\", \"current slot\", \"sol block\", \"latest slot\", \"epoch info\", or mentions checking slot/block info on Solana. Optional slot number and chain parameter.",
+  "repo": "cheolwanpark/claude-plugins",
+  "path": "plugins/crypto/skills/sol-slot-info",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cheolwanpark/claude-plugins",
+  "dir_name": "sol-slot-info-cheolwanpark-claude-plugins-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "config-hygiene",
+  "description": "Fixes configuration hygiene issues including gitignore patterns, ESLint config duplication, and hook scripts. Use when encountering backup files in repo, missing gitignore patterns, or config maintena",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/common/review/config-hygiene",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "config-hygiene-mgd34msu-goodvibes-plugin-2"
+}

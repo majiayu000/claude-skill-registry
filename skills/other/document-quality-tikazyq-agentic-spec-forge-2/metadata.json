@@ -1,0 +1,11 @@
+{
+  "name": "document-quality",
+  "description": "多维度审查 Markdown 文档质量，覆盖结构、内容、格式、引用、元数据五大维度。当需要评审文档质量、统一格式规范、验收交付文档时使用。提供分级检查清单、通过标准、常见问题修复指南，支持从快速检查到深度审计的多层次需求。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/common_normal/document-quality",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "document-quality-tikazyq-agentic-spec-forge-2"
+}

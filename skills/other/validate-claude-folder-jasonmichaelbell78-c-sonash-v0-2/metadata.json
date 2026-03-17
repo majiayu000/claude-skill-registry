@@ -1,0 +1,11 @@
+{
+  "name": "validate-claude-folder",
+  "description": "Validate .claude folder configuration consistency",
+  "repo": "jasonmichaelbell78-creator/sonash-v0",
+  "path": ".claude/skills/validate-claude-folder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonmichaelbell78-creator/sonash-v0",
+  "dir_name": "validate-claude-folder-jasonmichaelbell78-c-sonash-v0-2"
+}

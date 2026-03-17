@@ -1,0 +1,11 @@
+{
+  "name": "vibe-research",
+  "description": "Deep research and market validation for app ideas. Use when starting a new project, validating an idea, or when the user says \"research my idea\", \"validate my app\", or \"help me start a new project\".",
+  "repo": "KhazP/vibe-coding-prompt-template",
+  "path": ".claude/skills/vibe-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KhazP/vibe-coding-prompt-template",
+  "dir_name": "vibe-research-khazp-vibe-coding-prompt-t-2"
+}

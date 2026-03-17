@@ -1,0 +1,11 @@
+{
+  "name": "typescript-debugging",
+  "description": "TypeScript errors can cascade and become confusing. This skill covers the most common patterns in StepLeague.",
+  "repo": "vassovass/scl-v3",
+  "path": ".claude/skills/typescript-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vassovass/scl-v3",
+  "dir_name": "typescript-debugging-vassovass-scl-v3-2"
+}

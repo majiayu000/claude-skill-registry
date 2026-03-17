@@ -1,0 +1,11 @@
+{
+  "name": "bookkeeper",
+  "description": "Manage bookkeeping tasks using the Layer API. Use for journal entries, account management, financial reports (P&L, balance sheet), ledger accounts, and categorizing transactions. Invoke when users men",
+  "repo": "Layer-Fi/bookkeeper-skill",
+  "path": "skills/bookkeeper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Layer-Fi/bookkeeper-skill",
+  "dir_name": "bookkeeper-layer-fi-bookkeeper-skill-2"
+}

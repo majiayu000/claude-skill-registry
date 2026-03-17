@@ -1,0 +1,11 @@
+{
+  "name": "unity-performance",
+  "description": "Optimize Unity game performance through profiling, draw call reduction, and resource management. Masters batching, LOD, occlusion culling, and mobile optimization. Use for performance bottlenecks, fra",
+  "repo": "creator-hian/claude-code-plugins",
+  "path": "unity-plugin/skills/unity-performance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/creator-hian/claude-code-plugins",
+  "dir_name": "unity-performance-creator-hian-claude-code-plugins-2"
+}

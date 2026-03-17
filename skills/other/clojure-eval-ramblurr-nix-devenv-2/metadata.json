@@ -1,0 +1,11 @@
+{
+  "name": "clojure-eval",
+  "description": "Use this skill BEFORE using writing any Clojure code. It teaches how to use the Clojure REPL (via brepl) so you can test code, check if edited files compile, verify function behavior, or interact with",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/clojure-eval",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "clojure-eval-ramblurr-nix-devenv-2"
+}

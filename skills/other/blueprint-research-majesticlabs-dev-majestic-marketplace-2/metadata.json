@@ -1,0 +1,11 @@
+{
+  "name": "blueprint-research",
+  "description": "Research phase for blueprint workflow - toolbox resolution, lessons discovery, and parallel research agents",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": "plugins/majestic-engineer/skills/blueprint-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "dir_name": "blueprint-research-majesticlabs-dev-majestic-marketplace-2"
+}

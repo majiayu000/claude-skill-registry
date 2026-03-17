@@ -1,0 +1,11 @@
+{
+  "name": "aws-ai-services",
+  "description": "Build AI applications on AWS using Bedrock, SageMaker, and AI/ML services with best practices for enterprise deployment",
+  "repo": "frankxai/ai-architect",
+  "path": "skills/aws-ai-services",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/ai-architect",
+  "dir_name": "aws-ai-services-frankxai-ai-architect-2"
+}

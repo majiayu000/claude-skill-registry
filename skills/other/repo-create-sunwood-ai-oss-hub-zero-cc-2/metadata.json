@@ -1,0 +1,11 @@
+{
+  "name": "repo-create",
+  "description": "GitHubリポジトリを新規作成・初期化。ghコマンド使用。\nトリガー例: 「リポジトリを作成」「GitHubリポジトリ」「repo-create」「gh repo create」\n",
+  "repo": "Sunwood-AI-OSS-Hub/zero-cc",
+  "path": ".claude/skills/repo-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sunwood-AI-OSS-Hub/zero-cc",
+  "dir_name": "repo-create-sunwood-ai-oss-hub-zero-cc-2"
+}

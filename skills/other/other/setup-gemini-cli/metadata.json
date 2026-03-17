@@ -1,0 +1,9 @@
+{
+  "name": "setup-gemini-cli",
+  "repo": "google/mcp-security",
+  "path": "extensions/google-secops/skills/setup-gemini-cli/SKILL.md",
+  "category": "other",
+  "source": "github.com/google/mcp-security",
+  "dir_name": "setup-gemini-cli",
+  "downloaded_at": "2026-02-22T07:20:31.653059Z"
+}

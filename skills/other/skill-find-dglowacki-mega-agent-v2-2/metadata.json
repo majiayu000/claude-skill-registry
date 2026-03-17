@@ -1,0 +1,11 @@
+{
+  "name": "skill-find",
+  "description": "Find and install skills from SkillsMP marketplace (skillsmp.com). Use when users want to discover new skills, search for capabilities, or install skills from the marketplace. Supports keyword search a",
+  "repo": "dglowacki/mega-agent-v2",
+  "path": ".claude/skills/skill-find",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dglowacki/mega-agent-v2",
+  "dir_name": "skill-find-dglowacki-mega-agent-v2-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "mapping-codebases",
+  "description": "Generate navigable code maps for unfamiliar codebases. Use when exploring a new codebase, needing to understand project structure, or before diving into code modifications. Extracts exports/imports vi",
+  "repo": "oaustegard/claude-skills",
+  "path": "mapping-codebases",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "mapping-codebases-oaustegard-claude-skills-2"
+}

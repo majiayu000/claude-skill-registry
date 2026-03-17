@@ -1,0 +1,11 @@
+{
+  "name": "api-filtering-sorting",
+  "description": "Builds flexible API filtering and sorting systems with query parameter parsing, validation, and security. Use when implementing search endpoints, building data grids, or creating dynamic query APIs.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/api-filtering-sorting/skills/api-filtering-sorting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "api-filtering-sorting-secondsky-claude-skills-2"
+}

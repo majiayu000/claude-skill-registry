@@ -1,0 +1,11 @@
+{
+  "name": "issue",
+  "description": "Create and update GitHub issues. Triggers on \"create issue\", \"file issue\", \"open issue\", \"new issue\", \"report bug\", \"request feature\", \"track this\", \"create epic\", \"create theme\", \"update issue\", \"che",
+  "repo": "zeroae/zae-limiter",
+  "path": ".claude/skills/issue",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zeroae/zae-limiter",
+  "dir_name": "issue-zeroae-zae-limiter-2"
+}

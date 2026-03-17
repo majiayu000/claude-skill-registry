@@ -1,0 +1,11 @@
+{
+  "name": "dongshan_next_map",
+  "description": "Expert guide for developing the Dongshan Next Map LBS game, covering 3-layer architecture, Zustand state management, custom Systems (LBS, Save, Quest), and HUD development.",
+  "repo": "JasonLinn/dongshan-next-map",
+  "path": "skills/dongshan_next_map",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JasonLinn/dongshan-next-map",
+  "dir_name": "dongshan-next-map-jasonlinn-dongshan-next-map-2"
+}

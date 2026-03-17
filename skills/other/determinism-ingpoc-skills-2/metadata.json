@@ -1,0 +1,11 @@
+{
+  "name": "determinism",
+  "description": "Use when verifying outcomes with code instead of LLM judgment, versioning prompts with hashes, or ensuring reproducible agent behavior. Load for any critical verification. Scripts return boolean exit ",
+  "repo": "ingpoc/SKILLS",
+  "path": "determinism",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ingpoc/SKILLS",
+  "dir_name": "determinism-ingpoc-skills-2"
+}

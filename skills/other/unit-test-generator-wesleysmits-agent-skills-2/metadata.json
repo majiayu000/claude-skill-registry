@@ -1,0 +1,11 @@
+{
+  "name": "unit-test-generator",
+  "description": "Generates unit tests for changed files and identifies coverage gaps. Use when the user asks to write tests, generate test suites, check coverage, or mentions Jest, Vitest, Playwright, or Mocha.",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/unit-test-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "unit-test-generator-wesleysmits-agent-skills-2"
+}

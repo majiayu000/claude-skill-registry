@@ -1,0 +1,11 @@
+{
+  "name": "causal-tracing",
+  "description": "Causal mediation analysis to identify which model components mediate specific behaviors. Use when investigating how information flows through the network and which neurons or layers are causally respo",
+  "repo": "ndif-team/skills",
+  "path": "plugins/nnsight/skills/causal-tracing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ndif-team/skills",
+  "dir_name": "causal-tracing-ndif-team-skills-2"
+}

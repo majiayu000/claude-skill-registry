@@ -1,0 +1,11 @@
+{
+  "name": "granola",
+  "description": "Access Granola meeting transcripts and notes.",
+  "repo": "clawdbot/skills",
+  "path": "skills/scald/granola",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "granola-clawdbot-skills-2"
+}

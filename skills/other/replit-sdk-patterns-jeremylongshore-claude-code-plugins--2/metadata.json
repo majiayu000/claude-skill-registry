@@ -1,0 +1,11 @@
+{
+  "name": "replit-sdk-patterns",
+  "description": "Apply production-ready Replit SDK patterns for TypeScript and Python.\nUse when implementing Replit integrations, refactoring SDK usage,\nor establishing team coding standards for Replit.\nTrigger with p",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/replit-pack/skills/replit-sdk-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "replit-sdk-patterns-jeremylongshore-claude-code-plugins--2"
+}

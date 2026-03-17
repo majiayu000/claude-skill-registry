@@ -1,0 +1,11 @@
+{
+  "name": "python-uv",
+  "description": "Run Python scripts with automatic dependency management using uv. Use this skill when you need to (1) run Python scripts with external dependencies without polluting system Python, (2) create standalo",
+  "repo": "emliunix/home.conf",
+  "path": "skills/python-uv",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/emliunix/home.conf",
+  "dir_name": "python-uv-emliunix-home-conf-2"
+}

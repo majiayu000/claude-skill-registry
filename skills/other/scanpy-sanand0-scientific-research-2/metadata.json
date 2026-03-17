@@ -1,0 +1,11 @@
+{
+  "name": "scanpy",
+  "description": "Single-cell RNA-seq analysis. Load .h5ad/10X data, QC, normalization, PCA/UMAP/t-SNE, Leiden clustering, marker genes, cell type annotation, trajectory, for scRNA-seq analysis.",
+  "repo": "sanand0/scientific-research",
+  "path": ".claude/skills/scanpy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sanand0/scientific-research",
+  "dir_name": "scanpy-sanand0-scientific-research-2"
+}

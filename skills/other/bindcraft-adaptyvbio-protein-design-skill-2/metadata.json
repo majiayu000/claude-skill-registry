@@ -1,0 +1,11 @@
+{
+  "name": "bindcraft",
+  "description": "End-to-end binder design using BindCraft hallucination. Use this skill when: (1) Designing protein binders with built-in AF2 validation, (2) Running production-quality binder campaigns, (3) Using diff",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/bindcraft",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "bindcraft-adaptyvbio-protein-design-skill-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "bwa-alignment",
+  "description": "Align DNA short reads to reference genomes using bwa-mem2, the faster successor to BWA-MEM. Use for whole genome sequencing, exome sequencing, and ChIP-seq alignment.",
+  "repo": "GPTomics/bioSkills",
+  "path": "read-alignment/bwa-alignment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "bwa-alignment-gptomics-bioskills-2"
+}

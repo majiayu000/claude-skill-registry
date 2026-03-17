@@ -1,0 +1,11 @@
+{
+  "name": "skills-guide",
+  "description": "プロジェクト内の利用可能なスキル一覧と使い方を案内するスキル。「どんなスキルがある？」「スキル一覧を見せて」「〇〇スキルって何？」「何ができる？」「使えるコマンドは？」などの質問に使用。各スキルの目的・使い方・トリガーワードを説明する。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".github/skills/skills-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "skills-guide-yuch4-dx-selecta-2"
+}

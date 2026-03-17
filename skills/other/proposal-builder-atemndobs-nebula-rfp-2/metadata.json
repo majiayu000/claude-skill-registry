@@ -1,0 +1,11 @@
+{
+  "name": "proposal-builder",
+  "description": "Assemble proposals from templates and content library. Use when implementing proposal generation, managing content blocks, or working with proposal templates.",
+  "repo": "Atemndobs/nebula-rfp",
+  "path": ".claude/skills/proposal-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Atemndobs/nebula-rfp",
+  "dir_name": "proposal-builder-atemndobs-nebula-rfp-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "helm-release-force-rerender",
+  "repo": "ViktorBarzin/infra",
+  "path": ".claude/skills/helm-release-force-rerender/SKILL.md",
+  "category": "other",
+  "source": "github.com/ViktorBarzin/infra",
+  "dir_name": "helm-release-force-rerender",
+  "downloaded_at": "2026-02-22T05:54:23.951149Z"
+}

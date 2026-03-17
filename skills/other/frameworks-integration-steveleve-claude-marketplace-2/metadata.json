@@ -1,0 +1,11 @@
+{
+  "name": "frameworks-integration",
+  "description": "Use when asking about \"Hono\", \"itty-router\", \"routing frameworks\", \"middleware\", \"API framework\", \"web framework for Workers\", \"request routing\", \"Express-like\", or choosing between web frameworks for",
+  "repo": "SteveLeve/claude-marketplace",
+  "path": "plugins/cloudflare-expert/skills/frameworks-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SteveLeve/claude-marketplace",
+  "dir_name": "frameworks-integration-steveleve-claude-marketplace-2"
+}

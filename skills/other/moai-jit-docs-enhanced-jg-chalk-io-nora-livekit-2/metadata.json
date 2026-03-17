@@ -1,0 +1,11 @@
+{
+  "name": "moai-jit-docs-enhanced",
+  "description": "Enhanced Just-In-Time document loading system that intelligently discovers, loads, and caches relevant documentation based on user intent and project context. Use when users need specific documentatio",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-jit-docs-enhanced",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-jit-docs-enhanced-jg-chalk-io-nora-livekit-2"
+}

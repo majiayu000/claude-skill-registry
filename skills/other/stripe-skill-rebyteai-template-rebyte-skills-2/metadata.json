@@ -1,0 +1,11 @@
+{
+  "name": "stripe-skill",
+  "description": "Guide for integrating Stripe payments into an existing project. Covers one-time payments, subscriptions, and advanced patterns with security best practices.",
+  "repo": "rebyteai-template/rebyte-skills",
+  "path": "common/stripe-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rebyteai-template/rebyte-skills",
+  "dir_name": "stripe-skill-rebyteai-template-rebyte-skills-2"
+}

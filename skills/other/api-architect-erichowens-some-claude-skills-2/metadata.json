@@ -1,0 +1,11 @@
+{
+  "name": "api-architect",
+  "description": "Expert API designer for REST, GraphQL, gRPC architectures. Activate on: API design, REST API, GraphQL schema, gRPC service, OpenAPI, Swagger, API versioning, endpoint design, rate limiting, OAuth flow",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/api-architect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "api-architect-erichowens-some-claude-skills-2"
+}

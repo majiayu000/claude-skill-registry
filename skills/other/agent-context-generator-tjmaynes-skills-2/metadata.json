@@ -1,0 +1,11 @@
+{
+  "name": "agent-context-generator",
+  "description": "Generate project-level AGENTS.md guides that capture conventions, workflows, and required follow-up tasks. Use when a repository needs clear agent onboarding covering structure, tooling, testing, task",
+  "repo": "tjmaynes/skills",
+  "path": "skills/agent-context-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tjmaynes/skills",
+  "dir_name": "agent-context-generator-tjmaynes-skills-2"
+}

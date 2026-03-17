@@ -1,0 +1,11 @@
+{
+  "name": "git-branch-cleanup",
+  "description": "Analyzes and safely cleans up local Git branches. Categorizes branches by merge status,\nstaleness, and remote tracking. Provides interactive selection with safety guards.\nUse when the user wants to cl",
+  "repo": "gotalab/skillport",
+  "path": ".skills/experimental/git-branch-cleanup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gotalab/skillport",
+  "dir_name": "git-branch-cleanup-gotalab-skillport-2"
+}

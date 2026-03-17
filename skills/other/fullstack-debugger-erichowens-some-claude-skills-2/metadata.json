@@ -1,0 +1,11 @@
+{
+  "name": "fullstack-debugger",
+  "description": "Expert debugger for Next.js + Cloudflare Workers + Supabase stacks. Systematic troubleshooting for auth, caching, workers, RLS, CORS, and build issues. Activate on: 'debug', 'not working', 'error', 'b",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/fullstack-debugger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "fullstack-debugger-erichowens-some-claude-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "entity-first",
+  "description": "Entity<T> patterns, GUID v7 auto-generation, static methods vs manual repositories",
+  "repo": "sylin-org/koan-framework",
+  "path": ".claude/skills/entity-first",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sylin-org/koan-framework",
+  "dir_name": "entity-first-sylin-org-koan-framework-2"
+}

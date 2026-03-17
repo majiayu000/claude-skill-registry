@@ -1,0 +1,11 @@
+{
+  "name": "responsive-images",
+  "description": "Implement performant responsive images with srcset, sizes, lazy loading, and modern formats (WebP, AVIF). Covers aspect-ratio for CLS prevention, picture element for art direction, and fetchpriority f",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/responsive-images",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "responsive-images-jezweb-claude-skills-2"
+}

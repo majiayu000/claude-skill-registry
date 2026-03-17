@@ -1,0 +1,11 @@
+{
+  "name": "scaffold-component",
+  "description": "Scaffold a new presentational (dumb) component inside an existing feature module, with optional state variants, using shadcn/ui primitives.",
+  "repo": "mcgaryes/nextjs-template",
+  "path": ".claude/skills/scaffold-component",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mcgaryes/nextjs-template",
+  "dir_name": "scaffold-component-mcgaryes-nextjs-template-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "create-standard-component",
+  "description": "표준 RNBT 컴포넌트를 생성합니다. 페이지가 GlobalDataPublisher로 데이터를 제어합니다.",
+  "repo": "JSKIM-90/WEB_BUILDER_TOOLKIT",
+  "path": ".claude/skills/2-component/create-standard-component",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JSKIM-90/WEB_BUILDER_TOOLKIT",
+  "dir_name": "create-standard-component-jskim-90-web-builder-toolkit-2"
+}

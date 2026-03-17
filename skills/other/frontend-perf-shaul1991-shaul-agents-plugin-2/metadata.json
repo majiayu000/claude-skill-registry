@@ -1,0 +1,11 @@
+{
+  "name": "frontend-perf",
+  "description": "성능 최적화 에이전트. 프론트엔드 성능을 분석하고 최적화합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/frontend-perf",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "frontend-perf-shaul1991-shaul-agents-plugin-2"
+}

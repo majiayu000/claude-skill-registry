@@ -1,0 +1,17 @@
+{
+  "name": "shorts-video-maker",
+  "repo": "gaegulgaegul/gaegulzip",
+  "path": ".claude/skills/shorts-video-maker/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gaegulgaegul/gaegulzip",
+  "dir_name": "shorts-video-maker",
+  "downloaded_at": "2026-03-01T07:49:05.350860Z",
+  "author": "gaegulgaegul",
+  "source_url": "https://github.com/gaegulgaegul/gaegulzip/blob/main/.claude/skills/shorts-video-maker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gaegulgaegul/gaegulzip/blob/main/.claude/skills/shorts-video-maker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

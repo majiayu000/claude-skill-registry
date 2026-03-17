@@ -1,0 +1,11 @@
+{
+  "name": "daily-morning-routine-base",
+  "description": "Framework for starting new daily chat with gentle context loading from previous session's summary. Use when user says \"good morning\", starts new chat with minimal prompt, or explicitly requests mornin",
+  "repo": "ZachBeta/claude-as-coach",
+  "path": "skills/daily-morning-routine-base",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZachBeta/claude-as-coach",
+  "dir_name": "daily-morning-routine-base-zachbeta-claude-as-coach-2"
+}

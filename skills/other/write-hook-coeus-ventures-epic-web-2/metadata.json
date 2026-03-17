@@ -1,0 +1,11 @@
+{
+  "name": "write-hook",
+  "description": "Write React hooks following the Epic architecture patterns. Use when creating custom hooks for state management, server action calls, optimistic updates, and validation. Triggers on \"create a hook\", \"",
+  "repo": "coeus-ventures/epic-web",
+  "path": ".claude/skills/write-hook",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/coeus-ventures/epic-web",
+  "dir_name": "write-hook-coeus-ventures-epic-web-2"
+}

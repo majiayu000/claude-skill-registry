@@ -1,0 +1,11 @@
+{
+  "name": "technical-documentation-authoring",
+  "description": "Create or augment technical documentation. Use when writing new skills, updating existing skills. Also use when modifying project documentation like AGENTS.md.",
+  "repo": "paleo/alignfirst",
+  "path": "skills/technical-documentation-authoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/paleo/alignfirst",
+  "dir_name": "technical-documentation-authoring-paleo-alignfirst-2"
+}

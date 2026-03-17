@@ -1,0 +1,11 @@
+{
+  "name": "gemini-3-multimodal",
+  "description": "Process multimodal inputs (images, video, audio, PDFs) with Gemini 3 Pro. Covers image understanding, video analysis, audio processing, document extraction, media resolution control, OCR, and token op",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/gemini-3-multimodal",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "gemini-3-multimodal-adaptationio-skrillz-2"
+}

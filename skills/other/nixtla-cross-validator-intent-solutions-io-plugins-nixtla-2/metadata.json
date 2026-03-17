@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-cross-validator",
+  "description": "Performs rigorous time series cross-validation using expanding and sliding windows. Use when needing to evaluate the performance of time series models on unseen data. Trigger with cross validate time ",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "000-docs/000a-planned-skills/core-forecasting/nixtla-cross-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-cross-validator-intent-solutions-io-plugins-nixtla-2"
+}

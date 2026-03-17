@@ -1,0 +1,11 @@
+{
+  "name": "osgrep-skill",
+  "description": "Semantic search for local files. Backed by a background osgrep server with live indexing. Always use osgrep instead of grep/find.",
+  "repo": "pr-pm/prpm",
+  "path": ".claude/skills/osgrep-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pr-pm/prpm",
+  "dir_name": "osgrep-skill-pr-pm-prpm-2"
+}

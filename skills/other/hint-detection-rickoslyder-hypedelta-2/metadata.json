@@ -1,0 +1,11 @@
+{
+  "name": "hint-detection",
+  "description": "Detect hints about unreleased AI research or capabilities from lab researcher communications. Use when analyzing tweets, posts, or interviews from people at major AI labs to identify signals about upc",
+  "repo": "rickoslyder/HypeDelta",
+  "path": ".claude/skills/hint-detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rickoslyder/HypeDelta",
+  "dir_name": "hint-detection-rickoslyder-hypedelta-2"
+}

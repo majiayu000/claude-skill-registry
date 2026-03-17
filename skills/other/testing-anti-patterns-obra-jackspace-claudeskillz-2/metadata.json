@@ -1,0 +1,11 @@
+{
+  "name": "testing-anti-patterns_obra",
+  "description": "Use when writing or changing tests, adding mocks, or tempted to add test-only methods to production code - prevents testing mock behavior, production pollution with test-only methods, and mocking with",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/testing-anti-patterns_obra",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "testing-anti-patterns-obra-jackspace-claudeskillz-2"
+}

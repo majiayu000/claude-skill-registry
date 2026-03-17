@@ -1,0 +1,11 @@
+{
+  "name": "rp-explorer",
+  "description": "Token-efficient codebase exploration using RepoPrompt - USE FIRST for brownfield projects",
+  "repo": "tfunk1030/vibe",
+  "path": ".claude/skills/rp-explorer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tfunk1030/vibe",
+  "dir_name": "rp-explorer-tfunk1030-vibe-2"
+}

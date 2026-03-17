@@ -1,0 +1,11 @@
+{
+  "name": "template-new-claude-code-plugin",
+  "description": "Extract data from files related to SANS courses.",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".claude/.wip/skills/template-new-claude-code-plugin",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "template-new-claude-code-plugin-arustydev-dotfiles-2"
+}

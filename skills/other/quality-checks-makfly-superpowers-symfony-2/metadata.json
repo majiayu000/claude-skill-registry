@@ -1,0 +1,11 @@
+{
+  "name": "quality-checks",
+  "description": "Use when symfony quality checks",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/quality-checks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "quality-checks-makfly-superpowers-symfony-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sast-runner",
+  "description": "Runs Static Application Security Testing (SAST) using Semgrep. Scans source code for vulnerabilities, security anti-patterns, and OWASP Top 10 issues. Use when user asks to \"run SAST\", \"scan for vulne",
+  "repo": "naporin0624/claude-web-audit-plugins",
+  "path": "skills/sast-runner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/naporin0624/claude-web-audit-plugins",
+  "dir_name": "sast-runner-naporin0624-claude-web-audit-plu-2"
+}

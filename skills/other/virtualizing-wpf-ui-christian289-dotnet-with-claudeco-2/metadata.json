@@ -1,0 +1,11 @@
+{
+  "name": "virtualizing-wpf-ui",
+  "description": "Implements WPF UI virtualization for large data sets using VirtualizingStackPanel. Use when displaying 1000+ items in ItemsControl, ListView, or DataGrid to prevent memory and performance issues.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/virtualizing-wpf-ui",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "virtualizing-wpf-ui-christian289-dotnet-with-claudeco-2"
+}

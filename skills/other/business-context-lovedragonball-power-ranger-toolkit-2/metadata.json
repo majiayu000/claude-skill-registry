@@ -1,0 +1,11 @@
+{
+  "name": "business-context",
+  "description": "This skill helps understand business requirements, user personas, market positioning, and translate them into technical decisions.",
+  "repo": "lovedragonball/power-ranger-toolkit",
+  "path": "src/skills/business-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lovedragonball/power-ranger-toolkit",
+  "dir_name": "business-context-lovedragonball-power-ranger-toolkit-2"
+}

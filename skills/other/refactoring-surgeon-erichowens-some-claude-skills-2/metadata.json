@@ -1,0 +1,11 @@
+{
+  "name": "refactoring-surgeon",
+  "description": "Expert code refactoring specialist for improving code quality without changing behavior. Activate on: refactor, code smell, technical debt, legacy code, cleanup, simplify, extract method, extract clas",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/refactoring-surgeon",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "refactoring-surgeon-erichowens-some-claude-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "vialabs",
+  "description": "VIA Labs (ViaLabs) MPN encoding patterns, series identification, and handler guidance. Use when working with USB hub/PD controller ICs or ViaLabsHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/vialabs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "vialabs-cantara-lib-electronic-compo-2"
+}

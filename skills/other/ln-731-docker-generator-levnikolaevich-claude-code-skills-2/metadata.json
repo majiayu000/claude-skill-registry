@@ -1,0 +1,11 @@
+{
+  "name": "ln-731-docker-generator",
+  "description": "Generates Docker and docker-compose configuration for multi-container development",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-731-docker-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-731-docker-generator-levnikolaevich-claude-code-skills-2"
+}

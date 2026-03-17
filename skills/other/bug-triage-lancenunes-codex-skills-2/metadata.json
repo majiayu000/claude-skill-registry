@@ -1,0 +1,11 @@
+{
+  "name": "bug-triage",
+  "description": "Reproduce, isolate, and fix a bug (or failing build/test), then summarize root cause, fix, and verification steps. Use when the user reports a bug, regression, or failing build/test and wants a fix.",
+  "repo": "lancenunes/codex-skills",
+  "path": "bug-triage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lancenunes/codex-skills",
+  "dir_name": "bug-triage-lancenunes-codex-skills-2"
+}

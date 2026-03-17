@@ -1,0 +1,11 @@
+{
+  "name": "set-current-spec",
+  "description": "This skill should be used when switching between specs, after creating a new spec with \"/spec-kit:specify\", when the user says \"switch to spec 002\" or \"work on feature X\", or when resuming work on a d",
+  "repo": "retsohuang/retso-marketplace",
+  "path": "plugins/spec-kit/skills/set-current-spec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/retsohuang/retso-marketplace",
+  "dir_name": "set-current-spec-retsohuang-retso-marketplace-2"
+}

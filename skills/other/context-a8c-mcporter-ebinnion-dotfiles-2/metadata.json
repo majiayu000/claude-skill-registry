@@ -1,0 +1,11 @@
+{
+  "name": "context-a8c-mcporter",
+  "description": "Use when accessing Automattic work context (Linear, Slack, P2s, Zendesk, TeamCity, etc.). Triggers include questions about issues, messages, posts, tickets, builds, or any Automattic internal systems.",
+  "repo": "ebinnion/dotfiles",
+  "path": "skills/context-a8c-mcporter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ebinnion/dotfiles",
+  "dir_name": "context-a8c-mcporter-ebinnion-dotfiles-2"
+}

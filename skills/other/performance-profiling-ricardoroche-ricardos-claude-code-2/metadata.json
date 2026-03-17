@@ -1,0 +1,11 @@
+{
+  "name": "performance-profiling",
+  "description": "Automatically applies when profiling Python performance. Ensures proper use of profiling tools, async profiling, benchmarking, memory analysis, and optimization strategies.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/performance-profiling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "performance-profiling-ricardoroche-ricardos-claude-code-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "quality-detect-regressions",
+  "description": "Compares current quality metrics (tests, coverage, type errors, linting, dead code) to baseline and detects regressions. PROACTIVELY invoked after task completion, before marking task complete, or bef",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/quality-detect-regressions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "quality-detect-regressions-dawiddutoit-custom-claude-2"
+}

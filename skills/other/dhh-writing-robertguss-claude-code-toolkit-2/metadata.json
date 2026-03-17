@@ -1,0 +1,11 @@
+{
+  "name": "dhh-writing",
+  "description": "This skill should be used when writing in the distinctive style of David Heinemeier Hansson (DHH). It applies when creating blog posts, technical articles, business content, manifestos, or any prose r",
+  "repo": "robertguss/claude-code-toolkit",
+  "path": "plugins/compound-writing/skills/dhh-writing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertguss/claude-code-toolkit",
+  "dir_name": "dhh-writing-robertguss-claude-code-toolkit-2"
+}

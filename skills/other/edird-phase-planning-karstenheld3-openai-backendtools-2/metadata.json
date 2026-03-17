@@ -1,0 +1,11 @@
+{
+  "name": "edird-phase-planning",
+  "description": "Apply when doing [PLAN], [PARTITION], or planning long-running tasks in sessions",
+  "repo": "karstenheld3/OpenAI-BackendTools",
+  "path": ".windsurf/skills/edird-phase-planning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/karstenheld3/OpenAI-BackendTools",
+  "dir_name": "edird-phase-planning-karstenheld3-openai-backendtools-2"
+}

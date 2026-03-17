@@ -1,0 +1,9 @@
+{
+  "name": "file-reader",
+  "repo": "cisco-ai-defense/skill-scanner",
+  "path": "evals/skills/path-traversal/file-reader/SKILL.md",
+  "category": "other",
+  "source": "github.com/cisco-ai-defense/skill-scanner",
+  "dir_name": "file-reader",
+  "downloaded_at": "2026-02-22T06:42:48.443617Z"
+}

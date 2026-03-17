@@ -1,0 +1,11 @@
+{
+  "name": "file-reference",
+  "description": "Process and analyze user-uploaded file references, extract key information, and provide application recommendations. Suitable for parsing @symbol references, natural language references, and extractin",
+  "repo": "VanGongwanxiaowan/screen-creative-skills",
+  "path": "category/tools/file-reference",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VanGongwanxiaowan/screen-creative-skills",
+  "dir_name": "file-reference-vangongwanxiaowan-screen-creative-skil-2"
+}

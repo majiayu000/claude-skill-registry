@@ -1,0 +1,9 @@
+{
+  "name": "task-details",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/jira-orchestrator/skills/task-details/SKILL.md",
+  "category": "other",
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "task-details-lobbi-docs-claude",
+  "downloaded_at": "2026-02-15T05:23:01.745277Z"
+}

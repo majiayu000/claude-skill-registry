@@ -1,0 +1,11 @@
+{
+  "name": "udemy-crawler",
+  "description": "Extract Udemy course content to markdown. Use when user asks to scrape/crawl Udemy course pages.",
+  "repo": "vibery-studio/templates",
+  "path": "skills/udemy-crawler",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vibery-studio/templates",
+  "dir_name": "udemy-crawler-vibery-studio-templates-2"
+}

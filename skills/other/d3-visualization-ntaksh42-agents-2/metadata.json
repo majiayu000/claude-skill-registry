@@ -1,0 +1,11 @@
+{
+  "name": "d3-visualization",
+  "description": "Generate D3.js visualizations including charts, graphs, and interactive data visualizations. Use when creating data visualizations with D3.js.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/d3-visualization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "d3-visualization-ntaksh42-agents-2"
+}

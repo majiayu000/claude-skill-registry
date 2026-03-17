@@ -1,0 +1,11 @@
+{
+  "name": "release-prep",
+  "description": "Prepare a milestone for release by verifying success criteria, checking backwards compatibility, ensuring ticket tagging, and reviewing documentation.",
+  "repo": "zeroae/zae-limiter",
+  "path": ".claude/skills/release-prep",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zeroae/zae-limiter",
+  "dir_name": "release-prep-zeroae-zae-limiter-2"
+}

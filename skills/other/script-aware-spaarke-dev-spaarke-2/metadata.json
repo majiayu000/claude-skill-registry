@@ -1,0 +1,11 @@
+{
+  "name": "script-aware",
+  "description": "Discover and use existing scripts from the script library before writing new code",
+  "repo": "spaarke-dev/spaarke",
+  "path": ".claude/skills/script-aware",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spaarke-dev/spaarke",
+  "dir_name": "script-aware-spaarke-dev-spaarke-2"
+}

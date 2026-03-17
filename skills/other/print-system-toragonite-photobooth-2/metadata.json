@@ -1,0 +1,11 @@
+{
+  "name": "print-system",
+  "description": "Print system management including CUPS, Canon Selphy CP1500, print queue, job status, and printer troubleshooting.",
+  "repo": "Toragonite/photobooth",
+  "path": ".claude/skills/print-system",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Toragonite/photobooth",
+  "dir_name": "print-system-toragonite-photobooth-2"
+}

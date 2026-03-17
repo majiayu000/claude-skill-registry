@@ -1,0 +1,11 @@
+{
+  "name": "stock-analyzer",
+  "description": "Performs comprehensive analysis of individual stocks including fundamental, technical, and valuation analysis",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/stock-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "dir_name": "stock-analyzer-zhiruifeng-localagentcrew-2"
+}

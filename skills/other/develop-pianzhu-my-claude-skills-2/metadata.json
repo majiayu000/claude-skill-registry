@@ -1,0 +1,11 @@
+{
+  "name": "develop",
+  "description": "开发实施阶段详细规则；进入开发实施时读取；包含执行流程、代码规范、一致性审计、方案包迁移",
+  "repo": "pianzhu/my-claude-skills",
+  "path": "skills/HelloAgents/develop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pianzhu/my-claude-skills",
+  "dir_name": "develop-pianzhu-my-claude-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "visual-design",
+  "description": "Generate style guides, component mockups, and visual assets using AI (Gemini 3 Pro Image, FLUX.2 Pro). Optional feature - gracefully skips if OPENROUTER_API_KEY unavailable.",
+  "repo": "flight505/storybook-assistant",
+  "path": "skills/visual-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/flight505/storybook-assistant",
+  "dir_name": "visual-design-flight505-storybook-assistant-2"
+}

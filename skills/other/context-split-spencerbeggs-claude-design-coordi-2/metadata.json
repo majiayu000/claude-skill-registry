@@ -1,0 +1,11 @@
+{
+  "name": "context-split",
+  "description": "Split large CLAUDE.md into child files. Use when context files exceed line limits, are too verbose, or cover multiple distinct topics that should be separate.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/context-split",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "context-split-spencerbeggs-claude-design-coordi-2"
+}

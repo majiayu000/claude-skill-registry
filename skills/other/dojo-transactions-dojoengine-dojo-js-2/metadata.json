@@ -1,0 +1,11 @@
+{
+  "name": "dojo-transactions",
+  "description": "Use when executing game actions and sending transactions in dojo.js.\nTriggers: send transaction, execute action, dojo action, contract call, DojoProvider,\nexecute, sendMessage, batch transaction, invo",
+  "repo": "dojoengine/dojo.js",
+  "path": ".claude/skills/dojo-transactions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dojoengine/dojo.js",
+  "dir_name": "dojo-transactions-dojoengine-dojo-js-2"
+}

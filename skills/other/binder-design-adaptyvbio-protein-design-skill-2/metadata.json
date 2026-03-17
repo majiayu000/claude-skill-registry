@@ -1,0 +1,11 @@
+{
+  "name": "binder-design",
+  "description": "Guidance for choosing the right protein binder design tool. Use this skill when: (1) Deciding between BoltzGen, BindCraft, or RFdiffusion, (2) Planning a binder design campaign, (3) Understanding trad",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/binder-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "binder-design-adaptyvbio-protein-design-skill-2"
+}

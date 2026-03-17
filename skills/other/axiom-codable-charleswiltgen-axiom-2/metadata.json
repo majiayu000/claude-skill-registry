@@ -1,0 +1,11 @@
+{
+  "name": "axiom-codable",
+  "description": "Use when working with Codable protocol, JSON encoding/decoding, CodingKeys customization, enum serialization, date strategies, custom containers, or encountering \"Type does not conform to Decodable/En",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-codable",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-codable-charleswiltgen-axiom-2"
+}

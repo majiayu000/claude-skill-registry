@@ -1,0 +1,11 @@
+{
+  "name": "wedding-immortalist",
+  "description": "Transform thousands of wedding photos and hours of footage into an immersive 3D Gaussian Splatting experience with theatre mode replay, face-clustered guest roster, and AI-curated best photos per pers",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/wedding-immortalist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "wedding-immortalist-erichowens-some-claude-skills-2"
+}

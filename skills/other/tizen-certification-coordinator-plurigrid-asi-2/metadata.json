@@ -1,0 +1,11 @@
+{
+  "name": "tizen-certification-coordinator",
+  "description": "Orchestrates Tizen certification workflow. Coordinates TCT test execution, compliance verification, and certification documentation.",
+  "repo": "plurigrid/asi",
+  "path": "skills/tizen-certification-coordinator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "tizen-certification-coordinator-plurigrid-asi-2"
+}

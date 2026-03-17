@@ -1,0 +1,11 @@
+{
+  "name": "auth-patterns",
+  "description": "This skill should be used when the user asks about \"authentication in Next.js\", \"NextAuth\", \"Auth.js\", \"middleware auth\", \"protected routes\", \"session management\", \"JWT\", \"login flow\", or needs guidan",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/nextjs-expert/skills/auth-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "auth-patterns-davepoon-buildwithclaude-2"
+}

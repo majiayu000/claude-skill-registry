@@ -1,0 +1,17 @@
+{
+  "name": "model-recommendation",
+  "repo": "github/awesome-copilot",
+  "path": "skills/model-recommendation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/github/awesome-copilot",
+  "dir_name": "model-recommendation",
+  "downloaded_at": "2026-03-01T07:54:05.708835Z",
+  "author": "github",
+  "source_url": "https://github.com/github/awesome-copilot/blob/main/skills/model-recommendation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/github/awesome-copilot/blob/main/skills/model-recommendation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

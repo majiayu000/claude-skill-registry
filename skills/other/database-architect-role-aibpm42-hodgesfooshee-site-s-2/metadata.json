@@ -1,0 +1,11 @@
+{
+  "name": "database-architect-role",
+  "description": "Role assignment for Claude Agent",
+  "repo": "AIBPM42/hodgesfooshee-site-spark",
+  "path": ".claude/skills/database-architect-role",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AIBPM42/hodgesfooshee-site-spark",
+  "dir_name": "database-architect-role-aibpm42-hodgesfooshee-site-s-2"
+}

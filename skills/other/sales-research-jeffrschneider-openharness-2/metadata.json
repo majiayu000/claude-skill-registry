@@ -1,0 +1,11 @@
+{
+  "name": "sales-research",
+  "description": "Best practices for prospect research including company analysis, contact profiling, and signal detection. Triggers when researching companies, contacts, or preparing for sales calls.",
+  "repo": "jeffrschneider/OpenHarness",
+  "path": "examples/sales-call-prep/package/skills/sales-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeffrschneider/OpenHarness",
+  "dir_name": "sales-research-jeffrschneider-openharness-2"
+}

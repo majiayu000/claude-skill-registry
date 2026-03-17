@@ -1,0 +1,11 @@
+{
+  "name": "playwright-form-validation",
+  "description": "Automates form validation testing by submitting invalid data and capturing error states\nusing Playwright browser automation. Use when you need to \"test form validation\", \"check\nvalidation errors\", \"te",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/playwright-form-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "playwright-form-validation-dawiddutoit-custom-claude-2"
+}

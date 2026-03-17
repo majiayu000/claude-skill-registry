@@ -1,0 +1,11 @@
+{
+  "name": "review-spec",
+  "description": "This skill should be used when the user wants to review a technical specification document, especially multi-file specs with appendices. It checks for consistency, completeness, clarity, and identifie",
+  "repo": "msalganik/torchtune_config_writer",
+  "path": ".claude/skills/review-spec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/msalganik/torchtune_config_writer",
+  "dir_name": "review-spec-msalganik-torchtune-config-wri-2"
+}

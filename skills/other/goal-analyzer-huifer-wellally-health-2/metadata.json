@@ -1,0 +1,11 @@
+{
+  "name": "goal-analyzer",
+  "description": "分析健康目标数据、识别目标模式、评估目标进度,并提供个性化目标管理建议。支持与营养、运动、睡眠等健康数据的关联分析。",
+  "repo": "huifer/WellAlly-health",
+  "path": ".claude/skills/goal-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/huifer/WellAlly-health",
+  "dir_name": "goal-analyzer-huifer-wellally-health-2"
+}

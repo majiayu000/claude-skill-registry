@@ -1,0 +1,11 @@
+{
+  "name": "bknd-registration",
+  "description": "Use when setting up user registration flows in a Bknd application. Covers registration configuration, enabling/disabling registration, default roles, password validation, registration forms, and custo",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-registration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-registration-cameronapak-freedom-stack-v3-2"
+}

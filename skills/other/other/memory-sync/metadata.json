@@ -1,0 +1,9 @@
+{
+  "name": "memory-sync",
+  "repo": "Dicklesworthstone/pi_agent_rust",
+  "path": "tests/ext_conformance/artifacts/plugins-ariff/memory-sync/skills/memory-sync/SKILL.md",
+  "category": "other",
+  "source": "github.com/Dicklesworthstone/pi_agent_rust",
+  "dir_name": "memory-sync",
+  "downloaded_at": "2026-02-15T05:02:00.929336Z"
+}

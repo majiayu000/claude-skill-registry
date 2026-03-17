@@ -1,0 +1,11 @@
+{
+  "name": "add-highlight",
+  "description": "Add an item to the highlights page. Max 1 per day.",
+  "repo": "unfinishablemap/unfinishablemap",
+  "path": ".claude/skills/add-highlight",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/unfinishablemap/unfinishablemap",
+  "dir_name": "add-highlight-unfinishablemap-unfinishablemap-2"
+}

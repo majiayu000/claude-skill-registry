@@ -1,0 +1,11 @@
+{
+  "name": "review-workflow",
+  "description": "Complete quality assurance workflow orchestrating validation, comprehensive review, and functional testing. Sequential workflow from quality gating through multi-dimensional review to scenario testing",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/review-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "review-workflow-adaptationio-skrillz-2"
+}

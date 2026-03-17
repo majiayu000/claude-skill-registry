@@ -1,0 +1,11 @@
+{
+  "name": "openfga",
+  "description": "OpenFGA authorization modeling best practices and guidelines. This skill should be used when authoring, reviewing, or refactoring OpenFGA authorization models. Triggers on tasks involving OpenFGA mode",
+  "repo": "openfga/agent-skills",
+  "path": "skills/openfga",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/openfga/agent-skills",
+  "dir_name": "openfga-openfga-agent-skills-2"
+}

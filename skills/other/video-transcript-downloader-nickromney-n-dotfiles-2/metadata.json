@@ -1,0 +1,11 @@
+{
+  "name": "video-transcript-downloader",
+  "description": "Download videos, audio, subtitles, and clean paragraph-style transcripts from YouTube and any other yt-dlp supported site. Use when asked to “download this video”, “save this clip”, “rip audio”, “get ",
+  "repo": "nickromney/n-dotfiles",
+  "path": "skills/video-transcript-downloader",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nickromney/n-dotfiles",
+  "dir_name": "video-transcript-downloader-nickromney-n-dotfiles-2"
+}

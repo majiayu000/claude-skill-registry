@@ -1,0 +1,11 @@
+{
+  "name": "exa-cost-tuning",
+  "description": "Optimize Exa costs through tier selection, sampling, and usage monitoring.\nUse when analyzing Exa billing, reducing API costs,\nor implementing usage monitoring and budget alerts.\nTrigger with phrases ",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-cost-tuning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-cost-tuning-vasic-digital-superagent-2"
+}

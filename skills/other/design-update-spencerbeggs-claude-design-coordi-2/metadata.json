@@ -1,0 +1,11 @@
+{
+  "name": "design-update",
+  "description": "Update specific design document with new content or metadata. Use when modifying design docs, updating status/completeness, or syncing after code changes.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/design-update",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "design-update-spencerbeggs-claude-design-coordi-2"
+}

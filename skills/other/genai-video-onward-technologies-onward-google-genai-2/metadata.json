@@ -1,0 +1,11 @@
+{
+  "name": "genai-video",
+  "description": "Generate videos using Google GenAI Veo 3.1 model via CLI. Use when the user asks to create videos, generate animations, make AI video content, do image-to-video transformations, interpolate between fr",
+  "repo": "Onward-Technologies/onward-google-genai",
+  "path": ".claude/skills/genai-video",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Onward-Technologies/onward-google-genai",
+  "dir_name": "genai-video-onward-technologies-onward-google-genai-2"
+}

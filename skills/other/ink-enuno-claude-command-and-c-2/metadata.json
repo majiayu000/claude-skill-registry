@@ -1,0 +1,11 @@
+{
+  "name": "ink",
+  "description": "Ink - React for CLI applications, build interactive command-line interfaces using React components with Flexbox layout, hooks for input/focus, and testing support",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/ink",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "ink-enuno-claude-command-and-c-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "delta-derivation",
+  "description": "Extract information delta between Claude.ai conversation exports using ACSets morphisms and bisimulation verification",
+  "repo": "plurigrid/asi",
+  "path": "skills/delta-derivation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "delta-derivation-plurigrid-asi-2"
+}

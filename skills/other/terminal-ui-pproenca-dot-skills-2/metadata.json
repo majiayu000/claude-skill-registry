@@ -1,0 +1,11 @@
+{
+  "name": "terminal-ui",
+  "description": "Terminal User Interface (TUI) performance and UX guidelines for TypeScript applications using Ink and Clack. This skill should be used when building CLI tools, interactive terminal prompts, or develop",
+  "repo": "pproenca/dot-skills",
+  "path": "skills/.curated/terminal-ui",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pproenca/dot-skills",
+  "dir_name": "terminal-ui-pproenca-dot-skills-2"
+}

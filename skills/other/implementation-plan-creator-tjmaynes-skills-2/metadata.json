@@ -1,0 +1,11 @@
+{
+  "name": "implementation-plan-creator",
+  "description": "Create feature implementation plans before development. Captures requirements, acceptance criteria, non-goals, risks, and implementation complexity in structured markdown. Use when starting a new feat",
+  "repo": "tjmaynes/skills",
+  "path": "skills/implementation-plan-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tjmaynes/skills",
+  "dir_name": "implementation-plan-creator-tjmaynes-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "production-database-query",
+  "description": "Query Ballee production and staging databases safely using .env.local credentials (with 1Password fallback); use when debugging production/staging data, verifying data exists, investigating bugs, chec",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/production-database-query",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "production-database-query-javeedishaq-ai-workflow-orchestr-2"
+}

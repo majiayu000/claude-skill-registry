@@ -1,0 +1,9 @@
+{
+  "name": "ci-monitoring",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/ci:monitoring/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "ci-monitoring",
+  "downloaded_at": "2026-02-15T07:49:44.788924Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "audit-and-fix",
+  "description": "Security audit with automatic fixes for vulnerabilities",
+  "repo": "WhatIfWeDigDeeper/claude-template",
+  "path": ".claude/skills/audit-and-fix",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WhatIfWeDigDeeper/claude-template",
+  "dir_name": "audit-and-fix-whatifwedigdeeper-claude-template-2"
+}

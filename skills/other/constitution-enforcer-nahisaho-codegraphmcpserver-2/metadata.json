@@ -1,0 +1,11 @@
+{
+  "name": "constitution-enforcer",
+  "description": "Validates compliance with 9 Constitutional Articles and Phase -1 Gates before implementation.\n\nTrigger terms: constitution, governance, compliance, validation, constitutional compliance,\nPhase -1 Gate",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/constitution-enforcer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "dir_name": "constitution-enforcer-nahisaho-codegraphmcpserver-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "nav-profile",
+  "description": "Manage user preferences and corrections for bilateral modeling. Auto-learns from session corrections. Use when user says \"save my preferences\", \"remember I like...\", or auto-triggers after corrections",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "skills/os-layer/context-memory/nav-profile",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "nav-profile-dkyazzentwatwa-supernavigator-2"
+}

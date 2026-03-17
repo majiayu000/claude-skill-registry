@@ -1,0 +1,11 @@
+{
+  "name": "salesforce-query",
+  "description": "Query Salesforce data using natural language. Supports Accounts, Opportunities, Contacts, Leads, and Cases. Use when user asks to find, show, list, or retrieve Salesforce records.",
+  "repo": "rchanda1392/VibeCodeProjects",
+  "path": ".claude/skills/salesforce-query",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rchanda1392/VibeCodeProjects",
+  "dir_name": "salesforce-query-rchanda1392-vibecodeprojects-2"
+}

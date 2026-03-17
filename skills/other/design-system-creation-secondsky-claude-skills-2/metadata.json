@@ -1,0 +1,11 @@
+{
+  "name": "design-system-creation",
+  "description": "Creates comprehensive design systems with typography, colors, components, and documentation for consistent UI development. Use when establishing design standards, building component libraries, or ensu",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/design-system-creation/skills/design-system-creation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "design-system-creation-secondsky-claude-skills-2"
+}

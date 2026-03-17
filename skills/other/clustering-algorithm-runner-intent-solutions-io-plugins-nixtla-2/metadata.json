@@ -1,0 +1,11 @@
+{
+  "name": "clustering-algorithm-runner",
+  "description": "This skill enables Claude to execute clustering algorithms on datasets. It is used when the user requests to perform clustering, identify groups within data, or analyze data structure. The skill suppo",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/ai-ml/clustering-algorithm-runner/skills/clustering-algorithm-runner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "clustering-algorithm-runner-intent-solutions-io-plugins-nixtla-2"
+}

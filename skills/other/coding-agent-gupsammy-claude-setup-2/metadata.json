@@ -1,0 +1,11 @@
+{
+  "name": "coding-agent",
+  "description": "Run Codex CLI, Claude Code, OpenCode, or Pi Coding Agent via background process for programmatic control.",
+  "repo": "gupsammy/Claude-setup",
+  "path": "skills/coding-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gupsammy/Claude-setup",
+  "dir_name": "coding-agent-gupsammy-claude-setup-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "callback-context",
+  "description": "Callback + Context Pattern (C-Specific) pattern for C development",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/patterns/callback-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "callback-context-mgreenly-ikigai-2"
+}

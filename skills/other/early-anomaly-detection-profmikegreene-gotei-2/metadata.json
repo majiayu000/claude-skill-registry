@@ -1,0 +1,11 @@
+{
+  "name": "early-anomaly-detection",
+  "description": "Detect and alert on emerging anomalies and risk flags from pilot metrics and data streams. Use when monitoring live data, threshold breaches, or statistical outliers to trigger governance reviews and ",
+  "repo": "profmikegreene/gotei",
+  "path": "Gotei_Skills/early-anomaly-detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/profmikegreene/gotei",
+  "dir_name": "early-anomaly-detection-profmikegreene-gotei-2"
+}

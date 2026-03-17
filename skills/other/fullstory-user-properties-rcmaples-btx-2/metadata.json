@@ -1,0 +1,11 @@
+{
+  "name": "fullstory-user-properties",
+  "description": "Comprehensive guide for implementing Fullstory's User Properties API (setProperties with type 'user') for web applications. Teaches proper property naming, type handling, incremental updates, and spec",
+  "repo": "rcmaples/btx",
+  "path": ".claude/skills/fullstory-user-properties",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rcmaples/btx",
+  "dir_name": "fullstory-user-properties-rcmaples-btx-2"
+}

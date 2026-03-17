@@ -1,0 +1,11 @@
+{
+  "name": "workflow-define-skill",
+  "description": "用途: 定义 Workflow（基于需求生成 Workflow YAML）",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/workflow-define-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "workflow-define-skill-maxoreric-sop-engine-2"
+}

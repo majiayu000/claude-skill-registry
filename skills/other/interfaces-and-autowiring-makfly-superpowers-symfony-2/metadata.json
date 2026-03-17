@@ -1,0 +1,11 @@
+{
+  "name": "interfaces-and-autowiring",
+  "description": "Use when symfony interfaces and autowiring",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/interfaces-and-autowiring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "interfaces-and-autowiring-makfly-superpowers-symfony-2"
+}

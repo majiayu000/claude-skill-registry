@@ -1,0 +1,11 @@
+{
+  "name": "lomb-scargle-periodogram",
+  "description": "Lomb-Scargle periodogram for finding periodic signals in unevenly sampled time series data. Use when analyzing light curves, radial velocity data, or any astronomical time series to detect periodic va",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/exoplanet-detection-period/environment/skills/lomb-scargle-periodogram",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "lomb-scargle-periodogram-benchflow-ai-skillsbench-2"
+}

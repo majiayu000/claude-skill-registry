@@ -1,0 +1,11 @@
+{
+  "name": "testing-strategy",
+  "description": "Guide for running and writing tests in the Orient monorepo. Use when asked to \"run tests\", \"write tests\", \"add test coverage\", \"debug failing tests\", \"check which tests to run\", or when making code ch",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/testing-strategy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "testing-strategy-orient-bot-orient-2"
+}

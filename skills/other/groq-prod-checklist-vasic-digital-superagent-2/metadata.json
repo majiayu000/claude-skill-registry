@@ -1,0 +1,11 @@
+{
+  "name": "groq-prod-checklist",
+  "description": "Execute Groq production deployment checklist and rollback procedures.\nUse when deploying Groq integrations to production, preparing for launch,\nor implementing go-live procedures.\nTrigger with phrases",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/groq-pack/groq-prod-checklist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "groq-prod-checklist-vasic-digital-superagent-2"
+}

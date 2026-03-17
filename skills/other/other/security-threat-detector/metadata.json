@@ -1,0 +1,9 @@
+{
+  "name": "security-threat-detector",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/security-threat-detector/SKILL.md",
+  "category": "other",
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "security-threat-detector",
+  "downloaded_at": "2026-02-22T05:56:40.549826Z"
+}

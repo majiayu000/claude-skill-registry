@@ -1,0 +1,11 @@
+{
+  "name": "coding-standard-c",
+  "description": "Enforce C coding standards including snake_case variables and functions, UPPER_SNAKE_CASE macros, and snake_case filenames.",
+  "repo": "jdubray/puffin",
+  "path": ".claude/skills/coding-standard-c",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jdubray/puffin",
+  "dir_name": "coding-standard-c-jdubray-puffin-2"
+}

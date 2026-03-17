@@ -1,0 +1,17 @@
+{
+  "name": "fact-check",
+  "repo": "damionrashford/RivalSearch-Plugin",
+  "path": "skills/fact-check/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/damionrashford/RivalSearch-Plugin",
+  "dir_name": "fact-check-damionrashford-rivalsearch-plugin",
+  "downloaded_at": "2026-03-01T07:21:35.164450Z",
+  "author": "damionrashford",
+  "source_url": "https://github.com/damionrashford/RivalSearch-Plugin/blob/main/skills/fact-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/damionrashford/RivalSearch-Plugin/blob/main/skills/fact-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

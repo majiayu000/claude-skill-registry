@@ -1,0 +1,11 @@
+{
+  "name": "ln-771-logging-configurator",
+  "description": "Configures structured logging (Serilog/.NET, structlog/Python)",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-771-logging-configurator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-771-logging-configurator-levnikolaevich-claude-code-skills-2"
+}

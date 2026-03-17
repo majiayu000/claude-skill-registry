@@ -1,0 +1,11 @@
+{
+  "name": "review-codex",
+  "description": "Final code/plan review using Codex CLI. Use as the last review step after sonnet.",
+  "repo": "cskwork/llm-review",
+  "path": ".claude/skills/review-codex",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cskwork/llm-review",
+  "dir_name": "review-codex-cskwork-llm-review-2"
+}

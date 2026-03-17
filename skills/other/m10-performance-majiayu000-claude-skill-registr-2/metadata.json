@@ -1,0 +1,11 @@
+{
+  "name": "m10-performance",
+  "description": "CRITICAL: Use for performance optimization. Triggers: performance, optimization, benchmark, profiling, flamegraph, criterion, slow, fast, allocation, cache, SIMD, make it faster, 性能优化, 基准测试",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/m10-performance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "m10-performance-majiayu000-claude-skill-registr-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "add-protected-page",
+  "description": "Creates a protected page with Suspense loading pattern. Use when adding new pages that require authentication, creating dashboard pages, or setting up new routes.",
+  "repo": "MenadBt/prospection",
+  "path": ".claude/skills/add-protected-page",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MenadBt/prospection",
+  "dir_name": "add-protected-page-menadbt-prospection-2"
+}

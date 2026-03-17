@@ -1,0 +1,11 @@
+{
+  "name": "common-tasks",
+  "description": "Step-by-step guides for common development tasks like adding constructs, creating packages, and using workspace packages. Use when performing routine development tasks.",
+  "repo": "crmagz/cdk-constructs-library",
+  "path": ".claude/skills/common-tasks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/crmagz/cdk-constructs-library",
+  "dir_name": "common-tasks-crmagz-cdk-constructs-libra-2"
+}

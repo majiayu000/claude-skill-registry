@@ -1,0 +1,11 @@
+{
+  "name": "human-writing",
+  "description": "Write content that sounds natural, conversational, and authentically human - avoiding AI-generated patterns, corporate speak, and generic phrasing",
+  "repo": "pr-pm/prpm",
+  "path": ".claude/skills/human-writing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pr-pm/prpm",
+  "dir_name": "human-writing-pr-pm-prpm-2"
+}

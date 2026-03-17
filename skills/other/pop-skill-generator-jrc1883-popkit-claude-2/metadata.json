@@ -1,0 +1,11 @@
+{
+  "name": "pop-skill-generator",
+  "description": "Use when you want to capture project-specific patterns as reusable skills - generates custom skills based on codebase patterns, common workflows, and team conventions discovered during analysis. Creat",
+  "repo": "jrc1883/popkit-claude",
+  "path": "packages/popkit-core/skills/pop-skill-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jrc1883/popkit-claude",
+  "dir_name": "pop-skill-generator-jrc1883-popkit-claude-2"
+}

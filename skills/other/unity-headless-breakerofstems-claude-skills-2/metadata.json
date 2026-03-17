@@ -1,0 +1,11 @@
+{
+  "name": "unity-headless",
+  "description": "Install Unity Hub/Editor, activate licenses, run headless builds and tests",
+  "repo": "BreakerOfStems/claude-skills",
+  "path": "skills/unity-headless",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BreakerOfStems/claude-skills",
+  "dir_name": "unity-headless-breakerofstems-claude-skills-2"
+}

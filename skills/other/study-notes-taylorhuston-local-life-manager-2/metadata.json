@@ -1,0 +1,11 @@
+{
+  "name": "study-notes",
+  "description": "Create comprehensive study notes on: $1",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/study-notes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "study-notes-taylorhuston-local-life-manager-2"
+}

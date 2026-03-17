@@ -1,0 +1,11 @@
+{
+  "name": "bash-script-generator",
+  "description": "Generate Bash 3.2-compatible scripts with a standardized check_requirements guardrail, friendly validation errors, and optional shfmt formatting. Use when writing or updating bash scripts that need co",
+  "repo": "tjmaynes/skills",
+  "path": "skills/bash-script-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tjmaynes/skills",
+  "dir_name": "bash-script-generator-tjmaynes-skills-2"
+}

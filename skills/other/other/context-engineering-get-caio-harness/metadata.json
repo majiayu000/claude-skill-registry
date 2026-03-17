@@ -1,0 +1,17 @@
+{
+  "name": "context-engineering",
+  "repo": "get-caio/harness",
+  "path": ".claude/skills/context-engineering/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/get-caio/harness",
+  "dir_name": "context-engineering-get-caio-harness",
+  "downloaded_at": "2026-03-01T07:52:17.614010Z",
+  "author": "get-caio",
+  "source_url": "https://github.com/get-caio/harness/blob/main/.claude/skills/context-engineering/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/get-caio/harness/blob/main/.claude/skills/context-engineering/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

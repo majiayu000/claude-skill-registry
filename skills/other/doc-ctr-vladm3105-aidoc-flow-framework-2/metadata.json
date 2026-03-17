@@ -1,0 +1,11 @@
+{
+  "name": "doc-ctr",
+  "description": "Create Data Contracts (CTR) - Optional Layer 9 artifact using dual-file format (.md + .yaml) for API/data contracts",
+  "repo": "vladm3105/aidoc-flow-framework",
+  "path": ".claude/skills/doc-ctr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vladm3105/aidoc-flow-framework",
+  "dir_name": "doc-ctr-vladm3105-aidoc-flow-framework-2"
+}

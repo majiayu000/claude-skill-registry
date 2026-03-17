@@ -1,0 +1,11 @@
+{
+  "name": "roe-governance",
+  "description": "Use to codify sales rules of engagement, escalation paths, and exception workflows.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/sales-operations/skills/roe-governance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "roe-governance-gtmagents-gtm-agents-2"
+}

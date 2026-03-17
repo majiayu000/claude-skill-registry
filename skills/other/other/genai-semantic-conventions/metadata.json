@@ -1,0 +1,9 @@
+{
+  "name": "genai-semantic-conventions",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/genai:semantic-conventions/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "genai-semantic-conventions",
+  "downloaded_at": "2026-02-15T07:49:46.905602Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "db-migration-generator",
+  "description": "Generator สำหรับสร้าง database migration files พร้อม up/down scripts, validation และ rollback safety",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "67-codegen-scaffolding-automation/db-migration-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "db-migration-generator-amnadtaowsoam-cerebratechai-claude-2"
+}

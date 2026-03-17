@@ -1,0 +1,11 @@
+{
+  "name": "boto3-ecs",
+  "description": "AWS Boto3 SDK patterns for Amazon ECS cluster management, task definitions, services, and Fargate deployments. Use when working with ECS clusters, managing task definitions, deploying services, runnin",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/boto3-ecs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "boto3-ecs-adaptationio-skrillz-2"
+}

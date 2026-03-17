@@ -1,0 +1,11 @@
+{
+  "name": "update",
+  "description": "원본 변경 후 전체 파일 동기화가 필요할 때",
+  "repo": "younwony/younwony.github.io",
+  "path": ".claude/skills/data/update",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/younwony/younwony.github.io",
+  "dir_name": "update-younwony-younwony-github-io-2"
+}

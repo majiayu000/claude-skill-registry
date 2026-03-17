@@ -1,0 +1,11 @@
+{
+  "name": "dotenv-patterns",
+  "description": "Environment file (.env) patterns, test data, and credential loading",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/dotenv-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "dotenv-patterns-zerobias-org-module-2"
+}

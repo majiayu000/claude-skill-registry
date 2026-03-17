@@ -1,0 +1,11 @@
+{
+  "name": "txc",
+  "description": "TXC Corporation MPN encoding patterns, frequency and temperature decoding, and handler guidance. Use when working with TXC timing devices (crystals, oscillators, TCXO, VCXO).",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/txc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "txc-cantara-lib-electronic-compo-2"
+}

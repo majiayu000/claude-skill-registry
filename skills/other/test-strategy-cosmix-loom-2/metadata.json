@@ -1,0 +1,11 @@
+{
+  "name": "test-strategy",
+  "description": "Test strategy defines how to approach testing for a project, balancing thoroughness with efficiency. A well-designed strategy ensures critical functionality is covered while avoiding over-testing triv",
+  "repo": "cosmix/loom",
+  "path": "skills/test-strategy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "test-strategy-cosmix-loom-2"
+}

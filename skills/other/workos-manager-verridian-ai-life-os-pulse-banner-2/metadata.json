@@ -1,0 +1,11 @@
+{
+  "name": "workos_manager",
+  "description": "Complete WorkOS authentication management including OAuth, SSO, SCIM, email templates, domain verification, and user management. Use for enterprise auth configuration.",
+  "repo": "Verridian-ai/life-os-Pulse-banner-generator",
+  "path": ".claude/skills/workos_manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Verridian-ai/life-os-Pulse-banner-generator",
+  "dir_name": "workos-manager-verridian-ai-life-os-pulse-banner-2"
+}

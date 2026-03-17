@@ -1,0 +1,11 @@
+{
+  "name": "fun-mode",
+  "description": "Use when starting a session and wanting creative engagement, or when user says '/fun' or asks for a persona",
+  "repo": "axiomantic/spellbook",
+  "path": "skills/fun-mode",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/axiomantic/spellbook",
+  "dir_name": "fun-mode-axiomantic-spellbook-2"
+}

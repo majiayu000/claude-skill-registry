@@ -1,0 +1,11 @@
+{
+  "name": "plugin-dev",
+  "description": "Claude Code plugin development - create plugins, skills, commands, agents, hooks, MCP servers, and marketplaces. Use when: 'create a plugin', 'add a skill', 'write a command', 'configure hooks', 'inte",
+  "repo": "GGPrompts/my-plugins",
+  "path": "plugins/plugin-dev/skills/plugin-dev",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GGPrompts/my-plugins",
+  "dir_name": "plugin-dev-ggprompts-my-plugins-2"
+}

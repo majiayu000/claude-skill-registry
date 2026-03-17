@@ -1,0 +1,11 @@
+{
+  "name": "tanstack-db",
+  "description": "Expert guidance for TanStack DB reactive client-side database with collections, live queries, optimistic mutations, and sync engines (ElectricSQL, RxDB, PowerSync). Use when user says \"tanstack db\", \"",
+  "repo": "olegakbarov/ispo-code",
+  "path": ".claude/skills/tanstack-db",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/olegakbarov/ispo-code",
+  "dir_name": "tanstack-db-olegakbarov-ispo-code-2"
+}

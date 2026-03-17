@@ -1,0 +1,11 @@
+{
+  "name": "milestone",
+  "description": "When users mention a milestone version (e.g., \"0.4.0\", \"v0.4.0\") or ask about release status, invoke this skill to analyze GitHub milestone progress, issues, and suggest next steps.",
+  "repo": "zeroae/zae-limiter",
+  "path": ".claude/skills/milestone",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zeroae/zae-limiter",
+  "dir_name": "milestone-zeroae-zae-limiter-2"
+}

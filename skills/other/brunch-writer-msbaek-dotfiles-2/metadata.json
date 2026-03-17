@@ -1,0 +1,11 @@
+{
+  "name": "brunch-writer",
+  "description": "브런치 블로그 글 작성을 도와주는 Skill. 사용자가 초안 파일(.md)을 @멘션하면서 \"브런치\", \"글 작성\", \"블로그 글\" 등을 언급하면 활성화. vault-intelligence 시스템으로 관련 자료를 검색하고, 구조 제안, 스타일 체크 등을 수행. 단, Claude가 직접 글을 쓰지 않고 사용자의 글쓰기를 보조하는 역할.",
+  "repo": "msbaek/dotfiles",
+  "path": ".claude/skills/brunch-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/msbaek/dotfiles",
+  "dir_name": "brunch-writer-msbaek-dotfiles-2"
+}

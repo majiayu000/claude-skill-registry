@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-401-task-executor",
+  "description": "Executes implementation tasks (Todo -> In Progress -> To Review). Follows KISS/YAGNI, guides, quality checks. Not for test tasks.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-401-task-executor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-401-task-executor-boisenoise-skills-collections-2"
+}

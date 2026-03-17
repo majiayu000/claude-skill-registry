@@ -1,0 +1,11 @@
+{
+  "name": "nuget-manager",
+  "description": "Manage NuGet packages in .NET projects/solutions. Use this skill when adding, removing, or updating NuGet package versions. It enforces using `dotnet` CLI for package management and provides strict pr",
+  "repo": "github/awesome-copilot",
+  "path": "skills/nuget-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/github/awesome-copilot",
+  "dir_name": "nuget-manager-github-awesome-copilot-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "accept-pr",
+  "description": "Land one PR end-to-end (changelog + thanks, lint, merge, back to main).",
+  "repo": "doubleflannel/12-30-test-codex-ip",
+  "path": "skills/accept-pr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doubleflannel/12-30-test-codex-ip",
+  "dir_name": "accept-pr-doubleflannel-12-30-test-codex-ip-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "system-hardening-toolkit",
+  "description": "macOS and Linux security hardening toolkit providing configuration scripts,\naudit checklists, and remediation procedures for system security.\n",
+  "repo": "chaserbreitenbach/claude-skills-and-agents",
+  "path": "skills/tooling/system-hardening-toolkit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chaserbreitenbach/claude-skills-and-agents",
+  "dir_name": "system-hardening-toolkit-chaserbreitenbach-claude-skills-and-ag-2"
+}

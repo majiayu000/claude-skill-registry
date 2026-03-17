@@ -1,0 +1,11 @@
+{
+  "name": "rest-api-design",
+  "description": "Designs RESTful APIs with proper resource naming, HTTP methods, status codes, and response formats. Use when building new APIs, establishing API conventions, or designing developer-friendly interfaces",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/rest-api-design/skills/rest-api-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "rest-api-design-secondsky-claude-skills-2"
+}

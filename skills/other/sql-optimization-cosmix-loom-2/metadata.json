@@ -1,0 +1,11 @@
+{
+  "name": "sql-optimization",
+  "description": "This skill focuses on analyzing and optimizing SQL queries for improved performance. It covers query analysis, index optimization, execution plan interpretation, query rewriting strategies, PostgreSQL",
+  "repo": "cosmix/loom",
+  "path": "skills/sql-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "sql-optimization-cosmix-loom-2"
+}

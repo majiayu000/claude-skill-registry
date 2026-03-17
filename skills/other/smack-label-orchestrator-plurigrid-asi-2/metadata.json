@@ -1,0 +1,11 @@
+{
+  "name": "smack-label-orchestrator",
+  "description": "Manages SMACK label assignments across apps and kernel. Coordinates mandatory access control labels with process isolation.",
+  "repo": "plurigrid/asi",
+  "path": "skills/smack-label-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "smack-label-orchestrator-plurigrid-asi-2"
+}

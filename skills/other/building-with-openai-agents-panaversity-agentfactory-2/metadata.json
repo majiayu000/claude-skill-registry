@@ -1,0 +1,11 @@
+{
+  "name": "building-with-openai-agents",
+  "description": "Use when building AI agents with OpenAI's Agents SDK. Triggers include creating agents, implementing tools, multi-agent handoffs, guardrails, MCP integration, tracing. Also for using LiteLLM to run ag",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/rare/building-with-openai-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "building-with-openai-agents-panaversity-agentfactory-2"
+}

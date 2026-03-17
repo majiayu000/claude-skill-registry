@@ -1,0 +1,11 @@
+{
+  "name": "orcaflex-file-conversion",
+  "description": "Convert OrcaFlex files between formats (.dat, .yml, .sim) for digital analysis and automation. Supports bidirectional conversion, batch processing, and format standardization.",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcaflex-file-conversion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcaflex-file-conversion-vamseeachanta-digitalmodel-2"
+}

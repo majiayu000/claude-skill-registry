@@ -1,0 +1,11 @@
+{
+  "name": "video-assembly",
+  "description": "Assemble final video from audio, images, and subtitles",
+  "repo": "randysalars/dreamweaving",
+  "path": ".claude/skills/tier3-production/video-assembly",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/randysalars/dreamweaving",
+  "dir_name": "video-assembly-randysalars-dreamweaving-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rubycon",
+  "description": "Rubycon Corporation MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Rubycon aluminum electrolytic capacitors.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/rubycon",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "rubycon-cantara-lib-electronic-compo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "cross-linking",
+  "description": "Guidance for finding and adding bidirectional wikilinks when creating or updating content in the knowledge base. Use when user creates new content or wants to improve discoverability by adding links t",
+  "repo": "leovigna/jarvis-template",
+  "path": ".claude/skills/cross-linking",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leovigna/jarvis-template",
+  "dir_name": "cross-linking-leovigna-jarvis-template-2"
+}

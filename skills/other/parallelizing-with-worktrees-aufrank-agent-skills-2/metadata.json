@@ -1,0 +1,11 @@
+{
+  "name": "parallelizing-with-worktrees",
+  "description": "Create and manage Git worktrees to parallelize agent tasks safely. Use when you need multiple concurrent checkouts (sub-agents, parallel edits, or isolated experiments) and want deterministic setup/cl",
+  "repo": "aufrank/agent-skills",
+  "path": "skills/parallelizing-with-worktrees",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aufrank/agent-skills",
+  "dir_name": "parallelizing-with-worktrees-aufrank-agent-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sessions",
+  "description": "Imported skill sessions from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/langchain/sessions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "sessions-bitwikiorg-skills-md-2"
+}

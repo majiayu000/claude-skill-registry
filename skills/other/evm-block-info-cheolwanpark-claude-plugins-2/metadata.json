@@ -1,0 +1,11 @@
+{
+  "name": "evm-block-info",
+  "description": "Use this skill when the user asks \"block info\", \"what's in block\", \"latest block\", \"get block details\", or mentions viewing block data on EVM chains (Ethereum, Polygon, Arbitrum, etc.). Optional block",
+  "repo": "cheolwanpark/claude-plugins",
+  "path": "plugins/crypto/skills/evm-block-info",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cheolwanpark/claude-plugins",
+  "dir_name": "evm-block-info-cheolwanpark-claude-plugins-2"
+}

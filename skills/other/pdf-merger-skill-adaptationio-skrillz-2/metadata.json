@@ -1,0 +1,11 @@
+{
+  "name": "pdf-merger-skill",
+  "description": "Merge multiple PDF files into single document with customizable options. Supports page selection, bookmarks, and metadata. Use when combining PDFs, creating documents from multiple sources, or organiz",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/skill-builder-generic/examples/pdf-merger-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "pdf-merger-skill-adaptationio-skrillz-2"
+}

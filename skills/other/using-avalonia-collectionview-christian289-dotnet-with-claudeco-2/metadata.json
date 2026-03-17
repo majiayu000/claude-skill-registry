@@ -1,0 +1,11 @@
+{
+  "name": "using-avalonia-collectionview",
+  "description": "Provides CollectionView alternatives for AvaloniaUI using DataGridCollectionView and ReactiveUI. Use when filtering, sorting, or grouping collections in AvaloniaUI applications.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": ".claude/skills/using-avalonia-collectionview",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "using-avalonia-collectionview-christian289-dotnet-with-claudeco-2"
+}

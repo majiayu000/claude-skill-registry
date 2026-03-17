@@ -1,0 +1,11 @@
+{
+  "name": "lsp-setup",
+  "description": "Auto-discovers and configures Language Server Protocol (LSP) servers for your project's languages",
+  "repo": "rysweet/amplihack",
+  "path": ".claude/skills/lsp-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/amplihack",
+  "dir_name": "lsp-setup-rysweet-amplihack-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "codebase-analyzer",
+  "description": "Analyze implementation details, trace data flow, and explain technical workings with precise file:line references. Use this when you need to understand HOW code works in the existing codebase.",
+  "repo": "d-o-hub/rust-self-learning-memory",
+  "path": ".claude/skills/codebase-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/d-o-hub/rust-self-learning-memory",
+  "dir_name": "codebase-analyzer-d-o-hub-rust-self-learning-m-2"
+}

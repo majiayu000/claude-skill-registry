@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-502-regression-checker",
+  "description": "Worker that runs existing tests to catch regressions. Auto-detects framework, reports pass/fail. No status changes or task creation.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-502-regression-checker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-502-regression-checker-boisenoise-skills-collections-2"
+}

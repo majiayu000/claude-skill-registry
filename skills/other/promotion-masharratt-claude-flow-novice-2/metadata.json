@@ -1,0 +1,11 @@
+{
+  "name": "promotion",
+  "description": "Skill Promotion Workflow - Atomic promotion from staging to production",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-deployment-lifecycle/lib/promotion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "promotion-masharratt-claude-flow-novice-2"
+}

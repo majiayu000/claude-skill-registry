@@ -1,0 +1,11 @@
+{
+  "name": "code-formatting",
+  "description": "Format code on the current branch using Biome. Use when asked to format, lint, or clean up code before committing or creating a PR.",
+  "repo": "pollinations/pollinations",
+  "path": ".claude/skills/code-formatting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pollinations/pollinations",
+  "dir_name": "code-formatting-pollinations-pollinations-2"
+}

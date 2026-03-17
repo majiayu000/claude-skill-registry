@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-bullmq-specialist",
+  "description": "BullMQ expert for Redis-backed job queues, background processing, and reliable async execution in Node.js/TypeScript applications. Use when: bullmq, bull queue, redis queue, background job, job queue.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-bullmq-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-bullmq-specialist-boisenoise-skills-collections-2"
+}

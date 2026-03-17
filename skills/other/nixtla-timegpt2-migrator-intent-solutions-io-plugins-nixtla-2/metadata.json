@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-timegpt2-migrator",
+  "description": "Analyze and transform code for TimeGPT-1 to TimeGPT-2 migration. Use when upgrading TimeGPT version. Trigger with 'migrate to TimeGPT-2' or 'upgrade TimeGPT'.",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "000-docs/000a-planned-skills/core-forecasting/nixtla-timegpt2-migrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-timegpt2-migrator-intent-solutions-io-plugins-nixtla-2"
+}

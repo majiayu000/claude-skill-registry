@@ -1,0 +1,9 @@
+{
+  "name": "api-generate",
+  "repo": "eleva-labs/agentic-coding-templates",
+  "path": ".claude/skills/backend/api-generate/SKILL.md",
+  "category": "other",
+  "source": "github.com/eleva-labs/agentic-coding-templates",
+  "dir_name": "api-generate",
+  "downloaded_at": "2026-02-22T07:03:44.908235Z"
+}

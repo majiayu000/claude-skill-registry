@@ -1,0 +1,11 @@
+{
+  "name": "epic-template",
+  "description": "Epic and task structure patterns for SpecFlux. Use when breaking PRDs into epics and tasks. Epics should be self-contained with clear acceptance criteria.",
+  "repo": "cliangdev/specflux",
+  "path": "src/plugin/skills/epic-template",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cliangdev/specflux",
+  "dir_name": "epic-template-cliangdev-specflux-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "t4-stack",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/t4-stack/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "t4-stack",
+  "downloaded_at": "2026-02-15T07:07:01.176887Z"
+}

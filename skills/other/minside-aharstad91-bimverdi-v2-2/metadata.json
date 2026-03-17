@@ -1,0 +1,11 @@
+{
+  "name": "minside",
+  "description": "Expert context for BIM Verdi's Min Side member portal. Use when working on /min-side/ routes, user authentication, access control, or member features.",
+  "repo": "aharstad91/bimverdi-v2",
+  "path": ".claude/skills/minside",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aharstad91/bimverdi-v2",
+  "dir_name": "minside-aharstad91-bimverdi-v2-2"
+}

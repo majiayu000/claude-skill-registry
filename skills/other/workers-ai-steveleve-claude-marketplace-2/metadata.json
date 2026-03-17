@@ -1,0 +1,11 @@
+{
+  "name": "workers-ai",
+  "description": "This skill should be used when the user asks about \"Workers AI\", \"AI models\", \"text generation\", \"embeddings\", \"semantic search\", \"RAG\", \"Retrieval Augmented Generation\", \"AI inference\", \"LLaMA\", \"Lla",
+  "repo": "SteveLeve/claude-marketplace",
+  "path": "plugins/cloudflare-expert/skills/workers-ai",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SteveLeve/claude-marketplace",
+  "dir_name": "workers-ai-steveleve-claude-marketplace-2"
+}

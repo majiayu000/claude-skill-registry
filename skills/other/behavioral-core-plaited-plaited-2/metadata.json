@@ -1,0 +1,11 @@
+{
+  "name": "behavioral-core",
+  "description": "Plaited behavioral programming patterns for event-driven coordination and symbolic reasoning. Use when implementing behavioral programs with behavioral()/useBehavioral, designing rule composition with",
+  "repo": "plaited/plaited",
+  "path": ".claude/skills/behavioral-core",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plaited/plaited",
+  "dir_name": "behavioral-core-plaited-plaited-2"
+}

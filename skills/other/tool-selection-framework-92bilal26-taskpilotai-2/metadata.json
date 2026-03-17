@@ -1,0 +1,11 @@
+{
+  "name": "tool-selection-framework",
+  "description": "Design systematic decision frameworks for selecting appropriate AI tools (Claude Code vs Gemini CLI)\nbased on context requirements, codebase size, reasoning depth needs, and task complexity. Use this\n",
+  "repo": "92Bilal26/TaskPilotAI",
+  "path": ".claude/skills/tool-selection-framework",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/92Bilal26/TaskPilotAI",
+  "dir_name": "tool-selection-framework-92bilal26-taskpilotai-2"
+}

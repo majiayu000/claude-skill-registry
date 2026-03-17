@@ -1,0 +1,11 @@
+{
+  "name": "op-secrets-reader",
+  "description": "Reads secrets from 1Password using the op CLI. Use when the user needs to retrieve passwords, API keys, credentials, documents, or one-time passwords stored in 1Password. Supports reading items by nam",
+  "repo": "leefowlercu/agent-kit",
+  "path": "plugins/op-secrets-manager/skills/op-secrets-reader",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leefowlercu/agent-kit",
+  "dir_name": "op-secrets-reader-leefowlercu-agent-kit-2"
+}

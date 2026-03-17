@@ -1,0 +1,11 @@
+{
+  "name": "data-pipeline-patterns",
+  "description": "Follow these patterns when implementing data pipelines, ETL, data ingestion, or data validation in OptAIC. Use for point-in-time (PIT) correctness, Arrow schemas, quality checks, and Prefect orchestra",
+  "repo": "colingwuyu/optaic-trading",
+  "path": ".claude/skills/data-pipeline-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/colingwuyu/optaic-trading",
+  "dir_name": "data-pipeline-patterns-colingwuyu-optaic-trading-2"
+}

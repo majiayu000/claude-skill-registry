@@ -1,0 +1,11 @@
+{
+  "name": "remediation",
+  "description": "Security incident remediation playbooks for removing threats, restoring systems,\nand recovering from incidents. Use for post-containment cleanup, system recovery,\nand returning to normal operations.\n",
+  "repo": "SherifEldeeb/agentskills",
+  "path": "skills/cybersecurity/remediation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SherifEldeeb/agentskills",
+  "dir_name": "remediation-sherifeldeeb-agentskills-2"
+}

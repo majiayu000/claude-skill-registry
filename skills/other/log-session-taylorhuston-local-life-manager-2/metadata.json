@@ -1,0 +1,11 @@
+{
+  "name": "log-session",
+  "description": "Log entries to the current learning session. Use mid-session to save progress, capture concepts learned, or record corrections. Triggers on \"log this\", \"save progress\", \"record what we learned\".",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/log-session",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "log-session-taylorhuston-local-life-manager-2"
+}

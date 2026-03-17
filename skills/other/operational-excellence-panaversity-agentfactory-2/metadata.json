@@ -1,0 +1,11 @@
+{
+  "name": "operational-excellence",
+  "description": "Use when implementing Kubernetes cost visibility (OpenCost, VPA), backup/disaster recovery (Velero, RTO/RPO), or chaos engineering (Chaos Mesh). Triggers on cost optimization, right-sizing, FinOps, ba",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/warm/operational-excellence",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "operational-excellence-panaversity-agentfactory-2"
+}

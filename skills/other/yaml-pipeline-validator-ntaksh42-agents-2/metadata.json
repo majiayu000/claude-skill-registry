@@ -1,0 +1,11 @@
+{
+  "name": "yaml-pipeline-validator",
+  "description": "Validate and lint Azure Pipelines YAML with best practices checks. Use when validating pipeline syntax or ensuring pipeline quality.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/yaml-pipeline-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "yaml-pipeline-validator-ntaksh42-agents-2"
+}

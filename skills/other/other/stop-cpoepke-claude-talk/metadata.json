@@ -1,0 +1,17 @@
+{
+  "name": "stop",
+  "repo": "cpoepke/claude-talk",
+  "path": "skills/stop/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cpoepke/claude-talk",
+  "dir_name": "stop-cpoepke-claude-talk",
+  "downloaded_at": "2026-03-01T07:18:15.391406Z",
+  "author": "cpoepke",
+  "source_url": "https://github.com/cpoepke/claude-talk/blob/main/skills/stop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cpoepke/claude-talk/blob/main/skills/stop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

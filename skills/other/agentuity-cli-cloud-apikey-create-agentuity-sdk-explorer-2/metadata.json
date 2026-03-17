@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-apikey-create",
+  "description": "Create a new API key. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-apikey-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-apikey-create-agentuity-sdk-explorer-2"
+}

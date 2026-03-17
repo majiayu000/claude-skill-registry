@@ -1,0 +1,11 @@
+{
+  "name": "adb-karrot",
+  "description": "Karrot app automation with AI Vision - bypass Play Integrity and LIAPP detection, login, and interaction workflows with Claude Vision API integration",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".claude/skills/adb/adb-game-karrot/adb-karrot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "dir_name": "adb-karrot-rdmptv-adbautoplayer-2"
+}

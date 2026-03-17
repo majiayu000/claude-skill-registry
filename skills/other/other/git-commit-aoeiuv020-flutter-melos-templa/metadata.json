@@ -1,0 +1,17 @@
+{
+  "name": "git-commit",
+  "repo": "AoEiuV020/flutter_melos_template",
+  "path": ".claude/skills/git-commit/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/AoEiuV020/flutter_melos_template",
+  "dir_name": "git-commit-aoeiuv020-flutter-melos-templa",
+  "downloaded_at": "2026-03-01T04:51:18.834629Z",
+  "author": "AoEiuV020",
+  "source_url": "https://github.com/AoEiuV020/flutter_melos_template/blob/main/.claude/skills/git-commit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AoEiuV020/flutter_melos_template/blob/main/.claude/skills/git-commit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

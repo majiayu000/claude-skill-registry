@@ -1,0 +1,11 @@
+{
+  "name": "adb-workflow-orchestrator",
+  "description": "TOON workflow orchestration engine for coordinating ADB automation scripts across phases with error recovery",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".claude/skills/adb/adb-foundation/adb-workflow-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "dir_name": "adb-workflow-orchestrator-rdmptv-adbautoplayer-2"
+}

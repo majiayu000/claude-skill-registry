@@ -1,0 +1,11 @@
+{
+  "name": "karpenter",
+  "description": "Kubernetes node autoscaling and cost optimization with Karpenter. Use when implementing node provisioning, spot instance management, cluster right-sizing, node consolidation, or reducing compute costs",
+  "repo": "cosmix/loom",
+  "path": "skills/karpenter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "karpenter-cosmix-loom-2"
+}

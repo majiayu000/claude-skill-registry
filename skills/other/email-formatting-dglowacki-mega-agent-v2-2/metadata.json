@@ -1,0 +1,11 @@
+{
+  "name": "email-formatting",
+  "description": "Format emails with HTML templates using neo-brutal design aesthetic. Use when creating email reports, summaries, or formatted messages. Maintains consistent visual style across all communications.",
+  "repo": "dglowacki/mega-agent-v2",
+  "path": ".claude/skills/email-formatting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dglowacki/mega-agent-v2",
+  "dir_name": "email-formatting-dglowacki-mega-agent-v2-2"
+}

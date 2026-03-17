@@ -1,0 +1,11 @@
+{
+  "name": "session-replay",
+  "description": "Analyze claude-trace JSONL files for session health, patterns, and actionable insights.\nUse when debugging session issues, understanding token usage, or identifying failure patterns.\n",
+  "repo": "rysweet/azlin",
+  "path": ".claude/skills/session-replay",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/azlin",
+  "dir_name": "session-replay-rysweet-azlin-2"
+}

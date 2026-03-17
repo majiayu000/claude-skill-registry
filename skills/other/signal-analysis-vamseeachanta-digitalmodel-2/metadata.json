@@ -1,0 +1,11 @@
+{
+  "name": "signal-analysis",
+  "description": "Perform signal processing, rainflow cycle counting, and spectral analysis for fatigue and time series data. Use for analyzing stress time histories, computing FFT/PSD, extracting fatigue cycles (ASTM ",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/signal-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "signal-analysis-vamseeachanta-digitalmodel-2"
+}

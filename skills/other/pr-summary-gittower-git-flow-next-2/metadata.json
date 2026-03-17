@@ -1,0 +1,11 @@
+{
+  "name": "pr-summary",
+  "description": "Generate a PR summary and write to workflows/ pr_summary.md",
+  "repo": "gittower/git-flow-next",
+  "path": ".claude/skills/pr-summary",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gittower/git-flow-next",
+  "dir_name": "pr-summary-gittower-git-flow-next-2"
+}

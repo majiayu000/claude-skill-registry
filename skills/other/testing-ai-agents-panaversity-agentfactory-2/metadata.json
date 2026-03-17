@@ -1,0 +1,11 @@
+{
+  "name": "testing-ai-agents",
+  "description": "Use when testing AI agent code with pytest. Covers TDD for agent APIs, mocking LLM calls (NOT evaluating LLM outputs), pytest-asyncio patterns, FastAPI testing with httpx, SQLModel testing, and agent ",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/warm/testing-ai-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "testing-ai-agents-panaversity-agentfactory-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "kscale",
+  "description": "K-Scale Labs robotics skill collection - unified index for humanoid robot development, RL training, sim-to-real transfer, and deployment. Aggregates 9 specialized skills with GF(3) triadic organizatio",
+  "repo": "plurigrid/asi",
+  "path": "skills/kscale",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "kscale-plurigrid-asi-2"
+}

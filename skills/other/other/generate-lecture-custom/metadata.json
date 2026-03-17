@@ -1,0 +1,9 @@
+{
+  "name": "generate-lecture-custom",
+  "repo": "The-Human-Company/ai-receptionist",
+  "path": ".claude/skills/generate-lecture-custom/SKILL.md",
+  "category": "other",
+  "source": "github.com/The-Human-Company/ai-receptionist",
+  "dir_name": "generate-lecture-custom",
+  "downloaded_at": "2026-02-22T05:49:19.499428Z"
+}

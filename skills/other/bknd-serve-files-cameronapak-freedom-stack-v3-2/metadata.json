@@ -1,0 +1,11 @@
+{
+  "name": "bknd-serve-files",
+  "description": "Use when serving uploaded files to users. Covers API-proxied file serving, direct storage URLs (S3/R2/Cloudinary), CDN configuration, public file URLs, caching headers, image optimization with Cloudin",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-serve-files",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-serve-files-cameronapak-freedom-stack-v3-2"
+}

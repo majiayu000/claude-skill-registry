@@ -1,0 +1,11 @@
+{
+  "name": "lindy-install-auth",
+  "description": "Install and configure Lindy AI SDK/CLI authentication.\nUse when setting up a new Lindy integration, configuring API keys,\nor initializing Lindy in your project.\nTrigger with phrases like \"install lind",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/lindy-pack/lindy-install-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "lindy-install-auth-vasic-digital-superagent-2"
+}

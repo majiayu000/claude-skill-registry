@@ -1,0 +1,11 @@
+{
+  "name": "create-user-stories",
+  "description": "Creates User Stories from UI screens using component-based decomposition. Analyzes screenshots or screen descriptions to identify UI components and generates User Stories with AMP acceptance criteria ",
+  "repo": "BenGWeeks/.claude",
+  "path": "skills/create-user-stories",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BenGWeeks/.claude",
+  "dir_name": "create-user-stories-bengweeks-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "r-analyst",
+  "description": "R statistical analysis for publication-ready sociology research. Guides you through phased workflows for DiD, IV, matching, panel methods, and more. Use when doing quantitative analysis in R for acade",
+  "repo": "nealcaren/sociology-analysis-agents",
+  "path": "plugins/r-analyst/skills/r-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nealcaren/sociology-analysis-agents",
+  "dir_name": "r-analyst-nealcaren-sociology-analysis-a-2"
+}

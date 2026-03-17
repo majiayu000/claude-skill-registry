@@ -1,0 +1,11 @@
+{
+  "name": "windows-kernel",
+  "description": "Guide for Windows kernel security research including driver development, system callbacks, security features, and kernel exploitation. Use this skill when working with Windows drivers, PatchGuard, DSE",
+  "repo": "gmh5225/awesome-game-security",
+  "path": ".claude/skills/windows-kernel",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gmh5225/awesome-game-security",
+  "dir_name": "windows-kernel-gmh5225-awesome-game-securit-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "scraping-reddit",
+  "description": "Scrapes top posts from specified subreddits using the Reddit JSON API. Use when the user needs to fetch post titles and links from Reddit without authentication.",
+  "repo": "TheeCoderAhmed/Skills-Master",
+  "path": ".agent/skills/scraping-reddit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TheeCoderAhmed/Skills-Master",
+  "dir_name": "scraping-reddit-theecoderahmed-skills-master-2"
+}

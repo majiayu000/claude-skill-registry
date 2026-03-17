@@ -1,0 +1,11 @@
+{
+  "name": "dashlane",
+  "description": "Access passwords, secure notes, secrets and OTP codes from Dashlane vault.",
+  "repo": "clawdbot/skills",
+  "path": "skills/gnarco/dashlane",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "dashlane-clawdbot-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "steam",
+  "description": "Browse, filter, and discover games in a Steam library. Filter by playtime, reviews, Steam Deck compatibility, genres, and tags. Use when user asks about their Steam games, what to play, game recommend",
+  "repo": "clawdbot/skills",
+  "path": "skills/mjrussell/steam",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "steam-clawdbot-skills-2"
+}

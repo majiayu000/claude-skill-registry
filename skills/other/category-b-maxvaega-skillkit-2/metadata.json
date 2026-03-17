@@ -1,0 +1,11 @@
+{
+  "name": "category-b",
+  "description": "Example skill in category B demonstrating flat organization within nested structure",
+  "repo": "maxvaega/skillkit",
+  "path": "examples/skills/nested-example/category-b",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "category-b-maxvaega-skillkit-2"
+}

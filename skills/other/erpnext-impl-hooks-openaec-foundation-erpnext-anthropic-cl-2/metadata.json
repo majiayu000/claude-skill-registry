@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-impl-hooks",
+  "description": "Implementation workflows and decision trees for Frappe hooks.py configuration. Use when determining HOW to implement doc_events, scheduler_events, override hooks, permission hooks, extend_bootinfo, fi",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/impl/erpnext-impl-hooks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-impl-hooks-openaec-foundation-erpnext-anthropic-cl-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "code-review-receive",
+  "description": "Technical evaluation of code review feedback. Use when receiving review feedback - requires verification before implementing, no performative agreement, push back when technically wrong.",
+  "repo": "srnnkls/tropos",
+  "path": "skills/code-review-receive",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/srnnkls/tropos",
+  "dir_name": "code-review-receive-srnnkls-tropos-2"
+}

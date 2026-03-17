@@ -1,0 +1,11 @@
+{
+  "name": "youtube-metadata",
+  "description": "Generate YouTube title, description, and tags for bilingual audiobook videos. Use when user asks to upload video, generate youtube metadata, or prepare video for upload.",
+  "repo": "smoreg/biLangGen",
+  "path": ".claude/skills/youtube-metadata",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/smoreg/biLangGen",
+  "dir_name": "youtube-metadata-smoreg-bilanggen-2"
+}

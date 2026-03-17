@@ -1,0 +1,11 @@
+{
+  "name": "implementing-communitytoolkit-mvvm",
+  "description": "Implements MVVM pattern using CommunityToolkit.Mvvm with ObservableProperty attributes. Use when building ViewModels with source generators or implementing commands in WPF/AvaloniaUI.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/implementing-communitytoolkit-mvvm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "implementing-communitytoolkit-mvvm-christian289-dotnet-with-claudeco-2"
+}

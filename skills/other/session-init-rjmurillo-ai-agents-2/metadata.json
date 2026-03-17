@@ -1,0 +1,11 @@
+{
+  "name": "session-init",
+  "description": "Create protocol-compliant JSON session logs with verification-based enforcement. Autonomous operation with auto-incremented session numbers and objective derivation from git state. Use when starting a",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/session-init",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "session-init-rjmurillo-ai-agents-2"
+}

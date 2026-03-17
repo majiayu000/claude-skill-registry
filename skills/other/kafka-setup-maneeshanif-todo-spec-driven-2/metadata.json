@@ -1,0 +1,11 @@
+{
+  "name": "kafka-setup",
+  "description": "Set up Apache Kafka for event streaming - Strimzi for local Kubernetes, Redpanda Cloud for production. Use when configuring event-driven messaging for Phase 5. (project)",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/kafka-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "kafka-setup-maneeshanif-todo-spec-driven-2"
+}

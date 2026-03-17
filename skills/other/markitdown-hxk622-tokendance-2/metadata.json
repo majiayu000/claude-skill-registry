@@ -1,0 +1,11 @@
+{
+  "name": "markitdown",
+  "description": "Convert files and office documents to Markdown. Supports PDF, DOCX, PPTX, XLSX, images (with OCR), audio (with transcription), HTML, CSV, JSON, XML, ZIP, YouTube URLs, EPubs and more.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/writing/markitdown",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "markitdown-hxk622-tokendance-2"
+}

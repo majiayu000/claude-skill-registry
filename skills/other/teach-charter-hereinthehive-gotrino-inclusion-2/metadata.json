@@ -1,0 +1,11 @@
+{
+  "name": "teach-charter",
+  "description": "Set up the inclusion plugin for your project. Detects your stack, captures scope decisions, and creates a config that evolves with your project. Run once to get started, revisit to update decisions.",
+  "repo": "hereinthehive/gotrino-inclusion",
+  "path": "skills/teach-charter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hereinthehive/gotrino-inclusion",
+  "dir_name": "teach-charter-hereinthehive-gotrino-inclusion-2"
+}

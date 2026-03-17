@@ -1,0 +1,11 @@
+{
+  "name": "swiftui-performance-audit",
+  "description": "Audit and improve SwiftUI runtime performance from code review and architecture. Use for requests to diagnose slow rendering, janky scrolling, high CPU/memory usage, excessive view updates, or layout ",
+  "repo": "nickromney/n-dotfiles",
+  "path": "skills/swiftui-performance-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nickromney/n-dotfiles",
+  "dir_name": "swiftui-performance-audit-nickromney-n-dotfiles-2"
+}

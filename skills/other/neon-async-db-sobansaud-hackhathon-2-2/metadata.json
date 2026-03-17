@@ -1,0 +1,11 @@
+{
+  "name": "neon-async-db",
+  "description": "This skill should be used when setting up and managing reliable, high-performance asynchronous database connections for Neon Serverless PostgreSQL using SQLModel and SQLAlchemy's async capabilities.",
+  "repo": "Sobansaud/Hackhathon---2",
+  "path": "Phase 4/.claude/skills/neon-async-db",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sobansaud/Hackhathon---2",
+  "dir_name": "neon-async-db-sobansaud-hackhathon-2-2"
+}

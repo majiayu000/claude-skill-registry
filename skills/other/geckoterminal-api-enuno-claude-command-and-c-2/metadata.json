@@ -1,0 +1,11 @@
+{
+  "name": "geckoterminal-api",
+  "description": "GeckoTerminal API - DeFi and DEX aggregator providing real-time cryptocurrency prices, trading volumes, OHLCV charts, and liquidity data across 250+ blockchain networks and 1,800+ decentralized exchan",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/geckoterminal-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "geckoterminal-api-enuno-claude-command-and-c-2"
+}

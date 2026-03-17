@@ -1,0 +1,11 @@
+{
+  "name": "mock-authoring",
+  "description": "Writing effective dry_run.py mocks for workflow testing without external dependencies",
+  "repo": "mpuig/raw",
+  "path": "builder/skills/mock-authoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mpuig/raw",
+  "dir_name": "mock-authoring-mpuig-raw-2"
+}

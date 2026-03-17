@@ -1,0 +1,11 @@
+{
+  "name": "spectral-libraries",
+  "description": "Build, manage, and search spectral libraries for proteomics. Covers DDA-based library generation, predicted libraries (Prosit, DeepLC), and library formats.",
+  "repo": "GPTomics/bioSkills",
+  "path": "proteomics/spectral-libraries",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "spectral-libraries-gptomics-bioskills-2"
+}

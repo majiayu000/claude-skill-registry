@@ -1,0 +1,11 @@
+{
+  "name": "bootstrap-product",
+  "description": "Transform a product briefing into comprehensive, research-backed product management artifacts.\n\nThis skill conducts domain-expert research BEFORE user questioning to enable smarter questions\nand pre-p",
+  "repo": "atlanticroc/hive",
+  "path": ".claude/skills/bootstrap-product",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/atlanticroc/hive",
+  "dir_name": "bootstrap-product-atlanticroc-hive-2"
+}

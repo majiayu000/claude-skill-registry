@@ -1,0 +1,11 @@
+{
+  "name": "ffmpeg-stabilization-360",
+  "description": "MANDATORY: Always Use Backslashes on Windows for File Paths",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/ffmpeg-master/skills/ffmpeg-stabilization-360",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "ffmpeg-stabilization-360-josiahsiegel-claude-plugin-market-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "backend-rag-implementation",
+  "description": "Build Retrieval-Augmented Generation (RAG) systems for LLM applications with vector databases and semantic search in FastAPI backends. Use when implementing knowledge-grounded AI, building document Q&",
+  "repo": "shredbx/demo-3d-model",
+  "path": ".claude/skills/backend-rag-implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shredbx/demo-3d-model",
+  "dir_name": "backend-rag-implementation-shredbx-demo-3d-model-2"
+}

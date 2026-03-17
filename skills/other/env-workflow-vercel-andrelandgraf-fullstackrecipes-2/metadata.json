@@ -1,0 +1,11 @@
+{
+  "name": "env-workflow-vercel",
+  "description": "Manage environment variables across Vercel environments. Sync with Vercel CLI, handle local overrides, and load env vars in scripts.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/env-workflow-vercel",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "env-workflow-vercel-andrelandgraf-fullstackrecipes-2"
+}

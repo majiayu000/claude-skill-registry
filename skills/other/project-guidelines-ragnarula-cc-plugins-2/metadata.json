@@ -1,0 +1,11 @@
+{
+  "name": "project-guidelines",
+  "description": "This skill documents the standard process for reading and applying project-specific guidelines during SDD workflow phases. Use this when an agent needs to understand and follow project conventions for",
+  "repo": "ragnarula/cc-plugins",
+  "path": "sdd/skills/project-guidelines",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ragnarula/cc-plugins",
+  "dir_name": "project-guidelines-ragnarula-cc-plugins-2"
+}

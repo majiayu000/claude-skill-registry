@@ -1,0 +1,11 @@
+{
+  "name": "openharmony-error-detection",
+  "description": "Use when developing OpenHarmony applications to detect and fix errors systematically through lint, unit tests, compilation, automated search, and documentation lookup",
+  "repo": "mengfei0053/skills",
+  "path": "skills/openharmony-error-detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mengfei0053/skills",
+  "dir_name": "openharmony-error-detection-mengfei0053-skills-2"
+}

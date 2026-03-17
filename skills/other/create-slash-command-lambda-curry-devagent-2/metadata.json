@@ -1,0 +1,11 @@
+{
+  "name": "create-slash-command",
+  "description": "Create new slash commands for DevAgent workflows. Use when you need to create a new command file in .agents/commands/ and symlink it to .cursor/commands/ for Cursor IDE integration. This skill handles",
+  "repo": "lambda-curry/devagent",
+  "path": ".cursor/skills/create-slash-command",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lambda-curry/devagent",
+  "dir_name": "create-slash-command-lambda-curry-devagent-2"
+}

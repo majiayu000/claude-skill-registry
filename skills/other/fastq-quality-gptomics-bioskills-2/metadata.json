@@ -1,0 +1,11 @@
+{
+  "name": "fastq-quality",
+  "description": "Work with FASTQ quality scores using Biopython. Use when analyzing read quality, filtering by quality, trimming low-quality bases, or generating quality reports.",
+  "repo": "GPTomics/bioSkills",
+  "path": "sequence-io/fastq-quality",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "fastq-quality-gptomics-bioskills-2"
+}

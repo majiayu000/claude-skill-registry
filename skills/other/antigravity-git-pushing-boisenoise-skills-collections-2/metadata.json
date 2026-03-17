@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-git-pushing",
+  "description": "Stage, commit, and push git changes with conventional commit messages. Use when user wants to commit and push changes, mentions pushing to remote, or asks to save and push their work. Also activates w",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-git-pushing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-git-pushing-boisenoise-skills-collections-2"
+}

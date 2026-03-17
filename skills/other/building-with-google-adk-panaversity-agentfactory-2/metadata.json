@@ -1,0 +1,11 @@
+{
+  "name": "building-with-google-adk",
+  "description": "Use when building AI agents with Google's Agent Development Kit (ADK). Triggers include creating ADK agents, Gemini-powered agents, multi-agent workflows, MCP integration with ADK, agent evaluation, w",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/rare/building-with-google-adk",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "building-with-google-adk-panaversity-agentfactory-2"
+}

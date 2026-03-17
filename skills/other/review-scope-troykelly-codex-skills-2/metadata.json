@@ -1,0 +1,11 @@
+{
+  "name": "review-scope",
+  "description": "Use before code review - determine if change is minor (review new code only) or major (review impacted code too)",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/review-scope",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "review-scope-troykelly-codex-skills-2"
+}

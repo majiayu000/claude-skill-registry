@@ -1,0 +1,11 @@
+{
+  "name": "test-privacylrs-hardware",
+  "description": "Flash and test code on PrivacyLRS/ExpressLRS ESP32 hardware modules (TX/RX)",
+  "repo": "sensei-hacker/inav-claude",
+  "path": ".claude/skills/test-privacylrs-hardware",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sensei-hacker/inav-claude",
+  "dir_name": "test-privacylrs-hardware-sensei-hacker-inav-claude-2"
+}

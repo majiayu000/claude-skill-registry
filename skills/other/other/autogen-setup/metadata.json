@@ -1,0 +1,9 @@
+{
+  "name": "autogen-setup",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/ai-agents-conversational/skills/autogen-setup/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "autogen-setup",
+  "downloaded_at": "2026-02-17T01:14:48.913762Z"
+}

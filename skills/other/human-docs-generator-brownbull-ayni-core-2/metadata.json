@@ -1,0 +1,11 @@
+{
+  "name": "human-docs-generator",
+  "description": "Generates role-based human documentation (<1000 words per doc). Use when epics complete, breaking changes occur, or architecture decisions are made. Creates guides for developers, QA, DevOps, and busi",
+  "repo": "Brownbull/ayni_core",
+  "path": ".claude/skills/human-docs-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Brownbull/ayni_core",
+  "dir_name": "human-docs-generator-brownbull-ayni-core-2"
+}

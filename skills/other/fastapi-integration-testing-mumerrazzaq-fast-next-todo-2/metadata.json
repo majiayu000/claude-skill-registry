@@ -1,0 +1,11 @@
+{
+  "name": "fastapi-integration-testing",
+  "description": "Provides a comprehensive guide and templates for creating integration tests for FastAPI applications. Use this skill when you need to set up or write integration tests involving a database, authentica",
+  "repo": "MUmerRazzaq/fast-next-todo",
+  "path": ".claude/skills/fastapi-integration-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MUmerRazzaq/fast-next-todo",
+  "dir_name": "fastapi-integration-testing-mumerrazzaq-fast-next-todo-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "write-subagent",
+  "repo": "ivy/dotfiles",
+  "path": "home/dot_claude/skills/write-subagent/SKILL.md.tmpl",
+  "category": "other",
+  "source": "github.com/ivy/dotfiles",
+  "dir_name": "write-subagent",
+  "downloaded_at": "2026-02-22T07:35:10.236665Z"
+}

@@ -2,7 +2,7 @@
   "category": "documents",
   "code": "doc",
   "count": 3269,
-  "updated_at": "2026-03-07T01:45:30.630625Z",
+  "updated_at": "2026-03-17T14:53:47.892549Z",
   "skills": [
     {
       "name": "docs-write",
@@ -4999,7 +4999,7 @@
     },
     {
       "name": "beyond-mcp-v2",
-      "description": "Description: \"Access Kalshi prediction market data including market prices, orderbooks, trades, events, and series information. Use when the user asks about prediction markets, Kalshi markets, bett...",
+      "description": "Description: \"Access Kalshi prediction market data including market prices, orderbooks, trades, events, and series information. Use when the user asks about prediction markets, Kalshi markets, betting",
       "repo": "basher83/lunar-claude",
       "path": "",
       "branch": "main",
@@ -18109,7 +18109,7 @@
     },
     {
       "name": "ai-agent-skills",
-      "description": "The Web Search Skill enables AI agents on the Raia platform to access real-time information from the internet, allowing them to provide up-to-date, relevant, and context-aware answers. This dynamic...",
+      "description": "The Web Search Skill enables AI agents on the Raia platform to access real-time information from the internet, allowing them to provide up-to-date, relevant, and context-aware answers. This dynamic ca",
       "repo": "raia-ai/raia-v2-docs",
       "path": "",
       "branch": "main",
@@ -20071,7 +20071,7 @@
     },
     {
       "name": "anthropic-pdf",
-      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmaticall...",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
       "repo": "",
       "path": "",
       "branch": "main",
@@ -40007,7 +40007,7 @@
     },
     {
       "name": "claudekit-skill-creator",
-      "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, wor...",
+      "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workfl",
       "repo": "",
       "path": "",
       "branch": "main",

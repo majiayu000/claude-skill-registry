@@ -1,0 +1,11 @@
+{
+  "name": "test-infrastructure",
+  "description": "Enforces project test infrastructure conventions for factories, MSW handlers, mock data, Page Objects, and shared test utilities.",
+  "repo": "JasonPaff/head-shakers",
+  "path": ".claude/skills/test-infrastructure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JasonPaff/head-shakers",
+  "dir_name": "test-infrastructure-jasonpaff-head-shakers-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "unit-test-remote",
+  "description": "仅在最终的 /speckit.verify 步骤用于统一验证代码正确性；实现阶段禁止调用。",
+  "repo": "EricOo0/stock-trading-platform",
+  "path": ".coco/skills/unit-test-remote",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/EricOo0/stock-trading-platform",
+  "dir_name": "unit-test-remote-ericoo0-stock-trading-platfo-2"
+}

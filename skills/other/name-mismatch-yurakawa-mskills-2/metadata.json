@@ -1,0 +1,11 @@
+{
+  "name": "name-mismatch",
+  "description": "This skill has a name in the frontmatter that doesn't match the directory name.",
+  "repo": "yurakawa/mskills",
+  "path": "tests/fixtures/skills/invalid/name-mismatch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yurakawa/mskills",
+  "dir_name": "name-mismatch-yurakawa-mskills-2"
+}

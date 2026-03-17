@@ -1,0 +1,11 @@
+{
+  "name": "python-dev",
+  "description": "Python 开发规范，包含 PEP 8 风格、类型注解、异常处理、测试规范等",
+  "repo": "doccker/cc-use-exp",
+  "path": ".claude/skills/python-dev",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doccker/cc-use-exp",
+  "dir_name": "python-dev-doccker-cc-use-exp-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "worklog",
+  "description": "Add timestamped work log entries to track progress and decisions. Use for documenting work, decisions, gotchas, and handoffs between agents.",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/worklog",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "worklog-taylorhuston-local-life-manager-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-workers-performance",
+  "description": "Cloudflare Workers performance optimization with CPU, memory, caching, bundle size. Use for slow workers, high latency, cold starts, or encountering CPU limits, memory issues, timeout errors.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-workers/skills/cloudflare-workers-performance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "cloudflare-workers-performance-secondsky-claude-skills-2"
+}

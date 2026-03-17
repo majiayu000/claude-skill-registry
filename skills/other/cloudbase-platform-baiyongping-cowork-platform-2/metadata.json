@@ -1,0 +1,11 @@
+{
+  "name": "cloudbase-platform",
+  "description": "CloudBase platform knowledge and best practices. Use this skill for general CloudBase platform understanding, including storage, hosting, authentication, cloud functions, database permissions, and dat",
+  "repo": "baiyongping/cowork-platform",
+  "path": ".claude/skills/cloudbase-platform",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/baiyongping/cowork-platform",
+  "dir_name": "cloudbase-platform-baiyongping-cowork-platform-2"
+}

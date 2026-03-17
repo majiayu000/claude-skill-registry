@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-azure-functions",
+  "description": "Expert patterns for Azure Functions development including isolated worker model, Durable Functions orchestration, cold start optimization, and production patterns. Covers .NET, Python, and Node.js pro",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-azure-functions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-azure-functions-boisenoise-skills-collections-2"
+}

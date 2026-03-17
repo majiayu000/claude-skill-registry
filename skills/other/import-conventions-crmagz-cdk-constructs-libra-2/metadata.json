@@ -1,0 +1,11 @@
+{
+  "name": "import-conventions",
+  "description": "Import conventions and ordering rules. Use when writing imports or organizing import statements. Enforces explicit named imports, never wildcards.",
+  "repo": "crmagz/cdk-constructs-library",
+  "path": ".claude/skills/import-conventions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/crmagz/cdk-constructs-library",
+  "dir_name": "import-conventions-crmagz-cdk-constructs-libra-2"
+}

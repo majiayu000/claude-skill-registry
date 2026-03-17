@@ -1,0 +1,11 @@
+{
+  "name": "sessions-to-blog",
+  "description": "Generate MDX blog posts or recaps from session logs in `sessions/articles`. Use when the user asks to turn daily session notes into publishable blog posts, define writing style or linking rules for th",
+  "repo": "lancenunes/codex-skills",
+  "path": "sessions-to-blog",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lancenunes/codex-skills",
+  "dir_name": "sessions-to-blog-lancenunes-codex-skills-2"
+}

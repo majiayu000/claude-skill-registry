@@ -1,0 +1,11 @@
+{
+  "name": "create-rule",
+  "description": "Create new Claude Code rules with proper structure and best practices. Use this skill when developing custom rules for coding standards, conventions, or guidelines that Claude should follow.",
+  "repo": "RBozydar/rbw-claude-code",
+  "path": "plugins/core/skills/create-rule",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RBozydar/rbw-claude-code",
+  "dir_name": "create-rule-rbozydar-rbw-claude-code-2"
+}

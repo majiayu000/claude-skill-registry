@@ -1,0 +1,11 @@
+{
+  "name": "fumadocs-mdx-structure",
+  "description": "Create MDX documentation files with proper frontmatter, imports, and component integration. Apply when creating or updating Fumadocs documentation pages in content/docs/.",
+  "repo": "TheOrcDev/8bitcn-ui",
+  "path": ".claude/skills/fumadocs-mdx-structure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TheOrcDev/8bitcn-ui",
+  "dir_name": "fumadocs-mdx-structure-theorcdev-8bitcn-ui-2"
+}

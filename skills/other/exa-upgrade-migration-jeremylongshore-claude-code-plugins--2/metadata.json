@@ -1,0 +1,11 @@
+{
+  "name": "exa-upgrade-migration",
+  "description": "Analyze, plan, and execute Exa SDK upgrades with breaking change detection.\nUse when upgrading Exa SDK versions, detecting deprecations,\nor migrating to new API versions.\nTrigger with phrases like \"up",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/exa-pack/skills/exa-upgrade-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "exa-upgrade-migration-jeremylongshore-claude-code-plugins--2"
+}

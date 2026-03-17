@@ -1,0 +1,11 @@
+{
+  "name": "chrome-devtools-mcp",
+  "description": "Testing UI and automating browsers via Chrome DevTools MCP. Use when taking screenshots, checking console errors, testing UI interactions, or verifying visual changes.",
+  "repo": "Michael0520/milo-claudekit",
+  "path": "plugins/chrome-devtools-mcp/skills/chrome-devtools-mcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Michael0520/milo-claudekit",
+  "dir_name": "chrome-devtools-mcp-michael0520-milo-claudekit-2"
+}

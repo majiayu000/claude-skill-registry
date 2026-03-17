@@ -1,0 +1,17 @@
+{
+  "name": "recipe-quality-audit",
+  "repo": "open-agreements/open-agreements",
+  "path": "skills/recipe-quality-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/open-agreements/open-agreements",
+  "dir_name": "recipe-quality-audit",
+  "downloaded_at": "2026-03-17T14:34:44.350858Z",
+  "author": "open-agreements",
+  "source_url": "https://github.com/open-agreements/open-agreements/blob/main/skills/recipe-quality-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/open-agreements/open-agreements/blob/main/skills/recipe-quality-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

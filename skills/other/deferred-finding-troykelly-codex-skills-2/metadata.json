@@ -1,0 +1,11 @@
+{
+  "name": "deferred-finding",
+  "description": "Use when a review finding cannot be fixed in current PR - creates properly documented tracking issue with full context, linked to parent, following full issue-driven-development process",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/deferred-finding",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "deferred-finding-troykelly-codex-skills-2"
+}

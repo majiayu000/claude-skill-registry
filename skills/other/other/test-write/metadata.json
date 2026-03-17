@@ -1,0 +1,9 @@
+{
+  "name": "test-write",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/test:write/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "test-write",
+  "downloaded_at": "2026-02-15T07:49:48.685842Z"
+}

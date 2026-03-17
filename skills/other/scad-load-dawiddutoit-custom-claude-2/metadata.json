@@ -1,0 +1,11 @@
+{
+  "name": "scad-load",
+  "description": "Loads OpenSCAD files with full dependency context by parsing use/include statements,\nresolving library paths, and extracting API surface (modules, functions, parameters).\nUse when working with OpenSCA",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/scad-load",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "scad-load-dawiddutoit-custom-claude-2"
+}

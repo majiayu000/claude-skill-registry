@@ -1,0 +1,11 @@
+{
+  "name": "web-monitor-bot",
+  "description": "This skill should be used when the user wants to monitor a website for changes, availability, or specific conditions. Use this skill for tasks like tracking product stock, monitoring appointment slots",
+  "repo": "TianqiYe/tockstalk-bot",
+  "path": ".claude/skills/web-monitor-bot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TianqiYe/tockstalk-bot",
+  "dir_name": "web-monitor-bot-tianqiye-tockstalk-bot-2"
+}

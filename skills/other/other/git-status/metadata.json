@@ -1,0 +1,9 @@
+{
+  "name": "git-status",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/git:status/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "git-status",
+  "downloaded_at": "2026-02-15T07:49:47.230801Z"
+}

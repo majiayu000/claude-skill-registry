@@ -1,0 +1,11 @@
+{
+  "name": "session",
+  "description": "Session management and protocol compliance skills. Use Test-InvestigationEligibility to check if staged files qualify for investigation-only QA skip per ADR-034 before committing with 'SKIPPED investi",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/session-log-fixer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "session-rjmurillo-ai-agents-2"
+}

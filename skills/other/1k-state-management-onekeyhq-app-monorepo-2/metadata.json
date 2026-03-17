@@ -1,0 +1,11 @@
+{
+  "name": "1k-state-management",
+  "description": "Jotai state management patterns for OneKey. Use when working with atoms, global state, feature state, or context atoms. Triggers on jotai, atom, state, globalAtom, contextAtom, store, persistence, set",
+  "repo": "OneKeyHQ/app-monorepo",
+  "path": ".claude/skills/1k-state-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OneKeyHQ/app-monorepo",
+  "dir_name": "1k-state-management-onekeyhq-app-monorepo-2"
+}

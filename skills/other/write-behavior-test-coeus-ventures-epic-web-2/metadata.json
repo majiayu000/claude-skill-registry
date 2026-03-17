@@ -1,0 +1,11 @@
+{
+  "name": "write-behavior-test",
+  "description": "This skill creates Playwright behavior tests (.spec.ts) that verify complete user workflows. Tests translate behavior specifications (with Act:/Check: steps) into executable Playwright code using PreD",
+  "repo": "coeus-ventures/epic-web",
+  "path": ".claude/skills/write-behavior-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/coeus-ventures/epic-web",
+  "dir_name": "write-behavior-test-coeus-ventures-epic-web-2"
+}

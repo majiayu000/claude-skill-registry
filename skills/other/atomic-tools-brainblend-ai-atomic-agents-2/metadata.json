@@ -1,0 +1,11 @@
+{
+  "name": "atomic-tools",
+  "description": "This skill should be used when the user asks to \"create a tool\", \"implement BaseTool\", \"add tool to agent\", \"tool orchestration\", \"external API tool\", or needs guidance on tool development, tool confi",
+  "repo": "BrainBlend-AI/atomic-agents",
+  "path": "claude-plugin/atomic-agents/skills/atomic-tools",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BrainBlend-AI/atomic-agents",
+  "dir_name": "atomic-tools-brainblend-ai-atomic-agents-2"
+}

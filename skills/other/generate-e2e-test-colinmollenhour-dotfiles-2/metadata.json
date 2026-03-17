@@ -1,0 +1,11 @@
+{
+  "name": "generate-e2e-test",
+  "description": "Generate an end-to-end test for a given feature or user story. Use when the user asks to create E2E tests, automate workflows, test user flows, or convert manual workflows into Playwright tests. Lever",
+  "repo": "colinmollenhour/dotfiles",
+  "path": ".claude/skills/generate-e2e-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/colinmollenhour/dotfiles",
+  "dir_name": "generate-e2e-test-colinmollenhour-dotfiles-2"
+}

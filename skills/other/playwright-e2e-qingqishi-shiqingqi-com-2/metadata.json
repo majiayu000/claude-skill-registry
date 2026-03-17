@@ -1,0 +1,11 @@
+{
+  "name": "playwright-e2e",
+  "description": "Playwright end-to-end (e2e) testing best practices for user-centric testing using semantic locators. Use when writing E2E tests, integration tests, user flow tests, Playwright tests, test specs, or wh",
+  "repo": "QingqiShi/shiqingqi.com",
+  "path": ".claude/skills/playwright-e2e",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/QingqiShi/shiqingqi.com",
+  "dir_name": "playwright-e2e-qingqishi-shiqingqi-com-2"
+}

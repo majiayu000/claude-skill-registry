@@ -1,0 +1,11 @@
+{
+  "name": "workflow-analysis",
+  "description": "Workflow d'Analyse Obligatoire. Use when working with workflow analysis.",
+  "repo": "TheBeardedBearSAS/claude-craft",
+  "path": "Dev/i18n/pt/Common/skills/workflow-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TheBeardedBearSAS/claude-craft",
+  "dir_name": "workflow-analysis-thebeardedbearsas-claude-craft-2"
+}

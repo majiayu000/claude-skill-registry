@@ -1,0 +1,11 @@
+{
+  "name": "dag-iteration-detector",
+  "description": "Identifies when task outputs require iteration based on quality signals, unmet requirements, or explicit feedback. Triggers appropriate re-execution strategies. Activate on 'needs iteration', 'retry n",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-iteration-detector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-iteration-detector-erichowens-some-claude-skills-2"
+}

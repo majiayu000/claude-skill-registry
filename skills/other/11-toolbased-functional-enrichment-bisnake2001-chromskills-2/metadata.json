@@ -1,0 +1,11 @@
+{
+  "name": "11_toolBased.functional-enrichment",
+  "description": "Perform GO and KEGG functional enrichment using HOMER from genomic regions (BED/narrowPeak/broadPeak) or gene lists, and produce R-based barplot/dotplot visualizations. Use this skill when you want to",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "11_toolBased.functional-enrichment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "11-toolbased-functional-enrichment-bisnake2001-chromskills-2"
+}

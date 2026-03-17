@@ -1,0 +1,11 @@
+{
+  "name": "decay-scoring",
+  "description": "Sistema de scoring temporal para nodes de conhecimento do corpus RAG.\nCalcula scores de obsolescencia baseado em idade, validacao e acesso.\nGera sugestoes de curadoria para conteudo desatualizado.\n",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/decay-scoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "decay-scoring-arbgjr-satra-2"
+}

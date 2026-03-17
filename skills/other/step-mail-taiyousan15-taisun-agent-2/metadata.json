@@ -1,0 +1,11 @@
+{
+  "name": "step-mail",
+  "description": "ステップメール、メルマガの作成を支援。メールマーケティング、自動配信メール、日刊メルマガを書く際に使用。6つの教育要素（目的・問題点・手段・投資・信用・行動）に対応。",
+  "repo": "taiyousan15/taisun_agent",
+  "path": ".claude/skills/taiyo-style-step-mail",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/taiyousan15/taisun_agent",
+  "dir_name": "step-mail-taiyousan15-taisun-agent-2"
+}

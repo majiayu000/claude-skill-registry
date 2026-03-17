@@ -1,0 +1,11 @@
+{
+  "name": "ralph-main",
+  "description": "Autonomous agent loop for completing features. Use when asked to 'use ralph', 'ralph this', or to autonomously implement a feature end-to-end. Creates prd.json with user stories, then executes them on",
+  "repo": "Lucas23-IECI/PlantillaWeb",
+  "path": ".agent/skills/ralph-main",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lucas23-IECI/PlantillaWeb",
+  "dir_name": "ralph-main-lucas23-ieci-plantillaweb-2"
+}

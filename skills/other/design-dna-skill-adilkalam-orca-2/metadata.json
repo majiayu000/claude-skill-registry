@@ -1,0 +1,11 @@
+{
+  "name": "design-dna-skill",
+  "description": "Skill describing how to interpret, enforce, and evolve design-dna.json across projects. Used by design-system-architect, builders, and gate agents.",
+  "repo": "adilkalam/orca",
+  "path": "skills/design-dna-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adilkalam/orca",
+  "dir_name": "design-dna-skill-adilkalam-orca-2"
+}

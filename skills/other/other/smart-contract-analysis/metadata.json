@@ -1,0 +1,9 @@
+{
+  "name": "smart-contract-analysis",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/security-research/skills/smart-contract-analysis/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "smart-contract-analysis",
+  "downloaded_at": "2026-02-18T01:16:56.859578Z"
+}

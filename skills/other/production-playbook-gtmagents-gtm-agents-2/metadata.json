@@ -1,0 +1,11 @@
+{
+  "name": "production-playbook",
+  "description": "Use to convert creative briefs into actionable task plans with owners and SLAs.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/design-creative/skills/production-playbook",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "production-playbook-gtmagents-gtm-agents-2"
+}

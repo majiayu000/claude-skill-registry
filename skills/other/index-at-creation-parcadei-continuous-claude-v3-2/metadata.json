@@ -1,0 +1,11 @@
+{
+  "name": "index-at-creation",
+  "description": "Index at Creation Time",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/index-at-creation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "index-at-creation-parcadei-continuous-claude-v3-2"
+}

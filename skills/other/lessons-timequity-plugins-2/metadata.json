@@ -1,0 +1,11 @@
+{
+  "name": "lessons",
+  "description": "Lesson content for Claude Code Course.\nUse when: loading lesson content.\nInternal skill - contains lesson files.",
+  "repo": "timequity/plugins",
+  "path": "ccc/skills/lessons",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/plugins",
+  "dir_name": "lessons-timequity-plugins-2"
+}

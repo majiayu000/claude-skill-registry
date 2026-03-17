@@ -1,0 +1,11 @@
+{
+  "name": "ti",
+  "description": "Texas Instruments MPN encoding patterns, suffix decoding, and handler guidance. Use when working with TI components or TIHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/task-delegation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "ti-cantara-lib-electronic-compo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "project-organization",
+  "description": "Expert guidance for setting up and organizing research software projects following Sam Abbott's established patterns for R packages, Julia packages, and research projects",
+  "repo": "seabbs/claude-code-config",
+  "path": "skills/project-organization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/seabbs/claude-code-config",
+  "dir_name": "project-organization-seabbs-claude-code-config-2"
+}

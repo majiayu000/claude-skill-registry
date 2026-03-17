@@ -1,0 +1,11 @@
+{
+  "name": "qa-engineer",
+  "description": "Assist QA Engineers with test planning, test case generation from acceptance criteria, coverage analysis, and regression test identification. Use when creating test plans, generating test cases, analy",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/qa-engineer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/duc01226/EasyPlatform",
+  "dir_name": "qa-engineer-duc01226-easyplatform-2"
+}

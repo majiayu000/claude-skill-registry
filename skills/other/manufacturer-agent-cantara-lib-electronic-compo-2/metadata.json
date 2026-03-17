@@ -1,0 +1,11 @@
+{
+  "name": "manufacturer-agent",
+  "description": "Web-augmented agent for creating manufacturer skills and comprehensive tests. Use when adding or improving support for a manufacturer handler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturer-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "manufacturer-agent-cantara-lib-electronic-compo-2"
+}

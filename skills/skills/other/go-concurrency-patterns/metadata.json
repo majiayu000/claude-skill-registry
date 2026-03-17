@@ -1,0 +1,17 @@
+{
+  "name": "go-concurrency-patterns",
+  "repo": "wshobson/agents",
+  "path": "plugins/systems-programming/skills/go-concurrency-patterns/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wshobson/agents",
+  "dir_name": "go-concurrency-patterns",
+  "downloaded_at": "2026-03-02T08:50:57.686040Z",
+  "author": "wshobson",
+  "source_url": "https://github.com/wshobson/agents/blob/main/plugins/systems-programming/skills/go-concurrency-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wshobson/agents/blob/main/plugins/systems-programming/skills/go-concurrency-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

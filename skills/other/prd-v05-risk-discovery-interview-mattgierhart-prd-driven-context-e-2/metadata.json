@@ -1,0 +1,11 @@
+{
+  "name": "prd-v05-risk-discovery-interview",
+  "description": "Surface risks through guided questioning, helping users consider pivots, constraints, and prioritization during PRD v0.5 Red Team Review. Triggers on requests to identify risks, stress-test the idea, ",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v05-risk-discovery-interview",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v05-risk-discovery-interview-mattgierhart-prd-driven-context-e-2"
+}

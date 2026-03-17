@@ -1,0 +1,11 @@
+{
+  "name": "maintaining-project-context",
+  "description": "Use when completing development phases or branches to identify and update CLAUDE.md files that may have become stale - analyzes what changed, determines affected contracts and documentation, and coord",
+  "repo": "brmatola/gremlins",
+  "path": "skills/maintaining-project-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/brmatola/gremlins",
+  "dir_name": "maintaining-project-context-brmatola-gremlins-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "merkle-proof-validation",
+  "description": "Merkle Proof Validation Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/merkle-proof-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "merkle-proof-validation-plurigrid-asi-2"
+}

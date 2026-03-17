@@ -1,0 +1,11 @@
+{
+  "name": "teslers-law",
+  "description": "Toda aplicación tiene complejidad irreducible que debe ir al sistema o al usuario. Use cuando simplifique flujos, automatice tareas, o decida dónde poner la complejidad.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/cognitive-laws/teslers-law",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "teslers-law-vjrivmon-handwriting-ocr-2"
+}

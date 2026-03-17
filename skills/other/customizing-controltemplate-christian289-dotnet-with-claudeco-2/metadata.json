@@ -1,0 +1,11 @@
+{
+  "name": "customizing-controltemplate",
+  "description": "Customizes WPF control appearance using ControlTemplate with TemplateBinding and ContentPresenter. Use when completely changing control visuals, implementing state-based feedback, or TemplatedParent b",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/customizing-controltemplate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "customizing-controltemplate-christian289-dotnet-with-claudeco-2"
+}

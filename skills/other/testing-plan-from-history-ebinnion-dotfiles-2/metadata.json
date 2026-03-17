@@ -1,0 +1,11 @@
+{
+  "name": "testing-plan-from-history",
+  "description": "Use when you need testing instructions for changes in a branch, before manual QA or creating a PR",
+  "repo": "ebinnion/dotfiles",
+  "path": "skills/testing-plan-from-history",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ebinnion/dotfiles",
+  "dir_name": "testing-plan-from-history-ebinnion-dotfiles-2"
+}

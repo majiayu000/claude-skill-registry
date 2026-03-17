@@ -1,0 +1,11 @@
+{
+  "name": "terra-data",
+  "description": "Terra API health data retrieval and management. Use when fetching activity, sleep, body, daily, nutrition, menstruation, or athlete data from wearables.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/terra-data",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "terra-data-adaptationio-skrillz-2"
+}

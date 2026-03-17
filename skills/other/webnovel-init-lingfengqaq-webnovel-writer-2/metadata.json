@@ -1,0 +1,11 @@
+{
+  "name": "webnovel-init",
+  "description": "Initializes webnovel projects with settings, outline framework, and state.json. Supports quick/standard/deep modes. Activates when user wants to start a new novel or /webnovel-init.",
+  "repo": "lingfengQAQ/webnovel-writer",
+  "path": ".claude/skills/webnovel-init",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lingfengQAQ/webnovel-writer",
+  "dir_name": "webnovel-init-lingfengqaq-webnovel-writer-2"
+}

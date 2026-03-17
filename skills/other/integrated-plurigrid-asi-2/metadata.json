@@ -1,0 +1,11 @@
+{
+  "name": "_integrated",
+  "description": "Unified ASI skill combining ACSets, Gay-MCP colors, bisimulation games, world-hopping, glass-bead synthesis, and triad interleaving for autonomous skill dispersal.",
+  "repo": "plurigrid/asi",
+  "path": "skills/plurigrid-asi-integrated/_integrated",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "integrated-plurigrid-asi-2"
+}

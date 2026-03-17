@@ -1,0 +1,11 @@
+{
+  "name": "ecs-fargate",
+  "description": "AWS Fargate serverless container compute for ECS. Covers Fargate vs EC2 decision guide, CPU/memory sizing, platform versions, Fargate Spot cost optimization, Graviton/ARM architecture, networking, and",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/ecs-fargate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "ecs-fargate-adaptationio-skrillz-2"
+}

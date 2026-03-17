@@ -1,0 +1,11 @@
+{
+  "name": "workflow-validator",
+  "description": "Quality Gate Teacher for Spec-Kit-Plus workflow. Acts as a strict reviewer that\nvalidates quality (not just existence) of each phase's output before allowing\nprogression. Generates detailed reports an",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/workflow-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "workflow-validator-wania-kazmi-claude-code-autonomo-2"
+}

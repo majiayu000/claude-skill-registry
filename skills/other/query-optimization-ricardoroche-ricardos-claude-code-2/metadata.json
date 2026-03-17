@@ -1,0 +1,11 @@
+{
+  "name": "query-optimization",
+  "description": "Automatically applies when optimizing database queries. Ensures EXPLAIN analysis, proper indexing, N+1 prevention, query performance monitoring, and efficient SQL patterns.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/query-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "query-optimization-ricardoroche-ricardos-claude-code-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "repo-docs",
+  "description": "Update and maintain core repository documentation files (README.md, CHANGELOG.md, LICENSE, CONTRIBUTING.md) before commits or releases. Use when users need to update documentation to reflect code chan",
+  "repo": "alanben/ClaudeSkills",
+  "path": "repo-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alanben/ClaudeSkills",
+  "dir_name": "repo-docs-alanben-claudeskills-2"
+}

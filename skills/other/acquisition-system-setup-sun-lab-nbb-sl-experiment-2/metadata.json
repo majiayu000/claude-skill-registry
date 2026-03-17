@@ -1,0 +1,11 @@
+{
+  "name": "acquisition-system-setup",
+  "description": "Guides users through configuring a data acquisition system on the local machine. Covers working directory setup, acquisition system selection and parameter configuration, and Google credentials setup.",
+  "repo": "Sun-Lab-NBB/sl-experiment",
+  "path": ".claude/skills/acquisition-system-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sun-Lab-NBB/sl-experiment",
+  "dir_name": "acquisition-system-setup-sun-lab-nbb-sl-experiment-2"
+}

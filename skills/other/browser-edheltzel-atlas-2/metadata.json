@@ -1,0 +1,11 @@
+{
+  "name": "Browser",
+  "description": "Atlas skill, code-first browser automation and web verification. USE WHEN browser, screenshot, navigate, web testing, verify UI, VERIFY phase. Replaces Playwright MCP with 99% token savings.",
+  "repo": "edheltzel/atlas",
+  "path": "claudecode/.claude/skills/Browser",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edheltzel/atlas",
+  "dir_name": "browser-edheltzel-atlas-2"
+}

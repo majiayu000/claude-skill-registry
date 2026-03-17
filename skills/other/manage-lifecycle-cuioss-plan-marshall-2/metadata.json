@@ -1,0 +1,11 @@
+{
+  "name": "manage-lifecycle",
+  "description": "Manage plan lifecycle with status.toon and phase operations",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-workflow/skills/manage-lifecycle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "manage-lifecycle-cuioss-plan-marshall-2"
+}

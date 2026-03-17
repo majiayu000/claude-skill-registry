@@ -1,0 +1,11 @@
+{
+  "name": "rag-sentence-transformers",
+  "description": "Framework for state-of-the-art sentence, text, and image embeddings. Provides 5000+ pre-trained models for semantic similarity, clustering, and retrieval. Supports multilingual, domain-specific, and m",
+  "repo": "davila7/claude-code-templates",
+  "path": "cli-tool/components/skills/ai-research/rag-sentence-transformers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davila7/claude-code-templates",
+  "dir_name": "rag-sentence-transformers-davila7-claude-code-template-2"
+}

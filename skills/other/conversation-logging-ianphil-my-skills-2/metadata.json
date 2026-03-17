@@ -1,0 +1,11 @@
+{
+  "name": "conversation-logging",
+  "description": "Global hooks for logging Claude Code conversation events to markdown files. Tracks prompts, tool usage, and responses across all sessions. Useful for debugging, auditing, and providing conversation co",
+  "repo": "ianphil/my-skills",
+  "path": "skills/conversation-logging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ianphil/my-skills",
+  "dir_name": "conversation-logging-ianphil-my-skills-2"
+}

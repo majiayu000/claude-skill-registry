@@ -1,0 +1,11 @@
+{
+  "name": "go-module-renamer",
+  "description": "Go 模块重命名自动化工具。用于新 git clone 的项目进行 Go 模块重命名，支持全量/部分重命名智能识别，文本替换优先策略，完善的验证和回滚机制。",
+  "repo": "fsyyft-go/kratos-layout",
+  "path": ".claude/skills/go-module-renamer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fsyyft-go/kratos-layout",
+  "dir_name": "go-module-renamer-fsyyft-go-kratos-layout-2"
+}

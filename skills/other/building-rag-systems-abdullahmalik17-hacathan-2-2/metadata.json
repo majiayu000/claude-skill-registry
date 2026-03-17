@@ -1,0 +1,11 @@
+{
+  "name": "building-rag-systems",
+  "description": "Build production RAG systems with semantic chunking, incremental indexing, and filtered retrieval.\nUse when implementing document ingestion pipelines, vector search with Qdrant, or context-aware\nretri",
+  "repo": "AbdullahMalik17/Hacathan-2-",
+  "path": ".gemini/skills/building-rag-systems",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AbdullahMalik17/Hacathan-2-",
+  "dir_name": "building-rag-systems-abdullahmalik17-hacathan-2-2"
+}

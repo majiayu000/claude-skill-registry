@@ -1,0 +1,11 @@
+{
+  "name": "java-maintenance",
+  "description": "Java code maintenance standards including prioritization, refactoring triggers, and compliance verification",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-java/skills/java-maintenance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "java-maintenance-cuioss-plan-marshall-2"
+}

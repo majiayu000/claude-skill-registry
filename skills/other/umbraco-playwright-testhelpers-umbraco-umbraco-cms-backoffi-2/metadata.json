@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-playwright-testhelpers",
+  "description": "Reference for @umbraco/playwright-testhelpers package - fixtures, API helpers, and UI helpers for E2E testing",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-testing-skills/skills/umbraco-playwright-testhelpers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-playwright-testhelpers-umbraco-umbraco-cms-backoffi-2"
+}

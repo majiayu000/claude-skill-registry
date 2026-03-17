@@ -1,0 +1,11 @@
+{
+  "name": "axiom-metal-migration-diag",
+  "description": "Use when ANY Metal porting issue occurs - black screen, rendering artifacts, shader errors, wrong colors, performance regressions, GPU crashes",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-metal-migration-diag",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-metal-migration-diag-charleswiltgen-axiom-2"
+}

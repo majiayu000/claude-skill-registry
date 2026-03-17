@@ -1,0 +1,9 @@
+{
+  "name": "write-example",
+  "repo": "NovaAI-innovation/Infinite-Agency",
+  "path": ".qwen/skills/write-example/SKILL.md",
+  "category": "other",
+  "source": "github.com/NovaAI-innovation/Infinite-Agency",
+  "dir_name": "write-example",
+  "downloaded_at": "2026-02-15T05:32:22.170100Z"
+}

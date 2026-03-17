@@ -1,0 +1,11 @@
+{
+  "name": "find-component",
+  "description": "Find UI components from screenshots, route paths, or component names. Use when a designer asks \"where does this live?\", shares a screenshot and wants to find the code, needs to locate a component by i",
+  "repo": "madebynoam/dcode",
+  "path": "skills/find-component",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madebynoam/dcode",
+  "dir_name": "find-component-madebynoam-dcode-2"
+}

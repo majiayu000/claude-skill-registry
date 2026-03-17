@@ -1,0 +1,11 @@
+{
+  "name": "terra-webhooks",
+  "description": "Terra API webhook handling for real-time health data. Use when setting up webhook endpoints, verifying signatures, handling events, or debugging webhook issues.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/terra-webhooks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "terra-webhooks-adaptationio-skrillz-2"
+}

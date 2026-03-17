@@ -1,0 +1,9 @@
+{
+  "name": "langchain-react-agent",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/ai-agents-conversational/skills/langchain-react-agent/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "langchain-react-agent",
+  "downloaded_at": "2026-02-11T01:23:45.056324Z"
+}

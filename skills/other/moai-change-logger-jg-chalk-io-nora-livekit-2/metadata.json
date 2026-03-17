@@ -1,0 +1,11 @@
+{
+  "name": "moai-change-logger",
+  "description": "Comprehensive change tracking and audit logging system that monitors file modifications, code changes, and project evolution. Use when tracking project history, maintaining audit trails, analyzing dev",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-change-logger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-change-logger-jg-chalk-io-nora-livekit-2"
+}

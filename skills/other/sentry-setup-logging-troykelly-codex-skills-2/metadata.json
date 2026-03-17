@@ -1,0 +1,11 @@
+{
+  "name": "sentry-setup-logging",
+  "description": "Setup Sentry Logging in any project. Use this when asked to add Sentry logs, enable structured logging, setup console log capture, or integrate logging with Sentry. Supports JavaScript, TypeScript, Py",
+  "repo": "troykelly/codex-skills",
+  "path": "external/skills/sentry-setup-logging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "sentry-setup-logging-troykelly-codex-skills-2"
+}

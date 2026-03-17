@@ -1,0 +1,11 @@
+{
+  "name": "data-architecture-skill",
+  "description": "Single source of truth patterns, facts.ts structure, type safety, and data helper functions. Use when working with project data or adding new facts.",
+  "repo": "omerakben/omer-akben",
+  "path": ".claude/skills/data-architecture-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/omerakben/omer-akben",
+  "dir_name": "data-architecture-skill-omerakben-omer-akben-2"
+}

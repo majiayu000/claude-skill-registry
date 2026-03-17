@@ -1,0 +1,11 @@
+{
+  "name": "langsmith",
+  "description": "LLM observability platform for tracing, evaluation, and monitoring. Use when debugging LLM applications, evaluating model outputs against datasets, monitoring production systems, or building systemati",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "17-observability/langsmith",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "langsmith-zechenzhangagi-ai-research-skills-2"
+}

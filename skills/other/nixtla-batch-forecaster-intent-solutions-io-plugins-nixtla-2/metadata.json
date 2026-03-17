@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-batch-forecaster",
+  "description": "Forecast multiple time series in parallel using TimeGPT. Use when processing 10-100+ contracts efficiently. Trigger with 'batch forecast' or 'parallel forecasting'.",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "000-docs/000a-planned-skills/prediction-markets/nixtla-batch-forecaster",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-batch-forecaster-intent-solutions-io-plugins-nixtla-2"
+}

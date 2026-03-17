@@ -1,0 +1,11 @@
+{
+  "name": "code-visualizer",
+  "description": "Auto-generates code flow diagrams from Python module analysis.\nDetects when architecture diagrams become stale (code changed, diagram didn't).\nUse when: creating new modules, reviewing PRs for archite",
+  "repo": "rysweet/azlin",
+  "path": ".claude/skills/code-visualizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/azlin",
+  "dir_name": "code-visualizer-rysweet-azlin-2"
+}

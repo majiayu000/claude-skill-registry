@@ -1,0 +1,11 @@
+{
+  "name": "oscp-methodology",
+  "description": "This skill should be used when the user asks to \"perform OSCP-style penetration testing\", \"enumerate network services\", \"escalate privileges on Windows or Linux\", \"conduct Active Directory attacks\", \"",
+  "repo": "zebbern/SecOps-CLI-Guides",
+  "path": "skills/oscp-methodology",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zebbern/SecOps-CLI-Guides",
+  "dir_name": "oscp-methodology-zebbern-secops-cli-guides-2"
+}

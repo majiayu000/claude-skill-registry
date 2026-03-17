@@ -1,0 +1,9 @@
+{
+  "name": "flyio",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/flyio/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "flyio",
+  "downloaded_at": "2026-02-15T07:07:00.625419Z"
+}

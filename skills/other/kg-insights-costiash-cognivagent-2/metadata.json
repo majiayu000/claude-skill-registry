@@ -1,0 +1,11 @@
+{
+  "name": "kg-insights",
+  "description": "Helps users discover patterns and insights in their Knowledge Graphs. Use when users ask about important entities, connections, patterns, or want to understand what they can do with their graph. Trigg",
+  "repo": "costiash/CognivAgent",
+  "path": "app/agent/resources/.claude/skills/kg-insights",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/costiash/CognivAgent",
+  "dir_name": "kg-insights-costiash-cognivagent-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "dark-mode-generation",
+  "description": "Use this skill when the user asks to \"generate dark mode\", \"create dark theme\", \"add dark mode support\", \"convert to dark mode colors\", \"generate dark color palette\", or wants to automatically generat",
+  "repo": "flight505/storybook-assistant",
+  "path": "skills/dark-mode-generation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/flight505/storybook-assistant",
+  "dir_name": "dark-mode-generation-flight505-storybook-assistant-2"
+}

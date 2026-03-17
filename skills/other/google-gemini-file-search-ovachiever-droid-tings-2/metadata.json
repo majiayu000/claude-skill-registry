@@ -1,0 +1,11 @@
+{
+  "name": "google-gemini-file-search",
+  "description": "Build document Q&A and searchable knowledge bases with Google Gemini File Search - fully managed RAG with automatic chunking, embeddings, and citations. Upload 100+ file formats (PDF, Word, Excel, cod",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/google-gemini-file-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "google-gemini-file-search-ovachiever-droid-tings-2"
+}

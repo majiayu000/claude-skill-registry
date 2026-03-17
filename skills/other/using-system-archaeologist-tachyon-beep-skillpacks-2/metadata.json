@@ -1,0 +1,11 @@
+{
+  "name": "using-system-archaeologist",
+  "description": "Use when analyzing existing codebases to generate architecture documentation - coordinates subagent-driven exploration with mandatory workspace structure, validation gates, and pressure-resistant work",
+  "repo": "tachyon-beep/skillpacks",
+  "path": "plugins/axiom-system-archaeologist/skills/using-system-archaeologist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tachyon-beep/skillpacks",
+  "dir_name": "using-system-archaeologist-tachyon-beep-skillpacks-2"
+}

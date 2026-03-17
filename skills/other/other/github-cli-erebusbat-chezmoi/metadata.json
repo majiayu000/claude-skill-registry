@@ -1,0 +1,17 @@
+{
+  "name": "github-cli",
+  "repo": "ErebusBat/chezmoi",
+  "path": "dot_config/opencode/skill/github-cli/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/ErebusBat/chezmoi",
+  "dir_name": "github-cli-erebusbat-chezmoi",
+  "downloaded_at": "2026-03-01T05:15:20.039493Z",
+  "author": "ErebusBat",
+  "source_url": "https://github.com/ErebusBat/chezmoi/blob/master/dot_config/opencode/skill/github-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ErebusBat/chezmoi/blob/master/dot_config/opencode/skill/github-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

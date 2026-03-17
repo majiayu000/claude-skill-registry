@@ -1,0 +1,11 @@
+{
+  "name": "doc-update",
+  "description": "Updates documentation after code changes to keep docs in sync with code reality. Use AFTER implementation is complete. Covers feature docs, workflow docs, and index files.",
+  "repo": "RustyLindquist/EnhancedHR",
+  "path": ".claude/skills/doc-update",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RustyLindquist/EnhancedHR",
+  "dir_name": "doc-update-rustylindquist-enhancedhr-2"
+}

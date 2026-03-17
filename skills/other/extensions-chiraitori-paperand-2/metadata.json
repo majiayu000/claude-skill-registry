@@ -1,0 +1,11 @@
+{
+  "name": "extensions",
+  "description": "Paperback-compatible extension runtime and source API",
+  "repo": "chiraitori/paperand",
+  "path": ".agent/skills/extensions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chiraitori/paperand",
+  "dir_name": "extensions-chiraitori-paperand-2"
+}

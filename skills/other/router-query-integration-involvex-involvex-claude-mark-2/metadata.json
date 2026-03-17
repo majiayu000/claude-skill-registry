@@ -1,0 +1,11 @@
+{
+  "name": "router-query-integration",
+  "description": "Integrate TanStack Router with TanStack Query for optimal data fetching. Covers route loaders with query prefetching, ensuring instant navigation, and eliminating request waterfalls. Use when setting ",
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/frontend/skills/router-query-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "dir_name": "router-query-integration-involvex-involvex-claude-mark-2"
+}

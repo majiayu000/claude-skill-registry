@@ -1,0 +1,11 @@
+{
+  "name": "test-utility-service",
+  "description": "Test utility services that handle external APIs or authorization logic. Use when testing services like AuthenticationService or AuthorizationService. Triggers on \"test auth service\", \"test utility ser",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/test-utility-service",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "test-utility-service-madooei-backend-template-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "deployment-checklist",
+  "description": "Pre-deployment verification steps and checks",
+  "repo": "medride/claude-code-research",
+  "path": ".claude/skills/deployment-checklist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/medride/claude-code-research",
+  "dir_name": "deployment-checklist-medride-claude-code-research-2"
+}

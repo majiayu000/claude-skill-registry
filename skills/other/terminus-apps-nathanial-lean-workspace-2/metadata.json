@@ -1,0 +1,11 @@
+{
+  "name": "terminus-apps",
+  "description": "Build terminal user interface (TUI) applications using the Terminus library for Lean 4. Use when creating games, interactive tools, or apps with keyboard/mouse input.",
+  "repo": "nathanial/lean-workspace",
+  "path": ".claude/skills/terminus-apps",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nathanial/lean-workspace",
+  "dir_name": "terminus-apps-nathanial-lean-workspace-2"
+}

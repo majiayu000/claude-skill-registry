@@ -1,0 +1,11 @@
+{
+  "name": "adynato-github",
+  "description": "GitHub workflow conventions for Adynato projects. Covers creating PRs with gh CLI, writing thorough descriptions, and using stacked PRs for large deliverables. Use when creating pull requests, managin",
+  "repo": "adynato/skills",
+  "path": "skills/adynato-github",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adynato/skills",
+  "dir_name": "adynato-github-adynato-skills-2"
+}

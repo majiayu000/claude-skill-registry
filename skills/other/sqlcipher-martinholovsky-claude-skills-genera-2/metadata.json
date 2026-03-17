@@ -1,0 +1,11 @@
+{
+  "name": "sqlcipher",
+  "description": "Expert in SQLCipher encrypted database development with focus on encryption key management, key rotation, secure data handling, and cryptographic best practices",
+  "repo": "martinholovsky/claude-skills-generator",
+  "path": "skills/sqlcipher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/martinholovsky/claude-skills-generator",
+  "dir_name": "sqlcipher-martinholovsky-claude-skills-genera-2"
+}

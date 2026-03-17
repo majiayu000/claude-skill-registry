@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-tags",
+  "description": "Manages GitLab tags. Use for creating, deleting, protecting tags. Triggers: versioning.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-tags",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-tags-knuckles-team-gitlab-api-2"
+}

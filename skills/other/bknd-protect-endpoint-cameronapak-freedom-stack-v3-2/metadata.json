@@ -1,0 +1,11 @@
+{
+  "name": "bknd-protect-endpoint",
+  "description": "Use when securing specific API endpoints in Bknd. Covers protecting custom HTTP triggers, plugin routes, auth middleware for Flows, checking permissions in custom endpoints, and role-based endpoint ac",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-protect-endpoint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-protect-endpoint-cameronapak-freedom-stack-v3-2"
+}

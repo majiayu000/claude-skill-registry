@@ -1,0 +1,11 @@
+{
+  "name": "testing-skill",
+  "description": "TDD patterns, test writing strategies, coverage guidance, mocking patterns. Use when: write tests, TDD, test coverage, unit test, integration test, E2E test, mocking, test organization, pytest, vitest",
+  "repo": "ScientiaCapital/skills",
+  "path": "active/testing-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ScientiaCapital/skills",
+  "dir_name": "testing-skill-scientiacapital-skills-2"
+}

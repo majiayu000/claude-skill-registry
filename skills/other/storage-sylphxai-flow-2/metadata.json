@@ -1,0 +1,11 @@
+{
+  "name": "storage",
+  "description": "File storage - uploads, CDN, blobs. Use when handling files.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/storage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "storage-sylphxai-flow-2"
+}

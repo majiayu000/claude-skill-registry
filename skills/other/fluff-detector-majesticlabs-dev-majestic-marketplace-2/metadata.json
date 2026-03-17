@@ -1,0 +1,11 @@
+{
+  "name": "fluff-detector",
+  "description": "Detect human-oriented content in LLM artifacts. Flags attribution, personas, redundant explanations, marketing language, and decorative elements that waste tokens without improving LLM behavior.",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": ".claude/skills/fluff-detector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "dir_name": "fluff-detector-majesticlabs-dev-majestic-marketplace-2"
+}

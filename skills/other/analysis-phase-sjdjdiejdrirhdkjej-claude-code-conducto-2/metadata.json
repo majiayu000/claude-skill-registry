@@ -1,0 +1,11 @@
+{
+  "name": "analysis-phase",
+  "description": "Validates cross-artifact consistency and detects breaking changes during feature analysis. Use when running /analyze command, validating spec-plan alignment, checking task-implementation consistency, ",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/analysis-phase",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "analysis-phase-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+}

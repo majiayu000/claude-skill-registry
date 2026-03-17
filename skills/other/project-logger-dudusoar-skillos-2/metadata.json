@@ -1,0 +1,11 @@
+{
+  "name": "project-logger",
+  "description": "Manages project progress tracking and maintains a chronological log of completed tasks, decisions, and updates. Use when completing milestones, making architectural decisions, or documenting project e",
+  "repo": "dudusoar/skillOS",
+  "path": ".claude/skills/project-logger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dudusoar/skillOS",
+  "dir_name": "project-logger-dudusoar-skillos-2"
+}

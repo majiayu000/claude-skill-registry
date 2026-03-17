@@ -1,0 +1,11 @@
+{
+  "name": "ci-cd-validation",
+  "description": "Pre-push validation checklist (cargo fmt, clippy with zero warnings, feature flag testing, test suite), CI monitoring, merge process, and release quality gates. Use when preparing to push code, valida",
+  "repo": "pmcfadin/cqlite",
+  "path": ".claude/skills/ci-cd-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pmcfadin/cqlite",
+  "dir_name": "ci-cd-validation-pmcfadin-cqlite-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "data-migration",
+  "description": "Plan and execute database migrations, data transformations, and system migrations safely with rollback strategies and data integrity validation. Use when migrating databases, transforming data schemas",
+  "repo": "Activer007/ordinary-claude-skills",
+  "path": "skills_all/data-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Activer007/ordinary-claude-skills",
+  "dir_name": "data-migration-activer007-ordinary-claude-skil-2"
+}

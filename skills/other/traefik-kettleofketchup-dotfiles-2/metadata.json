@@ -1,0 +1,11 @@
+{
+  "name": "traefik",
+  "description": "Traefik v3 reverse proxy and load balancer for Kubernetes and Docker. Use when configuring Traefik entrypoints, HTTP/TCP/UDP routing, IngressRoute CRDs, middlewares (auth, rate limiting, headers, redi",
+  "repo": "kettleofketchup/dotfiles",
+  "path": ".claude/skills/traefik",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kettleofketchup/dotfiles",
+  "dir_name": "traefik-kettleofketchup-dotfiles-2"
+}

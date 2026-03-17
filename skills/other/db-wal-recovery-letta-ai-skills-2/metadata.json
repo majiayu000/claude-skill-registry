@@ -1,0 +1,11 @@
+{
+  "name": "db-wal-recovery",
+  "description": "Guidance for recovering data from SQLite Write-Ahead Log (WAL) files that may be corrupted, encrypted, or inaccessible. This skill should be used when tasks involve database recovery, WAL file analysi",
+  "repo": "letta-ai/skills",
+  "path": "letta/benchmarks/trajectory-only/db-wal-recovery",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/letta-ai/skills",
+  "dir_name": "db-wal-recovery-letta-ai-skills-2"
+}

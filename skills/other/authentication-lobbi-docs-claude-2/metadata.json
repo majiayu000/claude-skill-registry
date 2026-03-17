@@ -1,0 +1,11 @@
+{
+  "name": "authentication",
+  "description": "Authentication and authorization including JWT, OAuth2, OIDC, sessions, RBAC, and security analysis. Activate for login, auth flows, security audits, threat modeling, access control, and identity mana",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/authentication",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "authentication-lobbi-docs-claude-2"
+}

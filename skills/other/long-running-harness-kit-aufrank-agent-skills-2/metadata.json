@@ -1,0 +1,11 @@
+{
+  "name": "long-running-harness-kit",
+  "description": "Design long-running agent harnesses with resumable checkpoints and initializer/coder handoffs. Use when tasks span multiple sessions or require recovery after interruption.",
+  "repo": "aufrank/agent-skills",
+  "path": "skills/long-running-harness-kit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aufrank/agent-skills",
+  "dir_name": "long-running-harness-kit-aufrank-agent-skills-2"
+}

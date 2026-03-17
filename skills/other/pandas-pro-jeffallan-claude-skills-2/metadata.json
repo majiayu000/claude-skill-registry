@@ -1,0 +1,11 @@
+{
+  "name": "pandas-pro",
+  "description": "Use when working with pandas DataFrames, data cleaning, aggregation, merging, or time series analysis. Invoke for data manipulation, missing value handling, groupby operations, or performance optimiza",
+  "repo": "Jeffallan/claude-skills",
+  "path": "skills/pandas-pro",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Jeffallan/claude-skills",
+  "dir_name": "pandas-pro-jeffallan-claude-skills-2"
+}

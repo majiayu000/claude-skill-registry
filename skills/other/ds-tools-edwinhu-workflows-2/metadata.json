@@ -1,0 +1,11 @@
+{
+  "name": "ds-tools",
+  "description": "This skill should be used when the user asks \"what plugins are available\", \"list data science tools\", \"what MCP servers can I use\", \"enable code intelligence\", or needs to discover available plugins l",
+  "repo": "edwinhu/workflows",
+  "path": "skills/ds-tools",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "ds-tools-edwinhu-workflows-2"
+}

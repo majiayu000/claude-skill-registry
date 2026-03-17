@@ -1,0 +1,11 @@
+{
+  "name": "software-developer",
+  "description": "software-developer skill\n\nTrigger terms: implement, code, development, programming, coding, build feature, create function, write code, SOLID principles, clean code, refactor\n\nUse when: User requests ",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/software-developer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "dir_name": "software-developer-nahisaho-codegraphmcpserver-2"
+}

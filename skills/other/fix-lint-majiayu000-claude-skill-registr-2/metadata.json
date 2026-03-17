@@ -1,0 +1,11 @@
+{
+  "name": "fix-lint",
+  "description": "Helps fix oxlint errors and warnings in the OneKey codebase. Use when running yarn lint and encountering warnings, cleaning up code before committing, or fixing spellcheck, unused variable, or other l",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/development/fix-lint-failures",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "fix-lint-majiayu000-claude-skill-registr-2"
+}

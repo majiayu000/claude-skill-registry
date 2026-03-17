@@ -1,0 +1,11 @@
+{
+  "name": "github-pr-lifecycle",
+  "description": "Manage GitHub pull requests via GitHub MCP: open PRs, update descriptions, request reviews, check CI status, resolve conflicts, and merge using the repo's preferred strategy.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "60-github-mcp/github-pr-lifecycle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "github-pr-lifecycle-amnadtaowsoam-cerebratechai-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "woocommerce-copy-guidelines",
+  "description": "Guidelines for UI text and copy in WooCommerce. Use when writing user-facing text, labels, buttons, messages, or documentation in WooCommerce projects.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/woocommerce-copy-guidelines/skills/woocommerce-copy-guidelines",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "woocommerce-copy-guidelines-secondsky-claude-skills-2"
+}

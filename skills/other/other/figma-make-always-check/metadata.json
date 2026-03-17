@@ -1,0 +1,17 @@
+{
+  "name": "figma-make-always-check",
+  "repo": "cromesdk/ai-skills",
+  "path": "skills/figma/figma-make-always-check/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cromesdk/ai-skills",
+  "dir_name": "figma-make-always-check",
+  "downloaded_at": "2026-03-01T07:18:59.208768Z",
+  "author": "cromesdk",
+  "source_url": "https://github.com/cromesdk/ai-skills/blob/main/skills/figma/figma-make-always-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cromesdk/ai-skills/blob/main/skills/figma/figma-make-always-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

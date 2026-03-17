@@ -1,0 +1,11 @@
+{
+  "name": "compositional-acset-comparison",
+  "description": "Compare data structures (DuckDB, LanceDB) via ACSets with persistent homology coverage analysis and geometric morphism translation.",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.ruler/skills/compositional-acset-comparison",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "compositional-acset-comparison-plurigrid-asi-2"
+}

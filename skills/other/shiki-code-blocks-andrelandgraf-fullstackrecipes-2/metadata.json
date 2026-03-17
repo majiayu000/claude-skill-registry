@@ -1,0 +1,11 @@
+{
+  "name": "shiki-code-blocks",
+  "description": "Syntax highlight code blocks with Shiki. Supports server-side rendering in RSC and automatic light/dark theme switching.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/shiki-code-blocks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "shiki-code-blocks-andrelandgraf-fullstackrecipes-2"
+}

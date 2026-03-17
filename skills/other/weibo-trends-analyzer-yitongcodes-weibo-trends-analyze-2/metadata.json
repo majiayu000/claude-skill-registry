@@ -1,0 +1,11 @@
+{
+  "name": "weibo-trends-analyzer",
+  "description": "Analyzes Weibo (微博) trending topics and generates creative product ideas based on hot search keywords. Fetches real-time trending data from Weibo API, researches background information and user insigh",
+  "repo": "yitongcodes/weibo_trends_analyzer_web",
+  "path": ".claude/skills/weibo-trends-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yitongcodes/weibo_trends_analyzer_web",
+  "dir_name": "weibo-trends-analyzer-yitongcodes-weibo-trends-analyze-2"
+}

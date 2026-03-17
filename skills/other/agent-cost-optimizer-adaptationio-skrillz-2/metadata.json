@@ -1,0 +1,11 @@
+{
+  "name": "agent-cost-optimizer",
+  "description": "Real-time cost tracking, budget enforcement, and ROI measurement for AI agent operations. Track token usage, predict costs, enforce budget caps ($50-70/month typical), optimize model selection, cache ",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/agent-cost-optimizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "agent-cost-optimizer-adaptationio-skrillz-2"
+}

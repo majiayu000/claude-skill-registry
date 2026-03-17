@@ -1,0 +1,11 @@
+{
+  "name": "agentic-jumpstart-performance",
+  "description": "Performance optimization guidelines for Rust CLI tools. Covers efficient command execution, parallel processing, lazy initialization, allocation minimization, config parsing, and build optimizations f",
+  "repo": "bearbinary/Jarvy",
+  "path": ".claude/skills/agentic-jumpstart-performance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bearbinary/Jarvy",
+  "dir_name": "agentic-jumpstart-performance-bearbinary-jarvy-2"
+}

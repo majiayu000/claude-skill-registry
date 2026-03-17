@@ -1,0 +1,17 @@
+{
+  "name": "billing-automation",
+  "repo": "wshobson/agents",
+  "path": "plugins/payment-processing/skills/billing-automation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wshobson/agents",
+  "dir_name": "billing-automation",
+  "downloaded_at": "2026-03-02T08:50:35.774819Z",
+  "author": "wshobson",
+  "source_url": "https://github.com/wshobson/agents/blob/main/plugins/payment-processing/skills/billing-automation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wshobson/agents/blob/main/plugins/payment-processing/skills/billing-automation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

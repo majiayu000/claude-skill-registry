@@ -1,0 +1,11 @@
+{
+  "name": "web-components",
+  "description": "Web Component patterns for Oh My Brand! frontend interactivity. Custom element lifecycle, attribute observation, event handling, and accessibility. Use when writing view.ts files.",
+  "repo": "WesleySmits/oh-my-brand-wp-fse",
+  "path": ".github/skills/web-components",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/oh-my-brand-wp-fse",
+  "dir_name": "web-components-wesleysmits-oh-my-brand-wp-fse-2"
+}

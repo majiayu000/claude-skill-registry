@@ -1,0 +1,11 @@
+{
+  "name": "domain-skill-design",
+  "description": "用途: 设计领域专用的 Skills（区别于 Core Skills）",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/domain-skill-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "domain-skill-design-maxoreric-sop-engine-2"
+}

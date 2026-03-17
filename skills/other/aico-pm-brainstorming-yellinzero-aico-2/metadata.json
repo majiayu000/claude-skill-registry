@@ -1,0 +1,11 @@
+{
+  "name": "aico-pm-brainstorming",
+  "description": "Guide users through structured dialogue to transform vague ideas into clear, actionable product concepts. Uses one-question-at-a-time approach with multiple choice options.\n\nUse this skill when:\n- Use",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-pm-brainstorming",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-pm-brainstorming-yellinzero-aico-2"
+}

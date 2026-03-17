@@ -1,0 +1,11 @@
+{
+  "name": "youtube-transcribe",
+  "description": "This skill should be used when the user asks to \"download YouTube transcript\", \"get YouTube captions\", \"extract YouTube subtitles\", or needs to retrieve transcript from a YouTube video.",
+  "repo": "helmecke/dotfiles",
+  "path": "dot_config/opencode/skill/youtube-transcribe",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/helmecke/dotfiles",
+  "dir_name": "youtube-transcribe-helmecke-dotfiles-2"
+}

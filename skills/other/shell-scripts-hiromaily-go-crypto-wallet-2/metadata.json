@@ -1,0 +1,11 @@
+{
+  "name": "shell-scripts",
+  "description": "Shell script development workflow. Use when modifying files in scripts/ directory or any *.sh files.",
+  "repo": "hiromaily/go-crypto-wallet",
+  "path": ".claude/skills/shell-scripts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hiromaily/go-crypto-wallet",
+  "dir_name": "shell-scripts-hiromaily-go-crypto-wallet-2"
+}

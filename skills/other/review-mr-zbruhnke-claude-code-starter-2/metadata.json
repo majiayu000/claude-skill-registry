@@ -1,0 +1,11 @@
+{
+  "name": "review-mr",
+  "description": "Review a merge request or branch. Compares a branch against main/master, summarizes changes, highlights concerns, and provides actionable feedback. Use for PR reviews or before merging.",
+  "repo": "zbruhnke/claude-code-starter",
+  "path": ".claude/skills/review-mr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zbruhnke/claude-code-starter",
+  "dir_name": "review-mr-zbruhnke-claude-code-starter-2"
+}

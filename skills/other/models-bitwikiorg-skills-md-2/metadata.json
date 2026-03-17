@@ -1,0 +1,11 @@
+{
+  "name": "models",
+  "description": "Imported skill models from agentskills",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/agentskills/models",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "models-bitwikiorg-skills-md-2"
+}

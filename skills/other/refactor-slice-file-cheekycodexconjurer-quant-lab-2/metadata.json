@@ -1,0 +1,11 @@
+{
+  "name": "refactor_slice_file",
+  "description": "Use this skill when a file exceeds ~350 lines (target) / approaches the 500-line hard cap, or has mixed responsibilities (UI + Logic + Types).",
+  "repo": "CheekyCodexConjurer/quant-lab",
+  "path": "skills/refactor_slice_file",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CheekyCodexConjurer/quant-lab",
+  "dir_name": "refactor-slice-file-cheekycodexconjurer-quant-lab-2"
+}

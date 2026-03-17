@@ -1,0 +1,11 @@
+{
+  "name": "typescript-standards",
+  "description": "TypeScript coding standards for Oh My Brand! theme. Strict mode, interfaces, type definitions, classes, DOM manipulation, and patterns. Use when writing TypeScript components, utilities, or Web Compon",
+  "repo": "WesleySmits/oh-my-brand-wp-fse",
+  "path": ".github/skills/typescript-standards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/oh-my-brand-wp-fse",
+  "dir_name": "typescript-standards-wesleysmits-oh-my-brand-wp-fse-2"
+}

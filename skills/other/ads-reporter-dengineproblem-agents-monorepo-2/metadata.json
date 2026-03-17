@@ -1,0 +1,11 @@
+{
+  "name": "ads-reporter",
+  "description": "Эксперт по отчетности Facebook Ads. Используй для формирования дневных/недельных отчетов, сравнения периодов и анализа трендов.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/ads-reporter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "ads-reporter-dengineproblem-agents-monorepo-2"
+}

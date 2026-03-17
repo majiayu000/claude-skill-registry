@@ -1,0 +1,11 @@
+{
+  "name": "airbyte-connection-setup",
+  "description": "Эксперт Airbyte. Используй для настройки ETL/ELT пайплайнов, коннекторов, синхронизации данных и data pipelines.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/airbyte-connection-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "airbyte-connection-setup-dengineproblem-agents-monorepo-2"
+}

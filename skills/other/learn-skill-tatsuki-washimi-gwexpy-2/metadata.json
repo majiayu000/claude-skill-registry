@@ -1,0 +1,11 @@
+{
+  "name": "learn_skill",
+  "description": "会話履歴や作業内容から、再利用可能なエージェントスキルを生成または追記する",
+  "repo": "tatsuki-washimi/gwexpy",
+  "path": ".agent/skills/learn_skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tatsuki-washimi/gwexpy",
+  "dir_name": "learn-skill-tatsuki-washimi-gwexpy-2"
+}

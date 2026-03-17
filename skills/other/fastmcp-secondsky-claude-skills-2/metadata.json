@@ -1,0 +1,11 @@
+{
+  "name": "fastmcp",
+  "description": "FastMCP is a Python framework for building Model Context Protocol (MCP) servers that expose tools, resources, and prompts to Large Language Models like Claude.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/fastmcp/skills/fastmcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "fastmcp-secondsky-claude-skills-2"
+}

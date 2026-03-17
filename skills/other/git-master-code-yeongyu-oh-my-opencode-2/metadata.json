@@ -1,0 +1,11 @@
+{
+  "name": "git-master",
+  "description": "MUST USE for ANY git operations. Atomic commits, rebase/squash, history search (blame, bisect, log -S). STRONGLY RECOMMENDED: Use with delegate_task(category='quick', skills=['git-master'], ...) to sa",
+  "repo": "code-yeongyu/oh-my-opencode",
+  "path": "src/features/builtin-skills/git-master",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/code-yeongyu/oh-my-opencode",
+  "dir_name": "git-master-code-yeongyu-oh-my-opencode-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rust-performance",
+  "description": "High-performance Rust optimization. Profiling, benchmarking, SIMD, memory\noptimization, and zero-copy techniques. Focuses on measurable improvements\nwith evidence-based optimization.\n",
+  "repo": "terraphim/codex-skills",
+  "path": "skills/rust-performance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terraphim/codex-skills",
+  "dir_name": "rust-performance-terraphim-codex-skills-2"
+}

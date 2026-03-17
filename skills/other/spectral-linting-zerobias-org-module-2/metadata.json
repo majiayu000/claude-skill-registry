@@ -1,0 +1,11 @@
+{
+  "name": "spectral-linting",
+  "description": "Spectral API linting configuration, rules, and validation for OpenAPI specs",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/spectral-linting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "spectral-linting-zerobias-org-module-2"
+}

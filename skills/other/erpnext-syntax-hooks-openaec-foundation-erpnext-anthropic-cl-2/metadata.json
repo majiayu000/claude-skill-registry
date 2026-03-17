@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-syntax-hooks",
+  "description": "Deterministic syntax for Frappe hooks.py configuration. Use when Claude needs to configure app events, scheduler tasks, document events, fixtures, boot session, jenv customization, or website routing.",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/syntax/erpnext-syntax-hooks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-syntax-hooks-openaec-foundation-erpnext-anthropic-cl-2"
+}

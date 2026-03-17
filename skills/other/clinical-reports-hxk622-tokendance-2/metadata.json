@@ -1,0 +1,11 @@
+{
+  "name": "clinical-reports",
+  "description": "Write comprehensive clinical reports including case reports (CARE guidelines), diagnostic reports (radiology/pathology/lab), clinical trial reports (ICH-E3, SAE, CSR), and patient documentation (SOAP,",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/clinical/clinical-reports",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "clinical-reports-hxk622-tokendance-2"
+}

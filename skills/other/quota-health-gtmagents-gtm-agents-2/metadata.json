@@ -1,0 +1,11 @@
+{
+  "name": "quota-health",
+  "description": "Use to analyze quota distribution, attainment fairness, and productivity signals.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/sales-operations/skills/quota-health",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "quota-health-gtmagents-gtm-agents-2"
+}

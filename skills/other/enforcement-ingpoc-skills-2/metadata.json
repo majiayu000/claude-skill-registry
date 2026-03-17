@@ -1,0 +1,11 @@
+{
+  "name": "enforcement",
+  "description": "Use when implementing hooks that BLOCK invalid actions, creating quality gates for state transitions, or enforcing tested:true verification. Load when designing enforcement mechanisms. Uses exit code ",
+  "repo": "ingpoc/SKILLS",
+  "path": "enforcement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ingpoc/SKILLS",
+  "dir_name": "enforcement-ingpoc-skills-2"
+}

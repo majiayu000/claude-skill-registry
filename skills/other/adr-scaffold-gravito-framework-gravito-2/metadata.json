@@ -1,0 +1,11 @@
+{
+  "name": "adr-scaffold",
+  "description": "Specializes in generating Action-Domain-Responder (ADR) boilerplate for Gravito projects. Trigger this when adding new features or modules using the ADR pattern.",
+  "repo": "gravito-framework/gravito",
+  "path": "packages/scaffold/templates/skills/adr-scaffold",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gravito-framework/gravito",
+  "dir_name": "adr-scaffold-gravito-framework-gravito-2"
+}

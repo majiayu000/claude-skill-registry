@@ -1,0 +1,11 @@
+{
+  "name": "appstore-connect",
+  "description": "Use when working with App Store Connect, TestFlight builds, beta testers, beta groups, or checking build review status. Covers iOS app management, TestFlight distribution, and beta testing workflows.",
+  "repo": "dglowacki/mega-agent-v2",
+  "path": ".claude/skills/appstore-connect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dglowacki/mega-agent-v2",
+  "dir_name": "appstore-connect-dglowacki-mega-agent-v2-2"
+}

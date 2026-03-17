@@ -1,0 +1,11 @@
+{
+  "name": "infra-cloud",
+  "description": "Infra Cloud Agent. AWS/GCP/Azure 인프라, IaC 관리를 담당합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/infra-cloud",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "infra-cloud-shaul1991-shaul-agents-plugin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ios-restart-app",
+  "description": "Restart the iOS app on connected iPhone without rebuilding. Terminates and relaunches the app remotely. Use when testing changes that don't require rebuild, or refreshing app state.",
+  "repo": "asnar00/miso",
+  "path": ".claude/skills/ios-restart-app",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/asnar00/miso",
+  "dir_name": "ios-restart-app-asnar00-miso-2"
+}

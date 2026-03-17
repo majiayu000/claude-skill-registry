@@ -1,0 +1,11 @@
+{
+  "name": "grafana-expert",
+  "description": "Expert-level Grafana dashboards, visualization, data sources, alerting, and production operations",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/devops/grafana-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "grafana-expert-personamanagmentlaye-pcl-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "refactor-system",
+  "description": "統合リファクタリングエージェント - 既存システムをマイクロサービスアーキテクチャにリファクタリングするための統合分析・設計を実行。/refactor-system [対象パス] で呼び出し。",
+  "repo": "wfukatsu/refactoring-agent-for-claude-code",
+  "path": ".claude/skills/refactor-system",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wfukatsu/refactoring-agent-for-claude-code",
+  "dir_name": "refactor-system-wfukatsu-refactoring-agent-fo-2"
+}

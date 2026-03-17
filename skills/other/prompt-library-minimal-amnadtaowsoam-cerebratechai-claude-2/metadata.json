@@ -1,0 +1,11 @@
+{
+  "name": "prompt-library-minimal",
+  "description": "คลัง prompts แบบ minimal ที่ใช้ token น้อยที่สุดแต่ได้ผลลัพธ์ดี พร้อม templates และ best practices",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "65-context-token-optimization/prompt-library-minimal",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "prompt-library-minimal-amnadtaowsoam-cerebratechai-claude-2"
+}

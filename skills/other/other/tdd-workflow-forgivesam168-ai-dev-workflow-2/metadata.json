@@ -1,0 +1,17 @@
+{
+  "name": "tdd-workflow",
+  "repo": "forgivesam168/ai-dev-workflow",
+  "path": ".github/skills/tdd-workflow/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/forgivesam168/ai-dev-workflow",
+  "dir_name": "tdd-workflow-forgivesam168-ai-dev-workflow-2",
+  "downloaded_at": "2026-03-01T07:45:38.494408Z",
+  "author": "forgivesam168",
+  "source_url": "https://github.com/forgivesam168/ai-dev-workflow/blob/main/.github/skills/tdd-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/forgivesam168/ai-dev-workflow/blob/main/.github/skills/tdd-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "matchms",
+  "description": "Spectral similarity and compound identification for metabolomics. Use for comparing mass spectra, computing similarity scores (cosine, modified cosine), and identifying unknown compounds from spectral",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/chemistry/matchms",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "matchms-hxk622-tokendance-2"
+}

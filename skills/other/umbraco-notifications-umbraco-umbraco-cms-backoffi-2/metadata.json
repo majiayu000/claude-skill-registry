@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-notifications",
+  "description": "Understand and use notifications in Umbraco backoffice (foundational concept)",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-notifications",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-notifications-umbraco-umbraco-cms-backoffi-2"
+}

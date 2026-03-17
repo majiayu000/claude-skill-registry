@@ -1,0 +1,11 @@
+{
+  "name": "investment-daily-report",
+  "description": "Generates comprehensive daily investment reports with market overview, portfolio analysis, technical signals, and opportunities",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/investment-daily-report",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "dir_name": "investment-daily-report-zhiruifeng-localagentcrew-2"
+}

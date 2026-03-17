@@ -1,0 +1,11 @@
+{
+  "name": "stripe-stack-skill",
+  "description": "Stripe integration patterns for Next.js + Supabase - payments, subscriptions, webhooks, credit systems, checkout. Use when: stripe, payments, billing, subscription, webhook, checkout, add payments to ",
+  "repo": "ScientiaCapital/skills",
+  "path": "active/stripe-stack-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ScientiaCapital/skills",
+  "dir_name": "stripe-stack-skill-scientiacapital-skills-2"
+}

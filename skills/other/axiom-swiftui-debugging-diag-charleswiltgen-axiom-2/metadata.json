@@ -1,0 +1,11 @@
+{
+  "name": "axiom-swiftui-debugging-diag",
+  "description": "Use when SwiftUI view debugging requires systematic investigation - view updates not working after basic troubleshooting, intermittent UI issues, complex state dependencies, or when Self._printChanges",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-swiftui-debugging-diag",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-swiftui-debugging-diag-charleswiltgen-axiom-2"
+}

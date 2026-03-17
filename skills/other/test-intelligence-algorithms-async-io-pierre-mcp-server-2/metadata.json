@@ -1,0 +1,11 @@
+{
+  "name": "test-intelligence-algorithms",
+  "description": "Validates sports science algorithms (VDOT, TSS, TRIMP, FTP, VO2max, Recovery, Nutrition) for correctness",
+  "repo": "Async-IO/pierre_mcp_server",
+  "path": ".claude/skills/test-intelligence-algorithms",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Async-IO/pierre_mcp_server",
+  "dir_name": "test-intelligence-algorithms-async-io-pierre-mcp-server-2"
+}

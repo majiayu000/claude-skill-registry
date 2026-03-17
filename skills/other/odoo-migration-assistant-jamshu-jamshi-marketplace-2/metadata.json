@@ -1,0 +1,11 @@
+{
+  "name": "odoo-migration-assistant",
+  "description": "Helps migrate Odoo modules and customizations between versions, specifically focusing on upgrades to/from Odoo 16.0. This skill should be used when the user requests migration help, such as \"Migrate t",
+  "repo": "jamshu/jamshi-marketplace",
+  "path": "plugins/odoo-dev/skills/odoo-migration-assistant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jamshu/jamshi-marketplace",
+  "dir_name": "odoo-migration-assistant-jamshu-jamshi-marketplace-2"
+}

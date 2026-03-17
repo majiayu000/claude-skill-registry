@@ -1,0 +1,11 @@
+{
+  "name": "hopf",
+  "description": "Bifurcation creating limit cycle from equilibrium",
+  "repo": "plurigrid/asi",
+  "path": "skills/hopf",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "hopf-plurigrid-asi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "clerk-debug-bundle",
+  "description": "Collect comprehensive debug information for Clerk issues.\nUse when troubleshooting complex problems, preparing support tickets,\nor diagnosing intermittent issues.\nTrigger with phrases like \"clerk debu",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/clerk-pack/skills/clerk-debug-bundle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "clerk-debug-bundle-jeremylongshore-claude-code-plugins--2"
+}

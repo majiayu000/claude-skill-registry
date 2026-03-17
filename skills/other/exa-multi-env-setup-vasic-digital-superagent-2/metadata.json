@@ -1,0 +1,11 @@
+{
+  "name": "exa-multi-env-setup",
+  "description": "Configure Exa across development, staging, and production environments.\nUse when setting up multi-environment deployments, configuring per-environment secrets,\nor implementing environment-specific Exa",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-multi-env-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-multi-env-setup-vasic-digital-superagent-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "dvc-dataset-versioning",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/data-science-ml/skills/dvc-dataset-versioning/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "dvc-dataset-versioning",
+  "downloaded_at": "2026-02-11T01:23:48.954047Z"
+}

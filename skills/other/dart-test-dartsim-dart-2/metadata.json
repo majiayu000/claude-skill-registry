@@ -1,0 +1,11 @@
+{
+  "name": "dart-test",
+  "description": "DART testing patterns - unit tests, integration tests, CI validation",
+  "repo": "dartsim/dart",
+  "path": ".claude/skills/dart-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dartsim/dart",
+  "dir_name": "dart-test-dartsim-dart-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "ota-firmware-update",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/embedded-systems/skills/ota-firmware-update/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "ota-firmware-update",
+  "downloaded_at": "2026-02-10T16:27:51.113604Z"
+}

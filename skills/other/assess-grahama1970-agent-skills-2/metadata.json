@@ -1,0 +1,11 @@
+{
+  "name": "assess",
+  "description": "Step back and critically reassess project state. Use when asked to \"assess\", \"step back\", \"fresh eyes\", \"check alignment\", \"sanity check\", \"health check\", or \"evaluate what's working\". Offer to run af",
+  "repo": "grahama1970/agent-skills",
+  "path": "skills/assess",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/grahama1970/agent-skills",
+  "dir_name": "assess-grahama1970-agent-skills-2"
+}

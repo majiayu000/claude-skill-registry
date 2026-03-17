@@ -1,0 +1,11 @@
+{
+  "name": "scientific-pkg-vaex",
+  "description": "Use this skill for processing and analyzing large tabular datasets (billions of rows) that exceed available RAM. Vaex excels at out-of-core DataFrame operations, lazy evaluation, fast aggregations, ef",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/scientific-pkg-vaex",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "scientific-pkg-vaex-jackspace-claudeskillz-2"
+}

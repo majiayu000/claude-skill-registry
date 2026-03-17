@@ -1,0 +1,11 @@
+{
+  "name": "component-hierarchy",
+  "description": "Guide component selection in ResRequest Vue projects. Ensures correct usage of ShadCN-Vue vs custom components, proper imports, and design system compliance. Activates when creating or modifying Vue c",
+  "repo": "richardhowes/self-improvement-code-quality-plugin",
+  "path": "code-quality/skills/component-hierarchy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/richardhowes/self-improvement-code-quality-plugin",
+  "dir_name": "component-hierarchy-richardhowes-self-improvement-cod-2"
+}

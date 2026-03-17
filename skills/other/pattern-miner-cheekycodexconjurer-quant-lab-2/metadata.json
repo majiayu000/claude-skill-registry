@@ -1,0 +1,11 @@
+{
+  "name": "pattern_miner",
+  "description": "Extract recurring patterns from action logs and propose automations.",
+  "repo": "CheekyCodexConjurer/quant-lab",
+  "path": ".agent-docs/templates/.codex/skills/pattern_miner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CheekyCodexConjurer/quant-lab",
+  "dir_name": "pattern-miner-cheekycodexconjurer-quant-lab-2"
+}

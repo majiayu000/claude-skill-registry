@@ -1,0 +1,17 @@
+{
+  "name": "automated-review-addressing",
+  "repo": "BluMintInc/eslint-custom-rules",
+  "path": ".claude/skills/automated-review-addressing/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/BluMintInc/eslint-custom-rules",
+  "dir_name": "automated-review-addressing",
+  "downloaded_at": "2026-03-01T04:58:51.040866Z",
+  "author": "BluMintInc",
+  "source_url": "https://github.com/BluMintInc/eslint-custom-rules/blob/master/.claude/skills/automated-review-addressing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BluMintInc/eslint-custom-rules/blob/master/.claude/skills/automated-review-addressing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

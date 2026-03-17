@@ -1,0 +1,11 @@
+{
+  "name": "python-unit-testing",
+  "description": "A skill for creating comprehensive Python unit tests using pytest. It provides guidance and templates for test structure, fixtures, mocking, parameterization, and coverage. Use this when you need to w",
+  "repo": "MUmerRazzaq/fast-next-todo",
+  "path": ".claude/skills/python-unit-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MUmerRazzaq/fast-next-todo",
+  "dir_name": "python-unit-testing-mumerrazzaq-fast-next-todo-2"
+}

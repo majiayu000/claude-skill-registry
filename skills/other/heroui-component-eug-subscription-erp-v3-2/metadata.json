@@ -1,0 +1,11 @@
+{
+  "name": "heroui-component",
+  "description": "Scaffolds new HeroUI v3 React components using compound component patterns. Enforces named exports, onPress handlers, and direct imports from @heroui/react. Use when creating new UI components.",
+  "repo": "eug-subscription/ERP_v3",
+  "path": ".agent/skills/heroui-component",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/eug-subscription/ERP_v3",
+  "dir_name": "heroui-component-eug-subscription-erp-v3-2"
+}

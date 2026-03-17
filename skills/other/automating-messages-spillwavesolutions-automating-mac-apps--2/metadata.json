@@ -1,0 +1,11 @@
+{
+  "name": "automating-messages",
+  "description": "Automates macOS Messages (iMessage/SMS) via JXA with reliable service→buddy resolution. Use when asked to \"automate iMessage\", \"send Messages via script\", \"JXA Messages automation\", or \"read Messages ",
+  "repo": "SpillwaveSolutions/automating-mac-apps-plugin",
+  "path": "plugins/automating-mac-apps-plugin/skills/automating-messages",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
+  "dir_name": "automating-messages-spillwavesolutions-automating-mac-apps--2"
+}

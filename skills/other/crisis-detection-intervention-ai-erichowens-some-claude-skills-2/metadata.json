@@ -1,0 +1,11 @@
+{
+  "name": "crisis-detection-intervention-ai",
+  "description": "Detect crisis signals in user content using NLP, mental health sentiment analysis, and safe intervention protocols. Implements suicide ideation detection, automated escalation, and crisis resource int",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/crisis-detection-intervention-ai",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "crisis-detection-intervention-ai-erichowens-some-claude-skills-2"
+}

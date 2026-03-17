@@ -1,0 +1,11 @@
+{
+  "name": "openapi-spec-generation",
+  "description": "Generate and maintain OpenAPI 3.1 specifications from code, design-first specs, and validation patterns. Use when creating API documentation, generating SDKs, or ensuring API contract compliance.",
+  "repo": "Tahir-yamin/dev-engineering-playbook",
+  "path": "agents/wshobson/documentation-generation/skills/openapi-spec-generation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Tahir-yamin/dev-engineering-playbook",
+  "dir_name": "openapi-spec-generation-tahir-yamin-dev-engineering-play-2"
+}

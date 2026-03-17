@@ -1,0 +1,11 @@
+{
+  "name": "go-skills",
+  "description": "Shared Go best practices for LlamaFarm CLI. Covers idiomatic patterns, error handling, and testing.",
+  "repo": "llama-farm/llamafarm",
+  "path": ".claude/skills/go-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/llama-farm/llamafarm",
+  "dir_name": "go-skills-llama-farm-llamafarm-2"
+}

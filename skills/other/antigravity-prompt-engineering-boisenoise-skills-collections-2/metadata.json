@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-prompt-engineering",
+  "description": "Expert guide on prompt engineering patterns, best practices, and optimization techniques. Use when user wants to improve prompts, learn prompting strategies, or debug agent behavior.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-prompt-engineering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-prompt-engineering-boisenoise-skills-collections-2"
+}

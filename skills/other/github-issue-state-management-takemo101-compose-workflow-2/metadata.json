@@ -1,0 +1,11 @@
+{
+  "name": "github-issue-state-management",
+  "description": "GitHub Issueのラベルとメタデータを使用した環境状態管理。container-use/worktree/ホスト環境すべてからアクセス可能なSingle Source of Truth",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/github-issue-state-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "github-issue-state-management-takemo101-compose-workflow-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "developing-gtk-apps",
+  "description": "Use when building GTK 4/libadwaita applications; before writing app boilerplate; when debugging threading, signals, or lifecycle issues; when setting up GSettings, resources, or packaging; delegates U",
+  "repo": "mhagrelius/dotfiles",
+  "path": ".claude/skills/developing-gtk-apps",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhagrelius/dotfiles",
+  "dir_name": "developing-gtk-apps-mhagrelius-dotfiles-2"
+}

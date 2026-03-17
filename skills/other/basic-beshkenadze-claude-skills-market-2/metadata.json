@@ -1,0 +1,11 @@
+{
+  "name": "basic",
+  "description": "Brief description of what this Skill does and when to use it. This field is critical for Claude to discover when to invoke your skill.",
+  "repo": "beshkenadze/claude-skills-marketplace",
+  "path": "templates/basic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/beshkenadze/claude-skills-marketplace",
+  "dir_name": "basic-beshkenadze-claude-skills-market-2"
+}

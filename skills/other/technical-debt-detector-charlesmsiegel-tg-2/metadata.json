@@ -1,0 +1,11 @@
+{
+  "name": "technical-debt-detector",
+  "description": "Identify and prioritize technical debt in Python codebases. Use when the user asks to find tech debt, analyze code quality, identify what needs refactoring, find security issues, check test coverage g",
+  "repo": "charlesmsiegel/tg",
+  "path": ".claude/skills/technical-debt-detector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/charlesmsiegel/tg",
+  "dir_name": "technical-debt-detector-charlesmsiegel-tg-2"
+}

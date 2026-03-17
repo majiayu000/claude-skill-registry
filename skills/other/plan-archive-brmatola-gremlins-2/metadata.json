@@ -1,0 +1,11 @@
+{
+  "name": "plan-archive",
+  "description": "Use when a plan is abandoned, obsolete, or superseded and should be archived",
+  "repo": "brmatola/gremlins",
+  "path": "skills/plan-archive",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/brmatola/gremlins",
+  "dir_name": "plan-archive-brmatola-gremlins-2"
+}

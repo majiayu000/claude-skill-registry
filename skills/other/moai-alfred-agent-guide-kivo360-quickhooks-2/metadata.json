@@ -1,0 +1,11 @@
+{
+  "name": "moai-alfred-agent-guide",
+  "description": "19-agent team structure, decision trees for agent selection, Haiku vs Sonnet model selection, and agent collaboration principles. Use when deciding which sub-agent to invoke, understanding team respon",
+  "repo": "kivo360/quickhooks",
+  "path": ".claude/skills/moai-alfred-agent-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kivo360/quickhooks",
+  "dir_name": "moai-alfred-agent-guide-kivo360-quickhooks-2"
+}

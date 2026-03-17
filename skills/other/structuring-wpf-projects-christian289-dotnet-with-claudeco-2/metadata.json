@@ -1,0 +1,11 @@
+{
+  "name": "structuring-wpf-projects",
+  "description": "Designs WPF solution and project structures based on Clean Architecture. Use when creating new WPF solutions, organizing layers, or establishing project naming conventions.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/structuring-wpf-projects",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "structuring-wpf-projects-christian289-dotnet-with-claudeco-2"
+}

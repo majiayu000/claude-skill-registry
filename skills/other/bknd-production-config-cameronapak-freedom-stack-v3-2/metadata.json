@@ -1,0 +1,11 @@
+{
+  "name": "bknd-production-config",
+  "description": "Use when preparing a Bknd application for production deployment. Covers security hardening, environment configuration, isProduction flag, JWT settings, Guard enablement, CORS, media storage, and produ",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-production-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-production-config-cameronapak-freedom-stack-v3-2"
+}

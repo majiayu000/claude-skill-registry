@@ -1,0 +1,11 @@
+{
+  "name": "code-conventions",
+  "description": "Defines project-wide code conventions for magic number elimination, constant usage, performance optimization, and coordinate system separation. Use when implementing, testing, or reviewing code to ens",
+  "repo": "shiroinock/Darts-Score-Trainer",
+  "path": ".claude/skills/code-conventions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shiroinock/Darts-Score-Trainer",
+  "dir_name": "code-conventions-shiroinock-darts-score-trainer-2"
+}

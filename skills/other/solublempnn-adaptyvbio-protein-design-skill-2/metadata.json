@@ -1,0 +1,11 @@
+{
+  "name": "solublempnn",
+  "description": "Solubility-optimized protein sequence design using SolubleMPNN. Use this skill when: (1) Designing for E. coli expression, (2) Optimizing solubility of designed proteins, (3) Reducing aggregation prop",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/solublempnn",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "solublempnn-adaptyvbio-protein-design-skill-2"
+}

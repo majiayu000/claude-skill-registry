@@ -1,0 +1,11 @@
+{
+  "name": "modularity-patterns",
+  "description": "Recommends modularity, composition, and decoupling patterns for design challenges. Use when designing plugin architectures, reducing coupling, improving testability, or separating cross-cutting concer",
+  "repo": "jdubray/puffin",
+  "path": ".claude/skills/modularity-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jdubray/puffin",
+  "dir_name": "modularity-patterns-jdubray-puffin-2"
+}

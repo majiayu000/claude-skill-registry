@@ -1,0 +1,11 @@
+{
+  "name": "test-pyramid-advisor",
+  "description": "分析unit/integration/e2e测试分配比例，建议60/30/10比例平衡。当AICTXT/测试策略确定后使用，优化测试执行效率和覆盖质量。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/implementation_planning/test-pyramid-advisor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "test-pyramid-advisor-tikazyq-agentic-spec-forge-2"
+}

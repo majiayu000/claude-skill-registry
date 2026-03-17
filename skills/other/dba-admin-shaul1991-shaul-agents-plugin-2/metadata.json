@@ -1,0 +1,11 @@
+{
+  "name": "dba-admin",
+  "description": "DBA Admin Agent. 백업, 복구, 보안, 권한 관리를 담당합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/dba-admin",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "dba-admin-shaul1991-shaul-agents-plugin-2"
+}

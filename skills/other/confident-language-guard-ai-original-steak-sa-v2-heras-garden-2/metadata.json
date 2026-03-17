@@ -1,0 +1,11 @@
+{
+  "name": "confident-language-guard",
+  "description": "Use when drafting or updating directives in docs (e.g., ROADMAP, AGENTS.md, CLAUDE.md, skills) as a gentle reminder to keep language cautious and flexible; avoid overly confident or absolute directive",
+  "repo": "AI-Original-Steak-Sauce/v2_heras_garden",
+  "path": ".claude/skills/confident-language-guard",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AI-Original-Steak-Sauce/v2_heras_garden",
+  "dir_name": "confident-language-guard-ai-original-steak-sa-v2-heras-garden-2"
+}

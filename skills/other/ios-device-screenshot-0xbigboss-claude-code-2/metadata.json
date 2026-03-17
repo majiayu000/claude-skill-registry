@@ -1,0 +1,11 @@
+{
+  "name": "ios-device-screenshot",
+  "description": "Take screenshots from physical iOS devices connected via USB using pymobiledevice3. Use when capturing screenshots from real iPhones/iPads (not simulators), debugging on-device, or needing high-fideli",
+  "repo": "0xBigBoss/claude-code",
+  "path": ".claude/skills/ios-device-screenshot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/0xBigBoss/claude-code",
+  "dir_name": "ios-device-screenshot-0xbigboss-claude-code-2"
+}

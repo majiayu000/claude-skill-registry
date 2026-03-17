@@ -1,0 +1,11 @@
+{
+  "name": "kraken",
+  "description": "Query Kraken crypto account balances, portfolio, trades, and staking positions.",
+  "repo": "clawdbot/skills",
+  "path": "skills/thesethrose/kraken",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "kraken-clawdbot-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "competitive-intel",
+  "description": "Use when researching, documenting, and sharing competitor insights with GTM teams.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/product-marketing/skills/competitive-intel",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "competitive-intel-gtmagents-gtm-agents-2"
+}

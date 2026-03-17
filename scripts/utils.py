@@ -6,8 +6,14 @@ Shared utilities for skill registry scripts.
 import re
 import hashlib
 import json
+import logging
 from pathlib import Path
+from typing import Optional
 from urllib.parse import urlparse
+
+import yaml
+
+logger = logging.getLogger(__name__)
 
 _DIR_CACHE = {}
 
@@ -345,3 +351,95 @@ def ensure_unique_dir(parent: Path, base_name: str, key: str = "", repo: str = "
     if key:
         key_to_dir.setdefault(key, selected)
     return selected
+
+
+# ---------------------------------------------------------------------------
+# Shared metadata / frontmatter helpers
+# ---------------------------------------------------------------------------
+
+# Category keywords used across multiple scripts for auto-detection.
+CATEGORY_KEYWORDS = {
+    "development": ["dev", "code", "programming", "api", "sdk", "framework", "build", "software", "compile", "debug", "refactor"],
+    "testing": ["test", "qa", "quality", "tdd", "jest", "pytest", "unittest", "integration", "e2e", "playwright", "cypress"],
+    "devops": ["devops", "ci", "cd", "docker", "kubernetes", "deploy", "infra", "infrastructure"],
+    "security": ["security", "auth", "crypto", "vulnerability", "audit", "owasp", "pentest", "fuzzing"],
+    "documents": ["doc", "pdf", "word", "excel", "pptx", "xlsx", "docx", "markdown", "documentation"],
+    "data": ["data", "analytics", "sql", "database", "etl", "pipeline", "ml", "ai", "machine-learning", "visualization"],
+    "design": ["design", "ui", "ux", "css", "frontend", "component", "tailwind", "figma", "animation"],
+    "productivity": ["productivity", "automation", "workflow", "task", "planning", "memory"],
+    "product": ["product", "prd", "roadmap", "feature", "backlog", "user-research", "metrics"],
+    "marketing": ["marketing", "seo", "content", "social", "campaign", "brand"],
+}
+
+
+def extract_frontmatter(content: str) -> dict:
+    """Extract YAML frontmatter from SKILL.md content using safe_load."""
+    if not content.startswith("---"):
+        return {}
+    try:
+        end_idx = content.find("---", 3)
+        if end_idx == -1:
+            return {}
+        frontmatter = content[3:end_idx].strip()
+        data = yaml.safe_load(frontmatter)
+        return data if isinstance(data, dict) else {}
+    except yaml.YAMLError:
+        return {}
+
+
+def extract_description(content: str, max_length: int = 200) -> str:
+    """Extract description from SKILL.md content (frontmatter or first paragraph)."""
+    fm = extract_frontmatter(content)
+    if fm.get("description"):
+        return str(fm["description"])[:max_length]
+
+    lines = content.split("\n")
+    in_frontmatter = False
+    for line in lines:
+        line = line.strip()
+        if line == "---":
+            in_frontmatter = not in_frontmatter
+            continue
+        if in_frontmatter:
+            continue
+        if line.startswith("#"):
+            continue
+        if line and not line.startswith("```") and len(line) > 20:
+            line = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', line)
+            line = re.sub(r'[*_`]', '', line)
+            return line[:max_length]
+    return ""
+
+
+def load_metadata(skill_dir: Path) -> dict:
+    """Safely load metadata.json from a skill directory."""
+    meta_path = skill_dir / "metadata.json"
+    if not meta_path.exists():
+        return {}
+    try:
+        return json.loads(meta_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as e:
+        logger.warning("Failed to load %s: %s", meta_path, e)
+        return {}
+
+
+def write_metadata(skill_dir: Path, meta: dict) -> None:
+    """Write metadata.json to a skill directory."""
+    meta_path = skill_dir / "metadata.json"
+    meta_path.write_text(
+        json.dumps(meta, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+
+def guess_category(text: str) -> str:
+    """Guess category from combined text (path + content snippet)."""
+    lowered = text.lower()
+    scores: dict[str, int] = {}
+    for category, keywords in CATEGORY_KEYWORDS.items():
+        score = sum(1 for kw in keywords if kw in lowered)
+        if score > 0:
+            scores[category] = score
+    if scores:
+        return max(scores, key=scores.get)
+    return "other"

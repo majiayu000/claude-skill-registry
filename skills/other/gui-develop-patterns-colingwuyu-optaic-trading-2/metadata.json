@@ -1,0 +1,11 @@
+{
+  "name": "gui-develop-patterns",
+  "description": "Design patterns, rules, and procedures for developing GUI features in `apps/web`. Covers migration from `optaic-v0` legacy design and new `ApiClient` integration patterns.",
+  "repo": "colingwuyu/optaic-trading",
+  "path": ".claude/skills/gui-develop-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/colingwuyu/optaic-trading",
+  "dir_name": "gui-develop-patterns-colingwuyu-optaic-trading-2"
+}

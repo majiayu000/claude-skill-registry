@@ -1,0 +1,11 @@
+{
+  "name": "paren-debug",
+  "description": "Debug parenthesis balance issues in Scheme files. Invoke when encountering \"unexpected end-of-file reading list\" or \"unexpected close parenthesis\" errors, or when manually counting parens.",
+  "repo": "osoleve/the-fold",
+  "path": ".claude/skills/paren-debug",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/osoleve/the-fold",
+  "dir_name": "paren-debug-osoleve-the-fold-2"
+}

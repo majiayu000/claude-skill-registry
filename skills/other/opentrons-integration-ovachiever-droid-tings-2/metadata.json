@@ -1,0 +1,11 @@
+{
+  "name": "opentrons-integration",
+  "description": "Lab automation platform for Flex/OT-2 robots. Write Protocol API v2 protocols, liquid handling, hardware modules (heater-shaker, thermocycler), labware management, for automated pipetting workflows.",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/opentrons-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "opentrons-integration-ovachiever-droid-tings-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-backend",
+  "description": "Node.js backend patterns with Express/Fastify, repositories",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/nodejs-backend",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "dir_name": "nodejs-backend-alinaqi-claude-bootstrap-2"
+}

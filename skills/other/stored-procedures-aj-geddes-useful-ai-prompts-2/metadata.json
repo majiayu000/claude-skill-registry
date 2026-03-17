@@ -1,0 +1,11 @@
+{
+  "name": "stored-procedures",
+  "description": "Implement stored procedures and functions for database logic. Use when creating reusable database routines, complex queries, or server-side calculations.",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/stored-procedures",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "dir_name": "stored-procedures-aj-geddes-useful-ai-prompts-2"
+}

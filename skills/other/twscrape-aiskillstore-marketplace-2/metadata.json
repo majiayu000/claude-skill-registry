@@ -1,0 +1,11 @@
+{
+  "name": "twscrape",
+  "description": "Python library for scraping Twitter/X data using GraphQL API with account rotation and session management. Use when extracting tweets, user profiles, followers, trends, or building social media monito",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/2025emma/twscrape",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "twscrape-aiskillstore-marketplace-2"
+}

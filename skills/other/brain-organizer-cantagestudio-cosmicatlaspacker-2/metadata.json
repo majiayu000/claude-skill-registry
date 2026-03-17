@@ -1,0 +1,11 @@
+{
+  "name": "brain-organizer",
+  "description": "[Utility] ⛔ MANDATORY skill for ANY Brain canvas operations. AI MUST invoke this skill BEFORE creating/modifying ANY files in Docs/Brain/. Failure to follow = broken canvas.",
+  "repo": "CANTAGESTUDIO/CosmicAtlasPacker",
+  "path": ".claude/skills/brain-organizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CANTAGESTUDIO/CosmicAtlasPacker",
+  "dir_name": "brain-organizer-cantagestudio-cosmicatlaspacker-2"
+}

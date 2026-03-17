@@ -1,0 +1,11 @@
+{
+  "name": "vibe-agents",
+  "description": "Generate AGENTS.md and AI configuration files for your project. Use when the user wants to create agent instructions, set up AI configs, or says \"create AGENTS.md\", \"configure my AI assistant\", or \"ge",
+  "repo": "KhazP/vibe-coding-prompt-template",
+  "path": ".claude/skills/vibe-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KhazP/vibe-coding-prompt-template",
+  "dir_name": "vibe-agents-khazp-vibe-coding-prompt-t-2"
+}

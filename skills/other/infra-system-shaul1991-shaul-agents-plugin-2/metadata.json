@@ -1,0 +1,11 @@
+{
+  "name": "infra-system",
+  "description": "Infra System Agent. 서버 관리, OS 튜닝, 모니터링을 담당합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/infra-system",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "infra-system-shaul1991-shaul-agents-plugin-2"
+}

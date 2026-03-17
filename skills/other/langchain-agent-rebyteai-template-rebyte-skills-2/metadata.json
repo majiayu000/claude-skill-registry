@@ -1,0 +1,11 @@
+{
+  "name": "langchain-agent",
+  "description": "AI agent with tools (search, calculator) using LangGraph and AI SDK.",
+  "repo": "rebyteai-template/rebyte-skills",
+  "path": "langchain-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rebyteai-template/rebyte-skills",
+  "dir_name": "langchain-agent-rebyteai-template-rebyte-skills-2"
+}

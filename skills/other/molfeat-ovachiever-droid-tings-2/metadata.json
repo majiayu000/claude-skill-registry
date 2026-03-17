@@ -1,0 +1,11 @@
+{
+  "name": "molfeat",
+  "description": "Molecular featurization for ML (100+ featurizers). ECFP, MACCS, descriptors, pretrained models (ChemBERTa), convert SMILES to features, for QSAR and molecular ML.",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/molfeat",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "molfeat-ovachiever-droid-tings-2"
+}

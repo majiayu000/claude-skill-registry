@@ -1,0 +1,11 @@
+{
+  "name": "library-docs",
+  "description": "Write prosaic, narrative-style documentation for Lean 4 libraries. Use when creating README files, user guides, tutorials, or comprehensive library documentation.",
+  "repo": "nathanial/lean-workspace",
+  "path": ".claude/skills/library-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nathanial/lean-workspace",
+  "dir_name": "library-docs-nathanial-lean-workspace-2"
+}

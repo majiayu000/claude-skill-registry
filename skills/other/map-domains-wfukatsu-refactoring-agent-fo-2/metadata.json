@@ -1,0 +1,11 @@
+{
+  "name": "map-domains",
+  "description": "ドメインマッピングエージェント - ドメイン分類、境界づけられたコンテキスト、コンテキストマップの作成。/map-domains [対象パス] で呼び出し。",
+  "repo": "wfukatsu/refactoring-agent-for-claude-code",
+  "path": ".claude/skills/map-domains",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wfukatsu/refactoring-agent-for-claude-code",
+  "dir_name": "map-domains-wfukatsu-refactoring-agent-fo-2"
+}

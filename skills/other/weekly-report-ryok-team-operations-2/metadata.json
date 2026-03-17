@@ -1,0 +1,11 @@
+{
+  "name": "weekly-report",
+  "description": "MLシステム開発共同研究プロジェクトの週報を自動作成するスキル。先週の週報をベースにNotionから今週の更新情報を収集し、差分を反映して新しい週報をNotionに発行する。Use when: (1) 週報を作成したい、(2) weekly reportを作りたい、(3) 週次報告を作成したい、(4) create weekly report",
+  "repo": "ryok/team-operations",
+  "path": ".claude/skills/weekly-report",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ryok/team-operations",
+  "dir_name": "weekly-report-ryok-team-operations-2"
+}

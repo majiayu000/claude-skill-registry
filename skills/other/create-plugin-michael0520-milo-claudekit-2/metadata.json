@@ -1,0 +1,11 @@
+{
+  "name": "create-plugin",
+  "description": "Create an empty Claude plugin with basic structure and files.",
+  "repo": "Michael0520/milo-claudekit",
+  "path": ".claude/skills/create-plugin",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Michael0520/milo-claudekit",
+  "dir_name": "create-plugin-michael0520-milo-claudekit-2"
+}

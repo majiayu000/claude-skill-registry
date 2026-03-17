@@ -1,0 +1,11 @@
+{
+  "name": "tauri-backend-testing",
+  "description": "Generate tests for Tauri backend Rust code, including command handlers, system integration, and IPC communication. Triggers on testing Rust code, Tauri commands, backend tests, or system integration t",
+  "repo": "pplmx/ethereal",
+  "path": ".claude/skills/tauri-backend-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pplmx/ethereal",
+  "dir_name": "tauri-backend-testing-pplmx-ethereal-2"
+}

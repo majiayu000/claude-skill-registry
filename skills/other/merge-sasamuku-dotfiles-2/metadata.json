@@ -1,0 +1,11 @@
+{
+  "name": "merge",
+  "description": "Execute /merge or /merge <branch> slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/merge",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "merge-sasamuku-dotfiles-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "life-sciences-connector",
+  "description": "Query PubMed and scientific databases for protocols, analyze biological data with Biopython, handle HIPAA-compliant data. Use for biology research, protocol searches, sequence analysis, or scientific ",
+  "repo": "dredd-us/seashells",
+  "path": ".claude/skills/life-sciences-connector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dredd-us/seashells",
+  "dir_name": "life-sciences-connector-dredd-us-seashells-2"
+}

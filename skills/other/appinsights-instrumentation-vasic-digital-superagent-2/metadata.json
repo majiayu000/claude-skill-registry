@@ -1,0 +1,11 @@
+{
+  "name": "appinsights-instrumentation",
+  "description": "Instrument a webapp to send useful telemetry data to Azure App Insights",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/github-copilot/appinsights-instrumentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "appinsights-instrumentation-vasic-digital-superagent-2"
+}

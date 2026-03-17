@@ -1,0 +1,9 @@
+{
+  "name": "misra-c-analysis",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/embedded-systems/skills/misra-c-analysis/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "misra-c-analysis",
+  "downloaded_at": "2026-02-13T01:19:46.000412Z"
+}

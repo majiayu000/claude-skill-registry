@@ -1,0 +1,11 @@
+{
+  "name": "mac-maintenance-cleanup",
+  "description": "macOS 系统深度清理和优化工作流。当用户需要以下操作时使用：(1) 清理系统缓存、日志和临时文件，(2) 卸载应用及其残留文件，(3) 分析磁盘空间使用情况，(4) 清理开发项目构建产物，(5) 系统优化和性能提升，(6) 任何关于 Mac 清理和维护的请求。提供交互式菜单、智能诊断和混合模式（指导+自动执行）。",
+  "repo": "evanfang0054/cc-system-creator-scripts",
+  "path": "skills/mac-maintenance-cleanup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/evanfang0054/cc-system-creator-scripts",
+  "dir_name": "mac-maintenance-cleanup-evanfang0054-cc-system-creator-sc-2"
+}

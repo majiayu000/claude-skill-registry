@@ -1,0 +1,11 @@
+{
+  "name": "drama-workflow",
+  "description": "协调情节点戏剧功能分析流程，管理文本预处理、并行分析、结果整合。适用于长文本的情节点和戏剧功能分析、需要结构化分析报告的场景",
+  "repo": "VanGongwanxiaowan/screen-creative-skills",
+  "path": "category/workflow/drama-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VanGongwanxiaowan/screen-creative-skills",
+  "dir_name": "drama-workflow-vangongwanxiaowan-screen-creative-skil-2"
+}

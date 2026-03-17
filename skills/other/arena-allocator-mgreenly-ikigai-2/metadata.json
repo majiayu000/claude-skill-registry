@@ -1,0 +1,11 @@
+{
+  "name": "arena-allocator",
+  "description": "Arena Allocator Pattern (C-Specific) pattern for C development",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/patterns/arena-allocator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "arena-allocator-mgreenly-ikigai-2"
+}

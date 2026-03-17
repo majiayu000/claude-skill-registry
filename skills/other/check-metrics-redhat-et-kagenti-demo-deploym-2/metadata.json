@@ -1,0 +1,11 @@
+{
+  "name": "check-metrics",
+  "description": "Query Prometheus metrics, check resource usage, and analyze platform performance in the Kagenti platform",
+  "repo": "redhat-et/kagenti-demo-deployment",
+  "path": ".claude/skills/check-metrics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/redhat-et/kagenti-demo-deployment",
+  "dir_name": "check-metrics-redhat-et-kagenti-demo-deploym-2"
+}

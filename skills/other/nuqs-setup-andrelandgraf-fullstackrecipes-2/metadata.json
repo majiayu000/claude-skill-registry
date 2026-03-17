@@ -1,0 +1,11 @@
+{
+  "name": "nuqs-setup",
+  "description": "Sync React state to URL query parameters for shareable filters, search queries, and deep links to modal dialogs. Preserves UI state on browser back/forward navigation.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/nuqs-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "nuqs-setup-andrelandgraf-fullstackrecipes-2"
+}

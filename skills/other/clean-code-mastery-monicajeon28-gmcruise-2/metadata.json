@@ -1,0 +1,11 @@
+{
+  "name": "clean-code-mastery",
+  "description": "**CLEAN CODE MASTERY**: '코드 작성', '함수 만들어', '구현해', '개발해', '리팩토링', '개선해', '설계해', '클린코드', '코드품질' 요청 시 자동 발동. *.ts/*.py/*.go/*.java 등 모든 코드 파일 작업 시 자동 적용. SOLID/DRY/KISS + OWASP 보안 패턴. 언어별 선택적 로드.",
+  "repo": "monicajeon28/GMcruise",
+  "path": ".claude/skills/clean-code-mastery",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/monicajeon28/GMcruise",
+  "dir_name": "clean-code-mastery-monicajeon28-gmcruise-2"
+}

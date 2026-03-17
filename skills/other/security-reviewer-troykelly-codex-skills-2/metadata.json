@@ -1,0 +1,11 @@
+{
+  "name": "security-reviewer",
+  "description": "Use when explicitly asked to run the security-reviewer subagent or when another skill requires the security-reviewer agent card.",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/security-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "security-reviewer-troykelly-codex-skills-2"
+}

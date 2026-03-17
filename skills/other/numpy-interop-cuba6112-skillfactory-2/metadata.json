@@ -1,0 +1,11 @@
+{
+  "name": "numpy-interop",
+  "description": "NumPy Interoperability encompasses the protocols that allow different numerical libraries (PyTorch, TensorFlow, SciPy) to exchange data without redundant copies. It focuses on modern standards like DL",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/numpy-interop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "numpy-interop-cuba6112-skillfactory-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "automl-pipeline-setup",
+  "description": "Эксперт AutoML. Используй для automated machine learning, hyperparameter tuning и model selection.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/automl-pipeline-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "automl-pipeline-setup-dengineproblem-agents-monorepo-2"
+}

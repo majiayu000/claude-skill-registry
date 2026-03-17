@@ -1,0 +1,11 @@
+{
+  "name": "metabolicpathwayactivity",
+  "description": "Calculates pathway activity scores for metabolic pathways across different cell groups and subsets. This process quantifies the metabolic activity of each pathway per group, generating visualizations ",
+  "repo": "pwwang/immunopipe",
+  "path": "skills/metabolicpathwayactivity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pwwang/immunopipe",
+  "dir_name": "metabolicpathwayactivity-pwwang-immunopipe-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "md-table-formatter",
+  "description": "Automatically formats Markdown tables with proper column alignment after file edits. Use when working with Markdown files containing tables.",
+  "repo": "neardws/droid-skills",
+  "path": "skills/md-table-formatter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/neardws/droid-skills",
+  "dir_name": "md-table-formatter-neardws-droid-skills-2"
+}

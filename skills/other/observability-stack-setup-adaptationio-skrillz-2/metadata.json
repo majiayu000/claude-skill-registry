@@ -1,0 +1,11 @@
+{
+  "name": "observability-stack-setup",
+  "description": "Automated LGTM + Alloy observability stack deployment using Docker Compose. Use when setting up Claude Code observability infrastructure locally.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/observability-stack-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "observability-stack-setup-adaptationio-skrillz-2"
+}

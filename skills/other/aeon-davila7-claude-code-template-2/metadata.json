@@ -1,0 +1,11 @@
+{
+  "name": "aeon",
+  "description": "This skill should be used for time series machine learning tasks including classification, regression, clustering, forecasting, anomaly detection, segmentation, and similarity search. Use when working",
+  "repo": "davila7/claude-code-templates",
+  "path": "cli-tool/components/skills/scientific/aeon",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davila7/claude-code-templates",
+  "dir_name": "aeon-davila7-claude-code-template-2"
+}

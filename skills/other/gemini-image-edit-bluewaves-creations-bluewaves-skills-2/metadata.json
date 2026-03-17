@@ -1,0 +1,11 @@
+{
+  "name": "gemini-image-edit",
+  "description": "Edit existing images with text prompts using fal.ai Gemini 3 Pro. Use when the user wants to modify, edit, transform, or change an existing image based on a text description. Supports multiple input i",
+  "repo": "bluewaves-creations/bluewaves-skills",
+  "path": "plugins/fal-media/skills/gemini-image-edit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bluewaves-creations/bluewaves-skills",
+  "dir_name": "gemini-image-edit-bluewaves-creations-bluewaves-skills-2"
+}

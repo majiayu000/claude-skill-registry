@@ -1,0 +1,11 @@
+{
+  "name": "ports-and-adapters",
+  "description": "Use when symfony ports and adapters",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/ports-and-adapters",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "ports-and-adapters-makfly-superpowers-symfony-2"
+}

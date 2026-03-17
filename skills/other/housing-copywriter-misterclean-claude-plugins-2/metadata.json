@@ -1,0 +1,11 @@
+{
+  "name": "housing-copywriter",
+  "description": "This skill should be used when the user asks to \"write marketing copy\", \"create social media posts\", \"write a blog post\", \"draft an email\", \"write product descriptions\", \"create brand messaging\", \"wri",
+  "repo": "MisterClean/claude-plugins",
+  "path": "skills/housing-copywriter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MisterClean/claude-plugins",
+  "dir_name": "housing-copywriter-misterclean-claude-plugins-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "global-constants",
+  "description": "Generates src/shared/constants/global.ts file containing application-wide constants used throughout the application.",
+  "repo": "sayali-ingle-pdl/adusa-ai-vuejs-app-template",
+  "path": ".github/agents/app-starter/agents-context/skills/global-constants",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sayali-ingle-pdl/adusa-ai-vuejs-app-template",
+  "dir_name": "global-constants-sayali-ingle-pdl-adusa-ai-vuejs-app-t-2"
+}

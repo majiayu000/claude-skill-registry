@@ -1,0 +1,11 @@
+{
+  "name": "creating-wpf-dialogs",
+  "description": "Creates WPF dialog windows including modal dialogs, MessageBox, and common dialogs. Use when implementing confirmation prompts, settings windows, or file/folder pickers.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/creating-wpf-dialogs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "creating-wpf-dialogs-christian289-dotnet-with-claudeco-2"
+}

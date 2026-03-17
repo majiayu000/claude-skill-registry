@@ -1,0 +1,11 @@
+{
+  "name": "agent-provisioner",
+  "description": "MANDATORY workflow for creating new agents. Enforces -01-agent-formatting\nstandards from inception, ensuring every new agent is properly designed,\nresearched, and curated before deployment.",
+  "repo": "Smith-Happens/xlightsfpptester",
+  "path": "skills/agent-provisioner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Smith-Happens/xlightsfpptester",
+  "dir_name": "agent-provisioner-smith-happens-xlightsfpptester-2"
+}

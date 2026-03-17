@@ -1,0 +1,11 @@
+{
+  "name": "android-screen-capture",
+  "description": "Start Android screen mirroring using scrcpy. Displays device screen in real-time on Mac with optional console logs. Use when viewing Android screen, mirroring device, or monitoring app with logs.",
+  "repo": "asnar00/miso",
+  "path": ".claude/skills/android-screen-capture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/asnar00/miso",
+  "dir_name": "android-screen-capture-asnar00-miso-2"
+}

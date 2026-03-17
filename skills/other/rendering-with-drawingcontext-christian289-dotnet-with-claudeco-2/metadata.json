@@ -1,0 +1,11 @@
+{
+  "name": "rendering-with-drawingcontext",
+  "description": "Renders high-performance graphics using WPF DrawingContext for 10-50x improvement over Shape. Use when drawing large numbers of shapes or optimizing rendering performance.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/rendering-with-drawingcontext",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "rendering-with-drawingcontext-christian289-dotnet-with-claudeco-2"
+}

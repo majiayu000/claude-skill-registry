@@ -1,0 +1,11 @@
+{
+  "name": "librarian",
+  "description": "Web research agent for documentation, web search, and code search.\nUse when: querying docs, searching latest tech info, code search via grep.app.\n网络研究专家，专注于外部信息检索。",
+  "repo": "Lynricsy/Oh-My-ClaudeCode",
+  "path": "skills/librarian",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lynricsy/Oh-My-ClaudeCode",
+  "dir_name": "librarian-lynricsy-oh-my-claudecode-2"
+}

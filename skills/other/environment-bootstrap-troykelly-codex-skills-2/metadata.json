@@ -1,0 +1,11 @@
+{
+  "name": "environment-bootstrap",
+  "description": "Use for development environment setup - create and maintain init scripts, run smoke tests, ensure consistent environment across sessions",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/environment-bootstrap",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "environment-bootstrap-troykelly-codex-skills-2"
+}

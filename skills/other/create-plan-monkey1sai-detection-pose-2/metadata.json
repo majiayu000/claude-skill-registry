@@ -1,0 +1,11 @@
+{
+  "name": "create-plan",
+  "description": "Create a concise plan. Use when a user explicitly asks for a plan related to a coding task.",
+  "repo": "monkey1sai/detection_pose",
+  "path": "skills/create-plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/monkey1sai/detection_pose",
+  "dir_name": "create-plan-monkey1sai-detection-pose-2"
+}

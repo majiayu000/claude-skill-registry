@@ -1,0 +1,11 @@
+{
+  "name": "de-results",
+  "description": "Extract, filter, annotate, and export differential expression results from DESeq2 or edgeR. Use for identifying significant genes, applying multiple testing corrections, adding gene annotations, and p",
+  "repo": "GPTomics/bioSkills",
+  "path": "differential-expression/de-results",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "de-results-gptomics-bioskills-2"
+}

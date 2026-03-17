@@ -1,0 +1,11 @@
+{
+  "name": "31_toolBased.nested-tad-detection",
+  "description": "This skill detects hierarchical (nested) TAD structures from Hi-C contact maps (in .cool or mcool format) using OnTAD, starting from multi-resolution .mcool files. It extracts a user-specified chromos",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "31_toolBased.nested-tad-detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "31-toolbased-nested-tad-detection-bisnake2001-chromskills-2"
+}

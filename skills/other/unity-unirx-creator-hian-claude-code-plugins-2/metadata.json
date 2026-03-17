@@ -1,0 +1,11 @@
+{
+  "name": "unity-unirx",
+  "description": "UniRx (Reactive Extensions) library expert for legacy Unity projects. Specializes in UniRx-specific patterns, Observable streams, and ReactiveProperty. Use for maintaining existing UniRx codebases. Fo",
+  "repo": "creator-hian/claude-code-plugins",
+  "path": "unity-plugin/skills/unity-unirx",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/creator-hian/claude-code-plugins",
+  "dir_name": "unity-unirx-creator-hian-claude-code-plugins-2"
+}

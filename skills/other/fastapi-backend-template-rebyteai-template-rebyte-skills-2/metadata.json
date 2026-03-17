@@ -1,0 +1,11 @@
+{
+  "name": "fastapi-backend-template",
+  "description": "FastAPI with PostgreSQL, async SQLAlchemy 2.0, Alembic, and Docker.",
+  "repo": "rebyteai-template/rebyte-skills",
+  "path": "fastapi-backend-template",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rebyteai-template/rebyte-skills",
+  "dir_name": "fastapi-backend-template-rebyteai-template-rebyte-skills-2"
+}

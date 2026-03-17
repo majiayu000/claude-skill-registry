@@ -1,0 +1,11 @@
+{
+  "name": "agent-workflow-playbook",
+  "description": "Guide plan → instrument → execute → validate with explicit checkpoints and questions. Use for ambiguous tasks or when enforcing a consistent agent workflow.",
+  "repo": "aufrank/agent-skills",
+  "path": "skills/agent-workflow-playbook",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aufrank/agent-skills",
+  "dir_name": "agent-workflow-playbook-aufrank-agent-skills-2"
+}

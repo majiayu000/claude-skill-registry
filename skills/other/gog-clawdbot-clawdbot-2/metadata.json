@@ -1,0 +1,11 @@
+{
+  "name": "gog",
+  "description": "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.",
+  "repo": "clawdbot/clawdbot",
+  "path": "skills/gog",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/clawdbot",
+  "dir_name": "gog-clawdbot-clawdbot-2"
+}

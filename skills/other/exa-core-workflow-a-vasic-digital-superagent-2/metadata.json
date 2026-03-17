@@ -1,0 +1,11 @@
+{
+  "name": "exa-core-workflow-a",
+  "description": "Execute Exa primary workflow: Core Workflow A.\nUse when implementing primary use case,\nbuilding main features, or core integration tasks.\nTrigger with phrases like \"exa main workflow\",\n\"primary task w",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-core-workflow-a",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-core-workflow-a-vasic-digital-superagent-2"
+}

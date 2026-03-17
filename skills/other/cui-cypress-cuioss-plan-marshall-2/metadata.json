@@ -1,0 +1,11 @@
+{
+  "name": "cui-cypress",
+  "description": "Cypress E2E testing standards including framework adaptations, test organization, and best practices",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-frontend/skills/cui-cypress",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "cui-cypress-cuioss-plan-marshall-2"
+}

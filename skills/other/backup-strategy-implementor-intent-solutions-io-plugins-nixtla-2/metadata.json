@@ -1,0 +1,11 @@
+{
+  "name": "backup-strategy-implementor",
+  "description": "This skill implements backup strategies for databases and applications. It generates configuration files and setup code to ensure data protection and disaster recovery. Use this skill when the user re",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/devops/backup-strategy-implementor/skills/backup-strategy-implementor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "backup-strategy-implementor-intent-solutions-io-plugins-nixtla-2"
+}

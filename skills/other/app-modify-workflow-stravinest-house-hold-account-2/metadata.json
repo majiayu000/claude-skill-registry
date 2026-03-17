@@ -1,0 +1,11 @@
+{
+  "name": "app-modify-workflow",
+  "description": "앱 수정 워크플로우를 시작합니다. 현황 분석 -> UI/UX 검토 -> 엣지 케이스 확인 -> 사용자 질문 -> 계획 수립 -> 구현 -> 코드 리뷰 반복 순서로 체계적인 앱 수정을 진행합니다. \"/app-modify-workflow\", \"앱 수정 워크플로우\", \"수정 워크플로우로\" 등의 명령으로 활성화됩니다.",
+  "repo": "stravinest/house-hold-account",
+  "path": ".claude/skills/app-modify-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/stravinest/house-hold-account",
+  "dir_name": "app-modify-workflow-stravinest-house-hold-account-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ln-600-docs-auditor",
+  "description": "Audit project documentation quality across 6 categories (Hierarchy, SSOT, Compactness, Requirements, Actuality, Legacy). Use when documentation needs quality review, after major doc updates, or as par",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-600-docs-auditor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-600-docs-auditor-levnikolaevich-claude-code-skills-2"
+}

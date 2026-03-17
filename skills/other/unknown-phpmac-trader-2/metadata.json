@@ -1,0 +1,11 @@
+{
+  "name": "固定风险仓位管理",
+  "description": "固定风险金额仓位管理法 - 每笔交易固定亏损金额, 根据止损距离动态计算仓位大小",
+  "repo": "phpmac/trader",
+  "path": ".claude/skills/固定风险仓位管理",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/phpmac/trader",
+  "dir_name": "unknown-phpmac-trader-2"
+}

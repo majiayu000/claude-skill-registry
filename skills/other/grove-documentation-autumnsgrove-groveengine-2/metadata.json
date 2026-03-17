@@ -1,0 +1,11 @@
+{
+  "name": "grove-documentation",
+  "description": "Write documentation, help articles, specs, and user-facing text in the authentic Grove voice. Use when writing any text that users will read, updating help center content, or drafting specs. Ensures w",
+  "repo": "AutumnsGrove/GroveEngine",
+  "path": ".claude/skills/grove-documentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AutumnsGrove/GroveEngine",
+  "dir_name": "grove-documentation-autumnsgrove-groveengine-2"
+}

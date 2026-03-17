@@ -1,0 +1,17 @@
+{
+  "name": "moai-baas-clerk-ext",
+  "repo": "dolsoon/my-awesome-project",
+  "path": ".claude/skills/moai-baas-clerk-ext/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/dolsoon/my-awesome-project",
+  "dir_name": "moai-baas-clerk-ext-dolsoon-my-awesome-project",
+  "downloaded_at": "2026-03-01T07:29:14.800074Z",
+  "author": "dolsoon",
+  "source_url": "https://github.com/dolsoon/my-awesome-project/blob/master/.claude/skills/moai-baas-clerk-ext/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dolsoon/my-awesome-project/blob/master/.claude/skills/moai-baas-clerk-ext/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rg-flow-acset",
+  "description": "RG Flow ACSet Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/rg-flow-acset",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "rg-flow-acset-plurigrid-asi-2"
+}

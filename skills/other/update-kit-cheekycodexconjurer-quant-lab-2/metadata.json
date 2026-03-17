@@ -1,0 +1,11 @@
+{
+  "name": "update_kit",
+  "description": "Update this documentation kit safely from upstream.",
+  "repo": "CheekyCodexConjurer/quant-lab",
+  "path": ".agent-docs/templates/.codex/skills/update_kit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CheekyCodexConjurer/quant-lab",
+  "dir_name": "update-kit-cheekycodexconjurer-quant-lab-2"
+}

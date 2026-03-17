@@ -1,0 +1,11 @@
+{
+  "name": "adb-builder",
+  "description": "Tier: Tier 0 (Meta-Generation Framework)",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".claude/skills/adb/adb-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "dir_name": "adb-builder-rdmptv-adbautoplayer-2"
+}

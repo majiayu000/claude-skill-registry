@@ -1,0 +1,11 @@
+{
+  "name": "frontend-test",
+  "description": "Generate frontend component tests (unit, snapshot, e2e). Auto-invoke when user says \"test this component\", \"write component test\", or \"add component test\".",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "navigator-main/skills/frontend-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "frontend-test-dkyazzentwatwa-supernavigator-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "fal-serverless-guide",
+  "description": "| Machine Type | GPU | VRAM | Use Case |",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/fal-ai-master/skills/fal-serverless-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "fal-serverless-guide-josiahsiegel-claude-plugin-market-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "diagram",
+  "description": "Generate publication-quality technical diagrams using Nano Banana Pro (Gemini 3 Pro Image) with AI-powered quality review. Smart iteration only regenerates when quality is below threshold.",
+  "repo": "flight505/nano-banana",
+  "path": "skills/diagram",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/flight505/nano-banana",
+  "dir_name": "diagram-flight505-nano-banana-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "exa-local-dev-loop",
+  "description": "Configure Exa local development with hot reload and testing.\nUse when setting up a development environment, configuring test workflows,\nor establishing a fast iteration cycle with Exa.\nTrigger with ph",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-local-dev-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-local-dev-loop-vasic-digital-superagent-2"
+}

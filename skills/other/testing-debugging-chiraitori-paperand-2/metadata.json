@@ -1,0 +1,11 @@
+{
+  "name": "testing-debugging",
+  "description": "Debug tools, developer menu, and troubleshooting",
+  "repo": "chiraitori/paperand",
+  "path": ".agent/skills/testing-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chiraitori/paperand",
+  "dir_name": "testing-debugging-chiraitori-paperand-2"
+}

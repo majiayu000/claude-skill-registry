@@ -1,0 +1,11 @@
+{
+  "name": "keycloak",
+  "description": "Keycloak identity and access management including realms, clients, authentication flows, themes, and user federation. Activate for OAuth2, OIDC, SAML, SSO, identity providers, and authentication confi",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/keycloak",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "keycloak-lobbi-docs-claude-2"
+}

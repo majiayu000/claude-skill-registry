@@ -1,0 +1,11 @@
+{
+  "name": "spec-flow-instructions",
+  "description": "MUST use when working with spec files in `specs/` directories, or when commands reference this skill for conventions.",
+  "repo": "jbuckmccready/dotfiles",
+  "path": "claude/.claude/skills/spec-flow-instructions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jbuckmccready/dotfiles",
+  "dir_name": "spec-flow-instructions-jbuckmccready-dotfiles-2"
+}

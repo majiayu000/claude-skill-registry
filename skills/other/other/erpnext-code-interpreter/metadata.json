@@ -1,0 +1,9 @@
+{
+  "name": "erpnext-code-interpreter",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/agents/erpnext-code-interpreter/SKILL.md",
+  "category": "other",
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-code-interpreter",
+  "downloaded_at": "2026-02-22T05:29:40.089632Z"
+}

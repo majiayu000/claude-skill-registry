@@ -1,0 +1,11 @@
+{
+  "name": "hic-data-io",
+  "description": "Load, convert, and manipulate Hi-C contact matrices using cooler format. Read .cool/.mcool files, convert from .hic format, access matrix data, and export to different formats.",
+  "repo": "GPTomics/bioSkills",
+  "path": "hi-c-analysis/hic-data-io",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "hic-data-io-gptomics-bioskills-2"
+}

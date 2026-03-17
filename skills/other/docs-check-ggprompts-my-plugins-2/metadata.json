@@ -1,0 +1,11 @@
+{
+  "name": "docs-check",
+  "description": "Documentation check checkpoint for conductor gates. Analyzes code changes to determine if documentation needs updating. Returns structured result with pass/fail status and documentation suggestions.",
+  "repo": "GGPrompts/my-plugins",
+  "path": "plugins/tools/conductor/skills/docs-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GGPrompts/my-plugins",
+  "dir_name": "docs-check-ggprompts-my-plugins-2"
+}

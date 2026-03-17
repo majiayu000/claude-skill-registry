@@ -1,0 +1,11 @@
+{
+  "name": "qa-testing-mobile",
+  "description": "Mobile app testing strategy and execution for iOS and Android. Cover device matrix, automation frameworks, performance, reliability, and release gates. Use when you need cross platform mobile QA plans",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/qa-testing-mobile",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "qa-testing-mobile-vasilyu1983-ai-agents-public-2"
+}

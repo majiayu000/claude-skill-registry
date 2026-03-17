@@ -1,0 +1,11 @@
+{
+  "name": "squash-commits",
+  "description": "Execute /squash-commits slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/squash-commits",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "squash-commits-sasamuku-dotfiles-2"
+}

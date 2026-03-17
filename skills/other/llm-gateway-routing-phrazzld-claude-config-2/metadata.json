@@ -1,0 +1,11 @@
+{
+  "name": "llm-gateway-routing",
+  "description": "LLM gateway and routing configuration using OpenRouter and LiteLLM.\nInvoke when:\n- Setting up multi-model access (OpenRouter, LiteLLM)\n- Configuring model fallbacks and reliability\n- Implementing cost",
+  "repo": "phrazzld/claude-config",
+  "path": "skills/llm-gateway-routing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/phrazzld/claude-config",
+  "dir_name": "llm-gateway-routing-phrazzld-claude-config-2"
+}

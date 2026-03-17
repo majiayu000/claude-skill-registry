@@ -1,0 +1,11 @@
+{
+  "name": "get-y2b-clips",
+  "description": "Extract the most meaningful, engaging clips from YouTube videos. Use when user provides a YouTube URL and wants to find highlights, best moments, controversial takes, or valuable segments. Supports sp",
+  "repo": "DidierRLopes/get-y2b-clips",
+  "path": ".claude/skills/get-y2b-clips",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DidierRLopes/get-y2b-clips",
+  "dir_name": "get-y2b-clips-didierrlopes-get-y2b-clips-2"
+}

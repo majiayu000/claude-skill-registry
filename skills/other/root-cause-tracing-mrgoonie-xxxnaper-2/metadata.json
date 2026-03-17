@@ -1,0 +1,11 @@
+{
+  "name": "root-cause-tracing",
+  "description": "Systematically trace bugs backward through call stack to find original trigger",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/debugging/root-cause-tracing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "root-cause-tracing-mrgoonie-xxxnaper-2"
+}

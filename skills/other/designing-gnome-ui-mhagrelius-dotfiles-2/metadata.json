@@ -1,0 +1,11 @@
+{
+  "name": "designing-gnome-ui",
+  "description": "Use when designing, implementing, or modifying UI for GNOME apps; before writing UI code; when reviewing existing UI for HIG compliance; when working with GTK 4/libadwaita or styling Qt/PySide6 for GN",
+  "repo": "mhagrelius/dotfiles",
+  "path": ".claude/skills/designing-gnome-ui",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhagrelius/dotfiles",
+  "dir_name": "designing-gnome-ui-mhagrelius-dotfiles-2"
+}

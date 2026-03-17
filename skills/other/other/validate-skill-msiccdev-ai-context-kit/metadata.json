@@ -1,0 +1,17 @@
+{
+  "name": "validate-skill",
+  "repo": "MSiccDev/ai-context-kit",
+  "path": "skills/validate-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MSiccDev/ai-context-kit",
+  "dir_name": "validate-skill-msiccdev-ai-context-kit",
+  "downloaded_at": "2026-03-01T05:39:46.739506Z",
+  "author": "MSiccDev",
+  "source_url": "https://github.com/MSiccDev/ai-context-kit/blob/main/skills/validate-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MSiccDev/ai-context-kit/blob/main/skills/validate-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

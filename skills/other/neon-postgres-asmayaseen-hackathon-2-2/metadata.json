@@ -1,0 +1,11 @@
+{
+  "name": "neon-postgres",
+  "description": "Neon PostgreSQL serverless database - connection pooling, branching, serverless driver, and optimization. Use when deploying to Neon or building serverless applications.",
+  "repo": "Asmayaseen/hackathon-2",
+  "path": ".claude/skills/neon-postgres",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Asmayaseen/hackathon-2",
+  "dir_name": "neon-postgres-asmayaseen-hackathon-2-2"
+}

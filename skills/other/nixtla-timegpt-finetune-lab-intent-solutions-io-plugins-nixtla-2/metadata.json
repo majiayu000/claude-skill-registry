@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-timegpt-finetune-lab",
+  "description": "Configure TimeGPT fine-tuning on custom datasets with Nixtla SDK. Use when training domain-specific forecast models. Trigger with 'fine-tune TimeGPT' or 'train custom model'.",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "000-docs/000a-planned-skills/live/nixtla-timegpt-finetune-lab",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-timegpt-finetune-lab-intent-solutions-io-plugins-nixtla-2"
+}

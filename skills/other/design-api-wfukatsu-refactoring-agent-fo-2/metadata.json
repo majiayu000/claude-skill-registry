@@ -1,0 +1,11 @@
+{
+  "name": "design-api",
+  "description": "API設計エージェント - リファクタリング後のマイクロサービスAPI設計。REST/GraphQL/gRPC/AsyncAPIの仕様書、API Gateway設計、認証・認可設計を策定。/design-api [対象パス] で呼び出し。",
+  "repo": "wfukatsu/refactoring-agent-for-claude-code",
+  "path": ".claude/skills/design-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wfukatsu/refactoring-agent-for-claude-code",
+  "dir_name": "design-api-wfukatsu-refactoring-agent-fo-2"
+}

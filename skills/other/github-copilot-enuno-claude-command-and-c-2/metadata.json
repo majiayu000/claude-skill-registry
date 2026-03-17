@@ -1,0 +1,11 @@
+{
+  "name": "github-copilot",
+  "description": "AI-powered coding assistant providing inline suggestions, chat interface, code review, and autonomous coding agent across IDEs and GitHub.com",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/github-copilot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "github-copilot-enuno-claude-command-and-c-2"
+}

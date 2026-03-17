@@ -1,0 +1,11 @@
+{
+  "name": "appsec",
+  "description": "Application security - OWASP, validation, secrets. Use when securing the app.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/appsec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "appsec-sylphxai-flow-2"
+}

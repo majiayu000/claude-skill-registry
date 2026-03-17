@@ -1,0 +1,11 @@
+{
+  "name": "component",
+  "description": "Base skill for working with electronic components in this library. Use when adding new component types, manufacturer handlers, or working with MPN (Manufacturer Part Number) operations, BOM entries, o",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/component",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "component-cantara-lib-electronic-compo-2"
+}

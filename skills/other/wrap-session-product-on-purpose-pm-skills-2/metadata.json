@@ -1,0 +1,11 @@
+{
+  "name": "wrap-session",
+  "description": "End-of-session documentation workflow that updates README, CHANGELOG, agent context files, and creates session logs. Use when wrapping up a working session, when asked to document session progress, wh",
+  "repo": "product-on-purpose/pm-skills",
+  "path": ".claude/skills/wrap-session",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/product-on-purpose/pm-skills",
+  "dir_name": "wrap-session-product-on-purpose-pm-skills-2"
+}

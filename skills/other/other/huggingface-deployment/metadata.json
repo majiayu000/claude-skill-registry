@@ -1,0 +1,9 @@
+{
+  "name": "huggingface-deployment",
+  "repo": "PAIPalooza/chicommerce",
+  "path": ".claude/skills/huggingface-deployment/SKILL.md",
+  "category": "other",
+  "source": "github.com/PAIPalooza/chicommerce",
+  "dir_name": "huggingface-deployment",
+  "downloaded_at": "2026-02-22T05:31:33.122773Z"
+}

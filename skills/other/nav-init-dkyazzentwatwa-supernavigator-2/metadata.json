@@ -1,0 +1,11 @@
+{
+  "name": "nav-init",
+  "description": "Initialize Navigator documentation structure in a project. Auto-invokes when user says \"Initialize Navigator\", \"Set up Navigator\", \"Create Navigator structure\", or \"Bootstrap Navigator\".",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "skills/os-layer/core/nav-init",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "nav-init-dkyazzentwatwa-supernavigator-2"
+}

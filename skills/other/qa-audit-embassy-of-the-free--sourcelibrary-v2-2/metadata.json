@@ -1,0 +1,11 @@
+{
+  "name": "qa-audit",
+  "description": "Quality auditor for Source Library. Prioritizes verifying original language texts (not modern translations), auditing metadata accuracy against title pages, USTC alignment, and translation quality. Us",
+  "repo": "Embassy-of-the-Free-Mind/sourcelibrary-v2",
+  "path": ".claude/skills/qa-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Embassy-of-the-Free-Mind/sourcelibrary-v2",
+  "dir_name": "qa-audit-embassy-of-the-free--sourcelibrary-v2-2"
+}

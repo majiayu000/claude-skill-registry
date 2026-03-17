@@ -1,0 +1,11 @@
+{
+  "name": "veo",
+  "description": "Generate video using Google Veo (Veo 3.1 / Veo 3.0).",
+  "repo": "clawdbot/skills",
+  "path": "skills/daveonkels/clinkding",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "veo-clawdbot-skills-2"
+}

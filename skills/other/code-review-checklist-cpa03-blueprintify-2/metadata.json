@@ -1,0 +1,11 @@
+{
+  "name": "code-review-checklist",
+  "description": "Generates a code review checklist for the Code Reviewer agent",
+  "repo": "cpa03/blueprintify",
+  "path": ".opencode/skill/code-review-checklist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cpa03/blueprintify",
+  "dir_name": "code-review-checklist-cpa03-blueprintify-2"
+}

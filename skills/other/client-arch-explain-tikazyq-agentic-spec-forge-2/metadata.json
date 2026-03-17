@@ -1,0 +1,11 @@
+{
+  "name": "client-arch-explain",
+  "description": "生成客户友好的架构说明（通俗语言解释架构层次、数据流、技术选型），适合演示和评审会议。当准备客户演示或用户验收前使用。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/design/client-arch-explain",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "client-arch-explain-tikazyq-agentic-spec-forge-2"
+}

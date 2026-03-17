@@ -1,0 +1,11 @@
+{
+  "name": "database-workflow",
+  "description": "Language-agnostic database best practices covering migrations, schema design, ORM patterns, query optimization, and testing strategies. Activate when working with database files, migrations, schema ch",
+  "repo": "ilude/claude-code-config",
+  "path": "skills/database-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ilude/claude-code-config",
+  "dir_name": "database-workflow-ilude-claude-code-config-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "transaction-hooks",
+  "description": "Patterns to follow for implementing transaction hooks with tracking. Use when implementing new features interacting with EVM contracts, signing transactions, permit... etc.",
+  "repo": "antoncoding/monarch",
+  "path": ".claude/skills/transaction-hooks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/antoncoding/monarch",
+  "dir_name": "transaction-hooks-antoncoding-monarch-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "project-blueprint",
+  "description": "Generate complete project setup recipes combining Vibery templates, MCPs, and configurations. Outputs: Install commands, CLAUDE.md, folder structure, workflow setup. Use when starting new projects or ",
+  "repo": "vibery-studio/templates",
+  "path": "skills/project-blueprint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vibery-studio/templates",
+  "dir_name": "project-blueprint-vibery-studio-templates-2"
+}

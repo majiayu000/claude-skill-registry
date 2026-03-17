@@ -1,0 +1,11 @@
+{
+  "name": "using-lsp-tools",
+  "description": "Use when mcp-language-server tools are available and you need semantic code intelligence for navigation, refactoring, or type analysis",
+  "repo": "axiomantic/spellbook",
+  "path": "skills/using-lsp-tools",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/axiomantic/spellbook",
+  "dir_name": "using-lsp-tools-axiomantic-spellbook-2"
+}

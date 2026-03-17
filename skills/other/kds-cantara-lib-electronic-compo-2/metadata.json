@@ -1,0 +1,11 @@
+{
+  "name": "kds",
+  "description": "KDS (Daishinku Corporation) MPN encoding patterns, crystal and oscillator decoding, and handler guidance. Use when working with KDS timing devices (DSX, DST, DSO, DSB series).",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/kds",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "kds-cantara-lib-electronic-compo-2"
+}

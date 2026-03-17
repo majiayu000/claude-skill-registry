@@ -1,0 +1,11 @@
+{
+  "name": "design-system-patterns",
+  "description": "Build scalable design systems with design tokens, theming infrastructure, and component architecture patterns. Use when creating design tokens, implementing theme switching, building component librari",
+  "repo": "wshobson/agents",
+  "path": "plugins/ui-design/skills/design-system-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wshobson/agents",
+  "dir_name": "design-system-patterns-wshobson-agents-2"
+}

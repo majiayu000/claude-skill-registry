@@ -1,0 +1,11 @@
+{
+  "name": "shodan-reconnaissance",
+  "description": "This skill should be used when the user asks to \"search for exposed devices on the internet,\" \"perform Shodan reconnaissance,\" \"find vulnerable services using Shodan,\" \"scan IP ranges with Shodan,\" or",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/shodan-reconnaissance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "shodan-reconnaissance-sickn33-antigravity-awesome--2"
+}

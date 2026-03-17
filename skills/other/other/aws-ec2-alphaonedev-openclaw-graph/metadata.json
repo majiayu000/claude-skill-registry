@@ -1,0 +1,17 @@
+{
+  "name": "aws-ec2",
+  "repo": "alphaonedev/openclaw-graph",
+  "path": "skills/cloud-aws/aws-ec2/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alphaonedev/openclaw-graph",
+  "dir_name": "aws-ec2-alphaonedev-openclaw-graph",
+  "downloaded_at": "2026-03-01T06:39:53.798164Z",
+  "author": "alphaonedev",
+  "source_url": "https://github.com/alphaonedev/openclaw-graph/blob/main/skills/cloud-aws/aws-ec2/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alphaonedev/openclaw-graph/blob/main/skills/cloud-aws/aws-ec2/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

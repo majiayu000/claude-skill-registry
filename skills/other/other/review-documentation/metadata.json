@@ -1,0 +1,9 @@
+{
+  "name": "review-documentation",
+  "repo": "hirokazu-kobayashi-koba-hiro/idp-server",
+  "path": ".claude/skills/review-documentation/skill.md",
+  "category": "other",
+  "source": "github.com/hirokazu-kobayashi-koba-hiro/idp-server",
+  "dir_name": "review-documentation",
+  "downloaded_at": "2026-02-22T07:26:55.183143Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "swift-concurrency-expert-guide",
+  "description": "Deep dive into Swift's async/await runtime, Sendable enforcement, actors, and migration strategies.",
+  "repo": "mosif16/codex-Skills",
+  "path": "skills/swift-concurrency-expert-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mosif16/codex-Skills",
+  "dir_name": "swift-concurrency-expert-guide-mosif16-codex-skills-2"
+}

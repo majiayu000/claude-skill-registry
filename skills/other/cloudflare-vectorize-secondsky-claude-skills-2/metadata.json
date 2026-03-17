@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-vectorize",
+  "description": "Complete implementation guide for Cloudflare Vectorize - a globally distributed vector database for building semantic search, RAG (Retrieval Augmented Generation), and AI-powered applications with Clo",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-vectorize/skills/cloudflare-vectorize",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "cloudflare-vectorize-secondsky-claude-skills-2"
+}

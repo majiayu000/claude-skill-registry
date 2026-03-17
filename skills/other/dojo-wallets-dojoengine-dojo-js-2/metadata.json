@@ -1,0 +1,11 @@
+{
+  "name": "dojo-wallets",
+  "description": "Use when managing wallets and accounts in dojo.js games.\nTriggers: burner wallet, useBurner, create wallet, connect wallet, BurnerProvider,\naccount management, predeployed, session wallet",
+  "repo": "dojoengine/dojo.js",
+  "path": ".claude/skills/dojo-wallets",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dojoengine/dojo.js",
+  "dir_name": "dojo-wallets-dojoengine-dojo-js-2"
+}

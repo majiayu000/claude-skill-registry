@@ -1,0 +1,11 @@
+{
+  "name": "ppt-translator",
+  "description": "Translate PowerPoint presentations while preserving formatting (fonts, colors, alignment, tables). Supports multiple LLM providers (OpenAI, Anthropic, DeepSeek, Grok, Gemini). Use when translating .pp",
+  "repo": "tristan-mcinnis/PPT-Translator-Formatting-Intact-with-LLMs",
+  "path": ".claude/skills/ppt-translator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tristan-mcinnis/PPT-Translator-Formatting-Intact-with-LLMs",
+  "dir_name": "ppt-translator-tristan-mcinnis-ppt-translator-forma-2"
+}

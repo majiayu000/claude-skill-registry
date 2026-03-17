@@ -1,0 +1,11 @@
+{
+  "name": "metabolicpathwayheterogeneity",
+  "description": "Analyzes metabolic pathway heterogeneity within cell populations by calculating normalized enrichment scores (NES) for each pathway across different groups. Quantifies metabolic diversity and identifi",
+  "repo": "pwwang/immunopipe",
+  "path": "skills/metabolicpathwayheterogeneity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pwwang/immunopipe",
+  "dir_name": "metabolicpathwayheterogeneity-pwwang-immunopipe-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "managing-styles-resourcedictionary",
+  "description": "Manages WPF Style definitions and ResourceDictionary patterns including BasedOn inheritance and resource merging. Use when building theme systems, organizing resources, or choosing between StaticResou",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/managing-styles-resourcedictionary",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "managing-styles-resourcedictionary-christian289-dotnet-with-claudeco-2"
+}

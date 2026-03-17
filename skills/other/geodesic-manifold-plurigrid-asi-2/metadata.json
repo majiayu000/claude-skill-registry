@@ -1,0 +1,11 @@
+{
+  "name": "geodesic-manifold",
+  "description": "Geodesic Manifold Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/geodesic-manifold",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "geodesic-manifold-plurigrid-asi-2"
+}

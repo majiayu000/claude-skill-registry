@@ -1,0 +1,11 @@
+{
+  "name": "e2e-testing",
+  "description": "chrome-devtools MCPサーバーを使ったE2Eテストの実施・デバッグを行う。「E2Eテストを実施」「画面をテスト」「ユーザーフローを確認」「ブラウザで動作確認」「画面の表示を検証」などの依頼時に使用。ログインフロー、フォーム送信、ページ遷移などのユーザー操作をインタラクティブにテストする。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/e2e-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "e2e-testing-yuch4-dx-selecta-2"
+}

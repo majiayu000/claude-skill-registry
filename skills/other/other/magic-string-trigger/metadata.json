@@ -1,0 +1,9 @@
+{
+  "name": "magic-string-trigger",
+  "repo": "cisco-ai-defense/skill-scanner",
+  "path": "evals/skills/backdoor/magic-string-trigger/SKILL.md",
+  "category": "other",
+  "source": "github.com/cisco-ai-defense/skill-scanner",
+  "dir_name": "magic-string-trigger",
+  "downloaded_at": "2026-02-22T06:42:48.141010Z"
+}

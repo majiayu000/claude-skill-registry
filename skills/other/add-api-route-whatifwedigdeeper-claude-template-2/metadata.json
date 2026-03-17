@@ -1,0 +1,11 @@
+{
+  "name": "add-api-route",
+  "description": "Create Next.js API route with validation and error handling",
+  "repo": "WhatIfWeDigDeeper/claude-template",
+  "path": ".claude/skills/add-api-route",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WhatIfWeDigDeeper/claude-template",
+  "dir_name": "add-api-route-whatifwedigdeeper-claude-template-2"
+}

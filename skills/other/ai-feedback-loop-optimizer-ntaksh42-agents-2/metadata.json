@@ -1,0 +1,11 @@
+{
+  "name": "ai-feedback-loop-optimizer",
+  "description": "AIフィードバックループ最適化スキル。プロンプト→出力→評価→改善の反復サイクルを自動化。段階的改善、A/Bテスト、収束判定、ベスト出力選択で最高品質の結果を生成。",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/ai-feedback-loop-optimizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "ai-feedback-loop-optimizer-ntaksh42-agents-2"
+}

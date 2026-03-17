@@ -1,0 +1,11 @@
+{
+  "name": "design-to-spec",
+  "description": "IMPORTANT: Before running this skill, ensure Claude Code is configured with extended context settings:",
+  "repo": "spaarke-dev/spaarke",
+  "path": ".claude/skills/design-to-spec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spaarke-dev/spaarke",
+  "dir_name": "design-to-spec-spaarke-dev-spaarke-2"
+}

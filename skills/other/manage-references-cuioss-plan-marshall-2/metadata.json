@@ -1,0 +1,11 @@
+{
+  "name": "manage-references",
+  "description": "Manage references.toon files with field-level access and list management",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-workflow/skills/manage-references",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "manage-references-cuioss-plan-marshall-2"
+}

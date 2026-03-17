@@ -1,0 +1,11 @@
+{
+  "name": "language-server-protocol",
+  "description": "Language Server Protocol (LSP) - Microsoft's open standard for IDE-language server communication. Use for building language servers, implementing LSP clients, understanding protocol architecture, and ",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/language-server-protocol",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "language-server-protocol-enuno-claude-command-and-c-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "go-expert",
+  "description": "Expert-level Go development with Go 1.22+ features, concurrency, standard library, and production-grade best practices",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/languages/go-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "go-expert-personamanagmentlaye-pcl-2"
+}

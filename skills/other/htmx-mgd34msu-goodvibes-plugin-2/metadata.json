@@ -1,0 +1,11 @@
+{
+  "name": "htmx",
+  "description": "Adds AJAX, CSS Transitions, WebSockets, and Server Sent Events to HTML using attributes. Use when building hypermedia-driven applications, adding interactivity without JavaScript frameworks, or when u",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/frontend-core/htmx",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "htmx-mgd34msu-goodvibes-plugin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "gentleman-system",
+  "description": "System detection and command execution patterns for Gentleman.Dots. Trigger: When editing files in installer/internal/system/, adding OS support, or modifying command execution.\n",
+  "repo": "Gentleman-Programming/Gentleman.Dots",
+  "path": "skills/gentleman-system",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Gentleman-Programming/Gentleman.Dots",
+  "dir_name": "gentleman-system-gentleman-programmin-gentleman-dots-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "project-detection",
+  "description": "Framework and stack identification with detection scripts and patterns. Use when detecting project type, analyzing framework, identifying stack, initializing projects, or when user mentions project de",
+  "repo": "vanman2024/dev-lifecycle-marketplace",
+  "path": ".archive/old-numbered-plugins/01-core/skills/project-detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vanman2024/dev-lifecycle-marketplace",
+  "dir_name": "project-detection-vanman2024-dev-lifecycle-market-2"
+}

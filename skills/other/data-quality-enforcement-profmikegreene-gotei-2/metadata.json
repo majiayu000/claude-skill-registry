@@ -1,0 +1,11 @@
+{
+  "name": "data-quality-enforcement",
+  "description": "Enforce data quality rules and validations on pilot data streams and repositories. Use when checking for missing values, schema compliance, consistency issues, or anomalies before analysis and reporti",
+  "repo": "profmikegreene/gotei",
+  "path": "Gotei_Skills/data-quality-enforcement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/profmikegreene/gotei",
+  "dir_name": "data-quality-enforcement-profmikegreene-gotei-2"
+}

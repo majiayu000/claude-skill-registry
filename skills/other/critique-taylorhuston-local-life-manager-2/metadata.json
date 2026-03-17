@@ -1,0 +1,11 @@
+{
+  "name": "critique",
+  "description": "Challenge idea assumptions with skeptical VC-style evaluation. Use when user requests critique, validation, or 'is this a good idea' assessment.",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/critique",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "critique-taylorhuston-local-life-manager-2"
+}

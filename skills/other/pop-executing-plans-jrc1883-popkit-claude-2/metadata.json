@@ -1,0 +1,11 @@
+{
+  "name": "pop-executing-plans",
+  "description": "Controlled batch execution of implementation plans with review checkpoints between phases. Loads plan, critically reviews for issues, executes tasks in batches, then pauses for architect feedback befo",
+  "repo": "jrc1883/popkit-claude",
+  "path": "packages/popkit-dev/skills/pop-executing-plans",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jrc1883/popkit-claude",
+  "dir_name": "pop-executing-plans-jrc1883-popkit-claude-2"
+}

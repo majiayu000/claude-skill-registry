@@ -1,0 +1,11 @@
+{
+  "name": "privacy-email-review",
+  "description": "メール取得を伴う機能のプライバシー設計レビューを行う。メールアドレスを保存する機能を実装する前、PII取得の設計確認時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/privacy-email-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "privacy-email-review-haru-llc-ai-pm-system-noteboo-2"
+}

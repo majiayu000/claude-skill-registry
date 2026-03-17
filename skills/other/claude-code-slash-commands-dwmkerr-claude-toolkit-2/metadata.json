@@ -1,0 +1,11 @@
+{
+  "name": "claude-code-slash-commands",
+  "description": "This skill should be used when the user asks to \"create a command\", \"write a slash command\", \"build a plugin command\", or wants to add custom commands to Claude Code.",
+  "repo": "dwmkerr/claude-toolkit",
+  "path": "plugins/toolkit/skills/claude-code-slash-commands",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dwmkerr/claude-toolkit",
+  "dir_name": "claude-code-slash-commands-dwmkerr-claude-toolkit-2"
+}

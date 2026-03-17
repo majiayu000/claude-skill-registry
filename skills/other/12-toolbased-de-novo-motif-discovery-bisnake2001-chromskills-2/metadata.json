@@ -1,0 +1,11 @@
+{
+  "name": "12_toolBased.De-novo-motif-discovery",
+  "description": "This skill identifies novel transcription factor binding motifs in the promoter regions of genes, or directly from genomic regions of interest such as ChIP-seq peaks, ATAC-seq accessible sites, or dif",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "12_toolBased.De-novo-motif-discovery",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "12-toolbased-de-novo-motif-discovery-bisnake2001-chromskills-2"
+}

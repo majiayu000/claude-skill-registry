@@ -1,0 +1,11 @@
+{
+  "name": "moai-security-secrets",
+  "description": "Enterprise Skill for advanced development",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-security-secrets",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-security-secrets-jg-chalk-io-nora-livekit-2"
+}

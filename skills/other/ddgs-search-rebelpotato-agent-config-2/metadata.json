@@ -1,0 +1,11 @@
+{
+  "name": "ddgs-search",
+  "description": "Web search via the DDGS metasearch library. Use for searching for unknown documentation, facts, or any web content. Lightweight, no browser required.",
+  "repo": "RebelPotato/agent-config",
+  "path": "skills/ddgs-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RebelPotato/agent-config",
+  "dir_name": "ddgs-search-rebelpotato-agent-config-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "quality-gates",
+  "description": "Implement quality gates, user approval, iteration loops, and test-driven development. Use when validating with users, implementing feedback loops, classifying issue severity, running test-driven loops",
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/orchestration/skills/quality-gates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "dir_name": "quality-gates-involvex-involvex-claude-mark-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "finding-dead-code",
+  "description": "Use when reviewing code changes, auditing new features, cleaning up PRs, or user says \"find dead code\", \"find unused code\", \"check for unnecessary additions\", \"what can I remove\".",
+  "repo": "axiomantic/spellbook",
+  "path": "skills/finding-dead-code",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/axiomantic/spellbook",
+  "dir_name": "finding-dead-code-axiomantic-spellbook-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "load",
+  "description": "Imported skill load from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/vercel/bundle_preload",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "load-bitwikiorg-skills-md-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "gatk-cnv",
+  "description": "Call copy number variants using GATK best practices workflow. Supports both somatic (tumor-normal) and germline CNV detection from WGS or WES data. Use when following GATK best practices or integratin",
+  "repo": "GPTomics/bioSkills",
+  "path": "copy-number/gatk-cnv",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "gatk-cnv-gptomics-bioskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-rag-implementation",
+  "description": "Retrieval-Augmented Generation patterns including chunking, embeddings, vector stores, and retrieval optimization Use when: rag, retrieval augmented, vector search, embeddings, semantic search.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-rag-implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-rag-implementation-boisenoise-skills-collections-2"
+}

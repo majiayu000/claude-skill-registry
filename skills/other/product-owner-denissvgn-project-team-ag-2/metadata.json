@@ -1,0 +1,11 @@
+{
+  "name": "product-owner",
+  "description": "Product Owner responsible for Vision, Scope, and Backlog management. Validates features against business goals. Use this skill for vision creation, scope definition, or feature validation.",
+  "repo": "Denissvgn/project-team-ag",
+  "path": ".agent/skills/product-owner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Denissvgn/project-team-ag",
+  "dir_name": "product-owner-denissvgn-project-team-ag-2"
+}

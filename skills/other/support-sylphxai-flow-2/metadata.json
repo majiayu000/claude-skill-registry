@@ -1,0 +1,11 @@
+{
+  "name": "support",
+  "description": "Support - help center, tickets, docs. Use when building support.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/support",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "support-sylphxai-flow-2"
+}

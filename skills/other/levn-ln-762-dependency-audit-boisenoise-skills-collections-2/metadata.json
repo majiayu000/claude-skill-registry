@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-762-dependency-audit",
+  "description": "Audits project dependencies for vulnerabilities. Multi-ecosystem support (npm, .NET, Python, Go). CVSS-based severity classification.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-762-dependency-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-762-dependency-audit-boisenoise-skills-collections-2"
+}

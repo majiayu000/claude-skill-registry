@@ -1,0 +1,11 @@
+{
+  "name": "ensembl-database",
+  "description": "Query Ensembl genome database REST API for 250+ species. Gene lookups, sequence retrieval, variant analysis, comparative genomics, orthologs, VEP predictions, for genomic research.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/bioinformatics/ensembl-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "ensembl-database-hxk622-tokendance-2"
+}

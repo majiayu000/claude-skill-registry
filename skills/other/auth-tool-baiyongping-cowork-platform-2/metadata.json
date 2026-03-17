@@ -1,0 +1,11 @@
+{
+  "name": "auth-tool",
+  "description": "Use CloudBase Auth tool to configure and manage authentication providers for web applications - enable/disable login methods (SMS, Email, WeChat Open Platform, Google, Anonymous, Username/password, OA",
+  "repo": "baiyongping/cowork-platform",
+  "path": ".claude/skills/auth-tool",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/baiyongping/cowork-platform",
+  "dir_name": "auth-tool-baiyongping-cowork-platform-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "github-clone",
+  "description": "Clone repositories and set up local workspace",
+  "repo": "BreakerOfStems/claude-skills",
+  "path": "skills/github-clone",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BreakerOfStems/claude-skills",
+  "dir_name": "github-clone-breakerofstems-claude-skills-2"
+}

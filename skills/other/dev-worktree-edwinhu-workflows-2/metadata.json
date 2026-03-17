@@ -1,0 +1,11 @@
+{
+  "name": "dev-worktree",
+  "description": "This skill should be used when the user asks to \"create an isolated worktree\", \"set up worktree for feature\", \"create a feature branch worktree\", or needs workspace isolation with automatic dependency",
+  "repo": "edwinhu/workflows",
+  "path": "skills/dev-worktree",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "dev-worktree-edwinhu-workflows-2"
+}

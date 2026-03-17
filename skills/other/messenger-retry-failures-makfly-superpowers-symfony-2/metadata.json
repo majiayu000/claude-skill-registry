@@ -1,0 +1,11 @@
+{
+  "name": "messenger-retry-failures",
+  "description": "Use when symfony messenger retry failures",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/messenger-retry-failures",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "messenger-retry-failures-makfly-superpowers-symfony-2"
+}

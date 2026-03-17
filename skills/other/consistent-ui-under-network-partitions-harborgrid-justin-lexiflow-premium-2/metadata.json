@@ -1,0 +1,11 @@
+{
+  "name": "consistent-ui-under-network-partitions",
+  "description": "Maintain UI consistency and graceful degradation during network partitions and partial connectivity.",
+  "repo": "harborgrid-justin/lexiflow-premium",
+  "path": "frontend/.github-skills/consistent-ui-under-network-partitions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/harborgrid-justin/lexiflow-premium",
+  "dir_name": "consistent-ui-under-network-partitions-harborgrid-justin-lexiflow-premium-2"
+}

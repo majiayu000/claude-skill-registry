@@ -1,0 +1,11 @@
+{
+  "name": "typo3-extension-upgrade",
+  "description": "Agent Skill: Systematic TYPO3 extension upgrades to newer LTS versions. Covers Extension Scanner, Rector, Fractor, PHPStan, and testing. Use when upgrading extensions to newer TYPO3 versions or fixing",
+  "repo": "netresearch/typo3-extension-upgrade-skill",
+  "path": "skills/typo3-extension-upgrade",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/netresearch/typo3-extension-upgrade-skill",
+  "dir_name": "typo3-extension-upgrade-netresearch-typo3-extension-upgr-2"
+}

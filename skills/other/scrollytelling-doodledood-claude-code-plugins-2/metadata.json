@@ -1,0 +1,11 @@
+{
+  "name": "scrollytelling",
+  "description": "Implements scroll-driven storytelling experiences with pinned sections, progressive reveals, and scroll-linked animations. Use when asked to build scrollytelling, scroll-driven animations, parallax ef",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/frontend-design/skills/scrollytelling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "scrollytelling-doodledood-claude-code-plugins-2"
+}

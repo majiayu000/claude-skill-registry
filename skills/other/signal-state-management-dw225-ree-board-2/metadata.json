@@ -1,0 +1,11 @@
+{
+  "name": "signal-state-management",
+  "description": "Preact Signals for reactive state management, signal vs computed signal usage, batch updates for performance, action creator patterns, signal integration with React components, state management by dom",
+  "repo": "DW225/ree-board",
+  "path": ".claude/skills/signal-state-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DW225/ree-board",
+  "dir_name": "signal-state-management-dw225-ree-board-2"
+}

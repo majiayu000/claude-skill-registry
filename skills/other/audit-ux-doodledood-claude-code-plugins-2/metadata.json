@@ -1,0 +1,11 @@
+{
+  "name": "audit-ux",
+  "description": "Audit UI/UX changes in a focus area against design guidelines for accessibility, consistency, and usability issues.",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/solo-dev/skills/audit-ux",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "audit-ux-doodledood-claude-code-plugins-2"
+}

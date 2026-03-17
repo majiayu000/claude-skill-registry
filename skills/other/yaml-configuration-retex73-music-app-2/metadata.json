@@ -1,0 +1,11 @@
+{
+  "name": "yaml-configuration",
+  "description": "Master YAML syntax for GitHub Actions workflows, avoiding common pitfalls and special character issues.",
+  "repo": "retex73/music-app",
+  "path": ".claude/skills/yaml-configuration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/retex73/music-app",
+  "dir_name": "yaml-configuration-retex73-music-app-2"
+}

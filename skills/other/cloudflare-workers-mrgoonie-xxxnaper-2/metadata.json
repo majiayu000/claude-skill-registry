@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-workers",
+  "description": "Comprehensive guide for building serverless applications with Cloudflare Workers. Use when developing Workers, configuring bindings, implementing runtime APIs, testing Workers, using Wrangler CLI, dep",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/cloudflare-workers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "cloudflare-workers-mrgoonie-xxxnaper-2"
+}

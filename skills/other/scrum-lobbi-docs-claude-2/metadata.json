@@ -1,0 +1,11 @@
+{
+  "name": "scrum",
+  "description": "Scrum methodology including sprints, ceremonies, backlog management, and agile practices. Activate for sprint planning, standups, retrospectives, and agile workflows.",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/scrum",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "scrum-lobbi-docs-claude-2"
+}

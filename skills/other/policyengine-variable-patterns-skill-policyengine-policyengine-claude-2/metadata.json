@@ -1,0 +1,11 @@
+{
+  "name": "policyengine-variable-patterns-skill",
+  "description": "PolicyEngine variable patterns - variable creation, no hard-coding principle, federal/state separation, metadata standards",
+  "repo": "PolicyEngine/policyengine-claude",
+  "path": "skills/technical-patterns/policyengine-variable-patterns-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PolicyEngine/policyengine-claude",
+  "dir_name": "policyengine-variable-patterns-skill-policyengine-policyengine-claude-2"
+}

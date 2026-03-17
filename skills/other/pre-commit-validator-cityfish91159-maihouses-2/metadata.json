@@ -1,0 +1,11 @@
+{
+  "name": "pre-commit-validator",
+  "description": "Git commit 前的完整驗證檢查。當用戶提到「commit」、「提交」、「push」或完成重要修改時自動執行。",
+  "repo": "cityfish91159/maihouses",
+  "path": ".claude/skills/pre-commit-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cityfish91159/maihouses",
+  "dir_name": "pre-commit-validator-cityfish91159-maihouses-2"
+}

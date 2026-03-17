@@ -1,0 +1,11 @@
+{
+  "name": "cellxgene-census",
+  "description": "Query CZ CELLxGENE Census (61M+ cells). Filter by cell type/tissue/disease, retrieve expression data, integrate with scanpy/PyTorch, for population-scale single-cell analysis.",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/cellxgene-census",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "cellxgene-census-ovachiever-droid-tings-2"
+}

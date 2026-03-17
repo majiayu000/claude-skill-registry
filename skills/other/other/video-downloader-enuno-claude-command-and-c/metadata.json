@@ -1,0 +1,9 @@
+{
+  "name": "video-downloader",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/video-downloader/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "video-downloader-enuno-claude-command-and-c",
+  "downloaded_at": "2026-02-15T07:06:57.632542Z"
+}

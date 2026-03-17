@@ -1,0 +1,11 @@
+{
+  "name": "deploying-app",
+  "description": "Prepares applications for production by generating Dockerfiles, CI/CD pipelines, and platform configurations. Supports Docker, Vercel, Netlify, and GitHub Actions.",
+  "repo": "TheeCoderAhmed/Skills-Master",
+  "path": ".agent/skills/deploying-app",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TheeCoderAhmed/Skills-Master",
+  "dir_name": "deploying-app-theecoderahmed-skills-master-2"
+}

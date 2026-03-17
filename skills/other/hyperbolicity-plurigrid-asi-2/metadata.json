@@ -1,0 +1,11 @@
+{
+  "name": "hyperbolicity",
+  "description": "No eigenvalues on imaginary axis (robust dynamics)",
+  "repo": "plurigrid/asi",
+  "path": "skills/hyperbolicity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "hyperbolicity-plurigrid-asi-2"
+}

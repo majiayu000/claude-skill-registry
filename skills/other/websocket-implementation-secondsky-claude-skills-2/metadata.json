@@ -1,0 +1,11 @@
+{
+  "name": "websocket-implementation",
+  "description": "Implements real-time WebSocket communication with connection management, room-based messaging, and horizontal scaling. Use when building chat systems, live notifications, collaborative tools, or real-",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/websocket-implementation/skills/websocket-implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "websocket-implementation-secondsky-claude-skills-2"
+}

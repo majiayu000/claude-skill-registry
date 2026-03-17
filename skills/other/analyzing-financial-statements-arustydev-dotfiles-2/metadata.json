@@ -1,0 +1,11 @@
+{
+  "name": "analyzing-financial-statements",
+  "description": "This skill calculates key financial ratios and metrics from financial statement data for investment analysis",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".ai/docs/.todo/claude-cookbooks/skills/custom_skills/analyzing-financial-statements",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "analyzing-financial-statements-arustydev-dotfiles-2"
+}

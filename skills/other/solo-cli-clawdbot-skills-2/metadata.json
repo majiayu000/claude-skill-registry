@@ -1,0 +1,11 @@
+{
+  "name": "solo-cli",
+  "description": "Monitor and interact with SOLO.ro accounting platform via CLI or TUI (summary, revenues, expenses, queue, e-factura, company). Use when a user asks to check their accounting data, view invoices, expen",
+  "repo": "clawdbot/skills",
+  "path": "skills/rursache/solo-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "solo-cli-clawdbot-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "aptos",
+  "description": "Expert on Aptos blockchain, Move language, smart contracts, NFTs, DeFi, and Aptos development. Triggers on keywords aptos, move, blockchain, smart contract, nft, defi, web3, mainnet, testnet, devnet",
+  "repo": "raintree-technology/claude-starter",
+  "path": ".claude/skills/aptos",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/raintree-technology/claude-starter",
+  "dir_name": "aptos-raintree-technology-claude-starter-2"
+}

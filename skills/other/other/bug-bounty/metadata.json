@@ -1,0 +1,9 @@
+{
+  "name": "bug-bounty",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/cryptography-blockchain/skills/bug-bounty/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "bug-bounty",
+  "downloaded_at": "2026-02-18T01:16:53.019375Z"
+}

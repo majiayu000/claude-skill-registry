@@ -1,0 +1,11 @@
+{
+  "name": "using-llm-specialist",
+  "description": "LLM specialist router to prompt engineering, fine-tuning, RAG, evaluation, and safety skills.",
+  "repo": "tachyon-beep/skillpacks",
+  "path": "plugins/yzmir-llm-specialist/skills/using-llm-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tachyon-beep/skillpacks",
+  "dir_name": "using-llm-specialist-tachyon-beep-skillpacks-2"
+}

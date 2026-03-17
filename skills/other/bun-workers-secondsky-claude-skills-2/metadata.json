@@ -1,0 +1,11 @@
+{
+  "name": "bun-workers",
+  "description": "Use for Web Workers in Bun, worker_threads, parallel processing, and background tasks.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/bun/skills/bun-workers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "bun-workers-secondsky-claude-skills-2"
+}

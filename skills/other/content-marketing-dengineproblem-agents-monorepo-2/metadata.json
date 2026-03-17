@@ -1,0 +1,11 @@
+{
+  "name": "content-marketing",
+  "description": "Эксперт по контент-маркетингу. Создаёт контент для блогов, соцсетей, видео, email. Используй для написания статей, сценариев Reels, постов, email-кампаний и контент-стратегии.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/content-marketing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "content-marketing-dengineproblem-agents-monorepo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "cts-triage",
+  "description": "Run CTS test suites and investigate failures",
+  "repo": "gfx-rs/wgpu",
+  "path": ".claude/skills/cts-triage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gfx-rs/wgpu",
+  "dir_name": "cts-triage-gfx-rs-wgpu-2"
+}

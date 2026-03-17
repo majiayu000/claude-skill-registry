@@ -1,0 +1,11 @@
+{
+  "name": "ln-633-test-value-auditor",
+  "description": "Risk-Based Value audit worker (L3). Calculates Usefulness Score = Impact (1-5) × Probability (1-5) for each test. Returns KEEP/REVIEW/REMOVE decisions based on thresholds (≥15 KEEP, 10-14 REVIEW, <10 ",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-633-test-value-auditor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-633-test-value-auditor-levnikolaevich-claude-code-skills-2"
+}

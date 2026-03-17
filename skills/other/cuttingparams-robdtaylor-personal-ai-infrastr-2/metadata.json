@@ -1,0 +1,11 @@
+{
+  "name": "CuttingParams",
+  "description": "Cutting parameter lookup and optimization for CNC machining.\nCovers feeds, speeds, depths of cut for common materials and operations.\nUSE WHEN user asks 'feeds and speeds', 'cutting parameters', 'SFM ",
+  "repo": "robdtaylor/personal-ai-infrastructure",
+  "path": "skills/CuttingParams",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robdtaylor/personal-ai-infrastructure",
+  "dir_name": "cuttingparams-robdtaylor-personal-ai-infrastr-2"
+}

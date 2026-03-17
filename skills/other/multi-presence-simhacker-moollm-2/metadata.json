@@ -1,0 +1,11 @@
+{
+  "name": "multi-presence",
+  "description": "Same card active in multiple rooms simultaneously",
+  "repo": "SimHacker/moollm",
+  "path": "skills/multi-presence",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "multi-presence-simhacker-moollm-2"
+}

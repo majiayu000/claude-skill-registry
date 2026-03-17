@@ -1,0 +1,9 @@
+{
+  "name": "anthropic-pr-code-review",
+  "repo": "WesleyMFrederick/cc-workflows",
+  "path": ".claude/skills/anthropic-pr-code-review/SKILL.md",
+  "category": "other",
+  "source": "github.com/WesleyMFrederick/cc-workflows",
+  "dir_name": "anthropic-pr-code-review",
+  "downloaded_at": "2026-02-15T05:58:29.124155Z"
+}

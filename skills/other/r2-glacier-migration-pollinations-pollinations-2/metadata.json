@@ -1,0 +1,11 @@
+{
+  "name": "r2-glacier-migration",
+  "description": "Monitor and manage R2 to AWS Glacier Deep Archive migration. Use when checking transfer status, resuming transfers, or managing the archive migration.",
+  "repo": "pollinations/pollinations",
+  "path": ".claude/skills/r2-glacier-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pollinations/pollinations",
+  "dir_name": "r2-glacier-migration-pollinations-pollinations-2"
+}

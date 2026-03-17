@@ -1,0 +1,11 @@
+{
+  "name": "agent-performance",
+  "description": "Track and report agent invocation metrics including usage counts, success/failure rates, and completion times. Use for understanding which agents are utilized, identifying underused agents, and optimi",
+  "repo": "rysweet/azlin",
+  "path": ".claude/skills/agent-performance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/azlin",
+  "dir_name": "agent-performance-rysweet-azlin-2"
+}

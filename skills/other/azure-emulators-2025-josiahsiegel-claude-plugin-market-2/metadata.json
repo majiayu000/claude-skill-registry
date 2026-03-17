@@ -1,0 +1,11 @@
+{
+  "name": "azure-emulators-2025",
+  "description": "Azure service emulators for local development including Azurite, Cosmos DB, and Event Hub Docker containers",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/azure-to-docker-master/skills/azure-emulators-2025",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "azure-emulators-2025-josiahsiegel-claude-plugin-market-2"
+}

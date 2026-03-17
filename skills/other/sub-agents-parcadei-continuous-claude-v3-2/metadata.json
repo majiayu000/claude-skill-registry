@@ -1,0 +1,11 @@
+{
+  "name": "sub-agents",
+  "description": "Create and configure Claude Code sub-agents with custom prompts, tools, and models",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/sub-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "sub-agents-parcadei-continuous-claude-v3-2"
+}

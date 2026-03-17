@@ -1,0 +1,11 @@
+{
+  "name": "ai-image-effects",
+  "description": "Apply AI visual effects including Illusion Diffusion ($0.006), FLUX Fill Pro accessory replacement ($0.05), and SAM object detection (<$0.01). Use when adding AI effects, replacing image elements, det",
+  "repo": "codatta/ai-content-studio",
+  "path": "skills/ai-image-effects",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/codatta/ai-content-studio",
+  "dir_name": "ai-image-effects-codatta-ai-content-studio-2"
+}

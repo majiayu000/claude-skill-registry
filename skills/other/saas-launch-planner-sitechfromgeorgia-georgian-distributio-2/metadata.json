@@ -1,0 +1,11 @@
+{
+  "name": "saas-launch-planner",
+  "description": "Comprehensive SaaS planning system for solo developers using Next.js + Supabase + Stripe stack. Converts ideas into shippable subscription products with scope control, feature prioritization, billing ",
+  "repo": "sitechfromgeorgia/georgian-distribution-system",
+  "path": ".claude/skills/saas-launch-planner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sitechfromgeorgia/georgian-distribution-system",
+  "dir_name": "saas-launch-planner-sitechfromgeorgia-georgian-distributio-2"
+}

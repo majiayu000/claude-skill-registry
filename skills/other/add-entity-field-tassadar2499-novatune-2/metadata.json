@@ -1,0 +1,11 @@
+{
+  "name": "add-entity-field",
+  "description": "Add a new field to an existing entity/model with related service and endpoint updates",
+  "repo": "Tassadar2499/NovaTune",
+  "path": ".claude/skills/add-entity-field",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Tassadar2499/NovaTune",
+  "dir_name": "add-entity-field-tassadar2499-novatune-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "gh",
+  "description": "This skill should be used when working with GitHub CLI (gh) for pull requests, issues, releases, and GitHub automation. Use when users mention gh commands, GitHub workflows, PR operations, issue manag",
+  "repo": "msbaek/dotfiles",
+  "path": ".claude/skills/gh",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/msbaek/dotfiles",
+  "dir_name": "gh-msbaek-dotfiles-2"
+}

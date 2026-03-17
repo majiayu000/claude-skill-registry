@@ -1,0 +1,11 @@
+{
+  "name": "system-create-skill",
+  "description": "用途: 创建一个完整的 System/Project",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/system-create-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "system-create-skill-maxoreric-sop-engine-2"
+}

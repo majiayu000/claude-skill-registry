@@ -1,0 +1,11 @@
+{
+  "name": "meteor-sync-specialist",
+  "description": "Sync data from Meteor MongoDB to Supabase; use when running syncs, debugging sync failures, investigating entity mapping issues, or implementing new mappers",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/meteor-sync-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "meteor-sync-specialist-javeedishaq-ai-workflow-orchestr-2"
+}

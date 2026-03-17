@@ -1,0 +1,11 @@
+{
+  "name": "distance-calculations",
+  "description": "Compute evolutionary distances and build phylogenetic trees using Biopython Bio.Phylo.TreeConstruction. Use for creating distance matrices from alignments, building NJ/UPGMA trees, parsimony analysis,",
+  "repo": "GPTomics/bioSkills",
+  "path": "phylogenetics/distance-calculations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "distance-calculations-gptomics-bioskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "woocommerce-backend-dev",
+  "description": "Add or modify WooCommerce backend PHP code following project conventions. Use when creating new classes, methods, hooks, or modifying existing backend code in WooCommerce projects.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/woocommerce-backend-dev/skills/woocommerce-backend-dev",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "woocommerce-backend-dev-secondsky-claude-skills-2"
+}

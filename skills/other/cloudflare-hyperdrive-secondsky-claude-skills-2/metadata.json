@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-hyperdrive",
+  "description": "Status: Production Ready ✅ | Last Verified: 2025-11-18",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-hyperdrive/skills/cloudflare-hyperdrive",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "cloudflare-hyperdrive-secondsky-claude-skills-2"
+}

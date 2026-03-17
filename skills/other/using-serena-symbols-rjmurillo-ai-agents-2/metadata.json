@@ -1,0 +1,11 @@
+{
+  "name": "using-serena-symbols",
+  "description": "Guidance for using Serena's LSP-powered symbol analysis. Use when exploring codebases, finding symbol definitions, tracing references, or when grep/text search would be imprecise.",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/using-serena-symbols",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "using-serena-symbols-rjmurillo-ai-agents-2"
+}

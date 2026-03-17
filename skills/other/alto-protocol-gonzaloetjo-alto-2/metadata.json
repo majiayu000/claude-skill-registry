@@ -1,0 +1,11 @@
+{
+  "name": "alto-protocol",
+  "description": "Use when working with ALTO protocol files - runs/state.json, runs/handoffs/*.md, runs/tasks/*.md, runs/plan.md, or runs/milestones.md. Reference for file formats and state machine.",
+  "repo": "gonzaloetjo/alto",
+  "path": "skills/alto-protocol",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gonzaloetjo/alto",
+  "dir_name": "alto-protocol-gonzaloetjo-alto-2"
+}

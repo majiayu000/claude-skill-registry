@@ -1,0 +1,11 @@
+{
+  "name": "startup-financial-modeling",
+  "description": "This skill should be used when the user asks to \"create financial projections\", \"build a financial model\", \"forecast revenue\", \"calculate burn rate\", \"estimate runway\", \"model cash flow\", or requests ",
+  "repo": "pelan05/vscode_agents_folder",
+  "path": "skills/startup-financial-modeling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pelan05/vscode_agents_folder",
+  "dir_name": "startup-financial-modeling-pelan05-vscode-agents-folder-2"
+}

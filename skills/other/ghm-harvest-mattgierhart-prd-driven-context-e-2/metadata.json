@@ -1,0 +1,11 @@
+{
+  "name": "ghm-harvest",
+  "description": "Extracts durable insights from temp/ files to SoT during EPIC Phase E. Triggers at EPIC completion or explicit `/ghm-harvest` invocation. Outputs new SoT entries and archive manifest.",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/ghm-harvest",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "ghm-harvest-mattgierhart-prd-driven-context-e-2"
+}

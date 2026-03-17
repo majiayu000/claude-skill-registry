@@ -1,0 +1,11 @@
+{
+  "name": "kubernetes",
+  "description": "Kubernetes deployment, management, and troubleshooting. Activate for k8s, kubectl, pods, deployments, services, ingress, namespaces, and container orchestration tasks.",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/kubernetes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "kubernetes-lobbi-docs-claude-2"
+}

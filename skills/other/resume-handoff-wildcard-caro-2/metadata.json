@@ -1,0 +1,11 @@
+{
+  "name": "resume_handoff",
+  "description": "Resume work from handoff document with context analysis and validation",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/resume_handoff",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildcard/caro",
+  "dir_name": "resume-handoff-wildcard-caro-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "data-pipeline-processor",
+  "description": "Process data files through transformation pipelines with validation, cleaning, and export. Use for CSV/Excel/JSON data processing, encoding handling, batch operations, and data transformation workflow",
+  "repo": "vamseeachanta/workspace-hub",
+  "path": ".claude/skills/development/data-pipeline-processor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/workspace-hub",
+  "dir_name": "data-pipeline-processor-vamseeachanta-workspace-hub-2"
+}

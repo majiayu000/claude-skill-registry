@@ -1,0 +1,11 @@
+{
+  "name": "postgres-query",
+  "description": "Run PostgreSQL queries for testing, debugging, and performance analysis. Use when you need to query the database directly, run EXPLAIN ANALYZE, compare query results, or test SQL optimizations. Always",
+  "repo": "civitai/civitai",
+  "path": ".claude/skills/postgres-query",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/civitai/civitai",
+  "dir_name": "postgres-query-civitai-civitai-2"
+}

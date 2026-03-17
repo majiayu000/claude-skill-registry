@@ -1,0 +1,11 @@
+{
+  "name": "web-app-recon",
+  "description": "Systematic methodology for mapping web application attack surface, discovering hidden endpoints, and identifying technologies",
+  "repo": "macaugh/super-rouge-hunter-skills",
+  "path": "skills/reconnaissance/web-app-recon",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/macaugh/super-rouge-hunter-skills",
+  "dir_name": "web-app-recon-macaugh-super-rouge-hunter-s-2"
+}

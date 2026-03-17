@@ -1,0 +1,17 @@
+{
+  "name": "codex-review",
+  "repo": "Claude-Code-Community-Ireland/claude-code-resources",
+  "path": "skills/general/codex-review/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Claude-Code-Community-Ireland/claude-code-resources",
+  "dir_name": "codex-review-claude-code-communit-claude-code-resource",
+  "downloaded_at": "2026-03-01T05:03:55.118963Z",
+  "author": "Claude-Code-Community-Ireland",
+  "source_url": "https://github.com/Claude-Code-Community-Ireland/claude-code-resources/blob/main/skills/general/codex-review/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Claude-Code-Community-Ireland/claude-code-resources/blob/main/skills/general/codex-review/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

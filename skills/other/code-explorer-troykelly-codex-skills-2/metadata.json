@@ -1,0 +1,11 @@
+{
+  "name": "code-explorer",
+  "description": "Use when asked to trace existing codepaths or explicitly asked to run the code-explorer subagent.",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/code-explorer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "code-explorer-troykelly-codex-skills-2"
+}

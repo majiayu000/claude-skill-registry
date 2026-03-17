@@ -1,0 +1,11 @@
+{
+  "name": "ml-experiment",
+  "description": "Track ML experiments with proper logging and reproducibility. Use when training models or running experiments.",
+  "repo": "wildwasser/opencode-agents",
+  "path": ".opencode/skills/ml-experiment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildwasser/opencode-agents",
+  "dir_name": "ml-experiment-wildwasser-opencode-agents-2"
+}

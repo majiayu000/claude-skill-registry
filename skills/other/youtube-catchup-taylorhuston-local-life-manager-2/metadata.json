@@ -1,0 +1,11 @@
+{
+  "name": "youtube-catchup",
+  "description": "Fetch and summarize latest videos from priority YouTube channels. Creates notes with transcripts summarized as bullet points. Use to catch up on subscriptions without watching everything. Triggers on ",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/youtube-catchup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "youtube-catchup-taylorhuston-local-life-manager-2"
+}

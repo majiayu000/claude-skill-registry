@@ -1,0 +1,11 @@
+{
+  "name": "codexforclaude",
+  "description": "OpenAI Codex CLI configuration guide for Claude. Use when users ask about: codex config, ~/.codex/config.toml, codex sandbox policies, codex approval modes, creating codex skills, codex mcp servers, c",
+  "repo": "GGPrompts/my-plugins",
+  "path": "plugins/tools/codexforclaude/skills/codexforclaude",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GGPrompts/my-plugins",
+  "dir_name": "codexforclaude-ggprompts-my-plugins-2"
+}

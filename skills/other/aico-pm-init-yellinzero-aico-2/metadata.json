@@ -1,0 +1,11 @@
+{
+  "name": "aico-pm-init",
+  "description": "Initialize PM environment by creating constitution document from template.\n\nUse this skill when:\n- Running /pm.init command\n- User asks to \"initialize PM\", \"setup product management\", \"create constitu",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-pm-init",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-pm-init-yellinzero-aico-2"
+}

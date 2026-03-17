@@ -1,0 +1,11 @@
+{
+  "name": "issue-reporter",
+  "description": "作業進捗をGitHub issueに自動報告します。計画立案時、知見獲得時、問題発覚時にブランチ名からissue番号を抽出し、構造化されたコメントを投稿します。",
+  "repo": "drillan/note-mcp",
+  "path": ".claude/skills/issue-reporter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/drillan/note-mcp",
+  "dir_name": "issue-reporter-drillan-note-mcp-2"
+}

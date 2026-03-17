@@ -1,0 +1,11 @@
+{
+  "name": "hono-ipc-setup",
+  "description": "Set up Hono-based type-safe IPC architecture for Electron applications. Use when implementing IPC communication, creating routes between main and renderer processes, or migrating from traditional ipcR",
+  "repo": "naporin0624/claude-plugin-hono-electron",
+  "path": "skills/hono-ipc-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/naporin0624/claude-plugin-hono-electron",
+  "dir_name": "hono-ipc-setup-naporin0624-claude-plugin-hono-e-2"
+}

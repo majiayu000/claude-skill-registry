@@ -1,0 +1,11 @@
+{
+  "name": "database-replication-setup",
+  "description": "Эксперт DB replication. Используй для настройки репликации MySQL, PostgreSQL, MongoDB, failover и high availability.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/database-replication-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "database-replication-setup-dengineproblem-agents-monorepo-2"
+}

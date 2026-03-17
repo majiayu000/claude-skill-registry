@@ -1,0 +1,11 @@
+{
+  "name": "automating-mail",
+  "description": "Automates Apple Mail via JXA with AppleScript dictionary discovery. Use when asked to \"automate email\", \"send mail via script\", \"JXA Mail automation\", or \"filter email messages\". Covers accounts, mail",
+  "repo": "SpillwaveSolutions/automating-mac-apps-plugin",
+  "path": "plugins/automating-mac-apps-plugin/skills/automating-mail",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
+  "dir_name": "automating-mail-spillwavesolutions-automating-mac-apps--2"
+}

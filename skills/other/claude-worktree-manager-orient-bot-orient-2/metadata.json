@@ -1,0 +1,11 @@
+{
+  "name": "claude-worktree-manager",
+  "description": "Create and manage Claude-specific worktrees with automated setup and cleanup. Use this skill (via Skill tool or direct script) when asked to \"create a worktree\", \"new worktree\", \"worktree for feature/",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/claude-worktree-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "claude-worktree-manager-orient-bot-orient-2"
+}

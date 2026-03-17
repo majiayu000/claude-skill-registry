@@ -1,0 +1,11 @@
+{
+  "name": "oscp-cheat-sheet",
+  "description": "The assistant provides comprehensive OSCP exam preparation commands and techniques covering enumeration, exploitation, privilege escalation, and Active Directory attacks. Activate when users ask about",
+  "repo": "zebbern/SecOps-CLI-Guides",
+  "path": "skills/oscp-cheat-sheet",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zebbern/SecOps-CLI-Guides",
+  "dir_name": "oscp-cheat-sheet-zebbern-secops-cli-guides-2"
+}

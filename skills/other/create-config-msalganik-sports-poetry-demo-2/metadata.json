@@ -1,0 +1,11 @@
+{
+  "name": "create_config",
+  "description": "Create and manage configuration files for sports poetry generation with complete parameter collection",
+  "repo": "msalganik/sports-poetry-demo",
+  "path": ".claude/skills/create_config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/msalganik/sports-poetry-demo",
+  "dir_name": "create-config-msalganik-sports-poetry-demo-2"
+}

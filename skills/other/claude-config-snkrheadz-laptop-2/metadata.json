@@ -1,0 +1,11 @@
+{
+  "name": "claude-config",
+  "description": "Claude Code設定管理。settings.json、hooks、agents、skillsの確認・編集。トリガー: claude設定, hooks, settings, claude config, エージェント設定",
+  "repo": "snkrheadz/laptop",
+  "path": ".claude/skills/claude-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/snkrheadz/laptop",
+  "dir_name": "claude-config-snkrheadz-laptop-2"
+}

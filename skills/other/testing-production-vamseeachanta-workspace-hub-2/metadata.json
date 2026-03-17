@@ -1,0 +1,11 @@
+{
+  "name": "testing-production",
+  "description": "Production validation specialist ensuring applications are fully implemented and deployment-ready. Use to verify no mock/stub/fake implementations remain, validate against real databases and APIs, per",
+  "repo": "vamseeachanta/workspace-hub",
+  "path": ".claude/skills/development/testing/testing-production",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/workspace-hub",
+  "dir_name": "testing-production-vamseeachanta-workspace-hub-2"
+}

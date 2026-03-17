@@ -1,0 +1,11 @@
+{
+  "name": "help-skill",
+  "description": "Quick reference for all skills and commands in this plugin.",
+  "repo": "timequity/plugins",
+  "path": "_templates/help-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/plugins",
+  "dir_name": "help-skill-timequity-plugins-2"
+}

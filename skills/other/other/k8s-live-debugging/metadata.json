@@ -1,0 +1,9 @@
+{
+  "name": "k8s-live-debugging",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/k8s:live-debugging/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "k8s-live-debugging",
+  "downloaded_at": "2026-02-15T07:49:46.082670Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ring",
+  "description": "Manage Ring doorbells, cameras, and alarm system",
+  "repo": "Andrejones92/canifi-life-os",
+  "path": "skills/ring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Andrejones92/canifi-life-os",
+  "dir_name": "ring-andrejones92-canifi-life-os-2"
+}

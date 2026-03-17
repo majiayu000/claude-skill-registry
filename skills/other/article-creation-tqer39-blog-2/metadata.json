@@ -1,0 +1,11 @@
+{
+  "name": "article-creation",
+  "description": "新規ブログ記事の作成。「記事を書きたい」「新しい記事を作成」「ブログ投稿」などのリクエスト時に使用。",
+  "repo": "tqer39/blog",
+  "path": ".claude/skills/article-creation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tqer39/blog",
+  "dir_name": "article-creation-tqer39-blog-2"
+}

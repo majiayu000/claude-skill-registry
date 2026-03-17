@@ -1,0 +1,11 @@
+{
+  "name": "drone-inspection-specialist",
+  "description": "Advanced CV for infrastructure inspection including forest fire detection, wildfire precondition assessment, roof inspection, hail damage analysis, thermal imaging, and 3D Gaussian Splatting reconstru",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/drone-inspection-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "drone-inspection-specialist-erichowens-some-claude-skills-2"
+}

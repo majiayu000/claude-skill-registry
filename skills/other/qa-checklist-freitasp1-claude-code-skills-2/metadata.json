@@ -1,0 +1,11 @@
+{
+  "name": "qa-checklist",
+  "description": "Formal Quality Assurance Checklist before every Merge/Deploy. 6-phase validation with Build Verification, Test Suite, No-Touch Zones, Region Check, Security Review, and QA Report generation. Activate ",
+  "repo": "freitasp1/claude-code-skills",
+  "path": "skills/qa-checklist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/freitasp1/claude-code-skills",
+  "dir_name": "qa-checklist-freitasp1-claude-code-skills-2"
+}

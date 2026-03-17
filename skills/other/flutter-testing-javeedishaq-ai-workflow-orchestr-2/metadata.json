@@ -1,0 +1,11 @@
+{
+  "name": "flutter-testing",
+  "description": "Flutter testing patterns for Ballee mobile app. Covers unit tests, widget tests, golden tests, integration tests, and mocking with Riverpod.",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "templates/skills/flutter-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "flutter-testing-javeedishaq-ai-workflow-orchestr-2"
+}

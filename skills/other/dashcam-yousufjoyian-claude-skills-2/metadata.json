@@ -1,0 +1,11 @@
+{
+  "name": "Dashcam",
+  "description": "GPU-accelerated frame extraction for Movie_F dashcam videos. This skill should be used when the user needs to extract frames from Movie_F category dashcam videos placed in the Desktop CARDV folder. Ex",
+  "repo": "yousufjoyian/claude-skills",
+  "path": "Dashcam",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yousufjoyian/claude-skills",
+  "dir_name": "dashcam-yousufjoyian-claude-skills-2"
+}

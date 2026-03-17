@@ -1,0 +1,11 @@
+{
+  "name": "adversarial-spec",
+  "description": "Iteratively refine a product spec by debating with multiple LLMs (GPT, Gemini, Grok, etc.) until all models agree. Use when user wants to write or refine a specification document using adversarial dev",
+  "repo": "zscole/adversarial-spec",
+  "path": "skills/adversarial-spec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zscole/adversarial-spec",
+  "dir_name": "adversarial-spec-zscole-adversarial-spec-2"
+}

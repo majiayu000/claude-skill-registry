@@ -1,0 +1,11 @@
+{
+  "name": "flowglad-integration",
+  "description": "Zero-webhook billing for AI agents",
+  "repo": "plurigrid/asi",
+  "path": "skills/flowglad-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "flowglad-integration-plurigrid-asi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "license",
+  "description": "Imported skill license from openai",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/anthropic/license",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "license-bitwikiorg-skills-md-2"
+}

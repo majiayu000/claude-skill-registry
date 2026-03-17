@@ -1,0 +1,11 @@
+{
+  "name": "database-schema-manager",
+  "description": "Analyzes database schemas and suggests improvements for Prisma, TypeORM, or Drizzle. Use when the user asks about database schema, migrations, ORM setup, or wants to generate TypeScript types from dat",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/database-schema-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "database-schema-manager-wesleysmits-agent-skills-2"
+}

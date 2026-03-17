@@ -1,0 +1,11 @@
+{
+  "name": "metaphlan-profiling",
+  "description": "Marker gene-based taxonomic profiling using MetaPhlAn 4. Provides accurate species-level relative abundances using clade-specific markers. Use when accurate taxonomic profiling is needed and computati",
+  "repo": "GPTomics/bioSkills",
+  "path": "metagenomics/metaphlan-profiling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "metaphlan-profiling-gptomics-bioskills-2"
+}

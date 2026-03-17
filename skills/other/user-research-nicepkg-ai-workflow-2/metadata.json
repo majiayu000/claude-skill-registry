@@ -1,0 +1,11 @@
+{
+  "name": "user-research",
+  "description": "User research methods, customer insight gathering, and problem validation for product discovery.",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/product-manager-workflow/.claude/skills/user-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "user-research-nicepkg-ai-workflow-2"
+}

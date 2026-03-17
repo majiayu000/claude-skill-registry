@@ -1,0 +1,11 @@
+{
+  "name": "ai-analysis",
+  "description": "Command-line tools that delegate analysis tasks to AI models. Includes image description, screenshot comparison, essay generation from text, and boolean condition evaluation. Use for describing images",
+  "repo": "ithinkihaveacat/dotfiles",
+  "path": "etc/skills/ai-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ithinkihaveacat/dotfiles",
+  "dir_name": "ai-analysis-ithinkihaveacat-dotfiles-2"
+}

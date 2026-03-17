@@ -1,0 +1,11 @@
+{
+  "name": "project-bloc",
+  "description": "Guide for creating BLoC patterns with events, states, and proper structure in app_bloc packages (project)",
+  "repo": "gsmlg-app/flutter-app-template",
+  "path": ".claude/skills/project-bloc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gsmlg-app/flutter-app-template",
+  "dir_name": "project-bloc-gsmlg-app-flutter-app-template-2"
+}

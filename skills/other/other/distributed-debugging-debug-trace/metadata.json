@@ -1,0 +1,17 @@
+{
+  "name": "distributed-debugging-debug-trace",
+  "repo": "SpencerGeee/SpenTrade",
+  "path": ".agent/skills/distributed-debugging-debug-trace/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/SpencerGeee/SpenTrade",
+  "dir_name": "distributed-debugging-debug-trace",
+  "downloaded_at": "2026-03-01T06:08:14.021512Z",
+  "author": "SpencerGeee",
+  "source_url": "https://github.com/SpencerGeee/SpenTrade/blob/main/.agent/skills/distributed-debugging-debug-trace/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SpencerGeee/SpenTrade/blob/main/.agent/skills/distributed-debugging-debug-trace/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

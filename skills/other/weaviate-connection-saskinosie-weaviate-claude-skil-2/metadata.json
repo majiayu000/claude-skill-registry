@@ -1,0 +1,11 @@
+{
+  "name": "weaviate-connection",
+  "description": "Connect to local Weaviate vector database and verify connection health",
+  "repo": "saskinosie/weaviate-claude-skills",
+  "path": "weaviate-connection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/saskinosie/weaviate-claude-skills",
+  "dir_name": "weaviate-connection-saskinosie-weaviate-claude-skil-2"
+}

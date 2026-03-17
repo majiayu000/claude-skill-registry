@@ -1,0 +1,11 @@
+{
+  "name": "claude-workspace",
+  "description": "This skill should be used when creating or organizing working files in the .claude/ directory. It enforces consistent structure, naming conventions, and required cross-references for plans, architectu",
+  "repo": "jayteealao/gitt-gaff",
+  "path": ".claude/skills/claude-workspace",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jayteealao/gitt-gaff",
+  "dir_name": "claude-workspace-jayteealao-gitt-gaff-2"
+}

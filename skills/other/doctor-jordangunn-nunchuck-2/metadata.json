@@ -1,0 +1,11 @@
+{
+  "name": "doctor",
+  "description": "Diagnoses software failures by combining deterministic evidence gathering with agent judgment. Models failures as medical cases. Idempotent — run repeatedly until confident diagnosis, then generate sc",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/doctor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "doctor-jordangunn-nunchuck-2"
+}

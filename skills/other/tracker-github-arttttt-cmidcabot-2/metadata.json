@@ -1,0 +1,11 @@
+{
+  "name": "tracker-github",
+  "description": "GitHub Issues and Projects integration. Use for creating/updating issues, managing labels, adding to project boards, and tracking task status. Use when publishing artifacts, updating task status, or c",
+  "repo": "arttttt/CMIDCABot",
+  "path": ".claude/archive/skills/tracker-github",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arttttt/CMIDCABot",
+  "dir_name": "tracker-github-arttttt-cmidcabot-2"
+}

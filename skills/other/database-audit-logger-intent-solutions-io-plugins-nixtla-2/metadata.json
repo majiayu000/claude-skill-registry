@@ -1,0 +1,11 @@
+{
+  "name": "database-audit-logger",
+  "description": "This skill helps implement database audit logging for tracking changes and ensuring compliance. It is triggered when the user requests to \"implement database audit logging\", \"add audit trails\", \"track",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/database/database-audit-logger/skills/database-audit-logger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "database-audit-logger-intent-solutions-io-plugins-nixtla-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "automating-pages",
+  "description": "Automates Apple Pages using JXA with AppleScript dictionary discovery. Use when asked to \"automate Pages documents\", \"create documents programmatically\", \"JXA Pages scripting\", or \"export Pages to PDF",
+  "repo": "SpillwaveSolutions/automating-mac-apps-plugin",
+  "path": "plugins/automating-mac-apps-plugin/skills/automating-pages",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
+  "dir_name": "automating-pages-spillwavesolutions-automating-mac-apps--2"
+}

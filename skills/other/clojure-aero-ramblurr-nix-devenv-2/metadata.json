@@ -1,0 +1,11 @@
+{
+  "name": "clojure-aero",
+  "description": "Aero is an EDN configuration library with reader tag extensions for profiles, environment variables, and references. Use when working with configuration files, environment-specific settings, or when y",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/clojure-aero",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "clojure-aero-ramblurr-nix-devenv-2"
+}

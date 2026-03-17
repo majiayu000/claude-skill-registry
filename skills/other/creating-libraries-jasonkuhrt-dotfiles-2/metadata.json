@@ -1,0 +1,11 @@
+{
+  "name": "creating-libraries",
+  "description": "This skill should be used when the user asks to \"create a library\", \"scaffold a new lib\", \"add a local library\", \"create a namespace module\", \"set up _.ts and __.ts\", or needs to create a new TypeScri",
+  "repo": "jasonkuhrt/dotfiles",
+  "path": "claude/todo/library-standards/skills/creating-libraries",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonkuhrt/dotfiles",
+  "dir_name": "creating-libraries-jasonkuhrt-dotfiles-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "site-audit",
+  "description": "Audit the website for broken links, SEO issues, accessibility problems, and content quality. Use before deployment or for periodic maintenance.",
+  "repo": "glennmatlin/website",
+  "path": ".claude/skills/site-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/glennmatlin/website",
+  "dir_name": "site-audit-glennmatlin-website-2"
+}

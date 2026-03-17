@@ -1,0 +1,11 @@
+{
+  "name": "strict-typing",
+  "description": "Use when writing code in typed languages - enforces full typing with no any/unknown/untyped escapes, even if it requires extra time",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/strict-typing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "strict-typing-troykelly-codex-skills-2"
+}

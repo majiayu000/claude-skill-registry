@@ -1,0 +1,11 @@
+{
+  "name": "clay-rate-limits",
+  "description": "Implement Clay rate limiting, backoff, and idempotency patterns.\nUse when handling rate limit errors, implementing retry logic,\nor optimizing API request throughput for Clay.\nTrigger with phrases like",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/clay-pack/clay-rate-limits",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "clay-rate-limits-vasic-digital-superagent-2"
+}

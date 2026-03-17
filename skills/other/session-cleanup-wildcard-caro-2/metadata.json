@@ -1,0 +1,11 @@
+{
+  "name": "session-cleanup",
+  "description": "Verify debug/dev artifacts are removed before commit. Use at session end to apply 'good boy scout' rule - leave code cleaner than you found it.",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/session-cleanup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildcard/caro",
+  "dir_name": "session-cleanup-wildcard-caro-2"
+}

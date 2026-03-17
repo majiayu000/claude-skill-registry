@@ -1,0 +1,11 @@
+{
+  "name": "sugar",
+  "description": "Enables claude to manage sugar's autonomous development workflows. it allows claude to create tasks, view the status of the system, review pending tasks, and start autonomous execution mode. use this ",
+  "repo": "BbgnsurfTech/claude-skills-collection",
+  "path": "plugins/claude-code-plugins-plus/plugins/devops/sugar/skills/sugar",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BbgnsurfTech/claude-skills-collection",
+  "dir_name": "sugar-bbgnsurftech-claude-skills-collec-2"
+}

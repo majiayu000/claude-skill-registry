@@ -1,0 +1,11 @@
+{
+  "name": "flutter-query-lint",
+  "description": "Lint Flutter Supabase queries against database schema; use when validating mobile app queries, debugging query failures, or before pushing mobile changes",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/flutter-query-lint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "flutter-query-lint-javeedishaq-ai-workflow-orchestr-2"
+}

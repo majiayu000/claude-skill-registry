@@ -1,0 +1,11 @@
+{
+  "name": "fact-checking",
+  "description": "Use when reviewing code changes, auditing documentation accuracy, validating technical claims before merge, or user says \"verify claims\", \"factcheck\", \"audit documentation\", \"validate comments\", \"are ",
+  "repo": "axiomantic/spellbook",
+  "path": "skills/fact-checking",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/axiomantic/spellbook",
+  "dir_name": "fact-checking-axiomantic-spellbook-2"
+}

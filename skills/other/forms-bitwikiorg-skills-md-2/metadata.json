@@ -1,0 +1,11 @@
+{
+  "name": "forms",
+  "description": "Imported skill forms from anthropic",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/anthropic/forms",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "forms-bitwikiorg-skills-md-2"
+}

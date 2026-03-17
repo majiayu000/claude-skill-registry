@@ -1,0 +1,11 @@
+{
+  "name": "install-precommit",
+  "description": "Install the pre-commit review hook that forces you to understand changes before committing. Use when you want to enable commit reviews or when setting up a new project.",
+  "repo": "zbruhnke/claude-code-starter",
+  "path": ".claude/skills/install-precommit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zbruhnke/claude-code-starter",
+  "dir_name": "install-precommit-zbruhnke-claude-code-starter-2"
+}

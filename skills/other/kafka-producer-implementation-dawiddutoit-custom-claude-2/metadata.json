@@ -1,0 +1,11 @@
+{
+  "name": "kafka-producer-implementation",
+  "description": "Implement type-safe Kafka producers for event streaming with msgspec serialization.\nUse when building async/await producers that publish domain events (orders, transactions, etc.)\nwith schema validati",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/kafka-producer-implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "kafka-producer-implementation-dawiddutoit-custom-claude-2"
+}

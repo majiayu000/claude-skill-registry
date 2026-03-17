@@ -1,0 +1,11 @@
+{
+  "name": "project-commands",
+  "description": "Manages project-specific commands for development, testing, and deployment. Use when needing to run project commands or when setting up commands for a new project.",
+  "repo": "shwilliamson/automatasaurus",
+  "path": "template/skills/project-commands",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shwilliamson/automatasaurus",
+  "dir_name": "project-commands-shwilliamson-automatasaurus-2"
+}

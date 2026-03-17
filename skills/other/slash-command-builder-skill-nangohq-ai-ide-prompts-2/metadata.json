@@ -1,0 +1,11 @@
+{
+  "name": "slash-command-builder-skill",
+  "description": "Use when creating, improving, or troubleshooting Claude Code slash commands. Expert guidance on command structure, arguments, frontmatter, tool permissions, and best practices for building effective c",
+  "repo": "NangoHQ/ai-ide-prompts",
+  "path": ".claude/skills/slash-command-builder-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NangoHQ/ai-ide-prompts",
+  "dir_name": "slash-command-builder-skill-nangohq-ai-ide-prompts-2"
+}

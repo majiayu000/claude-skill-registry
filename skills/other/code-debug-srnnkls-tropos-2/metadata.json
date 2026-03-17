@@ -1,0 +1,11 @@
+{
+  "name": "code-debug",
+  "description": "Systematic debugging with root cause tracing. Use when encountering bugs, test failures, or unexpected behavior - find root cause before attempting fixes, trace backward through call chain.",
+  "repo": "srnnkls/tropos",
+  "path": "skills/code-debug",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/srnnkls/tropos",
+  "dir_name": "code-debug-srnnkls-tropos-2"
+}

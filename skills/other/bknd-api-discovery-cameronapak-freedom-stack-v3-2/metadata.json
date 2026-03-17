@@ -1,0 +1,11 @@
+{
+  "name": "bknd-api-discovery",
+  "description": "Use when exploring Bknd's auto-generated API endpoints. Covers REST endpoint patterns, route listing, module base paths, SDK method mapping, admin panel API explorer, and understanding the API structu",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-api-discovery",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-api-discovery-cameronapak-freedom-stack-v3-2"
+}

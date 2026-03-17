@@ -1,0 +1,11 @@
+{
+  "name": "quic-channel-grading",
+  "description": "QUIC channel quality grading with BBRv3 congestion control analysis.\nClassifies network paths into GF(3) tiers based on RTT, bandwidth, loss,\nand pacing efficiency. Integrates with Iroh P2P and world-",
+  "repo": "plurigrid/asi",
+  "path": "skills/quic-channel-grading",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "quic-channel-grading-plurigrid-asi-2"
+}

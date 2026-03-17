@@ -1,0 +1,11 @@
+{
+  "name": "contacts",
+  "description": "Manage Google Contacts with full CRUD operations via Ruby scripts. This skill should be used when searching, viewing, creating, updating, or deleting contacts in Google Contacts. Supports contact look",
+  "repo": "arlenagreer/claude_configuration_docs",
+  "path": "skills/contacts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arlenagreer/claude_configuration_docs",
+  "dir_name": "contacts-arlenagreer-claude-configuration-2"
+}

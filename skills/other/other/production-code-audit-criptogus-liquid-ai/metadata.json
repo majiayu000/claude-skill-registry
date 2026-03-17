@@ -1,0 +1,9 @@
+{
+  "name": "production-code-audit",
+  "repo": "criptogus/liquid-ai",
+  "path": ".agent/skills/production-code-audit/SKILL.md",
+  "category": "other",
+  "source": "github.com/criptogus/liquid-ai",
+  "dir_name": "production-code-audit-criptogus-liquid-ai",
+  "downloaded_at": "2026-02-15T06:50:09.067398Z"
+}

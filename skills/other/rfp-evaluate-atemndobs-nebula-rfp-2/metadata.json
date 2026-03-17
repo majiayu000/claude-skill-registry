@@ -1,0 +1,11 @@
+{
+  "name": "rfp-evaluate",
+  "description": "Evaluate RFP opportunities using the 6-dimension scoring framework. Use when modifying evaluation criteria, adjusting keyword weights, or implementing AI-based evaluation.",
+  "repo": "Atemndobs/nebula-rfp",
+  "path": ".claude/skills/rfp-evaluate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Atemndobs/nebula-rfp",
+  "dir_name": "rfp-evaluate-atemndobs-nebula-rfp-2"
+}

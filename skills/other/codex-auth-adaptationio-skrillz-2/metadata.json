@@ -1,0 +1,11 @@
+{
+  "name": "codex-auth",
+  "description": "Setup and manage OpenAI Codex CLI authentication including ChatGPT Plus/Pro OAuth, API keys, and multi-account management. Use when configuring Codex access, switching accounts, or troubleshooting aut",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/codex-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "codex-auth-adaptationio-skrillz-2"
+}

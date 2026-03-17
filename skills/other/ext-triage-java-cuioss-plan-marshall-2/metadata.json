@@ -1,0 +1,11 @@
+{
+  "name": "ext-triage-java",
+  "description": "Triage extension for Java findings during plan-finalize phase",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-java/skills/ext-triage-java",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "ext-triage-java-cuioss-plan-marshall-2"
+}

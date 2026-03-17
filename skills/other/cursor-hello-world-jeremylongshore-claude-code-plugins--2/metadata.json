@@ -1,0 +1,11 @@
+{
+  "name": "cursor-hello-world",
+  "description": "Create your first project with Cursor AI features. Triggers on \"cursor hello world\",\n\"first cursor project\", \"cursor getting started\", \"try cursor ai\", \"cursor basics\". Use when working with cursor he",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/cursor-pack/skills/cursor-hello-world",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "cursor-hello-world-jeremylongshore-claude-code-plugins--2"
+}

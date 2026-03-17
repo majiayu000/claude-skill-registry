@@ -1,0 +1,11 @@
+{
+  "name": "git-commit-formatter",
+  "description": "生成符合 Conventional Commits 规范的 Git 提交信息。当用户要求生成提交、创建 commit 或写提交信息时使用",
+  "repo": "einverne/dotfiles",
+  "path": "skills/git-commit-formatter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/einverne/dotfiles",
+  "dir_name": "git-commit-formatter-einverne-dotfiles-2"
+}

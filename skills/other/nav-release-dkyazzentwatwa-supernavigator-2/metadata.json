@@ -1,0 +1,11 @@
+{
+  "name": "nav-release",
+  "description": "Validate and release Navigator plugin to marketplace. Auto-invoke when user says \"release plugin\", \"publish navigator\", \"create release\", or \"deploy new version\".",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "skills/os-layer/project-management/nav-release",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "nav-release-dkyazzentwatwa-supernavigator-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "api-platform-filters",
+  "description": "Use when symfony api platform filters",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/api-platform-filters",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "api-platform-filters-makfly-superpowers-symfony-2"
+}

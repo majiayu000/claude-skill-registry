@@ -1,0 +1,11 @@
+{
+  "name": "powershell-7.5-features",
+  "description": "| Version | Status | .NET | Release |",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/powershell-master/skills/powershell-7.5-features",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "powershell-7-5-features-josiahsiegel-claude-plugin-market-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "prowler-test-sdk",
+  "description": "Testing patterns for Prowler SDK (Python). Trigger: When writing tests for the Prowler SDK (checks/services/providers), including provider-specific mocking rules (moto for AWS only).\n",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/prowler-test-sdk",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/prowler-cloud/prowler",
+  "dir_name": "prowler-test-sdk-prowler-cloud-prowler-2"
+}

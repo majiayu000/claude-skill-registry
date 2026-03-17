@@ -1,0 +1,11 @@
+{
+  "name": "fullstory-async-methods",
+  "description": "Comprehensive guide for implementing Fullstory's Asynchronous API methods (Async suffix variants) for web applications. Teaches proper Promise handling, await patterns, error handling, and when to use",
+  "repo": "rcmaples/btx",
+  "path": ".claude/skills/fullstory-async-methods",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rcmaples/btx",
+  "dir_name": "fullstory-async-methods-rcmaples-btx-2"
+}

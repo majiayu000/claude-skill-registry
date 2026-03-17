@@ -1,0 +1,11 @@
+{
+  "name": "clustering-analyzer",
+  "description": "Cluster data using K-Means, DBSCAN, hierarchical clustering. Use for customer segmentation, pattern discovery, or data grouping.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "clustering-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "clustering-analyzer-dkyazzentwatwa-chatgpt-skills-2"
+}

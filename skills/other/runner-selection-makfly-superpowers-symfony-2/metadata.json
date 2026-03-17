@@ -1,0 +1,11 @@
+{
+  "name": "runner-selection",
+  "description": "Use when symfony runner selection",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/runner-selection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "runner-selection-makfly-superpowers-symfony-2"
+}

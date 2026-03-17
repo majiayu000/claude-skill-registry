@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-629-lifecycle-auditor",
+  "description": "Application lifecycle audit worker (L3). Checks bootstrap initialization order, graceful shutdown, resource cleanup, signal handling, liveness/readiness probes. Returns findings with severity, locatio",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-629-lifecycle-auditor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-629-lifecycle-auditor-boisenoise-skills-collections-2"
+}

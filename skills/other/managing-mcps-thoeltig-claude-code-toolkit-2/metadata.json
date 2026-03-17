@@ -1,0 +1,11 @@
+{
+  "name": "managing-mcps",
+  "description": "Creates, analyzes, updates, and evaluates Model Context Protocol (MCP) servers including architecture assessment, security validation, and connection configuration. Use when user asks if current conte",
+  "repo": "thoeltig/claude-code-toolkit",
+  "path": "plugins/claude-code-capabilities/skills/managing-mcps",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/thoeltig/claude-code-toolkit",
+  "dir_name": "managing-mcps-thoeltig-claude-code-toolkit-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "orchestration",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/orchestration/performance-profiler-skill.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "orchestration-enuno-claude-command-and-c-5",
+  "downloaded_at": "2026-02-15T07:06:54.057182Z"
+}

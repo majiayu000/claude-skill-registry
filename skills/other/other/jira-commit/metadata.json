@@ -1,0 +1,9 @@
+{
+  "name": "jira-commit",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/jira-commit/SKILL.md",
+  "category": "other",
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "jira-commit",
+  "downloaded_at": "2026-02-15T05:22:56.246354Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "gsap-react",
+  "description": "GSAP integration with React including useGSAP hook, ref handling, cleanup patterns, and context management. Use when implementing GSAP animations in React components, handling component lifecycle, or ",
+  "repo": "Bbeierle12/Skill-MCP-Claude",
+  "path": "skills/gsap-react",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Bbeierle12/Skill-MCP-Claude",
+  "dir_name": "gsap-react-bbeierle12-skill-mcp-claude-2"
+}

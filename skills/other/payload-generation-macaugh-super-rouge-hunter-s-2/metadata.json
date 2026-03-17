@@ -1,0 +1,11 @@
+{
+  "name": "payload-generation",
+  "description": "Techniques for creating and adapting payloads for various exploitation scenarios, target environments, and evasion requirements",
+  "repo": "macaugh/super-rouge-hunter-skills",
+  "path": "skills/exploitation/payload-generation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/macaugh/super-rouge-hunter-skills",
+  "dir_name": "payload-generation-macaugh-super-rouge-hunter-s-2"
+}

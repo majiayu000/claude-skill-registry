@@ -1,0 +1,11 @@
+{
+  "name": "protein-qc",
+  "description": "Quality control metrics and filtering thresholds for protein design. Use this skill when: (1) Evaluating design quality for binding, expression, or structure, (2) Setting filtering thresholds for pLDD",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/protein-qc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "protein-qc-adaptyvbio-protein-design-skill-2"
+}

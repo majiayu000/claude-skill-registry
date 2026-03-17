@@ -1,0 +1,11 @@
+{
+  "name": "conventional-committer",
+  "description": "Skill for committing changes to this repository using Git, generating a commit message from recent history and current changes.",
+  "repo": "akaihola/skills-akaihola",
+  "path": "conventional-committer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/akaihola/skills-akaihola",
+  "dir_name": "conventional-committer-akaihola-skills-akaihola-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "creating-pull-requests",
+  "description": "Creates high-quality pull requests with comprehensive descriptions, test plans, and context. Activates when user wants to create PR, says 'ready to merge', or has completed feature work. Analyzes comm",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/collaboration/creating-pull-requests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "creating-pull-requests-rysweet-azurehaymaker-2"
+}

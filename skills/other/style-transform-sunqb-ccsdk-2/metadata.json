@@ -1,0 +1,11 @@
+{
+  "name": "style-transform",
+  "description": "This skill should be used when the user asks to rewrite content, transform style, check style consistency, or imitate writing style. It provides multi-channel content rewriting, style consistency chec",
+  "repo": "sunqb/ccsdk",
+  "path": ".claude/skills/style-transform",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunqb/ccsdk",
+  "dir_name": "style-transform-sunqb-ccsdk-2"
+}

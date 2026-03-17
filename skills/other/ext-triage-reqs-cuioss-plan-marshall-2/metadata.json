@@ -1,0 +1,11 @@
+{
+  "name": "ext-triage-reqs",
+  "description": "Triage extension for requirements findings during plan-finalize phase",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-requirements/skills/ext-triage-reqs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "ext-triage-reqs-cuioss-plan-marshall-2"
+}

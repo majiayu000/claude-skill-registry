@@ -1,0 +1,11 @@
+{
+  "name": "agent-client-protocol",
+  "description": "Agent Client Protocol (ACP) - Standardized communication between code editors and AI coding agents. Use for building ACP-compatible agents, integrating agents with editors (Zed, JetBrains, Neovim), im",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/agent-client-protocol",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "agent-client-protocol-enuno-claude-command-and-c-2"
+}

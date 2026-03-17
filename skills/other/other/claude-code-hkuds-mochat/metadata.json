@@ -1,0 +1,9 @@
+{
+  "name": "claude-code",
+  "repo": "HKUDS/MoChat",
+  "path": "skills/claude-code/skill.md",
+  "category": "other",
+  "source": "github.com/HKUDS/MoChat",
+  "dir_name": "claude-code-hkuds-mochat",
+  "downloaded_at": "2026-02-15T05:11:06.570261Z"
+}

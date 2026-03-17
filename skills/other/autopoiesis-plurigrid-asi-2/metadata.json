@@ -1,0 +1,11 @@
+{
+  "name": "autopoiesis",
+  "description": "Self-producing skill system combining ruler enforcement with skill self-evolution. Implements trifurcation-first imperative via nbb sexp invocation for idempotent agent instruction.",
+  "repo": "plurigrid/asi",
+  "path": "skills/autopoiesis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "autopoiesis-plurigrid-asi-2"
+}

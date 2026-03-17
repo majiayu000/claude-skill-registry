@@ -1,0 +1,11 @@
+{
+  "name": "testing-summary",
+  "description": "Generate testing documentation from Linear issues and git commits. Use when the user requests test instructions, testing summary, or QA handover documentation for a completed feature or bug fix.",
+  "repo": "JosephAnson/claude-plugin",
+  "path": "skills/testing-summary",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JosephAnson/claude-plugin",
+  "dir_name": "testing-summary-josephanson-claude-plugin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "cert-manager",
+  "description": "Kubernetes certificate management debugging and configuration. This skill should be used when troubleshooting cert-manager issues, configuring private CA issuers (SelfSigned, CA, Vault), integrating w",
+  "repo": "kettleofketchup/dotfiles",
+  "path": ".claude/skills/cert-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kettleofketchup/dotfiles",
+  "dir_name": "cert-manager-kettleofketchup-dotfiles-2"
+}

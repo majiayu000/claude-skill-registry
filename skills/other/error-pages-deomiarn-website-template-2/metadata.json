@@ -1,0 +1,11 @@
+{
+  "name": "error-pages",
+  "description": "Create custom 404 and 500 error pages with brand styling. Use at project end before release. Triggers on \"404\", \"error pages\", \"not found\", \"500 error\".",
+  "repo": "deomiarn/website-template",
+  "path": ".claude/skills/error-pages",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/deomiarn/website-template",
+  "dir_name": "error-pages-deomiarn-website-template-2"
+}

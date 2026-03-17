@@ -1,0 +1,11 @@
+{
+  "name": "init-project-jpkb",
+  "description": "Initialize new JPKB projects with standardized documentation and folder structure. JPKB-specific version with category folders and fixed base path. Use when creating a new project in the jpkb reposito",
+  "repo": "product-on-purpose/pm-skills",
+  "path": ".claude/skills/init-project-jpkb",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/product-on-purpose/pm-skills",
+  "dir_name": "init-project-jpkb-product-on-purpose-pm-skills-2"
+}

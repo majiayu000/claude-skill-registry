@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-vector-list-namespaces",
+  "description": "List all vector namespaces. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-vector-list-namespaces",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-vector-list-namespaces-agentuity-sdk-explorer-2"
+}

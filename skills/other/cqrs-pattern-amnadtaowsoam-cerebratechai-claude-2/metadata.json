@@ -1,0 +1,11 @@
+{
+  "name": "cqrs-pattern",
+  "description": "Implementing Command Query Responsibility Segregation for separating read and write operations in distributed systems.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "09-microservices/cqrs-pattern",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "cqrs-pattern-amnadtaowsoam-cerebratechai-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "mcaf-architecture-overview",
+  "description": "Create or update `docs/Architecture/Overview.md` (architecture diagrams): maintain Mermaid diagrams for system/modules, interfaces/contracts, and key classes/types; document dependency rules; link to ",
+  "repo": "managedcode/MCAF",
+  "path": "skills/mcaf-architecture-overview",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/managedcode/MCAF",
+  "dir_name": "mcaf-architecture-overview-managedcode-mcaf-2"
+}

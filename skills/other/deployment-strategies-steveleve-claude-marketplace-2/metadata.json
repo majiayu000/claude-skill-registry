@@ -1,0 +1,11 @@
+{
+  "name": "deployment-strategies",
+  "description": "This skill should be used when the user asks about \"deployment\", \"CI/CD\", \"continuous integration\", \"GitHub Actions\", \"GitLab CI\", \"environments\", \"staging\", \"production\", \"rollback\", \"versioning\", \"g",
+  "repo": "SteveLeve/claude-marketplace",
+  "path": "plugins/cloudflare-expert/skills/deployment-strategies",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SteveLeve/claude-marketplace",
+  "dir_name": "deployment-strategies-steveleve-claude-marketplace-2"
+}

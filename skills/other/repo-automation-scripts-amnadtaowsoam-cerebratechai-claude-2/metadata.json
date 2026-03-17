@@ -1,0 +1,11 @@
+{
+  "name": "repo-automation-scripts",
+  "description": "Automated scripts for common repository tasks including setup, cleanup, dependency updates, and maintenance.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "45-developer-experience/repo-automation-scripts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "repo-automation-scripts-amnadtaowsoam-cerebratechai-claude-2"
+}

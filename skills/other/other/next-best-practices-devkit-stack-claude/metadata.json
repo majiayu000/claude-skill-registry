@@ -1,0 +1,17 @@
+{
+  "name": "next-best-practices",
+  "repo": "devkit-stack/Claude",
+  "path": ".claude/skills/next-best-practices/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/devkit-stack/Claude",
+  "dir_name": "next-best-practices-devkit-stack-claude",
+  "downloaded_at": "2026-03-01T07:26:53.721076Z",
+  "author": "devkit-stack",
+  "source_url": "https://github.com/devkit-stack/Claude/blob/main/.claude/skills/next-best-practices/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/devkit-stack/Claude/blob/main/.claude/skills/next-best-practices/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

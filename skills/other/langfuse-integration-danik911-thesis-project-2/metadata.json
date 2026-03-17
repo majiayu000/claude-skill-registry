@@ -1,0 +1,11 @@
+{
+  "name": "langfuse-integration",
+  "description": "Replaces Phoenix observability with Langfuse Cloud (EU) traceability for pharmaceutical test generation. Adds @observe decorators to existing code, configures LlamaIndex callbacks, propagates GAMP-5 c",
+  "repo": "Danik911/thesis_project",
+  "path": ".claude/skills/langfuse-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Danik911/thesis_project",
+  "dir_name": "langfuse-integration-danik911-thesis-project-2"
+}

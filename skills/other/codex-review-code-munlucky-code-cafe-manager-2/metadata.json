@@ -1,0 +1,11 @@
+{
+  "name": "codex-review-code",
+  "description": "Review implementation quality and regression risks via claude-delegator (Code Reviewer expert). Use after implementation for complex tasks, refactors, or API changes.",
+  "repo": "munlucky/code-cafe-manager",
+  "path": ".claude/skills/codex-review-code",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/munlucky/code-cafe-manager",
+  "dir_name": "codex-review-code-munlucky-code-cafe-manager-2"
+}

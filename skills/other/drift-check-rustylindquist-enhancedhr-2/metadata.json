@@ -1,0 +1,11 @@
+{
+  "name": "drift-check",
+  "description": "Detect documentation drift (docs out of sync with code). Use after changes, periodically, or when something feels wrong. Returns severity-rated findings with specific fixes.",
+  "repo": "RustyLindquist/EnhancedHR",
+  "path": ".claude/skills/drift-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RustyLindquist/EnhancedHR",
+  "dir_name": "drift-check-rustylindquist-enhancedhr-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "code-simplifier",
+  "description": "Use when asked to simplify recently changed code without changing behavior or explicitly asked to run the code-simplifier subagent.",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/code-simplifier",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "code-simplifier-troykelly-codex-skills-2"
+}

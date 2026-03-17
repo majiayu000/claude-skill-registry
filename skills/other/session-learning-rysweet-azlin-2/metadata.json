@@ -1,0 +1,11 @@
+{
+  "name": "session-learning",
+  "description": "Cross-session learning system that extracts insights from session transcripts and injects\nrelevant past learnings at session start. Uses simple keyword matching for relevance.\nComplements DISCOVERIES.",
+  "repo": "rysweet/azlin",
+  "path": ".claude/skills/session-learning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/azlin",
+  "dir_name": "session-learning-rysweet-azlin-2"
+}

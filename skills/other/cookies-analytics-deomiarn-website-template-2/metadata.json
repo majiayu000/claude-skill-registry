@@ -1,0 +1,11 @@
+{
+  "name": "cookies-analytics",
+  "description": "Set up Google Analytics 4 with DSGVO-compliant cookie consent banner. Use when analytics tracking is needed. Triggers on \"analytics\", \"GA4\", \"Google Analytics\", \"cookie consent\", \"tracking\".",
+  "repo": "deomiarn/website-template",
+  "path": ".claude/skills/cookies-analytics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/deomiarn/website-template",
+  "dir_name": "cookies-analytics-deomiarn-website-template-2"
+}

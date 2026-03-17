@@ -1,0 +1,11 @@
+{
+  "name": "team-composition-analysis",
+  "description": "This skill should be used when the user asks to \"plan team structure\", \"determine hiring needs\", \"design org chart\", \"calculate compensation\", \"plan equity allocation\", or requests organizational desi",
+  "repo": "pelan05/vscode_agents_folder",
+  "path": "skills/team-composition-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pelan05/vscode_agents_folder",
+  "dir_name": "team-composition-analysis-pelan05-vscode-agents-folder-2"
+}

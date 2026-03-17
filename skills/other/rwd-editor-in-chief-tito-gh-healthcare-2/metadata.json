@@ -1,0 +1,11 @@
+{
+  "name": "rwd-editor-in-chief",
+  "description": "RWD研究の企画から完成までを統括する編集長Skill。他のSkillを適切な順序で呼び出し、\n研究案Top3の選定、スコアリング、感度分析計画、次アクションを統合出力する。\n",
+  "repo": "tito-gh/healthcare",
+  "path": ".claude/skills/rwd-editor-in-chief",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tito-gh/healthcare",
+  "dir_name": "rwd-editor-in-chief-tito-gh-healthcare-2"
+}

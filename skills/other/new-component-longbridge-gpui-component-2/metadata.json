@@ -1,0 +1,11 @@
+{
+  "name": "new-component",
+  "description": "Create new GPUI components. Use when building components, writing UI elements, or creating new component implementations.",
+  "repo": "longbridge/gpui-component",
+  "path": ".claude/skills/new-component",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/longbridge/gpui-component",
+  "dir_name": "new-component-longbridge-gpui-component-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sqlite-ops",
+  "description": "Patterns for SQLite databases in Python projects - state management, caching, and async operations. Triggers on: sqlite, sqlite3, aiosqlite, local database, database schema, migration, wal mode.",
+  "repo": "0xDarkMatter/claude-mods",
+  "path": "skills/sqlite-ops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/0xDarkMatter/claude-mods",
+  "dir_name": "sqlite-ops-0xdarkmatter-claude-mods-2"
+}

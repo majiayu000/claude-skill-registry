@@ -1,0 +1,11 @@
+{
+  "name": "accli",
+  "description": "This skill should be used when interacting with Apple Calendar on macOS. Use it for listing calendars, viewing events, creating/updating/deleting calendar events, and checking availability/free-busy t",
+  "repo": "clawdbot/skills",
+  "path": "skills/joargp/accli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "accli-clawdbot-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "fastapi-patterns",
+  "description": "Automatically applies when creating FastAPI endpoints, routers, and API structures. Enforces best practices for endpoint definitions, dependency injection, error handling, and documentation.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/fastapi-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "fastapi-patterns-ricardoroche-ricardos-claude-code-2"
+}

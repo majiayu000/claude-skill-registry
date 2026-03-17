@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-skill-test-runner",
+  "description": "Run tests from skill examples and generate a report (project)",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": ".claude/skills/umbraco-skill-test-runner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-skill-test-runner-umbraco-umbraco-cms-backoffi-2"
+}

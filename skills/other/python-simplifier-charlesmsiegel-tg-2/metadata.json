@@ -1,0 +1,11 @@
+{
+  "name": "python-simplifier",
+  "description": "Simplify overly complex Python code. Use when user asks to simplify, refactor, clean up, make more readable, reduce complexity, improve code quality, find code smells, detect duplicates, or analyze co",
+  "repo": "charlesmsiegel/tg",
+  "path": ".claude/skills/python-simplifier",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/charlesmsiegel/tg",
+  "dir_name": "python-simplifier-charlesmsiegel-tg-2"
+}

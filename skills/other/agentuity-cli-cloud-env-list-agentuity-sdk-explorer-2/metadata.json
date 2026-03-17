@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-env-list",
+  "description": "List all environment variables. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-env-list",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-env-list-agentuity-sdk-explorer-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "vibe-build",
+  "description": "Build your MVP following the AGENTS.md plan. Use when the user wants to start building, implement features, or says \"build my MVP\", \"start coding\", or \"implement the project\".",
+  "repo": "KhazP/vibe-coding-prompt-template",
+  "path": ".claude/skills/vibe-build",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KhazP/vibe-coding-prompt-template",
+  "dir_name": "vibe-build-khazp-vibe-coding-prompt-t-2"
+}

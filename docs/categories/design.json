@@ -2,7 +2,7 @@
   "category": "design",
   "code": "des",
   "count": 9478,
-  "updated_at": "2026-03-07T01:45:30.225518Z",
+  "updated_at": "2026-03-17T14:53:47.501130Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -26546,7 +26546,7 @@
     },
     {
       "name": "ui-designer",
-      "description": "Extract design systems from reference UI images and generate implementation-ready UI design prompts. Use when users provide UI screenshots/mockups and want to create consistent designs, generate de...",
+      "description": "Extract design systems from reference UI images and generate implementation-ready UI design prompts. Use when users provide UI screenshots/mockups and want to create consistent designs, generate desig",
       "repo": "daymade/claude-code-skills",
       "path": "ui-designer",
       "branch": "main",
@@ -50556,7 +50556,7 @@
     },
     {
       "name": "ux-researcher-designer",
-      "description": "UX research and design toolkit for Senior UX Designer/Researcher including data-driven persona generation, journey mapping, usability testing frameworks, and research synthesis. Use for user resear...",
+      "description": "UX research and design toolkit for Senior UX Designer/Researcher including data-driven persona generation, journey mapping, usability testing frameworks, and research synthesis. Use for user research,",
       "repo": "alirezarezvani/claude-skills",
       "path": "product-team/ux-researcher-designer",
       "branch": "main",
@@ -64643,7 +64643,7 @@
     },
     {
       "name": "ux-researcher-designer",
-      "description": "UX research and design toolkit for Senior UX Designer/Researcher including data-driven persona generation, journey mapping, usability testing frameworks, and research synthesis. Use for user resear...",
+      "description": "UX research and design toolkit for Senior UX Designer/Researcher including data-driven persona generation, journey mapping, usability testing frameworks, and research synthesis. Use for user research,",
       "repo": "alirezarezvani/claude-skills",
       "path": "product-team/ux-researcher-designer",
       "branch": "main",
@@ -68647,7 +68647,7 @@
     },
     {
       "name": "ui-design-system",
-      "description": "UI design system toolkit for Senior UI Designer including design token generation, component documentation, responsive design calculations, and developer handoff tools. Use for creating design syst...",
+      "description": "UI design system toolkit for Senior UI Designer including design token generation, component documentation, responsive design calculations, and developer handoff tools. Use for creating design systems",
       "repo": "alirezarezvani/claude-skills",
       "path": "product-team/ui-design-system",
       "branch": "main",
@@ -92352,7 +92352,7 @@
     },
     {
       "name": "ui-designer",
-      "description": "Extract design systems from reference UI images and generate implementation-ready UI design prompts. Use when users provide UI screenshots/mockups and want to create consistent designs, generate de...",
+      "description": "Extract design systems from reference UI images and generate implementation-ready UI design prompts. Use when users provide UI screenshots/mockups and want to create consistent designs, generate desig",
       "repo": "daymade/claude-code-skills",
       "path": "ui-designer",
       "branch": "main",
@@ -108574,7 +108574,7 @@
     },
     {
       "name": "ui-design-system",
-      "description": "UI design system toolkit for Senior UI Designer including design token generation, component documentation, responsive design calculations, and developer handoff tools. Use for creating design syst...",
+      "description": "UI design system toolkit for Senior UI Designer including design token generation, component documentation, responsive design calculations, and developer handoff tools. Use for creating design systems",
       "repo": "alirezarezvani/claude-skills",
       "path": "product-team/ui-design-system",
       "branch": "main",

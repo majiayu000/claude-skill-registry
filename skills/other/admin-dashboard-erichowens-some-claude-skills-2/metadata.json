@@ -1,0 +1,11 @@
+{
+  "name": "admin-dashboard",
+  "description": "Extend and modify the admin dashboard, developer portal, and operations console. Use when adding new admin tabs, metrics, monitoring features, or internal tools. Activates for dashboard development, a",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/admin-dashboard",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "admin-dashboard-erichowens-some-claude-skills-2"
+}

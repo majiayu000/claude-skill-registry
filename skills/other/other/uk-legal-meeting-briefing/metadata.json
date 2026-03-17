@@ -1,0 +1,17 @@
+{
+  "name": "uk-legal-meeting-briefing",
+  "repo": "45black/uk-legal-plugins",
+  "path": "skills/uk-legal-meeting-briefing/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/45black/uk-legal-plugins",
+  "dir_name": "uk-legal-meeting-briefing",
+  "downloaded_at": "2026-03-01T04:41:52.159777Z",
+  "author": "45black",
+  "source_url": "https://github.com/45black/uk-legal-plugins/blob/main/skills/uk-legal-meeting-briefing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/45black/uk-legal-plugins/blob/main/skills/uk-legal-meeting-briefing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

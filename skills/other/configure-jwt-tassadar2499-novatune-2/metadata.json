@@ -1,0 +1,11 @@
+{
+  "name": "configure-jwt",
+  "description": "Set up JWT Bearer authentication with token service and authorization policies",
+  "repo": "Tassadar2499/NovaTune",
+  "path": ".claude/skills/configure-jwt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Tassadar2499/NovaTune",
+  "dir_name": "configure-jwt-tassadar2499-novatune-2"
+}

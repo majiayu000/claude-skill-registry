@@ -1,0 +1,11 @@
+{
+  "name": "browser-forensics",
+  "description": "Analyze web browser artifacts for forensic investigation. Use when investigating\nuser browsing activity, downloaded files, cached content, or web-based attacks.\nSupports Chrome, Firefox, Edge, Safari,",
+  "repo": "SherifEldeeb/agentskills",
+  "path": "skills/forensics/browser-forensics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SherifEldeeb/agentskills",
+  "dir_name": "browser-forensics-sherifeldeeb-agentskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "groq-inference-skill",
+  "description": "Fast LLM inference with Groq API - chat, vision, audio STT/TTS, tool use. Use when: groq, fast inference, low latency, whisper, PlayAI TTS, Llama, vision API, tool calling, voice agents, real-time AI.",
+  "repo": "ScientiaCapital/skills",
+  "path": "active/groq-inference-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ScientiaCapital/skills",
+  "dir_name": "groq-inference-skill-scientiacapital-skills-2"
+}

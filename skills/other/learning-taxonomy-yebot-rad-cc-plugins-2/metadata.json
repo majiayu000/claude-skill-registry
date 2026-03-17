@@ -1,0 +1,11 @@
+{
+  "name": "learning-taxonomy",
+  "description": "Expert knowledge for categorizing learnings and routing them to appropriate improvement targets. Use when analyzing session learnings to determine where context improvements should be applied.",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/learning-loop/skills/learning-taxonomy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "learning-taxonomy-yebot-rad-cc-plugins-2"
+}

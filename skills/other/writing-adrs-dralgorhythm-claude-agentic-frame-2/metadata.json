@@ -1,0 +1,11 @@
+{
+  "name": "writing-adrs",
+  "description": "Document architectural decisions. Use when making significant technical decisions that should be recorded. Covers ADR format and decision documentation.",
+  "repo": "dralgorhythm/claude-agentic-framework",
+  "path": ".claude/skills/architecture/writing-adrs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dralgorhythm/claude-agentic-framework",
+  "dir_name": "writing-adrs-dralgorhythm-claude-agentic-frame-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "obsidian-organize",
+  "description": "Obsidian 知识库整理工作流。\n触发场景：用户提到\"整理Obsidian\"、\"清理文件夹\"、\"知识库混乱\"、\"目录太多\"、\"合并分类\"。\n适用于：个人知识管理、笔记整理、文件夹重组。",
+  "repo": "muzhicaomingwang/ai-ideas",
+  "path": ".claude/skills/obsidian-organize",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/muzhicaomingwang/ai-ideas",
+  "dir_name": "obsidian-organize-muzhicaomingwang-ai-ideas-2"
+}

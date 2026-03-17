@@ -1,0 +1,11 @@
+{
+  "name": "generate-translations",
+  "description": "Use when new translation keys are added to packages to generate new translations strings",
+  "repo": "payloadcms/payload",
+  "path": ".claude/skills/generate-translations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/payloadcms/payload",
+  "dir_name": "generate-translations-payloadcms-payload-2"
+}

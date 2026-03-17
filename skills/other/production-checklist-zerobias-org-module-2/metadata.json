@@ -1,0 +1,11 @@
+{
+  "name": "production-checklist",
+  "description": "Production readiness checklist before module release",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/production-checklist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "production-checklist-zerobias-org-module-2"
+}

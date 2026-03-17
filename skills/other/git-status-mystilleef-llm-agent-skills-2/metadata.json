@@ -1,0 +1,11 @@
+{
+  "name": "git-status",
+  "description": "Present the status of the git repository to the user. Use when the agent needs to display the status of the git repository to the user. The agent should not use this internally for its own needs.",
+  "repo": "mystilleef/llm-agent-skills",
+  "path": "skills/git-status",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mystilleef/llm-agent-skills",
+  "dir_name": "git-status-mystilleef-llm-agent-skills-2"
+}

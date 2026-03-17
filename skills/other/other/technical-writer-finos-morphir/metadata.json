@@ -1,0 +1,9 @@
+{
+  "name": "technical-writer",
+  "repo": "finos/morphir",
+  "path": ".claude/skills/technical-writer/SKILL.md",
+  "category": "other",
+  "source": "github.com/finos/morphir",
+  "dir_name": "technical-writer-finos-morphir",
+  "downloaded_at": "2026-02-22T07:10:02.404023Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "command.define",
+  "description": "Validates and registers command manifest files (YAML) to integrate new slash commands into Betty.",
+  "repo": "epieczko/betty",
+  "path": "skills/command.define",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/epieczko/betty",
+  "dir_name": "command-define-epieczko-betty-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "bulk-support-message",
+  "description": "Send bulk messages to dancers via Ballee Support chat. Use when sending apology messages, system updates, or personalized notifications to users.",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/bulk-support-message",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "bulk-support-message-javeedishaq-ai-workflow-orchestr-2"
+}

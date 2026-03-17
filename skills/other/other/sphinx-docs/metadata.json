@@ -1,0 +1,9 @@
+{
+  "name": "sphinx-docs",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/technical-documentation/skills/sphinx-docs/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "sphinx-docs",
+  "downloaded_at": "2026-02-11T01:23:46.790150Z"
+}

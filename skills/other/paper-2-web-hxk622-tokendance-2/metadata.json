@@ -1,0 +1,11 @@
+{
+  "name": "paper-2-web",
+  "description": "This skill should be used when converting academic papers into promotional and presentation formats including interactive websites (Paper2Web), presentation videos (Paper2Video), and conference poster",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/writing/paper-2-web",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "paper-2-web-hxk622-tokendance-2"
+}

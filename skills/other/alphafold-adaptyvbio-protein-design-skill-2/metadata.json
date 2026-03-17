@@ -1,0 +1,11 @@
+{
+  "name": "alphafold",
+  "description": "Validate protein designs using AlphaFold2 structure prediction. Use this skill when: (1) Validating designed sequences fold correctly, (2) Predicting binder-target complex structures, (3) Calculating ",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/alphafold",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "alphafold-adaptyvbio-protein-design-skill-2"
+}

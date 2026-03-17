@@ -1,0 +1,11 @@
+{
+  "name": "plugin-create",
+  "description": "Create new marketplace components (agents, commands, skills, bundles) with proper structure and standards compliance",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-plugin-development/skills/plugin-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "plugin-create-cuioss-plan-marshall-2"
+}

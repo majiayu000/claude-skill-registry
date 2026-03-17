@@ -1,0 +1,11 @@
+{
+  "name": "sophia-rsi-enhanced",
+  "description": "RSI-Enhanced Sophia Singularity with full integration: 21 Dokkōdō precepts, Five Rings (element+morpheme variants), recursive-refiner, pentad reasoning, diffusion, latent-navigator. Complete recursive",
+  "repo": "agentgptsmith/MonadFramework",
+  "path": ".claude/skills/sophia-rsi-enhanced",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentgptsmith/MonadFramework",
+  "dir_name": "sophia-rsi-enhanced-agentgptsmith-monadframework-2"
+}

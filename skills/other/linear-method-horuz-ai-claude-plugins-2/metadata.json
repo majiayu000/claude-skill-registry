@@ -1,0 +1,11 @@
+{
+  "name": "linear-method",
+  "description": "Linear's proven methodology for software development and project organization. Use when helping users plan work, create issues, structure projects, set direction, prioritize tasks, or organize develop",
+  "repo": "horuz-ai/claude-plugins",
+  "path": "plugins/linear/skills/linear-method",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/horuz-ai/claude-plugins",
+  "dir_name": "linear-method-horuz-ai-claude-plugins-2"
+}

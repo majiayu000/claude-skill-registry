@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-sandbox-rm",
+  "description": "Remove a file from a sandbox. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-sandbox-rm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-sandbox-rm-agentuity-sdk-explorer-2"
+}

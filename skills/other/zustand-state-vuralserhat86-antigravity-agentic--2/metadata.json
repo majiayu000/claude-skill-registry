@@ -1,0 +1,11 @@
+{
+  "name": "zustand_state",
+  "description": "Production-tested setup for Zustand state management in React. Includes patterns for persistence, devtools, and TypeScript patterns. Prevents hydration mismatches and render loops.",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/zustand_state",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "zustand-state-vuralserhat86-antigravity-agentic--2"
+}

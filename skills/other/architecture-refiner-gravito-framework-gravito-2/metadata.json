@@ -1,0 +1,11 @@
+{
+  "name": "architecture-refiner",
+  "description": "Expert in Gravito architecture and clean code. Trigger this for refactoring, design pattern implementation, or architectural audits.",
+  "repo": "gravito-framework/gravito",
+  "path": "packages/scaffold/templates/skills/architecture-refiner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gravito-framework/gravito",
+  "dir_name": "architecture-refiner-gravito-framework-gravito-2"
+}

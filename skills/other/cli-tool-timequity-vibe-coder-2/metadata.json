@@ -1,0 +1,11 @@
+{
+  "name": "cli-tool",
+  "description": "Build command-line tools with argument parsing, subcommands, and nice UX.\nUse when: creating CLI, terminal app, command-line utility.\nTriggers: \"cli\", \"command line\", \"terminal\", \"clap\", \"typer\", \"com",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/cli-tool",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "cli-tool-timequity-vibe-coder-2"
+}

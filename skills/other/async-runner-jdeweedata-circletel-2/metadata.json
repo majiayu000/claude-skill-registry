@@ -1,0 +1,11 @@
+{
+  "name": "async-runner",
+  "description": "Run background agents and bash commands asynchronously for CircleTel development. Use when running dev servers, parallel tests, long builds, or multi-agent research tasks without blocking the main wor",
+  "repo": "jdeweedata/circletel",
+  "path": ".claude/skills/async-runner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jdeweedata/circletel",
+  "dir_name": "async-runner-jdeweedata-circletel-2"
+}

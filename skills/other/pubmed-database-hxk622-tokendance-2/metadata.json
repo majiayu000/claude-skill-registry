@@ -1,0 +1,11 @@
+{
+  "name": "pubmed-database",
+  "description": "Direct REST API access to PubMed. Advanced Boolean/MeSH queries, E-utilities API, batch processing, citation management. For Python workflows, prefer biopython (Bio.Entrez). Use this for direct HTTP/R",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/database/pubmed-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "pubmed-database-hxk622-tokendance-2"
+}

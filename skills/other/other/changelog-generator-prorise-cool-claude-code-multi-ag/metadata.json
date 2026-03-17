@@ -1,0 +1,9 @@
+{
+  "name": "changelog-generator",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/changelog-generator/SKILL.md",
+  "category": "other",
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "changelog-generator-prorise-cool-claude-code-multi-ag",
+  "downloaded_at": "2026-02-22T05:35:37.209206Z"
+}

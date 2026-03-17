@@ -1,0 +1,11 @@
+{
+  "name": "ai-content",
+  "description": "生成 AI 相关技术内容，帮助编写 AI 工具使用指南、模型对比、应用案例等内容。使用时涉及 AI 工具、模型、应用等主题时。",
+  "repo": "rockyflux/xf-blog",
+  "path": ".claude/skills/ai-content",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rockyflux/xf-blog",
+  "dir_name": "ai-content-rockyflux-xf-blog-2"
+}

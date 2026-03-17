@@ -1,0 +1,11 @@
+{
+  "name": "ai-feature-template",
+  "description": "Create new AI-powered features using xAI Grok. Use when user mentions \"new AI feature\", \"add Grok\", \"create prompt\", \"AI analysis\", or \"generate with AI\".",
+  "repo": "AppleLamps/xpic2",
+  "path": ".claude/skills/ai-feature-template",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AppleLamps/xpic2",
+  "dir_name": "ai-feature-template-applelamps-xpic2-2"
+}

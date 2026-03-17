@@ -1,0 +1,11 @@
+{
+  "name": "css-generation",
+  "description": "Generate CSS, Tailwind, and styled-components code from design style selections",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/frontend-design-system/skills/css-generation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "css-generation-lobbi-docs-claude-2"
+}

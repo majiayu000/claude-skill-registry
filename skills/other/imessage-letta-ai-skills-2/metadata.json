@@ -1,0 +1,11 @@
+{
+  "name": "imessage",
+  "description": "Send and read iMessages/SMS from macOS. Use for texting contacts, scheduling services, or automating message-based workflows. Triggers on queries about texting, messaging, SMS, iMessage, or contacting",
+  "repo": "letta-ai/skills",
+  "path": "tools/imessage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/letta-ai/skills",
+  "dir_name": "imessage-letta-ai-skills-2"
+}

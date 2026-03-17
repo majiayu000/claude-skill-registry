@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-platform",
+  "description": "This skill should be used when the user asks about \"R2\", \"D1\", \"KV\", \"Durable Objects\", \"Queues\", \"Vectorize\", \"Hyperdrive\", \"Workers Analytics\", \"Email Routing\", \"Browser Rendering\", or discusses Clo",
+  "repo": "SteveLeve/claude-marketplace",
+  "path": "plugins/cloudflare-expert/skills/cloudflare-platform",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SteveLeve/claude-marketplace",
+  "dir_name": "cloudflare-platform-steveleve-claude-marketplace-2"
+}

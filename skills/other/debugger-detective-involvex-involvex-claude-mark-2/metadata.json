@@ -1,0 +1,11 @@
+{
+  "name": "debugger-detective",
+  "description": "⚡ PRIMARY TOOL for: 'why is X broken', 'find bug source', 'root cause analysis', 'trace error', 'debug issue', 'find where X fails'. Uses claudemem v0.3.0 AST with context command for call chain analy",
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/code-analysis/skills/debugger-detective",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "dir_name": "debugger-detective-involvex-involvex-claude-mark-2"
+}

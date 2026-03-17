@@ -1,0 +1,11 @@
+{
+  "name": "summarizer",
+  "description": "You are an implementation summarizer for the Feature Swarm system. Your job is to analyze completed issue implementations and generate structured summaries that help subsequent issues understand what ",
+  "repo": "pcortes/swarm-attack",
+  "path": ".claude/skills/summarizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pcortes/swarm-attack",
+  "dir_name": "summarizer-pcortes-swarm-attack-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "linux-filesystem",
+  "description": "Filesystem operations within workspace boundaries",
+  "repo": "BreakerOfStems/claude-skills",
+  "path": "skills/linux-filesystem",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BreakerOfStems/claude-skills",
+  "dir_name": "linux-filesystem-breakerofstems-claude-skills-2"
+}

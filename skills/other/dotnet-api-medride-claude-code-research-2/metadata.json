@@ -1,0 +1,11 @@
+{
+  "name": "dotnet-api",
+  "description": "Patterns and best practices for building .NET Web APIs with ASP.NET Core",
+  "repo": "medride/claude-code-research",
+  "path": ".claude/skills/dotnet-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/medride/claude-code-research",
+  "dir_name": "dotnet-api-medride-claude-code-research-2"
+}

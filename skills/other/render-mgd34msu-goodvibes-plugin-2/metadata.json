@@ -1,0 +1,11 @@
+{
+  "name": "render",
+  "description": "Deploys web applications on Render with automatic builds, managed databases, and zero-config SSL. Use when deploying web services, static sites, or setting up managed infrastructure.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/deployment/render",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "render-mgd34msu-goodvibes-plugin-2"
+}

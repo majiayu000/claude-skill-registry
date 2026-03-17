@@ -1,0 +1,11 @@
+{
+  "name": "homoiconic-rewriting",
+  "description": "Unified homoiconic graph rewriting - λ-calculus, interaction nets, ACSets, CUDA parallelism",
+  "repo": "plurigrid/asi",
+  "path": "skills/homoiconic-rewriting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "homoiconic-rewriting-plurigrid-asi-2"
+}

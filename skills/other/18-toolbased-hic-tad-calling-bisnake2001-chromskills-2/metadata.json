@@ -1,0 +1,11 @@
+{
+  "name": "18_toolBased.hic-tad-calling",
+  "description": "This skill should be used when users need to identify topologically associating domains (TADs) from Hi-C data in .mcools (or .cool) files or when users want to visualize the TAD in target genome loci.",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "18_toolBased.hic-tad-calling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "18-toolbased-hic-tad-calling-bisnake2001-chromskills-2"
+}

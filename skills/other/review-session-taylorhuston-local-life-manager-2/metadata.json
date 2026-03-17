@@ -1,0 +1,11 @@
+{
+  "name": "review-session",
+  "description": "Retrieval practice session to test retention on a topic. Use when user wants to test their knowledge, practice recall, quiz themselves, or check what they remember. Triggers on \"quiz me\", \"test my kno",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/review-session",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "review-session-taylorhuston-local-life-manager-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "requirements-analyzer",
+  "description": "**REQUIREMENTS ANALYZER** - '이런 거 만들고 싶어', '기능 정리', '뭐부터 만들어야', 'MVP 정의', '요구사항 분석', '기획서 분석' 요청 시 자동 발동. 자연어 아이디어를 기술 명세로 변환. MVP 분리, 우선순위 매트릭스, 의존성 그래프 제공.",
+  "repo": "monicajeon28/GMcruise",
+  "path": ".claude/skills/requirements-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/monicajeon28/GMcruise",
+  "dir_name": "requirements-analyzer-monicajeon28-gmcruise-2"
+}

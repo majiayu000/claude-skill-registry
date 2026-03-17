@@ -1,0 +1,11 @@
+{
+  "name": "pixi-package-manager",
+  "description": "Manage scientific Python dependencies and environments using pixi package manager with unified conda-forge and PyPI support. Use when setting up project environments, managing dependencies, creating r",
+  "repo": "robertpelloni/borg",
+  "path": "agents/rse-agents/plugins/skills/pixi-package-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertpelloni/borg",
+  "dir_name": "pixi-package-manager-robertpelloni-borg-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-git-account-add",
+  "description": "Add a GitHub account to your organization. Requires authentication",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-git-account-add",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-git-account-add-agentuity-sdk-explorer-2"
+}

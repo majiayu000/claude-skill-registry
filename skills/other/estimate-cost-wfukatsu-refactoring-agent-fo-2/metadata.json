@@ -1,0 +1,11 @@
+{
+  "name": "estimate-cost",
+  "description": "コスト見積もりエージェント - クラウドインフラ、ScalarDB、その他ライセンスの見積もりを作成。/estimate-cost [対象パス] で呼び出し。",
+  "repo": "wfukatsu/refactoring-agent-for-claude-code",
+  "path": ".claude/skills/estimate-cost",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wfukatsu/refactoring-agent-for-claude-code",
+  "dir_name": "estimate-cost-wfukatsu-refactoring-agent-fo-2"
+}

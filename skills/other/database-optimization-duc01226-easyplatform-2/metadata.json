@@ -1,0 +1,11 @@
+{
+  "name": "database-optimization",
+  "description": "Use when optimizing database queries, indexes, N+1 problems, slow queries, or analyzing query performance. Triggers on keywords like \"slow query\", \"N+1\", \"index\", \"query optimization\", \"database perfo",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/database-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/duc01226/EasyPlatform",
+  "dir_name": "database-optimization-duc01226-easyplatform-2"
+}

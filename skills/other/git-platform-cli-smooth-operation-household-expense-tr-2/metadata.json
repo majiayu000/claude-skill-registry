@@ -1,0 +1,11 @@
+{
+  "name": "git-platform-cli",
+  "description": "MANDATORY: Use gh (GitHub) or glab (GitLab) CLI for ALL issue/task management. Unified workflow across platforms.",
+  "repo": "Smooth-Operation/household-expense-tracker",
+  "path": ".claude/skills/workflow/git-platform-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Smooth-Operation/household-expense-tracker",
+  "dir_name": "git-platform-cli-smooth-operation-household-expense-tr-2"
+}

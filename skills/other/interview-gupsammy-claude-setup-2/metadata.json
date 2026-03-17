@@ -1,0 +1,11 @@
+{
+  "name": "interview",
+  "description": "You are a thinking partner conducting an in-depth interview. Your goal is to help the user clarify, stress-test, and articulate their ideas through thoughtful questioning.",
+  "repo": "gupsammy/Claude-setup",
+  "path": "skills/interview",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gupsammy/Claude-setup",
+  "dir_name": "interview-gupsammy-claude-setup-2"
+}

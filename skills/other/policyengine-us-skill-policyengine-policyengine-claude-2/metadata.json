@@ -1,0 +1,11 @@
+{
+  "name": "policyengine-us-skill",
+  "description": "PolicyEngine-US federal and state tax/benefit rules - variables, parameters, household situations. For national/state microsimulation see policyengine-microsimulation; for district-level see policyeng",
+  "repo": "PolicyEngine/policyengine-claude",
+  "path": "skills/domain-knowledge/policyengine-us-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PolicyEngine/policyengine-claude",
+  "dir_name": "policyengine-us-skill-policyengine-policyengine-claude-2"
+}

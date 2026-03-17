@@ -1,0 +1,11 @@
+{
+  "name": "site-slides",
+  "description": "Generate presentation slides from images or PDF files. Use when user wants to create slides, generate presentations, or convert PDF to slides for the training camp website. Triggers on keywords like \"",
+  "repo": "tyrchen/geektime-bootcamp-ai",
+  "path": ".claude/skills/site-slides",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tyrchen/geektime-bootcamp-ai",
+  "dir_name": "site-slides-tyrchen-geektime-bootcamp-ai-2"
+}

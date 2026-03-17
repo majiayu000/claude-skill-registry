@@ -1,0 +1,11 @@
+{
+  "name": "context",
+  "description": "Runtime context passed to compiled closures — the world as seen from inside",
+  "repo": "SimHacker/moollm",
+  "path": "skills/context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "context-simhacker-moollm-2"
+}

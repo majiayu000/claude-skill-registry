@@ -1,0 +1,11 @@
+{
+  "name": "interactive-visualization",
+  "description": "Create interactive HTML plots with plotly and bokeh for exploratory data analysis and web-based sharing of omics visualizations. Use when building zoomable, hoverable plots for data exploration or web",
+  "repo": "GPTomics/bioSkills",
+  "path": "data-visualization/interactive-visualization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "interactive-visualization-gptomics-bioskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sql-research",
+  "description": "Guide for researching SQL syntax and behavior for database backends. Use when you need to research how a SQL function, command, or feature works in a specific database before implementing it in dbplyr",
+  "repo": "Activer007/ordinary-claude-skills",
+  "path": "skills_all/sql-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Activer007/ordinary-claude-skills",
+  "dir_name": "sql-research-activer007-ordinary-claude-skil-2"
+}

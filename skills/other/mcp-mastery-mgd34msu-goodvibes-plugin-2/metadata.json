@@ -1,0 +1,11 @@
+{
+  "name": "mcp-mastery",
+  "description": "Complete MCP tool reference and usage patterns. Load this skill to become an expert in all 80+ GoodVibes MCP tools. Use when you need to understand tool capabilities, find the right tool for a task, o",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/common/tooling/mcp-mastery",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "mcp-mastery-mgd34msu-goodvibes-plugin-2"
+}

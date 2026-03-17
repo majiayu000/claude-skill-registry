@@ -1,0 +1,11 @@
+{
+  "name": "software-backend",
+  "description": "Production-grade backend API development with Node.js 24 LTS/25 Current (Express 5.x/Fastify 5.2/NestJS 11.x), Python 3.14+ (FastAPI 0.115+), Go 1.25+, Rust 1.92+ (Axum 0.8+), Prisma 6.x ORM, PostgreS",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/software-backend",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "software-backend-vasilyu1983-ai-agents-public-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "docker-setup",
+  "description": "Setup and create Dockerfiles, Docker Compose, and container build configurations for Todo application",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/docker-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "docker-setup-maneeshanif-todo-spec-driven-2"
+}

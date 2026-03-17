@@ -1,0 +1,11 @@
+{
+  "name": "blog-outline-generator",
+  "description": "Creates structured blog post outlines based on topics and keywords. Use when the user asks about blog structure, content outlines, SEO article planning, or wants to organize ideas before writing.",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/blog-outline-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "blog-outline-generator-wesleysmits-agent-skills-2"
+}

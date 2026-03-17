@@ -1,0 +1,11 @@
+{
+  "name": "aliyun-operations",
+  "description": "阿里云服务器运维操作。包括ECS实例管理、安全组配置、服务部署、日志查看。适用于服务器管理、端口开放、应用部署等任务。",
+  "repo": "j4xie/my-prototype-logistics",
+  "path": ".claude/skills/aliyun-operations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/j4xie/my-prototype-logistics",
+  "dir_name": "aliyun-operations-j4xie-my-prototype-logisti-2"
+}

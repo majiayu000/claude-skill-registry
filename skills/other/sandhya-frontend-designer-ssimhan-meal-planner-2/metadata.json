@@ -1,0 +1,11 @@
+{
+  "name": "sandhya-frontend-designer",
+  "description": "Create aesthetically pleasing, visually distinctive frontend UIs using research-backed prompting strategies from Anthropic's frontend aesthetics cookbook",
+  "repo": "ssimhan/meal-planner",
+  "path": ".claude/skills/sandhya-frontend-designer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ssimhan/meal-planner",
+  "dir_name": "sandhya-frontend-designer-ssimhan-meal-planner-2"
+}

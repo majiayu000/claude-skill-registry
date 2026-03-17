@@ -1,0 +1,17 @@
+{
+  "name": "codebase-cleanup-refactor-clean",
+  "repo": "Claude-Code-Community-Ireland/claude-code-resources",
+  "path": "skills/general/codebase-cleanup-refactor-clean/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Claude-Code-Community-Ireland/claude-code-resources",
+  "dir_name": "codebase-cleanup-refactor-clean",
+  "downloaded_at": "2026-03-01T05:04:00.228788Z",
+  "author": "Claude-Code-Community-Ireland",
+  "source_url": "https://github.com/Claude-Code-Community-Ireland/claude-code-resources/blob/main/skills/general/codebase-cleanup-refactor-clean/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Claude-Code-Community-Ireland/claude-code-resources/blob/main/skills/general/codebase-cleanup-refactor-clean/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

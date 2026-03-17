@@ -1,0 +1,11 @@
+{
+  "name": "document-processor",
+  "description": "Processa documentos empresariais (PDF, XLSX, DOCX) para extracao de requisitos,\nvalidacao de dados e criacao de documentos profissionais.\nUse quando: extrair texto de PDF, processar planilhas Excel, c",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/document-processor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "document-processor-arbgjr-satra-2"
+}

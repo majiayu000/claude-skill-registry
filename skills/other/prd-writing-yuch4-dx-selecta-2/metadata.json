@@ -1,0 +1,11 @@
+{
+  "name": "prd-writing",
+  "description": "PRD（プロダクト要求定義書）を作成・更新する。「要件定義して」「PRDを書いて」「要件書を作りたい」 「仕様をまとめて」「機能要件を整理」「ユーザーストーリーを書いて」「KPIを定義」などの依頼時に発火。 docs/ideas/initial-requirements.md を元に、ビジョン・ペルソナ・KPI・機能要件・非機能要件を具体化。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/prd-writing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "prd-writing-yuch4-dx-selecta-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "aico-frontend-init",
+  "description": "Initialize frontend environment by creating design system and constraints documents from templates.\n\nUse this skill when:\n- Running /frontend.init command\n- User asks to \"initialize frontend\", \"setup ",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-frontend-init",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-frontend-init-yellinzero-aico-2"
+}

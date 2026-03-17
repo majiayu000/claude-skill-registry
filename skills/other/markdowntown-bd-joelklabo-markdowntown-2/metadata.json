@@ -1,0 +1,11 @@
+{
+  "name": "markdowntown-bd",
+  "description": "Beads (bd) issue workflow and repo operations for markdowntown. Use when creating bd tasks, updating status, adding dependencies, running required tests, committing, and pushing to main.",
+  "repo": "joelklabo/markdowntown",
+  "path": "codex/skills/markdowntown-bd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown",
+  "dir_name": "markdowntown-bd-joelklabo-markdowntown-2"
+}

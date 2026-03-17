@@ -1,0 +1,11 @@
+{
+  "name": "similarity-sensor",
+  "description": "Use when working with sensor similarity calculations - comparing temperature/accelerometer/humidity sensor MPNs, understanding sensor families, equivalent parts, or sensor-specific similarity logic.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/similarity-sensor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "similarity-sensor-cantara-lib-electronic-compo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "middleware-patterns",
+  "description": "Next.js middleware runs before every request. StepLeague uses it for auth protection and redirects.",
+  "repo": "vassovass/scl-v3",
+  "path": ".claude/skills/middleware-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vassovass/scl-v3",
+  "dir_name": "middleware-patterns-vassovass-scl-v3-2"
+}

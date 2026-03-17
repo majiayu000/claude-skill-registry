@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-dev",
+  "description": "Build and run the development server",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-dev",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-dev-agentuity-sdk-explorer-2"
+}

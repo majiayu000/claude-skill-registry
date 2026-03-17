@@ -1,0 +1,11 @@
+{
+  "name": "defillama-api",
+  "description": "DefiLlama API integration for DeFi analytics - TVL, prices, yields, volumes, fees, bridges, and DAT data. Use for blockchain/DeFi research, protocol analysis, and market data queries.",
+  "repo": "plurigrid/asi",
+  "path": "skills/defillama-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "defillama-api-plurigrid-asi-2"
+}

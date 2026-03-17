@@ -1,0 +1,11 @@
+{
+  "name": "data-import",
+  "description": "Load and parse mass spectrometry data formats including mzML, mzXML, and quantification tool outputs like MaxQuant proteinGroups.txt. Handles common preprocessing steps like contaminant filtering and ",
+  "repo": "GPTomics/bioSkills",
+  "path": "proteomics/data-import",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "data-import-gptomics-bioskills-2"
+}

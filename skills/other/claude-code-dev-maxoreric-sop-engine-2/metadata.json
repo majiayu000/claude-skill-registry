@@ -1,0 +1,11 @@
+{
+  "name": "claude-code-dev",
+  "description": "Claude Code Plugin 开发专家。当用户要创建 Plugin、Skill、Subagent、Slash command、Hook 时触发。也用于解答 Claude Code 开发相关问题。触发词：创建 plugin、写 skill、写 agent、创建 hook、写 command、插件开发。",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/claude-code-dev",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "claude-code-dev-maxoreric-sop-engine-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "moai-artifacts-builder",
+  "description": "Enterprise artifact management with governance, lifecycle, SBOM, and supply chain security for November 2025 standards",
+  "repo": "dolsoon/my-awesome-project",
+  "path": ".claude/skills/moai-artifacts-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dolsoon/my-awesome-project",
+  "dir_name": "moai-artifacts-builder-dolsoon-my-awesome-project-2"
+}

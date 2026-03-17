@@ -1,0 +1,11 @@
+{
+  "name": "mcp-setup",
+  "description": "Use when setting up MCP servers for the first time or verifying MCP configuration. Ensures token-efficient and context-graph MCP servers are properly installed and configured with API keys.",
+  "repo": "ingpoc/SKILLS",
+  "path": "mcp-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ingpoc/SKILLS",
+  "dir_name": "mcp-setup-ingpoc-skills-2"
+}

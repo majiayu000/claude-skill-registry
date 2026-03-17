@@ -1,0 +1,11 @@
+{
+  "name": "content-generate",
+  "description": "This skill should be used when the user asks to generate content such as titles, slogans, dialogues, or scripts. It provides content generation capabilities for various platforms (WeChat, Xiaohongshu,",
+  "repo": "sunqb/ccsdk",
+  "path": ".claude/skills/content-generate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunqb/ccsdk",
+  "dir_name": "content-generate-sunqb-ccsdk-2"
+}

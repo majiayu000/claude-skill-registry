@@ -1,0 +1,11 @@
+{
+  "name": "project-secure-storage",
+  "description": "Guide for storing secrets securely using app_secure_storage package with platform-native storage (project)",
+  "repo": "gsmlg-app/flutter-app-template",
+  "path": ".claude/skills/project-secure-storage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gsmlg-app/flutter-app-template",
+  "dir_name": "project-secure-storage-gsmlg-app-flutter-app-template-2"
+}

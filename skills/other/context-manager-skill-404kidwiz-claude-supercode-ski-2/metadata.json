@@ -1,0 +1,11 @@
+{
+  "name": "context-manager-skill",
+  "description": "Expert in managing the \"Memory\" of AI systems. Specializes in Vector Databases (RAG), Short/Long-term memory architectures, and Context Window optimization. Use when designing AI memory systems, optim",
+  "repo": "404kidwiz/claude-supercode-skills",
+  "path": "context-manager-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/404kidwiz/claude-supercode-skills",
+  "dir_name": "context-manager-skill-404kidwiz-claude-supercode-ski-2"
+}

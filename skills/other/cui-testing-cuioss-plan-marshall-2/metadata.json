@@ -1,0 +1,11 @@
+{
+  "name": "cui-testing",
+  "description": "CUI test library standards for test data generation, value object contracts, and JUL log testing",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-java-cui/skills/cui-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "cui-testing-cuioss-plan-marshall-2"
+}

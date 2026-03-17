@@ -1,0 +1,11 @@
+{
+  "name": "growth-analytics",
+  "description": "Growth Analyst Agent. 성장 지표 분석, 코호트 분석, 퍼널 분석을 담당합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/growth-analytics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "growth-analytics-shaul1991-shaul-agents-plugin-2"
+}

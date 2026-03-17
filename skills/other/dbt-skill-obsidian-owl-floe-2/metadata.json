@@ -1,0 +1,11 @@
+{
+  "name": "dbt-skill",
+  "description": "ALWAYS USE when working with dbt models, SQL transformations, tests, snapshots, or macros. Use IMMEDIATELY when editing dbt_project.yml, profiles.yml, or creating SQL models. MUST be loaded before any",
+  "repo": "Obsidian-Owl/floe",
+  "path": ".claude/skills/dbt-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Obsidian-Owl/floe",
+  "dir_name": "dbt-skill-obsidian-owl-floe-2"
+}

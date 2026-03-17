@@ -1,0 +1,11 @@
+{
+  "name": "coverage",
+  "description": "Coverage policy - 100% requirement and exclusion rules",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/coverage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "coverage-mgreenly-ikigai-2"
+}

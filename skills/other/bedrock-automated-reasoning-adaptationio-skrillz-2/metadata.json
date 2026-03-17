@@ -1,0 +1,11 @@
+{
+  "name": "bedrock-automated-reasoning",
+  "description": "Amazon Bedrock Automated Reasoning for mathematical verification of AI responses against formal policy rules with up to 99% accuracy. Use when validating healthcare protocols, financial compliance, le",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/bedrock-automated-reasoning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "bedrock-automated-reasoning-adaptationio-skrillz-2"
+}

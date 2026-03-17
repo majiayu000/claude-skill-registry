@@ -1,0 +1,11 @@
+{
+  "name": "sdd-workflow",
+  "description": "Manage SDD state, handoffs, and versioning for web-playground.\nUse when: tracking progress, handing off between sessions/agents, propagating changes.\nTriggers: \"sdd workflow\", \"sdd status\", \"propagate",
+  "repo": "h2b-dev-studio/web-playground",
+  "path": ".claude/skills/sdd-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/h2b-dev-studio/web-playground",
+  "dir_name": "sdd-workflow-h2b-dev-studio-web-playground-2"
+}

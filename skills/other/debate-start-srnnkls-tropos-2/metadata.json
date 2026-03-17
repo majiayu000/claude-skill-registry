@@ -1,0 +1,11 @@
+{
+  "name": "debate-start",
+  "description": "Start structured red vs. blue team debates via subagents. Use when exploring a topic from multiple adversarial perspectives.",
+  "repo": "srnnkls/tropos",
+  "path": "skills/debate-start",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/srnnkls/tropos",
+  "dir_name": "debate-start-srnnkls-tropos-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "setup-mongodb",
+  "description": "Configure MongoDB connection and test infrastructure. Use when adding MongoDB support to the project. Triggers on \"setup mongodb\", \"add mongodb\", \"configure database\", \"mongodb connection\".",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/setup-mongodb",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "setup-mongodb-madooei-backend-template-2"
+}

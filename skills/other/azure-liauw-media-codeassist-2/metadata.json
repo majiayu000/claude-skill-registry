@@ -1,0 +1,11 @@
+{
+  "name": "azure",
+  "description": "Microsoft Azure architecture patterns and best practices. Use when designing, deploying, or reviewing Azure infrastructure including AKS, App Service, Functions, CosmosDB, and Entra ID.",
+  "repo": "liauw-media/CodeAssist",
+  "path": "skills/cloud-providers/azure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/liauw-media/CodeAssist",
+  "dir_name": "azure-liauw-media-codeassist-2"
+}

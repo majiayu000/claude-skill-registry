@@ -1,0 +1,11 @@
+{
+  "name": "doc-tasks",
+  "description": "Create Task Breakdown (TASKS) - Layer 11 artifact decomposing SPEC into AI-structured TODO tasks",
+  "repo": "vladm3105/aidoc-flow-framework",
+  "path": ".claude/skills/doc-tasks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vladm3105/aidoc-flow-framework",
+  "dir_name": "doc-tasks-vladm3105-aidoc-flow-framework-2"
+}

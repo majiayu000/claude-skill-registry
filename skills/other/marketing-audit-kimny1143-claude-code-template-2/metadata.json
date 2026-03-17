@@ -1,0 +1,11 @@
+{
+  "name": "marketing-audit",
+  "description": "マーケティング面の総合監査・分析スキル。全マーケティング関連スキルを統合的に活用。 使用タイミング: (1) マーケティング全体の監査 (2) ローンチ前の総点検 (3) 成長戦略の検討 (4) 競合分析 (5) 包括的な改善計画の策定。 トリガー例: 「マーケティング面を全面的に調査検討して」「マーケティング監査」 「ローンチ前チェック」「成長戦略を考えて」「マーケティング改善計画」",
+  "repo": "kimny1143/claude-code-template",
+  "path": ".claude/skills/marketing-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kimny1143/claude-code-template",
+  "dir_name": "marketing-audit-kimny1143-claude-code-template-2"
+}

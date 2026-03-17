@@ -1,0 +1,11 @@
+{
+  "name": "cpu-usage-monitor",
+  "description": "This skill enables Claude to monitor and analyze CPU usage patterns within applications. It helps identify CPU hotspots, analyze algorithmic complexity, and detect blocking operations. Use this skill ",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/performance/cpu-usage-monitor/skills/cpu-usage-monitor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "cpu-usage-monitor-intent-solutions-io-plugins-nixtla-2"
+}

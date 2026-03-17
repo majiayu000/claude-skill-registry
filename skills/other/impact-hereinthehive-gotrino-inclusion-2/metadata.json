@@ -1,0 +1,11 @@
+{
+  "name": "impact",
+  "description": "Analyze system-wide impact of changes before making them. Use before modifying shared utilities, changing APIs, or refactoring core functionality.",
+  "repo": "hereinthehive/gotrino-inclusion",
+  "path": "skills/impact",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hereinthehive/gotrino-inclusion",
+  "dir_name": "impact-hereinthehive-gotrino-inclusion-2"
+}

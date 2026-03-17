@@ -1,0 +1,11 @@
+{
+  "name": "video-marketing",
+  "description": "Эксперт по видео-маркетингу. Используй для YouTube стратегий, видео-контента, Reels/TikTok и video SEO.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/video-marketing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "video-marketing-dengineproblem-agents-monorepo-2"
+}

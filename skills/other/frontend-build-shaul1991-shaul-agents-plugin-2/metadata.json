@@ -1,0 +1,11 @@
+{
+  "name": "frontend-build",
+  "description": "빌드/배포 에이전트. 빌드 설정과 배포 파이프라인을 관리합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/frontend-build",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "frontend-build-shaul1991-shaul-agents-plugin-2"
+}

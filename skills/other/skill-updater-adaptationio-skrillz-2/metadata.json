@@ -1,0 +1,11 @@
+{
+  "name": "skill-updater",
+  "description": "Apply improvements to Claude Code skills systematically. Workflow for planning updates, implementing changes, validating improvements, and documenting changes. Use when applying review recommendations",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/skill-updater",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "skill-updater-adaptationio-skrillz-2"
+}

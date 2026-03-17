@@ -1,0 +1,11 @@
+{
+  "name": "colormaps-styling",
+  "description": "Master color management and visual styling with Colorcet. Use this skill when selecting appropriate colormaps, creating accessible and colorblind-friendly visualizations, applying consistent themes, o",
+  "repo": "robertpelloni/borg",
+  "path": "agents/rse-agents/plugins/holoviz-visualization/skills/colormaps-styling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertpelloni/borg",
+  "dir_name": "colormaps-styling-robertpelloni-borg-2"
+}

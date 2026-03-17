@@ -1,0 +1,11 @@
+{
+  "name": "ai-data-analyst",
+  "description": "Perform comprehensive data analysis, statistical modeling, and data visualization by writing and executing self-contained Python scripts. Use when you need to analyze datasets, perform statistical tes",
+  "repo": "GrupoUS/neondash",
+  "path": ".claude/skills/ai-data-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GrupoUS/neondash",
+  "dir_name": "ai-data-analyst-grupous-neondash-2"
+}

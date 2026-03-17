@@ -1,0 +1,11 @@
+{
+  "name": "docs-generate-site",
+  "description": "Generate Level 3 (documentation sites) from design docs. Use when creating feature-rich, interactive documentation for RSPress/Docusaurus sites.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/docs-generate-site",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "docs-generate-site-spencerbeggs-claude-design-coordi-2"
+}

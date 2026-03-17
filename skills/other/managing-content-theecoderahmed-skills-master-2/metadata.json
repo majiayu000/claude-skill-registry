@@ -1,0 +1,11 @@
+{
+  "name": "managing-content",
+  "description": "Integrates Headless CMS (Sanity, Strapi, Contentful) to manage dynamic content. Generates schemas, connects APIs, and builds type-safe frontend fetchers.",
+  "repo": "TheeCoderAhmed/Skills-Master",
+  "path": ".agent/skills/managing-content",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TheeCoderAhmed/Skills-Master",
+  "dir_name": "managing-content-theecoderahmed-skills-master-2"
+}

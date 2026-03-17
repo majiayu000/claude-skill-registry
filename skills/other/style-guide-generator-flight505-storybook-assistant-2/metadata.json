@@ -1,0 +1,11 @@
+{
+  "name": "style-guide-generator",
+  "description": "Use this skill when the user asks to \"generate a style guide\", \"create design system documentation\", \"document design tokens\", \"create a design system\", \"document colors and typography\", mentions \"des",
+  "repo": "flight505/storybook-assistant",
+  "path": "skills/style-guide-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/flight505/storybook-assistant",
+  "dir_name": "style-guide-generator-flight505-storybook-assistant-2"
+}

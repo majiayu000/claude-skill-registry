@@ -1,0 +1,11 @@
+{
+  "name": "task-dispatch",
+  "description": "Subagent-driven task execution with TDD workflow. Dispatches tester subagent (writes failing tests) then implementer subagent (makes tests pass), with batch review.",
+  "repo": "srnnkls/tropos",
+  "path": "skills/task-dispatch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/srnnkls/tropos",
+  "dir_name": "task-dispatch-srnnkls-tropos-2"
+}

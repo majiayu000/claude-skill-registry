@@ -1,0 +1,11 @@
+{
+  "name": "Fabric",
+  "description": "Native Fabric pattern execution for Claude Code. USE WHEN processing content with Fabric patterns (extract_wisdom, summarize, analyze_claims, threat modeling, etc.). Patterns run natively in Claude's ",
+  "repo": "blackpwnguin/Personal-AI",
+  "path": ".claude/skills/Fabric",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/blackpwnguin/Personal-AI",
+  "dir_name": "fabric-blackpwnguin-personal-ai-2"
+}

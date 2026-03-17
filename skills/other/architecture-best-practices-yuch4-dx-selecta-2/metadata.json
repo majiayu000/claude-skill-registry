@@ -1,0 +1,11 @@
+{
+  "name": "architecture-best-practices",
+  "description": "プロジェクトで使用しているアーキテクチャの実装ベストプラクティスを調査し、 docs/best-practices.md にドキュメント化する。技術スタックを自動検出し、 スタック別のベストプラクティス（コード例・アンチパターン）を出力する。 「ベストプラクティスをまとめて」「実装パターンを調べて」「コーディングガイドを作成」 「アーキテクチャの使い方を整理」などの依頼時に発火。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/architecture-best-practices",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "architecture-best-practices-yuch4-dx-selecta-2"
+}

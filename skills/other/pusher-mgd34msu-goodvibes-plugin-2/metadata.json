@@ -1,0 +1,11 @@
+{
+  "name": "pusher",
+  "description": "Implements real-time features with Pusher Channels for WebSocket-based pub/sub messaging. Use when adding live updates, notifications, chat, presence indicators, or collaborative features.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/skills/pusher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "pusher-mgd34msu-goodvibes-plugin-2"
+}

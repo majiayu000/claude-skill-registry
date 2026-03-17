@@ -1,0 +1,11 @@
+{
+  "name": "test-repository",
+  "description": "Guide for testing repository layer. Use when asked to test repositories or data access layer. Directs to implementation-specific testing skills.",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/test-repository",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "test-repository-madooei-backend-template-2"
+}

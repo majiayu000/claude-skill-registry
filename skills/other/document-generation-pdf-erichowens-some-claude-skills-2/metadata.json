@@ -1,0 +1,11 @@
+{
+  "name": "document-generation-pdf",
+  "description": "Generate, fill, and assemble PDF documents at scale. Handles legal forms, contracts, invoices, certificates. Supports form filling (pdf-lib), template rendering (Puppeteer, LaTeX), digital signatures ",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/document-generation-pdf",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "document-generation-pdf-erichowens-some-claude-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "config-backup",
+  "description": "Backup network device configurations with group/role/site filtering. Use when user asks to \"backup config\", \"save configuration\", \"export configs\", or needs to persist device configurations.",
+  "repo": "yhvh-chen/Olav",
+  "path": ".olav/skills/config-backup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yhvh-chen/Olav",
+  "dir_name": "config-backup-yhvh-chen-olav-2"
+}

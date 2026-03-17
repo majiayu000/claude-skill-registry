@@ -1,0 +1,11 @@
+{
+  "name": "apply-migration",
+  "description": "Apply SQL migration files to JusticeHub Supabase database with verification and error handling.",
+  "repo": "Acurioustractor/justicehub-platform",
+  "path": ".claude/skills/apply-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Acurioustractor/justicehub-platform",
+  "dir_name": "apply-migration-acurioustractor-justicehub-platform-2"
+}

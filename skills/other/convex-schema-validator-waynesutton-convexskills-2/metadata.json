@@ -1,0 +1,11 @@
+{
+  "name": "convex-schema-validator",
+  "description": "Defining and validating database schemas with proper typing, index configuration, optional fields, unions, and migration strategies for schema changes",
+  "repo": "waynesutton/convexskills",
+  "path": "skills/convex-schema-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/waynesutton/convexskills",
+  "dir_name": "convex-schema-validator-waynesutton-convexskills-2"
+}

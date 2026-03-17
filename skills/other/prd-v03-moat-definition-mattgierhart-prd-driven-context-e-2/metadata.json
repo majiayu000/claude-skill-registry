@@ -1,0 +1,11 @@
+{
+  "name": "prd-v03-moat-definition",
+  "description": "Assess competitor defensibility and define our own moat strategy during PRD v0.3 Commercial Model. Triggers on requests to analyze competitor moats, define our defensibility, assess switching costs, i",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v03-moat-definition",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v03-moat-definition-mattgierhart-prd-driven-context-e-2"
+}

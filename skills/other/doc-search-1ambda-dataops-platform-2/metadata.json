@@ -1,0 +1,11 @@
+{
+  "name": "doc-search",
+  "description": "Token-efficient documentation search using Serena Document Index. 90%+ token savings vs reading full files. Use BEFORE reading README.md or docs/ files. Triggers on architecture questions, pattern loo",
+  "repo": "1ambda/dataops-platform",
+  "path": ".claude/skills/doc-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/1ambda/dataops-platform",
+  "dir_name": "doc-search-1ambda-dataops-platform-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "tasks-acset",
+  "description": "Google Tasks management via TasksACSet. Transforms task operations into GF(3)-typed Interactions, routes to triadic queues, detects saturation for task-zero-as-condensed-state.",
+  "repo": "plurigrid/asi",
+  "path": "skills/tasks-acset",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "tasks-acset-plurigrid-asi-2"
+}

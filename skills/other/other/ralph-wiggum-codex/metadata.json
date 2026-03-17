@@ -1,0 +1,17 @@
+{
+  "name": "ralph-wiggum-codex",
+  "repo": "MattMagg/ralph-wiggum-codex",
+  "path": "skills/ralph-wiggum-codex/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MattMagg/ralph-wiggum-codex",
+  "dir_name": "ralph-wiggum-codex",
+  "downloaded_at": "2026-03-01T05:41:41.837487Z",
+  "author": "MattMagg",
+  "source_url": "https://github.com/MattMagg/ralph-wiggum-codex/blob/main/skills/ralph-wiggum-codex/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MattMagg/ralph-wiggum-codex/blob/main/skills/ralph-wiggum-codex/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

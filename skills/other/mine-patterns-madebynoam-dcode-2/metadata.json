@@ -1,0 +1,11 @@
+{
+  "name": "mine-patterns",
+  "description": "Analyze a work session to identify repeatable patterns that could become reusable skills or commands. Use at the end of a productive session to capture workflows worth automating, when noticing repeti",
+  "repo": "madebynoam/dcode",
+  "path": "skills/mine-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madebynoam/dcode",
+  "dir_name": "mine-patterns-madebynoam-dcode-2"
+}

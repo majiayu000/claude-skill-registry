@@ -1,0 +1,17 @@
+{
+  "name": "ln-723-seed-data-generator",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-723-seed-data-generator/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-723-seed-data-generator",
+  "downloaded_at": "2026-03-02T08:46:41.825449Z",
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/ln-723-seed-data-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/ln-723-seed-data-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

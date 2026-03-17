@@ -1,0 +1,11 @@
+{
+  "name": "mongodb-expert",
+  "description": "Expert-level MongoDB database design, aggregation pipelines, indexing, replication, and production operations",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/data/mongodb-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "mongodb-expert-personamanagmentlaye-pcl-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "groq-cost-tuning",
+  "repo": "HelixDevelopment/HelixAgent",
+  "path": "skills/plugins/saas-packs/groq-pack/groq-cost-tuning/SKILL.md",
+  "category": "other",
+  "source": "github.com/HelixDevelopment/HelixAgent",
+  "dir_name": "groq-cost-tuning",
+  "downloaded_at": "2026-02-15T05:12:37.058148Z"
+}

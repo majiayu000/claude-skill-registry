@@ -1,0 +1,11 @@
+{
+  "name": "cicd",
+  "description": "GitHub Actions expert for CI/CD pipelines, workflows, build failures, test failures, lint errors, format checks, gh run, gh pr checks, ESLint, Prettier, TypeScript errors, quality gates, automated fix",
+  "repo": "tidemann/st44-home",
+  "path": ".claude/skills/cicd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tidemann/st44-home",
+  "dir_name": "cicd-tidemann-st44-home-2"
+}

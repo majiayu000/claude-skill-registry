@@ -1,0 +1,11 @@
+{
+  "name": "axiom-app-store-connect-ref",
+  "description": "Reference for App Store Connect crash analysis, TestFlight feedback, metrics dashboards, and data export workflows",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-app-store-connect-ref",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-app-store-connect-ref-charleswiltgen-axiom-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "unsloth-grpo",
+  "description": "Unsloth-grpo enables training of reasoning models using Group Relative Policy Optimization (GRPO). This technique replaces traditional PPO Reward and Value models with group statistics, achieving 8x m",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/unsloth-grpo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "unsloth-grpo-cuba6112-skillfactory-2"
+}

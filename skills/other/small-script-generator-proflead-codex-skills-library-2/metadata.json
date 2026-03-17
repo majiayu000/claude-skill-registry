@@ -1,0 +1,11 @@
+{
+  "name": "small-script-generator",
+  "description": "Generate a small helper script for repetitive tasks. Use when a junior developer needs a quick automation snippet.",
+  "repo": "proflead/codex-skills-library",
+  "path": "skills/foundation/small-script-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proflead/codex-skills-library",
+  "dir_name": "small-script-generator-proflead-codex-skills-library-2"
+}

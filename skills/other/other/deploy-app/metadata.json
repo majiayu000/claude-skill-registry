@@ -1,0 +1,9 @@
+{
+  "name": "deploy-app",
+  "repo": "ionfury/homelab",
+  "path": ".claude/skills/deploy-app/SKILL.md",
+  "category": "other",
+  "source": "github.com/ionfury/homelab",
+  "dir_name": "deploy-app",
+  "downloaded_at": "2026-02-22T07:32:19.601453Z"
+}

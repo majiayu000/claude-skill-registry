@@ -1,0 +1,11 @@
+{
+  "name": "youtube-seo-optimizer",
+  "description": "Optimize YouTube videos for search and discovery. Generates SEO-optimized titles, descriptions, tags, hashtags, and chapters. Includes keyword research and competitor analysis. Use when publishing vid",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/video-creator-workflow/.claude/skills/youtube-seo-optimizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "youtube-seo-optimizer-nicepkg-ai-workflow-2"
+}

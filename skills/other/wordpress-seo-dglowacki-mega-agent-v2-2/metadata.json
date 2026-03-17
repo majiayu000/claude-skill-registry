@@ -1,0 +1,11 @@
+{
+  "name": "wordpress-seo",
+  "description": "WordPress content optimization including SEO metadata generation, readability scoring, keyword optimization, and content rewriting patterns. Use when optimizing WordPress posts for search engines.",
+  "repo": "dglowacki/mega-agent-v2",
+  "path": ".claude/skills/wordpress-seo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dglowacki/mega-agent-v2",
+  "dir_name": "wordpress-seo-dglowacki-mega-agent-v2-2"
+}

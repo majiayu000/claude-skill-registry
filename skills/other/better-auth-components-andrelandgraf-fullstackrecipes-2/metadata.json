@@ -1,0 +1,11 @@
+{
+  "name": "better-auth-components",
+  "description": "Add UI components and pages for authentication flows including sign in, sign up, forgot password, reset password, and email verification.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/better-auth-components",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "better-auth-components-andrelandgraf-fullstackrecipes-2"
+}

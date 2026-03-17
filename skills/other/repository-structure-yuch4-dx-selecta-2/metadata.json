@@ -1,0 +1,11 @@
+{
+  "name": "repository-structure",
+  "description": "PRD・機能設計・アーキテクチャからリポジトリ構造定義書（docs/repository-structure.md）を作成する。 「ディレクトリ構成を決めて」「フォルダ構造を設計」「ファイル配置ルール」「プロジェクト構造」 「どこに何を置くか決めて」などの依頼時に発火。 ディレクトリ責務・命名規則・依存ルール・テスト配置・スケーリング方針を出力。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/repository-structure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "repository-structure-yuch4-dx-selecta-2"
+}

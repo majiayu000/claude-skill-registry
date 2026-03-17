@@ -1,0 +1,11 @@
+{
+  "name": "mutation-test-runner",
+  "description": "This skill enables Claude to validate test suite quality by performing mutation testing. It is triggered when the user asks to run mutation tests, analyze test effectiveness, or improve test coverage.",
+  "repo": "apassuello/multimodal_insight_engine",
+  "path": ".claude/skills/mutation-test-runner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/apassuello/multimodal_insight_engine",
+  "dir_name": "mutation-test-runner-apassuello-multimodal-insight-e-2"
+}

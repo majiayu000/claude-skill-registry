@@ -1,0 +1,11 @@
+{
+  "name": "lifecycle",
+  "description": "Guidance for managing R package lifecycle according to tidyverse principles using the lifecycle package. Use when: (1) Setting up lifecycle infrastructure in a package, (2) Deprecating functions or ar",
+  "repo": "posit-dev/skills",
+  "path": "r-lib/lifecycle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/posit-dev/skills",
+  "dir_name": "lifecycle-posit-dev-skills-2"
+}

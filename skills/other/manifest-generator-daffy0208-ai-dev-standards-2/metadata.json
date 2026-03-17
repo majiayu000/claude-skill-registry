@@ -1,0 +1,11 @@
+{
+  "name": "manifest-generator",
+  "description": "Auto-generate capability manifests from skill/MCP descriptions using Codex-powered semantic analysis and structured extraction.",
+  "repo": "daffy0208/ai-dev-standards",
+  "path": "skills/manifest-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/daffy0208/ai-dev-standards",
+  "dir_name": "manifest-generator-daffy0208-ai-dev-standards-2"
+}

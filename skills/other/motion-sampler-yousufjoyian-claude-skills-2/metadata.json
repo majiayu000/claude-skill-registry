@@ -1,0 +1,11 @@
+{
+  "name": "motion-sampler",
+  "description": "Extracts frames at regular intervals from dashcam videos to create compact visual summaries of vehicle movement and location changes. This skill should be used when users need motion trajectory analys",
+  "repo": "yousufjoyian/claude-skills",
+  "path": "motion-sampler",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yousufjoyian/claude-skills",
+  "dir_name": "motion-sampler-yousufjoyian-claude-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "aws-strands",
+  "description": "Build AI agents with Strands Agents SDK. Use when developing model-agnostic agents, implementing ReAct patterns, creating multi-agent systems, or building production agents on AWS. Triggers on Strands",
+  "repo": "hoodini/ai-agents-skills",
+  "path": "skills/aws-strands",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hoodini/ai-agents-skills",
+  "dir_name": "aws-strands-hoodini-ai-agents-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "elixir-expert-skill",
+  "description": "Expert in Elixir, Phoenix Framework, and OTP. Specializes in building concurrent, fault-tolerant, and real-time applications using the BEAM. Use when building Elixir applications, working with Phoenix",
+  "repo": "404kidwiz/claude-supercode-skills",
+  "path": "elixir-expert-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/404kidwiz/claude-supercode-skills",
+  "dir_name": "elixir-expert-skill-404kidwiz-claude-supercode-ski-2"
+}

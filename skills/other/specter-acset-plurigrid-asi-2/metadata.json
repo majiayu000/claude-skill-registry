@@ -1,0 +1,11 @@
+{
+  "name": "specter-acset",
+  "description": "Specter-style bidirectional navigation for Julia Collections, S-expressions, and ACSets with inline caching",
+  "repo": "plurigrid/asi",
+  "path": "skills/specter-acset",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "specter-acset-plurigrid-asi-2"
+}

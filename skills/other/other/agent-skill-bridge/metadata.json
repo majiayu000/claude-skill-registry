@@ -1,0 +1,9 @@
+{
+  "name": "agent-skill-bridge",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills/agent-skill-bridge/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "agent-skill-bridge",
+  "downloaded_at": "2026-02-15T07:06:56.381823Z"
+}

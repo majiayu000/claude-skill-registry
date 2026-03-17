@@ -1,0 +1,11 @@
+{
+  "name": "code-priority",
+  "description": "Guide design decisions using the State > Coupling > Complexity > Code priority framework. Use when evaluating tradeoffs, reviewing design choices, deciding between implementations, or when code volume",
+  "repo": "staticWagomU/dotfiles",
+  "path": "config/claude/skills/code-priority",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/staticWagomU/dotfiles",
+  "dir_name": "code-priority-staticwagomu-dotfiles-2"
+}

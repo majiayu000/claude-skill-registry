@@ -1,0 +1,11 @@
+{
+  "name": "identity-auth",
+  "description": "Identity management and authentication systems. Activate when: (1) Configuring Keycloak realms/clients, (2) Writing OPA policies, (3) Managing Vault secrets, (4) Implementing OIDC/OAuth2 flows, or (5)",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/identity-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FlexNetOS/ripple-env",
+  "dir_name": "identity-auth-flexnetos-ripple-env-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "random-walk-fusion",
+  "description": "Navigate skill graphs via deterministic random walks. Fuses derivational chains, algebraic structure, color determinism, and bidirectional flow for skill recombination.",
+  "repo": "plurigrid/asi",
+  "path": "skills/random-walk-fusion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "random-walk-fusion-plurigrid-asi-2"
+}

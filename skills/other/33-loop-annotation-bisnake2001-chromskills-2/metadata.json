@@ -1,0 +1,11 @@
+{
+  "name": "33.loop-annotation",
+  "description": "This skill annotates chromatin loops, including enhancer/promoter assignments, CTCF-peak overlap. It automatically constructs enhancer and promoter sets when missing and outputs standardized loop cate",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "33.loop-annotation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "33-loop-annotation-bisnake2001-chromskills-2"
+}

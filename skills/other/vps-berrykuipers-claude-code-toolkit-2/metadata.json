@@ -1,0 +1,11 @@
+{
+  "name": "vps",
+  "description": "Direct VPS operations via SSH MCP. Manage Docker containers, check logs,\nrun commands, and troubleshoot services on registered VPS servers.\n",
+  "repo": "BerryKuipers/claude-code-toolkit",
+  "path": ".claude/skills/infrastructure/vps",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BerryKuipers/claude-code-toolkit",
+  "dir_name": "vps-berrykuipers-claude-code-toolkit-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "testimonial-quote-generator",
+  "description": "Extracts and formats compelling quotes from customer feedback for marketing use. Use when the user asks about testimonials, customer quotes, review extraction, social proof, or quote cards.",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/testimonial-quote-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "testimonial-quote-generator-wesleysmits-agent-skills-2"
+}

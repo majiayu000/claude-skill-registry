@@ -1,0 +1,11 @@
+{
+  "name": "moai-domain-testing",
+  "description": "Enterprise testing framework with pytest 8.4.x, Vitest 4.x, Playwright 1.48.x, Testing Library 15.x, httpx 0.28.x, k6 load testing, and accessibility testing",
+  "repo": "AJBcoding/claude-skill-eval",
+  "path": "skills/moai-domain-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AJBcoding/claude-skill-eval",
+  "dir_name": "moai-domain-testing-ajbcoding-claude-skill-eval-2"
+}

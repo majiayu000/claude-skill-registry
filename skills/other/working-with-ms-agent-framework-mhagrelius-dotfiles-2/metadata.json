@@ -1,0 +1,11 @@
+{
+  "name": "working-with-ms-agent-framework",
+  "description": "Use when building AI agents with Microsoft Agent Framework (Semantic Kernel + AutoGen unified); when implementing memory or context providers; when threads won't deserialize; when workflow checkpointi",
+  "repo": "mhagrelius/dotfiles",
+  "path": ".claude/skills/working-with-ms-agent-framework",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhagrelius/dotfiles",
+  "dir_name": "working-with-ms-agent-framework-mhagrelius-dotfiles-2"
+}

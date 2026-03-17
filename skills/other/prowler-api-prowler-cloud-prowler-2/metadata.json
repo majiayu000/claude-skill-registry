@@ -1,0 +1,11 @@
+{
+  "name": "prowler-api",
+  "description": "Prowler API patterns: JSON:API, RLS, RBAC, providers, Celery tasks. Trigger: When working in api/ on models/serializers/viewsets/filters/tasks involving tenant isolation (RLS), RBAC, JSON:API, or prov",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/prowler-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/prowler-cloud/prowler",
+  "dir_name": "prowler-api-prowler-cloud-prowler-2"
+}

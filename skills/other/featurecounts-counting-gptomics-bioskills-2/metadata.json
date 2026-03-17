@@ -1,0 +1,11 @@
+{
+  "name": "featurecounts-counting",
+  "description": "Count reads per gene from aligned BAM files using Subread featureCounts. Use when you have BAM files from STAR/HISAT2 and need gene-level counts for DESeq2/edgeR.",
+  "repo": "GPTomics/bioSkills",
+  "path": "rna-quantification/featurecounts-counting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "featurecounts-counting-gptomics-bioskills-2"
+}

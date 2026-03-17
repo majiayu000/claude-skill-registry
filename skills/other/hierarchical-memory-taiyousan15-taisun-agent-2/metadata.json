@@ -1,0 +1,11 @@
+{
+  "name": "hierarchical-memory",
+  "description": "Hierarchical memory architecture combining short-term, long-term, and episodic memory layers. Based on Mem0 research showing 26% accuracy improvement. Use for persistent knowledge, context management,",
+  "repo": "taiyousan15/taisun_agent",
+  "path": ".claude/skills/hierarchical-memory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/taiyousan15/taisun_agent",
+  "dir_name": "hierarchical-memory-taiyousan15-taisun-agent-2"
+}

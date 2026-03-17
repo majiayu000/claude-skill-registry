@@ -1,0 +1,11 @@
+{
+  "name": "use-agents-dispatch",
+  "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies",
+  "repo": "mtthsnc/autonome",
+  "path": "skills/use-agents-dispatch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mtthsnc/autonome",
+  "dir_name": "use-agents-dispatch-mtthsnc-autonome-2"
+}

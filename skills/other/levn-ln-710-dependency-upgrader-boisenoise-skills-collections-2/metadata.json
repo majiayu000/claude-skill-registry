@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-710-dependency-upgrader",
+  "description": "Coordinates dependency upgrades across all detected package managers",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-710-dependency-upgrader",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-710-dependency-upgrader-boisenoise-skills-collections-2"
+}

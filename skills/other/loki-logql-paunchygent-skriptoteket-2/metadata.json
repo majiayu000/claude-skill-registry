@@ -1,0 +1,11 @@
+{
+  "name": "loki-logql",
+  "description": "Query and analyze logs using Loki and LogQL. Provides patterns for correlation ID tracing, error investigation, and service debugging using HuleEdu's structured logging. Integrates with Context7 for l",
+  "repo": "paunchygent/skriptoteket",
+  "path": ".claude/skills/loki-logql",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/paunchygent/skriptoteket",
+  "dir_name": "loki-logql-paunchygent-skriptoteket-2"
+}

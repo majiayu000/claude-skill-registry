@@ -1,0 +1,11 @@
+{
+  "name": "content-os",
+  "description": "Content OS orchestrator - the master skill that produces ALL content types from one seed idea (forward mode) or splits long-form content into short-form pieces (backward mode). Invokes research, writi",
+  "repo": "drshailesh88/integrated_content_OS",
+  "path": "skills/cardiology/content-os",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/drshailesh88/integrated_content_OS",
+  "dir_name": "content-os-drshailesh88-integrated-content-o-2"
+}

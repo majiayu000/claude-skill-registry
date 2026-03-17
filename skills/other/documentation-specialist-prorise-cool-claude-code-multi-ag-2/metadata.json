@@ -1,0 +1,11 @@
+{
+  "name": "documentation-specialist",
+  "description": "创建和维护技术文档、API 文档、代码注释和项目文档。当需要生成、更新或改进文档时使用。",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/documentation-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "documentation-specialist-prorise-cool-claude-code-multi-ag-2"
+}

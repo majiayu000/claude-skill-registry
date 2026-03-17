@@ -1,0 +1,11 @@
+{
+  "name": "codex-review",
+  "description": "Perform code reviews using OpenAI Codex CLI to identify bugs, security vulnerabilities, performance issues, and code quality problems. Use when the user asks to review code, check for issues, security",
+  "repo": "dceoy/gh-actions-for-devops",
+  "path": ".claude/skills/codex-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dceoy/gh-actions-for-devops",
+  "dir_name": "codex-review-dceoy-gh-actions-for-devop-2"
+}

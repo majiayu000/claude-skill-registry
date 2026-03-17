@@ -1,0 +1,11 @@
+{
+  "name": "5.ChIPseq-QC",
+  "description": "Performs ChIP-specific biological validation. It calculates metrics unique to protein-binding assays, such as Cross-correlation (NSC/RSC) and FRiP. Use this when you have filtered the BAM file and cal",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "5.ChIPseq-QC",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "5-chipseq-qc-bisnake2001-chromskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "po-owner",
+  "description": "Product Owner Agent. 제품 정책 결정, 요구사항 승인, 우선순위 관리, 비즈니스 목표 정의를 담당합니다. 정책, 승인, 우선순위, PO, 제품 관련 요청 시 사용됩니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/po-owner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "po-owner-shaul1991-shaul-agents-plugin-2"
+}

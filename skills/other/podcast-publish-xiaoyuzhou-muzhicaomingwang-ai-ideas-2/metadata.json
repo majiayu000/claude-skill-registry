@@ -1,0 +1,11 @@
+{
+  "name": "podcast-publish-xiaoyuzhou",
+  "description": "自动发布每日科技早报播客到小宇宙平台。\n触发场景：用户提到\"发布播客\"、\"小宇宙播客\"、\"自动发布\"、\"播客上传\"、\"RSS发布\"。\n适用于：将生成的播客音频自动发布到RSS.com，并通过RSS订阅同步到小宇宙，同时发送飞书通知。",
+  "repo": "muzhicaomingwang/ai-ideas",
+  "path": ".claude/skills/podcast-publish-xiaoyuzhou",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/muzhicaomingwang/ai-ideas",
+  "dir_name": "podcast-publish-xiaoyuzhou-muzhicaomingwang-ai-ideas-2"
+}

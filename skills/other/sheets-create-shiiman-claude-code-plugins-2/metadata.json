@@ -1,0 +1,11 @@
+{
+  "name": "sheets-create",
+  "description": "Google Sheets スプレッドシートを新規作成する。「スプレッドシート作成」「Sheets 作成」「新しいシート」「スプレッドシートを作って」などで起動。",
+  "repo": "shiiman/claude-code-plugins",
+  "path": "plugins/shiiman-google/skills/sheets-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shiiman/claude-code-plugins",
+  "dir_name": "sheets-create-shiiman-claude-code-plugins-2"
+}

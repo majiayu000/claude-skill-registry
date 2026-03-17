@@ -1,0 +1,11 @@
+{
+  "name": "accounts-payable-workflow",
+  "description": "Эксперт AP workflow. Используй для процессов кредиторской задолженности, invoice processing, three-way matching и payment automation.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/accounts-payable-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "accounts-payable-workflow-dengineproblem-agents-monorepo-2"
+}

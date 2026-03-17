@@ -1,0 +1,19 @@
+{
+  "name": "anime-js",
+  "description": "Anime.js animation patterns for web interfaces including timelines, staggering, and motion design.",
+  "repo": "5dlabs/cto",
+  "path": "templates/skills/animations/anime-js",
+  "github_branch": "main",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/5dlabs/cto",
+  "dir_name": "anime-js-5dlabs-cto-2",
+  "author": "5dlabs",
+  "source_url": "https://github.com/5dlabs/cto/blob/main/templates/skills/animations/anime-js/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/5dlabs/cto/blob/main/templates/skills/animations/anime-js/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

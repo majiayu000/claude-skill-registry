@@ -1,0 +1,11 @@
+{
+  "name": "subproject-register",
+  "description": "サブプロジェクト管理台帳を作成する。プログラム管理、複数プロジェクト管理時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/cross-cutting/subproject-register",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "subproject-register-haru-llc-ai-pm-system-noteboo-2"
+}

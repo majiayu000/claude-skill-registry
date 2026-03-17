@@ -1,0 +1,11 @@
+{
+  "name": "python-pyupgrade-tool",
+  "description": "Use pyupgrade to automatically upgrade Python syntax to newer versions. Activate when: (1) Migrating code from Python 2 to 3, (2) Removing deprecated syntax like 'class Foo(object)', (3) Converting ol",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/python-pyupgrade-tool",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FlexNetOS/ripple-env",
+  "dir_name": "python-pyupgrade-tool-flexnetos-ripple-env-2"
+}

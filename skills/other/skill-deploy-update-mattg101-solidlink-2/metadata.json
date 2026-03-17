@@ -1,0 +1,11 @@
+{
+  "name": "skill-deploy-update",
+  "description": "Use when creating, updating, or syncing Codex skills for this repo, including installing skills into CODEX_HOME and using scripts/sync_skills.ps1 to symlink repo skills; also use when drafting a new S",
+  "repo": "mattg101/SolidLink",
+  "path": "docs/dev/.agent/skills/skill-deploy-update",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattg101/SolidLink",
+  "dir_name": "skill-deploy-update-mattg101-solidlink-2"
+}

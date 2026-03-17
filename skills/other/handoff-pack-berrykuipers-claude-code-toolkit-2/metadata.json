@@ -1,0 +1,11 @@
+{
+  "name": "handoff-pack",
+  "description": "Generates structured Handoff Pack prompts for delegating work to Gemini with clear scope, acceptance criteria, and output format requirements.",
+  "repo": "BerryKuipers/claude-code-toolkit",
+  "path": ".claude/skills/gemini-workflows/handoff-pack",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BerryKuipers/claude-code-toolkit",
+  "dir_name": "handoff-pack-berrykuipers-claude-code-toolkit-2"
+}

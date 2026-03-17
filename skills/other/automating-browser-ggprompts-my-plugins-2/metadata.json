@@ -1,0 +1,11 @@
+{
+  "name": "automating-browser",
+  "description": "Controls Chrome browser: takes screenshots, clicks buttons, fills forms, downloads images, inspects pages, captures network requests, checks console errors, debugs API issues. Use when: 'screenshot', ",
+  "repo": "GGPrompts/my-plugins",
+  "path": "plugins/tools/conductor/skills/automating-browser",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GGPrompts/my-plugins",
+  "dir_name": "automating-browser-ggprompts-my-plugins-2"
+}

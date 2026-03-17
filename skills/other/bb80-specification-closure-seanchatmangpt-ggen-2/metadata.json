@@ -1,0 +1,11 @@
+{
+  "name": "bb80-specification-closure",
+  "description": "Verify 100% specification closure before Big Bang 80/20 single-pass construction.",
+  "repo": "seanchatmangpt/ggen",
+  "path": ".claude/skills/bb80-specification-closure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/seanchatmangpt/ggen",
+  "dir_name": "bb80-specification-closure-seanchatmangpt-ggen-2"
+}

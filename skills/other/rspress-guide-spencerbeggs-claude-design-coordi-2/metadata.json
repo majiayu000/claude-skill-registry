@@ -1,0 +1,11 @@
+{
+  "name": "rspress-guide",
+  "description": "Generate progressive learning guides for RSPress documentation. Use when creating concept docs, how-to guides, or example pages with Twoslash code blocks.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/rspress-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "rspress-guide-spencerbeggs-claude-design-coordi-2"
+}

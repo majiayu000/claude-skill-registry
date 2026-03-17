@@ -1,0 +1,9 @@
+{
+  "name": "cli",
+  "repo": "PrefectHQ/prefect-mcp-server",
+  "path": "skills/cli/SKILL.md",
+  "category": "other",
+  "source": "github.com/PrefectHQ/prefect-mcp-server",
+  "dir_name": "cli-prefecthq-prefect-mcp-server",
+  "downloaded_at": "2026-02-15T05:38:42.545492Z"
+}

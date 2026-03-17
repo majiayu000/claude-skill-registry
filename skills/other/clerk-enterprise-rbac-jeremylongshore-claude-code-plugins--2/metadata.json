@@ -1,0 +1,11 @@
+{
+  "name": "clerk-enterprise-rbac",
+  "description": "Configure enterprise SSO, role-based access control, and organization management.\nUse when implementing SSO integration, configuring role-based permissions,\nor setting up organization-level controls.\n",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/clerk-pack/skills/clerk-enterprise-rbac",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "clerk-enterprise-rbac-jeremylongshore-claude-code-plugins--2"
+}

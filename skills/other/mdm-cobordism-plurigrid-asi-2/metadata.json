@@ -1,0 +1,11 @@
+{
+  "name": "mdm-cobordism",
+  "description": "macOS MDM with auth manifolds as cobordisms for credential derivation",
+  "repo": "plurigrid/asi",
+  "path": "skills/mdm-cobordism",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "mdm-cobordism-plurigrid-asi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "prepare-dataset",
+  "description": "Process and validate datasets for training. Use when setting up data pipelines.",
+  "repo": "mvillmow/ProjectOdyssey",
+  "path": ".claude/skills/tier-2/prepare-dataset",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mvillmow/ProjectOdyssey",
+  "dir_name": "prepare-dataset-mvillmow-projectodyssey-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare",
+  "description": "Guide for building applications on Cloudflare's edge platform. Use when implementing serverless functions (Workers), edge databases (D1), storage (R2, KV), real-time apps (Durable Objects), AI feature",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/cloudflare-browser-rendering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "cloudflare-mrgoonie-xxxnaper-2"
+}

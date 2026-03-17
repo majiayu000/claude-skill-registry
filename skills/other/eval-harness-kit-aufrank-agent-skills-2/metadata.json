@@ -1,0 +1,11 @@
+{
+  "name": "eval-harness-kit",
+  "description": "Build and run deterministic evaluation suites for agent workflows (single-turn or agentic). Use when you need reproducible eval runs with manifests, graders, metrics, and JSONL logs for capability or ",
+  "repo": "aufrank/agent-skills",
+  "path": "skills/eval-harness-kit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aufrank/agent-skills",
+  "dir_name": "eval-harness-kit-aufrank-agent-skills-2"
+}

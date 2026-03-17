@@ -1,0 +1,11 @@
+{
+  "name": "nix-best-practices",
+  "description": "Nix patterns for flakes, overlays, unfree handling, and binary overlays. Use when working with flake.nix or shell.nix.",
+  "repo": "0xBigBoss/claude-code",
+  "path": "skills/nix-best-practices",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/0xBigBoss/claude-code",
+  "dir_name": "nix-best-practices-0xbigboss-claude-code-2"
+}

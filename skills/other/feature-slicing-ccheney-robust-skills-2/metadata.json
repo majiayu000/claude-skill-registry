@@ -1,0 +1,11 @@
+{
+  "name": "feature-slicing",
+  "description": "Apply Feature-Sliced Design (FSD) architecture to frontend projects. Use when creating new frontend features, components, pages, or restructuring existing code. Triggers on tasks involving React/Next.",
+  "repo": "ccheney/robust-skills",
+  "path": "skills/feature-slicing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ccheney/robust-skills",
+  "dir_name": "feature-slicing-ccheney-robust-skills-2"
+}

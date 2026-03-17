@@ -1,0 +1,11 @@
+{
+  "name": "generate-working-docs",
+  "description": "開発作業ドキュメントを自動生成します。YYYYMMDD_要件名の形式でディレクトリを作成し、requirements.md、design.md、tasklist.md、testing.mdを生成します。「開発作業ドキュメント作成」「新規開発のドキュメント作って」「ドキュメント生成」などで呼び出されます。",
+  "repo": "sakamotchi/sql-query-build",
+  "path": ".claude/skills/generate-working-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sakamotchi/sql-query-build",
+  "dir_name": "generate-working-docs-sakamotchi-sql-query-build-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "otter",
+  "description": "Otter.ai transcription CLI - list, search, download, and sync meeting transcripts to CRM.",
+  "repo": "clawdbot/skills",
+  "path": "skills/ruhrpotter/oura",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "otter-clawdbot-skills-2"
+}

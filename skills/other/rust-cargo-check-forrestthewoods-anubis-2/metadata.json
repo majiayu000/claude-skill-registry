@@ -1,0 +1,11 @@
+{
+  "name": "rust-cargo-check",
+  "description": "Prefer `cargo check` over `cargo build` when making Rust code changes. Use `cargo check` to quickly verify code compiles; only use `cargo build` when you need to run the executable.",
+  "repo": "forrestthewoods/anubis",
+  "path": ".claude/skills/rust-cargo-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/forrestthewoods/anubis",
+  "dir_name": "rust-cargo-check-forrestthewoods-anubis-2"
+}

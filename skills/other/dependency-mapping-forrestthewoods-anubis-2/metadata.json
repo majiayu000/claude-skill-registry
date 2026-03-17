@@ -1,0 +1,11 @@
+{
+  "name": "dependency-mapping",
+  "description": "Identifies dependencies between GitHub issues and creates appropriate cross-references. Use when you need to map issue relationships, find blockers, or organize work order based on dependencies.",
+  "repo": "forrestthewoods/anubis",
+  "path": ".claude/skills/dependency-mapping",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/forrestthewoods/anubis",
+  "dir_name": "dependency-mapping-forrestthewoods-anubis-2"
+}

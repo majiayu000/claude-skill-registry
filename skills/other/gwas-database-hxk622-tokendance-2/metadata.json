@@ -1,0 +1,11 @@
+{
+  "name": "gwas-database",
+  "description": "Query NHGRI-EBI GWAS Catalog for SNP-trait associations. Search variants by rs ID, disease/trait, gene, retrieve p-values and summary statistics, for genetic epidemiology and polygenic risk scores.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/database/gwas-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "gwas-database-hxk622-tokendance-2"
+}

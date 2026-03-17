@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-workers-ai",
+  "description": "Run LLMs and AI models on Cloudflare's global GPU network with Workers AI. Includes Llama, Flux image generation,\nBGE embeddings, and streaming support with AI Gateway for caching and logging.\n\nUse wh",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/cloudflare-workers-ai",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "cloudflare-workers-ai-ovachiever-droid-tings-2"
+}

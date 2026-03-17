@@ -1,0 +1,11 @@
+{
+  "name": "light-curve-preprocessing",
+  "description": "Preprocessing and cleaning techniques for astronomical light curves. Use when preparing light curve data for period analysis, including outlier removal, trend removal, flattening, and handling data qu",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/exoplanet-detection-period/environment/skills/light-curve-preprocessing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "light-curve-preprocessing-benchflow-ai-skillsbench-2"
+}

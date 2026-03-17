@@ -1,0 +1,11 @@
+{
+  "name": "chai",
+  "description": "Structure prediction using Chai-1, a foundation model for molecular structure. Use this skill when: (1) Predicting protein-protein complex structures, (2) Validating designed binders, (3) Predicting p",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/chai",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "chai-adaptyvbio-protein-design-skill-2"
+}

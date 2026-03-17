@@ -1,0 +1,11 @@
+{
+  "name": "youtube-transcription",
+  "description": "This skill should be used when the user wants to \"transcribe a YouTube video\", \"get a transcript of a video\", \"download and transcribe audio\", or needs to convert video/audio content to searchable mar",
+  "repo": "akaihola/skills-akaihola",
+  "path": "youtube-transcription",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/akaihola/skills-akaihola",
+  "dir_name": "youtube-transcription-akaihola-skills-akaihola-2"
+}

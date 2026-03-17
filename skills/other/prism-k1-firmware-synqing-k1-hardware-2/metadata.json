@@ -1,0 +1,11 @@
+{
+  "name": "PRISM.k1-Firmware",
+  "description": "Complete technical specification for PRISM K1 ESP32-S3 LED controller firmware, including hardware constraints, FreeRTOS configuration, memory layout, WebSocket protocol, and real-time LED control par",
+  "repo": "synqing/K1.hardware",
+  "path": ".claude/skills/PRISM.k1-Firmware",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/synqing/K1.hardware",
+  "dir_name": "prism-k1-firmware-synqing-k1-hardware-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "create-issue",
+  "description": "Execute /create-issue <description> slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/create-issue",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "create-issue-sasamuku-dotfiles-2"
+}

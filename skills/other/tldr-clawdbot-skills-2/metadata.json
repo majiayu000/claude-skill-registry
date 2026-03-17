@@ -1,0 +1,11 @@
+{
+  "name": "tldr",
+  "description": "Simplified and community-driven man pages. Use this to quickly understand CLI tools.",
+  "repo": "clawdbot/skills",
+  "path": "skills/gumadeiras/tldr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "tldr-clawdbot-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "vector-search",
+  "description": "Implement vector search for knowledge retrieval. Use when adding RAG, semantic search, knowledge base features, or context building for the agent.",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/vector-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "vector-search-skillrecordings-support-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "moai-alfred-session-state",
+  "description": "Enterprise session state management, token budget optimization, runtime tracking, session handoff protocols, context continuity for Claude Sonnet 4.5 and Haiku 4.5 with context awareness features",
+  "repo": "dolsoon/my-awesome-project",
+  "path": ".claude/skills/moai-alfred-session-state",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dolsoon/my-awesome-project",
+  "dir_name": "moai-alfred-session-state-dolsoon-my-awesome-project-2"
+}

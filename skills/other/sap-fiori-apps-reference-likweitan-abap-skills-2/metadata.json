@@ -1,0 +1,11 @@
+{
+  "name": "sap-fiori-apps-reference",
+  "description": "Generate SAP Fiori Launchpad URLs from app names using AppList.json. Looks up app information by name and constructs proper FLP URLs with required parameters like sap-client and sap-language.",
+  "repo": "likweitan/abap-skills",
+  "path": "skills/sap-fiori-apps-reference",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/likweitan/abap-skills",
+  "dir_name": "sap-fiori-apps-reference-likweitan-abap-skills-2"
+}

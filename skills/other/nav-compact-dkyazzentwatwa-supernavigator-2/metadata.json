@@ -1,0 +1,11 @@
+{
+  "name": "nav-compact",
+  "description": "Clear conversation context while preserving knowledge via context marker. Use when user says \"clear context\", \"start fresh\", \"done with this task\", or when approaching token limits.",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "skills/os-layer/context-memory/nav-compact",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "nav-compact-dkyazzentwatwa-supernavigator-2"
+}

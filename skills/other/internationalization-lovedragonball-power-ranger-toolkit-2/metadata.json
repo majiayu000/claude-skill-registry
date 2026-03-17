@@ -1,0 +1,11 @@
+{
+  "name": "internationalization",
+  "description": "i18n/l10n implementation for multi-language support. Use for translation setup, RTL support, and locale-aware formatting.",
+  "repo": "lovedragonball/power-ranger-toolkit",
+  "path": "src/skills/internationalization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lovedragonball/power-ranger-toolkit",
+  "dir_name": "internationalization-lovedragonball-power-ranger-toolkit-2"
+}

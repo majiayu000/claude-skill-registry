@@ -1,0 +1,11 @@
+{
+  "name": "api-testing",
+  "description": "Test FastAPI endpoints with pytest and generate API documentation. Use when creating new APIs or verifying existing endpoints work correctly.",
+  "repo": "PrasadTelasula/EvokeQOne",
+  "path": ".claude/skills/api-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PrasadTelasula/EvokeQOne",
+  "dir_name": "api-testing-prasadtelasula-evokeqone-2"
+}

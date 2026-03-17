@@ -1,0 +1,11 @@
+{
+  "name": "hubspot",
+  "description": "HubSpot CRM and CMS API integration for contacts, companies, deals, owners, and content management.",
+  "repo": "clawdbot/skills",
+  "path": "skills/kwall1/hubspot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "hubspot-clawdbot-skills-2"
+}

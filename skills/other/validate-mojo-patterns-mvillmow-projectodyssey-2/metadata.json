@@ -1,0 +1,11 @@
+{
+  "name": "validate-mojo-patterns",
+  "description": "Validate Mojo code patterns (out self, mut, List, etc.) against best practices. Use to ensure code follows project standards.",
+  "repo": "mvillmow/ProjectOdyssey",
+  "path": ".claude/skills/validate-mojo-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mvillmow/ProjectOdyssey",
+  "dir_name": "validate-mojo-patterns-mvillmow-projectodyssey-2"
+}

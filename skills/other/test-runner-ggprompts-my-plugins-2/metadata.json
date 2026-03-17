@@ -1,0 +1,11 @@
+{
+  "name": "test-runner",
+  "description": "Test runner checkpoint for conductor gates. Detects test framework (jest, pytest, cargo test, go test, etc.), runs tests, and captures output. Returns structured result with pass/fail status and faile",
+  "repo": "GGPrompts/my-plugins",
+  "path": "plugins/tools/conductor/skills/test-runner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GGPrompts/my-plugins",
+  "dir_name": "test-runner-ggprompts-my-plugins-2"
+}

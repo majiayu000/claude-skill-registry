@@ -1,0 +1,11 @@
+{
+  "name": "bknd-modify-schema",
+  "description": "Use when modifying existing Bknd schema. Covers renaming entities, renaming fields, changing field types, altering field constraints, handling destructive changes, data migration strategies, and the s",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-modify-schema",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-modify-schema-cameronapak-freedom-stack-v3-2"
+}

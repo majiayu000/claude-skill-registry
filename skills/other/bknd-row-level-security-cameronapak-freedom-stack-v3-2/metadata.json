@@ -1,0 +1,11 @@
+{
+  "name": "bknd-row-level-security",
+  "description": "Use when implementing row-level security (RLS) in Bknd. Covers filter policies, user ownership patterns, public/private records, entity-specific RLS, multi-tenant isolation, and data-level access cont",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-row-level-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-row-level-security-cameronapak-freedom-stack-v3-2"
+}

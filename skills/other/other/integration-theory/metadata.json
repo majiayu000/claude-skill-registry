@@ -1,0 +1,9 @@
+{
+  "name": "integration-theory",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/math/measure-theory/integration-theory/SKILL.md",
+  "category": "other",
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "integration-theory",
+  "downloaded_at": "2026-02-19T01:33:30.170379Z"
+}

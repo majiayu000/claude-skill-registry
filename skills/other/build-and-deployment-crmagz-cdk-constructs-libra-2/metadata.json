@@ -1,0 +1,11 @@
+{
+  "name": "build-and-deployment",
+  "description": "Build commands, build order, TypeScript configuration, and CDK deployment. Use when building packages, troubleshooting build issues, or deploying stacks.",
+  "repo": "crmagz/cdk-constructs-library",
+  "path": ".claude/skills/build-and-deployment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/crmagz/cdk-constructs-library",
+  "dir_name": "build-and-deployment-crmagz-cdk-constructs-libra-2"
+}

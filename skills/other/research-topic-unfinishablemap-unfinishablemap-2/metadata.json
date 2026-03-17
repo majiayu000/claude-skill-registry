@@ -1,0 +1,11 @@
+{
+  "name": "research-topic",
+  "description": "Research a philosophical topic using web search. Outputs research notes, not finished content.",
+  "repo": "unfinishablemap/unfinishablemap",
+  "path": ".claude/skills/research-topic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/unfinishablemap/unfinishablemap",
+  "dir_name": "research-topic-unfinishablemap-unfinishablemap-2"
+}

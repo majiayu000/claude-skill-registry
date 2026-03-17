@@ -1,0 +1,11 @@
+{
+  "name": "similarity-logic",
+  "description": "Use when working with logic IC similarity calculations - comparing 74xx series, CD4000 CMOS, technology families (LS, HC, HCT), function groups (NAND, NOR, flip-flops), or logic IC-specific similarity",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/similarity-logic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "similarity-logic-cantara-lib-electronic-compo-2"
+}

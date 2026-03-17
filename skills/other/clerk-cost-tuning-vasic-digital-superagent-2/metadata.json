@@ -1,0 +1,11 @@
+{
+  "name": "clerk-cost-tuning",
+  "description": "Optimize Clerk costs and understand pricing.\nUse when planning budget, reducing costs,\nor understanding Clerk pricing model.\nTrigger with phrases like \"clerk cost\", \"clerk pricing\",\n\"reduce clerk cost",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/clerk-pack/clerk-cost-tuning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "clerk-cost-tuning-vasic-digital-superagent-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "taiyo-rewriter",
+  "description": "既存コンテンツを太陽スタイルに変換するリライトスキル。文章構造・語尾・キラーワード・心理トリガーを最適化して成約率を向上。",
+  "repo": "taiyousan15/taisun_agent",
+  "path": ".claude/skills/taiyo-rewriter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/taiyousan15/taisun_agent",
+  "dir_name": "taiyo-rewriter-taiyousan15-taisun-agent-2"
+}

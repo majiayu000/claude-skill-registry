@@ -1,0 +1,11 @@
+{
+  "name": "attribution-analysis-modeling",
+  "description": "Perform multi-touch attribution analysis using Markov chains, Shapley values, and custom attribution models. Use when you need to analyze marketing channel effectiveness, calculate conversion attribut",
+  "repo": "liangdabiao/claude-data-analysis-ultra-main",
+  "path": ".claude/skills/attribution-analysis-modeling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/liangdabiao/claude-data-analysis-ultra-main",
+  "dir_name": "attribution-analysis-modeling-liangdabiao-claude-data-analysis-2"
+}

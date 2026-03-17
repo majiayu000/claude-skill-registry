@@ -1,0 +1,11 @@
+{
+  "name": "slashcommandcreator",
+  "description": "Autonomous meta-skill for creating high-quality custom slash commands using 5-phase workflow with multi-agent validation and quality gates. Use when user requests new slash command, reusable prompt au",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/slashcommandcreator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "slashcommandcreator-rjmurillo-ai-agents-2"
+}

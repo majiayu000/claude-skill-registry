@@ -1,0 +1,11 @@
+{
+  "name": "rtl-document-translation",
+  "description": "Translate structured documents (DOCX) to RTL languages (Arabic, Hebrew, Urdu) while preserving exact formatting, table structures, colors, and layouts. Handles quote normalization, multi-pass translat",
+  "repo": "belumume/claude-skills",
+  "path": "web-desktop-exports/rtl-document-translation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/belumume/claude-skills",
+  "dir_name": "rtl-document-translation-belumume-claude-skills-2"
+}

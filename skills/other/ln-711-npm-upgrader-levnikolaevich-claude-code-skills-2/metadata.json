@@ -1,0 +1,11 @@
+{
+  "name": "ln-711-npm-upgrader",
+  "description": "Upgrades npm/yarn/pnpm dependencies with breaking change handling",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-711-npm-upgrader",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-711-npm-upgrader-levnikolaevich-claude-code-skills-2"
+}

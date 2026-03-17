@@ -1,0 +1,11 @@
+{
+  "name": "java-best-practices-debug-analyzer",
+  "description": "Analyze and debug Java issues including stack traces, exceptions, and performance problems.\nUse when debugging Java errors, analyzing stack traces, investigating exceptions,\nfinding root causes, debug",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/java-best-practices-debug-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "java-best-practices-debug-analyzer-dawiddutoit-custom-claude-2"
+}

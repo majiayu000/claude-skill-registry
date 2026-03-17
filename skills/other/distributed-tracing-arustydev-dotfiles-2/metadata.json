@@ -1,0 +1,11 @@
+{
+  "name": "distributed-tracing",
+  "description": "Implement distributed tracing with Jaeger and Tempo to track requests across microservices and identify performance bottlenecks. Use when debugging microservices, analyzing request flows, or implement",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".ai/plugins/observability-monitoring/skills/distributed-tracing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "distributed-tracing-arustydev-dotfiles-2"
+}

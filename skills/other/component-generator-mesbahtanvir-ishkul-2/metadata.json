@@ -1,0 +1,11 @@
+{
+  "name": "component-generator",
+  "description": "Generates new React Native components following Ishkul patterns. Creates component with proper TypeScript types, theme integration, variant support, accessibility, and matching test file. Use when cre",
+  "repo": "mesbahtanvir/ishkul",
+  "path": ".claude/skills/component-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mesbahtanvir/ishkul",
+  "dir_name": "component-generator-mesbahtanvir-ishkul-2"
+}

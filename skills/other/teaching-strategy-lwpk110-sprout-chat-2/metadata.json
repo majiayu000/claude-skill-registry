@@ -1,0 +1,11 @@
+{
+  "name": "teaching-strategy",
+  "description": "根据问题类型自动选择最优的引导式教学策略，包含问题分类、策略模板和比喻资源。",
+  "repo": "lwpk110/sprout-chat",
+  "path": ".claude/skills/teaching-strategy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lwpk110/sprout-chat",
+  "dir_name": "teaching-strategy-lwpk110-sprout-chat-2"
+}

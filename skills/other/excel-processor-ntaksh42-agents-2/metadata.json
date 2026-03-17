@@ -1,0 +1,11 @@
+{
+  "name": "excel-processor",
+  "description": "Process Excel files with data manipulation, formula generation, and chart creation. Use when working with spreadsheets or Excel data.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/excel-processor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "excel-processor-ntaksh42-agents-2"
+}

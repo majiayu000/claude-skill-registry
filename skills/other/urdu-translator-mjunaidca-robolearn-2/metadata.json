@@ -1,0 +1,11 @@
+{
+  "name": "urdu-translator",
+  "description": "Translate educational content to Urdu while preserving technical accuracy. Use for multilingual content delivery.",
+  "repo": "mjunaidca/robolearn",
+  "path": ".claude/skills/urdu-translator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mjunaidca/robolearn",
+  "dir_name": "urdu-translator-mjunaidca-robolearn-2"
+}

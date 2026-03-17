@@ -1,0 +1,19 @@
+{
+  "name": "kubernetes-mcp",
+  "description": "Query Kubernetes resources for diagnostics, verification, and infrastructure validation.",
+  "repo": "5dlabs/cto",
+  "path": "templates/skills/tools/kubernetes-mcp",
+  "github_branch": "main",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/5dlabs/cto",
+  "dir_name": "kubernetes-mcp-5dlabs-cto",
+  "author": "5dlabs",
+  "source_url": "https://github.com/5dlabs/cto/blob/main/templates/skills/tools/kubernetes-mcp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/5dlabs/cto/blob/main/templates/skills/tools/kubernetes-mcp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

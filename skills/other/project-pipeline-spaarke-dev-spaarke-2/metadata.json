@@ -1,0 +1,11 @@
+{
+  "name": "project-pipeline",
+  "description": "CRITICAL: This orchestrator skill REQUIRES extended context settings:",
+  "repo": "spaarke-dev/spaarke",
+  "path": ".claude/skills/project-pipeline",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spaarke-dev/spaarke",
+  "dir_name": "project-pipeline-spaarke-dev-spaarke-2"
+}

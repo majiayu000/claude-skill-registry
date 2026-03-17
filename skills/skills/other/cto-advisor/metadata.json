@@ -1,0 +1,17 @@
+{
+  "name": "cto-advisor",
+  "repo": "alirezarezvani/claude-skills",
+  "path": "c-level-advisor/cto-advisor/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alirezarezvani/claude-skills",
+  "dir_name": "cto-advisor",
+  "downloaded_at": "2026-03-02T08:42:59.875231Z",
+  "author": "alirezarezvani",
+  "source_url": "https://github.com/alirezarezvani/claude-skills/blob/main/c-level-advisor/cto-advisor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alirezarezvani/claude-skills/blob/main/c-level-advisor/cto-advisor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

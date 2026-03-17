@@ -1,0 +1,11 @@
+{
+  "name": "doctrine-fetch-modes",
+  "description": "Use when symfony doctrine fetch modes",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/doctrine-fetch-modes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "doctrine-fetch-modes-makfly-superpowers-symfony-2"
+}

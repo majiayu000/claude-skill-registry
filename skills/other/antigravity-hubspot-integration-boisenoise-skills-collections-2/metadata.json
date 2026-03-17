@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-hubspot-integration",
+  "description": "Expert patterns for HubSpot CRM integration including OAuth authentication, CRM objects, associations, batch operations, webhooks, and custom objects. Covers Node.js and Python SDKs. Use when: hubspot",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-hubspot-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-hubspot-integration-boisenoise-skills-collections-2"
+}

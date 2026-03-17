@@ -1,0 +1,11 @@
+{
+  "name": "uniprot-database",
+  "description": "Direct REST API access to UniProt. Protein searches, FASTA retrieval, ID mapping, Swiss-Prot/TrEMBL. For Python workflows with multiple databases, prefer bioservices (unified interface to 40+ services",
+  "repo": "sanand0/scientific-research",
+  "path": ".claude/skills/uniprot-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sanand0/scientific-research",
+  "dir_name": "uniprot-database-sanand0-scientific-research-2"
+}

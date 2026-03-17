@@ -1,0 +1,11 @@
+{
+  "name": "status-monitoring",
+  "description": "Continuously track and report pilot progress against milestones and deliverables. Use when monitoring timelines, status metrics, and gating criteria for pilot execution.",
+  "repo": "profmikegreene/gotei",
+  "path": "Gotei_Skills/status-monitoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/profmikegreene/gotei",
+  "dir_name": "status-monitoring-profmikegreene-gotei-2"
+}

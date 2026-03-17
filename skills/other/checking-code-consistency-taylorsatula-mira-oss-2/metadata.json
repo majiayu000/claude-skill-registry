@@ -1,0 +1,11 @@
+{
+  "name": "checking-code-consistency",
+  "description": "Check Python logging levels and patterns for correctness. Focus on identifying wrong severity levels and missing exception handling. Use when reviewing code quality.",
+  "repo": "taylorsatula/mira-OSS",
+  "path": ".claude/skills/checking-code-consistency",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/taylorsatula/mira-OSS",
+  "dir_name": "checking-code-consistency-taylorsatula-mira-oss-2"
+}

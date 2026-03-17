@@ -1,0 +1,11 @@
+{
+  "name": "auto-coder",
+  "description": "Autonomous multi-session feature development framework. Use when the user wants to systematically implement features from a specification, track progress across sessions, and ensure all tests pass bef",
+  "repo": "EnzanNoMetsuke/lynyx-claude",
+  "path": "plugins/lynyx-agent-kit/skills/auto-coder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/EnzanNoMetsuke/lynyx-claude",
+  "dir_name": "auto-coder-enzannometsuke-lynyx-claude-2"
+}

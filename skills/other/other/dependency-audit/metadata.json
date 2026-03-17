@@ -1,0 +1,9 @@
+{
+  "name": "dependency-audit",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/dependency-audit/SKILL.md",
+  "category": "other",
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "dependency-audit",
+  "downloaded_at": "2026-02-18T01:28:17.784679Z"
+}

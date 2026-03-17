@@ -1,0 +1,11 @@
+{
+  "name": "db-migrations",
+  "description": "How to create and use our alembic database migration tool. Use when making changes to models.py.",
+  "repo": "METR/inspect-action",
+  "path": ".claude/skills/db-migrations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/METR/inspect-action",
+  "dir_name": "db-migrations-metr-inspect-action-2"
+}

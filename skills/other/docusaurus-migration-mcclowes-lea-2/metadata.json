@@ -1,0 +1,11 @@
+{
+  "name": "docusaurus-migration",
+  "description": "Use when migrating Docusaurus projects from v2 to v3",
+  "repo": "mcclowes/lea",
+  "path": ".claude/skills/docusaurus-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mcclowes/lea",
+  "dir_name": "docusaurus-migration-mcclowes-lea-2"
+}

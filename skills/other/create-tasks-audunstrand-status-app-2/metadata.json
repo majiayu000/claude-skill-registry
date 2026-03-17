@@ -1,0 +1,11 @@
+{
+  "name": "create-tasks",
+  "description": "Creates well-formed tasks following a template that engineers can implement. Use when creating tasks, defining work items, creating tasks from PRD, breaking down features, or converting requirements i",
+  "repo": "audunstrand/status-app",
+  "path": ".github/skills/create-tasks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/audunstrand/status-app",
+  "dir_name": "create-tasks-audunstrand-status-app-2"
+}

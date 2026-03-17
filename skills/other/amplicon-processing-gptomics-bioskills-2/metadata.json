@@ -1,0 +1,11 @@
+{
+  "name": "amplicon-processing",
+  "description": "Amplicon sequence variant (ASV) inference from 16S rRNA or ITS amplicon sequencing using DADA2. Covers quality filtering, error learning, denoising, and chimera removal. Use when processing demultiple",
+  "repo": "GPTomics/bioSkills",
+  "path": "microbiome/amplicon-processing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "amplicon-processing-gptomics-bioskills-2"
+}

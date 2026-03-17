@@ -1,0 +1,11 @@
+{
+  "name": "rubato-composer",
+  "description": "Rubato Composer integration for Mazzola's mathematical music theory",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.ruler/skills/rubato-composer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "rubato-composer-plurigrid-asi-2"
+}

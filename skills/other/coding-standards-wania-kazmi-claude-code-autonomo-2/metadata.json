@@ -1,0 +1,11 @@
+{
+  "name": "coding-standards",
+  "description": "Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development.\nUse when writing any code to ensure consistent quality.\n",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/coding-standards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "coding-standards-wania-kazmi-claude-code-autonomo-2"
+}

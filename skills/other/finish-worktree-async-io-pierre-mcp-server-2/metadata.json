@@ -1,0 +1,11 @@
+{
+  "name": "finish-worktree",
+  "description": "Completes feature branch work by rebasing, pushing, monitoring CI, and squash merging to main",
+  "repo": "Async-IO/pierre_mcp_server",
+  "path": ".claude/skills/finish-worktree",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Async-IO/pierre_mcp_server",
+  "dir_name": "finish-worktree-async-io-pierre-mcp-server-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "git-worktrees",
+  "description": "Use when working on multiple features simultaneously. Creates isolated workspaces without branch switching, enabling parallel development.",
+  "repo": "Smooth-Operation/household-expense-tracker",
+  "path": ".claude/skills/workflow/git-worktrees",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Smooth-Operation/household-expense-tracker",
+  "dir_name": "git-worktrees-smooth-operation-household-expense-tr-2"
+}

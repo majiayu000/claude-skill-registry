@@ -1,0 +1,11 @@
+{
+  "name": "pull-request",
+  "description": "Creating pull requests with concise descriptions",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/pull-request",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "pull-request-mgreenly-ikigai-2"
+}

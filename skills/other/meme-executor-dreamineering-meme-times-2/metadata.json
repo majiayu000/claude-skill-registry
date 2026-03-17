@@ -1,0 +1,11 @@
+{
+  "name": "meme-executor",
+  "description": "Solana memecoin trade execution and simulation. Use when you already have a TradePlan (token, side, size, SL/TP, slippage, risk mode) from meme-trader / flow-tracker / degen-savant and want to either ",
+  "repo": "dreamineering/meme-times",
+  "path": ".claude/skills/meme-executor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dreamineering/meme-times",
+  "dir_name": "meme-executor-dreamineering-meme-times-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "native-block-development",
+  "description": "Guide for creating native WordPress blocks in Oh My Brand! FSE theme. Block structure, block.json configuration, render.php templates, and asset registration. Use when building new blocks.",
+  "repo": "WesleySmits/oh-my-brand-wp-fse",
+  "path": ".github/skills/native-block-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/oh-my-brand-wp-fse",
+  "dir_name": "native-block-development-wesleysmits-oh-my-brand-wp-fse-2"
+}

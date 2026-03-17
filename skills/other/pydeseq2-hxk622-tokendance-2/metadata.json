@@ -1,0 +1,11 @@
+{
+  "name": "pydeseq2",
+  "description": "Differential gene expression analysis (Python DESeq2). Identify DE genes from bulk RNA-seq counts, Wald tests, FDR correction, volcano/MA plots, for RNA-seq analysis.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/bioinformatics/pydeseq2",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "pydeseq2-hxk622-tokendance-2"
+}

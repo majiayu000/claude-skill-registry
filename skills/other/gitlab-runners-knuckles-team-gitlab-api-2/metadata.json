@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-runners",
+  "description": "Manages GitLab runners. Use for registering, updating, deleting runners at various levels. Triggers: CI infrastructure.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-runners",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-runners-knuckles-team-gitlab-api-2"
+}

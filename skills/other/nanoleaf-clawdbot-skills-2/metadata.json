@@ -1,0 +1,11 @@
+{
+  "name": "nanoleaf",
+  "description": "Control Nanoleaf light panels via the Picoleaf CLI. Use for turning Nanoleaf on/off, adjusting brightness, setting colors (RGB/HSL), changing color temperature, or any Nanoleaf lighting control.",
+  "repo": "clawdbot/skills",
+  "path": "skills/rstierli/nanoleaf",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "nanoleaf-clawdbot-skills-2"
+}

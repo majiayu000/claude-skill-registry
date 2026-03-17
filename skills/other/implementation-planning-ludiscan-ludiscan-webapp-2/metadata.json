@@ -1,0 +1,11 @@
+{
+  "name": "implementation-planning",
+  "description": "複雑なタスク（3ステップ以上・複数ファイル変更）の実装前に使用。計画ファイルを作成し進捗を追跡。",
+  "repo": "ludiscan/ludiscan-webapp",
+  "path": ".claude/skills/implementation-planning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ludiscan/ludiscan-webapp",
+  "dir_name": "implementation-planning-ludiscan-ludiscan-webapp-2"
+}

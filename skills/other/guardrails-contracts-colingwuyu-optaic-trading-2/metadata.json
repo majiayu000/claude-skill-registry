@@ -1,0 +1,11 @@
+{
+  "name": "guardrails-contracts",
+  "description": "Follow these patterns when designing guardrails validation contracts in OptAIC. Use for signal bounds, dataset schemas, portfolio constraints, PIT validation, and other domain-specific validation rule",
+  "repo": "colingwuyu/optaic-trading",
+  "path": ".claude/skills/guardrails-contracts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/colingwuyu/optaic-trading",
+  "dir_name": "guardrails-contracts-colingwuyu-optaic-trading-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "smart-test",
+  "description": "Intelligent test selection based on code changes. Maps source files to tests via import analysis,\nimplements tiered testing (fast < 1 min, impacted < 5 min, full suite), and tracks test reliability.\nU",
+  "repo": "rysweet/azlin",
+  "path": ".claude/skills/smart-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/azlin",
+  "dir_name": "smart-test-rysweet-azlin-2"
+}

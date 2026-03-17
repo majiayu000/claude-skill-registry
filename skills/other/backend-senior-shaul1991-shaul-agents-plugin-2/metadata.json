@@ -1,0 +1,11 @@
+{
+  "name": "backend-senior",
+  "description": "Senior Developer Agent. 기술 리더십, 아키텍처 의사결정, 코드 리뷰 리드, 멘토링을 담당합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/backend-senior",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "backend-senior-shaul1991-shaul-agents-plugin-2"
+}

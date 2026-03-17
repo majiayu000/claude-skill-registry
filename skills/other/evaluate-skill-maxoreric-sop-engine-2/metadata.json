@@ -1,0 +1,11 @@
+{
+  "name": "evaluate-skill",
+  "description": "评价 Skill 执行结果的 Skill。当需要评价产出质量、判断是否需要迭代时触发。触发词：评价、evaluate、打分、怎么样、效果如何。",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/evaluate-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "evaluate-skill-maxoreric-sop-engine-2"
+}

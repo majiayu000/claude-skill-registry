@@ -1,0 +1,11 @@
+{
+  "name": "navbar-configuration",
+  "description": "Configure navbar menu items, logo, buttons, and styling. Sets up navigation from sitemap.md, ensures dropdown z-index is above content, configures buttons, and updates i18n. Dynamically finds navbar*.",
+  "repo": "deomiarn/website-template",
+  "path": ".claude/skills/navbar-configuration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/deomiarn/website-template",
+  "dir_name": "navbar-configuration-deomiarn-website-template-2"
+}

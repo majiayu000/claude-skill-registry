@@ -1,0 +1,11 @@
+{
+  "name": "fullstack-guide",
+  "description": "全栈开发规范百科全书 (React/TS/Node/Supabase). Modern patterns including Suspense, lazy loading, useSuspenseQuery, file organization with features directory, performance optimization, and TypeScript best practi",
+  "repo": "VidyFoo/antigravity-skill-engine",
+  "path": ".agent/skills/1-dev/fullstack-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VidyFoo/antigravity-skill-engine",
+  "dir_name": "fullstack-guide-vidyfoo-antigravity-skill-en-2"
+}

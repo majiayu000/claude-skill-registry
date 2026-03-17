@@ -1,0 +1,11 @@
+{
+  "name": "add-feature-hook",
+  "description": "Creates TanStack Query hooks for API features with authentication. Use when connecting frontend to backend endpoints, creating data fetching hooks.",
+  "repo": "MenadBt/prospection",
+  "path": ".claude/skills/add-feature-hook",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MenadBt/prospection",
+  "dir_name": "add-feature-hook-menadbt-prospection-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "orcawave-analysis",
+  "description": "Expert agent for OrcaWave diffraction/radiation analysis with deep expertise in marine hydrodynamics and panel method computations. Use for wave-structure interaction, added mass/damping calculations,",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcawave-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcawave-analysis-vamseeachanta-digitalmodel-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rendering-hoist-jsx",
+  "description": "Extract static JSX elements outside components to avoid re-creation on every render. Apply when rendering static elements repeatedly or in lists.",
+  "repo": "TheOrcDev/8bitcn-ui",
+  "path": ".claude/skills/rendering-hoist-jsx",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TheOrcDev/8bitcn-ui",
+  "dir_name": "rendering-hoist-jsx-theorcdev-8bitcn-ui-2"
+}

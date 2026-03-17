@@ -1,0 +1,11 @@
+{
+  "name": "press-release-writer",
+  "description": "Generates professional press releases with headline, dateline, inverted pyramid structure, and boilerplate. Use when the user asks about press releases, media announcements, news releases, PR distribu",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/press-release-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "press-release-writer-wesleysmits-agent-skills-2"
+}

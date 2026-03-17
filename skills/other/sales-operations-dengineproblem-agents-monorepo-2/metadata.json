@@ -1,0 +1,11 @@
+{
+  "name": "sales-operations",
+  "description": "Эксперт Sales Ops. Используй для процессов продаж, CRM, forecasting и sales analytics.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/sales-operations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "sales-operations-dengineproblem-agents-monorepo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "fastapi-setup",
+  "description": "Initialize FastAPI backend projects with UV package manager, configure project structure, install dependencies, and set up basic FastAPI application. Use when setting up a new FastAPI backend or initi",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/fastapi-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "fastapi-setup-maneeshanif-todo-spec-driven-2"
+}

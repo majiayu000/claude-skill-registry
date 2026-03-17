@@ -1,0 +1,11 @@
+{
+  "name": "doctrine-migrations",
+  "description": "Use when symfony doctrine migrations",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/doctrine-migrations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "doctrine-migrations-makfly-superpowers-symfony-2"
+}

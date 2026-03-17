@@ -1,0 +1,11 @@
+{
+  "name": "ms-teams-apps",
+  "description": "Microsoft Teams bots and AI agents - Claude/OpenAI, Adaptive Cards, Graph API",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/ms-teams-apps",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "dir_name": "ms-teams-apps-alinaqi-claude-bootstrap-2"
+}

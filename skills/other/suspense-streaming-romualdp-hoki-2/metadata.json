@@ -1,0 +1,11 @@
+{
+  "name": "suspense-streaming",
+  "description": "Implémente Suspense et Streaming pour progressive rendering. MANDATORY pour async Server Components. À utiliser lors de async data, loading states, ou quand l'utilisateur mentionne \"suspense\", \"stream",
+  "repo": "RomualdP/hoki",
+  "path": ".claude/skills/suspense-streaming",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RomualdP/hoki",
+  "dir_name": "suspense-streaming-romualdp-hoki-2"
+}

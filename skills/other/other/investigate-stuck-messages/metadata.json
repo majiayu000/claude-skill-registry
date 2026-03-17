@@ -1,0 +1,9 @@
+{
+  "name": "investigate-stuck-messages",
+  "repo": "hyperlane-xyz/hyperlane-monorepo",
+  "path": ".claude/skills/investigate-stuck-messages/SKILL.md",
+  "category": "other",
+  "source": "github.com/hyperlane-xyz/hyperlane-monorepo",
+  "dir_name": "investigate-stuck-messages",
+  "downloaded_at": "2026-02-22T07:30:09.709887Z"
+}

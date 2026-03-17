@@ -1,0 +1,9 @@
+{
+  "name": "base64-payload",
+  "repo": "cisco-ai-defense/skill-scanner",
+  "path": "evals/skills/obfuscation/base64-payload/SKILL.md",
+  "category": "other",
+  "source": "github.com/cisco-ai-defense/skill-scanner",
+  "dir_name": "base64-payload",
+  "downloaded_at": "2026-02-22T06:42:47.923933Z"
+}

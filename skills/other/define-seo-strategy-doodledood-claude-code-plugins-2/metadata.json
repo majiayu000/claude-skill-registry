@@ -1,0 +1,11 @@
+{
+  "name": "define-seo-strategy",
+  "description": "Create a comprehensive SEO_STRATEGY.md covering both traditional SEO and Generative Engine Optimization (GEO) for AI platforms. Requires CUSTOMER.md to exist first. Includes platform-specific tactics ",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/solo-dev/skills/define-seo-strategy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "define-seo-strategy-doodledood-claude-code-plugins-2"
+}

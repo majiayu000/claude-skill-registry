@@ -1,0 +1,11 @@
+{
+  "name": "response-rater",
+  "description": "Run headless AI CLIs (Claude Code, Gemini, OpenAI Codex, Cursor Agent, GitHub Copilot) to rate an assistant response against a rubric and return actionable feedback plus a rewritten improved response;",
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/response-rater",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oimiragieo/agent-studio",
+  "dir_name": "response-rater-oimiragieo-agent-studio-2"
+}

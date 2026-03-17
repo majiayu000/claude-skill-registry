@@ -1,0 +1,11 @@
+{
+  "name": "git-commit",
+  "description": "Generate commit messages following conventional commits format",
+  "repo": "medride/claude-code-research",
+  "path": ".claude/skills/git-commit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/medride/claude-code-research",
+  "dir_name": "git-commit-medride-claude-code-research-2"
+}

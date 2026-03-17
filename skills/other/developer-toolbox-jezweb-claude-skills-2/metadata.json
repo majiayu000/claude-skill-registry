@@ -1,0 +1,11 @@
+{
+  "name": "developer-toolbox",
+  "description": "Essential development workflow agents for code review, debugging, testing, documentation, and git operations.\nIncludes 7 specialized agents with strong auto-discovery triggers.\n\nUse when: setting up d",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/developer-toolbox",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "developer-toolbox-jezweb-claude-skills-2"
+}

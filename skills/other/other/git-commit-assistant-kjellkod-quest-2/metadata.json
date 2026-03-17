@@ -1,0 +1,17 @@
+{
+  "name": "git-commit-assistant",
+  "repo": "KjellKod/quest",
+  "path": ".claude/skills/git-commit-assistant/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/KjellKod/quest",
+  "dir_name": "git-commit-assistant-kjellkod-quest-2",
+  "downloaded_at": "2026-03-01T05:35:17.708075Z",
+  "author": "KjellKod",
+  "source_url": "https://github.com/KjellKod/quest/blob/main/.claude/skills/git-commit-assistant/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/KjellKod/quest/blob/main/.claude/skills/git-commit-assistant/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

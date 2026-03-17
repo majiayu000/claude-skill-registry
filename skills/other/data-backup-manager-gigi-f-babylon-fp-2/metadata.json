@@ -1,0 +1,11 @@
+{
+  "name": "data-backup-manager",
+  "description": "Backup and manage game data including maps, NPCs, and configurations. Use when the user wants to backup data, create snapshots, export data, or restore from backups.",
+  "repo": "gigi-f/babylon_fp",
+  "path": ".claude/skills/data-backup-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gigi-f/babylon_fp",
+  "dir_name": "data-backup-manager-gigi-f-babylon-fp-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "dataverse-deploy",
+  "description": "Deploy solutions, PCF controls, and web resources to Dataverse using PAC CLI",
+  "repo": "spaarke-dev/spaarke",
+  "path": ".claude/skills/dataverse-deploy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spaarke-dev/spaarke",
+  "dir_name": "dataverse-deploy-spaarke-dev-spaarke-2"
+}

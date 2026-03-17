@@ -1,0 +1,9 @@
+{
+  "name": "testing-kubectl-debugging",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/testing:kubectl-debugging/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "testing-kubectl-debugging",
+  "downloaded_at": "2026-02-15T07:49:46.742935Z"
+}

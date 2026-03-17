@@ -1,0 +1,11 @@
+{
+  "name": "voice-synthesis",
+  "description": "Generate voice audio using Google Cloud TTS with enhancement",
+  "repo": "randysalars/dreamweaving",
+  "path": ".claude/skills/tier3-production/voice-synthesis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/randysalars/dreamweaving",
+  "dir_name": "voice-synthesis-randysalars-dreamweaving-2"
+}

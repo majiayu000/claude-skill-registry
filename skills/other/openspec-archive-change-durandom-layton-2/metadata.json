@@ -1,0 +1,11 @@
+{
+  "name": "openspec-archive-change",
+  "description": "Archive a completed change in the experimental workflow. Use when the user wants to finalize and archive a change after implementation is complete.",
+  "repo": "durandom/layton",
+  "path": ".claude/skills/openspec-archive-change",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/durandom/layton",
+  "dir_name": "openspec-archive-change-durandom-layton-2"
+}

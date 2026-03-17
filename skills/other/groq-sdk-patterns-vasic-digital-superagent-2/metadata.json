@@ -1,0 +1,11 @@
+{
+  "name": "groq-sdk-patterns",
+  "description": "Apply production-ready Groq SDK patterns for TypeScript and Python.\nUse when implementing Groq integrations, refactoring SDK usage,\nor establishing team coding standards for Groq.\nTrigger with phrases",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/groq-pack/groq-sdk-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "groq-sdk-patterns-vasic-digital-superagent-2"
+}

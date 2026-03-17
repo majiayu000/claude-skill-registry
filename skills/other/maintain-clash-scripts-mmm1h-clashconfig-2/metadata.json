@@ -1,0 +1,11 @@
+{
+  "name": "maintain-clash-scripts",
+  "description": "Maintain helper scripts under scripts/ for this repo (update_direct_from_cn.py, update_dns.py, update_dns_rules.sh, update_zashboard.sh). Use when creating, modifying, or documenting these scripts, or",
+  "repo": "mmm1h/clashconfig",
+  "path": "skills/maintain-clash-scripts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mmm1h/clashconfig",
+  "dir_name": "maintain-clash-scripts-mmm1h-clashconfig-2"
+}

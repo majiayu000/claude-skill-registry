@@ -1,0 +1,11 @@
+{
+  "name": "ai-annotation-workflow",
+  "description": "Эксперт по data annotation. Используй для ML labeling, annotation workflows и quality control.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/ai-annotation-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "ai-annotation-workflow-dengineproblem-agents-monorepo-2"
+}

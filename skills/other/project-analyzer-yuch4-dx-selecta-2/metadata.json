@@ -1,0 +1,11 @@
+{
+  "name": "project-analyzer",
+  "description": "プロジェクト状況を網羅的にチェックし、追加すべき機能や改善すべき点を洗い出すスキル。PRD/設計/実装の整合性チェック、機能ギャップ分析、改善提案レポートを出力。「プロジェクトを分析して」「ギャップ分析をして」「コードレビューして」などのリクエストに使用。実装は行わず分析と提案のみ。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/project-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "project-analyzer-yuch4-dx-selecta-2"
+}

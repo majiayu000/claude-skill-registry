@@ -1,0 +1,11 @@
+{
+  "name": "test-data-generation",
+  "description": "Provides patterns and examples for generating test data using factory libraries. Use this skill when you need to create realistic and maintainable test data for your application. It covers factory pat",
+  "repo": "MUmerRazzaq/fast-next-todo",
+  "path": ".claude/skills/test-data-generation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MUmerRazzaq/fast-next-todo",
+  "dir_name": "test-data-generation-mumerrazzaq-fast-next-todo-2"
+}

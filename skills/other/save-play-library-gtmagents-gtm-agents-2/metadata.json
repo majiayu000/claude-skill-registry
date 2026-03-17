@@ -1,0 +1,11 @@
+{
+  "name": "save-play-library",
+  "description": "Use to catalog churn/expansion plays tied to specific signals, cohorts, and owners.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/customer-analytics/skills/save-play-library",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "save-play-library-gtmagents-gtm-agents-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "responsive-design",
+  "description": "Implement modern responsive layouts using container queries, fluid typography, CSS Grid, and mobile-first breakpoint strategies. Use when building adaptive interfaces, implementing fluid layouts, or c",
+  "repo": "wshobson/agents",
+  "path": "plugins/ui-design/skills/responsive-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wshobson/agents",
+  "dir_name": "responsive-design-wshobson-agents-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "base44-cli",
+  "description": "**ALWAYS ACTIVATE** if ANY of these conditions are true: (1) User's prompt contains the word 'base44' or 'Base44' in ANY context; (2) Current directory contains a 'base44/' subfolder; (3) User mention",
+  "repo": "base44/skills",
+  "path": "skills/base44-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/base44/skills",
+  "dir_name": "base44-cli-base44-skills-2"
+}

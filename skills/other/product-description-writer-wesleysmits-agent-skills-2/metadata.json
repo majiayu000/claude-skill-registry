@@ -1,0 +1,11 @@
+{
+  "name": "product-description-writer",
+  "description": "Creates compelling product copy for e-commerce listings. Use when the user asks about product descriptions, e-commerce copy, product pages, marketplace listings, or converting features to benefits.",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/product-description-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "product-description-writer-wesleysmits-agent-skills-2"
+}

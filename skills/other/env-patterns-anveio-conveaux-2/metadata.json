@@ -1,0 +1,11 @@
+{
+  "name": "env-patterns",
+  "description": "Environment/config conventions (env vars, defaults, validation, CI/local differences). Use when adding config or diagnosing env-related failures.",
+  "repo": "Anveio/conveaux",
+  "path": ".claude/skills/env-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Anveio/conveaux",
+  "dir_name": "env-patterns-anveio-conveaux-2"
+}

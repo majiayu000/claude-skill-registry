@@ -1,0 +1,11 @@
+{
+  "name": "stakeholder-notification",
+  "description": "Notify stakeholders of pilot status changes, risk flags, and decision points to ensure timely governance and alignment. Use when pilots hit milestones, trigger risk thresholds, require sign-offs, or p",
+  "repo": "profmikegreene/gotei",
+  "path": "Gotei_Skills/stakeholder-notification",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/profmikegreene/gotei",
+  "dir_name": "stakeholder-notification-profmikegreene-gotei-2"
+}

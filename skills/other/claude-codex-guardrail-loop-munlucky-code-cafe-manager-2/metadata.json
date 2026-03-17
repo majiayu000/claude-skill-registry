@@ -1,0 +1,11 @@
+{
+  "name": "claude-codex-guardrail-loop",
+  "description": "Use after planning or implementing non-trivial tasks - runs Codex MCP background verification/review for quality gates (plan validation + implementation review)",
+  "repo": "munlucky/code-cafe-manager",
+  "path": ".claude/skills/claude-codex-guardrail-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/munlucky/code-cafe-manager",
+  "dir_name": "claude-codex-guardrail-loop-munlucky-code-cafe-manager-2"
+}

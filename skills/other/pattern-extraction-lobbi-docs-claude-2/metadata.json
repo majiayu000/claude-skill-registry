@@ -1,0 +1,11 @@
+{
+  "name": "pattern-extraction",
+  "description": "Detect and extract patterns from codebases for template generation",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/tools/plugin-cli/infrastructure-template-generator/skills/pattern-extraction",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "pattern-extraction-lobbi-docs-claude-2"
+}

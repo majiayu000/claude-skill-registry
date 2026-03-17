@@ -1,0 +1,11 @@
+{
+  "name": "testing-base",
+  "description": "Enforces project shared testing conventions for test structure, file naming, description patterns, assertions, and anti-patterns. This base skill is loaded by all test-type specialists.",
+  "repo": "JasonPaff/head-shakers",
+  "path": ".claude/skills/testing-base",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JasonPaff/head-shakers",
+  "dir_name": "testing-base-jasonpaff-head-shakers-2"
+}

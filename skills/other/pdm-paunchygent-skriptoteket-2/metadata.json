@@ -1,0 +1,11 @@
+{
+  "name": "pdm",
+  "description": "Migrate pyproject.toml from pre-PDM 2.0 syntax to modern PEP-compliant format. Focuses on dev-dependencies to dependency-groups conversion and PEP 621 project metadata. Integrates with Context7 for la",
+  "repo": "paunchygent/skriptoteket",
+  "path": ".claude/skills/pdm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/paunchygent/skriptoteket",
+  "dir_name": "pdm-paunchygent-skriptoteket-2"
+}

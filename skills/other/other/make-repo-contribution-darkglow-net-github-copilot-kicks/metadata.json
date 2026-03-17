@@ -1,0 +1,17 @@
+{
+  "name": "make-repo-contribution",
+  "repo": "darkglow-net/github-copilot-kickstarter",
+  "path": ".github/skills/make-repo-contribution/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/darkglow-net/github-copilot-kickstarter",
+  "dir_name": "make-repo-contribution-darkglow-net-github-copilot-kicks",
+  "downloaded_at": "2026-03-01T07:22:40.986825Z",
+  "author": "darkglow-net",
+  "source_url": "https://github.com/darkglow-net/github-copilot-kickstarter/blob/master/.github/skills/make-repo-contribution/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/darkglow-net/github-copilot-kickstarter/blob/master/.github/skills/make-repo-contribution/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "agent-skill-builder",
+  "description": "Assists in creating Agent Skills of varying complexity levels (simple, moderate, complex). Use when the user wants to create, design, or build a new Agent Skill, or when they need guidance on skill ar",
+  "repo": "leefowlercu/agent-kit",
+  "path": "plugins/agent-skill-builder/skills/agent-skill-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leefowlercu/agent-kit",
+  "dir_name": "agent-skill-builder-leefowlercu-agent-kit-2"
+}

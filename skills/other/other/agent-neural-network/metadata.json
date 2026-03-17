@@ -1,0 +1,9 @@
+{
+  "name": "agent-neural-network",
+  "repo": "ruvnet/claude-flow",
+  "path": ".agents/skills/agent-neural-network/SKILL.md",
+  "category": "other",
+  "source": "github.com/ruvnet/claude-flow",
+  "dir_name": "agent-neural-network",
+  "downloaded_at": "2026-02-18T01:34:36.083261Z"
+}

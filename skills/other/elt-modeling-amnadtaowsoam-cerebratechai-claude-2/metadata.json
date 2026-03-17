@@ -1,0 +1,11 @@
+{
+  "name": "elt-modeling",
+  "description": "Comprehensive guide to ELT (Extract, Load, Transform) modeling patterns, dimensional modeling, fact and dimension tables, and data warehouse design",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "53-data-engineering/elt-modeling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "elt-modeling-amnadtaowsoam-cerebratechai-claude-2"
+}

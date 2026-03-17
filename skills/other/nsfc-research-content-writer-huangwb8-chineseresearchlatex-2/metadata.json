@@ -1,0 +1,11 @@
+{
+  "name": "nsfc-research-content-writer",
+  "description": "为 NSFC 正文\"（二）研究内容\"写作/重构，并同步编排\"特色与创新\"和\"三年年度研究计划\"，输出可直接落到 LaTeX 模板的三个 extraTex 文件。适用于用户要写/改\"研究内容、研究目标、关键科学问题、技术路线、创新点、三年计划/里程碑\"等场景。",
+  "repo": "huangwb8/ChineseResearchLaTeX",
+  "path": "skills/nsfc-research-content-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/huangwb8/ChineseResearchLaTeX",
+  "dir_name": "nsfc-research-content-writer-huangwb8-chineseresearchlatex-2"
+}

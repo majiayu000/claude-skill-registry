@@ -1,0 +1,11 @@
+{
+  "name": "asmedia",
+  "description": "ASMedia Technology MPN encoding patterns, series identification, and handler guidance. Use when working with USB/Storage controller ICs or ASMediaHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/asmedia",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "asmedia-cantara-lib-electronic-compo-2"
+}

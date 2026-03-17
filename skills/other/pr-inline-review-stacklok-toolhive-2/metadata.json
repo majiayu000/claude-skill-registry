@@ -1,0 +1,11 @@
+{
+  "name": "pr-inline-review",
+  "description": "Submit inline review comments to GitHub Pull Requests using the GitHub CLI, with support for inline code suggestions.",
+  "repo": "stacklok/toolhive",
+  "path": ".claude/skills/pr-inline-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/stacklok/toolhive",
+  "dir_name": "pr-inline-review-stacklok-toolhive-2"
+}

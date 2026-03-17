@@ -1,0 +1,11 @@
+{
+  "name": "claude-skill-bit-cli",
+  "description": "Bit CLI command reference. Use before running bit commands to get correct syntax and flags.",
+  "repo": "teambit/bit",
+  "path": "contrib/claude-skill-bit-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/teambit/bit",
+  "dir_name": "claude-skill-bit-cli-teambit-bit-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "neon-database",
+  "description": "Neon PostgreSQL patterns for Pitchey. Raw SQL only, no ORM. Uses Hyperdrive for connection pooling. Activates for database queries, migrations, or schema work.",
+  "repo": "CavellTopDev/pitchey-app",
+  "path": ".claude/skills/neon-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CavellTopDev/pitchey-app",
+  "dir_name": "neon-database-cavelltopdev-pitchey-app-2"
+}

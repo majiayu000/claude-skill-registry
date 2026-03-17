@@ -1,0 +1,11 @@
+{
+  "name": "third-party-apis",
+  "description": "Best practices for integrating third-party APIs and services in career_ios_backend.\nAutomatically invoked when working with external APIs like ElevenLabs, OpenAI, Gemini, etc.\nTrigger keywords: \"third",
+  "repo": "Youngger9765/career_ios_backend",
+  "path": ".claude/skills/third-party-apis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Youngger9765/career_ios_backend",
+  "dir_name": "third-party-apis-youngger9765-career-ios-backend-2"
+}

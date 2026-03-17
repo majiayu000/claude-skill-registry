@@ -1,0 +1,11 @@
+{
+  "name": "github-actions-cicd",
+  "description": "Set up GitHub Actions CI/CD pipelines for testing, building, and deploying to Kubernetes. Use when implementing continuous integration and deployment for Phase 5. (project)",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/github-actions-cicd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "github-actions-cicd-maneeshanif-todo-spec-driven-2"
+}

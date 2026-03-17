@@ -1,0 +1,11 @@
+{
+  "name": "tasks-test-generation",
+  "description": "Use when creating or enhancing unit tests, integration tests, or defining test strategies for backend and frontend code.",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/tasks-test-generation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/duc01226/EasyPlatform",
+  "dir_name": "tasks-test-generation-duc01226-easyplatform-2"
+}

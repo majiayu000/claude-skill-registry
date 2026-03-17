@@ -1,0 +1,11 @@
+{
+  "name": "cdk8s-apps",
+  "description": "CDK8s for type-safe Kubernetes manifests using Python. Use when building complex K8s applications programmatically, generating manifests from code, creating reusable infrastructure patterns, or managi",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/cdk8s-apps",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "cdk8s-apps-adaptationio-skrillz-2"
+}

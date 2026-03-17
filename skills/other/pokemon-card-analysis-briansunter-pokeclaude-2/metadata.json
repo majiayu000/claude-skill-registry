@@ -1,0 +1,11 @@
+{
+  "name": "pokemon-card-analysis",
+  "description": "Use when analyzing individual Pokemon cards, comparing card stats, evaluating attacks/abilities, or researching card rarity.\n\n**Activates when user mentions:**\n- Card names (e.g., \"Pikachu ex\", \"Mewtw",
+  "repo": "briansunter/pokeclaude",
+  "path": "skills/pokemon-card-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/briansunter/pokeclaude",
+  "dir_name": "pokemon-card-analysis-briansunter-pokeclaude-2"
+}

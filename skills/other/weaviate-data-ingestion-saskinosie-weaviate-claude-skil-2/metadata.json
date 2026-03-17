@@ -1,0 +1,11 @@
+{
+  "name": "weaviate-data-ingestion",
+  "description": "Upload and process data into local Weaviate collections with support for single objects, batch uploads, and multi-modal content",
+  "repo": "saskinosie/weaviate-claude-skills",
+  "path": "weaviate-data-ingestion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/saskinosie/weaviate-claude-skills",
+  "dir_name": "weaviate-data-ingestion-saskinosie-weaviate-claude-skil-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "code-patterns",
+  "description": "Code implementation patterns and best practices learned from real mistakes. Covers file I/O safety (locking, atomic writes), data persistence, and validation. Use for file-based state, shared resource",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/code-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/duc01226/EasyPlatform",
+  "dir_name": "code-patterns-duc01226-easyplatform-2"
+}

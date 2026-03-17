@@ -1,0 +1,11 @@
+{
+  "name": "spec-writing",
+  "description": "Execute this skill should be used when the user asks about \"writing specs\", \"specs.md format\", \"how to write specifications\", \"sprint requirements\", \"testing configuration\", \"scope definition\", or nee",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/community/sprint/spec-writing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "spec-writing-vasic-digital-superagent-2"
+}

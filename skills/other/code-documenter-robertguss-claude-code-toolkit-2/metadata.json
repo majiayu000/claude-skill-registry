@@ -1,0 +1,11 @@
+{
+  "name": "code-documenter",
+  "description": "Expert documentation generator for coding projects. Analyzes codebases to create thorough, comprehensive documentation for developers and users. Supports incremental updates, multi-audience documentat",
+  "repo": "robertguss/claude-code-toolkit",
+  "path": "skills/code-documenter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertguss/claude-code-toolkit",
+  "dir_name": "code-documenter-robertguss-claude-code-toolkit-2"
+}

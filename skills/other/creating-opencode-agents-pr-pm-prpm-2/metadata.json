@@ -1,0 +1,11 @@
+{
+  "name": "creating-opencode-agents",
+  "description": "Use when creating OpenCode agents - provides markdown format with YAML frontmatter, mode/tools/permission configuration, and best practices for specialized AI assistants",
+  "repo": "pr-pm/prpm",
+  "path": ".claude/skills/creating-opencode-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pr-pm/prpm",
+  "dir_name": "creating-opencode-agents-pr-pm-prpm-2"
+}

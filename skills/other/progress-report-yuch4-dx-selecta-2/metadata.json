@@ -1,0 +1,11 @@
+{
+  "name": "progress-report",
+  "description": "進捗報告書を作成するスキル。開発案件の進捗状況を、技術的背景を持たないステークホルダーにもわかりやすく伝える報告書を生成。「進捗報告を作って」「ステータスレポートを書いて」「報告書を作成して」などのリクエストに使用。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/progress-report",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "progress-report-yuch4-dx-selecta-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "data-oriented-architecture",
+  "description": "Apply data-oriented architecture patterns when designing systems with polymorphic entities. This skill should be used PROACTIVELY when encountering switch statements or if/else chains that dispatch ba",
+  "repo": "rbergman/dark-matter-marketplace",
+  "path": "plugins/architecture/skills/data-oriented-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rbergman/dark-matter-marketplace",
+  "dir_name": "data-oriented-architecture-rbergman-dark-matter-marketpl-2"
+}

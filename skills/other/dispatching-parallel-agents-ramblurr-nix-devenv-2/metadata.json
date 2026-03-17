@@ -1,0 +1,11 @@
+{
+  "name": "dispatching-parallel-agents",
+  "description": "Use when facing 3+ independent failures that can be investigated without shared state or dependencies - dispatches multiple Claude agents to investigate and fix independent problems concurrently",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/dispatching-parallel-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "dispatching-parallel-agents-ramblurr-nix-devenv-2"
+}

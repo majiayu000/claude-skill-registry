@@ -1,0 +1,11 @@
+{
+  "name": "parallel-executor",
+  "description": "Automatically detect and execute parallel development tasks",
+  "repo": "kingpinzs/claude_parallel_templates",
+  "path": "base/.claude/skills/parallel-executor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kingpinzs/claude_parallel_templates",
+  "dir_name": "parallel-executor-kingpinzs-claude-parallel-temp-2"
+}

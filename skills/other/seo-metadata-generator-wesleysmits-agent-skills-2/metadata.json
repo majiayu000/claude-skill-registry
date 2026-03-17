@@ -1,0 +1,11 @@
+{
+  "name": "seo-metadata-generator",
+  "description": "Generates SEO meta tags, Open Graph cards, and JSON-LD structured data. Use when the user asks about meta tags, og:image, schema.org markup, hreflang, or wants to improve search visibility.",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/seo-metadata-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "seo-metadata-generator-wesleysmits-agent-skills-2"
+}

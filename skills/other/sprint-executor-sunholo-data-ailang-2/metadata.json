@@ -1,0 +1,11 @@
+{
+  "name": "sprint-executor",
+  "description": "Execute approved sprint plans with test-driven development, continuous linting, progress tracking, and pause points. Use when user says \"execute sprint\", \"start sprint\", or wants to implement an appro",
+  "repo": "sunholo-data/ailang",
+  "path": ".claude/skills/sprint-executor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunholo-data/ailang",
+  "dir_name": "sprint-executor-sunholo-data-ailang-2"
+}

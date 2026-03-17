@@ -1,0 +1,11 @@
+{
+  "name": "hardstop",
+  "description": "ACTIVATE THIS SKILL FOR ANY SHELL COMMAND. Check curl, wget, rm, sudo, apt, dpkg, chmod, dd, format, powershell, bash, sh. Check pipe patterns like | sh or | bash. Check when user says sysadmin told m",
+  "repo": "frmoretto/hardstop",
+  "path": ".claude/skills/hardstop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frmoretto/hardstop",
+  "dir_name": "hardstop-frmoretto-hardstop-2"
+}

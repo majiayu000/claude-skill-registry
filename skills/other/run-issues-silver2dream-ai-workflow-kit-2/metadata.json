@@ -1,0 +1,11 @@
+{
+  "name": "run-issues",
+  "description": "Autonomous workflow for processing multiple GitHub issues in parallel with priority-based scheduling and verification.",
+  "repo": "silver2dream/ai-workflow-kit",
+  "path": ".ai/skills/run-issues",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/silver2dream/ai-workflow-kit",
+  "dir_name": "run-issues-silver2dream-ai-workflow-kit-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "tsql-functions",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/tsql-master/skills/tsql-functions/SKILL.md",
+  "category": "other",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "tsql-functions",
+  "downloaded_at": "2026-02-22T05:14:40.258070Z"
+}

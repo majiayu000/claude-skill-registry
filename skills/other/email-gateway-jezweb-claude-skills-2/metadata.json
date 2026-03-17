@@ -1,0 +1,11 @@
+{
+  "name": "email-gateway",
+  "description": "Multi-provider email sending for Cloudflare Workers and Node.js applications.\n\nBuild transactional email systems with Resend (React Email support), SendGrid (enterprise scale),\nMailgun (developer webh",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/email-gateway",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "email-gateway-jezweb-claude-skills-2"
+}

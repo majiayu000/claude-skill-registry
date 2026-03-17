@@ -1,0 +1,11 @@
+{
+  "name": "orf",
+  "description": "On-demand ORF news digest in German. Use when the user says 'orf', 'pull orf', or 'orf 10'. Focus on Austrian politics (Inland) and international politics (Ausland) + major headlines; exclude sports. ",
+  "repo": "clawdbot/skills",
+  "path": "skills/cpojer/orf",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "orf-clawdbot-skills-2"
+}

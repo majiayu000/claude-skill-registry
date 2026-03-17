@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-230-story-prioritizer",
+  "description": "RICE prioritization per Story with market research. Generates consolidated prioritization table in docs/market/[epic-slug]/prioritization.md. L2 worker called after ln-220.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-230-story-prioritizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-230-story-prioritizer-boisenoise-skills-collections-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "doc-from-examples",
+  "description": "過去資料の「型」に合わせて新規ビジネス文書を作成する。提案書・稟議・PRDを書くとき、過去資料と同じ形式で作りたいときに使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/business/doc-from-examples",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "doc-from-examples-haru-llc-ai-pm-system-noteboo-2"
+}

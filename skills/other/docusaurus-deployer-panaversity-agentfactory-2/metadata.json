@@ -1,0 +1,11 @@
+{
+  "name": "docusaurus-deployer",
+  "description": "This skill should be used when deploying a Docusaurus site to GitHub Pages. It automates the configuration, building, and deployment process, handling GitHub Pages setup, environment configuration, an",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/cold/docusaurus-deployer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "docusaurus-deployer-panaversity-agentfactory-2"
+}

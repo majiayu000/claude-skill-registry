@@ -1,0 +1,11 @@
+{
+  "name": "clang-format",
+  "description": "The model must invoke this skill when any trigger occurs - (1) user mentions \"clang-format\" or \".clang-format\", (2) user requests analyzing code style/formatting patterns/conventions, (3) user request",
+  "repo": "BbgnsurfTech/claude-skills-collection",
+  "path": "community/jamie-bitflight-claude-skills/clang-format",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BbgnsurfTech/claude-skills-collection",
+  "dir_name": "clang-format-bbgnsurftech-claude-skills-collec-2"
+}

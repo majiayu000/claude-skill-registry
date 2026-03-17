@@ -1,0 +1,11 @@
+{
+  "name": "contact-pairs",
+  "description": "Process Hi-C read pairs using pairtools. Parse alignments, filter duplicates, classify pairs, and generate contact statistics from Hi-C sequencing data.",
+  "repo": "GPTomics/bioSkills",
+  "path": "hi-c-analysis/contact-pairs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "contact-pairs-gptomics-bioskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "lark-agent",
+  "description": "version: 1.0.0",
+  "repo": "Interstellar-code/claud-skills",
+  "path": "generic-claude-framework/skills/lark-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Interstellar-code/claud-skills",
+  "dir_name": "lark-agent-interstellar-code-claud-skills-2"
+}

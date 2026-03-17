@@ -1,0 +1,11 @@
+{
+  "name": "scrum-team-scrum-master",
+  "description": "AI Scrum Master facilitating events, enforcing framework rules, coaching team, and removing impediments. Use when coordinating sprints, resolving impediments, or ensuring Scrum compliance.",
+  "repo": "staticWagomU/dotfiles",
+  "path": "config/claude/skills/scrum-team-scrum-master",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/staticWagomU/dotfiles",
+  "dir_name": "scrum-team-scrum-master-staticwagomu-dotfiles-2"
+}

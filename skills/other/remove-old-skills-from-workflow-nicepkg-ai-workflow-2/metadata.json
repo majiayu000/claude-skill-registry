@@ -1,0 +1,11 @@
+{
+  "name": "remove-old-skills-from-workflow",
+  "description": "Guide for removing skills from an existing workflow and updating all related documentation. Use when user wants to remove skills from a workflow (e.g., \"remove skill\", \"delete skill\", \"移除技能\", \"删除技能\").",
+  "repo": "nicepkg/ai-workflow",
+  "path": ".claude/skills/remove-old-skills-from-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "remove-old-skills-from-workflow-nicepkg-ai-workflow-2"
+}

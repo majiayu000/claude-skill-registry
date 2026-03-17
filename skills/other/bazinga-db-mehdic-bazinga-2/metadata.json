@@ -1,0 +1,11 @@
+{
+  "name": "bazinga-db",
+  "description": "DEPRECATED - Use domain-specific skills instead. Routes to bazinga-db-core, bazinga-db-workflow, bazinga-db-agents, or bazinga-db-context.",
+  "repo": "mehdic/bazinga",
+  "path": ".claude/skills/bazinga-db",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mehdic/bazinga",
+  "dir_name": "bazinga-db-mehdic-bazinga-2"
+}

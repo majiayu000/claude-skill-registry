@@ -1,0 +1,11 @@
+{
+  "name": "exploring-data",
+  "description": "Exploratory data analysis using ydata-profiling. Use when users upload .csv/.xlsx/.json/.parquet files or request \"explore data\", \"analyze dataset\", \"EDA\", \"profile data\". Generates interactive HTML o",
+  "repo": "oaustegard/claude-skills",
+  "path": "exploring-data",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "exploring-data-oaustegard-claude-skills-2"
+}

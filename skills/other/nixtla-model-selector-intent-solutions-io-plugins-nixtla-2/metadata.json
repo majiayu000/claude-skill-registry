@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-model-selector",
+  "description": "Automatically selects the best forecasting model between StatsForecast and TimeGPT based on time series data characteristics. Use when unsure which model performs best. Trigger with 'auto-select model",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "000-docs/000a-planned-skills/prediction-markets/nixtla-model-selector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-model-selector-intent-solutions-io-plugins-nixtla-2"
+}

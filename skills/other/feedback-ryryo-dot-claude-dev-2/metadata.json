@@ -1,0 +1,11 @@
+{
+  "name": "feedback",
+  "description": "実装完了後、学んだことをDESIGN.mdに蓄積。スキル/ルールの自己改善も提案。\nPR作成・Worktreeクリーンアップまで実行。ストーリー駆動開発の終点。\n「フィードバック」「/dev:feedback」で起動。\n\nTrigger:\nフィードバック, 学習事項蓄積, /dev:feedback, feedback, design update\n",
+  "repo": "ryryo/dot-claude-dev",
+  "path": ".claude/skills/dev/feedback",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ryryo/dot-claude-dev",
+  "dir_name": "feedback-ryryo-dot-claude-dev-2"
+}

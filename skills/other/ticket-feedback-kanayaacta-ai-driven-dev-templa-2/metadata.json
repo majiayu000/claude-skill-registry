@@ -1,0 +1,11 @@
+{
+  "name": "ticket-feedback",
+  "description": "レビュー指摘や発見した課題をLinearのタスクとして登録します",
+  "repo": "KanayaActa/ai-driven-dev-template",
+  "path": ".claude/skills/ticket-feedback",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KanayaActa/ai-driven-dev-template",
+  "dir_name": "ticket-feedback-kanayaacta-ai-driven-dev-templa-2"
+}

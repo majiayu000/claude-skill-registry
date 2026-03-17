@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-commits",
+  "description": "Manages GitLab commits. Use for listing, creating, reverting, or querying commit details/diffs/comments. Triggers: commit history, changes, reversions.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-commits",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-commits-knuckles-team-gitlab-api-2"
+}

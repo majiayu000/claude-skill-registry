@@ -1,0 +1,11 @@
+{
+  "name": "migrations",
+  "description": "Create and manage Supabase database migrations. Use when making schema changes, creating tables, adding columns, or managing database structure. Triggers on \"migration\", \"schema\", \"database\", \"table\",",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/supabase/migrations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "migrations-javeedishaq-ai-workflow-orchestr-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "resumable-ai-streams",
+  "description": "Add automatic stream recovery to AI chat with WorkflowChatTransport, start/resume API endpoints, and the useResumableChat hook.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/resumable-ai-streams",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "resumable-ai-streams-andrelandgraf-fullstackrecipes-2"
+}

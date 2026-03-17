@@ -1,0 +1,11 @@
+{
+  "name": "feature-research",
+  "description": "Use this whenever a user wants to add a new feature or explitly states to research a feature/API or building a plan for a new feature. It iterviews the user for feature details (if not provided), rese",
+  "repo": "seanchiuai/PRD-generator",
+  "path": ".claude/skills/feature-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/seanchiuai/PRD-generator",
+  "dir_name": "feature-research-seanchiuai-prd-generator-2"
+}

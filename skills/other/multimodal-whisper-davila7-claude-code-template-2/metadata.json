@@ -1,0 +1,11 @@
+{
+  "name": "multimodal-whisper",
+  "description": "OpenAI's general-purpose speech recognition model. Supports 99 languages, transcription, translation to English, and language identification. Six model sizes from tiny (39M params) to large (1550M par",
+  "repo": "davila7/claude-code-templates",
+  "path": "cli-tool/components/skills/ai-research/multimodal-whisper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davila7/claude-code-templates",
+  "dir_name": "multimodal-whisper-davila7-claude-code-template-2"
+}

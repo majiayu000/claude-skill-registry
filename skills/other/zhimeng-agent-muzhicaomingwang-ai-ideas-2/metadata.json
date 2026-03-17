@@ -1,0 +1,11 @@
+{
+  "name": "zhimeng-agent",
+  "description": "zhimeng's Agent 智能助手操作技能。\n触发场景：用户提到\"问知识库\"、\"发日报\"、\"检查Agent\"、\"重建索引\"、\"知识问答\"等。",
+  "repo": "muzhicaomingwang/ai-ideas",
+  "path": ".claude/skills/zhimeng-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/muzhicaomingwang/ai-ideas",
+  "dir_name": "zhimeng-agent-muzhicaomingwang-ai-ideas-2"
+}

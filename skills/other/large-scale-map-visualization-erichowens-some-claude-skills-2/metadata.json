@@ -1,0 +1,11 @@
+{
+  "name": "large-scale-map-visualization",
+  "description": "Master of high-performance web map implementations handling 5,000-100,000+ geographic data points. Specializes in Leaflet.js optimization, Supercluster algorithms, viewport-based loading, canvas rende",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/large-scale-map-visualization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "large-scale-map-visualization-erichowens-some-claude-skills-2"
+}

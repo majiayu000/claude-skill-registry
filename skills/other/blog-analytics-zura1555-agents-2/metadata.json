@@ -1,0 +1,11 @@
+{
+  "name": "blog-analytics",
+  "description": "Track blog post performance and generate insights for continuous improvement. USE WHEN user says 'track post performance', 'analyze blog metrics', 'what posts performed well', 'blog analytics', OR req",
+  "repo": "Zura1555/agents",
+  "path": ".claude/skills/blog-analytics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Zura1555/agents",
+  "dir_name": "blog-analytics-zura1555-agents-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "deployment",
+  "description": "Serverless deployment with zero-downtime, multi-environment strategies, and infrastructure validation. Use when deploying Lambda functions, managing environments, or troubleshooting deployment failure",
+  "repo": "Awannaphasch2016/jousef-landing",
+  "path": ".claude/skills/deployment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Awannaphasch2016/jousef-landing",
+  "dir_name": "deployment-awannaphasch2016-jousef-landing-2"
+}

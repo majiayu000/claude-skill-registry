@@ -1,0 +1,11 @@
+{
+  "name": "weekly-claude-analytics",
+  "description": "주간 Claude Code 사용 분석 리포트 생성.\n이번 주 모든 세션 로그를 분석하여 프로젝트별 시간 분포, 작업 유형, Jira 이슈 진행 현황 제공.\n\"주간 분석\", \"Claude 사용 통계\", \"weekly analytics\" 등의 요청 시 자동 적용.",
+  "repo": "msbaek/dotfiles",
+  "path": ".claude/skills/weekly-claude-analytics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/msbaek/dotfiles",
+  "dir_name": "weekly-claude-analytics-msbaek-dotfiles-2"
+}

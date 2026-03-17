@@ -1,0 +1,11 @@
+{
+  "name": "project-charter",
+  "description": "PMBOK準拠のプロジェクト憲章を作成する。新規プロジェクト開始時、プロジェクト憲章の作成時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/initiating/project-charter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "project-charter-haru-llc-ai-pm-system-noteboo-2"
+}

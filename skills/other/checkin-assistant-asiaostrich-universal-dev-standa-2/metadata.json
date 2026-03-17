@@ -1,0 +1,11 @@
+{
+  "name": "checkin-assistant",
+  "description": "Guide pre-commit quality gates and check-in workflow.\nUse when: committing code, preparing commits, quality gate verification.\nKeywords: commit, checkin, pre-commit, quality gate, git add, 提交, 簽入, 品質關",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "path": "locales/zh-CN/skills/claude-code/checkin-assistant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AsiaOstrich/universal-dev-standards",
+  "dir_name": "checkin-assistant-asiaostrich-universal-dev-standa-2"
+}

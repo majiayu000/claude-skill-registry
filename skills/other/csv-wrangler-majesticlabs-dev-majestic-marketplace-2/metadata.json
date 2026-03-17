@@ -1,0 +1,11 @@
+{
+  "name": "csv-wrangler",
+  "description": "Handle messy CSVs with encoding detection, delimiter inference, and malformed row recovery.",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": "plugins/majestic-data/skills/csv-wrangler",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "dir_name": "csv-wrangler-majesticlabs-dev-majestic-marketplace-2"
+}

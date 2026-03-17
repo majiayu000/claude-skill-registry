@@ -1,0 +1,11 @@
+{
+  "name": "async-programming-skill",
+  "description": "This skill provides async/await patterns and best practices for concurrent programming",
+  "repo": "ingpoc/SKILLS",
+  "path": "async-programming-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ingpoc/SKILLS",
+  "dir_name": "async-programming-skill-ingpoc-skills-2"
+}

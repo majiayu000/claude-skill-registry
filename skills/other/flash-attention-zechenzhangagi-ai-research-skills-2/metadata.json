@@ -1,0 +1,11 @@
+{
+  "name": "flash-attention",
+  "description": "Optimizes transformer attention with Flash Attention for 2-4x speedup and 10-20x memory reduction. Use when training/running transformers with long sequences (>512 tokens), encountering GPU memory iss",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "10-optimization/flash-attention",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "flash-attention-zechenzhangagi-ai-research-skills-2"
+}

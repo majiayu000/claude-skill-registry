@@ -1,0 +1,11 @@
+{
+  "name": "loom-plan-writer",
+  "description": "THIS IS THE REQUIRED SKILL FOR CREATING LOOM EXECUTION PLANS.",
+  "repo": "cosmix/loom",
+  "path": "skills/loom-plan-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "loom-plan-writer-cosmix-loom-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "monitoring-setup",
+  "description": "Observability stack with Prometheus, Grafana, and alerting.",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/infra/monitoring-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "monitoring-setup-timequity-vibe-coder-2"
+}

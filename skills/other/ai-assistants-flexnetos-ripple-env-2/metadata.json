@@ -1,0 +1,11 @@
+{
+  "name": "ai-assistants",
+  "description": "AI-powered development tools configuration and usage",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/ai-assistants",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FlexNetOS/ripple-env",
+  "dir_name": "ai-assistants-flexnetos-ripple-env-2"
+}

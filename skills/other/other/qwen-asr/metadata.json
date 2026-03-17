@@ -1,0 +1,17 @@
+{
+  "name": "qwen-asr",
+  "repo": "aahl/skills",
+  "path": "skills/qwen-asr/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aahl/skills",
+  "dir_name": "qwen-asr",
+  "downloaded_at": "2026-03-17T14:19:09.800634Z",
+  "author": "aahl",
+  "source_url": "https://github.com/aahl/skills/blob/main/skills/qwen-asr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aahl/skills/blob/main/skills/qwen-asr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

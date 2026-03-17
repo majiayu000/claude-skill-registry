@@ -1,0 +1,11 @@
+{
+  "name": "transformer-lens",
+  "description": "Provides guidance for mechanistic interpretability research using TransformerLens to inspect and manipulate transformer internals via HookPoints and activation caching. Use when reverse-engineering mo",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "04-mechanistic-interpretability/transformer-lens",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "transformer-lens-zechenzhangagi-ai-research-skills-2"
+}

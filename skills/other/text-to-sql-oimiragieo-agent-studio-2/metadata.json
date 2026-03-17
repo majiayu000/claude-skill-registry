@@ -1,0 +1,11 @@
+{
+  "name": "text-to-sql",
+  "description": "Convert natural language queries to SQL. Use for database queries, data analysis, and reporting.",
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/text-to-sql",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oimiragieo/agent-studio",
+  "dir_name": "text-to-sql-oimiragieo-agent-studio-2"
+}

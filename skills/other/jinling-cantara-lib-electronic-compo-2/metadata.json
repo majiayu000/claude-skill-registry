@@ -1,0 +1,11 @@
+{
+  "name": "jinling",
+  "description": "Jinling (JILN) connector MPN encoding, position-based part numbering for pin headers, female headers, and IDC connectors.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/jinling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "jinling-cantara-lib-electronic-compo-2"
+}

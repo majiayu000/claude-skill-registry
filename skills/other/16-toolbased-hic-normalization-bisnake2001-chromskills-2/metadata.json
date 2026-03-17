@@ -1,0 +1,11 @@
+{
+  "name": "16_toolBased.hic-normalization",
+  "description": "Automatically detect and normalize Hi-C data. Only .cool or .mcool file is supported. All .mcool files are then checked for existing normalization (supports bins/weight only) and balanced if none of t",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "16_toolBased.hic-normalization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "16-toolbased-hic-normalization-bisnake2001-chromskills-2"
+}

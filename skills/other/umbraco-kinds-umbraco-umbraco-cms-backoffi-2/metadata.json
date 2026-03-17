@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-kinds",
+  "description": "Implement kinds in Umbraco backoffice using official docs",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-kinds",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-kinds-umbraco-umbraco-cms-backoffi-2"
+}

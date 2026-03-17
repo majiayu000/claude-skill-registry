@@ -1,0 +1,11 @@
+{
+  "name": "acceptance-testing",
+  "description": "Plan and (when feasible) implement or execute user acceptance tests (UAT) /\nend-to-end acceptance scenarios. Converts requirements or user stories into\nacceptance criteria, test cases, test data, and ",
+  "repo": "terraphim/codex-skills",
+  "path": "skills/acceptance-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terraphim/codex-skills",
+  "dir_name": "acceptance-testing-terraphim-codex-skills-2"
+}

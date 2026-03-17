@@ -1,0 +1,11 @@
+{
+  "name": "aws-cloud-ops",
+  "description": "AWS cloud operations for CloudWatch, S3, Lambda, EC2, and IAM",
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/aws-cloud-ops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oimiragieo/agent-studio",
+  "dir_name": "aws-cloud-ops-oimiragieo-agent-studio-2"
+}

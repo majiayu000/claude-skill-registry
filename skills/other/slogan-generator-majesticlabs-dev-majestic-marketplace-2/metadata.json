@@ -1,0 +1,11 @@
+{
+  "name": "slogan-generator",
+  "description": "Generate and evaluate marketing slogans for any product or service. Creates options across multiple angles, scores against criteria, and recommends the best fit.",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": "plugins/majestic-marketing/skills/slogan-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "dir_name": "slogan-generator-majesticlabs-dev-majestic-marketplace-2"
+}

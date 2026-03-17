@@ -1,0 +1,11 @@
+{
+  "name": "consolidate-issues",
+  "description": "Reduce GitHub issue backlog through deduplication, linking, and closure. Use before creating new issues, when enforcement_mode is CONSOLIDATION, when issue:PR ratio exceeds 3:1, when AI-created issues",
+  "repo": "JacobPEvans/ai-assistant-instructions",
+  "path": "docs/archived-skills/consolidate-issues",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JacobPEvans/ai-assistant-instructions",
+  "dir_name": "consolidate-issues-jacobpevans-ai-assistant-instruc-2"
+}

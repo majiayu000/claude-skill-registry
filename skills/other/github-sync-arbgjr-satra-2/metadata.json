@@ -1,0 +1,11 @@
+{
+  "name": "github-sync",
+  "description": "Skill base para sincronizacao com GitHub.\nGerencia issues, labels e milestones de forma automatica.\nUse quando: criar issues, sincronizar milestones, gerenciar labels SDLC.\n",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/github-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "github-sync-arbgjr-satra-2"
+}

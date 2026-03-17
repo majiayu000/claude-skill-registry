@@ -1,0 +1,9 @@
+{
+  "name": "signal-intel",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/abm-orchestration/skills/signal-intel/SKILL.md",
+  "category": "other",
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "signal-intel",
+  "downloaded_at": "2026-02-22T07:21:53.159734Z"
+}

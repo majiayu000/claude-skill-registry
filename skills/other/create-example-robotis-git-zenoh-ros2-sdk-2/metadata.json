@@ -1,0 +1,11 @@
+{
+  "name": "create-example",
+  "description": "Create new publish/subscribe examples for ROS2 message types. Use when the user wants to add a new example, create pub/sub for a new message type, or add trajectory/sensor/geometry message examples.",
+  "repo": "ROBOTIS-GIT/zenoh_ros2_sdk",
+  "path": ".claude/skills/create-example",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ROBOTIS-GIT/zenoh_ros2_sdk",
+  "dir_name": "create-example-robotis-git-zenoh-ros2-sdk-2"
+}

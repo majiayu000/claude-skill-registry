@@ -1,0 +1,11 @@
+{
+  "name": "autoscaling-and-rightsizing",
+  "description": "See the main Infrastructure Sizing skill for comprehensive coverage of right-sizing and autoscaling strategies.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "42-cost-engineering/autoscaling-and-rightsizing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "autoscaling-and-rightsizing-amnadtaowsoam-cerebratechai-claude-2"
+}

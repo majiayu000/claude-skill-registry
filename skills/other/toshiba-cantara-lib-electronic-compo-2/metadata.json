@@ -1,0 +1,11 @@
+{
+  "name": "toshiba",
+  "description": "Toshiba Semiconductor MPN encoding patterns, package codes, and handler guidance. Use when working with Toshiba MOSFETs, optocouplers, transistors, motor drivers, or ToshibaHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/toshiba",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "toshiba-cantara-lib-electronic-compo-2"
+}

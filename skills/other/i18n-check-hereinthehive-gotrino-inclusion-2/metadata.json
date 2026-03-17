@@ -1,0 +1,11 @@
+{
+  "name": "i18n-check",
+  "description": "Analyze code for internationalization issues, understanding the UI context and user impact before flagging problems. Use when reviewing code for global readiness.",
+  "repo": "hereinthehive/gotrino-inclusion",
+  "path": "skills/i18n-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hereinthehive/gotrino-inclusion",
+  "dir_name": "i18n-check-hereinthehive-gotrino-inclusion-2"
+}

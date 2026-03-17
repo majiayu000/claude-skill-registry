@@ -1,0 +1,11 @@
+{
+  "name": "bazinga-validator",
+  "description": "Validates BAZINGA completion claims with independent verification. Spawned ONLY when PM sends BAZINGA. Acts as final quality gate - verifies test failures, coverage, evidence, and criteria independent",
+  "repo": "mehdic/bazinga",
+  "path": ".claude/skills/bazinga-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mehdic/bazinga",
+  "dir_name": "bazinga-validator-mehdic-bazinga-2"
+}

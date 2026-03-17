@@ -1,0 +1,11 @@
+{
+  "name": "gamma-rate-limits",
+  "description": "Understand and manage Gamma API rate limits effectively.\nUse when hitting rate limits, optimizing API usage,\nor implementing request queuing systems.\nTrigger with phrases like \"gamma rate limit\", \"gam",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/gamma-pack/gamma-rate-limits",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "gamma-rate-limits-vasic-digital-superagent-2"
+}

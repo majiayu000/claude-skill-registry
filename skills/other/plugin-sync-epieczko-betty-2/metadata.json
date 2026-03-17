@@ -1,0 +1,11 @@
+{
+  "name": "plugin.sync",
+  "description": "Automatically generate plugin.yaml from Betty Framework registries",
+  "repo": "epieczko/betty",
+  "path": "skills/plugin.sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/epieczko/betty",
+  "dir_name": "plugin-sync-epieczko-betty-2"
+}

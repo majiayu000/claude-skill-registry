@@ -1,0 +1,11 @@
+{
+  "name": "postcall-page-builder",
+  "description": "Generate personalized post-call landing pages from voice transcripts",
+  "repo": "varuntree/voqo-demo",
+  "path": ".claude/skills/postcall-page-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/varuntree/voqo-demo",
+  "dir_name": "postcall-page-builder-varuntree-voqo-demo-2"
+}

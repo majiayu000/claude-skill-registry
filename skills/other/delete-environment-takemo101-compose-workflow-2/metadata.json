@@ -1,0 +1,11 @@
+{
+  "name": "delete-environment",
+  "description": "container-use環境（コンテナ、ファイル、メタデータ）を完全に削除する手順",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/delete-environment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "delete-environment-takemo101-compose-workflow-2"
+}

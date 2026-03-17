@@ -1,0 +1,11 @@
+{
+  "name": "claude-config-reviewer",
+  "description": ".claude/ 디렉토리 설정 파일 검토 스킬. 에이전트/스킬/훅의 구조, frontmatter, description 패턴 검증.\n사용 시기: (1) 새 에이전트/스킬/훅 생성 후 (2) 기존 설정 수정 후 (3) .claude/ 전체 리뷰 시 (4) /review-config 호출 시 (project)",
+  "repo": "jskjw157/FanPulse",
+  "path": ".claude/skills/claude-config-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jskjw157/FanPulse",
+  "dir_name": "claude-config-reviewer-jskjw157-fanpulse-2"
+}

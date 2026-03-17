@@ -1,0 +1,11 @@
+{
+  "name": "llm-evaluation",
+  "description": "Implement comprehensive evaluation strategies for LLM applications using automated metrics, human feedback, and benchmarking. Use when testing LLM performance, measuring AI application quality, or est",
+  "repo": "apassuello/multimodal_insight_engine",
+  "path": ".claude/skills/llm-evaluation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/apassuello/multimodal_insight_engine",
+  "dir_name": "llm-evaluation-apassuello-multimodal-insight-e-2"
+}

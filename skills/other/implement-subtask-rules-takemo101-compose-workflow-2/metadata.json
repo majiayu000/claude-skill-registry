@@ -1,0 +1,11 @@
+{
+  "name": "implement-subtask-rules",
+  "description": "container-workerがSubtask実装時に参照する詳細ルール（設計書参照、粒度、TDD、品質レビュー、出力形式）を定義",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/implement-subtask-rules",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "implement-subtask-rules-takemo101-compose-workflow-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "openapi-critical-rules",
+  "description": "The 12 critical OpenAPI rules that cause immediate task failure if violated",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/openapi-critical-rules",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "openapi-critical-rules-zerobias-org-module-2"
+}

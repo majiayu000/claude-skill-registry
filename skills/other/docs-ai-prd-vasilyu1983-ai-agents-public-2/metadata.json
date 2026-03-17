@@ -1,0 +1,11 @@
+{
+  "name": "docs-ai-prd",
+  "description": "Write PRDs, specs, and project context optimized for coding assistants (Claude Code, Cursor, Copilot, Custom GPTs). Includes CLAUDE.md generation, session planning, and templates for creating document",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/docs-ai-prd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "docs-ai-prd-vasilyu1983-ai-agents-public-2"
+}

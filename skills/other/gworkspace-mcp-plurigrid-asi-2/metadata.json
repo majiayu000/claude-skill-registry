@@ -1,0 +1,11 @@
+{
+  "name": "gworkspace-mcp",
+  "description": "gworkspace-mcp - Google Workspace MCP Integration with Temporal Consistency",
+  "repo": "plurigrid/asi",
+  "path": "skills/gworkspace-mcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "gworkspace-mcp-plurigrid-asi-2"
+}

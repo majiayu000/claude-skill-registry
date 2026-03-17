@@ -1,0 +1,11 @@
+{
+  "name": "shadcn-ui-setup",
+  "description": "Install and configure Shadcn/ui component library with Radix UI primitives, Aceternity UI effects, set up components, and manage the component registry. Use when adding Shadcn/ui to a Next.js project ",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/shadcn-ui-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "shadcn-ui-setup-maneeshanif-todo-spec-driven-2"
+}

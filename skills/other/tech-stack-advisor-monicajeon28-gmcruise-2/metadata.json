@@ -1,0 +1,11 @@
+{
+  "name": "tech-stack-advisor",
+  "description": "**TECH STACK ADVISOR** - '기술 스택', '프레임워크 추천', 'DB 뭐 쓸까', '어떤 기술', '스택 선택', '뭘로 만들까' 요청 시 자동 발동. 비개발자 친화적 기술 선택 가이드. 유지보수성, 확장성, 학습 곡선 고려한 추천.",
+  "repo": "monicajeon28/GMcruise",
+  "path": ".claude/skills/tech-stack-advisor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/monicajeon28/GMcruise",
+  "dir_name": "tech-stack-advisor-monicajeon28-gmcruise-2"
+}

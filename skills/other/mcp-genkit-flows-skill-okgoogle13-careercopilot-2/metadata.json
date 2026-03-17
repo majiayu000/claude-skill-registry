@@ -1,0 +1,11 @@
+{
+  "name": "mcp-genkit-flows-skill",
+  "description": "Execute and manage 26 Genkit AI flows via MCP with 90% caching. Use when generating KSC responses, creating cover letters, analyzing resumes, or orchestrating multi-step AI workflows. Provides 70-90% ",
+  "repo": "okgoogle13/careercopilot",
+  "path": ".claude/skills/_legacy_archive/mcp-genkit-flows-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/okgoogle13/careercopilot",
+  "dir_name": "mcp-genkit-flows-skill-okgoogle13-careercopilot-2"
+}

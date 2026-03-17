@@ -1,0 +1,9 @@
+{
+  "name": "docs-build",
+  "repo": "cloudposse/docs",
+  "path": ".claude/skills/docs-build/SKILL.md",
+  "category": "other",
+  "source": "github.com/cloudposse/docs",
+  "dir_name": "docs-build",
+  "downloaded_at": "2026-02-15T06:46:13.817504Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "timeseries-detrending",
+  "description": "Tools and techniques for detrending time series data in macroeconomic analysis. Use when working with economic time series that need to be decomposed into trend and cyclical components. Covers HP filt",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/econ-detrending-correlation/environment/skills/timeseries-detrending",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "timeseries-detrending-benchflow-ai-skillsbench-2"
+}

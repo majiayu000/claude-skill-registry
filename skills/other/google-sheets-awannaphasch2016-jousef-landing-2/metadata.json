@@ -1,0 +1,11 @@
+{
+  "name": "google-sheets",
+  "description": "Google Sheets automation using Python gspread library - reading, writing, formatting, and Service Account setup",
+  "repo": "Awannaphasch2016/jousef-landing",
+  "path": ".claude/skills/google-sheets",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Awannaphasch2016/jousef-landing",
+  "dir_name": "google-sheets-awannaphasch2016-jousef-landing-2"
+}

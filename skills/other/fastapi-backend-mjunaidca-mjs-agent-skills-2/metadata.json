@@ -1,0 +1,11 @@
+{
+  "name": "fastapi-backend",
+  "description": "Build production-grade FastAPI backends with SQLModel, Pydantic, and JWT authentication. Use this skill when building REST APIs, integrating with Neon PostgreSQL, implementing Better Auth JWT verifica",
+  "repo": "mjunaidca/mjs-agent-skills",
+  "path": "docs/taskflow-vault/skills/engineering/fastapi-backend",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mjunaidca/mjs-agent-skills",
+  "dir_name": "fastapi-backend-mjunaidca-mjs-agent-skills-2"
+}

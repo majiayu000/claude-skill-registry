@@ -1,0 +1,11 @@
+{
+  "name": "pattern-detection",
+  "description": "Detect and document existing code patterns in a codebase. Use to maintain consistency with established conventions when writing new code.",
+  "repo": "Junior-Frontend-dev/Hi-u-ng",
+  "path": ".claude/skills/research/pattern-detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Junior-Frontend-dev/Hi-u-ng",
+  "dir_name": "pattern-detection-junior-frontend-dev-hi-u-ng-2"
+}

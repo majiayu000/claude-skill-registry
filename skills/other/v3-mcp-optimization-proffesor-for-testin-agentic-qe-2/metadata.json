@@ -1,0 +1,11 @@
+{
+  "name": "v3-mcp-optimization",
+  "description": "MCP server optimization and transport layer enhancement for claude-flow v3. Implements connection pooling, load balancing, tool registry optimization, and performance monitoring for sub-100ms response",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/v3-mcp-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "v3-mcp-optimization-proffesor-for-testin-agentic-qe-2"
+}

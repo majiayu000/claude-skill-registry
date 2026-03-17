@@ -1,0 +1,11 @@
+{
+  "name": "issue-prerequisite",
+  "description": "Use before starting ANY work - hard gate ensuring a GitHub issue exists, creating one if needed through user questioning",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/issue-prerequisite",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "issue-prerequisite-troykelly-codex-skills-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "k8s-manifests-generator",
+  "repo": "hamzashakoor119/Build-ToDo-App-Using-Claude-and-SpecKitPlus",
+  "path": ".claude/skills/k8s-manifests-generator/SKILL.md",
+  "category": "other",
+  "source": "github.com/hamzashakoor119/Build-ToDo-App-Using-Claude-and-SpecKitPlus",
+  "dir_name": "k8s-manifests-generator",
+  "downloaded_at": "2026-02-22T07:24:41.212977Z"
+}

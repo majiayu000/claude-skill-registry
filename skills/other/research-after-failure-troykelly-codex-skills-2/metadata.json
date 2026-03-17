@@ -1,0 +1,11 @@
+{
+  "name": "research-after-failure",
+  "description": "Use after 2 consecutive failed attempts at solving a problem - STOP guessing and research documentation, codebase, and online resources before resuming",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/research-after-failure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "research-after-failure-troykelly-codex-skills-2"
+}

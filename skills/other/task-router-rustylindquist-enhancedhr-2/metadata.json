@@ -1,0 +1,11 @@
+{
+  "name": "task-router",
+  "description": "Automatically analyze tasks and route to optimal agent(s). Use when receiving complex requests to determine which agents to spawn.",
+  "repo": "RustyLindquist/EnhancedHR",
+  "path": ".claude/skills/task-router",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RustyLindquist/EnhancedHR",
+  "dir_name": "task-router-rustylindquist-enhancedhr-2"
+}

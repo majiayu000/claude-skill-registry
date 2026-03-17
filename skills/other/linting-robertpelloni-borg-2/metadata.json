@@ -1,0 +1,11 @@
+{
+  "name": "linting",
+  "description": "This skill helps lint Python code using ruff. Use when the user asks to \"lint\", \"check code quality\", or \"fix style issues\".\n",
+  "repo": "robertpelloni/borg",
+  "path": "agents/software-agent-sdk/examples/05_skills_and_plugins/02_loading_plugins/example_plugins/code-quality/skills/linting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertpelloni/borg",
+  "dir_name": "linting-robertpelloni-borg-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "owasp",
+  "description": "OWASP Top 10 security practices and secure coding patterns.",
+  "repo": "duthaho/claudekit",
+  "path": ".claude/skills/security/owasp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/duthaho/claudekit",
+  "dir_name": "owasp-duthaho-claudekit-2"
+}

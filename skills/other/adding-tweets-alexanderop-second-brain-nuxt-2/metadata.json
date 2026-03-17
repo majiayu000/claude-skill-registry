@@ -1,0 +1,11 @@
+{
+  "name": "adding-tweets",
+  "description": "Add tweets to the Second Brain. Use when the user provides a Twitter/X URL and pasted tweet content, asking to \"add a tweet\", \"save this tweet\", or \"capture this tweet\".",
+  "repo": "alexanderop/second-brain-nuxt",
+  "path": ".claude/skills/adding-tweets",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alexanderop/second-brain-nuxt",
+  "dir_name": "adding-tweets-alexanderop-second-brain-nuxt-2"
+}

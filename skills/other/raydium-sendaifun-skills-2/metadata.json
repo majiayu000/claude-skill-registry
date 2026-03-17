@@ -1,0 +1,11 @@
+{
+  "name": "raydium",
+  "description": "Complete Raydium Protocol SDK - the single source of truth for integrating Raydium on Solana. Covers SDK, Trade API, CLMM, CPMM, AMM pools, LaunchLab token launches, farming, CPI integration, and all ",
+  "repo": "sendaifun/skills",
+  "path": "skills/raydium",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "raydium-sendaifun-skills-2"
+}

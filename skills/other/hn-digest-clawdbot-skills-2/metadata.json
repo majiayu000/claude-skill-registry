@@ -1,0 +1,11 @@
+{
+  "name": "hn-digest",
+  "description": "Fetch and send Hacker News front-page posts on demand. Use when the user asks for HN, says 'hn', 'pull HN', 'hn 10', or specifies a topic like 'hn health', 'hn hacking', or 'hn tech'. Sends N (default",
+  "repo": "clawdbot/skills",
+  "path": "skills/cpojer/hn-digest",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "hn-digest-clawdbot-skills-2"
+}

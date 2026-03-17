@@ -1,0 +1,11 @@
+{
+  "name": "implement_plan",
+  "description": "Implement technical plans from thoughts/shared/plans with verification",
+  "repo": "tfunk1030/vibe",
+  "path": ".claude/skills/implement_plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tfunk1030/vibe",
+  "dir_name": "implement-plan-tfunk1030-vibe-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "learning-capture",
+  "description": "Recognize and capture reusable patterns, workflows, and domain knowledge from work sessions into new skills. Use when completing tasks that involve novel approaches repeated 2+ times, synthesizing com",
+  "repo": "freitasp1/claude-code-skills",
+  "path": "skills/continual-learning/learning-capture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/freitasp1/claude-code-skills",
+  "dir_name": "learning-capture-freitasp1-claude-code-skills-2"
+}

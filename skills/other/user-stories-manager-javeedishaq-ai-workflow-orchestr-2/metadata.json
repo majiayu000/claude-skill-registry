@@ -1,0 +1,11 @@
+{
+  "name": "user-stories-manager",
+  "description": "Manage user stories: create, list, update status, link migrations/tests, validate; use when working on features, tracking progress, or creating new stories (project)",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/user-stories-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "user-stories-manager-javeedishaq-ai-workflow-orchestr-2"
+}

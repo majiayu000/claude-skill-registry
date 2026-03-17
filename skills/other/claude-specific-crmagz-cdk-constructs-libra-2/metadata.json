@@ -1,0 +1,11 @@
+{
+  "name": "claude-specific",
+  "description": "Claude Code specific instructions for working with this CDK monorepo. General guidance on code generation, refactoring, and feature additions.",
+  "repo": "crmagz/cdk-constructs-library",
+  "path": ".claude/skills/claude-specific",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/crmagz/cdk-constructs-library",
+  "dir_name": "claude-specific-crmagz-cdk-constructs-libra-2"
+}

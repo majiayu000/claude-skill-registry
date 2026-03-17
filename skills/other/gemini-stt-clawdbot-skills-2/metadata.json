@@ -1,0 +1,11 @@
+{
+  "name": "gemini-stt",
+  "description": "Transcribe audio files using Google's Gemini API or Vertex AI",
+  "repo": "clawdbot/skills",
+  "path": "skills/araa47/gemini-stt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "gemini-stt-clawdbot-skills-2"
+}

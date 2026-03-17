@@ -1,0 +1,11 @@
+{
+  "name": "landing-the-plane",
+  "description": "Checklist for finishing work, pushing a branch, and opening a ready-for-review PR with tests and tracker updates. Use when asked to \"land the plane\"",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/landing-the-plane",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "landing-the-plane-ramblurr-nix-devenv-2"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "df-list-objective-assumptions",
+  "repo": "AO-Cyber-Systems/devflow-claude",
+  "path": "skills/df-list-objective-assumptions/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/AO-Cyber-Systems/devflow-claude",
+  "dir_name": "df-list-objective-assumptions",
+  "downloaded_at": "2026-03-01T04:44:51.845606Z",
+  "author": "AO-Cyber-Systems",
+  "source_url": "https://github.com/AO-Cyber-Systems/devflow-claude/blob/main/skills/df-list-objective-assumptions/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AO-Cyber-Systems/devflow-claude/blob/main/skills/df-list-objective-assumptions/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

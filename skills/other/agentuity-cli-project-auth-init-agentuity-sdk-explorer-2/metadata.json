@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-project-auth-init",
+  "description": "Set up Agentuity Auth for your project. Requires authentication. Use for managing authentication credentials",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-project-auth-init",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-project-auth-init-agentuity-sdk-explorer-2"
+}

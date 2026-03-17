@@ -1,0 +1,11 @@
+{
+  "name": "docs-list",
+  "description": "Google Docs の一覧を取得する。「ドキュメント一覧」「Docs 一覧」「Google Docs 一覧」「Docs を見たい」「ドキュメント」などで起動。",
+  "repo": "shiiman/claude-code-plugins",
+  "path": "plugins/shiiman-google/skills/docs-list",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shiiman/claude-code-plugins",
+  "dir_name": "docs-list-shiiman-claude-code-plugins-2"
+}

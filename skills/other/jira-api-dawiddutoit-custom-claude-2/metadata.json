@@ -1,0 +1,11 @@
+{
+  "name": "jira-api",
+  "description": "Comprehensive reference for Atlassian Jira REST API v3 documentation and best practices.\nUse when asking about Jira API endpoints, authentication, request/response formats, JQL queries,\nAtlassian Docu",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/jira-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "jira-api-dawiddutoit-custom-claude-2"
+}

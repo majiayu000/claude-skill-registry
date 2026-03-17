@@ -1,0 +1,11 @@
+{
+  "name": "zls-integration",
+  "description": "Zig Language Server (ZLS) provides IDE features for Zig development. This skill covers installation, configuration, build-on-save diagnostics, and troubleshooting.",
+  "repo": "plurigrid/asi",
+  "path": "skills/zls-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "zls-integration-plurigrid-asi-2"
+}

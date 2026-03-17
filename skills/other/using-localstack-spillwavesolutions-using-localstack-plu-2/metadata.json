@@ -1,0 +1,11 @@
+{
+  "name": "using-localstack",
+  "description": "Build, test, and debug AWS-native systems locally with LocalStack (Community/Pro) using awslocal, IaC toolchains, event-driven pipelines, and observability; includes setup, deployment, management, mon",
+  "repo": "SpillwaveSolutions/using-localstack-plugin",
+  "path": "plugins/using-localstack-plugin/skills/using-localstack",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpillwaveSolutions/using-localstack-plugin",
+  "dir_name": "using-localstack-spillwavesolutions-using-localstack-plu-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "moai-core-spec-authoring",
+  "description": "Complete SPEC document authoring guide with YAML metadata structure (7 required + 9 optional fields), EARS requirement syntax (5 patterns including Unwanted Behaviors), version lifecycle management, T",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-core-spec-authoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-core-spec-authoring-jg-chalk-io-nora-livekit-2"
+}

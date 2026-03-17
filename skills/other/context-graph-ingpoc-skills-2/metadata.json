@@ -1,0 +1,11 @@
+{
+  "name": "context-graph",
+  "description": "Use when storing decision traces, querying past precedents, or implementing learning loops. Load in COMPLETE state or when needing to learn from history. Covers semantic search with Voyage AI embeddin",
+  "repo": "ingpoc/SKILLS",
+  "path": "context-graph",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ingpoc/SKILLS",
+  "dir_name": "context-graph-ingpoc-skills-2"
+}

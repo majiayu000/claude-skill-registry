@@ -1,0 +1,11 @@
+{
+  "name": "github-actions-pipeline-builder",
+  "description": "Build production CI/CD pipelines with GitHub Actions. Implements matrix builds, caching, deployments, testing, security scanning. Use for automated testing, deployments, release workflows. Activate on",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/github-actions-pipeline-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "github-actions-pipeline-builder-erichowens-some-claude-skills-2"
+}

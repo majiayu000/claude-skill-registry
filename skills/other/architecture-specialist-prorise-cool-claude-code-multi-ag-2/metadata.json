@@ -1,0 +1,11 @@
+{
+  "name": "architecture-specialist",
+  "description": "提供系统架构设计、技术选型、架构审查和组件设计能力。当需要设计新系统、重构现有架构或进行架构审查时使用。",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/architecture-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "architecture-specialist-prorise-cool-claude-code-multi-ag-2"
+}

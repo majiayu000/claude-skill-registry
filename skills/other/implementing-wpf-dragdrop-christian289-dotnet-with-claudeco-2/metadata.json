@@ -1,0 +1,11 @@
+{
+  "name": "implementing-wpf-dragdrop",
+  "description": "Implements WPF drag and drop functionality using DragDrop.DoDragDrop, DataObject, and drag/drop events. Use when building file drop zones, list reordering, or inter-application data transfer.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/implementing-wpf-dragdrop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "implementing-wpf-dragdrop-christian289-dotnet-with-claudeco-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "phpunit-testing",
+  "description": "PHPUnit testing for PHP in Oh My Brand! theme. Test setup, mocking WordPress/ACF functions, testing helper functions and render templates. Use when writing unit tests for PHP code.",
+  "repo": "WesleySmits/oh-my-brand-wp-fse",
+  "path": ".github/skills/phpunit-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/oh-my-brand-wp-fse",
+  "dir_name": "phpunit-testing-wesleysmits-oh-my-brand-wp-fse-2"
+}

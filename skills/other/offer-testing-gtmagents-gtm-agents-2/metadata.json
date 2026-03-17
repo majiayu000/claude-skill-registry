@@ -1,0 +1,11 @@
+{
+  "name": "offer-testing",
+  "description": "Use when designing copy experiments to optimize hooks, offers, and CTAs.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/copywriting/skills/offer-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "offer-testing-gtmagents-gtm-agents-2"
+}

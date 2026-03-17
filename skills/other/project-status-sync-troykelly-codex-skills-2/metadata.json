@@ -1,0 +1,11 @@
+{
+  "name": "project-status-sync",
+  "description": "Use to keep GitHub Project fields synchronized with actual work state - updates status, verification, criteria counts, and other project-specific fields",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/project-status-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "project-status-sync-troykelly-codex-skills-2"
+}

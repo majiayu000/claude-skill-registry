@@ -1,0 +1,11 @@
+{
+  "name": "recursive-decomposition",
+  "description": "This skill should be used when facing long-context tasks, processing large documents, handling multi-file analysis, aggregating information across many sources, answering questions requiring hierarchi",
+  "repo": "massimodeluisa/recursive-decomposition-skill",
+  "path": "plugins/recursive-decomposition/skills/recursive-decomposition",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/massimodeluisa/recursive-decomposition-skill",
+  "dir_name": "recursive-decomposition-massimodeluisa-recursive-decomposit-2"
+}

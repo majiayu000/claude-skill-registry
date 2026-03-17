@@ -1,0 +1,11 @@
+{
+  "name": "system-prompt-writer",
+  "description": "This skill should be used when writing or improving system prompts for AI agents, providing expert guidance based on Anthropic's context engineering principles.",
+  "repo": "dongjin-ml/strands-skill-system",
+  "path": "skills/system-prompt-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dongjin-ml/strands-skill-system",
+  "dir_name": "system-prompt-writer-dongjin-ml-strands-skill-system-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "safe-git-guard",
+  "description": "Prevents destructive Git operations by requiring backup and confirmation. Blocks git reset --hard, git push --force on main, git clean -fd. Requires backup before git checkout, git reset, git rebase. ",
+  "repo": "freitasp1/claude-code-skills",
+  "path": "skills/safe-git-guard",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/freitasp1/claude-code-skills",
+  "dir_name": "safe-git-guard-freitasp1-claude-code-skills-2"
+}

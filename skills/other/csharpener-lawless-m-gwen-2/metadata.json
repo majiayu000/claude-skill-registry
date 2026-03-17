@@ -1,0 +1,11 @@
+{
+  "name": "CSharpener",
+  "description": "C# static analysis tool for call graphs, unused code detection, impact analysis, HTML documentation generation, and Graphviz diagram export",
+  "repo": "lawless-m/Gwen",
+  "path": ".claude/skills/CSharpener",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lawless-m/Gwen",
+  "dir_name": "csharpener-lawless-m-gwen-2"
+}

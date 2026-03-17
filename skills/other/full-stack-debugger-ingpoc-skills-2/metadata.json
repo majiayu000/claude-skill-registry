@@ -1,0 +1,11 @@
+{
+  "name": "full-stack-debugger",
+  "description": "This skill should be used when debugging full-stack issues that span UI, backend, and database layers. It provides a systematic workflow to detect errors, analyze root causes, apply fixes iteratively,",
+  "repo": "ingpoc/SKILLS",
+  "path": "full-stack-debugger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ingpoc/SKILLS",
+  "dir_name": "full-stack-debugger-ingpoc-skills-2"
+}

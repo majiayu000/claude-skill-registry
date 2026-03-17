@@ -1,0 +1,11 @@
+{
+  "name": "task-plan-normalizer",
+  "description": "Convert raw task input into a machine-safe execution plan or explicitly refuse to proceed. Use before any code changes in unattended/headless mode to ensure deterministic, safe task execution.",
+  "repo": "BreakerOfStems/claude-skills",
+  "path": "skills/task-plan-normalizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BreakerOfStems/claude-skills",
+  "dir_name": "task-plan-normalizer-breakerofstems-claude-skills-2"
+}

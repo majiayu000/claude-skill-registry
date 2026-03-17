@@ -1,0 +1,11 @@
+{
+  "name": "adding-nango-provider-support",
+  "description": "Use when adding support for a new Nango provider - configures provider in providers.yaml, creates documentation (main page, setup guide, connect guide), and updates docs.json following established pat",
+  "repo": "NangoHQ/ai-ide-prompts",
+  "path": ".claude/skills/adding-nango-provider-support",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NangoHQ/ai-ide-prompts",
+  "dir_name": "adding-nango-provider-support-nangohq-ai-ide-prompts-2"
+}

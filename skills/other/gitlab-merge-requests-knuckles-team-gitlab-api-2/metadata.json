@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-merge-requests",
+  "description": "Manages GitLab merge requests. Use for creating, listing MRs across projects or groups. Triggers: PRs, code reviews.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-merge-requests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-merge-requests-knuckles-team-gitlab-api-2"
+}

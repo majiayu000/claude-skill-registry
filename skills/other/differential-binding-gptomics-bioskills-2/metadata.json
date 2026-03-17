@@ -1,0 +1,11 @@
+{
+  "name": "differential-binding",
+  "description": "Differential binding analysis using DiffBind. Compare ChIP-seq peaks between conditions with statistical rigor. Requires replicate samples. Outputs differentially bound regions with fold changes and p",
+  "repo": "GPTomics/bioSkills",
+  "path": "chip-seq/differential-binding",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "differential-binding-gptomics-bioskills-2"
+}

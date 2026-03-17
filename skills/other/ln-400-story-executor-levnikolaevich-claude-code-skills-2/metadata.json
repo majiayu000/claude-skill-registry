@@ -1,0 +1,11 @@
+{
+  "name": "ln-400-story-executor",
+  "description": "Orchestrates Story tasks. Prioritizes To Review -> To Rework -> Todo, delegates to ln-401/ln-403/ln-404, hands Story quality to ln-500. Metadata-only loading up front.",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-400-story-executor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-400-story-executor-levnikolaevich-claude-code-skills-2"
+}

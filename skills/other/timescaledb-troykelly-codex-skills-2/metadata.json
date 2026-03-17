@@ -1,0 +1,11 @@
+{
+  "name": "timescaledb",
+  "description": "MANDATORY when working with time-series data, hypertables, continuous aggregates, or compression - enforces TimescaleDB 2.24.0 best practices including lightning-fast recompression, UUIDv7 continuous ",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/timescaledb",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "timescaledb-troykelly-codex-skills-2"
+}

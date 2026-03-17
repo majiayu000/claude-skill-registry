@@ -1,0 +1,11 @@
+{
+  "name": "narrative-event-extractor",
+  "description": "経過記録・臨床サマリー等のナラティブテキストから臨床イベント（有害事象、効果判定、\n症状変化等）を抽出する仕様を設計する。NLP/正規表現パターンと品質管理計画を含む。\n",
+  "repo": "tito-gh/healthcare",
+  "path": ".claude/skills/narrative-event-extractor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tito-gh/healthcare",
+  "dir_name": "narrative-event-extractor-tito-gh-healthcare-2"
+}

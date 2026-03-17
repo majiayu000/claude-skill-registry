@@ -1,0 +1,11 @@
+{
+  "name": "frontend-component",
+  "description": "Create React/Vue component with TypeScript, tests, and styles. Auto-invoke when user says \"create component\", \"add component\", \"new component\", or \"build component\".",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "navigator-main/skills/frontend-component",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "frontend-component-dkyazzentwatwa-supernavigator-2"
+}

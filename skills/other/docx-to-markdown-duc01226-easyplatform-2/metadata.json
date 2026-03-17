@@ -1,0 +1,11 @@
+{
+  "name": "docx-to-markdown",
+  "description": "Convert Microsoft Word (.docx) files to Markdown. Use when importing Word documents, extracting content from DOCX for version control, or converting documentation to Markdown format.",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/docx-to-markdown",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/duc01226/EasyPlatform",
+  "dir_name": "docx-to-markdown-duc01226-easyplatform-2"
+}

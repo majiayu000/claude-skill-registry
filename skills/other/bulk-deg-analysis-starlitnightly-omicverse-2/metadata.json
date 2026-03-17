@@ -1,0 +1,11 @@
+{
+  "name": "bulk-deg-analysis",
+  "description": "Guide Claude through omicverse's bulk RNA-seq DEG pipeline, from gene ID mapping and DESeq2 normalization to statistical testing, visualization, and pathway enrichment. Use when a user has bulk count ",
+  "repo": "Starlitnightly/omicverse",
+  "path": ".claude/skills/bulk-deg-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Starlitnightly/omicverse",
+  "dir_name": "bulk-deg-analysis-starlitnightly-omicverse-2"
+}

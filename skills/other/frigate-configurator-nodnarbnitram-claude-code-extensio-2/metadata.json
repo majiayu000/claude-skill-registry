@@ -1,0 +1,11 @@
+{
+  "name": "frigate-configurator",
+  "description": "Configure Frigate NVR with optimized YAML, object detection, recording, zones, and hardware acceleration. Use when setting up Frigate cameras, troubleshooting detection issues, configuring Coral TPU/O",
+  "repo": "nodnarbnitram/claude-code-extensions",
+  "path": ".claude/skills/frigate-configurator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nodnarbnitram/claude-code-extensions",
+  "dir_name": "frigate-configurator-nodnarbnitram-claude-code-extensio-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "us-enrich-context",
+  "description": "为精炼的User Story增加真实场景描述、用户心理和具体对话，让US对PM/客户更亲切易懂。适合在US初稿完成后、需要向客户展示理解或准备验收时使用，当US格式正确但缺乏场景感时。帮助不熟悉敏捷的PM/BA、需要对外沟通的团队，通过丰富的场景感让需求文档更容易被理解和接受。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/requirements/us-enrich-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "us-enrich-context-tikazyq-agentic-spec-forge-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "advanced-features",
+  "description": "Implement advanced task features - Priorities, Tags, Due Dates, Reminders, Recurring Tasks, Search, Filter, and Sort. Use when adding Phase 5 advanced functionality. (project)",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/advanced-features",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "advanced-features-maneeshanif-todo-spec-driven-2"
+}

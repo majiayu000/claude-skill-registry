@@ -1,0 +1,11 @@
+{
+  "name": "swift-package-demo",
+  "description": "Use when creating demo GIFs for Swift package READMEs, recording iOS simulator videos, or setting up demo apps for SwiftUI libraries",
+  "repo": "ivan-magda/claude-superpowers",
+  "path": "plugins/swift/skills/swift-package-demo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ivan-magda/claude-superpowers",
+  "dir_name": "swift-package-demo-ivan-magda-claude-superpowers-2"
+}

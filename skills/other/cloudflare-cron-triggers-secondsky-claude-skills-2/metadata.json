@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-cron-triggers",
+  "description": "Status: Production Ready ✅",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-cron-triggers/skills/cloudflare-cron-triggers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "cloudflare-cron-triggers-secondsky-claude-skills-2"
+}

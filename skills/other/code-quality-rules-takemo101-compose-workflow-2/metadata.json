@@ -1,0 +1,11 @@
+{
+  "name": "code-quality-rules",
+  "description": "実装時に遵守すべきコード品質ルール（500行ルール、固定アーキテクチャ、SOLID原則、命名規則、テストカバレッジ要件）を定義",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/code-quality-rules",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "code-quality-rules-takemo101-compose-workflow-2"
+}

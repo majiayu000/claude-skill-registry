@@ -1,0 +1,11 @@
+{
+  "name": "pr-merge-workflow",
+  "description": "PRの作成からマージ、クリーンアップ、ロールバックまでの標準フローを定義",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/pr-merge-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "pr-merge-workflow-takemo101-compose-workflow-2"
+}

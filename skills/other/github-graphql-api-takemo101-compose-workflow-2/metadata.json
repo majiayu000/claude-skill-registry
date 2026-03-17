@@ -1,0 +1,11 @@
+{
+  "name": "github-graphql-api",
+  "description": "GitHub REST APIのSub-issue関連バグを回避するためのGraphQL API共通処理（Sub-issue登録、エラーハンドリング）を提供",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/github-graphql-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "github-graphql-api-takemo101-compose-workflow-2"
+}

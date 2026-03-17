@@ -1,0 +1,11 @@
+{
+  "name": "openai-responses",
+  "description": "Build agentic AI applications with OpenAI's Responses API - the stateful successor to Chat Completions. Preserves reasoning across turns for 5% better multi-turn performance and 40-80% improved cache ",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/openai-responses",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "openai-responses-ovachiever-droid-tings-2"
+}

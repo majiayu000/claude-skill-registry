@@ -1,0 +1,11 @@
+{
+  "name": "mdx-sanitizer",
+  "description": "Comprehensive MDX content sanitizer that escapes angle brackets, generics, and other JSX-conflicting patterns to prevent build failures",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/mdx-sanitizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "mdx-sanitizer-erichowens-some-claude-skills-2"
+}

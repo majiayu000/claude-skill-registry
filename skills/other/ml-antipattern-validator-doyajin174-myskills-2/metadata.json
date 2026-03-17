@@ -1,0 +1,11 @@
+{
+  "name": "ml-antipattern-validator",
+  "description": "Prevents 30+ critical AI/ML mistakes including data leakage, evaluation errors, training pitfalls, and deployment issues. Use when working with ML training, testing, model evaluation, or deployment.",
+  "repo": "Doyajin174/myskills",
+  "path": ".public/skills/ml-antipattern-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Doyajin174/myskills",
+  "dir_name": "ml-antipattern-validator-doyajin174-myskills-2"
+}

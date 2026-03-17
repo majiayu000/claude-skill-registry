@@ -1,0 +1,11 @@
+{
+  "name": "troubleshoot-errors",
+  "description": "Diagnose and fix common Algorand errors including smart contract failures, transaction rejections, and SDK exceptions. Use when encountering smart contract logic errors or assertion failures, transact",
+  "repo": "gabrielkuettel/vibegallery",
+  "path": ".claude/skills/troubleshoot-errors",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gabrielkuettel/vibegallery",
+  "dir_name": "troubleshoot-errors-gabrielkuettel-vibegallery-2"
+}

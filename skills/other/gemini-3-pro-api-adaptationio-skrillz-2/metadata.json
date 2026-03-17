@@ -1,0 +1,11 @@
+{
+  "name": "gemini-3-pro-api",
+  "description": "Gemini 3 Pro API/SDK integration for text generation, reasoning, and chat. Covers setup, authentication, thinking levels, streaming, and production deployment. Use when working with Gemini 3 Pro API, ",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/gemini-3-pro-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "gemini-3-pro-api-adaptationio-skrillz-2"
+}

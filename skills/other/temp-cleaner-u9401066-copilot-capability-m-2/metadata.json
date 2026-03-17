@@ -1,0 +1,11 @@
+{
+  "name": "temp-cleaner",
+  "description": "Clean temporary files, caches, and build artifacts.\nLOAD THIS SKILL WHEN: User says \"清理\", \"clean\", \"刪除暫存\", \"清除快取\" | disk space issues | before archiving | end of workflow.\nCAPABILITIES: Python cache (",
+  "repo": "u9401066/copilot-capability-manager",
+  "path": ".claude/skills/temp-cleaner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/u9401066/copilot-capability-manager",
+  "dir_name": "temp-cleaner-u9401066-copilot-capability-m-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "v3-core-implementation",
+  "description": "Core module implementation for claude-flow v3. Implements DDD domains, clean architecture patterns, dependency injection, and modular TypeScript codebase with comprehensive testing.",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/v3-core-implementation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "v3-core-implementation-proffesor-for-testin-agentic-qe-2"
+}

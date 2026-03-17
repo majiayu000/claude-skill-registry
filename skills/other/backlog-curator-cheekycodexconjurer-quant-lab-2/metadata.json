@@ -1,0 +1,11 @@
+{
+  "name": "backlog_curator",
+  "description": "Maintain a lightweight backlog of high-value tasks discovered during work.",
+  "repo": "CheekyCodexConjurer/quant-lab",
+  "path": ".agent-docs/templates/.codex/skills/backlog_curator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CheekyCodexConjurer/quant-lab",
+  "dir_name": "backlog-curator-cheekycodexconjurer-quant-lab-2"
+}

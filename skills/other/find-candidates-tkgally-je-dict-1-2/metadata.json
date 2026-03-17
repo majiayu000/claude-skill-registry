@@ -1,0 +1,11 @@
+{
+  "name": "find-candidates",
+  "description": "Guidelines for systematically finding new candidate words to add to candidate_words.json for later dictionary entry creation.",
+  "repo": "tkgally/je-dict-1",
+  "path": ".claude/skills/find-candidates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tkgally/je-dict-1",
+  "dir_name": "find-candidates-tkgally-je-dict-1-2"
+}

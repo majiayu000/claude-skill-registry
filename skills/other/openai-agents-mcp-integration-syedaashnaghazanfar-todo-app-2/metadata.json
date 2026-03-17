@@ -1,0 +1,11 @@
+{
+  "name": "openai-agents-mcp-integration",
+  "description": "Build AI agents with OpenAI Agents SDK + Model Context Protocol (MCP) for tool orchestration. Supports multi-provider backends (OpenAI, Gemini, Groq, OpenRouter) with MCPServerStdio. Use this skill fo",
+  "repo": "Syedaashnaghazanfar/todo-app",
+  "path": ".claude/skills/openai-agents-mcp-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Syedaashnaghazanfar/todo-app",
+  "dir_name": "openai-agents-mcp-integration-syedaashnaghazanfar-todo-app-2"
+}

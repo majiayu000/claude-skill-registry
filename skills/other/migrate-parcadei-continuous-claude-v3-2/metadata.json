@@ -1,0 +1,11 @@
+{
+  "name": "migrate",
+  "description": "Migration workflow - research → analyze → plan → implement → review",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/migrate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "migrate-parcadei-continuous-claude-v3-2"
+}

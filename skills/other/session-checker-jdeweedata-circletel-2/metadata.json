@@ -1,0 +1,11 @@
+{
+  "name": "session-checker",
+  "description": "Check if Interstellio/NebularStack client sessions are active. Analyzes CDR records to determine connection status, session history, and terminate causes.",
+  "repo": "jdeweedata/circletel",
+  "path": ".claude/skills/session-checker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jdeweedata/circletel",
+  "dir_name": "session-checker-jdeweedata-circletel-2"
+}

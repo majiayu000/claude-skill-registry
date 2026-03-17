@@ -1,0 +1,11 @@
+{
+  "name": "prd-v09-feedback-loop-setup",
+  "description": "Establish channels and processes for capturing and processing post-launch feedback during PRD v0.9 Go-to-Market. Triggers on requests to set up feedback systems, capture user input, or when user asks ",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v09-feedback-loop-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v09-feedback-loop-setup-mattgierhart-prd-driven-context-e-2"
+}

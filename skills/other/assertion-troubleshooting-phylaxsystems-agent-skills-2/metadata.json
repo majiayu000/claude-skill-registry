@@ -1,0 +1,11 @@
+{
+  "name": "assertion-troubleshooting",
+  "description": "Diagnoses common assertion failures and non-triggering issues. Use when assertions fail unexpectedly or do not execute.",
+  "repo": "phylaxsystems/agent-skills",
+  "path": "skills/assertion-troubleshooting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/phylaxsystems/agent-skills",
+  "dir_name": "assertion-troubleshooting-phylaxsystems-agent-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rustfeed-feed-ops",
+  "description": "rustfeed のフィード管理（追加、削除、更新）と記事操作（取得、既読管理、お気に入り）のCLI/TUIコマンド実行をサポートします。フィード操作、記事取得、データベース操作時に使用します。",
+  "repo": "ereferen/rustfeed",
+  "path": ".claude/skills/rustfeed-feed-ops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ereferen/rustfeed",
+  "dir_name": "rustfeed-feed-ops-ereferen-rustfeed-2"
+}

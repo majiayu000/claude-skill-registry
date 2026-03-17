@@ -1,0 +1,11 @@
+{
+  "name": "docker-mcp",
+  "description": "Comprehensive guide for Docker MCP Toolkit Dynamic Tools - discover and use ~170 MCP servers on-demand. Use when working with MCP servers, dynamic tools, database access, APIs, cloud services, or need",
+  "repo": "GGPrompts/my-plugins",
+  "path": "plugins/backend/docker-mcp/skills/docker-mcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GGPrompts/my-plugins",
+  "dir_name": "docker-mcp-ggprompts-my-plugins-2"
+}

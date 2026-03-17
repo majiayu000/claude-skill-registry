@@ -1,0 +1,11 @@
+{
+  "name": "skill-io-creator",
+  "description": "Create skills using the agentskills.io framework with init, validate, and package scripts. Use when users want to create distributable .skill packages, use the init_skill.py scaffolding, or follow the",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/skill-io-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "skill-io-creator-arbgjr-satra-2"
+}

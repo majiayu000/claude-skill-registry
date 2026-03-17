@@ -1,0 +1,11 @@
+{
+  "name": "documenting-setup",
+  "description": "Generate environment setup guide documentation from codebase analysis. Detects package managers, required tools, environment variables, and startup commands. Triggers: setup guide, environment setup, ",
+  "repo": "thkt/claude-config",
+  "path": ".ja/skills/documenting-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/thkt/claude-config",
+  "dir_name": "documenting-setup-thkt-claude-config-2"
+}

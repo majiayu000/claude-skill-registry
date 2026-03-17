@@ -1,0 +1,11 @@
+{
+  "name": "no-deferred-work",
+  "description": "Use during all development - no TODOs, no FIXMEs, no \"we'll add this later\"; do it now or get explicit deferral permission",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/no-deferred-work",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "no-deferred-work-troykelly-codex-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "documentation-audit",
+  "description": "Use when documentation drift is detected. Comprehensively audits codebase and creates/updates Swagger, features docs, and general documentation to achieve full sync.",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/documentation-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "documentation-audit-troykelly-codex-skills-2"
+}

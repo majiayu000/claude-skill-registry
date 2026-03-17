@@ -1,0 +1,11 @@
+{
+  "name": "observability-logging",
+  "description": "Automatically applies when adding logging and observability. Ensures structured logging, OpenTelemetry tracing, LLM-specific metrics (tokens, cost, latency), and proper log correlation.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/observability-logging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "observability-logging-ricardoroche-ricardos-claude-code-2"
+}

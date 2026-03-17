@@ -1,0 +1,11 @@
+{
+  "name": "api-test-automation",
+  "description": "This skill automates API endpoint testing, including request generation, validation, and comprehensive test coverage for REST and GraphQL APIs. It is used when the user requests API testing, contract ",
+  "repo": "apassuello/multimodal_insight_engine",
+  "path": ".claude/skills/api-test-automation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/apassuello/multimodal_insight_engine",
+  "dir_name": "api-test-automation-apassuello-multimodal-insight-e-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "deepgram-common-errors",
+  "description": "Diagnose and fix common Deepgram errors and issues.\nUse when troubleshooting Deepgram API errors, debugging transcription failures,\nor resolving integration issues.\nTrigger with phrases like \"deepgram",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/deepgram-pack/skills/deepgram-common-errors",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "deepgram-common-errors-jeremylongshore-claude-code-plugins--2"
+}

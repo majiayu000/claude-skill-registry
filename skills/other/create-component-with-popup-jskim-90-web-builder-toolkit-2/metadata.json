@@ -1,0 +1,11 @@
+{
+  "name": "create-component-with-popup",
+  "description": "Shadow DOM 팝업을 가진 컴포넌트를 생성합니다. 컴포넌트가 직접 데이터를 fetch하고 팝업으로 표시합니다. 3D 씬, 독립 위젯 등에 사용합니다.",
+  "repo": "JSKIM-90/WEB_BUILDER_TOOLKIT",
+  "path": ".claude/skills/2-component/create-component-with-popup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JSKIM-90/WEB_BUILDER_TOOLKIT",
+  "dir_name": "create-component-with-popup-jskim-90-web-builder-toolkit-2"
+}

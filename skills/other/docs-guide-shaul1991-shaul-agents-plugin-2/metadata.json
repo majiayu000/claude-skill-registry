@@ -1,0 +1,11 @@
+{
+  "name": "docs-guide",
+  "description": "Docs Guide Agent. 튜토리얼, 사용 가이드 작성을 담당합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/docs-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "docs-guide-shaul1991-shaul-agents-plugin-2"
+}

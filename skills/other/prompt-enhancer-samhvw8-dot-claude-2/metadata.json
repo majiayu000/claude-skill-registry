@@ -1,0 +1,11 @@
+{
+  "name": "prompt-enhancer",
+  "description": "Prompt engineering and optimization for AI/LLMs. Capabilities: transform unclear prompts, reduce token usage, improve structure, add constraints, optimize for specific models, backward-compatible rewr",
+  "repo": "samhvw8/dot-claude",
+  "path": "skills/prompt-enhancer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/samhvw8/dot-claude",
+  "dir_name": "prompt-enhancer-samhvw8-dot-claude-2"
+}

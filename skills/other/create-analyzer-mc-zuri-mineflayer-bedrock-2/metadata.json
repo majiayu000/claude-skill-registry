@@ -1,0 +1,11 @@
+{
+  "name": "create-analyzer",
+  "description": "Create a new packet analyzer for Minecraft Bedrock logs. Generates template code, provides documentation links, and guides testing workflow.",
+  "repo": "mc-zuri/mineflayer-bedrock",
+  "path": ".claude/skills/create-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mc-zuri/mineflayer-bedrock",
+  "dir_name": "create-analyzer-mc-zuri-mineflayer-bedrock-2"
+}

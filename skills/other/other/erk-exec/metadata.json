@@ -1,0 +1,9 @@
+{
+  "name": "erk-exec",
+  "repo": "dagster-io/erk",
+  "path": ".claude/skills/erk-exec/SKILL.md",
+  "category": "other",
+  "source": "github.com/dagster-io/erk",
+  "dir_name": "erk-exec",
+  "downloaded_at": "2026-02-15T06:52:07.621557Z"
+}

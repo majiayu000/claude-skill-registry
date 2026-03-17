@@ -1,0 +1,11 @@
+{
+  "name": "task-master-viewer",
+  "description": "Launch a Streamlit GUI for Task Master tasks.json editing. Use when users want a visual interface instead of CLI/MCP commands.",
+  "repo": "sfc-gh-dflippo/snowflake-dbt-demo",
+  "path": ".claude/skills/task-master-viewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sfc-gh-dflippo/snowflake-dbt-demo",
+  "dir_name": "task-master-viewer-sfc-gh-dflippo-snowflake-dbt-demo-2"
+}

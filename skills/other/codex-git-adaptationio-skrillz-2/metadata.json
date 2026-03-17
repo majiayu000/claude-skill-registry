@@ -1,0 +1,11 @@
+{
+  "name": "codex-git",
+  "description": "Git-aware development workflows with Codex CLI including intelligent commits, PR automation, branch management, and diff application. Use for git operations, PR reviews, or automated git workflows.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/codex-git",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "codex-git-adaptationio-skrillz-2"
+}

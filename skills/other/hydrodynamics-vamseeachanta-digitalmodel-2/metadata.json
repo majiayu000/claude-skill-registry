@@ -1,0 +1,11 @@
+{
+  "name": "hydrodynamics",
+  "description": "Manage hydrodynamic coefficients, wave spectra, and environmental loading for vessel response analysis. Use for 6×6 matrix management, wave spectrum modeling, OCIMF loading calculations, and RAO inter",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/hydrodynamics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "hydrodynamics-vamseeachanta-digitalmodel-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "PRISM.node-API",
+  "description": "Complete API specification for PRISM.node K1 Light Lab editor, including node system architecture, type definitions, color space transforms, WebSocket TLV protocol, and engine configuration for 320-LE",
+  "repo": "synqing/K1.hardware",
+  "path": ".claude/skills/PRISM.node-API",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/synqing/K1.hardware",
+  "dir_name": "prism-node-api-synqing-k1-hardware-2"
+}

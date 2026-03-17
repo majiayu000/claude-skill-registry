@@ -1,0 +1,11 @@
+{
+  "name": "john-the-ripper",
+  "description": "Provide systematic methodologies for cracking password hashes and encrypted file passwords using John the Ripper. This skill covers the three primary cracking modes (single, wordlist, incremental), ha",
+  "repo": "zebbern/SecOps-CLI-Guides",
+  "path": "skills/john-the-ripper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zebbern/SecOps-CLI-Guides",
+  "dir_name": "john-the-ripper-zebbern-secops-cli-guides-2"
+}

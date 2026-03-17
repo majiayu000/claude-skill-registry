@@ -1,0 +1,11 @@
+{
+  "name": "isocom",
+  "description": "Isocom Components MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Isocom optocouplers or IsocomHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/isocom",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "isocom-cantara-lib-electronic-compo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "reading-logseq-data",
+  "description": "Expert in reading data from Logseq DB graphs via HTTP API or CLI. Auto-invokes when users want to fetch pages, blocks, or properties from Logseq, execute Datalog queries against their graph, search co",
+  "repo": "C0ntr0lledCha0s/claude-code-plugin-automations",
+  "path": "logseq-expert/skills/reading-logseq-data",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/C0ntr0lledCha0s/claude-code-plugin-automations",
+  "dir_name": "reading-logseq-data-c0ntr0lledcha0s-claude-code-plugin-a-2"
+}

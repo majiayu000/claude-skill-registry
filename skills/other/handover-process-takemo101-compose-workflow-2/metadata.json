@@ -1,0 +1,11 @@
+{
+  "name": "handover-process",
+  "description": "バックエンド/フロントエンド間などの領域を跨ぐ変更依頼や情報共有（申し送り）のプロセスをGitHub Issue中心で定義",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/handover-process",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "handover-process-takemo101-compose-workflow-2"
+}

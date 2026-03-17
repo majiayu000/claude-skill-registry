@@ -1,0 +1,11 @@
+{
+  "name": "checking-image-bounds-transform",
+  "description": "Checks and clamps mouse coordinates within transformed image bounds in WPF. Use when implementing measurement tools or annotations that should only work inside Pan/Zoom/Rotate transformed images.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/checking-image-bounds-transform",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "checking-image-bounds-transform-christian289-dotnet-with-claudeco-2"
+}

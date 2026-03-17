@@ -1,0 +1,11 @@
+{
+  "name": "codeql-scan",
+  "description": "Execute CodeQL security scans with language detection, database caching, and SARIF output. Use when performing static security analysis on Python or GitHub Actions code.",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/codeql-scan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "codeql-scan-rjmurillo-ai-agents-2"
+}

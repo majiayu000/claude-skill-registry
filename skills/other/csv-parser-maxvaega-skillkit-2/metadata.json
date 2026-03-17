@@ -1,0 +1,11 @@
+{
+  "name": "csv-parser",
+  "description": "Parse and analyze CSV files with data validation",
+  "repo": "maxvaega/skillkit",
+  "path": "examples/skills/example-plugin/skills/csv-parser",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "csv-parser-maxvaega-skillkit-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "simplification-cascades",
+  "description": "Find one insight that eliminates multiple components - \"if this is true, we don't need X, Y, or Z\"",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/problem-solving/simplification-cascades",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "simplification-cascades-mrgoonie-xxxnaper-2"
+}

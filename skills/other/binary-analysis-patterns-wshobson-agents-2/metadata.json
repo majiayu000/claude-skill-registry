@@ -1,0 +1,11 @@
+{
+  "name": "binary-analysis-patterns",
+  "description": "Master binary analysis patterns including disassembly, decompilation, control flow analysis, and code pattern recognition. Use when analyzing executables, understanding compiled code, or performing st",
+  "repo": "wshobson/agents",
+  "path": "plugins/reverse-engineering/skills/binary-analysis-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wshobson/agents",
+  "dir_name": "binary-analysis-patterns-wshobson-agents-2"
+}

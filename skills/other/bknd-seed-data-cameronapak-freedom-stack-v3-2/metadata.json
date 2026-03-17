@@ -1,0 +1,11 @@
+{
+  "name": "bknd-seed-data",
+  "description": "Use when populating a Bknd database with initial or test data. Covers the seed function in options, ctx.em.mutator() for insertOne/insertMany, conditional seeding, environment-based data, and common p",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-seed-data",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-seed-data-cameronapak-freedom-stack-v3-2"
+}

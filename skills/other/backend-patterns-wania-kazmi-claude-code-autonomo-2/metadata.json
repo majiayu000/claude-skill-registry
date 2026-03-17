@@ -1,0 +1,11 @@
+{
+  "name": "backend-patterns",
+  "description": "Backend architecture patterns, API design, database optimization, and server-side best practices.\nUse when building APIs, services, or server-side functionality.\n",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/backend-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "backend-patterns-wania-kazmi-claude-code-autonomo-2"
+}

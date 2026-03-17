@@ -1,0 +1,11 @@
+{
+  "name": "dev-debug",
+  "description": "This skill should be used when the user asks to 'debug', 'fix bug', 'investigate error', 'why is it broken', 'trace root cause', 'find the bug', or needs systematic bug investigation and fixing with v",
+  "repo": "edwinhu/workflows",
+  "path": "skills/dev-debug",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "dev-debug-edwinhu-workflows-2"
+}

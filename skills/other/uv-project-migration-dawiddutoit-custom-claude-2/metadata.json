@@ -1,0 +1,11 @@
+{
+  "name": "uv-project-migration",
+  "description": "Migrate existing Python projects to uv from pip, Poetry, Pipenv, or Conda.\nLearn how to convert dependency files, preserve development environment setup,\nvalidate the migration, and plan team rollout.",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/uv-project-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "uv-project-migration-dawiddutoit-custom-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "meeting-minutes",
+  "description": "PMBOK準拠の定例議事録を作成する。会議後の議事録作成、アクションアイテム整理時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/executing/meeting-minutes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "meeting-minutes-haru-llc-ai-pm-system-noteboo-2"
+}

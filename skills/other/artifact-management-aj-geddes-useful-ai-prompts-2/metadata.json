@@ -1,0 +1,11 @@
+{
+  "name": "artifact-management",
+  "description": "Manage build artifacts, Docker images, and package registries. Configure artifact repositories, versioning, and distribution strategies.",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/artifact-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "dir_name": "artifact-management-aj-geddes-useful-ai-prompts-2"
+}

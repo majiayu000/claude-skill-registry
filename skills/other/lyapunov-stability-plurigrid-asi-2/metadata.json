@@ -1,0 +1,11 @@
+{
+  "name": "lyapunov-stability",
+  "description": "Stability via Lyapunov's direct method",
+  "repo": "plurigrid/asi",
+  "path": "skills/lyapunov-stability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "lyapunov-stability-plurigrid-asi-2"
+}

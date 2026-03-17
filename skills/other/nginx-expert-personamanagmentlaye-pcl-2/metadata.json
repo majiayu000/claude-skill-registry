@@ -1,0 +1,11 @@
+{
+  "name": "nginx-expert",
+  "description": "Expert-level Nginx configuration, reverse proxy, load balancing, SSL/TLS, caching, and performance tuning",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/devops/nginx-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "nginx-expert-personamanagmentlaye-pcl-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "prompt-exec",
+  "description": "Execute the forged prompt exactly as written. Requires explicit consent and a ready artifact. Deletes artifact after successful execution.\n",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/prompt/prompt-exec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "prompt-exec-jordangunn-nunchuck-2"
+}

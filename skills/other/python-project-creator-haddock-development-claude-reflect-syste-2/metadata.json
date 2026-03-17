@@ -1,0 +1,11 @@
+{
+  "name": "python-project-creator",
+  "description": "Creates Python projects with proper structure, virtual environments, and dependency management. Use when users request to create a new Python project, set up a Python development environment, or initi",
+  "repo": "haddock-development/claude-reflect-system",
+  "path": "python-project-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/haddock-development/claude-reflect-system",
+  "dir_name": "python-project-creator-haddock-development-claude-reflect-syste-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "injection-hunter",
+  "description": "Hunt for injection vulnerabilities including SQL injection, command injection, XSS, SSTI, path traversal, LDAP injection, and other input validation flaws. Use when auditing code that processes user i",
+  "repo": "MAF2414/kyco",
+  "path": ".claude/skills/injection-hunter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MAF2414/kyco",
+  "dir_name": "injection-hunter-maf2414-kyco-2"
+}

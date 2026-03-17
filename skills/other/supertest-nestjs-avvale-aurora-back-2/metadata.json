@@ -1,0 +1,11 @@
+{
+  "name": "supertest-nestjs",
+  "description": "Supertest patterns and best practices for NestJS e2e API testing. Trigger: When writing e2e tests, testing HTTP endpoints, or testing authentication flows in NestJS.\n",
+  "repo": "avvale/aurora-back",
+  "path": ".claude/skills/supertest-nestjs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/avvale/aurora-back",
+  "dir_name": "supertest-nestjs-avvale-aurora-back-2"
+}

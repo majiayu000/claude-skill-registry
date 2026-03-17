@@ -1,0 +1,11 @@
+{
+  "name": "aico-backend-implement",
+  "description": "Execute backend task implementation with TDD. Read task file, execute implementation steps, verify each step, update status.\n\nUse this skill when:\n- User asks to \"implement this task\", \"implement the ",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-backend-implement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-backend-implement-yellinzero-aico-2"
+}

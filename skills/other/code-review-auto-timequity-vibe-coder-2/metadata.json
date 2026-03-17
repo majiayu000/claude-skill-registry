@@ -1,0 +1,11 @@
+{
+  "name": "code-review-auto",
+  "description": "Automatic code review and fixes before showing to user.\nUse when: code generation is complete, before preview.\nTriggers: internal use only.",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/code-review-auto",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "code-review-auto-timequity-vibe-coder-2"
+}

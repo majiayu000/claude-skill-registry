@@ -1,0 +1,11 @@
+{
+  "name": "interactive-annotation",
+  "description": "Interactive cell type annotation for IMC data. Covers napari-based annotation, marker-guided labeling, training data generation, and annotation validation. Use when manually annotating cell types for ",
+  "repo": "GPTomics/bioSkills",
+  "path": "imaging-mass-cytometry/interactive-annotation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "interactive-annotation-gptomics-bioskills-2"
+}

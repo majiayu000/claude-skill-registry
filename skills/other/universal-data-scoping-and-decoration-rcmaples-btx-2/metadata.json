@@ -1,0 +1,11 @@
+{
+  "name": "universal-data-scoping-and-decoration",
+  "description": "Strategic meta-skill for Fullstory data semantic decoration. Teaches when to use page properties vs element properties vs user properties vs events. Provides a deterministic framework for scoping data",
+  "repo": "rcmaples/btx",
+  "path": ".claude/skills/universal-data-scoping-and-decoration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rcmaples/btx",
+  "dir_name": "universal-data-scoping-and-decoration-rcmaples-btx-2"
+}

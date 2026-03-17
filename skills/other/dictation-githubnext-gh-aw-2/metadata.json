@@ -1,0 +1,11 @@
+{
+  "name": "dictation",
+  "description": "Fix speech-to-text errors in dictated content related to GitHub Agentic Workflows",
+  "repo": "githubnext/gh-aw",
+  "path": "skills/dictation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/githubnext/gh-aw",
+  "dir_name": "dictation-githubnext-gh-aw-2"
+}

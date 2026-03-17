@@ -1,0 +1,11 @@
+{
+  "name": "meteora",
+  "description": "Complete Meteora DeFi SDK suite for building liquidity pools, AMMs, bonding curves, vaults, token launches, and zap operations on Solana. Use when integrating DLMM, DAMM v2, DAMM v1, Dynamic Bonding C",
+  "repo": "sendaifun/skills",
+  "path": "skills/meteora",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "meteora-sendaifun-skills-2"
+}

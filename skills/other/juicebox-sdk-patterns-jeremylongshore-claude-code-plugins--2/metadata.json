@@ -1,0 +1,11 @@
+{
+  "name": "juicebox-sdk-patterns",
+  "description": "Apply production-ready Juicebox SDK patterns.\nUse when implementing robust error handling, retry logic,\nor enterprise-grade Juicebox integrations.\nTrigger with phrases like \"juicebox best practices\", ",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/juicebox-pack/skills/juicebox-sdk-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "juicebox-sdk-patterns-jeremylongshore-claude-code-plugins--2"
+}

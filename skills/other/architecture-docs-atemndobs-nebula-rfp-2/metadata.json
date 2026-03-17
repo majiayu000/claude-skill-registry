@@ -1,0 +1,11 @@
+{
+  "name": "architecture-docs",
+  "description": "Create and maintain architecture documentation with Mermaid diagrams. Use when writing technical documentation, system diagrams, or updating the implementation plan.",
+  "repo": "Atemndobs/nebula-rfp",
+  "path": ".claude/skills/architecture-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Atemndobs/nebula-rfp",
+  "dir_name": "architecture-docs-atemndobs-nebula-rfp-2"
+}

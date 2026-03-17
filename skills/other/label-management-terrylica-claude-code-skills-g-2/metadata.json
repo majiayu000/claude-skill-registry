@@ -1,0 +1,11 @@
+{
+  "name": "label-management",
+  "description": "Create, edit, delete, and organize GitHub Issue labels and milestones. Use for label operations, milestone management, or organizing issue taxonomy.",
+  "repo": "terrylica/claude-code-skills-github-issues",
+  "path": "skills/github-issues/label-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terrylica/claude-code-skills-github-issues",
+  "dir_name": "label-management-terrylica-claude-code-skills-g-2"
+}

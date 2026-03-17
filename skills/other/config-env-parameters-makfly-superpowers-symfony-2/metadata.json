@@ -1,0 +1,11 @@
+{
+  "name": "config-env-parameters",
+  "description": "Use when symfony config env parameters",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/config-env-parameters",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "config-env-parameters-makfly-superpowers-symfony-2"
+}

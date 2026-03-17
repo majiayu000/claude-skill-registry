@@ -1,0 +1,11 @@
+{
+  "name": "moai-domain-devops",
+  "description": "Enterprise DevOps with Kubernetes 1.31, Docker 27.x, Terraform 1.9, GitHub Actions, monitoring with Prometheus/Grafana, and cloud-native architectures",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-domain-devops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-domain-devops-jg-chalk-io-nora-livekit-2"
+}

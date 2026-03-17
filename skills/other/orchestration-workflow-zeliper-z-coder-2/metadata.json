@@ -1,0 +1,11 @@
+{
+  "name": "orchestration-workflow",
+  "description": "/orchestrate 커맨드의 상세 워크플로우 가이드. 모든 Phase 처리 및 sub-agent spawn 전략",
+  "repo": "Zeliper/z-coder",
+  "path": ".claude/skills/orchestration-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Zeliper/z-coder",
+  "dir_name": "orchestration-workflow-zeliper-z-coder-2"
+}

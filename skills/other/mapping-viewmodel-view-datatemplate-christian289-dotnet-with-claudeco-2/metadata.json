@@ -1,0 +1,11 @@
+{
+  "name": "mapping-viewmodel-view-datatemplate",
+  "description": "Implements automatic ViewModel-View mapping using DataTemplate for navigation scenarios. Use when building dynamic content display or implementing navigation between views in WPF/AvaloniaUI.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/mapping-viewmodel-view-datatemplate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "mapping-viewmodel-view-datatemplate-christian289-dotnet-with-claudeco-2"
+}

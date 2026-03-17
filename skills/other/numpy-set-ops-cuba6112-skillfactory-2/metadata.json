@@ -1,0 +1,11 @@
+{
+  "name": "numpy-set-ops",
+  "description": "NumPy provides vectorized set operations for 1D arrays and multidimensional subarrays. These tools allow for deduplication, membership testing, and finding differences/intersections between datasets.",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/numpy-set-ops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "numpy-set-ops-cuba6112-skillfactory-2"
+}

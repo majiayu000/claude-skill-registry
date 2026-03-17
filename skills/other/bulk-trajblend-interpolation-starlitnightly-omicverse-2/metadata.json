@@ -1,0 +1,11 @@
+{
+  "name": "bulk-trajblend-interpolation",
+  "description": "Extend scRNA-seq developmental trajectories with BulkTrajBlend by generating intermediate cells from bulk RNA-seq, training beta-VAE and GNN models, and interpolating missing states.",
+  "repo": "Starlitnightly/omicverse",
+  "path": ".claude/skills/bulk-trajblend-interpolation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Starlitnightly/omicverse",
+  "dir_name": "bulk-trajblend-interpolation-starlitnightly-omicverse-2"
+}

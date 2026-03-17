@@ -1,0 +1,11 @@
+{
+  "name": "branded-presentation",
+  "description": "Create on-brand Canva presentations from an outline or brief. Use when the user asks to create a branded presentation, make an on-brand deck, turn an outline into slides, or generate a presentation fr",
+  "repo": "canva-sdks/canva-claude-skills",
+  "path": "branded-presentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/canva-sdks/canva-claude-skills",
+  "dir_name": "branded-presentation-canva-sdks-canva-claude-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "handover",
+  "description": "保守・運用引継ぎ書を作成する。運用移行、引き継ぎ時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/closing/handover",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "handover-haru-llc-ai-pm-system-noteboo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ocaml",
+  "description": "OCaml ecosystem = opam + dune + merlin + ocamlformat.",
+  "repo": "plurigrid/asi",
+  "path": "skills/ocaml",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "ocaml-plurigrid-asi-2"
+}

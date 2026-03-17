@@ -1,0 +1,11 @@
+{
+  "name": "plan-adr-flow",
+  "description": "Plan and document coding tasks with PLAN.md and ADRs in docs/ADR. Use when a task can be decomposed, when asked to create or update PLAN.md, or when capturing technical decisions.",
+  "repo": "fyuuki0jp/SourceDoc",
+  "path": ".claude/skills/plan-adr-flow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fyuuki0jp/SourceDoc",
+  "dir_name": "plan-adr-flow-fyuuki0jp-sourcedoc-2"
+}

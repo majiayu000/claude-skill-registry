@@ -1,0 +1,11 @@
+{
+  "name": "coingecko",
+  "description": "Complete CoinGecko Solana API integration for token prices, DEX pool data, OHLCV charts, trades, and market analytics. Use for building trading bots, portfolio trackers, price feeds, and on-chain data",
+  "repo": "sendaifun/skills",
+  "path": "skills/coingecko",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "coingecko-sendaifun-skills-2"
+}

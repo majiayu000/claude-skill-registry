@@ -1,0 +1,11 @@
+{
+  "name": "neon_manager",
+  "description": "Tool for managing Neon Postgres databases. Use for listing projects, inspecting schema, and running queries.",
+  "repo": "Verridian-ai/life-os-Pulse-banner-generator",
+  "path": ".claude/skills/neon_manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Verridian-ai/life-os-Pulse-banner-generator",
+  "dir_name": "neon-manager-verridian-ai-life-os-pulse-banner-2"
+}

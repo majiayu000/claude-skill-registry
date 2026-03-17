@@ -1,0 +1,11 @@
+{
+  "name": "event-driven",
+  "description": "Event-driven architecture patterns including message queues, pub/sub, event sourcing, CQRS, and sagas. Use when implementing async messaging, distributed transactions, event stores, command query sepa",
+  "repo": "cosmix/loom",
+  "path": "skills/event-driven",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "event-driven-cosmix-loom-2"
+}

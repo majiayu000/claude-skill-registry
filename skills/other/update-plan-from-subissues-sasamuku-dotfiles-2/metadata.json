@@ -1,0 +1,11 @@
+{
+  "name": "update-plan-from-subissues",
+  "description": "Execute /update-plan-from-subissues slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/update-plan-from-subissues",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "update-plan-from-subissues-sasamuku-dotfiles-2"
+}

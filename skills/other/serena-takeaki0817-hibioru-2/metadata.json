@@ -1,0 +1,11 @@
+{
+  "name": "serena",
+  "description": "This skill provides symbol-level code understanding and navigation using Language Server Protocol (LSP). Enables IDE-like capabilities for finding symbols, tracking references, and making precise code",
+  "repo": "Takeaki0817/hibioru",
+  "path": ".claude/skills/serena",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Takeaki0817/hibioru",
+  "dir_name": "serena-takeaki0817-hibioru-2"
+}

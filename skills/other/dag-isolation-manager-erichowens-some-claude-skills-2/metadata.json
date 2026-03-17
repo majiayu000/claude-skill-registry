@@ -1,0 +1,11 @@
+{
+  "name": "dag-isolation-manager",
+  "description": "Manages agent isolation levels and resource boundaries. Configures strict, moderate, and permissive isolation profiles. Activate on 'isolation level', 'agent isolation', 'resource boundaries', 'sandbo",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-isolation-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-isolation-manager-erichowens-some-claude-skills-2"
+}

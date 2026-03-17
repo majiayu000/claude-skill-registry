@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-errors-clientscripts",
+  "description": "Error handling patterns for ERPNext/Frappe Client Scripts. Use when implementing try/catch, user feedback, server call error handling, validation errors, and debugging. Covers async error handling, gr",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/errors/erpnext-errors-clientscripts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-errors-clientscripts-openaec-foundation-erpnext-anthropic-cl-2"
+}

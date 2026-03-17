@@ -1,0 +1,11 @@
+{
+  "name": "clay-load-scale",
+  "description": "Implement Clay load testing, auto-scaling, and capacity planning strategies.\nUse when running performance tests, configuring horizontal scaling,\nor planning capacity for Clay integrations.\nTrigger wit",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/clay-pack/clay-load-scale",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "clay-load-scale-vasic-digital-superagent-2"
+}

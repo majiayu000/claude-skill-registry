@@ -1,0 +1,11 @@
+{
+  "name": "mvcc",
+  "description": "Overview of Experimental MVCC feature - snapshot isolation, versioning, limitations",
+  "repo": "tursodatabase/turso",
+  "path": ".claude/skills/mvcc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tursodatabase/turso",
+  "dir_name": "mvcc-tursodatabase-turso-2"
+}

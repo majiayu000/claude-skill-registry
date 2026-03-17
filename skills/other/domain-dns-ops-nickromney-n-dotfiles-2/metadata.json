@@ -1,0 +1,11 @@
+{
+  "name": "domain-dns-ops",
+  "description": "Domain/DNS ops across Cloudflare, DNSimple, Namecheap for Peter. Use for onboarding zones to Cloudflare, flipping nameservers, setting redirects (Page Rules/Rulesets/Workers), updating redirect-worker",
+  "repo": "nickromney/n-dotfiles",
+  "path": "skills/domain-dns-ops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nickromney/n-dotfiles",
+  "dir_name": "domain-dns-ops-nickromney-n-dotfiles-2"
+}

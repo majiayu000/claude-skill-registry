@@ -1,0 +1,11 @@
+{
+  "name": "worktree-sync",
+  "description": "Sync git worktrees with remote and main branch changes. Use to keep long-running feature branches up-to-date.",
+  "repo": "mvillmow/ProjectOdyssey",
+  "path": ".claude/skills/worktree-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mvillmow/ProjectOdyssey",
+  "dir_name": "worktree-sync-mvillmow-projectodyssey-2"
+}

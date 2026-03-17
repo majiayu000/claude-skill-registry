@@ -1,0 +1,11 @@
+{
+  "name": "70-close-task-150",
+  "description": "[70] CLOSE. Manage task lifecycle with correct statuses and no duplicates. Ensure each task has one status, artifacts match claims, and no task appears in multiple places. Use when managing task lists",
+  "repo": "MykhailoDmytriakha/my-preacher-helper",
+  "path": ".codex/skills/70-close-task-150",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MykhailoDmytriakha/my-preacher-helper",
+  "dir_name": "70-close-task-150-mykhailodmytriakha-my-preacher-helper-2"
+}

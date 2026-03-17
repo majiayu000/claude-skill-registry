@@ -1,0 +1,11 @@
+{
+  "name": "ddd-domain-expert",
+  "description": "Strategic and Tactical expertise in Gravito DDD. Trigger this for complex domains requiring Bounded Contexts, Aggregates, and Event-Driven architecture.",
+  "repo": "gravito-framework/gravito",
+  "path": "packages/scaffold/templates/skills/ddd-domain-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gravito-framework/gravito",
+  "dir_name": "ddd-domain-expert-gravito-framework-gravito-2"
+}

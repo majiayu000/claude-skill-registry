@@ -1,0 +1,11 @@
+{
+  "name": "network-101",
+  "description": "This skill should be used when the user asks to \"set up a web server\", \"configure HTTP or HTTPS\", \"perform SNMP enumeration\", \"configure SMB shares\", \"test network services\", or needs guidance on conf",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/network-101",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "network-101-majiayu000-claude-skill-registr-2"
+}

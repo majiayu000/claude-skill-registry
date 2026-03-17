@@ -1,0 +1,11 @@
+{
+  "name": "caffe-cifar-10",
+  "description": "Guidance for building Caffe from source and training CIFAR-10 models. This skill applies when tasks involve compiling Caffe deep learning framework, configuring Makefile.config, preparing CIFAR-10 dat",
+  "repo": "letta-ai/skills",
+  "path": "letta/benchmarks/trajectory-only/caffe-cifar-10",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/letta-ai/skills",
+  "dir_name": "caffe-cifar-10-letta-ai-skills-2"
+}

@@ -1,0 +1,65 @@
+---
+name: repository-structure
+description: PRD・機能設計・アーキテクチャからリポジトリ構造定義書（docs/repository-structure.md）を作成する。「ディレクトリ構成を決めて」「フォルダ構造を設計」「ファイル配置ルール」「プロジェクト構造」「どこに何を置くか決めて」などの依頼時に使用。ディレクトリ責務・命名規則・依存ルール・テスト配置・スケーリング方針を出力。
+allowed-tools: Read, Write, Edit, Glob, Grep
+---
+
+# Repository Structure Skill
+
+アーキテクチャ設計の「どう構成するか」を「どこに何を置くか」に落とし込む。
+
+## 入出力
+
+| 種別 | パス |
+|------|------|
+| 入力 | `docs/product-requirements.md`（PRD） |
+| 入力 | `docs/functional-design.md`（機能設計） |
+| 入力 | `docs/architecture.md`（アーキテクチャ） |
+| 入力 | `docs/repository-structure.md`（既存あれば優先） |
+| 出力 | `docs/repository-structure.md` |
+
+## 参照ファイル
+
+| ファイル | 読むタイミング |
+|----------|----------------|
+| `references/template.md` | 新規作成時のベース |
+| `references/guide.md` | 設計原則・命名規則・レビュー観点 |
+
+## 手順
+
+### 1. 設計情報の抽出
+アーキテクチャ・機能設計から以下を抽出：
+- レイヤー構成（UI / Service / Repository等）
+- 主要コンポーネント・機能モジュール
+- テスト戦略（Unit / Integration / E2E）
+- 技術スタック（FW固有の構造があるか）
+
+### 2. 既存定義の確認
+- `docs/repository-structure.md` が存在する？
+  - **Yes** → 構造を維持して差分更新
+  - **No** → `references/template.md` をコピーして新規作成
+
+### 3. 構造設計
+
+| セクション | 内容 | 必須 |
+|-----------|------|------|
+| ルート構造 | トップレベルディレクトリ一覧 | ✅ |
+| src/ 詳細 | 各ディレクトリの責務・配置ルール | ✅ |
+| 命名規則 | ディレクトリ・ファイル・クラス・関数 | ✅ |
+| 依存関係ルール | レイヤー間の依存方向 | ✅ |
+| テスト配置 | Unit / Integration / E2E の構造 | ✅ |
+| docs配置 | ドキュメント群の配置ルール | ✅ |
+| スケーリング方針 | 分割タイミング・方法 | ✅ |
+
+### 4. アーキテクチャとの整合性チェック
+- [ ] アーキテクチャのレイヤー構成がディレクトリに反映されている
+- [ ] 依存ルールがアーキテクチャと一致している
+- [ ] テスト戦略がテスト配置に反映されている
+
+### 5. 出力
+`docs/repository-structure.md` を作成/更新し、変更点をサマリ提示
+
+## 境界（やらないこと）
+- **技術選定** → `architecture-design` スキル
+- **コーディング規約（命名以外）** → `development-guidelines` スキル
+- **実際のディレクトリ作成** → 開発タスクとして別途実施

@@ -1,0 +1,11 @@
+{
+  "name": "project-scaffolding",
+  "description": "Project type detection matrix, template recommendations per project type, post-scaffolding checklist, Harness integration patterns, and testing recommendations",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/claude-code-templating-plugin/skills/project-scaffolding",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "project-scaffolding-lobbi-docs-claude-2"
+}

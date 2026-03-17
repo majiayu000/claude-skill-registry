@@ -1,0 +1,11 @@
+{
+  "name": "task-layering",
+  "description": "Breaks down specs into complexity-stratified tasks. Use when organizing tasks, assigning work to agents, or when user mentions task layering, task stratification, or parallel task execution.",
+  "repo": "vanman2024/dev-lifecycle-marketplace",
+  "path": ".archive/agents/skills/task-layering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vanman2024/dev-lifecycle-marketplace",
+  "dir_name": "task-layering-vanman2024-dev-lifecycle-market-2"
+}

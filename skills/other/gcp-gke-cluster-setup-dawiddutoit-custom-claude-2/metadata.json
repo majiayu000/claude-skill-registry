@@ -1,0 +1,11 @@
+{
+  "name": "gcp-gke-cluster-setup",
+  "description": "Set up and configure Google Kubernetes Engine (GKE) clusters for production use.\nUse when creating new GKE clusters, choosing between Autopilot vs Standard modes,\nconfiguring networking (VPC-native, p",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/gcp-gke-cluster-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "gcp-gke-cluster-setup-dawiddutoit-custom-claude-2"
+}

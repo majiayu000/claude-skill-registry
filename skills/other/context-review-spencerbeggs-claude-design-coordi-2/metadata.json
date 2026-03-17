@@ -1,0 +1,11 @@
+{
+  "name": "context-review",
+  "description": "Review CLAUDE.md files for quality, efficiency, and structure. Use when auditing LLM context files, checking documentation organization, preparing for context optimization, or ensuring lean imperative",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/context-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "context-review-spencerbeggs-claude-design-coordi-2"
+}

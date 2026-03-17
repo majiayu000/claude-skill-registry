@@ -1,0 +1,11 @@
+{
+  "name": "linear-cost-tuning",
+  "description": "Optimize Linear API usage and manage costs effectively.\nUse when reducing API calls, managing rate limits efficiently,\nor optimizing integration costs.\nTrigger with phrases like \"linear cost\", \"reduce",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/linear-pack/skills/linear-cost-tuning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "linear-cost-tuning-jeremylongshore-claude-code-plugins--2"
+}

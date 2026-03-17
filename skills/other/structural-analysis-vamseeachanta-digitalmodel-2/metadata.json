@@ -1,0 +1,11 @@
+{
+  "name": "structural-analysis",
+  "description": "Perform structural analysis including stress calculations, buckling checks, and capacity verification per DNV, API, and ISO standards. Covers Von Mises stress, plate buckling, member capacity, and saf",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/structural-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "structural-analysis-vamseeachanta-digitalmodel-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "github-pr-review",
+  "description": "Comprehensive GitHub PR review with inline suggestions, approval/rejection criteria, and technology-agnostic checklists. Triggers when reviewing PRs, analyzing code changes, or when user requests PR r",
+  "repo": "The1Studio/theone-training-skills",
+  "path": ".claude/skills/github-pr-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/The1Studio/theone-training-skills",
+  "dir_name": "github-pr-review-the1studio-theone-training-skil-2"
+}

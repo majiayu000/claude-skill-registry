@@ -1,0 +1,11 @@
+{
+  "name": "kano-commit-convention-skill",
+  "description": "Commit convention linting and changelog automation following the Kano commit format.",
+  "repo": "dorgonman/kano-agent-backlog-skill-demo",
+  "path": ".claude/skills/kano-commit-convention-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dorgonman/kano-agent-backlog-skill-demo",
+  "dir_name": "kano-commit-convention-skill-dorgonman-kano-agent-backlog-s-2"
+}

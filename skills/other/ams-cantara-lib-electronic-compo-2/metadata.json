@@ -1,0 +1,11 @@
+{
+  "name": "ams",
+  "description": "ams-OSRAM MPN encoding patterns, suffix decoding, and handler guidance. Use when working with ams sensor products, optical components, or AMSHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/ams",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "ams-cantara-lib-electronic-compo-2"
+}

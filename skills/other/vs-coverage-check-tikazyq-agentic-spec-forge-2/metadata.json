@@ -1,0 +1,11 @@
+{
+  "name": "vs-coverage-check",
+  "description": "检查每个US是否有对应的VS，生成覆盖率报告和修复建议。当设计文档创建后、CONSTRAINT验收前使用，避免US→VS覆盖率<100%导致验收失败。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/design/vs-coverage-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "vs-coverage-check-tikazyq-agentic-spec-forge-2"
+}

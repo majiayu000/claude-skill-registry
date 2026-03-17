@@ -1,0 +1,11 @@
+{
+  "name": "compress-prompt",
+  "description": "Compresses prompts/skills into minimal goal-focused instructions. Trusts the model, drops what it already knows, maximizes action space. Use when asked to compress, condense, or minimize a prompt.",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/prompt-engineering/skills/compress-prompt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "compress-prompt-doodledood-claude-code-plugins-2"
+}

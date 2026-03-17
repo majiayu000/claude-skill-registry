@@ -1,0 +1,11 @@
+{
+  "name": "maven-tools",
+  "description": "JVM dependency intelligence via Maven Tools MCP server. Use when user asks about Java/Kotlin/Scala dependencies, versions, upgrades, CVEs, or licenses. Use when analyzing pom.xml, build.gradle, or any",
+  "repo": "arvindand/agent-skills",
+  "path": "skills/maven-tools",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arvindand/agent-skills",
+  "dir_name": "maven-tools-arvindand-agent-skills-2"
+}

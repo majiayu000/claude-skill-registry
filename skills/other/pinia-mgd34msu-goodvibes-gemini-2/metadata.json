@@ -1,0 +1,11 @@
+{
+  "name": "pinia",
+  "description": "Manages Vue state with Pinia including stores, getters, actions, and plugins. Use when building Vue applications needing centralized state, sharing state between components, or replacing Vuex.",
+  "repo": "mgd34msu/goodvibes-gemini",
+  "path": "skills/pinia",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-gemini",
+  "dir_name": "pinia-mgd34msu-goodvibes-gemini-2"
+}

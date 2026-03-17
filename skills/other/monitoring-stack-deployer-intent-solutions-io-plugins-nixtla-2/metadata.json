@@ -1,0 +1,11 @@
+{
+  "name": "monitoring-stack-deployer",
+  "description": "This skill deploys monitoring stacks, including Prometheus, Grafana, and Datadog. It is used when the user needs to set up or configure monitoring infrastructure for applications or systems. The skill",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/devops/monitoring-stack-deployer/skills/monitoring-stack-deployer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "monitoring-stack-deployer-intent-solutions-io-plugins-nixtla-2"
+}

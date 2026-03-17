@@ -1,0 +1,9 @@
+{
+  "name": "ffmpeg-opencv-integration",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/ffmpeg-master/skills/ffmpeg-opencv-integration/SKILL.md",
+  "category": "other",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "ffmpeg-opencv-integration",
+  "downloaded_at": "2026-02-22T05:14:35.769335Z"
+}

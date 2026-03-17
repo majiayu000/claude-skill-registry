@@ -1,0 +1,11 @@
+{
+  "name": "aurora-project-structure",
+  "description": "Provides structured information about the Aurora/NestJS project folder hierarchy, explaining the purpose and responsibility of each directory and key files. Trigger: When user asks about project struc",
+  "repo": "avvale/aurora-back",
+  "path": ".claude/skills/aurora-project-structure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/avvale/aurora-back",
+  "dir_name": "aurora-project-structure-avvale-aurora-back-2"
+}

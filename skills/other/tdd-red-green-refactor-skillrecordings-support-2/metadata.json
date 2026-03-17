@@ -1,0 +1,11 @@
+{
+  "name": "tdd-red-green-refactor",
+  "description": "Enforce TDD workflow (red → green → refactor). Use for any code change that is testable.",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/tdd-red-green-refactor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "tdd-red-green-refactor-skillrecordings-support-2"
+}

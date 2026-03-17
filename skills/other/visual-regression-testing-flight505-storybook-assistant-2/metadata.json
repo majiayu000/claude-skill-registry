@@ -1,0 +1,11 @@
+{
+  "name": "visual-regression-testing",
+  "description": "Use this skill when users mention \"visual regression\", \"detect UI changes\", \"screenshot comparison\", \"visual testing\", \"pixel diff\", \"UI regression\", or want to set up intelligent visual testing that ",
+  "repo": "flight505/storybook-assistant",
+  "path": "skills/visual-regression-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/flight505/storybook-assistant",
+  "dir_name": "visual-regression-testing-flight505-storybook-assistant-2"
+}

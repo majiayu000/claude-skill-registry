@@ -1,0 +1,11 @@
+{
+  "name": "memory-safety",
+  "description": "Memory Safety security skill",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/security/memory-safety",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "memory-safety-mgreenly-ikigai-2"
+}

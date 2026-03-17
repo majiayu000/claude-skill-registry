@@ -1,0 +1,11 @@
+{
+  "name": "similarity-memory",
+  "description": "Use when working with memory IC similarity calculations - comparing EEPROM/Flash MPNs, understanding I2C/SPI interface matching, equivalent groups across manufacturers, or memory-specific similarity l",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/similarity-memory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "similarity-memory-cantara-lib-electronic-compo-2"
+}

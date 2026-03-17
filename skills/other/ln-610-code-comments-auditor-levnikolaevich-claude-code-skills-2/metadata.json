@@ -1,0 +1,11 @@
+{
+  "name": "ln-610-code-comments-auditor",
+  "description": "Audit code comments and docstrings quality across 6 categories (WHY-not-WHAT, Density, Forbidden Content, Docstrings, Actuality, Legacy). Use when code needs comment review, after major refactoring, o",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-610-code-comments-auditor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-610-code-comments-auditor-levnikolaevich-claude-code-skills-2"
+}

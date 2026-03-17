@@ -1,0 +1,11 @@
+{
+  "name": "text-optimize",
+  "description": "This skill should be used when the user asks to optimize, polish, or improve text content. It provides text optimization capabilities including polishing, humanization (removing AI tone), content expa",
+  "repo": "sunqb/ccsdk",
+  "path": ".claude/skills/text-optimize",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunqb/ccsdk",
+  "dir_name": "text-optimize-sunqb-ccsdk-2"
+}

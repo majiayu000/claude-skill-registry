@@ -1,0 +1,11 @@
+{
+  "name": "nextjs-setup",
+  "description": "Initialize Next.js 16+ frontend projects with TypeScript, Tailwind CSS, Zustand state management, Axios HTTP client, Aceternity UI effects, and App Router. Use when setting up a new Next.js frontend o",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/nextjs-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "nextjs-setup-maneeshanif-todo-spec-driven-2"
+}

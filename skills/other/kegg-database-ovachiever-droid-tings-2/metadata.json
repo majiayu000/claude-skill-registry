@@ -1,0 +1,11 @@
+{
+  "name": "kegg-database",
+  "description": "Direct REST API access to KEGG (academic use only). Pathway analysis, gene-pathway mapping, metabolic pathways, drug interactions, ID conversion. For Python workflows with multiple databases, prefer b",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/kegg-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "kegg-database-ovachiever-droid-tings-2"
+}

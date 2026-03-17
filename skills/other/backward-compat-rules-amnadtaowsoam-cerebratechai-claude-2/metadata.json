@@ -1,0 +1,11 @@
+{
+  "name": "backward-compat-rules",
+  "description": "Comprehensive guide to backward compatibility rules for APIs, databases, and data contracts with migration strategies and testing approaches",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "51-contracts-governance/backward-compat-rules",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "backward-compat-rules-amnadtaowsoam-cerebratechai-claude-2"
+}

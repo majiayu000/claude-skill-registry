@@ -1,0 +1,11 @@
+{
+  "name": "context-optimization",
+  "description": "This skill should be used when the user asks to \"optimize context\", \"reduce token costs\", \"improve context efficiency\", \"implement KV-cache optimization\", \"partition context\", or mentions context limi",
+  "repo": "Kalyanikhandare29/Agent-Skills-for-Context-Engineering",
+  "path": "skills/context-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Kalyanikhandare29/Agent-Skills-for-Context-Engineering",
+  "dir_name": "context-optimization-kalyanikhandare29-agent-skills-for-con-2"
+}

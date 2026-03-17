@@ -1,0 +1,11 @@
+{
+  "name": "workflow.validate",
+  "description": "Validates workflow YAML files to ensure structure and schema correctness.",
+  "repo": "epieczko/betty",
+  "path": "skills/workflow.validate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/epieczko/betty",
+  "dir_name": "workflow-validate-epieczko-betty-2"
+}

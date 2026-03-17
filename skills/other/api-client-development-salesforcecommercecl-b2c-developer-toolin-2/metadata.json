@@ -1,0 +1,11 @@
+{
+  "name": "api-client-development",
+  "description": "Creating API clients with OpenAPI specs, authentication, and OAuth scopes for SCAPI and similar APIs",
+  "repo": "SalesforceCommerceCloud/b2c-developer-tooling",
+  "path": ".claude/skills/api-client-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SalesforceCommerceCloud/b2c-developer-tooling",
+  "dir_name": "api-client-development-salesforcecommercecl-b2c-developer-toolin-2"
+}

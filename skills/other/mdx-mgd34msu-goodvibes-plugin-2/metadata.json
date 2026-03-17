@@ -1,0 +1,11 @@
+{
+  "name": "mdx",
+  "description": "Creates content with MDX including Markdown with JSX, custom components, and frontmatter. Use when building content-heavy sites, documentation, blogs, or mixing Markdown with interactive components.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/cms-content/mdx",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "mdx-mgd34msu-goodvibes-plugin-2"
+}

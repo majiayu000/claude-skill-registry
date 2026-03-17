@@ -1,0 +1,11 @@
+{
+  "name": "markdown-to-epub",
+  "description": "Convert markdown documents and chat summaries into formatted EPUB ebook files that can be read on any device or uploaded to Kindle.",
+  "repo": "yousufjoyian/claude-skills",
+  "path": "claude-epub-skill/markdown-to-epub",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yousufjoyian/claude-skills",
+  "dir_name": "markdown-to-epub-yousufjoyian-claude-skills-2"
+}

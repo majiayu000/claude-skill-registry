@@ -1,0 +1,11 @@
+{
+  "name": "optaic-v0-migration",
+  "description": "Guide for porting code from optaic-v0 to optaic-trading. Use when migrating DataAPI, pipelines, stores, accessors, operators, or expressions into the Resource/Activity architecture. Covers pattern map",
+  "repo": "colingwuyu/optaic-trading",
+  "path": ".claude/skills/optaic-v0-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/colingwuyu/optaic-trading",
+  "dir_name": "optaic-v0-migration-colingwuyu-optaic-trading-2"
+}

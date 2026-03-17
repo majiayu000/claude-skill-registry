@@ -1,0 +1,11 @@
+{
+  "name": "webnovel-write",
+  "description": "Writes webnovel chapters (3000-5000 words) using v5.1 dual-agent architecture. Context Agent gathers context, writer produces pure text (no XML tags), review agents report issues, polish fixes problem",
+  "repo": "lingfengQAQ/webnovel-writer",
+  "path": ".claude/skills/webnovel-write",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lingfengQAQ/webnovel-writer",
+  "dir_name": "webnovel-write-lingfengqaq-webnovel-writer-2"
+}

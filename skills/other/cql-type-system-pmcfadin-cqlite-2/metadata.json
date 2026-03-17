@@ -1,0 +1,11 @@
+{
+  "name": "cql-type-system",
+  "description": "Implement and deserialize all CQL types including primitives (int, text, timestamp, uuid, varint, decimal), collections (list, set, map), tuples, UDTs (user-defined types), and frozen types. Use when ",
+  "repo": "pmcfadin/cqlite",
+  "path": ".claude/skills/cql-type-system",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pmcfadin/cqlite",
+  "dir_name": "cql-type-system-pmcfadin-cqlite-2"
+}

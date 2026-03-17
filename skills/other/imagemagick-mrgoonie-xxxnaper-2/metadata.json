@@ -1,0 +1,11 @@
+{
+  "name": "imagemagick",
+  "description": "Guide for using ImageMagick command-line tools to perform advanced image processing tasks including format conversion, resizing, cropping, effects, transformations, and batch operations. Use when mani",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/imagemagick",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "imagemagick-mrgoonie-xxxnaper-2"
+}

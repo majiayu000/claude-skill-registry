@@ -1,0 +1,11 @@
+{
+  "name": "vlm_expert",
+  "description": "实现基于视觉的 AI 对话能力，支持分析图像、描述视觉内容并进行多模态交互。",
+  "repo": "CyangZhou/-2--Project-Yunshu-",
+  "path": ".trae/skills/vlm_expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CyangZhou/-2--Project-Yunshu-",
+  "dir_name": "vlm-expert-cyangzhou-2-project-yunshu-2"
+}

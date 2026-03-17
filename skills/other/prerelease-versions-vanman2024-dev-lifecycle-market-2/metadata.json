@@ -1,0 +1,11 @@
+{
+  "name": "prerelease-versions",
+  "description": "Alpha/beta/RC tagging patterns and GitHub pre-release workflows for managing pre-production releases. Use when creating alpha releases, beta releases, release candidates, managing pre-release branches",
+  "repo": "vanman2024/dev-lifecycle-marketplace",
+  "path": "plugins/versioning/skills/prerelease-versions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vanman2024/dev-lifecycle-marketplace",
+  "dir_name": "prerelease-versions-vanman2024-dev-lifecycle-market-2"
+}

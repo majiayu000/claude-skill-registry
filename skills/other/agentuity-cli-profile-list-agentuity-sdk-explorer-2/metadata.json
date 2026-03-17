@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-profile-list",
+  "description": "List all available profiles",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-profile-list",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-profile-list-agentuity-sdk-explorer-2"
+}

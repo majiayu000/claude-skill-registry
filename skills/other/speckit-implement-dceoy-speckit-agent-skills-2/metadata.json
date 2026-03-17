@@ -1,0 +1,11 @@
+{
+  "name": "speckit-implement",
+  "description": "Execute the implementation plan by processing and executing all tasks defined in tasks.md",
+  "repo": "dceoy/speckit-agent-skills",
+  "path": "skills/speckit-implement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dceoy/speckit-agent-skills",
+  "dir_name": "speckit-implement-dceoy-speckit-agent-skills-2"
+}

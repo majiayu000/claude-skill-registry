@@ -1,0 +1,11 @@
+{
+  "name": "prd-v08-runbook-creation",
+  "description": "Create operational playbooks for incident response, deployments, and maintenance during PRD v0.8 Deployment & Ops. Triggers on requests to create runbooks, document procedures, or when user asks \"how ",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v08-runbook-creation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v08-runbook-creation-mattgierhart-prd-driven-context-e-2"
+}

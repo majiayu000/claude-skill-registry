@@ -1,0 +1,11 @@
+{
+  "name": "crossplane",
+  "description": "Crossplane extends Kubernetes to manage cloud infrastructure using declarative APIs. It enables platform teams to build internal cloud platforms with self-service capabilities.",
+  "repo": "cosmix/loom",
+  "path": "skills/crossplane",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "crossplane-cosmix-loom-2"
+}

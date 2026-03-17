@@ -1,0 +1,11 @@
+{
+  "name": "bknd-add-field",
+  "description": "Use when adding a field to an existing Bknd entity. Covers all field types (text, number, boolean, date, enum, json, jsonschema, media), field modifiers (.required(), .unique(), .default()), validatio",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-add-field",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-add-field-cameronapak-freedom-stack-v3-2"
+}

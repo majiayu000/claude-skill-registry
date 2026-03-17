@@ -1,0 +1,11 @@
+{
+  "name": "github-cli-patterns",
+  "description": "Use when working with gh CLI. Provides patterns for PRs, issues, reviews, and repository operations.",
+  "repo": "JacobPEvans/ai-assistant-instructions",
+  "path": "agentsmd/skills/github-cli-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JacobPEvans/ai-assistant-instructions",
+  "dir_name": "github-cli-patterns-jacobpevans-ai-assistant-instruc-2"
+}

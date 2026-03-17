@@ -1,0 +1,11 @@
+{
+  "name": "solid-architecture",
+  "description": "This skill should be used PROACTIVELY when writing, reviewing, or refactoring code. It provides SOLID principles, composition patterns, module organization, and side-effect boundary guidelines. Use wh",
+  "repo": "rbergman/dark-matter-marketplace",
+  "path": "plugins/architecture/skills/solid-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rbergman/dark-matter-marketplace",
+  "dir_name": "solid-architecture-rbergman-dark-matter-marketpl-2"
+}

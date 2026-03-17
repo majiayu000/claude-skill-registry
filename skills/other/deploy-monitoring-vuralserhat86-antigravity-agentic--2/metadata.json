@@ -1,0 +1,11 @@
+{
+  "name": "deploy_monitoring",
+  "description": "> Monitoring, alerting ve rollback stratejileri.",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/deploy_monitoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "deploy-monitoring-vuralserhat86-antigravity-agentic--2"
+}

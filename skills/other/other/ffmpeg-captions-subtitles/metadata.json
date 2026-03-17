@@ -1,0 +1,9 @@
+{
+  "name": "ffmpeg-captions-subtitles",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/ffmpeg-master/skills/ffmpeg-captions-subtitles/SKILL.md",
+  "category": "other",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "ffmpeg-captions-subtitles",
+  "downloaded_at": "2026-02-22T05:14:34.880600Z"
+}

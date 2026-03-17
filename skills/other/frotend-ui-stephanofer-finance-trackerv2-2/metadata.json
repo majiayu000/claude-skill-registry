@@ -1,0 +1,11 @@
+{
+  "name": "frotend-ui",
+  "description": "Frontend UI-specific patterns. For generic patterns, see: typescript, react-19, nextjs-15, tailwind-4. Trigger: When working inside src/react-app.\n",
+  "repo": "stephanofer/finance-trackerv2",
+  "path": ".opencode/skill/frotend-ui",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/stephanofer/finance-trackerv2",
+  "dir_name": "frotend-ui-stephanofer-finance-trackerv2-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ln-404-test-executor",
+  "description": "Executes Story Finalizer test tasks (label \"tests\") from Todo -> To Review. Enforces risk-based limits and priority.",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-404-test-executor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-404-test-executor-levnikolaevich-claude-code-skills-2"
+}

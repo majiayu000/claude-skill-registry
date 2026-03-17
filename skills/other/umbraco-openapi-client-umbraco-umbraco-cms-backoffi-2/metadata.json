@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-openapi-client",
+  "description": "Set up OpenAPI client for authenticated API calls in Umbraco backoffice (REQUIRED for custom APIs)",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-openapi-client",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-openapi-client-umbraco-umbraco-cms-backoffi-2"
+}

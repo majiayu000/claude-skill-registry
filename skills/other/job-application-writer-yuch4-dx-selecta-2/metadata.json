@@ -1,0 +1,11 @@
+{
+  "name": "job-application-writer",
+  "description": "案件応募時の意気込み・PR文を自動生成するスキル。「案件に応募したい」「応募文を書いて」「PRを作成して」「意気込みを書いて」「エントリーシートを作りたい」などのリクエストに使用。募集要項と職務経歴書を照合し、マッチ度分析・最適化されたPR文を複数バリエーションで生成する。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/job-application-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "job-application-writer-yuch4-dx-selecta-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "calculator-skill",
+  "description": "Simple calculator for basic arithmetic operations (addition, subtraction, multiplication, division). Use when performing calculations, converting units, or working with numbers.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/skill-builder-generic/examples/calculator-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "calculator-skill-adaptationio-skrillz-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "parallel-execution-optimizer",
+  "description": "Identify and execute independent operations in parallel for 3-5x speedup. Auto-analyzes task dependencies, groups into batches, launches parallel Task() calls. Applies to /optimize (5 checks), /ship p",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/parallel-execution-optimizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "parallel-execution-optimizer-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+}

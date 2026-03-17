@@ -1,0 +1,11 @@
+{
+  "name": "cdr3clustering",
+  "description": "Cluster TCR/BCR clones by CDR3 sequences using GIANA or ClusTCR (both Faiss-based). Adds `CDR3_Cluster` column to metadata for clonotype analysis.",
+  "repo": "pwwang/immunopipe",
+  "path": "skills/cdr3clustering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pwwang/immunopipe",
+  "dir_name": "cdr3clustering-pwwang-immunopipe-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "multi-project-spec-mapper",
+  "description": "Purpose: Automatically detect multiple projects in SpecWeave setup, analyze user stories to map them to the correct project (FE, BE, MOBILE, INFRA), and organize specs into project-specific folders wi",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave/skills/multi-project-spec-mapper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/anton-abyzov/specweave",
+  "dir_name": "multi-project-spec-mapper-anton-abyzov-specweave-2"
+}

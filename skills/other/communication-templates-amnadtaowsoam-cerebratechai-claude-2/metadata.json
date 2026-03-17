@@ -1,0 +1,11 @@
+{
+  "name": "communication-templates",
+  "description": "Pre-written message templates for incident communication across different channels and severity levels.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "41-incident-management/communication-templates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "communication-templates-amnadtaowsoam-cerebratechai-claude-2"
+}

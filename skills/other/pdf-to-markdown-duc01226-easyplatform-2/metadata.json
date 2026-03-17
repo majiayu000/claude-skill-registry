@@ -1,0 +1,11 @@
+{
+  "name": "pdf-to-markdown",
+  "description": "Convert PDF files to Markdown. Use when extracting text from PDFs, creating editable documentation from PDF reports, or converting PDF content to version-controlled markdown files.",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/pdf-to-markdown",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/duc01226/EasyPlatform",
+  "dir_name": "pdf-to-markdown-duc01226-easyplatform-2"
+}

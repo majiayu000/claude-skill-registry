@@ -1,0 +1,11 @@
+{
+  "name": "scientific-pkg-pydicom",
+  "description": "Python library for working with DICOM (Digital Imaging and Communications in Medicine) files. Use this skill when reading, writing, or modifying medical imaging data in DICOM format, extracting pixel ",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/scientific-pkg-pydicom",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "scientific-pkg-pydicom-jackspace-claudeskillz-2"
+}

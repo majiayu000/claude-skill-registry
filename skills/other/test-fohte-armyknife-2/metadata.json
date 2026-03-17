@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "description": "Use this skill when writing or running tests. Enforces rstest for parametrized tests and DRY test patterns. Use when creating new tests, fixing test failures, or improving test coverage.",
+  "repo": "fohte/armyknife",
+  "path": ".claude/skills/test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fohte/armyknife",
+  "dir_name": "test-fohte-armyknife-2"
+}

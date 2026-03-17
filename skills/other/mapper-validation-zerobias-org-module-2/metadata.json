@@ -1,0 +1,11 @@
+{
+  "name": "mapper-validation",
+  "description": "Mapper field validation process ensuring zero missing fields",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/mapper-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "mapper-validation-zerobias-org-module-2"
+}

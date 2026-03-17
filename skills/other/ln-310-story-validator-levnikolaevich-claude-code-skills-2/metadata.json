@@ -1,0 +1,11 @@
+{
+  "name": "ln-310-story-validator",
+  "description": "This skill should be used to validate and auto-fix Stories/Tasks against 2025 standards. Penalty Points system (goal = 0), delegates to ln-002 for documentation, Plan Mode support. Auto-discovers team",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-310-story-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-310-story-validator-levnikolaevich-claude-code-skills-2"
+}

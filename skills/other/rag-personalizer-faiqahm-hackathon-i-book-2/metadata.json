@@ -1,0 +1,11 @@
+{
+  "name": "rag-personalizer",
+  "description": "Transform textbook content based on the 10-dimension user profile to provide personalized learning experiences.\nAgent: AIEngineer\n",
+  "repo": "FAIQahm/hackathon_I_book",
+  "path": ".claude/skills/rag-personalizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FAIQahm/hackathon_I_book",
+  "dir_name": "rag-personalizer-faiqahm-hackathon-i-book-2"
+}

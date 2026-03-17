@@ -1,0 +1,9 @@
+{
+  "name": "ci-cd-compliance",
+  "repo": "PAIPalooza/chicommerce",
+  "path": ".claude/skills/ci-cd-compliance/SKILL.md",
+  "category": "other",
+  "source": "github.com/PAIPalooza/chicommerce",
+  "dir_name": "ci-cd-compliance",
+  "downloaded_at": "2026-02-22T05:31:32.916198Z"
+}

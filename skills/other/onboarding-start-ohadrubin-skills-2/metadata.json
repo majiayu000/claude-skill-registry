@@ -1,0 +1,11 @@
+{
+  "name": "onboarding-start",
+  "description": "Create comprehensive onboarding documentation for a codebase or feature. Use when user asks to \"create an onboarding document for X\".",
+  "repo": "OhadRubin/skills",
+  "path": "skills/onboarding-doc/onboarding-start",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OhadRubin/skills",
+  "dir_name": "onboarding-start-ohadrubin-skills-2"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "angular-http",
+  "repo": "danielsogl/copilot-workflow-demo",
+  "path": ".agents/skills/angular-http/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/danielsogl/copilot-workflow-demo",
+  "dir_name": "angular-http",
+  "downloaded_at": "2026-03-01T07:22:27.826252Z",
+  "author": "danielsogl",
+  "source_url": "https://github.com/danielsogl/copilot-workflow-demo/blob/main/.agents/skills/angular-http/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/danielsogl/copilot-workflow-demo/blob/main/.agents/skills/angular-http/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

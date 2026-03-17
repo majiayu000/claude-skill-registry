@@ -1,0 +1,11 @@
+{
+  "name": "architecture-design",
+  "description": "Design scalable, maintainable system and integration architectures for pilot projects. Use when defining components, data pipelines, tool integrations, and guardrails to ensure robustness, performance",
+  "repo": "profmikegreene/gotei",
+  "path": "Gotei_Skills/architecture-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/profmikegreene/gotei",
+  "dir_name": "architecture-design-profmikegreene-gotei-2"
+}

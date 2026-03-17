@@ -1,0 +1,11 @@
+{
+  "name": "repo-manager",
+  "description": "ユーザーからのリクエストをタスク分割して Issue 登録・プロジェクト管理・進捗報告。\nトリガー例: 「タスク管理」「実行して」「repo-manager」「これやって」「作って」\n",
+  "repo": "Sunwood-AI-OSS-Hub/zero-cc",
+  "path": ".claude/skills/repo-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sunwood-AI-OSS-Hub/zero-cc",
+  "dir_name": "repo-manager-sunwood-ai-oss-hub-zero-cc-2"
+}

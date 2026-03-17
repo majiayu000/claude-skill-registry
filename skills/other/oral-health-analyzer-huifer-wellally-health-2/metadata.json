@@ -1,0 +1,11 @@
+{
+  "name": "oral-health-analyzer",
+  "description": "分析口腔健康数据、识别口腔问题模式、评估口腔健康状况、提供个性化口腔健康建议。支持与营养、慢性病、用药等其他健康数据的关联分析。",
+  "repo": "huifer/WellAlly-health",
+  "path": ".claude/skills/oral-health-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/huifer/WellAlly-health",
+  "dir_name": "oral-health-analyzer-huifer-wellally-health-2"
+}

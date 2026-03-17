@@ -1,0 +1,11 @@
+{
+  "name": "maintain-architecture-map",
+  "description": "Maintain system architecture documentation (ARCHITECTURE_MAP.md) showing module structure, data flows, and entry points. Use this skill when architecture changes, modules are added, or system overview",
+  "repo": "dudusoar/VRP-Toolkit",
+  "path": ".claude/skills/maintain-architecture-map",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dudusoar/VRP-Toolkit",
+  "dir_name": "maintain-architecture-map-dudusoar-vrp-toolkit-2"
+}

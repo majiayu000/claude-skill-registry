@@ -1,0 +1,11 @@
+{
+  "name": "tech-selection-explain",
+  "description": "将技术选型决策转换为业务语言解释，生成客户友好的技术说明。当ARCH中技术术语过多、需要向PM/客户解释时使用。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/design/tech-selection-explain",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "tech-selection-explain-tikazyq-agentic-spec-forge-2"
+}

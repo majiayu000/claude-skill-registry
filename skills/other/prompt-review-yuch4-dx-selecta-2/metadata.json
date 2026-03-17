@@ -1,0 +1,11 @@
+{
+  "name": "prompt-review",
+  "description": ".github/prompts/*.prompt.md をレビューして改善提案を出す。frontmatterの妥当性、入力変数(${input:...})の設計、出力フォーマット固定、instructions/skillsへの参照（重複排除）、tools最小化、例の有無、命名規則、壊れやすい指示の検出を行い、レポートをdocs/prompt-review-report.mdに出力する。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".github/skills/prompt-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "prompt-review-yuch4-dx-selecta-2"
+}

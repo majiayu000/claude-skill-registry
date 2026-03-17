@@ -1,0 +1,11 @@
+{
+  "name": "clerk-hello-world",
+  "description": "Create your first authenticated request with Clerk.\nUse when making initial API calls, testing authentication,\nor verifying Clerk integration works correctly.\nTrigger with phrases like \"clerk hello wo",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/clerk-pack/clerk-hello-world",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "clerk-hello-world-vasic-digital-superagent-2"
+}

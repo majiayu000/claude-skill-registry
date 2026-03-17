@@ -1,0 +1,11 @@
+{
+  "name": "iterative-review",
+  "description": ".opencode/配下のドキュメント・設定を修正する際の品質保証プロセス（修正→レビュー→修正の反復ループ）",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/iterative-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "iterative-review-takemo101-compose-workflow-2"
+}

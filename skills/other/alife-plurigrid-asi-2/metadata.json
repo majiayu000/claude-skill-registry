@@ -1,0 +1,11 @@
+{
+  "name": "alife",
+  "description": "Comprehensive Artificial Life skill combining ALIFE2025 proceedings,",
+  "repo": "plurigrid/asi",
+  "path": "skills/true-alife",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "alife-plurigrid-asi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "cleaning-project",
+  "description": "Scans the codebase for unused files, dead code, and common junk patterns. Always performs a \"Dry Run\" first to list candidates for deletion and requires explicit user confirmation.",
+  "repo": "TheeCoderAhmed/Skills-Master",
+  "path": ".agent/skills/cleaning-project",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TheeCoderAhmed/Skills-Master",
+  "dir_name": "cleaning-project-theecoderahmed-skills-master-2"
+}

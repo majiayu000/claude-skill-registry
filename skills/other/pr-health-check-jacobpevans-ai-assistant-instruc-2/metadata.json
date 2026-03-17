@@ -1,0 +1,11 @@
+{
+  "name": "pr-health-check",
+  "description": "Use when checking if PR is ready to merge. Validates merge-readiness and PR status patterns.",
+  "repo": "JacobPEvans/ai-assistant-instructions",
+  "path": "agentsmd/skills/pr-health-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JacobPEvans/ai-assistant-instructions",
+  "dir_name": "pr-health-check-jacobpevans-ai-assistant-instruc-2"
+}

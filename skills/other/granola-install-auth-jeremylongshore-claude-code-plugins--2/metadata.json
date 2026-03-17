@@ -1,0 +1,11 @@
+{
+  "name": "granola-install-auth",
+  "description": "Install and configure Granola AI meeting notes app with calendar integration.\nUse when setting up Granola for the first time, connecting calendar accounts,\nor configuring audio capture permissions.\nTr",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/granola-pack/skills/granola-install-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "granola-install-auth-jeremylongshore-claude-code-plugins--2"
+}

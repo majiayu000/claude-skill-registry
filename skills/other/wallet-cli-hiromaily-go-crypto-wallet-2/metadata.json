@@ -1,0 +1,11 @@
+{
+  "name": "wallet-cli",
+  "description": "How to run watch, keygen, and sign wallet CLI commands. Use when executing wallet commands or testing wallet functionality.",
+  "repo": "hiromaily/go-crypto-wallet",
+  "path": ".claude/skills/wallet-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hiromaily/go-crypto-wallet",
+  "dir_name": "wallet-cli-hiromaily-go-crypto-wallet-2"
+}

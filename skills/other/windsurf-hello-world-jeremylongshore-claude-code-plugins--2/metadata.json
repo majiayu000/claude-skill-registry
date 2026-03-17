@@ -1,0 +1,11 @@
+{
+  "name": "windsurf-hello-world",
+  "description": "Create a minimal working Windsurf example.\nUse when starting a new Windsurf integration, testing your setup,\nor learning basic Windsurf API patterns.\nTrigger with phrases like \"windsurf hello world\", ",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/windsurf-pack/skills/windsurf-hello-world",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "windsurf-hello-world-jeremylongshore-claude-code-plugins--2"
+}

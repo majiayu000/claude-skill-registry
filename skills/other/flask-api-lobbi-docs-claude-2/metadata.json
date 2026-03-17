@@ -1,0 +1,11 @@
+{
+  "name": "flask-api",
+  "description": "Flask API development including blueprints, extensions, and REST patterns. Activate for Flask apps, Python web APIs, and lightweight API development.",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/flask-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "flask-api-lobbi-docs-claude-2"
+}

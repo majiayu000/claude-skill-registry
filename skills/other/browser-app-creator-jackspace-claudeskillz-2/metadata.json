@@ -1,0 +1,11 @@
+{
+  "name": "browser-app-creator",
+  "description": "Creates complete single-file HTML/CSS/JS web apps with localStorage persistence, ADHD-optimized UI (60px+ buttons), dark mode, and offline functionality. Use when user says \"create app\", \"build tool\",",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/browser-app-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "browser-app-creator-jackspace-claudeskillz-2"
+}

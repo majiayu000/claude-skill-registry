@@ -1,0 +1,11 @@
+{
+  "name": "langchain-retrieval",
+  "description": "Document Q&A with RAG using Supabase pgvector store.",
+  "repo": "rebyteai-template/rebyte-skills",
+  "path": "langchain-retrieval",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rebyteai-template/rebyte-skills",
+  "dir_name": "langchain-retrieval-rebyteai-template-rebyte-skills-2"
+}

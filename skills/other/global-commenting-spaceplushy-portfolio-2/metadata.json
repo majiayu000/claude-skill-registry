@@ -1,0 +1,11 @@
+{
+  "name": "global-commenting",
+  "description": "Write purposeful code comments that explain the \"why\" behind technical decisions, complex logic, and non-obvious implementations using JSDoc for components and APIs. Use this skill when documenting co",
+  "repo": "SpacePlushy/portfolio",
+  "path": ".claude/skills/global-commenting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpacePlushy/portfolio",
+  "dir_name": "global-commenting-spaceplushy-portfolio-2"
+}

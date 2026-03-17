@@ -1,0 +1,11 @@
+{
+  "name": "frontend-code-review",
+  "description": "Trigger when the user requests a review of frontend files (e.g., `.tsx`, `.ts`, `.js`). Support both pending-change reviews and focused file reviews.",
+  "repo": "yairbederman/EngineeringAgency",
+  "path": "skills/frontend-code-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yairbederman/EngineeringAgency",
+  "dir_name": "frontend-code-review-yairbederman-engineeringagency-2"
+}

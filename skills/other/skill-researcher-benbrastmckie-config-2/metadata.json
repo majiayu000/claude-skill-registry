@@ -1,0 +1,11 @@
+{
+  "name": "skill-researcher",
+  "description": "Conduct general research using web search, documentation, and codebase exploration. Invoke for non-Lean research tasks.",
+  "repo": "benbrastmckie/.config",
+  "path": ".claude/skills/skill-researcher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benbrastmckie/.config",
+  "dir_name": "skill-researcher-benbrastmckie-config-2"
+}

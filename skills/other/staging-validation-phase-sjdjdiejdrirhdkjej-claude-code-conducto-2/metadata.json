@@ -1,0 +1,11 @@
+{
+  "name": "staging-validation-phase",
+  "description": "Guides manual staging validation before production deployment through smoke tests, critical user flow testing, data migration verification, and rollback capability checks. Use when validating staging ",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/staging-validation-phase",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "staging-validation-phase-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+}

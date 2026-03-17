@@ -1,0 +1,17 @@
+{
+  "name": "create-plan",
+  "repo": "kasperjunge/agent-resources",
+  "path": ".opencode/skill/create-plan/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/kasperjunge/agent-resources",
+  "dir_name": "create-plan",
+  "downloaded_at": "2026-03-02T08:45:22.628633Z",
+  "author": "kasperjunge",
+  "source_url": "https://github.com/kasperjunge/agent-resources/blob/main/.opencode/skill/create-plan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kasperjunge/agent-resources/blob/main/.opencode/skill/create-plan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

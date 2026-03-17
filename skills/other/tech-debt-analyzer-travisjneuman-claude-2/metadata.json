@@ -1,0 +1,11 @@
+{
+  "name": "tech-debt-analyzer",
+  "description": "This skill should be used when analyzing technical debt in a codebase, documenting code quality issues, creating technical debt registers, or assessing code maintainability. Use this for identifying c",
+  "repo": "travisjneuman/.claude",
+  "path": "skills/tech-debt-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/travisjneuman/.claude",
+  "dir_name": "tech-debt-analyzer-travisjneuman-claude-2"
+}

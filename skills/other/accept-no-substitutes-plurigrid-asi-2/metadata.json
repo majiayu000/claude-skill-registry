@@ -1,0 +1,11 @@
+{
+  "name": "accept-no-substitutes",
+  "description": "This skill should be used when agents generate placeholder tokens like \"pseudo-\", \"mock-\", \"temporary\", \"TODO\", \"demo-\", or similar incompleteness markers. Detects substitution patterns in agent OUTPU",
+  "repo": "plurigrid/asi",
+  "path": "skills/accept-no-substitutes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "accept-no-substitutes-plurigrid-asi-2"
+}

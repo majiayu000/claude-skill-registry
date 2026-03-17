@@ -1,0 +1,11 @@
+{
+  "name": "validate-idea",
+  "description": "Validate idea/project structure, documentation completeness, and readiness for next phase",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/validate-idea",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "validate-idea-taylorhuston-local-life-manager-2"
+}

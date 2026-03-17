@@ -1,0 +1,11 @@
+{
+  "name": "cost-optimization",
+  "description": "Optimize cloud costs through resource rightsizing, tagging strategies, reserved instances, and spending analysis. Use when reducing cloud expenses, analyzing infrastructure costs, or implementing cost",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".ai/plugins/cloud-infrastructure/skills/cost-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "cost-optimization-arustydev-dotfiles-2"
+}

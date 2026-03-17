@@ -1,0 +1,11 @@
+{
+  "name": "issue-feature",
+  "description": "GitHub 이슈 기반 기능 구현 스킬. 현재 브랜치의 이슈를 확인하고 DDD → Plan → TDD → Test 파이프라인을 실행합니다.\n사용 시기: (1) feature 브랜치에서 작업 시작 시 (2) 이슈 기반 개발 시작 시 (3) /issue-feature 호출 시",
+  "repo": "jskjw157/FanPulse",
+  "path": ".claude/skills/issue-feature",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jskjw157/FanPulse",
+  "dir_name": "issue-feature-jskjw157-fanpulse-2"
+}

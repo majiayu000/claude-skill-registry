@@ -1,0 +1,11 @@
+{
+  "name": "regression-test-generator",
+  "description": "Generate regression tests when bugs are discovered during /debug or continuous checks. Auto-detects test framework, creates Arrange-Act-Assert tests, and links to error-log.md entries. (project)",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/regression-test-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "regression-test-generator-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+}

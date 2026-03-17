@@ -1,0 +1,11 @@
+{
+  "name": "failure-criteria",
+  "description": "Immediate failure conditions that stop work",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/failure-criteria",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "failure-criteria-zerobias-org-module-2"
+}

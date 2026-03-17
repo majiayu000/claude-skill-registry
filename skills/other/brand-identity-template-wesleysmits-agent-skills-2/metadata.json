@@ -1,0 +1,11 @@
+{
+  "name": "brand-identity-template",
+  "description": "Template skill providing the single source of truth for brand guidelines, design tokens, technology choices, and voice/tone. Customize this template for your brand. Use when generating UI components, ",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/brand-identity-template",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "brand-identity-template-wesleysmits-agent-skills-2"
+}

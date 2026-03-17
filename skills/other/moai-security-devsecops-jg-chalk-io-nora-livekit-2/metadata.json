@@ -1,0 +1,11 @@
+{
+  "name": "moai-security-devsecops",
+  "description": "SAST/DAST/SCA automation, CI/CD security pipelines, vulnerability management",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-security-devsecops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-security-devsecops-jg-chalk-io-nora-livekit-2"
+}

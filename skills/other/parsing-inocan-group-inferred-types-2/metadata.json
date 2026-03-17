@@ -1,0 +1,11 @@
+{
+  "name": "parsing",
+  "description": "Utilities in this library which provide effective ways to parse or mutate text at both runtime and design-time while ensuring that the resulting type is as narrow as possible.",
+  "repo": "inocan-group/inferred-types",
+  "path": ".claude/skills/parsing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/inocan-group/inferred-types",
+  "dir_name": "parsing-inocan-group-inferred-types-2"
+}

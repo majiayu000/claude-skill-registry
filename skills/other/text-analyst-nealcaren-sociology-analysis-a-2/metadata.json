@@ -1,0 +1,11 @@
+{
+  "name": "text-analyst",
+  "description": "Computational text analysis for sociology research using R or Python. Guides you through topic models, sentiment analysis, classification, and embeddings with systematic validation. Supports both trad",
+  "repo": "nealcaren/sociology-analysis-agents",
+  "path": "plugins/text-analyst/skills/text-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nealcaren/sociology-analysis-agents",
+  "dir_name": "text-analyst-nealcaren-sociology-analysis-a-2"
+}

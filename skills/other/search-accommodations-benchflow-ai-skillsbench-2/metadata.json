@@ -1,0 +1,11 @@
+{
+  "name": "search-accommodations",
+  "description": "Lookup accommodations by city from the bundled dataset. Use this skill when you need to recommend places to stay in a given city or filter lodging options before building an itinerary.",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/travel-planning/environment/skills/search-accommodations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "search-accommodations-benchflow-ai-skillsbench-2"
+}

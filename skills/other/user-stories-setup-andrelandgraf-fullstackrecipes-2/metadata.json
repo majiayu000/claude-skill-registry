@@ -1,0 +1,11 @@
+{
+  "name": "user-stories-setup",
+  "description": "Create a structured format for documenting feature requirements as user stories. JSON files with testable acceptance criteria that AI agents can verify and track.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/user-stories-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "user-stories-setup-andrelandgraf-fullstackrecipes-2"
+}

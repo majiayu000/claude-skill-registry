@@ -1,0 +1,11 @@
+{
+  "name": "feature-engineering-kit",
+  "description": "Auto-generate features with encodings, scaling, polynomial features, and interaction terms for ML pipelines.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "feature-engineering-kit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "feature-engineering-kit-dkyazzentwatwa-chatgpt-skills-2"
+}

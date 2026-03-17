@@ -1,0 +1,11 @@
+{
+  "name": "test-schema",
+  "description": "Write tests for Zod schemas. Use when testing entity schemas, DTO validation, query parameter schemas, or any schema validation rules. Triggers on \"test schema\", \"schema tests\", \"test validation\", \"te",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/test-schema",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "test-schema-madooei-backend-template-2"
+}

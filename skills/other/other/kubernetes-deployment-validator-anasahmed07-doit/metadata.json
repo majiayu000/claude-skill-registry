@@ -1,0 +1,17 @@
+{
+  "name": "kubernetes-deployment-validator",
+  "repo": "anasahmed07/doit",
+  "path": ".gemini/skills/kubernetes-deployment-validator/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/anasahmed07/doit",
+  "dir_name": "kubernetes-deployment-validator-anasahmed07-doit",
+  "downloaded_at": "2026-03-01T06:40:49.881462Z",
+  "author": "anasahmed07",
+  "source_url": "https://github.com/anasahmed07/doit/blob/main/.gemini/skills/kubernetes-deployment-validator/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anasahmed07/doit/blob/main/.gemini/skills/kubernetes-deployment-validator/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "docker-compose-setup",
+  "description": "Setup docker-compose for Todo app services. Use for local dev environment.",
+  "repo": "Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development",
+  "path": "Phase02/.claude/skills/docker-compose-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development",
+  "dir_name": "docker-compose-setup-jawad-chaudhary-hackathone-2-todo-sp-2"
+}

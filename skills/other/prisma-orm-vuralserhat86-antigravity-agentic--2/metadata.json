@@ -1,0 +1,11 @@
+{
+  "name": "prisma_orm",
+  "description": "Prisma ORM patterns including Prisma Client usage, queries, mutations, relations, transactions, and schema management. Use when working with Prisma database operations or schema definitions.",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/prisma_orm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "prisma-orm-vuralserhat86-antigravity-agentic--2"
+}

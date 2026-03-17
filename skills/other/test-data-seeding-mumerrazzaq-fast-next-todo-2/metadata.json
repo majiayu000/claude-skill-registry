@@ -1,0 +1,11 @@
+{
+  "name": "test-data-seeding",
+  "description": "A skill for generating and seeding realistic test data into a database. Use this skill for tasks related to database seeding, test data generation, and populating a database for development, testing, ",
+  "repo": "MUmerRazzaq/fast-next-todo",
+  "path": ".claude/skills/test-data-seeding",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MUmerRazzaq/fast-next-todo",
+  "dir_name": "test-data-seeding-mumerrazzaq-fast-next-todo-2"
+}

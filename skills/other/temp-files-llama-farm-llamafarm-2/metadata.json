@@ -1,0 +1,11 @@
+{
+  "name": "temp-files",
+  "description": "Guidelines for creating temporary files in system temp directory. Use when agents need to create reports, logs, or progress files without cluttering the repository.",
+  "repo": "llama-farm/llamafarm",
+  "path": ".claude/skills/temp-files",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/llama-farm/llamafarm",
+  "dir_name": "temp-files-llama-farm-llamafarm-2"
+}

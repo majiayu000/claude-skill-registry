@@ -1,0 +1,11 @@
+{
+  "name": "reader",
+  "description": "Reader screen patterns and image handling",
+  "repo": "chiraitori/paperand",
+  "path": ".agent/skills/reader",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chiraitori/paperand",
+  "dir_name": "reader-chiraitori-paperand-2"
+}

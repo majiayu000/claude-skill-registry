@@ -1,0 +1,11 @@
+{
+  "name": "cobol-migration-analyzer",
+  "description": "Analyzes legacy COBOL programs and JCL jobs to assist with migration to modern Java applications. Extracts business logic, identifies dependencies, generates migration reports, and creates Java implem",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/cobol-migration-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "dir_name": "cobol-migration-analyzer-dauquangthanh-hanoi-rainbow-2"
+}

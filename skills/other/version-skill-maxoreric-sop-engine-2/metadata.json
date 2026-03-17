@@ -1,0 +1,11 @@
+{
+  "name": "version-skill",
+  "description": "Skill 版本管理的 Skill。当需要 A/B test、切换版本、回滚时触发。触发词：版本、version、A/B test、切换、回滚、promote。",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/version-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "version-skill-maxoreric-sop-engine-2"
+}

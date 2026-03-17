@@ -1,0 +1,11 @@
+{
+  "name": "convex-patterns",
+  "description": "Convex database patterns and best practices for RFP Discovery. Use when writing Convex queries, mutations, actions, or schema definitions. Also helpful for real-time subscriptions and auth integration",
+  "repo": "Atemndobs/nebula-rfp",
+  "path": ".claude/skills/convex-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Atemndobs/nebula-rfp",
+  "dir_name": "convex-patterns-atemndobs-nebula-rfp-2"
+}

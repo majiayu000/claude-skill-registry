@@ -1,0 +1,11 @@
+{
+  "name": "when-orchestrating-swarm-use-swarm-orchestration",
+  "description": "Complex multi-agent swarm orchestration with task decomposition, distributed execution, and result synthesis",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/workflow/when-orchestrating-swarm-use-swarm-orchestration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "dir_name": "when-orchestrating-swarm-use-swarm-orchestration-dnyoussef-ai-chrome-extension-2"
+}

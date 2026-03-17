@@ -1,0 +1,11 @@
+{
+  "name": "configuring-console-app-di",
+  "description": "Implements dependency injection using GenericHost in .NET Console Applications. Use when building console applications that require DI, hosted services, or background tasks.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/configuring-console-app-di",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "configuring-console-app-di-christian289-dotnet-with-claudeco-2"
+}

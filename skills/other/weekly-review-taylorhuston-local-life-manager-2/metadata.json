@@ -1,0 +1,11 @@
+{
+  "name": "weekly-review",
+  "description": "Weekly review and planning session. Use at end of week or weekend to review progress, plan next week, and set priorities. Triggers on \"weekly review\", \"plan my week\", \"what did I do this week\", \"Sunda",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/weekly-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "weekly-review-taylorhuston-local-life-manager-2"
+}

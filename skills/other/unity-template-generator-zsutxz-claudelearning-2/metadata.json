@@ -1,0 +1,11 @@
+{
+  "name": "unity-template-generator",
+  "description": "Generates production-ready C# script templates (MonoBehaviour, ScriptableObject, Editor, tests). Use when creating new scripts or setting up project structure.",
+  "repo": "zsutxz/ClaudeLearning",
+  "path": ".claude/skills/unity-template-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zsutxz/ClaudeLearning",
+  "dir_name": "unity-template-generator-zsutxz-claudelearning-2"
+}

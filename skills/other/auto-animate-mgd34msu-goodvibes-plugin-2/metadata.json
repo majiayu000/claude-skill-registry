@@ -1,0 +1,11 @@
+{
+  "name": "auto-animate",
+  "description": "Adds automatic animations to DOM changes with zero configuration using FormKit's AutoAnimate. Use when adding smooth transitions for list reordering, adding/removing elements, or quick UI polish.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/skills/auto-animate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "auto-animate-mgd34msu-goodvibes-plugin-2"
+}

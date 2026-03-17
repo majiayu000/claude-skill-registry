@@ -1,0 +1,11 @@
+{
+  "name": "construct-development",
+  "description": "CDK construct development patterns, design principles, and type-driven development. Use when building or modifying AWS CDK constructs.",
+  "repo": "crmagz/cdk-constructs-library",
+  "path": ".claude/skills/construct-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/crmagz/cdk-constructs-library",
+  "dir_name": "construct-development-crmagz-cdk-constructs-libra-2"
+}

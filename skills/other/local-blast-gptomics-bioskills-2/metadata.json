@@ -1,0 +1,11 @@
+{
+  "name": "local-blast",
+  "description": "Run local BLAST searches using BLAST+ command-line tools. Use for fast unlimited searches, custom databases, large-scale analysis, and when NCBI servers are slow or unavailable.",
+  "repo": "GPTomics/bioSkills",
+  "path": "database-access/local-blast",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "local-blast-gptomics-bioskills-2"
+}

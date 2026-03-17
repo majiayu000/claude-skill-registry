@@ -1,0 +1,11 @@
+{
+  "name": "paprika",
+  "description": "Access recipes, meal plans, and grocery lists from Paprika Recipe Manager. Use when user asks about recipes, meal planning, or cooking.",
+  "repo": "clawdbot/skills",
+  "path": "skills/mjrussell/paprika",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "paprika-clawdbot-skills-2"
+}

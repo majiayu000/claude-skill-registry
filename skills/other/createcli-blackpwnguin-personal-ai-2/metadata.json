@@ -1,0 +1,11 @@
+{
+  "name": "CreateCLI",
+  "description": "Generate production-quality TypeScript CLIs with full documentation, error handling, and best practices. Creates deterministic, type-safe command-line tools following PAI's CLI-First Architecture. USE",
+  "repo": "blackpwnguin/Personal-AI",
+  "path": ".claude/skills/CreateCLI",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/blackpwnguin/Personal-AI",
+  "dir_name": "createcli-blackpwnguin-personal-ai-2"
+}

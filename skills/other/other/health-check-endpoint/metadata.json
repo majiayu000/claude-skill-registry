@@ -1,0 +1,9 @@
+{
+  "name": "health-check-endpoint",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/sdk-platform-development/skills/health-check-endpoint/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "health-check-endpoint",
+  "downloaded_at": "2026-02-18T01:16:51.719194Z"
+}

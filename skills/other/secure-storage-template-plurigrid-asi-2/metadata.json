@@ -1,0 +1,11 @@
+{
+  "name": "secure-storage-template",
+  "description": "Boilerplate code templates for Tizen KeyManager integration. Generates C/C#/.NET code for password-protected secure data storage.",
+  "repo": "plurigrid/asi",
+  "path": "skills/secure-storage-template",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "secure-storage-template-plurigrid-asi-2"
+}

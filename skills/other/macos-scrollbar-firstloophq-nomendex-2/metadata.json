@@ -1,0 +1,11 @@
+{
+  "name": "macos-scrollbar",
+  "description": "Custom themed scrollbars for macOS WKWebView apps. Use when styling scrollbars in the native macOS app, fixing scrollbar theming issues, or implementing custom scroll containers that work in WKWebView",
+  "repo": "firstloophq/nomendex",
+  "path": ".claude/skills/macos-scrollbar",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/firstloophq/nomendex",
+  "dir_name": "macos-scrollbar-firstloophq-nomendex-2"
+}

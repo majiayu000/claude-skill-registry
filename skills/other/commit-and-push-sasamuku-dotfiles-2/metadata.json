@@ -1,0 +1,11 @@
+{
+  "name": "commit-and-push",
+  "description": "Execute /commit-and-push slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/commit-and-push",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "commit-and-push-sasamuku-dotfiles-2"
+}

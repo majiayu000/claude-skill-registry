@@ -1,0 +1,11 @@
+{
+  "name": "panic-room-finder",
+  "description": "Expert in residential hollow space detection, hidden room discovery, and safe room planning. Helps map house dimensions, identify anomalies suggesting hidden spaces, and safely explore potential voids",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/panic-room-finder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "panic-room-finder-erichowens-some-claude-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-bundle",
+  "description": "Implement bundles in Umbraco backoffice using official docs",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-bundle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-bundle-umbraco-umbraco-cms-backoffi-2"
+}

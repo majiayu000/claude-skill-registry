@@ -1,0 +1,11 @@
+{
+  "name": "build-android-apk",
+  "description": "自动化构建 React Native Android APK。包括依赖检查、Debug/Release 构建、设备安装。使用此 Skill 来构建 APK、测试安装、或排查构建问题。",
+  "repo": "j4xie/my-prototype-logistics",
+  "path": ".claude/skills/build-android-apk",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/j4xie/my-prototype-logistics",
+  "dir_name": "build-android-apk-j4xie-my-prototype-logisti-2"
+}

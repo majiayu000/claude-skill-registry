@@ -1,0 +1,11 @@
+{
+  "name": "nix-config",
+  "description": "This skill provides comprehensive guidance for working with the nix-config framework - a platform-agnostic modular configuration system for NixOS and Darwin (macOS). Use this skill when adding new mod",
+  "repo": "ChanningHe/dotfiles",
+  "path": "claude/skills/nix-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ChanningHe/dotfiles",
+  "dir_name": "nix-config-channinghe-dotfiles-2"
+}

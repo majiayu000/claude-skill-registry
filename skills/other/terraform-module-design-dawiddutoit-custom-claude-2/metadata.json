@@ -1,0 +1,11 @@
+{
+  "name": "terraform-module-design",
+  "description": "Design and build reusable Terraform modules. Use when creating reusable infrastructure patterns, encapsulating\ncomplex resource groups, standardizing configurations across projects, or organizing code",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/terraform-module-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "terraform-module-design-dawiddutoit-custom-claude-2"
+}

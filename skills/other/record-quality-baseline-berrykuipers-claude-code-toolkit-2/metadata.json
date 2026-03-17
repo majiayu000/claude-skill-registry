@@ -1,0 +1,11 @@
+{
+  "name": "record-quality-baseline",
+  "description": "Record quality metrics baseline before refactoring or major changes, capturing audit scores, test coverage, and complexity for comparison",
+  "repo": "BerryKuipers/claude-code-toolkit",
+  "path": ".claude/skills/quality/record-quality-baseline",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BerryKuipers/claude-code-toolkit",
+  "dir_name": "record-quality-baseline-berrykuipers-claude-code-toolkit-2"
+}

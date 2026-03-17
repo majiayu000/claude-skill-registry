@@ -1,0 +1,11 @@
+{
+  "name": "bicep-what-if-analysis",
+  "description": "azd up/azd provisionの影響分析、Bicep what-if実行とノイズフィルタリング。インフラ変更・デプロイ前の影響確認時に使用。",
+  "repo": "torumakabe/aks-chaos-lab",
+  "path": ".github/skills/bicep-what-if-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/torumakabe/aks-chaos-lab",
+  "dir_name": "bicep-what-if-analysis-torumakabe-aks-chaos-lab-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "progressive-metadata",
+  "description": "Pattern for creating skills with YAML frontmatter that enables progressive disclosure and token optimization. Use when building skills, optimizing context usage, or implementing domain expertise with ",
+  "repo": "dredd-us/seashells",
+  "path": ".claude/skills/progressive-metadata",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dredd-us/seashells",
+  "dir_name": "progressive-metadata-dredd-us-seashells-2"
+}

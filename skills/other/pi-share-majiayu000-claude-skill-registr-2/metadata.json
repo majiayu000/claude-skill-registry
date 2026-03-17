@@ -1,0 +1,11 @@
+{
+  "name": "pi-share",
+  "description": "Load and parse session transcripts from shittycodingagent.ai/buildwithpi.ai/buildwithpi.com (pi-share) URLs. Fetches gists, decodes embedded session data, and extracts conversation history.",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/pi-share",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "pi-share-majiayu000-claude-skill-registr-2"
+}

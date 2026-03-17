@@ -1,0 +1,11 @@
+{
+  "name": "use-review-feedback",
+  "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable",
+  "repo": "mtthsnc/autonome",
+  "path": "skills/use-review-feedback",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mtthsnc/autonome",
+  "dir_name": "use-review-feedback-mtthsnc-autonome-2"
+}

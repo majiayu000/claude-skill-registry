@@ -1,0 +1,11 @@
+{
+  "name": "spec-creation",
+  "description": "Spec creation with pattern references, acceptance criteria, and demo scripts. Use when creating implementation specs, defining acceptance criteria, or breaking down user stories.",
+  "repo": "bybren-llc/safe-agentic-workflow",
+  "path": ".claude/skills/spec-creation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bybren-llc/safe-agentic-workflow",
+  "dir_name": "spec-creation-bybren-llc-safe-agentic-workflo-2"
+}

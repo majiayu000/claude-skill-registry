@@ -1,0 +1,11 @@
+{
+  "name": "front-plugin",
+  "description": "Build Front plugins using the Plugin SDK. Use when creating sidebar plugins, composer plugins, or extending Front's UI. Triggers on plugin, front plugin, sidebar plugin, composer plugin, @frontapp/plu",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/front-plugin",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "front-plugin-skillrecordings-support-2"
+}

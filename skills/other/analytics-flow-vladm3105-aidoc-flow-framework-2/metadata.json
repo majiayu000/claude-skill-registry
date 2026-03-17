@@ -1,0 +1,11 @@
+{
+  "name": "analytics-flow",
+  "description": "Analytics and data analysis workflow skill",
+  "repo": "vladm3105/aidoc-flow-framework",
+  "path": ".claude/skills/analytics-flow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vladm3105/aidoc-flow-framework",
+  "dir_name": "analytics-flow-vladm3105-aidoc-flow-framework-2"
+}

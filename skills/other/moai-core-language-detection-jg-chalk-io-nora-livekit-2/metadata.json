@@ -1,0 +1,11 @@
+{
+  "name": "moai-core-language-detection",
+  "description": "Auto-detects project language and framework from package.json, pyproject.toml, Cargo.toml, go.mod, and other configuration files with comprehensive pattern matching based on 17,253+ production code ex",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-core-language-detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-core-language-detection-jg-chalk-io-nora-livekit-2"
+}

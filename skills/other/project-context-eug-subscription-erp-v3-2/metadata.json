@@ -1,0 +1,11 @@
+{
+  "name": "project-context",
+  "description": "Loads project structure, tech stack, and coding conventions for the Photography Order Management ERP. Use when understanding the codebase, onboarding, or needing project context.",
+  "repo": "eug-subscription/ERP_v3",
+  "path": ".agent/skills/project-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/eug-subscription/ERP_v3",
+  "dir_name": "project-context-eug-subscription-erp-v3-2"
+}

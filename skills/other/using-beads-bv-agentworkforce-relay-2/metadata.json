@@ -1,0 +1,11 @@
+{
+  "name": "using-beads-bv",
+  "description": "Use when coordinating dependency-aware task planning with beads (bd) CLI and bv graph sidecar - covers ready work selection, priority management, and robot flags for deterministic outputs",
+  "repo": "AgentWorkforce/relay",
+  "path": ".claude/skills/using-beads-bv",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AgentWorkforce/relay",
+  "dir_name": "using-beads-bv-agentworkforce-relay-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "repository-auditor",
+  "description": "Comprehensive codebase analysis system that evaluates security vulnerabilities,\ncode quality, architecture patterns, and operational readiness across any technology stack.\n",
+  "repo": "chaserbreitenbach/claude-skills-and-agents",
+  "path": "skills/tooling/repository-auditor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chaserbreitenbach/claude-skills-and-agents",
+  "dir_name": "repository-auditor-chaserbreitenbach-claude-skills-and-ag-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "global-error-handling",
+  "description": "Implement comprehensive error handling strategies including try-catch blocks, API error responses, Content Collection error handling, custom error pages, and production error monitoring. Use this skil",
+  "repo": "SpacePlushy/portfolio",
+  "path": ".claude/skills/global-error-handling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpacePlushy/portfolio",
+  "dir_name": "global-error-handling-spaceplushy-portfolio-2"
+}

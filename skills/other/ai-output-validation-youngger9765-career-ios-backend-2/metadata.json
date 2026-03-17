@@ -1,0 +1,11 @@
+{
+  "name": "ai-output-validation",
+  "description": "Ensures all AI-generated output fields have proper validation.\nAuto-activates on \"AI 輸出\", \"LLM\", \"Gemini\", \"GPT\", \"truncate\", \"截斷\" keywords.\nLesson learned: 2026-01-08 Quick Feedback, Report, Deep Ana",
+  "repo": "Youngger9765/career_ios_backend",
+  "path": ".claude/skills/ai-output-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Youngger9765/career_ios_backend",
+  "dir_name": "ai-output-validation-youngger9765-career-ios-backend-2"
+}

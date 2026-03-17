@@ -1,0 +1,11 @@
+{
+  "name": "debugging-auto",
+  "description": "Hidden automatic debugging when something breaks - user sees simple question or \"fixing...\" not stack traces or technical errors",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/debugging-auto",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "debugging-auto-timequity-vibe-coder-2"
+}

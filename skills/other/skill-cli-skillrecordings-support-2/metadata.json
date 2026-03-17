@@ -1,0 +1,11 @@
+{
+  "name": "skill-cli",
+  "description": "CLI for Skill Recordings Support Agent platform. Use when investigating support issues, debugging workflows, inspecting Front/Inngest data, or managing app integrations.",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/skill-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "skill-cli-skillrecordings-support-2"
+}

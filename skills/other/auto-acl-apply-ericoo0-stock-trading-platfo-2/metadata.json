@@ -1,0 +1,11 @@
+{
+  "name": "auto-acl-apply",
+  "description": "用于自动生成 Neptune ACL 申请报文并直接发起申请。支持多环境（BOE, Online-CN, i18n-BD）、多区域选择、源/目标集群指定，并自动处理非 BOE 环境下的 Pre-release 申请。",
+  "repo": "EricOo0/stock-trading-platform",
+  "path": ".coco/skills/auto-acl-apply",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/EricOo0/stock-trading-platform",
+  "dir_name": "auto-acl-apply-ericoo0-stock-trading-platfo-2"
+}

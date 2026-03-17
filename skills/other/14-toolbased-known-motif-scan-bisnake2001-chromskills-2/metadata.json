@@ -1,0 +1,11 @@
+{
+  "name": "14_toolBased.known-motif-scan",
+  "description": "This skill identifies the locations of known transcription factor (TF) binding motifs within genomic regions such as ChIP-seq or ATAC-seq peaks. It utilizes HOMER to search for specific sequence motif",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "14_toolBased.known-motif-scan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "14-toolbased-known-motif-scan-bisnake2001-chromskills-2"
+}

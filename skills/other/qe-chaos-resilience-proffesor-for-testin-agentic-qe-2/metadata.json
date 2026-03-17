@@ -1,0 +1,11 @@
+{
+  "name": "qe-chaos-resilience",
+  "description": "Chaos engineering and resilience testing including fault injection, load testing, and system recovery validation.",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/qe-chaos-resilience",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "qe-chaos-resilience-proffesor-for-testin-agentic-qe-2"
+}

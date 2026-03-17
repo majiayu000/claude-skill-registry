@@ -1,0 +1,11 @@
+{
+  "name": "fitts-law",
+  "description": "Calcula el tiempo para alcanzar un objetivo basado en distancia y tamaño. Use cuando dimensione botones, posicione CTAs, o diseñe áreas interactivas.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/cognitive-laws/fitts-law",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "fitts-law-vjrivmon-handwriting-ocr-2"
+}

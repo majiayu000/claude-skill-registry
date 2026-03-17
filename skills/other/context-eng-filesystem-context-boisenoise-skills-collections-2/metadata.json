@@ -1,0 +1,11 @@
+{
+  "name": "context-eng-filesystem-context",
+  "description": "This skill should be used when the user asks to \"offload context to files\", \"implement dynamic context discovery\", \"use filesystem for agent memory\", \"reduce context window bloat\", or mentions file-ba",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/context-eng-filesystem-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "context-eng-filesystem-context-boisenoise-skills-collections-2"
+}

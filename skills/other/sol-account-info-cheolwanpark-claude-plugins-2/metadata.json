@@ -1,0 +1,11 @@
+{
+  "name": "sol-account-info",
+  "description": "Use this skill when the user asks \"solana balance\", \"sol balance\", \"solana account\", \"is this a program\", or mentions checking account info on Solana. Requires an address and optional chain parameter.",
+  "repo": "cheolwanpark/claude-plugins",
+  "path": "plugins/crypto/skills/sol-account-info",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cheolwanpark/claude-plugins",
+  "dir_name": "sol-account-info-cheolwanpark-claude-plugins-2"
+}

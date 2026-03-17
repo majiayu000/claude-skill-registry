@@ -1,0 +1,11 @@
+{
+  "name": "confluence-docs",
+  "description": "Documentation templates for ADRs, runbooks, and architecture docs. Use when creating architectural decision records, operational runbooks, or technical documentation.",
+  "repo": "bybren-llc/safe-agentic-workflow",
+  "path": ".claude/skills/confluence-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bybren-llc/safe-agentic-workflow",
+  "dir_name": "confluence-docs-bybren-llc-safe-agentic-workflo-2"
+}

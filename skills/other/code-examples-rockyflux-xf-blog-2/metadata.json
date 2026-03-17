@@ -1,0 +1,11 @@
+{
+  "name": "code-examples",
+  "description": "生成高质量的技术代码示例，支持多种编程语言和框架。使用时需要创建代码示例、演示用法、提供配置模板时。",
+  "repo": "rockyflux/xf-blog",
+  "path": ".claude/skills/code-examples",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rockyflux/xf-blog",
+  "dir_name": "code-examples-rockyflux-xf-blog-2"
+}

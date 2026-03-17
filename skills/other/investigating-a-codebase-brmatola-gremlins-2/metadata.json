@@ -1,0 +1,11 @@
+{
+  "name": "investigating-a-codebase",
+  "description": "Use when planning or designing features and need to understand current codebase state, find existing patterns, or verify assumptions about what exists - prevents hallucination by grounding plans in re",
+  "repo": "brmatola/gremlins",
+  "path": "skills/investigating-a-codebase",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/brmatola/gremlins",
+  "dir_name": "investigating-a-codebase-brmatola-gremlins-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "distributed-systems",
+  "description": "Distributed systems tools including NATS messaging, libp2p networking, and Temporal workflows",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/distributed-systems",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FlexNetOS/ripple-env",
+  "dir_name": "distributed-systems-flexnetos-ripple-env-2"
+}

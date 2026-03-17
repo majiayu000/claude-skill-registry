@@ -1,0 +1,11 @@
+{
+  "name": "learning_objective_generator",
+  "description": "Generate clear, measurable, and curriculum-aligned learning objectives for any topic. Use when user asks to define goals, outcomes, or objectives for a lesson or course.",
+  "repo": "MuhammadHassaanArain/Book-PAI",
+  "path": ".claude/skills/learning_objective_generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MuhammadHassaanArain/Book-PAI",
+  "dir_name": "learning-objective-generator-muhammadhassaanarain-book-pai-2"
+}

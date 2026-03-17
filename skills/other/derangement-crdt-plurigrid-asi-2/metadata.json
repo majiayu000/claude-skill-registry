@@ -1,0 +1,11 @@
+{
+  "name": "derangement-crdt",
+  "description": "Derangement-CRDT Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/derangement-crdt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "derangement-crdt-plurigrid-asi-2"
+}

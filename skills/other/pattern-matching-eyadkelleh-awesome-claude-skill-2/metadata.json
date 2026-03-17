@@ -1,0 +1,11 @@
+{
+  "name": "pattern-matching",
+  "description": "Sensitive data patterns for security testing: API keys, credit cards, emails, SSNs, phone numbers, IPs, and more. Use for data discovery and validation.",
+  "repo": "Eyadkelleh/awesome-claude-skills-security",
+  "path": "seclists-categories pattern-matching/pattern-matching",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Eyadkelleh/awesome-claude-skills-security",
+  "dir_name": "pattern-matching-eyadkelleh-awesome-claude-skill-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "design-of-experiments",
+  "description": "Expert guidance for Design of Experiments (DOE) in Python - interactive goal-driven design selection, classical DOE (factorial, response surface, screening), Bayesian optimization with Gaussian proces",
+  "repo": "jkitchin/skillz",
+  "path": "skills/scientific/design-of-experiments",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jkitchin/skillz",
+  "dir_name": "design-of-experiments-jkitchin-skillz-2"
+}

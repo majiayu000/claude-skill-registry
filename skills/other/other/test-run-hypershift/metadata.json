@@ -1,0 +1,9 @@
+{
+  "name": "test-run-hypershift",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/test:run-hypershift/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "test-run-hypershift",
+  "downloaded_at": "2026-02-15T07:49:48.440783Z"
+}

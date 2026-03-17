@@ -1,0 +1,11 @@
+{
+  "name": "flights",
+  "description": "Track flight status, delays, and search routes. Uses FlightAware data.",
+  "repo": "clawdbot/skills",
+  "path": "skills/dbhurley/flights",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "flights-clawdbot-skills-2"
+}

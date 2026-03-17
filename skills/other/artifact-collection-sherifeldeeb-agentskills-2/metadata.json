@@ -1,0 +1,11 @@
+{
+  "name": "artifact-collection",
+  "description": "Collect and preserve digital forensic artifacts from systems and devices. Use when\nresponding to incidents, collecting evidence for investigation, or preserving\nvolatile data. Supports Windows, Linux,",
+  "repo": "SherifEldeeb/agentskills",
+  "path": "skills/forensics/artifact-collection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SherifEldeeb/agentskills",
+  "dir_name": "artifact-collection-sherifeldeeb-agentskills-2"
+}

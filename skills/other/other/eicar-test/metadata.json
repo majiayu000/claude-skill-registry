@@ -1,0 +1,9 @@
+{
+  "name": "eicar-test",
+  "repo": "cisco-ai-defense/skill-scanner",
+  "path": "evals/test_skills/malicious/eicar-test/SKILL.md",
+  "category": "other",
+  "source": "github.com/cisco-ai-defense/skill-scanner",
+  "dir_name": "eicar-test",
+  "downloaded_at": "2026-02-22T06:42:48.658581Z"
+}

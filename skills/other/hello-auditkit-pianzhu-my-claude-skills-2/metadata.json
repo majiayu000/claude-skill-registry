@@ -1,0 +1,11 @@
+{
+  "name": "hello-auditkit",
+  "description": "Use this skill to audit, review, validate, or check the quality of AI assistant configurations including prompt text, prompt files, skills (SKILL.md), plugins, MCP servers, agents, hooks, memory files",
+  "repo": "pianzhu/my-claude-skills",
+  "path": "skills/hello-auditkit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pianzhu/my-claude-skills",
+  "dir_name": "hello-auditkit-pianzhu-my-claude-skills-2"
+}

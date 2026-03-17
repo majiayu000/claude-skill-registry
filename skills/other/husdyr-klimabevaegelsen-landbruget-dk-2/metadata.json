@@ -1,0 +1,11 @@
+{
+  "name": "husdyr",
+  "description": "Activates when querying livestock and animal data from GCS.\nUse this skill for: CHR registry, pig movements, animal welfare, antibiotics,\nanimal density, mortality rates, herd tracking, svineflytning.",
+  "repo": "Klimabevaegelsen/landbruget.dk",
+  "path": ".claude/skills/gcs-data-catalog/husdyr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Klimabevaegelsen/landbruget.dk",
+  "dir_name": "husdyr-klimabevaegelsen-landbruget-dk-2"
+}

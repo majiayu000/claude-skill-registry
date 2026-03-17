@@ -1,0 +1,11 @@
+{
+  "name": "triad-interleave",
+  "description": "Interleave three deterministic color streams into balanced schedules for parallel execution and evaluation.",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.ruler/skills/triad-interleave",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "triad-interleave-plurigrid-asi-2"
+}

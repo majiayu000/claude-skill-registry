@@ -1,0 +1,9 @@
+{
+  "name": "moai-workflow-templates",
+  "repo": "hnabyz-bot/mcp-agent-server",
+  "path": ".claude/skills/moai-workflow-templates/SKILL.md",
+  "category": "other",
+  "source": "github.com/hnabyz-bot/mcp-agent-server",
+  "dir_name": "moai-workflow-templates-hnabyz-bot-mcp-agent-server",
+  "downloaded_at": "2026-02-15T07:30:01.095828Z"
+}

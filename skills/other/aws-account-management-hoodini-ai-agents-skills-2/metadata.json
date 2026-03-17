@@ -1,0 +1,11 @@
+{
+  "name": "aws-account-management",
+  "description": "Manage AWS accounts, organizations, IAM, and billing. Use when setting up AWS Organizations, managing IAM policies, controlling costs, or implementing multi-account strategies. Triggers on AWS Organiz",
+  "repo": "hoodini/ai-agents-skills",
+  "path": "skills/aws-account-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hoodini/ai-agents-skills",
+  "dir_name": "aws-account-management-hoodini-ai-agents-skills-2"
+}

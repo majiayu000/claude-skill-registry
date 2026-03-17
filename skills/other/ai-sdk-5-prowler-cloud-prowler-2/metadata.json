@@ -1,0 +1,11 @@
+{
+  "name": "ai-sdk-5",
+  "description": "Vercel AI SDK 5 patterns. Trigger: When building AI features with AI SDK v5 (chat, streaming, tools/function calling, UIMessage parts), including migration from v4.\n",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/ai-sdk-5",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/prowler-cloud/prowler",
+  "dir_name": "ai-sdk-5-prowler-cloud-prowler-2"
+}

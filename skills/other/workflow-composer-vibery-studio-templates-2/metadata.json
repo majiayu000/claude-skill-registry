@@ -1,0 +1,11 @@
+{
+  "name": "workflow-composer",
+  "description": "Chain Vibery commands, skills, and agents into repeatable automated workflows. Outputs: Executable workflow files, hook configurations, CI/CD integration. Use when user has repetitive multi-step proce",
+  "repo": "vibery-studio/templates",
+  "path": "skills/workflow-composer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vibery-studio/templates",
+  "dir_name": "workflow-composer-vibery-studio-templates-2"
+}

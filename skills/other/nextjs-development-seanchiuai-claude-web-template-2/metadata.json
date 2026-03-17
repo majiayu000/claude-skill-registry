@@ -1,0 +1,11 @@
+{
+  "name": "nextjs-development",
+  "description": "Build Next.js applications with App Router, Server and Client Components, data fetching, routing, and TypeScript. Use when implementing Next.js pages, layouts, API routes, or React Server Components.",
+  "repo": "seanchiuai/claude-web-template",
+  "path": ".claude/skills/nextjs-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/seanchiuai/claude-web-template",
+  "dir_name": "nextjs-development-seanchiuai-claude-web-template-2"
+}

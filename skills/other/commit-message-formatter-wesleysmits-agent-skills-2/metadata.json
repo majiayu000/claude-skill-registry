@@ -1,0 +1,11 @@
+{
+  "name": "commit-message-formatter",
+  "description": "Formats Git commit messages following Conventional Commits conventions. Use when the user asks to commit, write a commit message, format commits, or mentions conventional commits, staged changes, or r",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/commit-message-formatter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "commit-message-formatter-wesleysmits-agent-skills-2"
+}

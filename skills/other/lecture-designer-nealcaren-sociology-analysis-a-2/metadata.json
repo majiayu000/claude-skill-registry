@@ -1,0 +1,11 @@
+{
+  "name": "lecture-designer",
+  "description": "Transform textbook chapters into engaging, evidence-based lectures with slides. Guides instructors through learning outcomes, narrative design, active learning activities, and Quarto reveal.js slide c",
+  "repo": "nealcaren/sociology-analysis-agents",
+  "path": "plugins/lecture-designer/skills/lecture-designer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nealcaren/sociology-analysis-agents",
+  "dir_name": "lecture-designer-nealcaren-sociology-analysis-a-2"
+}

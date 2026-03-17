@@ -1,0 +1,11 @@
+{
+  "name": "python-micrometer-cardinality-control",
+  "description": "Prevent OutOfMemoryError from unbounded metric tags by implementing cardinality limits.\nUse when adding tags to Micrometer metrics, normalizing URIs or IDs to bounded categories,\nmonitoring metric exp",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/python-micrometer-cardinality-control",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "python-micrometer-cardinality-control-dawiddutoit-custom-claude-2"
+}

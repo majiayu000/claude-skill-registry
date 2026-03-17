@@ -1,0 +1,11 @@
+{
+  "name": "error-handling-patterns",
+  "description": "Master error handling patterns across languages including exceptions, Result types, error propagation, and graceful degradation to build resilient applications. Use when implementing error handling, d",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/error-handling-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "error-handling-patterns-ovachiever-droid-tings-2"
+}

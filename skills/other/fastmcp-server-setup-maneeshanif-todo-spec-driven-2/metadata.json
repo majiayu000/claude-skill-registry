@@ -1,0 +1,11 @@
+{
+  "name": "fastmcp-server-setup",
+  "description": "Create MCP (Model Context Protocol) servers using FastMCP Python SDK. Define tools that AI agents can call to perform task operations. Use when building MCP servers for Phase 3 AI chatbot integration.",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/fastmcp-server-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "fastmcp-server-setup-maneeshanif-todo-spec-driven-2"
+}

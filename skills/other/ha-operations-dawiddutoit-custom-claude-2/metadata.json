@@ -1,0 +1,11 @@
+{
+  "name": "ha-operations",
+  "description": "Interact with Home Assistant in the network infrastructure setup. Provides guidance for\nAPI access, health checks, sending notifications, and calling services via REST API.\nUse when working with Home ",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/ha-operations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "ha-operations-dawiddutoit-custom-claude-2"
+}

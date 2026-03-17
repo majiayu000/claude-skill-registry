@@ -1,0 +1,11 @@
+{
+  "name": "identifying-skill-gaps",
+  "description": "Use when analyzing Claude Code conversation logs to find patterns in repeated user instructions that could become skills. Ask for date range first.",
+  "repo": "LandonSchropp/agent-toolkit",
+  "path": "skills/identifying-skill-gaps",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/LandonSchropp/agent-toolkit",
+  "dir_name": "identifying-skill-gaps-landonschropp-agent-toolkit-2"
+}

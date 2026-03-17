@@ -1,0 +1,11 @@
+{
+  "name": "tree-visualization",
+  "description": "Draw and export phylogenetic trees using Biopython Bio.Phylo with matplotlib. Use for creating publication-quality tree figures, customizing colors and labels, and exporting to various image formats.",
+  "repo": "GPTomics/bioSkills",
+  "path": "phylogenetics/tree-visualization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "tree-visualization-gptomics-bioskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "quality-gate-manager",
+  "description": "Manages quality gates and checkpoints to ensure work meets standards before proceeding to next phases. Use when you need to verify work quality, set quality standards, or decide if work is ready to pr",
+  "repo": "lexicalninja/my-little-scrum-team",
+  "path": "skills/quality-gate-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lexicalninja/my-little-scrum-team",
+  "dir_name": "quality-gate-manager-lexicalninja-my-little-scrum-team-2"
+}

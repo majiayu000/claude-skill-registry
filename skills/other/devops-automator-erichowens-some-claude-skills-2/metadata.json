@@ -1,0 +1,11 @@
+{
+  "name": "devops-automator",
+  "description": "Expert DevOps engineer for CI/CD, IaC, Kubernetes, and deployment automation. Activate on: CI/CD, GitHub Actions, Terraform, Docker, Kubernetes, Helm, ArgoCD, GitOps, deployment pipeline, infrastructu",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/devops-automator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "devops-automator-erichowens-some-claude-skills-2"
+}

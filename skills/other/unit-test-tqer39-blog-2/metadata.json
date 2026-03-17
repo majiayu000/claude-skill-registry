@@ -1,0 +1,11 @@
+{
+  "name": "unit-test",
+  "description": "単体テストの作成。「テストを書きたい」「ユニットテストを追加」「関数をテスト」などのリクエスト時に使用。",
+  "repo": "tqer39/blog",
+  "path": ".claude/skills/unit-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tqer39/blog",
+  "dir_name": "unit-test-tqer39-blog-2"
+}

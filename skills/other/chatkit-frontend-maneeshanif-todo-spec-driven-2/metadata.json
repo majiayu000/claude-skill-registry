@@ -1,0 +1,11 @@
+{
+  "name": "chatkit-frontend",
+  "description": "Build production-ready chat UI with OpenAI ChatKit React components. Handles ChatKit installation, useChatKit hook configuration, theming, streaming display, conversation sidebar, and rich widgets. Us",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/chatkit-frontend",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "chatkit-frontend-maneeshanif-todo-spec-driven-2"
+}

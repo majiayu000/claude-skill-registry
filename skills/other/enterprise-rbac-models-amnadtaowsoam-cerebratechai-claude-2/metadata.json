@@ -1,0 +1,11 @@
+{
+  "name": "enterprise-rbac-models",
+  "description": "Comprehensive guide to implementing Role-Based Access Control for enterprise applications with hierarchical roles, custom permissions, and multi-level access",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "50-enterprise-integrations/enterprise-rbac-models",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "enterprise-rbac-models-amnadtaowsoam-cerebratechai-claude-2"
+}

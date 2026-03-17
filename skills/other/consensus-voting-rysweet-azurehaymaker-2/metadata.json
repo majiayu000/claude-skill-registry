@@ -1,0 +1,11 @@
+{
+  "name": "consensus-voting",
+  "description": "Multi-agent consensus voting with domain-weighted expertise for critical decisions requiring structured validation",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/consensus-voting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "consensus-voting-rysweet-azurehaymaker-2"
+}

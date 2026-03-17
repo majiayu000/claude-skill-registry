@@ -1,0 +1,11 @@
+{
+  "name": "ship-learn-next",
+  "description": "Transform learning content (like YouTube transcripts, articles, tutorials) into actionable implementation plans using the Ship-Learn-Next framework. Use when user wants to turn advice, lessons, or edu",
+  "repo": "gupsammy/Claude-setup",
+  "path": "skills/ship-learn-next",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gupsammy/Claude-setup",
+  "dir_name": "ship-learn-next-gupsammy-claude-setup-2"
+}

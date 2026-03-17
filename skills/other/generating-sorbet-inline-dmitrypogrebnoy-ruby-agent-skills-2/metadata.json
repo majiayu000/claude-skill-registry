@@ -1,0 +1,11 @@
+{
+  "name": "generating-sorbet-inline",
+  "description": "Generates Sorbet inline type signatures using sig blocks directly in Ruby source files. Triggers when adding Sorbet types, annotating Ruby methods with sig syntax, or generating type signatures for So",
+  "repo": "DmitryPogrebnoy/ruby-agent-skills",
+  "path": "plugins/ruby-type-signature-skills/skills/generating-sorbet-inline",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DmitryPogrebnoy/ruby-agent-skills",
+  "dir_name": "generating-sorbet-inline-dmitrypogrebnoy-ruby-agent-skills-2"
+}

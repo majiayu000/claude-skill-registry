@@ -1,0 +1,11 @@
+{
+  "name": "ftdi",
+  "description": "FTDI (Future Technology Devices International) MPN encoding patterns, USB interface chip decoding, and handler guidance. Use when working with FTDI USB bridge ICs or FTDIHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/ftdi",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "ftdi-cantara-lib-electronic-compo-2"
+}

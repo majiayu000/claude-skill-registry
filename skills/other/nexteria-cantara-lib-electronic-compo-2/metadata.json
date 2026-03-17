@@ -1,0 +1,11 @@
+{
+  "name": "nexteria",
+  "description": "Nexperia (filename uses \"Nexteria\" typo) MPN encoding patterns for discrete semiconductors, logic ICs, and ESD protection. Use when working with Nexperia components or NexteriaHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/nexteria",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "nexteria-cantara-lib-electronic-compo-2"
+}

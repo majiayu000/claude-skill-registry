@@ -1,0 +1,11 @@
+{
+  "name": "xml-context-engineering",
+  "description": "USE WHEN: writing system prompts, structuring complex instructions, engineering context for Claude agents, optimizing attention efficiency in long prompts.\nDO NOT USE WHEN: writing regular code, simpl",
+  "repo": "mahidalhan/claude-hacks",
+  "path": "skills/xml-context-engineering/skills/xml-context-engineering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mahidalhan/claude-hacks",
+  "dir_name": "xml-context-engineering-mahidalhan-claude-hacks-2"
+}

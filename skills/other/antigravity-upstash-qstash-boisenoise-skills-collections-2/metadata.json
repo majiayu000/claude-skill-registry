@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-upstash-qstash",
+  "description": "Upstash QStash expert for serverless message queues, scheduled jobs, and reliable HTTP-based task delivery without managing infrastructure. Use when: qstash, upstash queue, serverless cron, scheduled ",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-upstash-qstash",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-upstash-qstash-boisenoise-skills-collections-2"
+}

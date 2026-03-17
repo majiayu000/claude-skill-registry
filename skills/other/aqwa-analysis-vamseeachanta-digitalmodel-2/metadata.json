@@ -1,0 +1,11 @@
+{
+  "name": "aqwa-analysis",
+  "description": "Integrate with AQWA hydrodynamic software for RAO computation, damping analysis, and coefficient extraction. Use for AQWA file processing, RAO calculation, hydrodynamic coefficient extraction, and pre",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/aqwa-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "aqwa-analysis-vamseeachanta-digitalmodel-2"
+}

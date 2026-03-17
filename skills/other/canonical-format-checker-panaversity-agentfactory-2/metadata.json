@@ -1,0 +1,11 @@
+{
+  "name": "canonical-format-checker",
+  "description": "This skill should be used when content teaches patterns (skills, subagents, ADRs, PHRs, specifications) that have canonical sources elsewhere. Prevents format drift by ensuring content references and ",
+  "repo": "panaversity/agentfactory",
+  "path": ".claude/skills/canonical-format-checker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "canonical-format-checker-panaversity-agentfactory-2"
+}

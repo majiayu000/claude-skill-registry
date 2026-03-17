@@ -1,0 +1,11 @@
+{
+  "name": "reading-plan-designer",
+  "description": "Design and implement Bible reading plans for the KR92 Bible Voice project.\n\nUse when:\n- Creating new reading plans (7-day, 30-day, yearly)\n- Adding daily readings to existing plans\n- Generating readin",
+  "repo": "Spectaculous-Code/raamattu-nyt",
+  "path": ".claude/skills/reading-plan-designer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Spectaculous-Code/raamattu-nyt",
+  "dir_name": "reading-plan-designer-spectaculous-code-raamattu-nyt-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "qe-contract-testing",
+  "description": "Consumer-driven contract testing for APIs including REST, GraphQL, and event-driven systems with schema validation.",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/qe-contract-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "qe-contract-testing-proffesor-for-testin-agentic-qe-2"
+}

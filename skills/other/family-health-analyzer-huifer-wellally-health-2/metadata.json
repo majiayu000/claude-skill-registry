@@ -1,0 +1,11 @@
+{
+  "name": "family-health-analyzer",
+  "description": "分析家族病史、评估遗传风险、识别家庭健康模式、提供个性化预防建议",
+  "repo": "huifer/WellAlly-health",
+  "path": ".claude/skills/family-health-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/huifer/WellAlly-health",
+  "dir_name": "family-health-analyzer-huifer-wellally-health-2"
+}

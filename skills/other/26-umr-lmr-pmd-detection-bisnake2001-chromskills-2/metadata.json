@@ -1,0 +1,11 @@
+{
+  "name": "26.UMR-LMR-PMD-detection",
+  "description": "This pipeline performs genome-wide segmentation of CpG methylation profiles to identify Unmethylated Regions (UMRs), Low-Methylated Regions (LMRs), and Partially Methylated Domains (PMDs) using whole-",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "26.UMR-LMR-PMD-detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "26-umr-lmr-pmd-detection-bisnake2001-chromskills-2"
+}

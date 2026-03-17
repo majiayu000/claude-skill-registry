@@ -1,0 +1,11 @@
+{
+  "name": "skill-builder",
+  "description": "Create new Claude Code skills with proper SKILL.md format, frontmatter, and best practices. Use when building, scaffolding, or generating a new skill for Claude Code.",
+  "repo": "mc-zuri/mineflayer-bedrock",
+  "path": ".claude/skills/skill-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mc-zuri/mineflayer-bedrock",
+  "dir_name": "skill-builder-mc-zuri-mineflayer-bedrock-2"
+}

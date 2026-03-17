@@ -1,0 +1,11 @@
+{
+  "name": "generate-import-html",
+  "description": "Generate structured HTML from authoring analysis for AEM Edge Delivery Services. Creates section structure, applies block tables, handles metadata, and manages images folder.",
+  "repo": "aemysites/sagarsane-20250826",
+  "path": ".claude/skills/generate-import-html",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aemysites/sagarsane-20250826",
+  "dir_name": "generate-import-html-aemysites-sagarsane-20250826-2"
+}

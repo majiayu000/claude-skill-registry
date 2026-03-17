@@ -1,0 +1,11 @@
+{
+  "name": "flash-firmware-dfu",
+  "description": "Flash INAV firmware to flight controllers using DFU (Device Firmware Update)",
+  "repo": "sensei-hacker/inav-claude",
+  "path": ".claude/skills/flash-firmware-dfu",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sensei-hacker/inav-claude",
+  "dir_name": "flash-firmware-dfu-sensei-hacker-inav-claude-2"
+}

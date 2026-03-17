@@ -1,0 +1,11 @@
+{
+  "name": "jetpack",
+  "description": "Resolves AndroidX/Jetpack library information including version lookup, package-to-Maven-coordinate conversion, and source code downloading. Provides tools for inspecting Jetpack library implementatio",
+  "repo": "ithinkihaveacat/dotfiles",
+  "path": "etc/skills/jetpack",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ithinkihaveacat/dotfiles",
+  "dir_name": "jetpack-ithinkihaveacat-dotfiles-2"
+}

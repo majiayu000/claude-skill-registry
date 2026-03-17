@@ -1,0 +1,11 @@
+{
+  "name": "nielsen-user-control",
+  "description": "Proporciona a usuarios control total sobre sus acciones con opciones de deshacer y salir. Use cuando diseñe flujos de navegación, acciones destructivas, o cualquier operación que el usuario pueda quer",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/heuristics/nielsen-user-control",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "nielsen-user-control-vjrivmon-handwriting-ocr-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "bun-runtime",
+  "description": "Use for Bun runtime, bunfig.toml, watch/hot modes, env vars, CLI flags, and module resolution.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/bun/skills/bun-runtime",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "bun-runtime-secondsky-claude-skills-2"
+}

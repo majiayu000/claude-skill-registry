@@ -1,0 +1,11 @@
+{
+  "name": "aico-worktree",
+  "description": "Create isolated git worktree for feature development. Handles directory selection, gitignore verification, project setup, and baseline test verification.\n\nUse this skill when:\n- Starting feature work ",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-worktree",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-worktree-yellinzero-aico-2"
+}

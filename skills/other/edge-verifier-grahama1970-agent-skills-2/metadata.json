@@ -1,0 +1,11 @@
+{
+  "name": "edge-verifier",
+  "description": "Verifies relationships between a source text (e.g. Episode, Task) and existing Knowledge Graph lessons. Runs KNN/Hybrid search to find candidates, then uses LLM (scillm) to verify \"verifies\", \"contrad",
+  "repo": "grahama1970/agent-skills",
+  "path": "skills/edge-verifier",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/grahama1970/agent-skills",
+  "dir_name": "edge-verifier-grahama1970-agent-skills-2"
+}

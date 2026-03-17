@@ -1,0 +1,11 @@
+{
+  "name": "maintain-clash-mihomo-config",
+  "description": "Maintain and update this Clash/Mihomo configuration repo (mihomo.yaml, mihomo.js, rules/*.list, *Merged.list, force_ttl_rules.txt). Use when editing proxy groups, rule providers, DNS/TTL rules, or reg",
+  "repo": "mmm1h/clashconfig",
+  "path": "skills/maintain-clash-mihomo-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mmm1h/clashconfig",
+  "dir_name": "maintain-clash-mihomo-config-mmm1h-clashconfig-2"
+}

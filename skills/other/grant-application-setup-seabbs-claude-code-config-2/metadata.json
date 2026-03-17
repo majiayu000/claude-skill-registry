@@ -1,0 +1,11 @@
+{
+  "name": "grant-application-setup",
+  "description": "Expert guidance for setting up and organising research grant applications following established patterns for UKRI, EU, and other funding bodies",
+  "repo": "seabbs/claude-code-config",
+  "path": "skills/grant-application-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/seabbs/claude-code-config",
+  "dir_name": "grant-application-setup-seabbs-claude-code-config-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "packer",
+  "description": "HashiCorp Packer reference for building machine images and VM templates.\nUse when working with Packer configurations (.pkr.hcl files), running packer\ncommands, troubleshooting builds, or designing ima",
+  "repo": "poindexter12/waypoint",
+  "path": "technologies/skills/packer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/poindexter12/waypoint",
+  "dir_name": "packer-poindexter12-waypoint-2"
+}

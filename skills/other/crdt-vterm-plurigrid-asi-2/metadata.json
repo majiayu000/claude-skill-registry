@@ -1,0 +1,11 @@
+{
+  "name": "crdt-vterm",
+  "description": "Collaborative terminal session sharing using CRDT-style s-expressions",
+  "repo": "plurigrid/asi",
+  "path": "skills/crdt-vterm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "crdt-vterm-plurigrid-asi-2"
+}

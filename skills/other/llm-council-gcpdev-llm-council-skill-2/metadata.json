@@ -1,0 +1,11 @@
+{
+  "name": "llm-council",
+  "description": "Multi-LLM collaborative brainstorming and planning. Use when user explicitly requests consultation with multiple AI models (ChatGPT, Gemini, other LLMs) before presenting an implementation plan, or as",
+  "repo": "gcpdev/llm-council-skill",
+  "path": "llm-council",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gcpdev/llm-council-skill",
+  "dir_name": "llm-council-gcpdev-llm-council-skill-2"
+}

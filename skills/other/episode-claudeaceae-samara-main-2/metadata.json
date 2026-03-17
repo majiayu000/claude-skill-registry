@@ -1,0 +1,11 @@
+{
+  "name": "episode",
+  "description": "View or append to the daily episode log.",
+  "repo": "claudeaceae/samara-main",
+  "path": ".claude/skills/episode",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/claudeaceae/samara-main",
+  "dir_name": "episode-claudeaceae-samara-main-2"
+}

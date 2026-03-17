@@ -1,0 +1,11 @@
+{
+  "name": "interpolation",
+  "description": "Problem-solving strategies for interpolation in numerical methods",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/math/numerical-methods/interpolation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "interpolation-parcadei-continuous-claude-v3-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "1k-cross-platform",
+  "description": "Cross-platform development patterns for OneKey. Use when writing platform-specific code, handling platform differences, or understanding platform extensions. Triggers on platform, native, web, desktop",
+  "repo": "OneKeyHQ/app-monorepo",
+  "path": ".claude/skills/1k-cross-platform",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OneKeyHQ/app-monorepo",
+  "dir_name": "1k-cross-platform-onekeyhq-app-monorepo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "git-rebase",
+  "description": "Performs git rebases with intelligent conflict resolution through commit message analysis. This skill should be used when rebasing branches, updating feature branches with latest main/master, resolvin",
+  "repo": "StirlingMarketingGroup/marlin",
+  "path": ".claude/skills/git-rebase",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/StirlingMarketingGroup/marlin",
+  "dir_name": "git-rebase-stirlingmarketinggro-marlin-2"
+}

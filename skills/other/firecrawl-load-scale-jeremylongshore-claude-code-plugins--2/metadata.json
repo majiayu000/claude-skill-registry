@@ -1,0 +1,11 @@
+{
+  "name": "firecrawl-load-scale",
+  "description": "Implement FireCrawl load testing, auto-scaling, and capacity planning strategies.\nUse when running performance tests, configuring horizontal scaling,\nor planning capacity for FireCrawl integrations.\nT",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/firecrawl-pack/skills/firecrawl-load-scale",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "firecrawl-load-scale-jeremylongshore-claude-code-plugins--2"
+}

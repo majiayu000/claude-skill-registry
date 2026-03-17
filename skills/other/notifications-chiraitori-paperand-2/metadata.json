@@ -1,0 +1,11 @@
+{
+  "name": "notifications",
+  "description": "Push notifications and in-app alerts",
+  "repo": "chiraitori/paperand",
+  "path": ".agent/skills/notifications",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chiraitori/paperand",
+  "dir_name": "notifications-chiraitori-paperand-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "gamma-enterprise-rbac",
+  "description": "Implement enterprise role-based access control for Gamma integrations.\nUse when configuring team permissions, multi-tenant access,\nor enterprise authorization patterns.\nTrigger with phrases like \"gamm",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/gamma-pack/skills/gamma-enterprise-rbac",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "gamma-enterprise-rbac-jeremylongshore-claude-code-plugins--2"
+}

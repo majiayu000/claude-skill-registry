@@ -1,0 +1,11 @@
+{
+  "name": "inspector",
+  "description": "Create and customize inspector panels for node editors. Use when implementing custom inspector tabs, settings panels, node-specific inspectors, or using inspector UI components.",
+  "repo": "trkbt10/react-wireflow",
+  "path": "skills/inspector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/trkbt10/react-wireflow",
+  "dir_name": "inspector-trkbt10-react-wireflow-2"
+}

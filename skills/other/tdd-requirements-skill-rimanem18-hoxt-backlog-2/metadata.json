@@ -1,0 +1,11 @@
+{
+  "name": "tdd-requirements-skill",
+  "description": "明示的に @agent-tdd-requiement-analyst が呼び出すことで使用します。メインエージェントが使用する必要はありません。",
+  "repo": "rimanem18/hoxt-backlog",
+  "path": ".claude/skills/tdd-requirements-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rimanem18/hoxt-backlog",
+  "dir_name": "tdd-requirements-skill-rimanem18-hoxt-backlog-2"
+}

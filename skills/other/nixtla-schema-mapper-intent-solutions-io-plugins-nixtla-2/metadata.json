@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-schema-mapper",
+  "description": "Transform data sources to Nixtla schema (unique_id, ds, y) with column inference. Use when preparing data for forecasting. Trigger with 'map to Nixtla schema' or 'transform data'.",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "003-skills/.claude/skills-backup-20251210-155310/nixtla-schema-mapper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-schema-mapper-intent-solutions-io-plugins-nixtla-2"
+}

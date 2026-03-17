@@ -1,0 +1,11 @@
+{
+  "name": "qa-api-testing-contracts",
+  "description": "API testing and contract validation. Design and execute schema validation, contract tests, negative testing, and change safety for REST, GraphQL, and gRPC APIs. Use when you need API test plans, contr",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/qa-api-testing-contracts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "qa-api-testing-contracts-vasilyu1983-ai-agents-public-2"
+}

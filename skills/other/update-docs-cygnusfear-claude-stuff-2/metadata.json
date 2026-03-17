@@ -1,0 +1,11 @@
+{
+  "name": "update-docs",
+  "description": "Update all documentation in .plans, CLAUDE.md files, docs, and .tasks to match current codebase state. Use when user asks to update docs, refresh documentation, sync docs with code, or validate docume",
+  "repo": "Cygnusfear/claude-stuff",
+  "path": "skills/update-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cygnusfear/claude-stuff",
+  "dir_name": "update-docs-cygnusfear-claude-stuff-2"
+}

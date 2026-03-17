@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-packages",
+  "description": "Manages GitLab packages. Use for listing, publishing, or downloading packages. Triggers: artifact registry.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-packages",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-packages-knuckles-team-gitlab-api-2"
+}

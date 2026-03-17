@@ -1,0 +1,11 @@
+{
+  "name": "python-tests",
+  "description": "Write and evaluate effective Python tests using pytest. Use when writing tests, reviewing test code, debugging test failures, or improving test coverage. Covers test design, fixtures, parameterization",
+  "repo": "jlowin/fastmcp",
+  "path": ".claude/skills/python-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jlowin/fastmcp",
+  "dir_name": "python-tests-jlowin-fastmcp-2"
+}

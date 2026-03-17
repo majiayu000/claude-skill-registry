@@ -1,0 +1,11 @@
+{
+  "name": "agent-evals",
+  "description": "Design and implement evaluation frameworks for AI agents. Use when testing agent reasoning quality, building graders, doing error analysis, or establishing regression protection. Framework-agnostic co",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/rare/agent-evals",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "agent-evals-panaversity-agentfactory-2"
+}

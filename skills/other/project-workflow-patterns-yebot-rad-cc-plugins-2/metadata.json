@@ -1,0 +1,11 @@
+{
+  "name": "project-workflow-patterns",
+  "description": "Common GitHub Projects workflow patterns and best practices for team collaboration. Use when designing workflows, setting up new projects, or optimizing existing processes.",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/github-project-manager/skills/project-workflow-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "project-workflow-patterns-yebot-rad-cc-plugins-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "exa-security-basics",
+  "description": "Apply Exa security best practices for secrets and access control.\nUse when securing API keys, implementing least privilege access,\nor auditing Exa security configuration.\nTrigger with phrases like \"ex",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-security-basics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-security-basics-vasic-digital-superagent-2"
+}

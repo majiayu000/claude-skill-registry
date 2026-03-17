@@ -1,0 +1,11 @@
+{
+  "name": "git-helper",
+  "description": "Generate git commit messages and help with git workflows",
+  "repo": "maxvaega/skillkit",
+  "path": "examples/skills/git-helper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "git-helper-maxvaega-skillkit-2"
+}

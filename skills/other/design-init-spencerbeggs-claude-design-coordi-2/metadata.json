@@ -1,0 +1,11 @@
+{
+  "name": "design-init",
+  "description": "Initialize new design documentation from templates. Use when creating new design docs, documenting new systems, starting architecture documentation, or setting up design docs for a new module.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/design-init",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "design-init-spencerbeggs-claude-design-coordi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "subtask-detection",
+  "description": "親IssueからSubtaskを検出し、依存関係を考慮した実行順序（トポロジカルソート）を決定するロジック",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/subtask-detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "subtask-detection-takemo101-compose-workflow-2"
+}

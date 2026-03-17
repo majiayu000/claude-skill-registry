@@ -1,0 +1,11 @@
+{
+  "name": "code-review-expert",
+  "description": "Expert-level code review focusing on quality, security, performance, and maintainability. Use this skill for conducting thorough code reviews, identifying issues, and providing constructive feedback.",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/tools/code-review-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "code-review-expert-personamanagmentlaye-pcl-2"
+}

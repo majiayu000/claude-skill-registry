@@ -1,0 +1,11 @@
+{
+  "name": "vercel-deployment",
+  "description": "Comprehensive skill for deploying applications to Vercel. Covers all deployment types: single projects, monorepos, static sites, Next.js, React, Python/FastAPI backends, serverless functions, and edge",
+  "repo": "MUmerRazzaq/fast-next-todo",
+  "path": ".claude/skills/vercel-deployment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MUmerRazzaq/fast-next-todo",
+  "dir_name": "vercel-deployment-mumerrazzaq-fast-next-todo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "skill-quality-validator",
+  "description": "Claude技能质量检查器,自动验证技能是否符合官方最佳实践标准。Use when 创建新技能需要验证规范、 修改现有技能需要质量检查、从他人处获取技能需要评估质量、批量检查多个技能的合规性。 适用于: (1) 新技能开发后的质量验证 (2) 技能更新后的合规检查  (3) 第三方技能的质量评估 (4) 团队技能库的标准化管理 (5) 技能打包前的最终审核",
+  "repo": "alongor666/chexianduoweifenxi",
+  "path": ".claude/skills/skill-quality-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alongor666/chexianduoweifenxi",
+  "dir_name": "skill-quality-validator-alongor666-chexianduoweifenxi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "mui-base",
+  "description": "MUI Base UI style guidelines for building headless React component libraries (formerly headless-ui-style). This skill should be used when creating unstyled UI components, compound components with rend",
+  "repo": "pproenca/dot-skills",
+  "path": "skills/.curated/mui-base",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pproenca/dot-skills",
+  "dir_name": "mui-base-pproenca-dot-skills-2"
+}

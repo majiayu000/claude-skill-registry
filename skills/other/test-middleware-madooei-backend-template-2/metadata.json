@@ -1,0 +1,11 @@
+{
+  "name": "test-middleware",
+  "description": "Test middleware functions. Use when testing authentication, validation, or other middleware. Triggers on \"test middleware\", \"test auth middleware\", \"test validation middleware\".",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/test-middleware",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "test-middleware-madooei-backend-template-2"
+}

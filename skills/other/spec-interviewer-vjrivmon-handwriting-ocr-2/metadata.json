@@ -1,0 +1,11 @@
+{
+  "name": "spec-interviewer",
+  "description": "Realiza entrevistas profundas para extraer especificaciones completas de proyectos",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/spec-interviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "spec-interviewer-vjrivmon-handwriting-ocr-2"
+}

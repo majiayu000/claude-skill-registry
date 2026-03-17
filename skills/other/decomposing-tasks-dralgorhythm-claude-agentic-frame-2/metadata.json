@@ -1,0 +1,11 @@
+{
+  "name": "decomposing-tasks",
+  "description": "Break down large tasks into smaller, actionable items. Use when planning sprints, estimating work, or creating implementation plans. Covers task breakdown strategies.",
+  "repo": "dralgorhythm/claude-agentic-framework",
+  "path": ".claude/skills/product/decomposing-tasks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dralgorhythm/claude-agentic-framework",
+  "dir_name": "decomposing-tasks-dralgorhythm-claude-agentic-frame-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rag-curator",
+  "description": "Curador do corpus RAG. Gerencia adição, organização e manutenção do conhecimento do projeto. Garante qualidade e acessibilidade.",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/rag-curator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "rag-curator-arbgjr-satra-2"
+}

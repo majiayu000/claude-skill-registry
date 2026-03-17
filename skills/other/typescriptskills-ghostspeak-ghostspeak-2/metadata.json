@@ -1,0 +1,11 @@
+{
+  "name": "typescriptskills",
+  "description": "Expert TypeScript development patterns and tooling for December 2025. Use when (1) Setting up modern TypeScript projects with Bun, Node 22+, or Deno, (2) Configuring tsconfig, ESM/CJS dual publishing,",
+  "repo": "Ghostspeak/GhostSpeak",
+  "path": ".claude/skills/typescriptskills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ghostspeak/GhostSpeak",
+  "dir_name": "typescriptskills-ghostspeak-ghostspeak-2"
+}

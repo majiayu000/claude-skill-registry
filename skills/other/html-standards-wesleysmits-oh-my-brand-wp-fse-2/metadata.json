@@ -1,0 +1,11 @@
+{
+  "name": "html-standards",
+  "description": "HTML standards for Oh My Brand! theme. Semantic elements, accessibility requirements, ARIA attributes, and attribute best practices. Use when writing HTML templates or render output.",
+  "repo": "WesleySmits/oh-my-brand-wp-fse",
+  "path": ".github/skills/html-standards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/oh-my-brand-wp-fse",
+  "dir_name": "html-standards-wesleysmits-oh-my-brand-wp-fse-2"
+}

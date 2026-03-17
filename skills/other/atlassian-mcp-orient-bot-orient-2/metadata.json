@@ -1,0 +1,11 @@
+{
+  "name": "atlassian-mcp",
+  "description": "Use the Atlassian MCP Server to interact with JIRA from coding agents (Cursor, Claude Code). This skill documents how to use the official Atlassian MCP server for JIRA operations instead of the ai_fir",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/atlassian-mcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "atlassian-mcp-orient-bot-orient-2"
+}

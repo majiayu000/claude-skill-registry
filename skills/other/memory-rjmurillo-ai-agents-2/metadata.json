@@ -1,0 +1,11 @@
+{
+  "name": "memory",
+  "description": "Unified four-tier memory system for AI agents. Tier 1 Semantic (Serena+Forgetful search), Tier 2 Episodic (session replay), Tier 3 Causal (decision patterns). Enables memory-first architecture per ADR",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/memory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "memory-rjmurillo-ai-agents-2"
+}

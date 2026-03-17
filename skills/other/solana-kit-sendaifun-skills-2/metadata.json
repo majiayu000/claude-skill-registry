@@ -1,0 +1,11 @@
+{
+  "name": "solana-kit",
+  "description": "Complete guide for @solana/kit - the modern, tree-shakeable, zero-dependency JavaScript SDK from Anza. Covers RPC connections, signers, transaction building with pipe, signing, sending, and account fe",
+  "repo": "sendaifun/skills",
+  "path": "skills/solana-kit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "solana-kit-sendaifun-skills-2"
+}

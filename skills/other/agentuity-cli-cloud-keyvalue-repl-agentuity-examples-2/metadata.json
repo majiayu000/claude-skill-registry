@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-keyvalue-repl",
+  "description": "Start an interactive repl for working with keyvalue database. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/examples",
+  "path": "training-v1/concierge-ts-v1/.agents/skills/agentuity-cli-cloud-keyvalue-repl",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/examples",
+  "dir_name": "agentuity-cli-cloud-keyvalue-repl-agentuity-examples-2"
+}

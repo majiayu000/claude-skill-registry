@@ -1,0 +1,11 @@
+{
+  "name": "replay-blackbox",
+  "description": "Replay blackbox sensor data to flight controller (SITL or HITL)",
+  "repo": "sensei-hacker/inav-claude",
+  "path": ".claude/skills/replay-blackbox",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sensei-hacker/inav-claude",
+  "dir_name": "replay-blackbox-sensei-hacker-inav-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "integration-test-expert",
+  "description": "E2E 테스트, Flyway vs @Sql 분리, TestRestTemplate 필수. MockMvc 금지. /kb-integration 명령 시 자동 활성화.",
+  "repo": "ryu-qqq/MarketPlace",
+  "path": ".claude/skills/integration-test-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ryu-qqq/MarketPlace",
+  "dir_name": "integration-test-expert-ryu-qqq-marketplace-2"
+}

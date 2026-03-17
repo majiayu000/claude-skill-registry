@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-profile-create",
+  "description": "Create a new configuration profile",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-profile-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-profile-create-agentuity-sdk-explorer-2"
+}

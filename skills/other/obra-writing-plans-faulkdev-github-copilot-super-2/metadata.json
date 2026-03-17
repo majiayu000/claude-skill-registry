@@ -1,0 +1,11 @@
+{
+  "name": "obra-writing-plans",
+  "description": "Use when the user asks for a plan, roadmap, or step-by-step breakdown for a multi-step task in VS Code Copilot Agent mode.",
+  "repo": "faulkdev/github-copilot-superpowers",
+  "path": "scripts/overrides/obra/obra-writing-plans",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/faulkdev/github-copilot-superpowers",
+  "dir_name": "obra-writing-plans-faulkdev-github-copilot-super-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "social-media-generator",
+  "description": "This skill should be used when the user requests social media content creation for Twitter, Instagram, LinkedIn, or Facebook. It generates platform-optimized posts and saves them in an organized folde",
+  "repo": "mamba-mental/agent-skill-manager",
+  "path": ".claude/skills/social-media-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mamba-mental/agent-skill-manager",
+  "dir_name": "social-media-generator-mamba-mental-agent-skill-manager-2"
+}

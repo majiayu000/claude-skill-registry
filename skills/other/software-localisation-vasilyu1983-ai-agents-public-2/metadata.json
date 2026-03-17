@@ -1,0 +1,11 @@
+{
+  "name": "software-localisation",
+  "description": "Production-grade i18n/l10n patterns for React, Vue, Angular, and Node.js. Covers i18next, react-intl, vue-i18n, ICU message format, RTL support, TMS integration, and CI/CD translation workflows.",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/software-localisation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "software-localisation-vasilyu1983-ai-agents-public-2"
+}

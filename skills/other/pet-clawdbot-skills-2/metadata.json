@@ -1,0 +1,11 @@
+{
+  "name": "pet",
+  "description": "Simple command-line snippet manager. Use it to save and reuse complex commands.",
+  "repo": "clawdbot/skills",
+  "path": "skills/steipete/nano-pdf",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "pet-clawdbot-skills-2"
+}

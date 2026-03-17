@@ -1,0 +1,11 @@
+{
+  "name": "test-mcp-compliance",
+  "description": "Validates Model Context Protocol (MCP) compliance by running official compliance test suite against Pierre server",
+  "repo": "Async-IO/pierre_mcp_server",
+  "path": ".claude/skills/test-mcp-compliance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Async-IO/pierre_mcp_server",
+  "dir_name": "test-mcp-compliance-async-io-pierre-mcp-server-2"
+}

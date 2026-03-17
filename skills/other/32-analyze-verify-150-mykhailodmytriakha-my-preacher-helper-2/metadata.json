@@ -1,0 +1,11 @@
+{
+  "name": "32-analyze-verify-150",
+  "description": "[32] ANALYZE. Ensure every critical claim has verifiable evidence with confidence levels. Each fact must have source + confidence percentage. If confidence <85%, enter Loop150 to find more sources. Us",
+  "repo": "MykhailoDmytriakha/my-preacher-helper",
+  "path": ".codex/skills/32-analyze-verify-150",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MykhailoDmytriakha/my-preacher-helper",
+  "dir_name": "32-analyze-verify-150-mykhailodmytriakha-my-preacher-helper-2"
+}

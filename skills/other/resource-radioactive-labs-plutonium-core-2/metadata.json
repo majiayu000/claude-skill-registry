@@ -1,0 +1,11 @@
+{
+  "name": "resource",
+  "description": "Overview of Plutonium resources - what they are and how the pieces fit together",
+  "repo": "radioactive-labs/plutonium-core",
+  "path": ".claude/skills/plutonium-nested-resources",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/radioactive-labs/plutonium-core",
+  "dir_name": "resource-radioactive-labs-plutonium-core-2"
+}

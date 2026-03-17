@@ -1,0 +1,11 @@
+{
+  "name": "websocket-realtime",
+  "description": "Implement WebSocket service for real-time task synchronization across clients. Use when building real-time updates for Phase 5. (project)",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/websocket-realtime",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "websocket-realtime-maneeshanif-todo-spec-driven-2"
+}

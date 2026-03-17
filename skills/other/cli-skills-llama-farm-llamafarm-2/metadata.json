@@ -1,0 +1,11 @@
+{
+  "name": "cli-skills",
+  "description": "CLI best practices for LlamaFarm. Covers Cobra, Bubbletea, Lipgloss patterns for Go CLI development.",
+  "repo": "llama-farm/llamafarm",
+  "path": ".claude/skills/cli-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/llama-farm/llamafarm",
+  "dir_name": "cli-skills-llama-farm-llamafarm-2"
+}

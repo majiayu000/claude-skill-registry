@@ -1,0 +1,11 @@
+{
+  "name": "haskell-ecosystem",
+  "description": "This skill should be used when working with Haskell projects, \"cabal.project\", \"stack.yaml\", \"ghc\", \"cabal build/test/run\", \"stack build/test/run\", or Haskell language patterns. Provides comprehensive",
+  "repo": "motoki317/dotfiles",
+  "path": ".claude/skills/haskell-ecosystem",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/motoki317/dotfiles",
+  "dir_name": "haskell-ecosystem-motoki317-dotfiles-2"
+}

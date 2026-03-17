@@ -1,0 +1,11 @@
+{
+  "name": "check-updates",
+  "description": "更新可能なプラグインがあるか確認する。「更新があるか確認」「アップデート確認」「新しいバージョン」「更新チェック」「アップデートあるか」「プラグインの更新確認」「最新版があるか」などで起動。",
+  "repo": "shiiman/claude-code-plugins",
+  "path": "plugins/shiiman-plugin/skills/check-updates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shiiman/claude-code-plugins",
+  "dir_name": "check-updates-shiiman-claude-code-plugins-2"
+}

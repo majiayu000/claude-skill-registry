@@ -1,0 +1,11 @@
+{
+  "name": "tool-quality-audit",
+  "description": "Audit tool integrations for deterministic behavior, error contracts, and logging before agents depend on them. Use when adding or updating tools or MCP servers.",
+  "repo": "aufrank/agent-skills",
+  "path": "skills/tool-quality-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aufrank/agent-skills",
+  "dir_name": "tool-quality-audit-aufrank-agent-skills-2"
+}

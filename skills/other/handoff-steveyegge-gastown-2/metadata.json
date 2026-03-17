@@ -1,0 +1,11 @@
+{
+  "name": "handoff",
+  "description": "Hand off to a fresh Claude session. Use when context is full, you've finished a logical chunk of work, or need a fresh perspective. Work continues from hook.\n",
+  "repo": "steveyegge/gastown",
+  "path": ".claude/skills/handoff",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/steveyegge/gastown",
+  "dir_name": "handoff-steveyegge-gastown-2"
+}

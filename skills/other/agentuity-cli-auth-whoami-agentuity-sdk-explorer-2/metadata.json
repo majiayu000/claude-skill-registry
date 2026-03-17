@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-auth-whoami",
+  "description": "Display information about the currently authenticated user. Requires authentication. Use for managing authentication credentials",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-auth-whoami",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-auth-whoami-agentuity-sdk-explorer-2"
+}

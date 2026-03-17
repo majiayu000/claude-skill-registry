@@ -1,0 +1,11 @@
+{
+  "name": "sql-pro",
+  "description": "Use when optimizing SQL queries, designing database schemas, or tuning database performance. Invoke for complex queries, window functions, CTEs, indexing strategies, query plan analysis.",
+  "repo": "Jeffallan/claude-skills",
+  "path": "skills/sql-pro",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Jeffallan/claude-skills",
+  "dir_name": "sql-pro-jeffallan-claude-skills-2"
+}

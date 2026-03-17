@@ -1,0 +1,11 @@
+{
+  "name": "draconian_rls_audit",
+  "description": "Default-Deny security posture for Supabase. Mandates strict RLS and 'WITH CHECK' clauses.",
+  "repo": "cityfish91159/maihouses",
+  "path": ".claude/skills/draconian_rls_audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cityfish91159/maihouses",
+  "dir_name": "draconian-rls-audit-cityfish91159-maihouses-2"
+}

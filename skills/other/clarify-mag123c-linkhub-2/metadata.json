@@ -1,0 +1,11 @@
+{
+  "name": "clarify",
+  "description": "요구사항 명확화 스킬. 모호한 요청을 구체적인 스펙으로 변환. Plan Mode 진입 전 사용.",
+  "repo": "mag123c/linkhub",
+  "path": ".claude/skills/clarify",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mag123c/linkhub",
+  "dir_name": "clarify-mag123c-linkhub-2"
+}

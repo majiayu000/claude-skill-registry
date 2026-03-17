@@ -1,0 +1,11 @@
+{
+  "name": "claudemem-search",
+  "description": "⚡ PRIMARY TOOL for semantic code search AND structural analysis. NEW: AST tree navigation with map, symbol, callers, callees, context commands. PageRank ranking. ANTI-PATTERNS: Reading files without m",
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/code-analysis/skills/claudemem-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "dir_name": "claudemem-search-involvex-involvex-claude-mark-2"
+}

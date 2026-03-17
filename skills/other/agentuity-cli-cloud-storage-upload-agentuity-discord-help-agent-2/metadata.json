@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-storage-upload",
+  "description": "Upload a file to storage bucket. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/discord-help-agent",
+  "path": ".agents/skills/agentuity-cli-cloud-storage-upload",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/discord-help-agent",
+  "dir_name": "agentuity-cli-cloud-storage-upload-agentuity-discord-help-agent-2"
+}

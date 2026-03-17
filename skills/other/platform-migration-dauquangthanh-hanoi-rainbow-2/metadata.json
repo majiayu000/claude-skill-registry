@@ -1,0 +1,11 @@
+{
+  "name": "platform-migration",
+  "description": "Guides infrastructure and platform migration including cloud-to-cloud migration (AWS to GCP, Azure to AWS), Kubernetes cluster migration, CI/CD platform changes, monitoring stack migration, identity p",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/platform-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "dir_name": "platform-migration-dauquangthanh-hanoi-rainbow-2"
+}

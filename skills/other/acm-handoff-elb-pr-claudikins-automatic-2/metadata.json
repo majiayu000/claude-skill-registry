@@ -1,0 +1,11 @@
+{
+  "name": "acm-handoff",
+  "description": "Use when resuming work from a previous session that reached context threshold, or when a handoff summary exists. Reads handoff state and markdown to restore context, todos, and continue seamlessly.",
+  "repo": "elb-pr/claudikins-automatic-context-manager",
+  "path": "skills/acm-handoff",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/elb-pr/claudikins-automatic-context-manager",
+  "dir_name": "acm-handoff-elb-pr-claudikins-automatic-2"
+}

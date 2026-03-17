@@ -1,0 +1,11 @@
+{
+  "name": "diagramming",
+  "description": "Create clear, maintainable technical diagrams using Mermaid syntax. This skill covers architecture diagrams, sequence diagrams, entity-relationship diagrams, flowcharts, and state diagrams for documen",
+  "repo": "cosmix/loom",
+  "path": "skills/diagramming",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "diagramming-cosmix-loom-2"
+}

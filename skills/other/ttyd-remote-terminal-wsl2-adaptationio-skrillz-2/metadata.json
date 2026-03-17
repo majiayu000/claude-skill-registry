@@ -1,0 +1,11 @@
+{
+  "name": "ttyd-remote-terminal-wsl2",
+  "description": "Setup secure web-based terminal access to WSL2 from mobile/tablet via ttyd + ngrok/Cloudflare/Tailscale. One-command install, start, stop, status. Use when you need remote terminal access, web termina",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/ttyd-remote-terminal-wsl2",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "ttyd-remote-terminal-wsl2-adaptationio-skrillz-2"
+}

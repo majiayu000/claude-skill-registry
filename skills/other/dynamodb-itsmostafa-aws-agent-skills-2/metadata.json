@@ -1,0 +1,11 @@
+{
+  "name": "dynamodb",
+  "description": "AWS DynamoDB NoSQL database for scalable data storage. Use when designing table schemas, writing queries, configuring indexes, managing capacity, implementing single-table design, or troubleshooting p",
+  "repo": "itsmostafa/aws-agent-skills",
+  "path": "skills/dynamodb",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/itsmostafa/aws-agent-skills",
+  "dir_name": "dynamodb-itsmostafa-aws-agent-skills-2"
+}

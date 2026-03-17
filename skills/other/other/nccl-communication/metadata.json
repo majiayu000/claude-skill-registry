@@ -1,0 +1,9 @@
+{
+  "name": "nccl-communication",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/gpu-programming/skills/nccl-communication/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "nccl-communication",
+  "downloaded_at": "2026-02-10T16:27:49.982012Z"
+}

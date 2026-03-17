@@ -1,0 +1,17 @@
+{
+  "name": "news-signal-outreach",
+  "repo": "athina-ai/goose-skills",
+  "path": "skills/composites/news-signal-outreach/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/athina-ai/goose-skills",
+  "dir_name": "news-signal-outreach",
+  "downloaded_at": "2026-03-17T14:22:08.143356Z",
+  "author": "athina-ai",
+  "source_url": "https://github.com/athina-ai/goose-skills/blob/main/skills/composites/news-signal-outreach/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athina-ai/goose-skills/blob/main/skills/composites/news-signal-outreach/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

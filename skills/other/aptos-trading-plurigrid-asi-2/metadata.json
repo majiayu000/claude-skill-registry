@@ -1,0 +1,11 @@
+{
+  "name": "aptos-trading",
+  "description": "Execute trades on Aptos mainnet with price-triggered profit-taking and dip-buying strategies. Includes wallet management, transaction signing, and DEX swaps via Liquidswap. Use when automating APT tra",
+  "repo": "plurigrid/asi",
+  "path": "skills/aptos-trading",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "aptos-trading-plurigrid-asi-2"
+}

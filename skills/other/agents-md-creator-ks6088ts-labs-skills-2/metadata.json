@@ -1,0 +1,11 @@
+{
+  "name": "agents-md-creator",
+  "description": "AIコーディングエージェント向けの指示書「AGENTS.md」を作成するスキル。プロジェクトにAIエージェントが作業するための文脈と指示を集約するファイルを作成したい場合に使用します。「AGENTS.mdを作成」「AIエージェント用の指示書を作る」「エージェント向けREADMEを作成」などのリクエストでトリガーします。OpenAI Codex、Claude Code、GitHub Copilot、",
+  "repo": "ks6088ts-labs/skills",
+  "path": "skills/agents-md-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ks6088ts-labs/skills",
+  "dir_name": "agents-md-creator-ks6088ts-labs-skills-2"
+}

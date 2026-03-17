@@ -1,0 +1,11 @@
+{
+  "name": "frontend-api",
+  "description": "API 통합 에이전트. API 클라이언트와 데이터 페칭을 구현합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/frontend-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "frontend-api-shaul1991-shaul-agents-plugin-2"
+}

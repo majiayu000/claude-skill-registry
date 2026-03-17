@@ -1,0 +1,11 @@
+{
+  "name": "pptx-creating",
+  "description": "PPTX 演示文稿创建、编辑与分析。支持：(1) 从零创建演示文稿 (2) 编辑现有内容 (3) 使用模板创建 (4) 添加评论或演讲者备注。Presentation creation, editing, and analysis using html2pptx and OOXML.",
+  "repo": "VidyFoo/antigravity-skill-engine",
+  "path": ".agent/skills/4-tools/pptx-creating",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VidyFoo/antigravity-skill-engine",
+  "dir_name": "pptx-creating-vidyfoo-antigravity-skill-en-2"
+}

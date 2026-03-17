@@ -1,0 +1,11 @@
+{
+  "name": "blitz",
+  "description": "This skill should be used when parallelizing multi-issue sprints using git worktrees and parallel Claude agents. Use when tackling multiple GitHub issues simultaneously, when the user mentions \"blitz\"",
+  "repo": "Cygnusfear/claude-stuff",
+  "path": "skills/blitz",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cygnusfear/claude-stuff",
+  "dir_name": "blitz-cygnusfear-claude-stuff-2"
+}

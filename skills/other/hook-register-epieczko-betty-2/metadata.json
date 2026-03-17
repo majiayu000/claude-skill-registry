@@ -1,0 +1,11 @@
+{
+  "name": "hook.register",
+  "description": "Validates and registers hook manifest files (YAML) in the Hook Registry for versioned hook management.",
+  "repo": "epieczko/betty",
+  "path": "skills/hook.register",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/epieczko/betty",
+  "dir_name": "hook-register-epieczko-betty-2"
+}

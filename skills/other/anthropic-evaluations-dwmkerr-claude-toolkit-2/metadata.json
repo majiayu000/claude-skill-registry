@@ -1,0 +1,11 @@
+{
+  "name": "anthropic-evaluations",
+  "description": "This skill should be used when the user asks to \"create evals\", \"evaluate an agent\", \"build evaluation suite\", or mentions agent testing, graders, or benchmarks. Also suggest when building coding agen",
+  "repo": "dwmkerr/claude-toolkit",
+  "path": "plugins/toolkit/skills/anthropic-evaluations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dwmkerr/claude-toolkit",
+  "dir_name": "anthropic-evaluations-dwmkerr-claude-toolkit-2"
+}

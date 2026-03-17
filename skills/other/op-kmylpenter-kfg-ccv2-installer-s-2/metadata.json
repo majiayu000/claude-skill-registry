@@ -1,0 +1,11 @@
+{
+  "name": "op",
+  "description": "Zintegruj KFG (Kmylpenter File Genius) z istniejącym projektem.",
+  "repo": "kmylpenter/KFG-CCv2-Installer-Stable",
+  "path": ".claude/skills/op",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kmylpenter/KFG-CCv2-Installer-Stable",
+  "dir_name": "op-kmylpenter-kfg-ccv2-installer-s-2"
+}

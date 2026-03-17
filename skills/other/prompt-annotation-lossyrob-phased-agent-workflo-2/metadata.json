@@ -1,0 +1,11 @@
+{
+  "name": "prompt-annotation",
+  "description": "Annotates agent prompts with structural XML tags for comprehension, gap detection, and skill extraction. Use when analyzing agent prompt structure, comparing agents across projects, or identifying reu",
+  "repo": "lossyrob/phased-agent-workflow",
+  "path": ".github/skills/prompt-annotation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lossyrob/phased-agent-workflow",
+  "dir_name": "prompt-annotation-lossyrob-phased-agent-workflo-2"
+}

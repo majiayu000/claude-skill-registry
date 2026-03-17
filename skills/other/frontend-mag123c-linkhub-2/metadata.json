@@ -1,0 +1,11 @@
+{
+  "name": "frontend",
+  "description": "프론트엔드 개발 스킬. React 컴포넌트, 커스텀 훅, Tailwind 스타일링. UI 작업 시 사용.",
+  "repo": "mag123c/linkhub",
+  "path": ".claude/skills/frontend",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mag123c/linkhub",
+  "dir_name": "frontend-mag123c-linkhub-2"
+}

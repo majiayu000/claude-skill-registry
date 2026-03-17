@@ -1,0 +1,11 @@
+{
+  "name": "userstory-documentation",
+  "description": "User story, epic, and task creation with acceptance criteria. Use when breaking down requirements into user stories, creating epics, writing acceptance criteria, or planning sprints. Triggers on \"user",
+  "repo": "foolpoet44/ai-pm-agent",
+  "path": ".claude/skills/userstory-documentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/foolpoet44/ai-pm-agent",
+  "dir_name": "userstory-documentation-foolpoet44-ai-pm-agent-2"
+}

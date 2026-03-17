@@ -1,0 +1,11 @@
+{
+  "name": "iac-generator",
+  "description": "Gera codigo de infraestrutura baseado em arquitetura definida.\nSuporta Terraform, Bicep, e Kubernetes manifests.\nUse quando: criar infraestrutura, gerar IaC, configurar deploy.\n",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/iac-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "iac-generator-arbgjr-satra-2"
+}

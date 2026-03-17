@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-r2",
+  "description": "Guide for implementing Cloudflare R2 - S3-compatible object storage with zero egress fees. Use when implementing file storage, uploads/downloads, data migration to/from R2, configuring buckets, integr",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/cloudflare-r2",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "cloudflare-r2-mrgoonie-xxxnaper-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "storage-format",
+  "description": "SQLite file format, B-trees, pages, cells, overflow, freelist that is used in tursodb",
+  "repo": "tursodatabase/turso",
+  "path": ".claude/skills/storage-format",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tursodatabase/turso",
+  "dir_name": "storage-format-tursodatabase-turso-2"
+}

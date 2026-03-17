@@ -1,0 +1,11 @@
+{
+  "name": "twitter-content",
+  "description": "Transform changelogs, user showcases, and product updates into Twitter posts. Use for social media content creation with Matt Palmer's casual voice.",
+  "repo": "mattppal/prompts",
+  "path": ".claude/skills/twitter-content",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattppal/prompts",
+  "dir_name": "twitter-content-mattppal-prompts-2"
+}

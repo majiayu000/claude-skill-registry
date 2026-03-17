@@ -1,0 +1,11 @@
+{
+  "name": "learned-patterns",
+  "description": "Manage learned patterns - list, view, archive, boost or penalize confidence. Use when you want to see what patterns Claude has learned, review pattern effectiveness, or manage the pattern library.",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/learned-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/duc01226/EasyPlatform",
+  "dir_name": "learned-patterns-duc01226-easyplatform-2"
+}

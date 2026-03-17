@@ -1,0 +1,11 @@
+{
+  "name": "add_type",
+  "description": "gwexpyに新しい配列型（Array/Series/Field）とコレクションを実装する",
+  "repo": "tatsuki-washimi/gwexpy",
+  "path": ".agent/skills/add_type",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tatsuki-washimi/gwexpy",
+  "dir_name": "add-type-tatsuki-washimi-gwexpy-2"
+}

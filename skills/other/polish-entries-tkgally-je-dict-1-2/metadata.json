@@ -1,0 +1,11 @@
+{
+  "name": "polish-entries",
+  "description": "Systematic review and improvement of dictionary entries. Use when starting a polishing session to review entries for accuracy, completeness, and consistency.",
+  "repo": "tkgally/je-dict-1",
+  "path": ".claude/skills/polish-entries",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tkgally/je-dict-1",
+  "dir_name": "polish-entries-tkgally-je-dict-1-2"
+}

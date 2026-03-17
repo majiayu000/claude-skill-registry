@@ -1,0 +1,11 @@
+{
+  "name": "tts-mcp-server-skill",
+  "description": "This skill provides comprehensive guidance for using TTS-MCP-SERVER with ElevenLabs eleven_v3 model for sultry, seductive, ominous, and emotionally expressive voice output. Use this skill when generat",
+  "repo": "mamba-mental/agent-skill-manager",
+  "path": ".claude/skills/tts-mcp-server-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mamba-mental/agent-skill-manager",
+  "dir_name": "tts-mcp-server-skill-mamba-mental-agent-skill-manager-2"
+}

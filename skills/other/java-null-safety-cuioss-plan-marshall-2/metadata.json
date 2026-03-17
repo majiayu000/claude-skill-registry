@@ -1,0 +1,11 @@
+{
+  "name": "java-null-safety",
+  "description": "JSpecify null safety annotations with @NullMarked, @Nullable, and package-level configuration",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-java/skills/java-null-safety",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "java-null-safety-cuioss-plan-marshall-2"
+}

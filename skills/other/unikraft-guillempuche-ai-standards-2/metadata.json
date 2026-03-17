@@ -1,0 +1,11 @@
+{
+  "name": "unikraft",
+  "description": "Kraft CLI commands for building and deploying Unikraft unikernels. Use when working with Kraftfiles, deploying to Unikraft Cloud, or managing unikernel instances.",
+  "repo": "guillempuche/ai-standards",
+  "path": "skills/unikraft",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/guillempuche/ai-standards",
+  "dir_name": "unikraft-guillempuche-ai-standards-2"
+}

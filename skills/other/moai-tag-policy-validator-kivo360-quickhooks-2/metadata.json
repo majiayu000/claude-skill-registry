@@ -1,0 +1,11 @@
+{
+  "name": "moai-tag-policy-validator",
+  "description": "Comprehensive TAG system validator and policy enforcer that monitors, validates, and corrects TAG usage across code, tests, and documentation. Use when ensuring TAG compliance, validating TAG policy v",
+  "repo": "kivo360/quickhooks",
+  "path": ".claude/skills/moai-tag-policy-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kivo360/quickhooks",
+  "dir_name": "moai-tag-policy-validator-kivo360-quickhooks-2"
+}

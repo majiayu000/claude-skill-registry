@@ -1,0 +1,11 @@
+{
+  "name": "issue-size-estimation",
+  "description": "Issue粒度判定とコード行数見積もりの基準、サイズラベル、分割判定ロジックを定義",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/issue-size-estimation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "issue-size-estimation-takemo101-compose-workflow-2"
+}

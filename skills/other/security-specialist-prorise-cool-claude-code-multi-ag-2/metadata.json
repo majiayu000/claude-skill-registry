@@ -1,0 +1,11 @@
+{
+  "name": "security-specialist",
+  "description": "提供安全审计、风险评估和合规检查能力。当需要进行安全审查、风险评估或合规验证时使用。",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/security-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "security-specialist-prorise-cool-claude-code-multi-ag-2"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "search-params",
+  "repo": "Finimo-Solutions/research",
+  "path": "testing/promptfoo/.claude/skills/search-params/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Finimo-Solutions/research",
+  "dir_name": "search-params",
+  "downloaded_at": "2026-03-01T05:17:24.997616Z",
+  "author": "Finimo-Solutions",
+  "source_url": "https://github.com/Finimo-Solutions/research/blob/main/testing/promptfoo/.claude/skills/search-params/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Finimo-Solutions/research/blob/main/testing/promptfoo/.claude/skills/search-params/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

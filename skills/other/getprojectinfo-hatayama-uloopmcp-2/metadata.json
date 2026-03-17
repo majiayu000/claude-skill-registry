@@ -1,0 +1,11 @@
+{
+  "name": "GetProjectInfo",
+  "description": "Get Unity project information via uloop CLI. Use when you need to check project settings, Unity version, platform, or other project metadata.",
+  "repo": "hatayama/uLoopMCP",
+  "path": "Assets/Editor/CustomCommandSamples/GetProjectInfo/Skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hatayama/uLoopMCP",
+  "dir_name": "getprojectinfo-hatayama-uloopmcp-2"
+}

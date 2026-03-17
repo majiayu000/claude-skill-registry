@@ -1,0 +1,11 @@
+{
+  "name": "cui-javascript",
+  "description": "Core JavaScript development standards covering ES modules, modern patterns, code quality, async programming, and tooling",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-frontend/skills/cui-javascript",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "cui-javascript-cuioss-plan-marshall-2"
+}

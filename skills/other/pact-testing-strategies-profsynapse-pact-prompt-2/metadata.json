@@ -1,0 +1,11 @@
+{
+  "name": "pact-testing-strategies",
+  "description": "Testing strategies, test pyramid guidance, and quality assurance patterns for PACT Test phase.\nUse when: designing test suites, implementing unit tests, integration tests, E2E tests,\nperformance testi",
+  "repo": "ProfSynapse/PACT-prompt",
+  "path": "pact-plugin/skills/pact-testing-strategies",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ProfSynapse/PACT-prompt",
+  "dir_name": "pact-testing-strategies-profsynapse-pact-prompt-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "create-db-migration",
+  "description": "Creates Alembic database migrations safely. Use when schema changes are needed, adding tables, columns, indexes, or modifying database structure.",
+  "repo": "MenadBt/prospection",
+  "path": ".claude/skills/create-db-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MenadBt/prospection",
+  "dir_name": "create-db-migration-menadbt-prospection-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "workflow-skill-creator",
+  "description": "Compose multiple Claude Code skills into integrated workflows. Creates workflow skills that orchestrate skill sequences, handle dependencies, and automate multi-step processes. Use when building compl",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/workflow-skill-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "workflow-skill-creator-adaptationio-skrillz-2"
+}

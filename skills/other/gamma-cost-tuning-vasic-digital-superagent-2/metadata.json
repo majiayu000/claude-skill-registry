@@ -1,0 +1,11 @@
+{
+  "name": "gamma-cost-tuning",
+  "description": "Optimize Gamma usage costs and manage API spending.\nUse when reducing API costs, implementing usage quotas,\nor planning for scale with budget constraints.\nTrigger with phrases like \"gamma cost\", \"gamm",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/gamma-pack/gamma-cost-tuning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "gamma-cost-tuning-vasic-digital-superagent-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "database-security-scanner",
+  "description": "This skill enables Claude to perform comprehensive database security scans using the database-security-scanner plugin. It is triggered when the user requests a security assessment of a database, inclu",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/database/database-security-scanner/skills/database-security-scanner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "database-security-scanner-intent-solutions-io-plugins-nixtla-2"
+}

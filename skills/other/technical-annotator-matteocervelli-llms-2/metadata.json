@@ -1,0 +1,11 @@
+{
+  "name": "technical-annotator",
+  "description": "Add technical context, implementation hints, and effort estimates to user stories",
+  "repo": "matteocervelli/llms",
+  "path": "user-story-system/.claude/skills/technical-annotator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/matteocervelli/llms",
+  "dir_name": "technical-annotator-matteocervelli-llms-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "validate-spec",
+  "description": "Validate spec completeness and implementation compliance. Use before approval (--pre) or before completion (--post).",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/validate-spec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "validate-spec-taylorhuston-local-life-manager-2"
+}

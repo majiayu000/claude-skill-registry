@@ -1,0 +1,9 @@
+{
+  "name": "vercel-ci-integration",
+  "repo": "NovaAI-innovation/Infinite-Agency",
+  "path": ".qwen/skills/vercel-ci-integration/SKILL.md",
+  "category": "other",
+  "source": "github.com/NovaAI-innovation/Infinite-Agency",
+  "dir_name": "vercel-ci-integration",
+  "downloaded_at": "2026-02-15T05:32:24.716266Z"
+}

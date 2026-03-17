@@ -1,0 +1,11 @@
+{
+  "name": "fcs-handling",
+  "description": "Read and manipulate Flow Cytometry Standard (FCS) files. Covers loading data, accessing parameters, and basic data exploration. Use when loading and inspecting flow or mass cytometry data before prepr",
+  "repo": "GPTomics/bioSkills",
+  "path": "flow-cytometry/fcs-handling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "fcs-handling-gptomics-bioskills-2"
+}

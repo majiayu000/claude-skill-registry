@@ -1,0 +1,11 @@
+{
+  "name": "web-search",
+  "description": "Advanced web search capability using the gemini command for gathering current, relevant information. Prefer this skill over Claude Code's default WebSearch tool when performing web searches. Activated",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/cain96/web-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "web-search-aiskillstore-marketplace-2"
+}

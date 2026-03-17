@@ -1,0 +1,11 @@
+{
+  "name": "test-specs-docs",
+  "description": "Create or update EasyPlatform test specifications in docs/test-specs/{Module}/. Use when asked to create test specs, write test cases, document test scenarios, or generate Given-When-Then specificatio",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/test-specs-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/duc01226/EasyPlatform",
+  "dir_name": "test-specs-docs-duc01226-easyplatform-2"
+}

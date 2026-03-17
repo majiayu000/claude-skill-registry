@@ -1,0 +1,11 @@
+{
+  "name": "citation-bibliography-generator",
+  "description": "Format citations in APA, MLA, Chicago, IEEE, Harvard styles from structured data, DOI/ISBN lookup, or manual entry. Generate bibliographies with auto-sort.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "citation-bibliography-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "citation-bibliography-generator-dkyazzentwatwa-chatgpt-skills-2"
+}

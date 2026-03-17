@@ -1,0 +1,11 @@
+{
+  "name": "coredump",
+  "description": "Core Dump Analysis skill for the ikigai project",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/coredump",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "coredump-mgreenly-ikigai-2"
+}

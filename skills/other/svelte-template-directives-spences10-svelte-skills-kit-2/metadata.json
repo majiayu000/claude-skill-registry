@@ -1,0 +1,11 @@
+{
+  "name": "svelte-template-directives",
+  "description": "The reactive alternative to use: actions. Re-runs when dependencies",
+  "repo": "spences10/svelte-skills-kit",
+  "path": "plugins/svelte-skills/skills/svelte-template-directives",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spences10/svelte-skills-kit",
+  "dir_name": "svelte-template-directives-spences10-svelte-skills-kit-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "architecture-decision-records",
+  "description": "Document significant architectural decisions. Use when making significant architectural decisions, documenting technology choices, or recording design trade-offs.",
+  "repo": "yairbederman/EngineeringAgency",
+  "path": "skills/architecture-decision-records",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yairbederman/EngineeringAgency",
+  "dir_name": "architecture-decision-records-yairbederman-engineeringagency-2"
+}

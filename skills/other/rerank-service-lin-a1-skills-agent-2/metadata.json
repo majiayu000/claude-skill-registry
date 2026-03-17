@@ -1,0 +1,11 @@
+{
+  "name": "rerank_service",
+  "description": "文档重排序服务（Reranker）。基于深度学习模型对检索候选结果进行细粒度相关性打分与重新排序，显著提升检索结果的精准度（Top-K 准确率）。",
+  "repo": "Lin-A1/skills-agent",
+  "path": "services/rerank_service",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lin-A1/skills-agent",
+  "dir_name": "rerank-service-lin-a1-skills-agent-2"
+}

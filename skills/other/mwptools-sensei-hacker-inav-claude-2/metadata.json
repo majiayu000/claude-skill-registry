@@ -1,0 +1,11 @@
+{
+  "name": "mwptools",
+  "description": "Use mwptools CLI utilities for FC settings management, blackbox download, and CLI terminal access",
+  "repo": "sensei-hacker/inav-claude",
+  "path": ".claude/skills/mwptools",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sensei-hacker/inav-claude",
+  "dir_name": "mwptools-sensei-hacker-inav-claude-2"
+}

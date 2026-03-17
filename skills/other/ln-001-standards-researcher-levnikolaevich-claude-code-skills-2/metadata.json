@@ -1,0 +1,11 @@
+{
+  "name": "ln-001-standards-researcher",
+  "description": "Research standards/patterns via MCP Ref. Generates Standards Research for Story Technical Notes subsection. Reusable worker.",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-001-standards-researcher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-001-standards-researcher-levnikolaevich-claude-code-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "bknd-testing",
+  "description": "Use when writing tests for Bknd applications, setting up test infrastructure, creating unit/integration tests, or testing API endpoints. Covers in-memory database setup, test helpers, mocking, and tes",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-testing-cameronapak-freedom-stack-v3-2"
+}

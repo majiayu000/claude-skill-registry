@@ -1,0 +1,11 @@
+{
+  "name": "document-format",
+  "description": "Create properly formatted documents for the knowledge base. Use when creating tasks, projects, bookmarks, companies, meetings, people, or research entries. Provides templates, frontmatter schemas, and",
+  "repo": "leovigna/jarvis-template",
+  "path": ".claude/skills/document-format",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leovigna/jarvis-template",
+  "dir_name": "document-format-leovigna-jarvis-template-2"
+}

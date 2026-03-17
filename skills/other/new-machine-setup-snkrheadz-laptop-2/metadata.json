@@ -1,0 +1,11 @@
+{
+  "name": "new-machine-setup",
+  "description": "新マシンセットアップガイド。macOS初期設定からdotfiles適用までの手順案内。トリガー: 新マシン, setup, 移行, 新しいMac, セットアップ",
+  "repo": "snkrheadz/laptop",
+  "path": ".claude/skills/new-machine-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/snkrheadz/laptop",
+  "dir_name": "new-machine-setup-snkrheadz-laptop-2"
+}

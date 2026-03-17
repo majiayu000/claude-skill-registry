@@ -1,0 +1,11 @@
+{
+  "name": "rag",
+  "description": "Details on the Retrieval Augmented Generation pipeline, Ingestion, and Vector Search.",
+  "repo": "AbdulSamad94/Hackhaton-SpecsKitPlus",
+  "path": ".claude/skills/rag",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AbdulSamad94/Hackhaton-SpecsKitPlus",
+  "dir_name": "rag-abdulsamad94-hackhaton-specskitpl-2"
+}

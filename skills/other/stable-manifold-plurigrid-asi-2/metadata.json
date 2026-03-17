@@ -1,0 +1,11 @@
+{
+  "name": "stable-manifold",
+  "description": "Manifold of points converging to equilibrium",
+  "repo": "plurigrid/asi",
+  "path": "skills/stable-manifold",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "stable-manifold-plurigrid-asi-2"
+}

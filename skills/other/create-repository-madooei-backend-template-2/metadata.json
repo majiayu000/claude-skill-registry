@@ -1,0 +1,11 @@
+{
+  "name": "create-repository",
+  "description": "Create repository interface for data access abstraction. Use when adding a new resource that needs database operations, defining CRUD interface, or setting up repository pattern. Triggers on \"new repo",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/create-repository",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "create-repository-madooei-backend-template-2"
+}

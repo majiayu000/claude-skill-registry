@@ -1,0 +1,11 @@
+{
+  "name": "openai-latam-audiobook",
+  "description": "Create complete audiobook with OpenAI GPT-4o-mini translation to Argentine Spanish. Full pipeline - translate, TTS, video with background image. Auto-scales parallelism based on file size. Use when us",
+  "repo": "smoreg/biLangGen",
+  "path": ".claude/skills/openai-latam-audiobook",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/smoreg/biLangGen",
+  "dir_name": "openai-latam-audiobook-smoreg-bilanggen-2"
+}

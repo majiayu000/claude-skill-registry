@@ -1,0 +1,11 @@
+{
+  "name": "script-writer",
+  "description": "This skill should be used whenever users need YouTube video scripts written. On first use, collects comprehensive preferences including script type, tone, target audience, style, video length, hook st",
+  "repo": "merllinsbeard/ai-claude-skills-collection",
+  "path": "content/script-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/merllinsbeard/ai-claude-skills-collection",
+  "dir_name": "script-writer-merllinsbeard-ai-claude-skills-col-2"
+}

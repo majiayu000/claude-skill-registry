@@ -1,0 +1,11 @@
+{
+  "name": "data-analysis",
+  "description": "AI-powered data analysis for Empathy Ledger - themes, quotes, story suggestions, transcript analysis.",
+  "repo": "Acurioustractor/empathy-ledger-v2",
+  "path": ".claude/skills/local/data-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Acurioustractor/empathy-ledger-v2",
+  "dir_name": "data-analysis-acurioustractor-empathy-ledger-v2-2"
+}

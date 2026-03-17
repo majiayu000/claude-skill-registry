@@ -1,0 +1,11 @@
+{
+  "name": "sisyphus-implementation-guide",
+  "description": "Sisyphus専用の実装フロー、Subtask処理、Phase別責任分担、チェックリスト、完了報告フォーマットを定義",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/sisyphus-implementation-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "sisyphus-implementation-guide-takemo101-compose-workflow-2"
+}

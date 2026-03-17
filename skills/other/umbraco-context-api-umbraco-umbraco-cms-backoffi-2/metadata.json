@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-context-api",
+  "description": "Understand and use Context API in Umbraco backoffice (foundational concept)",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-context-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-context-api-umbraco-umbraco-cms-backoffi-2"
+}

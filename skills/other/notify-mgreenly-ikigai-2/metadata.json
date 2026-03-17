@@ -1,0 +1,11 @@
+{
+  "name": "notify",
+  "description": "Send push notifications to the user via ntfy.sh",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/notify",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "notify-mgreenly-ikigai-2"
+}

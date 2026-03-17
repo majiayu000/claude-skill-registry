@@ -1,0 +1,11 @@
+{
+  "name": "lattice-search",
+  "description": "Search and navigate The Fold's skill lattice using meta-tooling. Use for finding functions, exploring dependencies, type-aware queries, and cross-reference analysis. Invoke when searching for capabili",
+  "repo": "osoleve/the-fold",
+  "path": ".claude/skills/lattice-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/osoleve/the-fold",
+  "dir_name": "lattice-search-osoleve-the-fold-2"
+}

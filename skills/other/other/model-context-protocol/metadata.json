@@ -1,0 +1,9 @@
+{
+  "name": "model-context-protocol",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/model-context-protocol/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "model-context-protocol",
+  "downloaded_at": "2026-02-15T07:06:58.548251Z"
+}

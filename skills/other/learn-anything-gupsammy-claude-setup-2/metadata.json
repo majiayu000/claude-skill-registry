@@ -1,0 +1,11 @@
+{
+  "name": "learn-anything",
+  "description": "Metalearning skill that helps master any topic efficiently by identifying critical 20% material, building expert vocabulary, and creating research-backed learning roadmaps. Auto-trigger when user says",
+  "repo": "gupsammy/Claude-setup",
+  "path": "skills/learn-anything",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gupsammy/Claude-setup",
+  "dir_name": "learn-anything-gupsammy-claude-setup-2"
+}

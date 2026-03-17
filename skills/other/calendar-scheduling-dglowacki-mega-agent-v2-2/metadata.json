@@ -1,0 +1,11 @@
+{
+  "name": "calendar-scheduling",
+  "description": "Calendar event formatting, conflict detection, meeting optimization, and smart scheduling. Use when creating calendar events, finding meeting times, or managing schedules.",
+  "repo": "dglowacki/mega-agent-v2",
+  "path": ".claude/skills/calendar-scheduling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dglowacki/mega-agent-v2",
+  "dir_name": "calendar-scheduling-dglowacki-mega-agent-v2-2"
+}

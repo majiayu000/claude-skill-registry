@@ -1,0 +1,17 @@
+{
+  "name": "executing-plans",
+  "repo": "a-ariff/ariff-claude-plugins",
+  "path": "plugins/executing-plans/skills/executing-plans/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/a-ariff/ariff-claude-plugins",
+  "dir_name": "executing-plans-a-ariff-ariff-claude-plugins",
+  "downloaded_at": "2026-03-17T14:18:50.467263Z",
+  "author": "a-ariff",
+  "source_url": "https://github.com/a-ariff/ariff-claude-plugins/blob/main/plugins/executing-plans/skills/executing-plans/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a-ariff/ariff-claude-plugins/blob/main/plugins/executing-plans/skills/executing-plans/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

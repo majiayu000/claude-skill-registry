@@ -1,0 +1,11 @@
+{
+  "name": "opencode-zen",
+  "description": "Invoke the 'opencode' CLI in headless mode for AI-powered code analysis, reviews, and second opinions. Use when you need a different AI perspective, the user mentions opencode, or requests batch code ",
+  "repo": "osoleve/the-fold",
+  "path": ".claude/skills/opencode-zen",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/osoleve/the-fold",
+  "dir_name": "opencode-zen-osoleve-the-fold-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "bigquery-ethereum-data-acquisition",
+  "description": "Workflow for acquiring historical Ethereum blockchain data using Google BigQuery free tier. Empirically validated for cost estimation, streaming downloads, and DuckDB integration. Use when planning bu",
+  "repo": "terrylica/gapless-network-data",
+  "path": ".claude/skills/bigquery-ethereum-data-acquisition",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terrylica/gapless-network-data",
+  "dir_name": "bigquery-ethereum-data-acquisition-terrylica-gapless-network-data-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "auditing-libraries",
+  "description": "This skill should be used when the user asks to \"audit libraries\", \"check library conventions\", \"validate lib structure\", \"find convention violations\", \"review library organization\", or wants to verif",
+  "repo": "jasonkuhrt/dotfiles",
+  "path": "claude/todo/library-standards/skills/auditing-libraries",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonkuhrt/dotfiles",
+  "dir_name": "auditing-libraries-jasonkuhrt-dotfiles-2"
+}

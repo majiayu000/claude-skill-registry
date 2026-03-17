@@ -1,0 +1,11 @@
+{
+  "name": "protocol-reverse-engineering",
+  "description": "Master network protocol reverse engineering including packet analysis, protocol dissection, and custom protocol documentation. Use when analyzing network traffic, understanding proprietary protocols, ",
+  "repo": "wshobson/agents",
+  "path": "plugins/reverse-engineering/skills/protocol-reverse-engineering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wshobson/agents",
+  "dir_name": "protocol-reverse-engineering-wshobson-agents-2"
+}

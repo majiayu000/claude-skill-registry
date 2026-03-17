@@ -1,0 +1,11 @@
+{
+  "name": "darts-domain",
+  "description": "Provides comprehensive darts scoring rules and board structure knowledge. Use when implementing or testing darts scoring logic, validation, simulation, or any feature related to dart scores.",
+  "repo": "shiroinock/Darts-Score-Trainer",
+  "path": ".claude/skills/darts-domain",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shiroinock/Darts-Score-Trainer",
+  "dir_name": "darts-domain-shiroinock-darts-score-trainer-2"
+}

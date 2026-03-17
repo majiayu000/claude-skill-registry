@@ -1,0 +1,11 @@
+{
+  "name": "devops-sre",
+  "description": "Use this skill when designing or reviewing CI/CD pipelines, deployment strategies, observability systems, incident response, or any system involving production operations and reliability. Applies oper",
+  "repo": "ragnarula/cc-plugins",
+  "path": "sdd/skills/devops-sre",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ragnarula/cc-plugins",
+  "dir_name": "devops-sre-ragnarula-cc-plugins-2"
+}

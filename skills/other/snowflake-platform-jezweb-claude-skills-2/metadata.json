@@ -1,0 +1,11 @@
+{
+  "name": "snowflake-platform",
+  "description": "Build on Snowflake's AI Data Cloud with snow CLI, Cortex AI (COMPLETE, SUMMARIZE, AI_FILTER), Native Apps, and Snowpark. Covers JWT auth, account identifiers, Marketplace publishing. Prevents 11 docum",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/snowflake-platform",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "snowflake-platform-jezweb-claude-skills-2"
+}

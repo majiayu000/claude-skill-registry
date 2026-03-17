@@ -1,0 +1,11 @@
+{
+  "name": "snd-saucy",
+  "description": "Use this skill when working with the Saucy plugin. Covers Gold Saucer mini-game automation (Cuff-a-cur, Triple Triad).",
+  "repo": "vaoan/SND",
+  "path": ".claude/skills/snd-saucy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vaoan/SND",
+  "dir_name": "snd-saucy-vaoan-snd-2"
+}

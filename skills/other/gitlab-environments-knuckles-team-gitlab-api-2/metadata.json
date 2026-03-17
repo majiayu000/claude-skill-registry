@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-environments",
+  "description": "Manages GitLab environments. Use for creating, updating, deleting, or protecting deployment environments. Triggers: CI/CD environments, deployments.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-environments",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-environments-knuckles-team-gitlab-api-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "html2pptx",
+  "description": "Imported skill html2pptx from anthropic",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/anthropic/html2pptx",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "html2pptx-bitwikiorg-skills-md-2"
+}

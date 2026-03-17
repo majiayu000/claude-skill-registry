@@ -1,0 +1,17 @@
+{
+  "name": "teammate",
+  "repo": "cpoepke/claude-talk",
+  "path": "skills/teammate/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cpoepke/claude-talk",
+  "dir_name": "teammate",
+  "downloaded_at": "2026-03-01T07:18:15.499423Z",
+  "author": "cpoepke",
+  "source_url": "https://github.com/cpoepke/claude-talk/blob/main/skills/teammate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cpoepke/claude-talk/blob/main/skills/teammate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

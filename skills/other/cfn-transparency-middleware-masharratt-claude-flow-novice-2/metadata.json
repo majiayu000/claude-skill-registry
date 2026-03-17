@@ -1,0 +1,11 @@
+{
+  "name": "cfn-transparency-middleware",
+  "description": "Agent interaction capture, logging, and analysis with memory tracking and security (Rust implementation). Use when you need to capture and analyze agent interactions, track tool usage and performance ",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-transparency-middleware",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "cfn-transparency-middleware-masharratt-claude-flow-novice-2"
+}

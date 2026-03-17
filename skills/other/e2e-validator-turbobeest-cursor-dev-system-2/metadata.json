@@ -1,0 +1,11 @@
+{
+  "name": "e2e-validator",
+  "description": "Validates end-to-end user workflows and system behavior.\nActivates via codeword [ACTIVATE:E2E_VALIDATOR_V1] injected by hooks\nwhen entering Phase 10 E2E testing.\n\nActivation trigger: [ACTIVATE:E2E_VAL",
+  "repo": "turbobeest/cursor-dev-system",
+  "path": "skills/e2e-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/turbobeest/cursor-dev-system",
+  "dir_name": "e2e-validator-turbobeest-cursor-dev-system-2"
+}

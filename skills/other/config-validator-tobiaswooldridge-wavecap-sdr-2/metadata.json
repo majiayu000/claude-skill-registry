@@ -1,0 +1,11 @@
+{
+  "name": "config-validator",
+  "description": "Validate wavecapsdr.yaml configuration files for syntax errors, schema violations, and logical inconsistencies. Use when editing config, troubleshooting startup failures, or verifying recipe/preset de",
+  "repo": "TobiasWooldridge/WaveCap-SDR",
+  "path": ".claude/skills/config-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TobiasWooldridge/WaveCap-SDR",
+  "dir_name": "config-validator-tobiaswooldridge-wavecap-sdr-2"
+}

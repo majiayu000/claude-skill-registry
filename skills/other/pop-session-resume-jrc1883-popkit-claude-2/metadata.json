@@ -1,0 +1,11 @@
+{
+  "name": "pop-session-resume",
+  "description": "Use at start of new session to restore context from STATUS.json - loads previous state, displays session type, shows what to continue working on. Calculates session type (Continuation/Resume/Fresh Sta",
+  "repo": "jrc1883/popkit-claude",
+  "path": "packages/popkit-dev/skills/pop-session-resume",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jrc1883/popkit-claude",
+  "dir_name": "pop-session-resume-jrc1883-popkit-claude-2"
+}

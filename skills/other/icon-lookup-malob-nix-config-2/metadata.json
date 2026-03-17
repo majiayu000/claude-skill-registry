@@ -1,0 +1,11 @@
+{
+  "name": "icon-lookup",
+  "description": "Workaround for Claude Code filtering BMP PUA Unicode (U+E000-U+F8FF). Supplementary PUA Nerd Font icons like 󰊤 󱃾 󰁹 (U+F0000+, e.g. nf-md-github, nf-md-kubernetes, nf-md-battery) can be written directl",
+  "repo": "malob/nix-config",
+  "path": "configs/claude/plugins/pua-unicode/skills/icon-lookup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/malob/nix-config",
+  "dir_name": "icon-lookup-malob-nix-config-2"
+}

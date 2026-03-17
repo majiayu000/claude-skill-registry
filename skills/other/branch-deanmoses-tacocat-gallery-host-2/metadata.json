@@ -1,0 +1,11 @@
+{
+  "name": "branch",
+  "description": "Creates git branches with proper naming. Use when creating branches, starting new work, or switching to feature branches.",
+  "repo": "deanmoses/tacocat-gallery-hosting-aws",
+  "path": ".claude/skills/branch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/deanmoses/tacocat-gallery-hosting-aws",
+  "dir_name": "branch-deanmoses-tacocat-gallery-host-2"
+}

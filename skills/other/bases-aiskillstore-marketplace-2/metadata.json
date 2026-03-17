@@ -1,0 +1,11 @@
+{
+  "name": "bases",
+  "description": "Query Obsidian Bases via the Bases Query plugin (RPC). Use when you need to read structured data from Obsidian bases.",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/c0ntr0lledcha0s/investigating-codebases",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "bases-aiskillstore-marketplace-2"
+}

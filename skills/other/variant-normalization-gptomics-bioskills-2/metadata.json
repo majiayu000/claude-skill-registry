@@ -1,0 +1,11 @@
+{
+  "name": "variant-normalization",
+  "description": "Normalize indel representation and split multiallelic variants using bcftools norm. Use when comparing variants from different callers or preparing VCF for downstream analysis.",
+  "repo": "GPTomics/bioSkills",
+  "path": "variant-calling/variant-normalization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "variant-normalization-gptomics-bioskills-2"
+}

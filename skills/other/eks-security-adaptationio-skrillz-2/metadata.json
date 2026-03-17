@@ -1,0 +1,11 @@
+{
+  "name": "eks-security",
+  "description": "EKS security hardening and best practices. Use when configuring cluster security, implementing pod security, managing secrets, preparing for compliance audits, hardening infrastructure, scanning conta",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/eks-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "eks-security-adaptationio-skrillz-2"
+}

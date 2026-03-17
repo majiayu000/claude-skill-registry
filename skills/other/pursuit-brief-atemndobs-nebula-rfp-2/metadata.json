@@ -1,0 +1,11 @@
+{
+  "name": "pursuit-brief",
+  "description": "Generate 1-page pursuit briefs for qualified RFP opportunities. Use when creating bid/no-bid decision documents or implementing pursuit brief generation features.",
+  "repo": "Atemndobs/nebula-rfp",
+  "path": ".claude/skills/pursuit-brief",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Atemndobs/nebula-rfp",
+  "dir_name": "pursuit-brief-atemndobs-nebula-rfp-2"
+}

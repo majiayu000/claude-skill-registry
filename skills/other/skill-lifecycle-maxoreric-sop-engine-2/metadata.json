@@ -1,0 +1,11 @@
+{
+  "name": "skill-lifecycle",
+  "description": "Skill 生命周期管理的 Workflow。当需要创建新 Skill 并持续优化时触发。触发词：创建并优化 skill、skill 生命周期、从零开始创建 skill、新建一个完整的 skill。",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/skill-lifecycle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "skill-lifecycle-maxoreric-sop-engine-2"
+}

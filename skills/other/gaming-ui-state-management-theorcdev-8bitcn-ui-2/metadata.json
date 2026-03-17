@@ -1,0 +1,11 @@
+{
+  "name": "gaming-ui-state-management",
+  "description": "Patterns for game-like interfaces - health bars, XP bars, mana bars. Apply when building RPG/retro gaming UI components with state-driven visuals.",
+  "repo": "TheOrcDev/8bitcn-ui",
+  "path": ".claude/skills/gaming-ui-state-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TheOrcDev/8bitcn-ui",
+  "dir_name": "gaming-ui-state-management-theorcdev-8bitcn-ui-2"
+}

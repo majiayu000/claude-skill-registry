@@ -1,0 +1,11 @@
+{
+  "name": "adb-screen-detection",
+  "description": "Screen understanding with OCR and template matching for Android device automation",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".claude/skills/adb/adb-foundation/adb-screen-detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "dir_name": "adb-screen-detection-rdmptv-adbautoplayer-2"
+}

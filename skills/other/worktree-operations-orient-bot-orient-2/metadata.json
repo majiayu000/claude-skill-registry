@@ -1,0 +1,11 @@
+{
+  "name": "worktree-operations",
+  "description": "Guide for working within git worktrees in the Orient monorepo. Use this skill when you detect you're working in a worktree (path contains \"skill-worktrees\", \"app-worktrees\", or is outside the main pro",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/worktree-operations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "worktree-operations-orient-bot-orient-2"
+}

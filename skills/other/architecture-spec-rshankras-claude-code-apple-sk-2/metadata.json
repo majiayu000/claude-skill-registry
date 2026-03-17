@@ -1,0 +1,11 @@
+{
+  "name": "architecture-spec",
+  "description": "Generates technical architecture specification from PRD. Covers architecture pattern, tech stack, data models, and app structure. Use when creating ARCHITECTURE.md or designing system architecture.",
+  "repo": "rshankras/claude-code-apple-skills",
+  "path": "skills/product/architecture-spec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rshankras/claude-code-apple-skills",
+  "dir_name": "architecture-spec-rshankras-claude-code-apple-sk-2"
+}

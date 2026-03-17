@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-723-mockdata-migrator",
+  "description": "Migrates mock data from Drizzle ORM schemas to C# MockData classes",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-723-mockdata-migrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-723-mockdata-migrator-boisenoise-skills-collections-2"
+}

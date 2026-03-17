@@ -1,0 +1,11 @@
+{
+  "name": "error-shape-taxonomy",
+  "description": "Standard error response taxonomy and envelope for services, including error codes, categories, retryability, correlation IDs, safe messaging, and validation error details",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "64-meta-standards/error-shape-taxonomy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "error-shape-taxonomy-amnadtaowsoam-cerebratechai-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "dev-execution",
+  "description": "Unified execution engine for all development workflows. Progressive disclosure for phase execution, quick features, story completion, and scaffolding. Integrates with artifact-tracking and meatycaptur",
+  "repo": "miethe/skillmeat",
+  "path": ".claude/skills/dev-execution",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/miethe/skillmeat",
+  "dir_name": "dev-execution-miethe-skillmeat-2"
+}

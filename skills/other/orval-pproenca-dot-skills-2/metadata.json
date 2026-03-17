@@ -1,0 +1,11 @@
+{
+  "name": "orval",
+  "description": "Orval OpenAPI TypeScript client generation best practices. This skill should be used when configuring Orval, generating TypeScript clients from OpenAPI specs, setting up React Query/SWR hooks, creatin",
+  "repo": "pproenca/dot-skills",
+  "path": "skills/.experimental/orval",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pproenca/dot-skills",
+  "dir_name": "orval-pproenca-dot-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "iqd",
+  "description": "IQD Frequency Products MPN encoding patterns, package decoding, and handler guidance. Use when working with IQD crystals, oscillators, TCXOs, VCXOs, or OCXOs.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/iqd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "iqd-cantara-lib-electronic-compo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "monitoring-alerting",
+  "description": "Automatically applies when implementing monitoring and alerting. Ensures proper metric instrumentation, alerts, SLO/SLI definition, dashboards, and observability patterns.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/monitoring-alerting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "monitoring-alerting-ricardoroche-ricardos-claude-code-2"
+}

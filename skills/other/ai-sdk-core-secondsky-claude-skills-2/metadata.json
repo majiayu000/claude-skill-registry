@@ -1,0 +1,11 @@
+{
+  "name": "ai-sdk-core",
+  "description": "Production-ready backend AI with Vercel AI SDK v5.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/ai-sdk-core/skills/ai-sdk-core",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "ai-sdk-core-secondsky-claude-skills-2"
+}

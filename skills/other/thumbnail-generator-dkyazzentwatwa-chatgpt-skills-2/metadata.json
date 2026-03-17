@@ -1,0 +1,11 @@
+{
+  "name": "thumbnail-generator",
+  "description": "Generate thumbnails from images with smart cropping, multiple sizes, and batch processing. Ideal for web galleries, social media, and app icons.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "thumbnail-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "thumbnail-generator-dkyazzentwatwa-chatgpt-skills-2"
+}

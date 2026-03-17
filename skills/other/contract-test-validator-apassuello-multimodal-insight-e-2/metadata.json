@@ -1,0 +1,11 @@
+{
+  "name": "contract-test-validator",
+  "description": "This skill validates API contracts using consumer-driven testing and OpenAPI validation. It leverages Pact for consumer-driven contract testing, ensuring that API providers adhere to the expectations ",
+  "repo": "apassuello/multimodal_insight_engine",
+  "path": ".claude/skills/contract-test-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/apassuello/multimodal_insight_engine",
+  "dir_name": "contract-test-validator-apassuello-multimodal-insight-e-2"
+}

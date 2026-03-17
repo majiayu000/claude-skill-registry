@@ -1,0 +1,11 @@
+{
+  "name": "test-specialist",
+  "description": "This skill should be used when writing test cases, fixing bugs, analyzing code for potential issues, or improving test coverage for JavaScript/TypeScript applications. Use this for unit tests, integra",
+  "repo": "travisjneuman/.claude",
+  "path": "skills/test-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/travisjneuman/.claude",
+  "dir_name": "test-specialist-travisjneuman-claude-2"
+}

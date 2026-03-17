@@ -1,0 +1,11 @@
+{
+  "name": "code-auditing",
+  "description": "系统化审计与代码优化 - Code Review / Simplifier / Council / Performance。",
+  "repo": "VidyFoo/antigravity-skill-engine",
+  "path": ".agent/skills/2-audit/code-auditing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VidyFoo/antigravity-skill-engine",
+  "dir_name": "code-auditing-vidyfoo-antigravity-skill-en-2"
+}

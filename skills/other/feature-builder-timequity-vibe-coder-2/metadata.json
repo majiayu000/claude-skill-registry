@@ -1,0 +1,11 @@
+{
+  "name": "feature-builder",
+  "description": "Add features by description. User says WHAT, AI figures out HOW.\nUse when: user wants to add functionality to existing app.\nTriggers: \"add auth\", \"add payments\", \"add search\", \"добавь\",\n\"integrate\", \"",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/feature-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "feature-builder-timequity-vibe-coder-2"
+}

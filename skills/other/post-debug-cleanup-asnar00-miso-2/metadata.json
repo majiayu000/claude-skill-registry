@@ -1,0 +1,11 @@
+{
+  "name": "post-debug-cleanup",
+  "description": "Update feature specs and implementation docs to accurately reflect debugging work. Use after completing a feature implementation that required multiple rounds of debugging and iteration.",
+  "repo": "asnar00/miso",
+  "path": ".claude/skills/post-debug-cleanup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/asnar00/miso",
+  "dir_name": "post-debug-cleanup-asnar00-miso-2"
+}

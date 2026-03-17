@@ -1,0 +1,11 @@
+{
+  "name": "gemini-research",
+  "description": "Use Gemini CLI for research with Google Search grounding and 1M token context",
+  "repo": "DNYoussef/context-cascade",
+  "path": "skills/platforms/gemini-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DNYoussef/context-cascade",
+  "dir_name": "gemini-research-dnyoussef-context-cascade-2"
+}

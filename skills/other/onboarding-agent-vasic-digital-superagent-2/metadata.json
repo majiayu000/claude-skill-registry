@@ -1,0 +1,11 @@
+{
+  "name": "onboarding-agent",
+  "description": "Interactive onboarding workflow that interviews users to understand their coding goals and generates PR-ready implementation plans. Use when starting a new development task to ensure clear requirement",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/openhands/onboarding-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "onboarding-agent-vasic-digital-superagent-2"
+}

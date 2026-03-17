@@ -1,0 +1,11 @@
+{
+  "name": "discover-ml",
+  "description": "Automatically discover machine learning and AI skills when working with machine learning. Activates for ml development tasks.",
+  "repo": "rand/cc-polymath",
+  "path": "skills/discover-ml",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rand/cc-polymath",
+  "dir_name": "discover-ml-rand-cc-polymath-2"
+}

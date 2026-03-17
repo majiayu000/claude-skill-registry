@@ -1,0 +1,11 @@
+{
+  "name": "component-screenshot-testing",
+  "description": "Screenshot testing for React components with Playwright. Captures component pixels and compares to baselines. Auto-apply when editing React component stories or *.visual.spec.ts files that test UI com",
+  "repo": "surfdeeper/surfing-game",
+  "path": ".claude/skills/component-screenshot-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/surfdeeper/surfing-game",
+  "dir_name": "component-screenshot-testing-surfdeeper-surfing-game-2"
+}

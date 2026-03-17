@@ -1,0 +1,11 @@
+{
+  "name": "high-availability-patterns",
+  "description": "Production-ready HA patterns for cryptocurrency trading systems with 99.99% uptime.",
+  "repo": "khanh-vu/claude-force",
+  "path": ".claude/skills/high-availability-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/khanh-vu/claude-force",
+  "dir_name": "high-availability-patterns-khanh-vu-claude-force-2"
+}

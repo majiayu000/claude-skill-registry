@@ -1,0 +1,11 @@
+{
+  "name": "exa-common-errors",
+  "description": "Diagnose and fix Exa common errors and exceptions.\nUse when encountering Exa errors, debugging failed requests,\nor troubleshooting integration issues.\nTrigger with phrases like \"exa error\", \"fix exa\",",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-common-errors",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-common-errors-vasic-digital-superagent-2"
+}

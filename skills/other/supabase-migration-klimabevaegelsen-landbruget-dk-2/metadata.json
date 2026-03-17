@@ -1,0 +1,11 @@
+{
+  "name": "supabase-migration",
+  "description": "Activates when working with database migrations, RLS policies, or Supabase schema changes.\nUse this skill for: creating migrations, writing RLS policies, handling PostGIS geometry,\ncreating indexes, m",
+  "repo": "Klimabevaegelsen/landbruget.dk",
+  "path": ".claude/skills/supabase-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Klimabevaegelsen/landbruget.dk",
+  "dir_name": "supabase-migration-klimabevaegelsen-landbruget-dk-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "kegg-pathways",
+  "description": "KEGG pathway and module enrichment analysis using clusterProfiler enrichKEGG and enrichMKEGG. Tests whether KEGG pathways are over-represented in a gene list. Supports 4000+ organisms via KEGG online ",
+  "repo": "GPTomics/bioSkills",
+  "path": "pathway-analysis/kegg-pathways",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "kegg-pathways-gptomics-bioskills-2"
+}

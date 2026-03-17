@@ -1,0 +1,11 @@
+{
+  "name": "promptcraft",
+  "description": "Use when user asks to \"create a skill\", \"make a command\", \"generate a prompt\", \"write a slash command\", \"build a Claude extension\", or needs help crafting optimized skills and commands with proper fro",
+  "repo": "gupsammy/Claude-setup",
+  "path": "skills/promptcraft",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gupsammy/Claude-setup",
+  "dir_name": "promptcraft-gupsammy-claude-setup-2"
+}

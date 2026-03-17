@@ -1,0 +1,11 @@
+{
+  "name": "postgres-patterns",
+  "description": "PostgreSQL patterns for reviewing migrations and writing efficient queries. Use when reviewing Alembic migrations, optimizing queries, or debugging database issues.",
+  "repo": "CJHarmath/claude-agents-skills",
+  "path": "skills/postgres-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CJHarmath/claude-agents-skills",
+  "dir_name": "postgres-patterns-cjharmath-claude-agents-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "prd-v01-problem-framing",
+  "description": "Transform vague product ideas into evidence-anchored problem statements for PRD v0.1 Spark. Triggers on starting new products/features, validating market opportunities, drafting PRD Why sections, or r",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v01-problem-framing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v01-problem-framing-mattgierhart-prd-driven-context-e-2"
+}

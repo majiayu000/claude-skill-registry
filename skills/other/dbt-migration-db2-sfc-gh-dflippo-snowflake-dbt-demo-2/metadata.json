@@ -1,0 +1,11 @@
+{
+  "name": "dbt-migration-db2",
+  "description": "Convert IBM DB2 DDL to dbt models compatible with Snowflake. This skill should be used when converting views, tables, or stored procedures from DB2 to dbt code, generating schema.yml files with tests ",
+  "repo": "sfc-gh-dflippo/snowflake-dbt-demo",
+  "path": ".claude/skills/dbt-migration-db2",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sfc-gh-dflippo/snowflake-dbt-demo",
+  "dir_name": "dbt-migration-db2-sfc-gh-dflippo-snowflake-dbt-demo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "pytest-patterns",
+  "description": "Automatically applies when writing pytest tests. Ensures proper use of fixtures, parametrize, marks, mocking, async tests, and follows testing best practices.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/pytest-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "pytest-patterns-ricardoroche-ricardos-claude-code-2"
+}

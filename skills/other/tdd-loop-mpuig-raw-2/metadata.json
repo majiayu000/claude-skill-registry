@@ -1,0 +1,11 @@
+{
+  "name": "tdd-loop",
+  "description": "Test-driven development loop for workflows - write tests first, then implementation",
+  "repo": "mpuig/raw",
+  "path": "builder/skills/tdd-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mpuig/raw",
+  "dir_name": "tdd-loop-mpuig-raw-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "chat-api-integration",
+  "description": "DEPRECATED - Use chatkit-backend skill instead. Chat API functionality is now part of the chatkit-backend skill.",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/chat-api-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "chat-api-integration-maneeshanif-todo-spec-driven-2"
+}

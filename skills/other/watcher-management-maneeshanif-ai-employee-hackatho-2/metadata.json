@@ -1,0 +1,11 @@
+{
+  "name": "watcher-management",
+  "description": "Manages watcher processes that monitor Gmail, WhatsApp, filesystem, and other external sources. Use when starting, stopping, or monitoring watcher scripts, configuring process management, or troublesh",
+  "repo": "maneeshanif/AI-Employee-Hackathon-spec-driven",
+  "path": ".claude/skills/watcher-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/AI-Employee-Hackathon-spec-driven",
+  "dir_name": "watcher-management-maneeshanif-ai-employee-hackatho-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "executing-hms-runs",
+  "repo": "gpt-cmdr/hms-commander",
+  "path": ".claude/skills/executing-hms-runs/SKILL.md",
+  "category": "other",
+  "source": "github.com/gpt-cmdr/hms-commander",
+  "dir_name": "executing-hms-runs",
+  "downloaded_at": "2026-02-15T07:22:36.353310Z"
+}

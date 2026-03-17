@@ -1,0 +1,11 @@
+{
+  "name": "creating-subpackages",
+  "description": "Patterns and standards for creating new AWS service subpackages in the monorepo. Use when adding new service packages like Lambda, DynamoDB, Step Functions, etc.",
+  "repo": "crmagz/cdk-constructs-library",
+  "path": ".claude/skills/creating-subpackages",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/crmagz/cdk-constructs-library",
+  "dir_name": "creating-subpackages-crmagz-cdk-constructs-libra-2"
+}

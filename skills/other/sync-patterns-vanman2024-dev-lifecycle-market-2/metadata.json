@@ -1,0 +1,11 @@
+{
+  "name": "sync-patterns",
+  "description": "Compare specs with implementation state, update spec status, and generate sync reports. Use when syncing specs, checking implementation status, marking tasks complete, generating sync reports, or when",
+  "repo": "vanman2024/dev-lifecycle-marketplace",
+  "path": "plugins/iterate/skills/sync-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vanman2024/dev-lifecycle-marketplace",
+  "dir_name": "sync-patterns-vanman2024-dev-lifecycle-market-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "wheels-email-generator",
+  "description": "Generate email functionality including mailer controllers, email templates, and configuration. Use when sending emails, creating notifications, or implementing transactional emails. Ensures proper ema",
+  "repo": "wheels-dev/wheels",
+  "path": ".claude/skills/wheels-email-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wheels-dev/wheels",
+  "dir_name": "wheels-email-generator-wheels-dev-wheels-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "drizzle-patterns",
+  "description": "Drizzle ORM best practices including schema design with relationships, database migrations, prepared statements for performance, transactions, indexes, Turso SQLite database operations, type safety pa",
+  "repo": "DW225/ree-board",
+  "path": ".claude/skills/drizzle-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DW225/ree-board",
+  "dir_name": "drizzle-patterns-dw225-ree-board-2"
+}

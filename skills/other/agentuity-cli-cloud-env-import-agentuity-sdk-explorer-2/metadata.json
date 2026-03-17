@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-env-import",
+  "description": "Import environment variables from a file to cloud and local .env. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-env-import",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-env-import-agentuity-sdk-explorer-2"
+}

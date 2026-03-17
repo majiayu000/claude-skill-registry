@@ -1,0 +1,11 @@
+{
+  "name": "fixing-avaloniaui-radialgradientbrush",
+  "description": "Fixes RadialGradientBrush compatibility issues in AvaloniaUI due to Issue",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": ".claude/skills/fixing-avaloniaui-radialgradientbrush",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "fixing-avaloniaui-radialgradientbrush-christian289-dotnet-with-claudeco-2"
+}

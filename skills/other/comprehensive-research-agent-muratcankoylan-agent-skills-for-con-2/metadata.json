@@ -1,0 +1,11 @@
+{
+  "name": "comprehensive-research-agent",
+  "description": "Ensure thorough validation, error recovery, and transparent reasoning in research tasks with multiple tool calls",
+  "repo": "muratcankoylan/Agent-Skills-for-Context-Engineering",
+  "path": "examples/interleaved_thinking/generated_skills/comprehensive-research-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+  "dir_name": "comprehensive-research-agent-muratcankoylan-agent-skills-for-con-2"
+}

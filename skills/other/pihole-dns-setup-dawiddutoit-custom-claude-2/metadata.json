@@ -1,0 +1,11 @@
+{
+  "name": "pihole-dns-setup",
+  "description": "Configures Pi-hole local DNS records to enable local network resolution of *.temet.ai\ndomains. Use when you need to set up DNS, add local DNS entries, configure Pi-hole DNS,\ntroubleshoot DNS resolutio",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/pihole-dns-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "pihole-dns-setup-dawiddutoit-custom-claude-2"
+}

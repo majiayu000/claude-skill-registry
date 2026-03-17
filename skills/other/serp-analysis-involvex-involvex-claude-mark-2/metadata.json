@@ -1,0 +1,11 @@
+{
+  "name": "serp-analysis",
+  "description": "SERP analysis techniques for intent classification, feature identification, and competitive intelligence. Use when analyzing search results for content strategy.",
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/seo/skills/serp-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "dir_name": "serp-analysis-involvex-involvex-claude-mark-2"
+}

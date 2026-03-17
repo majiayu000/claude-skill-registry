@@ -1,0 +1,11 @@
+{
+  "name": "mcaf-skill-curation",
+  "description": "Create, update, and validate repository skills under your agent’s skills directory (Codex: `.codex/skills/`, Claude: `.claude/skills/`) so they match the real codebase and `AGENTS.md` rules; tune YAML",
+  "repo": "managedcode/MCAF",
+  "path": "skills/mcaf-skill-curation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/managedcode/MCAF",
+  "dir_name": "mcaf-skill-curation-managedcode-mcaf-2"
+}

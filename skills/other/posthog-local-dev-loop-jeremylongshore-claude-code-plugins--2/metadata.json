@@ -1,0 +1,11 @@
+{
+  "name": "posthog-local-dev-loop",
+  "description": "Configure PostHog local development with hot reload and testing.\nUse when setting up a development environment, configuring test workflows,\nor establishing a fast iteration cycle with PostHog.\nTrigger",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/posthog-pack/skills/posthog-local-dev-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "posthog-local-dev-loop-jeremylongshore-claude-code-plugins--2"
+}

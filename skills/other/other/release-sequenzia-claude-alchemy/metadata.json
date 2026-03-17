@@ -1,0 +1,9 @@
+{
+  "name": "release",
+  "repo": "sequenzia/claude-alchemy",
+  "path": "plugins/tools/skills/release/SKILL.md",
+  "category": "other",
+  "source": "github.com/sequenzia/claude-alchemy",
+  "dir_name": "release-sequenzia-claude-alchemy",
+  "downloaded_at": "2026-02-15T01:37:38.251599Z"
+}

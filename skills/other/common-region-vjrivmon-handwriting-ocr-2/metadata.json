@@ -1,0 +1,11 @@
+{
+  "name": "common-region",
+  "description": "Elementos dentro de un área delimitada se perciben como grupo. Use cuando diseñe cards, secciones, formularios agrupados, o contenedores visuales.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/gestalt/common-region",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "common-region-vjrivmon-handwriting-ocr-2"
+}

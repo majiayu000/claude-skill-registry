@@ -1,0 +1,11 @@
+{
+  "name": "embedding_service",
+  "description": "文本向量化（Embedding）基础服务。将自然语言转换为高维稠密向量，为语义搜索、聚类分析、推荐系统等下游任务提供核心数据支持。",
+  "repo": "Lin-A1/skills-agent",
+  "path": "services/embedding_service",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lin-A1/skills-agent",
+  "dir_name": "embedding-service-lin-a1-skills-agent-2"
+}

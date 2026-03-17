@@ -1,0 +1,11 @@
+{
+  "name": "setup-events",
+  "description": "Configure event-driven architecture with event emitter and base service. Use when adding real-time updates or event system. Triggers on \"setup events\", \"add events\", \"event system\", \"SSE\", \"real-time\"",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/setup-events",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "setup-events-madooei-backend-template-2"
+}

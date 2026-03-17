@@ -1,0 +1,11 @@
+{
+  "name": "athena-framework",
+  "description": "Use this skill when working with Athena Framework for Crystal. Athena is a modular ecosystem of independent, reusable components including: Framework (ATH) for web apps, DependencyInjection (ADI) for ",
+  "repo": "watzon/claude-code",
+  "path": "skills/athena-framework",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/watzon/claude-code",
+  "dir_name": "athena-framework-watzon-claude-code-2"
+}

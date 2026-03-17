@@ -1,0 +1,11 @@
+{
+  "name": "don-security",
+  "description": "Security standards and authentication tools for Dutch government software. Use when implementing DigiD, eHerkenning, OAuth, OIDC, PKIoverheid, or other Dutch government authentication and security sta",
+  "repo": "dstotijn/developer-overheid-nl-agent-skills",
+  "path": "skills/don-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dstotijn/developer-overheid-nl-agent-skills",
+  "dir_name": "don-security-dstotijn-developer-overheid-n-2"
+}

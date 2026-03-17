@@ -1,0 +1,11 @@
+{
+  "name": "managing-blog-ideas",
+  "description": "Create and develop blog post ideas. Use when asked to \"create a blog idea\", \"start a blog post\", \"expand blog outline\", \"develop this post idea\", \"update blog draft\", or \"list blog ideas\".",
+  "repo": "alexanderop/second-brain-nuxt",
+  "path": ".claude/skills/managing-blog-ideas",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alexanderop/second-brain-nuxt",
+  "dir_name": "managing-blog-ideas-alexanderop-second-brain-nuxt-2"
+}

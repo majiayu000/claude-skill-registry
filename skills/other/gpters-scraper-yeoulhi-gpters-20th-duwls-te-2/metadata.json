@@ -1,0 +1,11 @@
+{
+  "name": "gpters-scraper",
+  "description": "지피터스(gpters.org) 멤버 프로필에서 게시물을 스크래핑하여 Markdown으로 저장. \"지피터스 게시물 수집\", \"gpters 스크랩\", \"editor_소연 게시물\", \"프로필 크롤링\" 등을 언급하면 자동 실행. Selenium 기반 동적 페이지 수집.",
+  "repo": "YeoulHi/gpters-20th-duwls-templates",
+  "path": ".claude/skills/gpters-scraper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/YeoulHi/gpters-20th-duwls-templates",
+  "dir_name": "gpters-scraper-yeoulhi-gpters-20th-duwls-te-2"
+}

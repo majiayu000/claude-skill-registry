@@ -1,0 +1,17 @@
+{
+  "name": "aztec-contract-dev",
+  "repo": "critesjosh/aztec-claude-plugin",
+  "path": "skills/aztec-contract-dev/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/critesjosh/aztec-claude-plugin",
+  "dir_name": "aztec-contract-dev",
+  "downloaded_at": "2026-03-01T07:18:50.147925Z",
+  "author": "critesjosh",
+  "source_url": "https://github.com/critesjosh/aztec-claude-plugin/blob/main/skills/aztec-contract-dev/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/critesjosh/aztec-claude-plugin/blob/main/skills/aztec-contract-dev/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

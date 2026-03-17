@@ -1,0 +1,11 @@
+{
+  "name": "valid-skill",
+  "description": "Review code for best practices and potential issues",
+  "repo": "maxvaega/skillkit",
+  "path": "tests/fixtures/skills/valid-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "valid-skill-maxvaega-skillkit-2"
+}

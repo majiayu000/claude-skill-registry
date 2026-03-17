@@ -1,0 +1,11 @@
+{
+  "name": "using-workflows",
+  "description": "Create and run durable workflows with steps, streaming, and agent execution. Covers starting, resuming, and persisting workflow results.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/using-workflows",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "using-workflows-andrelandgraf-fullstackrecipes-2"
+}

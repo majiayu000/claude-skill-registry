@@ -1,0 +1,11 @@
+{
+  "name": "code-test",
+  "description": "Enforce test-driven development (RED-GREEN-REFACTOR). Use when implementing features, fixing bugs, or changing behavior - write failing test first, then minimal code to pass.",
+  "repo": "srnnkls/tropos",
+  "path": "skills/code-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/srnnkls/tropos",
+  "dir_name": "code-test-srnnkls-tropos-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "readeck",
+  "description": "Readeck integration for saving and managing articles. Supports adding URLs, listing entries, and managing bookmarks via Readeck's API. Configure custom URL and API key per request or via environment v",
+  "repo": "clawdbot/skills",
+  "path": "skills/jayphen/readeck",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "readeck-clawdbot-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-contract-schema-mapper",
+  "description": "Transforms prediction market data to Nixtla format (unique_id, ds, y).\nMaps arbitrary column names to required schema. Validates date and numeric types.\nUse when preparing prediction market datasets f",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "000-docs/000a-planned-skills/prediction-markets/nixtla-contract-schema-mapper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-contract-schema-mapper-intent-solutions-io-plugins-nixtla-2"
+}

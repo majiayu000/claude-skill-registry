@@ -1,0 +1,11 @@
+{
+  "name": "ui-guidlines",
+  "description": "UIコンポーネントを新規作成・編集する際に使用。Emotion styled/テーマトークン/Atomic Designのルールを確認。",
+  "repo": "ludiscan/ludiscan-webapp",
+  "path": ".claude/skills/ui-guidlines",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ludiscan/ludiscan-webapp",
+  "dir_name": "ui-guidlines-ludiscan-ludiscan-webapp-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "anoma-intents",
+  "description": "Anoma intent-centric architecture for cross-chain obstruction passing with Geb semantics and Juvix compilation",
+  "repo": "plurigrid/asi",
+  "path": "skills/anoma-intents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "anoma-intents-plurigrid-asi-2"
+}

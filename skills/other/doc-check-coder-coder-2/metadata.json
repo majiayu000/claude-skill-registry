@@ -1,0 +1,11 @@
+{
+  "name": "doc-check",
+  "description": "Checks if code changes require documentation updates",
+  "repo": "coder/coder",
+  "path": ".claude/skills/doc-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/coder/coder",
+  "dir_name": "doc-check-coder-coder-2"
+}

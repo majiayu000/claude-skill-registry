@@ -1,0 +1,11 @@
+{
+  "name": "create-symbol-state-component",
+  "description": "인라인 SVG HTML을 상태 기반 동적 컴포넌트로 변환합니다. CSS 변수로 색상을 제어하고 런타임 API를 제공합니다.",
+  "repo": "JSKIM-90/WEB_BUILDER_TOOLKIT",
+  "path": ".claude/skills/2-component/create-symbol-state-component",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JSKIM-90/WEB_BUILDER_TOOLKIT",
+  "dir_name": "create-symbol-state-component-jskim-90-web-builder-toolkit-2"
+}

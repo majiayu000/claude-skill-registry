@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-env-push",
+  "description": "Push environment variables from local .env file to cloud. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-env-push",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-env-push-agentuity-sdk-explorer-2"
+}

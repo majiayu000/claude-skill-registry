@@ -1,0 +1,11 @@
+{
+  "name": "ai-context-optimizer",
+  "description": "AIコーディング支援ツールのコンテキストファイル（CLAUDE.md等）を最適化するスキル。\n以下の状況で使用:\n(1) ユーザーが「CLAUDE.mdを改善して」「コンテキストファイルを最適化して」と依頼した時\n(2) ユーザーが明示的に「/ai-context」を実行した時-optimizer\n(3) AI向けドキュメントの品質改善を求められた時",
+  "repo": "goldeneggg/dotfiles",
+  "path": "claude-linux/.claude/skills/ai-context-optimizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/goldeneggg/dotfiles",
+  "dir_name": "ai-context-optimizer-goldeneggg-dotfiles-2"
+}

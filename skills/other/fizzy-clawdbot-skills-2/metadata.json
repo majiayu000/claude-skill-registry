@@ -1,0 +1,11 @@
+{
+  "name": "fizzy",
+  "description": "Manages Fizzy boards, cards, steps, comments, and reactions. Use when user asks about boards, cards, tasks, backlog or anything Fizzy.",
+  "repo": "clawdbot/skills",
+  "path": "skills/tobiasbischoff/fizzy-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "fizzy-clawdbot-skills-2"
+}

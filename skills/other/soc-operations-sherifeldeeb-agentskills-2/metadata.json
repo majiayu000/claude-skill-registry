@@ -1,0 +1,11 @@
+{
+  "name": "soc-operations",
+  "description": "Security Operations Center workflows, alert triage, shift handovers, and\noperational reporting. Automate SOC documentation and standardize processes.\nUse for SOC-related tasks, alert management, and o",
+  "repo": "SherifEldeeb/agentskills",
+  "path": "skills/cybersecurity/soc-operations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SherifEldeeb/agentskills",
+  "dir_name": "soc-operations-sherifeldeeb-agentskills-2"
+}

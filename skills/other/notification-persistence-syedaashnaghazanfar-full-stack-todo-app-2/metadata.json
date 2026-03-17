@@ -1,0 +1,11 @@
+{
+  "name": "notification-persistence",
+  "description": "Stores notifications in localStorage with schema (id, taskId, message, timestamp, read, priority). Provides retrieval methods (getUnread, getAll, markAsRead) and maintains last 50 notifications with a",
+  "repo": "Syedaashnaghazanfar/full-stack-todo-app",
+  "path": ".claude/skills/notification-persistence",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Syedaashnaghazanfar/full-stack-todo-app",
+  "dir_name": "notification-persistence-syedaashnaghazanfar-full-stack-todo-app-2"
+}

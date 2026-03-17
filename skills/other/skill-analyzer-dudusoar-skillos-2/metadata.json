@@ -1,0 +1,11 @@
+{
+  "name": "skill-analyzer",
+  "description": "Analyzes project requirements in CLAUDE.md and identifies relevant skills from SkillOS library. Populates the \"Available Skills\" section with indexed skills and usage guidance, and the \"Missing Skills",
+  "repo": "dudusoar/skillOS",
+  "path": ".claude/skills/skill-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dudusoar/skillOS",
+  "dir_name": "skill-analyzer-dudusoar-skillos-2"
+}

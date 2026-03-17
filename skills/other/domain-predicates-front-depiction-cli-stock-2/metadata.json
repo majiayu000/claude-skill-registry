@@ -1,0 +1,11 @@
+{
+  "name": "domain-predicates",
+  "description": "Generate comprehensive predicates and orders for domain types using typeclass patterns",
+  "repo": "front-depiction/cli-stock",
+  "path": ".claude/skills/domain-predicates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/front-depiction/cli-stock",
+  "dir_name": "domain-predicates-front-depiction-cli-stock-2"
+}

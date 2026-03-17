@@ -1,0 +1,11 @@
+{
+  "name": "python-testing",
+  "description": "Write and organize tests for scientific Python packages using pytest following Scientific Python community best practices. Use when setting up test suites, writing unit tests, integration tests, testi",
+  "repo": "robertpelloni/borg",
+  "path": "agents/rse-agents/plugins/skills/python-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertpelloni/borg",
+  "dir_name": "python-testing-robertpelloni-borg-2"
+}

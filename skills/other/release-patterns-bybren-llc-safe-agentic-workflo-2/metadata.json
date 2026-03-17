@@ -1,0 +1,11 @@
+{
+  "name": "release-patterns",
+  "description": "PR creation, CI/CD validation, and release coordination patterns. Use when creating pull requests, running pre-PR validation, checking CI status, or coordinating merges.",
+  "repo": "bybren-llc/safe-agentic-workflow",
+  "path": ".claude/skills/release-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bybren-llc/safe-agentic-workflow",
+  "dir_name": "release-patterns-bybren-llc-safe-agentic-workflo-2"
+}

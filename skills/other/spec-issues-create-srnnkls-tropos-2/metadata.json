@@ -1,0 +1,11 @@
+{
+  "name": "spec-issues-create",
+  "description": "Generate GitHub issue drafts from spec directories, creating initiative/feature/task markdown files with gh CLI commands. Use when converting specs to GitHub issues or setting up issue tracking for fe",
+  "repo": "srnnkls/tropos",
+  "path": "skills/spec-issues-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/srnnkls/tropos",
+  "dir_name": "spec-issues-create-srnnkls-tropos-2"
+}

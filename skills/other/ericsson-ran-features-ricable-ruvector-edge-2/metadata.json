@@ -1,0 +1,11 @@
+{
+  "name": "ericsson-ran-features",
+  "description": "Ericsson LTE/NR RAN feature knowledge base: 593 features, 9432 parameters, 3368 counters, 752 MO classes, 199 KPIs, 118 technical documents, 49 releases. Query by: acronym (IFLB, DUAC, MCPC, ANR, MSM,",
+  "repo": "ricable/ruvector-edge",
+  "path": ".claude/skills/ericsson-ran-features",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricable/ruvector-edge",
+  "dir_name": "ericsson-ran-features-ricable-ruvector-edge-2"
+}

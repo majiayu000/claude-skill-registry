@@ -1,0 +1,11 @@
+{
+  "name": "rule-validator",
+  "description": "Validate code compliance with Gemini mod rules (core, modules, features, UI, WebSocket, state)",
+  "repo": "Ariedam64/Gemini",
+  "path": ".claude/skills/rule-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ariedam64/Gemini",
+  "dir_name": "rule-validator-ariedam64-gemini-2"
+}

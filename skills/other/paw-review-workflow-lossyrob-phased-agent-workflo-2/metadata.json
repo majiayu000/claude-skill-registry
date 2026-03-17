@@ -1,0 +1,11 @@
+{
+  "name": "paw-review-workflow",
+  "description": "Orchestrates the PAW Review workflow, coordinating activity skills to analyze PRs and generate comprehensive review feedback.",
+  "repo": "lossyrob/phased-agent-workflow",
+  "path": "skills/paw-review-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lossyrob/phased-agent-workflow",
+  "dir_name": "paw-review-workflow-lossyrob-phased-agent-workflo-2"
+}

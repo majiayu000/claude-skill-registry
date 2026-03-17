@@ -1,0 +1,11 @@
+{
+  "name": "workflow-fixer",
+  "description": "CI/CD workflow failure diagnosis and automated repair skills",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/workflow-fixer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FlexNetOS/ripple-env",
+  "dir_name": "workflow-fixer-flexnetos-ripple-env-2"
+}

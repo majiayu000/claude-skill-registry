@@ -1,0 +1,11 @@
+{
+  "name": "release-please-development",
+  "description": "This skill should be used when the user asks to \"set up release please\", \"configure automated releases\", \"manage version numbers\", \"add changelog automation\", or mentions release-please, semantic vers",
+  "repo": "dwmkerr/claude-toolkit",
+  "path": "plugins/toolkit/skills/release-please-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dwmkerr/claude-toolkit",
+  "dir_name": "release-please-development-dwmkerr-claude-toolkit-2"
+}

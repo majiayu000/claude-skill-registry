@@ -1,0 +1,11 @@
+{
+  "name": "aoc",
+  "description": "Solve Advent of Code puzzles, algorithm challenges, and competitive programming problems. Activate when user provides AoC problem context/input, mentions solving puzzles/challenges, asks about algorit",
+  "repo": "anntnzrb/agents",
+  "path": "assets/skills/aoc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/anntnzrb/agents",
+  "dir_name": "aoc-anntnzrb-agents-2"
+}

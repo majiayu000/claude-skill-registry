@@ -1,0 +1,11 @@
+{
+  "name": "network-forensics",
+  "description": "Analyze network traffic captures and artifacts for forensic investigation. Use when\ninvestigating data exfiltration, command and control communications, lateral movement,\nor network-based attacks. Sup",
+  "repo": "SherifEldeeb/agentskills",
+  "path": "skills/forensics/network-forensics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SherifEldeeb/agentskills",
+  "dir_name": "network-forensics-sherifeldeeb-agentskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "nnsight",
+  "description": "Provides guidance for interpreting and manipulating neural network internals using nnsight with optional NDIF remote execution. Use when needing to run interpretability experiments on massive models (",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "04-mechanistic-interpretability/nnsight",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "nnsight-zechenzhangagi-ai-research-skills-2"
+}

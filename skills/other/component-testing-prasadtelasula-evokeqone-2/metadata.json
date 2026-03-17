@@ -1,0 +1,11 @@
+{
+  "name": "component-testing",
+  "description": "Test React components with React Testing Library and Playwright. Use when building UI components or verifying frontend functionality.",
+  "repo": "PrasadTelasula/EvokeQOne",
+  "path": ".claude/skills/component-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PrasadTelasula/EvokeQOne",
+  "dir_name": "component-testing-prasadtelasula-evokeqone-2"
+}

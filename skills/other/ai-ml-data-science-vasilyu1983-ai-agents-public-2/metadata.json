@@ -1,0 +1,11 @@
+{
+  "name": "ai-ml-data-science",
+  "description": "End-to-end data science patterns (modern best practices): problem framing -> data -> EDA -> feature engineering (with feature stores) -> modelling -> evaluation -> reporting, plus SQL transformation (",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/ai-ml-data-science",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "ai-ml-data-science-vasilyu1983-ai-agents-public-2"
+}

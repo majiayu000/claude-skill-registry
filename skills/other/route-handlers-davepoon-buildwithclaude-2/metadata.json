@@ -1,0 +1,11 @@
+{
+  "name": "route-handlers",
+  "description": "This skill should be used when the user asks to \"create an API route\", \"add an endpoint\", \"build a REST API\", \"handle POST requests\", \"create route handlers\", \"stream responses\", or needs guidance on ",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/nextjs-expert/skills/route-handlers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "route-handlers-davepoon-buildwithclaude-2"
+}

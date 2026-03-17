@@ -1,0 +1,11 @@
+{
+  "name": "css-animations",
+  "description": "Creates native CSS animations using keyframes, transitions, and modern animation properties. Use when building animations without JavaScript libraries, optimizing performance, or implementing micro-in",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/skills/css-animations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "css-animations-mgd34msu-goodvibes-plugin-2"
+}

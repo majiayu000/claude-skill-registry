@@ -1,0 +1,11 @@
+{
+  "name": "google-gemini-api",
+  "description": "Complete guide for Google Gemini API using the CORRECT current SDK (@google/genai v1.27+, NOT the\ndeprecated @google/generative-ai). Covers text generation, multimodal inputs (text + images + video +\n",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/google-gemini-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "google-gemini-api-jackspace-claudeskillz-2"
+}

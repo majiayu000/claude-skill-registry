@@ -1,0 +1,11 @@
+{
+  "name": "smart-routing",
+  "description": "Automatically determine the best location, handler, or approach for files, requests, and tasks.",
+  "repo": "lovedragonball/power-ranger-toolkit",
+  "path": "src/skills/smart-routing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lovedragonball/power-ranger-toolkit",
+  "dir_name": "smart-routing-lovedragonball-power-ranger-toolkit-2"
+}

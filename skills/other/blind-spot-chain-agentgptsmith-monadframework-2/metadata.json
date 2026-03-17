@@ -1,0 +1,11 @@
+{
+  "name": "blind-spot-chain",
+  "description": "Five-skill sequence for 'what am I missing?' - Collide → Critique → Scale → Synthesize → Simplify. Use when you suspect you're not seeing something.",
+  "repo": "agentgptsmith/MonadFramework",
+  "path": ".claude/skills/blind-spot-chain",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentgptsmith/MonadFramework",
+  "dir_name": "blind-spot-chain-agentgptsmith-monadframework-2"
+}

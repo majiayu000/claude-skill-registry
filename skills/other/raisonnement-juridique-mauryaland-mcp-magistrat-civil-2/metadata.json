@@ -1,0 +1,11 @@
+{
+  "name": "raisonnement-juridique",
+  "description": "Modélise le raisonnement juridique d'un magistrat français pour l'analyse de dossiers civils. Utiliser ce skill pour analyser un litige et identifier les questions juridiques, construire un raisonneme",
+  "repo": "mauryaland/mcp-magistrat-civil",
+  "path": "skills/raisonnement-juridique",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mauryaland/mcp-magistrat-civil",
+  "dir_name": "raisonnement-juridique-mauryaland-mcp-magistrat-civil-2"
+}

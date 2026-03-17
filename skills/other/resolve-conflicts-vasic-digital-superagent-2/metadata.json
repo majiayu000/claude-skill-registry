@@ -1,0 +1,11 @@
+{
+  "name": "resolve-conflicts",
+  "description": "Use this skill immediately when the user mentions merge conflicts that need to be resolved. Do not attempt to resolve conflicts directly - invoke this skill first. This skill specializes in providing ",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/forge/resolve-conflicts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "resolve-conflicts-vasic-digital-superagent-2"
+}

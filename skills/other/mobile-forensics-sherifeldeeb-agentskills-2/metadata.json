@@ -1,0 +1,11 @@
+{
+  "name": "mobile-forensics",
+  "description": "Analyze mobile device data for forensic investigation. Use when investigating\nincidents involving iOS or Android devices, mobile malware, data theft, or\ncommunications analysis. Supports logical and f",
+  "repo": "SherifEldeeb/agentskills",
+  "path": "skills/forensics/mobile-forensics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SherifEldeeb/agentskills",
+  "dir_name": "mobile-forensics-sherifeldeeb-agentskills-2"
+}

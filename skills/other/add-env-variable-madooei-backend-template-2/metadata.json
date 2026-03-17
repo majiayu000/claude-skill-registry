@@ -1,0 +1,11 @@
+{
+  "name": "add-env-variable",
+  "description": "Add a new environment variable to the application. Use when adding configuration for external services, feature flags, or application settings. Triggers on \"add env\", \"environment variable\", \"config v",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/add-env-variable",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "add-env-variable-madooei-backend-template-2"
+}

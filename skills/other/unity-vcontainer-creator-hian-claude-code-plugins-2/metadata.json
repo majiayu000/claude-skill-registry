@@ -1,0 +1,11 @@
+{
+  "name": "unity-vcontainer",
+  "description": "VContainer dependency injection expert specializing in IoC container configuration, lifecycle management, and Unity-optimized DI patterns. Masters dependency resolution, scoped containers, and testabl",
+  "repo": "creator-hian/claude-code-plugins",
+  "path": "unity-plugin/skills/unity-vcontainer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/creator-hian/claude-code-plugins",
+  "dir_name": "unity-vcontainer-creator-hian-claude-code-plugins-2"
+}

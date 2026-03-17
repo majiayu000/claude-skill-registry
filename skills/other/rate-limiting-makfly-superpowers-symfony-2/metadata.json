@@ -1,0 +1,11 @@
+{
+  "name": "rate-limiting",
+  "description": "Use when symfony rate limiting",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/rate-limiting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "rate-limiting-makfly-superpowers-symfony-2"
+}

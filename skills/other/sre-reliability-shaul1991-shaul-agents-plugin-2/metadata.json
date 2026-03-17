@@ -1,0 +1,11 @@
+{
+  "name": "sre-reliability",
+  "description": "SRE Reliability Agent. 서비스 신뢰성, SLO/SLI 관리, 가용성 개선을 담당합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/sre-reliability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "sre-reliability-shaul1991-shaul-agents-plugin-2"
+}

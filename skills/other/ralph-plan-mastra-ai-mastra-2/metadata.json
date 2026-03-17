@@ -1,0 +1,11 @@
+{
+  "name": "ralph-plan",
+  "description": "Interactive planning assistant that helps create focused, well-structured ralph-loop commands through collaborative conversation",
+  "repo": "mastra-ai/mastra",
+  "path": ".claude/skills/ralph-plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mastra-ai/mastra",
+  "dir_name": "ralph-plan-mastra-ai-mastra-2"
+}

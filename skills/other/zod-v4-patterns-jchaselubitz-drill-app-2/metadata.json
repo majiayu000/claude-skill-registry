@@ -1,0 +1,11 @@
+{
+  "name": "zod-v4-patterns",
+  "description": "Ensures Zod v4 patterns are used correctly throughout the codebase. Apply when creating or modifying validation schemas, form schemas, or any Zod validators. Enforces v4 syntax and prevents deprecated",
+  "repo": "jchaselubitz/drill-app",
+  "path": ".claude/skills/zod-v4-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jchaselubitz/drill-app",
+  "dir_name": "zod-v4-patterns-jchaselubitz-drill-app-2"
+}

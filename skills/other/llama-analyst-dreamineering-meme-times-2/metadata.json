@@ -1,0 +1,11 @@
+{
+  "name": "llama-analyst",
+  "description": "DeFi fundamentals and cross-chain analytics using DefiLlama-style data. Use when you want to find undervalued protocols, screen by TVL/revenue growth vs token price, compare sectors, or run data-drive",
+  "repo": "dreamineering/meme-times",
+  "path": ".claude/skills/llama-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dreamineering/meme-times",
+  "dir_name": "llama-analyst-dreamineering-meme-times-2"
+}

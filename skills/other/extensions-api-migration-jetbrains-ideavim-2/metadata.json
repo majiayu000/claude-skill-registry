@@ -1,0 +1,11 @@
+{
+  "name": "extensions-api-migration",
+  "description": "Migrates IdeaVim extensions from the old VimExtensionFacade API to the new @VimPlugin annotation-based API. Use when converting existing extensions to use the new API patterns.",
+  "repo": "JetBrains/ideavim",
+  "path": ".claude/skills/extensions-api-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JetBrains/ideavim",
+  "dir_name": "extensions-api-migration-jetbrains-ideavim-2"
+}

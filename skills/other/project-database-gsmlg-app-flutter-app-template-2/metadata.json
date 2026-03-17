@@ -1,0 +1,11 @@
+{
+  "name": "project-database",
+  "description": "Guide for using app_database package with Drift for user settings, app config, and persistent data (project)",
+  "repo": "gsmlg-app/flutter-app-template",
+  "path": ".claude/skills/project-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gsmlg-app/flutter-app-template",
+  "dir_name": "project-database-gsmlg-app-flutter-app-template-2"
+}

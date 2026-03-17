@@ -1,0 +1,11 @@
+{
+  "name": "world-runtime",
+  "description": "Firecracker microVM + Morph Infinibranch WorldRuntime for parallel verse execution. Entities branch/snapshot in <250ms.",
+  "repo": "plurigrid/asi",
+  "path": "skills/world-runtime",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "world-runtime-plurigrid-asi-2"
+}

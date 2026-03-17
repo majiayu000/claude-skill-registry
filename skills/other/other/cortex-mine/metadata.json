@@ -1,0 +1,17 @@
+{
+  "name": "cortex-mine",
+  "repo": "jezweb/claude-skills",
+  "path": "plugins/knowledge-cortex/skills/cortex-mine/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "cortex-mine",
+  "downloaded_at": "2026-03-17T14:30:19.816026Z",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/plugins/knowledge-cortex/skills/cortex-mine/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jezweb/claude-skills/blob/main/plugins/knowledge-cortex/skills/cortex-mine/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

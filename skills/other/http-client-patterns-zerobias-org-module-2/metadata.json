@@ -1,0 +1,11 @@
+{
+  "name": "http-client-patterns",
+  "description": "HTTP client patterns for axios configuration, interceptors, and request handling",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/http-client-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "http-client-patterns-zerobias-org-module-2"
+}

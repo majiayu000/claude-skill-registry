@@ -1,0 +1,11 @@
+{
+  "name": "trimet",
+  "description": "Get Portland transit information including arrivals, trip planning, and alerts. Use when user asks about buses, MAX, trains, or transit in Portland.",
+  "repo": "clawdbot/skills",
+  "path": "skills/mjrussell/trimet",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "trimet-clawdbot-skills-2"
+}

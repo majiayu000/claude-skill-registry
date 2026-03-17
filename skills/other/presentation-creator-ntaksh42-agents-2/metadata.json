@@ -1,0 +1,11 @@
+{
+  "name": "presentation-creator",
+  "description": "Marpを使用した提案資料・比較検討資料の作成スキル。課題提示、複数案の比較検討、メリット・デメリット整理を含む資料を作成する。使用場面：(1) 技術選定や方式比較の検討資料、(2) 提案書・企画書、(3) 問題解決策の提示、(4) 意思決定を支援するドキュメント。作成完了後は必ずサブエージェントでレビューを実施する。",
+  "repo": "ntaksh42/agents",
+  "path": "claude/skills/presentation-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "presentation-creator-ntaksh42-agents-2"
+}

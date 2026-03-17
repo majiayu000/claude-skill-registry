@@ -1,0 +1,11 @@
+{
+  "name": "workflows",
+  "description": "Imported skill workflows from anthropic",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/anthropic/workflows",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "workflows-bitwikiorg-skills-md-2"
+}

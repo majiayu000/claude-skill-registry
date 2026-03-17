@@ -1,0 +1,11 @@
+{
+  "name": "nutrition-analyzer",
+  "description": "分析营养数据、识别营养模式、评估营养状况，并提供个性化营养建议。支持与运动、睡眠、慢性病数据的关联分析。",
+  "repo": "huifer/WellAlly-health",
+  "path": ".claude/skills/nutrition-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/huifer/WellAlly-health",
+  "dir_name": "nutrition-analyzer-huifer-wellally-health-2"
+}

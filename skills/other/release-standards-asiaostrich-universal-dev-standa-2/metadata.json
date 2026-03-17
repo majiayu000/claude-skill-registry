@@ -1,0 +1,11 @@
+{
+  "name": "release-standards",
+  "description": "語意化版本控制和變更日誌格式化的軟體發布標準。\n使用時機：準備發布、更新版本號、撰寫變更日誌。\n關鍵字：version, release, changelog, semver, major, minor, patch, 版本, 發布, 變更日誌。",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "path": "locales/zh-CN/skills/claude-code/release-standards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AsiaOstrich/universal-dev-standards",
+  "dir_name": "release-standards-asiaostrich-universal-dev-standa-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "debug-log",
+  "description": "Printf-style debug logging for development-time visibility",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/debug-log",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "debug-log-mgreenly-ikigai-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "correlation-explorer",
+  "description": "Find and visualize correlations between variables in datasets. Use for data exploration, feature selection, or identifying relationships between columns.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "correlation-explorer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "correlation-explorer-dkyazzentwatwa-chatgpt-skills-2"
+}

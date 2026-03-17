@@ -1,0 +1,11 @@
+{
+  "name": "marp-slide-reviewer",
+  "description": "ローカルサーバーで起動している Marp スライドを視覚的に検証し、レイアウト問題を自動修正するスキル。「スライドをレビュー」「Marp スライドの視覚的チェック」「スライドのレイアウトを確認」「プレゼン資料の見た目を検証」などのリクエストでトリガーします。テキストの切れ目、重なり、配置問題、コントラスト不足、はみ出し、余白不足などの視覚的問題を検出・修正します。",
+  "repo": "ks6088ts-labs/skills",
+  "path": "skills/marp-slide-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ks6088ts-labs/skills",
+  "dir_name": "marp-slide-reviewer-ks6088ts-labs-skills-2"
+}

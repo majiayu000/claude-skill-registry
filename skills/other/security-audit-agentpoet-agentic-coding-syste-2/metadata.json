@@ -1,0 +1,11 @@
+{
+  "name": "security-audit",
+  "description": "Identify and fix security vulnerabilities in code and infrastructure",
+  "repo": "agentpoet/Agentic-Coding-System-Self-Improving-Framework",
+  "path": ".claude/skills/security-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentpoet/Agentic-Coding-System-Self-Improving-Framework",
+  "dir_name": "security-audit-agentpoet-agentic-coding-syste-2"
+}

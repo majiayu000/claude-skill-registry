@@ -1,0 +1,11 @@
+{
+  "name": "social-content-creator",
+  "description": "Generate social media posts for LinkedIn, Twitter/X, and Substack. Use this skill when the user wants to create content about their developer journey, build in public updates, project showcases, lesso",
+  "repo": "alirezamohammadpoor/zone2run",
+  "path": ".claude/skills/social-content-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alirezamohammadpoor/zone2run",
+  "dir_name": "social-content-creator-alirezamohammadpoor-zone2run-2"
+}

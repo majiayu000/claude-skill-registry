@@ -1,0 +1,11 @@
+{
+  "name": "mermaid-diagrams",
+  "description": "Use when creating Mermaid diagrams - covers flowcharts, sequence diagrams, and AST visualization",
+  "repo": "mcclowes/lea",
+  "path": ".claude/skills/mermaid-diagrams",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mcclowes/lea",
+  "dir_name": "mermaid-diagrams-mcclowes-lea-2"
+}

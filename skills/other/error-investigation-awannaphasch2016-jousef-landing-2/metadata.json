@@ -1,0 +1,11 @@
+{
+  "name": "error-investigation",
+  "description": "AWS error investigation with multi-layer verification, CloudWatch analysis, and Lambda logging patterns. Use when debugging AWS service failures, investigating production errors, or troubleshooting La",
+  "repo": "Awannaphasch2016/jousef-landing",
+  "path": ".claude/skills/error-investigation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Awannaphasch2016/jousef-landing",
+  "dir_name": "error-investigation-awannaphasch2016-jousef-landing-2"
+}

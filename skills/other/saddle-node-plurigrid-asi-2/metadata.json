@@ -1,0 +1,11 @@
+{
+  "name": "saddle-node",
+  "description": "Bifurcation creating/destroying equilibrium pair",
+  "repo": "plurigrid/asi",
+  "path": "skills/saddle-node",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "saddle-node-plurigrid-asi-2"
+}

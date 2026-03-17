@@ -1,0 +1,17 @@
+{
+  "name": "hugo",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/hugo/skills/hugo/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "hugo",
+  "downloaded_at": "2026-03-02T08:49:11.146744Z",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/hugo/skills/hugo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/secondsky/claude-skills/blob/main/plugins/hugo/skills/hugo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

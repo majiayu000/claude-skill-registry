@@ -1,0 +1,11 @@
+{
+  "name": "dns",
+  "description": "Cloudflare DNS and infrastructure management. Manage DNS records, tunnels,\nAccess policies, SSL certificates, and CDN caching.\n",
+  "repo": "BerryKuipers/claude-code-toolkit",
+  "path": ".claude/skills/infrastructure/dns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BerryKuipers/claude-code-toolkit",
+  "dir_name": "dns-berrykuipers-claude-code-toolkit-2"
+}

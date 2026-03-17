@@ -1,0 +1,11 @@
+{
+  "name": "terraform-secrets-management",
+  "description": "Handle sensitive data securely in Terraform. Use when managing passwords, API keys, database credentials,\nencryption keys, or other secrets. Covers Google Secret Manager integration, preventing secret",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/terraform-secrets-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "terraform-secrets-management-dawiddutoit-custom-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "animator-skill",
+  "description": "Use when converting static image sequences (sequence boards) into motion prompts for AI video generation platforms (Runway, Pika, SVD), or describing temporal movement for video synthesis",
+  "repo": "RainLib/AI-Storyboard",
+  "path": ".claude/skills/animator-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RainLib/AI-Storyboard",
+  "dir_name": "animator-skill-rainlib-ai-storyboard-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "whcli",
+  "description": "Willhaben CLI for searching Austria's largest classifieds marketplace. Search listings, view details, check seller profiles.",
+  "repo": "clawdbot/skills",
+  "path": "skills/pasogott/whcli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "whcli-clawdbot-skills-2"
+}

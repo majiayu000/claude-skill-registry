@@ -1,0 +1,11 @@
+{
+  "name": "create-design-system-rules",
+  "description": "Generates custom design system rules for the user's codebase. Use when user says \"create design system rules\", \"generate rules for my project\", \"set up design rules\", \"customize design system guidelin",
+  "repo": "Dedalus-ERP-PAS/foundation-skills",
+  "path": "skills/create-design-system-rules",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Dedalus-ERP-PAS/foundation-skills",
+  "dir_name": "create-design-system-rules-dedalus-erp-pas-foundation-skills-2"
+}

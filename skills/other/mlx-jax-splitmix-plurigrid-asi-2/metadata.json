@@ -1,0 +1,11 @@
+{
+  "name": "mlx-jax-splitmix",
+  "description": "MLX on Apple Silicon with JAX-style SplitMix64 PRNG. Deterministic color generation with GPU acceleration.",
+  "repo": "plurigrid/asi",
+  "path": "skills/mlx-jax-splitmix",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "mlx-jax-splitmix-plurigrid-asi-2"
+}

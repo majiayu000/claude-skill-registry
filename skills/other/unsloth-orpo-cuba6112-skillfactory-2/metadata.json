@@ -1,0 +1,11 @@
+{
+  "name": "unsloth-orpo",
+  "description": "Unsloth-orpo facilitates one-step preference alignment using Odds Ratio Preference Optimization (ORPO). Unlike DPO, which requires a separate reference model, ORPO incorporates a penalty for disfavore",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/unsloth-orpo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "unsloth-orpo-cuba6112-skillfactory-2"
+}

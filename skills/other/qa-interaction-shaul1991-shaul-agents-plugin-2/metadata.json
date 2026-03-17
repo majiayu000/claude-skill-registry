@@ -1,0 +1,11 @@
+{
+  "name": "qa-interaction",
+  "description": "QA Interaction Agent. 사용자 인터랙션 테스트 계획 및 Playwright E2E 테스트 작성을 담당합니다. UX/UI 명세 기반의 상세한 테스트 시나리오를 설계합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/qa-interaction",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "qa-interaction-shaul1991-shaul-agents-plugin-2"
+}

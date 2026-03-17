@@ -1,0 +1,11 @@
+{
+  "name": "langsmith-agent-builder",
+  "description": "LangSmith Agent Builder - No-code platform for creating AI agents with built-in tools (Gmail, Slack, GitHub, Linear), OAuth integrations, MCP server support, Slack deployment, and programmatic invocat",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/langsmith-agent-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "langsmith-agent-builder-enuno-claude-command-and-c-2"
+}

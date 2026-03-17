@@ -1,0 +1,9 @@
+{
+  "name": "gh-actions-validator",
+  "repo": "NovaAI-innovation/Infinite-Agency",
+  "path": ".qwen/skills/gh-actions-validator/SKILL.md",
+  "category": "other",
+  "source": "github.com/NovaAI-innovation/Infinite-Agency",
+  "dir_name": "gh-actions-validator",
+  "downloaded_at": "2026-02-15T05:32:23.274784Z"
+}

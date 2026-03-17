@@ -1,0 +1,11 @@
+{
+  "name": "scaffold-analysis",
+  "description": "识别项目技术栈、测试框架和环境依赖，为 Compile ExecSpec 提供基础上下文。当需要编译 ExecSpec 前，识别项目类型（Node/Python/Go）、测试框架（Jest/Pytest/RSpec）、环境变量依赖（dotenv/os.getenv）时使用。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/execspec_compile/scaffold-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "scaffold-analysis-tikazyq-agentic-spec-forge-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "omero-integration",
+  "description": "Microscopy data management platform. Access images via Python, retrieve datasets, analyze pixels, manage ROIs/annotations, batch processing, for high-content screening and microscopy workflows.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/lab-automation/omero-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "omero-integration-hxk622-tokendance-2"
+}

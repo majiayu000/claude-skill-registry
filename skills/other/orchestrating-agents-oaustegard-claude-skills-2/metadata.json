@@ -1,0 +1,11 @@
+{
+  "name": "orchestrating-agents",
+  "description": "Orchestrates parallel API instances, delegated sub-tasks, and multi-agent workflows with streaming and tool-enabled delegation patterns. Use for parallel analysis, multi-perspective reviews, or comple",
+  "repo": "oaustegard/claude-skills",
+  "path": "orchestrating-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "orchestrating-agents-oaustegard-claude-skills-2"
+}

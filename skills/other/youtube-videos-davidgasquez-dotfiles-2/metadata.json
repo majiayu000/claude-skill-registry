@@ -1,0 +1,11 @@
+{
+  "name": "youtube-videos",
+  "description": "Transcribe and analyze YouTube videos",
+  "repo": "davidgasquez/dotfiles",
+  "path": "agents/disabled-skills/youtube-videos",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davidgasquez/dotfiles",
+  "dir_name": "youtube-videos-davidgasquez-dotfiles-2"
+}

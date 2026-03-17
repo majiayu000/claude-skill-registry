@@ -1,0 +1,11 @@
+{
+  "name": "doc-sync",
+  "description": "Synchronizes CLAUDE.md navigation indexes and README.md architecture docs across a repository. Use when asked to \"sync docs\", \"update CLAUDE.md files\", \"ensure documentation is in sync\", \"audit docume",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/doc-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "doc-sync-rjmurillo-ai-agents-2"
+}

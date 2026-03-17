@@ -1,0 +1,11 @@
+{
+  "name": "moai-streaming-ui",
+  "description": "Enhanced streaming UI system with progress indicators, status displays, and interactive feedback mechanisms. Use when running long-running operations, displaying progress, providing user feedback, or ",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-streaming-ui",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-streaming-ui-jg-chalk-io-nora-livekit-2"
+}

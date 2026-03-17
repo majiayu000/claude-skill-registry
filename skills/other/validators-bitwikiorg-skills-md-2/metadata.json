@@ -1,0 +1,11 @@
+{
+  "name": "validators",
+  "description": "Imported skill validators from anthropic",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/anthropic/validators",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "validators-bitwikiorg-skills-md-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "github-pr",
+  "description": "Create and manage pull requests",
+  "repo": "BreakerOfStems/claude-skills",
+  "path": "skills/github-pr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BreakerOfStems/claude-skills",
+  "dir_name": "github-pr-breakerofstems-claude-skills-2"
+}

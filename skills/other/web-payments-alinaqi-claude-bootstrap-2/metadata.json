@@ -1,0 +1,11 @@
+{
+  "name": "web-payments",
+  "description": "Stripe Checkout, subscriptions, webhooks, customer portal",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/web-payments",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "dir_name": "web-payments-alinaqi-claude-bootstrap-2"
+}

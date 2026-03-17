@@ -1,0 +1,11 @@
+{
+  "name": "marketing-writer",
+  "description": "Writes marketing content (landing pages, tweets, emails) for product features with a casual, direct brand voice. Use when the user ships a feature, needs marketing copy, mentions \"marketing content\", ",
+  "repo": "arkcle83/crewdeck",
+  "path": ".claude/skills/marketing-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arkcle83/crewdeck",
+  "dir_name": "marketing-writer-arkcle83-crewdeck-2"
+}

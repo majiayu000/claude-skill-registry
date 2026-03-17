@@ -1,0 +1,11 @@
+{
+  "name": "lobe-chat",
+  "description": "LobeChat - Open-source AI agent workspace with multi-provider LLM support, plugin system, knowledge base RAG, 505+ agents, and self-hosting options via Docker/Vercel",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/lobe-chat",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "lobe-chat-enuno-claude-command-and-c-2"
+}

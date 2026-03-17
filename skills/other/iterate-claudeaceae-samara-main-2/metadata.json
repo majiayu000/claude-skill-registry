@@ -1,0 +1,11 @@
+{
+  "name": "iterate",
+  "description": "Enable self-referential iteration to complete complex tasks that require multiple attempts, trial-and-error exploration, or persistent effort until success.",
+  "repo": "claudeaceae/samara-main",
+  "path": ".claude/skills/iterate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/claudeaceae/samara-main",
+  "dir_name": "iterate-claudeaceae-samara-main-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "genai-text",
+  "description": "Generate text using Google GenAI Gemini models via CLI. Use when the user asks to generate text, get AI responses, create content, write with AI, or use Gemini for text completion.",
+  "repo": "Onward-Technologies/onward-google-genai",
+  "path": ".claude/skills/genai-text",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Onward-Technologies/onward-google-genai",
+  "dir_name": "genai-text-onward-technologies-onward-google-genai-2"
+}

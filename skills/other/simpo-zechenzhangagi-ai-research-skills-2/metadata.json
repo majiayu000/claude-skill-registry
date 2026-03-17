@@ -1,0 +1,11 @@
+{
+  "name": "simpo",
+  "description": "Simple Preference Optimization for LLM alignment. Reference-free alternative to DPO with better performance (+6.4 points on AlpacaEval 2.0). No reference model needed, more efficient than DPO. Use for",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "06-post-training/simpo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "simpo-zechenzhangagi-ai-research-skills-2"
+}

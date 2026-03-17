@@ -1,0 +1,11 @@
+{
+  "name": "_version",
+  "description": "Imported skill _version from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/langchain/_version",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "version-bitwikiorg-skills-md-2"
+}

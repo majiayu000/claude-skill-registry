@@ -1,0 +1,9 @@
+{
+  "name": "jailbreak-override",
+  "repo": "cisco-ai-defense/skill-scanner",
+  "path": "evals/skills/prompt-injection/jailbreak-override/SKILL.md",
+  "category": "other",
+  "source": "github.com/cisco-ai-defense/skill-scanner",
+  "dir_name": "jailbreak-override",
+  "downloaded_at": "2026-02-22T06:42:47.997483Z"
+}

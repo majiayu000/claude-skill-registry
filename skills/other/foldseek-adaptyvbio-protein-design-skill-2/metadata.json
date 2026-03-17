@@ -1,0 +1,11 @@
+{
+  "name": "foldseek",
+  "description": "Structure similarity search with Foldseek. Use this skill when: (1) Finding similar structures in PDB/AFDB databases, (2) Structural homology search, (3) Database queries by 3D structure, (4) Finding ",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/foldseek",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "foldseek-adaptyvbio-protein-design-skill-2"
+}

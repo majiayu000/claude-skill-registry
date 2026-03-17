@@ -1,0 +1,11 @@
+{
+  "name": "naming-conventions",
+  "description": "Naming conventions for types, functions, files, and resources. Use when creating new code or reviewing naming patterns. Emphasizes type-driven development.",
+  "repo": "crmagz/cdk-constructs-library",
+  "path": ".claude/skills/naming-conventions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/crmagz/cdk-constructs-library",
+  "dir_name": "naming-conventions-crmagz-cdk-constructs-libra-2"
+}

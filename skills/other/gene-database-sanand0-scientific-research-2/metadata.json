@@ -1,0 +1,11 @@
+{
+  "name": "gene-database",
+  "description": "Query NCBI Gene via E-utilities/Datasets API. Search by symbol/ID, retrieve gene info (RefSeqs, GO, locations, phenotypes), batch lookups, for gene annotation and functional analysis.",
+  "repo": "sanand0/scientific-research",
+  "path": ".claude/skills/gene-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sanand0/scientific-research",
+  "dir_name": "gene-database-sanand0-scientific-research-2"
+}

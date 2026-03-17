@@ -1,0 +1,11 @@
+{
+  "name": "secrets-management",
+  "description": "Implement secure secrets management for CI/CD pipelines using Vault, AWS Secrets Manager, or native platform solutions. Use when handling sensitive credentials, rotating secrets, or securing CI/CD env",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".ai/plugins/cicd-automation/skills/secrets-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "secrets-management-arustydev-dotfiles-2"
+}

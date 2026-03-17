@@ -1,0 +1,11 @@
+{
+  "name": "transcription-translation",
+  "description": "Transcribe DNA to RNA and translate to protein using Biopython. Use when converting between DNA, RNA, and protein sequences, finding ORFs, or using alternative codon tables.",
+  "repo": "GPTomics/bioSkills",
+  "path": "sequence-manipulation/transcription-translation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "transcription-translation-gptomics-bioskills-2"
+}

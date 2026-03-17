@@ -1,0 +1,11 @@
+{
+  "name": "closing-report",
+  "description": "終結報告書を作成する。プロジェクト完了時の最終報告、振り返り時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/closing/closing-report",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "closing-report-haru-llc-ai-pm-system-noteboo-2"
+}

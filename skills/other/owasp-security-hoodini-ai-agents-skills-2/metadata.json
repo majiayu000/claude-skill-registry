@@ -1,0 +1,11 @@
+{
+  "name": "owasp-security",
+  "description": "Implement secure coding practices following OWASP Top 10. Use when preventing security vulnerabilities, implementing authentication, securing APIs, or conducting security reviews. Triggers on OWASP, s",
+  "repo": "hoodini/ai-agents-skills",
+  "path": "skills/owasp-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hoodini/ai-agents-skills",
+  "dir_name": "owasp-security-hoodini-ai-agents-skills-2"
+}

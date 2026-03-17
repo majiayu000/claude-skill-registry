@@ -1,0 +1,11 @@
+{
+  "name": "pii-redaction",
+  "description": "Automatically applies when logging sensitive data. Ensures PII (phone numbers, emails, IDs, payment data) is redacted in all logs and outputs for compliance.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/pii-redaction",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "pii-redaction-ricardoroche-ricardos-claude-code-2"
+}

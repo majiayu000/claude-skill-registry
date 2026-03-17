@@ -1,0 +1,11 @@
+{
+  "name": "using-dynamic-architectures",
+  "description": "Use when building networks that grow, prune, or adapt topology during training. Routes to continual learning, gradient isolation, modular composition, and lifecycle orchestration skills.",
+  "repo": "tachyon-beep/skillpacks",
+  "path": "plugins/yzmir-dynamic-architectures/skills/using-dynamic-architectures",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tachyon-beep/skillpacks",
+  "dir_name": "using-dynamic-architectures-tachyon-beep-skillpacks-2"
+}

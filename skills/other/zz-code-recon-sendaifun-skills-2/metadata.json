@@ -1,0 +1,11 @@
+{
+  "name": "zz-code-recon",
+  "description": "Deep architectural context building for security audits. Use when conducting security reviews, building codebase understanding, mapping trust boundaries, or preparing for vulnerability analysis. Inspi",
+  "repo": "sendaifun/skills",
+  "path": "skills/zz-code-recon",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "zz-code-recon-sendaifun-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "development-guidelines",
+  "description": "プロジェクトの開発ガイドライン（docs/development-guidelines.md）を新規作成/更新する。既存の開発ガイドラインがある場合は最優先し、構造と方針を維持して更新する。内容は「コーディング規約（implementation.md）」と「開発プロセス（process.md）」の2本立てで、具体例と理由、測定可能な基準を含める。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/development-guidelines",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "development-guidelines-yuch4-dx-selecta-2"
+}

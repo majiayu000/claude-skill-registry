@@ -1,0 +1,11 @@
+{
+  "name": "hono",
+  "description": "Builds APIs with Hono including routing, middleware, validation, and edge deployment. Use when creating fast APIs, building edge functions, or developing serverless applications.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/api-layer/hono",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "hono-mgd34msu-goodvibes-plugin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "quality-verify-integration",
+  "description": "Verifies components are integrated into the system, not just created. Detects orphaned code (exists but never imported). Use BEFORE marking features complete, moving ADRs to completed/, or claiming in",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/quality-verify-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "quality-verify-integration-dawiddutoit-custom-claude-2"
+}

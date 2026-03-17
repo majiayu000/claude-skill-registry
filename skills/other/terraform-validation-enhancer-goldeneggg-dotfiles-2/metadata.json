@@ -1,0 +1,11 @@
+{
+  "name": "terraform-validation-enhancer",
+  "description": "Terraform構成の依存関係管理とバリデーションを評価・強化するスキル。Terraform 1.14以上を対象に、variable validation、depends_on/lifecycle、precondition/postcondition、check blockの現状評価と改善提案を実施。(1) 既存Terraform構成の評価・診断、(2) バリデーション不足の自動検出と修正提案、",
+  "repo": "goldeneggg/dotfiles",
+  "path": "claude-linux/.claude/skills/terraform-validation-enhancer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/goldeneggg/dotfiles",
+  "dir_name": "terraform-validation-enhancer-goldeneggg-dotfiles-2"
+}

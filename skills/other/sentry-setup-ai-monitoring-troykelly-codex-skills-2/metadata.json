@@ -1,0 +1,11 @@
+{
+  "name": "sentry-setup-ai-monitoring",
+  "description": "Setup Sentry AI Agent Monitoring in any project. Use this when asked to add AI monitoring, track LLM calls, monitor AI agents, or instrument OpenAI/Anthropic/Vercel AI/LangChain/Google GenAI. Automati",
+  "repo": "troykelly/codex-skills",
+  "path": "external/skills/sentry-setup-ai-monitoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "sentry-setup-ai-monitoring-troykelly-codex-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "fitbit",
+  "description": "Query Fitbit health data including sleep, heart rate, activity, SpO2, and breathing rate. Use when user asks about their fitness, sleep quality, steps, or health metrics.",
+  "repo": "clawdbot/skills",
+  "path": "skills/mjrussell/fitbit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "fitbit-clawdbot-skills-2"
+}

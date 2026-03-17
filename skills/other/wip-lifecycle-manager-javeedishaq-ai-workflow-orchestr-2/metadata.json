@@ -1,0 +1,11 @@
+{
+  "name": "wip-lifecycle-manager",
+  "description": "Manage WIP document lifecycle: create, track, review, and archive work-in-progress documentation; use when starting features, reviewing active WIPs, or archiving completed work (project)",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/wip-lifecycle-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "wip-lifecycle-manager-javeedishaq-ai-workflow-orchestr-2"
+}

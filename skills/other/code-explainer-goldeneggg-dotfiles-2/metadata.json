@@ -1,0 +1,11 @@
+{
+  "name": "code-explainer",
+  "description": "コードの動作を日本語で詳しく説明するスキル。\n以下の状況で使用:\n(1) ユーザーが「このコードを説明して」「何をしているか教えて」と依頼した時\n(2) ユーザーが明示的に「/code-explainer」を実行した時\n(3) コードの理解を求める質問をした時",
+  "repo": "goldeneggg/dotfiles",
+  "path": "claude-linux/.claude/skills/code-explainer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/goldeneggg/dotfiles",
+  "dir_name": "code-explainer-goldeneggg-dotfiles-2"
+}

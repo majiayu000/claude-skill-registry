@@ -1,0 +1,11 @@
+{
+  "name": "arch-visualizer",
+  "description": "**ARCH VISUALIZER v1.0** - '아키텍처', '구조', '시각화', '다이어그램', '문서화', 'codebase_graph.md', '프로젝트 구조' 요청 시 자동 발동. codebase-graph 기반 자동 아키텍처 문서/다이어그램 생성. Mermaid/PlantUML/ASCII 다이어그램, 자동 갱신 지원.",
+  "repo": "monicajeon28/GMcruise",
+  "path": ".claude/skills/arch-visualizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/monicajeon28/GMcruise",
+  "dir_name": "arch-visualizer-monicajeon28-gmcruise-2"
+}

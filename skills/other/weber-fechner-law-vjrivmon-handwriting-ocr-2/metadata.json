@@ -1,0 +1,11 @@
+{
+  "name": "weber-fechner-law",
+  "description": "La percepción de cambio es proporcional al estímulo original. Use cuando diseñe feedback de progreso, sistemas de pricing, o cambios visuales graduales.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/perception/weber-fechner-law",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "weber-fechner-law-vjrivmon-handwriting-ocr-2"
+}

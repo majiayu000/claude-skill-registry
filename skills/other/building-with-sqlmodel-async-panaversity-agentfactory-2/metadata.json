@@ -1,0 +1,11 @@
+{
+  "name": "building-with-sqlmodel-async",
+  "description": "Use when building async database layers with SQLModel and PostgreSQL. Triggers include async session management, create_async_engine, SQLModel relationships, CRUD operations with async/await, N+1 prev",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/rare/building-with-sqlmodel-async",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "building-with-sqlmodel-async-panaversity-agentfactory-2"
+}

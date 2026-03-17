@@ -1,0 +1,11 @@
+{
+  "name": "unsloth-quantization",
+  "description": "Unsloth utilizes advanced quantization techniques to reduce the memory footprint of LLM fine-tuning. This includes \"Dynamic 4-bit\" loading (protecting sensitive layers), FP8 training for modern GPUs, ",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/unsloth-quantization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "unsloth-quantization-cuba6112-skillfactory-2"
+}

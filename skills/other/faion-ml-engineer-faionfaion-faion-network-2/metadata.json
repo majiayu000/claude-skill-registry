@@ -1,0 +1,11 @@
+{
+  "name": "faion-ml-engineer",
+  "description": "ML Engineer role: LLM APIs (OpenAI, Claude, Gemini), embeddings, RAG pipelines, fine-tuning, LangChain, LlamaIndex, vector databases (Pinecone, Chroma, Weaviate), prompt engineering, model evaluation,",
+  "repo": "faionfaion/faion-network",
+  "path": "skills/faion-ml-engineer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/faionfaion/faion-network",
+  "dir_name": "faion-ml-engineer-faionfaion-faion-network-2"
+}

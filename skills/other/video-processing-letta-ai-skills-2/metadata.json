@@ -1,0 +1,11 @@
+{
+  "name": "video-processing",
+  "description": "Guide for video analysis and frame-level event detection tasks using OpenCV and similar libraries. This skill should be used when detecting events in videos (jumps, movements, gestures), extracting fr",
+  "repo": "letta-ai/skills",
+  "path": "letta/benchmarks/trajectory-only/video-processing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/letta-ai/skills",
+  "dir_name": "video-processing-letta-ai-skills-2"
+}

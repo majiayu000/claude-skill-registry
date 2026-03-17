@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-images",
+  "description": "Status: Production Ready ✅ | Version: 3.0.0 | Last Verified: 2025-12-27",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-images/skills/cloudflare-images",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "cloudflare-images-secondsky-claude-skills-2"
+}

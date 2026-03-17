@@ -1,0 +1,11 @@
+{
+  "name": "octave-compression",
+  "description": "Specialized workflow for transforming verbose natural language into semantic OCTAVE structures. REQUIRES octave-literacy to be loaded first",
+  "repo": "elevanaltd/octave-mcp",
+  "path": "src/octave_mcp/resources/skills/octave-compression",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/elevanaltd/octave-mcp",
+  "dir_name": "octave-compression-elevanaltd-octave-mcp-2"
+}

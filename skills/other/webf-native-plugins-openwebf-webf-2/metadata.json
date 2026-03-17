@@ -1,0 +1,11 @@
+{
+  "name": "webf-native-plugins",
+  "description": "Install WebF native plugins to access platform capabilities like sharing, payment, camera, geolocation, and more. Use when building features that require native device APIs beyond standard web APIs.",
+  "repo": "openwebf/webf",
+  "path": "skills/webf-native-plugins",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/openwebf/webf",
+  "dir_name": "webf-native-plugins-openwebf-webf-2"
+}

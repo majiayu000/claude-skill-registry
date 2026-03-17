@@ -1,0 +1,11 @@
+{
+  "name": "extract-images",
+  "description": "Extract and catalog illustrations from historical books using AI vision. Generates rich metadata (subjects, figures, symbols, style, technique) and museum-style descriptions. Use when asked to extract",
+  "repo": "Embassy-of-the-Free-Mind/sourcelibrary-v2",
+  "path": ".claude/skills/extract-images",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Embassy-of-the-Free-Mind/sourcelibrary-v2",
+  "dir_name": "extract-images-embassy-of-the-free--sourcelibrary-v2-2"
+}

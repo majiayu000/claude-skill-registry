@@ -1,0 +1,11 @@
+{
+  "name": "cognitive-load",
+  "description": "La cantidad de esfuerzo mental requerido para procesar información. Use cuando diseñe interfaces complejas, flujos de onboarding, o sistemas de información.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/perception/cognitive-load",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "cognitive-load-vjrivmon-handwriting-ocr-2"
+}

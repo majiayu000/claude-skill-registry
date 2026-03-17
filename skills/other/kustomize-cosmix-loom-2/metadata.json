@@ -1,0 +1,11 @@
+{
+  "name": "kustomize",
+  "description": "Kustomize is a Kubernetes-native configuration management tool that uses declarative customization to manage environment-specific configurations without templates. It follows the principles of declara",
+  "repo": "cosmix/loom",
+  "path": "skills/kustomize",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "kustomize-cosmix-loom-2"
+}

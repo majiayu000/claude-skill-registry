@@ -1,0 +1,11 @@
+{
+  "name": "search-algorand-examples",
+  "description": "Search GitHub for Algorand smart contract examples and patterns. Use when finding example implementations of specific patterns (BoxMap, inner transactions), looking up contract feature usage, discover",
+  "repo": "gabrielkuettel/vibegallery",
+  "path": ".claude/skills/search-algorand-examples",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gabrielkuettel/vibegallery",
+  "dir_name": "search-algorand-examples-gabrielkuettel-vibegallery-2"
+}

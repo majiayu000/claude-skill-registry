@@ -1,0 +1,11 @@
+{
+  "name": "backend-reviewer",
+  "description": "Backend Reviewer Agent. 코드 리뷰, PR 검토, 코드 품질 평가를 담당합니다. 리뷰, 검토, PR, 코드 품질 관련 요청 시 사용됩니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/backend-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "backend-reviewer-shaul1991-shaul-agents-plugin-2"
+}

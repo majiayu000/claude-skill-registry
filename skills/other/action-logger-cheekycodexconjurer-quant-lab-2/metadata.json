@@ -1,0 +1,11 @@
+{
+  "name": "action_logger",
+  "description": "Keep an audit trail of changes, commands, and verification.",
+  "repo": "CheekyCodexConjurer/quant-lab",
+  "path": ".agent-docs/templates/.codex/skills/action_logger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CheekyCodexConjurer/quant-lab",
+  "dir_name": "action-logger-cheekycodexconjurer-quant-lab-2"
+}

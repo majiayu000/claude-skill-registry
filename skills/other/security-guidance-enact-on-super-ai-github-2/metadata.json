@@ -1,0 +1,11 @@
+{
+  "name": "security-guidance",
+  "description": "Security reminder hook that warns about potential security issues when editing files, including command injection, XSS, and unsafe code patterns",
+  "repo": "enact-on/super-ai-github",
+  "path": ".opencode/skill/security-guidance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enact-on/super-ai-github",
+  "dir_name": "security-guidance-enact-on-super-ai-github-2"
+}

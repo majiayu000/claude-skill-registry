@@ -1,0 +1,11 @@
+{
+  "name": "ai-security-expert",
+  "description": "Enterprise AI security - OWASP LLM Top 10, prompt injection defense, guardrails, PII protection",
+  "repo": "frankxai/ai-architect",
+  "path": "skills/ai-security-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/ai-architect",
+  "dir_name": "ai-security-expert-frankxai-ai-architect-2"
+}

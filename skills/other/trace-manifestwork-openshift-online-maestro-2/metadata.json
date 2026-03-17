@@ -1,0 +1,11 @@
+{
+  "name": "trace-manifestwork",
+  "description": "This skill should be used when tracing ManifestWork resources through the Maestro system to find relationships between user-created work names, resource IDs, and applied manifests, or to debug manifes",
+  "repo": "openshift-online/maestro",
+  "path": ".claude/skills/trace-manifestwork",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/openshift-online/maestro",
+  "dir_name": "trace-manifestwork-openshift-online-maestro-2"
+}

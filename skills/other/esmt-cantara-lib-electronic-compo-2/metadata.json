@@ -1,0 +1,11 @@
+{
+  "name": "esmt",
+  "description": "ESMT (Elite Semiconductor Memory Technology) MPN encoding patterns, suffix decoding, and handler guidance. Use when working with ESMT DRAM and Flash memory components or ESMTHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/esmt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "esmt-cantara-lib-electronic-compo-2"
+}

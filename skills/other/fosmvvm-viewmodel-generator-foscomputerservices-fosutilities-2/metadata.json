@@ -1,0 +1,11 @@
+{
+  "name": "fosmvvm-viewmodel-generator",
+  "description": "Generate FOSMVVM ViewModels - the bridge between server-side data and client-side Views. Use when creating new screens, pages, components, or any UI that displays data.",
+  "repo": "foscomputerservices/FOSUtilities",
+  "path": ".claude/skills/fosmvvm-viewmodel-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/foscomputerservices/FOSUtilities",
+  "dir_name": "fosmvvm-viewmodel-generator-foscomputerservices-fosutilities-2"
+}

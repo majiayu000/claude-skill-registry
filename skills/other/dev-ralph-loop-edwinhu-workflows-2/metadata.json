@@ -1,0 +1,11 @@
+{
+  "name": "dev-ralph-loop",
+  "description": "Per-task ralph loop pattern for implementation and debugging. One loop per task, not one loop per feature.",
+  "repo": "edwinhu/workflows",
+  "path": "lib/skills/dev-ralph-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "dev-ralph-loop-edwinhu-workflows-2"
+}

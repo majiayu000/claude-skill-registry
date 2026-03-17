@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-extension-template",
+  "description": "Create new Umbraco backoffice extensions using the official dotnet template",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-extension-template",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-extension-template-umbraco-umbraco-cms-backoffi-2"
+}

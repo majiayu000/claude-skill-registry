@@ -1,0 +1,11 @@
+{
+  "name": "maintain-clash-rule-lists",
+  "description": "Maintain custom Clash rule lists in rules/*.list for this repo. Use when adding or removing domain/IP rules, adjusting list contents, or wiring rule lists into mihomo.yaml/mihomo.js.",
+  "repo": "mmm1h/clashconfig",
+  "path": "skills/maintain-clash-rule-lists",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mmm1h/clashconfig",
+  "dir_name": "maintain-clash-rule-lists-mmm1h-clashconfig-2"
+}

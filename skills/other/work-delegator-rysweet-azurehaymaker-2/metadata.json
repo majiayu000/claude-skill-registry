@@ -1,0 +1,11 @@
+{
+  "name": "work-delegator",
+  "description": "Expert delegation specialist that creates comprehensive context packages for coding agents, analyzes requirements, identifies relevant files, and generates clear instructions. Activates when delegatin",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/work-delegator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "work-delegator-rysweet-azurehaymaker-2"
+}

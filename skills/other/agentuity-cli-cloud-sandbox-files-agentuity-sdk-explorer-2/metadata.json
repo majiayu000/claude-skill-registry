@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-sandbox-files",
+  "description": "List files in a sandbox directory. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-sandbox-files",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-sandbox-files-agentuity-sdk-explorer-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "init-changelog",
+  "description": "Create the foundational structure for changelog management. Use when the agent needs to start changelog management by creating a new `CHANGELOG.md` file and the commit pointer to update the changelog.",
+  "repo": "mystilleef/llm-agent-skills",
+  "path": "skills/init-changelog",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mystilleef/llm-agent-skills",
+  "dir_name": "init-changelog-mystilleef-llm-agent-skills-2"
+}

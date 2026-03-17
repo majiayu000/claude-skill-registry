@@ -1,0 +1,11 @@
+{
+  "name": "yt",
+  "description": "Pobiera transkrypcję z YouTube i umożliwia analizę/pytania o film.",
+  "repo": "kmylpenter/KFG-CCv2-Installer-Stable",
+  "path": ".claude/skills/yt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kmylpenter/KFG-CCv2-Installer-Stable",
+  "dir_name": "yt-kmylpenter-kfg-ccv2-installer-s-2"
+}

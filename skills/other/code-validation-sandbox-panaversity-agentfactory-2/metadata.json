@@ -1,0 +1,11 @@
+{
+  "name": "code-validation-sandbox",
+  "description": "Validate code examples across the 4-Layer Teaching Method with intelligent strategy selection. Use when validating Python/Node/Rust code in book chapters. NOT for production deployment testing.",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/cold/code-validation-sandbox",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "code-validation-sandbox-panaversity-agentfactory-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ghost-writer",
+  "description": "Produce first drafts that match a writer's authentic voice using their Voice DNA Document. Consumes DNA documents from writing-dna-discovery skill. Generates 2 meaningfully different drafts with headl",
+  "repo": "robertguss/claude-code-toolkit",
+  "path": "skills/writing/ghost-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertguss/claude-code-toolkit",
+  "dir_name": "ghost-writer-robertguss-claude-code-toolkit-2"
+}

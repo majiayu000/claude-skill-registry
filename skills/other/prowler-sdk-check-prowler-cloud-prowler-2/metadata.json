@@ -1,0 +1,11 @@
+{
+  "name": "prowler-sdk-check",
+  "description": "Creates Prowler security checks following SDK architecture patterns. Trigger: When creating or updating a Prowler SDK security check (implementation + metadata) for any provider (AWS, Azure, GCP, K8s,",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/prowler-sdk-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/prowler-cloud/prowler",
+  "dir_name": "prowler-sdk-check-prowler-cloud-prowler-2"
+}

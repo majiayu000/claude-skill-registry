@@ -1,0 +1,11 @@
+{
+  "name": "api-investigator",
+  "description": "note.com APIの調査を支援します。mitmproxyとPlaywrightを使用してHTTPトラフィックをキャプチャ・分析し、API動作を解明します。",
+  "repo": "drillan/note-mcp",
+  "path": ".claude/skills/api-investigator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/drillan/note-mcp",
+  "dir_name": "api-investigator-drillan-note-mcp-2"
+}

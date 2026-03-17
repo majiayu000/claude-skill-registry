@@ -1,0 +1,9 @@
+{
+  "name": "hardware-security",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/security-research/skills/hardware-security/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "hardware-security",
+  "downloaded_at": "2026-02-10T16:27:47.787776Z"
+}

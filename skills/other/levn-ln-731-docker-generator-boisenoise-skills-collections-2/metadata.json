@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-731-docker-generator",
+  "description": "Generates Docker and docker-compose configuration for multi-container development",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-731-docker-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-731-docker-generator-boisenoise-skills-collections-2"
+}

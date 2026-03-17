@@ -1,0 +1,11 @@
+{
+  "name": "workflow-orchestrator-skill",
+  "description": "Project workflow system - cost tracking, parallel execution, security gates, agent orchestration. Use when: start day, begin session, status check, new feature, build, implement, end day, wrap up, deb",
+  "repo": "ScientiaCapital/skills",
+  "path": "active/workflow-orchestrator-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ScientiaCapital/skills",
+  "dir_name": "workflow-orchestrator-skill-scientiacapital-skills-2"
+}

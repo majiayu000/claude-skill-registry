@@ -1,0 +1,11 @@
+{
+  "name": "client-responsibilities",
+  "description": "Client class responsibilities - connection ONLY, no business operations",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/client-responsibilities",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "client-responsibilities-zerobias-org-module-2"
+}

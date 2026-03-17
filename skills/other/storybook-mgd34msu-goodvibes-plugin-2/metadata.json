@@ -1,0 +1,11 @@
+{
+  "name": "storybook",
+  "description": "Develops and documents UI components in isolation with Storybook's interactive workshop environment. Use when building component libraries, documenting design systems, or when user mentions Storybook,",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/testing/storybook",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "storybook-mgd34msu-goodvibes-plugin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "agent-permissions",
+  "description": "Comprehensive guide for the agent permissions and approval system. Use when an agent needs to request user approval for sensitive operations, when implementing new approval policies, when integrating ",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/agent-permissions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "agent-permissions-orient-bot-orient-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "e2e",
+  "description": "Playwright expert for end-to-end testing, debugging, test infrastructure, and visual regression testing",
+  "repo": "tidemann/st44-home",
+  "path": ".claude/skills/e2e",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tidemann/st44-home",
+  "dir_name": "e2e-tidemann-st44-home-2"
+}

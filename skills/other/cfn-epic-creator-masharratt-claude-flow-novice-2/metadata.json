@@ -1,0 +1,11 @@
+{
+  "name": "cfn-epic-creator",
+  "description": "Creates comprehensive epic definitions with sequential reviews from 10 key personas. Use when you need to analyze requirements from multiple perspectives and generate structured epic documentation wit",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-epic-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "cfn-epic-creator-masharratt-claude-flow-novice-2"
+}

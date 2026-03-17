@@ -1,0 +1,17 @@
+{
+  "name": "kb-fediverse-relays",
+  "repo": "reiver/vibefed",
+  "path": "skills/kb-fediverse-relays/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/reiver/vibefed",
+  "dir_name": "kb-fediverse-relays",
+  "downloaded_at": "2026-03-17T14:36:25.406187Z",
+  "author": "reiver",
+  "source_url": "https://github.com/reiver/vibefed/blob/master/skills/kb-fediverse-relays/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/reiver/vibefed/blob/master/skills/kb-fediverse-relays/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

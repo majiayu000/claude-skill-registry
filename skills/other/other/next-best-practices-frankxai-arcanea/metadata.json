@@ -1,0 +1,17 @@
+{
+  "name": "next-best-practices",
+  "repo": "frankxai/arcanea",
+  "path": ".claude/skills/development/next-best-practices/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/frankxai/arcanea",
+  "dir_name": "next-best-practices-frankxai-arcanea",
+  "downloaded_at": "2026-03-01T07:46:46.198056Z",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/arcanea/blob/main/.claude/skills/development/next-best-practices/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frankxai/arcanea/blob/main/.claude/skills/development/next-best-practices/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

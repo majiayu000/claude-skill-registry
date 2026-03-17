@@ -1,0 +1,11 @@
+{
+  "name": "invalid-name-format",
+  "description": "This skill has uppercase letters in its name, which is not allowed.",
+  "repo": "yurakawa/mskills",
+  "path": "tests/fixtures/skills/invalid/invalid-name-format",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yurakawa/mskills",
+  "dir_name": "invalid-name-format-yurakawa-mskills-2"
+}

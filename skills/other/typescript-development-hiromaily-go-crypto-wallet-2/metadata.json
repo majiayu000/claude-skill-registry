@@ -1,0 +1,11 @@
+{
+  "name": "typescript-development",
+  "description": "TypeScript/JavaScript development workflow for apps/ directory. Use when modifying TypeScript code in xrpl-grpc-server or JavaScript in erc20-token.",
+  "repo": "hiromaily/go-crypto-wallet",
+  "path": ".claude/skills/typescript-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hiromaily/go-crypto-wallet",
+  "dir_name": "typescript-development-hiromaily-go-crypto-wallet-2"
+}

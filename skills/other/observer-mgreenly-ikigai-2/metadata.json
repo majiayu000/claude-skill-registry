@@ -1,0 +1,11 @@
+{
+  "name": "observer",
+  "description": "Observer Pattern (Callbacks) pattern for C development",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/patterns/observer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "observer-mgreenly-ikigai-2"
+}

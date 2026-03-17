@@ -1,0 +1,11 @@
+{
+  "name": "ingestion",
+  "description": "Unified atomic ingestion of CFN dependency manifests (trigger-dev, cli-mode, shared)",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-dependency-management/lib/ingestion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "ingestion-masharratt-claude-flow-novice-2"
+}

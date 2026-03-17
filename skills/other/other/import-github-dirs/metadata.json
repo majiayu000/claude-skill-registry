@@ -1,0 +1,9 @@
+{
+  "name": "import-github-dirs",
+  "repo": "iamhenry/ai-project-starter-kit",
+  "path": ".claude/skills/import-github-dirs/SKILL.md",
+  "category": "other",
+  "source": "github.com/iamhenry/ai-project-starter-kit",
+  "dir_name": "import-github-dirs",
+  "downloaded_at": "2026-02-15T07:34:00.693799Z"
+}

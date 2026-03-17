@@ -1,0 +1,9 @@
+{
+  "name": "commit-pr",
+  "repo": "avvale/aurora-back",
+  "path": ".claude/skills/commit-pr/SKILL.md",
+  "category": "other",
+  "source": "github.com/avvale/aurora-back",
+  "dir_name": "commit-pr",
+  "downloaded_at": "2026-02-22T06:27:01.995937Z"
+}

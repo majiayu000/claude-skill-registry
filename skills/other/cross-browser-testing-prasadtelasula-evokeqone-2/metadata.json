@@ -1,0 +1,11 @@
+{
+  "name": "cross-browser-testing",
+  "description": "Test cross-browser compatibility on Chrome, Firefox, Safari, and Edge using Playwright. Use when ensuring browser compatibility or fixing browser-specific issues.",
+  "repo": "PrasadTelasula/EvokeQOne",
+  "path": ".claude/skills/cross-browser-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PrasadTelasula/EvokeQOne",
+  "dir_name": "cross-browser-testing-prasadtelasula-evokeqone-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-740-quality-setup",
+  "description": "Coordinates linters, pre-commit hooks, and test infrastructure setup",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-740-quality-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-740-quality-setup-boisenoise-skills-collections-2"
+}

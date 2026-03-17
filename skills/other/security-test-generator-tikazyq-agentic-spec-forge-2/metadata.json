@@ -1,0 +1,11 @@
+{
+  "name": "security-test-generator",
+  "description": "基于NFR安全要求，生成STRIDE/OWASP威胁模型和测试场景。L3级别专用，当设计和需求确认后使用。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/implementation_planning/security-test-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "security-test-generator-tikazyq-agentic-spec-forge-2"
+}

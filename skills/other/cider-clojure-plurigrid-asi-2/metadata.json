@@ -1,0 +1,11 @@
+{
+  "name": "cider-clojure",
+  "description": "CIDER integration for Clojure development with nREPL",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.ruler/skills/cider-clojure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "cider-clojure-plurigrid-asi-2"
+}

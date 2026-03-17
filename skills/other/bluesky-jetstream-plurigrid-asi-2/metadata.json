@@ -1,0 +1,11 @@
+{
+  "name": "bluesky-jetstream",
+  "description": "Bluesky Jetstream Firehose Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/bluesky-jetstream",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "bluesky-jetstream-plurigrid-asi-2"
+}

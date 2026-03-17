@@ -1,0 +1,11 @@
+{
+  "name": "context-compression",
+  "description": "This skill should be used when the user asks to \"compress context\", \"summarize conversation history\", \"implement compaction\", \"reduce token usage\", or mentions context compression, structured summariz",
+  "repo": "Kalyanikhandare29/Agent-Skills-for-Context-Engineering",
+  "path": "skills/context-compression",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Kalyanikhandare29/Agent-Skills-for-Context-Engineering",
+  "dir_name": "context-compression-kalyanikhandare29-agent-skills-for-con-2"
+}

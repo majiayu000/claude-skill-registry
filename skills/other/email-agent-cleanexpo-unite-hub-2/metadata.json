@@ -1,0 +1,11 @@
+{
+  "name": "email-agent",
+  "description": "Processes incoming emails for Unite-Hub. Extracts sender data, identifies communication intents, links to CRM contacts, analyzes sentiment, and updates contact records with AI insights.",
+  "repo": "CleanExpo/Unite-Hub",
+  "path": ".claude/skills/email-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CleanExpo/Unite-Hub",
+  "dir_name": "email-agent-cleanexpo-unite-hub-2"
+}

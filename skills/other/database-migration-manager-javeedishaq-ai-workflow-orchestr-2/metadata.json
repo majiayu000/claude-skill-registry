@@ -1,0 +1,11 @@
+{
+  "name": "database-migration-manager",
+  "description": "Create production-ready Supabase migrations for Ballee following strict naming conventions, idempotent SQL, RLS patterns, and storage bucket policies; use when user requests schema changes, adding col",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/database-migration-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "database-migration-manager-javeedishaq-ai-workflow-orchestr-2"
+}

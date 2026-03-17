@@ -1,0 +1,11 @@
+{
+  "name": "script-executor",
+  "description": "Universal script execution pattern via execute-script.py proxy",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/plan-marshall/skills/tools-script-executor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "script-executor-cuioss-plan-marshall-2"
+}

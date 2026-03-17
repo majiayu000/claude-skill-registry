@@ -1,0 +1,11 @@
+{
+  "name": "good-morning",
+  "description": "Morning routine check-in. Use at start of day to review yesterday, set up today's journal, and check learning reviews due. Triggers on \"good morning\", \"morning\", \"start my day\", \"what's on for today\".",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/good-morning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "good-morning-taylorhuston-local-life-manager-2"
+}

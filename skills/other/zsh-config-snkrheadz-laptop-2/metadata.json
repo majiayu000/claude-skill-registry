@@ -1,0 +1,11 @@
+{
+  "name": "zsh-config",
+  "description": "zsh設定管理。関数・config・aliasの追加・編集・確認。トリガー: zsh, shell, alias, function, config, zshrc",
+  "repo": "snkrheadz/laptop",
+  "path": ".claude/skills/zsh-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/snkrheadz/laptop",
+  "dir_name": "zsh-config-snkrheadz-laptop-2"
+}

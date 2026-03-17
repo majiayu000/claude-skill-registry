@@ -1,0 +1,11 @@
+{
+  "name": "jotai-reactive-atoms",
+  "description": "Implement reactive state management with Jotai atoms in Electron renderer. Use when creating atoms, implementing real-time updates via IPC, or setting up hybrid stream + HTTP fallback patterns. Covers",
+  "repo": "naporin0624/claude-plugin-hono-electron",
+  "path": "skills/jotai-reactive-atoms",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/naporin0624/claude-plugin-hono-electron",
+  "dir_name": "jotai-reactive-atoms-naporin0624-claude-plugin-hono-e-2"
+}

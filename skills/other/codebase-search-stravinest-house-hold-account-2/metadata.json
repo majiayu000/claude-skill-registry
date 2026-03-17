@@ -1,0 +1,11 @@
+{
+  "name": "codebase-search",
+  "description": "코드 검색 전 코드베이스 문서를 참고하여 프로젝트 구조와 컨텍스트를 파악합니다. 코드 검색, 파일 탐색, 구현 위치 파악, 프로젝트 이해가 필요할 때 사용하세요.",
+  "repo": "stravinest/house-hold-account",
+  "path": ".claude/skills/codebase-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/stravinest/house-hold-account",
+  "dir_name": "codebase-search-stravinest-house-hold-account-2"
+}

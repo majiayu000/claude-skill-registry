@@ -1,0 +1,11 @@
+{
+  "name": "agentkit",
+  "description": "Coinbase AgentKit - Toolkit for enabling AI agents with crypto wallets and onchain capabilities. Use for building autonomous agents that can execute transfers, swaps, DeFi operations, NFT minting, and",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/agentkit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "agentkit-enuno-claude-command-and-c-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "serialization",
+  "description": "Serialization is the process of converting data structures into a format that can be stored or transmitted and later reconstructed. This skill covers JSON best practices, binary formats like Protocol ",
+  "repo": "cosmix/loom",
+  "path": "skills/serialization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "serialization-cosmix-loom-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "cross-border-flow-tracker",
+  "description": "Track and analyze cross-border capital flows between mainland China and Hong Kong via Stock Connect (沪港通/深港通). Monitor northbound (北向资金) and southbound (南向资金) flows, identify trending stocks, and anal",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/stock-trader-workflow/.claude/skills/cross-border-flow-tracker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "cross-border-flow-tracker-nicepkg-ai-workflow-2"
+}

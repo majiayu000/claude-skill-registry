@@ -1,0 +1,11 @@
+{
+  "name": "qualcomm",
+  "description": "Qualcomm MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Qualcomm mobile SoCs, RF front-end, WiFi/Bluetooth, modems, or power management ICs.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/qualcomm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "qualcomm-cantara-lib-electronic-compo-2"
+}

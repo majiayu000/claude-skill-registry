@@ -1,0 +1,11 @@
+{
+  "name": "language-framework-specialist",
+  "description": "提供特定编程语言和框架的深度专业知识。当需要处理特定技术栈的复杂问题时使用",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/language-framework-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "language-framework-specialist-prorise-cool-claude-code-multi-ag-2"
+}

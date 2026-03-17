@@ -1,0 +1,11 @@
+{
+  "name": "trip-planner",
+  "description": "Create detailed travel itineraries with activities, logistics, and day-by-day schedules. Use for vacation planning, trip organization, and travel documentation.",
+  "repo": "mattppal/prompts",
+  "path": ".claude/skills/trip-planner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattppal/prompts",
+  "dir_name": "trip-planner-mattppal-prompts-2"
+}

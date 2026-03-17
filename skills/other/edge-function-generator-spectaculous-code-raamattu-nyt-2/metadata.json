@@ -1,0 +1,11 @@
+{
+  "name": "edge-function-generator",
+  "description": "Expert assistant for creating and maintaining Supabase Edge Functions for the KR92 Bible Voice project. Use when creating Edge Functions, setting up CORS, integrating shared modules, adding JWT valida",
+  "repo": "Spectaculous-Code/raamattu-nyt",
+  "path": ".claude/skills/edge-function-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Spectaculous-Code/raamattu-nyt",
+  "dir_name": "edge-function-generator-spectaculous-code-raamattu-nyt-2"
+}

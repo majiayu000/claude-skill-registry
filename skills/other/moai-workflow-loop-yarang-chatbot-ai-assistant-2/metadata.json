@@ -1,0 +1,11 @@
+{
+  "name": "moai-workflow-loop",
+  "description": "Ralph Engine - Automated feedback loop with LSP diagnostics and AST-grep integration for continuous code quality improvement. Use when implementing error-driven development, automated fixing, or conti",
+  "repo": "yarang/chatbot_ai_assistant_v2",
+  "path": ".claude/skills/moai-workflow-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yarang/chatbot_ai_assistant_v2",
+  "dir_name": "moai-workflow-loop-yarang-chatbot-ai-assistant-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "transfer_old_latex_to_new",
+  "description": "智能迁移NSFC LaTeX标书到新版模板，基于五阶段工作流（分析→映射→规划→执行→验证），自动处理结构变化、内容重组、引用更新；支持AI驱动语义匹配与启发式回退，并提供 runs 输出隔离（--runs-root）与一键迁移脚本（migrate.sh）。",
+  "repo": "huangwb8/ChineseResearchLaTeX",
+  "path": "skills/transfer_old_latex_to_new",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/huangwb8/ChineseResearchLaTeX",
+  "dir_name": "transfer-old-latex-to-new-huangwb8-chineseresearchlatex-2"
+}

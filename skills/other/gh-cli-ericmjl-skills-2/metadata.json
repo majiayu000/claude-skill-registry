@@ -1,0 +1,11 @@
+{
+  "name": "gh-cli",
+  "description": "Use GitHub CLI (gh) for common operations like creating PRs, viewing GitHub Actions logs, managing issues, reviewing PRs, and more. Use this when you need to interact with GitHub repositories directly",
+  "repo": "ericmjl/skills",
+  "path": "skills/gh-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ericmjl/skills",
+  "dir_name": "gh-cli-ericmjl-skills-2"
+}

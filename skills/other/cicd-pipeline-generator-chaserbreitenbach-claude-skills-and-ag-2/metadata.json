@@ -1,0 +1,11 @@
+{
+  "name": "cicd-pipeline-generator",
+  "description": "Configurable GitHub Actions workflow generator that produces complete CI/CD pipelines\nfor any technology stack, including linting, testing, security scanning, and deployment.\n",
+  "repo": "chaserbreitenbach/claude-skills-and-agents",
+  "path": "skills/tooling/cicd-pipeline-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chaserbreitenbach/claude-skills-and-agents",
+  "dir_name": "cicd-pipeline-generator-chaserbreitenbach-claude-skills-and-ag-2"
+}

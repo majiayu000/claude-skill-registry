@@ -1,0 +1,11 @@
+{
+  "name": "backend-api",
+  "description": "Design and implement RESTful API endpoints with proper HTTP methods, status codes, and consistent naming conventions. Use this skill when creating or modifying API routes, endpoints, or server-side re",
+  "repo": "SpacePlushy/portfolio",
+  "path": ".claude/skills/backend-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpacePlushy/portfolio",
+  "dir_name": "backend-api-spaceplushy-portfolio-2"
+}

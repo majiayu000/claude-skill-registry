@@ -1,0 +1,11 @@
+{
+  "name": "yelp-search",
+  "description": "Search Yelp for local businesses, get contact info, ratings, and hours. Use when finding services (cleaners, groomers, restaurants, etc.), looking up business phone numbers to text, or checking rating",
+  "repo": "letta-ai/skills",
+  "path": "tools/yelp-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/letta-ai/skills",
+  "dir_name": "yelp-search-letta-ai-skills-2"
+}

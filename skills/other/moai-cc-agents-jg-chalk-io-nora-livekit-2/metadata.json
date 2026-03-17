@@ -1,0 +1,11 @@
+{
+  "name": "moai-cc-agents",
+  "description": "Claude Code Agents system, task delegation patterns, and multi-agent coordination. Use when creating custom agents, managing agent workflows, or implementing task delegation.",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-cc-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-cc-agents-jg-chalk-io-nora-livekit-2"
+}

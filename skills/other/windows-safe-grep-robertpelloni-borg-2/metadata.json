@@ -1,0 +1,11 @@
+{
+  "name": "windows-safe-grep",
+  "description": "Use when grep/ripgrep fails on Windows due to paths with backslash-space sequences creating malformed paths like 'nul' from \\n+ul",
+  "repo": "robertpelloni/borg",
+  "path": "config/opencode-template/superpowers/skills/windows-safe-grep",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertpelloni/borg",
+  "dir_name": "windows-safe-grep-robertpelloni-borg-2"
+}

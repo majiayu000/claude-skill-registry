@@ -1,0 +1,11 @@
+{
+  "name": "azure-devops-cli",
+  "description": "Expert guidance for Azure DevOps CLI (az devops) - automation, pipelines, repos, boards, and artifacts management. Use when working with Azure DevOps, managing pipelines, creating work items, or when ",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/azure-devops-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "azure-devops-cli-rysweet-azurehaymaker-2"
+}

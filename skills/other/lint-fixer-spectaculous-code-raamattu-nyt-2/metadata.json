@@ -1,0 +1,11 @@
+{
+  "name": "lint-fixer",
+  "description": "Expert assistant for analyzing and fixing linting and formatting issues in the KR92 Bible Voice project using Biome and TypeScript. Use when fixing lint errors, resolving TypeScript issues, applying c",
+  "repo": "Spectaculous-Code/raamattu-nyt",
+  "path": ".claude/skills/lint-fixer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Spectaculous-Code/raamattu-nyt",
+  "dir_name": "lint-fixer-spectaculous-code-raamattu-nyt-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "multimodal-segment-anything",
+  "description": "Foundation model for image segmentation with zero-shot transfer. Use when you need to segment any object in images using points, boxes, or masks as prompts, or automatically generate all object masks ",
+  "repo": "davila7/claude-code-templates",
+  "path": "cli-tool/components/skills/ai-research/multimodal-segment-anything",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davila7/claude-code-templates",
+  "dir_name": "multimodal-segment-anything-davila7-claude-code-template-2"
+}

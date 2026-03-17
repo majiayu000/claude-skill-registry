@@ -1,0 +1,11 @@
+{
+  "name": "beta-feedback-fixer",
+  "description": "Use when fixing issues identified in beta tester feedback. Guides systematic root cause analysis, worktree-based fixes, regression testing, and release preparation. Invoke with structured beta reports",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/beta-feedback-fixer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildcard/caro",
+  "dir_name": "beta-feedback-fixer-wildcard-caro-2"
+}

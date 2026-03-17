@@ -1,0 +1,11 @@
+{
+  "name": "update-readme",
+  "description": "Use this skill whenever the README requires a structural refresh.",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/sanctum/skills/update-readme",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "update-readme-athola-claude-night-market-2"
+}

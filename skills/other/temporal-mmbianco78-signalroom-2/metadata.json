@@ -1,0 +1,11 @@
+{
+  "name": "temporal",
+  "description": "Temporal.io workflow orchestration for SignalRoom. Use when designing workflows, debugging activities, managing schedules, or troubleshooting stuck workflows.",
+  "repo": "mmbianco78/signalroom",
+  "path": ".claude/skills/temporal",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mmbianco78/signalroom",
+  "dir_name": "temporal-mmbianco78-signalroom-2"
+}

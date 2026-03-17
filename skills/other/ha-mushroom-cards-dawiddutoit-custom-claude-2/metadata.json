@@ -1,0 +1,11 @@
+{
+  "name": "ha-mushroom-cards",
+  "description": "Create minimalist, mobile-first Home Assistant dashboards using the Mushroom cards ecosystem (13+ card types) with card-mod styling. Use when building modern HA dashboards, creating compact mobile int",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/ha-mushroom-cards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "ha-mushroom-cards-dawiddutoit-custom-claude-2"
+}

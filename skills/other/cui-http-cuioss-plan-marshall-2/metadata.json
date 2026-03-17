@@ -1,0 +1,11 @@
+{
+  "name": "cui-http",
+  "description": "CUI HTTP client standards with HttpHandler, HttpResult pattern, and async-first adapters",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-java-cui/skills/cui-http",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "cui-http-cuioss-plan-marshall-2"
+}

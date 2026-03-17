@@ -1,0 +1,11 @@
+{
+  "name": "auto",
+  "description": "Automatic, structured persistence of agent outputs to SQLite database. Use when tracking agent outputs across CFN Loop workflows, persisting confidence scores, or querying agent execution history.",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-memory-persistence/lib/auto",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "auto-masharratt-claude-flow-novice-2"
+}

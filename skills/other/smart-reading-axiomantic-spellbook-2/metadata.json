@@ -1,0 +1,11 @@
+{
+  "name": "smart-reading",
+  "description": "Use when reading files or command output of unknown size to avoid blind truncation and context loss",
+  "repo": "axiomantic/spellbook",
+  "path": "skills/smart-reading",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/axiomantic/spellbook",
+  "dir_name": "smart-reading-axiomantic-spellbook-2"
+}

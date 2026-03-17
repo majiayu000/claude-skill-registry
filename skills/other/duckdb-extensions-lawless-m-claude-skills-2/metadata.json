@@ -1,0 +1,11 @@
+{
+  "name": "DuckDB-Extensions",
+  "description": "Building DuckDB loadable extensions with CMake, FetchContent, and proper metadata handling",
+  "repo": "lawless-m/claude-skills",
+  "path": ".claude/skills/DuckDB-Extensions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lawless-m/claude-skills",
+  "dir_name": "duckdb-extensions-lawless-m-claude-skills-2"
+}

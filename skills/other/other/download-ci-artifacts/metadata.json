@@ -1,0 +1,9 @@
+{
+  "name": "download-ci-artifacts",
+  "repo": "benzwick/SlicerMouseMaster",
+  "path": ".claude/skills/download-ci-artifacts/SKILL.md",
+  "category": "other",
+  "source": "github.com/benzwick/SlicerMouseMaster",
+  "dir_name": "download-ci-artifacts",
+  "downloaded_at": "2026-02-15T06:33:06.066814Z"
+}

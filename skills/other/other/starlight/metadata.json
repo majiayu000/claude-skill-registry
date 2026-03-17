@@ -1,0 +1,9 @@
+{
+  "name": "starlight",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/starlight/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "starlight",
+  "downloaded_at": "2026-02-15T07:06:56.739762Z"
+}

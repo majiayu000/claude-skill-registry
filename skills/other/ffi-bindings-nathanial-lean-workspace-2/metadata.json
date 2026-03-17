@@ -1,0 +1,11 @@
+{
+  "name": "ffi-bindings",
+  "description": "Create FFI bindings between Lean 4 and C code. Use when working with foreign functions, native libraries, Metal, or system APIs.",
+  "repo": "nathanial/lean-workspace",
+  "path": ".claude/skills/ffi-bindings",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nathanial/lean-workspace",
+  "dir_name": "ffi-bindings-nathanial-lean-workspace-2"
+}

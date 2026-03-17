@@ -1,0 +1,11 @@
+{
+  "name": "frontend-testing",
+  "description": "Testa aplicacoes web usando Playwright. Captura screenshots, executa E2E tests,\nanalisa logs do browser. Integrado com qa-analyst para Phase 6.\nUse quando: testar frontend, capturar screenshots, valid",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/frontend-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "frontend-testing-arbgjr-satra-2"
+}

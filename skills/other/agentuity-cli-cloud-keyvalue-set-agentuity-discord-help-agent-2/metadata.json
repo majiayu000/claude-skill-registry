@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-keyvalue-set",
+  "description": "Set a key and value in the keyvalue storage. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/discord-help-agent",
+  "path": ".agents/skills/agentuity-cli-cloud-keyvalue-set",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/discord-help-agent",
+  "dir_name": "agentuity-cli-cloud-keyvalue-set-agentuity-discord-help-agent-2"
+}

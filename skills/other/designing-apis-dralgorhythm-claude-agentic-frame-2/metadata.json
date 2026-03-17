@@ -1,0 +1,11 @@
+{
+  "name": "designing-apis",
+  "description": "Design clean, consistent APIs. Use when creating new endpoints, defining contracts, or improving API ergonomics. Covers REST, versioning, and error handling.",
+  "repo": "dralgorhythm/claude-agentic-framework",
+  "path": ".claude/skills/architecture/designing-apis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dralgorhythm/claude-agentic-framework",
+  "dir_name": "designing-apis-dralgorhythm-claude-agentic-frame-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "example-skill",
+  "description": "Example skill - replace with your skill's description and activation keywords",
+  "repo": "travisjneuman/.claude",
+  "path": "templates/plugin-template/skills/example-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/travisjneuman/.claude",
+  "dir_name": "example-skill-travisjneuman-claude-2"
+}

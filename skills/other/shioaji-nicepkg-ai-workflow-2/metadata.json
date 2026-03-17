@@ -1,0 +1,11 @@
+{
+  "name": "shioaji",
+  "description": "Shioaji Taiwan financial trading API guide. Use when trading stocks/futures/options on Taiwan markets, subscribing to real-time market data, querying account info, or building automated trading system",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/stock-trader-workflow/.claude/skills/shioaji",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "shioaji-nicepkg-ai-workflow-2"
+}

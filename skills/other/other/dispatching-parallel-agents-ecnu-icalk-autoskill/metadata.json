@@ -1,0 +1,17 @@
+{
+  "name": "dispatching-parallel-agents",
+  "repo": "ECNU-ICALK/AutoSkill",
+  "path": "SkillBank/Common/superpowers/dispatching-parallel-agents/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ECNU-ICALK/AutoSkill",
+  "dir_name": "dispatching-parallel-agents-ecnu-icalk-autoskill",
+  "downloaded_at": "2026-03-01T05:13:28.536029Z",
+  "author": "ECNU-ICALK",
+  "source_url": "https://github.com/ECNU-ICALK/AutoSkill/blob/main/SkillBank/Common/superpowers/dispatching-parallel-agents/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ECNU-ICALK/AutoSkill/blob/main/SkillBank/Common/superpowers/dispatching-parallel-agents/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

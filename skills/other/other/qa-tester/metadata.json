@@ -1,0 +1,9 @@
+{
+  "name": "qa-tester",
+  "repo": "finos/morphir-dotnet",
+  "path": ".claude/skills/qa-tester/SKILL.md",
+  "category": "other",
+  "source": "github.com/finos/morphir-dotnet",
+  "dir_name": "qa-tester",
+  "downloaded_at": "2026-02-22T07:10:04.937153Z"
+}

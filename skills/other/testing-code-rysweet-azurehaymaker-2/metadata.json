@@ -1,0 +1,11 @@
+{
+  "name": "testing-code",
+  "description": "Generates and improves tests following TDD principles. Activates when new features are implemented, test coverage is low, or user requests tests. Ensures comprehensive test coverage with unit, integra",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/quality/testing-code",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "testing-code-rysweet-azurehaymaker-2"
+}

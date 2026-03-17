@@ -1,0 +1,9 @@
+{
+  "name": "security-reviewer",
+  "repo": "hainamchung/agent-assistant",
+  "path": "skills/security-reviewer/SKILL.md",
+  "category": "other",
+  "source": "github.com/hainamchung/agent-assistant",
+  "dir_name": "security-reviewer-hainamchung-agent-assistant",
+  "downloaded_at": "2026-02-15T07:26:49.681808Z"
+}

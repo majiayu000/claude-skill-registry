@@ -1,0 +1,11 @@
+{
+  "name": "reorganize-docs",
+  "description": "Reorganize project documentation with bilingual (English/Japanese) structure. Use when asked to \"reorganize docs\", \"update documentation\", or \"sync documentation\".",
+  "repo": "tqer39/blog",
+  "path": ".claude/skills/reorganize-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tqer39/blog",
+  "dir_name": "reorganize-docs-tqer39-blog-2"
+}

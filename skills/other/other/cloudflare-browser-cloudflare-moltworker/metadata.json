@@ -1,0 +1,9 @@
+{
+  "name": "cloudflare-browser",
+  "repo": "cloudflare/moltworker",
+  "path": "skills/cloudflare-browser/SKILL.md",
+  "category": "other",
+  "source": "github.com/cloudflare/moltworker",
+  "dir_name": "cloudflare-browser-cloudflare-moltworker",
+  "downloaded_at": "2026-02-15T06:46:11.451685Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-skills-index",
+  "description": "Analyze and categorize installed Nixtla Skills for forecasting guidance. Use when seeing available skills or selecting the right one. Trigger with 'list nixtla skills' or 'what skills'.",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "003-skills/.claude/skills-backup-20251210-155310/nixtla-skills-index",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-skills-index-intent-solutions-io-plugins-nixtla-2"
+}

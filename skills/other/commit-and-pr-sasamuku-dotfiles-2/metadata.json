@@ -1,0 +1,11 @@
+{
+  "name": "commit-and-pr",
+  "description": "Execute /commit-and-pr slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/commit-and-pr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "commit-and-pr-sasamuku-dotfiles-2"
+}

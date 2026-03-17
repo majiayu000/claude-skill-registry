@@ -1,0 +1,11 @@
+{
+  "name": "implementing-wpf-automation",
+  "description": "Implements WPF UI Automation for accessibility using AutomationPeer and AutomationProperties. Use when building accessible applications or enabling screen reader support.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/implementing-wpf-automation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "implementing-wpf-automation-christian289-dotnet-with-claudeco-2"
+}

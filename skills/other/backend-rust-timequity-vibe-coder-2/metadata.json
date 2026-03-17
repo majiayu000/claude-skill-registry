@@ -1,0 +1,11 @@
+{
+  "name": "backend-rust",
+  "description": "Modern Rust backend with Axum, SQLx, tokio + CI/CD automation.\nUse when: building Rust APIs, high-performance services, or needing build/test/lint/audit automation.\nTriggers: \"axum\", \"rust backend\", \"",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/backend-rust",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "backend-rust-timequity-vibe-coder-2"
+}

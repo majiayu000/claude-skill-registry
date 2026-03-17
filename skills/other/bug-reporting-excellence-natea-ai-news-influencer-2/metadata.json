@@ -1,0 +1,11 @@
+{
+  "name": "bug-reporting-excellence",
+  "description": "Write high-quality bug reports that get fixed quickly. Use when reporting bugs, training teams on bug reporting, or establishing bug report standards.",
+  "repo": "natea/ai-news-influencer",
+  "path": ".claude/skills/bug-reporting-excellence",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/natea/ai-news-influencer",
+  "dir_name": "bug-reporting-excellence-natea-ai-news-influencer-2"
+}

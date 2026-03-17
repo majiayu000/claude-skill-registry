@@ -1,0 +1,11 @@
+{
+  "name": "policyengine-data-testing-skill",
+  "description": "Testing patterns for PolicyEngine data generation pipelines (policyengine-us-data, policyengine-uk-data)",
+  "repo": "PolicyEngine/policyengine-claude",
+  "path": "skills/technical-patterns/policyengine-data-testing-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PolicyEngine/policyengine-claude",
+  "dir_name": "policyengine-data-testing-skill-policyengine-policyengine-claude-2"
+}

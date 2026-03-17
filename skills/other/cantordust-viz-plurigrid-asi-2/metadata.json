@@ -1,0 +1,11 @@
+{
+  "name": "cantordust-viz",
+  "description": "Binary visualization for human pattern recognition - Ghidra plugin by Chris Domas (xoreaxeaxeax)",
+  "repo": "plurigrid/asi",
+  "path": "skills/cantordust-viz",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "cantordust-viz-plurigrid-asi-2"
+}

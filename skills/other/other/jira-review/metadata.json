@@ -1,0 +1,9 @@
+{
+  "name": "jira-review",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/jira-review/SKILL.md",
+  "category": "other",
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "jira-review",
+  "downloaded_at": "2026-02-15T05:22:58.076738Z"
+}

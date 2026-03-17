@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-members",
+  "description": "Manages GitLab members. Use for listing members in groups or projects. Triggers: user access, permissions.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-members",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-members-knuckles-team-gitlab-api-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "fastapi-endpoint-scaffolder",
+  "description": "Scaffolds a new FastAPI endpoint with Pydantic models, router registration, and tests. Use when creating new backend API endpoints. Related: pydantic-model-scaffolder for complex model validation.",
+  "repo": "okgoogle13/careercopilot",
+  "path": ".claude/skills/_legacy_archive/fastapi-endpoint-scaffolder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/okgoogle13/careercopilot",
+  "dir_name": "fastapi-endpoint-scaffolder-okgoogle13-careercopilot-2"
+}

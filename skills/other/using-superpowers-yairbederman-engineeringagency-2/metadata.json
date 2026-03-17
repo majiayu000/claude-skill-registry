@@ -1,0 +1,11 @@
+{
+  "name": "using-superpowers",
+  "description": "Use at conversation start - establishes how to find and use skills, requiring skill loading before ANY response",
+  "repo": "yairbederman/EngineeringAgency",
+  "path": "skills/using-superpowers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yairbederman/EngineeringAgency",
+  "dir_name": "using-superpowers-yairbederman-engineeringagency-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "obra-receiving-code-review",
+  "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative",
+  "repo": "faulkdev/github-copilot-superpowers",
+  "path": ".github/skills/obra/obra-receiving-code-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/faulkdev/github-copilot-superpowers",
+  "dir_name": "obra-receiving-code-review-faulkdev-github-copilot-super-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "julia-gay",
+  "description": "Gay.jl integration for deterministic color generation. SplitMix64 RNG, GF(3) trits, and SPI-compliant fingerprints in Julia.",
+  "repo": "plurigrid/asi",
+  "path": "skills/julia-gay",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "julia-gay-plurigrid-asi-2"
+}

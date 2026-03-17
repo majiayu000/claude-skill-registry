@@ -1,0 +1,11 @@
+{
+  "name": "task-automation",
+  "description": "Execute development tasks from manifest, run parallel agents, verify builds, manage task pipeline. Use when user wants to run tasks, check task status, execute dev loop, or work through the backlog.",
+  "repo": "abhiaiyer91/solo",
+  "path": ".claude/skills/task-automation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/abhiaiyer91/solo",
+  "dir_name": "task-automation-abhiaiyer91-solo-2"
+}

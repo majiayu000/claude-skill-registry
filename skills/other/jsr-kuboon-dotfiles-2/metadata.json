@@ -1,0 +1,11 @@
+{
+  "name": "jsr",
+  "description": "jsr release workflow for Deno projects. Use when publishing or releasing packages to JSR (JavaScript Registry) using Deno.",
+  "repo": "kuboon/dotfiles",
+  "path": "skills/jsr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kuboon/dotfiles",
+  "dir_name": "jsr-kuboon-dotfiles-2"
+}

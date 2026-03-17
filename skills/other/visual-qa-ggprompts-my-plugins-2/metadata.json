@@ -1,0 +1,11 @@
+{
+  "name": "visual-qa",
+  "description": "Visual QA checkpoint for conductor gates. Uses tabz MCP tools to check browser console errors, take screenshots, and identify obvious UI issues. Returns structured result with pass/fail status and cap",
+  "repo": "GGPrompts/my-plugins",
+  "path": "plugins/tools/conductor/skills/visual-qa",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GGPrompts/my-plugins",
+  "dir_name": "visual-qa-ggprompts-my-plugins-2"
+}

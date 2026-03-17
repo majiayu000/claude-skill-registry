@@ -1,0 +1,11 @@
+{
+  "name": "motion",
+  "description": "Motion animation library for React - essential patterns for components, transitions, gestures, and performance. Trigger: When animating React components, motion, whileHover, whileTap, layout animation",
+  "repo": "stephanofer/finance-trackerv2",
+  "path": ".opencode/skill/motion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/stephanofer/finance-trackerv2",
+  "dir_name": "motion-stephanofer-finance-trackerv2-2"
+}

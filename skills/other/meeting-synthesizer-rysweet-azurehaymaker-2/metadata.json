@@ -1,0 +1,11 @@
+{
+  "name": "meeting-synthesizer",
+  "description": "Processes meeting notes or transcripts to extract structured information.\nUse after meetings to quickly generate action items, capture decisions, and create follow-up tasks.\nExtracts: action items wit",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/meeting-synthesizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "meeting-synthesizer-rysweet-azurehaymaker-2"
+}

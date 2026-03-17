@@ -1,0 +1,11 @@
+{
+  "name": "electron-desktop",
+  "description": "Desktop application development with Electron for Windows, macOS, and Linux. Use when building cross-platform desktop apps, implementing native OS features, or packaging web apps for desktop.",
+  "repo": "travisjneuman/.claude",
+  "path": "skills/electron-desktop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/travisjneuman/.claude",
+  "dir_name": "electron-desktop-travisjneuman-claude-2"
+}

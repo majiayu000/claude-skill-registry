@@ -1,0 +1,11 @@
+{
+  "name": "bknd-webhooks",
+  "description": "Use when configuring webhook integrations in Bknd. Covers receiving incoming webhooks via HTTP triggers, sending outgoing webhooks with FetchTask, event-triggered webhooks on data changes, signature v",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-webhooks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-webhooks-cameronapak-freedom-stack-v3-2"
+}

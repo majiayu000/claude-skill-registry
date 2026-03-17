@@ -1,0 +1,11 @@
+{
+  "name": "bug-finder",
+  "description": "Méthodologie systématique pour identifier la cause d'un bug avant de le corriger. MANDATORY pour bug resolution. À utiliser lors de debugging, bug reports, ou quand l'utilisateur mentionne \"bug\", \"err",
+  "repo": "RomualdP/hoki",
+  "path": ".claude/skills/bug-finder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RomualdP/hoki",
+  "dir_name": "bug-finder-romualdp-hoki-2"
+}

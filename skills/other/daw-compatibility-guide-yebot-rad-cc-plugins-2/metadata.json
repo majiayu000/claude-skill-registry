@@ -1,0 +1,11 @@
+{
+  "name": "daw-compatibility-guide",
+  "description": "DAW-specific quirks, known issues, and workarounds for Logic Pro, Ableton Live, Pro Tools, Cubase, Reaper, FL Studio, Bitwig with format-specific requirements (AU/VST3/AAX). Use when troubleshooting D",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/juce-dev-team/skills/daw-compatibility-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "daw-compatibility-guide-yebot-rad-cc-plugins-2"
+}

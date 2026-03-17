@@ -1,0 +1,11 @@
+{
+  "name": "git-config",
+  "description": "Comprehensive Git configuration guide covering global settings, aliases, performance tuning, credential management, maintenance, .gitattributes, clone shortcuts, and troubleshooting. Use when configur",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/github-specialist/git-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "git-config-prorise-cool-claude-code-multi-ag-2"
+}

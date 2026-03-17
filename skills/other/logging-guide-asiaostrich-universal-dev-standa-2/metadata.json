@@ -1,0 +1,11 @@
+{
+  "name": "logging-guide",
+  "description": "實作結構化日誌，包含正確的日誌層級和敏感資料處理。\n使用時機：新增日誌、除錯、設定可觀測性。\n關鍵字：logging, log level, structured logging, observability, 日誌, 記錄, 結構化日誌。\n",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "path": "locales/zh-CN/skills/claude-code/logging-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AsiaOstrich/universal-dev-standards",
+  "dir_name": "logging-guide-asiaostrich-universal-dev-standa-2"
+}

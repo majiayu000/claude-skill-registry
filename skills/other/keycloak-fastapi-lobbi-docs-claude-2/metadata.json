@@ -1,0 +1,11 @@
+{
+  "name": "keycloak-fastapi",
+  "description": "This skill should be used when the user asks to \"add Keycloak authentication\", \"implement OIDC\", \"configure SSO\", \"validate JWT token\", \"add role-based access\", \"protect API endpoint\", or mentions Key",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/fastapi-backend/skills/keycloak-fastapi",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "keycloak-fastapi-lobbi-docs-claude-2"
+}

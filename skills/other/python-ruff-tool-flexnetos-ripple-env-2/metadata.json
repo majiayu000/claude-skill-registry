@@ -1,0 +1,11 @@
+{
+  "name": "python-ruff-tool",
+  "description": "Use ruff to lint, format, and modernize Python code. Activate when: (1) Fixing PEP 8 violations, (2) Removing unused imports, (3) Upgrading deprecated Python syntax (UP rules), (4) Auto-fixing code qu",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/python-ruff-tool",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FlexNetOS/ripple-env",
+  "dir_name": "python-ruff-tool-flexnetos-ripple-env-2"
+}

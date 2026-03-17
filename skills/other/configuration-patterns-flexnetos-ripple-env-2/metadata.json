@@ -1,0 +1,11 @@
+{
+  "name": "configuration-patterns",
+  "description": "Enforce Nix + Pixi + direnv + Home-manager configuration patterns",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/configuration-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FlexNetOS/ripple-env",
+  "dir_name": "configuration-patterns-flexnetos-ripple-env-2"
+}

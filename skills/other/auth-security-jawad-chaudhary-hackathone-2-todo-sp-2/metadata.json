@@ -1,0 +1,11 @@
+{
+  "name": "auth-security",
+  "description": "JWT authentication with Better Auth, token verification, user isolation, and security middleware. Use when implementing auth, protecting endpoints, or verifying tokens.",
+  "repo": "Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development",
+  "path": "Phase03/.claude/skills/auth-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development",
+  "dir_name": "auth-security-jawad-chaudhary-hackathone-2-todo-sp-2"
+}

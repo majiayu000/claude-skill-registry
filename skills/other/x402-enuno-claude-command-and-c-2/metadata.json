@@ -1,0 +1,11 @@
+{
+  "name": "x402",
+  "description": "x402 open payment standard for HTTP-native crypto payments. Use for API monetization, AI agent payments, micropayments, and integrating USDC payments into web services using HTTP 402 status code.",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/x402",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "x402-enuno-claude-command-and-c-2"
+}

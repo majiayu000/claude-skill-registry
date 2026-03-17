@@ -1,0 +1,11 @@
+{
+  "name": "ralph-wiggum",
+  "description": "Autonomous AI coding loop for unattended development - lets Claude work continuously on tasks while you sleep, with mandatory sandbox enforcement for safety",
+  "repo": "jkitchin/skillz",
+  "path": "skills/development/ralph-wiggum",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jkitchin/skillz",
+  "dir_name": "ralph-wiggum-jkitchin-skillz-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "fullstack-feature",
+  "description": "Orchestrates creating a complete fullstack feature across backend and frontend. Use when adding new features that span both layers.",
+  "repo": "MenadBt/prospection",
+  "path": ".claude/skills/fullstack-feature",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MenadBt/prospection",
+  "dir_name": "fullstack-feature-menadbt-prospection-2"
+}

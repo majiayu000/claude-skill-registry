@@ -1,0 +1,11 @@
+{
+  "name": "git-workflow-guide",
+  "description": "指導 Git 分支策略、分支命名与合併操作。\n使用时机：建立分支、合併、Pull Request、Git 工作流程問題。\n关鍵字：branch, merge, PR, pull request, GitFlow, GitHub Flow, 分支, 合併, 工作流程。",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "path": "locales/zh-CN/skills/claude-code/git-workflow-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AsiaOstrich/universal-dev-standards",
+  "dir_name": "git-workflow-guide-asiaostrich-universal-dev-standa-2"
+}

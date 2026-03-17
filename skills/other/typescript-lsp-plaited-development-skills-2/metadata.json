@@ -1,0 +1,11 @@
+{
+  "name": "typescript-lsp",
+  "description": "Search TypeScript SYMBOLS (functions, types, classes) - NOT text. Use Glob to find files, Grep for text search, LSP for symbol search. Provides type-aware results that understand imports, exports, and",
+  "repo": "plaited/development-skills",
+  "path": ".claude/skills/typescript-lsp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plaited/development-skills",
+  "dir_name": "typescript-lsp-plaited-development-skills-2"
+}

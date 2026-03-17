@@ -1,0 +1,11 @@
+{
+  "name": "permission-fix",
+  "description": "Write operations for fixing and managing Claude Code permissions - add, remove, consolidate, ensure, apply-fixes.",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/plan-marshall/skills/permission-fix",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "permission-fix-cuioss-plan-marshall-2"
+}

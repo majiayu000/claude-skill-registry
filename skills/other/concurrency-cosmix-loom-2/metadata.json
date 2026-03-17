@@ -1,0 +1,11 @@
+{
+  "name": "concurrency",
+  "description": "Concurrency enables programs to handle multiple tasks efficiently. This skill covers async/await patterns across Rust (tokio), Python (asyncio), TypeScript (Promises), and Go (goroutines). Includes pa",
+  "repo": "cosmix/loom",
+  "path": "skills/concurrency",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "concurrency-cosmix-loom-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sql-patterns",
+  "description": "Quick reference for common SQL patterns, CTEs, window functions, and indexing strategies. Triggers on: sql patterns, cte example, window functions, sql join, index strategy, pagination sql.",
+  "repo": "0xDarkMatter/claude-mods",
+  "path": "skills/sql-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/0xDarkMatter/claude-mods",
+  "dir_name": "sql-patterns-0xdarkmatter-claude-mods-2"
+}

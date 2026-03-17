@@ -1,0 +1,11 @@
+{
+  "name": "backend-quality",
+  "description": "Runs backend quality checks including formatting, linting, and tests. Use before commits, to verify code quality, or when the user says \"check backend\", \"run backend tests\", \"format backend\".",
+  "repo": "MenadBt/prospection",
+  "path": ".claude/skills/backend-quality",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MenadBt/prospection",
+  "dir_name": "backend-quality-menadbt-prospection-2"
+}

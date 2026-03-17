@@ -1,0 +1,9 @@
+{
+  "name": "docker-hadolint",
+  "repo": "TheBeardedBearSAS/claude-craft",
+  "path": ".claude/skills/docker-hadolint/SKILL.md",
+  "category": "other",
+  "source": "github.com/TheBeardedBearSAS/claude-craft",
+  "dir_name": "docker-hadolint",
+  "downloaded_at": "2026-02-22T05:49:39.779481Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "architecting",
+  "description": "Architects new features through the full lifecycle. Use when designing, planning, implementing, or extending features. Triggers on 'new feature', 'design', 'plan', 'implement', 'architect', 'prd', 'sp",
+  "repo": "VidyFoo/antigravity-skill-engine",
+  "path": ".agent/skills/1-dev/architecting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VidyFoo/antigravity-skill-engine",
+  "dir_name": "architecting-vidyfoo-antigravity-skill-en-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "documentation-generation",
+  "repo": "ShunsukeHayashi/Miyabi",
+  "path": "packages/mcp-bundle/claude-plugins/miyabi-full/skills/documentation-generation/SKILL.md",
+  "category": "other",
+  "source": "github.com/ShunsukeHayashi/Miyabi",
+  "dir_name": "documentation-generation",
+  "downloaded_at": "2026-02-15T05:46:53.310525Z"
+}

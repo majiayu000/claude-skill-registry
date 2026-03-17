@@ -1,0 +1,11 @@
+{
+  "name": "website-copywriting",
+  "description": "Website copy creation for CMS implementation. Use when writing website copy, page content, creating new pages, or rewriting existing pages. Triggers on \"write copy\", \"website copy\", \"page content\", \"r",
+  "repo": "NoCodeify/aeo",
+  "path": ".claude/skills/website-copywriting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NoCodeify/aeo",
+  "dir_name": "website-copywriting-nocodeify-aeo-2"
+}

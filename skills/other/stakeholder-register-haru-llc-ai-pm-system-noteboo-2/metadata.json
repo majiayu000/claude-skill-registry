@@ -1,0 +1,11 @@
+{
+  "name": "stakeholder-register",
+  "description": "ステークホルダー登録簿を作成する。関係者分析、ステークホルダー管理時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/initiating/stakeholder-register",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "stakeholder-register-haru-llc-ai-pm-system-noteboo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "threading-wpf-dispatcher",
+  "description": "Explains WPF Dispatcher priority system and threading patterns. Use when implementing background operations, maintaining UI responsiveness, or understanding task scheduling order.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/threading-wpf-dispatcher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "threading-wpf-dispatcher-christian289-dotnet-with-claudeco-2"
+}

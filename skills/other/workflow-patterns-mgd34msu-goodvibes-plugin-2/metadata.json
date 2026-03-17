@@ -1,0 +1,11 @@
+{
+  "name": "workflow-patterns",
+  "description": "Reusable workflow patterns for skills and agents including sequential checklists, conditional routing, validation loops, and progressive disclosure. Use when designing structured procedures.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/create/workflow-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "workflow-patterns-mgd34msu-goodvibes-plugin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "issues-deduplication",
+  "description": "Handles deduplication of YouTrack issues. Use when cleaning up duplicate issues, consolidating related bug reports, or organizing issue tracker.",
+  "repo": "JetBrains/ideavim",
+  "path": ".claude/skills/issues-deduplication",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JetBrains/ideavim",
+  "dir_name": "issues-deduplication-jetbrains-ideavim-2"
+}

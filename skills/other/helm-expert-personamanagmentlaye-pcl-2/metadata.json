@@ -1,0 +1,11 @@
+{
+  "name": "helm-expert",
+  "description": "Expert-level Helm 3 package management, chart development, templating, and production operations",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/devops/helm-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "helm-expert-personamanagmentlaye-pcl-2"
+}

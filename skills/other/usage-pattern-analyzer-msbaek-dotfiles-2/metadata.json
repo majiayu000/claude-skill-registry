@@ -1,0 +1,11 @@
+{
+  "name": "usage-pattern-analyzer",
+  "description": "Claude Code 도구 사용 패턴 및 생산성 트렌드 분석.\n반복 작업 감지, 시간대별 생산성, 도구 사용 빈도 시각화.\n\"패턴 분석\", \"사용 통계\", \"productivity\" 등의 요청 시 자동 적용.",
+  "repo": "msbaek/dotfiles",
+  "path": ".claude/skills/usage-pattern-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/msbaek/dotfiles",
+  "dir_name": "usage-pattern-analyzer-msbaek-dotfiles-2"
+}

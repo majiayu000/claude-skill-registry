@@ -1,0 +1,11 @@
+{
+  "name": "coding-standard-java",
+  "description": "Enforce Java coding standards including camelCase variables, PascalCase classes, and PascalCase filenames matching class names.",
+  "repo": "jdubray/puffin",
+  "path": ".claude/skills/coding-standard-java",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jdubray/puffin",
+  "dir_name": "coding-standard-java-jdubray-puffin-2"
+}

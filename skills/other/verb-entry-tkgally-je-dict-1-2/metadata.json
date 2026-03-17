@@ -1,0 +1,11 @@
+{
+  "name": "verb-entry",
+  "description": "Requirements for creating or revising verb entries in je-dict-1. Covers transitivity, aspect/ている behavior, particle patterns, and collocations.",
+  "repo": "tkgally/je-dict-1",
+  "path": ".claude/skills/verb-entry",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tkgally/je-dict-1",
+  "dir_name": "verb-entry-tkgally-je-dict-1-2"
+}

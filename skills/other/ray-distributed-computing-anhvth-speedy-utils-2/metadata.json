@@ -1,0 +1,11 @@
+{
+  "name": "ray-distributed-computing",
+  "description": "Comprehensive guide to using Ray for scalable distributed computing, including Ray Core, Data, Train, Tune, Serve, and RLlib with practical examples",
+  "repo": "anhvth/speedy_utils",
+  "path": ".github/skills/ray-distributed-computing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/anhvth/speedy_utils",
+  "dir_name": "ray-distributed-computing-anhvth-speedy-utils-2"
+}

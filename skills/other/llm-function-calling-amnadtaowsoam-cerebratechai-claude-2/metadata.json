@@ -1,0 +1,11 @@
+{
+  "name": "llm-function-calling",
+  "description": "Implementing function calling (tool use) with LLMs for structured outputs and external integrations.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "06-ai-ml-production/llm-function-calling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "llm-function-calling-amnadtaowsoam-cerebratechai-claude-2"
+}

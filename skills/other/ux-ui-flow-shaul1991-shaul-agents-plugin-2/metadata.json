@@ -1,0 +1,11 @@
+{
+  "name": "ux-ui-flow",
+  "description": "사용자 플로우 분석 에이전트. 사용자 여정과 인터랙션 플로우를 설계합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/ux-ui-flow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "ux-ui-flow-shaul1991-shaul-agents-plugin-2"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "architecture-paradigm-functional-core",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/archetypes/skills/architecture-paradigm-functional-core/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "architecture-paradigm-functional-core",
+  "downloaded_at": "2026-03-05T01:18:34.968302Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/master/plugins/archetypes/skills/architecture-paradigm-functional-core/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athola/claude-night-market/blob/master/plugins/archetypes/skills/architecture-paradigm-functional-core/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "openshift-trusted-ca-bundle",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/openshift:trusted-ca-bundle/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "openshift-trusted-ca-bundle",
+  "downloaded_at": "2026-02-15T07:49:46.989523Z"
+}

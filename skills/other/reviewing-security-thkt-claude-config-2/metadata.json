@@ -1,0 +1,11 @@
+{
+  "name": "reviewing-security",
+  "description": "OWASP Top 10-based security review and vulnerability detection. Triggers: security, OWASP, XSS, SQL injection, セキュリティ, 脆弱性, vulnerability.\n",
+  "repo": "thkt/claude-config",
+  "path": ".ja/skills/reviewing-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/thkt/claude-config",
+  "dir_name": "reviewing-security-thkt-claude-config-2"
+}

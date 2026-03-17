@@ -1,0 +1,11 @@
+{
+  "name": "review-renovate",
+  "description": "Execute /review-renovate slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/review-renovate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "review-renovate-sasamuku-dotfiles-2"
+}

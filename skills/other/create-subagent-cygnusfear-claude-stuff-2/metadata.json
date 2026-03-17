@@ -1,0 +1,11 @@
+{
+  "name": "create-subagent",
+  "description": "This skill should be used when creating custom subagents for Claude Code, configuring specialized AI assistants, or when the user asks about agent creation, agent configuration, or delegating tasks to",
+  "repo": "Cygnusfear/claude-stuff",
+  "path": "skills/create-subagent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cygnusfear/claude-stuff",
+  "dir_name": "create-subagent-cygnusfear-claude-stuff-2"
+}

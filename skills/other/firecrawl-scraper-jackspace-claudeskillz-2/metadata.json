@@ -1,0 +1,11 @@
+{
+  "name": "firecrawl-scraper",
+  "description": "Complete knowledge domain for Firecrawl v2 API - web scraping and crawling that converts websites into LLM-ready markdown or structured data.\n\nUse when: scraping websites, crawling entire sites, extra",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/firecrawl-scraper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "firecrawl-scraper-jackspace-claudeskillz-2"
+}

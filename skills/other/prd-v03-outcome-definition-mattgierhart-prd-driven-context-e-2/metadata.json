@@ -1,0 +1,11 @@
+{
+  "name": "prd-v03-outcome-definition",
+  "description": "Define measurable success metrics (KPIs) tied to product type during PRD v0.3 Commercial Model. Triggers on requests to define success metrics, set KPI targets, determine what to measure, establish go",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v03-outcome-definition",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v03-outcome-definition-mattgierhart-prd-driven-context-e-2"
+}

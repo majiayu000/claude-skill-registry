@@ -1,0 +1,11 @@
+{
+  "name": "product-onboarding",
+  "description": "Add a new Skill Recordings product to the support platform. Use when user says \"add product\", \"new app\", \"onboard [product name]\", or similar.",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/product-onboarding",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "product-onboarding-skillrecordings-support-2"
+}

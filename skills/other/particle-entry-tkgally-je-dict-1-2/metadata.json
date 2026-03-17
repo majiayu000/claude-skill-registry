@@ -1,0 +1,11 @@
+{
+  "name": "particle-entry",
+  "description": "Requirements for creating or revising particle entries in je-dict-1. HIGH PRIORITY - covers predicate lists, particle contrasts, and fixed patterns.",
+  "repo": "tkgally/je-dict-1",
+  "path": ".claude/skills/particle-entry",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tkgally/je-dict-1",
+  "dir_name": "particle-entry-tkgally-je-dict-1-2"
+}

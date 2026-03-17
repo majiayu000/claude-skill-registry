@@ -1,0 +1,11 @@
+{
+  "name": "generate-backend-test",
+  "description": "Generates test files following TDD patterns with Given-When-Then structure. Use when creating tests for domain logic, API endpoints, or repositories.",
+  "repo": "MenadBt/prospection",
+  "path": ".claude/skills/generate-backend-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MenadBt/prospection",
+  "dir_name": "generate-backend-test-menadbt-prospection-2"
+}

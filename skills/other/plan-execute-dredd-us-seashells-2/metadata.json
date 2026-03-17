@@ -1,0 +1,11 @@
+{
+  "name": "plan-execute",
+  "description": "Two-phase workflow that generates explicit YAML plan before execution, with approval gates and checkpointing. Use for complex multi-file changes, refactoring, bug fixes with dependencies, or any task ",
+  "repo": "dredd-us/seashells",
+  "path": ".claude/skills/plan-execute",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dredd-us/seashells",
+  "dir_name": "plan-execute-dredd-us-seashells-2"
+}

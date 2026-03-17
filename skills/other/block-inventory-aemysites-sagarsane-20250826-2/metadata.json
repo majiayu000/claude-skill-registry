@@ -1,0 +1,11 @@
+{
+  "name": "block-inventory",
+  "description": "Survey available blocks from local AEM Edge Delivery Services project and Block Collection to understand the block palette available for authoring. Returns block inventory with purposes to inform cont",
+  "repo": "aemysites/sagarsane-20250826",
+  "path": ".claude/skills/block-inventory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aemysites/sagarsane-20250826",
+  "dir_name": "block-inventory-aemysites-sagarsane-20250826-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "tech-writer",
+  "description": "Technical Writer for documentation. Creates and maintains technical and user documentation. Use this skill for documentation, README, API docs, or user guides.",
+  "repo": "Denissvgn/project-team-ag",
+  "path": ".agent/skills/tech-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Denissvgn/project-team-ag",
+  "dir_name": "tech-writer-denissvgn-project-team-ag-2"
+}

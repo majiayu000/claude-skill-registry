@@ -1,0 +1,11 @@
+{
+  "name": "moai-cc-hook-model-strategy",
+  "description": "Claude Code hook execution strategies, timing models, sequencing patterns, and orchestration for automated workflow enforcement. Covers all hook types and execution timing models.",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-cc-hook-model-strategy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-cc-hook-model-strategy-jg-chalk-io-nora-livekit-2"
+}

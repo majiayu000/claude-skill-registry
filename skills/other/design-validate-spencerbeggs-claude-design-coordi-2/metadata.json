@@ -1,0 +1,11 @@
+{
+  "name": "design-validate",
+  "description": "Validate design doc structure and frontmatter. Use when checking design docs for compliance, ensuring proper formatting, or verifying metadata before commits.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/design-validate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "design-validate-spencerbeggs-claude-design-coordi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "reflection",
+  "description": "Self-improving meta-skill that learns from user corrections and updates the TARGET PROJECT's skill files. Only runs when user explicitly says \"reflect\". Commits all skill updates to Git.",
+  "repo": "richardhowes/self-improvement-code-quality-plugin",
+  "path": "code-quality/skills/reflection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/richardhowes/self-improvement-code-quality-plugin",
+  "dir_name": "reflection-richardhowes-self-improvement-cod-2"
+}

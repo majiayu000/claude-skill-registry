@@ -1,0 +1,11 @@
+{
+  "name": "blog-creator",
+  "description": "テーマから高品質なブログ記事、画像生成プロンプト、SNS展開コンテンツまでを体系的に作成するワークフロー。「ブログを書きたい」「記事を作りたい」「コンテンツを制作したい」「記事企画」「SNS展開」「音声台本」「ポッドキャスト原稿」などのリクエストに使用。10段階（C1〜C10）の構造化されたステップで、リサーチ計画からマルチメディア展開まで一貫して生成。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/blog-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "blog-creator-yuch4-dx-selecta-2"
+}

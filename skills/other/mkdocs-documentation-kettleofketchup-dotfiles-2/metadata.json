@@ -1,0 +1,11 @@
+{
+  "name": "mkdocs-documentation",
+  "description": "MkDocs Material documentation management. This skill should be used when writing, formatting, or validating documentation in docs/. Covers admonitions, Mermaid diagrams, code blocks with annotations, ",
+  "repo": "kettleofketchup/dotfiles",
+  "path": ".claude/skills/mkdocs-documentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kettleofketchup/dotfiles",
+  "dir_name": "mkdocs-documentation-kettleofketchup-dotfiles-2"
+}

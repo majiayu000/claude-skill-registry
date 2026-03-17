@@ -1,0 +1,11 @@
+{
+  "name": "opi",
+  "description": "Extract learnings from recent git commits and current conversation. Analyzes fixes,\nrefactors, and corrections to propose entries for learnings files.\n\nUse when:\n- User says \"/opi\" or \"opi\"\n- \"What di",
+  "repo": "Spectaculous-Code/raamattu-nyt",
+  "path": ".claude/skills/opi",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Spectaculous-Code/raamattu-nyt",
+  "dir_name": "opi-spectaculous-code-raamattu-nyt-2"
+}

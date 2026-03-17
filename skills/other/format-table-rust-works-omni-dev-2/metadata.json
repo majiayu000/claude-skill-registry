@@ -1,0 +1,11 @@
+{
+  "name": "format-table",
+  "description": "Formats markdown tables with fixed-width columns for consistent alignment. Use when creating tables, reformatting existing tables, or ensuring table readability. Triggers on terms like \"format table\",",
+  "repo": "rust-works/omni-dev",
+  "path": ".claude/skills/format-table",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rust-works/omni-dev",
+  "dir_name": "format-table-rust-works-omni-dev-2"
+}

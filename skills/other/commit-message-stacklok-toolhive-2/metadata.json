@@ -1,0 +1,11 @@
+{
+  "name": "commit-message",
+  "description": "Generates clear commit messages from git diffs. Use when writing commit messages or reviewing staged changes.",
+  "repo": "stacklok/toolhive",
+  "path": ".claude/skills/commit-message",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/stacklok/toolhive",
+  "dir_name": "commit-message-stacklok-toolhive-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "mojo-lint-syntax",
+  "description": "Validate Mojo syntax against current v0.26.1+ standards. Use to catch syntax errors before compilation.",
+  "repo": "mvillmow/ProjectOdyssey",
+  "path": ".claude/skills/mojo-lint-syntax",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mvillmow/ProjectOdyssey",
+  "dir_name": "mojo-lint-syntax-mvillmow-projectodyssey-2"
+}

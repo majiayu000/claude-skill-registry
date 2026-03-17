@@ -1,0 +1,11 @@
+{
+  "name": "req-to-codex-prompt",
+  "description": "將使用者的自然語言需求，轉換成「Codex 可直接執行」的工程指令 prompt。\n輸出內容包含：背景、明確目標、可驗收條件、操作步驟、不可違反的限制、與交付格式。\n適用於任何語言、任何 repo、任何專案階段。\n",
+  "repo": "monkey1sai/detection_pose",
+  "path": "skills/req-to-codex-prompt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/monkey1sai/detection_pose",
+  "dir_name": "req-to-codex-prompt-monkey1sai-detection-pose-2"
+}

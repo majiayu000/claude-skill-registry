@@ -1,0 +1,11 @@
+{
+  "name": "projects-quick",
+  "description": "Quick overview of all projects (lightweight, Haiku-powered). Use to check project statuses, see what's active, or get a summary of all work. Triggers on \"project status\", \"show projects\", \"what projec",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/projects-quick",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "projects-quick-taylorhuston-local-life-manager-2"
+}

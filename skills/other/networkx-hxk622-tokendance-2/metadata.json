@@ -1,0 +1,11 @@
+{
+  "name": "networkx",
+  "description": "Comprehensive toolkit for creating, analyzing, and visualizing complex networks and graphs in Python. Use when working with network/graph data structures, analyzing relationships between entities, com",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/visualization/networkx",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "networkx-hxk622-tokendance-2"
+}

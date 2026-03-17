@@ -1,0 +1,11 @@
+{
+  "name": "operability",
+  "description": "Operations - deployment, rollback, feature flags. Use for ops tooling.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/operability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "operability-sylphxai-flow-2"
+}

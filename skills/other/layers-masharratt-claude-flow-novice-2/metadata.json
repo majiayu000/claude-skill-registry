@@ -1,0 +1,11 @@
+{
+  "name": "layers",
+  "description": "Multi-layer validation strategy for CFN Loop to prevent \"consensus on vapor\" and ensure robust, high-quality deliverables",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-validation-framework/lib/layers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "layers-masharratt-claude-flow-novice-2"
+}

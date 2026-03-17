@@ -1,0 +1,11 @@
+{
+  "name": "kpi-analyst",
+  "description": "根据用户给出的excel文件内容，从中分析kpi指标的情况，并按照分工的列表，分别生成markdown格式的报告",
+  "repo": "flyingtimes/podcast-using-skill",
+  "path": ".claude/skills/kpi-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/flyingtimes/podcast-using-skill",
+  "dir_name": "kpi-analyst-flyingtimes-podcast-using-skill-2"
+}

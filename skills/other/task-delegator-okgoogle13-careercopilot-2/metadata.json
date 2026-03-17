@@ -1,0 +1,11 @@
+{
+  "name": "task-delegator",
+  "description": "Delegate tasks to specialized agents and coordinate multi-agent workflows for parallel test generation",
+  "repo": "okgoogle13/careercopilot",
+  "path": ".claude/skills/task-delegator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/okgoogle13/careercopilot",
+  "dir_name": "task-delegator-okgoogle13-careercopilot-2"
+}

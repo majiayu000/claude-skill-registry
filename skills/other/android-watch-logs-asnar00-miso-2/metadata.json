@@ -1,0 +1,11 @@
+{
+  "name": "android-watch-logs",
+  "description": "Start real-time log streaming from connected Android device using adb logcat. Shows only app's log messages. Use when monitoring app behavior, debugging, or viewing Android logs.",
+  "repo": "asnar00/miso",
+  "path": ".claude/skills/android-watch-logs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/asnar00/miso",
+  "dir_name": "android-watch-logs-asnar00-miso-2"
+}

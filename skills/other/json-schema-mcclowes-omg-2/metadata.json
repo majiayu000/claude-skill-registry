@@ -1,0 +1,11 @@
+{
+  "name": "json-schema",
+  "description": "Use when working with JSON Schema for validation, OpenAPI schemas, type definitions, and data structure specification",
+  "repo": "mcclowes/omg",
+  "path": ".claude/skills/json-schema",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mcclowes/omg",
+  "dir_name": "json-schema-mcclowes-omg-2"
+}

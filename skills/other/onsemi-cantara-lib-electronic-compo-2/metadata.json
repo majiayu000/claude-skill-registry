@@ -1,0 +1,11 @@
+{
+  "name": "onsemi",
+  "description": "ON Semiconductor (onsemi) MPN encoding patterns, package codes, and handler guidance. Use when working with onsemi MOSFETs, diodes, transistors, voltage regulators, or OnSemiHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/onsemi",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "onsemi-cantara-lib-electronic-compo-2"
+}

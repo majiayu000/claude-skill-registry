@@ -1,0 +1,11 @@
+{
+  "name": "enforce-contract",
+  "description": "單元測試與代碼提交前觸發。掃描並驗證方法的 pre-conditions、post-conditions 與 invariants，透過契約式設計減少 AI 幻覺。",
+  "repo": "knowlet/skills",
+  "path": "skills/enforce-contract",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/knowlet/skills",
+  "dir_name": "enforce-contract-knowlet-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sol-fees",
+  "description": "Use this skill when the user asks \"solana fees\", \"sol fees\", \"priority fees\", \"lamports per signature\", or mentions checking transaction fees on Solana. Optional chain parameter (solana or solana-devn",
+  "repo": "cheolwanpark/claude-plugins",
+  "path": "plugins/crypto/skills/sol-fees",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cheolwanpark/claude-plugins",
+  "dir_name": "sol-fees-cheolwanpark-claude-plugins-2"
+}

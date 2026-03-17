@@ -1,0 +1,11 @@
+{
+  "name": "bknd-crud-create",
+  "description": "Use when inserting new records into a Bknd entity via the SDK or REST API. Covers createOne, createMany, creating with relations ($set), response handling, error handling, and common patterns for clie",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-crud-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-crud-create-cameronapak-freedom-stack-v3-2"
+}

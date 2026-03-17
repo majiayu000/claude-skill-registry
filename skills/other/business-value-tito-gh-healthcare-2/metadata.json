@@ -1,0 +1,11 @@
+{
+  "name": "business-value",
+  "description": "研究案のビジネス価値を評価する。収益機会、競合優位性、パートナーシップ可能性、\n知財・パブリケーション戦略、ブランド価値への貢献を多角的に評価。\n",
+  "repo": "tito-gh/healthcare",
+  "path": ".claude/skills/business-value",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tito-gh/healthcare",
+  "dir_name": "business-value-tito-gh-healthcare-2"
+}

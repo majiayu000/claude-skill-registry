@@ -1,0 +1,11 @@
+{
+  "name": "tier-management",
+  "description": "Evaluate and update Pollinations user tiers. Check balances, upgrade devs, batch process users. For finding users with errors, see model-debugging skill first.",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/tier-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "tier-management-majiayu000-claude-skill-registr-2"
+}

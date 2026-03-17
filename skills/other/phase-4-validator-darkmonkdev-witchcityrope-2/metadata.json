@@ -1,0 +1,11 @@
+{
+  "name": "phase-4-validator",
+  "description": "Validates Testing Phase completion before advancing to Finalization Phase. Checks test execution results, coverage targets, test quality, and environment health. Ensures 100% test pass rate required b",
+  "repo": "DarkMonkDev/WitchCityRope",
+  "path": ".claude/skills/phase-4-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DarkMonkDev/WitchCityRope",
+  "dir_name": "phase-4-validator-darkmonkdev-witchcityrope-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "eds-performance-debugging",
+  "description": "Guide for debugging and performance optimization of EDS blocks including error handling, FOUC prevention, Core Web Vitals optimization, and debugging workflows for Adobe Edge Delivery Services.",
+  "repo": "ddttom/allaboutv2",
+  "path": ".claude/skills/eds-performance-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ddttom/allaboutv2",
+  "dir_name": "eds-performance-debugging-ddttom-allaboutv2-2"
+}

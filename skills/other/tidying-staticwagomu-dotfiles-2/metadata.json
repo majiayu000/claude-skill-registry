@@ -1,0 +1,11 @@
+{
+  "name": "tidying",
+  "description": "Guide structural code improvements using Kent Beck's Tidy First methodology. Use when seeing messy code, before making behavioral changes, after completing features, or discussing when to clean up cod",
+  "repo": "staticWagomU/dotfiles",
+  "path": "config/claude/skills/tidying",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/staticWagomU/dotfiles",
+  "dir_name": "tidying-staticwagomu-dotfiles-2"
+}

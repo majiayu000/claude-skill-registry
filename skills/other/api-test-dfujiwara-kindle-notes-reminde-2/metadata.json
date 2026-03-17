@@ -1,0 +1,11 @@
+{
+  "name": "api-test",
+  "description": "Interactive API testing tool for the Kindle notes backend. Tests endpoints with intelligent data checking, minimal test data creation, and timing metrics.",
+  "repo": "dfujiwara/kindle-notes-reminder",
+  "path": ".claude/skills/api-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dfujiwara/kindle-notes-reminder",
+  "dir_name": "api-test-dfujiwara-kindle-notes-reminde-2"
+}

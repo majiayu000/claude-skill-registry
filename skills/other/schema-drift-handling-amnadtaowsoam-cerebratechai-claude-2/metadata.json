@@ -1,0 +1,11 @@
+{
+  "name": "schema-drift-handling",
+  "description": "See the main Schema Drift Detection skill for comprehensive coverage of schema drift detection and management.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "43-data-reliability/schema-drift-handling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "schema-drift-handling-amnadtaowsoam-cerebratechai-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "integration-test-runner",
+  "description": "This skill enables Claude to run and manage integration test suites. It automates environment setup, database seeding, service orchestration, and cleanup. Use this skill when the user asks to \"run int",
+  "repo": "apassuello/multimodal_insight_engine",
+  "path": ".claude/skills/integration-test-runner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/apassuello/multimodal_insight_engine",
+  "dir_name": "integration-test-runner-apassuello-multimodal-insight-e-2"
+}

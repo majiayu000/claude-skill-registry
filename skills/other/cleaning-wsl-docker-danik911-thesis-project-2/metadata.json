@@ -1,0 +1,11 @@
+{
+  "name": "cleaning-wsl-docker",
+  "description": "Reclaims SSD disk space consumed by WSL2/Docker. Use when user reports disk space issues, Docker build failures due to space, or slow WSL performance. Handles Docker prune, cache cleanup, VHDX compact",
+  "repo": "Danik911/thesis_project",
+  "path": ".claude/skills/cleaning-wsl-docker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Danik911/thesis_project",
+  "dir_name": "cleaning-wsl-docker-danik911-thesis-project-2"
+}

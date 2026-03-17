@@ -1,0 +1,11 @@
+{
+  "name": "ena-database",
+  "description": "Access European Nucleotide Archive via API/FTP. Retrieve DNA/RNA sequences, raw reads (FASTQ), genome assemblies by accession, for genomics and bioinformatics pipelines. Supports multiple formats.",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/ena-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "ena-database-ovachiever-droid-tings-2"
+}

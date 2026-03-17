@@ -1,0 +1,11 @@
+{
+  "name": "moai-domain-adb",
+  "description": "Comprehensive ADB (Android Debug Bridge) automation skill for game bot development,\ndevice management, computer vision integration, and Tauri-Python orchestration.\nProvides modular expertise for build",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".claude/skills/moai-domain-adb",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "dir_name": "moai-domain-adb-rdmptv-adbautoplayer-2"
+}

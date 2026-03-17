@@ -1,0 +1,11 @@
+{
+  "name": "lc-submit",
+  "description": "Submit a Rust solution file to LeetCode (project)",
+  "repo": "iQeda/MyRust-NeetCode",
+  "path": ".claude/skills/lc-submit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/iQeda/MyRust-NeetCode",
+  "dir_name": "lc-submit-iqeda-myrust-neetcode-2"
+}

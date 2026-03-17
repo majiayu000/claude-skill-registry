@@ -1,0 +1,11 @@
+{
+  "name": "ai-collaborate-teaching",
+  "description": "Design co-learning experiences using the Three Roles Framework (AI as Teacher/Student/Co-Worker). Use when teaching AI-driven development workflows, spec-first collaboration, or balancing AI assistanc",
+  "repo": "panaversity/agentfactory",
+  "path": ".claude/skills/ai-collaborate-teaching",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "ai-collaborate-teaching-panaversity-agentfactory-2"
+}

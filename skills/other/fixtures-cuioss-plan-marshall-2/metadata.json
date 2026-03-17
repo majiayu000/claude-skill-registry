@@ -1,0 +1,11 @@
+{
+  "name": "fixtures",
+  "description": "Test skill for validation purposes",
+  "repo": "cuioss/plan-marshall",
+  "path": "test/pm-plugin-development/plugin-doctor/fixtures/skill-structure/table-references",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "fixtures-cuioss-plan-marshall-2"
+}

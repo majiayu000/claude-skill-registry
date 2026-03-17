@@ -1,0 +1,11 @@
+{
+  "name": "bundle-dynamic-imports",
+  "description": "Use next/dynamic for lazy-loading heavy components. Apply when importing large components like editors, charts, or rich text editors that aren't needed on initial render.",
+  "repo": "TheOrcDev/8bitcn-ui",
+  "path": ".claude/skills/bundle-dynamic-imports",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TheOrcDev/8bitcn-ui",
+  "dir_name": "bundle-dynamic-imports-theorcdev-8bitcn-ui-2"
+}

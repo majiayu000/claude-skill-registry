@@ -1,0 +1,11 @@
+{
+  "name": "ducklake-walk",
+  "description": "Ergodic random walks over DuckLake lakehouses with GF(3) triadic concurrent walkers. Society-of-mind coordination for schema exploration.",
+  "repo": "plurigrid/asi",
+  "path": "skills/ducklake-walk",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "ducklake-walk-plurigrid-asi-2"
+}

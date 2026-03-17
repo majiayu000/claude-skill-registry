@@ -1,0 +1,11 @@
+{
+  "name": "client-components",
+  "description": "Enforces project client component conventions for interactive React components with hooks, event handlers, Radix UI integration, and server action consumption. Extends react-coding-conventions with cl",
+  "repo": "JasonPaff/head-shakers",
+  "path": ".claude/skills/client-components",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JasonPaff/head-shakers",
+  "dir_name": "client-components-jasonpaff-head-shakers-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "council",
+  "description": "Council Chamber orchestration with Memory Bridge. Single session, multiple personas, structured deliberation.",
+  "repo": "clawdbot/skills",
+  "path": "skills/am-will/llm-council",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "council-clawdbot-skills-2"
+}

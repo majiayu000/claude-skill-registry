@@ -1,0 +1,11 @@
+{
+  "name": "monthly-review",
+  "description": "Aggregate weekly summaries into a monthly overview. Use when asked to \"monthly review\", \"review the month\", \"summarize this month\", or \"month summary\".",
+  "repo": "alexanderop/second-brain-nuxt",
+  "path": ".claude/skills/monthly-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alexanderop/second-brain-nuxt",
+  "dir_name": "monthly-review-alexanderop-second-brain-nuxt-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "screenshot-analyzer",
+  "description": "Analyze screenshots with accurate coordinate mapping for UI debugging and Playwright testing. Use when debugging UI issues from screenshots, creating precise click targets, or implementing visual test",
+  "repo": "jdeweedata/circletel",
+  "path": ".claude/skills/screenshot-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jdeweedata/circletel",
+  "dir_name": "screenshot-analyzer-jdeweedata-circletel-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "nav-skill-creator",
+  "description": "Analyze codebase patterns and create custom skills for repetitive workflows. Use when project needs automation or pattern enforcement. Auto-invoke when user says \"create a skill for...\", \"automate thi",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "skills/os-layer/documentation/nav-skill-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "nav-skill-creator-dkyazzentwatwa-supernavigator-2"
+}

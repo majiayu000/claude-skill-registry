@@ -1,0 +1,11 @@
+{
+  "name": "terra-auth",
+  "description": "Terra API authentication, credentials management, and environment configuration. Use when setting up Terra integration, managing API keys, generating widget sessions, or configuring testing/staging/pr",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/terra-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "terra-auth-adaptationio-skrillz-2"
+}

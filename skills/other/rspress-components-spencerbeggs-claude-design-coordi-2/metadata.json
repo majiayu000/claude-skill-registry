@@ -1,0 +1,11 @@
+{
+  "name": "rspress-components",
+  "description": "Use RSPress built-in components and MDX features in documentation. Use when adding interactive elements like tabs, badges, steps, callouts, or code groups to documentation pages.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/rspress-components",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "rspress-components-spencerbeggs-claude-design-coordi-2"
+}

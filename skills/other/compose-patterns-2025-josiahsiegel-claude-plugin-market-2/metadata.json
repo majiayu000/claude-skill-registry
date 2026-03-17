@@ -1,0 +1,11 @@
+{
+  "name": "compose-patterns-2025",
+  "description": "Docker Compose production patterns 2025 including multi-environment strategies, health checks, and modern compose features",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/azure-to-docker-master/skills/compose-patterns-2025",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "compose-patterns-2025-josiahsiegel-claude-plugin-market-2"
+}

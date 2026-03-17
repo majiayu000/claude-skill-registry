@@ -1,0 +1,11 @@
+{
+  "name": "create_handoff",
+  "description": "Create handoff document for transferring work to another session",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/create_handoff",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildcard/caro",
+  "dir_name": "create-handoff-wildcard-caro-2"
+}

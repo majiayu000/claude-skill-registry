@@ -1,0 +1,11 @@
+{
+  "name": "create-lwc-tab",
+  "description": "Creates a new Lightning Web Component with a tab and flexipage for display. Use when you need to create a new standalone page/tab with an LWC component.",
+  "repo": "MenachemShanowitz/LubavitchRV",
+  "path": ".claude/skills/create-lwc-tab",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MenachemShanowitz/LubavitchRV",
+  "dir_name": "create-lwc-tab-menachemshanowitz-lubavitchrv-2"
+}

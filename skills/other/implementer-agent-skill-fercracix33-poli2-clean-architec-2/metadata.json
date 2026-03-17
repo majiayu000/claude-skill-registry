@@ -1,0 +1,11 @@
+{
+  "name": "implementer-agent-skill",
+  "description": "Complete TDD workflow for implementing business logic (use cases) and API endpoints that make tests pass. Covers Zod safeParse validation, async/await patterns, Next.js API routes, service orchestrati",
+  "repo": "fercracix33/poli2-clean-architecture",
+  "path": ".claude/skills/implementer-agent-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fercracix33/poli2-clean-architecture",
+  "dir_name": "implementer-agent-skill-fercracix33-poli2-clean-architec-2"
+}

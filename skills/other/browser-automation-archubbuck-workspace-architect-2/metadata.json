@@ -1,0 +1,11 @@
+{
+  "name": "browser-automation",
+  "description": "Local Python-based browser automation toolkit using Playwright. Provides command-line tools for navigating, interacting with, and testing web applications. Supports clicking, typing, hovering, screens",
+  "repo": "archubbuck/workspace-architect",
+  "path": "assets/skills/browser-automation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/archubbuck/workspace-architect",
+  "dir_name": "browser-automation-archubbuck-workspace-architect-2"
+}

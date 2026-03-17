@@ -1,0 +1,11 @@
+{
+  "name": "md-review",
+  "description": "Agent review for markdown quality, clarity, and structural integrity. Leverages deterministic lint output as input for subjective assessment.\n",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/md/md-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "md-review-jordangunn-nunchuck-2"
+}

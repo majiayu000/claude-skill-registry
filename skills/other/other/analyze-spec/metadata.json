@@ -1,0 +1,9 @@
+{
+  "name": "analyze-spec",
+  "repo": "sequenzia/claude-alchemy",
+  "path": "plugins/sdd/skills/analyze-spec/SKILL.md",
+  "category": "other",
+  "source": "github.com/sequenzia/claude-alchemy",
+  "dir_name": "analyze-spec",
+  "downloaded_at": "2026-02-15T01:37:38.763817Z"
+}

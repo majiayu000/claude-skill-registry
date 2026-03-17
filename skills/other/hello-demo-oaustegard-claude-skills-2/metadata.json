@@ -1,0 +1,11 @@
+{
+  "name": "hello-demo",
+  "description": "Delivers a static Hello World HTML demo page with bookmarklet. Use when user requests the hello demo, hello world demo, or demo page.",
+  "repo": "oaustegard/claude-skills",
+  "path": "hello-demo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "hello-demo-oaustegard-claude-skills-2"
+}

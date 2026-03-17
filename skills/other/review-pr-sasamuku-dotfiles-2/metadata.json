@@ -1,0 +1,11 @@
+{
+  "name": "review-pr",
+  "description": "Execute /review-pr <pr-number> slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/review-pr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "review-pr-sasamuku-dotfiles-2"
+}

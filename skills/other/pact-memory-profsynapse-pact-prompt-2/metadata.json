@@ -1,0 +1,11 @@
+{
+  "name": "pact-memory",
+  "description": "Persistent memory for PACT agents. Save context, goals, lessons learned,\ndecisions, and entities. Semantic search across sessions.\nUse when: saving session context, recalling past decisions, searching",
+  "repo": "ProfSynapse/PACT-prompt",
+  "path": "pact-plugin/skills/pact-memory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ProfSynapse/PACT-prompt",
+  "dir_name": "pact-memory-profsynapse-pact-prompt-2"
+}

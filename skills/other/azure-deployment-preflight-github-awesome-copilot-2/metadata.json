@@ -1,0 +1,11 @@
+{
+  "name": "azure-deployment-preflight",
+  "description": "Performs comprehensive preflight validation of Bicep deployments to Azure, including template syntax validation, what-if analysis, and permission checks. Use this skill before any deployment to Azure ",
+  "repo": "github/awesome-copilot",
+  "path": "skills/azure-deployment-preflight",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/github/awesome-copilot",
+  "dir_name": "azure-deployment-preflight-github-awesome-copilot-2"
+}

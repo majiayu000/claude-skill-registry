@@ -1,0 +1,11 @@
+{
+  "name": "requirement-assistant",
+  "description": "引導需求撰寫、使用者故事建立與功能規格制定。\n使用時機：撰寫需求、使用者故事、問題單、功能規劃。\n關鍵字：requirement, user story, issue, feature, specification, 需求, 功能規劃, 規格。",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "path": "locales/zh-CN/skills/claude-code/requirement-assistant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AsiaOstrich/universal-dev-standards",
+  "dir_name": "requirement-assistant-asiaostrich-universal-dev-standa-2"
+}

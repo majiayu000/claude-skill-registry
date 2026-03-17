@@ -1,0 +1,11 @@
+{
+  "name": "resume-optimization",
+  "description": "Resume structure, achievement bullet formulas, ATS optimization, and job-targeted tailoring for software engineers. Use when reviewing resumes, crafting achievement bullets, extracting keywords from j",
+  "repo": "melodic-software/claude-code-plugins",
+  "path": "plugins/soft-skills/skills/resume-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/melodic-software/claude-code-plugins",
+  "dir_name": "resume-optimization-melodic-software-claude-code-plugins-2"
+}

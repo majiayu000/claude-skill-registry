@@ -1,0 +1,11 @@
+{
+  "name": "alignment-workflow",
+  "description": "Workflow formal para coleta de consenso em decisões organizacionais (ODRs).\nGerencia ciclo de vida de ODRs desde criação até aprovação.\nUse quando: coletar inputs, rastrear aprovações, escalar decisõe",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/alignment-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "alignment-workflow-arbgjr-satra-2"
+}

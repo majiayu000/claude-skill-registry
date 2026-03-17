@@ -1,0 +1,11 @@
+{
+  "name": "drizzle-orm",
+  "description": "Expert guidance for Drizzle ORM including schema definition, queries, relations, migrations, TypeScript integration with SQLite/PostgreSQL, and Drizzle Studio. Use this when working with type-safe dat",
+  "repo": "oriolrius/pki-manager-web",
+  "path": ".claude/skills/drizzle-orm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oriolrius/pki-manager-web",
+  "dir_name": "drizzle-orm-oriolrius-pki-manager-web-2"
+}

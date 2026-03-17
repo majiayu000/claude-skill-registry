@@ -1,0 +1,11 @@
+{
+  "name": "test-events-router",
+  "description": "Test the SSE events router and real-time event streaming. Use when testing Server-Sent Events endpoint or event authorization. Triggers on \"test events\", \"test sse\", \"test events router\", \"test real-t",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/test-events-router",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "test-events-router-madooei-backend-template-2"
+}

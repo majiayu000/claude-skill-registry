@@ -1,0 +1,11 @@
+{
+  "name": "prd-v04-persona-definition",
+  "description": "Synthesize behavioral personas from prior stage evidence for journey mapping and marketing during PRD v0.4 User Journeys. Triggers on requests to define personas, create user profiles, identify target",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v04-persona-definition",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v04-persona-definition-mattgierhart-prd-driven-context-e-2"
+}

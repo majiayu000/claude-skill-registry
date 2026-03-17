@@ -1,0 +1,11 @@
+{
+  "name": "op-secrets-creator",
+  "description": "Creates secrets in 1Password using the op CLI. Use when the user needs to store new passwords, API keys, login credentials, or secure notes in 1Password. Supports Login, Password, API Credential, and ",
+  "repo": "leefowlercu/agent-kit",
+  "path": "plugins/op-secrets-manager/skills/op-secrets-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leefowlercu/agent-kit",
+  "dir_name": "op-secrets-creator-leefowlercu-agent-kit-2"
+}

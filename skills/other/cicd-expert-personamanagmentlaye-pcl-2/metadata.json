@@ -1,0 +1,11 @@
+{
+  "name": "cicd-expert",
+  "description": "Expert-level CI/CD with GitHub Actions, Jenkins, deployment pipelines, and automation",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/devops/cicd-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "cicd-expert-personamanagmentlaye-pcl-2"
+}

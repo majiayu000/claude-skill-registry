@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-tunnel-troubleshoot",
+  "description": "Diagnoses and fixes Cloudflare Tunnel connectivity issues including stuck tunnels,\nfailed connections, Error 1033, and tunnel registration problems. Use when remote\naccess not working, tunnel shows di",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/cloudflare-tunnel-troubleshoot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "cloudflare-tunnel-troubleshoot-dawiddutoit-custom-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "single-trajectory",
+  "description": "Guide to reproducing OmicVerse trajectory workflows spanning PAGA, Palantir, VIA, velocity coupling, and fate scoring notebooks.",
+  "repo": "Starlitnightly/omicverse",
+  "path": ".claude/skills/single-trajectory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Starlitnightly/omicverse",
+  "dir_name": "single-trajectory-starlitnightly-omicverse-2"
+}

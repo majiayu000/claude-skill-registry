@@ -1,0 +1,11 @@
+{
+  "name": "vitest-runner",
+  "description": "Execute JavaScript/TypeScript tests with Vitest, supporting coverage, watch mode, and parallel execution. Use for JS/TS test automation.",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "agentic/code/frameworks/sdlc-complete/extensions/javascript/skills/vitest-runner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jmagly/ai-writing-guide",
+  "dir_name": "vitest-runner-jmagly-ai-writing-guide-2"
+}

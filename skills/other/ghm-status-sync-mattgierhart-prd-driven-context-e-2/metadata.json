@@ -1,0 +1,11 @@
+{
+  "name": "ghm-status-sync",
+  "description": "Synchronizes README.md Command Center with current project state. Triggers on gate changes, EPIC status changes, or explicit `/ghm-status-sync` invocation. Outputs updated README.md dashboard with cur",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/ghm-status-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "ghm-status-sync-mattgierhart-prd-driven-context-e-2"
+}

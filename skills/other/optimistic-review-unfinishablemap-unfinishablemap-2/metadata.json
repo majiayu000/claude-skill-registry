@@ -1,0 +1,11 @@
+{
+  "name": "optimistic-review",
+  "description": "Identify content strengths and opportunities for expansion. Suggests new topics and connections.",
+  "repo": "unfinishablemap/unfinishablemap",
+  "path": ".claude/skills/optimistic-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/unfinishablemap/unfinishablemap",
+  "dir_name": "optimistic-review-unfinishablemap-unfinishablemap-2"
+}

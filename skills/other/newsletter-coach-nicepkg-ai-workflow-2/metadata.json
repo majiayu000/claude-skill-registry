@@ -1,0 +1,11 @@
+{
+  "name": "newsletter-coach",
+  "description": "Writing coach that extracts educational content from your daily experiences and turns it into publish-ready newsletter drafts. Use when brainstorming newsletter ideas, writing content for The Little B",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/content-creator-workflow/.claude/skills/newsletter-coach",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "newsletter-coach-nicepkg-ai-workflow-2"
+}

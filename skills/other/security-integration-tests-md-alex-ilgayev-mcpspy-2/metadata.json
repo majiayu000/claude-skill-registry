@@ -1,0 +1,11 @@
+{
+  "name": "security-integration-tests.md",
+  "description": "Use this agent when working with prompt injection detection integration tests, including running tests, debugging failures, or adding new test samples.",
+  "repo": "alex-ilgayev/MCPSpy",
+  "path": ".claude/skills/security-integration-tests.md",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alex-ilgayev/MCPSpy",
+  "dir_name": "security-integration-tests-md-alex-ilgayev-mcpspy-2"
+}

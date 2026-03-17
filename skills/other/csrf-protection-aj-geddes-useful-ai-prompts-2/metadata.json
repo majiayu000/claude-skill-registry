@@ -1,0 +1,11 @@
+{
+  "name": "csrf-protection",
+  "description": "Implement Cross-Site Request Forgery (CSRF) protection using tokens, SameSite cookies, and origin validation. Use when building forms and state-changing operations.",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/csrf-protection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "dir_name": "csrf-protection-aj-geddes-useful-ai-prompts-2"
+}

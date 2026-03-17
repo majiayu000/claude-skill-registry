@@ -1,0 +1,11 @@
+{
+  "name": "uniprot",
+  "description": "Access UniProt for protein sequence and annotation retrieval. Use this skill when: (1) Looking up protein sequences by accession, (2) Finding functional annotations, (3) Getting domain boundaries, (4)",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/uniprot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "uniprot-adaptyvbio-protein-design-skill-2"
+}

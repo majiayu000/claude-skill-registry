@@ -1,0 +1,11 @@
+{
+  "name": "persona-intel",
+  "description": "Use to summarize persona goals, pains, proof points, and questions for call prep.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/sales-calls/skills/persona-intel",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "persona-intel-gtmagents-gtm-agents-2"
+}

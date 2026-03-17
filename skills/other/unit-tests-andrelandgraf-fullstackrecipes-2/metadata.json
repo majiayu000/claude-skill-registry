@@ -1,0 +1,11 @@
+{
+  "name": "unit-tests",
+  "description": "Configure unit testing with Bun's built-in test runner. Fast, Jest-compatible syntax, co-located test files, and mocking support.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/unit-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "unit-tests-andrelandgraf-fullstackrecipes-2"
+}

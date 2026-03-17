@@ -1,0 +1,11 @@
+{
+  "name": "caro-leftovers",
+  "description": "Document leftover tasks as GitHub issues with full correlation to branch, PR, and original work plan. Use when ending a session with incomplete work that another agent should pick up.",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/caro-leftovers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildcard/caro",
+  "dir_name": "caro-leftovers-wildcard-caro-2"
+}

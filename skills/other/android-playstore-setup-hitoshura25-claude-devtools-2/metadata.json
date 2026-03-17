@@ -1,0 +1,11 @@
+{
+  "name": "android-playstore-setup",
+  "description": "Complete Play Store setup - orchestrates scanning, privacy policy, version management, Fastlane, and workflows (Internal track only)",
+  "repo": "hitoshura25/claude-devtools",
+  "path": "skills/android-playstore-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hitoshura25/claude-devtools",
+  "dir_name": "android-playstore-setup-hitoshura25-claude-devtools-2"
+}

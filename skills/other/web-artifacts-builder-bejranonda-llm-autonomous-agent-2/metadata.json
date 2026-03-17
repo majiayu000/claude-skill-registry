@@ -1,0 +1,11 @@
+{
+  "name": "web-artifacts-builder",
+  "description": "Modern web development patterns using React + Tailwind CSS + shadcn/ui for building production-quality, accessible, and performant web applications",
+  "repo": "bejranonda/LLM-Autonomous-Agent-Plugin-for-Claude",
+  "path": "skills/web-artifacts-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bejranonda/LLM-Autonomous-Agent-Plugin-for-Claude",
+  "dir_name": "web-artifacts-builder-bejranonda-llm-autonomous-agent-2"
+}

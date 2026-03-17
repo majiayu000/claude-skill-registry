@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-auth-logout",
+  "description": "Logout of the Agentuity Cloud Platform. Use for managing authentication credentials",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-auth-logout",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-auth-logout-agentuity-sdk-explorer-2"
+}

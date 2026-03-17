@@ -1,0 +1,11 @@
+{
+  "name": "build-standards",
+  "description": "Build quality standards, validation checkpoints, and compilation requirements",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/build-standards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "build-standards-zerobias-org-module-2"
+}

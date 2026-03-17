@@ -1,0 +1,11 @@
+{
+  "name": "dask",
+  "description": "Parallel/distributed computing. Scale pandas/NumPy beyond memory, parallel DataFrames/Arrays, multi-file processing, task graphs, for larger-than-RAM datasets and parallel workflows.",
+  "repo": "sanand0/scientific-research",
+  "path": ".claude/skills/dask",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sanand0/scientific-research",
+  "dir_name": "dask-sanand0-scientific-research-2"
+}

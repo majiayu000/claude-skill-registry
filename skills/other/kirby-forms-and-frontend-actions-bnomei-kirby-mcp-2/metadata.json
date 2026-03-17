@@ -1,0 +1,11 @@
+{
+  "name": "kirby-forms-and-frontend-actions",
+  "description": "Implements frontend forms and actions in Kirby (contact forms, file uploads, email with attachments, creating pages from frontend). Use when handling user input or building submission flows.",
+  "repo": "bnomei/kirby-mcp",
+  "path": "skills/kirby-forms-and-frontend-actions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bnomei/kirby-mcp",
+  "dir_name": "kirby-forms-and-frontend-actions-bnomei-kirby-mcp-2"
+}

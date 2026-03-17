@@ -1,0 +1,17 @@
+{
+  "name": "learn",
+  "repo": "genomewalker/cc-soul",
+  "path": "skills/learn/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/genomewalker/cc-soul",
+  "dir_name": "learn-genomewalker-cc-soul",
+  "downloaded_at": "2026-03-01T07:51:53.977712Z",
+  "author": "genomewalker",
+  "source_url": "https://github.com/genomewalker/cc-soul/blob/main/skills/learn/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/genomewalker/cc-soul/blob/main/skills/learn/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

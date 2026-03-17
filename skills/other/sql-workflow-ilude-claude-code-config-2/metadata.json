@@ -1,0 +1,11 @@
+{
+  "name": "sql-workflow",
+  "description": "SQL workflow guidelines. Activate when working with SQL files (.sql), database queries, migrations, or SQLFluff.",
+  "repo": "ilude/claude-code-config",
+  "path": "skills/sql-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ilude/claude-code-config",
+  "dir_name": "sql-workflow-ilude-claude-code-config-2"
+}

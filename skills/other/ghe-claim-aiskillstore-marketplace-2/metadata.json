@@ -1,0 +1,11 @@
+{
+  "name": "ghe-claim",
+  "description": "CLAIM a specific GitHub issue to START working on it. Requires an issue number. Performs validation, atomic claim, posts claim comment, and sets up worktree.\n\nUSE WHEN: User wants to begin work on a s",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/emasoft/ghe-claim",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "ghe-claim-aiskillstore-marketplace-2"
+}

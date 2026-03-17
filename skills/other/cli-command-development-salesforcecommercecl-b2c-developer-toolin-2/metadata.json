@@ -1,0 +1,11 @@
+{
+  "name": "cli-command-development",
+  "description": "Creating new CLI commands and topics for the B2C CLI using oclif",
+  "repo": "SalesforceCommerceCloud/b2c-developer-tooling",
+  "path": ".claude/skills/cli-command-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SalesforceCommerceCloud/b2c-developer-tooling",
+  "dir_name": "cli-command-development-salesforcecommercecl-b2c-developer-toolin-2"
+}

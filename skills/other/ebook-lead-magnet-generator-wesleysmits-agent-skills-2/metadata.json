@@ -1,0 +1,11 @@
+{
+  "name": "ebook-lead-magnet-generator",
+  "description": "Creates comprehensive ebooks, guides, and downloadable lead magnets with chapter structure and promotional assets. Use when the user asks about ebooks, lead magnets, downloadable guides, gated content",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/ebook-lead-magnet-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "ebook-lead-magnet-generator-wesleysmits-agent-skills-2"
+}

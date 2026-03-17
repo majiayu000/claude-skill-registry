@@ -19,6 +19,8 @@ from utils import (
     build_skill_key,
     normalize_repo,
     build_legal_metadata,
+    extract_frontmatter,
+    guess_category,
 )
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -56,56 +58,15 @@ def _repo_slug(repo_url: str) -> str:
 
 REPO_BY_DIR = {url.split("/")[-1].replace(".git", ""): _repo_slug(url) for url in REPOS_TO_CLONE}
 
-# Category mapping based on keywords
-CATEGORY_KEYWORDS = {
-    "development": ["dev", "code", "programming", "api", "sdk", "framework", "build"],
-    "testing": ["test", "qa", "quality", "spec", "jest", "pytest", "unittest"],
-    "devops": ["devops", "ci", "cd", "docker", "kubernetes", "deploy", "infra"],
-    "security": ["security", "auth", "crypto", "vulnerability", "audit"],
-    "documents": ["doc", "pdf", "word", "excel", "pptx", "xlsx", "docx", "markdown"],
-    "data": ["data", "analytics", "sql", "database", "etl", "pipeline"],
-    "design": ["design", "ui", "ux", "css", "frontend", "component"],
-    "productivity": ["productivity", "automation", "workflow", "task"],
-    "product": ["product", "prd", "roadmap", "feature", "backlog"],
-    "marketing": ["marketing", "seo", "content", "social", "campaign"],
-}
-
-
-def guess_category(skill_path: str, content: str) -> str:
-    """Guess category from path and content."""
-    text = (skill_path + " " + content[:1000]).lower()
-
-    for category, keywords in CATEGORY_KEYWORDS.items():
-        for keyword in keywords:
-            if keyword in text:
-                return category
-
-    return "other"
-
-
-def parse_skill_frontmatter(content: str) -> dict:
-    """Parse YAML frontmatter from SKILL.md."""
-    metadata = {}
-
-    if content.startswith("---"):
-        parts = content.split("---", 2)
-        if len(parts) >= 3:
-            frontmatter = parts[1]
-            for line in frontmatter.split("\n"):
-                if ":" in line:
-                    key, value = line.split(":", 1)
-                    key = key.strip().lower()
-                    value = value.strip().strip('"').strip("'")
-                    if key in ["name", "description", "category"]:
-                        metadata[key] = value
-                    elif key == "tags":
-                        # Handle tags as list
-                        if value.startswith("["):
-                            try:
-                                metadata["tags"] = json.loads(value.replace("'", '"'))
-                            except:
-                                metadata["tags"] = []
-
+def _parse_skill_frontmatter(content: str) -> dict:
+    """Parse YAML frontmatter from SKILL.md using safe_load."""
+    fm = extract_frontmatter(content)
+    metadata: dict = {}
+    for key in ("name", "description", "category"):
+        if fm.get(key):
+            metadata[key] = str(fm[key])
+    if isinstance(fm.get("tags"), list):
+        metadata["tags"] = fm["tags"]
     return metadata
 
 
@@ -164,7 +125,7 @@ def import_skill(skill_file: Path, skills_dir: Path, repo_slug: str, stats: dict
         return False
 
     # Parse frontmatter
-    metadata = parse_skill_frontmatter(content)
+    metadata = _parse_skill_frontmatter(content)
 
     # Determine skill name
     skill_name = metadata.get("name", "")
@@ -180,7 +141,7 @@ def import_skill(skill_file: Path, skills_dir: Path, repo_slug: str, stats: dict
     # Determine category
     category = normalize_name(metadata.get("category", ""))
     if not category or category == "unknown":
-        category = guess_category(str(skill_file), content)
+        category = guess_category(str(skill_file) + " " + content[:1000])
 
     # Target directory (case-safe)
     rel_path = ""

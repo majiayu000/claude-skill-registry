@@ -1,0 +1,11 @@
+{
+  "name": "dst-subjects",
+  "description": "Browse Danmarks Statistik subject hierarchy to explore available data topics and categories. Use when user wants to discover what data is available or explore DST's organizational structure.",
+  "repo": "mikkelkrogsholm/dst-skills",
+  "path": ".claude/skills/dst-subjects",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mikkelkrogsholm/dst-skills",
+  "dir_name": "dst-subjects-mikkelkrogsholm-dst-skills-2"
+}

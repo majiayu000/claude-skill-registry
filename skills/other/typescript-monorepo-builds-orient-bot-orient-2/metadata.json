@@ -1,0 +1,11 @@
+{
+  "name": "typescript-monorepo-builds",
+  "description": "Configure TypeScript for the Orient monorepo packages. Use when creating new packages, fixing build errors, configuring tsconfig.json, setting up project references, or debugging \"cannot find module\" ",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/typescript-monorepo-builds",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "typescript-monorepo-builds-orient-bot-orient-2"
+}

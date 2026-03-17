@@ -1,0 +1,11 @@
+{
+  "name": "debate-persona-generator",
+  "description": "Generates three distinct expert challenger personas for multi-perspective debate. Each persona critiques from a different angle.",
+  "repo": "nalyk/nalyk-skills-demo",
+  "path": "plugins/debate/skills/debate-persona-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nalyk/nalyk-skills-demo",
+  "dir_name": "debate-persona-generator-nalyk-nalyk-skills-demo-2"
+}

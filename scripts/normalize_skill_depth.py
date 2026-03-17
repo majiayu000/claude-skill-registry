@@ -20,22 +20,9 @@ from utils import (
     build_skill_key,
     short_hash,
     build_legal_metadata,
+    load_metadata,
+    write_metadata,
 )
-
-
-def load_metadata(skill_dir: Path) -> dict:
-    meta_path = skill_dir / "metadata.json"
-    if not meta_path.exists():
-        return {}
-    try:
-        return json.loads(meta_path.read_text(encoding="utf-8"))
-    except Exception:
-        return {}
-
-
-def write_metadata(skill_dir: Path, meta: dict) -> None:
-    meta_path = skill_dir / "metadata.json"
-    meta_path.write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
 def is_standard(rel_parts: tuple[str, ...]) -> bool:

@@ -1,0 +1,11 @@
+{
+  "name": "numpy-io",
+  "description": "NumPy I/O handles the transition of data between system memory and persistent storage. It supports highly efficient binary formats (.npy, .npz), flexible text parsers for messy data, and memory-mappin",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/numpy-io",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "numpy-io-cuba6112-skillfactory-2"
+}

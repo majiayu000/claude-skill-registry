@@ -1,0 +1,9 @@
+{
+  "name": "task-parsing",
+  "repo": "aviz85/claude-tasks",
+  "path": ".claude/skills/task-parsing/SKILL.md",
+  "category": "other",
+  "source": "github.com/aviz85/claude-tasks",
+  "dir_name": "task-parsing",
+  "downloaded_at": "2026-02-22T06:26:54.501586Z"
+}

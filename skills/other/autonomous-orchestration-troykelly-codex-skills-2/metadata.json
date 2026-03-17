@@ -1,0 +1,11 @@
+{
+  "name": "autonomous-orchestration",
+  "description": "Use when user requests autonomous operation across multiple issues. Orchestrates parallel workers, monitors progress, handles SLEEP/WAKE cycles, and works until scope is complete without user interven",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/autonomous-orchestration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "autonomous-orchestration-troykelly-codex-skills-2"
+}

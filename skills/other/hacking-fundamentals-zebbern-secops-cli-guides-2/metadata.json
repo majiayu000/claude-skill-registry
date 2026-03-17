@@ -1,0 +1,11 @@
+{
+  "name": "hacking-fundamentals",
+  "description": "This skill should be used when the user asks to \"understand hacking basics\", \"learn about hacker types\", \"understand network protocols\", \"learn DNS concepts\", \"understand attack types\", or \"explore se",
+  "repo": "zebbern/SecOps-CLI-Guides",
+  "path": "skills/hacking-fundamentals",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zebbern/SecOps-CLI-Guides",
+  "dir_name": "hacking-fundamentals-zebbern-secops-cli-guides-2"
+}

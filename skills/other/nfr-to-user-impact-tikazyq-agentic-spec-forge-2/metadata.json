@@ -1,0 +1,11 @@
+{
+  "name": "nfr-to-user-impact",
+  "description": "将技术性的NFR（非功能需求）约束转换为用户能感知的影响描述，用业务语言解释技术约束的价值。适合在NFR定义完成后、需要向客户或管理层解释时使用，当NFR过于技术化时。帮助不熟悉技术术语的PM/客户/BA理解NFR的业务意义，让技术约束变得亲切易懂。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/requirements/nfr-to-user-impact",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "nfr-to-user-impact-tikazyq-agentic-spec-forge-2"
+}

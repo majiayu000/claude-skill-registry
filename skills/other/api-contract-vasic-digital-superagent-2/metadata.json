@@ -1,0 +1,11 @@
+{
+  "name": "api-contract",
+  "description": "Configure this skill should be used when the user asks about \"API contract\", \"api-contract.md\", \"shared interface\", \"TypeScript interfaces\", \"request response schemas\", \"endpoint design\", or needs gui",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/api-development/api-contract-generator/generating-api-contracts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "api-contract-vasic-digital-superagent-2"
+}

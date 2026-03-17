@@ -1,0 +1,11 @@
+{
+  "name": "matlab",
+  "description": "MATLAB and GNU Octave numerical computing for matrix operations, data analysis, visualization, and scientific computing. Use when writing MATLAB/Octave scripts for linear algebra, signal processing, i",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/physics/matlab",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "matlab-hxk622-tokendance-2"
+}

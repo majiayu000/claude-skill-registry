@@ -1,0 +1,11 @@
+{
+  "name": "refactoring-ritual",
+  "description": "Transform messy code into clean code through disciplined refactoring. Code smells, refactoring patterns, and the courage to improve without breaking. Leave every codebase better than you found it.",
+  "repo": "frankxai/arcanea",
+  "path": ".claude/skills/development/refactoring-ritual",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/arcanea",
+  "dir_name": "refactoring-ritual-frankxai-arcanea-2"
+}

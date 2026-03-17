@@ -1,0 +1,11 @@
+{
+  "name": "effective-tasks",
+  "description": "Best practices for writing SIMBL tasks that Claude can execute with zero context. Use when creating or refining tasks for maximum clarity.",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/simbl/skills/effective-tasks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "effective-tasks-yebot-rad-cc-plugins-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sketch-release-ops",
+  "description": "Release readiness and monitoring workflow for Sketch Magic. Use when preparing launch checklists, verifying telemetry, or validating health endpoints before a public release.",
+  "repo": "joelklabo/markdowntown-cli",
+  "path": "codex/skills/sketch-release-ops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown-cli",
+  "dir_name": "sketch-release-ops-joelklabo-markdowntown-cli-2"
+}

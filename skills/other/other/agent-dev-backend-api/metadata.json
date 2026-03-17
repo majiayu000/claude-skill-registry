@@ -1,0 +1,9 @@
+{
+  "name": "agent-dev-backend-api",
+  "repo": "ruvnet/claude-flow",
+  "path": ".agents/skills/agent-dev-backend-api/SKILL.md",
+  "category": "other",
+  "source": "github.com/ruvnet/claude-flow",
+  "dir_name": "agent-dev-backend-api",
+  "downloaded_at": "2026-02-24T01:32:06.722519Z"
+}

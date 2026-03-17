@@ -1,0 +1,11 @@
+{
+  "name": "eval-testing",
+  "description": "Develop and run agent behavior evaluations. Use this skill when asked to \"write evals\", \"test agent behavior\", \"create eval cases\", \"run evals\", \"add eval tests\", \"test tool selection\", \"verify agent ",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/eval-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "eval-testing-orient-bot-orient-2"
+}

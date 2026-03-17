@@ -1,0 +1,11 @@
+{
+  "name": "startup-metrics-framework",
+  "description": "This skill should be used when the user asks about \"key startup metrics\", \"SaaS metrics\", \"CAC and LTV\", \"unit economics\", \"burn multiple\", \"rule of 40\", \"marketplace metrics\", or requests guidance on",
+  "repo": "pelan05/vscode_agents_folder",
+  "path": "skills/startup-metrics-framework",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pelan05/vscode_agents_folder",
+  "dir_name": "startup-metrics-framework-pelan05-vscode-agents-folder-2"
+}

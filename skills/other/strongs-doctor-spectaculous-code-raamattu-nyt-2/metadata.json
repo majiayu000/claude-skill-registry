@@ -1,0 +1,11 @@
+{
+  "name": "strongs-doctor",
+  "description": "Expert assistant for diagnosing and fixing Strong's concordance issues in the Raamattu Nyt project. Use when (1) debugging infinite loops or performance issues with Strong's lookups, (2) validating le",
+  "repo": "Spectaculous-Code/raamattu-nyt",
+  "path": ".claude/skills/strongs-doctor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Spectaculous-Code/raamattu-nyt",
+  "dir_name": "strongs-doctor-spectaculous-code-raamattu-nyt-2"
+}

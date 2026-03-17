@@ -1,0 +1,11 @@
+{
+  "name": "launch",
+  "description": "Master go-to-market strategy, launch planning and execution, sales enablement, and marketing campaigns. Execute successful product launches.",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/marketing-pro-workflow/.claude/skills/technical-launch-planner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "launch-nicepkg-ai-workflow-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "server",
+  "description": "Imported skill server from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/vercel/server_after_nonblocking",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "server-bitwikiorg-skills-md-2"
+}

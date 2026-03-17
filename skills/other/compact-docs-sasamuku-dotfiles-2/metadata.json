@@ -1,0 +1,11 @@
+{
+  "name": "compact-docs",
+  "description": "Execute /compact-docs <file-path> slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/compact-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "compact-docs-sasamuku-dotfiles-2"
+}

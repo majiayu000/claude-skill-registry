@@ -1,0 +1,11 @@
+{
+  "name": "apps-script-update",
+  "description": "Google Apps Script のコードを更新する。「GAS 更新」「Apps Script 更新」「スクリプト編集」「コードを更新」などで起動。",
+  "repo": "shiiman/claude-code-plugins",
+  "path": "plugins/shiiman-google/skills/apps-script-update",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shiiman/claude-code-plugins",
+  "dir_name": "apps-script-update-shiiman-claude-code-plugins-2"
+}

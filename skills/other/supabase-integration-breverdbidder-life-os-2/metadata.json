@@ -1,0 +1,11 @@
+{
+  "name": "supabase-integration",
+  "description": "Unified database operations for BidDeed.AI and Life OS ecosystems.  Use when: (1) logging insights, activities, or learning sessions,  (2) querying historical data from any table, (3) user says \"log t",
+  "repo": "breverdbidder/life-os",
+  "path": ".claude/skills/shared/supabase-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/breverdbidder/life-os",
+  "dir_name": "supabase-integration-breverdbidder-life-os-2"
+}

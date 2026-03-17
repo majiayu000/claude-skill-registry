@@ -1,0 +1,11 @@
+{
+  "name": "aurora-tools-scripts",
+  "description": "SQL migrations and stored procedures management in the tools bounded context. Trigger: Creating migrations, procedures, functions, triggers, or sequences for PostgreSQL.\n",
+  "repo": "avvale/aurora-back",
+  "path": ".claude/skills/aurora-tools-scripts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/avvale/aurora-back",
+  "dir_name": "aurora-tools-scripts-avvale-aurora-back-2"
+}

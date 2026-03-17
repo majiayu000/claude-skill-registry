@@ -1,0 +1,11 @@
+{
+  "name": "multi-agent-coordination",
+  "description": "This skill should be used when the user asks about \"multi-agent coordination\", \"agent spawning\", \"parallel agents\", \"agent communication\", \"team coordination\", \"sub-agent management\", \"agent limits\", ",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/orchestrate-complex/skills/multi-agent-coordination",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "multi-agent-coordination-lobbi-docs-claude-2"
+}

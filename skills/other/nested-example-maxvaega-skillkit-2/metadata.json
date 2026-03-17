@@ -1,0 +1,11 @@
+{
+  "name": "nested-example",
+  "description": "Example skill at the root of the nested structure demonstrating depth 1",
+  "repo": "maxvaega/skillkit",
+  "path": "examples/skills/nested-example",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "nested-example-maxvaega-skillkit-2"
+}

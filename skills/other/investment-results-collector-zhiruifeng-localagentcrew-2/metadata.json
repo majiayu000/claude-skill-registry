@@ -1,0 +1,11 @@
+{
+  "name": "investment-results-collector",
+  "description": "Collects and stores investment analysis results according to the web service storage specifications",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/investment-results-collector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "dir_name": "investment-results-collector-zhiruifeng-localagentcrew-2"
+}

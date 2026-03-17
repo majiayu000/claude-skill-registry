@@ -1,0 +1,11 @@
+{
+  "name": "system-boundaries",
+  "description": "Defining clear boundaries between systems, services, and modules to manage complexity and enable independent evolution.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "59-architecture-decision/system-boundaries",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "system-boundaries-amnadtaowsoam-cerebratechai-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "discord-bot",
+  "description": "Build Discord bots with modern frameworks.\nUse when: creating Discord bot, slash commands, moderation bot.\nTriggers: \"discord\", \"discord bot\", \"serenity\", \"discord.js\", \"discord.py\".",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/discord-bot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "discord-bot-timequity-vibe-coder-2"
+}

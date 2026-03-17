@@ -1,0 +1,11 @@
+{
+  "name": "quiz-generator",
+  "description": "Generate 50-question interactive quizzes using the Quiz component with randomized batching. Use when creating end-of-chapter assessments. Displays 15-20 questions per session with immediate feedback. ",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/cold/quiz-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "quiz-generator-panaversity-agentfactory-2"
+}

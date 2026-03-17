@@ -1,0 +1,11 @@
+{
+  "name": "pr-and-cleanup",
+  "description": "worktree での開発完了後に PR を作成し、worktree を自動削除する。ローカル/リモートブランチは保持。",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/pr-and-cleanup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "pr-and-cleanup-takemo101-compose-workflow-2"
+}

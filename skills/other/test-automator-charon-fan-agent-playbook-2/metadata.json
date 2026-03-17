@@ -1,0 +1,11 @@
+{
+  "name": "test-automator",
+  "description": "Test automation framework expert for creating and maintaining automated tests. Use when user asks to write tests, automate testing, or improve test coverage.",
+  "repo": "Charon-Fan/agent-playbook",
+  "path": "skills/test-automator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Charon-Fan/agent-playbook",
+  "dir_name": "test-automator-charon-fan-agent-playbook-2"
+}

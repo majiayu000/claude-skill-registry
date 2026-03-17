@@ -1,0 +1,11 @@
+{
+  "name": "session-search",
+  "description": "Search and analyze AI coding assistant session history using Terraphim.\nFind past conversations, discover patterns, and learn from previous work.\nSupports Claude Code, Cursor, Aider, and other AI codi",
+  "repo": "terraphim/codex-skills",
+  "path": "skills/session-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terraphim/codex-skills",
+  "dir_name": "session-search-terraphim-codex-skills-2"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "copywriting",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/copywriting/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "copywriting-dengineproblem-agents-monorepo",
+  "downloaded_at": "2026-03-01T07:26:21.475699Z",
+  "author": "dengineproblem",
+  "source_url": "https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/copywriting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/copywriting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

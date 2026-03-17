@@ -1,0 +1,11 @@
+{
+  "name": "gdbserver",
+  "description": "GDB Server skill for the ikigai project",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/gdbserver",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "gdbserver-mgreenly-ikigai-2"
+}

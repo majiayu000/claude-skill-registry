@@ -1,0 +1,9 @@
+{
+  "name": "helm",
+  "repo": "chaterm/terminal-skills",
+  "path": "kubernetes/helm/SKILL.md",
+  "category": "other",
+  "source": "github.com/chaterm/terminal-skills",
+  "dir_name": "helm-chaterm-terminal-skills",
+  "downloaded_at": "2026-02-22T06:41:43.959490Z"
+}

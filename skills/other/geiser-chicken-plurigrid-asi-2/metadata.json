@@ -1,0 +1,11 @@
+{
+  "name": "geiser-chicken",
+  "description": "Geiser REPL integration for Chicken Scheme with SplitMixTernary 3-coloring and crdt.el sexp patterns.",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.ruler/skills/geiser-chicken",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "geiser-chicken-plurigrid-asi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "dev-implement",
+  "description": "REQUIRED Phase 5 of /dev workflow. Orchestrates per-task ralph loops with delegated TDD implementation.",
+  "repo": "edwinhu/workflows",
+  "path": "lib/skills/dev-implement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "dev-implement-edwinhu-workflows-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "bootstrap",
+  "description": "Auto-registration via KoanAutoRegistrar, minimal Program.cs, \"Reference = Intent\" pattern",
+  "repo": "sylin-org/koan-framework",
+  "path": ".claude/skills/bootstrap",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sylin-org/koan-framework",
+  "dir_name": "bootstrap-sylin-org-koan-framework-2"
+}

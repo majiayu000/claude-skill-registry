@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-protected-branches",
+  "description": "Manages protected branches in GitLab. Use for protecting/unprotecting branches, code owner approvals. Triggers: branch protection.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-protected-branches",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-protected-branches-knuckles-team-gitlab-api-2"
+}

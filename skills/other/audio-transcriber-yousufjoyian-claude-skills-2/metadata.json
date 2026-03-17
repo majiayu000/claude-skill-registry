@@ -1,0 +1,11 @@
+{
+  "name": "Audio-Transcriber",
+  "description": "Extracts audio from dashcam MP4 files and produces GPU-accelerated timestamped transcripts with optional speaker diarization. This skill should be used when users request audio transcription from vide",
+  "repo": "yousufjoyian/claude-skills",
+  "path": "Dashcam/Audio-Transcriber",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yousufjoyian/claude-skills",
+  "dir_name": "audio-transcriber-yousufjoyian-claude-skills-2"
+}

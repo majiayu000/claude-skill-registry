@@ -1,0 +1,11 @@
+{
+  "name": "text-splitter",
+  "description": "Split text into specified-sized chunks while maintaining semantic integrity. Suitable for long text batch processing, dividing text into processable segments",
+  "repo": "VanGongwanxiaowan/screen-creative-skills",
+  "path": "category/tools/text-splitter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VanGongwanxiaowan/screen-creative-skills",
+  "dir_name": "text-splitter-vangongwanxiaowan-screen-creative-skil-2"
+}

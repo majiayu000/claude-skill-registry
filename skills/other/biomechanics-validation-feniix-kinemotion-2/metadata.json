@@ -1,0 +1,11 @@
+{
+  "name": "biomechanics-validation",
+  "description": "Validates jump metrics against physiological norms. Use when analyzing CMJ or drop jump results, discussing RSI values, jump heights, ground contact times, or when metrics seem unusual.",
+  "repo": "feniix/kinemotion",
+  "path": ".gemini/skills/biomechanics-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/feniix/kinemotion",
+  "dir_name": "biomechanics-validation-feniix-kinemotion-2"
+}

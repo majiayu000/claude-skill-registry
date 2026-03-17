@@ -1,0 +1,11 @@
+{
+  "name": "iteration-tracking",
+  "description": "Tracks iteration progress and state management. Use when starting, checkpointing, or ending iteration cycles, or when user mentions iteration tracking, progress monitoring, or iteration state.",
+  "repo": "vanman2024/dev-lifecycle-marketplace",
+  "path": ".archive/old-numbered-plugins/04-iterate/skills/iteration-tracking",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vanman2024/dev-lifecycle-marketplace",
+  "dir_name": "iteration-tracking-vanman2024-dev-lifecycle-market-2"
+}

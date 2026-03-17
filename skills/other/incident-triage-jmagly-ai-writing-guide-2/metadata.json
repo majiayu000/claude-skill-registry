@@ -1,0 +1,11 @@
+{
+  "name": "incident-triage",
+  "description": "Rapid incident classification, severity assessment, and response coordination. Use when relevant to the task.",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "plugins/sdlc/skills/incident-triage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jmagly/ai-writing-guide",
+  "dir_name": "incident-triage-jmagly-ai-writing-guide-2"
+}

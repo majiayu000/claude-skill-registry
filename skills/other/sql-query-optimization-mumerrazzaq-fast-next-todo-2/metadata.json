@@ -1,0 +1,11 @@
+{
+  "name": "sql-query-optimization",
+  "description": "A skill for optimizing SQL queries, focusing on PostgreSQL. It provides a checklist for query analysis, guidance on reading EXPLAIN plans, and patterns for common optimization problems like N+1 querie",
+  "repo": "MUmerRazzaq/fast-next-todo",
+  "path": ".claude/skills/sql-query-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MUmerRazzaq/fast-next-todo",
+  "dir_name": "sql-query-optimization-mumerrazzaq-fast-next-todo-2"
+}

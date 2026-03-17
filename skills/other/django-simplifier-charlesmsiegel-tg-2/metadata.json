@@ -1,0 +1,11 @@
+{
+  "name": "django-simplifier",
+  "description": "Simplify overly complex Django code and detect Django-specific anti-patterns. Use when user asks to simplify, refactor, or improve Django code, find N+1 queries, detect Django anti-patterns, optimize ",
+  "repo": "charlesmsiegel/tg",
+  "path": ".claude/skills/django-simplifier",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/charlesmsiegel/tg",
+  "dir_name": "django-simplifier-charlesmsiegel-tg-2"
+}

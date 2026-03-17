@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-computer-use-agents",
+  "description": "Build AI agents that interact with computers like humans do - viewing screens, moving cursors, clicking buttons, and typing text. Covers Anthropic's Computer Use, OpenAI's Operator/CUA, and open-sourc",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-computer-use-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-computer-use-agents-boisenoise-skills-collections-2"
+}

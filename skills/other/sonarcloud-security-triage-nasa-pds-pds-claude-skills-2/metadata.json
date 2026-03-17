@@ -1,0 +1,11 @@
+{
+  "name": "sonarcloud-security-triage",
+  "description": "Apply triage decisions to SonarCloud security issues by reading a CSV with review decisions and updating issue/hotspot statuses via the SonarCloud API. Use when the user has reviewed security issues a",
+  "repo": "NASA-PDS/pds-claude-skills",
+  "path": "sonarcloud-security-triage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NASA-PDS/pds-claude-skills",
+  "dir_name": "sonarcloud-security-triage-nasa-pds-pds-claude-skills-2"
+}

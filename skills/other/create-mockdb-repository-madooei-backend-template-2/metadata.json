@@ -1,0 +1,11 @@
+{
+  "name": "create-mockdb-repository",
+  "description": "Create MockDB (in-memory) repository implementation for development and testing. Use when implementing repository interface with mock database, creating in-memory data store, or setting up test fixtur",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/create-mockdb-repository",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "create-mockdb-repository-madooei-backend-template-2"
+}

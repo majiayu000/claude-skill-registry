@@ -1,0 +1,11 @@
+{
+  "name": "dos-resource-exhaustion",
+  "description": "Find denial of service vulnerabilities through resource exhaustion, algorithmic complexity, memory exhaustion, and file/network resource abuse. Use when auditing code for availability issues.",
+  "repo": "MAF2414/kyco",
+  "path": ".claude/skills/dos-resource-exhaustion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MAF2414/kyco",
+  "dir_name": "dos-resource-exhaustion-maf2414-kyco-2"
+}

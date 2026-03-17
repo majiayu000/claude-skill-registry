@@ -1,0 +1,11 @@
+{
+  "name": "todo-management",
+  "description": "Systematic progress tracking for skill development. Manages task states (pending/in_progress/completed), updates in real-time, reports progress, identifies blockers, and maintains momentum. Use when t",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/todo-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "todo-management-adaptationio-skrillz-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "oapply-colimit",
+  "description": "oapply: Operad algebra evaluation via colimits. Composes machines/resource sharers.",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.agents/skills/oapply-colimit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "oapply-colimit-plurigrid-asi-2"
+}

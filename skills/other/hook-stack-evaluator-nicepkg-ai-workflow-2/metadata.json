@@ -1,0 +1,11 @@
+{
+  "name": "hook-stack-evaluator",
+  "description": "Evaluates and sharpens content hooks using The Hook Stack™ framework. Use when scoring headlines, refining hooks for video/social/newsletter, or when asked to \"evaluate this hook\", \"run through hook s",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/content-creator-workflow/.claude/skills/hook-stack-evaluator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "hook-stack-evaluator-nicepkg-ai-workflow-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "cross-platform-builds",
+  "description": "Comprehensive guide to building JUCE plugins for macOS, Windows, and Linux with CMake, code signing, notarization, and CI/CD. Use when configuring builds, setting up CI/CD pipelines, troubleshooting c",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/juce-dev-team/skills/cross-platform-builds",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "cross-platform-builds-yebot-rad-cc-plugins-2"
+}

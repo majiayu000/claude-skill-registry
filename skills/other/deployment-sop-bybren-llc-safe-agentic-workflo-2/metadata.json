@@ -1,0 +1,11 @@
+{
+  "name": "deployment-sop",
+  "description": "Deployment workflows, pre-deploy validation, and smoke testing patterns. Use when deploying to staging or production, running smoke tests, or validating deployments.",
+  "repo": "bybren-llc/safe-agentic-workflow",
+  "path": ".claude/skills/deployment-sop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bybren-llc/safe-agentic-workflow",
+  "dir_name": "deployment-sop-bybren-llc-safe-agentic-workflo-2"
+}

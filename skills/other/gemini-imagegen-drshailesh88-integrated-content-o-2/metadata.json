@@ -1,0 +1,11 @@
+{
+  "name": "gemini-imagegen",
+  "description": "Generate and edit images using the Gemini API (Nano Banana Pro). Use this skill when creating images from text prompts, editing existing images, applying style transfers, generating logos with text, c",
+  "repo": "drshailesh88/integrated_content_OS",
+  "path": "skills/cardiology/gemini-imagegen",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/drshailesh88/integrated_content_OS",
+  "dir_name": "gemini-imagegen-drshailesh88-integrated-content-o-2"
+}

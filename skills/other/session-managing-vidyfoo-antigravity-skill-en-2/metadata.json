@@ -1,0 +1,11 @@
+{
+  "name": "session-managing",
+  "description": "自动触发的会话生命周期管理 - INHERIT (继承知识) + DEPOSIT (沉淀精华)",
+  "repo": "VidyFoo/antigravity-skill-engine",
+  "path": ".agent/skills/1-dev/session-managing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VidyFoo/antigravity-skill-engine",
+  "dir_name": "session-managing-vidyfoo-antigravity-skill-en-2"
+}

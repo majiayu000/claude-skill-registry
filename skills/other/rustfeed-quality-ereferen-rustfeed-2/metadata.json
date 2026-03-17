@@ -1,0 +1,11 @@
+{
+  "name": "rustfeed-quality",
+  "description": "rustfeed プロジェクトのコード品質チェック（cargo fmt、clippy、test、doc）を実行します。コード品質確認、コミット前チェック、CI/CD検証時に使用します。",
+  "repo": "ereferen/rustfeed",
+  "path": ".claude/skills/rustfeed-quality",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ereferen/rustfeed",
+  "dir_name": "rustfeed-quality-ereferen-rustfeed-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "data-quality",
+  "description": "Data quality testing with dbt tests, Great Expectations, and monitoring.",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/data/data-quality",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "data-quality-timequity-vibe-coder-2"
+}

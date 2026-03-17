@@ -1,0 +1,11 @@
+{
+  "name": "calc_bode",
+  "description": "python-controlを使用して、メカニカルシステムの状態空間モデルから伝達関数（Bode Plot）を計算・表示する",
+  "repo": "tatsuki-washimi/gwexpy",
+  "path": ".agent/skills/calc_bode",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tatsuki-washimi/gwexpy",
+  "dir_name": "calc-bode-tatsuki-washimi-gwexpy-2"
+}

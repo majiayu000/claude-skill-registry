@@ -1,0 +1,11 @@
+{
+  "name": "continuity_ledger",
+  "description": "Create or update continuity ledger for state preservation across clears",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/continuity_ledger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildcard/caro",
+  "dir_name": "continuity-ledger-wildcard-caro-2"
+}

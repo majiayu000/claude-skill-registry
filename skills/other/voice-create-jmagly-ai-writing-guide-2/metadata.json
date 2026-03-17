@@ -1,0 +1,11 @@
+{
+  "name": "voice-create",
+  "description": "Generate custom voice profiles from natural language descriptions. Use when relevant to the task.",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "plugins/voice/skills/voice-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jmagly/ai-writing-guide",
+  "dir_name": "voice-create-jmagly-ai-writing-guide-2"
+}

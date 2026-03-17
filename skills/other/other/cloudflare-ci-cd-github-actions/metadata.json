@@ -1,0 +1,9 @@
+{
+  "name": "cloudflare-ci-cd-github-actions",
+  "repo": "AgentiveCity/SkillFactory",
+  "path": ".claude/skills/cloudflare-ci-cd-github-actions/SKILL.md",
+  "category": "other",
+  "source": "github.com/AgentiveCity/SkillFactory",
+  "dir_name": "cloudflare-ci-cd-github-actions",
+  "downloaded_at": "2026-02-22T04:39:02.350421Z"
+}

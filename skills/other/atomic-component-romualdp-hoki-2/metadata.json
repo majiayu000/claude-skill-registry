@@ -1,0 +1,11 @@
+{
+  "name": "atomic-component",
+  "description": "Génère des composants React suivant l'Atomic Design avec décomposition maximale et pattern Smart/Dumb. MANDATORY pour tous composants. À utiliser lors de la création de composants, pages, ou quand l'u",
+  "repo": "RomualdP/hoki",
+  "path": ".claude/skills/atomic-component",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RomualdP/hoki",
+  "dir_name": "atomic-component-romualdp-hoki-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "headless-cli-agents",
+  "description": "Build agentic systems using Claude CLI in headless mode or the Claude Agent SDK. Use when building automation pipelines, CI/CD integrations, multi-agent orchestration, or programmatic Claude interacti",
+  "repo": "cuba6112/skillfactory",
+  "path": ".claude/skills/headless-cli-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "headless-cli-agents-cuba6112-skillfactory-2"
+}

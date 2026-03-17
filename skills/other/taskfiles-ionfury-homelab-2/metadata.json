@@ -1,0 +1,11 @@
+{
+  "name": "taskfiles",
+  "description": "Create, modify, and maintain Taskfiles following Task (https://taskfile.dev) best practices.\n\nUse when: (1) Creating new tasks or Taskfiles, (2) Modifying existing task definitions,\n(3) Adding new tas",
+  "repo": "ionfury/homelab",
+  "path": ".claude/skills/taskfiles",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ionfury/homelab",
+  "dir_name": "taskfiles-ionfury-homelab-2"
+}

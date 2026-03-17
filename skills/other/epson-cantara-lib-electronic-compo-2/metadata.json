@@ -1,0 +1,11 @@
+{
+  "name": "epson",
+  "description": "Epson timing devices MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Epson crystals, oscillators, RTCs, or EpsonHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/epson",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "epson-cantara-lib-electronic-compo-2"
+}

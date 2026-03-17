@@ -1,0 +1,11 @@
+{
+  "name": "skill-axel-core",
+  "description": "Trigger-based workflow dispatcher for AXEL core operations. Receives explicit trigger from command and dispatches to matching workflow.\n",
+  "repo": "apiksdev/axel-core",
+  "path": "skills/skill-axel-core",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/apiksdev/axel-core",
+  "dir_name": "skill-axel-core-apiksdev-axel-core-2"
+}

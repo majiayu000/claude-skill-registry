@@ -1,0 +1,11 @@
+{
+  "name": "research-lookup",
+  "description": "Look up current research information using Perplexity's Sonar Pro Search or Sonar Reasoning Pro models through OpenRouter. Automatically selects the best model based on query complexity. Search academ",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/research-lookup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "research-lookup-majiayu000-claude-skill-registr-2"
+}

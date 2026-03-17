@@ -1,0 +1,11 @@
+{
+  "name": "context-updater",
+  "description": "项目上下文自动更新器。当新增功能、重构代码、修改架构时触发，确保 project_context.md 保持最新。触发词：新功能, 重构, 架构变更, 新模块, 新系统, 完成实现。",
+  "repo": "hongliangc/combo_demon",
+  "path": ".claude/skills/context-updater",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hongliangc/combo_demon",
+  "dir_name": "context-updater-hongliangc-combo-demon-2"
+}

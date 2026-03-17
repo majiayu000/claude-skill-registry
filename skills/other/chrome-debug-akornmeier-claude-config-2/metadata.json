@@ -1,0 +1,11 @@
+{
+  "name": "chrome-debug",
+  "description": "How to use Chrome DevTools MCP for browser debugging. Use when you need to inspect pages, take screenshots, debug UI issues, or verify visual changes.",
+  "repo": "akornmeier/claude-config",
+  "path": "skills/chrome-debug",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/akornmeier/claude-config",
+  "dir_name": "chrome-debug-akornmeier-claude-config-2"
+}

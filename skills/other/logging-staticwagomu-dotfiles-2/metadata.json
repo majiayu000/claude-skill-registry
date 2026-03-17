@@ -1,0 +1,11 @@
+{
+  "name": "logging",
+  "description": "Guide logging practices based on Dave Cheney's minimalist philosophy. Use when adding log.Info/Debug/Error/Warn/Fatal calls, reviewing logging code, handling errors with log+return pattern, discussing",
+  "repo": "staticWagomU/dotfiles",
+  "path": "config/claude/skills/logging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/staticWagomU/dotfiles",
+  "dir_name": "logging-staticwagomu-dotfiles-2"
+}

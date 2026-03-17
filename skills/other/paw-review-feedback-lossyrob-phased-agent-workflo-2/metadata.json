@@ -1,0 +1,11 @@
+{
+  "name": "paw-review-feedback",
+  "description": "Transforms gap analysis findings into structured review comments with comprehensive rationale. Handles both initial draft generation and critique response iteration.",
+  "repo": "lossyrob/phased-agent-workflow",
+  "path": "skills/paw-review-feedback",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lossyrob/phased-agent-workflow",
+  "dir_name": "paw-review-feedback-lossyrob-phased-agent-workflo-2"
+}

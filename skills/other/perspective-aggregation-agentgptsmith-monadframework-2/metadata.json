@@ -1,0 +1,11 @@
+{
+  "name": "perspective-aggregation",
+  "description": "Combine outputs from multiple instances into unified view, preserving diversity",
+  "repo": "agentgptsmith/MonadFramework",
+  "path": ".claude/skills/perspective-aggregation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentgptsmith/MonadFramework",
+  "dir_name": "perspective-aggregation-agentgptsmith-monadframework-2"
+}

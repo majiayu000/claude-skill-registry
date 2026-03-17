@@ -1,0 +1,11 @@
+{
+  "name": "cloudinary",
+  "description": "Manages images and videos with Cloudinary including upload, transformation, and CDN delivery. Use when building media-rich applications requiring resize, crop, format conversion, and optimization.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/skills/cloudinary",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "cloudinary-mgd34msu-goodvibes-plugin-2"
+}

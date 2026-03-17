@@ -1,0 +1,11 @@
+{
+  "name": "fujitsu-mainframe",
+  "description": "Analyzes and assists with Fujitsu mainframe systems including FACOM, PRIMERGY, BS2000/OSD, OSIV/MSP, OSIV/XSP, NetCOBOL, PowerCOBOL, and Fujitsu JCL. Extracts business logic from Fujitsu COBOL program",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/fujitsu-mainframe",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "dir_name": "fujitsu-mainframe-dauquangthanh-hanoi-rainbow-2"
+}

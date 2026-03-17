@@ -1,0 +1,11 @@
+{
+  "name": "video-hook-generator",
+  "description": "Generate attention-grabbing hooks for the first 3 seconds of videos. The hook determines if viewers stay or scroll. Creates multiple hook variations for A/B testing. Use when crafting video openings, ",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/video-creator-workflow/.claude/skills/video-hook-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "video-hook-generator-nicepkg-ai-workflow-2"
+}

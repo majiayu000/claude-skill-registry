@@ -1,0 +1,11 @@
+{
+  "name": "clay-observability",
+  "description": "Set up comprehensive observability for Clay integrations with metrics, traces, and alerts.\nUse when implementing monitoring for Clay operations, setting up dashboards,\nor configuring alerting for Clay",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/clay-pack/clay-observability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "clay-observability-vasic-digital-superagent-2"
+}

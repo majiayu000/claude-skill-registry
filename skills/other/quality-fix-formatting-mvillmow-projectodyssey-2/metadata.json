@@ -1,0 +1,11 @@
+{
+  "name": "quality-fix-formatting",
+  "description": "Automatically fix code formatting issues using mojo format, markdownlint, and pre-commit hooks. Use when formatting checks fail or before committing code.",
+  "repo": "mvillmow/ProjectOdyssey",
+  "path": ".claude/skills/quality-fix-formatting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mvillmow/ProjectOdyssey",
+  "dir_name": "quality-fix-formatting-mvillmow-projectodyssey-2"
+}

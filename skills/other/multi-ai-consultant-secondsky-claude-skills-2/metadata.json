@@ -1,0 +1,11 @@
+{
+  "name": "multi-ai-consultant",
+  "description": "Consult external AIs (Gemini 2.5 Pro, OpenAI Codex, Claude) for second opinions. Use for debugging failures, architectural decisions, security validation, or need fresh perspective with synthesis.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/multi-ai-consultant/skills/multi-ai-consultant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "multi-ai-consultant-secondsky-claude-skills-2"
+}

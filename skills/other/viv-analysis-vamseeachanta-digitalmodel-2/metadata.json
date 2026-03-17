@@ -1,0 +1,11 @@
+{
+  "name": "viv-analysis",
+  "description": "Assess vortex-induced vibration (VIV) for risers and tubular members with natural frequency and safety factor calculations. Use for VIV susceptibility analysis, natural frequency calculation, vortex s",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/viv-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "viv-analysis-vamseeachanta-digitalmodel-2"
+}

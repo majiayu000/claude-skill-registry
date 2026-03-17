@@ -1,0 +1,11 @@
+{
+  "name": "transcript-fixer",
+  "description": "Corrects speech-to-text transcription errors in meeting notes, lectures, and interviews using dictionary rules and AI. Learns patterns to build personalized correction databases. Use when working with",
+  "repo": "nguyendinhquocx/code-ai",
+  "path": "skills/transcript-fixer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nguyendinhquocx/code-ai",
+  "dir_name": "transcript-fixer-nguyendinhquocx-code-ai-2"
+}

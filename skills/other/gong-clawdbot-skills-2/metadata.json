@@ -1,0 +1,11 @@
+{
+  "name": "gong",
+  "description": "Gong API for searching calls, transcripts, and conversation intelligence. Use when working with Gong call recordings, sales conversations, transcripts, meeting data, or conversation analytics. Support",
+  "repo": "clawdbot/skills",
+  "path": "skills/jdrhyne/gong",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "gong-clawdbot-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ui-color-consistency",
+  "description": "Audits and updates UI components across an app to ensure consistent theming using CSS custom properties and design system colors. Use when updating UI theme, ensuring color consistency, or applying a ",
+  "repo": "laurenj3250-debug/vethub2.0",
+  "path": ".claude/skills/ui-color-consistency",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/laurenj3250-debug/vethub2.0",
+  "dir_name": "ui-color-consistency-laurenj3250-debug-vethub2-0-2"
+}

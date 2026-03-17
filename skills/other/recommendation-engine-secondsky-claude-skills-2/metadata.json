@@ -1,0 +1,11 @@
+{
+  "name": "recommendation-engine",
+  "description": "Build recommendation systems with collaborative filtering, matrix factorization, hybrid approaches. Use for product recommendations, personalization, or encountering cold start, sparsity, quality eval",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/recommendation-engine/skills/recommendation-engine",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "recommendation-engine-secondsky-claude-skills-2"
+}

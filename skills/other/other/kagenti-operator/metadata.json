@@ -1,0 +1,9 @@
+{
+  "name": "kagenti-operator",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/kagenti:operator/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "kagenti-operator",
+  "downloaded_at": "2026-02-15T07:49:45.457333Z"
+}

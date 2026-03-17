@@ -1,0 +1,11 @@
+{
+  "name": "working-in-monorepos",
+  "description": "Use when working in repositories with multiple subprojects (monorepos) where commands need to run from specific directories - prevents directory confusion, redundant cd commands, and ensures commands ",
+  "repo": "technicalpickles/pickled-claude-plugins",
+  "path": "plugins/working-in-monorepos/skills/working-in-monorepos",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/technicalpickles/pickled-claude-plugins",
+  "dir_name": "working-in-monorepos-technicalpickles-pickled-claude-plugi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "scrum-event-backlog-refinement",
+  "description": "Transform PBIs into ready status for AI execution. Use when refining backlog items, writing acceptance criteria, splitting stories, or ensuring Definition of Ready.",
+  "repo": "staticWagomU/dotfiles",
+  "path": "config/claude/skills/scrum-event-backlog-refinement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/staticWagomU/dotfiles",
+  "dir_name": "scrum-event-backlog-refinement-staticwagomu-dotfiles-2"
+}

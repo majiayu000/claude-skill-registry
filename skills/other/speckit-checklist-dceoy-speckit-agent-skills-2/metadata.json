@@ -1,0 +1,11 @@
+{
+  "name": "speckit-checklist",
+  "description": "Generate a custom checklist for the current feature based on user requirements.",
+  "repo": "dceoy/speckit-agent-skills",
+  "path": "skills/speckit-checklist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dceoy/speckit-agent-skills",
+  "dir_name": "speckit-checklist-dceoy-speckit-agent-skills-2"
+}

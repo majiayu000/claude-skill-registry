@@ -1,0 +1,11 @@
+{
+  "name": "archive-search",
+  "description": "Search raw session transcripts for technical details and reasoning traces",
+  "repo": "claudeaceae/samara-main",
+  "path": ".claude/skills/archive-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/claudeaceae/samara-main",
+  "dir_name": "archive-search-claudeaceae-samara-main-2"
+}

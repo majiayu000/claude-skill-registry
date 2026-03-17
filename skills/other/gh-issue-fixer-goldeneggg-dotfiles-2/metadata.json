@@ -1,0 +1,11 @@
+{
+  "name": "gh-issue-fixer",
+  "description": "GitHub Issue を修正するスキル。\n以下の状況で使用:\n(1) ユーザーが「Issue #XX を修正して」と依頼した時\n(2) ユーザーが明示的に「/gh-issue-fixer」を実行した時\n(3) GitHub Issue の対応を求められた時",
+  "repo": "goldeneggg/dotfiles",
+  "path": "claude-linux/.claude/skills/gh-issue-fixer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/goldeneggg/dotfiles",
+  "dir_name": "gh-issue-fixer-goldeneggg-dotfiles-2"
+}

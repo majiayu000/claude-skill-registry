@@ -1,0 +1,11 @@
+{
+  "name": "route",
+  "description": "Manually route a query to the optimal Claude model (Haiku/Sonnet/Opus)",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/automattic/wordpress-router",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "route-aiskillstore-marketplace-2"
+}

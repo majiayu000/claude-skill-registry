@@ -1,0 +1,11 @@
+{
+  "name": "pubmed-multi-source-search",
+  "description": "整合 PubMed、Europe PMC、CORE、Semantic Scholar、OpenAlex 等多個學術資料庫，進行全面的跨來源搜尋。",
+  "repo": "u9401066/pubmed-search-mcp",
+  "path": ".claude/skills/pubmed-multi-source-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/u9401066/pubmed-search-mcp",
+  "dir_name": "pubmed-multi-source-search-u9401066-pubmed-search-mcp-2"
+}

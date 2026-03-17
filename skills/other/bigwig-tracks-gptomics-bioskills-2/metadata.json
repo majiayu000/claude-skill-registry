@@ -1,0 +1,11 @@
+{
+  "name": "bigwig-tracks",
+  "description": "Create and read bigWig browser tracks for visualizing continuous genomic data. Convert bedGraph to bigWig, extract signal values, and generate coverage tracks using UCSC tools and pyBigWig. Use when p",
+  "repo": "GPTomics/bioSkills",
+  "path": "genome-intervals/bigwig-tracks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "bigwig-tracks-gptomics-bioskills-2"
+}

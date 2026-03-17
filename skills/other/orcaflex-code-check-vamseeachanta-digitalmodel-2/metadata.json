@@ -1,0 +1,11 @@
+{
+  "name": "orcaflex-code-check",
+  "description": "Verify OrcaFlex model results against industry standards (DNV, API, ISO). Perform capacity checks, safety factor verification, and compliance reporting for offshore structures.",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcaflex-code-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcaflex-code-check-vamseeachanta-digitalmodel-2"
+}

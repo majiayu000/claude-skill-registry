@@ -1,0 +1,11 @@
+{
+  "name": "infra-network",
+  "description": "Infra Network Agent. VPC, 서브넷, 방화벽, DNS 설정을 담당합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/infra-network",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "infra-network-shaul1991-shaul-agents-plugin-2"
+}

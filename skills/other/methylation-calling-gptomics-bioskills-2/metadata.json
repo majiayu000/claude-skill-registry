@@ -1,0 +1,11 @@
+{
+  "name": "methylation-calling",
+  "description": "Extract methylation calls from Bismark BAM files using bismark_methylation_extractor. Generates per-cytosine reports for CpG, CHG, and CHH contexts. Use when extracting methylation levels from aligned",
+  "repo": "GPTomics/bioSkills",
+  "path": "methylation-analysis/methylation-calling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "methylation-calling-gptomics-bioskills-2"
+}

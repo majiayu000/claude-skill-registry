@@ -1,0 +1,11 @@
+{
+  "name": "git-workspace",
+  "description": "Work with git worktrees to enable concurrent development across multiple branches without context switching or stashing conflicts.",
+  "repo": "lambda-curry/devagent",
+  "path": ".cursor/skills/git-workspace",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lambda-curry/devagent",
+  "dir_name": "git-workspace-lambda-curry-devagent-2"
+}

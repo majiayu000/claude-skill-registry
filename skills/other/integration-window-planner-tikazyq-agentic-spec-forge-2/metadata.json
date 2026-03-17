@@ -1,0 +1,11 @@
+{
+  "name": "integration-window-planner",
+  "description": "规划集成窗口位置和验证策略。当需要在Phase之间或SubPlan之间安排集成窗口、定义集成验证策略、生成集成清单（API契约/数据流/E2E测试）时使用。主要用于L2/L3项目。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/execspec_compile/integration-window-planner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "integration-window-planner-tikazyq-agentic-spec-forge-2"
+}

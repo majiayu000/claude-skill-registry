@@ -1,0 +1,11 @@
+{
+  "name": "browser",
+  "description": "Minimal Chrome DevTools Protocol tools for browser automation and scraping. Use when you need to start Chrome, navigate pages, execute JavaScript, take screenshots, or interactively pick DOM elements.",
+  "repo": "araaking/opencode-kuli-pro",
+  "path": "skills/browser",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/araaking/opencode-kuli-pro",
+  "dir_name": "browser-araaking-opencode-kuli-pro-2"
+}

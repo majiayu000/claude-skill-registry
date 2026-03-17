@@ -1,0 +1,11 @@
+{
+  "name": "fix-pr-comments",
+  "description": "This skill should be used when the user asks to \"fix PR comments\", \"address PR feedback\", \"resolve PR threads\", mentions \"PR review\", or discusses GitHub pull request comments.",
+  "repo": "tbroadley/dotfiles",
+  "path": "claude/skills/fix-pr-comments",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tbroadley/dotfiles",
+  "dir_name": "fix-pr-comments-tbroadley-dotfiles-2"
+}

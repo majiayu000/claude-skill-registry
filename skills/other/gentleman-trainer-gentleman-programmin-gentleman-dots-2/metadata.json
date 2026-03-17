@@ -1,0 +1,11 @@
+{
+  "name": "gentleman-trainer",
+  "description": "Vim Trainer RPG system patterns for Gentleman.Dots. Trigger: When editing files in installer/internal/tui/trainer/, adding exercises, modules, or game mechanics.\n",
+  "repo": "Gentleman-Programming/Gentleman.Dots",
+  "path": "skills/gentleman-trainer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Gentleman-Programming/Gentleman.Dots",
+  "dir_name": "gentleman-trainer-gentleman-programmin-gentleman-dots-2"
+}

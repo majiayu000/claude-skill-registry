@@ -1,0 +1,11 @@
+{
+  "name": "components",
+  "description": "UI component patterns for React 19, shadcn/ui, and Tailwind. Use when working on files in src/components/.",
+  "repo": "bentefay/moneyflow",
+  "path": ".claude/skills/components",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bentefay/moneyflow",
+  "dir_name": "components-bentefay-moneyflow-2"
+}

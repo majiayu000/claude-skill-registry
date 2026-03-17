@@ -1,0 +1,11 @@
+{
+  "name": "health-checks",
+  "description": "Post-deployment validation and health check scripts for validating HTTP endpoints, APIs, MCP servers, SSL/TLS certificates, and performance metrics. Use when deploying applications, validating deploym",
+  "repo": "vanman2024/dev-lifecycle-marketplace",
+  "path": "plugins/deployment/skills/health-checks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vanman2024/dev-lifecycle-marketplace",
+  "dir_name": "health-checks-vanman2024-dev-lifecycle-market-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "where-to-find-what",
+  "description": "Reference guide ที่บอกว่า \"หา X อยู่ไหน\" สำหรับ common patterns ใน codebase เช่น หา API endpoints, database models, tests, configs ช่วยให้ AI และคนค้นหาได้เร็ว",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "66-repo-navigation-knowledge-map/where-to-find-what",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "where-to-find-what-amnadtaowsoam-cerebratechai-claude-2"
+}

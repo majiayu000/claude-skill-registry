@@ -1,0 +1,11 @@
+{
+  "name": "pm-manager",
+  "description": "PM Manager Agent. 프로젝트 관리, 일정 조율, 리소스 관리를 담당합니다. 일정, 스케줄, 마일스톤, 프로젝트 관리 관련 요청 시 사용됩니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/pm-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "pm-manager-shaul1991-shaul-agents-plugin-2"
+}

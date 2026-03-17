@@ -1,0 +1,11 @@
+{
+  "name": "groq-cost-tuning",
+  "description": "Optimize Groq costs through tier selection, sampling, and usage monitoring.\nUse when analyzing Groq billing, reducing API costs,\nor implementing usage monitoring and budget alerts.\nTrigger with phrase",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/groq-pack/groq-cost-tuning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "groq-cost-tuning-vasic-digital-superagent-2"
+}

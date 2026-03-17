@@ -1,0 +1,11 @@
+{
+  "name": "skill-logger",
+  "description": "Logs and scores skill usage quality, tracking output effectiveness, user satisfaction signals, and improvement opportunities. Expert in skill analytics, quality metrics, feedback loops, and continuous",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/skill-logger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "skill-logger-erichowens-some-claude-skills-2"
+}

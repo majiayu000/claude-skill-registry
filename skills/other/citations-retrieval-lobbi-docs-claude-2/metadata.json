@@ -1,0 +1,11 @@
+{
+  "name": "citations-retrieval",
+  "description": "Document citations and RAG (Retrieval-Augmented Generation) patterns for Claude. Activate for source attribution, document grounding, citation extraction, and contextual retrieval.",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/citations-retrieval",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "citations-retrieval-lobbi-docs-claude-2"
+}

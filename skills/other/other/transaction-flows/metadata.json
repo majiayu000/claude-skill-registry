@@ -1,0 +1,17 @@
+{
+  "name": "transaction-flows",
+  "repo": "aaronbassett/midnight-knowledgebase",
+  "path": "plugins/midnight-dapp/skills/transaction-flows/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaronbassett/midnight-knowledgebase",
+  "dir_name": "transaction-flows",
+  "downloaded_at": "2026-03-01T06:24:54.357300Z",
+  "author": "aaronbassett",
+  "source_url": "https://github.com/aaronbassett/midnight-knowledgebase/blob/main/plugins/midnight-dapp/skills/transaction-flows/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaronbassett/midnight-knowledgebase/blob/main/plugins/midnight-dapp/skills/transaction-flows/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

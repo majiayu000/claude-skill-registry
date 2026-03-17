@@ -1,0 +1,11 @@
+{
+  "name": "security-check",
+  "description": "Automatic OWASP security checks on generated code.\nUse when: any code is generated in the pipeline.\nTriggers: internal use only.",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/security-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/vibe-coder",
+  "dir_name": "security-check-timequity-vibe-coder-2"
+}

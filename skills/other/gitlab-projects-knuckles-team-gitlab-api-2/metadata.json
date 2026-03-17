@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-projects",
+  "description": "Manages GitLab projects. Use for listing, editing, archiving, sharing projects. Triggers: repo management.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-projects",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-projects-knuckles-team-gitlab-api-2"
+}

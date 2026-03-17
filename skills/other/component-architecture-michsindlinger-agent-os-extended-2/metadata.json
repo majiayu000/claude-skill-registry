@@ -1,0 +1,11 @@
+{
+  "name": "component-architecture",
+  "description": "> Template for project-specific component patterns skill",
+  "repo": "michsindlinger/agent-os-extended",
+  "path": "agent-os/templates/skills/component-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/michsindlinger/agent-os-extended",
+  "dir_name": "component-architecture-michsindlinger-agent-os-extended-2"
+}

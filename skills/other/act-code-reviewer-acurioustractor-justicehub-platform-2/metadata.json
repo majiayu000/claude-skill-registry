@@ -1,0 +1,11 @@
+{
+  "name": "act-code-reviewer",
+  "description": "Review JusticeHub code against ACT ecosystem values. Enforces cultural protocols, ALMA principles, and regenerative design.",
+  "repo": "Acurioustractor/justicehub-platform",
+  "path": ".claude/skills/act-code-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Acurioustractor/justicehub-platform",
+  "dir_name": "act-code-reviewer-acurioustractor-justicehub-platform-2"
+}

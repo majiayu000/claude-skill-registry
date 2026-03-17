@@ -1,0 +1,11 @@
+{
+  "name": "demo-2-1-features",
+  "description": "Demo skill showing all Claude Code 2.1 features. Use when asked to \"demo 2.1\" or \"show new skill features\".",
+  "repo": "alexanderop/second-brain-nuxt",
+  "path": ".claude/skills/demo-2-1-features",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alexanderop/second-brain-nuxt",
+  "dir_name": "demo-2-1-features-alexanderop-second-brain-nuxt-2"
+}

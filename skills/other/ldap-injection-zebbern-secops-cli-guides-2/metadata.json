@@ -1,0 +1,11 @@
+{
+  "name": "ldap-injection",
+  "description": "This skill should be used when the user asks to \"test for LDAP injection vulnerabilities\", \"exploit LDAP queries\", \"perform blind LDAP injection attacks\", \"bypass authentication using LDAP injection\",",
+  "repo": "zebbern/SecOps-CLI-Guides",
+  "path": "skills/ldap-injection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zebbern/SecOps-CLI-Guides",
+  "dir_name": "ldap-injection-zebbern-secops-cli-guides-2"
+}

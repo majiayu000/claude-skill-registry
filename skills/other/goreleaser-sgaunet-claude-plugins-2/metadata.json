@@ -1,0 +1,11 @@
+{
+  "name": "goreleaser",
+  "description": "Initialize or update GoReleaser configuration for automated Go releases with multi-architecture Docker builds, binary distribution, and Homebrew publishing",
+  "repo": "sgaunet/claude-plugins",
+  "path": "plugins/go-specialist/skills/goreleaser",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sgaunet/claude-plugins",
+  "dir_name": "goreleaser-sgaunet-claude-plugins-2"
+}

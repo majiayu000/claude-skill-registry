@@ -1,0 +1,11 @@
+{
+  "name": "beken",
+  "description": "Beken Corporation MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Beken WiFi and BLE SoC components or BekenHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/beken",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "beken-cantara-lib-electronic-compo-2"
+}

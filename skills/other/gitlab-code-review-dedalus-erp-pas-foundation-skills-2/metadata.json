@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-code-review",
+  "description": "Performs comprehensive code reviews of GitLab merge requests, analyzing code quality, security, performance, and best practices. Use when the user says \"review\" or \"code review\" or asks to review merg",
+  "repo": "Dedalus-ERP-PAS/foundation-skills",
+  "path": "skills/gitlab-code-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Dedalus-ERP-PAS/foundation-skills",
+  "dir_name": "gitlab-code-review-dedalus-erp-pas-foundation-skills-2"
+}

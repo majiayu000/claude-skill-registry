@@ -1,0 +1,11 @@
+{
+  "name": "search-cities",
+  "description": "List cities for a given state using the bundled background data. Use this skill to validate state inputs or expand destination choices before flight/restaurant/attraction/driving/accommodation lookups",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/travel-planning/environment/skills/search-cities",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "search-cities-benchflow-ai-skillsbench-2"
+}

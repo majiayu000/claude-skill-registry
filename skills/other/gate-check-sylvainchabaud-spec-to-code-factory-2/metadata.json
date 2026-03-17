@@ -1,0 +1,11 @@
+{
+  "name": "gate-check",
+  "description": "Vérifie un gate spécifique (1-5)",
+  "repo": "SylvainChabaud/spec-to-code-factory",
+  "path": ".claude/skills/gate-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylvainChabaud/spec-to-code-factory",
+  "dir_name": "gate-check-sylvainchabaud-spec-to-code-factory-2"
+}

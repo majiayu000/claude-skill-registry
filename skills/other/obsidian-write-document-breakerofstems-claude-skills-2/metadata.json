@@ -1,0 +1,11 @@
+{
+  "name": "obsidian-write-document",
+  "description": "Create or update canonical Obsidian documents with proper formatting and wikilinks. Use when writing new documentation or updating existing vault documents.",
+  "repo": "BreakerOfStems/claude-skills",
+  "path": "skills/obsidian-write-document",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BreakerOfStems/claude-skills",
+  "dir_name": "obsidian-write-document-breakerofstems-claude-skills-2"
+}

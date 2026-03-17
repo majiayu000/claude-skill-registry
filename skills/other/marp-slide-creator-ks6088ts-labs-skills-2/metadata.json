@@ -1,0 +1,11 @@
+{
+  "name": "marp-slide-creator",
+  "description": "Marp を使用してプレゼンテーション用スライドの Markdown ファイルを作成するスキル。ユーザーの要望に基づいて、Marp の機能（ディレクティブ、画像構文、フラグメントリスト、テーマ設定等）をフル活用した高品質なスライドを生成します。「スライドを作成して」「プレゼン資料を作って」「Marp でスライドを書いて」「発表資料を Markdown で作成して」等のリクエストで使用してください。",
+  "repo": "ks6088ts-labs/skills",
+  "path": "skills/marp-slide-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ks6088ts-labs/skills",
+  "dir_name": "marp-slide-creator-ks6088ts-labs-skills-2"
+}

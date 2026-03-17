@@ -1,0 +1,11 @@
+{
+  "name": "use-skill-create",
+  "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+  "repo": "mtthsnc/autonome",
+  "path": "skills/use-skill-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mtthsnc/autonome",
+  "dir_name": "use-skill-create-mtthsnc-autonome-2"
+}

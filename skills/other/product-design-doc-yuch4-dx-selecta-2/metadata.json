@@ -1,0 +1,11 @@
+{
+  "name": "product-design-doc",
+  "description": "プロダクト設計書を作成・更新する。「プロダクト設計書を作って」「設計に落として」「体験設計をまとめて」 「MVP設計を整理」「ユーザーフロー/情報設計を整理」「価値提案を設計書に落とす」などの依頼時に発火。 アイデアの叩き台から、価値提案・ユーザー体験・情報構造・機能構成・データ/権限・リスク・検証計画までを具体化する。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/product-design-doc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "product-design-doc-yuch4-dx-selecta-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "py-async-patterns",
+  "description": "Async/await patterns for FastAPI and SQLAlchemy. Use when working with async code, database sessions, concurrent operations, or debugging async issues in Python.",
+  "repo": "CJHarmath/claude-agents-skills",
+  "path": "skills/py-async-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CJHarmath/claude-agents-skills",
+  "dir_name": "py-async-patterns-cjharmath-claude-agents-skills-2"
+}

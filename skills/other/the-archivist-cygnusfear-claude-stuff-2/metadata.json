@@ -1,0 +1,11 @@
+{
+  "name": "the-archivist",
+  "description": "This skill should be used when engineering decisions are being made during code implementation. The Archivist enforces decision documentation as a standard practice, ensuring every engineering choice ",
+  "repo": "Cygnusfear/claude-stuff",
+  "path": "skills/the-archivist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cygnusfear/claude-stuff",
+  "dir_name": "the-archivist-cygnusfear-claude-stuff-2"
+}

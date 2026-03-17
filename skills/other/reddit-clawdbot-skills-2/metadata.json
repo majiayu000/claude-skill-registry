@@ -1,0 +1,11 @@
+{
+  "name": "reddit",
+  "description": "Browse, search, post, and moderate Reddit. Read-only works without auth; posting/moderation requires OAuth setup.",
+  "repo": "clawdbot/skills",
+  "path": "skills/thesethrose/reddit-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "reddit-clawdbot-skills-2"
+}

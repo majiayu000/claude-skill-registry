@@ -1,0 +1,11 @@
+{
+  "name": "device-inspection",
+  "description": "Execute comprehensive L1-L4 network device inspection. Use when user asks to \"inspect all devices\", \"run comprehensive health check\", \"full network audit\", or needs systematic L1-L4 analysis across mu",
+  "repo": "yhvh-chen/Olav",
+  "path": ".olav/skills/device-inspection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yhvh-chen/Olav",
+  "dir_name": "device-inspection-yhvh-chen-olav-2"
+}

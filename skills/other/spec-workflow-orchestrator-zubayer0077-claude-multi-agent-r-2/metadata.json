@@ -1,0 +1,11 @@
+{
+  "name": "spec-workflow-orchestrator",
+  "description": "Orchestrate comprehensive planning phase from ideation to development-ready specifications using 4 specialized agents",
+  "repo": "zubayer0077/Claude-Multi-Agent-Research-System-Skill",
+  "path": ".claude/skills/spec-workflow-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zubayer0077/Claude-Multi-Agent-Research-System-Skill",
+  "dir_name": "spec-workflow-orchestrator-zubayer0077-claude-multi-agent-r-2"
+}

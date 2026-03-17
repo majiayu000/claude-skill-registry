@@ -1,0 +1,11 @@
+{
+  "name": "directed-interval",
+  "description": "Directed interval type 2 axiomatizing (0 → 1). Time-directed homotopy",
+  "repo": "plurigrid/asi",
+  "path": "skills/directed-interval",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "directed-interval-plurigrid-asi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "shell-review",
+  "description": "Audit shell scripts for correctness, portability, and common pitfalls.\n\nTriggers: shell script, bash, sh, script review, pipeline, exit code\nUse when: reviewing shell scripts, CI scripts, hook scripts",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/pensive/skills/shell-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "shell-review-athola-claude-night-market-2"
+}

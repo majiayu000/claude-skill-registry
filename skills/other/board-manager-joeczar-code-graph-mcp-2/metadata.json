@@ -1,0 +1,11 @@
+{
+  "name": "board-manager",
+  "description": "Manage GitHub Project board items - add issues, update status, move between columns. Use when user asks to add issues to board, change status, or organize the project.",
+  "repo": "joeczar/code-graph-mcp",
+  "path": ".claude/skills/board-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joeczar/code-graph-mcp",
+  "dir_name": "board-manager-joeczar-code-graph-mcp-2"
+}

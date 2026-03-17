@@ -1,0 +1,11 @@
+{
+  "name": "working-with-scope",
+  "description": "Guide for working with Scope, a developer environment management tool that automates environment checks, detects known errors, and provides automated fixes. Use when creating Scope configurations (Sco",
+  "repo": "technicalpickles/pickled-claude-plugins",
+  "path": "plugins/dev-tools/skills/working-with-scope",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/technicalpickles/pickled-claude-plugins",
+  "dir_name": "working-with-scope-technicalpickles-pickled-claude-plugi-2"
+}

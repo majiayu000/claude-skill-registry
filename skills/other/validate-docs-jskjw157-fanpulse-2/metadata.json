@@ -1,0 +1,11 @@
+{
+  "name": "validate-docs",
+  "description": "기획 문서 정합성 검증 스킬. 화면 정의서, DB 정의서, 프로젝트 기획서, API 계약서 간의 일관성을 검사합니다. 사용 시기: (1) 문서 수정 후 정합성 확인 (2) 새 화면/기능 추가 후 누락 확인 (3) 전체 문서 리뷰 시 (4) /validate-docs 호출 시",
+  "repo": "jskjw157/FanPulse",
+  "path": ".claude/skills/validate-docs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jskjw157/FanPulse",
+  "dir_name": "validate-docs-jskjw157-fanpulse-2"
+}

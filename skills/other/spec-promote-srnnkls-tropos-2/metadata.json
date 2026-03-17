@@ -1,0 +1,11 @@
+{
+  "name": "spec-promote",
+  "description": "Promote spec from draft to active stage. Use after spec review passes or when ready to begin implementation.",
+  "repo": "srnnkls/tropos",
+  "path": "skills/spec-promote",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/srnnkls/tropos",
+  "dir_name": "spec-promote-srnnkls-tropos-2"
+}

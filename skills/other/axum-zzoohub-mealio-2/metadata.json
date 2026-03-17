@@ -1,0 +1,11 @@
+{
+  "name": "axum",
+  "description": "Production patterns for Axum 0.8 + SQLx. Covers State design, error handling, transactions, testing, and SQLx CLI usage.\nUse when: building Rust APIs with Axum, integrating error types, handling trans",
+  "repo": "zzoohub/mealio",
+  "path": ".claude/skills/axum",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zzoohub/mealio",
+  "dir_name": "axum-zzoohub-mealio-2"
+}

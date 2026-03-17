@@ -1,0 +1,11 @@
+{
+  "name": "unbiased-beta-tester",
+  "description": "Use when users need to simulate unbiased beta testers for CLI tools. Creates tester personas, models their environment, and runs terminal-first exploratory testing based only on documentation and obse",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/unbiased-beta-tester",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildcard/caro",
+  "dir_name": "unbiased-beta-tester-wildcard-caro-2"
+}

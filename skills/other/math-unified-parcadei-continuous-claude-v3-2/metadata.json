@@ -1,0 +1,11 @@
+{
+  "name": "math-unified",
+  "description": "Unified math capabilities - computation, solving, and explanation. I route to the right tool.",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/math-unified",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "math-unified-parcadei-continuous-claude-v3-2"
+}

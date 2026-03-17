@@ -1,0 +1,11 @@
+{
+  "name": "v3-integration-deep",
+  "description": "Deep agentic-flow@alpha integration implementing ADR-001. Eliminates 10,000+ duplicate lines by building claude-flow as specialized extension rather than parallel implementation.",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/v3-integration-deep",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "v3-integration-deep-proffesor-for-testin-agentic-qe-2"
+}

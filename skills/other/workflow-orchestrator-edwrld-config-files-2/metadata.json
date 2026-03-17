@@ -1,0 +1,11 @@
+{
+  "name": "workflow-orchestrator",
+  "description": "Orchestrate multiple Codex CLI workflows using done-signal files, optional locks, and simple dependencies.",
+  "repo": "EdWrld/config.files",
+  "path": "skills/workflow-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/EdWrld/config.files",
+  "dir_name": "workflow-orchestrator-edwrld-config-files-2"
+}

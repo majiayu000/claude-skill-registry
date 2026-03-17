@@ -1,0 +1,11 @@
+{
+  "name": "correlation-analyzer",
+  "description": "Correlation Analyzer - Auto-activating skill for Data Analytics.\nTriggers on: correlation analyzer, correlation analyzer\nPart of the Data Analytics skill category.\n",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "planned-skills/generated/12-data-analytics/correlation-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "correlation-analyzer-jeremylongshore-claude-code-plugins--2"
+}

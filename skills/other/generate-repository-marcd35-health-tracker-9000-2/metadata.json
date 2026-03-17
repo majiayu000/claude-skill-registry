@@ -1,0 +1,11 @@
+{
+  "name": "generate-repository",
+  "description": "Generate repository class for SQLite data access with CRUD methods, row mapping, and TypeScript types. Use when creating new database tables or data access layers.",
+  "repo": "marcd35/health-tracker-9000",
+  "path": ".claude/skills/generate-repository",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/marcd35/health-tracker-9000",
+  "dir_name": "generate-repository-marcd35-health-tracker-9000-2"
+}

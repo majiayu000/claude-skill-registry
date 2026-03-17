@@ -1,0 +1,11 @@
+{
+  "name": "exa-search",
+  "description": "Use when searching for concepts, ideas, or similar content without exact keywords; when user asks \"find similar to...\", needs semantic discovery, research across perspectives, or explicitly mentions e",
+  "repo": "mhagrelius/dotfiles",
+  "path": ".claude/skills/exa-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhagrelius/dotfiles",
+  "dir_name": "exa-search-mhagrelius-dotfiles-2"
+}

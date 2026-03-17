@@ -1,0 +1,11 @@
+{
+  "name": "sketch-dev-readiness",
+  "description": "Enforce Sketch Magic dev-readiness gates. Use when asked “are you done?”, when dev server errors appear, when proof video is required, or when verifying compile/lint/test/dev-smoke status.",
+  "repo": "joelklabo/markdowntown-cli",
+  "path": "codex/skills/sketch-dev-readiness",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown-cli",
+  "dir_name": "sketch-dev-readiness-joelklabo-markdowntown-cli-2"
+}

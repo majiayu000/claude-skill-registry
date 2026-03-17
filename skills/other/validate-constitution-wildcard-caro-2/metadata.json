@@ -1,0 +1,11 @@
+{
+  "name": "validate-constitution",
+  "description": "Validates code changes against the project's consolidated knowledge and configuration rules. Use on push to catch violations of agreed-upon standards like installation scripts, linking patterns, and c",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/validate-constitution",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildcard/caro",
+  "dir_name": "validate-constitution-wildcard-caro-2"
+}

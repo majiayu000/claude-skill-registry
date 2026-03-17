@@ -1,0 +1,11 @@
+{
+  "name": "abm-specialist",
+  "description": "Эксперт ABM. Используй для account-based marketing, target account selection и personalized campaigns.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/abm-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "abm-specialist-dengineproblem-agents-monorepo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "session-begin",
+  "description": "Complete verification steps before starting any work session",
+  "repo": "jasonmichaelbell78-creator/sonash-v0",
+  "path": ".claude/skills/session-begin",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonmichaelbell78-creator/sonash-v0",
+  "dir_name": "session-begin-jasonmichaelbell78-c-sonash-v0-2"
+}

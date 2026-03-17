@@ -1,0 +1,11 @@
+{
+  "name": "task-close",
+  "description": "Close a task by setting state to closed, recording close_reason and closed_at. Recomputes intent hash and clears `.tasks/.active` if it pointed to this task.\n",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/task/task-close",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "task-close-jordangunn-nunchuck-2"
+}

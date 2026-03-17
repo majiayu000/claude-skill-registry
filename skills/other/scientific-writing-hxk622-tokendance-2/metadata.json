@@ -1,0 +1,11 @@
+{
+  "name": "scientific-writing",
+  "description": "Core skill for the deep research and writing tool. Write scientific manuscripts in full paragraphs (never bullet points). Use two-stage process with (1) section outlines with key points using research",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/writing/scientific-writing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "scientific-writing-hxk622-tokendance-2"
+}

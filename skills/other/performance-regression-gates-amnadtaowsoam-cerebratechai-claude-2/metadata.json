@@ -1,0 +1,11 @@
+{
+  "name": "performance-regression-gates",
+  "description": "Gates สำหรับตรวจจับ performance regression ผ่าน benchmarks, bundle size, และ load time monitoring",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "68-quality-gates-ci-policies/performance-regression-gates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "performance-regression-gates-amnadtaowsoam-cerebratechai-claude-2"
+}

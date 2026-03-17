@@ -1,0 +1,11 @@
+{
+  "name": "explicit-identity",
+  "description": "Explicit Identity Across Boundaries",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/explicit-identity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "explicit-identity-parcadei-continuous-claude-v3-2"
+}

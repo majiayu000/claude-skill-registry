@@ -1,0 +1,11 @@
+{
+  "name": "moai-platform-baas",
+  "description": "Comprehensive unified BaaS integration hub for 9 major providers (UV scripts migrated to builder-skill-uvscript)",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".claude/skills/moai-platform-baas",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "dir_name": "moai-platform-baas-rdmptv-adbautoplayer-2"
+}

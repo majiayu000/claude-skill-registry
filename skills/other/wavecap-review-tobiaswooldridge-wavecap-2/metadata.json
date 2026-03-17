@@ -1,0 +1,11 @@
+{
+  "name": "wavecap-review",
+  "description": "Review and correct WaveCap transcriptions. Use when the user wants to mark transcriptions as verified, add corrections, or manage the review workflow.",
+  "repo": "TobiasWooldridge/WaveCap",
+  "path": ".claude/skills/wavecap-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TobiasWooldridge/WaveCap",
+  "dir_name": "wavecap-review-tobiaswooldridge-wavecap-2"
+}

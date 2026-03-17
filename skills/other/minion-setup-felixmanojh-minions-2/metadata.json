@@ -1,0 +1,11 @@
+{
+  "name": "minion-setup",
+  "description": "Verify Ollama is running and models are configured. Run to diagnose minion issues.\n",
+  "repo": "felixmanojh/minions",
+  "path": "skills/minion-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/felixmanojh/minions",
+  "dir_name": "minion-setup-felixmanojh-minions-2"
+}

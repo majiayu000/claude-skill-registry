@@ -1,0 +1,11 @@
+{
+  "name": "sniff-abusers",
+  "description": "Detect object-oriented abusers smells (Switch Statements) using deterministic heuristics and append findings to `.sniff/findings.jsonl`.\n",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/sniff/sniff-abusers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "sniff-abusers-jordangunn-nunchuck-2"
+}

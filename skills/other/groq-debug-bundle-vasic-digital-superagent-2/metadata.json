@@ -1,0 +1,11 @@
+{
+  "name": "groq-debug-bundle",
+  "description": "Collect Groq debug evidence for support tickets and troubleshooting.\nUse when encountering persistent issues, preparing support tickets,\nor collecting diagnostic information for Groq problems.\nTrigger",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/groq-pack/groq-debug-bundle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "groq-debug-bundle-vasic-digital-superagent-2"
+}

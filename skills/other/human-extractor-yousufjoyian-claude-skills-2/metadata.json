@@ -1,0 +1,11 @@
+{
+  "name": "human-extractor",
+  "description": "GPU-accelerated pipeline for detecting, tracking, and classifying humans in dashcam footage. This skill should be used when users need to extract human presence from videos, analyze dashcam footage fo",
+  "repo": "yousufjoyian/claude-skills",
+  "path": "human-extractor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yousufjoyian/claude-skills",
+  "dir_name": "human-extractor-yousufjoyian-claude-skills-2"
+}

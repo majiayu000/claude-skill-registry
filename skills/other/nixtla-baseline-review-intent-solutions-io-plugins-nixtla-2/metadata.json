@@ -1,0 +1,11 @@
+{
+  "name": "nixtla-baseline-review",
+  "description": "Analyze Nixtla baseline forecasting results (sMAPE/MASE on M4 or other benchmark datasets). Use when the user asks about baseline performance, model comparisons, or metric interpretation for Nixtla ti",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": ".claude/skills/nixtla-baseline-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "nixtla-baseline-review-intent-solutions-io-plugins-nixtla-2"
+}

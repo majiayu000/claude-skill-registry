@@ -1,0 +1,11 @@
+{
+  "name": "ros2-publisher-subscriber",
+  "description": "Generate ROS 2 publisher and subscriber code examples for educational content. This skill should be used when creating lessons that teach ROS 2 pub/sub patterns, writing exercises involving topic-base",
+  "repo": "mjunaidca/robolearn",
+  "path": ".claude/skills/ros2-publisher-subscriber",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mjunaidca/robolearn",
+  "dir_name": "ros2-publisher-subscriber-mjunaidca-robolearn-2"
+}

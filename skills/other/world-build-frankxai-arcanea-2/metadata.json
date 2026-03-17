@@ -1,0 +1,11 @@
+{
+  "name": "world-build",
+  "description": "The Arcanean World Architecture System - create internally consistent universes using the Seven Pillars framework, from geography to magic systems to cultures, ensuring rich worlds that feel lived-in",
+  "repo": "frankxai/arcanea",
+  "path": ".claude/skills/oss/world-build",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/arcanea",
+  "dir_name": "world-build-frankxai-arcanea-2"
+}

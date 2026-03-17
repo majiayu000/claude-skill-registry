@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-pipeline-schedules",
+  "description": "Manages GitLab pipeline schedules. Use for creating, editing, running scheduled pipelines. Triggers: cron jobs, automation.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-pipeline-schedules",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-pipeline-schedules-knuckles-team-gitlab-api-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "docs-workflow",
+  "description": "Four slash commands for documentation lifecycle: /docs, /docs-init, /docs-update, /docs-claude. Create, maintain, and audit CLAUDE.md, README.md, and docs/ structure with smart templates.\n\nUse when: s",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/docs-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "docs-workflow-jezweb-claude-skills-2"
+}

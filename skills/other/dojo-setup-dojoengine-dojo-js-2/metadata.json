@@ -1,0 +1,11 @@
+{
+  "name": "dojo-setup",
+  "description": "Use when setting up dojo.js SDK in a frontend project.\nTriggers: setup dojo, initialize dojo, configure dojo, dojoengine setup, sdk init,\nDojoSdkProvider, world address, torii url, dojo config",
+  "repo": "dojoengine/dojo.js",
+  "path": ".claude/skills/dojo-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dojoengine/dojo.js",
+  "dir_name": "dojo-setup-dojoengine-dojo-js-2"
+}

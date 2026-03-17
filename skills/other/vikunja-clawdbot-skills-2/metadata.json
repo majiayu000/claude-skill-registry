@@ -1,0 +1,11 @@
+{
+  "name": "vikunja",
+  "description": "Manage projects and tasks in Vikunja, an open-source project management tool. Create projects, tasks, set due dates, priorities, and track completion.",
+  "repo": "clawdbot/skills",
+  "path": "skills/dbhurley/vikunja",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "vikunja-clawdbot-skills-2"
+}

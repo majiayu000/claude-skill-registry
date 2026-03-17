@@ -1,0 +1,11 @@
+{
+  "name": "test-doubles-mocking",
+  "description": "Use when symfony test doubles mocking",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/test-doubles-mocking",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "test-doubles-mocking-makfly-superpowers-symfony-2"
+}

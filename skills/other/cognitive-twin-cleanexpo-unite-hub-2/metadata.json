@@ -1,0 +1,11 @@
+{
+  "name": "cognitive-twin",
+  "description": "Continuous business health monitoring across 13 business domains. Scores domain health, generates periodic digests, detects anomalies, simulates decisions, and provides early warning signals for probl",
+  "repo": "CleanExpo/Unite-Hub",
+  "path": ".claude/skills/cognitive-twin",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CleanExpo/Unite-Hub",
+  "dir_name": "cognitive-twin-cleanexpo-unite-hub-2"
+}

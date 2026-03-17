@@ -1,0 +1,11 @@
+{
+  "name": "cq-ai",
+  "description": "Code Query with AI-enhanced deterministic analysis via SplitMix ternary classification",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.cursor/skills/cq-ai",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "cq-ai-plurigrid-asi-2"
+}

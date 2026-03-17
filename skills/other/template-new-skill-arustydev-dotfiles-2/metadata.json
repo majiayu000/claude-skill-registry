@@ -1,0 +1,11 @@
+{
+  "name": "template-new-skill",
+  "description": "Generate a skeleton template for a new Claude Code Skill.",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".claude/.wip/skills/template-new-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "template-new-skill-arustydev-dotfiles-2"
+}

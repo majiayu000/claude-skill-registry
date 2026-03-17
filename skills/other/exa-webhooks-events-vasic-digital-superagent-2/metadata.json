@@ -1,0 +1,11 @@
+{
+  "name": "exa-webhooks-events",
+  "description": "Implement Exa webhook signature validation and event handling.\nUse when setting up webhook endpoints, implementing signature verification,\nor handling Exa event notifications securely.\nTrigger with ph",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-webhooks-events",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-webhooks-events-vasic-digital-superagent-2"
+}

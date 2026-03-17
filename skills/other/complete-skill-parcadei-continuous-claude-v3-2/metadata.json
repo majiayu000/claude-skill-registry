@@ -1,0 +1,11 @@
+{
+  "name": "complete-skill",
+  "description": "A complete skill for E2E testing",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/complete-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "complete-skill-parcadei-continuous-claude-v3-2"
+}

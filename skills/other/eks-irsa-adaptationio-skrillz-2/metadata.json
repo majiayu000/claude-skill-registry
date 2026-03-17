@@ -1,0 +1,11 @@
+{
+  "name": "eks-irsa",
+  "description": "IAM Roles for Service Accounts (IRSA) for EKS pod-level AWS permissions. Use when configuring pod IAM access, setting up AWS service integrations, implementing least-privilege security, troubleshootin",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/eks-irsa",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "eks-irsa-adaptationio-skrillz-2"
+}

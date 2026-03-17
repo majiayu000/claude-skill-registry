@@ -1,0 +1,11 @@
+{
+  "name": "sherpa-onnx-tts",
+  "description": "Local text-to-speech via sherpa-onnx (offline, no cloud)",
+  "repo": "clawdbot/clawdbot",
+  "path": "skills/sherpa-onnx-tts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/clawdbot",
+  "dir_name": "sherpa-onnx-tts-clawdbot-clawdbot-2"
+}

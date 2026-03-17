@@ -1,0 +1,11 @@
+{
+  "name": "opaque-pointer",
+  "description": "Opaque Pointer Pattern pattern for C development",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/patterns/opaque-pointer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "opaque-pointer-mgreenly-ikigai-2"
+}

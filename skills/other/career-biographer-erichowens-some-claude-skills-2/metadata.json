@@ -1,0 +1,11 @@
+{
+  "name": "career-biographer",
+  "description": "AI-powered career biographer that conducts empathetic interviews, extracts structured career narratives, and transforms professional stories into portfolios, CVs, and personal brand assets. This skill",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/career-biographer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "career-biographer-erichowens-some-claude-skills-2"
+}

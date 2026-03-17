@@ -1,0 +1,11 @@
+{
+  "name": "validate-markdown",
+  "description": "I'll validate markdown files for common formatting issues and optionally fix them.",
+  "repo": "WhatIfWeDigDeeper/claude-code-coursera",
+  "path": ".claude/skills/validate-markdown",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WhatIfWeDigDeeper/claude-code-coursera",
+  "dir_name": "validate-markdown-whatifwedigdeeper-claude-code-coursera-2"
+}

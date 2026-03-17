@@ -1,0 +1,11 @@
+{
+  "name": "workflow-designer",
+  "description": "複数のSkillsを連動させた一連のワークフローを設計するメタスキル。ユーザー確認ポイント、依存関係、エラー時のフォールバックを含む完全なワークフロー定義を生成。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/meta/workflow-designer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "workflow-designer-haru-llc-ai-pm-system-noteboo-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "gke-inference-quickstart",
+  "repo": "GoogleCloudPlatform/gke-mcp",
+  "path": "skills/gke-inference-quickstart/SKILL.md",
+  "category": "other",
+  "source": "github.com/GoogleCloudPlatform/gke-mcp",
+  "dir_name": "gke-inference-quickstart",
+  "downloaded_at": "2026-02-15T05:10:07.404960Z"
+}

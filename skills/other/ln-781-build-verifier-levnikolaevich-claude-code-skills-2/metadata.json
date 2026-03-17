@@ -1,0 +1,11 @@
+{
+  "name": "ln-781-build-verifier",
+  "description": "Builds all detected projects and verifies successful compilation",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-781-build-verifier",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-781-build-verifier-levnikolaevich-claude-code-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "restart-dev-containers",
+  "description": "Restarts WitchCityRope Docker DEVELOPMENT containers using the CORRECT procedure. Handles shutdown, rebuild with dev compose overlay, health checks, and compilation verification. Ensures environment i",
+  "repo": "DarkMonkDev/WitchCityRope",
+  "path": ".claude/skills/restart-dev-containers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DarkMonkDev/WitchCityRope",
+  "dir_name": "restart-dev-containers-darkmonkdev-witchcityrope-2"
+}

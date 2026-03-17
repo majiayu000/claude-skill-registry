@@ -1,0 +1,11 @@
+{
+  "name": "ac-qa-reviewer",
+  "description": "Quality assurance review for implementations. Use when reviewing code quality, checking implementation standards, performing QA cycles, or validating feature quality.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/ac-qa-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "ac-qa-reviewer-adaptationio-skrillz-2"
+}

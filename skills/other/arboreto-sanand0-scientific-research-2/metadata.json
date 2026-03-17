@@ -1,0 +1,11 @@
+{
+  "name": "arboreto",
+  "description": "Infer gene regulatory networks (GRNs) from gene expression data using scalable algorithms (GRNBoost2, GENIE3). Use when analyzing transcriptomics data (bulk RNA-seq, single-cell RNA-seq) to identify t",
+  "repo": "sanand0/scientific-research",
+  "path": ".claude/skills/arboreto",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sanand0/scientific-research",
+  "dir_name": "arboreto-sanand0-scientific-research-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "twilio-voice",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/communication/twilio-voice/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "twilio-voice",
+  "downloaded_at": "2026-02-15T07:06:58.896668Z"
+}

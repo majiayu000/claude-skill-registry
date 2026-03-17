@@ -1,0 +1,11 @@
+{
+  "name": "scrnametaboliclandscape",
+  "description": "Comprehensive metabolic landscape analysis pipeline for scRNA-seq data. This is an all-in-one process group performing complete metabolic pathway analysis including expression imputation, feature sele",
+  "repo": "pwwang/immunopipe",
+  "path": "skills/scrnametaboliclandscape",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pwwang/immunopipe",
+  "dir_name": "scrnametaboliclandscape-pwwang-immunopipe-2"
+}

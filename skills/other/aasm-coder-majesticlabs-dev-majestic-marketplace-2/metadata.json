@@ -1,0 +1,11 @@
+{
+  "name": "aasm-coder",
+  "description": "Implement state machines with AASM for workflow management. Covers state transitions, guards, callbacks, and testing.",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": "plugins/majestic-rails/skills/aasm-coder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "dir_name": "aasm-coder-majesticlabs-dev-majestic-marketplace-2"
+}

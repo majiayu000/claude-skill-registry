@@ -1,0 +1,11 @@
+{
+  "name": "codex",
+  "description": "OpenAI Codex CLIを使用してコードレビュー・分析を実行するスキル。",
+  "repo": "Umisyo/Lorepedia",
+  "path": ".claude/skills/codex",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Umisyo/Lorepedia",
+  "dir_name": "codex-umisyo-lorepedia-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "meddic-checklist",
+  "description": "Use to inspect qualification coverage across Metrics, Economic buyer, Decision criteria, Decision process, Implications, Champion.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/sales-calls/skills/meddic-checklist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "meddic-checklist-gtmagents-gtm-agents-2"
+}

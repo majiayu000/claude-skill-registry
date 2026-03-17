@@ -1,0 +1,11 @@
+{
+  "name": "unified-reafference",
+  "description": "Cross-agent session database with B3 Poset and Bumpus sheaves",
+  "repo": "plurigrid/asi",
+  "path": "skills/unified-reafference",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "unified-reafference-plurigrid-asi-2"
+}

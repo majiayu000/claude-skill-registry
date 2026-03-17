@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-session-logs",
+  "description": "Get logs for a specific session. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-session-logs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-session-logs-agentuity-sdk-explorer-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-git-account-list",
+  "description": "List GitHub accounts connected to your organizations. Requires authentication",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-git-account-list",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-git-account-list-agentuity-sdk-explorer-2"
+}

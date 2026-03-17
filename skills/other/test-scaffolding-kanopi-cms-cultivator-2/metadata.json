@@ -1,0 +1,11 @@
+{
+  "name": "test-scaffolding",
+  "description": "Automatically generate test scaffolding when user writes new code without tests or mentions needing tests. Supports unit, integration, e2e, and data tests for PHP and JavaScript. Invoke when user ment",
+  "repo": "kanopi/cms-cultivator",
+  "path": "skills/test-scaffolding",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kanopi/cms-cultivator",
+  "dir_name": "test-scaffolding-kanopi-cms-cultivator-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "typeclass-design",
+  "description": "Implement typeclasses with curried signatures and dual APIs for both data-first and data-last usage",
+  "repo": "front-depiction/cli-stock",
+  "path": ".claude/skills/typeclass-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/front-depiction/cli-stock",
+  "dir_name": "typeclass-design-front-depiction-cli-stock-2"
+}

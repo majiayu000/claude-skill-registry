@@ -1,0 +1,11 @@
+{
+  "name": "prd-v06-environment-setup",
+  "description": "Document development environment requirements for team consistency and AI agent understanding during PRD v0.6 Architecture. Triggers on requests to define environment setup, document tooling, create d",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v06-environment-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "dir_name": "prd-v06-environment-setup-mattgierhart-prd-driven-context-e-2"
+}

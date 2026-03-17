@@ -1,0 +1,11 @@
+{
+  "name": "quick-research",
+  "description": "This skill should be used when users need comprehensive research on a topic requiring exploration of multiple sources, synthesis of findings, and a well-structured report with citations. Use for compl",
+  "repo": "hongbietcode/synthetic-claude",
+  "path": "plugins/productivity-kit/skills/quick-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hongbietcode/synthetic-claude",
+  "dir_name": "quick-research-hongbietcode-synthetic-claude-2"
+}

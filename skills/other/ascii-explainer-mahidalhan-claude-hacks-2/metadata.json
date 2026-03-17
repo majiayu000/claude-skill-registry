@@ -1,0 +1,11 @@
+{
+  "name": "ascii-explainer",
+  "description": "Explains code, algorithms, system design using ASCII diagrams. Trigger phrases - \"explain visually\", \"I don't get it\", \"show me\", \"ascii diagram\", \"help me understand\". Produces diagram-first explanat",
+  "repo": "mahidalhan/claude-hacks",
+  "path": "skills/ascii-explainer/skills/ascii-explainer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mahidalhan/claude-hacks",
+  "dir_name": "ascii-explainer-mahidalhan-claude-hacks-2"
+}

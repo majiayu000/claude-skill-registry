@@ -1,0 +1,11 @@
+{
+  "name": "specialized-omics-plots",
+  "description": "Reusable plotting functions for common omics visualizations. Custom ggplot2/matplotlib implementations of volcano, MA, PCA, enrichment dotplots, boxplots, and survival curves.",
+  "repo": "GPTomics/bioSkills",
+  "path": "data-visualization/specialized-omics-plots",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "specialized-omics-plots-gptomics-bioskills-2"
+}

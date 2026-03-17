@@ -1,0 +1,11 @@
+{
+  "name": "agentic-development",
+  "description": "Build AI agents with Pydantic AI (Python) and Claude SDK (Node.js)",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/agentic-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "dir_name": "agentic-development-alinaqi-claude-bootstrap-2"
+}

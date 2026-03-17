@@ -1,0 +1,11 @@
+{
+  "name": "app-store-deployment",
+  "description": "Publishes mobile applications to iOS App Store and Google Play with code signing, versioning, and CI/CD automation. Use when preparing app releases, configuring signing certificates, or setting up aut",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/app-store-deployment/skills/app-store-deployment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "app-store-deployment-secondsky-claude-skills-2"
+}

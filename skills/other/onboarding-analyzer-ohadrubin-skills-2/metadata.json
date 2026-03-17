@@ -1,0 +1,11 @@
+{
+  "name": "onboarding-analyzer",
+  "description": "Gather and analyze source material for onboarding documentation. Creates source_inventory.md and extraction_tables.md. Triggered by onboarding-start during source-material-gathering and key-informatio",
+  "repo": "OhadRubin/skills",
+  "path": "skills/onboarding-doc/onboarding-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OhadRubin/skills",
+  "dir_name": "onboarding-analyzer-ohadrubin-skills-2"
+}

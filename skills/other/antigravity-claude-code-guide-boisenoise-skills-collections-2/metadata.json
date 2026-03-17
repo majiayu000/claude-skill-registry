@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-claude-code-guide",
+  "description": "Master guide for using Claude Code effectively. Includes configuration templates, prompting strategies \"Thinking\" keywords, debugging techniques, and best practices for interacting with the agent.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-claude-code-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-claude-code-guide-boisenoise-skills-collections-2"
+}

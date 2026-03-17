@@ -1,0 +1,11 @@
+{
+  "name": "database-reset-dev",
+  "description": "Resets local development database by deleting all data and restarting API container to trigger auto-seeding. SINGLE SOURCE OF TRUTH for dev database reset automation.",
+  "repo": "DarkMonkDev/WitchCityRope",
+  "path": ".claude/skills/database-reset-dev",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DarkMonkDev/WitchCityRope",
+  "dir_name": "database-reset-dev-darkmonkdev-witchcityrope-2"
+}

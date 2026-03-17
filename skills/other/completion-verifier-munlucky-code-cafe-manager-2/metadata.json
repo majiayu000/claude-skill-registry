@@ -1,0 +1,11 @@
+{
+  "name": "completion-verifier",
+  "description": "Verifies implementation completion by running acceptance tests and triggers retry loop on failure.",
+  "repo": "munlucky/code-cafe-manager",
+  "path": ".claude/skills/completion-verifier",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/munlucky/code-cafe-manager",
+  "dir_name": "completion-verifier-munlucky-code-cafe-manager-2"
+}

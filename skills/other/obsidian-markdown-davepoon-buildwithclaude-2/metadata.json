@@ -1,0 +1,11 @@
+{
+  "name": "obsidian-markdown",
+  "description": "Create and edit Obsidian Flavored Markdown with wikilinks, embeds, callouts, properties, and other Obsidian-specific syntax. Use when working with .md files in Obsidian, or when the user mentions wiki",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/all-skills/skills/obsidian-markdown",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "obsidian-markdown-davepoon-buildwithclaude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ab-testing",
+  "description": "Use when designing experiments for subject lines, offers, cadences, or journeys.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/email-marketing/skills/ab-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "ab-testing-gtmagents-gtm-agents-2"
+}

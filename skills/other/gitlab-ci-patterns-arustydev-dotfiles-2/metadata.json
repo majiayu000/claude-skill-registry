@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-ci-patterns",
+  "description": "Build GitLab CI/CD pipelines with multi-stage workflows, caching, and distributed runners for scalable automation. Use when implementing GitLab CI/CD, optimizing pipeline performance, or setting up au",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".ai/plugins/cicd-automation/skills/gitlab-ci-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "gitlab-ci-patterns-arustydev-dotfiles-2"
+}

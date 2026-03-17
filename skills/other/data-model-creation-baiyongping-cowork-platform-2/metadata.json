@@ -1,0 +1,11 @@
+{
+  "name": "data-model-creation",
+  "description": "Optional advanced tool for complex data modeling. For simple table creation, use relational-database-tool directly with SQL statements.",
+  "repo": "baiyongping/cowork-platform",
+  "path": ".claude/skills/data-model-creation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/baiyongping/cowork-platform",
+  "dir_name": "data-model-creation-baiyongping-cowork-platform-2"
+}

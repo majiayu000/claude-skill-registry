@@ -1,0 +1,11 @@
+{
+  "name": "kirby-content-migration",
+  "description": "Plans and applies safe Kirby content migrations using runtime content tools, update schemas, and explicit confirmation. Use when users need to rename/move/transform fields, clean up content, or bulk-u",
+  "repo": "bnomei/kirby-mcp",
+  "path": "skills/kirby-content-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bnomei/kirby-mcp",
+  "dir_name": "kirby-content-migration-bnomei-kirby-mcp-2"
+}

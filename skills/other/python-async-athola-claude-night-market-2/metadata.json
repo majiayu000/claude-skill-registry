@@ -1,0 +1,11 @@
+{
+  "name": "python-async",
+  "description": "asyncio and async/await patterns for Python applications.",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/parseltongue/skills/python-async",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "python-async-athola-claude-night-market-2"
+}

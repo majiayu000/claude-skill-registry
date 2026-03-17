@@ -1,0 +1,11 @@
+{
+  "name": "graphics-api",
+  "description": "Guide for graphics API hooking and rendering techniques for DirectX, OpenGL, and Vulkan. Use this skill when working with graphics hooks, overlay rendering, shader manipulation, or game rendering pipe",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/graphics-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "graphics-api-majiayu000-claude-skill-registr-2"
+}

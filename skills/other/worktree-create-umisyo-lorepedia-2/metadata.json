@@ -1,0 +1,11 @@
+{
+  "name": "worktree-create",
+  "description": "新しいブランチとworktreeを作成し、開発作業を開始するためのスキル。タスク着手時に「worktreeを作成」「ブランチを作成して作業開始」「/worktree-create <branch-name>」などで使用。",
+  "repo": "Umisyo/Lorepedia",
+  "path": ".claude/skills/worktree-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Umisyo/Lorepedia",
+  "dir_name": "worktree-create-umisyo-lorepedia-2"
+}

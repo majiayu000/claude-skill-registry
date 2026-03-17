@@ -1,0 +1,11 @@
+{
+  "name": "frontend-components",
+  "description": "Design and build reusable UI components following Astro's server-first architecture with islands, proper component composition, TypeScript props, and strategic client-side hydration. Use this skill wh",
+  "repo": "SpacePlushy/portfolio",
+  "path": ".claude/skills/frontend-components",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpacePlushy/portfolio",
+  "dir_name": "frontend-components-spaceplushy-portfolio-2"
+}

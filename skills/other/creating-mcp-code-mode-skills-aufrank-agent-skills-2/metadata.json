@@ -1,0 +1,11 @@
+{
+  "name": "creating-mcp-code-mode-skills",
+  "description": "A meta-skill for authoring high-performance, verifiable, long-running MCP skills using Code Mode. This skill blends Anthropic and OpenAI skill-authoring guidance with Code-Mode-first, MCP-backed execu",
+  "repo": "aufrank/agent-skills",
+  "path": "skills/creating-mcp-code-mode-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aufrank/agent-skills",
+  "dir_name": "creating-mcp-code-mode-skills-aufrank-agent-skills-2"
+}

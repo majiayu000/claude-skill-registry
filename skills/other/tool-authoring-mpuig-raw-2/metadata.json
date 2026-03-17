@@ -1,0 +1,11 @@
+{
+  "name": "tool-authoring",
+  "description": "Creating reusable tools in tools/ directory that workflows can import and use",
+  "repo": "mpuig/raw",
+  "path": "builder/skills/tool-authoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mpuig/raw",
+  "dir_name": "tool-authoring-mpuig-raw-2"
+}

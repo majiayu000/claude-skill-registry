@@ -1,0 +1,9 @@
+{
+  "name": "top-crashers",
+  "repo": "brave-experiments/brave-core-bot",
+  "path": ".claude/skills/top-crashers/SKILL.md",
+  "category": "other",
+  "source": "github.com/brave-experiments/brave-core-bot",
+  "dir_name": "top-crashers",
+  "downloaded_at": "2026-02-22T06:35:30.482192Z"
+}

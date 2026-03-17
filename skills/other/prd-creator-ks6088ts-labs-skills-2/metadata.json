@@ -1,0 +1,11 @@
+{
+  "name": "prd-creator",
+  "description": "プロダクト要求仕様書（PRD）を作成するスキル。ユーザーがプロダクトの要件を明確にし、チームメンバー間の認識を統一するためのPRDドキュメントを作成する必要がある場合に使用します。このスキルは、Product Requirements Document の作成、編集、または既存プロダクトの要求仕様書の更新が必要な場合に使用してください。",
+  "repo": "ks6088ts-labs/skills",
+  "path": "skills/prd-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ks6088ts-labs/skills",
+  "dir_name": "prd-creator-ks6088ts-labs-skills-2"
+}

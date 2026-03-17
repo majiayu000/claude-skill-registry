@@ -1,0 +1,11 @@
+{
+  "name": "address-review",
+  "description": "Use when addressing PR review comments from Copilot, Claude, or human reviewers. Critically assesses each comment, recommends action (implement/push-back/discuss), and executes appropriately.",
+  "repo": "kpiteira/ktrdr",
+  "path": ".claude/skills/address-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kpiteira/ktrdr",
+  "dir_name": "address-review-kpiteira-ktrdr-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "skills-creator",
+  "description": "最高品質のSkillを設計・生成するメタスキル。新しいSkillが欲しい、繰り返し作業を自動化したい、ベストプラクティスに準拠したSkillを作りたいときに使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/meta/skills-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "skills-creator-haru-llc-ai-pm-system-noteboo-2"
+}

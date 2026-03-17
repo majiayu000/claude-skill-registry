@@ -1,0 +1,11 @@
+{
+  "name": "flow-trace",
+  "description": "Trace data flow across files from source to sink. Use for cross-file taint analysis, understanding how user input reaches dangerous sinks, and documenting vulnerability paths.",
+  "repo": "MAF2414/kyco",
+  "path": ".claude/skills/flow-trace",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MAF2414/kyco",
+  "dir_name": "flow-trace-maf2414-kyco-2"
+}

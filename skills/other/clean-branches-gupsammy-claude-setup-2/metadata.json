@@ -1,0 +1,11 @@
+{
+  "name": "clean-branches",
+  "description": "Safely remove merged and stale git branches with confirmation.",
+  "repo": "gupsammy/Claude-setup",
+  "path": "skills/clean-branches",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gupsammy/Claude-setup",
+  "dir_name": "clean-branches-gupsammy-claude-setup-2"
+}

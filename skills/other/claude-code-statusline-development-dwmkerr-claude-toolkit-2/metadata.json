@@ -1,0 +1,11 @@
+{
+  "name": "claude-code-statusline-development",
+  "description": "This skill should be used when the user asks to \"create a statusline\", \"customize the status line\", \"add a custom prompt\", or mentions Claude Code statusline. Also suggest when the user wants to displ",
+  "repo": "dwmkerr/claude-toolkit",
+  "path": "plugins/toolkit/skills/claude-code-statusline-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dwmkerr/claude-toolkit",
+  "dir_name": "claude-code-statusline-development-dwmkerr-claude-toolkit-2"
+}

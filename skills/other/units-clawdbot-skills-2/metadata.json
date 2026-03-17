@@ -1,0 +1,11 @@
+{
+  "name": "units",
+  "description": "Perform unit conversions and calculations using GNU Units.",
+  "repo": "clawdbot/skills",
+  "path": "skills/asleep123/units",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "units-clawdbot-skills-2"
+}

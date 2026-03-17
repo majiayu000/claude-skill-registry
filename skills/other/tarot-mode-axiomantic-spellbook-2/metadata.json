@@ -1,0 +1,11 @@
+{
+  "name": "tarot-mode",
+  "description": "Use when session returns mode.type='tarot' - tarot archetypes collaborate via roundtable dialogue with instruction-engineering embedded",
+  "repo": "axiomantic/spellbook",
+  "path": "skills/tarot-mode",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/axiomantic/spellbook",
+  "dir_name": "tarot-mode-axiomantic-spellbook-2"
+}

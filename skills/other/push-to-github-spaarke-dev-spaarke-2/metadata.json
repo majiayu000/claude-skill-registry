@@ -1,0 +1,11 @@
+{
+  "name": "push-to-github",
+  "description": "Commit changes and push to GitHub following Spaarke git conventions",
+  "repo": "spaarke-dev/spaarke",
+  "path": ".claude/skills/push-to-github",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spaarke-dev/spaarke",
+  "dir_name": "push-to-github-spaarke-dev-spaarke-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "self-contained-python-script",
+  "description": "Write self-installing autocontained Python scripts using uv and PEP 723",
+  "repo": "davidgasquez/dotfiles",
+  "path": "agents/skills/self-contained-python-script",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davidgasquez/dotfiles",
+  "dir_name": "self-contained-python-script-davidgasquez-dotfiles-2"
+}

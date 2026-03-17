@@ -1,0 +1,11 @@
+{
+  "name": "bknd-password-reset",
+  "description": "Use when implementing password reset or change functionality in a Bknd application. Covers server-side password changes, building forgot-password flows with email tokens, and security considerations.",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-password-reset",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-password-reset-cameronapak-freedom-stack-v3-2"
+}

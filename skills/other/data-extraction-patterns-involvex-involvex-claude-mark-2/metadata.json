@@ -1,0 +1,11 @@
+{
+  "name": "data-extraction-patterns",
+  "description": "Common patterns for extracting and combining analytics data from GA4, GSC, and SE Ranking.\nIncludes API patterns, rate limiting, caching, and error handling.",
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/seo/skills/data-extraction-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "dir_name": "data-extraction-patterns-involvex-involvex-claude-mark-2"
+}

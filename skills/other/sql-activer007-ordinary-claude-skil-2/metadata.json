@@ -1,0 +1,11 @@
+{
+  "name": "sql",
+  "description": "Run SQL queries against the WordPress development database. Use when querying database tables, inspecting Simple History events, checking WordPress data, or debugging database issues.",
+  "repo": "Activer007/ordinary-claude-skills",
+  "path": "skills_all/sql-translation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Activer007/ordinary-claude-skills",
+  "dir_name": "sql-activer007-ordinary-claude-skil-2"
+}

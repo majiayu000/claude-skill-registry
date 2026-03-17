@@ -2,7 +2,7 @@
   "category": "security",
   "code": "sec",
   "count": 1284,
-  "updated_at": "2026-03-07T01:45:31.613459Z",
+  "updated_at": "2026-03-17T14:53:48.826626Z",
   "skills": [
     {
       "name": "git-workflow",
@@ -6148,7 +6148,7 @@
     },
     {
       "name": "senior-security",
-      "description": "Comprehensive security engineering skill for application security, penetration testing, security architecture, and compliance auditing. Includes security assessment tools, threat modeling, crypto i...",
+      "description": "Comprehensive security engineering skill for application security, penetration testing, security architecture, and compliance auditing. Includes security assessment tools, threat modeling, crypto impl",
       "repo": "alirezarezvani/claude-skills",
       "path": "engineering-team/senior-security",
       "branch": "main",
@@ -16668,7 +16668,7 @@
     },
     {
       "name": "senior-security",
-      "description": "Comprehensive security engineering skill for application security, penetration testing, security architecture, and compliance auditing. Includes security assessment tools, threat modeling, crypto i...",
+      "description": "Comprehensive security engineering skill for application security, penetration testing, security architecture, and compliance auditing. Includes security assessment tools, threat modeling, crypto impl",
       "repo": "alirezarezvani/claude-skills",
       "path": "engineering-team/senior-security",
       "branch": "main",

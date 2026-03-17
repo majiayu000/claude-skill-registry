@@ -1,0 +1,11 @@
+{
+  "name": "architecture-to-json",
+  "description": "Guide for extracting architectural diagrams, flowcharts, and sequence diagrams into a structured JSON format. Use this skill when you need to transform a visual or textual description of a system arch",
+  "repo": "EricOo0/stock-trading-platform",
+  "path": ".coco/skills/architecture-to-json",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/EricOo0/stock-trading-platform",
+  "dir_name": "architecture-to-json-ericoo0-stock-trading-platfo-2"
+}

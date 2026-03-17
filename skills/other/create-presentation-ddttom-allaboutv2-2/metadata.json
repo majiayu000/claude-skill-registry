@@ -1,0 +1,11 @@
+{
+  "name": "create-presentation",
+  "description": "Create or update presentation notebooks with embedded HTML and JavaScript in markdown cells using EDS blocks. Convert executable code cells to informative text. Build presentations, slides, demos, sho",
+  "repo": "ddttom/allaboutv2",
+  "path": ".claude/skills/create-presentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ddttom/allaboutv2",
+  "dir_name": "create-presentation-ddttom-allaboutv2-2"
+}

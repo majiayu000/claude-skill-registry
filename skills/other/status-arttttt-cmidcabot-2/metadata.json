@@ -1,0 +1,11 @@
+{
+  "name": "status",
+  "description": "Check task status in the tracker and local artifacts. Use when the user invokes /status or asks for project/task status.",
+  "repo": "arttttt/CMIDCABot",
+  "path": ".codex/skills/status",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arttttt/CMIDCABot",
+  "dir_name": "status-arttttt-cmidcabot-2"
+}

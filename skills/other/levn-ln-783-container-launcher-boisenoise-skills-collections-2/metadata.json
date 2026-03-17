@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-783-container-launcher",
+  "description": "Builds and launches Docker containers with health verification using best practices",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-783-container-launcher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-783-container-launcher-boisenoise-skills-collections-2"
+}

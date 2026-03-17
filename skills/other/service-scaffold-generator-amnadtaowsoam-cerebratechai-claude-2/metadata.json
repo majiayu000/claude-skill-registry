@@ -1,0 +1,11 @@
+{
+  "name": "service-scaffold-generator",
+  "description": "Generator สำหรับสร้าง microservice ใหม่พร้อม structure, config, Docker, CI/CD, และ boilerplate code ครบชุด",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "67-codegen-scaffolding-automation/service-scaffold-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "service-scaffold-generator-amnadtaowsoam-cerebratechai-claude-2"
+}

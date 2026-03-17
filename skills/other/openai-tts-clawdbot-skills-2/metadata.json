@@ -1,0 +1,11 @@
+{
+  "name": "openai-tts",
+  "description": "Text-to-speech via OpenAI Audio Speech API.",
+  "repo": "clawdbot/skills",
+  "path": "skills/pors/openai-tts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "openai-tts-clawdbot-skills-2"
+}

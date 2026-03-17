@@ -1,0 +1,11 @@
+{
+  "name": "shadcn-vue",
+  "description": "This skill provides best practices for using Shadcn Vue components in the fitness app. Use when working with UI components, forms, dialogs, or implementing component patterns.",
+  "repo": "JosephAnson/claude-plugin",
+  "path": "skills/shadcn-vue",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JosephAnson/claude-plugin",
+  "dir_name": "shadcn-vue-josephanson-claude-plugin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "plan-validate",
+  "description": "Validate plan document structure and frontmatter. Use when checking plans for compliance, ensuring proper formatting, or verifying metadata before commits.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/plan-validate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "plan-validate-spencerbeggs-claude-design-coordi-2"
+}

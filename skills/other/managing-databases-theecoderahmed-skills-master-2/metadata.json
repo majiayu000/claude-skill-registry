@@ -1,0 +1,11 @@
+{
+  "name": "managing-databases",
+  "description": "Generates secure, owner-only admin dashboards for PostgreSQL or MongoDB. Capable of handling schema definitions, operational tasks, and basic CRUD, with flexible security models.",
+  "repo": "TheeCoderAhmed/Skills-Master",
+  "path": ".agent/skills/managing-databases",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TheeCoderAhmed/Skills-Master",
+  "dir_name": "managing-databases-theecoderahmed-skills-master-2"
+}

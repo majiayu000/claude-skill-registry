@@ -1,0 +1,11 @@
+{
+  "name": "debug-logs",
+  "description": "Structured debugging workflow with log server capture and analysis",
+  "repo": "UnaMentis/unamentis",
+  "path": ".claude/skills/debug-logs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/UnaMentis/unamentis",
+  "dir_name": "debug-logs-unamentis-unamentis-2"
+}

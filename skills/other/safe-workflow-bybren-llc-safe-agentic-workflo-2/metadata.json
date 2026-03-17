@@ -1,0 +1,11 @@
+{
+  "name": "safe-workflow",
+  "description": "SAFe development workflow guidance including branch naming conventions, commit message format, rebase-first workflow, and CI validation. Use when starting work on a Linear ticket, preparing commits, c",
+  "repo": "bybren-llc/safe-agentic-workflow",
+  "path": ".claude/skills/safe-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bybren-llc/safe-agentic-workflow",
+  "dir_name": "safe-workflow-bybren-llc-safe-agentic-workflo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "payload",
+  "description": "Builds full-stack applications with Payload CMS, the Next.js-native headless CMS. Use when creating content-driven apps with TypeScript, code-first configuration, and full control over your backend.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/skills/payload",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "payload-mgd34msu-goodvibes-plugin-2"
+}

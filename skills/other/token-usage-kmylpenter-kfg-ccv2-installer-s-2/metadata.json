@@ -1,0 +1,11 @@
+{
+  "name": "token-usage",
+  "description": "When user says \"@token-usage\", \"token usage\", \"context window\", or \"token cost\".",
+  "repo": "kmylpenter/KFG-CCv2-Installer-Stable",
+  "path": ".claude/skills/token-usage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kmylpenter/KFG-CCv2-Installer-Stable",
+  "dir_name": "token-usage-kmylpenter-kfg-ccv2-installer-s-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "starmap-manager",
+  "description": "Manage starmap data assets for Stapledons Voyage. Use when downloading star catalogs, galactic backgrounds, or processing astronomical data. (project)",
+  "repo": "sunholo-data/stapledons_voyage",
+  "path": ".claude/skills/starmap-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunholo-data/stapledons_voyage",
+  "dir_name": "starmap-manager-sunholo-data-stapledons-voyage-2"
+}

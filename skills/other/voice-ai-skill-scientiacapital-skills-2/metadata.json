@@ -1,0 +1,11 @@
+{
+  "name": "voice-ai-skill",
+  "description": "Production voice AI agents with sub-500ms latency. Groq LLM, Deepgram STT, Cartesia TTS, Twilio integration. No OpenAI. Use when: voice agent, phone bot, STT, TTS, Deepgram, Cartesia, Twilio, voice AI",
+  "repo": "ScientiaCapital/skills",
+  "path": "active/voice-ai-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ScientiaCapital/skills",
+  "dir_name": "voice-ai-skill-scientiacapital-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "session-log",
+  "description": "Human-readable markdown session logs for characters and adventures.",
+  "repo": "SimHacker/moollm",
+  "path": "skills/session-log",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "session-log-simhacker-moollm-2"
+}

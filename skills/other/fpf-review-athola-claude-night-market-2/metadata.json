@@ -1,0 +1,11 @@
+{
+  "name": "fpf-review",
+  "description": "Triggers: architecture review, FPF, functional programming framework, systems architecture\nArchitecture review using FPF (Functional Programming Framework) methodology.\nEvaluates codebases through fun",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/pensive/skills/fpf-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "fpf-review-athola-claude-night-market-2"
+}

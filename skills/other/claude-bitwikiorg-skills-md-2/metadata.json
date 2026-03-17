@@ -1,0 +1,11 @@
+{
+  "name": "claude",
+  "description": "Imported skill claude from agentskills",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/vercel/claude",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "claude-bitwikiorg-skills-md-2"
+}

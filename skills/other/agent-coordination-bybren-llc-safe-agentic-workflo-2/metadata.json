@@ -1,0 +1,11 @@
+{
+  "name": "agent-coordination",
+  "description": "Agent assignment matrix, blocker escalation, and TDM coordination patterns. Use when assigning work to specialists, managing blockers, or coordinating multi-agent workflows.",
+  "repo": "bybren-llc/safe-agentic-workflow",
+  "path": ".claude/skills/agent-coordination",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bybren-llc/safe-agentic-workflow",
+  "dir_name": "agent-coordination-bybren-llc-safe-agentic-workflo-2"
+}

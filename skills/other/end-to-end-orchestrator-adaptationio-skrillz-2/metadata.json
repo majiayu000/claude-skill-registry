@@ -1,0 +1,11 @@
+{
+  "name": "end-to-end-orchestrator",
+  "description": "Complete development workflow orchestrator coordinating all multi-ai skills (research → planning → implementation → testing → verification) with quality gates, failure recovery, and state management. ",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/end-to-end-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "end-to-end-orchestrator-adaptationio-skrillz-2"
+}

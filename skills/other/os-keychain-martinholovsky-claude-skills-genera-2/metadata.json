@@ -1,0 +1,11 @@
+{
+  "name": "os-keychain",
+  "description": "> MANDATORY READING PROTOCOL: Before implementing credential storage, read references/advanced-patterns.md for cross-platform patterns and references/security-examples.md for platform-specific impleme",
+  "repo": "martinholovsky/claude-skills-generator",
+  "path": "skills/os-keychain",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/martinholovsky/claude-skills-generator",
+  "dir_name": "os-keychain-martinholovsky-claude-skills-genera-2"
+}

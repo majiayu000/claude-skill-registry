@@ -1,0 +1,11 @@
+{
+  "name": "context-monitor",
+  "description": "Monitors context token usage and warns when approaching limits.\nAutomatically activates when context usage exceeds thresholds (30k, 50k, 70k tokens).\nProvides recommendations for context management an",
+  "repo": "Youngger9765/career_ios_backend",
+  "path": ".claude/skills/context-monitor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Youngger9765/career_ios_backend",
+  "dir_name": "context-monitor-youngger9765-career-ios-backend-2"
+}

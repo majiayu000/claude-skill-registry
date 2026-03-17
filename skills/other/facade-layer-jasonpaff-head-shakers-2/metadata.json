@@ -1,0 +1,11 @@
+{
+  "name": "facade-layer",
+  "description": "Enforces project facade layer coding conventions when creating or modifying business logic facades. This skill ensures consistent patterns for transaction handling, error management, cache integration",
+  "repo": "JasonPaff/head-shakers",
+  "path": ".claude/skills/facade-layer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JasonPaff/head-shakers",
+  "dir_name": "facade-layer-jasonpaff-head-shakers-2"
+}

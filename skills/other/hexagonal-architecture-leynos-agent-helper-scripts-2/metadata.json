@@ -1,0 +1,11 @@
+{
+  "name": "hexagonal-architecture",
+  "description": "Design, implement, and maintain applications using hexagonal architecture (ports and adapters). Use when (1) designing new systems requiring clear separation between domain logic and infrastructure, (",
+  "repo": "leynos/agent-helper-scripts",
+  "path": "skills/hexagonal-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leynos/agent-helper-scripts",
+  "dir_name": "hexagonal-architecture-leynos-agent-helper-scripts-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "data-validation",
+  "description": "Data validation patterns including schema validation, input sanitization, output encoding, and type coercion. Use when implementing validate, validation, schema, form validation, API validation, JSON ",
+  "repo": "cosmix/loom",
+  "path": "skills/data-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "data-validation-cosmix-loom-2"
+}

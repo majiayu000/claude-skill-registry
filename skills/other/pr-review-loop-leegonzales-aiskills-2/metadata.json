@@ -1,0 +1,11 @@
+{
+  "name": "pr-review-loop",
+  "description": "Manage PR review feedback loops with Gemini Code Assist. Use when pushing changes to a PR, iterating on review feedback, or monitoring CI/review status. Automatically falls back to Claude when Gemini ",
+  "repo": "leegonzales/AISkills",
+  "path": "PRReviewLoop/pr-review-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leegonzales/AISkills",
+  "dir_name": "pr-review-loop-leegonzales-aiskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "implementing-figma-designs",
+  "description": "Implements Figma designs 1:1 using OneKey component library. Use when implementing UI from Figma, converting designs to code, or building pages/components from design specs. Triggers on figma, design,",
+  "repo": "OneKeyHQ/app-monorepo",
+  "path": ".claude/skills/implementing-figma-designs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OneKeyHQ/app-monorepo",
+  "dir_name": "implementing-figma-designs-onekeyhq-app-monorepo-2"
+}

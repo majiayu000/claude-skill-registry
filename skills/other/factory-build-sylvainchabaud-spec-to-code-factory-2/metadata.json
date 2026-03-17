@@ -1,0 +1,11 @@
+{
+  "name": "factory-build",
+  "description": "Phase ACT (build) - Implémente task-by-task",
+  "repo": "SylvainChabaud/spec-to-code-factory",
+  "path": ".claude/skills/factory-build",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylvainChabaud/spec-to-code-factory",
+  "dir_name": "factory-build-sylvainchabaud-spec-to-code-factory-2"
+}

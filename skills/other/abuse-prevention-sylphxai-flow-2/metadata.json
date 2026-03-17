@@ -1,0 +1,11 @@
+{
+  "name": "abuse-prevention",
+  "description": "Abuse prevention - rate limiting, moderation, bad actors. Use when fighting abuse.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/abuse-prevention",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "abuse-prevention-sylphxai-flow-2"
+}

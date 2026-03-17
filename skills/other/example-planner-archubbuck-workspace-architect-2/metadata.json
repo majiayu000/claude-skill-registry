@@ -1,0 +1,11 @@
+{
+  "name": "example-planner",
+  "description": "Create detailed implementation plans for software features and refactoring tasks. Use this skill when planning new features, architectural changes, or major refactoring efforts.",
+  "repo": "archubbuck/workspace-architect",
+  "path": "assets/skills/example-planner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/archubbuck/workspace-architect",
+  "dir_name": "example-planner-archubbuck-workspace-architect-2"
+}

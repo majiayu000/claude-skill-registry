@@ -1,0 +1,11 @@
+{
+  "name": "chore",
+  "description": "Chore executor for simple, repetitive, and batch tasks.\nUse when: batch renaming, text replacement, formatting, dependency updates, or config changes.\n杂务执行者，处理简单重复任务，节省 token。",
+  "repo": "Lynricsy/Oh-My-ClaudeCode",
+  "path": "skills/chore",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lynricsy/Oh-My-ClaudeCode",
+  "dir_name": "chore-lynricsy-oh-my-claudecode-2"
+}

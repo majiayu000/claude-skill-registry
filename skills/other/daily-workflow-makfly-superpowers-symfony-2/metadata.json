@@ -1,0 +1,11 @@
+{
+  "name": "daily-workflow",
+  "description": "Use when symfony daily workflow",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/daily-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "daily-workflow-makfly-superpowers-symfony-2"
+}

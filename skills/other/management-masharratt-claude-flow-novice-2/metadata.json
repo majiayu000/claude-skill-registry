@@ -1,0 +1,11 @@
+{
+  "name": "management",
+  "description": "Prevent and detect memory leaks in Claude CLI operations through proactive monitoring, limits, and profiling. Use when managing memory limits for long-running agents, detecting memory leaks, profiling",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-memory-persistence/lib/management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "management-masharratt-claude-flow-novice-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "support-ticket-triage",
+  "description": "Triage customer support tickets/emails/chats into categories, priority, and next action; draft responses and create reproducible steps; use for Zendesk/Intercom/Help Scout exports or pasted threads.",
+  "repo": "ComposioHQ/awesome-codex-skills",
+  "path": "support-ticket-triage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ComposioHQ/awesome-codex-skills",
+  "dir_name": "support-ticket-triage-composiohq-awesome-codex-skills-2"
+}

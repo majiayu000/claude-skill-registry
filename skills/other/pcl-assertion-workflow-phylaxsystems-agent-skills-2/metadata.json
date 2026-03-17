@@ -1,0 +1,11 @@
+{
+  "name": "pcl-assertion-workflow",
+  "description": "Guides the end-to-end PCL workflow (project setup, testing, store/submit, and deploy). Use when setting up or deploying assertions with the Credible Layer CLI and dApp.",
+  "repo": "phylaxsystems/agent-skills",
+  "path": "skills/pcl-assertion-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/phylaxsystems/agent-skills",
+  "dir_name": "pcl-assertion-workflow-phylaxsystems-agent-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "jira-resource-validator",
+  "description": "Validates Jira projects and boards exist, creates missing resources automatically. Smart enough to prompt user to select existing or create new projects. For boards, accepts either IDs (validates exis",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave-jira/skills/jira-resource-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/anton-abyzov/specweave",
+  "dir_name": "jira-resource-validator-anton-abyzov-specweave-2"
+}

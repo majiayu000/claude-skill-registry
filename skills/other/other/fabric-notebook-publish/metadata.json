@@ -1,0 +1,17 @@
+{
+  "name": "fabric-notebook-publish",
+  "repo": "fabioc-aloha/AIRS_Data_Analysis",
+  "path": ".github/skills/fabric-notebook-publish/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/fabioc-aloha/AIRS_Data_Analysis",
+  "dir_name": "fabric-notebook-publish",
+  "downloaded_at": "2026-03-01T07:40:53.240362Z",
+  "author": "fabioc-aloha",
+  "source_url": "https://github.com/fabioc-aloha/AIRS_Data_Analysis/blob/main/.github/skills/fabric-notebook-publish/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fabioc-aloha/AIRS_Data_Analysis/blob/main/.github/skills/fabric-notebook-publish/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

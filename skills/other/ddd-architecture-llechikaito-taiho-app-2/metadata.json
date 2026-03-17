@@ -1,0 +1,11 @@
+{
+  "name": "ddd-architecture",
+  "description": "ドメイン駆動設計（DDD）に準拠したバックエンドコードを書くためのスキルです。",
+  "repo": "LlechiKaito/taiho-app",
+  "path": ".claude/skills/ddd-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/LlechiKaito/taiho-app",
+  "dir_name": "ddd-architecture-llechikaito-taiho-app-2"
+}

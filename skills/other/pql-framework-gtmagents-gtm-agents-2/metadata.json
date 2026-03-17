@@ -1,0 +1,11 @@
+{
+  "name": "pql-framework",
+  "description": "Methodology for defining product-qualified lead (PQL) signals, scoring, and routing.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/product-led-growth/skills/pql-framework",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "pql-framework-gtmagents-gtm-agents-2"
+}

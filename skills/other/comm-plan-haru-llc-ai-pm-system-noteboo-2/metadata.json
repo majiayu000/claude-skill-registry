@@ -1,0 +1,11 @@
+{
+  "name": "comm-plan",
+  "description": "コミュニケーションマネジメント計画書を作成する。情報共有計画、報告体制の策定時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/planning/comm-plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "comm-plan-haru-llc-ai-pm-system-noteboo-2"
+}

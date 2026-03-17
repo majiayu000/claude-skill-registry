@@ -1,0 +1,11 @@
+{
+  "name": "keycloak-skill",
+  "description": "Expert guidance on Keycloak identity and access management, including ABAC (Attribute-Based Access Control), OIDC/OAuth2 flows, realm/client configuration, identity provider integration (Azure AD), cu",
+  "repo": "peterstorm/.dotfiles",
+  "path": ".claude/skills/keycloak-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/peterstorm/.dotfiles",
+  "dir_name": "keycloak-skill-peterstorm-dotfiles-2"
+}

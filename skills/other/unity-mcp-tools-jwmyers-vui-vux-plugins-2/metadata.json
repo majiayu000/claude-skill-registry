@@ -1,0 +1,11 @@
+{
+  "name": "unity-mcp-tools",
+  "description": "This skill should be used when the user asks about \"MCP tools\", \"Unity MCP\", \"enable tool groups\", \"which MCP tools\", \"create GameObject\", \"add component\", \"run Unity tests\", \"check scene hierarchy\", ",
+  "repo": "jwmyers/vui-vux-plugins",
+  "path": "plugins/zero-day-dev/skills/unity-mcp-tools",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jwmyers/vui-vux-plugins",
+  "dir_name": "unity-mcp-tools-jwmyers-vui-vux-plugins-2"
+}

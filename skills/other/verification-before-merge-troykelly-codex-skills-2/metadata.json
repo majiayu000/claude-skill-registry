@@ -1,0 +1,11 @@
+{
+  "name": "verification-before-merge",
+  "description": "Use before merging PR - final gate ensuring all tests pass, review complete, CI green, and acceptance criteria verified",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/verification-before-merge",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "verification-before-merge-troykelly-codex-skills-2"
+}

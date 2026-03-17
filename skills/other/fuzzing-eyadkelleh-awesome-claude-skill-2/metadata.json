@@ -1,0 +1,11 @@
+{
+  "name": "fuzzing",
+  "description": "Essential fuzzing payloads: SQL injection, command injection, special characters. Curated essentials for vulnerability testing.",
+  "repo": "Eyadkelleh/awesome-claude-skills-security",
+  "path": "seclists-categories fuzzing/fuzzing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Eyadkelleh/awesome-claude-skills-security",
+  "dir_name": "fuzzing-eyadkelleh-awesome-claude-skill-2"
+}

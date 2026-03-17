@@ -1,0 +1,11 @@
+{
+  "name": "input-normalizer",
+  "description": "3つの入力モード（薬剤起点/PICO起点/CQ起点）を統一フォーマットに変換し、\n後続のRWD研究企画スキルが利用できる構造化データを生成する。\n",
+  "repo": "tito-gh/healthcare",
+  "path": ".claude/skills/input-normalizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tito-gh/healthcare",
+  "dir_name": "input-normalizer-tito-gh-healthcare-2"
+}

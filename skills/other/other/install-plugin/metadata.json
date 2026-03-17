@@ -1,0 +1,17 @@
+{
+  "name": "install-plugin",
+  "repo": "SongYunSeop/oh-my-til",
+  "path": ".claude/skills/install-plugin/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/SongYunSeop/oh-my-til",
+  "dir_name": "install-plugin",
+  "downloaded_at": "2026-03-01T06:08:06.822943Z",
+  "author": "SongYunSeop",
+  "source_url": "https://github.com/SongYunSeop/oh-my-til/blob/main/.claude/skills/install-plugin/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SongYunSeop/oh-my-til/blob/main/.claude/skills/install-plugin/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

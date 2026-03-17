@@ -1,0 +1,11 @@
+{
+  "name": "beanie-odm",
+  "description": "This skill should be used when the user asks to \"create MongoDB model\", \"define Beanie document\", \"write MongoDB query\", \"create aggregation pipeline\", \"run database migration\", \"index MongoDB collect",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/fastapi-backend/skills/beanie-odm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "beanie-odm-lobbi-docs-claude-2"
+}

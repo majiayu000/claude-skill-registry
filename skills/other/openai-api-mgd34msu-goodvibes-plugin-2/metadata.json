@@ -1,0 +1,11 @@
+{
+  "name": "openai-api",
+  "description": "Integrates OpenAI APIs for chat completions, embeddings, and image generation. Use when building AI-powered features with GPT models, DALL-E, or Whisper in Node.js applications.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/skills/openai-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "openai-api-mgd34msu-goodvibes-plugin-2"
+}

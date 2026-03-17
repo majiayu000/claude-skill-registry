@@ -1,0 +1,11 @@
+{
+  "name": "advanced-patterns",
+  "description": "Advanced T-SQL patterns and techniques for SQL Server. Use this skill when: (1) User needs help with CTEs or recursive queries, (2) User asks about APPLY operator, (3) User wants MERGE or OUTPUT claus",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/tsql-master/skills/advanced-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "advanced-patterns-josiahsiegel-claude-plugin-market-2"
+}

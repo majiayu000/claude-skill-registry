@@ -1,0 +1,11 @@
+{
+  "name": "unity-testing",
+  "description": "This skill should be used when the user asks about \"tests\", \"unit tests\", \"EditMode tests\", \"PlayMode tests\", \"Test Runner\", \"test coverage\", \"NUnit\", \"Assert\", \"test fixtures\", \"writing tests\", \"runn",
+  "repo": "jwmyers/vui-vux-plugins",
+  "path": "plugins/zero-day-dev/skills/unity-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jwmyers/vui-vux-plugins",
+  "dir_name": "unity-testing-jwmyers-vui-vux-plugins-2"
+}

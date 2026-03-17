@@ -1,0 +1,11 @@
+{
+  "name": "dotnet-10-csharp-14",
+  "description": "Use when building .NET 10 or C# 14 applications; when using minimal APIs, modular monolith patterns, or feature folders; when implementing HTTP resilience, Options pattern, Channels, or validation; wh",
+  "repo": "mhagrelius/dotfiles",
+  "path": ".claude/skills/dotnet-10-csharp-14",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhagrelius/dotfiles",
+  "dir_name": "dotnet-10-csharp-14-mhagrelius-dotfiles-2"
+}

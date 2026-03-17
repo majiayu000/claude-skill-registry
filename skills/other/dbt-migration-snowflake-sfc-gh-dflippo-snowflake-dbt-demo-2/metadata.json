@@ -1,0 +1,11 @@
+{
+  "name": "dbt-migration-snowflake",
+  "description": "Convert Snowflake DDL to dbt models. This skill should be used when converting views, tables, or stored procedures from Snowflake to dbt code, generating schema.yml files with tests and documentation,",
+  "repo": "sfc-gh-dflippo/snowflake-dbt-demo",
+  "path": ".claude/skills/dbt-migration-snowflake",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sfc-gh-dflippo/snowflake-dbt-demo",
+  "dir_name": "dbt-migration-snowflake-sfc-gh-dflippo-snowflake-dbt-demo-2"
+}

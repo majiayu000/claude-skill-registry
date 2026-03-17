@@ -1,0 +1,11 @@
+{
+  "name": "swiftui-view-refactor",
+  "description": "Refactor and review SwiftUI view files for consistent structure, dependency injection, and Observation usage. Use when asked to clean up a SwiftUI view’s layout/ordering, handle view models safely (no",
+  "repo": "nickromney/n-dotfiles",
+  "path": "skills/swiftui-view-refactor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nickromney/n-dotfiles",
+  "dir_name": "swiftui-view-refactor-nickromney-n-dotfiles-2"
+}

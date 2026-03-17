@@ -1,0 +1,11 @@
+{
+  "name": "audit-code",
+  "description": "Run a single-session code review audit on the codebase",
+  "repo": "jasonmichaelbell78-creator/sonash-v0",
+  "path": ".claude/skills/audit-code",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonmichaelbell78-creator/sonash-v0",
+  "dir_name": "audit-code-jasonmichaelbell78-c-sonash-v0-2"
+}

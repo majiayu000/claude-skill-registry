@@ -1,0 +1,11 @@
+{
+  "name": "modern-auth-2026",
+  "description": "Modern authentication implementation for 2026 - passkeys (WebAuthn), OAuth (Google, Apple), magic links, and cross-device sync. Use for passwordless-first authentication, social login setup, Supabase ",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/modern-auth-2026",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "modern-auth-2026-erichowens-some-claude-skills-2"
+}

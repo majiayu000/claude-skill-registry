@@ -1,0 +1,11 @@
+{
+  "name": "agent-doc-writer",
+  "description": "Analyze code changes and recommend appropriate documentation. Evaluates git diffs to determine if changes warrant README updates, inline doc additions, or dedicated documentation files. Triggers on: d",
+  "repo": "bearbinary/Jarvy",
+  "path": ".claude/skills/agent-doc-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bearbinary/Jarvy",
+  "dir_name": "agent-doc-writer-bearbinary-jarvy-2"
+}

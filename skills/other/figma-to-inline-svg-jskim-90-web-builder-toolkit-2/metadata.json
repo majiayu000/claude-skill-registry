@@ -1,0 +1,11 @@
+{
+  "name": "figma-to-inline-svg",
+  "description": "Figma 디자인을 인라인 SVG가 포함된 정적 HTML/CSS로 변환합니다. 런타임에서 색상 제어가 필요한 심볼/아이콘용입니다. Use when converting Figma SVG designs to inline SVG HTML for runtime color control, symbol state components, or icon theming.",
+  "repo": "JSKIM-90/WEB_BUILDER_TOOLKIT",
+  "path": ".claude/skills/1-figma/figma-to-inline-svg",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JSKIM-90/WEB_BUILDER_TOOLKIT",
+  "dir_name": "figma-to-inline-svg-jskim-90-web-builder-toolkit-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "code-architect",
+  "description": "Use when asked for an architecture blueprint or explicitly asked to run the code-architect subagent.",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/code-architect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "code-architect-troykelly-codex-skills-2"
+}

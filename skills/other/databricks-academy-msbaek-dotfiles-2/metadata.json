@@ -1,0 +1,11 @@
+{
+  "name": "databricks-academy",
+  "description": "Use this skill when users ask questions about Databricks courses, tutorials, documentation, or learning materials from Databricks Academy (customer-academy.databricks.com). This skill handles login-re",
+  "repo": "msbaek/dotfiles",
+  "path": ".claude/skills/databricks-academy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/msbaek/dotfiles",
+  "dir_name": "databricks-academy-msbaek-dotfiles-2"
+}

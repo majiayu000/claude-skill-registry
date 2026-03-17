@@ -1,0 +1,11 @@
+{
+  "name": "credential-harvesting-lab",
+  "description": "This skill should be used when the user asks to \"build a phishing lab\", \"perform credential harvesting\", \"set up ARP spoofing\", \"configure DNS spoofing\", \"create a fake login page\", or \"test social en",
+  "repo": "zebbern/SecOps-CLI-Guides",
+  "path": "skills/credential-harvesting-lab",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zebbern/SecOps-CLI-Guides",
+  "dir_name": "credential-harvesting-lab-zebbern-secops-cli-guides-2"
+}

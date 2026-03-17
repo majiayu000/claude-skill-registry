@@ -1,0 +1,11 @@
+{
+  "name": "typescript-circular-dependency",
+  "description": "Detect and resolve TypeScript/JavaScript circular import dependencies. Use when:\n(1) \"Cannot access 'X' before initialization\" at runtime, (2) Import returns \nundefined unexpectedly, (3) \"ReferenceErr",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/claudeception/examples/typescript-circular-dependency",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "typescript-circular-dependency-wania-kazmi-claude-code-autonomo-2"
+}

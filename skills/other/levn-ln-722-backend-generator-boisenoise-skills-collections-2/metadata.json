@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-722-backend-generator",
+  "description": "Generates .NET Clean Architecture backend structure from entity definitions",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-722-backend-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-722-backend-generator-boisenoise-skills-collections-2"
+}

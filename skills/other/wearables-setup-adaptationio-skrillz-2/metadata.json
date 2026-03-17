@@ -1,0 +1,11 @@
+{
+  "name": "wearables-setup",
+  "description": "Samsung Galaxy Watch integration via Google Drive for Dr. Sophia AI. Covers Health Sync app setup, OAuth configuration, multi-user management, data sync verification. Use when setting up Samsung Healt",
+  "repo": "adaptationio/Skrillz",
+  "path": "skill-builder-package/examples/wearables-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "wearables-setup-adaptationio-skrillz-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "check-no-secrets",
+  "repo": "Async-IO/pierre_mcp_server",
+  "path": ".claude/skills/check-no-secrets/SKILL.md",
+  "category": "other",
+  "source": "github.com/Async-IO/pierre_mcp_server",
+  "dir_name": "check-no-secrets",
+  "downloaded_at": "2026-02-15T04:46:17.329075Z"
+}

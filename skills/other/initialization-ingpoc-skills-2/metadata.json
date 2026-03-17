@@ -1,0 +1,11 @@
+{
+  "name": "initialization",
+  "description": "Use when starting a new session without feature-list.json, setting up project structure, or breaking down requirements into atomic features. Load in INIT state. Detects project type (Python/Node/Djang",
+  "repo": "ingpoc/SKILLS",
+  "path": "initialization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ingpoc/SKILLS",
+  "dir_name": "initialization-ingpoc-skills-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "erpnext-impl-whitelisted",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/impl/erpnext-impl-whitelisted/SKILL.md",
+  "category": "other",
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-impl-whitelisted",
+  "downloaded_at": "2026-02-22T05:29:39.808598Z"
+}

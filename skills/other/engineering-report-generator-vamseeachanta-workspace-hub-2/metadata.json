@@ -1,0 +1,11 @@
+{
+  "name": "engineering-report-generator",
+  "description": "Generate engineering analysis reports with interactive Plotly visualizations, standard report sections, and HTML export. Use for creating dashboards, analysis summaries, and technical documentation wi",
+  "repo": "vamseeachanta/workspace-hub",
+  "path": ".claude/skills/development/engineering-report-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/workspace-hub",
+  "dir_name": "engineering-report-generator-vamseeachanta-workspace-hub-2"
+}

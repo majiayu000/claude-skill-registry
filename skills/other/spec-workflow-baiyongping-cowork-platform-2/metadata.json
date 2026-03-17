@@ -1,0 +1,11 @@
+{
+  "name": "spec-workflow",
+  "description": "Standard software engineering workflow for requirement analysis, technical design, and task planning. Use this skill when developing new features, complex architecture designs, multi-module integratio",
+  "repo": "baiyongping/cowork-platform",
+  "path": ".claude/skills/spec-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/baiyongping/cowork-platform",
+  "dir_name": "spec-workflow-baiyongping-cowork-platform-2"
+}

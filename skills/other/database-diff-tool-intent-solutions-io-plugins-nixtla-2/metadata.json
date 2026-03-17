@@ -1,0 +1,11 @@
+{
+  "name": "database-diff-tool",
+  "description": "This skill leverages the database-diff-tool plugin to compare database schemas, generate migration scripts, and provide rollback procedures. It is triggered when the user requests database schema comp",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/database/database-diff-tool/skills/database-diff-tool",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "database-diff-tool-intent-solutions-io-plugins-nixtla-2"
+}

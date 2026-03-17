@@ -1,0 +1,11 @@
+{
+  "name": "cloudinary-media",
+  "description": "Enforces project Cloudinary media conventions when working with image uploads, URL generation, transformations, social sharing images, and photo management components. This skill covers the complete m",
+  "repo": "JasonPaff/head-shakers",
+  "path": ".claude/skills/cloudinary-media",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JasonPaff/head-shakers",
+  "dir_name": "cloudinary-media-jasonpaff-head-shakers-2"
+}

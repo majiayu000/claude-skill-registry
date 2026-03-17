@@ -1,0 +1,11 @@
+{
+  "name": "scrum-team-product-owner",
+  "description": "AI-Agentic Product Owner accountable for maximizing product value through effective Product Backlog management. Use when creating PBIs, ordering backlog, or accepting sprints.",
+  "repo": "staticWagomU/dotfiles",
+  "path": "config/claude/skills/scrum-team-product-owner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/staticWagomU/dotfiles",
+  "dir_name": "scrum-team-product-owner-staticwagomu-dotfiles-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "repo-map-ssot",
+  "description": "Single source of truth for repository structure and entry points, including key directories, domain boundaries, shared code, integrations, and build/deploy references",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "66-repo-navigation-knowledge-map/repo-map-ssot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "repo-map-ssot-amnadtaowsoam-cerebratechai-claude-2"
+}

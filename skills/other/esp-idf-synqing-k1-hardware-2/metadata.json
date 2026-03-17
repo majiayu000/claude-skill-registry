@@ -1,0 +1,11 @@
+{
+  "name": "ESP-IDF",
+  "description": "ESP32 Integrated Development Framework documentation. Covers I2S, GPIO, FreeRTOS, peripherals, and ESP32S3-specific APIs.",
+  "repo": "synqing/K1.hardware",
+  "path": ".claude/skills/ESP-IDF",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/synqing/K1.hardware",
+  "dir_name": "esp-idf-synqing-k1-hardware-2"
+}

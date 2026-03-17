@@ -1,0 +1,11 @@
+{
+  "name": "data-encryption",
+  "description": "Implement strong encryption using AES, RSA, TLS, and proper key management. Use when securing data at rest, in transit, or implementing end-to-end encryption.",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/data-encryption",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "dir_name": "data-encryption-aj-geddes-useful-ai-prompts-2"
+}

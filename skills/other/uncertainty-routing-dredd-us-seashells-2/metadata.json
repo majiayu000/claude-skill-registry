@@ -1,0 +1,11 @@
+{
+  "name": "uncertainty-routing",
+  "description": "Route tasks to small model by default, escalate to large model only on low confidence detection, achieving 87% faster learning and 10-30x cost reduction while maintaining accuracy. Use for cost optimi",
+  "repo": "dredd-us/seashells",
+  "path": ".claude/skills/uncertainty-routing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dredd-us/seashells",
+  "dir_name": "uncertainty-routing-dredd-us-seashells-2"
+}

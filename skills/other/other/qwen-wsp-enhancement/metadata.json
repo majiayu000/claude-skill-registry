@@ -1,0 +1,9 @@
+{
+  "name": "qwen-wsp-enhancement",
+  "repo": "Foundup/Foundups-Agent",
+  "path": ".claude/skills/qwen_wsp_enhancement/SKILL.md",
+  "category": "other",
+  "source": "github.com/Foundup/Foundups-Agent",
+  "dir_name": "qwen-wsp-enhancement",
+  "downloaded_at": "2026-02-15T05:08:00.389636Z"
+}

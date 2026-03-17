@@ -1,0 +1,11 @@
+{
+  "name": "sonarcloud-sprint",
+  "description": "Run a SonarCloud cleanup sprint. Fetches fresh issues via public API, generates a detailed report with code snippets, creates a cleanup branch, and tracks fixes with the TodoWrite tool. Use when start",
+  "repo": "jasonmichaelbell78-creator/sonash-v0",
+  "path": ".claude/skills/sonarcloud-sprint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonmichaelbell78-creator/sonash-v0",
+  "dir_name": "sonarcloud-sprint-jasonmichaelbell78-c-sonash-v0-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "bb80-deterministic-receipts",
+  "description": "Replace human review with reproducible evidence. Always provide deterministic receipts, never narratives.",
+  "repo": "seanchatmangpt/ggen",
+  "path": ".claude/skills/bb80-deterministic-receipts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/seanchatmangpt/ggen",
+  "dir_name": "bb80-deterministic-receipts-seanchatmangpt-ggen-2"
+}

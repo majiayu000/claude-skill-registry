@@ -1,0 +1,11 @@
+{
+  "name": "dokploy-management",
+  "description": "Use when deploying, managing, or troubleshooting Dokploy instances via the CLI (https://github.com/Dokploy/cli).\nTriggers: \"dokploy deploy\", \"manage dokploy\", \"dokploy app\", \"dokploy database\", \"push ",
+  "repo": "watzon/claude-code",
+  "path": "skills/dokploy-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/watzon/claude-code",
+  "dir_name": "dokploy-management-watzon-claude-code-2"
+}

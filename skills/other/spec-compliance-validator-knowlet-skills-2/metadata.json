@@ -1,0 +1,11 @@
+{
+  "name": "spec-compliance-validator",
+  "description": "驗證規格檔案的完整性與一致性，確保所有必要的規格元素都已定義且符合標準格式。",
+  "repo": "knowlet/skills",
+  "path": "skills/spec-compliance-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/knowlet/skills",
+  "dir_name": "spec-compliance-validator-knowlet-skills-2"
+}

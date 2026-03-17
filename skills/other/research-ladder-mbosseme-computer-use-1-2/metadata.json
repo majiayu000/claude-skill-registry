@@ -1,0 +1,11 @@
+{
+  "name": "research-ladder",
+  "description": "A tiered approach to answering research questions with clear stop rules, evidence capture, and escalation to Tavily/Playwright only when needed.",
+  "repo": "mbosseme/computer-use-1",
+  "path": ".github/skills/research-ladder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mbosseme/computer-use-1",
+  "dir_name": "research-ladder-mbosseme-computer-use-1-2"
+}

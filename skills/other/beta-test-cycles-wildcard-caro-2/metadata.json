@@ -1,0 +1,11 @@
+{
+  "name": "beta-test-cycles",
+  "description": "This skill should be used when the user asks to \"run beta test cycle\", \"run next cycle\", \"test static patterns\", \"analyze test failures\", \"improve pass rate\", or wants to systematically improve comman",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/beta-test-cycles",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wildcard/caro",
+  "dir_name": "beta-test-cycles-wildcard-caro-2"
+}

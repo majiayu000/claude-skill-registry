@@ -1,0 +1,11 @@
+{
+  "name": "jira-cli",
+  "description": "Interact with Jira from the command line to create, list, view, edit, and transition issues, manage sprints and epics, and perform common Jira workflows. Use when the user asks about Jira tasks, ticke",
+  "repo": "Code-and-Sorts/awesome-copilot-agents",
+  "path": "skills/jira-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Code-and-Sorts/awesome-copilot-agents",
+  "dir_name": "jira-cli-code-and-sorts-awesome-copilot-agen-2"
+}

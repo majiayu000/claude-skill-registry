@@ -1,0 +1,11 @@
+{
+  "name": "prowler-pr",
+  "description": "Creates Pull Requests for Prowler following the project template and conventions. Trigger: When working on pull request requirements or creation (PR template sections, PR title Conventional Commits ch",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/prowler-provider",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/prowler-cloud/prowler",
+  "dir_name": "prowler-pr-prowler-cloud-prowler-2"
+}

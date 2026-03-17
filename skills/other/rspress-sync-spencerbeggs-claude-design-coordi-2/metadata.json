@@ -1,0 +1,11 @@
+{
+  "name": "rspress-sync",
+  "description": "Sync site docs with API changes. Use when APIs have been updated and documentation needs to reflect the changes.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/rspress-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "rspress-sync-spencerbeggs-claude-design-coordi-2"
+}

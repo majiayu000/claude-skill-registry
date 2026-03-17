@@ -1,0 +1,11 @@
+{
+  "name": "working-in-scratch-areas",
+  "description": "Use when creating one-off scripts, debug tools, analysis reports, or temporary documentation - ensures work is saved to persistent .scratch areas with proper documentation, organization, and executabl",
+  "repo": "technicalpickles/pickled-claude-plugins",
+  "path": "plugins/dev-tools/skills/working-in-scratch-areas",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/technicalpickles/pickled-claude-plugins",
+  "dir_name": "working-in-scratch-areas-technicalpickles-pickled-claude-plugi-2"
+}

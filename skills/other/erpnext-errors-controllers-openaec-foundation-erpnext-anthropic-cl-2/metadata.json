@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-errors-controllers",
+  "description": "Error handling patterns for ERPNext Document Controllers. Use when implementing try/except, validation errors, permission errors, and transaction management. Covers rollback patterns, error logging, a",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/errors/erpnext-errors-controllers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-errors-controllers-openaec-foundation-erpnext-anthropic-cl-2"
+}

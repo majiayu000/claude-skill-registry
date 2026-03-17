@@ -1,0 +1,11 @@
+{
+  "name": "ln-221-story-creator",
+  "description": "Creates Stories from IDEAL plan (CREATE) or appends user-requested Stories (ADD). Generates 8-section documents, validates INVEST, creates in Linear. Invoked by ln-220.",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-221-story-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-221-story-creator-levnikolaevich-claude-code-skills-2"
+}

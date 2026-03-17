@@ -1,0 +1,11 @@
+{
+  "name": "sprint-planner",
+  "description": "Analyze design docs, calculate velocity from recent work, and create realistic sprint plans with day-by-day breakdowns. Use when user asks to \"plan sprint\", \"create sprint plan\", or wants to estimate ",
+  "repo": "sunholo-data/ailang",
+  "path": ".claude/skills/sprint-planner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunholo-data/ailang",
+  "dir_name": "sprint-planner-sunholo-data-ailang-2"
+}

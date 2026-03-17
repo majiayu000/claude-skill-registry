@@ -1,0 +1,11 @@
+{
+  "name": "security-auditor",
+  "description": "security-auditor skill\n\nTrigger terms: security audit, vulnerability scan, OWASP, security analysis, penetration testing, security review, threat modeling, security best practices, CVE\n\nUse when: User",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/security-auditor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "dir_name": "security-auditor-nahisaho-codegraphmcpserver-2"
+}

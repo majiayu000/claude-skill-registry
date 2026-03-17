@@ -1,0 +1,11 @@
+{
+  "name": "architecture-paradigm-hexagonal",
+  "description": "- When you anticipate frequent changes to databases, frameworks, or user interfaces and need the core domain logic to remain stable.",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/archetypes/skills/architecture-paradigm-hexagonal",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "architecture-paradigm-hexagonal-athola-claude-night-market-2"
+}

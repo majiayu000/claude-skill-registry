@@ -1,0 +1,11 @@
+{
+  "name": "resume-translator",
+  "description": "Translate and adapt resumes for different formats, languages, and audiences. Use when converting resumes to PDF/HTML, translating to other languages, or tailoring for specific roles.",
+  "repo": "ufxpri/UfXpri",
+  "path": ".claude/skills/resume-translator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ufxpri/UfXpri",
+  "dir_name": "resume-translator-ufxpri-ufxpri-2"
+}

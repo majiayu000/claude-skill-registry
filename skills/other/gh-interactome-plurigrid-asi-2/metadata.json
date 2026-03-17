@@ -1,0 +1,11 @@
+{
+  "name": "gh-interactome",
+  "description": "GitHub author interaction network discovery. Maps cobordisms between",
+  "repo": "plurigrid/asi",
+  "path": "skills/gh-interactome",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "gh-interactome-plurigrid-asi-2"
+}

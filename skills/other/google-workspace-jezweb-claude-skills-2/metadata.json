@@ -1,0 +1,11 @@
+{
+  "name": "google-workspace",
+  "description": "Build integrations with Google Workspace APIs (Gmail, Calendar, Drive, Sheets, Docs, Chat, Meet, Forms, Tasks, Admin SDK). Covers OAuth 2.0, service accounts, rate limits, batch operations, and Cloudf",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/google-workspace",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "google-workspace-jezweb-claude-skills-2"
+}

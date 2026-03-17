@@ -1,0 +1,11 @@
+{
+  "name": "nl-to-tools-mapper",
+  "description": "This skill should be used when guiding the OpenAI agent to map natural language user input to appropriate MCP tools, handling phrases like \"Add task\" → add_task, \"List pending\" → list_tasks(status=\"pe",
+  "repo": "Sobansaud/Hackhathon---2",
+  "path": "Phase 4/.claude/skills/nl-to-tools-mapper",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sobansaud/Hackhathon---2",
+  "dir_name": "nl-to-tools-mapper-sobansaud-hackhathon-2-2"
+}

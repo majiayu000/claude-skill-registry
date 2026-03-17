@@ -1,0 +1,11 @@
+{
+  "name": "kirby-debugging-and-tracing",
+  "description": "Diagnoses Kirby rendering/runtime issues using MCP runtime rendering, dump traces, and template/snippet/controller indexes. Use when outputs are wrong, errors occur, or tracing execution paths is requ",
+  "repo": "bnomei/kirby-mcp",
+  "path": "skills/kirby-debugging-and-tracing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bnomei/kirby-mcp",
+  "dir_name": "kirby-debugging-and-tracing-bnomei-kirby-mcp-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "astropy-fundamentals",
+  "description": "Work with astronomical data using Astropy for FITS file I/O, coordinate transformations, physical units, precise time handling, and catalog operations. Use when processing telescope images, matching c",
+  "repo": "robertpelloni/borg",
+  "path": "agents/rse-agents/plugins/skills/astropy-fundamentals",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertpelloni/borg",
+  "dir_name": "astropy-fundamentals-robertpelloni-borg-2"
+}

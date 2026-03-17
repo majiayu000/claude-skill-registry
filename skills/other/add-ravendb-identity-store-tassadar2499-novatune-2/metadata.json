@@ -1,0 +1,11 @@
+{
+  "name": "add-ravendb-identity-store",
+  "description": "Implement ASP.NET Identity user and refresh token stores backed by RavenDB",
+  "repo": "Tassadar2499/NovaTune",
+  "path": ".claude/skills/add-ravendb-identity-store",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Tassadar2499/NovaTune",
+  "dir_name": "add-ravendb-identity-store-tassadar2499-novatune-2"
+}

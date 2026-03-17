@@ -1,0 +1,11 @@
+{
+  "name": "sketch-ai-provider-debug",
+  "description": "Debug OpenAI/Gemini image generation failures for Sketch Magic. Use when `/api/convert` returns 500, when models are unsupported, when outputs are empty, or when provider timeouts/quota errors appear.",
+  "repo": "joelklabo/markdowntown-cli",
+  "path": "codex/skills/sketch-ai-provider-debug",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown-cli",
+  "dir_name": "sketch-ai-provider-debug-joelklabo-markdowntown-cli-2"
+}

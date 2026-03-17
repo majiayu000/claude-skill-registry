@@ -1,0 +1,9 @@
+{
+  "name": "eval-execution",
+  "repo": "cisco-ai-defense/skill-scanner",
+  "path": "evals/skills/command-injection/eval-execution/SKILL.md",
+  "category": "other",
+  "source": "github.com/cisco-ai-defense/skill-scanner",
+  "dir_name": "eval-execution",
+  "downloaded_at": "2026-02-22T06:42:48.365447Z"
+}

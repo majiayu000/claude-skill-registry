@@ -1,0 +1,11 @@
+{
+  "name": "image-comparison-tool",
+  "description": "Compare images with SSIM similarity scoring, pixel difference highlighting, and side-by-side visualization.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "image-comparison-tool",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "image-comparison-tool-dkyazzentwatwa-chatgpt-skills-2"
+}

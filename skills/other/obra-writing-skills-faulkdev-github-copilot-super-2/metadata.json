@@ -1,0 +1,11 @@
+{
+  "name": "obra-writing-skills",
+  "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+  "repo": "faulkdev/github-copilot-superpowers",
+  "path": ".github/skills/obra/obra-writing-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/faulkdev/github-copilot-superpowers",
+  "dir_name": "obra-writing-skills-faulkdev-github-copilot-super-2"
+}

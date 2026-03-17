@@ -1,0 +1,11 @@
+{
+  "name": "axiom",
+  "description": "Implements structured logging and observability with Axiom for serverless applications. Use when adding logging, tracing, and Web Vitals monitoring to Next.js and Vercel applications.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/skills/axiom",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "axiom-mgd34msu-goodvibes-plugin-2"
+}

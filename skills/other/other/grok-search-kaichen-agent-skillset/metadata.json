@@ -1,0 +1,9 @@
+{
+  "name": "grok-search",
+  "repo": "kaichen/agent-skillset",
+  "path": "plugins/grok-search/skills/grok-search/SKILL.md",
+  "category": "other",
+  "source": "github.com/kaichen/agent-skillset",
+  "dir_name": "grok-search-kaichen-agent-skillset",
+  "downloaded_at": "2026-02-15T07:49:51.214205Z"
+}

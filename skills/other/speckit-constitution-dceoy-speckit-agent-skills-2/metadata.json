@@ -1,0 +1,11 @@
+{
+  "name": "speckit-constitution",
+  "description": "Create or update the project constitution from interactive or provided principle inputs, ensuring all dependent templates stay in sync.",
+  "repo": "dceoy/speckit-agent-skills",
+  "path": "skills/speckit-constitution",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dceoy/speckit-agent-skills",
+  "dir_name": "speckit-constitution-dceoy-speckit-agent-skills-2"
+}

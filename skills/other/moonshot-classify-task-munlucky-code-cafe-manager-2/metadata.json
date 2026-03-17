@@ -1,0 +1,11 @@
+{
+  "name": "moonshot-classify-task",
+  "description": "Classifies a user request into task types (feature, modification, bugfix, refactor) and extracts intent keywords. Use at the start of PM analysis.",
+  "repo": "munlucky/code-cafe-manager",
+  "path": ".claude/skills/moonshot-classify-task",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/munlucky/code-cafe-manager",
+  "dir_name": "moonshot-classify-task-munlucky-code-cafe-manager-2"
+}

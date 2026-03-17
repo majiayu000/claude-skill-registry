@@ -1,0 +1,11 @@
+{
+  "name": "local-env",
+  "description": "Local environment management - run SQL queries, set up fake payments, reset test data. Use when the user needs help with local database operations or test data setup.",
+  "repo": "dailydotdev/daily-api",
+  "path": ".claude/skills/local-env",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dailydotdev/daily-api",
+  "dir_name": "local-env-dailydotdev-daily-api-2"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "cicd-automation-workflow-automate",
+  "repo": "Claude-Code-Community-Ireland/claude-code-resources",
+  "path": "skills/general/cicd-automation-workflow-automate/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Claude-Code-Community-Ireland/claude-code-resources",
+  "dir_name": "cicd-automation-workflow-automate-claude-code-communit-claude-code-resource",
+  "downloaded_at": "2026-03-01T05:04:01.301898Z",
+  "author": "Claude-Code-Community-Ireland",
+  "source_url": "https://github.com/Claude-Code-Community-Ireland/claude-code-resources/blob/main/skills/general/cicd-automation-workflow-automate/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Claude-Code-Community-Ireland/claude-code-resources/blob/main/skills/general/cicd-automation-workflow-automate/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "gpt-researcher",
+  "description": "Use this skill for comprehensive research tasks requiring deep investigation, multiple source validation, and citation-backed reports. Triggers on keywords like \"research\", \"investigate\", \"deep dive\",",
+  "repo": "taiyousan15/taisun_agent",
+  "path": ".claude/skills/gpt-researcher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/taiyousan15/taisun_agent",
+  "dir_name": "gpt-researcher-taiyousan15-taisun-agent-2"
+}

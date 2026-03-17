@@ -1,0 +1,11 @@
+{
+  "name": "adb-magisk",
+  "description": "Magisk Manager automation - app launching, module installation, Zygisk configuration",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".claude/skills/adb/adb-game-magisk/adb-magisk",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "dir_name": "adb-magisk-rdmptv-adbautoplayer-2"
+}

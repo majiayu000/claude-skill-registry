@@ -1,0 +1,11 @@
+{
+  "name": "orca",
+  "description": "Complete guide for Orca - Solana's leading concentrated liquidity AMM (CLMM). Covers Whirlpools SDK for swaps, liquidity provision, pool creation, position management, and fee harvesting on Solana and",
+  "repo": "sendaifun/skills",
+  "path": "skills/orca",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "orca-sendaifun-skills-2"
+}

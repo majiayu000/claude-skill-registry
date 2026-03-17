@@ -1,0 +1,11 @@
+{
+  "name": "release",
+  "description": "完整的版本發布準備流程，包含版本號更新、CHANGELOG 生成、文檔同步和部署檢查。",
+  "repo": "u9401066/rootcause-mcp",
+  "path": ".claude/skills/release",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/u9401066/rootcause-mcp",
+  "dir_name": "release-u9401066-rootcause-mcp-2"
+}

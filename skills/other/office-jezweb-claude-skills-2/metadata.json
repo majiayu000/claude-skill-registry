@@ -1,0 +1,11 @@
+{
+  "name": "office",
+  "description": "Generate Office documents (DOCX, XLSX, PDF, PPTX) with TypeScript. Pure JS libraries that work everywhere: Claude Code CLI, Cloudflare Workers, browsers. Uses docx (Word), xlsx/SheetJS (Excel), pdf-li",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/office",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "office-jezweb-claude-skills-2"
+}

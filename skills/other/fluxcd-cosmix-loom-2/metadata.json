@@ -1,0 +1,11 @@
+{
+  "name": "fluxcd",
+  "description": "Flux CD is a declarative, GitOps continuous delivery solution for Kubernetes. It automatically ensures that the state of your Kubernetes cluster matches the configuration stored in Git repositories.",
+  "repo": "cosmix/loom",
+  "path": "skills/fluxcd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "fluxcd-cosmix-loom-2"
+}

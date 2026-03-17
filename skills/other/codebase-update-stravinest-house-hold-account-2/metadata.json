@@ -1,0 +1,11 @@
+{
+  "name": "codebase-update",
+  "description": "코드베이스 변경 후 .codebase 문서를 업데이트합니다. 새 기능 추가, 구조 변경, 리팩토링 후 문서 동기화가 필요할 때 사용하세요.",
+  "repo": "stravinest/house-hold-account",
+  "path": ".claude/skills/codebase-update",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/stravinest/house-hold-account",
+  "dir_name": "codebase-update-stravinest-house-hold-account-2"
+}

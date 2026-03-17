@@ -1,0 +1,11 @@
+{
+  "name": "sandbox-setup",
+  "description": "Configure Claude Code sandbox settings for this repository",
+  "repo": "ohare93/juggle",
+  "path": ".claude/skills/sandbox-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ohare93/juggle",
+  "dir_name": "sandbox-setup-ohare93-juggle-2"
+}

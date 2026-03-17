@@ -1,0 +1,11 @@
+{
+  "name": "cnv-visualization",
+  "description": "Visualize copy number profiles, segments, and compare across samples. Create publication-quality plots of CNV data from CNVkit, GATK, or other callers. Use when creating genome-wide CNV plots, sample ",
+  "repo": "GPTomics/bioSkills",
+  "path": "copy-number/cnv-visualization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "cnv-visualization-gptomics-bioskills-2"
+}

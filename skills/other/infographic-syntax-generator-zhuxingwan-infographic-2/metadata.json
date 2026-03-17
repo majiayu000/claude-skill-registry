@@ -1,0 +1,11 @@
+{
+  "name": "infographic-syntax-generator",
+  "description": "Generate AntV Infographic syntax outputs. Use when asked to turn user content into the Infographic DSL (template selection, data structuring, theme), or to output `infographic <template>` plain syntax",
+  "repo": "zhuxingwan/Infographic",
+  "path": ".skills/infographic-syntax-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zhuxingwan/Infographic",
+  "dir_name": "infographic-syntax-generator-zhuxingwan-infographic-2"
+}

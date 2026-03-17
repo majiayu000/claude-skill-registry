@@ -1,0 +1,11 @@
+{
+  "name": "front-api",
+  "description": "Reference for Front REST API integration. Use when working with Front API schemas, nullable fields, webhooks, or debugging Front SDK issues.",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/front-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "front-api-skillrecordings-support-2"
+}

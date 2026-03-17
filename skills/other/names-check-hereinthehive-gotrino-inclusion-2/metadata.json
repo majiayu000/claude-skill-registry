@@ -1,0 +1,11 @@
+{
+  "name": "names-check",
+  "description": "Analyze examples and mock data for name diversity, understanding the context and purpose before suggesting changes. Use when reviewing test data, documentation, or seed data.",
+  "repo": "hereinthehive/gotrino-inclusion",
+  "path": "skills/names-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hereinthehive/gotrino-inclusion",
+  "dir_name": "names-check-hereinthehive-gotrino-inclusion-2"
+}

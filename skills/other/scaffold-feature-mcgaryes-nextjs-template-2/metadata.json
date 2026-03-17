@@ -1,0 +1,11 @@
+{
+  "name": "scaffold-feature",
+  "description": "Scaffold a new feature module with the standard directory structure and optional API, components, hooks, and context boilerplate.",
+  "repo": "mcgaryes/nextjs-template",
+  "path": ".claude/skills/scaffold-feature",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mcgaryes/nextjs-template",
+  "dir_name": "scaffold-feature-mcgaryes-nextjs-template-2"
+}

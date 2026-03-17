@@ -1,0 +1,11 @@
+{
+  "name": "aictxt-manager",
+  "description": "生成、维护、修剪AICTXT文档，保持在CRAFT大小限制内。当AICTXT创建和更新时使用。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/implementation_planning/aictxt-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "aictxt-manager-tikazyq-agentic-spec-forge-2"
+}

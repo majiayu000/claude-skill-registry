@@ -1,0 +1,11 @@
+{
+  "name": "snd-glamourer",
+  "description": "Use this skill when implementing glamour/appearance automation in SND macros using the Glamourer plugin. Covers glamour application, design management, and appearance state.",
+  "repo": "vaoan/SND",
+  "path": ".claude/skills/snd-glamourer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vaoan/SND",
+  "dir_name": "snd-glamourer-vaoan-snd-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "postgres-drizzle",
+  "description": "PostgreSQL and Drizzle ORM best practices. Use when writing database schemas, queries, migrations, or any database-related code. Triggers on mentions of PostgreSQL, Postgres, Drizzle, database, schema",
+  "repo": "ccheney/robust-skills",
+  "path": "skills/postgres-drizzle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ccheney/robust-skills",
+  "dir_name": "postgres-drizzle-ccheney-robust-skills-2"
+}

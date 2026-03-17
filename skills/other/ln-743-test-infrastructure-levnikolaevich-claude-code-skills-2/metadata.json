@@ -1,0 +1,11 @@
+{
+  "name": "ln-743-test-infrastructure",
+  "description": "Creates test infrastructure with Vitest, xUnit, and pytest",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-743-test-infrastructure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-743-test-infrastructure-levnikolaevich-claude-code-skills-2"
+}

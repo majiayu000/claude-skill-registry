@@ -1,0 +1,11 @@
+{
+  "name": "performance-audit",
+  "description": "分析后端性能问题，检测 N+1 查询、无分页查询、全表扫描、AI 服务超时等。使用此 Skill 来评估系统性能瓶颈、检测数据库查询问题、或优化 API 响应时间。",
+  "repo": "j4xie/my-prototype-logistics",
+  "path": ".claude/skills/performance-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/j4xie/my-prototype-logistics",
+  "dir_name": "performance-audit-j4xie-my-prototype-logisti-2"
+}

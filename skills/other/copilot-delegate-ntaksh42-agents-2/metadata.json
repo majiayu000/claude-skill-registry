@@ -1,0 +1,11 @@
+{
+  "name": "copilot-delegate",
+  "description": "Copilot CLIに処理を委譲するスキル。ユーザーが「Copilotに聞いて」「Copilotで確認して」「Copilotに任せて」などと明示的に依頼したときに使用する。GitHub Copilot CLIの機能を活用して、コマンドの提案やGit操作の説明などを取得する。",
+  "repo": "ntaksh42/agents",
+  "path": "dotfiles/claude/skills/copilot-delegate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "copilot-delegate-ntaksh42-agents-2"
+}

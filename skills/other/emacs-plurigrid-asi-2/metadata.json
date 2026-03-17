@@ -1,0 +1,11 @@
+{
+  "name": "emacs",
+  "description": "Emacs ecosystem = elisp + org + gnus + tramp + eglot.",
+  "repo": "plurigrid/asi",
+  "path": "skills/emacs-info",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "emacs-plurigrid-asi-2"
+}

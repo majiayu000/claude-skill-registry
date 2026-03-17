@@ -1,0 +1,11 @@
+{
+  "name": "interaction-design",
+  "description": "Design and implement microinteractions, motion design, transitions, and user feedback patterns. Use when adding polish to UI interactions, implementing loading states, or creating delightful user expe",
+  "repo": "wshobson/agents",
+  "path": "plugins/ui-design/skills/interaction-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wshobson/agents",
+  "dir_name": "interaction-design-wshobson-agents-2"
+}

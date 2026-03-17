@@ -1,0 +1,17 @@
+{
+  "name": "vscode-bridge",
+  "repo": "Harkirat155/ai-native",
+  "path": "vscode-bridge/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Harkirat155/ai-native",
+  "dir_name": "vscode-bridge",
+  "downloaded_at": "2026-03-01T05:23:45.888412Z",
+  "author": "Harkirat155",
+  "source_url": "https://github.com/Harkirat155/ai-native/blob/main/vscode-bridge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Harkirat155/ai-native/blob/main/vscode-bridge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

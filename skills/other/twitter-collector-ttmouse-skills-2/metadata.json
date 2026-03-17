@@ -1,0 +1,11 @@
+{
+  "name": "twitter-collector",
+  "description": "Twitter 数据采集到数据库的完整自动化工作流（采集→筛选→Grok 转换→数据库录入）",
+  "repo": "ttmouse/skills",
+  "path": "twitter-collector",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ttmouse/skills",
+  "dir_name": "twitter-collector-ttmouse-skills-2"
+}

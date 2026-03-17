@@ -1,0 +1,11 @@
+{
+  "name": "lorepedia-knowledge",
+  "description": "バグ修正・エラー解消・技術的知見を自動記録するスキル。デバッグで発見したインサイト、実装上のハマりポイント、設定の回避策などをExocortexに保存し、将来の同様の問題解決を効率化する。プロジェクト固有でなくても、汎用的な技術知見も記録対象。",
+  "repo": "Umisyo/Lorepedia",
+  "path": ".claude/skills/lorepedia-knowledge",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Umisyo/Lorepedia",
+  "dir_name": "lorepedia-knowledge-umisyo-lorepedia-2"
+}

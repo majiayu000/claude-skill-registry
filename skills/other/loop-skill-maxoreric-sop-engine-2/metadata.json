@@ -1,0 +1,11 @@
+{
+  "name": "loop-skill",
+  "description": "循环执行的 Skill。当需要重复执行直到满足条件时触发。触发词：循环、loop、重复、直到、until、持续。",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/loop-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "loop-skill-maxoreric-sop-engine-2"
+}

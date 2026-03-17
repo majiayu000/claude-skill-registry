@@ -1,0 +1,11 @@
+{
+  "name": "trend-research",
+  "description": "Use when identifying cultural moments, audio trends, memes, or creator collaborations to inform social content.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/social-media/skills/trend-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "trend-research-gtmagents-gtm-agents-2"
+}

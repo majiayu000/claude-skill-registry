@@ -1,0 +1,11 @@
+{
+  "name": "tool-design-pattern",
+  "description": "Automatically applies when creating AI tool functions. Ensures proper schema design, input validation, error handling, context access, and comprehensive testing.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/tool-design-pattern",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "tool-design-pattern-ricardoroche-ricardos-claude-code-2"
+}

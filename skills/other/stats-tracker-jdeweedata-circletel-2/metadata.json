@@ -1,0 +1,11 @@
+{
+  "name": "stats-tracker",
+  "description": "Track and analyze Claude Code usage statistics for CircleTel development. Use to monitor productivity, track model usage, view usage streaks, and optimize development workflow based on patterns.",
+  "repo": "jdeweedata/circletel",
+  "path": ".claude/skills/stats-tracker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jdeweedata/circletel",
+  "dir_name": "stats-tracker-jdeweedata-circletel-2"
+}

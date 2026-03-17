@@ -1,0 +1,11 @@
+{
+  "name": "ai-chatbot",
+  "description": "Full-featured AI chatbot with Next.js 15, Auth.js, Drizzle ORM, and multi-model support.",
+  "repo": "rebyteai-template/rebyte-skills",
+  "path": "ai-chatbot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rebyteai-template/rebyte-skills",
+  "dir_name": "ai-chatbot-rebyteai-template-rebyte-skills-2"
+}

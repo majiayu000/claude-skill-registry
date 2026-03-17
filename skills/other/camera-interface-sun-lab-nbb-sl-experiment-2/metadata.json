@@ -1,0 +1,11 @@
+{
+  "name": "camera-interface",
+  "description": "Guide for using ataraxis-video-system to implement camera functionality in sl-experiment. Maps library architecture, public API, and integration patterns used in this codebase.",
+  "repo": "Sun-Lab-NBB/sl-experiment",
+  "path": ".claude/skills/camera-interface",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sun-Lab-NBB/sl-experiment",
+  "dir_name": "camera-interface-sun-lab-nbb-sl-experiment-2"
+}

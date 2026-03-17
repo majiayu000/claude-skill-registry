@@ -1,0 +1,11 @@
+{
+  "name": "resend",
+  "description": "Sends transactional emails with Resend including React Email templates, API integration, and Next.js setup. Use when sending emails, creating email templates, or integrating transactional email in app",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/email/resend",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "resend-mgd34msu-goodvibes-plugin-2"
+}

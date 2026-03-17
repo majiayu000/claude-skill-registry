@@ -1,0 +1,11 @@
+{
+  "name": "infinity-operads",
+  "description": "∞-Operads for pairwise/tritwise Cat# interactions with lazy ACSet materialization unifying effective, realizability, and Grothendieck topoi via dendroidal Segal spaces.",
+  "repo": "plurigrid/asi",
+  "path": "skills/infinity-operads",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "infinity-operads-plurigrid-asi-2"
+}

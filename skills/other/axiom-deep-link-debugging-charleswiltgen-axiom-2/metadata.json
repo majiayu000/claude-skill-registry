@@ -1,0 +1,11 @@
+{
+  "name": "axiom-deep-link-debugging",
+  "description": "Use when adding debug-only deep links for testing, enabling simulator navigation to specific screens, or integrating with automated testing workflows - enables closed-loop debugging without production",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-deep-link-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-deep-link-debugging-charleswiltgen-axiom-2"
+}

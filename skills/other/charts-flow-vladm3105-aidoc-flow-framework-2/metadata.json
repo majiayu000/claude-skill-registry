@@ -1,0 +1,11 @@
+{
+  "name": "charts-flow",
+  "description": "Create and manage Mermaid architecture diagrams with automatic SVG generation",
+  "repo": "vladm3105/aidoc-flow-framework",
+  "path": ".claude/skills/charts-flow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vladm3105/aidoc-flow-framework",
+  "dir_name": "charts-flow-vladm3105-aidoc-flow-framework-2"
+}

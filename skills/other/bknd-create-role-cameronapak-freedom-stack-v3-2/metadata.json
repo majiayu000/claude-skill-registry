@@ -1,0 +1,11 @@
+{
+  "name": "bknd-create-role",
+  "description": "Use when defining a new role in Bknd authorization system. Covers role properties (implicit_allow, is_default, permissions), permission assignment, role hierarchies, and common role patterns (admin, e",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-create-role",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-create-role-cameronapak-freedom-stack-v3-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "dry-refactor",
+  "description": "Use when user asks to \"remove duplicates\", \"DRY up code\", \"extract common logic\", \"consolidate repeated code\", or when /dry scan finds duplicates. Provides language-specific refactoring guidance.",
+  "repo": "blueraai/bluera-base",
+  "path": "skills/dry-refactor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/blueraai/bluera-base",
+  "dir_name": "dry-refactor-blueraai-bluera-base-2"
+}

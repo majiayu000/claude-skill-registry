@@ -1,0 +1,11 @@
+{
+  "name": "manage-plan-documents",
+  "description": "Manage request documents within plan directories with schema validation and template-based creation",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-workflow/skills/manage-plan-documents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "manage-plan-documents-cuioss-plan-marshall-2"
+}

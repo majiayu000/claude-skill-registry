@@ -1,0 +1,11 @@
+{
+  "name": "lindy-hello-world",
+  "description": "Create a minimal working Lindy AI agent example.\nUse when starting a new Lindy integration, testing your setup,\nor learning basic Lindy API patterns.\nTrigger with phrases like \"lindy hello world\", \"li",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/lindy-pack/lindy-hello-world",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "lindy-hello-world-vasic-digital-superagent-2"
+}

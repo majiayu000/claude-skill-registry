@@ -1,0 +1,11 @@
+{
+  "name": "intelligent-debugger",
+  "description": "Comprehensive systematic debugging agent for hunting down complex bugs, root causes, and error propagation across full stack (frontend, backend, APIs, databases). Use when diagnosing errors, troublesh",
+  "repo": "sitechfromgeorgia/georgian-distribution-system",
+  "path": ".claude/skills/intelligent-debugger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sitechfromgeorgia/georgian-distribution-system",
+  "dir_name": "intelligent-debugger-sitechfromgeorgia-georgian-distributio-2"
+}

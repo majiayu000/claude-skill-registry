@@ -1,0 +1,11 @@
+{
+  "name": "documentation-standards",
+  "description": "This skill should be used when the user asks about \"documentation templates\", \"doc structure\", \"README format\", \"API documentation format\", \"how to write tutorials\", \"documentation checklist\", or when",
+  "repo": "OshanKHZ/cc-swiss-knife",
+  "path": "plugins/core/skills/documentation-standards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OshanKHZ/cc-swiss-knife",
+  "dir_name": "documentation-standards-oshankhz-cc-swiss-knife-2"
+}

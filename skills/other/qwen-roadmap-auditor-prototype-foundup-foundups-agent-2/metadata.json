@@ -1,0 +1,11 @@
+{
+  "name": "qwen_roadmap_auditor_prototype",
+  "description": "Qwen Roadmap Auditor (Prototype)",
+  "repo": "Foundup/Foundups-Agent",
+  "path": ".claude/skills/qwen_roadmap_auditor_prototype",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Foundup/Foundups-Agent",
+  "dir_name": "qwen-roadmap-auditor-prototype-foundup-foundups-agent-2"
+}

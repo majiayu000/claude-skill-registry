@@ -1,0 +1,11 @@
+{
+  "name": "clean-architecture-rules",
+  "description": "Enforces Clean Architecture dependency rules (Domain → Application → Infrastructure → API/Blazor). Blocks violations to maintain architectural integrity.",
+  "repo": "islamu-ngo/Explore",
+  "path": ".claude/skills/clean-architecture-rules",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/islamu-ngo/Explore",
+  "dir_name": "clean-architecture-rules-islamu-ngo-explore-2"
+}

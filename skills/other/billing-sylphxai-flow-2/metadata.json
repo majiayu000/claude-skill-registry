@@ -1,0 +1,11 @@
+{
+  "name": "billing",
+  "description": "Billing - Stripe, webhooks, subscriptions. Use when implementing payments.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/billing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "billing-sylphxai-flow-2"
+}

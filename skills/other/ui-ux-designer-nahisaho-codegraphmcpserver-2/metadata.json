@@ -1,0 +1,11 @@
+{
+  "name": "ui-ux-designer",
+  "description": "Copilot agent that assists with user interface and experience design, wireframes, prototypes, design systems, and usability testing\n\nTrigger terms: UI design, UX design, wireframe, mockup, prototype, ",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/ui-ux-designer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "dir_name": "ui-ux-designer-nahisaho-codegraphmcpserver-2"
+}

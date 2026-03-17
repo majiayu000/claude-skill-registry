@@ -1,0 +1,11 @@
+{
+  "name": "numpy-structured",
+  "description": "Structured arrays allow ndarrays to contain data with different types in named \"fields,\" mimicking C structs. They are used primarily for interfacing with binary data from external sources and interpr",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/numpy-structured",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "numpy-structured-cuba6112-skillfactory-2"
+}

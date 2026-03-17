@@ -1,0 +1,11 @@
+{
+  "name": "charger",
+  "description": "Check EV charger availability (favorites, nearby search) via Google Places.",
+  "repo": "clawdbot/skills",
+  "path": "skills/borahm/charger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "charger-clawdbot-skills-2"
+}

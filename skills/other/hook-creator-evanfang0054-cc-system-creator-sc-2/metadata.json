@@ -1,0 +1,11 @@
+{
+  "name": "hook-creator",
+  "description": "创建和配置 Claude Code 钩子以自定义代理行为。当用户需要以下操作时使用：(1) 创建新钩子，(2) 配置自动格式化、日志记录或通知，(3) 添加文件保护或自定义权限，(4) 设置工具执行前后的操作，(5) 询问钩子事件如 PreToolUse、PostToolUse、Notification 等。",
+  "repo": "evanfang0054/cc-system-creator-scripts",
+  "path": ".claude/skills/hook-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/evanfang0054/cc-system-creator-scripts",
+  "dir_name": "hook-creator-evanfang0054-cc-system-creator-sc-2"
+}

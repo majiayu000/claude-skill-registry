@@ -1,0 +1,11 @@
+{
+  "name": "faion-sdd",
+  "description": "SDD orchestrator: Specification-Driven Development workflow. Specifications, design docs, implementation plans, constitutions, task lifecycle (backlog→done), quality gates, reflexion learning, pattern",
+  "repo": "faionfaion/faion-network",
+  "path": "skills/faion-sdd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/faionfaion/faion-network",
+  "dir_name": "faion-sdd-faionfaion-faion-network-2"
+}

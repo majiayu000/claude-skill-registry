@@ -1,0 +1,11 @@
+{
+  "name": "tech-research-enforcer",
+  "description": "Enforces iterative web research for coding and DevOps questions to prevent assumptions about libraries, frameworks, APIs, versions, and configurations. Use this skill when the user asks about programm",
+  "repo": "jayteealao/gitt-gaff",
+  "path": ".claude/skills/tech-research-enforcer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jayteealao/gitt-gaff",
+  "dir_name": "tech-research-enforcer-jayteealao-gitt-gaff-2"
+}

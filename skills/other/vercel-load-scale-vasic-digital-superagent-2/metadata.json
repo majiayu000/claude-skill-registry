@@ -1,0 +1,11 @@
+{
+  "name": "vercel-load-scale",
+  "description": "Implement Vercel load testing, auto-scaling, and capacity planning strategies.\nUse when running performance tests, configuring horizontal scaling,\nor planning capacity for Vercel integrations.\nTrigger",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/vercel-pack/vercel-load-scale",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "vercel-load-scale-vasic-digital-superagent-2"
+}

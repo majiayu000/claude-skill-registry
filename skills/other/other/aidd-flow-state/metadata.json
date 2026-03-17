@@ -1,0 +1,17 @@
+{
+  "name": "aidd-flow-state",
+  "repo": "GrinRus/ai_driven_dev",
+  "path": "skills/aidd-flow-state/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/GrinRus/ai_driven_dev",
+  "dir_name": "aidd-flow-state",
+  "downloaded_at": "2026-03-01T05:21:43.273598Z",
+  "author": "GrinRus",
+  "source_url": "https://github.com/GrinRus/ai_driven_dev/blob/main/skills/aidd-flow-state/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GrinRus/ai_driven_dev/blob/main/skills/aidd-flow-state/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "evm-tx-info",
+  "description": "Use this skill when the user asks for \"transaction details\", \"show me tx\", \"what happened in this transaction\", \"look up transaction\", or mentions viewing transaction data on EVM chains (Ethereum, Pol",
+  "repo": "cheolwanpark/claude-plugins",
+  "path": "plugins/crypto/skills/evm-tx-info",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cheolwanpark/claude-plugins",
+  "dir_name": "evm-tx-info-cheolwanpark-claude-plugins-2"
+}

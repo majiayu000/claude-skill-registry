@@ -1,0 +1,11 @@
+{
+  "name": "groq-rate-limits",
+  "description": "Implement Groq rate limiting, backoff, and idempotency patterns.\nUse when handling rate limit errors, implementing retry logic,\nor optimizing API request throughput for Groq.\nTrigger with phrases like",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/groq-pack/groq-rate-limits",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "groq-rate-limits-vasic-digital-superagent-2"
+}

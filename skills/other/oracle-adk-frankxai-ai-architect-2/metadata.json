@@ -1,0 +1,11 @@
+{
+  "name": "oracle-adk",
+  "description": "Build production agentic applications on OCI using Oracle Agent Development Kit with multi-agent orchestration, function tools, and enterprise patterns",
+  "repo": "frankxai/ai-architect",
+  "path": "skills/oracle-adk",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/ai-architect",
+  "dir_name": "oracle-adk-frankxai-ai-architect-2"
+}

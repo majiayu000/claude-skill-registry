@@ -1,0 +1,11 @@
+{
+  "name": "pytest-test-scaffolder",
+  "description": "Scaffolds pytest unit tests for Python backend functions and classes. Use when creating tests for FastAPI endpoints, services, and utilities.",
+  "repo": "okgoogle13/careercopilot",
+  "path": ".claude/skills/pytest-test-scaffolder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/okgoogle13/careercopilot",
+  "dir_name": "pytest-test-scaffolder-okgoogle13-careercopilot-2"
+}

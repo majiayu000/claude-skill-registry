@@ -1,0 +1,9 @@
+{
+  "name": "api-fuzzing-bug-bounty",
+  "repo": "SpencerGeee/SpenTrade",
+  "path": ".agent/skills/api-fuzzing-bug-bounty/SKILL.md",
+  "category": "other",
+  "source": "github.com/SpencerGeee/SpenTrade",
+  "dir_name": "api-fuzzing-bug-bounty-spencergeee-spentrade",
+  "downloaded_at": "2026-02-15T05:48:07.103721Z"
+}

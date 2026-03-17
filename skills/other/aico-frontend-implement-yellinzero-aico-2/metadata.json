@@ -1,0 +1,11 @@
+{
+  "name": "aico-frontend-implement",
+  "description": "Execute frontend task implementation with TDD. Read task file, execute implementation steps, verify each step, update status.\n\nUse this skill when:\n- User asks to \"implement this task\", \"implement the",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-frontend-implement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-frontend-implement-yellinzero-aico-2"
+}

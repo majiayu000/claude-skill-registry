@@ -1,0 +1,9 @@
+{
+  "name": "dotenv-integration",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/cli-mcp-development/skills/dotenv-integration/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "dotenv-integration",
+  "downloaded_at": "2026-02-19T01:16:42.200743Z"
+}

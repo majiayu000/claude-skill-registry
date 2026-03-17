@@ -1,0 +1,11 @@
+{
+  "name": "frontend-verify",
+  "description": "agent-browserを使用したフロントエンド実装の検証スキル。UI実装後の動作確認、インタラクションテスト、アクセシビリティ確認に使用。「フロントエンドを検証」「UIを確認」「/frontend-verify」「画面の動作確認」などで使用。UI実装完了時に自律的にトリガーする。",
+  "repo": "Umisyo/Lorepedia",
+  "path": ".claude/skills/frontend-verify",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Umisyo/Lorepedia",
+  "dir_name": "frontend-verify-umisyo-lorepedia-2"
+}

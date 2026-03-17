@@ -1,0 +1,11 @@
+{
+  "name": "lseg-data",
+  "description": "This skill should be used when the user asks to \"access LSEG data\", \"query Refinitiv\", \"get market data from Refinitiv\", \"download fundamentals from LSEG\", \"access ESG scores\", \"convert RIC to ISIN\", ",
+  "repo": "edwinhu/workflows",
+  "path": "skills/lseg-data",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "lseg-data-edwinhu-workflows-2"
+}

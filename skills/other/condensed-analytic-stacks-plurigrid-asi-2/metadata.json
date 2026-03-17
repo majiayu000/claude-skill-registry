@@ -1,0 +1,11 @@
+{
+  "name": "condensed-analytic-stacks",
+  "description": "Scholze-Clausen condensed mathematics bridge to sheaf neural networks via 6-functor formalism",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.agents/skills/condensed-analytic-stacks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "condensed-analytic-stacks-plurigrid-asi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "provider",
+  "description": "Status: Production Ready | Category: Provider Integration | Complexity: Low",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-routing-config/lib/provider",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "provider-masharratt-claude-flow-novice-2"
+}

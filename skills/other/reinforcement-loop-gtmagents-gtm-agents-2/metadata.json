@@ -1,0 +1,11 @@
+{
+  "name": "reinforcement-loop",
+  "description": "Use to plan post-training reinforcement cadences, certifications, and impact tracking.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/sales-enablement/skills/reinforcement-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "reinforcement-loop-gtmagents-gtm-agents-2"
+}

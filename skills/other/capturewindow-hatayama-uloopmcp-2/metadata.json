@@ -1,0 +1,11 @@
+{
+  "name": "CaptureWindow",
+  "description": "Capture any Unity EditorWindow by name and save as PNG.",
+  "repo": "hatayama/uLoopMCP",
+  "path": "Packages/src/Editor/Api/McpTools/CaptureWindow/Skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hatayama/uLoopMCP",
+  "dir_name": "capturewindow-hatayama-uloopmcp-2"
+}

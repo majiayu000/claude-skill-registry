@@ -1,0 +1,11 @@
+{
+  "name": "research-deep",
+  "description": "读取调研outline，为每个item启动独立agent进行深度调研。禁用task output。",
+  "repo": "Weizhena/Deep-Research-skills",
+  "path": "skills/research-en/research-deep",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Weizhena/Deep-Research-skills",
+  "dir_name": "research-deep-weizhena-deep-research-skills-2"
+}

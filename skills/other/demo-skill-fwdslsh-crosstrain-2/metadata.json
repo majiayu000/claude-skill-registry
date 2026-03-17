@@ -1,0 +1,11 @@
+{
+  "name": "demo-skill",
+  "description": "A demo skill that helps with documentation",
+  "repo": "fwdslsh/crosstrain",
+  "path": "demo/marketplaces/demo-marketplace/example-plugin/skills/demo-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fwdslsh/crosstrain",
+  "dir_name": "demo-skill-fwdslsh-crosstrain-2"
+}

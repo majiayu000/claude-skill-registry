@@ -1,0 +1,11 @@
+{
+  "name": "sentry-install-auth",
+  "description": "Install and configure Sentry SDK authentication.\nUse when setting up a new Sentry integration, configuring DSN,\nor initializing Sentry in your project.\nTrigger with phrases like \"install sentry\", \"set",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/sentry-pack/skills/sentry-install-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "sentry-install-auth-jeremylongshore-claude-code-plugins--2"
+}

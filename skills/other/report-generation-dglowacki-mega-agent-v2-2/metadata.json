@@ -1,0 +1,11 @@
+{
+  "name": "report-generation",
+  "description": "Generate HTML reports, charts, and dashboards with neo-brutal design. Use for creating GitHub activity reports, Fieldy summaries, Skillz analytics, and other data visualizations.",
+  "repo": "dglowacki/mega-agent-v2",
+  "path": ".claude/skills/report-generation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dglowacki/mega-agent-v2",
+  "dir_name": "report-generation-dglowacki-mega-agent-v2-2"
+}

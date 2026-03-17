@@ -1,0 +1,11 @@
+{
+  "name": "vite-dep-check",
+  "description": "Vite 项目依赖版本检查工具。检查依赖是否过时、显示版本对比、标记更新类型、提供 Vite 生态兼容性建议。当用户需要检查 Vite 项目依赖版本、查找过时依赖、获取升级建议时使用此技能。",
+  "repo": "enoch-robinson/agent-skill-collection",
+  "path": "skills/development/vite-dep-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enoch-robinson/agent-skill-collection",
+  "dir_name": "vite-dep-check-enoch-robinson-agent-skill-collecti-2"
+}

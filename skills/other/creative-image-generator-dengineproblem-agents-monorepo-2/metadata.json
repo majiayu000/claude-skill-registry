@@ -1,0 +1,11 @@
+{
+  "name": "creative-image-generator",
+  "description": "Генерация рекламных изображений через Gemini. Используй для создания креативов с текстом.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/creative-image-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "creative-image-generator-dengineproblem-agents-monorepo-2"
+}

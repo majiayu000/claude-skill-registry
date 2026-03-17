@@ -1,0 +1,11 @@
+{
+  "name": "lean4-memories",
+  "description": "This skill should be used when working on Lean 4 formalization projects to maintain persistent memory of successful proof patterns, failed approaches, project conventions, and user preferences across ",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/lean4-proof/environment/skills/lean4-memories",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "lean4-memories-benchflow-ai-skillsbench-2"
+}

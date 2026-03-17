@@ -1,0 +1,11 @@
+{
+  "name": "juicebox-rate-limits",
+  "description": "Implement Juicebox rate limiting and backoff.\nUse when handling API quotas, implementing retry logic,\nor optimizing request throughput.\nTrigger with phrases like \"juicebox rate limit\", \"juicebox quota",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/juicebox-pack/skills/juicebox-rate-limits",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "juicebox-rate-limits-jeremylongshore-claude-code-plugins--2"
+}

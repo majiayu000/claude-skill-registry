@@ -1,0 +1,11 @@
+{
+  "name": "ynab",
+  "description": "Manage YNAB budgets, accounts, categories, and transactions via CLI.",
+  "repo": "clawdbot/skills",
+  "path": "skills/obviyus/ynab",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "ynab-clawdbot-skills-2"
+}

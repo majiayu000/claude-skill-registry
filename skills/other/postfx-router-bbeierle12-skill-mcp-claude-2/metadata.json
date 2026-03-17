@@ -1,0 +1,11 @@
+{
+  "name": "postfx-router",
+  "description": "Router for Three.js post-processing effects domain. Use when implementing visual effects like bloom, glow, chromatic aberration, vignette, depth of field, color grading, or any screen-space effects. R",
+  "repo": "Bbeierle12/Skill-MCP-Claude",
+  "path": "skills/postfx-router",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Bbeierle12/Skill-MCP-Claude",
+  "dir_name": "postfx-router-bbeierle12-skill-mcp-claude-2"
+}

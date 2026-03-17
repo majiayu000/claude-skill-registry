@@ -1,0 +1,11 @@
+{
+  "name": "reviewer-common",
+  "description": "各レビュアーエージェント（backend, frontend, database, security, infra, req, basic-design, detailed-design）の共通設定、動作モード、出力形式、スコアリング基準を定義",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/reviewer-common",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "reviewer-common-takemo101-compose-workflow-2"
+}

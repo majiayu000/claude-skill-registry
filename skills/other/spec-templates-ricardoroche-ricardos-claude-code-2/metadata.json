@@ -1,0 +1,11 @@
+{
+  "name": "spec-templates",
+  "description": "Provides reusable markdown templates and outlines for OpenSpec proposals, design docs, ADRs, READMEs, and changelogs.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/spec-templates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "spec-templates-ricardoroche-ricardos-claude-code-2"
+}

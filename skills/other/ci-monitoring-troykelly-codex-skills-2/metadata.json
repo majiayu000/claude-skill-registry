@@ -1,0 +1,11 @@
+{
+  "name": "ci-monitoring",
+  "description": "Use after creating PR - monitor CI pipeline, resolve failures cyclically until green or issue is identified as unresolvable",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/ci-monitoring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "ci-monitoring-troykelly-codex-skills-2"
+}

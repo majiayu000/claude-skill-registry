@@ -1,0 +1,11 @@
+{
+  "name": "ext-triage-js",
+  "description": "Triage extension for JavaScript/TypeScript findings during plan-finalize phase",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-frontend/skills/ext-triage-js",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "ext-triage-js-cuioss-plan-marshall-2"
+}

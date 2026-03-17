@@ -1,0 +1,11 @@
+{
+  "name": "plausible",
+  "description": "Implements privacy-friendly web analytics with Plausible as a Google Analytics alternative. Use when adding lightweight, cookie-free analytics that are GDPR compliant without consent banners.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/skills/plausible",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "plausible-mgd34msu-goodvibes-plugin-2"
+}

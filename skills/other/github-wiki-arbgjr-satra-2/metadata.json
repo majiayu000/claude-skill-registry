@@ -1,0 +1,11 @@
+{
+  "name": "github-wiki",
+  "description": "Sincroniza documentacao com GitHub Wiki via Git.\nPublica ADRs, docs de arquitetura e API automaticamente.\nUse quando: publicar ADR, sincronizar docs apos release.\n",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/github-wiki",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "github-wiki-arbgjr-satra-2"
+}

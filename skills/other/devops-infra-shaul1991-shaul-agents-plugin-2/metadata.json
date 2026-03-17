@@ -1,0 +1,11 @@
+{
+  "name": "devops-infra",
+  "description": "DevOps Infrastructure Agent. 인프라 관리, 스케일링, 백업, 네트워크 설정을 담당합니다. 인프라, 스케일링(scale), 백업(backup), 네트워크 관련 요청 시 사용됩니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/devops-infra",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "devops-infra-shaul1991-shaul-agents-plugin-2"
+}

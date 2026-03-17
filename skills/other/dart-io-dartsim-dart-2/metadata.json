@@ -1,0 +1,11 @@
+{
+  "name": "dart-io",
+  "description": "DART model loading - URDF, SDF, MJCF, SKEL parsers and dart::io unified API",
+  "repo": "dartsim/dart",
+  "path": ".claude/skills/dart-io",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dartsim/dart",
+  "dir_name": "dart-io-dartsim-dart-2"
+}

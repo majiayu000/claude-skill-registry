@@ -1,0 +1,11 @@
+{
+  "name": "clean-architect",
+  "description": "Senior expertise in Gravito Clean Architecture. Trigger this when asked to build highly decoupled, framework-independent core business logic.",
+  "repo": "gravito-framework/gravito",
+  "path": "packages/scaffold/templates/skills/clean-architect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gravito-framework/gravito",
+  "dir_name": "clean-architect-gravito-framework-gravito-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "library",
+  "description": "User library, favorites, and reading progress",
+  "repo": "chiraitori/paperand",
+  "path": ".agent/skills/library",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chiraitori/paperand",
+  "dir_name": "library-chiraitori-paperand-2"
+}

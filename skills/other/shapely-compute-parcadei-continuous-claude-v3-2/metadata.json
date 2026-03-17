@@ -1,0 +1,11 @@
+{
+  "name": "shapely-compute",
+  "description": "Computational geometry with Shapely - create geometries, boolean operations, measurements, predicates",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/shapely-compute",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "shapely-compute-parcadei-continuous-claude-v3-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "task-sequencing",
+  "description": "Order and schedule tasks based on dependencies, priorities, and resource availability to optimize pilot execution. Use when creating task timelines, identifying critical paths, or rearranging task seq",
+  "repo": "profmikegreene/gotei",
+  "path": "Gotei_Skills/task-sequencing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/profmikegreene/gotei",
+  "dir_name": "task-sequencing-profmikegreene-gotei-2"
+}

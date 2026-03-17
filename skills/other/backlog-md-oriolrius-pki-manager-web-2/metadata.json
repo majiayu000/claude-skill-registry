@@ -1,0 +1,11 @@
+{
+  "name": "backlog-md",
+  "description": "Expert guidance for Backlog.md CLI project management tool including task creation, editing, status management, acceptance criteria, search, and board visualization. Use this when managing project tas",
+  "repo": "oriolrius/pki-manager-web",
+  "path": ".claude/skills/backlog-md",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oriolrius/pki-manager-web",
+  "dir_name": "backlog-md-oriolrius-pki-manager-web-2"
+}

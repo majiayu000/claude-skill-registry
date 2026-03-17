@@ -1,0 +1,17 @@
+{
+  "name": "templates",
+  "repo": "Shoebtamboli/rails_claude_skills",
+  "path": "lib/generators/claude/skill/templates/SKILL.md.tt",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Shoebtamboli/rails_claude_skills",
+  "dir_name": "templates-shoebtamboli-rails-claude-skills",
+  "downloaded_at": "2026-03-01T06:05:57.227448Z",
+  "author": "Shoebtamboli",
+  "source_url": "https://github.com/Shoebtamboli/rails_claude_skills/blob/main/lib/generators/claude/skill/templates/SKILL.md.tt/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Shoebtamboli/rails_claude_skills/blob/main/lib/generators/claude/skill/templates/SKILL.md.tt/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

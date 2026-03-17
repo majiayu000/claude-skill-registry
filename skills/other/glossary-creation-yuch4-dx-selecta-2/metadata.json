@@ -1,0 +1,11 @@
+{
+  "name": "glossary-creation",
+  "description": "プロジェクト用語集（docs/glossary.md）を作成・更新する。 「用語集を作って」「用語を整理して」「用語の定義を統一」「glossaryを更新」 「このプロジェクトの用語を定義」「専門用語をまとめて」などの依頼時に発火。 docs群から用語を抽出し、定義・関連用語・使用例・実装箇所を整理して出力。",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/glossary-creation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "glossary-creation-yuch4-dx-selecta-2"
+}

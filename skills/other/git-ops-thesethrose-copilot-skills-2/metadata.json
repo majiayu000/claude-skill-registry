@@ -1,0 +1,11 @@
+{
+  "name": "git-ops",
+  "description": "Safe git operations including commits, branches, merges, worktrees, and conflict resolution. Use when user wants to commit and push changes, manage branches, resolve conflicts, or create isolated work",
+  "repo": "TheSethRose/Copilot-Skills",
+  "path": ".github/copilot-skills/operations/git-ops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TheSethRose/Copilot-Skills",
+  "dir_name": "git-ops-thesethrose-copilot-skills-2"
+}

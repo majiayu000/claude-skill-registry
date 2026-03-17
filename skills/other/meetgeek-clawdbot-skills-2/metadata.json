@@ -1,0 +1,11 @@
+{
+  "name": "meetgeek",
+  "description": "Query MeetGeek meeting intelligence from CLI - list meetings, get AI summaries, transcripts, action items, and search across all your calls with natural language.",
+  "repo": "clawdbot/skills",
+  "path": "skills/nexty5870/meetgeek",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "meetgeek-clawdbot-skills-2"
+}

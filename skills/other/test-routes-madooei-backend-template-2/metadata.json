@@ -1,0 +1,11 @@
+{
+  "name": "test-routes",
+  "description": "Test route configurations with integration-style tests. Use when testing complete request/response cycles through routes. Triggers on \"test routes\", \"test note routes\", \"integration test\".",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/test-routes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "test-routes-madooei-backend-template-2"
+}

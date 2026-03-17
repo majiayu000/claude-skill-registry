@@ -1,0 +1,9 @@
+{
+  "name": "linking-hms-to-hecras",
+  "repo": "gpt-cmdr/hms-commander",
+  "path": ".claude/skills/linking-hms-to-hecras/SKILL.md",
+  "category": "other",
+  "source": "github.com/gpt-cmdr/hms-commander",
+  "dir_name": "linking-hms-to-hecras",
+  "downloaded_at": "2026-02-15T07:22:36.843055Z"
+}

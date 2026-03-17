@@ -1,0 +1,11 @@
+{
+  "name": "3_content-research-writer",
+  "description": "Creates high-quality content (blog posts, tweets, newsletters, documentation) that matches the user's writing style and voice. Performs web research to find citations and supporting evidence. Use when",
+  "repo": "breverdbidder/life-os",
+  "path": ".claude/skills/3_content-research-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/breverdbidder/life-os",
+  "dir_name": "3-content-research-writer-breverdbidder-life-os-2"
+}

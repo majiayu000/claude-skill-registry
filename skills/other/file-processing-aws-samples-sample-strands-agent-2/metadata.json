@@ -1,0 +1,11 @@
+{
+  "name": "file-processing",
+  "description": "Process and analyze CSV, JSON, and text files with data transformation, cleaning, analysis, and visualization capabilities",
+  "repo": "aws-samples/sample-strands-agents-agentskills",
+  "path": "skills/file-processing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aws-samples/sample-strands-agents-agentskills",
+  "dir_name": "file-processing-aws-samples-sample-strands-agent-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "moc-curator",
+  "description": "Suggest MOC updates and new MOCs based on semantic clustering.\nUse when asked to \"curate MOCs\", \"update maps\", \"find clusters\",\n\"what MOCs need updating\", or \"organize my notes\".\n",
+  "repo": "alexanderop/second-brain-nuxt",
+  "path": ".claude/skills/moc-curator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alexanderop/second-brain-nuxt",
+  "dir_name": "moc-curator-alexanderop-second-brain-nuxt-2"
+}

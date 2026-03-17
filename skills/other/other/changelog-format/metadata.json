@@ -1,0 +1,9 @@
+{
+  "name": "changelog-format",
+  "repo": "sequenzia/claude-alchemy",
+  "path": "plugins/tools/skills/changelog-format/SKILL.md",
+  "category": "other",
+  "source": "github.com/sequenzia/claude-alchemy",
+  "dir_name": "changelog-format",
+  "downloaded_at": "2026-02-15T01:37:38.465517Z"
+}

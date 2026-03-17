@@ -1,0 +1,9 @@
+{
+  "name": "triage",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/jira-orchestrator/skills/triage/SKILL.md",
+  "category": "other",
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "triage-lobbi-docs-claude",
+  "downloaded_at": "2026-02-15T05:22:57.227326Z"
+}

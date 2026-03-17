@@ -1,0 +1,9 @@
+{
+  "name": "tmux-iterm-integration",
+  "repo": "ShunsukeHayashi/Miyabi",
+  "path": "packages/mcp-bundle/claude-plugins/miyabi-full/skills/tmux-iterm-integration/SKILL.md",
+  "category": "other",
+  "source": "github.com/ShunsukeHayashi/Miyabi",
+  "dir_name": "tmux-iterm-integration",
+  "downloaded_at": "2026-02-15T05:46:53.218431Z"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "master-index-updater",
+  "description": "Automates updates to the Functional Area Master Index when new features are added or documentation changes. Maintains the single navigation source for all feature documentation, ensuring discoverabili",
+  "repo": "DarkMonkDev/WitchCityRope",
+  "path": ".claude/skills/master-index-updater",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DarkMonkDev/WitchCityRope",
+  "dir_name": "master-index-updater-darkmonkdev-witchcityrope-2"
+}

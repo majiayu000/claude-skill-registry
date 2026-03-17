@@ -1,0 +1,11 @@
+{
+  "name": "automating-powerpoint",
+  "description": "Automates Microsoft PowerPoint via JXA with AppleScript dictionary discovery. Use when asked to \"automate PowerPoint presentations\", \"create slides programmatically\", \"JXA PowerPoint scripting\", or \"e",
+  "repo": "SpillwaveSolutions/automating-mac-apps-plugin",
+  "path": "plugins/automating-mac-apps-plugin/skills/automating-powerpoint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
+  "dir_name": "automating-powerpoint-spillwavesolutions-automating-mac-apps--2"
+}

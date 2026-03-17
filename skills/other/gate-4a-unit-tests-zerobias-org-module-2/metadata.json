@@ -1,0 +1,11 @@
+{
+  "name": "gate-4a-unit-tests",
+  "description": "Purpose: Validate unit test quality, mocking strategy, and coverage",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/gate-4a-unit-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "gate-4a-unit-tests-zerobias-org-module-2"
+}

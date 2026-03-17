@@ -1,0 +1,11 @@
+{
+  "name": "moai-project-template-optimizer",
+  "description": "Handle template comparison and optimization workflows including backup detection, smart merging, and update completion reporting. Enhanced with Context7 MCP for up-to-date documentation.",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-project-template-optimizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-project-template-optimizer-jg-chalk-io-nora-livekit-2"
+}

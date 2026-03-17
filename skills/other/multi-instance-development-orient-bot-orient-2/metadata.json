@@ -1,0 +1,11 @@
+{
+  "name": "multi-instance-development",
+  "description": "Run and troubleshoot multiple parallel Orient instances with isolated ports, databases, and Docker resources. Use for worktrees, port conflicts, and instance isolation.",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/multi-instance-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "multi-instance-development-orient-bot-orient-2"
+}

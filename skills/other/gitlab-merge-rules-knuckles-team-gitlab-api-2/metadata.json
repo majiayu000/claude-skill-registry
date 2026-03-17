@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-merge-rules",
+  "description": "Manages GitLab merge approval rules. Use for approvals, rules at project/group levels. Triggers: code reviews, approvals.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-merge-rules",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-merge-rules-knuckles-team-gitlab-api-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "document-summarizer",
+  "description": "Summarize long documents with key points and abstracts. Use when creating executive summaries or condensing content.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/document-summarizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "document-summarizer-ntaksh42-agents-2"
+}

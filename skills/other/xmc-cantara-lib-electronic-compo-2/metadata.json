@@ -1,0 +1,11 @@
+{
+  "name": "xmc",
+  "description": "XMC (Wuhan Xinxin Semiconductor) MPN encoding patterns, suffix decoding, and handler guidance. Use when working with XMC SPI NOR Flash memory components or XMCHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/xmc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "xmc-cantara-lib-electronic-compo-2"
+}

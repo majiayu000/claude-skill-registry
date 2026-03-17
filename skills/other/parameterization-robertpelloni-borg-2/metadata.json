@@ -1,0 +1,11 @@
+{
+  "name": "parameterization",
+  "description": "Master declarative parameter systems with Param for type-safe configuration. Use this skill when building parameterized classes with automatic validation, creating reactive dependencies with @param.de",
+  "repo": "robertpelloni/borg",
+  "path": "agents/rse-agents/plugins/holoviz-visualization/skills/parameterization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertpelloni/borg",
+  "dir_name": "parameterization-robertpelloni-borg-2"
+}

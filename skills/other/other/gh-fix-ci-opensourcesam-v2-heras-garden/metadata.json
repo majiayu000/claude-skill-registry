@@ -1,0 +1,9 @@
+{
+  "name": "gh-fix-ci",
+  "repo": "OpenSourceSam/v2_heras_garden",
+  "path": ".claude/skills/gh-fix-ci/SKILL.md",
+  "category": "other",
+  "source": "github.com/OpenSourceSam/v2_heras_garden",
+  "dir_name": "gh-fix-ci-opensourcesam-v2-heras-garden",
+  "downloaded_at": "2026-02-22T05:30:18.378455Z"
+}

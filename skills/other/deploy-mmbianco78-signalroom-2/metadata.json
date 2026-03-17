@@ -1,0 +1,11 @@
+{
+  "name": "deploy",
+  "description": "Safe deployment workflow for Fly.io and infrastructure changes. Use before ANY deployment, config modification, or infrastructure change. Prevents panic-driven debugging and production incidents.",
+  "repo": "mmbianco78/signalroom",
+  "path": ".claude/skills/deploy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mmbianco78/signalroom",
+  "dir_name": "deploy-mmbianco78-signalroom-2"
+}

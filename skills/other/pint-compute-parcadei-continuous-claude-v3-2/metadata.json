@@ -1,0 +1,11 @@
+{
+  "name": "pint-compute",
+  "description": "Unit-aware computation with Pint - convert units, dimensional analysis, unit arithmetic",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/pint-compute",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "pint-compute-parcadei-continuous-claude-v3-2"
+}

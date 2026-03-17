@@ -1,0 +1,11 @@
+{
+  "name": "when-building-semantic-search-use-agentdb-vector-search",
+  "description": "Implement semantic vector search with AgentDB for intelligent document retrieval, similarity matching, and context-aware querying. Build RAG systems, semantic search engines, and knowledge bases.",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/agentdb/when-building-semantic-search-use-agentdb-vector-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "dir_name": "when-building-semantic-search-use-agentdb-vector-search-dnyoussef-ai-chrome-extension-2"
+}

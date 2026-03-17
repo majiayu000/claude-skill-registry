@@ -1,0 +1,11 @@
+{
+  "name": "zod-4",
+  "description": "Zod 4 schema validation patterns. Trigger: When creating or updating Zod v4 schemas for validation/parsing (forms, request payloads, adapters), including v3 -> v4 migration patterns.\n",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/zod-4",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/prowler-cloud/prowler",
+  "dir_name": "zod-4-prowler-cloud-prowler-2"
+}

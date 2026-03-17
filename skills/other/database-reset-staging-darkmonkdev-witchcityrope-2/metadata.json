@@ -1,0 +1,11 @@
+{
+  "name": "database-reset-staging",
+  "description": "Resets staging database with full schema drop. Use for schema changes or migrations. SINGLE SOURCE OF TRUTH for staging database reset automation.",
+  "repo": "DarkMonkDev/WitchCityRope",
+  "path": ".claude/skills/database-reset-staging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DarkMonkDev/WitchCityRope",
+  "dir_name": "database-reset-staging-darkmonkdev-witchcityrope-2"
+}

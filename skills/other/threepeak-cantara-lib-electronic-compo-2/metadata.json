@@ -1,0 +1,11 @@
+{
+  "name": "threepeak",
+  "description": "3PEAK (Suzhou 3PEAK Electronic Inc.) MPN encoding patterns, suffix decoding, and handler guidance. Use when working with 3PEAK analog ICs or ThreePeakHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/threepeak",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "threepeak-cantara-lib-electronic-compo-2"
+}

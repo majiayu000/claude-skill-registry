@@ -1,0 +1,11 @@
+{
+  "name": "eptr2-api-discovery",
+  "description": "This skill helps you discover and explore the 213+ API endpoints available in eptr2 for Turkish electricity market data. Use this when you need to find the right endpoint for your data needs.",
+  "repo": "Tideseed/eptr2",
+  "path": ".claude/skills/eptr2-api-discovery",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Tideseed/eptr2",
+  "dir_name": "eptr2-api-discovery-tideseed-eptr2-2"
+}

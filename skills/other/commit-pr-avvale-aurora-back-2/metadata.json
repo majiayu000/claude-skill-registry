@@ -1,0 +1,11 @@
+{
+  "name": "commit-pr",
+  "description": "Commit, push changes, and create a Pull Request on GitHub. Trigger: User runs /commit-pr command.\n",
+  "repo": "avvale/aurora-back",
+  "path": ".claude/skills/commit-pr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/avvale/aurora-back",
+  "dir_name": "commit-pr-avvale-aurora-back-2"
+}

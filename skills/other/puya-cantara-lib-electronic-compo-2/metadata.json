@@ -1,0 +1,11 @@
+{
+  "name": "puya",
+  "description": "Puya Semiconductor MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Puya SPI NOR Flash memory components or PuyaHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/puya",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "puya-cantara-lib-electronic-compo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "chatbot",
+  "description": "Details of the RAG Chatbot, including UI and backend logic.",
+  "repo": "AbdulSamad94/Hackhaton-SpecsKitPlus",
+  "path": ".claude/skills/chatbot",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AbdulSamad94/Hackhaton-SpecsKitPlus",
+  "dir_name": "chatbot-abdulsamad94-hackhaton-specskitpl-2"
+}

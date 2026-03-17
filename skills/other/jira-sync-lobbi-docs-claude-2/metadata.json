@@ -1,0 +1,11 @@
+{
+  "name": "jira-sync",
+  "description": "Sync local changes with Jira issue. Use when the user wants to \"sync to jira\", \"update jira\", \"push progress\", or \"sync status\".",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/jira-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "jira-sync-lobbi-docs-claude-2"
+}

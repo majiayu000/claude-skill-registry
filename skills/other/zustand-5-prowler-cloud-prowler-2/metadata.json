@@ -1,0 +1,11 @@
+{
+  "name": "zustand-5",
+  "description": "Zustand 5 state management patterns. Trigger: When implementing client-side state with Zustand (stores, selectors, persist middleware, slices).\n",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/zustand-5",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/prowler-cloud/prowler",
+  "dir_name": "zustand-5-prowler-cloud-prowler-2"
+}

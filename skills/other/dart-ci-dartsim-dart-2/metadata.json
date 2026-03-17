@@ -1,0 +1,11 @@
+{
+  "name": "dart-ci",
+  "description": "DART CI/CD troubleshooting - GitHub Actions, cache debugging, platform-specific failures",
+  "repo": "dartsim/dart",
+  "path": ".claude/skills/dart-ci",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dartsim/dart",
+  "dir_name": "dart-ci-dartsim-dart-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "idealista",
+  "description": "Query Idealista API via idealista-cli (OAuth2 client credentials).",
+  "repo": "clawdbot/skills",
+  "path": "skills/quifago/idealista",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "idealista-clawdbot-skills-2"
+}

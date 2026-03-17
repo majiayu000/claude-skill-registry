@@ -1,0 +1,9 @@
+{
+  "name": "querying-hms-documentation",
+  "repo": "gpt-cmdr/hms-commander",
+  "path": ".claude/skills/querying-hms-documentation/SKILL.md",
+  "category": "other",
+  "source": "github.com/gpt-cmdr/hms-commander",
+  "dir_name": "querying-hms-documentation",
+  "downloaded_at": "2026-02-15T07:22:37.319880Z"
+}

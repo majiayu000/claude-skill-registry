@@ -1,0 +1,11 @@
+{
+  "name": "check-error-handling",
+  "description": "Validates error handling follows AppResult/AppError pattern, detects anyhow regression, ensures ErrorCode usage",
+  "repo": "Async-IO/pierre_mcp_server",
+  "path": ".claude/skills/check-error-handling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Async-IO/pierre_mcp_server",
+  "dir_name": "check-error-handling-async-io-pierre-mcp-server-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "tmux-config",
+  "description": "tmux設定管理。.tmux.confの確認・編集、キーバインド設定。トリガー: tmux, tmux.conf, ターミナル分割, セッション",
+  "repo": "snkrheadz/laptop",
+  "path": ".claude/skills/tmux-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/snkrheadz/laptop",
+  "dir_name": "tmux-config-snkrheadz-laptop-2"
+}

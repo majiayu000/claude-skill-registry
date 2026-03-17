@@ -1,0 +1,11 @@
+{
+  "name": "project-sync",
+  "description": "Check alignment between local project and git remote. Analyzes uncommitted changes, unpushed commits, unpulled updates, branch status, and divergence to ensure local and remote are synchronized.",
+  "repo": "jdeweedata/circletel",
+  "path": ".claude/skills/project-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jdeweedata/circletel",
+  "dir_name": "project-sync-jdeweedata-circletel-2"
+}

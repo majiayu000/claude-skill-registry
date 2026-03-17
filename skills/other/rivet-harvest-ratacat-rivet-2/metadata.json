@@ -1,0 +1,11 @@
+{
+  "name": "rivet-harvest",
+  "description": "Capture decisions and requirements from conversation history. Use when user says \"harvest\", \"capture decisions\", or \"save what we discussed\" to persist architectural decisions into .rivet/systems.yaml",
+  "repo": "ratacat/rivet",
+  "path": "skills/rivet-harvest",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ratacat/rivet",
+  "dir_name": "rivet-harvest-ratacat-rivet-2"
+}

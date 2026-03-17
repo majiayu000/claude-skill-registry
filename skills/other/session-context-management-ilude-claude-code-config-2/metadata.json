@@ -1,0 +1,11 @@
+{
+  "name": "session-context-management",
+  "description": "Maintain \"just enough\" context across work sessions using CURRENT.md, STATUS.md, and LESSONS.md files. Activate when tasks take >15 minutes, touch 3+ files, interruptions likely, or scope uncertain. I",
+  "repo": "ilude/claude-code-config",
+  "path": "skills/session-context-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ilude/claude-code-config",
+  "dir_name": "session-context-management-ilude-claude-code-config-2"
+}

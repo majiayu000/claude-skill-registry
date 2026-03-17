@@ -1,0 +1,17 @@
+{
+  "name": "rag-architect",
+  "repo": "alirezarezvani/claude-skills",
+  "path": "engineering/rag-architect/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alirezarezvani/claude-skills",
+  "dir_name": "rag-architect-alirezarezvani-claude-skills",
+  "downloaded_at": "2026-03-17T14:21:18.540250Z",
+  "author": "alirezarezvani",
+  "source_url": "https://github.com/alirezarezvani/claude-skills/blob/main/engineering/rag-architect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alirezarezvani/claude-skills/blob/main/engineering/rag-architect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

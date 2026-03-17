@@ -1,0 +1,11 @@
+{
+  "name": "plr-thread-coloring",
+  "description": "PLR (Parallel/Leading-tone/Relative) transitions for thread coloring. One-hot keyspace reduction to GF(3) trits for behavior indexing. Grows perception/action information field capacity through effici",
+  "repo": "plurigrid/asi",
+  "path": "skills/plr-thread-coloring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "plr-thread-coloring-plurigrid-asi-2"
+}

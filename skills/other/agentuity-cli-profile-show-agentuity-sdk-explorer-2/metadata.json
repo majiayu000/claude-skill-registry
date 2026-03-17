@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-profile-show",
+  "description": "Show the configuration of a profile",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-profile-show",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-profile-show-agentuity-sdk-explorer-2"
+}

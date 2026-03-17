@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-state-management",
+  "description": "Understand and use state management in Umbraco backoffice (foundational concept)",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-state-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-state-management-umbraco-umbraco-cms-backoffi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ppt生成大师",
+  "description": "可以直接通过大模型生成ppt文件。支持从 Markdown 大纲自动转换为 PowerPoint 演示文稿。",
+  "repo": "CyangZhou/-2--Project-Yunshu-",
+  "path": ".trae/skills/ppt生成大师",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CyangZhou/-2--Project-Yunshu-",
+  "dir_name": "ppt-cyangzhou-2-project-yunshu-2"
+}

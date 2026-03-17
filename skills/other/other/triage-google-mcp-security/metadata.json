@@ -1,0 +1,9 @@
+{
+  "name": "triage",
+  "repo": "google/mcp-security",
+  "path": "extensions/google-secops/skills/triage/SKILL.md",
+  "category": "other",
+  "source": "github.com/google/mcp-security",
+  "dir_name": "triage-google-mcp-security",
+  "downloaded_at": "2026-02-22T07:20:31.713287Z"
+}

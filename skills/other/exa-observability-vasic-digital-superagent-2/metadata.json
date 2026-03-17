@@ -1,0 +1,11 @@
+{
+  "name": "exa-observability",
+  "description": "Set up comprehensive observability for Exa integrations with metrics, traces, and alerts.\nUse when implementing monitoring for Exa operations, setting up dashboards,\nor configuring alerting for Exa in",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-observability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-observability-vasic-digital-superagent-2"
+}

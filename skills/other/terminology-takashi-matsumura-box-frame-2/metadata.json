@@ -1,0 +1,11 @@
+{
+  "name": "terminology",
+  "description": "日本語表記ルール、カタカナ語の統一。コード生成、ドキュメント作成、UI文言作成時に必ず適用。",
+  "repo": "Takashi-Matsumura/box-frame",
+  "path": ".claude/skills/terminology",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Takashi-Matsumura/box-frame",
+  "dir_name": "terminology-takashi-matsumura-box-frame-2"
+}

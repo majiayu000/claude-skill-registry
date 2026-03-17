@@ -1,0 +1,11 @@
+{
+  "name": "kamal-coder",
+  "description": "This skill guides deploying Rails applications with Kamal. Use when configuring deploy.yml, setting up accessories, managing secrets, or preparing servers for container deployment.",
+  "repo": "majesticlabs-dev/majestic-marketplace",
+  "path": "plugins/majestic-rails/skills/kamal-coder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majesticlabs-dev/majestic-marketplace",
+  "dir_name": "kamal-coder-majesticlabs-dev-majestic-marketplace-2"
+}

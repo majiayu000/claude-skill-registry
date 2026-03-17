@@ -1,0 +1,11 @@
+{
+  "name": "debug-thread-network",
+  "description": "Debug and diagnose Thread mesh networks and OpenThread Border Routers. Use when troubleshooting Thread connectivity, analyzing Router Advertisements, testing IPv6 reachability to Thread devices, inspe",
+  "repo": "emliunix/home.conf",
+  "path": "skills/debug-thread-network",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/emliunix/home.conf",
+  "dir_name": "debug-thread-network-emliunix-home-conf-2"
+}

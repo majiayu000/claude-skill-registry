@@ -1,0 +1,11 @@
+{
+  "name": "router-main",
+  "description": "Universal entry point that routes any query to the appropriate domain router (startup, engineering, operations) - orchestrates 72+ skills",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/router-main",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "router-main-vasilyu1983-ai-agents-public-2"
+}

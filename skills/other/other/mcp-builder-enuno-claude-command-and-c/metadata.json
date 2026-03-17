@@ -1,0 +1,9 @@
+{
+  "name": "mcp-builder",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills/mcp-builder/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "mcp-builder-enuno-claude-command-and-c",
+  "downloaded_at": "2026-02-15T07:06:54.925201Z"
+}

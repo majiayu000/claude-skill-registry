@@ -1,0 +1,11 @@
+{
+  "name": "sniffable-python",
+  "description": "Structure Python so LLMs can understand it in 50 lines.",
+  "repo": "SimHacker/moollm",
+  "path": "skills/sniffable-python",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "sniffable-python-simhacker-moollm-2"
+}

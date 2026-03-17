@@ -1,0 +1,11 @@
+{
+  "name": "chaos-engineering-toolkit",
+  "description": "This skill enables Claude to design and execute chaos engineering experiments to test system resilience. It is used when the user requests help with failure injection, latency simulation, resource exh",
+  "repo": "apassuello/multimodal_insight_engine",
+  "path": ".claude/skills/chaos-engineering-toolkit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/apassuello/multimodal_insight_engine",
+  "dir_name": "chaos-engineering-toolkit-apassuello-multimodal-insight-e-2"
+}

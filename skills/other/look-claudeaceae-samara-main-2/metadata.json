@@ -1,0 +1,11 @@
+{
+  "name": "look",
+  "description": "Use the Logitech C920 webcam to see what's around.",
+  "repo": "claudeaceae/samara-main",
+  "path": ".claude/skills/look",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/claudeaceae/samara-main",
+  "dir_name": "look-claudeaceae-samara-main-2"
+}

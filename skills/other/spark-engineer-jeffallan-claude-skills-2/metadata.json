@@ -1,0 +1,11 @@
+{
+  "name": "spark-engineer",
+  "description": "Use when building Apache Spark applications, distributed data processing pipelines, or optimizing big data workloads. Invoke for DataFrame API, Spark SQL, RDD operations, performance tuning, streaming",
+  "repo": "Jeffallan/claude-skills",
+  "path": "skills/spark-engineer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Jeffallan/claude-skills",
+  "dir_name": "spark-engineer-jeffallan-claude-skills-2"
+}

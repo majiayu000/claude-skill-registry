@@ -1,0 +1,11 @@
+{
+  "name": "creating-expert",
+  "description": "Create new domain expert with expertise file and workflows. Use when adding new technology or domain area.",
+  "repo": "seanchiuai/claude-web-template",
+  "path": ".claude/skills/creating-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/seanchiuai/claude-web-template",
+  "dir_name": "creating-expert-seanchiuai-claude-web-template-2"
+}

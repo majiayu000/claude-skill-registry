@@ -1,0 +1,11 @@
+{
+  "name": "referral",
+  "description": "Referral systems - referral programs, viral loops. Use for referrals.",
+  "repo": "SylphxAI/flow",
+  "path": ".claude/skills/referral",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylphxAI/flow",
+  "dir_name": "referral-sylphxai-flow-2"
+}

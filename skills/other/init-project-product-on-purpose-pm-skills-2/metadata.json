@@ -1,0 +1,11 @@
+{
+  "name": "init-project",
+  "description": "Initialize projects with agentic coding structure. Use when setting up a new project, adding AI agent support to existing project, or when user says \"init\", \"initialize\", \"setup project\", or \"scaffold",
+  "repo": "product-on-purpose/pm-skills",
+  "path": ".claude/skills/init-project",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/product-on-purpose/pm-skills",
+  "dir_name": "init-project-product-on-purpose-pm-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "testing-patterns",
+  "description": "Comprehensive testing patterns for Jest, Vitest, Playwright, and React Testing Library.\nUse when writing unit tests, integration tests, or E2E tests.\n",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/testing-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "testing-patterns-wania-kazmi-claude-code-autonomo-2"
+}

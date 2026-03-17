@@ -1,0 +1,11 @@
+{
+  "name": "01-meta-chain-of-skills-150",
+  "description": "[01] META. Сканирует доступные skills, создает план выполнения и идет шаг за шагом с подтверждением каждого этапа. Triggers on complex tasks, multi-step work, or when structured execution is needed.",
+  "repo": "MykhailoDmytriakha/my-preacher-helper",
+  "path": ".codex/skills/01-meta-chain-of-skills-150",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MykhailoDmytriakha/my-preacher-helper",
+  "dir_name": "01-meta-chain-of-skills-150-mykhailodmytriakha-my-preacher-helper-2"
+}

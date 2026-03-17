@@ -1,0 +1,11 @@
+{
+  "name": "codebase-analysis",
+  "description": "Analyzes codebase to find similar features, reusable utilities, and architectural patterns",
+  "repo": "mehdic/bazinga",
+  "path": ".claude/skills/codebase-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mehdic/bazinga",
+  "dir_name": "codebase-analysis-mehdic-bazinga-2"
+}

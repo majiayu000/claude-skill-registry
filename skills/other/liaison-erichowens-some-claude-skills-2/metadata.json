@@ -1,0 +1,11 @@
+{
+  "name": "liaison",
+  "description": "Human interface agent that translates ecosystem activity into clear, actionable communication. Creates status briefings, decision requests, celebration reports, concern alerts, and opportunity summari",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/liaison",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "liaison-erichowens-some-claude-skills-2"
+}

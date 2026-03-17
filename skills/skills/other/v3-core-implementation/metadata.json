@@ -1,0 +1,17 @@
+{
+  "name": "v3-core-implementation",
+  "repo": "ruvnet/ruflo",
+  "path": ".claude/skills/v3-core-implementation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ruvnet/ruflo",
+  "dir_name": "v3-core-implementation",
+  "downloaded_at": "2026-03-02T08:48:20.298303Z",
+  "author": "ruvnet",
+  "source_url": "https://github.com/ruvnet/ruflo/blob/main/.claude/skills/v3-core-implementation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ruvnet/ruflo/blob/main/.claude/skills/v3-core-implementation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "test-parser-jdk",
+  "description": "Test the Java parser by parsing JDK source files and fixing parse errors. Use when asked to find/fix parse errors, test the parser, or improve JDK compatibility.",
+  "repo": "dhamidi/sai",
+  "path": ".claude/skills/test-parser-jdk",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dhamidi/sai",
+  "dir_name": "test-parser-jdk-dhamidi-sai-2"
+}

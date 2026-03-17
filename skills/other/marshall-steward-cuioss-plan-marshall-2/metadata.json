@@ -1,0 +1,11 @@
+{
+  "name": "marshall-steward",
+  "description": "Project configuration wizard for planning system. Manages executor generation, health checks, build systems, and skill domains.",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/plan-marshall/skills/marshall-steward",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "marshall-steward-cuioss-plan-marshall-2"
+}

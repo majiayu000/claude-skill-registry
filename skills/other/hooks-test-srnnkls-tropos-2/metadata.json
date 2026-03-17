@@ -1,0 +1,11 @@
+{
+  "name": "hooks-test",
+  "description": "Test Claude Code hooks in isolation and via integration. Use when developing, debugging, or validating hook behavior.",
+  "repo": "srnnkls/tropos",
+  "path": "skills/hooks-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/srnnkls/tropos",
+  "dir_name": "hooks-test-srnnkls-tropos-2"
+}

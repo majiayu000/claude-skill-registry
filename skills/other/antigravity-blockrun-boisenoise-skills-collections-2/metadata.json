@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-blockrun",
+  "description": "Use when user needs capabilities Claude lacks (image generation, real-time X/Twitter data) or explicitly requests external models (\"blockrun\", \"use grok\", \"use gpt\", \"dall-e\", \"deepseek\")",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-blockrun",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-blockrun-boisenoise-skills-collections-2"
+}

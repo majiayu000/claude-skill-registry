@@ -1,0 +1,11 @@
+{
+  "name": "bknd-session-handling",
+  "description": "Use when managing user sessions in a Bknd application. Covers JWT token lifecycle, session persistence, automatic renewal, checking auth state, invalidating sessions, and handling expiration.",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-session-handling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-session-handling-cameronapak-freedom-stack-v3-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "session-behavior",
+  "description": "Core behavioral guidelines and interaction patterns for the agent. This skill provides the foundation for how the agent should communicate and behave across all interactions. Use this skill to establi",
+  "repo": "ederheisler/agent-skills",
+  "path": ".claude/skills/session-behavior",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ederheisler/agent-skills",
+  "dir_name": "session-behavior-ederheisler-agent-skills-2"
+}

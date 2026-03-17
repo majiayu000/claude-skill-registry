@@ -1,0 +1,11 @@
+{
+  "name": "plotly",
+  "description": "Interactive visualization library. Use when you need hover info, zoom, pan, or web-embeddable charts. Best for dashboards, exploratory analysis, and presentations. For static publication figures use m",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/visualization/plotly",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "plotly-hxk622-tokendance-2"
+}

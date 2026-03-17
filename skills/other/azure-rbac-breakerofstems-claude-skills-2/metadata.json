@@ -1,0 +1,11 @@
+{
+  "name": "azure-rbac",
+  "description": "Query Azure RBAC role assignments and definitions (read-only)",
+  "repo": "BreakerOfStems/claude-skills",
+  "path": "skills/azure-rbac",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BreakerOfStems/claude-skills",
+  "dir_name": "azure-rbac-breakerofstems-claude-skills-2"
+}

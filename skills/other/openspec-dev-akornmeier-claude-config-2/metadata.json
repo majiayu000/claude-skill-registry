@@ -1,0 +1,11 @@
+{
+  "name": "openspec-dev",
+  "description": "Adapter for executing OpenSpec change proposals using subagent-driven-development. Parses OpenSpec structure, groups tasks by phase, and creates one PR per phase.",
+  "repo": "akornmeier/claude-config",
+  "path": "skills/openspec-dev",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/akornmeier/claude-config",
+  "dir_name": "openspec-dev-akornmeier-claude-config-2"
+}

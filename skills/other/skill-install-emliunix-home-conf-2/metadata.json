@@ -1,0 +1,11 @@
+{
+  "name": "skill-install",
+  "description": "Install Claude skills from .skill files. Use when installing a new skill provided by the user as a .skill file (which is a zip archive containing the skill directory structure).",
+  "repo": "emliunix/home.conf",
+  "path": "skills/skill-install",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/emliunix/home.conf",
+  "dir_name": "skill-install-emliunix-home-conf-2"
+}

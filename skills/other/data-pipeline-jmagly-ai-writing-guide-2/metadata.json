@@ -1,0 +1,11 @@
+{
+  "name": "data-pipeline",
+  "description": "Orchestrate marketing data collection, transformation, and reporting workflows. Use when relevant to the task.",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "plugins/marketing/skills/data-pipeline",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jmagly/ai-writing-guide",
+  "dir_name": "data-pipeline-jmagly-ai-writing-guide-2"
+}

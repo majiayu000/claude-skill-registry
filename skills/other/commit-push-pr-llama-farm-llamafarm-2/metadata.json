@@ -1,0 +1,11 @@
+{
+  "name": "commit-push-pr",
+  "description": "Commit changes, push to GitHub, and open a PR. Includes quality checks (security, patterns, simplification). Use --quick to skip checks.",
+  "repo": "llama-farm/llamafarm",
+  "path": ".claude/skills/commit-push-pr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/llama-farm/llamafarm",
+  "dir_name": "commit-push-pr-llama-farm-llamafarm-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ios-unit-test",
+  "description": "Эксперт iOS тестирования. Используй для XCTest, UI testing и iOS test patterns.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/ios-unit-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "ios-unit-test-dengineproblem-agents-monorepo-2"
+}

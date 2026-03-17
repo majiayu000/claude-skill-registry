@@ -1,0 +1,11 @@
+{
+  "name": "session-start",
+  "description": "Use at the beginning of every work session - establishes context by checking GitHub project state, reading memory, verifying environment, and orienting before starting work",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/session-start",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "session-start-troykelly-codex-skills-2"
+}

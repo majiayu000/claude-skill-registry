@@ -1,0 +1,11 @@
+{
+  "name": "quality-gate-detection",
+  "description": "Detect and configure quality gate commands for Ralph's autonomous execution. Use when: (1) Analyzing a project to determine available test, lint, and build scripts, (2) Generatiing a task-specific ver",
+  "repo": "lambda-curry/devagent",
+  "path": ".devagent/plugins/ralph/skills/quality-gate-detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lambda-curry/devagent",
+  "dir_name": "quality-gate-detection-lambda-curry-devagent-2"
+}

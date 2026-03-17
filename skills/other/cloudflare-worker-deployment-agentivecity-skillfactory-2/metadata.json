@@ -1,0 +1,11 @@
+{
+  "name": "cloudflare-worker-deployment",
+  "description": "Use this skill whenever the user wants to deploy, configure, or refine deployment of a Hono/TypeScript backend (or similar Worker) to Cloudflare Workers/Pages using Wrangler, including wrangler.toml, ",
+  "repo": "AgentiveCity/SkillFactory",
+  "path": ".claude/skills/cloudflare-worker-deployment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AgentiveCity/SkillFactory",
+  "dir_name": "cloudflare-worker-deployment-agentivecity-skillfactory-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "monorepo-management",
+  "description": "Master monorepo management with Turborepo, Nx, and pnpm workspaces to build efficient, scalable multi-package repositories with optimized builds and dependency management. Use when setting up monorepo",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".ai/plugins/skills/monorepo-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "monorepo-management-arustydev-dotfiles-2"
+}

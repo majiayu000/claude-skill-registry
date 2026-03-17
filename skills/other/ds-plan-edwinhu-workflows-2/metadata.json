@@ -1,0 +1,11 @@
+{
+  "name": "ds-plan",
+  "description": "REQUIRED Phase 2 of /ds workflow. Profiles data and creates analysis task breakdown.",
+  "repo": "edwinhu/workflows",
+  "path": "lib/skills/ds-plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "ds-plan-edwinhu-workflows-2"
+}

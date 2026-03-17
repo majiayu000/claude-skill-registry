@@ -1,0 +1,17 @@
+{
+  "name": "fp-ts-errors",
+  "repo": "andre-sugai/cine-explorer-mvp-block",
+  "path": ".agents/skills/skills/fp-ts-errors/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/andre-sugai/cine-explorer-mvp-block",
+  "dir_name": "fp-ts-errors-andre-sugai-cine-explorer-mvp-bl",
+  "downloaded_at": "2026-03-01T06:42:02.897717Z",
+  "author": "andre-sugai",
+  "source_url": "https://github.com/andre-sugai/cine-explorer-mvp-block/blob/main/.agents/skills/skills/fp-ts-errors/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andre-sugai/cine-explorer-mvp-block/blob/main/.agents/skills/skills/fp-ts-errors/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

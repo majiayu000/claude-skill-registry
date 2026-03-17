@@ -1,0 +1,11 @@
+{
+  "name": "jest-test",
+  "description": "Execute and generate Jest tests for JavaScript/TypeScript projects with support for unit, integration, and E2E testing",
+  "repo": "FortiumPartners/ai-mesh",
+  "path": "skills/jest-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FortiumPartners/ai-mesh",
+  "dir_name": "jest-test-fortiumpartners-ai-mesh-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "autonomous-operation",
+  "description": "Use when starting any work session - establishes autonomous operation mode, overriding token limits and time pressure to work until goal is achieved",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/autonomous-operation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "autonomous-operation-troykelly-codex-skills-2"
+}

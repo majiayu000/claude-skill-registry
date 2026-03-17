@@ -1,0 +1,11 @@
+{
+  "name": "chipseq-qc",
+  "description": "ChIP-seq quality control metrics including FRiP (Fraction of Reads in Peaks), cross-correlation analysis (NSC/RSC), library complexity, and IDR (Irreproducibility Discovery Rate) for replicate concord",
+  "repo": "GPTomics/bioSkills",
+  "path": "chip-seq/chipseq-qc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "chipseq-qc-gptomics-bioskills-2"
+}

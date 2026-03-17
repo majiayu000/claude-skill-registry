@@ -1,0 +1,11 @@
+{
+  "name": "spatial-deconvolution",
+  "description": "Estimate cell type composition in spatial transcriptomics spots using reference-based deconvolution. Use cell2location, RCTD, SPOTlight, or Tangram to infer cell type proportions from scRNA-seq refere",
+  "repo": "GPTomics/bioSkills",
+  "path": "spatial-transcriptomics/spatial-deconvolution",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "spatial-deconvolution-gptomics-bioskills-2"
+}

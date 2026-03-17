@@ -1,0 +1,11 @@
+{
+  "name": "ln-403-task-rework",
+  "description": "Fixes tasks in To Rework and returns them to To Review. Applies reviewer feedback only for the selected task.",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-403-task-rework",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-403-task-rework-levnikolaevich-claude-code-skills-2"
+}

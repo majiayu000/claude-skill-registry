@@ -1,0 +1,11 @@
+{
+  "name": "natural-language-sql",
+  "description": "แปลง natural language เป็น SQL queries และอธิบาย SQL ด้วยภาษาธรรมดา",
+  "repo": "lovedragonball/power-ranger-toolkit",
+  "path": "src/skills/natural-language-sql",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lovedragonball/power-ranger-toolkit",
+  "dir_name": "natural-language-sql-lovedragonball-power-ranger-toolkit-2"
+}

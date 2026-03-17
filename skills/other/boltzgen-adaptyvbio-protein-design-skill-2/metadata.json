@@ -1,0 +1,11 @@
+{
+  "name": "boltzgen",
+  "description": "All-atom protein design using BoltzGen diffusion model. Use this skill when: (1) Need side-chain aware design from the start, (2) Designing around small molecules or ligands, (3) Want all-atom diffusi",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/boltzgen",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "boltzgen-adaptyvbio-protein-design-skill-2"
+}

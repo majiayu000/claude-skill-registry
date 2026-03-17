@@ -1,0 +1,11 @@
+{
+  "name": "push-pr",
+  "description": "Push commits and create or update pull requests with smart branch management. Use when user says \"push this\", \"push my changes\", \"create a PR\", \"open a pull request\", \"make a PR\", \"submit for review\",",
+  "repo": "gupsammy/Claude-setup",
+  "path": "skills/push-pr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gupsammy/Claude-setup",
+  "dir_name": "push-pr-gupsammy-claude-setup-2"
+}

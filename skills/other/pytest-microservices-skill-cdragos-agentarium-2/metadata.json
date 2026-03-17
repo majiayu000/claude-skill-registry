@@ -1,0 +1,11 @@
+{
+  "name": "pytest-microservices-skill",
+  "description": "Pytest test development for Python microservices. Use when writing unit tests, integration tests, fixtures, mocking external services, or setting up test infrastructure. Triggers on requests to create",
+  "repo": "cdragos/agentarium",
+  "path": "skills/pytest-microservices-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cdragos/agentarium",
+  "dir_name": "pytest-microservices-skill-cdragos-agentarium-2"
+}

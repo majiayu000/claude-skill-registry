@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-risk",
+  "description": "Analyzes portfolio risk including VaR, volatility, drawdown, concentration, correlation, and provides risk management recommendations",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/portfolio-risk",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "dir_name": "portfolio-risk-zhiruifeng-localagentcrew-2"
+}

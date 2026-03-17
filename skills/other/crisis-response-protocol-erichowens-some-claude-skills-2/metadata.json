@@ -1,0 +1,11 @@
+{
+  "name": "crisis-response-protocol",
+  "description": "Handle mental health crisis situations in AI coaching safely. Use when implementing crisis detection, safety protocols, emergency escalation, or suicide prevention features. Activates for crisis keywo",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/crisis-response-protocol",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "crisis-response-protocol-erichowens-some-claude-skills-2"
+}

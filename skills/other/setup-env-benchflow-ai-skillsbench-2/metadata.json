@@ -1,0 +1,11 @@
+{
+  "name": "setup-env",
+  "description": "When given a Python project codebase, this skill helps the agent to set up virtual environments, install dependencies, and run scripts.",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/setup-fuzzing-py/environment/skills/setup-env",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "setup-env-benchflow-ai-skillsbench-2"
+}

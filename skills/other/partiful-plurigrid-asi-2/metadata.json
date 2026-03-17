@@ -1,0 +1,11 @@
+{
+  "name": "partiful",
+  "description": "Access Partiful events, invites, and RSVPs via reverse-engineered API. Use when user asks about party invites, event RSVPs, or social event data.",
+  "repo": "plurigrid/asi",
+  "path": "skills/partiful",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "partiful-plurigrid-asi-2"
+}

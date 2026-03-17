@@ -1,0 +1,11 @@
+{
+  "name": "swift-6-migration",
+  "description": "Use when encountering Swift 6 concurrency errors, Sendable conformance warnings, actor isolation issues, \"global variable is not concurrency-safe\" errors, or migrating codebases to Swift 6 language mo",
+  "repo": "ivan-magda/claude-superpowers",
+  "path": "plugins/swift/skills/swift-6-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ivan-magda/claude-superpowers",
+  "dir_name": "swift-6-migration-ivan-magda-claude-superpowers-2"
+}

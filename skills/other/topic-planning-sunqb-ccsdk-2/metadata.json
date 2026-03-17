@@ -1,0 +1,11 @@
+{
+  "name": "Topic_Planning",
+  "description": "选题策划主入口 - 识别策划场景，引导用户进入对应的专项Skill流程",
+  "repo": "sunqb/ccsdk",
+  "path": ".claude/skills/Topic_Planning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunqb/ccsdk",
+  "dir_name": "topic-planning-sunqb-ccsdk-2"
+}

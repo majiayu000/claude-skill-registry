@@ -1,0 +1,11 @@
+{
+  "name": "threaded-explainer",
+  "description": "USE WHEN: teaching complex topics requiring chunked delivery, handling mid-explanation questions, preserving context across interrupts, deep-dive explanations with nested topics.\nDO NOT USE WHEN: simp",
+  "repo": "mahidalhan/claude-hacks",
+  "path": "skills/threaded-explainer/skills/threaded-explainer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mahidalhan/claude-hacks",
+  "dir_name": "threaded-explainer-mahidalhan-claude-hacks-2"
+}

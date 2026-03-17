@@ -1,0 +1,11 @@
+{
+  "name": "searcher",
+  "description": "Intelligently select and use the most appropriate search tool based on search intent. Use when searching for information, whether web content, local files, locations, or specific data. Automatically c",
+  "repo": "camoneart/claude-code",
+  "path": "skills/searcher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/camoneart/claude-code",
+  "dir_name": "searcher-camoneart-claude-code-2"
+}

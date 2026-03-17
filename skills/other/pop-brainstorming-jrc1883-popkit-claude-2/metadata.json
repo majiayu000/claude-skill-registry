@@ -1,0 +1,11 @@
+{
+  "name": "pop-brainstorming",
+  "description": "Collaborative design refinement that transforms rough ideas into fully-formed specifications through Socratic questioning. Explores alternatives, validates incrementally, and presents designs in diges",
+  "repo": "jrc1883/popkit-claude",
+  "path": "packages/popkit-dev/skills/pop-brainstorming",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jrc1883/popkit-claude",
+  "dir_name": "pop-brainstorming-jrc1883-popkit-claude-2"
+}

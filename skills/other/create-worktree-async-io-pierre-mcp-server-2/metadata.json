@@ -1,0 +1,11 @@
+{
+  "name": "create-worktree",
+  "description": "Creates a git worktree with branch and copies environment files (.envrc, .mcp.json)",
+  "repo": "Async-IO/pierre_mcp_server",
+  "path": ".claude/skills/create-worktree",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Async-IO/pierre_mcp_server",
+  "dir_name": "create-worktree-async-io-pierre-mcp-server-2"
+}

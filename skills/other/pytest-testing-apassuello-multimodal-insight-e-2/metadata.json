@@ -1,0 +1,11 @@
+{
+  "name": "pytest-testing",
+  "description": "Apply pytest best practices and project testing conventions. Use when writing or modifying tests.",
+  "repo": "apassuello/multimodal_insight_engine",
+  "path": ".claude/skills/pytest-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/apassuello/multimodal_insight_engine",
+  "dir_name": "pytest-testing-apassuello-multimodal-insight-e-2"
+}

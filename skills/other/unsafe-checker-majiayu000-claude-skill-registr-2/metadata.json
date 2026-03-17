@@ -1,0 +1,11 @@
+{
+  "name": "unsafe-checker",
+  "description": "Use when reviewing unsafe code or writing FFI. Keywords: unsafe, raw pointer, FFI, extern, transmute, *mut, *const, union, #[repr(C)], libc, std::ffi, MaybeUninit, NonNull, PhantomData, Send, Sync, SA",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/unsafe-checker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "unsafe-checker-majiayu000-claude-skill-registr-2"
+}

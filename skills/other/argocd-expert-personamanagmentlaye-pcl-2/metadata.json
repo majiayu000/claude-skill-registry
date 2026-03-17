@@ -1,0 +1,11 @@
+{
+  "name": "argocd-expert",
+  "description": "Expert-level ArgoCD GitOps deployment, application management, sync strategies, and production operations",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/devops/argocd-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "argocd-expert-personamanagmentlaye-pcl-2"
+}

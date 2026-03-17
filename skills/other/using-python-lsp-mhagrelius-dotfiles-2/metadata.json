@@ -1,0 +1,11 @@
+{
+  "name": "using-python-lsp",
+  "description": "Use when working with Python code and pyright-lsp plugin is enabled - for finding references, checking types, navigating definitions, or verifying type correctness",
+  "repo": "mhagrelius/dotfiles",
+  "path": ".claude/skills/using-python-lsp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhagrelius/dotfiles",
+  "dir_name": "using-python-lsp-mhagrelius-dotfiles-2"
+}

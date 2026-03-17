@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-permissions",
+  "description": "Complete guide for Frappe/ERPNext permission system - roles, user permissions, perm levels, data masking, and permission hooks",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/core/erpnext-permissions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-permissions-openaec-foundation-erpnext-anthropic-cl-2"
+}

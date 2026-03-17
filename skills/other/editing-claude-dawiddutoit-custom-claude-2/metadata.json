@@ -1,0 +1,11 @@
+{
+  "name": "editing-claude",
+  "description": "Validate and optimize CLAUDE.md files using Anthropic's best practices for focused sessions.\nDetects contradictions, redundancy, excessive length (200+ lines), emphasis overuse (2%+ density),\nbroken l",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/editing-claude",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "editing-claude-dawiddutoit-custom-claude-2"
+}

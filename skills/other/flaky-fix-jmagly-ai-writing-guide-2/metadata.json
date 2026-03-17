@@ -1,0 +1,11 @@
+{
+  "name": "flaky-fix",
+  "description": "Suggest and apply fixes for flaky tests based on detected patterns. Use after flaky-detect identifies unreliable tests that need repair.",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "agentic/code/addons/testing-quality/skills/flaky-fix",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jmagly/ai-writing-guide",
+  "dir_name": "flaky-fix-jmagly-ai-writing-guide-2"
+}

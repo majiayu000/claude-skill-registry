@@ -1,0 +1,11 @@
+{
+  "name": "test-resource-service",
+  "description": "Test resource services that handle CRUD operations. Use when testing services that extend BaseService with authorization and event emission. Triggers on \"test note service\", \"test resource service\", \"",
+  "repo": "madooei/backend-template",
+  "path": ".claude/skills/test-resource-service",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/madooei/backend-template",
+  "dir_name": "test-resource-service-madooei-backend-template-2"
+}

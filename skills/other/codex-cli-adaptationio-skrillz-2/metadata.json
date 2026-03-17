@@ -1,0 +1,11 @@
+{
+  "name": "codex-cli",
+  "description": "Integrate OpenAI Codex CLI into Claude Code for AI collaboration, code generation, and automated development. Use when working with OpenAI models (GPT-5.2, GPT-5.1-Codex-Max, o3, o4-mini), code refact",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/codex-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "codex-cli-adaptationio-skrillz-2"
+}

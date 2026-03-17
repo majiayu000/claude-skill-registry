@@ -1,0 +1,11 @@
+{
+  "name": "yaml-jazz",
+  "description": "YAML is sheet music. The LLM is the jazz musician. Comments are soul.",
+  "repo": "SimHacker/moollm",
+  "path": "skills/yaml-jazz",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "yaml-jazz-simhacker-moollm-2"
+}

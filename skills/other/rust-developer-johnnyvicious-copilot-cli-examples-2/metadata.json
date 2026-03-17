@@ -1,0 +1,11 @@
+{
+  "name": "rust-developer",
+  "description": "Comprehensive Rust development guidelines based on 6 months of code reviews. Use when writing Rust code, debugging Rust issues, or reviewing Rust PRs. Covers error handling, file I/O safety, type safe",
+  "repo": "JohnnyVicious/copilot-cli-examples",
+  "path": ".claude/skills/rust-developer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JohnnyVicious/copilot-cli-examples",
+  "dir_name": "rust-developer-johnnyvicious-copilot-cli-examples-2"
+}

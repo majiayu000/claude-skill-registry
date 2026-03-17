@@ -1,0 +1,11 @@
+{
+  "name": "phase-commit",
+  "description": "Gerencia commits automaticos ao final de cada fase do SDLC.\nGarante que artefatos de cada fase sejam commitados e rastreados.\nUse quando: transicao de fase, checkpoint de progresso.\n",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/phase-commit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "phase-commit-arbgjr-satra-2"
+}

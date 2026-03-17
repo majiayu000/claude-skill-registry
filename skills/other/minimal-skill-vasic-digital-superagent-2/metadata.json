@@ -1,0 +1,11 @@
+{
+  "name": "minimal-skill",
+  "description": "A minimal skill with no resources",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/forge/minimal-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "minimal-skill-vasic-digital-superagent-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "helm",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/helm/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "helm-kagenti-kagenti",
+  "downloaded_at": "2026-02-15T07:49:42.825584Z"
+}

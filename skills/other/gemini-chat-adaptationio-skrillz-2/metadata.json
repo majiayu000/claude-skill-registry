@@ -1,0 +1,11 @@
+{
+  "name": "gemini-chat",
+  "description": "Interactive chat workflows with Gemini CLI including context management, multimodal conversations, and session persistence. Use for extended AI conversations, brainstorming, or collaborative problem-s",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/gemini-chat",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "gemini-chat-adaptationio-skrillz-2"
+}

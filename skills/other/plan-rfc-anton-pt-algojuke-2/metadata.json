@@ -1,0 +1,11 @@
+{
+  "name": "plan-rfc",
+  "description": "Plan and draft RFCs (Request for Comments) for major features or architectural changes. Use when user wants to propose a significant feature, system redesign, or cross-cutting change that requires sta",
+  "repo": "anton-pt/algojuke",
+  "path": ".claude/skills/plan-rfc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/anton-pt/algojuke",
+  "dir_name": "plan-rfc-anton-pt-algojuke-2"
+}

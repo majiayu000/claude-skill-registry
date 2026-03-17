@@ -1,0 +1,11 @@
+{
+  "name": "weekly-status",
+  "description": "週次統合ステータスレポートを作成する。週次報告、進捗サマリー、週次会議準備時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/executing/weekly-status",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "weekly-status-haru-llc-ai-pm-system-noteboo-2"
+}

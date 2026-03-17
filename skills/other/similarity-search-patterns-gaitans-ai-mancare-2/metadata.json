@@ -1,0 +1,11 @@
+{
+  "name": "similarity-search-patterns",
+  "description": "Implement efficient similarity search with vector databases. Use when building semantic search, implementing nearest neighbor queries, or optimizing retrieval performance.",
+  "repo": "GaitanS/AI-Mancare",
+  "path": ".claude/skills/plugins/llm-application-dev/skills/similarity-search-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GaitanS/AI-Mancare",
+  "dir_name": "similarity-search-patterns-gaitans-ai-mancare-2"
+}

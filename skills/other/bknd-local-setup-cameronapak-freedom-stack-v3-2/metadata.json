@@ -1,0 +1,11 @@
+{
+  "name": "bknd-local-setup",
+  "description": "Use when setting up a new Bknd project locally or configuring local development environment. Covers CLI installation, project creation, runtime adapters, config file setup, and development server opti",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-local-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-local-setup-cameronapak-freedom-stack-v3-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ai-integration",
+  "description": "Chat endpoints, embeddings, RAG workflows, vector search",
+  "repo": "sylin-org/koan-framework",
+  "path": ".claude/skills/ai-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sylin-org/koan-framework",
+  "dir_name": "ai-integration-sylin-org-koan-framework-2"
+}

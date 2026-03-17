@@ -1,0 +1,11 @@
+{
+  "name": "miniflux",
+  "description": "Browse, read, and manage Miniflux feed articles. Use when Claude needs to work with RSS/atom feeds via Miniflux - listing unread/new articles, reading article content, marking articles as read, and ma",
+  "repo": "clawdbot/skills",
+  "path": "skills/shekohex/miniflux",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "miniflux-clawdbot-skills-2"
+}

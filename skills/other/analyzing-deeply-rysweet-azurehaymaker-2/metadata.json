@@ -1,0 +1,11 @@
+{
+  "name": "analyzing-deeply",
+  "description": "Performs deep structured analysis on complex or ambiguous problems. Activates when problems are unclear, have multiple perspectives, or require careful thinking before proceeding. Uses ultrathink meth",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/meta-cognitive/analyzing-deeply",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "analyzing-deeply-rysweet-azurehaymaker-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "market-researcher",
+  "description": "Gathers and analyzes market data, industry trends, market sizing, and growth opportunities",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/market-researcher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "dir_name": "market-researcher-zhiruifeng-localagentcrew-2"
+}

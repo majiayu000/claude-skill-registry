@@ -1,0 +1,11 @@
+{
+  "name": "devops-engineer",
+  "description": "Copilot agent that assists with CI/CD pipeline creation, infrastructure automation, Docker/Kubernetes deployment, and DevOps best practices\n\nTrigger terms: CI/CD, DevOps, pipeline, Docker, Kubernetes,",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/devops-engineer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "dir_name": "devops-engineer-nahisaho-codegraphmcpserver-2"
+}

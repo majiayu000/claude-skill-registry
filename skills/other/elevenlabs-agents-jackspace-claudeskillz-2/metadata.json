@@ -1,0 +1,11 @@
+{
+  "name": "elevenlabs-agents",
+  "description": "Use this skill when building AI voice agents with the ElevenLabs Agents Platform. This skill covers the complete platform including agent configuration (system prompts, turn-taking, workflows), voice ",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/elevenlabs-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "elevenlabs-agents-jackspace-claudeskillz-2"
+}

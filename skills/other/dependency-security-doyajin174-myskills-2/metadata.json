@@ -1,0 +1,11 @@
+{
+  "name": "dependency-security",
+  "description": "Enforce dependency security scanning and SBOM generation. Use when adding dependencies, reviewing package.json, or during security audits. Covers OWASP dependency check, npm audit, and supply chain se",
+  "repo": "Doyajin174/myskills",
+  "path": ".public/skills/dependency-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Doyajin174/myskills",
+  "dir_name": "dependency-security-doyajin174-myskills-2"
+}

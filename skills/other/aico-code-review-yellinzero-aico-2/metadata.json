@@ -1,0 +1,11 @@
+{
+  "name": "aico-code-review",
+  "description": "Request structured code review to catch correctness, security, performance, and readability issues. Reviews should happen early and often.\n\nUse this skill when:\n- Completing a task and need quality ch",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-code-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-code-review-yellinzero-aico-2"
+}

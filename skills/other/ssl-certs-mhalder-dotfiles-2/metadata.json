@@ -1,0 +1,11 @@
+{
+  "name": "ssl-certs",
+  "description": "Manage SSL/TLS certificates and diagnose certificate issues. Use when the user says \"cert expiring\", \"SSL error\", \"certificate problem\", \"renew certificate\", \"check certificate\", \"HTTPS not working\", ",
+  "repo": "mhalder/dotfiles",
+  "path": "claude/.claude/skills/ssl-certs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhalder/dotfiles",
+  "dir_name": "ssl-certs-mhalder-dotfiles-2"
+}

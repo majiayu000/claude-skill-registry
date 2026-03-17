@@ -1,0 +1,11 @@
+{
+  "name": "lumen-dashboards",
+  "description": "Master declarative, no-code data dashboards with Lumen YAML specifications. Use this skill when building standard data exploration dashboards, connecting multiple data sources (files, databases, APIs)",
+  "repo": "robertpelloni/borg",
+  "path": "agents/rse-agents/plugins/holoviz-visualization/skills/lumen-dashboards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertpelloni/borg",
+  "dir_name": "lumen-dashboards-robertpelloni-borg-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "scenario-runner-capture",
+  "description": "Implement deterministic Scenario Runner + capture outputs for agents",
+  "repo": "unfrgivn/wilds-of-cloverhollow",
+  "path": ".opencode/skill/scenario-runner-capture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/unfrgivn/wilds-of-cloverhollow",
+  "dir_name": "scenario-runner-capture-unfrgivn-wilds-of-cloverhollo-2"
+}

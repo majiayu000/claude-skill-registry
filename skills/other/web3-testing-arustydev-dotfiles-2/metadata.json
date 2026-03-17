@@ -1,0 +1,11 @@
+{
+  "name": "web3-testing",
+  "description": "Test smart contracts comprehensively using Hardhat and Foundry with unit tests, integration tests, and mainnet forking. Use when testing Solidity contracts, setting up blockchain test suites, or valid",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".ai/plugins/blockchain-web3/skills/web3-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "web3-testing-arustydev-dotfiles-2"
+}

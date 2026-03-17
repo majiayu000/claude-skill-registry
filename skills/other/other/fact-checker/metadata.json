@@ -1,0 +1,9 @@
+{
+  "name": "fact-checker",
+  "repo": "dangeles/claude",
+  "path": "claude-config/skills/fact-checker/SKILL.md",
+  "category": "other",
+  "source": "github.com/dangeles/claude",
+  "dir_name": "fact-checker",
+  "downloaded_at": "2026-02-15T06:53:00.299485Z"
+}

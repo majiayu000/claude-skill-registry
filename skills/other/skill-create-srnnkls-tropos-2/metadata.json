@@ -1,0 +1,11 @@
+{
+  "name": "skill-create",
+  "description": "Create new Claude Code skills following project patterns and best practices. Use when building new skills, extracting reusable capabilities, or converting commands to skills.",
+  "repo": "srnnkls/tropos",
+  "path": "skills/skill-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/srnnkls/tropos",
+  "dir_name": "skill-create-srnnkls-tropos-2"
+}

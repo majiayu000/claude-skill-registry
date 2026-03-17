@@ -1,0 +1,11 @@
+{
+  "name": "claude-md-creator",
+  "description": "Use when creating CLAUDE.md files, updating existing CLAUDE.md, validating CLAUDE.md structure, or auto-fixing CLAUDE.md issues. Load for setting up project instructions, global guidelines, local over",
+  "repo": "ingpoc/SKILLS",
+  "path": "claude-md-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ingpoc/SKILLS",
+  "dir_name": "claude-md-creator-ingpoc-skills-2"
+}

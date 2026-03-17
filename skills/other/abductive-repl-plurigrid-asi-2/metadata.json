@@ -1,0 +1,11 @@
+{
+  "name": "abductive-repl",
+  "description": "Hypothesis-Test Loops via REPL for Exploratory Abductive Inference with Gay.jl colors",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.agents/skills/abductive-repl",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "abductive-repl-plurigrid-asi-2"
+}

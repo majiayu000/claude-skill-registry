@@ -1,0 +1,11 @@
+{
+  "name": "memory-checkpoint",
+  "description": "在對話被 Summarize 壓縮前，主動將詳細記憶外部化到 Memory Bank，避免重要上下文遺失。",
+  "repo": "u9401066/pubmed-search-mcp",
+  "path": ".claude/skills/memory-checkpoint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/u9401066/pubmed-search-mcp",
+  "dir_name": "memory-checkpoint-u9401066-pubmed-search-mcp-2"
+}

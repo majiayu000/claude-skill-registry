@@ -1,0 +1,11 @@
+{
+  "name": "tasks",
+  "description": "Create, load, or summarize tasks via Graphiti MCP; triggers on 'tasks', 'list tasks', 'add task', usable by any model (Claude, Gemini).",
+  "repo": "TonyCasey/lisa",
+  "path": "src/project/.lisa/skills/tasks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TonyCasey/lisa",
+  "dir_name": "tasks-tonycasey-lisa-2"
+}

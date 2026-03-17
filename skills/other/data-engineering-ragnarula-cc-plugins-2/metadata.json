@@ -1,0 +1,11 @@
+{
+  "name": "data-engineering",
+  "description": "Use this skill when designing or reviewing data pipelines, ETL processes, data warehouses, streaming systems, or any system where data movement, transformation, and quality are primary concerns. Appli",
+  "repo": "ragnarula/cc-plugins",
+  "path": "sdd/skills/data-engineering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ragnarula/cc-plugins",
+  "dir_name": "data-engineering-ragnarula-cc-plugins-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "add-auth-endpoint",
+  "description": "Add authentication endpoints (register, login, refresh, logout) to NovaTune",
+  "repo": "Tassadar2499/NovaTune",
+  "path": ".claude/skills/add-auth-endpoint",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Tassadar2499/NovaTune",
+  "dir_name": "add-auth-endpoint-tassadar2499-novatune-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "migration-generator",
+  "description": "Create database migrations from model changes, schema diffs, and migration best practices.",
+  "repo": "CuriousLearner/devkit",
+  "path": "skills/migration-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CuriousLearner/devkit",
+  "dir_name": "migration-generator-curiouslearner-devkit-2"
+}

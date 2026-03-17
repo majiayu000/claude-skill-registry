@@ -1,0 +1,11 @@
+{
+  "name": "dotfiles-sync",
+  "description": "dotfiles手動同期。Brewfile更新、変更コミット、プッシュを実行。トリガー: sync, dotfiles sync, 同期, push dotfiles, Brewfile update",
+  "repo": "snkrheadz/laptop",
+  "path": ".claude/skills/dotfiles-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/snkrheadz/laptop",
+  "dir_name": "dotfiles-sync-snkrheadz-laptop-2"
+}

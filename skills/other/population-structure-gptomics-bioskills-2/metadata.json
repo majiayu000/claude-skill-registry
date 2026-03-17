@@ -1,0 +1,11 @@
+{
+  "name": "population-structure",
+  "description": "Analyze population structure using PCA and admixture analysis with PLINK and ADMIXTURE. Identify population clusters, assess ancestry proportions, visualize genetic structure, and choose optimal K for",
+  "repo": "GPTomics/bioSkills",
+  "path": "population-genetics/population-structure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "population-structure-gptomics-bioskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "investment-critic",
+  "description": "Applies critical thinking to evaluate investment analysis, identify risks, and detect factual errors",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/investment-critic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "dir_name": "investment-critic-zhiruifeng-localagentcrew-2"
+}

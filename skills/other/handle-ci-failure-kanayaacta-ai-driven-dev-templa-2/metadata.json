@@ -1,0 +1,11 @@
+{
+  "name": "handle-ci-failure",
+  "description": "CI (GitHub Actions) の失敗を検知・分析し、LinearのIssueとして登録します",
+  "repo": "KanayaActa/ai-driven-dev-template",
+  "path": ".claude/skills/handle-ci-failure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KanayaActa/ai-driven-dev-template",
+  "dir_name": "handle-ci-failure-kanayaacta-ai-driven-dev-templa-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "di",
+  "description": "Dependency Injection (DI) skill for the ikigai project",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/di",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "di-mgreenly-ikigai-2"
+}

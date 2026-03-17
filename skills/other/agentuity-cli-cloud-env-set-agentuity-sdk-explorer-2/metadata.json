@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-env-set",
+  "description": "Set an environment variable. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-env-set",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-env-set-agentuity-sdk-explorer-2"
+}

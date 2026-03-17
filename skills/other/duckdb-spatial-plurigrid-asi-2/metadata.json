@@ -1,0 +1,11 @@
+{
+  "name": "duckdb-spatial",
+  "description": "DuckDB Spatial Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/duckdb-spatial",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "duckdb-spatial-plurigrid-asi-2"
+}

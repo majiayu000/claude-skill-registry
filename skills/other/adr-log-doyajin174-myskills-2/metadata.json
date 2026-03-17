@@ -1,0 +1,11 @@
+{
+  "name": "adr-log",
+  "description": "Document architecture decisions with ADR (Architecture Decision Records). Use when making significant technical decisions, choosing between alternatives, or when onboarding needs context on past decis",
+  "repo": "Doyajin174/myskills",
+  "path": ".public/skills/adr-log",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Doyajin174/myskills",
+  "dir_name": "adr-log-doyajin174-myskills-2"
+}

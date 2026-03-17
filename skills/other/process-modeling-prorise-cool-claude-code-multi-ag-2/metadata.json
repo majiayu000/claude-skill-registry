@@ -1,0 +1,11 @@
+{
+  "name": "process-modeling",
+  "description": "Process modeling using BPMN notation and flowchart patterns. Creates process diagrams with activities, gateways, events, swimlanes, and decision points for workflow documentation.",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/business-analysis/process-modeling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "process-modeling-prorise-cool-claude-code-multi-ag-2"
+}

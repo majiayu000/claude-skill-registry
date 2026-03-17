@@ -1,0 +1,11 @@
+{
+  "name": "acceptance-criteria",
+  "description": "检查Acceptance Criteria格式和完整性，验证是否符合Given-When-Then结构、覆盖正常流程/边界条件/异常场景。适合在为User Story编写AC后、准备测试用例前使用，当需要验收AC质量时。帮助不熟悉BDD的PM/BA确保AC明确、可测试、覆盖完整，避免遗漏关键场景。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/requirements/acceptance-criteria",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "acceptance-criteria-tikazyq-agentic-spec-forge-2"
+}

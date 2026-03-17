@@ -1,0 +1,11 @@
+{
+  "name": "integrating-wpf-media",
+  "description": "Integrates multimedia content in WPF including MediaElement video/audio playback, Image control display, and SoundPlayerAction effects. Use when building media players, galleries, or multimedia UIs.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/integrating-wpf-media",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "integrating-wpf-media-christian289-dotnet-with-claudeco-2"
+}

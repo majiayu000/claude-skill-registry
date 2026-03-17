@@ -1,0 +1,11 @@
+{
+  "name": "stripe-integration",
+  "description": "Implement Stripe payment processing for robust, PCI-compliant payment flows including checkout, subscriptions, and webhooks. Use when integrating Stripe payments, building subscription systems, or imp",
+  "repo": "aRustyDev/dotfiles",
+  "path": ".ai/plugins/payment-processing/skills/stripe-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aRustyDev/dotfiles",
+  "dir_name": "stripe-integration-arustydev-dotfiles-2"
+}

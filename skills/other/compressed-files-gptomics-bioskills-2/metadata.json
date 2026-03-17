@@ -1,0 +1,11 @@
+{
+  "name": "compressed-files",
+  "description": "Read and write compressed sequence files (gzip, bzip2, BGZF) using Biopython. Use when working with .gz or .bz2 sequence files. Use BGZF for indexable compressed files.",
+  "repo": "GPTomics/bioSkills",
+  "path": "sequence-io/compressed-files",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "compressed-files-gptomics-bioskills-2"
+}

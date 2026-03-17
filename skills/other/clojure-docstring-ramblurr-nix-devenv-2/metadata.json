@@ -1,0 +1,11 @@
+{
+  "name": "clojure-docstring",
+  "description": "Guidelines for writing effective Clojure docstrings with markdown formatting, wikilinks, code examples, and tables. Always use this skill when writing or reviewing docstrings in Clojure code, or when ",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/clojure-docstring",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "clojure-docstring-ramblurr-nix-devenv-2"
+}

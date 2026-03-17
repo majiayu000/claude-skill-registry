@@ -1,0 +1,11 @@
+{
+  "name": "dataset-comparer",
+  "description": "Compare two datasets to find differences, added/removed rows, changed values. Use for data validation, ETL verification, or tracking changes.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "dataset-comparer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "dataset-comparer-dkyazzentwatwa-chatgpt-skills-2"
+}

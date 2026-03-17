@@ -1,0 +1,11 @@
+{
+  "name": "openapi-documentation",
+  "description": "Эксперт по OpenAPI документации. Используй для создания Swagger спецификаций, API schemas и автогенерации документации.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/openapi-documentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "openapi-documentation-dengineproblem-agents-monorepo-2"
+}

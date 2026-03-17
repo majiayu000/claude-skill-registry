@@ -1,0 +1,11 @@
+{
+  "name": "vhs",
+  "description": "VHS terminal recording best practices from Charmbracelet (formerly charmbracelet-vhs). This skill should be used when writing, reviewing, or editing VHS tape files to create professional terminal GIFs",
+  "repo": "pproenca/dot-skills",
+  "path": "skills/.experimental/vhs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pproenca/dot-skills",
+  "dir_name": "vhs-pproenca-dot-skills-2"
+}

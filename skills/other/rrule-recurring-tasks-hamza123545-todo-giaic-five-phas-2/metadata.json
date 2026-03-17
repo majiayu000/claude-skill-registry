@@ -1,0 +1,11 @@
+{
+  "name": "rrule-recurring-tasks",
+  "description": "RRULE pattern parsing and next occurrence calculation for recurring tasks. Uses python-dateutil for RFC 5545 RRULE support, simplified patterns (daily, weekly, monthly, yearly), and UTC-only time hand",
+  "repo": "Hamza123545/Todo_giaic_five_phases",
+  "path": ".claude/skills/rrule-recurring-tasks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Hamza123545/Todo_giaic_five_phases",
+  "dir_name": "rrule-recurring-tasks-hamza123545-todo-giaic-five-phas-2"
+}

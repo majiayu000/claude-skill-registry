@@ -1,0 +1,9 @@
+{
+  "name": "commit-message-formatter",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/commit-message-formatter/SKILL.md",
+  "category": "other",
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "commit-message-formatter",
+  "downloaded_at": "2026-02-22T05:56:40.482050Z"
+}

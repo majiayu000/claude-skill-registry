@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-database",
+  "description": "Database operations and ORM patterns for ERPNext/Frappe v14-v16",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/core/erpnext-database",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-database-openaec-foundation-erpnext-anthropic-cl-2"
+}

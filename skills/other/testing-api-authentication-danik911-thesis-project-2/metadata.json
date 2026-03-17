@@ -1,0 +1,11 @@
+{
+  "name": "testing-api-authentication",
+  "description": "Test FastAPI endpoints with Clerk JWT authentication while avoiding common environment, token expiry, and claim validation pitfalls. Use when tester-agent needs to validate API authentication, run end",
+  "repo": "Danik911/thesis_project",
+  "path": ".claude/skills/testing-api-authentication",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Danik911/thesis_project",
+  "dir_name": "testing-api-authentication-danik911-thesis-project-2"
+}

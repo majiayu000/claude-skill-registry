@@ -1,0 +1,11 @@
+{
+  "name": "unit-testing",
+  "description": "Enforces project unit testing conventions for pure functions, validation schemas, and utility modules using Vitest with proper isolation and mocking.",
+  "repo": "JasonPaff/head-shakers",
+  "path": ".claude/skills/unit-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JasonPaff/head-shakers",
+  "dir_name": "unit-testing-jasonpaff-head-shakers-2"
+}

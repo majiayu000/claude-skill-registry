@@ -1,0 +1,9 @@
+{
+  "name": "hypershift-setup",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/hypershift:setup/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "hypershift-setup",
+  "downloaded_at": "2026-02-15T07:49:45.925708Z"
+}

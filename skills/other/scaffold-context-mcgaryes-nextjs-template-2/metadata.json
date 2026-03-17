@@ -1,0 +1,11 @@
+{
+  "name": "scaffold-context",
+  "description": "Scaffold a new React Context module inside an existing feature using the Context + useReducer pattern (state, actions, reducer, context, provider, and barrel exports).",
+  "repo": "mcgaryes/nextjs-template",
+  "path": ".claude/skills/scaffold-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mcgaryes/nextjs-template",
+  "dir_name": "scaffold-context-mcgaryes-nextjs-template-2"
+}

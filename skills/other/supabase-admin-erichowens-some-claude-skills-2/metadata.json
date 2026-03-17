@@ -1,0 +1,11 @@
+{
+  "name": "supabase-admin",
+  "description": "Supabase administration, RLS policies, migrations, and schema design. Use for database architecture, Row Level Security, performance tuning, auth integration. Activate on \"Supabase\", \"RLS\", \"migration",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/supabase-admin",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "supabase-admin-erichowens-some-claude-skills-2"
+}

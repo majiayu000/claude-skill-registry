@@ -1,0 +1,11 @@
+{
+  "name": "bulk-deseq2-analysis",
+  "description": "Walk Claude through PyDESeq2-based differential expression, including ID mapping, DE testing, fold-change thresholding, and enrichment visualisation.",
+  "repo": "Starlitnightly/omicverse",
+  "path": ".claude/skills/bulk-deseq2-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Starlitnightly/omicverse",
+  "dir_name": "bulk-deseq2-analysis-starlitnightly-omicverse-2"
+}

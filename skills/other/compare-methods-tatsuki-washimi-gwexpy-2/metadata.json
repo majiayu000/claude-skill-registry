@@ -1,0 +1,11 @@
+{
+  "name": "compare_methods",
+  "description": "ライブラリ内の類似した信号処理手法の技術的・物理的な違いを分析し、比較解説付きのノートブックセクションを作成する",
+  "repo": "tatsuki-washimi/gwexpy",
+  "path": ".agent/skills/compare_methods",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tatsuki-washimi/gwexpy",
+  "dir_name": "compare-methods-tatsuki-washimi-gwexpy-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "orchestrator",
+  "description": "Integrated orchestrator agent that manages and coordinates 25 specialized AI agents for Specification Driven Development\n\nTrigger terms: orchestrate, coordinate, multi-agent, workflow, execution plan,",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "dir_name": "orchestrator-nahisaho-codegraphmcpserver-2"
+}

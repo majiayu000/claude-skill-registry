@@ -1,0 +1,11 @@
+{
+  "name": "commit-message-generator",
+  "description": "Generate conventional commit messages following best practices. Use when creating structured git commit messages.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/commit-message-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "commit-message-generator-ntaksh42-agents-2"
+}

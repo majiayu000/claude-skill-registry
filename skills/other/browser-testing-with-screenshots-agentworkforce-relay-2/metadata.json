@@ -1,0 +1,11 @@
+{
+  "name": "browser-testing-with-screenshots",
+  "description": "Use when testing web applications with visual verification - automates Chrome browser interactions, element selection, and screenshot capture for confirming UI functionality",
+  "repo": "AgentWorkforce/relay",
+  "path": ".claude/skills/browser-testing-with-screenshots",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AgentWorkforce/relay",
+  "dir_name": "browser-testing-with-screenshots-agentworkforce-relay-2"
+}

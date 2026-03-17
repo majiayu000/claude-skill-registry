@@ -1,0 +1,11 @@
+{
+  "name": "hugo-content-checker",
+  "description": "This skill should be used when checking Hugo content for consistency issues, validating internal references, detecting duplicate content, verifying frontmatter completeness, and ensuring proper naming",
+  "repo": "RogueRope/docs",
+  "path": ".claude/skills/hugo-content-checker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RogueRope/docs",
+  "dir_name": "hugo-content-checker-roguerope-docs-2"
+}

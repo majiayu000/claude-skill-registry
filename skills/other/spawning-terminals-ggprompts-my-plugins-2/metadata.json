@@ -1,0 +1,11 @@
+{
+  "name": "spawning-terminals",
+  "description": "Spawn and manage terminal tabs via TabzChrome REST API. Use when spawning workers, creating terminals programmatically, setting up worktrees for parallel work, monitoring worker status, or sending pro",
+  "repo": "GGPrompts/my-plugins",
+  "path": "plugins/tools/conductor/skills/spawning-terminals",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GGPrompts/my-plugins",
+  "dir_name": "spawning-terminals-ggprompts-my-plugins-2"
+}

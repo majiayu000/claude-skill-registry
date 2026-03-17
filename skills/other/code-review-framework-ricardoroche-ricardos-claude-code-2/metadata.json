@@ -1,0 +1,11 @@
+{
+  "name": "code-review-framework",
+  "description": "Automatically applies when reviewing code. Ensures structured review checklist covering correctness, security, performance, maintainability, testing, and documentation.",
+  "repo": "ricardoroche/ricardos-claude-code",
+  "path": ".claude/skills/code-review-framework",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ricardoroche/ricardos-claude-code",
+  "dir_name": "code-review-framework-ricardoroche-ricardos-claude-code-2"
+}

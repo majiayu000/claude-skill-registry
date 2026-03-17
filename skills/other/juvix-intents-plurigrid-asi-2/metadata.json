@@ -1,0 +1,11 @@
+{
+  "name": "juvix-intents",
+  "description": "Juvix intent-centric language for Anoma with Geb compilation and GF(3) typed resources",
+  "repo": "plurigrid/asi",
+  "path": "skills/juvix-intents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "juvix-intents-plurigrid-asi-2"
+}

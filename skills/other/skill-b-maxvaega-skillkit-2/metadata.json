@@ -1,0 +1,11 @@
+{
+  "name": "skill-b",
+  "description": "Skill B from experimental directory",
+  "repo": "maxvaega/skillkit",
+  "path": "tests/fixtures/plugins/multi-dir-plugin/experimental/skill-b",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "skill-b-maxvaega-skillkit-2"
+}

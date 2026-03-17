@@ -1,0 +1,11 @@
+{
+  "name": "ros2-gazebo-bridge",
+  "description": "Configure ros_gz_bridge to connect Gazebo topics with ROS 2 for closed-loop control",
+  "repo": "mjunaidca/robolearn",
+  "path": ".claude/skills/ros2-gazebo-bridge",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mjunaidca/robolearn",
+  "dir_name": "ros2-gazebo-bridge-mjunaidca-robolearn-2"
+}

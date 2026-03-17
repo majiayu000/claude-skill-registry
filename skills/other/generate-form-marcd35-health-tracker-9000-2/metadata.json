@@ -1,0 +1,11 @@
+{
+  "name": "generate-form",
+  "description": "Generate form component with validation, state management, and submit handling. Use when creating new data entry forms.",
+  "repo": "marcd35/health-tracker-9000",
+  "path": ".claude/skills/generate-form",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/marcd35/health-tracker-9000",
+  "dir_name": "generate-form-marcd35-health-tracker-9000-2"
+}

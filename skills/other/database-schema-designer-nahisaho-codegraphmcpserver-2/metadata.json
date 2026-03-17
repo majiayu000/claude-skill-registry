@@ -1,0 +1,11 @@
+{
+  "name": "database-schema-designer",
+  "description": "Copilot agent for database schema design, ER diagrams, normalization, DDL generation, and performance optimization\n\nTrigger terms: database design, schema design, ER diagram, normalization, DDL, datab",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/database-schema-designer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "dir_name": "database-schema-designer-nahisaho-codegraphmcpserver-2"
+}

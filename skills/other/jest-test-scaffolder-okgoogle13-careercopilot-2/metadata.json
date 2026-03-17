@@ -1,0 +1,11 @@
+{
+  "name": "jest-test-scaffolder",
+  "description": "Scaffolds Jest unit tests for React components and hooks. Use when creating tests for frontend components.",
+  "repo": "okgoogle13/careercopilot",
+  "path": ".claude/skills/jest-test-scaffolder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/okgoogle13/careercopilot",
+  "dir_name": "jest-test-scaffolder-okgoogle13-careercopilot-2"
+}

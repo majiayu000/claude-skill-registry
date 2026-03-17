@@ -1,0 +1,11 @@
+{
+  "name": "sync-plan",
+  "description": "Execute /sync-plan slash command.",
+  "repo": "sasamuku/dotfiles",
+  "path": ".claude/skills/sync-plan",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sasamuku/dotfiles",
+  "dir_name": "sync-plan-sasamuku-dotfiles-2"
+}

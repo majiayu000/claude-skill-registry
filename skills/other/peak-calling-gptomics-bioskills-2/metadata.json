@@ -1,0 +1,11 @@
+{
+  "name": "peak-calling",
+  "description": "ChIP-seq peak calling using MACS3 (or MACS2). Call narrow peaks for transcription factors or broad peaks for histone modifications. Supports input control, fragment size modeling, and various output f",
+  "repo": "GPTomics/bioSkills",
+  "path": "atac-seq/atac-peak-calling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "peak-calling-gptomics-bioskills-2"
+}

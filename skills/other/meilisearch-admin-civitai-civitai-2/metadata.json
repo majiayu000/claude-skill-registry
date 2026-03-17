@@ -1,0 +1,11 @@
+{
+  "name": "meilisearch-admin",
+  "description": "Check Meilisearch index status, tasks, health, and settings. Use for debugging search issues, monitoring indexing tasks, and inspecting index configuration. Read-only admin operations.",
+  "repo": "civitai/civitai",
+  "path": ".claude/skills/meilisearch-admin",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/civitai/civitai",
+  "dir_name": "meilisearch-admin-civitai-civitai-2"
+}

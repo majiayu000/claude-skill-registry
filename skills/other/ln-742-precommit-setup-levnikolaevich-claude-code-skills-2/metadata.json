@@ -1,0 +1,11 @@
+{
+  "name": "ln-742-precommit-setup",
+  "description": "Configures Husky, lint-staged, commitlint, and Python pre-commit",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-742-precommit-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-742-precommit-setup-levnikolaevich-claude-code-skills-2"
+}

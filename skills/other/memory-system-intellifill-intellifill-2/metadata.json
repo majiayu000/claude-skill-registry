@@ -1,0 +1,11 @@
+{
+  "name": "memory-system",
+  "description": "Automatic documentation memory system for AI agents. Ensures context is loaded at session start and documentation is updated after changes.",
+  "repo": "Intellifill/IntelliFill",
+  "path": ".claude/skills/memory-system",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Intellifill/IntelliFill",
+  "dir_name": "memory-system-intellifill-intellifill-2"
+}

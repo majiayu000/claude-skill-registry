@@ -1,0 +1,11 @@
+{
+  "name": "vocabulary-notes",
+  "description": "Requirements for formatting and structuring the notes field in je-dict-1 entries. Covers formatting, content organization, and readability standards.",
+  "repo": "tkgally/je-dict-1",
+  "path": ".claude/skills/vocabulary-notes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tkgally/je-dict-1",
+  "dir_name": "vocabulary-notes-tkgally-je-dict-1-2"
+}

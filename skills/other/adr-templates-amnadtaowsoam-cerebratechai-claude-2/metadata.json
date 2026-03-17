@@ -1,0 +1,11 @@
+{
+  "name": "adr-templates",
+  "description": "Documenting significant architectural decisions with context, consequences, and rationale for future reference.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "59-architecture-decision/adr-templates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "adr-templates-amnadtaowsoam-cerebratechai-claude-2"
+}

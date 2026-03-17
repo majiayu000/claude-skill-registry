@@ -1,0 +1,11 @@
+{
+  "name": "panel-dashboards",
+  "description": "Master interactive dashboard and application development with Panel and Param. Use this skill when building custom web applications with Python, creating reactive component-based UIs, handling file up",
+  "repo": "robertpelloni/borg",
+  "path": "agents/rse-agents/plugins/holoviz-visualization/skills/panel-dashboards",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertpelloni/borg",
+  "dir_name": "panel-dashboards-robertpelloni-borg-2"
+}

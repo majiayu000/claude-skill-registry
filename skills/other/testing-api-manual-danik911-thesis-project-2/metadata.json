@@ -1,0 +1,11 @@
+{
+  "name": "testing-api-manual",
+  "description": "Manual API testing commands for pharmaceutical test generation workflow. Use when testing Docker-based FastAPI endpoints with Clerk JWT authentication, submitting URS files, and monitoring job executi",
+  "repo": "Danik911/thesis_project",
+  "path": ".claude/skills/testing-api-manual",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Danik911/thesis_project",
+  "dir_name": "testing-api-manual-danik911-thesis-project-2"
+}

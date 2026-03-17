@@ -1,0 +1,11 @@
+{
+  "name": "visual-testing",
+  "description": "Run the app locally and take screenshots using Puppeteer to verify UI changes; use when validating demo pages, checking visual regressions, or capturing UI state for analysis",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/visual-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "visual-testing-javeedishaq-ai-workflow-orchestr-2"
+}

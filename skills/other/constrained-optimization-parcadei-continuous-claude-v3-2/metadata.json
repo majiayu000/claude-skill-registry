@@ -1,0 +1,11 @@
+{
+  "name": "constrained-optimization",
+  "description": "Problem-solving strategies for constrained optimization in optimization",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/math/optimization/constrained-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "constrained-optimization-parcadei-continuous-claude-v3-2"
+}

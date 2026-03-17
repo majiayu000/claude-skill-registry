@@ -1,0 +1,11 @@
+{
+  "name": "security-skill",
+  "description": "Application security patterns - authentication, secrets management, input validation, OWASP Top 10. Use when: auth, JWT, secrets, API keys, SQL injection, XSS, CSRF, RLS, security audit, pen testing b",
+  "repo": "ScientiaCapital/skills",
+  "path": "active/security-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ScientiaCapital/skills",
+  "dir_name": "security-skill-scientiacapital-skills-2"
+}

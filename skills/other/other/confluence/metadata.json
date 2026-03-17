@@ -1,0 +1,9 @@
+{
+  "name": "confluence",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/jira-orchestrator/skills/confluence/SKILL.md",
+  "category": "other",
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "confluence",
+  "downloaded_at": "2026-02-15T05:23:06.969727Z"
+}

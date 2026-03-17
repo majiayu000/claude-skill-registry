@@ -1,0 +1,11 @@
+{
+  "name": "generate-test",
+  "description": "Generate Jest test suite with mocks and common test cases. Use when creating tests for components, repositories, or API routes.",
+  "repo": "marcd35/health-tracker-9000",
+  "path": ".claude/skills/generate-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/marcd35/health-tracker-9000",
+  "dir_name": "generate-test-marcd35-health-tracker-9000-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "collaborating-with-gemini",
+  "description": "Use the Gemini CLI to consult Gemini and delegate coding tasks for prototyping, debugging, and code review. Supports multi-turn sessions via SESSION_ID. Optimized for low-token, file/line-based handof",
+  "repo": "bnufw/lear_by_ai",
+  "path": ".codex/skills/collaborating-with-gemini",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bnufw/lear_by_ai",
+  "dir_name": "collaborating-with-gemini-bnufw-lear-by-ai-2"
+}

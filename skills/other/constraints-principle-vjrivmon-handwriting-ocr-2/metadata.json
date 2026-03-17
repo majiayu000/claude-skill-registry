@@ -1,0 +1,11 @@
+{
+  "name": "constraints-principle",
+  "description": "Limita acciones posibles para prevenir errores. Use cuando diseñe formularios, flujos críticos, o sistemas donde los errores son costosos.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/design-principles/constraints-principle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "constraints-principle-vjrivmon-handwriting-ocr-2"
+}

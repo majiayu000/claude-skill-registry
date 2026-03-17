@@ -1,0 +1,11 @@
+{
+  "name": "axiom-ios-graphics",
+  "description": "Use when working with ANY GPU rendering, Metal, OpenGL migration, shaders, frame rate, or display performance. Covers Metal migration, shader conversion, variable refresh rate, ProMotion, render loops",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-ios-graphics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-ios-graphics-charleswiltgen-axiom-2"
+}

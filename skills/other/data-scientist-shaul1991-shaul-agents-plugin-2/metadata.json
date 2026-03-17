@@ -1,0 +1,11 @@
+{
+  "name": "data-scientist",
+  "description": "Data Scientist Agent. ML 모델 개발, 실험, 분석을 담당합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/data-scientist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "data-scientist-shaul1991-shaul-agents-plugin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "wp-env-cli",
+  "description": "Use when running WordPress CLI commands, managing wp-env environments, debugging WordPress sites, or working with databases in local development. Triggers include wp-cli, wp-env, database queries, plu",
+  "repo": "ebinnion/dotfiles",
+  "path": "skills/wp-env-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ebinnion/dotfiles",
+  "dir_name": "wp-env-cli-ebinnion-dotfiles-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "gh-cli-ops",
+  "description": "GitHub CLI (gh) operations for repos, PRs/issues, workflows/runs, secrets/variables, releases/tags, and deployment-related automation. Use when a request involves gh commands, GitHub Actions workflows",
+  "repo": "joelklabo/markdowntown-cli",
+  "path": "codex/skills/gh-cli-ops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown-cli",
+  "dir_name": "gh-cli-ops-joelklabo-markdowntown-cli-2"
+}

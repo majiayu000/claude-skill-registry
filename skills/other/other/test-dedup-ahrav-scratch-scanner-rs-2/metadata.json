@@ -1,0 +1,17 @@
+{
+  "name": "test-dedup",
+  "repo": "ahrav/scratch-scanner-rs",
+  "path": ".claude/skills/test-dedup/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ahrav/scratch-scanner-rs",
+  "dir_name": "test-dedup-ahrav-scratch-scanner-rs-2",
+  "downloaded_at": "2026-03-01T06:32:36.931471Z",
+  "author": "ahrav",
+  "source_url": "https://github.com/ahrav/scratch-scanner-rs/blob/main/.claude/skills/test-dedup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ahrav/scratch-scanner-rs/blob/main/.claude/skills/test-dedup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

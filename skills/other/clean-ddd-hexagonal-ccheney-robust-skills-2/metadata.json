@@ -1,0 +1,11 @@
+{
+  "name": "clean-ddd-hexagonal",
+  "description": "Apply Clean Architecture with Domain-Driven Design and Hexagonal (Ports & Adapters) patterns to backend services. Use when designing APIs, microservices, domain models, repositories, or when user ment",
+  "repo": "ccheney/robust-skills",
+  "path": "skills/clean-ddd-hexagonal",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ccheney/robust-skills",
+  "dir_name": "clean-ddd-hexagonal-ccheney-robust-skills-2"
+}

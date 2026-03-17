@@ -1,0 +1,11 @@
+{
+  "name": "project-hook-setup",
+  "description": "Use when setting up project-specific hooks for Claude Code enforcement. Load during INIT state when .claude/hooks/ is missing, or when creating new project. Installs 5 hooks that read from .claude/con",
+  "repo": "ingpoc/SKILLS",
+  "path": "project-hook-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ingpoc/SKILLS",
+  "dir_name": "project-hook-setup-ingpoc-skills-2"
+}

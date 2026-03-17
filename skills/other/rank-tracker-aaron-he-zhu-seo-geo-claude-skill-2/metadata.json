@@ -1,0 +1,11 @@
+{
+  "name": "rank-tracker",
+  "description": "Tracks and analyzes keyword ranking positions over time for both traditional search results and AI-generated responses. Monitors ranking changes, identifies trends, and alerts on significant movements",
+  "repo": "aaron-he-zhu/seo-geo-claude-skills",
+  "path": "monitor/rank-tracker",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aaron-he-zhu/seo-geo-claude-skills",
+  "dir_name": "rank-tracker-aaron-he-zhu-seo-geo-claude-skill-2"
+}

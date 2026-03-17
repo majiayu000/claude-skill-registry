@@ -1,0 +1,11 @@
+{
+  "name": "prowler-changelog",
+  "description": "Manages changelog entries for Prowler components following keepachangelog.com format. Trigger: When creating PRs, adding changelog entries, or working with any CHANGELOG.md file in ui/, api/, mcp_serv",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/prowler-changelog",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/prowler-cloud/prowler",
+  "dir_name": "prowler-changelog-prowler-cloud-prowler-2"
+}

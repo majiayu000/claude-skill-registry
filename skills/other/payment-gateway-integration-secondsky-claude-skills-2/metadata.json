@@ -1,0 +1,11 @@
+{
+  "name": "payment-gateway-integration",
+  "description": "Integrates payment processing with Stripe, PayPal, or Square including subscriptions, webhooks, and PCI compliance. Use when implementing checkout flows, recurring billing, or handling refunds and dis",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/payment-gateway-integration/skills/payment-gateway-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "payment-gateway-integration-secondsky-claude-skills-2"
+}

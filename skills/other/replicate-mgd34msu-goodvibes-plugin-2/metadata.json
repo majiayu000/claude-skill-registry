@@ -1,0 +1,11 @@
+{
+  "name": "replicate",
+  "description": "Runs open-source ML models via Replicate API for image generation, LLMs, and audio. Use when calling Stable Diffusion, Llama, Whisper, or other models without infrastructure management.",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/skills/replicate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "replicate-mgd34msu-goodvibes-plugin-2"
+}

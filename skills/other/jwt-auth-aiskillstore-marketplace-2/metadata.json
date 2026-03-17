@@ -1,0 +1,11 @@
+{
+  "name": "jwt-auth",
+  "description": "Use when implementing JWT authentication in FastAPI or Python projects.\nTriggers for: token generation, verification middleware, current user extraction,\naccess token creation, token decoding, or role",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/abdul-haseeb360/api-jwt-authenticator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "jwt-auth-aiskillstore-marketplace-2"
+}

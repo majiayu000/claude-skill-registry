@@ -1,0 +1,11 @@
+{
+  "name": "azure-cosmosdb",
+  "description": "Azure Cosmos DB partition keys, consistency levels, change feed, SDK patterns",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/azure-cosmosdb",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "dir_name": "azure-cosmosdb-alinaqi-claude-bootstrap-2"
+}

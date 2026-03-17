@@ -1,0 +1,11 @@
+{
+  "name": "music-composer",
+  "description": "Expert in music composition across all genres, MIDI programming, audio synthesis, music theory, and arrangement. Use when composing music, creating MIDI files, generating melodies/harmonies/rhythms, a",
+  "repo": "PaoloQuaranta/Webarmonium",
+  "path": ".claude/skills/music-composer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PaoloQuaranta/Webarmonium",
+  "dir_name": "music-composer-paoloquaranta-webarmonium-2"
+}

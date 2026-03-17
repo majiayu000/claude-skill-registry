@@ -1,0 +1,11 @@
+{
+  "name": "terraform-infrastructure",
+  "description": "Infrastructure as Code with Terraform for cloud Kubernetes clusters. Covers OKE (Oracle), AKS (Azure), GKE (Google) provisioning, multi-cloud patterns, and state management.",
+  "repo": "Hamza123545/Todo_giaic_five_phases",
+  "path": ".claude/skills/terraform-infrastructure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Hamza123545/Todo_giaic_five_phases",
+  "dir_name": "terraform-infrastructure-hamza123545-todo-giaic-five-phas-2"
+}

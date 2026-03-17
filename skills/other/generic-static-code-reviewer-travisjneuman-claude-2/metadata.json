@@ -1,0 +1,11 @@
+{
+  "name": "generic-static-code-reviewer",
+  "description": "Review static site code for bugs, security issues, performance problems, accessibility gaps, and CLAUDE.md compliance. Enforces pure HTML/CSS/JS standards, minimal page weight, mobile-first design. Us",
+  "repo": "travisjneuman/.claude",
+  "path": "skills/generic-static-code-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/travisjneuman/.claude",
+  "dir_name": "generic-static-code-reviewer-travisjneuman-claude-2"
+}

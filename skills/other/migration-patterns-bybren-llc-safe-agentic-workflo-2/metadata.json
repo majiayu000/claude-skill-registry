@@ -1,0 +1,11 @@
+{
+  "name": "migration-patterns",
+  "description": "Database migration creation with mandatory RLS policies and ARCHitect approval workflow. Use when creating migrations, adding tables with RLS, or updating Prisma schema.",
+  "repo": "bybren-llc/safe-agentic-workflow",
+  "path": ".gemini/skills/migration-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bybren-llc/safe-agentic-workflow",
+  "dir_name": "migration-patterns-bybren-llc-safe-agentic-workflo-2"
+}

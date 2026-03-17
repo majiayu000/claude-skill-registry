@@ -1,0 +1,11 @@
+{
+  "name": "metaxy",
+  "description": "This skill should be used when the user asks to \"define a feature\", \"create a BaseFeature class\", \"track feature versions\", \"set up metadata store\", \"field-level dependencies\", \"FieldSpec\", \"FeatureDe",
+  "repo": "anam-org/metaxy",
+  "path": ".claude-plugin/skills/metaxy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/anam-org/metaxy",
+  "dir_name": "metaxy-anam-org-metaxy-2"
+}

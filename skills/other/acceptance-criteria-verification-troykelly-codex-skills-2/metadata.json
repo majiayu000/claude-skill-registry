@@ -1,0 +1,11 @@
+{
+  "name": "acceptance-criteria-verification",
+  "description": "Use after implementing features - verifies each acceptance criterion with structured testing and posts verification reports to the GitHub issue",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/acceptance-criteria-verification",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "acceptance-criteria-verification-troykelly-codex-skills-2"
+}

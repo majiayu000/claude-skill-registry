@@ -1,0 +1,11 @@
+{
+  "name": "juggle",
+  "description": "Task management via CLI for agent loops. Balls are tasks with acceptance criteria; sessions group related balls. Use when working on a project with a .juggle/ directory, when user mentions juggle/ball",
+  "repo": "ohare93/juggle",
+  "path": "skills/juggle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ohare93/juggle",
+  "dir_name": "juggle-ohare93-juggle-2"
+}

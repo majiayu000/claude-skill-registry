@@ -1,0 +1,11 @@
+{
+  "name": "saudi-patient-testing",
+  "description": "Test case execution guide for Saudi telehealth patients in Dr. Sophia AI. Covers 5 test cases (Ahmed, Fatima, Abdullah, Sara, Aisha), data separation principles (historical vs current symptoms), succe",
+  "repo": "adaptationio/Skrillz",
+  "path": "skill-builder-package/examples/saudi-patient-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "saudi-patient-testing-adaptationio-skrillz-2"
+}

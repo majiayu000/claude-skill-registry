@@ -1,0 +1,11 @@
+{
+  "name": "orcaflex-operability",
+  "description": "Perform operability analysis combining multiple sea states to assess system availability and weather downtime. Generate operability envelopes, critical heading analysis, and downtime calculations from",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcaflex-operability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcaflex-operability-vamseeachanta-digitalmodel-2"
+}

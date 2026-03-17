@@ -1,0 +1,11 @@
+{
+  "name": "apollo",
+  "description": "Interact with Apollo.io REST API (people/org enrichment, search, lists).",
+  "repo": "clawdbot/skills",
+  "path": "skills/jhumanj/apollo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "apollo-clawdbot-skills-2"
+}

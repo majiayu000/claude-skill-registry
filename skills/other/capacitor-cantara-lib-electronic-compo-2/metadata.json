@@ -1,0 +1,11 @@
+{
+  "name": "capacitor",
+  "description": "Use when working with capacitor components - adding capacitor patterns, parsing capacitor MPNs, extracting capacitance values, voltage ratings, dielectric types, or package codes from capacitor part n",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/capacitor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "capacitor-cantara-lib-electronic-compo-2"
+}

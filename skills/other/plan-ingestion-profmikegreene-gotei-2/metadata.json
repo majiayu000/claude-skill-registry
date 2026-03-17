@@ -1,0 +1,11 @@
+{
+  "name": "plan-ingestion",
+  "description": "Parse and ingest pilot plans and hypotheses into structured data for downstream analysis. Use when needing to extract objectives, deliverables, timelines, or hypotheses from pilot documentation.",
+  "repo": "profmikegreene/gotei",
+  "path": "Gotei_Skills/plan-ingestion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/profmikegreene/gotei",
+  "dir_name": "plan-ingestion-profmikegreene-gotei-2"
+}

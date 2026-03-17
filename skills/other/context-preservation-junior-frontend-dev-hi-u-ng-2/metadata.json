@@ -1,0 +1,11 @@
+{
+  "name": "context-preservation",
+  "description": "Generate structured handoff summaries between workflow phases. Use when transitioning between RQPIV phases.",
+  "repo": "Junior-Frontend-dev/Hi-u-ng",
+  "path": ".claude/skills/shared/context-preservation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Junior-Frontend-dev/Hi-u-ng",
+  "dir_name": "context-preservation-junior-frontend-dev-hi-u-ng-2"
+}

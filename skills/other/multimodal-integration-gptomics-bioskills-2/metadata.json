@@ -1,0 +1,11 @@
+{
+  "name": "multimodal-integration",
+  "description": "Analyze multi-modal single-cell data (CITE-seq, Multiome, spatial). Use when working with data that measures multiple modalities per cell like RNA + protein or RNA + ATAC.",
+  "repo": "GPTomics/bioSkills",
+  "path": "single-cell/multimodal-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "multimodal-integration-gptomics-bioskills-2"
+}

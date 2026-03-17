@@ -1,0 +1,9 @@
+{
+  "name": "kubernetes-helm-deployment",
+  "repo": "Syedaashnaghazanfar/todo-app",
+  "path": ".claude/skills/kubernetes-helm-deployment/SKILL.md",
+  "category": "other",
+  "source": "github.com/Syedaashnaghazanfar/todo-app",
+  "dir_name": "kubernetes-helm-deployment",
+  "downloaded_at": "2026-02-22T05:47:25.595589Z"
+}

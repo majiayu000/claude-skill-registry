@@ -1,0 +1,11 @@
+{
+  "name": "i18n-translation-guide",
+  "description": "Implement internationalization (i18n) in Ballee using react-i18next with Trans component and useTranslation hook; use when adding user-facing text, translating components, implementing toast messages,",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/i18n-translation-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "i18n-translation-guide-javeedishaq-ai-workflow-orchestr-2"
+}

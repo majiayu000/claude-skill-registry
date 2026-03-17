@@ -1,0 +1,11 @@
+{
+  "name": "fix-pr-review",
+  "description": "Address PR review comments by selecting appropriate skills based on modified files. Use when fixing review feedback on pull requests.",
+  "repo": "hiromaily/go-crypto-wallet",
+  "path": ".claude/skills/fix-pr-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hiromaily/go-crypto-wallet",
+  "dir_name": "fix-pr-review-hiromaily-go-crypto-wallet-2"
+}

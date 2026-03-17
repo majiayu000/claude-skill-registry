@@ -1,0 +1,11 @@
+{
+  "name": "use-verify",
+  "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs",
+  "repo": "mtthsnc/autonome",
+  "path": "skills/use-verify",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mtthsnc/autonome",
+  "dir_name": "use-verify-mtthsnc-autonome-2"
+}

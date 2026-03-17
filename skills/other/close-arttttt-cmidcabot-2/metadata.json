@@ -1,0 +1,11 @@
+{
+  "name": "close",
+  "description": "Close task in tracker. Use when the user invokes /close or asks to close a tracker issue.",
+  "repo": "arttttt/CMIDCABot",
+  "path": ".codex/skills/close",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arttttt/CMIDCABot",
+  "dir_name": "close-arttttt-cmidcabot-2"
+}

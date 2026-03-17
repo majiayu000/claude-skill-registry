@@ -1,0 +1,11 @@
+{
+  "name": "sitemap-audit",
+  "description": "Audit website sitemaps for AEO optimization opportunities. Use when analyzing site structure, checking indexed URLs, planning content migrations, or when user mentions \"sitemap\", \"site structure\", \"UR",
+  "repo": "NoCodeify/aeo",
+  "path": ".claude/skills/sitemap-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NoCodeify/aeo",
+  "dir_name": "sitemap-audit-nocodeify-aeo-2"
+}

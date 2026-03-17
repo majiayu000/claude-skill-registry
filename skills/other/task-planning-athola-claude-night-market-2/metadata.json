@@ -1,0 +1,11 @@
+{
+  "name": "task-planning",
+  "description": "Transforms specifications and implementation plans into actionable, dependency-ordered tasks. Creates phased breakdowns that guide systematic implementation.",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/spec-kit/skills/task-planning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "task-planning-athola-claude-night-market-2"
+}

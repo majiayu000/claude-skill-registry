@@ -1,0 +1,11 @@
+{
+  "name": "linter-fix-guide",
+  "description": "Explain lint errors and propose fixes. Use when a junior developer needs help resolving common lint or format warnings.",
+  "repo": "proflead/codex-skills-library",
+  "path": "skills/foundation/linter-fix-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proflead/codex-skills-library",
+  "dir_name": "linter-fix-guide-proflead-codex-skills-library-2"
+}

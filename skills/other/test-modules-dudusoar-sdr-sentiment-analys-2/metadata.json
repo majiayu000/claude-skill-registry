@@ -1,0 +1,11 @@
+{
+  "name": "test-modules",
+  "description": "Test script creation and execution for Python modules, focusing on functional testing, unit testing, and integration testing. Use when creating test scripts for software modules, running tests to veri",
+  "repo": "dudusoar/sdr-sentiment-analysis",
+  "path": ".claude/skills/test-modules",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dudusoar/sdr-sentiment-analysis",
+  "dir_name": "test-modules-dudusoar-sdr-sentiment-analys-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "accessibility",
+  "description": "Web accessibility ensures that websites and applications are usable by everyone, including people with disabilities. This skill covers WCAG 2.1 compliance, semantic HTML, ARIA patterns, keyboard navig",
+  "repo": "cosmix/loom",
+  "path": "skills/accessibility",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "accessibility-cosmix-loom-2"
+}

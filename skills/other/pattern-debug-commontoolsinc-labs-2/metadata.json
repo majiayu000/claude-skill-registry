@@ -1,0 +1,11 @@
+{
+  "name": "pattern-debug",
+  "description": "Debug pattern errors systematically",
+  "repo": "commontoolsinc/labs",
+  "path": ".claude/skills/pattern-debug",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/commontoolsinc/labs",
+  "dir_name": "pattern-debug-commontoolsinc-labs-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-200-scope-decomposer",
+  "description": "Orchestrates full decomposition (scope → Epics → Stories) by delegating ln-210 → ln-220. Sequential Story decomposition per Epic. Epic 0 for Infrastructure.",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-200-scope-decomposer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-200-scope-decomposer-boisenoise-skills-collections-2"
+}

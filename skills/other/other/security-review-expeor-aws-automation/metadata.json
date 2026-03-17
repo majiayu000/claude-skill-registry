@@ -1,0 +1,9 @@
+{
+  "name": "security-review",
+  "repo": "expeor/aws-automation",
+  "path": ".claude/skills/security-review/SKILL.md",
+  "category": "other",
+  "source": "github.com/expeor/aws-automation",
+  "dir_name": "security-review-expeor-aws-automation",
+  "downloaded_at": "2026-02-22T07:07:10.678252Z"
+}

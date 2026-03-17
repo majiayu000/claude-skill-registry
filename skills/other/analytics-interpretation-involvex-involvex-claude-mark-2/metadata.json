@@ -1,0 +1,11 @@
+{
+  "name": "analytics-interpretation",
+  "description": "Interpret GA4, GSC, and SE Ranking data for content optimization.\nProvides benchmarks, status indicators, and actionable insights.",
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/seo/skills/analytics-interpretation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "dir_name": "analytics-interpretation-involvex-involvex-claude-mark-2"
+}

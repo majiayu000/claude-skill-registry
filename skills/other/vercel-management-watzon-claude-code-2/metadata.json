@@ -1,0 +1,11 @@
+{
+  "name": "vercel-management",
+  "description": "Use when deploying, managing, or working with Vercel projects without using the dashboard.\nTriggers: \"vercel deploy\", \"manage vercel\", \"vercel project\", \"vercel domain\", \"vercel environment\",\n\"vercel ",
+  "repo": "watzon/claude-code",
+  "path": "skills/vercel-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/watzon/claude-code",
+  "dir_name": "vercel-management-watzon-claude-code-2"
+}

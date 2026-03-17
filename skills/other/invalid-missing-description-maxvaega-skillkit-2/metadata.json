@@ -1,0 +1,11 @@
+{
+  "name": "invalid-missing-description",
+  "description": "This skill should fail validation because it has no description.",
+  "repo": "maxvaega/skillkit",
+  "path": "tests/fixtures/skills/invalid-missing-description",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "invalid-missing-description-maxvaega-skillkit-2"
+}

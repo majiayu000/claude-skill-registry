@@ -1,0 +1,11 @@
+{
+  "name": "quality-code-review",
+  "description": "Perform systematic self-review of code changes before commits using structured checklist. Validates architecture boundaries, code quality, test coverage, documentation, and project-specific anti-patte",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/quality-code-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "quality-code-review-dawiddutoit-custom-claude-2"
+}

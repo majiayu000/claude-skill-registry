@@ -1,0 +1,11 @@
+{
+  "name": "data-lake-platform",
+  "description": "Universal data lake and lakehouse patterns covering ingestion (dlt, Airbyte), transformation (SQLMesh, dbt), storage formats (Iceberg, Delta, Hudi, Parquet), query engines (ClickHouse, DuckDB, Doris, ",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/data-lake-platform",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "data-lake-platform-vasilyu1983-ai-agents-public-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "similarity-transistor",
+  "description": "Use when working with transistor similarity calculations - comparing BJT MPNs, understanding NPN/PNP polarity matching, equivalent groups like 2N2222/PN2222, or transistor-specific similarity logic.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/similarity-transistor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "similarity-transistor-cantara-lib-electronic-compo-2"
+}

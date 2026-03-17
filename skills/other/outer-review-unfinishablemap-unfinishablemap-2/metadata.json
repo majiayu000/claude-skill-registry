@@ -1,0 +1,11 @@
+{
+  "name": "outer-review",
+  "description": "Commission and process external AI analysis to reduce blind spots. Manual invocation only.",
+  "repo": "unfinishablemap/unfinishablemap",
+  "path": ".claude/skills/outer-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/unfinishablemap/unfinishablemap",
+  "dir_name": "outer-review-unfinishablemap-unfinishablemap-2"
+}

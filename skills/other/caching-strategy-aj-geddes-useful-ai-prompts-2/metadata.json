@@ -1,0 +1,11 @@
+{
+  "name": "caching-strategy",
+  "description": "Implement efficient caching strategies using Redis, Memcached, CDN, and cache invalidation patterns. Use when optimizing application performance, reducing database load, or improving response times.",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/caching-strategy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "dir_name": "caching-strategy-aj-geddes-useful-ai-prompts-2"
+}

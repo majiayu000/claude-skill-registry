@@ -1,0 +1,11 @@
+{
+  "name": "optimization-phase",
+  "description": "Validates production readiness through performance benchmarking, accessibility audits, security reviews, and code quality checks. Use after implementation phase completes, before deployment, or when c",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/optimization-phase",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "optimization-phase-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+}

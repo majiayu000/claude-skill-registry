@@ -1,0 +1,59 @@
+---
+name: email-drafting
+description: 快速拉齐受众、目的、语气和 CTA 的邮件写作 SOP，覆盖新建邮件与回复线程两种常见场景。
+triggers:
+  intent_patterns:
+    - "email|邮件|写信|reply|回复邮件"
+  context_signals:
+    keywords: ["email", "邮件", "回复", "draft", "subject"]
+  confidence_threshold: 0.6
+priority: 6
+exclusive_group: writing
+max_tokens: 1600
+cooldown: 120
+output:
+  format: markdown
+  artifacts: true
+  artifact_type: document
+---
+
+# 邮件写作（新邮件与线程回复）
+
+## When to use this skill
+- 需要撰写或回复英文/中文工作邮件，确保信息完整、语气得体、CTA 明确。  
+- 需要整理零散信息，输出结构化邮件草稿（主题、背景、决策/请求、后续行动）。
+
+## 必备输入
+- **受众与关系**：收件人/抄送是谁？决策人/执行人/知情人各是谁？  
+- **目的**：通知/请求决策/对齐事实/推动行动/风险预警？  
+- **上下文**：相关链接、附件、已讨论结论或未决问题。  
+- **语气**：正式/简洁/友好；是否需要中英双语。  
+- **期限**：期待回复或完成的时间点。
+
+## 工作流
+1. **整理要点**：一句话说明目的；列出关键事实与未决点；写出希望对方行动或回复的具体项。  
+2. **确定结构**：  
+   - 新邮件：`Subject → Opening → Context → Key points/Decisions → Requests/CTAs → Next steps → Thanks`。  
+   - 线程回复：先引用/确认上条消息的关键信息，再补充更新/结论/阻塞，最后给出明确 CTA。  
+3. **起草文本**：保持短句；每段只覆盖一个主题；数字/日期/owners 用粗体或列表凸显。  
+4. **检查三件事**：  
+   - 主题是否包含核心动作/对象（如 `[Action Needed] API rollout plan by Fri`）。  
+   - CTA 是否可执行且可见（Owner + 截止时间 + 成功标准）。  
+   - 附件/链接是否齐全且命名清晰。  
+5. **输出格式**：先给出主题行，正文按段落+列表呈现；如需多语言，先主语言再附简要译文。
+
+## 回复模板（示例）
+- **确认并推进**：  
+  ```
+  Subject: Re: <原主题>
+  Thanks for the update. Summary: <一句话总结>.
+  ✅ Actions: <列出已完成或正在进行事项>.
+  🔜 Next: <下一步动作 + 负责人 + 时间>.
+  Blockers/asks: <需要对方决策/资源/信息>.
+  ```
+- **澄清需求**：明确缺失信息列表，邀请对方补充。
+
+## 最终检查清单
+- 主题直截了当，正文开头 2 句话能让新读者知道“我需要你做什么”。  
+- 所有日期都有时区，金额/度量单位标注清楚。  
+- 收件人与抄送合理（决策在 TO，知情在 CC）。

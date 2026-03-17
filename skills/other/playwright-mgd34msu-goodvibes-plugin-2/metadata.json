@@ -1,0 +1,11 @@
+{
+  "name": "playwright",
+  "description": "Tests web applications with Playwright including E2E tests, locators, assertions, and visual testing. Use when writing end-to-end tests, testing across browsers, automating user flows, or debugging te",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/webdev/testing/playwright",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "playwright-mgd34msu-goodvibes-plugin-2"
+}

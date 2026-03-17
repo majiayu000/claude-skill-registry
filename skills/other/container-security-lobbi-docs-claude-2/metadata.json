@@ -1,0 +1,11 @@
+{
+  "name": "container-security",
+  "description": "Comprehensive container security guidance including vulnerability scanning with Trivy, image hardening, secrets management, and CIS benchmark compliance. Activates when working with \"container securit",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/container-workflow/skills/container-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "container-security-lobbi-docs-claude-2"
+}

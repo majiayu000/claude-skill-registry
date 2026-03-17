@@ -1,0 +1,11 @@
+{
+  "name": "bedrock-agents",
+  "description": "Amazon Bedrock Agents for building autonomous AI agents with foundation model orchestration, action groups, knowledge bases, and session management. Use when creating AI agents, orchestrating multi-st",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/bedrock-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "bedrock-agents-adaptationio-skrillz-2"
+}

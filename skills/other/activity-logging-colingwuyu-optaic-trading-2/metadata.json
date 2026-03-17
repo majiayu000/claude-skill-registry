@@ -1,0 +1,11 @@
+{
+  "name": "activity-logging",
+  "description": "Follow these patterns when implementing activity emission and audit logging in OptAIC. Use for emitting ActivityEnvelopes on mutations (create, update, delete, execute), designing payloads, and ensuri",
+  "repo": "colingwuyu/optaic-trading",
+  "path": ".claude/skills/activity-logging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/colingwuyu/optaic-trading",
+  "dir_name": "activity-logging-colingwuyu-optaic-trading-2"
+}

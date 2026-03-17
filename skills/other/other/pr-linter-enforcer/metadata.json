@@ -1,0 +1,9 @@
+{
+  "name": "pr-linter-enforcer",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/pr-linter-enforcer/SKILL.md",
+  "category": "other",
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "pr-linter-enforcer",
+  "downloaded_at": "2026-02-22T05:56:39.086231Z"
+}

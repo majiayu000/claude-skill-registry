@@ -1,0 +1,11 @@
+{
+  "name": "linkerd-expert",
+  "description": "Expert-level Linkerd service mesh management, traffic control, reliability, and production operations",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/devops/linkerd-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "linkerd-expert-personamanagmentlaye-pcl-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "create-clickup-task",
+  "description": "Create ClickUp tasks with proper formatting, task types, custom fields, and assignment. Use when the user wants to create a task, bug, feature, or ticket in ClickUp, or when they mention Sprint planni",
+  "repo": "colinmollenhour/dotfiles",
+  "path": ".claude/skills/create-clickup-task",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/colinmollenhour/dotfiles",
+  "dir_name": "create-clickup-task-colinmollenhour-dotfiles-2"
+}

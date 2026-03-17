@@ -1,0 +1,9 @@
+{
+  "name": "file-validator",
+  "repo": "cisco-ai-defense/skill-scanner",
+  "path": "evals/skills/safe-skills-2/file-validator/SKILL.md",
+  "category": "other",
+  "source": "github.com/cisco-ai-defense/skill-scanner",
+  "dir_name": "file-validator",
+  "downloaded_at": "2026-02-22T06:42:48.230053Z"
+}

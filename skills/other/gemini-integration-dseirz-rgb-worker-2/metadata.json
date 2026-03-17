@@ -1,0 +1,11 @@
+{
+  "name": "gemini-integration",
+  "description": "Google Gemini API 集成指南：提供 AI 分析、提示词工程、流式响应和多模态处理的最佳实践。\nUse when: 需要集成 Gemini API、编写提示词、处理流式响应、多模态输入。\nTriggers: \"Gemini\", \"AI\", \"LLM\", \"提示词\", \"prompt\", \"流式\", \"streaming\", \"多模态\"\n",
+  "repo": "dseirz-rgb/worker",
+  "path": ".kiro/skills/gemini-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dseirz-rgb/worker",
+  "dir_name": "gemini-integration-dseirz-rgb-worker-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "form-validation-architect",
+  "description": "End-to-end form handling with react-hook-form, Zod schemas, validation patterns, error messaging, field arrays, and multi-step wizards. Use for complex forms, validation architecture, autosave, field ",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/form-validation-architect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "form-validation-architect-erichowens-some-claude-skills-2"
+}

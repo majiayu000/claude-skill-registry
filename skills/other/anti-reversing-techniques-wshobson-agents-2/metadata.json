@@ -1,0 +1,11 @@
+{
+  "name": "anti-reversing-techniques",
+  "description": "Understand anti-reversing, obfuscation, and protection techniques encountered during software analysis. Use when analyzing protected binaries, bypassing anti-debugging for authorized analysis, or unde",
+  "repo": "wshobson/agents",
+  "path": "plugins/reverse-engineering/skills/anti-reversing-techniques",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wshobson/agents",
+  "dir_name": "anti-reversing-techniques-wshobson-agents-2"
+}

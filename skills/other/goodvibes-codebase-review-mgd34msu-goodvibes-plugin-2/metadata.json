@@ -1,0 +1,11 @@
+{
+  "name": "goodvibes-codebase-review",
+  "description": "Comprehensive codebase review and parallel agent-based remediation skill.  Use PROACTIVELY when agent needs to perform full codebase audit, generate  master findings report with quantified metrics, an",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/goodvibes-codebase-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "dir_name": "goodvibes-codebase-review-mgd34msu-goodvibes-plugin-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "workspace-unified",
+  "description": "Unified Google Workspace management via WorkspaceACSet. Transforms operations into GF(3)-typed Interactions across Gmail, Drive, Calendar, Tasks, Docs with cross-skill morphisms and MCP↔API equivalenc",
+  "repo": "plurigrid/asi",
+  "path": "skills/workspace-unified",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "workspace-unified-plurigrid-asi-2"
+}

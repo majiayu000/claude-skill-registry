@@ -1,0 +1,11 @@
+{
+  "name": "diff-analysis",
+  "description": "Structured method for analyzing changesets: categorize changes, assess risks, generate insights. Works for git diffs, configuration changes, API migrations, schema updates, or document revisions.",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/imbue/skills/diff-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "diff-analysis-athola-claude-night-market-2"
+}

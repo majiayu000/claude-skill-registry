@@ -1,0 +1,11 @@
+{
+  "name": "create-hooks",
+  "description": "Guide for creating Claude Code hooks with proper configuration, shell commands, event handling, and security practices. Use when the user wants to create hooks, automate workflows, add event handlers,",
+  "repo": "ronnycoding/.claude",
+  "path": "skills/create-hooks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ronnycoding/.claude",
+  "dir_name": "create-hooks-ronnycoding-claude-2"
+}

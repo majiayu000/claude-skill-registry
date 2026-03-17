@@ -1,0 +1,11 @@
+{
+  "name": "dart-python",
+  "description": "DART Python bindings (dartpy) - nanobind, wheel building, API patterns",
+  "repo": "dartsim/dart",
+  "path": ".claude/skills/dart-python",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dartsim/dart",
+  "dir_name": "dart-python-dartsim-dart-2"
+}

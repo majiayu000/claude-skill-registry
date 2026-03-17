@@ -1,0 +1,11 @@
+{
+  "name": "seaborn",
+  "description": "Statistical visualization with pandas integration. Use for quick exploration of distributions, relationships, and categorical comparisons with attractive defaults. Best for box plots, violin plots, pa",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/visualization/seaborn",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "seaborn-hxk622-tokendance-2"
+}

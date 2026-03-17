@@ -1,0 +1,11 @@
+{
+  "name": "test-review",
+  "description": "Use this skill to review unit-tests, component-tests, and integration tests.",
+  "repo": "wmeints/promptyard",
+  "path": ".claude/skills/test-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wmeints/promptyard",
+  "dir_name": "test-review-wmeints-promptyard-2"
+}

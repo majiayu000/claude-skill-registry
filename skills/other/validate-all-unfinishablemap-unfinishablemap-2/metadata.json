@@ -1,0 +1,11 @@
+{
+  "name": "validate-all",
+  "description": "Run comprehensive validation on all site content. Use for daily health checks or before deployment.",
+  "repo": "unfinishablemap/unfinishablemap",
+  "path": ".claude/skills/validate-all",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/unfinishablemap/unfinishablemap",
+  "dir_name": "validate-all-unfinishablemap-unfinishablemap-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "readmes",
+  "description": "Check all READMEs for accuracy and consistency across the meta-repo",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/readmes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "readmes-taylorhuston-local-life-manager-2"
+}

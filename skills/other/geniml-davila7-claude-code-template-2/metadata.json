@@ -1,0 +1,11 @@
+{
+  "name": "geniml",
+  "description": "This skill should be used when working with genomic interval data (BED files) for machine learning tasks. Use for training region embeddings (Region2Vec, BEDspace), single-cell ATAC-seq analysis (scEm",
+  "repo": "davila7/claude-code-templates",
+  "path": "cli-tool/components/skills/scientific/geniml",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davila7/claude-code-templates",
+  "dir_name": "geniml-davila7-claude-code-template-2"
+}

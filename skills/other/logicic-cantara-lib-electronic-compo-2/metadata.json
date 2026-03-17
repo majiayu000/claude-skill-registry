@@ -1,0 +1,11 @@
+{
+  "name": "logicic",
+  "description": "Use when working with 74xx and CD4xxx series logic ICs - standard TTL/CMOS logic gates, flip-flops, counters, decoders, multiplexers. Includes technology families (LS, HC, HCT, AC, AHC) and LogicICHan",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/logicic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "logicic-cantara-lib-electronic-compo-2"
+}

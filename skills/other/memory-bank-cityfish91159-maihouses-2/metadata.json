@@ -1,0 +1,11 @@
+{
+  "name": "memory_bank",
+  "description": "Establishes a persistent \"Long-Term Memory\" file to prevent context amnesia across sessions.",
+  "repo": "cityfish91159/maihouses",
+  "path": ".claude/skills/memory_bank",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cityfish91159/maihouses",
+  "dir_name": "memory-bank-cityfish91159-maihouses-2"
+}

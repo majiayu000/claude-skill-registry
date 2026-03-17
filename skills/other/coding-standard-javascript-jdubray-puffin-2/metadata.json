@@ -1,0 +1,11 @@
+{
+  "name": "coding-standard-javascript",
+  "description": "Enforce JavaScript/ES6+ and TypeScript coding standards including camelCase variables, PascalCase classes, and kebab-case filenames.",
+  "repo": "jdubray/puffin",
+  "path": ".claude/skills/coding-standard-javascript",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jdubray/puffin",
+  "dir_name": "coding-standard-javascript-jdubray-puffin-2"
+}

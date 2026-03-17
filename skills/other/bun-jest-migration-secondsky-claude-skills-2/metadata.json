@@ -1,0 +1,11 @@
+{
+  "name": "bun-jest-migration",
+  "description": "Use when migrating from Jest to Bun's test runner, import compatibility, mocks, and config.",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/bun/skills/bun-jest-migration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "bun-jest-migration-secondsky-claude-skills-2"
+}

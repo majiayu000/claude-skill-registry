@@ -1,0 +1,11 @@
+{
+  "name": "amplifier-modulebuilder-skill",
+  "description": "Build amplifier-foundation modules using \"bricks and studs\" architecture. Covers tool, hook, provider, context, and orchestrator modules with testing, publishing, and best practices.",
+  "repo": "michaeljabbour/amplifier-modulebuilder-skill",
+  "path": "skills/amplifier-modulebuilder-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/michaeljabbour/amplifier-modulebuilder-skill",
+  "dir_name": "amplifier-modulebuilder-skill-michaeljabbour-amplifier-modulebuil-2"
+}

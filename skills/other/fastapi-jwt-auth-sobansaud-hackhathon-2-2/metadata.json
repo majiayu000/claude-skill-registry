@@ -1,0 +1,11 @@
+{
+  "name": "fastapi-jwt-auth",
+  "description": "This skill should be used when implementing secure, reusable JWT verification dependency for FastAPI routes. It ensures strict user isolation and identity verification using Better Auth secrets.",
+  "repo": "Sobansaud/Hackhathon---2",
+  "path": "Phase 4/.claude/skills/fastapi-jwt-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sobansaud/Hackhathon---2",
+  "dir_name": "fastapi-jwt-auth-sobansaud-hackhathon-2-2"
+}

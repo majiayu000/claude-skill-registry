@@ -1,0 +1,11 @@
+{
+  "name": "agent-review",
+  "description": "Get external agent review and feedback. Routes Anthropic models through Claude Agent SDK (uses local subscription) and other models through OpenRouter API. Use for code review, architecture feedback, ",
+  "repo": "civitai/civitai",
+  "path": ".claude/skills/agent-review",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/civitai/civitai",
+  "dir_name": "agent-review-civitai-civitai-2"
+}

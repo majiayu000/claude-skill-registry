@@ -1,0 +1,11 @@
+{
+  "name": "developer-detective",
+  "description": "⚡ PRIMARY TOOL for: 'how does X work', 'find implementation of', 'trace data flow', 'where is X defined', 'audit integrations', 'find all usages'. Uses claudemem v0.3.0 AST with callers/callees analys",
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/code-analysis/skills/developer-detective",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "dir_name": "developer-detective-involvex-involvex-claude-mark-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "compact",
+  "description": "Compresses context for long sessions by writing state to disk and clearing working memory. Use when context is high/critical or before complex multi-step work.",
+  "repo": "RustyLindquist/EnhancedHR",
+  "path": ".claude/skills/compact",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RustyLindquist/EnhancedHR",
+  "dir_name": "compact-rustylindquist-enhancedhr-2"
+}

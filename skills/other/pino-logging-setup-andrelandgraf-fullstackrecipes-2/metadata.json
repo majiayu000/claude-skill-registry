@@ -1,0 +1,11 @@
+{
+  "name": "pino-logging-setup",
+  "description": "Configure structured logging with Pino. Outputs human-readable colorized logs in development and structured JSON in production for log aggregation services.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/pino-logging-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "pino-logging-setup-andrelandgraf-fullstackrecipes-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "dhh-ruby-style",
+  "description": "Write Ruby and Rails code in DHH's distinctive 37signals style. Use this skill when writing Ruby code, Rails applications, creating models, controllers, or any Ruby file. Triggers on Ruby/Rails code g",
+  "repo": "Activer007/ordinary-claude-skills",
+  "path": "skills_all/dhh-ruby-style",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Activer007/ordinary-claude-skills",
+  "dir_name": "dhh-ruby-style-activer007-ordinary-claude-skil-2"
+}

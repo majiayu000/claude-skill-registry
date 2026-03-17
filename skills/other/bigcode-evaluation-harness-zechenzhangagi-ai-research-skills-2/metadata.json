@@ -1,0 +1,11 @@
+{
+  "name": "bigcode-evaluation-harness",
+  "description": "Evaluates code generation models across HumanEval, MBPP, MultiPL-E, and 15+ benchmarks with pass@k metrics. Use when benchmarking code models, comparing coding abilities, testing multi-language suppor",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "11-evaluation/bigcode-evaluation-harness",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "bigcode-evaluation-harness-zechenzhangagi-ai-research-skills-2"
+}

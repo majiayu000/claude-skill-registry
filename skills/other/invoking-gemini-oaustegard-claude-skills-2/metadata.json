@@ -1,0 +1,11 @@
+{
+  "name": "invoking-gemini",
+  "description": "Invokes Google Gemini models for structured outputs, multi-modal tasks, and Google-specific features. Use when users request Gemini, structured JSON output, Google API integration, or cost-effective p",
+  "repo": "oaustegard/claude-skills",
+  "path": "invoking-gemini",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "invoking-gemini-oaustegard-claude-skills-2"
+}

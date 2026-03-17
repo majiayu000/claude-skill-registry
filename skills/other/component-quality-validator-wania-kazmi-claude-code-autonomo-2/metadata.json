@@ -1,0 +1,11 @@
+{
+  "name": "component-quality-validator",
+  "description": "Validates that generated skills, agents, and hooks are production-ready before use.\nScores components against quality criteria and grades them A-F.\nTriggers: validate component, quality check, product",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/component-quality-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "component-quality-validator-wania-kazmi-claude-code-autonomo-2"
+}

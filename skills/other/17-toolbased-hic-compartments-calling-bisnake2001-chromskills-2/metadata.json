@@ -1,0 +1,11 @@
+{
+  "name": "17_toolBased.hic-compartments-calling",
+  "description": "This skill performs PCA-based A/B compartments calling on Hi-C .mcool datasets using pre-defined MCP tools from the cooler-tools, cooltools-tools, and plot-hic-tools servers.",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "17_toolBased.hic-compartments-calling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "17-toolbased-hic-compartments-calling-bisnake2001-chromskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "jackson",
+  "description": "Use when working with Jackson JSON serialization - migrating from Jackson 2.x to 3.x, configuring JsonMapper, handling date/time types, or troubleshooting serialization issues.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/jackson",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "jackson-cantara-lib-electronic-compo-2"
+}

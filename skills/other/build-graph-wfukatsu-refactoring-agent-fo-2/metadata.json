@@ -1,0 +1,11 @@
+{
+  "name": "build-graph",
+  "description": "GraphDB構築エージェント - ユビキタス言語とコード解析結果からRyuGraphデータベースを構築。/build-graph [対象パス] で呼び出し。",
+  "repo": "wfukatsu/refactoring-agent-for-claude-code",
+  "path": ".claude/skills/build-graph",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wfukatsu/refactoring-agent-for-claude-code",
+  "dir_name": "build-graph-wfukatsu-refactoring-agent-fo-2"
+}

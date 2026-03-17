@@ -1,0 +1,11 @@
+{
+  "name": "inertia-patterns",
+  "description": "Enforce Inertia.js patterns in Vue components. Prevents axios usage, ensures proper form handling, and guides navigation patterns. Activates when working with data fetching, form submissions, or page ",
+  "repo": "richardhowes/self-improvement-code-quality-plugin",
+  "path": "code-quality/skills/inertia-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/richardhowes/self-improvement-code-quality-plugin",
+  "dir_name": "inertia-patterns-richardhowes-self-improvement-cod-2"
+}

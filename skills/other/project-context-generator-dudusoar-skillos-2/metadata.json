@@ -1,0 +1,11 @@
+{
+  "name": "project-context-generator",
+  "description": "Transforms user project requirements into a structured CLAUDE.md context file. Use when starting a new project and need to document project goals, architecture, technical stack, constraints, and conve",
+  "repo": "dudusoar/skillOS",
+  "path": ".claude/skills/project-context-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dudusoar/skillOS",
+  "dir_name": "project-context-generator-dudusoar-skillos-2"
+}

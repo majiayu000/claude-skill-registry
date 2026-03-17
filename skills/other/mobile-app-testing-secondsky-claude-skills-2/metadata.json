@@ -1,0 +1,11 @@
+{
+  "name": "mobile-app-testing",
+  "description": "Mobile app testing with unit tests, UI automation, performance testing. Use for test infrastructure, E2E tests, testing standards, or encountering test framework setup, device farms, flaky tests, plat",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/mobile-app-testing/skills/mobile-app-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "mobile-app-testing-secondsky-claude-skills-2"
+}

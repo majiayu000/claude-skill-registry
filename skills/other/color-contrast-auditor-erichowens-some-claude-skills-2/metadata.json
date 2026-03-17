@@ -1,0 +1,11 @@
+{
+  "name": "color-contrast-auditor",
+  "description": "Detects and fixes color contrast violations using WCAG 2.1 guidelines and perceptual analysis. Expert in contrast ratio calculation, color blindness simulation, and providing accessible alternatives. ",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/color-contrast-auditor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "color-contrast-auditor-erichowens-some-claude-skills-2"
+}

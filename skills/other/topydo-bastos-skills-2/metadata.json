@@ -1,0 +1,11 @@
+{
+  "name": "topydo",
+  "description": "Manage todo.txt tasks using topydo CLI. Add, list, complete, prioritize, tag, and organize tasks with dependencies, due dates, recurrence, and projects. Use for any task management, todo lists, or whe",
+  "repo": "bastos/skills",
+  "path": "topydo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bastos/skills",
+  "dir_name": "topydo-bastos-skills-2"
+}

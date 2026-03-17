@@ -1,0 +1,11 @@
+{
+  "name": "skill-creator-browser",
+  "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends AIPex's capabilities with specialized knowledge, workflo",
+  "repo": "AIPexStudio/AIPex",
+  "path": "packages/browser-runtime/src/skill/built-in/skill-creator-browser",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AIPexStudio/AIPex",
+  "dir_name": "skill-creator-browser-aipexstudio-aipex-2"
+}

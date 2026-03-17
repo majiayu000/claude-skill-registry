@@ -1,0 +1,11 @@
+{
+  "name": "styling-with-tailwind",
+  "description": "Provides utility-first CSS styling patterns using Tailwind CSS 3.x. Use when styling components with utility classes, configuring tailwind.config.js, implementing responsive designs, or creating dark ",
+  "repo": "FortiumPartners/ensemble",
+  "path": "packages/development/skills/styling-with-tailwind",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FortiumPartners/ensemble",
+  "dir_name": "styling-with-tailwind-fortiumpartners-ensemble-2"
+}

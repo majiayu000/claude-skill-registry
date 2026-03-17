@@ -1,0 +1,11 @@
+{
+  "name": "template-skill-enhanced",
+  "description": "Brief description of what this skill does (1-2 sentences). Use when [specific trigger condition]. Keep under 200 words total.",
+  "repo": "NickCrew/claude-cortex",
+  "path": "claude_ctx_py/assets/skills/template-skill-enhanced",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NickCrew/claude-cortex",
+  "dir_name": "template-skill-enhanced-nickcrew-claude-cortex-2"
+}

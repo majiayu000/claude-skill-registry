@@ -1,0 +1,11 @@
+{
+  "name": "diagramming-expert",
+  "description": "Master of text-based visual communication using ASCII art, Unicode box-drawing, and structured diagram notation. Creates clear, maintainable diagrams for systems, processes, hierarchies, relationships",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/diagramming-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "diagramming-expert-erichowens-some-claude-skills-2"
+}

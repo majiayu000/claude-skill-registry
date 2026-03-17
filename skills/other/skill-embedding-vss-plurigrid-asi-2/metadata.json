@@ -1,0 +1,11 @@
+{
+  "name": "skill-embedding-vss",
+  "description": "P-adic ultrametric skill embeddings with MLX Snowflake Arctic, DuckDB",
+  "repo": "plurigrid/asi",
+  "path": "skills/skill-embedding-vss",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "skill-embedding-vss-plurigrid-asi-2"
+}

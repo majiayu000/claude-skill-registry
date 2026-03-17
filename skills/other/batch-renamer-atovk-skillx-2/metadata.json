@@ -1,0 +1,11 @@
+{
+  "name": "batch-renamer",
+  "description": "批量重命名文件，支持模式匹配和编号",
+  "repo": "atovk/skillx",
+  "path": "skills/02-file-operations/batch-renamer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/atovk/skillx",
+  "dir_name": "batch-renamer-atovk-skillx-2"
+}

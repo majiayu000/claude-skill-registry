@@ -1,0 +1,11 @@
+{
+  "name": "plan-exec",
+  "description": "Execute tasks in the active plan under `.plan/active/`. Writes concrete Output and Handoff for each task and archives the plan once terminal.\n",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/plan/plan-exec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "plan-exec-jordangunn-nunchuck-2"
+}

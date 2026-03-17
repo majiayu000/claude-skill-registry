@@ -1,0 +1,11 @@
+{
+  "name": "moai-alfred-context-budget",
+  "description": "Claude Code context window optimization strategies, JIT retrieval, progressive loading, memory file patterns, and cleanup practices. Use when optimizing context usage, managing large projects, or impl",
+  "repo": "kivo360/quickhooks",
+  "path": ".claude/skills/moai-alfred-context-budget",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kivo360/quickhooks",
+  "dir_name": "moai-alfred-context-budget-kivo360-quickhooks-2"
+}

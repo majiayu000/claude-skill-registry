@@ -1,0 +1,11 @@
+{
+  "name": "plan-management",
+  "description": "Apply project planning conventions when creating or organizing plans. Use when user asks to create a plan, add a feature plan, document a bug, or work with the plans/ directory.",
+  "repo": "surfdeeper/surfing-game",
+  "path": ".claude/skills/plan-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/surfdeeper/surfing-game",
+  "dir_name": "plan-management-surfdeeper-surfing-game-2"
+}

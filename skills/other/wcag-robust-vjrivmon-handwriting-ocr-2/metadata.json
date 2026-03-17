@@ -1,0 +1,11 @@
+{
+  "name": "wcag-robust",
+  "description": "Principio 4 de WCAG - compatibilidad con tecnologías actuales y futuras. Use cuando implemente HTML, ARIA, o componentes custom para asegurar compatibilidad.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/accessibility/wcag-robust",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "wcag-robust-vjrivmon-handwriting-ocr-2"
+}

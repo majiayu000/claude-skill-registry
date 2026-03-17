@@ -1,0 +1,11 @@
+{
+  "name": "amp-api-awareness",
+  "description": "Extract hidden Amp API patterns from local thread data via DuckDB analysis",
+  "repo": "plurigrid/asi",
+  "path": "skills/amp-api-awareness",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "amp-api-awareness-plurigrid-asi-2"
+}

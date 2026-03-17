@@ -1,0 +1,11 @@
+{
+  "name": "notebooklm-slides",
+  "description": "Generate pedagogically-aligned slide decks from educational content using NotebookLM. Use when creating chapter slide presentations with proficiency-calibrated prompts. NOT for static slides or non-ed",
+  "repo": "panaversity/agentfactory",
+  "path": "docs/_skills_archive/rare/notebooklm-slides",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "notebooklm-slides-panaversity-agentfactory-2"
+}

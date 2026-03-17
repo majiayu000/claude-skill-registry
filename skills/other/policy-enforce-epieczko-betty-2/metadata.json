@@ -1,0 +1,11 @@
+{
+  "name": "policy.enforce",
+  "description": "Enforces policy rules for skill and agent manifests",
+  "repo": "epieczko/betty",
+  "path": "skills/policy.enforce",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/epieczko/betty",
+  "dir_name": "policy-enforce-epieczko-betty-2"
+}

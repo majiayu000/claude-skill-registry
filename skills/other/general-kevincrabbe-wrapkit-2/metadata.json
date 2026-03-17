@@ -1,0 +1,11 @@
+{
+  "name": "general",
+  "description": "General development guidelines prioritizing readability over performance, with rules for meaningful comments. Use when writing any code in this project.",
+  "repo": "kevincrabbe/wrapkit",
+  "path": ".claude/skills/general",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kevincrabbe/wrapkit",
+  "dir_name": "general-kevincrabbe-wrapkit-2"
+}

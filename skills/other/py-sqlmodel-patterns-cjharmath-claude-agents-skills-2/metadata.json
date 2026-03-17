@@ -1,0 +1,11 @@
+{
+  "name": "py-sqlmodel-patterns",
+  "description": "SQLModel and async SQLAlchemy patterns. Use when working with database models, queries, relationships, or debugging ORM issues.",
+  "repo": "CJHarmath/claude-agents-skills",
+  "path": "skills/py-sqlmodel-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CJHarmath/claude-agents-skills",
+  "dir_name": "py-sqlmodel-patterns-cjharmath-claude-agents-skills-2"
+}

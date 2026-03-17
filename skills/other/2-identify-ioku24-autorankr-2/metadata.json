@@ -1,0 +1,11 @@
+{
+  "name": "2.identify",
+  "description": "Identify friction points, bottlenecks, bugs, and technical debt. Use for audits, debugging sessions, when something feels wrong, or before major work to surface hidden issues. This is the second syste",
+  "repo": "ioku24/autorankr",
+  "path": ".claude/skills/5-system-framework/2.identify",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ioku24/autorankr",
+  "dir_name": "2-identify-ioku24-autorankr-2"
+}

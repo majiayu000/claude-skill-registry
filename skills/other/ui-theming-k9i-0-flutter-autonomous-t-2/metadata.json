@@ -1,0 +1,11 @@
+{
+  "name": "ui-theming",
+  "description": "UI theming skill for applying brand designs to Flutter apps. Use when user asks to 'apply X style', 'change theme to Y', 'make it look like Z', or provides reference images for UI design.",
+  "repo": "K9i-0/flutter_autonomous_template",
+  "path": ".claude/skills/ui-theming",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/K9i-0/flutter_autonomous_template",
+  "dir_name": "ui-theming-k9i-0-flutter-autonomous-t-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "responsive-web-design",
+  "description": "Builds adaptive web interfaces using Flexbox, CSS Grid, and media queries with a mobile-first approach. Use when creating multi-device layouts, implementing flexible UI systems, or ensuring cross-brow",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/responsive-web-design/skills/responsive-web-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "responsive-web-design-secondsky-claude-skills-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "spec-generator",
+  "repo": "catlog22/Claude-Code-Workflow",
+  "path": ".claude/skills/spec-generator/SKILL.md",
+  "category": "other",
+  "source": "github.com/catlog22/Claude-Code-Workflow",
+  "dir_name": "spec-generator",
+  "downloaded_at": "2026-02-22T06:39:54.515589Z"
+}

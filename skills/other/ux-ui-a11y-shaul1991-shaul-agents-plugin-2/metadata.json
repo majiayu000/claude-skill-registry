@@ -1,0 +1,11 @@
+{
+  "name": "ux-ui-a11y",
+  "description": "접근성 검사 에이전트. 웹 접근성을 검사하고 개선합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/ux-ui-a11y",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "ux-ui-a11y-shaul1991-shaul-agents-plugin-2"
+}

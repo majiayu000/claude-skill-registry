@@ -1,0 +1,11 @@
+{
+  "name": "codemod",
+  "description": "Codemod (JSSG, ast-grep, workflows) best practices for writing efficient, safe, and maintainable code transformations. This skill should be used when writing, reviewing, or debugging codemods, AST tra",
+  "repo": "pproenca/dot-skills",
+  "path": "skills/.experimental/codemod",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pproenca/dot-skills",
+  "dir_name": "codemod-pproenca-dot-skills-2"
+}

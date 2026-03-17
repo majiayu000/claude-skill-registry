@@ -1,0 +1,11 @@
+{
+  "name": "phase-1-init",
+  "description": "Init phase skill. Creates plan directory, request.md, config, and status. Complete initialization in a single agent call.",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-workflow/skills/phase-1-init",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "phase-1-init-cuioss-plan-marshall-2"
+}

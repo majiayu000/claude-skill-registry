@@ -1,0 +1,11 @@
+{
+  "name": "check-existing-pr",
+  "description": "Check if pull request already exists for current branch to support workflow resumption and prevent duplicate PR creation",
+  "repo": "BerryKuipers/claude-code-toolkit",
+  "path": ".claude/skills/github-integration/check-existing-pr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BerryKuipers/claude-code-toolkit",
+  "dir_name": "check-existing-pr-berrykuipers-claude-code-toolkit-2"
+}

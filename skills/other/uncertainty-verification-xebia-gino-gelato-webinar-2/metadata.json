@@ -1,0 +1,11 @@
+{
+  "name": "uncertainty-verification",
+  "description": "Use when providing exact commands, flags, config keys, file paths, API details, standards, or version-specific behavior - enforces verification via official docs (Context7/web fetch), explicit citatio",
+  "repo": "xebia/gino-gelato-webinar",
+  "path": ".github/skills/uncertainty-verification",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/xebia/gino-gelato-webinar",
+  "dir_name": "uncertainty-verification-xebia-gino-gelato-webinar-2"
+}

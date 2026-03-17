@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-impl-scheduler",
+  "description": "Implementation workflows for Frappe scheduled tasks and background jobs (v14/v15/v16). Covers hooks.py scheduler_events, frappe.enqueue, queue selection, job deduplication, and error handling. Trigger",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/impl/erpnext-impl-scheduler",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-impl-scheduler-openaec-foundation-erpnext-anthropic-cl-2"
+}

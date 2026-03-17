@@ -1,0 +1,11 @@
+{
+  "name": "snowflake-cli",
+  "description": "Executing SQL, managing Snowflake objects, deploying applications, and orchestrating data pipelines using the Snowflake CLI (snow) command. Use this skill when you need to run SQL scripts, deploy Stre",
+  "repo": "sfc-gh-dflippo/snowflake-dbt-demo",
+  "path": ".claude/skills/snowflake-cli",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sfc-gh-dflippo/snowflake-dbt-demo",
+  "dir_name": "snowflake-cli-sfc-gh-dflippo-snowflake-dbt-demo-2"
+}

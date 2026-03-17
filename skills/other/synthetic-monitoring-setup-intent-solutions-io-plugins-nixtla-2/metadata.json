@@ -1,0 +1,11 @@
+{
+  "name": "synthetic-monitoring-setup",
+  "description": "This skill automates the setup of synthetic monitoring for applications. It allows Claude to proactively track performance and availability by configuring uptime, transaction, and API monitoring. Use ",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/performance/synthetic-monitoring-setup/skills/synthetic-monitoring-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "synthetic-monitoring-setup-intent-solutions-io-plugins-nixtla-2"
+}

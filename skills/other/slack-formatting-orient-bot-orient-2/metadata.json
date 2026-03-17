@@ -1,0 +1,11 @@
+{
+  "name": "slack-formatting",
+  "description": "Format messages correctly for Slack using mrkdwn syntax. Use this skill when sending messages to Slack channels or DMs via the AI agent. Covers the differences between standard Markdown and Slack mrkd",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/slack-formatting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "slack-formatting-orient-bot-orient-2"
+}

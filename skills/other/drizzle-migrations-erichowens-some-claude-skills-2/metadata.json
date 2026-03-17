@@ -1,0 +1,11 @@
+{
+  "name": "drizzle-migrations",
+  "description": "Manage database schema with Drizzle ORM and SQLite migrations. Use when adding tables, modifying columns, creating indexes, or running migrations. Activates for database schema changes, migration gene",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/drizzle-migrations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "drizzle-migrations-erichowens-some-claude-skills-2"
+}

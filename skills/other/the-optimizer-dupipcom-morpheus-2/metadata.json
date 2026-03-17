@@ -1,0 +1,11 @@
+{
+  "name": "the-optimizer",
+  "description": "Identifies and fixes performance bottlenecks in the application.",
+  "repo": "dupipcom/morpheus",
+  "path": ".claude/skills/the-optimizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dupipcom/morpheus",
+  "dir_name": "the-optimizer-dupipcom-morpheus-2"
+}

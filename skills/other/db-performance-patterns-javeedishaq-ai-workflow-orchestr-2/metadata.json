@@ -1,0 +1,11 @@
+{
+  "name": "db-performance-patterns",
+  "description": "Patterns for optimizing database queries and preventing connection pool exhaustion. Use when writing batch operations, debugging slow queries, or reviewing code for performance.",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/db-performance-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "db-performance-patterns-javeedishaq-ai-workflow-orchestr-2"
+}

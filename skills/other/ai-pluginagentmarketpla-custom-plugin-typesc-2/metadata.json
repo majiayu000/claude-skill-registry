@@ -1,0 +1,11 @@
+{
+  "name": "ai",
+  "description": "Master AI, machine learning, LLMs, prompt engineering, and blockchain development. Use when building AI applications, working with LLMs, or developing smart contracts.",
+  "repo": "pluginagentmarketplace/custom-plugin-typescript",
+  "path": "skills/ai",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pluginagentmarketplace/custom-plugin-typescript",
+  "dir_name": "ai-pluginagentmarketpla-custom-plugin-typesc-2"
+}

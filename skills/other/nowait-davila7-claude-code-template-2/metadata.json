@@ -1,0 +1,11 @@
+{
+  "name": "nowait",
+  "description": "Implements the NOWAIT technique for efficient reasoning in R1-style LLMs. Use when optimizing inference of reasoning models (QwQ, DeepSeek-R1, Phi4-Reasoning, Qwen3, Kimi-VL, QvQ), reducing chain-of-t",
+  "repo": "davila7/claude-code-templates",
+  "path": "cli-tool/components/skills/productivity/nowait",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davila7/claude-code-templates",
+  "dir_name": "nowait-davila7-claude-code-template-2"
+}

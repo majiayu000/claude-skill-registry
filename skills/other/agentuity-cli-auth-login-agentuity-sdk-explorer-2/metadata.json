@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-auth-login",
+  "description": "Login to the Agentuity Platform using a browser-based authentication flow. Use for managing authentication credentials",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-auth-login",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-auth-login-agentuity-sdk-explorer-2"
+}

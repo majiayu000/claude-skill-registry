@@ -1,0 +1,11 @@
+{
+  "name": "invoke-opencode-acp",
+  "description": "Delegate complex tasks to OpenCode subagent, use when >=2 file modifications or batch operations",
+  "repo": "phonowell/invoke-opencode-acp",
+  "path": "skills/invoke-opencode-acp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/phonowell/invoke-opencode-acp",
+  "dir_name": "invoke-opencode-acp-phonowell-invoke-opencode-acp-2"
+}

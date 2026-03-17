@@ -1,0 +1,11 @@
+{
+  "name": "create-domain-story",
+  "description": "ドメインストーリーテリングエージェント - ドメインストーリーの作成、ビジネスプロセスの可視化。/create-domain-story --domain=[ドメイン名] で呼び出し。",
+  "repo": "wfukatsu/refactoring-agent-for-claude-code",
+  "path": ".claude/skills/create-domain-story",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wfukatsu/refactoring-agent-for-claude-code",
+  "dir_name": "create-domain-story-wfukatsu-refactoring-agent-fo-2"
+}

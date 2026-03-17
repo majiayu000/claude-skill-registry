@@ -1,0 +1,11 @@
+{
+  "name": "gsc",
+  "description": "Query Google Search Console for SEO data - search queries, top pages, CTR opportunities, URL inspection, and sitemaps. Use when analyzing search performance, finding optimization opportunities, or che",
+  "repo": "clawdbot/skills",
+  "path": "skills/jdrhyne/gsc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "gsc-clawdbot-skills-2"
+}

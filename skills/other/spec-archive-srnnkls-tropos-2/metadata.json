@@ -1,0 +1,11 @@
+{
+  "name": "spec-archive",
+  "description": "Archive completed development specs from ./specs/active/ to ./specs/archive/, updating documents with completion status and maintaining archive index. Use when finishing tasks or moving completed work",
+  "repo": "srnnkls/tropos",
+  "path": "skills/spec-archive",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/srnnkls/tropos",
+  "dir_name": "spec-archive-srnnkls-tropos-2"
+}

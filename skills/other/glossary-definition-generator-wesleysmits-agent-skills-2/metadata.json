@@ -1,0 +1,11 @@
+{
+  "name": "glossary-definition-generator",
+  "description": "Builds product and industry glossaries with SEO-optimized definitions. Use when the user asks about glossary creation, term definitions, jargon explanations, knowledge bases, or terminology documentat",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/glossary-definition-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "glossary-definition-generator-wesleysmits-agent-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-custom-api",
+  "description": "Handles custom GitLab API requests. Use for any endpoint not covered by other skills. Triggers: advanced API calls, extensions.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-custom-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-custom-api-knuckles-team-gitlab-api-2"
+}

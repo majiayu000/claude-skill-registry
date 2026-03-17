@@ -1,0 +1,11 @@
+{
+  "name": "lead-enrichment",
+  "description": "Find 5-10 key decision makers per company with verified emails using Parallel, Apollo, and MillionVerifier APIs",
+  "repo": "mahidalhan/claude-hacks",
+  "path": "skills/lead-enrichment/skills/lead-enrichment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mahidalhan/claude-hacks",
+  "dir_name": "lead-enrichment-mahidalhan-claude-hacks-2"
+}

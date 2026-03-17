@@ -1,0 +1,17 @@
+{
+  "name": "hive-credentials",
+  "repo": "aden-hive/hive",
+  "path": ".claude/skills/hive-credentials/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aden-hive/hive",
+  "dir_name": "hive-credentials-aden-hive-hive",
+  "downloaded_at": "2026-03-01T06:28:02.131104Z",
+  "author": "aden-hive",
+  "source_url": "https://github.com/aden-hive/hive/blob/main/.claude/skills/hive-credentials/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aden-hive/hive/blob/main/.claude/skills/hive-credentials/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

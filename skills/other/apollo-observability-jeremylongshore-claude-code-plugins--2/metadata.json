@@ -1,0 +1,11 @@
+{
+  "name": "apollo-observability",
+  "description": "Set up Apollo.io monitoring and observability.\nUse when implementing logging, metrics, tracing, and alerting\nfor Apollo integrations.\nTrigger with phrases like \"apollo monitoring\", \"apollo metrics\",\n\"",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/apollo-pack/skills/apollo-observability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "apollo-observability-jeremylongshore-claude-code-plugins--2"
+}

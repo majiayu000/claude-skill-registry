@@ -1,0 +1,11 @@
+{
+  "name": "smart-bug-fix",
+  "description": "Intelligent bug fixing workflow combining root cause analysis, multi-model reasoning, Codex auto-fix, and comprehensive testing. Uses RCA agent, Codex iteration, and validation to systematically fix b",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/smart-bug-fix",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "dir_name": "smart-bug-fix-dnyoussef-ai-chrome-extension-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "adhd-accountability",
+  "description": "ADHD-optimized accountability for task tracking, abandonment detection, and interventions. Use when tracking tasks, detecting context switches, or providing accountability support.",
+  "repo": "breverdbidder/life-os",
+  "path": ".claude/skills/adhd-accountability",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/breverdbidder/life-os",
+  "dir_name": "adhd-accountability-breverdbidder-life-os-2"
+}

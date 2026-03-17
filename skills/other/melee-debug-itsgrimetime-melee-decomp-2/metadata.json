@@ -1,0 +1,11 @@
+{
+  "name": "melee-debug",
+  "description": "[EXPERIMENTAL] Debug Melee in Dolphin emulator. Breakpoints are unreliable with JIT mode. Use for memory inspection only until stability improves.",
+  "repo": "itsgrimetime/melee-decomp",
+  "path": ".claude/skills/melee-debug",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/itsgrimetime/melee-decomp",
+  "dir_name": "melee-debug-itsgrimetime-melee-decomp-2"
+}

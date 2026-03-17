@@ -1,0 +1,11 @@
+{
+  "name": "decision-logic-framework",
+  "description": "Decision rules for Claude Code skills, scripts, MDs, and workflows - project-agnostic patterns",
+  "repo": "rdmptv/AdbAutoPlayer",
+  "path": ".claude/skills/decision-logic-framework",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rdmptv/AdbAutoPlayer",
+  "dir_name": "decision-logic-framework-rdmptv-adbautoplayer-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "holochain",
+  "description": "Holochain DHT development for distributed coordination. Activate when: (1) Building Holochain applications (hApps), (2) Writing Zome code in Rust, (3) Configuring conductor and lair-keystore, (4) Work",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/holochain",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FlexNetOS/ripple-env",
+  "dir_name": "holochain-flexnetos-ripple-env-2"
+}

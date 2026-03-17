@@ -1,0 +1,11 @@
+{
+  "name": "autonomous",
+  "description": "Execute 1-2+ hour tasks autonomously with minimal supervision. Requires Task Contract (OUTCOME, EXCLUSIONS, DURATION, GUARDRAILS) upfront, then executes with clarification → plan → autonomous work → s",
+  "repo": "ioku24/autorankr",
+  "path": ".claude/skills/autonomous",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ioku24/autorankr",
+  "dir_name": "autonomous-ioku24-autorankr-2"
+}

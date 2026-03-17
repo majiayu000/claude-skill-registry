@@ -1,0 +1,11 @@
+{
+  "name": "llm-cost-optimization",
+  "description": "Strategies for managing and reducing costs in LLM-powered applications, from token economics to RAG architectures.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "42-cost-engineering/llm-cost-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "llm-cost-optimization-amnadtaowsoam-cerebratechai-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "conversations",
+  "description": "Guide for using the Letta Conversations API to manage isolated message threads on agents. Use when building multi-user chat applications, session management, or any scenario requiring separate convers",
+  "repo": "letta-ai/skills",
+  "path": "letta/conversations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/letta-ai/skills",
+  "dir_name": "conversations-letta-ai-skills-2"
+}

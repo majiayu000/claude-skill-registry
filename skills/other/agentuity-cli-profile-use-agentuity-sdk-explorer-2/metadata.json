@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-profile-use",
+  "description": "Switch to a different configuration profile",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-profile-use",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-profile-use-agentuity-sdk-explorer-2"
+}

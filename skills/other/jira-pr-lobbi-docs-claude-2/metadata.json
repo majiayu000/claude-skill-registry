@@ -1,0 +1,11 @@
+{
+  "name": "jira-pr",
+  "description": "Create pull request linked to Jira issue. Use when the user wants to \"create PR\", \"open pull request\", \"submit for review\", or \"jira pr\".",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/jira-pr",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "jira-pr-lobbi-docs-claude-2"
+}

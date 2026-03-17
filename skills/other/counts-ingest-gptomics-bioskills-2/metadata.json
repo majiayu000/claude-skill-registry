@@ -1,0 +1,11 @@
+{
+  "name": "counts-ingest",
+  "description": "Load gene expression count matrices from various formats including CSV, TSV, featureCounts, Salmon, kallisto, and 10X. Use when importing quantification results for downstream analysis.",
+  "repo": "GPTomics/bioSkills",
+  "path": "expression-matrix/counts-ingest",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "counts-ingest-gptomics-bioskills-2"
+}

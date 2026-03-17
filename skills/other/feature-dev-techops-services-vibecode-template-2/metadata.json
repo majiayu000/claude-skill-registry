@@ -1,0 +1,11 @@
+{
+  "name": "feature-dev",
+  "description": "Implement JIRA issues with TDD workflow and multi-agent collaboration. Use when user provides a JIRA issue ID (e.g., \"Implement VIBE-123\", \"Work on TRA-9\", \"Build DEV-456\"). Orchestrates planner, desi",
+  "repo": "techops-services/vibecode-template",
+  "path": ".claude/skills/feature-dev",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/techops-services/vibecode-template",
+  "dir_name": "feature-dev-techops-services-vibecode-template-2"
+}

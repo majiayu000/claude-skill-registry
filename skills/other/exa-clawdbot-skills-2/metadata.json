@@ -1,0 +1,11 @@
+{
+  "name": "exa",
+  "description": "Neural web search and code context via Exa AI API. Requires EXA_API_KEY. Use for finding documentation, code examples, research papers, or company info.",
+  "repo": "clawdbot/skills",
+  "path": "skills/jordyvandomselaar/exa-plus",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "exa-clawdbot-skills-2"
+}

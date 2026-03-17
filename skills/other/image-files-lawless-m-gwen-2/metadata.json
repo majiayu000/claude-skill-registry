@@ -1,0 +1,11 @@
+{
+  "name": "Image Files",
+  "description": "Image manipulation using ImageMagick command-line tools for resizing, converting, optimizing, and batch processing",
+  "repo": "lawless-m/Gwen",
+  "path": ".claude/skills/Image Files",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lawless-m/Gwen",
+  "dir_name": "image-files-lawless-m-gwen-2"
+}

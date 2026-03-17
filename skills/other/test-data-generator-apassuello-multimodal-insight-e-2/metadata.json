@@ -1,0 +1,11 @@
+{
+  "name": "test-data-generator",
+  "description": "This skill enables Claude to generate realistic test data for software development. It uses the test-data-generator plugin to create users, products, orders, and custom schemas for comprehensive testi",
+  "repo": "apassuello/multimodal_insight_engine",
+  "path": ".claude/skills/test-data-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/apassuello/multimodal_insight_engine",
+  "dir_name": "test-data-generator-apassuello-multimodal-insight-e-2"
+}

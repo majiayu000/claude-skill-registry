@@ -1,0 +1,11 @@
+{
+  "name": "scrum-dashboard",
+  "description": "Maintain scrum.ts dashboard following Agentic Scrum principles. Use when editing scrum.ts, updating sprint status, or managing Product Backlog.",
+  "repo": "staticWagomU/dotfiles",
+  "path": "config/claude/skills/scrum-dashboard",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/staticWagomU/dotfiles",
+  "dir_name": "scrum-dashboard-staticwagomu-dotfiles-2"
+}

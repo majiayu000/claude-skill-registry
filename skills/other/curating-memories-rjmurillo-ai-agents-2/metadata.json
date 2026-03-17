@@ -1,0 +1,11 @@
+{
+  "name": "curating-memories",
+  "description": "Guidance for maintaining memory quality through curation. Covers updating outdated memories, marking obsolete content, and linking related knowledge. Use when memories need modification, when new info",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/curating-memories",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "curating-memories-rjmurillo-ai-agents-2"
+}

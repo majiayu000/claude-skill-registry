@@ -1,0 +1,11 @@
+{
+  "name": "pr-packaging",
+  "description": "Package changes into a well-documented pull request. Use before submitting PRs.",
+  "repo": "amattas/retail-demo",
+  "path": ".claude/skills/pr-packaging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/amattas/retail-demo",
+  "dir_name": "pr-packaging-amattas-retail-demo-2"
+}

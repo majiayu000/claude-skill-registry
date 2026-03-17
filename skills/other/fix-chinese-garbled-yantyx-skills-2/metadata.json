@@ -1,0 +1,11 @@
+{
+  "name": "fix-chinese-garbled",
+  "description": "智能检测和修复中文乱码内容。支持识别和修复 8 种常见乱码类型（古文码、口字码、符号码、拼音码、问句码、锟拷码、烫烫烫、屯屯屯）。当遇到中文文件显示异常、字符串乱码、需要判断编码问题或修复乱码文本时使用此技能。",
+  "repo": "yantyx/skills",
+  "path": "skills/fix-chinese-garbled",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yantyx/skills",
+  "dir_name": "fix-chinese-garbled-yantyx-skills-2"
+}

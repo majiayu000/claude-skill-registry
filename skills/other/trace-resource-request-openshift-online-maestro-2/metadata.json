@@ -1,0 +1,11 @@
+{
+  "name": "trace-resource-request",
+  "description": "This skill should be used when tracing resource requests through the Maestro system to debug resource lifecycle issues, track request flow from client to agent and back, or troubleshoot failures in re",
+  "repo": "openshift-online/maestro",
+  "path": ".claude/skills/trace-resource-request",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/openshift-online/maestro",
+  "dir_name": "trace-resource-request-openshift-online-maestro-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "clay-hello-world",
+  "description": "Create a minimal working Clay example.\nUse when starting a new Clay integration, testing your setup,\nor learning basic Clay API patterns.\nTrigger with phrases like \"clay hello world\", \"clay example\",\n",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/clay-pack/clay-hello-world",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "clay-hello-world-vasic-digital-superagent-2"
+}

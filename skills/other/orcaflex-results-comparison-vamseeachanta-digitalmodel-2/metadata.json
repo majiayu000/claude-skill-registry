@@ -1,0 +1,11 @@
+{
+  "name": "orcaflex-results-comparison",
+  "description": "Compare results across multiple OrcaFlex simulations for design verification, sensitivity studies, and configuration comparison. Includes pretension, stiffness, and force distribution analysis.",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcaflex-results-comparison",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcaflex-results-comparison-vamseeachanta-digitalmodel-2"
+}

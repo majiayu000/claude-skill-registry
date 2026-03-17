@@ -1,0 +1,11 @@
+{
+  "name": "tdd-cycle",
+  "description": "执行 TDD 红绿重构循环（RED→GREEN→REFACTOR→REPEAT），通过先写失败测试、最小代码实现、保持绿色重构的节奏驱动开发。当启动功能开发、需要测试驱动节奏、进行迭代编码、追求高测试覆盖率时使用。提供检查清单和节奏控制。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/execspec_fulfill/tdd-cycle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "tdd-cycle-tikazyq-agentic-spec-forge-2"
+}

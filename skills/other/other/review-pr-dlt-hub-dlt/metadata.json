@@ -1,0 +1,17 @@
+{
+  "name": "review-pr",
+  "repo": "dlt-hub/dlt",
+  "path": ".claude/skills/review-pr/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/dlt-hub/dlt",
+  "dir_name": "review-pr-dlt-hub-dlt",
+  "downloaded_at": "2026-03-01T07:28:35.029739Z",
+  "author": "dlt-hub",
+  "source_url": "https://github.com/dlt-hub/dlt/blob/master/.claude/skills/review-pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dlt-hub/dlt/blob/master/.claude/skills/review-pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

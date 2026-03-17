@@ -1,0 +1,11 @@
+{
+  "name": "subagent-batching",
+  "description": "Patterns for launching and managing parallel subagents efficiently.",
+  "repo": "JacobPEvans/ai-assistant-instructions",
+  "path": "agentsmd/skills/subagent-batching",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JacobPEvans/ai-assistant-instructions",
+  "dir_name": "subagent-batching-jacobpevans-ai-assistant-instruc-2"
+}

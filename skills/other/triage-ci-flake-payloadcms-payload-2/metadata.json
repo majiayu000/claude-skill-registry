@@ -1,0 +1,11 @@
+{
+  "name": "triage-ci-flake",
+  "description": "Use when CI tests fail on main branch after PR merge, or when investigating flaky test failures in CI environments",
+  "repo": "payloadcms/payload",
+  "path": ".claude/skills/triage-ci-flake",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/payloadcms/payload",
+  "dir_name": "triage-ci-flake-payloadcms-payload-2"
+}

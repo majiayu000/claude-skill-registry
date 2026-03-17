@@ -1,0 +1,11 @@
+{
+  "name": "extension-api",
+  "description": "Extension API for domain bundle discovery, module detection, and canonical command generation",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/plan-marshall/skills/extension-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuioss/plan-marshall",
+  "dir_name": "extension-api-cuioss-plan-marshall-2"
+}

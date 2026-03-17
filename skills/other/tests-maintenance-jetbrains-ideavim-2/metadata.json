@@ -1,0 +1,11 @@
+{
+  "name": "tests-maintenance",
+  "description": "Maintains IdeaVim test suite quality. Reviews disabled tests, ensures Neovim annotations are documented, and improves test readability. Use for periodic test maintenance.",
+  "repo": "JetBrains/ideavim",
+  "path": ".claude/skills/tests-maintenance",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JetBrains/ideavim",
+  "dir_name": "tests-maintenance-jetbrains-ideavim-2"
+}

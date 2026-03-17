@@ -1,0 +1,11 @@
+{
+  "name": "hybrid",
+  "description": "Adaptive routing strategies for distributed systems with multi-channel communication",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-routing-config/lib/hybrid",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/masharratt/claude-flow-novice",
+  "dir_name": "hybrid-masharratt-claude-flow-novice-2"
+}

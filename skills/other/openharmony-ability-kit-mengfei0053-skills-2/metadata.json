@@ -1,0 +1,11 @@
+{
+  "name": "openharmony-ability-kit",
+  "description": "用于使用 Ability Kit 开发 OpenHarmony 应用时 - UIAbility 生命周期、使用 Want 进行组件通信、Context API、ExtensionAbility、BundleManager,或处理错误如 16000001(ability 未找到)、16000011(context 不存在)等",
+  "repo": "mengfei0053/skills",
+  "path": "skills/openharmony-ability-kit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mengfei0053/skills",
+  "dir_name": "openharmony-ability-kit-mengfei0053-skills-2"
+}

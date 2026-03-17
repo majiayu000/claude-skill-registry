@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-xss-html-injection",
+  "description": "This skill should be used when the user asks to \"test for XSS vulnerabilities\", \"perform cross-site scripting attacks\", \"identify HTML injection flaws\", \"exploit client-side injection vulnerabilities\"",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-xss-html-injection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-xss-html-injection-boisenoise-skills-collections-2"
+}

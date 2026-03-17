@@ -1,0 +1,17 @@
+{
+  "name": "scikit-gstat",
+  "repo": "SteadfastAsArt/geoscience-skills",
+  "path": "scikit-gstat/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/SteadfastAsArt/geoscience-skills",
+  "dir_name": "scikit-gstat",
+  "downloaded_at": "2026-03-01T06:09:11.292432Z",
+  "author": "SteadfastAsArt",
+  "source_url": "https://github.com/SteadfastAsArt/geoscience-skills/blob/main/scikit-gstat/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SteadfastAsArt/geoscience-skills/blob/main/scikit-gstat/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

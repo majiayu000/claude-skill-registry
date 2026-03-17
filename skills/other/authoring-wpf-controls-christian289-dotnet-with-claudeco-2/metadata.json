@@ -1,0 +1,11 @@
+{
+  "name": "authoring-wpf-controls",
+  "description": "Guides decision-making for WPF control authoring including UserControl vs Control vs FrameworkElement selection. Use when creating new controls or evaluating Style/Template/Trigger alternatives.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/authoring-wpf-controls",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "authoring-wpf-controls-christian289-dotnet-with-claudeco-2"
+}

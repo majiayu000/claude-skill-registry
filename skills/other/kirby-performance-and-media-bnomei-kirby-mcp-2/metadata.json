@@ -1,0 +1,11 @@
+{
+  "name": "kirby-performance-and-media",
+  "description": "Improves Kirby performance and media delivery (cache tuning, CDN, responsive images, lazy loading). Use when optimizing page speed, caching, or image handling.",
+  "repo": "bnomei/kirby-mcp",
+  "path": "skills/kirby-performance-and-media",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bnomei/kirby-mcp",
+  "dir_name": "kirby-performance-and-media-bnomei-kirby-mcp-2"
+}

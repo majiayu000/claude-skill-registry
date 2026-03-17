@@ -1,0 +1,11 @@
+{
+  "name": "risk-portfolio-manager",
+  "description": "AI-powered portfolio risk management and optimization. Use when sizing positions, managing portfolio allocation, calculating risk metrics (VaR, Sharpe), rebalancing, or implementing defensive strategi",
+  "repo": "dreamineering/meme-times",
+  "path": ".claude/skills/risk-portfolio-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dreamineering/meme-times",
+  "dir_name": "risk-portfolio-manager-dreamineering-meme-times-2"
+}

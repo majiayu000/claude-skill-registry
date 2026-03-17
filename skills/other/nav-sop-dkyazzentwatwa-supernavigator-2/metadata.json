@@ -1,0 +1,11 @@
+{
+  "name": "nav-sop",
+  "description": "Create Standard Operating Procedures after solving novel issues, establishing patterns, or documenting workflows. Use when user says \"document this solution\", \"save this for next time\", \"create SOP\".",
+  "repo": "dkyazzentwatwa/SuperNavigator",
+  "path": "skills/os-layer/documentation/nav-sop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/SuperNavigator",
+  "dir_name": "nav-sop-dkyazzentwatwa-supernavigator-2"
+}

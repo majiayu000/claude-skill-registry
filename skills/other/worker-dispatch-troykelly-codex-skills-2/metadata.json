@@ -1,0 +1,11 @@
+{
+  "name": "worker-dispatch",
+  "description": "Use to spawn isolated worker processes for autonomous issue work. Creates git worktrees, constructs worker prompts, and handles worker lifecycle.",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/worker-dispatch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "worker-dispatch-troykelly-codex-skills-2"
+}

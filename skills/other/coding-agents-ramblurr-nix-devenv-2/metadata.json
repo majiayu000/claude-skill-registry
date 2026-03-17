@@ -1,0 +1,11 @@
+{
+  "name": "coding-agents",
+  "description": "Spawn and control external coding agents (Claude Code, Codex, OpenCode, Pi) for delegating tasks. Use when (1) user asks to run another coding agent, (2) delegating subtasks to a different AI tool, (3",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/coding-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "coding-agents-ramblurr-nix-devenv-2"
+}

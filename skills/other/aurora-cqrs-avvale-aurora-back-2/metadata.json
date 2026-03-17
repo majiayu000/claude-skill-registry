@@ -1,0 +1,11 @@
+{
+  "name": "aurora-cqrs",
+  "description": "Aurora CQRS Architecture Reference - Understanding the CQRS structure, component relationships, editable zones, and data flow in Aurora/NestJS projects. Trigger: When needing to understand CQRS archit",
+  "repo": "avvale/aurora-back",
+  "path": ".claude/skills/aurora-cqrs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/avvale/aurora-back",
+  "dir_name": "aurora-cqrs-avvale-aurora-back-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "china-macro-analyst",
+  "description": "Analyze China macroeconomic data, PBOC monetary policy, fiscal policy, and their impact on A-share and HK stock markets. Track GDP, CPI, PPI, PMI, social financing, and interpret policy signals. Use w",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/stock-trader-workflow/.claude/skills/china-macro-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "china-macro-analyst-nicepkg-ai-workflow-2"
+}

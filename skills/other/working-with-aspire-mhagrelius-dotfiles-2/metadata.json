@@ -1,0 +1,11 @@
+{
+  "name": "working-with-aspire",
+  "description": "Use when building distributed apps with Aspire; orchestrating .NET, JavaScript, Python, or polyglot services; when environment variables or service discovery aren't working; when migrating from .NET A",
+  "repo": "mhagrelius/dotfiles",
+  "path": ".claude/skills/working-with-aspire",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhagrelius/dotfiles",
+  "dir_name": "working-with-aspire-mhagrelius-dotfiles-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "cicd-config-builder",
+  "description": "Generates or updates CI/CD pipeline configurations for GitHub Actions, GitLab CI, or CircleCI. Use when the user asks to set up CI/CD, create workflows, automate deployment, or mentions GitHub Actions",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/cicd-config-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "cicd-config-builder-wesleysmits-agent-skills-2"
+}

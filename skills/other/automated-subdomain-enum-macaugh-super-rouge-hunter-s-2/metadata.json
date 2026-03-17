@@ -1,0 +1,11 @@
+{
+  "name": "automated-subdomain-enum",
+  "description": "Systematic approach to discovering subdomains through passive and active reconnaissance techniques",
+  "repo": "macaugh/super-rouge-hunter-skills",
+  "path": "skills/reconnaissance/automated-subdomain-enum",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/macaugh/super-rouge-hunter-skills",
+  "dir_name": "automated-subdomain-enum-macaugh-super-rouge-hunter-s-2"
+}

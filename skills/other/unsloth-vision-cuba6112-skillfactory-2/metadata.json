@@ -1,0 +1,11 @@
+{
+  "name": "unsloth-vision",
+  "description": "Unsloth-vision provides optimized support for fine-tuning multimodal models like Llama 3.2 Vision and Qwen2.5 VL. It allows granular control over which layers (vision, language, or both) are updated a",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/unsloth-vision",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "unsloth-vision-cuba6112-skillfactory-2"
+}

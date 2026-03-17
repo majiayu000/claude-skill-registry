@@ -1,0 +1,11 @@
+{
+  "name": "github-projects",
+  "description": "Gerencia GitHub Projects V2 via GraphQL API.\nCria projects, configura campos customizados e views.\nUse quando: iniciar projeto SDLC, mover issues entre fases.\n",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/github-projects",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "github-projects-arbgjr-satra-2"
+}

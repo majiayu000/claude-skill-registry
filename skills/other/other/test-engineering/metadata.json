@@ -1,0 +1,17 @@
+{
+  "name": "test-engineering",
+  "repo": "dsivov/ai_development_team",
+  "path": ".claude/skills/test-engineering/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dsivov/ai_development_team",
+  "dir_name": "test-engineering",
+  "downloaded_at": "2026-03-01T07:30:09.991432Z",
+  "author": "dsivov",
+  "source_url": "https://github.com/dsivov/ai_development_team/blob/main/.claude/skills/test-engineering/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dsivov/ai_development_team/blob/main/.claude/skills/test-engineering/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

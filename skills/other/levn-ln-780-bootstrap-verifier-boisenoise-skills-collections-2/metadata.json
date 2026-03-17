@@ -1,0 +1,11 @@
+{
+  "name": "levn-ln-780-bootstrap-verifier",
+  "description": "Orchestrates final verification - build, test, and container health checks",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/levn-ln-780-bootstrap-verifier",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "levn-ln-780-bootstrap-verifier-boisenoise-skills-collections-2"
+}

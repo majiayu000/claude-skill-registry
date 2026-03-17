@@ -1,0 +1,11 @@
+{
+  "name": "goose-introspection",
+  "description": "Goose session introspection and self-discovery via DuckDB reafference database. Query past sessions, find self, and enable cross-session awareness.",
+  "repo": "plurigrid/asi",
+  "path": "skills/goose-introspection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "goose-introspection-plurigrid-asi-2"
+}

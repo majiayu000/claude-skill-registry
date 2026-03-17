@@ -1,0 +1,9 @@
+{
+  "name": "gke-compute-class-creator",
+  "repo": "GoogleCloudPlatform/gke-mcp",
+  "path": "skills/gke-compute-class-creator/SKILL.md",
+  "category": "other",
+  "source": "github.com/GoogleCloudPlatform/gke-mcp",
+  "dir_name": "gke-compute-class-creator",
+  "downloaded_at": "2026-02-15T05:10:07.471299Z"
+}

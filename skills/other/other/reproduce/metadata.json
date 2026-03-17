@@ -1,0 +1,17 @@
+{
+  "name": "reproduce",
+  "repo": "ferrucc-io/clog",
+  "path": ".claude/skills/reproduce/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/ferrucc-io/clog",
+  "dir_name": "reproduce",
+  "downloaded_at": "2026-03-01T07:43:26.527092Z",
+  "author": "ferrucc-io",
+  "source_url": "https://github.com/ferrucc-io/clog/blob/master/.claude/skills/reproduce/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ferrucc-io/clog/blob/master/.claude/skills/reproduce/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

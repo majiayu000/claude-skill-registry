@@ -1,0 +1,11 @@
+{
+  "name": "git-commit-standard",
+  "description": "Generates conventional commits based on file changes. Analyzes diffs and creates properly formatted commit messages.",
+  "repo": "cpa03/blueprintify",
+  "path": ".opencode/skill/git-commit-standard",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cpa03/blueprintify",
+  "dir_name": "git-commit-standard-cpa03-blueprintify-2"
+}

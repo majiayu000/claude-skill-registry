@@ -1,0 +1,11 @@
+{
+  "name": "yaml-syntax-error",
+  "description": "This skill has intentionally malformed YAML frontmatter to test error handling.",
+  "repo": "martinemde/skillet",
+  "path": "testdata/yaml-syntax-error",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/martinemde/skillet",
+  "dir_name": "yaml-syntax-error-martinemde-skillet-2"
+}

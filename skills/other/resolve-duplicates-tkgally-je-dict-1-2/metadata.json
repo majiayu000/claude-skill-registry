@@ -1,0 +1,11 @@
+{
+  "name": "resolve-duplicates",
+  "description": "Guidelines for identifying duplicate dictionary entries, selecting which to keep, and safely removing unneeded ones.",
+  "repo": "tkgally/je-dict-1",
+  "path": ".claude/skills/resolve-duplicates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tkgally/je-dict-1",
+  "dir_name": "resolve-duplicates-tkgally-je-dict-1-2"
+}

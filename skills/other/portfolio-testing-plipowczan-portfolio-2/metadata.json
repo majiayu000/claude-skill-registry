@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-testing",
+  "description": "E2E testing skill for Pawel Lipowczan portfolio project (Playwright + React/Vite). Use when user wants to create new E2E tests, debug flaky tests, extend test coverage, verify test completeness for fe",
+  "repo": "plipowczan/portfolio",
+  "path": ".claude/skills/portfolio-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plipowczan/portfolio",
+  "dir_name": "portfolio-testing-plipowczan-portfolio-2"
+}

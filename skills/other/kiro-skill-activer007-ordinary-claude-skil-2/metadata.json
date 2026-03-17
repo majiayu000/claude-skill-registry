@@ -1,0 +1,11 @@
+{
+  "name": "kiro-skill",
+  "description": "Interactive feature development workflow from idea to implementation. Creates requirements (EARS format), design documents, and implementation task lists. Use when creating feature specs, requirements",
+  "repo": "Activer007/ordinary-claude-skills",
+  "path": "skills_all/kiro-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Activer007/ordinary-claude-skills",
+  "dir_name": "kiro-skill-activer007-ordinary-claude-skil-2"
+}

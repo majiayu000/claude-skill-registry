@@ -1,0 +1,11 @@
+{
+  "name": "image-optimization",
+  "description": "Optimizes images for web performance using modern formats, responsive techniques, and lazy loading strategies. Use when improving page load times, implementing responsive images, or preparing assets f",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/image-optimization/skills/image-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "image-optimization-secondsky-claude-skills-2"
+}

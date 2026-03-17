@@ -1,0 +1,11 @@
+{
+  "name": "qa-docs-coverage",
+  "description": "Docs as QA: audit doc coverage and freshness, validate runbooks, and maintain documentation quality gates for APIs, services, events, and operational workflows.",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/qa-docs-coverage",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "qa-docs-coverage-vasilyu1983-ai-agents-public-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "macos-setup",
+  "description": "macOS development environment setup wizard. Interactive Q&A to collect preferences,\nauto-detect installed software, generate customized installation plan.\nSupports presets: fullstack, frontend, backen",
+  "repo": "larrykoo711/new-macos-starter",
+  "path": ".claude/skills/macos-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/larrykoo711/new-macos-starter",
+  "dir_name": "macos-setup-larrykoo711-new-macos-starter-2"
+}

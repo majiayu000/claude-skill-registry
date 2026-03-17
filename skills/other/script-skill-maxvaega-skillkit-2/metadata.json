@@ -1,0 +1,11 @@
+{
+  "name": "script-skill",
+  "description": "Test skill with executable scripts for testing script execution feature",
+  "repo": "maxvaega/skillkit",
+  "path": "tests/fixtures/skills/script-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "script-skill-maxvaega-skillkit-2"
+}

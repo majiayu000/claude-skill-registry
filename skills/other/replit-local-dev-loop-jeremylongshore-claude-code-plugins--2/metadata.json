@@ -1,0 +1,11 @@
+{
+  "name": "replit-local-dev-loop",
+  "description": "Configure Replit local development with hot reload and testing.\nUse when setting up a development environment, configuring test workflows,\nor establishing a fast iteration cycle with Replit.\nTrigger w",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/replit-pack/skills/replit-local-dev-loop",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "replit-local-dev-loop-jeremylongshore-claude-code-plugins--2"
+}

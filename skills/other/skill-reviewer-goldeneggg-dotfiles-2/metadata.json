@@ -1,0 +1,11 @@
+{
+  "name": "skill-reviewer",
+  "description": "既存スキルの品質をレビューし、改善提案を行うスキル。\n以下の状況で使用:\n(1) ユーザーが「[スキル名]をレビューして」「[スキル名]の品質を確認して」と依頼した時\n(2) ユーザーが明示的に「/skill-reviewer」を実行した時\n(3) スキル開発完了後、公開前の最終チェックを求められた時",
+  "repo": "goldeneggg/dotfiles",
+  "path": "claude-linux/.claude/skills/skill-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/goldeneggg/dotfiles",
+  "dir_name": "skill-reviewer-goldeneggg-dotfiles-2"
+}

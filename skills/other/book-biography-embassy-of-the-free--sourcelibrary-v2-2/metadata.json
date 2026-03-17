@@ -1,0 +1,11 @@
+{
+  "name": "book-biography",
+  "description": "Bibliographic research agent for analyzing books and manuscripts. Builds comprehensive \"book biographies\" showing production context, textual transmission, related editions, and scholarly networks. Us",
+  "repo": "Embassy-of-the-Free-Mind/sourcelibrary-v2",
+  "path": ".claude/skills/book-biography",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Embassy-of-the-Free-Mind/sourcelibrary-v2",
+  "dir_name": "book-biography-embassy-of-the-free--sourcelibrary-v2-2"
+}

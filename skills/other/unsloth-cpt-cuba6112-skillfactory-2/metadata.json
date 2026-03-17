@@ -1,0 +1,11 @@
+{
+  "name": "unsloth-cpt",
+  "description": "Unsloth-cpt provides specific optimizations for Continued Pretraining (CPT) and domain adaptation. It addresses the critical need for training embedding layers and language modeling heads while stabil",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/unsloth-cpt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "unsloth-cpt-cuba6112-skillfactory-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "error-handling",
+  "description": "Error-handling conventions (error mapping/presentation, what to throw vs return, user-facing output). Use when adding errors or changing failure behavior.",
+  "repo": "Anveio/conveaux",
+  "path": ".claude/skills/error-handling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Anveio/conveaux",
+  "dir_name": "error-handling-anveio-conveaux-2"
+}

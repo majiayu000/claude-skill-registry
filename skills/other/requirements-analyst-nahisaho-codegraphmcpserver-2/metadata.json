@@ -1,0 +1,11 @@
+{
+  "name": "requirements-analyst",
+  "description": "Copilot agent that assists with requirements analysis, user story creation, specification definition, and acceptance criteria definition\n\nTrigger terms: requirements, EARS format, user stories, functi",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/requirements-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "dir_name": "requirements-analyst-nahisaho-codegraphmcpserver-2"
+}

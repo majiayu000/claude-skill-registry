@@ -1,0 +1,11 @@
+{
+  "name": "factory-resume",
+  "description": "Reprend le pipeline depuis la dernière phase/task",
+  "repo": "SylvainChabaud/spec-to-code-factory",
+  "path": ".claude/skills/factory-resume",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SylvainChabaud/spec-to-code-factory",
+  "dir_name": "factory-resume-sylvainchabaud-spec-to-code-factory-2"
+}

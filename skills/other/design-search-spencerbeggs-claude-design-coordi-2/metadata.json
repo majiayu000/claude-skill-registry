@@ -1,0 +1,11 @@
+{
+  "name": "design-search",
+  "description": "Full-text search across design documentation. Use when looking for specific topics, decisions, or patterns documented across design docs.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/design-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "design-search-spencerbeggs-claude-design-coordi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "health-check",
+  "description": "dotfiles全体の健全性チェック。シンボリックリンク、設定ファイル、依存関係の状態確認。トリガー: 健全性, 診断, check, health, dotfiles状態",
+  "repo": "snkrheadz/laptop",
+  "path": ".claude/skills/health-check",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/snkrheadz/laptop",
+  "dir_name": "health-check-snkrheadz-laptop-2"
+}

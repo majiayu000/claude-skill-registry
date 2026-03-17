@@ -1,0 +1,11 @@
+{
+  "name": "navigating-visual-logical-tree",
+  "description": "Navigates WPF Visual Tree and Logical Tree with VisualTreeHelper and LogicalTreeHelper patterns. Use when traversing elements, accessing template internals, or understanding event routing.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/navigating-visual-logical-tree",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "navigating-visual-logical-tree-christian289-dotnet-with-claudeco-2"
+}

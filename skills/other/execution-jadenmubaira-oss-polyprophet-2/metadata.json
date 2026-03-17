@@ -1,0 +1,11 @@
+{
+  "name": "EXECUTION",
+  "description": "A high-precision implementation mode for the Claude-type AI to execute the plan with zero errors.",
+  "repo": "jadenmubaira-oss/POLYPROPHET",
+  "path": ".agent/skills/EXECUTION",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jadenmubaira-oss/POLYPROPHET",
+  "dir_name": "execution-jadenmubaira-oss-polyprophet-2"
+}

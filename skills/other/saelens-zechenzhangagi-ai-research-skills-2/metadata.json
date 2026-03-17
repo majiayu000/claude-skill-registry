@@ -1,0 +1,11 @@
+{
+  "name": "saelens",
+  "description": "Provides guidance for training and analyzing Sparse Autoencoders (SAEs) using SAELens to decompose neural network activations into interpretable features. Use when discovering interpretable features, ",
+  "repo": "zechenzhangAGI/AI-research-SKILLs",
+  "path": "04-mechanistic-interpretability/saelens",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zechenzhangAGI/AI-research-SKILLs",
+  "dir_name": "saelens-zechenzhangagi-ai-research-skills-2"
+}

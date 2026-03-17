@@ -1,0 +1,11 @@
+{
+  "name": "moai-core-feedback-templates",
+  "description": "GitHub 이슈 라벨별 구조화된 템플릿. 버그, 기능 요청, 개선 사항, 리팩토링, 문서, 질문 등\n각 이슈 타입에 맞는 한국어 템플릿 제공. /alfred:9-feedback에서 사용.\n",
+  "repo": "jg-chalk-io/Nora-LiveKit",
+  "path": ".claude/skills/moai-core-feedback-templates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jg-chalk-io/Nora-LiveKit",
+  "dir_name": "moai-core-feedback-templates-jg-chalk-io-nora-livekit-2"
+}

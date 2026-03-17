@@ -1,0 +1,11 @@
+{
+  "name": "automating-contacts",
+  "description": "Automates macOS Contacts via JXA with AppleScript dictionary discovery. Use when asked to \"automate contacts\", \"JXA contacts automation\", \"macOS address book scripting\", \"AppleScript contacts\", or \"Co",
+  "repo": "SpillwaveSolutions/automating-mac-apps-plugin",
+  "path": "plugins/automating-mac-apps-plugin/skills/automating-contacts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
+  "dir_name": "automating-contacts-spillwavesolutions-automating-mac-apps--2"
+}

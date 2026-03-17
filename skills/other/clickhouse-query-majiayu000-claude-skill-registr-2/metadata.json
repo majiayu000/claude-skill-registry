@@ -1,0 +1,11 @@
+{
+  "name": "clickhouse-query",
+  "description": "Run ClickHouse queries for analytics, metrics analysis, and event data exploration. Use when you need to query ClickHouse directly, analyze metrics, check event tracking data, or test query performanc",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/other/clickhouse-query",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "clickhouse-query-majiayu000-claude-skill-registr-2"
+}

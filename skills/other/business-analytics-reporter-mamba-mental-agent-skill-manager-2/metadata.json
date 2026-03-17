@@ -1,0 +1,11 @@
+{
+  "name": "business-analytics-reporter",
+  "description": "This skill should be used when analyzing business sales and revenue data from CSV files to identify weak areas, generate statistical insights, and provide strategic improvement recommendations. Use wh",
+  "repo": "mamba-mental/agent-skill-manager",
+  "path": ".claude/skills/business-analytics-reporter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mamba-mental/agent-skill-manager",
+  "dir_name": "business-analytics-reporter-mamba-mental-agent-skill-manager-2"
+}

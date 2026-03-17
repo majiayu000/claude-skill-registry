@@ -1,0 +1,11 @@
+{
+  "name": "solidity-development",
+  "description": "Solidity smart contract development workflow. Use when modifying smart contracts in apps/erc20-token/contracts/.",
+  "repo": "hiromaily/go-crypto-wallet",
+  "path": ".claude/skills/solidity-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hiromaily/go-crypto-wallet",
+  "dir_name": "solidity-development-hiromaily-go-crypto-wallet-2"
+}

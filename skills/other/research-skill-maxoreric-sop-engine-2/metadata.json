@@ -1,0 +1,11 @@
+{
+  "name": "research-skill",
+  "description": "调研最佳实践的 Skill。当需要了解某个领域的方法论、工具、最佳实践时触发。触发词：调研、research、了解一下、有什么方法、最佳实践。",
+  "repo": "maxoreric/sop-engine",
+  "path": "$workflow.input.user_intent/skills/research-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxoreric/sop-engine",
+  "dir_name": "research-skill-maxoreric-sop-engine-2"
+}

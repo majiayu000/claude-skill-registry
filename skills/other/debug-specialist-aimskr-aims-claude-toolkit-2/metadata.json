@@ -1,0 +1,11 @@
+{
+  "name": "debug-specialist",
+  "description": "디버깅, 디버그, 버그, 에러, 오류, 버그 수정 - Specialized in identifying root causes of bugs, analyzing error logs, and providing robust fixes. Use this when the user reports an error, unexpected behavior, or needs p",
+  "repo": "aimskr/aims-claude-toolkit",
+  "path": "skills/debug-specialist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aimskr/aims-claude-toolkit",
+  "dir_name": "debug-specialist-aimskr-aims-claude-toolkit-2"
+}

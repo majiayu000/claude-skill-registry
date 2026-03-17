@@ -1,0 +1,11 @@
+{
+  "name": "performance-analyzer",
+  "description": "Analyze code performance, detect bottlenecks, suggest optimizations for algorithms, queries, and resource usage. Use when improving application performance or investigating slow code.",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/performance-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "performance-analyzer-ntaksh42-agents-2"
+}

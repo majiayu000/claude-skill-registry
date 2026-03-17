@@ -1,0 +1,11 @@
+{
+  "name": "continuity",
+  "description": "El ojo sigue líneas y curvas naturalmente. Use cuando diseñe flujos visuales, navegación, timelines, o guíe la atención del usuario.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/gestalt/continuity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "continuity-vjrivmon-handwriting-ocr-2"
+}

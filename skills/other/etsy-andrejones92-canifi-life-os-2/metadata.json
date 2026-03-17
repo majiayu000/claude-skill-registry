@@ -1,0 +1,11 @@
+{
+  "name": "etsy",
+  "description": "Enables Claude to browse Etsy products, manage favorites, and explore handmade items",
+  "repo": "Andrejones92/canifi-life-os",
+  "path": "skills/etsy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Andrejones92/canifi-life-os",
+  "dir_name": "etsy-andrejones92-canifi-life-os-2"
+}

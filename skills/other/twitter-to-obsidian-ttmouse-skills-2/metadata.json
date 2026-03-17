@@ -1,0 +1,11 @@
+{
+  "name": "twitter-to-obsidian",
+  "description": "Extract content from Twitter/X articles, summarize key points, and save as structured Obsidian notes. Use when user provides a Twitter/X URL and wants to save it as a note, or mentions \"save to Obsidi",
+  "repo": "ttmouse/skills",
+  "path": "twitter-to-obsidian",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ttmouse/skills",
+  "dir_name": "twitter-to-obsidian-ttmouse-skills-2"
+}

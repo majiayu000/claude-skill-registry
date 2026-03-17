@@ -1,0 +1,11 @@
+{
+  "name": "influencer-marketing",
+  "description": "Эксперт по influencer-маркетингу. Используй для работы с инфлюенсерами, UGC и creator partnerships.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/influencer-marketing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "influencer-marketing-dengineproblem-agents-monorepo-2"
+}

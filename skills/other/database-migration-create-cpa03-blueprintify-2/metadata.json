@@ -1,0 +1,11 @@
+{
+  "name": "database-migration-create",
+  "description": "Safely creates database migrations",
+  "repo": "cpa03/blueprintify",
+  "path": ".opencode/skill/database-migration-create",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cpa03/blueprintify",
+  "dir_name": "database-migration-create-cpa03-blueprintify-2"
+}

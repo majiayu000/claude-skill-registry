@@ -1,0 +1,11 @@
+{
+  "name": "bknd-database-provision",
+  "description": "Use when setting up a production database for Bknd. Covers SQLite file, LibSQL/Turso, Cloudflare D1, PostgreSQL, Neon, Supabase, and Xata configuration.",
+  "repo": "cameronapak/freedom-stack-v3",
+  "path": ".agents/skills/bknd-database-provision",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cameronapak/freedom-stack-v3",
+  "dir_name": "bknd-database-provision-cameronapak-freedom-stack-v3-2"
+}

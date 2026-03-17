@@ -1,0 +1,11 @@
+{
+  "name": "fastapi-async-patterns",
+  "description": "Create async FastAPI endpoints with proper error handling, dependency injection, service/repository patterns, and type safety. Includes async database queries, pagination, filtering, and Gemini integr",
+  "repo": "ils15/copilot-global-config",
+  "path": "skills/fastapi-async-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ils15/copilot-global-config",
+  "dir_name": "fastapi-async-patterns-ils15-copilot-global-confi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rest-api-expert",
+  "description": "RESTful API 설계, Request/Response DTO, @Valid 검증. MockMvc 금지, TestRestTemplate 필수. /kb-rest-api 명령 시 자동 활성화.",
+  "repo": "ryu-qqq/MarketPlace",
+  "path": ".claude/skills/rest-api-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ryu-qqq/MarketPlace",
+  "dir_name": "rest-api-expert-ryu-qqq-marketplace-2"
+}

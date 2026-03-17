@@ -1,0 +1,11 @@
+{
+  "name": "entry-point-analyzer",
+  "description": "Analyzes smart contract codebases to identify state-changing entry points for security auditing. Detects externally callable functions that modify state, categorizes them by access level (public, admi",
+  "repo": "trailofbits/skills",
+  "path": "plugins/entry-point-analyzer/skills/entry-point-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/trailofbits/skills",
+  "dir_name": "entry-point-analyzer-trailofbits-skills-2"
+}

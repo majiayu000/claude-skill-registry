@@ -1,0 +1,11 @@
+{
+  "name": "dast-ffuf",
+  "description": "Fast web fuzzer for DAST testing with directory enumeration, parameter fuzzing, and virtual host discovery. Written in Go for high-performance HTTP fuzzing with extensive filtering capabilities. Suppo",
+  "repo": "AgentSecOps/SecOpsAgentKit",
+  "path": "skills/appsec/dast-ffuf",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AgentSecOps/SecOpsAgentKit",
+  "dir_name": "dast-ffuf-agentsecops-secopsagentkit-2"
+}

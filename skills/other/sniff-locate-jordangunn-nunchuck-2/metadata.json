@@ -1,0 +1,11 @@
+{
+  "name": "sniff-locate",
+  "description": "List findings in `.sniff/findings.jsonl`, validate anchors, reanchor stale findings when code shifts, and regenerate `.sniff/index.json`.\n",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/sniff/sniff-locate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "sniff-locate-jordangunn-nunchuck-2"
+}

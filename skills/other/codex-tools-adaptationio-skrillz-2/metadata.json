@@ -1,0 +1,11 @@
+{
+  "name": "codex-tools",
+  "description": "Execute and manage Codex CLI tools including file operations, shell commands, web search, and automation patterns. Use for automated workflows, tool orchestration, and full automation with permission ",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/codex-tools",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "codex-tools-adaptationio-skrillz-2"
+}

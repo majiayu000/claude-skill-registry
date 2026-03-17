@@ -1,0 +1,11 @@
+{
+  "name": "design-to-project",
+  "description": "Orchestrates the complete transformation of a Detailed Design Specification into executable project artifacts. This is the master skill that sequences project-init, task-create, and implementation wor",
+  "repo": "spaarke-dev/spaarke",
+  "path": ".claude/skills/_archived/design-to-project",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spaarke-dev/spaarke",
+  "dir_name": "design-to-project-spaarke-dev-spaarke-2"
+}

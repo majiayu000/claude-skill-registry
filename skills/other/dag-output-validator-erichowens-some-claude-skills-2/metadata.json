@@ -1,0 +1,11 @@
+{
+  "name": "dag-output-validator",
+  "description": "Validates agent outputs against expected schemas and quality criteria. Ensures outputs meet structural requirements and content standards. Activate on 'validate output', 'output validation', 'schema v",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-output-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-output-validator-erichowens-some-claude-skills-2"
+}

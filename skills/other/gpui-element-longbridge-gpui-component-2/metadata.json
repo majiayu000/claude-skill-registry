@@ -1,0 +1,11 @@
+{
+  "name": "gpui-element",
+  "description": "Implementing custom elements using GPUI's low-level Element API (vs. high-level Render/RenderOnce APIs). Use when you need maximum control over layout, prepaint, and paint phases for complex, performa",
+  "repo": "longbridge/gpui-component",
+  "path": ".claude/skills/gpui-element",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/longbridge/gpui-component",
+  "dir_name": "gpui-element-longbridge-gpui-component-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "comment-analyzer",
+  "description": "Use when asked to review code comments for accuracy/quality or explicitly asked to run the comment-analyzer subagent.",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/comment-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "comment-analyzer-troykelly-codex-skills-2"
+}

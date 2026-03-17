@@ -1,0 +1,11 @@
+{
+  "name": "defense-in-depth",
+  "description": "Validate at every layer data passes through to make bugs impossible",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/debugging/defense-in-depth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "defense-in-depth-mrgoonie-xxxnaper-2"
+}

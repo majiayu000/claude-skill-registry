@@ -1,0 +1,11 @@
+{
+  "name": "nielsen-error-prevention",
+  "description": "Diseña interfaces que previenen errores antes de que ocurran. Use cuando diseñe formularios, acciones destructivas, o flujos donde los usuarios pueden cometer errores costosos.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/heuristics/nielsen-error-prevention",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "nielsen-error-prevention-vjrivmon-handwriting-ocr-2"
+}

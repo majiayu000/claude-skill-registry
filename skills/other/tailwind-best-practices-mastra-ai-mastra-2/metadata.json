@@ -1,0 +1,11 @@
+{
+  "name": "tailwind-best-practices",
+  "description": "Tailwind CSS styling guidelines for Mastra Playground UI. This skill should be used when writing, reviewing, or refactoring styling code in packages/playground-ui and packages/playground to ensure des",
+  "repo": "mastra-ai/mastra",
+  "path": ".claude/skills/tailwind-best-practices",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mastra-ai/mastra",
+  "dir_name": "tailwind-best-practices-mastra-ai-mastra-2"
+}

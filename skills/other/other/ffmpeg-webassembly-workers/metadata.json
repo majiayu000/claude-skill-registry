@@ -1,0 +1,9 @@
+{
+  "name": "ffmpeg-webassembly-workers",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/ffmpeg-master/skills/ffmpeg-webassembly-workers/SKILL.md",
+  "category": "other",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "ffmpeg-webassembly-workers",
+  "downloaded_at": "2026-02-22T05:14:35.231241Z"
+}

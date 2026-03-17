@@ -1,0 +1,11 @@
+{
+  "name": "release-coordinator",
+  "description": "Coordinates multi-component releases, feature flags, versioning, and rollback strategies.\n\nTrigger terms: release management, release planning, release coordination, feature flags,\ncanary deployment, ",
+  "repo": "nahisaho/CodeGraphMCPServer",
+  "path": ".claude/skills/release-coordinator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nahisaho/CodeGraphMCPServer",
+  "dir_name": "release-coordinator-nahisaho-codegraphmcpserver-2"
+}

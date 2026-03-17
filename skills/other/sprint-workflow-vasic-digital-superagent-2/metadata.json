@@ -1,0 +1,11 @@
+{
+  "name": "sprint-workflow",
+  "description": "Execute this skill should be used when the user asks about \"how sprints work\", \"sprint phases\", \"iteration workflow\", \"convergent development\", \"sprint lifecycle\", \"when to use sprints\", or wants to u",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/community/sprint/sprint-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "sprint-workflow-vasic-digital-superagent-2"
+}

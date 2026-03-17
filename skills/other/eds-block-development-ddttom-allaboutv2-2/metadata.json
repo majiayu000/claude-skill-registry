@@ -1,0 +1,11 @@
+{
+  "name": "eds-block-development",
+  "description": "Guide for developing EDS blocks using vanilla JavaScript, Content Driven Development, and block decoration patterns. Covers block structure, decorate function, content extraction, DOM manipulation, an",
+  "repo": "ddttom/allaboutv2",
+  "path": ".claude/skills/eds-block-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ddttom/allaboutv2",
+  "dir_name": "eds-block-development-ddttom-allaboutv2-2"
+}

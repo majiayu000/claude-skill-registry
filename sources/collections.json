@@ -1,0 +1,45 @@
+{
+  "name": "Community Skill Collections",
+  "description": "Manually curated skill collections submitted by the community",
+  "collections": [
+    {
+      "name": "pm-ai-partner",
+      "description": "12 PM-specific agent skills + 6 workflow commands for Product Managers",
+      "repo": "ahmedkhaledmohamed/PM-AI-Partner-Framework",
+      "category": "product",
+      "tags": ["product-manager", "pm", "skills", "commands", "hooks", "mcp"],
+      "install": "npx pm-ai-partner@latest",
+      "homepage": "https://www.npmjs.com/package/pm-ai-partner",
+      "author": "ahmedkhaledmohamed",
+      "skills": [
+        "thought-partner",
+        "technical-analyst",
+        "devil-advocate",
+        "writer",
+        "builder",
+        "data-analyst",
+        "product-brief",
+        "meeting-prep",
+        "stakeholder-update",
+        "strategic-clarity",
+        "hypothesis-tester",
+        "competitor-analyst"
+      ],
+      "commands": [
+        "/pm:plan-week",
+        "/pm:write-brief",
+        "/pm:prep-meeting",
+        "/pm:audit-codebase",
+        "/pm:competitor-scan",
+        "/pm:metrics-review"
+      ],
+      "hooks": [
+        "pre-tool-use",
+        "post-tool-use",
+        "notification"
+      ],
+      "source_url": "https://github.com/ahmedkhaledmohamed/PM-AI-Partner-Framework",
+      "license": "MIT"
+    }
+  ]
+}

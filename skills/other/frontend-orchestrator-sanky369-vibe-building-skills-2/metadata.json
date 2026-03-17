@@ -1,0 +1,11 @@
+{
+  "name": "frontend-orchestrator",
+  "description": "Master coordinator skill that diagnoses your application's design maturity level and sequences all 13 frontend design skills in the optimal order. Analyzes current state, identifies gaps, and creates ",
+  "repo": "sanky369/vibe-building-skills",
+  "path": "skills/frontend-design/frontend-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sanky369/vibe-building-skills",
+  "dir_name": "frontend-orchestrator-sanky369-vibe-building-skills-2"
+}

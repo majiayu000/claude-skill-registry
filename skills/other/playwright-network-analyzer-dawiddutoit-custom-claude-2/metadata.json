@@ -1,0 +1,11 @@
+{
+  "name": "playwright-network-analyzer",
+  "description": "Monitors and analyzes network traffic during browser automation workflows using Playwright MCP tools.\nUse when investigating API behavior, debugging failed requests, performance analysis, or checking\n",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/playwright-network-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "playwright-network-analyzer-dawiddutoit-custom-claude-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "adapter-trimming",
+  "description": "Remove sequencing adapters from FASTQ files using Cutadapt and Trimmomatic. Supports single-end and paired-end reads, Illumina TruSeq, Nextera, and custom adapter sequences. Use when FastQC shows adap",
+  "repo": "GPTomics/bioSkills",
+  "path": "read-qc/adapter-trimming",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "adapter-trimming-gptomics-bioskills-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "k8s-health",
+  "repo": "kagenti/kagenti",
+  "path": ".claude/skills/k8s:health/SKILL.md",
+  "category": "other",
+  "source": "github.com/kagenti/kagenti",
+  "dir_name": "k8s-health",
+  "downloaded_at": "2026-02-15T07:49:48.267354Z"
+}

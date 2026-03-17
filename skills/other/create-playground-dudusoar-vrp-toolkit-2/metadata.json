@@ -1,0 +1,11 @@
+{
+  "name": "create-playground",
+  "description": "Create and maintain the interactive Streamlit playground for learning VRP-Toolkit through hands-on exploration. Use this skill when adding playground features, integrating new algorithms, or enhancing",
+  "repo": "dudusoar/VRP-Toolkit",
+  "path": ".claude/skills/create-playground",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dudusoar/VRP-Toolkit",
+  "dir_name": "create-playground-dudusoar-vrp-toolkit-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "memory-manager",
+  "description": "Gerencia persistencia de contexto, decisoes e learnings do projeto.\nArmazena e recupera informacoes entre sessoes para manter continuidade.\nUse quando: salvar decisoes, recuperar contexto, persistir l",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/memory-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "memory-manager-arbgjr-satra-2"
+}

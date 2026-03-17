@@ -1,0 +1,11 @@
+{
+  "name": "add-exercises",
+  "description": "Add new exercises to the workout tracker database. Use when asked to add exercises, expand the exercise library, or check what exercises exist. Triggers include \"add exercise\", \"new exercise\", \"exerci",
+  "repo": "alexanderop/workoutTracker",
+  "path": ".claude/skills/add-exercises",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alexanderop/workoutTracker",
+  "dir_name": "add-exercises-alexanderop-workouttracker-2"
+}

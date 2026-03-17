@@ -1,0 +1,11 @@
+{
+  "name": "verify-known-issues",
+  "description": "Verify claims about known issues in libraries or tools. Use when about to state something is a \"known issue\", \"known bug\", or \"known limitation\".",
+  "repo": "beshkenadze/claude-skills-marketplace",
+  "path": "skills/meta/verify-known-issues",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/beshkenadze/claude-skills-marketplace",
+  "dir_name": "verify-known-issues-beshkenadze-claude-skills-market-2"
+}

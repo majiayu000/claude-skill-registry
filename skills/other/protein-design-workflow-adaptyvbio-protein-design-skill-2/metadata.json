@@ -1,0 +1,11 @@
+{
+  "name": "protein-design-workflow",
+  "description": "End-to-end guidance for protein design pipelines. Use this skill when: (1) Starting a new protein design project, (2) Need step-by-step workflow guidance, (3) Understanding the full design pipeline, (",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/protein-design-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "protein-design-workflow-adaptyvbio-protein-design-skill-2"
+}

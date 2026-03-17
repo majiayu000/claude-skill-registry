@@ -1,0 +1,11 @@
+{
+  "name": "doctrine-fixtures-foundry",
+  "description": "Use when symfony doctrine fixtures foundry",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/doctrine-fixtures-foundry",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "doctrine-fixtures-foundry-makfly-superpowers-symfony-2"
+}

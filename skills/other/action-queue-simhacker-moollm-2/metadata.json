@@ -1,0 +1,11 @@
+{
+  "name": "action-queue",
+  "description": "Sims-inspired task scheduling — queue actions, execute in order",
+  "repo": "SimHacker/moollm",
+  "path": "skills/action-queue",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "action-queue-simhacker-moollm-2"
+}

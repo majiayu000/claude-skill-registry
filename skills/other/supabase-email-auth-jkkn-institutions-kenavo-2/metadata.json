@@ -1,0 +1,11 @@
+{
+  "name": "supabase-email-auth",
+  "description": "This skill should be used when implementing Supabase email/password authentication in Next.js applications. Automates the complete setup including client/server utilities, login/register pages, auth c",
+  "repo": "JKKN-Institutions/Kenavo",
+  "path": ".claude/skills/supabase-email-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JKKN-Institutions/Kenavo",
+  "dir_name": "supabase-email-auth-jkkn-institutions-kenavo-2"
+}

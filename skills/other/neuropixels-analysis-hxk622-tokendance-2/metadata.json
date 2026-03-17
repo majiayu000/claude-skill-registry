@@ -1,0 +1,11 @@
+{
+  "name": "neuropixels-analysis",
+  "description": "Neuropixels neural recording analysis. Load SpikeGLX/OpenEphys data, preprocess, motion correction, Kilosort4 spike sorting, quality metrics, Allen/IBL curation, AI-assisted visual analysis, for Neuro",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/clinical/neuropixels-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "neuropixels-analysis-hxk622-tokendance-2"
+}

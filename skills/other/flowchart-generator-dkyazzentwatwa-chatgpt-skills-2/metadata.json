@@ -1,0 +1,11 @@
+{
+  "name": "flowchart-generator",
+  "description": "Generate flowcharts from YAML/JSON definitions or Python DSL. Supports standard flowchart shapes, swimlanes, and PNG/SVG/PDF export.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "flowchart-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "flowchart-generator-dkyazzentwatwa-chatgpt-skills-2"
+}

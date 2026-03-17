@@ -1,0 +1,11 @@
+{
+  "name": "obra-test-driven-development",
+  "description": "Use when implementing new behavior or fixing bugs via tests-first (TDD) in VS Code Copilot Agent mode.",
+  "repo": "faulkdev/github-copilot-superpowers",
+  "path": "scripts/overrides/obra/obra-test-driven-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/faulkdev/github-copilot-superpowers",
+  "dir_name": "obra-test-driven-development-faulkdev-github-copilot-super-2"
+}

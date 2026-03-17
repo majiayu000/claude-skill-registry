@@ -1,0 +1,11 @@
+{
+  "name": "example-sentences",
+  "description": "Requirements for creating and revising example sentences in je-dict-1. Covers minimum counts, progressive length, vocabulary restrictions by tier, and quality standards.",
+  "repo": "tkgally/je-dict-1",
+  "path": ".claude/skills/example-sentences",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tkgally/je-dict-1",
+  "dir_name": "example-sentences-tkgally-je-dict-1-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "numpy-indexing",
+  "description": "Indexing in NumPy ranges from basic slicing (zero-copy) to advanced \"fancy\" indexing (always creates a copy). Understanding the distinction is vital for memory management and avoiding unintended side ",
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/numpy-indexing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cuba6112/skillfactory",
+  "dir_name": "numpy-indexing-cuba6112-skillfactory-2"
+}

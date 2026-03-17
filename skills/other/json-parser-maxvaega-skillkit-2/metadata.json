@@ -1,0 +1,11 @@
+{
+  "name": "json-parser",
+  "description": "Parse and validate JSON data with schema support",
+  "repo": "maxvaega/skillkit",
+  "path": "examples/skills/example-plugin/skills/json-parser",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "json-parser-maxvaega-skillkit-2"
+}

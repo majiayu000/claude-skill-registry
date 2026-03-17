@@ -1,0 +1,11 @@
+{
+  "name": "temet-run-tui-patterns",
+  "description": "Build temet-run TUI components following project patterns for daemon monitoring, agent management,\nand observability integration. Use when implementing agent dashboards, status displays, log viewers,\n",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/temet-run-tui-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "temet-run-tui-patterns-dawiddutoit-custom-claude-2"
+}

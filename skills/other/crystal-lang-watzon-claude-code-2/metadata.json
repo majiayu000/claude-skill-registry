@@ -1,0 +1,11 @@
+{
+  "name": "crystal-lang",
+  "description": "Use this skill when working with the Crystal programming language. Crystal is a statically-typed, compiled language with Ruby-like syntax. It features type inference, null safety, macros, and compiles",
+  "repo": "watzon/claude-code",
+  "path": "skills/crystal-lang",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/watzon/claude-code",
+  "dir_name": "crystal-lang-watzon-claude-code-2"
+}

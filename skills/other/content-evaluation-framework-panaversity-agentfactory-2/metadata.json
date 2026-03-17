@@ -1,0 +1,11 @@
+{
+  "name": "content-evaluation-framework",
+  "description": "This skill should be used when evaluating the quality of book chapters, lessons, or educational content. It provides a systematic 6-category rubric with weighted scoring (Technical Accuracy 30%, Pedag",
+  "repo": "panaversity/agentfactory",
+  "path": ".claude/skills/content-evaluation-framework",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "content-evaluation-framework-panaversity-agentfactory-2"
+}

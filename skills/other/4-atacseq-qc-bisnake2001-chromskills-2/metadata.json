@@ -1,0 +1,11 @@
+{
+  "name": "4.ATACseq-QC",
+  "description": "This skill performs complete ATAC-seq data quality control from BAM and peak files.",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "4.ATACseq-QC",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "4-atacseq-qc-bisnake2001-chromskills-2"
+}

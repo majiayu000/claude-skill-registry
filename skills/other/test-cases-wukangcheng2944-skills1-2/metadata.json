@@ -1,0 +1,11 @@
+{
+  "name": "test-cases",
+  "description": "This skill should be used when generating comprehensive test cases from PRD documents or user requirements. Triggers when users request test case generation, QA planning, test scenario creation, or ne",
+  "repo": "wukangcheng2944/skills1",
+  "path": "test-cases",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/wukangcheng2944/skills1",
+  "dir_name": "test-cases-wukangcheng2944-skills1-2"
+}

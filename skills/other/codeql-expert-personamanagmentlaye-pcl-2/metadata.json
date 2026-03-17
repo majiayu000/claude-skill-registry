@@ -1,0 +1,11 @@
+{
+  "name": "codeql-expert",
+  "description": "Expert-level CodeQL for static analysis, vulnerability detection, and security code scanning",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/security/codeql-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "codeql-expert-personamanagmentlaye-pcl-2"
+}

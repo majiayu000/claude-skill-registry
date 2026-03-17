@@ -1,0 +1,11 @@
+{
+  "name": "event-log",
+  "description": "JSONL event stream for external integrations and hooks",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/event-log",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "event-log-mgreenly-ikigai-2"
+}

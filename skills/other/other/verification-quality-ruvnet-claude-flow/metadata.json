@@ -1,0 +1,9 @@
+{
+  "name": "verification-quality",
+  "repo": "ruvnet/claude-flow",
+  "path": ".claude/skills/verification-quality/SKILL.md",
+  "category": "other",
+  "source": "github.com/ruvnet/claude-flow",
+  "dir_name": "verification-quality-ruvnet-claude-flow",
+  "downloaded_at": "2026-02-18T01:34:36.168515Z"
+}

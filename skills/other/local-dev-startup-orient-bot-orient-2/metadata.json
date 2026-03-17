@@ -1,0 +1,11 @@
+{
+  "name": "local-dev-startup",
+  "description": "Start the website (Docusaurus) and dashboard (Vite) locally. Use when asked to \"run the website\", \"start docs locally\", \"run the dashboard\", \"start dev servers\", or any request to run local developmen",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/local-dev-startup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "local-dev-startup-orient-bot-orient-2"
+}

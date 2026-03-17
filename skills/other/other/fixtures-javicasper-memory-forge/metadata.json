@@ -1,0 +1,9 @@
+{
+  "name": "fixtures",
+  "repo": "javicasper/memory-forge",
+  "path": "tools/embeddings/tests/fixtures/sample-skill.md",
+  "category": "other",
+  "source": "github.com/javicasper/memory-forge",
+  "dir_name": "fixtures-javicasper-memory-forge",
+  "downloaded_at": "2026-02-22T07:37:22.433295Z"
+}

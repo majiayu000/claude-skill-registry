@@ -1,0 +1,11 @@
+{
+  "name": "aico-pm-user-story-writing",
+  "description": "Transform requirements into well-structured User Stories using \"As a [user], I want [goal], So that [benefit]\" format with Given/When/Then acceptance criteria.\n\nUse this skill when:\n- User asks to \"wr",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-pm-user-story-writing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-pm-user-story-writing-yellinzero-aico-2"
+}

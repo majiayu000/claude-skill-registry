@@ -1,0 +1,11 @@
+{
+  "name": "notion-docs-enhancer",
+  "description": "使用 Playwright 浏览器自动化快速创建和完善 Notion 文档。\n触发场景：用户提到\"Notion\"、\"完善文档\"、\"创建页面\"、\"填充内容\"、\"notion文档\"。\n适用于：创建新页面、修改标题、粘贴 Markdown 内容、格式化文档。",
+  "repo": "muzhicaomingwang/ai-ideas",
+  "path": ".claude/skills/notion-docs-enhancer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/muzhicaomingwang/ai-ideas",
+  "dir_name": "notion-docs-enhancer-muzhicaomingwang-ai-ideas-2"
+}

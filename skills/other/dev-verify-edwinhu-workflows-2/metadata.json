@@ -1,0 +1,11 @@
+{
+  "name": "dev-verify",
+  "description": "This skill should be used when the user asks to 'verify completion', 'check that tests pass', 'confirm feature works', or REQUIRED Phase 7 of /dev workflow (final). Enforces fresh runtime evidence bef",
+  "repo": "edwinhu/workflows",
+  "path": "lib/skills/dev-verify",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "dev-verify-edwinhu-workflows-2"
+}

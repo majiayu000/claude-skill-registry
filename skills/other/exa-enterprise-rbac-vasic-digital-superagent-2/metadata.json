@@ -1,0 +1,11 @@
+{
+  "name": "exa-enterprise-rbac",
+  "description": "Configure Exa enterprise SSO, role-based access control, and organization management.\nUse when implementing SSO integration, configuring role-based permissions,\nor setting up organization-level contro",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-enterprise-rbac",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-enterprise-rbac-vasic-digital-superagent-2"
+}

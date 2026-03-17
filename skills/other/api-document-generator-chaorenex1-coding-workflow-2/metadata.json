@@ -1,0 +1,11 @@
+{
+  "name": "api-document-generator",
+  "description": "Parses interface/API information from files or directories and generates OpenAPI-compliant documentation with timestamps",
+  "repo": "chaorenex1/coding-workflow",
+  "path": "skills/api-document-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chaorenex1/coding-workflow",
+  "dir_name": "api-document-generator-chaorenex1-coding-workflow-2"
+}

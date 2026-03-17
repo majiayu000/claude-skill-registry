@@ -2,7 +2,7 @@
   "category": "devops",
   "code": "ops",
   "count": 5307,
-  "updated_at": "2026-03-07T01:45:30.566437Z",
+  "updated_at": "2026-03-17T14:53:47.830615Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -50334,7 +50334,7 @@
     },
     {
       "name": "senior-devops",
-      "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and...",
+      "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and mo",
       "repo": "alirezarezvani/claude-skills",
       "path": "engineering-team/senior-devops",
       "branch": "main",
@@ -63352,7 +63352,7 @@
     },
     {
       "name": "senior-devops",
-      "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and...",
+      "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and mo",
       "repo": "alirezarezvani/claude-skills",
       "path": "engineering-team/senior-devops",
       "branch": "main",

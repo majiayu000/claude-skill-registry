@@ -1,0 +1,11 @@
+{
+  "name": "shadcn-integration",
+  "description": "Integration guide for shadcn/ui components with OKLCH design tokens. Use when setting up shadcn, customizing themes, or adding components to Next.js projects. Auto-trigger on /init --tokens --shadcn f",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/shadcn-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "shadcn-integration-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "switch-persona",
+  "description": "> Note: This skill has been adapted from claude-skillz",
+  "repo": "audunstrand/status-app",
+  "path": ".github/skills/switch-persona",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/audunstrand/status-app",
+  "dir_name": "switch-persona-audunstrand-status-app-2"
+}

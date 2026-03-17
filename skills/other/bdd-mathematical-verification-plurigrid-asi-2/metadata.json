@@ -1,0 +1,11 @@
+{
+  "name": "bdd-mathematical-verification",
+  "description": "BDD-Driven Mathematical Content Verification Skill\n\nCombines Behavior-Driven Development with mathematical formula extraction,\nverification, and transformation using:\n- Cucumber/Gherkin for specificat",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.ruler/skills/bdd-mathematical-verification",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "bdd-mathematical-verification-plurigrid-asi-2"
+}

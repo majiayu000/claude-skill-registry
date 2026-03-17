@@ -1,0 +1,11 @@
+{
+  "name": "create-skill",
+  "description": "Create a new agent skill following the Agent Skills specification. Use this when the user asks to create a new skill or update an existing one to match the standard.",
+  "repo": "hhk7734/hhk7734",
+  "path": "skills/create-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hhk7734/hhk7734",
+  "dir_name": "create-skill-hhk7734-hhk7734-2"
+}

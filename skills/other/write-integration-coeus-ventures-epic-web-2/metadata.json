@@ -1,0 +1,11 @@
+{
+  "name": "write-integration",
+  "description": "Write external integrations following the Epic architecture patterns. Use when creating services for third-party APIs, email, payments, or complex business logic. Triggers on \"create an integration\", ",
+  "repo": "coeus-ventures/epic-web",
+  "path": ".claude/skills/write-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/coeus-ventures/epic-web",
+  "dir_name": "write-integration-coeus-ventures-epic-web-2"
+}

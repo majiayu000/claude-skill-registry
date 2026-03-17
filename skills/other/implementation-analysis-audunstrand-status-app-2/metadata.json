@@ -1,0 +1,11 @@
+{
+  "name": "implementation-analysis",
+  "description": "> Note: This skill has been adapted from claude-skillz",
+  "repo": "audunstrand/status-app",
+  "path": ".github/skills/implementation-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/audunstrand/status-app",
+  "dir_name": "implementation-analysis-audunstrand-status-app-2"
+}

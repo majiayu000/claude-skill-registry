@@ -1,0 +1,11 @@
+{
+  "name": "wavecap-config",
+  "description": "View and edit WaveCap configuration. Use when the user asks about Whisper settings, LLM correction config, stream settings, or wants to modify the config.yaml file.",
+  "repo": "TobiasWooldridge/WaveCap",
+  "path": ".claude/skills/wavecap-config",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TobiasWooldridge/WaveCap",
+  "dir_name": "wavecap-config-tobiaswooldridge-wavecap-2"
+}

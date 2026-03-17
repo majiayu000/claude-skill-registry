@@ -1,0 +1,11 @@
+{
+  "name": "github-graphql",
+  "description": "Use when querying GitHub via GraphQL. Provides patterns for PR threads, comments, and mutations.",
+  "repo": "JacobPEvans/ai-assistant-instructions",
+  "path": "agentsmd/skills/github-graphql",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JacobPEvans/ai-assistant-instructions",
+  "dir_name": "github-graphql-jacobpevans-ai-assistant-instruc-2"
+}

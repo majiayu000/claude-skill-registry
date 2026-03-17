@@ -1,0 +1,11 @@
+{
+  "name": "doc-discovery",
+  "description": "Loads feature docs, workflow docs, and invariants before planning any task. Use when starting complex work, changing multiple features, or when unsure about constraints. Essential first step for non-t",
+  "repo": "RustyLindquist/EnhancedHR",
+  "path": ".claude/skills/doc-discovery",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RustyLindquist/EnhancedHR",
+  "dir_name": "doc-discovery-rustylindquist-enhancedhr-2"
+}

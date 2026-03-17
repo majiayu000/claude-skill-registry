@@ -1,0 +1,11 @@
+{
+  "name": "ha-automation",
+  "description": "Create and debug Home Assistant automations, scripts, blueprints, and Jinja2 templates. Use when working with triggers, conditions, actions, automation YAML, scripts, blueprints, or template expressio",
+  "repo": "nodnarbnitram/claude-code-extensions",
+  "path": ".claude/skills/ha-automation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nodnarbnitram/claude-code-extensions",
+  "dir_name": "ha-automation-nodnarbnitram-claude-code-extensio-2"
+}

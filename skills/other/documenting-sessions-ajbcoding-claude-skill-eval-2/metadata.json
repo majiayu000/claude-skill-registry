@@ -1,0 +1,11 @@
+{
+  "name": "documenting-sessions",
+  "description": "Create consistent session summary documents with automatic linking and style checking",
+  "repo": "AJBcoding/claude-skill-eval",
+  "path": ".claude/skills/documenting-sessions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AJBcoding/claude-skill-eval",
+  "dir_name": "documenting-sessions-ajbcoding-claude-skill-eval-2"
+}

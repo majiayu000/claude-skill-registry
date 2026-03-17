@@ -1,0 +1,11 @@
+{
+  "name": "prowler-mcp",
+  "description": "Creates MCP tools for Prowler MCP Server. Covers BaseTool pattern, model design, and API client usage. Trigger: When working in mcp_server/ on tools (BaseTool), models (MinimalSerializerMixin/from_api",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/prowler-mcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/prowler-cloud/prowler",
+  "dir_name": "prowler-mcp-prowler-cloud-prowler-2"
+}

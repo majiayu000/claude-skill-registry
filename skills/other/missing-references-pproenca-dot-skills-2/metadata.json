@@ -1,0 +1,11 @@
+{
+  "name": "missing-references",
+  "description": "This skill references rules that do not have corresponding files in the references directory.",
+  "repo": "pproenca/dot-skills",
+  "path": "tests/fixtures/missing-references",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pproenca/dot-skills",
+  "dir_name": "missing-references-pproenca-dot-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "disciplined-quality-evaluation",
+  "description": "Phase 1.5/2.5 of disciplined development. Evaluates document quality using the\nKLS (Krogstie-Lindland-Sindre) 6-dimension framework. Produces structured ratings,\nidentifies gaps, suggests specific rev",
+  "repo": "terraphim/codex-skills",
+  "path": "skills/disciplined-quality-evaluation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terraphim/codex-skills",
+  "dir_name": "disciplined-quality-evaluation-terraphim-codex-skills-2"
+}

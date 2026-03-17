@@ -1,0 +1,11 @@
+{
+  "name": "log-forensics",
+  "description": "Analyze system, application, and security logs for forensic investigation. Use when\ninvestigating security incidents, insider threats, system compromises, or any scenario\nrequiring analysis of log dat",
+  "repo": "SherifEldeeb/agentskills",
+  "path": "skills/forensics/log-forensics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SherifEldeeb/agentskills",
+  "dir_name": "log-forensics-sherifeldeeb-agentskills-2"
+}

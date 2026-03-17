@@ -1,0 +1,11 @@
+{
+  "name": "realtek",
+  "description": "Realtek Semiconductor MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Realtek audio codecs, Ethernet controllers, WiFi ICs, or RealtekHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/realtek",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "realtek-cantara-lib-electronic-compo-2"
+}

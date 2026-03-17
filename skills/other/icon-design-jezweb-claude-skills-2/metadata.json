@@ -1,0 +1,11 @@
+{
+  "name": "icon-design",
+  "description": "Select semantically appropriate icons for websites using Lucide, Heroicons, or Phosphor. Covers concept-to-icon mapping, React/HTML templates, and tree-shaking patterns.\n\nUse when: building feature se",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/icon-design",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "icon-design-jezweb-claude-skills-2"
+}

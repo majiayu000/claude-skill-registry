@@ -1,0 +1,9 @@
+{
+  "name": "issue-devpipeline",
+  "repo": "catlog22/Claude-Code-Workflow",
+  "path": ".codex/skills/issue-devpipeline/SKILL.md",
+  "category": "other",
+  "source": "github.com/catlog22/Claude-Code-Workflow",
+  "dir_name": "issue-devpipeline",
+  "downloaded_at": "2026-02-22T06:39:54.805886Z"
+}

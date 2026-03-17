@@ -1,0 +1,11 @@
+{
+  "name": "venue-templates",
+  "description": "Access comprehensive LaTeX templates, formatting requirements, and submission guidelines for major scientific publication venues (Nature, Science, PLOS, IEEE, ACM), academic conferences (NeurIPS, ICML",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/writing/venue-templates",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "venue-templates-hxk622-tokendance-2"
+}

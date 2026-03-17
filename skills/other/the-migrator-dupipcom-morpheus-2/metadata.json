@@ -1,0 +1,11 @@
+{
+  "name": "the-migrator",
+  "description": "Creates and runs data migrations for schema changes, ensuring data integrity.",
+  "repo": "dupipcom/morpheus",
+  "path": ".claude/skills/the-migrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dupipcom/morpheus",
+  "dir_name": "the-migrator-dupipcom-morpheus-2"
+}

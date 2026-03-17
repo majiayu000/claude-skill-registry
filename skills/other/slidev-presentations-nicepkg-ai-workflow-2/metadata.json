@@ -1,0 +1,11 @@
+{
+  "name": "slidev-presentations",
+  "description": "Generate professional, browser-based presentations using Slidev - the presentation framework for developers.",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/talk-to-slidev-workflow/.claude/skills/slidev-presentations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "slidev-presentations-nicepkg-ai-workflow-2"
+}

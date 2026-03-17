@@ -1,0 +1,11 @@
+{
+  "name": "axiom-swiftui-animation-ref",
+  "description": "Use when implementing SwiftUI animations, understanding VectorArithmetic, using @Animatable macro, zoom transitions, UIKit/AppKit animation bridging, choosing between spring and timing curve animation",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-swiftui-animation-ref",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-swiftui-animation-ref-charleswiltgen-axiom-2"
+}

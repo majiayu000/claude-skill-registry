@@ -1,0 +1,11 @@
+{
+  "name": "collaboration",
+  "description": "Behavioral workflows and collaboration patterns for code review, agent coordination, and branch management. Use this skill when coordinating multi-agent work, managing code review processes, completin",
+  "repo": "jwwelbor/shark-task-manager",
+  "path": ".claude/skills/collaboration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jwwelbor/shark-task-manager",
+  "dir_name": "collaboration-jwwelbor-shark-task-manager-2"
+}

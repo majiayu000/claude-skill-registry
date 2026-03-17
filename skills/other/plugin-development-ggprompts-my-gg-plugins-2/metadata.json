@@ -1,0 +1,11 @@
+{
+  "name": "plugin-development",
+  "description": "Create and manage Claude Code plugins including commands, agents, skills, hooks, and MCP servers. This skill should be used when building new plugins, debugging plugin issues, understanding plugin str",
+  "repo": "GGPrompts/my-gg-plugins",
+  "path": "skills/plugin-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GGPrompts/my-gg-plugins",
+  "dir_name": "plugin-development-ggprompts-my-gg-plugins-2"
+}

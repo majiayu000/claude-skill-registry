@@ -1,0 +1,11 @@
+{
+  "name": "gpui-focus-handle",
+  "description": "Focus management and keyboard navigation in GPUI. Use when handling focus, focus handles, or keyboard navigation. Enables keyboard-driven interfaces with proper focus tracking and navigation between f",
+  "repo": "longbridge/gpui-component",
+  "path": ".claude/skills/gpui-focus-handle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/longbridge/gpui-component",
+  "dir_name": "gpui-focus-handle-longbridge-gpui-component-2"
+}

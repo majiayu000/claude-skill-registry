@@ -1,0 +1,11 @@
+{
+  "name": "spec-validate",
+  "description": "Validation loop for speccing. Clarifies requirements through structured questioning before document creation.",
+  "repo": "srnnkls/tropos",
+  "path": "skills/spec-validate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/srnnkls/tropos",
+  "dir_name": "spec-validate-srnnkls-tropos-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "silent-failure-hunter",
+  "description": "Use when asked to detect silent failures/weak error handling or explicitly asked to run the silent-failure-hunter subagent.",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/silent-failure-hunter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "silent-failure-hunter-troykelly-codex-skills-2"
+}

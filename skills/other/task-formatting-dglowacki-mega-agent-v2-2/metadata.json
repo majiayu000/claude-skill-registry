@@ -1,0 +1,11 @@
+{
+  "name": "task-formatting",
+  "description": "Format and structure tasks for ClickUp and Linear including priority calculation, status mapping, and task templates. Use when creating or updating tasks across project management systems.",
+  "repo": "dglowacki/mega-agent-v2",
+  "path": ".claude/skills/task-formatting",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dglowacki/mega-agent-v2",
+  "dir_name": "task-formatting-dglowacki-mega-agent-v2-2"
+}

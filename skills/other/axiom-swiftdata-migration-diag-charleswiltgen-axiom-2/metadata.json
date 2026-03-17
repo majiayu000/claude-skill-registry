@@ -1,0 +1,11 @@
+{
+  "name": "axiom-swiftdata-migration-diag",
+  "description": "Use when SwiftData migrations crash, fail to preserve relationships, lose data, or work in simulator but fail on device - systematic diagnostics for schema version mismatches, relationship errors, and",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-swiftdata-migration-diag",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-swiftdata-migration-diag-charleswiltgen-axiom-2"
+}

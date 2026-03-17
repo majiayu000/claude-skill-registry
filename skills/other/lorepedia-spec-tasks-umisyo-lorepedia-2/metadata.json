@@ -1,0 +1,11 @@
+{
+  "name": "lorepedia-spec-tasks",
+  "description": "Notionの仕様ページから実装タスクを作成するスキル。画面仕様や機能仕様を読み取り、実装タスクに分解してタスク管理データベースに登録する。「仕様からタスクを作成」「タスクに分解して」などの指示で使用。",
+  "repo": "Umisyo/Lorepedia",
+  "path": ".claude/skills/lorepedia-spec-tasks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Umisyo/Lorepedia",
+  "dir_name": "lorepedia-spec-tasks-umisyo-lorepedia-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "project-metadata",
+  "description": "Guide for updating app name, bundle identifier, and company metadata across all platforms (project)",
+  "repo": "gsmlg-app/flutter-app-template",
+  "path": ".claude/skills/project-metadata",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gsmlg-app/flutter-app-template",
+  "dir_name": "project-metadata-gsmlg-app-flutter-app-template-2"
+}

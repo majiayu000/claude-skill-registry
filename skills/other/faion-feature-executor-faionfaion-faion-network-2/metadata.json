@@ -1,0 +1,11 @@
+{
+  "name": "faion-feature-executor",
+  "description": "SDD feature executor: sequential task execution with quality gates. Runs tests/coverage validation after each task, performs code review, iterates until all issues resolved. Integrates with faion-task",
+  "repo": "faionfaion/faion-network",
+  "path": "skills/faion-feature-executor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/faionfaion/faion-network",
+  "dir_name": "faion-feature-executor-faionfaion-faion-network-2"
+}

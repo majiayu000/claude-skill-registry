@@ -1,0 +1,11 @@
+{
+  "name": "gitops-workflows",
+  "description": "GitOps workflows and patterns using ArgoCD and Flux for declarative Kubernetes deployments. Use when implementing CI/CD for Kubernetes, managing multi-environment deployments, or adopting declarative ",
+  "repo": "NickCrew/claude-cortex",
+  "path": "claude_ctx_py/assets/skills/gitops-workflows",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NickCrew/claude-cortex",
+  "dir_name": "gitops-workflows-nickcrew-claude-cortex-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ehr-advantage-designer",
+  "description": "当社EHR-RWDの強み（経過記録テキスト、臨床サマリー、検査値）を最大限活用する\n研究デザインを設計する。クレームDB（JMDC/MDV）では不可能な研究要素を具体化。\n",
+  "repo": "tito-gh/healthcare",
+  "path": ".claude/skills/ehr-advantage-designer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tito-gh/healthcare",
+  "dir_name": "ehr-advantage-designer-tito-gh-healthcare-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "github-api-cache",
+  "description": "MANDATORY before any GitHub project operations - caches project metadata to prevent rate limit exhaustion. Called by session-start. Other skills MUST use cached data.",
+  "repo": "troykelly/claude-skills",
+  "path": "skills/github-api-cache",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/claude-skills",
+  "dir_name": "github-api-cache-troykelly-claude-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "content-agent",
+  "description": "Generates personalized marketing content for Unite-Hub. Creates followup emails, proposals, and case studies based on contact data and interaction history. Uses Claude AI for high-quality, contextual ",
+  "repo": "CleanExpo/Unite-Hub",
+  "path": ".claude/skills/content-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CleanExpo/Unite-Hub",
+  "dir_name": "content-agent-cleanexpo-unite-hub-2"
+}

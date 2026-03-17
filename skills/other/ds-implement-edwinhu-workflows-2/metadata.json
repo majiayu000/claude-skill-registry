@@ -1,0 +1,11 @@
+{
+  "name": "ds-implement",
+  "description": "REQUIRED Phase 3 of /ds workflow. Enforces output-first verification at each step.",
+  "repo": "edwinhu/workflows",
+  "path": "lib/skills/ds-implement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "ds-implement-edwinhu-workflows-2"
+}

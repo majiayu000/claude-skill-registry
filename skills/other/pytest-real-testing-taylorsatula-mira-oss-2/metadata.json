@@ -1,0 +1,11 @@
+{
+  "name": "pytest-real-testing",
+  "description": "Write pytests that test real public interfaces with actual components, no mocking, and precise assertions. MIRA-specific patterns. Use when creating or reviewing tests.",
+  "repo": "taylorsatula/mira-OSS",
+  "path": ".claude/skills/pytest-real-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/taylorsatula/mira-OSS",
+  "dir_name": "pytest-real-testing-taylorsatula-mira-oss-2"
+}

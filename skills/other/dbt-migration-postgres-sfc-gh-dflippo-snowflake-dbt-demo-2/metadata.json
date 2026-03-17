@@ -1,0 +1,11 @@
+{
+  "name": "dbt-migration-postgres",
+  "description": "Convert PostgreSQL/Greenplum/Netezza DDL to dbt models compatible with Snowflake. This skill should be used when converting views, tables, or stored procedures from PostgreSQL, Greenplum, or Netezza t",
+  "repo": "sfc-gh-dflippo/snowflake-dbt-demo",
+  "path": ".claude/skills/dbt-migration-postgres",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sfc-gh-dflippo/snowflake-dbt-demo",
+  "dir_name": "dbt-migration-postgres-sfc-gh-dflippo-snowflake-dbt-demo-2"
+}

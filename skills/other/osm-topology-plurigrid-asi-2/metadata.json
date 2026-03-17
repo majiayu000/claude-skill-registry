@@ -1,0 +1,11 @@
+{
+  "name": "osm-topology",
+  "description": "OSM Topology Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/osm-topology",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "osm-topology-plurigrid-asi-2"
+}

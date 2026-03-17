@@ -1,0 +1,11 @@
+{
+  "name": "yangjie",
+  "description": "Yangjie Technology MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Yangjie diodes, transistors, or YangjieHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/yangjie",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "yangjie-cantara-lib-electronic-compo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "designer-skills",
+  "description": "Designer subsystem patterns for LlamaFarm. Covers React 18, TanStack Query, TailwindCSS, and Radix UI.",
+  "repo": "llama-farm/llamafarm",
+  "path": ".claude/skills/designer-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/llama-farm/llamafarm",
+  "dir_name": "designer-skills-llama-farm-llamafarm-2"
+}

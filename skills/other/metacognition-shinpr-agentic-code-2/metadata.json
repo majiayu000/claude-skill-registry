@@ -1,0 +1,11 @@
+{
+  "name": "metacognition",
+  "description": "Validates approach and checks assumptions before/after tasks. Use when: starting work, encountering errors, or switching phases.",
+  "repo": "shinpr/agentic-code",
+  "path": ".agents/skills/metacognition",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shinpr/agentic-code",
+  "dir_name": "metacognition-shinpr-agentic-code-2"
+}

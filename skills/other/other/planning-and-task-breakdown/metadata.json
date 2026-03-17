@@ -1,0 +1,17 @@
+{
+  "name": "planning-and-task-breakdown",
+  "repo": "addyosmani/agent-skills",
+  "path": "skills/planning-and-task-breakdown/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/addyosmani/agent-skills",
+  "dir_name": "planning-and-task-breakdown",
+  "downloaded_at": "2026-03-01T06:27:25.601290Z",
+  "author": "addyosmani",
+  "source_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/planning-and-task-breakdown/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/addyosmani/agent-skills/blob/main/skills/planning-and-task-breakdown/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

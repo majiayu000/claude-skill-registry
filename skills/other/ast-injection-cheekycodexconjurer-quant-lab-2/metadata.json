@@ -1,0 +1,11 @@
+{
+  "name": "ast_injection",
+  "description": "Use AST-aware edits to reduce syntax errors and maintain structure.",
+  "repo": "CheekyCodexConjurer/quant-lab",
+  "path": ".agent-docs/templates/.codex/skills/ast_injection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CheekyCodexConjurer/quant-lab",
+  "dir_name": "ast-injection-cheekycodexconjurer-quant-lab-2"
+}

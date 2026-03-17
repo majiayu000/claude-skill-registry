@@ -1,0 +1,11 @@
+{
+  "name": "deploy-stack",
+  "description": "Deploys multiple components to an environment. Use for coordinated deployments of backend, frontend, and landing.",
+  "repo": "MenadBt/prospection",
+  "path": ".claude/skills/deploy-stack",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MenadBt/prospection",
+  "dir_name": "deploy-stack-menadbt-prospection-2"
+}

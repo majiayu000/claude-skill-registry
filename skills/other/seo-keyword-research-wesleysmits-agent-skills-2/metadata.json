@@ -1,0 +1,11 @@
+{
+  "name": "seo-keyword-research",
+  "description": "Expands keyword lists and analyzes search intent for content strategy. Use when the user asks about keyword research, search intent, long-tail keywords, keyword gaps, or SEO content planning.",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/seo-keyword-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "seo-keyword-research-wesleysmits-agent-skills-2"
+}

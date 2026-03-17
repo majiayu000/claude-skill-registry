@@ -1,0 +1,11 @@
+{
+  "name": "webgpu-specs",
+  "description": "Download WebGPU and WGSL specifications for use as a reference",
+  "repo": "gfx-rs/wgpu",
+  "path": ".claude/skills/webgpu-specs",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gfx-rs/wgpu",
+  "dir_name": "webgpu-specs-gfx-rs-wgpu-2"
+}

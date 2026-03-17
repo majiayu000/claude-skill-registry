@@ -1,0 +1,11 @@
+{
+  "name": "agent-tool",
+  "description": "Define tools for the support agent. Use when adding new capabilities like refund processing, license transfer, knowledge lookup, or any agent action.",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/agent-tool",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "agent-tool-skillrecordings-support-2"
+}

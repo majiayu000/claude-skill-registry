@@ -1,0 +1,11 @@
+{
+  "name": "ds-brainstorm",
+  "description": "This skill should be used when the user asks to \"start a data science project\", \"brainstorm analysis\", \"plan a data analysis\", or wants to clarify analysis requirements. REQUIRED Phase 1 of /ds workfl",
+  "repo": "edwinhu/workflows",
+  "path": "lib/skills/ds-brainstorm",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "ds-brainstorm-edwinhu-workflows-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "security-baseline-controls",
+  "description": "มาตรฐาน security ขั้นต่ำที่ทุก service ต้องมี: authentication, authorization, input validation, secrets handling, และ security headers ที่ทำให้ระบบปลอดภัยตั้งแต่ day one",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "64-meta-standards/security-baseline-controls",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "security-baseline-controls-amnadtaowsoam-cerebratechai-claude-2"
+}

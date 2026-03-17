@@ -1,0 +1,11 @@
+{
+  "name": "recursive-refiner",
+  "description": "Self-improvement engine. Implements generate-critique-iterate loops for enhanced reasoning. Use when working through complex problems, synthesizing across domains, or when initial output needs refinem",
+  "repo": "agentgptsmith/MonadFramework",
+  "path": ".claude/skills/recursive-refiner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentgptsmith/MonadFramework",
+  "dir_name": "recursive-refiner-agentgptsmith-monadframework-2"
+}

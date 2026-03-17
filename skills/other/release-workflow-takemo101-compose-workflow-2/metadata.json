@@ -1,0 +1,11 @@
+{
+  "name": "release-workflow",
+  "description": "バージョン整合性チェック→提案→承認→GitHub Release作成までの標準リリースフロー（マルチエコシステム対応）",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/release-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/takemo101/compose-workflow",
+  "dir_name": "release-workflow-takemo101-compose-workflow-2"
+}

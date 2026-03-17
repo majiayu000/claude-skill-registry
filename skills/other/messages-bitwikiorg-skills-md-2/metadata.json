@@ -1,0 +1,11 @@
+{
+  "name": "messages",
+  "description": "Imported skill messages from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/langchain/messages",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "messages-bitwikiorg-skills-md-2"
+}

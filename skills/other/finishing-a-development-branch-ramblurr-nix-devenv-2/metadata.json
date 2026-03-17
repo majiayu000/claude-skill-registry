@@ -1,0 +1,11 @@
+{
+  "name": "finishing-a-development-branch",
+  "description": "Use this when you have completed some feature implementation and have written passing tests, and you are ready to create a PR.",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/finishing-a-development-branch",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "finishing-a-development-branch-ramblurr-nix-devenv-2"
+}

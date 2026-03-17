@@ -1,0 +1,11 @@
+{
+  "name": "flox-mcp",
+  "description": "MCP server wrapper for flox CLI operations - environment management via JSON-RPC",
+  "repo": "plurigrid/asi",
+  "path": "skills/flox-mcp",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "flox-mcp-plurigrid-asi-2"
+}

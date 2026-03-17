@@ -1,0 +1,11 @@
+{
+  "name": "ccc",
+  "description": "Learn Claude Code in 5 hands-on lessons. From basics to building applications.\nUse when: user wants to learn Claude Code, asks \"how do I...\", or is new.\nTriggers: \"learn\", \"teach me\", \"how does this w",
+  "repo": "timequity/plugins",
+  "path": "ccc",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timequity/plugins",
+  "dir_name": "ccc-timequity-plugins-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "vulnhunter",
+  "description": "Security vulnerability detection and variant analysis skill. Use when hunting for dangerous APIs, footgun patterns, error-prone configurations, and vulnerability variants across codebases. Combines sh",
+  "repo": "sendaifun/skills",
+  "path": "skills/vulnhunter",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "vulnhunter-sendaifun-skills-2"
+}

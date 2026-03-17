@@ -1,0 +1,11 @@
+{
+  "name": "database-architecture",
+  "description": "MANDATORY when designing schemas, writing migrations, creating indexes, or making architectural database decisions - enforces PostgreSQL 18 best practices including AIO, UUIDv7, temporal constraints, ",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/database-architecture",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "database-architecture-troykelly-codex-skills-2"
+}

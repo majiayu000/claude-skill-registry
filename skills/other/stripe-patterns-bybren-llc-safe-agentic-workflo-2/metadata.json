@@ -1,0 +1,11 @@
+{
+  "name": "stripe-patterns",
+  "description": "Stripe payment integration patterns. Use when implementing payment flows, handling webhooks, or working with subscriptions. Routes to existing patterns and provides evidence templates for payment test",
+  "repo": "bybren-llc/safe-agentic-workflow",
+  "path": ".claude/skills/stripe-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bybren-llc/safe-agentic-workflow",
+  "dir_name": "stripe-patterns-bybren-llc-safe-agentic-workflo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "shownotes-generator",
+  "description": "Generate comprehensive \"Shownotes\" summaries from longform articles, papers, transcripts, videos, or audio content. Use when users request shownotes, episode summaries, content summaries with takeaway",
+  "repo": "WomenDefiningAI/claude-code-skills",
+  "path": "skills/shownotes-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WomenDefiningAI/claude-code-skills",
+  "dir_name": "shownotes-generator-womendefiningai-claude-code-skills-2"
+}

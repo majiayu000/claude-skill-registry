@@ -1,0 +1,11 @@
+{
+  "name": "dev-test-chrome",
+  "description": "Chrome MCP browser testing. Console/network debugging, JS execution, GIF recording.",
+  "repo": "edwinhu/workflows",
+  "path": "lib/skills/dev-test-chrome",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "dev-test-chrome-edwinhu-workflows-2"
+}

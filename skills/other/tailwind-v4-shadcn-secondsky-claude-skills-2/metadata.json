@@ -1,0 +1,11 @@
+{
+  "name": "tailwind-v4-shadcn",
+  "description": "Production-tested setup for Tailwind CSS v4 with shadcn/ui, Vite, and React.\n\nUse when: initializing React projects with Tailwind v4, setting up shadcn/ui,\nimplementing dark mode, debugging CSS variab",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/tailwind-v4-shadcn/skills/tailwind-v4-shadcn",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "tailwind-v4-shadcn-secondsky-claude-skills-2"
+}

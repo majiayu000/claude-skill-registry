@@ -1,0 +1,11 @@
+{
+  "name": "design-export",
+  "description": "Export to PDF/HTML/markdown. Use when distributing documentation, creating presentations, or archiving design docs.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/design-export",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "design-export-spencerbeggs-claude-design-coordi-2"
+}

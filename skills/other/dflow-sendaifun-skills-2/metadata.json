@@ -1,0 +1,11 @@
+{
+  "name": "dflow",
+  "description": "Complete DFlow trading protocol SDK - the single source of truth for integrating DFlow on Solana. Covers spot trading, prediction markets, Swap API, Metadata API, WebSocket streaming, and all DFlow to",
+  "repo": "sendaifun/skills",
+  "path": "skills/dflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sendaifun/skills",
+  "dir_name": "dflow-sendaifun-skills-2"
+}

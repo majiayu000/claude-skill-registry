@@ -1,0 +1,11 @@
+{
+  "name": "bb80-parallel-agents",
+  "description": "10-agent parallel orchestration for EPIC 9 atomic cycle (fan-out → construction → collision → convergence).",
+  "repo": "seanchatmangpt/ggen",
+  "path": ".claude/skills/bb80-parallel-agents",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/seanchatmangpt/ggen",
+  "dir_name": "bb80-parallel-agents-seanchatmangpt-ggen-2"
+}

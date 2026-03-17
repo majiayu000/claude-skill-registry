@@ -1,0 +1,17 @@
+{
+  "name": "convex-security-audit",
+  "repo": "NitzanSelwyn/MomentumTrackerAdmin",
+  "path": ".claude/skills/Convex Security Audit/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/NitzanSelwyn/MomentumTrackerAdmin",
+  "dir_name": "convex-security-audit-nitzanselwyn-momentumtrackeradmin",
+  "downloaded_at": "2026-03-01T05:49:09.511143Z",
+  "author": "NitzanSelwyn",
+  "source_url": "https://github.com/NitzanSelwyn/MomentumTrackerAdmin/blob/main/.claude/skills/Convex Security Audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NitzanSelwyn/MomentumTrackerAdmin/blob/main/.claude/skills/Convex Security Audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

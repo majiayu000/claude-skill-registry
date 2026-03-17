@@ -1,0 +1,11 @@
+{
+  "name": "error-handling-recovery",
+  "description": "Design error states and recovery workflows that guide users to resolution. Learn context-aware error messages, graceful degradation, and recovery patterns. Use when handling validation errors, network",
+  "repo": "sanky369/vibe-building-skills",
+  "path": "skills/frontend-design/error-handling-recovery",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sanky369/vibe-building-skills",
+  "dir_name": "error-handling-recovery-sanky369-vibe-building-skills-2"
+}

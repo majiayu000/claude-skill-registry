@@ -1,0 +1,11 @@
+{
+  "name": "reverse-engineering",
+  "description": "ソフトウェアのリバースエンジニアリングレポートを作成するスキル。リポジトリの構造や機能を調査し、外部仕様・内部実装・使用方法を明確にするレポートを作成します。「リバースエンジニアリングレポートを作成して」「コードベースを分析して」「プロジェクトの構造を調査して」「システムの仕組みを解析して」等のリクエストで使用してください。新規開発者のオンボーディング、プロジェクトの理解、ドキュメント作成、将来の",
+  "repo": "ks6088ts-labs/skills",
+  "path": "skills/reverse-engineering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ks6088ts-labs/skills",
+  "dir_name": "reverse-engineering-ks6088ts-labs-skills-2"
+}

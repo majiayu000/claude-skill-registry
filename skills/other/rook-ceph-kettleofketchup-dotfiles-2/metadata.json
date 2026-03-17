@@ -1,0 +1,11 @@
+{
+  "name": "rook-ceph",
+  "description": "Multi-node Rook Ceph deployment for Kubernetes production clusters. This skill should be used when deploying Ceph storage across multiple nodes with high availability. Covers Helm installation of Rook",
+  "repo": "kettleofketchup/dotfiles",
+  "path": ".claude/skills/rook-ceph",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kettleofketchup/dotfiles",
+  "dir_name": "rook-ceph-kettleofketchup-dotfiles-2"
+}

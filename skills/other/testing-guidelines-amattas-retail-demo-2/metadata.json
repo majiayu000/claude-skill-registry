@@ -1,0 +1,11 @@
+{
+  "name": "testing-guidelines",
+  "description": "How tests should be structured, named, and prioritized in this codebase.",
+  "repo": "amattas/retail-demo",
+  "path": ".claude/skills/testing-guidelines",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/amattas/retail-demo",
+  "dir_name": "testing-guidelines-amattas-retail-demo-2"
+}

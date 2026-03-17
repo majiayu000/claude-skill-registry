@@ -1,0 +1,11 @@
+{
+  "name": "obra-using-superpowers",
+  "description": "Use when working in VS Code Copilot Agent mode and you want the Superpowers workflow (plans, verification, debugging, TDD) applied consistently.",
+  "repo": "faulkdev/github-copilot-superpowers",
+  "path": "scripts/overrides/obra/obra-using-superpowers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/faulkdev/github-copilot-superpowers",
+  "dir_name": "obra-using-superpowers-faulkdev-github-copilot-super-2"
+}

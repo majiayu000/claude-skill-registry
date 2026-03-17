@@ -1,0 +1,11 @@
+{
+  "name": "skill-name",
+  "description": "[TODO: Write comprehensive description in third-person. Start with \"This skill provides...\" or \"This skill should be used when...\"]\n\n[TODO: Add \"Use when\" scenarios - specific situations where Claude ",
+  "repo": "secondsky/claude-skills",
+  "path": "templates/skill-skeleton/skills/skill-name",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "skill-name-secondsky-claude-skills-2"
+}

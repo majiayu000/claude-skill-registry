@@ -1,0 +1,11 @@
+{
+  "name": "board-sdk",
+  "description": "This skill should be used when the user asks about \"touch input\", \"BoardInput\", \"BoardContact\", \"piece detection\", \"glyph\", \"glyph recognition\", \"simulator\", \"Board hardware\", \"contact phases\", \"Piece",
+  "repo": "jwmyers/vui-vux-plugins",
+  "path": "plugins/zero-day-dev/skills/board-sdk",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jwmyers/vui-vux-plugins",
+  "dir_name": "board-sdk-jwmyers-vui-vux-plugins-2"
+}

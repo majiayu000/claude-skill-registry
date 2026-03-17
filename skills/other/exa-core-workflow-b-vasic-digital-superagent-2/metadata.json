@@ -1,0 +1,11 @@
+{
+  "name": "exa-core-workflow-b",
+  "description": "Execute Exa secondary workflow: Core Workflow B.\nUse when implementing secondary use case,\nor complementing primary workflow.\nTrigger with phrases like \"exa secondary workflow\",\n\"secondary task with e",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-core-workflow-b",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-core-workflow-b-vasic-digital-superagent-2"
+}

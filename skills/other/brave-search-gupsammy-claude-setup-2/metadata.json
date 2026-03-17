@@ -1,0 +1,11 @@
+{
+  "name": "brave-search",
+  "description": "Web search and content extraction via Brave Search API.",
+  "repo": "gupsammy/Claude-setup",
+  "path": "skills/brave-search",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gupsammy/Claude-setup",
+  "dir_name": "brave-search-gupsammy-claude-setup-2"
+}

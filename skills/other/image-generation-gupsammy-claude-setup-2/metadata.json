@@ -1,0 +1,11 @@
+{
+  "name": "image-generation",
+  "description": "Generate or edit images with Gemini Pro. Use when user says \"generate an image\", \"create a picture\", \"make me a logo\", \"edit this image\", \"remove the background\", \"change the style\", \"combine these im",
+  "repo": "gupsammy/Claude-setup",
+  "path": "skills/image-generation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gupsammy/Claude-setup",
+  "dir_name": "image-generation-gupsammy-claude-setup-2"
+}

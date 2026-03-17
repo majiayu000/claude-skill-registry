@@ -1,0 +1,11 @@
+{
+  "name": "iterator",
+  "description": "Iterator Pattern pattern for C development",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/patterns/iterator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "iterator-mgreenly-ikigai-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "task-loop-verify",
+  "description": "Verify the current task and output a completion marker. Use this to check if a task is complete and signal the stop hook to allow session exit.",
+  "repo": "jsegov/shipspec-claude-code-plugin",
+  "path": "skills/task-loop-verify",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jsegov/shipspec-claude-code-plugin",
+  "dir_name": "task-loop-verify-jsegov-shipspec-claude-code-2"
+}

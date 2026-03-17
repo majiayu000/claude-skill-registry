@@ -1,0 +1,11 @@
+{
+  "name": "scholarly-edition",
+  "description": "Create a DOI-ready scholarly edition of a translated book. Use when asked to publish, create an edition, mint a DOI, or prepare a book for scholarly publication. Generates front matter, creates versio",
+  "repo": "Embassy-of-the-Free-Mind/sourcelibrary-v2",
+  "path": ".claude/skills/scholarly-edition",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Embassy-of-the-Free-Mind/sourcelibrary-v2",
+  "dir_name": "scholarly-edition-embassy-of-the-free--sourcelibrary-v2-2"
+}

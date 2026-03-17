@@ -1,0 +1,11 @@
+{
+  "name": "cloudwatch",
+  "description": "AWS CloudWatch monitoring for logs, metrics, alarms, and dashboards. Use when setting up monitoring, creating alarms, querying logs with Insights, configuring metric filters, building dashboards, or t",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/development/cloudwatch-alarm-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "cloudwatch-majiayu000-claude-skill-registr-2"
+}

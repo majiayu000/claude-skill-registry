@@ -1,0 +1,11 @@
+{
+  "name": "generate-acceptance-test",
+  "description": "從規格目錄的 acceptance.yaml 生成/維護 BDD/ezSpec 測試。使用類似 Gherkin 語法，AI 自動產生 step definition（開發人員不需要手寫），驗收測試規格即為 Executable Specification。",
+  "repo": "knowlet/skills",
+  "path": "skills/generate-acceptance-test",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/knowlet/skills",
+  "dir_name": "generate-acceptance-test-knowlet-skills-2"
+}

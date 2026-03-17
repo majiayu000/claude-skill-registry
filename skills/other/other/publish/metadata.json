@@ -1,0 +1,9 @@
+{
+  "name": "publish",
+  "repo": "ecto/dotfiles",
+  "path": ".claude/skills/publish/SKILL.md",
+  "category": "other",
+  "source": "github.com/ecto/dotfiles",
+  "dir_name": "publish",
+  "downloaded_at": "2026-02-22T07:01:46.755101Z"
+}

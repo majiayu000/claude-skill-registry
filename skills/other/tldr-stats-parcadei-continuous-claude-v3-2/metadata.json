@@ -1,0 +1,11 @@
+{
+  "name": "tldr-stats",
+  "description": "Show full session token usage, costs, TLDR savings, and hook activity",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/tldr-stats",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "tldr-stats-parcadei-continuous-claude-v3-2"
+}

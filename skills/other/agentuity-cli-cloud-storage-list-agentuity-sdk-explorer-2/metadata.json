@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-storage-list",
+  "description": "List storage resources or files in a bucket. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-storage-list",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-storage-list-agentuity-sdk-explorer-2"
+}

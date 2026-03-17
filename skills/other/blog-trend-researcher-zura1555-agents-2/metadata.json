@@ -1,0 +1,11 @@
+{
+  "name": "blog-trend-researcher",
+  "description": "Researches topics and trends for blog content with parallel multi-agent execution. USE WHEN orchestrator invokes research phase OR user says 'research topic', 'find trends', 'gather information for bl",
+  "repo": "Zura1555/agents",
+  "path": ".claude/skills/blog-trend-researcher",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Zura1555/agents",
+  "dir_name": "blog-trend-researcher-zura1555-agents-2"
+}

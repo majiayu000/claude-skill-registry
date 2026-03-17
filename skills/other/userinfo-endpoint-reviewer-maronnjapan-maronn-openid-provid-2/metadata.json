@@ -1,0 +1,11 @@
+{
+  "name": "userinfo-endpoint-reviewer",
+  "description": "Review test cases for UserInfo Endpoint. Covers access token validation, Bearer token handling, sub claim consistency, scope-based claims, and signed responses per OIDC Core 1.0 Section 5.3.",
+  "repo": "maronnjapan/maronn-openid-provider",
+  "path": ".claude/skills/userinfo-endpoint-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maronnjapan/maronn-openid-provider",
+  "dir_name": "userinfo-endpoint-reviewer-maronnjapan-maronn-openid-provid-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "architect-agent-skill",
+  "description": "Technical workflow for architect-agent - PRD creation with mandatory database context, entity design with Zod, iteration review, and agent coordination in the iterative v2.0 system",
+  "repo": "fercracix33/poli2-clean-architecture",
+  "path": ".claude/skills/architect-agent-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fercracix33/poli2-clean-architecture",
+  "dir_name": "architect-agent-skill-fercracix33-poli2-clean-architec-2"
+}

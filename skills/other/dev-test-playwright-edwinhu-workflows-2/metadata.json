@@ -1,0 +1,11 @@
+{
+  "name": "dev-test-playwright",
+  "description": "Playwright MCP browser testing. Headless E2E, cross-browser, CI/CD automation.",
+  "repo": "edwinhu/workflows",
+  "path": "lib/skills/dev-test-playwright",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "dev-test-playwright-edwinhu-workflows-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "spending-analysis",
+  "description": "Analyze Pollinations revenue, pack purchases, and tier spending patterns. Query Polar for payment history and Tinybird for usage data.",
+  "repo": "pollinations/pollinations",
+  "path": ".claude/skills/spending-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pollinations/pollinations",
+  "dir_name": "spending-analysis-pollinations-pollinations-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "automating-tmux-windows",
+  "description": "Automates terminal sessions in tmux windows using MCP tools. Use when launching background processes, monitoring builds/servers, sending commands to debuggers (pdb/gdb), interacting with CLI prompts, ",
+  "repo": "kamushadenes/nix",
+  "path": "home/common/ai/resources/claude-code/skills/automating-tmux-windows",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kamushadenes/nix",
+  "dir_name": "automating-tmux-windows-kamushadenes-nix-2"
+}

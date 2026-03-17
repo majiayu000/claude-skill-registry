@@ -1,0 +1,11 @@
+{
+  "name": "reference-management",
+  "description": "> 參考文獻管理技能 - 從搜尋、儲存到格式化的完整文獻管理",
+  "repo": "u9401066/med-paper-assistant",
+  "path": ".claude/skills/reference-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/u9401066/med-paper-assistant",
+  "dir_name": "reference-management-u9401066-med-paper-assistant-2"
+}

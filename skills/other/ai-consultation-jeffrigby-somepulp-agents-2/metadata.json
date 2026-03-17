@@ -1,0 +1,11 @@
+{
+  "name": "ai-consultation",
+  "description": "Provides AI consultation workflows, prompt templates, and best practices for multi-model consultation. Use when user asks for \"second opinion\", \"ask codex\", \"ask gemini\", \"AI code review\", \"external A",
+  "repo": "jeffrigby/somepulp-agents",
+  "path": "plugins/second-opinion/skills/ai-consultation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeffrigby/somepulp-agents",
+  "dir_name": "ai-consultation-jeffrigby-somepulp-agents-2"
+}

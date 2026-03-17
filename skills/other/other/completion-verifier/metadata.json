@@ -1,0 +1,9 @@
+{
+  "name": "completion-verifier",
+  "repo": "dangeles/claude",
+  "path": "claude-config/skills/completion-verifier/SKILL.md",
+  "category": "other",
+  "source": "github.com/dangeles/claude",
+  "dir_name": "completion-verifier",
+  "downloaded_at": "2026-02-15T06:52:58.824649Z"
+}

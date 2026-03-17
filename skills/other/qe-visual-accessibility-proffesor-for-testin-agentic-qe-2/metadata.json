@@ -1,0 +1,11 @@
+{
+  "name": "qe-visual-accessibility",
+  "description": "Visual regression testing, responsive design validation, and WCAG accessibility compliance testing.",
+  "repo": "proffesor-for-testing/agentic-qe",
+  "path": ".claude/skills/qe-visual-accessibility",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proffesor-for-testing/agentic-qe",
+  "dir_name": "qe-visual-accessibility-proffesor-for-testin-agentic-qe-2"
+}

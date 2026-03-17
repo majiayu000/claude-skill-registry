@@ -1,0 +1,11 @@
+{
+  "name": "types",
+  "description": "Imported skill types from vercel",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/vercel/types",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "types-bitwikiorg-skills-md-2"
+}

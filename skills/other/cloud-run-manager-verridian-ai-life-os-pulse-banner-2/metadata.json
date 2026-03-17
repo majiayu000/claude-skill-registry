@@ -1,0 +1,11 @@
+{
+  "name": "cloud_run_manager",
+  "description": "Tool suite for deploying and managing Google Cloud Run services. Use for deployments, logging, and service inspection.",
+  "repo": "Verridian-ai/life-os-Pulse-banner-generator",
+  "path": ".claude/skills/cloud_run_manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Verridian-ai/life-os-Pulse-banner-generator",
+  "dir_name": "cloud-run-manager-verridian-ai-life-os-pulse-banner-2"
+}

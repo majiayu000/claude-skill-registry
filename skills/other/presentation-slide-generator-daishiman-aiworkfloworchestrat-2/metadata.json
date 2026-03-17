@@ -1,0 +1,11 @@
+{
+  "name": "presentation-slide-generator",
+  "description": "HTMLプレゼンテーションスライドを生成するスキル。Kanagawaテーマ、GSAPアニメーション、23種類のスライドタイプ対応。ホバーエフェクト・ツールチップによるインタラクティブ機能、無料CDNアイコン（FontAwesome 6 Free推奨）、GASデプロイ可能な1ファイルHTML出力。\n\nAnchors:\n• Presentation Zen (Garr Reynolds) / 適用: ",
+  "repo": "daishiman/AIWorkflowOrchestrator",
+  "path": ".claude/skills/presentation-slide-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/daishiman/AIWorkflowOrchestrator",
+  "dir_name": "presentation-slide-generator-daishiman-aiworkfloworchestrat-2"
+}

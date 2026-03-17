@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-tiptap-toolbar-extension",
+  "description": "Implement Tiptap toolbar extensions for Umbraco rich text editor using official docs",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-tiptap-toolbar-extension",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-tiptap-toolbar-extension-umbraco-umbraco-cms-backoffi-2"
+}

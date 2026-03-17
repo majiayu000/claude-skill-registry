@@ -1,0 +1,11 @@
+{
+  "name": "geb-protocol",
+  "description": "项目架构约定：通过 Root/Folder/File 三层极简元数据（_dir.md + I/O/Pos 注释）\n让 AI 在任意位置自定位。\n\n**AI 创建文件夹时自动触发**：hook 会生成 _dir.md 模板，AI 填写 Input/Output/Pos。",
+  "repo": "MMorit00/fund-portfolio-bot",
+  "path": ".claude/skills/geb-protocol",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MMorit00/fund-portfolio-bot",
+  "dir_name": "geb-protocol-mmorit00-fund-portfolio-bot-2"
+}

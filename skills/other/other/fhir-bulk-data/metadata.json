@@ -1,0 +1,17 @@
+{
+  "name": "fhir-bulk-data",
+  "repo": "aehrc/pathling",
+  "path": ".claude/skills/fhir-bulk-data/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aehrc/pathling",
+  "dir_name": "fhir-bulk-data",
+  "downloaded_at": "2026-03-01T06:28:57.287988Z",
+  "author": "aehrc",
+  "source_url": "https://github.com/aehrc/pathling/blob/main/.claude/skills/fhir-bulk-data/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aehrc/pathling/blob/main/.claude/skills/fhir-bulk-data/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

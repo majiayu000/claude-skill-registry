@@ -1,0 +1,11 @@
+{
+  "name": "mapper-runtime-checks",
+  "description": "Runtime mapper validation using debug logs to detect missing fields",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/mapper-runtime-checks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "mapper-runtime-checks-zerobias-org-module-2"
+}

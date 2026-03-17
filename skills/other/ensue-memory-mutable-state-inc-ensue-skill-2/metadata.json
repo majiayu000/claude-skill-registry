@@ -1,0 +1,11 @@
+{
+  "name": "ensue-memory",
+  "description": "Augmented cognition layer that makes users smarter by connecting conversations to their persistent knowledge tree. Use proactively when topics arise that might have prior knowledge, and when users ask",
+  "repo": "mutable-state-inc/ensue-skill",
+  "path": "skills/ensue-memory",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mutable-state-inc/ensue-skill",
+  "dir_name": "ensue-memory-mutable-state-inc-ensue-skill-2"
+}

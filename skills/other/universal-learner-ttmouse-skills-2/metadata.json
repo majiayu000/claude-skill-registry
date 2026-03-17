@@ -1,0 +1,11 @@
+{
+  "name": "universal-learner",
+  "description": "通用学习器 - 从任何领域的Prompt中自动提取可复用元素，持续学习和积累知识",
+  "repo": "ttmouse/skills",
+  "path": "universal-learner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ttmouse/skills",
+  "dir_name": "universal-learner-ttmouse-skills-2"
+}

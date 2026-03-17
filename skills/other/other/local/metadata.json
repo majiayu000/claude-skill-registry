@@ -1,0 +1,9 @@
+{
+  "name": "local",
+  "repo": "dagster-io/erk",
+  "path": ".claude/commands/local/audit-skill.md",
+  "category": "other",
+  "source": "github.com/dagster-io/erk",
+  "dir_name": "local",
+  "downloaded_at": "2026-02-15T06:52:06.265838Z"
+}

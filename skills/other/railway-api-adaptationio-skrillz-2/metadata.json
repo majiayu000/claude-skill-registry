@@ -1,0 +1,11 @@
+{
+  "name": "railway-api",
+  "description": "Railway.com GraphQL API automation for projects, services, deployments, and environment variables. Use when automating Railway operations, querying project data, managing deployments, setting variable",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/railway-api",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "railway-api-adaptationio-skrillz-2"
+}

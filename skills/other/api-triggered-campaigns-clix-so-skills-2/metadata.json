@@ -1,0 +1,11 @@
+{
+  "name": "api-triggered-campaigns",
+  "description": "Helps developers configure API-triggered campaigns in the Clix console and trigger them from backend services with safe auth, payload schemas, dynamic audience filters (trigger.*), and personalization",
+  "repo": "clix-so/skills",
+  "path": "skills/api-triggered-campaigns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clix-so/skills",
+  "dir_name": "api-triggered-campaigns-clix-so-skills-2"
+}

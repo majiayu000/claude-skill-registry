@@ -1,0 +1,11 @@
+{
+  "name": "api-design-skill",
+  "description": "REST/GraphQL API design patterns - resource naming, HTTP methods, error handling, pagination, versioning. Use when: design API, REST endpoints, GraphQL schema, error responses, pagination, rate limiti",
+  "repo": "ScientiaCapital/skills",
+  "path": "active/api-design-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ScientiaCapital/skills",
+  "dir_name": "api-design-skill-scientiacapital-skills-2"
+}

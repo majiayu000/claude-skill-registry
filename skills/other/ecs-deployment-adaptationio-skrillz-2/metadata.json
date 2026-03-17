@@ -1,0 +1,11 @@
+{
+  "name": "ecs-deployment",
+  "description": "ECS deployment strategies including rolling updates, blue-green with CodeDeploy, canary releases, and GitOps workflows. Covers deployment circuit breakers, rollback strategies, and production deployme",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/ecs-deployment",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "ecs-deployment-adaptationio-skrillz-2"
+}

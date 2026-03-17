@@ -1,0 +1,11 @@
+{
+  "name": "assessment-architect",
+  "description": "Generate MIT-standard certification exams (DOCX) for chapters or parts. Use \"ch X\" for single chapter, \"part X\" for entire part. Disambiguates scope before generation. Outputs to assessments/ director",
+  "repo": "panaversity/agentfactory",
+  "path": ".claude/skills/assessment-architect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "assessment-architect-panaversity-agentfactory-2"
+}

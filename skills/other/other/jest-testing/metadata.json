@@ -1,0 +1,9 @@
+{
+  "name": "jest-testing",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/qa-testing-automation/skills/jest-testing/SKILL.md",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "jest-testing",
+  "downloaded_at": "2026-02-13T01:19:46.408219Z"
+}

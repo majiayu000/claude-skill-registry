@@ -1,0 +1,11 @@
+{
+  "name": "sk",
+  "description": "How to use the repo-scoped sk CLI to manage Claude Skills in this codebase.",
+  "repo": "lambdamechanic/sk",
+  "path": "skills/sk",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lambdamechanic/sk",
+  "dir_name": "sk-lambdamechanic-sk-2"
+}

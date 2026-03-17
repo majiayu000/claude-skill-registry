@@ -1,0 +1,11 @@
+{
+  "name": "loading",
+  "description": "Imported skill loading from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/langchain/loading",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "loading-bitwikiorg-skills-md-2"
+}

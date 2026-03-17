@@ -1,0 +1,9 @@
+{
+  "name": "infinite-loop",
+  "repo": "cisco-ai-defense/skill-scanner",
+  "path": "evals/skills/resource-exhaustion/infinite-loop/SKILL.md",
+  "category": "other",
+  "source": "github.com/cisco-ai-defense/skill-scanner",
+  "dir_name": "infinite-loop",
+  "downloaded_at": "2026-02-22T06:42:48.073590Z"
+}

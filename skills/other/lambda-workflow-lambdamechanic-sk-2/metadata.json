@@ -1,0 +1,11 @@
+{
+  "name": "lambda-workflow",
+  "description": "Use this skill whenever you touch delivery end-to-end—from grabbing a bd issue through merge/closure. Each phase builds on the last; do not skip ahead unless a human explicitly says so.",
+  "repo": "lambdamechanic/sk",
+  "path": "skills/lambda-workflow",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lambdamechanic/sk",
+  "dir_name": "lambda-workflow-lambdamechanic-sk-2"
+}

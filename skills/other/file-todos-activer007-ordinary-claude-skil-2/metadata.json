@@ -1,0 +1,11 @@
+{
+  "name": "file-todos",
+  "description": "This skill should be used when managing the file-based todo tracking system in the todos/ directory. It provides workflows for creating todos, managing status and dependencies, conducting triage, and ",
+  "repo": "Activer007/ordinary-claude-skills",
+  "path": "skills_all/file-todos",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Activer007/ordinary-claude-skills",
+  "dir_name": "file-todos-activer007-ordinary-claude-skil-2"
+}

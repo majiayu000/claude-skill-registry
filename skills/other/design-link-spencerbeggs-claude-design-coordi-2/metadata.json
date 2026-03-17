@@ -1,0 +1,11 @@
+{
+  "name": "design-link",
+  "description": "Generate cross-reference graph showing relationships between design documents. Use when visualizing doc dependencies, finding related docs, or understanding documentation structure.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/design-link",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "design-link-spencerbeggs-claude-design-coordi-2"
+}

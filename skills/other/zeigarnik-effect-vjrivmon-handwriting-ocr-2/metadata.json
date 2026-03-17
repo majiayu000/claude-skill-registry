@@ -1,0 +1,11 @@
+{
+  "name": "zeigarnik-effect",
+  "description": "Las tareas incompletas se recuerdan mejor que las completadas. Use cuando diseñe progress indicators, onboarding, gamificación, o flujos que mantienen engagement.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/behavioral-effects/zeigarnik-effect",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "zeigarnik-effect-vjrivmon-handwriting-ocr-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "cloudflare-workers-ai",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/cloudflare-workers-ai/SKILL.md",
+  "category": "other",
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "cloudflare-workers-ai",
+  "downloaded_at": "2026-02-18T01:28:15.762827Z"
+}

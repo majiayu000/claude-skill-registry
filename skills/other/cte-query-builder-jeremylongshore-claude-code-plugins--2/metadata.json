@@ -1,0 +1,11 @@
+{
+  "name": "cte-query-builder",
+  "description": "Cte Query Builder - Auto-activating skill for Data Analytics.\nTriggers on: cte query builder, cte query builder\nPart of the Data Analytics skill category.\n",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "planned-skills/generated/12-data-analytics/cte-query-builder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "cte-query-builder-jeremylongshore-claude-code-plugins--2"
+}

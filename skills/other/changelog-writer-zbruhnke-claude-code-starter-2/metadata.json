@@ -1,0 +1,11 @@
+{
+  "name": "changelog-writer",
+  "description": "Maintain CHANGELOG.md with properly categorized entries. Use after implementing features, fixing bugs, or making any notable changes. Follows Keep a Changelog format.",
+  "repo": "zbruhnke/claude-code-starter",
+  "path": ".claude/skills/changelog-writer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zbruhnke/claude-code-starter",
+  "dir_name": "changelog-writer-zbruhnke-claude-code-starter-2"
+}

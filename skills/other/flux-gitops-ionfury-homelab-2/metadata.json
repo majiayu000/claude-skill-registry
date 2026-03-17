@@ -1,0 +1,11 @@
+{
+  "name": "flux-gitops",
+  "description": "Flux GitOps patterns for the homelab Kubernetes platform using ResourceSets.\n\nUse when: (1) Adding new Helm releases or applications to the platform, (2) Deploying a new service to Kubernetes,\n(3) Deb",
+  "repo": "ionfury/homelab",
+  "path": ".claude/skills/flux-gitops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ionfury/homelab",
+  "dir_name": "flux-gitops-ionfury-homelab-2"
+}

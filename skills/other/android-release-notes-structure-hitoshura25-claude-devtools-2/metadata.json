@@ -1,0 +1,11 @@
+{
+  "name": "android-release-notes-structure",
+  "description": "Creates directory structure for Play Store release notes with multi-locale support.",
+  "repo": "hitoshura25/claude-devtools",
+  "path": "skills/android-release-notes-structure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hitoshura25/claude-devtools",
+  "dir_name": "android-release-notes-structure-hitoshura25-claude-devtools-2"
+}

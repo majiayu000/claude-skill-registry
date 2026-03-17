@@ -1,0 +1,11 @@
+{
+  "name": "minion-models",
+  "description": "Manage Ollama models for minions. Pull new models, list available ones, switch presets, check disk usage. Use when setting up or changing models.\n",
+  "repo": "felixmanojh/minions",
+  "path": "skills/minion-models",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/felixmanojh/minions",
+  "dir_name": "minion-models-felixmanojh-minions-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "context-validate",
+  "description": "Validate CLAUDE.md structure, formatting, and quality. Use when checking context files for compliance, ensuring proper structure, or verifying before commits.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/context-validate",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "context-validate-spencerbeggs-claude-design-coordi-2"
+}

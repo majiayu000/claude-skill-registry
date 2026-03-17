@@ -1,0 +1,11 @@
+{
+  "name": "developing",
+  "description": "TODO.mdのタスクを実行。TDD/E2E/TASKラベルに応じたワークフローで実装。\nWorktree内での独立した開発を支援。\n\nTrigger:\n実装, 開発, /dev:impl, implementing, develop\n",
+  "repo": "ryryo/dot-claude-dev",
+  "path": ".claude/skills/dev/developing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ryryo/dot-claude-dev",
+  "dir_name": "developing-ryryo-dot-claude-dev-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "scum-resource",
+  "description": "SCUM Resource Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/scum-resource",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "scum-resource-plurigrid-asi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "clonalstats",
+  "description": "Generate comprehensive clonality statistics and diversity visualizations for TCR/BCR repertoire analysis. Quantifies clonal expansion, measures diversity metrics (Shannon, Simpson, Gini), and creates ",
+  "repo": "pwwang/immunopipe",
+  "path": "skills/clonalstats",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pwwang/immunopipe",
+  "dir_name": "clonalstats-pwwang-immunopipe-2"
+}

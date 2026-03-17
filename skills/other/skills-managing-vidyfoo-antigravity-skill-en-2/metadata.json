@@ -1,0 +1,11 @@
+{
+  "name": "skills-managing",
+  "description": "Create and manage ASE skills following best practices. Use when creating new skills, importing skills, understanding the Registry V3.1 structure, or debugging skill activation.",
+  "repo": "VidyFoo/antigravity-skill-engine",
+  "path": ".agent/skills/3-sys/skills-managing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VidyFoo/antigravity-skill-engine",
+  "dir_name": "skills-managing-vidyfoo-antigravity-skill-en-2"
+}

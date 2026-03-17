@@ -1,0 +1,11 @@
+{
+  "name": "http-mocking",
+  "description": "HTTP mocking with nock - the only allowed mocking library",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/http-mocking",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "http-mocking-zerobias-org-module-2"
+}

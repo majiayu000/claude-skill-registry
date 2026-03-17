@@ -1,0 +1,11 @@
+{
+  "name": "yandex-competitive-analysis",
+  "description": "Analyze competitors and search landscape in Russian/CIS markets using Yandex tools. Finds who ranks for keywords, identifies content gaps, and discovers ranking opportunities. Use when user asks about",
+  "repo": "altrr2/yandex-tools-mcp",
+  "path": ".claude/skills/yandex-competitive-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/altrr2/yandex-tools-mcp",
+  "dir_name": "yandex-competitive-analysis-altrr2-yandex-tools-mcp-2"
+}

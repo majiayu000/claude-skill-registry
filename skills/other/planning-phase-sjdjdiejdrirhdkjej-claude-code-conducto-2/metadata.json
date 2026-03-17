@@ -1,0 +1,11 @@
+{
+  "name": "planning-phase",
+  "description": "Generates implementation plans with code reuse analysis, architecture design, and complexity estimation during the /plan phase. Use when planning feature implementation, analyzing code reuse opportuni",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/planning-phase",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "planning-phase-sjdjdiejdrirhdkjej-claude-code-conducto-2"
+}

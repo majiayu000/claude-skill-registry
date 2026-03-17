@@ -1,0 +1,11 @@
+{
+  "name": "integrating-stripe-webhooks",
+  "description": "Use when implementing Stripe webhook endpoints and getting 'Raw body not available' or signature verification errors - provides raw body parsing solutions and subscription period field fixes across fr",
+  "repo": "pr-pm/prpm",
+  "path": ".claude/skills/integrating-stripe-webhooks",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pr-pm/prpm",
+  "dir_name": "integrating-stripe-webhooks-pr-pm-prpm-2"
+}

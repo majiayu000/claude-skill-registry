@@ -1,0 +1,11 @@
+{
+  "name": "biopython",
+  "description": "Primary Python toolkit for molecular biology. Preferred for Python-based PubMed/NCBI queries (Bio.Entrez), sequence manipulation, file parsing (FASTA, GenBank, FASTQ, PDB), advanced BLAST workflows, s",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/biopython",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "biopython-ovachiever-droid-tings-2"
+}

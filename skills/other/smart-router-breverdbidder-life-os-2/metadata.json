@@ -1,0 +1,11 @@
+{
+  "name": "smart-router",
+  "description": "Multi-tier LLM routing achieving 90% FREE tier processing through intelligent task classification.",
+  "repo": "breverdbidder/life-os",
+  "path": ".claude/skills/smart-router",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/breverdbidder/life-os",
+  "dir_name": "smart-router-breverdbidder-life-os-2"
+}

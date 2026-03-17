@@ -1,0 +1,11 @@
+{
+  "name": "23.integrative-DMR-DEG",
+  "description": "This skill performs correlation analysis between differential methylation and differential gene expression, identifying genes with coordinated epigenetic regulation. It provides preprocessing and inte",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "23.integrative-DMR-DEG",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "23-integrative-dmr-deg-bisnake2001-chromskills-2"
+}

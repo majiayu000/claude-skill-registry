@@ -1,0 +1,11 @@
+{
+  "name": "security-auditor-skill",
+  "description": "Expert in compliance frameworks (SOC2, ISO 27001), automated auditing, and risk management.",
+  "repo": "404kidwiz/claude-supercode-skills",
+  "path": "security-auditor-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/404kidwiz/claude-supercode-skills",
+  "dir_name": "security-auditor-skill-404kidwiz-claude-supercode-ski-2"
+}

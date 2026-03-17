@@ -1,0 +1,11 @@
+{
+  "name": "production-debugging",
+  "description": "Connect to and debug the Orient production server on Oracle Cloud. Use this skill when asked to check production logs, restart containers, debug deployment issues, SSH into the server, view container ",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/production-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "production-debugging-orient-bot-orient-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ha-graphs-visualization",
+  "description": "Create and configure Home Assistant graphs and visualizations including history-graph, statistics-graph, mini-graph-card (HACS), and apexcharts-card (HACS) with time ranges, multiple sensors, aggregat",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/ha-graphs-visualization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "ha-graphs-visualization-dawiddutoit-custom-claude-2"
+}

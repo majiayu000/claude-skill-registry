@@ -1,0 +1,11 @@
+{
+  "name": "critic",
+  "description": "Critic for artifact validation and quality review. Validates architecture and test coverage against requirements. Use this skill for architecture review, coverage validation, or quality checks.",
+  "repo": "Denissvgn/project-team-ag",
+  "path": ".agent/skills/critic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Denissvgn/project-team-ag",
+  "dir_name": "critic-denissvgn-project-team-ag-2"
+}

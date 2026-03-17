@@ -1,0 +1,11 @@
+{
+  "name": "markdowntown-monorepo",
+  "description": "Monorepo workflow for coordinating CLI + web changes, tests, and docs in markdowntown.",
+  "repo": "joelklabo/markdowntown-cli",
+  "path": "codex/skills/markdowntown-monorepo",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown-cli",
+  "dir_name": "markdowntown-monorepo-joelklabo-markdowntown-cli-2"
+}

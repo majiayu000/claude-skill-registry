@@ -1,0 +1,11 @@
+{
+  "name": "deployment-strategy",
+  "description": "Deployment Strategy Agent. Feature Flag, Canary/Blue-Green 배포, 롤백 전략을 담당합니다. 안전한 배포와 점진적 롤아웃을 관리합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/deployment-strategy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "deployment-strategy-shaul1991-shaul-agents-plugin-2"
+}

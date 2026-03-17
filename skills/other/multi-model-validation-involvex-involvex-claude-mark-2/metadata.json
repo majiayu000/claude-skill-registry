@@ -1,0 +1,11 @@
+{
+  "name": "multi-model-validation",
+  "description": "Run multiple AI models in parallel for 3-5x speedup with ENFORCED performance statistics tracking. Use when validating with Grok, Gemini, GPT-5, DeepSeek, or Claudish proxy for code review, consensus ",
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/orchestration/skills/multi-model-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "dir_name": "multi-model-validation-involvex-involvex-claude-mark-2"
+}

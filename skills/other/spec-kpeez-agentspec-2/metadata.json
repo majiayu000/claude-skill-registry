@@ -1,0 +1,11 @@
+{
+  "name": "spec",
+  "description": "Create feature specs for context continuity across agent sessions. Use when starting a new feature or when user runs /spec new.",
+  "repo": "kpeez/agentspec",
+  "path": "skills/spec",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kpeez/agentspec",
+  "dir_name": "spec-kpeez-agentspec-2"
+}

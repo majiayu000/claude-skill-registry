@@ -1,0 +1,11 @@
+{
+  "name": "_template",
+  "description": "[REQUIRED] Comprehensive description of what this skill does and when to use it. Include: (1) Primary functionality, (2) Specific use cases, (3) Security operations context. Must include specific \"Use",
+  "repo": "AgentSecOps/SecOpsAgentKit",
+  "path": "skills/_template",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AgentSecOps/SecOpsAgentKit",
+  "dir_name": "template-agentsecops-secopsagentkit-2"
+}

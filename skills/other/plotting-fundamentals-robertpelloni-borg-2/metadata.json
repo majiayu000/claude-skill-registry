@@ -1,0 +1,11 @@
+{
+  "name": "plotting-fundamentals",
+  "description": "Master quick plotting and interactive visualization with hvPlot. Use this skill when creating basic plots (line, scatter, bar, histogram, box), visualizing pandas DataFrames with minimal code, adding ",
+  "repo": "robertpelloni/borg",
+  "path": "agents/rse-agents/plugins/holoviz-visualization/skills/plotting-fundamentals",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robertpelloni/borg",
+  "dir_name": "plotting-fundamentals-robertpelloni-borg-2"
+}

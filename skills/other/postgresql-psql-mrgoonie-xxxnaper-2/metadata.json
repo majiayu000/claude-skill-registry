@@ -1,0 +1,11 @@
+{
+  "name": "postgresql-psql",
+  "description": "Comprehensive guide for PostgreSQL psql - the interactive terminal client for PostgreSQL. Use when connecting to PostgreSQL databases, executing queries, managing databases/tables, configuring connect",
+  "repo": "mrgoonie/xxxnaper",
+  "path": ".claude/skills/postgresql-psql",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mrgoonie/xxxnaper",
+  "dir_name": "postgresql-psql-mrgoonie-xxxnaper-2"
+}

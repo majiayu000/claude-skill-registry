@@ -1,0 +1,11 @@
+{
+  "name": "data-sql-optimization",
+  "description": "Production-grade SQL optimization for OLTP systems: EXPLAIN/plan analysis, balanced indexing, schema and query design, migrations, backup/recovery, HA, security, and safe performance tuning across Pos",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/data-sql-optimization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "data-sql-optimization-vasilyu1983-ai-agents-public-2"
+}

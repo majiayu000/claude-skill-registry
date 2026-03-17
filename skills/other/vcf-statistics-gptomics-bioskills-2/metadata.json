@@ -1,0 +1,11 @@
+{
+  "name": "vcf-statistics",
+  "description": "Generate variant statistics, sample concordance, and quality metrics using bcftools stats and gtcheck. Use when evaluating variant quality, comparing samples, or summarizing VCF contents.",
+  "repo": "GPTomics/bioSkills",
+  "path": "variant-calling/vcf-statistics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "vcf-statistics-gptomics-bioskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "character",
+  "description": "Core patterns for all characters — home, location, relationships, inventory",
+  "repo": "SimHacker/moollm",
+  "path": "skills/character",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "character-simhacker-moollm-2"
+}

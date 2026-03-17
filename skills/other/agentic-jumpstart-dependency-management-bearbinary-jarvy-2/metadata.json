@@ -1,0 +1,11 @@
+{
+  "name": "agentic-jumpstart-dependency-management",
+  "description": "Dependency management guidelines for Jarvy - crate selection criteria, feature flag best practices, version management, security auditing with cargo-audit and cargo-deny.",
+  "repo": "bearbinary/Jarvy",
+  "path": ".claude/skills/agentic-jumpstart-dependency-management",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bearbinary/Jarvy",
+  "dir_name": "agentic-jumpstart-dependency-management-bearbinary-jarvy-2"
+}

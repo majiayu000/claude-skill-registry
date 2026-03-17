@@ -1,0 +1,11 @@
+{
+  "name": "cicd-pipeline",
+  "description": "CI/CD pipeline guide covering GitHub Actions, Lefthook hooks, Dependabot, and deployment scripts. Use when asking about workflows, automation, or deployment.",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/ballee/cicd-pipeline",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "cicd-pipeline-javeedishaq-ai-workflow-orchestr-2"
+}

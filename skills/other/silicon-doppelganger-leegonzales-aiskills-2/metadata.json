@@ -1,0 +1,11 @@
+{
+  "name": "silicon-doppelganger",
+  "description": "Build psychometrically accurate personal proxy agents for the PAIRL Conductor system. Extracts personality, decision heuristics, and values into portable schemas that enable AI agents to negotiate, fi",
+  "repo": "leegonzales/AISkills",
+  "path": "SiliconDoppelganger/silicon-doppelganger",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leegonzales/AISkills",
+  "dir_name": "silicon-doppelganger-leegonzales-aiskills-2"
+}

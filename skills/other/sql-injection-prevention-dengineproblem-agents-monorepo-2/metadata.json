@@ -1,0 +1,11 @@
+{
+  "name": "sql-injection-prevention",
+  "description": "Эксперт по защите от SQL injection. Используй для parameterized queries, input validation и database security.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/sql-injection-prevention",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "sql-injection-prevention-dengineproblem-agents-monorepo-2"
+}

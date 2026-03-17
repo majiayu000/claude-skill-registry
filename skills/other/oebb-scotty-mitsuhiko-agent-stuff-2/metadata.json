@@ -1,0 +1,11 @@
+{
+  "name": "oebb-scotty",
+  "description": "Austrian rail travel planner (ÖBB Scotty). Use when planning train journeys in Austria, checking departures/arrivals at stations, or looking for service disruptions. Covers ÖBB trains, S-Bahn, regiona",
+  "repo": "mitsuhiko/agent-stuff",
+  "path": "skills/oebb-scotty",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mitsuhiko/agent-stuff",
+  "dir_name": "oebb-scotty-mitsuhiko-agent-stuff-2"
+}

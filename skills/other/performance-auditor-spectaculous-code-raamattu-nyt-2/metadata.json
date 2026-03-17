@@ -1,0 +1,11 @@
+{
+  "name": "performance-auditor",
+  "description": "Expert assistant for monitoring and optimizing performance in the KR92 Bible Voice project. Use when analyzing query performance, optimizing database indexes, reviewing React Query caching, monitoring",
+  "repo": "Spectaculous-Code/raamattu-nyt",
+  "path": ".claude/skills/performance-auditor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Spectaculous-Code/raamattu-nyt",
+  "dir_name": "performance-auditor-spectaculous-code-raamattu-nyt-2"
+}

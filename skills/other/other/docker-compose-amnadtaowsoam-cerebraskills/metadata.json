@@ -1,0 +1,17 @@
+{
+  "name": "docker-compose",
+  "repo": "AmnadTaowsoam/CerebraSkills",
+  "path": "15-devops-infrastructure/docker-compose/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/AmnadTaowsoam/CerebraSkills",
+  "dir_name": "docker-compose-amnadtaowsoam-cerebraskills",
+  "downloaded_at": "2026-03-01T04:50:13.153074Z",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/CerebraSkills/blob/main/15-devops-infrastructure/docker-compose/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AmnadTaowsoam/CerebraSkills/blob/main/15-devops-infrastructure/docker-compose/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

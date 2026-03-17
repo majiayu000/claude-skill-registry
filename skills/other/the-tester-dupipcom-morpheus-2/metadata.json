@@ -1,0 +1,11 @@
+{
+  "name": "the-tester",
+  "description": "Runs tests, analyzes failures, and fixes test issues to ensure code quality.",
+  "repo": "dupipcom/morpheus",
+  "path": ".claude/skills/the-tester",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dupipcom/morpheus",
+  "dir_name": "the-tester-dupipcom-morpheus-2"
+}

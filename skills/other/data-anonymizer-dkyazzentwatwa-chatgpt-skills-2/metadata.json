@@ -1,0 +1,11 @@
+{
+  "name": "data-anonymizer",
+  "description": "Detect and mask PII (names, emails, phones, SSN, addresses) in text and CSV files. Multiple masking strategies with reversible tokenization option.",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "data-anonymizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "dir_name": "data-anonymizer-dkyazzentwatwa-chatgpt-skills-2"
+}

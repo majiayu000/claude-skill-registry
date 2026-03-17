@@ -1,0 +1,11 @@
+{
+  "name": "automating-word",
+  "description": "Automates Microsoft Word via JXA with AppleScript dictionary discovery. Use when asked to \"automate Word documents\", \"find and replace in Word\", \"JXA Word scripting\", or \"create Word documents program",
+  "repo": "SpillwaveSolutions/automating-mac-apps-plugin",
+  "path": "plugins/automating-mac-apps-plugin/skills/automating-word",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
+  "dir_name": "automating-word-spillwavesolutions-automating-mac-apps--2"
+}

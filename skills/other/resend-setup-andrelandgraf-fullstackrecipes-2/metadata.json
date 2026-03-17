@@ -1,0 +1,11 @@
+{
+  "name": "resend-setup",
+  "description": "Configure Resend for transactional emails like password resets and email verification.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/resend-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "resend-setup-andrelandgraf-fullstackrecipes-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "langgraph-agents-skill",
+  "description": "Multi-agent systems with LangGraph - supervisor/swarm patterns, state coordination, multi-provider routing. Use when: build LangGraph agent, multi-agent workflow, supervisor pattern, agent orchestrati",
+  "repo": "ScientiaCapital/skills",
+  "path": "active/langgraph-agents-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ScientiaCapital/skills",
+  "dir_name": "langgraph-agents-skill-scientiacapital-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "policyengine-microsimulation-skill",
+  "description": "ALWAYS USE THIS SKILL for PolicyEngine microsimulation, population-level analysis, winners/losers calculations.\nTriggers: \"microsimulation\", \"share who would lose/gain\", \"policy impact\", \"national ave",
+  "repo": "PolicyEngine/policyengine-claude",
+  "path": "skills/tools-and-apis/policyengine-microsimulation-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PolicyEngine/policyengine-claude",
+  "dir_name": "policyengine-microsimulation-skill-policyengine-policyengine-claude-2"
+}

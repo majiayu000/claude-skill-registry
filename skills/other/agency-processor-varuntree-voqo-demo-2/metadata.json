@@ -1,0 +1,11 @@
+{
+  "name": "agency-processor",
+  "description": "Extract agency data and generate demo page with real-time progress updates",
+  "repo": "varuntree/voqo-demo",
+  "path": ".claude/skills/agency-processor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/varuntree/voqo-demo",
+  "dir_name": "agency-processor-varuntree-voqo-demo-2"
+}

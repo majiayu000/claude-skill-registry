@@ -1,0 +1,11 @@
+{
+  "name": "ac-tdd-runner",
+  "description": "Run TDD cycle for feature implementation. Use when implementing features with RED-GREEN-REFACTOR, running test-driven development, automating TDD workflow, or ensuring test-first development.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/ac-tdd-runner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "ac-tdd-runner-adaptationio-skrillz-2"
+}

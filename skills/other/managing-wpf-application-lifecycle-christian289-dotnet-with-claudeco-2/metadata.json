@@ -1,0 +1,11 @@
+{
+  "name": "managing-wpf-application-lifecycle",
+  "description": "Manages WPF Application lifecycle including Startup, Exit, SessionEnding events and single instance detection. Use when handling app initialization, shutdown, or preventing multiple instances.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/managing-wpf-application-lifecycle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "managing-wpf-application-lifecycle-christian289-dotnet-with-claudeco-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "audio-mixing",
+  "description": "Mix voice, binaural, and SFX stems into final master",
+  "repo": "randysalars/dreamweaving",
+  "path": ".claude/skills/tier3-production/audio-mixing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/randysalars/dreamweaving",
+  "dir_name": "audio-mixing-randysalars-dreamweaving-2"
+}

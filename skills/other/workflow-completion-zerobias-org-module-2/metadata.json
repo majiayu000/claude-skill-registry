@@ -1,0 +1,11 @@
+{
+  "name": "workflow-completion",
+  "description": "Workflow completion standards and success criteria",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/workflow-completion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "workflow-completion-zerobias-org-module-2"
+}

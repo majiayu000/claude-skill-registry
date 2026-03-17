@@ -1,0 +1,11 @@
+{
+  "name": "freecad-automation",
+  "description": "AI-powered automation agent for FreeCAD CAD operations including natural language processing, batch processing, parametric design, and marine engineering applications. Use for CAD automation, drawing ",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/freecad-automation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "freecad-automation-vamseeachanta-digitalmodel-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "tanstack-table",
+  "description": "Build headless data tables with TanStack Table v8. Provides server-side pagination, filtering, sorting, and virtualization patterns for Cloudflare Workers + D1 databases.\n\nUse when building tables wit",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/tanstack-table",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "tanstack-table-ovachiever-droid-tings-2"
+}

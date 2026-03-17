@@ -1,0 +1,11 @@
+{
+  "name": "observation",
+  "description": "Provides on-demand access to accumulated observations stored in ~/.claude-mind/memory/observations.md.",
+  "repo": "claudeaceae/samara-main",
+  "path": ".claude/skills/observation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/claudeaceae/samara-main",
+  "dir_name": "observation-claudeaceae-samara-main-2"
+}

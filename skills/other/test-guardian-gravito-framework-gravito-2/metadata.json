@@ -1,0 +1,11 @@
+{
+  "name": "test-guardian",
+  "description": "Specialized in testing and quality assurance for Gravito. Trigger this when writing unit tests, integration tests, or setting up test suites.",
+  "repo": "gravito-framework/gravito",
+  "path": "packages/scaffold/templates/skills/test-guardian",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gravito-framework/gravito",
+  "dir_name": "test-guardian-gravito-framework-gravito-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "technical-clarity",
+  "description": "Review technical prose for accessibility, jargon density, and gatekeeping language. Ensures content passes the 'Grandma Test' and avoids 'obviously', 'simply' (Gatekeeping). Use this to refine technic",
+  "repo": "panaversity/agentfactory",
+  "path": ".claude/skills/technical-clarity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/panaversity/agentfactory",
+  "dir_name": "technical-clarity-panaversity-agentfactory-2"
+}

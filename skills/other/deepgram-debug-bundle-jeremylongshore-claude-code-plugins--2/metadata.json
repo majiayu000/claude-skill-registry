@@ -1,0 +1,11 @@
+{
+  "name": "deepgram-debug-bundle",
+  "description": "Collect Deepgram debug evidence for support and troubleshooting.\nUse when preparing support tickets, investigating issues,\nor collecting diagnostic information for Deepgram problems.\nTrigger with phra",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/deepgram-pack/skills/deepgram-debug-bundle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "deepgram-debug-bundle-jeremylongshore-claude-code-plugins--2"
+}

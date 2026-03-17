@@ -1,0 +1,11 @@
+{
+  "name": "advanced-evaluation",
+  "description": "This skill should be used when the user asks to \"implement LLM-as-judge\", \"compare model outputs\", \"create evaluation rubrics\", \"mitigate evaluation bias\", or mentions direct scoring, pairwise compari",
+  "repo": "Kalyanikhandare29/Agent-Skills-for-Context-Engineering",
+  "path": "skills/advanced-evaluation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Kalyanikhandare29/Agent-Skills-for-Context-Engineering",
+  "dir_name": "advanced-evaluation-kalyanikhandare29-agent-skills-for-con-2"
+}

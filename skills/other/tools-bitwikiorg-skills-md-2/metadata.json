@@ -1,0 +1,11 @@
+{
+  "name": "tools",
+  "description": "Imported skill tools from langchain",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/langchain/tools",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bitwikiorg/skills.md",
+  "dir_name": "tools-bitwikiorg-skills-md-2"
+}

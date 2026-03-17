@@ -1,0 +1,11 @@
+{
+  "name": "technical-analyst",
+  "description": "This skill should be used when analyzing weekly price charts for stocks, stock indices, cryptocurrencies, or forex pairs. Use this skill when the user provides chart images and requests technical anal",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/stock-trader-workflow/.claude/skills/weekly-trade-strategy/.claude/skills/technical-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "technical-analyst-nicepkg-ai-workflow-2"
+}

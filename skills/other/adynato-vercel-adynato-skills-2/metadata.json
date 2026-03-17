@@ -1,0 +1,11 @@
+{
+  "name": "adynato-vercel",
+  "description": "Vercel deployment and configuration for Adynato projects. Covers environment variables, vercel.json, project linking, common errors like VERCEL_ORG_ID/VERCEL_PROJECT_ID, and CI/CD setup. Use when depl",
+  "repo": "adynato/skills",
+  "path": "skills/adynato-vercel",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adynato/skills",
+  "dir_name": "adynato-vercel-adynato-skills-2"
+}

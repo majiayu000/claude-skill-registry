@@ -1,0 +1,11 @@
+{
+  "name": "triclaude",
+  "description": "Pull, sync, and launch TriClaude - the multi-terminal console with Claude voice advisor. Provides localhost and Tailscale URLs.",
+  "repo": "yousufjoyian/claude-skills",
+  "path": "triclaude",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yousufjoyian/claude-skills",
+  "dir_name": "triclaude-yousufjoyian-claude-skills-2"
+}

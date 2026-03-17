@@ -1,0 +1,11 @@
+{
+  "name": "debug-console",
+  "description": "Debug web app by capturing and analyzing console errors using Chrome DevTools MCP",
+  "repo": "rayzru/info-web",
+  "path": ".claude/skills/debug-console",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rayzru/info-web",
+  "dir_name": "debug-console-rayzru-info-web-2"
+}

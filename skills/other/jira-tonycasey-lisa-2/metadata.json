@@ -1,0 +1,11 @@
+{
+  "name": "jira",
+  "description": "Create, list, view, and manage Jira issues via REST API; triggers on 'jira', 'create ticket', 'list issues', 'change type'.",
+  "repo": "TonyCasey/lisa",
+  "path": "src/project/.lisa/skills/jira",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TonyCasey/lisa",
+  "dir_name": "jira-tonycasey-lisa-2"
+}

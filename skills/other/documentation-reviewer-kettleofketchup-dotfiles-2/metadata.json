@@ -1,0 +1,11 @@
+{
+  "name": "documentation-reviewer",
+  "description": "Review and update MkDocs documentation when code changes. This skill should be used when completing feature implementation, after making code changes that affect user-facing functionality, when review",
+  "repo": "kettleofketchup/dotfiles",
+  "path": ".claude/skills/documentation-reviewer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kettleofketchup/dotfiles",
+  "dir_name": "documentation-reviewer-kettleofketchup-dotfiles-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "impact_analyzer",
+  "description": "Analyze and document the impact of planned changes.",
+  "repo": "CheekyCodexConjurer/quant-lab",
+  "path": ".agent-docs/templates/.codex/skills/impact_analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CheekyCodexConjurer/quant-lab",
+  "dir_name": "impact-analyzer-cheekycodexconjurer-quant-lab-2"
+}

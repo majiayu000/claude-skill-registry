@@ -1,0 +1,11 @@
+{
+  "name": "aippt",
+  "description": "AIPPT - 基于模板定制化生成 PPT。垫图约束风格 → 提示词替换内容 → AI 生图 → 打包 PPTX。",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/ceeon/aippt",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "aippt-aiskillstore-marketplace-2"
+}

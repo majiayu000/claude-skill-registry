@@ -1,0 +1,11 @@
+{
+  "name": "page-transitions",
+  "description": "Add elegant page transition overlay using 3 staggered color layers. Overlay covers screen during navigation and reveals once new page is loaded. Use during /init or standalone.",
+  "repo": "deomiarn/website-template",
+  "path": ".claude/skills/page-transitions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/deomiarn/website-template",
+  "dir_name": "page-transitions-deomiarn-website-template-2"
+}

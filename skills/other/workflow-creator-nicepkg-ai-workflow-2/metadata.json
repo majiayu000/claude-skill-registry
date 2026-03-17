@@ -1,0 +1,11 @@
+{
+  "name": "workflow-creator",
+  "description": "Create complete Claude Code workflow directories with curated skills. Use when user wants to (1) create a new workflow for specific use case (media creator, developer, marketer, etc.), (2) set up a Cl",
+  "repo": "nicepkg/ai-workflow",
+  "path": ".claude/skills/workflow-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "workflow-creator-nicepkg-ai-workflow-2"
+}

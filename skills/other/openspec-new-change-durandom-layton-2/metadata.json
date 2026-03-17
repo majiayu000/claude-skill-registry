@@ -1,0 +1,11 @@
+{
+  "name": "openspec-new-change",
+  "description": "Start a new OpenSpec change using the experimental artifact workflow. Use when the user wants to create a new feature, fix, or modification with a structured step-by-step approach.",
+  "repo": "durandom/layton",
+  "path": ".claude/skills/openspec-new-change",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/durandom/layton",
+  "dir_name": "openspec-new-change-durandom-layton-2"
+}

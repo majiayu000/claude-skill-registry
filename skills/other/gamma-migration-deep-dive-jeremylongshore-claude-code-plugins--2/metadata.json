@@ -1,0 +1,11 @@
+{
+  "name": "gamma-migration-deep-dive",
+  "description": "Deep dive into migrating to Gamma from other presentation platforms.\nUse when migrating from PowerPoint, Google Slides, Canva,\nor other presentation tools to Gamma.\nTrigger with phrases like \"gamma mi",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/gamma-pack/skills/gamma-migration-deep-dive",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "gamma-migration-deep-dive-jeremylongshore-claude-code-plugins--2"
+}

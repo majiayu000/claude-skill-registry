@@ -1,0 +1,11 @@
+{
+  "name": "test-coverage-analyst",
+  "description": "Guides on analyzing and improving test coverage for Python (pytest-cov) and JavaScript (c8) projects. Use when a user asks to set up test coverage, generate coverage reports, understand why coverage i",
+  "repo": "MUmerRazzaq/fast-next-todo",
+  "path": ".claude/skills/test-coverage-analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MUmerRazzaq/fast-next-todo",
+  "dir_name": "test-coverage-analyst-mumerrazzaq-fast-next-todo-2"
+}

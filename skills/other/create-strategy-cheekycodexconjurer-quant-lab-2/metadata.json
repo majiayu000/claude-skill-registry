@@ -1,0 +1,11 @@
+{
+  "name": "create_strategy",
+  "description": "Use this skill when you need to add a new LEAN QCAlgorithm strategy in Python.",
+  "repo": "CheekyCodexConjurer/quant-lab",
+  "path": "skills/create_strategy",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CheekyCodexConjurer/quant-lab",
+  "dir_name": "create-strategy-cheekycodexconjurer-quant-lab-2"
+}

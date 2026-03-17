@@ -1,0 +1,11 @@
+{
+  "name": "session-qa-eligibility",
+  "description": "Check investigation session QA skip eligibility per ADR-034. Validates if staged files qualify for investigation-only exemption by checking against allowed paths (.agents/sessions/, .agents/analysis/,",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/session-qa-eligibility",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "session-qa-eligibility-rjmurillo-ai-agents-2"
+}

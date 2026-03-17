@@ -1,0 +1,11 @@
+{
+  "name": "vague",
+  "description": "Use when writing Vague (.vague) files - a declarative language for generating realistic test data with superposition, constraints, and cross-references",
+  "repo": "mcclowes/omg",
+  "path": ".claude/skills/vague",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mcclowes/omg",
+  "dir_name": "vague-mcclowes-omg-2"
+}

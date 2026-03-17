@@ -1,0 +1,11 @@
+{
+  "name": "database-connection-pooling",
+  "description": "Configures and manages database connection pools, with a focus on SQLAlchemy. Use this skill for tasks involving connection pool configuration, sizing, lifecycle management, health checks, and monitor",
+  "repo": "MUmerRazzaq/fast-next-todo",
+  "path": ".claude/skills/database-connection-pooling",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MUmerRazzaq/fast-next-todo",
+  "dir_name": "database-connection-pooling-mumerrazzaq-fast-next-todo-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "deno",
+  "description": "Deno 2 development workflow including testing with permissions and JSR package management. Use when working with Deno projects, setting up new Deno applications, or when the user mentions Deno, JSR, o",
+  "repo": "kuboon/dotfiles",
+  "path": "skills/deno",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kuboon/dotfiles",
+  "dir_name": "deno-kuboon-dotfiles-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "openai-assistants",
+  "description": "Build stateful chatbots with OpenAI Assistants API v2 - Code Interpreter, File Search (10k files), Function Calling. ⚠️ Sunset H1 2026; use openai-responses for new projects.\n\nUse when: building state",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/openai-assistants",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "openai-assistants-ovachiever-droid-tings-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "hitl-approval",
+  "description": "Implement human-in-the-loop approval flows. Use when adding Slack approvals, dashboard review queues, action gating, or trust-based auto-approval.",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/hitl-approval",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "hitl-approval-skillrecordings-support-2"
+}

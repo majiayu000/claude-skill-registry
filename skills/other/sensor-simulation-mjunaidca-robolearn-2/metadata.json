@@ -1,0 +1,11 @@
+{
+  "name": "sensor-simulation",
+  "description": "Configure camera, LIDAR, IMU, and contact sensors on simulated robots in Gazebo",
+  "repo": "mjunaidca/robolearn",
+  "path": ".claude/skills/sensor-simulation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mjunaidca/robolearn",
+  "dir_name": "sensor-simulation-mjunaidca-robolearn-2"
+}

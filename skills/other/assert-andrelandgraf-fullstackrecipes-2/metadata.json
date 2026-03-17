@@ -1,0 +1,11 @@
+{
+  "name": "assert",
+  "description": "TypeScript assertion function for runtime type narrowing with descriptive error messages. Based on tiny-invariant.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/assert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "assert-andrelandgraf-fullstackrecipes-2"
+}

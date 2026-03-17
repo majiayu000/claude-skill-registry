@@ -1,0 +1,11 @@
+{
+  "name": "repo-scanning",
+  "description": "Scan and document repository structure, patterns, and key components. Use when starting work on unfamiliar codebases.",
+  "repo": "amattas/retail-demo",
+  "path": ".claude/skills/repo-scanning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/amattas/retail-demo",
+  "dir_name": "repo-scanning-amattas-retail-demo-2"
+}

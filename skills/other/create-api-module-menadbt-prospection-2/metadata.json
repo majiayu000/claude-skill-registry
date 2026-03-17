@@ -1,0 +1,11 @@
+{
+  "name": "create-api-module",
+  "description": "Creates a new API module following Clean Architecture with TDD. Use when adding new API endpoints, creating backend features, implementing domain entities, or when the user says \"create module\", \"add ",
+  "repo": "MenadBt/prospection",
+  "path": ".claude/skills/create-api-module",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MenadBt/prospection",
+  "dir_name": "create-api-module-menadbt-prospection-2"
+}

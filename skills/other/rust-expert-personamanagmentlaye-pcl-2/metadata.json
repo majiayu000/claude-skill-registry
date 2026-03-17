@@ -1,0 +1,11 @@
+{
+  "name": "rust-expert",
+  "description": "Expert-level Rust development with ownership, lifetimes, async, error handling, and production-grade patterns",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/languages/rust-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "rust-expert-personamanagmentlaye-pcl-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "load-testing",
+  "description": "Create and manage K6 load tests for REST and GraphQL APIs. Use when creating load tests, writing K6 scripts, testing API performance, debugging load test failures, or setting up performance monitoring",
+  "repo": "VilnaCRM-Org/user-service",
+  "path": ".claude/skills/load-testing",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VilnaCRM-Org/user-service",
+  "dir_name": "load-testing-vilnacrm-org-user-service-2"
+}

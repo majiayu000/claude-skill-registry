@@ -1,0 +1,11 @@
+{
+  "name": "style-learner",
+  "description": "\nTriggers: writing style, voice, tone, style guide, exemplar, style learning\nLearn and extract writing style patterns from exemplar text for consistent application.\n\nTriggers: learn style, extract sty",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/scribe/skills/style-learner",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "style-learner-athola-claude-night-market-2"
+}

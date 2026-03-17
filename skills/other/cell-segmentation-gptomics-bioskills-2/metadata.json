@@ -1,0 +1,11 @@
+{
+  "name": "cell-segmentation",
+  "description": "Cell segmentation from multiplexed tissue images. Covers deep learning (Cellpose, Mesmer) and classical approaches for nuclear and whole-cell segmentation. Use when extracting single-cell data from IM",
+  "repo": "GPTomics/bioSkills",
+  "path": "imaging-mass-cytometry/cell-segmentation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "cell-segmentation-gptomics-bioskills-2"
+}

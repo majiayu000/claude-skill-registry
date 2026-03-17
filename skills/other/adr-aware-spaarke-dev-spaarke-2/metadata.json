@@ -1,0 +1,11 @@
+{
+  "name": "adr-aware",
+  "description": "Ensures Architecture Decision Records (ADRs) are automatically considered when AI agents create or modify code. This skill provides proactive ADR awareness versus reactive checking (which is handled b",
+  "repo": "spaarke-dev/spaarke",
+  "path": ".claude/skills/adr-aware",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spaarke-dev/spaarke",
+  "dir_name": "adr-aware-spaarke-dev-spaarke-2"
+}

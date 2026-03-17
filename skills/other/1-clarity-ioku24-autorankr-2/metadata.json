@@ -1,0 +1,11 @@
+{
+  "name": "1.clarity",
+  "description": "Establish clarity before starting work. Use when beginning any significant task, when input is vague or stream-of-consciousness, or when requirements seem unclear. Handles messy voice input efficientl",
+  "repo": "ioku24/autorankr",
+  "path": ".claude/skills/5-system-framework/1.clarity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ioku24/autorankr",
+  "dir_name": "1-clarity-ioku24-autorankr-2"
+}

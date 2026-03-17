@@ -1,0 +1,11 @@
+{
+  "name": "pr-thread-resolution-enforcement",
+  "description": "Use when resolving PR review threads. Enforces that all threads are marked resolved before completion.",
+  "repo": "JacobPEvans/ai-assistant-instructions",
+  "path": "agentsmd/skills/pr-thread-resolution-enforcement",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JacobPEvans/ai-assistant-instructions",
+  "dir_name": "pr-thread-resolution-enforcement-jacobpevans-ai-assistant-instruc-2"
+}

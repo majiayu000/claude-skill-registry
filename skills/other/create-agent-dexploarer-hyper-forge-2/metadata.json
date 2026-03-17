@@ -1,0 +1,11 @@
+{
+  "name": "create-agent",
+  "description": "Quickly create a new specialized subagent when needed. Use when you need a specialist that doesn't exist yet for a specific task domain.",
+  "repo": "Dexploarer/hyper-forge",
+  "path": ".claude/skills/create-agent",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Dexploarer/hyper-forge",
+  "dir_name": "create-agent-dexploarer-hyper-forge-2"
+}

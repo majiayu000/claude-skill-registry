@@ -1,0 +1,11 @@
+{
+  "name": "bazinga-db-core",
+  "description": "Session lifecycle and system operations. Use when creating sessions, saving state, getting dashboard data, or running system queries.",
+  "repo": "mehdic/bazinga",
+  "path": ".claude/skills/bazinga-db-core",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mehdic/bazinga",
+  "dir_name": "bazinga-db-core-mehdic-bazinga-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "title-expert",
+  "description": "Title searches and registration analysis. Identifies encumbrances (easements, covenants, liens), analyzes marketability impact, validates registration compliance, calculates discount for encumbrances.",
+  "repo": "reggiechan74/vp-real-estate",
+  "path": ".claude/skills/title-expert",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/reggiechan74/vp-real-estate",
+  "dir_name": "title-expert-reggiechan74-vp-real-estate-2"
+}

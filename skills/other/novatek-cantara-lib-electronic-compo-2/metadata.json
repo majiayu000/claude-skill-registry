@@ -1,0 +1,11 @@
+{
+  "name": "novatek",
+  "description": "Novatek Microelectronics MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Novatek display driver components or NovatekHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/novatek",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "novatek-cantara-lib-electronic-compo-2"
+}

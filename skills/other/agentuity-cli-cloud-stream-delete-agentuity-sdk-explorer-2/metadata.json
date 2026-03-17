@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-stream-delete",
+  "description": "Delete a stream by ID (soft delete). Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-stream-delete",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-stream-delete-agentuity-sdk-explorer-2"
+}

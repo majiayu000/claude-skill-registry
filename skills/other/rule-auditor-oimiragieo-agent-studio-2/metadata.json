@@ -1,0 +1,11 @@
+{
+  "name": "rule-auditor",
+  "description": "Validates code against currently loaded rules and reports compliance violations. Supports auto-fixing violations with confirmation, dry-run mode, and automatic backups. Use after implementing features",
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/rule-auditor",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oimiragieo/agent-studio",
+  "dir_name": "rule-auditor-oimiragieo-agent-studio-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "hic-visualization",
+  "description": "Visualize Hi-C contact matrices, TADs, loops, and genomic features using matplotlib, cooltools, and HiCExplorer. Create triangle plots, virtual 4C, and multi-track figures.",
+  "repo": "GPTomics/bioSkills",
+  "path": "hi-c-analysis/hic-visualization",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "hic-visualization-gptomics-bioskills-2"
+}

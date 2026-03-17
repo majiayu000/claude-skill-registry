@@ -1,0 +1,11 @@
+{
+  "name": "exa-install-auth",
+  "description": "Install and configure Exa SDK/CLI authentication.\nUse when setting up a new Exa integration, configuring API keys,\nor initializing Exa in your project.\nTrigger with phrases like \"install exa\", \"setup ",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-install-auth",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "exa-install-auth-vasic-digital-superagent-2"
+}

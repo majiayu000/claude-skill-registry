@@ -1,0 +1,11 @@
+{
+  "name": "sparc_methodology",
+  "description": "SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) is a systematic development methodology integrated with Claude Flow's multi-agent orchestration capabilities. It provides 17 spe",
+  "repo": "vuralserhat86/antigravity-agentic-skills",
+  "path": "skills/sparc_methodology",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vuralserhat86/antigravity-agentic-skills",
+  "dir_name": "sparc-methodology-vuralserhat86-antigravity-agentic--2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "photo-composition-critic",
+  "description": "Expert photography composition critic grounded in graduate-level visual aesthetics education, computational aesthetics research (AVA, NIMA, LAION-Aesthetics, VisualQuality-R1), and professional image ",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/photo-composition-critic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "photo-composition-critic-erichowens-some-claude-skills-2"
+}

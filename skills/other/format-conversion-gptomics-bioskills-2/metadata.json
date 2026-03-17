@@ -1,0 +1,11 @@
+{
+  "name": "format-conversion",
+  "description": "Convert between sequence file formats (FASTA, FASTQ, GenBank, EMBL) using Biopython Bio.SeqIO. Use when changing file formats or preparing data for different tools.",
+  "repo": "GPTomics/bioSkills",
+  "path": "sequence-io/format-conversion",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "format-conversion-gptomics-bioskills-2"
+}

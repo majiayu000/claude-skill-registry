@@ -1,0 +1,11 @@
+{
+  "name": "artifact-metadata",
+  "description": "Manage artifact metadata, versioning, ownership, and history tracking. Use when relevant to the task.",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "plugins/utils/skills/artifact-metadata",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jmagly/ai-writing-guide",
+  "dir_name": "artifact-metadata-jmagly-ai-writing-guide-2"
+}

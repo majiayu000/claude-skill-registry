@@ -1,0 +1,11 @@
+{
+  "name": "analyst",
+  "description": "Business Analyst for requirements engineering and user story creation. Transforms research findings into actionable specifications. Use this skill for requirements, user stories, or specifications.",
+  "repo": "Denissvgn/project-team-ag",
+  "path": ".agent/skills/analyst",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Denissvgn/project-team-ag",
+  "dir_name": "analyst-denissvgn-project-team-ag-2"
+}

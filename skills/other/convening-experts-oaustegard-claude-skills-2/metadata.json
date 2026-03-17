@@ -1,0 +1,11 @@
+{
+  "name": "convening-experts",
+  "description": "Convenes expert panels for problem-solving. Use when user mentions panel, experts, multiple perspectives, MECE, DMAIC, RAPID, Six Sigma, root cause analysis, strategic decisions, or process improvemen",
+  "repo": "oaustegard/claude-skills",
+  "path": "convening-experts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "convening-experts-oaustegard-claude-skills-2"
+}

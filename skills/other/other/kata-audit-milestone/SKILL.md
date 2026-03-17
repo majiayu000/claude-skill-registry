@@ -1,0 +1,291 @@
+---
+name: kata-audit-milestone
+description: Verify milestone achievement against its definition of done, checking requirements coverage, cross-phase integration, and end-to-end flows. Triggers include "audit milestone", "verify milestone", "check milestone", and "milestone audit". This skill reads existing phase verification files, aggregates technical debt and gaps, and spawns an integration checker for cross-phase wiring.
+metadata:
+  version: "0.1.0"
+allowed-tools: Read Glob Grep Bash Task Write
+---
+<objective>
+Verify milestone achieved its definition of done. Check requirements coverage, cross-phase integration, and end-to-end flows.
+
+**This command IS the orchestrator.** Reads existing VERIFICATION.md files (phases already verified during phase-execute), aggregates tech debt and deferred gaps, then spawns integration checker for cross-phase wiring.
+</objective>
+
+<execution_context>
+<!-- Spawns kata-integration-checker agent which has all audit expertise baked in -->
+</execution_context>
+
+<context>
+Version: $ARGUMENTS (optional — defaults to current milestone)
+
+**Original Intent:**
+@.planning/PROJECT.md
+@.planning/REQUIREMENTS.md
+
+**Planned Work:**
+@.planning/ROADMAP.md
+@.planning/config.json (if exists)
+
+**Completed Work:**
+Glob: .planning/phases/{active,pending,completed}/*/*-SUMMARY.md
+Glob: .planning/phases/{active,pending,completed}/*/*-VERIFICATION.md
+(Also check flat: .planning/phases/[0-9]*/*-SUMMARY.md for backward compatibility)
+</context>
+
+<process>
+
+## 0. Resolve Model Profile
+
+Read model profile for agent spawning:
+
+```bash
+MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+```
+
+Default to "balanced" if not set.
+
+**Model lookup table:**
+
+| Agent                    | quality | balanced | budget |
+| ------------------------ | ------- | -------- | ------ |
+| kata-integration-checker | sonnet  | sonnet   | haiku  |
+
+Store resolved model for use in Task call below.
+
+## 1. Determine Milestone Scope
+
+```bash
+# Scan all phase directories across states
+ALL_PHASE_DIRS=""
+for state in active pending completed; do
+  [ -d ".planning/phases/${state}" ] && ALL_PHASE_DIRS="${ALL_PHASE_DIRS} $(find .planning/phases/${state} -maxdepth 1 -type d -not -name "${state}" 2>/dev/null)"
+done
+# Fallback: include flat directories (backward compatibility)
+FLAT_DIRS=$(find .planning/phases -maxdepth 1 -type d -name "[0-9]*" 2>/dev/null)
+[ -n "$FLAT_DIRS" ] && ALL_PHASE_DIRS="${ALL_PHASE_DIRS} ${FLAT_DIRS}"
+echo "$ALL_PHASE_DIRS" | tr ' ' '\n' | sort -V
+```
+
+- Parse version from arguments or detect current from ROADMAP.md
+- Identify all phase directories in scope (across active/pending/completed subdirectories)
+- Extract milestone definition of done from ROADMAP.md
+- Extract requirements mapped to this milestone from REQUIREMENTS.md
+
+## 2. Read All Phase Verifications
+
+For each phase directory, read the VERIFICATION.md:
+
+```bash
+# Read VERIFICATION.md from each phase directory found in step 1
+for phase_dir in $ALL_PHASE_DIRS; do
+  [ -d "$phase_dir" ] || continue
+  cat "${phase_dir}"*-VERIFICATION.md 2>/dev/null
+done
+```
+
+From each VERIFICATION.md, extract:
+- **Status:** passed | gaps_found
+- **Critical gaps:** (if any — these are blockers)
+- **Non-critical gaps:** tech debt, deferred items, warnings
+- **Anti-patterns found:** TODOs, stubs, placeholders
+- **Requirements coverage:** which requirements satisfied/blocked
+
+If a phase is missing VERIFICATION.md, flag it as "unverified phase" — this is a blocker.
+
+## 3. Spawn Integration Checker
+
+Read the integration checker instructions:
+
+```
+integration_checker_instructions_content = Read("skills/kata-audit-milestone/references/integration-checker-instructions.md")
+```
+
+With phase context collected:
+
+```
+Task(
+  prompt="<agent-instructions>
+{integration_checker_instructions_content}
+</agent-instructions>
+
+Check cross-phase integration and E2E flows.
+
+Phases: {phase_dirs}
+Phase exports: {from SUMMARYs}
+API routes: {routes created}
+
+Verify cross-phase wiring and E2E user flows.",
+  subagent_type="general-purpose",
+  model="{integration_checker_model}"
+)
+```
+
+## 4. Collect Results
+
+Combine:
+- Phase-level gaps and tech debt (from step 2)
+- Integration checker's report (wiring gaps, broken flows)
+
+## 5. Check Requirements Coverage
+
+For each requirement in REQUIREMENTS.md mapped to this milestone:
+- Find owning phase
+- Check phase verification status
+- Determine: satisfied | partial | unsatisfied
+
+## 6. Aggregate into v{version}-MILESTONE-AUDIT.md
+
+Create `.planning/v{version}-v{version}-MILESTONE-AUDIT.md` with:
+
+```yaml
+---
+milestone: {version}
+audited: {timestamp}
+status: passed | gaps_found | tech_debt
+scores:
+  requirements: N/M
+  phases: N/M
+  integration: N/M
+  flows: N/M
+gaps:  # Critical blockers
+  requirements: [...]
+  integration: [...]
+  flows: [...]
+tech_debt:  # Non-critical, deferred
+  - phase: 01-auth
+    items:
+      - "TODO: add rate limiting"
+      - "Warning: no password strength validation"
+  - phase: 03-dashboard
+    items:
+      - "Deferred: mobile responsive layout"
+---
+```
+
+Plus full markdown report with tables for requirements, phases, integration, tech debt.
+
+**Status values:**
+- `passed` — all requirements met, no critical gaps, minimal tech debt
+- `gaps_found` — critical blockers exist
+- `tech_debt` — no blockers but accumulated deferred items need review
+
+## 7. Present Results
+
+Route by status (see `<offer_next>`).
+
+</process>
+
+<offer_next>
+Output this markdown directly (not as a code block). Route based on status:
+
+---
+
+**If passed:**
+
+## ✓ Milestone {version} — Audit Passed
+
+**Score:** {N}/{M} requirements satisfied
+**Report:** .planning/v{version}-MILESTONE-AUDIT.md
+
+All requirements covered. Cross-phase integration verified. E2E flows complete.
+
+───────────────────────────────────────────────────────────────
+
+## ▶ Next Up
+
+**Complete milestone** — archive and tag
+
+/kata-complete-milestone {version}
+
+<sub>/clear first → fresh context window</sub>
+
+───────────────────────────────────────────────────────────────
+
+---
+
+**If gaps_found:**
+
+## ⚠ Milestone {version} — Gaps Found
+
+**Score:** {N}/{M} requirements satisfied
+**Report:** .planning/v{version}-MILESTONE-AUDIT.md
+
+### Unsatisfied Requirements
+
+{For each unsatisfied requirement:}
+- **{REQ-ID}: {description}** (Phase {X})
+  - {reason}
+
+### Cross-Phase Issues
+
+{For each integration gap:}
+- **{from} → {to}:** {issue}
+
+### Broken Flows
+
+{For each flow gap:}
+- **{flow name}:** breaks at {step}
+
+───────────────────────────────────────────────────────────────
+
+## ▶ Next Up
+
+**Plan gap closure** — create phases to complete milestone
+
+/kata-plan-milestone-gaps
+
+<sub>/clear first → fresh context window</sub>
+
+───────────────────────────────────────────────────────────────
+
+**Also available:**
+- cat .planning/v{version}-MILESTONE-AUDIT.md — see full report
+- /kata-complete-milestone {version} — proceed anyway (accept tech debt)
+
+───────────────────────────────────────────────────────────────
+
+---
+
+**If tech_debt (no blockers but accumulated debt):**
+
+## ⚡ Milestone {version} — Tech Debt Review
+
+**Score:** {N}/{M} requirements satisfied
+**Report:** .planning/v{version}-MILESTONE-AUDIT.md
+
+All requirements met. No critical blockers. Accumulated tech debt needs review.
+
+### Tech Debt by Phase
+
+{For each phase with debt:}
+**Phase {X}: {name}**
+- {item 1}
+- {item 2}
+
+### Total: {N} items across {M} phases
+
+───────────────────────────────────────────────────────────────
+
+## ▶ Options
+
+**A. Complete milestone** — accept debt, track in backlog
+
+/kata-complete-milestone {version}
+
+**B. Plan cleanup phase** — address debt before completing
+
+/kata-plan-milestone-gaps
+
+<sub>/clear first → fresh context window</sub>
+
+───────────────────────────────────────────────────────────────
+</offer_next>
+
+<success_criteria>
+- [ ] Milestone scope identified
+- [ ] All phase VERIFICATION.md files read
+- [ ] Tech debt and deferred gaps aggregated
+- [ ] Integration checker spawned for cross-phase wiring
+- [ ] v{version}-MILESTONE-AUDIT.md created
+- [ ] Results presented with actionable next steps
+</success_criteria>

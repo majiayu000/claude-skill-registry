@@ -1,0 +1,11 @@
+{
+  "name": "bmad-integration",
+  "description": "Integracao com BMAD Method para escala adaptativa e workflows guiados.\nDetecta nivel de complexidade e ajusta agentes automaticamente.\nUse quando: iniciar workflow, detectar complexidade, mapear agent",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/bmad-integration",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "bmad-integration-arbgjr-satra-2"
+}

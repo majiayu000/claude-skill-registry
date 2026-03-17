@@ -1,0 +1,11 @@
+{
+  "name": "spec-tests",
+  "description": "Intent-based specification tests evaluated by LLM-as-judge. Use when the user asks to \"create spec tests\", \"write intent tests\", \"TDD with intent\", \"natural language tests\", or wants tests that captur",
+  "repo": "ianphil/my-skills",
+  "path": "skills/spec-tests",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ianphil/my-skills",
+  "dir_name": "spec-tests-ianphil-my-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "define-customer-profile",
+  "description": "Iteratively craft a CUSTOMER.md document that precisely defines your ideal customer profile (ICP). This is the foundational document from which everything else (product, features, brand) derives. Uses",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/solo-dev/skills/define-customer-profile",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "define-customer-profile-doodledood-claude-code-plugins-2"
+}

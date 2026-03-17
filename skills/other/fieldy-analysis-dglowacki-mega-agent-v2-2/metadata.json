@@ -1,0 +1,11 @@
+{
+  "name": "fieldy-analysis",
+  "description": "Analyze Field Labs coaching transcription data, calculate session metrics, and generate daily summaries. Use for processing Fieldy voice transcriptions and creating coaching reports.",
+  "repo": "dglowacki/mega-agent-v2",
+  "path": ".claude/skills/fieldy-analysis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dglowacki/mega-agent-v2",
+  "dir_name": "fieldy-analysis-dglowacki-mega-agent-v2-2"
+}

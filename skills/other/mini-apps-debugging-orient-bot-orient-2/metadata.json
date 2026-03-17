@@ -1,0 +1,11 @@
+{
+  "name": "mini-apps-debugging",
+  "description": "Debug and troubleshoot Mini-Apps when they fail to load, build, or run. Covers build checks, browser console inspection, bridge issues, and asset routing fixes.",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/mini-apps-debugging",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "mini-apps-debugging-orient-bot-orient-2"
+}

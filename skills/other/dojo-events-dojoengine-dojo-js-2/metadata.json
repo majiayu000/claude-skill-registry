@@ -1,0 +1,11 @@
+{
+  "name": "dojo-events",
+  "description": "Use when subscribing to game events and tracking tokens in dojo.js.\nTriggers: subscribe events, game events, token balance, event query, achievements,\nevent subscription, onTokenBalanceUpdated, activi",
+  "repo": "dojoengine/dojo.js",
+  "path": ".claude/skills/dojo-events",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dojoengine/dojo.js",
+  "dir_name": "dojo-events-dojoengine-dojo-js-2"
+}

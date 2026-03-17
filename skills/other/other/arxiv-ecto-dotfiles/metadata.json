@@ -1,0 +1,9 @@
+{
+  "name": "arxiv",
+  "repo": "ecto/dotfiles",
+  "path": ".claude/skills/arxiv/SKILL.md",
+  "category": "other",
+  "source": "github.com/ecto/dotfiles",
+  "dir_name": "arxiv-ecto-dotfiles",
+  "downloaded_at": "2026-02-22T07:01:46.653527Z"
+}

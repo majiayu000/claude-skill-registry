@@ -1,0 +1,11 @@
+{
+  "name": "meeting-sync",
+  "description": "Sync new Granola meetings to local Knowledge folder. Use during morning planning, when user asks \"what should I do today\", or asks to review/sync meetings.",
+  "repo": "amanaiproduct/personal-os",
+  "path": "core/integrations/granola/skills/meeting-sync",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/amanaiproduct/personal-os",
+  "dir_name": "meeting-sync-amanaiproduct-personal-os-2"
+}

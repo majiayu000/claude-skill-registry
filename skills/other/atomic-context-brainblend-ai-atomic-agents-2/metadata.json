@@ -1,0 +1,11 @@
+{
+  "name": "atomic-context",
+  "description": "This skill should be used when the user asks to \"create context provider\", \"dynamic context\", \"inject context\", \"BaseDynamicContextProvider\", \"share data between agents\", or needs guidance on context ",
+  "repo": "BrainBlend-AI/atomic-agents",
+  "path": "claude-plugin/atomic-agents/skills/atomic-context",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BrainBlend-AI/atomic-agents",
+  "dir_name": "atomic-context-brainblend-ai-atomic-agents-2"
+}

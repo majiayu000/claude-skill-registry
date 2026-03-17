@@ -1,0 +1,11 @@
+{
+  "name": "ga4",
+  "description": "Query Google Analytics 4 (GA4) data via the Analytics Data API. Use when you need to pull website analytics like top pages, traffic sources, user counts, sessions, conversions, or any GA4 metrics/dime",
+  "repo": "clawdbot/skills",
+  "path": "skills/jdrhyne/ga4",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "ga4-clawdbot-skills-2"
+}

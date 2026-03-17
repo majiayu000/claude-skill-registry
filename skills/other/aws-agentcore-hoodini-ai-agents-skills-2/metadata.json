@@ -1,0 +1,11 @@
+{
+  "name": "aws-agentcore",
+  "description": "Build AI agents with AWS Bedrock AgentCore. Use when developing agents on AWS infrastructure, creating tool-use patterns, implementing agent orchestration, or integrating with Bedrock models. Triggers",
+  "repo": "hoodini/ai-agents-skills",
+  "path": "skills/aws-agentcore",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hoodini/ai-agents-skills",
+  "dir_name": "aws-agentcore-hoodini-ai-agents-skills-2"
+}

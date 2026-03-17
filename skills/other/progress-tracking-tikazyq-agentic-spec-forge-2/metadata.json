@@ -1,0 +1,11 @@
+{
+  "name": "progress-tracking",
+  "description": "监控执行计划的进度和健康状态，跟踪 SubPlan 完成度和 Round 执行状态，识别阻塞点并同步 Dashboard。当需要检查执行进度、更新 Round 状态、记录阻塞项、生成进度报告、计算进度偏差、分析趋势、预测完成日期时使用。支持资源消耗跟踪、风险状态更新、燃尽图分析和利益相关者报告生成。",
+  "repo": "tikazyq/agentic-spec-forge",
+  "path": "AGENTIC_SPEC_FORGE/spec_stage_skill/execspec_compile/progress-tracking",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tikazyq/agentic-spec-forge",
+  "dir_name": "progress-tracking-tikazyq-agentic-spec-forge-2"
+}

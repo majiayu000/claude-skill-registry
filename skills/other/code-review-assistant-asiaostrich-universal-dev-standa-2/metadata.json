@@ -1,0 +1,11 @@
+{
+  "name": "code-review-assistant",
+  "description": "Systematic code review checklist and pre-commit quality gates for PRs.\nUse when: reviewing pull requests, checking code quality, before committing code.\nKeywords: review, PR, pull request, checklist, ",
+  "repo": "AsiaOstrich/universal-dev-standards",
+  "path": "locales/zh-CN/skills/claude-code/code-review-assistant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AsiaOstrich/universal-dev-standards",
+  "dir_name": "code-review-assistant-asiaostrich-universal-dev-standa-2"
+}

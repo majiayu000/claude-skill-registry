@@ -1,0 +1,11 @@
+{
+  "name": "dnsdist",
+  "description": "DNS load balancer with DoS protection, multi-protocol support (DoH, DoT, DoQ), and dynamic traffic management",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/dnsdist",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "dnsdist-enuno-claude-command-and-c-2"
+}

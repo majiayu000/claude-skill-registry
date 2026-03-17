@@ -1,0 +1,11 @@
+{
+  "name": "obra-subagent-driven-development",
+  "description": "Use when executing implementation plans with independent tasks in the current session",
+  "repo": "faulkdev/github-copilot-superpowers",
+  "path": ".github/skills/obra/obra-subagent-driven-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/faulkdev/github-copilot-superpowers",
+  "dir_name": "obra-subagent-driven-development-faulkdev-github-copilot-super-2"
+}

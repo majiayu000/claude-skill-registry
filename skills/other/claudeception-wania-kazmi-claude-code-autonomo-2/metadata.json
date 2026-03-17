@@ -1,0 +1,11 @@
+{
+  "name": "claudeception",
+  "description": "Claudeception is a continuous learning system that extracts reusable knowledge from work sessions.\nTriggers: (1) /claudeception command to review session learnings, (2) \"save this as a skill\"\nor \"extr",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/claudeception",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "claudeception-wania-kazmi-claude-code-autonomo-2"
+}

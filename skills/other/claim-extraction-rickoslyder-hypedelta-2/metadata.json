@@ -1,0 +1,11 @@
+{
+  "name": "claim-extraction",
+  "description": "Extract structured claims, predictions, hints, and opinions from AI research content. Use when processing tweets, blog posts, substacks, or other content from AI researchers to identify substantive as",
+  "repo": "rickoslyder/HypeDelta",
+  "path": ".claude/skills/claim-extraction",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rickoslyder/HypeDelta",
+  "dir_name": "claim-extraction-rickoslyder-hypedelta-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "security-validation",
+  "description": "Runtime security validation including secret scanning, PII detection, prompt injection defense, audit logging, and output validation for AI agents. Use when validating user input, scanning for secrets",
+  "repo": "vanman2024/dev-lifecycle-marketplace",
+  "path": "plugins/security/skills/security-validation",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vanman2024/dev-lifecycle-marketplace",
+  "dir_name": "security-validation-vanman2024-dev-lifecycle-market-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "web-performance-audit",
+  "description": "Web performance audits with Core Web Vitals, bottleneck identification, optimization recommendations. Use for page load times, performance reviews, UX optimization, or encountering LCP, FID, CLS issue",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/web-performance-audit/skills/web-performance-audit",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "web-performance-audit-secondsky-claude-skills-2"
+}

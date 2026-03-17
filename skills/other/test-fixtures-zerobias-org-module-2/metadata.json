@@ -1,0 +1,11 @@
+{
+  "name": "test-fixtures",
+  "description": "Test fixture organization, sanitization, and realistic response patterns",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/test-fixtures",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zerobias-org/module",
+  "dir_name": "test-fixtures-zerobias-org-module-2"
+}

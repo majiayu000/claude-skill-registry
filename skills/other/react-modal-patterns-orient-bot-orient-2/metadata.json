@@ -1,0 +1,11 @@
+{
+  "name": "react-modal-patterns",
+  "description": "Modal and form patterns for Orient dashboard frontend. Use when creating modals, dialogs, forms, notifications, or any UI components in packages/dashboard-frontend. The dashboard uses plain HTML/CSS w",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/react-modal-patterns",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/orient-bot/orient",
+  "dir_name": "react-modal-patterns-orient-bot-orient-2"
+}

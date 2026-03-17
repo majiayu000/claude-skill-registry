@@ -1,0 +1,11 @@
+{
+  "name": "ies-triadic",
+  "description": "IES Triadic Skill",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.agents/skills/ies-triadic",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "ies-triadic-plurigrid-asi-2"
+}

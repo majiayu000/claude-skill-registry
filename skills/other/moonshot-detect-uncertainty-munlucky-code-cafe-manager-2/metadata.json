@@ -1,0 +1,11 @@
+{
+  "name": "moonshot-detect-uncertainty",
+  "description": "Detects missing requirements and generates clarification questions. Use after classification/complexity to decide if user input is needed.",
+  "repo": "munlucky/code-cafe-manager",
+  "path": ".claude/skills/moonshot-detect-uncertainty",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/munlucky/code-cafe-manager",
+  "dir_name": "moonshot-detect-uncertainty-munlucky-code-cafe-manager-2"
+}

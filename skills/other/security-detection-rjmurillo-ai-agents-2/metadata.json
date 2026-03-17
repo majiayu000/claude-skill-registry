@@ -1,0 +1,11 @@
+{
+  "name": "security-detection",
+  "description": "Detect infrastructure and security-critical file changes to trigger security agent review recommendations ensuring proper security oversight for sensitive modifications.",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/security-detection",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "security-detection-rjmurillo-ai-agents-2"
+}

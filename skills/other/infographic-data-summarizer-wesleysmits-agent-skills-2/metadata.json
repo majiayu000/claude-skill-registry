@@ -1,0 +1,11 @@
+{
+  "name": "infographic-data-summarizer",
+  "description": "Converts data, research, and articles into infographic-ready summaries with visual hierarchy and chart suggestions. Use when the user asks about infographics, data visualization, visual summaries, cha",
+  "repo": "WesleySmits/agent-skills",
+  "path": ".agent/skills/infographic-data-summarizer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/WesleySmits/agent-skills",
+  "dir_name": "infographic-data-summarizer-wesleysmits-agent-skills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "tenant-aware-ops",
+  "description": "วิธีการทำ operations (debugging, monitoring, maintenance) ใน multi-tenant environment โดยไม่กระทบ tenants อื่น และมี visibility per tenant",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "69-platform-engineering-lite/tenant-aware-ops",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "tenant-aware-ops-amnadtaowsoam-cerebratechai-claude-2"
+}

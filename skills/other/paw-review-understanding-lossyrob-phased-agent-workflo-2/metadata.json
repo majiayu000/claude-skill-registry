@@ -1,0 +1,11 @@
+{
+  "name": "paw-review-understanding",
+  "description": "Analyzes PR changes to create ReviewContext.md and DerivedSpec.md artifacts. Handles both initial analysis and resumption after baseline research.",
+  "repo": "lossyrob/phased-agent-workflow",
+  "path": "skills/paw-review-understanding",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lossyrob/phased-agent-workflow",
+  "dir_name": "paw-review-understanding-lossyrob-phased-agent-workflo-2"
+}

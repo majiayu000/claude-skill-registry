@@ -1,0 +1,11 @@
+{
+  "name": "data-orchestrator",
+  "description": "Central data strategy coordinator for AI-driven crypto trading. Use when building data pipelines, validating data quality, coordinating multi-source data aggregation, or implementing ML-ready data inf",
+  "repo": "dreamineering/meme-times",
+  "path": ".claude/skills/data-orchestrator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dreamineering/meme-times",
+  "dir_name": "data-orchestrator-dreamineering-meme-times-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ralph-prompt-research",
+  "description": "Generate Ralph-compatible prompts for research, analysis, and planning tasks. Creates prompts with systematic research phases, synthesis requirements, and deliverable specifications. Use when analyzin",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/ralph-prompt-research",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "ralph-prompt-research-adaptationio-skrillz-2"
+}

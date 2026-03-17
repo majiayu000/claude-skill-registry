@@ -1,0 +1,11 @@
+{
+  "name": "macos-development",
+  "description": "macOS Tahoe development patterns including window management, menu bars, NSWindow integration, Mac Catalyst, status bar items, document-based apps, and macOS-specific SwiftUI modifiers. Use when user ",
+  "repo": "bluewaves-creations/bluewaves-skills",
+  "path": "plugins/swift-apple-dev/skills/macos-development",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bluewaves-creations/bluewaves-skills",
+  "dir_name": "macos-development-bluewaves-creations-bluewaves-skills-2"
+}

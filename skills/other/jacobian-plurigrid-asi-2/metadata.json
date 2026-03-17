@@ -1,0 +1,11 @@
+{
+  "name": "jacobian",
+  "description": "Matrix of partial derivatives for linearization",
+  "repo": "plurigrid/asi",
+  "path": "skills/jacobian",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "jacobian-plurigrid-asi-2"
+}

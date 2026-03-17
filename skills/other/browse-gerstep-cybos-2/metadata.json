@@ -1,0 +1,11 @@
+{
+  "name": "Browse",
+  "description": "Discover trending topics and content ideas from social feeds for post creation. Use when scanning Twitter timeline or finding content inspiration.",
+  "repo": "Gerstep/cybos",
+  "path": ".claude/skills/Browse",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Gerstep/cybos",
+  "dir_name": "browse-gerstep-cybos-2"
+}

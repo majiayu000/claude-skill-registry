@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-groups",
+  "description": "Manages GitLab groups. Use for listing, editing groups, subgroups, projects, or merge requests. Triggers: group management, namespaces.",
+  "repo": "Knuckles-Team/gitlab-api",
+  "path": "gitlab_api/skills/gitlab-groups",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Knuckles-Team/gitlab-api",
+  "dir_name": "gitlab-groups-knuckles-team-gitlab-api-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "architecture-design-creator",
+  "description": "PRDと機能設計書に基づいてアーキテクチャ設計書を作成するスキル。docs/prd.md と docs/functional-design.md が存在する場合に、テクノロジースタック、レイヤードアーキテクチャ、データ永続化戦略、パフォーマンス要件、セキュリティ設計等を含むアーキテクチャ設計書を作成します。「アーキテクチャ設計書を作成して」「技術仕様書を書いて」「architecture desi",
+  "repo": "ks6088ts-labs/skills",
+  "path": "skills/architecture-design-creator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ks6088ts-labs/skills",
+  "dir_name": "architecture-design-creator-ks6088ts-labs-skills-2"
+}

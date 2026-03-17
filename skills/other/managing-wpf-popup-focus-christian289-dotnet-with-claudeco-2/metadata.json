@@ -1,0 +1,11 @@
+{
+  "name": "managing-wpf-popup-focus",
+  "description": "Manages focus behavior for WPF Popup controls using PreviewMouseDown events. Use when Popup loses focus unexpectedly or needs to stay open during user interaction.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/managing-wpf-popup-focus",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "managing-wpf-popup-focus-christian289-dotnet-with-claudeco-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "pull-from-github",
+  "description": "Pull latest changes from GitHub and sync local branch",
+  "repo": "spaarke-dev/spaarke",
+  "path": ".claude/skills/pull-from-github",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spaarke-dev/spaarke",
+  "dir_name": "pull-from-github-spaarke-dev-spaarke-2"
+}

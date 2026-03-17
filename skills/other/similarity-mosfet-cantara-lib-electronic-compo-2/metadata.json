@@ -1,0 +1,11 @@
+{
+  "name": "similarity-mosfet",
+  "description": "Use when working with MOSFET similarity calculations - comparing MOSFET MPNs, understanding N-channel/P-channel matching, equivalent groups like IRF530/STF530, or MOSFET-specific similarity logic.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/similarity-mosfet",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "similarity-mosfet-cantara-lib-electronic-compo-2"
+}

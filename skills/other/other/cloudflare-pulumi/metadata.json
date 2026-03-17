@@ -1,0 +1,9 @@
+{
+  "name": "cloudflare-pulumi",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/cloudflare-pulumi/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "cloudflare-pulumi",
+  "downloaded_at": "2026-02-15T07:06:57.943402Z"
+}

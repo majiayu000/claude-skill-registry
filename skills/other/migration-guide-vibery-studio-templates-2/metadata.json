@@ -1,0 +1,11 @@
+{
+  "name": "migration-guide",
+  "description": "Generate step-by-step migration guides between tools, frameworks, or workflows. Outputs: Phase-by-phase migration plan, compatibility mapping, rollback strategy. Use when switching tools, upgrading fr",
+  "repo": "vibery-studio/templates",
+  "path": "skills/migration-guide",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vibery-studio/templates",
+  "dir_name": "migration-guide-vibery-studio-templates-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "neon-db-setup",
+  "description": "Set up Neon Serverless PostgreSQL database, configure connection strings, manage database credentials, and integrate with SQLModel ORM. Use when setting up database infrastructure for Phase 2 or confi",
+  "repo": "maneeshanif/todo-spec-driven",
+  "path": ".claude/skills/neon-db-setup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maneeshanif/todo-spec-driven",
+  "dir_name": "neon-db-setup-maneeshanif-todo-spec-driven-2"
+}

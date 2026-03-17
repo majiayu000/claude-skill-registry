@@ -1,0 +1,11 @@
+{
+  "name": "dag-task-scheduler",
+  "description": "Wave-based parallel scheduling for DAG execution. Manages execution order, resource allocation, and parallelism constraints. Activate on 'schedule dag', 'execution waves', 'parallel scheduling', 'task",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/dag-task-scheduler",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "dag-task-scheduler-erichowens-some-claude-skills-2"
+}

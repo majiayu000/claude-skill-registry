@@ -1,0 +1,11 @@
+{
+  "name": "evm-contract-source",
+  "description": "Use this skill when the user asks to \"get contract source code\", \"show verified contract\", \"fetch source from etherscan\", \"view smart contract code\", or mentions viewing verified source code on EVM ch",
+  "repo": "cheolwanpark/claude-plugins",
+  "path": "plugins/crypto/skills/evm-contract-source",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cheolwanpark/claude-plugins",
+  "dir_name": "evm-contract-source-cheolwanpark-claude-plugins-2"
+}

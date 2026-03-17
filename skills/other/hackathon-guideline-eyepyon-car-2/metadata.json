@@ -1,0 +1,11 @@
+{
+  "name": "hackathon-guideline",
+  "description": "このリポジトリで開発するアプリは、2025年1月16日〜18日にかけて行われる次世代オートモーティブ生成AIハッカソン提出用のプロダクトです。開発者は以下のガイドラインに沿ったアイディア・アプリを揃える必要があります。必要に応じてこのSKILLを使って最適なアウトプットを出すようにしてください。",
+  "repo": "eyepyon/car",
+  "path": ".claude/skills/hackathon-guideline",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/eyepyon/car",
+  "dir_name": "hackathon-guideline-eyepyon-car-2"
+}

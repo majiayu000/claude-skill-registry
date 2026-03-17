@@ -1,0 +1,11 @@
+{
+  "name": "mcp-tools",
+  "description": "Create MCP server tools with Official Python MCP SDK for AI agents. Use when building MCP tools, registering tool schemas, or creating AI-accessible functions.",
+  "repo": "Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development",
+  "path": "Phase03/.claude/skills/mcp-tools",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Jawad-Chaudhary/Hackathone-2-TODO-Spec-Driven-Development",
+  "dir_name": "mcp-tools-jawad-chaudhary-hackathone-2-todo-sp-2"
+}

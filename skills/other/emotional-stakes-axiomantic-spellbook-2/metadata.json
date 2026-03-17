@@ -1,0 +1,11 @@
+{
+  "name": "emotional-stakes",
+  "description": "Use when writing subagent prompts, skill instructions, or any high-stakes task requiring accuracy and truthfulness",
+  "repo": "axiomantic/spellbook",
+  "path": "skills/emotional-stakes",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/axiomantic/spellbook",
+  "dir_name": "emotional-stakes-axiomantic-spellbook-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "adaptive-learning",
+  "description": "Suggests learning analysis after code reviews",
+  "repo": "galando/universal-ai-dev-framework",
+  "path": ".claude/skills/adaptive-learning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/galando/universal-ai-dev-framework",
+  "dir_name": "adaptive-learning-galando-universal-ai-dev-fra-2"
+}

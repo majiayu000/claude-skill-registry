@@ -1,0 +1,11 @@
+{
+  "name": "keep-current",
+  "description": "Research current online documentation and information. Use when working with external libraries, frameworks, APIs, services, version-specific issues, trends, or any topic where LLM training cutoff may",
+  "repo": "shanepadgett/agent-extensions",
+  "path": "skills/keep-current",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shanepadgett/agent-extensions",
+  "dir_name": "keep-current-shanepadgett-agent-extensions-2"
+}

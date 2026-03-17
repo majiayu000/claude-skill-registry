@@ -1,0 +1,11 @@
+{
+  "name": "app-template",
+  "description": "Deploy applications using bjw-s/app-template Helm chart - a flexible chart for helmifying container images without dedicated charts.\n\nUse when: (1) Deploying container images that lack official Helm c",
+  "repo": "ionfury/homelab",
+  "path": ".claude/skills/app-template",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ionfury/homelab",
+  "dir_name": "app-template-ionfury-homelab-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "constitution",
+  "description": "Create or update the project constitution - personalized governance and coding principles. Use when starting a project or updating project standards. Triggers on: create constitution, update principle",
+  "repo": "ArvorCo/Relentless",
+  "path": ".claude/skills/constitution",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ArvorCo/Relentless",
+  "dir_name": "constitution-arvorco-relentless-2"
+}

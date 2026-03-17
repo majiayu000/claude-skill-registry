@@ -1,0 +1,11 @@
+{
+  "name": "redis",
+  "description": "Redis caching, pub/sub, and data structures. Activate for Redis operations, caching strategies, session management, and message queuing.",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/skills/redis",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Lobbi-Docs/claude",
+  "dir_name": "redis-lobbi-docs-claude-2"
+}

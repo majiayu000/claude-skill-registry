@@ -1,0 +1,11 @@
+{
+  "name": "mermaid-fix",
+  "description": "Fix and validate Mermaid diagrams using mermaid-cli (mmdc). Use when Claude needs to fix parsing errors in Mermaid diagrams, validate diagrams, or when encountering Mermaid syntax issues. This skill r",
+  "repo": "jinbangyi/k8s-agent",
+  "path": ".claude/skills/mermaid-fix",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jinbangyi/k8s-agent",
+  "dir_name": "mermaid-fix-jinbangyi-k8s-agent-2"
+}

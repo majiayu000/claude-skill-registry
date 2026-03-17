@@ -1,0 +1,11 @@
+{
+  "name": "mermaid-flowchart-generator",
+  "description": "Generate mermaid flowchart generator operations. Auto-activating skill for Visual Content.\nTriggers on: mermaid flowchart generator, mermaid flowchart generator\nPart of the Visual Content skill catego",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "planned-skills/generated/18-visual-content/mermaid-flowchart-generator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "mermaid-flowchart-generator-jeremylongshore-claude-code-plugins--2"
+}

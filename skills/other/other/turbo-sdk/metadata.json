@@ -1,0 +1,9 @@
+{
+  "name": "turbo-sdk",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills/turbo-sdk/SKILL.md",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "turbo-sdk",
+  "downloaded_at": "2026-02-15T07:06:54.758284Z"
+}

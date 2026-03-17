@@ -1,0 +1,11 @@
+{
+  "name": "config-seeder",
+  "description": "Seed JSON configuration files into database. Use ONCE at BAZINGA session initialization, BEFORE spawning PM.",
+  "repo": "mehdic/bazinga",
+  "path": ".claude/skills/config-seeder",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mehdic/bazinga",
+  "dir_name": "config-seeder-mehdic-bazinga-2"
+}

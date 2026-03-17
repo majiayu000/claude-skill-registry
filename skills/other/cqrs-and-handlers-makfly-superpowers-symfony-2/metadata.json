@@ -1,0 +1,11 @@
+{
+  "name": "cqrs-and-handlers",
+  "description": "Use when symfony cqrs and handlers",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/cqrs-and-handlers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "cqrs-and-handlers-makfly-superpowers-symfony-2"
+}

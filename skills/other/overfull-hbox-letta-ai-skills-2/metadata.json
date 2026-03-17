@@ -1,0 +1,11 @@
+{
+  "name": "overfull-hbox",
+  "description": "Guidance for fixing LaTeX overfull hbox warnings by replacing words with shorter synonyms from an allowed list. This skill applies when tasks involve modifying LaTeX documents to eliminate typographic",
+  "repo": "letta-ai/skills",
+  "path": "letta/benchmarks/trajectory-only/overfull-hbox",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/letta-ai/skills",
+  "dir_name": "overfull-hbox-letta-ai-skills-2"
+}

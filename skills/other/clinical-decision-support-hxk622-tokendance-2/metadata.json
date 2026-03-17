@@ -1,0 +1,11 @@
+{
+  "name": "clinical-decision-support",
+  "description": "Generate professional clinical decision support (CDS) documents for pharmaceutical and clinical research settings, including patient cohort analyses (biomarker-stratified with outcomes) and treatment ",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/clinical/clinical-decision-support",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "clinical-decision-support-hxk622-tokendance-2"
+}

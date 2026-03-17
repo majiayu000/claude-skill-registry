@@ -1,0 +1,11 @@
+{
+  "name": "moonshot-evaluate-complexity",
+  "description": "Evaluates complexity (simple, medium, complex) based on estimated files/lines/time. Use after task classification.",
+  "repo": "munlucky/code-cafe-manager",
+  "path": ".claude/skills/moonshot-evaluate-complexity",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/munlucky/code-cafe-manager",
+  "dir_name": "moonshot-evaluate-complexity-munlucky-code-cafe-manager-2"
+}

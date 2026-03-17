@@ -1,0 +1,11 @@
+{
+  "name": "using-wpf-clipboard",
+  "description": "Uses WPF Clipboard for copy/paste operations with text, images, and custom data formats. Use when implementing copy/paste functionality or inter-application data transfer.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/using-wpf-clipboard",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "using-wpf-clipboard-christian289-dotnet-with-claudeco-2"
+}

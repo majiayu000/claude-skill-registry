@@ -1,0 +1,11 @@
+{
+  "name": "ai-app",
+  "description": "Full-stack AI application generator. Use when creating chatbots, agent dashboards, or custom AI applications with Next.js, AI SDK, and ai-elements.",
+  "repo": "laguagu/claude-code-nextjs-skills",
+  "path": "skills/ai-app",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/laguagu/claude-code-nextjs-skills",
+  "dir_name": "ai-app-laguagu-claude-code-nextjs-s-2"
+}

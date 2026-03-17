@@ -1,0 +1,11 @@
+{
+  "name": "clustering",
+  "description": "Dimensionality reduction and clustering for single-cell RNA-seq using Seurat (R) and Scanpy (Python). Use for running PCA, computing neighbors, clustering with Leiden/Louvain algorithms, generating UM",
+  "repo": "GPTomics/bioSkills",
+  "path": "data-visualization/heatmaps-clustering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "clustering-gptomics-bioskills-2"
+}

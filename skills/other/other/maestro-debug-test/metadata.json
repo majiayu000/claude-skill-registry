@@ -1,0 +1,17 @@
+{
+  "name": "maestro-debug-test",
+  "repo": "JohnWebb4/dotfiles",
+  "path": ".cursor/skills/maestro-debug-test/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/JohnWebb4/dotfiles",
+  "dir_name": "maestro-debug-test",
+  "downloaded_at": "2026-03-01T05:31:13.068873Z",
+  "author": "JohnWebb4",
+  "source_url": "https://github.com/JohnWebb4/dotfiles/blob/main/.cursor/skills/maestro-debug-test/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JohnWebb4/dotfiles/blob/main/.cursor/skills/maestro-debug-test/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

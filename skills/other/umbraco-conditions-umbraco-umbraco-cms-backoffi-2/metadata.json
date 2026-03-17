@@ -1,0 +1,11 @@
+{
+  "name": "umbraco-conditions",
+  "description": "Understand and use conditions in Umbraco backoffice (foundational concept)",
+  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-conditions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
+  "dir_name": "umbraco-conditions-umbraco-umbraco-cms-backoffi-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "spawn-task-manager",
+  "description": "태스크 관리 작업을 task-manager-agent에 위임",
+  "repo": "Zeliper/z-coder",
+  "path": ".claude/skills/spawn-task-manager",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Zeliper/z-coder",
+  "dir_name": "spawn-task-manager-zeliper-z-coder-2"
+}

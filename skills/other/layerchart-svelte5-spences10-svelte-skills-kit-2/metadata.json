@@ -1,0 +1,11 @@
+{
+  "name": "layerchart-svelte5",
+  "description": "LayerChart Svelte 5 patterns. Use for chart components with tooltip snippets, Chart context access, and all Svelte 5 snippet patterns for tooltips, gradients, highlights, and axes.",
+  "repo": "spences10/svelte-skills-kit",
+  "path": "plugins/svelte-skills/skills/layerchart-svelte5",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spences10/svelte-skills-kit",
+  "dir_name": "layerchart-svelte5-spences10-svelte-skills-kit-2"
+}

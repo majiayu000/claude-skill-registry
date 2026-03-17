@@ -1,0 +1,11 @@
+{
+  "name": "type-design-analyzer",
+  "description": "Use when asked to evaluate type design/invariants or explicitly asked to run the type-design-analyzer subagent.",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/type-design-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "type-design-analyzer-troykelly-codex-skills-2"
+}

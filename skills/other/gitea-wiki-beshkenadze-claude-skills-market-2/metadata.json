@@ -1,0 +1,11 @@
+{
+  "name": "gitea-wiki",
+  "description": "Manage Gitea wiki pages. Use when working with wiki content, creating documentation, or updating wiki pages.",
+  "repo": "beshkenadze/claude-skills-marketplace",
+  "path": "skills/development/gitea-wiki",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/beshkenadze/claude-skills-marketplace",
+  "dir_name": "gitea-wiki-beshkenadze-claude-skills-market-2"
+}

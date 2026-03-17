@@ -1,0 +1,11 @@
+{
+  "name": "feature-engineering",
+  "description": "Create and transform features using encoding, scaling, polynomial features, and domain-specific transformations for improved model performance and interpretability",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/feature-engineering",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "dir_name": "feature-engineering-aj-geddes-useful-ai-prompts-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "mot",
+  "description": "System health check (MOT) for skills, agents, hooks, and memory",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/design/framer-motion-animations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "dir_name": "mot-majiayu000-claude-skill-registr-2"
+}

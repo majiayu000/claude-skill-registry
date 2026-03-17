@@ -1,0 +1,11 @@
+{
+  "name": "ppt-deck",
+  "description": "PPT 产出 playbook（目标/受众→故事线→版式设计→可访问性→交付），含 10/20/30 与 Microsoft Accessibility Checker 最佳实践。",
+  "repo": "cklxx/elephant.ai",
+  "path": "skills/ppt-deck",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cklxx/elephant.ai",
+  "dir_name": "ppt-deck-cklxx-elephant-ai-2"
+}

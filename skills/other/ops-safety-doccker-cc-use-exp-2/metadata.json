@@ -1,0 +1,11 @@
+{
+  "name": "ops-safety",
+  "description": "当用户执行系统级命令（sysctl、iptables、systemctl、Docker 配置、数据库 DDL）或进行服务器运维操作时触发。提供运维安全规范。",
+  "repo": "doccker/cc-use-exp",
+  "path": ".claude/skills/ops-safety",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doccker/cc-use-exp",
+  "dir_name": "ops-safety-doccker-cc-use-exp-2"
+}

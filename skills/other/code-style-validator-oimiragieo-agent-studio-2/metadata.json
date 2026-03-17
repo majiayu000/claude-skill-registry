@@ -1,0 +1,11 @@
+{
+  "name": "code-style-validator",
+  "description": "Programmatic code style validation using AST analysis. Complements (not replaces) code-style rules by providing automated checking and instant feedback.",
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/code-style-validator",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oimiragieo/agent-studio",
+  "dir_name": "code-style-validator-oimiragieo-agent-studio-2"
+}

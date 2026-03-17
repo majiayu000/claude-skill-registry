@@ -1,0 +1,11 @@
+{
+  "name": "server-components",
+  "description": "This skill should be used when the user asks about \"Server Components\", \"Client Components\", \"'use client' directive\", \"when to use server vs client\", \"RSC patterns\", \"component composition\", \"data fe",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/nextjs-expert/skills/server-components",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "server-components-davepoon-buildwithclaude-2"
+}

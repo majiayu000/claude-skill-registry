@@ -1,0 +1,11 @@
+{
+  "name": "api-platform-security",
+  "description": "Use when symfony api platform security",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/api-platform-security",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "api-platform-security-makfly-superpowers-symfony-2"
+}

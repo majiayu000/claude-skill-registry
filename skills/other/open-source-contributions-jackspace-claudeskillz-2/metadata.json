@@ -1,0 +1,11 @@
+{
+  "name": "open-source-contributions",
+  "description": "Use this skill when contributing code to open source projects. The skill covers proper pull request creation, avoiding common mistakes that annoy maintainers, cleaning up personal development artifact",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/open-source-contributions",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "open-source-contributions-jackspace-claudeskillz-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "inspiration-analyzer",
+  "description": "Analyze websites for design inspiration, extracting colors, typography, layouts, and patterns. Use when you have specific URLs to analyze for a design project.",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/frontend-design-pro/skills/inspiration-analyzer",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "inspiration-analyzer-davepoon-buildwithclaude-2"
+}

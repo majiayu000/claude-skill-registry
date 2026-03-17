@@ -1,0 +1,11 @@
+{
+  "name": "specify",
+  "description": "Create feature specification from natural language description. Use when starting a new feature or creating a spec. Triggers on: create spec, specify feature, new feature spec.",
+  "repo": "ArvorCo/Relentless",
+  "path": ".claude/skills/specify",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ArvorCo/Relentless",
+  "dir_name": "specify-arvorco-relentless-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "triangle-metrics",
+  "description": "Triangle Metrics Skill",
+  "repo": "plurigrid/asi",
+  "path": "skills/triangle-metrics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "triangle-metrics-plurigrid-asi-2"
+}

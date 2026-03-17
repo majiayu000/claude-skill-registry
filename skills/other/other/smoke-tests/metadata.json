@@ -1,0 +1,9 @@
+{
+  "name": "smoke-tests",
+  "repo": "METR/inspect-action",
+  "path": ".claude/skills/smoke-tests/SKILL.md",
+  "category": "other",
+  "source": "github.com/METR/inspect-action",
+  "dir_name": "smoke-tests",
+  "downloaded_at": "2026-02-22T05:21:04.161050Z"
+}

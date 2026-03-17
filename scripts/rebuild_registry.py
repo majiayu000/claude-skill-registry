@@ -6,78 +6,15 @@ Scans all skills/*/SKILL.md files and rebuilds the registry index.
 """
 
 import json
-import os
-import re
 import logging
 from datetime import datetime
 from pathlib import Path
 from collections import defaultdict
-import yaml
+
+from utils import extract_frontmatter, extract_description, load_metadata
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 logger = logging.getLogger(__name__)
-
-
-def extract_frontmatter(content: str) -> dict:
-    """Extract YAML frontmatter from SKILL.md."""
-    if not content.startswith("---"):
-        return {}
-
-    try:
-        # Find the closing ---
-        end_idx = content.find("---", 3)
-        if end_idx == -1:
-            return {}
-
-        frontmatter = content[3:end_idx].strip()
-        data = yaml.safe_load(frontmatter)
-        return data if isinstance(data, dict) else {}
-    except Exception:
-        return {}
-
-
-def extract_description(content: str) -> str:
-    """Extract description from content."""
-    # Try frontmatter first
-    fm = extract_frontmatter(content)
-    if fm.get("description"):
-        return fm["description"][:200]
-
-    # Try first paragraph after frontmatter
-    lines = content.split("\n")
-    in_frontmatter = False
-
-    for line in lines:
-        line = line.strip()
-        if line == "---":
-            in_frontmatter = not in_frontmatter
-            continue
-        if in_frontmatter:
-            continue
-        if line.startswith("#"):
-            continue
-        if line and not line.startswith("```"):
-            # Clean markdown
-            line = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', line)
-            line = re.sub(r'[*_`]', '', line)
-            return line[:200]
-
-    return ""
-
-
-def safe_load_metadata(metadata_path: Path) -> dict:
-    """Safely load metadata.json"""
-    if not metadata_path.exists():
-        return {}
-    try:
-        with open(metadata_path, encoding='utf-8') as f:
-            return json.load(f)
-    except json.JSONDecodeError as e:
-        logger.warning(f"JSON parse error in {metadata_path}: {e}")
-        return {}
-    except Exception as e:
-        logger.warning(f"Error reading {metadata_path}: {e}")
-        return {}
 
 
 def safe_write_registry(registry_path: Path, registry: dict) -> bool:
@@ -130,7 +67,7 @@ def scan_skills(skills_dir: Path) -> list:
         if has_subskills:
             continue
 
-        metadata = safe_load_metadata(metadata_path)
+        metadata = load_metadata(skill_dir)
 
         # Determine name
         name = metadata.get("name") or (rel_parts[-1] if rel_parts else skill_dir.name)
@@ -232,6 +169,20 @@ def build_category_indexes(skills: list, output_dir: Path):
         json.dump(index, f, indent=2)
 
 
+def load_collections(sources_dir: Path) -> list:
+    """Load collections from sources/collections.json."""
+    collections_path = sources_dir / "collections.json"
+    if not collections_path.exists():
+        return []
+    try:
+        with open(collections_path, encoding="utf-8") as f:
+            data = json.load(f)
+        return data.get("collections", [])
+    except Exception as e:
+        logger.warning(f"Failed to load collections: {e}")
+        return []
+
+
 if __name__ == "__main__":
     import argparse
 
@@ -250,6 +201,7 @@ if __name__ == "__main__":
         skills_dir = (registry_dir / args.skills_dir).resolve()
         registry_path = (registry_dir / args.registry).resolve()
         categories_dir = (registry_dir / args.categories_dir).resolve()
+        sources_dir = (registry_dir / "sources").resolve()
 
         print("=" * 60)
         print("REBUILDING REGISTRY FROM DOWNLOADED SKILLS")
@@ -293,16 +245,23 @@ if __name__ == "__main__":
         # Sort by stars then name
         unique_skills.sort(key=lambda x: (-x.get("stars", 0), x["name"].lower()))
 
+        # Load collections
+        collections = load_collections(sources_dir)
+        print(f"Collections loaded: {len(collections)}")
+        print()
+
         # Build registry
         registry = {
-            "version": "2.0.0",
+            "version": "2.1.0",
             "updated_at": datetime.utcnow().isoformat() + "Z",
             "total_count": len(unique_skills),
+            "collection_count": len(collections),
             "skills": unique_skills,
+            "collections": collections,
         }
 
         if safe_write_registry(registry_path, registry):
-            print(f"Written {registry_path} with {len(unique_skills)} skills")
+            print(f"Written {registry_path} with {len(unique_skills)} skills, {len(collections)} collections")
         else:
             print("Failed to write registry!")
             return

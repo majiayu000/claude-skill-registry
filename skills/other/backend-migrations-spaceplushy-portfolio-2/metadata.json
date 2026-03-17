@@ -1,0 +1,11 @@
+{
+  "name": "backend-migrations",
+  "description": "Create and manage database schema migrations with reversible changes, clear naming, and safe deployment practices. Use this skill when writing database migration files, modifying database schemas, cre",
+  "repo": "SpacePlushy/portfolio",
+  "path": ".claude/skills/backend-migrations",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpacePlushy/portfolio",
+  "dir_name": "backend-migrations-spaceplushy-portfolio-2"
+}

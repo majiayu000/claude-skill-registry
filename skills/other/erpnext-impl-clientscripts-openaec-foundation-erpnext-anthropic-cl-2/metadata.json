@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-impl-clientscripts",
+  "description": "Implementation workflows and decision trees for ERPNext Client Scripts. Use when determining HOW to implement client-side features: form validations, dynamic UI, server integration, child table logic.",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/impl/erpnext-impl-clientscripts",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-impl-clientscripts-openaec-foundation-erpnext-anthropic-cl-2"
+}

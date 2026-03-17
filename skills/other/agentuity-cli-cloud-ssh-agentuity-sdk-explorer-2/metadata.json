@@ -1,0 +1,11 @@
+{
+  "name": "agentuity-cli-cloud-ssh",
+  "description": "SSH into a cloud project or sandbox. Requires authentication. Use for Agentuity cloud platform operations",
+  "repo": "agentuity/sdk-explorer",
+  "path": ".agents/skills/agentuity-cli-cloud-ssh",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/agentuity/sdk-explorer",
+  "dir_name": "agentuity-cli-cloud-ssh-agentuity-sdk-explorer-2"
+}

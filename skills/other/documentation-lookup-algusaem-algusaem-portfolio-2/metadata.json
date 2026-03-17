@@ -1,0 +1,11 @@
+{
+  "name": "documentation-lookup",
+  "description": "This skill should be used when the user asks about libraries, frameworks, API references, or needs code examples. Activates for setup questions, code generation involving libraries, or mentions of spe",
+  "repo": "algusaem/algusaem-portfolio",
+  "path": ".claude/skills/documentation-lookup",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/algusaem/algusaem-portfolio",
+  "dir_name": "documentation-lookup-algusaem-algusaem-portfolio-2"
+}

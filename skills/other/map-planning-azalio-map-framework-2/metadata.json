@@ -1,0 +1,11 @@
+{
+  "name": "map-planning",
+  "description": "Implements file-based planning for MAP Framework workflows with branch-scoped task tracking in .map/ directory. Prevents goal drift via automatic plan synchronization before tool use and validates com",
+  "repo": "azalio/map-framework",
+  "path": ".claude/skills/map-planning",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/azalio/map-framework",
+  "dir_name": "map-planning-azalio-map-framework-2"
+}

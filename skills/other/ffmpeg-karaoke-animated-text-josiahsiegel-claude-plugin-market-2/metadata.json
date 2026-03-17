@@ -1,0 +1,11 @@
+{
+  "name": "ffmpeg-karaoke-animated-text",
+  "description": "MANDATORY: Always Use Backslashes on Windows for File Paths",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/ffmpeg-master/skills/ffmpeg-karaoke-animated-text",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "ffmpeg-karaoke-animated-text-josiahsiegel-claude-plugin-market-2"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "docker-compose-operations",
+  "repo": "hippocampus-dev/hippocampus",
+  "path": ".claude/skills/docker-compose-operations/SKILL.md",
+  "category": "other",
+  "source": "github.com/hippocampus-dev/hippocampus",
+  "dir_name": "docker-compose-operations",
+  "downloaded_at": "2026-02-22T07:26:49.926909Z"
+}

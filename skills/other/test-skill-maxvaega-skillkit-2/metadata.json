@@ -1,0 +1,11 @@
+{
+  "name": "test-skill",
+  "description": "A test skill from valid plugin",
+  "repo": "maxvaega/skillkit",
+  "path": "tests/fixtures/plugins/valid-plugin/skills/test-skill",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "test-skill-maxvaega-skillkit-2"
+}

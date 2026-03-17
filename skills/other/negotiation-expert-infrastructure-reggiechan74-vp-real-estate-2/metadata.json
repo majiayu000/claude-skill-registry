@@ -1,0 +1,11 @@
+{
+  "name": "negotiation-expert-infrastructure",
+  "description": "Property owner negotiations for acquisitions (specialized from negotiation-expert). Calculates BATNA, ZOPA, optimal settlement range, assesses holdout risk (0-30 scale), generates concession strategie",
+  "repo": "reggiechan74/vp-real-estate",
+  "path": ".claude/skills/negotiation-expert-infrastructure",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/reggiechan74/vp-real-estate",
+  "dir_name": "negotiation-expert-infrastructure-reggiechan74-vp-real-estate-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "deepvariant",
+  "description": "Deep learning-based variant calling with Google DeepVariant. Provides high accuracy for germline SNPs and indels from Illumina, PacBio, and ONT data.",
+  "repo": "GPTomics/bioSkills",
+  "path": "variant-calling/deepvariant",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "deepvariant-gptomics-bioskills-2"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "msp-protocol",
+  "description": "Look up MSP protocol commands, packet formats, and implementations",
+  "repo": "sensei-hacker/inav-claude",
+  "path": ".claude/skills/msp-protocol",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sensei-hacker/inav-claude",
+  "dir_name": "msp-protocol-sensei-hacker-inav-claude-2"
+}

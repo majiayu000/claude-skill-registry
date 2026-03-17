@@ -2,7 +2,7 @@
   "category": "testing",
   "code": "tst",
   "count": 6699,
-  "updated_at": "2026-03-07T01:45:31.632339Z",
+  "updated_at": "2026-03-17T14:53:48.845437Z",
   "skills": [
     {
       "name": "frontend-testing",
@@ -23634,7 +23634,7 @@
     },
     {
       "name": "skills-mkelam-pdflab",
-      "description": "This skill provides expert guidance on user experience (UX) design, product strategy, user research, and interface optimization. Use this skill when designing new features, improving existing workf...",
+      "description": "This skill provides expert guidance on user experience (UX) design, product strategy, user research, and interface optimization. Use this skill when designing new features, improving existing workflow",
       "repo": "mkelam/PDFLab",
       "path": "",
       "branch": "main",
@@ -26226,7 +26226,7 @@
     },
     {
       "name": "skills",
-      "description": "This skill provides expert guidance on user experience (UX) design, product strategy, user research, and interface optimization. Use this skill when designing new features, improving existing workf...",
+      "description": "This skill provides expert guidance on user experience (UX) design, product strategy, user research, and interface optimization. Use this skill when designing new features, improving existing workflow",
       "repo": "mkelam/PDFLab",
       "path": "",
       "branch": "main",
@@ -29760,7 +29760,7 @@
     },
     {
       "name": "rules",
-      "description": "A skill is an area of specialization associated with an ability check. If you have [[proficiency]] in a skill, you can add your Proficiency Bonus when you make an ability check associated with that...",
+      "description": "A skill is an area of specialization associated with an ability check. If you have [[proficiency]] in a skill, you can add your Proficiency Bonus when you make an ability check associated with that sk",
       "repo": "OddBallYT/ms_Obsidian.Projects",
       "path": "",
       "branch": "main",
@@ -29962,7 +29962,7 @@
     },
     {
       "name": "ai-agent-skills",
-      "description": "Here’s a complete breakdown of how to configure and set up the Scoring Skill in raiaAI’s Launch Pad. This skill allows your AI agent to evaluate the quality of its conversations and assign a Conver...",
+      "description": "Here’s a complete breakdown of how to configure and set up the Scoring Skill in raiaAI’s Launch Pad. This skill allows your AI agent to evaluate the quality of its conversations and assign a Conversat",
       "repo": "raia-ai/raia-v2-docs",
       "path": "",
       "branch": "main",
@@ -34717,7 +34717,7 @@
     },
     {
       "name": "ai-agent-skills",
-      "description": "Here’s a complete breakdown of how to configure and set up the Scoring Skill in raiaAI’s Launch Pad. This skill allows your AI agent to evaluate the quality of its conversations and assign a Conver...",
+      "description": "Here’s a complete breakdown of how to configure and set up the Scoring Skill in raiaAI’s Launch Pad. This skill allows your AI agent to evaluate the quality of its conversations and assign a Conversat",
       "repo": "raia-ai/raia-v2-docs",
       "path": "",
       "branch": "main",
@@ -36338,7 +36338,7 @@
     },
     {
       "name": "make-skill-template",
-      "description": "Create new Agent Skills for GitHub Copilot from prompts or by duplicating this template. Use when asked to \"create a skill\", \"make a new skill\", \"scaffold a skill\", or when building specialized AI ...",
+      "description": "Create new Agent Skills for GitHub Copilot from prompts or by duplicating this template. Use when asked to \"create a skill\", \"make a new skill\", \"scaffold a skill\", or when building specialized AI cap",
       "repo": "alexandereiseghohi/ComicWise",
       "path": "",
       "branch": "main",
@@ -48842,7 +48842,7 @@
     },
     {
       "name": "rules",
-      "description": "A skill is an area of specialization associated with an ability check. If you have [[proficiency]] in a skill, you can add your Proficiency Bonus when you make an ability check associated with that...",
+      "description": "A skill is an area of specialization associated with an ability check. If you have [[proficiency]] in a skill, you can add your Proficiency Bonus when you make an ability check associated with that sk",
       "repo": "OddBallYT/ms_Obsidian.Projects",
       "path": "",
       "branch": "main",
@@ -68703,7 +68703,7 @@
     },
     {
       "name": "make-skill-template",
-      "description": "Create new Agent Skills for GitHub Copilot from prompts or by duplicating this template. Use when asked to \"create a skill\", \"make a new skill\", \"scaffold a skill\", or when building specialized AI ...",
+      "description": "Create new Agent Skills for GitHub Copilot from prompts or by duplicating this template. Use when asked to \"create a skill\", \"make a new skill\", \"scaffold a skill\", or when building specialized AI cap",
       "repo": "alexandereiseghohi/ComicWise",
       "path": "",
       "branch": "main",
@@ -83814,7 +83814,7 @@
     },
     {
       "name": "ai-agent-skills-raia-ai-raia-v2-docs",
-      "description": "The retriever skill is a mechanism that allows the system (an agent) to fetch contextual information from an external vector database, such as Pinecone, in real time. The retrieved data is then pas...",
+      "description": "The retriever skill is a mechanism that allows the system (an agent) to fetch contextual information from an external vector database, such as Pinecone, in real time. The retrieved data is then passed",
       "repo": "raia-ai/raia-v2-docs",
       "path": "",
       "branch": "main",
@@ -86666,7 +86666,7 @@
     },
     {
       "name": "ai-agent-skills-raia-ai-raia-v2-docs",
-      "description": "The retriever skill is a mechanism that allows the system (an agent) to fetch contextual information from an external vector database, such as Pinecone, in real time. The retrieved data is then pas...",
+      "description": "The retriever skill is a mechanism that allows the system (an agent) to fetch contextual information from an external vector database, such as Pinecone, in real time. The retrieved data is then passed",
       "repo": "raia-ai/raia-v2-docs",
       "path": "",
       "branch": "main",

@@ -1,0 +1,11 @@
+{
+  "name": "tdd",
+  "description": "Test-Driven Development with Arcanean philosophy - write tests first, fail intentionally, implement minimally, refactor with confidence. Embodies the Arcanean principle that constraint liberates creat",
+  "repo": "frankxai/arcanea",
+  "path": ".claude/skills/development/tdd",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/arcanea",
+  "dir_name": "tdd-frankxai-arcanea-2"
+}

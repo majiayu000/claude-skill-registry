@@ -1,0 +1,11 @@
+{
+  "name": "restart-test-containers",
+  "description": "Restarts WitchCityRope Docker TEST containers using the CORRECT procedure. Handles shutdown, rebuild with test compose overlay (--no-cache by default), health checks, and verification. Ensures environ",
+  "repo": "DarkMonkDev/WitchCityRope",
+  "path": ".claude/skills/restart-test-containers",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DarkMonkDev/WitchCityRope",
+  "dir_name": "restart-test-containers-darkmonkdev-witchcityrope-2"
+}

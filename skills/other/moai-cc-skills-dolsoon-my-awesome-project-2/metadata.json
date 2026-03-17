@@ -1,0 +1,11 @@
+{
+  "name": "moai-cc-skills",
+  "description": "Claude Code Skills management, skill creation patterns, and knowledge capsule architecture. Use when creating custom Skills, managing skill libraries, or designing knowledge systems.",
+  "repo": "dolsoon/my-awesome-project",
+  "path": ".claude/skills/moai-cc-skills",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dolsoon/my-awesome-project",
+  "dir_name": "moai-cc-skills-dolsoon-my-awesome-project-2"
+}

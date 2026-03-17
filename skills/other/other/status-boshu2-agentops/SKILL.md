@@ -1,0 +1,284 @@
+---
+name: status
+description: 'Single-screen dashboard showing current work, recent validations, flywheel health, and suggested next action. Triggers: "status", "dashboard", "what am I working on", "where was I".'
+allowed-tools: Read, Grep, Glob, Bash
+model: haiku
+metadata:
+  tier: session
+  dependencies: []
+---
+
+# /status — Workflow Dashboard
+
+> **Purpose:** Single-screen overview of your current state. What am I working on? What happened recently? What should I do next?
+
+**YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
+
+**CLI dependencies:** bd, ao, gt — all optional. Shows what's available, skips what isn't.
+
+---
+
+## Quick Start
+
+```bash
+/status              # Full dashboard
+/status --json       # Machine-readable JSON output
+```
+
+---
+
+## Execution Steps
+
+### Step 1: Gather State (Parallel)
+
+Run ALL of the following in parallel bash calls for speed:
+
+**Call 1 — RPI + Ratchet + Task State:**
+```bash
+# Current ratchet phase
+if [ -f .agents/ao/chain.jsonl ]; then
+  tail -1 .agents/ao/chain.jsonl 2>/dev/null
+else
+  echo "NO_CHAIN"
+fi
+
+# Ratchet status via CLI
+if command -v ao &>/dev/null; then
+  ao ratchet status -o json 2>/dev/null || echo "RATCHET_UNAVAILABLE"
+  ao task-status -o json 2>/dev/null || echo "TASK_STATUS_UNAVAILABLE"
+fi
+```
+
+**Call 2 — Beads / Epic State:**
+```bash
+if command -v bd &>/dev/null; then
+  echo "=== EPIC ==="
+  bd list --type epic --status open 2>/dev/null | head -5
+  echo "=== IN_PROGRESS ==="
+  bd list --status in_progress 2>/dev/null | head -5
+  echo "=== READY ==="
+  bd ready 2>/dev/null | head -5
+  echo "=== TOTAL ==="
+  bd list 2>/dev/null | wc -l
+else
+  echo "BD_UNAVAILABLE"
+fi
+```
+
+**Call 3 — Knowledge Flywheel:**
+```bash
+# Learnings count
+echo "LEARNINGS=$(ls .agents/learnings/ 2>/dev/null | wc -l | tr -d ' ')"
+echo "PATTERNS=$(ls .agents/patterns/ 2>/dev/null | wc -l | tr -d ' ')"
+echo "PENDING=$(ls .agents/knowledge/pending/ 2>/dev/null | wc -l | tr -d ' ')"
+
+# Flywheel health + badge
+if command -v ao &>/dev/null; then
+  ao flywheel status 2>/dev/null || echo "FLYWHEEL_UNAVAILABLE"
+  ao badge 2>/dev/null || echo "BADGE_UNAVAILABLE"
+fi
+```
+
+**Call 4 — Recent Activity + Git:**
+```bash
+# Recent sessions
+if [ -d .agents/ao/sessions ]; then
+  ls -t .agents/ao/sessions/*.md 2>/dev/null | head -3
+else
+  echo "NO_SESSIONS"
+fi
+
+# Recent council verdicts
+ls -lt .agents/council/ 2>/dev/null | head -4
+
+# Git state
+echo "=== GIT ==="
+git branch --show-current 2>/dev/null
+git log --oneline -3 2>/dev/null
+git status --short 2>/dev/null | head -5
+```
+
+**Call 5 — Inbox:**
+```bash
+if command -v gt &>/dev/null; then
+  gt mail inbox 2>/dev/null | head -5
+else
+  echo "GT_UNAVAILABLE"
+fi
+```
+
+### Step 2: Render Dashboard
+
+Assemble gathered data into this format. Use Unicode indicators for visual clarity:
+
+- Pass/healthy: `[PASS]`
+- Warning/partial: `[WARN]`
+- Fail/missing: `[FAIL]`
+- Progress: `[3/7]` with bar `███░░░░`
+
+```
+══════════════════════════════════════════════════
+  Workflow Dashboard
+══════════════════════════════════════════════════
+
+RPI PROGRESS
+  Phase: <current phase from chain.jsonl: research | plan | implement | validate | idle>
+  Gate:  <last completed gate or "none">
+  ─────────────────────────────────
+  research ── plan ── implement ── validate
+     <mark current position with arrow or highlight>
+
+ACTIVE EPIC
+  <epic title and ID, or "No active epic">
+  Progress: <completed>/<total> issues  <progress bar>
+  In Progress: <list in-progress issues, max 3>
+
+READY TO WORK
+  <top 3 unblocked issues from bd ready>
+  <or "No ready issues — create work with /plan">
+
+RECENT VALIDATIONS
+  <last 3 council reports with verdict>
+  <format: date  verdict  target>
+  <or "No recent validations">
+
+KNOWLEDGE FLYWHEEL
+  Learnings: <count>  Patterns: <count>  Pending: <count>
+  Health: <flywheel status or "ao not installed">
+  Badge: <ao badge output or omit if unavailable>
+
+TASK MATURITY
+  <ao task-status summary: active tasks with CASS maturity levels, or omit if unavailable>
+
+RECENT SESSIONS
+  <last 3 session summaries with dates>
+  <or "No session history">
+
+GIT STATE
+  Branch: <current branch>
+  Recent: <last 3 commits, one-line>
+  Changes: <uncommitted file count or "clean">
+
+INBOX
+  <message count or "No messages" or "gt not installed">
+
+──────────────────────────────────────────────────
+SUGGESTED NEXT ACTION
+  <state-aware suggestion — see Step 3>
+──────────────────────────────────────────────────
+
+QUICK COMMANDS
+  /research     Deep codebase exploration
+  /plan         Decompose epic into issues
+  /pre-mortem   Validate plan before coding
+  /implement    Execute a single issue
+  /crank        Autonomous epic execution
+  /vibe         Validate code quality
+  /post-mortem  Extract learnings, close cycle
+══════════════════════════════════════════════════
+```
+
+### Step 3: Suggest Next Action (State-Aware)
+
+Evaluate state top-to-bottom. Use the FIRST matching condition:
+
+| Priority | Condition | Suggestion |
+|----------|-----------|------------|
+| 1 | Inbox has unread messages | "Check messages: `/inbox`" |
+| 2 | No ratchet chain exists | "Start with `/quickstart` or `/research` to begin a workflow" |
+| 3 | Research done, no plan | "Run `/plan` to decompose research into actionable issues" |
+| 4 | Plan done, no pre-mortem | "Run `/pre-mortem` to validate the plan before coding" |
+| 5 | Issues in-progress | "Continue working: `/implement <issue-id>` or `/crank` for autonomous execution" |
+| 6 | Ready issues available | "Pick up next issue: `/implement <first-ready-id>`" |
+| 7 | Uncommitted changes | "Review changes: `/vibe recent`" |
+| 8 | Implementation done, no vibe | "Run `/vibe` for final code validation" |
+| 9 | Recent WARN/FAIL verdict | "Address findings in `<report-path>`, then re-run `/vibe`" |
+| 10 | Vibe passed, no post-mortem | "Run `/post-mortem` to extract learnings and complete the cycle" |
+| 11 | Pending knowledge items | "Promote learnings: `ao pool list --status pending -o json`, then `ao pool stage <id>` and `ao pool promote <id>`" |
+| 12 | Clean state, nothing pending | "All clear. Start with `/research` or `/plan` to find new work" |
+
+### Step 4: JSON Output (--json flag)
+
+If the user passed `--json`, output all dashboard data as structured JSON instead of the visual dashboard:
+
+```json
+{
+  "rpi": {
+    "phase": "implement",
+    "last_gate": "plan",
+    "chain_entries": 3
+  },
+  "epic": {
+    "id": "ag-042",
+    "title": "Epic title",
+    "progress": { "completed": 3, "total": 7, "in_progress": ["ag-042.2"] }
+  },
+  "ready_issues": ["ag-042.4", "ag-042.5"],
+  "validations": [
+    { "date": "2026-02-09", "verdict": "PASS", "target": "src/auth/" }
+  ],
+  "flywheel": {
+    "learnings": 12,
+    "patterns": 5,
+    "pending": 2,
+    "health": "healthy"
+  },
+  "sessions": [
+    { "date": "2026-02-09", "file": "session-abc.md" }
+  ],
+  "git": {
+    "branch": "main",
+    "uncommitted_count": 3,
+    "recent_commits": ["abc1234 fix: thing", "def5678 feat: other"]
+  },
+  "inbox": { "count": 0 },
+  "suggestion": {
+    "priority": 5,
+    "message": "Continue working: /implement ag-042.2"
+  }
+}
+```
+
+Render this with a single code block. No visual dashboard when `--json` is active.
+
+---
+
+## Examples
+
+### Checking Status Mid-Epic
+
+**User says:** `/status`
+
+**What happens:**
+1. Agent runs 5 parallel bash calls to gather all state
+2. Agent reads ratchet chain showing "implement" phase
+3. Agent queries beads showing epic ag-042 with 3/7 issues completed
+4. Agent finds 2 in-progress issues and 4 ready issues
+5. Agent lists recent council verdict: PASS on src/auth/
+6. Agent checks flywheel showing 12 learnings, 5 patterns, 2 pending
+7. Agent renders dashboard with progress bars and suggests: "Continue working: /implement ag-042.2"
+
+**Result:** Full single-screen dashboard showing mid-epic progress with actionable next step.
+
+### Status in Clean State
+
+**User says:** `/status`
+
+**What happens:**
+1. Agent gathers all state in parallel
+2. Agent finds no ratchet chain exists (.agents/ao/chain.jsonl missing)
+3. Agent finds no open epics or in-progress issues
+4. Agent shows clean git state, recent commits only
+5. Agent finds no recent validations
+6. Agent suggests: "All clear. Start with /research or /plan to find new work"
+
+**Result:** Dashboard confirms clean slate, points user to workflow entry points.
+
+## Troubleshooting
+
+| Problem | Cause | Solution |
+|---------|-------|----------|
+| Shows "BD_UNAVAILABLE" or "AO_UNAVAILABLE" | CLI tools not installed or not in PATH | Install missing tools: `brew install bd` or `brew install ao`. Skill gracefully degrades by showing available state only. |
+| Ratchet phase shows stale data | Old chain.jsonl not cleaned up | Check timestamp of `.agents/ao/chain.jsonl`. If stale, delete it or run `/post-mortem` to complete cycle and reset state. |
+| Suggested action doesn't match intent | State-aware rules didn't capture edge case | Review priority table in Step 3. May need to refine conditions. Use `--json` to inspect raw state and debug rule matching. |
+| JSON output malformed | Parallel bash calls returned unexpected format | Check each bash call individually. Ensure jq parsing works on actual data. Validate JSON structure with `jq .` before returning to user. |

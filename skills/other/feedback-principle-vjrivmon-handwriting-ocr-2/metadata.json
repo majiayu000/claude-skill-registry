@@ -1,0 +1,11 @@
+{
+  "name": "feedback-principle",
+  "description": "El sistema debe informar sobre resultados de acciones del usuario. Use cuando diseñe interacciones, estados de carga, confirmaciones, o manejo de errores.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/design-principles/feedback-principle",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "feedback-principle-vjrivmon-handwriting-ocr-2"
+}

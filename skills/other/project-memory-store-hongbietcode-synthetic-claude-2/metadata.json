@@ -1,0 +1,11 @@
+{
+  "name": "project-memory-store",
+  "description": "Store project-specific insights and context into file-based memory. Use after completing tasks that reveal important details about THIS codebase. Use when user says \"--project-store\" or \"--learn\" (you",
+  "repo": "hongbietcode/synthetic-claude",
+  "path": "plugins/content-creation/skills/templates/project-memory-store",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hongbietcode/synthetic-claude",
+  "dir_name": "project-memory-store-hongbietcode-synthetic-claude-2"
+}

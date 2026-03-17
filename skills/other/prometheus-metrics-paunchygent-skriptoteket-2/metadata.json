@@ -1,0 +1,11 @@
+{
+  "name": "prometheus-metrics",
+  "description": "Instrument services with Prometheus metrics and write PromQL queries. Guides HuleEdu naming conventions, metrics middleware setup, and business vs operational metrics. Integrates with Context7 for lat",
+  "repo": "paunchygent/skriptoteket",
+  "path": ".claude/skills/prometheus-metrics",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/paunchygent/skriptoteket",
+  "dir_name": "prometheus-metrics-paunchygent-skriptoteket-2"
+}

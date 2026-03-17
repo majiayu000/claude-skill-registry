@@ -1,0 +1,11 @@
+{
+  "name": "deploy-component",
+  "description": "Deploys a component (frontend, backend, or landing) using SST. Use when deploying to AWS, pushing to dev or prod environments.",
+  "repo": "MenadBt/prospection",
+  "path": ".claude/skills/deploy-component",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MenadBt/prospection",
+  "dir_name": "deploy-component-menadbt-prospection-2"
+}

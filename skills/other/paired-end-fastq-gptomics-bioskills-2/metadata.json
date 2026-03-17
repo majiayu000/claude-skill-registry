@@ -1,0 +1,11 @@
+{
+  "name": "paired-end-fastq",
+  "description": "Handle paired-end FASTQ files (R1/R2) using Biopython. Use when working with Illumina paired reads, synchronizing pairs, interleaving/deinterleaving, or filtering paired data.",
+  "repo": "GPTomics/bioSkills",
+  "path": "sequence-io/paired-end-fastq",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "paired-end-fastq-gptomics-bioskills-2"
+}

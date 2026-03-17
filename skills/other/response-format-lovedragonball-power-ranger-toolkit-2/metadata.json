@@ -1,0 +1,11 @@
+{
+  "name": "response-format",
+  "description": "Ensure all AI responses are well-formatted, easy to understand, and actionable for the user.",
+  "repo": "lovedragonball/power-ranger-toolkit",
+  "path": "src/skills/response-format",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lovedragonball/power-ranger-toolkit",
+  "dir_name": "response-format-lovedragonball-power-ranger-toolkit-2"
+}

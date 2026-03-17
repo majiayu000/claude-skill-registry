@@ -1,0 +1,11 @@
+{
+  "name": "consensus",
+  "description": "Agreement protocol in multi-agent systems",
+  "repo": "plurigrid/asi",
+  "path": "skills/consensus",
+  "category": "other",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "consensus-plurigrid-asi-2"
+}

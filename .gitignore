@@ -38,6 +38,12 @@ reputation-report.json
 registry.json.bak
 registry.json.tmp
 
+# Duplicate category indexes (frontend uses docs/categories/ only)
+/categories/
+
+# Temp working directory
+/.tmp/
+
 # Cache directories
 /cache/
 /.cache/

@@ -34,6 +34,37 @@ If JSON results exist, fetch and parse them:
 ssh <server> "cat <results_dir>/<latest>.json"
 ```
 
+### Step 3.5: Pull W&B Metrics (when `wandb: true` in CLAUDE.md)
+
+**Skip this step entirely if `wandb` is not set or is `false` in CLAUDE.md.**
+
+Pull training curves and metrics from Weights & Biases:
+
+```bash
+# List recent runs in the project
+ssh <server> "wandb api runs <entity>/<project> --limit 10 --json"
+
+# Pull specific metrics from a run
+ssh <server> "wandb api run <entity>/<project>/<run_id> --json"
+
+# Or use the wandb CLI to export CSV
+ssh <server> "wandb export csv <entity>/<project>/<run_id> --keys train/loss,eval/loss,eval/ppl"
+```
+
+**What to extract:**
+- **Training loss curve** — is it converging? diverging? plateauing?
+- **Eval metrics** — loss, PPL, accuracy at latest checkpoint
+- **Learning rate** — is the schedule behaving as expected?
+- **GPU memory** — any OOM risk?
+- **Run status** — running / finished / crashed?
+
+**W&B dashboard link** (include in summary for user):
+```
+https://wandb.ai/<entity>/<project>/runs/<run_id>
+```
+
+> This gives the auto-review-loop richer signal than just screen output — training dynamics, loss curves, and metric trends over time.
+
 ### Step 4: Summarize Results
 
 Present results in a comparison table:

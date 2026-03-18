@@ -1,7 +1,7 @@
 ---
 name: baoyu-image-gen
 description: AI image generation with OpenAI, Google, OpenRouter, DashScope, Jimeng, Seedream and Replicate APIs. Supports text-to-image, reference images, aspect ratios, and batch generation from saved prompt files. Sequential by default; use batch parallel generation when the user already has multiple prompts or wants stable multi-image throughput. Use when user asks to generate, create, or draw images.
-version: 1.56.2
+version: 1.56.3
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-image-gen
@@ -74,7 +74,7 @@ ${BUN_X} {baseDir}/scripts/main.ts --prompt "A cat" --image out.png --quality 2k
 # From prompt files
 ${BUN_X} {baseDir}/scripts/main.ts --promptfiles system.md content.md --image out.png
 
-# With reference images (Google, OpenAI, OpenRouter, or Replicate)
+# With reference images (Google, OpenAI, OpenRouter, Replicate, or Seedream 4.0/4.5/5.0)
 ${BUN_X} {baseDir}/scripts/main.ts --prompt "Make blue" --image out.png --ref source.png
 
 # With reference images (explicit provider/model)
@@ -153,7 +153,7 @@ Paths in `promptFiles`, `image`, and `ref` are resolved relative to the batch fi
 | `--size <WxH>` | Size (e.g., `1024x1024`) |
 | `--quality normal\|2k` | Quality preset (default: `2k`) |
 | `--imageSize 1K\|2K\|4K` | Image size for Google/OpenRouter (default: from quality) |
-| `--ref <files...>` | Reference images. Supported by Google multimodal, OpenAI GPT Image edits, OpenRouter multimodal models, and Replicate. Not supported by Jimeng or Seedream |
+| `--ref <files...>` | Reference images. Supported by Google multimodal, OpenAI GPT Image edits, OpenRouter multimodal models, Replicate, and Seedream 5.0/4.5/4.0. Not supported by Jimeng, Seedream 3.0, or removed SeedEdit 3.0 |
 | `--n <count>` | Number of images |
 | `--json` | JSON output |
 

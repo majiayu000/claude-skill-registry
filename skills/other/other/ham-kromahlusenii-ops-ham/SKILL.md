@@ -178,7 +178,27 @@ Also create `.ham/version` containing the `ham_version` value from this skill's 
 For greenfield: only create root + .memory/ + .ham/
 For brownfield: also create subdirectory CLAUDE.md files.
 
-### Step 3: Capture Baseline
+### Step 3: Add HAM to .gitignore
+
+After generating the file structure, ensure HAM files won't be accidentally committed:
+
+1. **Check for existing block** — read `.gitignore` (if it exists) and look for the `# HAM` marker. If found, skip this step (idempotent).
+2. **Append the block** — if no marker found, append the following to `.gitignore` (create the file if it doesn't exist):
+
+```
+# HAM — AI agent scaffolding (local, do not commit)
+.ham/
+.memory/
+**/CLAUDE.md
+!CLAUDE.md
+# end HAM
+```
+
+The `**/CLAUDE.md` pattern ignores all CLAUDE.md files in subdirectories. The `!CLAUDE.md` negation keeps the root CLAUDE.md trackable if the user chooses to remove it from .gitignore — but by default everything is ignored.
+
+3. **Never overwrite** — always append to the end of the file. Never modify existing .gitignore content.
+
+### Step 4: Capture Baseline
 
 Before creating any files, measure what exists:
 
@@ -226,7 +246,7 @@ If no existing CLAUDE.md, use estimated baseline:
 }
 ```
 
-### Step 3b: Initialize Benchmarking
+### Step 4b: Initialize Benchmarking
 
 Create `.ham/metrics/state.json` with baseline mode:
 
@@ -241,12 +261,13 @@ Create `.ham/metrics/state.json` with baseline mode:
 
 This puts the agent in baseline mode: the next 10 tasks will be logged to `.ham/metrics/baseline.jsonl` and the agent will skip subdirectory CLAUDE.md and `.memory/` files during baseline (still reads root CLAUDE.md). After 10 tasks, auto-transitions to active mode.
 
-### Step 4: Confirm Setup
+### Step 5: Confirm Setup
 
 After creating files, output:
 
 ```
 HAM v2026.02.28 setup complete. Created [N] files.
+Added HAM files to .gitignore — these won't be committed.
 Baseline captured in .memory/baseline.json
 Benchmarking initialized — next 10 tasks capture baseline.
 
@@ -705,6 +726,14 @@ If confirmed, delete and edit files exactly as shown in the dry-run. Process in 
 4. Edit root CLAUDE.md — remove only the `## Agent Memory System` and `## Context Routing` sections, preserve everything else
 5. If `.memory/` directory is now empty, remove it
 6. If `.ham/` directory is now empty (all contents deleted, no `config.json`), remove it
+
+### Step 5b: Clean up .gitignore
+
+After deleting HAM files, remove the HAM block from `.gitignore`:
+
+1. **Find the block** — locate lines between `# HAM` and `# end HAM` (inclusive)
+2. **Remove the block** — delete those lines from `.gitignore`
+3. **Clean up** — if `.gitignore` is empty (only whitespace) after removal, delete the file entirely
 
 ### Step 6: Report
 

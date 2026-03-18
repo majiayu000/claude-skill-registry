@@ -40,6 +40,71 @@
       ],
       "source_url": "https://github.com/ahmedkhaledmohamed/PM-AI-Partner-Framework",
       "license": "MIT"
+    },
+    {
+      "name": "claude-flow",
+      "description": "Agent orchestration platform for Claude — multi-agent swarms, autonomous workflows, RAG integration",
+      "repo": "ruvnet/claude-flow",
+      "category": "development",
+      "tags": ["agent", "multi-agent", "swarm", "orchestration", "claude-code", "mcp"],
+      "install": "npx @claude-flow/hooks@latest",
+      "homepage": "https://Cognitum.One",
+      "author": "ruvnet",
+      "skills": [
+        "agent-adaptive-coordinator",
+        "agent-agent",
+        "agent-agentic-payments",
+        "agent-analyze-code-quality",
+        "agent-app-store",
+        "agent-arch-system-design",
+        "agent-spawning",
+        "agent-coordination",
+        "worker-integration",
+        "agentdb-memory-patterns"
+      ],
+      "commands": [
+        "/agent-capabilities",
+        "/agent-coordination",
+        "/agent-spawning",
+        "/agent-types",
+        "/swarm-management",
+        "/worker-benchmarks"
+      ],
+      "hooks": [
+        "hooks.json",
+        "bash-hook.sh",
+        "file-hook.sh",
+        "git-commit-hook.sh",
+        "session-start.sh",
+        "pre-tool-use.sh"
+      ],
+      "source_url": "https://github.com/ruvnet/claude-flow",
+      "license": "MIT"
+    },
+    {
+      "name": "slope",
+      "description": "Sprint Lifecycle & Operational Performance Engine — golf-metaphor sprint scoring for engineering teams",
+      "repo": "srbryers/slope",
+      "category": "productivity",
+      "tags": ["sprint", "engineering", "performance", "metrics", "workflow"],
+      "install": "npx @slope-dev/slope@latest",
+      "author": "srbryers",
+      "skills": [
+        "slope-performance-analysis",
+        "slope-sprint-workflow",
+        "slope-loop-guide"
+      ],
+      "commands": [
+        "/post-sprint",
+        "/review-pr",
+        "/start-sprint"
+      ],
+      "hooks": [
+        "pre-merge-check.sh",
+        "slope-guard.sh"
+      ],
+      "source_url": "https://github.com/srbryers/slope",
+      "license": "MIT"
     }
   ]
 }

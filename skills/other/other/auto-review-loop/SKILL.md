@@ -203,7 +203,8 @@ When loop ends (positive assessment or max rounds):
 1. Update `REVIEW_STATE.json` with `"status": "completed"`
 2. Write final summary to `AUTO_REVIEW.md`
 3. Update project notes with conclusions
-4. If stopped at max rounds without positive assessment:
+4. **Write method/pipeline description** to `AUTO_REVIEW.md` under a `## Method Description` section — a concise 1-2 paragraph description of the final method, its architecture, and data flow. This serves as input for `/paper-illustration` in Workflow 3 (so it can generate architecture diagrams automatically).
+5. If stopped at max rounds without positive assessment:
    - List remaining blockers
    - Estimate effort needed for each
    - Suggest whether to continue manually or pivot

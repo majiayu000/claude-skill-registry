@@ -92,13 +92,29 @@ Invoke `/paper-figure` to generate data-driven plots and tables:
 
 **Output:** `figures/` directory with PDFs, generation scripts, and LaTeX snippets.
 
-> **Scope:** Auto-generates ~60% of figures (data plots, comparison tables). Architecture diagrams, pipeline figures, and qualitative result grids must be created manually and placed in `figures/` before proceeding. See `/paper-figure` SKILL.md for details.
+#### Phase 2b: AI Illustration Generation (when `illustration: true`)
+
+**Skip this step entirely if `illustration` is not set or is `false`.**
+
+If the paper plan includes architecture diagrams, pipeline figures, or method illustrations, invoke `/paper-illustration`:
+
+```
+/paper-illustration "[method description from PAPER_PLAN.md or NARRATIVE_REPORT.md]"
+```
+
+**What this does:**
+- Claude plans the layout → Gemini optimizes → Nano Banana Pro renders → Claude reviews (score ≥ 9)
+- Output: `figures/ai_generated/*.png` — publication-quality method diagrams
+- Requires `GEMINI_API_KEY` environment variable
+
+> **Without `illustration: true`:** Architecture diagrams must still be created manually (draw.io, Figma, TikZ) and placed in `figures/` before proceeding — same as before.
 
 **Checkpoint:** List generated vs manual figures.
 
 ```
 📊 Figures complete:
-- Auto-generated: [list]
+- Data plots (auto): [list]
+- AI illustrations (auto): [list, if illustration: true]
 - Manual (need your input): [list]
 - LaTeX snippets: figures/latex_includes.tex
 

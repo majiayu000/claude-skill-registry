@@ -1,11 +1,22 @@
 ---
 name: unit-test-philosophy
-description: Risk-based unit testing and Allure-readable behavioral spec style for open-agreements. Use when adding/updating tests, expanding coverage, or reviewing test quality across src, integration-tests, and workspace packages.
+description: >-
+  Risk-based unit testing and Allure-readable behavioral spec style for
+  open-agreements. Use when user says "add tests," "test quality," "coverage
+  expansion," "unit test style," or "Allure test spec." Applies when
+  adding/updating tests, expanding coverage, or reviewing test quality across
+  src, integration-tests, and workspace packages.
 metadata:
   short-description: Open Agreements testing philosophy
 ---
 
 # Unit Test Philosophy (Open Agreements)
+
+## Security model
+
+- This skill is **guidance only** — it does not execute tests or modify code directly.
+- All test commands are provided for the user or agent to run in their local environment.
+- No network access, credentials, or external services are required.
 
 ## Use this skill when
 - A request asks to add tests, improve coverage, or harden regressions.

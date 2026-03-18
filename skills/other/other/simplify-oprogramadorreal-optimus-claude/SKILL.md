@@ -1,5 +1,5 @@
 ---
-description: This skill analyzes the codebase against project coding guidelines as on-demand code simplification — run after /optimus:init, when code quality drifts, or for periodic cleanup. Surfaces issues that span multiple files (duplication across modules, pattern inconsistency, architectural drift) and presents a simplification plan for approval before changes are applied. Supports a "deep" parameter for iterative cleanup until zero findings remain.
+description: Analyzes the codebase against project coding guidelines as on-demand code simplification — run after /optimus:init, when code quality drifts, or for periodic cleanup. Surfaces issues that span multiple files (duplication across modules, pattern inconsistency, architectural drift) and presents a simplification plan for approval before changes are applied. Supports a "deep" parameter for iterative cleanup until zero findings remain.
 disable-model-invocation: true
 ---
 
@@ -238,4 +238,7 @@ After the loop ends, present a cumulative summary across all iterations:
 
 **Deep mode recommendation:** Recommend running `/optimus:commit` to commit the accumulated changes, then `/optimus:unit-test` to strengthen test coverage — deep simplification benefits from a strong safety net. Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.
 
-**Normal mode recommendation:** Recommend running `/optimus:commit` to commit the changes. Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.
+**Normal mode recommendation:** Recommend running `/optimus:commit` to commit the changes. Tell the user:
+
+- **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.
+- **Tip:** Single-pass analysis can miss issues due to LLM attention limits. Run `/optimus:simplify deep` to iterate automatically — it applies, tests, and repeats until clean (max 5 passes). Requires a test command in `.claude/CLAUDE.md`.

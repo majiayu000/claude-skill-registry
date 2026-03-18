@@ -4,6 +4,8 @@ description: >-
   Run an ISO 27001 internal audit. Walk through controls by domain, identify
   gaps, collect evidence, and generate findings with corrective action
   recommendations. Uses NIST SP 800-53 (public domain) as canonical reference.
+  Use when user says "run internal audit," "ISO 27001 audit," "control
+  assessment," "audit findings," or "ISMS assessment."
 license: MIT
 compatibility: >-
   Works with any AI agent. Enhanced with compliance MCP server for live
@@ -273,3 +275,7 @@ This skill operates in three modes, detected automatically:
    - Always available
    - Benefits: Procedural guidance, control descriptions, evidence checklists
    - Limitation: No organization-specific status data
+
+## Connectors
+
+For Internal ISO Audit MCP server setup, see [CONNECTORS.md](./CONNECTORS.md).

@@ -4,7 +4,9 @@ description: >-
   File your Delaware annual franchise tax and annual report. Guides you through
   tax calculation (Authorized Shares and Assumed Par Value Capital methods),
   the eCorp portal filing process, and payment. For Delaware C-Corps (March 1
-  deadline) and LLCs/LPs/GPs (June 1 deadline).
+  deadline) and LLCs/LPs/GPs (June 1 deadline). Use when user says "Delaware
+  franchise tax," "annual report Delaware," "file franchise tax," or "eCorp
+  portal."
 license: MIT
 metadata:
   author: open-agreements
@@ -204,3 +206,7 @@ For detailed calculation formulas and official guidance, see the `reference/` di
 - Late filing incurs a **$200 penalty + 1.5% monthly interest**.
 - If franchise tax exceeds **$5,000**, ACH payment is required (credit cards not accepted above this threshold).
 - **Large Corporate Filers** (listed on a national stock exchange with $750M+ in revenue or assets) pay a flat **$250,000**.
+
+## Connectors
+
+For optional MCP connector setup (calendar, cloud storage), see [CONNECTORS.md](./CONNECTORS.md).

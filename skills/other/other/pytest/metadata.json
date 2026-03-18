@@ -2,8 +2,16 @@
   "name": "pytest",
   "repo": "aiskillstore/marketplace",
   "path": "skills/bossjones/pytest/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/aiskillstore/marketplace",
   "dir_name": "pytest",
-  "downloaded_at": "2026-02-10T06:10:42.843578Z"
+  "downloaded_at": "2026-03-18T01:21:20.933737Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/bossjones/pytest/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/bossjones/pytest/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

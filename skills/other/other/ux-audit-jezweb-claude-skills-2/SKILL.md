@@ -32,20 +32,107 @@ Control how thorough the audit is. Pass as an argument: `/ux-audit quick`, `/ux-
 
 ### Thorough Mode: Overnight Workflow
 
-The thorough mode is designed to run unattended. Kick it off at end of day, review the report in the morning.
+The thorough mode is designed to run unattended. Kick it off at end of day, review the report in the morning. The user should NOT need to find issues themselves — this mode catches everything.
+
+**Mindset**: Don't run through a checklist. Think about the real person who will use this app every day. What are the threads of their workday? How will they move through the system? Will they understand what they're looking at? Will the app teach them how to use it through its design, or will they be guessing? Read [references/workflow-comprehension.md](references/workflow-comprehension.md) before starting.
 
 1. **Discover all routes** — read router config, crawl navigation, build complete page inventory
-2. **Create a task list** — track progress so work survives context limits
-3. **UX Walkthrough x3 personas**:
+2. **Identify workflow threads** — what are the 3-5 real tasks a user does in a day? Map them before testing individual pages. See [references/workflow-comprehension.md](references/workflow-comprehension.md).
+3. **Create a task list** — track progress so work survives context limits
+4. **Visual & layout sweep** (every page):
+   - Screenshot at 1280px, 1024px, 768px, 375px widths
+   - Screenshot in light mode and dark mode
+   - Run JS overflow detection on each page (see below)
+   - Check for clipped text, overlapping elements, broken grids
+   - Compare sidebar + content alignment across all pages
+4. **Workflow thread testing** — follow each identified thread end to end:
+   - Does the next step suggest itself at every point?
+   - Can the user leave and come back without losing their place?
+   - Do transitions between pages preserve context (filters, selections)?
+   - Do nav labels match how a user would describe their work?
+   - After creating/saving/deleting, does the app take them somewhere logical?
+5. **UX Walkthrough x3 personas**:
    - First-time user (non-technical, time-poor, first visit)
    - Power user (daily user, knows the app, looking for efficiency)
    - Mobile user (phone, touch targets, small viewport)
-4. **Full QA sweep** — every page, all CRUD, all states (empty, error, loading, populated)
-5. **Resilience testing** — every form: bad data, mid-navigation, back button, refresh, double-submit
-6. **Cross-cutting per page** — dark mode screenshot, mobile viewport (375px) screenshot, keyboard navigation
-7. **Screenshot everything** — save to `.jez/screenshots/ux-audit/` (numbered chronologically)
-8. **Comprehensive report** — `docs/ux-audit-thorough-YYYY-MM-DD.md` with issue counts by severity
-9. **Summary** — top 5 critical issues, overall health score, "one thing to fix first"
+6. **Full QA sweep** — every page, all CRUD, all states (empty, error, loading, populated)
+7. **Resilience testing** — every form: bad data, mid-navigation, back button, refresh, double-submit
+8. **Accessibility basics** — heading hierarchy, alt text, focus order, colour contrast
+9. **Console error sweep** — check browser console on every page for JS errors, failed network requests, deprecation warnings
+10. **Wayfinding & comprehension check** — on each page: do I know where I am? Can I get back? Does the heading tell me what I can do here? Are visual cues guiding me to the right action?
+11. **Scenario tests** — run all six from [references/scenario-tests.md](references/scenario-tests.md):
+    - New hire onboarding (can you figure out the app with zero guidance?)
+    - Interrupted workflow (start a task, close the tab, come back — what survived?)
+    - Wrong turn recovery (go to the wrong page, how many clicks to get back on track?)
+    - Day two (repeat the same tasks — is it faster? are there shortcuts?)
+    - Explain it to a colleague (write a 2-min guide for each workflow — gaps = UX failures)
+    - What changed? (log in after creating data — can you tell what needs attention?)
+12. **Screenshot everything** — save to `.jez/screenshots/ux-audit/` (numbered chronologically)
+13. **Comprehensive report** — `docs/ux-audit-thorough-YYYY-MM-DD.md` with issue counts by severity
+14. **Summary** — top 5 critical issues, workflow gaps, scenario test results, "one thing to fix first"
+
+#### Automated Layout Detection (JS Injection)
+
+On each page, inject JavaScript via the browser tool to programmatically detect layout issues:
+
+```javascript
+// Detect elements overflowing their parent
+document.querySelectorAll('*').forEach(el => {
+  const r = el.getBoundingClientRect();
+  const p = el.parentElement?.getBoundingClientRect();
+  if (p && (r.left < p.left - 1 || r.right > p.right + 1)) {
+    console.warn('OVERFLOW:', el.tagName, el.className, 'extends beyond parent');
+  }
+});
+
+// Detect text clipped by containers
+document.querySelectorAll('h1,h2,h3,h4,p,span,a,button,label').forEach(el => {
+  if (el.scrollWidth > el.clientWidth + 2 || el.scrollHeight > el.clientHeight + 2) {
+    console.warn('CLIPPED:', el.tagName, el.textContent?.slice(0,50));
+  }
+});
+
+// Detect elements with zero or negative visibility
+document.querySelectorAll('*').forEach(el => {
+  const s = getComputedStyle(el);
+  const r = el.getBoundingClientRect();
+  if (r.width > 0 && r.height > 0 && r.left + r.width < 0) {
+    console.warn('OFF-SCREEN LEFT:', el.tagName, el.className);
+  }
+});
+
+// Detect low contrast text (rough check)
+document.querySelectorAll('h1,h2,h3,p,span,a,li,td,th,label,button').forEach(el => {
+  const s = getComputedStyle(el);
+  if (s.color === s.backgroundColor || s.opacity === '0') {
+    console.warn('INVISIBLE TEXT:', el.tagName, el.textContent?.slice(0,30));
+  }
+});
+```
+
+Read console output after injection. Each warning is a potential finding to screenshot and investigate.
+
+#### Responsive Breakpoint Sweep
+
+For each page, resize the viewport through standard breakpoints and screenshot:
+
+| Width | What it represents | Check for |
+|-------|-------------------|-----------|
+| 1280px | Desktop (standard) | Baseline layout, sidebar + content |
+| 1024px | Small desktop / tablet landscape | Nav collapse point, grid reflow |
+| 768px | Tablet portrait | Sidebar behaviour, stacked layout |
+| 375px | Mobile | Everything stacked, touch targets, no horizontal scroll |
+
+If the layout changes between breakpoints (sidebar collapses, grid reduces columns), screenshot the transition point too.
+
+#### Console Error Sweep
+
+On each page, read the browser console for:
+- **JS errors** (TypeError, ReferenceError, etc.) — severity: High
+- **Failed network requests** (404, 500, CORS) — severity: High
+- **React/framework warnings** (key props, deprecated APIs) — severity: Medium
+- **CSP violations** — severity: Medium
+- **Deprecation warnings** — severity: Low
 
 ### Autonomy by Depth
 
@@ -86,11 +173,13 @@ Navigate to the app's entry point. From here, attempt the task with **no prior k
 
 At each screen, evaluate against the walkthrough checklist (see [references/walkthrough-checklist.md](references/walkthrough-checklist.md)). Key questions to hold in mind:
 
-**Clarity**: Is the next step obvious without thinking?
+**Layout**: Is all text fully visible? Nothing clipped or overlapping? Spacing consistent?
+**Comprehension**: Do I understand what this page is for and what I can do here? Do the labels make sense to a non-developer?
+**Wayfinding**: Do I know where I am in the app? Can I get back to where I came from? Does the nav show my location?
+**Flow**: Does this page connect naturally to the last one? Is the next step obvious without thinking?
 **Trust**: Do I feel confident this will do what I expect? Am I afraid I'll break something?
 **Efficiency**: How many clicks/steps is this taking? Is there a shorter path?
 **Recovery**: If I make a mistake right now, can I get back?
-**Delight vs frustration**: Would I sigh, smile, or swear at this moment?
 
 #### Step 4: Count the Cost
 
@@ -204,6 +293,8 @@ Default rules (standard depth). See "Autonomy by Depth" table above for quick/th
 
 | When | Read |
 |------|------|
+| Before starting thorough mode — understand the user's world | [references/workflow-comprehension.md](references/workflow-comprehension.md) |
 | Evaluating each screen during walkthrough | [references/walkthrough-checklist.md](references/walkthrough-checklist.md) |
+| Running the six scenario tests | [references/scenario-tests.md](references/scenario-tests.md) |
 | Writing the audit report | [references/report-template.md](references/report-template.md) |
 | Browser tool commands and selection | [references/browser-tools.md](references/browser-tools.md) |

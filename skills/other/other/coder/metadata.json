@@ -2,8 +2,16 @@
   "name": "coder",
   "repo": "aiskillstore/marketplace",
   "path": "skills/0xsero/coder/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/aiskillstore/marketplace",
   "dir_name": "coder",
-  "downloaded_at": "2026-02-13T01:20:43.227244Z"
+  "downloaded_at": "2026-03-18T01:21:09.101365Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/0xsero/coder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/0xsero/coder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

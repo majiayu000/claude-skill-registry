@@ -3,7 +3,9 @@ name: iso-27001-evidence-collection
 description: >-
   Collect, organize, and validate evidence for ISO 27001 and SOC 2 audits.
   API-first approach with CLI commands for major cloud platforms. Produces
-  timestamped, auditor-ready evidence packages.
+  timestamped, auditor-ready evidence packages. Use when user says "collect
+  audit evidence," "prepare evidence package," "evidence for the auditor,"
+  "refresh evidence," or "evidence gap analysis."
 license: MIT
 compatibility: >-
   Works with any AI agent. Enhanced with compliance MCP server for automated
@@ -302,3 +304,7 @@ Evidence collection procedures and control guidance developed with [Internal ISO
 1. **Internal ISO Audit MCP server available** (best) — Live control guidance lookup, NIST cross-reference, full-text search across all control evidence expectations. Server: `internalisoaudit.com/api/mcp`
 2. **Local compliance data available** (good) — Reads evidence status from `compliance/evidence/*.md`
 3. **Reference only** (baseline) — Uses embedded checklists and command reference in `rules/`
+
+## Connectors
+
+For Internal ISO Audit MCP server setup, see [CONNECTORS.md](./CONNECTORS.md).

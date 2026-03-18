@@ -1,5 +1,5 @@
 ---
-description: This skill suggests conventional commit messages by analyzing staged, unstaged, and untracked git changes — read-only, never commits.
+description: Suggests conventional commit messages by analyzing staged, unstaged, and untracked git changes — read-only, never commits.
 disable-model-invocation: true
 ---
 

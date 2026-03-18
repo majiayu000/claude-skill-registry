@@ -3,7 +3,9 @@ name: soc2-readiness
 description: >-
   Assess SOC 2 Type II readiness. Map Trust Services Criteria to controls,
   identify gaps, and build a remediation plan. Uses NIST SP 800-53 (public
-  domain) as canonical reference with SOC 2 criterion cross-mapping.
+  domain) as canonical reference with SOC 2 criterion cross-mapping. Use when
+  user says "SOC 2 readiness," "SOC 2 preparation," "SOC 2 gap analysis," or
+  "prepare for SOC 2 audit."
 license: MIT
 compatibility: >-
   Works with any AI agent. Enhanced with compliance MCP server for live
@@ -299,3 +301,7 @@ SOC 2 criteria mapping and readiness procedures developed with [Internal ISO Aud
 1. **Internal ISO Audit MCP server available** (best) — Live ISO 27001 control guidance with NIST cross-references. SOC 2 criteria map to ISO 27001 Annex A controls (~70% overlap); use `get_nist_mapping` for bidirectional lookup. Server: `internalisoaudit.com/api/mcp`
 2. **Local compliance data available** (good) — Reads `compliance/` directory with SOC 2 test metadata
 3. **Reference only** (baseline) — Uses embedded criteria mapping and checklists in `rules/`
+
+## Connectors
+
+For Internal ISO Audit MCP server setup, see [CONNECTORS.md](./CONNECTORS.md).

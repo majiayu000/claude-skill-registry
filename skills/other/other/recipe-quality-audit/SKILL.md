@@ -3,7 +3,9 @@ name: recipe-quality-audit
 description: >-
   Audit NVCA recipe quality: check file inventory, metadata schema, field-to-replacement
   coverage, ambiguous keys, smart quotes, test fixtures, and fill quality. Produces a
-  structured scorecard per recipe with maturity tier classification.
+  structured scorecard per recipe with maturity tier classification. Use when user says
+  "audit recipe quality," "check recipe coverage," "recipe scorecard," or "NVCA recipe
+  quality."
 license: MIT
 compatibility: >-
   Internal skill for the open-agreements development workflow.
@@ -16,6 +18,12 @@ metadata:
 # recipe-quality-audit
 
 Audit a single NVCA recipe's quality and produce a structured scorecard.
+
+## Security model
+
+- This skill operates on **local repository files only** — no network access required.
+- Source document downloads (Tier 2 checks) use `ensureSourceDocx()` which fetches from known template source URLs only.
+- No credentials or API keys are needed.
 
 ## Usage
 

@@ -1,6 +1,6 @@
 ---
 name: ctf-reverse
-description: Provides reverse engineering techniques for CTF challenges. Use when analyzing binaries, game clients, obfuscated code, esoteric languages, custom VMs, anti-debugging, WASM, .NET, APK, Python bytecode, Ghidra, GDB, radare2, or extracting flags from compiled executables.
+description: Provides reverse engineering techniques for CTF challenges. Use when analyzing binaries, game clients, obfuscated code, esoteric languages, custom VMs, anti-debugging, WASM, .NET, APK (including Flutter/Dart AOT with Blutter), HarmonyOS HAP/ABC, Python bytecode, Ghidra, GDB, radare2, or extracting flags from compiled executables.
 license: MIT
 compatibility: Requires filesystem-based agent (Claude Code or similar) with bash, Python 3, and internet access for tool installation.
 allowed-tools: Bash Read Write Edit Glob Grep Task WebFetch WebSearch
@@ -18,7 +18,7 @@ Quick reference for RE challenges. For detailed techniques, see supporting files
 - [patterns.md](patterns.md) - Foundational binary patterns: custom VMs, anti-debugging, nanomites, self-modifying code, XOR ciphers, mixed-mode stagers, LLVM obfuscation, S-box/keystream, SECCOMP/BPF, exception handlers, memory dumps, byte-wise transforms, x86-64 gotchas, signal-based exploration, malware anti-analysis, multi-stage shellcode, timing side-channel, multi-thread anti-debug with decoy + signal handler MBA
 - [patterns-ctf.md](patterns-ctf.md) - Competition-specific patterns (Part 1): hidden emulator opcodes, LD_PRELOAD key extraction, SPN static extraction, image XOR smoothness, byte-at-a-time cipher, mathematical convergence bitmap, Windows PE XOR bitmap OCR, two-stage RC4+VM loaders, GBA ROM meet-in-the-middle, Sprague-Grundy game theory, kernel module maze solving, multi-threaded VM channels, backdoored shared library detection via string diffing
 - [patterns-ctf-2.md](patterns-ctf-2.md) - Competition-specific patterns (Part 2): multi-layer self-decrypting brute-force, embedded ZIP+XOR license, stack string deobfuscation, prefix hash brute-force, CVP/LLL lattice for integer validation, decision tree function obfuscation, GLSL shader VM, GF(2^8) Gaussian elimination, Z3 single-line Python circuit, sliding window popcount
-- [languages.md](languages.md) - Language/platform-specific: Python bytecode & opcode remapping, Python version-specific bytecode, DOS stubs, Unity IL2CPP, Brainfuck/esolangs, UEFI, transpilation to C, code coverage side-channel, OPAL functional reversing, non-bijective substitution, Android JNI RegisterNatives, Ruby/Perl polyglot, Electron ASAR extraction + native binary analysis, Node.js npm runtime introspection
+- [languages.md](languages.md) - Language/platform-specific: Python bytecode & opcode remapping, Python version-specific bytecode, Pyarmor static unpack, DOS stubs, Unity IL2CPP, HarmonyOS HAP/ABC, Brainfuck/esolangs, UEFI, transpilation to C, code coverage side-channel, OPAL functional reversing, non-bijective substitution, Roblox place file analysis, Godot game asset extraction, Rust serde_json schema recovery, Verilog/hardware RE, Android JNI RegisterNatives, Ruby/Perl polyglot, Electron ASAR extraction + native binary analysis, Node.js npm runtime introspection
 
 ---
 
@@ -158,6 +158,24 @@ jadx app.apk                     # Decompile to Java
 grep -r "flag" decoded/res/values/strings.xml
 ```
 
+### Flutter APK (Dart AOT)
+
+When APK analysis points to Flutter (`lib/arm64-v8a/libapp.so`, `libflutter.so`), use Blutter first.
+
+- Blutter repository and docs: https://github.com/worawit/blutter
+
+```bash
+# Example workflow (APK -> libs -> Blutter output)
+python3 blutter.py path/to/app/lib/arm64-v8a out_dir
+```
+Output files
+- asm/* libapp assemblies with symbols
+- blutter_frida.js the frida script template for the target application
+- objs.txt complete (nested) dump of Object from Object Pool
+- pp.txt all Dart objects in Object Pool
+
+Blutter reconstructs Dart metadata and generates script output that is easier to navigate than raw ARM64 disassembly.
+
 ### .NET
 - dnSpy - debugging + decompilation
 - ILSpy - decompiler
@@ -166,6 +184,21 @@ grep -r "flag" decoded/res/values/strings.xml
 ```bash
 upx -d packed -o unpacked
 ```
+If unpacking fails, inspect UPX metadata first: verify UPX section names, header fields, and version markers are intact. If metadata looks tampered or uncertain, review UPX source on GitHub to identify likely modification points. 
+
+### Tauri Packed Desktop Apps (Static Assets)
+
+Tauri often embeds frontend assets directly into the executable, commonly Brotli-compressed by default.
+
+Workflow:
+1. Identify Tauri app traits (`tauri`, `wry`, `index.html`, webview-related strings).
+2. In disassembler, pivot from `index.html` string xrefs to locate the asset index table.
+3. Recover each asset record (filename + blob offset + blob length; exact layout varies by build/version).
+4. Dump blob bytes from the binary and attempt Brotli decompression first.
+5. If decompression fails, re-check exact boundaries; Brotli is highly sensitive to off-by-one errors.
+
+Reference points:
+- Tauri embedded assets implementation: `tauri-codegen/src/embedded_assets.rs`
 
 ## Anti-Debugging Bypass
 
@@ -361,6 +394,10 @@ N-layer binary where each layer decrypts the next using user-provided key bytes 
 ## Ruby/Perl Polyglot Constraint Satisfaction
 
 **Pattern:** Single file valid in both Ruby and Perl, each imposing different constraints on a key. Exploits `=begin`/`=end` (Ruby block comment) vs `=begin`/`=cut` (Perl POD) to run different code per interpreter. Intersect constraints from both languages to recover the unique key. See [languages.md](languages.md#rubyperl-polyglot-constraint-satisfaction-bearcatctf-2026).
+
+## Verilog/Hardware RE
+
+**Pattern:** Verilog HDL source for state machines with hidden conditions gated on shift register history. Analyze `always @(posedge clk)` blocks and `case` statements to find correct input sequences. See [languages.md](languages.md#veriloghardware-reverse-engineering-srdnlenctf-2026).
 
 ## Backdoored Shared Library Detection
 

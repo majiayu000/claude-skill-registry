@@ -1,5 +1,5 @@
 ---
-description: This skill performs local-first code review — analyzes uncommitted changes (or PRs/MRs) against project coding guidelines using up to 6 parallel review agents (bug detection, security/logic, guideline compliance ×2, code simplification, test coverage). HIGH SIGNAL only: real bugs, logic errors, security concerns, and guideline violations.
+description: Reviews local changes, PRs/MRs, or branch diffs against project coding guidelines using up to 6 parallel review agents (bug detection, security/logic, guideline compliance x2, code simplification, test coverage). Use before committing, on open PRs/MRs, or to review any branch diff. HIGH SIGNAL only: real bugs, logic errors, security concerns, and guideline violations. Supports a "deep" mode for iterative auto-fix — reviews and fixes code in a loop until zero findings remain.
 disable-model-invocation: true
 ---
 
@@ -56,12 +56,14 @@ When the user says "review PR #42", passes `--pr`, `#123`, or a PR URL:
 **GitHub projects:**
 - Verify `gh` is available by running `gh --version`. If not available, inform the user that PR review requires the GitHub CLI (`gh`) and offer to review the branch diff instead
 - Use `gh pr view <N> --json state,isDraft,title,body,baseRefName,headRefName` to get PR metadata
+- Store the `title` and `body` fields as `pr-description` for use in Steps 4 and 5 (author intent context)
 - Use `gh pr diff <N>` to get the actual diff
 - If the PR is closed or merged → warn and stop
 
 **GitLab projects:**
 - Verify `glab` is available by running `glab --version`. If not available, inform the user: "This project uses GitLab. PR/MR review requires the GitLab CLI (`glab`). You can use branch diff mode instead: `/optimus:code-review changes since origin/main`." Offer to review the branch diff as a fallback.
 - Use `glab mr view <N> --output json` to get MR metadata
+- Store the `title` and `description` fields as `pr-description` for use in Steps 4 and 5 (author intent context)
 - Use `glab mr diff <N>` to get the actual diff
 - If the MR is closed or merged → warn and stop
 
@@ -111,8 +113,8 @@ Check that these files exist:
 - `.claude/agents/test-guardian.md`
 
 **If either is missing**, warn the user and recommend running `/optimus:init` to install them. Use these fallbacks so the skill can still run:
-- `code-simplifier.md` missing → Agent 5 (Code Simplifier) will be skipped in Step 3; the review still covers bugs, security, and guidelines via Agents 1–4
-- `test-guardian.md` missing → Agent 6 (Test Guardian) will be skipped in Step 3; test coverage gaps will not be analyzed
+- `code-simplifier.md` missing → Agent 5 (Code Simplifier) will be skipped in Step 4; the review still covers bugs, security, and guidelines via Agents 1–4
+- `test-guardian.md` missing → Agent 6 (Test Guardian) will be skipped in Step 4; test coverage gaps will not be analyzed
 - Both missing → both agents skipped; only Agents 1–4 run (still provides bug, security, and guideline coverage); strongly recommend `/optimus:init` for full 6-agent review
 
 ### Load constraint docs
@@ -135,7 +137,27 @@ Before proceeding to the review, present a brief summary:
 
 Proceed immediately to Step 3 — do not wait for user confirmation.
 
-## Step 3: Parallel Multi-Agent Review (up to 6 agents)
+## Step 3: Deep Mode Activation
+
+If the user invoked with `deep` (e.g., `/optimus:code-review deep`, `/optimus:code-review deep "review PR #42"`, or `/optimus:code-review deep "focus on src/auth"`), activate deep mode. Deep mode loops review-fix cycles (Steps 4–8) until zero new findings remain or **5 iterations** are reached, then presents a single consolidated report with all fixes already applied as local changes.
+
+Before proceeding, check whether a test command is available (from `.claude/CLAUDE.md`). If no test command exists, deep mode's auto-apply loop has no safety net — fall back to normal mode and warn: "Deep mode requires a test command for safe auto-apply. Falling back to normal mode — run `/optimus:unit-test` first to enable deep mode." Then continue with the standard single-pass flow.
+
+If a test command is available, warn the user:
+
+> **Deep mode** runs up to 5 iterative review-fix passes. Each iteration is a full multi-agent review cycle — credit and time consumption multiplies with iteration count. Fixes are applied automatically at each iteration without per-change approval. Low test coverage increases the chance of undetected breakage; consider running `/optimus:unit-test` first to strengthen the safety net.
+>
+> Test command: `[test command from CLAUDE.md]`
+
+Then use `AskUserQuestion` — header "Deep mode", question "Proceed with deep mode?":
+- **Start deep mode** — "Run iterative review-fix until clean (max 5 iterations)"
+- **Normal mode** — "Single pass with manual approval instead"
+
+If the user did not invoke with `deep`, skip this step.
+
+If the user selects **Normal mode**, continue with the standard single-pass flow. Record the user's choice as a `deep-mode` flag for subsequent steps. If deep mode is confirmed, initialize `iteration-count` to 1, `total-fixed` to 0, `total-reverted` to 0, and `accumulated-findings` to an empty list.
+
+## Step 4: Parallel Multi-Agent Review (up to 6 agents)
 
 4 core review agents + 2 project-level agents, all launched in parallel for maximum coverage.
 
@@ -144,6 +166,14 @@ Launch up to 6 `general-purpose` Agent tool calls simultaneously. Agents 1–4 a
 Each agent receives the list of changed file paths from Step 1.
 
 Read `$CLAUDE_PLUGIN_ROOT/skills/code-review/references/agent-prompts.md` for the full prompt templates, quality bar, exclusion rules, and false positive guidance for all 6 agents.
+
+### PR/MR context injection (PR/MR mode only)
+
+If a `pr-description` was captured in Step 1 and its body is non-empty, prepend the PR/MR context block to every agent prompt before the file list. Read the **PR/MR Context Block** section in `$CLAUDE_PLUGIN_ROOT/skills/code-review/references/agent-prompts.md` for the template, truncation rule, and guardrail language.
+
+### Iteration context injection (deep mode, iterations 2+)
+
+If deep mode is active and `iteration-count` > 1, prepend the iteration context block to every agent prompt before the file list (after the PR/MR context block, if present). Read the **Iteration Context Block** section in `$CLAUDE_PLUGIN_ROOT/skills/code-review/references/agent-prompts.md` for the template and format.
 
 ### Agent overview
 
@@ -156,34 +186,60 @@ Read `$CLAUDE_PLUGIN_ROOT/skills/code-review/references/agent-prompts.md` for th
 | 5 — Code Simplifier | Unnecessary complexity, naming, dead code, pattern violations | `.claude/agents/code-simplifier.md` exists |
 | 6 — Test Guardian | Test coverage gaps, structural barriers to testability | `.claude/agents/test-guardian.md` exists |
 
-Each agent: max 5 findings, structured list format. Guideline agents (3–4) are constructed dynamically based on Step 2's doc loading results (single project vs monorepo paths).
+Each agent: max 8 findings, structured list format. Guideline agents (3–4) are constructed dynamically based on Step 2's doc loading results (single project vs monorepo paths).
 
 ### Execution
 
-Launch all available agents simultaneously (parallel, not sequential). Wait for all launched agents to complete before proceeding to Step 4.
+Launch all available agents simultaneously (parallel, not sequential). Wait for all launched agents to complete before proceeding to Step 5.
 
 **Agent availability summary**: Agents 1–4 always run (no project dependencies). Agents 5–6 depend on installed project agents. If neither project agent exists, note in the summary and recommend `/optimus:init` for full 6-agent review.
 
-## Step 4: Validate Findings
+## Step 5: Validate Findings
 
 Independently verify each finding to filter false positives. Apply the verification protocol from `$CLAUDE_PLUGIN_ROOT/skills/init/references/verification-protocol.md` — treat agent-reported findings as claims that require independent evidence, not as ground truth.
 
-For each finding from Step 3:
+For each finding from Step 4:
 1. **Context check** — read ±30 lines around the flagged location to verify the issue exists in context
 2. **Intent check** — look for comments, test assertions, or established patterns that explain the code's behavior (what looks like a bug may be intentional)
 3. **Pre-existing check** — verify the issue was introduced by the changes, not pre-existing in unchanged code
 4. **Cross-agent consensus** — for guideline findings, check if both Agents 3 and 4 flagged the same issue (consensus = higher confidence)
+
+### Change-intent awareness
+
+For each unique file that has findings, check recent git history for deliberate changes:
+
+```bash
+git log --no-merges --format="%h %s" -5 -- <file>
+```
+
+If a recent commit message clearly indicates deliberate code introduction (e.g., "fix null check", "add input validation", "harden auth flow") **and** a finding suggests removing or reverting that code → reduce the finding's confidence by one level (High → Medium, Medium → Low → drop).
+
+For uninformative commit messages (fewer than 15 characters, or generic like "fix", "update", "changes"), run `git show <sha> -- <file>` to examine the actual diff for intent patterns: added null checks, validation logic, error handling, or security measures. Apply the same confidence reduction if the diff shows deliberate defensive code that a finding wants to remove.
+
+### PR/MR description as intent signal
+
+If a `pr-description` was captured in Step 1 (PR/MR mode), use it as an additional intent signal during validation:
+
+- If the PR/MR description explicitly explains **why** a flagged change was made (e.g., "moved validation to middleware" explains removed validation) **and** git history corroborates it → apply one confidence reduction (same as change-intent above)
+- If the PR/MR description claims intent but git history contradicts it or shows no supporting evidence → trust git history over the description (code over claims)
+- If the PR/MR description is silent about a finding → no adjustment (absence of explanation is not evidence of intent)
+
+This is a **soft adjustment only** — it never hard-filters a finding. It reduces the chance of undoing deliberate previous work while still allowing genuinely problematic code to be flagged. The PR/MR description and git history are complementary signals — neither alone can suppress a finding.
+
+Skip gracefully if `git log` fails or returns no results (e.g., shallow clone, newly created file, or file outside the repository).
+
+### Confidence assignment
 
 Assign confidence:
 - **High** — clear issue with strong evidence → keep
 - **Medium** — plausible issue, some evidence → keep with note
 - **Low** — uncertain, likely false positive → drop
 
-Only findings with High or Medium confidence proceed to Step 5.
+Only findings with High or Medium confidence proceed to Step 6.
 
-## Step 5: Consolidate and Present Findings
+## Step 6: Consolidate and Present Findings
 
-Merge validated findings from Steps 3–4. Deduplicate: if two agents flagged the same file and line range for the same category, keep the more detailed version. For guideline findings flagged by both Agents 3 and 4, merge into one finding and note "confirmed by independent review".
+Merge validated findings from Steps 4–5. Deduplicate: if two agents flagged the same file and line range for the same category, keep the more detailed version. For guideline findings flagged by both Agents 3 and 4, merge into one finding and note "confirmed by independent review".
 
 ### Contradiction resolution
 
@@ -201,7 +257,13 @@ Before presenting findings, write a concise summary (2–4 sentences) of what th
 
 ### Finding cap
 
-Maximum **10 findings** across all sources, prioritized by severity then confidence. If more issues exist, note the count (e.g., "10 of ~18 findings shown") and suggest re-running with a narrower scope — e.g., `/optimus:code-review` "focus on src/auth".
+Maximum **15 findings** across all sources, prioritized by severity then confidence. If more issues exist, note the count (e.g., "15 of ~24 findings shown") and suggest re-running with a narrower scope or using `/optimus:code-review deep` for exhaustive review.
+
+### Deep mode accumulation
+
+**Deep mode:** Instead of presenting the output format below, append this iteration's validated findings to `accumulated-findings`. Deduplicate against previous iterations: if a finding matches an existing entry by file + line range + category, skip it (unless the existing entry is marked "(reverted — test failure)", in which case annotate the new entry as "(persistent — fix failed)"). Then proceed directly to Step 8.
+
+**Normal mode:** Present findings using the output format below, then proceed to Step 7.
 
 ### Output format
 
@@ -246,7 +308,9 @@ For PR mode, include full-SHA code links:
 - **GitHub:** `https://github.com/owner/repo/blob/[full-sha]/path#L[start]-L[end]`
 - **GitLab:** Extract the instance URL from `git remote get-url origin` (e.g., `https://gitlab.company.com`), then use: `https://[gitlab-host]/owner/repo/-/blob/[full-sha]/path#L[start]-L[end]`
 
-## Step 6: Offer Actions
+## Step 7: Offer Actions (Normal Mode)
+
+**Deep mode:** Skip this step — proceed directly to Step 8.
 
 If the verdict is **CHANGES LOOK GOOD** (no findings), skip this step — do not present any action prompt. Go directly to the recommendation in the "Important" section below.
 
@@ -270,14 +334,58 @@ Write the review summary to a secure temp file: `TMPFILE=$(mktemp "${TMPDIR:-/tm
 For GitHub PRs: `gh pr comment <N> --body-file "$TMPFILE"`
 For GitLab MRs: `glab api -X POST "projects/:id/merge_requests/<N>/notes" -F body=@"$TMPFILE"` — this avoids shell metacharacter issues that `glab mr note --message "$(cat ...)"` would have with code snippets in the summary
 
+## Step 8: Apply and Iterate (Deep Mode)
+
+**Normal mode:** Skip this step.
+
+### Convergence check
+
+If zero findings were added to `accumulated-findings` in this iteration (Step 6 found nothing new), deep mode has converged. Report: "Deep mode complete — no new findings on iteration [N]." Skip to the **Consolidated report** below.
+
+### Apply fixes
+
+Apply all validated findings from this iteration using Edit or MultiEdit, skipping any annotated "(persistent — fix failed)" (these have already failed in a prior iteration). For each fix, record which file was modified and what the pre-edit content was (you will need this for revert if tests fail).
+
+### Test and verify
+
+Run the project's test command (from `.claude/CLAUDE.md`). Follow the verification protocol from `$CLAUDE_PLUGIN_ROOT/skills/init/references/verification-protocol.md` — run tests fresh, read complete output, report actual results with evidence.
+
+- **If tests pass** → all fixes are valid. Annotate each applied finding as "(fixed)" in `accumulated-findings`. Add the count of applied fixes to `total-fixed`.
+- **If tests fail** → revert all changes from this iteration, then re-apply fixes one at a time with a test run after each. Keep fixes that pass, skip those that fail, and record each failure as "(reverted — test failure)" in `accumulated-findings`. Add kept fixes to `total-fixed` and failed fixes to `total-reverted`.
+
+### Termination check
+
+After applying fixes and running tests, check termination conditions in order:
+
+1. **All fixes this iteration were reverted** due to test failures → stop to prevent a loop of failed attempts. Report: "Deep mode stopped — all fixes in iteration [N] caused test failures."
+2. **No fixes were applied** (all findings lacked actionable code edits) → stop. Report: "Deep mode stopped — remaining findings require manual review."
+3. **`iteration-count` equals 5** → cap reached. Report: "Deep mode reached the iteration cap (5). Remaining findings may exist — re-run `/optimus:code-review deep` in a fresh conversation to continue."
+4. **Otherwise** → present an iteration progress summary: "Iteration [N] of up to 5 — [total-fixed] issues fixed so far, [total-reverted] reverted. Starting next pass..." Increment `iteration-count` and **return to Step 4** for the next analysis pass. When returning to Step 4, re-gather the current diff (the codebase has changed due to applied fixes) and focus agents on files that had findings in any previous iteration plus any newly modified files.
+
+### Consolidated report
+
+After the loop ends (by convergence, termination, or cap), present the final report using the same output format from Step 6, but covering ALL `accumulated-findings` across all iterations. Add these fields to the Summary block:
+
+```
+- Iterations: [N]
+- Total fixed: [N]
+- Total reverted (test failures): [N]
+```
+
+Mark each finding's status: "(fixed)", "(reverted — test failure)", or "(persistent — fix failed)".
+
 ## Important
 
-- Never modify files, commit, push, or post comments without explicit user approval
+- Never modify files, commit, push, or post comments without explicit user approval (deep mode has explicit approval via the confirmation step in Step 3 — all changes remain as local modifications for the user to review with `git diff` before committing)
 - This skill is read-only by default — it only analyzes and reports
 - When changes are too broad for effective review, recommend narrowing scope
 
 After the review is complete, recommend the next step based on the outcome:
 - If issues were found and fixed → `/optimus:commit` to commit the fixes
+- If deep mode was used → `/optimus:commit` to commit the accumulated fixes, then consider `/optimus:unit-test` to strengthen test coverage
 - If no issues or user skipped fixes → `/optimus:pr` to create a pull request (skip this if already reviewing a PR/MR)
 
-Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.
+Tell the user:
+
+- **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.
+- **Tip (normal mode only):** Single-pass review can miss issues due to LLM attention limits. Run `/optimus:code-review deep` to iterate automatically — it fixes, tests, and repeats until clean (max 5 passes). Requires a test command in `.claude/CLAUDE.md`.

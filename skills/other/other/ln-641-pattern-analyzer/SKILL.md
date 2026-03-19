@@ -1,6 +1,6 @@
 ---
 name: ln-641-pattern-analyzer
-description: Analyzes single pattern implementation, calculates 4 scores (compliance, completeness, quality, implementation), identifies gaps. Invoked by ln-640 or standalone.
+description: "Analyzes single pattern implementation, calculates compliance/completeness/quality scores, identifies gaps. Use when auditing a specific pattern."
 license: MIT
 ---
 
@@ -147,14 +147,14 @@ Score: 7.9/10 (C:72 K:85 Q:68 I:90) | Issues: 3 (H:1 M:2 L:0)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- All implementations found via Glob/Grep (using pattern_library.md keywords or adaptive evidence)
-- Key files read and analyzed
-- 4 scores calculated using scoring_rules.md Detection patterns
-- Issues identified with severity, category, suggestion, effort
-- Gaps documented (missing components, inconsistencies)
-- Recommendations provided
-- Report written to `{output_dir}/641-pattern-{slug}.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] All implementations found via Glob/Grep (using pattern_library.md keywords or adaptive evidence)
+- [ ] Key files read and analyzed
+- [ ] 4 scores calculated using scoring_rules.md Detection patterns
+- [ ] Issues identified with severity, category, suggestion, effort
+- [ ] Gaps documented (missing components, inconsistencies)
+- [ ] Recommendations provided
+- [ ] Report written to `{output_dir}/641-pattern-{slug}.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 

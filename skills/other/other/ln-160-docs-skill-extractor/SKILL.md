@@ -1,6 +1,6 @@
 ---
 name: ln-160-docs-skill-extractor
-description: "Scans project docs, classifies procedural content, extracts into .claude/commands skills"
+description: "Extracts procedural content from project docs into .claude/commands skills. Use when docs contain deploy, test, or troubleshoot procedures."
 license: MIT
 ---
 

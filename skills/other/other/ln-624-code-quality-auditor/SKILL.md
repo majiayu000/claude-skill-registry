@@ -1,6 +1,6 @@
 ---
 name: ln-624-code-quality-auditor
-description: "Checks cyclomatic complexity, nesting, long methods, god classes, method signatures, O(n²), N+1 queries, constants management. Returns findings."
+description: "Checks cyclomatic complexity, nesting, long methods, god classes, O(n2), N+1 queries, constants management. Use when auditing code quality."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -279,14 +279,14 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- contextStore parsed (including domain_mode, current_domain, output_dir)
-- scan_path determined (domain path or codebase root)
-- All 10 checks completed (scoped to scan_path):
+- [ ] contextStore parsed (including domain_mode, current_domain, output_dir)
+- [ ] scan_path determined (domain path or codebase root)
+- [ ] All 10 checks completed (scoped to scan_path):
   - complexity, nesting, length, god classes, parameters, O(n²), N+1, constants, method signatures, cascade depth
-- Findings collected with severity, location, effort, recommendation, domain
-- Score calculated
-- Report written to `{output_dir}/624-quality-{domain}.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] Findings collected with severity, location, effort, recommendation, domain
+- [ ] Score calculated
+- [ ] Report written to `{output_dir}/624-quality-{domain}.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 

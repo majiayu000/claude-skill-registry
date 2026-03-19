@@ -1,6 +1,6 @@
 ---
 name: ln-222-story-replanner
-description: Replans Stories when Epic requirements change. Compares IDEAL vs existing, categorizes operations (KEEP/UPDATE/OBSOLETE/CREATE), executes in Linear.
+description: "Replans Stories by comparing IDEAL vs existing (KEEP/UPDATE/OBSOLETE/CREATE). Use when Epic requirements changed and Stories need realignment."
 license: MIT
 ---
 

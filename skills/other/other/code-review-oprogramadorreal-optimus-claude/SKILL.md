@@ -7,6 +7,8 @@ disable-model-invocation: true
 
 Analyze local git changes (or a PR/MR) against the project's coding guidelines, using up to 6 parallel review agents for comprehensive coverage. High-signal findings only: bugs, logic errors, security issues, guideline violations. Excludes style concerns, subjective suggestions, and linter-catchable issues.
 
+**Progress visibility** — When starting each step, show a brief one-line progress indicator (e.g., "**[Step 2/8]** Loading project context..."). Keep it short — the indicator orients the user, not narrate internals.
+
 ## Step 1: Determine Review Scope
 
 Parse arguments and detect what to review.
@@ -37,14 +39,16 @@ git status --short
 ```
 
 - **If local changes found** → review them (staged + unstaged + untracked)
-- **If no local changes** → check for commits ahead of the default branch:
-  - Run `git log --oneline origin/main..HEAD` (try `main`, then `master` if no remote)
-  - If commits found → offer to review the branch diff
-  - Also check for a PR/MR (use the same platform detection as PR mode below):
-    - If GitLab: `glab mr view --output json` (ignore errors if `glab` is not installed) — if it fails, check stderr: "no open merge request" or "404" means no MR; auth or network errors → inform the user
-    - If GitHub: `gh pr view --json number,state,title` (ignore errors if `gh` is not installed)
-    - If platform unknown: try both, ignore all errors
-  - If PR/MR found → offer to review it
+- **If no local changes** → detect the comparison base and check for commits ahead:
+  1. **Detect platform** — read `$CLAUDE_PLUGIN_ROOT/skills/pr/references/platform-detection.md` and use the **Platform Detection Algorithm** section to determine if the project is GitHub, GitLab, or unknown.
+  2. **Detect PR/MR target branch** — check if an open PR/MR exists for the current branch and extract its target branch:
+     - If GitHub: `gh pr view --json number,state,baseRefName 2>/dev/null` — only use `baseRefName` if `state` equals `"OPEN"`; if `state` is not `"OPEN"`, treat as "no open PR"
+     - If GitLab: `glab mr view --output json 2>/dev/null` — only use `target_branch` if `state` equals `"opened"`; if `state` is not `"opened"`, treat as "no open MR". If the command fails, treat as no open MR — unless the failure appears to be an auth or connectivity error, in which case inform the user before falling back
+     - If platform unknown: try both, ignore CLI-unavailable errors — use the first result where an open PR/MR is confirmed (state check passed)
+     - If no open PR/MR found or CLI unavailable → detect the default branch using `$CLAUDE_PLUGIN_ROOT/skills/pr/references/default-branch-detection.md`
+  3. Use the detected branch as `<base-branch>`. Run `git log --oneline origin/<base-branch>..HEAD`
+  4. If commits found → offer to review the branch diff (if the base came from an open PR/MR, mention that the review uses the PR's target branch)
+  5. If an open PR/MR was found in step 2 → also offer to review it directly (PR mode)
 - **If nothing at all** → inform the user there are no changes to review and suggest staging changes or specifying a PR
 
 ### PR mode (explicit request)
@@ -141,7 +145,7 @@ Proceed immediately to Step 3 — do not wait for user confirmation.
 
 If the user invoked with `deep` (e.g., `/optimus:code-review deep`, `/optimus:code-review deep "review PR #42"`, or `/optimus:code-review deep "focus on src/auth"`), activate deep mode. Deep mode loops review-fix cycles (Steps 4–8) until zero new findings remain or **5 iterations** are reached, then presents a single consolidated report with all fixes already applied as local changes.
 
-Before proceeding, check whether a test command is available (from `.claude/CLAUDE.md`). If no test command exists, deep mode's auto-apply loop has no safety net — fall back to normal mode and warn: "Deep mode requires a test command for safe auto-apply. Falling back to normal mode — run `/optimus:unit-test` first to enable deep mode." Then continue with the standard single-pass flow.
+Before proceeding, check whether a test command is available (from `.claude/CLAUDE.md`). If no test command exists, deep mode's auto-apply loop has no safety net — fall back to normal mode and warn: "Deep mode requires a test command for safe auto-apply. Falling back to normal mode — re-run `/optimus:init` to set up test infrastructure first." Then continue with the standard single-pass flow.
 
 If a test command is available, warn the user:
 
@@ -203,6 +207,7 @@ For each finding from Step 4:
 2. **Intent check** — look for comments, test assertions, or established patterns that explain the code's behavior (what looks like a bug may be intentional)
 3. **Pre-existing check** — verify the issue was introduced by the changes, not pre-existing in unchanged code
 4. **Cross-agent consensus** — for guideline findings, check if both Agents 3 and 4 flagged the same issue (consensus = higher confidence)
+5. **Runtime assumption check** — if an agent flagged a changed function or endpoint, verify whether the code also assumes something about inputs, dependencies, or environment that is not validated or documented. Unvalidated assumptions that could cause runtime failures strengthen the finding's confidence. (This is distinct from the verification protocol's Assumption Check, which targets pre-commitment design decisions.)
 
 ### Change-intent awareness
 

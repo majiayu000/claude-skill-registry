@@ -1,6 +1,6 @@
 ---
 name: ln-400-story-executor
-description: "Orchestrates Story tasks. Prioritizes To Review -> To Rework -> Todo, delegates to ln-401/402/403/404. Sets Story to To Review when all tasks Done. Metadata-only loading."
+description: "Executes Story tasks in priority order (To Review, To Rework, Todo). Use when Story has planned tasks ready for implementation."
 license: MIT
 ---
 
@@ -175,12 +175,12 @@ When invoked in Plan Mode (agent cannot execute), generate execution plan instea
 ```
 
 ## Definition of Done
-- Working in correct feature branch (verified in Phase 1)
-- Story and task metadata loaded; counts shown
-- Context Review performed for Todo tasks (or skipped with justification)
-- Loop executed: all tasks delegated with immediate review after each
-- Story set to **To Review** (NOT Done); kanban updated
-- Final report with task counts and recommended next step: quality gate
+- [ ] Working in correct feature branch (verified in Phase 1)
+- [ ] Story and task metadata loaded; counts shown
+- [ ] Context Review performed for Todo tasks (or skipped with justification)
+- [ ] Loop executed: all tasks delegated with immediate review after each
+- [ ] Story set to **To Review** (NOT Done); kanban updated
+- [ ] Final report with task counts and recommended next step: quality gate
 
 ## Phase 6: Meta-Analysis
 

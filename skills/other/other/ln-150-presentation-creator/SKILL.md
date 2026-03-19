@@ -1,6 +1,6 @@
 ---
 name: ln-150-presentation-creator
-description: Builds interactive HTML presentation with 6 tabs (Overview, Requirements, Architecture/C4, Tech Spec, Roadmap, Guides). Creates presentation/README.md hub.
+description: "Builds interactive HTML presentation from project docs with Mermaid diagrams. Use when sharing project overview with stakeholders."
 license: MIT
 ---
 
@@ -470,15 +470,13 @@ node build-presentation.js
 
 ## Definition of Done
 
-| Phase | Critical Checkpoints |
-|-------|---------------------|
-| **1. READ DOCS** | ✅ All docs loaded from docs/project/, docs/reference/, docs/tasks/ ✅ Metadata extracted ✅ Mermaid blocks preserved |
-| **2. VALIDATE EXISTS** | ✅ Required files exist (requirements.md, architecture.md, tech_stack.md) ✅ ERROR if missing |
-| **3. VALIDATE QUALITY** | ✅ Diagrams checked ✅ Placeholders detected ✅ Content length checked ✅ WARN only (non-blocking) |
-| **4. CREATE DIR** | ✅ docs/presentation/ created ✅ README.md created/preserved |
-| **5. COPY TEMPLATES** | ✅ assets/ created with all templates OR preserved if exists |
-| **6. INJECT CONTENT** | ✅ All 6 tabs populated ✅ **CRITICAL: Example blocks deleted** ✅ No `<!-- EXAMPLE -->` markers ✅ No hardcoded e-commerce data |
-| **7. BUILD HTML** | ✅ `node build-presentation.js` executed ✅ presentation_final.html created (~120-150 KB) ✅ Tested in browser |
+- [ ] All docs loaded from docs/project/, docs/reference/, docs/tasks/ with metadata extracted and Mermaid blocks preserved
+- [ ] Required files exist (requirements.md, architecture.md, tech_stack.md) — ERROR if missing
+- [ ] Diagrams checked, placeholders detected, content length checked (WARN only)
+- [ ] docs/presentation/ created, README.md created/preserved
+- [ ] assets/ created with all templates OR preserved if exists
+- [ ] All 6 tabs populated, example blocks deleted, no `<!-- EXAMPLE -->` markers, no hardcoded data
+- [ ] `node build-presentation.js` executed, presentation_final.html created, tested in browser
 
 **Output:** docs/presentation/presentation_final.html + assets/ + README.md
 

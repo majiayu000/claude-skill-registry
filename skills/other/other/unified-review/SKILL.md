@@ -137,9 +137,27 @@ schedule_skill("bug-review")
 **Verification:** Run `pytest -v` to verify tests pass.
 
 ### 3. Execute Reviews
-- Run selected skills concurrently
-- Share context between reviews
-- Maintain consistent evidence logging
+
+Dispatch selected skills concurrently via the Agent tool.
+Use this mapping to resolve skill names to agent types:
+
+| Skill Name | Agent Type | Notes |
+|---|---|---|
+| bug-review | `pensive:code-reviewer` | Covers bugs, API, tests |
+| api-review | `pensive:code-reviewer` | Same agent, API focus |
+| test-review | `pensive:code-reviewer` | Same agent, test focus |
+| architecture-review | `pensive:architecture-reviewer` | ADR compliance |
+| rust-review | `pensive:rust-auditor` | Rust-specific |
+| code-refinement | `pensive:code-refiner` | Duplication, quality |
+| math-review | `general-purpose` | Prompt: invoke `Skill(pensive:math-review)` |
+| makefile-review | `general-purpose` | Prompt: invoke `Skill(pensive:makefile-review)` |
+| shell-review | `general-purpose` | Prompt: invoke `Skill(pensive:shell-review)` |
+
+**Rules:**
+- Never use skill names as agent types (e.g., `pensive:math-review` is NOT an agent)
+- When `pensive:code-reviewer` covers multiple domains, dispatch once with combined scope
+- For skills without dedicated agents, use `general-purpose` and instruct it to invoke the Skill tool
+- Maintain consistent evidence logging across all agents
 - Track progress via TodoWrite
 
 ### 4. Integrate Findings

@@ -1,6 +1,6 @@
 ---
 name: ln-111-root-docs-creator
-description: "Creates 5 root documentation files (CLAUDE.md, docs/README.md, documentation_standards.md, principles.md, tools_config.md)."
+description: "Creates root documentation files (CLAUDE.md, docs/README.md, standards, principles, tools config). Use for initial project doc setup."
 license: MIT
 ---
 
@@ -126,12 +126,12 @@ Root documents define **navigation and standards**, NOT implementations:
 Tables/ASCII > Lists (enumerations only) > Text (last resort)
 
 ## Definition of Done
-- Context Store received and validated
-- 5 root documents created (or skipped if exist)
-- All placeholders replaced (or marked TBD); tools_config.md uses detected values
-- Self-validation passed (SCOPE, sections, Maintenance, POSIX)
-- **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
-- Status returned to coordinator
+- [ ] Context Store received and validated
+- [ ] 5 root documents created (or skipped if exist)
+- [ ] All placeholders replaced (or marked TBD); tools_config.md uses detected values
+- [ ] Self-validation passed (SCOPE, sections, Maintenance, POSIX)
+- [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
+- [ ] Status returned to coordinator
 
 ## Reference Files
 - Templates: `references/templates/claude_md_template.md`, `docs_root_readme_template.md`, `documentation_standards_template.md`, `principles_template.md`, `tools_config_template.md`

@@ -276,21 +276,39 @@ Use **AskUserQuestion**:
 Set `decomposed = true`. Create tasks:
 
 ```bash
-# Create epics
+# Create epics (top-level containers)
 bd create "<epic>" --type epic --priority <P1/P2/P3> --description "<description>"
 
-# Create features and tasks under epics
-bd create "<feature>" --type feature --priority <P1/P2/P3> --description "<description>"
-bd create "<task>" --type task --priority <P1/P2/P3> --description "<description>"
+# Create features and tasks WITH parent assignment (--parent = containment, not blocking)
+bd create "<feature>" --type feature --priority <P1/P2/P3> --parent <epic-id> --description "<description>"
+bd create "<task>" --type task --priority <P1/P2/P3> --parent <epic-id> --description "<description>"
 
-# Wire dependencies
-bd dep add <child-id> <parent-id>
+# Wire execution-order dependencies BETWEEN SIBLING TASKS ONLY
+# (task A must finish before task B can start — never use this for epic→task)
+bd dep add <blocked-task> <blocking-task>
+
+# Validate no circular dependencies
+bd dep cycles 2>/dev/null
 
 # Sync and display
 bd sync
 bd list
 bd ready
 ```
+
+#### Task Board Rules
+
+> **`--parent`** = "this task belongs to this epic" (containment). Used at creation time.
+> **`bd dep add`** = "this task cannot start until that task finishes" (execution ordering). Used between sibling tasks at the same level.
+> **NEVER** use `bd dep add` to associate a task with its epic. That creates a deadlock.
+
+> **`bd dep remove` trap:** Removes ALL relationship types between two IDs, including parent-child. If fixing a misplaced dependency, remove the dep FIRST, then set `--parent`. Never reverse this order.
+
+> **Target files:** Include a `## Target Files` line in each task description listing the primary files the task will create or modify. This enables file-conflict detection during dispatch.
+
+> **No transitive edges:** If A depends on B and B depends on C, do NOT also add A→C. Only direct edges.
+
+> **No hardcoded migration/revision numbers:** Use "next available" in descriptions. Workers determine the actual number at implementation time after rebasing.
 
 **If user selects "No":**
 Set `decomposed = false`. Proceed to Phase 4.
@@ -386,7 +404,7 @@ Add Enhancement Summary at top: date, sections enhanced, agents used, key improv
 
 ```bash
 bd update <id> --description "<enhanced description>"    # Refined tasks
-bd create "<title>" --type task --description "<desc>"   # New tasks
+bd create "<title>" --type task --parent <epic-id> --description "<desc>"  # New tasks (always assign parent)
 bd close <id> --reason="Obsoleted during deepening"      # Obsolete tasks
 bd sync
 ```

@@ -1,6 +1,6 @@
 ---
 name: ln-640-pattern-evolution-auditor
-description: "Audits architectural patterns against best practices. Maintains patterns catalog, calculates 4 scores per pattern. Output: patterns_catalog.md."
+description: "Audits architectural patterns against best practices, maintains patterns catalog with compliance scores. Use when auditing pattern evolution."
 license: MIT
 ---
 

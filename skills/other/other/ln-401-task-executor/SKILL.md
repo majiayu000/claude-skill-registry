@@ -1,6 +1,6 @@
 ---
 name: ln-401-task-executor
-description: Executes implementation tasks (Todo -> In Progress -> To Review). Follows KISS/YAGNI, guides, quality checks. Not for test tasks.
+description: "Executes implementation tasks through Todo, In Progress, To Review. Use when task needs coding with KISS/YAGNI. Not for test tasks."
 license: MIT
 ---
 

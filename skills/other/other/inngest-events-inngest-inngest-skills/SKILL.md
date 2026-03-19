@@ -176,8 +176,7 @@ await inngest.send({
 
 // Multiple functions respond to same event
 const sendWelcomeEmail = inngest.createFunction(
-  { id: "send-welcome-email" },
-  { event: "user/signup.completed" },
+  { id: "send-welcome-email", triggers: [{ event: "user/signup.completed" }] },
   async ({ event, step }) => {
     await step.run("send-email", async () => {
       return sendEmail({
@@ -189,8 +188,7 @@ const sendWelcomeEmail = inngest.createFunction(
 );
 
 const createTrialSubscription = inngest.createFunction(
-  { id: "create-trial" },
-  { event: "user/signup.completed" },
+  { id: "create-trial", triggers: [{ event: "user/signup.completed" }] },
   async ({ event, step }) => {
     await step.run("create-subscription", async () => {
       return stripe.subscriptions.create({
@@ -202,8 +200,7 @@ const createTrialSubscription = inngest.createFunction(
 );
 
 const addToCrm = inngest.createFunction(
-  { id: "add-to-crm" },
-  { event: "user/signup.completed" },
+  { id: "add-to-crm", triggers: [{ event: "user/signup.completed" }] },
   async ({ event, step }) => {
     await step.run("crm-sync", async () => {
       return crm.contacts.create({
@@ -228,8 +225,7 @@ In expressions, `event` = the **original** triggering event, `async` = the **new
 
 ```typescript
 const orchestrateOnboarding = inngest.createFunction(
-  { id: "orchestrate-onboarding" },
-  { event: "user/signup.completed" },
+  { id: "orchestrate-onboarding", triggers: [{ event: "user/signup.completed" }] },
   async ({ event, step }) => {
     // Fan out to multiple services
     await step.sendEvent("fan-out", [
@@ -284,8 +280,7 @@ Inngest emits system events for function lifecycle monitoring:
 
 ```typescript
 const handleFailures = inngest.createFunction(
-  { id: "handle-failed-functions" },
-  { event: "inngest/function.failed" },
+  { id: "handle-failed-functions", triggers: [{ event: "inngest/function.failed" }] },
   async ({ event, step }) => {
     const { function_id, run_id, error } = event.data;
 
@@ -381,8 +376,7 @@ await inngest.send(events);
 
 ```typescript
 inngest.createFunction(
-  { id: "process-order" },
-  { event: "order/placed" },
+  { id: "process-order", triggers: [{ event: "order/placed" }] },
   async ({ event, step }) => {
     // Use step.sendEvent() instead of inngest.send() in functions
     // for reliability and deduplication

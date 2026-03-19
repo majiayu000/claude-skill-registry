@@ -47,6 +47,7 @@ REPOS_TO_CLONE = [
 
     # Community submissions
     "https://github.com/faceleg/claude-skill-git.git",
+    "https://github.com/superlowburn/agentrank.git",
 ]
 
 

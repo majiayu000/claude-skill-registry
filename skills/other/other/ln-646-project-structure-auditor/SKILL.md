@@ -1,6 +1,6 @@
 ---
 name: ln-646-project-structure-auditor
-description: "Audits project physical structure: file hygiene, ignore file quality, framework convention compliance, domain/layer organization, naming conventions. Stack-adaptive via auto-detection."
+description: "Checks file hygiene, ignore files, framework conventions, domain/layer organization, naming. Use when auditing project structure."
 license: MIT
 ---
 

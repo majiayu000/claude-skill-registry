@@ -18,8 +18,7 @@ Build robust, durable workflows with Inngest's step methods. Each step is a sepa
 ```typescript
 // ❌ WRONG - will run 4 times
 export default inngest.createFunction(
-  { id: "bad-example" },
-  { event: "test" },
+  { id: "bad-example", triggers: [{ event: "test" }] },
   async ({ step }) => {
     console.log("This logs 4 times!"); // Outside step = bad
     await step.run("a", () => console.log("a"));
@@ -30,8 +29,7 @@ export default inngest.createFunction(
 
 // ✅ CORRECT - logs once each
 export default inngest.createFunction(
-  { id: "good-example" },
-  { event: "test" },
+  { id: "good-example", triggers: [{ event: "test" }] },
   async ({ step }) => {
     await step.run("log-hello", () => console.log("hello"));
     await step.run("a", () => console.log("a"));
@@ -199,8 +197,7 @@ Call other functions and handle their results. Perfect for composition.
 
 ```typescript
 const computeSquare = inngest.createFunction(
-  { id: "compute-square" },
-  { event: "calculate/square" },
+  { id: "compute-square", triggers: [{ event: "calculate/square" }] },
   async ({ event }) => {
     return { result: event.data.number * event.data.number };
   }
@@ -213,7 +210,22 @@ const square = await step.invoke("get-square", {
 });
 
 console.log(square.result); // 16, fully typed!
+
+// For cross-app invocation (when you can't import the function directly):
+import { referenceFunction } from "inngest";
+
+const externalFn = referenceFunction({
+  appId: "other-app",
+  functionId: "other-fn"
+});
+
+const result = await step.invoke("call-external", {
+  function: externalFn,
+  data: { key: "value" }
+});
 ```
+
+**Warning: v4 Breaking Change:** String function IDs (e.g., `function: "my-app-other-fn"`) are no longer supported in `step.invoke()`. Use an imported function reference or `referenceFunction()` for cross-app calls.
 
 **Great for:**
 
@@ -254,7 +266,7 @@ await step.run("process-products", () => {
 
 ### Parallel Execution
 
-Use Promise.all for parallel steps.
+Use Promise.all for parallel steps. **In v4, parallel step execution is optimized by default**
 
 ```typescript
 // Create steps without awaiting
@@ -277,13 +289,12 @@ const [emailId, crmRecord, subscription] = await Promise.all([
   createSubscription
 ]);
 
-// Optimization: Enable optimizeParallelism for many parallel steps
+// Parallel steps are optimized by default in v4
 export default inngest.createFunction(
   {
     id: "parallel-heavy-function",
-    optimizeParallelism: true // Reduces HTTP requests by ~50%
+    triggers: [{ event: "process/batch" }]
   },
-  { event: "process/batch" },
   async ({ event, step }) => {
     const results = await Promise.all(
       event.data.items.map((item, i) =>
@@ -292,6 +303,19 @@ export default inngest.createFunction(
     );
   }
 );
+
+// ⚠️ Promise.race() behavior with v4's optimized parallelism:
+// All promises settle before race resolves. Use group.parallel() for true race:
+const winner = await group.parallel(async () => {
+  return Promise.race([
+    step.run("fast-service", () => callFastService()),
+    step.run("slow-service", () => callSlowService())
+  ]);
+});
+
+// To disable optimized parallelism if needed:
+// At the client level: new Inngest({ id: "app", optimizeParallelism: false })
+// At the function level: { id: "fn", optimizeParallelism: false, triggers: [...] }
 ```
 
 See **inngest-flow-control** for concurrency and throttling options.
@@ -302,8 +326,7 @@ Perfect for batch processing with parallel steps.
 
 ```typescript
 export default inngest.createFunction(
-  { id: "process-large-dataset" },
-  { event: "data/process.large" },
+  { id: "process-large-dataset", triggers: [{ event: "data/process.large" }] },
   async ({ event, step }) => {
     const chunks = chunkArray(event.data.items, 10);
 
@@ -327,9 +350,9 @@ export default inngest.createFunction(
 **🔄 Function Re-execution:** Code outside steps runs on every step execution
 **⏰ Event Timing:** waitForEvent only catches events sent AFTER the step runs
 **🔢 Step Limits:** Max 1,000 steps per function, 4MB per step output, 32MB per function run in total
-**📨 HTTP Requests:** With `serve`, use `checkpointing` to reduce HTTP requests
+**📨 HTTP Requests:** Checkpointing is enabled by default in v4, reducing HTTP overhead. For serverless platforms, configure `maxRuntime` on the client
 **🔁 Step IDs:** Can be reused in loops - Inngest handles counters
-**⚡ Parallelism:** Use Promise.all, consider optimizeParallelism for many steps
+**⚡ Parallelism:** Use Promise.all for parallel steps (optimized by default in v4). Note that Promise.race() waits for all promises to settle — use `group.parallel()` for true race semantics
 
 ## Common Use Cases
 

@@ -1,6 +1,6 @@
 ---
 name: ln-301-task-creator
-description: Creates ALL task types (implementation, refactoring, test). Generates task documents from templates, validates type rules, creates in Linear, updates kanban.
+description: "Creates implementation, refactoring, and test tasks from templates. Use when orchestrator plan needs tasks created in Linear and kanban."
 license: MIT
 ---
 

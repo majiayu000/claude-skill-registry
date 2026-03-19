@@ -1,6 +1,6 @@
 ---
 name: ln-201-opportunity-discoverer
-description: Traffic-First opportunity discovery. KILL funnel filters ideas by traffic channel, demand, competition, revenue, interest, MVP-ability. Outputs one idea + one channel recommendation.
+description: "Discovers growth opportunities using Traffic-First KILL funnel. Use when searching for next product direction with validated demand."
 license: MIT
 ---
 
@@ -459,6 +459,15 @@ $50/user pricing proven, can MVP in 3 weeks with existing skills.
 ```
 
 ---
+
+## Definition of Done
+
+- [ ] Ideas brainstormed from product context and market signals
+- [ ] KILL funnel applied: each idea passed/killed at each filter stage
+- [ ] Survivors scored and ranked
+- [ ] Discovery document generated at `docs/reference/research/[YYYY-MM-DD]-discovery.md`
+- [ ] TOP RECOMMENDATION identified with channel + rationale
+- [ ] KILL Log documents all eliminated ideas with reasons
 
 ## Reference Files
 

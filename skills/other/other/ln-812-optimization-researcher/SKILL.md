@@ -1,6 +1,6 @@
 ---
 name: ln-812-optimization-researcher
-description: "Competitive benchmarks, solution research, and hypothesis generation for identified bottlenecks"
+description: "Researches competitive benchmarks and generates optimization hypotheses for identified bottlenecks. Use after profiling."
 license: MIT
 ---
 

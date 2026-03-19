@@ -1,6 +1,6 @@
 ---
 name: ln-510-quality-coordinator
-description: "Coordinates code quality: ln-511 metrics, ln-512 cleanup, inline agent review (Codex + Gemini), ln-513 regression, ln-514 log analysis. Returns quality_verdict + aggregated results."
+description: "Coordinates code quality checks: metrics, cleanup, agent review, regression, log analysis. Use when Story needs quality_verdict with aggregated results."
 license: MIT
 ---
 
@@ -272,6 +272,7 @@ issues:
 - [ ] ln-511 invoked (ALWAYS — full or `--skip-mcp-ref` in fast-track), code quality score returned
 - [ ] ln-512 invoked (or skipped if --fast-track), tech debt cleanup results returned
 - [ ] Agent review executed inline (or skipped if --fast-track), results merged in Phase 9
+- [ ] Agent process trees verified dead after results collection (Phase 9)
 - [ ] Criteria Validation completed (3 checks)
 - [ ] Linters executed
 - [ ] ln-513 invoked, regression results returned

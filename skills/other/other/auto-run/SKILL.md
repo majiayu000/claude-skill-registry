@@ -135,7 +135,7 @@ Frontend changes detected in <task-id> — Playwright browser verification will 
 2. If still stuck after the follow-up: mark as failed
 3. Create investigation task:
    ```bash
-   bd create --title="Investigate: <task-id> failed" --type=task --priority=1
+   bd create --title="Investigate: <task-id> failed" --type=task --priority=1 --parent <epic-id>
    ```
 
 Update checkpoint: move task from `in_progress` to `completed` (or `failed`).

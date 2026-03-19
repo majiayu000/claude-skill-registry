@@ -1,6 +1,6 @@
 ---
 name: ln-115-devops-docs-creator
-description: "Creates infrastructure.md (always) and runbook.md (if hasDocker). DevOps documentation worker."
+description: "Creates infrastructure.md and runbook.md (Docker-conditional). Use for DevOps documentation in any project."
 license: MIT
 ---
 
@@ -138,13 +138,13 @@ Both documents describe **inventory/procedures**, NOT implementations:
 Tables (env vars, ports, services, servers) > Lists (setup steps) > Text
 
 ## Definition of Done
-- infrastructure.md created (always)
-- runbook.md created if hasDocker
-- Infrastructure: server inventory, ports, services documented
-- Runbook: setup steps, deployment, troubleshooting documented
-- All env vars from .env.example included in runbook
-- **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
-- Status returned to coordinator
+- [ ] infrastructure.md created (always)
+- [ ] runbook.md created if hasDocker
+- [ ] Infrastructure: server inventory, ports, services documented
+- [ ] Runbook: setup steps, deployment, troubleshooting documented
+- [ ] All env vars from .env.example included in runbook
+- [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
+- [ ] Status returned to coordinator
 
 ## Reference Files
 - Templates: `references/templates/infrastructure_template.md`, `references/templates/runbook_template.md`

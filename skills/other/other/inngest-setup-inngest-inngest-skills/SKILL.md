@@ -40,6 +40,8 @@ import { Inngest } from "inngest";
 export const inngest = new Inngest({
   id: "my-app" // Unique identifier for your application (hyphenated slug)
 });
+// In development, you must set the INNGEST_DEV=1 env var or use isDev: true
+// In production, INNGEST_SIGNING_KEY is required (v4 defaults to Cloud mode)
 ```
 
 ### Key Configuration Options
@@ -47,41 +49,52 @@ export const inngest = new Inngest({
 - **`id`** (required): Unique identifier for your app. Use a hyphenated slug like `"my-app"` or `"user-service"`
 - **`eventKey`**: Event key for sending events (prefer `INNGEST_EVENT_KEY` env var)
 - **`env`**: Environment name for Branch Environments
-- **`isDev`**: Force Dev mode (`true`) or Cloud mode (`false`)
+- **`isDev`**: Force Dev mode (`true`) or Cloud mode (`false`). **v4 defaults to Cloud mode**, so set `isDev: true` or `INNGEST_DEV=1` for local development
+- **`signingKey`**: Signing key for production (prefer `INNGEST_SIGNING_KEY` env var). Moved from `serve()` to client in v4
+- **`signingKeyFallback`**: Fallback signing key for key rotation (prefer `INNGEST_SIGNING_KEY_FALLBACK` env var)
+- **`baseUrl`**: Custom Inngest API base URL (prefer `INNGEST_BASE_URL` env var)
 - **`logger`**: Custom logger instance (e.g. winston, pino) — enables `logger` in function context
 - **`middleware`**: Array of middleware (see **inngest-middleware** skill)
-- **`schemas`**: Use `EventSchemas` for typed events (see **inngest-events** skill)
 
-### Typed Events with EventSchemas
+### Typed Events with eventType()
 
 ```typescript
-import { Inngest, EventSchemas } from "inngest";
+import { Inngest, eventType } from "inngest";
+import { z } from "zod";
 
-type Events = {
-  "user/signup.completed": {
-    data: {
-      userId: string;
-      email: string;
-      plan: "free" | "pro";
-    };
-  };
-  "order/placed": {
-    data: {
-      orderId: string;
-      amount: number;
-    };
-  };
-};
-
-export const inngest = new Inngest({
-  id: "my-app",
-  schemas: new EventSchemas().fromRecord<Events>()
+const signupCompleted = eventType("user/signup.completed", {
+  schema: z.object({
+    userId: z.string(),
+    email: z.string(),
+    plan: z.enum(["free", "pro"])
+  })
 });
 
-// Now event data is fully typed in functions:
-// inngest.createFunction({ id: "handle-signup" }, { event: "user/signup.completed" },
-//   async ({ event }) => { event.data.userId /* typed as string */ }
-// );
+const orderPlaced = eventType("order/placed", {
+  schema: z.object({
+    orderId: z.string(),
+    amount: z.number()
+  })
+});
+
+export const inngest = new Inngest({ id: "my-app" });
+
+// Use event types as triggers for full type safety:
+inngest.createFunction(
+  { id: "handle-signup", triggers: [signupCompleted] },
+  async ({ event }) => {
+    event.data.userId; /* typed as string */
+  }
+);
+
+// Use event types when sending events:
+await inngest.send(
+  signupCompleted.create({
+    userId: "user_123",
+    email: "user@example.com",
+    plan: "pro"
+  })
+);
 ```
 
 ### Environment Variables Setup
@@ -169,6 +182,8 @@ app.use(
 - **AWS Lambda**: Use `inngest/lambda`
 - For all other frameworks, check the `serve` reference here: https://www.inngest.com/docs-markdown/learn/serving-inngest-functions
 
+**⚠️ v4 Change:** Options like `signingKey`, `signingKeyFallback`, and `baseUrl` are now configured on the `Inngest` client constructor, not on `serve()`. The `serve()` function only accepts `client`, `functions`, and `streaming`.
+
 **⚠️ Common Gotcha**: Always use `/api/inngest` as your endpoint path. This enables automatic discovery. If you must use a different path, you'll need to configure discovery manually with the `-u` flag.
 
 ## Step 4B: Connect as Worker (WebSocket Mode)
@@ -177,7 +192,6 @@ For long-running applications that maintain persistent connections:
 
 ```typescript
 // src/worker.ts
-// Note: inngest/connect requires inngest SDK v3.27+
 import { connect } from "inngest/connect";
 import { inngest } from "./inngest/client";
 import { myFunction } from "./inngest/functions";
@@ -203,6 +217,11 @@ import { myFunction } from "./inngest/functions";
 - Long-running server environment (not serverless)
 - `INNGEST_SIGNING_KEY` and `INNGEST_EVENT_KEY` for production
 - Set the `appVersion` parameter on the `Inngest` client for production to support rolling deploys
+
+**v4 Connect Changes:**
+
+- **Worker thread isolation** is enabled by default — WebSocket connections execute in a worker thread to prevent event loop starvation. Set `isolateExecution: false` to use a single process (or `INNGEST_CONNECT_ISOLATE_EXECUTION=false`)
+- **`rewriteGatewayEndpoint`** callback has been replaced with the `gatewayUrl` string option (or `INNGEST_CONNECT_GATEWAY_URL` env var)
 
 ## Step 5: Organizing with Apps
 

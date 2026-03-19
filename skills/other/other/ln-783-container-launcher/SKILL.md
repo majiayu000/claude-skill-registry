@@ -1,6 +1,6 @@
 ---
 name: ln-783-container-launcher
-description: Builds and launches Docker containers with health verification using best practices
+description: "Builds and launches Docker containers with health verification. Use when validating that containerized services start correctly."
 license: MIT
 ---
 

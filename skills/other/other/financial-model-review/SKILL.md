@@ -28,6 +28,7 @@ Accept any format: Excel (.xlsx), CSV, Google Sheets exports, financial document
 All scripts are at `${CLAUDE_PLUGIN_ROOT}/skills/financial-model-review/scripts/`:
 
 - **`extract_model.py`** — Extracts structured data from Excel (.xlsx) and CSV files
+- **`validate_extraction.py`** — Anti-hallucination gate: cross-references `model_data.json` against `inputs.json` to catch mismatches (company name, salary, revenue, cash traceability); run after extraction, before review
 - **`validate_inputs.py`** — Four-layer validation of `inputs.json` (structural, consistency, sanity, completeness); supports `--fix` to auto-correct sign errors
 - **`checklist.py`** — Scores 46 criteria across 7 categories with profile-based auto-gating
 - **`unit_economics.py`** — Computes and benchmarks 11 unit economics metrics
@@ -156,7 +157,7 @@ If the script prints a `sector_type` warning but exits 0, that's non-fatal — p
 
 ### Step 2: Extract Model Data and Build `inputs.json`
 
-**When Excel (.xlsx) or CSV files are provided,** spawn a `general-purpose` Task sub-agent to handle extraction and input construction. The sub-agent receives: file path, `SCRIPTS`, `REFS`, `SHARED_REFS`, and `REVIEW_DIR` paths. **Do NOT use `isolation: "worktree"`** — files written in a worktree won't appear in the main `$REVIEW_DIR`.
+**When Excel (.xlsx) or CSV files are provided,** spawn a `general-purpose` Task sub-agent to handle extraction and input construction. The sub-agent receives: file path, `SCRIPTS`, `REFS`, `SHARED_REFS`, and `REVIEW_DIR` paths. **Do NOT use `isolation: "worktree"`** — files written in a worktree won't appear in the main `$REVIEW_DIR`. **Save the sub-agent's ID** — you may need to resume it in Step 2.5 if extraction validation fails.
 
 The sub-agent:
 1. Runs `extract_model.py --file <path> --pretty -o "$REVIEW_DIR/model_data.json"` (note: `--file`, not positional)
@@ -164,7 +165,7 @@ The sub-agent:
 3. Reads `$REFS/schema-inputs.md` for the JSON schema
 4. Reads `$REFS/data-sufficiency.md` to assess data sufficiency
 5. Constructs `inputs.json` from extracted data, writing it to `$REVIEW_DIR/inputs.json`
-6. **FX rate for Israeli companies:** If `geography` is "Israel", populate `israel_specific.fx_rate_ils_usd` with the current ILS/USD exchange rate (use web search if available, otherwise use 3.6 as a reasonable default). Also set `ils_expense_fraction` (typically 0.5 for Israeli startups — salaries in ILS, revenue in USD). This enables the ILS/USD toggle in the review page and FX sensitivity in the explorer.
+6. **FX rate for Israeli companies:** If `geography` is "Israel", use web search to get the current ILS/USD exchange rate and populate `israel_specific.fx_rate_ils_usd`. **Do not use a hardcoded default** — exchange rates change frequently and an outdated rate will skew all ILS-denominated values. Also set `ils_expense_fraction` (typically 0.5 for Israeli startups — salaries in ILS, revenue in USD). This enables the ILS/USD toggle in the review page and FX sensitivity in the explorer.
 
 Instruct the sub-agent: **Do not run any scripts other than `extract_model.py`. Do not create any files other than `model_data.json` and `inputs.json`.** Before writing `inputs.json`, verify that no numeric field is null when the source data contains a value — null fields cascade into bad downstream outputs (unit economics scores wrong metrics, runway reports infinite runway). **ARPU sanity check:** If `drivers.arpu_monthly` or `unit_economics.ltv.inputs.arpu_monthly` exceeds total MRR, it's probably the aggregate revenue, not per-customer ARPU. Divide by customer count to get the correct value. This is the most common extraction error. Return ONLY: (1) file paths written, (2) company name/stage/sector, (3) `model_format`, (4) data sufficiency verdict (sufficient/insufficient + count of missing critical fields), (5) any `company.traits` detected, and (6) **confidence per key field** — for each extracted metric, report `high` (directly stated in source), `low` (inferred, converted, or single data point), or `missing`. Do not echo the full JSON back.
 
@@ -179,21 +180,53 @@ Instruct the sub-agent: **Do not run any scripts other than `extract_model.py`. 
 
 **Extraction pitfalls — common errors that produce wildly wrong downstream results:**
 
-1. **Department payroll vs COGS payroll.** Many financial models have a COGS section with `Payroll: $0` (correct — no COGS headcount), then separate R&D, S&M, and G&A sections each with their own payroll line items. **Always sum payroll across all department sections** (R&D + S&M + G&A + COGS), not just the first `Payroll` row you encounter. Populate `expenses.headcount[]` entries with per-role or per-department salary data, and `expenses.opex_monthly[]` for non-payroll operating expenses (rent, software, travel, professional services, etc.). If per-role detail is unavailable, use department totals (e.g., one headcount entry for "R&D" with aggregate salary). **NEVER estimate or guess salary values.** Use the actual dollar amounts from the P&L. If the P&L shows "R&D: $725K/quarter," that's $2.9M/year — use that as `salary_annual` for the R&D headcount entry. Generic estimates (e.g., "$82K per engineer") produce expense coverage errors that cascade through the entire review.
+1. **Model denominated in thousands or millions.** Many financial models express values in thousands (`$000`, `in $K`) or millions. **Before extracting any numbers, check for scale indicators:**
+   - Headers or sub-headers containing `($000)`, `(in thousands)`, `($K)`, `($M)`, `(in millions)`
+   - A "Controls", "Settings", or "Assumptions" tab with a "Units" or "Denomination" field
+   - Implausibly small values — e.g., cash balance of `4000` for a seed company (likely $4M = $4,000K)
+   - Revenue values in single/double digits when customer count is >10 (likely in thousands)
 
-2. **Collections vs recognized revenue.** For companies with `annual-contracts` trait or enterprise sales-led models, the spreadsheet often has both a "Collections" row (cash received — lumpy, timing-dependent) and a "Revenue" or "RevRec" row (recognized revenue — smoother, accrual-based). **Use recognized revenue for `revenue.monthly[]` totals, MRR, and growth rate.** Use collections only for cash flow analysis. Mixing collections into revenue produces fake growth rates — a $115K annual contract collected in one month is not $115K MRR. If only collections are available and no RevRec row exists, divide annual contract values by 12 to approximate monthly recognized revenue, note `data_confidence: "estimated"`, and set `growth_rate_monthly` to `null`.
+   If the model is in thousands, **multiply all monetary values by 1,000** before writing to `inputs.json`. Record `metadata.scale_factor: 1000` (or `1000000` for millions). Do NOT leave values at face value — a $4K cash balance for a seed company with 6 employees is nonsensical and produces 0-month runway. **Headcount counts and percentages (churn rate, growth rate, tax rate) are NOT scaled** — only dollar amounts. If unsure, cross-check: a seed company's monthly burn should typically be $50K–$500K, not $50–$500.
 
-3. **Expense cross-check.** After extracting headcount and opex, verify that the sum roughly matches the model's total expense row or the implied burn (burn = expenses − revenue). If extracted expenses cover less than 50% of the stated `monthly_net_burn + revenue`, critical cost categories were likely missed — re-examine the source data for department-level line items. Validation will flag this as `EXPENSE_COVERAGE_SUSPECT`.
+2. **Company name from Controls tab.** Many models have a "Controls" or "Settings" tab with a "Company Name" field. **Always prefer this over filenames or cover page text.** The filename often contains template names (e.g., "Sample-Financial-Model-v1.64") rather than the actual company name.
 
-After the sub-agent returns, **proceed to Step 3: Review Extracted Values** for founder confirmation before continuing.
+3. **Department payroll vs COGS payroll.** Many financial models have a COGS section with `Payroll: $0` (correct — no COGS headcount), then separate R&D, S&M, and G&A sections each with their own payroll line items. **Always sum payroll across all department sections** (R&D + S&M + G&A + COGS), not just the first `Payroll` row you encounter. Populate `expenses.headcount[]` entries with per-role or per-department salary data, and `expenses.opex_monthly[]` for non-payroll operating expenses (rent, software, travel, professional services, etc.). If per-role detail is unavailable, use department totals (e.g., one headcount entry for "R&D" with aggregate salary). **NEVER estimate or guess salary values.** Use the actual dollar amounts from the P&L. If the P&L shows "R&D: $725K/quarter," that's $2.9M/year — use that as `salary_annual` for the R&D headcount entry. Generic estimates (e.g., "$82K per engineer") produce expense coverage errors that cascade through the entire review.
+
+4. **Collections vs recognized revenue.** For companies with `annual-contracts` trait or enterprise sales-led models, the spreadsheet often has both a "Collections" row (cash received — lumpy, timing-dependent) and a "Revenue" or "RevRec" row (recognized revenue — smoother, accrual-based). **Use recognized revenue for `revenue.monthly[]` totals, MRR, and growth rate.** Use collections only for cash flow analysis. Mixing collections into revenue produces fake growth rates — a $115K annual contract collected in one month is not $115K MRR. If only collections are available and no RevRec row exists, divide annual contract values by 12 to approximate monthly recognized revenue, note `data_confidence: "estimated"`, and set `growth_rate_monthly` to `null`.
+
+5. **Expense cross-check.** After extracting headcount and opex, verify that the sum roughly matches the model's total expense row or the implied burn (burn = expenses − revenue). If extracted expenses cover less than 50% of the stated `monthly_net_burn + revenue`, critical cost categories were likely missed — re-examine the source data for department-level line items. Validation will flag this as `EXPENSE_COVERAGE_SUSPECT`. **Common misses:** travel expenses, commissions, contractor fees — check Actuals or P&L line items beyond payroll.
+
+6. **SaaS metrics tabs.** Many models have dedicated CAC, LTV, and Margins tabs. **Explicitly check for these** and extract `unit_economics.cac.total`, `unit_economics.cac.components`, `unit_economics.ltv`, and `unit_economics.gross_margin` from them. Do not return null for these fields when the data exists in a named tab.
+
+7. **Actuals vs forecast disconnect.** Template-based models often have an Actuals tab with real data and Summary/forecast tabs with uncalibrated projections. **Always prefer Actuals for current-state metrics** (MRR, customers, burn, cash). Use forecast tabs only for forward-looking fields (growth assumptions, scenarios). If Actuals show $370K/mo revenue but Summary shows $1.2K/mo, Actuals are ground truth — note the disconnect in `metadata.extraction_notes`.
+
+8. **Lumpy/volatile MRR growth.** For models with highly volatile month-to-month MRR (±15% swings), do not compute growth rate from two adjacent months. Instead, use a **trailing 3-month or 6-month CAGR**: `growth_rate_monthly = (MRR_latest / MRR_N_months_ago) ^ (1/N) - 1`. If the series is too short or too volatile for any method to be reliable, set `growth_rate_monthly` to `null`.
+
+After the sub-agent returns, **proceed to Step 2.5: Validate Extraction** before continuing.
+
+### Step 2.5: Validate Extraction — Anti-Hallucination Gate
+
+Run the extraction validation script to cross-reference `model_data.json` against `inputs.json`:
+
+```bash
+python3 "$SCRIPTS/validate_extraction.py" --inputs "$REVIEW_DIR/inputs.json" --model-data "$REVIEW_DIR/model_data.json" --fix --pretty -o "$REVIEW_DIR/extraction_validation.json"
+```
+
+The `--fix` flag automatically corrects scale denomination issues (e.g., model in $000 → multiplies all monetary fields by 1000). It only applies when a scale indicator is found in `model_data` AND values appear implausibly low. It will not double-scale already-correct values. When a fix is applied, the output includes `"fixed": true` and `metadata.scale_correction` is written to `inputs.json`.
+
+**If `status` is `"warn"` (after --fix):** Check `correction_hints` for specific issues. Scale issues are auto-fixed; remaining warnings (company name mismatch, untraceable values) may need manual correction. Resume the extraction sub-agent (using the saved agent ID from Step 2) with the correction hints and ask it to fix the flagged values. Then re-run the validation **without --fix** (scale is already handled). **Maximum 2 retries** — if warnings persist after 2 attempts, proceed to Step 3 with the warnings intact; they will appear as a banner in the review page for the founder to see.
+
+**If `status` is `"pass"` or `"skip"`:** Proceed to Step 3.
+
+Pass `$REVIEW_DIR/extraction_validation.json` to Step 3 so it can be displayed in the review page.
 
 **When documents (PDFs, data room dumps, Google Sheets exports) are provided,** use a two-pass sub-agent flow:
 
-1. **Probe pass:** Spawn a `general-purpose` Task sub-agent with the file path(s), `SCRIPTS`, `REFS`, `SHARED_REFS`, and `REVIEW_DIR` paths. The sub-agent reads the document(s), reads `$REFS/schema-inputs.md` for the schema, extracts what it can, and returns ONLY: (1) partial data extracted (company name, stage, sector, any metrics found), (2) `model_format`, (3) a list of fields that could not be extracted, and (4) any `company.traits` detected. Save the sub-agent's ID for resumption.
+1. **Probe pass:** Spawn a `general-purpose` Task sub-agent with the file path(s), `SCRIPTS`, `REFS`, `SHARED_REFS`, and `REVIEW_DIR` paths. The sub-agent reads the document(s), reads `$REFS/schema-inputs.md` for the schema, extracts what it can, and returns ONLY: (1) partial data extracted (company name, stage, sector, any metrics found), (2) `model_format`, (3) a list of fields that could not be extracted, and (4) any `company.traits` detected. Save the sub-agent's ID for resumption. **Important:** Always prefer explicit labeled fields in the spreadsheet (e.g., a "Company Name" cell in a Controls/Settings tab) over filenames or cover page text when extracting company identity fields.
 
 2. **Build pass:** Resume the same sub-agent (using `resume` with the saved agent ID — preserves full document context). Pass the founder's answers from Step 1 to fill any gaps. The sub-agent reads `$REFS/data-sufficiency.md`, constructs `inputs.json`, and writes it to `$REVIEW_DIR/inputs.json`. Returns ONLY: (1) file paths written, (2) data sufficiency verdict (sufficient/insufficient + count of missing critical fields), (3) final `model_format`, and (4) **confidence per key field** — for each extracted metric, report `high`, `low`, or `missing`.
 
-After the sub-agent returns, **proceed to Step 3: Review Extracted Values** for founder confirmation before continuing.
+After the sub-agent returns, **proceed to Step 2.5: Validate Extraction** (same as the spreadsheet path above) before continuing to Step 3.
 
 **When conversational input is provided (no files):** Handle directly in the main agent — the data is already in the conversation. Gather all needed fields within Step 1 through normal conversation (not via `AskUserQuestion` after extraction starts). Ask for: revenue figures, cost structure, headcount, funding history, growth rates, key assumptions. Consult `references/schema-inputs.md` for the full schema. Since there are no files to extract, there is no extraction pipeline to block — but all data gathering must complete before dispatching sub-agents in Steps 4-6.
 
@@ -218,8 +251,8 @@ INPUTS_EOF
 #### Server mode (Claude Code)
 
 ```bash
-python3 "$SCRIPTS/review_inputs.py" "$REVIEW_DIR/inputs.json" --workspace "$REVIEW_DIR" &
-VIEWER_PID=$!
+pkill -f "review_inputs.py.*--workspace" 2>/dev/null  # kill any stale viewer from a previous run
+python3 "$SCRIPTS/review_inputs.py" "$REVIEW_DIR/inputs.json" --workspace "$REVIEW_DIR" --extraction-warnings "$REVIEW_DIR/extraction_validation.json" &
 ```
 
 Tell the founder:
@@ -229,14 +262,14 @@ Tell the founder:
 Wait for the founder to say they're done.
 
 ```bash
-kill $VIEWER_PID 2>/dev/null
+pkill -f "review_inputs.py.*--workspace" 2>/dev/null
 python3 "$SCRIPTS/apply_corrections.py" "$REVIEW_DIR/corrections.json" --original "$REVIEW_DIR/inputs.json" --output-dir "$REVIEW_DIR"
 ```
 
 #### Static mode (Cowork)
 
 ```bash
-python3 "$SCRIPTS/review_inputs.py" "$REVIEW_DIR/inputs.json" --static "$REVIEW_DIR/review.html"
+python3 "$SCRIPTS/review_inputs.py" "$REVIEW_DIR/inputs.json" --static "$REVIEW_DIR/review.html" --extraction-warnings "$REVIEW_DIR/extraction_validation.json"
 ```
 
 Tell the founder:
@@ -248,6 +281,8 @@ Wait for the founder to upload `corrections.json`.
 ```bash
 python3 "$SCRIPTS/apply_corrections.py" <uploaded-file> --original "$REVIEW_DIR/inputs.json" --output-dir "$REVIEW_DIR"
 ```
+
+> `apply_corrections.py` accepts both patch-based payloads (v2: `changes[]` + `base_hash`) and legacy payloads (v1: `corrected` object). The review UI emits v2 format. If applying a manually constructed corrections file, use the v2 format.
 
 #### After apply_corrections (both modes)
 

@@ -1,6 +1,6 @@
 ---
 name: ln-113-backend-docs-creator
-description: Creates 2 backend docs (api_spec.md, database_schema.md). Invoked when hasBackend or hasDatabase detected.
+description: "Creates backend docs (api_spec.md, database_schema.md). Use when project has backend API or database."
 license: MIT
 ---
 
@@ -97,12 +97,12 @@ API spec documents **contracts**, NOT implementations:
 Tables (endpoints, schemas) > Mermaid (ER diagrams) > Lists > Text
 
 ## Definition of Done
-- Conditions checked (hasBackend, hasDatabase)
-- Applicable documents created
-- ER diagram generated (if database_schema.md created)
-- Self-validation passed
-- **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
-- Status returned to coordinator
+- [ ] Conditions checked (hasBackend, hasDatabase)
+- [ ] Applicable documents created
+- [ ] ER diagram generated (if database_schema.md created)
+- [ ] Self-validation passed
+- [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
+- [ ] Status returned to coordinator
 
 ## Reference Files
 - Templates: `references/templates/api_spec_template.md`, `database_schema_template.md`

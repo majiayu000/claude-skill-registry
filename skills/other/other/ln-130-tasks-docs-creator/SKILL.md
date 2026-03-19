@@ -1,6 +1,6 @@
 ---
 name: ln-130-tasks-docs-creator
-description: Creates task management documentation (docs/tasks/README.md + kanban_board.md). Sets up Linear integration and task tracking rules.
+description: "Creates task management docs (kanban board, workflow rules) with Linear integration. Use when setting up task tracking for a project."
 license: MIT
 ---
 
@@ -397,10 +397,10 @@ docs/
 
 ## Definition of Done
 
-- Phase 1: tasks/README.md created from template (or preserved if exists), placeholders replaced
-- Phase 2: Structure valid — SCOPE tags, required sections, Maintenance, POSIX endings (auto-fixed if needed)
-- Phase 3: Content valid — heuristics pass per questions.md, Linear Configuration set up (if placeholders found)
-- Summary message displayed with auto-fix count and Linear Configuration status
+- [ ] Phase 1: tasks/README.md created from template (or preserved if exists), placeholders replaced
+- [ ] Phase 2: Structure valid — SCOPE tags, required sections, Maintenance, POSIX endings (auto-fixed if needed)
+- [ ] Phase 3: Content valid — heuristics pass per questions.md, Linear Configuration set up (if placeholders found)
+- [ ] Summary message displayed with auto-fix count and Linear Configuration status
 
 ---
 

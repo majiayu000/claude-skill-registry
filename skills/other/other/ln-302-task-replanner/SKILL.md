@@ -1,6 +1,6 @@
 ---
 name: ln-302-task-replanner
-description: Updates ALL task types (implementation/refactoring/test). Compares IDEAL plan vs existing tasks, categorizes KEEP/UPDATE/OBSOLETE/CREATE, applies changes in Linear and kanban.
+description: "Compares ideal plan vs existing tasks and applies KEEP/UPDATE/OBSOLETE/CREATE changes. Use when Story tasks need re-sync with updated requirements."
 license: MIT
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: ln-723-seed-data-generator
-description: "Universal seed data generator: MIGRATE from ORM schemas or GENERATE from entity definitions to any target format"
+description: "Generates seed data from ORM schemas or entity definitions to any target format. Use when populating databases for development."
 license: MIT
 ---
 

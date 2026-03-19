@@ -1,6 +1,6 @@
 ---
 name: ln-626-dead-code-auditor
-description: Checks unreachable code, unused imports/variables/functions, commented-out code, backward compatibility shims, deprecated patterns. Returns findings.
+description: "Checks unreachable code, unused imports/variables/functions, commented-out code, deprecated patterns. Use when auditing dead code."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -139,13 +139,13 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- contextStore parsed (including output_dir)
-- All 4 checks completed (unreachable code, unused imports/vars/functions, commented-out code, legacy shims)
-- Clean code checklist loaded from `shared/references/clean_code_checklist.md`
-- Findings collected with severity, location, effort, recommendation
-- Score calculated per `shared/references/audit_scoring.md`
-- Report written to `{output_dir}/626-dead-code.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] contextStore parsed (including output_dir)
+- [ ] All 4 checks completed (unreachable code, unused imports/vars/functions, commented-out code, legacy shims)
+- [ ] Clean code checklist loaded from `shared/references/clean_code_checklist.md`
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated per `shared/references/audit_scoring.md`
+- [ ] Report written to `{output_dir}/626-dead-code.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ---
 **Version:** 3.0.0

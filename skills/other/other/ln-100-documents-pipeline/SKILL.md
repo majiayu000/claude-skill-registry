@@ -1,6 +1,6 @@
 ---
 name: ln-100-documents-pipeline
-description: "Top orchestrator for complete doc system. Delegates to ln-110 coordinator (project docs) + ln-120-150 workers. Phase 3: global cleanup. Idempotent."
+description: "Creates complete project documentation system (project docs, reference, tasks, tests, presentation). Use when bootstrapping docs from scratch or regenerating all."
 license: MIT
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: ln-700-project-bootstrap
-description: "Universal project bootstrapper: CREATE new or TRANSFORM existing project to production-ready structure"
+description: "Bootstraps projects to production-ready structure. Use when creating new or transforming existing projects."
 license: MIT
 ---
 
@@ -474,6 +474,23 @@ SKIP_TESTS=false
 - `references/stack_detection.md` — Phase 0 detection rules and patterns
 - `references/transformation_plan_template.md` — Phase 1 plan template
 - `references/verification_checklist.md` — Phase 3 verification steps
+
+---
+
+## Definition of Done
+
+- [ ] Tech stack detected (or user-specified for CREATE mode) and plan generated
+- [ ] All L2 coordinators delegated and completed (ln-820 through ln-780)
+- [ ] Bootstrap completeness score 4/6 or higher
+- [ ] Final summary report presented to user
+
+---
+
+## Phase 5: Meta-Analysis
+
+**MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
+
+Skill type: `execution-orchestrator`. Run after all phases complete. Output to chat using the `execution-orchestrator` format.
 
 ---
 

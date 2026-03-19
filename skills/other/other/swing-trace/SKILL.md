@@ -337,7 +337,7 @@ but heavily weighted)
 - Simple factual lookups with clear answers ("What port does Postgres use?")
 - Creative brainstorming where structured reasoning kills ideation (use `swing-options`)
 - When the user wants a quick answer and explicitly says so
-- Exhaustive code/system analysis without a specific claim to trace (use `deep-dive-analyzer`)
+- Exhaustive code/system analysis without a specific claim to trace
 - Stress-testing someone else's reasoning (use `swing-review` -- it attacks; this skill *exposes*)
 - Research requiring external source verification (use `swing-research` for facts; this skill traces *reasoning about* facts)
 
@@ -347,5 +347,3 @@ but heavily weighted)
 - **Before swing-review:** Trace your reasoning first, then stress-test it. The assumption inventory from swing-trace feeds directly into swing-review's attack vectors.
 - **After swing-research:** Research gathers verified facts; swing-trace then makes the *logic connecting those facts to a conclusion* transparent.
 - **With swing-options:** When swing-options generates options, swing-trace can trace why one option was selected over others.
-- **With deep-dive-analyzer:** Deep-dive produces exhaustive understanding; swing-trace adds the "so what" -- why that understanding leads to a specific conclusion.
-- **With skill-composer:** Common pipeline: `swing-research` -> `swing-trace` -> `swing-review` (gather facts -> trace reasoning -> stress-test conclusion).

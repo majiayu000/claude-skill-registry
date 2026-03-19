@@ -193,16 +193,15 @@ Which approach?
 
 **If user chooses "Break it down":**
 ```bash
-# Create subtasks
-bd create --title="Subtask: <part 1>" --type=task --priority=<same>
-bd create --title="Subtask: <part 2>" --type=task --priority=<same>
-
-# Link to parent
-bd dep add <subtask-id> <parent-task-id>
+# Create subtasks under the parent (--parent = containment, not blocking)
+bd create --title="Subtask: <part 1>" --type=task --priority=<same> --parent <parent-task-id>
+bd create --title="Subtask: <part 2>" --type=task --priority=<same> --parent <parent-task-id>
 
 # Unclaim the parent (it's now a container)
 bd update <parent-task-id> --status open
 ```
+
+Note: No `bd dep add` needed — subtasks are children, not blocked. If subtasks have ordering between them (part 2 depends on part 1), add `bd dep add <part-2-id> <part-1-id>` explicitly.
 
 Then ask: "Which subtask should we work on? I'll switch to that task."
 

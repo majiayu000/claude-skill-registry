@@ -1,6 +1,6 @@
 ---
 name: ln-643-api-contract-auditor
-description: "Checks layer leakage in method signatures, missing DTOs, entity leakage to API, inconsistent error contracts. Returns findings with penalty-based scoring."
+description: "Checks layer leakage in method signatures, missing DTOs, entity leakage to API, inconsistent error contracts. Use when auditing API contracts."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -159,15 +159,15 @@ Score: 6.75/10 (C:65 K:70 Q:55 I:80) | Issues: 4 (H:2 M:1 L:1)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- Service boundaries discovered (API, service, domain layers)
-- Method signatures extracted and analyzed
-- All 5 rules checked using detection_patterns.md
-- Scope boundary applied (no duplication with ln-623)
-- 4 scores calculated with justification
-- Issues identified with severity, location, suggestion, effort
-- If domain-aware: findings tagged with domain field
-- Report written to `{output_dir}/643-api-contract[-{domain}].md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] Service boundaries discovered (API, service, domain layers)
+- [ ] Method signatures extracted and analyzed
+- [ ] All 5 rules checked using detection_patterns.md
+- [ ] Scope boundary applied (no duplication with ln-623)
+- [ ] 4 scores calculated with justification
+- [ ] Issues identified with severity, location, suggestion, effort
+- [ ] If domain-aware: findings tagged with domain field
+- [ ] Report written to `{output_dir}/643-api-contract[-{domain}].md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 

@@ -1,6 +1,6 @@
 ---
 name: ln-913-community-debater
-description: "Launch RFC/debate discussions on GitHub: define topic, classify type, compose structured RFC/poll, review, publish via GraphQL"
+description: "Launches RFC and debate discussions on GitHub. Use when proposing changes that need community input or voting."
 license: MIT
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---

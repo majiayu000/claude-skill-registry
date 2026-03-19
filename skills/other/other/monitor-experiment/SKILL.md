@@ -38,17 +38,34 @@ ssh <server> "cat <results_dir>/<latest>.json"
 
 **Skip this step entirely if `wandb` is not set or is `false` in CLAUDE.md.**
 
-Pull training curves and metrics from Weights & Biases:
+Pull training curves and metrics from Weights & Biases via Python API:
 
 ```bash
 # List recent runs in the project
-ssh <server> "wandb api runs <entity>/<project> --limit 10 --json"
+ssh <server> "python3 -c \"
+import wandb
+api = wandb.Api()
+runs = api.runs('<entity>/<project>', per_page=10)
+for r in runs:
+    print(f'{r.id}  {r.state}  {r.name}  {r.summary.get(\"eval/loss\", \"N/A\")}')
+\""
 
-# Pull specific metrics from a run
-ssh <server> "wandb api run <entity>/<project>/<run_id> --json"
+# Pull specific metrics from a run (last 50 steps)
+ssh <server> "python3 -c \"
+import wandb, json
+api = wandb.Api()
+run = api.run('<entity>/<project>/<run_id>')
+history = list(run.scan_history(keys=['train/loss', 'eval/loss', 'eval/ppl', 'train/lr'], page_size=50))
+print(json.dumps(history[-10:], indent=2))
+\""
 
-# Or use the wandb CLI to export CSV
-ssh <server> "wandb export csv <entity>/<project>/<run_id> --keys train/loss,eval/loss,eval/ppl"
+# Pull run summary (final metrics)
+ssh <server> "python3 -c \"
+import wandb, json
+api = wandb.Api()
+run = api.run('<entity>/<project>/<run_id>')
+print(json.dumps(dict(run.summary), indent=2, default=str))
+\""
 ```
 
 **What to extract:**

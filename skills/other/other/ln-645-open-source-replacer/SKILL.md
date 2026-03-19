@@ -1,6 +1,6 @@
 ---
 name: ln-645-open-source-replacer
-description: "Discovers custom modules (>100 LOC), analyzes purpose, searches OSS alternatives via MCP Research, evaluates quality (stars, license, CVE), generates migration plan."
+description: "Discovers custom modules replaceable by OSS, evaluates alternatives (stars, license, CVE), generates migration plan. Use when reducing custom code."
 license: MIT
 ---
 

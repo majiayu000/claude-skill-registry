@@ -1,6 +1,6 @@
 ---
 name: ln-611-docs-structure-auditor
-description: "Checks hierarchy & links, SSOT, proactive compression, requirements compliance, freshness indicators, legacy cleanup, stack adaptation. Returns findings with severity, location, and recommendations."
+description: "Checks hierarchy, links, SSOT, compression, requirements compliance, freshness, legacy cleanup. Use when auditing documentation structure."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -92,12 +92,12 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- contextStore parsed successfully (including output_dir)
-- All 7 structural categories audited
-- Findings collected with severity, location, effort, recommendation
-- Score calculated using penalty algorithm
-- Report written to `{output_dir}/611-structure.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] contextStore parsed successfully (including output_dir)
+- [ ] All 7 structural categories audited
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated using penalty algorithm
+- [ ] Report written to `{output_dir}/611-structure.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 

@@ -1,6 +1,6 @@
 ---
 name: ln-772-error-handler-setup
-description: Configures global exception handling middleware
+description: "Configures global exception handling middleware. Use when adding centralized error handling to .NET or Python backends."
 license: MIT
 ---
 
@@ -214,13 +214,13 @@ app.add_exception_handler(RequestValidationError, validation_exception_handler)
 
 ## Definition of Done
 
-- Context Store received (stack, framework, environment)
-- Error handling patterns researched via MCP tools
-- GlobalExceptionMiddleware generated (.NET) or exception handlers generated (Python)
-- Custom exception classes created (AppException, ValidationException, NotFoundException)
-- Error response model created (ProblemDetails format)
-- Syntax validated (`dotnet build` or `py_compile`)
-- Structured JSON response returned to ln-770 coordinator
+- [ ] Context Store received (stack, framework, environment)
+- [ ] Error handling patterns researched via MCP tools
+- [ ] GlobalExceptionMiddleware generated (.NET) or exception handlers generated (Python)
+- [ ] Custom exception classes created (AppException, ValidationException, NotFoundException)
+- [ ] Error response model created (ProblemDetails format)
+- [ ] Syntax validated (`dotnet build` or `py_compile`)
+- [ ] Structured JSON response returned to ln-770 coordinator
 
 ---
 

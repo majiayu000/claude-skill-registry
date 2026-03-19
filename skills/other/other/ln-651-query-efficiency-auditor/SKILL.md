@@ -1,6 +1,6 @@
 ---
 name: ln-651-query-efficiency-auditor
-description: "Checks redundant fetches, N-UPDATE/DELETE loops, unnecessary resolves, over-fetching, missing bulk operations, wrong caching scope. Returns findings with severity."
+description: "Checks redundant fetches, N+1 loops, over-fetching, missing bulk operations, wrong caching scope. Use when auditing query efficiency."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -188,14 +188,14 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- contextStore parsed successfully (including output_dir)
-- scan_path determined (domain path or codebase root)
-- All 6 checks completed:
+- [ ] contextStore parsed successfully (including output_dir)
+- [ ] scan_path determined (domain path or codebase root)
+- [ ] All 6 checks completed:
   - redundant fetch, N-UPDATE loop, unnecessary resolve, over-fetching, bulk ops, caching scope
-- Findings collected with severity, location, effort, recommendation
-- Score calculated using penalty algorithm
-- Report written to `{output_dir}/651-query-efficiency.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated using penalty algorithm
+- [ ] Report written to `{output_dir}/651-query-efficiency.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 

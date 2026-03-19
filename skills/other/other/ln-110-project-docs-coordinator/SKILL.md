@@ -1,6 +1,6 @@
 ---
 name: ln-110-project-docs-coordinator
-description: Coordinates project documentation creation. Gathers context once, detects project type, delegates to specialized workers (ln-111-115).
+description: "Coordinates project documentation creation with single context gathering and project type detection. Use when generating project docs subset."
 license: MIT
 ---
 
@@ -214,12 +214,12 @@ ln-110-project-docs-coordinator (this skill)
 - **Format Priority:** Tables/ASCII > Lists > Text
 
 ## Definition of Done
-- Context Store built with all discovered data
-- Project type flags determined
-- All applicable workers invoked
-- Results aggregated
-- **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
-- Summary returned to ln-100
+- [ ] Context Store built with all discovered data
+- [ ] Project type flags determined
+- [ ] All applicable workers invoked
+- [ ] Results aggregated
+- [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
+- [ ] Summary returned to ln-100
 
 ## Phase 4: Meta-Analysis
 

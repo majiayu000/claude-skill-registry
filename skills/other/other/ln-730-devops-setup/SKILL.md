@@ -1,6 +1,6 @@
 ---
 name: ln-730-devops-setup
-description: Coordinates Docker, CI/CD, and environment configuration setup via auto-detection
+description: "Sets up Docker, CI/CD, and environment configuration with auto-detection. Use when adding DevOps infrastructure to a project."
 license: MIT
 ---
 
@@ -166,6 +166,14 @@ Generate summary:
 - Worker: `../ln-731-docker-generator/SKILL.md`
 - Worker: `../ln-732-cicd-generator/SKILL.md`
 - Worker: `../ln-733-env-configurator/SKILL.md`
+
+---
+
+## Meta-Analysis
+
+**MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
+
+Skill type: `execution-orchestrator`. Run after all phases complete. Output to chat using the `execution-orchestrator` format.
 
 ---
 

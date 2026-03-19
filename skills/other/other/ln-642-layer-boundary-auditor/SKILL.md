@@ -1,6 +1,6 @@
 ---
 name: ln-642-layer-boundary-auditor
-description: "Audits layer boundaries + cross-layer consistency: I/O violations, transaction boundaries (commit ownership), session ownership (DI vs local)."
+description: "Checks layer boundary violations, transaction boundaries, session ownership, cross-layer consistency. Use when auditing architecture layers."
 license: MIT
 ---
 
@@ -244,16 +244,16 @@ Score: 4.5/10 | Issues: 8 (C:1 H:3 M:4 L:0)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- Architecture discovered from docs/architecture.md (or fallback used)
-- All violation types from layer_rules.md checked
-- **Cross-layer consistency checked:**
+- [ ] Architecture discovered from docs/architecture.md (or fallback used)
+- [ ] All violation types from layer_rules.md checked
+- [ ] **Cross-layer consistency checked:**
   - Transaction boundaries analyzed (commit/rollback distribution)
   - Session ownership analyzed (DI vs local)
-- Coverage calculated for HTTP abstraction + 2 consistency metrics
-- Violations list with severity, location, suggestion
-- If domain-aware: all Grep scoped to scan_path, findings tagged with domain
-- Report written to `{output_dir}/642-layer-boundary[-{domain}].md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] Coverage calculated for HTTP abstraction + 2 consistency metrics
+- [ ] Violations list with severity, location, suggestion
+- [ ] If domain-aware: all Grep scoped to scan_path, findings tagged with domain
+- [ ] Report written to `{output_dir}/642-layer-boundary[-{domain}].md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 

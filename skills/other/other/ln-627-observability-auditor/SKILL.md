@@ -1,6 +1,6 @@
 ---
 name: ln-627-observability-auditor
-description: Checks structured logging, health check endpoints, metrics collection, request tracing, log levels. Returns findings with severity, location, effort, recommendations.
+description: "Checks structured logging, health checks, metrics collection, request tracing, log levels. Use when auditing observability."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -137,12 +137,12 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- contextStore parsed (tech stack, framework, output_dir)
-- All 5 checks completed (structured logging, health endpoints, metrics, request tracing, log levels)
-- Findings collected with severity, location, effort, recommendation
-- Score calculated per `shared/references/audit_scoring.md`
-- Report written to `{output_dir}/627-observability.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] contextStore parsed (tech stack, framework, output_dir)
+- [ ] All 5 checks completed (structured logging, health endpoints, metrics, request tracing, log levels)
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated per `shared/references/audit_scoring.md`
+- [ ] Report written to `{output_dir}/627-observability.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ---
 **Version:** 3.0.0

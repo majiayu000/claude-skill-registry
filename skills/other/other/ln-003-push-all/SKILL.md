@@ -1,6 +1,6 @@
 ---
 name: ln-003-push-all
-description: "Commit and push ALL changes (staged + unstaged + untracked) to the remote repository"
+description: "Commits and pushes all changes (staged, unstaged, untracked) to remote. Use when you need a quick push of everything at once."
 license: MIT
 ---
 
@@ -105,6 +105,14 @@ Discover and run project linters before committing, per ci_tool_detection.md.
 - **Co-Author tag:** Always include `Co-Authored-By` line
 - **No version bumps:** Skip CHANGELOG/version updates unless explicitly requested
 - **Lint before commit:** Always attempt lint discovery; skip gracefully if no config found
+
+---
+
+## Definition of Done
+
+- [ ] All changes staged (untracked + modified)
+- [ ] Commit created with descriptive message
+- [ ] Pushed to remote successfully
 
 ---
 

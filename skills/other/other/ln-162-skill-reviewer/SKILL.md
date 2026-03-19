@@ -1,6 +1,6 @@
 ---
 name: ln-162-skill-reviewer
-description: "Universal skill reviewer: SKILL mode (D1-D9 + M1-M5) or COMMAND mode (.claude/commands review)"
+description: "Reviews skills (D1-D9 + M1-M6 criteria) or .claude/commands for quality. Use when validating skill correctness before release."
 license: MIT
 ---
 
@@ -20,7 +20,7 @@ Universal skill reviewer with two auto-detected modes. Invocable standalone or b
 
 | Condition | Mode | Review Profile |
 |-----------|------|----------------|
-| `ln-*/SKILL.md` files exist in CWD | **SKILL** | Full D1-D9 + M1-M5 |
+| `ln-*/SKILL.md` files exist in CWD | **SKILL** | Full D1-D9 + M1-M6 |
 | `.claude/commands/*.md` files exist | **COMMAND** | Structural + actionability |
 | Both exist | **SKILL** (default) | Override: `$ARGUMENTS = commands` |
 
@@ -40,7 +40,7 @@ When invoked by ln-160 coordinator: receives list of file paths to review in COM
 
 ## SKILL Mode
 
-Review SKILL.md files against 9 structural dimensions + 5 intent checks. Fix in-place. Report with PASS/FAIL verdict.
+Review SKILL.md files against 9 structural dimensions + 6 intent checks. Fix in-place. Report with PASS/FAIL verdict.
 
 ### Phase 1: Scope Detection
 
@@ -69,17 +69,17 @@ Run the automated checks script against all SKILL.md files in scope:
 bash references/run_checks.sh {scoped SKILL.md files}
 ```
 
-Record failures -- they feed D7/D8 as pre-verified violations. Every FAIL is confirmed -- no judgment needed, no skipping. Check definitions: `references/automated_checks_skill_mode.md`.
+Record failures -- they feed D7/D8 as pre-verified violations. Every FAIL is confirmed -- no judgment needed, no skipping. Check definitions: `references/automated_checks.md`.
 
 ### Phase 3: Nine-Dimension Review
 
-**MANDATORY READ:** Load `references/dimensions_d1_d9.md` and `docs/architecture/SKILL_ARCHITECTURE_GUIDE.md`
+**MANDATORY READ:** Load `references/structural_review.md` and `docs/architecture/SKILL_ARCHITECTURE_GUIDE.md`
 
 Read every SKILL.md in scope. Check ALL dimensions across ALL skills. Phase 2 failures are pre-verified -- include directly, do not re-check.
 
 ### Phase 4: Intent Review
 
-**MANDATORY READ:** Load `references/intent_m1_m5.md`
+**MANDATORY READ:** Load `references/intent_review.md`
 
 Evaluate DESIGN INTENT of changes. Applies to primary skills only. For each primary skill, read the git diff (`git diff HEAD -- {skill_dir}/`).
 
@@ -91,6 +91,9 @@ For each finding:
 - **SIMPLIFY** (from Phase 4) with unambiguous action -- fix immediately
 - **REVERT** (from Phase 4) -- roll back the change via Edit
 - **RETHINK** (from Phase 4) -- do NOT fix, pass to Phase 6 report
+
+After all fixes applied:
+- **Holistic compaction:** re-read each primary SKILL.md end-to-end. Apply D5 tiebreaker to whole file -- merge duplicate rules, combine overlapping tables, deduplicate cross-section instructions. Fix as SIMPLIFY.
 
 ### Phase 6: Report
 
@@ -120,6 +123,7 @@ For each finding:
 | Marketplace paths (D8, optional) | {PASS/FAIL/SKIP} | {list or --} |
 | Root docs stale names (D6) | {PASS/FAIL} | {list or --} |
 | Skill count accuracy (D8) | {PASS/FAIL} | {list or --} |
+| Description triggers (D8) | {PASS/WARN} | {list or --} |
 
 ### Fixed ({count})
 | # | Skill | Dim | Issue | Fix Applied |
@@ -139,7 +143,7 @@ For each finding:
 Dimensions with no findings: {list}
 ```
 
-If zero findings: `All 9 structural dimensions + 5 intent checks clean. PASS.`
+If zero findings: `All 9 structural dimensions + 6 intent checks clean. PASS.`
 
 ### Phase 7: Volatile Numbers Cleanup
 
@@ -196,7 +200,7 @@ Pass rate: {X}%
 - Fix errors immediately, do not defer
 - Do NOT update versions or dates unless user explicitly requests it
 - `shared/` changes affect every skill that references them -- check reverse dependencies
-- Intent review (M1-M5) evaluates DESIGN, not correctness -- findings are judgment-based
+- Intent review (M1-M6) evaluates DESIGN, not correctness -- findings are judgment-based (M6 is advisory/NOTE severity)
 - RETHINK findings are advisory -- explain WHY, author decides WHETHER to act
 - REVERT findings are executed immediately -- changes without concrete defect are rolled back
 - SPECULATIVE items (M5) without user response default to REVERT -- no silent acceptance of model-generated additions
@@ -208,8 +212,9 @@ Pass rate: {X}%
 - [ ] Scope detected (primary + affected + dependency skills)
 - [ ] Phase 2 automated checks executed for all skills in scope
 - [ ] D1-D9 dimensions reviewed across all skills
-- [ ] M1-M5 intent evaluated for primary skills
+- [ ] M1-M6 intent evaluated for primary skills
 - [ ] Fixable findings auto-fixed via Edit
+- [ ] Post-fix holistic compaction applied to each primary SKILL.md
 - [ ] Report generated with PASS/PASS with CONCERNS/FAIL verdict
 
 ---

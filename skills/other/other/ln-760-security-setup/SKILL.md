@@ -1,6 +1,6 @@
 ---
 name: ln-760-security-setup
-description: "Coordinates security scanning (secrets + deps). Delegates to ln-761 + ln-625(mode=vulnerabilities_only). Generates SECURITY.md, pre-commit hooks, CI workflow."
+description: "Sets up security scanning for secrets and dependency vulnerabilities. Use when adding security infrastructure to a project."
 license: MIT
 ---
 

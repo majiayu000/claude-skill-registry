@@ -1,6 +1,6 @@
 ---
 name: ln-402-task-reviewer
-description: "Reviews task implementation for quality, code standards, test coverage. Creates [BUG] tasks for side-effect issues. Sets task Done or To Rework. Runs inline from coordinator."
+description: "Reviews task implementation for quality, code standards, and test coverage. Use when task is in To Review. Sets task Done or To Rework."
 license: MIT
 ---
 

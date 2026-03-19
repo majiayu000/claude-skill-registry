@@ -1,6 +1,6 @@
 ---
 name: ln-511-code-quality-checker
-description: "Checks DRY/KISS/YAGNI/architecture compliance with quantitative Code Quality Score. Validates decisions via MCP Ref. Reports with SEC-/PERF-/MNT-/ARCH-/BP-/OPT- prefixes."
+description: "Checks DRY/KISS/YAGNI/architecture compliance with quantitative Code Quality Score. Use when implementation tasks are Done and need quality scoring."
 license: MIT
 ---
 

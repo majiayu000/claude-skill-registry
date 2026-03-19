@@ -1,6 +1,6 @@
 ---
 name: ln-741-linter-configurator
-description: Configures ESLint, Prettier, Ruff, mypy, and .NET analyzers
+description: "Configures ESLint, Prettier, Ruff, mypy, and .NET analyzers. Use when setting up linting and formatting for a project."
 license: MIT
 ---
 
@@ -10,7 +10,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 7XX Project Bootstrap
-**Parent:** ln-740-quality-setup
 
 Configures code linting, formatting, and type checking tools for TypeScript, Python, and .NET projects.
 
@@ -27,8 +26,8 @@ Configures code linting, formatting, and type checking tools for TypeScript, Pyt
 - Verifies all linters run without errors
 
 **Does NOT:**
-- Configure pre-commit hooks (ln-742 does this)
-- Set up test infrastructure (ln-743 does this)
+- Configure pre-commit hooks (separate worker)
+- Set up test infrastructure (separate worker)
 - Modify source code
 
 ---
@@ -59,9 +58,21 @@ Before generating configs, check what already exists.
 | Python | mypy config | `mypy.toml`, `mypy.ini`, `pyproject.toml [tool.mypy]` |
 
 **Decision Logic:**
-1. If config exists and is complete: **SKIP** (inform user)
-2. If config exists but incomplete: **ASK** user to merge or replace
-3. If no config exists: **CREATE** from template
+1. If no config exists: **CREATE** from template
+2. If config exists but incomplete (fewer rules/tools than template): **EXTEND** to match template
+3. If config matches template: **SKIP** (inform user)
+
+**Completeness Check (Python):**
+
+| Aspect | Check | Template Standard |
+|--------|-------|-------------------|
+| Ruff rules | Count `select` entries | 23+ categories (see `ruff_template.toml`) |
+| Ruff per-file-ignores | Tests section exists | `tests/**/*.py` with S101,S105,S106,T201 |
+| Ruff advanced | mccabe, flake8-bugbear, isort | All present |
+| MyPy | `strict = true` | Enabled |
+| Advanced tools | import-linter, deptry, vulture in dev deps | All installed |
+| Lint script | `scripts/lint.sh` with 7 checks | All 7 active |
+| .editorconfig | File exists | Present |
 
 ---
 
@@ -93,6 +104,11 @@ Use templates from references/ folder. Customize placeholders based on project.
    - OR merge into existing `pyproject.toml` under `[tool.mypy]`
 3. Update `known-first-party` in isort config to match project package name
 4. Update `files` in mypy config to match project source directories
+5. Generate advanced tool configs in `pyproject.toml`:
+   - `[tool.importlinter]` from `importlinter_template.toml` -- adapt `root_packages` and contracts to project layer structure
+   - `[tool.vulture]` from `vulture_template.toml` -- adapt `paths` to project source directory
+   - `[tool.deptry]` from `deptry_template.toml` -- adapt `extend_exclude`
+6. Generate `.editorconfig` from `editorconfig_template.ini` -- adapt `max_line_length` to match ruff `line-length`
 
 ---
 
@@ -114,24 +130,32 @@ npm install -D eslint @eslint/js typescript-eslint eslint-config-prettier pretti
 
 **Python:**
 ```
-uv add --dev ruff mypy
+uv add --dev ruff mypy import-linter deptry vulture pip-audit
 ```
 ```
 # OR without uv:
-pip install ruff mypy
+pip install ruff mypy import-linter deptry vulture pip-audit
 ```
 
 ---
 
 ## Phase 4: Generate Lint Script
 
-Generate `scripts/lint.sh` from `lint_script_template.sh` with checks for the detected stack.
+Generate `scripts/lint.sh` from `lint_script_template.sh` with ALL checks for the detected stack.
 
 1. Copy `lint_script_template.sh` to `scripts/lint.sh`
-2. Uncomment the check lines matching the detected stack (Python/TypeScript/.NET)
-3. Set `TOTAL` variable to match the number of active checks
-4. Make file executable: `chmod +x scripts/lint.sh`
-5. For TypeScript: ensure `"lint:all"` script exists in `package.json`
+2. Uncomment ALL check lines matching detected stack -- both basic AND advanced tools:
+
+| Stack | Checks | TOTAL |
+|-------|--------|-------|
+| Python | ruff check, ruff format, mypy, lint-imports, deptry, vulture, pip-audit | 7 |
+| TypeScript | typecheck, eslint, prettier, knip, depcruise | 5 |
+| .NET | dotnet build, dotnet format | 2 |
+
+3. Set `TOTAL` to match active checks count
+4. Uncomment matching auto-fix commands in `--fix` block
+5. Make executable: `chmod +x scripts/lint.sh`
+6. For TypeScript: ensure `"lint:all"` script exists in `package.json`
 
 ---
 
@@ -168,18 +192,15 @@ Expected: Exit code 0 for all checks.
 
 ---
 
-## Phase 6: Optional Advanced Tools
+## Phase 6: Fix Lint Errors
 
-Suggest but do not auto-install. Inform user and add as commented lines in `scripts/lint.sh`.
+After generating all configs and installing tools, run `bash scripts/lint.sh --all` to see all violations.
 
-| Stack | Tool | Purpose | Install |
-|-------|------|---------|---------|
-| TypeScript | dependency-cruiser | Architecture boundary validation | `npm install -D dependency-cruiser` |
-| TypeScript | knip | Unused code/dependency detection | `npm install -D knip` |
-| Python | vulture / deadcode | Dead code detection | `uv add --dev vulture` |
-| Python | import-linter | Circular import prevention | `uv add --dev import-linter` |
-| Python | deptry | Unused/missing dependency detection | `uv add --dev deptry` |
-| .NET | CSharpier | Opinionated formatter (Prettier for C#) | `dotnet tool install csharpier` |
+1. Run `bash scripts/lint.sh --fix` to auto-fix what ruff can
+2. Fix remaining errors manually (file by file)
+3. For C901 (complexity) on functions that cannot be refactored now: add `# noqa: C901`
+4. For deptry false positives: add `[tool.deptry.per_rule_ignores]` entries
+5. Repeat until `bash scripts/lint.sh` passes with 0 failures
 
 ---
 
@@ -197,7 +218,9 @@ Suggest but do not auto-install. Inform user and add as commented lines in `scri
 
 > **RULE 6:** Use `recommendedTypeChecked` as ESLint default, not just `recommended`. Downgrade individual rules if needed.
 
-> **RULE 7:** Never pin dependency versions in install commands — always install latest.
+> **RULE 7:** Never pin dependency versions in install commands -- always install latest.
+
+> **RULE 8:** Advanced static analysis tools (import-linter, deptry, vulture, pip-audit) are MANDATORY for Python projects, not optional.
 
 ---
 
@@ -210,7 +233,10 @@ Suggest but do not auto-install. Inform user and add as commented lines in `scri
 - [ ] Format command runs without errors
 - [ ] Type checker runs without errors (mypy for Python, tsc for TypeScript)
 - [ ] No ESLint/Prettier conflicts (eslint-config-prettier installed)
-- [ ] User informed of available lint/format commands and optional advanced tools
+- [ ] Advanced tools installed and configured (import-linter, deptry, vulture, pip-audit)
+- [ ] `scripts/lint.sh` runs ALL checks (7 for Python) with exit code 0
+- [ ] `.editorconfig` created with settings matching ruff config
+- [ ] User informed of available lint/format commands
 
 ---
 
@@ -225,6 +251,9 @@ Suggest but do not auto-install. Inform user and add as commented lines in `scri
 | [lint_script_template.sh](references/lint_script_template.sh) | Unified lint script template |
 | [editorconfig_template.ini](references/editorconfig_template.ini) | .NET editorconfig template |
 | [directory_build_props_template.xml](references/directory_build_props_template.xml) | .NET analyzers template |
+| [importlinter_template.toml](references/importlinter_template.toml) | Python import-linter config template |
+| [vulture_template.toml](references/vulture_template.toml) | Python vulture config template |
+| [deptry_template.toml](references/deptry_template.toml) | Python deptry config template |
 | [linter_guide.md](references/linter_guide.md) | Detailed configuration guide |
 
 ---
@@ -244,5 +273,5 @@ Suggest but do not auto-install. Inform user and add as commented lines in `scri
 
 ---
 
-**Version:** 3.0.0
-**Last Updated:** 2026-02-26
+**Version:** 4.0.0
+**Last Updated:** 2026-03-18

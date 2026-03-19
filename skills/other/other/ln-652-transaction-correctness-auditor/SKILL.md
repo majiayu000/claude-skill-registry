@@ -1,6 +1,6 @@
 ---
 name: ln-652-transaction-correctness-auditor
-description: "Checks transaction scope, missing rollback handling, long-held transactions, trigger/notify interaction. Returns findings with severity, location, effort."
+description: "Checks transaction scope, missing rollback handling, long-held transactions, trigger/notify interaction. Use when auditing transaction correctness."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---

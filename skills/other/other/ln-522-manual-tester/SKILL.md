@@ -1,6 +1,6 @@
 ---
 name: ln-522-manual-tester
-description: "Performs manual testing of Story AC via executable bash scripts saved to tests/manual/. Creates reusable test suites per Story."
+description: "Performs manual testing of Story AC via executable bash scripts in tests/manual/. Use when Story implementation needs hands-on AC verification."
 license: MIT
 ---
 
@@ -133,17 +133,17 @@ To create expected files:
 - Script must be idempotent (can rerun anytime).
 
 ## Definition of Done
-- `tests/manual/` structure exists (config.sh, README.md, test-all.sh, results/ created if missing).
-- `tests/manual/results/` added to project `.gitignore`.
-- Test script created at `tests/manual/{NN}-{story-slug}/test-{story-slug}.sh`.
-- `expected/` folder created with at least 1 expected file per deterministic AC.
-- Script uses **diff-based validation** against expected files (not heuristics).
-- Script saves results to `tests/manual/results/` for debugging.
-- Script is executable and idempotent.
-- **README.md updated** with new test suite in "Available Test Suites" table.
-- **test-all.sh updated** with call to new script in SUITES array.
-- App rebuilt and running; tests executed.
-- Verdict and Linear comment posted with script path and rerun command.
+- [ ] `tests/manual/` structure exists (config.sh, README.md, test-all.sh, results/ created if missing).
+- [ ] `tests/manual/results/` added to project `.gitignore`.
+- [ ] Test script created at `tests/manual/{NN}-{story-slug}/test-{story-slug}.sh`.
+- [ ] `expected/` folder created with at least 1 expected file per deterministic AC.
+- [ ] Script uses **diff-based validation** against expected files (not heuristics).
+- [ ] Script saves results to `tests/manual/results/` for debugging.
+- [ ] Script is executable and idempotent.
+- [ ] **README.md updated** with new test suite in "Available Test Suites" table.
+- [ ] **test-all.sh updated** with call to new script in SUITES array.
+- [ ] App rebuilt and running; tests executed.
+- [ ] Verdict and Linear comment posted with script path and rerun command.
 
 ## Script Templates
 

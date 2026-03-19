@@ -1,6 +1,6 @@
 ---
 name: swing-review
-description: Devil's Advocate stress-testing for code, architecture, PRs, and decisions. Surfaces hidden flaws through structured adversarial analysis with metacognitive depth. Use for high-stakes review, stress-testing choices, or when the user wants problems found deliberately. NOT for routine code review (use engineering:code-review). Triggers on "스트레스 테스트", "stress test", "devil's advocate", "반론", "이거 괜찮아", "문제 없을까", "깊은 리뷰", "critical review", "adversarial".
+description: Devil's Advocate stress-testing for code, architecture, PRs, and decisions. Surfaces hidden flaws through structured adversarial analysis with metacognitive depth. Use for high-stakes review, stress-testing choices, or when the user wants problems found deliberately. NOT for routine code review. Triggers on "스트레스 테스트", "stress test", "devil's advocate", "반론", "이거 괜찮아", "문제 없을까", "깊은 리뷰", "critical review", "adversarial".
 argument-hint: "[code/decision/PR to stress-test]"
 allowed-tools: Read, Grep, Glob, Bash, Agent
 ---
@@ -269,7 +269,7 @@ When reviewing pull requests:
 - Trivial changes (typos, formatting)
 - When exploration is needed first (use `swing-research`)
 - When generating alternatives (use `swing-options`)
-- When you need neutral, exhaustive analysis without a verdict (use `deep-dive-analyzer` — it understands; this skill *challenges*)
+- When you need neutral, exhaustive analysis without a verdict
 - Personal preferences or subjective design choices
 
 ## Integration Notes
@@ -277,5 +277,4 @@ When reviewing pull requests:
 - **With swing-clarify:** Run swing-clarify first on ambiguous requests before invoking this skill. Clarified scope produces better results.
 - **With swing-options:** After adversarial review reveals problems, use swing-options to generate alternative approaches
 - **With swing-research:** Use research to verify claims made during review (e.g., "is this really a security risk?"). For a full-rigor workflow: `swing-research` → `swing-review`
-- **With deep-dive-analyzer:** For understanding before challenging: `deep-dive-analyzer` (understand) → `swing-review` (challenge). This skill focuses on finding flaws; deep-dive focuses on neutral exhaustive analysis.
 - **With orchestrator strategy team:** Complements the strategy team's Devil's Advocate agent with structured methodology

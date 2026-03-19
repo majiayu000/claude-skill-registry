@@ -1,6 +1,6 @@
 ---
 name: ln-775-api-docs-generator
-description: Configures Swagger/OpenAPI documentation
+description: "Configures Swagger/OpenAPI documentation for backend APIs. Use when adding interactive API docs to a project."
 license: MIT
 ---
 
@@ -256,13 +256,13 @@ security = HTTPBearer()
 
 ## Definition of Done
 
-- Context Store received (stack, project root)
-- API structure analyzed (controllers/routers, auth method, versioning)
-- Documentation standards researched via MCP tools
-- Swagger/OpenAPI configuration generated with API info and security scheme
-- XML comments enabled (.NET) or custom OpenAPI schema configured (Python)
-- Syntax validated (`dotnet build` or `py_compile`)
-- Structured JSON response returned to ln-770 coordinator
+- [ ] Context Store received (stack, project root)
+- [ ] API structure analyzed (controllers/routers, auth method, versioning)
+- [ ] Documentation standards researched via MCP tools
+- [ ] Swagger/OpenAPI configuration generated with API info and security scheme
+- [ ] XML comments enabled (.NET) or custom OpenAPI schema configured (Python)
+- [ ] Syntax validated (`dotnet build` or `py_compile`)
+- [ ] Structured JSON response returned to ln-770 coordinator
 
 ---
 

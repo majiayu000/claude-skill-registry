@@ -1,6 +1,6 @@
 ---
 name: ln-002-best-practices-researcher
-description: Research best practices via MCP Ref/Context7/WebSearch and create documentation (guide/manual/ADR/research). Single research, multiple output types.
+description: "Researches best practices and creates documentation (guide, manual, ADR, or research). Use when project needs standards-based documentation for a topic."
 license: MIT
 ---
 

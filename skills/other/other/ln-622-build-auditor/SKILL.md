@@ -1,6 +1,6 @@
 ---
 name: ln-622-build-auditor
-description: Checks compiler/linter errors, deprecation warnings, type errors, failed tests, build config issues. Returns findings with severity, location, effort, recommendations.
+description: "Checks compiler/linter errors, deprecation warnings, type errors, failed tests, build config issues. Use when auditing build health."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---

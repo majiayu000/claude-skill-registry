@@ -1,6 +1,6 @@
 ---
 name: ln-628-concurrency-auditor
-description: "Checks async races, thread safety, TOCTOU, deadlocks, blocking I/O, resource contention, cross-process races. Two-layer detection: grep + agent reasoning."
+description: "Checks async races, thread safety, TOCTOU, deadlocks, blocking I/O, resource contention. Use when auditing concurrency safety."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -267,14 +267,14 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- contextStore parsed (language, concurrency model, output_dir)
-- All 7 checks completed with two-layer detection:
+- [ ] contextStore parsed (language, concurrency model, output_dir)
+- [ ] All 7 checks completed with two-layer detection:
   - async races, thread safety, TOCTOU, deadlock potential, blocking I/O, resource contention, cross-process races
-- Layer 2 reasoning applied to each candidate (confirmed / FP / needs-context)
-- Findings collected with severity, location, effort, recommendation
-- Score calculated per `shared/references/audit_scoring.md`
-- Report written to `{output_dir}/628-concurrency.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] Layer 2 reasoning applied to each candidate (confirmed / FP / needs-context)
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated per `shared/references/audit_scoring.md`
+- [ ] Report written to `{output_dir}/628-concurrency.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 

@@ -1,0 +1,17 @@
+{
+  "name": "reset",
+  "repo": "oprogramadorreal/optimus-claude",
+  "path": "skills/reset/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/oprogramadorreal/optimus-claude",
+  "dir_name": "reset-oprogramadorreal-optimus-claude",
+  "downloaded_at": "2026-03-19T01:36:16.798227Z",
+  "author": "oprogramadorreal",
+  "source_url": "https://github.com/oprogramadorreal/optimus-claude/blob/master/skills/reset/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oprogramadorreal/optimus-claude/blob/master/skills/reset/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,6 +1,6 @@
 ---
 name: ln-300-task-coordinator
-description: Orchestrates task operations. Analyzes Story, builds optimal plan (1-8 implementation tasks), delegates to ln-301-task-creator (CREATE/ADD) or ln-302-task-replanner (REPLAN). Auto-discovers team ID.
+description: "Analyzes Story and builds optimal task plan (1-8 tasks), then routes to create or replan. Use when Story needs task breakdown or replanning."
 license: MIT
 ---
 
@@ -166,13 +166,13 @@ Mark each as in_progress when starting, completed when done.
 - Language preservation: keep Story language (EN/RU) in any generated content by workers.
 
 ## Definition of Done (orchestrator)
-- Team ID discovered; storyId resolved (per input_resolution_pattern.md).
-- Story loaded; IDEAL plan built (1-8 implementation tasks only) with Foundation-First order and guide links.
-- **NO test or refactoring tasks** in IDEAL plan (only taskType=implementation).
-- Existing tasks counted; mode selected (CREATE/ADD/REPLAN or ask).
-- Worker invoked with correct payload and autoApprove=true.
-- Worker summary received (Linear URLs/operations) and kanban update confirmed.
-- Next steps returned (ln-310-multi-agent-validator, then orchestrator continues).
+- [ ] Team ID discovered; storyId resolved (per input_resolution_pattern.md)
+- [ ] Story loaded; IDEAL plan built (1-8 implementation tasks only) with Foundation-First order and guide links
+- [ ] NO test or refactoring tasks in IDEAL plan (only taskType=implementation)
+- [ ] Existing tasks counted; mode selected (CREATE/ADD/REPLAN or ask)
+- [ ] Worker invoked with correct payload and autoApprove=true
+- [ ] Worker summary received (Linear URLs/operations) and kanban update confirmed
+- [ ] Next steps returned to user
 
 ## Meta-Analysis
 

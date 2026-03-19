@@ -1,6 +1,6 @@
 ---
 name: ln-610-docs-auditor
-description: "Coordinates 4 documentation audit workers (structure, semantic, fact-check, code comments). Delegates parallel audits, aggregates into docs/project/docs_audit.md."
+description: "Coordinates documentation audit across structure, semantic content, fact-checking, and code comments. Use when auditing all project documentation."
 allowed-tools: Read, Grep, Glob, Bash, Skill
 license: MIT
 ---
@@ -243,15 +243,15 @@ Delete the dated output directory (`docs/project/.audit/ln-610/{YYYY-MM-DD}/`). 
 
 ## Definition of Done
 
-- Project metadata discovered (tech stack, doc list)
-- contextStore built with output_dir = `docs/project/.audit/ln-610/{YYYY-MM-DD}`
-- Output directory created for worker reports
-- All 4 workers invoked and completed
-- Worker reports aggregated: 4 category scores + overall
-- Context Validation applied to all findings
-- Consolidated report written to `docs/project/docs_audit.md`
-- Results log row appended to `docs/project/.audit/results_log.md`
-- Worker output directory cleaned up after consolidation
+- [ ] Project metadata discovered (tech stack, doc list)
+- [ ] contextStore built with output_dir = `docs/project/.audit/ln-610/{YYYY-MM-DD}`
+- [ ] Output directory created for worker reports
+- [ ] All 4 workers invoked and completed
+- [ ] Worker reports aggregated: 4 category scores + overall
+- [ ] Context Validation applied to all findings
+- [ ] Consolidated report written to `docs/project/docs_audit.md`
+- [ ] Results log row appended to `docs/project/.audit/results_log.md`
+- [ ] Worker output directory cleaned up after consolidation
 
 ## Phase 10: Meta-Analysis
 

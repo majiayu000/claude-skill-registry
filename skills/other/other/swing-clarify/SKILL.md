@@ -2,6 +2,7 @@
 name: swing-clarify
 description: Prevents premature execution on ambiguous requests. Analyzes request clarity using 5W1H decomposition, surfaces hidden assumptions, and generates structured clarifying questions before work begins. Use at the start of any non-trivial task, or when a request could be interpreted multiple ways. Triggers on "뭘 원하는건지", "요구사항 정리", "clarify", "what exactly", "scope", "requirements", "정확히 뭘", "before we start".
 argument-hint: "[request or task description to clarify]"
+allowed-tools: Read, Grep, Glob, Bash
 ---
 
 # Scope Clarifier

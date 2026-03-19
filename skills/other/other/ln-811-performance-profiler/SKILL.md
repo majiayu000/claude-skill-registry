@@ -1,6 +1,6 @@
 ---
 name: ln-811-performance-profiler
-description: "Runtime profiling with multi-metric measurement, instrumentation, and performance map generation"
+description: "Profiles runtime performance with CPU, memory, and I/O metrics. Use when measuring bottlenecks before optimization."
 license: MIT
 ---
 

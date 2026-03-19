@@ -1,6 +1,6 @@
 ---
 name: ln-722-backend-generator
-description: Generates .NET Clean Architecture backend structure from entity definitions
+description: "Generates .NET Clean Architecture backend structure from entity definitions. Use when bootstrapping .NET backend projects."
 license: MIT
 ---
 

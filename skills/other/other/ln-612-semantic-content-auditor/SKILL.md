@@ -1,6 +1,6 @@
 ---
 name: ln-612-semantic-content-auditor
-description: "Audits document semantic content against stated SCOPE and project goals. Checks coverage, off-topic content, SSOT. File-based report with scope_alignment score."
+description: "Checks document semantic content against SCOPE and project goals, coverage gaps, off-topic content, SSOT. Use when auditing documentation relevance."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -123,12 +123,12 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- Document read completely
-- SCOPE extracted or inferred
-- Content-scope alignment analyzed (OFF_TOPIC, MISSING_COVERAGE, SCOPE_CREEP, SSOT_VIOLATION)
-- Score calculated using penalty algorithm
-- Report written to `{output_dir}/612-semantic-{doc-slug}.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] Document read completely
+- [ ] SCOPE extracted or inferred
+- [ ] Content-scope alignment analyzed (OFF_TOPIC, MISSING_COVERAGE, SCOPE_CREEP, SSOT_VIOLATION)
+- [ ] Score calculated using penalty algorithm
+- [ ] Report written to `{output_dir}/612-semantic-{doc-slug}.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 

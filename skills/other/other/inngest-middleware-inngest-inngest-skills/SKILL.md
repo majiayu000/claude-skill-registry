@@ -9,6 +9,8 @@ Master Inngest middleware to handle cross-cutting concerns like logging, error t
 
 > **These skills are focused on TypeScript.** For Python or Go, refer to the [Inngest documentation](https://www.inngest.com/llms.txt) for language-specific guidance. Core concepts apply across all languages.
 
+> **Note:** The middleware system was significantly rewritten in v4. The lifecycle hooks documented here reflect the v4 API. If migrating from v3, consult the [migration guide](https://www.inngest.com/docs-markdown/reference/typescript/v4/migrations/v3-to-v4) for details on breaking changes.
+
 ## What is Middleware?
 
 Middleware allows code to run at various points in an Inngest client's lifecycle - during function execution, event sending, and more. Think of middleware as hooks into the Inngest execution pipeline.
@@ -42,9 +44,9 @@ inngest.createFunction(
     middleware: [
       authMiddleware, // Runs 3rd
       metricsMiddleware // Runs 4th
-    ]
+    ],
+    triggers: [{ event: "test" }]
   },
-  { event: "test" },
   async () => {
     /* function code */
   }
@@ -145,8 +147,7 @@ const inngest = new Inngest({
 
 // Functions automatically get injected dependencies
 inngest.createFunction(
-  { id: "ai-summary" },
-  { event: "document/uploaded" },
+  { id: "ai-summary", triggers: [{ event: "document/uploaded" }] },
   async ({ event, openai, db }) => {
     // Dependencies available in function context
     const summary = await openai.chat.completions.create({
@@ -179,7 +180,7 @@ const inngest = new Inngest({
   id: "my-app",
   middleware: [
     encryptionMiddleware({
-      key: process.env.ENCRYPTION_KEY,
+      key: process.env.ENCRYPTION_KEY
     })
   ]
 });
@@ -197,7 +198,9 @@ npm install @inngest/middleware-sentry
 import * as Sentry from "@sentry/node";
 import { sentryMiddleware } from "@inngest/middleware-sentry";
 
-Sentry.init({ /* your Sentry config */ });
+Sentry.init({
+  /* your Sentry config */
+});
 
 const inngest = new Inngest({
   id: "my-app",

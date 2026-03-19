@@ -31,9 +31,9 @@ Master Inngest flow control mechanisms to manage resources, prevent overloading 
 inngest.createFunction(
   {
     id: "process-images",
-    concurrency: 5
+    concurrency: 5,
+    triggers: [{ event: "media/image.uploaded" }]
   },
-  { event: "media/image.uploaded" },
   async ({ event, step }) => {
     // Only 5 steps can execute simultaneously
     await step.run("resize", () => resizeImage(event.data.imageUrl));
@@ -54,9 +54,9 @@ inngest.createFunction(
         key: "event.data.user_id",
         limit: 1
       }
-    ]
+    ],
+    triggers: [{ event: "user/profile.updated" }]
   },
-  { event: "user/profile.updated" },
   async ({ event, step }) => {
     // Only 1 step per user can execute at once
     // Prevents race conditions in user-specific operations
@@ -76,9 +76,9 @@ inngest.createFunction(
         key: `"openai"`,
         limit: 60
       }
-    ]
+    ],
+    triggers: [{ event: "ai/summary.requested" }]
   },
-  { event: "ai/summary.requested" },
   async ({ event, step }) => {
     // Share 60 concurrent OpenAI calls across all functions
   }
@@ -106,9 +106,9 @@ inngest.createFunction(
       period: "60s", // per minute
       burst: 5, // plus 5 immediate bursts
       key: "event.data.customer_id" // per customer
-    }
+    },
+    triggers: [{ event: "crm/contact.updated" }]
   },
-  { event: "crm/contact.updated" },
   async ({ event, step }) => {
     // Respects CRM API rate limits: 10 calls/min per customer
     await step.run("sync", () => crmApi.updateContact(event.data));
@@ -137,9 +137,9 @@ inngest.createFunction(
       limit: 1,
       period: "4h",
       key: "event.data.webhook_id"
-    }
+    },
+    triggers: [{ event: "webhook/data.received" }]
   },
-  { event: "webhook/data.received" },
   async ({ event, step }) => {
     // Process each webhook only once per 4 hours
     // Prevents duplicate webhook spam
@@ -165,9 +165,9 @@ inngest.createFunction(
       period: "5m", // Wait 5min after last edit
       key: "event.data.document_id",
       timeout: "30m" // Force save after 30min max
-    }
+    },
+    triggers: [{ event: "document/content.changed" }]
   },
-  { event: "document/content.changed" },
   async ({ event, step }) => {
     // Saves document only after user stops editing
     // Uses the LAST event received
@@ -193,9 +193,9 @@ inngest.createFunction(
     priority: {
       // VIP users get priority up to 120 seconds ahead
       run: "event.data.user_tier == 'vip' ? 120 : 0"
-    }
+    },
+    triggers: [{ event: "order/placed" }]
   },
-  { event: "order/placed" },
   async ({ event, step }) => {
     // VIP orders jump ahead in the queue
   }
@@ -214,9 +214,9 @@ inngest.createFunction(
         event.data.severity == 'high' ? 120 :
         event.data.user_plan == 'enterprise' ? 60 : 0
       `
-    }
+    },
+    triggers: [{ event: "support/ticket.created" }]
   },
-  { event: "support/ticket.created" },
   async ({ event, step }) => {
     // Critical tickets get highest priority (300s ahead)
     // High severity: 120s ahead
@@ -239,9 +239,9 @@ inngest.createFunction(
     singleton: {
       key: "event.data.database_id",
       mode: "skip"
-    }
+    },
+    triggers: [{ event: "backup/requested" }]
   },
-  { event: "backup/requested" },
   async ({ event, step }) => {
     // Skip new backups if one is already running for this database
     await step.run("backup", () => performBackup(event.data.database_id));
@@ -258,9 +258,9 @@ inngest.createFunction(
     singleton: {
       key: "event.data.user_id",
       mode: "cancel"
-    }
+    },
+    triggers: [{ event: "user/data.changed" }]
   },
-  { event: "user/data.changed" },
   async ({ event, step }) => {
     // Cancel previous sync and start with latest data
     await step.run("sync", () => syncUserData(event.data));
@@ -282,9 +282,9 @@ inngest.createFunction(
       // `key` groups events into separate batches per unique value
       // This is different from expressions `if` which filters events
       key: "event.data.campaign_id" // Batch per campaign
-    }
+    },
+    triggers: [{ event: "email/send.queued" }]
   },
-  { event: "email/send.queued" },
   async ({ events, step }) => {
     // Process array of events together
     const emails = events.map((evt) => ({
@@ -322,9 +322,9 @@ inngest.createFunction(
     // VIP users get priority
     priority: {
       run: "event.data.plan == 'pro' ? 60 : 0"
-    }
+    },
+    triggers: [{ event: "ai/image.generate" }]
   },
-  { event: "ai/image.generate" },
   async ({ event, step }) => {
     // Combines multiple flow controls for optimal resource usage
   }

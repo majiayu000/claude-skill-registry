@@ -1,6 +1,6 @@
 ---
 name: ln-813-optimization-plan-validator
-description: "Validates optimization plan via parallel multi-agent review (Codex + Gemini) before execution. GO/NO-GO verdict."
+description: "Validates optimization plan via multi-agent review before execution. Use when verifying feasibility of optimization hypotheses."
 license: MIT
 ---
 
@@ -204,6 +204,7 @@ Return verdict to coordinator. On NO_GO: coordinator presents issues to user.
 - [ ] Both agents launched (or SKIPPED if unavailable)
 - [ ] Own feasibility check completed (files exist, no conflicts, evidence backing)
 - [ ] Agent results merged and debated
+- [ ] Agent process trees verified dead after results collection (Phase 4)
 - [ ] Corrections applied to context.md
 - [ ] Verdict issued (GO / GO_WITH_CONCERNS / NO_GO)
 - [ ] Review summary saved to `.agent-review/review_history.md`

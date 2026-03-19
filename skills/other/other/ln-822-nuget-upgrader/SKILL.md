@@ -1,6 +1,6 @@
 ---
 name: ln-822-nuget-upgrader
-description: Upgrades .NET NuGet packages with breaking change handling
+description: "Upgrades .NET NuGet packages with breaking change handling. Use when updating .NET dependencies."
 license: MIT
 ---
 
@@ -234,13 +234,13 @@ Options:
 
 ## Definition of Done
 
-- All .csproj files discovered (via solution or recursive scan)
-- Security audit completed (`dotnet list package --vulnerable`)
-- Outdated packages identified via dotnet-outdated
-- Breaking changes detected via breaking_changes_patterns.md and MCP tools
-- Upgrades applied in priority order (SDK > Framework > EF Core > other)
-- `dotnet restore`, `dotnet build`, `dotnet test` all pass
-- Report returned with projects updated, upgrades applied, and build/test status
+- [ ] All .csproj files discovered (via solution or recursive scan)
+- [ ] Security audit completed (`dotnet list package --vulnerable`)
+- [ ] Outdated packages identified via dotnet-outdated
+- [ ] Breaking changes detected via breaking_changes_patterns.md and MCP tools
+- [ ] Upgrades applied in priority order (SDK > Framework > EF Core > other)
+- [ ] `dotnet restore`, `dotnet build`, `dotnet test` all pass
+- [ ] Report returned with projects updated, upgrades applied, and build/test status
 
 ---
 

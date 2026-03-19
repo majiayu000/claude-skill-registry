@@ -1,6 +1,6 @@
 ---
 name: ln-512-tech-debt-cleaner
-description: "Applies safe auto-fixes for low-risk audit findings (unused imports, dead code, commented-out code). Confidence >=90% only. Creates single commit with summary."
+description: "Auto-fixes low-risk tech debt (unused imports, dead code, commented-out code) with >=90% confidence. Use when audit findings need safe automated cleanup."
 license: MIT
 ---
 
@@ -155,14 +155,14 @@ commit_sha: "abc1234" | null
 
 ## Definition of Done
 
-- Audit report loaded and parsed
-- Findings filtered to auto-fixable categories
-- Each finding verified with confidence >=90%
-- Fixes applied bottom-up per file
-- Build integrity verified (lint + type check) or skipped with warning
-- Single commit created with structured message (or all reverted on build failure)
-- Audit report updated with "Last Automated Cleanup" section
-- Output YAML returned to caller
+- [ ] Audit report loaded and parsed
+- [ ] Findings filtered to auto-fixable categories
+- [ ] Each finding verified with confidence >=90%
+- [ ] Fixes applied bottom-up per file
+- [ ] Build integrity verified (lint + type check) or skipped with warning
+- [ ] Single commit created with structured message (or all reverted on build failure)
+- [ ] Audit report updated with "Last Automated Cleanup" section
+- [ ] Output YAML returned to caller
 
 ## Reference Files
 

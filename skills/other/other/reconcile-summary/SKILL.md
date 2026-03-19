@@ -172,19 +172,23 @@ bd close <task-id> --reason="Obsoleted by implementation of <task-id>. <brief ex
 
 **If a task needs new dependencies:**
 ```bash
+# Execution-order dependency (task can't start until dependency finishes)
+# For parent-child containment, use: bd update <task-id> --parent <epic-id>
 bd dep add <task-id> <new-dependency-id>
 ```
 
 **If scope expanded and needs splitting:**
 ```bash
-bd create --title="<split-off work>" --type=task --priority=2
+bd create --title="<split-off work>" --type=task --priority=2 --parent <parent-epic-id>
+# Execution dependency on original — only if the split genuinely depends on it
 bd dep add <new-task-id> <original-task-id>
 ```
 
 **If implementation discovered new required work:**
 ```bash
-bd create --title="<discovered work>" --type=task --priority=2
-# Add appropriate dependencies
+bd create --title="<discovered work>" --type=task --priority=2 --parent <epic-id>
+# Add execution-order dependencies only if genuinely blocked:
+# bd dep add <new-task-id> <blocker-task-id>
 ```
 
 ## 6. Sync Changes

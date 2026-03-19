@@ -1,6 +1,6 @@
 ---
 name: ln-733-env-configurator
-description: Configures environment variables and secrets protection
+description: "Configures environment variables and secrets protection. Use when setting up .env files and gitignore rules for a project."
 license: MIT
 ---
 
@@ -10,7 +10,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 7XX Project Bootstrap
-**Parent:** ln-730-devops-setup
 
 Configures environment variables for development and production environments.
 
@@ -164,6 +163,14 @@ Generated files must:
 | [env_development.template](references/env_development.template) | Development defaults |
 | [env_production.template](references/env_production.template) | Production placeholders |
 | [gitignore_secrets.template](references/gitignore_secrets.template) | .gitignore additions |
+
+---
+
+## Definition of Done
+
+- [ ] .env.example, .env.development, .env.production generated
+- [ ] No real secrets or passwords in any generated file
+- [ ] .gitignore updated with secrets protection patterns
 
 ---
 

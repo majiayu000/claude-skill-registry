@@ -1,6 +1,6 @@
 ---
 name: ln-644-dependency-graph-auditor
-description: "Builds dependency graph, detects cycles (DFS), validates boundary rules, calculates coupling metrics (Ca/Ce/I, CCD/NCCD). Adaptive architecture detection."
+description: "Builds dependency graph, detects cycles, validates boundary rules, calculates coupling metrics (Ca/Ce/I). Use when auditing dependency structure."
 license: MIT
 ---
 
@@ -390,17 +390,17 @@ Score: 6.5/10 | Issues: 8 (C:1 H:3 M:3 L:1)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- Architecture discovered (adaptive 3-tier detection applied)
-- Dependency graph built from import statements (internal modules only)
-- Circular dependencies detected (pairwise + transitive DFS + folder-level)
-- Boundary rules validated (forbidden + allowed + required)
-- Metrics calculated (Ca, Ce, I per module + CCD, NCCD aggregate)
-- SDP validated (stable modules not depending on unstable)
-- Baseline applied if exists (only new violations reported)
-- If domain-aware: all Grep/Glob scoped to scan_path, findings tagged with domain
-- Score calculated per audit_scoring.md
-- Report written to `{output_dir}/644-dep-graph[-{domain}].md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] Architecture discovered (adaptive 3-tier detection applied)
+- [ ] Dependency graph built from import statements (internal modules only)
+- [ ] Circular dependencies detected (pairwise + transitive DFS + folder-level)
+- [ ] Boundary rules validated (forbidden + allowed + required)
+- [ ] Metrics calculated (Ca, Ce, I per module + CCD, NCCD aggregate)
+- [ ] SDP validated (stable modules not depending on unstable)
+- [ ] Baseline applied if exists (only new violations reported)
+- [ ] If domain-aware: all Grep/Glob scoped to scan_path, findings tagged with domain
+- [ ] Score calculated per audit_scoring.md
+- [ ] Report written to `{output_dir}/644-dep-graph[-{domain}].md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 

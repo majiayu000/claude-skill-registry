@@ -1,6 +1,6 @@
 ---
 name: ln-629-lifecycle-auditor
-description: Checks bootstrap initialization order, graceful shutdown, resource cleanup, signal handling, liveness/readiness probes. Returns findings.
+description: "Checks bootstrap initialization, graceful shutdown, resource cleanup, signal handling, liveness/readiness probes. Use when auditing app lifecycle."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -138,12 +138,12 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- contextStore parsed (deployment type, output_dir)
-- All 5 checks completed (bootstrap order, graceful shutdown, resource cleanup, signal handling, probes)
-- Findings collected with severity, location, effort, recommendation
-- Score calculated per `shared/references/audit_scoring.md`
-- Report written to `{output_dir}/629-lifecycle.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] contextStore parsed (deployment type, output_dir)
+- [ ] All 5 checks completed (bootstrap order, graceful shutdown, resource cleanup, signal handling, probes)
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated per `shared/references/audit_scoring.md`
+- [ ] Report written to `{output_dir}/629-lifecycle.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ---
 **Version:** 3.0.0

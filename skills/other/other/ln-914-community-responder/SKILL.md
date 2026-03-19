@@ -1,6 +1,6 @@
 ---
 name: ln-914-community-responder
-description: "Respond to GitHub discussions and issues: analyze context, search codebase for answers, compose and publish replies"
+description: "Responds to unanswered GitHub discussions and issues with codebase-informed replies. Use when clearing community question backlog."
 license: MIT
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---

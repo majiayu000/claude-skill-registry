@@ -1,6 +1,6 @@
 ---
 name: ln-210-epic-coordinator
-description: "CREATE/REPLAN Epics from scope (3-7 Epics). Batch Preview + Auto-extraction. Decompose-First Pattern. Auto-discovers team ID."
+description: "Creates or replans 3-7 Epics from scope using Decompose-First pattern. Use when initiative needs Epic-level breakdown or Epic scope changed."
 license: MIT
 ---
 

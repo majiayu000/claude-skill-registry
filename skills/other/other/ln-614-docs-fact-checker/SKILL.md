@@ -1,6 +1,6 @@
 ---
 name: ln-614-docs-fact-checker
-description: "Extracts verifiable claims from ALL .md files (paths, versions, counts, configs, names, endpoints), verifies each against codebase, cross-checks between documents for contradictions."
+description: "Verifies claims in .md files (paths, versions, counts, configs, endpoints) against codebase, cross-checks contradictions. Use when auditing docs accuracy."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -181,15 +181,15 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- contextStore parsed successfully (including output_dir)
-- All `.md` files discovered (broad scope)
-- Claims extracted across 9 types
-- Each claim verified against codebase with evidence
-- Cross-document consistency checked
-- False positives filtered via Layer 2 reasoning
-- Score calculated using penalty algorithm
-- Report written to `{output_dir}/614-fact-checker.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] contextStore parsed successfully (including output_dir)
+- [ ] All `.md` files discovered (broad scope)
+- [ ] Claims extracted across 9 types
+- [ ] Each claim verified against codebase with evidence
+- [ ] Cross-document consistency checked
+- [ ] False positives filtered via Layer 2 reasoning
+- [ ] Score calculated using penalty algorithm
+- [ ] Report written to `{output_dir}/614-fact-checker.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 

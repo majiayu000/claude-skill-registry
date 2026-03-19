@@ -1,6 +1,6 @@
 ---
 name: ln-832-bundle-optimizer
-description: "Reduces JS/TS bundle size via unused deps, tree-shaking, code splitting with keep/discard"
+description: "Reduces JS/TS bundle size via tree-shaking, code splitting, and unused dependency removal. Use when optimizing frontend bundle size."
 license: MIT
 ---
 
@@ -187,12 +187,12 @@ Options:
 
 ## Definition of Done
 
-- JS/TS project confirmed (package.json present)
-- Baseline bundle size measured (build + measure dist/)
-- Unused deps identified via depcheck
-- Each optimization applied with keep/discard: build passes + smaller → keep
-- Compound: each kept optimization updates baseline for next
-- Report returned with baseline, final, reduction%, per-optimization details
+- [ ] JS/TS project confirmed (package.json present)
+- [ ] Baseline bundle size measured (build + measure dist/)
+- [ ] Unused deps identified via depcheck
+- [ ] Each optimization applied with keep/discard: build passes + smaller → keep
+- [ ] Compound: each kept optimization updates baseline for next
+- [ ] Report returned with baseline, final, reduction%, per-optimization details
 
 ---
 

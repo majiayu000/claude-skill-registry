@@ -262,18 +262,11 @@ To create a skill, follow the "Skill Creation Process" in order, skipping steps 
 
 Skip this step only when the skill's usage patterns are already clearly understood. It remains valuable even when working with an existing skill.
 
-To create an effective skill, clearly understand concrete examples of how the skill will be used. This understanding can come from either direct user examples or generated examples that are validated with user feedback.
+To create an effective skill, clearly understand concrete examples of how the skill will be used. Conduct a structured interview using the protocol in `references/interview-protocol.md`, which provides 6 required questions, probing follow-ups, and explicit pushback rules for when answers are too vague.
 
-For example, when building an image-editor skill, relevant questions include:
+The most important question: **What does Claude get wrong today without this skill?** If Claude already handles the task well, the skill is not worth building. Every failure mode surfaced becomes a gotcha entry -- the highest-signal content any skill can contain.
 
-- "What functionality should the image-editor skill support? Editing, rotating, anything else?"
-- "Can you give some examples of how this skill would be used?"
-- "I can imagine users asking for things like 'Remove the red-eye from this image' or 'Rotate this image'. Are there other ways you imagine this skill being used?"
-- "What would a user say that should trigger this skill?"
-
-To avoid overwhelming users, avoid asking too many questions in a single message. Start with the most important questions and follow up as needed for better effectiveness.
-
-Conclude this step when there is a clear sense of the functionality the skill should support.
+To avoid overwhelming users, ask questions one at a time, starting with the most important. Conclude this step when you have concrete use cases, a failure mode inventory, and verifiable success criteria (see exit criteria in `references/interview-protocol.md`).
 
 ### Step 2: Planning the Reusable Skill Contents
 
@@ -298,6 +291,22 @@ Example: When building a `big-query` skill to handle queries like "How many user
 2. A `references/schema.md` file documenting the table schemas would be helpful to store in the skill
 
 To establish the skill's contents, analyze each concrete example to create a list of the reusable resources to include: scripts, references, and assets.
+
+#### Category Identification
+
+Identify which of the 9 skill categories this skill belongs to (see `references/skill-categories.md` for the full taxonomy with examples and structural guidance):
+
+1. Library & API Reference
+2. Product Verification
+3. Data Fetching & Analysis
+4. Code Scaffolding & Templates
+5. Code Quality & Review
+6. CI/CD & Deployment
+7. Runbooks
+8. Business Process & Team Automation
+9. Infrastructure Operations
+
+Present the categories and ask the user to confirm. The best skills fit cleanly into one category. If the skill straddles two, flag it -- it may need to be split. The category informs the skill's structural pattern and eval strategy.
 
 ### Step 3: Initializing the Skill
 
@@ -452,6 +461,8 @@ Before writing evals, identify which category the skill falls into—this determ
 - **Capability uplift**: Helps Claude do something it cannot consistently do without the skill (e.g., fill PDF forms, generate specific file formats). Eval strategy: compare outputs with and without the skill.
 - **Encoded preference**: Sequences workflow steps Claude can already do, but encodes specific preferences or domain knowledge (e.g., coding style guide, brand voice). Eval strategy: compare outputs against a human-reviewed gold standard.
 
+For category-specific eval strategies (how to evaluate Library/API skills differently from Runbooks or Verification skills), see `references/skill-categories.md`.
+
 #### Writing Evals
 
 Create `evals/evals.json` in the skill directory with 2-5 realistic test prompts:
@@ -602,6 +613,8 @@ After testing the skill, users may request improvements. Often this happens righ
 3. Identify how SKILL.md or bundled resources should be updated
 4. Implement changes and test again
 
+For skills that need per-user configuration, persistent memory, session-scoped hooks, or usage analytics, see `references/advanced-patterns.md`.
+
 ## Sharing Skills
 
 Skills can be distributed at different scopes:
@@ -609,6 +622,8 @@ Skills can be distributed at different scopes:
 - **Project skills**: Commit `.claude/skills/` to version control
 - **Plugins**: Create a `skills/` directory in your [plugin](https://code.claude.com/docs/en/plugins)
 - **Managed**: Deploy organization-wide through [managed settings](https://code.claude.com/docs/en/iam#managed-settings)
+
+For guidance on when to use each tier, organic skill promotion (personal -> project -> plugin -> managed), and portfolio hygiene (context budgets, curation, the ~40 agent ceiling), see `references/distribution-strategy.md`.
 
 ## Troubleshooting
 

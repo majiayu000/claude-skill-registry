@@ -1,6 +1,6 @@
 ---
 name: ln-625-dependencies-auditor
-description: "Checks outdated packages, unused deps, reinvented wheels, vulnerability scan (CVE/CVSS). Supports mode: full | vulnerabilities_only."
+description: "Checks outdated packages, unused deps, reinvented wheels, CVE/CVSS vulnerability scan. Use when auditing dependencies."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -184,12 +184,12 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- contextStore parsed (including mode parameter and output_dir)
-- All applicable checks completed (5 for full, 1 for vulnerabilities_only)
-- Findings collected with severity, location, effort, fix_type, recommendation
-- Score calculated per `shared/references/audit_scoring.md`
-- Report written to `{output_dir}/625-dependencies.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] contextStore parsed (including mode parameter and output_dir)
+- [ ] All applicable checks completed (5 for full, 1 for vulnerabilities_only)
+- [ ] Findings collected with severity, location, effort, fix_type, recommendation
+- [ ] Score calculated per `shared/references/audit_scoring.md`
+- [ ] Report written to `{output_dir}/625-dependencies.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ---
 **Version:** 4.0.0

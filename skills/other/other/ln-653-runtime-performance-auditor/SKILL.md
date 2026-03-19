@@ -1,6 +1,6 @@
 ---
 name: ln-653-runtime-performance-auditor
-description: "Checks blocking IO in async, unnecessary allocations, sync sleep, string concat in loops, missing to_thread, redundant copies. Returns findings with severity and effort."
+description: "Checks blocking IO in async, unnecessary allocations, sync sleep, string concat in loops, redundant copies. Use when auditing runtime performance."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -187,15 +187,15 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- contextStore parsed successfully (including output_dir)
-- scan_path determined
-- Async framework detected (asyncio/Node.js async/Tokio)
-- All 6 checks completed:
+- [ ] contextStore parsed successfully (including output_dir)
+- [ ] scan_path determined
+- [ ] Async framework detected (asyncio/Node.js async/Tokio)
+- [ ] All 6 checks completed:
   - blocking IO, unnecessary allocations, sync sleep, string concat, CPU-bound, redundant copies
-- Findings collected with severity, location, effort, recommendation
-- Score calculated using penalty algorithm
-- Report written to `{output_dir}/653-runtime-performance.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated using penalty algorithm
+- [ ] Report written to `{output_dir}/653-runtime-performance.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 

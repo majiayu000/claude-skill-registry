@@ -1,6 +1,6 @@
 ---
 name: ln-774-healthcheck-setup
-description: Configures health check endpoints for Kubernetes readiness/liveness/startup
+description: "Configures health check endpoints for Kubernetes readiness/liveness/startup probes. Use when deploying to Kubernetes."
 license: MIT
 ---
 
@@ -272,12 +272,12 @@ startupProbe:
 
 ## Definition of Done
 
-- Context Store received (stack, project root)
-- Dependencies detected (PostgreSQL, MySQL, Redis, RabbitMQ, MongoDB)
-- Health check endpoints generated (live, ready, startup) for detected stack
-- Kubernetes probe manifest snippet generated with proper timing parameters
-- Syntax validated (`dotnet build` or `py_compile`)
-- Structured JSON response returned to ln-770 coordinator
+- [ ] Context Store received (stack, project root)
+- [ ] Dependencies detected (PostgreSQL, MySQL, Redis, RabbitMQ, MongoDB)
+- [ ] Health check endpoints generated (live, ready, startup) for detected stack
+- [ ] Kubernetes probe manifest snippet generated with proper timing parameters
+- [ ] Syntax validated (`dotnet build` or `py_compile`)
+- [ ] Structured JSON response returned to ln-770 coordinator
 
 ---
 

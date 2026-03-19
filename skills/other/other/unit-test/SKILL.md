@@ -1,15 +1,15 @@
 ---
-description: Improves unit test coverage on demand — discovers testing gaps, provisions test infrastructure, and generates tests that follow project conventions. Conservative: only adds new test files, never refactors existing source code.
+description: Improves unit test coverage on demand — discovers testing gaps and generates tests that follow project conventions. Requires /optimus:init to have set up test infrastructure first. Conservative: only adds new test files, never refactors existing source code.
 disable-model-invocation: true
 ---
 
 # Unit Test Coverage Improvement
 
-Improve unit test coverage for existing code. Conservative by design — only adds new test files, never refactors or restructures existing source code. If code is untestable as-is, it flags it rather than changing it. Refactoring is the domain of `/optimus:simplify`.
+Improve unit test coverage for existing code. Requires `/optimus:init` to have set up test infrastructure (framework, coverage tooling, test-guardian agent, testing docs) first. Conservative by design — only adds new test files, never refactors or restructures existing source code. If code is untestable as-is, it flags it rather than changing it. Refactoring is the domain of `/optimus:simplify`.
 
 ## Step 1: Pre-flight
 
-Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/multi-repo-detection.md` for workspace detection. If a multi-repo workspace is detected, process each repo independently: run Steps 1–8 inside each repo that has `.claude/CLAUDE.md`. Report results per repo. If no repos have been initialized, suggest running `/optimus:init` first from the workspace root.
+Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/multi-repo-detection.md` for workspace detection. If a multi-repo workspace is detected, process each repo independently: run Steps 1–6 inside each repo that has `.claude/CLAUDE.md`. Report results per repo. If no repos have been initialized, suggest running `/optimus:init` first from the workspace root.
 
 Check that `.claude/CLAUDE.md` exists. If it doesn't, stop and recommend running `/optimus:init` first — the project needs baseline context before test generation can be effective.
 
@@ -25,7 +25,7 @@ Beyond the init check, identify which guideline documents are available — they
 
 The skill operates differently depending on what exists:
 - **All three docs** — matches existing conventions precisely
-- **CLAUDE.md + coding-guidelines (no testing.md)** — derives conventions from the codebase, creates testing.md in Step 4
+- **CLAUDE.md + coding-guidelines (no testing.md)** — derives conventions from the codebase
 - **CLAUDE.md only (no guidelines either)** — still works, but with less project-specific guidance
 
 ### Scope
@@ -42,7 +42,6 @@ For each subproject (or the single project), scan for:
 - **Test framework** — configuration files and manifest dependencies (jest, vitest, mocha, pytest, junit, xunit, rspec, gtest, etc.)
 - **Test runner commands** — from `testing.md`, `CLAUDE.md`, `package.json` scripts, `Makefile`, `Cargo.toml`, etc.
 - **Coverage tooling** — whether coverage measurement is already configured and available
-- **Optimus infrastructure status** — does `.claude/agents/test-guardian.md` exist? does `.claude/docs/testing.md` exist? does `.claude/CLAUDE.md` reference testing?
 
 **Exclude git submodules:** Skip directories containing a `.git` *file* (not directory) — these are submodules pointing to external repositories and should not be scanned for test targets or test files.
 
@@ -57,66 +56,17 @@ Present a summary table to the user:
 | Test files found | [N] files |
 | Test runner command | [command] / Not found |
 | Coverage tooling | [tool name] / Not configured |
-| test-guardian agent | Installed / Missing |
-| testing.md | Present / Missing |
-| CLAUDE.md test refs | Present / Missing |
 ```
 
-## Step 3: Framework and Coverage Tooling Installation (conditional)
+**If no test framework is detected**, stop and report: "No test framework found. Run `/optimus:init` (or re-run it) to install a test framework and set up test infrastructure before using this skill." Do not proceed to test generation without a working framework.
 
-### Subprojects without a test framework
-
-Analyze the tech stack and recommend the most popular framework with appropriate coverage tooling. Consult `$CLAUDE_PLUGIN_ROOT/skills/unit-test/references/framework-recommendations.md` for stack-specific recommendations. For unsupported stacks, read `$CLAUDE_PLUGIN_ROOT/skills/init/references/unsupported-stack-fallback.md` and apply its command validation and approval rules. These are starting points — analyze the actual project to decide. Ask for **explicit user approval** before installing anything.
-
-If installation fails (network issues, version conflicts, incompatible environments), report the error to the user and stop — do not proceed to test generation without a working framework.
-
-### Subprojects with framework but without coverage tooling
-
-Detect this gap separately and recommend installing coverage tooling. Coverage measurement is essential for the skill to report meaningful results and set achievable targets. Ask for explicit user approval.
-
-### Coverage report tooling
-
-If the installed coverage tool only generates machine-readable output (XML, JSON) without a built-in human-readable report, install a report generator alongside it. Consult the "Report Tool" column in `$CLAUDE_PLUGIN_ROOT/skills/unit-test/references/framework-recommendations.md`. Ask for explicit user approval. Include the report command in `testing.md` and `CLAUDE.md` coverage sections.
-
-## Step 4: Optimus Infrastructure Provisioning
-
-This phase runs **regardless** of whether Step 3 installed anything — test infrastructure may have been added manually after `/optimus:init` ran. When init ran on a project without test infrastructure, it correctly skipped test-guardian, testing.md, and CLAUDE.md testing references. Now that test infrastructure exists (pre-existing or just installed), this skill provisions what init would have created.
-
-### 4a: Test-guardian agent
-
-If `.claude/agents/test-guardian.md` doesn't exist, copy from `$CLAUDE_PLUGIN_ROOT/skills/init/templates/agents/test-guardian.md`. This is the same verbatim copy that init does — do not modify the template.
-
-### 4b: Testing documentation
-
-If `.claude/docs/testing.md` doesn't exist, create it using `$CLAUDE_PLUGIN_ROOT/skills/init/templates/docs/testing.md` as the skeleton. Fill in all placeholders with actual project details discovered in Steps 2-3 (framework name, test commands, directory structure, conventions from existing test files). Don't leave any `[placeholder]` text.
-
-If `.claude/docs/testing.md` already exists, review it for accuracy. Propose updates if outdated — especially if a new framework was just installed in Step 3. Ask user approval before modifying.
-
-### 4c: CLAUDE.md testing references
-
-If `.claude/CLAUDE.md` doesn't reference testing, add test commands and a testing.md reference. Keep within init's compact ~60-line style — add to existing sections rather than creating new ones.
-
-### 4d: Monorepo subprojects
-
-For monorepos, update subproject-level `CLAUDE.md` files too. Each subproject should reference its own `docs/testing.md` and test commands.
-
-### 4e: README testing section
-
-If `README.md` exists at the project root and doesn't already have a testing section (scan for headings containing "test", case-insensitive), append a concise section with: test command, coverage command (if configured), and test project/directory location. Match the README's existing heading level, language, and formatting style. Use `.claude/docs/testing.md` as the source of truth for commands and paths — do not duplicate its full content. Keep the section to 5-10 lines.
-
-For monorepos, update each subproject's `README.md` too if it exists and lacks a testing section.
-
-### 4f: Gitignore test artifacts
-
-If `.gitignore` exists and doesn't already ignore the test output directory (e.g., `TestResults/` for .NET, `htmlcov/` for Python, `coverage/` for Node.js), append the appropriate entry. One line, matching the file's existing style.
-
-## Step 5: Coverage Analysis and Achievable Threshold Estimation
+## Step 3: Coverage Analysis and Achievable Threshold Estimation
 
 Before writing any tests:
 
-1. **Run existing test suite.** Distinguish between failure types:
-   - **Build/bootstrap failure** (test runner cannot start, or test files fail to compile — broken imports, missing polyfills, deprecated paths in setup files like `src/test.ts`, `jest.config.*`, `conftest.py`, or compilation errors in `.spec`/`.test` files due to renamed/removed APIs) — these are build-level issues, not test logic. Report the specific errors, ask the user for approval to fix them, and re-run. Apply minimal changes: update import paths, fix type references, adjust mocks to match current signatures. If the fix requires more than build-level corrections, stop and report.
-   - **Test assertion failures** (tests compile and run, but some fail) — stop and report. A clean baseline is required before adding new tests. Report failing tests in the Step 8 "Bugs Discovered" section.
+1. **Run existing test suite.** If tests fail:
+   - **Test assertion failures** (tests compile and run, but some fail) — stop and report. A clean baseline is required before adding new tests. Report failing tests in the Step 6 "Bugs Discovered" section.
+   - **Build/bootstrap failures** — stop and report. Test infrastructure should have been verified by `/optimus:init`. Recommend re-running `/optimus:init` to fix build-level issues.
 
 2. **Measure baseline coverage:**
    - If coverage tooling is available → run coverage and record baseline numbers
@@ -141,7 +91,7 @@ repository pattern extraction, etc.) — that's the domain of /optimus:simplify.
 
 This sets clear expectations and reinforces the conservative constraint.
 
-## Step 6: Test Generation Plan
+## Step 4: Test Generation Plan
 
 Create a prioritized list, **capped at 10 items per run**:
 
@@ -165,7 +115,7 @@ Present the plan, then use `AskUserQuestion` — header "Plan", question "How wo
 
 If the user selects **Selective**, ask which item numbers to proceed with (e.g., "1, 3, 5").
 
-## Step 7: Test Writing
+## Step 5: Test Writing
 
 ### Quality standards
 
@@ -204,15 +154,12 @@ For each approved item:
 
 After all tests are written, run the **full test suite** to ensure no regressions. Follow the verification protocol from `$CLAUDE_PLUGIN_ROOT/skills/init/references/verification-protocol.md` — run tests fresh, read complete output, and report actual results with evidence before claiming success.
 
-## Step 8: Summary
+## Step 6: Summary
 
 Report to the user:
 
 ```
 ## Unit Test Summary
-
-### Infrastructure Provisioned
-- [List of: test-guardian agent, testing.md, CLAUDE.md updates, README testing section — or "None needed"]
 
 ### Coverage
 - Coverage tooling: [tool name / not configured]

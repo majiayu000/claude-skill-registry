@@ -37,7 +37,7 @@ Locate the test runner command from `testing.md`, `CLAUDE.md`, or project manife
 
 - **Tests pass** — proceed to Step 2 (Suitability Analysis)
 - **Tests fail** — stop and report. Existing failures must be resolved before TDD can begin (a failing suite makes Red/Green indistinguishable)
-- **No test runner found** — stop and recommend running `/optimus:unit-test` first to provision test infrastructure (framework, runner, coverage tooling, `testing.md`)
+- **No test runner found** — stop and recommend running `/optimus:init` first to set up test infrastructure (framework, runner, coverage tooling, `testing.md`)
 
 ### Check quality agents (optional)
 

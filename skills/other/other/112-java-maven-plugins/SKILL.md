@@ -1,6 +1,6 @@
 ---
 name: 112-java-maven-plugins
-description: Use when you need to add or configure Maven plugins in your pom.xml — including quality tools (enforcer, surefire, failsafe, jacoco, pitest, spotbugs, pmd), security scanning (OWASP), code formatting (Spotless), version management, build information tracking, and benchmarking (JMH) — through a consultative, modular step-by-step approach that only adds what you actually need. Part of the skills-for-java project
+description: Use when you need to add or configure Maven plugins in your pom.xml — including quality tools (enforcer, surefire, failsafe, jacoco, pitest, spotbugs, pmd), security scanning (OWASP), code formatting (Spotless), version management, container image build (Jib), build information tracking, and benchmarking (JMH) — through a consultative, modular step-by-step approach that only adds what you actually need. Part of the skills-for-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -12,13 +12,28 @@ Configure Maven plugins and profiles in pom.xml using a structured, question-dri
 
 **What is covered in this Skill?**
 
-- Existing configuration analysis and preservation, Maven Wrapper verification
-- Project assessment questions: project nature, Java version, build and quality aspects
-- Properties configuration, Maven Enforcer, Surefire, Failsafe, HTML test reports
-- JaCoCo coverage, PiTest mutation testing, OWASP security scanning
-- SpotBugs/PMD static analysis, SonarQube/SonarCloud
-- Spotless code formatting, Versions plugin, Git Commit ID, Flatten plugin
-- JMH benchmarking, Maven Compiler, cyclomatic complexity analysis
+Maven plugins:
+
+- Maven Compiler
+- Maven Enforcer
+- Maven Surefire
+- Maven Failsafe
+- HTML test reports (Surefire Report, JXR)
+- Maven Spotless
+- Maven Flatten
+- Maven Versions
+- Maven Git Commit ID
+- Maven Jib
+
+Maven profiles:
+
+- JaCoCo (code coverage)
+- PiTest (mutation testing)
+- Security (OWASP dependency check)
+- Static analysis (SpotBugs, PMD)
+- SonarQube/SonarCloud
+- JMH (Java Microbenchmark Harness)
+- Cyclomatic complexity
 
 ## Constraints
 

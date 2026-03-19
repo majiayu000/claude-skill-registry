@@ -1,6 +1,6 @@
 ---
 name: ln-1000-pipeline-orchestrator
-description: "Meta-orchestrator: reads kanban board, lets user pick ONE Story, drives it through pipeline 300->310->400->500 via TeamCreate. Creates worktree isolation; coordinates workers + reports."
+description: "Drives a Story through full pipeline (tasks, validation, execution, quality). Use when executing a Story end-to-end from kanban board."
 license: MIT
 ---
 
@@ -660,18 +660,16 @@ When invoked in Plan Mode, show available Stories and ask user which one to plan
 
 Pipeline-level verification. Per-stage verifications are in `phase4_handlers.md` VERIFY blocks.
 
-| # | Criterion | Verified By | Scope |
-|---|-----------|-------------|-------|
-| 1 | User selected Story | `selected_story_id` is set | Always |
-| 2 | Business questions resolved | `business_answers` stored OR skip | Always |
-| 3 | Team created + operated | team exists in state | Always |
-| 4 | Story processed to terminal state | `story_state[id] IN ("DONE", "PAUSED")` | Always |
-| 5 | Per-stage verifications passed | All VERIFY blocks passed (phase4_handlers.md) | DONE only |
-| 6 | Pipeline report generated | Report file exists at `docs/tasks/reports/` | Always |
-| 7 | Pipeline summary shown to user | Phase 5 table output | Always |
-| 8 | Team cleaned up | TeamDelete called | Always |
-| 9 | Worktree status communicated | DONE: cleaned by ln-500. PAUSED: saved + cleaned by lead | Always |
-| 10 | Meta-Analysis run | Phase 6 completed, appended to pipeline report | Always |
+- [ ] User selected Story (`selected_story_id` is set)
+- [ ] Business questions resolved (`business_answers` stored OR skip)
+- [ ] Team created + operated (team exists in state)
+- [ ] Story processed to terminal state (`story_state[id] IN ("DONE", "PAUSED")`)
+- [ ] Per-stage verifications passed (All VERIFY blocks passed — DONE only)
+- [ ] Pipeline report generated (file exists at `docs/tasks/reports/`)
+- [ ] Pipeline summary shown to user (Phase 5 table output)
+- [ ] Team cleaned up (TeamDelete called)
+- [ ] Worktree status communicated
+- [ ] Meta-Analysis run (Phase 6 completed, appended to pipeline report)
 
 ## Phase 6: Meta-Analysis
 

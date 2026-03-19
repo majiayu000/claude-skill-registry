@@ -1,6 +1,6 @@
 ---
 name: ln-120-reference-docs-creator
-description: Creates reference documentation structure + smart documents (ADRs/Guides/Manuals) based on TECH_STACK. Only creates justified documents (nontrivial technology choices).
+description: "Creates reference docs (ADRs, guides, manuals) for nontrivial tech stack choices. Use when project needs justified architecture decision records."
 license: MIT
 ---
 
@@ -504,6 +504,12 @@ Before completing work, verify ALL checkpoints:
 - [ ] Phase 2 logged: smart creation (created/skipped counts)
 - [ ] Phase 3 logged: structural fixes (if any)
 - [ ] Phase 4 logged: content updates (if any)
+
+## Meta-Analysis
+
+**MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
+
+Skill type: `documentation-creator`. Run after all phases complete. Output to chat using the `documentation-creator` format.
 
 ---
 

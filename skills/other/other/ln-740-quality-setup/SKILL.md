@@ -1,6 +1,6 @@
 ---
 name: ln-740-quality-setup
-description: Coordinates linters, pre-commit hooks, and test infrastructure setup
+description: "Sets up linters, pre-commit hooks, and test infrastructure. Use when adding code quality tooling to a project."
 license: MIT
 ---
 
@@ -90,10 +90,11 @@ Before delegating, check what configurations already exist.
 
 | Existing Config | Action | Confirmation |
 |-----------------|--------|--------------|
-| None found | Create new | No |
-| Partial found | Merge (add missing) | Ask user |
-| Complete found | Skip | Inform user |
-| User requests replace | Backup + replace | Yes |
+| None found | Create from template | No |
+| Exists but incomplete | Extend to match template | No |
+| Exists and matches template | Skip | Inform user |
+
+**Completeness Check (Python):** evaluate against ln-741's Completeness Check table (7 aspects: Ruff rules, per-file-ignores, advanced settings, MyPy strict, advanced tools, lint script, editorconfig). If ANY aspect is incomplete, delegate to ln-741 with instruction to EXTEND (not replace).
 
 ---
 
@@ -122,7 +123,7 @@ ln-740 (this)
               - pytest (Python)
 ```
 
-Pass detected stack and existing configs to workers via direct Skill tool invocation.
+Pass detected stack and existing configs to workers via direct Skill tool invocation. For Python: instruct ln-741 to apply full quality stack per its Completeness Check table.
 
 ---
 
@@ -132,12 +133,18 @@ After all workers complete, verify the quality pipeline works.
 
 **Verification Steps:**
 
-| Check | Command | Expected |
-|-------|---------|----------|
-| Lint runs | `npm run lint` / `ruff check .` / `dotnet format --verify-no-changes` | No errors |
-| Format runs | `npm run format:check` / `ruff format --check` | No changes needed |
-| Tests run | `npm test` / `pytest` / `dotnet test` | Sample tests pass |
-| Hooks work | Create test commit | Hooks trigger |
+| Check | TypeScript | Python | .NET |
+|-------|-----------|--------|------|
+| Lint | ESLint | `ruff check` | `dotnet format --verify-no-changes` |
+| Format | Prettier | `ruff format --check` | dotnet format |
+| Type check | `tsc --noEmit` | `mypy` | Roslyn (build) |
+| Import boundaries | depcruise | `lint-imports` | -- |
+| Unused deps | knip | `deptry` | -- |
+| Dead code | knip | `vulture` | -- |
+| Vulnerability scan | `npm audit` | `pip-audit` | -- |
+| Unified script | `bash scripts/lint.sh` | `bash scripts/lint.sh` | `bash scripts/lint.sh` |
+| Tests | `npm test` | `pytest` | `dotnet test` |
+| Hooks | Create test commit | Create test commit | Create test commit |
 
 **On Failure:**
 1. Log specific failure
@@ -170,6 +177,14 @@ After all workers complete, verify the quality pipeline works.
 
 ---
 
+## Phase 5: Meta-Analysis
+
+**MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
+
+Evaluate quality setup results using `domain-coordinator` type metrics. Report worker effectiveness and any gaps.
+
+---
+
 ## Reference Files
 
 | File | Purpose |
@@ -190,5 +205,5 @@ After all workers complete, verify the quality pipeline works.
 
 ---
 
-**Version:** 2.0.0
-**Last Updated:** 2026-01-10
+**Version:** 3.0.0
+**Last Updated:** 2026-03-18

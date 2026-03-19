@@ -1,6 +1,6 @@
 ---
 name: ln-200-scope-decomposer
-description: "Orchestrates full decomposition (scope → Epics → Stories → RICE prioritization) by delegating ln-210 → ln-220 → ln-230. Sequential processing. Epic 0 for Infrastructure."
+description: "Decomposes scope into Epics, Stories, and RICE priorities. Use when user has project scope and wants full Agile breakdown."
 license: MIT
 ---
 
@@ -219,7 +219,7 @@ Skill(skill: "ln-230-story-prioritizer", args: "epic=\"Epic N\"")
 **Objective:** Provide complete decomposition overview.
 
 ```
-🔄 [ORCHESTRATOR] Phase 4: Full decomposition complete
+🔄 [ORCHESTRATOR] Phase 5: Full decomposition complete
 
 Initiative Decomposition Summary:
 - Epics created: N Projects (Epic 0: Infrastructure [if exists], Epic 1-N: Business domains)
@@ -227,7 +227,7 @@ Initiative Decomposition Summary:
 - Location: docs/tasks/kanban_board.md
 
 Next Steps:
-1. Run ln-310-story-validator to validate all Stories
+1. Run ln-310-multi-agent-validator to validate all Stories
 2. Use ln-400-story-executor to process each Story (tasks → execution → Done)
    OR use ln-300-task-coordinator to create tasks manually for each Story
 ```
@@ -238,30 +238,7 @@ Next Steps:
 
 ## Critical Rules
 
-### 1. Pure Orchestrator Pattern
-
-**Orchestrator responsibilities:**
-- ✅ Discovery (Team ID)
-- ✅ Routing decisions (which coordinator to invoke, when)
-- ✅ Sequential loop management (Epic 0 → Epic 1 → ... → Epic N)
-- ✅ Summary aggregation (count Epics, Stories)
-
-**Coordinator responsibilities** (NOT orchestrator):
-- ❌ Research project docs → ln-210
-- ❌ Auto-extract Epic/Story info → ln-210/ln-220
-- ❌ Generate Epic/Story documents → ln-210/ln-220
-- ❌ Create Linear issues → ln-210/ln-220
-- ❌ User interaction (confirmations) → ln-210/ln-220
-
-### 2. Sequential Story Decomposition
-
-**HARD RULE:** Epic N Stories MUST complete before Epic N+1 starts.
-
-**Rationale:** ln-220 includes user interaction (Story preview confirmation). Interactive dialog cannot be parallelized.
-
-**Example:** 6 Epics → 6 sequential ln-220 invocations (Epic 0 → Epic 1 → ... → Epic 5)
-
-### 3. No User Prompts at Orchestrator Level
+### 1. No User Prompts at Orchestrator Level
 
 **Orchestrator does NOT prompt user:**
 - ❌ NO "Proceed with decomposition?" confirmation (redundant - coordinators already confirm)
@@ -272,14 +249,6 @@ Next Steps:
 - ln-210 Phase 2: Domain approval (USER CONTROL POINT 1)
 - ln-210 Phase 5a: Epic batch preview (USER CONTROL POINT 2)
 - ln-220 Phase 4a: Story preview per Epic (USER CONTROL POINT 3, N times)
-
-### 4. Epic 0 for Infrastructure
-
-**Reserved number:** Epic 0 is reserved for Infrastructure Epic.
-
-**Decision point:** ln-210-epic-coordinator Phase 1 Step 3 automatically determines if Infrastructure Epic needed.
-
-**Numbering:** Epic 0 (if Infrastructure), Epic 1-N (business domains)
 
 ---
 
@@ -331,7 +300,7 @@ Users directly: "Decompose initiative: [initiative name]" or "Create epics and s
 ### Downstream
 
 After ln-200-scope-decomposer completes:
-- **ln-310-story-validator** - validates all created Stories before task creation
+- **ln-310-multi-agent-validator** - validates all created Stories before task creation
 - **ln-400-story-executor** - processes each Story (tasks → execution → Done)
   - OR **ln-300-task-coordinator** - creates tasks manually for each Story
 
@@ -339,33 +308,11 @@ After ln-200-scope-decomposer completes:
 
 ## Best Practices
 
-### Orchestrator Responsibilities
-
-**DO:**
-- ✅ Auto-discover Team ID
-- ✅ Delegate to coordinators
-- ✅ Manage sequential loop (Epic 0 → Epic 1 → ... → Epic N)
-- ✅ Aggregate summary (count Epics, Stories)
-
-**DON'T:**
-- ❌ Research project docs (ln-210 does this)
-- ❌ Generate documents (coordinators do this)
-- ❌ Create Linear issues (coordinators do this)
-- ❌ Prompt user (coordinators handle all interaction)
-
 ### Coordinator Trust
 
 **Trust coordinator results:** Coordinators return summary, orchestrator doesn't re-verify.
 
 **Error handling:** If coordinator returns error, report to user and stop pipeline.
-
-### Sequential Processing
-
-**Epic creation first:** Phase 2 creates ALL Epics before Phase 3 starts (ensures Epic IDs available).
-
-**Story creation sequential:** Phase 3 processes Epics one-by-one (Epic N Stories → Epic N+1 Stories).
-
-**Rationale:** User interaction in ln-220 requires sequential processing (cannot parallelize confirmations).
 
 ### Time Estimates
 
@@ -424,13 +371,19 @@ After ln-200-scope-decomposer completes:
    - Location: docs/tasks/kanban_board.md
 
    Next Steps:
-   1. Run ln-310-story-validator to validate all Stories
+   1. Run ln-310-multi-agent-validator to validate all Stories
    2. Use ln-400-story-executor to process each Story (tasks → execution → Done)
    ```
 
 **Result:** 6 Epics + 36 Stories created through full pipeline automation
 
 ---
+
+## Phase 6: Meta-Analysis
+
+**MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
+
+Skill type: `planning-coordinator`. Run after all phases complete. Output to chat using the `planning-coordinator` format.
 
 ## Reference Files
 

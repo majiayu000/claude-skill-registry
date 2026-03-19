@@ -1,6 +1,6 @@
 ---
 name: ln-810-performance-optimizer
-description: "Multi-cycle diagnostic pipeline: profile → research → optimize → repeat with full-stack bottleneck analysis"
+description: "Multi-cycle performance optimization with profiling and bottleneck analysis. Use when optimizing application performance."
 license: MIT
 ---
 

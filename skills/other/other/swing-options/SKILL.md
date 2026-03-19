@@ -1,12 +1,15 @@
 ---
 name: swing-options
-description: Generate probability-weighted alternative options that challenge default thinking. Forces unconventional alternatives and exposes hidden assumptions behind the "obvious" choice. For decision-point analysis, NOT full design exploration (use brainstorming for that). Triggers on "대안", "alternatives", "옵션 뽑아", "options", "어떤 방법이", "아이디어", "다른 방법", "선택지".
+description: Generate probability-weighted alternative options that challenge default thinking. Forces unconventional alternatives and exposes hidden assumptions behind the "obvious" choice. For decision-point analysis, NOT full design exploration. Triggers on "대안", "alternatives", "옵션 뽑아", "options", "어떤 방법이", "아이디어", "다른 방법", "선택지".
 argument-hint: "[decision or question to explore]"
+allowed-tools: Read, Grep, Glob, Bash, WebSearch, WebFetch, Agent
 ---
 
 # Creativity Sampler
 
 Probability-weighted option generator that fights typicality bias and surfaces unconventional alternatives. The core value is **exposing hidden assumptions** behind the "obvious" choice.
+
+> Addresses the cognitive failure of **Anchoring Bias** — AI defaults to the first or most obvious solution without exploring the full decision space, causing users to miss superior alternatives they never considered.
 
 
 ## Rules (Absolute)
@@ -208,7 +211,6 @@ Why this is better:
 ## Integration Notes
 
 - **With swing-clarify:** Run swing-clarify first on ambiguous requests before invoking this skill. Clarified scope produces better results.
-- **With brainstorming:** Can replace the "Propose 2-3 approaches" phase with deeper divergent options
 - **With swing-review:** Feed the chosen option into adversarial review for stress-testing
 - **Standalone:** Invoke directly with `/swing-options [question]` for quick decision support
 

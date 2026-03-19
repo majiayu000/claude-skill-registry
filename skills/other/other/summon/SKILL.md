@@ -87,6 +87,46 @@ guards.
 - When human review is needed before every step (use manual
   skill invocations).
 
+## Launching the Orchestrator
+
+**You MUST launch the orchestrator agent in the FOREGROUND.**
+Do not use `run_in_background: true`. The main session
+becomes the egregore -- it blocks on the orchestrator agent
+until the egregore finishes or is dismissed.
+
+```
+Agent(
+  subagent_type: "egregore:orchestrator",
+  prompt: "<context about work items and current state>",
+  run_in_background: false   // THIS IS CRITICAL
+)
+```
+
+If you launch the orchestrator in the background, the main
+session will have nothing to do and will stop. This defeats
+the entire purpose of the egregore. The stop hook cannot
+prevent this because background agents are detached.
+
+## Manifest Mode
+
+Before launching the orchestrator, ensure the manifest has
+the correct run mode:
+
+- **Default (no `--bounded` flag)**: set `"indefinite": true`
+  in the manifest. The egregore will scan for new work after
+  completing all items and run until dismissed.
+- **With `--bounded` flag**: set `"mode": "bounded"` in the
+  manifest. The egregore stops after all items are completed
+  or failed.
+
+If the manifest already exists and has `"mode": "bounded"`
+but the user did NOT pass `--bounded`, update the manifest
+to `"indefinite": true` before launching.
+
+After launching, do NOT produce any summary, status table,
+or "what's happening" output. The orchestrator IS the
+session now. Let it run.
+
 ## Orchestration Loop
 
 Follow these steps exactly.
@@ -222,23 +262,30 @@ To avoid losing state when the window fills:
 This protocol ensures zero lost progress across context
 boundaries.
 
-## Progress Monitoring (2.1.71+)
+## Progress Monitoring & Self-Healing (2.1.71+)
 
-After loading state (step 1), schedule a recurring progress
-pulse using `/loop`:
+After loading state (step 1), schedule a recurring heartbeat
+that both reports status and recovers stalled pipelines:
 
 ```
 CronCreate(
   cron_expression: "*/5 * * * *",
-  prompt: "/egregore:status",
+  prompt: "Check .egregore/manifest.json. If there are pending or active items that are not being processed, resume the orchestration loop by invoking Skill(egregore:summon). Otherwise, report status via /egregore:status.",
   recurring: true
 )
 ```
 
-This emits a status summary every 5 minutes between turns,
-giving visibility into autonomous runs without interrupting
-the pipeline. The cron task is session-scoped and auto-expires
-after 3 days. Use `CronDelete` to cancel early if needed.
+This serves two purposes:
+
+1. **Visibility**: emits a status summary every 5 minutes
+   so autonomous runs are observable.
+2. **Self-healing**: if a user prompt, context compaction,
+   or unexpected error breaks the orchestration loop, the
+   next heartbeat detects stalled items and re-enters the
+   pipeline automatically.
+
+The cron task is session-scoped and auto-expires after 3
+days. Use `CronDelete` to cancel early if needed.
 
 ## Token Budget Protocol
 

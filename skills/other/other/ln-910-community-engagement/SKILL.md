@@ -1,6 +1,6 @@
 ---
 name: ln-910-community-engagement
-description: "Community engagement coordinator: analyzes repo health, consults strategy, delegates to announcer/debater/triager/responder"
+description: "Analyzes community health and delegates engagement tasks. Use when managing GitHub issues, discussions, and announcements."
 license: MIT
 allowed-tools: Read, Grep, Glob, Bash, Skill
 ---

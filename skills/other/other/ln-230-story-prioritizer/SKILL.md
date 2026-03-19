@@ -1,6 +1,6 @@
 ---
 name: ln-230-story-prioritizer
-description: RICE prioritization per Story with market research. Generates consolidated prioritization table in docs/market/[epic-slug]/prioritization.md.
+description: "RICE-scores Stories with market research and generates prioritization table. Use when Stories need business priority ranking for sprint planning."
 license: MIT
 ---
 

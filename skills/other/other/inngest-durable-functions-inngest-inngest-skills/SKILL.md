@@ -75,10 +75,10 @@ If you're hitting these limits, break your function into smaller functions conne
 const processOrder = inngest.createFunction(
   {
     id: "process-order", // Unique, never change this
+    triggers: [{ event: "order/created" }],
     retries: 4, // Default: 4 retries per step
     concurrency: 10 // Max concurrent executions
   },
-  { event: "order/created" }, // Trigger
   async ({ event, step }) => {
     // Your durable workflow
   }
@@ -102,42 +102,61 @@ await step.run("send-confirmation", () => sendEmail(event.data.email));
 
 ### **Event Triggers**
 
+Triggers are defined in the `triggers` array in the first argument of `createFunction`:
+
 ```typescript
 // Single event trigger
-{ event: "user/signup" }
+inngest.createFunction(
+  { id: "my-fn", triggers: [{ event: "user/signup" }] },
+  async ({ event }) => { /* ... */ }
+);
 
 // Event with conditional filter
-{
-  event: "user/action",
-  if: 'event.data.action == "purchase" && event.data.amount > 100'
-}
+inngest.createFunction(
+  { id: "my-fn", triggers: [{ event: "user/action", if: 'event.data.action == "purchase" && event.data.amount > 100' }] },
+  async ({ event }) => { /* ... */ }
+);
 
 // Multiple triggers (up to 10)
-[
-  { event: "user/signup" },
-  { event: "user/login", if: 'event.data.firstLogin == true' },
-  { cron: "0 9 * * *" } // Daily at 9 AM
-]
+inngest.createFunction(
+  {
+    id: "my-fn",
+    triggers: [
+      { event: "user/signup" },
+      { event: "user/login", if: 'event.data.firstLogin == true' },
+      { cron: "0 9 * * *" } // Daily at 9 AM
+    ]
+  },
+  async ({ event }) => { /* ... */ }
+);
 ```
 
 ### **Cron Triggers**
 
 ```typescript
 // Basic cron
-{
-  cron: "0 */6 * * *";
-} // Every 6 hours
+inngest.createFunction(
+  { id: "my-fn", triggers: [{ cron: "0 */6 * * *" }] }, // Every 6 hours
+  async ({ step }) => { /* ... */ }
+);
 
 // With timezone
-{
-  cron: "TZ=Europe/Paris 0 12 * * 5";
-} // Fridays at noon Paris time
+inngest.createFunction(
+  { id: "my-fn", triggers: [{ cron: "TZ=Europe/Paris 0 12 * * 5" }] }, // Fridays at noon Paris time
+  async ({ step }) => { /* ... */ }
+);
 
 // Combine with events
-[
-  { event: "manual/report.requested" },
-  { cron: "0 0 * * 0" } // Weekly on Sunday
-];
+inngest.createFunction(
+  {
+    id: "my-fn",
+    triggers: [
+      { event: "manual/report.requested" },
+      { cron: "0 0 * * 0" } // Weekly on Sunday
+    ]
+  },
+  async ({ event, step }) => { /* ... */ }
+);
 ```
 
 ### **Function Invocation**
@@ -174,10 +193,10 @@ await inngest.send({
 const sendEmail = inngest.createFunction(
   {
     id: "send-checkout-email",
+    triggers: [{ event: "cart/checkout.completed" }],
     // Only run once per cartId per 24 hours
     idempotency: "event.data.cartId"
   },
-  { event: "cart/checkout.completed" },
   async ({ event, step }) => {
     // This function won't run twice for same cartId
   }
@@ -187,10 +206,10 @@ const sendEmail = inngest.createFunction(
 const processUserAction = inngest.createFunction(
   {
     id: "process-user-action",
+    triggers: [{ event: "user/action.performed" }],
     // Unique per user + organization combination
     idempotency: 'event.data.userId + "-" + event.data.organizationId'
   },
-  { event: "user/action.performed" },
   async ({ event, step }) => {
     /* ... */
   }
@@ -207,6 +226,7 @@ In expressions, `event` = the **original** triggering event, `async` = the **new
 const processOrder = inngest.createFunction(
   {
     id: "process-order",
+    triggers: [{ event: "order/created" }],
     cancelOn: [
       {
         event: "order/cancelled",
@@ -214,7 +234,6 @@ const processOrder = inngest.createFunction(
       }
     ]
   },
-  { event: "order/created" },
   async ({ event, step }) => {
     await step.sleepUntil("wait-for-payment", event.data.paymentDue);
     // Will be cancelled if order/cancelled event received
@@ -229,12 +248,12 @@ const processOrder = inngest.createFunction(
 const processWithTimeout = inngest.createFunction(
   {
     id: "process-with-timeout",
+    triggers: [{ event: "long/process.requested" }],
     timeouts: {
       start: "5m", // Cancel if not started within 5 minutes
       finish: "30m" // Cancel if not finished within 30 minutes
     }
   },
-  { event: "long/process.requested" },
   async ({ event, step }) => {
     /* ... */
   }
@@ -246,8 +265,7 @@ const processWithTimeout = inngest.createFunction(
 ```typescript
 // Listen for cancellation events
 const cleanupCancelled = inngest.createFunction(
-  { id: "cleanup-cancelled-process" },
-  { event: "inngest/function.cancelled" },
+  { id: "cleanup-cancelled-process", triggers: [{ event: "inngest/function.cancelled" }] },
   async ({ event, step }) => {
     if (event.data.function_id === "process-order") {
       await step.run("cleanup-resources", () => {
@@ -272,9 +290,9 @@ const cleanupCancelled = inngest.createFunction(
 const reliableFunction = inngest.createFunction(
   {
     id: "reliable-function",
+    triggers: [{ event: "critical/task" }],
     retries: 10 // Up to 10 retries per step
   },
-  { event: "critical/task" },
   async ({ event, step, attempt }) => {
     // `attempt` is the function-level attempt counter (0-indexed)
     // It tracks retries for the currently executing step, not the overall function
@@ -293,8 +311,7 @@ Prevent retries for code that won't succeed upon retry.
 import { NonRetriableError } from "inngest";
 
 const processUser = inngest.createFunction(
-  { id: "process-user" },
-  { event: "user/process.requested" },
+  { id: "process-user", triggers: [{ event: "user/process.requested" }] },
   async ({ event, step }) => {
     const user = await step.run("fetch-user", async () => {
       const user = await db.users.findOne(event.data.userId);
@@ -318,8 +335,7 @@ const processUser = inngest.createFunction(
 import { RetryAfterError } from "inngest";
 
 const respectRateLimit = inngest.createFunction(
-  { id: "api-call" },
-  { event: "api/call.requested" },
+  { id: "api-call", triggers: [{ event: "api/call.requested" }] },
   async ({ event, step }) => {
     await step.run("call-api", async () => {
       const response = await externalAPI.call(event.data);
@@ -354,14 +370,23 @@ const inngest = new Inngest({
   id: "my-app",
   logger // Pass logger to client
 });
+
+// Or use the built-in ConsoleLogger for simple log level control
+import { ConsoleLogger, Inngest } from "inngest";
+
+const inngest = new Inngest({
+  id: "my-app",
+  logger: new ConsoleLogger({ level: "debug" }) // "debug" | "info" | "warn" | "error"
+});
 ```
+
+**⚠️ v4 Breaking Change:** The `logLevel` option has been removed. Use the `logger` option with `ConsoleLogger` or a custom logger instead.
 
 ### **Function Logging Patterns**
 
 ```typescript
 const processData = inngest.createFunction(
-  { id: "process-data" },
-  { event: "data/process.requested" },
+  { id: "process-data", triggers: [{ event: "data/process.requested" }] },
   async ({ event, step, logger }) => {
     // ✅ GOOD: Log inside steps to avoid duplicates
     const result = await step.run("fetch-data", async () => {
@@ -383,24 +408,35 @@ const processData = inngest.createFunction(
 
 ### **Checkpointing**
 
+Checkpointing is **enabled by default in v4**. It allows functions to persist state periodically during execution, reducing latency between steps.
+
 ```typescript
-// Enable checkpointing for lower latency
+// Checkpointing is enabled by default in v4
+// Configure maxRuntime for serverless platforms (set to 60-80% of platform timeout)
 const realTimeFunction = inngest.createFunction(
   {
     id: "real-time-function",
+    triggers: [{ event: "realtime/process" }],
     checkpointing: {
-      maxRuntime: "5m", // Max continuous execution time
-      bufferedSteps: 2, // Buffer 2 steps before checkpointing
-      maxInterval: "10s" // Max wait before checkpoint
+      maxRuntime: "50s", // For serverless with 60s timeout
     }
   },
-  { event: "realtime/process" },
   async ({ event, step }) => {
     // Steps execute immediately with periodic checkpointing
     const result1 = await step.run("step-1", () => process1(event.data));
     const result2 = await step.run("step-2", () => process2(result1));
     return { result2 };
   }
+);
+
+// Disable checkpointing if needed
+const legacyFunction = inngest.createFunction(
+  {
+    id: "legacy-function",
+    triggers: [{ event: "legacy/process" }],
+    checkpointing: false
+  },
+  async ({ event, step }) => { /* ... */ }
 );
 ```
 
@@ -410,8 +446,7 @@ const realTimeFunction = inngest.createFunction(
 
 ```typescript
 const conditionalProcess = inngest.createFunction(
-  { id: "conditional-process" },
-  { event: "process/conditional" },
+  { id: "conditional-process", triggers: [{ event: "process/conditional" }] },
   async ({ event, step }) => {
     const userData = await step.run("fetch-user", () => {
       return getUserData(event.data.userId);
@@ -436,8 +471,7 @@ const conditionalProcess = inngest.createFunction(
 
 ```typescript
 const robustProcess = inngest.createFunction(
-  { id: "robust-process" },
-  { event: "process/robust" },
+  { id: "robust-process", triggers: [{ event: "process/robust" }] },
   async ({ event, step }) => {
     let primaryResult;
 

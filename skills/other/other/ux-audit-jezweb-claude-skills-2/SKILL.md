@@ -20,6 +20,30 @@ If none are available, inform the user and suggest installing Chrome MCP or Play
 
 See [references/browser-tools.md](references/browser-tools.md) for tool-specific commands.
 
+## URL Resolution
+
+If the user didn't provide a URL, find one automatically. **Prefer the deployed/live version** — that's what real users see.
+
+1. **Check wrangler.jsonc** for custom domains or `routes`:
+   ```bash
+   grep -E '"pattern"|"custom_domain"' wrangler.jsonc 2>/dev/null
+   ```
+   If found, use the production URL (e.g. `https://app.example.com`).
+
+2. **Check for deployed URL** in CLAUDE.md, README, or package.json `homepage` field.
+
+3. **Fall back to local dev server** — check if one is already running:
+   ```bash
+   lsof -i :5173 -i :3000 -i :8787 -t 2>/dev/null
+   ```
+   If running, use `http://localhost:{port}`.
+
+4. **Ask the user** as a last resort.
+
+**Why live over local**: The live site has real data, real auth, real network latency, real CDN behaviour, and real CORS/CSP policies. Testing locally misses deployment-specific issues (missing env vars, broken asset paths, CORS errors, slow API responses). The UX audit should test what the user actually experiences.
+
+**When local is better**: The user explicitly says "test localhost", or the feature isn't deployed yet.
+
 ## Depth Levels
 
 Control how thorough the audit is. Pass as an argument: `/ux-audit quick`, `/ux-audit thorough`, or default to standard.

@@ -1,6 +1,6 @@
 ---
 name: ln-721-frontend-restructure
-description: "Frontend structure worker: SCAFFOLD new React project or RESTRUCTURE existing monolith to component-based architecture"
+description: "Scaffolds new React projects or restructures monoliths to component-based architecture. Use when setting up frontend structure."
 license: MIT
 ---
 

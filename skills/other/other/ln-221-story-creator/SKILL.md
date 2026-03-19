@@ -1,6 +1,6 @@
 ---
 name: ln-221-story-creator
-description: Creates Stories from IDEAL plan (CREATE) or appends user-requested Stories (ADD). Generates 9-section documents, validates INVEST, creates in Linear.
+description: "Creates Story documents with 9-section structure and INVEST validation in Linear. Use when Epic has an IDEAL plan ready for Story generation."
 license: MIT
 ---
 

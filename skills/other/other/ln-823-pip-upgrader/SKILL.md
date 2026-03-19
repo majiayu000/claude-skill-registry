@@ -1,6 +1,6 @@
 ---
 name: ln-823-pip-upgrader
-description: Upgrades Python pip/poetry/pipenv dependencies with breaking change handling
+description: "Upgrades Python pip/poetry/pipenv dependencies with breaking change handling. Use when updating Python dependencies."
 license: MIT
 ---
 
@@ -211,13 +211,13 @@ Options:
 
 ## Definition of Done
 
-- Package manager detected (pip/poetry/pipenv) from indicator files
-- Security audit completed (pip-audit/poetry audit/pipenv check)
-- Outdated packages identified and listed
-- Upgrades applied with requirements.txt/pyproject.toml updated
-- Breaking changes handled via MCP migration guides
-- Import tests and pytest pass after upgrades
-- Report returned with upgrades applied and verification status
+- [ ] Package manager detected (pip/poetry/pipenv) from indicator files
+- [ ] Security audit completed (pip-audit/poetry audit/pipenv check)
+- [ ] Outdated packages identified and listed
+- [ ] Upgrades applied with requirements.txt/pyproject.toml updated
+- [ ] Breaking changes handled via MCP migration guides
+- [ ] Import tests and pytest pass after upgrades
+- [ ] Report returned with upgrades applied and verification status
 
 ---
 

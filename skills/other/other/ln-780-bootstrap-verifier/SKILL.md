@@ -1,6 +1,6 @@
 ---
 name: ln-780-bootstrap-verifier
-description: Orchestrates final verification - build, test, and container health checks
+description: "Verifies bootstrapped projects via build, test, and container health checks. Use when validating project setup completeness."
 license: MIT
 ---
 
@@ -142,6 +142,14 @@ Use Skill tool to delegate work:
 - Worker: `../ln-781-build-verifier/SKILL.md`
 - Worker: `../ln-782-test-runner/SKILL.md`
 - Worker: `../ln-783-container-launcher/SKILL.md`
+
+---
+
+## Meta-Analysis
+
+**MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
+
+Skill type: `review-coordinator — workers only`. Run after all phases complete. Output to chat using the `review-coordinator — workers only` format.
 
 ---
 

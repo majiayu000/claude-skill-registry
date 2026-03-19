@@ -1,6 +1,6 @@
 ---
 name: ln-781-build-verifier
-description: Builds all detected projects and verifies successful compilation
+description: "Builds all detected projects and verifies successful compilation. Use when checking that a bootstrapped project compiles."
 license: MIT
 ---
 

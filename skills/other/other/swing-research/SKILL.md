@@ -259,13 +259,11 @@ Classify every source on discovery.
 ## When NOT to Use
 
 - Creative writing or brainstorming (use `swing-options`)
-- Code implementation (use `search-first` for library discovery)
+- Code implementation
 - Simple questions answerable from internal knowledge with high confidence
 - Opinion-based questions with no verifiable answer
 
 ## Integration Notes
 
 - **With swing-clarify:** Run swing-clarify first on ambiguous requests before invoking this skill. Clarified scope produces better results.
-- **With brainstorming:** Can be invoked during brainstorming's "Explore context" phase for fact-based inputs
-- **With search-first:** search-first finds tools/libraries to USE; this skill VERIFIES factual claims. Different purposes.
 - **With swing-review:** Research findings can feed into adversarial review for stress-testing conclusions

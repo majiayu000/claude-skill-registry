@@ -1,0 +1,183 @@
+---
+name: tiered-audit
+description: |
+  Audit a codebase using a three-tier escalation model.
+  Tier 1 analyzes git history (fast, bounded).
+  Tier 2 deep-dives into flagged areas (sequential).
+  Tier 3 reviews the full codebase (requires approval).
+  Always starts at Tier 1 unless explicitly overridden.
+category: audit
+tags:
+  - audit
+  - git-history
+  - code-quality
+  - review
+  - escalation
+tools:
+  - Bash
+  - Read
+  - Grep
+  - Glob
+usage_patterns:
+  - codebase-audit
+  - git-history-review
+  - targeted-review
+complexity: intermediate
+estimated_tokens: 600
+modules:
+  - modules/escalation-criteria.md
+  - modules/tier2-targeted.md
+  - modules/tier3-gate.md
+dependencies:
+  - imbue:proof-of-work
+---
+
+# Tiered Audit
+
+## When to Use
+
+- Auditing codebase quality, patterns, or problems
+- Reviewing what changed on a branch before merge
+- Investigating areas of instability or churn
+- Pre-PR quality assessment
+
+## When NOT to Use
+
+- Reviewing a specific file (use pensive:code-reviewer)
+- Architecture-only review (use pensive:architecture-review)
+- Single-commit review (use imbue:diff-analysis)
+
+## Tier 1: Git History Audit
+
+**Always runs first.** Analyzes git log, diff stats, and
+blame to identify areas of concern without reading any
+source files.
+
+### What Tier 1 Analyzes
+
+Run these git commands for the target commit range
+(default: current branch vs main):
+
+```bash
+# 1. Churn hotspots: files changed most often
+git log --format="" --name-only {base}..HEAD \
+  | sort | uniq -c | sort -rn | head -20
+
+# 2. Diff stats: size of changes per file
+git diff --stat {base}..HEAD
+
+# 3. Fix-on-fix patterns: commits fixing previous commits
+git log --oneline {base}..HEAD \
+  | grep -iE "(fix|revert|patch|hotfix)"
+
+# 4. New file clusters: modules with many new files
+git diff --name-status {base}..HEAD \
+  | grep "^A" | cut -f2 \
+  | sed 's|/[^/]*$||' | sort | uniq -c | sort -rn
+
+# 5. Large commits: single commits with big diffs
+git log --format="%h %s" --shortstat {base}..HEAD
+```
+
+### Tier 1 Output Format
+
+Write findings to `.coordination/agents/tier1-audit.findings.md`:
+
+```markdown
+---
+agent: tier1-audit
+tier: 1
+evidence_count: {N}
+---
+
+## Summary
+
+{1-2 sentence overview of what the git history reveals}
+
+## Churn Hotspots
+
+{top 10 most-changed files with change counts}
+
+[E1] Command: git log --format="" --name-only ...
+     Output: {relevant output}
+
+## Fix-on-Fix Patterns
+
+{commits that fix previous commits in the same area}
+
+[E2] Command: git log --oneline ... | grep -iE ...
+     Output: {relevant output}
+
+## New File Clusters
+
+{modules with 5+ new files}
+
+## Large Diffs
+
+{commits with 200+ line changes}
+
+## Escalation Recommendation
+
+{list of areas flagged for Tier 2, or "no escalation needed"}
+```
+
+### Escalation Decision
+
+After Tier 1 completes, check findings against the
+escalation criteria in `modules/escalation-criteria.md`.
+
+If NO criteria are met: audit is complete. Report findings.
+
+If criteria ARE met: list flagged areas and proceed to
+Tier 2 for each area sequentially.
+
+## Tier 2: Targeted Area Audit
+
+**Runs only for areas flagged by Tier 1.**
+Each flagged area is audited one at a time, not in
+parallel.
+
+### What Tier 2 Analyzes
+
+For each flagged area:
+
+1. Read the source files in the area
+2. Check for patterns, anti-patterns, bugs
+3. Verify test coverage exists
+4. Check documentation currency
+5. Assess architectural fit
+
+### Tier 2 Output Format
+
+One findings file per area:
+`.coordination/agents/tier2-{area-name}.findings.md`
+
+Each file follows the output contract for audits
+(see imbue:proof-of-work/modules/output-contracts).
+
+## Tier 3: Full Codebase Audit
+
+**Requires explicit user approval.** See
+`modules/escalation-criteria.md` for the gate protocol.
+
+Tier 3 should use dedicated sessions (one per area)
+with file-based coordination, NOT parallel subagents.
+
+## Output Contract
+
+All tiers use this contract:
+
+```yaml
+output_contract:
+  required_sections:
+    - summary
+    - evidence
+  min_evidence_count: 3    # Tier 1
+  # min_evidence_count: 8  # Tier 2
+  expected_artifacts: []
+  retry_budget: 1
+  strictness: normal
+```
+
+Tier 2 raises the minimum evidence count to 8 because
+it reads source files and should produce deeper analysis.

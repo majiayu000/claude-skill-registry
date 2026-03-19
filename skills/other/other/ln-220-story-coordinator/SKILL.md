@@ -1,6 +1,6 @@
 ---
 name: ln-220-story-coordinator
-description: "CREATE/REPLAN Stories for Epic (5-10 Stories). Multi-epic routing: auto-groups Stories by correct Epic. Delegates ln-001 for standards research. Self-Check phase."
+description: "Creates, replans, or appends 5-10 Stories per Epic with standards research and multi-epic routing. Use when Epic needs Story decomposition."
 license: MIT
 ---
 

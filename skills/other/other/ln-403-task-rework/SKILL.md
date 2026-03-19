@@ -1,6 +1,6 @@
 ---
 name: ln-403-task-rework
-description: Fixes tasks in To Rework and returns them to To Review. Applies reviewer feedback only for the selected task.
+description: "Fixes tasks in To Rework by applying reviewer feedback, then returns to To Review. Use when task was rejected during review."
 license: MIT
 ---
 
@@ -56,11 +56,11 @@ Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
 - **Do NOT commit.** Leave all changes uncommitted — the reviewer reviews and commits.
 
 ## Definition of Done
-- Task and review feedback fully read; actions mapped.
-- Fixes applied; docs/tests updated as required.
-- Quality checks passed (typecheck/lint or project standards).
-- Root cause classified (missing context | wrong pattern | unclear AC | doc gap); doc/template updated if gap found.
-- Status set to To Review; kanban updated; summary comment with fixed items + root cause.
+- [ ] Task and review feedback fully read; actions mapped.
+- [ ] Fixes applied; docs/tests updated as required.
+- [ ] Quality checks passed (typecheck/lint or project standards).
+- [ ] Root cause classified (missing context | wrong pattern | unclear AC | doc gap); doc/template updated if gap found.
+- [ ] Status set to To Review; kanban updated; summary comment with fixed items + root cause.
 
 ## Reference Files
 - **Tools config:** `shared/references/tools_config_guide.md`

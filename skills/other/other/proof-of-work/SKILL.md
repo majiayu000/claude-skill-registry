@@ -22,13 +22,15 @@ usage_patterns:
 complexity: intermediate
 estimated_tokens: 3000
 modules:
-- modules/validation-protocols.md
 - modules/acceptance-criteria.md
-- modules/red-flags.md
-- modules/iron-law-enforcement.md
 - modules/anti-cargo-cult.md
 - modules/evidence-logging.md
+- modules/iron-law-enforcement.md
+- modules/output-contracts.md
+- modules/red-flags.md
+- modules/retry-protocol.md
 - modules/todowrite-patterns.md
+- modules/validation-protocols.md
 ---
 
 > Claims without evidence fail the people who depend on

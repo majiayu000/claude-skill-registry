@@ -1,6 +1,6 @@
 ---
 name: ln-004-agent-config-sync
-description: "Sync skills (symlinks) and MCP settings from Claude to Gemini CLI and Codex CLI"
+description: "Syncs skills and MCP settings from Claude Code to Gemini CLI and Codex CLI. Use when agent configs need alignment after changes."
 license: MIT
 ---
 
@@ -210,13 +210,11 @@ Sync Complete:
 
 ## Definition of Done
 
-| # | Criterion |
-|---|-----------|
-| 1 | Claude settings read successfully |
-| 2 | Skills symlinks created/verified for each target |
-| 3 | MCP settings synced with format conversion (JSON→TOML for Codex) |
-| 4 | Backup files created before any config modification |
-| 5 | Report shown with all actions and warnings |
+- [ ] Claude settings read successfully
+- [ ] Skills symlinks created/verified for each target
+- [ ] MCP settings synced with format conversion (JSON→TOML for Codex)
+- [ ] Backup files created before any config modification
+- [ ] Report shown with all actions and warnings
 
 ---
 

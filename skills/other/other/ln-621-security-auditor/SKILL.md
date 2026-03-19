@@ -1,6 +1,6 @@
 ---
 name: ln-621-security-auditor
-description: Checks hardcoded secrets, SQL injection, XSS, insecure dependencies, missing input validation. Returns findings with severity, location, effort, recommendations.
+description: "Checks hardcoded secrets, SQL injection, XSS, insecure deps, input validation. Use when auditing security."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -157,12 +157,12 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- contextStore parsed successfully (including output_dir)
-- All 5 security checks completed (secrets, SQL injection, XSS, deps, validation)
-- Findings collected with severity, location, effort, recommendation
-- Score calculated using penalty algorithm
-- Report written to `{output_dir}/621-security.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] contextStore parsed successfully (including output_dir)
+- [ ] All 5 security checks completed (secrets, SQL injection, XSS, deps, validation)
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated using penalty algorithm
+- [ ] Report written to `{output_dir}/621-security.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 

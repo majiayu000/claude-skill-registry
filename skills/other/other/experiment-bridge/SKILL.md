@@ -2,7 +2,7 @@
 name: experiment-bridge
 description: "Workflow 1.5: Bridge between idea discovery and auto review. Reads EXPERIMENT_PLAN.md, implements experiment code, deploys to GPU, collects initial results. Use when user says \"实现实验\", \"implement experiments\", \"bridge\", \"从计划到跑实验\", \"deploy the plan\", or has an experiment plan ready to execute."
 argument-hint: [experiment-plan-path-or-topic]
-allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, Agent, Skill
+allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, Agent, Skill, mcp__codex__codex, mcp__codex__codex-reply
 ---
 
 # Workflow 1.5: Experiment Bridge
@@ -14,19 +14,20 @@ Implement and deploy experiments from plan: **$ARGUMENTS**
 This skill bridges Workflow 1 (idea discovery + method refinement) and Workflow 2 (auto review loop). It takes the experiment plan and turns it into running experiments with initial results.
 
 ```
-Workflow 1 output:                    This skill:                        Workflow 2 input:
-refine-logs/EXPERIMENT_PLAN.md   →   implement → deploy → collect   →   initial results ready
-refine-logs/EXPERIMENT_TRACKER.md     code        /run-experiment        for /auto-review-loop
+Workflow 1 output:                    This skill:                                    Workflow 2 input:
+refine-logs/EXPERIMENT_PLAN.md   →   implement → GPT-5.4 review → deploy → collect → initial results ready
+refine-logs/EXPERIMENT_TRACKER.md     code        (cross-model)    /run-experiment     for /auto-review-loop
 refine-logs/FINAL_PROPOSAL.md
 ```
 
 ## Constants
 
-- **AUTO_DEPLOY = true** — Automatically deploy experiments after implementation. Set `false` to review code before deploying.
+- **CODE_REVIEW = true** — GPT-5.4 xhigh reviews experiment code before deployment. Catches logic bugs before wasting GPU hours. Set `false` to skip.
+- **AUTO_DEPLOY = true** — Automatically deploy experiments after implementation + review. Set `false` to manually inspect code before deploying.
 - **SANITY_FIRST = true** — Run the sanity-stage experiment first (smallest, fastest) before launching the rest. Catches setup bugs early.
 - **MAX_PARALLEL_RUNS = 4** — Maximum number of experiments to deploy in parallel (limited by available GPUs).
 
-> Override: `/experiment-bridge "EXPERIMENT_PLAN.md" — auto deploy: false, max parallel: 2`
+> Override: `/experiment-bridge "EXPERIMENT_PLAN.md" — code review: false, auto deploy: false`
 
 ## Inputs
 
@@ -90,6 +91,42 @@ For each milestone (in order), write the experiment scripts:
    - Is the random seed fixed and controllable?
    - Are results saved in a parseable format (JSON/CSV)?
    - Does the code match FINAL_PROPOSAL.md's method description?
+
+### Phase 2.5: Cross-Model Code Review (when CODE_REVIEW = true)
+
+**Skip this step if `CODE_REVIEW` is `false`.**
+
+Before deploying, send the experiment code to GPT-5.4 xhigh for review:
+
+```
+mcp__codex__codex:
+  config: {"model_reasoning_effort": "xhigh"}
+  prompt: |
+    Review the following experiment implementation for correctness.
+
+    ## Experiment Plan:
+    [paste key sections from EXPERIMENT_PLAN.md]
+
+    ## Method Description:
+    [paste from FINAL_PROPOSAL.md]
+
+    ## Implementation:
+    [paste the experiment scripts]
+
+    Check for:
+    1. Does the code correctly implement the method described in the proposal?
+    2. Are all hyperparameters from the plan reflected in the code?
+    3. Are there any logic bugs (wrong loss function, incorrect data split, missing eval)?
+    4. Is the evaluation metric computed correctly?
+    5. Any potential issues (OOM risk, numerical instability, missing seeds)?
+
+    For each issue found, specify: CRITICAL / MAJOR / MINOR and the exact fix.
+```
+
+**On review results:**
+- **No CRITICAL issues** → proceed to Phase 3
+- **CRITICAL issues found** → fix them, then re-submit for review (max 2 rounds)
+- **Codex MCP unavailable** → skip silently, proceed to Phase 3 (graceful degradation)
 
 ### Phase 3: Sanity Check (if SANITY_FIRST = true)
 

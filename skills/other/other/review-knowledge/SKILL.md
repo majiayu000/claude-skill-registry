@@ -56,6 +56,11 @@ Scan the entire knowledge base and report:
 - Most connected entries (highest see link count)
 - Most used tags
 
+#### f. Unidirectional Links
+- Entry A has a `- see:` link to entry B, but entry B does NOT have a `- see:` link back to entry A
+- These represent broken bidirectional links that reduce discoverability from the target entry's side
+- Report: list of unidirectional pairs with source entry, target entry, and direction of missing link
+
 ### 2. Topic Review (`topic:<keyword or tag>`)
 Deep dive into a specific topic:
 
@@ -76,7 +81,8 @@ Interactively fix issues found in the health check:
 2. For each issue found, take action:
    - **Orphan entries**: Search for related entries and add see links (using the same search procedure as record-knowledge step 4)
    - **Missing connections**: Add see links between suggested pairs (with user-facing notification)
-   - **Unregistered tags**: Add missing tags to the registry
+   - **Unidirectional links**: Add the missing reverse `- see:` link to the target entry so both entries link to each other
+   - **Unregistered tags**: Auto-add missing tags to the registry in `.claude/knowledge/CLAUDE.md` under the appropriate section
    - **Unused tags**: Report for manual review (do not auto-delete)
 3. Report actions taken
 
@@ -90,6 +96,7 @@ Interactively fix issues found in the health check:
 - Orphan entries: N
 - Stale entries (>90 days): N
 - Missing connections: N suggested
+- Unidirectional links: N
 - Tag issues: N
 
 ## Stale Entries
@@ -106,6 +113,11 @@ Interactively fix issues found in the health check:
 | Entry A | Entry B | Shared Tags |
 |---------|---------|-------------|
 | [title](slug.md) | [title](slug.md) | #tag1 #tag2 |
+
+## Unidirectional Links
+| Source | Target | Missing Direction |
+|--------|--------|-------------------|
+| [title](slug.md) | [title](slug.md) | target → source |
 
 ## Tag Issues
 - Unregistered: #tag1, #tag2

@@ -1,0 +1,17 @@
+{
+  "name": "comm-lit-review",
+  "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+  "path": "skills/skills-codex/comm-lit-review/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+  "dir_name": "comm-lit-review-wanshuiyin-auto-claude-code-res",
+  "downloaded_at": "2026-03-19T01:41:33.899387Z",
+  "author": "wanshuiyin",
+  "source_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/skills-codex/comm-lit-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/skills-codex/comm-lit-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

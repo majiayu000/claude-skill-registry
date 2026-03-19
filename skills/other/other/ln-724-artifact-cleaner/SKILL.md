@@ -1,6 +1,6 @@
 ---
 name: ln-724-artifact-cleaner
-description: "Universal platform artifact cleaner: Replit, StackBlitz, CodeSandbox, Glitch"
+description: "Removes platform-specific artifacts from Replit, StackBlitz, CodeSandbox, Glitch. Use when preparing exported projects for production."
 license: MIT
 ---
 
@@ -324,12 +324,12 @@ Claude: Invokes ln-724-artifact-cleaner
 
 ## Definition of Done
 
-- At least one platform detected (Replit/StackBlitz/CodeSandbox/Glitch)
-- All platform artifacts scanned and previewed to user
-- User confirmation received before any deletions
-- Platform files, directories, dependencies, build config, and comments cleaned
-- .gitignore entries for platform files removed
-- Cleanup report generated with deleted/modified file counts
+- [ ] At least one platform detected (Replit/StackBlitz/CodeSandbox/Glitch)
+- [ ] All platform artifacts scanned and previewed to user
+- [ ] User confirmation received before any deletions
+- [ ] Platform files, directories, dependencies, build config, and comments cleaned
+- [ ] .gitignore entries for platform files removed
+- [ ] Cleanup report generated with deleted/modified file counts
 
 ---
 

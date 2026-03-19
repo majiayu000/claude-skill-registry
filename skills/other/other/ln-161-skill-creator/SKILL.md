@@ -1,6 +1,6 @@
 ---
 name: ln-161-skill-creator
-description: "Creates .claude/commands from procedural doc sections with proper structure and transformation"
+description: "Creates .claude/commands from procedural doc sections. Use when transforming documentation prose into executable skill files."
 license: MIT
 ---
 
@@ -100,6 +100,7 @@ For each approved section:
 | Troubleshooting | Prose | Table format (Issue / Solution) |
 | Prerequisites | Mentioned inline | Dedicated Prerequisites table |
 | Related docs | Inline references | Related Documentation section with relative links |
+| Trigger phrases | Missing in source | Append "Use when {inferred from section context}" to description |
 
 ### Phase 3: Report
 

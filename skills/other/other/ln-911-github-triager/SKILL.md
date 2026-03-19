@@ -1,6 +1,6 @@
 ---
 name: ln-911-github-triager
-description: "Scan open GitHub issues, PRs, discussions. Produce prioritized triage report with engagement metrics and recommended actions"
+description: "Produces prioritized triage report from open GitHub issues, PRs, and discussions. Use when reviewing community backlog."
 license: MIT
 allowed-tools: Bash, Read
 ---

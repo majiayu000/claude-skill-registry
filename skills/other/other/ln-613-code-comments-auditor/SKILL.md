@@ -1,6 +1,6 @@
 ---
 name: ln-613-code-comments-auditor
-description: Checks WHY-not-WHAT, density (15-20%), forbidden content, docstrings quality, actuality, legacy cleanup. Returns findings with severity, location, and recommendations.
+description: "Checks WHY-not-WHAT, density, forbidden content, docstrings quality, actuality, legacy cleanup. Use when auditing code comments."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -89,13 +89,13 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- contextStore parsed successfully (including output_dir)
-- All source files scanned (tech stack from contextStore)
-- All 6 categories audited
-- Findings collected with severity, location, effort, recommendation
-- Score calculated using penalty algorithm
-- Report written to `{output_dir}/613-code-comments.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] contextStore parsed successfully (including output_dir)
+- [ ] All source files scanned (tech stack from contextStore)
+- [ ] All 6 categories audited
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated using penalty algorithm
+- [ ] Report written to `{output_dir}/613-code-comments.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 

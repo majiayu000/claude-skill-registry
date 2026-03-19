@@ -1,6 +1,6 @@
 ---
 name: ln-770-crosscutting-setup
-description: Coordinates logging, error handling, CORS, health checks, and API docs
+description: "Sets up logging, error handling, CORS, health checks, and API docs. Use when adding cross-cutting concerns to backend projects."
 license: MIT
 ---
 
@@ -250,15 +250,26 @@ This skill is idempotent:
 
 ## Definition of Done
 
-- Project stack detected and stored in Context Store
-- Existing configurations detected (Phase 2 complete)
-- All unconfigured concerns delegated to workers (ln-771 through ln-775)
-- Aggregation entry point generated (`ServiceExtensions.cs` or `middleware/__init__.py`)
-- Summary report displayed with configured/skipped concerns and package install commands
+- [ ] Project stack detected and stored in Context Store
+- [ ] Existing configurations detected (Phase 2 complete)
+- [ ] All unconfigured concerns delegated to workers (ln-771 through ln-775)
+- [ ] Aggregation entry point generated (`ServiceExtensions.cs` or `middleware/__init__.py`)
+- [ ] Summary report displayed with configured/skipped concerns and package install commands
 
 ## Reference Files
 
 - Worker skills: `ln-771-logging-configurator/SKILL.md` through `ln-775-api-docs-generator/SKILL.md`
+- `references/logging_patterns.md` — structured logging patterns per stack (passed to ln-771)
+- `references/error_handling_patterns.md` — global exception handling patterns (passed to ln-772)
+- `references/cors_configuration.md` — CORS dev/prod policies per stack (passed to ln-773)
+
+---
+
+## Phase 6: Meta-Analysis
+
+**MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
+
+Skill type: `execution-orchestrator`. Run after all phases complete. Output to chat using the `execution-orchestrator` format.
 
 ---
 

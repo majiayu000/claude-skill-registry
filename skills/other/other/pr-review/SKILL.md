@@ -340,6 +340,15 @@ optionally Proof. BACKLOG items need only a brief rationale.
 Address B1 and S1 before merge.
 ```
 
+### Local Output (`--local`)
+
+When `--local [path]` is passed, write the Phase 6 report to a
+local `.md` file instead of posting via API. Default path:
+`.pr-review/pr-<number>-review.md`. The file includes the
+review summary, test plan, and backlog items in a single
+document. Issue creation and PR description updates are skipped.
+Knowledge capture (Phase 7) still runs.
+
 ### Phase 7: Knowledge Capture
 
 After generating the report, evaluate findings for knowledge capture into the project's review chamber.

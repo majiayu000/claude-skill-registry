@@ -1,6 +1,6 @@
 ---
 name: ln-005-environment-scanner
-description: "Probes CLI agents (Codex, Gemini) and writes docs/environment_state.json — agent availability config for Phase 0"
+description: "Probes CLI agents (Codex, Gemini) and writes environment_state.json. Use when setting up a project or after installing/removing CLI agents."
 license: MIT
 ---
 

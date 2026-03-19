@@ -1,6 +1,6 @@
 ---
 name: ln-773-cors-configurator
-description: Configures CORS policy for development and production
+description: "Configures CORS policy for development and production environments. Use when setting up cross-origin access for APIs."
 license: MIT
 ---
 
@@ -220,13 +220,13 @@ Before completing, verify:
 
 ## Definition of Done
 
-- Context Store received (stack, project root, environment)
-- Frontend origins detected (port/framework auto-detection)
-- User decisions collected (origins, methods, credentials, cache duration)
-- CORS configuration generated with environment-specific policies
-- Security checklist verified (no wildcard + credentials, explicit methods, env-based origins)
-- Syntax validated (`dotnet build` or `py_compile`)
-- Structured JSON response returned to ln-770 coordinator
+- [ ] Context Store received (stack, project root, environment)
+- [ ] Frontend origins detected (port/framework auto-detection)
+- [ ] User decisions collected (origins, methods, credentials, cache duration)
+- [ ] CORS configuration generated with environment-specific policies
+- [ ] Security checklist verified (no wildcard + credentials, explicit methods, env-based origins)
+- [ ] Syntax validated (`dotnet build` or `py_compile`)
+- [ ] Structured JSON response returned to ln-770 coordinator
 
 ---
 

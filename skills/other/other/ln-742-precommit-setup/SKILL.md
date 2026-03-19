@@ -1,6 +1,6 @@
 ---
 name: ln-742-precommit-setup
-description: Configures Husky, lint-staged, commitlint, and Python pre-commit
+description: "Configures Husky, lint-staged, commitlint, and Python pre-commit hooks. Use when adding Git hook automation to a project."
 license: MIT
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: ln-001-standards-researcher
-description: Research standards/patterns via MCP Ref. Generates Standards Research for Story Technical Notes subsection. Reusable worker.
+description: "Researches standards and patterns via MCP Ref for Story Technical Notes. Use when Story needs standards research before task generation."
 license: MIT
 ---
 
@@ -20,12 +20,7 @@ This skill should be used when:
 - Need to research standards and patterns BEFORE Story generation (ensures tasks follow industry best practices)
 - Epic Technical Notes mention specific standards requiring documentation (OAuth, OpenAPI, WebSocket)
 - Prevent situations where tasks use outdated patterns or violate RFC compliance
-- Reusable for ANY skill requiring standards research (ln-220-story-coordinator, ln-300-task-coordinator, ln-002-best-practices-researcher)
-
-**Who calls this skill:**
-- **ln-220-story-coordinator** (Phase 3) - research for Story creation
-- **ln-300-task-coordinator** (optional) - research for complex Stories
-- **Manual** - user can invoke directly for Epic/Story research
+- Reusable for ANY skill requiring standards research
 
 ## Workflow
 
@@ -291,29 +286,25 @@ What industry standards and architectural patterns apply to {story_domain}?
 }
 ```
 
-If calling skill expects only string (backward compatibility), return Standards Research string only. File is created regardless.
+If calling skill expects only string, return Standards Research string only. File is created regardless.
 
 ---
 
-## Integration with Ecosystem
-
-**Called by:**
-- **ln-220-story-coordinator** (Phase 2) - research for ALL Stories in Epic
-- **ln-300-task-coordinator** (optional) - research for complex technical Stories
+## Integration
 
 **Dependencies:**
 - MCP Ref (ref_search_documentation) - industry standards and patterns
 - Glob (scan docs/guides/)
 
-**Input parameters (from calling skill):**
+**Input parameters:**
 - `epic_description` (string) - Epic Technical Notes + Scope In + Goal
 - `story_domain` (string, optional) - Story domain (e.g., "rate limiting")
 
 **Output format:**
-- **Primary:** Markdown string (Standards Research for insertion into Story Technical Notes subsection)
-- **Secondary:** File path (string) for linking: `docs/research/rsh-{NNN}-{slug}.md`
+- **Primary:** Markdown string (Standards Research for Story Technical Notes subsection)
+- **Secondary:** File path (string): `docs/research/rsh-{NNN}-{slug}.md`
 - **Content:** Standards + Patterns (libraries researched at Task level)
-- **Note:** File is ALWAYS created (Phase 6); backward-compatible callers receive string only
+- **Note:** File is ALWAYS created (Phase 6)
 
 ---
 
@@ -343,14 +334,14 @@ If calling skill expects only string (backward compatibility), return Standards 
 
 ## Definition of Done
 
-- Stack detected (or skipped if undetectable) and `query_prefix` set
-- Libraries and Story domain extracted from Epic/Story description
-- MCP Ref research completed for standards/RFCs and architectural patterns
-- Existing guides in `docs/guides/` scanned and matched
-- Standards Research output generated in Markdown (tables + links, no code)
-- **Research saved to file:** `docs/research/rsh-{NNN}-{slug}.md` created with all required sections
-- **README updated** (if `docs/research/README.md` exists and has placeholder)
-- Output returned to calling skill (ln-220, ln-300): Standards Research string + file path
+- [ ] Stack detected (or skipped if undetectable) and `query_prefix` set
+- [ ] Libraries and Story domain extracted from Epic/Story description
+- [ ] MCP Ref research completed for standards/RFCs and architectural patterns
+- [ ] Existing guides in `docs/guides/` scanned and matched
+- [ ] Standards Research output generated in Markdown (tables + links, no code)
+- [ ] Research saved to file: `docs/research/rsh-{NNN}-{slug}.md` created with all required sections
+- [ ] README updated (if `docs/research/README.md` exists and has placeholder)
+- [ ] Output returned to calling skill: Standards Research string + file path
 
 ## Reference Files
 
@@ -358,10 +349,10 @@ If calling skill expects only string (backward compatibility), return Standards 
 - `mcp__Ref__ref_search_documentation()` - Search best practices and standards
 - `Glob` - Scan docs/guides/ directory
 
-**Templates:**
-- [research_guidelines.md](references/research_guidelines.md) - Research quality guidelines (official docs > blog posts, prefer LTS versions)
+**Guidelines:**
+- **MANDATORY READ:** Load `references/research_guidelines.md` — research quality guidelines (official docs > blog posts, prefer LTS versions)
 
-- **MANDATORY READ:** `shared/references/research_tool_fallback.md`
+- **MANDATORY READ:** Load `shared/references/research_tool_fallback.md`
 
 ---
 

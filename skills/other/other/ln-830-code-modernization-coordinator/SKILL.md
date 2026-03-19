@@ -1,6 +1,6 @@
 ---
 name: ln-830-code-modernization-coordinator
-description: "Coordinates code modernization: OSS replacement and bundle optimization workers"
+description: "Modernizes codebase via OSS replacement and bundle optimization. Use when acting on audit findings to reduce custom code."
 license: MIT
 ---
 

@@ -119,8 +119,8 @@ When the project state suggests ambiguity — multiple possible root causes, unc
 **If investigation is warranted**, create investigation tasks in beads:
 
 ```bash
-bd create --title="Investigate hypothesis A: <description>" --type=task --priority=1
-bd create --title="Investigate hypothesis B: <description>" --type=task --priority=1
+bd create --title="Investigate hypothesis A: <description>" --type=task --priority=1 --parent <epic-id>
+bd create --title="Investigate hypothesis B: <description>" --type=task --priority=1 --parent <epic-id>
 ```
 
 Then recommend in Phase 5:
@@ -219,6 +219,63 @@ bd ready 2>/dev/null
 
 Cross-reference this output against the tasks already seen under epics (from `bd list --parent` in 2.4 and `bd epic status` in 2.3). Any task that appears in `bd ready` but was not listed under any epic is an orphan. These should still appear in dispatch recommendations.
 
+### 2.6 Task Board Health Check
+
+Run these 4 diagnostic checks. Report findings but do NOT auto-fix — the orchestrator decides what to act on.
+
+**Check 1: Epic-as-Dependency Anti-Pattern**
+
+Get all epics:
+```bash
+bd list --type=epic 2>/dev/null
+```
+
+For each non-epic open task, run `bd show <task-id>` and inspect the DEPENDS ON / BLOCKED BY fields. If any dependency target is an epic ID (from the list above), flag it.
+
+Report format:
+```
+ANTI-PATTERN: <task-id> has blocks dependency on epic <epic-id>
+  This creates deadlock — task is blocked by epic, but epic can't close until task closes.
+  Fix (order matters!):
+    bd dep remove <task-id> <epic-id>
+    bd update <task-id> --parent <epic-id>
+  WARNING: bd dep remove nukes ALL relationship types. Run BEFORE --parent, not after.
+```
+
+**Check 2: Orphan Task Affinity**
+
+Extend the Phase 2.5 orphan detection. For each orphan task (ready task with no parent), compare its title and description keywords against existing epic titles/descriptions. If there's a clear match, suggest parenting.
+
+Report format:
+```
+ORPHAN: <task-id> "<title>" — likely belongs to epic <epic-id> "<epic title>"
+  Fix: bd update <task-id> --parent <epic-id>
+```
+
+**Check 3: File-Conflict Risk**
+
+For each pair of ready tasks, read their descriptions (from `bd show`). If both mention the same file paths and have no dependency between them, flag a conflict risk.
+
+Report format:
+```
+FILE CONFLICT RISK: <task-A> and <task-B> both target <file>
+  No dependency between them — parallel dispatch may cause merge conflicts.
+  Fix: bd dep add <lower-priority-task> <higher-priority-task>
+```
+
+If no tasks document target files: "Target files not documented in task descriptions — cannot detect file conflicts."
+
+**Check 4: Redundant Transitive Dependencies**
+
+Parse `bd graph --all --compact` output. For each direct dependency edge A→C, check if there's an alternate path A→...→C through other nodes. If so, the direct edge is redundant noise.
+
+Report format:
+```
+REDUNDANT: <task-A> → <task-C> (path exists: A → B → C)
+  Fix: bd dep remove <task-A> <task-C>
+  WARNING: Only run if A and C have no parent-child relationship.
+```
+
 ## Phase 3: Codebase Health Check
 
 ### 3.1 Test Status
@@ -266,6 +323,12 @@ Working tree: <clean/dirty>
 Active branches: <count and purpose>
 Test health: <passing/failing count>
 Recently completed: <list last 3-5 items>
+
+TASK BOARD HEALTH
+-----------------
+<If all checks pass:> All 4 checks passed.
+<If issues found:>
+<List each finding with its fix commands>
 
 ═══════════════════════════════════════════════
 EPIC LANDSCAPE

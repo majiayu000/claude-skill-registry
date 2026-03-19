@@ -1,6 +1,6 @@
 ---
 name: swing-mortem
-description: Prospective failure analysis using Gary Klein's swing-mortem technique. Assumes complete failure, works backward to identify risks, leading indicators, and circuit breakers. Counters optimism bias by forcing systematic exploration of failure modes before they materialize. Use for project plans, architecture decisions, technology adoption, business strategy, or feature launches. Triggers on "리스크", "위험", "실패하면", "swing-mortem", "뭐가 잘못될 수 있어", "risk", "what could go wrong", "걱정되는 점", "failure modes", "리스크 분석", "위험 분석".
+description: Prospective failure analysis using Gary Klein's pre-mortem technique. Assumes complete failure, works backward to identify risks, leading indicators, and circuit breakers. Counters optimism bias by forcing systematic exploration of failure modes before they materialize. Use for project plans, architecture decisions, technology adoption, business strategy, or feature launches. Triggers on "리스크", "위험", "실패하면", "swing-mortem", "뭐가 잘못될 수 있어", "risk", "what could go wrong", "걱정되는 점", "failure modes", "리스크 분석", "위험 분석".
 argument-hint: "[plan, decision, or initiative to stress-test for future failure]"
 allowed-tools: Read, Grep, Glob, Bash, Agent
 ---
@@ -9,7 +9,7 @@ allowed-tools: Read, Grep, Glob, Bash, Agent
 
 Prospective failure analysis that defeats optimism bias by assuming failure first, then working backward to surface risks, early warnings, and escape hatches.
 
-**Based on Gary Klein's swing-mortem technique:** Instead of asking "will this work?" (which triggers optimism bias), this skill forces the question: "It's 6 months from now and this has completely failed. What went wrong?"
+**Based on Gary Klein's pre-mortem technique:** Instead of asking "will this work?" (which triggers optimism bias), this skill forces the question: "It's 6 months from now and this has completely failed. What went wrong?"
 
 **Key distinction from swing-review:**
 - `swing-review` examines the **CURRENT** state — "what's wrong NOW?"
@@ -394,7 +394,7 @@ before any projected traffic event exceeding 3x baseline.
 - For existing flaws in current code (use `swing-review` — it examines what's wrong NOW)
 - For comparing technology options (use `swing-research` — it gathers facts, not failure scenarios)
 - For generating creative alternatives (use `swing-options` — different cognitive mode)
-- For routine code review (use `engineering:code-review`)
+- For routine code review
 - When the decision is trivially reversible (low stakes don't justify the analysis)
 - When the team needs encouragement, not caution (read the room)
 
@@ -404,6 +404,4 @@ before any projected traffic event exceeding 3x baseline.
 - **With swing-review:** Complementary, not overlapping. Run `swing-mortem` first to anticipate future risks, then `swing-review` on the current implementation to find existing flaws. Together they cover temporal risk: future (swing-mortem) + present (adversarial).
 - **With swing-research:** When a swing-mortem scenario depends on uncertain facts (e.g., "will Kafka handle this load?"), invoke `swing-research` to verify the factual basis before rating likelihood.
 - **With swing-options:** After swing-mortem reveals high-priority risks, use `swing-options` to generate alternative approaches that avoid the top failure modes entirely.
-- **With deep-dive-analyzer:** For complex systems, run `deep-dive-analyzer` first to understand the full architecture, then `swing-mortem` to identify where it could fail. Understanding precedes risk analysis.
-- **With skill-composer:** Chain as `deep-dive-analyzer` → `swing-mortem` → `swing-options` for a full "understand → anticipate failure → generate alternatives" pipeline.
 - **With orchestrator strategy team:** Pre-mortem output feeds directly into the strategy team's Devil's Advocate agent for additional stress-testing of the risk assessment itself.

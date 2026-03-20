@@ -1,6 +1,6 @@
 ---
 name: ln-654-resource-lifecycle-auditor
-description: "Checks session scope mismatch, streaming resource holding, missing cleanup, pool config, error path leaks, factory vs injection anti-patterns."
+description: "Checks session scope mismatch, missing cleanup, pool config, error path leaks, resource holding. Use when auditing resource lifecycle."
 allowed-tools: Read, Grep, Glob, Bash
 license: MIT
 ---
@@ -309,16 +309,16 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- contextStore parsed successfully (including output_dir, db_config)
-- scan_path determined
-- DI framework detected (FastAPI Depends, Django middleware, Spring @Autowired, Express middleware, Go wire)
-- Streaming endpoints inventoried
-- All 6 checks completed:
+- [ ] contextStore parsed successfully (including output_dir, db_config)
+- [ ] scan_path determined
+- [ ] DI framework detected (FastAPI Depends, Django middleware, Spring @Autowired, Express middleware, Go wire)
+- [ ] Streaming endpoints inventoried
+- [ ] All 6 checks completed:
   - resource scope mismatch, streaming resource holding, missing cleanup, pool configuration, error path leak, factory vs injection
-- Findings collected with severity, location, effort, recommendation
-- Score calculated using penalty algorithm
-- Report written to `{output_dir}/654-resource-lifecycle.md` (atomic single Write call)
-- Summary returned to coordinator
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated using penalty algorithm
+- [ ] Report written to `{output_dir}/654-resource-lifecycle.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 

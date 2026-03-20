@@ -1,5 +1,5 @@
 ---
-description: Configures Claude Code permissions for safe agent autonomy. Creates settings.json with allow/deny rules and a path-restriction hook.
+description: Configures Claude Code permissions for safe agent autonomy. Creates settings.json with allow/deny rules and a path-restriction hook. Use after /optimus:init to enable autonomous agent workflows, or standalone to lock down a project's permission boundaries.
 disable-model-invocation: true
 ---
 

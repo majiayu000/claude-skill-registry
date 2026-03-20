@@ -26,6 +26,13 @@ Before applying any test strategy changes, ensure the project compiles. If compi
 - **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements
 - **BEFORE APPLYING**: Read the reference for detailed examples, good/bad patterns, and constraints
 
+## When to use this skill
+
+- Review Java code for testing strategies
+- Apply RIGHT-BICEP testing strategies in Java code
+- Apply A-TRIP testing strategies in Java code
+- Apply CORRECT boundary condition verification in Java code
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/130-java-testing-strategies.md](references/130-java-testing-strategies.md).

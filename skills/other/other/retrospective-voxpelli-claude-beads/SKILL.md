@@ -112,7 +112,10 @@ Create `RETRO-{N}.md` using this template:
   recurrence.
 - **Upstream observations** — summarize current state of all UPSTREAM files.
   Log any NEW friction discovered in the session to the appropriate UPSTREAM
-  file using `/upstream-tracker` (workflow 1). Note trends across packages.
+  file using `/upstream-tracker` (workflow 1). Review recent session work — did
+  any workarounds or local extensions get built this sprint that are
+  self-contained enough to contribute back? If yes, log via `/upstream-tracker`
+  workflow 1 with type "Upstream Opportunity". Note trends across packages.
   Flag stale items (>3 months old).
 - **Lessons learned** — reusable insights. Each should be a principle that
   future sessions can apply, not a one-off fact. Format: **Bold principle** —

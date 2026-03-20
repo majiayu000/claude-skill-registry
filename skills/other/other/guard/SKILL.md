@@ -1,6 +1,11 @@
 ---
 name: guard
-description: Start a background sentinel that monitors session size and auto-prunes before compaction triggers.
+description: >
+  Protect Claude Code sessions from context overflow by running a background
+  daemon that monitors session size and auto-prunes before compaction hits.
+  Use when the user says "guard", "protect session", "context getting long",
+  "prevent compaction", "session management", or is running agent teams that
+  need continuous context protection.
 disable-model-invocation: true
 allowed-tools: Bash(cozempic *)
 ---
@@ -31,9 +36,11 @@ Guard mode is **essential** for sessions running agent teams. Without it, auto-c
 - `--no-reactive` — disable kqueue/polling file watcher
 - `-rx NAME` — prescription at hard threshold (default: standard)
 
-## Check if running
+## Check status and stop
 
 The daemon writes to `/tmp/cozempic_guard_*.log`. Check with:
 ```bash
-ls /tmp/cozempic_guard_*.pid 2>/dev/null
+ls /tmp/cozempic_guard_*.pid 2>/dev/null        # is it running?
+tail -20 /tmp/cozempic_guard_*.log 2>/dev/null   # recent activity
+kill "$(cat /tmp/cozempic_guard_*.pid)"           # stop it
 ```

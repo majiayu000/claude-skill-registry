@@ -1,6 +1,6 @@
 ---
 name: ln-821-npm-upgrader
-description: Upgrades npm/yarn/pnpm dependencies with breaking change handling
+description: "Upgrades npm/yarn/pnpm dependencies with breaking change handling. Use when updating JavaScript/TypeScript dependencies."
 license: MIT
 ---
 
@@ -285,14 +285,14 @@ Restore package.json and lock file from git, then run clean install to restore p
 
 ## Definition of Done
 
-- Lock file and package.json verified present
-- Dependencies categorized and prioritized (peer deps first)
-- Security audit completed (critical blocks upgrade)
-- Outdated packages identified via `npm/yarn/pnpm outdated`
-- Breaking changes detected via breaking_changes_patterns.md and MCP tools
-- Upgrades applied in priority order with rollback on failure
-- Build and type checks pass after upgrades
-- Report returned with major/minor/patch counts, migrations, and build status
+- [ ] Lock file and package.json verified present
+- [ ] Dependencies categorized and prioritized (peer deps first)
+- [ ] Security audit completed (critical blocks upgrade)
+- [ ] Outdated packages identified via `npm/yarn/pnpm outdated`
+- [ ] Breaking changes detected via breaking_changes_patterns.md and MCP tools
+- [ ] Upgrades applied in priority order with rollback on failure
+- [ ] Build and type checks pass after upgrades
+- [ ] Report returned with major/minor/patch counts, migrations, and build status
 
 ---
 

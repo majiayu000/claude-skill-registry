@@ -1,6 +1,6 @@
 ---
 name: ln-114-frontend-docs-creator
-description: Creates design_guidelines.md for frontend projects. Invoked when hasFrontend detected.
+description: "Creates design_guidelines.md with WCAG 2.1 compliance and design system docs. Use when project has a frontend."
 license: MIT
 ---
 
@@ -95,12 +95,12 @@ Design guidelines document **visual standards**, NOT code:
 Tables (colors, typography, spacing) > Lists (component inventory) > Text
 
 ## Definition of Done
-- Condition checked (hasFrontend)
-- Document created if applicable
-- Design system, typography, colors documented
-- WCAG references included
-- **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
-- Status returned to coordinator
+- [ ] Condition checked (hasFrontend)
+- [ ] Document created if applicable
+- [ ] Design system, typography, colors documented
+- [ ] WCAG references included
+- [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
+- [ ] Status returned to coordinator
 
 ## Reference Files
 - Templates: `references/templates/design_guidelines_template.md`

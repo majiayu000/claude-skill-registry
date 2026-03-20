@@ -27,6 +27,12 @@ Verify that changes pass all tests before considering the refactoring complete.
 - **SAFETY**: If tests fail, fix issues before proceeding
 - **BEFORE APPLYING**: Read the analysis and solutions documents for specific recommendations
 
+## When to use this skill
+
+- Refactor performance
+- Optimize hot path
+- Performance refactoring
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/163-java-profiling-refactor.md](references/163-java-profiling-refactor.md).

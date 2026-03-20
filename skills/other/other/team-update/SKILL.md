@@ -45,9 +45,9 @@ Check for each capability category:
 |---|---|---|
 | **Chat** | MCP tools matching `chat`, `slack`, `discord`, `teams` | Output formatted text for manual posting |
 | **Git** | `git rev-parse --is-inside-work-tree` | Skip commit summaries |
-| **Issues** | MCP tools matching `github`, `linear`, `jira`, `brain_issues` | Skip or output text list |
-| **Tasks** | MCP tools matching `tasks`, `todos`, `asana`, `brain_tasks` | Skip or output text list |
-| **Knowledge store** | MCP tools matching `vault`, `remember`, `brain_knowledge` | Store last-run in playbook only |
+| **Issues** | MCP tools matching `github`, `linear`, `jira` | Skip or output text list |
+| **Tasks** | MCP tools matching `tasks`, `todos`, `asana` | Skip or output text list |
+| **Knowledge** | Basalt Cortex (`~/Documents/basalt-cortex/`) | Search for related knowledge notes |
 
 ### User Preferences (Ask)
 

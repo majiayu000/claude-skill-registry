@@ -1,6 +1,6 @@
 ---
 name: 125-java-concurrency
-description: Use when you need to apply Java concurrency best practices — including thread safety fundamentals, ExecutorService thread pool management, concurrent design patterns like Producer-Consumer, asynchronous programming with CompletableFuture, immutability and safe publication, deadlock avoidance, virtual threads and structured concurrency, scoped values, backpressure, cancellation discipline, and observability for concurrent systems. Part of the skills-for-java project
+description: Use when you need to apply Java concurrency best practices — including thread safety fundamentals, ExecutorService thread pool management, concurrent design patterns like Producer-Consumer, asynchronous programming with CompletableFuture, immutability and safe publication, deadlock avoidance, virtual threads, scoped values, backpressure, cancellation discipline, and observability for concurrent systems. Part of the skills-for-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -8,7 +8,7 @@ metadata:
 ---
 # Java rules for Concurrency objects
 
-Identify and apply Java concurrency best practices to improve thread safety, scalability, and maintainability by using modern `java.util.concurrent` utilities, virtual threads, and structured concurrency.
+Identify and apply Java concurrency best practices to improve thread safety, scalability, and maintainability by using modern `java.util.concurrent` utilities and virtual threads.
 
 **What is covered in this Skill?**
 
@@ -19,7 +19,6 @@ Identify and apply Java concurrency best practices to improve thread safety, sca
 - Immutability and safe publication (`volatile`, static initializers)
 - Lock contention and false-sharing performance optimization
 - Virtual threads (`Executors.newVirtualThreadPerTaskExecutor()`) for I/O-bound scalability
-- `StructuredTaskScope` for lifecycle-scoped task management
 - `ScopedValue` over `ThreadLocal` for immutable cross-task data
 - Cooperative cancellation and `InterruptedException` discipline
 - Backpressure with bounded queues and `CallerRunsPolicy`
@@ -39,6 +38,10 @@ Before applying any concurrency changes, ensure the project compiles. If compila
 - **SAFETY**: If compilation fails, stop immediately — compilation failure is a blocking condition that prevents any further processing
 - **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements
 - **BEFORE APPLYING**: Read the reference for detailed good/bad examples, constraints, and safeguards for each concurrency pattern
+
+## When to use this skill
+
+- Review Java code for concurrency
 
 ## Reference
 

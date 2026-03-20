@@ -53,6 +53,39 @@ Control how thorough the audit is. Pass as an argument: `/ux-audit quick`, `/ux-
 | **quick** | 5-10 min | Interactive | One user flow, happy path only. Spot check after a change. |
 | **standard** | 20-40 min | Semi-autonomous | Full walkthrough + QA sweep of main pages. Default. |
 | **thorough** | 1-3 hours | Fully autonomous | Multiple personas, all pages, all modes combined. Overnight mode. |
+| **exhaustive** | 4-8+ hours | Fully autonomous | Every interactive element on every page. Every button clicked, every dialog opened, every form filled, every state triggered. Leave nothing untested. |
+
+### Exhaustive Mode
+
+The exhaustive mode goes beyond thorough. Thorough tests workflows and pages. Exhaustive tests **every single interactive element** in the application.
+
+For each page discovered:
+1. **Inventory all interactive elements** — buttons, links, inputs, selects, checkboxes, toggles, tabs, accordions, modals triggers, dropdowns, context menus, drag handles, sliders
+2. **Click/interact with every one** — open every dialog, expand every accordion, select every tab, toggle every switch, trigger every dropdown
+3. **Screenshot each state** — default, hover, active, open, closed, expanded, collapsed, selected, error
+4. **Test every form** — fill with valid data, submit. Fill with invalid data, submit. Leave empty, submit. Test every field individually.
+5. **Test every combination** — if there are filters, test each filter value. If there are tabs, test each tab. If there are sort options, test each sort.
+6. **Dark mode + light mode** — every page, every dialog, every state in both modes
+7. **Three viewport widths** — 1280px, 768px, 375px for every page and dialog
+8. **Keyboard navigation** — tab through every page, verify focus order, test Enter/Space/Escape on every interactive element
+9. **Right-click/context menus** — if the app has custom context menus, test every option in every context
+10. **Edge states** — what happens with 0 items, 1 item, 100 items, 1000 items? What happens with very long text in every field?
+11. **Concurrent tabs** — open the same page in two tabs, interact in both, check for conflicts
+12. **Every error path** — trigger every validation error, every 404, every permission denied, every timeout
+
+**Progress tracking**: This mode generates a LOT of findings. Write findings to the report incrementally — don't hold everything in memory. Update `docs/ux-audit-exhaustive-YYYY-MM-DD.md` after each page is complete.
+
+**Element inventory format** (per page):
+```
+/clients — 47 interactive elements
+  [x] "Add Client" button — opens modal ✓, form submits ✓, validation ✓
+  [x] Search input — filters correctly ✓, clear button works ✓, empty search ✓
+  [x] Sort dropdown — all 4 options work ✓, persists on navigation ✗ (BUG)
+  [x] Client row click — navigates to detail ✓
+  [x] Star button — toggles ✓, persists on refresh ✓
+  [ ] Pagination — next ✓, prev ✓, page numbers ✓, items per page ✗ (not tested - no data)
+  ...
+```
 
 ### Thorough Mode: Overnight Workflow
 
@@ -62,7 +95,7 @@ The thorough mode is designed to run unattended. Kick it off at end of day, revi
 
 1. **Discover all routes** — read router config, crawl navigation, build complete page inventory
 2. **Identify workflow threads** — what are the 3-5 real tasks a user does in a day? Map them before testing individual pages. See [references/workflow-comprehension.md](references/workflow-comprehension.md).
-3. **Create a task list** — track progress so work survives context limits
+3. **Create a task list** — track progress across the audit
 4. **Visual & layout sweep** (every page):
    - Screenshot at 1280px, 1024px, 768px, 375px widths
    - Screenshot in light mode and dark mode
@@ -292,6 +325,8 @@ Focused testing of a specific area.
 | Client demo prep | QA Sweep + UX Walkthrough | standard |
 | End-of-day comprehensive test, review in morning | All modes combined | thorough |
 | Pre-launch full audit with evidence | All modes combined | thorough |
+| Test literally everything before a client demo | Every element on every page | exhaustive |
+| Weekend-long complete app certification | Every element, state, viewport, mode | exhaustive |
 
 **Skip this skill for**: API-only services, CLI tools, unit/integration tests (use test frameworks), performance testing.
 

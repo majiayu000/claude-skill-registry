@@ -1,5 +1,5 @@
 ---
-description: Prepares a project for Claude Code — generates CLAUDE.md with progressive disclosure docs, auto-format hooks, code-quality agents (code-simplifier, test-guardian), and test infrastructure (framework, coverage tooling, testing docs). Detects empty directories and offers new-project scaffolding via official stack tooling before setup. Also audits and syncs existing documentation against source code. Replaces /init. Supports single projects, monorepos, and multi-repo workspaces (separate git repos under a shared parent directory).
+description: Prepares a project for Claude Code — generates CLAUDE.md with progressive disclosure docs, auto-format hooks, code-quality agents (code-simplifier, test-guardian), and test infrastructure (framework, coverage tooling, testing docs). Detects empty directories and offers new-project scaffolding via official stack tooling before setup. Also audits and syncs existing documentation against source code. Replaces /init. Supports single projects, monorepos, and multi-repo workspaces (separate git repos under a shared parent directory). Use to bootstrap a new or existing project for Claude Code, or re-run to update an outdated setup.
 disable-model-invocation: true
 ---
 
@@ -245,12 +245,12 @@ Run the full provisioning procedure from the reference: health check (run test s
 **If test infrastructure was NOT detected:**
 
 Use `AskUserQuestion` — header "Test Infrastructure", question "No test framework was detected. Would you like to install one?":
-- **Yes (strongly recommended)** — "Install test framework and coverage tooling — strongly recommended. Multiple optimus skills depend on test infrastructure: `/optimus:tdd` is non-functional without it, `/optimus:code-review` and `/optimus:simplify` lose deep mode, and `/optimus:verify` loses automated checks."
+- **Yes (strongly recommended)** — "Install test framework and coverage tooling — strongly recommended. Multiple optimus skills depend on test infrastructure: `/optimus:tdd` is non-functional without it, `/optimus:code-review` and `/optimus:refactor` lose deep mode, and `/optimus:verify` loses automated checks."
 - **No** — "Skip test infrastructure setup — some optimus skills will have reduced functionality"
 
 If the user chooses **Yes**: follow the "Framework and Coverage Tooling Installation" section of the reference (consult `$CLAUDE_PLUGIN_ROOT/skills/init/references/test-framework-recommendations.md`, ask user approval for specific framework, install, then run health check). After installation, run the full Optimus Infrastructure Provisioning from the reference (test-guardian, testing.md, CLAUDE.md refs, README section, .gitignore).
 
-If the user chooses **No**: skip all test infrastructure provisioning. In Step 7 summary, include: "⚠ Test infrastructure was not installed — `/optimus:tdd` will not work, and `/optimus:code-review`, `/optimus:simplify`, and `/optimus:verify` will have reduced functionality. Re-run `/optimus:init` to install test infrastructure later."
+If the user chooses **No**: skip all test infrastructure provisioning. In Step 7 summary, include: "⚠ Test infrastructure was not installed — `/optimus:tdd` will not work, and `/optimus:code-review`, `/optimus:refactor`, and `/optimus:verify` will have reduced functionality. Re-run `/optimus:init` to install test infrastructure later."
 
 ## Step 6: Create Documentation Files
 
@@ -354,11 +354,11 @@ After the table, include conditional warnings:
 
 If test infrastructure was installed from scratch in Step 5c (no pre-existing test framework — the user chose "Yes" to install one), include a strong warning:
 
-> ⚠ **Important:** Test framework was installed but the project has no test files yet. The test command will pass with 0 tests — this is a false safety net. Other optimus skills (`/optimus:code-review` deep mode, `/optimus:simplify` deep mode, `/optimus:verify`) rely on tests to validate changes. **Run `/optimus:unit-test` next** to write initial tests and establish real coverage.
+> ⚠ **Important:** Test framework was installed but the project has no test files yet. The test command will pass with 0 tests — this is a false safety net. Other optimus skills (`/optimus:code-review` deep mode, `/optimus:refactor` deep mode, `/optimus:verify`) rely on tests to validate changes. **Run `/optimus:unit-test` next** to write initial tests and establish real coverage.
 
 If the user declined test infrastructure in Step 5c, include:
 
-> ⚠ **Note:** Test infrastructure was not installed — `/optimus:tdd` will not work, and `/optimus:code-review`, `/optimus:simplify`, and `/optimus:verify` will have reduced functionality. Re-run `/optimus:init` to install test infrastructure later.
+> ⚠ **Note:** Test infrastructure was not installed — `/optimus:tdd` will not work, and `/optimus:code-review`, `/optimus:refactor`, and `/optimus:verify` will have reduced functionality. Re-run `/optimus:init` to install test infrastructure later.
 
 **Next step:** If the project's root `README.md` lacks a development setup section (no heading matching the patterns defined in `$CLAUDE_PLUGIN_ROOT/skills/init/references/readme-section-detection.md`), recommend running `/optimus:dev-setup` first to ensure the project has comprehensive human-readable setup instructions, then `/optimus:unit-test` to write tests. Otherwise, recommend `/optimus:unit-test` directly.
 
@@ -366,6 +366,6 @@ Tell the user: **Tip:** for best results, start a fresh conversation for the nex
 
 End the report with:
 
-> **Setup complete** — your project now has the foundation for effective AI-assisted development. To reach optimal performance, build on this foundation: strengthen test coverage with `/optimus:unit-test` and refine code quality with `/optimus:simplify`.
+> **Setup complete** — your project now has the foundation for effective AI-assisted development. To reach optimal performance, build on this foundation: strengthen test coverage with `/optimus:unit-test` and refine code quality with `/optimus:refactor`.
 
 ---

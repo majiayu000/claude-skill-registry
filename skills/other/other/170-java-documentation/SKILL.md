@@ -26,6 +26,11 @@ Before applying any documentation generation, ensure the project validates. If v
 - **SAFETY**: If validation fails, stop immediately — do not proceed until all validation errors are resolved
 - **BEFORE APPLYING**: Read the reference for detailed good/bad examples, constraints, and safeguards for each documentation generation pattern
 
+## When to use this skill
+
+- Review Java code for documentation
+- Apply best practices for documentation in Java code
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/170-java-documentation.md](references/170-java-documentation.md).

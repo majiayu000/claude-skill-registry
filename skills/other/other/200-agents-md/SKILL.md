@@ -27,6 +27,12 @@ No Maven validation is required before generating AGENTS.md. Review the project 
 - **BEFORE STARTING**: Review the project structure and existing documentation to provide accurate answers during Step 1
 - **BEFORE APPLYING**: Read the reference for detailed good/bad examples, constraints, and safeguards for each AGENTS.md generation pattern
 
+## When to use this skill
+
+- Create AGENTS.md
+- Update AGENTS.md file
+- Add agent instructions
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/200-agents-md.md](references/200-agents-md.md).

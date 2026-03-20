@@ -1,12 +1,12 @@
 ---
 name: basalt-cortex
-description: "Mine knowledge from Gmail, Google Chat, Slack, Drive, local files, MCP servers, and web into an Obsidian-compatible vault (~/.cortex/). Basalt format: markdown files with YAML frontmatter for clients, contacts, communications, and knowledge facts. Opens directly in Obsidian, syncs to Frond. Triggers: 'run the cortex', 'mine emails', 'mine slack', 'mine chat', 'cortex init', 'cortex search', 'cortex stats', 'what do I know about', 'set up cortex', 'mine my inbox'."
+description: "Mine knowledge from Gmail, Google Chat, Slack, Drive, local files, MCP servers, and web into an Obsidian-compatible vault (~/Documents/basalt-cortex/). Basalt format: markdown files with YAML frontmatter for clients, contacts, communications, and knowledge facts. Opens directly in Obsidian, syncs to basaltcortex.com via CLI daemon. Triggers: 'run the cortex', 'mine emails', 'mine slack', 'mine chat', 'cortex init', 'cortex search', 'cortex stats', 'what do I know about', 'set up cortex', 'mine my inbox'."
 compatibility: claude-code-only
 ---
 
 # Basalt Cortex
 
-Mine knowledge from multiple sources into Obsidian-compatible markdown files stored in `~/.cortex/`. Each file has structured YAML frontmatter. Open `~/.cortex/` in Obsidian at any time — it's a valid vault.
+Mine knowledge from multiple sources into Obsidian-compatible markdown files stored in `~/Documents/basalt-cortex/`. Each file has structured YAML frontmatter. Files auto-sync to basaltcortex.com via the `basalt-cortex` CLI tray daemon.
 
 **Read [references/basalt-format.md](references/basalt-format.md) before any file operations.**
 
@@ -29,7 +29,7 @@ Create the vault structure. Run once before first mine.
 ### Check for existing vault
 
 ```bash
-ls ~/.cortex/state.json 2>/dev/null && echo "EXISTS" || echo "FRESH"
+ls ~/Documents/basalt-cortex/state.json 2>/dev/null && echo "EXISTS" || echo "FRESH"
 ```
 
 If EXISTS: ask user — skip, reset (data loss warning), or continue (add missing folders only).
@@ -37,7 +37,7 @@ If EXISTS: ask user — skip, reset (data loss warning), or continue (add missin
 ### Create structure
 
 ```bash
-mkdir -p ~/.cortex/{clients,contacts,communications,knowledge,projects,notes,.obsidian}
+mkdir -p ~/Documents/basalt-cortex/{clients,contacts,communications,knowledge,projects,notes,.obsidian}
 ```
 
 ### Write state.json
@@ -57,7 +57,7 @@ mkdir -p ~/.cortex/{clients,contacts,communications,knowledge,projects,notes,.ob
 ### Write Obsidian config
 
 ```json
-// ~/.cortex/.obsidian/app.json
+// ~/Documents/basalt-cortex/.obsidian/app.json
 { "newFileLocation": "folder", "newFileFolderPath": "notes" }
 ```
 
@@ -65,7 +65,7 @@ mkdir -p ~/.cortex/{clients,contacts,communications,knowledge,projects,notes,.ob
 
 Create one example client, contact, and knowledge note in Basalt format so the user can see the structure. Use templates from [references/basalt-format.md](references/basalt-format.md).
 
-Report the created structure to the user. Tell them to open `~/.cortex/` in Obsidian.
+Report the created structure to the user. Tell them to open `~/Documents/basalt-cortex/` in Obsidian.
 
 ---
 
@@ -77,80 +77,94 @@ Extract knowledge from a source and write Basalt-format files.
 
 Ask or detect which source to mine:
 
-| Source | Prerequisites | Fetch method |
-|--------|-------------|-------------|
-| **gmail** | `gws` CLI + auth | `gws gmail messages list`, `gws gmail messages get` |
-| **google-chat** | `gws` CLI + auth | `gws chat spaces list`, `gws chat messages list` |
+| Source | Fetch method | Notes |
+|--------|-------------|-------|
+| **gmail** (default) | Gmail MCP (`gmail_messages`) | Use `extract_contacts` + `list` + `get` |
+| **google-chat** | Google Chat MCP (`chat_messages`) | Mine space-by-space, NOT `search_active` |
 | **slack** | Slack MCP or API token | MCP tools or `curl` with token |
-| **google-drive** | `gws` CLI + auth | `gws drive files list`, `gws drive files get` |
-| **local** | — | `find` + `cat` on local directories |
-| **mcp** | MCP server connected | MCP tool calls (brain_recall, vault recall, etc.) |
-| **web** | Web scraper or fetch | WebFetch, Firecrawl, or browser automation |
-| **calendar** | `gws` CLI + auth | `gws calendar events list` |
-| **obsidian** | Existing vault path | Read `.md` files, normalise frontmatter to Basalt |
+| **google-drive** | Drive MCP or `gws` CLI | Metadata + summaries, don't copy full docs |
+| **local** | Read tool + Glob | `find` + `cat` on local directories |
+| **mcp** | MCP tool calls | Any connected MCP server with searchable data |
+| **web** | WebFetch or browser | Firecrawl, Playwright, or WebFetch |
+| **calendar** | Calendar MCP or `gws` CLI | Events, attendees, meeting notes |
 
-Default: `gmail` if no source specified.
+### Proven Extraction Workflow (Two-Phase)
 
-### Prerequisites Check
+Mining works in two phases. Phase 1 (reconnaissance) uses MCP tools interactively. Phase 2 (batch write) generates a Python script for efficiency.
 
-```bash
-# For Gmail/Chat/Drive/Calendar:
-which gws || echo "MISSING: npm install -g @googleworkspace/cli"
-# For AI extraction:
-echo $ANTHROPIC_API_KEY | head -c 5 || echo "MISSING: set ANTHROPIC_API_KEY"
-# Vault exists:
-ls ~/.cortex/state.json 2>/dev/null || echo "NOT INITIALISED: run cortex init first"
+#### Phase 1: Reconnaissance via MCP (interactive)
+
+Use MCP tools to fetch raw data and identify entities. Claude does the AI extraction in-context — no external LLM call needed.
+
+**Gmail example:**
+```
+1. extract_contacts — scan 100 recent emails, get deduplicated contacts with names/emails/counts
+   - Use `field: "from"` for inbound contacts
+   - Use `field: "to"` for outbound contacts (from sent mail)
+   - Exclude automated domains: jezweb.net, google.com, github.com, cloudflare.com, etc.
+
+2. list — fetch 30-50 emails per batch with bodyPreview
+   - Query: `in:inbox -category:promotions -category:social -category:updates -category:forums after:YYYY/MM/DD`
+   - Format: compact or full, bodyPreview: 1000-2000
+
+3. get — fetch full content for significant threads (client conversations, support requests, decisions)
+
+4. Pre-filter while scanning:
+   - Skip: 2FA codes, domain expiry notices, payment receipts, Wordfence alerts, auto top-ups
+   - Keep: Real human conversations, support requests, project discussions, business decisions
+   - See references/prefilter-patterns.md for full skip/keep rules
 ```
 
-### Extraction Workflow
-
-For each source, the pattern is the same:
-
-1. **Fetch** raw data (emails, messages, files, pages)
-2. **Pre-filter** — skip automated content, check source_id against state.json processed list. See [references/prefilter-patterns.md](references/prefilter-patterns.md).
-3. **AI Extract** — send content to an LLM with an extraction prompt (see below)
-4. **Write** Basalt files — one `.md` file per entity with YAML frontmatter
-5. **Update state** — add source_ids to processed list, update cursors and totals
-
-### AI Extraction Prompt Pattern
-
-Generate a script that sends each piece of raw content to an LLM with this prompt structure:
-
+**Google Chat example:**
 ```
-You are extracting structured knowledge from a [source type].
-For each item, identify and output JSON for:
-
-1. CONTACTS: people mentioned (name, email, role, company)
-2. CLIENTS: businesses/organisations (name, domain, industry)
-3. COMMUNICATIONS: the interaction itself (subject, participants, summary, type)
-4. KNOWLEDGE: facts, decisions, preferences, commitments extracted from the content
-
-For each entity, generate a `summary` field: 1-3 sentences, dense with names and context.
-This summary is used for semantic search — make it specific and useful.
-
-Output as JSON array of {type, data} objects.
+1. chat_spaces list — get all spaces with lastActiveTime
+2. chat_messages list — fetch ONE space at a time, limit 25-50
+   - NEVER use search_active for mining (times out on 50+ spaces)
+   - Iterate space by space, save progress after each
+3. Pre-filter: skip bot messages, join/leave events, webhook posts
 ```
 
-### Basalt File Writing Pattern
+From the fetched data, identify:
+- **CLIENTS**: businesses/organisations (name, domain, industry)
+- **CONTACTS**: people mentioned (name, email, role, company, phone if visible)
+- **COMMUNICATIONS**: the interaction itself (subject, participants, summary, type)
+- **KNOWLEDGE**: facts, decisions, preferences, commitments, relationships, deadlines
 
-For each extracted entity, write a markdown file with YAML frontmatter:
+For each entity, craft a `summary` field: 1-3 sentences, dense with names and context. This is the Vectorize embedding input — make it specific and useful for semantic search.
 
-- **Path**: determined by type (see basalt-format.md)
-- **ID**: deterministic — `client_{domain}`, `contact_{email_slug}`, `comm_{timestamp}_{hash}`
-- **Upsert**: if file exists, merge (keep earlier `first_seen`, update `last_seen`, increment `thread_count`)
-- **Wikilinks**: add `[[related]]` links between connected entities
+#### Phase 2: Batch Write via Python Script
 
-See [references/basalt-format.md](references/basalt-format.md) for complete field specs per entity type.
+Once entities are identified, generate a Python script to write all Basalt files at once. This is dramatically faster than individual Write tool calls (55 files in one execution vs 8 tool calls for 17 files).
 
-### Script Generation
+**Script location:** `.jez/scripts/mine-{source}-batch.py`
 
-**Do NOT look for a pre-built script.** Generate a Python script in `.jez/scripts/` adapted to:
-- The user's chosen source
-- Their available tools (gws CLI, MCP servers, API keys)
-- Their preferred LLM (Anthropic API, local Ollama, Workers AI)
-- Batch size and date range from arguments
+**Script must include these helper functions:**
+- `slugify(text)` — lowercase, hyphens, no special chars, max 60 chars
+- `write_client(domain, name, industry, summary, contacts, tags)`
+- `write_contact(name, email, role, company, company_domain, summary, phone, tags)`
+- `write_communication(date, subject_slug, subject, summary, participants, client_domain, comm_type, body, source_id)`
+- `write_knowledge(topic_slug, summary, kind, client_domain, contact_email, body, date)`
 
-See [references/source-patterns.md](references/source-patterns.md) for per-source fetch + extract patterns.
+**Key script behaviours:**
+- Check `if path.exists(): return` — never overwrite existing files (dedup)
+- Use human-readable filenames (see basalt-format.md filename conventions)
+- Keep machine IDs in frontmatter (`id` field) for sync
+- Update `~/.cortex/state.json` totals and run history at the end
+- Print each file written for progress tracking
+
+**Data goes directly in the script** as Python data structures — not loaded from a JSON file. Claude populates the data arrays from Phase 1 analysis:
+
+```python
+clients = [
+    ("bigcolour.com.au", "Big Colour", "signage",
+     "Signage company. Justin is director. Active client with L2Chat agent.",
+     [("Justin Big Colour", "Director")]),
+    # ... more clients
+]
+
+for domain, name, industry, summary, contacts in clients:
+    write_client(domain, name, industry, summary, contacts)
+```
 
 ### Common Arguments
 
@@ -165,10 +179,9 @@ See [references/source-patterns.md](references/source-patterns.md) for per-sourc
 
 | Variable | Default | Purpose |
 |----------|---------|---------|
-| `CORTEX_DIR` | `~/.cortex` | Storage root |
-| `ANTHROPIC_API_KEY` | — | For AI extraction |
-| `CORTEX_BATCH_SIZE` | `50` | Items per run |
-| `CORTEX_OWNER_EMAIL` | — | Your email — excluded from contacts |
+| `CORTEX_DIR` | `~/Documents/basalt-cortex` | Vault root (syncs to basaltcortex.com) |
+| `CORTEX_STATE` | `~/.cortex/state.json` | Cursor + run history |
+| `CORTEX_OWNER_EMAIL` | `jeremy@jezweb.net` | Your email — excluded from contacts |
 
 ---
 
@@ -190,10 +203,10 @@ Search across Basalt files. Claude can do this natively — no script needed.
 
 ```bash
 # Keyword search across all Basalt files
-grep -rl "QUERY" ~/.cortex/ --include="*.md"
+grep -rl "QUERY" ~/Documents/basalt-cortex/ --include="*.md"
 
 # Frontmatter field search
-grep -rl "client_domain: example.com" ~/.cortex/ --include="*.md"
+grep -rl "client_domain: example.com" ~/Documents/basalt-cortex/ --include="*.md"
 ```
 
 For structured queries, read frontmatter with Python `frontmatter` library or parse YAML between `---` markers.
@@ -203,22 +216,27 @@ For structured queries, read frontmatter with Python `frontmatter` library or pa
 ## Stats Mode
 
 ```bash
-echo "Clients:        $(find ~/.cortex/clients -name '*.md' 2>/dev/null | wc -l)"
-echo "Contacts:       $(find ~/.cortex/contacts -name '*.md' 2>/dev/null | wc -l)"
-echo "Communications: $(find ~/.cortex/communications -name '*.md' 2>/dev/null | wc -l)"
-echo "Knowledge:      $(find ~/.cortex/knowledge -name '*.md' 2>/dev/null | wc -l)"
-echo "Notes:          $(find ~/.cortex/notes -name '*.md' 2>/dev/null | wc -l)"
+echo "Clients:        $(find ~/Documents/basalt-cortex/clients -name '*.md' 2>/dev/null | wc -l)"
+echo "Contacts:       $(find ~/Documents/basalt-cortex/contacts -name '*.md' 2>/dev/null | wc -l)"
+echo "Communications: $(find ~/Documents/basalt-cortex/communications -name '*.md' 2>/dev/null | wc -l)"
+echo "Knowledge:      $(find ~/Documents/basalt-cortex/knowledge -name '*.md' 2>/dev/null | wc -l)"
+echo "Notes:          $(find ~/Documents/basalt-cortex/notes -name '*.md' 2>/dev/null | wc -l)"
 ```
 
 Also read `state.json` for last run date, cursor positions, and run history.
 
 ---
 
-## Sync Mode (Future)
+## Sync Mode
 
-Push Basalt files to Frond, D1, or Vectorize. See [references/sync-patterns.md](references/sync-patterns.md).
+Files in `~/Documents/basalt-cortex/` auto-sync to basaltcortex.com via the `basalt-cortex` CLI tray daemon. No manual sync needed.
 
-Not yet built — placeholder for when Frond API token auth is ready.
+The daemon uses chokidar to watch for file changes and pushes to the API with content hash comparison (skip unchanged files) and last-write-wins conflict resolution.
+
+**Start daemon:** `basalt-cortex tray` (runs in system tray)
+**Manual push:** `basalt-cortex push`
+**Manual pull:** `basalt-cortex pull`
+**Bidirectional:** `basalt-cortex sync` (watches local + polls remote every 30s)
 
 ---
 
@@ -235,6 +253,7 @@ Not yet built — placeholder for when Frond API token auth is ready.
 | When | Read |
 |------|------|
 | Before any file operations | [references/basalt-format.md](references/basalt-format.md) |
+| When extracting semantic fields from threads | [references/field-catalog.md](references/field-catalog.md) |
 | Per-source fetch and extract patterns | [references/source-patterns.md](references/source-patterns.md) |
 | Before processing raw content | [references/prefilter-patterns.md](references/prefilter-patterns.md) |
 | When syncing to Frond/D1/Vectorize | [references/sync-patterns.md](references/sync-patterns.md) |

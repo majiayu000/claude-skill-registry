@@ -50,7 +50,7 @@ Sequential coordinator for code quality pipeline. Invokes workers (ln-511 → ln
    **MANDATORY READ:** Load `shared/references/git_scope_detection.md`
    Run algorithm from guide → build `changed_files[]`
 
-**Fast-track mode:** When invoked with `--fast-track` flag (readiness 10/10), run Phase 2 with `--skip-mcp-ref` (metrics + static only, no MCP Ref), skip Phase 3 (ln-512), Phase 4 (agent review). Run Phase 5 (criteria), Phase 6 (linters), Phase 7 (ln-513), Phase 8 (ln-514).
+**Fast-track mode:** When invoked with `--fast-track` flag (readiness 10/10), run Phase 2 with `--skip-mcp-ref` (metrics + static only, no MCP Ref), skip Phase 3 (ln-512), run Phase 4 with **1 agent minimum** (reduced from 2). Run Phase 5 (criteria), Phase 6 (linters), Phase 7 (ln-513), Phase 8 (ln-514).
 
 ### Phase 2: Code Quality (delegate to ln-511 — ALWAYS runs)
 
@@ -88,16 +88,16 @@ Skill(skill: "ln-511-code-quality-checker", args: "{storyId} --skip-mcp-ref")
 Skill(skill: "ln-512-tech-debt-cleaner", args: "{storyId}")
 ```
 
-### Phase 4: Agent Review Launch (SKIP if --fast-track)
+### Phase 4: Agent Review Launch
 
-> **MANDATORY STEP (full gate):** Launches agents in background, results merged in Phase 9.
-> **Fast-track:** SKIP this phase.
+> **MANDATORY STEP:** Launches agents in background, results merged in Phase 9.
+> **Fast-track:** Launch 1 agent only (most available). Results merged in Phase 9 as normal.
 
 **MANDATORY READ:** Load `shared/references/agent_review_workflow.md`, `shared/references/agent_delegation_pattern.md`
 
 4a) **Health Check** (per shared workflow "Step: Health Check"):
     - Read `docs/environment_state.json` → exclude agents with `disabled: true`
-    - Run `python shared/agents/agent_runner.py --health-check` for remaining agents
+    - Run `node shared/agents/agent_runner.mjs --health-check` for remaining agents
     - If 0 agents → agent review SKIPPED, go to Phase 5
 4b) **Get references:** `get_issue(storyId)` + `list_issues(parent=storyId, status=Done)` (exclude test tasks)
 4c) **Build prompt:** Assemble from `shared/agents/prompt_templates/review_base.md` + `modes/code.md` (per shared workflow "Step: Build Prompt"), replace `{story_ref}`, `{task_refs}`. Save to `.agent-review/{identifier}_codereview_prompt.md`
@@ -146,7 +146,7 @@ Skill(skill: "ln-513-regression-checker", args: "{storyId}")
 Skill(skill: "ln-514-test-log-analyzer", args: "review logs since test run start, expected errors from negative test cases")
 ```
 
-### Phase 9: Agent Merge (runs after Phase 8, when agent results arrive — SKIP if --fast-track or agents SKIPPED)
+### Phase 9: Agent Merge (runs after Phase 8, when agent results arrive — SKIP if agents SKIPPED)
 
 **MANDATORY READ:** Load `shared/references/agent_review_workflow.md` (Critical Verification + Debate), `shared/references/agent_review_memory.md`
 

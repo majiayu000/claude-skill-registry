@@ -30,6 +30,11 @@ Copy bash scripts exactly from templates. Ensure JVM flags are applied for profi
 - **EXECUTABLE**: Make scripts executable with chmod +x
 - **BEFORE APPLYING**: Read the reference for exact script templates and setup instructions
 
+## When to use this skill
+
+- Review Java code for profiling
+- Add profiling support
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/161-java-profiling-detect.md](references/161-java-profiling-detect.md).

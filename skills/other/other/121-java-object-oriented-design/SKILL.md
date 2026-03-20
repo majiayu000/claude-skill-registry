@@ -31,6 +31,17 @@ Before applying any OOD changes, ensure the project compiles. If compilation fai
 - **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements
 - **BEFORE APPLYING**: Read the reference for detailed examples, good/bad patterns, and constraints
 
+## When to use this skill
+
+- Review Java code for object-oriented design
+- Refactor Java code for object-oriented design
+- Improve Java code for object-oriented design
+- Fix OOP concept misuse in Java code
+- Identify and resolve code smells in Java code
+- Improve object creation patterns in Java code
+- Improve method design in Java code
+- Improve exception handling in Java code
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/121-java-object-oriented-design.md](references/121-java-object-oriented-design.md).

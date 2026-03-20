@@ -91,7 +91,7 @@ WP_USERNAME=admin
 WP_APP_PASSWORD=xxxx xxxx xxxx xxxx xxxx xxxx
 ```
 
-Ensure `.dev.vars` is in `.gitignore`. For cross-project use, store in your preferred secrets manager (environment variable, 1Password CLI, Vault MCP, etc.).
+Ensure `.dev.vars` is in `.gitignore`. For cross-project use, store in your preferred secrets manager (environment variable, 1Password CLI, etc.).
 
 ### Step 4: Verify Full Access
 

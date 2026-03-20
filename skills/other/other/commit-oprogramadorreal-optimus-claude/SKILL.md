@@ -1,5 +1,5 @@
 ---
-description: Stages, commits, and optionally pushes local changes with a conventional commit message — analyzes diffs, generates the message, confirms with the user, and commits. On protected branches, offers to create a feature branch automatically. Multi-repo aware. Use when you want to commit your work in one step.
+description: Stages, commits, and optionally pushes local changes with a conventional commit message — analyzes diffs, generates the message, confirms with the user, and commits. On protected branches, offers to create a feature branch automatically. Multi-repo aware. Use when ready to commit work in one step.
 disable-model-invocation: true
 ---
 

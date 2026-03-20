@@ -1,11 +1,11 @@
 ---
-description: Improves unit test coverage on demand — discovers testing gaps and generates tests that follow project conventions. Requires /optimus:init to have set up test infrastructure first. Conservative: only adds new test files, never refactors existing source code.
+description: Improves unit test coverage on demand — discovers testing gaps and generates tests that follow project conventions. Requires /optimus:init to have set up test infrastructure first. Conservative — only adds new test files, never refactors existing source code. Use when test coverage is low or after adding new code that lacks tests.
 disable-model-invocation: true
 ---
 
 # Unit Test Coverage Improvement
 
-Improve unit test coverage for existing code. Requires `/optimus:init` to have set up test infrastructure (framework, coverage tooling, test-guardian agent, testing docs) first. Conservative by design — only adds new test files, never refactors or restructures existing source code. If code is untestable as-is, it flags it rather than changing it. Refactoring is the domain of `/optimus:simplify`.
+Improve unit test coverage for existing code. Requires `/optimus:init` to have set up test infrastructure (framework, coverage tooling, test-guardian agent, testing docs) first. Conservative by design — only adds new test files, never refactors or restructures existing source code. If code is untestable as-is, it flags it rather than changing it. Refactoring is the domain of `/optimus:refactor`.
 
 ## Step 1: Pre-flight
 
@@ -86,7 +86,7 @@ Before writing any tests:
 - Gap requiring structural changes: ~[Z]%
 
 The remaining ~[Z]% would require structural changes (dependency injection,
-repository pattern extraction, etc.) — that's the domain of /optimus:simplify.
+repository pattern extraction, etc.) — that's the domain of /optimus:refactor.
 ```
 
 This sets clear expectations and reinforces the conservative constraint.
@@ -136,7 +136,7 @@ Answer these gate questions — fix any "no" before proceeding:
 
 ### Conservative constraint
 
-**Only add new test files.** Never refactor or modify existing source code — refactoring is the domain of `/optimus:simplify`. If a function can't be tested without changing its signature or extracting dependencies, flag it in the summary instead of changing it.
+**Only add new test files.** Never refactor or modify existing source code — refactoring is the domain of `/optimus:refactor`. If a function can't be tested without changing its signature or extracting dependencies, flag it in the summary instead of changing it.
 
 ### Per-test workflow
 
@@ -178,11 +178,11 @@ Report to the user:
 
 ### Not Testable Without Refactoring
 - [List of code flagged as untestable — with brief explanation of what structural change would be needed]
-- To address these, run `/optimus:simplify` to review and restructure the code first.
+- To address these, run `/optimus:refactor` to review and restructure the code first.
 ```
 
 For multi-repo workspaces, present results per repo (one summary block per repo) and include the repo name/path in each section header.
 
-Recommend running `/optimus:simplify` to review code quality, or `/optimus:tdd` to continue development with test-driven workflow.
+Recommend running `/optimus:refactor` to review code quality, or `/optimus:tdd` to continue development with test-driven workflow.
 
 Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.

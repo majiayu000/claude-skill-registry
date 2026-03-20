@@ -78,7 +78,7 @@ SHOPIFY_ACCESS_TOKEN=shpat_xxxxxxxxxxxxxxxxxxxxx
 
 Ensure `.dev.vars` is in `.gitignore`.
 
-**For cross-project use** — store in your preferred secrets manager (environment variable, 1Password CLI, Vault MCP, etc.).
+**For cross-project use** — store in your preferred secrets manager (environment variable, 1Password CLI, etc.).
 
 ### Step 5: Verify API Access
 

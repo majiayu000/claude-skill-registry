@@ -98,9 +98,9 @@ If no coverage tooling is available, proceed with manual analysis. The agent wil
 
 **Assess scope size** with Glob.
 
-**Small scope (roughly ≤15 source files):** Spawn a single `qa-coverage-analyst` agent with the full scope and coverage data.
+**Small scope (roughly ≤15 source files):** Spawn a single `qa-test-coverage-reviewer` agent with the full scope and coverage data.
 
-**Large scope (roughly >15 source files):** Partition by directory or module. Spawn multiple `qa-coverage-analyst` agents **in parallel**, each with a focused partition and relevant coverage data.
+**Large scope (roughly >15 source files):** Partition by directory or module. Spawn multiple `qa-test-coverage-reviewer` agents **in parallel**, each with a focused partition and relevant coverage data.
 
 Merge findings into a single list ordered by priority tier (CRITICAL → HIGH → LOW). Collect REFACTOR-FOR-TESTABILITY suggestions separately — these are presented at the end of the workflow, not here.
 
@@ -212,7 +212,7 @@ Identify functions that should have fuzz tests.
 
 ### 2a. Analyze Fuzz Gaps
 
-Spawn a single `qa-fuzz-analyst` agent with the full scope.
+Spawn a single `qa-test-fuzz-reviewer` agent with the full scope.
 
 ```
 Analyze fuzz testing coverage.
@@ -327,9 +327,9 @@ Identify and fix bad tests across the entire test suite, including tests written
 
 **Assess scope size** with Glob (count test files in scope).
 
-**Small scope (roughly ≤15 test files):** Spawn a single `qa-test-auditor` agent.
+**Small scope (roughly ≤15 test files):** Spawn a single `qa-test-reviewer` agent.
 
-**Large scope (roughly >15 test files):** Partition by directory or module. Spawn multiple `qa-test-auditor` agents **in parallel**, each with a focused partition.
+**Large scope (roughly >15 test files):** Partition by directory or module. Spawn multiple `qa-test-reviewer` agents **in parallel**, each with a focused partition.
 
 Merge findings into a single list. Deduplicate overlaps at partition boundaries.
 
@@ -472,9 +472,9 @@ EOF
 
 ## Agent Coordination
 
-**Phase 1 analysis:** Spawn `qa-coverage-analyst` agent(s). For large scopes, partition and run in parallel.
-**Phase 2 analysis:** Spawn single `qa-fuzz-analyst` agent.
-**Phase 3 analysis:** Spawn `qa-test-auditor` agent(s). For large scopes, partition and run in parallel.
+**Phase 1 analysis:** Spawn `qa-test-coverage-reviewer` agent(s). For large scopes, partition and run in parallel.
+**Phase 2 analysis:** Spawn single `qa-test-fuzz-reviewer` agent.
+**Phase 3 analysis:** Spawn `qa-test-reviewer` agent(s). For large scopes, partition and run in parallel.
 **Implementation (all phases):** Parallel by file. Group findings by target file, spawn one SME per file.
 
 **Fresh instances:** Every agent spawn is a fresh instance. No state carried between invocations.

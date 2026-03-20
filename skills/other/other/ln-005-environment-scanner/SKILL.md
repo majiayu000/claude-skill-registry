@@ -61,13 +61,13 @@ Probe Agents → Write JSON → Summary
 
 ### Phase 1: Probe CLI Agents
 
-Single call to `agent_runner.py --health-check` probes all registered agents:
+Single call to `agent_runner.mjs --health-check` probes all registered agents:
 
 ```bash
-python shared/agents/agent_runner.py --health-check
+node shared/agents/agent_runner.mjs --health-check
 ```
 
-**Path resolution:** `shared/agents/agent_runner.py` is relative to skills repo root. Locate via this SKILL.md directory → parent.
+**Path resolution:** `shared/agents/agent_runner.mjs` is relative to skills repo root. Locate via this SKILL.md directory → parent.
 
 **Parse output** (JSON with per-agent status):
 
@@ -76,7 +76,7 @@ python shared/agents/agent_runner.py --health-check
 | Codex | `codex` (checks `codex --version`) | `available`, `version` (first line of version output) |
 | Gemini | `gemini` (checks `gemini --version`) | `available`, `version` (first line of version output) |
 
-**If `agent_runner.py` not found or errors:** Set both agents to `available: false`, `detail: "agent_runner.py not available"`.
+**If `agent_runner.mjs` not found or errors:** Set both agents to `available: false`, `detail: "agent_runner.mjs not available"`.
 
 ### Phase 1.5: Hook Health Check
 
@@ -89,7 +89,7 @@ Validate hooks configuration: JSON syntax, script existence, dependency availabi
   "status": "ok",
   "events": 3,
   "scripts_found": "3/3",
-  "dependencies": { "python3": "3.12.0" }
+  "dependencies": { "node": "22.0.0" }
 }
 ```
 

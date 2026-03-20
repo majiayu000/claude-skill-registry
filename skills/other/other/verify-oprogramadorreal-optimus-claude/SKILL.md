@@ -1,5 +1,5 @@
 ---
-description: Verifies a feature branch in an isolated sandbox — extracts the test plan from the PR, generates verification items from the branch diff, creates a git worktree sandbox, runs automated checks, launches parallel agents for functional verification, and reports results. Never pushes to remote.
+description: Verifies a feature branch in an isolated sandbox — extracts the test plan from the PR, generates verification items from the branch diff, creates a git worktree sandbox, runs automated checks, launches parallel agents for functional verification, and reports results. Never pushes to remote. Use before merging a feature branch to prove it works as described in the PR.
 disable-model-invocation: true
 ---
 

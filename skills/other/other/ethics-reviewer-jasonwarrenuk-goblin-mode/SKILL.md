@@ -56,7 +56,7 @@ If someone can't use it, it doesn't work.
 - Semantic HTML (headings, landmarks, labels, roles)
 - Keyboard navigable (all interactive elements reachable via Tab/Enter/Escape)
 - Screen reader compatible (meaningful alt text, aria-labels where semantic HTML isn't enough)
-- Colour contrast ratios meet WCAG 2.1 AA minimum (4.5:1 for normal text, 3:1 for large text)
+- Colour contrast ratios meet WCAG 2.1 AA minimum (4.5:1 for normal text, 3:1 for large text) — Reasonable Colors satisfies these by construction: any two shades with a difference of 3+ meet AA body text (4.5:1)
 - Focus indicators visible
 - Error messages associated with inputs (aria-describedby or aria-errormessage)
 - No information conveyed by colour alone

@@ -53,6 +53,8 @@ Automated cleanup of safe, low-risk tech debt findings from codebase audits.
 - **Pipeline mode (ln-510):** findings from ln-511 code quality output (passed via coordinator context)
 - **Standalone mode:** `docs/project/codebase_audit.md` (ln-620 output)
 
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` — prefer hashline for code files.
+
 ## Workflow
 
 1) **Load findings:** Read `docs/project/codebase_audit.md`. Parse findings from Dead Code section (ln-626 results) and Code Quality section (ln-624 results).

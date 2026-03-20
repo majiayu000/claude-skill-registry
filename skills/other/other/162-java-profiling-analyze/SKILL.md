@@ -29,6 +29,12 @@ Validate profiling results represent realistic load before analysis. Document as
 - **CROSS-REFERENCE**: Use multiple profiling files to validate findings
 - **BEFORE APPLYING**: Read the reference for problem analysis and solutions templates
 
+## When to use this skill
+
+- Analyze JFR profile
+- Profile analysis
+- Performance analysis
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/162-java-profiling-analyze.md](references/162-java-profiling-analyze.md).

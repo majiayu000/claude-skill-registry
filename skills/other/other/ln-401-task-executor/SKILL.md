@@ -44,6 +44,8 @@ Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
 **Status:** In Progress | **Priority:** High | **Estimate:** 4h
 ```
 
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` — prefer hashline for code files.
+
 ## Mode Detection
 
 Detect operating mode at startup:

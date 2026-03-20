@@ -26,6 +26,15 @@ Before generating any content, read every pom.xml in the workspace. Only include
 - **SCOPE**: Execute steps 1–5 in order. Omit Profiles section if no profiles; omit Submodules section if not multi-module
 - **BEFORE APPLYING**: Read the reference for the base template content, plugin catalog, and detailed constraints for each step
 
+## When to use this skill
+
+- Create DEVELOPER.md
+- Generate DEVELOPER.md
+- Maven project documentation
+- Plugin goals reference
+- Maven Profiles table
+- Submodules table
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/113-java-maven-documentation.md](references/113-java-maven-documentation.md).

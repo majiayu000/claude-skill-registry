@@ -25,6 +25,13 @@ Before applying any ADR generation, ensure the project validates. If validation 
 - **SAFETY**: If validation fails, stop immediately — do not proceed until all validation errors are resolved
 - **BEFORE APPLYING**: Read the reference for detailed good/bad examples, constraints, and safeguards for each ADR generation pattern
 
+## When to use this skill
+
+- Generate ADR
+- Create Architecture Decision Record
+- Document architecture decision
+- Architecture Decision Record for Java
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/030-architecture-adr-general.md](references/030-architecture-adr-general.md).

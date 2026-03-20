@@ -46,17 +46,43 @@ Determine whether to run a full analysis or incremental update.
    ```
    If this returns no files, report "Graph is up to date" and STOP.
 
+7. **Collect project context for subagent injection:**
+   - Read `README.md` (or `README.rst`, `readme.md`) from `$PROJECT_ROOT` if it exists. Store as `$README_CONTENT` (first 3000 characters).
+   - Read the primary package manifest (`package.json`, `pyproject.toml`, `Cargo.toml`, `go.mod`, `pom.xml`) if it exists. Store as `$MANIFEST_CONTENT`.
+   - Capture the top-level directory tree:
+     ```bash
+     find $PROJECT_ROOT -maxdepth 2 -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' | head -100
+     ```
+     Store as `$DIR_TREE`.
+   - Detect the project entry point by checking for common patterns: `src/index.ts`, `src/main.ts`, `src/App.tsx`, `main.py`, `main.go`, `src/main.rs`, `index.js`. Store first match as `$ENTRY_POINT`.
+
 ---
 
 ## Phase 1 — SCAN (Full analysis only)
 
-Dispatch the **project-scanner** agent with this prompt:
+Dispatch a subagent using the prompt template at `./project-scanner-prompt.md`. Read the template file and pass the full content as the subagent's prompt, appending the following additional context:
+
+> **Additional context from main session:**
+>
+> Project README (first 3000 chars):
+> ```
+> $README_CONTENT
+> ```
+>
+> Package manifest:
+> ```
+> $MANIFEST_CONTENT
+> ```
+>
+> Use this context to produce more accurate project name, description, and framework detection. The README and manifest are authoritative — prefer their information over heuristics.
+
+Pass these parameters in the dispatch prompt:
 
 > Scan this project directory to discover all source files, detect languages and frameworks.
 > Project root: `$PROJECT_ROOT`
 > Write output to: `$PROJECT_ROOT/.understand-anything/intermediate/scan-result.json`
 
-After the agent completes, read `$PROJECT_ROOT/.understand-anything/intermediate/scan-result.json` to get:
+After the subagent completes, read `$PROJECT_ROOT/.understand-anything/intermediate/scan-result.json` to get:
 - Project name, description
 - Languages, frameworks
 - File list with line counts
@@ -72,7 +98,23 @@ After the agent completes, read `$PROJECT_ROOT/.understand-anything/intermediate
 
 Batch the file list from Phase 1 into groups of **5-10 files each** (aim for balanced batch sizes).
 
-For each batch, dispatch a **file-analyzer** agent. Run up to **3 agents concurrently** using parallel dispatch. Each agent gets this prompt:
+For each batch, dispatch a subagent using the prompt template at `./file-analyzer-prompt.md`. Run up to **3 subagents concurrently** using parallel dispatch. Read the template once, then for each batch pass the full template content as the subagent's prompt, appending the following additional context:
+
+> **Additional context from main session:**
+>
+> Project: `<projectName>` — `<projectDescription>`
+> Frameworks detected: `<frameworks from Phase 1>`
+> Languages: `<languages from Phase 1>`
+>
+> Framework-specific guidance:
+> - If React/Next.js: files in `app/` or `pages/` are routes, `components/` are UI, `lib/` or `utils/` are utilities
+> - If Express/Fastify: files in `routes/` are API endpoints, `middleware/` is middleware, `models/` or `db/` is data
+> - If Python Django: `views.py` are controllers, `models.py` is data, `urls.py` is routing, `templates/` is UI
+> - If Go: `cmd/` is entry points, `internal/` is private packages, `pkg/` is public packages
+>
+> Use this context to produce more accurate summaries and better classify file roles.
+
+Fill in batch-specific parameters below and dispatch:
 
 > Analyze these source files and produce GraphNode and GraphEdge objects.
 > Project root: `$PROJECT_ROOT`
@@ -95,7 +137,7 @@ After ALL batches complete, read each `batch-<N>.json` file and merge:
 
 ### Incremental update path
 
-Use the changed files list from Phase 0. Batch and dispatch file-analyzer agents using the same process as above, but only for changed files.
+Use the changed files list from Phase 0. Batch and dispatch file-analyzer subagents using the same process as above, but only for changed files.
 
 After batches complete, merge with the existing graph:
 1. Remove old nodes whose `filePath` matches any changed file
@@ -116,7 +158,26 @@ Merge all file-analyzer results into a single set of nodes and edges. Then perfo
 
 ## Phase 4 — ARCHITECTURE
 
-Dispatch the **architecture-analyzer** agent with this prompt:
+Dispatch a subagent using the prompt template at `./architecture-analyzer-prompt.md`. Read the template file and pass the full content as the subagent's prompt, appending the following additional context:
+
+> **Additional context from main session:**
+>
+> Frameworks detected: `<frameworks from Phase 1>`
+>
+> Directory tree (top 2 levels):
+> ```
+> $DIR_TREE
+> ```
+>
+> Framework-specific layer hints:
+> - If React/Next.js: `app/` or `pages/` → UI Layer, `api/` → API Layer, `lib/` → Service Layer, `components/` → UI Layer
+> - If Express: `routes/` → API Layer, `controllers/` → Service Layer, `models/` → Data Layer, `middleware/` → Middleware Layer
+> - If Python Django: `views/` → API Layer, `models/` → Data Layer, `templates/` → UI Layer, `management/` → CLI Layer
+> - If Go: `cmd/` → Entry Points, `internal/` → Service Layer, `pkg/` → Shared Library, `api/` → API Layer
+>
+> Use the directory tree and framework hints to inform layer assignments. Directory structure is strong evidence for layer boundaries.
+
+Pass these parameters in the dispatch prompt:
 
 > Analyze this codebase's structure to identify architectural layers.
 > Project root: `$PROJECT_ROOT`
@@ -133,15 +194,62 @@ Dispatch the **architecture-analyzer** agent with this prompt:
 > [list of edges with type "imports"]
 > ```
 
-After the agent completes, read `$PROJECT_ROOT/.understand-anything/intermediate/layers.json` to get the layer assignments.
+After the subagent completes, read `$PROJECT_ROOT/.understand-anything/intermediate/layers.json` to get the layer assignments.
+
+`layers.json` may be either:
+- a top-level JSON array of layer objects, or
+- an envelope object such as `{ "layers": [...] }` from the current prompt/template output
+
+Normalize either form into a final top-level `layers` array before assembling the graph. Each final saved layer object MUST match this exact shape:
+
+```json
+[
+  {
+    "id": "layer:<kebab-case-name>",
+    "name": "<layer name>",
+    "description": "<what belongs in this layer>",
+    "nodeIds": ["file:src/App.tsx", "file:src/main.tsx"]
+  }
+]
+```
+
+Rules:
+- `id` is required and must be unique
+- `nodeIds` is required and must contain graph node IDs, not raw file paths
+- If the intermediate output is an envelope object, unwrap its `layers` array before any other normalization
+- If the subagent returns file paths, convert them to file node IDs before assembling the final graph
+- Drop any `nodeIds` that do not exist in the merged node set
+- Do not use a `nodes` field in the final saved layer objects
 
 **For incremental updates:** Always re-run architecture analysis on the full merged node set, since layer assignments may shift when files change.
+
+**Context for incremental updates:** When re-running architecture analysis, also inject the previous layer definitions:
+
+> Previous layer definitions (for naming consistency):
+> ```json
+> [previous layers from existing graph]
+> ```
+>
+> Maintain the same layer names and IDs where possible. Only add/remove layers if the file structure has materially changed.
 
 ---
 
 ## Phase 5 — TOUR
 
-Dispatch the **tour-builder** agent with this prompt:
+Dispatch a subagent using the prompt template at `./tour-builder-prompt.md`. Read the template file and pass the full content as the subagent's prompt, appending the following additional context:
+
+> **Additional context from main session:**
+>
+> Project README (first 3000 chars):
+> ```
+> $README_CONTENT
+> ```
+>
+> Project entry point: `$ENTRY_POINT`
+>
+> Use the README to align the tour narrative with the project's own documentation. Start the tour from the entry point if one was detected. The tour should tell the same story the README tells, but through the lens of actual code structure.
+
+Pass these parameters in the dispatch prompt:
 
 > Create a guided learning tour for this codebase.
 > Project root: `$PROJECT_ROOT`
@@ -164,7 +272,50 @@ Dispatch the **tour-builder** agent with this prompt:
 > [imports and calls edges]
 > ```
 
-After the agent completes, read `$PROJECT_ROOT/.understand-anything/intermediate/tour.json` to get the tour steps.
+After the subagent completes, read `$PROJECT_ROOT/.understand-anything/intermediate/tour.json` to get the tour steps.
+
+`tour.json` may be either:
+- a top-level JSON array of tour step objects, or
+- an envelope object such as `{ "steps": [...] }` from the current prompt/template output
+
+Normalize either form into a final top-level `tour` array before assembling the graph. Each final saved tour step object MUST match this exact shape:
+
+```json
+[
+  {
+    "order": 1,
+    "title": "Start at the app entry",
+    "description": "This step explains how the frontend boots and mounts.",
+    "nodeIds": ["file:src/main.tsx", "file:src/App.tsx"]
+  }
+]
+```
+
+Rules:
+- If the intermediate output is an envelope object, unwrap its `steps` array before any other normalization
+- `description` is required; do not use `whyItMatters` in the final saved tour steps
+- `nodeIds` is required; do not use `nodesToInspect` in the final saved tour steps
+- `nodeIds` must reference existing graph node IDs
+- Preserve optional `languageLesson` when present
+- Sort by `order` before saving
+
+---
+
+## Phase 5.5 — NORMALIZE
+
+Before assembling the final graph:
+
+- Unwrap legacy or prompt-shaped envelopes before field renaming:
+  - `{ "layers": [...] }` -> use the contained array as the working `layers` value
+  - `{ "steps": [...] }` -> use the contained array as the working `tour` value
+- Convert any layer `nodes` field to `nodeIds`
+- Convert any tour `nodesToInspect` field to `nodeIds`
+- Convert any tour `whyItMatters` field to `description`
+- If layers or tour reference file paths, map them to file node IDs using the `file:<relative-path>` convention
+- Synthesize missing layer IDs as `layer:<kebab-case-name>`
+- Drop unresolved layer and tour node references
+- Ensure the final `layers` value is an array of `{ id, name, description, nodeIds }`
+- Ensure the final `tour` value is an array of `{ order, title, description, nodeIds }`, preserving optional `languageLesson`
 
 ---
 
@@ -190,26 +341,50 @@ Assemble the full KnowledgeGraph JSON object:
 }
 ```
 
-1. Write the assembled graph to `$PROJECT_ROOT/.understand-anything/intermediate/assembled-graph.json`.
+1. Before writing the assembled graph, validate that:
+   - `layers` is an array of objects with these required fields: `id`, `name`, `description`, `nodeIds`
+   - `tour` is an array of objects with these required fields: `order`, `title`, `description`, `nodeIds`
+   - `tour[*].languageLesson` is allowed as an optional string field
+   - Every `layers[*].nodeIds` entry exists in the merged node set
+   - Every `tour[*].nodeIds` entry exists in the merged node set
 
-2. Dispatch the **graph-reviewer** agent with this prompt:
+   If validation fails, automatically normalize and rewrite the graph into this shape before saving. If the graph still fails final validation after the normalization pass, save it with warnings but mark dashboard auto-launch as skipped.
+
+2. Write the assembled graph to `$PROJECT_ROOT/.understand-anything/intermediate/assembled-graph.json`.
+
+3. Dispatch a subagent using the prompt template at `./graph-reviewer-prompt.md`. Read the template file and pass the full content as the subagent's prompt, appending the following additional context:
+
+> **Additional context from main session:**
+>
+> Phase 1 scan results (file inventory):
+> ```json
+> [list of {path, sizeLines} from scan-result.json]
+> ```
+>
+> Phase warnings/errors accumulated during analysis:
+> - [list any batch failures, skipped files, or warnings from Phases 2-5]
+>
+> Cross-validate: every file in the scan inventory should have a corresponding `file:` node in the graph. Flag any missing files. Also flag any graph nodes whose `filePath` doesn't appear in the scan inventory.
+
+Pass these parameters in the dispatch prompt:
 
    > Validate the knowledge graph at `$PROJECT_ROOT/.understand-anything/intermediate/assembled-graph.json`.
    > Project root: `$PROJECT_ROOT`
    > Read the file and validate it for completeness and correctness.
    > Write output to: `$PROJECT_ROOT/.understand-anything/intermediate/review.json`
 
-3. After the agent completes, read `$PROJECT_ROOT/.understand-anything/intermediate/review.json`.
+4. After the subagent completes, read `$PROJECT_ROOT/.understand-anything/intermediate/review.json`.
 
-4. **If `approved: false`:**
+5. **If `approved: false`:**
    - Review the `issues` list
    - Apply automated fixes where possible:
      - Remove edges with dangling references
      - Fill missing required fields with sensible defaults (e.g., empty `tags` -> `["untagged"]`, empty `summary` -> `"No summary available"`)
      - Remove nodes with invalid types
-   - If critical issues remain after one fix attempt, save the graph anyway but include the warnings in the final report
+   - Re-run the final graph validation after automated fixes
+   - If critical issues remain after one fix attempt, save the graph anyway but include the warnings in the final report and mark dashboard auto-launch as skipped
 
-5. **If `approved: true`:** Proceed to Phase 7.
+6. **If `approved: true`:** Proceed to Phase 7.
 
 ---
 
@@ -242,13 +417,15 @@ Assemble the full KnowledgeGraph JSON object:
    - Any warnings from the reviewer
    - Path to the output file: `$PROJECT_ROOT/.understand-anything/knowledge-graph.json`
 
-5. Automatically launch the dashboard by invoking the `/understand-dashboard` skill.
+5. Only automatically launch the dashboard by invoking the `/understand-dashboard` skill if final graph validation passed after normalization/review fixes.
+   If final validation did not pass, report that the graph was saved with warnings and dashboard launch was skipped.
 
 ---
 
 ## Error Handling
 
-- If any agent dispatch fails, retry **once** with the same prompt plus additional context about the failure.
+- If any subagent dispatch fails, retry **once** with the same prompt plus additional context about the failure.
+- Track all warnings and errors from each phase in a `$PHASE_WARNINGS` list. Pass this list to the graph-reviewer in Phase 6 for comprehensive validation.
 - If it fails a second time, skip that phase and continue with partial results.
 - ALWAYS save partial results — a partial graph is better than no graph.
 - Report any skipped phases or errors in the final summary so the user knows what happened.

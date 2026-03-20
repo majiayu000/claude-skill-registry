@@ -25,7 +25,7 @@ Autonomous refactoring workflow that iteratively improves code quality within th
 │  1. Determine scope                                 │
 │  2. Select aggression ceiling                       │
 │  3. Gather QA instructions                          │
-│  4. Spawn fresh swe-refactor agent (full scan)      │
+│  4. Spawn fresh swe-code-reviewer agent (full scan)      │
 │  5. Select least aggressive changes available       │
 │  6. If none remain → exit to summary                │
 │  7. Spawn SME agent (implement batch)               │
@@ -77,7 +77,7 @@ The workflow still proceeds from least aggressive to more aggressive - this sett
 
 **Always make the least aggressive change available, up to the user's chosen ceiling (step 2).**
 
-The `swe-refactor` agent returns recommendations organized by risk level: **SAFEST → SAFE → MODERATE → AGGRESSIVE**. These aren't gates to pass through sequentially. Instead:
+The `swe-code-reviewer` agent returns recommendations organized by risk level: **SAFEST → SAFE → MODERATE → AGGRESSIVE**. These aren't gates to pass through sequentially. Instead:
 - Each pass, prefer the least aggressive changes available
 - More aggressive changes naturally "bubble up" as gentler options are exhausted
 - Stop when reaching the user's ceiling (e.g., if ceiling is High/MODERATE, skip AGGRESSIVE recommendations)
@@ -89,7 +89,7 @@ For each iteration:
 
 #### 5a. Scan for Opportunities
 
-**Spawn fresh `swe-refactor` agent:**
+**Spawn fresh `swe-code-reviewer` agent:**
 - Agent performs FULL scan across all aggression levels
 - Pass scope if user specified one
 - Agent returns structured recommendations organized by risk level
@@ -261,7 +261,7 @@ This spawns a doc-maintainer agent that audits all project documentation and fix
 ## Agent Coordination
 
 **Fresh instances for context management:**
-- Spawn NEW `swe-refactor` agent for each scan pass
+- Spawn NEW `swe-code-reviewer` agent for each scan pass
 - This prevents context accumulation in the scanner
 - Orchestrator (you) maintains only summary state
 
@@ -306,8 +306,8 @@ This spawns a doc-maintainer agent that audits all project documentation and fix
 - Use `/refactor` for routine cleanup; use `/review-arch` when the module structure itself needs rethinking
 
 **Relationship to `/implement`:**
-- `/implement` is a feature development workflow that optionally invokes `swe-refactor` for code review after implementation
-- `/refactor` is a dedicated refactoring workflow that uses `swe-refactor` as its core scanner in an autonomous loop
+- `/implement` is a feature development workflow that optionally invokes `swe-code-reviewer` for code review after implementation
+- `/refactor` is a dedicated refactoring workflow that uses `swe-code-reviewer` as its core scanner in an autonomous loop
 - Same agent, different workflows: one-shot review vs. iterative improvement
 
 **Relationship to `/scope`:**
@@ -331,7 +331,7 @@ Any special QA instructions?
 Starting iterative refactoring...
 
 [Pass 1]
-Spawning swe-refactor agent for scan...
+Spawning swe-code-reviewer agent for scan...
 Found opportunities across levels:
   SAFEST: 8 dead code blocks (Prune), 2 lint failures
   SAFE: 3 DRY violations
@@ -344,7 +344,7 @@ All tests pass.
 Committed: "refactor: remove dead code and fix lint issues"
 
 [Pass 2]
-Spawning swe-refactor agent for scan...
+Spawning swe-code-reviewer agent for scan...
 Found opportunities across levels:
   SAFEST: (none)
   SAFE: 3 DRY violations, 1 single-use wrapper (Prune)
@@ -361,7 +361,7 @@ All tests pass.
 Committed: "refactor: consolidate duplicate parsing logic"
 
 [Pass 3]
-Spawning swe-refactor agent for scan...
+Spawning swe-code-reviewer agent for scan...
 Found opportunities across levels:
   SAFEST: 1 new dead code block exposed by DRY consolidation (Prune)
   SAFE: (none)
@@ -372,7 +372,7 @@ Selecting least aggressive: dead code (SAFEST)
 [Passes 4-7...]
 
 [Pass 8]
-Spawning swe-refactor agent for scan...
+Spawning swe-code-reviewer agent for scan...
 No opportunities found at any level.
 
 ## Refactoring Complete

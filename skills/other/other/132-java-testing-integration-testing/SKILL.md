@@ -35,6 +35,11 @@ Before applying any integration test changes, ensure the project compiles. If co
 - **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements
 - **BEFORE APPLYING**: Read the reference for detailed examples, good/bad patterns, and constraints
 
+## When to use this skill
+
+- Review Java code for integration tests
+- Apply best practices for integration tests in Java code
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/132-java-testing-integration-testing.md](references/132-java-testing-integration-testing.md).

@@ -80,6 +80,17 @@ pac auth select --index <user-chosen-index>
 
 Report: "Working with environment: [name]" and proceed.
 
+#### Detect Configured Languages (New Pages Only)
+
+When creating a **new** page, detect configured languages after confirming the active environment. Skip this for edit flows — the existing page already has its localization set up.
+
+```powershell
+pac model list-languages
+```
+
+Note the output. If multiple languages are configured (or any non-English language), localization will be included in the generated code. Include the detected languages when reporting the environment to the user, e.g.:
+> "Working with environment: [name] — Languages: English (1033), Arabic (1025), French (1036)"
+
 ### Step 3: Gather Requirements (Interactive)
 
 Ask these questions one at a time:
@@ -108,9 +119,12 @@ I'll create a [page type] with:
 - Features: [list key features]
 - Components: [Fluent UI components to use]
 - Layout: [responsive design approach]
+- Localization: [list detected languages] (translations, RTL support if applicable, user format settings)
 
 Does this plan look good? Any changes needed?
 ```
+
+Only include the Localization line when multiple languages were detected in Step 2, or any non-English language was configured.
 
 Wait for confirmation before proceeding. If changes requested, revise and re-confirm.
 
@@ -164,6 +178,8 @@ Generate complete TypeScript following ALL rules in [genpage-rules-reference.md]
 **Agent Thoughts:** Step-by-step reasoning and approach
 **Summary:** Non-technical bulleted list of what was built
 **Final Code:** Complete, ready-to-run TypeScript (no placeholders)
+
+**Localization:** If multiple languages were detected in Step 2, the generated code **must** follow the Localization rules in [genpage-rules-reference.md](../../references/genpage-rules-reference.md). This includes language detection boilerplate, a translations dictionary for all detected languages, a `translate()` helper for all user-visible text, RTL support if any RTL languages (Arabic, Hebrew) were detected, and user formatting settings from `usersettings`.
 
 Save the code to a `.tsx` file (e.g., `account-dashboard.tsx`).
 

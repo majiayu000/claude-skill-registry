@@ -26,6 +26,12 @@ Before generating artifacts, gather all required information through structured 
 - **MUST**: Wait for user response after each question or block before proceeding
 - **MUST**: Repeat scenario questions for each additional scenario when user indicates more scenarios
 
+## When to use this skill
+
+- Create a user story
+- Write a user story
+- I need a user story
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/014-agile-create-user-story.md](references/014-agile-create-user-story.md).

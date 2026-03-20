@@ -1,6 +1,6 @@
 ---
 name: 141-java-refactoring-with-modern-features
-description: Use when you need to refactor Java code to adopt modern Java features (Java 8+) — including migrating anonymous classes to lambdas, replacing Iterator loops with Stream API, adopting Optional for null safety, switching from legacy Date/Calendar to java.time, using collection factory methods, migrating to CompletableFuture for async operations, applying text blocks, var inference, or leveraging Java 25 features like flexible constructor bodies and module import declarations. Part of the skills-for-java project
+description: Use when you need to refactor Java code to adopt modern Java features (Java 8+) — including migrating anonymous classes to lambdas, replacing Iterator loops with Stream API, adopting Optional for null safety, switching from legacy Date/Calendar to java.time, using collection factory methods, applying text blocks, var inference, or leveraging Java 25 features like flexible constructor bodies and module import declarations. Part of the skills-for-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -18,7 +18,6 @@ Identify and apply modern Java (Java 8+) refactoring opportunities to improve re
 - `java.time` API (replacing `Date`/`Calendar`)
 - Default interface methods, `var` type inference
 - Unmodifiable collection factory methods (`List.of()`, `Set.of()`, `Map.of()`)
-- `CompletableFuture` for composable async programming
 - Text blocks for multi-line strings
 - Java 25 Flexible Constructor Bodies (JEP 513)
 - Java 25 Module Import Declarations (JEP 511)
@@ -33,6 +32,11 @@ Before applying any modern Java refactoring, ensure the project compiles. If com
 - **SAFETY**: If compilation fails, stop immediately — do not proceed until the project compiles successfully
 - **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements
 - **BEFORE APPLYING**: Read the reference for detailed good/bad examples, constraints, and safeguards for each modern Java feature
+
+## When to use this skill
+
+- Review Java code for modern Java development
+- Apply best practices for modern Java development in Java code
 
 ## Reference
 

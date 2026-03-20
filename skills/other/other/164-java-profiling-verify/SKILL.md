@@ -30,6 +30,11 @@ Use identical test conditions between baseline and post-refactoring. Verify both
 - **DOCUMENT**: Record test scenarios and load patterns for reproduction
 - **BEFORE APPLYING**: Read the reference for comparison templates and validation steps
 
+## When to use this skill
+
+- Verify performance fix
+- Performance benchmark
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/164-java-profiling-verify.md](references/164-java-profiling-verify.md).

@@ -1,5 +1,5 @@
 ---
-description: Creates or updates a pull request (GitHub) or merge request (GitLab) for the current branch using the Conventional PR format — structured summary, changes, rationale, and test plan.
+description: Creates or updates a pull request (GitHub) or merge request (GitLab) for the current branch using the Conventional PR format — structured summary, changes, rationale, and test plan. Use when a branch is ready for review, or to update an existing PR/MR description.
 disable-model-invocation: true
 ---
 

@@ -130,9 +130,13 @@ git diff $PRE_PULL_HEAD -- <prefix>/CHANGELOG.md
 
 Parse the added lines (those starting with `+`) to identify new changelog entries
 (bug fixes, features, breaking changes). Compare each entry against the open items
-in the corresponding `UPSTREAM-<package>.md` file. If a changelog entry clearly
-addresses an open UPSTREAM item (matching keywords, issue references, or described
-behavior), flag it as a candidate for auto-resolution with your confidence level:
+in the corresponding `UPSTREAM-<package>.md` file — including `## Upstream
+Opportunities` entries. If a changelog entry clearly addresses an open UPSTREAM
+item (matching keywords, issue references, or described behavior), flag it as a
+candidate for auto-resolution with your confidence level. For Upstream
+Opportunities: if a changelog entry mentions a merged feature that matches a local
+opportunity by keyword or upstream PR URL, flag as a **contribution-resolved**
+event at high confidence.
 
 - **High confidence** — changelog explicitly mentions the bug/feature by name or
   references the same upstream issue URL
@@ -180,7 +184,9 @@ Basic Memory MCP tools are available:
 2. If a note exists, call `mcp__basic-memory__read_note` to check for a
    matching friction entry
 3. If found, call `mcp__basic-memory__edit_note` with `find_replace` to append
-   `_(Resolved by vendor-sync YYYY-MM-DD)_` to the matching entry's line.
+   an annotation to the matching entry's line. Use entry-type-specific text:
+   - **Bugs / Feature Requests:** `_(Resolved by vendor-sync YYYY-MM-DD)_`
+   - **Upstream Opportunities:** `_(Contributed upstream, merged YYYY-MM-DD)_`
    Use `expected_replacements=1`. Always match against the note's exact text.
 4. Annotation only — never delete entries, never move them to `### Resolved`.
    The upstream-tracker's workflow 6 handles pruning during its prune pass.

@@ -53,8 +53,8 @@ For each related project found:
 - Note what worked well and what didn't (from git history, TODO comments)
 
 Also check:
-- Brain MCP for related client/project knowledge (if available)
-- Vault MCP for technical decisions and gotchas (if available)
+- Basalt Cortex (`~/Documents/basalt-cortex/`) for related clients, contacts, knowledge facts
+- `grep -rl "KEYWORD" ~/Documents/basalt-cortex/ --include="*.md"`
 
 ### 3. Web Research
 
@@ -110,6 +110,11 @@ For each major competitor (3-5 for wide, 5-10 for deep):
 | Tech stack | Wappalyzer, view-source, job postings, blog posts |
 | What they do well | 5-star reviews, product demos |
 | What they do poorly | 1-star reviews, forum complaints, migration guides FROM the product |
+| Documentation quality | Read their docs site — is it comprehensive? What topics need the most explanation? (Complex topics = things users struggle with) |
+| Help/support content | Help centre, FAQ, knowledge base, support forums — what questions do users ask most? |
+| Onboarding/tutorials | Getting started guides, video tutorials, interactive walkthroughs — how do they teach their product? What do they assume the user already knows? |
+| API documentation | If they have an API — how well documented? What patterns do they use? What SDKs do they provide? |
+| Migration guides | Do they have "switch from X" guides? These reveal what they consider their advantages AND what users find hard to switch from |
 
 ### 6. Library and Component Research (deep mode)
 
@@ -150,13 +155,68 @@ Research the building blocks — what already exists that you can use or learn f
 
 **The insight**: Even if you decide to build something custom, researching existing libraries shows you the patterns that survived contact with real users. A library with 10K stars has had its API refined by thousands of developers — steal their design decisions.
 
-### 7. Future-Casting (deep mode)
+### 7. Platform Capability Deep-Dive (wide + deep)
+
+**This is critical.** Claude's training data is always behind on platform features. Cloudflare, Vercel, Firebase, Supabase — they all ship new capabilities constantly. A feature you assume doesn't exist might have launched last month. The Basalt Cortex project exists because of capabilities (Workers AI toMarkdown, Vectorize metadata filtering, D1 FTS5) that weren't obvious without actively looking.
+
+**Do NOT rely on training data for platform capabilities.** Go read the actual current docs.
+
+#### How to Research the Platform
+
+1. **Fetch the platform's changelog/blog**:
+   - Cloudflare: `https://blog.cloudflare.com/` + `https://developers.cloudflare.com/changelog/`
+   - Vercel: `https://vercel.com/changelog`
+   - Firebase: `https://firebase.google.com/support/releases`
+   - Supabase: `https://supabase.com/changelog`
+
+2. **Read the full product catalogue** — not just the services you already use:
+   - Cloudflare: Workers, D1, R2, KV, Vectorize, Queues, Durable Objects, Workers AI, AI Gateway, Workflows, Containers, Browser Rendering, Tunnel, Email Routing, Images, Stream, Hyperdrive, Pipelines, Sandbox
+   - Vercel: Functions, Edge Middleware, KV, Postgres, Blob, AI SDK, Cron, Firewall
+   - Firebase: Firestore, Auth, Storage, Functions, Hosting, Extensions, Genkit, App Check
+
+3. **For each service, ask**: could this solve a problem in the product we're building?
+
+4. **Look for recently shipped features** that expand what's possible:
+   - New AI models available at the edge?
+   - New storage primitives?
+   - New networking capabilities?
+   - New auth/identity features?
+   - New build/deploy options?
+
+#### Cloudflare Capability Checklist (Expand for Other Platforms)
+
+Go through each and ask "would this be useful for what we're building?":
+
+| Category | Services to investigate |
+|----------|----------------------|
+| **Compute** | Workers, Cron Triggers, Queues consumers, Workflows (multi-step), Containers, Durable Objects (stateful), Tail Workers |
+| **Storage** | D1 (SQL + FTS5), R2 (objects), KV (key-value), Durable Object storage (strongly consistent) |
+| **AI** | Workers AI models (text, image, embedding, speech, translation, toMarkdown), Vectorize (semantic search), AI Gateway (caching/routing) |
+| **Networking** | Custom domains, Tunnel, Spectrum (TCP/UDP), WebSockets, Hyperdrive (database proxy) |
+| **Security** | WAF, Turnstile (CAPTCHA), Bot Management, API Shield, DDoS |
+| **Media** | Images (resize/optimise on-the-fly), Stream (video), Browser Rendering (screenshots, PDF generation) |
+| **Email** | Email Routing (rules), Email Workers (programmable inbound email processing) |
+| **Observability** | Workers Logs, Analytics Engine, GraphQL analytics |
+
+#### What to Capture
+
+For each relevant capability, note:
+- What it does (one sentence)
+- How it could be used in this product
+- Any limitations or pricing considerations
+- Example: "Workers AI `toMarkdown()` converts any uploaded PDF/DOCX to markdown at the edge — we could use this for document import without any external service"
+
+#### Why This Matters
+
+The difference between "build a note app" and "build a note app that converts any file to markdown, searches semantically across all notes, generates summaries with AI, syncs via background Workflows, and renders PDFs with Browser Rendering" is **knowing what the platform offers**. Most developers only use 20% of their platform because they never looked at the other 80%.
+
+### 8. Future-Casting (deep mode)
 
 Think beyond what exists today:
 
-**Platform capabilities**: What's coming to the target platform (Cloudflare, Vercel, etc.) in the next 12 months? New APIs, features, pricing changes that could unlock possibilities?
+**Platform roadmap**: Based on the changelog and blog research above, what direction is the platform heading? What's in beta? What was announced but not yet GA?
 
-**AI integration**: Not "add a chatbot" — think deeper. What's possible when the tool can read, reason about, and act on the user's data? What if every note could be searched semantically? What if the app could write its own documentation?
+**AI integration**: Not "add a chatbot" — think deeper. What's possible when the tool can read, reason about, and act on the user's data? What if every note could be searched semantically? What if the app could write its own documentation? What if uploads auto-converted to markdown?
 
 **Device and input evolution**: Mobile-first, voice input, wearables, spatial computing. How might users interact with this in 2-5 years?
 
@@ -218,6 +278,11 @@ Produce a research brief saved to `.jez/artifacts/research-brief-{topic}.md`:
 | Need | Library | Stars | Size | Fits platform? | Notes |
 [Key libraries evaluated for each major feature]
 
+## Platform Capabilities
+| Service | Could use for | Impact |
+[Every platform service evaluated against the product's needs]
+[Flag recently shipped features the team may not know about]
+
 ## Reusable From Existing Projects
 | Project | What to reuse | Location |
 
@@ -242,7 +307,7 @@ Produce a research brief saved to `.jez/artifacts/research-brief-{topic}.md`:
 
 ## Tips
 
-- Start the brief early and add to it as you research — don't try to hold everything in context
+- Start the brief early and add to it as you research — the artifact is the deliverable
 - For deep mode, use sub-agents to parallelise web research and local exploration
 - The "Reusable From Existing Projects" section often saves weeks of work
 - Ecosystem signals (plugins, issues, reviews) are often more valuable than competitor feature lists

@@ -136,7 +136,7 @@ Conditionally invoke specialized reviewers based on code changes and complexity.
 
 **If non-trivial implementation (>50 lines changed, multiple files, or complex logic):**
 
-**Spawn `swe-refactor` agent:**
+**Spawn `swe-code-reviewer` agent:**
 - Reviews implementation for code quality issues
 - Identifies refactoring opportunities (DRY violations, dead code, complexity, etc.)
 - Provides structured recommendations organized by priority
@@ -148,9 +148,9 @@ Conditionally invoke specialized reviewers based on code changes and complexity.
 
 **If performance-critical code changed (hot paths, loops, database queries, API endpoints):**
 
-**Spawn `swe-perf-engineer` agent:**
-- Runs benchmarks and profiling
-- Identifies performance bottlenecks
+**Spawn `swe-perf-reviewer` agent:**
+- Reviews code for performance bottlenecks
+- Identifies missing benchmarks and profiling gaps
 - Provides optimization recommendations
 
 **Output**: Performance metrics and recommendations (advisory only)

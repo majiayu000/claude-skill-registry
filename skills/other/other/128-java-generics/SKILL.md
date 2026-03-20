@@ -36,6 +36,11 @@ Before applying any generics changes, ensure the project compiles. If compilatio
 - **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements
 - **BEFORE APPLYING**: Read the reference for detailed examples, good/bad patterns, and constraints
 
+## When to use this skill
+
+- Review Java code for generics
+- Apply best practices for generics in Java code
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/128-java-generics.md](references/128-java-generics.md).

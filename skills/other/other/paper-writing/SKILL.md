@@ -27,8 +27,9 @@ Each phase builds on the previous one's output. The final deliverable is a polis
 - **REVIEWER_MODEL = `gpt-5.4`** — Model used via Codex MCP for plan review, figure review, writing review, and improvement loop.
 - **AUTO_PROCEED = true** — Auto-continue between phases. Set `false` to pause and wait for user approval after each phase.
 - **HUMAN_CHECKPOINT = false** — When `true`, the improvement loop (Phase 5) pauses after each round's review to let you see the score and provide custom modification instructions. When `false` (default), the loop runs fully autonomously. Passed through to `/auto-paper-improvement-loop`.
+- **ILLUSTRATION = `gemini`** — AI illustration mode: `gemini` (default, needs `GEMINI_API_KEY`), `mermaid` (free, no API key), or `false` (skip, manual only).
 
-> Override inline: `/paper-writing "NARRATIVE_REPORT.md" — venue: NeurIPS, human checkpoint: true`
+> Override inline: `/paper-writing "NARRATIVE_REPORT.md" — venue: NeurIPS, illustration: mermaid`
 
 ## Inputs
 
@@ -92,29 +93,36 @@ Invoke `/paper-figure` to generate data-driven plots and tables:
 
 **Output:** `figures/` directory with PDFs, generation scripts, and LaTeX snippets.
 
-#### Phase 2b: AI Illustration Generation (when `illustration: true`)
+#### Phase 2b: AI Illustration Generation
 
-**Skip this step entirely if `illustration` is not set or is `false`.**
+**Skip this step entirely if `illustration` is `false`.**
 
-If the paper plan includes architecture diagrams, pipeline figures, or method illustrations, invoke `/paper-illustration`:
+If the paper plan includes architecture diagrams, pipeline figures, or method illustrations:
 
+**When `illustration: gemini`** (default) — invoke `/paper-illustration`:
 ```
 /paper-illustration "[method description from PAPER_PLAN.md or NARRATIVE_REPORT.md]"
 ```
-
-**What this does:**
-- Claude plans the layout → Gemini optimizes → Nano Banana Pro renders → Claude reviews (score ≥ 9)
-- Output: `figures/ai_generated/*.png` — publication-quality method diagrams
+- Claude plans → Gemini optimizes → Nano Banana Pro renders → Claude reviews (score ≥ 9)
+- Output: `figures/ai_generated/*.png`
 - Requires `GEMINI_API_KEY` environment variable
 
-> **Without `illustration: true`:** Architecture diagrams must still be created manually (draw.io, Figma, TikZ) and placed in `figures/` before proceeding — same as before.
+**When `illustration: mermaid`** — invoke `/mermaid-diagram`:
+```
+/mermaid-diagram "[method description from PAPER_PLAN.md]"
+```
+- Generates Mermaid syntax diagrams (flowchart, sequence, class, etc.)
+- Output: `figures/*.mmd` + `figures/*.png`
+- Free, no API key needed
+
+**When `illustration: false`** — skip entirely. Architecture diagrams must be created manually (draw.io, Figma, TikZ).
 
 **Checkpoint:** List generated vs manual figures.
 
 ```
 📊 Figures complete:
 - Data plots (auto): [list]
-- AI illustrations (auto): [list, if illustration: true]
+- AI illustrations (auto): [list, if illustration ≠ false]
 - Manual (need your input): [list]
 - LaTeX snippets: figures/latex_includes.tex
 

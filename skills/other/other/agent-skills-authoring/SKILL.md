@@ -12,10 +12,10 @@ compatibility: >-
   Any AI agent generating SKILL.md files. Compatible with the Agent Skills open standard
   (agentskills.io), Claude Code, Claude.ai, and the Claude API.
 metadata:
-  spec-version: "1.4"
-  sources: "agentskills.io/specification, docs.anthropic.com, github.com/anthropics/skills"
+  author: "zebbern"
+  version: "1.4"
+  sources: "agentskills.io/specification, docs.anthropic.com, github.com/anthropics/skills, github.com/zebbern/agent-skills-authoring"
   audience: "ai-agents"
-allowed-tools: Bash(skills-ref:*) Read Write
 ---
 
 # Agent Skills Authoring Guide

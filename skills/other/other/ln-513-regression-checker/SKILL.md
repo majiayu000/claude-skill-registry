@@ -1,6 +1,6 @@
 ---
 name: ln-513-regression-checker
-description: Worker that runs existing tests to catch regressions. Auto-detects framework, reports pass/fail. No status changes or task creation.
+description: "Runs existing test suite to catch regressions after implementation changes. Use when Story needs regression verification. No status changes."
 license: MIT
 ---
 
@@ -39,7 +39,9 @@ Runs the existing test suite to ensure no regressions after implementation chang
 
 ### Phase 1: Execute Tests
 
-**MANDATORY READ:** Load `docs/project/infrastructure.md`, `docs/project/runbook.md`, `shared/references/output_normalization.md`
+**MANDATORY READ:** Load `shared/references/output_normalization.md`
+
+Read target project files if they exist: `docs/project/infrastructure.md`, `docs/project/runbook.md`
 
 1) Auto-discover test framework per ci_tool_detection.md Command Registry (Test Frameworks section).
 2) Get service endpoints, port allocation from infrastructure.md. Get exact test commands, Docker setup, environment variables from runbook.md. Runbook commands take priority over auto-detection (per ci_tool_detection.md Discovery Hierarchy).

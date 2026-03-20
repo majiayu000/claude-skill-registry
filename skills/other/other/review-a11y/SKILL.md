@@ -6,7 +6,7 @@ model: opus
 
 # Accessibility Review - WCAG Conformance Audit
 
-Advisory-only accessibility audit. Dispatches a `QA - Accessibility Auditor` agent to evaluate web content against WCAG 2.2 Level AA, prioritize issues by real-world user impact, and recommend fixes. No changes are made.
+Advisory-only accessibility audit. Dispatches a `QA - Web A11y Reviewer` agent to evaluate web content against WCAG 2.2 Level AA, prioritize issues by real-world user impact, and recommend fixes. No changes are made.
 
 ## Philosophy
 
@@ -64,13 +64,13 @@ What should I audit?
 
 Accept the user's selection. Default: entire project.
 
-### 3. Dispatch Accessibility Auditor
+### 3. Dispatch A11y Auditor
 
 **Assess scope size** with Glob.
 
-**Small scope (roughly ≤20 web content files):** Spawn a single `QA - Accessibility Auditor` agent with the full scope.
+**Small scope (roughly ≤20 web content files):** Spawn a single `QA - Web A11y Reviewer` agent with the full scope.
 
-**Large scope (roughly >20 web content files):** Partition by directory or component boundary. Spawn multiple `QA - Accessibility Auditor` agents **in parallel**, each with a focused partition.
+**Large scope (roughly >20 web content files):** Partition by directory or component boundary. Spawn multiple `QA - Web A11y Reviewer` agents **in parallel**, each with a focused partition.
 
 **Prompt for each agent:**
 

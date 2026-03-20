@@ -1,5 +1,5 @@
 ---
-description: Suggests conventional commit messages by analyzing staged, unstaged, and untracked git changes — read-only, never commits.
+description: Suggests conventional commit messages by analyzing staged, unstaged, and untracked git changes — read-only, never commits. Use when a commit message suggestion is needed without actually committing.
 disable-model-invocation: true
 ---
 

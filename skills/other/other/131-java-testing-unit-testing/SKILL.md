@@ -35,6 +35,11 @@ Before applying any unit test changes, ensure the project compiles. If compilati
 - **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements
 - **BEFORE APPLYING**: Read the reference for detailed examples, good/bad patterns, and constraints
 
+## When to use this skill
+
+- Review Java code for unit tests
+- Apply best practices for unit tests in Java code
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/131-java-testing-unit-testing.md](references/131-java-testing-unit-testing.md).

@@ -1,5 +1,5 @@
 ---
-description: Guides test-driven development — decompose a feature or bug fix into behaviors, then cycle through Red (failing test) → Green (minimal implementation) → Refactor for each one. Requires /optimus:init and working test infrastructure.
+description: Guides test-driven development — decompose a feature or bug fix into behaviors, then cycle through Red (failing test) → Green (minimal implementation) → Refactor for each one. Requires /optimus:init and working test infrastructure. Use when starting a new feature or bug fix with test-first discipline.
 disable-model-invocation: true
 ---
 
@@ -7,7 +7,7 @@ disable-model-invocation: true
 
 Guide the user through Red-Green-Refactor cycles to implement a feature or fix a bug test-first. Each cycle: write a failing test (Red), write the minimum code to pass it (Green), clean up while tests stay green (Refactor). One behavior per cycle.
 
-This skill is for **new features** and **bug fixes** — not refactoring. For restructuring existing code without changing behavior, use `/optimus:simplify` instead (existing tests verify behavior is preserved).
+This skill is for **new features** and **bug fixes** — not refactoring. For restructuring existing code without changing behavior, use `/optimus:refactor` instead (existing tests verify behavior is preserved).
 
 ### The Iron Law
 
@@ -72,7 +72,7 @@ Examine the task description against the codebase and classify it:
 - Large features (frontend + backend, multi-component) — these are suitable but need careful decomposition in Step 3
 
 **Not suitable for TDD** — stop and redirect:
-- **Refactoring** (restructuring code without changing behavior) → recommend `/optimus:simplify`
+- **Refactoring** (restructuring code without changing behavior) → recommend `/optimus:refactor`
 - **Documentation-only changes** (README, comments, CLAUDE.md) → no testable code
 - **Pure styling/cosmetic changes** (CSS colors, spacing, fonts with no logic) → no testable logic
 - **Configuration changes** (environment variables, CI/CD, linter config) → no testable behavior
@@ -90,7 +90,7 @@ If **not suitable**, report to the user:
 **Reason:** [specific explanation — e.g., "This is a refactoring task — it changes code structure
 without adding new behavior. TDD is for building new behavior test-first."]
 
-**Recommended approach:** [specific skill or approach — e.g., "/optimus:simplify restructures code
+**Recommended approach:** [specific skill or approach — e.g., "/optimus:refactor restructures code
 while using existing tests as a safety net."]
 ```
 

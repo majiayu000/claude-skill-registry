@@ -38,6 +38,11 @@ Before applying any functional programming changes, ensure the project compiles.
 - **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements
 - **BEFORE APPLYING**: Read the reference for detailed good/bad examples, constraints, and safeguards for each functional programming pattern
 
+## When to use this skill
+
+- Review Java code for functional programming
+- Apply best practices for functional programming in Java code
+
 ## Reference
 
 For detailed guidance, examples, and constraints, see [references/142-java-functional-programming.md](references/142-java-functional-programming.md).

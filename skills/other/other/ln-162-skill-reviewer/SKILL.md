@@ -1,6 +1,6 @@
 ---
 name: ln-162-skill-reviewer
-description: "Reviews skills (D1-D9 + M1-M6 criteria) or .claude/commands for quality. Use when validating skill correctness before release."
+description: "Reviews skills (D1-D11 + M1-M6 criteria) or .claude/commands for quality. Use when validating skill correctness before release."
 license: MIT
 ---
 
@@ -10,9 +10,10 @@ license: MIT
 
 **Type:** L3 Worker (standalone-capable)
 **Category:** 1XX Documentation Pipeline
-**Coordinator:** ln-160-docs-skill-extractor (optional)
 
 Universal skill reviewer with two auto-detected modes. Invocable standalone or by ln-160 coordinator.
+
+> **Plan Mode behavior:** ln-162 is a review/analysis skill — Phases 1-4 and 6-7 ARE the research. Execute them fully in Plan Mode (read files, run checks, analyze dimensions, read diffs). Write the Phase 6 report + Phase 5 fix list into the plan file. After plan approval, apply Phase 5 edits.
 
 ---
 
@@ -20,7 +21,7 @@ Universal skill reviewer with two auto-detected modes. Invocable standalone or b
 
 | Condition | Mode | Review Profile |
 |-----------|------|----------------|
-| `ln-*/SKILL.md` files exist in CWD | **SKILL** | Full D1-D9 + M1-M6 |
+| `ln-*/SKILL.md` files exist in CWD | **SKILL** | Full D1-D11 + M1-M6 |
 | `.claude/commands/*.md` files exist | **COMMAND** | Structural + actionability |
 | Both exist | **SKILL** (default) | Override: `$ARGUMENTS = commands` |
 
@@ -40,7 +41,7 @@ When invoked by ln-160 coordinator: receives list of file paths to review in COM
 
 ## SKILL Mode
 
-Review SKILL.md files against 9 structural dimensions + 6 intent checks. Fix in-place. Report with PASS/FAIL verdict.
+Review SKILL.md files against 11 structural dimensions + 6 intent checks. Fix in-place. Report with PASS/FAIL verdict.
 
 ### Phase 1: Scope Detection
 
@@ -71,11 +72,11 @@ bash references/run_checks.sh {scoped SKILL.md files}
 
 Record failures -- they feed D7/D8 as pre-verified violations. Every FAIL is confirmed -- no judgment needed, no skipping. Check definitions: `references/automated_checks.md`.
 
-### Phase 3: Nine-Dimension Review
+### Phase 3: Eleven-Dimension Review
 
 **MANDATORY READ:** Load `references/structural_review.md` and `docs/architecture/SKILL_ARCHITECTURE_GUIDE.md`
 
-Read every SKILL.md in scope. Check ALL dimensions across ALL skills. Phase 2 failures are pre-verified -- include directly, do not re-check.
+Read every SKILL.md in scope. Check ALL dimensions (D1-D11) across ALL skills. For each primary skill, also read the SKILL.md of ALL skills it delegates to (Worker Invocation table entries) to verify D10 (behavioral contracts) and D11 (resource lifecycle). Phase 2 failures are pre-verified -- include directly, do not re-check.
 
 ### Phase 4: Intent Review
 
@@ -98,7 +99,7 @@ After all fixes applied:
 ### Phase 6: Report
 
 **Verdict rules:**
-- Any D1-D9 violation NOT auto-fixed -> **FAIL**
+- Any D1-D11 violation NOT auto-fixed -> **FAIL**
 - Only RETHINK findings (no unfixed violations) -> **PASS with CONCERNS**
 - Zero findings -> **PASS**
 
@@ -124,6 +125,9 @@ After all fixes applied:
 | Root docs stale names (D6) | {PASS/FAIL} | {list or --} |
 | Skill count accuracy (D8) | {PASS/FAIL} | {list or --} |
 | Description triggers (D8) | {PASS/WARN} | {list or --} |
+| Cross-skill contracts (D10) | {PASS/FAIL} | {list or --} |
+| Resource lifecycle (D11) | {PASS/FAIL} | {list or --} |
+| Platform API compat (#15) | {PASS/FAIL} | {list or --} |
 
 ### Fixed ({count})
 | # | Skill | Dim | Issue | Fix Applied |
@@ -143,7 +147,7 @@ After all fixes applied:
 Dimensions with no findings: {list}
 ```
 
-If zero findings: `All 9 structural dimensions + 6 intent checks clean. PASS.`
+If zero findings: `All 11 structural dimensions + 6 intent checks clean. PASS.`
 
 ### Phase 7: Volatile Numbers Cleanup
 
@@ -207,11 +211,19 @@ Pass rate: {X}%
 
 ---
 
+## Reference Files
+
+- **Structural review:** `references/structural_review.md` (D1-D11)
+- **Intent review:** `references/intent_review.md` (M1-M6)
+- **Automated checks:** `references/automated_checks.md` + `references/run_checks.sh`
+- **Deprecated APIs:** `references/deprecated_apis.md` (Check #15)
+- **Command review:** `references/command_review_criteria.md` (COMMAND mode)
+
 ## Definition of Done
 
 - [ ] Scope detected (primary + affected + dependency skills)
 - [ ] Phase 2 automated checks executed for all skills in scope
-- [ ] D1-D9 dimensions reviewed across all skills
+- [ ] D1-D11 dimensions reviewed across all skills
 - [ ] M1-M6 intent evaluated for primary skills
 - [ ] Fixable findings auto-fixed via Edit
 - [ ] Post-fix holistic compaction applied to each primary SKILL.md

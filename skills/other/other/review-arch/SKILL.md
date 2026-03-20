@@ -24,7 +24,7 @@ Interactive workflow that analyzes codebase architecture, produces a target blue
 ├─────────────────────────────────────────────────────┤
 │  1. Determine scope                                 │
 │  2. Gather QA instructions                          │
-│  3. Spawn swe-review-arch agent (full analysis)     │
+│  3. Spawn swe-arch-reviewer agent (full analysis)    │
 │     → returns dead code list + target blueprint     │
 │  4. Present analysis to user                        │
 │  5. Iterate on plan with user                       │
@@ -62,7 +62,7 @@ Interactive workflow that analyzes codebase architecture, produces a target blue
 
 ### 3. Analyze Codebase
 
-**Spawn fresh `swe-review-arch` agent:**
+**Spawn fresh `swe-arch-reviewer` agent:**
 
 The agent performs four sequential analysis steps:
 1. Catalogs dead code for removal
@@ -303,7 +303,7 @@ This spawns a doc-maintainer agent that audits all project documentation and fix
 - Use `/refactor` for routine cleanup; use `/review-arch` when the module structure itself needs rethinking
 
 **Relationship to `/implement`:**
-- `/implement` is a feature development workflow that optionally invokes `swe-refactor` (tactical) for code review after implementation
+- `/implement` is a feature development workflow that optionally invokes `swe-code-reviewer` (tactical) for code review after implementation
 - `/review-arch` is a dedicated architectural improvement workflow
 
 **Relationship to `/scope`:**
@@ -323,7 +323,7 @@ Any special QA instructions?
 
 Starting analysis...
 
-Spawning swe-review-arch agent...
+Spawning swe-arch-reviewer agent...
 
 Analysis complete. Here's what I found:
 

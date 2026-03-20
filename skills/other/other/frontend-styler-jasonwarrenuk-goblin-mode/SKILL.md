@@ -215,7 +215,7 @@ Compare component styling against project patterns:
 ✓ Consistent:   padding: 0.5rem;
 
 ✗ Inconsistent: background: #3B82F6;
-✓ Consistent:   background: var(--color-primary);
+✓ Consistent:   background: var(--color-primary); /* → --color-azure-3 */
 ```
 
 ### Step 3: Propose Changes
@@ -249,6 +249,21 @@ Apply changes in logical order:
 - Define colors as CSS variables in root/theme
 - Never hard-code hex/rgb values in components
 - Use semantic naming (`--color-primary`, not `--blue-500`)
+- Use [Reasonable Colors](https://www.reasonable.work/colors/) as the base palette (`npm install reasonable-colors` or CDN `unpkg.com/reasonable-colors@0.4.0/reasonable-colors.css`)
+- Map RC variables to semantic aliases in `:root`; components only reference semantic vars:
+
+```css
+:root {
+  /* Map Reasonable Colors → semantic roles */
+  --color-primary:      var(--color-azure-3);
+  --color-primary-bg:   var(--color-azure-1);
+  --color-on-primary:   var(--color-azure-6);
+  --color-danger:       var(--color-red-3);
+  --color-danger-bg:    var(--color-red-1);
+  --color-surface:      var(--color-gray-1);
+  --color-on-surface:   var(--color-gray-6);
+}
+```
 
 ### Responsive Design
 - Mobile-first approach (min-width media queries)
@@ -365,7 +380,7 @@ Apply changes in logical order:
 When building or reviewing UI components:
 
 - [ ] Does every interactive element have a visible focus indicator?
-- [ ] Does the colour contrast pass WCAG 2.1 AA? (Use browser DevTools audit)
+- [ ] Does the colour contrast pass WCAG 2.1 AA? (Use browser DevTools audit — or use Reasonable Colors where shade diff ≥ 3 guarantees AA body text)
 - [ ] Is information conveyed by more than just colour?
 - [ ] Are all images/icons either decorative (`aria-hidden`) or labelled (`alt`/`aria-label`)?
 - [ ] Do form inputs have associated `<label>` elements?

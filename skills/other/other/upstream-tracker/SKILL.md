@@ -1,6 +1,6 @@
 ---
 name: upstream-tracker
-description: "Manage upstream issue tracking for this project. Use when the user wants to log a bug or friction point in a vendor package or npm dependency, review open upstream items, resolve a tracked issue, run a trend review, generate the upstream observations section of a sprint retrospective, promote upstream observations to Basic Memory, or discover known friction from other projects. Trigger phrases: 'upstream', 'track this', 'vendor issue', 'log this bug', 'review upstream', 'trend review', 'cross-vendor', 'this is a bug in X', 'promote to memory', 'promote upstream', 'sync from memory', 'known friction', 'resolved upstream', 'mark as fixed', 'tool issue', 'action bug', or any mention of friction with an external package."
+description: "Manage upstream issue tracking for this project. Use when the user wants to log a bug or friction point in a vendor package or npm dependency, review open upstream items, resolve a tracked issue, run a trend review, generate the upstream observations section of a sprint retrospective, promote upstream observations to Basic Memory, discover known friction from other projects, or track a contribution opportunity. Trigger phrases: 'upstream', 'track this', 'vendor issue', 'log this bug', 'review upstream', 'trend review', 'cross-vendor', 'this is a bug in X', 'promote to memory', 'promote upstream', 'sync from memory', 'known friction', 'resolved upstream', 'mark as fixed', 'tool issue', 'action bug', 'contribution opportunity', 'upstream this', 'contribute back', 'upstreamable', or any mention of friction with an external package."
 user-invocable: true
 allowed-tools:
   - Read
@@ -16,8 +16,9 @@ allowed-tools:
 
 # Upstream Tracker
 
-Manage the `UPSTREAM-*.md` files that track bugs, feature requests, and friction
-discovered in upstream packages while building this project.
+Manage the `UPSTREAM-*.md` files that track bugs, feature requests, contribution
+opportunities, and friction discovered in upstream packages while building this
+project.
 
 ## Tracking Files
 
@@ -52,11 +53,11 @@ convention in the Guidelines section for the tool-type prefix format.
 ### Shared structure
 
 All upstream files share the same structure:
-**Feature Requests** | **Bugs** | **Cross-Vendor Inconsistencies** | **Trend Reviews**
+**Feature Requests** | **Bugs** | **Upstream Opportunities** | **Cross-Vendor Inconsistencies** | **Trend Reviews**
 
-Non-vendor files typically only use **Feature Requests** and **Bugs** sections
-(cross-vendor inconsistencies only apply when multiple vendor packages share an
-API surface).
+Non-vendor files typically use **Feature Requests**, **Bugs**, and
+**Upstream Opportunities** sections (cross-vendor inconsistencies only apply
+when multiple vendor packages share an API surface).
 
 ## Workflows
 
@@ -66,7 +67,8 @@ default to the most likely workflow based on context.
 ### 1. Log a new entry
 
 When the user encounters upstream friction — a bug, a missing feature, an
-awkward API, or a cross-vendor inconsistency — add it to the correct file.
+awkward API, a cross-vendor inconsistency, or a contribution opportunity — add
+it to the correct file.
 Infer the details from the current conversation context: what code was being
 written, what error occurred, what workaround was needed. The user shouldn't
 have to re-explain something that's already visible in the session.
@@ -85,8 +87,10 @@ have to re-explain something that's already visible in the session.
    exists and contains an `## Upstream Friction` section with entries related to
    the issue being logged, surface them to the user: "This friction is already
    tracked in Basic Memory from another project: \[summary]. Logging it locally
-   as well so this project tracks it." Proceed regardless — this is informational,
-   not a gate. If Basic Memory tools are not available, skip this step silently.
+   as well so this project tracks it." Also surface any `### Upstream Opportunities`
+   entries — another project may have already attempted contributing this.
+   Proceed regardless — this is informational, not a gate. If Basic Memory tools
+   are not available, skip this step silently.
 2. If the package is a non-vendor dependency and no `UPSTREAM-<package>.md`
    file exists yet, create it with this template:
 
@@ -98,6 +102,10 @@ have to re-explain something that's already visible in the session.
    ## Bugs
 
    _No entries yet._
+
+   ## Upstream Opportunities
+
+   _No entries yet._
    ```
 
    Non-vendor files typically omit Cross-Vendor Inconsistencies and Trend
@@ -106,6 +114,11 @@ have to re-explain something that's already visible in the session.
 3. Classify the entry:
    - **Bug** — unexpected behavior, something that doesn't work as documented
    - **Feature Request** — a missing capability the package should have
+   - **Upstream Opportunity** — downstream code (a workaround, extension, or
+     enhancement) that solves a real problem and could benefit the upstream
+     package's users generally. Distinct from Feature Request: working code
+     already exists locally. Use when the project has built something that
+     should be contributed back.
    - **Cross-Vendor Inconsistency** — a pattern, convention, or API that one
      vendor package supports but another doesn't, creating friction for the
      consumer. Relevant when multiple vendor packages share an API surface.
@@ -135,6 +148,22 @@ Severity tag in brackets is optional — use `blocking` (no workaround), `degrad
 (workaround exists but costly), or `minor` (edge case). Upstream URL is optional —
 add if you file an issue or PR upstream.
 
+**Entry format for Upstream Opportunities:**
+
+```
+- **Short title** (YYYY-MM-DD) — What was built, why it could be valuable
+  upstream, and the consumer-side motivation. [upstream: <url>]
+  Source: <file-or-branch> · Merge readiness: direct|needs-redesign|proof-of-concept
+  Ownership: us|shared · Workaround: full|partial — description of local solution
+```
+
+`Source:` points to the local artifact (file path, branch, PR URL, or beads
+issue ID). `Merge readiness:` assesses upstream integration effort: `direct` =
+submittable as-is, `needs-redesign` = concept valid but too project-specific,
+`proof-of-concept` = demonstrates approach but not library-quality. `Ownership:`
+is typically `us` (we built it) or `shared` (upstream maintainer is
+participating). `[upstream: <url>]` is added once a PR or issue has been filed.
+
 **Entry format for Cross-Vendor Inconsistencies:**
 
 ```
@@ -150,6 +179,8 @@ add if you file an issue or PR upstream.
 | `Severity:` | `blocking` · `degraded` · `minor` | Bugs only. How much this hurts day-to-day development. `blocking` = no workaround, `degraded` = workaround exists but costly, `minor` = edge case or minor inconvenience |
 | `Ownership:` | `upstream` · `us` · `shared` | All entry types. Who needs to act: `upstream` = waiting on a release, `us` = we need to adapt or contribute a fix, `shared` = both sides need changes |
 | `Workaround:` | `none` · `partial` · `full` — description | All entry types. `none` = no mitigation, `partial` = mitigation exists but incomplete, `full` = fully mitigated (describe how). Helps prioritize: entries with `none` are more urgent |
+| `Source:` | file path, branch, PR URL, or beads issue ID | Upstream Opportunities only. Points to the local artifact that is the candidate for contribution |
+| `Merge readiness:` | `direct` · `needs-redesign` · `proof-of-concept` | Upstream Opportunities only. `direct` = submittable as-is, `needs-redesign` = concept valid but too project-specific, `proof-of-concept` = demonstrates approach but not library-quality |
 
 These fields go on a continuation line below the entry's main description line,
 indented to match. They are metadata for triage and trend review — the main
@@ -160,9 +191,35 @@ When adding the first entry to a section, replace the `_No entries yet._`
 placeholder. Keep entries concise — 1-3 sentences. The title should be
 scannable (e.g., "Missing session type export", not "Issue with types").
 
+6a. **Eager promotion check.** If Basic Memory MCP tools are available, assess
+   the project's tempo:
+   `git rev-list --count --since="90 days ago" HEAD 2>/dev/null`
+   Guard: skip if the repo has zero commits total
+   (`git log --oneline -1 2>/dev/null` returns empty).
+
+   | Tempo | Commits in 90 days | Promotion behavior |
+   |-------|-------------------|--------------------|
+   | **Dormant** | 0–4 | Offer inline promotion for any promotable entry (`Ownership: upstream`/`shared`, or any Upstream Opportunity) |
+   | **Moderate** | 5–14 | Offer inline promotion for high-urgency entries only: blocking bugs with `Ownership: upstream`, or Upstream Opportunities with `Merge readiness: direct` |
+   | **Active** | 15+ | Skip — the normal sprint cadence will handle promotion via workflow 6 |
+
+   When offering inline promotion, present: "This project has low commit
+   frequency — UPSTREAM entries can sit unread for months before the normal
+   promotion cycle runs. This entry looks promotable to Basic Memory. Want to
+   promote it now? I'll show you the generalized form first." For Upstream
+   Opportunities in dormant repos, add: "This contribution opportunity may
+   become harder to merge as upstream evolves — promoting sooner makes it
+   discoverable from other projects."
+
+   If the user agrees, apply workflow 6 steps 3–4 scoped to this single entry
+   (route by target type, draft generalized form, user confirms text, write or
+   flag). If the user declines, or if Basic Memory tools are not available, or
+   if the project is active, skip silently.
+
 If the logged observation looks generalizable beyond this project (about the
-package's behavior, not a project-specific integration choice), note that
-workflow 6 (Promote to Basic Memory) can share it across projects later.
+package's behavior, not a project-specific integration choice) and the eager
+promotion check did not fire, note that workflow 6 (Promote to Basic Memory)
+can share it across projects at the next sprint boundary.
 
 ### 2. Review open items
 
@@ -183,11 +240,13 @@ Summarize the current state of all upstream tracking files (vendor and non-vendo
 
 - Feature Requests: N open
 - Bugs: N open
+- Upstream Opportunities: N open
 - [list each with title and date]
 
 ### Notes
 
 - [any stale items or observations]
+- [flag Upstream Opportunities with Merge readiness: direct and no [upstream:] URL as "contribution-ready, not yet submitted"]
 ```
 
 If all files are empty, say so and suggest checking whether any known friction
@@ -213,13 +272,17 @@ preserves what was tracked and when it was removed.
    `mcp__basic-memory__search_notes` for the package name. If a matching note
    exists, call `mcp__basic-memory__read_note` to get its exact content. If the
    note has an `## Upstream Friction` section containing the resolved entry,
-   call `mcp__basic-memory__edit_note` with `find_replace` to append
-   `_(Resolved YYYY-MM-DD)_` to the entry's line. Match against the note's
-   exact text from `read_note` — do not construct match strings from memory.
-   **Annotate, never delete** — only workflow 6 (Promote to Basic Memory) moves
-   entries to the `### Resolved` subsection during its prune pass. If no matching
-   Basic Memory entry exists (it was never promoted), skip silently. If Basic
-   Memory tools are not available, skip silently.
+   call `mcp__basic-memory__edit_note` with `find_replace` to append an
+   annotation to the entry's line. Use entry-type-specific annotation text:
+   - **Bugs / Feature Requests:** `_(Resolved YYYY-MM-DD)_`
+   - **Upstream Opportunities (merged):** `_(Contributed upstream: <url> merged YYYY-MM-DD)_`
+   - **Upstream Opportunities (abandoned):** `_(Closed YYYY-MM-DD — not contributed)_`
+
+   Match against the note's exact text from `read_note` — do not construct match
+   strings from memory. **Annotate, never delete** — only workflow 6 (Promote to
+   Basic Memory) moves entries to the `### Resolved` subsection during its prune
+   pass. If no matching Basic Memory entry exists (it was never promoted), skip
+   silently. If Basic Memory tools are not available, skip silently.
 
 ### 4. Trend review (quarterly)
 
@@ -240,15 +303,23 @@ Every 4th sprint, perform a cross-cutting analysis of all tracking files.
      escalation (upstream PR, issue, or workaround acceptance)
    - **Feature requests** typically take 10–20 sprints; items beyond 20 sprints
      may never land — consider permanent workarounds or forks
+   - **Upstream Opportunities** without an `[upstream:]` URL after 5 sprints →
+     escalate (submit the PR or close the opportunity). With a submitted PR but
+     no merge after 10 sprints → ping upstream or consider a fork
    - **Cross-vendor inconsistencies** often resolve only on a next major version;
      track with low urgency unless actively blocking development
+   - **Dormancy-aware scaling.** In projects with ≤4 commits in the last 90 days
+     (see project tempo in Guidelines), double escalation thresholds — entries in
+     dormant repos age by calendar, not by sprint cadence
 6. Add a Trend Review entry to each file's **Trend Reviews** section
 7. Delete non-vendor UPSTREAM files that have no remaining open entries
 8. Present findings to the user
 9. **Promotion candidates.** Flag entries that have been open across multiple
    trend reviews AND have `Ownership: upstream` or `shared` — these are strong
-   candidates for workflow 6 (Promote to Basic Memory). Suggest running it if
-   any are found.
+   candidates for workflow 6 (Promote to Basic Memory). Also flag Upstream
+   Opportunities with `Merge readiness: direct` — these are particularly strong
+   candidates because the cross-project signal (a proven approach exists) is
+   immediately actionable. Suggest running workflow 6 if any are found.
 
 **Trend Review entry format:**
 
@@ -274,7 +345,9 @@ Help generate the "Upstream observations" section of a sprint retrospective.
 4. Draft the upstream observations section for the retro
 5. Note any entries that appear generalizable beyond this project — the
    retrospective may want to chain into workflow 6 (Promote to Basic Memory)
-   after the retro is written.
+   after the retro is written. List Upstream Opportunities and their submission
+   status. Flag `Merge readiness: direct` opportunities with no submitted PR
+   as sprint action items.
 
 ### 6. Promote to Basic Memory
 
@@ -297,10 +370,19 @@ report that promotion is unavailable and suggest checking Basic Memory manually.
    - The entry has enough detail to be useful without project context
    - When ownership is absent, default to promoting unless clearly
      project-specific
+   - **Upstream Opportunities override.** Entries in `## Upstream Opportunities`
+     are always eligible for promotion regardless of `Ownership:` value. The
+     knowledge that a working solution exists and could be contributed is
+     inherently cross-project useful — other projects consuming the same
+     package benefit from knowing a proven approach exists, even though the
+     work was done on "our" side. Do not filter these by Ownership.
 2. **Present candidates to the user.** For each candidate, show:
    - Package or tool name and target type (npm, brew, cask, action, etc.)
-   - Entry title and classification (Bug / Feature Request)
-   - A draft generalized version with project-specific file paths stripped
+   - Entry title and classification (Bug / Feature Request / Upstream Opportunity)
+   - A draft generalized version with project-specific file paths stripped.
+     For Upstream Opportunities: keep `Merge readiness:`, replace local file
+     paths in `Source:` with generic descriptions ("middleware adapter", "test
+     helper", "compatibility shim")
    - Whether a Basic Memory note already exists for this package/tool
    Let the user approve, edit, or skip each candidate. Never auto-promote.
 3. **Route by target type.** Search Basic Memory for an existing entity note
@@ -308,10 +390,10 @@ report that promotion is unavailable and suggest checking Basic Memory manually.
 4. **Write or flag.** For each approved candidate:
    - **Note exists, has `## Upstream Friction`** — call `mcp__basic-memory__edit_note`
      with `find_replace` to append the entry under the correct subsection
-     (`### Bugs` or `### Feature Requests`). Anchor the match text to include
-     the next `###` heading for uniqueness. Use `expected_replacements=1`.
-     Always call `mcp__basic-memory__read_note` first and match against its
-     exact text.
+     (`### Bugs`, `### Feature Requests`, or `### Upstream Opportunities`).
+     Anchor the match text to include the next `###` heading for uniqueness.
+     Use `expected_replacements=1`. Always call `mcp__basic-memory__read_note`
+     first and match against its exact text.
    - **Note exists, no `## Upstream Friction`** — call `mcp__basic-memory__edit_note`
      with `insert_before_section` on `Relations` to add the full
      `## Upstream Friction` section with the entry.
@@ -360,10 +442,13 @@ unavailable and suggest checking Basic Memory manually.
 3. **Cross-reference with local UPSTREAM files.** For each Basic Memory friction
    entry found, check whether the project already has a matching entry in a
    local `UPSTREAM-*.md` file.
-4. **Surface unknown friction.** Present entries found in Basic Memory but not
-   tracked locally: "Basic Memory has known friction for `<package>` not tracked
-   in this project: \[entry title — summary]. Want to add it to your UPSTREAM
-   file?"
+4. **Surface unknown friction and opportunities.** Present entries found in
+   Basic Memory but not tracked locally: "Basic Memory has known friction for
+   `<package>` not tracked in this project: \[entry title — summary]. Want to
+   add it to your UPSTREAM file?" Also surface `### Upstream Opportunities`
+   entries: "Basic Memory shows a known contribution opportunity for
+   `<package>`: \[title — merge readiness]. Another project built a solution
+   that could be relevant here."
 5. **Flag missing notes.** For packages that have UPSTREAM entries locally but
    no Basic Memory note, suggest `/package-intel <package>` or
    `/tool-intel <tool>` for enrichment — this enables future promotion via
@@ -406,3 +491,10 @@ friction patterns.
   Memory entries opportunistically when MCP tools are available. Workflows 6
   and 7 are dedicated Basic Memory operations — they require the MCP tools to
   function and will report unavailability if the tools are missing.
+- **Project tempo classification.** Some workflows adjust behavior based on
+  how active the project is. Measure with
+  `git rev-list --count --since="90 days ago" HEAD 2>/dev/null`: **dormant**
+  (0–4 commits), **moderate** (5–14), **active** (15+). Dormant and moderate
+  repos get earlier promotion nudges at workflow 1 time because their normal
+  sprint cadence is too slow to surface entries cross-project via Basic Memory.
+  See step 6a in workflow 1 for the full decision matrix.

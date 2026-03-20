@@ -23,7 +23,7 @@ Interactive pre-flight checklist before cutting a release. Spawns a scanner agen
 │                  RELEASE REVIEW                     │
 ├─────────────────────────────────────────────────────┤
 │  1. Determine release context                       │
-│  2. Spawn qa-release-eng agent (static analysis)    │
+│  2. Spawn qa-release-engineer agent (static analysis)    │
 │  3. Present Phase 1 findings (fast checks)          │
 │  4. User decides: continue to execution checks?     │
 │  5. Run test suite                                  │
@@ -57,7 +57,7 @@ Interactive pre-flight checklist before cutting a release. Spawns a scanner agen
    - **Skip doc freshness check**
    - **Skip license compliance**
 
-### 2. Spawn qa-release-eng Agent
+### 2. Spawn qa-release-engineer Agent
 
 **Prompt:**
 ```
@@ -277,12 +277,12 @@ EOF
 - Wait for completion before spawning next
 
 **Agents used:**
-- `qa-release-eng`: Static analysis scan (step 2)
+- `qa-release-engineer`: Static analysis scan (step 2)
 - `doc-maintainer`: Documentation freshness assessment only (step 7)
 
 **State to maintain (as orchestrator):**
 - Release context (last tag, target version, skipped checks)
-- Agent findings (from qa-release-eng)
+- Agent findings (from qa-release-engineer)
 - Execution check results (tests, build, docs)
 - Consolidated finding list with numbering
 - User selections
@@ -331,7 +331,7 @@ What version are you releasing?
 Any checks to skip?
 > Run everything
 
-Spawning qa-release-eng agent for static analysis...
+Spawning qa-release-engineer agent for static analysis...
 
 ## Release Readiness: Static Analysis
 

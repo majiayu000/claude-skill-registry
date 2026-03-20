@@ -1,6 +1,6 @@
 ---
 name: ln-814-optimization-executor
-description: "Multi-file hypothesis testing with keep/discard loop, compound baselines, and experiment logging"
+description: "Executes optimization hypotheses with keep/discard testing loop. Use when applying validated performance improvements."
 license: MIT
 ---
 

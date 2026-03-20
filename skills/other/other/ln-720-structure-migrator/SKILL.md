@@ -1,6 +1,6 @@
 ---
 name: ln-720-structure-migrator
-description: "Coordinates project structure: SCAFFOLD new or RESTRUCTURE existing to Clean Architecture"
+description: "Scaffolds new or restructures existing projects to Clean Architecture. Use when setting up project structure."
 license: MIT
 ---
 
@@ -240,6 +240,14 @@ Context:
 |------|---------|
 | `references/clean_architecture_dotnet.md` | .NET project structure template |
 | `references/frontend_structure.md` | React project structure template |
+
+---
+
+## Meta-Analysis
+
+**MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
+
+Skill type: `execution-orchestrator`. Run after all phases complete. Output to chat using the `execution-orchestrator` format.
 
 ---
 

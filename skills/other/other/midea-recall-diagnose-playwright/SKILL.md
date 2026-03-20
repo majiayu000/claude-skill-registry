@@ -8,9 +8,13 @@ description: Diagnose or 排查 why a `/rag-recall/api/search/keyword` request d
 ## Start
 
 - Prefer `playwright-ext` for platform operations.
+- Use environment split strategy by default:
+  - `sit` / `uat`: local startup evidence first (replay + local execution logs), then `trace/recordInfo` + ELK + ES for cross-check.
+  - `prod`: platform evidence first (`trace/recordInfo` + ELK), then ES only when retrieval root cause still needs proof.
 - Work against browser sessions that are already logged into the target environment.
 - If login is required (for example password/MFA), pause and wait for the user to complete login in the current browser tab, then continue from the same tab.
 - Only after the browser session is confirmed logged in and still inaccessible (for example persistent `403`/network denial), allow direct terminal `curl` for `keyword` replay and `trace/recordInfo` fetch with user-provided headers, then continue ELK/ES checks in Playwright.
+- For `sit` / `uat`, prefer the ES console entry configured in `references/env-config.example.yaml` (or your local override file).
 - Normalize the user input first with `scripts/prepare_diagnosis.py`.
 - Read `references/diagnosis-rules.md` before interpreting any stage outcome.
 - Read `references/platform-playbooks.md` before opening ELK or the ES console.
@@ -24,6 +28,7 @@ description: Diagnose or 排查 why a `/rag-recall/api/search/keyword` request d
   - an existing `requestId`.
 - Treat `targetType` as `doc` or `faq` only in V1.
 - Reject more than 10 target IDs because `traceTargetIds` only supports 10.
+- If live request headers are missing, do not infer or guess `appId` / `appChannel`. Mark them as unknown and require user-supplied headers or local-log extraction evidence.
 
 Normalize the input before touching any platform:
 
@@ -52,30 +57,31 @@ python3 scripts/prepare_diagnosis.py --json '{
 
 1. Normalize the input.
 2. If the user gave a live request, inject a unique `requestId` when missing and always merge `targetIds` into `traceTargetIds` when `conditionFilter` is present.
-3. Send the live request through the logged-in browser session, or skip this step when the user already gave a `requestId`.
-4. Fetch `trace/recordInfo` first, but never read the whole payload into context.
-5. Compact the trace immediately with `scripts/compact_trace.py`.
-6. Use the compacted `stepList` summary + ELK (`targetId` first) to identify the **first phase where target is lost**.
-7. Report this phase-level conclusion first with minimal key evidence. Do not expand downstream phases by default.
-8. If first-lost phase is `full_range_faqTxtRecall` / `full_range_docTxtRecall`, go to ES and replay the real text DSL only.
-9. In text-recall ES diagnosis, follow this shortest sequence:
+3. Choose workflow by `env`:
+   - `sit` / `uat`: replay request on local startup first and capture local phase evidence (`requestId`, cmp stage, hit/miss, key filters).
+   - `prod` or no local runtime available: send live request through logged-in browser session (or use given `requestId`) and continue with trace-first flow.
+4. Fetch `trace/recordInfo` and compact immediately with `scripts/compact_trace.py`. Never read the whole payload into context.
+5. Use local evidence (`sit` / `uat`) plus compacted `stepList` + ELK (`targetId` first) to identify the **first phase where target is lost**.
+6. Report this phase-level conclusion first with minimal key evidence. Do not expand downstream phases by default.
+7. If first-lost phase is `full_range_faqTxtRecall` / `full_range_docTxtRecall`, go to ES and replay the real text DSL only.
+8. In text-recall ES diagnosis, follow this shortest sequence:
    - check target existence by `targetId` (`knowledge_base_id`/`doc_id`) in the same index alias
    - replay original DSL
    - run contrast replay: `keep filter + remove text must` vs `keep filter + keep text must`
-10. If target appears when text must is removed, conclude **query-text match miss (analyzer/minimum_should_match/field scope)**, then use `_explain` only for this target doc.
-11. `_explain` and `_analyze` are single-index operations. Never run them on multi-index aliases. Always:
+9. If target appears when text must is removed, conclude **query-text match miss (analyzer/minimum_should_match/field scope)**, then use `_explain` only for this target doc.
+10. `_explain` and `_analyze` are single-index operations. Never run them on multi-index aliases. Always:
    - find target `_index` first via `_search`
    - run `_explain` / `_analyze` on that concrete `_index`
-12. If the user asks "why query did not match", run `_analyze` overlap evidence **on demand** and report:
+11. If the user asks "why query did not match", run `_analyze` overlap evidence **on demand** and report:
    - query tokens per analyzer
    - required match threshold per analyzer
    - `max_hit` and `hitAtLeastRequired`
    - `max_hit_items` (`knowledge_point_id` + question text)
-13. Enter vector recall diagnosis only when:
+12. Enter vector recall diagnosis only when:
    - first-lost phase is vector recall, or
    - text-stage evidence is inconsistent and user explicitly asks for deeper checks.
-14. For FAQ retrieval misses, run a simplified-query contrast (`knowTypeList=["FAQ"]`) only when steps above are still insufficient.
-15. If user asks for complete text-recall storage for target FAQ/doc, export text fields only (exclude vectors) and present as:
+13. For FAQ retrieval misses, run a simplified-query contrast (`knowTypeList=["FAQ"]`) only when steps above are still insufficient.
+14. If user asks for complete text-recall storage for target FAQ/doc, export text fields only (exclude vectors) and present as:
    - common fields
    - deduplicated content block
    - question/variant list with IDs
@@ -92,6 +98,7 @@ python3 scripts/prepare_diagnosis.py --json '{
 - In this case, either:
   - fabricate a replay request that includes `traceTargetIds` and a fresh `requestId`, then send it through the logged-in browser session, or
   - explicitly ask the user to send one replay request and return the required payload.
+- For `sit` / `uat`, if local replay already produced stable phase evidence, continue diagnosis with local evidence + ES cross-check even when trace evidence is missing.
 
 ## Control Token Usage
 
@@ -117,8 +124,8 @@ python3 scripts/compact_trace.py \
 
 ## Use Platform Priorities
 
-- Prefer `trace/recordInfo` for the first structured read.
-- Prefer ELK `traceTargetIds` logs for phase confirmation.
+- `sit` / `uat`: prefer local runtime evidence first, then `trace/recordInfo`, then ELK `traceTargetIds` logs.
+- `prod`: prefer `trace/recordInfo` for the first structured read, then ELK `traceTargetIds` logs.
 - Default delivery is phase diagnosis plus retrieval root cause when the target is lost in text/vector recall.
 - Prefer ES only for retrieval-stage diagnosis:
   - raw recall miss
@@ -129,6 +136,7 @@ python3 scripts/compact_trace.py \
 ## Apply Retrieval Rules
 
 - Treat `TRACE_TARGET_ES phase=response hit=false` as the strongest proof that a target is absent from that ES query's returned set.
+- In ES console operations, clear `input` and `output` before each DSL run to avoid mixed requests/responses.
 - Do not treat `targetBefore=[] targetAfter=[]` alone as proof that the raw ES query missed the target. Those logs can appear after score filtering.
 - Always stop at the first proven lost phase. Do not continue to later phases for default diagnosis.
 - `_explain` / `_analyze` must run on a concrete `_index`, not on a multi-index alias.

@@ -1,11 +1,12 @@
 ---
 name: ln-914-community-responder
 description: "Responds to unanswered GitHub discussions and issues with codebase-informed replies. Use when clearing community question backlog."
+disable-model-invocation: true
 license: MIT
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # ln-914-community-responder
 

@@ -4,7 +4,7 @@ description: "Validates Stories, plans, or context via parallel multi-agent revi
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Multi-Agent Validator
 
@@ -21,6 +21,8 @@ Validates Stories/Tasks (mode=story), implementation plans (mode=plan_review), o
 **Mode detection:** `"plan"` or `"plan {file}"` or Read-Only Mode active with no args → mode=plan_review. `"context"` → mode=context. Anything else → mode=story.
 
 > **Terminology:** `mode=plan_review` = review mode (evaluating a plan document). "Plan Mode" / "Read-Only Mode" = execution flag (framework-level, applies to ALL modes). These are independent concepts.
+
+> **Plan Mode compatibility:** ln-310 runs normally in Plan Mode. `.agent-review/` is git-ignored — writing prompts, results, and context there is NOT a project modification. If the framework blocks a write, request permission — the user expects file operations in `.agent-review/`. Agent launches (Bash background) are external processes and always work.
 
 **Resolution (mode=story):** Story Resolution Chain. **Status filter:** Backlog
 
@@ -68,13 +70,18 @@ Initialize: `agents_launched = UNSET`. MUST be set to `true` or `SKIPPED` in Pha
 
 > **BLOCKING GATE:** If you find yourself reasoning about skipping agents due to task simplicity, small scope, or "already reviewed" — STOP. Return to the start of Phase 2. The ONLY valid exit without launching is: health_check returned 0 agents.
 
-1) **Health Check** (all modes): Read `docs/environment_state.json` → exclude disabled. Run `python shared/agents/agent_runner.py --health-check`. 0 available → `agents_launched = SKIPPED`
+1) **Health Check** (all modes): Read `docs/environment_state.json` → exclude disabled. **File not found → proceed with all agents (default=enabled, no exclusions).** Run `node shared/agents/agent_runner.mjs --health-check`. 0 available → `agents_launched = SKIPPED`
 2) **Prepare references:**
    - mode=story: Story/Task URLs (linear) or file paths (file)
    - mode=context: resolve identifier (default: `review_YYYYMMDD_HHMMSS`), materialize context if from chat → `.agent-review/context/{id}_context.md`
-   - mode=plan_review: auto-detect plan (Glob `.claude/plans/*.md`, most recent by mtime). No plan → error. Materialize: copy plan file → `.agent-review/context/{identifier}_plan.md`. Use local path as `{plan_ref}`
+   - mode=plan_review: auto-detect plan (Glob `.claude/plans/*.md`, most recent by mtime). No plan → error. Clean `.agent-review/context/` (delete all files). Materialize: copy plan file → `.agent-review/context/{identifier}_plan.md`. Use local path as `{plan_ref}`
 3) **Build prompt:** Assemble from `shared/agents/prompt_templates/review_base.md` + `modes/{mode}.md` (per shared workflow "Step: Build Prompt"). Replace mode-specific placeholders. Save to `.agent-review/{id}_{mode}review_prompt.md`
 4) **Launch BOTH agents** as background tasks. `agents_launched = true`
+
+**Exact command (per agent_delegation_pattern.md):**
+```
+node shared/agents/agent_runner.mjs --agent {name} --prompt-file .agent-review/{agent}/{id}_{mode}review_prompt.md --output-file .agent-review/{agent}/{id}_{mode}review_result.md --cwd {project_dir}
+```
 
 **Prompt persistence:** Save prompt to `.agent-review/` before launching agents. Agents are always launched as Bash background tasks — they are external OS processes and are not affected by Claude Code plan mode.
 
@@ -86,7 +93,7 @@ Initialize: `agents_launched = UNSET`. MUST be set to `true` or `SKIPPED` in Pha
 
 **mode=story:**
 
-**MANDATORY READ:** Load `references/phase2_research_audit.md` — full procedure: domain extraction, ln-002 delegation, MCP research, Anti-Hallucination, Pre-mortem, Penalty Points (28 criteria).
+**MANDATORY READ:** Load `references/phase2_research_audit.md` — full procedure: domain extraction, inline documentation, MCP research, Anti-Hallucination, Pre-mortem, Penalty Points (28 criteria).
 
 Display: Penalty Points table (criterion, severity, points, description) + Total + Fix Plan.
 Save audit to `.agent-review/{storyId}_phase3_audit.md` (penalty table + pre-mortem + cross-reference findings).
@@ -174,13 +181,21 @@ Zero out penalty points as structural fixes applied (section added, format corre
 
 Mark each `[x]` when verified. ALL must be checked. If ANY unchecked → go back to failed phase. Display checklist to terminal before final results.
 
+### Stop Conditions (Self-Check)
+
+| Condition | Action |
+|-----------|--------|
+| All checklist items verified | STOP — return results |
+| Self-check retry count >= 2 | STOP — report with unchecked items listed as CONCERNS |
+| Agents unavailable AND agent items unchecked | STOP — mark agent items SKIPPED, continue |
+
 **All modes:**
 - [ ] tools_config loaded, task_provider extracted (Phase 0)
 - [ ] Metadata loaded — not skimmed (Phase 1)
-- [ ] `agent_runner.py --health-check` executed (Phase 2)
+- [ ] `agent_runner.mjs --health-check` executed (Phase 2)
 - [ ] Agents launched as background tasks OR SKIPPED: 0 agents (Phase 2)
   > ⛔ If unchecked AND environment_state.json showed ≥1 available agent → CRITICAL VIOLATION. Do NOT return results. Return to Phase 2.
-- [ ] Prompt file saved to `.agent-review/` OR passed inline in Plan Mode (Phase 2)
+- [ ] Prompt file saved to `.agent-review/` (Phase 2)
 - [ ] Agent results read and parsed OR SKIPPED (Phase 5)
 - [ ] Critical Verification + Debate executed OR SKIPPED (Phase 5)
 - [ ] Agent process trees verified dead OR SKIPPED (Phase 5)
@@ -232,7 +247,7 @@ Skill type: `review-coordinator` (with agents). Run after Phase 7 completes. Out
 - **Validation checklists:** `references/structural_validation.md` (#1-4, #23-24), `standards_validation.md` (#5), `solution_validation.md` (#6, #21, #28), `workflow_validation.md` (#7-13), `quality_validation.md` (#14-15), `dependency_validation.md` (#18-19), `risk_validation.md` (#20), `cross_reference_validation.md` (#25-26), `premortem_validation.md` (#27), `traceability_validation.md` (#16-17, #22)
 - **Templates:** `shared/templates/story_template.md`, `task_template_implementation.md`; local: `docs/templates/`
 - **Agent review:** `shared/references/agent_review_workflow.md`, `agent_delegation_pattern.md`, `agent_review_memory.md`; prompts: `shared/agents/prompt_templates/review_base.md` + `modes/{story,context,plan_review}.md`; challenge: `challenge_review.md`
-- **Research:** `shared/references/research_tool_fallback.md`, `references/context_review_pipeline.md`, `domain_patterns.md`, `mcp_ref_findings_template.md`
+- **Research:** `shared/references/research_tool_fallback.md`, `references/context_review_pipeline.md`, `domain_patterns.md`, `mcp_ref_findings_template.md`, `shared/references/research_methodology.md`, `shared/references/documentation_creation.md`
 - **Other:** `shared/templates/linear_integration.md`, `shared/references/ac_validation_rules.md`
 
 ---

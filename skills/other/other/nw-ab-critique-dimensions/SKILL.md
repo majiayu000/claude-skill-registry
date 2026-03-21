@@ -1,6 +1,7 @@
 ---
 name: nw-ab-critique-dimensions
 description: Review dimensions for validating agent quality - template compliance, safety, testing, and priority validation
+user-invocable: false
 disable-model-invocation: true
 ---
 
@@ -54,7 +55,7 @@ Does the agent specify only what diverges from Claude defaults?
 
 Does the agent ensure skills are actually loaded during execution?
 
-**Check**: Skill Loading Strategy table present for agents with 3+ skills | Every frontmatter skill has matching `Load:` directive in workflow | Skills path documented (`~/.claude/skills/nw/{agent-name}/`) | Phase-gated loading (not "load everything at start")
+**Check**: Skill Loading Strategy table present for agents with 3+ skills | Every frontmatter skill has matching `Load:` directive in workflow | Skills path documented (`~/.claude/skills/nw-{skill-name}/SKILL.md`) | Phase-gated loading (not "load everything at start")
 
 **Severity**: High — orphan skills (declared but never loaded) mean sub-agents operate without domain knowledge. The `skills:` frontmatter field is declarative only; Claude Code does not auto-load skill files.
 

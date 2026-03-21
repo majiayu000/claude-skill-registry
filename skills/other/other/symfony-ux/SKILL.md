@@ -1,6 +1,6 @@
 ---
 name: symfony-ux
-description: Symfony UX frontend stack combining Stimulus, Turbo, TwigComponent and LiveComponent. Use when building modern Symfony frontends, choosing between UX tools, creating interactive components, handling real-time updates, or integrating multiple UX packages. Triggers - symfony ux, hotwire symfony, stimulus turbo, live component, twig component, frontend symfony, interactive ui, real-time symfony, which ux package, which tool should I use, how to make this interactive, SPA feel, reactive component, server-rendered component. Also trigger when the user asks a general question about frontend architecture in Symfony or wants to combine multiple UX packages together.
+description: Symfony UX frontend stack -- decision tree and orchestrator for choosing between Stimulus, Turbo, TwigComponent, LiveComponent, UX Icons, and UX Map. Use when the user is unsure which tool fits, wants to combine multiple UX packages, or asks a general frontend architecture question in Symfony. Also trigger when the user asks "which UX package should I use", "how to make this interactive", "should I use Stimulus or LiveComponent", "how to structure my Symfony frontend", "what is the difference between Turbo and LiveComponent", "should this be a Frame or a LiveComponent", "how do these UX packages work together", "what is the Symfony way to do frontend". Do NOT trigger when the user clearly names a specific tool (stimulus, turbo, twig-component, live-component, ux-icons, ux-map) -- defer to the specialized skill instead.
 license: MIT
 metadata:
   author: Simon Andre
@@ -40,6 +40,14 @@ Need frontend interactivity?
 |       -> LiveComponent
 |          (data binding, actions, forms, real-time validation)
 |
++-- Need icons?
+|   -> UX Icons
+|      (inline SVG from 200+ Iconify sets or local files)
+|
++-- Need an interactive map?
+|   -> UX Map
+|      (Leaflet or Google Maps, markers, polygons, circles)
+|
 +-- Real-time (WebSocket/SSE)?
     -> Turbo Stream + Mercure
 ```
@@ -57,6 +65,8 @@ The tools compose naturally. A typical page uses Turbo Drive for navigation, Tur
 | Real-time capable | Manual | Yes (Streams+Mercure) | No | Yes (polling/emit) |
 | Lazy loading | Yes (stimulusFetch) | Yes (lazy frames) | No | Yes (defer/lazy) |
 
+**UX Icons** and **UX Map** are utility packages that complement the tools above. Icons provides inline SVG rendering (local files + 200,000+ Iconify icons). Map provides interactive maps (Leaflet or Google Maps) with PHP-first configuration. Both work inside TwigComponents, LiveComponents, and Turbo Frames. Map also has a dedicated `ComponentWithMapTrait` for reactive maps in LiveComponents.
+
 ## Installation
 
 ```bash
@@ -69,6 +79,10 @@ composer require symfony/stimulus-bundle      # Stimulus
 composer require symfony/ux-turbo             # Turbo
 composer require symfony/ux-twig-component    # TwigComponent
 composer require symfony/ux-live-component    # LiveComponent (includes TwigComponent)
+composer require symfony/ux-icons             # UX Icons
+composer require symfony/ux-map               # UX Map (then add a renderer below)
+composer require symfony/ux-leaflet-map       # Leaflet renderer (free)
+composer require symfony/ux-google-map        # Google Maps renderer (requires API key)
 ```
 
 ## Common Patterns
@@ -248,6 +262,10 @@ class Message
 
 **LiveComponent** -- Forms with real-time validation, search with live results, data binding (like Vue/React but server-rendered), any component whose state changes based on user interaction, when you want to avoid writing JavaScript entirely.
 
+**UX Icons** -- Rendering SVG icons in templates. Supports 200+ Iconify icon sets (Lucide, Tabler, Heroicons, MDI...) and local SVG files. Icons are inlined as `<svg>` -- no icon fonts, no runtime HTTP requests. Use `<twig:ux:icon name="lucide:check" />`.
+
+**UX Map** -- Displaying interactive maps with markers, polygons, polylines, circles, and info windows. Build the map in PHP (`new Map()`), render in Twig (`ux_map(map)`). Supports Leaflet (free) and Google Maps. Works inside LiveComponents via `ComponentWithMapTrait` for reactive maps.
+
 ## Combining Tools
 
 ```
@@ -292,6 +310,10 @@ assets/
     dropdown_controller.js   # Stimulus
     modal_controller.js      # Stimulus
     chart_controller.js      # Stimulus
+  icons/
+    close.svg                # UX Icons (local)
+    header/
+      logo.svg               # UX Icons (namespaced: header:logo)
 ```
 
 ## Anti-Patterns to Avoid
@@ -304,6 +326,16 @@ assets/
 
 **Don't fight Turbo Drive.** If a link or form behaves oddly with Turbo, the fix is usually to ensure the server returns a proper full HTML page, not to disable Turbo.
 
+## Anti-Patterns for Icons and Map
+
+**Don't use icon fonts when UX Icons is available.** Inline SVG is more accessible, stylable, and doesn't require extra HTTP requests.
+
+**Don't hardcode map center/zoom when you have markers.** Use `fitBoundsToMarkers()` to auto-fit the viewport.
+
+**Don't forget explicit height on map containers.** Without it, the `<div>` collapses to 0px and the map is invisible.
+
+**Don't deploy with on-demand icons enabled.** Run `php bin/console ux:icons:lock` before deploying to avoid runtime HTTP requests to the Iconify API.
+
 ## Related Skills
 
 For detailed documentation on each tool, read the dedicated skill:
@@ -311,3 +343,5 @@ For detailed documentation on each tool, read the dedicated skill:
 - **Turbo**: Drive, Frames, Streams, Mercure integration, `<twig:Turbo:Stream:*>` components
 - **TwigComponent**: Props, blocks, computed properties, anonymous components, attributes
 - **LiveComponent**: LiveProp, LiveAction, data-model, forms, emit/listen, polling, defer/lazy
+- **UX Icons**: Iconify on-demand, local SVG, icon sets, aliases, `ux:icons:lock` CLI
+- **UX Map**: Leaflet/Google Maps, markers, polygons, polylines, circles, `ComponentWithMapTrait`

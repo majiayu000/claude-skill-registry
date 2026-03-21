@@ -4,7 +4,7 @@ description: "Reduces JS/TS bundle size via tree-shaking, code splitting, and un
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # ln-832-bundle-optimizer
 
@@ -105,6 +105,15 @@ FOR each optimization (O1..ON):
      IF new_bytes >= baseline_bytes → DISCARD (revert, no improvement)
   5. LOG: Record result
 ```
+
+### Stop Conditions (Optimize Loop)
+
+| Condition | Action |
+|-----------|--------|
+| All optimizations processed | STOP — proceed to Report |
+| 3 consecutive DISCARDs (no size reduction) | STOP — plateau: "No further reductions found" |
+| Build infrastructure breaks | STOP — revert to last KEEP, report partial results |
+| Bundle already below target size | STOP — "Bundle already optimized" |
 
 ### Keep/Discard Decision
 

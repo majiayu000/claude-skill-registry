@@ -1,0 +1,17 @@
+{
+  "name": "agent-tdd-london-swarm",
+  "repo": "ruvnet/ruflo",
+  "path": ".agents/skills/agent-tdd-london-swarm/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ruvnet/ruflo",
+  "dir_name": "agent-tdd-london-swarm-ruvnet-ruflo",
+  "downloaded_at": "2026-03-21T01:28:54.093259Z",
+  "author": "ruvnet",
+  "source_url": "https://github.com/ruvnet/ruflo/blob/main/.agents/skills/agent-tdd-london-swarm/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ruvnet/ruflo/blob/main/.agents/skills/agent-tdd-london-swarm/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

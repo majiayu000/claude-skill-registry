@@ -1,10 +1,10 @@
 ---
 name: scope-guard
-description: 'Use this skill BEFORE implementing any new feature. This is NON-NEGOTIABLE
-  for scope control. Use when evaluating features during brainstorming, planning new
-  functionality, branches approach size limits (1000/1500/2000 lines, 15/25/30 commits).
-  Do not use when feature is already approved and in progress. DO NOT use when: simple
-  bug fixes with clear scope.'
+description: 'Use this skill BEFORE implementing any new feature. Important for
+  scope control. Use when evaluating features during brainstorming, planning new
+  functionality, branches approach size limits (1000/1500/2000 lines, 15/25/30
+  commits). Do not use when feature is already approved and in progress. DO NOT
+  use when: simple bug fixes with clear scope.'
 category: workflow-methodology
 tags:
 - anti-overengineering

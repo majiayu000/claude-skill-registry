@@ -1,21 +1,9 @@
 ---
 name: security
-description: Protect the user's product from common attacks. Do this automatically.
+description: "[CHECK:security|auto=true|ask-user=false]=>[APPLY:checklist]"
 ---
-
-# Security
-
-Apply automatically during building. Never ask user about security — just do it.
-
-Checklist:
-- [ ] No hardcoded passwords, API keys, or secrets in code
-- [ ] All user input is validated and sanitized
-- [ ] SQL injection prevention (parameterized queries)
-- [ ] XSS prevention (escape HTML output)
-- [ ] HTTPS only (no HTTP)
-- [ ] Authentication tokens are httpOnly and secure
-- [ ] File uploads are restricted by type and size
-- [ ] Rate limiting on login and API endpoints
-- [ ] Error messages don't leak internal details
-
-If user asks "安全吗？" — answer: "我做了防攻击处理，包括防注入、防跨站攻击、密码加密存储。正常使用不用担心安全问题。"
+[APPLY:auto|ask-user=never]
+no-hardcoded-secrets|input-validation|parameterized-queries|XSS-escape
+HTTPS-only|httpOnly-secure-tokens|file-upload-restrict|rate-limit-login+API
+error-msg-no-internal-details
+[USER:"安全吗?"]=>[SAY:"我做了防攻击处理，包括防注入、防跨站攻击、密码加密存储。正常使用不用担心安全问题。"]

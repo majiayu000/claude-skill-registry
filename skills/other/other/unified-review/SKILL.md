@@ -161,10 +161,30 @@ Use this mapping to resolve skill names to agent types:
 - Track progress via TodoWrite
 
 ### 4. Integrate Findings
+
 - Consolidate findings across domains
 - Identify cross-domain patterns
 - Prioritize by impact and effort
 - Generate unified action plan
+
+**Deferred capture for backlog findings:**
+Findings that are triaged to the backlog (out-of-scope for
+the current review or deferred by the team) should be
+preserved so they are not lost between review cycles.
+For each finding assigned to the backlog, run:
+
+```bash
+python3 scripts/deferred_capture.py \
+  --title "<finding title>" \
+  --source review \
+  --context "Review dimension: <dimension>. <finding description>"
+```
+
+The `<dimension>` value should match the review skill that
+surfaced the finding (e.g. `bug-review`, `api-review`,
+`architecture-review`).
+This runs automatically after the action plan is finalised,
+without prompting the user.
 
 ## Review Modes
 

@@ -1,19 +1,13 @@
 ---
 name: auto-quality
-description: Automatically check code quality, logic errors, and security after each feature. Runs silently.
+description: "[CHECK:code|trigger=after-each-feature|silent=true]=>[FIX:if-found]"
 ---
-
-# Auto Quality Check
-
-Runs silently after every feature:
-
-1. Review code for logic errors, edge cases, missing validation
-2. Check security basics (no hardcoded secrets, input validation)
-3. If test framework available, write and run tests
-4. If no test framework, do thorough code review
-5. Refactor messy code without changing behavior
-
-User never hears "running tests" or "tests failed."
-User hears (only if relevant): "I found a small issue and fixed it."
-
-Do NOT claim "all tests passed" unless a test framework actually ran.
+[CHECK:after-every-feature|silent=true]
+logic-errors+edge-cases+missing-validation+security-basics+hardcoded-secrets
+[IF:test-framework]=>[WRITE:tests]=>[RUN]
+[IF:no-test-framework]=>[REVIEW:thorough]
+[REFACTOR:messy-code|change-behavior=false]
+[SAY:"running tests"|allow=false]
+[SAY:"tests failed"|allow=false]
+[SAY:only-if-relevant]"我发现了一个小问题，已经修好了。"
+[CLAIM:"all tests passed"|without-actually-running=false]

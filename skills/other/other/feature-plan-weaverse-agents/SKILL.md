@@ -1,6 +1,6 @@
 ---
 name: feature-plan
-description: "[Skill] Create detailed implementation plans for features. Asks clarifying questions, suggests solutions, proposes architecture, and outputs a structured plan document. Use when user wants to plan a feature before coding."
+description: "Create detailed implementation plans for features. Asks clarifying questions, suggests solutions, proposes architecture, and outputs a structured plan document. Use when user wants to plan a feature before coding."
 argument-hint: [feature description or requirements]
 allowed-tools: Read, Grep, Glob, Write, AskUserQuestion
 ---

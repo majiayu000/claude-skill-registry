@@ -1,10 +1,11 @@
 ---
 name: ln-700-project-bootstrap
 description: "Bootstraps projects to production-ready structure. Use when creating new or transforming existing projects."
+disable-model-invocation: true
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # ln-700-project-bootstrap
 
@@ -461,8 +462,8 @@ SKIP_TESTS=false
 
 | Skill | Integration |
 |-------|-------------|
-| ln-001-standards-researcher | Query for best practices during ln-720 |
-| ln-002-best-practices-researcher | Generate guides during ln-720 |
+| shared/references/research_methodology.md | Standards research during ln-720 |
+| shared/references/documentation_creation.md | Guide generation during ln-720 |
 | ln-100-documents-pipeline | Call after bootstrap for docs |
 | ln-310-multi-agent-validator | Validate generated tasks |
 

@@ -87,7 +87,7 @@ Then use `AskUserQuestion` — header "Deep mode", question "Proceed with deep m
 
 If the user did not invoke with `deep`, skip this step.
 
-If the user selects **Normal mode**, continue with the standard single-pass flow. Record the user's choice as a `deep-mode` flag for subsequent steps. If deep mode is confirmed, initialize `iteration-count` to 1, `total-applied` to 0, `total-reverted` to 0, and `accumulated-findings` to an empty list.
+If the user selects **Normal mode**, continue with the standard single-pass flow. Record the user's choice as a `deep-mode` flag for subsequent steps. If deep mode is confirmed, initialize `iteration-count` to 1, `total-applied` to 0, `total-reverted` to 0, and `accumulated-findings` to an empty list. Each entry in `accumulated-findings` tracks: **file** (with line), **category**, **guideline** (the specific project rule, barrier type, or quality concern from the agent finding), **summary** (one-sentence description of the issue), **fix description** (brief description of the applied or attempted change), **iteration** (which iteration discovered it), and **status** (updated through apply/test phases).
 
 ## Step 3: Load Project Context and Map Analysis Areas
 
@@ -207,7 +207,7 @@ Maximum **8 findings** per run, prioritized by severity then confidence. If more
 
 ### Deep mode accumulation
 
-**Deep mode:** Instead of presenting the output format below, append this iteration's validated findings to `accumulated-findings`. Deduplicate against previous iterations: if a finding matches an existing entry by file + line range + category, skip it if the existing entry is marked "(fixed)". If the existing entry is marked "(persistent — fix failed)", annotate the new entry as "(persistent — fix failed)". If the existing entry is marked "(reverted — test failure)", keep the new entry as "(reverted — attempt 2)" so Step 8 retries the fix once more; only promote to "(persistent — fix failed)" if it is reverted again. Then proceed directly to Step 8.
+**Deep mode:** Instead of presenting the output format below, append this iteration's validated findings to `accumulated-findings`. For each appended finding, record the current `iteration-count` as the finding's iteration number, and preserve the agent's guideline citation (or barrier type for testability findings) and issue description as the finding's guideline and summary fields. Deduplicate against previous iterations: if a finding matches an existing entry by file + line range + category, skip it if the existing entry is marked "(fixed)". If the existing entry is marked "(persistent — fix failed)", annotate the new entry as "(persistent — fix failed)". If the existing entry is marked "(reverted — test failure)", keep the new entry as "(reverted — attempt 2)" so Step 8 retries the fix once more; only promote to "(persistent — fix failed)" if it is reverted again. Then proceed directly to Step 8.
 
 **Normal mode:** Present findings using the output format below, then proceed to Step 7.
 
@@ -319,17 +319,52 @@ After applying changes and running tests, check termination conditions (the iter
 1. **All changes in this iteration were reverted due to test failures** → stop to prevent a loop of failed attempts. Report: "Deep mode stopped — all findings in iteration [N] caused test failures."
 2. **No changes were applied** (all findings lacked actionable code edits) → stop. Report: "Deep mode stopped — remaining findings require manual review."
 3. **`iteration-count` >= the cap** → cap reached. Report: "Deep mode reached the iteration cap ([cap]). Remaining findings may exist — re-run `/optimus:refactor deep [higher-cap]` with a larger iteration cap, or narrow scope with `/optimus:refactor deep \"focus on <area>\"`."
-4. **Otherwise** → present an iteration progress summary: "Iteration [N] of up to [cap] — [total-applied] findings applied so far, [total-reverted] reverted. Starting next pass..." Increment `iteration-count` and **return to Step 4** for the next analysis pass. Keep the same scope from Step 1.
+4. **Otherwise** → continue to the next pass (iteration report and loop-back below).
 
-After the loop ends, present a cumulative summary across all iterations:
+**For all four conditions above**, present the iteration report immediately after the termination/continuation message. This report is informational and non-blocking — no user prompt follows:
 
+```
+#### Iteration [N] — Report
+
+| # | File | What Changed | Reason | Guideline / Category | Status |
+|---|------|-------------|--------|---------------------|--------|
+[one row per finding attempted in THIS iteration from accumulated-findings where iteration == current]
+```
+
+Column definitions:
+- **#** — Sequential number within this iteration
+- **File** — `file:line`
+- **What Changed** — Brief description of the fix applied or attempted
+- **Reason** — Why the change was needed (the issue/problem)
+- **Guideline / Category** — Specific project rule violated, barrier type, or quality category
+- **Status** — `fixed`, `reverted — test failure`, `reverted — attempt 2`, or `persistent — fix failed`
+
+For condition 4 (continue), after presenting the iteration report also show the progress summary: "Iteration [N] of up to [cap] — [total-applied] findings applied so far, [total-reverted] reverted. Starting next pass..." Then increment `iteration-count` and **return to Step 4** for the next analysis pass. Keep the same scope from Step 1.
+
+After the loop ends, present a cumulative report across all iterations:
+
+```
+## Deep Mode — Cumulative Report
+
+**Summary:**
 - Total iterations: [N]
 - Total findings applied: [N]
 - Total findings reverted (test failures): [N]
-- Test status: pass / fail / not available
+- Total findings persistent (fix failed): [N]
+- Final test status: pass / fail / not available
 - Testability improvements: [N] changes made code testable for /optimus:unit-test
 
-Mark each finding's status: "(fixed)", "(reverted — test failure)", or "(persistent — fix failed)".
+**All Changes:**
+
+| # | Iter | File | What Changed | Reason | Guideline / Category | Status |
+|---|------|------|-------------|--------|---------------------|--------|
+[one row per finding from accumulated-findings, across all iterations, ordered by iteration then sequence]
+```
+
+Column definitions match the per-iteration report table, plus:
+- **Iter** — Which iteration discovered/attempted this finding
+
+The summary statistics provide a quick overview; the detailed table provides full auditability of every change attempted across all iterations.
 
 ## Important
 

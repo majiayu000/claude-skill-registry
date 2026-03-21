@@ -1,6 +1,6 @@
 ---
 name: live-component
-description: Symfony UX LiveComponent for dynamic server-rendered UI. Use when building interactive components that re-render via AJAX, real-time forms, data binding, live validation, or reactive UI without writing JavaScript. Triggers - live component, AsLiveComponent, LiveProp, LiveAction, data-model, real-time form, dynamic UI, AJAX component, reactive PHP, two-way binding, server re-render, live search, live filter, live validation, ComponentWithFormTrait, emit, LiveListener, polling, defer, lazy component, data-loading, writable prop, URL binding, component communication. Also trigger when the user wants a component that updates itself based on user input without writing JavaScript, or wants Vue/React-like reactivity in PHP.
+description: Symfony UX LiveComponent for reactive server-rendered UI -- components that re-render via AJAX on user interaction, zero JavaScript required. Use when building live search, real-time filtering, dynamic forms, inline validation, dependent selects, auto-save, polling, deferred/lazy rendering, or any UI that updates itself based on user input. Code triggers: AsLiveComponent, #[AsLiveComponent], LiveProp, #[LiveProp], LiveAction, #[LiveAction], data-model, data-loading, data-live-action-url, ComponentWithFormTrait, LiveListener, emit, defer, lazy, polling. Also trigger when the user asks "how to build a search that filters as I type", "how to validate a form in real-time", "how to make a reactive component in PHP", "how to build dependent selects", "how to defer component rendering", "how to communicate between components via emit", "how to bind a form to a LiveComponent". Do NOT trigger for static reusable UI without reactivity (use twig-component), for pure client-side JS behavior (use stimulus), or for page-level navigation (use turbo).
 license: MIT
 metadata:
   author: Simon Andre
@@ -157,7 +157,7 @@ Bind inputs to writable LiveProps. When the input changes, the component re-rend
 <input type="text" data-model="search">
 
 {# Debounced -- wait 300ms after last keystroke #}
-<input type="text" data-model="search" data-model-debounce="300">
+<input type="text" data-model="debounce(300)|search">
 
 {# Only update on blur #}
 <input type="text" data-model="on(blur)|search">
@@ -172,14 +172,14 @@ Bind inputs to writable LiveProps. When the input changes, the component re-rend
 </select>
 ```
 
-### Validation Modifiers (since 2025)
+### Validation Modifiers
 
 ```twig
 {# Only re-render when input meets criteria #}
-<input data-model="min_length(3)|search">
-<input data-model="max_length(100)|bio">
-<input data-model="min_value(0)|quantity">
-<input data-model="max_value(999)|price">
+<input data-model="minlength(3)|search">
+<input data-model="maxlength(100)|bio">
+<input data-model="min(0)|quantity">
+<input data-model="max(999)|price">
 ```
 
 ## LiveAction
@@ -471,3 +471,8 @@ public function getFilteredItems(): array
 - **Full API** (props, actions, forms, events, all options): [references/api.md](references/api.md)
 - **Patterns** (search, CRUD, modals, validation, real-world examples): [references/patterns.md](references/patterns.md)
 - **Gotchas** (props, hydration, performance, common mistakes): [references/gotchas.md](references/gotchas.md)
+
+## See Also
+
+- **UX Map** provides `ComponentWithMapTrait` for reactive maps inside LiveComponents. The map automatically updates when LiveProps change.
+- **UX Icons** work inside LiveComponent templates with no special setup -- icons re-render on each server round-trip like any other Twig markup.

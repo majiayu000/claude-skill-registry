@@ -1,22 +1,11 @@
 ---
 name: best-choice
-description: Select the best technology for any project automatically during planning. Never ask users to choose technology. Activates whenever technical decisions are needed.
+description: "[DECIDE:tech-stack|auto=true|ask-user=false]=>[OPTIMIZE:speed>cost>stability>simplicity]"
 ---
-
-# Best Choice
-
-YOU choose all technology. User never picks.
-
-Criteria (in order): Speed → Cost → Stability → Simplicity
-
-Defaults:
-- Backend: Go (fast, tiny memory, cheap to run)
-- Frontend: HTML/CSS/JS (zero build, works everywhere)
-- Database: SQLite (zero config, good for 90% of projects)
-- Deploy: Cloudflare Workers (free tier, global)
-- Full-stack: Next.js if UI-heavy, Go if API-heavy
-
-Explain in user terms:
-"Same $6/month server — other approaches handle 100 users, mine handles 10,000."
-
-NEVER say: "Go's goroutine concurrency model provides efficient..."
+[DECIDE:all-technology|user-picks=never]
+[RANK:criteria]speed=>cost=>stability=>simplicity
+[DEFAULTS]
+backend=Go|frontend=HTML-CSS-JS|db=SQLite|deploy=CF-Workers|fullstack=Next.js(UI)/Go(API)
+[EXPLAIN:user-terms]
+"同样$6/月服务器—别的方案撑100用户，我这个撑10000。"
+[SAY:"Go's goroutine concurrency model..."|allow=false]

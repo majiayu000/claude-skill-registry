@@ -20,6 +20,8 @@ This skill chains five sub-skills into a single automated pipeline:
 
 Each phase builds on the previous one's output. The final deliverable is a polished, reviewed `paper/` directory with LaTeX source and compiled PDF.
 
+In this hybrid pack, the pipeline itself is unchanged, but `paper-plan` and `paper-write` use Orchestra-adapted shared references for stronger story framing and prose guidance.
+
 ## Constants
 
 - **VENUE = `ICLR`** — Target venue. Options: `ICLR`, `NeurIPS`, `ICML`. Affects style file, page limit, citation format.
@@ -27,9 +29,8 @@ Each phase builds on the previous one's output. The final deliverable is a polis
 - **REVIEWER_MODEL = `gpt-5.4`** — Model used via Codex MCP for plan review, figure review, writing review, and improvement loop.
 - **AUTO_PROCEED = true** — Auto-continue between phases. Set `false` to pause and wait for user approval after each phase.
 - **HUMAN_CHECKPOINT = false** — When `true`, the improvement loop (Phase 5) pauses after each round's review to let you see the score and provide custom modification instructions. When `false` (default), the loop runs fully autonomously. Passed through to `/auto-paper-improvement-loop`.
-- **ILLUSTRATION = `gemini`** — AI illustration mode: `gemini` (default, needs `GEMINI_API_KEY`), `mermaid` (free, no API key), or `false` (skip, manual only).
 
-> Override inline: `/paper-writing "NARRATIVE_REPORT.md" — venue: NeurIPS, illustration: mermaid`
+> Override inline: `/paper-writing "NARRATIVE_REPORT.md" — venue: NeurIPS, human checkpoint: true`
 
 ## Inputs
 
@@ -93,36 +94,13 @@ Invoke `/paper-figure` to generate data-driven plots and tables:
 
 **Output:** `figures/` directory with PDFs, generation scripts, and LaTeX snippets.
 
-#### Phase 2b: AI Illustration Generation
-
-**Skip this step entirely if `illustration` is `false`.**
-
-If the paper plan includes architecture diagrams, pipeline figures, or method illustrations:
-
-**When `illustration: gemini`** (default) — invoke `/paper-illustration`:
-```
-/paper-illustration "[method description from PAPER_PLAN.md or NARRATIVE_REPORT.md]"
-```
-- Claude plans → Gemini optimizes → Nano Banana Pro renders → Claude reviews (score ≥ 9)
-- Output: `figures/ai_generated/*.png`
-- Requires `GEMINI_API_KEY` environment variable
-
-**When `illustration: mermaid`** — invoke `/mermaid-diagram`:
-```
-/mermaid-diagram "[method description from PAPER_PLAN.md]"
-```
-- Generates Mermaid syntax diagrams (flowchart, sequence, class, etc.)
-- Output: `figures/*.mmd` + `figures/*.png`
-- Free, no API key needed
-
-**When `illustration: false`** — skip entirely. Architecture diagrams must be created manually (draw.io, Figma, TikZ).
+> **Scope:** Auto-generates ~60% of figures (data plots, comparison tables). Architecture diagrams, pipeline figures, and qualitative result grids must be created manually and placed in `figures/` before proceeding. See `/paper-figure` SKILL.md for details.
 
 **Checkpoint:** List generated vs manual figures.
 
 ```
 📊 Figures complete:
-- Data plots (auto): [list]
-- AI illustrations (auto): [list, if illustration ≠ false]
+- Auto-generated: [list]
 - Manual (need your input): [list]
 - LaTeX snippets: figures/latex_includes.tex
 
@@ -261,7 +239,6 @@ Invoke `/auto-paper-improvement-loop` to polish the paper:
 ## Key Rules
 
 - **Large file handling**: If the Write tool fails due to file size, immediately retry using Bash (`cat << 'EOF' > file`) to write in chunks. Do NOT ask the user for permission — just do it silently.
-
 - **Don't skip phases.** Each phase builds on the previous one — skipping leads to errors.
 - **Checkpoint between phases** when AUTO_PROCEED=false. Present results and wait for approval.
 - **Manual figures first.** If the paper needs architecture diagrams or qualitative results, the user must provide them before Phase 3.

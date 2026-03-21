@@ -1,6 +1,6 @@
 ---
 name: stimulus
-description: Stimulus JS framework for Symfony UX. Use when building client-side interactivity with data attributes, creating controllers for DOM manipulation, handling user events, managing component state, or integrating with Symfony's StimulusBundle and AssetMapper. Triggers - stimulus controller, data-controller, data-action, data-target, frontend interactivity, JavaScript behavior, Symfony UX frontend, toggle, dropdown, modal JS, tabs JS, clipboard, chart controller, datepicker, autocomplete JS, lazy controller, stimulusFetch, outlets, keyboard shortcut, global event listener. Also trigger when the user wants to add JavaScript behavior to server-rendered HTML, wrap a third-party JS library, or build client-only interactions that don't need a server round-trip.
+description: Stimulus JS framework for Symfony UX -- client-side behavior via HTML data attributes, zero server round-trips. Use when creating controllers for DOM manipulation, handling click/input/submit events, managing targets and values, wiring outlets between controllers, wrapping third-party JS libraries, or building toggles, dropdowns, modals, tabs, clipboard interactions. Code triggers: data-controller, data-action, data-target, data-*-value, data-*-class, data-*-outlet, stimulusFetch lazy, connect(), disconnect(), static targets, static values. Also trigger when the user asks "how do I add a click handler", "how to toggle a class", "how to build a dropdown/modal/tabs", "how to wrap a JS library in Symfony", "add keyboard shortcuts", "lazy-load a controller", "listen to global events", "communicate between controllers". Do NOT trigger for partial page updates without JS (use turbo), server-rendered reactivity (use live-component), or reusable Twig templates (use twig-component).
 license: MIT
 metadata:
   author: Simon Andre
@@ -219,3 +219,8 @@ Twig helpers exist for complex cases or when generating attributes programmatica
 - **Full API** (lifecycle, targets, values, actions, classes, outlets): [references/api.md](references/api.md)
 - **Patterns** (debounce, fetch, modals, forms, etc.): [references/patterns.md](references/patterns.md)
 - **Gotchas** (common mistakes, debugging, Turbo compatibility): [references/gotchas.md](references/gotchas.md)
+
+## See Also
+
+- **UX Map** dispatches Stimulus-compatible events (`ux:map:connect`, `ux:map:marker:after-create`, etc.) on the map container element. Use a custom Stimulus controller to extend map behavior.
+- **UX Icons** are pure SVG and need no Stimulus integration, but you can use Stimulus to dynamically swap icon names via value changes.

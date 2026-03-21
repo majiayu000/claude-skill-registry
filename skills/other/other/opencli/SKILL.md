@@ -1,18 +1,18 @@
 ---
 name: opencli
-description: "OpenCLI — Make any website your CLI. Zero risk, AI-powered, reuse Chrome login."
-version: 0.7.0
+description: "OpenCLI — Make any website or Electron App your CLI. Zero risk, AI-powered, reuse Chrome login. 80+ commands across 19 sites."
+version: 0.7.4
 author: jackwener
-tags: [cli, browser, web, mcp, playwright, bilibili, zhihu, twitter, github, v2ex, hackernews, reddit, xiaohongshu, xueqiu, AI, agent]
+tags: [cli, browser, web, chrome-extension, cdp, bilibili, zhihu, twitter, github, v2ex, hackernews, reddit, xiaohongshu, xueqiu, youtube, boss, coupang, AI, agent]
 ---
 
 # OpenCLI
 
-> Make any website your CLI. Reuse Chrome login, zero risk, AI-powered discovery.
+> Make any website or Electron App your CLI. Reuse Chrome login, zero risk, AI-powered discovery.
 
 > [!CAUTION]
 > **AI Agent 必读：创建或修改任何适配器之前，你必须先阅读 [CLI-EXPLORER.md](./CLI-EXPLORER.md)！**
-> 该文档包含完整的 API 发现工作流（必须使用 Playwright MCP Bridge 浏览器探索）、5 级认证策略决策树、平台 SDK 速查表、`tap` 步骤调试流程、分页 API 模板、级联请求模式、以及常见陷阱。
+> 该文档包含完整的 API 发现工作流（必须使用浏览器探索）、5 级认证策略决策树、平台 SDK 速查表、`tap` 步骤调试流程、分页 API 模板、级联请求模式、以及常见陷阱。
 > **本文件（SKILL.md）仅提供命令参考和简化模板，不足以正确开发适配器。**
 
 ## Install & Run
@@ -34,8 +34,8 @@ npm update -g @jackwener/opencli
 
 Browser commands require:
 1. Chrome browser running **(logged into target sites)**
-2. [Playwright MCP Bridge](https://chromewebstore.google.com/detail/playwright-mcp-bridge/mmlmfjhmonkocbjadbfplnigmagldckm) extension installed
-3. Run `opencli setup` to auto-discover token and configure all tools
+2. **opencli Browser Bridge** Chrome extension installed (load `extension/` as unpacked in `chrome://extensions`)
+3. No further setup needed — the daemon auto-starts on first browser command
 
 > **Note**: You must be logged into the target website in Chrome before running commands. Tabs opened during command execution are auto-closed afterwards.
 
@@ -68,6 +68,7 @@ opencli zhihu question --id 34816524     # 问题详情和回答
 opencli xiaohongshu search --keyword "美食"  # 搜索笔记
 opencli xiaohongshu notifications             # 通知（mentions/likes/connections）
 opencli xiaohongshu feed --limit 10           # 推荐 Feed
+opencli xiaohongshu me                        # 我的信息
 opencli xiaohongshu user --uid xxx             # 用户主页
 
 # 雪球 Xueqiu (browser)
@@ -131,12 +132,19 @@ opencli weibo hot --limit 10            # 微博热搜
 
 # BOSS直聘 (browser)
 opencli boss search --query "AI agent"  # 搜索职位
+opencli boss detail --securityId xxx    # 职位详情
 
 # YouTube (browser)
 opencli youtube search --query "rust"   # 搜索视频
+opencli youtube video --url "https://www.youtube.com/watch?v=xxx"  # 视频元数据（标题、播放量、描述等）
+opencli youtube transcript --url "https://www.youtube.com/watch?v=xxx"  # 获取视频字幕/转录
+opencli youtube transcript --url "xxx" --lang zh-Hans --mode raw  # 指定语言 + 原始时间戳模式
 
 # Yahoo Finance (browser)
 opencli yahoo-finance quote --symbol AAPL  # 股票行情
+
+# Sina Finance
+opencli sinafinance news --limit 10 --type 1  # 7x24实时快讯 (0=全部 1=A股 2=宏观 3=公司 4=数据 5=市场 6=国际 7=观点 8=央行 9=其它)
 
 # Reuters (browser)
 opencli reuters search --query "AI"     # 路透社搜索
@@ -146,6 +154,15 @@ opencli smzdm search --keyword "耳机"    # 搜索好价
 
 # 携程 (browser)
 opencli ctrip search --query "三亚"      # 搜索目的地
+
+# Antigravity (Electron/CDP)
+opencli antigravity status              # 检查 CDP 连接
+opencli antigravity send "hello"        # 发送文本到当前 agent 聊天框
+opencli antigravity read                # 读取整个聊天记录面板
+opencli antigravity new                 # 清空聊天、开启新对话
+opencli antigravity extract-code        # 自动抽取 AI 回复中的代码块
+opencli antigravity model claude        # 切换底层模型
+opencli antigravity watch               # 流式监听增量消息
 ```
 
 ### Management Commands
@@ -156,9 +173,9 @@ opencli list --json         # JSON output
 opencli list -f yaml        # YAML output
 opencli validate            # Validate all CLI definitions
 opencli validate bilibili   # Validate specific site
-opencli setup               # Interactive token setup (auto-discover + TUI checkbox)
-opencli doctor              # Diagnose token config across all tools
-opencli doctor --fix -y     # Auto-fix all config files (non-interactive)
+opencli setup               # Interactive Browser Bridge setup and connectivity check
+opencli doctor              # Diagnose daemon, extension, and browser connectivity
+opencli doctor --live       # Also test live browser connectivity
 ```
 
 ### AI Agent Workflow
@@ -211,7 +228,7 @@ opencli bilibili hot -v         # Show each pipeline step and data flow
 
 > [!IMPORTANT]
 > **完整模式 — 在写任何代码之前，先阅读 [CLI-EXPLORER.md](./CLI-EXPLORER.md)。**
-> 它包含：① AI Agent 浏览器探索工作流（必须用 Playwright MCP 抓包验证 API）② 认证策略决策树 ③ 平台 SDK（如 Bilibili 的 `apiGet`/`fetchJson`）④ YAML vs TS 选择指南 ⑤ `tap` 步骤调试方法 ⑥ 级联请求模板 ⑦ 常见陷阱表。
+> 它包含：① AI Agent 浏览器探索工作流 ② 认证策略决策树 ③ 平台 SDK（如 Bilibili 的 `apiGet`/`fetchJson`）④ YAML vs TS 选择指南 ⑤ `tap` 步骤调试方法 ⑥ 级联请求模板 ⑦ 常见陷阱表。
 > **下方仅为简化模板参考，直接使用极易踩坑。**
 
 ### YAML Pipeline (declarative, recommended)
@@ -358,16 +375,18 @@ ${{ index + 1 }}
 
 | Variable | Default | Description |
 |----------|---------|-------------|
+| `OPENCLI_DAEMON_PORT` | 19825 | Daemon listen port |
 | `OPENCLI_BROWSER_CONNECT_TIMEOUT` | 30 | Browser connection timeout (sec) |
 | `OPENCLI_BROWSER_COMMAND_TIMEOUT` | 45 | Command execution timeout (sec) |
 | `OPENCLI_BROWSER_EXPLORE_TIMEOUT` | 120 | Explore timeout (sec) |
-| `PLAYWRIGHT_MCP_EXTENSION_TOKEN` | — | Auto-approve extension connection |
+| `OPENCLI_VERBOSE` | — | Show daemon/extension logs |
 
 ## Troubleshooting
 
 | Issue | Solution |
 |-------|----------|
 | `npx not found` | Install Node.js: `brew install node` |
-| `Timed out connecting to browser` | 1) Chrome must be open 2) Install MCP Bridge extension and configure token |
+| `Extension not connected` | 1) Chrome must be open 2) Install opencli Browser Bridge extension |
 | `Target page context` error | Add `navigate:` step before `evaluate:` in YAML |
-| Empty table data | Check if evaluate returns JSON string (MCP parsing) or data path is wrong |
+| Empty table data | Check if evaluate returns correct data path |
+| Daemon issues | `curl localhost:19825/status` to check, `curl localhost:19825/logs` for extension logs |

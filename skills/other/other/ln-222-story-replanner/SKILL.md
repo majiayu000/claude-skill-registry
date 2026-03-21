@@ -4,7 +4,7 @@ description: "Replans Stories by comparing IDEAL vs existing (KEEP/UPDATE/OBSOLE
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Story Replanner
 
@@ -18,7 +18,7 @@ Universal replanner worker for updating Stories in Epic when requirements change
 **ln-220-story-coordinator REPLAN MODE (Phase 5b):**
 - Epic has existing Stories (Linear query count ≥ 1)
 - IDEAL plan generated (Phase 3)
-- Standards Research completed by ln-001 (Phase 2, may be updated)
+- Standards Research completed by ln-220 inline (Phase 2, may be updated)
 - Epic requirements changed (AC modified, features added/removed, standards updated)
 - Parameters: `epicData`, `idealPlan`, `standardsResearch`, `existingStoryIds`, `teamId`, `autoApprove`
 

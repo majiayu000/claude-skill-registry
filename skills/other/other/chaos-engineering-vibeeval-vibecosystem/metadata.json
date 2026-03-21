@@ -1,0 +1,17 @@
+{
+  "name": "chaos-engineering",
+  "repo": "vibeeval/vibecosystem",
+  "path": "skills/chaos-engineering/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/vibeeval/vibecosystem",
+  "dir_name": "chaos-engineering-vibeeval-vibecosystem",
+  "downloaded_at": "2026-03-21T01:33:02.247515Z",
+  "author": "vibeeval",
+  "source_url": "https://github.com/vibeeval/vibecosystem/blob/main/skills/chaos-engineering/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vibeeval/vibecosystem/blob/main/skills/chaos-engineering/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

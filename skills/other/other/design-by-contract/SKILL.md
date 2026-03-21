@@ -1,141 +1,131 @@
 ---
 name: design-by-contract
-description: Design-by-Contract (DbC) development - design contracts from requirements, then execute CREATE -> VERIFY -> TEST cycle. Use when implementing with formal preconditions, postconditions, and invariants using deal (Python), contracts (Rust), Zod (TypeScript), or Kotlin contracts.
+description: Design-by-Contract (DbC) development - design contracts from requirements, then execute CREATE -> VERIFY -> TEST cycle. Use when implementing with formal preconditions, postconditions, and invariants across any language.
 ---
 
 # Design-by-Contract development
 
-You are a Design-by-Contract (DbC) specialist. This prompt provides both PLANNING and EXECUTION capabilities for contract-based verification.
+Contracts (PRE/POST/INV) define behavioral specification -- design from requirements before code exists. Formalized as Hoare Triples: `{P} C {Q}` where P=precondition, C=code, Q=postcondition.
 
-## Philosophy: Design Contracts First, Then Enforce
+**Modern insight (2025)**: DbC complements LLM-generated code by serving as safety guardrails -- contracts clarify intent and prevent AI from breaking integrations. Spec-driven development (2025) positions contracts as "executable specifications."
 
-Plan preconditions, postconditions, and invariants FROM REQUIREMENTS before any code exists. Contracts define the behavioral specification. Then execute the full enforcement and testing cycle.
+See [libraries](references/libraries.md) for language-specific contract tools.
+See [examples](references/examples.md) for brief contract patterns per language.
 
 ---
 
 ## Verification Hierarchy
 
-**Principle**: Use compile-time verification before runtime contracts. If a property can be verified statically, do NOT add a runtime contract for it.
+Use compile-time verification before runtime contracts. If a property can be verified statically, do NOT add a runtime contract.
 
 ```
 Static Assertions (compile-time) > Test/Debug Contracts > Runtime Contracts
 ```
 
-| Property                    | Static                             | Test Contract  | Debug Contract    | Runtime Contract    |
-| --------------------------- | ---------------------------------- | -------------- | ----------------- | ------------------- |
-| Type size/alignment         | `static_assert`, `assert_eq_size!` | -              | -                 | -                   |
-| Null/type safety            | Type checker (tsc/pyright)         | -              | -                 | -                   |
-| Exhaustiveness              | Pattern matching + `never`         | -              | -                 | -                   |
-| Expensive O(n)+ checks      | -                                  | `test_ensures` | -                 | -                   |
-| Internal state invariants   | -                                  | -              | `debug_invariant` | -                   |
-| Public API input validation | -                                  | -              | -                 | `requires`          |
-| External/untrusted data     | -                                  | -              | -                 | Required (Zod/deal) |
+| Property | Static | Test | Debug | Runtime |
+|----------|--------|------|-------|---------|
+| Type size/alignment | `static_assert` | - | - | - |
+| Null/type safety | Type checker | - | - | - |
+| Exhaustiveness | Pattern match | - | - | - |
+| Expensive O(n)+ | - | test_ensures | - | - |
+| Internal invariants | - | - | debug_invariant | - |
+| Public API input | - | - | - | requires |
+| External/untrusted | - | - | - | Always required |
 
 ---
 
-# PHASE 1: PLANNING - Design Contracts from Requirements
+## When to Apply
 
-CRITICAL: Design contracts BEFORE implementation.
+- Public API boundaries -- callers need clear contracts
+- Complex state invariants -- balance >= 0, capacity limits
+- Financial/business rule enforcement -- regulatory compliance
+- Untrusted external data -- always validate at boundaries
+- Multi-component integration points -- service contracts
+- AI-generated code -- contracts serve as guardrails for LLM output
 
-## Extract Contracts from Requirements
+## When NOT to Apply
 
-1. **Identify Contract Elements**
-   - Preconditions (what must be true before?)
-   - Postconditions (what must be true after?)
-   - Invariants (what must always be true?)
-   - Error conditions (when should operations fail?)
-
-2. **Formalize Contracts**
-   ```
-   Operation: withdraw(amount)
-
-   Preconditions:
-     PRE-1: amount > 0
-     PRE-2: amount <= balance
-     PRE-3: account.status == Active
-
-   Postconditions:
-     POST-1: balance == old(balance) - amount
-     POST-2: result == amount
-
-   Invariants:
-     INV-1: balance >= 0
-   ```
-
-## Contract Library Selection
-
-| Language   | Library         | Annotation Style                            |
-| ---------- | --------------- | ------------------------------------------- |
-| Python     | deal            | `@deal.pre`, `@deal.post`, `@deal.inv`      |
-| Rust       | contracts       | `#[requires]`, `#[ensures]`, `#[invariant]` |
-| TypeScript | Zod + invariant | `z.object().refine()`, `invariant()`        |
-| Kotlin     | Native          | `require()`, `check()`, `contract {}`       |
+- Internal helpers with obvious behavior
+- Simple getters/setters, trivial pure functions
+- Performance-critical hot paths (runtime contract overhead)
+- Prototyping -- contracts add ceremony
+- When the type system already enforces the property (prefer static)
 
 ---
 
-# PHASE 2: EXECUTION - CREATE -> VERIFY -> TEST
+## Anti-patterns
+
+- **Contracts duplicating type system**: If types enforce it, don't add a runtime check
+- **Runtime checks for compile-time properties**: Wrong verification level
+- **Contracts without violation tests**: Untested contracts are untrusted
+- **Contract fatigue**: Decorating everything -- focus on boundaries and invariants
+- **Postconditions restating implementation**: `ensures(result == x - y)` for `subtract(x, y)` adds nothing
+- **Forgetting old() semantics**: Postconditions often need the pre-state value
+- **Ignoring contract inheritance**: Preconditions weaken in subtypes (contravariance), postconditions strengthen (covariance) -- Liskov Substitution Principle
+
+---
+
+## Contract Inheritance Rules
+
+- **Preconditions**: Can be weakened (loosened) in subtypes -- accept more
+- **Postconditions**: Can be strengthened (tightened) in subtypes -- guarantee more
+- **Invariants**: Strengthened in subtypes; never weakened
+- This enforces Liskov Substitution automatically.
+
+## DbC vs Defensive Programming (decision guidance)
+
+| Approach | Philosophy | When |
+|----------|-----------|------|
+| **Defensive** | Don't trust caller; always check | Unknown callers, legacy APIs, untrusted input |
+| **DbC** | Clear contract; caller handles pre, method handles post | Internal APIs, well-scoped teams, correctness-critical |
+| **Hybrid** | Defensive at boundary; DbC internally | Best practice for modern systems |
+
+---
+
+## Contract Formalization
+
+```
+Operation: withdraw(amount)
+
+Preconditions:
+  PRE-1: amount > 0
+  PRE-2: amount <= balance
+  PRE-3: account.status == Active
+
+Postconditions:
+  POST-1: balance == old(balance) - amount
+  POST-2: result == amount
+
+Invariants:
+  INV-1: balance >= 0
+```
+
+---
+
+## Workflow (language-neutral)
+
+1. **PLAN** -- Extract PRE/POST/INV from requirements. Formalize each with ID and description.
+2. **CREATE** -- Enforce contracts at the appropriate verification level per the hierarchy: static proof, test assertion, debug check, or runtime guard. Reserve runtime contracts for public API boundaries and untrusted input.
+3. **VERIFY** -- Run static analysis and build. Contracts must compile and lint.
+4. **TEST** -- Write violation tests proving contracts catch bad inputs. Every PRE/POST/INV has a test.
+
+---
 
 ## Constitutional Rules (Non-Negotiable)
 
-1. **CREATE All Contracts**: Implement every PRE, POST, INV from plan
-2. **Enforcement Enabled**: Runtime checks must be active
-3. **Violations Caught**: Tests prove contracts work
+1. **CREATE All Contracts**: Implement every PRE, POST, INV from plan at the appropriate verification level per the hierarchy
+2. **Enforcement Enabled**: Runtime contracts, where used, must be active (not compiled out or disabled)
+3. **Violations Caught**: Tests prove contracts work -- static contracts verified by type checker, runtime contracts by violation tests
 4. **Documentation**: Each contract traces to requirement
-
-## Execution Workflow
-
-### Step 1: CREATE Contract Annotations
-
-**Python (deal):**
-
-```python
-import deal
-
-
-@deal.inv(lambda self: self.balance >= 0)
-class Account:
-    @deal.pre(lambda self, amount: amount > 0)
-    @deal.pre(lambda self, amount: amount <= self.balance)
-    @deal.ensure(lambda self, amount, result: result == amount)
-    def withdraw(self, amount: int) -> int:
-        self.balance -= amount
-        return amount
-```
-
-### Step 2: VERIFY Contract Enforcement
-
-```bash
-# Python
-deal lint src/
-
-# Rust (contracts checked at compile time in debug)
-cargo build
-
-# TypeScript
-npx tsc --noEmit
-```
-
-### Step 3: TEST Contract Violations
-
-Write tests that verify contracts catch violations for PRE, POST, and INV.
-
-## Validation Gates
-
-| Gate              | Command                   | Pass Criteria | Blocking |
-| ----------------- | ------------------------- | ------------- | -------- |
-| Contracts Created | Grep for annotations      | Found         | Yes      |
-| Enforcement Mode  | Check debug/assertions    | Enabled       | Yes      |
-| Lint              | `deal lint` or equivalent | No warnings   | Yes      |
-| Violation Tests   | Run contract tests        | All pass      | Yes      |
 
 ## Exit Codes
 
-| Code | Meaning                                    |
-| ---- | ------------------------------------------ |
-| 0    | All contracts enforced and tested          |
-| 1    | Precondition violation in production code  |
-| 2    | Postcondition violation in production code |
-| 3    | Invariant violation in production code     |
-| 11   | Contract library not installed             |
-| 13   | Runtime assertions disabled                |
-| 14   | Contract lint failed                       |
+| Code | Meaning |
+|------|---------|
+| 0 | All contracts enforced and tested |
+| 1 | Precondition violation in production code |
+| 2 | Postcondition violation in production code |
+| 3 | Invariant violation in production code |
+| 11 | Contract library not installed |
+| 13 | Runtime assertions disabled |
+| 14 | Contract lint failed |

@@ -4,7 +4,7 @@ description: "Creates or replans 3-7 Epics from scope using Decompose-First patt
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Epic Coordinator
 
@@ -375,6 +375,14 @@ Type "confirm" to create all Epics in Linear
 
 - User types "confirm" → Proceed to Step 3
 - User provides feedback → Adjust documents in Phase 4, regenerate preview, repeat
+
+### Stop Conditions (Preview Loop)
+
+| Condition | Action |
+|-----------|--------|
+| User confirms (types "confirm" or approves) | STOP — proceed to creation |
+| User feedback cycle >= 3 | STOP — ASK: "3 revision cycles. Proceed with current, or abandon?" |
+| Epic Quality Gate score < 3/5 after 2 rework attempts | STOP — ESCALATE: "Cannot achieve quality threshold. Review scope." |
 
 **Step 3: Create All Epics**
 

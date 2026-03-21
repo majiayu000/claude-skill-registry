@@ -118,21 +118,19 @@ All TDD work will be committed to this branch.
 
 ### Worktree isolation (optional)
 
-After branch creation, offer git worktree isolation so the user's main workspace stays clean. First, derive a **worktree directory name** by replacing `/` with `-` in the branch name (e.g., `feat/add-password-reset` → `feat-add-password-reset`). Use this as `<worktree-dir>` in all worktree paths below.
+After branch creation, offer git worktree isolation so the user's main workspace stays clean.
+
+First, read `$CLAUDE_PLUGIN_ROOT/skills/worktree/references/worktree-setup.md` for the shared worktree setup procedure. Run the **worktree detection guard** from that reference. If the guard detects you are already inside a linked worktree, skip this subsection entirely and proceed to "Decompose into behaviors" — the user is already in an isolated environment.
+
+If the guard passes (not inside a worktree), derive a **worktree directory name** by replacing `/` with `-` in the branch name (e.g., `feat/add-password-reset` → `feat-add-password-reset`). Use this as `<worktree-dir>`.
 
 Use `AskUserQuestion` — header "Workspace", question "Use a git worktree for isolated development? Your main workspace stays on the original branch.":
 - **Use worktree (Recommended)** — "Work in `.worktrees/<worktree-dir>` — main workspace stays clean, enables parallel work"
 - **Stay on branch** — "Work directly on the branch in the current directory (standard git workflow)"
 
-If the user chooses worktree isolation:
+If the user chooses worktree isolation, follow the **setup procedure** from the shared worktree reference using `<branch-name>` and `<original-branch>` from above. The procedure handles creating `.worktrees/`, ensuring it is gitignored, switching the main workspace back, creating the worktree, running project setup, and verifying the test baseline.
 
-1. **Check for worktree directory**: if `.worktrees/` does not exist, create it: `mkdir -p .worktrees`
-2. **Ensure `.worktrees/` is gitignored**: check if `.gitignore` contains `.worktrees/` or `.worktrees`. If not, append `.worktrees/` to `.gitignore` and stage it: `echo '.worktrees/' >> .gitignore && git add .gitignore`
-3. **Switch branch back**: the branch was already created, so switch the main workspace back: `git checkout <original-branch>`
-4. **Create worktree**: `git worktree add .worktrees/<worktree-dir> <branch-name>`
-5. **Run project setup** in the worktree (if applicable): detect setup commands from `CLAUDE.md` or manifest files (`npm install`, `pip install -e .`, `cargo build`, etc.) and run them inside the worktree directory
-6. **Verify test baseline**: run the test command inside the worktree to confirm tests pass in the isolated environment
-7. **Report**:
+After successful worktree creation, report:
 
 ```
 ## Worktree

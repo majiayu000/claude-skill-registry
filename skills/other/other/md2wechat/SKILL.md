@@ -1,7 +1,6 @@
 ---
 name: md2wechat
-description: Convert Markdown to WeChat Official Account HTML. Supports API mode (fast) and AI mode (themed). Features writer style assistant, AI trace removal (humanizer), and draft upload.
-metadata: {"openclaw": {"emoji": "📝", "homepage": "https://github.com/geekjourneyx/md2wechat-skill", "requires": {"anyBins": ["curl", "wget"]}, "primaryEnv": "IMAGE_API_KEY"}}
+description: Convert Markdown to WeChat Official Account HTML. Use this whenever the user wants WeChat article conversion, draft upload, image generation for articles, cover or infographic generation, image-post creation, writer-style drafting, AI trace removal, or needs to inspect supported providers, themes, and prompt templates before running the workflow.
 ---
 
 # MD to WeChat
@@ -9,7 +8,7 @@ metadata: {"openclaw": {"emoji": "📝", "homepage": "https://github.com/geekjou
 Converts Markdown articles to WeChat Official Account formatted HTML with inline CSS and optionally uploads to draft box. Supports two modes:
 
 - **API Mode**: Fast conversion using md2wechat.cn API
-- **AI Mode**: Beautiful themed layouts powered by Claude AI
+- **AI Mode**: Generate themed AI requests / prompts for external models such as Claude Code
 
 ## Quick Start
 
@@ -17,11 +16,89 @@ Converts Markdown articles to WeChat Official Account formatted HTML with inline
 # Preview HTML (API mode, fast)
 bash skills/md2wechat/scripts/run.sh convert article.md --preview
 
-# Preview HTML (AI mode, themed)
+# Generate AI request / prompt (AI mode, themed)
 bash skills/md2wechat/scripts/run.sh convert article.md --mode ai --theme autumn-warm --preview
 
 # Upload to WeChat draft box
 bash skills/md2wechat/scripts/run.sh convert article.md --draft --cover cover.jpg
+```
+
+### Config Location
+
+Before asking the user to edit configuration, check these in order:
+
+1. `~/.config/md2wechat/config.yaml` (default and recommended)
+2. Environment variables such as `MD2WECHAT_BASE_URL`
+3. Project-local `md2wechat.yaml` / `md2wechat.yml` / `md2wechat.json`
+
+If the user asks how to switch the API domain, change:
+
+- `api.md2wechat_base_url` in the config file, or
+- `MD2WECHAT_BASE_URL` in the environment
+
+Default API domain:
+
+```text
+https://www.md2wechat.cn
+```
+
+Backup domain:
+
+```text
+https://md2wechat.app
+```
+
+Default conversion mode:
+
+- If the user does not explicitly pass `--mode`, `convert` should be treated as `api`
+- Only use AI mode when the user explicitly asks for `--mode ai` or clearly requests AI themed conversion
+
+Built-in assets:
+
+- Default themes and the default writer style are bundled with the binary
+- Prefer `MD2WECHAT_THEMES_DIR` / `MD2WECHAT_WRITERS_DIR` for explicit overrides
+- Then check the project-local `themes/` / `writers/` directories
+- Then check `~/.config/md2wechat/themes/` / `~/.config/md2wechat/writers/`
+- Do not assume the repository directory exists on the agent host
+
+Prompt catalog:
+
+- Before guessing supported providers, themes, or prompt templates, inspect the CLI first
+- Use `capabilities --json` as the first discovery step
+- Use `providers list --json`, `themes list --json`, and `prompts list --json` before picking resources
+- Prompt overrides use: `MD2WECHAT_PROMPTS_DIR` → project-local `prompts/` → `~/.config/md2wechat/prompts/` → bundled prompts
+- Do not assume prompt YAML files exist on disk outside these locations
+- Treat CLI discovery output as the source of truth; use repository references only as workflow help or style examples
+
+Recommended discovery flow:
+
+```bash
+bash skills/md2wechat/scripts/run.sh capabilities --json
+bash skills/md2wechat/scripts/run.sh providers list --json
+bash skills/md2wechat/scripts/run.sh themes list --json
+bash skills/md2wechat/scripts/run.sh prompts list --json
+bash skills/md2wechat/scripts/run.sh prompts list --kind image --archetype cover --json
+```
+
+For image presets, do not assume `archetype` is the only truth. Some infographic presets can also be used as covers. Inspect `primary_use_case`, `compatible_use_cases`, `recommended_aspect_ratios`, and `default_aspect_ratio` from `prompts show --json` before choosing a preset.
+
+When a task depends on a specific template, inspect it first:
+
+```bash
+bash skills/md2wechat/scripts/run.sh prompts show cover-default --kind image --json
+bash skills/md2wechat/scripts/run.sh prompts show cover-hero --kind image --archetype cover --tag hero --json
+bash skills/md2wechat/scripts/run.sh prompts show infographic-dark-ticket-cn --kind image --archetype infographic --tag ticket --json
+bash skills/md2wechat/scripts/run.sh prompts show infographic-handdrawn-sketchnote --kind image --archetype infographic --tag sketchnote --json
+bash skills/md2wechat/scripts/run.sh prompts show infographic-apple-keynote-premium --kind image --archetype infographic --tag apple --json
+bash skills/md2wechat/scripts/run.sh prompts show infographic-victorian-engraving-banner --kind image --archetype infographic --tag victorian --json
+bash skills/md2wechat/scripts/run.sh prompts render cover-default --kind image --var article_title='Example' --json
+bash skills/md2wechat/scripts/run.sh generate_cover --article article.md
+bash skills/md2wechat/scripts/run.sh generate_infographic --article article.md --preset infographic-comparison
+bash skills/md2wechat/scripts/run.sh generate_infographic --article article.md --preset infographic-dark-ticket-cn --aspect 21:9
+bash skills/md2wechat/scripts/run.sh generate_infographic --article article.md --preset infographic-handdrawn-sketchnote
+bash skills/md2wechat/scripts/run.sh generate_infographic --article article.md --preset infographic-apple-keynote-premium
+bash skills/md2wechat/scripts/run.sh generate_infographic --article article.md --preset infographic-victorian-engraving-banner --aspect 21:9
+bash skills/md2wechat/scripts/run.sh generate_image --preset cover-hero --article article.md --model gemini-3-pro-image-preview
 ```
 
 ### Natural Language Image Generation
@@ -126,6 +203,16 @@ I will:
 
 Users can add custom styles in `writers/` directory. See `writers/README.md` for details.
 
+### Discovery-first Rule
+
+When working as an Agent:
+
+1. Check `capabilities --json` before assuming a feature exists
+2. Check `providers list --json` before selecting an image provider
+3. Check `themes list --json` before selecting a theme
+4. Check `prompts list --json` before selecting or rendering a prompt template
+5. Only fall back to repository references when the CLI discovery output is insufficient
+
 ## Workflow Checklist
 
 Copy this checklist to track progress:
@@ -173,7 +260,15 @@ Read the markdown file and extract:
 | **API** | Fast (seconds) | Clean, standard | Quick publishing, technical content |
 | **AI** | Slower (10-30s) | Beautiful themed | Important articles, brand content |
 
+Before picking a theme, inspect the live CLI result:
+
+```bash
+bash skills/md2wechat/scripts/run.sh themes list --json
+```
+
 ### AI Themes
+
+These are common built-in examples, not the source of truth:
 
 | Theme | Description | Best For |
 |-------|-------------|----------|
@@ -183,6 +278,8 @@ Read the markdown file and extract:
 | **custom** | Use custom prompt | Brand customization |
 
 ### API Themes (Fast)
+
+These are representative examples. The authoritative list is `themes list --json`.
 
 | Theme | Description | Best For |
 |-------|-------------|----------|
@@ -200,7 +297,7 @@ Read the markdown file and extract:
 
 **Default**: Use `API mode` if user doesn't specify.
 
-Read detailed style prompts from [references/themes.md](references/themes.md)
+Read [references/themes.md](references/themes.md) for visual intent and prompt examples only. Do not treat it as the authoritative theme inventory.
 
 ---
 
@@ -216,7 +313,7 @@ bash skills/md2wechat/scripts/run.sh convert article.md --mode api
 
 ### AI Mode
 
-Read the selected style prompt from `references/themes.md` and generate HTML with **inline CSS**.
+Read the selected style prompt from `references/themes.md` and generate an AI request / prompt for an external model to continue into WeChat-safe HTML with **inline CSS**.
 
 **Important Rules**:
 
@@ -296,7 +393,8 @@ User: "Make a diagram showing user signup flow"
 
 **I will:**
 1. Create an appropriate prompt based on your description
-2. Call: `bash skills/md2wechat/scripts/run.sh generate_image "prompt"`
+2. Prefer a bundled preset when the image is a cover or infographic
+3. Otherwise call: `bash skills/md2wechat/scripts/run.sh generate_image "prompt"`
 3. Return the WeChat URL and media ID
 
 **Use when:** You just need an image, not for any article.
@@ -340,8 +438,14 @@ bash skills/md2wechat/scripts/run.sh download_and_upload "https://example.com/im
 # Generate with default size (2048x2048 square)
 bash skills/md2wechat/scripts/run.sh generate_image "A cute cat sitting on a windowsill"
 
+# Generate a cover image from bundled prompt presets
+bash skills/md2wechat/scripts/run.sh generate_cover --article article.md
+
+# Generate an infographic from bundled prompt presets
+bash skills/md2wechat/scripts/run.sh generate_infographic --article article.md --preset infographic-process
+
 # Generate with 16:9 ratio for WeChat cover (recommended)
-bash skills/md2wechat/scripts/run.sh generate_image --size 2560x1440 "prompt"
+bash skills/md2wechat/scripts/run.sh generate_image --preset cover-hero --article article.md --size 2560x1440
 ```
 
 **WeChat Cover Images**: For article covers, use 16:9 horizontal ratio (2560x1440 recommended) as it displays better in WeChat's feed and article list. Square images (2048x2048) are cropped in preview.
@@ -506,8 +610,8 @@ A story about memories...
 **Process**:
 1. User selects AI mode + autumn-warm theme
 2. Read theme prompt from references/themes.md
-3. Generate themed HTML with inline CSS
-4. Preview or upload
+3. Generate themed AI request / prompt
+4. Continue in Claude Code or another compatible AI environment to produce HTML
 
 ### Example 4: AI Image Generation via Natural Language
 
@@ -673,14 +777,24 @@ A: WeChat resets `<p>` color to black. Always specify:
 ### Command Issues
 
 **Q: "command not found: md2wechat"**
-A: The `run.sh` script will auto-download the binary on first run. If you want to install manually:
+A: The `run.sh` wrapper does not assume the repository is the only runtime source. It uses this order:
+
+1. cached `md2wechat`
+2. repository-local development binary
+3. `md2wechat` already on `PATH`, but only if its version matches the current skill version
+4. fixed-version GitHub Releases download as the final fallback
+
+If you want to install manually:
 ```bash
-# Use the script - it will handle installation
+# Use the script first
 bash skills/md2wechat/scripts/run.sh --help
 
-# Or download from releases
-# Visit: https://github.com/geekjourneyx/md2wechat-skill/releases
+# Or install md2wechat globally and put it on PATH
+# Or download from releases:
+# https://github.com/geekjourneyx/md2wechat-skill/releases
 ```
+
+If your network cannot access GitHub Releases CDN, install `md2wechat` first or set `MD2WECHAT_SKILL_RELEASE_BASE_URL` to a reachable mirror before using the skill.
 
 **Q: AI mode very slow**
 A: AI mode requires Claude API call and takes 10-30 seconds. For faster results, use API mode.
@@ -689,7 +803,7 @@ A: AI mode requires Claude API call and takes 10-30 seconds. For faster results,
 
 ## CLI Commands Reference
 
-All commands go through the `run.sh` wrapper, which handles auto-installation:
+All commands go through the `run.sh` wrapper, which handles runtime discovery first and only downloads as a last resort:
 
 ```bash
 # Show help
@@ -713,8 +827,14 @@ bash skills/md2wechat/scripts/run.sh download_and_upload https://example.com/ima
 # Generate AI image (requires IMAGE_API_KEY)
 bash skills/md2wechat/scripts/run.sh generate_image "A cute cat sitting on a windowsill"
 
-# Generate with 16:9 ratio for WeChat cover (recommended)
-bash skills/md2wechat/scripts/run.sh generate_image --size 2560x1440 "prompt"
+# Generate cover image from bundled presets
+bash skills/md2wechat/scripts/run.sh generate_cover --article article.md
+
+# Generate infographic image from bundled presets
+bash skills/md2wechat/scripts/run.sh generate_infographic --article article.md --preset infographic-comparison
+
+# Generate with 16:9 ratio for WeChat cover via preset (recommended)
+bash skills/md2wechat/scripts/run.sh generate_image --preset cover-hero --article article.md --size 2560x1440
 
 # Initialize config
 bash skills/md2wechat/scripts/run.sh config init

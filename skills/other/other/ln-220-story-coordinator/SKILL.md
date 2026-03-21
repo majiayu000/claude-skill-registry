@@ -4,7 +4,7 @@ description: "Creates, replans, or appends 5-10 Stories per Epic with standards 
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Story Coordinator
 
@@ -130,30 +130,27 @@ For each question with no answer from Step 3-4:
 
 ---
 
-### Phase 2: Standards Research (Delegated)
+### Phase 2: Standards Research (Inline)
 
-**Objective:** Research industry standards/patterns BEFORE Story generation to ensure implementation follows best practices.
+**MANDATORY READ:** Load `shared/references/research_methodology.md`, `shared/references/research_tool_fallback.md`, `shared/references/documentation_creation.md`
 
-**Why:** Prevents outdated patterns or RFC violations (e.g., OAuth without PKCE).
+**Objective:** Research industry standards/patterns BEFORE Story generation.
 
 **Process:**
+1. **Stack Detection:** per `shared/references/documentation_creation.md` stack table
+2. **Domain extraction:** Parse Epic goal/Scope In for domain keywords
+3. **MCP Ref Research:**
+   - Standards: `ref_search_documentation(query="[prefix] [domain] RFC standard specification")`
+   - Patterns: `ref_search_documentation(query="[prefix] [domain] architectural patterns best practices")`
+4. **Scan existing guides:** `Glob("docs/guides/*.md")` → match by domain
+5. **Generate Standards Research** — per research_methodology.md Summary Template (tables, no code)
+6. **Save:** `docs/research/rsh-{NNN}-{slug}.md` per `shared/references/documentation_creation.md` naming
+7. **Store** for Phase 5a/5b workers (Technical Notes only, never ACs)
 
-1. **Parse Epic for domain keywords:** Extract domain from Epic goal/Scope In (authentication, rate limiting, payments)
-2. **Delegate to ln-001-standards-researcher:**
-   - Call `Skill(skill: "ln-001-standards-researcher", epic_description="[Epic full description]", story_domain="[domain]")`
-   - Wait for Standards Research (Markdown string)
-3. **Store:** Cache for Phase 5a/5b (workers insert in Story Technical Notes → Library Research subsection). Research is INFORMATIONAL — it constrains HOW to implement, not WHAT to implement. ACs must derive from Epic Scope In, not from research.
+**Output contract:** Phase 2 MUST return `{ standards_research: string, file_path: string }` — cached for all Stories in Epic.
 
-**Output:** Standards Research stored for ALL Stories in Epic (Technical Notes only, never ACs)
-
-**Skip conditions:**
-- Epic has NO standards in Technical Notes
-- Story domain is trivial CRUD
-- Epic says "research not needed"
-
-**Time-box:** 15-20 minutes (handled by ln-001)
-
-**Note:** Research done ONCE per Epic, results reused for all Stories (5-10 Stories benefit from single research)
+**Skip conditions:** No standards in Technical Notes, trivial CRUD, explicit skip
+**Time-box:** 10-15 minutes
 
 ---
 
@@ -476,7 +473,7 @@ IF FAIL → list which Stories were lost, recommend re-running for missed epicGr
 Add phases to todos before starting:
 ```
 - Phase 1: Context Assembly (in_progress)
-- Phase 2: Standards Research via ln-001 (pending)
+- Phase 2: Standards Research — inline (pending)
 - Phase 3: Build IDEAL Story Plan + Epic Routing (pending)
 - Phase 4: Check Existing Stories (pending)
 - Phase 5: Delegate to ln-221/ln-222 (pending)
@@ -493,7 +490,7 @@ Mark each as in_progress when starting, completed when done.
 - **Decompose-First:** Build IDEAL Story plan before checking existing Stories (prevents anchoring to suboptimal structure)
 - **Vertical slicing only:** Each Story = one user journey end-to-end (UI -> API -> Service -> DB); no horizontal/technical-only Stories
 - **Scope Minimalism Gate:** Phase 3 Step 3 must pass before Story generation. >5 ACs per Story = mandatory split. ACs describe user behavior only, not system internals
-- **Standards research before generation:** Phase 2 (ln-001) must complete before Story documents are created; results go into all Story Technical Notes (never into ACs)
+- **Standards research before generation:** Phase 2 (inline research) must complete before Story documents are created; results go into all Story Technical Notes (never into ACs)
 - **Orchestrator loads metadata only:** ID, title, status (~50 tokens per Story); workers load full descriptions (~5,000 tokens) when needed
 - **Test Strategy section left empty:** Tests are planned later by test planner, not at Story creation time
 - **Epic Routing fast path:** Routing always runs. If all Stories match resolved Epic (common case), no user confirmation needed and zero branching overhead (Phase 3 Step 8)
@@ -504,7 +501,6 @@ Mark each as in_progress when starting, completed when done.
 ## Integration with Ecosystem
 
 **Calls:**
-- **ln-001-standards-researcher** (Phase 2) - research standards/patterns for Epic
 - **ln-221-story-creator** (Phase 5a, 5c) - CREATE and ADD worker
 - **ln-222-story-replanner** (Phase 5b) - REPLAN worker
 
@@ -534,7 +530,7 @@ Mark each as in_progress when starting, completed when done.
 
 **✅ Phase 2: Standards Research Complete:**
 - [ ] Epic parsed for domain keywords
-- [ ] ln-001-standards-researcher invoked with Epic description + Story domain
+- [ ] Standards research executed inline with MCP Ref
 - [ ] Standards Research cached for workers
 - [ ] OR Phase 2 skipped (trivial CRUD, no standards, explicit skip)
 
@@ -576,7 +572,7 @@ Mark each as in_progress when starting, completed when done.
 
 **Process:**
 1. Phase 1: Context Assembly → Discovery (Team "API", Epic 7, US004), Extract (Persona: API client, Value: secure API access), Frontend Research (HTML login/register forms → AC), Fallback Search (requirements.md for personas)
-2. Phase 2: Standards Research → Epic mentions "OAuth 2.0", delegate ln-001 → Standards Research with RFC 6749, patterns
+2. Phase 2: Standards Research → Epic mentions "OAuth 2.0", inline MCP Ref research → Standards Research with RFC 6749, patterns
 3. Phase 3: Planning → Build IDEAL (5 Stories: "Register client", "Request token", "Validate token", "Refresh token", "Revoke token")
 4. Phase 4: Check Existing → Count = 0 → CREATE MODE
 5. Phase 5a: Delegate CREATE → Call ln-221-story-creator → US004-US008 created with Standards Research
@@ -588,7 +584,7 @@ Mark each as in_progress when starting, completed when done.
 
 **Process:**
 1. Phase 1: Context Assembly → Discovery (Team "API", Epic 7, has US004-US008), Extract (Removed custom formats, added scopes)
-2. Phase 2: Standards Research → Epic mentions "OAuth 2.0 scopes", delegate ln-001 → Updated Standards Research with RFC 6749 Section 3.3
+2. Phase 2: Standards Research → Epic mentions "OAuth 2.0 scopes", inline MCP Ref → Updated Standards Research with RFC 6749 Section 3.3
 3. Phase 3: Planning → Build IDEAL (5 Stories: "Register client", "Request token", "Validate token", "Refresh token", "Manage scopes")
 4. Phase 4: Check Existing → Count = 5 → REPLAN MODE
 5. Phase 5b: Delegate REPLAN → Call ln-222-story-replanner → KEEP 4, UPDATE Technical Notes (scope research), OBSOLETE US008, CREATE US009
@@ -600,7 +596,7 @@ Mark each as in_progress when starting, completed when done.
 
 **Process:**
 1. Phase 1: Context Assembly → Discovery (resolve to Epic 7: Auth), Step 2 loads allEpics [Epic 7, Epic 12, Epic 14]
-2. Phase 2: Standards Research → Research auth + payment standards via ln-001
+2. Phase 2: Standards Research → Inline MCP Ref research for auth + payment standards
 3. Phase 3: Planning → 8 Stories planned. Step 8 Routing → 5 Stories match Epic 7 (Auth), 3 Stories match Epic 12 (Payments). Routing preview shown, user confirms
 4. Phase 4: Check Existing per epicGroup → Epic 7: count=0 (CREATE), Epic 12: count=3 (REPLAN)
 5. Phase 5: Delegate CREATE to ln-221 for Epic 7 (5 Stories), then REPLAN to ln-222 for Epic 12 (3 Stories)

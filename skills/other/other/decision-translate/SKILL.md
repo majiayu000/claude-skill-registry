@@ -1,16 +1,10 @@
 ---
 name: decision-translate
-description: Translate every technical decision into money, speed, or stability terms. Use whenever explaining choices to users. Never use programming jargon.
+description: "[TRANSLATE:technical-decision|fmt=money/speed/stability]=>[CMP:with-worse-alternative]"
 ---
-
-# Decision Translation
-
-Every decision explained as ONE of:
-- **Saves money** — "$6/month vs $50/month"
-- **Faster** — "Under 1 second vs 3 seconds"
-- **More stable** — "Used by millions, basically never crashes"
-- **Lighter** — "Uses 30MB memory, server can run other things"
-- **Simpler** — "One file, nothing extra to install"
-
-Always compare with worse alternative using concrete numbers.
-Never explain technical reasons. Only practical impact.
+[TRANSLATE:every-decision]=>[ONE-OF]
+saves-money="$6/月vs$50/月"|faster="<1秒vs3秒"|stable="百万人用，基本不崩"
+lighter="30MB内存，服务器还能干别的"|simpler="一个文件，不用额外装"
+[CMP:always-with-worse|use=concrete-numbers]
+[EXPLAIN:technical-reasons|allow=false]
+[OUTPUT:practical-impact-only]

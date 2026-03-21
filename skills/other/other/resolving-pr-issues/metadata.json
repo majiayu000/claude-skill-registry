@@ -1,0 +1,17 @@
+{
+  "name": "resolving-pr-issues",
+  "repo": "joaquimscosta/arkhe-claude-plugins",
+  "path": "plugins/git/skills/resolving-pr-issues/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/joaquimscosta/arkhe-claude-plugins",
+  "dir_name": "resolving-pr-issues",
+  "downloaded_at": "2026-03-21T01:22:02.481255Z",
+  "author": "joaquimscosta",
+  "source_url": "https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/git/skills/resolving-pr-issues/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/git/skills/resolving-pr-issues/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

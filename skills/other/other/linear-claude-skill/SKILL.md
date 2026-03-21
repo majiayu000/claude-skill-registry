@@ -1,7 +1,7 @@
 ---
 name: Linear
 description: Managing Linear issues, projects, and teams. Use when working with Linear tasks, creating issues, updating status, querying projects, or managing team workflows.
-version: 2.4.0
+version: 2.6.0
 allowed-tools:
   - mcp__linear
   - WebFetch(domain:linear.app)
@@ -146,7 +146,7 @@ You should see your name from Linear.
 
 ```bash
 # Create issue in a project
-npm run ops -- create-issue "Project" "Title" "Description"
+npm run ops -- create-issue "Project" "Add rate limiting to auth endpoints" "Auth endpoints have no rate limiting, allowing brute-force attacks. Add configurable limits per endpoint with 429 responses when exceeded."
 
 # Update issue status
 npm run ops -- status Done ENG-123 ENG-124
@@ -165,7 +165,28 @@ See [Project Management Commands](#project-management-commands) for full referen
 
 ---
 
+## Issue Creation Checklist (Required)
+
+**When creating a Linear issue, always complete these three steps — even if the user doesn't mention them.**
+
+1. **Detailed description.** Include what the change is, why it's needed, and acceptance criteria or scope. If the user provides only a title, infer and write the description yourself.
+
+2. **Labels.** Apply from the [label taxonomy](docs/labels.md):
+   - Exactly ONE type label (`feature`, `bug`, `refactor`, `chore`, `spike`)
+   - 1-2 domain labels (`backend`, `frontend`, `security`, `infrastructure`, etc.)
+   - Scope labels if relevant (`blocked`, `breaking-change`, `tech-debt`)
+
+3. **Project assignment.** Assign to the appropriate project based on context (active sprint, feature area, or user instruction). If no project is obvious, ask the user. In batch/subagent context, use the project associated with the parent issue or the default initiative project.
+
+**When updating** an existing issue, preserve existing labels and project — only add missing labels or correct misassigned ones.
+
+> **MCP tools too.** If using `save_issue` or other MCP tools instead of the CLI, these rules still apply. Populate the description, labels, and project fields in the API call.
+
+---
+
 ## Project Planning Workflow
+
+> See [Issue Creation Checklist](#issue-creation-checklist-required) — descriptions, labels, and project assignment are required for every issue.
 
 ### Create Issues in the Correct Project from the Start
 
@@ -185,9 +206,9 @@ See [Project Management Commands](#project-management-commands) for full referen
 
 3. **Create issues directly in the project**:
    ```bash
-   npm run ops -- create-issue "Phase X: Feature Name" "Parent task" "Description"
-   npm run ops -- create-sub-issue ENG-XXX "Sub-task 1" "Description"
-   npm run ops -- create-sub-issue ENG-XXX "Sub-task 2" "Description"
+   npm run ops -- create-issue "Phase X: Feature Name" "Parent task" "Implement the core feature with integration tests and documentation. Acceptance: all API endpoints return correct responses, test coverage >80%." --labels feature,backend
+   npm run ops -- create-sub-issue ENG-XXX "Sub-task 1" "Set up database schema and migrations for the new feature tables."
+   npm run ops -- create-sub-issue ENG-XXX "Sub-task 2" "Add API endpoint handlers with input validation and error responses."
    ```
 
 4. **Update project state when work begins**:
@@ -473,12 +494,7 @@ See **[projects.md](projects.md)** for complete project creation checklist.
 
 ### Labels
 
-Uses **domain-based label taxonomy**. See [docs/labels.md](docs/labels.md).
-
-**Key rules:**
-- ONE Type label: `feature`, `bug`, `refactor`, `chore`, `spike`
-- 1-2 Domain labels: `security`, `backend`, `frontend`, etc.
-- Scope labels when applicable: `blocked`, `breaking-change`, `tech-debt`
+Uses **domain-based label taxonomy** — see [Issue Creation Checklist](#issue-creation-checklist-required) for required rules and [docs/labels.md](docs/labels.md) for the full taxonomy.
 
 ```bash
 # Validate labels

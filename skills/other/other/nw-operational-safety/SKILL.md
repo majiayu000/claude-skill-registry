@@ -1,6 +1,7 @@
 ---
 name: nw-operational-safety
 description: Tool safety protocols, adversarial output validation, error recovery patterns, and I/O contracts for research operations
+user-invocable: false
 disable-model-invocation: true
 ---
 
@@ -15,7 +16,7 @@ disable-model-invocation: true
 - Read-only, low-risk. Primary concern: wasted tokens from broad searches.
 
 ### Write and Edit Tools
-- **Write**: only in allowed dirs (`docs/research/`, `~/.claude/skills/nw/{agent}/`). Confirm path before writing.
+- **Write**: only in allowed dirs (`docs/research/`, `~/.claude/skills/nw-{skill-name}/`). Confirm path before writing.
 - **Edit**: only existing research docs. Read first. Verify edit target uniqueness.
 - Confirm output path in allowed directory before every write.
 

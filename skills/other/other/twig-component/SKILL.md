@@ -1,6 +1,6 @@
 ---
 name: twig-component
-description: Symfony UX TwigComponent for reusable UI elements. Use when creating reusable Twig templates with PHP backing classes, component composition, props, slots/blocks, computed properties, or anonymous components. Triggers - twig component, AsTwigComponent, reusable template, component props, twig blocks, component slots, anonymous component, Symfony UX component, HTML component, component library, design system component, UI kit, reusable button, reusable card, PreMount, PostMount, mount method. Also trigger for any question about building a reusable piece of UI in Symfony, even if the user doesn't mention TwigComponent by name.
+description: Symfony UX TwigComponent for reusable UI building blocks -- server-rendered components with PHP classes and Twig templates. Use when creating buttons, cards, alerts, badges, navbars, or any reusable UI element with props, blocks/slots, computed properties, or anonymous (template-only) components. Code triggers: AsTwigComponent, #[AsTwigComponent], ExposeInTemplate, PreMount, PostMount, <twig:Alert />, <twig:Button>, component(), computed properties, anonymous component, HTML syntax. Also trigger when the user asks "how to create a reusable component", "how to make a component library", "how to pass props to a component", "how to use slots/blocks in a component", "how to build a design system in Symfony", "what is the HTML syntax for components", "how to create a component without a PHP class". Do NOT trigger for components that re-render dynamically on user input (use live-component), for JS behavior (use stimulus), or for page navigation (use turbo).
 license: MIT
 metadata:
   author: Simon Andre
@@ -340,11 +340,13 @@ twig_component:
 
 Prefer HTML syntax (`<twig:...>`) in all cases. The Twig syntax (`{% component %}`) is legacy and less readable.
 
-## CVE-2025-47946 -- Attribute Injection
-
-TwigComponent had a security vulnerability (CVE-2025-47946) related to unsanitized HTML attribute injection via `ComponentAttributes`. Make sure you are on a patched version (check the Symfony security advisories). The `{{ attributes }}` helper now properly escapes values.
-
 ## References
 
 - **Full API** (attribute options, hooks, configuration, all methods): [references/api.md](references/api.md)
 - **Patterns** (forms, tables, layouts, composition, real-world examples): [references/patterns.md](references/patterns.md)
+- **Gotchas** (attributes, naming, nested components, common pitfalls): [references/gotchas.md](references/gotchas.md)
+
+## See Also
+
+- **UX Icons** integrates naturally in TwigComponent templates: `<twig:ux:icon name="lucide:check" />` inside your component markup.
+- **UX Map** can be rendered inside a TwigComponent template via `{{ ux_map(map, {style: 'height: 400px;'}) }}`.

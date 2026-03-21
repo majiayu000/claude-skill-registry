@@ -2,11 +2,13 @@
 name: security-review
 description: >
   Security-focused code review identifying high-confidence exploitable vulnerabilities
-  with two-axis severity/confidence scoring, OWASP 2025 alignment, and false positive filtering.
+  with two-axis severity/confidence scoring, OWASP 2025 alignment, per-finding Haiku
+  verification, and false positive filtering. Optional GitHub PR posting.
   Use when user runs /security-review, /review:security-review, requests a "security review",
   "security audit", "vulnerability scan", or mentions "find vulnerabilities", "check for exploits".
 disable-model-invocation: true
-argument-hint: "[output-directory]"
+allowed-tools: Bash(gh pr view:*), Bash(gh pr comment:*), Bash(gh pr list:*)
+argument-hint: "[output-directory] [--post-to-pr]"
 ---
 
 # Security Review
@@ -16,8 +18,14 @@ Identify HIGH-CONFIDENCE security vulnerabilities with real exploitation potenti
 ## Parse Arguments
 
 **Output Path Configuration**:
-- If `$ARGUMENTS` is provided and non-empty: Use `$ARGUMENTS` as the output directory
-- Otherwise: Use default `./reviews/security/`
+- If `$ARGUMENTS` contains `--post-to-pr`: enable GitHub PR posting (Phase 6)
+- Remaining non-flag arguments: use as output directory (default: `./reviews/security/`)
+
+Example usage:
+- `/review:security-review` — local report to `./reviews/security/`
+- `/review:security-review audits/sec` — local report to `audits/sec/`
+- `/review:security-review --post-to-pr` — local report + post to GitHub PR
+- `/review:security-review audits/sec --post-to-pr` — both
 
 ## Git Analysis
 
@@ -127,6 +135,32 @@ Categorize every finding:
 - **[Nit]**: Minor hardening suggestion, optional — max 2 per review
 - **[Praise]**: Acknowledge good security practice — max 1 per review
 
+## Phase 4 — Per-Finding Haiku Verification
+
+After Phase 3 identifies candidate findings, launch **N parallel Haiku agents** (one per finding) for independent verification.
+
+Each Haiku agent receives:
+- The finding description, severity, confidence, category, and CWE
+- The relevant diff section around the flagged code
+- The framework/sanitizer context discovered in Phase 1
+
+Each agent verifies:
+1. **Data flow reachability** — Can user input actually reach the vulnerable sink?
+2. **Sanitizer presence** — Are there sanitizers/validators in the path that the main analysis missed?
+3. **Framework handling** — Does the framework's security model prevent this exploit?
+4. **False positive patterns** — Does this match any hard exclusion or precedent from [WORKFLOW.md](WORKFLOW.md)?
+
+Each agent returns a verdict:
+- **KEEP** — Finding confirmed. Data flow verified, no sanitizers found, exploit path is valid.
+- **DISMISS** — False positive. Reason: {specific evidence — framework handling, sanitizer found, etc.}
+- **DOWNGRADE** — Valid but lower severity or confidence. Reason: {what changed — e.g., only reachable by admins, mitigating control exists.}
+
+Apply verdicts: remove DISMISSED findings, adjust DOWNGRADED findings' severity/confidence. Remaining findings proceed to report.
+
+If a Haiku verification agent fails for a finding, default to KEEP (conservative — finding stays).
+
+See [WORKFLOW.md](WORKFLOW.md) for the Haiku verification prompt template and verdict criteria.
+
 ## Output Format
 
 For each vulnerability found:
@@ -143,7 +177,7 @@ For each vulnerability found:
 * **Recommendation**: {Concrete fix with code example}
 ```
 
-## Output Instructions
+## Phase 5 — Report Generation
 
 1. **Create output directory** using Bash: `mkdir -p {output-directory}`
 2. **Save the report** to: `{output-directory}/{YYYY-MM-DD}_{HH-MM-SS}_security-review.md`
@@ -165,6 +199,7 @@ Include this header:
 - **Question**: {count} findings
 - **Total**: {count} actionable findings
 - **Automated Scan**: {Passed | X issues found | Skipped — tools not installed}
+- **Haiku Verification**: {N} findings verified — {kept} kept, {dismissed} dismissed, {downgraded} downgraded
 
 ---
 ```
@@ -172,7 +207,20 @@ Include this header:
 3. **Display the full report** to the user in the chat
 4. **Confirm the save**: Security report saved to: {output-directory}/{filename}
 
-## Automatic Verification
+## Phase 6 — Optional GitHub PR Posting
+
+**Only execute if** `--post-to-pr` flag was passed.
+
+1. Check if an open PR exists for the current branch via `gh pr view`
+2. If no PR exists, inform the user: "No open PR found for this branch. Skipping GitHub posting."
+3. If a PR exists, check eligibility via a **Haiku agent**:
+   - Is the PR closed? → skip
+   - Is the PR a draft? → skip
+   - Has Claude already commented on this PR? → skip
+4. If eligible, format findings as a concise PR comment and post via `gh pr comment`
+5. Use the security-specific GitHub comment format from [WORKFLOW.md](WORKFLOW.md)
+
+## Phase 7 — Automatic Verification
 
 After saving the report and confirming the save to the user, invoke the false-positive verifier:
 

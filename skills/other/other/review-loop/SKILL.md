@@ -1,6 +1,8 @@
 ---
 name: review-loop
-description: Use when code changes need multi-pass automated review before merge. Use when preparing branch for PR. Use when thorough code quality check needed.
+description: Runs multi-pass automated code review with per-issue fix subagents. Triggers when preparing a branch for PR, reviewing code changes, or when thorough automated code quality review is needed.
+argument-hint: [path=/repo target=branch]
+allowed-tools: Task, TaskCreate, TaskUpdate, TaskList, TaskGet, Skill, Read, Bash(git *)
 ---
 
 # MANDATORY FIRST ACTION
@@ -33,7 +35,7 @@ TaskUpdate(taskId: SIMPLIFY, status: "in_progress")
 
 # Review Loop
 
-You are an ORCHESTRATOR. You dispatch subagents. You do NOT touch code.
+You are an ORCHESTRATOR. You dispatch subagents. During review iterations (Step 3), you do NOT touch code — dispatch subagents instead. During simplify (Step 2.5), you ARE allowed to edit code directly.
 
 ## Process
 
@@ -86,6 +88,11 @@ If args provided (e.g., `/review-loop path=/some/repo target=main`), use them. O
 **All subagents MUST receive REPO_PATH.** Subagents inherit the session's original cwd, not the current shell cwd.
 
 ## Step 2.5: Code Simplification
+
+**MODE: EXECUTOR** — You are temporarily an executor, not an orchestrator.
+The orchestrator constraint (no touching code) is SUSPENDED for this step.
+Follow simplify's full workflow: review, triage, AND fix all identified issues directly.
+The orchestrator constraint resumes at Step 3.
 
 Run Claude Code's **built-in** `simplify` skill. Use EXACTLY this Skill tool call:
 ```
@@ -216,7 +223,7 @@ After 2 iterations with no critical/major:
 | "Let me run setup first" | NO. TaskCreate comes before setup.sh |
 | "I'll create tasks after starting" | NO. Tasks FIRST, always. |
 | "One iteration enough" | NO. Minimum 2. |
-| "I'll fix this quickly" | NO. Dispatch a fix subagent per issue. |
+| "I'll fix this quickly" | NO. Dispatch a fix subagent per issue (except during simplify where you fix directly). |
 | "I'll batch all fixes in one subagent" | NO. One Task per fix. Never batch. |
 | "I'll dispatch fix coordinator" | NO. YOU triage and dispatch fix subagents directly. |
 | "Would you like me to..." | NO. Never ask. Execute. |
@@ -233,8 +240,8 @@ After 2 iterations with no critical/major:
 If you catch yourself:
 - Dispatching reviewer without tasks created → STOP
 - Running setup.sh as first action → STOP
-- Using Read/Edit/Grep on code → STOP
-- Fixing issues directly (Edit/Write on code) → STOP
+- Using Read/Edit/Grep on code during review iterations → STOP (OK during simplify)
+- Fixing issues directly during review iterations (Edit/Write on code) → STOP (OK during simplify)
 - Batching multiple fixes into one subagent → STOP
 - Asking permission → STOP
 - Skipping simplify skill → STOP
@@ -252,7 +259,7 @@ If you catch yourself:
 1. TaskCreate BEFORE anything else
 2. Run simplify skill before review iterations
 3. MINIMUM 2 review iterations
-4. ONLY Task tool on code (dispatch subagents)
+4. ONLY Task tool on code during review iterations (Step 3) — simplify (Step 2.5) may edit directly
 5. SEQUENTIAL iterations
 6. ONE fix subagent per issue — never batch
 7. YOU read findings and triage — no intermediary agent

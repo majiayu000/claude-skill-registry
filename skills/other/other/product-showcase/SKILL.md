@@ -18,6 +18,16 @@ Generate a marketing website that shows off a running web app. Unlike the `landi
 | No browser automation | Requires browser automation |
 | Generic marketing structure | Structured around app's actual workflows |
 
+## Depth Levels
+
+| Depth | Sections | Screenshots | Duration |
+|-------|----------|------------|----------|
+| **quick** | Hero + feature grid (3-4 features) | 5-6 screenshots | 15-20 min |
+| **standard** | Hero + how-it-works + feature grid + CTA | 10-15 screenshots | 30-45 min |
+| **thorough** | All sections including dark mode, keyboard shortcuts, before/after, integrations | 20-30 screenshots, both light/dark | 1-2 hours |
+
+Default: **standard**
+
 ## Browser Tool Detection
 
 Before starting, detect available browser tools:
@@ -68,6 +78,16 @@ For the feature grid, capture focused screenshots:
 - Dark mode version if available (shows design quality)
 - Mobile view if the app is responsive
 
+#### e. Capture Both Modes
+If the app has dark mode, capture the hero and 2-3 key screens in both light and dark. Use the best-looking mode for the hero, show the other in a "Works in dark mode too" section or as a side-by-side comparison.
+
+#### f. Extract the Value Propositions
+Don't just list features. For each one, answer: **why does the user care?**
+- BAD: "Contact management page"
+- GOOD: "See every client, their history, and what needs attention — in one view"
+- BAD: "Search functionality"
+- GOOD: "Find anything in seconds — semantic search understands what you mean, not just what you type"
+
 ### 3. Generate the Showcase
 
 Produce a **single HTML file** with Tailwind CDN (same pattern as `landing-page`):
@@ -99,6 +119,27 @@ Produce a **single HTML file** with Tailwind CDN (same pattern as `landing-page`
 **Pricing** (if provided)
 - 2-3 tier cards
 - Or skip if not provided
+
+**Before & After** (optional — if the app replaces a manual process)
+- Side-by-side comparison: "The old way" (spreadsheet, email, paper) vs "The new way" (your app)
+- Use a real screenshot of the app next to a stock representation of the old workflow
+- This is the most persuasive section for apps that replace existing tools
+
+**Dark Mode Showcase** (optional — if the app has it)
+- Full-width screenshot in dark mode with a brief note: "Easy on the eyes. Dark mode built in."
+- Or side-by-side light/dark comparison
+
+**Keyboard Shortcuts / Power Features** (optional — if the app has them)
+- Clean grid of shortcuts: Cmd+K search, Cmd+N new, etc.
+- Shows the app is built for productivity, not just looks
+
+**Integration / Ecosystem** (optional — if the app connects to things)
+- Logo grid of connected services (Google, Slack, Stripe, etc.)
+- Or "Works with your existing tools" section
+
+**Open Source / Self-Hosted** (optional — if applicable)
+- GitHub stars badge, MIT license, deploy-your-own instructions
+- Trust signal for technical audiences
 
 **CTA Banner**
 - Full-width call-to-action
@@ -170,6 +211,70 @@ After generating, tell the user:
 **Dark mode**: Three-state toggle (light/dark/system) with CSS custom properties.
 
 **Performance**: Lazy-load screenshot images. Tailwind CDN for styling. No build step.
+
+## Making It Look Premium
+
+### Screenshot Enhancement
+- **Clean data**: Before screenshotting, make sure the app has realistic data — not "Test Client" and "asdf@example.com"
+- **Consistent window size**: All screenshots at the same viewport width (1280x720)
+- **No browser chrome in screenshots**: Use the CSS browser-frame mockup instead of capturing the actual Chrome toolbar
+- **Highlight the action**: If a screenshot shows a feature, have that feature active/open (modal open, filter applied, item selected)
+
+### Visual Storytelling
+- **Lead with the dashboard**: The hero screenshot should show the app populated with data, looking alive and useful
+- **Show the app doing work**: Screenshots of results are better than screenshots of empty forms
+- **Progressive reveal**: Hero shows the big picture, how-it-works shows the flow, features show the details
+- **End with the payoff**: The final section before the CTA should show the result — a report generated, a task completed, a client managed
+
+### Mix Screenshots with Mockups
+Real screenshots show the product is real. Mockups show the product is polished. Use both:
+- **Hero**: Real screenshot in a browser-frame mockup — proves the app exists and looks good
+- **How It Works**: Can use simplified mockup illustrations (CSS shapes, icons, arrows) for the flow steps, with real screenshots for the detail
+- **Feature grid**: Real screenshots — users want to see the actual UI
+- **Mobile showcase**: CSS device frame mockup (phone outline) around a mobile screenshot
+- **Dashboard/overview**: Real screenshot — this is the money shot
+
+**Phone mockup frame** (CSS):
+```css
+.phone-frame {
+  border: 8px solid #1f2937;
+  border-radius: 32px;
+  overflow: hidden;
+  max-width: 280px;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);
+}
+.phone-frame-notch {
+  background: #1f2937;
+  height: 24px;
+  border-radius: 0 0 16px 16px;
+  width: 120px;
+  margin: 0 auto;
+}
+```
+
+### Animation (CSS-only, no JS required)
+```css
+/* Fade in sections as user scrolls (intersection observer via CSS) */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.section { animation: fadeInUp 0.6s ease-out both; }
+
+/* Subtle float on hero screenshot */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.hero-screenshot { animation: float 6s ease-in-out infinite; }
+```
+
+### Gradient Accents
+Extract the app's primary colour and use it for subtle gradient backgrounds on sections:
+```css
+.hero { background: linear-gradient(135deg, var(--primary) 0%, transparent 60%); }
+.cta-banner { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; }
+```
 
 ## Quality Rules
 

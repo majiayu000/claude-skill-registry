@@ -1,6 +1,6 @@
 ---
 name: turbo
-description: Hotwire Turbo for Symfony UX. Use when building SPA-like navigation without JS, partial page updates with frames, real-time updates with streams, or integrating with Mercure for broadcasts. Triggers - turbo drive, turbo-frame, turbo-stream, partial page update, SPA feel, ajax navigation, real-time update, Mercure broadcast, Symfony UX Turbo, inline edit, lazy load section, pagination frame, modal from server, flash message stream, multi-section update, TurboStreamResponse, twig:Turbo:Stream, data-turbo, turbo-stream-source, SSE. Also trigger when the user wants to update part of a page without a full reload, or wants real-time server-to-browser updates.
+description: Hotwire Turbo for Symfony UX -- SPA-like speed with zero JavaScript. Covers Drive (full-page navigation), Frames (partial page sections), and Streams (multi-target updates). Use when building ajax navigation, lazy-loaded page sections, inline editing, pagination without reload, modals loaded from the server, flash messages via streams, real-time updates via Mercure/SSE, or multi-section page updates. Code triggers: turbo-frame, turbo-stream, data-turbo-frame, data-turbo, data-turbo-action, turbo-stream-source, TurboStreamResponse, <twig:Turbo:Frame>, <twig:Turbo:Stream:Append>, <twig:Turbo:Stream:Replace>, turbo:before-fetch-request. Also trigger when the user asks "how to update part of the page without reload", "how to make navigation feel like SPA", "how to lazy-load a section", "how to do inline editing", "how to push real-time updates from server", "how to use Mercure with Turbo". Do NOT trigger for client-side JS behavior (use stimulus), server-rendered reactive components (use live-component), or reusable static UI (use twig-component).
 license: MIT
 metadata:
   author: Simon Andre
@@ -149,7 +149,7 @@ Update the browser URL when a frame navigates (useful for bookmarkable state):
 
 ## Turbo Streams
 
-Update multiple DOM elements from a single server response. Eight actions available, each targeting elements by ID or CSS selector.
+Update multiple DOM elements from a single server response. Eight actions available (`append`, `prepend`, `replace`, `update`, `remove`, `before`, `after`, `refresh`), each targeting elements by ID or CSS selector.
 
 ### Stream Actions
 
@@ -180,7 +180,13 @@ Update multiple DOM elements from a single server response. Eight actions availa
     <template><div id="msg_4">Inserted after</div></template>
 </turbo-stream>
 
-<turbo-stream action="morph" target="user-card">
+<turbo-stream action="refresh"></turbo-stream>
+```
+
+`replace` and `update` support an optional `method="morph"` attribute for smooth DOM morphing instead of full replacement:
+
+```html
+<turbo-stream action="replace" method="morph" target="user-card">
     <template><div id="user-card">Updated content</div></template>
 </turbo-stream>
 ```
@@ -365,3 +371,8 @@ class Message
 - **Full API** (Drive events, Frame attributes, Stream actions, Mercure): [references/api.md](references/api.md)
 - **Patterns** (forms, modals, search, pagination, infinite scroll): [references/patterns.md](references/patterns.md)
 - **Gotchas** (caching issues, form handling, Stimulus integration): [references/gotchas.md](references/gotchas.md)
+
+## See Also
+
+- **UX Map** works inside Turbo Frames. The map Stimulus controller reconnects properly on frame swaps.
+- **UX Icons** are inline SVG and survive Turbo Drive navigation and Frame swaps with no special handling.

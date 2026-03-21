@@ -4,7 +4,7 @@ description: "Creates Story documents with 9-section structure and INVEST valida
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Story Creator
 
@@ -22,7 +22,7 @@ Invoked by ln-220-story-coordinator (Phase 5a for CREATE, Phase 5c for ADD).
 **1. ln-220-story-coordinator CREATE MODE (Phase 5a):**
 - Epic has NO existing Stories (Linear query count = 0)
 - IDEAL plan generated (Phase 3)
-- Standards Research completed by ln-001 (Phase 2)
+- Standards Research completed by ln-220 inline (Phase 2)
 - Parameters: `epicData`, `idealPlan`, `standardsResearch`, `teamId`, `autoApprove`
 
 **2. ln-220-story-coordinator ADD MODE (Phase 5c):**
@@ -312,7 +312,7 @@ NEXT STEPS:
 **Worker does NOT:**
 - Query Linear for Epic (already in context)
 - Analyze Epic complexity (orchestrator Phase 3)
-- Research standards (orchestrator Phase 2 delegates to ln-001)
+- Research standards (orchestrator Phase 2 runs inline)
 - Build IDEAL plan (receives from orchestrator)
 
 ---

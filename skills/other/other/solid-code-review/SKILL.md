@@ -90,7 +90,14 @@ Use `{lang}` below to refer to the detected reference directory.
   - **Boundary conditions**: null/undefined handling, empty collections, numeric boundaries, off-by-one
 - Flag issues that may cause silent failures or production incidents.
 
-### 7) Output format
+### 7) Self-check and confidence assessment
+
+- For each finding, re-review to ensure it's valid
+- Assign confidence value
+
+### 8) Present results
+
+#### Output format
 
 Structure your review as follows:
 
@@ -112,6 +119,12 @@ Structure your review as follows:
 
 - **[file:line]** Brief title
   - Description of issue
+  - Confidence: 90% - reasoning behind the confidence level
+  - Suggested fix
+
+- **[another_file:line]** Brief title
+  - Description of issue
+  - Confidence: 60% - reasoning behind the confidence level
   - Suggested fix
 
 ### P2 - Medium

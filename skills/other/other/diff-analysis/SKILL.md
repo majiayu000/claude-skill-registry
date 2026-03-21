@@ -13,7 +13,7 @@ tags:
 - categorization
 - summaries
 dependencies:
-- imbue:evidence-logging
+- imbue:proof-of-work
 tools:
 - git
 - diff-tools
@@ -70,7 +70,7 @@ Load modules based on workflow stage:
 
 ### Integration
 - Use `sanctum:git-workspace-review` for git data gathering
-- Use `imbue:evidence-logging` for capturing analysis evidence
+- Use `imbue:proof-of-work` for capturing analysis evidence
 - Use `imbue:structured-output` for formatting final deliverables
 
 ## Required TodoWrite Items

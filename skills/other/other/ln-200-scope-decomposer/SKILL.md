@@ -1,10 +1,11 @@
 ---
 name: ln-200-scope-decomposer
 description: "Decomposes scope into Epics, Stories, and RICE priorities. Use when user has project scope and wants full Agile breakdown."
+disable-model-invocation: true
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Scope Decomposer (Top Orchestrator)
 
@@ -61,7 +62,7 @@ Do NOT use if:
 
 **Coordinators:**
 - **ln-210-epic-coordinator:** Creates 3-7 Epics (Epic 0 for Infrastructure if applicable, Epic 1-N for business domains)
-- **ln-220-story-coordinator:** Creates 5-10 Stories per Epic (with standards research via ln-001)
+- **ln-220-story-coordinator:** Creates 5-10 Stories per Epic (with inline standards research)
 
 ### Sequential Story Decomposition
 
@@ -142,6 +143,15 @@ FOR EACH Epic (Epic 0, Epic 1, ..., Epic N):
     4. Move to next Epic
 ```
 
+### Stop Conditions (Decomposition Loops)
+
+| Condition | Action |
+|-----------|--------|
+| All Epics processed (Stories + optional RICE) | STOP — proceed to Summary |
+| ln-220 fails for an Epic (coordinator error) | STOP — report partial results, list completed Epics |
+| User cancels during Story confirmation | STOP — report completed Epics, skip remaining |
+| Total Story count exceeds 80 | STOP — WARN: "Scope may be too large. Continue?" |
+
 **Invocation per Epic:**
 ```
 🔄 [ORCHESTRATOR] Phase 3: Delegating Story creation for Epic N to ln-220-story-coordinator
@@ -151,7 +161,7 @@ Skill(skill: "ln-220-story-coordinator", epic_number="Epic N")
 
 **ln-220-story-coordinator will (per Epic):**
 - Phase 1: Auto-extract Q1-Q6 from Epic + Fallback search (requirements.md, tech_stack.md)
-- Phase 2: Research standards via ln-001-standards-researcher (auto)
+- Phase 2: Research standards inline MCP Ref (auto)
 - Phase 3: Build IDEAL Story plan (5-10 Stories)
 - Phase 4a: Generate ALL Story documents → Show preview → User confirms → Create all Stories
 - Return: Story URLs + summary

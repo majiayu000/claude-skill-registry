@@ -117,6 +117,13 @@ The research script outputs:
 
 ---
 
+## HARD RULES (never violate)
+
+1. **Never use the word "beefy" or "BEEFY" in any output** -- not in filenames, not in prose, not in comments. The framework is called **seo-agi**. Period.
+2. **Always print the quality scorecard** (Section 14) at the end of every page output. No exceptions. If the scorecard is missing, the delivery is incomplete.
+
+---
+
 ## 1. CORE BELIEF SYSTEM
 
 1. **AI content is not the problem; generic content is.** Do not rewrite the first page of Google. Add genuinely useful, sourced, less-common information.
@@ -477,7 +484,7 @@ For batch requests ("write 5 location pages for [service]"), decompose into para
 
 Run before every delivery. If any answer is NO, revise before delivering.
 
-**MANDATORY: Print this scorecard at the end of every page output.** Use the exact format below so the user can see what passed and what needs attention.
+**MANDATORY -- DO NOT SKIP THIS STEP.** Print this scorecard at the end of every page output. The page delivery is considered INCOMPLETE without this table visible in the response. If you are about to end your response without printing the scorecard, STOP and print it.
 
 | # | Check | Pass? |
 |---|-------|-------|

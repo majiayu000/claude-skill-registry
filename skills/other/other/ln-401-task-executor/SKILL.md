@@ -4,7 +4,7 @@ description: "Executes implementation tasks through Todo, In Progress, To Review
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Implementation Task Executor
 
@@ -44,7 +44,7 @@ Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
 **Status:** In Progress | **Priority:** High | **Estimate:** 4h
 ```
 
-**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` — prefer hashline for code files.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` — ALWAYS use hex-line MCP for code files when available. No fallback to standard Read/Edit unless hex-line is down.
 
 ## Mode Detection
 

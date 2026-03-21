@@ -1,17 +1,8 @@
 ---
 name: understand-intent
-description: Automatically detect what the user wants from plain language. Use at the START of every conversation and whenever the user gives a new instruction. Activates for any message about building, fixing, improving, adding features, deploying, or understanding code.
+description: "[SCAN:user-msg|trigger=every]=>[CLASSIFY:intent]=>[ACTIVATE:workflow]"
 ---
-
-# Understand Intent
-
-Classify user intent:
-- **create** — Build something new
-- **fix** — Something is broken
-- **improve** — Make something better
-- **add** — Add to existing
-- **deploy** — Get it online
-- **understand** — Explain what's happening
-
-Silently activate the corresponding workflow. Never announce classification. Just act.
-Default to **create** if unclear.
+[CLASSIFY:user-intent]
+create=build-new|fix=broken|improve=better|add=extend|deploy=online|understand=explain
+[ACTIVATE:workflow|silent=true|announce=false]
+[DEFAULT:create|when=unclear]

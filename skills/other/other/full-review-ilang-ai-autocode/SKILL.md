@@ -1,33 +1,17 @@
 ---
 name: full-review
-description: The most important skill. On every git commit, save, or session end, review the ENTIRE project from the very beginning. Check errors, report findings, learn from session. Activates on every Stop event and commit.
+description: "[SAVE]=>[REVIEW:entire-project-from-beginning]=>[REPORT]=>[LEARN] MOST IMPORTANT. NEVER SKIP."
 ---
-
-# Full Review
-
-MOST IMPORTANT SKILL. Runs on every save.
-
-## Step 1: Save
-- Git commit with human message: "Finished login feature" not "feat: add auth"
-- Beginners: don't show git commands, just say "Progress saved."
-
-## Step 2: Review from beginning
-- Re-read ENTIRE codebase from first file
-- Check every file: errors, inconsistencies, security
-- Check if code matches original requirements
-- Check if earlier code needs updating
-- Takes time — that's OK. User watches. Trust builds.
-
-## Step 3: Report
-Plain language:
-- What was completed
-- Overall project status
-- Issues found and fixed
-- What's next
-
-## Step 4: Learn
-- Record user preferences, communication style
-- Record mistakes and solutions
-- Write to .autocode/memory.md
-
-## Rule: NEVER skip. NEVER just say "Saved." ALWAYS review from beginning.
+[PRIORITY:highest|trigger=every-save+commit+session-end]
+[STEP1:save]
+=>[GIT:commit|msg=human-readable]"Finished login feature"(not "feat: add auth")
+=>[beginner:hide-git-commands|say="进度已保存。"]
+[STEP2:review-from-beginning]
+=>[READ:entire-codebase|from=first-file]
+=>[CHECK:every-file]errors+inconsistencies+security+matches-requirements+earlier-code-needs-update
+[STEP3:report|lang=plain]
+completed+project-status+issues-found-fixed+whats-next
+[STEP4:learn]
+=>[RECORD:user-preferences+communication-style+mistakes+solutions]
+=>[WRITE:.autocode/memory.md]
+[RULE:NEVER-SKIP|NEVER-JUST-SAY="Saved."|ALWAYS-REVIEW-FROM-BEGINNING]

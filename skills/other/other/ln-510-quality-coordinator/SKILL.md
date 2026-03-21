@@ -4,7 +4,7 @@ description: "Coordinates code quality checks: metrics, cleanup, agent review, r
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Quality Coordinator
 
@@ -101,7 +101,9 @@ Skill(skill: "ln-512-tech-debt-cleaner", args: "{storyId}")
     - If 0 agents → agent review SKIPPED, go to Phase 5
 4b) **Get references:** `get_issue(storyId)` + `list_issues(parent=storyId, status=Done)` (exclude test tasks)
 4c) **Build prompt:** Assemble from `shared/agents/prompt_templates/review_base.md` + `modes/code.md` (per shared workflow "Step: Build Prompt"), replace `{story_ref}`, `{task_refs}`. Save to `.agent-review/{identifier}_codereview_prompt.md`
-4d) **Launch BOTH agents** as background tasks (per shared workflow)
+4d) **Launch BOTH agents** as background tasks. `agents_launched = true`
+    **Exact command (per agent_delegation_pattern.md):**
+    `node shared/agents/agent_runner.mjs --agent {name} --prompt-file .agent-review/{agent}/{id}_codereview_prompt.md --output-file .agent-review/{agent}/{id}_codereview_result.md --cwd {project_dir}`
     → Continue to Phase 5 (Criteria Validation), Phase 6 (Linters), Phase 7 (Regression), Phase 8 (Log Analysis) while agents work
 
 ### Phase 5: Criteria Validation

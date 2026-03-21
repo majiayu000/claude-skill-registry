@@ -16,10 +16,10 @@ Coordinate deep technical research with intelligent caching for cross-project re
 
 When research is needed:
 
-1. **Resolve scripts path** - Find `plugins/core/skills/deep-research/scripts/` (or Glob for `**/deep-research/scripts/cache_manager.py`)
-2. **Check cache first** - Run `python3 {scripts_dir}/cache_manager.py check "{topic}"`
-3. **If cached and valid** - Run `cache_manager.py get "{slug}"` and return content directly (no agent needed)
-4. **If cache miss** - Invoke `deep-researcher` agent for EXA research, which caches via `cache_manager.py put`
+1. **Scripts path** - `${CLAUDE_SKILL_DIR}/scripts/`
+2. **Single fetch call** - Run `python3 ${CLAUDE_SKILL_DIR}/scripts/cache_manager.py fetch "{topic}"` (combines check+get)
+3. **If `exists=true`** - Present the `content` field directly (no agent needed). Suggest promote if valid, refresh if expired.
+4. **If `exists=false`** - Invoke `deep-researcher` agent for EXA research, which caches via `cache_manager.py put`
 5. **Report findings** - Include cache status and promote suggestion
 
 ## Cache Architecture
@@ -48,12 +48,12 @@ Research entries are automatically associated with the current git repository wh
 
 ## Scripts
 
-All cache operations use Python scripts in `scripts/`:
+All cache operations use Python scripts in `${CLAUDE_SKILL_DIR}/scripts/`:
 
 | Script | Purpose |
 |--------|---------|
 | `research_utils.py` | Shared utilities (imported by all scripts) |
-| `cache_manager.py` | Cache CRUD: get, put, check, list, delete |
+| `cache_manager.py` | Cache CRUD: fetch, get, put, check, list, delete |
 | `promote.py` | Tier 1 → Tier 2 promotion with team notes |
 | `index_generator.py` | README index generation for both tiers |
 

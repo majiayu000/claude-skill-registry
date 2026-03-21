@@ -159,7 +159,7 @@ Then use `AskUserQuestion` — header "Deep mode", question "Proceed with deep m
 
 If the user did not invoke with `deep`, skip this step.
 
-If the user selects **Normal mode**, continue with the standard single-pass flow. Record the user's choice as a `deep-mode` flag for subsequent steps. If deep mode is confirmed, initialize `iteration-count` to 1, `total-fixed` to 0, `total-reverted` to 0, and `accumulated-findings` to an empty list.
+If the user selects **Normal mode**, continue with the standard single-pass flow. Record the user's choice as a `deep-mode` flag for subsequent steps. If deep mode is confirmed, initialize `iteration-count` to 1, `total-fixed` to 0, `total-reverted` to 0, and `accumulated-findings` to an empty list. Each entry in `accumulated-findings` tracks: **file** (with line), **category** (Bug, Security, Guideline Violation, Code Quality, Test Coverage Gap), **guideline** (the specific project rule, or "General: bug/security"), **summary** (one-sentence description of the issue), **fix description** (brief description of the fix applied or attempted), **iteration** (which iteration discovered it), and **status** (updated through apply/test phases).
 
 ## Step 4: Parallel Multi-Agent Review (up to 6 agents)
 
@@ -266,7 +266,7 @@ Maximum **15 findings** across all sources, prioritized by severity then confide
 
 ### Deep mode accumulation
 
-**Deep mode:** Instead of presenting the output format below, append this iteration's validated findings to `accumulated-findings`. Deduplicate against previous iterations: if a finding matches an existing entry by file + line range + category, skip it (unless the existing entry is marked "(reverted — test failure)", in which case annotate the new entry as "(persistent — fix failed)"). Then proceed directly to Step 8.
+**Deep mode:** Instead of presenting the output format below, append this iteration's validated findings to `accumulated-findings`. For each appended finding, record the current `iteration-count` as the finding's iteration number, and preserve the agent's guideline citation and issue description as the finding's guideline and summary fields. Deduplicate against previous iterations: if a finding matches an existing entry by file + line range + category, skip it if the existing entry is marked "(fixed)". If the existing entry is marked "(persistent — fix failed)", annotate the new entry as "(persistent — fix failed)". If the existing entry is marked "(reverted — test failure)", keep the new entry as "(reverted — attempt 2)" so Step 8 retries the fix once more; only promote to "(persistent — fix failed)" if it is reverted again. Then proceed directly to Step 8.
 
 **Normal mode:** Present findings using the output format below, then proceed to Step 7.
 
@@ -356,7 +356,7 @@ Apply all validated findings from this iteration using Edit or MultiEdit, skippi
 Run the project's test command (from `.claude/CLAUDE.md`). Follow the verification protocol from `$CLAUDE_PLUGIN_ROOT/skills/init/references/verification-protocol.md` — run tests fresh, read complete output, report actual results with evidence.
 
 - **If tests pass** → all fixes are valid. Annotate each applied finding as "(fixed)" in `accumulated-findings`. Add the count of applied fixes to `total-fixed`.
-- **If tests fail** → revert all changes from this iteration, then re-apply fixes one at a time with a test run after each. Keep fixes that pass, skip those that fail, and record each failure as "(reverted — test failure)" in `accumulated-findings`. Add kept fixes to `total-fixed` and failed fixes to `total-reverted`.
+- **If tests fail** → revert all changes from this iteration, then re-apply fixes one at a time with a test run after each. Keep fixes that pass, skip those that fail. For each failed fix: if the finding is already annotated "(reverted — attempt 2)", promote it to "(persistent — fix failed)"; otherwise record it as "(reverted — test failure)". Add kept fixes to `total-fixed` and failed fixes to `total-reverted`.
 
 ### Termination check
 
@@ -365,19 +365,68 @@ After applying fixes and running tests, check termination conditions in order:
 1. **All fixes this iteration were reverted** due to test failures → stop to prevent a loop of failed attempts. Report: "Deep mode stopped — all fixes in iteration [N] caused test failures."
 2. **No fixes were applied** (all findings lacked actionable code edits) → stop. Report: "Deep mode stopped — remaining findings require manual review."
 3. **`iteration-count` equals 5** → cap reached. Report: "Deep mode reached the iteration cap (5). Remaining findings may exist — re-run `/optimus:code-review deep` in a fresh conversation to continue."
-4. **Otherwise** → present an iteration progress summary: "Iteration [N] of up to 5 — [total-fixed] issues fixed so far, [total-reverted] reverted. Starting next pass..." Increment `iteration-count` and **return to Step 4** for the next analysis pass. When returning to Step 4, re-gather the current diff (the codebase has changed due to applied fixes) and focus agents on files that had findings in any previous iteration plus any newly modified files.
+4. **Otherwise** → continue to the next pass (iteration report and loop-back below).
+
+**For all four conditions above**, present the iteration report immediately after the termination/continuation message. This report is informational and non-blocking — no user prompt follows:
+
+```
+#### Iteration [N] — Report
+
+| # | File | What Changed | Reason | Guideline / Category | Status |
+|---|------|-------------|--------|---------------------|--------|
+[one row per finding attempted in THIS iteration from accumulated-findings where iteration == current]
+```
+
+Column definitions:
+- **#** — Sequential number within this iteration
+- **File** — `file:line`
+- **What Changed** — Brief description of the fix applied or attempted
+- **Reason** — Why the change was needed (the issue/problem)
+- **Guideline / Category** — The specific project guideline violated (or "General: bug/security" for non-guideline findings), plus the category (Bug, Security, Guideline Violation, Code Quality, Test Coverage Gap)
+- **Status** — `fixed`, `reverted — test failure`, `reverted — attempt 2`, or `persistent — fix failed`
+
+For condition 4 (continue), after presenting the iteration report also show the progress summary: "Iteration [N] of up to 5 — [total-fixed] findings fixed so far, [total-reverted] reverted. Starting next pass..." Then increment `iteration-count` and **return to Step 4** for the next analysis pass. When returning to Step 4, re-gather the current diff (the codebase has changed due to applied fixes) and focus agents on files that had findings in any previous iteration plus any newly modified files.
 
 ### Consolidated report
 
-After the loop ends (by convergence, termination, or cap), present the final report using the same output format from Step 6, but covering ALL `accumulated-findings` across all iterations. Add these fields to the Summary block:
+After the loop ends (by convergence, termination, or cap), present the consolidated report in two parts.
+
+**Part 1 — Cumulative summary table:**
 
 ```
-- Iterations: [N]
-- Total fixed: [N]
-- Total reverted (test failures): [N]
+## Code Review — Deep Mode Cumulative Report
+
+**Summary:**
+- Total iterations: [N]
+- Total findings fixed: [N]
+- Total findings reverted (test failures): [N]
+- Total findings persistent (fix failed): [N]
+- Final test status: pass / fail / not available
+
+**All Changes:**
+
+| # | Iter | File | What Changed | Reason | Guideline / Category | Status |
+|---|------|------|-------------|--------|---------------------|--------|
+[one row per finding from accumulated-findings, across all iterations, ordered by iteration then sequence]
 ```
 
-Mark each finding's status: "(fixed)", "(reverted — test failure)", or "(persistent — fix failed)".
+Column definitions match the per-iteration report table, plus:
+- **Iter** — Which iteration discovered/attempted this finding
+
+The summary statistics provide a quick overview; the detailed table provides full auditability of every change attempted across all iterations.
+
+**Part 2 — Detailed findings:**
+
+After the cumulative table, present ALL `accumulated-findings` using the same detailed output format from Step 6 (with Summary block, Change Summary, and individual Findings with code snippets). Add these fields to the Summary block:
+
+```
+- Total iterations: [N]
+- Total findings fixed: [N]
+- Total findings reverted (test failures): [N]
+- Total findings persistent (fix failed): [N]
+```
+
+Mark each finding's status: "(fixed)", "(reverted — test failure)", "(reverted — attempt 2)", or "(persistent — fix failed)".
 
 ## Important
 

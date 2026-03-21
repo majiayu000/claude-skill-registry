@@ -1,6 +1,7 @@
 ---
 name: nw-command-design-patterns
 description: Best practices for command definition files - size targets, declarative template, anti-patterns, and canonical examples based on research evidence
+user-invocable: false
 disable-model-invocation: true
 ---
 
@@ -223,4 +224,4 @@ When optimizing command files for token efficiency:
 
 **Compression evidence**: Pipe-delimited compression achieves 15-30% token reduction on prose-heavy files. Code-heavy files (PBT skills, code examples) yield <5%. Average across framework: ~7.4% overall.
 
-**Orchestrator skill loading section**: Commands dispatching sub-agents must include `SKILL_LOADING` in the Task prompt reminding the agent to read its skills at `~/.claude/skills/nw/{agent-name}/`. Without this, sub-agents operate without domain knowledge (the `skills:` frontmatter is decorative).
+**Orchestrator skill loading section**: Commands dispatching sub-agents must include `SKILL_LOADING` in the Task prompt reminding the agent to read its skills at `~/.claude/skills/nw-{skill-name}/SKILL.md`. Without this, sub-agents operate without domain knowledge (the `skills:` frontmatter is decorative).

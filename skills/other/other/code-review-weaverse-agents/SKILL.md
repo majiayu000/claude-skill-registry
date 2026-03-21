@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: "[Skill] Perform thorough code reviews focusing on unused code, duplications, coding patterns, bugs, and optimizations. Use when user wants code reviewed or audited. Read-only - outputs findings without making changes."
+description: "Perform thorough code reviews focusing on unused code, duplications, coding patterns, bugs, and optimizations. Use when user wants code reviewed or audited. Read-only - outputs findings without making changes."
 argument-hint: [file, directory, or scope]
 allowed-tools: Read, Grep, Glob
 ---

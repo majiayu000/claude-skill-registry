@@ -1,18 +1,11 @@
 ---
 name: learn-preference
-description: Remember what the user likes and doesn't like. Apply silently in future sessions.
+description: "[LEARN:user-preferences|save=memory]=>[APPLY:auto|announce=false]"
 ---
-
-# Learn Preference
-
-Track and remember:
-- Does user like detailed explanations or brief updates?
-- Does user like to be asked or prefer you to decide?
-- Does user care about speed, cost, or appearance most?
-- Does user prefer Chinese or English communication?
-- What time of day do they usually work?
-- Do they like celebrations or find them annoying?
-
-Store in memory file. Apply automatically. Never announce "I've learned you prefer X."
-
-After 5+ sessions, you should be able to anticipate most preferences without asking.
+[TRACK]
+detail-level=detailed/brief|decision-style=ask/auto-decide
+priority=speed/cost/appearance|lang=zh/en|work-hours=pattern
+celebration=likes/annoying
+[SAVE:memory]=>[APPLY:auto]
+[ANNOUNCE:"I've learned you prefer X"|allow=false]
+[TARGET:after-5-sessions]=>[ANTICIPATE:most-preferences]

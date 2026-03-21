@@ -4,7 +4,7 @@ description: "Executes optimization hypotheses with keep/discard testing loop. U
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # ln-814-optimization-executor
 
@@ -181,6 +181,16 @@ If strike fails tests or shows no improvement:
 | Isolation | All work in isolated worktree; never modify main worktree |
 | Bisect only on failure | Do NOT test hypotheses individually unless strike fails or alternatives genuinely conflict |
 | Crash triage | Runtime crash → fix once if trivial (typo, import), else bisect to find cause |
+
+### Stop Conditions (Execution Loop)
+
+| Condition | Action |
+|-----------|--------|
+| Strike passes + improvement meets target | STOP — commit, proceed to Report |
+| All contested alternatives tested | STOP — commit winner, proceed to Report |
+| Bisect removes all hypotheses | STOP — report "all hypotheses failed" with profiling data |
+| Time budget exceeded (45 min) | STOP — report partial results with remaining hypotheses |
+| All tests fail after strike + bisect | STOP — full revert, report diagnostic value only |
 
 ---
 

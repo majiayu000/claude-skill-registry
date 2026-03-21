@@ -4,7 +4,7 @@ description: "Auto-fixes low-risk tech debt (unused imports, dead code, commente
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Tech Debt Cleaner (L3 Worker)
 
@@ -53,7 +53,7 @@ Automated cleanup of safe, low-risk tech debt findings from codebase audits.
 - **Pipeline mode (ln-510):** findings from ln-511 code quality output (passed via coordinator context)
 - **Standalone mode:** `docs/project/codebase_audit.md` (ln-620 output)
 
-**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` — prefer hashline for code files.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` — ALWAYS use hex-line MCP for code files when available. No fallback to standard Read/Edit unless hex-line is down.
 
 ## Workflow
 

@@ -26,6 +26,14 @@ The skill expects one or more of these in the project directory:
 
 If none exist, ask the user to describe the paper's contribution in 3-5 sentences.
 
+## Orchestra-Guided Writing Overlay
+
+Keep the existing `insleep` workflow and outputs, but use the shared references below to improve the quality of the story and outline.
+
+- Read `../shared-references/writing-principles.md` when framing the one-sentence contribution, Abstract, Introduction, Related Work, or hero figure.
+- Read `../shared-references/venue-checklists.md` before freezing the outline for a specific venue.
+- Only load these references when needed; do not paste their full contents into the working draft.
+
 ## Workflow
 
 ### Step 1: Extract Claims and Evidence
@@ -33,9 +41,10 @@ If none exist, ask the user to describe the paper's contribution in 3-5 sentence
 Read all available narrative documents and extract:
 
 1. **Core claims** (3-5 main contributions)
-2. **Evidence** for each claim (which experiments, which metrics, which figures)
-3. **Known weaknesses** (from reviewer feedback)
-4. **Suggested framing** (from review conclusions)
+2. **One-sentence contribution** (the single sentence that best states what the paper contributes)
+3. **Evidence** for each claim (which experiments, which metrics, which figures)
+4. **Known weaknesses** (from reviewer feedback)
+5. **Suggested framing** (from review conclusions)
 
 Build a **Claims-Evidence Matrix**:
 
@@ -49,6 +58,12 @@ Build a **Claims-Evidence Matrix**:
 ### Step 2: Determine Paper Type and Structure
 
 Based on TARGET_VENUE and paper content, classify and select structure.
+
+Before committing to a structure, apply the narrative principle from `../shared-references/writing-principles.md`:
+
+- The paper should tell one coherent technical story.
+- By the end of the Introduction, the outline should make the **What**, **Why**, and **So What** explicit.
+- Front-load the most important material: title, abstract, introduction, and hero figure. Reviewers often form a judgment before reading the full method.
 
 **IMPORTANT**: The section count is FLEXIBLE (5-8 sections). Choose what fits the content best. The templates below are starting points, not rigid constraints.
 
@@ -96,26 +111,32 @@ For each section, specify:
 
 ```markdown
 ### §0 Abstract
-- **One-sentence problem**: [what gap this paper addresses]
-- **Approach**: [what we do, in one sentence]
-- **Key result**: [most compelling quantitative finding]
-- **Implication**: [why it matters]
+- **What we achieve**: [the paper's specific contribution, not field-level background]
+- **Why it matters / is hard**: [why this problem is important and non-trivial]
+- **How we do it**: [approach in one sentence]
+- **Evidence**: [what supports the claim]
+- **Most remarkable result**: [strongest quantitative or theoretical result]
 - **Estimated length**: 150-250 words
 - **Self-contained check**: can a reader understand this without the paper?
 
 ### §1 Introduction
 - **Opening hook**: [1-2 sentences that motivate the problem]
-- **Gap**: [what's missing in prior work]
+- **Gap / challenge**: [what's missing in prior work, and why prior work is insufficient]
+- **One-sentence contribution**: [the main takeaway of the paper]
+- **Approach overview**: [what we do differently]
 - **Key questions**: [the research questions this paper answers]
-- **Contributions**: [numbered list, matching Claims-Evidence Matrix]
+- **Contributions**: [2-4 numbered bullets, specific and falsifiable, matching Claims-Evidence Matrix]
+- **Results preview**: [the strongest result or comparison to surface early]
 - **Hero figure**: [describe what Figure 1 should show — MUST include clear comparison if applicable]
 - **Estimated length**: 1.5 pages
 - **Key citations**: [3-5 papers to cite here]
+- **Front-loading check**: [would a skim reader know the main claim before reaching the method?]
 
 ### §2 Related Work
 - **Subtopics**: [2-4 categories of related work]
 - **Positioning**: [how this paper differs from each category]
 - **Minimum length**: 1 full page (at least 3-4 paragraphs with substantive synthesis)
+- **Organization rule**: organize by methodological family / assumption / question, not paper-by-paper
 - **Must NOT be just a list** — synthesize, compare, and position
 
 ### §3 Method / Setup / Preliminaries
@@ -160,6 +181,7 @@ List every figure and table:
 - Which methods are being compared
 - What the visual difference should demonstrate
 - Caption draft that clearly states the comparison
+- Why the figure helps a skim reader understand the paper before reading the full method
 
 ### Step 5: Citation Scaffolding
 
@@ -196,6 +218,7 @@ mcp__codex__codex:
     3. Missing experiments or analysis
     4. Positioning relative to prior work
     5. Page budget feasibility (MAX_PAGES = main body to Conclusion end, excluding refs/appendix)
+    6. Front-matter strength — are the abstract, introduction, and hero figure plan strong enough for skim-reading reviewers?
 
     For each weakness, suggest the MINIMUM fix.
     Be specific and actionable — "add X" not "consider more experiments".
@@ -211,6 +234,7 @@ Save the final outline to `PAPER_PLAN.md` in the project root:
 # Paper Plan
 
 **Title**: [working title]
+**One-sentence contribution**: [single-sentence statement of the paper's core takeaway]
 **Venue**: [target venue]
 **Type**: [empirical/theory/method]
 **Date**: [today]
@@ -239,18 +263,17 @@ Save the final outline to `PAPER_PLAN.md` in the project root:
 ```
 
 ## Key Rules
-
 - **Large file handling**: If the Write tool fails due to file size, immediately retry using Bash (`cat << 'EOF' > file`) to write in chunks. Do NOT ask the user for permission — just do it silently.
-
 - **Do NOT generate author information** — leave author block as placeholder or anonymous
 - **Be honest about evidence gaps** — mark claims as "needs experiment" rather than overclaiming
 - **Page budget is hard** — if content exceeds MAX_PAGES, suggest what to move to appendix
 - **MAX_PAGES counts main body only** — from first page to end of Conclusion. References and appendix are NOT counted.
 - **Venue-specific norms** — all three venues (ICLR/NeurIPS/ICML) use `natbib` (`\citep`/`\citet`)
 - **Claims-Evidence Matrix is the backbone** — every claim must map to evidence, every experiment must support a claim
+- **Front-load the story** — the outline should make the contribution clear in the title, abstract, introduction, and hero figure before the reader reaches the full method
 - **Figures need detailed descriptions** — especially the hero figure, which must clearly specify comparisons and visual expectations
 - **Section count is flexible** — 5-8 sections depending on paper type. Don't force content into a rigid 5-section template.
 
 ## Acknowledgements
 
-Outline methodology inspired by [Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills) (claim-evidence mapping), [claude-scholar](https://github.com/Galaxy-Dawn/claude-scholar) (citation verification), and [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) (claim verification protocol).
+Outline methodology inspired by [Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills) (claim-evidence mapping), [claude-scholar](https://github.com/Galaxy-Dawn/claude-scholar) (citation verification), and [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) (claim verification protocol). The writing-framing overlay in this hybrid pack is adapted from Orchestra Research's paper-writing guidance.

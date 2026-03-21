@@ -1,30 +1,29 @@
 ---
 name: app-docs
-description: "Generate complete user documentation for a web app with screenshots. Browses the app via browser automation, screenshots every screen, and produces a structured user guide with step-by-step instructions. Supports quick (key screens only), standard (all pages), and thorough (all states, mobile, every workflow) depths. Triggers: 'document the app', 'user guide', 'app documentation', 'screenshot docs', 'generate user docs', 'help docs', 'how-to guide'."
+description: "Generate complete user documentation for a web app with screenshots. Browses the app via browser automation, screenshots every screen, and produces a structured user guide with step-by-step instructions, annotated screenshots, workflow diagrams, and reference tables. Supports quick (key screens), standard (all pages), thorough (every state and flow), and exhaustive (publishable documentation suite). Triggers: 'document the app', 'user guide', 'app documentation', 'screenshot docs', 'generate user docs', 'help docs', 'how-to guide', 'write the docs'."
 compatibility: claude-code-only
 ---
 
 # App Documentation Generator
 
-Browse a running web app, screenshot every screen, and produce a complete user guide. The documentation is generated from the **actual app**, not from specs or assumptions.
+Browse a running web app, screenshot every screen, and produce documentation good enough to publish. Not a screenshot dump — a structured guide that teaches someone how to use the app.
 
 ## Browser Tool Detection
 
-Before starting, detect available browser tools:
+Same as ux-audit — Chrome MCP, Playwright MCP, or playwright-cli.
 
-1. **Chrome MCP** (`mcp__claude-in-chrome__*`) — preferred for authenticated apps
-2. **Playwright MCP** (`mcp__plugin_playwright_playwright__*`) — for public apps
-3. **playwright-cli** — for scripted flows
+## URL Resolution
 
-If none are available, inform the user and suggest installing Chrome MCP or Playwright.
+Same as ux-audit — prefer deployed/live URL over localhost.
 
 ## Depth Levels
 
-| Depth | Screenshots | Coverage | Duration |
-|-------|------------|----------|----------|
-| **quick** | ~10 | Main 3-5 screens, happy path | 10-15 min |
-| **standard** | ~30 | All pages, primary workflows | 30-60 min |
-| **thorough** | ~80+ | All pages, all states, mobile views, every CRUD flow | 1-3 hours |
+| Depth | Screenshots | What it produces | Duration |
+|-------|------------|-----------------|----------|
+| **quick** | ~10 | Single-page quick-start guide. Key screens, happy path only. | 10-15 min |
+| **standard** | ~30 | Full user guide. All pages, primary workflows, reference tables. | 30-60 min |
+| **thorough** | ~80+ | Comprehensive guide. All states, mobile views, every CRUD flow, troubleshooting. | 1-3 hours |
+| **exhaustive** | ~150+ | Publishable documentation suite. Everything in thorough plus: getting started tutorial, feature-by-feature deep dives, admin guide, keyboard shortcut reference, FAQ, and HTML version. | 3-6 hours |
 
 Default: **standard**
 
@@ -33,20 +32,21 @@ Default: **standard**
 ### 1. Get App Details
 
 Ask the user:
-- **App URL** (required)
+- **App URL** (required — or auto-detect from wrangler.jsonc / running dev server)
 - **App name** (for the guide title)
-- **Auth** — do they need to log in? Chrome MCP uses their session; Playwright needs credentials
-- **Depth** — quick, standard, or thorough
-- **Audience** — who will read this guide? (end users, admins, new team members)
+- **Auth** — Chrome MCP uses their session; Playwright needs credentials
+- **Depth** — quick, standard, thorough, or exhaustive
+- **Audience** — who reads this? (end users, admins, new team members, clients)
 
 ### 2. Discover All Routes
 
-Navigate the app and build a page inventory:
+Navigate the app and build a complete page inventory:
 - Read the sidebar/navigation menu
-- Click through all top-level items
-- Note sub-pages and nested navigation
-- Check for settings, profile, admin areas
+- Click through all top-level items and sub-items
+- Note sub-pages, tabs within pages, and nested navigation
+- Check for settings, profile, admin areas, help pages
 - Record the URL and purpose of each page
+- Note which pages have interactive elements (forms, buttons, filters)
 
 Create a task list to track documentation progress.
 
@@ -54,111 +54,230 @@ Create a task list to track documentation progress.
 
 For each page in the inventory:
 
-#### a. Navigate and Orient
+#### a. Navigate and Prepare
 - Navigate to the page
 - Wait for data to load (no skeleton/spinner in screenshot)
 - Resize browser to 1280x720 for consistent screenshots
+- Make sure the page has realistic data — not "Test Client" or empty tables
 
-#### b. Screenshot Default State
-- Take a clean screenshot showing the page with realistic data
-- Save to `docs/screenshots/` with descriptive names: `01-dashboard.png`, `02-contacts-list.png`
+#### b. Screenshot the Default State
+- Take a clean screenshot showing the page populated with data
+- Save to `docs/screenshots/` with descriptive names
 
-#### c. Describe the Page
-Write a section covering:
-- **What this page is for** — one sentence
-- **What the user can see** — key data, status indicators, navigation elements
-- **What the user can do** — actions available (buttons, forms, filters)
+#### c. Write the Page Section
+
+For each page, write:
+
+```markdown
+## [Page Name]
+
+[One sentence: what this page is for and when you'd use it]
+
+![Page name](screenshots/NN-page-name.png)
+
+### What You'll See
+[Describe the key elements: sidebar shows X, main area shows Y, toolbar has Z]
+
+### What You Can Do
+[List the actions available, each as a brief description]
+
+### How To: [Primary Action]
+1. [Step with screenshot reference]
+2. [Step]
+3. [Step — screenshot the result]
+
+> **Tip:** [Helpful shortcut or non-obvious feature]
+```
 
 #### d. Document Key Workflows
-For interactive pages, document step-by-step:
-1. Screenshot the starting state
-2. Perform the action (click button, fill form)
-3. Screenshot each significant step
-4. Screenshot the result/confirmation
-5. Write numbered steps matching the screenshots
+
+For interactive pages, document step-by-step with screenshots at each significant step:
+
+```markdown
+### How To: Add a New Client
+
+1. Click the **"Add Client"** button in the top right
+   ![Add button location](screenshots/12-clients-add-button.png)
+
+2. Fill in the required fields — Name and Email are required, everything else is optional
+   ![New client form](screenshots/13-clients-new-form.png)
+
+3. Click **"Save"** — you'll be taken to the new client's detail page
+   ![Client saved confirmation](screenshots/14-clients-saved.png)
+
+> **Tip:** You can also press **Cmd+N** from anywhere to create a new client.
+```
 
 #### e. Depth-Specific Extras
 
-| Extra | quick | standard | thorough |
-|-------|-------|----------|----------|
-| Empty states | Skip | Note if present | Screenshot and document |
-| Error states | Skip | Note if present | Trigger and screenshot |
-| Dark mode | Skip | Skip | Screenshot every page |
-| Mobile view (375px) | Skip | Skip | Screenshot every page |
-| All CRUD operations | Skip | Primary only | Every operation with screenshots |
-| Settings/config pages | Skip | Document | Document all options |
+| Extra | quick | standard | thorough | exhaustive |
+|-------|-------|----------|----------|-----------|
+| Empty states | Skip | Note | Screenshot + document | Screenshot + suggest improvements |
+| Error states | Skip | Note | Trigger + screenshot | Every validation error documented |
+| Dark mode | Skip | Skip | Screenshot key pages | Screenshot every page |
+| Mobile (375px) | Skip | Skip | Screenshot key pages | Screenshot every page |
+| All CRUD | Skip | Primary only | Every operation | Every operation + edge cases |
+| Settings/config | Skip | List options | Document each | Document each with examples |
+| Keyboard shortcuts | Skip | List if visible | Full reference table | Dedicated section |
+| Search/filters | Skip | Mention | Document each filter | Document every combination |
+| Permissions/roles | Skip | Skip | Note differences | Separate section per role |
+| API/integrations | Skip | Skip | Mention if present | Document endpoints + examples |
 
-### 4. Organise the Guide
+### 4. Write Supporting Sections
 
-Group pages into logical sections. Common groupings:
+Beyond per-page documentation:
 
+**Getting Started** (all depths):
 ```markdown
-# [App Name] User Guide
-
 ## Getting Started
-- Accessing the app (URL, login)
-- Dashboard overview
-- Navigation guide
 
-## [Core Feature 1: e.g. Contact Management]
-### Viewing contacts
-### Adding a new contact
-### Editing contact details
-### Deleting a contact
-### Searching and filtering
+### Accessing [App Name]
+- URL: [production URL]
+- Supported browsers: Chrome, Firefox, Safari, Edge
+- Mobile: [responsive / PWA / not supported]
 
-## [Core Feature 2: e.g. Reports]
-### Viewing reports
-### Creating a report
-### Exporting data
+### Logging In
+[Screenshot of login page + steps]
 
-## [Core Feature 3: e.g. Settings]
-### Profile settings
-### Team management
-### Preferences
-
-## Tips and Shortcuts
-- Keyboard shortcuts (if any)
-- Bulk actions
-- Filters and search tips
-
-## Troubleshooting
-- Common issues noticed during documentation
-- Error messages and what they mean
+### Your First 5 Minutes
+1. [First thing to do after logging in]
+2. [Second thing — the quick win]
+3. [Third thing — explore the main feature]
 ```
 
-### 5. Write the Output
+**Navigation Guide** (standard+):
+```markdown
+## Navigation
 
-**Screenshots**: `docs/screenshots/NN-description.png` (numbered for order)
+### Sidebar
+[Screenshot with annotations describing each section]
 
-**User guide**: `docs/USER_GUIDE.md` with:
-- Relative image paths: `![Dashboard](screenshots/01-dashboard.png)`
-- Step-by-step numbered lists for workflows
-- Tables for reference data (keyboard shortcuts, settings options)
-- Admonitions for important notes: `> **Note:** ...`
+### Quick Actions
+- **Cmd+K**: Quick switcher — jump to any page or record
+- **Cmd+N**: Create new [item]
+[Other shortcuts]
 
-**Optional HTML version**: If the user wants a hosted version, generate a single HTML file with embedded images (base64) or relative image paths, styled with Tailwind CDN.
+### Breadcrumbs / Back Navigation
+[How to navigate back, where breadcrumbs appear]
+```
 
-## Screenshot Conventions
+**Keyboard Shortcuts Reference** (thorough+):
+```markdown
+## Keyboard Shortcuts
 
-- **Resolution**: 1280x720 (desktop), 375x812 (mobile if thorough)
-- **Naming**: `NN-section-description.png` (e.g. `01-dashboard-overview.png`, `05-contacts-add-form.png`)
-- **Content**: Wait for data to load. No spinners, no skeleton screens in final shots.
-- **Annotations**: If a screenshot needs callouts, describe them in the markdown text below the image rather than editing the image
-- **Save location**: `docs/screenshots/` in the project root
+| Shortcut | Action |
+|----------|--------|
+| Cmd+K | Quick switcher |
+| Cmd+N | New [item] |
+| Cmd+S | Save |
+| Escape | Close dialog / cancel |
+```
+
+**Troubleshooting** (thorough+):
+```markdown
+## Troubleshooting
+
+### [Error message or symptom]
+**What it means**: [explanation]
+**How to fix**: [steps]
+
+### Common Questions
+[FAQ generated from what would confuse a new user — based on the documentation process itself]
+```
+
+**Admin Guide** (exhaustive):
+```markdown
+## Admin Guide
+
+### User Management
+[How to invite users, set roles, remove access]
+
+### Settings Reference
+| Setting | What it does | Default | Recommendation |
+[Every setting documented]
+
+### Data Management
+[Export, import, backup, delete account]
+```
+
+### 5. Output Formats
+
+**Markdown** (default): `docs/USER_GUIDE.md`
+- Relative image paths: `![alt](screenshots/NN-description.png)`
+- GitHub-flavoured markdown — renders on GitHub, in VS Code, in Obsidian
+
+**HTML** (exhaustive depth, or on request): `docs/user-guide.html`
+- Single self-contained HTML file with Tailwind CDN
+- Screenshots as relative paths (not base64 — keeps file size sane)
+- Table of contents sidebar with smooth scroll
+- Print-friendly CSS (`@media print`)
+- Dark mode support
+
+**Screenshot naming**: `docs/screenshots/NN-section-description.png`
+- Numbers for sort order: `01-`, `02-`, `03-`
+- Section prefix: `01-dashboard-`, `05-clients-`, `12-settings-`
+- Descriptive suffix: `-overview.png`, `-add-form.png`, `-saved-confirmation.png`
+
+### 6. Mockups and Diagrams
+
+Mix screenshots with diagrams where it helps understanding:
+
+**Workflow diagrams** (text-based, no external tools):
+```markdown
+### How a Client Moves Through the System
+
+```
+New Enquiry → Create Client → Add Policy → Send Renewal → Archive
+     ↓              ↓              ↓             ↓            ↓
+  [Email]    [Client Page]   [Policy Page]  [Email Outbox]  [Archive]
+```
+```
+
+**Annotated screenshots**: When a screenshot needs callouts, describe them in the text:
+```markdown
+![Dashboard](screenshots/01-dashboard.png)
+
+The dashboard shows:
+- **A** (top left): Your client count and active policies
+- **B** (centre): Items needing attention today
+- **C** (right): Recent activity feed
+```
+
+**UI element reference**: For complex pages, a labelled diagram helps:
+```markdown
+### Editor Layout
+
+| Area | What it does |
+|------|-------------|
+| Left panel | Folder tree — organise your notes |
+| Centre panel | Note list — shows notes in the selected folder |
+| Right panel | Editor — write and preview your note |
+| Top bar | Navigation, search (Cmd+K), and view toggles |
+```
+
+## Screenshot Quality
+
+- **Resolution**: 1280x720 (desktop), 375x812 (mobile)
+- **Data**: Realistic data. Not "Test" or "Lorem ipsum". Use the app as it would actually be used.
+- **Timing**: Wait for data to load. No spinners, no skeleton screens in final shots.
+- **State**: Show the page in a useful state — with data populated, relevant section expanded, key feature visible
+- **Consistency**: Same viewport size, same zoom level, same browser throughout
+- **Dark mode**: If documenting dark mode, switch BEFORE taking screenshots — don't mix modes in one section
 
 ## Autonomy Rules
 
-- **Just do it**: Navigate pages, take screenshots, read page content
-- **Brief confirmation**: Before writing docs to files
-- **Ask first**: Before submitting forms, before clicking delete, before entering credentials
-- **Thorough mode**: Same as above but skip confirmation for writing files and filling forms with test data
+- **Just do it**: Navigate pages, take screenshots, read page content, write documentation
+- **Brief confirmation**: Before writing large doc files
+- **Ask first**: Before submitting forms with real data, before clicking delete
+- **Thorough/exhaustive mode**: Skip confirmation for writing files and filling forms with test data
 
-## Quality Rules
+## Quality Bar
 
-1. **Document what the app actually does**, not what you think it should do
-2. **Every screenshot must have context** — don't just dump images without explanation
-3. **Write for the audience** — admin docs are different from end-user docs
-4. **Number screenshots chronologically** — so they make sense when viewed in a file browser
-5. **Note gaps** — if a feature seems incomplete or confusing, note it (this is feedback for the developer)
-6. **Keep steps atomic** — one action per numbered step
+The documentation should be good enough that:
+
+1. **A new user can complete any task** by following the guide without asking for help
+2. **Every screenshot has context** — what am I looking at? What should I do?
+3. **Steps are atomic** — one action per numbered step, never "click X and then fill in Y and Z"
+4. **Tips reveal hidden value** — shortcuts, power features, things the user wouldn't discover on their own
+5. **Troubleshooting is real** — based on actual confusing moments encountered during documentation, not hypothetical FAQs
+6. **It's scannable** — headings, screenshots, tables, tips. Nobody reads documentation top-to-bottom. They search for what they need.

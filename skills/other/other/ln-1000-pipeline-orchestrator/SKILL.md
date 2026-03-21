@@ -1,10 +1,11 @@
 ---
 name: ln-1000-pipeline-orchestrator
 description: "Drives a Story through full pipeline (tasks, validation, execution, quality). Use when executing a Story end-to-end from kanban board."
+disable-model-invocation: true
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Pipeline Orchestrator
 
@@ -322,6 +323,15 @@ WHILE quality_cycles < 2:
 
 story_state = story_state OR "DONE"    # default if loop exits normally
 ```
+
+### Stop Conditions (Quality Cycle)
+
+| Condition | Action |
+|-----------|--------|
+| All tasks Done + Story = Done | STOP — Story completed successfully |
+| `quality_cycles >= 2` | STOP — ESCALATE: "Quality gate failed after max cycles. Manual review needed." |
+| Validation retry fails (NO-GO after retry) | STOP — ESCALATE: ask user for direction |
+| Stage 2 precondition fails | STOP — ESCALATE: "Stage 2 incomplete, manual intervention needed" |
 
 ### Phase 5: Cleanup & Report
 

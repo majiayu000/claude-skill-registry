@@ -27,6 +27,16 @@ Draft a LaTeX paper based on: **$ARGUMENTS**
 
 If no PAPER_PLAN.md exists, ask the user to run `/paper-plan` first or provide a brief outline.
 
+## Orchestra-Guided Writing Overlay
+
+Keep the existing `insleep` workflow, file layout, and defaults. Use the shared references below only when they improve writing quality:
+
+- Read `../shared-references/writing-principles.md` before drafting the Abstract, Introduction, Related Work, or when prose feels generic.
+- Read `../shared-references/venue-checklists.md` during the final write-up and submission-readiness pass.
+- Read `../shared-references/citation-discipline.md` only when the built-in DBLP/CrossRef workflow is insufficient.
+
+These references are support material, not extra workflow phases.
+
 ## Templates
 
 ### Venue-Specific Setup
@@ -122,11 +132,14 @@ Process sections in order. For each section:
 4. **Insert figures/tables** — use snippets from `figures/latex_includes.tex`
 5. **Add citations** — use `\citep{}` / `\citet{}` (all three venues use `natbib`)
 
+Before drafting the front matter, re-read the one-sentence contribution from `PAPER_PLAN.md`. The Abstract and Introduction should make that takeaway obvious before the reader reaches the full method.
+
 #### Section-Specific Guidelines
 
 **§0 Abstract:**
+- Use the 5-part flow from `../shared-references/writing-principles.md`: what, why hard, how, evidence, strongest result
 - Must be self-contained (understandable without reading the paper)
-- Structure: problem → approach → key result → implication
+- Start with the paper's specific contribution, not generic field-level background
 - Include one concrete quantitative result
 - 150-250 words (check venue limit)
 - No citations, no undefined acronyms
@@ -135,14 +148,18 @@ Process sections in order. For each section:
 **§1 Introduction:**
 - Open with a compelling hook (1-2 sentences, problem motivation)
 - State the gap clearly ("However, ...")
-- List contributions as a numbered or bulleted list
+- Give a brief approach overview before the reader gets lost in details
+- List 2-4 specific, falsifiable contributions as a numbered or bulleted list
+- Preview the strongest result early instead of saving it for the experiments section
 - End with a brief roadmap ("The rest of this paper is organized as...")
 - Include the main result figure if space allows
-- Target: 1.5 pages
+- Target: 1-1.5 pages
+- Methods should begin by page 2-3 at the latest
 
 **§2 Related Work:**
 - **MINIMUM 1 full page** (3-4 substantive paragraphs). Short related work sections are a common reviewer complaint.
 - Organize by category using `\paragraph{Category Name.}`
+- Organize methodologically, by assumption class, or by research question; do not write paper-by-paper mini-summaries
 - Each category: 1 paragraph summarizing the line of work + 1-2 sentences positioning this paper
 - Do NOT just list papers — synthesize and compare
 - End each paragraph with how this paper relates/differs
@@ -160,6 +177,7 @@ Process sections in order. For each section:
 - Main results table/figure first
 - Then ablations and analysis
 - Every claim from the introduction must have supporting evidence here
+- For each major experiment, make explicit what claim it supports and what the reader should notice
 - Target: 2.5-3 pages
 
 **§5 Conclusion:**
@@ -212,6 +230,8 @@ If both DBLP and CrossRef return nothing, mark the entry with `% [VERIFY]` comme
 
 **Why this matters:** LLM-generated BibTeX frequently hallucinates venue names, page numbers, or even co-authors. DBLP and CrossRef return publisher-verified metadata. Upstream skills (`/research-lit`, `/novelty-check`) may mention papers from LLM memory — this fetch chain is the gate that prevents hallucinated citations from entering the final `.bib`.
 
+If the DBLP/CrossRef flow is not enough, load `../shared-references/citation-discipline.md` for stricter fallback rules before adding placeholders.
+
 **Automated bib cleaning** — use this Python pattern to extract only cited entries:
 
 ```python
@@ -231,11 +251,20 @@ This prevents bib bloat (e.g., 948 lines → 215 lines in testing).
 4. Double-check year and venue for every entry
 5. Remove duplicate entries (same paper with different keys)
 
-### Step 5: De-AI Polish (from kgraph57/paper-writer-skill)
+### Step 5: De-AI Polish and Clarity Pass
 
 After drafting all sections, scan for common AI writing patterns and fix them:
 
-**Content patterns to fix:**
+First apply the sentence-level clarity rules from `../shared-references/writing-principles.md`:
+
+- keep subject and verb close together,
+- put familiar context first and new information later,
+- place the most important information near the end of the sentence,
+- let each paragraph do one job,
+- use verbs for actions instead of nominalized nouns.
+
+Then fix the common content patterns below:
+
 - Significance inflation ("groundbreaking", "revolutionary" → use measured language)
 - Formulaic transitions ("In this section, we..." → remove or vary)
 - Generic conclusions ("This work opens exciting new avenues" → be specific)
@@ -245,6 +274,7 @@ After drafting all sections, scan for common AI writing patterns and fix them:
 - Remove filler: "It is worth noting that", "Importantly,", "Notably,"
 - Avoid rule-of-three lists ("X, Y, and Z" appearing repeatedly)
 - Don't start consecutive sentences with "This" or "We"
+- Replace vague nouns with concrete ones when ambiguity is possible ("this result", "this ablation", "this theorem")
 
 ### Step 6: Cross-Review with REVIEWER_MODEL
 
@@ -265,6 +295,7 @@ mcp__codex__codex:
     5. Is related work sufficiently comprehensive (≥1 page)?
     6. For theory papers: are proof sketches adequate?
     7. Are figures/tables clearly described and properly referenced?
+    8. Would a skim reader understand the contribution from the title, abstract, introduction, and Figure 1?
 
     For each issue, specify: severity (CRITICAL/MAJOR/MINOR), location, and fix.
 
@@ -300,11 +331,12 @@ Before declaring done:
 - [ ] references.bib contains ONLY cited entries (no bloat)
 - [ ] **No stale section files** — every .tex in `sections/` is `\input`ed by `main.tex`
 - [ ] **Section files match main.tex** — file numbering and `\input` paths are consistent
+- [ ] Venue-specific required sections/checklists satisfied (read `../shared-references/venue-checklists.md` if needed)
+- [ ] A skim reader can recover the main claim from the title, abstract, introduction, and Figure 1/captions
 
 ## Key Rules
 
 - **Large file handling**: If the Write tool fails due to file size, immediately retry using Bash (`cat << 'EOF' > file`) to write in chunks. Do NOT ask the user for permission — just do it silently.
-
 - **Do NOT generate author names, emails, or affiliations** — use anonymous block or placeholder
 - **Write complete sections, not outlines** — the output should be compilable LaTeX
 - **One file per section** — modular structure for easy editing
@@ -316,22 +348,16 @@ Before declaring done:
 - **Clean bib** — references.bib must only contain entries that are actually `\cite`d
 - **Section count is flexible** — match PAPER_PLAN structure, don't force into 5 sections
 - **Backup before overwrite** — never destroy existing `paper/` directory without backing up
+- **Front-load the contribution** — do not hide the payoff until the experiments or appendix
 
 ## Writing Quality Reference
 
-Principles from [Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills):
+- `../shared-references/writing-principles.md` — story framing, abstract/introduction patterns, sentence-level clarity, reviewer reading order
+- `../shared-references/venue-checklists.md` — ICLR/NeurIPS/ICML submission requirements to check before declaring done
+- `../shared-references/citation-discipline.md` — stricter fallback for ambiguous citations
 
-1. **One message per paragraph** — each paragraph makes exactly one point
-2. **Topic sentence first** — the first sentence states the paragraph's message
-3. **Explicit transitions** — connect paragraphs with logical connectors
-4. **Reverse outline test** — extract topic sentences; they should form a coherent narrative
-
-De-AI patterns from [kgraph57/paper-writer-skill](https://github.com/kgraph57/paper-writer-skill):
-
-5. **No AI watch words** — delve, pivotal, landscape, tapestry, underscore
-6. **No significance inflation** — groundbreaking, revolutionary, paradigm shift
-7. **No formulaic structures** — vary sentence openings and transitions
+Keep using the reverse-outline test and anti-inflation polish from the main workflow above; the shared references are there to improve quality without adding a new phase.
 
 ## Acknowledgements
 
-Writing methodology adapted from [Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills) (CCF award-winning methodology). Citation verification from [claude-scholar](https://github.com/Galaxy-Dawn/claude-scholar) and [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills). De-AI polish from [kgraph57/paper-writer-skill](https://github.com/kgraph57/paper-writer-skill). Backup mechanism from [baoyu-skills](https://github.com/jimliu/baoyu-skills).
+Writing methodology adapted from [Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills) (CCF award-winning methodology). Citation verification from [claude-scholar](https://github.com/Galaxy-Dawn/claude-scholar) and [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills). This hybrid pack's writing-guidance overlay is adapted from Orchestra Research's paper-writing materials.

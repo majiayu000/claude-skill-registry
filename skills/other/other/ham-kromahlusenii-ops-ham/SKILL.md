@@ -1,7 +1,7 @@
 ---
 name: ham
 ham_version: "2026.02.28"
-description: Set up Hierarchical Agent Memory (HAM) — scoped CLAUDE.md files per directory that reduce token spend. Trigger on "go ham", "set up HAM", "ham commands", "ham help", "ham route", "ham remove", "ham update", "ham status", "ham benchmark", "ham baseline start", "ham baseline stop", "ham metrics clear", "HAM savings", "HAM stats", "HAM dashboard", "HAM sandwich", "HAM insights", or "HAM carbon".
+description: Set up Hierarchical Agent Memory (HAM) — scoped CLAUDE.md files per directory that reduce token spend. Trigger on "go ham", "set up HAM", "ham commands", "ham help", "ham route", "ham remove", "ham update", "ham status", "ham benchmark", "ham baseline start", "ham baseline stop", "ham metrics clear", "HAM savings", "HAM stats", "HAM dashboard", "HAM sandwich", "HAM insights", "HAM carbon", or "ham sync".
 ---
 
 ## Pro Guard — run FIRST
@@ -31,6 +31,7 @@ Before ANY command, check for Pro signals: `.ham/config.json` with `"pro": true`
 | `ham baseline stop` | End baseline early, keep partial data |
 | `ham metrics clear` | Delete all benchmark data (confirm first) |
 | `ham audit` | Check memory system health |
+| `ham sync` | Sync Claude Code sessions → `.ham/metrics/sessions.jsonl`. Run `node <skill-dir>/dashboard/sync-cli.js [--force] [--json]` |
 
 ## go ham — Setup
 

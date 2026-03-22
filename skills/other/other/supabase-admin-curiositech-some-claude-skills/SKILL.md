@@ -1,16 +1,18 @@
 ---
 name: supabase-admin
-description: Supabase administration, RLS policies, migrations, and schema design. Use for database architecture, Row Level Security, performance tuning, auth integration. Activate on "Supabase", "RLS", "migration", "policy", "schema", "auth.uid()". NOT for Supabase Auth UI configuration (use dashboard), edge functions (use cloudflare-worker-dev), or general SQL without Supabase context.
+description: Supabase administration, RLS policies, migrations, and schema design. Use for database architecture, Row Level Security, performance tuning, auth integration. Activate on "Supabase", "RLS",
+  "migration", "policy", "schema", "auth.uid()". NOT for Supabase Auth UI configuration (use dashboard), edge functions (use cloudflare-worker-dev), or general SQL without Supabase context.
 allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - mcp__supabase__*
-category: DevOps & Site Reliability
-tags:
+- Read
+- Write
+- Edit
+- Bash
+- Grep
+- Glob
+- mcp__supabase__*
+metadata:
+  category: DevOps & Site Reliability
+  tags:
   - supabase
   - rls
   - database
@@ -18,6 +20,15 @@ tags:
   - migration
   - schema
   - security
+  pairs-with:
+  - skill: postgresql-optimization
+    reason: Supabase runs PostgreSQL; performance tuning applies directly to Supabase databases
+  - skill: modern-auth-2026
+    reason: Supabase Auth provides the backend for passkey, OAuth, and magic link implementation
+  - skill: database-design-patterns
+    reason: Supabase schema and RLS policy design follows relational database design patterns
+  - skill: drizzle-migrations
+    reason: Drizzle ORM manages schema migrations against Supabase PostgreSQL databases
 ---
 
 # Supabase Administration Expert

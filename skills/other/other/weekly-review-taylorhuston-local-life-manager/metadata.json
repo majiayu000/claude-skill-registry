@@ -2,8 +2,16 @@
   "name": "weekly-review",
   "repo": "TaylorHuston/local-life-manager",
   "path": ".claude/skills/weekly-review/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/TaylorHuston/local-life-manager",
   "dir_name": "weekly-review-taylorhuston-local-life-manager",
-  "downloaded_at": "2026-02-22T05:48:26.635936Z"
+  "downloaded_at": "2026-03-22T06:21:30.324747Z",
+  "author": "TaylorHuston",
+  "source_url": "https://github.com/TaylorHuston/local-life-manager/blob/main/.claude/skills/weekly-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TaylorHuston/local-life-manager/blob/main/.claude/skills/weekly-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

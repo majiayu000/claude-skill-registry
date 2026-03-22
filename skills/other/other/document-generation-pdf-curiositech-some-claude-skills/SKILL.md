@@ -1,7 +1,26 @@
 ---
 name: document-generation-pdf
-description: Generate, fill, and assemble PDF documents at scale. Handles legal forms, contracts, invoices, certificates. Supports form filling (pdf-lib), template rendering (Puppeteer, LaTeX), digital signatures (DocuSign), and document assembly. Use for legal tech, HR automation, invoice generation. Activate on "PDF generation", "form filling", "document automation", "digital signatures". NOT for simple PDF viewing, basic file conversion, or OCR text extraction.
+description: Generate, fill, and assemble PDF documents at scale. Handles legal forms, contracts, invoices, certificates. Supports form filling (pdf-lib), template rendering (Puppeteer, LaTeX), digital
+  signatures (DocuSign), and document assembly. Use for legal tech, HR automation, invoice generation. Activate on "PDF generation", "form filling", "document automation", "digital signatures". NOT for
+  simple PDF viewing, basic file conversion, or OCR text extraction.
 allowed-tools: Read,Write,Edit,Bash(npm:*,latex*)
+metadata:
+  category: Content & Writing
+  tags:
+  - document
+  - generation
+  - pdf
+  - pdf-generation
+  - form-filling
+  pairs-with:
+  - skill: national-expungement-expert
+    reason: Expungement court filings require automated PDF form generation at scale
+  - skill: 2026-legal-research-agent
+    reason: Legal research outputs are formatted into filing documents via PDF generation
+  - skill: cv-creator
+    reason: Resume PDF generation shares template rendering and typography patterns
+  - skill: technical-writer
+    reason: Technical documentation exports to PDF for offline distribution
 ---
 
 # Document Generation & PDF Automation

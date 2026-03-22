@@ -1,0 +1,17 @@
+{
+  "name": "fish-shell-scripting",
+  "repo": "Pyroxin/opinionated-claude-skills",
+  "path": "opinionated-fish-shell/skills/fish-shell-scripting/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Pyroxin/opinionated-claude-skills",
+  "dir_name": "fish-shell-scripting",
+  "downloaded_at": "2026-03-22T06:07:51.259857Z",
+  "author": "Pyroxin",
+  "source_url": "https://github.com/Pyroxin/opinionated-claude-skills/blob/main/opinionated-fish-shell/skills/fish-shell-scripting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Pyroxin/opinionated-claude-skills/blob/main/opinionated-fish-shell/skills/fish-shell-scripting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

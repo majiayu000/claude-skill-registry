@@ -1,0 +1,17 @@
+{
+  "name": "springboot-security",
+  "repo": "GTAStudio/copilot-api-rust",
+  "path": ".claude/skills/springboot-security/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/GTAStudio/copilot-api-rust",
+  "dir_name": "springboot-security-gtastudio-copilot-api-rust",
+  "downloaded_at": "2026-03-22T05:22:42.737395Z",
+  "author": "GTAStudio",
+  "source_url": "https://github.com/GTAStudio/copilot-api-rust/blob/main/.claude/skills/springboot-security/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GTAStudio/copilot-api-rust/blob/main/.claude/skills/springboot-security/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

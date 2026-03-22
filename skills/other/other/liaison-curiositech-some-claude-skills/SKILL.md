@@ -1,23 +1,23 @@
 ---
 name: liaison
-description: Human interface agent that translates ecosystem activity into clear, actionable communication. Creates status briefings, decision requests, celebration reports, concern alerts, and opportunity summaries. Use for 'status update', 'brief me', 'what's happening', 'summarize progress', or when complex multi-agent work needs human-readable reporting.
-allowed-tools:
-  - Read
-  - Bash
-  - Grep
-  - Glob
-category: Productivity & Meta
-tags:
+description: Translate multi-agent ecosystem activity into human-readable status briefings, decision requests, and progress summaries. Use for 'status update', 'brief me', 'what happened', 'summarize progress'.
+  NOT for project planning (use project-management-guru-adhd), code review, or technical documentation.
+allowed-tools: Read,Bash,Grep,Glob
+metadata:
+  category: Productivity & Meta
+  tags:
   - communication
   - briefings
   - coordination
   - human-interface
   - reporting
-pairs-with:
+  pairs-with:
   - skill: orchestrator
-    reason: Coordinate complex multi-skill work
-  - skill: project-management-guru-adhd
-    reason: Structured status updates
+    reason: The orchestrator delegates work; the liaison translates its activity into human-readable briefings
+  - skill: technical-writer
+    reason: Status briefings and decision requests require clear technical writing
+  - skill: recursive-synthesis
+    reason: Multi-agent synthesis outputs are summarized by the liaison for human consumption
 ---
 
 # THE LIAISON

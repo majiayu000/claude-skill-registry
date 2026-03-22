@@ -1,7 +1,7 @@
 ---
 name: workflow-execute
-description: Coordinate agent execution for workflow tasks with automatic session discovery, parallel task processing, and status tracking. Triggers on "workflow:execute".
-allowed-tools: Skill, Task, AskUserQuestion, TaskCreate, TaskUpdate, TaskList, Read, Write, Edit, Bash, Glob, Grep
+description: Coordinate agent execution for workflow tasks with automatic session discovery, parallel task processing, and status tracking. Triggers on "workflow-execute".
+allowed-tools: Skill, Agent, AskUserQuestion, TaskCreate, TaskUpdate, TaskList, Read, Write, Edit, Bash, Glob, Grep
 ---
 
 # Workflow Execute
@@ -14,18 +14,18 @@ Orchestrates autonomous workflow execution through systematic task discovery, ag
 
 ```bash
 # Interactive mode (with confirmations)
-/workflow:execute
-/workflow:execute --resume-session="WFS-auth"
+/workflow-execute
+/workflow-execute --resume-session="WFS-auth"
 
 # Auto mode (skip confirmations, use defaults)
-/workflow:execute --yes
-/workflow:execute -y
-/workflow:execute -y --resume-session="WFS-auth"
+/workflow-execute --yes
+/workflow-execute -y
+/workflow-execute -y --resume-session="WFS-auth"
 
 # With auto-commit (commit after each task completion)
-/workflow:execute --with-commit
-/workflow:execute -y --with-commit
-/workflow:execute -y --with-commit --resume-session="WFS-auth"
+/workflow-execute --with-commit
+/workflow-execute -y --with-commit
+/workflow-execute -y --with-commit --resume-session="WFS-auth"
 ```
 
 ## Auto Mode Defaults
@@ -153,7 +153,7 @@ bash(find .workflow/active/ -name "WFS-*" -type d 2>/dev/null | wc -l)
 **Case A: No Sessions** (count = 0)
 ```
 ERROR: No active workflow sessions found
-Run /workflow:plan "task description" to create a session
+Run /workflow-plan "task description" to create a session
 ```
 
 **Case B: Single Session** (count = 1)
@@ -361,6 +361,8 @@ if (autoYes) {
 
 ### Post-Completion Expansion
 
+**Auto-sync**: 执行 `/workflow:session:sync -y "{summary}"` 更新 specs/*.md + project-tech。
+
 完成后询问用户是否扩展为issue(test/enhance/refactor/doc)，选中项调用 `/issue:new "{summary} - {dimension}"`
 
 ## Execution Strategy (IMPL_PLAN-Driven)
@@ -498,7 +500,7 @@ TodoWrite({
 **Path-Based Invocation**: Pass paths and trigger markers, let agent parse task JSON autonomously.
 
 ```bash
-Task(subagent_type="{meta.agent}",
+Agent(subagent_type="{meta.agent}",
      run_in_background=false,
      prompt="Implement task {task.id}: {task.title}
 
@@ -573,7 +575,7 @@ meta.agent missing → Infer from meta.type:
 | Error Type | Cause | Recovery Strategy | Max Attempts |
 |-----------|-------|------------------|--------------|
 | **Discovery Errors** |
-| No active session | No sessions in `.workflow/active/` | Create or resume session: `/workflow:plan "project"` | N/A |
+| No active session | No sessions in `.workflow/active/` | Create or resume session: `/workflow-plan "project"` | N/A |
 | Multiple sessions | Multiple sessions in `.workflow/active/` | Prompt user selection | N/A |
 | Corrupted session | Invalid JSON files | Recreate session structure or validate files | N/A |
 | **Execution Errors** |

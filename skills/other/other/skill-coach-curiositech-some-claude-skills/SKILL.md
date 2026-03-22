@@ -1,19 +1,21 @@
 ---
 name: skill-coach
-description: "Guides creation of high-quality Agent Skills with domain expertise, anti-pattern detection, and progressive disclosure best practices. Activate on keywords: create skill, review skill, skill quality, skill best practices, skill anti-patterns, improve skill, skill audit. NOT for general coding advice, slash commands, MCP development, or non-skill Claude Code features."
+description: 'Guides creation of high-quality Agent Skills with domain expertise, anti-pattern detection, and progressive disclosure best practices. Activate on keywords: create skill, review skill, skill
+  quality, skill best practices, skill anti-patterns, improve skill, skill audit. NOT for general coding advice, slash commands, MCP development, or non-skill Claude Code features.'
 allowed-tools: Read,Write,Edit,Glob,Grep,Bash(python:*)
-category: Productivity & Meta
-tags:
+metadata:
+  category: Productivity & Meta
+  pairs-with:
+  - skill: agent-creator
+    reason: Quality review for new skills
+  - skill: automatic-stateful-prompt-improver
+    reason: Optimize skill prompts
+  tags:
   - skills
   - quality
   - anti-patterns
   - best-practices
   - review
-pairs-with:
-  - skill: agent-creator
-    reason: Quality review for new skills
-  - skill: automatic-stateful-prompt-improver
-    reason: Optimize skill prompts
 ---
 
 # Skill Coach: Creating Expert-Level Agent Skills

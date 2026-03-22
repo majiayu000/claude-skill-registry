@@ -1,0 +1,17 @@
+{
+  "name": "hugging-face-cli",
+  "repo": "bcastelino/agent-skills-kit",
+  "path": "skills/hugging-face-cli/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/bcastelino/agent-skills-kit",
+  "dir_name": "hugging-face-cli-bcastelino-agent-skills-kit",
+  "downloaded_at": "2026-03-22T07:11:07.244775Z",
+  "author": "bcastelino",
+  "source_url": "https://github.com/bcastelino/agent-skills-kit/blob/main/skills/hugging-face-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bcastelino/agent-skills-kit/blob/main/skills/hugging-face-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

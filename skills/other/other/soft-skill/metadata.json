@@ -1,0 +1,17 @@
+{
+  "name": "soft-skill",
+  "repo": "QuyenVjp/PMTL_VN",
+  "path": ".agents/skills/soft-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/QuyenVjp/PMTL_VN",
+  "dir_name": "soft-skill",
+  "downloaded_at": "2026-03-22T06:08:04.807887Z",
+  "author": "QuyenVjp",
+  "source_url": "https://github.com/QuyenVjp/PMTL_VN/blob/main/.agents/skills/soft-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/QuyenVjp/PMTL_VN/blob/main/.agents/skills/soft-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

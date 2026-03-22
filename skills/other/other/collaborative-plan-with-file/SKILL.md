@@ -194,7 +194,7 @@ Use built-in tools directly to understand the task scope and identify sub-domain
 **Analysis Activities**:
 1. **Search for references** — Find related documentation, README files, and architecture guides
    - Use: `mcp__ace-tool__search_context`, Grep, Glob, Read
-   - Read: `.workflow/project-tech.json`, `.workflow/project-guidelines.json` (if exists)
+   - Run: `ccw spec load --category planning` (if spec system available)
 2. **Extract task keywords** — Identify key terms and concepts from the task description
 3. **Identify ambiguities** — List any unclear points or multiple possible interpretations
 4. **Clarify with user** — If ambiguities found, use AskUserQuestion for clarification
@@ -706,10 +706,19 @@ if (!autoMode) {
 | Export | Copy plan.md + plan-note.md to user-specified location |
 | Done | Display artifact paths, end workflow |
 
+### Step 4.5: Sync Session State
+
+```bash
+$session-sync -y "Plan complete: {domains} domains, {tasks} tasks"
+```
+
+Updates specs/*.md with planning insights and project-tech.json with planning session entry.
+
 **Success Criteria**:
 - `plan.md` generated with complete summary
 - `.task/TASK-*.json` collected at session root (consumable by unified-execute)
 - All artifacts present in session directory
+- Session state synced via `$session-sync`
 - User informed of completion and next steps
 
 ---

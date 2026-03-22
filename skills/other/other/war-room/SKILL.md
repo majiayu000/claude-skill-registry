@@ -1,6 +1,6 @@
 ---
 name: war-room
-description: "Multi-LLM deliberation for strategic decisions via expert pressure-testing and consensus building. Use for critical, irreversible, or high-stakes architecture choices and conflicts. Skip for trivial or reversible decisions."
+description: "Multi-LLM deliberation for high-stakes decisions via pressure-testing. Use for critical choices. Skip for reversible ones."
 # Custom metadata (not used by Claude for matching):
 model_preference: claude-opus-4
 category: strategic-planning

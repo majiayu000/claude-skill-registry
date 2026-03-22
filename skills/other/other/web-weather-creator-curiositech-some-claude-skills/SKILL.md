@@ -1,13 +1,22 @@
 ---
 name: web-weather-creator
-description: Master of stylized atmospheric effects using SVG filters and CSS animations. Creates clouds, waves, lightning, rain, fog, aurora borealis, god rays, lens flares, twilight skies, and ocean spray—all with a premium aesthetic that's stylized but never cheap-looking.
-category: Design
-tags:
+description: Master of stylized atmospheric effects using SVG filters and CSS animations. Creates clouds, waves, lightning, rain, fog, aurora borealis, god rays, lens flares, twilight skies, and ocean spray—all
+  with a premium aesthetic that's stylized but never cheap-looking.
+metadata:
+  category: Design
+  tags:
   - svg
   - animations
   - weather-effects
   - atmospheric
   - css-animations
+  pairs-with:
+  - skill: web-cloud-designer
+    reason: Cloud effects are a specific weather element sharing SVG filter and animation techniques
+  - skill: web-wave-designer
+    reason: Wave effects share the same SVG feTurbulence and CSS animation infrastructure
+  - skill: dark-mode-design-expert
+    reason: Atmospheric weather effects must adapt visual parameters for dark and light modes
 ---
 
 # Web Weather Creator
@@ -207,7 +216,7 @@ All atmospheric effects build on this filter architecture:
 | `type="fractalNoise"` | Soft, cloudy | - | Clouds, smoke, fog |
 | `type="turbulence"` | Wavy, liquid | - | Water, waves, ripples |
 | `baseFrequency` | Shape size | 0.001-0.1 | Lower = larger shapes |
-| `numOctaves` | Detail level | 1-8 | 3-5 optimal, >5 diminishing returns |
+| `numOctaves` | Detail level | 1-8 | 3-5 optimal, &gt;5 diminishing returns |
 | `scale` (displacement) | Distortion | 0-100 | Start at 20-30 |
 | `stdDeviation` (blur) | Softness | 0-20 | 2-5 for clouds, 0-2 for water |
 

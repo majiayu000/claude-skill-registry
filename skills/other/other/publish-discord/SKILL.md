@@ -1,21 +1,21 @@
 ---
 name: publish-discord
-version: "2.0.0"
-description: >
-  Publish formatted content to Discord channels using the Discord MCP server.
-  Handles message splitting for character limits, supports embeds and threads.
+version: 2.0.0
+description: 'Publish formatted content to Discord channels using the Discord MCP
+  server. Handles message splitting for character limits, supports embeds and threads.
+
+  '
 license: MIT
 allowed-tools:
-  - discord/send_message   # Send message to Discord channel
-  - discord/send_embed     # Send rich embed to Discord
-  - discord/create_thread  # Create thread for digests
+- discord/send_message
+- discord/send_embed
+- discord/create_thread
 metadata:
-  kubani:
-    domain: news
-    category: publishing
-    requires_approval: true
-    confidence: 0.98
-    version: "2.0.0"
+  domain: news
+  category: publishing
+  requires-approval: true
+  confidence: 0.98
+  mcp-servers: []
 ---
 
 # Publish to Discord

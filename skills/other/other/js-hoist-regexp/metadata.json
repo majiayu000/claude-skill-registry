@@ -2,8 +2,16 @@
   "name": "js-hoist-regexp",
   "repo": "TheOrcDev/8bitcn-ui",
   "path": ".claude/skills/js-hoist-regexp/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/TheOrcDev/8bitcn-ui",
   "dir_name": "js-hoist-regexp",
-  "downloaded_at": "2026-02-15T05:53:08.788552Z"
+  "downloaded_at": "2026-03-22T06:23:12.401439Z",
+  "author": "TheOrcDev",
+  "source_url": "https://github.com/TheOrcDev/8bitcn-ui/blob/main/.claude/skills/js-hoist-regexp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TheOrcDev/8bitcn-ui/blob/main/.claude/skills/js-hoist-regexp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

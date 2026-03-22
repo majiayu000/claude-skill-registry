@@ -1,0 +1,17 @@
+{
+  "name": "improve",
+  "repo": "codenamev/claude_memory",
+  "path": ".claude/skills/improve/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/codenamev/claude_memory",
+  "dir_name": "improve",
+  "downloaded_at": "2026-03-22T07:31:47.817668Z",
+  "author": "codenamev",
+  "source_url": "https://github.com/codenamev/claude_memory/blob/main/.claude/skills/improve/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/codenamev/claude_memory/blob/main/.claude/skills/improve/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -2,8 +2,16 @@
   "name": "bundle-barrel-imports",
   "repo": "TheOrcDev/8bitcn-ui",
   "path": ".claude/skills/bundle-barrel-imports/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/TheOrcDev/8bitcn-ui",
   "dir_name": "bundle-barrel-imports",
-  "downloaded_at": "2026-02-15T05:53:09.669760Z"
+  "downloaded_at": "2026-03-22T06:23:13.529716Z",
+  "author": "TheOrcDev",
+  "source_url": "https://github.com/TheOrcDev/8bitcn-ui/blob/main/.claude/skills/bundle-barrel-imports/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TheOrcDev/8bitcn-ui/blob/main/.claude/skills/bundle-barrel-imports/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

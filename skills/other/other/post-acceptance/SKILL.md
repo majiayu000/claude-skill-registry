@@ -140,3 +140,11 @@ Paper accepted -> Write Twitter thread -> Create LinkedIn post -> Draft blog pos
 ## Summary
 
 This skill provides a comprehensive post-acceptance workflow covering three key areas: presentation slides, academic posters, and promotional content. Following these guidelines helps researchers effectively communicate their work at conferences and to the broader community.
+
+
+## Reference Files
+
+Load only what is needed:
+- `references/design-guidelines.md` - visual design guidance
+- `references/deliverable-checklists.md` - slide/poster/promo-specific checklists
+- `examples/post-acceptance-plan.md` - compact delivery plan example

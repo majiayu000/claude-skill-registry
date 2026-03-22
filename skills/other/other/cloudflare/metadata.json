@@ -2,8 +2,16 @@
   "name": "cloudflare",
   "repo": "HouseGarofalo/claude-code-base",
   "path": ".claude/skills/cloudflare/SKILL.md",
+  "github_branch": "master",
   "category": "other",
   "source": "github.com/HouseGarofalo/claude-code-base",
   "dir_name": "cloudflare",
-  "downloaded_at": "2026-02-22T05:09:38.168757Z"
+  "downloaded_at": "2026-03-22T05:28:39.764658Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/cloudflare/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/cloudflare/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

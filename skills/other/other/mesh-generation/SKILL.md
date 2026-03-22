@@ -1,7 +1,7 @@
 ---
 name: mesh-generation
 description: Plan and evaluate mesh generation for numerical simulations. Use when choosing grid resolution, checking aspect ratios/skewness, estimating mesh quality constraints, or planning adaptive mesh refinement for PDE discretization.
-allowed-tools: Read, Bash, Write, Grep, Glob
+allowed-tools: Read, Write, Grep, Glob
 ---
 
 # Mesh Generation
@@ -131,6 +131,15 @@ python3 scripts/mesh_quality.py --dx 1.0 --dy 0.1 --json
 | Shock | 3-5 (with capturing) |
 | Wave propagation | 10-20 per wavelength |
 | Smooth gradients | 5-10 |
+
+## Security
+
+The mesh-generation scripts enforce the following safeguards:
+
+- **Strict numeric validation**: All inputs (`length`, `resolution`, `dx`, `dy`, `dz`) are validated as finite positive numbers with upper bounds to prevent resource exhaustion.
+- **Dimension constraint**: `dims` is restricted to `{1, 2, 3}`.
+- **Type enforcement**: `argparse` type parameters reject non-numeric input at the CLI boundary before any processing occurs.
+- **Reduced tool surface**: The skill's `allowed-tools` excludes `Bash` to prevent the agent from executing arbitrary commands when processing user-provided inputs. The agent should use `Read` and `Write` to prepare inputs and capture outputs rather than constructing shell commands from user text.
 
 ## Limitations
 

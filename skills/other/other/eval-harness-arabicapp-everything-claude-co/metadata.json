@@ -2,8 +2,16 @@
   "name": "eval-harness",
   "repo": "arabicapp/everything-claude-code",
   "path": "skills/eval-harness/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/arabicapp/everything-claude-code",
   "dir_name": "eval-harness-arabicapp-everything-claude-co",
-  "downloaded_at": "2026-02-22T06:20:51.043873Z"
+  "downloaded_at": "2026-03-22T07:01:05.161375Z",
+  "author": "arabicapp",
+  "source_url": "https://github.com/arabicapp/everything-claude-code/blob/main/skills/eval-harness/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arabicapp/everything-claude-code/blob/main/skills/eval-harness/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

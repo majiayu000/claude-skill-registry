@@ -1,0 +1,17 @@
+{
+  "name": "property-based-testing",
+  "repo": "TomerAberbach/claude-config",
+  "path": "skills/property-based-testing/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/TomerAberbach/claude-config",
+  "dir_name": "property-based-testing-tomeraberbach-claude-config",
+  "downloaded_at": "2026-03-22T06:24:23.435623Z",
+  "author": "TomerAberbach",
+  "source_url": "https://github.com/TomerAberbach/claude-config/blob/main/skills/property-based-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TomerAberbach/claude-config/blob/main/skills/property-based-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

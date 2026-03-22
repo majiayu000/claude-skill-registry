@@ -1,0 +1,17 @@
+{
+  "name": "active-directory-security",
+  "repo": "defconxt/CIPHER",
+  "path": "skills/active-directory-security/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/defconxt/CIPHER",
+  "dir_name": "active-directory-security",
+  "downloaded_at": "2026-03-22T07:43:11.246917Z",
+  "author": "defconxt",
+  "source_url": "https://github.com/defconxt/CIPHER/blob/main/skills/active-directory-security/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/defconxt/CIPHER/blob/main/skills/active-directory-security/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "sales-page",
+  "repo": "alexmcfarland-ai/co-writer-plugins",
+  "path": "plugins/offer-builder-plugin/skills/sales-page/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alexmcfarland-ai/co-writer-plugins",
+  "dir_name": "sales-page",
+  "downloaded_at": "2026-03-22T06:50:12.136077Z",
+  "author": "alexmcfarland-ai",
+  "source_url": "https://github.com/alexmcfarland-ai/co-writer-plugins/blob/main/plugins/offer-builder-plugin/skills/sales-page/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexmcfarland-ai/co-writer-plugins/blob/main/plugins/offer-builder-plugin/skills/sales-page/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

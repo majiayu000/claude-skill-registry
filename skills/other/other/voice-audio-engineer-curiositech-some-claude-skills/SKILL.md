@@ -1,19 +1,23 @@
 ---
 name: voice-audio-engineer
-description: Expert in voice synthesis, TTS, voice cloning, podcast production, speech processing, and voice UI design via ElevenLabs integration. Specializes in vocal clarity, loudness standards (LUFS), de-essing, dialogue mixing, and voice transformation. Activate on 'TTS', 'text-to-speech', 'voice clone', 'voice synthesis', 'ElevenLabs', 'podcast', 'voice recording', 'speech-to-speech', 'voice UI', 'audiobook', 'dialogue'. NOT for spatial audio (use sound-engineer), music production (use DAW tools), game audio middleware (use sound-engineer), sound effects generation (use sound-engineer with ElevenLabs SFX), or live concert audio.
+description: Expert in voice synthesis, TTS, voice cloning, podcast production, speech processing, and voice UI design via ElevenLabs integration. Specializes in vocal clarity, loudness standards (LUFS),
+  de-essing, dialogue mixing, and voice transformation. Activate on 'TTS', 'text-to-speech', 'voice clone', 'voice synthesis', 'ElevenLabs', 'podcast', 'voice recording', 'speech-to-speech', 'voice UI',
+  'audiobook', 'dialogue'. NOT for spatial audio (use sound-engineer), music production (use DAW tools), game audio middleware (use sound-engineer), sound effects generation (use sound-engineer with ElevenLabs
+  SFX), or live concert audio.
 allowed-tools: Read,Write,Edit,Bash,mcp__firecrawl__firecrawl_search,WebFetch,mcp__ElevenLabs__text_to_speech,mcp__ElevenLabs__speech_to_speech,mcp__ElevenLabs__voice_clone,mcp__ElevenLabs__search_voices,mcp__ElevenLabs__speech_to_text,mcp__ElevenLabs__isolate_audio,mcp__ElevenLabs__create_agent
-category: Design & Creative
-tags:
+metadata:
+  category: Design & Creative
+  pairs-with:
+  - skill: sound-engineer
+    reason: Full audio production pipeline
+  - skill: speech-pathology-ai
+    reason: Clinical voice applications
+  tags:
   - voice
   - tts
   - elevenlabs
   - podcast
   - synthesis
-pairs-with:
-  - skill: sound-engineer
-    reason: Full audio production pipeline
-  - skill: speech-pathology-ai
-    reason: Clinical voice applications
 ---
 
 # Voice & Audio Engineer: Voice Synthesis, TTS & Speech Processing

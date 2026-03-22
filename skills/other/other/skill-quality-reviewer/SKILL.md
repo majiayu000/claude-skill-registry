@@ -28,6 +28,20 @@ Use this skill to validate skills before sharing, identify improvement opportuni
 - "Check my skill for best practices"
 - "Generate quality report for this skill"
 
+## Review Modes
+
+Use one of three review modes depending on the task:
+
+1. **score-only**
+   - fast first-pass grading for one skill.
+2. **remediation-backlog**
+   - convert findings into P0 / P1 / P2 fix queues with concrete evidence.
+3. **batch-portfolio**
+   - review multiple skills together, cluster repeated issues, and produce a prioritized shortlist.
+
+Prefer `remediation-backlog` when the user asks what to fix next.
+Prefer `batch-portfolio` when auditing many skills at once.
+
 ## Analysis Workflow
 
 ### Step 1: Load the Skill
@@ -108,7 +122,7 @@ Verify adherence to skill writing conventions.
 | Criterion | Points | Evaluation |
 |-----------|--------|------------|
 | Imperative form | 40 | Verb-first instructions throughout |
-| No second person | 30 | Avoids "you", "your", "should" |
+| No second person in body | 30 | Avoids conversational second person in the main workflow body |
 | Objective language | 30 | Factual, instructional tone |
 
 **Check for:**
@@ -305,6 +319,7 @@ For detailed evaluation criteria and examples, consult:
 ### Scripts
 
 - **`scripts/extract-yaml.sh`** - Utility for extracting YAML frontmatter from SKILL.md
+- **`scripts/skill-audit.py`** - Lightweight integrity audit for missing references, word count, and sibling-path checks
 
 ### Related Skills
 
@@ -397,4 +412,14 @@ User: "Check skill quality of api-helper"
 - Current grade and score
 - Top improvement opportunities
 - Quick wins for easy score gains
+```
+
+**Example 4: Batch portfolio review**
+```
+User: "Review all skills in ~/.claude/skills and tell me what to fix first"
+
+[Claude evaluates and reports:]
+- portfolio matrix
+- grouped issue clusters
+- shortlist for second-pass remediation
 ```

@@ -1,0 +1,17 @@
+{
+  "name": "sanger-chromatogram-qa",
+  "repo": "aipoch/medical-research-skills",
+  "path": "scientific-skills/Data analysis/sanger-chromatogram-qa/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aipoch/medical-research-skills",
+  "dir_name": "sanger-chromatogram-qa",
+  "downloaded_at": "2026-03-22T06:46:29.587707Z",
+  "author": "aipoch",
+  "source_url": "https://github.com/aipoch/medical-research-skills/blob/main/scientific-skills/Data analysis/sanger-chromatogram-qa/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aipoch/medical-research-skills/blob/main/scientific-skills/Data analysis/sanger-chromatogram-qa/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

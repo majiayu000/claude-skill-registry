@@ -5,23 +5,7 @@ description: PostHog feature flags, rollouts, A/B testing. Use when implementing
 
 # Feature Flags with PostHog
 
-> **Quick Guide:** Use PostHog feature flags for gradual rollouts, A/B testing, and remote configuration. Client-side: `useFeatureFlagEnabled` hook. Server-side: `posthog-node` with local evaluation. Always pair `useFeatureFlagPayload` with `useFeatureFlagEnabled` for experiments.
-
----
-
-**Detailed Resources:**
-
-- For code examples, see [examples/core.md](examples/core.md)
-- For decision frameworks and anti-patterns, see [reference.md](reference.md)
-
-**Topic-Specific Examples:**
-
-- [examples/payloads.md](examples/payloads.md) - Remote configuration with JSON payloads
-- [examples/server-side.md](examples/server-side.md) - Server-side evaluation with posthog-node
-- [examples/rollouts.md](examples/rollouts.md) - Gradual rollouts and user targeting
-- [examples/experiments.md](examples/experiments.md) - A/B testing with experiments
-- [examples/development.md](examples/development.md) - Local development overrides
-- [examples/lifecycle.md](examples/lifecycle.md) - Flag cleanup and lifecycle management
+> **Quick Guide:** Use PostHog feature flags for gradual rollouts, A/B testing, and remote configuration. Client-side: `useFeatureFlagEnabled` hook. Server-side: `posthog-node` with local evaluation. Always pair `useFeatureFlagPayload` with `useFeatureFlagEnabled` for experiments. Handle the `undefined` loading state on every flag check.
 
 ---
 
@@ -69,11 +53,19 @@ description: PostHog feature flags, rollouts, A/B testing. Use when implementing
 - Server-side local evaluation for performance
 - Boolean vs multivariate flags
 - Gradual rollouts with percentage targeting
-- User and cohort targeting
 - A/B testing and experiments
 - Payloads for remote configuration
 - Local development overrides
 - Flag cleanup and lifecycle management
+
+---
+
+**Detailed Resources:**
+
+- [examples/core.md](examples/core.md) - Boolean flags, multivariate flags, PostHogFeature component, payloads, experiments, rollouts, lifecycle management
+- [examples/server-side.md](examples/server-side.md) - Server-side evaluation, local evaluation setup, distributed environments
+- [examples/development.md](examples/development.md) - Local overrides, bootstrapping, onFeatureFlags callback
+- [reference.md](reference.md) - Decision frameworks and anti-patterns
 
 ---
 
@@ -118,179 +110,145 @@ Feature flags decouple deployment from release. You can ship code to production 
 
 ### Pattern 1: Client-Side Boolean Flags
 
-Use `useFeatureFlagEnabled` for simple on/off features. Handle the `undefined` loading state.
-
-#### Constants
+Use `useFeatureFlagEnabled` for simple on/off features. Always handle the `undefined` loading state -- treating it as `false` causes a flash of wrong UI.
 
 ```typescript
-// lib/feature-flags.ts
-export const FLAG_NEW_CHECKOUT = "new-checkout-flow";
-export const FLAG_DARK_MODE = "dark-mode-enabled";
-export const FLAG_BETA_DASHBOARD = "beta-dashboard";
+const isNewCheckout = useFeatureFlagEnabled(FLAG_NEW_CHECKOUT);
+
+if (isNewCheckout === undefined) return <Skeleton />;   // Loading
+if (isNewCheckout) return <NewCheckout />;               // Enabled
+return <LegacyCheckout />;                               // Disabled
 ```
 
-#### Implementation
+Store flag keys as named constants in `lib/feature-flags.ts` to prevent typos and enable cleanup-by-grep.
 
-```typescript
-// components/checkout-button.tsx
-import { useFeatureFlagEnabled } from "posthog-js/react";
-
-import { FLAG_NEW_CHECKOUT } from "@/lib/feature-flags";
-
-// Good Example - Handle undefined state
-export const CheckoutButton = () => {
-  const isNewCheckout = useFeatureFlagEnabled(FLAG_NEW_CHECKOUT);
-
-  // Flag is loading - show nothing or skeleton
-  if (isNewCheckout === undefined) {
-    return <ButtonSkeleton />;
-  }
-
-  // Flag resolved - render appropriate UI
-  if (isNewCheckout) {
-    return <NewCheckoutButton />;
-  }
-
-  return <LegacyCheckoutButton />;
-};
-```
-
-**Why good:** Named constant prevents typos, undefined check prevents flash of wrong content, explicit handling of all states
-
-For more examples including bad patterns, see [examples/core.md](examples/core.md#pattern-1-client-side-boolean-flags).
+See [examples/core.md](examples/core.md#pattern-1-client-side-boolean-flags) for full good/bad examples.
 
 ---
 
 ### Pattern 2: Multivariate Flags and Variants
 
-Use `useFeatureFlagVariantKey` for A/B tests with multiple variants.
-
-#### Constants
+Use `useFeatureFlagVariantKey` for A/B tests with multiple variants. Define variant constants alongside the flag key. Switch on variants with a default fallback to `control`.
 
 ```typescript
-// lib/feature-flags.ts
-export const FLAG_PRICING_PAGE = "pricing-page-experiment";
+const variant = useFeatureFlagVariantKey(FLAG_PRICING_PAGE);
+if (variant === undefined) return <Skeleton />;
 
-// Variant constants prevent typos
-export const VARIANT_CONTROL = "control";
-export const VARIANT_SIMPLE = "simple";
-export const VARIANT_DETAILED = "detailed";
-```
-
-#### Implementation
-
-```typescript
-// components/pricing-page.tsx
-import { useFeatureFlagVariantKey } from "posthog-js/react";
-
-import {
-  FLAG_PRICING_PAGE,
-  VARIANT_CONTROL,
-  VARIANT_SIMPLE,
-  VARIANT_DETAILED,
-} from "@/lib/feature-flags";
-
-// Good Example - Multivariate flag with loading state
-export const PricingPage = () => {
-  const variant = useFeatureFlagVariantKey(FLAG_PRICING_PAGE);
-
-  // Loading state
-  if (variant === undefined) {
-    return <PricingPageSkeleton />;
-  }
-
-  // Render based on variant
-  switch (variant) {
-    case VARIANT_SIMPLE:
-      return <SimplePricing />;
-    case VARIANT_DETAILED:
-      return <DetailedPricing />;
-    case VARIANT_CONTROL:
-    default:
-      return <ControlPricing />;
-  }
-};
-```
-
-**Why good:** Variant constants prevent typos, switch statement handles all cases, default fallback to control variant, loading state prevents flash
-
-For more examples, see [examples/core.md](examples/core.md#pattern-2-multivariate-flags-and-variants).
-
----
-
-### Pattern 3: Server-Side Flag Evaluation
-
-Use `posthog-node` for server-side evaluation. Use local evaluation for performance.
-
-#### Setup
-
-```typescript
-// lib/posthog-server.ts
-import { PostHog } from "posthog-node";
-
-const POSTHOG_POLL_INTERVAL_MS = 30000; // 30 seconds
-const FLAG_REQUEST_TIMEOUT_MS = 3000; // 3 seconds (default)
-
-// Initialize with local evaluation
-// Use the Feature Flags Secure API Key (phs_*) from project settings
-// Personal API keys are deprecated for local evaluation
-export const posthog = new PostHog(process.env.POSTHOG_API_KEY!, {
-  host: process.env.POSTHOG_HOST || "https://us.i.posthog.com",
-  // Enable local evaluation with feature flags secure key (phs_*)
-  personalApiKey: process.env.POSTHOG_FEATURE_FLAGS_KEY,
-  // Poll for flag definition updates
-  featureFlagsPollingInterval: POSTHOG_POLL_INTERVAL_MS,
-  // Timeout for flag evaluation requests
-  featureFlagsRequestTimeoutMs: FLAG_REQUEST_TIMEOUT_MS,
-});
-
-// Named export
-export { posthog };
-```
-
-#### API Route Usage
-
-```typescript
-// app/api/dashboard/route.ts
-import { NextRequest, NextResponse } from "next/server";
-
-import { posthog } from "@/lib/posthog-server";
-import { FLAG_BETA_DASHBOARD } from "@/lib/feature-flags";
-
-// Good Example - Server-side flag evaluation
-export async function GET(request: NextRequest) {
-  const userId = request.headers.get("x-user-id");
-
-  if (!userId) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  // Evaluate flag server-side with user context
-  const isBetaDashboard = await posthog.isFeatureEnabled(
-    FLAG_BETA_DASHBOARD,
-    userId,
-    {
-      // Provide person properties for targeting rules
-      personProperties: {
-        email: request.headers.get("x-user-email"),
-        plan: request.headers.get("x-user-plan"),
-      },
-    }
-  );
-
-  if (isBetaDashboard) {
-    return NextResponse.json({ dashboard: "beta", features: [...] });
-  }
-
-  return NextResponse.json({ dashboard: "stable", features: [...] });
+switch (variant) {
+  case VARIANT_SIMPLE: return <SimplePricing />;
+  case VARIANT_DETAILED: return <DetailedPricing />;
+  default: return <ControlPricing />;
 }
 ```
 
-**Why good:** Local evaluation reduces latency (500ms to 10-50ms), personProperties enable targeting, server-side prevents client manipulation
+See [examples/core.md](examples/core.md#pattern-2-multivariate-flags-and-variants) for full example.
 
-For more examples including bad patterns, local-only evaluation, and distributed environments, see [examples/server-side.md](examples/server-side.md).
+---
+
+### Pattern 3: PostHogFeature Component
+
+The `PostHogFeature` component provides automatic exposure tracking and built-in fallback handling with less boilerplate. Use `match={true}` for boolean flags or `match={VARIANT_KEY}` for specific variants.
+
+```typescript
+<PostHogFeature flag={FLAG_BETA} match={true} fallback={<Legacy />}>
+  <NewFeature />
+</PostHogFeature>
+```
+
+See [examples/core.md](examples/core.md#pattern-3-posthogfeature-component) for boolean and variant examples.
+
+---
+
+### Pattern 4: Payloads for Remote Configuration
+
+Use `useFeatureFlagPayload` for dynamic JSON configuration. **Always pair with `useFeatureFlagEnabled`** -- the payload hook alone does NOT send exposure events, breaking experiment tracking.
+
+```typescript
+const isEnabled = useFeatureFlagEnabled(FLAG_BANNER); // Sends exposure event
+const payload = useFeatureFlagPayload(FLAG_BANNER); // Gets config
+const config = payload ?? DEFAULT_BANNER_CONFIG;
+```
+
+See [examples/core.md](examples/core.md#pattern-4-feature-flag-payloads-for-remote-configuration) for full good/bad examples.
+
+---
+
+### Pattern 5: Server-Side Flag Evaluation
+
+Use `posthog-node` with the Feature Flags Secure API Key (`phs_*`) for local evaluation. This reduces latency from ~500ms (network call) to ~10-50ms (local). The `personalApiKey` config option takes the `phs_*` key despite its legacy name.
+
+```typescript
+export const posthog = new PostHog(process.env.POSTHOG_API_KEY!, {
+  host: process.env.POSTHOG_HOST || "https://us.i.posthog.com",
+  personalApiKey: process.env.POSTHOG_FEATURE_FLAGS_KEY, // phs_* key
+  featureFlagsPollingInterval: POSTHOG_POLL_INTERVAL_MS, // default 5 min
+});
+```
+
+See [examples/server-side.md](examples/server-side.md) for API handler usage, local-only evaluation, and distributed/serverless environments.
+
+---
+
+### Pattern 6: Flag Lifecycle and Cleanup
+
+Every flag needs an owner, a creation date, and an expected removal date. Wrap flag checks in a single helper function so cleanup is a one-file change.
+
+```typescript
+/**
+ * Owner: @john-doe | Created: 2025-01-15 | Remove by: 2025-02-15
+ */
+export const FLAG_NEW_CHECKOUT = "new-checkout-flow";
+
+export function isNewCheckoutEnabled(flag: boolean | undefined): boolean {
+  return flag === true; // When removing: change to `return true;`
+}
+```
+
+See [examples/core.md](examples/core.md#pattern-7-flag-cleanup-and-lifecycle-management) for full documentation patterns and stale flag detection.
 
 </patterns>
+
+---
+
+<red_flags>
+
+## RED FLAGS
+
+**High Priority Issues:**
+
+- Using `useFeatureFlagPayload` alone for experiments (no exposure tracking)
+- Exposing Feature Flags Secure API key (`phs_*`) on client (security violation)
+- No loading state handling (causes UI flash)
+- Flags without owners or expiry dates (becomes permanent debt)
+
+**Medium Priority Issues:**
+
+- Magic string flag keys instead of constants (typos, hard to grep)
+- Complex targeting rules on high-traffic flags (performance hit)
+- Local evaluation in serverless/edge without external cache (cold start issues)
+- Not using PostHog toolbar for local testing (harder debugging)
+
+**Common Mistakes:**
+
+- Checking flag in multiple places instead of wrapper function
+- Not bootstrapping flags for SSR (content flash on hydration)
+- Running experiments without defined primary metric
+- Peeking at experiment results before completion
+- Rolling out to 100% without cleanup plan
+
+**Gotchas & Edge Cases:**
+
+- PostHog uses deterministic hashing - same user always gets same variant
+- Decreasing rollout percentage can remove users who were previously included
+- Local evaluation requires Feature Flags Secure API Key (`phs_*`) - personal API keys are deprecated
+- Flags load asynchronously - first render always has undefined
+- GeoIP targeting uses server IP by default in posthog-node v3+
+- Experiments need minimum 50 exposures per variant for results
+- Stale flag = 100% rollout + not evaluated in 30 days
+- `onFeatureFlags` callback receives `{ errorsLoading?: boolean }` as second parameter
+- External cache providers (Redis, KV) are experimental - Node.js/Python SDKs only
+
+</red_flags>
 
 ---
 

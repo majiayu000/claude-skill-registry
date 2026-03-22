@@ -1,295 +1,198 @@
 ---
 name: ralph-prompt-generator
-description: Use when a user has a rough coding objective and needs an execution-ready `$ralph-wiggum-codex` prompt with optimized structure, model/reasoning settings, and loop flags.
+description: Use when a user has a rough prompt that needs a staged prompt-improvement workflow for `$ralph-wiggum-codex`, with saved draft/final files and explicit review checkpoints.
 ---
 
 # Ralph Prompt Generator
 
 Companion skill for `$ralph-wiggum-codex`.
 
-This skill converts a rough request into a paste-ready handoff block that:
-- preserves intent and constraints
-- clarifies success criteria and validations
-- selects model + reasoning defaults
-- proposes Ralph runner guardrails (iterations, scopes, timeouts, failures)
+This skill does not exist to synthesize flags first. Its primary job is to improve the prompt itself through a staged prompt-improvement workflow, then finish with a small Ralph-specific handoff.
 
-## The Core Problem This Skill Solves
+## Core Rule
 
-Prompt improvement is underspecified by default.
+Clarify, do not prescribe.
 
-When the user provides a vague prompt, the only reliable way to improve it is:
-- extract what is already specified
-- identify what is missing
-- ask targeted questions only where missing details change execution
-- draft a structured prompt
-- critique and revise it before finalizing
-
-This skill encodes that workflow so the agent is not guessing.
+The receiving agent is equally capable. Improve the briefing, preserve the user's boundaries, and avoid doing the downstream agent's job.
 
 ## When To Use
 
 Use this skill when:
-- The user objective is under-specified, verbose, or ambiguous.
-- Model choice, reasoning effort, and loop guardrails are unclear.
-- Validation or scope constraints are missing.
-- The user wants a reusable handoff prompt for a long-running Ralph loop.
+- The source prompt is ambiguous, bloated, or structurally weak.
+- The user wants a reusable prompt for `$ralph-wiggum-codex`.
+- The task needs critique and revision, not just runner flag suggestions.
+- The user wants saved planning, draft, and final prompt files in the repo.
 
 Do not use this skill when:
-- The user already provided a complete run-ready Ralph handoff block.
-- The user wants `$ralph-wiggum-codex` executed immediately without rewriting.
+- The user already has a production-ready Ralph prompt.
+- The user wants `$ralph-wiggum-codex` executed immediately with no prompt rewrite.
+- The only missing detail is a minor flag choice that can be handled inline.
 
-## Prompt-Improver Workflow (Draft -> Critique -> Finalize)
+## Inputs
 
-Follow this internal workflow (inspired by `prompt-improver.md` + `prompt-improver-finalize.md`).
+Primary input:
+- `<user_prompt>`
 
-### Step 1: Extract What Exists
+Optional supporting context:
+- `<examples>`
+- `<feedback>`
 
-From the source prompt, extract:
-- explicit objective(s)
-- explicit constraints (must/must-not)
-- environment facts (language, frameworks, repo, OS)
-- any validation signals (tests, lint, build)
-- any examples (input/output pairs)
+Treat `<examples>` as demonstrations, not new requirements. Treat `<feedback>` as revision guidance, not permission to weaken the original constraints.
 
-Do not reinterpret constraints. Copy them into the brief.
+## Repo-Backed Workspace
 
-### Step 2: Identify Variables And Unknowns
+Use this workspace for all saved outputs:
+- `docs/prompt-improver-spec/artifacts/implementation_plan.md`
+- `docs/prompt-improver-spec/artifacts/task.md`
+- `docs/prompt-improver-spec/artifacts/walkthrough.md`
+- `docs/prompt-improver-spec/final-prompts/<prompt-name>-draft.md`
+- `docs/prompt-improver-spec/final-prompts/<prompt-name>.md`
 
-Build a minimal variable table in your head:
-- What is required to run Ralph correctly?
-- What will change the plan/flags materially?
+Determine `<prompt-name>` during planning using a descriptive kebab-case filename. Reuse the saved files on resume instead of redoing earlier analysis from scratch.
 
-Required for a final handoff block:
-- `cwd`
-- `validation_cmds`
+Delete the draft file after creating the final prompt.
 
-Required for many real-world tasks:
-- `progress_scopes` (especially when narrow/high risk)
-- success criteria
+## Required Workflow
 
-If anything required is missing, prepare questions.
+Follow the staged workflow defined in `references/prompt-improver-workflow-codex.md`.
 
-### Step 3: Draft The Handoff Block (Internal)
+### Phase A
 
-Draft the final handoff block using the template below.
+Planning only. Complete Steps 1-2.
 
-Rules:
-- include non-goals when the prompt is broad
-- keep context minimal (only execution-relevant)
-- keep the block scannable
+Required work:
+- Read `<user_prompt>` and any optional `<examples>` / `<feedback>`.
+- Extract and normalize examples.
+- Quote unclear or problematic phrases from the source prompt.
+- Preserve all explicit MUST, MUST NOT, and DO NOT constraints.
+- Create `docs/prompt-improver-spec/artifacts/implementation_plan.md`.
+- Create `docs/prompt-improver-spec/artifacts/task.md`.
+- Choose `<prompt-name>`.
 
-Do not output the draft yet if any required clarifications are missing.
+`implementation_plan.md` must include:
+- Step 1 example identification
+- Step 2 planning analysis
+- intent summary
+- deployment summary
+- task flowchart
+- lessons from examples
+- chain-of-thought approach assessment
+- output format analysis
+- variable plan
+- structural notes
+- ambiguities and questions
+- prompt filename
+- constraint-preservation checklist
 
-### Step 4: Critique The Draft
+End Phase A at a native Codex review checkpoint after Steps 1-2. Pause and ask the user to review the saved planning artifacts before continuing.
 
-Run these checks before final output:
+### Phase B
 
-Constraint preservation:
-- All explicit must/must-not rules carried forward.
-- No constraint weakened.
+Initial draft only. Complete Step 3.
 
-Anti-scope-creep:
-- No new deliverables.
-- No prescriptive step-by-step implementation plan.
-- Non-goals prevent drift.
+Required work:
+- Read the saved planning artifacts instead of redoing them.
+- Write the first improved prompt draft to `docs/prompt-improver-spec/final-prompts/<prompt-name>-draft.md`.
+- Update `docs/prompt-improver-spec/artifacts/task.md` to mark Steps 1-3 complete.
+- Include clarifying questions only if ambiguities remain.
 
-Execution readiness:
-- `cwd` present.
-- `validation_cmds` present and ordered.
-- `progress_scopes` are narrow enough.
-- Runner flags match the actual runner (no invented flags).
+The draft must:
+- define the assistant role clearly
+- introduce descriptive XML variables when useful
+- preserve all constraints
+- clarify the objective
+- specify output expectations without pre-solving the task
+- add anti-patterns or verification checklists only when they help
 
-Prompting quality:
-- clear delimiters
-- observable success criteria
-- no chain-of-thought prompting language ("think step by step")
+End Phase B with the saved draft path and any remaining clarifying questions. Do not emit the Ralph-ready invocation snippet yet.
 
-### Step 5: Revise
+### Phase C
 
-Tighten the objective, add missing non-goals, and fix any guardrail gaps.
+Critique and revision planning only. Complete Step 4.
 
-If revisions reveal missing info, ask questions instead of finalizing.
+Required work:
+- Read `docs/prompt-improver-spec/final-prompts/<prompt-name>-draft.md`.
+- Append the critique and revision plan to `docs/prompt-improver-spec/artifacts/implementation_plan.md`.
+- Update `docs/prompt-improver-spec/artifacts/task.md` for Step 4.
 
-### Step 6: Finalize
+The critique must quote specific problem text and describe:
+- issues identified
+- areas needing expansion
+- structural improvements
+- constraint-preservation check
 
-If all required clarifications are resolved:
-- output exactly one fenced markdown code block
-- no additional prose outside the code block
+End Phase C at a second native Codex review checkpoint after Step 4. Pause and ask the user to review the critique before continuing.
 
-If not resolved:
-- ask the smallest set of questions that unblock finalization
+### Phase D
 
-## Non-Negotiable Rules
+Revision, final polish, and delivery. Complete Steps 5-6.
 
-1. Clarify, do not prescribe.
-- Improve the briefing and boundaries.
-- Do not do the downstream agent’s work.
+Required work:
+- Read and reuse all existing prompt-improver artifacts.
+- Apply the revision plan to strengthen weak sections.
+- Save the final prompt to `docs/prompt-improver-spec/final-prompts/<prompt-name>.md`.
+- Delete the draft file at `docs/prompt-improver-spec/final-prompts/<prompt-name>-draft.md`.
+- Create `docs/prompt-improver-spec/artifacts/walkthrough.md`.
+- Update `docs/prompt-improver-spec/artifacts/task.md` to mark all steps complete.
 
-2. Preserve constraints.
-- Keep all must/must-not constraints.
-- If you introduce an assumption, label it as an assumption.
+The final polish must verify:
+- all original constraints are preserved
+- XML tag usage is consistent when tags are used
+- instructions are logically ordered
+- the prompt is complete without doing the receiving agent's work
 
-3. Avoid scope creep.
-- Do not add deliverables the user didn’t ask for.
-- Prefer explicit non-goals over speculative roadmaps.
+Final delivery must include:
+- the completion message ending with `All 6 Steps Complete.`
+- the saved final prompt path
+- confirmation that the draft file was removed
+- a short Ralph-ready invocation snippet that points to the saved final prompt file
+- a final prompt structure that clearly covers `Objective`, `Acceptance Criteria`, `Source of Truth`, `Optional Verification`, and `Blocker Policy`
 
-4. Optimize for execution.
-- Make success criteria observable.
-- Make validations explicit and ordered.
+## Ralph-Specific Tailoring Is Secondary
 
-## Intake Fields (What To Extract)
+After the prompt itself is finished, add only a small Ralph-specific wrapper:
+- how to use the saved prompt with `$ralph-wiggum-codex`
+- optional validation or progress-scope guidance if it materially helps
+- optional flags only when they materially improve the run
 
-Normalize the user prompt into these fields. Prefer to infer from context before asking.
+The final deliverable is a production-ready prompt file plus a Ralph-ready invocation snippet, not a flags-first handoff block.
 
-- `cwd`: where to run (repo path)
-- `goal`: one sentence; testable
-- `constraints`: hard requirements and must-nots
-- `non_goals`: explicit out-of-scope items
-- `success_criteria`: observable outcomes (ideally tied to validations)
-- `validation_cmds`: repeatable commands proving success
-- `progress_scopes`: git pathspec(s) that should change for progress to count
-- `risk_profile`: `low|medium|high` based on blast radius
-- `surface`: Codex session vs API-oriented usage
-- `source_of_truth`: paths/URLs defining requirements (optional)
-- `preflight_cmds`: one-time commands before the loop (optional)
+When the improved prompt is intended for `$ralph-wiggum-codex`, the prompt itself should normally include these sections:
+- `Objective`
+- `Acceptance Criteria`
+- `Source of Truth`
+- `Optional Verification`
+- `Blocker Policy`
 
-If the user supplies examples, preserve them as examples, not additional requirements.
+## Non-Negotiable Constraints
 
-## Optional Auto-Discovery (When Repo Access Exists)
+You must not:
+- execute or answer the source prompt's underlying task
+- remove or weaken original constraints
+- invent missing facts without labeling them
+- redo earlier phases from scratch when saved artifacts already exist
+- leave the draft file behind after finalizing
+- fill the prompt with example outputs that amount to doing the agent's work
+- prescribe low-level execution steps unless the user explicitly asked for them
 
-If `validation_cmds` are missing, attempt a quick scan and propose candidates, then ask the user to confirm:
-- `package.json` scripts: `lint`, `test`, `typecheck`, `build`
-- `Makefile`, `justfile`, `Taskfile.yml`
-- `pyproject.toml`, `tox.ini`, `pytest.ini`
-- `go.mod` (common default: `go test ./...`)
-- `tests/`, `scripts/`, repo `README.md`
+## Prompt Quality Checks
 
-If `progress_scopes` are missing, propose the narrowest plausible scope:
-- prefer a module path implied by the goal
-- otherwise prefer `src/` (and add `tests/` only if tests are expected)
+When drafting or revising, explicitly check:
+- Clarity: quote confusing phrases and rewrite them
+- Structure: fix ordering, grouping, and entry point issues
+- Completeness: add missing briefing context, not extra deliverables
+- Variables: keep placeholders and XML tags consistent
+- Constraints: preserve MUST / MUST NOT / DO NOT rules
+- Output format: show structure, not pre-filled answers
+- Anti-over-engineering: remove content that does the downstream agent's job
 
-Never finalize the handoff block with guessed validations.
+## Optional Ralph Guidance
 
-## Mandatory Clarification Behavior
+Model and flag guidance are secondary.
 
-Ask this question every run before finalizing output:
-
-`Do you want a suggested output section included in the generated prompt?`
-
-If unanswered after one follow-up attempt, default to: omit suggested output.
-
-Ask additional clarifying questions only when required for correctness or safety:
-- Missing `cwd`.
-- Missing or unknown `validation_cmds`.
-- Missing `progress_scopes` for narrow/high-risk tasks.
-- Conflicting constraints.
-- Unclear success criteria.
-
-Clarification channel:
-- In Plan Mode: use `request_user_input`.
-- Outside Plan Mode: ask plain-text questions.
-
-If 3+ clarifications are required and you are not in Plan Mode, recommend switching to Plan Mode (`/plan`) so questions can be answered efficiently.
-
-## Synthesis Rules (Model + Guardrails)
-
-Use the references to keep selections consistent:
+Only consult these references when the final Ralph wrapper actually needs them:
 - `references/prompt-improver-principles.md`
 - `references/openai-codex-prompting-2026.md`
 - `references/ralph-flag-selection-matrix.md`
 
-If you are uncertain about a model name, config key, or capability, consult the `openaiDeveloperDocs` MCP dependency declared in `agents/openai.yaml`.
-
-### Surface-Aware Model Selection
-
-- Codex sessions: default `gpt-5.3-codex`.
-- API-oriented runs: default `gpt-5.2-codex`.
-
-If the user explicitly requests a different model, preserve it.
-
-### Reasoning Effort Selection
-
-Select one and justify briefly inside the handoff block:
-- `medium`: low ambiguity, narrow change, low blast radius
-- `high`: multi-step engineering work
-- `xhigh`: ambiguous requirements, high risk, cross-system changes, migrations
-
-Avoid chain-of-thought prompting language.
-
-### Autonomy / Sandbox Guidance
-
-If the task is high risk, include a conservative recommendation:
-- prefer `--autonomy-level l0` or `l1` for read-heavy or safety-critical work
-- prefer `--autonomy-level l2` for typical engineering tasks
-- use `l3` only when explicitly requested
-
-Only include an explicit `--sandbox` override when you have a strong reason.
-
-### Loop Flag Synthesis
-
-Map complexity/risk to runner flags using `references/ralph-flag-selection-matrix.md`.
-
-Always include (unless user overrides):
-- `--events-format both`
-- `--progress-artifact`
-
-## Strict Output Contract
-
-When clarifications are complete, return exactly one fenced markdown code block and no additional prose.
-
-If required clarifications are still missing, ask questions instead of producing the final block.
-
-### Final Handoff Block Template
-
-```text
-/skills
-$ralph-wiggum-codex
-Run this in: <cwd>
-Objective: <one-sentence goal>
-Context (optional): <only facts that materially affect implementation>
-Constraints:
-- <must / must-not>
-Non-goals:
-- <explicitly out of scope>
-Success criteria:
-- <observable criteria tied to validations/behavior>
-Validation:
-- <repeatable commands, fastest first>
-Progress scope:
-- <pathspecs that should change>
-Source of truth (optional):
-- <paths/urls>
-Recommended model: <gpt-5.3-codex|gpt-5.2-codex|...>
-Reasoning effort: <medium|high|xhigh>
-Risk profile: <low|medium|high> (why)
-Suggested runner flags:
---autonomy-level <l0|l1|l2|l3>
---sandbox <read-only|workspace-write> (only if overriding default)
---model <model> (only if overriding)
---profile <profile> (optional)
---max-iterations <n>
---max-consecutive-failures <n>
---max-stagnant-iterations <n>
---progress-scope "<pathspec>" (repeatable)
---idle-timeout-seconds <n>
---hard-timeout-seconds <n>
---timeout-retries <n>
---events-format both
---progress-artifact
---validate-cmd "<command>" (repeatable)
-```
-
-### Suggested Output Section (Optional)
-
-If the user answered `yes` to the suggested-output question, append a final section:
-
-- Keep it non-restrictive.
-- Do not conflict with Ralph’s schema-based completion contract.
-- Prefer guidance like what to include in `evidence` (tests run, files changed, key decisions) over rigid report formats.
-
-## References
-
-Load these as needed:
-- `references/prompt-improver-principles.md`
-- `references/openai-codex-prompting-2026.md`
-- `references/ralph-flag-selection-matrix.md`
+If a model name or OpenAI capability is uncertain, consult the `openaiDeveloperDocs` MCP dependency declared in `agents/openai.yaml`.

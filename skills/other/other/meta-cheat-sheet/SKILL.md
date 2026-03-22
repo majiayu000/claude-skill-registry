@@ -1,6 +1,6 @@
 ---
 name: meta__cheat_sheet
-description: Quick reference for common patterns and code snippets. Use this when you need a fast lookup of project conventions.
+description: 'Quick reference for BookStore code rules and patterns. Use this when you need a fast lookup of conventions for IDs (Guid.CreateVersion7), timestamps (DateTimeOffset.UtcNow), event naming, logging (LoggerMessage), caching, or multi-tenancy. DO NOT USE FOR: step-by-step workflows — use the relevant scaffold skill instead.'
 ---
 
 # BookStore Cheat Sheet
@@ -74,8 +74,5 @@ namespace BookStore.ApiService.Handlers;  // ✅ File-scoped
 ```
 
 ## Related Skills
-- `/wolverine__create_operation` - Full command implementation
-- `/wolverine__update_operation` - Update/append operations
-- `/marten__get_by_id` - Full query implementation
-- `/marten__list_query` - Paged query implementation
-- `/marten__aggregate_scaffold` - Full aggregate setup
+- `/wolverine__guide` - All Wolverine write operations (create, update, delete)
+- `/marten__guide` - Aggregates, projections, and query endpoints

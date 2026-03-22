@@ -1,0 +1,17 @@
+{
+  "name": "sf-test",
+  "repo": "Clientell-Ai/salesforce-skills",
+  "path": "skills/sf-test/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Clientell-Ai/salesforce-skills",
+  "dir_name": "sf-test",
+  "downloaded_at": "2026-03-22T05:05:50.745669Z",
+  "author": "Clientell-Ai",
+  "source_url": "https://github.com/Clientell-Ai/salesforce-skills/blob/main/skills/sf-test/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Clientell-Ai/salesforce-skills/blob/main/skills/sf-test/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "sonoscli",
+  "repo": "alphaonedev/openclaw-graph",
+  "path": "skills/community/sonoscli/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alphaonedev/openclaw-graph",
+  "dir_name": "sonoscli-alphaonedev-openclaw-graph",
+  "downloaded_at": "2026-03-22T06:53:13.300145Z",
+  "author": "alphaonedev",
+  "source_url": "https://github.com/alphaonedev/openclaw-graph/blob/main/skills/community/sonoscli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alphaonedev/openclaw-graph/blob/main/skills/community/sonoscli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

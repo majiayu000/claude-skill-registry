@@ -1,0 +1,17 @@
+{
+  "name": "explain-code",
+  "repo": "AgnosticUI/agnosticui",
+  "path": ".claude/skills/explain-code/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/AgnosticUI/agnosticui",
+  "dir_name": "explain-code",
+  "downloaded_at": "2026-03-22T04:48:51.455902Z",
+  "author": "AgnosticUI",
+  "source_url": "https://github.com/AgnosticUI/agnosticui/blob/master/.claude/skills/explain-code/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AgnosticUI/agnosticui/blob/master/.claude/skills/explain-code/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -6,11 +6,11 @@ allowed-tools:
   - Read
   - Glob
   - Grep
-  - mcp__auditor-addon__peek
-  - mcp__auditor-addon__metrics
-  - mcp__auditor-addon__diff_metrics
-  - mcp__auditor-addon__diff
-  - mcp__auditor-addon__call_chains
+  - mcp__plugin_auditor-addon_auditor-addon__peek
+  - mcp__plugin_auditor-addon_auditor-addon__metrics
+  - mcp__plugin_auditor-addon_auditor-addon__diff_metrics
+  - mcp__plugin_auditor-addon_auditor-addon__diff
+  - mcp__plugin_auditor-addon_auditor-addon__call_chains
 ---
 
 # Estimator
@@ -19,8 +19,8 @@ allowed-tools:
 SEQUENCE:
 1. DISCOVERY (required, always first)
 2. CHECKPOINT: user confirms "full-scope" or "diff-scope"
-3. IF full-scope: EXPLORE (per-chunk) → METRICS → REPORT
-   IF diff-scope: REVIEW (per-chunk) → REPORT
+3. IF full-scope: EXPLORE (per-chunk) → METRICS → REFLECT → REPORT
+   IF diff-scope: DIFF-TRIAGE (per-chunk) → REFLECT → REPORT
 
 CHECKPOINT RULES:
 - Present findings using the phase's specified output format
@@ -102,6 +102,26 @@ All hour estimates assume a senior auditor who is:
 
 Adjust expectations accordingly for junior auditors or unfamiliar domains.
 </estimation_baseline>
+
+<adjustment_reference>
+## Reference: Domain Multipliers
+
+The metrics tool accounts for structural complexity and comment density but cannot detect semantic difficulty. Apply explicit multiplier adjustments when domain factors make the work harder or easier than raw metrics suggest.
+
+| Pattern | Typical Multiplier |
+|---------|-------------------|
+| Inline assembly / low-level bit ops | 1.5x – 2.5x |
+| Cryptographic math (ECC, pairings, polynomial commitments, hash circuits) | 1.5x – 3.0x |
+| ZK circuit logic (constraint systems, proving/verification details) | 1.5x – 3.0x |
+| Dense state machines (many interconnected states, complex transitions) | 1.3x – 2.0x |
+| Novel or undocumented protocol logic with no reference implementation | 1.3x – 2.0x |
+| Cross-chain / oracle integration points with complex invariants | 1.2x – 1.5x |
+| Boilerplate, thin wrappers, repetitive CRUD | 0.6x – 0.8x |
+
+**Formula:** `Adjusted Hours = Tool Hours × Multiplier`
+
+Use the midpoint for moderate cases; upper end when the pattern dominates the file. Skip adjustments smaller than 10% of a file's hours.
+</adjustment_reference>
 
 ---
 
@@ -185,7 +205,7 @@ Include:
 ### METRICS (Full Scope Only)
 
 **TRIGGER:** All chunks explored and scope confirmed.
-**NEXT:** REPORT.
+**NEXT:** REFLECT.
 
 **Goal:** Calculate metrics and estimate audit effort for all confirmed in-scope files.
 
@@ -197,30 +217,27 @@ Include:
 - **Identify anomalies:** Flag files that stand out (unusually high complexity, sparse documentation, outlier size)
 
 **Step 3 — Adjust:**
-The tool already accounts for complexity and comment density. Only adjust when metrics miss domain-specific factors:
-- **Increase** for: assembly, cryptographic math, dense state machines
-- **Decrease** for: boilerplate, generated code, repetitive patterns
-
-**Step 4 — Report:**
-Present metrics results with any adjustments using this format:
+Apply domain multipliers where needed (see Domain Multipliers reference). Present any adjustments:
 ```
 File: <path>
-Adjustment: <+/- X hours>
+Multiplier: <Nx>
+Adjusted Hours: <X hours>
 Reason: <justification>
 ```
 
-**NEXT:** Proceed to REPORT.
+**NEXT:** Proceed to REFLECT.
 </metrics_instructions>
 
 ---
 
-<review_instructions>
-### REVIEW (Diff Scope Only)
+<diff_triage_instructions>
+### DIFF-TRIAGE (Diff Scope Only)
 
 **TRIGGER:** User confirms diff-scope estimation after DISCOVERY.
 **CONSTRAINT:** Process ONE chunk at a time. STOP after each chunk and WAIT for confirmation. Skip chunks with no changes.
 **CHECKPOINT:** "Do you agree with this scope? Proceed to next chunk?"
-**NEXT:** After final chunk confirmed → REPORT.
+**NEXT:** After final chunk confirmed → REFLECT.
+</diff_triage_instructions>
 
 **Goal:** For each chunk with changes, calculate diff metrics, classify changes, and determine audit relevance.
 
@@ -250,9 +267,7 @@ For each changed file, determine scope and adjust estimates. Assume **no prior a
 - *Integrated* (multiple paths, shared state, affects invariants) → increase estimate
 - *Escalate*: If paths are insufficient, read unchanged files to understand context surface
 
-**Domain factors:**
-- **Increase** for: assembly, crypto, state machines
-- **Decrease** for: boilerplate, generated code
+**Adjust:** Apply domain multipliers where needed (see Domain Multipliers reference).
 
 **Step 4 — Report:**
 Present summary table:
@@ -266,18 +281,47 @@ Include:
 - Concern Questions for unclear scope
 
 **CHECKPOINT:** "Do you agree with this scope? Proceed to next chunk?"
-</review_instructions>
+</diff_triage_instructions>
+
+---
+
+<reflect_instructions>
+### REFLECT
+
+**TRIGGER:** METRICS complete (full scope) OR all DIFF-TRIAGE chunks confirmed (diff scope).
+**CHECKPOINT:** "Does this estimate look right to you? Should I adjust anything before I write the report?"
+**NEXT:** User confirms → REPORT.
+
+**Goal:** Step back from the per-file detail and assess whether the overall estimate is credible.
+
+**Step 1 — Reflect on the full picture:**
+- **Proportionality:** Does the total effort feel proportional to the complexity you observed across the codebase?
+- **Hard files:** Were there files you found genuinely difficult to follow? Do their hours reflect that difficulty?
+- **Depth:** Would the estimated days give an auditor enough time to probe invariants and edge cases — not just read the code?
+
+**Step 2 — Revise or flag:**
+For each concern identified, either:
+- Revise the estimate on the spot with a short justification, or
+- Flag it as an open question for the user to decide
+
+**Step 3 — Present and stop:**
+Summarize your reflection and any revisions. Then ask the checkpoint question and wait.
+</reflect_instructions>
 
 ---
 
 <report_instructions>
 ### REPORT
 
-**TRIGGER:** METRICS complete (full scope) OR all REVIEW chunks confirmed (diff scope).
+**TRIGGER:** User confirms after REFLECT.
 
-**Goal:** Generate a comprehensive Audit Estimation Report.
+Ask: "Would you like a **detailed report** or a **condensed version** (e.g. for Slack)?"
 
-**Report Structure:**
+Then produce the chosen format.
+
+---
+
+**Detailed Report:**
 
 **1. Headline:**
 - Full scope: "Audit Estimation - <Repository Name>"
@@ -297,13 +341,14 @@ Include:
 |-------|-----------|----------|------|-----------------|------------|-----------------|
 
 - Diff scope: Add **Approach** column (`full` for added files, `diff` for modified)
-- Use adjusted estimates from METRICS (full) or REVIEW (diff)
+- Use adjusted estimates from METRICS (full) or DIFF-TRIAGE (diff)
 
 **5. Adjustments Summary:**
 If any adjustments were made, list them:
 ```
 File: <path>
-Adjustment: <+/- X hours>
+Multiplier: <Nx>
+Adjusted Hours: <X hours>
 Reason: <justification>
 ```
 
@@ -312,10 +357,33 @@ Reason: <justification>
 - Total Estimated Hours
 - Total Estimated Days
 
-**7. Risks & Recommendations:**
+**7. Required Domain Expertise:**
+- Languages and ecosystems (e.g. Solidity/EVM, Rust/Substrate)
+- Protocol knowledge (e.g. AMM mechanics, lending invariants, ZK proof systems)
+- Any specialised skills flagged during analysis (e.g. assembly, cryptographic primitives)
+
+**8. Risks & Recommendations:**
 - Proposed timeline and order of execution
 - Highlighted concerns:
   - Diff scope: removed functions, new entry points, high-complexity changes
   - Full scope: high-risk areas, complex interactions, areas needing extra attention
+
+---
+
+**Condensed Report (Slack-friendly):**
+
+Plain prose, no markdown headings or tables. Use Slack bold (`*text*`) only.
+
+```
+*[Repo] — Audit Estimation*
+
+X days (Y hours)
+
+[2-3 sentences: what the codebase does, what was scoped, overall complexity.]
+
+*Challenges:* [key difficulty factors — crypto, novel protocol, missing docs, etc.]
+
+*Required expertise:* [languages, domain knowledge, any specialist skills needed]
+```
 </report_instructions>
 </phase_instructions>

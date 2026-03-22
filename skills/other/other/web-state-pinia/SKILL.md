@@ -7,11 +7,6 @@ description: Pinia stores, Vue 3 state patterns. Use when managing client state 
 
 > **Quick Guide:** Use Pinia for all shared client state in Vue 3. Options stores for simplicity, Setup stores for flexibility. Server data? Use your data fetching solution. Use `storeToRefs()` when destructuring state.
 
-**Detailed Resources:**
-
-- For code examples, see [examples/](examples/) folder
-- For decision frameworks and anti-patterns, see [reference.md](reference.md)
-
 ---
 
 <critical_requirements>
@@ -41,7 +36,7 @@ description: Pinia stores, Vue 3 state patterns. Use when managing client state 
 - Composing stores that depend on each other
 - Implementing state persistence across sessions
 - Adding DevTools integration for debugging
-- Setting up stores for SSR/Nuxt applications
+- Setting up stores for SSR applications
 
 **When NOT to use:**
 
@@ -181,7 +176,7 @@ Use plugins for persisting state across sessions.
 
 - Use `pinia-plugin-persistedstate` for most cases
 - Only persist user preferences and non-sensitive data
-- Use `paths` option to persist specific properties only
+- Use `pick` option to persist specific properties only
 - Never persist server data (refetch on load instead)
 - Consider storage type: localStorage vs sessionStorage
 
@@ -225,7 +220,7 @@ Handle server-side rendering and hydration properly.
 #### SSR Guidelines
 
 - Use SSR-safe defaults (no browser APIs in initial state)
-- Wrap client-only logic in `if (import.meta.client)` blocks
+- Guard client-only logic with `typeof window !== "undefined"` checks
 - Be careful with Setup stores - ensure all refs are returned
 - Sanitize serialized state to prevent XSS
 
@@ -235,38 +230,39 @@ For implementation examples, see [examples/ssr.md](examples/ssr.md).
 
 ---
 
-<integration>
+<red_flags>
 
-## Integration Guide
+## RED FLAGS
 
-**Vue Router Integration:**
+**High Priority Issues:**
 
-Use Setup stores to access router composables:
+- Storing server/API data in Pinia instead of using a data fetching solution - causes stale data, no caching, manual sync
+- Destructuring state without `storeToRefs()` - silently breaks reactivity, UI shows stale data
+- Private state in Setup stores (not returning all refs) - breaks SSR hydration, DevTools, and plugins
+- Browser APIs in state initialization (`localStorage`, `window`) - crashes SSR
 
-```typescript
-import { useRoute, useRouter } from "vue-router";
+**Gotchas & Edge Cases:**
 
-export const useFiltersStore = defineStore("filters", () => {
-  const route = useRoute();
-  const router = useRouter();
-  // Access route.query, call router.push(), etc.
-});
-```
+- `storeToRefs()` works for state and getters only, not actions - destructure actions directly
+- Options stores have built-in `$reset()`, Setup stores do not - implement manually or use a plugin
+- Store instances are singletons per Pinia instance - in SSR, each request needs its own Pinia
+- `$patch` with a function allows accessing current state: `store.$patch(state => { state.items.push(item) })`
+- Arrow functions in Options store getters have no `this` - use `function` keyword or state parameter
 
-**DevTools:**
+For complete anti-pattern examples, see [reference.md](reference.md).
 
-Pinia has full Vue DevTools support:
+</red_flags>
 
-- Time-travel debugging
-- State inspection and editing
-- Action tracking
-- Store timeline
+---
 
-**Nuxt Integration:**
+**Detailed Resources:**
 
-Use `@pinia/nuxt` module for automatic SSR support and auto-imports.
-
-</integration>
+- [examples/core.md](examples/core.md) - Options store, Setup store, storeToRefs, composing stores
+- [examples/persistence.md](examples/persistence.md) - Selective persistence with pinia-plugin-persistedstate
+- [examples/testing.md](examples/testing.md) - Unit testing stores, component testing with createTestingPinia
+- [examples/plugins.md](examples/plugins.md) - Logger plugin, reset plugin for Setup stores
+- [examples/ssr.md](examples/ssr.md) - SSR-safe stores, hydration, client-only guards
+- [reference.md](reference.md) - Decision frameworks, anti-patterns, TypeScript patterns, performance tips
 
 ---
 

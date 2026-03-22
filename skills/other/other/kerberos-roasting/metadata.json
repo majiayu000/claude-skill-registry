@@ -1,0 +1,17 @@
+{
+  "name": "kerberos-roasting",
+  "repo": "blacklanternsecurity/red-run",
+  "path": "skills/ad/kerberos-roasting/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/blacklanternsecurity/red-run",
+  "dir_name": "kerberos-roasting",
+  "downloaded_at": "2026-03-22T07:16:17.067486Z",
+  "author": "blacklanternsecurity",
+  "source_url": "https://github.com/blacklanternsecurity/red-run/blob/main/skills/ad/kerberos-roasting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/blacklanternsecurity/red-run/blob/main/skills/ad/kerberos-roasting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

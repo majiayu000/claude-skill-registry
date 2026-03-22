@@ -2,8 +2,16 @@
   "name": "godot-generate-tests",
   "repo": "Asreonn/godot-superpowers",
   "path": "mini-skills/godot-generate-tests/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/Asreonn/godot-superpowers",
   "dir_name": "godot-generate-tests",
-  "downloaded_at": "2026-02-22T04:43:04.414450Z"
+  "downloaded_at": "2026-03-22T04:55:16.112454Z",
+  "author": "Asreonn",
+  "source_url": "https://github.com/Asreonn/godot-superpowers/blob/main/mini-skills/godot-generate-tests/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Asreonn/godot-superpowers/blob/main/mini-skills/godot-generate-tests/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

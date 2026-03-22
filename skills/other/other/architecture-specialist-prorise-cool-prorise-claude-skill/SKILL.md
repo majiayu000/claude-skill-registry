@@ -2,88 +2,48 @@
 description: 提供系统架构设计、技术选型、架构审查和组件设计能力。当需要设计新系统、重构现有架构或进行架构审查时使用。
 name: architecture-specialist
 ---
-
 # Architecture Specialist
 
-
 提供系统架构设计、技术选型、架构审查和组件设计能力。当需要设计新系统、重构现有架构或进行架构审查时使用。
 
-## When to Use This Skill
+## Skill Index
 
-提供系统架构设计、技术选型、架构审查和组件设计能力。当需要设计新系统、重构现有架构或进行架构审查时使用。
+<!-- AUTO-GENERATED-SKILL-INDEX:START -->
+以下索引由 `node scripts/update-skill-index.js` 自动生成，用于让 Claude 在顶层专家触发后继续路由到最相关的子技能。
 
-## Capabilities
+### Claude 使用说明
 
-这种专业技能融合了以下这些能力：
+1. 先将用户当前任务与每个子技能的 `触发语义` 进行语义匹配，不要只看目录名。
+2. 一旦找到最相关的子技能，立即打开其 `入口文件` 指向的 `SKILL.md`，把它作为下一层入口。
+3. 进入子技能后，再根据该子技能自己的说明按需加载同目录下的 `references/`、`scripts/`、`assets/`，不要在顶层专家中预先展开大段细节。
+4. 如果多个子技能都相关，先加载最贴近主目标的那个，再按需补充其他子技能，避免一次性加载过多上下文。
+5. 下方 `入口文件` 路径相对于项目根目录，可直接用于 `Read` 操作。
 
-### Backend Architect
+### 子技能索引
 
-在设计 API、构建服务器端逻辑、设计数据模式、实现数据库或构建可扩展的后端系统时使用此代理。该代理专注于创建健壮、安全和高性能的后端服务。
+#### autonomous-optimization-architect (1)
+- `autonomous-optimization-architect`
+  - 触发语义: Intelligent system governor that continuously shadow-tests APIs for performance while enforcing strict financial and security guardrails against runaway costs.
+  - 入口文件: `.claude/skills/architecture-specialist/references/domains/autonomous-optimization-architect/SKILL.md`
 
+#### lsp-index-engineer (1)
+- `lsp-index-engineer`
+  - 触发语义: Language Server Protocol specialist building unified code intelligence systems through LSP client orchestration and semantic indexing
+  - 入口文件: `.claude/skills/architecture-specialist/references/domains/lsp-index-engineer/SKILL.md`
 
-📖 [详细文档](./references/engineering_backend_backend-architect.md)
+#### project-analysis (1)
+- `project-analyze`
+  - 触发语义: Multi-phase iterative project analysis with Mermaid diagrams. Generates architecture reports, design reports, method analysis reports. Use when analyzing codebases, understanding project structure, reviewing architecture, exploring design patterns, or documenting system components. Triggers on "analyze project", "architecture report", "design analysis", "code structure", "system overview".
+  - 入口文件: `.claude/skills/architecture-specialist/references/domains/project-analysis/SKILL.md`
 
+#### software-architect (1)
+- `software-architect`
+  - 触发语义: Expert software architect specializing in system design, domain-driven design, architectural patterns, and technical decision-making for scalable, maintainable systems.
+  - 入口文件: `.claude/skills/architecture-specialist/references/domains/software-architect/SKILL.md`
 
+<!-- AUTO-GENERATED-SKILL-INDEX:END -->
 
-### Senior Backend Architect
+## Notes
 
-资深后端工程师和系统架构师，拥有超过 10 年的谷歌工作经验，领导过多个千万级用户的产品。精通 Go 和 TypeScript，专长于分布式系统、高性能 API 和生产级基础设施。兼具技术实现和系统设计能力，拥有零停机部署和极少生产事故的辉煌记录。
-
-
-📖 [详细文档](./references/senior_backend_golang_typesicprt-architect.md)
-
-
-
-### Senior Frontend Architect
-
-资深前端工程师和架构师，拥有超过 10 年的 Meta 工作经验，领导过多个千万级用户的产品。精通 TypeScript、React、Next.js、Vue 和 Astro 生态系统。专长于性能优化、跨平台开发、响应式设计，并能与 UI/UX 设计师和后端工程师无缝协作。拥有交付像素级精准、性能卓越且用户体验出色的应用的辉煌记录。
-
-
-📖 [详细文档](./references/engineering_frontend_senior-frontend-architect.md)
-
-
-
-### Cloud Architect
-
-设计 AWS/Azure/GCP 基础设施，实施 Terraform IaC (基础设施即代码)，并优化云成本。处理自动扩缩容、多区域部署和无服务器架构。在需要云基础设施、成本优化或迁移规划时应主动使用。
-
-
-📖 [详细文档](./references/engineering_middlend_cloud-architect.md)
-
-
-
-### Architect Reviewer
-
-审查代码变更的架构一致性和模式。在任何结构性变更、新增服务或 API 修改后应主动使用。确保遵循 SOLID 原则、适当的分层和可维护性。
-
-
-📖 [详细文档](./references/engineering_backend_backend-architect.md)
-
-
-
-### Api Architect
-
-通用 API 设计师，专注于 RESTful 设计、GraphQL 模式以及现代合同标准。**必须** 在任何项目需要新的或修订的 API 合同时主动使用。能够生成清晰的资源模型、OpenAPI/GraphQL 规范，并提供关于认证、版本控制、分页和错误格式的指导——但不指定任何特定的后端技术。
-
-
-📖 [详细文档](./references/universal_api-architect.md)
-
-
-
-### React Component Architect
-
-资深的 React 架构师，专注于现代模式和组件设计。必须用于 React 组件开发、钩子实现或 React 架构决策。能够创建智能且与项目紧密相关的解决方案，与现有代码库无缝集成。
-
-
-📖 [详细文档](./references/specialized_react_react-component-architect.md)
-
-
-
-### Vue Component Architect
-
-Vue 3 高级专家，专注于 Composition API、可扩展组件架构以及现代 Vue 工具。在设计或重构 Vue 组件、可组合组件或应用层面的 Vue 架构决策时，必须使用此方法。
-
-
-📖 [详细文档](./references/specialized_vue_vue-component-architect.md)
-
-
+- 顶层 `SKILL.md` 仅做索引导航，不承载大体量细节内容。
+- 详细资料下沉到 `references/domains/`，按树形结构组织。

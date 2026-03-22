@@ -1,27 +1,36 @@
 ---
 name: reactive-dashboard-performance
-description: Expert in building blazing-fast reactive dashboards with comprehensive testing. Masters React performance patterns, testing strategies for async components, and real-world patterns from Linear, Vercel, Notion.
-version: "1.0.0"
-category: Frontend Development
-tags:
+description: Expert in building blazing-fast reactive dashboards with comprehensive testing. Masters React performance patterns, testing strategies for async components, and real-world patterns from Linear,
+  Vercel, Notion.
+allowed-tools:
+- Read
+- Write
+- Edit
+- Bash
+- Grep
+- Glob
+version: 1.0.0
+triggers:
+- dashboard performance
+- slow tests
+- reactive testing
+- integration tests timeout
+- dashboard optimization
+metadata:
+  category: Frontend Development
+  tags:
   - react
   - performance
   - testing
   - dashboard
   - optimization
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-triggers:
-  - "dashboard performance"
-  - "slow tests"
-  - "reactive testing"
-  - "integration tests timeout"
-  - "dashboard optimization"
+  pairs-with:
+  - skill: react-performance-optimizer
+    reason: Dashboard performance depends on React memoization, virtualization, and state management
+  - skill: admin-dashboard
+    reason: Admin dashboards are the primary consumer of reactive dashboard performance patterns
+  - skill: data-viz-2025
+    reason: Dashboard charts and graphs require performant data visualization rendering
 ---
 
 # Reactive Dashboard Performance
@@ -109,7 +118,7 @@ Expert in building production-grade reactive dashboards that load in &lt;100ms a
 
 3. **Fix async queries**
    - Use findBy* instead of getBy*
-   - Increase timeout if needed: `waitFor(() =&gt; {...}, { timeout: 3000 })`
+   - Increase timeout if needed: `waitFor(() => {...}, { timeout: 3000 })`
    - Mock React Query properly
 
 4. **Simplify component tree**

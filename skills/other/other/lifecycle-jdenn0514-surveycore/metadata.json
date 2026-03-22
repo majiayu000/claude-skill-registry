@@ -1,0 +1,17 @@
+{
+  "name": "lifecycle",
+  "repo": "JDenn0514/surveycore",
+  "path": ".claude/skills/lifecycle/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/JDenn0514/surveycore",
+  "dir_name": "lifecycle-jdenn0514-surveycore",
+  "downloaded_at": "2026-03-22T05:30:53.642035Z",
+  "author": "JDenn0514",
+  "source_url": "https://github.com/JDenn0514/surveycore/blob/main/.claude/skills/lifecycle/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JDenn0514/surveycore/blob/main/.claude/skills/lifecycle/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

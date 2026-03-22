@@ -1,7 +1,7 @@
 ---
 name: langfuse
-version: 1.0.2
-description: Debug AI traces, find exceptions, analyze sessions, and manage prompts via Langfuse MCP. Also handles MCP setup and configuration.
+version: 1.0.3
+description: Debug AI traces, find exceptions, analyze sessions, and manage prompts via Langfuse MCP. Use when debugging AI pipelines, investigating errors, analyzing latency, managing prompt versions, or setting up Langfuse. Triggers on "langfuse", "traces", "debug AI", "find exceptions", "what went wrong", "why is it slow", "datasets", "evaluation sets".
 metadata:
   short-description: Langfuse observability via MCP
   compatibility: claude-code, codex-cli
@@ -220,6 +220,26 @@ update_prompt_labels(name="...", version=N, labels=["production"])
 | Create/update dataset item | `create_dataset_item(dataset_name="...", item_id="...")` |
 
 `age` = minutes to look back (max 10080 = 7 days)
+
+---
+
+## Troubleshooting
+
+### MCP connection fails
+- Verify credentials: check `LANGFUSE_PUBLIC_KEY`, `LANGFUSE_SECRET_KEY`, `LANGFUSE_HOST`
+- Restart CLI after adding/updating MCP config
+- Test MCP independently: `fetch_traces(age=60)` — if this fails, the issue is MCP, not the skill
+- See `references/setup.md` for detailed troubleshooting
+
+### No traces found
+- Increase the `age` parameter (default lookback may be too short)
+- Verify your application is sending traces to the correct Langfuse project
+- Check `LANGFUSE_HOST` points to the right instance (cloud vs self-hosted)
+
+### Permission denied
+- Regenerate API keys from Langfuse dashboard
+- Ensure keys have the required scopes for the operation
+- Write operations require read-write keys (not read-only mode)
 
 ---
 

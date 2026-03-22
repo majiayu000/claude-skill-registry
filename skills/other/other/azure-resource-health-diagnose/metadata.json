@@ -1,0 +1,17 @@
+{
+  "name": "azure-resource-health-diagnose",
+  "repo": "MoonAxis/azure-stack",
+  "path": "skills/azure-resource-health-diagnose/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MoonAxis/azure-stack",
+  "dir_name": "azure-resource-health-diagnose",
+  "downloaded_at": "2026-03-22T05:52:29.937380Z",
+  "author": "MoonAxis",
+  "source_url": "https://github.com/MoonAxis/azure-stack/blob/main/skills/azure-resource-health-diagnose/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MoonAxis/azure-stack/blob/main/skills/azure-resource-health-diagnose/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

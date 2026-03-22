@@ -1,0 +1,17 @@
+{
+  "name": "testing-payment-flow-security",
+  "repo": "defconxt/CIPHER",
+  "path": "skills/bug-bounty/techniques/testing-payment-flow-security/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/defconxt/CIPHER",
+  "dir_name": "testing-payment-flow-security",
+  "downloaded_at": "2026-03-22T07:43:11.682043Z",
+  "author": "defconxt",
+  "source_url": "https://github.com/defconxt/CIPHER/blob/main/skills/bug-bounty/techniques/testing-payment-flow-security/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/defconxt/CIPHER/blob/main/skills/bug-bounty/techniques/testing-payment-flow-security/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

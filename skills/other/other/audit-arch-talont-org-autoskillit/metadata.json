@@ -1,0 +1,17 @@
+{
+  "name": "audit-arch",
+  "repo": "TalonT-Org/AutoSkillit",
+  "path": ".claude/skills/audit-arch/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/TalonT-Org/AutoSkillit",
+  "dir_name": "audit-arch-talont-org-autoskillit",
+  "downloaded_at": "2026-03-22T06:20:47.837527Z",
+  "author": "TalonT-Org",
+  "source_url": "https://github.com/TalonT-Org/AutoSkillit/blob/main/.claude/skills/audit-arch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TalonT-Org/AutoSkillit/blob/main/.claude/skills/audit-arch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

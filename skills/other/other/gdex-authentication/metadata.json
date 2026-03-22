@@ -1,0 +1,17 @@
+{
+  "name": "gdex-authentication",
+  "repo": "GemachDAO/gdex-skill",
+  "path": "skills/gdex-authentication/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/GemachDAO/gdex-skill",
+  "dir_name": "gdex-authentication",
+  "downloaded_at": "2026-03-22T05:23:53.941346Z",
+  "author": "GemachDAO",
+  "source_url": "https://github.com/GemachDAO/gdex-skill/blob/main/skills/gdex-authentication/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GemachDAO/gdex-skill/blob/main/skills/gdex-authentication/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

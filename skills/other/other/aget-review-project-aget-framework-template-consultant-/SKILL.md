@@ -131,7 +131,7 @@ ELSE:
 ## Related Skills
 
 - `/aget-create-project` - Create new project plans
-- `/aget-healthcheck-evolution` - Check L-doc health
+- `/aget-check-evolution` - Check L-doc health
 - `/aget-record-lesson` - Capture lessons during review
 
 ## Traceability

@@ -5,22 +5,31 @@ description: '[Code Quality] Simplifies and refines code for clarity, consistenc
 allowed-tools: Read, Edit, Glob, Grep, Task
 ---
 
-> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
 
 **Prerequisites:** **MUST READ** before executing:
 
 - `.claude/skills/shared/understand-code-first-protocol.md`
 - `.claude/skills/shared/evidence-based-reasoning-protocol.md`
+- `.claude/skills/shared/design-patterns-quality-checklist.md` — Design pattern opportunities, anti-pattern detection, DRY/abstraction enforcement
+- `docs/project-reference/domain-entities-reference.md` — Domain entity catalog, relationships, cross-service sync (read when task involves business entities/models)
+
+> **External Memory:** For complex or lengthy work (research, analysis, scan, review), write intermediate findings and final results to a report file in `plans/reports/` — prevents context loss and serves as deliverable.
+
+> **Evidence Gate:** MANDATORY IMPORTANT MUST — every claim, finding, and recommendation requires `file:line` proof or traced evidence with confidence percentage (>80% to act, <80% must verify first).
+
+> **OOP & DRY Enforcement:** MANDATORY IMPORTANT MUST — flag duplicated patterns that should be extracted to a base class, generic, or helper. Classes in the same group or suffix (ex *Entity, *Dto, \*Service, etc...) MUST inherit a common base (even if empty now — enables future shared logic and child overrides). Verify project has code linting/analyzer configured for the stack.
 
 ## Quick Summary
 
 **Goal:** Simplify and refine code for clarity, consistency, and maintainability while preserving all functionality.
 
-> **MANDATORY IMPORTANT MUST** Plan ToDo Task to READ the following project-specific reference doc:
+> **MANDATORY IMPORTANT MUST** Plan ToDo Task to READ the following project-specific reference docs:
 >
-> - `project-structure-reference.md` -- project patterns and structure
+> - `docs/project-reference/code-review-rules.md` — anti-patterns, review checklists, quality standards **(READ FIRST)**
+> - `project-structure-reference.md` — project patterns and structure
 >
-> If file not found, search for: project documentation, coding standards, architecture docs.
+> If files not found, search for: project documentation, coding standards, architecture docs.
 
 **Workflow:**
 
@@ -34,6 +43,14 @@ allowed-tools: Read, Edit, Glob, Grep, Task
 - Preserve all existing functionality; no behavior changes
 - Follow platform patterns (Entity expressions, fluent helpers, project store base (search for: store base class), BEM)
 - Keep tests passing after every change
+
+### Frontend/UI Context (if applicable)
+
+When this task involves frontend or UI changes, **MUST READ** `.claude/skills/shared/ui-system-context.md` and the following docs:
+
+- Component patterns: `docs/project-reference/frontend-patterns-reference.md`
+- Styling/BEM guide: `docs/project-reference/scss-styling-guide.md`
+- Design system tokens: `docs/project-reference/design-system/README.md`
 
 # Code Simplifier Skill
 
@@ -64,6 +81,16 @@ Simplify and refine code for clarity, consistency, and maintainability.
 3. **Applies** KISS, DRY, and YAGNI principles
 4. **Preserves** all existing functionality
 5. **Follows convention** — grep for 3+ existing patterns before applying simplifications
+
+## Readability Checklist (MUST evaluate)
+
+Before finishing, verify the code is **easy to read, easy to maintain, easy to understand**:
+
+- **Schema visibility** — If a function computes a data structure (object, map, config), add a comment showing the output shape so readers don't have to trace the code
+- **Non-obvious data flows** — If data transforms through multiple steps (A → B → C), add a brief comment explaining the pipeline
+- **Self-documenting signatures** — Function params should explain their role; remove unused params
+- **Magic values** — Replace unexplained numbers/strings with named constants or add inline rationale
+- **Naming clarity** — Variables/functions should reveal intent without reading the implementation
 
 ## Simplification Targets
 
@@ -116,30 +143,42 @@ function getData() {
     - Find duplicated code patterns
     - Check naming clarity
 
-3. **Apply simplifications**
+3. **Design Pattern Assessment** (per `design-patterns-quality-checklist.md`)
+    - **DRY/Abstraction:** Flag duplicate patterns extractable to base class, generic, or helper
+    - **Right Responsibility:** Verify logic is in lowest appropriate layer (Entity > Service > Component)
+    - **Pattern Opportunities:** Check for creational/structural/behavioral pattern opportunities (switch→Strategy, scattered new→Factory, etc.)
+    - **Anti-Patterns:** Flag God Objects, Copy-Paste, Circular Dependencies, Singleton overuse
+    - **Guard against over-engineering:** Only recommend patterns with evidence of 3+ occurrences of the problem
+
+4. **Apply simplifications**
     - One refactoring type at a time
     - Preserve all functionality
     - Follow platform patterns
 
-4. **Verify**
+5. **Verify**
     - Run related tests if available
     - Confirm no behavior changes
 
-## Platform Patterns
+## Project Patterns
 
-### Backend (C#)
+### Backend
 
-- Extract to `Entity.XxxExpr()` static expressions
-- Use fluent helpers: `.With()`, `.Then()`, `.PipeIf()`
-- Move mapping to DTO `MapToObject()` / `MapToEntity()`
-- Use `PlatformValidationResult` fluent API
+- Extract to entity static expressions (search for: entity expression pattern)
+- Use fluent helpers (search for: fluent helper pattern in docs/project-reference/backend-patterns-reference.md)
+- Move mapping to DTO mapping methods (search for: DTO mapping pattern)
+- Use project validation fluent API (see docs/project-reference/backend-patterns-reference.md)
 - Check entity expressions have database indexes
 - Verify document database index methods exist for collections
 
-### Frontend (TypeScript)
+> **[IMPORTANT] Database Performance Protocol (MANDATORY):**
+>
+> 1. **Paging Required** — ALL list/collection queries MUST use pagination. NEVER load all records into memory. Verify: no unbounded `GetAll()`, `ToList()`, or `Find()` without `Skip/Take` or cursor-based paging.
+> 2. **Index Required** — ALL query filter fields, foreign keys, and sort columns MUST have database indexes configured. Verify: entity expressions match index field order, database collections have index management methods, migrations include indexes for WHERE/JOIN/ORDER BY columns.
+
+### Frontend
 
 - Use `project store base (search for: store base class)` for state management
-- Apply `untilDestroyed()` to all subscriptions
+- Apply subscription cleanup pattern (search for: subscription cleanup pattern) to all subscriptions
 - Ensure BEM class naming on all template elements
 - Use platform base classes (`project base component (search for: base component class)`, `project store component base (search for: store component base class)`)
 
@@ -162,3 +201,28 @@ function getData() {
 
 - Always plan and break work into many small todo tasks
 - Always add a final review todo task to verify work quality and identify fixes/enhancements
+
+---
+
+## Workflow Recommendation
+
+> **IMPORTANT MUST:** If you are NOT already in a workflow, use `AskUserQuestion` to ask the user:
+>
+> 1. **Activate `quality-audit` workflow** (Recommended) — code-simplifier → review-changes → code-review
+> 2. **Execute `/code-simplifier` directly** — run this skill standalone
+
+---
+
+## Next Steps
+
+**MANDATORY IMPORTANT MUST** after completing this skill, use `AskUserQuestion` to recommend:
+
+- **"/review-changes (Recommended)"** — Review all changes before commit
+- **"/code-review"** — Full code review
+- **"Skip, continue manually"** — user decides
+
+## Closing Reminders
+
+**MANDATORY IMPORTANT MUST** break work into small todo tasks using `TaskCreate` BEFORE starting.
+**MANDATORY IMPORTANT MUST** validate decisions with user via `AskUserQuestion` — never auto-decide.
+**MANDATORY IMPORTANT MUST** add a final review todo task to verify work quality.

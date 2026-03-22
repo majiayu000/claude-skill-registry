@@ -5,7 +5,7 @@ description: Resend email setup, domain verification
 
 # Resend Email & React Email Setup
 
-> **Quick Guide:** One-time setup for Resend email API with React Email templates in a Next.js App Router monorepo. Covers package installation, environment variables, domain verification, React Email project structure, preview server, and Better Auth integration.
+> **Quick Guide:** Resend email API with React Email templates. Use the `react` prop to pass components directly to `resend.emails.send()` -- no manual `render()` needed. Keep email templates in a dedicated package for monorepo separation. Verify your sending domain before production. Use `@react-email/render` (not `@react-email/components`) if you need to render to HTML strings manually.
 
 ---
 
@@ -15,56 +15,37 @@ description: Resend email setup, domain verification
 
 > **All code must follow project conventions in CLAUDE.md** (kebab-case, named exports, import ordering, `import type`, named constants)
 
-**(You MUST use `RESEND_API_KEY` environment variable for the server-side API key - NEVER hardcode secrets)**
+**(You MUST use `RESEND_API_KEY` environment variable -- NEVER hardcode API keys)**
 
-**(You MUST verify your sending domain in Resend dashboard before production emails - unverified domains only allow sending to your own email)**
+**(You MUST verify your sending domain in Resend dashboard before production -- unverified domains only send to your own email)**
 
-**(You MUST create email templates in a dedicated `packages/emails/` directory for monorepo - not inside the Next.js app)**
+**(You MUST use `@react-email/components` for email UI components and `@react-email/render` for HTML rendering -- these are separate packages)**
 
-**(You MUST use `@react-email/components` for email components - external UI libraries like Material UI are NOT supported)**
-
-**(You MUST configure the Resend SDK with appropriate region for your users - reduces delivery latency)**
+**(You MUST use `resend.emails.send({ react: MyTemplate(props) })` as the primary sending pattern -- manual `render()` to HTML is only needed for non-Resend senders)**
 
 </critical_requirements>
 
 ---
 
-**Auto-detection:** Resend setup, resend install, React Email setup, email templates setup, RESEND_API_KEY, domain verification, SPF DKIM DMARC, transactional email setup, email preview server
+**Auto-detection:** Resend setup, resend install, React Email setup, email templates setup, RESEND_API_KEY, domain verification, SPF DKIM DMARC, transactional email setup, email preview server, @react-email/components, react-email
 
 **When to use:**
 
-- Initial Resend setup in a new project
-- Setting up React Email templates package in monorepo
+- Initial Resend + React Email setup in a project
 - Configuring domain verification and DNS records
-- Setting up email preview server for development
-- Integrating email sending with Better Auth
+- Setting up the email preview dev server
+- Structuring email templates in a monorepo
 
 **When NOT to use:**
 
-- Sending individual emails (use `backend/email.md` for patterns)
-- Email template design patterns (use `backend/email.md` for patterns)
 - Marketing email campaigns (use dedicated marketing tools)
 - SMS or push notifications (different service)
-
-**Key patterns covered:**
-
-- Resend account and API key setup
-- Domain verification (SPF, DKIM, DMARC)
-- React Email package structure for monorepo
-- Email preview server configuration
-- Next.js App Router API route setup
-- Better Auth email callbacks integration
-- Environment variables configuration
-- Vercel deployment setup
+- Non-JavaScript backends (consider Postmark, SendGrid)
+- Need SMTP relay (Resend is API-only)
 
 **Detailed Resources:**
 
-- For code examples, see [examples/](examples/):
-  - [core.md](examples/core.md) - Client setup, constants, package exports
-  - [templates.md](examples/templates.md) - Base layout, components, email templates
-  - [integrations.md](examples/integrations.md) - Better Auth, Next.js API routes
-  - [deployment.md](examples/deployment.md) - Preview server, Vercel config, checklist
-- For decision frameworks and anti-patterns, see [reference.md](reference.md)
+- [examples/core.md](examples/core.md) - Client setup, sending patterns, template structure, preview server
 
 ---
 
@@ -72,27 +53,19 @@ description: Resend email setup, domain verification
 
 ## Philosophy
 
-Resend is a **developer-first email API** built by the creators of React Email. It provides a simple API for sending transactional emails with excellent deliverability. React Email brings modern component patterns to email development, replacing legacy table-based HTML.
+Resend is a **developer-first email API** built by the creators of React Email. React Email brings modern component patterns to email development, replacing legacy table-based HTML.
 
 **Core principles:**
 
 1. **Emails as React components** - Write emails with JSX, Tailwind CSS, and TypeScript
-2. **Preview before send** - Local development server shows exact email rendering
+2. **Preview before send** - Local dev server shows exact email rendering
 3. **Monorepo separation** - Email templates in dedicated package, not mixed with app code
-4. **Type-safe sending** - Full TypeScript support from template to API call
-
-**React Email 5.0 (Current):**
-
-- Requires Tailwind 4 (compatibility checker only supports Tailwind 4)
-- Supports React 19.2 and Next.js 16
-- Dark mode theming support with tested email client compatibility
-- Templates can be uploaded directly to Resend dashboard via CLI
+4. **`react` prop over `render()`** - Resend SDK renders components internally when you pass them via the `react` prop
 
 **When to use Resend:**
 
 - Transactional emails (verification, password reset, notifications)
-- Developer experience priority (best DX in the space)
-- React/TypeScript stack
+- React/TypeScript stack wanting best DX
 - Need reliable deliverability without managing email infrastructure
 
 **When NOT to use Resend:**
@@ -110,166 +83,177 @@ Resend is a **developer-first email API** built by the creators of React Email. 
 
 ## Core Patterns
 
-### Pattern 1: Resend Account and API Key Setup
+### Pattern 1: Sending with the `react` Prop (Preferred)
 
-Create a Resend account and get your API key for development.
+The Resend SDK accepts React components directly via the `react` prop -- no manual HTML rendering needed.
 
-#### Account Setup
+```typescript
+import { Resend } from "resend";
+import { WelcomeEmail } from "./templates/welcome-email";
 
-1. Sign up at [resend.com](https://resend.com)
-2. Navigate to API Keys section
-3. Create a new API key with appropriate permissions
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-```bash
-# API key format
-re_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-```
+// Pass the component call directly -- SDK handles rendering
+const { data, error } = await resend.emails.send({
+  from: "Your App <noreply@yourdomain.com>",
+  to: ["user@example.com"],
+  subject: "Welcome!",
+  react: WelcomeEmail({ userName: "John" }),
+});
 
-#### Environment Variables
-
-```bash
-# apps/client-next/.env.local
-
-# Resend Configuration
-RESEND_API_KEY=re_your_api_key_here
-
-# Optional: Specify sending region for lower latency
-# Options: us-east-1 (default), eu-west-1, sa-east-1, ap-northeast-1
-RESEND_REGION=us-east-1
-
-# Email "from" address (must be verified domain or onboarding@resend.dev for testing)
-EMAIL_FROM_ADDRESS=noreply@yourdomain.com
-EMAIL_FROM_NAME="Your App"
-```
-
-**Why good:** Environment variables protect secrets, region setting reduces latency, separate FROM variables enable easy updates
-
----
-
-### Pattern 2: Domain Verification (Production Required)
-
-Verify your domain to send from custom addresses. Unverified accounts can only send to your own email.
-
-#### DNS Records Required
-
-Add these records in your domain's DNS settings (Cloudflare, Route 53, etc.):
-
-```markdown
-## Required DNS Records
-
-### SPF Record (TXT)
-
-Host: @
-Type: TXT
-Value: v=spf1 include:amazonses.com ~all
-
-### DKIM Records (CNAME) - Resend provides 3 records
-
-Host: resend.\_domainkey
-Type: CNAME
-Value: (provided by Resend dashboard)
-
-Host: resend2.\_domainkey
-Type: CNAME
-Value: (provided by Resend dashboard)
-
-Host: resend3.\_domainkey
-Type: CNAME
-Value: (provided by Resend dashboard)
-
-### DMARC Record (TXT) - Recommended
-
-Host: \_dmarc
-Type: TXT
-Value: v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com
-```
-
-#### Verification Process
-
-1. Go to Resend Dashboard > Domains
-2. Click "Add Domain"
-3. Enter your domain (e.g., `yourdomain.com`)
-4. Copy the provided DNS records
-5. Add records to your DNS provider
-6. Click "Verify" - may take up to 48 hours for DNS propagation
-
-**Why good:** Domain verification improves deliverability, prevents emails from landing in spam, required for production sending
-
----
-
-### Pattern 3: React Email Package Structure (Monorepo)
-
-Create a dedicated package for email templates in your monorepo.
-
-#### Package Setup
-
-```bash
-# Create the emails package
-mkdir -p packages/emails
-cd packages/emails
-
-# Initialize package
-bun init
-
-# Install dependencies
-bun add @react-email/components resend
-bun add -D react-email typescript @types/react
-```
-
-#### Package Configuration
-
-```json
-// packages/emails/package.json
-{
-  "name": "@repo/emails",
-  "version": "0.1.0",
-  "private": true,
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
-  "scripts": {
-    "dev": "email dev --port 3001",
-    "preview": "email preview",
-    "export": "email export --outDir dist"
-  },
-  "dependencies": {
-    "@react-email/components": "^1.0.4",
-    "resend": "^6.7.0"
-  },
-  "devDependencies": {
-    "@types/react": "^19.0.0",
-    "react-email": "^5.0.0",
-    "typescript": "^5.0.0"
-  }
+if (error) {
+  console.error("[Email] Send failed:", error);
 }
 ```
 
-**Why good:** Dedicated package enables reuse across apps, dev script starts preview server, separate from app code prevents bundling issues
+**Why good:** No manual `render()` call, SDK handles conversion internally, cleaner code
 
-#### Directory Structure
+```typescript
+// BAD: Unnecessary manual render step
+import { render } from "@react-email/render";
+
+const html = await render(WelcomeEmail({ userName: "John" }));
+await resend.emails.send({ html, from, to, subject });
+```
+
+**Why bad:** Extra dependency and await when Resend handles it natively
+
+**When to use `render()` instead:** Only when sending via a non-Resend email provider (e.g., Nodemailer, SendGrid) that needs an HTML string. Import from `@react-email/render`, not `@react-email/components`.
+
+---
+
+### Pattern 2: Domain Verification
+
+Verify your domain to send from custom addresses. Unverified accounts can only send to your own email.
+
+1. Go to Resend Dashboard > Domains > Add Domain
+2. Add the DNS records Resend provides to your DNS provider:
+   - **SPF** (TXT): `v=spf1 include:amazonses.com ~all`
+   - **DKIM** (3 CNAME records): Values provided by Resend
+   - **DMARC** (TXT, recommended): `v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com`
+3. Click Verify -- DNS propagation can take up to 48 hours
+
+**Why this matters:** Unverified domains are limited to sending to your account email only. Production sending requires verification. Proper DNS records prevent emails from landing in spam.
+
+---
+
+### Pattern 3: Monorepo Package Structure
+
+Keep email templates in a dedicated package, separate from your application code.
 
 ```
 packages/emails/
 ├── package.json
 ├── tsconfig.json
 ├── src/
-│   ├── index.ts              # Export all templates
+│   ├── index.ts              # Re-export all templates
 │   ├── client.ts             # Resend client singleton
 │   ├── layouts/
 │   │   └── base-layout.tsx   # Shared layout wrapper
 │   ├── components/
-│   │   ├── button.tsx        # Reusable button
-│   │   ├── footer.tsx        # Email footer
-│   │   └── header.tsx        # Email header
+│   │   ├── button.tsx        # Reusable email button
+│   │   └── footer.tsx        # Email footer
 │   └── templates/
 │       ├── verification-email.tsx
 │       ├── password-reset.tsx
-│       ├── welcome-email.tsx
-│       └── notification.tsx
+│       └── welcome-email.tsx
 └── emails/                   # For react-email dev server
-    └── (symlink to src/templates or copy)
 ```
 
+**Why good:** Reusable across apps, prevents bundling issues, clean separation of concerns
+
+See [examples/core.md](examples/core.md) for full client setup and template examples.
+
+---
+
+### Pattern 4: Email Error Handling
+
+Resend returns `{ data, error }` -- always check the error.
+
+```typescript
+const { data, error } = await resend.emails.send(emailOptions);
+
+if (error) {
+  console.error("[Email] Send failed:", error.name, error.message);
+  return { success: false, error: error.message };
+}
+
+return { success: true, id: data?.id };
+```
+
+**Why good:** Explicit error checking, structured logging, returns typed result
+
+```typescript
+// BAD: Ignoring the error response
+await resend.emails.send(emailOptions);
+return { success: true }; // May have silently failed!
+```
+
+**Why bad:** No error detection, reports success even on failure, no debugging info
+
+---
+
+### Pattern 5: Webhook Verification
+
+Always verify webhook signatures before processing events. The `verify()` method **throws** on invalid signatures.
+
+```typescript
+const payload = await request.text(); // Raw body, NOT parsed JSON
+
+try {
+  const event = resend.webhooks.verify({
+    payload,
+    headers: {
+      id: request.headers.get("svix-id") ?? "",
+      timestamp: request.headers.get("svix-timestamp") ?? "",
+      signature: request.headers.get("svix-signature") ?? "",
+    },
+    webhookSecret: process.env.RESEND_WEBHOOK_SECRET!,
+  });
+
+  // event.type: "email.sent" | "email.delivered" | "email.bounced" | etc.
+} catch {
+  return new Response("Invalid webhook signature", { status: 400 });
+}
+```
+
+**Why good:** SDK's built-in verification, uses raw body (not parsed JSON which breaks signature), try/catch handles invalid signatures
+
+**Gotcha:** You MUST use `request.text()` not `request.json()` -- parsing as JSON before verification breaks the cryptographic signature. The `verify()` method throws on failure (unlike `emails.send()` which returns `{ data, error }`).
+
 </patterns>
+
+---
+
+<red_flags>
+
+## RED FLAGS
+
+**High Priority:**
+
+- Hardcoded `RESEND_API_KEY` in source code (security vulnerability, visible in git)
+- Sending from unverified domain in production (emails fail or go to spam)
+- Importing `render` from `@react-email/components` (wrong package -- use `@react-email/render`)
+- Not awaiting `render()` when using it (returns Promise, email body becomes `[object Promise]`)
+
+**Medium Priority:**
+
+- No error handling on `resend.emails.send()` (silent failures)
+- Email templates inside app directory instead of dedicated package (bundling issues in monorepo)
+- Using `request.json()` instead of `request.text()` for webhook payload (breaks signature verification)
+
+**Gotchas & Edge Cases:**
+
+- Resend free tier: 100 emails/day, 3000 emails/month
+- Unverified domains can only send to your account's email address
+- DNS propagation takes up to 48 hours for domain verification
+- React Email dev server creates a `.react-email` folder in your project
+- Using Grid, Flexbox, or `box-shadow` in email templates does not work in Gmail/Outlook
+- Use `px` units in emails -- `rem` renders inconsistently across email clients
+- In Resend SDK v6.1.0+, some bundlers may error on `@react-email/render` -- add `resend` to your bundler's external packages config if you see resolution errors
+- `@react-email/components` is for UI components (Body, Button, etc.); `@react-email/render` is for the `render()` utility -- they are separate packages
+
+</red_flags>
 
 ---
 
@@ -277,34 +261,14 @@ packages/emails/
 
 ## CRITICAL REMINDERS
 
-> **All code must follow project conventions in CLAUDE.md** (kebab-case, named exports, import ordering, `import type`, named constants)
+**(You MUST use `RESEND_API_KEY` environment variable -- NEVER hardcode API keys)**
 
-**(You MUST use `RESEND_API_KEY` environment variable for the server-side API key - NEVER hardcode secrets)**
+**(You MUST verify your sending domain in Resend dashboard before production -- unverified domains only send to your own email)**
 
-**(You MUST verify your sending domain in Resend dashboard before production emails - unverified domains only allow sending to your own email)**
+**(You MUST use `@react-email/components` for email UI components and `@react-email/render` for HTML rendering -- these are separate packages)**
 
-**(You MUST create email templates in a dedicated `packages/emails/` directory for monorepo - not inside the Next.js app)**
+**(You MUST use `resend.emails.send({ react: MyTemplate(props) })` as the primary sending pattern -- manual `render()` to HTML is only needed for non-Resend senders)**
 
-**(You MUST use `@react-email/components` for email components - external UI libraries like Material UI are NOT supported)**
-
-**(You MUST configure the Resend SDK with appropriate region for your users - reduces delivery latency)**
-
-**Failure to follow these rules will cause email delivery failures, security vulnerabilities, or bundling issues.**
+**Failure to follow these rules will cause email delivery failures or security vulnerabilities.**
 
 </critical_reminders>
-
----
-
-## Sources
-
-- [Resend Next.js Documentation](https://resend.com/docs/send-with-nextjs)
-- [React Email Documentation](https://react.email/docs)
-- [React Email Monorepo Setup](https://react.email/docs/getting-started/monorepo-setup/npm)
-- [React Email Tailwind Component](https://react.email/docs/components/tailwind)
-- [Better Auth Email Configuration](https://www.better-auth.com/docs/concepts/email)
-- [Resend + Better Auth Integration](https://resend.com/customers/better-auth)
-- [Resend Error Handling](https://resend.com/docs/api-reference/errors)
-
----
-
-**VERIFY ALL CRITICAL REQUIREMENTS BEFORE IMPLEMENTATION. RE-READ FILES AFTER EDITING TO CONFIRM CHANGES.**

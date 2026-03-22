@@ -1,0 +1,17 @@
+{
+  "name": "writing-clearly-and-concisely",
+  "repo": "Xe/site",
+  "path": ".claude/skills/writing-clearly-and-concisely/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Xe/site",
+  "dir_name": "writing-clearly-and-concisely-xe-site",
+  "downloaded_at": "2026-03-22T06:32:07.687531Z",
+  "author": "Xe",
+  "source_url": "https://github.com/Xe/site/blob/main/.claude/skills/writing-clearly-and-concisely/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Xe/site/blob/main/.claude/skills/writing-clearly-and-concisely/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

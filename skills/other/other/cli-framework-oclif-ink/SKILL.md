@@ -5,277 +5,361 @@ description: Modern CLI development combining oclif's command framework with Ink
 
 # oclif + Ink CLI Patterns
 
-> **Quick Guide:** Use oclif for command routing, parsing, and plugin architecture. Use Ink for React-based interactive terminal UIs. Combine both when building CLIs that need complex stateful interfaces beyond simple prompts.
+> **Quick Guide:** Use oclif for command routing, flag/arg parsing, and plugin architecture. Use Ink for React-based interactive terminal UIs with Flexbox layout. Combine both when commands need rich stateful interfaces. Always `await waitUntilExit()` when rendering Ink from oclif commands. Use `this.log()` instead of `console.log` to preserve JSON output mode.
 
 ---
 
-## Quick Reference
+<critical_requirements>
 
-### oclif Command Structure
+## CRITICAL: Before Using This Skill
+
+> **All code must follow project conventions in CLAUDE.md** (kebab-case, named exports, import ordering, `import type`, named constants)
+
+**(You MUST `await waitUntilExit()` after `render()` in oclif commands -- without it the process exits before the UI completes)**
+
+**(You MUST use `this.log()` / `this.warn()` / `this.error()` in commands -- `console.log` breaks `--json` mode and test capture)**
+
+**(You MUST wrap all text in `<Text>` components in Ink -- bare strings cause rendering errors)**
+
+**(You MUST use `useEffect` cleanup to cancel async operations -- Ink components unmount when the user presses Ctrl+C)**
+
+</critical_requirements>
+
+---
+
+**Auto-detection:** oclif, @oclif/core, @oclif/test, Ink, ink, @inkjs/ui, Command class, Flags, Args, useInput, useApp, useFocus, render(), waitUntilExit, terminal UI, CLI command, ink-testing-library
+
+**When to use:**
+
+- Building multi-command CLIs with flag/arg parsing
+- Creating interactive terminal UIs (wizards, dashboards, progress displays)
+- Combining command routing with rich React-based interfaces
+- Building plugin-extensible CLI architectures
+
+**When NOT to use:**
+
+- Simple one-off scripts (plain Node.js suffices)
+- Basic prompts only (use @clack/prompts or inquirer -- lighter weight)
+- Performance-critical startup under 100ms (oclif adds ~200ms overhead)
+
+**Key patterns covered:**
+
+- oclif command structure with typed flags, args, and output methods
+- Ink components, Flexbox layout, keyboard input, and focus management
+- Integration: rendering Ink from oclif commands with lifecycle management
+- @inkjs/ui pre-built components (Select, TextInput, Spinner, etc.)
+- Plugin architecture and lifecycle hooks
+- Multi-step wizards, progress indicators, and cancelable operations
+- Testing commands with `@oclif/test` and components with `ink-testing-library`
+
+---
+
+<philosophy>
+
+## Philosophy
+
+oclif and Ink solve orthogonal problems. **oclif** handles the boring-but-critical parts: command routing, flag parsing, help generation, plugin discovery, auto-updates. **Ink** handles the interactive parts: stateful terminal UIs using React's component model with Flexbox layout.
+
+**Use oclif alone** when commands do their work and print output. **Add Ink** when a command needs real-time user interaction (wizards, dashboards, progress). The integration point is simple: the oclif command's `run()` calls `render()` and awaits `waitUntilExit()`.
+
+**Key architectural decisions:**
+
+- Commands are `.ts` files (not `.tsx`) -- they import Ink components from separate `.tsx` files
+- oclif handles process lifecycle; Ink handles UI lifecycle within it
+- Keyboard handling lives in Ink components via `useInput`, not in oclif commands
+- State management for complex Ink UIs should use an external store (not prop drilling)
+
+</philosophy>
+
+---
+
+<patterns>
+
+## Core Patterns
+
+### Pattern 1: oclif Command with Typed Flags and Args
+
+Commands use static properties for metadata and flag/arg definitions. The `run()` method is async and returns typed data for JSON output support.
 
 ```typescript
 import { Command, Flags, Args } from "@oclif/core";
 
-export class MyCommand extends Command {
-  static summary = "Brief description";
-  static description = "Detailed description";
-  static examples = ["<%= config.bin %> <%= command.id %> --flag value"];
+const DEFAULT_RETRIES = 3;
+
+export class Deploy extends Command {
+  static summary = "Deploy to target environment";
+  static enableJsonFlag = true; // Adds --json flag
 
   static flags = {
-    name: Flags.string({ char: "n", description: "Name flag", required: true }),
-    force: Flags.boolean({ char: "f", default: false }),
+    env: Flags.string({
+      char: "e",
+      required: true,
+      options: ["staging", "production"] as const,
+    }),
+    retries: Flags.integer({
+      char: "r",
+      default: DEFAULT_RETRIES,
+      min: 0,
+      max: 10,
+    }),
+    verbose: Flags.boolean({ char: "v", default: false, allowNo: true }),
+    apiKey: Flags.string({ env: "MY_CLI_API_KEY" }), // From env var
   };
 
   static args = {
-    file: Args.string({ description: "File path", required: true }),
+    target: Args.string({ description: "Deploy target", required: true }),
   };
 
-  async run(): Promise<void> {
-    const { args, flags } = await this.parse(MyCommand);
-    this.log(`Processing ${args.file} with name ${flags.name}`);
+  async run(): Promise<{ status: string }> {
+    const { args, flags } = await this.parse(Deploy);
+    // Use this.log, this.warn, this.error -- never console.*
+    this.log(`Deploying ${args.target} to ${flags.env}`);
+    return { status: "deployed" };
   }
 }
 ```
 
-### Ink Component Structure
+See [examples/core.md](examples/core.md) Pattern 1-5 for complete flag types, args, output methods, and error handling.
+
+---
+
+### Pattern 2: Ink Component with Keyboard Handling
+
+Ink components are React functional components using hooks for input, app lifecycle, and focus.
 
 ```tsx
 import React, { useState } from "react";
-import { render, Box, Text, useInput, useApp } from "ink";
+import { Box, Text, useInput, useApp } from "ink";
 
-const App = () => {
-  const [count, setCount] = useState(0);
+interface SelectorProps {
+  items: string[];
+  onSelect: (item: string) => void;
+}
+
+export const Selector: React.FC<SelectorProps> = ({ items, onSelect }) => {
+  const [index, setIndex] = useState(0);
   const { exit } = useApp();
 
   useInput((input, key) => {
+    if (key.upArrow) setIndex((i) => Math.max(0, i - 1));
+    if (key.downArrow) setIndex((i) => Math.min(items.length - 1, i + 1));
+    if (key.return) onSelect(items[index]);
     if (input === "q") exit();
-    if (key.upArrow) setCount((c) => c + 1);
-    if (key.downArrow) setCount((c) => c - 1);
   });
 
   return (
     <Box flexDirection="column">
-      <Text>Count: {count}</Text>
-      <Text dimColor>Arrows to change, q to quit</Text>
+      {items.map((item, i) => (
+        <Text key={item} bold={i === index}>
+          {i === index ? "> " : "  "}
+          {item}
+        </Text>
+      ))}
     </Box>
   );
 };
-
-render(<App />);
 ```
 
-### oclif + Ink Integration
+See [examples/core.md](examples/core.md) Pattern 6-8 for styling, layout, and @inkjs/ui components.
+
+---
+
+### Pattern 3: Rendering Ink from oclif Command
+
+The integration pattern: oclif command renders an Ink component and awaits its completion.
 
 ```typescript
 import { Command, Flags } from "@oclif/core";
 import { render } from "ink";
 import React from "react";
-import { Wizard } from "../components/wizard.js";
+import { SetupWizard } from "../components/setup-wizard.js";
 
 export class Init extends Command {
+  static summary = "Initialize a new project";
   static flags = {
-    source: Flags.string({ char: "s" }),
+    yes: Flags.boolean({ char: "y", description: "Use defaults", default: false }),
   };
 
   async run(): Promise<void> {
     const { flags } = await this.parse(Init);
-    const { waitUntilExit } = render(<Wizard source={flags.source} />);
+    if (flags.yes) {
+      this.log("Initialized with defaults.");
+      return;
+    }
+    // CRITICAL: Destructure waitUntilExit and await it
+    const { waitUntilExit } = render(<SetupWizard />);
     await waitUntilExit();
   }
 }
 ```
 
----
-
-## When to Use
-
-**Use oclif when:**
-
-- Building multi-command CLIs (like `git`, `npm`)
-- Need plugin architecture for extensibility
-- Want auto-generated help and shell completion
-- Building enterprise CLIs requiring auto-updates
-
-**Use Ink when:**
-
-- Building complex interactive terminal UIs
-- Need React's component model and state management
-- Want declarative UI with Flexbox layouts
-- Building real-time displays (progress, dashboards)
-
-**Use both together when:**
-
-- CLI commands need rich interactive experiences
-- Multi-step wizards with complex state
-- Real-time progress displays during operations
-- Terminal dashboards or monitoring tools
-
-**Don't use when:**
-
-- Simple one-off scripts (use plain Node.js)
-- Basic prompts only (use @clack/prompts or inquirer)
-- Performance-critical startup (oclif has ~200ms overhead)
+See [examples/core.md](examples/core.md) Pattern 9 for the full integration pattern with non-interactive fallback.
 
 ---
 
-## Key Patterns Summary
+### Pattern 4: Multi-Step Wizard
 
-| Pattern                | Location                                                      |
-| ---------------------- | ------------------------------------------------------------- |
-| Command definition     | [examples.md](examples.md#command-basics)                     |
-| Flags and args         | [examples.md](examples.md#flags-and-args)                     |
-| Ink components         | [examples.md](examples.md#ink-basics)                         |
-| State with Zustand     | [examples-advanced.md](examples-advanced.md#state-management) |
-| Multi-step wizards     | [examples-advanced.md](examples-advanced.md#wizards)          |
-| Plugin architecture    | [examples-advanced.md](examples-advanced.md#plugins)          |
-| Testing commands       | [examples-testing.md](examples-testing.md)                    |
-| Testing Ink components | [examples-testing.md](examples-testing.md#ink-testing)        |
+Wizards use step-based state with back/forward navigation and data accumulation.
+
+```tsx
+const MultiStepWizard: React.FC<WizardProps> = ({ steps, onComplete }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [data, setData] = useState<Record<string, unknown>>({});
+
+  const handleNext = (stepData: Record<string, unknown>) => {
+    const merged = { ...data, ...stepData };
+    setData(merged);
+    if (currentIndex === steps.length - 1) onComplete(merged);
+    else setCurrentIndex((i) => i + 1);
+  };
+
+  const handleBack = () => setCurrentIndex((i) => Math.max(0, i - 1));
+  // Render steps[currentIndex].component with {onNext, onBack, data} props
+};
+```
+
+See [examples/advanced.md](examples/advanced.md) Pattern 1-2 for complete wizard implementation with navigation.
+
+---
+
+### Pattern 5: Plugin Architecture
+
+oclif plugins are npm packages with their own commands and hooks. The host CLI registers plugins in package.json.
+
+```json
+{
+  "oclif": {
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-autocomplete",
+      "@myorg/cli-plugin-analytics"
+    ]
+  }
+}
+```
+
+See [examples/advanced.md](examples/advanced.md) Pattern 4 for creating plugins and user-installable plugin support.
 
 ---
 
-## Anti-Patterns
+### Pattern 6: Testing Commands and Components
 
-### Command Anti-Patterns
+Use `@oclif/test` for command tests (flags, args, output, errors) and `ink-testing-library` for Ink component tests (rendering, keyboard simulation).
 
-- **Blocking the event loop** - Always use async/await, never sync I/O
-- **Not awaiting promises in run()** - Commands timeout after 10s if promises aren't awaited
-- **Using `console.log`** - Use `this.log()`, `this.warn()`, `this.error()` instead
-- **Mixing Commander.js patterns** - Don't use chained methods, use static properties
+```typescript
+// Command test
+import { runCommand } from "@oclif/test";
+const { stdout, error } = await runCommand(["deploy", "--env", "staging", "app"]);
+expect(stdout).toContain("Deploying");
 
-### Ink Anti-Patterns
+// Ink component test
+import { render } from "ink-testing-library";
+const { lastFrame, stdin } = render(<Selector items={["a", "b"]} onSelect={fn} />);
+stdin.write("\u001B[B"); // Down arrow
+stdin.write("\r");       // Enter
+expect(fn).toHaveBeenCalledWith("b");
+```
 
-- **Using class components** - Always use functional components with hooks
-- **Not wrapping text in `<Text>`** - All text must be inside `<Text>` components
-- **Nesting `<Box>` inside `<Text>`** - Only `<Text>` can be nested in `<Text>`
-- **Blocking the render loop** - Use `useEffect` for async operations
-- **Forgetting cleanup** - Always return cleanup functions from `useEffect`
+See [examples/testing.md](examples/testing.md) for full testing patterns including async operations, mocking, and snapshot tests.
 
-### Integration Anti-Patterns
-
-- **Not calling `waitUntilExit()`** - Command will exit before Ink component unmounts
-- **Using `.tsx` files directly** - oclif doesn't auto-discover `.tsx`, use `.ts` that imports JSX
-- **Mixing imperative and declarative** - Don't mix clack prompts with Ink components
+</patterns>
 
 ---
+
+<decision_framework>
 
 ## Decision Framework
 
 ```
 Building a CLI?
 |
-+-> Need multiple commands?
-|   +-> YES -> Use oclif
-|   +-> NO -> Single command CLI? Use oclif with single command mode
++-> Need multiple commands / subcommands?
+|   +-> YES -> oclif (multi-command mode)
+|   +-> NO  -> oclif (single-command mode) or plain Node.js
 |
-+-> Need interactive UI?
-|   +-> Simple prompts only? -> Use @clack/prompts (lighter)
-|   +-> Complex stateful UI? -> Use Ink
-|   +-> Multi-step wizard? -> Use Ink + Zustand
++-> Need interactive terminal UI?
+|   +-> Simple prompts (name, confirm)? -> Lightweight prompt library
+|   +-> Complex stateful UI (wizard, dashboard)? -> Ink
 |
 +-> Need both routing AND complex UI?
-    +-> YES -> oclif + Ink integration
+    +-> YES -> oclif commands + Ink components
+    +-> NO  -> Use whichever fits the primary need
 ```
 
----
-
-## Ecosystem Libraries
-
-| Library        | Purpose                  | When to Use                              |
-| -------------- | ------------------------ | ---------------------------------------- |
-| `@inkjs/ui`    | Pre-built Ink components | Spinners, Select, TextInput, ProgressBar |
-| `conf`         | Persistent CLI config    | Store user preferences, last-used values |
-| `cosmiconfig`  | Config file loading      | Load .myapprc, myapp.config.js, etc.     |
-| `listr2`       | Task list with spinners  | Multiple concurrent/sequential tasks     |
-| `execa`        | Child process execution  | Running git, npm, other CLIs             |
-| `zod`          | Schema validation        | Validating flags, config, user input     |
-| `@oclif/table` | Table rendering          | Displaying data in columns               |
-
----
-
-## File Structure
+### Command File Organization
 
 ```
 src/
-  commands/           # oclif command classes
-    init.ts          # Uses: import { Init } from './init'
+  commands/           # oclif command classes (.ts files)
+    init.ts
     config/
-      get.ts         # Subcommand: mycli config get
-      set.ts         # Subcommand: mycli config set
-  components/        # Ink React components
-    wizard.tsx       # Interactive wizards
-    spinner.tsx      # Custom spinners
-  hooks/             # oclif lifecycle hooks
-    init.ts          # Runs before command
-    postrun.ts       # Runs after command
-  lib/               # Shared utilities
-    config.ts        # Configuration helpers
-  stores/            # Zustand stores for complex state
-    wizard-store.ts
-bin/
-  dev.js             # Development entry: #!/usr/bin/env -S npx tsx
-  run.js             # Production entry
-package.json         # oclif configuration
+      get.ts          # mycli config get <key>
+      set.ts          # mycli config set <key> <value>
+  components/         # Ink React components (.tsx files)
+    wizard.tsx
+    progress.tsx
+  hooks/              # oclif lifecycle hooks
+    init.ts           # Runs before every command
+    postrun.ts        # Runs after every command
+  lib/                # Shared utilities
 ```
+
+</decision_framework>
 
 ---
 
-## Package.json Configuration
+**Detailed Resources:**
 
-```json
-{
-  "name": "mycli",
-  "type": "module",
-  "bin": {
-    "mycli": "./bin/run.js"
-  },
-  "oclif": {
-    "bin": "mycli",
-    "dirname": "mycli",
-    "commands": {
-      "strategy": "pattern",
-      "target": "./dist/commands"
-    },
-    "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-autocomplete",
-      "@oclif/plugin-not-found",
-      "@oclif/plugin-warn-if-update-available"
-    ],
-    "hooks": {
-      "init": "./dist/hooks/init"
-    },
-    "topicSeparator": " "
-  },
-  "dependencies": {
-    "@oclif/core": "^4.x",
-    "ink": "^5.x",
-    "react": "^18.x",
-    "@inkjs/ui": "^2.x"
-  }
-}
-```
+- [examples/core.md](examples/core.md) -- Commands, flags, args, Ink components, integration
+- [examples/advanced.md](examples/advanced.md) -- Wizards, progress, plugins, hooks, error boundaries
+- [examples/testing.md](examples/testing.md) -- Command tests, component tests, async testing
 
 ---
+
+<red_flags>
 
 ## RED FLAGS
 
-### High Priority
+**High Priority:**
 
-- **Not awaiting promises in run()** - Commands timeout after 10s
-- **Missing `waitUntilExit()` call** - Ink component won't complete
-- **Using `console.log` in commands** - Breaks JSON output mode
-- **Blocking render loop** - Freezes terminal UI
+- **Missing `await waitUntilExit()`** -- Command exits before Ink UI completes, user sees nothing
+- **Using `console.log` in commands** -- Breaks `--json` output mode and is not captured by `@oclif/test`
+- **Bare strings in Ink** -- All text must be wrapped in `<Text>` or rendering fails
+- **Blocking the render loop** -- Synchronous work in components freezes the terminal UI
 
-### Medium Priority
+**Medium Priority:**
 
-- **Using class state in Ink** - Use hooks instead
-- **Not handling Ctrl+C** - Always provide exit mechanism
-- **Magic numbers** - Use named constants for timeouts, limits
+- **`.tsx` files as commands** -- oclif does not auto-discover `.tsx` files; use `.ts` command files that import `.tsx` components
+- **Missing Ctrl+C handling** -- Always provide an exit mechanism via `useInput` or `useApp().exit()`
+- **No cleanup in useEffect** -- Async operations must be canceled on unmount to avoid state updates after exit
+- **Conflicting `useInput` hooks** -- Multiple active `useInput` hooks fire simultaneously; use the `isActive` option to scope them
 
-### Common Gotchas
+**Gotchas & Edge Cases:**
 
-- `.tsx` files not auto-discovered by oclif - import from `.ts` wrapper
-- Ink requires React 18+ for concurrent features
-- `useInput` callback called once for pasted text (not per-character)
-- Multiple `useInput` hooks can conflict - use `isActive` option
-- oclif hooks run in parallel, not sequence
+- oclif hooks run in **parallel**, not sequence -- don't depend on execution order between hooks
+- `useInput` fires **once** for pasted text, not per-character -- use `usePaste` for paste handling
+- Ink v5 requires **React 18+**, Ink v6 requires **React 19+** -- check your Ink version's peer dependencies
+- `enableJsonFlag` makes `run()` return value the JSON output -- ensure the return type matches what consumers expect
+- oclif's `this.error()` throws (exits the process) -- it does not return
+
+</red_flags>
+
+---
+
+<critical_reminders>
+
+## CRITICAL REMINDERS
+
+> **All code must follow project conventions in CLAUDE.md** (kebab-case, named exports, import ordering, `import type`, named constants)
+
+**(You MUST `await waitUntilExit()` after `render()` in oclif commands -- without it the process exits before the UI completes)**
+
+**(You MUST use `this.log()` / `this.warn()` / `this.error()` in commands -- `console.log` breaks `--json` mode and test capture)**
+
+**(You MUST wrap all text in `<Text>` components in Ink -- bare strings cause rendering errors)**
+
+**(You MUST use `useEffect` cleanup to cancel async operations -- Ink components unmount when the user presses Ctrl+C)**
+
+**Failure to follow these rules will cause silent process exits, broken JSON output, and terminal rendering crashes.**
+
+</critical_reminders>

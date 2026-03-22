@@ -2,8 +2,16 @@
   "name": "venue-templates",
   "repo": "K-Dense-AI/claude-scientific-writer",
   "path": "scientific_writer/.claude/skills/venue-templates/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/K-Dense-AI/claude-scientific-writer",
   "dir_name": "venue-templates-k-dense-ai-claude-scientific-wr-3",
-  "downloaded_at": "2026-02-22T05:15:47.595769Z"
+  "downloaded_at": "2026-03-22T05:36:57.390960Z",
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/claude-scientific-writer/blob/main/scientific_writer/.claude/skills/venue-templates/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/K-Dense-AI/claude-scientific-writer/blob/main/scientific_writer/.claude/skills/venue-templates/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

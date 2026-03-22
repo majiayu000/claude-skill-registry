@@ -1,0 +1,17 @@
+{
+  "name": "memory-archivist",
+  "repo": "ariffazil/openclaw-workspace",
+  "path": "skills/memory-archivist/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ariffazil/openclaw-workspace",
+  "dir_name": "memory-archivist",
+  "downloaded_at": "2026-03-22T07:02:06.503403Z",
+  "author": "ariffazil",
+  "source_url": "https://github.com/ariffazil/openclaw-workspace/blob/main/skills/memory-archivist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ariffazil/openclaw-workspace/blob/main/skills/memory-archivist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

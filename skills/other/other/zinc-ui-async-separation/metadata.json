@@ -1,0 +1,17 @@
+{
+  "name": "zinc-ui-async-separation",
+  "repo": "Crainax/War3Lib",
+  "path": ".codex/skills/zinc-ui-async-separation/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/Crainax/War3Lib",
+  "dir_name": "zinc-ui-async-separation",
+  "downloaded_at": "2026-03-22T05:10:15.611156Z",
+  "author": "Crainax",
+  "source_url": "https://github.com/Crainax/War3Lib/blob/master/.codex/skills/zinc-ui-async-separation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Crainax/War3Lib/blob/master/.codex/skills/zinc-ui-async-separation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

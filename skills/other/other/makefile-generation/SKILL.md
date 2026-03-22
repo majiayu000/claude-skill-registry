@@ -1,6 +1,6 @@
 ---
 name: makefile-generation
-description: "Generate language-specific Makefiles with testing, linting, and automation targets. Use for project initialization and workflow standardization. Skip if Makefile exists."
+description: "Generate Makefiles with testing, linting, and automation targets. Use for project init. Skip if Makefile exists."
 # Custom metadata (not used by Claude for matching):
 model: claude-sonnet-4
 tools: [Read, Write, Bash]

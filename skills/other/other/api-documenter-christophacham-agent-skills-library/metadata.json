@@ -1,0 +1,17 @@
+{
+  "name": "api-documenter",
+  "repo": "christophacham/agent-skills-library",
+  "path": "skills/backend-dev/api-documenter/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/christophacham/agent-skills-library",
+  "dir_name": "api-documenter-christophacham-agent-skills-library",
+  "downloaded_at": "2026-03-22T07:28:09.237792Z",
+  "author": "christophacham",
+  "source_url": "https://github.com/christophacham/agent-skills-library/blob/main/skills/backend-dev/api-documenter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/christophacham/agent-skills-library/blob/main/skills/backend-dev/api-documenter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

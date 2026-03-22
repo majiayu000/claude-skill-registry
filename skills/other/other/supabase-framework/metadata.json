@@ -2,8 +2,16 @@
   "name": "supabase-framework",
   "repo": "RockwallJMC/Threadbilt-v0",
   "path": ".claude/skills/supabase-framework/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/RockwallJMC/Threadbilt-v0",
   "dir_name": "supabase-framework",
-  "downloaded_at": "2026-02-15T05:41:54.742156Z"
+  "downloaded_at": "2026-03-22T06:10:01.766877Z",
+  "author": "RockwallJMC",
+  "source_url": "https://github.com/RockwallJMC/Threadbilt-v0/blob/main/.claude/skills/supabase-framework/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RockwallJMC/Threadbilt-v0/blob/main/.claude/skills/supabase-framework/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

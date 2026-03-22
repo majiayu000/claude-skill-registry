@@ -21,7 +21,7 @@ description: Expo managed workflow
 
 **(You MUST use config plugins for native customization - NEVER manually edit android/ios directories in managed workflow)**
 
-**(You MUST use EXPO*PUBLIC* prefix for client-side environment variables - NEVER store secrets in these variables)**
+**(You MUST use `EXPO_PUBLIC_` prefix for client-side environment variables - NEVER store secrets in these variables)**
 
 </critical_requirements>
 
@@ -33,7 +33,7 @@ description: Expo managed workflow
 
 - Starting new React Native projects with rapid development needs
 - Building apps that need OTA (over-the-air) updates
-- Using file-based routing similar to Next.js
+- Using file-based routing with convention-over-configuration
 - Managing native code without maintaining android/ios directories
 - Deploying to app stores with cloud builds
 
@@ -52,11 +52,6 @@ description: Expo managed workflow
 - Apps requiring complex custom native code beyond Expo Modules API
 - When app size must be under 15MB (Expo adds overhead)
 - Legacy React Native projects not ready for migration
-
-**Detailed Resources:**
-
-- For code examples, see [examples/](examples/) folder
-- For decision frameworks and anti-patterns, see [reference.md](reference.md)
 
 ---
 
@@ -86,339 +81,123 @@ Expo is NOT a limitation on React Native - it's a professional-grade abstraction
 
 ## Core Patterns
 
-### Pattern 1: Project Configuration
+### Pattern 1: Dynamic Configuration with `app.config.ts`
 
-Configure Expo projects using `app.json` (static) or `app.config.js` (dynamic).
-
-#### Static Configuration
+Use `app.config.ts` for environment-specific builds. Use named constants for SDK versions and build numbers.
 
 ```typescript
-// app.json - Static configuration
-{
-  "expo": {
-    "name": "MyApp",
-    "slug": "my-app",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.example.myapp"
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "package": "com.example.myapp"
-    },
-    "plugins": [
-      "expo-router"
-    ]
-  }
-}
-```
-
-#### Dynamic Configuration
-
-```typescript
-// app.config.ts - Dynamic configuration with TypeScript
-import type { ExpoConfig, ConfigContext } from "expo/config";
-
+// app.config.ts - Environment-aware config
 const IS_PRODUCTION = process.env.APP_ENV === "production";
-const APP_VERSION = "1.0.0";
 const BUILD_NUMBER = 1;
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: IS_PRODUCTION ? "MyApp" : "MyApp (Dev)",
-  slug: "my-app",
-  version: APP_VERSION,
   ios: {
-    supportsTablet: true,
-    bundleIdentifier: IS_PRODUCTION
-      ? "com.example.myapp"
-      : "com.example.myapp.dev",
+    bundleIdentifier: IS_PRODUCTION ? "com.app" : "com.app.dev",
     buildNumber: String(BUILD_NUMBER),
   },
   android: {
-    package: IS_PRODUCTION ? "com.example.myapp" : "com.example.myapp.dev",
+    package: IS_PRODUCTION ? "com.app" : "com.app.dev",
     versionCode: BUILD_NUMBER,
-    adaptiveIcon: {
-      foregroundImage: "./assets/adaptive-icon.png",
-      backgroundColor: "#ffffff",
-    },
-  },
-  extra: {
-    eas: {
-      projectId: process.env.EAS_PROJECT_ID,
-    },
   },
 });
 ```
 
-**Why good:** Named constants prevent magic numbers, dynamic config enables environment-specific builds, TypeScript provides type safety
+> Full examples: [examples/core.md](examples/core.md) - App Configuration section
 
 ---
 
 ### Pattern 2: Config Plugins for Native Customization
 
-Modify native code declaratively without maintaining android/ios directories.
+Modify native code declaratively -- changes survive `expo prebuild --clean`. Use config plugins for permissions, SDK versions, and native settings.
 
 ```typescript
-// app.config.ts - Config plugins
-import type { ExpoConfig } from "expo/config";
-
-const IOS_DEPLOYMENT_TARGET = "15.1";
-const ANDROID_COMPILE_SDK = 35;
-const ANDROID_TARGET_SDK = 35;
-const ANDROID_MIN_SDK = 24;
-
-export default (): ExpoConfig => ({
-  name: "MyApp",
-  slug: "my-app",
-  plugins: [
-    // Camera with custom permission message
-    [
-      "expo-camera",
-      {
-        cameraPermission:
-          "Allow $(PRODUCT_NAME) to access your camera for photos.",
-        microphonePermission:
-          "Allow $(PRODUCT_NAME) to access your microphone for video.",
-      },
-    ],
-    // Build properties for SDK versions
-    [
-      "expo-build-properties",
-      {
-        android: {
-          compileSdkVersion: ANDROID_COMPILE_SDK,
-          targetSdkVersion: ANDROID_TARGET_SDK,
-          minSdkVersion: ANDROID_MIN_SDK,
-        },
-        ios: {
-          deploymentTarget: IOS_DEPLOYMENT_TARGET,
-        },
-      },
-    ],
-    // Location with background permission
-    [
-      "expo-location",
-      {
-        locationAlwaysAndWhenInUsePermission:
-          "Allow $(PRODUCT_NAME) to use your location for navigation.",
-      },
-    ],
+// app.config.ts plugins array
+plugins: [
+  [
+    "expo-camera",
+    { cameraPermission: "Allow $(PRODUCT_NAME) to access your camera." },
   ],
-});
+  [
+    "expo-build-properties",
+    { android: { minSdkVersion: 24 }, ios: { deploymentTarget: "15.1" } },
+  ],
+];
 ```
 
-**Why good:** Declarative native configuration survives `expo prebuild --clean`, config plugins compose, permissions are explicit
+> Full examples: [examples/core.md](examples/core.md) - Config Plugins section
 
 ---
 
 ### Pattern 3: Environment Variables
 
-Use `EXPO_PUBLIC_` prefix for client-side variables.
+Use `EXPO_PUBLIC_` prefix for client-side variables. Metro requires direct property access -- destructuring and bracket notation don't work.
 
 ```typescript
-// .env
-EXPO_PUBLIC_API_URL=https://api.example.com
-EXPO_PUBLIC_SENTRY_DSN=https://xxxx@sentry.io/xxxx
-
-// .env.local (gitignored - local overrides)
-EXPO_PUBLIC_API_URL=http://localhost:3000
+// MUST use direct access - Metro static analysis requirement
+const API_URL = process.env.EXPO_PUBLIC_API_URL; // Works
+// const { EXPO_PUBLIC_API_URL } = process.env;  // BROKEN - undefined at runtime
 ```
 
-```typescript
-// config/env.ts - Type-safe environment access
-const API_URL = process.env.EXPO_PUBLIC_API_URL;
-const SENTRY_DSN = process.env.EXPO_PUBLIC_SENTRY_DSN;
-
-// IMPORTANT: These patterns DON'T work - Metro requires static analysis
-// const { EXPO_PUBLIC_API_URL } = process.env;  // BAD
-// process.env['EXPO_PUBLIC_API_URL'];           // BAD
-
-if (!API_URL) {
-  throw new Error("EXPO_PUBLIC_API_URL is required");
-}
-
-export const env = {
-  apiUrl: API_URL,
-  sentryDsn: SENTRY_DSN,
-} as const;
-```
-
-```typescript
-// Using expo-constants for runtime config
-import Constants from "expo-constants";
-
-// Access extra config from app.config.ts
-const projectId = Constants.expoConfig?.extra?.eas?.projectId;
-const environment = Constants.expoConfig?.extra?.environment;
-```
-
-**Why good:** Type-safe access with validation, clear separation of public/private config, build-time substitution for security
+> Full examples: [examples/core.md](examples/core.md) - Environment Variables section
 
 ---
 
 ### Pattern 4: Development Builds
 
-Create custom development builds with `expo-dev-client`.
+Use `expo-dev-client` for production-accurate testing. Expo Go is for prototyping only -- it lacks your native dependencies, push notifications, and accurate splash screens.
 
 ```bash
-# Install dev client
-npx expo install expo-dev-client
-
-# Create development build (cloud)
+# Cloud build
 eas build --profile development --platform ios
-eas build --profile development --platform android
-
-# Create development build (local)
+# Local build
 npx expo run:ios
-npx expo run:android
 ```
 
-```typescript
-// eas.json - Development build configuration
-{
-  "cli": {
-    "version": ">= 7.0.0"
-  },
-  "build": {
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal",
-      "ios": {
-        "simulator": true
-      },
-      "android": {
-        "buildType": "apk"
-      }
-    },
-    "development-device": {
-      "developmentClient": true,
-      "distribution": "internal",
-      "ios": {
-        "simulator": false
-      }
-    }
-  }
-}
-```
-
-**Why good:** Development builds include your native dependencies, support push notifications and deep links, allow testing app icons and splash screens
+> Full configuration: [examples/eas.md](examples/eas.md) - Development Builds section
 
 ---
 
 ### Pattern 5: Asset Management
 
-Load fonts and images efficiently.
+Block splash screen while loading fonts, use `expo-image` for remote images with blur hash placeholders and disk caching.
 
 ```typescript
-// app/_layout.tsx - Font loading with splash screen
-import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
-import { Stack } from "expo-router";
-
-const SPLASH_HIDE_DELAY_MS = 0;
-
-// Prevent splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
-
-export default function RootLayout() {
-  const [fontsLoaded, fontError] = useFonts({
-    "Inter-Regular": require("../assets/fonts/Inter-Regular.ttf"),
-    "Inter-Medium": require("../assets/fonts/Inter-Medium.ttf"),
-    "Inter-Bold": require("../assets/fonts/Inter-Bold.ttf"),
-  });
-
-  useEffect(() => {
-    if (fontsLoaded || fontError) {
-      SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded, fontError]);
-
-  if (!fontsLoaded && !fontError) {
-    return null;
-  }
-
-  return <Stack />;
-}
+// Load fonts, then call SplashScreen.hideAsync() when ready
 ```
 
-```typescript
-// Using expo-image for optimized image loading
-import { Image } from "expo-image";
-
-const BLUR_HASH = "L6PZfSi_.AyE_3t7t7R**0o#DgR4";
-const IMAGE_TRANSITION_MS = 200;
-
-interface OptimizedImageProps {
-  uri: string;
-  width: number;
-  height: number;
-}
-
-export function OptimizedImage({ uri, width, height }: OptimizedImageProps) {
-  return (
-    <Image
-      source={{ uri }}
-      placeholder={BLUR_HASH}
-      contentFit="cover"
-      transition={IMAGE_TRANSITION_MS}
-      cachePolicy="memory-disk"
-      style={{ width, height }}
-    />
-  );
-}
-```
-
-**Why good:** SplashScreen prevents flash of unstyled content, expo-image provides caching and blur hash placeholders, named constants for configuration
+> Full examples: [examples/core.md](examples/core.md) - Font Loading and Image Handling sections
 
 </patterns>
 
 ---
 
-<integration>
+<red_flags>
 
-## Integration Guide
+## RED FLAGS
 
-**Expo works with your existing mobile development knowledge:**
+- **Expo Go for production testing** -- missing native modules, push notifications, accurate splash screens. Always use development builds.
+- **Not updating runtimeVersion after native changes** -- OTA updates crash on apps with incompatible native code. Use `"fingerprint"` policy for automatic detection.
+- **Storing secrets in `EXPO_PUBLIC_` variables** -- embedded in JS bundle, visible to anyone who decompiles. Use EAS Secrets and backend proxies.
+- **Manually editing android/ios directories** -- changes lost on `expo prebuild --clean`. Use config plugins.
+- **Destructuring `process.env`** -- Metro requires direct property access (`process.env.EXPO_PUBLIC_*`). Destructuring and bracket notation produce `undefined`.
+- **Using `expo-av`** -- removed in SDK 55. Migrate to `expo-video` and `expo-audio`.
+- **Legacy Architecture** -- removed after SDK 54. React Native 0.82+ requires New Architecture.
 
-**Navigation:**
+> Full anti-patterns and gotchas: [reference.md](reference.md)
 
-- Use Expo Router for file-based routing (Next.js-like experience)
-- See [examples/router.md](examples/router.md) for patterns
+</red_flags>
 
-**Build and Deploy:**
+---
 
-- Use EAS Build for cloud compilation
-- Use EAS Submit for app store submission
-- Use EAS Update for OTA updates
-- See [examples/eas.md](examples/eas.md) for workflows
+**Detailed Resources:**
 
-**Native Code:**
-
-- Use config plugins for most native customization
-- Use Expo Modules API for custom native modules
-- Prebuild to bare workflow only when absolutely necessary
-
-**State Management:**
-
-- Expo works with any React state solution
-- Use AsyncStorage for persistent client storage
-
-</integration>
+- [examples/core.md](examples/core.md) - Project config, environment variables, fonts, images
+- [examples/router.md](examples/router.md) - File-based routing, tabs, auth flows, modals
+- [examples/eas.md](examples/eas.md) - Cloud builds, app store submission, OTA updates
+- [reference.md](reference.md) - Decision frameworks, SDK compatibility, anti-patterns
 
 ---
 
@@ -434,7 +213,7 @@ export function OptimizedImage({ uri, width, height }: OptimizedImageProps) {
 
 **(You MUST use config plugins for native customization - NEVER manually edit android/ios directories in managed workflow)**
 
-**(You MUST use EXPO*PUBLIC* prefix for client-side environment variables - NEVER store secrets in these variables)**
+**(You MUST use `EXPO_PUBLIC_` prefix for client-side environment variables - NEVER store secrets in these variables)**
 
 **Failure to follow these rules will cause OTA update crashes, broken builds, and security vulnerabilities.**
 

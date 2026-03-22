@@ -1,7 +1,7 @@
 ---
 name: review-cycle
 description: Unified multi-dimensional code review with automated fix orchestration. Routes to session-based (git changes), module-based (path patterns), or fix mode. Triggers on "workflow:review-cycle", "workflow:review-session-cycle", "workflow:review-module-cycle", "workflow:review-cycle-fix".
-allowed-tools: Task, AskUserQuestion, TaskCreate, TaskUpdate, TaskList, Read, Write, Edit, Bash, Glob, Grep, Skill
+allowed-tools: Agent, AskUserQuestion, TaskCreate, TaskUpdate, TaskList, Read, Write, Edit, Bash, Glob, Grep, Skill
 ---
 
 # Review Cycle
@@ -97,6 +97,10 @@ Skill(skill="review-cycle", args="-y src/auth/**")                              
 | session | [phases/review-session.md](phases/review-session.md) | review-session-cycle.md | Session-based review: git changes → 7-dimension parallel analysis → aggregation → deep-dive → completion |
 | module | [phases/review-module.md](phases/review-module.md) | review-module-cycle.md | Module-based review: path patterns → 7-dimension parallel analysis → aggregation → deep-dive → completion |
 | fix | [phases/review-fix.md](phases/review-fix.md) | review-cycle-fix.md | Automated fix: export file → intelligent batching → parallel planning → execution → completion |
+
+## Project Context
+
+Run `ccw spec load --category review` for review standards, checklists, and approval gates.
 
 ## Core Rules
 

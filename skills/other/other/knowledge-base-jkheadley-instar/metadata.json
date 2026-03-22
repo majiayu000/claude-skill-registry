@@ -1,0 +1,17 @@
+{
+  "name": "knowledge-base",
+  "repo": "JKHeadley/instar",
+  "path": "skills/knowledge-base/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/JKHeadley/instar",
+  "dir_name": "knowledge-base-jkheadley-instar",
+  "downloaded_at": "2026-03-22T05:31:35.288345Z",
+  "author": "JKHeadley",
+  "source_url": "https://github.com/JKHeadley/instar/blob/main/skills/knowledge-base/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JKHeadley/instar/blob/main/skills/knowledge-base/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

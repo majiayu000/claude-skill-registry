@@ -1,10 +1,12 @@
 ---
 name: mastering-hooks
-description: Master Claude Context Hooks (CCH), the Rust-based runtime for controlling Claude Code behavior through hooks.yaml configuration. Use when asked to "install CCH", "create hooks", "debug hooks", "hook not firing", "configure context injection", "validate hooks.yaml", "PreToolUse", "PostToolUse", or "block dangerous commands". Covers installation, rule creation, troubleshooting, and optimization.
+description: Master RuleZ, the high-performance AI policy engine for development workflows. Use when asked to "install rulez", "create hooks", "debug hooks", "hook not firing", "configure context injection", "validate hooks.yaml", "PreToolUse", "PostToolUse", "block dangerous commands", "multi-platform hooks", "Gemini CLI hooks", "Copilot hooks", "OpenCode hooks", "dual-fire events", or "cross-platform rules". Covers installation, rule creation, multi-platform adapters, troubleshooting, and optimization.
 metadata:
-  version: "1.1.0"
-  author: CCH Team
-  api_version: "1.1.0"
+  version: "2.2.1"
+  author: RuleZ Team
+  api_version: "2.2.1"
+last_modified: 2026-03-16
+last_validated: 2026-03-16
 ---
 
 # mastering-hooks
@@ -19,20 +21,28 @@ metadata:
 
 ## Overview
 
-Claude Context Hooks (CCH) is a **deterministic runtime engine** that intercepts Claude Code events and executes configured actions.
+RuleZ is a **high-performance AI policy engine** that intercepts AI coding assistant events and executes configured actions. It works across multiple platforms through adapter-based event translation.
 
 ```
-User Prompt --> Claude Code --> CCH Binary --> [Match Rules] --> Execute Actions
-                    |                              |
-                    v                              v
-              PreToolUse                    inject/run/block
-              PostToolUse                   context/validation
+User Prompt --> AI Assistant --> RuleZ Binary --> [Match Rules] --> Execute Actions
+                    |                                 |
+                    v                                 v
+              PreToolUse                       inject/run/block
+              PostToolUse                      context/validation
+              BeforeAgent
               PermissionRequest
 ```
 
+**Supported platforms**:
+- **Claude Code** (native) - Full event support
+- **Gemini CLI** - Via adapter with dual-fire events
+- **GitHub Copilot** - Via adapter
+- **OpenCode** - Via adapter with dual-fire events
+
 **System components**:
-- **CCH Binary** (Rust): Fast, deterministic hook execution at runtime
+- **RuleZ Binary** (Rust): Fast, deterministic hook execution at runtime
 - **hooks.yaml**: Declarative configuration defining rules, matchers, and actions
+- **Platform Adapters**: Translate platform-specific events to unified RuleZ event types
 - **This Skill**: Intelligent assistant for setup, debugging, and optimization
 
 ## Decision Tree
@@ -40,7 +50,7 @@ User Prompt --> Claude Code --> CCH Binary --> [Match Rules] --> Execute Actions
 ```
 What do you need?
 |
-+-- New to CCH? --> [1. Install & Initialize]
++-- New to RuleZ? --> [1. Install & Initialize]
 |
 +-- Have hooks.yaml but hooks not working? --> [4. Troubleshoot]
 |
@@ -49,25 +59,22 @@ What do you need?
 +-- Want to understand existing config? --> [3. Explain Configuration]
 |
 +-- Performance or complexity issues? --> [5. Optimize]
+|
++-- Setting up for Gemini/Copilot/OpenCode? --> [6. Multi-Platform Setup]
 ```
 
 ## Capabilities
 
-### 1. Install & Initialize CCH
+### 1. Install & Initialize RuleZ
 
-**Use when**: Setting up CCH for the first time in a project or user-wide.
+**Use when**: Setting up RuleZ for the first time in a project or user-wide.
 
 **Checklist**:
-1. Verify CCH binary is installed: `cch --version --json`
-2. Initialize configuration: `cch init` (creates `.claude/hooks.yaml`)
-3. Register with Claude Code: `cch install --project` or `cch install --user`
-4. Validate configuration: `cch validate`
+1. Verify RuleZ binary is installed: `rulez --version`
+2. Initialize configuration: `rulez init` (creates `.claude/hooks.yaml`)
+3. Register with Claude Code: `rulez install` (project-local) or `rulez install --global`
+4. Validate configuration: `rulez validate`
 5. Verify installation: Check `.claude/settings.json` for hook entries
-
-**Expected output** from `cch --version --json`:
-```json
-{"version": "1.1.0", "api_version": "1.1.0", "git_sha": "abc1234"}
-```
 
 **Reference**: [cli-commands.md](references/cli-commands.md)
 
@@ -78,25 +85,23 @@ What do you need?
 **Use when**: Adding new behaviors like context injection, command validation, or workflow automation.
 
 **Checklist**:
-1. Identify the event type (PreToolUse, PostToolUse, etc.)
+1. Identify the event type (PreToolUse, PostToolUse, BeforeAgent, etc.)
 2. Define matchers (tools, extensions, directories, patterns)
 3. Choose action type (inject, run, block, require_fields)
 4. Write the rule in hooks.yaml
-5. Validate: `cch validate`
-6. Test with: `cch debug <event> --tool <tool_name>`
+5. Validate: `rulez validate`
+6. Test with: `rulez debug <event> --tool <tool_name>`
 
 **Rule anatomy**:
 ```yaml
-hooks:
+rules:
   - name: rule-name           # kebab-case identifier
-    event: PreToolUse         # When to trigger
-    match:
+    matchers:
+      operations: [PreToolUse]  # When to trigger
       tools: [Write, Edit]    # What to match
       extensions: [.py]       # Optional: file filters
-    action:
-      type: inject            # What to do
-      source: file            # file | inline | command
-      path: .claude/context/python-standards.md
+    actions:
+      inject: .claude/context/python-standards.md  # What to do
 ```
 
 **Reference**: [hooks-yaml-schema.md](references/hooks-yaml-schema.md) | [rule-patterns.md](references/rule-patterns.md)
@@ -108,12 +113,12 @@ hooks:
 **Use when**: Understanding what existing hooks do, why they exist, or how they interact.
 
 **Checklist**:
-1. Run `cch explain rule <rule-name>` for specific rule analysis
-2. Run `cch explain config` for full configuration overview
+1. Run `rulez explain rule <rule-name>` for specific rule analysis
+2. Run `rulez explain rules` for full configuration overview
 3. Check rule precedence (first match wins within same event)
 4. Identify potential conflicts or overlaps
 
-**Example output** from `cch explain rule python-standards`:
+**Example output** from `rulez explain rule python-standards`:
 ```
 Rule: python-standards
 Event: PreToolUse
@@ -130,20 +135,21 @@ Action: Injects content from .claude/context/python-standards.md
 **Use when**: Hooks not firing, unexpected behavior, or error messages.
 
 **Diagnostic checklist**:
-1. **Validate config**: `cch validate` - catches YAML/schema errors
+1. **Validate config**: `rulez validate` - catches YAML/schema errors
 2. **Check registration**: `cat .claude/settings.json | grep hooks`
-3. **Enable debug logging**: `cch debug PreToolUse --tool Write --verbose`
-4. **Check logs**: `cch logs --tail 20`
+3. **Enable debug logging**: `rulez debug PreToolUse --tool Write --verbose`
+4. **Check logs**: `rulez logs --limit 20`
 5. **Verify file paths**: Ensure all `path:` references exist
 
 **Common issues**:
 
 | Symptom | Likely Cause | Fix |
 |---------|--------------|-----|
-| Hook never fires | Event/matcher mismatch | Use `cch debug` to trace matching |
+| Hook never fires | Event/matcher mismatch | Use `rulez debug` to trace matching |
 | "file not found" | Invalid path in action | Check relative paths from project root |
 | Context not injected | Script returns invalid JSON | Validate script output format |
 | Permission denied | Script not executable | `chmod +x script.sh` |
+| Event not firing on Gemini | Wrong event name | Check [platform-adapters.md](references/platform-adapters.md) for mappings |
 
 **Reference**: [troubleshooting-guide.md](references/troubleshooting-guide.md)
 
@@ -164,12 +170,30 @@ Action: Injects content from .claude/context/python-standards.md
 
 ---
 
+### 6. Multi-Platform Setup
+
+**Use when**: Configuring RuleZ to work with Gemini CLI, GitHub Copilot, or OpenCode in addition to Claude Code.
+
+**Key concepts**:
+- RuleZ uses **platform adapters** to translate each platform's native events into unified RuleZ event types
+- Write rules using RuleZ event types (e.g., `PreToolUse`) — adapters handle translation automatically
+- Some platforms fire **dual events** (e.g., Gemini's `BeforeAgent` fires both `BeforeAgent` and `UserPromptSubmit`)
+
+**Checklist**:
+1. Install RuleZ: `rulez install`
+2. Write rules using standard RuleZ event types
+3. Test with `rulez debug <event>` to verify matching
+4. Review [platform-adapters.md](references/platform-adapters.md) for platform-specific event mappings
+
+**Reference**: [platform-adapters.md](references/platform-adapters.md)
+
+---
+
 ## When NOT to Use This Skill
 
 - **Simple Claude Code configuration**: Use `settings.json` directly for basic permissions
 - **One-time context injection**: Just paste into your prompt
-- **Non-Claude Code tools**: CCH only works with Claude Code CLI
-- **Dynamic runtime decisions**: CCH is deterministic; use MCP servers for complex logic
+- **Dynamic runtime decisions**: RuleZ is deterministic; use MCP servers for complex logic
 
 ---
 
@@ -182,6 +206,7 @@ Action: Injects content from .claude/context/python-standards.md
 | [cli-commands.md](references/cli-commands.md) | All CLI commands with examples |
 | [rule-patterns.md](references/rule-patterns.md) | Common patterns and recipes |
 | [troubleshooting-guide.md](references/troubleshooting-guide.md) | Diagnostic procedures |
+| [platform-adapters.md](references/platform-adapters.md) | Multi-platform event mappings and dual-fire |
 
 ---
 
@@ -191,36 +216,41 @@ Action: Injects content from .claude/context/python-standards.md
 # .claude/hooks.yaml
 version: "1"
 
-hooks:
+rules:
   # Inject Python standards before writing Python files
   - name: python-standards
-    event: PreToolUse
-    match:
+    matchers:
+      operations: [PreToolUse]
       tools: [Write, Edit]
       extensions: [.py]
-    action:
-      type: inject
-      source: file
-      path: .claude/context/python-standards.md
+    actions:
+      inject: .claude/context/python-standards.md
 
   # Block dangerous git commands
   - name: block-force-push
-    event: PreToolUse
-    match:
+    priority: 10
+    matchers:
+      operations: [PreToolUse]
       tools: [Bash]
       command_match: "git push.*--force"
-    action:
-      type: block
-      reason: "Force push requires explicit approval."
+    actions:
+      block: true
 
   # Run security check before committing
   - name: pre-commit-security
-    event: PreToolUse
-    match:
+    matchers:
+      operations: [PreToolUse]
       tools: [Bash]
       command_match: "git commit"
-    action:
-      type: run
-      command: .claude/validators/check-secrets.sh
-      timeout: 30
+    actions:
+      run: .claude/validators/check-secrets.sh
+
+  # Track agent activity (works on Claude Code and Gemini)
+  - name: log-agent-start
+    description: Ensure agents follow project conventions
+    matchers:
+      operations: [BeforeAgent]
+    actions:
+      inject_inline: |
+        **Agent Policy**: Follow project conventions in CLAUDE.md.
 ```

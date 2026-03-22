@@ -1,0 +1,17 @@
+{
+  "name": "code-explainer",
+  "repo": "christyjacob4/claude-tricks",
+  "path": "skills/code-explainer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/christyjacob4/claude-tricks",
+  "dir_name": "code-explainer",
+  "downloaded_at": "2026-03-22T07:28:13.725398Z",
+  "author": "christyjacob4",
+  "source_url": "https://github.com/christyjacob4/claude-tricks/blob/main/skills/code-explainer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/christyjacob4/claude-tricks/blob/main/skills/code-explainer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

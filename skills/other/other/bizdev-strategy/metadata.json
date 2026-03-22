@@ -1,0 +1,17 @@
+{
+  "name": "bizdev-strategy",
+  "repo": "Coignite-ApS/businesslogic",
+  "path": ".claude/skills/bizdev-strategy/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Coignite-ApS/businesslogic",
+  "dir_name": "bizdev-strategy",
+  "downloaded_at": "2026-03-22T05:07:17.057317Z",
+  "author": "Coignite-ApS",
+  "source_url": "https://github.com/Coignite-ApS/businesslogic/blob/main/.claude/skills/bizdev-strategy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Coignite-ApS/businesslogic/blob/main/.claude/skills/bizdev-strategy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

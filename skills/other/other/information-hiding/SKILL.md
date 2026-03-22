@@ -53,19 +53,15 @@ Not all dependencies are eliminable. Transforming a hidden dependency into an ob
 
 ### The Temporal Decomposition Trap
 
-The most common cause of information leakage. Code structured around "first do X, then do Y, then do Z" scatters knowledge across steps. When code is split into a "read the file" step and a "parse the file" step, both modules must understand the file format. Draw boundaries around knowledge domains, not execution phases: a module that reads AND writes a format owns that format exclusively. Merging the two steps produces one module with a simpler interface and no shared assumptions.
+The most common cause of information leakage is temporal decomposition. When code gets split into a "read the file" step and a "parse the file" step, both modules have to agree on the file format. It's important to draw boundaries around knowledge domains, not execution phases. A module that reads AND writes a format should own the definition of that format exclusively. Merging the two steps actually produces one module with a simpler interface and no shared assumptions. A slightly larger class that hides (i.e. abstracts) more is almost always worth the extra length.
 
-> "Information hiding can often be improved by making a class slightly larger." — John Ousterhout, _A Philosophy of Software Design_
+This fails at larger scales too. Microservices split along workflow stages scatter shared protocol knowledge across service boundaries.
 
-This fails at larger scales too: microservices split along workflow stages scatter shared protocol knowledge across service boundaries.
+### Private Is Not Hiding
 
-### "Private Is Not Hiding"
+Marking a field `private` and providing getters/setters does not actually hide it. Other code still knows the field exists, what it's called, and what type it holds. That is as much exposure as if the field were public.
 
-Declaring a field `private` and providing getters/setters does not hide information. Callers know the field exists, its type, its name, and that they can read and write it.
-
-> "The nature and usage of the variables are just as exposed as if the variables were public." — John Ousterhout, _A Philosophy of Software Design_
-
-Test: Does the caller need this information to use the module correctly? If no, it should be genuinely invisible, not just access-controlled.
+**Test**: Does the caller need this information to use the module correctly? If no, it should be genuinely invisible, not just access-controlled.
 
 ### Partial Hiding Has Value
 

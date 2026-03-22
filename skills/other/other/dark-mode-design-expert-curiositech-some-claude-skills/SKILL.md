@@ -1,11 +1,20 @@
 ---
 name: dark-mode-design-expert
-description: Master dark mode UI design with atmospheric theming, WCAG accessibility, and cross-platform best practices. Specializes in weather/sky/ocean-inspired color systems that adapt to time of day and environmental conditions.
-category: Design
-tags:
+description: Master dark mode UI design with atmospheric theming, WCAG accessibility, and cross-platform best practices. Specializes in weather/sky/ocean-inspired color systems that adapt to time of day
+  and environmental conditions.
+metadata:
+  category: Design
+  tags:
   - dark-mode
   - accessibility
   - theming
+  pairs-with:
+  - skill: color-contrast-auditor
+    reason: Dark mode surfaces require careful contrast ratio verification for accessibility
+  - skill: design-system-generator
+    reason: Dark mode token generation is a core capability of design system creation
+  - skill: web-design-expert
+    reason: Dark mode is a fundamental aspect of modern web design implementation
 ---
 
 # Dark Mode Design Expert

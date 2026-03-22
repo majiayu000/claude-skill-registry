@@ -1,0 +1,17 @@
+{
+  "name": "af-making-agentflow-changes",
+  "repo": "GainInsightDev/websites",
+  "path": ".claude/skills/af-making-agentflow-changes/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/GainInsightDev/websites",
+  "dir_name": "af-making-agentflow-changes",
+  "downloaded_at": "2026-03-22T05:22:56.039022Z",
+  "author": "GainInsightDev",
+  "source_url": "https://github.com/GainInsightDev/websites/blob/main/.claude/skills/af-making-agentflow-changes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GainInsightDev/websites/blob/main/.claude/skills/af-making-agentflow-changes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

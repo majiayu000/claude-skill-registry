@@ -1,0 +1,17 @@
+{
+  "name": "managing-vaccine-schedules",
+  "repo": "CaseMark/skills",
+  "path": "skills/med/managing-vaccine-schedules/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/CaseMark/skills",
+  "dir_name": "managing-vaccine-schedules",
+  "downloaded_at": "2026-03-22T05:04:26.521658Z",
+  "author": "CaseMark",
+  "source_url": "https://github.com/CaseMark/skills/blob/main/skills/med/managing-vaccine-schedules/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CaseMark/skills/blob/main/skills/med/managing-vaccine-schedules/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "create-pr",
+  "repo": "carrot-foundation/methodology-rules",
+  "path": ".agents/skills/create-pr/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/carrot-foundation/methodology-rules",
+  "dir_name": "create-pr-carrot-foundation-methodology-rules",
+  "downloaded_at": "2026-03-22T07:24:31.831251Z",
+  "author": "carrot-foundation",
+  "source_url": "https://github.com/carrot-foundation/methodology-rules/blob/main/.agents/skills/create-pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/carrot-foundation/methodology-rules/blob/main/.agents/skills/create-pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

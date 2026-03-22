@@ -27,7 +27,7 @@ Before starting: check if `<slug>.findings.md` exists for these docs. If it does
 
 3. **Report** — Group findings by severity (Critical/Major/Minor) with `path:line` and suggested fix. Note any sections that are outdated, missing, or contradicted by code.
 
-4. **Use `/review`** — Write findings to `<slug>.findings.md` so the author can respond without copy-paste.
+4. **Use `/findings`** — Write findings to `<slug>.findings.md` so the author can respond without copy-paste.
 
 ## Reference
 

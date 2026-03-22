@@ -1,0 +1,17 @@
+{
+  "name": "ce-adr-author",
+  "repo": "Moffran/calibrated_explanations",
+  "path": ".claude/skills/ce-adr-author/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Moffran/calibrated_explanations",
+  "dir_name": "ce-adr-author",
+  "downloaded_at": "2026-03-22T05:51:32.235211Z",
+  "author": "Moffran",
+  "source_url": "https://github.com/Moffran/calibrated_explanations/blob/main/.claude/skills/ce-adr-author/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Moffran/calibrated_explanations/blob/main/.claude/skills/ce-adr-author/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

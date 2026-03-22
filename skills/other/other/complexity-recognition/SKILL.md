@@ -58,28 +58,26 @@ Unknown unknowns are the worst symptom because they are invisible. Change amplif
 
 #### Dependencies
 
-Represent code that cannot be understood or modified in isolation. Not all are bad. The goal should always be to have fewer dependencies, and make remaining ones **obvious** rather than hidden.
+Dependencies represent code that cannot be understood in isolation. Not all dependencies are bad, but the goal should always be to have fewer of them, and to make the ones that remain **obvious**.
 
 #### Obscurity
 
-Important information is not obvious. Vague names, undocumented assumptions, invisible dependencies, inconsistency.
+Obscurity means important information is hidden or unclear. This shows up as vague names, undocumented assumptions, and invisible connections between parts of the code. If code needs a lot of explanation just to use it safely, the design is probably too complex.
 
-> "The need for extensive documentation is often a red flag that the design isn't quite right." — John Ousterhout, _A Philosophy of Software Design_
+### Hidden Dependencies Are the Worst
 
-These two root causes intersect in hidden dependencies, where a dependency exists without any surface representation in the code. Hidden dependencies produce the worst bugs because there is no signal to search for and no warning that information is missing.
+The root causes of complexity can intersect in hidden dependencies. A hidden dependency is a connection between two pieces of code with no visible sign in either one. Hidden dependencies produce the worst bugs because there is nothing to search for and no warning that information is missing.
 
 ### Complexity Is Incremental
 
-> "Complexity isn't caused by a single catastrophic error; it accumulates in lots of small chunks." — John Ousterhout, _A Philosophy of Software Design_
-
-Every developer can justify their small addition, but if everyone reasons this way, the total grows steadily. Discipline must be applied at the level of individual decisions, because that's the only level where complexity enters.
+Complexity rarely comes from one big mistake. It sneaks in through all the small ones. Each shortcut seems fine on its own, but they add up. By the time the system feels hard to work with, hundreds of tiny decisions got you there and can't be undone easily. That is why small choices matter just as much as big ones.
 
 ### Elimination vs. Encapsulation
 
-1. **Eliminate**: Redesign so the complexity doesn't exist. Always best.
-2. **Encapsulate**: Hide it in a deep module so most developers never encounter it.
+When you find complexity, you have two options:
 
-> "Isolating complexity in a place where it will never be seen is almost as good as eliminating the complexity entirely." — John Ousterhout, _A Philosophy of Software Design_
+1. **Eliminate it**: Redesign so the complexity does not exist at all. This is always the best choice.
+2. **Encapsulate it**: Bury it inside a module so that most code never has to deal with it. Complexity that callers never see causes almost no harm.
 
 ## Review Process
 

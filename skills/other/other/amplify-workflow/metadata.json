@@ -1,0 +1,17 @@
+{
+  "name": "amplify-workflow",
+  "repo": "awslabs/agent-plugins",
+  "path": "plugins/aws-amplify/skills/amplify-workflow/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/awslabs/agent-plugins",
+  "dir_name": "amplify-workflow",
+  "downloaded_at": "2026-03-22T07:07:41.719614Z",
+  "author": "awslabs",
+  "source_url": "https://github.com/awslabs/agent-plugins/blob/main/plugins/aws-amplify/skills/amplify-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/awslabs/agent-plugins/blob/main/plugins/aws-amplify/skills/amplify-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

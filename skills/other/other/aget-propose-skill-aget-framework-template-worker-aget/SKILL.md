@@ -32,7 +32,7 @@ Collect from user:
 **C1: Name Format**
 ```
 Pattern: aget-{verb}-{object}
-Valid:   aget-healthcheck-evolution, aget-record-lesson
+Valid:   aget-check-evolution, aget-record-lesson
 Invalid: healthcheck-evolution, aget_record_lesson, myskill
 ```
 

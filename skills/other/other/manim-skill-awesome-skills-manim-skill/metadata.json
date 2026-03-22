@@ -1,0 +1,17 @@
+{
+  "name": "manim-skill",
+  "repo": "awesome-skills/manim-skill",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/awesome-skills/manim-skill",
+  "dir_name": "manim-skill-awesome-skills-manim-skill",
+  "downloaded_at": "2026-03-22T07:06:51.198829Z",
+  "author": "awesome-skills",
+  "source_url": "https://github.com/awesome-skills/manim-skill/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/awesome-skills/manim-skill/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

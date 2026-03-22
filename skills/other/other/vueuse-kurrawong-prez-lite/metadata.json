@@ -1,0 +1,17 @@
+{
+  "name": "vueuse",
+  "repo": "Kurrawong/prez-lite",
+  "path": ".claude/skills/vueuse/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Kurrawong/prez-lite",
+  "dir_name": "vueuse-kurrawong-prez-lite",
+  "downloaded_at": "2026-03-22T05:40:19.065458Z",
+  "author": "Kurrawong",
+  "source_url": "https://github.com/Kurrawong/prez-lite/blob/main/.claude/skills/vueuse/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kurrawong/prez-lite/blob/main/.claude/skills/vueuse/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

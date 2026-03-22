@@ -5,7 +5,7 @@ description: Prisma ORM, type-safe queries, migrations, relations
 
 # Database with Prisma ORM
 
-> **Quick Guide:** Use Prisma ORM for type-safe database queries with auto-generated TypeScript types. Schema-first design with declarative migrations. Use `include` for relations, `$transaction` for atomic operations. Singleton pattern required in development to avoid connection exhaustion.
+> **Quick Guide:** Use Prisma ORM for type-safe database queries with auto-generated TypeScript types. Schema-first design with declarative migrations. Use `include` for relations, `$transaction` for atomic operations. Singleton pattern required in development to avoid connection exhaustion. Always use `tx` (not `prisma`) inside interactive transaction callbacks.
 
 ---
 
@@ -27,42 +27,36 @@ description: Prisma ORM, type-safe queries, migrations, relations
 
 ---
 
-**Detailed Resources:**
-
-- For code examples:
-  - [queries.md](examples/queries.md) - CRUD operations, filtering, and sorting
-  - [relations.md](examples/relations.md) - Relational queries, includes, N+1 prevention
-  - [transactions.md](examples/transactions.md) - Atomic operations and interactive transactions
-- For decision frameworks and anti-patterns, see [reference.md](reference.md)
-
----
-
 **Auto-detection:** prisma, @prisma/client, PrismaClient, prisma.schema, prisma migrate, findUnique, findMany, include, $transaction
 
 **When to use:**
 
 - Type-safe database queries with auto-generated TypeScript types
 - Schema-first development with declarative migrations
-- Rapid prototyping with Prisma Studio GUI
 - Applications requiring strong relational data modeling
+- Rapid prototyping with Prisma Studio GUI
 
 **When NOT to use:**
 
 - Need raw SQL performance for complex queries (Prisma adds overhead)
-- Edge runtime environments (use Drizzle with HTTP drivers)
+- Edge/serverless requiring minimal cold start (consider lighter ORMs)
 - Non-TypeScript projects (lose primary benefit)
 - Need fine-grained control over generated SQL
 
 **Key patterns covered:**
 
 - PrismaClient singleton (development hot reload safety)
-- Schema definition (models, relations, enums)
-- CRUD operations (create, read, update, delete, upsert)
+- CRUD operations with type-safe filters and pagination
 - Relational queries with `include` and nested `select`
-- Filtering with `where`, `AND`, `OR`, `NOT`
-- Pagination (offset and cursor-based)
 - Transactions (nested writes, batch, interactive)
-- Migrations with Prisma Migrate
+- Schema design (models, relations, enums, indexes)
+
+**Detailed Resources:**
+
+- [examples/core.md](examples/core.md) - Singleton setup, CRUD, filtering, pagination
+- [examples/relations.md](examples/relations.md) - Relational queries, includes, N+1 prevention
+- [examples/transactions.md](examples/transactions.md) - Atomic operations, interactive transactions, error handling
+- [reference.md](reference.md) - Decision frameworks, anti-patterns, performance
 
 ---
 
@@ -79,20 +73,6 @@ description: Prisma ORM, type-safe queries, migrations, relations
 3. **Declarative migrations** - Schema changes automatically generate migration SQL
 4. **Intuitive API** - Queries read like English (`prisma.user.findMany()`)
 
-**When to use Prisma:**
-
-- Greenfield projects needing rapid development with type safety
-- Teams wanting clear schema documentation
-- Applications with complex relational data models
-- Projects requiring visual database management (Prisma Studio)
-
-**When NOT to use Prisma:**
-
-- Performance-critical applications needing optimized raw SQL
-- Edge/serverless requiring minimal cold start (use lighter ORMs)
-- Legacy databases with unconventional naming (mapping overhead)
-- Need for advanced database features not yet supported
-
 </philosophy>
 
 ---
@@ -103,9 +83,7 @@ description: Prisma ORM, type-safe queries, migrations, relations
 
 ### Pattern 1: PrismaClient Singleton
 
-Use singleton pattern to prevent connection pool exhaustion during development hot reloading.
-
-#### Configuration
+Use singleton pattern to prevent connection pool exhaustion during development hot reloading. Without this, each hot reload creates a new PrismaClient with its own connection pool, quickly exhausting database connections.
 
 ```typescript
 // lib/db/client.ts
@@ -131,42 +109,24 @@ if (process.env.NODE_ENV !== "production") {
 }
 ```
 
-**Why good:** `globalThis` persists across hot reloads preventing "10 Prisma Clients running" warning, conditional logging avoids production noise, factory function allows configuration changes
+**Why good:** `globalThis` persists across hot reloads, conditional logging avoids production noise
 
 ```typescript
-// WRONG: New client every import
-import { PrismaClient } from "@prisma/client";
-
-export const prisma = new PrismaClient(); // Creates new instance on every hot reload
+// BAD: New client every import
+export const prisma = new PrismaClient(); // New instance on every hot reload
 ```
 
-**Why bad:** Each hot reload creates new PrismaClient with its own connection pool, quickly exhausts database connections (PostgreSQL default is 100)
+**Why bad:** Exhausts database connections (default 100 for PostgreSQL) after repeated hot reloads
+
+> See [examples/core.md](examples/core.md) for serverless connection patterns.
 
 ---
 
-### Pattern 2: Schema Definition
+### Pattern 2: Schema Design
 
-Define models with relations, constraints, and defaults in `schema.prisma`.
-
-#### Basic Model
+Define models with relations, constraints, and defaults. The schema is the source of truth.
 
 ```prisma
-// prisma/schema.prisma
-generator client {
-  provider = "prisma-client-js"
-}
-
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
-enum Role {
-  USER
-  ADMIN
-  MODERATOR
-}
-
 model User {
   id        String   @id @default(cuid())
   email     String   @unique
@@ -177,106 +137,42 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@map("users") // Maps to snake_case table name
+  @@map("users")
 }
 
 model Post {
-  id          String   @id @default(cuid())
-  title       String
-  content     String?
-  published   Boolean  @default(false)
-  author      User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
-  authorId    String
-  categories  Category[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id        String   @id @default(cuid())
+  title     String
+  content   String?
+  published Boolean  @default(false)
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@index([authorId])
   @@map("posts")
 }
-
-model Profile {
-  id     String  @id @default(cuid())
-  bio    String?
-  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId String  @unique
-
-  @@map("profiles")
-}
-
-model Category {
-  id    String @id @default(cuid())
-  name  String @unique
-  posts Post[]
-
-  @@map("categories")
-}
 ```
 
-**Why good:** `@id @default(cuid())` generates collision-resistant IDs, `@updatedAt` auto-updates timestamp, `@relation` with `onDelete: Cascade` prevents orphaned records, `@@index` optimizes foreign key lookups, `@@map` allows snake_case in DB with PascalCase in code
+**Why good:** `cuid()` for collision-resistant IDs, `@updatedAt` auto-tracks changes, `@relation` with `onDelete: Cascade` prevents orphans, `@@index` on foreign keys, `@@map` for snake_case DB tables with PascalCase in code
 
 ---
 
-### Pattern 3: CRUD Operations
+### Pattern 3: CRUD with Type-Safe Filters
 
-Type-safe create, read, update, delete operations.
-
-#### Constants
+All queries are fully typed based on your schema. Key operations:
 
 ```typescript
 const DEFAULT_PAGE_SIZE = 20;
 const MAX_PAGE_SIZE = 100;
-```
 
-#### Create Operations
-
-```typescript
-// Create single record
-const user = await prisma.user.create({
-  data: {
-    email: "alice@example.com",
-    name: "Alice",
-    role: "USER",
-  },
-});
-
-// Create with relation
-const userWithProfile = await prisma.user.create({
-  data: {
-    email: "bob@example.com",
-    name: "Bob",
-    profile: {
-      create: { bio: "Software engineer" },
-    },
-  },
-  include: { profile: true },
-});
-
-// Bulk create
-const createCount = await prisma.user.createMany({
-  data: [
-    { email: "user1@example.com", name: "User 1" },
-    { email: "user2@example.com", name: "User 2" },
-  ],
-  skipDuplicates: true, // Ignore conflicts on unique fields
-});
-```
-
-#### Read Operations
-
-```typescript
-// Find by unique field
+// Find by unique field - returns T | null
 const user = await prisma.user.findUnique({
   where: { email: "alice@example.com" },
 });
 
-// Find first matching
-const admin = await prisma.user.findFirst({
-  where: { role: "ADMIN" },
-  orderBy: { createdAt: "desc" },
-});
-
-// Find many with filtering
+// Find many with filters + pagination
 const users = await prisma.user.findMany({
   where: {
     role: { in: ["USER", "MODERATOR"] },
@@ -285,24 +181,8 @@ const users = await prisma.user.findMany({
   orderBy: { name: "asc" },
   take: DEFAULT_PAGE_SIZE,
 });
-```
 
-#### Update Operations
-
-```typescript
-// Update single record
-const updated = await prisma.user.update({
-  where: { id: userId },
-  data: { name: "Updated Name" },
-});
-
-// Update many
-const updateCount = await prisma.user.updateMany({
-  where: { role: "USER" },
-  data: { role: "MODERATOR" },
-});
-
-// Upsert (create or update)
+// Upsert - atomic create-or-update
 const upserted = await prisma.user.upsert({
   where: { email: "alice@example.com" },
   create: { email: "alice@example.com", name: "Alice" },
@@ -310,32 +190,18 @@ const upserted = await prisma.user.upsert({
 });
 ```
 
-#### Delete Operations
+**Why good:** Type-safe operations catch errors at compile time, `findUnique` returns `T | null` forcing null handling, `upsert` is atomic
 
-```typescript
-// Delete single record
-const deleted = await prisma.user.delete({
-  where: { id: userId },
-});
-
-// Delete many
-const deleteCount = await prisma.user.deleteMany({
-  where: { createdAt: { lt: new Date("2020-01-01") } },
-});
-```
-
-**Why good:** Type-safe operations catch errors at compile time, `findUnique` returns `T | null` forcing null handling, `skipDuplicates` handles bulk insert conflicts gracefully, `upsert` is atomic avoiding race conditions
+> See [examples/core.md](examples/core.md) for complete CRUD operations, filtering, and pagination patterns.
 
 ---
 
 ### Pattern 4: Relational Queries
 
-Fetch related data efficiently using `include` or nested `select`.
-
-#### Include Pattern
+Fetch related data efficiently using `include` or nested `select` to avoid N+1 queries.
 
 ```typescript
-// Include related records
+// Include related records - single query
 const userWithPosts = await prisma.user.findUnique({
   where: { id: userId },
   include: {
@@ -348,383 +214,143 @@ const userWithPosts = await prisma.user.findUnique({
   },
 });
 
-// Deeply nested includes
-const postWithDetails = await prisma.post.findUnique({
-  where: { id: postId },
-  include: {
-    author: {
-      include: { profile: true },
-    },
-    categories: true,
-  },
-});
-```
-
-#### Select Pattern (Optimized)
-
-```typescript
-// Select specific fields only
+// Select specific fields only - smaller payload
 const userSummary = await prisma.user.findUnique({
   where: { id: userId },
   select: {
     id: true,
     name: true,
-    email: true,
-    posts: {
-      select: { id: true, title: true },
-      where: { published: true },
-    },
+    posts: { select: { id: true, title: true } },
   },
 });
 ```
 
-**Why good:** `include` fetches all fields of relations, `select` fetches only specified fields reducing payload, filtering within `include`/`select` happens at database level, single query avoids N+1 problem
+**Why good:** Single query avoids N+1, `include` fetches all fields, `select` reduces payload
 
 ```typescript
-// WRONG: N+1 query pattern
+// BAD: N+1 query pattern
 const users = await prisma.user.findMany();
 for (const user of users) {
   const posts = await prisma.post.findMany({
     where: { authorId: user.id },
-  });
+  }); // N additional queries!
 }
 ```
 
-**Why bad:** Executes N+1 queries (1 for users + N for each user's posts), extremely slow with large datasets
+**Why bad:** 1 query for users + N queries for posts, extremely slow at scale
+
+> See [examples/relations.md](examples/relations.md) for relation filters, many-to-many, self-relations, and include vs select patterns.
 
 ---
 
-### Pattern 5: Filtering and Sorting
+### Pattern 5: Transactions
 
-Build complex queries with type-safe filters.
-
-#### Basic Filters
+Ensure atomic operations across multiple writes.
 
 ```typescript
-// Equality and comparisons
-const posts = await prisma.post.findMany({
-  where: {
-    published: true,
-    createdAt: { gte: new Date("2024-01-01") },
-    title: { contains: "prisma", mode: "insensitive" },
-  },
-});
-
-// Combining with AND (implicit)
-const users = await prisma.user.findMany({
-  where: {
-    role: "USER",
-    email: { endsWith: "@company.com" },
-    name: { not: null },
-  },
-});
-```
-
-#### Logical Operators
-
-```typescript
-// OR conditions
-const users = await prisma.user.findMany({
-  where: {
-    OR: [
-      { email: { endsWith: "@gmail.com" } },
-      { email: { endsWith: "@outlook.com" } },
-    ],
-  },
-});
-
-// Combined AND, OR, NOT
-const posts = await prisma.post.findMany({
-  where: {
-    AND: [
-      { published: true },
-      {
-        OR: [
-          { title: { contains: "prisma" } },
-          { content: { contains: "prisma" } },
-        ],
-      },
-    ],
-    NOT: { authorId: excludedUserId },
-  },
-});
-```
-
-#### Relation Filters
-
-```typescript
-// Filter by related records
-const usersWithPublishedPosts = await prisma.user.findMany({
-  where: {
-    posts: {
-      some: { published: true }, // At least one published post
-    },
-  },
-});
-
-const usersWithAllPublishedPosts = await prisma.user.findMany({
-  where: {
-    posts: {
-      every: { published: true }, // All posts are published
-    },
-  },
-});
-```
-
-**Why good:** `mode: "insensitive"` enables case-insensitive search, relation filters (`some`, `every`, `none`) eliminate manual joins, type inference catches invalid field names at compile time
-
----
-
-### Pattern 6: Pagination
-
-Implement offset and cursor-based pagination.
-
-#### Offset Pagination
-
-```typescript
-const DEFAULT_PAGE_SIZE = 20;
-const MAX_PAGE_SIZE = 100;
-
-type PaginationParams = {
-  page?: number;
-  pageSize?: number;
-};
-
-const getPaginatedUsers = async ({
-  page = 1,
-  pageSize = DEFAULT_PAGE_SIZE,
-}: PaginationParams) => {
-  const take = Math.min(pageSize, MAX_PAGE_SIZE);
-  const skip = (page - 1) * take;
-
-  const [users, total] = await prisma.$transaction([
-    prisma.user.findMany({
-      skip,
-      take,
-      orderBy: { createdAt: "desc" },
-    }),
-    prisma.user.count(),
-  ]);
-
-  return {
-    data: users,
-    meta: {
-      total,
-      page,
-      pageSize: take,
-      totalPages: Math.ceil(total / take),
-    },
-  };
-};
-```
-
-**When to use:** Small datasets, need random page access, traditional page navigation UI
-
-#### Cursor Pagination
-
-```typescript
-type CursorPaginationParams = {
-  cursor?: string;
-  take?: number;
-};
-
-const getCursorPaginatedPosts = async ({
-  cursor,
-  take = DEFAULT_PAGE_SIZE,
-}: CursorPaginationParams) => {
-  const posts = await prisma.post.findMany({
-    take: take + 1, // Fetch one extra to check for next page
-    ...(cursor && {
-      cursor: { id: cursor },
-      skip: 1, // Skip the cursor itself
-    }),
-    orderBy: { id: "asc" },
-    where: { published: true },
-  });
-
-  const hasNextPage = posts.length > take;
-  const data = hasNextPage ? posts.slice(0, -1) : posts;
-
-  return {
-    data,
-    nextCursor: hasNextPage ? data[data.length - 1]?.id : undefined,
-  };
-};
-```
-
-**When to use:** Large datasets, infinite scroll UI, real-time data where offset would shift
-
-**Why good:** Cursor pagination scales to millions of rows efficiently, offset pagination provides familiar page numbers, `take + 1` pattern efficiently detects next page existence
-
----
-
-### Pattern 7: Transactions
-
-Ensure atomic operations with transactions.
-
-#### Nested Writes (Implicit Transaction)
-
-```typescript
-// Atomic creation of related records
+// Nested writes - implicit transaction
 const user = await prisma.user.create({
   data: {
     email: "alice@example.com",
     name: "Alice",
-    profile: {
-      create: { bio: "Developer" },
-    },
-    posts: {
-      create: [
-        { title: "First Post", published: true },
-        { title: "Draft Post" },
-      ],
-    },
+    profile: { create: { bio: "Developer" } },
+    posts: { create: [{ title: "First Post", published: true }] },
   },
   include: { profile: true, posts: true },
 });
-// All succeed or all fail - no partial state
-```
 
-#### Batch Transaction
-
-```typescript
-// Multiple independent operations atomically
-const [deletedPosts, updatedUser] = await prisma.$transaction([
-  prisma.post.deleteMany({ where: { authorId: userId, published: false } }),
-  prisma.user.update({
-    where: { id: userId },
-    data: { name: "Updated Name" },
-  }),
-]);
-```
-
-#### Interactive Transaction
-
-```typescript
-// Complex logic with reads and conditional writes
+// Interactive transaction - complex logic with rollback
 const MINIMUM_BALANCE = 0;
 
 const transferFunds = async (fromId: string, toId: string, amount: number) => {
   return await prisma.$transaction(async (tx) => {
-    // Read within transaction
     const sender = await tx.account.update({
       where: { id: fromId },
       data: { balance: { decrement: amount } },
     });
 
-    // Validate business logic
     if (sender.balance < MINIMUM_BALANCE) {
-      throw new Error("Insufficient funds");
+      throw new Error("Insufficient funds"); // Rolls back everything
     }
 
-    // Complete the transfer
-    const recipient = await tx.account.update({
+    return await tx.account.update({
       where: { id: toId },
       data: { balance: { increment: amount } },
     });
-
-    return { sender, recipient };
   });
 };
 ```
 
-**Why good:** Nested writes are cleanest for creating related records, batch transactions combine multiple models atomically, interactive transactions enable complex business logic with rollback on error
+**Why good:** Nested writes are cleanest for related records, interactive transactions enable business logic with automatic rollback
 
 ```typescript
-// WRONG: Using prisma instead of tx
+// BAD: Using prisma instead of tx
 await prisma.$transaction(async (tx) => {
   await prisma.post.create({ data: { title: "Post" } }); // Uses prisma, not tx!
-  await tx.user.update({ where: { id: "1" }, data: { name: "Updated" } });
 });
 ```
 
-**Why bad:** Operations using `prisma` bypass transaction context, only `tx` operations will rollback on failure, causes inconsistent data
+**Why bad:** Operations using `prisma` bypass transaction context, won't rollback on failure
+
+> See [examples/transactions.md](examples/transactions.md) for batch transactions, error handling, optimistic concurrency, and transaction options.
 
 ---
 
-### Pattern 8: Connection Management
+### Pattern 6: Connection Management
 
 Handle connections properly for different environments.
 
-#### Graceful Shutdown
-
 ```typescript
-// Handle cleanup on process termination
+// Graceful shutdown
 process.on("beforeExit", async () => {
   await prisma.$disconnect();
 });
 
-// For server shutdown hooks
-const shutdown = async () => {
-  await prisma.$disconnect();
-  process.exit(0);
-};
-```
-
-#### Connection in Serverless
-
-```typescript
-// lib/db/serverless-client.ts
-import { PrismaClient } from "@prisma/client";
-
-// Serverless environments create new instances per invocation
-// Use connection pooler (PgBouncer, Prisma Accelerate) for production
+// Serverless: use connection pooler (PgBouncer, Prisma Accelerate)
 export const prisma = new PrismaClient({
   datasources: {
-    db: {
-      url: process.env.DATABASE_URL_WITH_POOLER, // Connection pooler URL
-    },
+    db: { url: process.env.DATABASE_URL_WITH_POOLER },
   },
 });
 ```
 
-**Why good:** Graceful shutdown prevents connection leaks, connection pooler handles serverless connection management, separate URL for pooled connections
+**Why good:** Graceful shutdown prevents connection leaks, connection pooler handles serverless connection management
 
 </patterns>
 
 ---
 
-<integration>
+<red_flags>
 
-## Integration Guide
+## RED FLAGS
 
-### Usage in Application Code
+**High Priority Issues:**
 
-Import the singleton client and use throughout your application:
+- Creating PrismaClient on every import - exhausts database connections during hot reload
+- Using `prisma` instead of `tx` in interactive transactions - bypasses transaction context
+- N+1 queries in loops - use `include` or `select` instead
+- Missing `@relation` attributes - ambiguous foreign keys cause migration errors
 
-```typescript
-// In your application code
-import { prisma } from "@/lib/db/client";
+**Medium Priority Issues:**
 
-// Query data
-const users = await prisma.user.findMany();
-```
+- No indexes on frequently filtered columns - slow queries as data grows
+- Offset pagination on large tables - performance degrades linearly
+- Missing `onDelete` cascade - orphaned records when parent deleted
+- Fetching all fields with `include` when only some needed - use `select`
 
-### Type Reuse
+**Gotchas & Edge Cases:**
 
-Use Prisma's generated types with your validation layer:
+- `createMany` doesn't return created records (use `createManyAndReturn` on PostgreSQL/CockroachDB/SQLite)
+- `updateMany` and `deleteMany` don't trigger `@updatedAt` hooks
+- Implicit many-to-many tables can't have extra fields - use explicit join model
+- `Json` fields are typed as `JsonValue` - need runtime validation at parse boundary
+- `Decimal` fields return `Prisma.Decimal` type - convert with `.toNumber()`
+- Interactive transactions have default 5s timeout - increase with `timeout` option
+- Interactive transactions hold database connections - keep them short
+- `findFirst` without `orderBy` returns non-deterministic results
+- Enum changes require a migration to add/remove values
 
-```typescript
-import type { Prisma } from "@prisma/client";
-
-// Prisma generates input/output types based on your schema
-type CreateUserInput = Prisma.UserCreateInput;
-type UserWithPosts = Prisma.UserGetPayload<{
-  include: { posts: true };
-}>;
-```
-
-### Environment Configuration
-
-```bash
-# .env
-DATABASE_URL="postgresql://user:password@localhost:5432/mydb?schema=public"
-
-# For serverless with connection pooler
-DATABASE_URL_WITH_POOLER="postgresql://user:password@pooler.example.com:6543/mydb"
-```
-
-</integration>
+</red_flags>
 
 ---
 

@@ -1,0 +1,17 @@
+{
+  "name": "mcp-builder",
+  "repo": "dgkngk/super-kit",
+  "path": "skills/tech/mcp-builder/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/dgkngk/super-kit",
+  "dir_name": "mcp-builder-dgkngk-super-kit",
+  "downloaded_at": "2026-03-22T07:44:54.997292Z",
+  "author": "dgkngk",
+  "source_url": "https://github.com/dgkngk/super-kit/blob/master/skills/tech/mcp-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dgkngk/super-kit/blob/master/skills/tech/mcp-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

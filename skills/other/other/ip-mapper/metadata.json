@@ -1,0 +1,17 @@
+{
+  "name": "ip-mapper",
+  "repo": "alexmcfarland-ai/co-writer-plugins",
+  "path": "plugins/ghostwriting-plugin/skills/ip-mapper/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alexmcfarland-ai/co-writer-plugins",
+  "dir_name": "ip-mapper",
+  "downloaded_at": "2026-03-22T06:50:11.085296Z",
+  "author": "alexmcfarland-ai",
+  "source_url": "https://github.com/alexmcfarland-ai/co-writer-plugins/blob/main/plugins/ghostwriting-plugin/skills/ip-mapper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexmcfarland-ai/co-writer-plugins/blob/main/plugins/ghostwriting-plugin/skills/ip-mapper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

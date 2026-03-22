@@ -2,8 +2,16 @@
   "name": "angle-generator",
   "repo": "WalkerHi11/mediabuy-plugins",
   "path": ".codex/skills/angle-generator/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/WalkerHi11/mediabuy-plugins",
   "dir_name": "angle-generator",
-  "downloaded_at": "2026-02-22T05:55:39.485279Z"
+  "downloaded_at": "2026-03-22T06:29:49.204484Z",
+  "author": "WalkerHi11",
+  "source_url": "https://github.com/WalkerHi11/mediabuy-plugins/blob/main/.codex/skills/angle-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WalkerHi11/mediabuy-plugins/blob/main/.codex/skills/angle-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

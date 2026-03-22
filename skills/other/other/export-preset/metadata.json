@@ -2,8 +2,16 @@
   "name": "export-preset",
   "repo": "benzwick/SlicerMouseMaster",
   "path": ".claude/skills/export-preset/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/benzwick/SlicerMouseMaster",
   "dir_name": "export-preset",
-  "downloaded_at": "2026-02-15T06:33:05.586563Z"
+  "downloaded_at": "2026-03-22T07:13:03.873588Z",
+  "author": "benzwick",
+  "source_url": "https://github.com/benzwick/SlicerMouseMaster/blob/main/.claude/skills/export-preset/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benzwick/SlicerMouseMaster/blob/main/.claude/skills/export-preset/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

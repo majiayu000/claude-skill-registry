@@ -1,0 +1,17 @@
+{
+  "name": "react",
+  "repo": "ar4mirez/samuel",
+  "path": ".claude/skills/react/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ar4mirez/samuel",
+  "dir_name": "react-ar4mirez-samuel",
+  "downloaded_at": "2026-03-22T07:00:51.669799Z",
+  "author": "ar4mirez",
+  "source_url": "https://github.com/ar4mirez/samuel/blob/main/.claude/skills/react/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ar4mirez/samuel/blob/main/.claude/skills/react/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

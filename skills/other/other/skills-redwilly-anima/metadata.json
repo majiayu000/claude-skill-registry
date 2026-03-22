@@ -1,0 +1,17 @@
+{
+  "name": "skills",
+  "repo": "RedWilly/Anima",
+  "path": "skills/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/RedWilly/Anima",
+  "dir_name": "skills-redwilly-anima",
+  "downloaded_at": "2026-03-22T06:09:50.371448Z",
+  "author": "RedWilly",
+  "source_url": "https://github.com/RedWilly/Anima/blob/main/skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RedWilly/Anima/blob/main/skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

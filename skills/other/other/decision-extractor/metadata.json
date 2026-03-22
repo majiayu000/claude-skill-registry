@@ -1,0 +1,17 @@
+{
+  "name": "decision-extractor",
+  "repo": "er1chu/claude-skills-weekly",
+  "path": "skills/decision-extractor/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/er1chu/claude-skills-weekly",
+  "dir_name": "decision-extractor",
+  "downloaded_at": "2026-03-22T07:57:27.448626Z",
+  "author": "er1chu",
+  "source_url": "https://github.com/er1chu/claude-skills-weekly/blob/main/skills/decision-extractor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/er1chu/claude-skills-weekly/blob/main/skills/decision-extractor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

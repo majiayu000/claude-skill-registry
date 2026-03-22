@@ -1,0 +1,17 @@
+{
+  "name": "openspec-archive-change",
+  "repo": "dianedef/ShipFlow",
+  "path": ".claude/skills/openspec-archive-change/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dianedef/ShipFlow",
+  "dir_name": "openspec-archive-change-dianedef-shipflow",
+  "downloaded_at": "2026-03-22T07:46:05.059573Z",
+  "author": "dianedef",
+  "source_url": "https://github.com/dianedef/ShipFlow/blob/main/.claude/skills/openspec-archive-change/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dianedef/ShipFlow/blob/main/.claude/skills/openspec-archive-change/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -2,8 +2,16 @@
   "name": "java-pro",
   "repo": "AristidesAI/VisionEmoji",
   "path": ".claude/skills/java-pro/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/AristidesAI/VisionEmoji",
   "dir_name": "java-pro",
-  "downloaded_at": "2026-02-22T04:41:57.514194Z"
+  "downloaded_at": "2026-03-22T04:53:03.428922Z",
+  "author": "AristidesAI",
+  "source_url": "https://github.com/AristidesAI/VisionEmoji/blob/main/.claude/skills/java-pro/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AristidesAI/VisionEmoji/blob/main/.claude/skills/java-pro/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

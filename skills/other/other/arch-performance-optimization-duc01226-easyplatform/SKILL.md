@@ -5,9 +5,11 @@ description: '[Architecture] Use when analyzing and improving performance for da
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash, Task
 ---
 
-> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
 
 **Prerequisites:** **MUST READ** `.claude/skills/shared/evidence-based-reasoning-protocol.md` before executing.
+
+- `docs/project-reference/domain-entities-reference.md` — Domain entity catalog, relationships, cross-service sync (read when task involves business entities/models)
 
 ## Quick Summary
 
@@ -26,6 +28,8 @@ allowed-tools: Read, Write, Edit, Grep, Glob, Bash, Task
 - Always use async I/O; never block threads with `.Result`
 - Avoid N+1 queries — use eager loading or batch fetching
 - Use bounded parallelism (`ParallelAsync` with `maxConcurrent`) for background jobs
+
+**Be skeptical. Apply critical thinking, sequential thinking. Every claim needs traced proof, confidence percentages (Idea should be more than 80%).**
 
 # Performance Optimization Workflow
 

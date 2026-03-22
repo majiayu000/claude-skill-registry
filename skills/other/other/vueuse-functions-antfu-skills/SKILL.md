@@ -4,7 +4,7 @@ description: Apply VueUse composables where appropriate to build concise, mainta
 license: MIT
 metadata:
     author: SerKo <https://github.com/serkodev>
-    version: "1.1"
+    version: "1.0"
 compatibility: Requires Vue 3 (or above) or Nuxt 3 (or above) project
 ---
 
@@ -81,6 +81,7 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 | [`useClipboard`](references/useClipboard.md) | Reactive [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) | AUTO |
 | [`useClipboardItems`](references/useClipboardItems.md) | Reactive [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) | AUTO |
 | [`useColorMode`](references/useColorMode.md) | Reactive color mode (dark / light / customs) with auto data persistence | AUTO |
+| [`useCssSupports`](references/useCssSupports.md) | SSR compatible and reactive [`CSS.supports`](https://developer.mozilla.org/docs/Web/API/CSS/supports_static) | AUTO |
 | [`useCssVar`](references/useCssVar.md) | Manipulate CSS variables | AUTO |
 | [`useDark`](references/useDark.md) | Reactive dark mode with auto data persistence | AUTO |
 | [`useEventListener`](references/useEventListener.md) | Use EventListener with ease | AUTO |
@@ -124,7 +125,7 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 | Function | Description | Invocation |
 |----------|-------------|------------|
 | [`onClickOutside`](references/onClickOutside.md) | Listen for clicks outside of an element | AUTO |
-| [`onElementRemoval`](references/onElementRemoval.md) | Fires when the element or any element containing it is removed | AUTO |
+| [`onElementRemoval`](references/onElementRemoval.md) | Fires when the element or any element containing it is removed from the DOM | AUTO |
 | [`onKeyStroke`](references/onKeyStroke.md) | Listen for keyboard keystrokes | AUTO |
 | [`onLongPress`](references/onLongPress.md) | Listen for a long press on an element | AUTO |
 | [`onStartTyping`](references/onStartTyping.md) | Fires when users start typing on non-editable elements | AUTO |
@@ -175,11 +176,11 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 | Function | Description | Invocation |
 |----------|-------------|------------|
 | [`useAnimate`](references/useAnimate.md) | Reactive [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) | AUTO |
-| [`useInterval`](references/useInterval.md) | Reactive counter increases on every interval | AUTO |
+| [`useInterval`](references/useInterval.md) | Reactive counter that increases on every interval | AUTO |
 | [`useIntervalFn`](references/useIntervalFn.md) | Wrapper for `setInterval` with controls | AUTO |
 | [`useNow`](references/useNow.md) | Reactive current Date instance | AUTO |
 | [`useRafFn`](references/useRafFn.md) | Call function on every `requestAnimationFrame` | AUTO |
-| [`useTimeout`](references/useTimeout.md) | Update value after a given time with controls | AUTO |
+| [`useTimeout`](references/useTimeout.md) | Reactive value that becomes `true` after a given time | AUTO |
 | [`useTimeoutFn`](references/useTimeoutFn.md) | Wrapper for `setTimeout` with controls | AUTO |
 | [`useTimestamp`](references/useTimestamp.md) | Reactive current timestamp | AUTO |
 | [`useTransition`](references/useTransition.md) | Transition between values | AUTO |
@@ -188,7 +189,7 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 
 | Function | Description | Invocation |
 |----------|-------------|------------|
-| [`computedInject`](references/computedInject.md) | Combine computed and inject | AUTO |
+| [`computedInject`](references/computedInject.md) | Combine `computed` and `inject` | AUTO |
 | [`createReusableTemplate`](references/createReusableTemplate.md) | Define and reuse template inside the component scope | AUTO |
 | [`createTemplatePromise`](references/createTemplatePromise.md) | Template as Promise | AUTO |
 | [`templateRef`](references/templateRef.md) | Shorthand for binding ref to template element | AUTO |
@@ -271,7 +272,7 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 
 | Function | Description | Invocation |
 |----------|-------------|------------|
-| [`useCountdown`](references/useCountdown.md) | Wrapper for `useIntervalFn` that provides a countdown timer | AUTO |
+| [`useCountdown`](references/useCountdown.md) | Reactive countdown timer in seconds | AUTO |
 | [`useDateFormat`](references/useDateFormat.md) | Get the formatted date according to the string of tokens passed in | AUTO |
 | [`useTimeAgo`](references/useTimeAgo.md) | Reactive time ago | AUTO |
 | [`useTimeAgoIntl`](references/useTimeAgoIntl.md) | Reactive time ago with i18n supported | AUTO |
@@ -310,7 +311,7 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 
 | Function | Description | Invocation |
 |----------|-------------|------------|
-| [`useIpcRenderer`](references/useIpcRenderer.md) | Provides [ipcRenderer](https://www.electronjs.org/docs/api/ipc-renderer) and all of its APIs | EXTERNAL |
+| [`useIpcRenderer`](references/useIpcRenderer.md) | Provides [ipcRenderer](https://www.electronjs.org/docs/api/ipc-renderer) and all of its APIs with Vue reactivity | EXTERNAL |
 | [`useIpcRendererInvoke`](references/useIpcRendererInvoke.md) | Reactive [ipcRenderer.invoke API](https://www.electronjs.org/docs/api/ipc-renderer#ipcrendererinvokechannel-args) result | EXTERNAL |
 | [`useIpcRendererOn`](references/useIpcRendererOn.md) | Use [ipcRenderer.on](https://www.electronjs.org/docs/api/ipc-renderer#ipcrendereronchannel-listener) with ease and [ipcRenderer.removeListener](https://www.electronjs.org/docs/api/ipc-renderer#ipcrendererremovelistenerchannel-listener) automatically on unmounted | EXTERNAL |
 | [`useZoomFactor`](references/useZoomFactor.md) | Reactive [WebFrame](https://www.electronjs.org/docs/api/web-frame#webframe) zoom factor | EXTERNAL |

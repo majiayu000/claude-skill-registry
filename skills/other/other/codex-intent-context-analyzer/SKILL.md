@@ -5,14 +5,15 @@ load_priority: always
 ---
 
 ## TL;DR
-Parse user request into structured intent JSON (goal, constraints, complexity). Trigger Socratic Gate for complex/ambiguous scope. Wait for explicit confirmation before implementation. For large repos: read index files first, max 20 files deep-read per task.
+Parse user request into structured intent JSON (goal, constraints, complexity). Trigger Socratic Gate for complex or ambiguous scope. Suggest an agent route after classification. Wait for explicit confirmation before implementation. For large repos: read index files first, max 20 files deep-read per task.
 
 # Intent and Context Analyzer
 
 ## Activation
 
 1. Activate for any request that implies code or documentation changes.
-2. Skip for purely informational questions with no requested edits.
+2. Activate on explicit `$codex-intent-context-analyzer` or `$intent`.
+3. Skip for purely informational questions with no requested edits.
 
 ## Output Contract
 
@@ -27,9 +28,35 @@ Always return a fenced JSON block in conversation:
   "missing_info": ["Information needed but not provided"],
   "normalized_prompt": "Clean rewrite of the user request",
   "complexity": "simple | complex",
-  "needs_confirmation": true
+  "needs_confirmation": true,
+  "suggested_agent": "frontend-specialist | backend-specialist | security-auditor | debugger | test-engineer | devops-engineer | planner | scrum-master | null"
 }
 ```
+
+Keep every existing field exactly as-is. The only additive extension is `suggested_agent`.
+
+## Auto-Agent Routing
+
+After classifying intent, select the best primary agent from `skills/.agents/` and announce it in conversation:
+
+`🤖 Routing to @[agent-name]...`
+
+| Intent | Primary Agent | Secondary |
+| --- | --- | --- |
+| build (frontend) | `frontend-specialist` | `test-engineer` |
+| build (backend) | `backend-specialist` | `test-engineer` |
+| fix or debug | `debugger` | — |
+| review or audit | `security-auditor` | — |
+| deploy | `devops-engineer` | `security-auditor` |
+| plan | `planner` | — |
+| scrum | `scrum-master` | — |
+
+### Routing Notes
+
+- Keep the existing `intent` enum unchanged. `plan` and `scrum` are routing overlays, not new required JSON intent literals.
+- For build requests, use domain signals to choose frontend vs backend primary ownership.
+- When a strong secondary fit exists, mention it in prose after the routing line instead of adding another JSON field.
+- If no confident route exists, set `suggested_agent` to `null` and continue with the normal clarification flow.
 
 ## Socratic Gate
 

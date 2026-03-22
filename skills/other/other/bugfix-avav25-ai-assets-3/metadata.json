@@ -1,0 +1,17 @@
+{
+  "name": "bugfix",
+  "repo": "avav25/ai-assets",
+  "path": ".windsurf/skills/bugfix/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/avav25/ai-assets",
+  "dir_name": "bugfix-avav25-ai-assets-3",
+  "downloaded_at": "2026-03-22T07:05:49.465609Z",
+  "author": "avav25",
+  "source_url": "https://github.com/avav25/ai-assets/blob/main/.windsurf/skills/bugfix/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/avav25/ai-assets/blob/main/.windsurf/skills/bugfix/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

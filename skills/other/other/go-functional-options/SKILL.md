@@ -1,11 +1,12 @@
 ---
 name: go-functional-options
-description: The functional options pattern for Go constructors and public APIs. Use when designing APIs with optional configuration, especially with 3+ parameters.
+description: Use when designing a Go constructor or factory function with optional configuration — especially with 3+ optional parameters or extensible APIs. Also use when building a New* function that takes many settings, even if they don't mention "functional options" by name. Does not cover general function design (see go-functions).
+license: Apache-2.0
+metadata:
+  sources: "Uber Style Guide"
 ---
 
 # Functional Options Pattern
-
-> **Source**: Uber Go Style Guide
 
 Functional options is a pattern where you declare an opaque `Option` type that records information in an internal struct. The constructor accepts a variadic number of these options and applies them to configure the result.
 
@@ -37,8 +38,6 @@ type Option interface {
 The unexported `apply` method ensures only options from this package can be used.
 
 ## Complete Implementation
-
-> **Source**: Uber Go Style Guide
 
 ```go
 package db
@@ -102,8 +101,6 @@ func Open(addr string, opts ...Option) (*Connection, error) {
 
 ## Usage Examples
 
-> **Source**: Uber Go Style Guide
-
 ### Without Functional Options (Bad)
 
 ```go
@@ -140,9 +137,9 @@ db.Open(
 
 **Prefer Config Struct when**: Fewer than 3 options, options rarely change, all options usually specified together, or internal APIs only.
 
-## Why Not Closures?
+> Read [references/OPTIONS-VS-STRUCTS.md](references/OPTIONS-VS-STRUCTS.md) when deciding between functional options and config structs, designing a config struct API with proper defaults, or evaluating the hybrid approach for complex constructors.
 
-> **Source**: Uber Go Style Guide
+## Why Not Closures?
 
 An alternative implementation uses closures:
 
@@ -200,10 +197,14 @@ func New(required string, opts ...Option) (*Thing, error) {
 - [ ] Defaults are set before applying options
 - [ ] Required parameters are separate from `...Option`
 
-## See Also
+## Related Skills
 
-- `go-style-core` - Core Go style principles
-- `go-naming` - Naming conventions for Go
-- `go-defensive` - Defensive programming patterns
+- **Interface design**: See [go-interfaces](../go-interfaces/SKILL.md) when designing the `Option` interface or choosing between interface and closure approaches
+- **Naming conventions**: See [go-naming](../go-naming/SKILL.md) when naming `With*` constructors, option types, or the unexported options struct
+- **Function design**: See [go-functions](../go-functions/SKILL.md) when organizing constructors within a file or formatting variadic signatures
+- **Documentation**: See [go-documentation](../go-documentation/SKILL.md) when documenting `Option` types, `With*` functions, or constructor behavior
+
+### External Resources
+
 - [Self-referential functions and the design of options](https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html) - Rob Pike
 - [Functional options for friendly APIs](https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis) - Dave Cheney

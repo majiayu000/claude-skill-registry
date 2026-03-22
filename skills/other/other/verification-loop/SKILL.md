@@ -18,6 +18,9 @@ Invoke this skill:
 
 ## Verification Phases
 
+Choose the commands adaptively for the current project instead of running every example blindly. Use the stack-appropriate command from `references/STACK-DETECTION.md` when the repo does not match the default examples below.
+
+
 ### Phase 1: Build Verification
 ```bash
 # Python projects (uv)
@@ -135,3 +138,11 @@ Run: /verify
 
 This skill complements PostToolUse hooks but provides deeper verification.
 Hooks catch issues immediately; this skill provides comprehensive review.
+
+
+## Reference Files
+
+Load only what is needed:
+- `references/STACK-DETECTION.md` - how to choose the right verification command set for the current repo
+- `references/REPORT-TEMPLATE.md` - report structure for final verification output
+- `examples/example-verification-report.md` - example final report

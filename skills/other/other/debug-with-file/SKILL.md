@@ -22,6 +22,10 @@ Enhanced evidence-based debugging with **documented exploration process**. Recor
 
 **$BUG**
 
+## Project Context
+
+Run `ccw spec load --category debug` for known issues, workarounds, and root-cause notes.
+
 ## Execution Process
 
 ```

@@ -1,19 +1,22 @@
 ---
 name: vr-avatar-engineer
-description: Expert in photorealistic and stylized VR avatar systems for Apple Vision Pro, Meta Quest, and cross-platform metaverse. Specializes in facial tracking (52+ blend shapes), subsurface scattering, Persona-style generation, Photon networking, and real-time LOD. Activate on 'VR avatar', 'Vision Pro Persona', 'Meta avatar', 'facial tracking', 'blend shapes', 'avatar networking', 'photorealistic avatar'. NOT for 2D profile pictures (use image generation), non-VR game characters (use game engine tools), static 3D models (use modeling tools), or motion capture hardware setup.
+description: Expert in photorealistic and stylized VR avatar systems for Apple Vision Pro, Meta Quest, and cross-platform metaverse. Specializes in facial tracking (52+ blend shapes), subsurface scattering,
+  Persona-style generation, Photon networking, and real-time LOD. Activate on 'VR avatar', 'Vision Pro Persona', 'Meta avatar', 'facial tracking', 'blend shapes', 'avatar networking', 'photorealistic avatar'.
+  NOT for 2D profile pictures (use image generation), non-VR game characters (use game engine tools), static 3D models (use modeling tools), or motion capture hardware setup.
 allowed-tools: Read,Write,Edit,Bash,mcp__firecrawl__firecrawl_search,WebFetch,mcp__stability-ai__stability-ai-generate-image
-category: AI & Machine Learning
-tags:
+metadata:
+  category: AI & Machine Learning
+  pairs-with:
+  - skill: metal-shader-expert
+    reason: GPU-accelerated avatar rendering
+  - skill: physics-rendering-expert
+    reason: Avatar physics simulation
+  tags:
   - vr
   - avatar
   - facial-tracking
   - vision-pro
   - metaverse
-pairs-with:
-  - skill: metal-shader-expert
-    reason: GPU-accelerated avatar rendering
-  - skill: physics-rendering-expert
-    reason: Avatar physics simulation
 ---
 
 # VR Avatar Excellence Engineer

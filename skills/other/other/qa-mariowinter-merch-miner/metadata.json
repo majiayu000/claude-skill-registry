@@ -1,0 +1,17 @@
+{
+  "name": "qa",
+  "repo": "MarioWinter/merch-miner",
+  "path": ".claude/skills/qa/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MarioWinter/merch-miner",
+  "dir_name": "qa-mariowinter-merch-miner",
+  "downloaded_at": "2026-03-22T05:48:25.298050Z",
+  "author": "MarioWinter",
+  "source_url": "https://github.com/MarioWinter/merch-miner/blob/main/.claude/skills/qa/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MarioWinter/merch-miner/blob/main/.claude/skills/qa/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

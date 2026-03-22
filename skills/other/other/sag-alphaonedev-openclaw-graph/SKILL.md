@@ -11,7 +11,7 @@ scope: general
 model_hint: claude-sonnet
 embedding_hint: "elevenlabs tts voice generate audio speech stream sag"
 clawhub_install: "clawhub install sag"
-note: "NOT installed via ClaWHub CLI — registered in LadybugDB only. To activate: clawhub install sag"
+note: "NOT installed via ClaWHub CLI — registered in Neo4j skill graph only. To activate: clawhub install sag"
 ---
 
 # Sag
@@ -25,7 +25,7 @@ clawhub install sag
 ```
 
 ## Note
-This skill is registered in LadybugDB for discovery purposes only.
+This skill is registered in the Neo4j skill graph for discovery purposes only.
 It is **NOT installed** via the traditional ClaWHub methodology.
 When a task matches this skill, the agent will inform you to install it if needed.
 

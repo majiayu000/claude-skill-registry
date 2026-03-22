@@ -2,8 +2,16 @@
   "name": "godot-organize-files",
   "repo": "Asreonn/godot-superpowers",
   "path": "mini-skills/godot-organize-files/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/Asreonn/godot-superpowers",
   "dir_name": "godot-organize-files",
-  "downloaded_at": "2026-02-22T04:43:04.007453Z"
+  "downloaded_at": "2026-03-22T04:55:15.185066Z",
+  "author": "Asreonn",
+  "source_url": "https://github.com/Asreonn/godot-superpowers/blob/main/mini-skills/godot-organize-files/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Asreonn/godot-superpowers/blob/main/mini-skills/godot-organize-files/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

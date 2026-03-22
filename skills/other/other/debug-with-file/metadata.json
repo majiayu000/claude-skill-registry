@@ -2,8 +2,16 @@
   "name": "debug-with-file",
   "repo": "catlog22/Claude-Code-Workflow",
   "path": ".codex/skills/debug-with-file/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/catlog22/Claude-Code-Workflow",
   "dir_name": "debug-with-file",
-  "downloaded_at": "2026-02-22T06:39:54.379202Z"
+  "downloaded_at": "2026-03-22T07:25:07.464460Z",
+  "author": "catlog22",
+  "source_url": "https://github.com/catlog22/Claude-Code-Workflow/blob/main/.codex/skills/debug-with-file/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/catlog22/Claude-Code-Workflow/blob/main/.codex/skills/debug-with-file/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

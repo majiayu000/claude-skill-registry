@@ -1,16 +1,15 @@
 ---
 name: web-state-zustand
-description: Zustand stores, client state patterns. Use when deciding between Zustand vs useState, managing global state, avoiding Context misuse, or handling form state.
+description: Zustand stores, client state patterns. Use when deciding between Zustand vs useState, managing global state, or avoiding Context misuse.
 ---
 
 # Client State Management Patterns
 
-> **Quick Guide:** Local UI state? useState. Shared UI (2+ components)? Zustand. Server data? Use your data fetching solution. URL-appropriate filters? searchParams. NEVER use Context for state management.
+> **Quick Guide:** Local UI state? useState. Shared UI (2+ components)? Zustand. Server data? Use your data fetching solution. URL-appropriate filters? searchParams. NEVER use Context for state management. Zustand v5: use `useShallow` from `zustand/react/shallow` (not the old equality-fn second arg), selectors must return stable references, and `persist` no longer stores initial state during creation.
 
 **Detailed Resources:**
 
-- For code examples, see [examples/core.md](examples/core.md) and [examples/forms.md](examples/forms.md)
-- For anti-pattern code examples, see [reference.md](reference.md)
+- [examples/core.md](examples/core.md) - Store setup, selectors, useShallow, Context anti-patterns, URL state
 
 ---
 
@@ -24,29 +23,30 @@ description: Zustand stores, client state patterns. Use when deciding between Zu
 
 **(You MUST use useState ONLY for truly component-local state - NOT for anything shared)**
 
-**(You MUST use named exports ONLY - NO default exports in any state files)**
+**(You MUST use atomic selectors or `useShallow` from `zustand/react/shallow` - NEVER destructure the entire store)**
 
-**(You MUST use named constants for ALL numbers - NO magic numbers in state code)**
+**(You MUST ensure selectors return stable references - inline object/function creation causes infinite loops in v5)**
 
 </critical_requirements>
 
 ---
 
-**Auto-detection:** Deciding between Zustand vs useState, global state management, Context misuse, client state patterns
+**Auto-detection:** Zustand, zustand, create from zustand, useShallow, zustand/middleware, zustand store, client state, shared UI state, Context misuse, prop drilling, global state
 
 **When to use:**
 
 - Deciding between Zustand or useState for a use case
 - Setting up Zustand for shared UI state (modals, sidebars, preferences)
 - Understanding when NOT to use Context for state management
-- Managing form state and validation patterns
+- Structuring stores: slices, actions, selectors
 
 **Key patterns covered:**
 
 - Client state = useState (local) or Zustand (shared, 2+ components)
 - Context for dependency injection only (NEVER for state management)
+- Store setup with devtools and persist middleware
+- Selector patterns: atomic selectors vs useShallow
 - URL params for shareable/bookmarkable state (filters, search)
-- Form patterns with controlled components and Zod validation
 
 **When NOT to use:**
 
@@ -60,9 +60,14 @@ description: Zustand stores, client state patterns. Use when deciding between Zu
 
 ## Philosophy
 
-React provides multiple tools for managing client state, but each has a specific purpose. The key principle: **use the right tool for the right job**. Server data belongs in a dedicated data fetching layer with caching and synchronization. Local UI state stays in useState. Shared UI state lives in Zustand for performance. URL state makes filters shareable. Context is ONLY for dependency injection, never state management.
+Zustand is a minimal, hook-based state manager. The key principle: **use the right tool for the right job**. Server data belongs in a dedicated data fetching layer with caching and synchronization. Local UI state stays in useState. Shared UI state lives in Zustand for performance. URL state makes filters shareable. Context is ONLY for dependency injection, never state management.
 
-The decision tree at the top of this skill guides you to the right solution based on your specific use case. Follow it strictly to avoid common pitfalls like using Context for state or putting server data in client state.
+**Store design principles** (from TkDodo and official docs):
+
+- **Keep stores small** - multiple focused stores beat one monolithic store
+- **Business logic in the store** - components call actions, stores decide what happens
+- **Only export custom hooks** - never expose the raw store creator
+- **Atomic selectors preferred** - return single values, not objects, for best performance
 
 </philosophy>
 
@@ -72,13 +77,9 @@ The decision tree at the top of this skill guides you to the right solution base
 
 ## Core Patterns
 
-### Pattern 1: Server State vs Client State Decision
+### Pattern 1: State Placement Decision
 
-**STRICT SEPARATION REQUIRED**
-
-The most critical decision: is this server data or client data?
-
-#### Decision Tree
+The most critical decision: where does this state belong?
 
 ```
 Is it server data (from API)?
@@ -93,18 +94,7 @@ Is it server data (from API)?
                 └─ YES → Context (ONLY for DI, not state)
 ```
 
-#### Constants
-
-```typescript
-// File naming convention
-// stores/ui-store.ts (kebab-case, named export)
-
-const MIN_PASSWORD_LENGTH = 8;
-const MAX_RETRY_ATTEMPTS = 3;
-const DEBOUNCE_DELAY_MS = 300;
-```
-
-For implementation examples, see [examples/core.md](examples/core.md#pattern-1-server-state-vs-client-state).
+For full examples, see [examples/core.md](examples/core.md#pattern-1-state-placement).
 
 ---
 
@@ -112,36 +102,50 @@ For implementation examples, see [examples/core.md](examples/core.md#pattern-1-s
 
 Use ONLY when state is truly component-local and never shared.
 
-#### When to Use
-
 - State used ONLY in one component (isExpanded, isOpen)
 - Temporary UI state that never needs to be shared
-- Form input values (if form is self-contained)
+- As soon as a second component needs it, move to Zustand
 
-#### When NOT to Use
-
-- State needed in 2+ components (use Zustand)
-- Prop drilling 3+ levels (use Zustand)
-- Server data (use a data fetching solution)
-
-For implementation examples and good/bad comparisons, see [examples/core.md](examples/core.md#pattern-2-local-state-with-usestate).
+For good/bad comparisons, see [examples/core.md](examples/core.md#pattern-2-local-state-with-usestate).
 
 ---
 
-### Pattern 3: Global State with Zustand
+### Pattern 3: Zustand Store Setup
 
 Use as soon as state is needed in 2+ components across the tree.
 
-#### When to Use
+```typescript
+// stores/ui-store.ts
+import { create } from "zustand";
+import { devtools, persist } from "zustand/middleware";
 
-- State needed by 2+ components across the tree
-- Modal state (trigger from header, render in layout)
-- Sidebar collapsed (header button + sidebar component)
-- User preferences (theme, language, layout)
-- Shopping cart, filters, selected items
-- Any shared UI state
+const UI_STORAGE_KEY = "ui-storage";
 
-For store setup, usage patterns, and shallow comparison examples, see [examples/core.md](examples/core.md#pattern-3-global-state-with-zustand).
+interface UIState {
+  sidebarOpen: boolean;
+  theme: "light" | "dark";
+  toggleSidebar: () => void;
+  setTheme: (theme: "light" | "dark") => void;
+}
+
+export const useUIStore = create<UIState>()(
+  devtools(
+    persist(
+      (set) => ({
+        sidebarOpen: true,
+        theme: "light",
+        toggleSidebar: () => set((s) => ({ sidebarOpen: !s.sidebarOpen })),
+        setTheme: (theme) => set({ theme }),
+      }),
+      { name: UI_STORAGE_KEY, partialize: (s) => ({ theme: s.theme }) },
+    ),
+  ),
+);
+```
+
+**Key points:** devtools for debugging, persist only what survives sessions (preferences, not transient UI), `partialize` to exclude ephemeral state.
+
+For selectors, useShallow, and v5 stability patterns, see [examples/core.md](examples/core.md#pattern-3-zustand-store-setup).
 
 ---
 
@@ -149,47 +153,30 @@ For store setup, usage patterns, and shallow comparison examples, see [examples/
 
 Context is NOT a state management solution. It's for dependency injection and singletons ONLY.
 
-#### ONLY Use Context For
+**ONLY use Context for:**
 
-- Framework providers (QueryClientProvider, Router, etc.)
+- Framework providers (router, query client)
 - Dependency injection (services, API clients, DB connections)
-- Singletons that NEVER or RARELY change (theme configuration, i18n)
-- Values that are set once at app initialization
+- Values set once at app initialization that never change
 
-#### NEVER Use Context For
+**NEVER use Context for:**
 
-- **ANY state management** (use Zustand instead)
-- **ANY frequently updating values** (massive performance issues)
-- Server data (use a data fetching solution)
-- UI state (use Zustand for shared, useState for local)
-- User interactions, selections, filters (use Zustand)
-- Shopping carts, modals, sidebars (use Zustand)
+- ANY state management (use Zustand instead)
+- ANY frequently updating values (every consumer re-renders on any change)
 
-For examples of why Context fails for state and acceptable usage, see [examples/core.md](examples/core.md#pattern-4-context-api---dependency-injection-only).
+For why Context fails for state and acceptable DI usage, see [examples/core.md](examples/core.md#pattern-4-context-api---dependency-injection-only).
 
 ---
 
 ### Pattern 5: URL State for Shareable Filters
 
-Use URL params for shareable/bookmarkable state.
+Use URL params (searchParams) for state that should be shareable, bookmarkable, or navigable.
 
-#### When to Use URL State
+- Filter selections, search queries, pagination, sort order
+- Browser back/forward works correctly
+- URLs can be shared with specific filter state
 
-- Filter selections
-- Search queries
-- Pagination state
-- Sort order
-- Any state that should be shareable via URL
-
-For Next.js implementation examples, see [examples/core.md](examples/core.md#pattern-5-url-state-for-shareable-filters).
-
----
-
-### Pattern 6: Form State and Validation
-
-Use controlled components with Zod validation.
-
-For controlled component patterns and Zod schema validation examples, see [examples/forms.md](examples/forms.md#pattern-6-form-state-and-validation).
+For implementation examples, see [examples/core.md](examples/core.md#pattern-5-url-state-for-shareable-filters).
 
 </patterns>
 
@@ -199,34 +186,6 @@ For controlled component patterns and Zod schema validation examples, see [examp
 
 ## Decision Framework
 
-### State Management Decision Tree
-
-```
-What kind of state do I have?
-
-Is it server data (from API)?
-├─ YES → Use your data fetching solution (not this skill's scope)
-└─ NO → Is it URL-appropriate (filters, search, shareable)?
-    ├─ YES → URL params (searchParams)
-    └─ NO → Is it needed in 2+ components?
-        ├─ YES → Zustand
-        └─ NO → Is it truly component-local?
-            ├─ YES → useState
-            └─ NO → Is it a singleton/dependency?
-                └─ YES → Context (ONLY for DI)
-```
-
-### Form Library Decision
-
-```
-What kind of form do I have?
-
-Simple form (1-3 fields, minimal validation)?
-├─ YES → Vanilla React (useState + Zod)
-└─ NO → Complex form (10+ fields, field-level validation)?
-    └─ YES → React Hook Form
-```
-
 ### Quick Reference Table
 
 | Use Case                        | Solution               | Why                                          |
@@ -235,9 +194,8 @@ Simple form (1-3 fields, minimal validation)?
 | Shareable filters               | URL params             | Bookmarkable, browser navigation             |
 | Shared UI state (2+ components) | Zustand                | Fast, selective re-renders, no prop drilling |
 | Local UI state (1 component)    | useState               | Simple, component-local                      |
-| Framework providers             | Context                | Singletons that never change                 |
-| Dependency injection            | Context                | Services, DB connections                     |
-| **ANY state management**        | **NEVER Context**      | **Use Zustand instead**                      |
+| Framework providers / DI        | Context                | Singletons that never change                 |
+| **ANY state management**        | **NEVER Context**      | **Causes full re-renders on any change**     |
 
 </decision_framework>
 
@@ -251,40 +209,27 @@ Simple form (1-3 fields, minimal validation)?
 
 - **Storing server/API data in client state (useState, Context, Zustand)** - causes stale data, no caching, manual sync complexity
 - **Using Context with useState/useReducer for state management** - every consumer re-renders on any change, performance nightmare
+- **Destructuring the entire store** `const { x, y } = useStore()` - subscribes to all changes, defeats selective re-rendering
 - **Using useState for state needed in 2+ components** - causes prop drilling, tight coupling, refactoring difficulty
-- **Default exports in state files** - violates project conventions, breaks tree-shaking
-- **Magic numbers in validation or initial state** - makes rules unclear, hard to maintain
 
 **Medium Priority Issues:**
 
 - Prop drilling 3+ levels instead of using Zustand
-- Filter state in useState instead of URL params (not shareable)
+- Filter state in useState instead of URL params (not shareable/bookmarkable)
 - Creating unnecessary object references in Zustand selectors (causes re-renders)
-- Subscribing to entire Zustand store instead of specific values
-- Validating on every keystroke instead of on blur/submit
-
-**Common Mistakes:**
-
-- Mixing controlled and uncontrolled inputs in forms
-- Not preventing default on form submit
-- Showing validation errors before user finishes typing
-- Not typing form events explicitly (use `ChangeEvent<HTMLInputElement>`, `FormEvent<HTMLFormElement>`)
-- Disabling input fields during submission (only disable submit button)
-- Not handling submit errors with user-friendly messages
-- Missing loading states during async operations
+- One monolithic store instead of multiple focused stores
 
 **Gotchas & Edge Cases:**
 
 - Context re-renders ALL consumers when ANY value changes - no way to select specific values
-- Zustand selectors that return new objects cause re-renders even if values identical (use `useShallow` from `zustand/react/shallow` or primitive selectors)
+- Zustand selectors that return new objects cause re-renders even if values are identical - use `useShallow` from `zustand/react/shallow` or atomic selectors
 - URL params are always strings - need parsing for numbers/booleans
-- Form validation on every keystroke kills performance - validate on blur/submit
 - Persisting modal/sidebar state across sessions confuses users - only persist preferences
 - **Zustand v5:** Selectors must return stable references - returning new functions/objects inline causes infinite loops
-- **Zustand v5:** The old `shallow` second argument pattern is deprecated - use `useShallow` hook wrapper instead
-- **Zustand v5:** The persist middleware no longer stores initial state during store creation - set computed/random initial values explicitly after store creation with `useStore.setState({ count: initialValue })`
+- **Zustand v5:** The old `shallow` second argument to `create()` is removed - use `useShallow` hook wrapper or `createWithEqualityFn` from `zustand/traditional`
+- **Zustand v5:** The persist middleware no longer stores initial state during creation - set computed/random initial values explicitly with `useStore.setState()`
 - **Zustand v5:** Requires React 18+ and TypeScript 4.5+
-- **Zustand v5:** `use-sync-external-store` is a peer dependency when using `zustand/traditional` (for `createWithEqualityFn`)
+- **Zustand v5:** `use-sync-external-store` is a peer dependency only when using `zustand/traditional`
 
 </red_flags>
 
@@ -300,10 +245,10 @@ Simple form (1-3 fields, minimal validation)?
 
 **(You MUST use useState ONLY for truly component-local state - NOT for anything shared)**
 
-**(You MUST use named exports ONLY - NO default exports in any state files)**
+**(You MUST use atomic selectors or `useShallow` from `zustand/react/shallow` - NEVER destructure the entire store)**
 
-**(You MUST use named constants for ALL numbers - NO magic numbers in state code)**
+**(You MUST ensure selectors return stable references - inline object/function creation causes infinite loops in v5)**
 
-**Failure to follow these rules will cause stale data issues, performance problems, and convention violations.**
+**Failure to follow these rules will cause stale data issues, performance problems, and infinite render loops.**
 
 </critical_reminders>

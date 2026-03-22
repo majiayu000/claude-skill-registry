@@ -1,0 +1,17 @@
+{
+  "name": "rag-infrastructure",
+  "repo": "BagelHole/DevOps-Security-Agent-Skills",
+  "path": "infrastructure/local-ai/rag-infrastructure/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/BagelHole/DevOps-Security-Agent-Skills",
+  "dir_name": "rag-infrastructure",
+  "downloaded_at": "2026-03-22T04:57:30.640614Z",
+  "author": "BagelHole",
+  "source_url": "https://github.com/BagelHole/DevOps-Security-Agent-Skills/blob/main/infrastructure/local-ai/rag-infrastructure/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BagelHole/DevOps-Security-Agent-Skills/blob/main/infrastructure/local-ai/rag-infrastructure/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

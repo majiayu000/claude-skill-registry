@@ -1,7 +1,22 @@
 ---
 name: windows-3-1-web-designer
-description: Modern web applications with authentic Windows 3.1 aesthetic. Solid navy title bars, Program Manager navigation, beveled borders, single window controls. Extrapolates Win31 to AI chatbots (Cue Card paradigm), mobile UIs (pocket computing). Activate on 'windows 3.1', 'win31', 'program manager', 'retro desktop', '90s aesthetic', 'beveled'. NOT for Windows 95 (use windows-95-web-designer - has gradients, Start menu), vaporwave/synthwave, macOS, flat design.
+description: Modern web applications with authentic Windows 3.1 aesthetic. Solid navy title bars, Program Manager navigation, beveled borders, single window controls. Extrapolates Win31 to AI chatbots (Cue
+  Card paradigm), mobile UIs (pocket computing). Activate on 'windows 3.1', 'win31', 'program manager', 'retro desktop', '90s aesthetic', 'beveled'. NOT for Windows 95 (use windows-95-web-designer - has
+  gradients, Start menu), vaporwave/synthwave, macOS, flat design.
 allowed-tools: Read,Write,Edit,Glob,Grep
+metadata:
+  category: Design & Creative
+  tags:
+  - windows
+  - web
+  - designer
+  pairs-with:
+  - skill: win31-pixel-art-designer
+    reason: Windows 3.1 web designs use pixel art icons and graphics from the same era
+  - skill: win31-audio-design
+    reason: Windows 3.1 web apps use era-appropriate UI sound effects
+  - skill: windows-95-web-designer
+    reason: Both create retro Microsoft OS-themed web apps with shared beveled border and system font patterns
 ---
 
 # Windows 3.1 Web Designer
@@ -198,9 +213,9 @@ Win31 used Multiple Document Interface. Apply this:
 
 | Breakpoint | Win31 Metaphor | Layout |
 |------------|----------------|--------|
-| Mobile (<640px) | Pocket computing | Single window, modal dialogs |
+| Mobile (&lt;640px) | Pocket computing | Single window, modal dialogs |
 | Tablet (640-1024px) | Laptop | Cascading windows |
-| Desktop (>1024px) | Full desktop | Tiled MDI windows |
+| Desktop (&gt;1024px) | Full desktop | Tiled MDI windows |
 
 ### Theming: Hotdog Stand and Beyond
 

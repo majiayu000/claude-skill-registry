@@ -23,7 +23,7 @@ Before starting: check if `<artifact>.findings.md` exists for this topic. If it 
 
 3. **Draft ADR** — Write to `.aide/docs/decisions/YYYY-MM-DD-<slug>.md` (AIDE framework decisions) or `docs/decisions/YYYY-MM-DD-<slug>.md` (game/project decisions). Status: `Draft`.
 
-4. **Cross-review** — Use `/review` to exchange findings before accepting. Do not accept unreviewed ADRs.
+4. **Cross-review** — Use `/findings` to exchange findings before accepting. Do not accept unreviewed ADRs.
 
 5. **Accept** — Set status to `Accepted`. Hand off to `/scope` to decompose into GitHub issues.
 

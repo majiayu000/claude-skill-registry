@@ -1,0 +1,17 @@
+{
+  "name": "linear-planner",
+  "repo": "LSDIPPOLLC/ai-orchestration",
+  "path": ".claude/skills/linear-planner/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/LSDIPPOLLC/ai-orchestration",
+  "dir_name": "linear-planner",
+  "downloaded_at": "2026-03-22T05:41:24.087708Z",
+  "author": "LSDIPPOLLC",
+  "source_url": "https://github.com/LSDIPPOLLC/ai-orchestration/blob/main/.claude/skills/linear-planner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LSDIPPOLLC/ai-orchestration/blob/main/.claude/skills/linear-planner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

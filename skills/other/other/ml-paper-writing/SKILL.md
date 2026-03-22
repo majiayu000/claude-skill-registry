@@ -12,6 +12,16 @@ dependencies: [semanticscholar, arxiv, habanero, requests]
 
 Expert-level guidance for writing publication-ready papers targeting **NeurIPS, ICML, ICLR, ACL, AAAI, and COLM**. This skill combines writing philosophy from top researchers (Nanda, Farquhar, Karpathy, Lipton, Steinhardt) with practical tools: LaTeX templates, citation verification APIs, and conference checklists.
 
+## Default operating order
+
+Use this skill in the following order unless the task is unusually narrow:
+1. lock the operating mode from `references/OPERATING-MODES.md`,
+2. understand the repo or draft context,
+3. use `references/citation-workflow.md` as the **canonical citation authority**,
+4. load venue- or template-specific references only after the main writing path is clear.
+
+Google Scholar may still help with manual discovery, but it is **not** the canonical verification authority in this skill. Default verification should use programmatic sources such as Semantic Scholar, CrossRef, and arXiv.
+
 ## Core Philosophy: Collaborative Writing
 
 **Paper writing is collaborative, but Claude should be proactive in delivering drafts.**
@@ -290,84 +300,85 @@ For detailed literature research guidance:
 
 ---
 
-## Knowledge Base: Writing Patterns from ML Papers
+## Knowledge Base: Paper-Miner Global Writing Memory
 
-This skill maintains a curated knowledge base of writing patterns, techniques, and requirements extracted from successful ML conference papers. The knowledge base grows as you analyze more papers.
+This skill consumes a **single canonical writing memory** maintained by `paper-miner`:
 
-### Knowledge Organization
+- `references/knowledge/paper-miner-writing-memory.md`
 
-The knowledge base is organized into 4 categories at `references/knowledge/`:
+This memory is **global**, not project-specific.
 
-| Category | File | Contents |
-|----------|------|----------|
-| **Structure** | `structure.md` | Paper organization, IMRaD patterns, transitions, section flow |
-| **Writing Techniques** | `writing-techniques.md` | Sentence patterns, transition phrases, clarity techniques |
-| **Submission Guides** | `submission-guides.md` | Venue requirements (NeurIPS, ICML, ICLR, ACL, AAAI, COLM) |
-| **Review Response** | `review-response.md` | Rebuttal strategies, addressing reviewer comments |
+Even when `paper-miner` is invoked while working inside a specific repository, it still writes mined writing knowledge only into this one global memory. It does **not** maintain project-local writing memory.
 
-### How the Knowledge Base is Maintained
+### Canonical memory structure
 
-The **paper-miner agent** automatically extracts and categorizes writing knowledge from papers you provide:
+The maintained memory contains these sections:
 
-```
-You: "Learn writing techniques from this NeurIPS paper: path/to/paper.pdf"
+| Section | Purpose |
+|----------|---------|
+| `Writing patterns mined` | Reusable rhetorical and claim-evidence patterns |
+| `Structure signals` | Section flow, paragraph progression, and paper organization signals |
+| `Reusable phrasing` | Transition phrases, framing templates, and concise wording |
+| `Venue-specific signals` | Visible venue-facing style and convention cues |
+| `How this helps our writing` | Practical guidance for future drafts, reports, and rebuttals |
+| `Source index` | Source attribution for mined papers |
+
+### How the memory is maintained
+
+The **paper-miner agent** reads papers and merges reusable writing knowledge into this one file:
+
+```text
+You: "Learn writing patterns from this paper: path/to/paper.pdf"
 ↓
 paper-miner analyzes the paper
 ↓
-Extracts patterns → Categorizes into 4 types → Updates knowledge files
+Extracts reusable writing signals
 ↓
-Knowledge grows with each paper analyzed
+Updates paper-miner-writing-memory.md
+↓
+ml-paper-writing reuses that memory later
 ```
 
-**What gets extracted:**
-- **Structure patterns**: How successful papers organize sections, transition between topics
-- **Writing techniques**: Sentence templates, transition phrases, clarity methods
-- **Venue requirements**: Page limits, required sections, formatting rules
-- **Rebuttal strategies**: How to respond to specific reviewer concerns
+### When to use this memory
 
-### When to Use the Knowledge Base
+Use the global paper-miner memory when you need:
+- structure inspiration for intros, methods, results, or discussion,
+- reusable transition phrases or framing templates,
+- venue-facing writing signals,
+- rebuttal phrasing and response structure ideas,
+- examples of how strong papers support and sequence claims.
 
-**For writing patterns:**
-- Stuck on how to phrase a transition? Check `writing-techniques.md`
-- Need structure inspiration? Browse `structure.md`
-- Writing rebuttal? Consult `review-response.md`
+### Default read order
 
-**For venue requirements:**
-- Submitting to NeurIPS? See `submission-guides.md` for checklist
-- Converting between venues? Compare page limits and requirements
-- Unsure about required sections? Each venue has specific requirements
+When drafting or revising with `ml-paper-writing`, read this memory **before** writing if the task involves:
+- introduction framing,
+- related work organization,
+- method exposition style,
+- results narration,
+- discussion framing,
+- venue-facing polishing.
 
-### Contributing to the Knowledge Base
+Use this read order:
+1. `references/knowledge/paper-miner-writing-memory.md`
+2. repo-local evidence and experiment artifacts
+3. cited papers or notes if needed
+4. venue template and formatting constraints
 
-Every paper you analyze makes the knowledge base richer for future use:
+Read narrowly, not exhaustively:
+- first scan `How this helps our writing`,
+- then check `Writing patterns mined` and `Structure signals`,
+- then inspect `Reusable phrasing` only for concrete wording help,
+- use `Venue-specific signals` when targeting a known venue.
 
-```bash
-# Trigger paper-miner from any context
-"Extract writing patterns from this paper: path/to/paper.pdf"
-"Analyze structure of https://arxiv.org/abs/2301.xxxxx"
-"What writing techniques does this ICLR paper use?"
-```
+### Contribution rule
 
-The paper-miner agent:
-1. Extracts paper content (PDF, DOCX, or arXiv link)
-2. Analyzes IMRaD structure and writing patterns
-3. Identifies venue-specific requirements
-4. Updates appropriate knowledge files with new patterns
-5. Reports what was added with source attribution
+Every paper mined by `paper-miner` should improve the same global memory.
 
-### Knowledge Base Principles
+Do not scatter newly mined knowledge across multiple maintained files.
+Do not create project-specific paper-miner memory.
+Do not duplicate near-identical patterns from the same source.
 
-**Actionable patterns only**: Each entry provides reusable techniques with examples.
-
-**Source attribution**: Every pattern cites the paper it came from for traceability.
-
-**No duplicates**: Checks existing content before adding new patterns.
-
-**Quality over quantity**: Focus on techniques that work, not comprehensive lists.
-
-See `references/knowledge/README.md` for complete knowledge base documentation.
-
----
+See `references/knowledge/README.md` for the detailed knowledge-base contract.
 
 ## Balancing Proactivity and Collaboration
 
@@ -887,210 +898,84 @@ When resubmitting after rejection:
 
 ## Citation Workflow (Hallucination Prevention)
 
-**⚠️ CRITICAL**: AI-generated citations have ~40% error rate. **Never write BibTeX from memory.**
+**⚠️ CRITICAL**: AI-generated citations are a high-risk failure mode. **Never write BibTeX from memory.**
 
-### The Golden Rule
+### Canonical authority
 
-```
-IF you cannot verify a citation through web search:
-    → Mark it as [CITATION NEEDED] or [PLACEHOLDER - VERIFY]
-    → Tell the scientist explicitly
-    → NEVER invent a plausible-sounding reference
-```
+Use `references/citation-workflow.md` as the default authority for citation verification.
 
-**MANDATORY**: Use WebSearch tool to verify EVERY citation before adding to bibliography.
+The default verification path is:
+1. **Search programmatically** with Semantic Scholar / CrossRef / arXiv / OpenAlex when appropriate.
+2. **Verify existence** in two sources when the claim is important.
+3. **Retrieve BibTeX programmatically** from DOI or a trusted source.
+4. **Validate the claim** against the actual paper content when the citation supports a specific statement.
+5. **Add the citation** only after the metadata and claim are verified.
 
-### Workflow 2: Adding Citations
+### The golden rule
 
-```
-Citation Verification (MANDATORY for every citation):
-- [ ] Step 1: Use WebSearch to find the paper
-- [ ] Step 2: Verify paper exists on Google Scholar
-- [ ] Step 3: Confirm paper details (title, authors, year, venue)
-- [ ] Step 4: Retrieve BibTeX from Google Scholar or DOI
-- [ ] Step 5: Verify the claim you're citing actually appears in the paper
-- [ ] Step 6: Add verified BibTeX to bibliography
-- [ ] Step 7: If ANY step fails → mark as placeholder, inform scientist
+```text
+IF you cannot verify a citation programmatically:
+    -> mark it as [CITATION NEEDED] or [PLACEHOLDER - VERIFY]
+    -> tell the scientist explicitly
+    -> NEVER invent a plausible-sounding reference
 ```
 
-**Step 1: Use WebSearch to Find the Paper**
+### Workflow 2: Adding citations
 
-When you need to cite a paper, ALWAYS start with web search:
-
-```
-WebSearch query examples:
-- "Attention is All You Need Vaswani 2017"
-- "RLHF language model alignment 2023"
-- "sparse autoencoders interpretability Anthropic"
-- "transformer architecture NeurIPS"
-```
-
-**What to look for in search results:**
-- Paper title matches your intended citation
-- Authors are correct
-- Publication year is correct
-- Venue (conference/journal) is identified
-
-**Step 2: Verify on Google Scholar**
-
-After finding the paper, verify it exists on Google Scholar:
-
-```
-WebSearch query: "site:scholar.google.com [paper title] [first author]"
-
-Example: "site:scholar.google.com Attention is All You Need Vaswani"
+```text
+Citation verification:
+- [ ] Step 1: Search with Semantic Scholar / CrossRef / arXiv / OpenAlex as appropriate
+- [ ] Step 2: Confirm title, authors, year, and venue
+- [ ] Step 3: Retrieve BibTeX from DOI, arXiv, or another trusted export path
+- [ ] Step 4: Verify that the claim being cited actually appears in the source
+- [ ] Step 5: Add verified BibTeX to the bibliography
+- [ ] Step 6: If any step fails -> mark as placeholder and report it explicitly
 ```
 
-**Verification checklist:**
-- ✅ Paper appears in Google Scholar results
-- ✅ Title matches exactly (or very close)
-- ✅ Authors match
-- ✅ Year matches
-- ✅ Venue is listed (conference/journal)
-- ✅ Citation count is reasonable (not 0 for old papers)
+### Discovery vs authority
 
-**If paper NOT found on Google Scholar:**
-- ❌ STOP - Do not cite
-- Mark as `[CITATION NEEDED - not found on Google Scholar]`
-- Inform scientist explicitly
+- **Programmatic APIs** are the canonical verification path.
+- **Google Scholar** may still be used as a manual discovery surface when coverage is weak, but not as the primary authority.
+- If Google Scholar finds something that the canonical APIs do not, treat it as a lead that still requires explicit verification.
 
-**Step 3: Confirm Paper Details**
-
-Before retrieving BibTeX, double-check all details:
-
-```
-Verification checklist:
-- Title: [exact title from Google Scholar]
-- Authors: [all authors, in order]
-- Year: [publication year]
-- Venue: [conference/journal name]
-- DOI: [if available]
-```
-
-**Step 4: Retrieve BibTeX**
-
-**Option 1: From Google Scholar (Recommended)**
-
-1. Find the paper on Google Scholar
-2. Click "Cite" button below the paper
-3. Select "BibTeX" format
-4. Copy the BibTeX entry
-
-**Option 2: From DOI (if available)**
-
-1. Use WebSearch to find: `"doi.org/[DOI]"`
-2. Look for BibTeX export option on the publisher's page
-3. Copy the BibTeX entry
-
-**Option 3: From arXiv (for preprints)**
-
-1. Find paper on arXiv
-2. Click "Export BibTeX Citation" on the right sidebar
-3. Copy the BibTeX entry
-
-**CRITICAL**: Never write BibTeX from memory. Always copy from verified source.
-
-**Step 5: Verify the Claim**
-
-Before citing for a specific claim, verify the claim actually appears in the paper:
-
-```
-Verification process:
-1. Use WebSearch to access the paper (PDF or HTML)
-2. Search for keywords related to your claim
-3. Confirm the claim is explicitly stated or clearly implied
-4. Note the section/page where claim appears
-```
-
-**If you cannot access the paper:**
-- ❌ Do not cite for specific claims
-- Only cite for general contributions (if verified on Google Scholar)
-- Mark as `[CLAIM NOT VERIFIED - no access to paper]`
-
-**Step 6: Add Verified BibTeX to Bibliography**
-
-Only after completing all verification steps:
-
-```latex
-% Add to your .bib file
-@inproceedings{vaswani2017attention,
-  title={Attention is All You Need},
-  author={Vaswani, Ashish and Shazeer, Noam and ...},
-  booktitle={Advances in Neural Information Processing Systems},
-  year={2017}
-}
-
-% Use in your paper
-\cite{vaswani2017attention}
-```
-
-**Step 7: Handle Failures Explicitly**
-
-If you cannot verify a citation at ANY step:
-
-```latex
-% Option 1: Explicit placeholder
-\cite{PLACEHOLDER_smith2023_verify}  % TODO: Could not verify - scientist must confirm
-
-% Option 2: Note in text
-... as shown in prior work [CITATION NEEDED - could not verify Smith et al. 2023].
-```
-
-**Always inform the scientist:**
-> "I could not verify the following citations and have marked them as placeholders:
-> - Smith et al. 2023 on reward hacking - not found on Google Scholar
-> - Jones 2022 on scaling laws - found similar paper but different authors
-> Please verify these before submission."
-
-### Summary: Citation Rules
+### Summary: citation rules
 
 | Situation | Action |
 |-----------|--------|
-| Found on Google Scholar, verified details, got BibTeX | ✅ Use the citation |
-| Found paper, verified on Google Scholar, no BibTeX | ✅ Create BibTeX from Google Scholar info |
-| Paper exists but details don't match | ⚠️ Mark placeholder, inform scientist |
-| Not found on Google Scholar | ❌ Mark `[CITATION NEEDED]`, inform scientist |
-| "I think there's a paper about X" | ❌ **NEVER cite** - search first or mark placeholder |
+| Verified metadata + verified BibTeX + verified claim | ✅ Use the citation |
+| Verified paper exists but the claim was not checked | ⚠️ Use only for general attribution, not for precise technical claims |
+| Discovery surface suggests a paper but metadata is still weak | ⚠️ Keep as lead, not as final citation |
+| Cannot verify programmatically | ❌ Mark `[CITATION NEEDED]`, inform the scientist |
 
-**🚨 NEVER generate BibTeX from memory—always verify through WebSearch and Google Scholar. 🚨**
+**🚨 NEVER generate BibTeX from memory. Use the programmatic workflow in `references/citation-workflow.md`. 🚨**
 
 ### Complete Citation Workflow Example
 
 **Scenario**: You need to cite the Transformer paper.
 
-```
-Step 1: WebSearch
-Query: "Attention is All You Need Vaswani 2017"
-Result: Found paper on multiple sources
+```text
+Step 1: Search programmatically
+- Semantic Scholar query: "Attention is All You Need Vaswani 2017"
+- Result: title, authors, year, and DOI align
 
-Step 2: Google Scholar Verification
-Query: "site:scholar.google.com Attention is All You Need Vaswani"
-Result: ✅ Paper found, 50,000+ citations, NeurIPS 2017
+Step 2: Verify existence
+- CrossRef confirms DOI metadata
+- Semantic Scholar record matches the same paper
 
-Step 3: Confirm Details
-- Title: "Attention is All You Need"
-- Authors: Vaswani, Ashish; Shazeer, Noam; Parmar, Niki; ...
-- Year: 2017
-- Venue: NeurIPS (NIPS)
-- DOI: Available
+Step 3: Retrieve BibTeX
+- Fetch BibTeX from the DOI / trusted export path
 
-Step 4: Retrieve BibTeX
-- Click "Cite" on Google Scholar
-- Select BibTeX format
-- Copy entry
+Step 4: Verify the claim
+- Read the abstract or paper section that supports the cited statement
+- Confirm that the claim being cited is actually present
 
-Step 5: Verify Claim
-- Access paper via WebSearch
-- Confirm claim appears in paper
-- Note section/page
+Step 5: Add to bibliography
+- Paste verified BibTeX into the .bib file
+- Cite with the verified key
 
-Step 6: Add to Bibliography
-- Paste BibTeX to .bib file
-- Use \cite{vaswani2017attention} in paper
-
-Step 7: Success
-- Citation verified and added
-- No placeholder needed
+Step 6: If any step fails
+- mark the citation as [PLACEHOLDER - VERIFY]
+- tell the scientist explicitly what remains unverified
 ```
 
 ---

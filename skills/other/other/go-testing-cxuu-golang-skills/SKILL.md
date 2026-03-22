@@ -1,379 +1,130 @@
 ---
 name: go-testing
-description: Go testing patterns from Google and Uber style guides including test naming, table-driven tests, subtests, parallel tests, test helpers, test doubles, and assertions. Use when writing or reviewing Go test code, creating test helpers, or setting up table-driven tests.
+description: Use when writing, reviewing, or improving Go test code — including table-driven tests, subtests, parallel tests, test helpers, test doubles, and assertions with cmp.Diff. Also use when a user asks to write a test for a Go function, even if they don't mention specific patterns like table-driven tests or subtests. Does not cover benchmark performance testing (see go-performance).
+license: Apache-2.0
+compatibility: Uses github.com/google/go-cmp for cmp.Diff comparisons
+metadata:
+  sources: "Google Style Guide, Uber Style Guide"
+allowed-tools: Bash(bash:*)
 ---
 
 # Go Testing
 
-Guidelines for writing clear, maintainable Go tests following Google's style.
+## Quick Reference
+
+| Pattern | Use When |
+|---------|----------|
+| `t.Error` | Default — report failure, keep running |
+| `t.Fatal` | Setup failed or continuing is meaningless |
+| `cmp.Diff` | Comparing structs, slices, maps, protos |
+| Table-driven | Many cases share identical logic |
+| Subtests | Need filtering, parallel execution, or naming |
+| `t.Helper()` | Any test helper function (call as first statement) |
+| `t.Cleanup()` | Teardown in helpers instead of defer |
+
+---
 
 ## Useful Test Failures
 
 > **Normative**: Test failures must be diagnosable without reading the test
 > source.
 
-Every failure message should include:
-- What caused the failure
-- The function inputs
-- The actual result (got)
-- The expected result (want)
-
-### Failure Message Format
-
-Use the standard format: `YourFunc(%v) = %v, want %v`
+Every failure message must include: function name, inputs, actual (got), and
+expected (want). Use the format `YourFunc(%v) = %v, want %v`.
 
 ```go
 // Good:
-if got := Add(2, 3); got != 5 {
-    t.Errorf("Add(2, 3) = %d, want %d", got, 5)
-}
+t.Errorf("Add(2, 3) = %d, want %d", got, 5)
 
 // Bad: Missing function name and inputs
-if got := Add(2, 3); got != 5 {
-    t.Errorf("got %d, want %d", got, 5)
-}
+t.Errorf("got %d, want %d", got, 5)
 ```
 
-### Got Before Want
-
-Always print actual result before expected:
-
-```go
-// Good:
-t.Errorf("Parse(%q) = %v, want %v", input, got, want)
-
-// Bad: want/got reversed
-t.Errorf("Parse(%q) want %v, got %v", input, want, got)
-```
+Always print got before want: `got %v, want %v` — never reversed.
 
 ---
 
 ## No Assertion Libraries
 
-> **Normative**: Do not create or use assertion libraries.
-
-Assertion libraries fragment the developer experience and often produce
-unhelpful failure messages.
+> **Normative**: Do not use assertion libraries. Use `cmp.Diff` for complex
+> comparisons.
 
 ```go
-// Bad:
-assert.IsNotNil(t, "obj", obj)
-assert.StringEq(t, "obj.Type", obj.Type, "blogPost")
-assert.IntEq(t, "obj.Comments", obj.Comments, 2)
-
-// Good: Use cmp package and standard comparisons
-want := BlogPost{
-    Type:     "blogPost",
-    Comments: 2,
-    Body:     "Hello, world!",
-}
 if diff := cmp.Diff(want, got); diff != "" {
     t.Errorf("GetPost() mismatch (-want +got):\n%s", diff)
 }
 ```
 
-For domain-specific comparisons, return values or errors instead of calling
-`t.Error`:
+For protocol buffers, add `protocmp.Transform()` as a cmp option. Always
+include the direction key `(-want +got)` in diff messages. Avoid comparing
+JSON/serialized output — compare semantically instead.
 
-```go
-// Good: Return value for use in failure message
-func postLength(p BlogPost) int { return len(p.Body) }
-
-func TestBlogPost(t *testing.T) {
-    post := BlogPost{Body: "Hello"}
-    if got, want := postLength(post), 5; got != want {
-        t.Errorf("postLength(post) = %v, want %v", got, want)
-    }
-}
-```
-
----
-
-## Comparisons and Diffs
-
-> **Advisory**: Prefer `cmp.Equal` and `cmp.Diff` for complex types.
-
-```go
-// Good: Full struct comparison with diff - always include direction key
-want := &Doc{Type: "blogPost", Authors: []string{"isaac", "albert"}}
-if diff := cmp.Diff(want, got); diff != "" {
-    t.Errorf("AddPost() mismatch (-want +got):\n%s", diff)
-}
-
-// Good: Protocol buffers
-if diff := cmp.Diff(want, got, protocmp.Transform()); diff != "" {
-    t.Errorf("Foo() mismatch (-want +got):\n%s", diff)
-}
-```
-
-**Avoid unstable comparisons** - don't compare JSON/serialized output that may
-change. Compare semantically instead.
+> Read [references/TEST-HELPERS.md](references/TEST-HELPERS.md) when writing
+> custom comparison helpers or domain-specific test utilities.
 
 ---
 
 ## t.Error vs t.Fatal
 
-> **Normative**: Use `t.Error` to keep tests going; use `t.Fatal` only when
-> continuing is impossible.
+> **Normative**: Use `t.Error` by default to report all failures in one run.
+> Use `t.Fatal` only when continuing is impossible.
 
-### Keep Going
+**Choose `t.Fatal` when:**
+- Setup fails (DB connection, file load)
+- The next assertion depends on the previous one succeeding (e.g., decode after
+  encode)
 
-Tests should report all failures in a single run:
+**Never call `t.Fatal`/`t.FailNow` from a goroutine** other than the test
+goroutine — use `t.Error` instead.
 
-```go
-// Good: Report all mismatches
-if diff := cmp.Diff(wantMean, gotMean); diff != "" {
-    t.Errorf("Mean mismatch (-want +got):\n%s", diff)
-}
-if diff := cmp.Diff(wantVariance, gotVariance); diff != "" {
-    t.Errorf("Variance mismatch (-want +got):\n%s", diff)
-}
-```
-
-### When to Use t.Fatal
-
-Use `t.Fatal` when subsequent tests would be meaningless:
-
-```go
-// Good: Fatal on setup failure or when continuation is pointless
-gotEncoded := Encode(input)
-if gotEncoded != wantEncoded {
-    t.Fatalf("Encode(%q) = %q, want %q", input, gotEncoded, wantEncoded)
-    // Decoding unexpected output is meaningless
-}
-gotDecoded, err := Decode(gotEncoded)
-if err != nil {
-    t.Fatalf("Decode(%q) error: %v", gotEncoded, err)
-}
-```
-
-### Don't Call t.Fatal from Goroutines
-
-> **Normative**: Never call `t.Fatal`, `t.Fatalf`, or `t.FailNow` from a
-> goroutine other than the test goroutine. Use `t.Error` instead and let the
-> test continue.
+> Read [references/TEST-HELPERS.md](references/TEST-HELPERS.md) when writing
+> helpers that need to choose between t.Error and t.Fatal, or for detailed
+> examples of both.
 
 ---
 
 ## Table-Driven Tests
 
-> **Advisory**: Use table-driven tests when many cases share similar logic.
+> See `assets/table-test-template.go` when scaffolding a new table-driven test and need the canonical struct, loop, and subtest layout.
 
-### Basic Structure
+> **Advisory**: Use table-driven tests when many cases share identical logic.
 
-```go
-// Good:
-func TestCompare(t *testing.T) {
-    tests := []struct {
-        a, b string
-        want int
-    }{
-        {"", "", 0},
-        {"a", "", 1},
-        {"", "a", -1},
-        {"abc", "abc", 0},
-    }
-    for _, tt := range tests {
-        got := Compare(tt.a, tt.b)
-        if got != tt.want {
-            t.Errorf("Compare(%q, %q) = %v, want %v", tt.a, tt.b, got, tt.want)
-        }
-    }
-}
-```
+**Use table tests when:** all cases run the same code path with no conditional
+setup, mocking, or assertions. A single `shouldErr` bool is acceptable.
 
-### Best Practices
+**Don't use table tests when:** cases need complex setup, conditional mocking,
+or multiple branches — write separate test functions instead.
 
-**Use field names** when test cases span many lines or have adjacent fields of
-the same type.
+**Key rules:**
+- Use field names when cases span many lines or have same-type adjacent fields
+- Include inputs in failure messages — never identify rows by index
 
-**Don't identify rows by index** - include inputs in failure messages instead of
-`Case #%d failed`.
+> Read [references/TABLE-DRIVEN-TESTS.md](references/TABLE-DRIVEN-TESTS.md)
+> when writing table-driven tests, subtests, or parallel tests.
 
-### Avoid Complexity in Table Tests
-
-> **Source**: Uber Go Style Guide
-
-When test cases need complex setup, conditional mocking, or multiple branches,
-prefer separate test functions over table tests.
-
-```go
-// Bad: Too many conditional fields make tests hard to understand
-tests := []struct {
-    give          string
-    want          string
-    wantErr       error
-    shouldCallX   bool      // Conditional logic flag
-    shouldCallY   bool      // Another conditional flag
-    giveXResponse string
-    giveXErr      error
-    giveYResponse string
-    giveYErr      error
-}{...}
-
-for _, tt := range tests {
-    t.Run(tt.give, func(t *testing.T) {
-        if tt.shouldCallX {  // Conditional mock setup
-            xMock.EXPECT().Call().Return(tt.giveXResponse, tt.giveXErr)
-        }
-        if tt.shouldCallY {  // More branching
-            yMock.EXPECT().Call().Return(tt.giveYResponse, tt.giveYErr)
-        }
-        // ...
-    })
-}
-
-// Good: Separate focused tests are clearer
-func TestShouldCallX(t *testing.T) {
-    xMock.EXPECT().Call().Return("XResponse", nil)
-    got, err := DoComplexThing("inputX", xMock, yMock)
-    // assert...
-}
-
-func TestShouldCallYAndFail(t *testing.T) {
-    yMock.EXPECT().Call().Return("YResponse", nil)
-    _, err := DoComplexThing("inputY", xMock, yMock)
-    // assert error...
-}
-```
-
-**Table tests work best when:**
-
-- All cases run identical logic (no conditional assertions)
-- Setup is the same for all cases
-- No conditional mocking based on test case fields
-- All table fields are used in all tests
-
-A single `shouldErr` field for success/failure is acceptable if the test body is
-short and straightforward.
-
----
-
-## Subtests
-
-> **Advisory**: Use subtests for better organization, filtering, and parallel
-> execution.
-
-### Subtest Names
-
-- Use clear, concise names: `t.Run("empty_input", ...)`, `t.Run("hu_to_en",
-  ...)`
-- Avoid wordy descriptions or slashes (slashes break test filtering)
-- Subtests must be independent - no shared state or execution order dependencies
-
-```go
-// Good: Table tests with subtests
-func TestTranslate(t *testing.T) {
-    tests := []struct {
-        name, srcLang, dstLang, input, want string
-    }{
-        {"hu_en_basic", "hu", "en", "köszönöm", "thank you"},
-    }
-    for _, tt := range tests {
-        t.Run(tt.name, func(t *testing.T) {
-            if got := Translate(tt.srcLang, tt.dstLang, tt.input); got != tt.want {
-                t.Errorf("Translate(%q, %q, %q) = %q, want %q",
-                    tt.srcLang, tt.dstLang, tt.input, got, tt.want)
-            }
-        })
-    }
-}
-```
-
-### Parallel Tests
-
-> **Source**: Uber Go Style Guide
-
-When using `t.Parallel()` in table tests, be aware of loop variable capture:
-
-```go
-for _, tt := range tests {
-    t.Run(tt.name, func(t *testing.T) {
-        t.Parallel()
-        // Go 1.22+: tt is correctly captured per iteration
-        // Go 1.21-: add "tt := tt" here to capture the variable
-        got := Process(tt.give)
-        if got != tt.want {
-            t.Errorf("Process(%q) = %q, want %q", tt.give, got, tt.want)
-        }
-    })
-}
-```
+> **Validation**: After generating or modifying tests, run `go test -run TestXxx -v` to verify the tests compile and pass. Fix any compilation errors before proceeding.
 
 ---
 
 ## Test Helpers
 
-> **Normative**: Test helpers must call `t.Helper()` and should use `t.Fatal`
-> for setup failures.
+> **Normative**: Test helpers must call `t.Helper()` first and use `t.Cleanup()`
+> for teardown.
 
 ```go
-// Good: Complete test helper pattern
-func mustLoadTestData(t *testing.T, filename string) []byte {
-    t.Helper()  // Makes failures point to caller
-    data, err := os.ReadFile(filename)
-    if err != nil {
-        t.Fatalf("Setup failed: could not read %s: %v", filename, err)
-    }
-    return data
-}
-
 func setupTestDB(t *testing.T) *sql.DB {
     t.Helper()
     db, err := sql.Open("sqlite3", ":memory:")
     if err != nil {
         t.Fatalf("Could not open database: %v", err)
     }
-    t.Cleanup(func() { db.Close() })  // Use t.Cleanup for teardown
+    t.Cleanup(func() { db.Close() })
     return db
 }
 ```
 
-**Key rules:**
-- Call `t.Helper()` first to attribute failures to the caller
-- Use `t.Fatal` for setup failures (don't return errors)
-- Use `t.Cleanup()` for teardown instead of defer
-
----
-
-## Test Doubles
-
-> **Advisory**: Follow consistent naming for test doubles (stubs, fakes, mocks,
-> spies).
-
-**Package naming**: Append `test` to the production package (e.g.,
-`creditcardtest`).
-
-```go
-// Good: In package creditcardtest
-
-// Single double - use simple name
-type Stub struct{}
-func (Stub) Charge(*creditcard.Card, money.Money) error { return nil }
-
-// Multiple behaviors - name by behavior
-type AlwaysCharges struct{}
-type AlwaysDeclines struct{}
-
-// Multiple types - include type name
-type StubService struct{}
-type StubStoredValue struct{}
-```
-
-**Local variables**: Prefix test double variables for clarity (`spyCC` not
-`cc`).
-
----
-
-## Test Packages
-
-| Package Declaration | Use Case |
-|---------------------|----------|
-| `package foo` | Same-package tests, can access unexported identifiers |
-| `package foo_test` | Black-box tests, avoids circular dependencies |
-
-Both go in `foo_test.go` files. Use `_test` suffix when testing only public API
-or to break import cycles.
+> Read [references/TEST-HELPERS.md](references/TEST-HELPERS.md) when writing
+> test helpers, cleanup functions, or custom comparison utilities.
 
 ---
 
@@ -383,16 +134,15 @@ or to break import cycles.
 
 ```go
 // Bad: Brittle string comparison
-if err.Error() != "invalid input" {
-    t.Errorf("unexpected error: %v", err)
-}
+if err.Error() != "invalid input" { ... }
 
-// Good: Test semantic error
-if !errors.Is(err, ErrInvalidInput) {
-    t.Errorf("got error %v, want ErrInvalidInput", err)
-}
+// Good: Semantic check
+if !errors.Is(err, ErrInvalidInput) { ... }
+```
 
-// Good: Simple presence check when semantics don't matter
+For simple presence checks when specific semantics don't matter:
+
+```go
 if gotErr := err != nil; gotErr != tt.wantErr {
     t.Errorf("f(%v) error = %v, want error presence = %t", tt.input, err, tt.wantErr)
 }
@@ -400,46 +150,39 @@ if gotErr := err != nil; gotErr != tt.wantErr {
 
 ---
 
-## Setup Scoping
+## Test Organization
 
-> **Advisory**: Keep setup scoped to tests that need it.
+> Read [references/TEST-ORGANIZATION.md](references/TEST-ORGANIZATION.md) when
+> working with test doubles, choosing test package placement, or scoping test
+> setup.
 
-```go
-// Good: Explicit setup in tests that need it
-func TestParseData(t *testing.T) {
-    data := mustLoadDataset(t)
-    // ...
-}
+> Read [references/VALIDATION-APIS.md](references/VALIDATION-APIS.md) when
+> designing reusable test validation functions.
 
-func TestUnrelated(t *testing.T) {
-    // Doesn't pay for dataset loading
-}
+---
 
-// Bad: Global init loads data for all tests
-var dataset []byte
+## Integration Testing
 
-func init() {
-    dataset = mustLoadDataset()  // Runs even for unrelated tests
-}
+> Read [references/INTEGRATION.md](references/INTEGRATION.md) when writing
+> TestMain, acceptance tests, or tests that need real HTTP/RPC transports.
+
+---
+
+## Available Scripts
+
+- **`scripts/gen-table-test.sh`** — Generates a table-driven test scaffold
+
+```bash
+bash scripts/gen-table-test.sh ParseConfig config > config/parse_config_test.go
+bash scripts/gen-table-test.sh --parallel ParseConfig config      # with t.Parallel()
+bash scripts/gen-table-test.sh --output config/parse_config_test.go ParseConfig config
 ```
 
 ---
 
-## Quick Reference
+## Related Skills
 
-| Situation | Approach |
-|-----------|----------|
-| Compare structs/slices | `cmp.Diff(want, got)` |
-| Simple value mismatch | `t.Errorf("F(%v) = %v, want %v", in, got, want)` |
-| Setup failure | `t.Fatalf("Setup: %v", err)` |
-| Multiple comparisons | `t.Error` for each, continue testing |
-| Goroutine failures | `t.Error` only, never `t.Fatal` |
-| Test helper | Call `t.Helper()` first |
-| Large test data | Table-driven with subtests |
-
-## See Also
-
-- For core style principles: `go-style-core`
-- For naming conventions: `go-naming`
-- For error handling patterns: `go-error-handling`
-- For linter configuration: `go-linting`
+- **Error testing**: See [go-error-handling](../go-error-handling/SKILL.md) when testing error semantics with `errors.Is`/`errors.As` or sentinel errors
+- **Interface mocking**: See [go-interfaces](../go-interfaces/SKILL.md) when creating test doubles by implementing interfaces at the consumer side
+- **Naming test functions**: See [go-naming](../go-naming/SKILL.md) when naming test functions, subtests, or test helper utilities
+- **Linter integration**: See [go-linting](../go-linting/SKILL.md) when running linters alongside tests in CI or pre-commit hooks

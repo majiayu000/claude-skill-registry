@@ -4,15 +4,13 @@ description: Detects framework, finds available ports, and starts dev servers wi
 user-invocable: false
 argument-hint: "[--scan | --find | --kill <port>] [--port <number>]"
 allowed-tools: Bash Read Grep Glob
-compatibility: macOS, Linux, Windows (PowerShell)
-metadata:
-  author: Saturate
-  version: "1.0"
 ---
 
 # Port Management
 
 Detect framework, find a free port, and start the dev server with the correct port flag. Resolves port conflicts automatically.
+
+For OS-specific commands (macOS/Linux/Windows), see [references/platform-commands.md](references/platform-commands.md).
 
 ## Progress Checklist
 
@@ -38,37 +36,13 @@ Port Management Progress:
 
 ## Step 2: Scan Port Usage
 
-Show what's currently occupying ports in the project's default range.
-
-**macOS/Linux:**
-
-```bash
-lsof -iTCP -sTCP:LISTEN -nP 2>/dev/null | grep -E ':(3[0-9]{3}|4[0-3][0-9]{2}|4321|5[0-1][0-9]{2}|5173|8[0-9]{3})' | sort -t: -k2 -n
-```
-
-**Windows (PowerShell):**
-
-```powershell
-Get-NetTCPConnection -State Listen | Where-Object { $_.LocalPort -ge 3000 -and $_.LocalPort -le 9000 } | Sort-Object LocalPort | Format-Table LocalPort, OwningProcess, @{N='Process';E={(Get-Process -Id $_.OwningProcess).ProcessName}}
-```
-
-**Detect platform:** Check if `lsof` is available (`command -v lsof`). If not, fall back to `netstat -ano` or `Get-NetTCPConnection`.
+Show what's occupying ports in the project's default range using `lsof` (macOS/Linux) or `Get-NetTCPConnection` (Windows). See [references/platform-commands.md](references/platform-commands.md) for exact commands.
 
 **If mode is `--scan`:** Display results and stop.
 
 **If mode is `--kill <port>`:**
 
-**Never kill blindly.** First identify the process on the port:
-
-macOS/Linux:
-```bash
-lsof -iTCP:<port> -sTCP:LISTEN -nP 2>/dev/null
-```
-
-Windows (PowerShell):
-```powershell
-Get-NetTCPConnection -LocalPort <port> | ForEach-Object { Get-Process -Id $_.OwningProcess } | Format-Table Id, ProcessName, Path
-```
+First identify the process on the port.
 
 **Protected processes — never kill these:**
 - Browsers: `firefox`, `chrome`, `safari`, `msedge`, `brave`, `arc`, `opera`
@@ -78,135 +52,66 @@ Get-NetTCPConnection -LocalPort <port> | ForEach-Object { Get-Process -Id $_.Own
 
 If the process matches a protected name, tell the user what's on the port and **do not kill it**. Suggest they close the relevant tab/connection manually or pick a different port instead.
 
-**Only kill dev server processes** (e.g. `node`, `python`, `ruby`, `dotnet`, `cargo`, `go`). Even then, show the user the PID and process name and **ask for confirmation** before killing.
-
-macOS/Linux:
-```bash
-kill <pid>
-```
-
-Windows (PowerShell):
-```powershell
-Stop-Process -Id <pid>
-```
-
-Prefer `kill` (SIGTERM) over `kill -9` (SIGKILL) to allow graceful shutdown. Only escalate to `kill -9` if the process doesn't exit within 3 seconds.
+**Only kill dev server processes** (e.g. `node`, `python`, `ruby`, `dotnet`, `cargo`, `go`). Even then, show the user the PID and process name and **ask for confirmation** before killing. Prefer SIGTERM over SIGKILL.
 
 ## Step 3: Detect Framework
 
-Check project config files to determine the framework. Search in order of specificity:
+Check project config files to determine the framework (stop at first match): `next.config.*`, `nuxt.config.*`, `vite.config.*`, `svelte.config.*`, `angular.json`, `astro.config.*`, `manage.py`, `app.py`/`wsgi.py`, `Cargo.toml`, `go.mod`, `*.csproj`/`*.sln`, `Gemfile` with `rails`.
 
-**Check these files (stop at first match):**
+If no config file found, check `package.json` dependencies/devDependencies for `react-scripts`, `next`, `nuxt`, `vite`, `@angular/core`, `astro`, `express`, `fastify`, `hono`, `remix`, `@sveltejs/kit`.
 
-| Config file | Framework |
-|---|---|
-| `next.config.*` (js/ts/mjs) | Next.js |
-| `nuxt.config.*` (js/ts) | Nuxt |
-| `vite.config.*` (js/ts/mjs) | Vite (check for SvelteKit/Remix plugins) |
-| `svelte.config.*` | SvelteKit (via Vite) |
-| `angular.json` | Angular |
-| `astro.config.*` | Astro |
-| `manage.py` | Django |
-| `app.py` or `wsgi.py` | Flask |
-| `Cargo.toml` | Rust |
-| `go.mod` | Go |
-| `*.csproj` or `*.sln` | .NET |
-| `Gemfile` with `rails` | Rails |
+**For Vite projects**, also check `vite.config.*` for framework plugins (`@sveltejs/kit` → SvelteKit, `@remix-run/dev` → Remix).
 
-**If no specific config found, check `package.json` dependencies:**
-
-```bash
-# Read package.json and check dependencies + devDependencies for:
-# - "react-scripts" → CRA
-# - "next" → Next.js
-# - "nuxt" → Nuxt
-# - "vite" → Vite
-# - "@angular/core" → Angular
-# - "astro" → Astro
-# - "express" → Express
-# - "fastify" → Fastify
-# - "hono" → Hono
-# - "remix" → Remix
-# - "@sveltejs/kit" → SvelteKit
-```
-
-**For Vite projects**, also check `vite.config.*` for framework plugins:
-- `@sveltejs/kit` plugin → SvelteKit
-- `@remix-run/dev` plugin → Remix
-- Otherwise → plain Vite
-
-**Detect package manager** (for Node.js projects):
-
-```bash
-if [ -f "bun.lockb" ]; then echo "bun"
-elif [ -f "pnpm-lock.yaml" ]; then echo "pnpm"
-elif [ -f "yarn.lock" ]; then echo "yarn"
-else echo "npm"
-fi
-```
+**Detect package manager:** Check for `bun.lockb` → bun, `pnpm-lock.yaml` → pnpm, `yarn.lock` → yarn, else npm.
 
 Also check for a `dev` or `start` script in `package.json` — the project may already use a custom port.
 
 ## Step 4: Find Available Port
 
-Starting from the framework's default port (or `--port` if specified), find the first available port.
-
-**macOS/Linux:**
-
-```bash
-check_port() {
-  lsof -iTCP:"$1" -sTCP:LISTEN -nP 2>/dev/null | grep -q ":$1" && return 1 || return 0
-}
-
-find_free_port() {
-  local port="${1:-3000}"
-  while ! check_port "$port"; do
-    port=$((port + 1))
-  done
-  echo "$port"
-}
-```
-
-**Windows (PowerShell):**
-
-```powershell
-function Find-FreePort($start = 3000) {
-  $port = $start
-  while (Get-NetTCPConnection -LocalPort $port -ErrorAction SilentlyContinue) { $port++ }
-  return $port
-}
-```
+Starting from the framework's default port (or `--port` if specified), find the first available port by checking with `lsof`/`Get-NetTCPConnection` and incrementing.
 
 **Framework default ports:**
 
 | Framework | Default port |
 |---|---|
-| Next.js | 3000 |
-| Nuxt | 3000 |
-| CRA | 3000 |
-| Express / Fastify / Hono | 3000 |
-| Rails | 3000 |
+| Next.js / Nuxt / CRA / Express / Fastify / Hono / Rails | 3000 |
 | Vite / SvelteKit / Remix | 5173 |
 | Astro | 4321 |
 | Angular | 4200 |
-| Flask | 5000 |
-| .NET | 5000 |
-| Django | 8000 |
-| FastAPI (uvicorn) | 8000 |
+| Flask / .NET | 5000 |
+| Django / FastAPI | 8000 |
 | Go / Rust | 8080 |
 
 **If mode is `--find`:** Report the free port and stop.
+
+**Auto-port frameworks (Next.js, Nuxt):** Skip port finding entirely unless the user explicitly requested a specific port. These frameworks handle port selection themselves and print the result to stdout.
 
 ## Step 5: Start Server
 
 Use the detected framework and package manager to start the dev server on the available port.
 
+### General principle: prefer framework auto-port selection
+
+Some frameworks automatically detect port conflicts and pick the next available port, printing the chosen port to stdout. **Do not fight the framework** — if it handles port selection, let it. Only pass explicit port flags when:
+- The user explicitly requested a specific port
+- The framework does not support auto-port selection
+
+When a framework auto-selects, read the port from stdout and report it to the user.
+
+### Auto-port frameworks (Next.js, Nuxt)
+
+Next.js and Nuxt automatically detect port conflicts and pick the next available port. They print the chosen port to stdout (e.g. `- Local: http://localhost:3001`).
+
+**Default behavior (no explicit `--port` requested):** Just run `{pm} run dev` with no port flag. Let the framework handle it. Read the actual port from stdout and report it to the user.
+
+**Only pass a port flag if the user explicitly requested a specific port.** In that case, use the port flag table below.
+
 ### Port flag per framework
 
 | Framework | Start command | Port mechanism |
 |---|---|---|
-| Next.js | `{pm} run dev` | `-p <port>` appended (or `-- -p <port>` if using npm) |
-| Nuxt | `{pm} run dev` | `-- --port <port>` |
+| Next.js | `{pm} run dev` | Auto-picks port. Only use `-p <port>` if user requests specific port |
+| Nuxt | `{pm} run dev` | Auto-picks port. Only use `-- --port <port>` if user requests specific port |
 | Vite / SvelteKit / Remix | `{pm} run dev` | `-- --port <port>` |
 | CRA | `{pm} run start` | `PORT=<port>` env variable prefix |
 | Astro | `{pm} run dev` | `-- --port <port>` |
@@ -222,9 +127,19 @@ Use the detected framework and package manager to start the dev server on the av
 
 `{pm}` = detected package manager (npm, pnpm, yarn, bun).
 
-**npm quirk:** When passing flags through npm scripts, use `--` separator: `npm run dev -- -p 3001`. pnpm/yarn/bun pass flags directly without `--`.
+**Important — npm requires `--` separator:** `npm run dev -- -p 3001`. pnpm/yarn/bun pass flags directly without `--`. Getting this wrong is a common source of port flags being silently ignored.
 
-**Before starting:** Tell the user which framework was detected, which port will be used, and the exact command being run.
+**Before starting:** Tell the user which framework was detected and the exact command being run. For auto-port frameworks, tell the user the port will be reported once the server starts.
+
+### pnpm monorepo / workspace handling
+
+When running in a pnpm workspace (detected by `pnpm-workspace.yaml` in the project root):
+
+1. Read the root `package.json` dev script. If it uses `pnpm --filter <package> dev`, port flags appended at root level (`pnpm dev -- --port 3002`) will **not** propagate through the filter chain.
+2. Instead, either:
+   - Run the command directly at the filter level: `pnpm --filter <package> dev -- --port <port>`
+   - Or `cd` into the package directory and run `pnpm dev -- --port <port>` there
+3. For auto-port frameworks (Next.js, Nuxt) in a monorepo, prefer just running without port flags and reading the port from stdout — this avoids the filter propagation issue entirely.
 
 ### Scripts with hardcoded ports
 
@@ -246,31 +161,52 @@ If a port is already in the script:
 - Tell the user which port was occupied and what port was chosen instead.
 
 **`--kill` mode — process won't exit:**
-- The process may take a moment to release the port. Wait 3 seconds and re-check.
-- If still occupied after SIGTERM, ask the user before escalating to `kill -9`.
+- Wait 3 seconds and re-check. If still occupied after SIGTERM, ask the user before escalating to `kill -9`.
 
 **No framework detected:**
-- Tell the user no framework was identified.
-- List what was checked.
-- Ask which command they'd like to run.
+- Tell the user no framework was identified, list what was checked, ask which command they'd like to run.
 
 **Dev script not found in package.json:**
-- Check for common script names: `dev`, `start`, `serve`.
-- If none found, ask the user for the start command.
+- Check for common script names: `dev`, `start`, `serve`. If none found, ask the user for the start command.
 
 ## Examples
 
-### Default: Start dev server
+### Default: Start dev server (auto-port framework)
 
 ```
 User: start the dev server
 ```
 
-1. Scan ports → port 3000 in use by another Next.js instance
-2. Detect framework → Next.js (found `next.config.ts`)
-3. Detect package manager → pnpm
-4. Find free port → 3001
-5. Run: `pnpm run dev -- -p 3001`
+1. Detect framework -> Next.js (found `next.config.ts`)
+2. Detect package manager -> pnpm
+3. Next.js auto-picks ports — no port flag needed
+4. Run: `pnpm run dev`
+5. Read stdout -> "Ready on http://localhost:3001"
+6. Report: "Dev server running on port 3001 (3000 was in use, Next.js auto-selected 3001)"
+
+### Default: Start dev server (non-auto-port framework)
+
+```
+User: start the dev server
+```
+
+1. Scan ports -> port 5173 in use
+2. Detect framework -> Vite (found `vite.config.ts`)
+3. Detect package manager -> pnpm
+4. Find free port -> 5174
+5. Run: `pnpm run dev -- --port 5174`
+
+### Monorepo with pnpm filter
+
+```
+User: start the dev server on port 3002
+```
+
+1. Detect pnpm workspace (`pnpm-workspace.yaml` found)
+2. Root dev script: `pnpm --filter @norriq/commerce-platform dev`
+3. Detect framework -> Nuxt (in filtered package)
+4. User requested specific port -> pass port flag at filter level
+5. Run: `pnpm --filter @norriq/commerce-platform dev -- --port 3002`
 
 ### Scan mode
 
@@ -278,7 +214,7 @@ User: start the dev server
 User: /managing-ports --scan
 ```
 
-Output: Table of ports 3000–3100 showing PID, process name, and port.
+Output: Table of ports 3000-3100 showing PID, process name, and port.
 
 ### Find mode
 

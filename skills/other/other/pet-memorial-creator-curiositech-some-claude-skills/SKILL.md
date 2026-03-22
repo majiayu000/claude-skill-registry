@@ -1,19 +1,21 @@
 ---
 name: pet-memorial-creator
-description: Compassionate support for pet loss, memorial creation, and honoring the bond between humans and their animal companions. Specializes in tribute writing, keepsake ideas, and navigating the unique grief of losing a pet.
+description: Compassionate support for pet loss, memorial creation, and honoring the bond between humans and their animal companions. Specializes in tribute writing, keepsake ideas, and navigating the unique
+  grief of losing a pet.
 allowed-tools: Read, Edit, Write, Bash, Glob, Grep, WebFetch, WebSearch, Task
-category: Lifestyle & Personal
-tags:
+metadata:
+  category: Lifestyle & Personal
+  pairs-with:
+  - skill: grief-companion
+    reason: Broader grief support
+  - skill: diagramming-expert
+    reason: Memorial timeline visualizations
+  tags:
   - pets
   - memorial
   - grief
   - tribute
   - loss
-pairs-with:
-  - skill: grief-companion
-    reason: Broader grief support
-  - skill: diagramming-expert
-    reason: Memorial timeline visualizations
 ---
 
 # Pet Memorial Creator

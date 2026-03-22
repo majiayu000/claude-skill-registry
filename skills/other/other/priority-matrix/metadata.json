@@ -2,8 +2,16 @@
   "name": "priority-matrix",
   "repo": "aviz85/claude-tasks",
   "path": ".claude/skills/priority-matrix/SKILL.md",
+  "github_branch": "master",
   "category": "other",
   "source": "github.com/aviz85/claude-tasks",
   "dir_name": "priority-matrix",
-  "downloaded_at": "2026-02-22T06:26:54.745162Z"
+  "downloaded_at": "2026-03-22T07:06:46.349206Z",
+  "author": "aviz85",
+  "source_url": "https://github.com/aviz85/claude-tasks/blob/master/.claude/skills/priority-matrix/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aviz85/claude-tasks/blob/master/.claude/skills/priority-matrix/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

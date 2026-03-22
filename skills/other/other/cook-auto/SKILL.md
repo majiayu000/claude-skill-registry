@@ -2,12 +2,19 @@
 name: cook-auto
 version: 1.0.0
 description: '[Implementation] Implement a feature automatically (trust me bro)'
-activation: user-invoked
+disable-model-invocation: false
 ---
 
-> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
 
 **Prerequisites:** **MUST READ** `.claude/skills/shared/understand-code-first-protocol.md` before executing.
+
+- `docs/project-reference/domain-entities-reference.md` — Domain entity catalog, relationships, cross-service sync (read when task involves business entities/models)
+- `docs/test-specs/` — Test specifications by module (read existing TCs; generate/update test specs via `/tdd-spec` after implementation)
+
+> **Process Discipline:** MUST READ `.claude/skills/shared/rationalization-prevention-protocol.md` — counter "too simple for a plan" and "I'll refactor later" evasions.
+
+> **Process Discipline:** MUST READ `.claude/skills/shared/red-flag-stop-conditions-protocol.md` — STOP after 3+ failed attempts or when fix requires modifying 5+ files for a "simple" change.
 
 > **Skill Variant:** Variant of `/cook` — autonomous execution without user confirmation.
 
@@ -16,16 +23,21 @@ activation: user-invoked
 **Goal:** Implement features autonomously without stopping for user confirmation at each step.
 
 **Workflow:**
+
 1. **Analyze** — Understand task requirements from arguments
 2. **Plan & Execute** — Create plan and implement directly
 3. **Verify** — Run tests and review changes
 
 **Key Rules:**
+
 - Autonomous mode: proceed without asking for confirmation
 - Still follow all coding standards and patterns
 - Break work into todo tasks; add final self-review task
 
 **Ultrathink** to plan & start working on these tasks follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules:
+
+**Be skeptical. Apply critical thinking, sequential thinking. Every claim needs traced proof, confidence percentages (Idea should be more than 80%).**
+
 <tasks>$ARGUMENTS</tasks>
 
 **IMPORTANT:** Analyze the list of skills at `.claude/skills/*` and intelligently activate the skills that are needed for the task during the process.

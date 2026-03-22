@@ -2,8 +2,16 @@
   "name": "content-calendar-planner",
   "repo": "WesleySmits/agent-skills",
   "path": ".agent/skills/content-calendar-planner/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/WesleySmits/agent-skills",
   "dir_name": "content-calendar-planner",
-  "downloaded_at": "2026-02-22T05:56:40.634873Z"
+  "downloaded_at": "2026-03-22T06:30:36.837132Z",
+  "author": "WesleySmits",
+  "source_url": "https://github.com/WesleySmits/agent-skills/blob/main/.agent/skills/content-calendar-planner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WesleySmits/agent-skills/blob/main/.agent/skills/content-calendar-planner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

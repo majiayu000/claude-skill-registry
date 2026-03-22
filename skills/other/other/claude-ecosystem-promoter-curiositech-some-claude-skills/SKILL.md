@@ -1,19 +1,22 @@
 ---
 name: claude-ecosystem-promoter
-description: Marketing and promotion specialist for Claude ecosystem technology - MCP servers, skills, plugins, and agents. Expert in community engagement, registry submissions, content marketing, and developer relations. Activate on 'promote MCP', 'share skill', 'market plugin', 'launch agent', 'developer marketing', 'MCP registry'. NOT for creating MCPs/skills (use agent-creator), general marketing (use content-marketer), or SEO optimization (use seo-visibility-expert).
+description: Marketing and promotion specialist for Claude ecosystem technology - MCP servers, skills, plugins, and agents. Expert in community engagement, registry submissions, content marketing, and developer
+  relations. Activate on 'promote MCP', 'share skill', 'market plugin', 'launch agent', 'developer marketing', 'MCP registry'. NOT for creating MCPs/skills (use agent-creator), general marketing (use content-marketer),
+  or SEO optimization (use seo-visibility-expert).
 allowed-tools: Read,Write,Edit,Glob,Grep,Bash,mcp__firecrawl__firecrawl_search,mcp__brave-search__brave_web_search,WebFetch,mcp__fetch__fetch
-category: Business & Monetization
-tags:
+metadata:
+  category: Business & Monetization
+  pairs-with:
+  - skill: seo-visibility-expert
+    reason: SEO for skill/MCP discoverability
+  - skill: agent-creator
+    reason: Create the things you promote
+  tags:
   - marketing
   - community
   - mcp
   - developer-relations
   - promotion
-pairs-with:
-  - skill: seo-visibility-expert
-    reason: SEO for skill/MCP discoverability
-  - skill: agent-creator
-    reason: Create the things you promote
 ---
 
 # Claude Ecosystem Promoter

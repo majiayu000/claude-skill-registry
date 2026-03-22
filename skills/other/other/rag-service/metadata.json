@@ -2,8 +2,16 @@
   "name": "rag-service",
   "repo": "Lin-A1/skills-agent",
   "path": "services/rag_service/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/Lin-A1/skills-agent",
   "dir_name": "rag-service",
-  "downloaded_at": "2026-02-22T05:19:46.218247Z"
+  "downloaded_at": "2026-03-22T05:43:07.363432Z",
+  "author": "Lin-A1",
+  "source_url": "https://github.com/Lin-A1/skills-agent/blob/main/services/rag_service/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Lin-A1/skills-agent/blob/main/services/rag_service/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

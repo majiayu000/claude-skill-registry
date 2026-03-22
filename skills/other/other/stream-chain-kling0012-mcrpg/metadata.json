@@ -1,0 +1,17 @@
+{
+  "name": "stream-chain",
+  "repo": "Kling0012/MCRPG",
+  "path": ".claude/skills/stream-chain/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Kling0012/MCRPG",
+  "dir_name": "stream-chain-kling0012-mcrpg",
+  "downloaded_at": "2026-03-22T05:40:02.058980Z",
+  "author": "Kling0012",
+  "source_url": "https://github.com/Kling0012/MCRPG/blob/main/.claude/skills/stream-chain/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kling0012/MCRPG/blob/main/.claude/skills/stream-chain/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

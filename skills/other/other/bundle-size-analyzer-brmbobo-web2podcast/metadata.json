@@ -1,0 +1,17 @@
+{
+  "name": "bundle-size-analyzer",
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/05-frontend-dev/bundle-size-analyzer/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "dir_name": "bundle-size-analyzer-brmbobo-web2podcast",
+  "downloaded_at": "2026-03-22T05:01:48.064166Z",
+  "author": "Brmbobo",
+  "source_url": "https://github.com/Brmbobo/Web2podcast/blob/master/.claude/agents/enterprise-frontend-design/agents/skills/05-frontend-dev/bundle-size-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brmbobo/Web2podcast/blob/master/.claude/agents/enterprise-frontend-design/agents/skills/05-frontend-dev/bundle-size-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "postdoc-fellowship-matcher",
+  "repo": "aipoch/medical-research-skills",
+  "path": "scientific-skills/Others/postdoc-fellowship-matcher/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aipoch/medical-research-skills",
+  "dir_name": "postdoc-fellowship-matcher",
+  "downloaded_at": "2026-03-22T06:46:30.421601Z",
+  "author": "aipoch",
+  "source_url": "https://github.com/aipoch/medical-research-skills/blob/main/scientific-skills/Others/postdoc-fellowship-matcher/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aipoch/medical-research-skills/blob/main/scientific-skills/Others/postdoc-fellowship-matcher/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

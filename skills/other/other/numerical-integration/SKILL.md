@@ -1,7 +1,7 @@
 ---
 name: numerical-integration
 description: Select and configure time integration methods for ODE/PDE simulations. Use when choosing explicit/implicit schemes, setting error tolerances, adapting time steps, diagnosing integration accuracy, planning IMEX splitting, or handling stiff/non-stiff coupled systems.
-allowed-tools: Read, Bash, Write, Grep, Glob
+allowed-tools: Read, Write, Grep, Glob
 ---
 
 # Numerical Integration
@@ -144,6 +144,16 @@ python3 scripts/splitting_error_estimator.py --dt 1e-4 --scheme strang --commuta
 | Weak | Simple operator splitting |
 | Moderate | Strang splitting |
 | Strong | Fully coupled IMEX-RK |
+
+## Security
+
+The numerical-integration scripts enforce the following safeguards:
+
+- **Term name validation**: `imex_split_planner.py` validates term names against `[a-zA-Z_][a-zA-Z0-9_ -]*` with length and count limits, preventing injection payloads in user-supplied term lists.
+- **Input length limits**: Comma-separated value lists are capped at 100,000 entries to prevent resource exhaustion.
+- **Finite-value enforcement**: All numeric inputs (`dt`, `rtol`, `atol`, `error_norm`, `stiffness_ratio`, `commutator_norm`, etc.) are validated as finite numbers at the function boundary.
+- **Numeric bounds**: `dimension` capped at 10 billion, `order` at 20, `stiffness_ratio` at 1e30.
+- **Reduced tool surface**: The skill's `allowed-tools` excludes `Bash` to prevent the agent from executing arbitrary commands when processing user-provided inputs.
 
 ## Limitations
 

@@ -2,8 +2,16 @@
   "name": "godot-refactor",
   "repo": "Asreonn/godot-superpowers",
   "path": "orchestrators/godot-refactor/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/Asreonn/godot-superpowers",
   "dir_name": "godot-refactor",
-  "downloaded_at": "2026-02-22T04:43:02.455348Z"
+  "downloaded_at": "2026-03-22T04:55:10.702128Z",
+  "author": "Asreonn",
+  "source_url": "https://github.com/Asreonn/godot-superpowers/blob/main/orchestrators/godot-refactor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Asreonn/godot-superpowers/blob/main/orchestrators/godot-refactor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

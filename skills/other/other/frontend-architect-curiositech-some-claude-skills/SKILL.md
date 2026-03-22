@@ -1,11 +1,35 @@
 ---
 name: frontend-architect
 description: Frontend stack expert for Cloudflare deployment, shadcn/ui components, and internal tools architecture. Guides technology choices, deployment patterns, and design system integration.
-category: development
+allowed-tools:
+- Read
+- Write
+- Edit
+- Bash
+- Glob
+- Grep
+- WebFetch
+- WebSearch
 version: 1.0.0
-tags: [frontend, cloudflare, deployment, components, internal-tools, architecture, stack-selection]
-pairs-with: [web-design-expert, design-critic, cloudflare-worker-dev, design-system-generator]
-allowed-tools: [Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch]
+metadata:
+  category: development
+  pairs-with:
+  - skill: web-design-expert
+    reason: Complementary skill
+  - skill: design-critic
+    reason: Complementary skill
+  - skill: cloudflare-worker-dev
+    reason: Complementary skill
+  - skill: design-system-generator
+    reason: Complementary skill
+  tags:
+  - frontend
+  - cloudflare
+  - deployment
+  - components
+  - internal-tools
+  - architecture
+  - stack-selection
 ---
 
 # Frontend Architect

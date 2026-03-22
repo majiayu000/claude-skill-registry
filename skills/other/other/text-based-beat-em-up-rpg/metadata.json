@@ -1,0 +1,17 @@
+{
+  "name": "text-based-beat-em-up-rpg",
+  "repo": "ECNU-ICALK/AutoSkill",
+  "path": "SkillBank/ConvSkill/english_gpt4_8/text_based_beat_em_up_rpg/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ECNU-ICALK/AutoSkill",
+  "dir_name": "text-based-beat-em-up-rpg",
+  "downloaded_at": "2026-03-22T05:16:45.737747Z",
+  "author": "ECNU-ICALK",
+  "source_url": "https://github.com/ECNU-ICALK/AutoSkill/blob/main/SkillBank/ConvSkill/english_gpt4_8/text_based_beat_em_up_rpg/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ECNU-ICALK/AutoSkill/blob/main/SkillBank/ConvSkill/english_gpt4_8/text_based_beat_em_up_rpg/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

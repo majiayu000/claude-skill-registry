@@ -1,0 +1,17 @@
+{
+  "name": "sast-configuration",
+  "repo": "brunolimaff-jpg/NOVO-APP",
+  "path": ".agent/skills/sast-configuration/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/brunolimaff-jpg/NOVO-APP",
+  "dir_name": "sast-configuration-brunolimaff-jpg-novo-app",
+  "downloaded_at": "2026-03-22T07:20:39.973625Z",
+  "author": "brunolimaff-jpg",
+  "source_url": "https://github.com/brunolimaff-jpg/NOVO-APP/blob/main/.agent/skills/sast-configuration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brunolimaff-jpg/NOVO-APP/blob/main/.agent/skills/sast-configuration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

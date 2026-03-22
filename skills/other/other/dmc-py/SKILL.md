@@ -1,20 +1,20 @@
 ---
 name: dmc-py
 description: |
-  Expert guidance for building Dash applications with Dash Mantine Components (DMC) v2.4.0.
+  Expert guidance for building Dash applications with Dash Mantine Components (DMC) v2.x.
   Use when creating dashboards, forms, data visualization apps with DMC.
   Covers: MantineProvider theming, style props (m, p, c, bg, w, h), Styles API,
   callbacks (basic, pattern-matching ALL/MATCH/ALLSMALLER, clientside, background),
   multi-page apps with Dash Pages, charts (LineChart, BarChart, DonutChart),
-  date pickers, modals, and all 90+ components.
+  date pickers, modals, and all 100+ components.
   Triggers on: dash-mantine-components, DMC, MantineProvider, dmc.Button, dmc.Select,
   dmc.Modal, dmc.BarChart, Mantine theme, Dash UI components, Dash callbacks,
   multi-page Dash app, pattern-matching callbacks, clientside callbacks, AppShell.
 ---
 
-# Dash Mantine Components (DMC) v2.4.0
+# Dash Mantine Components (DMC) v2.x
 
-Build modern Dash applications with 90+ Mantine UI components.
+Build modern Dash applications with 100+ Mantine UI components.
 
 ## Quick Start
 
@@ -46,6 +46,8 @@ if __name__ == "__main__":
 ```
 
 **Critical**: All DMC components MUST be inside `dmc.MantineProvider`.
+
+> **Version Note:** This skill targets DMC 2.x (Mantine 8.x). Run `pip show dash-mantine-components` to check your installed version. For the latest features and API changes, use `fetch_docs.py` to query the official documentation at https://www.dash-mantine-components.com/assets/llms.txt
 
 ---
 
@@ -85,6 +87,7 @@ Select components by use case:
 | Breadcrumb | `Breadcrumbs` | `separator` |
 | Stepper | `Stepper`, `StepperStep` | `active`, `onStepClick` |
 | Pagination | `Pagination` | `value`, `total`, `siblings` |
+| Table of contents | `TableOfContents` | `links`, `variant`, `active` |
 
 ### Feedback & Overlays
 | Need | Component | Key Props |
@@ -96,6 +99,7 @@ Select components by use case:
 | Loading | `Loader`, `LoadingOverlay` | `size`, `type`, `visible` |
 | Progress | `Progress`, `RingProgress` | `value`, `size`, `sections` |
 | Tooltip | `Tooltip` | `label`, `position`, `withArrow` |
+| Copy button | `CopyButton` | `value`, `timeout` |
 
 ### Data Display
 | Need | Component | Key Props |
@@ -113,6 +117,25 @@ Select components by use case:
 | Area | `AreaChart` | `data`, `dataKey`, `series` |
 | Pie/Donut | `DonutChart`, `PieChart` | `data`, `chartLabel` |
 | Scatter | `ScatterChart` | `data`, `dataKey`, `series` |
+
+### What's New in Recent Versions
+
+**v2.5.x:**
+- `TableOfContents` - Auto-generated table of contents from headings
+- `selectFirstOptionOnDropdownOpen` prop for Select/MultiSelect/Autocomplete
+- `openOnFocus` prop for Combobox components
+- AppShell `mode="static"` for nested shells
+- `window.MantineCore` / `window.MantineHooks` for custom component building
+
+**v2.4.x:**
+- `CopyButton` / `CustomCopyButton` - Clipboard operations
+- `getEditor(id)` - Access RichTextEditor TipTap instance in clientside callbacks
+- Function props for chart axis/grid customization
+
+**v2.3.x:**
+- `MiniCalendar` - Compact calendar component
+- `ScrollAreaAutoheight` - Auto-sizing scroll area
+- `DirectionProvider` - RTL text direction support
 
 → Full component reference: [references/components-quick-ref.md](references/components-quick-ref.md)
 
@@ -375,6 +398,7 @@ Copy and adapt these templates:
 
 | Script | Usage |
 |--------|-------|
+| [fetch_docs.py](scripts/fetch_docs.py) | `python fetch_docs.py "Select"` - Fetch/search official llms.txt |
 | [scaffold_app.py](scripts/scaffold_app.py) | `python scaffold_app.py myapp --type multi --shell` |
 | [generate_theme.py](scripts/generate_theme.py) | `python generate_theme.py --primary "#0ea5e9"` |
 | [component_search.py](scripts/component_search.py) | `python component_search.py "select"` |

@@ -1,0 +1,17 @@
+{
+  "name": "audit-impl",
+  "repo": "TalonT-Org/AutoSkillit",
+  "path": "src/autoskillit/skills_extended/audit-impl/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/TalonT-Org/AutoSkillit",
+  "dir_name": "audit-impl",
+  "downloaded_at": "2026-03-22T06:20:44.554370Z",
+  "author": "TalonT-Org",
+  "source_url": "https://github.com/TalonT-Org/AutoSkillit/blob/main/src/autoskillit/skills_extended/audit-impl/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TalonT-Org/AutoSkillit/blob/main/src/autoskillit/skills_extended/audit-impl/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

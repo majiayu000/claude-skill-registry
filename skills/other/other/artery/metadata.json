@@ -2,8 +2,16 @@
   "name": "artery",
   "repo": "Cantara/lib-electronic-components",
   "path": ".claude/skills/manufacturers/artery/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/Cantara/lib-electronic-components",
   "dir_name": "artery",
-  "downloaded_at": "2026-02-22T04:50:40.423815Z"
+  "downloaded_at": "2026-03-22T05:04:01.082599Z",
+  "author": "Cantara",
+  "source_url": "https://github.com/Cantara/lib-electronic-components/blob/main/.claude/skills/manufacturers/artery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cantara/lib-electronic-components/blob/main/.claude/skills/manufacturers/artery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

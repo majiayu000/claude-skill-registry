@@ -2,8 +2,16 @@
   "name": "user-permissions",
   "repo": "chaterm/terminal-skills",
   "path": "linux/user-permissions/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/chaterm/terminal-skills",
   "dir_name": "user-permissions",
-  "downloaded_at": "2026-02-22T06:41:43.037670Z"
+  "downloaded_at": "2026-03-22T07:27:05.658584Z",
+  "author": "chaterm",
+  "source_url": "https://github.com/chaterm/terminal-skills/blob/main/linux/user-permissions/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chaterm/terminal-skills/blob/main/linux/user-permissions/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

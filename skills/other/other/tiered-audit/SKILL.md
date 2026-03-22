@@ -34,6 +34,15 @@ dependencies:
 
 # Tiered Audit
 
+## Table of Contents
+
+- [When to Use](#when-to-use)
+- [When NOT to Use](#when-not-to-use)
+- [Tier 1: Git History Audit](#tier-1-git-history-audit)
+- [Tier 2: Targeted Area Audit](#tier-2-targeted-area-audit)
+- [Tier 3: Full Codebase Audit](#tier-3-full-codebase-audit)
+- [Output Contract](#output-contract)
+
 ## When to Use
 
 - Auditing codebase quality, patterns, or problems
@@ -78,6 +87,10 @@ git diff --name-status {base}..HEAD \
 # 5. Large commits: single commits with big diffs
 git log --format="%h %s" --shortstat {base}..HEAD
 ```
+
+**Verification:** Confirm each command produces output.
+If a command returns empty, the commit range may be wrong;
+verify `{base}` resolves correctly with `git merge-base`.
 
 ### Tier 1 Output Format
 
@@ -181,3 +194,8 @@ output_contract:
 
 Tier 2 raises the minimum evidence count to 8 because
 it reads source files and should produce deeper analysis.
+
+**Verification:** After each tier completes, verify the
+findings file exists and contains at least the minimum
+evidence count (`[E1]`, `[E2]`, etc.) before proceeding
+to the next tier or reporting results.

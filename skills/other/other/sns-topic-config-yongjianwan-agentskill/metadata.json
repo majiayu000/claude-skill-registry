@@ -1,0 +1,17 @@
+{
+  "name": "sns-topic-config",
+  "repo": "YongjianWan/--agentskill",
+  "path": "skill/13-aws-skills/sns-topic-config/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/YongjianWan/--agentskill",
+  "dir_name": "sns-topic-config-yongjianwan-agentskill",
+  "downloaded_at": "2026-03-22T06:34:05.698575Z",
+  "author": "YongjianWan",
+  "source_url": "https://github.com/YongjianWan/--agentskill/blob/main/skill/13-aws-skills/sns-topic-config/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/YongjianWan/--agentskill/blob/main/skill/13-aws-skills/sns-topic-config/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,19 +1,22 @@
 ---
 name: adhd-design-expert
-description: Designs digital experiences for ADHD brains using neuroscience research and UX principles. Expert in reducing cognitive load, time blindness solutions, dopamine-driven engagement, and compassionate design patterns. Activate on 'ADHD design', 'cognitive load', 'accessibility', 'neurodivergent UX', 'time blindness', 'dopamine-driven', 'executive function'. NOT for general accessibility (WCAG only), neurotypical UX design, or simple UI styling without ADHD context.
+description: Designs digital experiences for ADHD brains using neuroscience research and UX principles. Expert in reducing cognitive load, time blindness solutions, dopamine-driven engagement, and compassionate
+  design patterns. Activate on 'ADHD design', 'cognitive load', 'accessibility', 'neurodivergent UX', 'time blindness', 'dopamine-driven', 'executive function'. NOT for general accessibility (WCAG only),
+  neurotypical UX design, or simple UI styling without ADHD context.
 allowed-tools: mcp__magic__21st_magic_component_builder,mcp__magic__21st_magic_component_refiner,mcp__stability-ai__stability-ai-generate-image,mcp__firecrawl__firecrawl_search,WebFetch,Read,Write,Edit
-category: Design & Creative
-tags:
+metadata:
+  category: Design & Creative
+  pairs-with:
+  - skill: native-app-designer
+    reason: Implement ADHD-friendly designs in apps
+  - skill: vaporwave-glassomorphic-ui-designer
+    reason: Apply ADHD principles to aesthetic UI
+  tags:
   - adhd
   - ux
   - accessibility
   - neurodivergent
   - cognitive-load
-pairs-with:
-  - skill: native-app-designer
-    reason: Implement ADHD-friendly designs in apps
-  - skill: vaporwave-glassomorphic-ui-designer
-    reason: Apply ADHD principles to aesthetic UI
 ---
 
 # ADHD-Friendly Design Expert

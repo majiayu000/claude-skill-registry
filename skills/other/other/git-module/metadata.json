@@ -1,0 +1,17 @@
+{
+  "name": "git-module",
+  "repo": "SomtechSolutionMAxime/somtech-pack",
+  "path": ".claude/skills/git-module/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/SomtechSolutionMAxime/somtech-pack",
+  "dir_name": "git-module",
+  "downloaded_at": "2026-03-22T06:17:23.664956Z",
+  "author": "SomtechSolutionMAxime",
+  "source_url": "https://github.com/SomtechSolutionMAxime/somtech-pack/blob/main/.claude/skills/git-module/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SomtechSolutionMAxime/somtech-pack/blob/main/.claude/skills/git-module/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

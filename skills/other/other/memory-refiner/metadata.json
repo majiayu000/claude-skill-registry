@@ -1,0 +1,17 @@
+{
+  "name": "memory-refiner",
+  "repo": "artyom-88/codex",
+  "path": "skills/memory-refiner/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/artyom-88/codex",
+  "dir_name": "memory-refiner",
+  "downloaded_at": "2026-03-22T07:02:41.358056Z",
+  "author": "artyom-88",
+  "source_url": "https://github.com/artyom-88/codex/blob/main/skills/memory-refiner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/artyom-88/codex/blob/main/skills/memory-refiner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

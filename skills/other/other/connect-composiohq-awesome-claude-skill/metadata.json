@@ -2,8 +2,16 @@
   "name": "connect",
   "repo": "ComposioHQ/awesome-claude-skills",
   "path": "connect/SKILL.md",
+  "github_branch": "master",
   "category": "other",
   "source": "github.com/ComposioHQ/awesome-claude-skills",
   "dir_name": "connect-composiohq-awesome-claude-skill",
-  "downloaded_at": "2026-02-22T04:52:41.514550Z"
+  "downloaded_at": "2026-03-22T05:08:24.864759Z",
+  "author": "ComposioHQ",
+  "source_url": "https://github.com/ComposioHQ/awesome-claude-skills/blob/master/connect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ComposioHQ/awesome-claude-skills/blob/master/connect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

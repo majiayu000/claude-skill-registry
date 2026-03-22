@@ -1,0 +1,17 @@
+{
+  "name": "run",
+  "repo": "cbcruk/rog",
+  "path": ".claude/skills/run/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cbcruk/rog",
+  "dir_name": "run-cbcruk-rog",
+  "downloaded_at": "2026-03-22T07:25:49.565443Z",
+  "author": "cbcruk",
+  "source_url": "https://github.com/cbcruk/rog/blob/main/.claude/skills/run/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbcruk/rog/blob/main/.claude/skills/run/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

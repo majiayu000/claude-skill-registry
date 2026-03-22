@@ -67,15 +67,13 @@ A genuine third option has its own identity (nameable without referencing either
 
 Two methods are conjoined when you can't understand one without reading the other. This is a red flag that the split was wrong.
 
-> "Depth is more important than length: first make functions deep, then try to make them short enough to be easily read." — John Ousterhout, _A Philosophy of Software Design_
-
 A 200-line method with a simple interface that reads top to bottom is deep and fine. Five 40-line methods that must be read together are shallow and worse. The test is never "is this method too long?" It is "can this method be understood independently?"
 
 ### Method Splitting
 
-> "Each method should do one thing and do it completely." — John Ousterhout, _A Philosophy of Software Design_
+When splitting is warranted, the goal is for each resulting method to own a complete operation, not a fragment.
 
-When a method does need splitting, there are two valid forms:
+Two valid forms:
 
 1. **Extract a subtask**: Factor out a child method that is general-purpose and independently understandable. The parent calls the child. Test: can someone read the child without knowing about the parent, and vice versa? If you find yourself flipping between them, the split was wrong.
 

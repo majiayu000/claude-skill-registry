@@ -1,6 +1,6 @@
 ---
 name: war-room-checkpoint
-description: "Inline reversibility assessment for embedded War Room escalation from commands. Use at decision points to determine escalation need. Skip for standalone strategic decisions."
+description: "Reversibility assessment for War Room escalation at decision points. Skip for standalone decisions."
 # Custom metadata (not used by Claude for matching):
 model_preference: claude-sonnet-4
 category: strategic-planning

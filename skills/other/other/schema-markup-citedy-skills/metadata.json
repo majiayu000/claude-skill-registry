@@ -1,0 +1,17 @@
+{
+  "name": "schema-markup",
+  "repo": "Citedy/skills",
+  "path": "skills/schema-markup/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Citedy/skills",
+  "dir_name": "schema-markup-citedy-skills",
+  "downloaded_at": "2026-03-22T05:05:12.485978Z",
+  "author": "Citedy",
+  "source_url": "https://github.com/Citedy/skills/blob/main/skills/schema-markup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Citedy/skills/blob/main/skills/schema-markup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

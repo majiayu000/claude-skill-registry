@@ -1,19 +1,23 @@
 ---
 name: cv-creator
-description: Professional CV and resume builder transforming career narratives into ATS-optimized, multi-format resumes. Integrates with career-biographer for data and competitive-cartographer for positioning. Generates PDF, DOCX, LaTeX, JSON Resume, HTML, and Markdown. Activate on 'resume', 'CV', 'ATS optimization', 'job application'. NOT for cover letters, portfolio websites (use web-design-expert), LinkedIn optimization, or interview preparation.
+description: Professional CV and resume builder transforming career narratives into ATS-optimized, multi-format resumes. Integrates with career-biographer for data and competitive-cartographer for positioning.
+  Generates PDF, DOCX, LaTeX, JSON Resume, HTML, and Markdown. Activate on 'resume', 'CV', 'ATS optimization', 'job application'. NOT for cover letters, portfolio websites (use web-design-expert), LinkedIn
+  optimization, or interview preparation.
 allowed-tools: Read,Write,Edit,WebFetch,WebSearch
-category: Business & Monetization
-tags:
+metadata:
+  gated: true
+  category: Business & Monetization
+  pairs-with:
+  - skill: career-biographer
+    reason: Get structured career data
+  - skill: job-application-optimizer
+    reason: Tailor CVs to specific roles
+  tags:
   - resume
   - ats
   - career
   - pdf
   - latex
-pairs-with:
-  - skill: career-biographer
-    reason: Get structured career data
-  - skill: job-application-optimizer
-    reason: Tailor CVs to specific roles
 ---
 
 # CV Creator

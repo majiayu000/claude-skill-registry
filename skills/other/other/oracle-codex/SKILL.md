@@ -1,6 +1,5 @@
 ---
-argument-hint: <query> [--reasoning <level>] [--search]
-context: fork
+argument-hint: <query> [--reasoning <level>]
 disable-model-invocation: false
 name: oracle-codex
 user-invocable: true
@@ -19,7 +18,6 @@ Parse `$ARGUMENTS` for:
 
 - **query** — the main question or task (everything not a flag). **Required** — if empty, tell the user to provide a query and stop.
 - `--reasoning <level>` — override reasoning effort (`low`, `medium`, `high`, `xhigh`). Optional; default is auto-selected based on complexity.
-- `--search` — enable web search. Optional.
 
 ## Prerequisites
 
@@ -60,7 +58,7 @@ See `references/codex-flags.md` for full flag documentation.
 
 ### 1. Parse and Validate
 
-1. Parse `$ARGUMENTS` for query, `--reasoning`, and `--search`
+1. Parse `$ARGUMENTS` for query and `--reasoning`
 2. Run `scripts/check-codex.sh` — abort on failure
 3. Assess complexity to select reasoning effort (unless overridden)
 
@@ -79,8 +77,6 @@ scripts/run-codex-exec.sh <<'EOF'
 [constructed prompt]
 EOF
 ```
-
-Add `CODEX_SEARCH=1` if `--search` was requested.
 
 For `xhigh`, consider `run_in_background: true` on the Bash tool call, then read `CODEX_OUTPUT` when done.
 

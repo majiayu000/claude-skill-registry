@@ -1,0 +1,17 @@
+{
+  "name": "frappe-agent-architect",
+  "repo": "OpenAEC-Foundation/Frappe_Claude_Skill_Package",
+  "path": "skills/source/agents/frappe-agent-architect/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OpenAEC-Foundation/Frappe_Claude_Skill_Package",
+  "dir_name": "frappe-agent-architect",
+  "downloaded_at": "2026-03-22T06:00:01.010662Z",
+  "author": "OpenAEC-Foundation",
+  "source_url": "https://github.com/OpenAEC-Foundation/Frappe_Claude_Skill_Package/blob/main/skills/source/agents/frappe-agent-architect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OpenAEC-Foundation/Frappe_Claude_Skill_Package/blob/main/skills/source/agents/frappe-agent-architect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

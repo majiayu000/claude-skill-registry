@@ -1,22 +1,22 @@
 ---
 name: fetch-github-trending
-version: "2.0.0"
-description: >
-  Fetch trending AI/ML repositories from GitHub and store them in memory.
+version: 2.0.0
+description: 'Fetch trending AI/ML repositories from GitHub and store them in memory.
   Uses HTTP requests for GitHub API and memory MCP for storage and deduplication.
+
+  '
 license: MIT
 allowed-tools:
-  - http_request           # Strands built-in HTTP tool
-  - memory/add             # Store fetched repos
-  - memory/check_seen      # Check if repo already processed
-  - memory/mark_seen       # Mark repo as processed
+- http_request
+- memory/add
+- memory/check_seen
+- memory/mark_seen
 metadata:
-  kubani:
-    domain: news
-    category: collection
-    requires_approval: false
-    confidence: 0.75
-    version: "2.0.0"
+  domain: news
+  category: collection
+  requires-approval: false
+  confidence: 0.75
+  mcp-servers: []
 ---
 
 # Fetch GitHub Trending

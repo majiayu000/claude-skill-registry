@@ -1,0 +1,17 @@
+{
+  "name": "unity-multiplayer",
+  "repo": "JulianKerignard/Unity-Skills",
+  "path": "skills/unity-multiplayer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/JulianKerignard/Unity-Skills",
+  "dir_name": "unity-multiplayer",
+  "downloaded_at": "2026-03-22T05:36:15.107224Z",
+  "author": "JulianKerignard",
+  "source_url": "https://github.com/JulianKerignard/Unity-Skills/blob/main/skills/unity-multiplayer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JulianKerignard/Unity-Skills/blob/main/skills/unity-multiplayer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

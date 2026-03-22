@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/AIPexStudio/AIPex",
   "dir_name": "wcag22-a11y-audit",
-  "downloaded_at": "2026-03-01T04:44:05.503606Z",
+  "downloaded_at": "2026-03-22T04:44:02.361041Z",
   "author": "AIPexStudio",
   "source_url": "https://github.com/AIPexStudio/AIPex/blob/main/packages/browser-runtime/src/skill/built-in/wcag22-a11y-audit/SKILL.md",
   "license": "NOASSERTION",

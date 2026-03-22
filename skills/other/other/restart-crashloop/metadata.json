@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/X-McKay/kubani",
   "dir_name": "restart-crashloop",
-  "downloaded_at": "2026-03-01T06:20:52.609055Z",
+  "downloaded_at": "2026-03-22T06:31:57.468162Z",
   "author": "X-McKay",
   "source_url": "https://github.com/X-McKay/kubani/blob/main/kubani/skills/k8s/remediation/restart-crashloop/SKILL.md",
   "license": "NOASSERTION",

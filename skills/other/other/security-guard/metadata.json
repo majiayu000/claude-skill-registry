@@ -2,8 +2,16 @@
   "name": "security-guard",
   "repo": "TurnaboutHero/oh-my-antigravity",
   "path": "skills/security-guard/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/TurnaboutHero/oh-my-antigravity",
   "dir_name": "security-guard",
-  "downloaded_at": "2026-02-15T05:54:31.281819Z"
+  "downloaded_at": "2026-03-22T06:26:00.969283Z",
+  "author": "TurnaboutHero",
+  "source_url": "https://github.com/TurnaboutHero/oh-my-antigravity/blob/main/skills/security-guard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TurnaboutHero/oh-my-antigravity/blob/main/skills/security-guard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

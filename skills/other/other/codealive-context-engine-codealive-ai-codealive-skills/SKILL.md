@@ -1,6 +1,6 @@
 ---
 name: codealive-context-engine
-description: Semantic code search and AI-powered codebase Q&A across indexed repositories. Use when understanding code beyond local files, exploring dependencies, discovering cross-project patterns, planning features, debugging, or onboarding. Queries like "How does X work?", "Show me Y patterns", "How is library Z used?". Provides search (fast, returns file locations) and chat-with-codebase (slower, costs more, but returns synthesized answers).
+description: Semantic code search and AI-powered codebase Q&A across indexed repositories. Use when understanding code beyond local files, exploring dependencies, discovering cross-project patterns, planning features, debugging, or onboarding. Queries like "How does X work?", "Show me Y patterns", "How is library Z used?". Provides search (fast, returns file locations and descriptions) and chat-with-codebase (slower, costs more, but returns synthesized answers).
 ---
 
 # CodeAlive Context Engine
@@ -38,11 +38,16 @@ Do NOT retry the failed script until setup completes successfully.
 | Tool | Script | Speed | Cost | Best For |
 |------|--------|-------|------|----------|
 | **List Data Sources** | `datasources.py` | Instant | Free | Discovering indexed repos and workspaces |
-| **Search** | `search.py` | Fast | Low | Finding code locations, file paths, snippets |
+| **Search** | `search.py` | Fast | Low | Finding code locations, descriptions, identifiers |
+| **Fetch Artifacts** | `fetch.py` | Fast | Low | Retrieving full content for search results |
 | **Chat with Codebase** | `chat.py` | Slow | High | Synthesized answers, architectural explanations |
-| **Explore** | `explore.py` | Slow | High | Multi-step discovery workflows |
 
 **Cost guidance:** Search is lightweight and should be the default starting point. Chat with Codebase invokes an LLM on the server side, making it significantly more expensive per call — use it when you need a synthesized, ready-to-use answer rather than raw search results.
+
+**Three-step workflow:**
+1. **Search** — find relevant code locations with descriptions and identifiers
+2. **Review** — examine the descriptions to understand what each result contains
+3. **Get content** — use `fetch.py` for external repos or `Read()` for local files
 
 ## When to Use
 
@@ -71,20 +76,20 @@ python scripts/datasources.py
 ```bash
 python scripts/search.py "JWT token validation" my-backend
 python scripts/search.py "error handling patterns" workspace:platform-team --mode deep
+python scripts/search.py "authentication flow" my-repo --description-detail full
 ```
 
-### 3. Chat with codebase (slower, richer answers)
+### 3. Fetch full content (for external repos)
+
+```bash
+python scripts/fetch.py "my-org/backend::src/auth.py::AuthService.login()"
+```
+
+### 4. Chat with codebase (slower, richer answers)
 
 ```bash
 python scripts/chat.py "Explain the authentication flow" my-backend
 python scripts/chat.py "What about security considerations?" --continue CONV_ID
-```
-
-### 4. Multi-step exploration
-
-```bash
-python scripts/explore.py "understand:user authentication" my-backend
-python scripts/explore.py "debug:slow database queries" my-service
 ```
 
 ## Tool Reference
@@ -99,7 +104,7 @@ python scripts/datasources.py --json       # JSON output
 
 ### `search.py` — Semantic Code Search
 
-Returns file paths, line numbers, and code snippets. Fast and cheap.
+Returns file paths, line numbers, descriptions, identifiers, and content sizes. Fast and cheap.
 
 ```bash
 python scripts/search.py <query> <data_sources...> [options]
@@ -110,9 +115,24 @@ python scripts/search.py <query> <data_sources...> [options]
 | `--mode auto` | Default. Intelligent semantic search — use 80% of the time |
 | `--mode fast` | Quick lexical search for known terms |
 | `--mode deep` | Exhaustive search for complex cross-cutting queries. Resource-intensive |
-| `--include-content` | Include full file content (use for external repos you can't Read locally) |
+| `--description-detail short` | Default. Brief description of each result |
+| `--description-detail full` | More detailed description of each result |
 
-**Content inclusion rule:** Use `--include-content` only for repositories outside your working directory. For the current repo, get paths from search and then read files directly for latest content.
+**Getting content:** Search returns descriptions and identifiers. For the current repo, use `Read()` on the file paths. For external repos, use `fetch.py` with the identifiers.
+
+### `fetch.py` — Fetch Artifact Content
+
+Retrieves the full source code content for artifacts found via search. Use this for external repositories you cannot access locally.
+
+```bash
+python scripts/fetch.py <identifier1> [identifier2...]
+```
+
+| Constraint | Value |
+|-----------|-------|
+| Max identifiers per request | 20 |
+| Identifiers source | `identifier` field from search results |
+| Identifier format | `{owner/repo}::{path}::{symbol}` (symbols), `{owner/repo}::{path}` (files) |
 
 ### `chat.py` — Chat with Codebase
 
@@ -129,22 +149,6 @@ python scripts/chat.py <question> <data_sources...> [options]
 | `--continue <id>` | Continue a previous conversation (saves context and cost) |
 
 **Conversation continuity:** Every response includes a `conversation_id`. Pass it with `--continue` for follow-up questions — this preserves context and is cheaper than starting fresh.
-
-### `explore.py` — Smart Exploration
-
-Combines search and chat-with-codebase in multi-step workflows. Useful for complex investigations.
-
-```bash
-python scripts/explore.py <mode:query> <data_sources...>
-```
-
-| Mode | Purpose |
-|------|---------|
-| `understand:<topic>` | Search + explanation |
-| `dependency:<library>` | Library usage and internals |
-| `pattern:<pattern>` | Cross-project pattern discovery |
-| `implement:<feature>` | Find similar features for guidance |
-| `debug:<issue>` | Trace symptom to root cause |
 
 ## Data Sources
 
@@ -210,9 +214,9 @@ This skill works standalone, but delivers the best experience when combined with
 | Component | What it provides |
 |-----------|-----------------|
 | **This skill** | Query patterns, workflow guidance, cost-aware tool selection |
-| **MCP server** | Direct `codebase_search`, `codebase_consultant`, `get_data_sources` tools |
+| **MCP server** | Direct `codebase_search`, `fetch_artifacts`, `codebase_consultant`, `get_data_sources` tools |
 
-When both are installed, prefer the MCP server's tools for direct operations and this skill's scripts for guided multi-step workflows like `explore.py`.
+When both are installed, prefer the MCP server's tools for direct operations and this skill's scripts for guided workflows.
 
 ## Detailed Guides
 

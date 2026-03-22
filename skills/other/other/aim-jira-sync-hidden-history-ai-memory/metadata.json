@@ -1,0 +1,17 @@
+{
+  "name": "aim-jira-sync",
+  "repo": "Hidden-History/ai-memory",
+  "path": "_ai-memory/skills/aim-jira-sync/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Hidden-History/ai-memory",
+  "dir_name": "aim-jira-sync-hidden-history-ai-memory",
+  "downloaded_at": "2026-03-22T05:28:12.641750Z",
+  "author": "Hidden-History",
+  "source_url": "https://github.com/Hidden-History/ai-memory/blob/main/_ai-memory/skills/aim-jira-sync/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Hidden-History/ai-memory/blob/main/_ai-memory/skills/aim-jira-sync/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

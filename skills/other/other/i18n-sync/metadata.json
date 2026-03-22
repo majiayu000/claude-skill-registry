@@ -2,8 +2,16 @@
   "name": "i18n-sync",
   "repo": "Youngger9765/young-personal-site",
   "path": ".claude/skills/i18n-sync/skill.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/Youngger9765/young-personal-site",
   "dir_name": "i18n-sync",
-  "downloaded_at": "2026-02-22T05:58:55.409379Z"
+  "downloaded_at": "2026-03-22T06:34:19.130004Z",
+  "author": "Youngger9765",
+  "source_url": "https://github.com/Youngger9765/young-personal-site/blob/main/.claude/skills/i18n-sync/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Youngger9765/young-personal-site/blob/main/.claude/skills/i18n-sync/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

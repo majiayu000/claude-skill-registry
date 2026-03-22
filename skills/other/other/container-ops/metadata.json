@@ -2,8 +2,16 @@
   "name": "container-ops",
   "repo": "chaterm/terminal-skills",
   "path": "docker/container-ops/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/chaterm/terminal-skills",
   "dir_name": "container-ops",
-  "downloaded_at": "2026-02-22T06:41:42.438214Z"
+  "downloaded_at": "2026-03-22T07:27:04.048878Z",
+  "author": "chaterm",
+  "source_url": "https://github.com/chaterm/terminal-skills/blob/main/docker/container-ops/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chaterm/terminal-skills/blob/main/docker/container-ops/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

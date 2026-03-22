@@ -1,9 +1,11 @@
 ---
 name: hand-drawn-infographic-creator
-description: Generate hand-drawn style diagrams and infographics for recovery education articles. Creates anatomist's notebook aesthetic visuals - brain diagrams, timelines, social comparisons, and process flows using continuous line art, semantic color coding, and margin annotations.
+description: Generate hand-drawn style diagrams and infographics for recovery education articles. Creates anatomist's notebook aesthetic visuals - brain diagrams, timelines, social comparisons, and process
+  flows using continuous line art, semantic color coding, and margin annotations.
 allowed-tools: Read, Write, Edit, mcp__stability-ai__*, mcp__ideogram__*, WebFetch, WebSearch, mcp__firecrawl__*
-category: Design & Creative
-tags:
+metadata:
+  category: Design & Creative
+  tags:
   - infographics
   - hand-drawn
   - diagrams
@@ -12,6 +14,13 @@ tags:
   - neuroscience
   - AI-image-generation
   - accessibility
+  pairs-with:
+  - skill: pixel-art-infographic-creator
+    reason: Both create educational infographics but in contrasting visual styles for different audiences
+  - skill: recovery-education-writer
+    reason: Recovery education articles use hand-drawn brain diagrams and process illustrations
+  - skill: diagramming-expert
+    reason: Diagram structure and information hierarchy principles apply across visual styles
 ---
 
 # Hand-Drawn Infographic Creator

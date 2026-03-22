@@ -1,0 +1,17 @@
+{
+  "name": "data-intensive-patterns",
+  "repo": "booklib-ai/skills",
+  "path": "skills/data-intensive-patterns/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/booklib-ai/skills",
+  "dir_name": "data-intensive-patterns",
+  "downloaded_at": "2026-03-22T07:18:13.394154Z",
+  "author": "booklib-ai",
+  "source_url": "https://github.com/booklib-ai/skills/blob/main/skills/data-intensive-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/booklib-ai/skills/blob/main/skills/data-intensive-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

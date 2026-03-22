@@ -2,8 +2,16 @@
   "name": "procedural-stars-threejs",
   "repo": "CK42BB/procedural-stars-threejs",
   "path": "SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/CK42BB/procedural-stars-threejs",
   "dir_name": "procedural-stars-threejs",
-  "downloaded_at": "2026-02-22T04:50:31.089099Z"
+  "downloaded_at": "2026-03-22T05:03:46.724736Z",
+  "author": "CK42BB",
+  "source_url": "https://github.com/CK42BB/procedural-stars-threejs/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CK42BB/procedural-stars-threejs/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

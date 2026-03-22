@@ -1,7 +1,7 @@
 ---
 name: performance-profiling
 description: Identify computational bottlenecks, analyze scaling behavior, estimate memory requirements, and receive optimization recommendations for any computational simulation. Use when simulations are slow, investigating parallel efficiency, planning resource allocation, or seeking performance improvements through timing analysis, scaling studies, memory profiling, or bottleneck detection.
-allowed-tools: Read, Bash, Write, Grep, Glob
+allowed-tools: Read, Write, Grep, Glob
 ---
 
 # Performance Profiling
@@ -236,6 +236,18 @@ python3 scripts/bottleneck_detector.py \
 - Enable out-of-core computation
 - Increase number of processors
 - Use single precision where appropriate
+
+## Security
+
+The profiling scripts enforce the following safeguards when processing external data:
+
+- **File size limits**: Log files capped at 500 MB, JSON files at 100 MB — rejected before parsing.
+- **JSON structure validation**: All loaded JSON files must have an object (dict) as root element.
+- **Regex pattern validation**: User-supplied `--pattern` values are validated for length (500 chars max) and rejected if they contain constructs prone to catastrophic backtracking (ReDoS).
+- **Phase name sanitization**: Phase names extracted from log files are truncated to 200 characters and stripped of control characters to prevent prompt-injection payloads from propagating into agent context.
+- **Scaling data validation**: Run entries validated for finite time values, integer processor counts, and bounded run count (10,000 max).
+- **Memory parameter validation**: `available_gb` validated as positive finite number; mesh dimensions and field parameters validated as positive integers.
+- **Reduced tool surface**: The skill's `allowed-tools` excludes `Bash` to prevent the agent from executing arbitrary commands when processing untrusted simulation logs or result files.
 
 ## Limitations
 

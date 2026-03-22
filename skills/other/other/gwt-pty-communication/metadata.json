@@ -1,0 +1,17 @@
+{
+  "name": "gwt-pty-communication",
+  "repo": "akiojin/llmlb",
+  "path": ".codex/skills/gwt-pty-communication/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/akiojin/llmlb",
+  "dir_name": "gwt-pty-communication",
+  "downloaded_at": "2026-03-22T06:47:54.459126Z",
+  "author": "akiojin",
+  "source_url": "https://github.com/akiojin/llmlb/blob/main/.codex/skills/gwt-pty-communication/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/akiojin/llmlb/blob/main/.codex/skills/gwt-pty-communication/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

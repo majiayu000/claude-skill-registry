@@ -1,7 +1,7 @@
 ---
 name: issue-manage
 description: Interactive issue management with menu-driven CRUD operations. Use when managing issues, viewing issue status, editing issue fields, performing bulk operations, or viewing issue history. Triggers on "manage issue", "list issues", "edit issue", "delete issue", "bulk update", "issue dashboard", "issue history", "completed issues".
-allowed-tools: Bash, Read, Write, AskUserQuestion, Task, Glob
+allowed-tools: Bash, Read, Write, AskUserQuestion, Agent, Glob
 ---
 
 # Issue Management Skill
@@ -219,9 +219,8 @@ const action = AskUserQuestion({
     header: 'Action',
     options: [
       { label: 'List Issues', description: 'Browse active issues' },
-      { label: 'View Issue', description: 'Detail view' },
+      { label: 'View Issue', description: 'Detail view (includes history)' },
       { label: 'Edit Issue', description: 'Modify fields' },
-      { label: 'View History', description: 'Completed issues' },
       { label: 'Bulk Operations', description: 'Batch actions' }
     ]
   }]

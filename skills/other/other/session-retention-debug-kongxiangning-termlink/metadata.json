@@ -1,0 +1,17 @@
+{
+  "name": "session-retention-debug",
+  "repo": "KongXiangning/TermLink",
+  "path": ".claude/skills/session-retention-debug/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/KongXiangning/TermLink",
+  "dir_name": "session-retention-debug-kongxiangning-termlink",
+  "downloaded_at": "2026-03-22T05:40:11.540399Z",
+  "author": "KongXiangning",
+  "source_url": "https://github.com/KongXiangning/TermLink/blob/main/.claude/skills/session-retention-debug/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/KongXiangning/TermLink/blob/main/.claude/skills/session-retention-debug/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

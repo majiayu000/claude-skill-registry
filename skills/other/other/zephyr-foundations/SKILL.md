@@ -29,6 +29,27 @@ Preventing crashes through defensive programming.
 - **Reference**: **[error_handling.md](references/error_handling.md)**
 - **Key Tools**: `errno.h`, `BUILD_ASSERT`, validation patterns, return code checking.
 
+## Quick Start (Defensive Pattern)
+```c
+int sensor_read_checked(const struct device *dev)
+{
+  if (dev == NULL || !device_is_ready(dev)) {
+    return -ENODEV;
+  }
+
+  return 0;
+}
+```
+
+## Validation Checklist
+- [ ] Shared bit-field logic uses Zephyr macros (`BIT`, `GENMASK`) instead of raw literals.
+- [ ] Thread-shared state is protected with mutex/spinlock/atomic primitives.
+- [ ] Error paths return standard negative `errno` codes.
+- [ ] Defensive guards exist for null pointers, bounds, and device readiness checks.
+
+## Automation Tools
+- **[errno_return_check.py](scripts/errno_return_check.py)**: Detect likely non-negative `errno` return statements in C/C++ code.
+
 ## Examples & Templates
 
 - **[template_driver.c](assets/foundation_examples/template_driver.c)**: A complete skeleton showing how to combine DT macros, mutexes, and config-data separation.
@@ -40,5 +61,7 @@ Preventing crashes through defensive programming.
   - `concurrency.md`: Mutexes, Semaphores, Spinlocks, and ISR safety.
   - `devicetree_basics.md`: Devicetree syntax and overlay patterns.
   - `error_handling.md`: Error codes and defensive programming.
+- **[Scripts](scripts/)**:
+  - `errno_return_check.py`: Return-code sign checker.
 - **[Assets](assets/)**:
   - `foundation_examples/`: Working code templates for drivers and logic.

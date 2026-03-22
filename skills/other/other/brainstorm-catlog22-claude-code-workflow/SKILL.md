@@ -1,7 +1,7 @@
 ---
 name: brainstorm
 description: Unified brainstorming skill with dual-mode operation - auto pipeline and single role analysis. Triggers on "brainstorm", "头脑风暴".
-allowed-tools: Skill(*), Task(conceptual-planning-agent, context-search-agent), AskUserQuestion(*), TodoWrite(*), Read(*), Write(*), Edit(*), Glob(*), Bash(*)
+allowed-tools: Skill(*), Agent(conceptual-planning-agent, context-search-agent), AskUserQuestion(*), TodoWrite(*), Read(*), Write(*), Edit(*), Glob(*), Bash(*)
 ---
 
 # Brainstorm
@@ -49,6 +49,9 @@ Single Role Mode:
 3. **Task Attachment/Collapse**: Sub-tasks attached during phase execution, collapsed after completion
 4. **Session Continuity**: All phases share session state via workflow-session.json
 5. **Auto-Continue Execution**: Phases chain automatically without user intervention between them
+6. **SPEC.md Quality Alignment**: Guidance specification and role analysis follow SPEC.md standards (Concepts & Terminology, Non-Goals, Data Model, State Machine, RFC 2119 constraints)
+7. **Template-Driven Analysis**: Role-specific templates (e.g., system-architect) ensure consistent, high-quality outputs
+8. **Quality Gates**: Automated validation of guidance specification and role analysis against quality standards
 
 ## Auto Mode
 
@@ -73,13 +76,19 @@ Parse arguments, detect mode from flags/parameters, or ask user via AskUserQuest
 
 ### Auto Mode Execution (execution_mode = "auto")
 
+**Phase 1.5: Terminology & Boundary Definition**
+   - Extract 5-10 core domain terms from user input and Phase 1 context
+   - Generate terminology table (term, definition, aliases, category)
+   - Collect Non-Goals via AskUserQuestion (明确排除的范围)
+   - Store to `session.terminology` and `session.non_goals`
+
 #### Phase 2: Interactive Framework Generation
    Ref: phases/02-artifacts.md
 
 Seven-phase interactive workflow: Context collection → Topic analysis → Role selection → Role questions → Conflict resolution → Final check → Generate specification.
 
 **Input**: topic description, --count N, --yes flag
-**Output**: guidance-specification.md, workflow-session.json (selected_roles[], session_id)
+**Output**: guidance-specification.md (with Concepts & Terminology, Non-Goals, RFC 2119 constraints), workflow-session.json (selected_roles[], session_id)
 
 **TodoWrite**: Attach 7 sub-tasks (Phase 0-5), execute sequentially, collapse on completion.
 
@@ -94,6 +103,16 @@ Execute role analysis for EACH selected role in parallel.
 **Parallel Execution**: Launch N role-analysis calls simultaneously (one message with multiple Skill invokes). Each role with `--skip-questions` flag.
 
 For ui-designer: append `--style-skill {package}` if provided.
+
+**Template-Driven Analysis**:
+- Load role-specific template if exists (e.g., `templates/role-templates/system-architect-template.md`)
+- Inject template into agent prompt as required structure
+- For system-architect: MUST include Data Model, State Machine, Error Handling, Observability, Configuration Model, Boundary Scenarios
+
+**Quality Validation**:
+- After analysis generation, invoke `role-analysis-reviewer-agent` to validate against template
+- Check MUST have sections (blocking), SHOULD have sections (warning), quality checks (RFC keywords, valid diagrams)
+- Output validation report with score and recommendations
 
 **TodoWrite**: Attach N parallel sub-tasks, execute concurrently, collapse on completion.
 
@@ -327,6 +346,13 @@ Initial → Phase 1 Mode Routing (completed)
     ├── feature-specs/                 # Feature specs (Phase 4, auto mode, feature_mode)
     │   ├── F-001-{slug}.md
     │   └── F-00N-{slug}.md
+    ├── specs/
+    │   └── terminology-template.json  # Terminology schema
+    ├── templates/
+    │   └── role-templates/
+    │       └── system-architect-template.md  # System architect analysis template
+    ├── agents/
+    │   └── role-analysis-reviewer-agent.md   # Role analysis validation agent
     ├── {role}/                        # Role analyses (IMMUTABLE after Phase 3)
     │   ├── {role}-context.md          # Interactive Q&A responses
     │   ├── analysis.md                # Main/index document
@@ -373,7 +399,7 @@ Initial → Phase 1 Mode Routing (completed)
 - `/workflow:session:start` - Start a new workflow session (optional, brainstorm creates its own)
 
 **Follow-ups** (after brainstorm completes):
-- `/workflow:plan --session {sessionId}` - Generate implementation plan
+- `/workflow-plan --session {sessionId}` - Generate implementation plan
 - `/workflow:brainstorm:synthesis --session {sessionId}` - Run synthesis standalone (if skipped)
 
 ## Reference Information

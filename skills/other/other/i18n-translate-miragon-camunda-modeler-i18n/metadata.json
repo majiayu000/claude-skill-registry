@@ -1,0 +1,17 @@
+{
+  "name": "i18n-translate",
+  "repo": "Miragon/camunda-modeler-i18n-plugin",
+  "path": ".claude/skills/i18n-translate/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/Miragon/camunda-modeler-i18n-plugin",
+  "dir_name": "i18n-translate-miragon-camunda-modeler-i18n",
+  "downloaded_at": "2026-03-22T05:51:23.003566Z",
+  "author": "Miragon",
+  "source_url": "https://github.com/Miragon/camunda-modeler-i18n-plugin/blob/master/.claude/skills/i18n-translate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Miragon/camunda-modeler-i18n-plugin/blob/master/.claude/skills/i18n-translate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

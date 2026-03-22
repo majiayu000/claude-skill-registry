@@ -1,0 +1,17 @@
+{
+  "name": "report-format",
+  "repo": "cheukswiss/etdxm",
+  "path": ".claude/skills/report-format/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cheukswiss/etdxm",
+  "dir_name": "report-format",
+  "downloaded_at": "2026-03-22T07:27:15.411304Z",
+  "author": "cheukswiss",
+  "source_url": "https://github.com/cheukswiss/etdxm/blob/main/.claude/skills/report-format/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cheukswiss/etdxm/blob/main/.claude/skills/report-format/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/X-McKay/kubani",
   "dir_name": "check-workflow-health",
-  "downloaded_at": "2026-03-01T06:20:54.597363Z",
+  "downloaded_at": "2026-03-22T06:31:59.300424Z",
   "author": "X-McKay",
   "source_url": "https://github.com/X-McKay/kubani/blob/main/kubani/skills/k8s/diagnostic/check-workflow-health/SKILL.md",
   "license": "NOASSERTION",

@@ -5,7 +5,7 @@ description: Socket.IO v4.x client patterns, connection lifecycle, reconnection,
 
 # Socket.IO Real-Time Communication Patterns
 
-> **Quick Guide:** Use Socket.IO for real-time bidirectional communication when you need rooms, namespaces, automatic reconnection, acknowledgments, or transport fallback. Socket.IO is NOT a WebSocket implementation - it adds a protocol layer with additional features.
+> **Quick Guide:** Use Socket.IO for real-time bidirectional communication when you need rooms, namespaces, automatic reconnection, acknowledgments, or transport fallback. Socket.IO is NOT a WebSocket implementation - it adds a protocol layer with additional features. Always define typed event interfaces, use the `auth` option for tokens (never query strings), and clean up listeners on unmount.
 
 ---
 
@@ -53,12 +53,14 @@ description: Socket.IO v4.x client patterns, connection lifecycle, reconnection,
 
 - Simple WebSocket needs without rooms/namespaces (use native WebSocket)
 - Need to connect to non-Socket.IO WebSocket servers (incompatible protocols)
-- Minimal bundle size is critical (Socket.IO adds overhead)
+- Minimal bundle size is critical (Socket.IO adds ~14.5KB gzipped overhead)
 
 **Detailed Resources:**
 
-- For code examples, see [examples/](examples/)
-- For decision frameworks and anti-patterns, see [reference.md](reference.md)
+- [examples/core.md](examples/core.md) - Socket factory, React hooks, event listeners, message queue, typing indicators, volatile events, namespace multiplexing
+- [examples/authentication.md](examples/authentication.md) - Token auth, cookie auth, token refresh, namespace auth, auth state machine
+- [examples/rooms.md](examples/rooms.md) - Room manager, room hooks, multi-room chat, namespace sockets, conditional namespace access
+- [reference.md](reference.md) - Decision frameworks, client options reference, checklists
 
 ---
 
@@ -70,20 +72,20 @@ Socket.IO provides a layer on top of WebSocket with additional features: automat
 
 **Key Architectural Concepts:**
 
-1. **Transport Abstraction:** Socket.IO uses WebSocket when available but falls back to HTTP long-polling for restrictive networks. This happens automatically.
+1. **Transport Abstraction:** Socket.IO uses WebSocket when available but falls back to HTTP long-polling for restrictive networks. Default order: polling first, then upgrade to WebSocket.
 
 2. **Rooms:** Server-side grouping mechanism for targeted broadcasting. Clients don't know about rooms - they're purely a server concept for organizing sockets.
 
-3. **Namespaces:** Separate communication channels on the same connection. Used to separate concerns (e.g., `/chat`, `/admin`, `/notifications`).
+3. **Namespaces:** Separate communication channels on the same connection. Used to separate concerns (e.g., `/chat`, `/admin`, `/notifications`). Each can have its own middleware.
 
-4. **Connection State Recovery (v4.6.0+):** Missed events can be automatically delivered after brief disconnections, reducing manual state sync.
+4. **Connection State Recovery (v4.6.0+):** Missed events can be automatically delivered after brief disconnections, reducing manual state sync. Server-configurable with 2-minute default window.
 
 **Connection Lifecycle:**
 
 ```
-CONNECTING → CONNECTED ↔ (events) → DISCONNECTING → DISCONNECTED
-                ↓                        ↓
-            (error) ← reconnect ← (disconnect)
+CONNECTING -> CONNECTED <-> (events) -> DISCONNECTING -> DISCONNECTED
+                 |                           |
+             (error) <- reconnect <- (disconnect)
 ```
 
 **Socket.IO vs Native WebSocket:**
@@ -108,573 +110,195 @@ CONNECTING → CONNECTED ↔ (events) → DISCONNECTING → DISCONNECTED
 
 ### Pattern 1: TypeScript Event Interfaces
 
-Socket.IO v4 has first-class TypeScript support. Define interfaces for type-safe bidirectional communication.
-
-#### Event Type Definitions
+Define separate interfaces for each communication direction. Socket.IO v4 enforces these at compile time.
 
 ```typescript
-// types/socket-events.ts
-
-// Events sent from server to client
 interface ServerToClientEvents {
-  "user:joined": (user: User) => void;
-  "user:left": (userId: string) => void;
   "message:received": (message: ChatMessage) => void;
-  "room:updated": (room: Room) => void;
-  "typing:start": (data: { userId: string; username: string }) => void;
-  "typing:stop": (data: { userId: string }) => void;
+  "user:joined": (user: User) => void;
   error: (error: SocketError) => void;
-  pong: () => void;
 }
 
-// Events sent from client to server
 interface ClientToServerEvents {
   "message:send": (
     content: string,
-    callback: (response: MessageResponse) => void,
+    callback: (res: MessageResponse) => void,
   ) => void;
   "room:join": (roomId: string, callback: (result: JoinResult) => void) => void;
-  "room:leave": (roomId: string) => void;
-  "typing:start": (roomId: string) => void;
-  "typing:stop": (roomId: string) => void;
-  ping: () => void;
 }
 
-// Supporting types
-interface User {
-  id: string;
-  username: string;
-  avatar?: string;
-}
-
-interface ChatMessage {
-  id: string;
-  content: string;
-  senderId: string;
-  roomId: string;
-  createdAt: Date;
-}
-
-interface Room {
-  id: string;
-  name: string;
-  memberCount: number;
-}
-
-interface SocketError {
-  code: string;
-  message: string;
-}
-
-interface MessageResponse {
-  success: boolean;
-  messageId?: string;
-  error?: string;
-}
-
-interface JoinResult {
-  success: boolean;
-  room?: Room;
-  error?: string;
-}
-
-export type {
-  ServerToClientEvents,
-  ClientToServerEvents,
-  User,
-  ChatMessage,
-  Room,
-  SocketError,
-  MessageResponse,
-  JoinResult,
-};
+type TypedSocket = Socket<ServerToClientEvents, ClientToServerEvents>;
 ```
 
-**Why good:** Discriminated event names enable type narrowing, callback types are enforced, separate interfaces for each direction, supporting types are explicit
+**Why this matters:** Without typed events, typos in event names fail silently at runtime. Typed interfaces catch `"mesage"` vs `"message"` at compile time.
+
+See [examples/core.md](examples/core.md) Example 1 for complete type definitions.
 
 ---
 
 ### Pattern 2: Client Configuration
 
-Configure Socket.IO client with proper authentication, reconnection settings, and transport options.
-
-#### Constants
+Token goes in `auth` object (never query string). Use named constants for all timing values. The `timeout` option controls the **connection** timeout (default 20000ms). For acknowledgment timeouts, use `ackTimeout` (v4.6.0+) or `socket.timeout(ms).emitWithAck()`.
 
 ```typescript
 const RECONNECTION_DELAY_MS = 1000;
-const RECONNECTION_DELAY_MAX_MS = 5000;
 const MAX_RECONNECTION_ATTEMPTS = 10;
-const REQUEST_TIMEOUT_MS = 10000;
-```
+const CONNECTION_TIMEOUT_MS = 20000;
 
-#### Implementation
-
-```typescript
-// lib/socket-client.ts
-import { io, Socket } from "socket.io-client";
-import type {
-  ServerToClientEvents,
-  ClientToServerEvents,
-} from "../types/socket-events";
-
-type TypedSocket = Socket<ServerToClientEvents, ClientToServerEvents>;
-
-interface SocketConfig {
-  url: string;
-  token?: string;
-  autoConnect?: boolean;
-}
-
-export function createSocket(config: SocketConfig): TypedSocket {
-  const socket: TypedSocket = io(config.url, {
-    // Authentication - token in auth object, NOT query string
-    auth: config.token ? { token: config.token } : undefined,
-
-    // Connection settings
-    autoConnect: config.autoConnect ?? false,
-
-    // Reconnection settings
-    reconnection: true,
-    reconnectionAttempts: MAX_RECONNECTION_ATTEMPTS,
-    reconnectionDelay: RECONNECTION_DELAY_MS,
-    reconnectionDelayMax: RECONNECTION_DELAY_MAX_MS,
-
-    // Transport settings
-    transports: ["websocket", "polling"],
-    upgrade: true,
-
-    // Request timeout for emitWithAck
-    timeout: REQUEST_TIMEOUT_MS,
-  });
-
-  return socket;
-}
-
-// Singleton pattern for app-wide socket
-let socketInstance: TypedSocket | null = null;
-
-export function initializeSocket(token: string): TypedSocket {
-  if (socketInstance) {
-    socketInstance.disconnect();
-  }
-
-  const url = process.env.NEXT_PUBLIC_SOCKET_URL ?? "http://localhost:3000";
-
-  socketInstance = createSocket({
-    url,
-    token,
-    autoConnect: true,
-  });
-
-  return socketInstance;
-}
-
-export function getSocket(): TypedSocket {
-  if (!socketInstance) {
-    throw new Error("Socket not initialized. Call initializeSocket first.");
-  }
-  return socketInstance;
-}
-
-export function disconnectSocket(): void {
-  if (socketInstance) {
-    socketInstance.disconnect();
-    socketInstance = null;
-  }
-}
-```
-
-**Why good:** Token in auth object (not query string), named constants for all timing values, typed socket with generics, singleton pattern prevents multiple connections, explicit error for uninitialized access
-
-```typescript
-// WRONG - Token in query string (visible in logs)
-const socket = io(`http://localhost:3000?token=${token}`);
-
-// WRONG - Magic numbers
-const socket = io(url, {
-  reconnectionDelay: 1000,
-  reconnectionAttempts: 10,
+const socket: TypedSocket = io(url, {
+  auth: { token }, // NOT in query string
+  reconnectionAttempts: MAX_RECONNECTION_ATTEMPTS,
+  reconnectionDelay: RECONNECTION_DELAY_MS,
+  timeout: CONNECTION_TIMEOUT_MS, // Connection timeout
+  transports: ["websocket", "polling"],
 });
 ```
 
-**Why bad:** Query string tokens appear in server logs and may be cached by proxies, magic numbers make configuration unclear and hard to maintain
+**Key distinction:** `timeout` = connection timeout. `ackTimeout` = per-emit acknowledgment timeout (requires `retries` option, v4.6.0+).
+
+See [examples/core.md](examples/core.md) Example 1 for full factory implementation.
 
 ---
 
-### Pattern 3: Connection Lifecycle Management
+### Pattern 3: Connection Lifecycle
 
-Track connection state and handle reconnection events properly.
-
-#### Constants
+Socket-level events (`connect`, `disconnect`, `connect_error`) track the socket. Manager-level events (`reconnect_attempt`, `reconnect`, `reconnect_failed`) track the underlying connection. Always listen to both.
 
 ```typescript
-const INITIAL_RECONNECT_ATTEMPTS = 0;
-```
-
-#### Implementation
-
-```typescript
-// lib/socket-lifecycle.ts
-import type { Socket } from "socket.io-client";
-
-interface ConnectionState {
-  isConnected: boolean;
-  isReconnecting: boolean;
-  reconnectAttempts: number;
-  lastError: Error | null;
-  recovered: boolean;
-}
-
-type StateChangeCallback = (state: ConnectionState) => void;
-
-export function setupConnectionLifecycle(
-  socket: Socket,
-  onStateChange: StateChangeCallback,
-): () => void {
-  const state: ConnectionState = {
-    isConnected: socket.connected,
-    isReconnecting: false,
-    reconnectAttempts: INITIAL_RECONNECT_ATTEMPTS,
-    lastError: null,
-    recovered: false,
-  };
-
-  const updateState = (updates: Partial<ConnectionState>): void => {
-    Object.assign(state, updates);
-    onStateChange({ ...state });
-  };
-
-  // Connection established
-  const handleConnect = (): void => {
-    updateState({
-      isConnected: true,
-      isReconnecting: false,
-      reconnectAttempts: INITIAL_RECONNECT_ATTEMPTS,
-      lastError: null,
-      recovered: socket.recovered ?? false,
-    });
-  };
-
-  // Connection lost
-  const handleDisconnect = (reason: string): void => {
-    const willReconnect = socket.active;
-    updateState({
-      isConnected: false,
-      isReconnecting: willReconnect,
-      recovered: false,
-    });
-
-    // Log for debugging
-    if (!willReconnect) {
-      console.log("Connection closed permanently:", reason);
-    }
-  };
-
-  // Connection error
-  const handleConnectError = (error: Error): void => {
-    updateState({
-      isConnected: false,
-      lastError: error,
-    });
-  };
-
-  // Manager-level events for reconnection tracking
-  const handleReconnectAttempt = (attempt: number): void => {
-    updateState({
-      isReconnecting: true,
-      reconnectAttempts: attempt,
-    });
-  };
-
-  const handleReconnect = (): void => {
-    updateState({
-      isConnected: true,
-      isReconnecting: false,
-      reconnectAttempts: INITIAL_RECONNECT_ATTEMPTS,
-    });
-  };
-
-  const handleReconnectFailed = (): void => {
-    updateState({
-      isReconnecting: false,
-      lastError: new Error("Max reconnection attempts reached"),
-    });
-  };
-
-  // Socket-level events
-  socket.on("connect", handleConnect);
-  socket.on("disconnect", handleDisconnect);
-  socket.on("connect_error", handleConnectError);
-
-  // Manager-level events (socket.io property is the Manager)
-  socket.io.on("reconnect_attempt", handleReconnectAttempt);
-  socket.io.on("reconnect", handleReconnect);
-  socket.io.on("reconnect_failed", handleReconnectFailed);
-
-  // Return cleanup function
-  return () => {
-    socket.off("connect", handleConnect);
-    socket.off("disconnect", handleDisconnect);
-    socket.off("connect_error", handleConnectError);
-    socket.io.off("reconnect_attempt", handleReconnectAttempt);
-    socket.io.off("reconnect", handleReconnect);
-    socket.io.off("reconnect_failed", handleReconnectFailed);
-  };
-}
-```
-
-**Why good:** Distinguishes socket-level vs manager-level events, tracks recovery state for v4.6.0+, returns cleanup function for React integration, state updates are immutable
-
----
-
-### Pattern 4: Acknowledgments with Timeout and Retries
-
-Use acknowledgments to confirm message delivery with timeout handling. Socket.IO v4.6.0+ adds automatic retry support.
-
-#### Constants
-
-```typescript
-const ACK_TIMEOUT_MS = 5000;
-const DEFAULT_TIMEOUT_MS = 10000;
-const MAX_RETRIES = 3;
-```
-
-#### Automatic Retries (v4.6.0+)
-
-```typescript
-// Configure socket with automatic retries
-const socket = io(url, {
-  ackTimeout: ACK_TIMEOUT_MS, // Timeout per attempt
-  retries: MAX_RETRIES, // Max retry attempts
+socket.on("connect", () => {
+  /* connected */
+});
+socket.on("disconnect", (reason) => {
+  // socket.active === true means it will reconnect
+});
+socket.on("connect_error", (error) => {
+  /* handle */
 });
 
-// Events are automatically retried on timeout
+// Manager-level: socket.io is the Manager instance
+socket.io.on("reconnect_attempt", (attempt) => {
+  /* show UI */
+});
+socket.io.on("reconnect_failed", () => {
+  /* all attempts exhausted */
+});
+```
+
+**Critical:** Check `socket.recovered` (v4.6.0+) after `connect` to determine if missed events were automatically delivered or if you need a full state refresh.
+
+See [examples/core.md](examples/core.md) Examples 2-3 for React hooks.
+
+---
+
+### Pattern 4: Acknowledgments
+
+Two approaches: automatic retries (v4.6.0+) or manual `emitWithAck`. Both confirm message delivery.
+
+```typescript
+// Automatic retries (v4.6.0+)
+const socket = io(url, { ackTimeout: 5000, retries: 3 });
 socket.emit("message:send", content, (response) => {
-  // Will be retried up to MAX_RETRIES times if no ack received
-  console.log("Message confirmed:", response);
+  /* confirmed */
+});
+
+// Manual with emitWithAck
+const response = await socket
+  .timeout(5000)
+  .emitWithAck("message:send", content);
+```
+
+**Gotcha:** When using automatic retries, server handlers must be **idempotent** since the same packet may arrive multiple times.
+
+See [examples/core.md](examples/core.md) Example 4 for the emit hook pattern.
+
+---
+
+### Pattern 5: Auth Token Handling
+
+The `auth` option can be an object (evaluated once) or a **function** (called on every connection/reconnection). Use the function form to ensure fresh tokens on reconnect.
+
+```typescript
+// Static (stale on reconnect)
+const socket = io(url, { auth: { token } });
+
+// Dynamic (fresh on every connection attempt)
+const socket = io(url, {
+  auth: (cb) => {
+    cb({ token: getToken() });
+  },
+});
+
+// Or update before reconnection
+socket.io.on("reconnect_attempt", () => {
+  socket.auth = { token: getToken() };
 });
 ```
 
-**Why good:** Automatic retry handling reduces boilerplate, consistent timeout behavior across all emits, server must be idempotent for retried packets
-
-#### Manual Implementation
-
-```typescript
-// lib/socket-utils.ts
-import type { Socket } from "socket.io-client";
-
-// Callback-based acknowledgment
-export function emitWithCallback<T>(
-  socket: Socket,
-  event: string,
-  data: unknown,
-  callback: (response: T) => void,
-): void {
-  socket.emit(event, data, callback);
-}
-
-// Promise-based acknowledgment with timeout
-export async function emitWithTimeout<T>(
-  socket: Socket,
-  event: string,
-  data: unknown,
-  timeoutMs: number = DEFAULT_TIMEOUT_MS,
-): Promise<T> {
-  try {
-    const response = await socket.timeout(timeoutMs).emitWithAck(event, data);
-    return response as T;
-  } catch (error) {
-    if ((error as Error).message?.includes("timeout")) {
-      throw new Error(`Request timed out after ${timeoutMs}ms`);
-    }
-    throw error;
-  }
-}
-
-// Usage example
-async function sendMessage(
-  socket: Socket,
-  content: string,
-): Promise<MessageResponse> {
-  return emitWithTimeout<MessageResponse>(
-    socket,
-    "message:send",
-    content,
-    ACK_TIMEOUT_MS,
-  );
-}
-```
-
-**Why good:** Two patterns for different use cases (callback vs Promise), explicit timeout handling, named constants for timeout values, typed response generic
+See [examples/authentication.md](examples/authentication.md) for full auth patterns, token refresh, and auth state machine.
 
 ---
 
-### Pattern 5: Connection State Recovery
+### Pattern 6: Rooms and Namespaces
 
-Leverage Socket.IO v4.6.0+ connection state recovery to handle brief disconnections gracefully.
+**Rooms** are server-side only - clients request to join, server decides. **Namespaces** are protocol-level - clients connect explicitly. Multiple namespace sockets share one underlying connection via the Manager.
 
 ```typescript
-// lib/socket-recovery.ts
-import type { Socket } from "socket.io-client";
-
-interface RecoveryHandler {
-  onRecovered: () => void;
-  onNewSession: () => void;
-}
-
-export function setupRecoveryHandler(
-  socket: Socket,
-  handlers: RecoveryHandler,
-): () => void {
-  const handleConnect = (): void => {
-    if (socket.recovered) {
-      // Connection recovered - missed events will be delivered automatically
-      // No need to re-fetch initial state
-      console.log("Connection recovered, state restored");
-      handlers.onRecovered();
-    } else {
-      // New session or recovery failed
-      // Need to re-sync state from server
-      console.log("New session, fetching initial state...");
-      handlers.onNewSession();
-    }
-  };
-
-  socket.on("connect", handleConnect);
-
-  return () => {
-    socket.off("connect", handleConnect);
-  };
-}
-
-// Usage with initial data fetch
-function setupWithRecovery(
-  socket: Socket,
-  fetchInitialState: () => void,
-): void {
-  setupRecoveryHandler(socket, {
-    onRecovered: () => {
-      // Missed events delivered automatically - just update UI
-      console.log("Session recovered, no refetch needed");
-    },
-    onNewSession: () => {
-      // Need full state sync
-      fetchInitialState();
-    },
-  });
-}
+// Namespaces: use Manager for connection sharing
+const manager = new Manager(url, { autoConnect: false });
+const chatSocket = manager.socket("/chat");
+const adminSocket = manager.socket("/admin", {
+  auth: { token: adminToken }, // Per-namespace auth
+});
+manager.connect();
 ```
 
-**Why good:** Differentiates recovered vs new sessions, prevents unnecessary refetches after brief disconnections, cleanup function for React
+See [examples/rooms.md](examples/rooms.md) for room manager, room hooks, and namespace patterns.
 
 ---
 
-### Pattern 6: Sending and Receiving Binary Data
+### Pattern 7: Listener Cleanup
 
-Socket.IO automatically handles binary data including Buffer, ArrayBuffer, and Blob.
-
-#### Constants
+Every `socket.on()` must have a corresponding `socket.off()`. In React, return cleanup from `useEffect`. Pass the exact same function reference to `off()`.
 
 ```typescript
-const BINARY_CHUNK_SIZE = 64 * 1024; // 64KB chunks
-```
-
-#### Implementation
-
-```typescript
-// lib/binary-transfer.ts
-
-interface FileMetadata {
-  name: string;
-  type: string;
-  size: number;
-}
-
-interface UploadResponse {
-  success: boolean;
-  fileId?: string;
-  error?: string;
-}
-
-// Sending binary data
-export function sendFile(
-  socket: Socket,
-  file: File,
-  onProgress?: (percent: number) => void,
-): Promise<UploadResponse> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      const arrayBuffer = reader.result as ArrayBuffer;
-      const metadata: FileMetadata = {
-        name: file.name,
-        type: file.type,
-        size: file.size,
-      };
-
-      // Socket.IO handles ArrayBuffer automatically
-      socket.emit(
-        "file:upload",
-        arrayBuffer,
-        metadata,
-        (response: UploadResponse) => {
-          if (response.success) {
-            resolve(response);
-          } else {
-            reject(new Error(response.error ?? "Upload failed"));
-          }
-        },
-      );
-    };
-
-    reader.onerror = () => reject(reader.error);
-    reader.readAsArrayBuffer(file);
-  });
-}
-
-// Receiving binary data
-export function setupBinaryReceiver(
-  socket: Socket,
-  onFileReceived: (data: ArrayBuffer, metadata: FileMetadata) => void,
-): () => void {
-  const handler = (data: ArrayBuffer, metadata: FileMetadata): void => {
-    onFileReceived(data, metadata);
-  };
-
-  socket.on("file:received", handler);
-
+useEffect(() => {
+  const handler = (msg: Message) => setMessages((prev) => [...prev, msg]);
+  socket.on("message", handler);
   return () => {
-    socket.off("file:received", handler);
-  };
-}
+    socket.off("message", handler);
+  }; // Same reference
+}, [socket]);
 ```
 
-**Why good:** Socket.IO handles binary serialization automatically, metadata travels with file data, callback confirms delivery, cleanup function returned
+**Why this matters:** Without cleanup, handlers accumulate on re-renders causing memory leaks and duplicate processing.
 
 </patterns>
 
 ---
 
-<integration>
+<red_flags>
 
-## Integration Guide
+## RED FLAGS
 
-**Socket.IO is a transport solution.** This skill covers Socket.IO client patterns only.
+- **Token in query string** - Visible in server logs, browser history, proxy logs. Always use `auth` option.
+- **No event type definitions** - Typos in event names fail silently. Define `ServerToClientEvents`/`ClientToServerEvents`.
+- **Missing socket.off() cleanup** - Memory leaks and duplicate handlers accumulate.
+- **No connection error handling** - Users see blank screens with no feedback on failures.
+- **Using socket.id as user identifier** - Changes on every reconnection. Use server-provided user ID.
+- **Sending without connected check** - `socket.emit()` on a disconnected socket fails silently. Check `socket.connected` or queue messages.
+- **Confusing `timeout` with `ackTimeout`** - `timeout` is connection timeout (default 20000ms). `ackTimeout` is acknowledgment timeout (v4.6.0+, requires `retries`).
+- **Static auth with long sessions** - Token expires, reconnection fails. Use `auth` as a function or update on `reconnect_attempt`.
 
-**Works with:**
+**Gotchas:**
 
-- Your React framework via custom hooks (see examples/core.md)
-- Your state management solution for connection state tracking
-- Your authentication system for token management
+- Socket.IO protocol is **incompatible** with plain WebSocket - they cannot interoperate
+- Default transport order is polling-first, then upgrade to WebSocket (not WebSocket-first)
+- `socket.recovered` only works when server has connection state recovery enabled (v4.6.0+)
+- Namespaces share one WebSocket connection - a transport failure affects all namespaces
+- Rooms are purely server-side - the client never knows which rooms it belongs to
+- `volatile.emit()` may silently drop messages - only use for expendable data (cursor positions)
 
-**Defers to:**
-
-- Backend Socket.IO server implementation (backend skills)
-- Native WebSocket patterns (websockets skill)
-- State management for storing received data (state management skills)
-
-</integration>
+</red_flags>
 
 ---
 

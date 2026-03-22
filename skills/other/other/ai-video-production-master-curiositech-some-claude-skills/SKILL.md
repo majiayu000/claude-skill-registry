@@ -1,20 +1,23 @@
 ---
 name: ai-video-production-master
-description: Expert in script-to-video production pipelines for Apple Silicon Macs. Specializes in hybrid local/cloud workflows, LoRA training for character consistency, motion graphics generation, and artist commissioning. Activate on 'AI video production', 'script to video', 'video generation pipeline', 'character consistency', 'LoRA training', 'cloud GPU', 'motion graphics', 'Wan I2V', 'InVideo alternative'. NOT for real-time video editing, video compositing (use DaVinci/Premiere), audio production, or 3D modeling (use Blender/Maya).
+description: Expert in script-to-video production pipelines for Apple Silicon Macs. Specializes in hybrid local/cloud workflows, LoRA training for character consistency, motion graphics generation, and
+  artist commissioning. Activate on 'AI video production', 'script to video', 'video generation pipeline', 'character consistency', 'LoRA training', 'cloud GPU', 'motion graphics', 'Wan I2V', 'InVideo alternative'.
+  NOT for real-time video editing, video compositing (use DaVinci/Premiere), audio production, or 3D modeling (use Blender/Maya).
 allowed-tools: Read,Write,Edit,Bash(python:*,ffmpeg:*,npm:*),WebFetch,mcp__firecrawl__firecrawl_search
-category: AI & Machine Learning
-tags:
+metadata:
+  category: AI & Machine Learning
+  pairs-with:
+  - skill: sound-engineer
+    reason: Audio for AI-generated videos
+  - skill: voice-audio-engineer
+    reason: Voice synthesis for narration
+  tags:
   - video
   - ai-generation
   - lora
   - cloud-gpu
   - motion-graphics
   - comfyui
-pairs-with:
-  - skill: sound-engineer
-    reason: Audio for AI-generated videos
-  - skill: voice-audio-engineer
-    reason: Voice synthesis for narration
 ---
 
 # AI Video Production Master

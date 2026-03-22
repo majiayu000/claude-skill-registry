@@ -1,0 +1,17 @@
+{
+  "name": "unknown",
+  "repo": "ECNU-ICALK/AutoSkill",
+  "path": "SkillBank/ConvSkill/chinese_gpt3.5_8/\u751f\u6210\u62bc\u97f5\u52b1\u5fd7\u77ed\u53e5/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ECNU-ICALK/AutoSkill",
+  "dir_name": "unknown-ecnu-icalk-autoskill-34",
+  "downloaded_at": "2026-03-22T05:16:46.459358Z",
+  "author": "ECNU-ICALK",
+  "source_url": "https://github.com/ECNU-ICALK/AutoSkill/blob/main/SkillBank/ConvSkill/chinese_gpt3.5_8/\u751f\u6210\u62bc\u97f5\u52b1\u5fd7\u77ed\u53e5/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ECNU-ICALK/AutoSkill/blob/main/SkillBank/ConvSkill/chinese_gpt3.5_8/\u751f\u6210\u62bc\u97f5\u52b1\u5fd7\u77ed\u53e5/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

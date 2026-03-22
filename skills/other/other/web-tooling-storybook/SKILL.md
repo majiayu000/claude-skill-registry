@@ -1,6 +1,6 @@
 ---
 name: web-tooling-storybook
-description: Storybook 8 patterns - CSF 3.0, args, controls, autodocs, play functions, interaction testing, visual testing, addons configuration
+description: Storybook patterns - CSF 3.0, args, controls, autodocs, play functions, interaction testing, visual testing, addons configuration
 ---
 
 # Storybook Patterns
@@ -38,12 +38,12 @@ description: Storybook 8 patterns - CSF 3.0, args, controls, autodocs, play func
 - Testing component interactions and visual states
 - Building design systems with comprehensive examples
 - Generating automatic API documentation from TypeScript props
-- Visual regression testing with Chromatic or similar tools
+- Visual regression testing
 
 **When NOT to use:**
 
-- E2E user flow testing spanning multiple pages (use Playwright/Cypress)
-- Unit testing pure functions without UI (use Vitest directly)
+- E2E user flow testing spanning multiple pages (use your E2E tool)
+- Unit testing pure functions without UI (use your test runner directly)
 - Integration testing with real backend services
 - Performance testing and load testing
 
@@ -577,29 +577,25 @@ const meta = {
 
 - Stories import and render your actual components
 - TypeScript types flow from component props to story args
-- Same styling solution (CSS modules, Tailwind) works in Storybook
+- Your styling solution works as-is in Storybook (CSS modules, utility classes, etc.)
 
 **Works with your testing tools:**
 
-- Play functions use Testing Library queries (same as RTL)
-- Stories can be imported as test fixtures in Vitest/Jest
-- Visual testing tools (Chromatic) use stories as test cases
+- Play functions use Testing Library queries
+- Stories can be imported as test fixtures in your test runner
+- Visual testing tools use stories as test cases
 
 **Works with your CI/CD:**
 
 - `build-storybook` creates static site for deployment
-- Storybook Test runner integrates with CI for interaction tests
+- Storybook test addon integrates with CI for interaction tests
 - Visual regression tools integrate via CI
 
-**Styling boundary:**
+**Boundary guidance:**
 
-- Storybook handles: component isolation, documentation, controls
-- Your styling skill handles: actual CSS implementation
-
-**Testing boundary:**
-
-- Storybook handles: component interaction testing, visual states
-- Your E2E skill handles: full user journeys, navigation flows
+- Storybook handles: component isolation, documentation, controls, interaction testing, visual states
+- Your E2E tool handles: full user journeys, navigation flows
+- Your styling solution handles: actual CSS implementation
 
 </integration>
 
@@ -642,7 +638,8 @@ const meta = {
 - Storybook 8 uses `react-docgen` by default (not `react-docgen-typescript`) - imported types may not be extracted
 - In Storybook 8.2+, use `initialGlobals` instead of deprecated `globals` in preview.ts
 - Built-in tags: `dev` (sidebar visibility), `test` (test inclusion), `autodocs` (docs generation) - use `!tag` to remove inherited tags
-- Vitest addon (8.4+) is recommended over test-runner for Vite projects - provides Storybook UI integration
+- Storybook test addon (8.4+) is recommended over legacy test-runner for Vite projects - provides Storybook UI integration
+- Storybook 10 is ESM-only - requires `"type": "module"` in package.json and Node 20.16+
 
 </red_flags>
 

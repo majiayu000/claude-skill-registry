@@ -2,8 +2,16 @@
   "name": "wiz-automation",
   "repo": "ComposioHQ/awesome-claude-skills",
   "path": "composio-skills/wiz-automation/SKILL.md",
+  "github_branch": "master",
   "category": "other",
   "source": "github.com/ComposioHQ/awesome-claude-skills",
   "dir_name": "wiz-automation",
-  "downloaded_at": "2026-02-22T04:52:42.599610Z"
+  "downloaded_at": "2026-03-22T05:08:27.787519Z",
+  "author": "ComposioHQ",
+  "source_url": "https://github.com/ComposioHQ/awesome-claude-skills/blob/master/composio-skills/wiz-automation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ComposioHQ/awesome-claude-skills/blob/master/composio-skills/wiz-automation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -1,22 +1,22 @@
 ---
 name: identify-breaking-news
-version: "2.0.0"
-description: >
-  Identify breaking news articles that require immediate notification based on
-  importance scores, source credibility, and content analysis. Uses memory search
-  to find high-importance articles.
+version: 2.0.0
+description: 'Identify breaking news articles that require immediate notification
+  based on importance scores, source credibility, and content analysis. Uses memory
+  search to find high-importance articles.
+
+  '
 license: MIT
 allowed-tools:
-  - memory/search          # Search for high-importance articles
-  - memory/check_seen      # Check if already notified
-  - memory/mark_seen       # Mark as notified
+- memory/search
+- memory/check_seen
+- memory/mark_seen
 metadata:
-  kubani:
-    domain: news
-    category: analysis
-    requires_approval: false
-    confidence: 0.92
-    version: "2.0.0"
+  domain: news
+  category: analysis
+  requires-approval: false
+  confidence: 0.92
+  mcp-servers: []
 ---
 
 # Identify Breaking News

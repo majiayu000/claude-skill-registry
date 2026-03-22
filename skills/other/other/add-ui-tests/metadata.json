@@ -1,0 +1,17 @@
+{
+  "name": "add-ui-tests",
+  "repo": "Tassadar2499/NovaTune",
+  "path": ".codex/skills/add-ui-tests/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Tassadar2499/NovaTune",
+  "dir_name": "add-ui-tests",
+  "downloaded_at": "2026-03-22T06:21:04.121814Z",
+  "author": "Tassadar2499",
+  "source_url": "https://github.com/Tassadar2499/NovaTune/blob/main/.codex/skills/add-ui-tests/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tassadar2499/NovaTune/blob/main/.codex/skills/add-ui-tests/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

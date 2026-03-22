@@ -1,57 +1,67 @@
 ---
 name: my-skills-manager
-description: 管理本地 skills 仓库（添加 / 删除 / 修改 / 同步 skills）；触发条件：需要在 `~/.my-skills-collection` 中管理技能、同步远端或安装到 AI agent 的 skills 目录时使用。
+description: USE WHEN managing skills in ~/.my-skills-collection: adding, removing, syncing, or installing skills to AI agents (OpenCode, VSCode Copilot). Triggers on 'add a skill', 'remove skill', 'sync skills', 'install skills', 'list my skills'.
 ---
 
-## 概要（精简）
+## Overview
 
-本技能用于在本地 skills 仓库 `~/.my-skills-collection` 中：
-- 添加或移除 skill（支持作为 submodule 或直接复制）
-- 同步仓库并更新 submodule
-- 安装/准备 skills 供 AI agent 使用（提示安装步骤）
+Manage skills in your local repository (`~/.my-skills-collection`):
 
-## 何时使用
+- **Add** skills (as git submodules or copied directories)
+- **Remove** skills (handles both submodules and regular dirs)
+- **Sync** repository and update all submodules
+- **List** installed skills
+- **Install** skills to AI agents (OpenCode, VSCode Copilot)
 
-- 需要将第三方或自制 skill 加入到本地 skills 仓库
-- 需要从远端拉取最新的 skills 或更新子模块
-- 需要删除不再使用的 skill
+## Quick Commands
 
-## 快速命令（推荐使用 scripts 下的工具）
+Use scripts from `scripts/` for safe, interactive operations:
 
-创建并添加 skill（作为子模块）：
-
-```bash
-python skills/my-skills-manager/scripts/add_skill.py --submodule <git-url> --name <skill-name>
-```
-
-复制本地 skill 目录到仓库：
+### Add a skill
 
 ```bash
-python skills/my-skills-manager/scripts/add_skill.py --copy /path/to/skill --name <skill-name>
+# As git submodule (recommended for external repos)
+python scripts/add_skill.py --submodule <git-url> --name <skill-name>
+
+# Copy from local directory
+python scripts/add_skill.py --copy /path/to/skill --name <skill-name>
 ```
 
-删除 skill：
+### Remove a skill
 
 ```bash
-python skills/my-skills-manager/scripts/remove_skill.py --name <skill-name>
+python scripts/remove_skill.py --name <skill-name>
 ```
 
-同步仓库并更新所有子模块：
+### Sync repository
 
 ```bash
-python skills/my-skills-manager/scripts/sync_repo.py
+python scripts/sync_repo.py
 ```
 
-## 参考文件
+### List installed skills
 
-- `reference/add-skills.md` — 添加 skill 的详细步骤
-- `reference/remove-skills.md` — 删除 skill 的详细步骤
-- `reference/sync-skills.md` — 同步仓库的详细步骤
+```bash
+python scripts/list_skills.py
+```
 
-## 脚本（已包含）
+## Reference Files
 
-- `scripts/add_skill.py` — 添加 skill（支持 submodule 或复制）
-- `scripts/remove_skill.py` — 删除 skill（处理 submodule 与普通目录）
-- `scripts/sync_repo.py` — 安全地同步仓库并更新子模块
+Read these for detailed workflows:
+- `reference/operations.md` — Detailed add/remove/sync procedures
+- `reference/installation.md` — Installing skills to AI agents
 
-在执行脚本前，脚本会提示确认操作以避免误删或未保存的改动。
+## When to Use This Skill
+
+- User mentions managing their skills collection
+- User wants to add a skill from GitHub or local path
+- User needs to sync or update their skills
+- User wants to install skills to OpenCode, VSCode Copilot, or other agents
+- User asks about their local skills repository
+
+## Important Notes
+
+- Always confirm destructive operations before executing
+- Skills must contain a `SKILL.md` file to be recognized
+- Use submodules for external repos to easily update later
+- Check `~/.my-skills-collection/skills/` for installed skills

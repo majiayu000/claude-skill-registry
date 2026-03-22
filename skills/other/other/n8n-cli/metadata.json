@@ -1,0 +1,17 @@
+{
+  "name": "n8n-cli",
+  "repo": "Mic92/mics-skills",
+  "path": "skills/n8n-cli/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Mic92/mics-skills",
+  "dir_name": "n8n-cli",
+  "downloaded_at": "2026-03-22T05:50:25.440074Z",
+  "author": "Mic92",
+  "source_url": "https://github.com/Mic92/mics-skills/blob/main/skills/n8n-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Mic92/mics-skills/blob/main/skills/n8n-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

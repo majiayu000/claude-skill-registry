@@ -2,8 +2,16 @@
   "name": "monitoring",
   "repo": "chaterm/terminal-skills",
   "path": "devops/monitoring/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/chaterm/terminal-skills",
   "dir_name": "monitoring-chaterm-terminal-skills",
-  "downloaded_at": "2026-02-22T06:41:44.468384Z"
+  "downloaded_at": "2026-03-22T07:27:09.039454Z",
+  "author": "chaterm",
+  "source_url": "https://github.com/chaterm/terminal-skills/blob/main/devops/monitoring/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chaterm/terminal-skills/blob/main/devops/monitoring/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

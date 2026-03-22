@@ -12,7 +12,7 @@ Plans are decomposed into a **master plan** (high-level orchestration) and **sub
 ## Core Principles
 
 1. **No Assumptions**: If something is unclear, ambiguous, or missing — ask. Do not fill in gaps with reasonable defaults or best guesses.
-2. **Relentless Clarification**: Ask as many questions as needed. A plan built on assumptions is worse than no plan.
+2. **Relentless Clarification**: Ask as many questions as needed. A plan built on assumptions is worse than no plan. Requirement gathering doesn't end at Phase 1 — when later phases surface new ambiguities or decision points not resolved earlier, **STOP and present them to the user**. Do not make autonomous architectural decisions.
 3. **Atomic Decomposition**: Break work into the smallest self-contained sub-plans possible. Each sub-plan should be executable in isolation.
 4. **Embedded Context**: Each sub-plan includes everything an executing agent needs — no reliance on reading other sub-plans or external documents.
 5. **Convergent Review**: Plans are reviewed iteratively by specialized sub-agents until no new issues are found.
@@ -52,6 +52,7 @@ Once requirements are clear:
    - Missing component docs → `documenting-components`
 
    Present gaps to the user — they may want to create docs before planning continues, or accept the gap and proceed.
+8. **Flag specification gaps**: When the plan depends on a specification or requirements document that doesn't cover a case the implementation needs, treat it as a **blocking gap** — not a documentation gap. Present the gap and options to the user before proceeding. Examples: an API spec that doesn't define error responses, a data model that doesn't cover edge-case states, a workflow description that omits failure paths.
 
 Share findings with the user and confirm understanding before proceeding.
 
@@ -61,10 +62,16 @@ This is the most critical phase. Break the feature into sub-plans:
 
 1. **Identify natural boundaries**: Look for seams in the work — different layers (data model, API, UI), different domains, or different files/modules.
 2. **Minimize dependencies**: Each sub-plan should depend on as few other sub-plans as possible. Where dependencies exist, make them explicit and one-directional.
-3. **Embed all necessary context**: Each sub-plan must include the interfaces, data shapes, conventions, and file contents an executing agent needs. Don't assume the agent has read the master plan or any other sub-plan.
-4. **Define clear inputs and outputs**: If sub-plan B depends on sub-plan A, sub-plan B must specify exactly what it expects to exist (e.g., "a `UserService` interface in `internal/service/user.go` with methods `Create(ctx, user) error` and `GetByID(ctx, id) (User, error)`").
-5. **Keep sub-plans small**: A good sub-plan should be completable in a single focused session. If it feels too big, split it further.
-6. **Plan documentation updates as a sub-plan**: If the feature affects documented domain concepts, architecture, or business processes, add a final sub-plan that updates those docs. This sub-plan is planned upfront — the planner already knows what's changing and can specify exactly which docs to update, which new docs to create, and which existing docs to use as structural patterns. This makes documentation updates human-reviewable alongside the rest of the plan. See [Documentation Sub-Plan](#documentation-sub-plan) for guidance on what belongs here vs. post-execution review.
+3. **Embed domain knowledge and cross-boundary contracts**: Each sub-plan must be self-contained — don't assume the agent has read the master plan or other sub-plans. What belongs in a sub-plan:
+   - **Domain knowledge** the agent can't derive from code: spec requirements, business rules, config formats, protocol details.
+   - **Cross-boundary contracts** — exact interface/type signatures that other sub-plans depend on. When sub-plans run in parallel, the consuming agent can't discover these at execution time, so the plan must specify them. For sequential dependencies, the later agent can read the earlier sub-plan's actual output — no pre-specified contract needed.
+
+   What does NOT belong: internal API design, function signatures within a package, private helpers, method bodies, step-by-step coding instructions, specific commands for testing/linting/building. These are the executing agent's decisions, guided by loaded skills and acceptance criteria.
+
+   **The test**: if changing something would break a *different* sub-plan's code, it's a contract and belongs in the plan. If it only affects code within this sub-plan, it's an internal the agent owns.
+4. **Keep sub-plans small**: A good sub-plan should be completable in a single focused session. If it feels too big, split it further.
+5. **Skills are the agent's authority, not the plan's**: List the skills each sub-plan requires, but do NOT replicate skill content into the plan. Skills define how to write code, how to test, how to lint, how to build — the executing agent loads them and follows them. The plan defines *what* to build and *why*; skills define *how*. If a skill says "use `task test`," the plan should not say "run `go test ./...`." If a skill mandates table-driven tests, the plan should not specify test structure — the agent will follow the skill. The plan's job is to provide architectural decisions, domain knowledge, and constraints that skills don't cover. This applies to both design skills (coding conventions, test patterns) and operational skills (running tests, linting, building). If the project has skills for testing, linting, or building, list them in the sub-plan's Required Skills. The sub-plan's verification/acceptance criteria should say "all tests pass, code builds, lints clean" — not specify raw commands. The executing agent uses the loaded operational skills to determine the correct commands.
+6. **Plan documentation updates as a sub-plan**: If the feature affects documented domain concepts, architecture, or business processes, add a final sub-plan that updates those docs. The planner knows which concepts, boundaries, and flows are changing — enough to specify which docs to update, which new docs to create, and which existing docs to use as structural patterns. Implementation details that affect docs will be resolved by the executing agent at documentation time. This makes documentation updates human-reviewable alongside the rest of the plan. See [Documentation Sub-Plan](#documentation-sub-plan) for guidance on what belongs here vs. post-execution review.
 
 Present the decomposition to the user for review before writing the actual plan files.
 
@@ -74,8 +81,14 @@ Only after Phases 1-3 are complete:
 
 1. **Create the plan directory and files**:
 
+   **Plan location depends on context:**
+   - Standalone feature: `.claude/plans/features/<feature-name>/`
+   - Feature belonging to an epic: `.claude/plans/epics/<epic-name>/<feature-name>/`
+
+   If the user references an epic plan or provides an epic context, use the epic path. Otherwise, default to standalone.
+
 ```
-.claude/plans/<feature-name>/
+<plan-directory>/
 ├── 00-master.md          # Master plan: overview, ordering, dependencies
 ├── 01-<first-task>.md    # Sub-plan 1
 ├── 02-<second-task>.md   # Sub-plan 2
@@ -83,33 +96,55 @@ Only after Phases 1-3 are complete:
 └── ...
 ```
 
-2. **Discover available local reviewers**: Read the project's `.claude/agents/` directory to find reviewer agents. Match each sub-plan to the most appropriate available reviewer based on the agent's description and the sub-plan's domain.
+2. **Discover available local reviewers**: Read the project's local agents directory to find reviewer agents. Match each sub-plan to the most appropriate available reviewer based on the agent's description and the sub-plan's domain.
 
 3. **Assign reviewers**: Write the chosen reviewer's name into each sub-plan's `## Reviewer` field.
 
-4. **Validate**: If no suitable local reviewer exists for a sub-plan's domain, **warn the user** with a specific recommendation (e.g., "sub-plan 03 covers database migrations but no reviewer with that expertise exists in `.claude/agents/`"). Ask how to proceed — do not skip the review silently.
+4. **Validate**: If no suitable local reviewer exists for a sub-plan's domain, **warn the user** with a specific recommendation (e.g., "sub-plan 03 covers database migrations but no reviewer with that expertise exists locally"). Ask how to proceed — do not skip the review silently.
 
-5. **Assign execution models**: For each sub-plan, assess complexity and recommend an execution model. This enables cost optimization by using cheaper models for straightforward work while reserving Opus for planning and review.
+5. **Assign execution models**: For each sub-plan, assess complexity and recommend an execution model. This enables cost optimization by using cheaper models for straightforward work while reserving the most capable model for planning and review.
 
-**Model Selection Decision Tree**:
+**Model Selection Decision Tree** — evaluate top-down, use the first tier that fits:
 
-| Use Haiku When | Use Sonnet When | Keep Opus For |
-|----------------|-----------------|---------------|
-| Following established patterns | Novel implementation approaches | Planning & decomposition |
-| CRUD operations | Complex business logic | Architecture review |
-| Straightforward integrations | Multiple edge cases to consider | Risk assessment |
-| Test writing for existing code | Integration of multiple systems | Synthesis & coordination |
-| Configuration changes | Performance-critical code | Multi-step reasoning |
-| Documentation updates | Security-sensitive operations | Ambiguous requirements |
-| File moves/renames | State machine implementations | |
-| Simple data transformations | Error handling with recovery logic | |
+1. **Most capable model** — use when the sub-plan involves:
+   - Ambiguous or underspecified requirements that need interpretation
+   - Multi-step reasoning across multiple systems or domains
+   - Novel architectural approaches with no existing pattern to follow
+   - Security-sensitive operations where mistakes are costly
+   - Documentation updates (see [Documentation Sub-Plan](#documentation-sub-plan))
 
-**Assessment criteria**:
-- **Haiku-appropriate**: Task follows clear patterns, has well-defined inputs/outputs, requires minimal decision-making
-- **Sonnet-appropriate**: Task requires some architectural thinking, handles moderate complexity, balances multiple concerns
-- **Opus-appropriate**: Rare for execution; only when sub-plan has residual ambiguity or requires creative problem-solving
+2. **Mid-tier model** — use when the sub-plan involves:
+   - Complex business logic with multiple edge cases
+   - Integration of multiple systems or packages
+   - Performance-critical code requiring careful trade-offs
+   - State machines or error handling with recovery logic
+
+3. **Cheapest model** — use when the sub-plan involves:
+   - Following established patterns already present in the codebase
+   - CRUD operations, straightforward integrations, configuration changes
+   - File moves/renames, simple data transformations
+   - Test writing for existing code with clear acceptance criteria
+
+When in doubt, prefer one tier up — the cost of a wrong model choice is rework, which is more expensive than the model difference.
 
 Document the recommendation in each sub-plan's `## Execution Model` field with a brief rationale.
+
+6. **Ensure worker agents exist for execution**: Each sub-plan's model + skills combination needs a matching worker agent definition. Worker agents are the **only reliable mechanism** for controlling which model a sub-agent runs on — model selection via natural language prompts or team configuration is unreliable.
+
+   **Search for existing workers**: Check both local and global agent directories. An agent is a match if its `model` field and `skills` list cover the sub-plan's requirements. A partial match (correct model but incomplete skills, or correct skills but different model) can serve as a basis for a new worker — clone and adapt rather than starting from scratch.
+
+   **Create missing workers**: If no matching worker exists, create one following this format:
+
+   - **Naming convention**: `{model-tier}-{domain}-worker.md` (e.g., `mid-go-worker.md`, `cheap-docs-worker.md`). Domain should reflect the skills baked in; model tier should match the decision tree terminology.
+   - **Placement**: Always local (project-level agents directory), since skills are typically project-local.
+   - **Frontmatter rules**:
+     - `description` MUST be a quoted single-line YAML string with `\n` escapes. Multiline descriptions break frontmatter parsing and the agent won't be discovered.
+     - `model`: set to the target model identifier — this is what actually controls the execution model.
+     - `skills`: list of skill names to preload into the agent's context at startup. The agent does not need to load skills manually.
+     - Do NOT set `tools` unless you need to restrict access — omit for full tool access.
+   - **System prompt**: Brief role description. The sub-plan provides all task context; the agent definition provides model, skills, and identity.
+
+   **Warn the user**: Newly created worker agents may require a session restart to be discovered. Note this when presenting the plan.
 
 ### Phase 5: Initial Review Loop
 
@@ -119,11 +154,11 @@ After plan creation and reviewer assignment, run an iterative review process **o
 
 The review loop uses two types of reviewer agents:
 
-**Global reviewers** (from `~/.claude/agents/`) — generic, project-agnostic:
+**Global reviewers** (from the global agents directory) — generic, project-agnostic:
 - **`plan-architect-reviewer`** — Evaluates the decomposition, boundaries between sub-plans, dependency graph, and whether the pieces will fit together when assembled.
 - **`plan-risk-reviewer`** — Identifies technical risks the planner missed: migration pitfalls, backward-compatibility landmines, missing rollback strategies, and sub-plans that may be harder or more complex than they appear.
 
-**Local reviewers** (from `.claude/agents/`) — project-specific, domain-specialized:
+**Local reviewers** (from the local agents directory) — project-specific, domain-specialized:
 - Each project defines its own reviewer agents tailored to the domains it works with (e.g., API, UI, database, infrastructure). These reviewers can preload project-specific skills via the `skills` frontmatter field for deep domain knowledge.
 - The planner does not assume naming conventions — it discovers available agents and matches them to sub-plans by reading their descriptions.
 
@@ -132,7 +167,7 @@ The review loop uses two types of reviewer agents:
 Review output is saved to `reviews/` within the plan directory, named `<plan-file>.<reviewer-type>.md`:
 
 ```
-.claude/plans/<feature-name>/reviews/
+<plan-directory>/reviews/
 ├── 00-master.architect.md      # Architecture review of master plan
 ├── 00-master.risk.md           # Risk review of master plan
 ├── 01-data-model.installer.md  # Installer review of sub-plan 01
@@ -148,6 +183,8 @@ This directory is ephemeral — already covered by the `.claude/plans/` ignore r
 
 Launch `plan-architect-reviewer` and `plan-risk-reviewer` against the master plan (in parallel — they are independent). Pass the plan directory path so they can read all plan files and cross-reference against the codebase. Each reviewer returns its findings as a response — write them to `reviews/00-master.architect.md` and `reviews/00-master.risk.md` respectively.
 
+Reviewers evaluate architecture, contracts, constraints, and acceptance criteria — not implementation details (which are no longer in the plan). If a reviewer suggests adding implementation specifics ("specify which encoder method to use"), reject the suggestion — that's the executing agent's domain.
+
 Incorporate findings into both the master plan and affected sub-plans.
 
 #### Step 2: Sub-Plan Review
@@ -155,6 +192,8 @@ Incorporate findings into both the master plan and affected sub-plans.
 After the master plan review is resolved, launch each sub-plan's assigned reviewer (from the `## Reviewer` field) against it. Sub-plan reviews can run in parallel — even when different sub-plans use different reviewers. Each reviewer returns its findings as a response — write them to `reviews/<plan-file>.<reviewer-type>.md`.
 
 **Output normalization**: If a local reviewer's output doesn't follow the standard format (Verdict, Critical Findings, Concerns, Observations), normalize it before incorporating. The planner interprets the reviewer's findings and translates them into actionable changes to the plan.
+
+**Planning-rule validation**: Before incorporating any reviewer finding, verify it does not contradict an explicit rule from this skill. Reviewer agents load domain-specific skills but not the planning skill itself — they may suggest changes (e.g., model downgrades, skipping review steps) that violate planning-level constraints. When a conflict exists, this skill's rules take precedence — note the reviewer's rationale in the review file but do not apply the change.
 
 Incorporate findings into the sub-plans. If a sub-plan review surfaces an issue that affects the master plan (e.g., a missed dependency, a boundary that needs to shift), update the master plan and re-run affected master plan reviewers.
 
@@ -166,7 +205,17 @@ The user may also request additional specialized reviewers (e.g., security, perf
 
 ### Phase 6: User Approval & Feedback
 
+Before presenting, run a final consistency check:
+
+1. **Model assignments** — verify each sub-plan's execution model matches the decision tree and any explicit rules
+2. **Skill conformance** — verify that reviewer-driven changes haven't introduced patterns that contradict required skills listed in each sub-plan
+3. **Cross-sub-plan prerequisites** — verify that every interface, type, or file referenced in a sub-plan's Prerequisites section is created by an earlier sub-plan in the dependency graph
+
+Fix any inconsistencies before proceeding.
+
 Present the fully reviewed plan (master + sub-plans) along with a summary of review findings and how they were addressed. Only mark as ready when the user explicitly approves.
+
+**Remind the user**: The plan intentionally omits implementation details — those are the executing agent's responsibility, guided by loaded skills. The user reviews architecture and constraints now; they review actual code after execution. This is by design, not a gap.
 
 #### Handling User Feedback
 
@@ -187,9 +236,7 @@ The user can always explicitly request a re-review regardless of change classifi
 
 ### Post-Execution: Component Documentation Review
 
-Domain, architecture, and process documentation updates are handled by the documentation sub-plan (Phase 3, step 6) — planned upfront and human-reviewed.
-
-**Component docs** are the exception: they describe implementation details (interfaces, internal behavior, code patterns) that may deviate from the plan during execution. For projects that have component documentation, run the `component-docs-reviewer` agent after all sub-plans complete to catch implementation-vs-plan drift in component docs.
+If this project has component documentation, run the `component-docs-reviewer` agent after all sub-plans complete to catch implementation-vs-plan drift in component docs.
 
 ## Plan Structures
 
@@ -219,6 +266,7 @@ The documentation sub-plan follows the standard sub-plan template but its implem
 - **Which new docs to create** — file paths, which existing doc to use as a structural pattern, what the new doc should cover
 - **Structural pattern matching** — if existing docs follow a pattern (e.g., process steps link to sub-process docs), new additions must follow it. Specify the pattern explicitly.
 - **Required skills**: List the documenting skills the executing agent needs (e.g., `documenting-business-processes` for new process docs, `documenting-domain` for new domain entries)
+- **Execution model**: Always assign the most capable available model. Documentation requires understanding the full feature context, making judgments about what to include, and producing clear prose — this is not rote work.
 
 ### When to Skip It
 
@@ -229,8 +277,8 @@ Skip the documentation sub-plan when:
 
 ## Rules (Non-Negotiable)
 
-- **Always respect model assignments during execution** — Sub-plan model assignments (Haiku, Sonnet, Opus) are deliberate cost-optimization decisions. When executing a plan, the assigned model MUST be used. If a sub-agent fails at the assigned model, diagnose and fix the failure (e.g., permission mode, tool access). Never silently fall back to executing the work on a more expensive model. If the issue cannot be resolved, stop and ask the user how to proceed.
-- **Use Agent Teams for multi-plan execution — ALWAYS** — When a plan has 2+ sub-plans, ALWAYS use Agent Teams (TeamCreate) to spawn teammates for execution. This is not optional. Agent Team teammates have their own independent context windows (preserving the lead's context budget) and have full tool access including file writes. Task sub-agents (spawned via the Task tool) cannot write files regardless of permission mode and consume the main context window. Never use Task sub-agents for plan execution. If Agent Teams are unavailable or fail, STOP and ask the user — do not silently execute sub-plans on the main agent.
+- **Always respect model assignments during execution** — Sub-plan model assignments are deliberate cost-optimization decisions. When executing a plan, the assigned model MUST be used. If a sub-agent fails at the assigned model, diagnose and fix the failure (e.g., permission mode, tool access). Never silently fall back to executing the work on a more expensive model. If the issue cannot be resolved, stop and ask the user how to proceed.
+- **Use worker agents for multi-plan execution** — When a plan has 2+ sub-plans, spawn each sub-plan's assigned worker agent (created in Phase 4 step 6). Worker agents are the **only reliable mechanism** for controlling sub-agent model selection — model requests via natural language prompts or team configuration are unreliable. Run independent sub-plans in parallel where the agent framework supports it. The lead coordinates handoffs between sequential sub-plans by relaying information (sub-agents cannot communicate with each other). If a worker agent fails, diagnose and retry — do not silently execute on the main agent or fall back to a more expensive model. If the issue cannot be resolved, STOP and ask the user.
 - **Reviewers return findings, planner writes files** — Reviewer agents (both global and local) return their findings as their Task response. They do not write files. The planner is responsible for writing review output to `reviews/<plan-file>.<reviewer-type>.md`.
 - **Never write a plan based on incomplete information**
 - **Never invent requirements the user didn't specify**
@@ -238,7 +286,7 @@ Skip the documentation sub-plan when:
 - **Each sub-plan must be self-contained** — embed context, don't reference other sub-plans
 - **Always list required skills in every sub-plan** — an executing agent without the right skills will produce subpar results or get stuck
 - **Always run the review loop before presenting to the user** — unreviewed plans are draft plans, not finished plans
-- **Save plans to `.claude/plans/<feature-name>/`** in the local repository — not to `~/.claude/`, and never with random/generated filenames
+- **Save plans to the correct location** — standalone features go to `.claude/plans/features/<feature-name>/`, epic features go to `.claude/plans/epics/<epic-name>/<feature-name>/`. Never save to `~/.claude/`, and never use random/generated filenames
 - **Ask for clarification even if it feels repetitive** — it's better than introducing garbage
 
 [master-plan-template]: references/master-plan-template.md

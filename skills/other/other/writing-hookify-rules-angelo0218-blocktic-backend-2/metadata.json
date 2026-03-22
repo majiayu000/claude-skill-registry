@@ -1,0 +1,17 @@
+{
+  "name": "writing-hookify-rules",
+  "repo": "Angelo0218/blocktic-backend",
+  "path": ".claude/skills/writing-hookify-rules/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/Angelo0218/blocktic-backend",
+  "dir_name": "writing-hookify-rules-angelo0218-blocktic-backend-2",
+  "downloaded_at": "2026-03-22T04:52:00.385398Z",
+  "author": "Angelo0218",
+  "source_url": "https://github.com/Angelo0218/blocktic-backend/blob/master/.claude/skills/writing-hookify-rules/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Angelo0218/blocktic-backend/blob/master/.claude/skills/writing-hookify-rules/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,337 +1,209 @@
 ---
 name: results-analysis
-description: This skill should be used when the user asks to "analyze experimental results", "generate results section", "statistical analysis of experiments", "compare model performance", "create results visualization", or mentions connecting experimental data to paper writing. Provides comprehensive guidance for analyzing ML/AI experimental results and generating paper-ready content.
-tags: [Research, Analysis, Statistics, Visualization, Paper Writing]
-version: 0.1.0
+description: This skill should be used when the user asks to "analyze experimental results", "run strict statistical analysis", "compare model performance", "generate scientific figures", "check significance", "do ablation analysis", or mentions interpreting experiment data with rigorous statistics and visualization. It focuses on strict analysis bundles, not Results-section prose.
+tags: [Research, Analysis, Statistics, Visualization, Scientific Reporting]
+version: 0.2.0
 ---
 
-# Results Analysis for ML/AI Research
+# Results Analysis
 
-A systematic experimental results analysis workflow connecting experimental data to paper writing.
+Run **strict, evidence-first experimental analysis** for ML/AI research.
 
-## Core Features
+Use this skill to produce a **strict analysis bundle**:
+- `analysis-report.md`
+- `stats-appendix.md`
+- `figure-catalog.md`
+- `figures/`
 
-This skill provides three core capabilities:
+Do **not** use this skill to draft a paper `Results` section or a full experiment wrap-up report. Those belong to `ml-paper-writing` or `results-report`.
 
-1. **Experimental Data Analysis** - Read and analyze experimental data in various formats
-2. **Statistical Validation** - Perform statistical significance tests and performance comparisons
-3. **Paper Content Generation** - Generate text and visualizations for the Results section
+## Core contract
 
-## When to Use
+### This skill is responsible for
+- validating experiment artifacts and comparison units,
+- running rigorous descriptive and inferential statistics,
+- generating **real scientific figures** when data/logs are available,
+- writing figure purposes, caption requirements, and interpretation checklists,
+- surfacing limits, blockers, and missing evidence explicitly.
 
-Use this skill when you need to:
-- Analyze experimental results (CSV, JSON, TensorBoard logs)
-- Generate the Results section of a paper
-- Compare performance across multiple models
-- Perform statistical significance tests
-- Create publication-quality visualizations
-- Validate the reliability of experimental results
+### This skill is not responsible for
+- paper-ready `Results` prose,
+- manuscript narrative polishing,
+- project-level experiment retrospectives.
 
-## Workflow
+If the user wants the complete post-experiment summary report, hand off to `results-report` after this bundle is ready.
 
-### Standard Analysis Pipeline
+## Non-negotiable quality bar
 
-```
-Data Loading → Data Validation → Statistical Analysis → Visualization → Writing → Quality Check
-```
+1. **Prefer real figures over figure specs.**
+   If the data can be read, generate real figures. Do not stop at “recommended visualization”.
+2. **Never fabricate statistics.**
+   If sample size, seeds, or raw metrics are missing, state the blocker clearly.
+3. **Report complete statistics.**
+   Do not report only best scores or only p-values.
+4. **Interpret every main figure.**
+   Every major figure must have purpose, caption requirements, and post-figure interpretation notes.
+5. **Separate evidence from prose.**
+   This skill produces analysis artifacts; it does not write manuscript sections.
 
-### Step 1: Data Loading and Validation
+## Standard workflow
 
-**Supported Data Formats:**
-- CSV files - Tabular data
-- JSON files - Structured results
-- TensorBoard logs - Training curves
-- Python pickle - Complex objects
+### 1. Inventory and validate artifacts
 
-**Data Validation Checks:**
-- Completeness check - Missing values, outliers
-- Consistency check - Data format, units
-- Reproducibility check - Random seeds, version info
+Start by identifying:
+- metric tables (`csv`, `json`, `tsv`, logs),
+- training curves and checkpoints,
+- seeds / repeated runs,
+- baselines, ablations, and comparison families,
+- evaluation protocol metadata.
 
-Select appropriate tools for data loading and preliminary validation based on data format.
+Validate:
+- metric direction (higher/lower is better),
+- unit of analysis (run, subject, fold, dataset, seed),
+- number of runs / seeds,
+- missing values or silent failures,
+- comparability across methods.
 
-### Step 2: Statistical Analysis
+If the comparison is not statistically valid, say so before continuing.
 
-**Basic Statistics:**
-- Mean
-- Standard Deviation
-- Standard Error
-- Confidence Interval
+### 2. Lock the comparison questions
 
-**Significance Tests:**
-- t-test - Two-group comparison
-- ANOVA - Multi-group comparison
-- Wilcoxon test - Non-parametric test
-- Bonferroni correction - Multiple comparison correction
+Before running statistics, define the exact comparison questions:
+- Which method is compared to which baseline?
+- What is the primary metric?
+- What is the repeated-measure unit?
+- Which ablation or robustness questions matter?
+- Which findings are decision-changing?
 
-Select appropriate statistical tests based on data characteristics.
+Do not mix unrelated comparisons into one undifferentiated table.
 
-**Key Principles:**
-- Report complete statistical information (mean ± std/SE)
-- Specify the test method and significance level used
-- Report p-values and effect sizes
-- Consider multiple comparison issues
+### 3. Run strict statistics
 
-See `references/statistical-methods.md` for the complete statistical methods guide.
+Always produce:
+- descriptive statistics: `mean ± std` when appropriate,
+- `95% CI` or another clearly justified interval,
+- run/seed counts,
+- significance tests with assumptions stated,
+- effect sizes,
+- multiple-comparison handling when several contrasts are reported.
 
-### Step 3: Model Performance Comparison
+Default expectation:
+- check parametric assumptions first,
+- use non-parametric fallback when assumptions fail,
+- state exactly what was tested and on what samples.
 
-**Comparison Dimensions:**
-- Accuracy/Performance metrics
-- Training time/Inference speed
-- Model complexity/Parameter count
-- Robustness/Generalization ability
+See:
+- `references/statistical-methods.md`
+- `references/statistical-reporting.md`
 
-**Comparison Methods:**
-- Baseline comparison - Compare with existing methods
-- Ablation study - Validate component contributions
-- Cross-dataset validation - Test generalization
+### 4. Generate real scientific figures
 
-Systematically compare performance across different methods, ensuring fair comparison.
+Produce actual figures whenever artifacts are available.
 
-### Step 4: Visualization
+Minimum expectation for a non-trivial analysis bundle:
+- **one main comparison figure**,
+- **one supporting figure** (training dynamics / ablation / breakdown / error analysis),
+- **one exact numeric summary table** in markdown.
 
-**Publication-Quality Visualization Requirements:**
-- Vector format (PDF/EPS)
-- Colorblind-friendly palette
-- Clear labels and legends
-- Appropriate error bars
-- Readable in black-and-white print
+Every main figure must define:
+- figure purpose,
+- plotted variables,
+- error bar meaning,
+- caption requirements,
+- interpretation checklist.
 
-**Common Chart Types:**
-- Line chart - Training curves, trend analysis
-- Bar chart - Performance comparison
-- Box plot - Distribution display
-- Heatmap - Correlation analysis
-- Scatter plot - Relationship display
+See:
+- `references/visualization-best-practices.md`
+- `references/figure-interpretation.md`
 
-Use appropriate visualization tools to generate publication-quality figures.
+### 5. Write analysis artifacts
 
-See `references/visualization-best-practices.md` for the visualization guide.
+#### `analysis-report.md`
+Summarize:
+- the analysis question,
+- key findings,
+- strongest supported comparisons,
+- main caveats,
+- what changed in the experimental understanding.
 
-### Step 5: Writing the Results Section
+#### `stats-appendix.md`
+Record:
+- descriptive statistics,
+- test choices,
+- assumptions checked,
+- effect sizes,
+- confidence intervals,
+- multiple comparison corrections,
+- explicit blockers and limitations.
 
-**Results Section Structure:**
+#### `figure-catalog.md`
+For each figure, record:
+- filename,
+- purpose,
+- data source,
+- caption draft requirements,
+- key observation,
+- interpretation checklist,
+- known caveats.
 
-```markdown
-## Results
+### 6. Final QA gate
 
-### Overview of Main Findings
-[1-2 paragraphs summarizing core results]
+Do not finish until all are true:
+- [ ] the primary comparison question is explicit,
+- [ ] sample size / seed count is stated,
+- [ ] inferential tests are justified,
+- [ ] effect sizes are reported for major contrasts,
+- [ ] real figures exist when data exists,
+- [ ] each figure has an interpretation note,
+- [ ] limitations and blockers are explicit,
+- [ ] no manuscript-style `Results` draft is included.
 
-### Experimental Setup
-[Brief description of experimental configuration; details in appendix]
+## Output structure
 
-### Performance Comparison
-[Comparison with baseline methods, including tables and figures]
-
-### Ablation Study
-[Validate contributions of each component]
-
-### Statistical Significance
-[Report statistical test results]
-
-### Qualitative Analysis
-[Case studies, visualization examples]
-```
-
-**Writing Principles:**
-- Clearly state the hypothesis each experiment validates
-- Guide readers to observe key phenomena: "Figure X shows..."
-- Report complete statistical information
-- Honestly report limitations
-
-See `references/results-writing-guide.md` for the complete writing guide.
-
-### Step 6: Quality Check
-
-**Checklist:**
-- [ ] All values include error bars/confidence intervals
-- [ ] Statistical test methods are specified
-- [ ] Figures are clear and readable (including black-and-white print)
-- [ ] Hyperparameter search ranges are reported
-- [ ] Computational resources are specified (GPU type, time)
-- [ ] Random seed settings are specified
-- [ ] Results are reproducible (code/data available)
-
-## Common Mistakes and Pitfalls
-
-### Statistical Errors
-
-❌ **Wrong approach:**
-- Reporting only the best results (cherry-picking)
-- Confusing standard deviation and standard error
-- Not reporting statistical significance
-- Not correcting for multiple comparisons
-
-✅ **Correct approach:**
-- Report all experimental results
-- Clearly specify whether standard deviation or standard error is used
-- Perform appropriate statistical tests
-- Use Bonferroni or similar correction methods
-
-### Visualization Errors
-
-❌ **Wrong approach:**
-- Using non-colorblind-friendly palettes
-- Y-axis not starting from 0 (exaggerating differences)
-- Missing error bars
-- Overly complex figures
-
-✅ **Correct approach:**
-- Use Okabe-Ito or Paul Tol palettes
-- Set reasonable axis ranges
-- Include error bars and confidence intervals
-- Keep figures clean and clear
-
-### Writing Errors
-
-❌ **Wrong approach:**
-- Over-interpreting results
-- Not describing experimental setup
-- Hiding negative results
-- Missing statistical information
-
-✅ **Correct approach:**
-- Objectively describe observed phenomena
-- Provide sufficient experimental details
-- Honestly report all results
-- Report complete statistical information
-
-See `references/common-pitfalls.md` for the complete error patterns and fixes.
-
-## Integration with Paper Writing
-
-### Collaboration with ml-paper-writing Skill
-
-This skill focuses on experimental results analysis and works in tandem with the `ml-paper-writing` skill:
-
-**results-analysis handles:**
-- Data analysis and statistical tests
-- Visualization generation
-- Results interpretation
-
-**ml-paper-writing handles:**
-- Complete paper structure
-- Citation management
-- Conference format requirements
-
-**Workflow Integration:**
-```
-Experiments complete → results-analysis analyzes
-    ↓
-Generate analysis report and visualizations
-    ↓
-ml-paper-writing integrates into paper
-    ↓
-Complete Results section
+```text
+analysis-output/
+├── analysis-report.md
+├── stats-appendix.md
+├── figure-catalog.md
+└── figures/
+    ├── figure-01-main-comparison.pdf
+    ├── figure-02-ablation.pdf
+    └── ...
 ```
 
-### Output Format
+## Figure interpretation rule
 
-After analysis, the following are generated:
+For every major figure, answer all three questions:
+1. **Why does this figure exist?**
+2. **What exactly should the reader notice?**
+3. **What does that observation change in our belief or next decision?**
 
-1. **Analysis Report** (`analysis-report.md`)
-   - Statistical summary
-   - Key findings
-   - Suggested figures
+If a figure cannot answer question 3, it is probably decorative rather than scientific.
 
-2. **Visualization Files** (`figures/`)
-   - PDF format figures
-   - Standalone figure captions
+## Failure mode policy
 
-3. **Results Draft** (`results-draft.md`)
-   - Text ready for direct use in the paper
-   - Includes figure references
+When inputs are incomplete, say so explicitly.
 
-## Examples and Templates
+Examples:
+- no seed-level data -> descriptive summary only; inferential claims blocked,
+- no comparable baseline outputs -> no significance claim,
+- no readable logs -> cannot generate dynamics figure,
+- too few runs -> effect size may be unstable; report this limitation.
 
-### Example Files
+Never replace missing evidence with confident prose.
 
-Refer to the `examples/` directory for complete examples:
+## Reference files
 
-- **`example-analysis-report.md`** - Complete analysis report example
-- **`example-results-section.md`** - Paper Results section example
+Load only what is needed:
+- `references/statistical-methods.md` - test selection and assumptions
+- `references/statistical-reporting.md` - minimum reporting standard
+- `references/visualization-best-practices.md` - publication-quality figure rules
+- `references/figure-interpretation.md` - how to explain figures with evidence
+- `references/analysis-depth.md` - move from observation to mechanism and decision
+- `references/common-pitfalls.md` - common analysis and reporting failures
 
-### Workflow Overview
+## Example files
 
-The complete analysis pipeline includes:
-
-1. **Data Loading** - Read results from experiment output files
-2. **Statistical Analysis** - Compute basic statistics and perform significance tests
-3. **Visualization** - Create publication-quality figures
-4. **Report Generation** - Integrate analysis results and visualizations
-
-See the guides in the `references/` directory for detailed methods and best practices.
-
-## Reference Resources
-
-### Detailed Guides
-
-- **`references/statistical-methods.md`** - Complete statistical methods guide
-- **`references/results-writing-guide.md`** - Results section writing standards
-- **`references/visualization-best-practices.md`** - Visualization best practices
-- **`references/common-pitfalls.md`** - Common errors and fixes
-
-### External Resources
-
-- [Nature Statistics Checklist](https://www.nature.com/documents/nr-reporting-summary-flat.pdf)
-- [Science Reproducibility Guidelines](https://www.science.org/content/page/science-journals-editorial-policies)
-- [NeurIPS Paper Checklist](https://neurips.cc/Conferences/2025/PaperInformation/PaperChecklist)
-
-## Best Practices Summary
-
-### Data Analysis
-
-✅ **Recommended:**
-- Run experiments multiple times (at least 3-5 runs)
-- Report complete statistical information
-- Use appropriate statistical tests
-- Check data completeness
-
-❌ **Prohibited:**
-- Cherry-picking best results
-- Ignoring statistical significance
-- Hiding negative results
-- Not reporting experimental setup
-
-### Visualization
-
-✅ **Recommended:**
-- Use vector format
-- Colorblind-friendly palettes
-- Include error bars
-- Clear labels
-
-❌ **Prohibited:**
-- Raster formats (PNG/JPG)
-- Misleading axis scales
-- Overly complex figures
-- Missing legends
-
-### Writing
-
-✅ **Recommended:**
-- Objectively describe results
-- Provide sufficient detail
-- Honestly report limitations
-- Guide reader attention
-
-❌ **Prohibited:**
-- Over-interpretation
-- Hiding details
-- Exaggerating effects
-- Vague descriptions
-
-## Summary
-
-This skill provides a systematic experimental results analysis workflow:
-
-1. **Data Loading and Validation** - Ensure data quality
-2. **Statistical Analysis** - Perform appropriate statistical tests
-3. **Model Comparison** - Systematic performance comparison
-4. **Visualization** - Publication-quality figures
-5. **Writing** - Results section content
-6. **Quality Check** - Ensure reproducibility
-
-Following these principles produces high-quality, reproducible experimental results analysis that meets top conference standards.
+- `examples/example-analysis-report.md`
+- `examples/example-stats-appendix.md`
+- `examples/example-figure-catalog.md`

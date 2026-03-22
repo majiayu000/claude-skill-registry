@@ -2,10 +2,10 @@
 name: create-feature
 version: 1.0.0
 description: '[Implementation] Scaffold a new feature with backend and frontend components'
-activation: user-invoked
+disable-model-invocation: false
 ---
 
-> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
 
 **Prerequisites:** **MUST READ** before executing:
 
@@ -31,6 +31,8 @@ activation: user-invoked
 - Build order: Domain → Application → API → Frontend
 - Verify with `dotnet build` and `nx build` after creation
 
+**Be skeptical. Apply critical thinking, sequential thinking. Every claim needs traced proof, confidence percentages (Idea should be more than 80%).**
+
 Create a new feature: $ARGUMENTS
 
 ## Steps:
@@ -50,7 +52,7 @@ Create a new feature: $ARGUMENTS
     - Angular components and services
     - DTOs and validation
 
-4. **Use Platform Patterns**
+4. **Use Project Patterns**
     - Reference patterns from CLAUDE.md
     - Use `.github/prompts/` templates for scaffolding:
         - `create-cqrs-command.prompt.md`

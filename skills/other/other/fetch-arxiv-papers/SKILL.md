@@ -1,22 +1,22 @@
 ---
 name: fetch-arxiv-papers
-version: "2.0.0"
-description: >
-  Fetch recent AI/ML research papers from arXiv RSS feeds and store them in memory.
-  Uses RSS tool for fetching and memory MCP for storage and deduplication.
+version: 2.0.0
+description: 'Fetch recent AI/ML research papers from arXiv RSS feeds and store them
+  in memory. Uses RSS tool for fetching and memory MCP for storage and deduplication.
+
+  '
 license: MIT
 allowed-tools:
-  - rss                    # Strands built-in RSS tool
-  - memory/add             # Store fetched papers
-  - memory/check_seen      # Check if paper already processed
-  - memory/mark_seen       # Mark paper as processed
+- rss
+- memory/add
+- memory/check_seen
+- memory/mark_seen
 metadata:
-  kubani:
-    domain: news
-    category: collection
-    requires_approval: false
-    confidence: 0.85
-    version: "2.0.0"
+  domain: news
+  category: collection
+  requires-approval: false
+  confidence: 0.85
+  mcp-servers: []
 ---
 
 # Fetch ArXiv Papers

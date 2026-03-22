@@ -1,0 +1,17 @@
+{
+  "name": "azure-data-box-family",
+  "repo": "MicrosoftDocs/Agent-Skills",
+  "path": "skills/azure-data-box-family/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MicrosoftDocs/Agent-Skills",
+  "dir_name": "azure-data-box-family",
+  "downloaded_at": "2026-03-22T05:50:54.419143Z",
+  "author": "MicrosoftDocs",
+  "source_url": "https://github.com/MicrosoftDocs/Agent-Skills/blob/main/skills/azure-data-box-family/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MicrosoftDocs/Agent-Skills/blob/main/skills/azure-data-box-family/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

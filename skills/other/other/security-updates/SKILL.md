@@ -49,6 +49,18 @@ west build -b nucleo_f401re --sysbuild samples/basic/blinky
 - **Heartbeat Confirmation**: Only confirm a new image after the application has successfully connected to its cloud backend.
 - **Version Integrity**: Enable version monotonicity to prevent accidental or malicious firmware downgrades.
 
+## Automation Tools
+- **[mcuboot_version_guard.py](scripts/mcuboot_version_guard.py)**: Enforce monotonic semantic version progression in update pipelines.
+
+## Examples & Templates
+- **[mcuboot_prj_fragment.conf](assets/mcuboot_prj_fragment.conf)**: Starter secure-boot + image-management config fragment.
+
+## Validation Checklist
+- [ ] Signed image verifies at boot and unsigned/tampered image is rejected.
+- [ ] DFU flow completes end-to-end and boots into the new slot.
+- [ ] Rollback behavior triggers correctly when image confirmation is withheld.
+- [ ] Key handling and version policy prevent downgrade and test-key usage in production configs.
+
 ## Resources
 
 - **[References](references/)**:
@@ -57,3 +69,7 @@ west build -b nucleo_f401re --sysbuild samples/basic/blinky
   - `dfu_protocols.md`: MCUmgr commands and cloud OTA.
   - `rollback_protection.md`: Swap mechanisms and confirmation code.
   - `crypto_basics.md`: mbedTLS and secure storage.
+- **[Scripts](scripts/)**:
+  - `mcuboot_version_guard.py`: Version monotonicity checker for release gates.
+- **[Assets](assets/)**:
+  - `mcuboot_prj_fragment.conf`: Secure-update config baseline.

@@ -2,8 +2,16 @@
   "name": "lens",
   "repo": "G1Joshi/Agent-Skills",
   "path": "skills/tools/lens/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/G1Joshi/Agent-Skills",
   "dir_name": "lens",
-  "downloaded_at": "2026-02-22T05:04:03.272493Z"
+  "downloaded_at": "2026-03-22T05:22:18.986686Z",
+  "author": "G1Joshi",
+  "source_url": "https://github.com/G1Joshi/Agent-Skills/blob/main/skills/tools/lens/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/G1Joshi/Agent-Skills/blob/main/skills/tools/lens/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

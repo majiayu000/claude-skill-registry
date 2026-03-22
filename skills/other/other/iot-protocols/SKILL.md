@@ -47,6 +47,18 @@ ot thread start
 - **Cloud-Mesh Gateways**: Implement Thread Border Routers to bridge local mesh traffic to Golioth or other cloud backends.
 - **Battery Optimization**: Use Sleepy End Device (SED) modes for Thread/LoRaWAN nodes to achieve multi-year battery life.
 
+## Automation Tools
+- **[dataset_kv_check.py](scripts/dataset_kv_check.py)**: Validate key/value provisioning datasets for required fields.
+
+## Examples & Templates
+- **[thread_dataset_template.env](assets/thread_dataset_template.env)**: Starter Thread dataset values for development.
+
+## Validation Checklist
+- [ ] OpenThread device forms or joins a mesh and maintains stable role/state.
+- [ ] Matter commissioning completes and cluster interactions succeed.
+- [ ] Cloud telemetry path (for example Golioth) delivers and receives expected state updates.
+- [ ] LoRaWAN join and uplink/downlink flow work with expected data rate behavior.
+
 ## Resources
 
 - **[References](references/)**:
@@ -54,3 +66,7 @@ ot thread start
   - `matter_devices.md`: Smart home integration with Matter.
   - `golioth_sdk.md`: Fleet management and real-time state sync.
   - `lorawan_basics.md`: Long-range sensor networking.
+- **[Scripts](scripts/)**:
+  - `dataset_kv_check.py`: Provisioning dataset checker.
+- **[Assets](assets/)**:
+  - `thread_dataset_template.env`: Thread dataset template.

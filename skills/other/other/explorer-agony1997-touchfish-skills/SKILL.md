@@ -76,7 +76,7 @@ You are the explore-leader (Opus). You command sub-agents to explore project str
 
 2. Dispatch all sub-agents in parallel (**max 10 sub-agents**):
    ```
-   Task(subagent_type: "Explore", model: "sonnet") x N
+   Agent(subagent_type: "Explore", model: "sonnet") x N
    All agents dispatched simultaneously, do not wait between dispatches
    ```
    If modules > 10, group related modules into single sub-agent scopes.
@@ -111,7 +111,7 @@ You are the explore-leader (Opus). You command sub-agents to explore project str
 
 Classify each issue into one of three categories:
 - **Factual discrepancy** (e.g., report A says Spring Boot 3.2, report B says 3.1)
-  -> Dispatch targeted sub-agent to verify: `Task(subagent_type: "Explore", model: "sonnet")`
+  -> Dispatch targeted sub-agent to verify: `Agent(subagent_type: "Explore", model: "sonnet")`
 - **Contextual uncertainty** (e.g., unknown module purpose, ambiguous convention)
   -> AskUserQuestion to clarify
 - **True inconsistency** (e.g., genuine config conflict in the project itself)

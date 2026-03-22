@@ -1,0 +1,17 @@
+{
+  "name": "kubectl-port-forward",
+  "repo": "bduffany/kpf",
+  "path": "skills/kubectl-port-forward/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/bduffany/kpf",
+  "dir_name": "kubectl-port-forward",
+  "downloaded_at": "2026-03-22T07:11:33.201865Z",
+  "author": "bduffany",
+  "source_url": "https://github.com/bduffany/kpf/blob/main/skills/kubectl-port-forward/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bduffany/kpf/blob/main/skills/kubectl-port-forward/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

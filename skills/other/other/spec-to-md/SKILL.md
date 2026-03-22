@@ -7,7 +7,7 @@ description: >
   to md、toMD、toMd、TOMD、specification, 規格文件, 需求文件, 需求轉換, 實作指示, 實作文件, 技術規格, 文件生成, 文件產生, 前端實作, 後端實作, convert, 轉換。
 ---
 
-<!-- version: 1.2.0 -->
+<!-- version: 1.1.1 -->
 
 # Spec-to-MD
 
@@ -26,7 +26,7 @@ Wait for complete answers before proceeding.
 
 ## Step 2: Read & Analyze (Parallel Subagents)
 
-Launch 3 parallel Task agents in a single message (each with `model: "opus"`, no `run_in_background`). Wait for all results.
+Launch 3 parallel sub-agents via the Agent tool in a single message (each with `model: "opus"`, no `run_in_background`). Wait for all results.
 
 **Agent A — Functional Specs**:
 - Read all functional spec files.
@@ -42,7 +42,7 @@ Launch 3 parallel Task agents in a single message (each with `model: "opus"`, no
 
 Only read user-specified files. Do not scan entire directories. If additional files needed, AskUserQuestion.
 
-> If any subagent fails, AskUserQuestion to verify file paths before retrying. If retry also fails, perform that agent's work in the main flow.
+> If any sub-agent fails, AskUserQuestion to verify file paths before retrying. If retry also fails, perform that agent's work in the main flow.
 
 ## Step 3: Confirm Understanding
 
@@ -152,6 +152,6 @@ Present final checklist:
 - 02/03 documents must be self-contained — no frequent cross-referencing to 01 needed.
 - Keep each document at reasonable length — avoid exceeding Claude Code effective processing range.
 - Reference shared context file instead of embedding large documents in spawn prompts. For files over ~200 lines, provide path and let teammate Read on demand.
-- Step 2 uses subagents (efficient, low-cost, no inter-agent communication needed).
+- Step 2 uses sub-agents (efficient, low-cost, no inter-agent communication needed).
 - Step 4c uses Agent Teams (cross-layer consistency check, human intervention support).
 - Teammate prompts include context file path + doc paths. Teammates Read files themselves at startup.

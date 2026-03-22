@@ -365,6 +365,7 @@ jk run start team/app --quiet
 ## Environment Variables
 
 - `JK_CONTEXT` — Override active context
+- `JK_QUIET` — Equivalent to `--quiet` (any value enables)
 
 ## Exit Codes
 

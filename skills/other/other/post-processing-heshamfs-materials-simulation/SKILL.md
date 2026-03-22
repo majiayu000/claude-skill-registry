@@ -1,7 +1,7 @@
 ---
 name: post-processing
 description: Extract, analyze, and visualize simulation output data. Use for field extraction, time series analysis, line profiles, statistical summaries, derived quantity computation, result comparison to references, and automated report generation from simulation results.
-allowed-tools: Read, Bash, Write, Grep, Glob
+allowed-tools: Read, Write, Grep, Glob
 ---
 
 # Post-Processing Skill
@@ -317,6 +317,18 @@ All scripts support `--json` flag for machine-readable output:
     "values": [[...], [...]]
 }
 ```
+
+## Security
+
+The post-processing scripts enforce the following safeguards when processing external simulation data:
+
+- **File size limits**: All JSON and CSV loading functions reject files exceeding 500 MB before parsing.
+- **JSON structure validation**: Loaded JSON files must have an object (dict) as root element.
+- **Field name validation**: User-provided field names are validated against `[a-zA-Z_][a-zA-Z0-9_.-]*` to prevent injection via crafted field names.
+- **Safe region parsing**: `statistical_analyzer.py` validates `--region` conditions against a strict regex allowlist (variable comparisons with numbers only). Never uses `eval()` or `exec()`.
+- **Point coordinate validation**: `profile_extractor.py` validates point coordinates as finite numbers with max 3 dimensions.
+- **Directory traversal limits**: `report_generator.py` caps directory listing at 10,000 entries.
+- **Reduced tool surface**: The skill's `allowed-tools` excludes `Bash` to prevent the agent from executing arbitrary commands when processing untrusted simulation output files.
 
 ## References
 

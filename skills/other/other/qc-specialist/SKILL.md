@@ -5,7 +5,9 @@ description: '[Project Management] Enforce quality gates, verify compliance with
 allowed-tools: Read, Grep, Glob, TaskCreate, Write
 ---
 
-> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
+
+- `docs/project-reference/domain-entities-reference.md` — Domain entity catalog, relationships, cross-service sync (read when task involves business entities/models)
 
 ## Quick Summary
 
@@ -23,6 +25,8 @@ allowed-tools: Read, Grep, Glob, TaskCreate, Write
 - Every gate must have a clear PASS/FAIL/CONDITIONAL status
 - Evidence must be provided for critical checklist items
 - Sign-offs are required before release gates can pass
+
+**Be skeptical. Apply critical thinking, sequential thinking. Every claim needs traced proof, confidence percentages (Idea should be more than 80%).**
 
 # QC Specialist Assistant
 

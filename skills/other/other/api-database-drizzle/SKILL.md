@@ -46,11 +46,11 @@ description: Drizzle ORM, queries, migrations
 
 - Serverless functions needing type-safe database queries
 - Schema-first development with migrations
-- Building Next.js apps with API routes
+- Building server-rendered apps with API routes
 
 **When NOT to use:**
 
-- Simple apps using Next.js server actions directly (overhead not justified)
+- Simple apps using framework server actions directly (overhead not justified)
 - Apps needing traditional TCP connection pooling only (use standard Postgres clients)
 - Non-TypeScript projects (lose primary benefit of type safety)
 - Edge functions requiring WebSocket connections (not supported in edge runtime)
@@ -81,11 +81,11 @@ description: Drizzle ORM, queries, migrations
 - Serverless functions (Vercel, Cloudflare Workers, Edge)
 - Need type-safe database queries
 - Want schema-first development with migrations
-- Building Next.js apps with API routes
+- Building server-rendered apps with API routes
 
 **When NOT to use:**
 
-- Simple apps using Next.js server actions directly
+- Simple apps using framework server actions directly
 - Apps needing traditional TCP connection pooling only
 - Non-TypeScript projects
 
@@ -165,7 +165,6 @@ import {
   integer,
   pgEnum,
 } from "drizzle-orm/pg-core";
-import { relations } from "drizzle-orm";
 
 // Define enums for constrained values
 export const employmentTypeEnum = pgEnum("employment_type", [
@@ -274,6 +273,31 @@ The following patterns are documented with full examples in [examples/](examples
 - **Database Seeding** - Development data, safe cleanup - see [seeding.md](examples/seeding.md)
 
 Performance optimization (indexes, prepared statements, pagination) is documented in [reference.md](reference.md#performance-optimization).
+
+---
+
+<red_flags>
+
+## RED FLAGS
+
+- ❌ **Using `db` instead of `tx` inside transactions** - Bypasses transaction context, breaking atomicity
+- ❌ **N+1 queries with relations** - Use `.with()` to fetch in one query
+- ❌ **Not setting `casing: 'snake_case'`** - Field name mismatches between JS and SQL
+- ❌ **Using v1 `relations()` per-table syntax** - Deprecated, use `defineRelations()`
+- ❌ **Using callback-based `where`/`orderBy`** - v1 syntax deprecated, use object-based syntax
+- ⚠️ Queries without soft delete checks (`isNull(deletedAt)`)
+- ⚠️ No pagination limits on list queries
+
+**Gotchas & Edge Cases:**
+
+- Neon HTTP has 30-second query timeout - long queries need WebSocket
+- Prepared statements created outside transactions cannot be used inside transactions
+- `enableRLS()` deprecated in v1.0.0-beta.1 - use `pgTable.withRLS()` instead
+- Validator packages consolidated: `drizzle-zod` is now `drizzle-orm/zod`
+
+For the complete list of anti-patterns and gotchas, see [reference.md](reference.md#red-flags).
+
+</red_flags>
 
 ---
 

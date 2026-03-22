@@ -47,9 +47,9 @@ Each field should have a comment capturing what's not obvious from the type or n
 
 ### "Comment Repeats Code" Test
 
-> "Could someone who has never seen the code write the comment just by looking at the code next to the comment? If the answer is yes, then the comment doesn't make the code any easier to understand." — John Ousterhout, _A Philosophy of Software Design_
+Useful comments say things the code does not. If another developer could write the same comment just by reading the surrounding code, it doesn't need to exist and should be deleted.
 
-If yes, delete it. **Use different words from those in the entity name.** A comment for `fetchUserProfile` that says "Fetches the user profile" contributes nothing.
+Rephrasing an entity name doesn't cut it. A comment about `fetchUserProfile` that says "Fetches the user profile" is still noise.
 
 ### Hard-to-Describe Signal
 

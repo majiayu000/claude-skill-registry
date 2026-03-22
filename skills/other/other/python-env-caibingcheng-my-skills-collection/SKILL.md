@@ -1,6 +1,6 @@
 ---
 name: python_env
-description: 激活、创建和管理 Python 虚拟环境（venv/virtualenv）；用于运行脚本、安装依赖或为测试/CI 准备隔离环境。触发条件：需要在受控环境中运行 Python、安装依赖、或准备可复现的运行时。
+description: USE WHEN you need to create, activate, or manage Python virtual environments (venv/virtualenv); install dependencies in isolation; run scripts or tests in controlled environments; or prepare reproducible runtime environments for CI/CD.
 ---
 
 ## 概要（精简）

@@ -1,0 +1,17 @@
+{
+  "name": "use-case-pattern-builder",
+  "repo": "AdobeDocs/blueprints-learn.fr-FR",
+  "path": ".claude/skills/use-case-pattern-builder/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/AdobeDocs/blueprints-learn.fr-FR",
+  "dir_name": "use-case-pattern-builder",
+  "downloaded_at": "2026-03-22T04:47:38.183812Z",
+  "author": "AdobeDocs",
+  "source_url": "https://github.com/AdobeDocs/blueprints-learn.fr-FR/blob/main/.claude/skills/use-case-pattern-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AdobeDocs/blueprints-learn.fr-FR/blob/main/.claude/skills/use-case-pattern-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

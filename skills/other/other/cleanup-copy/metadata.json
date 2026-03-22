@@ -1,0 +1,17 @@
+{
+  "name": "cleanup-copy",
+  "repo": "corbat-tech/coco",
+  "path": ".claude/skills/cleanup-copy/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/corbat-tech/coco",
+  "dir_name": "cleanup-copy",
+  "downloaded_at": "2026-03-22T07:34:01.970281Z",
+  "author": "corbat-tech",
+  "source_url": "https://github.com/corbat-tech/coco/blob/main/.claude/skills/cleanup-copy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/corbat-tech/coco/blob/main/.claude/skills/cleanup-copy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -29,8 +29,6 @@ description: Playwright E2E, Vitest, React Testing Library - E2E for user flows,
 
 ---
 
-this is a new change
-
 **Auto-detection:** E2E testing, Playwright, test-driven development (Tester), Vitest, React Testing Library, test organization
 
 **When to use:**
@@ -46,7 +44,6 @@ this is a new change
 - Unit testing hooks with side effects (use E2E tests or integration tests)
 - Testing third-party library behavior (library already has tests)
 - Testing TypeScript compile-time guarantees (TypeScript already enforces)
-- Creating stories for app-specific features (stories are for design system only)
 
 **Key patterns covered:**
 
@@ -57,11 +54,10 @@ this is a new change
 
 **Detailed Resources:**
 
-- For E2E and unit test examples, see [examples/core.md](examples/core.md)
-- For integration test examples, see [examples/integration.md](examples/integration.md)
-- For anti-patterns (what NOT to test), see [examples/anti-patterns.md](examples/anti-patterns.md)
-- For Ladle story examples, see [examples/ladle-stories.md](examples/ladle-stories.md)
-- For decision frameworks, see [reference.md](reference.md)
+- [examples/core.md](examples/core.md) - E2E and unit test examples
+- [examples/integration.md](examples/integration.md) - Integration tests with network-level mocking
+- [examples/anti-patterns.md](examples/anti-patterns.md) - What NOT to test
+- [reference.md](reference.md) - Vitest v3/v4 migration notes, decision frameworks
 
 ---
 
@@ -99,7 +95,7 @@ React Testing Library + network-level mocking useful for component behavior when
 **When NOT to use E2E tests:**
 
 - Pure utility functions (use unit tests instead)
-- Individual component variants in isolation (use Ladle stories for documentation)
+- Individual component variants in isolation (use story files for documentation)
 
 **When to use unit tests:**
 
@@ -126,8 +122,6 @@ React Testing Library + network-level mocking useful for component behavior when
 
 E2E tests verify complete user workflows through the entire application stack, providing the highest confidence that features work correctly.
 
-**Framework:** Playwright (recommended) or Cypress
-
 **What to test end-to-end:**
 
 - ALL critical user flows (login, checkout, data entry)
@@ -140,7 +134,7 @@ E2E tests verify complete user workflows through the entire application stack, p
 **What NOT to test end-to-end:**
 
 - Pure utility functions (use unit tests)
-- Individual component variants in isolation (not user-facing)
+- Individual component variants in isolation (use story files for visual documentation)
 
 **Test Organization:**
 
@@ -215,38 +209,37 @@ Co-locate tests with code in feature-based structure. Tests live next to what th
 **Direct Co-location (Recommended):**
 
 ```
-apps/client-react/src/
+src/
   features/
     auth/
       components/
-        LoginForm.tsx
-        LoginForm.test.tsx        # Test next to component
+        login-form.tsx
+        login-form.test.tsx        # Test next to component
       hooks/
-        useAuth.ts
-        useAuth.test.ts           # Test next to hook
+        use-auth.ts
+        use-auth.test.ts           # Test next to hook
 ```
 
 **Alternative: `__tests__/` Subdirectories:**
 
 ```
-apps/client-react/src/features/auth/
+src/features/auth/
   components/
-    LoginForm.tsx
+    login-form.tsx
     __tests__/
-      LoginForm.test.tsx
+      login-form.test.tsx
 ```
 
 **E2E Test Organization:**
 
 ```
-apps/client-react/
-  tests/
-    e2e/
-      auth/
-        login-flow.spec.ts
-        register-flow.spec.ts
-      checkout/
-        checkout-flow.spec.ts
+tests/
+  e2e/
+    auth/
+      login-flow.spec.ts
+      register-flow.spec.ts
+    checkout/
+      checkout-flow.spec.ts
 ```
 
 **File Naming Convention:**
@@ -256,33 +249,38 @@ apps/client-react/
 
 **Choose one pattern and be consistent across the codebase.**
 
+</patterns>
+
 ---
 
-### Pattern 5: Component Documentation with Ladle
+<red_flags>
 
-Design system components MUST have `.stories.tsx` files. App-specific features do NOT need stories.
+## RED FLAGS
 
-**Where Stories are REQUIRED:**
+**High Priority Issues:**
 
-```
-packages/ui/src/
-  primitives/     # Stories required
-  components/     # Stories required
-  patterns/       # Stories required
-  templates/      # Stories required
-```
+- No E2E tests for critical user flows - production bugs reach users before you discover them
+- Unit testing React components - wastes time testing implementation details, breaks on refactoring
+- Module-level mocking (`vi.mock`) instead of network-level - breaks when import structure changes, doesn't test serialization
+- Only testing happy paths - error states go untested until users report them
 
-**Where Stories are OPTIONAL:**
+**Medium Priority Issues:**
 
-```
-apps/client-next/
-apps/client-react/
-  # App-specific features don't need stories
-```
+- Mocks that don't match real API - tests pass but production fails because mocks drifted
+- Complex mocking setup - sign you should use E2E tests instead of fighting with mocks
+- Running E2E tests only in CI - need local runs too for fast feedback
 
-See [examples/ladle-stories.md](examples/ladle-stories.md) for Ladle story examples.
+**Gotchas & Edge Cases:**
 
-</patterns>
+- E2E tests don't show up in coverage metrics (that's okay - they provide more value than coverage numbers suggest)
+- Playwright `toBeVisible()` waits for element but `toBeInTheDocument()` doesn't - use visibility checks to avoid flaky tests
+- Network mock handlers are typically global - reset handlers after each test to prevent pollution
+- Async React updates require `waitFor()` or `findBy*` queries - `getBy*` immediately will cause flaky failures
+- Files named `*.test.ts` run with Vitest, `*.spec.ts` with Playwright - mixing causes wrong runner
+- **Vitest v3+:** Test options must be second argument: `test("name", { timeout: 10_000 }, () => {})` NOT `test("name", () => {}, { timeout: 10_000 })`
+- **Vitest v4:** Multiple mock behavior changes (getMockName, restoreAllMocks, automocked getters) - see [reference.md](reference.md) for full v4 migration notes
+
+</red_flags>
 
 ---
 

@@ -1,5 +1,6 @@
 ---
-name: "AI Marketing Agent — SEO, Leads & Social"
+name: citedy-seo-agent
+title: "SEO Content Autopilot by Citedy"
 description: >
   Full-stack AI marketing toolkit — scout X/Twitter and Reddit for trending
   topics, discover and deep-analyze competitors, find content gaps, publish
@@ -8,9 +9,9 @@ description: >
   Threads, Instagram, Instagram Reels, YouTube Shorts, and Shopify, generate lead magnets (checklists, swipe files,
   frameworks), ingest any URL (YouTube videos, web articles, PDFs, audio files) into structured
   content, ultra-cheap turbo articles from 2 credits, generate short-form
-  AI avatar videos with subtitles, and run fully automated content autopilot.
+  AI UGC viral videos with subtitles, and run fully automated content autopilot.
   Powered by Citedy.
-version: "3.0.0"
+version: "3.2.0"
 author: Citedy
 tags:
   - seo
@@ -65,7 +66,7 @@ Use this skill when the user asks to:
 - Set up automated content sessions (cron-based article generation)
 - Generate lead magnets (checklists, swipe files, frameworks) for lead capture
 - Ingest any URL (YouTube video, web article) into structured content with summary and metadata
-- Generate short-form AI avatar videos with subtitles (script, avatar, video, merge)
+- Generate short-form AI UGC viral videos with subtitles (script, avatar, video, merge)
 - Register webhook endpoints to receive real-time event notifications (article published, ingestion complete, etc.)
 - List or delete webhook endpoints, view webhook delivery history
 - List published articles or check agent balance, status, and rate limits
@@ -252,7 +253,7 @@ Reply to user:
 ## Limitations
 
 - The agent cannot perform off-page SEO tasks such as backlink building, link outreach, or Google Business Profile management.
-- Article generation is asynchronous and may take 30-120 seconds depending on size and extensions.
+- Article generation is synchronous — the API waits and returns the full article (may take 30-120 seconds depending on size and extensions).
 - Only one active autopilot session is allowed per tenant at a time.
 - Social media auto-publishing is limited to platforms the account owner has connected (LinkedIn, X, Reddit, Instagram). Other platforms return adaptation text only.
 - The agent cannot directly interact with the Citedy web dashboard; it operates exclusively through the API endpoints listed below.
@@ -273,7 +274,7 @@ POST /api/agent/scout/x
 ```
 
 - `fast` = 35 credits, `ultimate` = 70 credits
-- **Async** — returns `{ run_id, status: "processing", credits_used }`. Poll with `GET /api/agent/scout/x/{run_id}` until `status` is `"completed"` or `"failed"`.
+- **Async** — returns `{ run_id, status: "processing", credits_used }`. Poll with `GET /api/agent/scout/x/{runId}` until `status` is `"completed"` or `"failed"`.
 - Rate: 10/hour (combined X + Reddit)
 
 ### Scout Reddit
@@ -284,7 +285,7 @@ POST /api/agent/scout/reddit
 ```
 
 - 30 credits (fast mode only)
-- **Async** — returns `{ run_id, status: "processing", credits_used }`. Poll with `GET /api/agent/scout/reddit/{run_id}`.
+- **Async** — returns `{ run_id, status: "processing", credits_used }`. Poll with `GET /api/agent/scout/reddit/{runId}`.
 - Rate: 10/hour (combined X + Reddit)
 
 ### Get Content Gaps
@@ -353,7 +354,8 @@ POST /api/agent/autopilot
   "persona": "musk",
   "illustrations": true,
   "audio": true,
-  "disable_competition": false
+  "disable_competition": false,
+  "auto_publish": true
 }
 ```
 
@@ -371,10 +373,13 @@ POST /api/agent/autopilot
 - `illustrations` (bool, default false) — AI-generated images injected into article (disabled in turbo mode)
 - `audio` (bool, default false) — AI voice-over narration (disabled in turbo mode)
 - `disable_competition` (bool, default false) — skip SEO competition analysis, saves 8 credits
+- `auto_publish` (bool, optional) — publish article immediately after generation. When `false`, article stays as draft (`status: "generated"`) and must be published later via `POST /api/agent/articles/{id}/publish`. Default uses tenant setting (configurable in dashboard → Agent Settings). If no tenant setting, defaults to `true`.
 
 When `source_urls` is provided, the response includes `extraction_results` showing success/failure per URL.
 
-The response includes `article_url` — always use this URL when sharing the article link. Do NOT construct URLs manually. Articles are auto-published and the URL works immediately.
+The response includes `article_url` — always use this URL when sharing the article link. Do NOT construct URLs manually.
+
+When `auto_publish` is `true` (default), articles are auto-published and the URL works immediately. When `false`, the article is saved as a draft — the response returns `status: "generated"` instead of `"published"`. Use `POST /api/agent/articles/{id}/publish` to publish it later.
 
 `/api/agent/me` also returns `blog_url` — the tenant's blog root URL.
 
@@ -485,6 +490,45 @@ Response:
   ],
   "total_credits": 10,
   "ref_link_appended": true
+}
+```
+
+### Direct Publish (Publish as-is)
+
+Publish article content directly to social platforms without AI adaptation. 0 credits.
+
+```http
+POST /api/agent/publish
+{
+  "action": "publish_raw",
+  "articleId": "uuid-of-article",
+  "platform": "linkedin",
+  "accountId": "uuid-of-social-account"
+}
+```
+
+**Required:** `action` ("publish_raw"), `articleId` (UUID), `platform`, `accountId` (UUID)
+
+**Platforms:** `linkedin`, `facebook`, `x_article`, `reddit`, `instagram`
+
+**Optional:**
+
+- `subreddit` (string) — required when platform is `reddit`
+
+**Notes:**
+
+- Instagram requires the article to contain at least one image
+- The article markdown is converted to platform-native format and posted as-is
+- No AI rewriting, no credit charge
+
+Response:
+
+```json
+{
+  "success": true,
+  "action": "publish_raw",
+  "adaptationId": "uuid",
+  "platformPostId": "urn:li:share:456"
 }
 ```
 
@@ -664,7 +708,7 @@ PATCH /api/agent/lead-magnets/{id}
 
 ### Short-Form Video (Shorts)
 
-Generate AI avatar videos with subtitles — from script to finished video.
+Generate AI UGC viral videos with subtitles — from script to finished video.
 
 **Recommended flow:**
 
@@ -783,7 +827,7 @@ POST /api/agent/scan
 ```
 
 - `query` — search query (max 500 chars)
-- `mode` — `fast` (2cr, X only) | `deep` (4cr, X + web) | `ultra` (6cr, + HackerNews) | `ultra+` (8cr, + Reddit). If omitted, derived from tenant's `scanSources` settings
+- `mode` — `fast` (2 credits, X only) | `deep` (4 credits, X + web) | `ultra` (6 credits, + HackerNews) | `ultra+` (8 credits, + Reddit). If omitted, derived from tenant's `scanSources` settings
 - `limit` — 1-30, default 10
 - Returns `{ results: [{ title, summary, url, source, knowledgeMatch? }], mode, cost, warnings? }`
 - If tenant has product knowledge docs, results include `knowledgeMatch` with similarity scores
@@ -801,7 +845,7 @@ POST /api/agent/post
 }
 ```
 
-- 0 credits billed (2cr balance check required)
+- 2 credits billed per request (charged on create)
 - `topic` — required, max 500 chars
 - `platforms` — optional, from settings default. Values: `linkedin`, `x_article`, `x_thread`, `facebook`, `reddit`, `threads`, `instagram`, `instagram_reels`, `youtube_shorts`
 - `tone` — optional, from settings default
@@ -822,7 +866,7 @@ POST /api/agent/publish
 }
 ```
 
-- 0 credits
+- 0 credits (5 for `instagram_reels`)
 - `action` — `now` (publish immediately) | `schedule` (requires `scheduledAt`) | `cancel` (cancel scheduled)
 - `platform` — `facebook` | `linkedin` | `x_article` | `x_thread` | `reddit` | `threads` | `instagram`
 - `accountId` — social account UUID (from `/me` connected_platforms)
@@ -926,7 +970,7 @@ GET /api/agent/schedule/gaps?days=7&timezone=America/New_York
 GET /api/agent/schedule/suggest
 ```
 
-- 0 credits. Region-based recommendations or custom slots from settings.
+- 0 credits. Region-based recommendations or custom slots from settings. **REST only — not an MCP tool.**
 
 ### Image Style
 
@@ -953,6 +997,21 @@ GET /api/agent/health
 
 - 0 credits. Public (no auth). Returns `{ status, checks: { redis, supabase }, timestamp }`.
 
+### Operational Status (Recommended for `/status`)
+
+```http
+GET /api/agent/status
+```
+
+- 0 credits. Auth required.
+- Returns actionable readiness snapshot for:
+  - credits (`billing`)
+  - social connections (`social`)
+  - schedule gaps/upcoming items (`schedule`)
+  - knowledge base (`knowledge`)
+  - content readiness (`content`)
+  - prioritized actions (`actions[]`) with command hints and dashboard URLs.
+
 ### List Articles
 
 ```http
@@ -960,6 +1019,44 @@ GET /api/agent/articles?limit=50&offset=0&status=published
 ```
 
 - 0 credits. Returns `{ articles: [...], total_articles }`.
+- Filter by `status`: `published`, `generated` (draft). Omit to get all.
+
+### Publish Article
+
+```http
+POST /api/agent/articles/{id}/publish
+```
+
+- 0 credits. Publishes a draft article (`status: "generated"` → `"published"`).
+- Returns `{ article_id, status: "publishing", message }`.
+- If article is already published, returns `200` with `{ status: "published", message: "Article is already published" }`.
+- Only works on articles with `status: "generated"`. Other statuses return `409 Conflict`.
+- Fires `article.published` webhook event.
+
+### Unpublish Article
+
+```http
+PATCH /api/agent/articles/{id}
+Content-Type: application/json
+
+{ "action": "unpublish" }
+```
+
+- 0 credits. Unpublishes a published article (`status: "published"` → `"generated"`).
+- Returns `{ article_id, status: "generated", message }`.
+- Only works on articles with `status: "published"`. Other statuses return `409 Conflict`.
+- Fires `article.unpublished` webhook event.
+
+### Delete Article
+
+```http
+DELETE /api/agent/articles/{id}
+```
+
+- 0 credits. Permanently deletes an article and its associated storage files (images, audio).
+- Returns `{ article_id, message: "Article deleted" }`.
+- This action is irreversible. Credits are NOT refunded.
+- Fires `article.deleted` webhook event.
 
 ### Check Status / Heartbeat
 
@@ -995,55 +1092,59 @@ Use `connected_platforms` to decide which platforms to pass to `/api/agent/adapt
 
 ## API Quick Reference
 
-| Endpoint                          | Method | Cost                                 |
-| --------------------------------- | ------ | ------------------------------------ |
-| `/api/agent/register`             | POST   | free (public)                        |
-| `/api/agent/health`               | GET    | free (public)                        |
-| `/api/agent/me`                   | GET    | free                                 |
-| `/api/agent/rotate-key`           | POST   | free (1/hour)                        |
-| `/api/agent/settings`             | GET    | free                                 |
-| `/api/agent/settings`             | PUT    | free                                 |
-| `/api/agent/image-style`          | PUT    | free                                 |
-| `/api/agent/personas`             | GET    | free                                 |
-| `/api/agent/articles`             | GET    | free                                 |
-| `/api/agent/scan`                 | POST   | 2-8 credits (by mode)                |
-| `/api/agent/post`                 | POST   | free (2cr balance check)             |
-| `/api/agent/autopilot`            | POST   | 2-139 credits                        |
-| `/api/agent/adapt`                | POST   | ~5 credits/platform                  |
-| `/api/agent/publish`              | POST   | free (now/schedule/cancel)           |
-| `/api/agent/session`              | POST   | free (articles billed on generation) |
-| `/api/agent/schedule`             | GET    | free                                 |
-| `/api/agent/schedule/gaps`        | GET    | free                                 |
-| `/api/agent/schedule/suggest`     | GET    | free                                 |
-| `/api/agent/scout/x`              | POST   | 35-70 credits                        |
-| `/api/agent/scout/x/{runId}`      | GET    | free (poll)                          |
-| `/api/agent/scout/reddit`         | POST   | 30 credits                           |
-| `/api/agent/scout/reddit/{runId}` | GET    | free (poll)                          |
-| `/api/agent/gaps`                 | GET    | free                                 |
-| `/api/agent/gaps/generate`        | POST   | 40 credits                           |
-| `/api/agent/competitors/discover` | POST   | 20 credits                           |
-| `/api/agent/competitors/scout`    | POST   | 25-50 credits                        |
-| `/api/agent/products`             | POST   | 1 credit                             |
-| `/api/agent/products`             | GET    | free                                 |
-| `/api/agent/products/{id}`        | DELETE | free                                 |
-| `/api/agent/products/search`      | POST   | free                                 |
-| `/api/agent/ingest`               | POST   | 1-55 credits                         |
-| `/api/agent/ingest`               | GET    | free                                 |
-| `/api/agent/ingest/{id}`          | GET    | free (poll)                          |
-| `/api/agent/ingest/{id}/content`  | GET    | free                                 |
-| `/api/agent/ingest/batch`         | POST   | 1-55 credits per URL                 |
-| `/api/agent/lead-magnets`         | POST   | 30-100 credits                       |
-| `/api/agent/lead-magnets/{id}`    | GET    | free (poll)                          |
-| `/api/agent/lead-magnets/{id}`    | PATCH  | free                                 |
-| `/api/agent/shorts/script`        | POST   | 1 credit                             |
-| `/api/agent/shorts/avatar`        | POST   | 3 credits                            |
-| `/api/agent/shorts`               | POST   | 60-185 credits (by duration)         |
-| `/api/agent/shorts/{id}`          | GET    | free (poll)                          |
-| `/api/agent/shorts/merge`         | POST   | 5 credits                            |
-| `/api/agent/webhooks`             | POST   | free                                 |
-| `/api/agent/webhooks`             | GET    | free                                 |
-| `/api/agent/webhooks/{id}`        | DELETE | free                                 |
-| `/api/agent/webhooks/deliveries`  | GET    | free                                 |
+| Endpoint                           | Method | Cost                                 |
+| ---------------------------------- | ------ | ------------------------------------ |
+| `/api/agent/register`              | POST   | free (public)                        |
+| `/api/agent/health`                | GET    | free (public)                        |
+| `/api/agent/status`                | GET    | free                                 |
+| `/api/agent/me`                    | GET    | free                                 |
+| `/api/agent/rotate-key`            | POST   | free (1/hour)                        |
+| `/api/agent/settings`              | GET    | free                                 |
+| `/api/agent/settings`              | PUT    | free                                 |
+| `/api/agent/image-style`           | PUT    | free                                 |
+| `/api/agent/personas`              | GET    | free                                 |
+| `/api/agent/articles`              | GET    | free                                 |
+| `/api/agent/articles/{id}/publish` | POST   | free                                 |
+| `/api/agent/articles/{id}`         | PATCH  | free (unpublish)                     |
+| `/api/agent/articles/{id}`         | DELETE | free                                 |
+| `/api/agent/scan`                  | POST   | 2-8 credits (by mode)                |
+| `/api/agent/post`                  | POST   | 2 credits                            |
+| `/api/agent/autopilot`             | POST   | 2-139 credits                        |
+| `/api/agent/adapt`                 | POST   | ~5 credits/platform                  |
+| `/api/agent/publish`               | POST   | 0 credits (5 for `instagram_reels`)  |
+| `/api/agent/session`               | POST   | free (articles billed on generation) |
+| `/api/agent/schedule`              | GET    | free                                 |
+| `/api/agent/schedule/gaps`         | GET    | free                                 |
+| `/api/agent/schedule/suggest`      | GET    | free (REST only, not MCP tool)       |
+| `/api/agent/scout/x`               | POST   | 35-70 credits                        |
+| `/api/agent/scout/x/{runId}`       | GET    | free (poll)                          |
+| `/api/agent/scout/reddit`          | POST   | 30 credits                           |
+| `/api/agent/scout/reddit/{runId}`  | GET    | free (poll)                          |
+| `/api/agent/gaps`                  | GET    | free                                 |
+| `/api/agent/gaps/generate`         | POST   | 40 credits                           |
+| `/api/agent/competitors/discover`  | POST   | 20 credits                           |
+| `/api/agent/competitors/scout`     | POST   | 25-50 credits                        |
+| `/api/agent/products`              | POST   | 1 credit                             |
+| `/api/agent/products`              | GET    | free                                 |
+| `/api/agent/products/{id}`         | DELETE | free                                 |
+| `/api/agent/products/search`       | POST   | free                                 |
+| `/api/agent/ingest`                | POST   | 1-55 credits                         |
+| `/api/agent/ingest`                | GET    | free                                 |
+| `/api/agent/ingest/{id}`           | GET    | free (poll)                          |
+| `/api/agent/ingest/{id}/content`   | GET    | free                                 |
+| `/api/agent/ingest/batch`          | POST   | 1-55 credits per URL                 |
+| `/api/agent/lead-magnets`          | POST   | 30-100 credits                       |
+| `/api/agent/lead-magnets/{id}`     | GET    | free (poll)                          |
+| `/api/agent/lead-magnets/{id}`     | PATCH  | free                                 |
+| `/api/agent/shorts/script`         | POST   | 1 credit                             |
+| `/api/agent/shorts/avatar`         | POST   | 3 credits                            |
+| `/api/agent/shorts`                | POST   | 60-185 credits (by duration)         |
+| `/api/agent/shorts/{id}`           | GET    | free (poll)                          |
+| `/api/agent/shorts/merge`          | POST   | 5 credits                            |
+| `/api/agent/webhooks`              | POST   | free                                 |
+| `/api/agent/webhooks`              | GET    | free                                 |
+| `/api/agent/webhooks/{id}`         | DELETE | free                                 |
+| `/api/agent/webhooks/deliveries`   | GET    | free                                 |
 
 **1 credit = $0.01 USD**
 
@@ -1066,7 +1167,7 @@ POST /api/agent/webhooks
 
 - 0 credits
 - `url` — must be `https://` in production
-- `event_types` — omit to receive all 12 event types (wildcard)
+- `event_types` — omit to receive all 15 event types (wildcard)
 - `description` — optional label
 - Max 10 endpoints per agent
 - Returns `id`, `url`, `secret`, `event_types`, `created_at`
@@ -1101,7 +1202,10 @@ GET /api/agent/webhooks/deliveries?status=delivered&limit=20&offset=0
 
 | Event                         | Triggered when                       |
 | ----------------------------- | ------------------------------------ |
-| `article.generated`           | Article successfully published       |
+| `article.generated`           | Article generation completed         |
+| `article.published`           | Article published (auto or manual)   |
+| `article.unpublished`         | Article unpublished (→ draft)        |
+| `article.deleted`             | Article permanently deleted          |
 | `article.failed`              | Article generation failed            |
 | `ingestion.completed`         | Content ingestion job finished       |
 | `ingestion.failed`            | Content ingestion job failed         |
@@ -1193,7 +1297,7 @@ On `429`, read `retry_after` from the body and `X-RateLimit-Reset` header.
 
 - Reply in the user's language (match the language they write in).
 - Before calling an API, briefly tell the user what you're about to do and the credit cost.
-- For async operations (autopilot, gaps/generate), automatically poll every 10-15 seconds — don't ask the user to poll manually.
+- For async operations (scout, ingest, shorts, leadmagnet, brand.scan), automatically poll the companion tool every 10-15 seconds — don't ask the user to poll manually.
 - Show results as a readable summary, not raw JSON. Use bullet points, tables, or numbered lists.
 - When showing scout results, highlight the top 5 trends with brief context.
 - When an article is generated, show: title, word count, URL, credits spent.
@@ -1229,5 +1333,5 @@ Call `GET /api/agent/me` every 4 hours as a keep-alive. This updates `last_activ
 
 ---
 
-_Citedy SEO Agent Skill v3.0.0_
+_Citedy SEO Agent Skill v3.1.0_
 _https://www.citedy.com_

@@ -1,0 +1,17 @@
+{
+  "name": "commit",
+  "repo": "RawPatty/BetterPortal",
+  "path": ".claude/skills/commit/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/RawPatty/BetterPortal",
+  "dir_name": "commit-rawpatty-betterportal",
+  "downloaded_at": "2026-03-22T06:09:05.166557Z",
+  "author": "RawPatty",
+  "source_url": "https://github.com/RawPatty/BetterPortal/blob/master/.claude/skills/commit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RawPatty/BetterPortal/blob/master/.claude/skills/commit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

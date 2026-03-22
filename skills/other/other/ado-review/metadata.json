@@ -1,0 +1,17 @@
+{
+  "name": "ado-review",
+  "repo": "Vvanlaar/orch",
+  "path": ".claude/skills/ado-review/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/Vvanlaar/orch",
+  "dir_name": "ado-review",
+  "downloaded_at": "2026-03-22T06:28:53.786701Z",
+  "author": "Vvanlaar",
+  "source_url": "https://github.com/Vvanlaar/orch/blob/master/.claude/skills/ado-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Vvanlaar/orch/blob/master/.claude/skills/ado-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

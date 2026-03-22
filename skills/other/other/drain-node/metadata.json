@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/X-McKay/kubani",
   "dir_name": "drain-node",
-  "downloaded_at": "2026-03-01T06:20:49.188690Z",
+  "downloaded_at": "2026-03-22T06:31:55.160001Z",
   "author": "X-McKay",
   "source_url": "https://github.com/X-McKay/kubani/blob/main/kubani/skills/k8s/remediation/drain-node/SKILL.md",
   "license": "NOASSERTION",

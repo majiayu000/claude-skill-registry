@@ -133,7 +133,7 @@ Creates a new documentation guide in `docs/guides/` with proper structure, cross
 
 **Next Steps**:
 - `/meta__cheat_sheet` - Add quick reference if guide introduces new patterns
-- `/meta__create_skill` - Create skill if guide describes a repeatable workflow
+- Create a new skill manually (see `.claude/skills/NAMING-CONVENTIONS.md`) if guide describes a repeatable workflow
 
 **Related**:
 - `docs/guides/documentation-guide.md` - Overall documentation process

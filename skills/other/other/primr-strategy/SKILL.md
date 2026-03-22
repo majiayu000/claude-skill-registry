@@ -42,7 +42,7 @@ Primr generates strategy documents by:
 
 | Strategy Type | ID | Description | Cloud Vendor Required |
 |--------------|-----|-------------|----------------------|
-| **AI Strategy** | `ai_strategy` | Agentic AI transformation, organizational design, investment frameworks | Yes (azure/aws/gcp/agnostic) |
+| **AI Strategy** | `ai_strategy` | Agentic AI transformation, organizational design, investment frameworks | Yes (azure/aws/gcp/agnostic/private) |
 | **Customer Experience** | `customer_experience` | CX transformation, journey mapping, experience design | No |
 | **Security & Compliance** | `modern_security_compliance` | Zero Trust architecture, guardrails-first governance, risk frameworks | No |
 | **Data Fabric** | `data_fabric_strategy` | Modern data platform for agentic AI, semantic layers, intelligent estates | No |
@@ -76,7 +76,7 @@ Example: "What strategy documents can you generate?"
 **Parameters**:
 - `report_path`: Path to existing Strategic Overview report (required)
 - `strategy_type`: One of the strategy IDs above (required)
-- `cloud_vendor`: For AI Strategy only - "azure", "aws", "gcp", or "agnostic"
+- `cloud_vendor`: For AI Strategy only - "azure", "aws", "gcp", "agnostic", or "private"
 
 ```
 Example: "Generate a customer experience strategy from the Acme Corp report"
@@ -107,7 +107,7 @@ Strategy documents are saved alongside the source report:
 |-------|-------|------------|
 | `report_not_found` | Source report doesn't exist | Run research first, or check path |
 | `invalid_strategy_type` | Unknown strategy ID | Use `primr://strategies/available` to list valid types |
-| `missing_cloud_vendor` | AI Strategy without vendor | Ask user to specify azure/aws/gcp/agnostic |
+| `missing_cloud_vendor` | AI Strategy without vendor | Ask user to specify azure/aws/gcp/agnostic/private |
 
 ### Recovery Patterns
 

@@ -2,8 +2,16 @@
   "name": "file-organizer",
   "repo": "RockwallJMC/Threadbilt-v0",
   "path": ".claude/skills/file-organizer/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/RockwallJMC/Threadbilt-v0",
   "dir_name": "file-organizer-rockwalljmc-threadbilt-v0",
-  "downloaded_at": "2026-02-15T05:41:54.209064Z"
+  "downloaded_at": "2026-03-22T06:10:00.876030Z",
+  "author": "RockwallJMC",
+  "source_url": "https://github.com/RockwallJMC/Threadbilt-v0/blob/main/.claude/skills/file-organizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RockwallJMC/Threadbilt-v0/blob/main/.claude/skills/file-organizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

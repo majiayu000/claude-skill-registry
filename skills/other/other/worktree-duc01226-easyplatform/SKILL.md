@@ -2,10 +2,10 @@
 name: worktree
 version: 1.0.0
 description: '[Git] Create isolated git worktree for parallel development'
-activation: user-invoked
+disable-model-invocation: false
 ---
 
-> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
 
 ## Quick Summary
 
@@ -23,6 +23,8 @@ activation: user-invoked
 - For monorepos, ask user which project if not specified
 - Always ask which env files to copy via AskUserQuestion
 - Handle error codes (BRANCH_CHECKED_OUT, WORKTREE_EXISTS, etc.) gracefully
+
+**Be skeptical. Apply critical thinking, sequential thinking. Every claim needs traced proof, confidence percentages (Idea should be more than 80%).**
 
 Create an isolated git worktree for parallel feature development.
 

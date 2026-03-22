@@ -5,7 +5,7 @@ description: "[Utilities] Use when saving or retrieving important patterns, deci
 allowed-tools: Read, Write, Edit, Glob, Grep, TaskCreate, mcp__memory__*
 ---
 
-> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
 
 ## Quick Summary
 
@@ -22,6 +22,8 @@ allowed-tools: Read, Write, Edit, Glob, Grep, TaskCreate, mcp__memory__*
 - Use file checkpoints for task-specific progress; MCP memory for cross-session knowledge
 - Create checkpoints before expected context compaction and at key milestones
 - Always include Recovery Instructions in checkpoint files
+
+**Be skeptical. Apply critical thinking, sequential thinking. Every claim needs traced proof, confidence percentages (Idea should be more than 80%).**
 
 # Memory Management & Knowledge Persistence
 
@@ -142,10 +144,10 @@ mcp__memory__create_entities([
         name: 'EmployeeValidationPattern',
         entityType: 'Pattern',
         observations: [
-            'Use PlatformValidationResult fluent API',
+            'Use project validation fluent API (see docs/project-reference/backend-patterns-reference.md)',
             'Chain with .And() and .AndAsync()',
             "Return validation result, don't throw",
-            'Location: Growth.Application/UseCaseCommands/'
+            'Location: {Service}.Application/UseCaseCommands/'
         ]
     }
 ]);
@@ -156,8 +158,8 @@ mcp__memory__create_entities([
 ```javascript
 mcp__memory__create_relations([
     {
-        from: 'GrowthService',
-        to: 'AccountsService',
+        from: 'ServiceA',
+        to: 'ServiceB',
         relationType: 'depends_on'
     },
     {
@@ -174,7 +176,10 @@ mcp__memory__create_relations([
 mcp__memory__add_observations([
     {
         entityName: 'EmployeeValidationPattern',
-        contents: ['Also supports .AndNot() for negative validation', 'Use .Of<IPlatformCqrsRequest>() for type conversion']
+        contents: [
+            'Also supports .AndNot() for negative validation',
+            'Use .Of<ICqrsRequest>() for type conversion (see docs/project-reference/backend-patterns-reference.md)'
+        ]
     }
 ]);
 ```
@@ -186,7 +191,7 @@ mcp__memory__add_observations([
 mcp__memory__search_nodes({ query: 'validation pattern' });
 
 // Open specific entities
-mcp__memory__open_nodes({ names: ['EmployeeValidationPattern', 'GrowthService'] });
+mcp__memory__open_nodes({ names: ['EmployeeValidationPattern', 'ServiceAModule'] });
 
 // Read entire graph
 mcp__memory__read_graph();
@@ -323,7 +328,7 @@ mcp__memory__create_entities([
 │  Entities                                                   │
 │  ├── Employee ──syncs_from──> User                          │
 │  ├── Company ──syncs_from──> Organization                   │
-│  └── LeaveRequest ──owned_by──> GrowthService               │
+│  └── LeaveRequest ──owned_by──> ServiceA                     │
 │                                                             │
 │  Sessions                                                   │
 │  ├── Session_LeaveRequest_2025-01-15                        │

@@ -1,0 +1,17 @@
+{
+  "name": "binlog-generation",
+  "repo": "dotnet/skills",
+  "path": "plugins/dotnet-msbuild/skills/binlog-generation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dotnet/skills",
+  "dir_name": "binlog-generation",
+  "downloaded_at": "2026-03-22T07:48:45.165273Z",
+  "author": "dotnet",
+  "source_url": "https://github.com/dotnet/skills/blob/main/plugins/dotnet-msbuild/skills/binlog-generation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dotnet/skills/blob/main/plugins/dotnet-msbuild/skills/binlog-generation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

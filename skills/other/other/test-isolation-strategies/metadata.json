@@ -1,0 +1,17 @@
+{
+  "name": "test-isolation-strategies",
+  "repo": "PramodDutta/qaskills",
+  "path": "seed-skills/test-isolation-strategies/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/PramodDutta/qaskills",
+  "dir_name": "test-isolation-strategies",
+  "downloaded_at": "2026-03-22T06:06:00.259294Z",
+  "author": "PramodDutta",
+  "source_url": "https://github.com/PramodDutta/qaskills/blob/main/seed-skills/test-isolation-strategies/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PramodDutta/qaskills/blob/main/seed-skills/test-isolation-strategies/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

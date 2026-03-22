@@ -2,12 +2,19 @@
 name: fix
 version: 1.0.0
 description: '[Implementation] Analyze and fix issues [INTELLIGENT ROUTING]'
-activation: user-invoked
 ---
 
-> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
 
 **Prerequisites:** **MUST READ** `.claude/skills/shared/understand-code-first-protocol.md` AND `.claude/skills/shared/evidence-based-reasoning-protocol.md` before executing.
+
+- `docs/project-reference/domain-entities-reference.md` — Domain entity catalog, relationships, cross-service sync (read when task involves business entities/models)
+
+> **Evidence Gate:** MANDATORY IMPORTANT MUST — every claim, finding, and recommendation requires `file:line` proof or traced evidence with confidence percentage (>80% to act, <80% must verify first).
+
+> **Process Discipline:** MUST READ `.claude/skills/shared/red-flag-stop-conditions-protocol.md` — STOP after 3+ failed fix attempts, when fixes reveal new problems in different places.
+
+> **External Memory:** For complex or lengthy work (research, analysis, scan, review), write intermediate findings and final results to a report file in `plans/reports/` — prevents context loss and serves as deliverable.
 
 ## Quick Summary
 
@@ -23,11 +30,34 @@ activation: user-invoked
 
 - Debug Mindset is non-negotiable: every claim needs traced proof with `file:line` evidence
 - Never assume first hypothesis is correct — verify with actual code traces
-- Parent skill for all fix-* variants; routes based on issue keywords
+- Parent skill for all fix-\* variants; routes based on issue keywords
+
+### Frontend/UI Context (if applicable)
+
+When this task involves frontend or UI changes, **MUST READ** `.claude/skills/shared/ui-system-context.md` and the following docs:
+
+- Component patterns: `docs/project-reference/frontend-patterns-reference.md`
+- Styling/BEM guide: `docs/project-reference/scss-styling-guide.md`
+- Design system tokens: `docs/project-reference/design-system/README.md`
+
+## Variant Decision Guide
+
+| If the issue is...        | Use                 | Why                                         |
+| ------------------------- | ------------------- | ------------------------------------------- |
+| Type errors (TS/C#)       | `/fix-types`        | Specialized for type system errors          |
+| UI/visual bug             | `/fix-ui`           | Includes visual comparison                  |
+| CI/CD pipeline failure    | `/fix-ci`           | Reads pipeline logs, understands CI context |
+| Test failures             | `/fix-test`         | Focuses on test assertions and mocking      |
+| Log-based investigation   | `/fix-logs`         | Parses log files for root cause             |
+| GitHub issue with context | `/fix-issue`        | Reads issue details, links to code          |
+| Simple/obvious fix        | `/fix-fast`         | Skip deep investigation                     |
+| Complex/multi-file bug    | `/fix-hard`         | Uses subagents for parallel investigation   |
+| Multiple independent bugs | `/fix-parallel`     | Parallel fix execution                      |
+| General/unknown           | `/fix` (this skill) | Routes automatically based on keywords      |
 
 ## Debug Mindset (NON-NEGOTIABLE)
 
-**Be skeptical. Apply critical thinking. Every claim needs traced proof.**
+**Be skeptical. Apply critical thinking, sequential thinking. Every claim needs traced proof, confidence percentages (Idea should be more than 80%).**
 
 - Do NOT assume the first hypothesis is correct — verify with actual code traces
 - Every root cause claim must include `file:line` evidence
@@ -38,19 +68,36 @@ activation: user-invoked
 
 ## ⚠️ MANDATORY: Confidence & Evidence Gate
 
-**MUST** declare `Confidence: X%` with evidence list + `file:line` proof for EVERY claim.
+**MANDATORY IMPORTANT MUST** declare `Confidence: X%` with evidence list + `file:line` proof for EVERY claim.
 **95%+** recommend freely | **80-94%** with caveats | **60-79%** list unknowns | **<60% STOP — gather more evidence.**
 
 **Analyze issues and route to specialized fix command:**
 <issues>$ARGUMENTS</issues>
+
+## ⚠️ MANDATORY: Plan Before Fix (NON-NEGOTIABLE)
+
+**MANDATORY IMPORTANT MUST** — Before routing to ANY fix variant, you MUST have a validated plan. This applies whether running standalone or within a workflow.
+
+**If no plan exists**, you MUST create todo tasks for and execute these steps IN ORDER before proceeding to fix:
+
+1. **`/plan`** — Create an implementation plan for the fix (root cause analysis + fix approach + affected files)
+2. **`/plan-review`** — Auto-review the plan for validity, correctness, and best practices
+3. **`/plan-validate`** — Validate plan with critical questions interview (get user confirmation)
+
+**Only after plan is validated** → proceed to fix routing below.
+
+**If a plan already exists** (markdown plan file in `plans/`) → skip to fix routing.
+
+> **Why:** Fixes without plans lead to incomplete root cause analysis, missed side effects, and regressions. Planning forces the AI to think before acting.
 
 ## Decision Tree
 
 **1. Check for existing plan:**
 
 - If markdown plan exists → `/code <path-to-plan>`
+- If NO plan exists → **STOP. Run `/plan → /plan-review → /plan-validate` first** (see section above)
 
-**2. Route by issue type:**
+**2. Route by issue type (only after plan exists):**
 
 **A) Type Errors** (keywords: type, typescript, tsc, type error)
 → `/fix-types`
@@ -82,9 +129,40 @@ activation: user-invoked
 - If unclear, ask user for clarification before routing
 - Can combine routes: e.g., multiple type errors + UI issue → `/fix-parallel`
 
+## ⚠️ MANDATORY: Post-Fix Verification
+
+**After EVERY fix, you MUST run `/prove-fix` to verify correctness.**
+
+`/prove-fix` builds code proof traces (stack-trace-style) per change, assigns confidence percentages, and produces a ship/block verdict. This is non-negotiable — never skip it. If confidence < 80% on any change, return to investigation.
+
 ---
 
 **IMPORTANT Task Planning Notes (MUST FOLLOW)**
 
 - Always plan and break work into many small todo tasks
 - Always add a final review todo task to verify work quality and identify fixes/enhancements
+
+---
+
+## Workflow Recommendation
+
+> **IMPORTANT MUST:** If you are NOT already in a workflow, use `AskUserQuestion` to ask the user:
+>
+> 1. **Activate `bugfix` workflow** (Recommended) — scout → investigate → debug → plan → plan-review → plan-validate → fix → prove-fix → review → test
+> 2. **Execute `/fix` directly** — still requires `/plan → /plan-review → /plan-validate` before fixing (enforced by Plan Before Fix gate above)
+
+---
+
+## Next Steps
+
+**MANDATORY IMPORTANT MUST** after completing this skill, use `AskUserQuestion` to recommend:
+
+- **"/prove-fix (Recommended)"** — Prove fix correctness with code traces
+- **"/test"** — Run tests to verify fix
+- **"Skip, continue manually"** — user decides
+
+## Closing Reminders
+
+**MANDATORY IMPORTANT MUST** break work into small todo tasks using `TaskCreate` BEFORE starting.
+**MANDATORY IMPORTANT MUST** validate decisions with user via `AskUserQuestion` — never auto-decide.
+**MANDATORY IMPORTANT MUST** add a final review todo task to verify work quality.

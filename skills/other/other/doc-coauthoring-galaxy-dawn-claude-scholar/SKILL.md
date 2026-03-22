@@ -1,12 +1,18 @@
 ---
 name: doc-coauthoring
-description: Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.
+description: This skill should be used when the user asks to co-author documentation, draft a proposal, write a technical spec, create a decision doc or RFC, or structure a substantial document through iterative collaboration and reader testing.
 version: 0.1.0
 ---
 
 # Doc Co-Authoring Workflow
 
 This skill provides a structured workflow for guiding users through collaborative document creation. Act as an active guide, walking users through three stages: Context Gathering, Refinement & Structure, and Reader Testing.
+
+## Runtime contract
+
+Use `references/RUNTIME-MATRIX.md` to decide what is available in the current environment before offering connectors, artifacts, or reader-test subagents.
+
+If no artifact-like surface is available, default to a normal markdown file in a user-specified path or an explicitly named working file. Do not assume artifacts are available.
 
 ## When to Offer This Workflow
 
@@ -374,3 +380,11 @@ Announce document completion. Provide a few final tips:
 - Don't rush through stages
 - Each iteration should make meaningful improvements
 - The goal is a document that actually works for readers
+
+
+## Reference Files
+
+Load only what is needed:
+- `references/RUNTIME-MATRIX.md` - how to adapt the workflow to Claude Code, Claude.ai, connector-rich, and connector-poor environments
+- `references/DOC-TYPES.md` - default section scaffolds for common document types
+- `references/READER-TEST.md` - reader-testing prompts, handoff package, and pass/fail signals

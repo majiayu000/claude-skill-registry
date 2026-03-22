@@ -1,0 +1,17 @@
+{
+  "name": "debugging-strategies",
+  "repo": "EricGrill/agents-skills-plugins",
+  "path": "plugins/developer-essentials/skills/debugging-strategies/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/EricGrill/agents-skills-plugins",
+  "dir_name": "debugging-strategies-ericgrill-agents-skills-plugin",
+  "downloaded_at": "2026-03-22T05:18:51.258123Z",
+  "author": "EricGrill",
+  "source_url": "https://github.com/EricGrill/agents-skills-plugins/blob/main/plugins/developer-essentials/skills/debugging-strategies/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EricGrill/agents-skills-plugins/blob/main/plugins/developer-essentials/skills/debugging-strategies/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

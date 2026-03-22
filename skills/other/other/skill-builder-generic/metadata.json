@@ -2,8 +2,16 @@
   "name": "skill-builder-generic",
   "repo": "adaptationio/Skrillz",
   "path": "skills/skill-builder-generic/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/adaptationio/Skrillz",
   "dir_name": "skill-builder-generic",
-  "downloaded_at": "2026-02-15T06:05:07.268324Z"
+  "downloaded_at": "2026-03-22T06:40:25.413904Z",
+  "author": "adaptationio",
+  "source_url": "https://github.com/adaptationio/Skrillz/blob/main/skills/skill-builder-generic/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptationio/Skrillz/blob/main/skills/skill-builder-generic/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

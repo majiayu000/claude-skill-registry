@@ -2,79 +2,68 @@
 description: 提供项目管理、任务跟踪、团队协调和项目交付能力。当需要管理项目、跟踪进度或协调团队时使用。
 name: project-management-specialist
 ---
-
 # Project Management Specialist
 
-
 提供项目管理、任务跟踪、团队协调和项目交付能力。当需要管理项目、跟踪进度或协调团队时使用。
 
-## When to Use This Skill
+## Skill Index
 
-提供项目管理、任务跟踪、团队协调和项目交付能力。当需要管理项目、跟踪进度或协调团队时使用。
+<!-- AUTO-GENERATED-SKILL-INDEX:START -->
+以下索引由 `node scripts/update-skill-index.js` 自动生成，用于让 Claude 在顶层专家触发后继续路由到最相关的子技能。
 
-## Capabilities
+### Claude 使用说明
 
-This specialist skill combines the following capabilities:
+1. 先将用户当前任务与每个子技能的 `触发语义` 进行语义匹配，不要只看目录名。
+2. 一旦找到最相关的子技能，立即打开其 `入口文件` 指向的 `SKILL.md`，把它作为下一层入口。
+3. 进入子技能后，再根据该子技能自己的说明按需加载同目录下的 `references/`、`scripts/`、`assets/`，不要在顶层专家中预先展开大段细节。
+4. 如果多个子技能都相关，先加载最贴近主目标的那个，再按需补充其他子技能，避免一次性加载过多上下文。
+5. 下方 `入口文件` 路径相对于项目根目录，可直接用于 `Read` 操作。
 
-### Experiment Tracker
+### 子技能索引
 
-当实验启动、修改或需要分析结果时，请主动使用此代理。此代理专门用于跟踪A/B测试、功能实验以及6天开发周期内的迭代改进。当引入实验性代码路径或功能标志时，应自动触发。示例：
+#### experiment-tracker (1)
+- `experiment-tracker`
+  - 触发语义: Expert project manager specializing in experiment design, execution tracking, and data-driven decision making. Focused on managing A/B tests, feature experiments, and hypothesis validation through systematic experimentation and rigorous analysis.
+  - 入口文件: `.claude/skills/project-management-specialist/references/domains/experiment-tracker/SKILL.md`
 
+#### issue-lifecycle (1)
+- `issue-manage`
+  - 触发语义: Interactive issue management with menu-driven CRUD operations. Use when managing issues, viewing issue status, editing issue fields, performing bulk operations, or viewing issue history. Triggers on "manage issue", "list issues", "edit issue", "delete issue", "bulk update", "issue dashboard", "issue history", "completed issues".
+  - 入口文件: `.claude/skills/project-management-specialist/references/domains/issue-lifecycle/SKILL.md`
 
-📖 [详细文档](./references/project-management_experiment-tracker.md)
+#### jira-workflow-steward (1)
+- `jira-workflow-steward`
+  - 触发语义: Expert delivery operations specialist who enforces Jira-linked Git workflows, traceable commits, structured pull requests, and release-safe branch strategy across software teams.
+  - 入口文件: `.claude/skills/project-management-specialist/references/domains/jira-workflow-steward/SKILL.md`
 
+#### meeting-intelligence (1)
+- `meeting-insights-analyzer`
+  - 触发语义: 分析会议记录和录音，以发现行为模式、沟通洞察和可行的反馈。识别您何时避免冲突、使用填充词、主导对话或错过倾听的机会。非常适合寻求提高沟通和领导技能的专业人士。
+  - 入口文件: `.claude/skills/project-management-specialist/references/domains/meeting-intelligence/SKILL.md`
 
+#### project-manager-senior (1)
+- `senior-project-manager`
+  - 触发语义: Converts specs to tasks and remembers previous projects. Focused on realistic scope, no background processes, exact spec requirements
+  - 入口文件: `.claude/skills/project-management-specialist/references/domains/project-manager-senior/SKILL.md`
 
-### Project Shipper
+#### project-shepherd (1)
+- `project-shepherd`
+  - 触发语义: Expert project manager specializing in cross-functional project coordination, timeline management, and stakeholder alignment. Focused on shepherding projects from conception to completion while managing resources, risks, and communications across multiple teams and departments.
+  - 入口文件: `.claude/skills/project-management-specialist/references/domains/project-shepherd/SKILL.md`
 
-当临近发布里程碑、发布截止日期或市场推广活动时，请主动使用此代理。此代理专门协调发布、管理发布流程以及在6天开发周期内执行市场推广策略。当设定发布日期、需要发布计划或讨论市场定位时，应自动触发。示例：
+#### studio-operations (1)
+- `studio-operations`
+  - 触发语义: Expert operations manager specializing in day-to-day studio efficiency, process optimization, and resource coordination. Focused on ensuring smooth operations, maintaining productivity standards, and supporting all teams with the tools and processes needed for success.
+  - 入口文件: `.claude/skills/project-management-specialist/references/domains/studio-operations/SKILL.md`
 
+#### studio-producer (1)
+- `studio-producer`
+  - 触发语义: Senior strategic leader specializing in high-level creative and technical project orchestration, resource allocation, and multi-project portfolio management. Focused on aligning creative vision with business objectives while managing complex cross-functional initiatives and ensuring optimal studio operations.
+  - 入口文件: `.claude/skills/project-management-specialist/references/domains/studio-producer/SKILL.md`
 
-📖 [详细文档](./references/project-management_project-shipper.md)
+<!-- AUTO-GENERATED-SKILL-INDEX:END -->
 
+## Notes
 
-
-### Studio Producer
-
-当需要协调多个团队、分配资源或优化工作室工作流程时，请主动使用此代理。此代理擅长在6天开发周期内进行跨职能协调、资源管理和流程优化。当出现团队依赖、发生资源冲突或需要改进工作流程时，应自动触发。示例：
-
-
-📖 [详细文档](./references/project-management_studio-producer.md)
-
-
-
-### Project Analyst
-
-必须用于分析任何新的或不熟悉的代码库。主动使用它来检测框架、技术栈和架构，以便正确地分派专家。
-
-
-📖 [详细文档](./references/orchestrators_project-analyst.md)
-
-
-
-### Tech Lead Orchestrator
-
-高级技术主管，负责分析复杂的软件项目并提供战略性建议。必须用于任何多步骤开发任务、功能实现或架构决策。返回结构化发现和任务分解，以实现最佳的代理协调。
-
-
-📖 [详细文档](./references/orchestrators_tech-lead-orchestrator.md)
-
-
-
-### Team Configurator
-
-必须用于为当前项目设置或刷新AI开发团队。在新仓库中、技术栈发生重大变化后或用户要求配置AI团队时，主动使用它。它会检测技术栈，选择最佳的专业子代理，并更新CLAUDE.md文件，添加“AI团队配置”部分。
-
-
-📖 [详细文档](./references/orchestrators_team-configurator.md)
-
-
-
-### Context Manager
-
-当需要管理多个代理之间和长时间运行任务的上下文时使用。当协调复杂的、多代理工作流或上下文需要在多个会话中保留时使用。对于超过10k token的项目，必须使用此代理。
-
-
-📖 [详细文档](./references/orchestrators_context-manager.md)
-
-
+- 顶层 `SKILL.md` 仅做索引导航，不承载大体量细节内容。
+- 详细资料下沉到 `references/domains/`，按树形结构组织。

@@ -1,19 +1,22 @@
 ---
 name: design-system-creator
-description: Builds comprehensive design systems and design bibles with production-ready CSS. Expert in design tokens, component libraries, CSS architecture. Use for design system creation, token architecture, component documentation, style guide generation. Activate on "design system", "design tokens", "CSS architecture", "component library", "style guide", "design bible". NOT for typography deep-dives (use typography-expert), color theory mathematics (use color-theory-palette-harmony-expert), brand identity strategy (use web-design-expert), or actual UI implementation (use web-design-expert or native-app-designer).
+description: Builds comprehensive design systems and design bibles with production-ready CSS. Expert in design tokens, component libraries, CSS architecture. Use for design system creation, token architecture,
+  component documentation, style guide generation. Activate on "design system", "design tokens", "CSS architecture", "component library", "style guide", "design bible". NOT for typography deep-dives (use
+  typography-expert), color theory mathematics (use color-theory-palette-harmony-expert), brand identity strategy (use web-design-expert), or actual UI implementation (use web-design-expert or native-app-designer).
 allowed-tools: Read,Write,Edit,Glob,mcp__magic__21st_magic_component_builder,mcp__magic__21st_magic_component_refiner,mcp__stability-ai__stability-ai-generate-image,mcp__firecrawl__firecrawl_search
-category: Design & Creative
-tags:
+metadata:
+  category: Design & Creative
+  pairs-with:
+  - skill: typography-expert
+    reason: Typography decisions for the system
+  - skill: color-theory-palette-harmony-expert
+    reason: Color token architecture
+  tags:
   - design-system
   - tokens
   - components
   - css
   - style-guide
-pairs-with:
-  - skill: typography-expert
-    reason: Typography decisions for the system
-  - skill: color-theory-palette-harmony-expert
-    reason: Color token architecture
 ---
 
 # Design System Creator

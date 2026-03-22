@@ -75,6 +75,35 @@ Key lessons extracted from successful rebuttal cases:
 - "Easily applicable" and "scalable" are important strengths
 - **Strategy**: Emphasize practical benefits and scalability in the rebuttal
 
+## Integration with paper-miner global writing memory
+
+When the rebuttal task involves:
+- tone calibration,
+- rebuttal phrasing,
+- clarification language,
+- structuring multi-point responses,
+- or learning from strong prior paper/review writing,
+
+read this file before drafting:
+
+- `~/.claude/skills/ml-paper-writing/references/knowledge/paper-miner-writing-memory.md`
+
+### Default read order for rebuttal work
+
+1. reviewer comments and paper context
+2. `paper-miner-writing-memory.md`
+3. `references/response-strategies.md`
+4. `references/rebuttal-templates.md`
+5. `references/tone-guidelines.md`
+
+Read narrowly:
+- start with `How this helps our writing`,
+- then inspect `Reusable phrasing`,
+- then inspect `Venue-specific signals` if the rebuttal is venue-sensitive,
+- use `Writing patterns mined` only when the response needs stronger rhetorical structure.
+
+Do not quote the memory mechanically. Use it to improve structure, clarity, restraint, and professionalism.
+
 ## Reference Documents
 
 For detailed guides, refer to:

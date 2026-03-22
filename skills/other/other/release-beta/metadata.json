@@ -1,0 +1,17 @@
+{
+  "name": "release-beta",
+  "repo": "Thank-you-Linus/Linus-Dashboard",
+  "path": ".claude/skills/release-beta/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Thank-you-Linus/Linus-Dashboard",
+  "dir_name": "release-beta",
+  "downloaded_at": "2026-03-22T06:22:28.317693Z",
+  "author": "Thank-you-Linus",
+  "source_url": "https://github.com/Thank-you-Linus/Linus-Dashboard/blob/main/.claude/skills/release-beta/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Thank-you-Linus/Linus-Dashboard/blob/main/.claude/skills/release-beta/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "consul",
+  "repo": "TerminalSkills/skills",
+  "path": "skills/consul/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/TerminalSkills/skills",
+  "dir_name": "consul-terminalskills-skills",
+  "downloaded_at": "2026-03-22T06:21:56.490679Z",
+  "author": "TerminalSkills",
+  "source_url": "https://github.com/TerminalSkills/skills/blob/main/skills/consul/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TerminalSkills/skills/blob/main/skills/consul/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

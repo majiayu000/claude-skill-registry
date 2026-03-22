@@ -50,6 +50,17 @@ Support for both regular and beta releases.
      - If current version has no beta suffix: Add `-beta.1` to the version
      - If current version already has beta suffix: Increment beta number (e.g., `-beta.1` → `-beta.2`)
      - If moving from beta to release: Remove beta suffix and use the base version
+7. **Confirm version** - When the version was inferred (no explicit `version` argument), use `AskUserQuestion` to confirm before proceeding:
+
+   - header: "Version"
+   - question: "Release `<current>` → `<inferred>`?"
+   - options:
+     - The inferred version label (e.g., "1.3.0 (minor)") — mark as "(Recommended)"
+     - One alternative that is one semver level higher (e.g., "2.0.0 (major)")
+     - One alternative that is one semver level lower when possible (e.g., "1.2.4 (patch)")
+   - multiSelect: false
+
+   If the user picks an alternative, use that version for the remaining steps. Skip this step when `--dry-run` is active (show the inferred version in the preview instead)
 
 ## Beta Release Logic
 

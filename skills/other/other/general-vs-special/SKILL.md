@@ -10,9 +10,7 @@ metadata:
 
 When invoked with $ARGUMENTS, focus the analysis on the specified file or module. Read the target code first, then apply the checks below.
 
-> "What particularly surprised me is that general-purpose interfaces are simpler and deeper than special-purpose ones." — John Ousterhout, _A Philosophy of Software Design_
-
-General-purpose modules are simpler, deeper and actually less work to build, even when used in only one context. They also produce better information hiding. A general-purpose interface doesn't need to know about specific callers, so knowledge stays where it belongs.
+General-purpose modules are surprisingly simpler, deeper and less effort to build. They produce better information hiding and can even provide these benefits when used in a single context. Because a general-purpose interface doesn't need to know about specific callers, the knowledge always stays where it belongs.
 
 ## When to Apply
 
@@ -49,9 +47,7 @@ Methods or parameters that only serve specific callers. The interface widens, an
 
 #### Inside Method Bodies
 
-Special cases show up as `if` branches in method bodies. The fix is to choose a representation that makes edge cases disappear. A search function that returns null on no match forces every caller to null-check before looping. Return an empty array instead and the `for` loop handles it: zero iterations, zero `if` branches.
-
-> "The best way to do this is by designing the normal case in a way that automatically handles the edge conditions without any extra code." — John Ousterhout, _A Philosophy of Software Design_
+Special cases tend to show up as extra `if` statements. Instead of adding more of them, try to create a design where they disappear. A search function that returns `null` when nothing is found forces every caller to check for `null` before using the result. If you return an empty list instead, the check loop runs zero times on its own with no extra check required.
 
 ### Getters/Setters as Representation Leakage
 

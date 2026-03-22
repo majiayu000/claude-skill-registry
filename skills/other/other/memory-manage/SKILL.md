@@ -1,7 +1,7 @@
 ---
 name: memory-manage
 description: Unified memory management - CLAUDE.md updates and documentation generation with interactive routing. Triggers on "memory manage", "update claude", "update memory", "generate docs", "更新记忆", "生成文档".
-allowed-tools: Task(*), Bash(*), AskUserQuestion(*), Read(*)
+allowed-tools: Agent(*), Bash(*), AskUserQuestion(*), Read(*)
 ---
 
 # Memory Management Skill

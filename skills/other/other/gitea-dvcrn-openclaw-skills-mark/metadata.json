@@ -1,0 +1,17 @@
+{
+  "name": "gitea",
+  "repo": "dvcrn/openclaw-skills-marketplace",
+  "path": "plugins/ericxliu1990--gitea/skills/gitea/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dvcrn/openclaw-skills-marketplace",
+  "dir_name": "gitea-dvcrn-openclaw-skills-mark",
+  "downloaded_at": "2026-03-22T07:51:12.388084Z",
+  "author": "dvcrn",
+  "source_url": "https://github.com/dvcrn/openclaw-skills-marketplace/blob/main/plugins/ericxliu1990--gitea/skills/gitea/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dvcrn/openclaw-skills-marketplace/blob/main/plugins/ericxliu1990--gitea/skills/gitea/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

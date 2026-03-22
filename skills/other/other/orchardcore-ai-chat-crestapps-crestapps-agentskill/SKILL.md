@@ -20,6 +20,10 @@ You are an Orchard Core expert. Generate code, configuration, and recipes for ad
 - Chat-type AI profiles with the "Show On Admin Menu" option appear under the **Artificial Intelligence** section in the admin menu.
 - When the Widgets feature is enabled, an AI Chat widget can be embedded in frontend content.
 - The AI Agent module (`CrestApps.OrchardCore.AI.Agent`) extends AI profiles with capabilities for content management, user management, feature management, and more.
+- Profile types include `Chat`, `Utility`, `TemplatePrompt`, and `Agent`.
+- Agent profiles function as reusable AI agents exposed as tools. They require a `Description` field and can be selected in the Capabilities tab.
+- Agent availability modes: `OnDemand` (default, user selects) or `AlwaysAvailable` (auto-included in every request).
+- The Capabilities tab is organized: MCP Connections first, then Agents, then Tools.
 - Always secure API keys using user secrets or environment variables; never hardcode them.
 - Install CrestApps packages in the web/startup project.
 
@@ -63,8 +67,11 @@ You are an Orchard Core expert. Generate code, configuration, and recipes for ad
           "Source": "OpenAI",
           "Name": "default",
           "IsDefault": true,
-          "DefaultDeploymentName": "gpt-4o",
           "DisplayText": "OpenAI",
+          "Deployments": [
+            { "Name": "gpt-4o", "Type": "Chat", "IsDefault": true },
+            { "Name": "gpt-4o-mini", "Type": "Utility", "IsDefault": true }
+          ],
           "Properties": {
             "OpenAIConnectionMetadata": {
               "Endpoint": "https://api.openai.com/v1",
@@ -96,7 +103,8 @@ You are an Orchard Core expert. Generate code, configuration, and recipes for ad
           "TitleType": "InitialPrompt",
           "PromptTemplate": null,
           "ConnectionName": "",
-          "DeploymentId": "",
+          "ChatDeploymentId": "",
+          "UtilityDeploymentId": "",
           "Properties": {
             "AIProfileMetadata": {
               "SystemMessage": "You are a helpful customer support assistant. Answer questions about our products and services. Be friendly and concise.",
@@ -187,7 +195,74 @@ The AI Agent module provides tools that allow AI profiles to perform tasks on th
 }
 ```
 
-Once enabled, navigate to your AI profile and assign capabilities under the **Capabilities** tab.
+Once enabled, navigate to your AI profile and assign capabilities under the **Capabilities** tab. The tab is organized in this order: MCP Connections, Agents, Tools.
+
+### Creating an Agent Profile
+
+Agent profiles are reusable agents that can be invoked as tools by other profiles. When creating an Agent profile:
+
+1. Set `Type` to `Agent`
+2. Provide a `Description` — this is used by the LLM to decide when to invoke the agent
+3. Set `Availability` to `OnDemand` (default) or `AlwaysAvailable`
+4. Configure a system message, tools, and other capabilities
+
+```json
+{
+  "steps": [
+    {
+      "name": "AIProfile",
+      "profiles": [
+        {
+          "Source": "OpenAI",
+          "Name": "research-agent",
+          "DisplayText": "Research Agent",
+          "Description": "An agent that can research topics and provide comprehensive summaries with citations.",
+          "Type": "Agent",
+          "TitleType": "InitialPrompt",
+          "ConnectionName": "",
+          "ChatDeploymentId": "",
+          "UtilityDeploymentId": "",
+          "Properties": {
+            "AIProfileMetadata": {
+              "SystemMessage": "You are a research assistant. Gather information, verify facts, and provide comprehensive answers with sources.",
+              "Temperature": 0.3,
+              "MaxTokens": 4096
+            },
+            "AgentMetadata": {
+              "Availability": "OnDemand"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Creating an Agent Profile in Code
+
+```csharp
+var profile = await _profileManager.NewAsync("OpenAI");
+
+profile.Name = "research-agent";
+profile.DisplayText = "Research Agent";
+profile.Description = "Researches topics and provides comprehensive summaries with citations.";
+profile.Type = AIProfileType.Agent;
+
+profile.Put(new AIProfileMetadata
+{
+    SystemMessage = "You are a research assistant...",
+    Temperature = 0.3f,
+    MaxTokens = 4096,
+});
+
+profile.Put(new AgentMetadata
+{
+    Availability = AgentAvailability.OnDemand,
+});
+
+await _profileManager.SaveAsync(profile);
+```
 
 ### Adding an AI Chat Widget to Frontend Content
 
@@ -258,3 +333,56 @@ services.AddAITool<LookupOrderFunction>(LookupOrderFunction.TheName, options =>
 - Restrict AI profile access with Orchard Core permissions.
 - Set appropriate token limits to control costs.
 - Lock system messages on production profiles to prevent prompt injection.
+
+### Chat Mode Configuration
+
+Chat profiles support three modes via the `ChatModeProfileSettings`:
+
+| Mode | Description | Requirements |
+|------|-------------|--------------|
+| `TextOnly` | Standard text-only chat (default) | None |
+| `AudioInput` | Adds microphone button for speech-to-text dictation. User types or dictates, then sends manually. | `DefaultSpeechToTextDeploymentId` configured in site settings |
+| `Conversation` | Two-way voice conversation. User speaks → transcript sent automatically → AI responds with text and spoken audio. | Both `DefaultSpeechToTextDeploymentId` and `DefaultTextToSpeechDeploymentId` configured |
+
+Chat mode is set in the AI Profile edit page under the "Chat Mode" dropdown (only visible for Chat-type profiles).
+
+**In code:**
+```csharp
+profile.AlterSettings<ChatModeProfileSettings>(s =>
+{
+    s.ChatMode = ChatMode.Conversation;
+    s.VoiceName = "en-US-JennyNeural"; // Optional TTS voice
+});
+```
+
+> **Important:** Always use `profile.TryGetSettings<ChatModeProfileSettings>()` to read and `profile.AlterSettings<ChatModeProfileSettings>()` to write. Do NOT use `profile.As<ChatModeProfileSettings>()` — that reads from a different storage location.
+
+### Voice Configuration
+
+When `ChatMode` is `Conversation`, a voice dropdown appears in the AI Profile editor, populated via AJAX from the configured TTS deployment. Voices are grouped by language and sorted alphabetically. If no voice is selected, the provider's default voice is used.
+
+The `SpeechVoice` model includes: `Id`, `Name`, `Language`, `Gender`, and `VoiceSampleUrl`.
+
+### Admin Chat Session UI
+
+Chat profiles are accessible at `/admin/ai-chat/session/{profileId}`. The session view:
+- Supports all three chat modes (TextOnly, AudioInput, Conversation)
+- Shows microphone button when `AudioInput` or `Conversation` mode is enabled
+- Shows conversation (headset) button when `Conversation` mode is enabled
+- Streams audio and text simultaneously during conversation mode
+- Supports document upload when the session documents feature is enabled
+
+### Admin Widget and Frontend Widget
+
+Both the admin widget (`AIChatAdminWidget`) and frontend widget (`Widget-AIChat`) support all chat modes. Chat configuration is passed to JavaScript via `data-config` attributes on hidden elements, not inline `@Html.Raw()`.
+
+### SignalR Hub Methods (AIChatHub)
+
+| Method | Description |
+|--------|-------------|
+| `CreateSession` | Creates a new chat session |
+| `SendMessage` | Sends a text message to the AI |
+| `SendAudioStream` | Streams audio chunks for speech-to-text transcription |
+| `StartConversation` | Starts a full two-way voice conversation |
+| `SynthesizeSpeech` | Converts text to speech audio |
+| `RateMessage` | Rates an assistant message (thumbs up/down) |

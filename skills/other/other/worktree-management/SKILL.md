@@ -24,28 +24,31 @@ Convert feature descriptions to standardized branch names:
 - **Lowercase** all text
 - Replace **spaces** with hyphens (`-`)
 - Remove **special characters** (except hyphens)
-- **Prefix** with type:
-  - `feat/` for features (default)
-  - `fix/` for bug fixes (if description contains "fix" or "bug")
-  - `docs/` for documentation changes
-  - `refactor/` for code refactoring
-  - `test/` for test additions
+- **Prefix** with one of the 5 conventional branch types:
+  - `feature/` for new features (default)
+  - `bugfix/` for bug fixes (if description contains "fix" or "bug")
+  - `hotfix/` for urgent production fixes
+  - `release/` for release preparation
+  - `chore/` for maintenance, docs, refactoring, test additions, and other non-feature work
+
+Note: branch types are broader than conventional commit types (`feat:`, `fix:`, `docs:`, etc.).
+Branches are temporary workspaces, so fewer categories suffice.
 
 ### Examples
 
 | Description | Branch Name |
 | --- | --- |
-| "add dark mode toggle" | `feat/add-dark-mode-toggle` |
-| "fix authentication bug" | `fix/authentication-bug` |
-| "Update documentation" | `feat/update-documentation` |
-| "refactor API client" | `refactor/api-client` |
+| "add dark mode toggle" | `feature/add-dark-mode-toggle` |
+| "fix authentication bug" | `bugfix/authentication-bug` |
+| "Update documentation" | `chore/update-documentation` |
+| "refactor API client" | `chore/refactor-api-client` |
 
 ### Bash Pattern
 
 ```bash
 # Generate branch name from description
 DESCRIPTION="add dark mode toggle"
-PREFIX="feat"  # or "fix" if description contains "fix" or "bug"
+PREFIX="feature"  # or "bugfix" if description contains "fix" or "bug"; "chore" for docs/refactor/test
 BRANCH_NAME=$(echo "$DESCRIPTION" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd 'a-z0-9-')
 BRANCH_NAME="${PREFIX}/${BRANCH_NAME}"
 ```
@@ -56,8 +59,8 @@ Branch names with slashes create nested directories, which is the intended behav
 
 ```bash
 # Branch with slash creates nested structure
-BRANCH="feat/my-feature"
-# Creates: ~/git/repo-name/feat/my-feature/
+BRANCH="feature/my-feature"
+# Creates: ~/git/repo-name/feature/my-feature/
 ```
 
 **Note**: Slashes in branch names are preserved to maintain 1:1 mapping between branch names and directory structure.
@@ -75,8 +78,8 @@ All worktrees follow this structure:
 **Example**:
 
 - Repo: `ai-assistant-instructions`
-- Branch: `feat/add-dark-mode`
-- Path: `~/git/ai-assistant-instructions/feat/add-dark-mode/`
+- Branch: `feature/add-dark-mode`
+- Path: `~/git/ai-assistant-instructions/feature/add-dark-mode/`
 
 ### Creation Steps
 
@@ -214,8 +217,8 @@ fi
 git worktree list
 # Output format:
 # /path/to/main        abc123 [main]
-# /path/to/worktree-1  def456 [feat/feature-1]
-# /path/to/worktree-2  ghi789 [fix/bug-fix]
+# /path/to/worktree-1  def456 [feature/feature-1]
+# /path/to/worktree-2  ghi789 [bugfix/bug-fix]
 ```
 
 ### Pattern 3: Get Current Worktree Branch
@@ -257,8 +260,7 @@ This plugin automatically:
 
 ## Related Resources
 
-- worktrees rule - Policy and structure documentation
-- branch-hygiene rule - Branch management best practices
+- git-workflow-standards skill (in the git-standards plugin) - Worktree and branch policies
 - create-worktrees plugin - Create worktrees for all open PRs
 
 ## Troubleshooting
@@ -309,7 +311,7 @@ git worktree remove "$WORKTREE_PATH"
 ## Best Practices
 
 1. **Always sync main** before creating new worktrees
-2. **Preserve slashes in branch names** - Directory nesting follows branch structure (e.g., `feat/my-feature` creates `~/git/repo/feat/my-feature/`)
+2. **Preserve slashes in branch names** - Directory nesting follows branch structure (e.g., `feature/my-feature` creates `~/git/repo/feature/my-feature/`)
 3. **Clean regularly** - Remove merged/gone worktrees to save disk space
 4. **Never work on main** - Always create a feature branch worktree
 5. **One worktree per feature** - Isolation prevents conflicts

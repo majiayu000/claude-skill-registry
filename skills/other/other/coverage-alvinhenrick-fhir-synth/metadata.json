@@ -1,0 +1,17 @@
+{
+  "name": "coverage",
+  "repo": "alvinhenrick/fhir-synth",
+  "path": "src/fhir_synth/skills/builtin/coverage/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alvinhenrick/fhir-synth",
+  "dir_name": "coverage-alvinhenrick-fhir-synth",
+  "downloaded_at": "2026-03-22T06:53:28.520433Z",
+  "author": "alvinhenrick",
+  "source_url": "https://github.com/alvinhenrick/fhir-synth/blob/main/src/fhir_synth/skills/builtin/coverage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alvinhenrick/fhir-synth/blob/main/src/fhir_synth/skills/builtin/coverage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

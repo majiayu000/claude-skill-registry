@@ -19,7 +19,7 @@ description: Type-safe i18n for Vue 3 Composition API
 
 **(You MUST use a SINGLE `useI18n()` call per component - destructure all needed functions from one call)**
 
-**(You MUST wrap async state updates in `runInAction` equivalent or handle locale reactivity properly)**
+**(You MUST await locale message loading before setting `locale.value` - setting locale before messages are loaded shows raw keys)**
 
 **(You MUST use named constants for locale codes - NO inline locale strings)**
 
@@ -54,8 +54,10 @@ description: Type-safe i18n for Vue 3 Composition API
 
 **Detailed Resources:**
 
-- For code examples, see [examples/](examples/) (core.md, formatting.md, lazy-loading.md)
-- For decision frameworks and anti-patterns, see [reference.md](reference.md)
+- [examples/core.md](examples/core.md) -- Setup, useI18n, interpolation, pluralization, component interpolation, TypeScript, locale switching
+- [examples/formatting.md](examples/formatting.md) -- DateTime formats, number formats, i18n-d/i18n-n components with scoped slots
+- [examples/lazy-loading.md](examples/lazy-loading.md) -- Dynamic imports, route-based loading, feature splitting, error handling, SSR
+- [reference.md](reference.md) -- Decision frameworks, anti-patterns, checklists, pluralization rules, migration notes
 
 ---
 
@@ -114,13 +116,11 @@ export const i18n = createI18n({
   legacy: false, // REQUIRED for Composition API
   locale: DEFAULT_LOCALE,
   fallbackLocale: DEFAULT_LOCALE,
-  globalInjection: true, // Default since v9.2, injects $t, $d, $n into templates
+  // globalInjection defaults to true - injects $t, $d, $n into templates
   messages: {
     en,
   },
 });
-
-export { i18n };
 ```
 
 **Why good:** `legacy: false` enables Composition API mode, named constants for locales enable type-safe usage, fallbackLocale prevents missing translation errors, globalInjection enables template shorthand (default true since v9.2)
@@ -490,21 +490,44 @@ n(0.15, "percent"); // "15%"
 
 ## Integration Guide
 
-**vue-i18n is Vue 3's standard i18n solution.** It integrates with Vue's reactivity system for automatic re-renders on locale change.
+**vue-i18n integrates with Vue's reactivity system** for automatic re-renders on locale change.
 
-**Works with:**
+**Locale state guidance:**
 
-- **Vue 3 Composition API**: Designed for `<script setup>` with useI18n composable
-- **Vue Router**: Locale-based routing with navigation guards
-- **SSR Frameworks**: Compatible with Nuxt 3 via @nuxtjs/i18n module
+- Locale state is managed by vue-i18n -- use `locale.value` from useI18n to read/write
+- Locale changes are reactive -- all components using `t()`, `d()`, `n()` update automatically
+- `globalInjection` defaults to `true`, injecting `$t`, `$d`, `$n` into templates
 
-**Component State Guidance:**
-
-- Locale state is managed by vue-i18n - use `locale.value` from useI18n to read/write
-- Locale changes are reactive - all components using `t()`, `d()`, `n()` update automatically
-- Use `globalInjection: true` for template shorthand (`$t`, `$d`, `$n`)
+**Locale-based routing:** vue-i18n works with navigation guards to load translations before route renders. See [examples/lazy-loading.md](examples/lazy-loading.md) for patterns.
 
 </integration>
+
+---
+
+<red_flags>
+
+## RED FLAGS
+
+- **Missing `legacy: false`** -- defaults to deprecated Options API mode (removed in v12)
+- **Multiple `useI18n()` calls in same component** -- creates separate instances that desync
+- **Hardcoded locale strings** -- use named constants for type safety
+- **Missing `fallbackLocale`** -- missing translations cause visible errors instead of graceful fallback
+- **Using `v-html` with translations** -- XSS vulnerability, use `<i18n-t>` instead
+- **String concatenation** -- word order varies by language, use complete messages with interpolation
+- **Setting locale before messages load** -- shows raw keys, always await loading first
+- **Using `dateTimeFormats` instead of `datetimeFormats`** -- the config key uses lowercase 't'
+- **Using `$tc()`** -- removed in v11, use `t()` with count parameter
+- **Using `v-t` directive** -- deprecated in v11, removed in v12, use `t()` or `<i18n-t>`
+
+**Gotchas & Edge Cases:**
+
+- `locale.value` is a ref -- assign with `.value`, not direct assignment
+- `@:linked.message` syntax only works with global scope, not local scope
+- Custom `pluralRules` function returns an index into the array, not the form itself
+
+> See [reference.md](reference.md) for full anti-pattern code examples and decision frameworks.
+
+</red_flags>
 
 ---
 
@@ -518,7 +541,7 @@ n(0.15, "percent"); // "15%"
 
 **(You MUST use a SINGLE `useI18n()` call per component - destructure all needed functions from one call)**
 
-**(You MUST wrap async state updates in `runInAction` equivalent or handle locale reactivity properly)**
+**(You MUST await locale message loading before setting `locale.value` - setting locale before messages are loaded shows raw keys)**
 
 **(You MUST use named constants for locale codes - NO inline locale strings)**
 

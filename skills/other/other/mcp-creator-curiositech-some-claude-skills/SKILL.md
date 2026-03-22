@@ -1,19 +1,22 @@
 ---
 name: mcp-creator
-description: Expert MCP (Model Context Protocol) server developer creating safe, performant, production-ready servers with proper security, error handling, and developer experience. Activate on 'create MCP', 'MCP server', 'build MCP', 'custom tool server', 'MCP development', 'Model Context Protocol'. NOT for using existing MCPs (just invoke them), general API development (use backend-architect), or skills/agents without external state (use skill-coach/agent-creator).
+description: Expert MCP (Model Context Protocol) server developer creating safe, performant, production-ready servers with proper security, error handling, and developer experience. Activate on 'create
+  MCP', 'MCP server', 'build MCP', 'custom tool server', 'MCP development', 'Model Context Protocol'. NOT for using existing MCPs (just invoke them), general API development (use backend-architect), or
+  skills/agents without external state (use skill-coach/agent-creator).
 allowed-tools: Read,Write,Edit,Bash,Grep,Glob,WebSearch,WebFetch
-category: Productivity & Meta
-tags:
+metadata:
+  category: Productivity & Meta
+  pairs-with:
+  - skill: agent-creator
+    reason: Skills that use the MCP tools
+  - skill: security-auditor
+    reason: Secure MCP server development
+  tags:
   - mcp
   - model-context-protocol
   - tools
   - integration
   - servers
-pairs-with:
-  - skill: agent-creator
-    reason: Skills that use the MCP tools
-  - skill: security-auditor
-    reason: Secure MCP server development
 ---
 
 # MCP Creator

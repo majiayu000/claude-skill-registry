@@ -1,0 +1,17 @@
+{
+  "name": "abm-landing-page",
+  "repo": "BasedHardware/omi-landing",
+  "path": ".claude/skills/abm-landing-page/skill.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/BasedHardware/omi-landing",
+  "dir_name": "abm-landing-page",
+  "downloaded_at": "2026-03-22T04:58:20.251066Z",
+  "author": "BasedHardware",
+  "source_url": "https://github.com/BasedHardware/omi-landing/blob/master/.claude/skills/abm-landing-page/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BasedHardware/omi-landing/blob/master/.claude/skills/abm-landing-page/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

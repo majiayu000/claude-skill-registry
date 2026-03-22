@@ -2,12 +2,14 @@
 name: code-parallel
 version: 1.0.0
 description: '[Implementation] Execute parallel or sequential phases based on plan structure'
-activation: user-invoked
+disable-model-invocation: false
 ---
 
-> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
 
 **Prerequisites:** **MUST READ** `.claude/skills/shared/understand-code-first-protocol.md` before executing.
+
+- `docs/project-reference/domain-entities-reference.md` — Domain entity catalog, relationships, cross-service sync (read when task involves business entities/models)
 
 > **Skill Variant:** Variant of `/code` — parallel phase execution from a plan.
 
@@ -16,14 +18,18 @@ activation: user-invoked
 **Goal:** Execute implementation phases from an existing plan using parallel fullstack-developer subagents.
 
 **Workflow:**
+
 1. **Load** — Read the implementation plan and identify parallel phases
 2. **Dispatch** — Launch subagents per phase with strict file ownership
 3. **Merge** — Integrate results and verify
 
 **Key Rules:**
+
 - Requires an existing plan file as input
 - Each subagent owns specific files; no cross-boundary edits
 - Sequential phases must wait for dependencies
+
+**Be skeptical. Apply critical thinking, sequential thinking. Every claim needs traced proof, confidence percentages (Idea should be more than 80%).**
 
 Execute plan: <plan>$ARGUMENTS</plan>
 

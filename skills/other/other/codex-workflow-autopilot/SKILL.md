@@ -1,6 +1,6 @@
 ---
 name: codex-workflow-autopilot
-description: Generate execution workflows from confirmed intent using behavioral modes, BMAD phases, checkpoints, and Phase X verification. Route build, fix, review, debug, and docs tasks into ordered steps with exit criteria.
+description: Generate execution workflows from confirmed intent using behavioral modes, BMAD phases, checkpoints, and Phase X verification. Route build, fix, review, debug, docs, and Scrum ceremony requests into ordered steps with exit criteria.
 load_priority: on-demand
 ---
 
@@ -12,19 +12,29 @@ Route tasks by complexity: complex -> Thinking Partner + Devil's Advocate, teach
 ## Activation
 
 1. Activate after intent analysis is confirmed.
-2. Activate on explicit `$codex-workflow-autopilot`.
+2. Activate on explicit `$codex-workflow-autopilot` or `$route`.
 3. Activate teaching mode on `$teach`, "explain", or "walk me through".
+4. Activate Scrum overlay on backlog, story, sprint, review, retrospective, release-readiness, or shorthand commands such as `$sprint-plan`, `$story-ready-check`, `$retro`, and `$release-readiness`.
+5. Activate reasoning rigor on `$codex-reasoning-rigor`, `$rigor`, "don't be generic", "go deeper", "make it specific", or "use the repo, not generic advice".
+6. Activate on alias triggers: `$plan`, `$debug`, `$create`, `$review`, `$deploy`, `$handoff`.
+7. When activated via alias, load the corresponding `.workflows/<name>.md` file before executing the flow.
 
 ## Behavioral Protocol Decision Tree
 
 ```
-Task complexity?
-    |- Complex (architecture/design/multi-file) -> activate Thinking Partner mode
-    |   `- Before presenting solution -> activate Devil's Advocate mode
+Agent context loaded?
+    |- Yes -> apply agent behavioral rules + file_ownership boundaries
+    |   `- Then route to the matching workflow mode or alias file
     |
-    |- Teaching request -> activate Teaching Mode + explain_code.py
-    |
-    `- Simple (single file fix) -> direct execution
+    `- No -> fallback to existing keyword-based mode detection
+        |
+        `- Task complexity?
+            |- Complex (architecture/design/multi-file) -> activate Thinking Partner mode
+            |   `- Before presenting solution -> activate Devil's Advocate mode
+            |
+            |- Teaching request -> activate Teaching Mode + explain_code.py
+            |
+            `- Simple (single file fix) -> direct execution
 ```
 
 ## Behavioral Modes
@@ -39,6 +49,44 @@ Task complexity?
 | challenge this, poke holes, red team, counterargument | devils-advocate | stress-test assumptions, expose risks, and propose mitigations |
 | explain, teach, learn | teach | explain progressively with examples |
 | deploy, release, ship | ship | prioritize stability and complete checks |
+
+## Scrum Overlay Trigger
+
+Trigger Scrum overlay when the request mentions:
+
+- backlog, user story, acceptance criteria, refinement
+- sprint planning, sprint backlog, sprint goal, daily scrum
+- sprint review, retrospective, release readiness
+- product owner, scrum master, cross-functional handoff
+- Scrum shorthand aliases such as `$scrum-install`, `$scrum-update`, `$sprint-plan`, `$story-ready-check`, `$story-delivery`, `$retro`, and `$release-readiness`
+
+Load and apply: `references/workflow-scrum.md`.
+Keep the routing contract in sync with `references/workflow-routing-contract.json`.
+
+Rules:
+
+- keep the base workflow (`build`, `fix`, `debug`, `review`, or `deploy`) for the actual engineering work
+- add a Scrum coordination layer when the request depends on ceremony output or multi-role handoffs
+- recommend `codex-scrum-subagents` when the project needs a local `.agent` kit for repeatable role briefs and workflows
+- if a story is not ready, route back to refinement instead of coding immediately
+
+## Reasoning Rigor Trigger
+
+Trigger this overlay when the user asks for:
+
+- deeper thinking or stronger tradeoffs
+- less generic output
+- more evidence, monitoring, or explicit risks
+- repo-grounded recommendations instead of generic best practices
+
+Load and apply: `codex-reasoning-rigor`.
+
+Rules:
+
+- force a task contract before solutioning
+- compare at least 2 options when tradeoffs are non-trivial
+- add evidence, risks, and next-step contract to the output
+- recommend `$output-guard` before finalizing high-stakes written deliverables
 
 ## Thinking-Partner Trigger
 
@@ -81,6 +129,18 @@ Trigger this mode when user asks to understand project code, not to modify it.
 | debug | reproduce -> hypotheses -> verify/eliminate -> fix -> regression-test -> gate | verified fix with evidence, gate pass |
 | docs | scope change -> update docs -> verify links/accuracy -> gate | docs updated and verified |
 
+## Scrum Ceremony Routing
+
+| Scrum Signal | Suggested Ceremony | Base Workflow | Recommended Roles |
+| --- | --- | --- | --- |
+| vague backlog item, user story, acceptance criteria | backlog refinement | build | product-owner -> scrum-master |
+| sprint planning, sprint goal, forecast | sprint planning | build | scrum-master -> product-owner -> delivery leads |
+| blocker, dependency, daily sync | daily scrum | debug | scrum-master |
+| ready story in sprint | story delivery | build or fix | scrum-orchestrator + delivery roles + qa-engineer |
+| sprint demo, stakeholder feedback | sprint review | review | product-owner + scrum-master + qa-engineer |
+| process issue, improvement experiment | retrospective | review | scrum-master + squad |
+| ship decision, rollback, release gate | release readiness | deploy | scrum-master + qa-engineer + security-engineer + devops-engineer |
+
 ## BMAD for Complex Requests
 
 Use BMAD when intent analysis marks `complexity: complex`.
@@ -93,7 +153,7 @@ Use BMAD when intent analysis marks `complexity: complex`.
 
 ### Phase 2: Planning (no code)
 
-- create plan via `$codex-plan-writer`
+- create plan via `$codex-plan-writer` or `$plan`
 - define task-level input/output/verify
 
 Checkpoint: wait for explicit user approval before Phase 3.
@@ -110,29 +170,34 @@ Checkpoint: wait for explicit user approval before Phase 3.
 
 ### Phase X: Verification (always last)
 
-1. Run `$codex-execution-quality-gate`.
+1. Run `$codex-execution-quality-gate` or `$gate`.
 2. If gate fails, fix blockers and rerun.
 3. Do not declare completion before gate decision.
 
 ## Reference Files
 
+- `references/workflow-routing-contract.json`: machine-checkable routing contract for modes, overlays, and output fields.
 - `references/thinking-partner-mode.md`: use only when collaborative option analysis is requested.
 - `references/devils-advocate-mode.md`: use only when explicit challenge/risk probing is requested.
 - `references/teaching-mode-spec.md`: use when user asks for code walkthrough, explanation, or teaching.
+- `references/workflow-scrum.md`: use when the request maps to Scrum ceremonies, story readiness, or release readiness.
 - `references/workflow-create.md`: execution template for new feature workflows.
 - `references/workflow-debug.md`: execution template for debugging workflows.
 - `references/workflow-review.md`: execution template for review workflows.
 - `references/workflow-refactor.md`: execution template for refactoring workflows.
 - `references/workflow-deploy.md`: execution template for deployment workflows.
 - `references/workflow-handoff.md`: execution template for session handoff workflows.
+- `../.workflows/plan.md`: alias workflow for planning and BMAD Phase 1-2.
+- `../.workflows/debug.md`: alias workflow for 4-phase debugging.
+- `../.workflows/create.md`: alias workflow for build-mode execution.
+- `../.workflows/review.md`: alias workflow for review plus written-output quality checks.
+- `../.workflows/deploy.md`: alias workflow for ship preparation and full gate.
+- `../.workflows/handoff.md`: alias workflow for session transfer and summary generation.
 
 ## Helper Script
 
-- `scripts/explain_code.py`:
-  - Windows:
-    `python "$env:USERPROFILE\.codex\skills\codex-workflow-autopilot\scripts\explain_code.py" --project-root <path> --file <relative-or-absolute-file>`
-  - macOS/Linux:
-    `python "$HOME/.codex/skills/codex-workflow-autopilot/scripts/explain_code.py" --project-root <path> --file <relative-or-absolute-file>`
+- `scripts/explain_code.py`: optional context helper for functions, imports, and imported-by mapping.
+- Xem `skills/.system/REGISTRY.md` để biết đường dẫn đầy đủ.
 
 ## Script Invocation Discipline
 
@@ -164,8 +229,10 @@ Return fenced JSON in conversation:
   "steps": ["step1", "step2"],
   "exit_criteria": ["criterion1"],
   "estimated_scope": "small | medium | large",
-  "phase": "analysis | planning | solutioning | implementation | verification"
+  "phase": "analysis | planning | solutioning | implementation | verification",
+  "coordination_overlay": "none | scrum",
+  "ceremony": "none | backlog-refinement | sprint-planning | daily-scrum | story-delivery | sprint-review | retrospective | release-readiness"
 }
 ```
 
-Execution remains sequential for MVP.
+Primary execution remains sequential by default. Native Codex custom agents can participate when they are installed and explicitly selected.

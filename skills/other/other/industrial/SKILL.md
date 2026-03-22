@@ -46,9 +46,25 @@ modbus_init_server(dev, param);
 - **Isolated Communication**: Use galvanically isolated transceivers for both serial and CAN lines in factory environments to prevent damage from ground loops.
 - **Watchdog Integration**: In industrial control, always pair your communication loops with the **watchdog_reliability** pattern (see **specialized** skill) to ensure the system enters a fail-safe state on protocol lockup.
 
+## Automation Tools
+- **[modbus_register_lint.py](scripts/modbus_register_lint.py)**: Validate register map CSV files for duplicate addresses and overlaps.
+
+## Examples & Templates
+- **[modbus_register_map_template.csv](assets/modbus_register_map_template.csv)**: Starter register allocation sheet for Modbus projects.
+
+## Validation Checklist
+- [ ] Modbus RTU request/response exchange succeeds against a known test slave/master.
+- [ ] Modbus TCP endpoint responds on port 502 with correct register mappings.
+- [ ] CANopen node transitions through expected NMT states during startup.
+- [ ] Communication faults trigger safe retry or watchdog-protected recovery behavior.
+
 ## Resources
 
 - **[References](references/)**:
   - `modbus_rtu.md`: Serial Modbus master/slave setup.
   - `modbus_tcp.md`: Ethernet Modbus client/server patterns.
   - `canopen_basics.md`: Object Dictionary and PDO mapping.
+- **[Scripts](scripts/)**:
+  - `modbus_register_lint.py`: Register-map consistency checker.
+- **[Assets](assets/)**:
+  - `modbus_register_map_template.csv`: Register planning template.

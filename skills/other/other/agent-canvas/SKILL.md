@@ -5,7 +5,7 @@ allowed-tools: Bash(agent-canvas:*)
 license: MIT
 metadata:
   author: WHQ25
-  version: "0.12.0"
+  version: "0.13.0"
   repository: https://github.com/WHQ25/agent-canvas
 ---
 
@@ -23,25 +23,44 @@ which agent-canvas && agent-canvas --version
 
 - **If not installed**: Ask the user which package manager they prefer (bun or npm), then install:
   ```bash
-  bun add -g @agent-canvas/cli@0.12.0
+  bun add -g @agent-canvas/cli@0.13.0
   # or
-  npm install -g @agent-canvas/cli@0.12.0
+  npm install -g @agent-canvas/cli@0.13.0
   ```
 
-- **If installed but version differs from 0.11.0**: Upgrade using the same package manager:
-  - Path contains `.bun` → `bun add -g @agent-canvas/cli@0.12.0`
-  - Otherwise → `npm install -g @agent-canvas/cli@0.12.0`
+- **If installed but version differs from 0.13.0**: Upgrade using the same package manager:
+  - Path contains `.bun` → `bun add -g @agent-canvas/cli@0.13.0`
+  - Otherwise → `npm install -g @agent-canvas/cli@0.13.0`
 
-- **After install/upgrade**: Verify with `agent-canvas --version` to confirm version is 0.11.0
+- **After install/upgrade**: Verify with `agent-canvas --version` to confirm version is 0.13.0
 
 ## Quick Start
 
 1. Start the canvas (opens in browser):
    ```bash
-   agent-canvas start & 
+   agent-canvas start &
    ```
 
 2. Use CLI commands to draw on the canvas.
+
+### Port Configuration
+
+Default ports: **39820** (WebSocket), **39821** (HTTP). If ports conflict, configure via:
+
+```bash
+agent-canvas config set port 39820         # Set WebSocket port
+agent-canvas config set http-port 39821    # Set HTTP port
+agent-canvas config list                   # Show all config (value + source)
+agent-canvas config get port               # Show current port
+agent-canvas config reset port             # Reset to default
+```
+
+Config is saved to `~/.agent-canvas/config.json`. One-time override via `start`:
+```bash
+agent-canvas start --port 8000 --http-port 8001 &
+```
+
+Priority: `--port` flag > env var `AGENT_CANVAS_WS_PORT` > config file > default.
 
 ## Commands Reference
 

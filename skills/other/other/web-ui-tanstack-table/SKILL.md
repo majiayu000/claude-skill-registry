@@ -5,7 +5,7 @@ description: TanStack Table v8 patterns - useReactTable, column definitions, sor
 
 # TanStack Table Patterns
 
-> **Quick Guide:** TanStack Table is a headless UI library for building powerful tables and datagrids. Use `useReactTable` hook with `createColumnHelper` for type-safe column definitions. Import only the row models you need (`getSortedRowModel`, `getFilteredRowModel`, etc.) for tree-shaking. Memoize data and columns with `useMemo` to prevent infinite re-renders.
+> **Quick Guide:** TanStack Table is a headless UI library for building powerful tables and datagrids. Use `useReactTable` hook with `createColumnHelper` for type-safe column definitions. Import only the row models you need (`getSortedRowModel`, `getFilteredRowModel`, etc.) for tree-shaking. Memoize data and columns with `useMemo` to prevent infinite re-renders. Set `manualPagination`, `manualSorting`, `manualFiltering` to `true` for server-side data.
 
 ---
 
@@ -39,39 +39,34 @@ description: TanStack Table v8 patterns - useReactTable, column definitions, sor
 - Building virtual scrolling tables for large datasets
 - Implementing column visibility controls and column ordering
 
-**Key patterns covered:**
-
-- useReactTable hook setup with type-safe generics
-- Column definitions with columnHelper
-- Sorting state and getSortedRowModel
-- Filtering with column filters and global filter
-- Pagination with client-side and server-side patterns
-- Row selection with single/multi-select modes
-- Expanding rows and sub-rows
-- Virtual scrolling integration
-- Column pinning (left/right sticky columns)
-- Column resizing with CSS variables for performance
-
 **When NOT to use:**
 
 - Simple tables without interactive features (use plain HTML tables)
 - Tables with fewer than 20 rows and no sorting/filtering needs
 - Read-only data display without user interaction
 
+**Key patterns covered:**
+
+- useReactTable hook setup with type-safe generics
+- Column definitions with columnHelper
+- Sorting, filtering, pagination (client-side and server-side)
+- Row selection, expanding rows, column visibility
+- Virtual scrolling, column pinning, column resizing
+
 **Detailed Resources:**
 
-- For core code examples, see [examples/core.md](examples/core.md)
-- For sorting patterns, see [examples/sorting.md](examples/sorting.md)
-- For filtering patterns, see [examples/filtering.md](examples/filtering.md)
-- For pagination patterns, see [examples/pagination.md](examples/pagination.md)
-- For row selection patterns, see [examples/selection.md](examples/selection.md)
-- For expandable rows, see [examples/expanding.md](examples/expanding.md)
-- For column visibility, see [examples/column-visibility.md](examples/column-visibility.md)
-- For server-side data handling, see [examples/server-side.md](examples/server-side.md)
-- For virtual scrolling, see [examples/virtualization.md](examples/virtualization.md)
-- For column pinning, see [examples/column-pinning.md](examples/column-pinning.md)
-- For column resizing, see [examples/column-resizing.md](examples/column-resizing.md)
-- For decision frameworks and anti-patterns, see [reference.md](reference.md)
+- [examples/core.md](examples/core.md) - Basic table setup, column definitions, type safety
+- [examples/sorting.md](examples/sorting.md) - Column sorting with custom sort functions
+- [examples/filtering.md](examples/filtering.md) - Column and global filtering
+- [examples/pagination.md](examples/pagination.md) - Client-side pagination
+- [examples/selection.md](examples/selection.md) - Row selection with bulk actions
+- [examples/expanding.md](examples/expanding.md) - Expandable rows with sub-content
+- [examples/column-visibility.md](examples/column-visibility.md) - Column visibility toggles
+- [examples/server-side.md](examples/server-side.md) - Server-side data handling
+- [examples/virtualization.md](examples/virtualization.md) - Virtual scrolling for large datasets
+- [examples/column-pinning.md](examples/column-pinning.md) - Sticky pinned columns (left/right)
+- [examples/column-resizing.md](examples/column-resizing.md) - Performant column resizing with CSS variables
+- [reference.md](reference.md) - Decision frameworks, checklists, anti-patterns
 
 ---
 
@@ -105,710 +100,207 @@ The headless approach means TanStack Table handles the hard parts (state managem
 
 ## Core Patterns
 
-### Pattern 1: Basic Table Setup with useReactTable
+### Pattern 1: Basic Table Setup
 
-Set up a type-safe table with the `useReactTable` hook and `createColumnHelper`.
-
-#### Type Definitions
+Set up a type-safe table with `useReactTable` and `createColumnHelper`. See [examples/core.md](examples/core.md) for complete implementation.
 
 ```typescript
-// types.ts
-export type User = {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  status: "active" | "inactive";
-  createdAt: Date;
-};
-```
-
-#### Column Helper Setup
-
-```typescript
-import { createColumnHelper } from "@tanstack/react-table";
-import type { User } from "./types";
-
-const columnHelper = createColumnHelper<User>();
-```
-
-#### Column Definitions (Memoized)
-
-```typescript
-import { useMemo } from "react";
-import {
-  createColumnHelper,
-  getCoreRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
-import type { User } from "./types";
-
 const columnHelper = createColumnHelper<User>();
 
-export function UserTable({ data }: { data: User[] }) {
-  // CRITICAL: Memoize columns to prevent infinite re-renders
-  const columns = useMemo(
-    () => [
-      // accessorKey for direct property access
-      columnHelper.accessor("firstName", {
-        header: "First Name",
-        cell: (info) => info.getValue(),
-      }),
-      columnHelper.accessor("lastName", {
-        header: "Last Name",
-      }),
-      columnHelper.accessor("email", {
-        header: "Email",
-      }),
-      // accessorFn for computed values - MUST include id
-      columnHelper.accessor((row) => `${row.firstName} ${row.lastName}`, {
-        id: "fullName",
-        header: "Full Name",
-      }),
-      columnHelper.accessor("status", {
-        header: "Status",
-        cell: (info) => (
-          <span data-status={info.getValue()}>{info.getValue()}</span>
-        ),
-      }),
-    ],
-    []
-  );
+const columns = useMemo(
+  () => [
+    columnHelper.accessor("firstName", { header: "First Name" }),
+    // accessorFn for computed values - MUST include id
+    columnHelper.accessor((row) => `${row.firstName} ${row.lastName}`, {
+      id: "fullName",
+      header: "Full Name",
+    }),
+  ],
+  [],
+);
 
-  // CRITICAL: Memoize data or define outside component
-  const memoizedData = useMemo(() => data, [data]);
+const data = useMemo(() => users, [users]);
 
-  const table = useReactTable({
-    data: memoizedData,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-  });
-
-  return (
-    <table>
-      <thead>
-        {table.getHeaderGroups().map((headerGroup) => (
-          <tr key={headerGroup.id}>
-            {headerGroup.headers.map((header) => (
-              <th key={header.id}>
-                {header.isPlaceholder
-                  ? null
-                  : flexRender(
-                      header.column.columnDef.header,
-                      header.getContext()
-                    )}
-              </th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody>
-        {table.getRowModel().rows.map((row) => (
-          <tr key={row.id}>
-            {row.getVisibleCells().map((cell) => (
-              <td key={cell.id}>
-                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-}
+const table = useReactTable({
+  data,
+  columns,
+  getCoreRowModel: getCoreRowModel(),
+  getRowId: (row) => row.id,
+});
 ```
 
-**Why good:** `createColumnHelper<User>()` provides full type inference for accessors, memoized columns prevent re-render loops, explicit row model imports enable tree-shaking, `accessorFn` with `id` enables computed columns
+**Critical:** Memoize both `columns` and `data` - unstable references cause infinite re-renders.
 
 ---
 
 ### Pattern 2: Sorting
 
-Enable sorting with `getSortedRowModel` and manage sorting state.
-
-#### Sorting Implementation
+Enable sorting with `getSortedRowModel` and controlled state. See [examples/sorting.md](examples/sorting.md).
 
 ```typescript
-import { useState, useMemo } from "react";
-import {
-  useReactTable,
-  getCoreRowModel,
-  getSortedRowModel,
-  flexRender,
-} from "@tanstack/react-table";
-import type { SortingState } from "@tanstack/react-table";
+const [sorting, setSorting] = useState<SortingState>([]);
 
-export function SortableTable({ data }: { data: User[] }) {
-  const [sorting, setSorting] = useState<SortingState>([]);
+const table = useReactTable({
+  data,
+  columns,
+  state: { sorting },
+  onSortingChange: setSorting,
+  getCoreRowModel: getCoreRowModel(),
+  getSortedRowModel: getSortedRowModel(),
+});
 
-  const columns = useMemo(
-    () => [
-      columnHelper.accessor("firstName", {
-        header: "First Name",
-        enableSorting: true, // default is true
-      }),
-      columnHelper.accessor("email", {
-        header: "Email",
-        enableSorting: true,
-      }),
-      columnHelper.accessor("createdAt", {
-        header: "Created",
-        // Custom sort function for dates
-        sortingFn: "datetime",
-      }),
-      columnHelper.accessor("status", {
-        header: "Status",
-        enableSorting: false, // Disable sorting for this column
-      }),
-    ],
-    []
-  );
-
-  const table = useReactTable({
-    data,
-    columns,
-    state: { sorting },
-    onSortingChange: setSorting,
-    getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-  });
-
-  return (
-    <table>
-      <thead>
-        {table.getHeaderGroups().map((headerGroup) => (
-          <tr key={headerGroup.id}>
-            {headerGroup.headers.map((header) => (
-              <th
-                key={header.id}
-                onClick={header.column.getToggleSortingHandler()}
-                style={{ cursor: header.column.getCanSort() ? "pointer" : "default" }}
-              >
-                {flexRender(header.column.columnDef.header, header.getContext())}
-                {/* Sort direction indicator */}
-                {{
-                  asc: " ↑",
-                  desc: " ↓",
-                }[header.column.getIsSorted() as string] ?? null}
-              </th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      {/* ... tbody */}
-    </table>
-  );
-}
+// In column def:
+columnHelper.accessor("createdAt", {
+  header: "Created",
+  sortingFn: "datetime", // Required for Date objects
+});
 ```
 
-**Why good:** controlled sorting state enables persistence and URL sync, `getSortedRowModel()` handles sorting logic, built-in sort functions for common types (datetime, alphanumeric), column-level `enableSorting` control
+**Gotcha:** Dates don't sort correctly with default sort. Use `sortingFn: "datetime"` for Date columns.
 
 ---
 
 ### Pattern 3: Filtering
 
-Implement column filters and global filter with `getFilteredRowModel`.
-
-#### Column Filtering
+Column filters and global filter with `getFilteredRowModel`. See [examples/filtering.md](examples/filtering.md).
 
 ```typescript
-import { useState, useMemo } from "react";
-import {
-  useReactTable,
-  getCoreRowModel,
-  getFilteredRowModel,
-  flexRender,
-} from "@tanstack/react-table";
-import type { ColumnFiltersState } from "@tanstack/react-table";
+const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+const [globalFilter, setGlobalFilter] = useState("");
 
-export function FilterableTable({ data }: { data: User[] }) {
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [globalFilter, setGlobalFilter] = useState("");
-
-  const columns = useMemo(
-    () => [
-      columnHelper.accessor("firstName", {
-        header: "First Name",
-        enableColumnFilter: true,
-      }),
-      columnHelper.accessor("status", {
-        header: "Status",
-        // Custom filter function
-        filterFn: (row, columnId, filterValue) => {
-          return row.getValue(columnId) === filterValue;
-        },
-      }),
-    ],
-    []
-  );
-
-  const table = useReactTable({
-    data,
-    columns,
-    state: {
-      columnFilters,
-      globalFilter,
-    },
-    onColumnFiltersChange: setColumnFilters,
-    onGlobalFilterChange: setGlobalFilter,
-    getCoreRowModel: getCoreRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
-  });
-
-  return (
-    <div>
-      {/* Global filter input */}
-      <input
-        type="text"
-        value={globalFilter ?? ""}
-        onChange={(e) => setGlobalFilter(e.target.value)}
-        placeholder="Search all columns..."
-      />
-
-      <table>
-        <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <th key={header.id}>
-                  {flexRender(header.column.columnDef.header, header.getContext())}
-                  {/* Column filter input */}
-                  {header.column.getCanFilter() && (
-                    <input
-                      type="text"
-                      value={(header.column.getFilterValue() as string) ?? ""}
-                      onChange={(e) => header.column.setFilterValue(e.target.value)}
-                      placeholder={`Filter ${header.column.id}...`}
-                    />
-                  )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        {/* ... tbody */}
-      </table>
-    </div>
-  );
-}
+const table = useReactTable({
+  data,
+  columns,
+  state: { columnFilters, globalFilter },
+  onColumnFiltersChange: setColumnFilters,
+  onGlobalFilterChange: setGlobalFilter,
+  getCoreRowModel: getCoreRowModel(),
+  getFilteredRowModel: getFilteredRowModel(),
+});
 ```
 
-**Why good:** separate state for column and global filters, custom `filterFn` enables complex filtering logic, built-in filter functions available (includesString, equals, etc.)
+**Gotcha:** Multiple column filters combine with AND logic, not OR. Use global filter or custom logic for OR behavior.
 
 ---
 
 ### Pattern 4: Pagination
 
-Implement client-side and server-side pagination with `getPaginationRowModel`.
-
-#### Client-Side Pagination
+Client-side and server-side pagination with `getPaginationRowModel`. See [examples/pagination.md](examples/pagination.md).
 
 ```typescript
-import { useState, useMemo } from "react";
-import {
-  useReactTable,
-  getCoreRowModel,
-  getPaginationRowModel,
-  flexRender,
-} from "@tanstack/react-table";
-import type { PaginationState } from "@tanstack/react-table";
-
 const DEFAULT_PAGE_SIZE = 10;
 
-export function PaginatedTable({ data }: { data: User[] }) {
-  const [pagination, setPagination] = useState<PaginationState>({
-    pageIndex: 0,
-    pageSize: DEFAULT_PAGE_SIZE,
-  });
+const [pagination, setPagination] = useState<PaginationState>({
+  pageIndex: 0,
+  pageSize: DEFAULT_PAGE_SIZE,
+});
 
-  const table = useReactTable({
-    data,
-    columns,
-    state: { pagination },
-    onPaginationChange: setPagination,
-    getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-  });
-
-  return (
-    <div>
-      <table>{/* ... table content */}</table>
-
-      {/* Pagination controls */}
-      <div>
-        <button
-          onClick={() => table.firstPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          First
-        </button>
-        <button
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </button>
-        <span>
-          Page {table.getState().pagination.pageIndex + 1} of{" "}
-          {table.getPageCount()}
-        </span>
-        <button
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </button>
-        <button
-          onClick={() => table.lastPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Last
-        </button>
-        <select
-          value={pagination.pageSize}
-          onChange={(e) => table.setPageSize(Number(e.target.value))}
-        >
-          {[10, 20, 50, 100].map((size) => (
-            <option key={size} value={size}>
-              Show {size}
-            </option>
-          ))}
-        </select>
-      </div>
-    </div>
-  );
-}
+const table = useReactTable({
+  data,
+  columns,
+  state: { pagination },
+  onPaginationChange: setPagination,
+  getCoreRowModel: getCoreRowModel(),
+  getPaginationRowModel: getPaginationRowModel(),
+});
 ```
 
-**Why good:** controlled pagination state for URL persistence, built-in navigation methods (`firstPage`, `previousPage`, etc.), `getCanPreviousPage`/`getCanNextPage` for button states
+**Gotcha:** `pageIndex` is 0-based internally, but many APIs are 1-based. Add 1 when sending to server.
 
 ---
 
 ### Pattern 5: Row Selection
 
-Implement single and multi-row selection with `enableRowSelection`.
-
-#### Multi-Select with Checkboxes
+Single and multi-row selection. See [examples/selection.md](examples/selection.md).
 
 ```typescript
-import { useState, useMemo } from "react";
-import {
-  useReactTable,
-  getCoreRowModel,
-  flexRender,
-} from "@tanstack/react-table";
-import type { RowSelectionState } from "@tanstack/react-table";
+const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
 
-export function SelectableTable({ data }: { data: User[] }) {
-  const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
-
-  const columns = useMemo(
-    () => [
-      // Selection checkbox column
-      columnHelper.display({
-        id: "select",
-        header: ({ table }) => (
-          <input
-            type="checkbox"
-            checked={table.getIsAllRowsSelected()}
-            ref={(input) => {
-              if (input) {
-                input.indeterminate = table.getIsSomeRowsSelected();
-              }
-            }}
-            onChange={table.getToggleAllRowsSelectedHandler()}
-          />
-        ),
-        cell: ({ row }) => (
-          <input
-            type="checkbox"
-            checked={row.getIsSelected()}
-            disabled={!row.getCanSelect()}
-            onChange={row.getToggleSelectedHandler()}
-          />
-        ),
-      }),
-      columnHelper.accessor("firstName", { header: "First Name" }),
-      // ... other columns
-    ],
-    []
-  );
-
-  const table = useReactTable({
-    data,
-    columns,
-    state: { rowSelection },
-    onRowSelectionChange: setRowSelection,
-    getCoreRowModel: getCoreRowModel(),
-    enableRowSelection: true, // Enable selection for all rows
-    // Or use a function for conditional selection:
-    // enableRowSelection: (row) => row.original.status === "active",
-  });
-
-  // Access selected rows
-  const selectedRows = table.getSelectedRowModel().rows;
-
-  return (
-    <div>
-      <p>Selected: {selectedRows.length} rows</p>
-      <table>{/* ... table content */}</table>
-    </div>
-  );
-}
+const table = useReactTable({
+  data,
+  columns,
+  state: { rowSelection },
+  onRowSelectionChange: setRowSelection,
+  getCoreRowModel: getCoreRowModel(),
+  enableRowSelection: true,
+  getRowId: (row) => row.id, // CRITICAL: Stable IDs for selection
+});
 ```
 
-**Why good:** `display` column for non-data columns like checkboxes, conditional selection with function, `getSelectedRowModel()` provides easy access to selected data
+**Critical:** Without `getRowId`, selection uses array indices which break when data is re-ordered or filtered.
 
 ---
 
-### Pattern 6: Column Visibility
+### Pattern 6: Server-Side Data
 
-Toggle column visibility with visibility state.
-
-#### Visibility Controls
+Handle server-side pagination, sorting, and filtering. See [examples/server-side.md](examples/server-side.md).
 
 ```typescript
-import { useState } from "react";
-import { useReactTable, getCoreRowModel } from "@tanstack/react-table";
-import type { VisibilityState } from "@tanstack/react-table";
-
-export function TableWithColumnVisibility({ data }: { data: User[] }) {
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
-    email: false, // Hide email column by default
-  });
-
-  const table = useReactTable({
-    data,
-    columns,
-    state: { columnVisibility },
-    onColumnVisibilityChange: setColumnVisibility,
-    getCoreRowModel: getCoreRowModel(),
-  });
-
-  return (
-    <div>
-      {/* Column visibility toggles */}
-      <div>
-        {table.getAllLeafColumns().map((column) => (
-          <label key={column.id}>
-            <input
-              type="checkbox"
-              checked={column.getIsVisible()}
-              onChange={column.getToggleVisibilityHandler()}
-              disabled={!column.getCanHide()}
-            />
-            {column.id}
-          </label>
-        ))}
-      </div>
-
-      <table>
-        {/* Use getVisibleLeafColumns and getVisibleCells */}
-        <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <th key={header.id}>
-                  {flexRender(header.column.columnDef.header, header.getContext())}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map((row) => (
-            <tr key={row.id}>
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
+const table = useReactTable({
+  data: apiData ?? [],
+  columns,
+  state: { pagination, sorting, columnFilters },
+  onPaginationChange: setPagination,
+  onSortingChange: setSorting,
+  onColumnFiltersChange: setColumnFilters,
+  getCoreRowModel: getCoreRowModel(),
+  // CRITICAL: All three manual flags for server-side
+  manualPagination: true,
+  manualSorting: true,
+  manualFiltering: true,
+  rowCount: totalFromApi,
+});
 ```
 
-**Why good:** visibility state for persistence, `enableHiding: false` on columns that should always be visible, `getVisibleCells()` automatically respects visibility
+**Critical:** Do NOT import client-side row models (`getSortedRowModel`, etc.) with `manual*: true` - they are redundant.
 
 ---
 
-### Pattern 7: Expanding Rows
+### Pattern 7: Column Visibility
 
-Implement expandable rows for hierarchical data or detail views.
-
-#### Expandable Rows
+Toggle column visibility. See [examples/column-visibility.md](examples/column-visibility.md).
 
 ```typescript
-import { useState, useMemo } from "react";
-import {
-  useReactTable,
-  getCoreRowModel,
-  getExpandedRowModel,
-  flexRender,
-  createColumnHelper,
-} from "@tanstack/react-table";
-import type { ExpandedState } from "@tanstack/react-table";
+const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
+  email: false, // Hide by default
+});
 
-const columnHelper = createColumnHelper<User>();
-
-export function ExpandableTable({ data }: { data: User[] }) {
-  const [expanded, setExpanded] = useState<ExpandedState>({});
-
-  const columns = useMemo(
-    () => [
-      columnHelper.display({
-        id: "expander",
-        header: () => null,
-        cell: ({ row }) =>
-          row.getCanExpand() ? (
-            <button
-              onClick={row.getToggleExpandedHandler()}
-              aria-label={row.getIsExpanded() ? "Collapse row" : "Expand row"}
-            >
-              {row.getIsExpanded() ? "▼" : "▶"}
-            </button>
-          ) : null,
-      }),
-      columnHelper.accessor("firstName", { header: "First Name" }),
-      // ... other columns
-    ],
-    []
-  );
-
-  const table = useReactTable({
-    data,
-    columns,
-    state: { expanded },
-    onExpandedChange: setExpanded,
-    getCoreRowModel: getCoreRowModel(),
-    getExpandedRowModel: getExpandedRowModel(),
-    getRowCanExpand: () => true, // All rows can expand
-  });
-
-  return (
-    <table>
-      <tbody>
-        {table.getRowModel().rows.map((row) => (
-          <>
-            <tr key={row.id}>
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
-            {/* Expanded content */}
-            {row.getIsExpanded() && (
-              <tr key={`${row.id}-expanded`}>
-                <td colSpan={row.getVisibleCells().length}>
-                  <UserDetails user={row.original} />
-                </td>
-              </tr>
-            )}
-          </>
-        ))}
-      </tbody>
-    </table>
-  );
-}
+// In column def - prevent hiding required columns:
+columnHelper.accessor("id", { enableHiding: false });
 ```
-
-**Why good:** controlled expanded state, `getRowCanExpand` for conditional expansion, custom expanded content outside table cells
 
 ---
 
-### Pattern 8: Server-Side Data
+### Pattern 8: Expanding Rows
 
-Handle server-side pagination, sorting, and filtering.
-
-#### Server-Side Implementation
+Expandable rows for hierarchical data or detail views. See [examples/expanding.md](examples/expanding.md).
 
 ```typescript
-import { useState, useMemo } from "react";
-import {
-  useReactTable,
-  getCoreRowModel,
-  flexRender,
-} from "@tanstack/react-table";
-import type {
-  PaginationState,
-  SortingState,
-  ColumnFiltersState,
-} from "@tanstack/react-table";
+const [expanded, setExpanded] = useState<ExpandedState>({});
 
-const DEFAULT_PAGE_SIZE = 20;
-
-export function ServerSideTable() {
-  // State for server-side features
-  const [pagination, setPagination] = useState<PaginationState>({
-    pageIndex: 0,
-    pageSize: DEFAULT_PAGE_SIZE,
-  });
-  const [sorting, setSorting] = useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-
-  // Fetch data from your data fetching solution
-  // Pass pagination, sorting, columnFilters as query parameters
-  const { data, totalRowCount, isLoading } = useUsersData({
-    page: pagination.pageIndex,
-    pageSize: pagination.pageSize,
-    sortBy: sorting[0]?.id,
-    sortOrder: sorting[0]?.desc ? "desc" : "asc",
-    filters: columnFilters,
-  });
-
-  const table = useReactTable({
-    data: data ?? [],
-    columns,
-    state: {
-      pagination,
-      sorting,
-      columnFilters,
-    },
-    onPaginationChange: setPagination,
-    onSortingChange: setSorting,
-    onColumnFiltersChange: setColumnFilters,
-    getCoreRowModel: getCoreRowModel(),
-    // CRITICAL: Manual mode for server-side
-    manualPagination: true,
-    manualSorting: true,
-    manualFiltering: true,
-    // Tell table the total row count
-    rowCount: totalRowCount,
-    // Or use pageCount directly:
-    // pageCount: Math.ceil(totalRowCount / pagination.pageSize),
-  });
-
-  if (isLoading) return <div>Loading...</div>;
-
-  return <table>{/* ... table content */}</table>;
-}
+const table = useReactTable({
+  data,
+  columns,
+  state: { expanded },
+  onExpandedChange: setExpanded,
+  getCoreRowModel: getCoreRowModel(),
+  getExpandedRowModel: getExpandedRowModel(),
+  getRowCanExpand: () => true,
+});
 ```
-
-**Why good:** `manualPagination/Sorting/Filtering: true` disables client-side processing, `rowCount` enables proper page count calculation, state passed to data fetching for server queries
 
 ---
 
-### Pattern 9: TypeScript Integration
+### Pattern 9: Reusable Generic Table Component
 
-Leverage TypeScript generics for full type safety.
-
-#### Reusable Table Component
+Leverage TypeScript generics for a reusable table component. See [examples/core.md](examples/core.md).
 
 ```typescript
-import type { ColumnDef } from "@tanstack/react-table";
-
-// Generic table props with dual generics
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
 
-// Generic table component
 export function DataTable<TData, TValue>({
   columns,
   data,
@@ -818,68 +310,76 @@ export function DataTable<TData, TValue>({
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
-
-  return (
-    <table>
-      {/* ... table content */}
-    </table>
-  );
+  // ... render table
 }
-
-// Usage with type inference
-const userColumns: ColumnDef<User, unknown>[] = [
-  { accessorKey: "firstName", header: "First Name" },
-  { accessorKey: "email", header: "Email" },
-];
-
-<DataTable columns={userColumns} data={users} />
 ```
 
-#### Custom Row ID
+---
+
+### Pattern 10: Column Pinning
+
+Keep columns visible during horizontal scroll. See [examples/column-pinning.md](examples/column-pinning.md).
+
+```typescript
+const [columnPinning, setColumnPinning] = useState<ColumnPinningState>({
+  left: ["id"],
+  right: ["actions"],
+});
+```
+
+**Critical:** Pinning provides state only. You must apply `position: sticky` and background CSS yourself to prevent content overlap.
+
+---
+
+### Pattern 11: Column Resizing
+
+User-adjustable column widths. See [examples/column-resizing.md](examples/column-resizing.md).
 
 ```typescript
 const table = useReactTable({
   data,
   columns,
-  getCoreRowModel: getCoreRowModel(),
-  // Use database ID instead of index for row identification
-  getRowId: (row) => row.id,
+  columnResizeMode: "onChange", // or "onEnd" for simpler, more performant
+  enableColumnResizing: true,
 });
 ```
 
-**Why good:** dual generics `<TData, TValue>` for reusable components, `getRowId` enables stable selection state across data updates, `ColumnDef<T>` type ensures column accessors match data shape
+**Critical:** `columnResizeMode: "onChange"` requires CSS variables pattern and memoized table body for 60fps performance. Use `"onEnd"` for simpler cases.
 
 </patterns>
 
 ---
 
-<integration>
+<red_flags>
 
-## Integration Guide
+## RED FLAGS
 
-TanStack Table is a headless library that integrates with your existing architecture.
+**High Priority Issues:**
 
-**Works with:**
+- **Missing useMemo on columns/data** - Columns or data defined inline without memoization cause infinite re-renders. Must be memoized or defined outside the component.
+- **accessorFn without id** - Using `accessorFn` without providing an `id` causes runtime errors.
+- **Missing manualPagination for server-side** - Forgetting `manualPagination: true` when using server-side data causes the table to paginate already-paginated data.
+- **Returning JSX from accessorFn** - Accessors return primitive values for sorting/filtering. Use the `cell` option for JSX rendering.
 
-- **React** - `useReactTable` hook for React integration
-- **Virtualization** - Combine with `@tanstack/react-virtual` for large datasets
+**Medium Priority Issues:**
 
-**Boundary clarifications:**
+- **Not providing rowCount for server-side** - Without `rowCount` or `pageCount`, the table cannot calculate correct page count.
+- **Missing getRowId with selection** - Without `getRowId`, row selection uses array indices which break on sort/filter.
+- **Not using flexRender** - Manually rendering header/cell values breaks when columnDef uses a function for header/cell.
 
-- **TanStack Table handles:** Table state (sorting, filtering, pagination, pinning, sizing), row models, column definitions
-- **Your styling solution handles:** Table markup styling, sticky column CSS, cell formatting CSS
-- **Your data fetching solution handles:** API calls, caching, loading states for server-side tables
-- **Your form solution handles:** Inline editing inputs, validation
+**Gotchas & Edge Cases:**
 
-**Virtual scrolling note:**
+- Date sorting requires `sortingFn: "datetime"` - JavaScript dates don't sort correctly by default
+- Column filters are AND, not OR - Multiple column filters combine with AND logic
+- `pageIndex` is 0-based - Many APIs use 1-based; add 1 when sending to server
+- `autoResetPageIndex` defaults to `true` - Page resets to 0 when data changes; set to `false` for server-side
+- Column pinning requires sticky CSS - TanStack Table provides state only, you apply CSS
+- `columnResizeMode: "onChange"` needs CSS variables + memoized body for performance
+- Attach `getResizeHandler` to both `onMouseDown` and `onTouchStart` for mobile support
+- Pinning affects column order - Pinning, column ordering, and grouping all reorder columns; pinning happens first
+- Pinned cells need background color - Otherwise scrolling content shows through
 
-TanStack Table does not include virtualization. For tables with thousands of rows, integrate with `@tanstack/react-virtual`. See [examples/virtualization.md](examples/virtualization.md) for virtual scrolling patterns.
-
-**Column pinning note:**
-
-Column pinning provides state and APIs for pinning columns left/right. You handle the sticky CSS positioning. See [examples/column-pinning.md](examples/column-pinning.md) for patterns.
-
-</integration>
+</red_flags>
 
 ---
 

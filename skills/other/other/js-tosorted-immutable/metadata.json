@@ -2,8 +2,16 @@
   "name": "js-tosorted-immutable",
   "repo": "TheOrcDev/8bitcn-ui",
   "path": ".claude/skills/js-tosorted-immutable/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/TheOrcDev/8bitcn-ui",
   "dir_name": "js-tosorted-immutable",
-  "downloaded_at": "2026-02-15T05:53:09.437946Z"
+  "downloaded_at": "2026-03-22T06:23:13.248164Z",
+  "author": "TheOrcDev",
+  "source_url": "https://github.com/TheOrcDev/8bitcn-ui/blob/main/.claude/skills/js-tosorted-immutable/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TheOrcDev/8bitcn-ui/blob/main/.claude/skills/js-tosorted-immutable/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

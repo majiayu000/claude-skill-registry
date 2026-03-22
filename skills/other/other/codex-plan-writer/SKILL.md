@@ -12,7 +12,7 @@ Create `{task-slug}.md` plan file for complex requests. Required sections: Overv
 ## Activation
 
 1. Activate during workflow planning phases.
-2. Activate on explicit `$codex-plan-writer`.
+2. Activate on explicit `$codex-plan-writer` or `$plan`.
 3. Mandatory for complex requests with scope `medium` or `large`.
 
 ## Output File Naming
@@ -53,6 +53,15 @@ For each task include:
 - verify method
 - rollback strategy
 
+### 4.5 Evidence & Monitoring
+
+For medium or high-risk tasks, also include:
+
+- what evidence is required before claiming success
+- what signal should be monitored after the change
+- what drift or failure would look like
+- what fallback path exists if the signal goes red
+
 ### 5. Phase X Verification Checklist
 
 - lint passes
@@ -76,6 +85,7 @@ Each task MUST include:
 - **Code:** Complete code (not "add validation here")
 - **Commands:** Exact commands with expected output
 - **Verification:** How to confirm this task is done
+- **Evidence:** What makes the step specific and believable
 
 ## Rules
 
@@ -95,4 +105,5 @@ Plan writing is complete only when:
 
 1. plan file exists at `./{task-slug}.md`
 2. all required sections exist
-3. user has reviewed and approved the plan
+3. the plan can survive strict deliverable validation via `run_gate.py --output-file <plan.md>` without falling back to generic filler
+4. user has reviewed and approved the plan

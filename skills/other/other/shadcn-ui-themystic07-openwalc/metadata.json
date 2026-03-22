@@ -1,0 +1,17 @@
+{
+  "name": "shadcn-ui",
+  "repo": "TheMystic07/OpenWalc",
+  "path": ".pi/skills/shadcn-ui/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/TheMystic07/OpenWalc",
+  "dir_name": "shadcn-ui-themystic07-openwalc",
+  "downloaded_at": "2026-03-22T06:22:58.355129Z",
+  "author": "TheMystic07",
+  "source_url": "https://github.com/TheMystic07/OpenWalc/blob/main/.pi/skills/shadcn-ui/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TheMystic07/OpenWalc/blob/main/.pi/skills/shadcn-ui/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

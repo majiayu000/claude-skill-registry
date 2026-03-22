@@ -2,8 +2,16 @@
   "name": "i18n-patterns",
   "repo": "captjay98/gemini-livestockai",
   "path": ".gemini/skills/i18n-patterns/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/captjay98/gemini-livestockai",
   "dir_name": "i18n-patterns-captjay98-gemini-livestockai-2",
-  "downloaded_at": "2026-02-22T06:39:35.080260Z"
+  "downloaded_at": "2026-03-22T07:23:40.692446Z",
+  "author": "captjay98",
+  "source_url": "https://github.com/captjay98/gemini-livestockai/blob/main/.gemini/skills/i18n-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/captjay98/gemini-livestockai/blob/main/.gemini/skills/i18n-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

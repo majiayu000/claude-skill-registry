@@ -1,0 +1,17 @@
+{
+  "name": "external-intel-provider-rollout",
+  "repo": "Eulga/discord-heatmap-bot-trading-calendar",
+  "path": ".agents/skills/external-intel-provider-rollout/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/Eulga/discord-heatmap-bot-trading-calendar",
+  "dir_name": "external-intel-provider-rollout",
+  "downloaded_at": "2026-03-22T05:19:20.403708Z",
+  "author": "Eulga",
+  "source_url": "https://github.com/Eulga/discord-heatmap-bot-trading-calendar/blob/master/.agents/skills/external-intel-provider-rollout/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Eulga/discord-heatmap-bot-trading-calendar/blob/master/.agents/skills/external-intel-provider-rollout/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

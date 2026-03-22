@@ -1,0 +1,17 @@
+{
+  "name": "healthkit",
+  "repo": "dpearson2699/swift-ios-skills",
+  "path": "skills/healthkit/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dpearson2699/swift-ios-skills",
+  "dir_name": "healthkit",
+  "downloaded_at": "2026-03-22T07:48:54.807117Z",
+  "author": "dpearson2699",
+  "source_url": "https://github.com/dpearson2699/swift-ios-skills/blob/main/skills/healthkit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dpearson2699/swift-ios-skills/blob/main/skills/healthkit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

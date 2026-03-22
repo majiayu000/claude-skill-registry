@@ -77,14 +77,16 @@ export default defineConfig({
 | Source maps | `sourcemap: true`, `'inline'`, `'hidden'` | [option-sourcemap](references/option-sourcemap.md) |
 | Watch mode | `watch: true`, watch options | [option-watch-mode](references/option-watch-mode.md) |
 | Cleaning | `clean: true`, clean patterns | [option-cleaning](references/option-cleaning.md) |
-| Log level | `logLevel: 'silent'`, `failOnWarn: 'ci-only'` | [option-log-level](references/option-log-level.md) |
+| Log level | `logLevel: 'silent'`, `failOnWarn: false` | [option-log-level](references/option-log-level.md) |
 
 ## Dependency Handling
 
 | Feature | Usage | Reference |
 |---------|-------|-----------|
-| External deps | `external: ['react', /^@myorg\//]` | [option-dependencies](references/option-dependencies.md) |
-| Inline deps | `noExternal: ['dep-to-bundle']` | [option-dependencies](references/option-dependencies.md) |
+| Never bundle | `deps: { neverBundle: ['react', /^@myorg\//] }` | [option-dependencies](references/option-dependencies.md) |
+| Always bundle | `deps: { alwaysBundle: ['dep-to-bundle'] }` | [option-dependencies](references/option-dependencies.md) |
+| Only bundle | `deps: { onlyBundle: ['cac', 'bumpp'] }` - Whitelist | [option-dependencies](references/option-dependencies.md) |
+| Skip node_modules | `deps: { skipNodeModulesBundle: true }` | [option-dependencies](references/option-dependencies.md) |
 | Auto external | Automatic peer/dependency externalization | [option-dependencies](references/option-dependencies.md) |
 
 ## Output Enhancement
@@ -94,16 +96,21 @@ export default defineConfig({
 | Shims | `shims: true` - Add ESM/CJS compatibility | [option-shims](references/option-shims.md) |
 | CJS default | `cjsDefault: true` (default) / `false` | [option-cjs-default](references/option-cjs-default.md) |
 | Package exports | `exports: true` - Auto-generate exports field | [option-package-exports](references/option-package-exports.md) |
-| CSS handling | **[experimental]** Still in development | [option-css](references/option-css.md) |
+| CSS handling | **[experimental]** `css: { ... }` — full pipeline with preprocessors, Lightning CSS, PostCSS, code splitting; requires `@tsdown/css` | [option-css](references/option-css.md) |
+| CSS inject | `css: { inject: true }` — preserve CSS imports in JS output | [option-css](references/option-css.md) |
 | Unbundle mode | `unbundle: true` - Preserve directory structure | [option-unbundle](references/option-unbundle.md) |
+| Root directory | `root: 'src'` - Control output directory mapping | [option-root](references/option-root.md) |
+| Executable | **[experimental]** `exe: true` - Bundle as standalone executable, cross-platform via `@tsdown/exe` | [option-exe](references/option-exe.md) |
 | Package validation | `publint: true`, `attw: true` - Validate package | [option-lint](references/option-lint.md) |
 
 ## Framework & Runtime Support
 
 | Framework | Guide | Reference |
 |-----------|-------|-----------|
-| React | JSX transform, Fast Refresh | [recipe-react](references/recipe-react.md) |
+| React | JSX transform, React Compiler | [recipe-react](references/recipe-react.md) |
 | Vue | SFC support, JSX | [recipe-vue](references/recipe-vue.md) |
+| Solid | SolidJS JSX transform | [recipe-solid](references/recipe-solid.md) |
+| Svelte | Svelte component libraries (source distribution recommended) | [recipe-svelte](references/recipe-svelte.md) |
 | WASM | WebAssembly modules via `rolldown-plugin-wasm` | [recipe-wasm](references/recipe-wasm.md) |
 
 ## Common Patterns
@@ -152,10 +159,12 @@ export default defineConfig({
   entry: ['src/index.tsx'],
   format: ['esm', 'cjs'],
   dts: true,
-  external: ['react', 'react-dom'],
-  plugins: [
-    // React Fast Refresh support
-  ],
+  deps: {
+    neverBundle: ['react', 'react-dom'],
+  },
+  inputOptions: {
+    jsx: { runtime: 'automatic' },
+  },
 })
 ```
 
@@ -177,7 +186,7 @@ export default defineConfig({
   entry: ['src/index.ts'],
   format: ['esm', 'cjs'],
   dts: true,
-  failOnWarn: 'ci-only',
+  failOnWarn: 'ci-only',  // opt-in: fail on warnings in CI
   publint: 'ci-only',
   attw: 'ci-only',
 })
@@ -192,6 +201,48 @@ import { defineConfig } from 'tsdown'
 export default defineConfig({
   entry: ['src/index.ts'],
   plugins: [wasm()],
+})
+```
+
+### Library with CSS and Sass
+
+```ts
+export default defineConfig({
+  entry: ['src/index.ts'],
+  format: ['esm', 'cjs'],
+  dts: true,
+  target: 'chrome100',
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "src/styles/variables" as *;`,
+      },
+    },
+  },
+})
+```
+
+### Standalone Executable
+
+```ts
+export default defineConfig({
+  entry: ['src/cli.ts'],
+  exe: true,
+})
+```
+
+### Cross-Platform Executable (requires `@tsdown/exe`)
+
+```ts
+export default defineConfig({
+  entry: ['src/cli.ts'],
+  exe: {
+    targets: [
+      { platform: 'linux', arch: 'x64', nodeVersion: '25.7.0' },
+      { platform: 'darwin', arch: 'arm64', nodeVersion: '25.7.0' },
+      { platform: 'win', arch: 'x64', nodeVersion: '25.7.0' },
+    ],
+  },
 })
 ```
 
@@ -274,19 +325,28 @@ npx tsdown-migrate              # Migrate from tsup
 
 # Output options
 tsdown --format esm,cjs        # Multiple formats
-tsdown --outDir lib            # Custom output directory
+tsdown -d lib                  # Custom output directory (--out-dir)
 tsdown --minify                # Enable minification
 tsdown --dts                   # Generate declarations
+tsdown --exe                   # Bundle as standalone executable
+tsdown --unbundle              # Bundleless mode
 
 # Entry options
 tsdown src/index.ts            # Single entry
 tsdown src/*.ts                # Glob patterns
 tsdown src/a.ts src/b.ts       # Multiple entries
 
+# Workspace / Monorepo
+tsdown -W                      # Enable workspace mode
+tsdown -W -F my-package        # Filter specific package
+tsdown --filter /^pkg-/        # Filter by regex
+
 # Development
 tsdown --watch                 # Watch mode
 tsdown --sourcemap             # Generate source maps
 tsdown --clean                 # Clean output directory
+tsdown --from-vite             # Reuse Vite config
+tsdown --tsconfig tsconfig.build.json  # Custom tsconfig
 ```
 
 ## Best Practices
@@ -298,7 +358,7 @@ tsdown --clean                 # Clean output directory
 
 2. **Externalize dependencies** to avoid bundling unnecessary code:
    ```ts
-   { external: [/^react/, /^@myorg\//] }
+   { deps: { neverBundle: [/^react/, /^@myorg\//] } }
    ```
 
 3. **Use tree shaking** for optimal bundle size:

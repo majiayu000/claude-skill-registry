@@ -1,0 +1,17 @@
+{
+  "name": "fermi-surface",
+  "repo": "DingyangLyu/MatClaw",
+  "path": "container/skills/fermi-surface/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/DingyangLyu/MatClaw",
+  "dir_name": "fermi-surface",
+  "downloaded_at": "2026-03-22T05:14:37.399220Z",
+  "author": "DingyangLyu",
+  "source_url": "https://github.com/DingyangLyu/MatClaw/blob/main/container/skills/fermi-surface/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DingyangLyu/MatClaw/blob/main/container/skills/fermi-surface/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

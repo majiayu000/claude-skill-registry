@@ -5,7 +5,7 @@ description: '[Project Management] Order backlog items using RICE, MoSCoW, or Va
 allowed-tools: Read, Write, Edit
 ---
 
-> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
 
 ## Quick Summary
 
@@ -23,6 +23,8 @@ allowed-tools: Read, Write, Edit
 - Minimum 3 items required; fewer than 3 should be discussed directly
 - Default to RICE if unsure; ask user if ambiguous
 - Optionally update PBI file priority fields after ranking
+
+**Be skeptical. Apply critical thinking, sequential thinking. Every claim needs traced proof, confidence percentages (Idea should be more than 80%).**
 
 # Backlog Prioritization
 
@@ -75,7 +77,7 @@ Order backlog items using data-driven prioritization frameworks to produce a ran
     Reach:      Users affected per quarter (number)
     Impact:     0.25 (minimal) | 0.5 (low) | 1 (medium) | 2 (high) | 3 (massive)
     Confidence: 0.5 (low) | 0.8 (medium) | 1.0 (high)
-    Effort:     Person-months (number)
+    Effort:     Story points (1, 2, 3, 5, 8, 13, 21) — see .claude/skills/shared/estimation-framework.md
     ```
 
     **MoSCoW:**

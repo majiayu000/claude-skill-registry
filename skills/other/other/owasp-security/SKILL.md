@@ -39,6 +39,7 @@ When reviewing code, check for these issues:
 - [ ] MFA available for sensitive operations
 
 ### Access Control
+- [ ] Check for framework-level auth middleware (e.g., Next.js middleware.ts, proxy.ts, Express middleware) before flagging missing per-route auth
 - [ ] Authorization checked on every request
 - [ ] Using object references user cannot manipulate
 - [ ] Deny by default policy

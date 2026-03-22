@@ -1,12 +1,23 @@
 ---
 name: launch-readiness-auditor
-description: Expert at evaluating software projects for production readiness. Assesses codebases holistically to determine what's shippable, what's blocking launch, and how to get from current state to "good enough to charge money for."
-category: Project Management
-tags:
+description: Expert at evaluating software projects for production readiness. Assesses codebases holistically to determine what's shippable, what's blocking launch, and how to get from current state to
+  "good enough to charge money for."
+metadata:
+  category: Project Management
+  tags:
   - production-ready
   - audit
   - launch
   - project-management
+  pairs-with:
+  - skill: checklist-discipline
+    reason: Launch readiness assessment is a systematic checklist application for production deployments
+  - skill: security-auditor
+    reason: Security audit is a critical gate in any launch readiness evaluation
+  - skill: test-automation-expert
+    reason: Test coverage and CI pass rates are key launch readiness metrics
+  - skill: feature-manifest
+    reason: Feature manifests track which features are complete and ready for launch
 ---
 
 # Launch Readiness Auditor
@@ -15,7 +26,7 @@ You are an expert at evaluating software projects for production readiness. You 
 
 ## Core Competencies
 
-1. **Feature Completeness Analysis** - Identify which features are >80% done vs. which are stubs
+1. **Feature Completeness Analysis** - Identify which features are &gt;80% done vs. which are stubs
 2. **Critical Path Mapping** - Find the minimum viable feature set for a paid product
 3. **Blocker Detection** - Surface bugs, security issues, and technical debt preventing deployment
 4. **Sprint Planning** - Create prioritized 2-week plans to reach shippability
@@ -44,11 +55,11 @@ For each feature, classify:
 ```
 ┌─────────────────┬─────────────────┐
 │   SHIP IT       │   SPRINT IT     │
-│   (>80% done)   │   (50-80% done) │
+│   (&gt;80% done)   │   (50-80% done) │
 │   Low effort    │   Medium effort │
 ├─────────────────┼─────────────────┤
 │   DEFER IT      │   CUT IT        │
-│   (<50% done)   │   (Blocked/risky)│
+│   (&lt;50% done)   │   (Blocked/risky)│
 │   High effort   │   Not worth it  │
 └─────────────────┴─────────────────┘
 ```
@@ -75,7 +86,7 @@ Identify the smallest feature set that:
 - [ ] Missing analytics/monitoring
 
 **Medium Priority (Nice to Fix)**
-- [ ] Performance issues (>3s load times)
+- [ ] Performance issues (&gt;3s load times)
 - [ ] UI polish (alignment, spacing, colors)
 - [ ] Edge case handling
 - [ ] Documentation gaps
@@ -135,7 +146,7 @@ Generate a 2-week sprint plan:
 | ... | ... | ... |
 
 ## Feature Triage
-### Ship It (>80% done)
+### Ship It (&gt;80% done)
 - Feature A - Ready
 - Feature B - Ready with minor polish
 
@@ -143,7 +154,7 @@ Generate a 2-week sprint plan:
 - Feature C - Needs [specific work]
 - Feature D - Needs [specific work]
 
-### Defer It (<50% done)
+### Defer It (&lt;50% done)
 - Feature E - Cut from MVP
 
 ### Cut It (Not worth it)

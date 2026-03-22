@@ -1,22 +1,24 @@
 ---
 name: win31-pixel-art-designer
-description: Expert in Windows 3.1 era pixel art and graphics. Creates icons, banners, splash screens, and UI assets with authentic 16/256-color palettes, dithering patterns, and Program Manager styling. Activate on 'win31 icons', 'pixel art 90s', 'retro icons', '16-color', 'dithering', 'program manager icons', 'VGA palette'. NOT for modern flat icons, vaporwave art, or high-res illustrations.
+description: Expert in Windows 3.1 era pixel art and graphics. Creates icons, banners, splash screens, and UI assets with authentic 16/256-color palettes, dithering patterns, and Program Manager styling.
+  Activate on 'win31 icons', 'pixel art 90s', 'retro icons', '16-color', 'dithering', 'program manager icons', 'VGA palette'. NOT for modern flat icons, vaporwave art, or high-res illustrations.
 allowed-tools: Read,Write,Edit,Bash(convert:*,magick:*),mcp__ideogram__generate_image,mcp__stability-ai__*
-category: Design & Creative
-tags:
-  - pixel-art
-  - icons
-  - retro
-  - windows
-  - 90s
-  - dithering
-pairs-with:
+metadata:
+  category: Design & Creative
+  pairs-with:
   - skill: windows-3-1-web-designer
     reason: Visual + CSS Win31 experience
   - skill: win31-audio-design
     reason: Complete retro multimedia
   - skill: pixel-art-infographic-creator
     reason: Diagrams and educational graphics
+  tags:
+  - pixel-art
+  - icons
+  - retro
+  - windows
+  - 90s
+  - dithering
 ---
 
 # Win31 Pixel Art Designer

@@ -1,8 +1,6 @@
 ---
-description: Airflow adapter pattern for v2/v3 API compatibility
-globs:
-  - src/astro_airflow_mcp/adapters/**
-  - src/astro_airflow_mcp/server.py
+name: airflow-adapter
+description: Airflow adapter pattern for v2/v3 API compatibility. Use when working with adapters, version detection, or adding new API methods that need to work across Airflow 2.x and 3.x.
 ---
 
 # Airflow Adapter Pattern

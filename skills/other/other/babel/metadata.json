@@ -2,8 +2,16 @@
   "name": "babel",
   "repo": "G1Joshi/Agent-Skills",
   "path": "skills/tools/babel/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/G1Joshi/Agent-Skills",
   "dir_name": "babel",
-  "downloaded_at": "2026-02-22T05:04:04.470076Z"
+  "downloaded_at": "2026-03-22T05:22:21.659181Z",
+  "author": "G1Joshi",
+  "source_url": "https://github.com/G1Joshi/Agent-Skills/blob/main/skills/tools/babel/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/G1Joshi/Agent-Skills/blob/main/skills/tools/babel/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

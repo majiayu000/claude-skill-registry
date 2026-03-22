@@ -9,8 +9,8 @@ Use this guide to rollback a failed deployment to restore service quickly.
 
 **Prerequisites**:
 - You must have deployed using one of:
-  - `/deploy__azure_container_apps` - Azure Container Apps
-  - `/deploy__kubernetes_cluster` - Kubernetes cluster
+  - `azd up` - Azure Container Apps via azd
+  - `kubectl apply` - Kubernetes cluster
 
 **Debugging**:
 - `/frontend__debug_sse` - If rollback was due to SSE issues
@@ -407,8 +407,8 @@ After rollback:
 
 **Prerequisites**:
 - You must have deployed using one of:
-  - `/deploy__azure_container_apps` - Azure Container Apps
-  - `/deploy__kubernetes_cluster` - Kubernetes cluster
+  - `azd up` - Azure Container Apps via azd
+  - `kubectl apply` - Kubernetes cluster
 
 **Debugging**:
 - `/frontend__debug_sse` - If rollback was due to SSE issues
@@ -417,7 +417,7 @@ After rollback:
 
 **After Fix**:
 - `/test__verify_feature` - Verify application health after rollback
-- `/deploy__azure_container_apps` or `/deploy__kubernetes_cluster` - Redeploy fixed version
+- `azd up` or `kubectl apply` - Redeploy fixed version
 
 **See Also**:
 - [aspire-deployment-guide](../../../docs/guides/aspire-deployment-guide.md) - Deployment documentation

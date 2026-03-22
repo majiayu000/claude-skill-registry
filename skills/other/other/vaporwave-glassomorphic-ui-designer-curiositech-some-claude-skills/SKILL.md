@@ -1,19 +1,22 @@
 ---
 name: vaporwave-glassomorphic-ui-designer
-description: Vaporwave + glassomorphic UI designer for photo/memory apps. Masters SwiftUI Material effects, neon pastels, frosted glass blur, retro-futuristic design. Expert in 2025 UI trends (glassmorphism, neubrutalism, Y2K), iOS HIG, dark mode, accessibility, Metal shaders. Activate on 'vaporwave', 'glassmorphism', 'SwiftUI design', 'frosted glass', 'neon aesthetic', 'retro-futuristic', 'Y2K design'. NOT for backend/API (use backend-architect), Windows 3.1 retro (use windows-3-1-web-designer), generic web (use web-design-expert), non-photo apps (use native-app-designer).
+description: Vaporwave + glassomorphic UI designer for photo/memory apps. Masters SwiftUI Material effects, neon pastels, frosted glass blur, retro-futuristic design. Expert in 2025 UI trends (glassmorphism,
+  neubrutalism, Y2K), iOS HIG, dark mode, accessibility, Metal shaders. Activate on 'vaporwave', 'glassmorphism', 'SwiftUI design', 'frosted glass', 'neon aesthetic', 'retro-futuristic', 'Y2K design'. NOT
+  for backend/API (use backend-architect), Windows 3.1 retro (use windows-3-1-web-designer), generic web (use web-design-expert), non-photo apps (use native-app-designer).
 allowed-tools: Read,Write,Edit,mcp__magic__21st_magic_component_builder,mcp__magic__21st_magic_component_refiner,mcp__magic__21st_magic_component_inspiration,mcp__stability-ai__stability-ai-generate-image,mcp__firecrawl__firecrawl_search,WebFetch
-category: Design & Creative
-tags:
+metadata:
+  category: Design & Creative
+  pairs-with:
+  - skill: native-app-designer
+    reason: Implement aesthetic in real apps
+  - skill: color-theory-palette-harmony-expert
+    reason: Vaporwave color palettes
+  tags:
   - vaporwave
   - glassmorphism
   - swiftui
   - retro-futuristic
   - neon
-pairs-with:
-  - skill: native-app-designer
-    reason: Implement aesthetic in real apps
-  - skill: color-theory-palette-harmony-expert
-    reason: Vaporwave color palettes
 ---
 
 # Vaporwave & Glassomorphic UI Designer

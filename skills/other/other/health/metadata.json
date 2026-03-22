@@ -2,8 +2,16 @@
   "name": "health",
   "repo": "Geralt1983/Thanos",
   "path": "Skills/Health/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/Geralt1983/Thanos",
   "dir_name": "health",
-  "downloaded_at": "2026-02-22T05:05:03.224697Z"
+  "downloaded_at": "2026-03-22T05:24:27.949661Z",
+  "author": "Geralt1983",
+  "source_url": "https://github.com/Geralt1983/Thanos/blob/main/Skills/Health/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Geralt1983/Thanos/blob/main/Skills/Health/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -1,0 +1,17 @@
+{
+  "name": "python-patterns",
+  "repo": "cooldaemon/dotfiles",
+  "path": ".claude/skills/python-patterns/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/cooldaemon/dotfiles",
+  "dir_name": "python-patterns-cooldaemon-dotfiles",
+  "downloaded_at": "2026-03-22T07:33:11.528471Z",
+  "author": "cooldaemon",
+  "source_url": "https://github.com/cooldaemon/dotfiles/blob/master/.claude/skills/python-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cooldaemon/dotfiles/blob/master/.claude/skills/python-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

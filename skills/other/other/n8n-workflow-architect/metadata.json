@@ -2,8 +2,16 @@
   "name": "n8n-workflow-architect",
   "repo": "Brmbobo/Lead-Gen",
   "path": ".claude/skills/n8n-workflow-architect/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/Brmbobo/Lead-Gen",
   "dir_name": "n8n-workflow-architect",
-  "downloaded_at": "2026-02-15T04:52:42.128277Z"
+  "downloaded_at": "2026-03-22T05:01:37.328651Z",
+  "author": "Brmbobo",
+  "source_url": "https://github.com/Brmbobo/Lead-Gen/blob/main/.claude/skills/n8n-workflow-architect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brmbobo/Lead-Gen/blob/main/.claude/skills/n8n-workflow-architect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

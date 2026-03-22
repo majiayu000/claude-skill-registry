@@ -126,7 +126,46 @@ sozo migrate --profile mainnet
 
 ## Katana Configuration
 
-### Quick Start (Development)
+See the [Katana configuration guide](/toolchain/katana/configuration) for all available TOML options.
+
+### TOML Configuration
+
+Most Dojo projects use a `katana.toml` config file rather than CLI flags.
+Recommended starter config:
+
+```toml
+[dev]
+dev = true
+no_fee = true
+
+[cartridge]
+controllers = true
+
+[server]
+http_cors_origins = "*"
+```
+
+Start with config file:
+
+```bash
+katana --config katana.toml
+```
+
+### Cartridge Controller on Katana
+
+When using [Cartridge Controller](https://docs.cartridge.gg/controller/getting-started) locally, Katana must deploy Controller contracts at genesis.
+Without this, Controller transactions fail with "Requested contract address ... is not deployed".
+
+```toml
+# katana.toml
+[cartridge]
+paymaster = true  # Enables paymaster AND deploys Controller contracts at genesis
+```
+
+Note: `paymaster = true` implicitly enables `controllers = true`.
+See the [Controller setup docs](https://docs.cartridge.gg/controller/getting-started) for client-side configuration.
+
+### Quick Start (CLI flags)
 
 ```bash
 katana --dev --dev.no-fee

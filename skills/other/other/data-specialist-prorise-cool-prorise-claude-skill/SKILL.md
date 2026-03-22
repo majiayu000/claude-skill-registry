@@ -2,306 +2,48 @@
 description: 提供数据库设计、优化、数据工程和数据分析能力。当需要处理数据库操作、数据管道或数据分析时使用。
 name: data-specialist
 ---
-
 # Data Specialist
 
-
 提供数据库设计、优化、数据工程和数据分析能力。当需要处理数据库操作、数据管道或数据分析时使用。
 
-## When to Use This Skill
+## Skill Index
 
-提供数据库设计、优化、数据工程和数据分析能力。当需要处理数据库操作、数据管道或数据分析时使用。
+<!-- AUTO-GENERATED-SKILL-INDEX:START -->
+以下索引由 `node scripts/update-skill-index.js` 自动生成，用于让 Claude 在顶层专家触发后继续路由到最相关的子技能。
 
-## Capabilities
+### Claude 使用说明
 
-This specialist skill combines the following capabilities:
+1. 先将用户当前任务与每个子技能的 `触发语义` 进行语义匹配，不要只看目录名。
+2. 一旦找到最相关的子技能，立即打开其 `入口文件` 指向的 `SKILL.md`，把它作为下一层入口。
+3. 进入子技能后，再根据该子技能自己的说明按需加载同目录下的 `references/`、`scripts/`、`assets/`，不要在顶层专家中预先展开大段细节。
+4. 如果多个子技能都相关，先加载最贴近主目标的那个，再按需补充其他子技能，避免一次性加载过多上下文。
+5. 下方 `入口文件` 路径相对于项目根目录，可直接用于 `Read` 操作。
 
+### 子技能索引
 
-### Autogen
+#### data-consolidation-agent (1)
+- `data-consolidation-agent`
+  - 触发语义: AI agent that consolidates extracted sales data into live reporting dashboards with territory, rep, and pipeline summaries
+  - 入口文件: `.claude/skills/data-specialist/references/domains/data-consolidation-agent/SKILL.md`
 
-📖 [详细文档](./references/cursor_rules_autogen.md)
+#### data-engineer (1)
+- `data-engineer`
+  - 触发语义: Expert data engineer specializing in building reliable data pipelines, lakehouse architectures, and scalable data infrastructure. Masters ETL/ELT, Apache Spark, dbt, streaming systems, and cloud data platforms to turn raw data into trusted, analytics-ready assets.
+  - 入口文件: `.claude/skills/data-specialist/references/domains/data-engineer/SKILL.md`
 
+#### database-optimizer (1)
+- `database-optimizer`
+  - 触发语义: Expert database specialist focusing on schema design, query optimization, indexing strategies, and performance tuning for PostgreSQL, MySQL, and modern databases like Supabase and PlanetScale.
+  - 入口文件: `.claude/skills/data-specialist/references/domains/database-optimizer/SKILL.md`
 
-### Aws Dynamodb
+#### sales-data-extraction-agent (1)
+- `sales-data-extraction-agent`
+  - 触发语义: AI agent specialized in monitoring Excel files and extracting key sales metrics (MTD, YTD, Year End) for internal live reporting
+  - 入口文件: `.claude/skills/data-specialist/references/domains/sales-data-extraction-agent/SKILL.md`
 
-📖 [详细文档](./references/cursor_rules_aws-dynamodb.md)
+<!-- AUTO-GENERATED-SKILL-INDEX:END -->
 
+## Notes
 
-### Aws Rds
-
-📖 [详细文档](./references/cursor_rules_aws-rds.md)
-
-
-### Crewai
-
-📖 [详细文档](./references/cursor_rules_crewai.md)
-
-
-### Cuda
-
-📖 [详细文档](./references/cursor_rules_cuda.md)
-
-
-### Dask
-
-📖 [详细文档](./references/cursor_rules_dask.md)
-
-
-### Drizzle
-
-📖 [详细文档](./references/cursor_rules_drizzle.md)
-
-
-### Duckdb
-
-📖 [详细文档](./references/cursor_rules_duckdb.md)
-
-
-### Elasticsearch
-
-📖 [详细文档](./references/cursor_rules_elasticsearch.md)
-
-
-### Firebase
-
-📖 [详细文档](./references/cursor_rules_firebase.md)
-
-
-### Huggingface
-
-📖 [详细文档](./references/cursor_rules_huggingface.md)
-
-
-### Jax
-
-📖 [详细文档](./references/cursor_rules_jax.md)
-
-
-### Keras
-
-📖 [详细文档](./references/cursor_rules_keras.md)
-
-
-### Langchain
-
-📖 [详细文档](./references/cursor_rules_langchain.md)
-
-
-### Langchain Js
-
-📖 [详细文档](./references/cursor_rules_langchain-js.md)
-
-
-### Langgraph
-
-📖 [详细文档](./references/cursor_rules_langgraph.md)
-
-
-### Lightgbm
-
-📖 [详细文档](./references/cursor_rules_lightgbm.md)
-
-
-### Llama Index
-
-📖 [详细文档](./references/cursor_rules_llama-index.md)
-
-
-### Llamaindex Js
-
-📖 [详细文档](./references/cursor_rules_llamaindex-js.md)
-
-
-### Matplotlib
-
-📖 [详细文档](./references/cursor_rules_matplotlib.md)
-
-
-### Mlx
-
-📖 [详细文档](./references/cursor_rules_mlx.md)
-
-
-### Modal
-
-📖 [详细文档](./references/cursor_rules_modal.md)
-
-
-### Mongodb
-
-📖 [详细文档](./references/cursor_rules_mongodb.md)
-
-
-### Neo4J
-
-📖 [详细文档](./references/cursor_rules_neo4j.md)
-
-
-### Numba
-
-📖 [详细文档](./references/cursor_rules_numba.md)
-
-
-### Numpy
-
-📖 [详细文档](./references/cursor_rules_numpy.md)
-
-
-### Openai
-
-📖 [详细文档](./references/cursor_rules_openai.md)
-
-
-### Pandas
-
-📖 [详细文档](./references/cursor_rules_pandas.md)
-
-
-### Peewee
-
-📖 [详细文档](./references/cursor_rules_peewee.md)
-
-
-### Plotly
-
-📖 [详细文档](./references/cursor_rules_plotly.md)
-
-
-### Pony
-
-📖 [详细文档](./references/cursor_rules_pony.md)
-
-
-### Postgresql
-
-📖 [详细文档](./references/cursor_rules_postgresql.md)
-
-
-### Pytorch
-
-📖 [详细文档](./references/cursor_rules_pytorch.md)
-
-
-### Redis
-
-📖 [详细文档](./references/cursor_rules_redis.md)
-
-
-### Scikit Learn
-
-📖 [详细文档](./references/cursor_rules_scikit-learn.md)
-
-
-### Scipy
-
-📖 [详细文档](./references/cursor_rules_scipy.md)
-
-
-### Seaborn
-
-📖 [详细文档](./references/cursor_rules_seaborn.md)
-
-
-### Smolagents
-
-📖 [详细文档](./references/cursor_rules_smolagents.md)
-
-
-### Sqlalchemy
-
-📖 [详细文档](./references/cursor_rules_sqlalchemy.md)
-
-
-### Sqlite
-
-📖 [详细文档](./references/cursor_rules_sqlite.md)
-
-
-### Statsmodels
-
-📖 [详细文档](./references/cursor_rules_statsmodels.md)
-
-
-### Supabase
-
-📖 [详细文档](./references/cursor_rules_supabase.md)
-
-
-### Tensorflow
-
-📖 [详细文档](./references/cursor_rules_tensorflow.md)
-
-
-### Tinygrad
-
-📖 [详细文档](./references/cursor_rules_tinygrad.md)
-
-
-### Tortoise Orm
-
-📖 [详细文档](./references/cursor_rules_tortoise-orm.md)
-
-
-### Vllm
-
-📖 [详细文档](./references/cursor_rules_vllm.md)
-
-
-### Xgboost
-
-📖 [详细文档](./references/cursor_rules_xgboost.md)
-
-
-### Database Admin
-
-管理数据库操作、备份、复制和监控。处理用户权限、维护任务和灾难恢复。主动用于数据库设置、操作问题或恢复程序。
-
-
-📖 [详细文档](./references/databases_database-admin.md)
-
-
-
-### Database Optimizer
-
-优化SQL查询，设计高效索引，并处理数据库迁移。解决N+1问题、慢查询并实现缓存。主动用于数据库性能问题或Schema优化。
-
-
-📖 [详细文档](./references/databases_database-optimizer.md)
-
-
-
-### Data Engineer
-
-构建ETL管道、数据仓库和流式架构。实现Spark作业、Airflow DAG和Kafka流。主动用于数据管道设计或分析基础设施。
-
-
-📖 [详细文档](./references/databases_data-engineer.md)
-
-
-
-### Data Scientist
-
-专注于SQL查询、BigQuery操作和数据洞察的数据分析专家。可主动用于数据分析任务和查询。
-
-
-📖 [详细文档](./references/databases_data-scientist.md)
-
-
-
-### Customer Support
-
-处理支持工单、常见问题解答和客户邮件。创建帮助文档、故障排除指南和预设回复。主动用于客户咨询或支持文档。
-
-
-📖 [详细文档](./references/databases_customer-support.md)
-
-
-
-### Sql Pro
-
-编写复杂的SQL查询，优化执行计划，并设计范式化Schema。精通CTE、窗口函数和存储过程。主动用于查询优化、复杂连接或数据库设计。
-
-
-📖 [详细文档](./references/specialized_databases_sql-pro.md)
-
-
+- 顶层 `SKILL.md` 仅做索引导航，不承载大体量细节内容。
+- 详细资料下沉到 `references/domains/`，按树形结构组织。

@@ -1,22 +1,23 @@
 ---
 name: deduplicate-articles
-version: "2.0.0"
-description: >
-  DEPRECATED: This skill has been replaced by memory/check_seen and memory/mark_seen
+version: 2.0.0
+description: 'DEPRECATED: This skill has been replaced by memory/check_seen and memory/mark_seen
   tools. Use fetch-rss-feeds or other collection skills which handle deduplication
   automatically through the Memory MCP server.
+
+  '
 license: MIT
 deprecated: true
-deprecated_by: "memory/check_seen, memory/mark_seen"
-deprecated_reason: "Deduplication is now built into collection skills using Memory MCP"
+deprecated_by: memory/check_seen, memory/mark_seen
+deprecated_reason: Deduplication is now built into collection skills using Memory
+  MCP
 metadata:
-  kubani:
-    domain: news
-    category: collection
-    requires_approval: false
-    confidence: 0.0
-    version: "2.0.0"
-    status: deprecated
+  domain: news
+  category: collection
+  requires-approval: false
+  confidence: 0.0
+  mcp-servers: []
+  status: deprecated
 ---
 
 # Deduplicate Articles (DEPRECATED)

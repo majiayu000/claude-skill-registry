@@ -24,15 +24,11 @@ Evaluate whether modules provide powerful functionality through simple interface
 
 ### The Depth Principle
 
-> "The benefit provided by a module is its functionality. The cost of a module (in terms of system complexity) is its interface." — John Ousterhout, _A Philosophy of Software Design_
+Every module gives functionality and costs knowledge (in the form of an interface). Deep modules give a lot and ask for very little, delivering the highest return on interface cost.
 
-Deep modules maximize benefit relative to cost.
+The deepest possible module can even have no interface at all. Garbage collection is the classic example: it does enormously complex work that callers never think about.
 
-> "It is more important for a module to have a simple interface than a simple implementation." — John Ousterhout, _A Philosophy of Software Design_
-
-Implementation complexity is paid once. Interface complexity is paid by every caller, forever. The deepest possible module has no interface at all. Garbage collection does complex work and callers never interact with it.
-
-Remember: the interface has two layers. The **formal interface** (signatures, types, exceptions) and the **informal interface** (ordering constraints, side effects, performance characteristics, thread safety). The informal interface is usually larger and more dangerous. If undocumented, it produces unknown unknowns.
+Importantly, interfaces are also bigger than they look. The visible part is the **formal** interface: signatures, types, and exceptions. The invisible part is the **informal** interface: ordering rules, side effects, performance characteristics, and thread safety assumptions. The informal interface is usually larger and more dangerous. When the invisible part goes undocumented, callers end up with dependencies they don't know exist, creating new unknown unknowns.
 
 ### The Depth Test
 
@@ -50,23 +46,19 @@ A concrete signal: if the documentation for a method would be longer than its im
 
 #### Methods Should Be Deep Too
 
-A method with hundreds of lines is fine if it has a simple signature and does one complete thing. Splitting into shallow pieces replaces one interface with many: net cost increase. _Depth first, length second._
+A method with hundreds of lines is fine if it has a simple signature and does one complete thing. Splitting into shallow pieces can unnecessarily replace one interface with many, increasing the net complexity and cognitive load to understand or maintain. Get the depth right before worrying about code length. Once a method does something useful and complete, shortening it is the easy part.
 
-> "Don't sacrifice depth for length." — John Ousterhout, _A Philosophy of Software Design_
-
-This directly contradicts the _Clean Code_ position that functions should be broken up by length alone. Shorter is generally easier to read, but once a function is down to a few dozen lines, further reduction is unlikely to help. The real question is whether splitting reduces the complexity of the _system_, not the function in isolation. If the pieces lose their independence and must be read together, the split made things worse.
+This directly contradicts the rule from Robert Martin's _Clean Code_ that functions should be split by length alone. Shorter is generally easier to read, but once a function is down to a few dozen lines, further reduction is unlikely to help. The real question is whether splitting reduces the complexity of the _system_, not the function in isolation. If the pieces lose their independence and must be read together, the split made things worse.
 
 #### When Long Methods Are Fine
 
-A method with several sequential blocks is fine as one method if the blocks are relatively independent.
-
-> "If the blocks have complex interactions, it's even more important to keep them together so readers can see all of the code at once." — John Ousterhout, _A Philosophy of Software Design_
+A method with several sequential blocks is fine as one method if the blocks are relatively independent. If the blocks depend on each other, splitting them makes things harder, not easier. Readers now have to jump between methods to understand what was visible in one place.
 
 ### Classitis
 
-The dominant modern error is over-decomposing: splitting things into too many small pieces rather than too few large ones. You can often make something deeper by combining closely related things. Once unified, they may simplify each other in ways that were invisible when apart.
+One of the most common errors modern developers make is over-decomposing: splitting things into too many small pieces rather than too few large ones. You can often make something deeper by combining closely related things. When unified, they might simplify each other in ways that were invisible when apart.
 
-Signs:
+#### Signs of Classitis:
 
 - Many classes each doing one small thing, requiring callers to compose them
 - Class names that are verbs or single operations (Reader, Writer, Parser, Validator as thin wrappers)

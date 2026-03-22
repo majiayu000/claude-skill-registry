@@ -1,0 +1,17 @@
+{
+  "name": "documentation",
+  "repo": "brunolimaff-jpg/NOVO-APP",
+  "path": ".agent/skills/documentation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/brunolimaff-jpg/NOVO-APP",
+  "dir_name": "documentation-brunolimaff-jpg-novo-app",
+  "downloaded_at": "2026-03-22T07:20:44.112855Z",
+  "author": "brunolimaff-jpg",
+  "source_url": "https://github.com/brunolimaff-jpg/NOVO-APP/blob/main/.agent/skills/documentation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brunolimaff-jpg/NOVO-APP/blob/main/.agent/skills/documentation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "weekly-report-generator",
+  "repo": "JaimeParker/stable-jarvis",
+  "path": "skills/weekly-report-generator/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/JaimeParker/stable-jarvis",
+  "dir_name": "weekly-report-generator",
+  "downloaded_at": "2026-03-22T05:32:21.574547Z",
+  "author": "JaimeParker",
+  "source_url": "https://github.com/JaimeParker/stable-jarvis/blob/main/skills/weekly-report-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JaimeParker/stable-jarvis/blob/main/skills/weekly-report-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

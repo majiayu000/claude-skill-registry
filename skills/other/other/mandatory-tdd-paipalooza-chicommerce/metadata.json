@@ -2,8 +2,16 @@
   "name": "mandatory-tdd",
   "repo": "PAIPalooza/chicommerce",
   "path": ".ainative/skills/mandatory-tdd/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/PAIPalooza/chicommerce",
   "dir_name": "mandatory-tdd-paipalooza-chicommerce",
-  "downloaded_at": "2026-02-22T05:31:35.268818Z"
+  "downloaded_at": "2026-03-22T06:02:55.775734Z",
+  "author": "PAIPalooza",
+  "source_url": "https://github.com/PAIPalooza/chicommerce/blob/main/.ainative/skills/mandatory-tdd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PAIPalooza/chicommerce/blob/main/.ainative/skills/mandatory-tdd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

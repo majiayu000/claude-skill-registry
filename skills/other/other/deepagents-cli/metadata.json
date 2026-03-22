@@ -2,8 +2,16 @@
   "name": "deepagents-cli",
   "repo": "Gitmaxd/deepagents-cli-claude-skill",
   "path": "templates/skills/deepagents-cli/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/Gitmaxd/deepagents-cli-claude-skill",
   "dir_name": "deepagents-cli",
-  "downloaded_at": "2026-02-22T05:05:12.687439Z"
+  "downloaded_at": "2026-03-22T05:24:55.568673Z",
+  "author": "Gitmaxd",
+  "source_url": "https://github.com/Gitmaxd/deepagents-cli-claude-skill/blob/main/templates/skills/deepagents-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Gitmaxd/deepagents-cli-claude-skill/blob/main/templates/skills/deepagents-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

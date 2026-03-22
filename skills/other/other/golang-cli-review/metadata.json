@@ -2,8 +2,16 @@
   "name": "golang-cli-review",
   "repo": "asteroid-belt/skulto",
   "path": ".claude/skills/golang-cli-review/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/asteroid-belt/skulto",
   "dir_name": "golang-cli-review",
-  "downloaded_at": "2026-02-22T06:24:07.159730Z"
+  "downloaded_at": "2026-03-22T07:04:06.596389Z",
+  "author": "asteroid-belt",
+  "source_url": "https://github.com/asteroid-belt/skulto/blob/main/.claude/skills/golang-cli-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/asteroid-belt/skulto/blob/main/.claude/skills/golang-cli-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

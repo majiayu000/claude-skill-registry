@@ -1,0 +1,17 @@
+{
+  "name": "1k-group-think",
+  "repo": "OneKeyHQ/app-monorepo",
+  "path": ".claude/skills/1k-group-think/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/OneKeyHQ/app-monorepo",
+  "dir_name": "1k-group-think",
+  "downloaded_at": "2026-03-22T05:59:39.330294Z",
+  "author": "OneKeyHQ",
+  "source_url": "https://github.com/OneKeyHQ/app-monorepo/blob/master/.claude/skills/1k-group-think/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OneKeyHQ/app-monorepo/blob/master/.claude/skills/1k-group-think/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,20 +1,20 @@
 ---
 name: compose-digest
-version: "2.0.0"
-description: >
-  Compose a formatted news digest from analyzed articles and trends. Uses memory
-  search to retrieve articles and LLM to generate formatted output.
+version: 2.0.0
+description: 'Compose a formatted news digest from analyzed articles and trends. Uses
+  memory search to retrieve articles and LLM to generate formatted output.
+
+  '
 license: MIT
 allowed-tools:
-  - use_llm                # Strands built-in LLM tool for formatting
-  - memory/search          # Search for articles and trends
+- use_llm
+- memory/search
 metadata:
-  kubani:
-    domain: news
-    category: publishing
-    requires_approval: false
-    confidence: 0.95
-    version: "2.0.0"
+  domain: news
+  category: publishing
+  requires-approval: false
+  confidence: 0.95
+  mcp-servers: []
 ---
 
 # Compose Digest

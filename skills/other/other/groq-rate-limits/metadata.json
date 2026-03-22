@@ -2,8 +2,16 @@
   "name": "groq-rate-limits",
   "repo": "HelixDevelopment/HelixAgent",
   "path": "skills/plugins/saas-packs/groq-pack/groq-rate-limits/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/HelixDevelopment/HelixAgent",
   "dir_name": "groq-rate-limits",
-  "downloaded_at": "2026-02-15T05:12:36.464993Z"
+  "downloaded_at": "2026-03-22T05:27:51.750203Z",
+  "author": "HelixDevelopment",
+  "source_url": "https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/plugins/saas-packs/groq-pack/groq-rate-limits/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/plugins/saas-packs/groq-pack/groq-rate-limits/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

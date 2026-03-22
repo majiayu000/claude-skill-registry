@@ -1,0 +1,17 @@
+{
+  "name": "posthog-integration-nextjs-app-router",
+  "repo": "EthGlobalBangkok/polyswap-dapp",
+  "path": ".claude/skills/posthog-integration-nextjs-app-router/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/EthGlobalBangkok/polyswap-dapp",
+  "dir_name": "posthog-integration-nextjs-app-router",
+  "downloaded_at": "2026-03-22T05:19:17.592719Z",
+  "author": "EthGlobalBangkok",
+  "source_url": "https://github.com/EthGlobalBangkok/polyswap-dapp/blob/main/.claude/skills/posthog-integration-nextjs-app-router/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EthGlobalBangkok/polyswap-dapp/blob/main/.claude/skills/posthog-integration-nextjs-app-router/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

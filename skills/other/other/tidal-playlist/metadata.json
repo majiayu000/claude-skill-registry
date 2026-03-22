@@ -1,0 +1,17 @@
+{
+  "name": "tidal-playlist",
+  "repo": "SteveGrosbois/tidal-cli",
+  "path": "skills/tidal-playlist/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/SteveGrosbois/tidal-cli",
+  "dir_name": "tidal-playlist",
+  "downloaded_at": "2026-03-22T06:18:22.037924Z",
+  "author": "SteveGrosbois",
+  "source_url": "https://github.com/SteveGrosbois/tidal-cli/blob/main/skills/tidal-playlist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SteveGrosbois/tidal-cli/blob/main/skills/tidal-playlist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

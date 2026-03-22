@@ -9,11 +9,11 @@ description: >
   .oky files, or asks about example-driven JSON schema validation.
 ---
 
-# Okyline Schema Language v1.1.0
+# Okyline Schema Language v1.3.0
 
 Okyline is a declarative language for describing and validating JSON structures using inline constraints on field names. Schemas are valid JSON documents with real example values.
 
-# Okyline skill version : 1.6.1
+# Okyline skill version : 1.7.0
 
 ## ⚠️ Before any schema generation
 
@@ -27,13 +27,15 @@ Okyline is a declarative language for describing and validating JSON structures 
 Never generate a schema based solely on this SKILL.md file.
 The examples here are a summary, not an exhaustive reference.
 
-## $ref: minimal usage
+## $ref: when to use
 
-DO NOT use `$defs`/`$ref` unless:
-1. Recursion (mandatory)
-2. Explicit user request
+Use `$defs`/`$ref` when:
+1. **Recursion** (mandatory — only way to express recursive structures)
+2. **Repeated structures** identical across multiple usages (e.g. `Period`, `Address`)
+3. **Template pattern** — base structure specialized per usage via `$override` (e.g. `Coding`)
+4. **Explicit user request**
 
-Default → everything inline in `$oky`.
+Default → inline in `$oky`. Don't over-abstract — factorize only when it reduces real duplication or expresses a meaningful shared type.
 
 
 ## Core Syntax
@@ -146,6 +148,60 @@ To preserve decimal precision in examples, wrap in quotes:
 This only affects decimals with zero fractional parts (.00, .0).
 Regular decimals (45.5) and integers (10) are unaffected.
 
+
+## ⚠️ `?` vs Absence — Critical Distinction
+
+`?` and "optional field" are NOT the same thing in Okyline:
+
+| | Meaning | When to use |
+|--|---------|-------------|
+| No `@` | Field may be **absent** from the document | FHIR optional fields, nullable in most APIs |
+| `?` | Field may be explicitly **`null`** | Only when `null` is a meaningful intentional value |
+
+```json
+// ❌ Wrong — using ? for optional fields (common LLM mistake)
+"meta|?|Resource metadata": { ... }
+"subType|?|Claim subtype": { ... }
+
+// ✅ Correct — optional = no @, never ?
+"meta||Resource metadata": { ... }
+"subType||Claim subtype": { ... }
+
+// ✅ ? only when null is intentional and meaningful
+"active|?|Explicitly unknown status": true
+```
+
+> In FHIR R4 and most REST APIs, absent fields are simply omitted — they are never sent as `null`. Use `?` only when the standard explicitly allows `null` as a distinct semantic value (e.g. "unknown" vs "not provided").
+
+## Legacy Null Tolerance
+
+```json
+{ "$nullAsAbsentIfUndeclared": true }
+```
+When `true`, a `null` value on a field not marked `?` is treated as absent instead of invalid. Use only for legacy systems that send `null` instead of omitting fields. Default: `false`.
+
+## Polymorphism vs Structural Directives — Key Distinction
+
+These look similar but serve different purposes:
+
+| | Target | Meaning |
+|--|--------|---------|
+| `$exactlyOne` / `$mutuallyExclusive` | Fields of an object | Constrain **presence** of sibling fields |
+| `$oneOf` / `$anyOf` | A single field | Constrain the **structure** of that field's value |
+
+```json
+// $exactlyOne — exactly one of these sibling fields must be present
+"diagnosisCodeableConcept": { ... },
+"diagnosisReference": { ... },
+"$exactlyOne": ["diagnosisCodeableConcept", "diagnosisReference"]
+
+// $oneOf — the payment field itself must match exactly one variant
+"payment|@ $oneOf": [
+  { "type|@ ('card')": "card", "cardNumber|@ {16}": "1234567812345678" },
+  { "type|@ ('paypal')": "paypal", "email|@ ~$Email~": "user@example.com" }
+]
+```
+
 ## Reusable Definitions — `$defs` and `$ref`
 
 Okyline supports **internal references** to promote reuse and consistency.
@@ -241,42 +297,19 @@ Multiple inheritance: `"$ref": ["&Auditable", "&Deletable"]`
 
 ## $compute Context Rules
 
-Expressions in `$compute` must be **attached to a field** using `|(%ComputeName)` syntax. The expression is evaluated in the **context of the parent object** of the annotated field.
+Expressions in `$compute` must be **attached to a field** using `|(%ComputeName)` syntax. The expression is evaluated in the context of the **object that directly contains the annotated field** — all properties of that object are accessible, including sibling arrays.
 
-❌ Unattached compute (never evaluated):
-```json
-"$compute": { "Valid": "total == sum(items, price)" }
-```
-
-✅ Attached to a field:
-```json
-"total|(%Valid)": 100.0
-```
-
-❌ Wrong context - using absolute paths in array element validation:
-```json
-"lignes|[*]": [{ "montantHT|(%Check)": 500 }],
-"$compute": { "Check": "lignes[*].montantHT == lignes[*].quantite * lignes[*].prix" }
-```
-
-✅ Correct - references are relative to parent (the current array element):
-```json
-"$oky":{
-   "lignes|[*]": [{ "quantite": 5, "prix": 100, "montantHT|(%Check)": 500 }]
-},
-"$compute": { "Check": "montantHT == quantite * prix" }
-```
+See `references/expression-language.md` for full details and examples.
 
 ## Schema Design Workflow
 
 1. Start with `{"$oky": { ... }}`
-2. Identify reusable structures → define in `$defs`
-3. Write example JSON with realistic values
-4. Add `@` to required fields
-5. Add constraints progressively: length, range, format, enums
-6. Use `$ref` for reusable types
-7. Add conditional logic if needed (`$appliedIf`, `$requiredIf`)
-8. Add computed validations if needed (`$compute`)
+2. Write example JSON with realistic values
+3. Add `@` to required fields
+4. Add constraints progressively: length, range, format, enums
+5. Add conditional logic if needed (`$appliedIf`, `$requiredIf`)
+6. Add computed validations if needed (`$compute`)
+7. Identify repeated structures → extract to `$defs` with `$ref`
 
 ## Reference Files
 
@@ -323,6 +356,15 @@ For detailed syntax and features, consult these references:
 // Object inheritance
 "$ref": "&Auditable"
 
+// Template pattern — $ref + $override inline in array element
+"coding|[*]": [{
+  "$ref": "&Coding",
+  "code|$override @ ($MARITAL_STATUS)|Code": "M"
+}]
+
+// Property-level $ref (field IS the type, no specialization)
+"period|$ref||Validity period": "&Period"
+
 // Multiple inheritance
 "$ref": ["&Auditable", "&Deletable"]
 ```
@@ -331,7 +373,7 @@ For detailed syntax and features, consult these references:
 
 ```json
 {
-  "$okylineVersion": "1.1.0",
+  "$okylineVersion": "1.3.0",
   "$version": "1.0.0",
   "$id": "my-schema",
   "$title": "My Schema",
@@ -351,6 +393,42 @@ For detailed syntax and features, consult these references:
  ❌ `"personne-vehicules"` (hyphen not allowed)
  ✅ `"personne.vehicules"` or `"personne_vehicules"`
 ```
+
+
+## Structural Group Directives
+
+Constrain which fields from a group must be present. No condition required.
+
+```json
+"$atLeastOne": ["email", "phone"]               // at least one present
+"$mutuallyExclusive": ["deceasedBoolean", "deceasedDateTime"]  // at most one
+"$exactlyOne": ["diagnosisCode", "diagnosisRef"]  // exactly one
+"$allOrNone": ["street", "city", "zip"]         // all or none
+
+// Multiple independent groups → use suffix
+"$mutuallyExclusive_deceased": ["deceasedBoolean", "deceasedDateTime"],
+"$mutuallyExclusive_birth": ["multipleBirthBoolean", "multipleBirthInteger"]
+```
+
+See `references/conditional-directives.md` for full details.
+
+## $compute — Cross-Collection Pattern
+
+To validate a constraint across an array from root context, attach the compute to the array field itself:
+
+```json
+"insurance|@ [1,*] -> ! (%FocalInsurance)": [{
+  "focal|@": true, ...
+}],
+"$compute": {
+  "FocalInsurance": "countIf(insurance, focal) == 1"
+}
+```
+
+- `countIf(collection, expr)` — counts elements where expr is truthy
+- For boolean fields: `countIf(insurance, focal)` counts `true` values
+- For other fields: `countIf(items, status == 'ACTIVE')`
+- Always attach the compute to the most semantically relevant field
 
 ## Common Mistakes to Avoid
 

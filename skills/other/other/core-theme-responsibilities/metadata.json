@@ -1,0 +1,17 @@
+{
+  "name": "core-theme-responsibilities",
+  "repo": "NextSpark-js/nextspark",
+  "path": ".claude/skills/core-theme-responsibilities/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/NextSpark-js/nextspark",
+  "dir_name": "core-theme-responsibilities",
+  "downloaded_at": "2026-03-22T05:55:21.883733Z",
+  "author": "NextSpark-js",
+  "source_url": "https://github.com/NextSpark-js/nextspark/blob/main/.claude/skills/core-theme-responsibilities/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NextSpark-js/nextspark/blob/main/.claude/skills/core-theme-responsibilities/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

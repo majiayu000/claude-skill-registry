@@ -1,6 +1,6 @@
 ---
 name: precommit-setup
-description: "Configure three-layer pre-commit system with linting, type checking, and testing hooks. Use for quality gate setup and code standards. Skip if pre-commit is optimally configured."
+description: "Configure pre-commit hooks for linting, type checking, and testing. Use for quality gate setup. Skip if pre-commit configured."
 # Custom metadata (not used by Claude for matching):
 model: claude-sonnet-4
 tools: [Read, Write, Bash]

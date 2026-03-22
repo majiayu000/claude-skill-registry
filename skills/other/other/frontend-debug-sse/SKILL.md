@@ -312,7 +312,7 @@ case "BookUpdated":              // ✗ Wrong
 - `/test__integration_scaffold` - Add tests to prevent regression
 
 **See Also**:
-- [wolverine__create_operation](../wolverine__create_operation/SKILL.md) - SSE notification setup in ProjectionCommitListener
+- [wolverine__guide](../wolverine__guide/SKILL.md) - SSE notification setup in ProjectionCommitListener
 - [frontend__feature_scaffold](../frontend__feature_scaffold/SKILL.md) - Frontend SSE integration
 - [real-time-notifications](../../../docs/guides/real-time-notifications.md) - SSE architecture and data flow
 - ApiService AGENTS.md - Backend notification patterns

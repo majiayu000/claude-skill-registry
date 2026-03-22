@@ -196,10 +196,7 @@ echo ${#arr[@]} # Outputs array length
 ### 6. String Comparison
 
 ```bash
-# ❌ Using = for string comparison
-if [ $name = "John" ]; then  # Not standard in some shells
-
-# ✅ Use = or ==
+# ✅ Use `=` inside POSIX `[` tests and `==` inside Bash `[[ ]]` tests
 if [ "$name" = "John" ]; then
 if [[ "$name" == "John" ]]; then
 
@@ -230,8 +227,23 @@ cd /nonexistent || exit 1
 ## Common Debugging Commands
 
 ### Python pdb Debugger
+```bash
+python -m pdb script.py
+pytest -x -vv tests/test_target.py
+```
+
 ### Node.js Inspector
+```bash
+node --inspect-brk app.js
+node --trace-warnings app.js
+```
+
 ### Git Bisect
+```bash
+git bisect start
+git bisect bad
+git bisect good <known-good-commit>
+```
 
 ### Bash Debugging
 

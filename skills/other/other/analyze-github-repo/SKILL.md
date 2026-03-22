@@ -1,37 +1,36 @@
 ---
 name: analyze-github-repo
-description: >
-  Deep analysis of a GitHub repository for tool spotlight inclusion in news digests.
-  Evaluates the project's purpose, quality, popularity trajectory, and usefulness
-  for AI practitioners.
+description: 'Deep analysis of a GitHub repository for tool spotlight inclusion in
+  news digests. Evaluates the project''s purpose, quality, popularity trajectory,
+  and usefulness for AI practitioners.
+
+  '
 license: MIT
 compatibility: Requires OpenAI-compatible LLM API access and GitHub API access
 metadata:
-  kubani:
-    domain: news
-    category: diagnostic
-    version: "1.0.0"
-    mcp_servers: []
-    requires_approval: false
-    confidence: 0.8
+  domain: news
+  category: diagnostic
+  requires-approval: false
+  confidence: 0.8
+  mcp-servers: []
 input:
-  - name: repo
-    type: GithubRepo
-    description: Repository metadata from fetch-github-trending
-  - name: include_readme
-    type: bool
-    default: true
-    description: Whether to fetch and analyze the README for deeper insights
+- name: repo
+  type: GithubRepo
+  description: Repository metadata from fetch-github-trending
+- name: include_readme
+  type: bool
+  default: true
+  description: Whether to fetch and analyze the README for deeper insights
 output:
-  - name: analysis
-    type: RepoAnalysis
-    description: Comprehensive repository analysis with summary and recommendations
-  - name: spotlight_worthy
-    type: bool
-    description: Whether repo deserves a featured tool spotlight
-  - name: spotlight_summary
-    type: str
-    description: Ready-to-use summary for digest if spotlight-worthy
+- name: analysis
+  type: RepoAnalysis
+  description: Comprehensive repository analysis with summary and recommendations
+- name: spotlight_worthy
+  type: bool
+  description: Whether repo deserves a featured tool spotlight
+- name: spotlight_summary
+  type: str
+  description: Ready-to-use summary for digest if spotlight-worthy
 ---
 
 # Analyze GitHub Repo

@@ -1,0 +1,17 @@
+{
+  "name": "gh-healthcheck",
+  "repo": "FastLED/FastLED",
+  "path": ".claude/skills/gh-healthcheck/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/FastLED/FastLED",
+  "dir_name": "gh-healthcheck",
+  "downloaded_at": "2026-03-22T05:20:29.130473Z",
+  "author": "FastLED",
+  "source_url": "https://github.com/FastLED/FastLED/blob/master/.claude/skills/gh-healthcheck/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FastLED/FastLED/blob/master/.claude/skills/gh-healthcheck/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

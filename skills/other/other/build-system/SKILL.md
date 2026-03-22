@@ -29,9 +29,27 @@ Core build logic for applications and modules.
 - **Reference**: **[cmake.md](references/cmake.md)**
 - **Key Tools**: `CMakeLists.txt`, `zephyr_library()`, `target_sources()`.
 
+## Quick Start (Workspace + Build)
+```bash
+west init -m <manifest-repo-url> zephyr-workspace
+cd zephyr-workspace
+west update
+west build -b native_sim samples/hello_world
+```
+
+## Validation Checklist
+- [ ] `west update` resolves all manifest projects without errors.
+- [ ] `west build` succeeds for at least one known target board.
+- [ ] Required Kconfig symbols are present in `build/zephyr/.config`.
+- [ ] `scripts/find_modules.sh` reports module names that match the current manifest allow-list.
+
 ## Automation Tools
 
 - **[find_modules.sh](scripts/find_modules.sh)**: Scan your `build/` directory to automatically identify which modules you should add to your manifest's `name-allowlist`.
+
+## Examples & Templates
+
+- **[west_manifest_template.yml](assets/west_manifest_template.yml)**: Minimal starter manifest for west workspaces.
 
 ## Resources
 
@@ -41,3 +59,5 @@ Core build logic for applications and modules.
   - `cmake.md`: Sysbuild and CMake API integration.
 - **[Scripts](scripts/)**:
   - `find_modules.sh`: Automated allow-list discovery utility.
+- **[Assets](assets/)**:
+  - `west_manifest_template.yml`: Base west manifest template.

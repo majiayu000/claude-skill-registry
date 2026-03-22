@@ -1,7 +1,25 @@
 ---
 name: llm-streaming-response-handler
-description: Build production LLM streaming UIs with Server-Sent Events, real-time token display, cancellation, error recovery. Handles OpenAI/Anthropic/Claude streaming APIs. Use for chatbots, AI assistants, real-time text generation. Activate on "LLM streaming", "SSE", "token stream", "chat UI", "real-time AI". NOT for batch processing, non-streaming APIs, or WebSocket bidirectional chat.
+description: Build production LLM streaming UIs with Server-Sent Events, real-time token display, cancellation, error recovery. Handles OpenAI/Anthropic/Claude streaming APIs. Use for chatbots, AI assistants,
+  real-time text generation. Activate on "LLM streaming", "SSE", "token stream", "chat UI", "real-time AI". NOT for batch processing, non-streaming APIs, or WebSocket bidirectional chat.
 allowed-tools: Read,Write,Edit,Bash(npm:*)
+metadata:
+  category: AI & Machine Learning
+  tags:
+  - llm
+  - streaming
+  - response
+  - llm-streaming
+  - sse
+  pairs-with:
+  - skill: chatbot-analytics
+    reason: Streaming metrics (time-to-first-token, throughput) are key analytics for chatbot performance
+  - skill: react-performance-optimizer
+    reason: Real-time token rendering requires React performance optimization for smooth display
+  - skill: error-handling-patterns
+    reason: Stream interruption recovery and retry logic are critical error handling concerns
+  - skill: websocket-streaming
+    reason: WebSocket transport is an alternative to SSE for bidirectional LLM streaming
 ---
 
 # LLM Streaming Response Handler

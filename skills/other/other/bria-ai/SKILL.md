@@ -1,88 +1,72 @@
 ---
 name: bria-ai
-description: Controllable image generation and editing with Bria.ai commercially-safe AI models. Fine-grained control over what gets generated, edited, or removed — edit by text instruction, mask specific regions, add/replace/remove individual objects, control lighting, season, and style independently. Use this skill when building websites, apps, presentations, or documents that need product photos, hero images, icons, illustrations, or backgrounds. Also use for e-commerce product photography, background removal, image upscaling, style transfer, batch generation, and pipeline workflows (generate -> edit -> remove background). Triggers on tasks involving AI image generation, controllable image editing, background removal, or visual asset creation.
+description: AI image generation, editing, and background removal API via Bria.ai — remove backgrounds to get transparent PNGs and cutouts, generate images from text prompts, and edit photos with natural language instructions. Also create product photography and lifestyle shots, replace or blur backgrounds, upscale resolution, restyle, and batch-generate visual assets. Use this skill whenever the user wants to remove a background, create transparent PNGs, generate, edit, modify, or transform any image — including hero images, banners, social media visuals, product photos, illustrations, icons, thumbnails, ad creatives, or marketing materials. Also triggers on cutout, inpainting, outpainting, object removal or addition, photo restoration, style transfer, image enhancement, relight, reseason, sketch-to-photo, or any visual content creation. Commercially safe, royalty-free. 20+ specialized endpoints for e-commerce, web design, and content pipelines.
 license: MIT
 metadata:
   author: Bria AI
-  version: "1.2.1"
+  version: "1.2.7"
+  dependencies:
+    - type: env
+      name: BRIA_API_KEY
+      description: "Bria AI API key (get one at https://platform.bria.ai/console/account/api-keys)"
 ---
 
-# Bria — Controllable Image Generation & Editing
+# Bria — AI Image Generation, Editing & Background Removal
 
-Generate and precisely control visual assets using Bria's commercially-safe AI models (FIBO, RMBG-2.0, GenFill, and more). Unlike black-box generators, Bria gives you fine-grained control: edit by text instruction, mask specific regions, add/replace/remove individual objects, change lighting or season independently, and chain operations in pipelines.
+Commercially safe, royalty-free image generation and editing through 20+ API endpoints. Generate from text, edit with natural language, remove backgrounds, create product shots, and build automated image pipelines.
+
+## When to Use This Skill
+
+Use this skill when the user wants to:
+- **Generate images** — "create an image of...", "make me a banner", "generate a hero image", "I need a product photo"
+- **Edit images** — "change the background", "make it look like winter", "add a vase to the table", "remove the person"
+- **Remove/replace backgrounds** — "make the background transparent", "cut out the product", "replace with a studio background"
+- **Product photography** — "create a lifestyle shot", "place this product in a kitchen scene", "e-commerce packshot"
+- **Enhance/transform** — "upscale this image", "make it higher resolution", "restyle as oil painting", "change the lighting"
+- **Batch/pipeline** — "generate 10 product images", "process all these images", "remove backgrounds in bulk"
+
+This skill handles the full spectrum of AI image operations. If the user mentions images, photos, visuals, or any visual content creation — use this skill.
+
+---
+
+## What You Can Build
+
+- **E-commerce product catalog** — Generate product photos, remove backgrounds for transparent PNGs, place products in lifestyle scenes (kitchen, office, outdoor), create packshots with consistent style
+- **Landing page visuals** — Generate hero images, abstract tech backgrounds, team photos, and section illustrations — all matching your brand aesthetic
+- **Social media content** — Instagram posts (1:1), Stories/Reels (9:16), LinkedIn banners (16:9), ad creatives — batch-generate variants for A/B testing
+- **Marketing campaign assets** — Seasonal transformations (summer→winter), restyle product shots for different markets, create localized visuals at scale
+- **Photo restoration pipeline** — Restore old damaged photos, colorize black & white images, upscale low-res photos to 4x, enhance quality automatically
+- **Brand asset toolkit** — Remove backgrounds from logos, blend artwork onto products (t-shirts, mugs), create consistent product photography across your entire catalog
+- **AI-powered design workflows** — Chain operations: generate→edit→remove background→place in scene→upscale — all automated through API pipelines
+
+---
 
 ## Setup — API Key Check
 
 Before making any Bria API call, check for the API key and help the user set it up if missing:
 
-### Step 1: Check if the key exists
+### Step 1: Check if the key exists (without printing the key)
 
 ```bash
-echo $BRIA_API_KEY
+if [ -z "$BRIA_API_KEY" ]; then
+  echo "BRIA_API_KEY is not set"
+else
+  echo "BRIA_API_KEY is set"
+fi
 ```
 
-If the output is **not empty**, skip to the next section.
+If the output says **BRIA_API_KEY is set**, skip to the next section.
 
 ### Step 2: If the key is missing, guide the user
 
-Open the Bria API keys page in the browser:
-
-```bash
-open "https://platform.bria.ai/console/account/api-keys?utm_source=skill&utm_campaign=bria_skills&utm_content=adjust_photoshop_for_agent"   # macOS
-# xdg-open "https://platform.bria.ai/console/account/api-keys?utm_source=skill&utm_campaign=bria_skills&utm_content=adjust_photoshop_for_agent"  # Linux
-```
-
-Then tell the user exactly this:
-> I opened the Bria website in your browser. To use image generation, you need a free API key.
+Tell the user exactly this:
+> To use image generation, you need a free Bria API key.
 >
-> 1. Sign up or log in on the page I just opened
-> 2. Click **Create API Key**
-> 3. Copy the key and **paste it here**
+> 1. Go to https://platform.bria.ai/console/account/api-keys
+> 2. Sign up or log in
+> 3. Click **Create API Key**
 
 Wait for the user to provide their API key. Do not proceed until they give you the key.
-
-### Step 3: Save the key permanently
-
-Once the user provides the key, save it so it persists across sessions.
-
-**On macOS/Linux**, detect the shell and append to the correct profile:
-
-```bash
-# Detect the shell profile
-if [ -n "$ZSH_VERSION" ] || [ "$SHELL" = */zsh ]; then
-  PROFILE_FILE="$HOME/.zshrc"
-elif [ -f "$HOME/.bashrc" ]; then
-  PROFILE_FILE="$HOME/.bashrc"
-else
-  PROFILE_FILE="$HOME/.profile"
-fi
-
-# Append the export (only if not already present)
-grep -q 'export BRIA_API_KEY=' "$PROFILE_FILE" 2>/dev/null && \
-  sed -i.bak '/export BRIA_API_KEY=/d' "$PROFILE_FILE"
-echo 'export BRIA_API_KEY="THE_KEY_THE_USER_GAVE_YOU"' >> "$PROFILE_FILE"
-
-# Make it available immediately in this session
-export BRIA_API_KEY="THE_KEY_THE_USER_GAVE_YOU"
-```
-
-**On Windows (PowerShell)**:
-
-```powershell
-[System.Environment]::SetEnvironmentVariable("BRIA_API_KEY", "THE_KEY_THE_USER_GAVE_YOU", "User")
-$env:BRIA_API_KEY = "THE_KEY_THE_USER_GAVE_YOU"
-```
-
-Replace `THE_KEY_THE_USER_GAVE_YOU` with the actual key the user provided.
-
-### Step 4: Verify
-
-```bash
-echo $BRIA_API_KEY
-```
-
-Confirm the key is set, then tell the user:
-> Your API key is saved and will persist across sessions. You're all set!
 
 **Do not proceed with any image generation or editing until the API key is confirmed set.**
 
@@ -92,24 +76,24 @@ Confirm the key is set, then tell the user:
 
 | Need | Capability | Use Case |
 |------|------------|----------|
-| Create new images | FIBO Generate | Hero images, product shots, illustrations |
-| Edit by text | FIBO-Edit | Change colors, modify objects, transform scenes |
-| Edit with mask | GenFill/Erase | Precise inpainting, add/replace specific regions |
+| Generate images from text | FIBO Generate | Hero images, product shots, illustrations, social media images, banners |
+| Edit images by text instruction | FIBO-Edit | Change colors, modify objects, transform scenes |
+| Edit image region with mask | GenFill/Erase | Precise inpainting, add/replace specific regions |
 | Add/Replace/Remove objects | Text-based editing | Add vase, replace apple with pear, remove table |
-| Transparent backgrounds | RMBG-2.0 | Extract subjects for overlays, logos, cutouts |
-| Background operations | Replace/Blur/Erase | Change, blur, or remove backgrounds |
-| Expand images | Outpainting | Extend boundaries, change aspect ratios |
-| Upscale images | Super Resolution | Increase resolution 2x or 4x |
-| Enhance quality | Enhancement | Improve lighting, colors, details |
-| Transform style | Restyle | Oil painting, anime, cartoon, 3D render |
+| Remove background (transparent PNG) | RMBG-2.0 | Extract subjects for overlays, logos, cutouts |
+| Replace/blur/erase background | Background ops | Change, blur, or remove backgrounds |
+| Expand/outpaint images | Outpainting | Extend boundaries, change aspect ratios |
+| Upscale image resolution | Super Resolution | Increase resolution 2x or 4x |
+| Enhance image quality | Enhancement | Improve lighting, colors, details |
+| Restyle images | Restyle | Oil painting, anime, cartoon, 3D render |
 | Change lighting | Relight | Golden hour, spotlight, dramatic lighting |
 | Change season | Reseason | Spring, summer, autumn, winter |
-| Blend/composite | Image Blending | Apply textures, logos, merge images |
-| Restore photos | Restoration | Fix old/damaged photos |
-| Colorize | Colorization | Add color to B&W, or convert to B&W |
+| Composite/blend images | Image Blending | Apply textures, logos, merge images |
+| Restore old photos | Restoration | Fix old/damaged photos |
+| Colorize images | Colorization | Add color to B&W, or convert to B&W |
 | Sketch to photo | Sketch2Image | Convert drawings to realistic photos |
-| Product photography | Lifestyle Shot | Place products in scenes |
-| Product integration | Product Integrate | Embed products into scenes at exact coordinates |
+| Create product lifestyle shots | Lifestyle Shot | Place products in scenes for e-commerce |
+| Integrate products into scenes | Product Integrate | Embed products at exact coordinates |
 
 ## Quick Reference
 
@@ -119,16 +103,20 @@ Confirm the key is set, then tell the user:
 curl -X POST "https://engine.prod.bria-api.com/v2/image/generate" \
   -H "api_token: $BRIA_API_KEY" \
   -H "Content-Type: application/json" \
+  -H "User-Agent: BriaSkills/1.2.7" \
   -d '{
     "prompt": "your description",
     "aspect_ratio": "16:9",
-    "resolution": "1MP"
+    "resolution": "1MP",
+    "sync": true
   }'
 ```
 
 **Aspect ratios**: `1:1` (square), `16:9` (hero/banner), `4:3` (presentation), `9:16` (mobile/story), `3:4` (portrait)
 
 **Resolution**: `1MP` (default) or `4MP` (improved details for photorealism, adds ~30s latency)
+
+**Sync mode**: Pass `"sync": true` in the request body for single image generation to get the result directly in the response. For batch/multiple image generation, omit `sync` (or set `false`) and use polling instead.
 
 > **Advanced**: For precise, deterministic control over generation, use **[VGL structured prompts](../vgl/SKILL.md)** instead of natural language. VGL defines every visual attribute (objects, lighting, composition) as explicit JSON.
 
@@ -138,6 +126,7 @@ curl -X POST "https://engine.prod.bria-api.com/v2/image/generate" \
 curl -X POST "https://engine.prod.bria-api.com/v2/image/edit/remove_background" \
   -H "api_token: $BRIA_API_KEY" \
   -H "Content-Type: application/json" \
+  -H "User-Agent: BriaSkills/1.2.7" \
   -d '{"image": "https://..."}'
 ```
 
@@ -149,6 +138,7 @@ Returns PNG with transparency.
 curl -X POST "https://engine.prod.bria-api.com/v2/image/edit" \
   -H "api_token: $BRIA_API_KEY" \
   -H "Content-Type: application/json" \
+  -H "User-Agent: BriaSkills/1.2.7" \
   -d '{
     "images": ["https://..."],
     "instruction": "change the mug to red"
@@ -161,6 +151,7 @@ curl -X POST "https://engine.prod.bria-api.com/v2/image/edit" \
 curl -X POST "https://engine.prod.bria-api.com/v2/image/edit/gen_fill" \
   -H "api_token: $BRIA_API_KEY" \
   -H "Content-Type: application/json" \
+  -H "User-Agent: BriaSkills/1.2.7" \
   -d '{
     "image": "https://...",
     "mask": "https://...",
@@ -174,6 +165,7 @@ curl -X POST "https://engine.prod.bria-api.com/v2/image/edit/gen_fill" \
 curl -X POST "https://engine.prod.bria-api.com/v2/image/edit/expand" \
   -H "api_token: $BRIA_API_KEY" \
   -H "Content-Type: application/json" \
+  -H "User-Agent: BriaSkills/1.2.7" \
   -d '{
     "image": "base64-or-url",
     "aspect_ratio": "16:9",
@@ -187,15 +179,17 @@ curl -X POST "https://engine.prod.bria-api.com/v2/image/edit/expand" \
 curl -X POST "https://engine.prod.bria-api.com/v2/image/edit/increase_resolution" \
   -H "api_token: $BRIA_API_KEY" \
   -H "Content-Type: application/json" \
+  -H "User-Agent: BriaSkills/1.2.7" \
   -d '{"image": "https://...", "scale": 2}'
 ```
 
-### Product Lifestyle Shot
+### Create Product Lifestyle Shot
 
 ```bash
 curl -X POST "https://engine.prod.bria-api.com/v1/product/lifestyle_shot_by_text" \
   -H "api_token: $BRIA_API_KEY" \
   -H "Content-Type: application/json" \
+  -H "User-Agent: BriaSkills/1.2.7" \
   -d '{
     "image": "https://product-with-transparent-bg.png",
     "prompt": "modern kitchen countertop, natural morning light"
@@ -210,6 +204,7 @@ Place one or more products at exact coordinates in a scene. Products are automat
 curl -X POST "https://engine.prod.bria-api.com/image/edit/product/integrate" \
   -H "api_token: $BRIA_API_KEY" \
   -H "Content-Type: application/json" \
+  -H "User-Agent: BriaSkills/1.2.7" \
   -d '{
     "scene": "https://scene-image-url",
     "products": [
@@ -223,9 +218,15 @@ curl -X POST "https://engine.prod.bria-api.com/image/edit/product/integrate" \
 
 ---
 
-## Async Response Handling
+## Response Handling
 
-All endpoints return async responses:
+### Sync (single image generation)
+
+For single image requests, pass `"sync": true` in the request body. The response returns the result directly — no polling needed.
+
+### Async with polling (batch generation)
+
+For batch or multiple image generation, omit `sync` (or set `"sync": false`). The response returns a status URL to poll:
 
 ```json
 {
@@ -241,7 +242,7 @@ import requests, time
 
 def get_result(status_url, api_key):
     while True:
-        r = requests.get(status_url, headers={"api_token": api_key})
+        r = requests.get(status_url, headers={"api_token": api_key, "User-Agent": "BriaSkills/1.2.7"})
         data = r.json()
         if data["status"] == "COMPLETED":
             return data["result"]["image_url"]
@@ -265,73 +266,15 @@ def get_result(status_url, api_key):
 
 ## API Reference
 
-See `references/api-endpoints.md` for complete endpoint documentation.
-
-### Key Endpoints
-
-**Generation**
-| Endpoint | Purpose |
-|----------|---------|
-| `POST /v2/image/generate` | Generate images from text (FIBO) |
-
-**Edit by Text (No Mask)**
-| Endpoint | Purpose |
-|----------|---------|
-| `POST /v2/image/edit` | Edit image with natural language instruction |
-| `POST /v2/image/edit/add_object_by_text` | Add objects to image |
-| `POST /v2/image/edit/replace_object_by_text` | Replace objects in image |
-| `POST /v2/image/edit/erase_by_text` | Remove objects by name |
-
-**Edit with Mask**
-| Endpoint | Purpose |
-|----------|---------|
-| `POST /v2/image/edit/gen_fill` | Inpaint/generate in masked region |
-| `POST /v2/image/edit/erase` | Erase masked region |
-
-**Background Operations**
-| Endpoint | Purpose |
-|----------|---------|
-| `POST /v2/image/edit/remove_background` | Remove background (RMBG-2.0) |
-| `POST /v2/image/edit/replace_background` | Replace with AI-generated background |
-| `POST /v2/image/edit/blur_background` | Apply blur to background |
-| `POST /v2/image/edit/erase_foreground` | Remove foreground, fill background |
-| `POST /v2/image/edit/crop_foreground` | Crop tightly around subject |
-
-**Image Transformation**
-| Endpoint | Purpose |
-|----------|---------|
-| `POST /v2/image/edit/expand` | Outpaint to new aspect ratio |
-| `POST /v2/image/edit/enhance` | Enhance quality and details |
-| `POST /v2/image/edit/increase_resolution` | Upscale 2x or 4x |
-| `POST /v2/image/edit/blend` | Blend/merge images or textures |
-| `POST /v2/image/edit/reseason` | Change season/weather |
-| `POST /v2/image/edit/restyle` | Transform artistic style |
-| `POST /v2/image/edit/relight` | Modify lighting |
-
-**Restoration**
-| Endpoint | Purpose |
-|----------|---------|
-| `POST /v2/image/edit/sketch_to_colored_image` | Convert sketch to photo |
-| `POST /v2/image/edit/restore` | Restore old/damaged photos |
-| `POST /v2/image/edit/colorize` | Colorize B&W or convert to B&W |
-
-**Product Photography**
-| Endpoint | Purpose |
-|----------|---------|
-| `POST /v1/product/lifestyle_shot_by_text` | Place product in scene by text |
-| `POST /image/edit/product/integrate` | Integrate products into scene at exact coordinates |
-
-**Utilities**
-| Endpoint | Purpose |
-|----------|---------|
-| `POST /v2/structured_instruction/generate` | Generate JSON instruction (no image) |
-| `GET /v2/status/{id}` | Check async request status |
+See `references/api-endpoints.md` for complete endpoint documentation with request/response formats for all 20+ endpoints.
 
 ### Authentication
 
-All requests need `api_token` header:
+All requests need these headers:
 ```
 api_token: YOUR_BRIA_API_KEY
+Content-Type: application/json
+User-Agent: BriaSkills/1.2.7
 ```
 
 ---

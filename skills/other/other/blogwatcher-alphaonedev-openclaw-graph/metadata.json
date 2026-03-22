@@ -1,0 +1,17 @@
+{
+  "name": "blogwatcher",
+  "repo": "alphaonedev/openclaw-graph",
+  "path": "skills/community/blogwatcher/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alphaonedev/openclaw-graph",
+  "dir_name": "blogwatcher-alphaonedev-openclaw-graph",
+  "downloaded_at": "2026-03-22T06:53:19.129579Z",
+  "author": "alphaonedev",
+  "source_url": "https://github.com/alphaonedev/openclaw-graph/blob/main/skills/community/blogwatcher/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alphaonedev/openclaw-graph/blob/main/skills/community/blogwatcher/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

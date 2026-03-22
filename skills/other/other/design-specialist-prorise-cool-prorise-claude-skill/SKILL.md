@@ -2,70 +2,99 @@
 description: 提供 UI/UX 设计、用户研究、视觉设计和品牌一致性能力。当需要设计界面、进行用户研究或创建视觉资产时使用。
 name: design-specialist
 ---
-
 # Design Specialist
 
-
 提供 UI/UX 设计、用户研究、视觉设计和品牌一致性能力。当需要设计界面、进行用户研究或创建视觉资产时使用。
 
-## When to Use This Skill
+## Skill Index
 
-提供 UI/UX 设计、用户研究、视觉设计和品牌一致性能力。当需要设计界面、进行用户研究或创建视觉资产时使用。
+<!-- AUTO-GENERATED-SKILL-INDEX:START -->
+以下索引由 `node scripts/update-skill-index.js` 自动生成，用于让 Claude 在顶层专家触发后继续路由到最相关的子技能。
 
-## Capabilities
+### Claude 使用说明
 
-This specialist skill combines the following capabilities:
+1. 先将用户当前任务与每个子技能的 `触发语义` 进行语义匹配，不要只看目录名。
+2. 一旦找到最相关的子技能，立即打开其 `入口文件` 指向的 `SKILL.md`，把它作为下一层入口。
+3. 进入子技能后，再根据该子技能自己的说明按需加载同目录下的 `references/`、`scripts/`、`assets/`，不要在顶层专家中预先展开大段细节。
+4. 如果多个子技能都相关，先加载最贴近主目标的那个，再按需补充其他子技能，避免一次性加载过多上下文。
+5. 下方 `入口文件` 路径相对于项目根目录，可直接用于 `Read` 操作。
 
-### Ui Designer
+### 子技能索引
 
-在创建用户界面、设计组件、构建设计系统或改善视觉美学时使用此代理。该代理专注于创建美观、功能强大且能在 6 天冲刺周期内快速实现的用户界面。示例：\n\n<example>\n背景：为新应用或新功能开始设计
+#### brand-guardian (1)
+- `brand-guardian`
+  - 触发语义: Expert brand strategist and guardian specializing in brand identity development, consistency maintenance, and strategic brand positioning
+  - 入口文件: `.claude/skills/design-specialist/references/domains/brand-guardian/SKILL.md`
 
+#### image-prompt-engineer (1)
+- `image-prompt-engineer`
+  - 触发语义: Expert photography prompt engineer specializing in crafting detailed, evocative prompts for AI image generation. Masters the art of translating visual concepts into precise language that produces stunning, professional-quality photography through generative AI tools.
+  - 入口文件: `.claude/skills/design-specialist/references/domains/image-prompt-engineer/SKILL.md`
 
-📖 [详细文档](./references/design_ui-designer.md)
+#### inclusive-visuals-specialist (1)
+- `inclusive-visuals-specialist`
+  - 触发语义: Representation expert who defeats systemic AI biases to generate culturally accurate, affirming, and non-stereotypical images and video.
+  - 入口文件: `.claude/skills/design-specialist/references/domains/inclusive-visuals-specialist/SKILL.md`
 
+#### ui-design (1)
+- `ui-ux-pro-max`
+  - 触发语义: UI/UX 设计智能，在设计页面时必须使用
+  - 入口文件: `.claude/skills/design-specialist/references/domains/ui-design/SKILL.md`
 
+#### ui-designer (1)
+- `ui-designer`
+  - 触发语义: Expert UI designer specializing in visual design systems, component libraries, and pixel-perfect interface creation. Creates beautiful, consistent, accessible user interfaces that enhance UX and reflect brand identity
+  - 入口文件: `.claude/skills/design-specialist/references/domains/ui-designer/SKILL.md`
 
-### Ui Ux Master
+#### ux-architect (1)
+- `ux-architect`
+  - 触发语义: Technical architecture and UX specialist who provides developers with solid foundations, CSS systems, and clear implementation guidance
+  - 入口文件: `.claude/skills/design-specialist/references/domains/ux-architect/SKILL.md`
 
-经验丰富的UI/UX设计代理，拥有10年以上创建屡获殊荣用户体验的经验。专注于AI协作设计工作流，生成可立即实施的规范，实现从创意愿景到生产代码的无缝转换。精通设计思维和技术实现，弥合美学与工程之间的鸿沟。
+#### ux-research (8)
+- `accessibility-planning`
+  - 触发语义: Plan accessibility compliance - WCAG 2.2, Section 508, EN 301 549, inclusive design principles, audit planning, and remediation strategies.
+  - 入口文件: `.claude/skills/design-specialist/references/domains/ux-research/accessibility-planning/SKILL.md`
+- `design-system-planning`
+  - 触发语义: Plan design systems - component libraries, design tokens, documentation strategies, versioning, governance, and adoption frameworks.
+  - 入口文件: `.claude/skills/design-specialist/references/domains/ux-research/design-system-planning/SKILL.md`
+- `heuristic-evaluation`
+  - 触发语义: Conduct heuristic evaluations - Nielsen's 10 heuristics, severity ratings, expert review methodology, cognitive walkthrough, and usability inspection.
+  - 入口文件: `.claude/skills/design-specialist/references/domains/ux-research/heuristic-evaluation/SKILL.md`
+- `information-architecture`
+  - 触发语义: Design information architecture - site structure, navigation, card sorting, tree testing, taxonomy, labeling systems, and findability.
+  - 入口文件: `.claude/skills/design-specialist/references/domains/ux-research/information-architecture/SKILL.md`
+- `prototype-strategy`
+  - 触发语义: Plan prototyping approach - fidelity levels, tool selection, prototype types, testing strategies, and design-to-development handoff.
+  - 入口文件: `.claude/skills/design-specialist/references/domains/ux-research/prototype-strategy/SKILL.md`
+- `service-blueprinting`
+  - 触发语义: Create service blueprints - frontstage/backstage visualization, touchpoints, support processes, evidence, and service design methodology.
+  - 入口文件: `.claude/skills/design-specialist/references/domains/ux-research/service-blueprinting/SKILL.md`
+- `usability-testing`
+  - 触发语义: Design and plan usability tests - task creation, think-aloud protocols, moderator scripts, metrics definition, and analysis frameworks.
+  - 入口文件: `.claude/skills/design-specialist/references/domains/ux-research/usability-testing/SKILL.md`
+- `user-research-planning`
+  - 触发语义: Plan user research studies - method selection, participant recruitment, study design, and research questions for generative and evaluative research.
+  - 入口文件: `.claude/skills/design-specialist/references/domains/ux-research/user-research-planning/SKILL.md`
 
+#### ux-researcher (1)
+- `ux-researcher`
+  - 触发语义: Expert user experience researcher specializing in user behavior analysis, usability testing, and data-driven design insights. Provides actionable research findings that improve product usability and user satisfaction
+  - 入口文件: `.claude/skills/design-specialist/references/domains/ux-researcher/SKILL.md`
 
-📖 [详细文档](./references/design_ui-ux-master.md)
+#### visual-storyteller (1)
+- `visual-storyteller`
+  - 触发语义: Expert visual communication specialist focused on creating compelling visual narratives, multimedia content, and brand storytelling through design. Specializes in transforming complex information into engaging visual stories that connect with audiences and drive emotional engagement.
+  - 入口文件: `.claude/skills/design-specialist/references/domains/visual-storyteller/SKILL.md`
 
+#### whimsy-injector (1)
+- `whimsy-injector`
+  - 触发语义: Expert creative specialist focused on adding personality, delight, and playful elements to brand experiences. Creates memorable, joyful interactions that differentiate brands through unexpected moments of whimsy
+  - 入口文件: `.claude/skills/design-specialist/references/domains/whimsy-injector/SKILL.md`
 
+<!-- AUTO-GENERATED-SKILL-INDEX:END -->
 
-### Ux Researcher
+## Notes
 
-在进行用户研究、分析用户行为、创建用户旅程地图或通过测试验证设计决策时使用此代理。该代理专注于理解用户需求、痛点和行为，以便在快速的开发周期内为产品决策提供信息。示例：\n\n<example>\n背景：为新功能了解用户需求
-
-
-📖 [详细文档](./references/design_ux-researcher.md)
-
-
-
-### Visual Storyteller
-
-在创建视觉叙事、设计信息图表、构建演示文稿或通过图像传达复杂思想时使用此代理。该代理专注于将数据和概念转化为引人入胜的视觉故事，以吸引用户和利益相关者。示例：\n\n<example>\n背景：为应用创建新用户引导插图
-
-
-📖 [详细文档](./references/design_visual-storyteller.md)
-
-
-
-### Brand Guardian
-
-在建立品牌指南、确保视觉一致性、管理品牌资产或演进品牌身份时使用此代理。该代理专注于在所有触点上创建和维护有凝聚力的品牌体验，同时支持快速开发。示例：\n\n<example>\n背景: 为一个新应用创建品牌指南
-
-
-📖 [详细文档](./references/design_brand-guardian.md)
-
-
-
-### Whimsy Injector
-
-在任何 UI/UX 变更后主动使用此代理，以确保融入了令人愉悦、俏皮的元素。该代理专注于为用户体验增添乐趣、惊喜和难忘的瞬间。在进行设计或界面更新时，应自动触发该代理。示例：\n\n<example>\n背景：在实现新功能或 UI 组件后
-
-
-📖 [详细文档](./references/design_whimsy-injector.md)
-
-
+- 顶层 `SKILL.md` 仅做索引导航，不承载大体量细节内容。
+- 详细资料下沉到 `references/domains/`，按树形结构组织。

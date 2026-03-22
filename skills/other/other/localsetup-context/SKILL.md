@@ -28,6 +28,7 @@ Localsetup v2 is deployed at `_localsetup/`. Framework and context are repo-loca
 - localsetup-decision-tree-workflow  - "decision tree", "reverse prompt"; .agent/queue/**, PRD
 - localsetup-agentic-umbrella-queue  - queue/PRD scope; named workflows; impact + confirmation
 - localsetup-agentic-prd-batch  - "process PRDs", "run batch from PRD folder"
+- localsetup-agentq-transport  - ship/ingest Agent Q manifests over file_drop or mail, strict encrypted mail mode, trust registry checks, and queue/archive operations
 - localsetup-public-repo-identity  - README*, CONTRIBUTING*
 - localsetup-framework-compliance  - framework mods, PRDs, checkpoints
 - localsetup-safety-and-backup  - destructive ops, backups, firewall
@@ -63,6 +64,10 @@ Localsetup v2 is deployed at `_localsetup/`. Framework and context are repo-loca
 - localsetup-cron-orchestrator  - manage cron from manifest; triggers, sequenced tasks, on-boot delay; create/remove/reorder/install
 - localsetup-cloudflare-dns  - manage Cloudflare DNS records (list, create, modify, delete) and zone surveys via flarectl; adding, changing, or removing DNS records
 - localsetup-npm-management  - manage Nginx Proxy Manager proxy hosts via REST API; coordinate Docker + NPM deploy workflows; diagnose 502s; backup/restore
+- localsetup-keepass-secrets  - KeePass-backed secrets via logical IDs; get/ensure credentials; bulk create or rotate; use when user asks for logins or workflow needs credentials
+- localsetup-mail-protocol-control  - manage delegated SMTP/IMAP accounts with attachment-first MIME handling, chunked attachment retrieval, and full-envelope encryption/decryption tools; agent-driven mailbox read/send/mutate/encrypt workflows
+- localsetup-docs-organization  - docs organization router; classify documentation requests, choose folder slugs, and keep docs indexes up to date.
+- localsetup-scrapling  - host-first Scrapling integration; install and upgrade Scrapling via pipx, run single-URL extractions (simple HTML/Markdown/text or structured JSONL), and keep adapters aligned with Scrapling releases for web scraping and crawling tasks.
 
 ## Key docs
 _localsetup/docs/AGENTIC_DESIGN_INDEX.md, WORKFLOW_REGISTRY.md, PRD_SCHEMA_EXTERNAL_AGENT_GUIDE.md, DECISION_TREE_WORKFLOW.md, INPUT_HARDENING_STANDARD.md, TOOLING_POLICY.md

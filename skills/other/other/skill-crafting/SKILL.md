@@ -1,7 +1,8 @@
 ---
 name: skill-crafting
-description: "Create, fix, and validate skills for AI agents. Use when user says 'create a skill', 'write a skill', 'build a skill', 'fix my skill', 'skill not working', 'analyze my skill', 'run skill analysis', 'validate skill', 'audit my skills', 'check character budget', 'create a skill from this session', 'turn this into a skill', 'make this reusable', 'can this become a skill', 'could we create a skill', 'should this be a skill', 'check if this could be a skill', or 'any reusable patterns in this session'."
-allowed-tools: Read, Write, Bash(python:*)
+description: "Create, fix, and validate skills for AI agents. Use when user says 'create a skill', 'build a skill', 'fix my skill', 'skill not working', 'analyze my skill', 'validate skill', 'audit my skills', 'check character budget', 'create a skill from this session', 'turn this into a skill', 'make this reusable', 'can this become a skill', 'should this be a skill', or asks for reusable patterns in the session."
+compatibility: Designed for Claude Code-compatible agents. Uses Claude-specific hooks; other Agent Skills products may ignore these extensions. allowed-tools is optional and may be handled differently across clients.
+allowed-tools: Read Write Bash(python:*)
 hooks:
   PostToolUse:
     - matcher: "Bash"
@@ -11,7 +12,7 @@ hooks:
   Stop:
     - hooks:
         - type: prompt
-          prompt: "Check if skill-crafting task is complete based on what was asked. If task was evaluating skill-worthiness and answer was 'no' - that's complete. If task was analyzing a skill - were scripts run? If task was creating a skill - does it have valid structure? Only flag incomplete if the specific task type wasn't finished. Respond {\"ok\": true} if task is done, or {\"ok\": false, \"reason\": \"specific missing step\"} if not."
+          prompt: "Check if skill-crafting task is complete based on what was asked. If task was evaluating skill-worthiness and answer was 'no' - that's complete. If task was analyzing a skill - were scripts run or at least attempted, and were any blockers explained before manual review? If task was creating a skill - does it have valid structure? Only flag incomplete if the specific task type wasn't finished. Respond {\"ok\": true} if task is done, or {\"ok\": false, \"reason\": \"specific missing step\"} if not."
 ---
 
 # Skill Crafting
@@ -47,18 +48,22 @@ Create effective, discoverable skills that work under pressure.
 
 When user asks to analyze a skill:
 
-1. **Run scripts first** for mechanical checks:
+1. **Run scripts first when available** for mechanical checks:
    ```bash
    python3 scripts/analyze-all.py path/to/skill/
    ```
 
+   If scripts fail because of environment or tooling issues, state the blocker clearly and continue with manual review.
+
 2. **Read the skill files** for qualitative review:
    - Read SKILL.md
    - Read REFERENCES.md (if exists)
+   - Read directly linked `references/`, `scripts/`, or `agents/openai.yaml` files when they materially affect behavior
 
 3. **Provide holistic feedback** covering:
-   - Script results (CSO, structure, tokens)
+   - Script results (CSO, structure, tokens) or explicit blocker if scripts could not run
    - Does `allowed-tools` match what the skill needs to do?
+   - Does the analysis cover the files that actually define the skill's behavior?
    - Is the workflow clear and actionable?
    - Are references appropriate and sized correctly?
    - Missing sections or anti-patterns?
@@ -163,8 +168,9 @@ skill-name/
 ```yaml
 ---
 name: skill-name          # lowercase, hyphens, <64 chars
-description: "..."        # CRITICAL - see CSO section
-allowed-tools: Read, Bash(python:*)  # optional
+description: "..."        # CRITICAL - what it does + trigger clauses
+compatibility: "..."      # optional - environment/product requirements
+allowed-tools: Read Bash(python:*)  # optional, space-delimited
 context: fork             # optional - run in isolated subagent
 ---
 
@@ -186,10 +192,12 @@ context: fork             # optional - run in isolated subagent
 
 ### Description Rules
 
-1. **Start with "Use when..."** — focus on triggers
+1. **Include one or more "Use when..." clauses** — focus on triggers
 2. **Include specific symptoms** — exact words users say
 3. **Write in third person** — injected into system prompt
 4. **NEVER summarize the workflow** — causes Claude to skip reading the skill
+
+A short "what it does" prefix before the trigger clauses is fine if it improves clarity.
 
 **Good:**
 
@@ -354,7 +362,7 @@ Before deploying:
 
 ```
 - [ ] Name: lowercase, hyphens, <64 chars
-- [ ] Description: starts with "Use when...", no workflow summary
+- [ ] Description: includes clear "Use when..." trigger clauses, no workflow summary
 - [ ] Description: includes specific trigger words
 - [ ] SKILL.md: <500 lines (or split to references)
 - [ ] Paths: forward slashes only

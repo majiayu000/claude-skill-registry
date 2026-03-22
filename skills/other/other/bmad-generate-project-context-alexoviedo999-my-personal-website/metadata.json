@@ -1,0 +1,17 @@
+{
+  "name": "bmad-generate-project-context",
+  "repo": "alexoviedo999/my-personal-website",
+  "path": ".claude/skills/bmad-generate-project-context/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alexoviedo999/my-personal-website",
+  "dir_name": "bmad-generate-project-context-alexoviedo999-my-personal-website",
+  "downloaded_at": "2026-03-22T06:50:35.946389Z",
+  "author": "alexoviedo999",
+  "source_url": "https://github.com/alexoviedo999/my-personal-website/blob/main/.claude/skills/bmad-generate-project-context/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexoviedo999/my-personal-website/blob/main/.claude/skills/bmad-generate-project-context/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

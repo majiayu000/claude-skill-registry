@@ -1,0 +1,17 @@
+{
+  "name": "performance",
+  "repo": "baphled/dotopencode",
+  "path": "skills/performance/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/baphled/dotopencode",
+  "dir_name": "performance-baphled-dotopencode",
+  "downloaded_at": "2026-03-22T07:10:14.113304Z",
+  "author": "baphled",
+  "source_url": "https://github.com/baphled/dotopencode/blob/main/skills/performance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/baphled/dotopencode/blob/main/skills/performance/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

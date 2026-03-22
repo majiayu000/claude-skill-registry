@@ -1,0 +1,17 @@
+{
+  "name": "aria-engineer",
+  "repo": "Yoshi-Dai-1/ARIA",
+  "path": ".agent/skills/aria-engineer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Yoshi-Dai-1/ARIA",
+  "dir_name": "aria-engineer",
+  "downloaded_at": "2026-03-22T06:34:15.296389Z",
+  "author": "Yoshi-Dai-1",
+  "source_url": "https://github.com/Yoshi-Dai-1/ARIA/blob/main/.agent/skills/aria-engineer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Yoshi-Dai-1/ARIA/blob/main/.agent/skills/aria-engineer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

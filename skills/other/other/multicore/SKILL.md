@@ -48,6 +48,18 @@ k_spin_unlock(&lock, key);
 - **Core Isolation**: Pin high-frequency interrupts (e.g., motor control) to Core 1 and keep the main application on Core 0 to prevent jitter.
 - **Zero-Copy Transfers**: Use shared memory regions for large data (video/audio) and only pass meta-data via IPC channels to minimize overhead.
 
+## Automation Tools
+- **[smp_config_check.py](scripts/smp_config_check.py)**: Validate SMP-related Kconfig consistency in `prj.conf`.
+
+## Examples & Templates
+- **[rpmsg_channel_contract.md](assets/rpmsg_channel_contract.md)**: Starter channel contract for RPMsg endpoint design.
+
+## Validation Checklist
+- [ ] SMP builds run with expected CPU count and no cross-core race regressions.
+- [ ] OpenAMP/RPMsg endpoint exchange passes bidirectional message tests.
+- [ ] IPC latency and throughput remain within target budget under load.
+- [ ] LLEXT module load/unload path resolves symbols and handles failure cases safely.
+
 ## Resources
 
 - **[References](references/)**:
@@ -55,3 +67,7 @@ k_spin_unlock(&lock, key);
   - `openamp_rpmsg.md`: AMP and Linux interoperability.
   - `ipc_patterns.md`: Mailboxes and high-level IPC services.
   - `llext_basics.md`: Dynamic code loading.
+- **[Scripts](scripts/)**:
+  - `smp_config_check.py`: SMP config consistency checker.
+- **[Assets](assets/)**:
+  - `rpmsg_channel_contract.md`: RPMsg interface contract template.

@@ -2,8 +2,16 @@
   "name": "rust",
   "repo": "brenordv/rust-pad",
   "path": ".claude/skills/rust/SKILL.md",
+  "github_branch": "master",
   "category": "other",
   "source": "github.com/brenordv/rust-pad",
   "dir_name": "rust",
-  "downloaded_at": "2026-02-22T06:36:23.435707Z"
+  "downloaded_at": "2026-03-22T07:19:39.836022Z",
+  "author": "brenordv",
+  "source_url": "https://github.com/brenordv/rust-pad/blob/master/.claude/skills/rust/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brenordv/rust-pad/blob/master/.claude/skills/rust/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

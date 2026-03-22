@@ -23,7 +23,7 @@ description: Server-Sent Events for unidirectional server-to-client streaming, E
 
 **(You MUST handle the `onerror` event and check `readyState` to distinguish reconnection from permanent failure)**
 
-**(You MUST set required SSE headers: `Content-Type: text/event-stream`, `Cache-Control: no-cache`, `Connection: keep-alive`)**
+**(You MUST set `Content-Type: text/event-stream` and `Cache-Control: no-cache` on SSE responses — do NOT set `Connection: keep-alive` on HTTP/2+)**
 
 </critical_requirements>
 
@@ -58,8 +58,10 @@ description: Server-Sent Events for unidirectional server-to-client streaming, E
 
 **Detailed Resources:**
 
-- For code examples, see [examples/](examples/)
-- For decision frameworks and anti-patterns, see [reference.md](reference.md)
+- [examples/core.md](examples/core.md) - React hooks (useEventSource, useSSE), shared context, conditional connection
+- [examples/fetch-streaming.md](examples/fetch-streaming.md) - Fetch-based SSE, message parser, auth, POST streaming, LLM pattern
+- [examples/reconnection.md](examples/reconnection.md) - Last-Event-ID recovery, exponential backoff, health checks, visibility-aware
+- [reference.md](reference.md) - Decision frameworks, anti-patterns, message format reference
 
 ---
 
@@ -334,57 +336,19 @@ export { SSEConnection };
 
 ### Pattern 5: SSE Message Format
 
-Understanding the SSE wire protocol is essential for both client and server implementation.
-
-#### Message Structure
+Messages are `\n`-separated fields terminated by `\n\n`. Five field types: `data:` (payload), `event:` (named type), `id:` (recovery ID), `retry:` (reconnect ms), `:` (comment/keep-alive).
 
 ```
-field: value\n
-field: value\n
-\n
-```
-
-Messages are separated by double newlines (`\n\n`). Fields are separated by single newlines.
-
-#### Field Types
-
-| Field    | Purpose                    | Example               |
-| -------- | -------------------------- | --------------------- |
-| `data:`  | Message content            | `data: Hello World`   |
-| `event:` | Custom event type          | `event: notification` |
-| `id:`    | Event ID for recovery      | `id: 12345`           |
-| `retry:` | Reconnection interval (ms) | `retry: 5000`         |
-| `:`      | Comment (keep-alive)       | `: keep-alive`        |
-
-#### Example Messages
-
-```
-: This is a comment (keep-alive, ignored by client)
-
-data: Simple text message
-
-data: {"type": "update", "value": 42}
-id: msg-001
-
 event: notification
 data: {"title": "New message"}
 id: msg-002
 
-data: Multi-line
-data: message content
-data: spans multiple data fields
-id: msg-003
-
-retry: 10000
-data: Reconnect in 10 seconds if disconnected
+: keep-alive comment (ignored by client)
 ```
 
-**Key behaviors:**
+**Key behaviors:** multiple `data:` lines concatenate with `\n`; `id:` persists until changed; `retry:` is remembered for future reconnections; comments (`:`) keep connection alive but are not delivered.
 
-- Multiple `data:` lines are concatenated with newlines
-- `id:` persists across messages until changed
-- `retry:` is remembered for future reconnections
-- Comments (`:`) are ignored but keep connection alive
+See [reference.md](reference.md) for the full field reference and behavior table.
 
 ---
 
@@ -456,21 +420,40 @@ eventSource.onmessage = (event: MessageEvent) => {
 
 ## Integration Guide
 
-**SSE is a transport mechanism.** This skill covers the EventSource API and fetch streaming patterns only. Integration with specific frameworks or state management is handled by their respective skills.
+**SSE is a transport mechanism.** This skill covers the EventSource API and fetch streaming patterns only.
 
-**Works with:**
-
-- Your React framework via custom hooks (see examples/core.md)
-- Your state management solution for storing received data
-- Your authentication system for cookie-based auth or token management
-
-**Defers to:**
-
-- Backend SSE server implementation (backend skills)
-- WebSocket patterns for bidirectional communication (websockets skill)
-- State management for storing and displaying received data (state management skills)
+- Components receive SSE data via callbacks/hooks and pass it to your UI layer via props or state
+- Authentication integrates via cookies (`withCredentials: true`) or fetch streaming with custom headers
+- For bidirectional communication, SSE is not the right tool — evaluate WebSocket instead
 
 </integration>
+
+---
+
+<red_flags>
+
+## RED FLAGS
+
+- **No cleanup on unmount** - EventSource stays open, memory leaks, zombie connections
+- **Ignoring onerror event** - Connection failures are silent, users see stale data
+- **Not checking readyState in onerror** - Cannot distinguish reconnection from permanent failure
+- **Token in URL query string** - Security risk: visible in server logs, browser history
+- **Missing keep-alive comments** - Proxies may close "idle" connections after 60-120 seconds
+- **JSON.parse without try-catch** - Malformed messages crash the entire handler
+- **Creating new EventSource without closing old one** - Duplicate connections, duplicate messages
+- **Not handling buffer boundaries in fetch streaming** - Messages split across chunks are missed
+
+**Gotchas & Edge Cases:**
+
+- EventSource has no timeout - dead connections may not fire onerror for minutes
+- HTTP/1.1 browsers limit 6 connections per domain (SSE counts against this)
+- `retry:` field is in milliseconds, not seconds
+- Empty `data:\n\n` sends empty string, not undefined
+- `Connection: keep-alive` header is prohibited in HTTP/2+ (Safari rejects it)
+
+See [reference.md](reference.md) for full anti-pattern examples with code.
+
+</red_flags>
 
 ---
 
@@ -488,7 +471,7 @@ eventSource.onmessage = (event: MessageEvent) => {
 
 **(You MUST handle the `onerror` event and check `readyState` to distinguish reconnection from permanent failure)**
 
-**(You MUST set required SSE headers: `Content-Type: text/event-stream`, `Cache-Control: no-cache`, `Connection: keep-alive`)**
+**(You MUST set `Content-Type: text/event-stream` and `Cache-Control: no-cache` on SSE responses — do NOT set `Connection: keep-alive` on HTTP/2+)**
 
 **Failure to follow these rules will result in memory leaks, missed messages, and silent connection failures.**
 

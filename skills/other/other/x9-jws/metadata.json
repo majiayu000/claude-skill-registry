@@ -1,0 +1,17 @@
+{
+  "name": "x9-jws",
+  "repo": "carlosnetto/x9.150-py",
+  "path": ".claude/skills/x9-jws/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/carlosnetto/x9.150-py",
+  "dir_name": "x9-jws",
+  "downloaded_at": "2026-03-22T07:24:15.310140Z",
+  "author": "carlosnetto",
+  "source_url": "https://github.com/carlosnetto/x9.150-py/blob/main/.claude/skills/x9-jws/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/carlosnetto/x9.150-py/blob/main/.claude/skills/x9-jws/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -33,9 +33,23 @@ When this skill is invoked:
    python3 scripts/wind_down.py --notes "User provided notes here"
    ```
 
-4. If re-entrancy guard blocks (exit code 4), inform user:
+4. Create session record file at `sessions/SESSION_YYYY-MM-DD_descriptive_title.md`:
+   - Use YAML frontmatter with Session Metadata Standard v1.0 fields (date, duration_minutes, objectives, outcomes)
+   - Include optional fields: learnings, commits, files_changed, pain_points, next_steps
+   - Add session body sections: Objectives, Deliverables, Outcomes, Lessons, Blockers, Files Changed
+   - Capture wind-down state in the file: sanity result, pending work, git diff stats
+   - Reference schema: `.aget/schemas/session_metadata_v1.0.yaml`
+   - Reference exemplar: `sessions/SESSION_2025-12-03_kb_enhancement.md`
+
+5. If re-entrancy guard blocks (exit code 4), inform user:
    - Wind-down was run recently (5-minute cooldown)
    - Use `--force` to bypass if needed
+
+## Required Outputs
+
+Every wind-down must produce:
+1. Terminal summary (stdout) — sanity, changes, pending, suggested commit
+2. Session record file — `sessions/SESSION_YYYY-MM-DD_*.md` (L004: process governance)
 
 ## Output Format
 
@@ -65,6 +79,7 @@ Wind Down Complete
 
 ## Related
 
+- L004: Process Governance Gap (session file as required output)
 - L468: Re-entrancy Protection
 - L532: Skills vs Learnings Distinction
 - CAP-SESSION-003: Wind Down Protocol

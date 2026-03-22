@@ -8,26 +8,27 @@ description: Use when working with Ceres — a Rust semantic search engine for o
 Ceres harvests metadata from CKAN open data portals and indexes them with vector embeddings, enabling semantic search across fragmented data sources.
 
 **Repository:** https://github.com/AndreaBozzo/Ceres
-**License:** Apache-2.0 | **Rust edition:** 2024 | **MSRV:** 1.87+
+**License:** Apache-2.0 | **Rust edition:** 2024 | **MSRV:** 1.88+
 
 ## Pipeline
 
 ```
-Portal URL → PortalClient (fetch metadata) → DeltaDetector (content_hash)
-  → EmbeddingProvider (vector) → DatasetStore (upsert with pgvector)
+Metadata:  Portal URL → PortalClient (fetch) → DeltaDetector (content_hash) → DatasetStore (upsert, no embedding)
+Embedding: DatasetStore (pending) → EmbeddingProvider (vector) → DatasetStore (update embedding)
+Combined:  HarvestPipeline = HarvestService + EmbeddingService
 ```
 
-Each stage is a trait, so every component can be swapped or mocked independently.
+Harvesting and embedding are decoupled: `HarvestService` handles metadata (no API key needed with `--metadata-only`), `EmbeddingService` handles vectors, and `HarvestPipeline` composes both. Each stage is a trait, so every component can be swapped or mocked independently.
 
 ## Crate Map
 
 | Crate | Purpose | Key Exports |
 |---|---|---|
-| `ceres-core` | Business logic, traits, services | `HarvestService`, `SearchService`, `ExportService`, `WorkerService`, `CircuitBreaker`, traits |
+| `ceres-core` | Business logic, traits, services | `HarvestService`, `EmbeddingService`, `HarvestPipeline`, `SearchService`, `ExportService`, `WorkerService`, `CircuitBreaker`, traits |
 | `ceres-client` | CKAN API client, Gemini/OpenAI clients | `CkanClient`, `GeminiClient`, `OpenAIClient`, `PortalClientFactoryEnum`, `EmbeddingProviderEnum` |
 | `ceres-db` | PostgreSQL + pgvector repository | `DatasetRepository`, `HarvestJobRepository` |
 | `ceres-server` | Axum REST API with Swagger UI | Routes, DTOs, bearer auth, OpenAPI/Swagger |
-| `ceres-cli` | Command-line interface | `harvest`, `search`, `export`, `stats` subcommands |
+| `ceres-cli` | Command-line interface | `harvest`, `embed`, `search`, `export`, `stats` subcommands |
 
 ## Core Traits (`ceres-core::traits`)
 
@@ -67,6 +68,11 @@ pub trait DatasetStore: Send + Sync + Clone {
     fn record_sync_status(&self, portal_url: &str, sync_time: DateTime<Utc>, sync_mode: &str, sync_status: &str, datasets_synced: i32) -> impl Future<Output = Result<(), AppError>> + Send;
     fn health_check(&self) -> impl Future<Output = Result<(), AppError>> + Send;
     // + update_timestamp_only, batch_update_timestamps, get_duplicate_titles
+    // Stale detection
+    fn mark_stale_datasets(&self, portal_url: &str, sync_start: DateTime<Utc>) -> impl Future<Output = Result<u64, AppError>> + Send;
+    fn mark_stale_by_exclusion(&self, portal_url: &str, seen_ids: &[String]) -> impl Future<Output = Result<u64, AppError>> + Send;
+    // Pending embeddings
+    fn list_pending_embeddings(&self, portal_filter: Option<&str>, limit: usize) -> impl Future<Output = Result<Vec<Dataset>, AppError>> + Send;
 }
 ```
 
@@ -74,10 +80,10 @@ pub trait DatasetStore: Send + Sync + Clone {
 
 | Type | Module | Purpose |
 |---|---|---|
-| `Dataset` | `ceres_core::models` | Complete dataset row (id, original_id, source_portal, url, title, description, embedding, metadata, timestamps, content_hash) |
+| `Dataset` | `ceres_core::models` | Complete dataset row (id, original_id, source_portal, url, title, description, embedding, metadata, timestamps, content_hash, is_stale) |
 | `NewDataset` | `ceres_core::models` | Insert/update DTO. Has `compute_content_hash()` for delta detection |
 | `SearchResult` | `ceres_core::models` | Dataset + similarity_score (0.0-1.0) |
-| `DatabaseStats` | `ceres_core::models` | total_datasets, datasets_with_embeddings, total_portals, last_update |
+| `DatabaseStats` | `ceres_core::models` | total_datasets, datasets_with_embeddings, stale_datasets, total_portals, last_update |
 | `HarvestJob` | `ceres_core::job` | Queued harvest job with status, retry info, portal config |
 | `JobStatus` | `ceres_core::job` | Enum: Pending, Running, Completed, Failed, Cancelled |
 | `SyncStats` | `ceres_core::sync` | created, updated, unchanged, failed, skipped counts |
@@ -85,6 +91,8 @@ pub trait DatasetStore: Send + Sync + Clone {
 | `BatchHarvestSummary` | `ceres_core::sync` | Aggregated results from batch harvesting multiple portals |
 | `PortalEntry` | `ceres_core::config` | Portal config: name, url, type, enabled, url_template, language |
 | `AppError` | `ceres_core::error` | Error enum with `is_retryable()` and `should_trip_circuit()` |
+| `EmbeddingStats` | `ceres_core::embedding` | embedded, failed, skipped, total counts from an embedding run |
+| `HarvestPipeline` | `ceres_core::pipeline` | Composes HarvestService + EmbeddingService for combined harvest-then-embed |
 | `CircuitBreaker` | `ceres_core::circuit_breaker` | Closed -> Open -> HalfOpen state machine |
 
 ## Quick Start
@@ -130,8 +138,10 @@ ceres stats
 
 ## Version Notes
 
-- **Current version:** 0.3.0
+- **Current version:** 0.3.1
 - **crates.io package:** `ceres-search`
+- Harvesting and embedding are decoupled: `--metadata-only` harvests without API key, `embed` command generates embeddings separately
+- Stale dataset detection: datasets removed from portals are soft-marked (`is_stale`) during full syncs
 - Supports Gemini (768d, `gemini-embedding-001`) and OpenAI (1536d/3072d, `text-embedding-3-small`/`large`) embeddings
 - 25+ pre-configured CKAN portals (354k+ datasets)
 - HuggingFace dataset: `AndreaBozzo/ceres-open-data-index`

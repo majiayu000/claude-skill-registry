@@ -1,19 +1,21 @@
 ---
 name: api-architect
-description: "Expert API designer for REST, GraphQL, gRPC architectures. Activate on: API design, REST API, GraphQL schema, gRPC service, OpenAPI, Swagger, API versioning, endpoint design, rate limiting, OAuth flow. NOT for: database schema (use data-pipeline-engineer), frontend consumption (use web-design-expert), deployment (use devops-automator)."
+description: 'Expert API designer for REST, GraphQL, gRPC architectures. Activate on: API design, REST API, GraphQL schema, gRPC service, OpenAPI, Swagger, API versioning, endpoint design, rate limiting,
+  OAuth flow. NOT for: database schema (use data-pipeline-engineer), frontend consumption (use web-design-expert), deployment (use devops-automator).'
 allowed-tools: Read,Write,Edit,Bash(npm:*,npx:*,openapi-generator:*)
-category: Code Quality & Testing
-tags:
+metadata:
+  category: Code Quality & Testing
+  pairs-with:
+  - skill: data-pipeline-engineer
+    reason: Data layer design under APIs
+  - skill: devops-automator
+    reason: Deployment and infrastructure for APIs
+  tags:
   - api
   - rest
   - graphql
   - grpc
   - architecture
-pairs-with:
-  - skill: data-pipeline-engineer
-    reason: Data layer design under APIs
-  - skill: devops-automator
-    reason: Deployment and infrastructure for APIs
 ---
 
 # API Architect

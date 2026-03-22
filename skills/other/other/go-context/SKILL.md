@@ -1,31 +1,21 @@
 ---
 name: go-context
-description: Go context.Context usage patterns including parameter placement, avoiding struct embedding, and proper propagation. Use when working with context.Context in Go code for cancellation, deadlines, and request-scoped values.
+description: Use when working with context.Context in Go — placement in signatures, propagating cancellation and deadlines, and storing values in context vs parameters. Also use when cancelling long-running operations, setting timeouts, or passing request-scoped data, even if they don't mention context.Context directly. Does not cover goroutine lifecycle or sync primitives (see go-concurrency).
+license: Apache-2.0
+compatibility: Requires Go 1.7+ (context moved to standard library in Go 1.7)
+metadata:
+  sources: "Go Wiki CodeReviewComments"
 ---
 
 # Go Context Usage
-
-`context.Context` carries security credentials, tracing information, deadlines,
-and cancellation signals across API and process boundaries. Go programs pass
-contexts explicitly along the entire function call chain.
-
-> Based on [Go Wiki CodeReviewComments - Contexts](https://github.com/golang/wiki/blob/master/CodeReviewComments.md#contexts).
-
----
 
 ## Context as First Parameter
 
 Functions that use a Context should accept it as their **first parameter**:
 
 ```go
-// Good: Context is first parameter
-func F(ctx context.Context, /* other arguments */) error {
-    // ...
-}
-
-func ProcessRequest(ctx context.Context, req *Request) (*Response, error) {
-    // ...
-}
+func F(ctx context.Context, /* other arguments */) error
+func ProcessRequest(ctx context.Context, req *Request) (*Response, error)
 ```
 
 This is a strong convention in Go that makes context flow visible and consistent
@@ -42,22 +32,13 @@ to each method that needs it:
 // Bad: Context stored in struct
 type Worker struct {
     ctx context.Context  // Don't do this
-    // ...
 }
 
-func (w *Worker) Process() error {
-    // Uses w.ctx - context lifetime unclear
-}
-```
-
-```go
 // Good: Context passed to methods
-type Worker struct {
-    // ...
-}
+type Worker struct{ /* ... */ }
 
 func (w *Worker) Process(ctx context.Context) error {
-    // Context explicitly passed - lifetime clear
+    // Context explicitly passed — lifetime clear
 }
 ```
 
@@ -78,14 +59,9 @@ type MyContext interface {
     GetUserID() string
 }
 
-func Process(ctx MyContext) error { ... }
-```
-
-```go
-// Good: Use standard context.Context
+// Good: Use standard context.Context with value extraction
 func Process(ctx context.Context) error {
-    userID := GetUserID(ctx)  // Extract from context value
-    // ...
+    userID := GetUserID(ctx)
 }
 ```
 
@@ -93,27 +69,12 @@ func Process(ctx context.Context) error {
 
 ## Where to Put Application Data
 
-If you have application data to pass around, consider these options in order of
-preference:
+Consider these options in order of preference:
 
-1. **Function parameters** - Most explicit and type-safe
-2. **Receiver** - For data that belongs to the type
-3. **Globals** - For truly global configuration (use sparingly)
-4. **Context value** - Only if it truly belongs there (request-scoped data)
-
-```go
-// Good: Explicit parameter
-func ProcessOrder(ctx context.Context, userID string, order *Order) error {
-    // userID is explicit
-}
-
-// Good: Context value for request-scoped data
-func ProcessOrder(ctx context.Context, order *Order) error {
-    // Request ID from context is appropriate - it's request-scoped
-    reqID := RequestIDFromContext(ctx)
-    // ...
-}
-```
+1. **Function parameters** — most explicit and type-safe
+2. **Receiver** — for data that belongs to the type
+3. **Globals** — for truly global configuration (use sparingly)
+4. **Context value** — only for request-scoped data
 
 Context values are appropriate for:
 - Request IDs and trace IDs
@@ -127,143 +88,40 @@ Context values are **not** appropriate for:
 
 ---
 
-## Context Immutability
-
-Contexts are immutable. It's safe to pass the same `ctx` to multiple calls that
-share the same deadline, cancellation signal, credentials, and parent trace:
-
-```go
-// Good: Same context to multiple calls
-func ProcessBatch(ctx context.Context, items []Item) error {
-    for _, item := range items {
-        // Safe to pass same ctx to each call
-        if err := process(ctx, item); err != nil {
-            return err
-        }
-    }
-    return nil
-}
-
-// Good: Same context to concurrent calls
-func ProcessConcurrently(ctx context.Context, a, b *Data) error {
-    g, ctx := errgroup.WithContext(ctx)
-    g.Go(func() error { return processA(ctx, a) })
-    g.Go(func() error { return processB(ctx, b) })
-    return g.Wait()
-}
-```
-
----
-
-## When to Use context.Background()
-
-Use `context.Background()` only for functions that are **never request-specific**:
-
-```go
-// Good: Main function or initialization
-func main() {
-    ctx := context.Background()
-    if err := run(ctx); err != nil {
-        log.Fatal(err)
-    }
-}
-
-// Good: Top-level background task
-func startBackgroundWorker() {
-    ctx := context.Background()
-    go worker(ctx)
-}
-```
-
-**Default to passing a Context** even if you think you don't need to. Only use
-`context.Background()` directly if you have a good reason why passing a context
-would be a mistake:
-
-```go
-// Prefer: Accept context even for "simple" operations
-func LoadConfig(ctx context.Context) (*Config, error) {
-    // Even if not using ctx now, accepting it allows future
-    // additions without API changes
-}
-```
-
----
-
 ## Common Patterns
+
+> Read [references/PATTERNS.md](references/PATTERNS.md) when deriving contexts (WithTimeout, WithCancel, WithDeadline), checking cancellation in loops or HTTP handlers, using context values with typed keys, or needing the quick reference table.
 
 ### Deriving Contexts
 
+Always `defer cancel()` immediately after creating a derived context:
+
 ```go
-// Add timeout
 ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
 defer cancel()
-
-// Add cancellation
-ctx, cancel := context.WithCancel(ctx)
-defer cancel()
-
-// Add deadline
-ctx, cancel := context.WithDeadline(ctx, time.Now().Add(time.Hour))
-defer cancel()
-
-// Add value (use sparingly)
-ctx = context.WithValue(ctx, requestIDKey, reqID)
 ```
 
 ### Checking Cancellation
 
 ```go
-func LongRunningOperation(ctx context.Context) error {
-    for {
-        select {
-        case <-ctx.Done():
-            return ctx.Err()
-        default:
-            // Do work
-        }
-    }
+select {
+case <-ctx.Done():
+    return ctx.Err()
+default:
+    // Do work
 }
 ```
 
-### Respecting Cancellation in HTTP Handlers
+### Context Immutability
 
-```go
-func handler(w http.ResponseWriter, r *http.Request) {
-    ctx := r.Context()
-    
-    result, err := slowOperation(ctx)
-    if err != nil {
-        if errors.Is(err, context.Canceled) {
-            // Client disconnected
-            return
-        }
-        http.Error(w, err.Error(), http.StatusInternalServerError)
-        return
-    }
-    
-    json.NewEncoder(w).Encode(result)
-}
-```
+Contexts are immutable — it's safe to pass the same `ctx` to multiple
+concurrent calls that share the same deadline and cancellation signal.
 
 ---
 
-## Quick Reference
+## Related Skills
 
-| Pattern | Guidance |
-|---------|----------|
-| Parameter position | Always first: `func F(ctx context.Context, ...)` |
-| Struct storage | Don't store in structs; pass to methods |
-| Custom types | Don't create; use `context.Context` interface |
-| Application data | Prefer parameters > receiver > globals > context values |
-| Request-scoped data | Appropriate for context values |
-| Sharing context | Safe - contexts are immutable |
-| `context.Background()` | Only for non-request-specific code |
-| Default | Pass context even if you think you don't need it |
-
----
-
-## See Also
-
-- **go-concurrency**: Goroutine patterns, cancellation, and coordination
-- **go-error-handling**: Handling context cancellation errors
-- **go-interfaces**: Interface design patterns for context-accepting APIs
+- **Goroutine coordination**: See [go-concurrency](../go-concurrency/SKILL.md) when using context for goroutine cancellation, select-based timeouts, or errgroup
+- **Error handling**: See [go-error-handling](../go-error-handling/SKILL.md) when deciding how to wrap or return `ctx.Err()` cancellation errors
+- **Interface design**: See [go-interfaces](../go-interfaces/SKILL.md) when designing APIs that accept context alongside interfaces
+- **Request-scoped logging**: See [go-logging](../go-logging/SKILL.md) when injecting loggers into context or adding request IDs to structured log output

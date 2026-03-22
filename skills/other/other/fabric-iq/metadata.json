@@ -2,8 +2,16 @@
   "name": "fabric-iq",
   "repo": "PatrickGallucci/fabric-skills",
   "path": "skills/fabric-iq/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/PatrickGallucci/fabric-skills",
   "dir_name": "fabric-iq",
-  "downloaded_at": "2026-02-22T05:32:33.939073Z"
+  "downloaded_at": "2026-03-22T06:03:47.832832Z",
+  "author": "PatrickGallucci",
+  "source_url": "https://github.com/PatrickGallucci/fabric-skills/blob/main/skills/fabric-iq/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PatrickGallucci/fabric-skills/blob/main/skills/fabric-iq/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -2,8 +2,16 @@
   "name": "convex-security-check",
   "repo": "benfwalla/things-to-be-happy-about",
   "path": ".claude/skills/convex-security-check/SKILL.md",
+  "github_branch": "master",
   "category": "other",
   "source": "github.com/benfwalla/things-to-be-happy-about",
   "dir_name": "convex-security-check-benfwalla-things-to-be-happy-a",
-  "downloaded_at": "2026-02-22T06:31:17.508809Z"
+  "downloaded_at": "2026-03-22T07:12:26.806081Z",
+  "author": "benfwalla",
+  "source_url": "https://github.com/benfwalla/things-to-be-happy-about/blob/master/.claude/skills/convex-security-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benfwalla/things-to-be-happy-about/blob/master/.claude/skills/convex-security-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -1,0 +1,17 @@
+{
+  "name": "clayers-onboard",
+  "repo": "CognitiveLayers/clayers",
+  "path": ".claude/skills/clayers-onboard/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/CognitiveLayers/clayers",
+  "dir_name": "clayers-onboard",
+  "downloaded_at": "2026-03-22T05:07:13.922277Z",
+  "author": "CognitiveLayers",
+  "source_url": "https://github.com/CognitiveLayers/clayers/blob/main/.claude/skills/clayers-onboard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CognitiveLayers/clayers/blob/main/.claude/skills/clayers-onboard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

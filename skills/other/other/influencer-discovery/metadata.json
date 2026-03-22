@@ -1,0 +1,17 @@
+{
+  "name": "influencer-discovery",
+  "repo": "Aditya923-c/xpoz-agent-skills",
+  "path": "skills/influencer-discovery/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Aditya923-c/xpoz-agent-skills",
+  "dir_name": "influencer-discovery",
+  "downloaded_at": "2026-03-22T04:47:35.140530Z",
+  "author": "Aditya923-c",
+  "source_url": "https://github.com/Aditya923-c/xpoz-agent-skills/blob/main/skills/influencer-discovery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Aditya923-c/xpoz-agent-skills/blob/main/skills/influencer-discovery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

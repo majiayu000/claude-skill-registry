@@ -1,0 +1,17 @@
+{
+  "name": "pr-triage",
+  "repo": "FlorianBruniaux/ccboard",
+  "path": ".claude/skills/pr-triage/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/FlorianBruniaux/ccboard",
+  "dir_name": "pr-triage",
+  "downloaded_at": "2026-03-22T05:21:14.471299Z",
+  "author": "FlorianBruniaux",
+  "source_url": "https://github.com/FlorianBruniaux/ccboard/blob/main/.claude/skills/pr-triage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FlorianBruniaux/ccboard/blob/main/.claude/skills/pr-triage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

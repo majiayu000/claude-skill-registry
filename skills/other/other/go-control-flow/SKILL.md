@@ -1,75 +1,48 @@
 ---
 name: go-control-flow
-description: Go control flow idioms from Effective Go. Covers if with initialization, omitting else for early returns, for loop forms, range, switch without fallthrough, type switch, and blank identifier patterns. Use when writing conditionals, loops, or switch statements in Go.
+description: Use when writing conditionals, loops, or switch statements in Go — including if with initialization, early returns, for loop forms, range, switch, type switches, and blank identifier patterns. Also use when writing a simple if/else or for loop, even if the user doesn't mention guard clauses or variable scoping. Does not cover error flow patterns (see go-error-handling).
+license: Apache-2.0
+metadata:
+  sources: "Effective Go, Google Style Guide"
 ---
 
 # Go Control Flow
 
-> **Source**: Effective Go. Go's control structures are related to C but differ
-> in important ways. Understanding these differences is essential for writing
-> idiomatic Go code.
+> Read [references/SWITCH-PATTERNS.md](references/SWITCH-PATTERNS.md) when using switch statements, type switches, or break with labels
 
-Go has no `do` or `while` loop—only a generalized `for`. There are no
-parentheses around conditions, and bodies must always be brace-delimited.
+> Read [references/BLANK-IDENTIFIER.md](references/BLANK-IDENTIFIER.md) when using `_`, blank identifier imports, or compile-time interface checks
 
 ---
 
-## If Statements
+## If with Initialization
 
-### Basic Form
-
-Go's `if` requires braces and has no parentheses around the condition:
-
-```go
-if x > 0 {
-    return y
-}
-```
-
-### If with Initialization
-
-`if` and `switch` accept an optional initialization statement. This is common
-for scoping variables to the conditional block:
+`if` and `switch` accept an optional initialization statement. Use it to scope
+variables to the conditional block:
 
 ```go
-// Good: err scoped to if block
 if err := file.Chmod(0664); err != nil {
     log.Print(err)
     return err
 }
 ```
 
-### Omit Else for Early Returns
+If you need the variable beyond a few lines after the `if`, declare it
+separately and use a standard `if` instead:
+
+```go
+x, err := f()
+if err != nil {
+    return err
+}
+// lots of code that uses x
+```
+
+## Indent Error Flow (Guard Clauses)
 
 When an `if` body ends with `break`, `continue`, `goto`, or `return`, omit the
-unnecessary `else`. This keeps the success path unindented:
+unnecessary `else`. Keep the success path unindented:
 
 ```go
-// Good: no else, success path at left margin
-f, err := os.Open(name)
-if err != nil {
-    return err
-}
-codeUsing(f)
-```
-
-```go
-// Bad: else clause buries normal flow
-f, err := os.Open(name)
-if err != nil {
-    return err
-} else {
-    codeUsing(f)  // unnecessarily indented
-}
-```
-
-### Guard Clauses for Error Handling
-
-Code reads well when the success path flows down the page, eliminating errors as
-they arise:
-
-```go
-// Good: guard clauses eliminate errors early
 f, err := os.Open(name)
 if err != nil {
     return err
@@ -82,17 +55,17 @@ if err != nil {
 codeUsing(f, d)
 ```
 
+Never bury normal flow inside an `else` when the `if` already returns.
+
 ---
 
 ## Redeclaration and Reassignment
 
-The `:=` short declaration allows redeclaring variables in the same scope under
-specific conditions:
+The `:=` short declaration allows redeclaring variables in the same scope:
 
 ```go
 f, err := os.Open(name)  // declares f and err
-// ...
-d, err := f.Stat()       // declares d, reassigns err (not a new err)
+d, err := f.Stat()       // declares d, reassigns err
 ```
 
 A variable `v` may appear in a `:=` declaration even if already declared,
@@ -102,259 +75,102 @@ provided:
 2. The value is **assignable** to `v`
 3. At least **one other variable** is newly created by the declaration
 
-This pragmatic rule makes it easy to reuse a single `err` variable through a
-chain of operations.
-
-```go
-// Good: err reused across multiple calls
-data, err := fetchData()
-if err != nil {
-    return err
-}
-result, err := processData(data)  // err reassigned, result declared
-if err != nil {
-    return err
-}
-```
+### Variable Shadowing
 
 **Warning**: If `v` is declared in an outer scope, `:=` creates a **new**
-variable that shadows it:
+variable that shadows it — a common source of bugs:
 
 ```go
-// Bad: accidental shadowing
-var err error
-if condition {
-    x, err := someFunc()  // this err shadows the outer err!
-    // outer err remains nil
+// Bug: ctx inside the if block shadows the outer ctx
+if *shortenDeadlines {
+    ctx, cancel := context.WithTimeout(ctx, 3*time.Second)
+    defer cancel()
 }
+// ctx here is still the original — the shadowed ctx didn't escape
+
+// Fix: use = instead of :=
+var cancel func()
+ctx, cancel = context.WithTimeout(ctx, 3*time.Second)
 ```
 
 ---
 
 ## For Loops
 
-Go unifies `for` and `while` into a single construct with three forms:
+Go's `for` is its only looping construct, unifying `while`, `do-while`, and
+C-style `for`:
 
 ```go
-// C-style for (only form with semicolons)
-for init; condition; post { }
-
-// While-style (condition only)
-for condition { }
+// Condition-only (Go's "while")
+for x > 0 {
+    x = process(x)
+}
 
 // Infinite loop
-for { }
+for {
+    if done() { break }
+}
+
+// C-style three-component
+for i := 0; i < n; i++ { ... }
 ```
 
-### Range Clause
+### Range
 
-Use `range` to iterate over arrays, slices, strings, maps, and channels:
+`range` iterates over slices, maps, strings, and channels:
 
 ```go
-// Iterate with key and value
-for key, value := range oldMap {
-    newMap[key] = value
-}
-
-// Key/index only (drop the second variable)
-for key := range m {
-    if key.expired() {
-        delete(m, key)
-    }
-}
-
-// Value only (use blank identifier for index)
-for _, value := range array {
-    sum += value
-}
+for i, v := range slice { ... }   // index + value
+for k, v := range myMap { ... }   // key + value (non-deterministic order)
+for i, r := range "héllo" { ... } // byte index + rune (not byte)
+for v := range ch { ... }         // receives until channel closed
 ```
 
-### Range Over Strings
+**Key rules:**
+- Range over strings yields **runes**, not bytes — `i` is the byte offset
+- Range over maps has **non-deterministic order** — don't rely on it
+- Use `_` to discard the index or value: `for _, v := range slice`
 
-For strings, `range` iterates over UTF-8 encoded runes (not bytes), handling
-multi-byte characters automatically.
-
-### Parallel Assignment in For
+### Parallel Assignment
 
 Go has no comma operator. Use parallel assignment for multiple loop variables:
 
 ```go
-// Reverse a slice
 for i, j := 0, len(a)-1; i < j; i, j = i+1, j-1 {
     a[i], a[j] = a[j], a[i]
 }
 ```
 
-Note: `++` and `--` are statements, not expressions, so they cannot be used in
-parallel assignment.
+`++` and `--` are statements, not expressions — they cannot appear in parallel
+assignment.
 
 ---
 
-## Switch
+## Switch: Labeled Break
 
-Go's `switch` is more flexible than C's:
-
-- Expressions need not be constants or integers
-- Cases are evaluated top to bottom until a match
-- **No automatic fall through** (no need for `break` in each case)
-
-### Expression-less Switch
-
-If the `switch` has no expression, it switches on `true`. This is idiomatic for
-writing clean `if-else-if` chains:
-
-```go
-// Good: expression-less switch for ranges
-func unhex(c byte) byte {
-    switch {
-    case '0' <= c && c <= '9':
-        return c - '0'
-    case 'a' <= c && c <= 'f':
-        return c - 'a' + 10
-    case 'A' <= c && c <= 'F':
-        return c - 'A' + 10
-    }
-    return 0
-}
-```
-
-### Comma-Separated Cases
-
-Multiple cases can be combined with commas (no fall through needed):
-
-```go
-func shouldEscape(c byte) bool {
-    switch c {
-    case ' ', '?', '&', '=', '#', '+', '%':
-        return true
-    }
-    return false
-}
-```
-
-### Break with Labels
-
-`break` terminates the switch by default. To break out of an enclosing loop, use
-a label:
+`break` inside a `switch` within a `for` loop only breaks the switch.
+Use a labeled `break` to exit the enclosing loop:
 
 ```go
 Loop:
-    for n := 0; n < len(src); n += size {
-        switch {
-        case src[n] < sizeOne:
-            break        // breaks switch only
-        case src[n] < sizeTwo:
-            if n+1 >= len(src) {
-                break Loop   // breaks out of for loop
-            }
+    for _, v := range items {
+        switch v.Type {
+        case "done":
+            break Loop  // breaks the for loop
         }
     }
 ```
 
----
-
-## Type Switch
-
-A type switch discovers the dynamic type of an interface value using
-`.(type)`:
-
-```go
-switch v := value.(type) {
-case nil:
-    fmt.Println("value is nil")
-case int:
-    fmt.Printf("integer: %d\n", v)      // v is int
-case string:
-    fmt.Printf("string: %q\n", v)       // v is string
-case bool:
-    fmt.Printf("boolean: %t\n", v)      // v is bool
-default:
-    fmt.Printf("unexpected type %T\n", v)
-}
-```
-
-It's idiomatic to reuse the variable name (`v := value.(type)`) since the
-variable has a different type in each case clause.
-
-When a case lists multiple types (`case int, int64:`), the variable has the
-interface type.
+For type switches, see **go-interfaces**: Type Switch.
 
 ---
 
 ## The Blank Identifier
 
-The blank identifier `_` discards values. It's like writing to `/dev/null`.
+**Never discard errors carelessly** — a nil dereference panic may follow.
 
-### Multiple Assignment
-
-Discard unwanted values from multi-value expressions:
-
-```go
-// Only need the error
-if _, err := os.Stat(path); os.IsNotExist(err) {
-    fmt.Printf("%s does not exist\n", path)
-}
-
-// Only need the value (discard ok)
-value := cache[key]  // simpler: just use single-value form
-_, present := cache[key]  // when you only need presence check
-```
-
-**Never discard errors carelessly**:
-
-```go
-// Bad: ignoring error will crash if path doesn't exist
-fi, _ := os.Stat(path)
-if fi.IsDir() {  // nil pointer dereference if path doesn't exist
-    // ...
-}
-```
-
-### Unused Imports and Variables During Development
-
-Silence compiler errors temporarily during active development:
-
-```go
-import (
-    "fmt"
-    "io"
-)
-
-var _ = fmt.Printf  // silence unused import (remove before committing)
-var _ io.Reader
-
-func main() {
-    fd, _ := os.Open("test.go")
-    _ = fd  // silence unused variable
-}
-```
-
-### Import for Side Effect
-
-Import a package only for its `init()` side effects:
-
-```go
-import _ "net/http/pprof"  // registers HTTP handlers
-import _ "image/png"       // registers PNG decoder
-```
-
-This makes clear the package is imported only for side effects—it has no usable
-name in this file.
-
-### Interface Compliance Check
-
-Verify at compile time that a type implements an interface:
-
-```go
-// Verify that *MyType implements io.Writer
-var _ io.Writer = (*MyType)(nil)
-
-// Verify that MyHandler implements http.Handler
-var _ http.Handler = MyHandler{}
-```
-
-This fails at compile time if the type doesn't implement the interface, catching
-errors early.
+Verify interface compliance at compile time: `var _ io.Writer = (*MyType)(nil)`.
+See **go-interfaces** for the interface satisfaction check pattern.
 
 ---
 
@@ -365,28 +181,21 @@ errors early.
 | If initialization | `if err := f(); err != nil { }` |
 | Early return | Omit `else` when if body returns |
 | Redeclaration | `:=` reassigns if same scope + new var |
-| C-style for | `for i := 0; i < n; i++ { }` |
-| While-style | `for condition { }` |
-| Infinite loop | `for { }` |
-| Range with key+value | `for k, v := range m { }` |
-| Range value only | `for _, v := range slice { }` |
-| Range key only | `for k := range m { }` |
+| Shadowing trap | `:=` in inner scope creates new variable |
 | Parallel assignment | `i, j = i+1, j-1` |
 | Expression-less switch | `switch { case cond: }` |
 | Comma cases | `case 'a', 'b', 'c':` |
 | No fallthrough | Default behavior (explicit `fallthrough` if needed) |
 | Break from loop in switch | `break Label` |
-| Type switch | `switch v := x.(type) { }` |
 | Discard value | `_, err := f()` |
 | Side-effect import | `import _ "pkg"` |
 | Interface check | `var _ Interface = (*Type)(nil)` |
 
 ---
 
-## See Also
+## Related Skills
 
-- **go-style-core**: Core Go style principles and formatting
-- **go-error-handling**: Error handling patterns including guard clauses
-- **go-naming**: Naming conventions for loop variables and labels
-- **go-concurrency**: Goroutines, channels, and select statements
-- **go-defensive**: Defensive programming patterns
+- **Error flow**: See [go-error-handling](../go-error-handling/SKILL.md) when structuring guard clauses, early returns, or error-first patterns
+- **Type switches**: See [go-interfaces](../go-interfaces/SKILL.md) when using type switches, the comma-ok idiom, or interface satisfaction checks
+- **Nesting reduction**: See [go-style-core](../go-style-core/SKILL.md) when reducing nesting depth or resolving formatting questions
+- **Variable scoping**: See [go-declarations](../go-declarations/SKILL.md) when using if-init, `:=` redeclaration, or reducing variable scope

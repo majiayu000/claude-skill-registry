@@ -1,0 +1,17 @@
+{
+  "name": "sr",
+  "repo": "alexandrbasis/wythm-claude-workflows",
+  "path": ".claude/skills/sr/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alexandrbasis/wythm-claude-workflows",
+  "dir_name": "sr",
+  "downloaded_at": "2026-03-22T06:49:59.114996Z",
+  "author": "alexandrbasis",
+  "source_url": "https://github.com/alexandrbasis/wythm-claude-workflows/blob/main/.claude/skills/sr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexandrbasis/wythm-claude-workflows/blob/main/.claude/skills/sr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

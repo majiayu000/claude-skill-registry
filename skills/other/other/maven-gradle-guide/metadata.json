@@ -1,0 +1,17 @@
+{
+  "name": "maven-gradle-guide",
+  "repo": "VersoXBT/claude-initial-setup",
+  "path": "skills/java/maven-gradle-guide/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/VersoXBT/claude-initial-setup",
+  "dir_name": "maven-gradle-guide",
+  "downloaded_at": "2026-03-22T06:27:42.388729Z",
+  "author": "VersoXBT",
+  "source_url": "https://github.com/VersoXBT/claude-initial-setup/blob/main/skills/java/maven-gradle-guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/VersoXBT/claude-initial-setup/blob/main/skills/java/maven-gradle-guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

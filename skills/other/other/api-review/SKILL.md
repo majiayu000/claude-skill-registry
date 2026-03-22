@@ -24,7 +24,11 @@ estimated_tokens: 400
 progressive_loading: true
 dependencies:
 - pensive:shared
-- imbue:evidence-logging
+- imbue:proof-of-work
+modules:
+- modules/consistency-audit.md
+- modules/exemplar-research.md
+- modules/surface-inventory.md
 ---
 # API Review Workflow
 
@@ -88,7 +92,7 @@ The final report must include a summary of the API surface, a numerical inventor
 
 ## Technical Integration
 
-Use `imbue:evidence-logging` for reproducible command capture and `imbue:structured-output` for formatting findings. Reference `imbue:diff-analysis/modules/risk-assessment-framework` when assessing breaking changes.
+Use `imbue:proof-of-work` for reproducible command capture and `imbue:structured-output` for formatting findings. Reference `imbue:diff-analysis/modules/risk-assessment-framework` when assessing breaking changes.
 
 ## Module Reference
 

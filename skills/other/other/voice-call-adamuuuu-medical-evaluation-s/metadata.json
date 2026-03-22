@@ -1,0 +1,17 @@
+{
+  "name": "voice-call",
+  "repo": "Adamuuuu/medical_evaluation_system",
+  "path": ".claude/skills/voice-call/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/Adamuuuu/medical_evaluation_system",
+  "dir_name": "voice-call-adamuuuu-medical-evaluation-s",
+  "downloaded_at": "2026-03-22T04:47:23.864969Z",
+  "author": "Adamuuuu",
+  "source_url": "https://github.com/Adamuuuu/medical_evaluation_system/blob/master/.claude/skills/voice-call/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Adamuuuu/medical_evaluation_system/blob/master/.claude/skills/voice-call/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

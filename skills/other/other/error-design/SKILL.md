@@ -12,13 +12,9 @@ When invoked with $ARGUMENTS, focus the analysis on the specified file or module
 
 **Each exception a module throws is an interface element.** The best way to deal with exceptions is to not have them.
 
-> "Exception handling code rarely executes. Bugs can go undetected for a long time, and when the exception handling code is finally needed, there's a good chance that it won't work." — John Ousterhout, _A Philosophy of Software Design_
-
 ## The "Too Many Exceptions" Anti-Pattern
 
-Programmers are taught that "the more errors detected, the better," but this leads to an over-defensive style that throws exceptions for anything suspicious. Throwing exceptions is easy. Handling them is hard.
-
-> "Classes with lots of exceptions have complex interfaces, and they are shallower than classes with fewer exceptions." — John Ousterhout, _A Philosophy of Software Design_
+Programmers are often taught that "the more errors detected, the better," but this produces an over-defensive style that throws exceptions for anything suspicious. Throwing is easy. Handling is hard. Each exception type in a module's interface is one more thing callers must understand and prepare for, making the class shallower than it needs to be. Exception handlers are rarely exercised in practice, which means bugs in them accumulate silently. When a handler is finally needed, it may not work.
 
 ## When to Apply
 

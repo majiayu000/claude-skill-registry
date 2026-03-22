@@ -1,22 +1,22 @@
 ---
 name: fetch-rss-feeds
-version: "2.0.0"
-description: >
-  Fetch articles from RSS/Atom feeds and store them in memory for analysis.
+version: 2.0.0
+description: 'Fetch articles from RSS/Atom feeds and store them in memory for analysis.
   Uses the rss tool for fetching and memory MCP for storage and deduplication.
+
+  '
 license: MIT
 allowed-tools:
-  - rss                    # Strands built-in RSS tool
-  - memory/add             # Store fetched articles
-  - memory/check_seen      # Check if article already processed
-  - memory/mark_seen       # Mark article as processed
+- rss
+- memory/add
+- memory/check_seen
+- memory/mark_seen
 metadata:
-  kubani:
-    domain: news
-    category: collection
-    requires_approval: false
-    confidence: 0.95
-    version: "2.0.0"
+  domain: news
+  category: collection
+  requires-approval: false
+  confidence: 0.95
+  mcp-servers: []
 ---
 
 # Fetch RSS Feeds

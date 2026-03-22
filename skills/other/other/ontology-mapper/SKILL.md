@@ -6,7 +6,7 @@ description: >
   natural-language material descriptions to ontology terms, annotating simulation inputs with
   ontology metadata, or mapping crystal parameters (space group, Bravais lattice, lattice constants)
   to standardized ontology representations.
-allowed-tools: Read, Bash
+allowed-tools: Read, Grep, Glob
 ---
 
 # Ontology Mapper

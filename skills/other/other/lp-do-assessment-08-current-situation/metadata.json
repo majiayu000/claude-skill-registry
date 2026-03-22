@@ -1,0 +1,17 @@
+{
+  "name": "lp-do-assessment-08-current-situation",
+  "repo": "PeterCowling/base-shop",
+  "path": ".claude/skills/lp-do-assessment-08-current-situation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/PeterCowling/base-shop",
+  "dir_name": "lp-do-assessment-08-current-situation",
+  "downloaded_at": "2026-03-22T06:04:50.643452Z",
+  "author": "PeterCowling",
+  "source_url": "https://github.com/PeterCowling/base-shop/blob/main/.claude/skills/lp-do-assessment-08-current-situation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PeterCowling/base-shop/blob/main/.claude/skills/lp-do-assessment-08-current-situation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

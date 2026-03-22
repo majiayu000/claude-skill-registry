@@ -2,8 +2,16 @@
   "name": "skill-creator",
   "repo": "bcastelino/agent-skills-kit",
   "path": "skills/skill-creator/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/bcastelino/agent-skills-kit",
   "dir_name": "skill-creator-bcastelino-agent-skills-kit",
-  "downloaded_at": "2026-02-22T06:30:07.721904Z"
+  "downloaded_at": "2026-03-22T07:11:12.090887Z",
+  "author": "bcastelino",
+  "source_url": "https://github.com/bcastelino/agent-skills-kit/blob/main/skills/skill-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bcastelino/agent-skills-kit/blob/main/skills/skill-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

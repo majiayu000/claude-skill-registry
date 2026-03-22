@@ -1,0 +1,17 @@
+{
+  "name": "vpc-network-designer",
+  "repo": "YongjianWan/--agentskill",
+  "path": "skill/13-aws-skills/vpc-network-designer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/YongjianWan/--agentskill",
+  "dir_name": "vpc-network-designer-yongjianwan-agentskill",
+  "downloaded_at": "2026-03-22T06:34:10.092814Z",
+  "author": "YongjianWan",
+  "source_url": "https://github.com/YongjianWan/--agentskill/blob/main/skill/13-aws-skills/vpc-network-designer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/YongjianWan/--agentskill/blob/main/skill/13-aws-skills/vpc-network-designer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

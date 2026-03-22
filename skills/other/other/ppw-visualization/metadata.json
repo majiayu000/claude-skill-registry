@@ -1,0 +1,17 @@
+{
+  "name": "ppw-visualization",
+  "repo": "Lylll9436/Paper-Polish-Workflow-skill",
+  "path": ".claude/skills/ppw-visualization/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Lylll9436/Paper-Polish-Workflow-skill",
+  "dir_name": "ppw-visualization",
+  "downloaded_at": "2026-03-22T05:45:15.676483Z",
+  "author": "Lylll9436",
+  "source_url": "https://github.com/Lylll9436/Paper-Polish-Workflow-skill/blob/main/.claude/skills/ppw-visualization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Lylll9436/Paper-Polish-Workflow-skill/blob/main/.claude/skills/ppw-visualization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "toxicology-calculator",
+  "repo": "OpenVet-Projects/VetClaw",
+  "path": "skills/safety/toxicology-calculator/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OpenVet-Projects/VetClaw",
+  "dir_name": "toxicology-calculator",
+  "downloaded_at": "2026-03-22T06:00:56.748605Z",
+  "author": "OpenVet-Projects",
+  "source_url": "https://github.com/OpenVet-Projects/VetClaw/blob/main/skills/safety/toxicology-calculator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OpenVet-Projects/VetClaw/blob/main/skills/safety/toxicology-calculator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

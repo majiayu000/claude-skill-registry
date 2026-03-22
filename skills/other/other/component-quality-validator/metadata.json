@@ -2,8 +2,16 @@
   "name": "component-quality-validator",
   "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
   "path": ".claude/skills/component-quality-validator/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
   "dir_name": "component-quality-validator",
-  "downloaded_at": "2026-02-22T05:55:47.527636Z"
+  "downloaded_at": "2026-03-22T06:30:01.153896Z",
+  "author": "Wania-Kazmi",
+  "source_url": "https://github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow/blob/main/.claude/skills/component-quality-validator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow/blob/main/.claude/skills/component-quality-validator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

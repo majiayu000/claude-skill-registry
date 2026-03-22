@@ -1,0 +1,17 @@
+{
+  "name": "devsecops",
+  "repo": "MarioWinter/merch-miner",
+  "path": ".claude/skills/devsecops/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/MarioWinter/merch-miner",
+  "dir_name": "devsecops",
+  "downloaded_at": "2026-03-22T05:48:25.431273Z",
+  "author": "MarioWinter",
+  "source_url": "https://github.com/MarioWinter/merch-miner/blob/main/.claude/skills/devsecops/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MarioWinter/merch-miner/blob/main/.claude/skills/devsecops/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -2,8 +2,16 @@
   "name": "seo-metadata-generator",
   "repo": "WesleySmits/agent-skills",
   "path": ".agent/skills/seo-metadata-generator/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/WesleySmits/agent-skills",
   "dir_name": "seo-metadata-generator",
-  "downloaded_at": "2026-02-22T05:56:39.700365Z"
+  "downloaded_at": "2026-03-22T06:30:35.375923Z",
+  "author": "WesleySmits",
+  "source_url": "https://github.com/WesleySmits/agent-skills/blob/main/.agent/skills/seo-metadata-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WesleySmits/agent-skills/blob/main/.agent/skills/seo-metadata-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

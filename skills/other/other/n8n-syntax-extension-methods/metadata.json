@@ -1,0 +1,17 @@
+{
+  "name": "n8n-syntax-extension-methods",
+  "repo": "OpenAEC-Foundation/n8n-Claude-Skill-Package",
+  "path": "skills/source/n8n-syntax/n8n-syntax-extension-methods/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OpenAEC-Foundation/n8n-Claude-Skill-Package",
+  "dir_name": "n8n-syntax-extension-methods",
+  "downloaded_at": "2026-03-22T06:00:36.852904Z",
+  "author": "OpenAEC-Foundation",
+  "source_url": "https://github.com/OpenAEC-Foundation/n8n-Claude-Skill-Package/blob/main/skills/source/n8n-syntax/n8n-syntax-extension-methods/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OpenAEC-Foundation/n8n-Claude-Skill-Package/blob/main/skills/source/n8n-syntax/n8n-syntax-extension-methods/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

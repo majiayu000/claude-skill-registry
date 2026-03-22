@@ -2,8 +2,16 @@
   "name": "implement-playlists",
   "repo": "Tassadar2499/NovaTune",
   "path": ".claude/skills/implement-playlists/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/Tassadar2499/NovaTune",
   "dir_name": "implement-playlists",
-  "downloaded_at": "2026-02-22T05:48:17.899378Z"
+  "downloaded_at": "2026-03-22T06:21:08.358431Z",
+  "author": "Tassadar2499",
+  "source_url": "https://github.com/Tassadar2499/NovaTune/blob/main/.claude/skills/implement-playlists/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tassadar2499/NovaTune/blob/main/.claude/skills/implement-playlists/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

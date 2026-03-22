@@ -1,19 +1,22 @@
 ---
 name: job-application-optimizer
-description: Strategic job application planning and Resume SEO optimization. Approaches applications like marketing campaigns with market research, opportunity qualification, and content optimization. Activate on 'optimize resume', 'tailor resume', 'ATS optimization', 'job fit score', 'should I apply'. NOT for initial career narratives (career-biographer), portfolio design (cv-creator), or market positioning (competitive-cartographer).
+description: Strategic job application planning and Resume SEO optimization. Approaches applications like marketing campaigns with market research, opportunity qualification, and content optimization. Activate
+  on 'optimize resume', 'tailor resume', 'ATS optimization', 'job fit score', 'should I apply'. NOT for initial career narratives (career-biographer), portfolio design (cv-creator), or market positioning
+  (competitive-cartographer).
 allowed-tools: Read,Write,Edit,WebSearch,WebFetch
-category: Business & Monetization
-tags:
+metadata:
+  category: Business & Monetization
+  pairs-with:
+  - skill: cv-creator
+    reason: Generate optimized CVs
+  - skill: competitive-cartographer
+    reason: Understand job market positioning
+  tags:
   - job-search
   - ats
   - resume-seo
   - application
   - optimization
-pairs-with:
-  - skill: cv-creator
-    reason: Generate optimized CVs
-  - skill: competitive-cartographer
-    reason: Understand job market positioning
 ---
 
 # Job Application Optimizer

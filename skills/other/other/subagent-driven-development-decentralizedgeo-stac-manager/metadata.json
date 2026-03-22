@@ -1,0 +1,17 @@
+{
+  "name": "subagent-driven-development",
+  "repo": "DecentralizedGeo/stac-manager",
+  "path": ".github/skills/subagent-driven-development/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/DecentralizedGeo/stac-manager",
+  "dir_name": "subagent-driven-development-decentralizedgeo-stac-manager",
+  "downloaded_at": "2026-03-22T05:12:58.221077Z",
+  "author": "DecentralizedGeo",
+  "source_url": "https://github.com/DecentralizedGeo/stac-manager/blob/main/.github/skills/subagent-driven-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DecentralizedGeo/stac-manager/blob/main/.github/skills/subagent-driven-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

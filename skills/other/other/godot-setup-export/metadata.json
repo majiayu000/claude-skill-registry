@@ -2,8 +2,16 @@
   "name": "godot-setup-export",
   "repo": "Asreonn/godot-superpowers",
   "path": "mini-skills/godot-setup-export/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/Asreonn/godot-superpowers",
   "dir_name": "godot-setup-export",
-  "downloaded_at": "2026-02-22T04:43:02.525070Z"
+  "downloaded_at": "2026-03-22T04:55:10.976690Z",
+  "author": "Asreonn",
+  "source_url": "https://github.com/Asreonn/godot-superpowers/blob/main/mini-skills/godot-setup-export/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Asreonn/godot-superpowers/blob/main/mini-skills/godot-setup-export/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

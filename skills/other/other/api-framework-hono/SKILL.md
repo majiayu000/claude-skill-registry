@@ -5,7 +5,7 @@ description: Hono routes, OpenAPI, Zod validation
 
 # API Development with Hono + OpenAPI
 
-> **Quick Guide:** Use Hono with @hono/zod-openapi for type-safe REST APIs that auto-generate OpenAPI specs. Zod schemas provide validation AND documentation. Export your Hono app for spec generation to enable client code generation.
+> **Quick Guide:** Use Hono with `@hono/zod-openapi` for type-safe REST APIs that auto-generate OpenAPI specs. Import `z` from `@hono/zod-openapi` (NOT from `zod`) so `.openapi()` is available on all schemas. Always include `operationId` in routes and export the `app` instance for spec generation.
 
 ---
 
@@ -15,7 +15,7 @@ description: Hono routes, OpenAPI, Zod validation
 
 > **All code must follow project conventions in CLAUDE.md** (kebab-case, named exports, import ordering, `import type`, named constants)
 
-**(You MUST call `extendZodWithOpenApi(z)` BEFORE defining ANY Zod schemas)**
+**(You MUST import `z` from `@hono/zod-openapi`, NOT from `zod` -- this gives Zod the `.openapi()` method)**
 
 **(You MUST export the `app` instance for OpenAPI spec generation)**
 
@@ -29,45 +29,43 @@ description: Hono routes, OpenAPI, Zod validation
 
 **When to use:**
 
-- Building type-safe REST APIs in Next.js API routes with Hono
-- Defining OpenAPI specifications with automatic validation
+- Building type-safe REST APIs with auto-generated OpenAPI specs
+- Defining OpenAPI specifications with automatic Zod validation
 - Creating standardized error responses with proper status codes
 - Implementing filtering, pagination, and sorting patterns
-- Need public or multi-client API with documentation
+- Public or multi-client APIs needing formal documentation
 - Production APIs requiring rate limiting, CORS, health checks
 
 **When NOT to use:**
 
-- Simple CRUD operations with no external consumers (use Server Actions instead)
-- Internal-only APIs without documentation requirements (simpler approaches exist)
-- Forms that don't need complex validation (React Hook Form + Server Actions)
-- When building GraphQL APIs (use Apollo Server or similar)
+- Simple CRUD with no external consumers (Server Actions are simpler)
+- Internal-only APIs without documentation requirements
 - Single-use endpoints with no schema reuse (over-engineering)
 
 **Key patterns covered:**
 
-- Hono API route setup with OpenAPI integration
-- Zod schema definition with OpenAPI metadata (.openapi() method)
-- Route definition with createRoute (operationId, tags, responses)
-- Standardized error handling with error codes and constants
-- Filtering with multiple values (comma-separated, case-insensitive)
-- Pagination patterns (offset-based with proper constants)
-- Data transformation utilities (date formatting, object mapping)
-- OpenAPI spec generation at build time
-- Authentication middleware with type-safe variables
-- Rate limiting with response headers and 429 handling
-- CORS configuration with origin allowlisting
+- Modular route setup with `app.route()` and `OpenAPIHono`
+- Zod schema definitions with `.openapi()` metadata
+- Route definition with `createRoute` (operationId, tags, responses)
+- Error handling with named error codes
+- Filtering, pagination, and data transformation
+- Auth, rate limiting, CORS, logging, caching middleware
 - Health check endpoints (shallow and deep)
-- Request/response logging with PII sanitization
-- Caching strategies (Cache-Control, ETags)
-- RPC client (hc) with end-to-end type safety (v4.11.0+)
-- Context Storage for accessing context outside handlers (v4.6.0+)
-- Combine Middleware (some/every/except) for complex auth logic (v4.x)
+- RPC client (`hc`) with end-to-end type safety
+- Context Storage for out-of-handler context access
+- Combine Middleware (`some`/`every`/`except`) for declarative auth
 
 **Detailed Resources:**
 
-- For code examples, see [examples/](examples/) (core.md, validation.md, routes.md, middleware.md, etc.)
-- For decision frameworks and anti-patterns, see [reference.md](reference.md)
+- [examples/core.md](examples/core.md) - Route setup, list/detail endpoints
+- [examples/validation.md](examples/validation.md) - Zod schema definitions with OpenAPI
+- [examples/routes.md](examples/routes.md) - Filtering, pagination, data transformation
+- [examples/middleware.md](examples/middleware.md) - Auth, rate limiting, CORS, logging, caching
+- [examples/error-handling.md](examples/error-handling.md) - Standardized error responses
+- [examples/openapi.md](examples/openapi.md) - Spec generation (build-time and endpoint)
+- [examples/health-checks.md](examples/health-checks.md) - Liveness and readiness checks
+- [examples/advanced-v4.md](examples/advanced-v4.md) - RPC, Context Storage, Combine Middleware
+- [reference.md](reference.md) - Decision frameworks, anti-patterns, production checklist
 
 ---
 
@@ -75,11 +73,11 @@ description: Hono routes, OpenAPI, Zod validation
 
 ## Philosophy
 
-**Type safety + documentation from code.** Zod schemas serve both validation AND OpenAPI spec generation. Single source of truth flows to frontend via your chosen client code generator.
+**Type safety + documentation from code.** Zod schemas serve both validation AND OpenAPI spec generation. Single source of truth flows to clients via generated SDKs or Hono's RPC client.
 
-**Use Hono + OpenAPI when:** Building public/multi-client APIs, need auto-generated documentation, require formal OpenAPI specs.
+**Use Hono + OpenAPI when:** Building public/multi-client APIs, need auto-generated documentation, require formal OpenAPI specs, want type-safe validation.
 
-**Use Server Actions when:** Simple CRUD, internal-only, no external API consumers, no complex validation.
+**Use simpler approaches when:** Internal-only CRUD, no external API consumers, no documentation needs.
 
 </philosophy>
 
@@ -89,60 +87,37 @@ description: Hono routes, OpenAPI, Zod validation
 
 ## Core Patterns
 
-### Pattern 1: API Route Setup
+### Pattern 1: Modular Route Setup
 
-Structure API routes in `/app/api/` using catch-all route pattern. Use `app.route()` for modularization.
-
-**File: `/app/api/[[...route]]/route.ts`**
+Structure routes using `app.route()` for modularization. Export the `app` instance for spec generation.
 
 ```typescript
-// Import order: External deps -> Relative imports
 import { OpenAPIHono } from "@hono/zod-openapi";
-import { handle } from "hono/vercel";
 
-import { jobsRoutes } from "../routes/jobs";
-import { companiesRoutes } from "../routes/companies";
-
-// Create main app with base path
 const app = new OpenAPIHono().basePath("/api");
 
-// Mount route modules using app.route()
 app.route("/", jobsRoutes);
 app.route("/", companiesRoutes);
 
-// REQUIRED: Export app for OpenAPI spec generation
+// REQUIRED: Export app for spec generation
 export { app };
-
-// Export handlers for Next.js (all HTTP methods)
-export const GET = handle(app);
-export const POST = handle(app);
-export const PUT = handle(app);
-export const PATCH = handle(app);
-export const DELETE = handle(app);
 ```
 
-**Why good:** app.route() prevents God files, app export enables build-time spec generation, named exports follow project convention
+**Why good:** `app.route()` prevents God files, app export enables build-time spec generation
+
+See [examples/core.md](examples/core.md) for complete setup with framework adapter exports.
 
 ---
 
-### Pattern 2: Zod Schema Definition with OpenAPI
+### Pattern 2: Zod Schemas with OpenAPI Metadata
 
-Schemas serve both validation AND documentation via `.openapi()` method.
-
-**File: `/app/api/schemas.ts`**
+Import `z` from `@hono/zod-openapi` (not `zod`). Use `.openapi()` for schema registration and documentation.
 
 ```typescript
-import { z } from "zod";
-import { extendZodWithOpenApi } from "@hono/zod-openapi";
-
-// REQUIRED: Extend Zod with OpenAPI methods BEFORE defining schemas
-extendZodWithOpenApi(z);
+import { z } from "@hono/zod-openapi";
 
 const MIN_SALARY = 0;
 const CURRENCY_CODE_LENGTH = 3;
-const MIN_TITLE_LENGTH = 1;
-const MAX_TITLE_LENGTH = 255;
-const DEFAULT_LIMIT = "50";
 
 export const SalarySchema = z
   .object({
@@ -153,175 +128,120 @@ export const SalarySchema = z
   .openapi("Salary", {
     example: { min: 60000, max: 90000, currency: "EUR" },
   });
-
-export const JobSchema = z
-  .object({
-    id: z.string().uuid(),
-    title: z.string().min(MIN_TITLE_LENGTH).max(MAX_TITLE_LENGTH),
-    description: z.string(),
-    employmentType: z.string().nullable(),
-    salary: SalarySchema.nullable(),
-  })
-  .openapi("Job");
-
-export type Job = z.infer<typeof JobSchema>;
 ```
 
-**Why good:** extendZodWithOpenApi first (required for .openapi() to exist), named constants prevent magic number bugs, reusable sub-schemas reduce duplication
+**Why good:** importing `z` from `@hono/zod-openapi` provides `.openapi()` automatically, named constants prevent magic number bugs, `.openapi("Name")` registers as `#/components/schemas/Name`
+
+See [examples/validation.md](examples/validation.md) for complete schema patterns.
 
 ---
 
 ### Pattern 3: Route Definition with createRoute
 
-Define routes with OpenAPI metadata using `createRoute` and `app.openapi()`.
-
-**File: `/app/api/routes/jobs.ts`**
+Define routes with `createRoute` and implement with `app.openapi()`. Always include `operationId`.
 
 ```typescript
 import { OpenAPIHono, createRoute, z } from "@hono/zod-openapi";
-import { and, eq, desc, isNull } from "drizzle-orm";
-
-import { db, jobs, companies } from "@/lib/db";
-import {
-  JobsQuerySchema,
-  JobsResponseSchema,
-  ErrorResponseSchema,
-} from "../schemas";
-
-const DEFAULT_QUERY_LIMIT = 100;
-const app = new OpenAPIHono();
 
 const getJobsRoute = createRoute({
   method: "get",
   path: "/jobs",
-  operationId: "getJobs", // Used for generated client method names
-  tags: ["Jobs"], // Groups endpoints in documentation
-  summary: "Get all jobs",
-  description: "Retrieve active job postings with optional filters",
-  request: {
-    query: JobsQuerySchema,
-  },
+  operationId: "getJobs", // Becomes client method name
+  tags: ["Jobs"],
+  request: { query: JobsQuerySchema },
   responses: {
     200: {
       description: "List of jobs",
       content: { "application/json": { schema: JobsResponseSchema } },
     },
-    500: {
-      description: "Internal server error",
-      content: { "application/json": { schema: ErrorResponseSchema } },
-    },
   },
 });
 
 app.openapi(getJobsRoute, async (c) => {
-  try {
-    const { country, employment_type } = c.req.valid("query");
-    const conditions = [eq(jobs.isActive, true), isNull(jobs.deletedAt)];
-
-    if (country) {
-      conditions.push(eq(jobs.country, country));
-    }
-
-    const results = await db
-      .select()
-      .from(jobs)
-      .where(and(...conditions))
-      .orderBy(desc(jobs.createdAt))
-      .limit(DEFAULT_QUERY_LIMIT);
-
-    return c.json({ jobs: results, total: results.length }, 200);
-  } catch (error) {
-    console.error("Error fetching jobs:", error);
-    return c.json(
-      {
-        error: "Failed to fetch jobs",
-        message: error instanceof Error ? error.message : "Unknown error",
-      },
-      500,
-    );
-  }
+  const { country } = c.req.valid("query"); // Type-safe validated params
+  // ... handler logic
+  return c.json({ jobs: results }, 200);
 });
-
-// Named export (project convention - no default exports)
-export { app as jobsRoutes };
 ```
 
-**Why good:** operationId becomes client method name (getJobs vs get_api_jobs), c.req.valid() enforces schema validation, soft delete checks prevent exposing deleted data
+**Why good:** `operationId` becomes clean client method name (`getJobs` vs `get_api_jobs`), `c.req.valid()` enforces schema validation with types
+
+See [examples/core.md](examples/core.md) for list/detail endpoint examples.
 
 ---
 
-### Pattern 4: Standardized Error Handling
+### Pattern 4: Error Handling with Named Codes
 
-Consistent error responses with named error codes across all routes.
+Use named error code constants for consistent, machine-parseable error responses.
 
 ```typescript
-import { z } from "zod";
-import type { Context } from "hono";
-
-const HTTP_STATUS_UNPROCESSABLE_ENTITY = 422;
-const HTTP_STATUS_CONFLICT = 409;
-const HTTP_STATUS_INTERNAL_ERROR = 500;
-
 export const ErrorCodes = {
   VALIDATION_ERROR: "validation_error",
   NOT_FOUND: "not_found",
   UNAUTHORIZED: "unauthorized",
-  FORBIDDEN: "forbidden",
   INTERNAL_ERROR: "internal_error",
-  DATABASE_ERROR: "database_error",
 } as const;
-
-export const handleRouteError = (error: unknown, c: Context) => {
-  console.error("Route error:", error);
-
-  if (error instanceof z.ZodError) {
-    return c.json(
-      {
-        error: ErrorCodes.VALIDATION_ERROR,
-        message: "Validation failed",
-        statusCode: HTTP_STATUS_UNPROCESSABLE_ENTITY,
-        details: error.errors,
-      },
-      HTTP_STATUS_UNPROCESSABLE_ENTITY,
-    );
-  }
-
-  if (error instanceof Error) {
-    if (error.message.includes("unique constraint")) {
-      return c.json(
-        {
-          error: ErrorCodes.VALIDATION_ERROR,
-          message: "Resource already exists",
-          statusCode: HTTP_STATUS_CONFLICT,
-        },
-        HTTP_STATUS_CONFLICT,
-      );
-    }
-
-    return c.json(
-      {
-        error: ErrorCodes.INTERNAL_ERROR,
-        message: error.message,
-        statusCode: HTTP_STATUS_INTERNAL_ERROR,
-      },
-      HTTP_STATUS_INTERNAL_ERROR,
-    );
-  }
-
-  return c.json(
-    {
-      error: ErrorCodes.INTERNAL_ERROR,
-      message: "An unexpected error occurred",
-      statusCode: HTTP_STATUS_INTERNAL_ERROR,
-    },
-    HTTP_STATUS_INTERNAL_ERROR,
-  );
-};
 ```
 
-**Why good:** Named error codes enable frontend handling (switch on code), Zod error details show which field failed, consistent shape = predictable client parsing
+**Why good:** Named codes enable frontend `switch` handling, consistent shape across all endpoints
+
+See [examples/error-handling.md](examples/error-handling.md) for the full `handleRouteError` utility.
+
+---
+
+### Pattern 5: JWT Authentication with Explicit Algorithm
+
+Always specify the `alg` option on JWT/JWK middleware to prevent algorithm confusion attacks (CVE-2026-22817, CVE-2026-22818, patched in v4.11.4+).
+
+```typescript
+import { verify } from "hono/jwt";
+
+const JWT_ALGORITHM = "HS256";
+
+const payload = await verify(token, secret, JWT_ALGORITHM);
+```
+
+**Why good:** explicit algorithm prevents attackers from switching to symmetric verification with known public keys
+
+See [examples/middleware.md](examples/middleware.md) for complete auth middleware with type-safe variables.
 
 </patterns>
+
+---
+
+<red_flags>
+
+## RED FLAGS
+
+**High Priority:**
+
+- Importing `z` from `"zod"` instead of `"@hono/zod-openapi"` -- `.openapi()` won't be available
+- Missing `operationId` in routes -- generated client has ugly method names
+- Not exporting `app` instance -- can't generate OpenAPI spec at build time
+- JWT/JWK without explicit `alg` option -- algorithm confusion vulnerability (CVE-2026-22817/22818)
+
+**Medium Priority:**
+
+- Using `c.req.param()` / `c.req.query()` instead of `c.req.valid()` -- bypasses Zod validation
+- No pagination limits on list endpoints -- returns massive datasets
+- Generating spec at runtime instead of build time -- wasted CPU per request
+- Not returning proper status codes -- always specify (200, 404, 500)
+- Wildcard CORS (`"*"`) with `credentials: true` -- browsers reject this (spec violation)
+
+**Gotchas & Edge Cases:**
+
+- `c.req.valid("param")` uses singular `"param"`, not `"params"` -- easy to mistype
+- In-memory rate limiting doesn't work across multiple instances -- use a shared store
+- CORS middleware must be registered before auth middleware -- OPTIONS preflight bypasses auth
+- ETags should not be used for user-specific data (generates unique ETag per user)
+- RPC routes must be chained (`.openapi(r1, h1).openapi(r2, h2)`) for type inference -- separate calls break it
+- Both client and server `tsconfig.json` need `"strict": true` for RPC type inference
+- `contextStorage()` middleware must be registered before any code calls `getContext()`
+- Use `tryGetContext()` (v4.11.0+) in code that may run outside request context (tests, background jobs)
+- Middleware `next()` never throws in Hono -- wrapping `await next()` in try/catch is unnecessary
+- `getConnInfo` is adapter-specific -- import from `hono/bun`, `hono/deno`, `@hono/node-server/conninfo`, etc. (NOT from `hono/ip-restriction`)
+
+</red_flags>
 
 ---
 
@@ -329,16 +249,14 @@ export const handleRouteError = (error: unknown, c: Context) => {
 
 ## CRITICAL REMINDERS
 
-**Before you implement ANY Hono API route, verify these requirements are met:**
-
 > **All code must follow project conventions in CLAUDE.md**
 
-**(You MUST call `extendZodWithOpenApi(z)` BEFORE defining ANY Zod schemas)**
+**(You MUST import `z` from `@hono/zod-openapi`, NOT from `zod` -- this gives Zod the `.openapi()` method)**
 
 **(You MUST export the `app` instance for OpenAPI spec generation)**
 
 **(You MUST include `operationId` in every route for clean client generation)**
 
-**Failure to follow these rules will break OpenAPI spec generation.**
+**Failure to follow these rules will break OpenAPI spec generation and type safety.**
 
 </critical_reminders>

@@ -2,8 +2,9 @@
 name: workflow
 description: |
   High-velocity solo development workflow. Idea to production same-day.
-  9 commands: plan, spike, ship, review, spec-review, focus, done, drop, workflow.
+  10 commands: plan, spike, ship, fix, review, spec-review, focus, done, drop, workflow.
   Auto-activates on: "plan", "spec", "ship", "spike",
+  "fix", "debug", "repair",
   "spec-review", "review spec", "analyze spec", "challenge spec",
   "focus", "what should i do", "prioritize", "overwhelmed", "what should i work on",
   "done", "finish", "complete", "drop", "abandon",
@@ -11,7 +12,7 @@ description: |
 license: MIT
 compatibility: "Agent-agnostic. Works with Claude Code, OpenCode, Windsurf, Cursor, Codex, Aider, or any agent supporting SKILL.md."
 metadata:
-  version: "1.1"
+  version: "1.2"
 ---
 
 # Workflow
@@ -38,6 +39,7 @@ High-velocity solo development. Idea to production same-day.
 | `plan {idea}` | Create spec | [plan.md](references/actions/plan.md) |
 | `spike {question}` | Time-boxed exploration | [spike.md](references/actions/spike.md) |
 | `ship` / `ship {idea}` | Implement + validate | [ship.md](references/actions/ship.md) |
+| `fix` / `fix {bug}` | Scientific debug + regression fix | [fix.md](references/actions/fix.md) |
 | `review` | Multi-perspective code review | [review.md](references/actions/review.md) |
 | `spec-review` | Adversarial spec analysis | [spec-review.md](references/actions/spec-review.md) |
 | `focus` | Priority analysis + task proposals | [focus.md](references/actions/focus.md) |
@@ -48,13 +50,15 @@ High-velocity solo development. Idea to production same-day.
 No flags needed. The agent auto-detects intent from context:
 - "review the spec" → manual review pause
 - "skip tests" → skip test gate (documented)
+- "fix this bug" → dedicated bug fix with regression test
 - "emergency fix" → bypass spec ceremony
 - "production ready" → production validation
 
 ## Flow
 
 ```
-focus → plan {idea} → ship → [implement/review/fix loop] → done
+Features: focus → plan {idea} → ship → [implement/review/fix loop] → done
+Bug fixes: fix {bug} → [investigate/TDD/validate] → done
 ```
 
 Quick mode (<2h): `ship {idea} → done`
@@ -64,7 +68,13 @@ Don't know what to work on: `focus`
 
 - **Spec-first**: All work needs a spec (creates one if missing)
 - **Ship loop**: Build → review → fix until clean
-- **Quality gates**: lint → typecheck → build → test (auto-detected per project)
+- **Quality gates**: lint → typecheck → build → test → E2E → coverage (auto-detected per project)
+- **E2E-first testing**: Default to E2E tests. Unit tests only for pure functions
+- **TDD enforced**: RED → GREEN → REFACTOR per AC. Tests written before implementation (BLOCKING)
+- **Mock boundary**: Real systems preferred. Mock only third-party APIs without sandbox (last resort)
+- **AC-driven coverage**: Every Must Have + Error AC maps to an E2E test in the scenario registry
+- **Anti-regression**: Bug fixes require E2E regression test + anti-cascade diff (BLOCKING)
+- **Failure mode testing**: Every HIGH/MED failure hypothesis gets a defensive E2E test
 - **Human controls deployment**: Agent codes, you push/deploy
 - **Done same-day**: Scope to what ships today
 - **Own planning**: Never use the host agent's built-in plan mode (EnterPlanMode, etc.). This skill writes real spec files to `specs/active/`.
@@ -85,7 +95,8 @@ User input
   │
   ├─ "plan", "spec", "design"           → Load references/actions/plan.md
   ├─ "spike", "explore", "investigate"   → Load references/actions/spike.md
-  ├─ "ship", "implement", "fix", "build" → Load references/actions/ship.md
+  ├─ "ship", "implement", "build"         → Load references/actions/ship.md
+  ├─ "fix", "debug", "repair"            → Load references/actions/fix.md
   ├─ "review", "check code"              → Load references/actions/review.md
   ├─ "review spec", "analyze spec",
   │  "challenge spec"                    → Load references/actions/spec-review.md
@@ -144,16 +155,16 @@ All behavior is configurable by editing the skill files directly.
 ## References
 
 Actions:
-- [Plan](references/actions/plan.md) | [Ship](references/actions/ship.md) | [Review](references/actions/review.md) | [Spec Review](references/actions/spec-review.md) | [Focus](references/actions/focus.md) | [Done](references/actions/done.md) | [Drop](references/actions/drop.md) | [Spike](references/actions/spike.md)
+- [Plan](references/actions/plan.md) | [Ship](references/actions/ship.md) | [Fix](references/actions/fix.md) | [Review](references/actions/review.md) | [Spec Review](references/actions/spec-review.md) | [Focus](references/actions/focus.md) | [Done](references/actions/done.md) | [Drop](references/actions/drop.md) | [Spike](references/actions/spike.md)
 
 Output templates:
-- [Plan + Spec Review](references/templates/plan-output.md) | [Ship](references/templates/ship-output.md) | [Review](references/templates/review-output.md) | [Focus](references/templates/focus-output.md) | [Done](references/templates/done-output.md) | [Drop](references/templates/drop-output.md) | [Spike](references/templates/spike-output.md) | [Status](references/templates/status-output.md)
+- [Plan + Spec Review](references/templates/plan-output.md) | [Ship](references/templates/ship-output.md) | [Fix](references/templates/fix-output.md) | [Review](references/templates/review-output.md) | [Focus](references/templates/focus-output.md) | [Done](references/templates/done-output.md) | [Drop](references/templates/drop-output.md) | [Spike](references/templates/spike-output.md) | [Status](references/templates/status-output.md)
 
 Review standards:
 - [Production Standards](references/reviews/production-standards.md)
 
 Specs & gates:
-- [Spec template](references/spec-template.md) | [Quality gates](references/quality-gates.md) | [Session management](references/session-management.md) | [Memory update](references/memory-update.md) | [Testing automation](references/testing-automation.md)
+- [Spec template](references/spec-template.md) | [Quality gates](references/quality-gates.md) | [Session management](references/session-management.md) | [Memory update](references/memory-update.md) | [Testing automation](references/testing-automation.md) | [E2E scenarios](references/e2e-scenarios.md)
 
 Patterns:
 - [Implementation](references/patterns/implementation.md) | [Planning](references/patterns/planning.md) | [Debugging](references/patterns/debugging.md) | [Decisions](references/patterns/decisions.md) | [Decomposition](references/patterns/decomposition.md) | [Regression testing](references/patterns/regression-testing.md)

@@ -1,0 +1,17 @@
+{
+  "name": "create-cell-renderer",
+  "repo": "datagrok-ai/public",
+  "path": ".claude/skills/create-cell-renderer/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/datagrok-ai/public",
+  "dir_name": "create-cell-renderer",
+  "downloaded_at": "2026-03-22T07:40:08.791409Z",
+  "author": "datagrok-ai",
+  "source_url": "https://github.com/datagrok-ai/public/blob/master/.claude/skills/create-cell-renderer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/datagrok-ai/public/blob/master/.claude/skills/create-cell-renderer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

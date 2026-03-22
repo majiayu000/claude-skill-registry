@@ -1,13 +1,17 @@
 ---
 name: go-naming
-description: Go naming conventions for packages, functions, methods, variables, constants, and receivers from Google and Uber style guides. Use when naming any identifier in Go code—choosing names for types, functions, methods, variables, constants, or packages—to ensure clarity, consistency, and idiomatic style.
+description: Use when naming any Go identifier — packages, types, functions, methods, variables, constants, or receivers — to ensure idiomatic, clear names. Also use when a user is creating new types, packages, or exported APIs, even if they don't explicitly ask about naming conventions. Does not cover package organization (see go-packages).
+license: Apache-2.0
+metadata:
+  sources: "Google Style Guide, Uber Style Guide"
+allowed-tools: Bash(bash:*)
 ---
 
 # Go Naming Conventions
 
-> **Normative**: Core naming rules (MixedCaps, no underscores) are required per
-> Google's canonical Go style guide. Advisory guidance provides best practices
-> for clarity and maintainability.
+## Available Scripts
+
+- **`scripts/check-naming.sh`** — Scans Go code for naming anti-patterns: SCREAMING_SNAKE_CASE constants, Get-prefixed getters, bad package names (util/helper/common), and receivers named "this"/"self". Run `bash scripts/check-naming.sh --help` for options.
 
 ## Core Principle
 
@@ -21,34 +25,30 @@ languages.
 
 ---
 
+## Naming Decision Flow
+
+```
+What are you naming?
+├─ Package       → Short, lowercase, singular noun (no underscores, no mixedCaps)
+├─ Interface     → Method name + "-er" suffix when single-method (Reader, Writer)
+├─ Receiver      → 1-2 letter abbreviation of type (c for Client); consistent across methods
+├─ Constant      → MixedCaps; use iota for enums; no ALL_CAPS
+├─ Exported func → Verb or verb-phrase in MixedCaps; no Get prefix for getters
+├─ Variable      → Length proportional to scope distance
+│                  ├─ Tiny scope (1-7 lines) → single letter (i, n, r)
+│                  ├─ Medium scope           → short word (count, buf)
+│                  └─ Package-level / wide   → descriptive (userAccountCount)
+└─ Any name      → Check: does it repeat package name or context? If yes, shorten it
+```
+
+---
+
 ## MixedCaps (Required)
 
 > **Normative**: All Go identifiers must use MixedCaps.
 
-Go uses `MixedCaps` or `mixedCaps` (camel case), never underscores (snake case).
-
-```go
-// Good
-MaxLength    // exported constant
-maxLength    // unexported constant
-userID       // variable
-URLParser    // type with initialism
-
-// Bad
-MAX_LENGTH   // no snake_case
-max_length   // no underscores
-User_Name    // no underscores in names
-```
-
-### Exceptions for Underscores
-
-Names may contain underscores only in these cases:
-
-1. **Test functions**: `TestFoo_InvalidInput`, `BenchmarkSort_LargeSlice`
-2. **Generated code**: Package names only imported by generated code
-3. **OS/cgo interop**: Low-level libraries matching OS identifiers (rare)
-
-**Note**: Filenames are not Go identifiers and may contain underscores.
+Underscores are allowed only in: test functions (`TestFoo_InvalidInput`),
+generated code, and OS/cgo interop.
 
 ---
 
@@ -56,27 +56,15 @@ Names may contain underscores only in these cases:
 
 > **Normative**: Packages must be lowercase with no underscores.
 
-Package names must be:
-- Concise and lowercase only
-- No underscores (e.g., `tabwriter` not `tab_writer`)
-- Not likely to shadow common variables
+Short, lowercase, singular nouns. Avoid generic names like `util`, `common`,
+`helper` — prefer specific names: `stringutil`, `httpauth`, `configloader`.
 
 ```go
-// Good: user, oauth2, k8s, tabwriter
-// Bad: user_service (underscores), UserService (uppercase), count (shadows var)
+// Good: user, oauth2, tabwriter
+// Bad:  user_service, UserService, count (shadows var)
 ```
 
-### Avoid Uninformative Names
-
-> **Advisory**: Don't use generic package names.
-
-Avoid names that tempt users to rename on import: `util`, `common`, `helper`,
-`model`, `base`. Prefer specific names: `stringutil`, `httpauth`, `configloader`.
-
-### Import Renaming
-
-When renaming imports, the local name must follow package naming rules:
-`import foopb "path/to/foo_go_proto"` (not `foo_pb` with underscore).
+> Read [references/IDENTIFIERS.md](references/IDENTIFIERS.md) when naming packages, deciding on import aliases, or choosing between generic and specific package names.
 
 ---
 
@@ -84,20 +72,11 @@ When renaming imports, the local name must follow package naming rules:
 
 > **Advisory**: One-method interfaces use "-er" suffix.
 
-By convention, one-method interfaces are named by the method name plus an `-er`
-suffix to construct an agent noun:
+Name one-method interfaces by the method plus `-er`: `Reader`, `Writer`,
+`Formatter`. Honor canonical method names (`Read`, `Write`, `Close`, `String`)
+and their signatures.
 
-```go
-// Standard library examples
-type Reader interface { Read(p []byte) (n int, err error) }
-type Writer interface { Write(p []byte) (n int, err error) }
-type Formatter interface { Format(f State, verb rune) }
-type CloseNotifier interface { CloseNotify() <-chan bool }
-```
-
-Honor canonical method names (`Read`, `Write`, `Close`, `String`) and their
-signatures. If your type implements a method with the same meaning as a
-well-known type, use the same name—call it `String` not `ToString`.
+> Read [references/IDENTIFIERS.md](references/IDENTIFIERS.md) when defining new interfaces or implementing well-known method signatures.
 
 ---
 
@@ -105,29 +84,11 @@ well-known type, use the same name—call it `String` not `ToString`.
 
 > **Normative**: Receivers must be short abbreviations, used consistently.
 
-Receiver variable names must be:
-- Short (one or two letters)
-- Abbreviations for the type itself
-- Consistent across all methods of that type
+One or two letters abbreviating the type, consistent across all methods:
+`func (c *Client) Connect()`, `func (c *Client) Send()`.
+Never use `this` or `self`.
 
-| Long Name (Bad)             | Better Name              |
-|-----------------------------|--------------------------|
-| `func (tray Tray)`          | `func (t Tray)`          |
-| `func (info *ResearchInfo)` | `func (ri *ResearchInfo)`|
-| `func (this *ReportWriter)` | `func (w *ReportWriter)` |
-| `func (self *Scanner)`      | `func (s *Scanner)`      |
-
-```go
-// Good - consistent short receiver
-func (c *Client) Connect() error
-func (c *Client) Send(msg []byte) error
-func (c *Client) Close() error
-
-// Bad - inconsistent or long receivers
-func (client *Client) Connect() error
-func (cl *Client) Send(msg []byte) error
-func (this *Client) Close() error
-```
+> Read [references/IDENTIFIERS.md](references/IDENTIFIERS.md) when choosing receiver names or ensuring consistency across methods.
 
 ---
 
@@ -135,29 +96,15 @@ func (this *Client) Close() error
 
 > **Normative**: Constants use MixedCaps, never ALL_CAPS or K prefix.
 
+Name constants by role, not value: `MaxRetries` not `Three`,
+`DefaultPort` not `Port8080`.
+
 ```go
-// Good
 const MaxPacketSize = 512
 const defaultTimeout = 30 * time.Second
-
-// Bad
-const MAX_PACKET_SIZE = 512    // no snake_case
-const kMaxBufferSize = 1024    // no K prefix
 ```
 
-### Name by Role, Not Value
-
-> **Advisory**: Constants should explain what the value denotes.
-
-```go
-// Good - names explain the role
-const MaxRetries = 3
-const DefaultPort = 8080
-
-// Bad - names just describe the value
-const Three = 3
-const Port8080 = 8080
-```
+> Read [references/IDENTIFIERS.md](references/IDENTIFIERS.md) when naming constants or choosing between role-based and value-based names.
 
 ---
 
@@ -165,64 +112,24 @@ const Port8080 = 8080
 
 > **Normative**: Initialisms maintain consistent case throughout.
 
-Initialisms (URL, ID, HTTP, API) should be all uppercase or all lowercase:
+Initialisms (URL, ID, HTTP, API) must be all uppercase or all lowercase:
+`HTTPClient`, `userID`, `ParseURL()` — not `HttpClient`, `orderId`, `ParseUrl()`.
 
-| English   | Exported  | Unexported |
-|-----------|-----------|------------|
-| URL       | `URL`     | `url`      |
-| ID        | `ID`      | `id`       |
-| HTTP/API  | `HTTP`    | `http`     |
-| gRPC/iOS  | `GRPC`/`IOS` | `gRPC`/`iOS` |
-
-```go
-// Good: HTTPClient, userID, ParseURL()
-// Bad: HttpClient, orderId, ParseUrl()
-```
+> Read [references/IDENTIFIERS.md](references/IDENTIFIERS.md) when using initialisms in compound names or for the full case table.
 
 ---
 
 ## Function and Method Names
 
-### Getters and Setters
+> **Advisory**: No `Get` prefix for simple accessors; use verb-like names for actions.
 
-> **Advisory**: Don't use `Get` prefix for simple accessors.
-
-If you have a field called `owner` (unexported), the getter should be `Owner()`
-(exported), not `GetOwner()`. The setter, if needed, is `SetOwner()`:
-
-```go
-// Good
-owner := obj.Owner()
-if owner != user {
-    obj.SetOwner(user)
-}
-
-// Bad: c.GetName(), u.GetEmail(), p.GetID()
-```
-
-Use `Compute` or `Fetch` for expensive operations:
-`db.FetchUser(id)`, `stats.ComputeAverage()`.
-
-### Naming Conventions
-
-> **Advisory**: Use noun-like names for getters, verb-like names for actions.
-
-```go
-// Noun-like for returning values
-func (c *Config) JobName(key string) string
-func (u *User) Permissions() []Permission
-
-// Verb-like for actions
-func (c *Config) WriteDetail(w io.Writer) error
-```
-
-### Type Suffixes
+Getter for field `owner` is `Owner()`, not `GetOwner()`. Setter is
+`SetOwner()`. Use `Compute` or `Fetch` for expensive operations.
 
 When functions differ only by type, include type at the end:
-`ParseInt()`, `ParseInt64()`, `AppendInt()`, `AppendInt64()`.
+`ParseInt()`, `ParseInt64()`.
 
-For a clear "primary" version, omit the type:
-`Marshal()` (primary), `MarshalText()` (variant).
+> Read [references/IDENTIFIERS.md](references/IDENTIFIERS.md) when designing getter/setter APIs or naming function variants.
 
 ---
 
@@ -239,15 +146,12 @@ Variable naming balances brevity with clarity. Key principles:
   vars/consts to prevent shadowing
 
 ```go
-// Good - scope-appropriate naming
 for i, v := range items { ... }           // small scope
 pendingOrders := filterPending(orders)    // larger scope
-
-// Good - unexported global with prefix
-const _defaultPort = 8080
+const _defaultPort = 8080                 // unexported global
 ```
 
-**For detailed guidance**: See [references/VARIABLES.md](references/VARIABLES.md)
+> Read [references/VARIABLES.md](references/VARIABLES.md) when naming local variables in functions over 15 lines.
 
 ---
 
@@ -259,19 +163,17 @@ Go names should not feel repetitive when used. Consider the full context:
 - **Receiver + method**: `p.Name()` not `p.ProjectName()`
 - **Context + type**: In package `sqldb`, use `Connection` not `DBConnection`
 
-```go
-// Bad - repetitive
-func (c *Config) WriteConfigTo(w io.Writer) error
-package db
-func LoadFromDatabase() error  // db.LoadFromDatabase()
+> Read [references/REPETITION.md](references/REPETITION.md) when a package name and its exported symbols feel redundant.
 
-// Good - concise
-func (c *Config) WriteTo(w io.Writer) error
-package db
-func Load() error              // db.Load()
-```
+---
 
-**For detailed guidance**: See [references/REPETITION.md](references/REPETITION.md)
+## Avoid Built-In Names
+
+Never shadow Go's predeclared identifiers (`error`, `string`, `len`, `cap`,
+`append`, `copy`, `new`, `make`, etc.) as variable, parameter, or type names.
+
+**For detailed guidance**: See `go-declarations` — "Avoid Using Built-In Names"
+section.
 
 ---
 
@@ -286,12 +188,14 @@ func Load() error              // db.Load()
 | Constant | MixedCaps, never ALL_CAPS | `const MaxSize = 100` |
 | Initialism | consistent case | `userID`, `XMLAPI` |
 | Variable | length ~ scope size | `i` (small), `userCount` (large) |
+| Built-in names | Never shadow predeclared identifiers | See `go-declarations` |
 
-## See Also
+> **Validation**: After renaming identifiers, run `bash scripts/check-naming.sh` to verify no naming anti-patterns remain. Then run `go build ./...` to confirm the rename didn't break anything.
 
-- For interface design patterns: `go-interfaces`
-- For core style principles: `go-style-core`
-- For error handling patterns: `go-error-handling`
-- For testing best practices: `go-testing`
-- For defensive programming: `go-defensive`
-- For performance optimization: `go-performance`
+## Related Skills
+
+- **Interface naming**: See [go-interfaces](../go-interfaces/SKILL.md) when naming interfaces with the `-er` suffix or choosing receiver types
+- **Package naming**: See [go-packages](../go-packages/SKILL.md) when naming packages, avoiding `util`/`common`, or resolving import collisions
+- **Error naming**: See [go-error-handling](../go-error-handling/SKILL.md) when naming sentinel errors (`ErrFoo`) or custom error types
+- **Declaration scope**: See [go-declarations](../go-declarations/SKILL.md) when variable name length depends on scope or when avoiding built-in shadowing
+- **Style principles**: See [go-style-core](../go-style-core/SKILL.md) when balancing clarity vs concision in identifier names

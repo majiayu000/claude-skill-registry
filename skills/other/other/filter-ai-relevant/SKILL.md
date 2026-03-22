@@ -1,22 +1,23 @@
 ---
 name: filter-ai-relevant
-version: "2.0.0"
-description: >
-  DEPRECATED: This skill has been replaced by the analyze-article skill which
-  provides more accurate AI-relevance filtering through LLM analysis rather than
-  simple keyword matching.
+version: 2.0.0
+description: 'DEPRECATED: This skill has been replaced by the analyze-article skill
+  which provides more accurate AI-relevance filtering through LLM analysis rather
+  than simple keyword matching.
+
+  '
 license: MIT
 deprecated: true
-deprecated_by: "analyze-article"
-deprecated_reason: "LLM-based analysis provides better relevance filtering than keyword matching"
+deprecated_by: analyze-article
+deprecated_reason: LLM-based analysis provides better relevance filtering than keyword
+  matching
 metadata:
-  kubani:
-    domain: news
-    category: collection
-    requires_approval: false
-    confidence: 0.0
-    version: "2.0.0"
-    status: deprecated
+  domain: news
+  category: collection
+  requires-approval: false
+  confidence: 0.0
+  mcp-servers: []
+  status: deprecated
 ---
 
 # Filter AI-Relevant Articles (DEPRECATED)

@@ -1,0 +1,17 @@
+{
+  "name": "misty-seascape-monochrome-absolute-face-lock",
+  "repo": "BetterPromptme/skills",
+  "path": "skills/misty-seascape-monochrome-absolute-face-lock/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/BetterPromptme/skills",
+  "dir_name": "misty-seascape-monochrome-absolute-face-lock",
+  "downloaded_at": "2026-03-22T05:00:01.317183Z",
+  "author": "BetterPromptme",
+  "source_url": "https://github.com/BetterPromptme/skills/blob/main/skills/misty-seascape-monochrome-absolute-face-lock/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BetterPromptme/skills/blob/main/skills/misty-seascape-monochrome-absolute-face-lock/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -19,7 +19,7 @@ Creates a complete NotebookLM learning package for any topic using the NLM CLI (
 
 ## Workflow
 
-Execute the following 6 phases in order. Announce each phase as you enter it.
+Execute the following 7 phases in order. Announce each phase as you enter it.
 
 ---
 
@@ -122,10 +122,15 @@ nlm notebook describe <notebook_id>
 Then ask the notebook to decompose the topic into learning units:
 
 ```bash
-nlm notebook query <notebook_id> "Break the topic '<topic>' into sequential learning units of roughly equal information density. Each unit should have a short title (3-6 words) and a one-sentence description. Order them logically: foundational concepts first, then intermediate, then advanced. Return as a numbered list with format: 'N. Title — Description'. Target count: 4-7 units."
+nlm notebook query <notebook_id> "Break the topic '<topic>' into sequential learning units of roughly equal information density. Each unit MUST be mutually exclusive — no concept should appear in more than one unit. Each unit should have a short title (3-6 words), a one-sentence description of what it covers, and a one-sentence boundary note stating what it does NOT cover (i.e., what belongs to adjacent units). Order them logically: foundational concepts first, then intermediate, then advanced. Return as a numbered list with format: 'N. Title — Description. Boundary: <what this unit excludes>'. Target count: 4-7 units."
 ```
 
-**Parse the response** to extract unit titles for use as `--focus` parameters in Phase 5.
+**Parse the response** to extract for each unit:
+- **Title** (used for video naming)
+- **Description** (what the unit covers)
+- **Boundary** (what the unit excludes)
+
+All three are used to build the `--focus` parameter in Phase 6.
 
 **Adjust target count based on source richness:**
 - Fewer than 5 sources → aim for 3-4 units
@@ -134,18 +139,64 @@ nlm notebook query <notebook_id> "Break the topic '<topic>' into sequential lear
 
 ---
 
-### Phase 5: Per-Unit Artifacts
+### Phase 5: Source-to-Unit Mapping
+
+Map notebook sources to relevant learning units so each unit's artifacts only draw from topically relevant sources.
+
+**If the notebook has only 1 source, skip this phase entirely** — all artifacts use that single source.
+
+**Step 5a — Collect source summaries:**
+
+```bash
+nlm source list <notebook_id> --json
+```
+
+Parse JSON to get all source IDs and titles. Then run **ALL in parallel**:
+
+```bash
+nlm source describe <source_id> --json   # for each source
+```
+
+Collect `id`, `title`, `summary` (truncate to ~100 chars), and `keywords` (first 5). If `source describe` fails for a source, use only its title in the mapping prompt.
+
+**Step 5b — Map sources to units:**
+
+```bash
+nlm notebook query <notebook_id> "Given these learning units:
+1. <title> — <description>
+2. <title> — <description>
+...
+And these sources:
+- <source_id> '<title>': <summary_snippet> [keywords: kw1, kw2]
+- <source_id> '<title>': <summary_snippet> [keywords: kw1, kw2]
+...
+For each learning unit, list ONLY the source IDs directly relevant to that unit's specific topic. A source may appear in multiple units. Format:
+Unit 1: <id>, <id>, ...
+Unit 2: <id>, <id>, ..."
+```
+
+**Step 5c — Parse the mapping:**
+
+Build map: `unit_number → [source_id1, source_id2, ...]`
+
+**Fallback rules:**
+- If a unit maps to 0 sources → use ALL sources for that unit (omit `--source-ids`)
+- If the mapping query returns unparseable output → use ALL sources for all units (degrades gracefully to current behavior)
+
+---
+
+### Phase 6: Per-Unit Artifacts
 
 Fire **ALL** per-unit artifact creation commands **in parallel** (maximize throughput):
 
-For every learning unit, fire both commands simultaneously:
+For every learning unit, fire both commands simultaneously using an **enriched focus prompt** that scopes content and prevents overlap with neighboring units. Include `--source-ids` from the Phase 5 mapping to restrict each artifact to relevant sources only:
 
 ```bash
-nlm infographic create <notebook_id> --focus "<unit title>" -y
-nlm video create <notebook_id> --focus "<unit title>" -y
+nlm infographic create <notebook_id> --focus "Unit <N> of <total>: <unit title>. <unit description>. Does NOT cover: <boundary>." --source-ids <id1>,<id2>,<id3> -y
+nlm video create <notebook_id> --focus "Unit <N> of <total>: <unit title>. <unit description>. Does NOT cover: <boundary>." --source-ids <id1>,<id2>,<id3> -y
 ```
 
-For example, with 5 units this fires 10 commands in parallel.
+Build the focus string from the parsed decomposition output (title + description + boundary). Use the source IDs from the Phase 5 mapping for each unit. If a unit has no mapped sources (fallback), omit `--source-ids` entirely for that unit. For example, with 5 units this fires 10 commands in parallel.
 
 **Error handling — retry with backoff:**
 
@@ -162,9 +213,9 @@ If a command still fails after all retries and the error contains "Try again lat
 
 ---
 
-### Phase 6: Verify, Order & Report
+### Phase 7: Verify, Order & Report
 
-**Step 6a — Check artifact status:**
+**Step 7a — Check artifact status:**
 
 ```bash
 nlm studio status <notebook_id> --json
@@ -172,7 +223,7 @@ nlm studio status <notebook_id> --json
 
 Poll up to 3 times with 60-second intervals until all artifacts show complete status.
 
-**Step 6b — Rename videos in sequence order:**
+**Step 7b — Rename videos in sequence order:**
 
 Use `nlm studio rename` to create a numbered playlist:
 
@@ -184,7 +235,7 @@ nlm studio rename <unit2_video_id> "02 - <unit2 title>"
 
 Continue for each unit video in learning order.
 
-**Step 6c — Present final report:**
+**Step 7c — Present final report:**
 
 ```
 ## Learning Package Complete: <topic>
@@ -203,8 +254,8 @@ Continue for each unit video in learning order.
 - Mind map
 
 ### Learning Units (Video Playlist Order)
-- **01 - <unit1 title>** — Infographic + Video
-- **02 - <unit2 title>** — Infographic + Video
+- **01 - <unit1 title>** — Infographic + Video (<N> sources)
+- **02 - <unit2 title>** — Infographic + Video (<N> sources)
 - ...
 
 ### Download Commands
@@ -242,4 +293,5 @@ nlm download mind-map <notebook_id>
 | `report create` | `--format "Briefing Doc"/"Study Guide"/"Blog Post"` |
 | `mindmap create` | `--title "<title>"` |
 | `download video` | `--id <artifact_id>`, `-o <output_path>` |
-| All artifact creates | `-y` (skip confirmation), `--focus "<topic>"` |
+| `source describe` | `<source_id>`, `--json`/`-j` |
+| All artifact creates | `-y` (skip confirmation), `--focus "<topic>"`, `--source-ids <id1>,<id2>` |

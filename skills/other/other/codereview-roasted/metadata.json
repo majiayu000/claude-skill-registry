@@ -2,8 +2,16 @@
   "name": "codereview-roasted",
   "repo": "HelixDevelopment/HelixAgent",
   "path": "skills/openhands/codereview-roasted/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/HelixDevelopment/HelixAgent",
   "dir_name": "codereview-roasted",
-  "downloaded_at": "2026-02-15T05:12:33.422485Z"
+  "downloaded_at": "2026-03-22T05:27:43.996202Z",
+  "author": "HelixDevelopment",
+  "source_url": "https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/openhands/codereview-roasted/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/openhands/codereview-roasted/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -1,7 +1,7 @@
 ---
 name: parameter-optimization
 description: Explore and optimize simulation parameters via design of experiments (DOE), sensitivity analysis, and optimizer selection. Use for calibration, uncertainty studies, parameter sweeps, LHS sampling, Sobol analysis, surrogate modeling, or Bayesian optimization setup.
-allowed-tools: Read, Bash, Write, Grep, Glob
+allowed-tools: Read, Write, Grep, Glob
 ---
 
 # Parameter Optimization
@@ -121,6 +121,16 @@ python3 scripts/surrogate_builder.py --x 0,1,2 --y 10,12,15 --model rbf --json
 | `budget must be positive` | Zero or negative budget | Ask user for realistic simulation budget |
 | `method must be lhs, sobol, or factorial` | Invalid method | Use decision guidance to pick valid method |
 | `scores must be comma-separated` | Malformed input | Reformat as `0.1,0.2,0.3` |
+
+## Security
+
+The parameter-optimization scripts enforce the following safeguards:
+
+- **Parameter name validation**: `sensitivity_summary.py` validates `--names` against `[a-zA-Z_][a-zA-Z0-9_ .-]*` with a 200-char limit, preventing shell metacharacter injection via crafted parameter names.
+- **Input length limits**: Comma-separated value lists are capped (10,000 for scores, 100,000 for surrogate data) to prevent resource exhaustion.
+- **Finite-value enforcement**: All numeric list inputs are validated as finite numbers (`NaN`/`Inf` rejected).
+- **Dimension/budget bounds**: `doe_generator.py` caps dim at 1,000 and budget at 1,000,000; `optimizer_selector.py` caps dim at 100,000 and budget at 10,000,000.
+- **Reduced tool surface**: The skill's `allowed-tools` excludes `Bash` to prevent the agent from executing arbitrary commands when processing user-provided parameter names and constraints.
 
 ## Limitations
 

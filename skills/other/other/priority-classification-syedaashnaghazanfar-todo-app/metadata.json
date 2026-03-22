@@ -2,8 +2,16 @@
   "name": "priority-classification",
   "repo": "Syedaashnaghazanfar/todo-app",
   "path": ".claude/skills/priority-classification/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/Syedaashnaghazanfar/todo-app",
   "dir_name": "priority-classification-syedaashnaghazanfar-todo-app",
-  "downloaded_at": "2026-02-22T05:47:25.867075Z"
+  "downloaded_at": "2026-03-22T06:19:40.362170Z",
+  "author": "Syedaashnaghazanfar",
+  "source_url": "https://github.com/Syedaashnaghazanfar/todo-app/blob/main/.claude/skills/priority-classification/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Syedaashnaghazanfar/todo-app/blob/main/.claude/skills/priority-classification/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

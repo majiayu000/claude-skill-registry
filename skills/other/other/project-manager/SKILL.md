@@ -5,7 +5,7 @@ description: '[Project Management] Generate project status reports, track depend
 allowed-tools: Read, Write, Edit, Grep, Glob, TaskCreate, WebSearch
 ---
 
-> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
 
 ## Quick Summary
 
@@ -23,6 +23,8 @@ allowed-tools: Read, Write, Edit, Grep, Glob, TaskCreate, WebSearch
 - MUST READ `references/report-templates.md` before executing
 - All data must be current; blockers need owners and actions
 - Status colors: Green (on track), Yellow (at risk), Red (blocked)
+
+**Be skeptical. Apply critical thinking, sequential thinking. Every claim needs traced proof, confidence percentages (Idea should be more than 80%).**
 
 # Project Manager Assistant
 

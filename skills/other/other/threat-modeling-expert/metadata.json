@@ -1,0 +1,17 @@
+{
+  "name": "threat-modeling-expert",
+  "repo": "FrancoStino/opencode-skills-antigravity",
+  "path": "bundled-skills/threat-modeling-expert/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/FrancoStino/opencode-skills-antigravity",
+  "dir_name": "threat-modeling-expert",
+  "downloaded_at": "2026-03-22T05:21:33.505406Z",
+  "author": "FrancoStino",
+  "source_url": "https://github.com/FrancoStino/opencode-skills-antigravity/blob/main/bundled-skills/threat-modeling-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FrancoStino/opencode-skills-antigravity/blob/main/bundled-skills/threat-modeling-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

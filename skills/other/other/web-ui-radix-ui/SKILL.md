@@ -228,7 +228,7 @@ Use the `Slot` utility to build your own components with `asChild` support.
 
 ```typescript
 import { forwardRef } from "react";
-import { Slot } from "@radix-ui/react-slot";
+import { Slot } from "radix-ui";
 
 export type ButtonProps = React.ComponentProps<"button"> & {
   asChild?: boolean;
@@ -305,100 +305,37 @@ function DialogWithCustomContainer() {
 
 ### Pattern 6: Animation with data-state Attributes
 
-Radix primitives expose `data-state` attributes for CSS-based animations. The unmount is suspended while exit animations complete.
-
-#### CSS Keyframe Animation
-
-```typescript
-// Component
-<Dialog.Portal>
-  <Dialog.Overlay className="dialog-overlay" />
-  <Dialog.Content className="dialog-content">
-    {/* Content */}
-  </Dialog.Content>
-</Dialog.Portal>
-```
+Radix primitives expose `data-state` attributes for CSS-based animations. The unmount is suspended while exit animations complete. Use CSS `@keyframes` (not `transition`) -- Radix detects animation end events.
 
 ```css
-/* Styles - use your styling solution */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
+/* CSS keyframes — Radix suspends unmount until animation completes */
 .dialog-overlay[data-state="open"] {
   animation: fadeIn 150ms ease-out;
 }
-
 .dialog-overlay[data-state="closed"] {
   animation: fadeOut 150ms ease-in;
 }
-
-.dialog-content[data-state="open"] {
-  animation: fadeIn 150ms ease-out;
-}
-
-.dialog-content[data-state="closed"] {
-  animation: fadeOut 150ms ease-in;
-}
 ```
 
-**Why CSS animations:** Radix detects animation end events and suspends unmount until completion
+**Critical:** CSS `transition` does NOT delay unmount -- only `@keyframes` animation works for exit animations.
 
-#### JavaScript Animation Libraries (Framer Motion)
+#### JavaScript Animation Libraries
+
+For complex orchestrated animations, use `forceMount` on Portal, Overlay, and Content to prevent Radix from unmounting during exit animations. Wrap with your animation library's presence detection.
 
 ```typescript
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Dialog } from "radix-ui";
-
-function AnimatedDialog() {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <Dialog.Root open={open} onOpenChange={setOpen}>
-      <Dialog.Trigger>Open</Dialog.Trigger>
-      <AnimatePresence>
-        {open && (
-          <Dialog.Portal forceMount>
-            <Dialog.Overlay asChild forceMount>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              />
-            </Dialog.Overlay>
-            <Dialog.Content asChild forceMount>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-              >
-                <Dialog.Title>Animated Dialog</Dialog.Title>
-              </motion.div>
-            </Dialog.Content>
-          </Dialog.Portal>
-        )}
-      </AnimatePresence>
-    </Dialog.Root>
-  );
-}
+// Key pattern: controlled state + forceMount + conditional rendering
+<Dialog.Root open={open} onOpenChange={setOpen}>
+  {open && (
+    <Dialog.Portal forceMount>
+      <Dialog.Overlay asChild forceMount>{/* animated overlay */}</Dialog.Overlay>
+      <Dialog.Content asChild forceMount>{/* animated content */}</Dialog.Content>
+    </Dialog.Portal>
+  )}
+</Dialog.Root>
 ```
 
-**Why forceMount:** Prevents Radix from unmounting during JavaScript library exit animations
+See [examples/animation.md](examples/animation.md) for complete CSS keyframe and accordion height animation examples.
 
 ---
 
@@ -501,7 +438,7 @@ import { Dialog } from "radix-ui";
 
 **Works with:**
 
-- **Slot utility**: Build custom `asChild` components with `@radix-ui/react-slot`
+- **Slot utility**: Build custom `asChild` components with the `Slot` component from `radix-ui`
 - **Any CSS solution**: Styles applied via className prop
 - **Animation libraries**: Use `forceMount` for JavaScript animation control
 
@@ -530,6 +467,32 @@ import { Dialog } from "radix-ui";
 **Note:** Preview components use `unstable_` prefix. APIs may change before stable release.
 
 </integration>
+
+---
+
+<red_flags>
+
+## RED FLAGS
+
+**High Priority Issues:**
+
+- Missing `forwardRef` on custom `asChild` components -- Radix cannot attach refs for positioning and focus management
+- Not spreading props on `asChild` components -- ARIA attributes and event handlers are lost
+- Missing Portal for overlays -- content clipped by parent `overflow: hidden` or z-index issues
+- Missing Title/Description on dialogs -- screen readers have no context (Dialog logs console errors)
+- Using Dialog for destructive confirmations -- use AlertDialog (prevents accidental dismissal)
+
+**Gotchas & Edge Cases:**
+
+- CSS `transition` does NOT delay unmount -- only `@keyframes` animation works for exit
+- `data-state` changes to "closed" before exit animation starts
+- AlertDialog requires Cancel or Action to close (no click-outside dismiss by design)
+- React 19: `forwardRef` wrapper no longer needed -- `ref` is a regular prop
+- Prefer unified `radix-ui` package over individual `@radix-ui/*` packages to prevent version conflicts
+
+See [reference.md](reference.md) for full anti-pattern examples with code and decision frameworks.
+
+</red_flags>
 
 ---
 

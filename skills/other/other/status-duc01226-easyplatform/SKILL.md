@@ -5,21 +5,25 @@ description: "[Project Management] Generate status reports for sprints or projec
 allowed-tools: Read, Write, Grep, Glob, Bash, TaskCreate
 ---
 
-> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
 
 ## Quick Summary
 
 **Goal:** Generate a project status report covering progress, blockers, and next steps.
 
 **Workflow:**
+
 1. **Gather** -- Collect data from git, tasks, plans, and recent activity
 2. **Analyze** -- Assess progress against goals, identify blockers
 3. **Report** -- Write structured status report with metrics
 
 **Key Rules:**
+
 - Include: completed items, in-progress work, blockers, next steps
 - Quantify where possible (files changed, tests passing, coverage)
 - Save report to plans/reports/ with standard naming
+
+**Be skeptical. Apply critical thinking, sequential thinking. Every claim needs traced proof, confidence percentages (Idea should be more than 80%).**
 
 # Status Report
 
@@ -93,3 +97,12 @@ Generate project/sprint status reports with metrics.
 
 - Always plan and break work into many small todo tasks
 - Always add a final review todo task to verify work quality and identify fixes/enhancements
+
+---
+
+## Workflow Recommendation
+
+> **IMPORTANT MUST:** If you are NOT already in a workflow, use `AskUserQuestion` to ask the user:
+>
+> 1. **Activate `pm-reporting` workflow** (Recommended) — status → dependency
+> 2. **Execute `/status` directly** — run this skill standalone

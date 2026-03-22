@@ -1,0 +1,17 @@
+{
+  "name": "next-github-issue",
+  "repo": "WouterWisse/wouterwisse.com",
+  "path": ".claude/skills/next-github-issue/skill.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/WouterWisse/wouterwisse.com",
+  "dir_name": "next-github-issue",
+  "downloaded_at": "2026-03-22T06:31:10.119972Z",
+  "author": "WouterWisse",
+  "source_url": "https://github.com/WouterWisse/wouterwisse.com/blob/main/.claude/skills/next-github-issue/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WouterWisse/wouterwisse.com/blob/main/.claude/skills/next-github-issue/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

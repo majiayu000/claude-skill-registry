@@ -1,7 +1,7 @@
 ---
 name: simulation-orchestrator
 description: Orchestrate multi-simulation campaigns including parameter sweeps, batch jobs, and result aggregation. Use for running parameter studies, managing simulation batches, tracking job status, combining results from multiple runs, or automating simulation workflows.
-allowed-tools: Read, Bash, Write, Grep, Glob
+allowed-tools: Read, Write, Grep, Glob
 ---
 
 # Simulation Orchestrator
@@ -211,6 +211,16 @@ parameter-optimization          simulation-orchestrator
 3. Run simulations (user's responsibility)
 4. Use `simulation-orchestrator/result_aggregator.py` to collect results
 5. Use `parameter-optimization/sensitivity_summary.py` to analyze
+
+## Security
+
+The orchestrator applies the following safeguards when processing external data:
+
+- **Result file validation**: `result_aggregator.py` enforces a 10 MB file-size limit, maximum JSON nesting depth, strict numeric type checking (rejects `bool`, `NaN`, `Inf`), and sanitizes all string values (truncation, control-character stripping) before surfacing them.
+- **Metric name validation**: Metric names are validated against `[a-zA-Z_][a-zA-Z0-9_.]*` to prevent traversal or injection via crafted keys.
+- **Command template safety**: `campaign_manager.py` validates command templates to reject shell chaining operators (`;`, `|`, `&`, backticks, `$`).
+- **Path sanitization**: Config paths interpolated into shell commands are validated against a safe-character allowlist and escaped with `shlex.quote()`.
+- **Reduced tool surface**: The skill's `allowed-tools` excludes `Bash` to prevent the agent from executing arbitrary commands when processing untrusted simulation outputs.
 
 ## Limitations
 

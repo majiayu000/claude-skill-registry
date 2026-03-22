@@ -33,14 +33,12 @@ When invoked with $ARGUMENTS, treat the argument as the design problem to explor
 
 1. **Generate at least two fundamentally different approaches**, not variations on one idea. If both share an interface shape, they're variations. Push until the second makes you uncomfortable.
 
-2. **Compare on concrete criteria:**
-
-   > "The most important consideration for an interface is ease of use for higher level software." — John Ousterhout, _A Philosophy of Software Design_
-   - **Caller ease-of-use**: Which requires less work from callers? (primary criterion)
-   - **Interface simplicity**: How many concepts must a caller learn?
+2. **Compare the designs on concrete criteria:**
+   - **Caller ease-of-use**: Which requires less work from higher-level code? (primary criterion)
+   - **Interface simplicity**: Which is easier to learn and use?
    - **Generality**: Which handles more use cases without special-casing?
    - **Implementation complexity**: Which is easier to get right?
-   - **Performance characteristics**: Meaningful differences?
+   - **Performance characteristics**: Are there meaningful performance differences?
 
 3. **Choose or synthesize**: Comparing two weak designs may reveal a shared weakness that points at a third, stronger design neither suggested directly. **When no alternative is attractive,** use the problems you identified to drive a new design. If both alternatives force callers to do extra work, that's a signal the abstraction level is wrong.
 

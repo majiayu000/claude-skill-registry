@@ -1,0 +1,17 @@
+{
+  "name": "snowpipe-streaming-java",
+  "repo": "Snowflake-Labs/snowflake-ai-kit",
+  "path": "snowflake-skills/snowpipe-streaming-java/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Snowflake-Labs/snowflake-ai-kit",
+  "dir_name": "snowpipe-streaming-java",
+  "downloaded_at": "2026-03-22T06:17:12.760369Z",
+  "author": "Snowflake-Labs",
+  "source_url": "https://github.com/Snowflake-Labs/snowflake-ai-kit/blob/main/snowflake-skills/snowpipe-streaming-java/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Snowflake-Labs/snowflake-ai-kit/blob/main/snowflake-skills/snowpipe-streaming-java/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

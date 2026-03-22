@@ -2,8 +2,16 @@
   "name": "v3-ddd-architecture",
   "repo": "Geralt1983/Thanos",
   "path": ".claude/skills/v3-ddd-architecture/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/Geralt1983/Thanos",
   "dir_name": "v3-ddd-architecture",
-  "downloaded_at": "2026-02-22T05:05:05.249589Z"
+  "downloaded_at": "2026-03-22T05:24:23.666950Z",
+  "author": "Geralt1983",
+  "source_url": "https://github.com/Geralt1983/Thanos/blob/main/.claude/skills/v3-ddd-architecture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Geralt1983/Thanos/blob/main/.claude/skills/v3-ddd-architecture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

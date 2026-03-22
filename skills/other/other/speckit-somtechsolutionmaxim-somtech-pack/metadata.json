@@ -1,0 +1,17 @@
+{
+  "name": "speckit",
+  "repo": "SomtechSolutionMAxime/somtech-pack",
+  "path": ".claude/skills/speckit/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/SomtechSolutionMAxime/somtech-pack",
+  "dir_name": "speckit-somtechsolutionmaxim-somtech-pack",
+  "downloaded_at": "2026-03-22T06:17:25.409090Z",
+  "author": "SomtechSolutionMAxime",
+  "source_url": "https://github.com/SomtechSolutionMAxime/somtech-pack/blob/main/.claude/skills/speckit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SomtechSolutionMAxime/somtech-pack/blob/main/.claude/skills/speckit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "i-clarify",
+  "repo": "erdiantomy/nosecret-eab25fe0",
+  "path": ".claude/skills/i-clarify/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/erdiantomy/nosecret-eab25fe0",
+  "dir_name": "i-clarify",
+  "downloaded_at": "2026-03-22T07:57:33.545728Z",
+  "author": "erdiantomy",
+  "source_url": "https://github.com/erdiantomy/nosecret-eab25fe0/blob/main/.claude/skills/i-clarify/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/erdiantomy/nosecret-eab25fe0/blob/main/.claude/skills/i-clarify/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

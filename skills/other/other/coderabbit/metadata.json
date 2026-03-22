@@ -2,8 +2,16 @@
   "name": "coderabbit",
   "repo": "PaulRBerg/agent-skills",
   "path": "skills/coderabbit/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/PaulRBerg/agent-skills",
   "dir_name": "coderabbit",
-  "downloaded_at": "2026-02-22T05:32:38.750694Z"
+  "downloaded_at": "2026-03-22T06:04:35.356911Z",
+  "author": "PaulRBerg",
+  "source_url": "https://github.com/PaulRBerg/agent-skills/blob/main/skills/coderabbit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PaulRBerg/agent-skills/blob/main/skills/coderabbit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

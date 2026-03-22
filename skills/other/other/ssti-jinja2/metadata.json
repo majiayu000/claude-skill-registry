@@ -1,0 +1,17 @@
+{
+  "name": "ssti-jinja2",
+  "repo": "blacklanternsecurity/red-run",
+  "path": "skills/web/ssti-jinja2/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/blacklanternsecurity/red-run",
+  "dir_name": "ssti-jinja2",
+  "downloaded_at": "2026-03-22T07:16:07.235891Z",
+  "author": "blacklanternsecurity",
+  "source_url": "https://github.com/blacklanternsecurity/red-run/blob/main/skills/web/ssti-jinja2/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/blacklanternsecurity/red-run/blob/main/skills/web/ssti-jinja2/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

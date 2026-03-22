@@ -2,8 +2,16 @@
   "name": "librarian",
   "repo": "TurnaboutHero/oh-my-antigravity",
   "path": "skills/librarian/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/TurnaboutHero/oh-my-antigravity",
   "dir_name": "librarian",
-  "downloaded_at": "2026-02-15T05:54:29.816147Z"
+  "downloaded_at": "2026-03-22T06:25:58.367459Z",
+  "author": "TurnaboutHero",
+  "source_url": "https://github.com/TurnaboutHero/oh-my-antigravity/blob/main/skills/librarian/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TurnaboutHero/oh-my-antigravity/blob/main/skills/librarian/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -6,8 +6,8 @@ allowed-tools:
   - Read
   - Grep
   - Glob
-  - mcp__auditor-addon__peek
-  - mcp__auditor-addon__call_chains
+  - mcp__plugin_auditor-addon_auditor-addon__peek
+  - mcp__plugin_auditor-addon_auditor-addon__call_chains
 ---
 
 # Threat Modeling

@@ -1,0 +1,17 @@
+{
+  "name": "system-design-interview",
+  "repo": "booklib-ai/skills",
+  "path": "skills/system-design-interview/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/booklib-ai/skills",
+  "dir_name": "system-design-interview",
+  "downloaded_at": "2026-03-22T07:18:13.265711Z",
+  "author": "booklib-ai",
+  "source_url": "https://github.com/booklib-ai/skills/blob/main/skills/system-design-interview/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/booklib-ai/skills/blob/main/skills/system-design-interview/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,7 +1,7 @@
 ---
 name: linear-solvers
 description: Select and configure linear solvers for systems Ax=b in dense and sparse problems. Use when choosing direct vs iterative methods, diagnosing convergence issues, estimating conditioning, selecting preconditioners, or debugging stagnation in GMRES/CG/BiCGSTAB.
-allowed-tools: Read, Bash, Write, Grep, Glob
+allowed-tools: Read, Write, Grep, Glob
 ---
 
 # Linear Solvers
@@ -145,6 +145,18 @@ python3 scripts/residual_norms.py --residual 1,0.1,0.01 --rhs 1,0,0 --json
 | Flat residual | Poor preconditioner | Improve preconditioner |
 | Oscillating | Near-singular or indefinite | Check matrix, try different solver |
 | Very slow decay | Ill-conditioned | Apply scaling, use AMG |
+
+## Security
+
+The linear-solvers scripts enforce the following safeguards when processing external data:
+
+- **Pickle-safe loading**: `np.load()` is called with `allow_pickle=False` to prevent arbitrary code execution via crafted `.npy` files.
+- **File size limits**: Matrix files are rejected if they exceed 500 MB before any parsing occurs.
+- **Matrix dimension limits**: Loaded matrices are capped at 100,000 per dimension to prevent memory exhaustion.
+- **Input length limits**: Comma-separated residual/vector inputs are capped at 100,000 entries.
+- **Finite-value validation**: All numeric inputs (residuals, tolerances, matrix entries) are validated as finite numbers.
+- **Size bounds**: The `solver_selector.py` `--size` parameter is bounded at 10 billion.
+- **Reduced tool surface**: The skill's `allowed-tools` excludes `Bash` to prevent the agent from executing arbitrary commands when processing untrusted matrix files or numeric inputs.
 
 ## Limitations
 

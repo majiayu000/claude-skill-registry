@@ -1,7 +1,8 @@
 ---
 name: ui-ux-design
 description: "Create production-grade frontend interfaces with strong UX and visual craft. Use when building web components, pages, dashboards, forms, landing pages, or any UI. Use when user says 'build a form', 'create a dashboard', 'design a component', 'make a landing page', or asks for UI/UX work."
-allowed-tools: Read, Write, Edit
+compatibility: Designed for Claude Code-compatible agents. Uses Claude-specific hooks; other Agent Skills products may ignore these extensions. allowed-tools is optional and may be handled differently across clients.
+allowed-tools: Read Write Edit
 hooks:
   Stop:
     - hooks:

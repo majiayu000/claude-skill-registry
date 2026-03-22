@@ -1,9 +1,24 @@
 ---
 name: oauth-oidc-implementer
-description: Expert in implementing OAuth 2.0 and OpenID Connect (OIDC) authentication flows. Specializes in secure token handling, social login integration, API authorization, and identity provider configuration. Handles both client-side and server-side flows with security best practices.
+description: Expert in implementing OAuth 2.0 and OpenID Connect (OIDC) authentication flows. Specializes in secure token handling, social login integration, API authorization, and identity provider configuration.
+  Handles both client-side and server-side flows with security best practices.
 version: 1.0.0
-category: security
-tags: [oauth, oidc, authentication, authorization, jwt, security]
+metadata:
+  category: security
+  tags:
+  - oauth
+  - oidc
+  - authentication
+  - authorization
+  - jwt
+  - security
+  pairs-with:
+  - skill: modern-auth-2026
+    reason: OAuth/OIDC is one auth mechanism alongside passkeys in the modern auth stack
+  - skill: security-auditor
+    reason: OAuth token handling and PKCE flow security require dedicated vulnerability scanning
+  - skill: api-architect
+    reason: API authentication design patterns depend on OAuth scope and token architecture
 ---
 
 # OAuth/OIDC Implementer

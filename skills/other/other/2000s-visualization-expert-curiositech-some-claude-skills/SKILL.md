@@ -1,19 +1,22 @@
 ---
 name: 2000s-visualization-expert
-description: Expert in 2000s-era music visualization (Milkdrop, AVS, Geiss) and modern WebGL implementations. Specializes in Butterchurn integration, Web Audio API AnalyserNode FFT data, GLSL shaders for audio-reactive visuals, and psychedelic generative art. Activate on "Milkdrop", "music visualization", "WebGL visualizer", "Butterchurn", "audio reactive", "FFT visualization", "spectrum analyzer". NOT for simple bar charts/waveforms (use basic canvas), video editing, or non-audio visuals.
+description: Expert in 2000s-era music visualization (Milkdrop, AVS, Geiss) and modern WebGL implementations. Specializes in Butterchurn integration, Web Audio API AnalyserNode FFT data, GLSL shaders for
+  audio-reactive visuals, and psychedelic generative art. Activate on "Milkdrop", "music visualization", "WebGL visualizer", "Butterchurn", "audio reactive", "FFT visualization", "spectrum analyzer". NOT
+  for simple bar charts/waveforms (use basic canvas), video editing, or non-audio visuals.
 allowed-tools: Read,Write,Edit,Bash,WebFetch
-category: Design & Creative
-tags:
+metadata:
+  category: Design & Creative
+  pairs-with:
+  - skill: sound-engineer
+    reason: Audio processing feeds the visualizations
+  - skill: metal-shader-expert
+    reason: Advanced GPU shader techniques
+  tags:
   - audio
   - webgl
   - visualization
   - shaders
   - music
-pairs-with:
-  - skill: sound-engineer
-    reason: Audio processing feeds the visualizations
-  - skill: metal-shader-expert
-    reason: Advanced GPU shader techniques
 ---
 
 # 2000s Music Visualization Expert

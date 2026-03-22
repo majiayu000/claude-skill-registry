@@ -2,8 +2,16 @@
   "name": "mssql-mcp",
   "repo": "HouseGarofalo/claude-code-base",
   "path": ".claude/skills/mssql-mcp/SKILL.md",
+  "github_branch": "master",
   "category": "other",
   "source": "github.com/HouseGarofalo/claude-code-base",
   "dir_name": "mssql-mcp",
-  "downloaded_at": "2026-02-22T05:09:36.931080Z"
+  "downloaded_at": "2026-03-22T05:28:36.963183Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/mssql-mcp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/mssql-mcp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

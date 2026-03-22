@@ -122,3 +122,11 @@ Use the quality checklist for final verification.
 ## Summary
 
 The Paper Self-Review skill provides a systematic paper quality checking process, helping researchers identify and resolve issues before submission, improving paper quality and acceptance rates.
+
+
+## Reference Files
+
+Load only what is needed:
+- `references/SECTION-CHECKLIST.md` - section-by-section review questions
+- `references/FINAL-VERDICT.md` - how to summarize submission readiness and blocking issues
+- `examples/example-self-review.md` - example review output

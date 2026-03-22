@@ -1,0 +1,17 @@
+{
+  "name": "subsystem-info",
+  "repo": "Nikolay-Shirokov/cc-1c-skills",
+  "path": ".claude/skills/subsystem-info/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Nikolay-Shirokov/cc-1c-skills",
+  "dir_name": "subsystem-info",
+  "downloaded_at": "2026-03-22T05:56:55.058439Z",
+  "author": "Nikolay-Shirokov",
+  "source_url": "https://github.com/Nikolay-Shirokov/cc-1c-skills/blob/main/.claude/skills/subsystem-info/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Nikolay-Shirokov/cc-1c-skills/blob/main/.claude/skills/subsystem-info/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

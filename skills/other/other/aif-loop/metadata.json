@@ -1,0 +1,17 @@
+{
+  "name": "aif-loop",
+  "repo": "ArtemYurov/TomoBar",
+  "path": ".claude/skills/aif-loop/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ArtemYurov/TomoBar",
+  "dir_name": "aif-loop",
+  "downloaded_at": "2026-03-22T04:53:28.726611Z",
+  "author": "ArtemYurov",
+  "source_url": "https://github.com/ArtemYurov/TomoBar/blob/main/.claude/skills/aif-loop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ArtemYurov/TomoBar/blob/main/.claude/skills/aif-loop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

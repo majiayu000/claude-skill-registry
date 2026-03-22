@@ -1,45 +1,44 @@
 ---
 name: analyze-trends-historical
-description: >
-  Analyze trends over time by comparing current entity mentions against historical
-  data from memory. Identifies topics gaining or losing popularity, emerging themes,
-  and provides trend velocity and trajectory analysis for weekly trend reports.
+description: 'Analyze trends over time by comparing current entity mentions against
+  historical data from memory. Identifies topics gaining or losing popularity, emerging
+  themes, and provides trend velocity and trajectory analysis for weekly trend reports.
+
+  '
 license: MIT
 compatibility: Requires Memory MCP server for historical data access
 metadata:
-  kubani:
-    domain: news
-    category: diagnostic
-    version: "1.0.0"
-    mcp_servers:
-      - memory-mcp-server
-    requires_approval: false
-    confidence: 0.75
+  domain: news
+  category: diagnostic
+  requires-approval: false
+  confidence: 0.75
+  mcp-servers:
+  - memory-mcp-server
 input:
-  - name: current_period_articles
-    type: list[ProcessedArticle]
-    description: Articles from the current analysis period
-  - name: lookback_days
-    type: int
-    default: 14
-    description: Number of days to look back for historical comparison
-  - name: min_mentions
-    type: int
-    default: 3
-    description: Minimum mentions for an entity to be considered trending
+- name: current_period_articles
+  type: list[ProcessedArticle]
+  description: Articles from the current analysis period
+- name: lookback_days
+  type: int
+  default: 14
+  description: Number of days to look back for historical comparison
+- name: min_mentions
+  type: int
+  default: 3
+  description: Minimum mentions for an entity to be considered trending
 output:
-  - name: trends
-    type: list[TrendAnalysis]
-    description: List of identified trends with velocity and trajectory
-  - name: emerging_topics
-    type: list[str]
-    description: New topics not seen in historical period
-  - name: declining_topics
-    type: list[str]
-    description: Topics significantly less mentioned than before
-  - name: summary
-    type: str
-    description: Narrative summary of trend landscape
+- name: trends
+  type: list[TrendAnalysis]
+  description: List of identified trends with velocity and trajectory
+- name: emerging_topics
+  type: list[str]
+  description: New topics not seen in historical period
+- name: declining_topics
+  type: list[str]
+  description: Topics significantly less mentioned than before
+- name: summary
+  type: str
+  description: Narrative summary of trend landscape
 ---
 
 # Analyze Trends Historical

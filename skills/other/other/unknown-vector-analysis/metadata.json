@@ -1,0 +1,17 @@
+{
+  "name": "unknown-vector-analysis",
+  "repo": "blacklanternsecurity/red-run",
+  "path": "skills/research/unknown-vector-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/blacklanternsecurity/red-run",
+  "dir_name": "unknown-vector-analysis",
+  "downloaded_at": "2026-03-22T07:16:12.492844Z",
+  "author": "blacklanternsecurity",
+  "source_url": "https://github.com/blacklanternsecurity/red-run/blob/main/skills/research/unknown-vector-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/blacklanternsecurity/red-run/blob/main/skills/research/unknown-vector-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

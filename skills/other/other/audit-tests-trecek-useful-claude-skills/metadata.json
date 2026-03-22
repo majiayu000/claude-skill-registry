@@ -1,0 +1,17 @@
+{
+  "name": "audit-tests",
+  "repo": "Trecek/useful-claude-skills",
+  "path": ".claude/skills/audit-tests/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Trecek/useful-claude-skills",
+  "dir_name": "audit-tests-trecek-useful-claude-skills",
+  "downloaded_at": "2026-03-22T06:25:40.709951Z",
+  "author": "Trecek",
+  "source_url": "https://github.com/Trecek/useful-claude-skills/blob/main/.claude/skills/audit-tests/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Trecek/useful-claude-skills/blob/main/.claude/skills/audit-tests/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

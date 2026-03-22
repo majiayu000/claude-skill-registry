@@ -1,0 +1,17 @@
+{
+  "name": "zotero-citation",
+  "repo": "ZLHad/agent-skills",
+  "path": "claude-code-skills/zotero-citation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ZLHad/agent-skills",
+  "dir_name": "zotero-citation",
+  "downloaded_at": "2026-03-22T06:35:26.594548Z",
+  "author": "ZLHad",
+  "source_url": "https://github.com/ZLHad/agent-skills/blob/main/claude-code-skills/zotero-citation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ZLHad/agent-skills/blob/main/claude-code-skills/zotero-citation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -40,8 +40,20 @@ void poll_sensor(void) {
 
 ## Professional Patterns (Hardware Engineering)
 - **Safe GPIO**: Always use `gpio_dt_spec` to ensure polarity and pin number are automatically handled by the driver.
-- **Background Sampling**: Never poll sensors in high-priority threads; use a background work queue. See **[Work Queues](../kernel-services/references/settings_workqueue.md)** in the kernel-services skill.
+- **Background Sampling**: Never poll sensors in high-priority threads; use a background work queue. See **[kernel-services](../kernel-services/SKILL.md)** for work-queue patterns.
 - **Deferred Pinctrl**: Define pin states in a shared `.dtsi` to simplify multi-revision hardware support.
+
+## Automation Tools
+- **[gpio_alias_check.py](scripts/gpio_alias_check.py)**: Detect duplicate alias entries across DTS/overlay files.
+
+## Examples & Templates
+- **[sensor_poll_template.c](assets/sensor_poll_template.c)**: Starter polling function with readiness/error checks.
+
+## Validation Checklist
+- [ ] Sensor device nodes resolve correctly and `DEVICE_DT_GET(...)` targets are ready at runtime.
+- [ ] GPIO and pinctrl states match the intended board schematic and polarity rules.
+- [ ] Sensor sampling path returns stable values with expected units/scaling.
+- [ ] Background acquisition does not block high-priority or interrupt-critical code paths.
 
 ## Resources
 
@@ -49,3 +61,7 @@ void poll_sensor(void) {
   - `sensors.md`: Reading data, channels, and triggers.
   - `pinctrl_gpio.md`: Pin multiplexing and GPIO specs.
   - `soc_config.md`: Multi-variant SoC configuration.
+- **[Scripts](scripts/)**:
+    - `gpio_alias_check.py`: Alias duplication checker for DTS/overlay sets.
+- **[Assets](assets/)**:
+    - `sensor_poll_template.c`: Polling loop starter template.

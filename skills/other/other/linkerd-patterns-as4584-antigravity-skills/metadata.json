@@ -1,0 +1,17 @@
+{
+  "name": "linkerd-patterns",
+  "repo": "as4584/antigravity-skills",
+  "path": "agents-wshobson/plugins/cloud-infrastructure/skills/linkerd-patterns/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/as4584/antigravity-skills",
+  "dir_name": "linkerd-patterns-as4584-antigravity-skills",
+  "downloaded_at": "2026-03-22T07:03:28.100449Z",
+  "author": "as4584",
+  "source_url": "https://github.com/as4584/antigravity-skills/blob/main/agents-wshobson/plugins/cloud-infrastructure/skills/linkerd-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/as4584/antigravity-skills/blob/main/agents-wshobson/plugins/cloud-infrastructure/skills/linkerd-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

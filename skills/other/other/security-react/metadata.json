@@ -2,8 +2,16 @@
   "name": "security-react",
   "repo": "TheBeardedBearSAS/claude-craft",
   "path": "Dev/i18n/es/React/skills/security-react/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/TheBeardedBearSAS/claude-craft",
   "dir_name": "security-react",
-  "downloaded_at": "2026-02-22T05:49:37.142668Z"
+  "downloaded_at": "2026-03-22T06:22:42.886157Z",
+  "author": "TheBeardedBearSAS",
+  "source_url": "https://github.com/TheBeardedBearSAS/claude-craft/blob/main/Dev/i18n/es/React/skills/security-react/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TheBeardedBearSAS/claude-craft/blob/main/Dev/i18n/es/React/skills/security-react/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -12,8 +12,8 @@ compatibility: Designed for Claude Code and Cursor
 
 # TypeScript Strict Patterns
 
-> **Project setup** — read [`project-setup.md`](./project-setup.md) when bootstrapping a new project or changing tsconfig / ts-reset / type-fest.
-> **ESLint baseline** — read [`eslint.config.mjs`](./eslint.config.mjs) when adding or tweaking lint rules.
+> **Project setup** — read [`project-setup.md`](${CLAUDE_SKILL_DIR}/project-setup.md) when bootstrapping a new project or changing tsconfig / ts-reset / type-fest.
+> **ESLint baseline** — read [`eslint.config.mjs`](${CLAUDE_SKILL_DIR}/eslint.config.mjs) when adding or tweaking lint rules.
 
 ## Discriminated Unions + Exhaustive Checking
 
@@ -123,3 +123,12 @@ With `noUncheckedIndexedAccess`, bracket access returns `T | undefined`. Always 
 ## Type Helpers (type-fest as Inspiration)
 
 Use [type-fest](https://github.com/sindresorhus/type-fest) as a **reference catalog** when strict patterns make code verbose. Browse its source for solutions like `SetRequired`, `Simplify`, `JsonValue`. Copy the single type definition you need into `src/types/` with attribution. Don't add the full package as a dependency — keep the dependency graph small.
+
+## Self-Improvement
+
+If you encounter a pattern that doesn't work with newer TypeScript versions, a missing pattern, or incorrect guidance in this skill, don't just work around it — fix the skill:
+
+1. **Create a PR** from a fresh worktree of `https://github.com/eins78/skills` on a new branch, fixing the issue directly
+2. **Or file an issue** on `https://github.com/eins78/skills` with: what failed, the actual behavior, and the suggested fix
+
+Never silently work around a skill gap. The fix benefits all future sessions.

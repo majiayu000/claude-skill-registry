@@ -35,10 +35,11 @@ Before starting: check if `<pr-slug>.findings.md` exists. If it does, incorporat
    - Testing posture (new tests where appropriate; no unjustified test edits)
    - Docs drift or duplication
    - Git hygiene (commit structure, no debug leftovers)
+   - If a check is red, compare against `main` and inspect the full PR commit range before classifying it. If the failure appears anywhere in the PR range, treat it as branch-owned regression and review it as part of the PR.
 
 4. **Report findings** — Group by severity (Critical/Major/Minor) with `path:line` references. State a clear decision: approve / request changes / non-blocking.
 
-5. **Submit** — Use `/review` protocol to write `<pr-slug>.findings.md`, OR submit via:
+5. **Submit** — Use `/findings` to write `<pr-slug>.findings.md`, OR submit via:
    ```
    gh pr review <n> --request-changes --body "..."
    ```

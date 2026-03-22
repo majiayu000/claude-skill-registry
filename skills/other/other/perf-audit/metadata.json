@@ -2,8 +2,16 @@
   "name": "perf-audit",
   "repo": "WhatIfWeDigDeeper/claude-template",
   "path": ".claude/skills/perf-audit/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/WhatIfWeDigDeeper/claude-template",
   "dir_name": "perf-audit",
-  "downloaded_at": "2026-02-22T05:56:47.204320Z"
+  "downloaded_at": "2026-03-22T06:30:54.143997Z",
+  "author": "WhatIfWeDigDeeper",
+  "source_url": "https://github.com/WhatIfWeDigDeeper/claude-template/blob/main/.claude/skills/perf-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WhatIfWeDigDeeper/claude-template/blob/main/.claude/skills/perf-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

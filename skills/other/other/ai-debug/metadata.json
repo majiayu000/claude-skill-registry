@@ -1,0 +1,17 @@
+{
+  "name": "ai-debug",
+  "repo": "arcasilesgroup/ai-engineering",
+  "path": ".claude/skills/ai-debug/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/arcasilesgroup/ai-engineering",
+  "dir_name": "ai-debug",
+  "downloaded_at": "2026-03-22T07:01:39.853085Z",
+  "author": "arcasilesgroup",
+  "source_url": "https://github.com/arcasilesgroup/ai-engineering/blob/main/.claude/skills/ai-debug/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arcasilesgroup/ai-engineering/blob/main/.claude/skills/ai-debug/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

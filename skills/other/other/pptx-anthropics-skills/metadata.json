@@ -2,8 +2,16 @@
   "name": "pptx",
   "repo": "anthropics/skills",
   "path": "skills/pptx/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/anthropics/skills",
   "dir_name": "pptx-anthropics-skills",
-  "downloaded_at": "2026-02-22T06:18:38.404100Z"
+  "downloaded_at": "2026-03-22T06:58:15.551602Z",
+  "author": "anthropics",
+  "source_url": "https://github.com/anthropics/skills/blob/main/skills/pptx/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anthropics/skills/blob/main/skills/pptx/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

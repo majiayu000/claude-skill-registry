@@ -1,0 +1,17 @@
+{
+  "name": "contract-review",
+  "repo": "305s/MagicalLesson",
+  "path": ".qoder/skills/contract-review/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/305s/MagicalLesson",
+  "dir_name": "contract-review-305s-magicallesson",
+  "downloaded_at": "2026-03-22T04:41:46.167250Z",
+  "author": "305s",
+  "source_url": "https://github.com/305s/MagicalLesson/blob/master/.qoder/skills/contract-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/305s/MagicalLesson/blob/master/.qoder/skills/contract-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

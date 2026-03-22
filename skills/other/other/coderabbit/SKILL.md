@@ -1,94 +1,85 @@
 ---
-argument-hint: <pr-number>
-context: fork
+argument-hint: '[--base <branch>] [--type <type>]'
 disable-model-invocation: false
 name: coderabbit
 user-invocable: true
-description: This skill should be used when the user asks to "review CodeRabbit feedback", "triage CodeRabbit comments", "check CodeRabbit PR review", "evaluate CodeRabbit suggestions", "process CodeRabbit review", "address CodeRabbit comments", "fix CodeRabbit issues", "coderabbit review", or mentions reviewing, triaging, or acting on CodeRabbit bot feedback on a pull request.
+description: This skill should be used when the user asks to "run coderabbit review", "coderabbit review", "review with coderabbit", "triage coderabbit findings", "check code with coderabbit", or mentions running CodeRabbit CLI review, triaging CodeRabbit output, or evaluating CodeRabbit suggestions on local changes.
 ---
 
 # CodeRabbit Review
 
-Triage CodeRabbit feedback on pull requests by classifying each comment as Valid or False Positive through inspection of the actual code at the referenced location. Produce a prioritized fix plan for valid findings ordered by severity. Critical evaluation is the core principle here — not every CodeRabbit suggestion deserves a code change. Some are false positives based on incorrect assumptions about the codebase, nitpicks on matters of style preference, or inapplicable to the project's established conventions. The goal is to separate signal from noise and give the developer a clear, actionable list of what actually needs fixing.
+Run a CodeRabbit CLI review on local changes and triage the output by verifying each finding against the actual code. Classify findings as Valid or False Positive, assign severity, and produce a prioritized fix plan. Not every CodeRabbit suggestion deserves a code change — the goal is to separate signal from noise.
 
 ## Arguments
 
-Parse `$ARGUMENTS` for a PR number (required integer). Supported formats:
+Parse `$ARGUMENTS` for optional flags:
 
-- Plain number: `123`
-- Hash-prefixed: `#123`
-- Full reference: `owner/repo#123`
-- URL: `https://github.com/owner/repo/pull/123`
+- `--base <branch>` — base branch for diff comparison
+- `--base-commit <commit>` — base commit on current branch for comparison (mutually exclusive with `--base`)
+- `--type <type>` — review scope: `committed`, `uncommitted`, or `all` (default: `all`)
+- `--config <files...>` — additional instruction files to pass to CodeRabbit
 
-If `$ARGUMENTS` is empty, stop and ask the user for a PR number.
+All flags are optional. If neither `--base` nor `--base-commit` is provided, auto-detect the base branch:
 
-When only a bare number or `#number` is provided, infer `owner/repo` from the current working directory:
+1. Try `git rev-parse --abbrev-ref @{upstream}` (strip remote prefix)
+2. Fall back to `git symbolic-ref refs/remotes/origin/HEAD` (strip remote prefix)
+3. Fall back to `main`, then `master`
 
-```bash
-gh repo view --json nameWithOwner -q .nameWithOwner
-```
-
-## Related Skills
-
-For detailed GitHub CLI command syntax, flags, and patterns, activate the `cli-gh` skill. That skill covers the full gh command surface including issue management, PR operations, repository queries, workflow triggers, and API interactions.
+Verify the resolved ref exists with `git rev-parse --verify`.
 
 ## Prerequisites
 
-Verify GitHub CLI authentication before proceeding:
+Run these checks in order. Stop at the first failure.
+
+### 1) CodeRabbit CLI Installed
 
 ```bash
-gh auth status
+command -v coderabbit
 ```
 
-If not authenticated, stop with an error instructing the user to run `gh auth login`.
+If missing, stop and tell the user to install:
+
+```
+curl -fsSL https://cli.coderabbit.ai/install.sh | sh
+```
+
+### 2) Authentication
+
+```bash
+coderabbit auth status
+```
+
+If the exit code indicates unauthenticated or the output does not show a logged-in state, stop and tell the user to authenticate:
+
+```
+coderabbit auth login
+```
 
 ## Workflow
 
-### 1) Fetch PR Metadata
+### 1) Run CodeRabbit Review
 
-Retrieve PR details for context and scoping:
-
-```bash
-gh pr view {pr_number} --json title,baseRefName,headRefName,url,files
-```
-
-Extract the PR title, base and head branches, URL, and the list of changed files. The changed files list defines the primary scope. Comments on unchanged files may still be relevant if the PR's changes affect their behavior — use judgment during classification.
-
-### 2) Fetch CodeRabbit Review Threads
-
-Use the GraphQL query from `references/graphql-queries.md` to fetch all review threads on the PR. Filter to threads where any comment's author login starts with `coderabbitai` (GraphQL returns `coderabbitai` without the `[bot]` suffix; REST returns `coderabbitai[bot]`). The GraphQL approach returns threaded conversations with resolution status, which is essential for skipping already-addressed feedback.
-
-Fall back to the REST API for inline comments if GraphQL returns incomplete data:
+Construct the command with mandatory flags `--plain --no-color` plus any user-provided flags:
 
 ```bash
-gh api repos/{owner}/{repo}/pulls/{pr_number}/comments
+coderabbit review --plain --no-color [--base <branch>] [--base-commit <commit>] [--type <type>] [--config <files...>]
 ```
 
-Also fetch PR review bodies to capture CodeRabbit's walkthrough summary, which provides high-level context about what the bot thinks the PR does:
+Capture the full output. If the CLI exits non-zero, report the error and stop.
 
-```bash
-gh api repos/{owner}/{repo}/pulls/{pr_number}/reviews
-```
+### 2) Parse and Group
 
-### 3) Parse and Group
+Parse the CLI output into individual findings. Group by file path. For each finding, categorize into:
 
-Group comments by file path. For each comment, categorize it into one of three buckets:
+- **AI-actionable**: concrete code suggestion with a clear, specific fix
+- **Nitpick**: style or naming preference without functional impact
+- **Informational**: explanation or context without a specific suggestion
 
-- **AI-actionable**: a concrete code suggestion with a clear, specific fix that can be applied
-- **Nitpick**: a style or naming preference without functional impact (e.g., "consider renaming this variable")
-- **Outside diff range**: comment references code that was not changed in this PR
+### 3) Classify Each Finding
 
-Skip resolved threads entirely. Check three resolution signals:
+For each AI-actionable finding, perform a thorough assessment:
 
-1. The `isResolved` field on the review thread
-2. "Addressed in commit" markers in thread replies
-3. `[x]` checkboxes indicating the author already handled the suggestion
-
-### 4) Classify Each Comment
-
-For each unresolved, AI-actionable comment, perform a thorough assessment:
-
-1. **Read the actual code** at the referenced file and line number. Do not rely solely on CodeRabbit's quoted snippet — it may be outdated or truncated.
+1. **Read the actual code** at the referenced file and line number. Do not rely solely on the CLI's quoted snippet — it may be outdated or truncated.
 2. **Check project conventions** by examining linter configs (ESLint, Prettier, Biome, Ruff, etc.), existing patterns in the codebase, and any style guides or CONTRIBUTING.md files.
 3. **Review broader context** by reading surrounding functions, the module's purpose, and related tests to understand whether the suggestion fits.
 4. **Assess applicability** — does this suggestion make sense for this specific codebase, or is it generic advice that doesn't apply here?
@@ -105,9 +96,25 @@ Assign one of two classifications:
   - Incorrect assumption about the code's behavior or purpose
   - Project convention mismatch (suggestion contradicts established patterns)
   - Already handled elsewhere in the codebase
-  - Out of scope for this PR's intent
+  - Out of scope for the current diff's intent
 
-### 5) Generate Fix Plan
+### 3b) Confirm Ambiguous Classifications
+
+After classifying all findings, identify those where confidence is **Medium** or **Low** and the code is on a critical path (auth, payments, data integrity, core business logic). For each such finding, use `AskUserQuestion` to ask the user:
+
+- header: Truncated filename (max 12 chars)
+- question: "CodeRabbit flagged `<file>:<line>` — <one-line summary of suggestion>. Is this valid?"
+- options:
+  - "Valid — fix it" with description of what the fix entails
+  - "False positive — skip" with description of why it might not apply
+  - "Needs context — defer" with description that it will be added to Residual Risks
+- multiSelect: false
+
+Batch up to 4 questions per `AskUserQuestion` call to minimize interruptions. Update classifications based on user responses before generating the fix plan.
+
+Skip this step when all medium/low-confidence findings are on non-critical paths — classify those using your best judgment and note the confidence level in the report.
+
+### 4) Generate Fix Plan
 
 For each valid finding, ordered by severity (CRITICAL first, LOW last), produce a structured entry:
 
@@ -125,13 +132,13 @@ Confidence reflects certainty that the fix is correct and safe to apply:
 - **Medium**: likely correct but depends on runtime behavior or external state not fully visible
 - **Low**: plausible improvement but may have side effects or require domain knowledge to validate
 
-### 6) Report
+### 5) Report
 
 Output a structured report with the following sections:
 
-**PR Summary**: title, URL, base/head branches, number of files changed.
+**Scope**: base ref, review type, number of files in diff.
 
-**Scope**: N total CodeRabbit comments analyzed, N resolved (skipped), N unresolved (triaged).
+**Summary**: N findings from CLI, N classified as valid, N as false positive, N nitpicks skipped.
 
 **Valid Findings** (grouped by severity):
 
@@ -139,7 +146,7 @@ For each severity level present, list findings with location, CodeRabbit's origi
 
 **False Positives**:
 
-For each dismissed comment, list the location, what CodeRabbit suggested, and the specific rationale for dismissal. This section serves as documentation for why certain suggestions were intentionally not acted upon.
+For each dismissed finding, list the location, what CodeRabbit suggested, and the specific rationale for dismissal.
 
 **Fix Plan**:
 
@@ -147,7 +154,7 @@ Ordered implementation steps for all valid findings. Group related fixes that to
 
 **Nitpicks (skipped)**:
 
-Brief list of nitpick comments that were excluded from triage — mention location and what was suggested, but no fix plan entry.
+Brief list of nitpick findings that were excluded from triage — mention location and what was suggested, but no fix plan entry.
 
 **Residual Risks**:
 
@@ -157,8 +164,9 @@ Flag anything that needs human judgment or falls beyond automated triage — amb
 
 Stop and ask for direction when:
 
-- The PR does not exist or is not accessible (permissions, private repo without auth).
-- No CodeRabbit comments are found on the PR.
-- A suggestion requires architectural changes beyond the PR's scope.
+- `coderabbit` CLI is not installed or not authenticated.
+- The CLI exits with an error.
+- The resolved base ref does not exist.
+- No findings in the CLI output (report clean and exit).
+- A suggestion requires architectural changes beyond the current diff's scope.
 - Classification confidence is low for code on critical paths (auth, payments, data integrity).
-- CodeRabbit's walkthrough summary contradicts its own individual comment suggestions, indicating the bot may have misunderstood the PR's purpose.

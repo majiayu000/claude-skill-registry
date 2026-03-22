@@ -1,0 +1,17 @@
+{
+  "name": "environment",
+  "repo": "AndriyKalashnykov/flight-path",
+  "path": ".claude/skills/environment/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/AndriyKalashnykov/flight-path",
+  "dir_name": "environment",
+  "downloaded_at": "2026-03-22T04:51:52.814236Z",
+  "author": "AndriyKalashnykov",
+  "source_url": "https://github.com/AndriyKalashnykov/flight-path/blob/main/.claude/skills/environment/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AndriyKalashnykov/flight-path/blob/main/.claude/skills/environment/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

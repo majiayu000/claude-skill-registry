@@ -1,0 +1,17 @@
+{
+  "name": "api-key-auth-setup",
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/15-api-development/api-key-auth-setup/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "dir_name": "api-key-auth-setup",
+  "downloaded_at": "2026-03-22T05:02:00.668670Z",
+  "author": "Brmbobo",
+  "source_url": "https://github.com/Brmbobo/Web2podcast/blob/master/.claude/agents/enterprise-frontend-design/agents/skills/15-api-development/api-key-auth-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brmbobo/Web2podcast/blob/master/.claude/agents/enterprise-frontend-design/agents/skills/15-api-development/api-key-auth-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

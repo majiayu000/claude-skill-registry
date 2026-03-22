@@ -17,7 +17,8 @@ description: Debug stuck Hawk/Inspect AI evaluations. Use when user mentions "st
 
 | Log Pattern | Meaning | Resolution |
 |-------------|---------|------------|
-| `Retrying request to /responses` | OpenAI SDK hiding actual error | Test API directly with curl to see real error |
+| `[uuid task/id/epoch model] Retrying request to /responses` | OpenAI SDK retry with sample context | Test API directly with curl to see real error |
+| `[uuid task/id/epoch model] -> model retry N ... [ErrorType code]` | Inspect retry with error summary | Check error type; use curl for full details |
 | `500 - Internal server error` | API issue | Download buffer, find failing request, test through middleman AND directly to provider |
 | `400 - invalid_request_error` | Token/context limit exceeded | Check message count and model context window |
 | `Pod UID mismatch` | Sandbox pod was killed and restarted | No fix needed—sample errored out, Inspect will retry |
@@ -26,7 +27,7 @@ description: Debug stuck Hawk/Inspect AI evaluations. Use when user mentions "st
 
 ## Key Techniques
 
-1. **SDK hides errors by design** - The OpenAI SDK hides transient errors during retry backoff. "Retrying request" logs don't show the actual error. Use curl to see real errors.
+1. **Retry messages have sample context** - All retry messages include a `[sample_uuid task/sample_id/epoch model]` prefix. Inspect's own retries also include a compact error summary suffix like `[RateLimitError 429 rate_limit_exceeded]`. The OpenAI SDK's internal retry messages still don't show the actual error — use curl for full details.
 2. **FAIL-OK patterns are fine** - Alternating failures and successes mean the eval IS progressing. Only worry about consistent FAIL-FAIL-FAIL patterns.
 3. **Use S3 for buffer access** - Download `.buffer/` from S3 rather than accessing the runner pod directly.
 4. **Read .eval files with inspect_ai** - Use `from inspect_ai.log import read_eval_log` instead of manually extracting zips.

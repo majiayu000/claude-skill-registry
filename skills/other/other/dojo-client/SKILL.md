@@ -71,6 +71,10 @@ import manifest from "../path/to/manifest_dev.json";
 export const dojoConfig = createDojoConfig({ manifest });
 ```
 
+**Important**: The manifest must contain a valid world ABI with at least one `type: "interface"` entry.
+If `manifest.world.abi` is missing or empty, starknet.js throws `"Unable to determine Cairo version"`.
+This is populated automatically by `sozo build` — if you see this error, rebuild your contracts.
+
 3. **Generate TypeScript bindings:**
 
 ```bash

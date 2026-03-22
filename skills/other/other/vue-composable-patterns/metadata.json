@@ -1,0 +1,17 @@
+{
+  "name": "vue-composable-patterns",
+  "repo": "Esposter/Esposter",
+  "path": ".claude/skills/vue-composable-patterns/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Esposter/Esposter",
+  "dir_name": "vue-composable-patterns",
+  "downloaded_at": "2026-03-22T05:19:15.102178Z",
+  "author": "Esposter",
+  "source_url": "https://github.com/Esposter/Esposter/blob/main/.claude/skills/vue-composable-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Esposter/Esposter/blob/main/.claude/skills/vue-composable-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

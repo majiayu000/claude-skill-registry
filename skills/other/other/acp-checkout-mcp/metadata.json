@@ -1,0 +1,17 @@
+{
+  "name": "acp-checkout-mcp",
+  "repo": "OrcaQubits/agentic-commerce-claude-plugins",
+  "path": "acp-agentic-commerce/skills/acp-checkout-mcp/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OrcaQubits/agentic-commerce-claude-plugins",
+  "dir_name": "acp-checkout-mcp",
+  "downloaded_at": "2026-03-22T06:01:37.622796Z",
+  "author": "OrcaQubits",
+  "source_url": "https://github.com/OrcaQubits/agentic-commerce-claude-plugins/blob/main/acp-agentic-commerce/skills/acp-checkout-mcp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OrcaQubits/agentic-commerce-claude-plugins/blob/main/acp-agentic-commerce/skills/acp-checkout-mcp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

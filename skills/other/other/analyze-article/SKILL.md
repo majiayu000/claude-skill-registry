@@ -1,23 +1,23 @@
 ---
 name: analyze-article
-version: "2.0.0"
-description: >
-  Analyze news articles using LLM to extract insights, categorize content,
-  identify key entities, and assess importance. Stores analysis in memory
-  with links to source articles.
+version: 2.0.0
+description: 'Analyze news articles using LLM to extract insights, categorize content,
+  identify key entities, and assess importance. Stores analysis in memory with links
+  to source articles.
+
+  '
 license: MIT
 allowed-tools:
-  - use_llm                # Strands built-in LLM tool for analysis
-  - memory/get             # Get article from memory
-  - memory/add             # Store analysis results
-  - memory/link            # Link analysis to source article
+- use_llm
+- memory/get
+- memory/add
+- memory/link
 metadata:
-  kubani:
-    domain: news
-    category: analysis
-    requires_approval: false
-    confidence: 0.90
-    version: "2.0.0"
+  domain: news
+  category: analysis
+  requires-approval: false
+  confidence: 0.9
+  mcp-servers: []
 ---
 
 # Analyze Article

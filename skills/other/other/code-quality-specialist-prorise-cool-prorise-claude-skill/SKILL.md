@@ -2,85 +2,43 @@
 description: 提供代码审查、性能分析、重构建议、错误诊断和调试能力。当需要代码质量评估、性能优化、或问题排查时使用。
 name: code-quality-specialist
 ---
-
 # Code Quality Specialist
 
-
 提供代码审查、性能分析、重构建议、错误诊断和调试能力。当需要代码质量评估、性能优化、或问题排查时使用。
 
-## When to Use This Skill
+## Skill Index
 
-提供代码审查、性能分析、重构建议、错误诊断和调试能力。当需要代码质量评估、性能优化、或问题排查时使用。
+<!-- AUTO-GENERATED-SKILL-INDEX:START -->
+以下索引由 `node scripts/update-skill-index.js` 自动生成，用于让 Claude 在顶层专家触发后继续路由到最相关的子技能。
 
-## Capabilities
+### Claude 使用说明
 
-This specialist skill combines the following capabilities:
+1. 先将用户当前任务与每个子技能的 `触发语义` 进行语义匹配，不要只看目录名。
+2. 一旦找到最相关的子技能，立即打开其 `入口文件` 指向的 `SKILL.md`，把它作为下一层入口。
+3. 进入子技能后，再根据该子技能自己的说明按需加载同目录下的 `references/`、`scripts/`、`assets/`，不要在顶层专家中预先展开大段细节。
+4. 如果多个子技能都相关，先加载最贴近主目标的那个，再按需补充其他子技能，避免一次性加载过多上下文。
+5. 下方 `入口文件` 路径相对于项目根目录，可直接用于 `Read` 操作。
 
+### 子技能索引
 
-### Eslint
+#### code-reviewer (1)
+- `code-reviewer`
+  - 触发语义: Expert code reviewer who provides constructive, actionable feedback focused on correctness, maintainability, security, and performance — not style preferences.
+  - 入口文件: `.claude/skills/code-quality-specialist/references/domains/code-reviewer/SKILL.md`
 
-📖 [详细文档](./references/cursor_rules_eslint.md)
+#### review-workflow (1)
+- `review-code`
+  - 触发语义: Multi-dimensional code review with structured reports. Analyzes correctness, readability, performance, security, testing, and architecture. Triggers on "review code", "code review", "审查代码", "代码审查".
+  - 入口文件: `.claude/skills/code-quality-specialist/references/domains/review-workflow/SKILL.md`
 
+#### skill-quality (1)
+- `skill-tuning`
+  - 触发语义: Universal skill diagnosis and optimization tool. Detect and fix skill execution issues including context explosion, long-tail forgetting, data flow disruption, and agent coordination failures. Supports Gemini CLI for deep analysis. Triggers on "skill tuning", "tune skill", "skill diagnosis", "optimize skill", "skill debug".
+  - 入口文件: `.claude/skills/code-quality-specialist/references/domains/skill-quality/tuning/SKILL.md`
 
-### Code Reviewer
+<!-- AUTO-GENERATED-SKILL-INDEX:END -->
 
-必须用于在每次功能、错误修复或拉取请求后进行严格的、具有安全意识的审查。在合并到主分支前应主动使用。它会交付一份完整的、带有严重性标签的报告，并将安全、性能或重度重构问题分派给专业子代理。
+## Notes
 
-
-📖 [详细文档](./references/core_code-reviewer.md)
-
-
-
-### Code Archaeologist
-
-必须用于探索和记录不熟悉、遗留或复杂的代码库。在重构、新成员上手、审计或风险评估前应主动使用。它会生成一份完整的报告——包括架构、指标、风险和一份其他子代理可以执行的优先级行动计划。
-
-
-📖 [详细文档](./references/core_code-archaeologist.md)
-
-
-
-### Performance Optimizer
-
-每当用户报告系统缓慢、云成本高昂或存在扩展问题时，必须使用此代理。在流量高峰来临前应主动使用。它能识别瓶颈，分析工作负载，并应用优化措施，以打造极速系统。
-
-
-📖 [详细文档](./references/core_performance-optimizer.md)
-
-
-
-### Code Refactorer Agent
-
-当您需要改进现有代码结构、可读性或可维护性而无需更改功能时，请使用此代理。这包括清理凌乱的代码、减少重复、改进命名、简化复杂逻辑或重新组织代码以提高清晰度。示例：
-
-
-📖 [详细文档](./references/deployment_refactor-agent.md)
-
-
-
-### Error Detective
-
-搜索日志和代码库中的错误模式、堆栈跟踪和异常。关联跨系统的错误并识别根本原因。在调试问题、分析日志或调查生产错误时主动使用。
-
-
-📖 [详细文档](./references/deployment_error-detective.md)
-
-
-
-### Debugger
-
-错误、测试失败和意外行为的调试专家。在遇到任何问题时主动使用。
-
-
-📖 [详细文档](./references/deployment_debugger.md)
-
-
-
-### Test Results Analyzer
-
-Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights
-
-
-📖 [详细文档](./references/testing_test-results-analyzer.md)
-
-
+- 顶层 `SKILL.md` 仅做索引导航，不承载大体量细节内容。
+- 详细资料下沉到 `references/domains/`，按树形结构组织。

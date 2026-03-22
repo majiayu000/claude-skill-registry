@@ -20,19 +20,16 @@ Turn unstructured input into well-structured Linear tickets.
 
 Look for team configuration in this order (first match wins):
 
-1. `~/.claude/skills/send-to-linear/references/config.local.json`
-2. `~/.agents/skills/send-to-linear/references/config.local.json`
-3. `references/config.json` (bundled defaults, relative to this skill file)
+1. `~/.agents/configs/send-to-linear/config.json` (user overrides)
+2. `references/config.json` (bundled defaults, relative to this skill file)
 
-Use the first `.local` config found. Otherwise fall back to the bundled `config.json`.
+Use the user config if found. Otherwise fall back to the bundled `config.json`.
 
-If no `.local` file exists anywhere AND the bundled config has empty required fields (`team`, `default_assignee`), **stop and prompt the user**:
+If no user config exists AND the bundled config has empty required fields (`team`, `default_assignee`), **stop and prompt the user**:
 
 > No local config found. The bundled `references/config.json` has empty defaults and will be overwritten whenever this skill updates.
 >
-> Create a local override at one of these paths:
-> - `~/.claude/skills/send-to-linear/references/config.local.json`
-> - `~/.agents/skills/send-to-linear/references/config.local.json`
+> Create a user config at: `~/.agents/configs/send-to-linear/config.json`
 >
 > Copy the bundled `references/config.json` as a starting point and fill in your team, project, assignee, labels, and conventions.
 
@@ -40,9 +37,8 @@ If no `.local` file exists anywhere AND the bundled config has empty required fi
 
 Same pattern for the ticket template:
 
-1. `~/.claude/skills/send-to-linear/references/ticket-template.local.md`
-2. `~/.agents/skills/send-to-linear/references/ticket-template.local.md`
-3. `references/ticket-template.md` (bundled default)
+1. `~/.agents/configs/send-to-linear/ticket-template.md` (user overrides)
+2. `references/ticket-template.md` (bundled default)
 
 The template rarely needs customization, so no prompt if only the bundled version exists.
 

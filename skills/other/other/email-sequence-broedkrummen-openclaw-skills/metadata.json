@@ -1,0 +1,17 @@
+{
+  "name": "email-sequence",
+  "repo": "Broedkrummen/openclaw-skills",
+  "path": "skills/marketing-skills/references/email-sequence/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/Broedkrummen/openclaw-skills",
+  "dir_name": "email-sequence-broedkrummen-openclaw-skills",
+  "downloaded_at": "2026-03-22T05:02:30.177557Z",
+  "author": "Broedkrummen",
+  "source_url": "https://github.com/Broedkrummen/openclaw-skills/blob/master/skills/marketing-skills/references/email-sequence/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Broedkrummen/openclaw-skills/blob/master/skills/marketing-skills/references/email-sequence/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

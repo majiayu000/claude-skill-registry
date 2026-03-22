@@ -8,7 +8,7 @@ Follow this guide to implement a responsive frontend feature in `src/Web/BookSto
 1. **Prerequisites**
    - Ensure the API Client exists: `src/Client/BookStore.Client/I{Resource}Client.cs`.
    - Ensure the Shared/Response DTOs exist in `BookStore.Shared`.
-   - if NOT, run `/marten__list_query` (for queries) or `/wolverine__create_operation` (for mutations) first.
+   - if NOT, run `/marten__guide` (for queries) or `/wolverine__guide` (for mutations) first.
 
 1. **Create the Component**
    - Create/Update `src/Web/BookStore.Web/Components/Pages/{Feature}.razor`.
@@ -56,8 +56,8 @@ Follow this guide to implement a responsive frontend feature in `src/Web/BookSto
 
 **Prerequisites**:
 - Backend endpoints must exist first:
-   - `/wolverine__create_operation` - For mutation endpoints
-   - `/marten__list_query` - For query endpoints
+   - `/wolverine__guide` - For mutation endpoints
+   - `/marten__guide` - For query endpoints
 - Client SDK must be configured (usually done by the backend scaffolding skills)
 
 **Next Steps**:
@@ -70,6 +70,6 @@ Follow this guide to implement a responsive frontend feature in `src/Web/BookSto
 
 **See Also**:
 - [real-time-notifications](../../../docs/guides/real-time-notifications.md) - SSE architecture
-- [wolverine__create_operation](../wolverine__create_operation/SKILL.md) - Backend mutations
-- [marten__list_query](../marten__list_query/SKILL.md) - Backend queries
+- [wolverine__guide](../wolverine__guide/SKILL.md) - Backend mutations
+- [marten__guide](../marten__guide/SKILL.md) - Backend queries
 - Web AGENTS.md - ReactiveQuery patterns and SSE integration

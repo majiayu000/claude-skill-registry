@@ -1,19 +1,22 @@
 ---
 name: physics-rendering-expert
-description: Real-time rope/cable physics using Position-Based Dynamics (PBD), Verlet integration, and constraint solvers. Expert in quaternion math, Gauss-Seidel/Jacobi solvers, and tangling detection. Activate on 'rope simulation', 'PBD', 'Position-Based Dynamics', 'Verlet', 'constraint solver', 'quaternion', 'cable dynamics', 'cloth simulation', 'leash physics'. NOT for fluid dynamics (SPH/MPM), fracture simulation (FEM), offline cinematic physics, molecular dynamics, or general game physics engines (use Unity/Unreal built-ins).
+description: Real-time rope/cable physics using Position-Based Dynamics (PBD), Verlet integration, and constraint solvers. Expert in quaternion math, Gauss-Seidel/Jacobi solvers, and tangling detection.
+  Activate on 'rope simulation', 'PBD', 'Position-Based Dynamics', 'Verlet', 'constraint solver', 'quaternion', 'cable dynamics', 'cloth simulation', 'leash physics'. NOT for fluid dynamics (SPH/MPM), fracture
+  simulation (FEM), offline cinematic physics, molecular dynamics, or general game physics engines (use Unity/Unreal built-ins).
 allowed-tools: Read,Write,Edit,Bash,mcp__firecrawl__firecrawl_search,WebFetch
-category: AI & Machine Learning
-tags:
+metadata:
+  category: AI & Machine Learning
+  pairs-with:
+  - skill: metal-shader-expert
+    reason: GPU-accelerated physics rendering
+  - skill: native-app-designer
+    reason: Physics in app animations
+  tags:
   - physics
   - pbd
   - verlet
   - simulation
   - constraints
-pairs-with:
-  - skill: metal-shader-expert
-    reason: GPU-accelerated physics rendering
-  - skill: native-app-designer
-    reason: Physics in app animations
 ---
 
 # Physics & Rendering Expert: Rope Dynamics & Constraint Solving

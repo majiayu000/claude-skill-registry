@@ -2,351 +2,53 @@
 description: 提供后端开发、API 设计、数据库交互和框架特定开发能力。当需要实现后端功能、设计 API 或处理数据层逻辑时使用。
 name: backend-specialist
 ---
-
 # Backend Specialist
 
-
 提供后端开发、API 设计、数据库交互和框架特定开发能力。当需要实现后端功能、设计 API 或处理数据层逻辑时使用。
 
-## When to Use This Skill
+## Skill Index
 
-提供后端开发、API 设计、数据库交互和框架特定开发能力。当需要实现后端功能、设计 API 或处理数据层逻辑时使用。
+<!-- AUTO-GENERATED-SKILL-INDEX:START -->
+以下索引由 `node scripts/update-skill-index.js` 自动生成，用于让 Claude 在顶层专家触发后继续路由到最相关的子技能。
 
-## Capabilities
+### Claude 使用说明
 
-This specialist skill combines the following capabilities:
+1. 先将用户当前任务与每个子技能的 `触发语义` 进行语义匹配，不要只看目录名。
+2. 一旦找到最相关的子技能，立即打开其 `入口文件` 指向的 `SKILL.md`，把它作为下一层入口。
+3. 进入子技能后，再根据该子技能自己的说明按需加载同目录下的 `references/`、`scripts/`、`assets/`，不要在顶层专家中预先展开大段细节。
+4. 如果多个子技能都相关，先加载最贴近主目标的那个，再按需补充其他子技能，避免一次性加载过多上下文。
+5. 下方 `入口文件` 路径相对于项目根目录，可直接用于 `Read` 操作。
 
+### 子技能索引
 
-### Actix Web
+#### backend-architect (1)
+- `backend-architect`
+  - 触发语义: Senior backend architect specializing in scalable system design, database architecture, API development, and cloud infrastructure. Builds robust, secure, performant server-side applications and microservices
+  - 入口文件: `.claude/skills/backend-specialist/references/domains/backend-architect/SKILL.md`
 
-📖 [详细文档](./references/cursor_rules_actix-web.md)
+#### embedded-firmware-engineer (1)
+- `embedded-firmware-engineer`
+  - 触发语义: Specialist in bare-metal and RTOS firmware - ESP32/ESP-IDF, PlatformIO, Arduino, ARM Cortex-M, STM32 HAL/LL, Nordic nRF5/nRF Connect SDK, FreeRTOS, Zephyr
+  - 入口文件: `.claude/skills/backend-specialist/references/domains/embedded-firmware-engineer/SKILL.md`
 
+#### feishu-integration-developer (1)
+- `feishu-integration-developer`
+  - 触发语义: Full-stack integration expert specializing in the Feishu (Lark) Open Platform — proficient in Feishu bots, mini programs, approval workflows, Bitable (multidimensional spreadsheets), interactive message cards, Webhooks, SSO authentication, and workflow automation, building enterprise-grade collaboration and automation solutions within the Feishu ecosystem.
+  - 入口文件: `.claude/skills/backend-specialist/references/domains/feishu-integration-developer/SKILL.md`
 
-### Apollo Client
+#### senior-developer (1)
+- `senior-developer`
+  - 触发语义: Premium implementation specialist - Masters Laravel/Livewire/FluxUI, advanced CSS, Three.js integration
+  - 入口文件: `.claude/skills/backend-specialist/references/domains/senior-developer/SKILL.md`
 
-📖 [详细文档](./references/cursor_rules_apollo-client.md)
+#### solidity-smart-contract-engineer (1)
+- `solidity-smart-contract-engineer`
+  - 触发语义: Expert Solidity developer specializing in EVM smart contract architecture, gas optimization, upgradeable proxy patterns, DeFi protocol development, and security-first contract design across Ethereum and L2 chains.
+  - 入口文件: `.claude/skills/backend-specialist/references/domains/solidity-smart-contract-engineer/SKILL.md`
 
+<!-- AUTO-GENERATED-SKILL-INDEX:END -->
 
-### Apollo Graphql
+## Notes
 
-📖 [详细文档](./references/cursor_rules_apollo-graphql.md)
-
-
-### Asp Net
-
-📖 [详细文档](./references/cursor_rules_asp-net.md)
-
-
-### Bash
-
-📖 [详细文档](./references/cursor_rules_bash.md)
-
-
-### Bottle
-
-📖 [详细文档](./references/cursor_rules_bottle.md)
-
-
-### Bun
-
-📖 [详细文档](./references/cursor_rules_bun.md)
-
-
-### C Sharp
-
-📖 [详细文档](./references/cursor_rules_c-sharp.md)
-
-
-### Databricks
-
-📖 [详细文档](./references/cursor_rules_databricks.md)
-
-
-### Discord Api
-
-📖 [详细文档](./references/cursor_rules_discord-api.md)
-
-
-### Django
-
-📖 [详细文档](./references/cursor_rules_django.md)
-
-
-### Django Orm
-
-📖 [详细文档](./references/cursor_rules_django-orm.md)
-
-
-### Django Rest Framework
-
-📖 [详细文档](./references/cursor_rules_django-rest-framework.md)
-
-
-### Emacs
-
-📖 [详细文档](./references/cursor_rules_emacs.md)
-
-
-### Express
-
-📖 [详细文档](./references/cursor_rules_express.md)
-
-
-### Fastapi
-
-📖 [详细文档](./references/cursor_rules_fastapi.md)
-
-
-### Ffmpeg
-
-📖 [详细文档](./references/cursor_rules_ffmpeg.md)
-
-
-### Fiber
-
-📖 [详细文档](./references/cursor_rules_fiber.md)
-
-
-### Flask
-
-📖 [详细文档](./references/cursor_rules_flask.md)
-
-
-### Flask Restful
-
-📖 [详细文档](./references/cursor_rules_flask-restful.md)
-
-
-### Git
-
-📖 [详细文档](./references/cursor_rules_git.md)
-
-
-### Godot
-
-📖 [详细文档](./references/cursor_rules_godot.md)
-
-
-### Graphql
-
-📖 [详细文档](./references/cursor_rules_graphql.md)
-
-
-### Insomnia
-
-📖 [详细文档](./references/cursor_rules_insomnia.md)
-
-
-### Laravel
-
-📖 [详细文档](./references/cursor_rules_laravel.md)
-
-
-### Microsoft Teams
-
-📖 [详细文档](./references/cursor_rules_microsoft-teams.md)
-
-
-### Nestjs
-
-📖 [详细文档](./references/cursor_rules_nestjs.md)
-
-
-### Nginx
-
-📖 [详细文档](./references/cursor_rules_nginx.md)
-
-
-### Notion Api
-
-📖 [详细文档](./references/cursor_rules_notion-api.md)
-
-
-### Phoenix
-
-📖 [详细文档](./references/cursor_rules_phoenix.md)
-
-
-### Php
-
-📖 [详细文档](./references/cursor_rules_php.md)
-
-
-### Postman
-
-📖 [详细文档](./references/cursor_rules_postman.md)
-
-
-### Pyramid
-
-📖 [详细文档](./references/cursor_rules_pyramid.md)
-
-
-### Rocket
-
-📖 [详细文档](./references/cursor_rules_rocket.md)
-
-
-### Ros
-
-📖 [详细文档](./references/cursor_rules_ros.md)
-
-
-### Ruby
-
-📖 [详细文档](./references/cursor_rules_ruby.md)
-
-
-### Sanic
-
-📖 [详细文档](./references/cursor_rules_sanic.md)
-
-
-### Servemux
-
-📖 [详细文档](./references/cursor_rules_servemux.md)
-
-
-### Solidity
-
-📖 [详细文档](./references/cursor_rules_solidity.md)
-
-
-### Spring
-
-📖 [详细文档](./references/cursor_rules_spring.md)
-
-
-### Springboot
-
-📖 [详细文档](./references/cursor_rules_springboot.md)
-
-
-### Stripe
-
-📖 [详细文档](./references/cursor_rules_stripe.md)
-
-
-### Tornado
-
-📖 [详细文档](./references/cursor_rules_tornado.md)
-
-
-### Unity
-
-📖 [详细文档](./references/cursor_rules_unity.md)
-
-
-### Unreal Engine
-
-📖 [详细文档](./references/cursor_rules_unreal-engine.md)
-
-
-### Vim
-
-📖 [详细文档](./references/cursor_rules_vim.md)
-
-
-### Zsh
-
-📖 [详细文档](./references/cursor_rules_zsh.md)
-
-
-### Backend Architect
-
-在设计 API、构建服务器端逻辑、设计数据模式、实现数据库或构建可扩展的后端系统时使用此代理。该代理专注于创建健壮、安全和高性能的后端服务。示例：\n\n<example>\n背景：设计一个新的 API
-
-
-📖 [详细文档](./references/engineering_backend_backend-architect.md)
-
-
-
-### Ai Engineer
-
-在实施 AI/ML 功能、集成语言模型、构建推荐系统或向应用程序添加智能自动化时使用此代理。该代理专注于为快速部署而进行的实用性 AI 实施。示例：\n\n<example>\n背景：向应用添加 AI 功能
-
-
-📖 [详细文档](./references/engineering_backend_ai-engineer.md)
-
-
-
-### Backend Developer
-
-每当需要编写、扩展或重构服务器端代码，且不存在特定于框架的子代理时，就必须使用此功能。应积极使用它来在任何语言或架构中交付可投入生产的功能，自动检测项目技术并遵循最佳实践模式。
-
-
-📖 [详细文档](./references/universal_backend-developer.md)
-
-
-
-### Django Backend Expert
-
-Expert Django backend developer specializing in models, views, services, and Django-specific implementations. MUST BE USED for Django backend development tasks. Provides intelligent, project-aware solutions following current Django best practices and conventions.
-
-
-📖 [详细文档](./references/specialized_django_django-backend-expert.md)
-
-
-
-### Django Api Developer
-
-Expert Django API developer specializing in Django REST Framework and GraphQL. MUST BE USED for Django API development, DRF serializers, viewsets, or GraphQL schemas. Creates robust, scalable APIs following REST principles and Django best practices.
-
-
-📖 [详细文档](./references/specialized_django_django-api-developer.md)
-
-
-
-### Django Orm Expert
-
-Expert in Django ORM optimization, complex queries, and database performance. Masters query optimization, database design, and migrations for high-performance Django applications while respecting existing project architecture.
-
-
-📖 [详细文档](./references/specialized_django_django-orm-expert.md)
-
-
-
-### Laravel Backend Expert
-
-Laravel backend specialist for any Laravel architecture. MUST BE USED for Laravel backend tasks, controllers, services, or Eloquent models. Handles traditional MVC, Inertia.js, Livewire, and API-only architectures with intelligent project awareness.
-
-
-📖 [详细文档](./references/specialized_laravel_laravel-backend-expert.md)
-
-
-
-### Laravel Eloquent Expert
-
-Specialized in Laravel’s Eloquent ORM—designing schemas & migrations, modeling complex relationships, writing efficient queries, and tuning database performance. **MUST BE USED** whenever your task to
-
-
-📖 [详细文档](./references/specialized_laravel_laravel-eloquent-expert.md)
-
-
-
-### Rails Backend Expert
-
-Comprehensive Rails backend developer with expertise in all aspects of Ruby on Rails development. MUST BE USED for Rails backend tasks, ActiveRecord models, controllers, or any Rails-specific implemen
-
-
-📖 [详细文档](./references/specialized_rails_rails-backend-expert.md)
-
-
-
-### Rails Api Developer
-
-Expert Rails API developer specializing in RESTful APIs and GraphQL. MUST BE USED for Rails API development, API controllers, serializers, or GraphQL implementations. Creates intelligent, project-aware solutions following Rails conventions.
-
-
-📖 [详细文档](./references/specialized_rails_rails-api-developer.md)
-
-
-
-### Rails Activerecord Expert
-
-Expert in Rails ActiveRecord optimization, complex queries, and database performance. Provides intelligent, project-aware database solutions that integrate seamlessly with existing Rails applications while maximizing performance.
-
-
-📖 [详细文档](./references/specialized_rails_rails-activerecord-expert.md)
-
-
+- 顶层 `SKILL.md` 仅做索引导航，不承载大体量细节内容。
+- 详细资料下沉到 `references/domains/`，按树形结构组织。

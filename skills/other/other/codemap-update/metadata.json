@@ -1,0 +1,17 @@
+{
+  "name": "codemap-update",
+  "repo": "cagan/rn-todo-app",
+  "path": ".claude/skills/codemap-update/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cagan/rn-todo-app",
+  "dir_name": "codemap-update",
+  "downloaded_at": "2026-03-22T07:22:43.286833Z",
+  "author": "cagan",
+  "source_url": "https://github.com/cagan/rn-todo-app/blob/main/.claude/skills/codemap-update/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cagan/rn-todo-app/blob/main/.claude/skills/codemap-update/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

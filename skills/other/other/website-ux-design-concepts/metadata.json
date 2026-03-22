@@ -1,0 +1,17 @@
+{
+  "name": "website-ux-design-concepts",
+  "repo": "bjornslib/cobuilder-harness",
+  "path": ".claude/skills/website-ux-design-concepts/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/bjornslib/cobuilder-harness",
+  "dir_name": "website-ux-design-concepts",
+  "downloaded_at": "2026-03-22T07:15:40.384359Z",
+  "author": "bjornslib",
+  "source_url": "https://github.com/bjornslib/cobuilder-harness/blob/main/.claude/skills/website-ux-design-concepts/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bjornslib/cobuilder-harness/blob/main/.claude/skills/website-ux-design-concepts/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

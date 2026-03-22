@@ -1,0 +1,17 @@
+{
+  "name": "excalidraw-diagram",
+  "repo": "Bosh-Kuo/awesome-agent-toolkit",
+  "path": "skills/excalidraw-diagram/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Bosh-Kuo/awesome-agent-toolkit",
+  "dir_name": "excalidraw-diagram",
+  "downloaded_at": "2026-03-22T05:01:22.266401Z",
+  "author": "Bosh-Kuo",
+  "source_url": "https://github.com/Bosh-Kuo/awesome-agent-toolkit/blob/main/skills/excalidraw-diagram/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Bosh-Kuo/awesome-agent-toolkit/blob/main/skills/excalidraw-diagram/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

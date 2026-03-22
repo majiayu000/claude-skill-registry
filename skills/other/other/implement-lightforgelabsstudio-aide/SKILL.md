@@ -14,6 +14,7 @@ Issue number (`gh issue view <n>`) or pasted spec text. If no spec exists, use `
 ## Review-aware
 
 Before starting: check if `<issue-slug>.findings.md` exists. If it does, read it and incorporate findings before proceeding.
+If CI or a test is red, compare against `main` and inspect the full PR commit range before classifying the failure. If the failure appears anywhere in the PR range, treat it as branch-owned and fix it in this PR.
 
 ## Before touching code
 

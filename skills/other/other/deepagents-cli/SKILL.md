@@ -1,18 +1,17 @@
 ---
 name: deepagents-cli
 description: |
-  Deep Agents CLI reference and usage guide. Use when the user wants to:
-  (1) Launch or configure the deepagents terminal coding assistant,
-  (2) Set up interactive or non-interactive (automation/CI) agent sessions,
-  (3) Manage agent memory, skills, or AGENTS.md context files,
-  (4) Configure LLM providers, models, or sandbox execution environments,
-  (5) Build scripted workflows or subagent patterns with deepagents.
-compatibility: Designed for Claude (Claude Code, Claude Desktop, claude.ai)
+  Deep Agents CLI — the LangGraph-based terminal coding agent. Use this skill whenever the user mentions deepagents, deep agents, the deep agents CLI, terminal coding agent, LangGraph agent, or asks about agent memory, agent skills, AGENTS.md, coding assistants in the terminal, or building scripted/CI agent workflows.
+  Covers: interactive and non-interactive sessions, 20+ LLM providers, model configuration, skills, persistent memory, sandboxed execution, subagents, streaming, and the Agent Client Protocol.
 ---
 
 # Deep Agents CLI
 
 Terminal coding agent with persistent memory, skills, sandboxed execution, and 20+ LLM providers. Built on LangGraph. See the [official overview](https://docs.langchain.com/oss/python/deepagents/overview) and [CLI guide](https://docs.langchain.com/oss/python/deepagents/cli/overview).
+
+> **Routing:** This file covers quick start, core concepts, and common workflows. For deeper details, read the appropriate reference file: CLI flags and shortcuts → `references/cli-reference.md` | Models and providers → `references/providers.md` | Skills → `references/skills-system.md` | Memory → `references/memory-and-persistence.md` | Sandboxes → `references/sandboxes.md` | SDK/programmatic usage → `references/sdk-customization.md` | Automation/CI → `references/workflows.md` | Streaming → `references/streaming.md` | Editor integrations → `references/acp.md`
+
+> **Note:** All official documentation content is included in the local reference files. Only fetch external URLs if the local content appears inaccurate or incomplete.
 
 ## Quick Start
 
@@ -37,10 +36,10 @@ deepagents -r
 
 ### Agents = Isolated Personas
 
-Each agent has its own memory, skills, and AGENTS.md context file:
+Each agent has its own memory, skills, and AGENTS.md context file (`default` agent shown; use `-a <name>` for named agents):
 
 ```
-~/.deepagents/<agent_name>/
+~/.deepagents/default/
 ├── AGENTS.md          # Always-loaded context (preferences, conventions)
 ├── memories/          # Auto-saved topic memories
 └── skills/            # User-level skills

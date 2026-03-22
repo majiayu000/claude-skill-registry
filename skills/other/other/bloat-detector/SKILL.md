@@ -19,6 +19,7 @@ tools:
 modules:
 - quick-scan
 - git-history-analysis
+- growth-analysis
 - code-bloat-patterns
 - ai-generated-bloat
 - documentation-bloat
@@ -105,6 +106,7 @@ Priority = (Token_Savings × 0.4) + (Maintenance × 0.3) + (Confidence × 0.2) +
 **Tier 1** (always available):
 - See `modules/quick-scan.md` - Heuristics, no tools
 - See `modules/git-history-analysis.md` - Staleness, churn, vibe coding signatures
+- See `modules/growth-analysis.md` - Growth velocity, forecasts, threshold alerts
 
 **Tier 2** (optional tools):
 - See `modules/code-bloat-patterns.md` - Anti-patterns (God class, Lava flow)

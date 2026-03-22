@@ -1,6 +1,6 @@
 ---
 name: sabx
-version: 1.0.0
+version: 1.0.1
 description: Control SABnzbd download manager via CLI. Use when users need to check download queue/history, add NZBs, manage priorities, control speed limits, pause/resume downloads, configure RSS feeds, run scheduled tasks, or automate Usenet workflows. Triggers include "sabnzbd", "sabx", "downloads", "nzb", "usenet", "download queue", "download status".
 metadata:
   short-description: SABnzbd CLI for download automation
@@ -137,6 +137,28 @@ sabx --profile server queue list
 # Environment overrides
 SABX_BASE_URL=http://alt:8080 SABX_API_KEY=xxx sabx status
 ```
+
+## Troubleshooting
+
+### Connection refused
+- Verify SABnzbd is running: check the web UI at the configured base URL
+- Re-run `sabx login` if the base URL changed
+- Check firewall rules if connecting to a remote instance
+
+### Authentication failed
+- Re-authenticate: `sabx login --base-url <url> --api-key <key>`
+- API key may have been regenerated in SABnzbd settings
+- Try `sabx status` to test connectivity
+
+### NZO ID not found
+- The item may have been removed from queue or completed to history
+- Re-check with `sabx queue list` or `sabx history list`
+- NZO IDs change if SABnzbd is restarted
+
+### Rate limit / timeout
+- SABnzbd may be busy with post-processing; wait and retry
+- Check `sabx status --full --performance` for system load
+- Reduce concurrent operations if running batch commands
 
 ## References
 

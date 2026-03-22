@@ -2,8 +2,16 @@
   "name": "tufte-data-viz",
   "repo": "caylent/tufte-data-viz",
   "path": "SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/caylent/tufte-data-viz",
   "dir_name": "tufte-data-viz",
-  "downloaded_at": "2026-02-22T06:39:58.656052Z"
+  "downloaded_at": "2026-03-22T07:25:29.400511Z",
+  "author": "caylent",
+  "source_url": "https://github.com/caylent/tufte-data-viz/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/caylent/tufte-data-viz/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

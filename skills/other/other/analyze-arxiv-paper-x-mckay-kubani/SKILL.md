@@ -1,37 +1,37 @@
 ---
 name: analyze-arxiv-paper
-description: >
-  Deep analysis of an arXiv research paper for inclusion in news digest research
-  deep-dives. Extracts key contributions, methodology, results, limitations, and
-  generates a practitioner-focused summary with potential impacts.
+description: 'Deep analysis of an arXiv research paper for inclusion in news digest
+  research deep-dives. Extracts key contributions, methodology, results, limitations,
+  and generates a practitioner-focused summary with potential impacts.
+
+  '
 license: MIT
 compatibility: Requires OpenAI-compatible LLM API access
 metadata:
-  kubani:
-    domain: news
-    category: diagnostic
-    version: "1.1.0"
-    mcp_servers: []
-    requires_approval: false
-    confidence: 0.85
+  domain: news
+  category: diagnostic
+  requires-approval: false
+  confidence: 0.85
+  mcp-servers: []
 input:
-  - name: paper
-    type: ArxivPaper
-    description: Paper with arxiv_id, title, authors, abstract, categories, pdf_url
-  - name: analysis_depth
-    type: str
-    default: "standard"
-    description: '"standard" for digest inclusion, "deep" for featured research spotlight'
+- name: paper
+  type: ArxivPaper
+  description: Paper with arxiv_id, title, authors, abstract, categories, pdf_url
+- name: analysis_depth
+  type: str
+  default: standard
+  description: '"standard" for digest inclusion, "deep" for featured research spotlight'
 output:
-  - name: analysis
-    type: PaperAnalysis
-    description: Comprehensive paper analysis with summary, key findings, and impact assessment
-  - name: digest_worthy
-    type: bool
-    description: Whether paper is noteworthy enough for digest inclusion
-  - name: spotlight_candidate
-    type: bool
-    description: Whether paper deserves a featured research deep-dive
+- name: analysis
+  type: PaperAnalysis
+  description: Comprehensive paper analysis with summary, key findings, and impact
+    assessment
+- name: digest_worthy
+  type: bool
+  description: Whether paper is noteworthy enough for digest inclusion
+- name: spotlight_candidate
+  type: bool
+  description: Whether paper deserves a featured research deep-dive
 ---
 
 # Analyze ArXiv Paper

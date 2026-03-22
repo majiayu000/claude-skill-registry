@@ -1,0 +1,17 @@
+{
+  "name": "amplemarket-org-chart",
+  "repo": "amplemarket/skills",
+  "path": "skills/amplemarket-org-chart/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/amplemarket/skills",
+  "dir_name": "amplemarket-org-chart",
+  "downloaded_at": "2026-03-22T06:54:12.945062Z",
+  "author": "amplemarket",
+  "source_url": "https://github.com/amplemarket/skills/blob/master/skills/amplemarket-org-chart/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amplemarket/skills/blob/master/skills/amplemarket-org-chart/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

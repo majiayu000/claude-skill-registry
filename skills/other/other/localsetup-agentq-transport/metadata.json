@@ -1,0 +1,17 @@
+{
+  "name": "localsetup-agentq-transport",
+  "repo": "cptnfren/localsetup",
+  "path": "_localsetup/skills/localsetup-agentq-transport/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cptnfren/localsetup",
+  "dir_name": "localsetup-agentq-transport",
+  "downloaded_at": "2026-03-22T07:35:02.696378Z",
+  "author": "cptnfren",
+  "source_url": "https://github.com/cptnfren/localsetup/blob/main/_localsetup/skills/localsetup-agentq-transport/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cptnfren/localsetup/blob/main/_localsetup/skills/localsetup-agentq-transport/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

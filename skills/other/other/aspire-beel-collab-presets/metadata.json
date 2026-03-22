@@ -1,0 +1,17 @@
+{
+  "name": "aspire",
+  "repo": "beel-collab/presets",
+  "path": "dotnet/aspire/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/beel-collab/presets",
+  "dir_name": "aspire-beel-collab-presets",
+  "downloaded_at": "2026-03-22T07:11:53.612126Z",
+  "author": "beel-collab",
+  "source_url": "https://github.com/beel-collab/presets/blob/main/dotnet/aspire/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/beel-collab/presets/blob/main/dotnet/aspire/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "doc-coauthoring",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills/doc-coauthoring/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "doc-coauthoring-enuno-claude-command-and-c",
+  "downloaded_at": "2026-03-22T07:57:10.203165Z",
+  "author": "enuno",
+  "source_url": "https://github.com/enuno/claude-command-and-control/blob/main/skills/doc-coauthoring/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enuno/claude-command-and-control/blob/main/skills/doc-coauthoring/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

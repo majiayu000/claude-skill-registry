@@ -1,0 +1,17 @@
+{
+  "name": "gen-pdf",
+  "repo": "antoniolg/agent-kit",
+  "path": "skills/gen-pdf/gen-pdf/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/antoniolg/agent-kit",
+  "dir_name": "gen-pdf-antoniolg-agent-kit",
+  "downloaded_at": "2026-03-22T06:59:17.923364Z",
+  "author": "antoniolg",
+  "source_url": "https://github.com/antoniolg/agent-kit/blob/main/skills/gen-pdf/gen-pdf/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/antoniolg/agent-kit/blob/main/skills/gen-pdf/gen-pdf/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

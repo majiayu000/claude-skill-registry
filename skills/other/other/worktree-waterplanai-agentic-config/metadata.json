@@ -1,0 +1,17 @@
+{
+  "name": "worktree",
+  "repo": "WaterplanAI/agentic-config",
+  "path": "plugins/ac-git/skills/worktree/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/WaterplanAI/agentic-config",
+  "dir_name": "worktree-waterplanai-agentic-config",
+  "downloaded_at": "2026-03-22T06:30:07.372509Z",
+  "author": "WaterplanAI",
+  "source_url": "https://github.com/WaterplanAI/agentic-config/blob/main/plugins/ac-git/skills/worktree/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WaterplanAI/agentic-config/blob/main/plugins/ac-git/skills/worktree/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

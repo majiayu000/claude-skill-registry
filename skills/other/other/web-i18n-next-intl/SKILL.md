@@ -178,7 +178,7 @@ Wrap the application with NextIntlClientProvider and validate the locale.
 // src/app/[locale]/layout.tsx
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
 
 type Props = {
@@ -198,18 +198,23 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
   setRequestLocale(locale);
+  const messages = await getMessages();
 
   return (
     <html lang={locale}>
       <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
 }
 ```
 
-**Why good:** validates locale and returns 404 for invalid locales, setRequestLocale enables static rendering, generateStaticParams pre-renders all locale variants, html lang attribute improves accessibility
+**Why good:** validates locale and returns 404 for invalid locales, setRequestLocale enables static rendering, generateStaticParams pre-renders all locale variants, explicit messages prop ensures Client Components receive translations, html lang attribute improves accessibility
+
+> **Note:** In next-intl v4.0+, `NextIntlClientProvider` auto-inherits messages from server config. Passing `messages` explicitly is optional but recommended for clarity.
 
 ---
 
@@ -573,23 +578,48 @@ export default async function HomePage({ params }: Props) {
 
 <integration>
 
-## Integration Guide
+## Integration Notes
 
-**next-intl is routing and rendering-aware.** It integrates with Next.js App Router patterns for SSR, SSG, and client-side navigation.
-
-**Works with:**
-
-- **Next.js App Router**: Designed specifically for App Router with Server Components support
-- **Next.js Metadata API**: Use getTranslations in generateMetadata for localized SEO
-- **Next.js Static Generation**: generateStaticParams + setRequestLocale enables SSG
-
-**Component State Guidance:**
-
-- Use Server Components for initial translation loading (better performance)
-- Use Client Components with NextIntlClientProvider for interactive locale switching
-- Locale state is managed by next-intl - use useLocale() to read it
+- **Server Components first**: Load translations in Server Components for performance; use `useTranslations` (sync) or `getTranslations` (async)
+- **Client Components**: Wrap with `NextIntlClientProvider` for hooks access; locale switching and interactive features live here
+- **Locale state**: Managed entirely by next-intl - read with `useLocale()`, never store separately
 
 </integration>
+
+---
+
+<red_flags>
+
+## RED FLAGS
+
+**High Priority Issues:**
+
+- Missing `setRequestLocale(locale)` in page/layout components -- breaks static rendering
+- Not awaiting `params` in App Router -- params is a Promise in Next.js 15+, causes runtime errors
+- Missing `NextIntlClientProvider` in root layout -- Client Components cannot access translations
+- Hardcoded locale strings -- use named constants from routing.ts
+- Not validating locale against `routing.locales` -- invalid locales cause cryptic errors
+- Using `middleware.ts` on Next.js 16+ -- must rename to `proxy.ts`
+
+**Medium Priority Issues:**
+
+- Missing `generateStaticParams` for static routes -- forces dynamic rendering
+- Using `t()` instead of `t.rich()` for messages with markup -- returns string, not ReactNode
+- Missing namespace in `useTranslations` -- all keys become global, conflicts likely
+- Using `useTranslations` in `generateMetadata` -- use `getTranslations` instead
+
+**Gotchas & Edge Cases:**
+
+- `setRequestLocale(locale)` must be called at the TOP of components, before any hooks
+- `generateMetadata` runs outside the component tree -- requires explicit locale param to `getTranslations`
+- `t.rich()` tag functions receive `chunks` (ReactNode[]), not a single element
+- `useNow()` only updates on client -- SSR shows initial value until hydration
+- v4.0+ GDPR cookie changes: locale cookies now expire when browser closes and are only set when user switches locale
+- Next.js 16: `proxy.ts` runs on Node.js runtime, not Edge
+
+> For full anti-patterns with code examples, see [reference.md](reference.md).
+
+</red_flags>
 
 ---
 

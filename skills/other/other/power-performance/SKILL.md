@@ -39,10 +39,26 @@ void sleep_spi(void) {
 - **Aggressive Suspend**: Transition peripherals to low-power states as soon as their transaction is complete.
 - **ITCM/DTCM**: Use Tightly Coupled Memory for time-critical control loops to avoid Flash latency.
 - **Runtime Monitoring**: Always enable the thread analyzer during development to find the "RAM floor" for your application.
-- **Coordinated Sleep**: To coordinate sleep across modules, see **[Zbus](../kernel-services/references/zbus.md)** for event-driven power management.
+- **Coordinated Sleep**: To coordinate sleep across modules, see **[kernel-services](../kernel-services/SKILL.md)** for Zbus-based event-driven power management.
+
+## Automation Tools
+- **[power_budget_estimator.py](scripts/power_budget_estimator.py)**: Estimate average current and battery life from duty-cycle state data.
+
+## Examples & Templates
+- **[power_budget_template.csv](assets/power_budget_template.csv)**: Starter power-state budget sheet for battery-life estimation.
+
+## Validation Checklist
+- [ ] Target peripherals enter and exit suspend/resume states without functional regressions.
+- [ ] Measured idle and active power align with expected optimization deltas.
+- [ ] Thread analyzer and map data confirm stack/RAM budgets are within limits.
+- [ ] Relocated time-critical functions execute from intended memory region.
 
 ## Resources
 
 - **[References](references/)**:
   - `power_management.md`: System states, device PM, and hooks.
   - `performance_tuning.md`: Optimization strategies and relocation.
+- **[Scripts](scripts/)**:
+  - `power_budget_estimator.py`: Duty-cycle based battery-life estimator.
+- **[Assets](assets/)**:
+  - `power_budget_template.csv`: Initial state/current budget template.

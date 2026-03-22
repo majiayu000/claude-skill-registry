@@ -48,6 +48,18 @@ while (1) {
 - **Zero-Pop Audio**: Always use volume ramping when starting or stopping I2S streams to protect hardware and improve user experience.
 - **Bitmask Health Monitoring**: Use a bitmask to track the health of all background threads; the watchdog monitor only feeds the timer if ALL bits are set periodically.
 
+## Automation Tools
+- **[watchdog_window_check.py](scripts/watchdog_window_check.py)**: Verify feed interval timing against watchdog window constraints.
+
+## Examples & Templates
+- **[watchdog_health_map_template.h](assets/watchdog_health_map_template.h)**: Starter health-bit definitions for watchdog supervision.
+
+## Validation Checklist
+- [ ] GUI render loop maintains target frame behavior without starving control tasks.
+- [ ] I2S audio stream starts/stops without underruns or audible artifacts.
+- [ ] Watchdog feed policy resets the system when health criteria are not met.
+- [ ] Fault-injection scenarios produce expected reset reason and recovery behavior.
+
 ## Resources
 
 - **[References](references/)**:
@@ -55,3 +67,7 @@ while (1) {
   - `audio_i2s.md`: Audio streaming and DMA patterns.
   - `watchdog_reliability.md`: Watchdog setup and health checks.
   - `fault_injection.md`: System resilience and chaos testing.
+- **[Scripts](scripts/)**:
+  - `watchdog_window_check.py`: Feed-window timing checker.
+- **[Assets](assets/)**:
+  - `watchdog_health_map_template.h`: Health-mask template header.

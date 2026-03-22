@@ -1,12 +1,23 @@
 ---
 name: hipaa-compliance
-description: Ensure HIPAA compliance when handling PHI (Protected Health Information). Use when writing code that accesses user health data, check-ins, journal entries, or any sensitive information. Activates for audit logging, data access, security events, and compliance questions.
+description: Ensure HIPAA compliance when handling PHI (Protected Health Information). Use when writing code that accesses user health data, check-ins, journal entries, or any sensitive information. Activates
+  for audit logging, data access, security events, and compliance questions.
 allowed-tools: Read,Write,Edit
-category: Code Quality & Testing
-tags:
+metadata:
+  category: Code Quality & Testing
+  tags:
   - hipaa
   - compliance
   - security
+  pairs-with:
+  - skill: recovery-app-legal-terms
+    reason: HIPAA requirements directly inform privacy policy and terms of service content for health apps
+  - skill: security-auditor
+    reason: HIPAA technical safeguards overlap with security vulnerability scanning and access controls
+  - skill: recovery-social-features
+    reason: Social features handling health data must comply with HIPAA privacy and consent rules
+  - skill: crisis-response-protocol
+    reason: Crisis responses involving health disclosures must follow HIPAA breach notification rules
 ---
 
 # HIPAA Compliance for Recovery Coach

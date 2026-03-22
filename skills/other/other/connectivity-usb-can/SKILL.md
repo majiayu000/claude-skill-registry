@@ -38,8 +38,24 @@ void main(void) {
 - **Hardware Filtering**: Rely on the CAN controller's hardware filters to minimize CPU overhead from irrelevant bus traffic.
 - **Thread Safety**: Use Zephyr's kernel IPCs (`k_msgq`, `k_fifo`) to safely move data between high-priority CAN interrupts and the USB processing thread.
 
+## Automation Tools
+- **[can_filter_lint.py](scripts/can_filter_lint.py)**: Validate CAN filter ID/mask tables from CSV.
+
+## Examples & Templates
+- **[can_filters_template.csv](assets/can_filters_template.csv)**: Starter CAN filter table for adapter firmware.
+
+## Validation Checklist
+- [ ] USB enumeration succeeds and the host sees the expected class interface.
+- [ ] CAN frames can be transmitted and received on a known-good test bus.
+- [ ] Bridge buffering prevents frame loss under burst traffic conditions.
+- [ ] Protocol framing between USB endpoint and CAN payload is decoded consistently on both sides.
+
 ## Resources
 
 - **[References](references/)**:
   - `usb_device_stack.md`: Configuring USB classes and descriptors.
   - `usb_to_can.md`: Adapter patterns and buffering strategies.
+- **[Scripts](scripts/)**:
+  - `can_filter_lint.py`: CAN filter table consistency checker.
+- **[Assets](assets/)**:
+  - `can_filters_template.csv`: Sample filter definitions.

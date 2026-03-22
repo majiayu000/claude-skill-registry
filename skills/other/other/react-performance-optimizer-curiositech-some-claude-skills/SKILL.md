@@ -1,7 +1,24 @@
 ---
 name: react-performance-optimizer
-description: Optimize React apps for 60fps performance. Implements memoization, virtualization, code splitting, bundle optimization. Use for slow renders, large lists, bundle bloat. Activate on "React performance", "slow render", "useMemo", "bundle size", "virtualization". NOT for backend optimization, non-React frameworks, or premature optimization.
+description: Optimize React apps for 60fps performance. Implements memoization, virtualization, code splitting, bundle optimization. Use for slow renders, large lists, bundle bloat. Activate on "React performance",
+  "slow render", "useMemo", "bundle size", "virtualization". NOT for backend optimization, non-React frameworks, or premature optimization.
 allowed-tools: Read,Write,Edit,Bash(npm:*)
+metadata:
+  tags:
+  - react
+  - performance
+  - optimizer
+  - react-performance
+  - slow-render
+  pairs-with:
+  - skill: performance-profiling
+    reason: React profiling tools identify the re-render bottlenecks that optimization addresses
+  - skill: nextjs-app-router-expert
+    reason: RSC and streaming SSR in Next.js require React-specific performance strategies
+  - skill: data-viz-2025
+    reason: Data-heavy visualizations require React memoization and virtualization for smooth rendering
+  - skill: reactive-dashboard-performance
+    reason: Dashboard widgets with real-time data need the same React optimization patterns
 ---
 
 # React Performance Optimizer

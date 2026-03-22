@@ -10,9 +10,12 @@ token_budget: 150
 progressive_loading: true
 modules:
 - modules/context-waiting.md
+- modules/findings-format.md
 - modules/mecw-assessment.md
 - modules/mecw-principles.md
 - modules/mecw-theory.md
+- modules/memory-tiers.md
+- modules/session-routing.md
 - modules/subagent-coordination.md
 hooks:
   PreToolUse:

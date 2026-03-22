@@ -2,8 +2,16 @@
   "name": "dotnet",
   "repo": "Blackhorse311/BotMind",
   "path": ".claude/skills/dotnet/SKILL.md",
+  "github_branch": "master",
   "category": "other",
   "source": "github.com/Blackhorse311/BotMind",
   "dir_name": "dotnet-blackhorse311-botmind",
-  "downloaded_at": "2026-02-22T04:48:25.355030Z"
+  "downloaded_at": "2026-03-22T05:00:27.113722Z",
+  "author": "Blackhorse311",
+  "source_url": "https://github.com/Blackhorse311/BotMind/blob/master/.claude/skills/dotnet/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Blackhorse311/BotMind/blob/master/.claude/skills/dotnet/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

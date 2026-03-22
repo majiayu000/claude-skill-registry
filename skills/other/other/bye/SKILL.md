@@ -22,10 +22,10 @@ compatibility: Designed for Claude Code and Cursor
 
 **Nothing proceeds until full history is reconstructed.** Context compaction hides earlier work — you must recover it or the sessionlog will be incomplete.
 
-1. Use a subagent to analyze the session file (see [subagent-tasks.md](./subagent-tasks.md))
+1. Use a subagent to analyze the session file (see [subagent-tasks.md](${CLAUDE_SKILL_DIR}/subagent-tasks.md))
 2. Follow the tool-specific restoration guide:
-   - **Claude Code:** [claude-code-session-restoration.md](./claude-code-session-restoration.md)
-   - **Cursor:** [cursor-session-restoration.md](./cursor-session-restoration.md)
+   - **Claude Code:** [claude-code-session-restoration.md](${CLAUDE_SKILL_DIR}/claude-code-session-restoration.md)
+   - **Cursor:** [cursor-session-restoration.md](${CLAUDE_SKILL_DIR}/cursor-session-restoration.md)
 3. Combine restored history with current context before continuing
 
 If restoration finds **no prior work beyond current context**, proceed — but log that restoration was attempted.
@@ -60,7 +60,7 @@ After restoring history, classify the session:
    | Plan execution with deviations or partial completion | **Create** | Plan-vs-reality delta is valuable |
 
    If skipping, note `**Sessionlog:** Skipped — [reason]` in the final summary.
-4. **Sessionlog** — check if a sessionlog directory exists (see [sessionlog-template.md](./sessionlog-template.md)). If no directory found, **skip this step entirely** — do NOT create directories. If found, create or update the sessionlog per the template.
+4. **Sessionlog** — check if a sessionlog directory exists (see [sessionlog-template.md](${CLAUDE_SKILL_DIR}/sessionlog-template.md)). If no directory found, **skip this step entirely** — do NOT create directories. If found, create or update the sessionlog per the template.
 5. **Update project status** — if work relates to `projects/*/`, update its `status.md`.
 6. **Handle git** — see git decision table below.
 7. **Print final summary** — see template below.

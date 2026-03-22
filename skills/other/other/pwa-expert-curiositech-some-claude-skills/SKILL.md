@@ -1,15 +1,18 @@
 ---
 name: pwa-expert
-description: Progressive Web App development with Service Workers, offline support, and app-like behavior. Use for caching strategies, install prompts, push notifications, background sync. Activate on "PWA", "Service Worker", "offline", "install prompt", "beforeinstallprompt", "manifest.json", "workbox", "cache-first". NOT for native app development (use React Native), general web performance (use performance docs), or server-side rendering.
+description: Progressive Web App development with Service Workers, offline support, and app-like behavior. Use for caching strategies, install prompts, push notifications, background sync. Activate on "PWA",
+  "Service Worker", "offline", "install prompt", "beforeinstallprompt", "manifest.json", "workbox", "cache-first". NOT for native app development (use React Native), general web performance (use performance
+  docs), or server-side rendering.
 allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-category: Design & Creative
-tags:
+- Read
+- Write
+- Edit
+- Bash
+- Grep
+- Glob
+metadata:
+  category: Design & Creative
+  tags:
   - pwa
   - service-worker
   - offline
@@ -17,6 +20,13 @@ tags:
   - installable
   - workbox
   - manifest
+  pairs-with:
+  - skill: mobile-ux-optimizer
+    reason: PWAs target mobile users requiring touch optimization and responsive layout patterns
+  - skill: caching-strategies
+    reason: Service Worker cache strategies (stale-while-revalidate, cache-first) are core PWA patterns
+  - skill: react-performance-optimizer
+    reason: PWA performance budgets require aggressive React optimization for fast initial loads
 ---
 
 # Progressive Web App Expert

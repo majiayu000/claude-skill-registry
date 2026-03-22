@@ -2,8 +2,16 @@
   "name": "kotlin-testing",
   "repo": "1ambda/dataops-platform",
   "path": ".copilot/skills/kotlin-testing/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/1ambda/dataops-platform",
   "dir_name": "kotlin-testing-1ambda-dataops-platform",
-  "downloaded_at": "2026-02-22T04:33:55.113172Z"
+  "downloaded_at": "2026-03-22T04:40:26.391561Z",
+  "author": "1ambda",
+  "source_url": "https://github.com/1ambda/dataops-platform/blob/main/.copilot/skills/kotlin-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/1ambda/dataops-platform/blob/main/.copilot/skills/kotlin-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

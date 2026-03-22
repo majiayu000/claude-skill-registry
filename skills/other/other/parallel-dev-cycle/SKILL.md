@@ -119,6 +119,7 @@ Phase 4: Completion & Summary
    └─ Ref: phases/04-completion-summary.md
       ├─ Generate unified summary report
       ├─ Update final state
+      ├─ Sync session state: $session-sync -y "Dev cycle complete: {iterations} iterations"
       ├─ Close all agents
       └─ Output: final cycle report with continuation instructions
 ```

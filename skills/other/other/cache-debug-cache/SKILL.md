@@ -449,7 +449,7 @@ logger.LogInformation("Cache callback executed (MISS)");
 - `/test__integration_scaffold` - Add tests for cache scenarios
 
 **See Also**:
-- [marten__list_query](../marten__list_query/SKILL.md) - Cache implementation patterns
-- [wolverine__create_operation](../wolverine__create_operation/SKILL.md) - Cache invalidation on mutations
+- [marten__guide](../marten__guide/SKILL.md) - Cache implementation patterns
+- [wolverine__guide](../wolverine__guide/SKILL.md) - Cache invalidation on mutations
 - [caching-guide](../../../docs/guides/caching-guide.md) - HybridCache configuration and patterns
 - ApiService AGENTS.md - HybridCache configuration

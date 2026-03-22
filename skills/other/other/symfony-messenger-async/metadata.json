@@ -1,0 +1,17 @@
+{
+  "name": "symfony-messenger-async",
+  "repo": "aligundogdu/symfony-hexagonal-skill",
+  "path": "skills/symfony-messenger-async/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aligundogdu/symfony-hexagonal-skill",
+  "dir_name": "symfony-messenger-async",
+  "downloaded_at": "2026-03-22T06:51:56.800068Z",
+  "author": "aligundogdu",
+  "source_url": "https://github.com/aligundogdu/symfony-hexagonal-skill/blob/main/skills/symfony-messenger-async/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aligundogdu/symfony-hexagonal-skill/blob/main/skills/symfony-messenger-async/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

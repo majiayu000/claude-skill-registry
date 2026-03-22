@@ -215,7 +215,7 @@ git push origin {BRANCH}
 | `{REPO}` | Repository name (replace with actual value) | `ai-assistant-instructions` |
 | `{NUMBER}` | PR number integer (replace with actual value) | `123` |
 | `{THREAD_ID}` | Thread ID from GraphQL query (replace with actual value) | `PRRT_kwDOO1m-OM5gtgeQ` |
-| `{BRANCH}` | Branch name (replace with actual value) | `fix/my-feature` |
+| `{BRANCH}` | Branch name (replace with actual value) | `bugfix/descriptive-name` |
 
 ## Common Errors and Solutions
 

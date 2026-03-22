@@ -34,7 +34,7 @@ Check which files are present before attempting updates. Missing files will show
 
 ## Update Context Files
 
-Verify and fix CLAUDE.md, AGENTS.md, and optionally DOCS.md and CONTRIBUTING.md against the actual codebase. This workflow reads existing context files, analyzes the codebase structure, identifies discrepancies, and updates documentation to match reality. DOCS.md and CONTRIBUTING.md are only processed if they exist in the repository.
+Verify and fix AGENTS.md, and optionally DOCS.md and CONTRIBUTING.md against the actual codebase. `CLAUDE.md` is a symlink to `AGENTS.md` and does not need separate processing. This workflow reads existing context files, analyzes the codebase structure, identifies discrepancies, and updates documentation to match reality. DOCS.md and CONTRIBUTING.md are only processed if they exist in the repository.
 
 ### Workflow Steps
 
@@ -53,10 +53,9 @@ Confirm working directory is a git repository. If not, warn the user but proceed
 
 **Read Existing Context Files**
 
-Read current CLAUDE.md, AGENTS.md, DOCS.md, and CONTRIBUTING.md (if present) contents:
+Read current AGENTS.md, DOCS.md, and CONTRIBUTING.md (if present) contents. `CLAUDE.md` is a symlink to `AGENTS.md` and does not need a separate read:
 
 ```bash
-cat CLAUDE.md
 cat AGENTS.md
 cat DOCS.md         # if exists
 cat CONTRIBUTING.md # if exists
@@ -105,13 +104,13 @@ Compare documented information against actual codebase:
 - Modified type definitions (DOCS.md)
 - Outdated contribution guidelines (CONTRIBUTING.md)
 - Stale branch naming or PR process (CONTRIBUTING.md)
+- Missing `CLAUDE.md` symlink (should point to `AGENTS.md`)
 
 **Create Backups**
 
-Before overwriting, create backup files:
+Before overwriting, create backup files. `CLAUDE.md` is a symlink to `AGENTS.md` and does not need a separate backup:
 
 ```bash
-cp CLAUDE.md CLAUDE.md.backup
 cp AGENTS.md AGENTS.md.backup
 test -f DOCS.md && cp DOCS.md DOCS.md.backup
 test -f CONTRIBUTING.md && cp CONTRIBUTING.md CONTRIBUTING.md.backup
@@ -119,10 +118,10 @@ test -f CONTRIBUTING.md && cp CONTRIBUTING.md CONTRIBUTING.md.backup
 
 **Update Context Files**
 
-Write corrected versions maintaining the existing structure when `--preserve` is used, or reorganizing for clarity when not. For `--dry-run`, display the diff without writing:
+Write corrected versions maintaining the existing structure when `--preserve` is used, or reorganizing for clarity when not. Ensure the `CLAUDE.md` symlink exists (`ln -sf AGENTS.md CLAUDE.md`). For `--dry-run`, display the diff without writing:
 
 ```bash
-diff -u CLAUDE.md.backup CLAUDE.md
+diff -u AGENTS.md.backup AGENTS.md
 ```
 
 **Generate Report**
@@ -132,11 +131,9 @@ Display a summary of changes.
 When DOCS.md exists:
 
 ```
-✓ Updated CLAUDE.md
+✓ Updated AGENTS.md
   - Fixed outdated build command
   - Added new /api directory to structure
-
-✓ Updated AGENTS.md
   - Updated test-runner trigger pattern
 
 ✓ Updated DOCS.md
@@ -146,16 +143,17 @@ When DOCS.md exists:
 ✓ Updated CONTRIBUTING.md
   - Updated branch naming convention
   - Fixed outdated PR template reference
+
+✓ CLAUDE.md symlink verified
 ```
 
 When optional files are absent:
 
 ```
-✓ Updated CLAUDE.md
+✓ Updated AGENTS.md
   - Fixed outdated build command
 
-✓ Updated AGENTS.md
-  - Updated test-runner trigger pattern
+✓ CLAUDE.md symlink verified
 
 ⊘ DOCS.md not found (skipped)
 ⊘ CONTRIBUTING.md not found (skipped)
@@ -351,7 +349,7 @@ For the complete update CONTRIBUTING workflow with verification strategies and e
 
 ## Initialize Context
 
-Create project-specific CLAUDE.md from scratch based on codebase analysis. This workflow is ideal for new projects or repositories lacking context documentation.
+Create project-specific AGENTS.md from scratch based on codebase analysis. This workflow is ideal for new projects or repositories lacking context documentation.
 
 ### Workflow Steps
 
@@ -363,12 +361,12 @@ Support the following arguments:
 - `--minimal`: Create minimal context file (project description, structure)
 - `--full`: Create comprehensive context file with all relevant sections
 
-**Verify No Existing CLAUDE.md**
+**Verify No Existing AGENTS.md**
 
-Check if CLAUDE.md already exists:
+Check if AGENTS.md already exists:
 
 ```bash
-test -f CLAUDE.md && echo "exists" || echo "missing"
+test -f AGENTS.md && echo "exists" || echo "missing"
 ```
 
 If exists, warn the user and suggest using the update workflow instead. Allow override with `--force` flag.
@@ -384,7 +382,7 @@ Gather comprehensive information:
 - Linting and formatting tools
 - Environment variables or configuration files
 
-**Generate CLAUDE.md Content**
+**Generate AGENTS.md Content**
 
 Create structured sections:
 
@@ -412,20 +410,21 @@ Conventions, patterns, and workflows.
 
 Adapt sections based on project type. For `--minimal`, include only Context and Structure. For `--full`, add all applicable sections including deployment, troubleshooting, and custom tooling.
 
-**Write CLAUDE.md**
+**Write AGENTS.md**
 
-Save generated content. For `--dry-run`, display without writing.
+Save generated content and create `CLAUDE.md` symlink (`ln -sf AGENTS.md CLAUDE.md`). For `--dry-run`, display without writing.
 
 **Generate Report**
 
 Display summary:
 
 ```
-✓ Created CLAUDE.md
+✓ Created AGENTS.md
   - Detected Next.js project
   - Added npm scripts from package.json
   - Documented project structure
   - Added testing section for Jest
+✓ Created CLAUDE.md symlink
 ```
 
 For the complete initialize context workflow with language-specific templates, detection strategies, and customization options, refer to `references/init-agents.md`.

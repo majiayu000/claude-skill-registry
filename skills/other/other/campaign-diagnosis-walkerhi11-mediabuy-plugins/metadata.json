@@ -2,8 +2,16 @@
   "name": "campaign-diagnosis",
   "repo": "WalkerHi11/mediabuy-plugins",
   "path": ".claude/skills/campaign-diagnosis/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/WalkerHi11/mediabuy-plugins",
   "dir_name": "campaign-diagnosis-walkerhi11-mediabuy-plugins",
-  "downloaded_at": "2026-02-22T05:55:42.446977Z"
+  "downloaded_at": "2026-03-22T06:29:55.109736Z",
+  "author": "WalkerHi11",
+  "source_url": "https://github.com/WalkerHi11/mediabuy-plugins/blob/main/.claude/skills/campaign-diagnosis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WalkerHi11/mediabuy-plugins/blob/main/.claude/skills/campaign-diagnosis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

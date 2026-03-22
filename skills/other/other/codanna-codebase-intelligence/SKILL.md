@@ -90,6 +90,37 @@ search_documents query:"API authentication" collection:"docs"
 | Manual call tracing | `find_callers` shows full graph |
 | Guessing impact | `analyze_impact` shows dependencies |
 
+## Integration with Agent-Loops
+
+Codanna complements the agent-loops review workflow by providing structural code
+intelligence that diff-based review alone cannot offer.
+
+### Pre-review impact analysis
+
+Before invoking `specialist-review.sh`, run codanna to understand the blast radius
+of your changes. This feeds grounded structural data into the review, helping
+reviewers focus on real downstream effects rather than guessing from the diff.
+
+```bash
+# Gather impact data for changed symbols
+codanna mcp find_callers process_request --watch
+codanna mcp analyze_impact DatabaseConnection --watch --json
+```
+
+### Multi-specialist review support
+
+In the multi-specialist review architecture (see `docs/development/plans/multi-specialist-review.md`),
+specialists can use codanna tools alongside Read/Grep/Glob for grounded analysis.
+Impact data can also inform specialist triage — determining which review perspectives
+to activate based on which parts of the codebase are structurally affected.
+
+### Automatic index freshness
+
+The `--watch` flag on CLI commands checks for file changes and re-indexes before
+running, so impact data stays current throughout a review session without manual
+reindexing. The MCP server equivalent (`codanna serve --watch`) provides the same
+freshness guarantee for interactive sessions.
+
 ## Tips
 
 - Start broad with `semantic_search_docs`, then drill down with `find_symbol`

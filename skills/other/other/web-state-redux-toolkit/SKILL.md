@@ -5,7 +5,7 @@ description: Redux Toolkit patterns for complex client state. Use when managing 
 
 # Redux Toolkit Patterns
 
-> **Quick Guide:** Use Redux Toolkit for complex client state requiring DevTools, middleware, or entity normalization. Use RTK Query for data fetching with caching. Prefer Zustand for simpler UI state. NEVER use legacy Redux patterns (createStore, combineReducers manually, switch statements in reducers).
+> **Quick Guide:** Use Redux Toolkit for complex client state requiring DevTools, middleware, or entity normalization. Use RTK Query for data fetching with caching. For simpler UI state, a lighter state management solution may be more appropriate. NEVER use legacy Redux patterns (createStore, combineReducers manually, switch statements in reducers).
 
 **Detailed Resources:**
 
@@ -65,8 +65,8 @@ description: Redux Toolkit patterns for complex client state. Use when managing 
 
 **When NOT to use:**
 
-- Simple UI state (use Zustand or useState)
-- Server state only (use React Query directly)
+- Simple UI state (useState or a lightweight state management solution)
+- Server state only (use a dedicated data fetching solution)
 - Small to medium apps where Redux overhead is unnecessary
 - Projects where team unfamiliarity with Redux outweighs benefits
 
@@ -119,7 +119,7 @@ Use `createSlice` to define reducers, actions, and initial state together. Immer
 
 - State that belongs in URL params (filters, search)
 - Truly local component state (useState)
-- Server state that should use RTK Query or React Query
+- Server state that should use RTK Query or a data fetching solution
 
 For slice creation with typed state and PayloadAction, see [examples/core.md](examples/core.md).
 
@@ -153,7 +153,7 @@ RTK Query is a purpose-built data fetching and caching solution. Use it when you
 #### When NOT to Use
 
 - Simple client state (use createSlice)
-- When React Query is already established in the codebase
+- When an existing data fetching solution is already established in the codebase
 - When you need features RTK Query does not support
 
 For createApi setup, endpoint definitions, and cache tags, see [examples/rtk-query.md](examples/rtk-query.md).
@@ -213,31 +213,42 @@ For middleware configuration and custom middleware, see [examples/middleware.md]
 
 ---
 
-<integration>
+<red_flags>
 
-## Integration Guide
+## RED FLAGS
 
-**TypeScript Integration:**
+**High Priority Issues:**
 
-- Infer types from store using `ReturnType` and `typeof`
-- Use `PayloadAction<T>` for all action payloads
-- Define typed hooks with `.withTypes()` method
-- Use `createAppAsyncThunk` for pre-typed async thunks
+- Using legacy `createStore` instead of `configureStore` -- misses DevTools, development checks, and middleware defaults
+- Switch statements in reducers -- use `createSlice` which generates action creators automatically
+- Manual action type strings -- `createSlice` generates these from reducer names
+- Mutating state outside Immer context -- only "mutate" inside `createSlice`/`createReducer`
+- Not adding RTK Query middleware to store -- caching, polling, and invalidation silently fail
+- RTK Query cache not blacklisted in redux-persist -- causes stale cache restoration on rehydration
+- RTK 2.0: Object syntax in `extraReducers` -- removed in v2, use builder callback
+- RTK 2.0: `AnyAction` type deprecated -- use `UnknownAction` with `isAction()` guard
 
-**DevTools Integration:**
+**Medium Priority Issues:**
 
-- `configureStore` enables DevTools automatically in development
-- Time-travel debugging available out of the box
-- Action history and state diff visualization
-- Custom DevTools options available via `devTools` config
+- Using untyped `useDispatch`/`useSelector` instead of typed hooks -- loses type safety for thunks and state
+- Defining typed hooks in the store file -- causes circular imports; put in separate `hooks.ts`
+- Storing derived state in the store -- compute in selectors instead
+- Not calling `setupListeners` for RTK Query -- refetchOnFocus/refetchOnReconnect will not work
+- Not using `rejectWithValue` in thunks -- loses typed error handling
+- Not using `createSelector` for derived data -- causes unnecessary recalculations on every render
 
-**Testing Integration:**
+**Gotchas & Edge Cases:**
 
-- Test slices by importing reducer and calling with actions
-- Mock async operations at the network level (not thunk level)
-- Use `configureStore` with preloaded state for component tests
+- Immer mutations only work inside `createSlice`/`createReducer` -- not in action creators or thunks
+- Entity adapter `updateOne`/`updateMany` perform shallow merge -- deep nested updates need manual handling
+- RTK Query cache tags are case-sensitive -- `"User"` !== `"user"`
+- `createAsyncThunk` auto-dispatches pending/fulfilled/rejected -- do not dispatch these manually
+- `getDefaultMiddleware()` must be called (not referenced) in middleware config
+- TypeScript infers `RootState` from `store.getState` return type -- keep slice state types accurate
 
-</integration>
+</red_flags>
+
+See [reference.md](reference.md) for decision frameworks, anti-patterns with code examples, migration guides, and performance considerations.
 
 ---
 

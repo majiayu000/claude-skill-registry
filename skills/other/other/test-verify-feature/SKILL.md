@@ -1,6 +1,6 @@
 ---
 name: test__verify_feature
-description: Strict verification for new features. Runs compilation, formatting, and all tests to ensure the "Definition of Done".
+description: 'Strict feature verification gate. Runs compilation, dotnet format, and all tests to confirm the Definition of Done is met. Use this as the final step before marking a feature complete or opening a PR.'
 ---
 
 Use this skill to verify that a feature implementation is complete and correct. It enforces code style, compilation, and test passing.
@@ -36,7 +36,7 @@ Use this skill to verify that a feature implementation is complete and correct. 
 ## Related Skills
 
 **Typically Used After**:
-- `/wolverine__create_operation`, `/marten__list_query`, `/frontend__feature_scaffold` - After implementing features
+- `/wolverine__guide`, `/marten__guide`, `/frontend__feature_scaffold` - After implementing features
 - `/test__integration_scaffold` - After creating tests
 - `/frontend__debug_sse`, `/cache__debug_cache` - After fixing issues
 

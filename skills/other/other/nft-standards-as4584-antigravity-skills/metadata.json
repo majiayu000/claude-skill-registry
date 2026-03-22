@@ -1,0 +1,17 @@
+{
+  "name": "nft-standards",
+  "repo": "as4584/antigravity-skills",
+  "path": "agents-wshobson/plugins/blockchain-web3/skills/nft-standards/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/as4584/antigravity-skills",
+  "dir_name": "nft-standards-as4584-antigravity-skills",
+  "downloaded_at": "2026-03-22T07:03:25.191475Z",
+  "author": "as4584",
+  "source_url": "https://github.com/as4584/antigravity-skills/blob/main/agents-wshobson/plugins/blockchain-web3/skills/nft-standards/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/as4584/antigravity-skills/blob/main/agents-wshobson/plugins/blockchain-web3/skills/nft-standards/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "daily-web-signal-prospector",
+  "repo": "amplemarket/skills",
+  "path": "skills/daily-web-signal-prospector/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/amplemarket/skills",
+  "dir_name": "daily-web-signal-prospector",
+  "downloaded_at": "2026-03-22T06:54:17.181625Z",
+  "author": "amplemarket",
+  "source_url": "https://github.com/amplemarket/skills/blob/master/skills/daily-web-signal-prospector/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amplemarket/skills/blob/master/skills/daily-web-signal-prospector/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

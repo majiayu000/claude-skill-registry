@@ -107,7 +107,10 @@ acli jira workitem transition PROJECTKEY-123 --transition "In Progress"
 ### Add a comment
 
 ```bash
-acli jira workitem comment-create PROJECTKEY-123 --comment "This is my comment"
+acli jira workitem comment create --key PROJECTKEY-123 --body "This is my comment"
+
+# Or from a file:
+acli jira workitem comment create --key PROJECTKEY-123 --body-file comment.md
 ```
 
 ### Delete a ticket

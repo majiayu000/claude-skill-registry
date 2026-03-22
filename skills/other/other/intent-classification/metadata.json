@@ -1,0 +1,17 @@
+{
+  "name": "intent-classification",
+  "repo": "cheukswiss/etdxm",
+  "path": ".claude/skills/intent-classification/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/cheukswiss/etdxm",
+  "dir_name": "intent-classification",
+  "downloaded_at": "2026-03-22T07:27:17.677462Z",
+  "author": "cheukswiss",
+  "source_url": "https://github.com/cheukswiss/etdxm/blob/main/.claude/skills/intent-classification/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cheukswiss/etdxm/blob/main/.claude/skills/intent-classification/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

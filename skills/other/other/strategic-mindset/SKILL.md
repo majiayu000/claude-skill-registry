@@ -36,9 +36,7 @@ Produce a great design that also happens to work. Two modes:
 - **Proactive**: Explore alternatives before implementing. Write documentation before code to surface interface problems early.
 - **Reactive**: When you discover a design problem, fix it.
 
-> "Ideally, when you have finished with each change, the system will have the structure it would have had if you had designed it from the start with that change in mind." — John Ousterhout, _A Philosophy of Software Design_
-
-**Test:** After this change, is the system easier or harder to work with for the next developer?
+**Test:** When you finish this change, does the system look as if it was always designed this way? Is the system easier or harder for the next developer to work with?
 
 ### The Unit of Development Should Be an Abstraction
 

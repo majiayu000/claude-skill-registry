@@ -1,0 +1,17 @@
+{
+  "name": "veriglow-agent-map",
+  "repo": "ChizhongWang/veriglow-agent-map-skill",
+  "path": "plugins/veriglow-agent-map/skills/veriglow-agent-map/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ChizhongWang/veriglow-agent-map-skill",
+  "dir_name": "veriglow-agent-map-chizhongwang-veriglow-agent-map-s",
+  "downloaded_at": "2026-03-22T05:05:05.707746Z",
+  "author": "ChizhongWang",
+  "source_url": "https://github.com/ChizhongWang/veriglow-agent-map-skill/blob/main/plugins/veriglow-agent-map/skills/veriglow-agent-map/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ChizhongWang/veriglow-agent-map-skill/blob/main/plugins/veriglow-agent-map/skills/veriglow-agent-map/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

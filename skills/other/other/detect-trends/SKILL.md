@@ -1,23 +1,23 @@
 ---
 name: detect-trends
-version: "2.0.0"
-description: >
-  Detect trending topics across multiple articles by analyzing entity co-occurrence
-  and cross-source mentions. Uses memory search to find recent articles and
-  LLM analysis to identify emerging trends.
+version: 2.0.0
+description: 'Detect trending topics across multiple articles by analyzing entity
+  co-occurrence and cross-source mentions. Uses memory search to find recent articles
+  and LLM analysis to identify emerging trends.
+
+  '
 license: MIT
 allowed-tools:
-  - use_llm                # Strands built-in LLM tool for trend analysis
-  - memory/search          # Search for recent articles
-  - memory/add             # Store detected trends
-  - memory/link            # Link trends to source articles
+- use_llm
+- memory/search
+- memory/add
+- memory/link
 metadata:
-  kubani:
-    domain: news
-    category: analysis
-    requires_approval: false
-    confidence: 0.85
-    version: "2.0.0"
+  domain: news
+  category: analysis
+  requires-approval: false
+  confidence: 0.85
+  mcp-servers: []
 ---
 
 # Detect Trends

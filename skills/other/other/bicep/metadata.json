@@ -2,8 +2,16 @@
   "name": "bicep",
   "repo": "HouseGarofalo/claude-code-base",
   "path": ".claude/skills/bicep/SKILL.md",
+  "github_branch": "master",
   "category": "other",
   "source": "github.com/HouseGarofalo/claude-code-base",
   "dir_name": "bicep",
-  "downloaded_at": "2026-02-22T05:09:34.421297Z"
+  "downloaded_at": "2026-03-22T05:28:31.979891Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/bicep/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/bicep/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

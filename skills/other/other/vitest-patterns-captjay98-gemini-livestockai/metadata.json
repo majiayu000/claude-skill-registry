@@ -2,8 +2,16 @@
   "name": "vitest-patterns",
   "repo": "captjay98/gemini-livestockai",
   "path": ".kiro/skills/vitest-patterns/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/captjay98/gemini-livestockai",
   "dir_name": "vitest-patterns-captjay98-gemini-livestockai",
-  "downloaded_at": "2026-02-22T06:39:33.500539Z"
+  "downloaded_at": "2026-03-22T07:23:35.608845Z",
+  "author": "captjay98",
+  "source_url": "https://github.com/captjay98/gemini-livestockai/blob/main/.kiro/skills/vitest-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/captjay98/gemini-livestockai/blob/main/.kiro/skills/vitest-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -1,0 +1,17 @@
+{
+  "name": "password-reset-poisoning",
+  "repo": "blacklanternsecurity/red-run",
+  "path": "skills/web/password-reset-poisoning/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/blacklanternsecurity/red-run",
+  "dir_name": "password-reset-poisoning",
+  "downloaded_at": "2026-03-22T07:16:09.599837Z",
+  "author": "blacklanternsecurity",
+  "source_url": "https://github.com/blacklanternsecurity/red-run/blob/main/skills/web/password-reset-poisoning/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/blacklanternsecurity/red-run/blob/main/skills/web/password-reset-poisoning/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

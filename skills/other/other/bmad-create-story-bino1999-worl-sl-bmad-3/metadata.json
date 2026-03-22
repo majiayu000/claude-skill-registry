@@ -1,0 +1,17 @@
+{
+  "name": "bmad-create-story",
+  "repo": "bino1999/worl-sl-bmad",
+  "path": "_bmad/bmm/workflows/4-implementation/bmad-create-story/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/bino1999/worl-sl-bmad",
+  "dir_name": "bmad-create-story-bino1999-worl-sl-bmad-3",
+  "downloaded_at": "2026-03-22T07:15:13.699452Z",
+  "author": "bino1999",
+  "source_url": "https://github.com/bino1999/worl-sl-bmad/blob/main/_bmad/bmm/workflows/4-implementation/bmad-create-story/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bino1999/worl-sl-bmad/blob/main/_bmad/bmm/workflows/4-implementation/bmad-create-story/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

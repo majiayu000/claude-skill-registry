@@ -5,12 +5,13 @@ description: MSW handlers, browser/server workers, test data. Use when setting u
 
 # API Mocking with MSW
 
-> **Quick Guide:** Centralized mocks in `@repo/api-mocks`. Handlers with variant switching (default, empty, error). Shared between browser (dev) and Node (tests). Type-safe using generated types from `@repo/api/types`.
+> **Quick Guide:** Handlers with variant switching (default, empty, error). Shared between browser (dev) and Node (tests). Separate mock data from handlers for reusability. Type-safe using your API's generated types. Use `setupWorker` (browser) and `setupServer` (Node) -- never swap them.
 
 **Detailed Resources:**
 
-- For code examples, see [examples/](examples/) (core, browser, node, testing, advanced)
-- For decision frameworks and anti-patterns, see [reference.md](reference.md)
+- [examples/core.md](examples/core.md) - Mock data, variant handlers, server worker, per-test overrides, runtime switching, network simulation
+- [examples/browser.md](examples/browser.md) - Browser worker setup, SPA/SSR integration
+- [reference.md](reference.md) - Decision frameworks, red flags, anti-patterns
 
 ---
 
@@ -22,9 +23,7 @@ description: MSW handlers, browser/server workers, test data. Use when setting u
 
 **(You MUST use `setupWorker` for browser/development and `setupServer` for Node/tests - NEVER swap them)**
 
-**(You MUST reset handlers after each test with `serverWorker.resetHandlers()` in `afterEach`)**
-
-**(You MUST use generated types from `@repo/api/types` - NEVER manually define API response types)**
+**(You MUST reset handlers after each test with `server.resetHandlers()` in `afterEach`)**
 
 **(You MUST use named constants for HTTP status codes and delays - NO magic numbers)**
 
@@ -32,29 +31,29 @@ description: MSW handlers, browser/server workers, test data. Use when setting u
 
 ---
 
-**Auto-detection:** MSW setup, mock handlers, mock data, API mocking, testing mocks, development mocks, setupWorker, setupServer
+**Auto-detection:** MSW, msw, mock handlers, mock data, API mocking, setupWorker, setupServer, http.get, HttpResponse
 
 **When to use:**
 
-- Setting up MSW for development and testing
-- Creating centralized mock handlers with variant switching
-- Sharing mocks between browser (dev) and Node (tests)
-- Testing different API scenarios (success, empty, error)
-- Simulating network latency and error conditions
+- Mocking API responses during development before backend is ready
+- Testing different API scenarios (success, empty, error states)
+- Sharing the same mock definitions between browser dev and Node test environments
+- Simulating network conditions (latency, timeouts)
+- Per-test handler overrides for isolated test scenarios
 
 **When NOT to use:**
 
-- Integration tests that need real backend validation (use test database instead)
+- Integration tests needing real backend validation (use a test database)
 - Production builds (MSW should never ship to production)
-- Simple unit tests of pure functions (no network calls to mock)
-- When you need to test actual network failure modes (use test containers)
+- Pure function unit tests with no network calls
+- Testing actual network failure modes (use test containers)
 
 **Key patterns covered:**
 
-- Centralized mock package structure with handlers and data separation
+- Handler/data separation for reusability and type safety
 - Variant-based handlers (default, empty, error scenarios)
 - Browser worker for development, server worker for tests
-- Per-test handler overrides for specific scenarios
+- Per-test handler overrides with `server.use()`
 - Runtime variant switching for UI development
 
 ---
@@ -63,22 +62,7 @@ description: MSW handlers, browser/server workers, test data. Use when setting u
 
 ## Philosophy
 
-MSW (Mock Service Worker) intercepts network requests at the service worker level, providing realistic API mocking without changing application code. This skill enforces a centralized approach where mocks live in a dedicated package (`@repo/api-mocks`), enabling consistent behavior across development and testing environments.
-
-**When to use MSW:**
-
-- Developing frontend features before backend API is ready
-- Testing different API response scenarios (success, empty, error states)
-- Simulating network conditions (latency, timeouts)
-- Creating a consistent development environment across team
-- End-to-end testing with controlled API responses
-
-**When NOT to use MSW:**
-
-- Integration tests that need real backend validation (use test database)
-- Production builds (MSW should never ship to production)
-- Simple unit tests of pure functions (no network calls)
-- When you need to test actual network failure modes (use test containers)
+MSW intercepts network requests at the service worker (browser) or class extension (Node) level, providing realistic API mocking without changing application code. Keep mock data separate from handlers for reusability, type handlers against your generated API types, and organize handlers by domain/feature.
 
 </philosophy>
 
@@ -88,107 +72,124 @@ MSW (Mock Service Worker) intercepts network requests at the service worker leve
 
 ## Core Patterns
 
-### Pattern 1: Centralized Mock Package Structure
+### Pattern 1: Separate Mock Data from Handlers
 
-Organize all mocks in a dedicated workspace package with clear separation between handlers (MSW request handlers) and mock data (static response data).
+Define mock data as typed constants separate from MSW handlers. This enables type safety from your generated API types and reusability across handlers.
 
-#### Package Structure
+```typescript
+// mocks/features.ts
+import type { GetFeaturesResponse } from "./api-types";
 
-```
-packages/api-mocks/
-├── src/
-│   ├── handlers/
-│   │   ├── index.ts              # Export all handlers
-│   │   └── features/
-│   │       └── get-features.ts   # MSW handlers with variants
-│   ├── mocks/
-│   │   ├── index.ts              # Export all mock data
-│   │   └── features.ts           # Mock data
-│   ├── browser-worker.ts         # Browser MSW worker (development)
-│   ├── server-worker.ts          # Node.js MSW server (tests)
-│   └── manage-mock-selection.ts  # Variant switching logic
-└── package.json
+export const defaultFeatures: GetFeaturesResponse = {
+  features: [
+    { id: "1", name: "Dark mode", status: "done" },
+    { id: "2", name: "Auth", status: "in progress" },
+  ],
+};
+
+export const emptyFeatures: GetFeaturesResponse = { features: [] };
 ```
 
-For package configuration examples, see [examples/core.md](examples/core.md#package-configuration).
-
----
-
-### Pattern 2: Separate Mock Data from Handlers
-
-Define mock data as typed constants in `mocks/` directory, completely separate from MSW handlers. This enables type safety from generated API types and reusability across handlers.
-
-For code examples, see [examples/core.md](examples/core.md#mock-data-separation).
+For full variant handler examples, see [examples/core.md](examples/core.md).
 
 **When not to use:** When mock data is truly one-off and specific to a single test case (use inline data in the test instead).
 
 ---
 
-### Pattern 3: Handlers with Variant Switching
+### Pattern 2: Handlers with Variant Switching
 
 Create handlers that support multiple response scenarios (default, empty, error) with runtime switching for development and explicit overrides for testing.
 
-Key principles:
+```typescript
+import { http, HttpResponse } from "msw";
 
-- Named constants for HTTP status codes
-- Response factories for consistency
-- Variant switching via centralized state
-- Explicit handler exports for per-test overrides
+const API_ENDPOINT = "api/v1/features";
+const HTTP_STATUS_OK = 200;
+const HTTP_STATUS_INTERNAL_SERVER_ERROR = 500;
 
-For implementation examples, see [examples/core.md](examples/core.md#variant-handlers).
+export const getFeaturesHandlers = {
+  defaultHandler: () =>
+    http.get(API_ENDPOINT, () =>
+      HttpResponse.json(defaultFeatures, { status: HTTP_STATUS_OK }),
+    ),
+  emptyHandler: () =>
+    http.get(API_ENDPOINT, () =>
+      HttpResponse.json(emptyFeatures, { status: HTTP_STATUS_OK }),
+    ),
+  errorHandler: () =>
+    http.get(
+      API_ENDPOINT,
+      () =>
+        new HttpResponse("Server error", {
+          status: HTTP_STATUS_INTERNAL_SERVER_ERROR,
+        }),
+    ),
+};
+```
+
+For full implementation with runtime switching, see [examples/core.md](examples/core.md).
 
 ---
 
-### Pattern 4: Browser Worker for Development
+### Pattern 3: Browser Worker (Development) vs Server Worker (Tests)
 
-Set up MSW browser worker to intercept requests during development. Key considerations:
+- Use `setupWorker` from `msw/browser` for browser/development
+- Use `setupServer` from `msw/node` for Node/tests
+- **Never swap them** -- `setupWorker` needs service worker APIs, `setupServer` needs Node APIs
 
-- Use `setupWorker` from `msw/browser`
-- Await worker start before rendering app
-- Configure `onUnhandledRequest: "bypass"` for unmocked requests
+```typescript
+// browser-worker.ts
+import { setupWorker } from "msw/browser";
+export const browserWorker = setupWorker(...handlers);
 
-For app integration examples, see [examples/browser.md](examples/browser.md).
+// server-worker.ts
+import { setupServer } from "msw/node";
+export const server = setupServer(...handlers);
+```
+
+For browser app integration (SPA and SSR), see [examples/browser.md](examples/browser.md).
 
 ---
 
-### Pattern 5: Server Worker for Tests
+### Pattern 4: Test Lifecycle
 
-Set up MSW server worker for Node.js test environment:
+Always follow this lifecycle to prevent test pollution:
 
-- Use `setupServer` from `msw/node`
-- Lifecycle: `beforeAll` listen, `afterEach` reset, `afterAll` close
-- Always reset handlers to prevent test pollution
+```typescript
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
+```
 
-For test setup examples, see [examples/node.md](examples/node.md).
+Use `server.use()` for per-test overrides -- they are automatically cleaned up by `resetHandlers()`.
+
+For per-test override examples, see [examples/core.md](examples/core.md).
 
 </patterns>
 
 ---
 
-<integration>
+<red_flags>
 
-## Integration Guide
+## RED FLAGS
 
-**Works with any:**
+- ❌ Using `setupWorker` in Node tests or `setupServer` in browser -- wrong API for environment causes cryptic failures
+- ❌ Not resetting handlers between tests (`afterEach(() => server.resetHandlers())`) -- causes test pollution
+- ❌ Mixing handlers and mock data in same file -- reduces reusability and type safety
+- ❌ Missing `await` when starting browser worker before render -- race conditions cause intermittent failures
+- ⚠️ Only testing happy path (no empty/error variants) -- incomplete coverage
+- ⚠️ No `onUnhandledRequest` configuration -- unclear which requests are mocked vs real
 
-- **Data fetching solution**: MSW intercepts fetch calls at the network level - your data fetching library sees normal responses
-- **Test runner**: Server worker integrates via test setup file (lifecycle hooks)
-- **Testing utilities**: Works seamlessly with any component testing library
-- **Frontend framework**: Browser worker integrates via app entry point
+**Gotchas & Edge Cases:**
 
-**Test runner configuration (generic):**
+- `delay()` with no arguments is automatically negated in Node.js -- use explicit duration if you need delay in tests
+- Handler overrides via `server.use()` persist until `resetHandlers()` -- they do NOT auto-reset between tests
+- `http.all()` matches any HTTP method on a path -- convenient but can mask bugs if overused
+- Dynamic imports are required for browser worker in SSR frameworks to avoid server bundling issues
 
-```typescript
-// test-setup.ts (configure in your test runner)
-import { serverWorker } from "@repo/api-mocks/serverWorker";
+See [reference.md](reference.md) for detailed anti-pattern examples.
 
-// Use your test runner's lifecycle hooks
-beforeAll(() => serverWorker.listen());
-afterEach(() => serverWorker.resetHandlers());
-afterAll(() => serverWorker.close());
-```
-
-</integration>
+</red_flags>
 
 ---
 
@@ -200,12 +201,10 @@ afterAll(() => serverWorker.close());
 
 **(You MUST use `setupWorker` for browser/development and `setupServer` for Node/tests - NEVER swap them)**
 
-**(You MUST reset handlers after each test with `serverWorker.resetHandlers()` in `afterEach`)**
-
-**(You MUST use generated types from `@repo/api/types` - NEVER manually define API response types)**
+**(You MUST reset handlers after each test with `server.resetHandlers()` in `afterEach`)**
 
 **(You MUST use named constants for HTTP status codes and delays - NO magic numbers)**
 
-**Failure to follow these rules will cause test pollution, type drift from real API, environment-specific failures, and hard-to-debug race conditions.**
+**Failure to follow these rules will cause test pollution, environment-specific failures, and hard-to-debug race conditions.**
 
 </critical_reminders>

@@ -56,13 +56,14 @@ make ci
 
 Identify failing check from output and apply fix:
 
-| Check           | Command            | Fix                                 |
-| --------------- | ------------------ | ----------------------------------- |
-| Code style      | `make phpcsfixer`  | Apply auto-fixes                    |
-| Static analysis | `make psalm`       | Fix type errors                     |
-| Quality metrics | `make phpinsights` | Reduce complexity, fix architecture |
-| Tests           | `make unit-tests`  | Debug failing tests                 |
-| Mutations       | `make infection`   | Add missing test cases              |
+| Check           | Command                       | Fix                                                       |
+| --------------- | ----------------------------- | --------------------------------------------------------- |
+| Code style      | `make phpcsfixer`             | Apply auto-fixes                                          |
+| Static analysis | `make psalm`                  | Fix type errors                                           |
+| Quality metrics | `make phpinsights`            | Reduce complexity, fix architecture                       |
+| Tests           | `make unit-tests`             | Debug failing tests                                       |
+| Mutations       | `make infection`              | Add missing test cases                                    |
+| Config drift    | `make validate-configuration` | Revert locked-file edits, or use exception workflow below |
 
 ### Step 4: Re-run
 
@@ -71,6 +72,22 @@ make ci
 ```
 
 Repeat Steps 2-4 until success message appears.
+
+### Locked Configuration Exception Workflow
+
+If CI fails with `Modification of locked configuration file is not allowed`:
+
+1. Check whether the user explicitly requested a locked-config change (for example `deptrac.yaml`).
+2. If **no**, treat it as accidental drift:
+   - Revert locked-file edits.
+   - Re-run `make ci`.
+3. If **yes**, follow exception handling:
+   - Keep changes in a dedicated config-governance PR (no unrelated code changes).
+   - Report the failing command output as expected evidence.
+   - Escalate for human approval to merge; autonomous agents must not self-approve or self-merge failed CI.
+   - Include rationale: reason for change, impact on quality gates, rollback plan.
+
+Do not normalize red CI merges as routine behavior.
 
 ## Alternative Commands
 
@@ -97,6 +114,8 @@ Repeat Steps 2-4 until success message appears.
 - Skip failing checks
 - Commit without "✅ CI checks successfully passed!" message
 - Run commands outside Docker container (use `make` or `docker compose exec php`)
+- Edit locked quality config files unless the task explicitly requires a governed config change
+- Present a failed CI run as "complete" without marking it as a human exception
 
 ## Format (Output)
 
@@ -114,6 +133,7 @@ Repeat Steps 2-4 until success message appears.
 - [ ] Zero test failures
 - [ ] Zero escaped mutants
 - [ ] No quality threshold decreased
+- [ ] Locked config files unchanged, or human exception path explicitly documented
 
 ## Rollback
 

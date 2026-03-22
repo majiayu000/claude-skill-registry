@@ -717,7 +717,17 @@ AskUserQuestion({
 | Retry Failed | Filter tasks with `_execution.status === 'failed'`, re-execute, append `[RETRY]` events |
 | View Events | Display execution-events.md content |
 | Create Issue | `Skill(skill="issue:new", args="...")` from failed task details |
-| Done | Display artifact paths, end workflow |
+| Done | Display artifact paths, sync session state, end workflow |
+
+### Step 4.5: Sync Session State
+
+After completion (regardless of user selection), unless `--dry-run`:
+
+```bash
+$session-sync -y "Execution complete: {completed}/{total} tasks succeeded"
+```
+
+Updates specs/*.md with execution learnings and project-tech.json with development index entry.
 
 ---
 

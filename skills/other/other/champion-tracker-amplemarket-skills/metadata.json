@@ -1,0 +1,17 @@
+{
+  "name": "champion-tracker",
+  "repo": "amplemarket/skills",
+  "path": "skills/champion-tracker/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/amplemarket/skills",
+  "dir_name": "champion-tracker-amplemarket-skills",
+  "downloaded_at": "2026-03-22T06:54:12.628249Z",
+  "author": "amplemarket",
+  "source_url": "https://github.com/amplemarket/skills/blob/master/skills/champion-tracker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amplemarket/skills/blob/master/skills/champion-tracker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,7 +1,7 @@
 ---
 name: consult-biblical-scholar
 description: Use when user asks about a biblical passage's meaning, wants to validate an analogy or idea against the text, or needs cross-references with scholarly evidence. Also use when a question about Scripture lacks a passage anchor. Requires explicit confidence tiering, MCP data before answering, and formal verdict for analogy questions.
-allowed-tools: Read, WebSearch, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_discourse_features, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_paragraph_breaks, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_vocabulary, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_morphology, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_ot_quotes, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_lemmas, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_themes_for_lemmas, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_theme
+allowed-tools: Task, Read, WebSearch, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_discourse_features, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_paragraph_breaks, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_vocabulary, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_morphology, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_ot_quotes, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_lemmas, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_themes_for_lemmas, mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_theme
 ---
 
 # Consult Biblical Scholar
@@ -39,6 +39,31 @@ Four tiers:
 - VALIDATE verdicts require **MEDIUM minimum**. Below MEDIUM → INSUFFICIENT DATA, not a verdict.
 - Training-data knowledge is NOT Tier 1 evidence. Only MCP output counts as Tier 1-2.
 
+**Contested scholarly debates require confidence splitting.** When scholars genuinely disagree on a question (e.g., the meaning of μονογενής), do NOT pick a winner. Present both positions with their evidence. Split confidence by claim type:
+- Morphological facts (what MCP returns) → can be **HIGH**
+- Semantic/theological debate (what scholars dispute) → **MEDIUM** at best
+
+**Wrong:**
+```
+CONFIDENCE: HIGH
+"One and only" is the linguistically accurate translation. The word does NOT mean "only begotten."
+```
+(Resolved a contested debate. Dismissed one scholarly position.)
+
+**Correct:**
+```
+CONFIDENCE: HIGH (morphology), MEDIUM (semantic debate)
+Morphological data: μονογενής — compound of μόνος + γένος [query_morphology]
+
+Scholarly debate:
+- Position A ("unique/one-of-a-kind"): BDAG, Moody (1953), Lee (2005) — γένος root, not γεννάω
+- Position B ("only begotten"): Dahms (1983), Pendrick (1995) — patristic usage, γεννάω echo
+
+This is an active scholarly debate. The morphological data supports Position A, but
+Position B has serious patristic and contextual arguments. The agent does not resolve
+what scholars dispute.
+```
+
 **Correct:**
 ```
 CONFIDENCE: HIGH
@@ -53,13 +78,15 @@ The text clearly shows Jesus voluntarily emptied himself.
 
 ---
 
-### Rule 2: Call MCP Tools Before Composing Any Answer
+### Rule 2: Gather MCP Data Before Composing Any Answer
 
-**If a passage is provided, MCP tools are called BEFORE any prose is written.**
+**If a passage is provided, MCP data is gathered BEFORE any prose is written.**
 
-Do not compose the answer from training data and then call MCP to verify. Call MCP first. Let the data shape the answer.
+Do not compose the answer from training data and then verify. Gather data first. Let the data shape the answer.
 
-**Tool selection by mode and testament:**
+**Primary method:** Spawn the **biblical-scholar** agent via Task tool (see Sub-Agent Delegation). The agent handles MCP tool selection, testament routing, and data compression internally.
+
+**Fallback method (if agent spawn fails):** Call MCP tools directly using the selection table below:
 
 | Tool | MEANING | VALIDATE | CROSS-REF | NT | OT |
 |------|---------|---------|-----------|----|----|
@@ -69,7 +96,7 @@ Do not compose the answer from training data and then call MCP to verify. Call M
 | `query_vocabulary` | If word-focused | Rarely | Always | ✅ | ✅ |
 | `query_ot_quotes` | If OT refs | Rarely | Always (NT) | ✅ | — |
 
-**MCP call format:**
+**Direct MCP call format (fallback only):**
 
 NT morphology:
 ```
@@ -220,6 +247,42 @@ MCP data cannot be verified without a passage. This answer draws on web search a
 
 ---
 
+## Sub-Agent Delegation
+
+This skill delegates data gathering and scholarly interpretation to the **biblical-scholar** agent, which internally delegates MCP data retrieval to the **data-retriever** agent (Haiku).
+
+**Delegation chain:**
+```
+consult-biblical-scholar (skill, user's model)
+  └─→ biblical-scholar (Sonnet) — scholarly analysis + source attribution
+       └─→ data-retriever (Haiku) — MCP tool calls + compression
+```
+
+**Mode mapping:**
+
+| Skill mode | Agent mode | Prompt format |
+|------------|-----------|---------------|
+| MEANING | ANALYZE | `"ANALYZE [passage]. [question]"` |
+| VALIDATE | VALIDATE | `"VALIDATE [passage]. Claim: [claim to evaluate]"` |
+| CROSS-REFERENCE | TRACE | `"TRACE [passage]. [what to trace]"` |
+
+**How to spawn:**
+```
+Task tool:
+  subagent_type: "claude-of-alexandria:biblical-scholar"
+  prompt: "[MODE] [passage]. [question/claim]"
+```
+
+**Parsing agent output:**
+- `CONFIDENCE:` line → inherit as skill's confidence ceiling
+- `VERDICT:` line (VALIDATE mode) → use directly in skill output
+- `## Scholarly Sources` → integrate into Data Sources
+- `## Limitations` → surface in evidence summary
+
+**Fallback:** If Task tool fails or agent returns CANNOT ANSWER, fall back to direct MCP tool calls per Rule 2 table. Note the fallback in the response.
+
+---
+
 ## Workflow
 
 ```
@@ -228,26 +291,31 @@ MCP data cannot be verified without a passage. This answer draws on web search a
    → Detect mode: MEANING / VALIDATE / CROSS-REFERENCE
    → If no passage: enter topic mode, warn, cap confidence at MEDIUM
 
-2. Pericope check (if passage provided — lightweight)
-   → Check NT: query_discourse_features for boundary markers
-   → Check OT: query_paragraph_breaks for Masoretic markers
-   → If boundaries weak: note it, proceed
+2. Delegate to biblical-scholar agent (if passage provided)
+   → Spawn via Task tool with mode-mapped prompt (see Sub-Agent Delegation)
+   → The agent handles: pericope checking, MCP data gathering, scholarly interpretation
+   → Parse agent response for: CONFIDENCE, analysis, verdict (if VALIDATE), sources
+   → If agent spawn fails: fall back to direct MCP tool calls per Rule 2 table
 
-3. MCP tool calls (if passage provided)
-   → Call tools per mode and testament (see Rule 2 table)
-   → Record what data was returned and what was absent
-   → If MCP fails: note it, drop confidence ceiling to MEDIUM
+3. Topic mode (if no passage)
+   → Print the ⚠️ TOPIC MODE warning block FIRST, before any analysis.
+     This warning is the FIRST text the user sees. Not after the answer.
+     Not embedded in the confidence line. A standalone block at the top.
+   → Web search to identify 2-3 key passages for the topic
+   → Spawn biblical-scholar for at least ONE identified passage (mandatory — topic
+     mode still requires MCP grounding on concrete text)
+   → Confidence ceiling: MEDIUM
 
-4. Web search
+4. Web search (supplementary — only if agent's sources insufficient)
    → Search for scholarly commentary on passage + question topic
    → Evaluate source quality (Tier A/B/C/D)
    → For CROSS-REFERENCE: search specifically for intertextual connections
    → If search returns nothing useful: say so — do not fabricate consensus
 
-5. State confidence tier (based on evidence actually gathered)
-   → Not the evidence you wish you had
-   → Not what training data "suggests"
-   → Based only on what MCP and web search returned
+5. State confidence tier
+   → Inherit from biblical-scholar if delegation succeeded
+   → Cap at MEDIUM if topic mode or if agent returned LOW/CANNOT ANSWER
+   → Based only on what the agent and web search returned
 
 6. Compose answer
    → Required: confidence declaration, evidence summary, answer, data sources
@@ -261,16 +329,18 @@ MCP data cannot be verified without a passage. This answer draws on web search a
 
 **Required in every response:**
 
-1. **Confidence tier** — at the top, prominently
-2. **Evidence summary** — what MCP tools were called, what was found
-3. **Answer** — scaled to complexity
-4. **Data sources** — MCP tools queried + scholarly works cited
+1. **Topic mode warning** (topic mode only) — the `⚠️ TOPIC MODE` block is the FIRST
+   thing output, before confidence, before anything else. Not optional.
+2. **Confidence tier** — prominently (after topic mode warning if applicable)
+3. **Evidence summary** — what MCP tools were called, what was found
+4. **Answer** — scaled to complexity
+5. **Data sources** — MCP tools queried + scholarly works cited
 
 **MEANING mode adds:**
 - Original language data with `[query_morphology]` attribution
 - Discourse context (function in clause/paragraph)
-- Modern explanation — labeled "for a contemporary audience," separated from technical data
-- Scholarly positions if genuinely debated (with specific citations)
+- Modern explanation — labeled "for a contemporary audience," separated from technical data. **Rule 5 still applies here.** Explain what the Greek *means* in plain language. Do not shift into devotional register ("the promise here is…," "God doesn't start what he won't finish," "this reminds us…"). The section translates linguistics, not theology. Application remains the user's job.
+- Scholarly positions if genuinely debated (with specific citations) — split confidence: morphology HIGH, debate MEDIUM. Do not resolve what scholars dispute.
 
 **VALIDATE mode adds:**
 - Text evidence first (MCP data on what the passage actually says)
@@ -314,11 +384,13 @@ Call `mcp__plugin_claude-of-alexandria_claude-of-alexandria-mcp__query_paragraph
 | **Skipping MCP** | Answering from memory because "it's obvious" | MCP called BEFORE composing any answer |
 | **Verdict without evidence** | SUPPORTED/NOT SUPPORTED based on instinct | Verdicts require MEDIUM minimum; below → INSUFFICIENT DATA |
 | **No verdict** | "Partly works" prose instead of verdict | VALIDATE mode requires one of four explicit verdicts |
-| **Devotional drift** | "God uses this for..." pastoral content | Answer = analysis. Application is user's job. |
+| **Devotional drift** | "God uses this for..." pastoral content — including in the "modern explanation" section | Answer = analysis. Application is user's job. Modern explanation = plain-language linguistics, not preaching. |
 | **False cross-references** | "Both passages mention love" | Every cross-reference needs labeled evidence basis |
 | **Consensus fabrication** | "Most scholars agree..." | Every scholarly claim cites author + work |
 | **Topic mode overconfidence** | HIGH confidence on topic questions | Topic mode capped at MEDIUM, stated immediately |
+| **Missing topic mode warning** | Topic mode entered without the ⚠️ TOPIC MODE warning block | The warning block is the FIRST text output — before confidence, before analysis. Embedding "MEDIUM" in the confidence line is not the warning. |
 | **Misrepresenting search failure** | "Scholars have not addressed this" | "I could not find scholarly sources on this" |
+| **Resolving contested debates** | "The correct answer is X" on disputed questions | Present both positions; split confidence; do not resolve |
 | **Moralism** | "Therefore you should be more humble" | Indicative only. Imperative is user's domain. |
 
 ---

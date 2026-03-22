@@ -1,19 +1,21 @@
 ---
 name: code-necromancer
-description: Systematic framework for resurrecting and modernizing legacy codebases through archaeology, resurrection, and rejuvenation phases. Activate on "legacy code", "inherited codebase", "no documentation", "technical debt", "resurrect", "modernize". NOT for greenfield projects or well-documented active codebases.
+description: Systematic framework for resurrecting and modernizing legacy codebases through archaeology, resurrection, and rejuvenation phases. Activate on "legacy code", "inherited codebase", "no documentation",
+  "technical debt", "resurrect", "modernize". NOT for greenfield projects or well-documented active codebases.
 allowed-tools: Read,Write,Edit,Bash,WebFetch,Grep,Glob
-category: Code Quality & Testing
-tags:
+metadata:
+  category: Code Quality & Testing
+  pairs-with:
+  - skill: refactoring-surgeon
+    reason: Clean up discovered legacy code
+  - skill: technical-writer
+    reason: Document resurrected codebases
+  tags:
   - legacy
   - modernization
   - technical-debt
   - archaeology
   - refactoring
-pairs-with:
-  - skill: refactoring-surgeon
-    reason: Clean up discovered legacy code
-  - skill: technical-writer
-    reason: Document resurrected codebases
 ---
 
 # Code Necromancer

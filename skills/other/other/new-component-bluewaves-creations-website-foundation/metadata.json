@@ -1,0 +1,17 @@
+{
+  "name": "new-component",
+  "repo": "bluewaves-creations/website-foundation",
+  "path": ".claude/skills/new-component/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/bluewaves-creations/website-foundation",
+  "dir_name": "new-component-bluewaves-creations-website-foundation",
+  "downloaded_at": "2026-03-22T07:17:14.193846Z",
+  "author": "bluewaves-creations",
+  "source_url": "https://github.com/bluewaves-creations/website-foundation/blob/main/.claude/skills/new-component/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bluewaves-creations/website-foundation/blob/main/.claude/skills/new-component/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

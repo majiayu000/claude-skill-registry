@@ -20,10 +20,8 @@ Identify documentation that is likely affected by code changes.
 
 ## Script Invocation
 
-- Windows:
-  `python "$env:USERPROFILE\.codex\skills\codex-docs-change-sync\scripts\map_changes_to_docs.py" --project-root <path> --diff-scope <scope>`
-- macOS/Linux:
-  `python "$HOME/.codex/skills/codex-docs-change-sync/scripts/map_changes_to_docs.py" --project-root <path> --diff-scope <scope>`
+- Use `map_changes_to_docs.py` for report-only docs impact mapping.
+- Xem `skills/.system/REGISTRY.md` để biết đường dẫn đầy đủ.
 
 ## Script Invocation Discipline
 

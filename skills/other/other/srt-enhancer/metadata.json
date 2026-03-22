@@ -1,0 +1,17 @@
+{
+  "name": "srt-enhancer",
+  "repo": "dean9703111/ai-agent-skill-for-video-workflow",
+  "path": ".agent/skills/srt-enhancer/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/dean9703111/ai-agent-skill-for-video-workflow",
+  "dir_name": "srt-enhancer",
+  "downloaded_at": "2026-03-22T07:41:42.711514Z",
+  "author": "dean9703111",
+  "source_url": "https://github.com/dean9703111/ai-agent-skill-for-video-workflow/blob/master/.agent/skills/srt-enhancer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dean9703111/ai-agent-skill-for-video-workflow/blob/master/.agent/skills/srt-enhancer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

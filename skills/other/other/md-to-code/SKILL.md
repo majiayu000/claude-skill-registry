@@ -21,7 +21,7 @@ Step 1 → 1.5 → 2 → 3 → 3.5 → 4 → 5
 Read     Gate   Plan  Impl  Gate  Verify  Close
 (subs)          (SP)  (team)      (SP)    (report)
 
-subs = parallel subagents | SP = superpowers | team = Agent Teams
+subs = parallel sub-agents | SP = superpowers | team = Agent Teams
 Gates = mandatory human checkpoints (AskUserQuestion)
 ```
 
@@ -29,7 +29,7 @@ Gates = mandatory human checkpoints (AskUserQuestion)
 
 Locate `prompt.md`: use user-provided path first. If not provided, Glob `**/prompt.md` in likely directories (Docs/, docs/, specs/). If multiple results, AskUserQuestion to clarify. Read it to get doc paths and project standards paths.
 
-Launch **3 parallel Task agents** (model: opus, except Agent B which may use sonnet) in a single message. Do NOT set `run_in_background` — wait for all results.
+Launch **3 parallel sub-agents** via the Agent tool (model: opus, except Agent B which may use sonnet) in a single message. Do NOT set `run_in_background` — wait for all results.
 
 **Agent A — Tech Spec:**
 - Read `01_技術規格.md`
@@ -106,13 +106,13 @@ TeamCreate `"impl-<feature-name>"` (lowercase, no spaces, use hyphens). Convert 
    - `{backend_impl_content}` / `{frontend_impl_content}` → Agent C output (step list, file inventory). For large docs, use summary + file path.
    - `{project_standards_summary}` → Agent B output (naming, architecture, code style)
    - `{reusable_components_list}` → Agent B output (reusable component paths and descriptions)
-4. Use filled template as the Task tool prompt (with `team_name` and `name` parameters)
+4. Use filled template as the Agent tool prompt (with `team_name` and `name` parameters)
 
-**backend-dev** — Task tool with `name: "backend-dev"`:
+**backend-dev** — Agent tool with `name: "backend-dev"`:
 - Context: 01_技術規格 + 02_後端實作 + project standards summary + reusable components list
 - Implements all backend files per 02_後端實作.md order
 
-**frontend-dev** — Task tool with `name: "frontend-dev"`:
+**frontend-dev** — Agent tool with `name: "frontend-dev"`:
 - Context: 01_技術規格 + 03_前端實作 + project standards summary + reusable components list
 - Implements all frontend files per 03_前端實作.md order
 
@@ -160,7 +160,7 @@ If adjustments needed: SendMessage to the relevant teammate with change requests
 - Spec vs project standards conflict → follow project standards, notify user
 - Step 1 (read): Subagents — efficient, low-cost, no inter-agent communication needed
 - Step 3 (impl): Agent Teams — cross-layer communication, human intervention, shared task list
-- **Error handling**: If a subagent fails → retry once. If teammate is stuck → TL takes over the task directly. If build/compile fails → present error to user with suggested fix. If a teammate becomes unresponsive → reassign tasks to the other teammate or handle in main flow.
+- **Error handling**: If a sub-agent fails → retry once. If teammate is stuck → TL takes over the task directly. If build/compile fails → present error to user with suggested fix. If a teammate becomes unresponsive → reassign tasks to the other teammate or handle in main flow.
 - **Expected input format**: prompt.md should contain a "文件導航" / "Document Navigation" section listing paths to 01/02/03 docs, and a "專案規範參考" / "Project Standards" section with standards file paths. If format differs (e.g., non-spec-to-md origin), read prompt.md's actual structure and adapt — extract doc paths from whatever navigation format is present.
 - Context size management: for documents over ~200 lines, embed a summary + file path in spawn prompts and let teammates Read the full file on demand. Do NOT embed full content of large documents.
-- All Task agents / teammates: model opus (Agent B may use sonnet for cost efficiency)
+- All sub-agents / teammates: model opus (Agent B may use sonnet for cost efficiency)

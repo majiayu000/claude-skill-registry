@@ -2,8 +2,16 @@
   "name": "template",
   "repo": "anthropics/skills",
   "path": "template/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/anthropics/skills",
   "dir_name": "template-anthropics-skills",
-  "downloaded_at": "2026-02-22T06:18:37.942005Z"
+  "downloaded_at": "2026-03-22T06:58:13.674864Z",
+  "author": "anthropics",
+  "source_url": "https://github.com/anthropics/skills/blob/main/template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anthropics/skills/blob/main/template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

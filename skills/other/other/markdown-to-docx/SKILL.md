@@ -6,21 +6,25 @@ description: '[Document Processing] Convert markdown files to Microsoft Word (.d
 allowed-tools: NONE
 ---
 
-> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
 
 ## Quick Summary
 
 **Goal:** Convert Markdown files to Microsoft Word (.docx) format with GFM support and proper formatting.
 
 **Workflow:**
+
 1. **Install** -- Ensure pandoc is available (required dependency)
 2. **Convert** -- Run pandoc with docx output, apply reference template if provided
 3. **Verify** -- Check output file for formatting fidelity
 
 **Key Rules:**
+
 - Requires pandoc installed on the system
 - Supports GFM tables, code blocks, and images
 - Optional reference.docx template for custom styling
+
+**Be skeptical. Apply critical thinking, sequential thinking. Every claim needs traced proof, confidence percentages (Idea should be more than 80%).**
 
 # markdown-to-docx
 

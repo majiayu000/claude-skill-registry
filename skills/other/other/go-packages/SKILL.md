@@ -1,364 +1,147 @@
 ---
 name: go-packages
-description: Go package organization, imports, and dependency management from Google and Uber style guides. Use when creating packages, organizing imports, managing dependencies, using init(), or deciding how to structure Go code into packages.
+description: Use when creating Go packages, organizing imports, managing dependencies, or deciding how to structure Go code into packages. Also use when starting a new Go project or splitting a growing codebase into packages, even if the user doesn't explicitly ask about package organization. Does not cover naming individual identifiers (see go-naming).
+license: Apache-2.0
+metadata:
+  sources: "Google Style Guide, Uber Style Guide, Go Wiki CodeReviewComments"
 ---
 
 # Go Packages and Imports
 
-This skill covers package organization and import management following Google's
-and Uber's Go style guides.
-
----
+> **When this skill does NOT apply**: For naming individual identifiers within a package, see [go-naming](../go-naming/SKILL.md). For organizing functions within a single file, see [go-functions](../go-functions/SKILL.md). For configuring linters that enforce import rules, see [go-linting](../go-linting/SKILL.md).
 
 ## Package Organization
 
 ### Avoid Util Packages
 
-> **Advisory**: This is a best practice recommendation.
-
 Package names should describe what the package provides. Avoid generic names
-like `util`, `helper`, `common`, or similar—they make code harder to read and
-cause import conflicts.
+like `util`, `helper`, `common` — they obscure meaning and cause import
+conflicts.
 
 ```go
 // Good: Meaningful package names
 db := spannertest.NewDatabaseFromFile(...)
 _, err := f.Seek(0, io.SeekStart)
 
-// Bad: Vague package names obscure meaning
+// Bad: Vague names obscure meaning
 db := test.NewDatabaseFromFile(...)
 _, err := f.Seek(0, common.SeekStart)
 ```
 
-Generic names like `util` can be used as *part* of a name (e.g., `stringutil`)
-but should not be the entire package name.
+Generic names can be used as *part* of a name (e.g., `stringutil`) but should
+not be the entire package name.
 
 ### Package Size
 
-> **Advisory**: This is best practice guidance.
+| Question | Action |
+|----------|--------|
+| Can you describe its purpose in one sentence? | No → split by responsibility |
+| Do files never share unexported symbols? | Those files could be separate packages |
+| Distinct user groups use different parts? | Split along user boundaries |
+| Godoc page overwhelming? | Split to improve discoverability |
 
-**When to combine packages:**
-- If client code likely needs two types to interact, keep them together
-- If types have tightly coupled implementations
-- If users would need to import both packages to use either meaningfully
+**Do NOT split** just because a file is long, to create single-type packages, or
+if it would create circular dependencies.
 
-**When to split packages:**
-- When something is conceptually distinct
-- The short package name + exported type creates a meaningful identifier:
-  `bytes.Buffer`, `ring.New`
-
-**File organization:** No "one type, one file" convention in Go. Files should be
-focused enough to know which file contains something and small enough to find
-things easily.
+> Read [references/PACKAGE-SIZE.md](references/PACKAGE-SIZE.md) when deciding whether to split or combine packages, organizing files within a package, or structuring CLI programs.
 
 ---
 
 ## Imports
 
-### Import Organization
-
-> **Normative**: This is required per Go Wiki CodeReviewComments.
-
-Imports are organized in groups, with blank lines between them. The standard
-library packages are always in the first group.
+Imports are organized in groups separated by blank lines. Standard library
+packages always come first. Use
+[goimports](https://pkg.go.dev/golang.org/x/tools/cmd/goimports) to manage this
+automatically.
 
 ```go
-package main
-
-import (
-	"fmt"
-	"hash/adler32"
-	"os"
-
-	"github.com/foo/bar"
-	"rsc.io/goversion/version"
-)
-```
-
-Use [goimports](https://pkg.go.dev/golang.org/x/tools/cmd/goimports) to manage
-this automatically.
-
-### Import Grouping (Extended)
-
-> **Combined**: Google + Uber guidance
-
-**Minimal grouping (Uber):** stdlib, then everything else.
-
-**Extended grouping (Google):** stdlib → other → protocol buffers → side-effects.
-
-```go
-// Good: Standard library separate from external packages
 import (
     "fmt"
     "os"
 
-    "go.uber.org/atomic"
-    "golang.org/x/sync/errgroup"
+    "github.com/foo/bar"
+    "rsc.io/goversion/version"
 )
 ```
 
-```go
-// Good: Full grouping with protos and side-effects
-import (
-    "fmt"
-    "os"
+**Quick rules:**
 
-    "github.com/dsnet/compress/flate"
-    "golang.org/x/text/encoding"
+| Rule | Guidance |
+|------|----------|
+| Grouping | stdlib first, then external. Extended: stdlib → other → protos → side-effects |
+| Renaming | Avoid unless collision. Rename the most local import. Proto packages get `pb` suffix |
+| Blank imports (`import _`) | Only in `main` packages or tests |
+| Dot imports (`import .`) | Never use, except for circular-dependency test files |
 
-    foopb "myproj/foo/proto/proto"
-
-    _ "myproj/rpc/protocols/dial"
-)
-```
-
-### Import Renaming
-
-> **Normative**: This is required per Go Wiki CodeReviewComments and Google's Go style guide.
-
-Avoid renaming imports except to avoid a name collision; good package names
-should not require renaming. In the event of collision, **prefer to rename the
-most local or project-specific import**.
-
-**Must rename:** collision with other imports, generated protocol buffer packages
-(remove underscores, add `pb` suffix).
-
-**May rename:** uninformative names (e.g., `v1`), collision with local variable.
-
-```go
-// Good: Proto packages renamed with pb suffix
-import (
-    foosvcpb "path/to/package/foo_service_go_proto"
-)
-
-// Good: urlpkg when url variable is needed
-import (
-    urlpkg "net/url"
-)
-
-func parseEndpoint(url string) (*urlpkg.URL, error) {
-    return urlpkg.Parse(url)
-}
-```
-
-### Blank Imports (`import _`)
-
-> **Normative**: This is required per Go Wiki CodeReviewComments and Google's Go style guide.
-
-Packages that are imported only for their side effects (using `import _ "pkg"`)
-should only be imported in the main package of a program, or in tests that
-require them.
-
-```go
-// Good: Blank import in main package
-package main
-
-import (
-    _ "time/tzdata"
-    _ "image/jpeg"
-)
-```
-
-### Dot Imports (`import .`)
-
-> **Normative**: This is required per Go Wiki CodeReviewComments and Google's Go style guide.
-
-**Do not** use dot imports. They make programs much harder to read because it is
-unclear whether a name like `Quux` is a top-level identifier in the current
-package or in an imported package.
-
-**Exception:** The `import .` form can be useful in tests that, due to circular
-dependencies, cannot be made part of the package being tested:
-
-```go
-package foo_test
-
-import (
-	"bar/testutil" // also imports "foo"
-	. "foo"
-)
-```
-
-In this case, the test file cannot be in package `foo` because it uses
-`bar/testutil`, which imports `foo`. So the `import .` form lets the file
-pretend to be part of package `foo` even though it is not.
-
-**Except for this one case, do not use `import .` in your programs.**
-
-```go
-// Bad: Dot import hides origin
-import . "foo"
-var myThing = Bar() // Where does Bar come from?
-
-// Good: Explicit qualification
-import "foo"
-var myThing = foo.Bar()
-```
+> Read [references/IMPORTS.md](references/IMPORTS.md) when organizing imports with extended grouping, renaming proto packages, or deciding on blank/dot imports.
 
 ---
 
 ## Avoid init()
 
-> **Source**: Uber Go Style Guide
+Avoid `init()` where possible. When unavoidable, it must be:
 
-Avoid `init()` where possible. When `init()` is unavoidable, code should:
+1. Completely deterministic
+2. Independent of other `init()` ordering
+3. Free of environment state (env vars, working dir, args)
+4. Free of I/O (filesystem, network, system calls)
 
-1. Be completely deterministic, regardless of program environment
-2. Avoid depending on ordering or side-effects of other `init()` functions
-3. Avoid global/environment state (env vars, working directory, args)
-4. Avoid I/O (filesystem, network, system calls)
+**Acceptable uses**: complex expressions that can't be single assignments,
+pluggable hooks (e.g., `database/sql` dialects), deterministic precomputation.
 
-```go
-// Bad: init() with I/O and environment dependencies
-var _config Config
-
-func init() {
-    cwd, _ := os.Getwd()
-    raw, _ := os.ReadFile(path.Join(cwd, "config.yaml"))
-    yaml.Unmarshal(raw, &_config)
-}
-```
-
-```go
-// Good: Explicit function for loading config
-func loadConfig() (Config, error) {
-    cwd, err := os.Getwd()
-    if err != nil {
-        return Config{}, err
-    }
-
-    raw, err := os.ReadFile(path.Join(cwd, "config.yaml"))
-    if err != nil {
-        return Config{}, err
-    }
-
-    var config Config
-    if err := yaml.Unmarshal(raw, &config); err != nil {
-        return Config{}, err
-    }
-    return config, nil
-}
-```
-
-**Acceptable uses of init():**
-- Complex expressions that cannot be single assignments
-- Pluggable hooks (e.g., `database/sql` dialects, encoding registries)
-- Deterministic precomputation
+> Read [references/PACKAGE-SIZE.md](references/PACKAGE-SIZE.md) when you need to refactor init() into explicit functions or understand acceptable init() uses.
 
 ---
 
 ## Exit in Main
 
-> **Source**: Uber Go Style Guide
-
 Call `os.Exit` or `log.Fatal*` **only in `main()`**. All other functions should
-return errors to signal failure.
+return errors.
 
-**Why this matters:**
-- Non-obvious control flow: Any function can exit the program
-- Difficult to test: Functions that exit also exit the test
-- Skipped cleanup: `defer` statements are skipped
+**Why**: Non-obvious control flow, untestable, `defer` statements skipped.
 
-```go
-// Bad: log.Fatal in helper function
-func readFile(path string) string {
-    f, err := os.Open(path)
-    if err != nil {
-        log.Fatal(err)  // Exits program, skips defers
-    }
-    b, err := io.ReadAll(f)
-    if err != nil {
-        log.Fatal(err)
-    }
-    return string(b)
-}
-```
+**Best practice**: Use the `run()` pattern — extract logic into
+`func run() error`, call from `main()` with a single exit point:
 
 ```go
-// Good: Return errors, let main() decide to exit
-func main() {
-    body, err := readFile(path)
-    if err != nil {
-        log.Fatal(err)
-    }
-    fmt.Println(body)
-}
-
-func readFile(path string) (string, error) {
-    f, err := os.Open(path)
-    if err != nil {
-        return "", err
-    }
-    b, err := io.ReadAll(f)
-    if err != nil {
-        return "", err
-    }
-    return string(b), nil
-}
-```
-
-### Exit Once
-
-Prefer to call `os.Exit` or `log.Fatal` **at most once** in `main()`. Extract
-business logic into a separate function that returns errors.
-
-```go
-// Good: Single exit point with run() pattern
 func main() {
     if err := run(); err != nil {
         log.Fatal(err)
     }
 }
+```
 
-func run() error {
-    args := os.Args[1:]
-    if len(args) != 1 {
-        return errors.New("missing file")
+> Read [references/PACKAGE-SIZE.md](references/PACKAGE-SIZE.md) when implementing the run() pattern, structuring CLI subcommands, or choosing flag naming conventions.
+
+---
+
+## Command-Line Flags
+
+> **Advisory**: Define flags only in `package main`.
+
+- Flag names use `snake_case`: `--output_dir` not `--outputDir`
+- Libraries should accept configuration as parameters, not read flags directly —
+  this keeps them testable and reusable
+- Prefer the standard `flag` package; use `pflag` only when POSIX conventions
+  (double-dash, single-char shortcuts) are required
+
+```go
+// Good: Flag in main, passed as parameter to library
+func main() {
+    outputDir := flag.String("output_dir", ".", "directory for output files")
+    flag.Parse()
+    if err := mylib.Generate(*outputDir); err != nil {
+        log.Fatal(err)
     }
-
-    f, err := os.Open(args[0])
-    if err != nil {
-        return err
-    }
-    defer f.Close()  // Will always run
-
-    b, err := io.ReadAll(f)
-    if err != nil {
-        return err
-    }
-
-    // Process b...
-    return nil
 }
 ```
 
-**Benefits of the `run()` pattern:**
-- Short `main()` function with single exit point
-- All business logic is testable
-- `defer` statements always execute
-
 ---
 
-## Quick Reference
+## Related Skills
 
-| Topic | Rule | Type |
-|-------|------|------|
-| Import organization | std first, groups separated by blank lines | Normative |
-| Import grouping | std → other (→ proto → side-effect) | Combined |
-| Import renaming | Only when necessary; prefer renaming local/project import | Normative |
-| Blank imports | Only in main packages or tests | Normative |
-| Dot imports | Only for circular test dependencies | Normative |
-| Util packages | Avoid; use descriptive names | Advisory |
-| Package size | Balance cohesion vs. distinct concepts | Advisory |
-| init() | Avoid; must be deterministic if used | Advisory |
-| Exit in main | Only exit from main(); return errors | Advisory |
+- **Package naming**: See [go-naming](../go-naming/SKILL.md) when choosing package names, avoiding stuttering, or naming exported symbols
+- **Error handling across packages**: See [go-error-handling](../go-error-handling/SKILL.md) when wrapping errors at package boundaries with `%w` vs `%v`
+- **Import linting**: See [go-linting](../go-linting/SKILL.md) when configuring goimports local-prefixes or enforcing import grouping
+- **Global state**: See [go-defensive](../go-defensive/SKILL.md) when replacing `init()` with explicit initialization or avoiding mutable globals
 
----
-
-## See Also
-
-- For core style principles: `go-style-core`
-- For naming conventions: `go-naming`
-- For error handling patterns: `go-error-handling`
-- For defensive coding: `go-defensive`
-- For linting tools: `go-linting`

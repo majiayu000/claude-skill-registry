@@ -1,0 +1,17 @@
+{
+  "name": "android-tombstone-symbolication",
+  "repo": "dotnet/skills",
+  "path": "plugins/dotnet-diag/skills/android-tombstone-symbolication/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dotnet/skills",
+  "dir_name": "android-tombstone-symbolication",
+  "downloaded_at": "2026-03-22T07:48:46.602533Z",
+  "author": "dotnet",
+  "source_url": "https://github.com/dotnet/skills/blob/main/plugins/dotnet-diag/skills/android-tombstone-symbolication/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dotnet/skills/blob/main/plugins/dotnet-diag/skills/android-tombstone-symbolication/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

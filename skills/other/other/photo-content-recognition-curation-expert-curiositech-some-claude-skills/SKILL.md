@@ -1,19 +1,23 @@
 ---
 name: photo-content-recognition-curation-expert
-description: Expert in photo content recognition, intelligent curation, and quality filtering. Specializes in face/animal/place recognition, perceptual hashing for de-duplication, screenshot/meme detection, burst photo selection, and quick indexing strategies. Activate on 'face recognition', 'face clustering', 'perceptual hash', 'near-duplicate', 'burst photo', 'screenshot detection', 'photo curation', 'photo indexing', 'NSFW detection', 'pet recognition', 'DINOHash', 'HDBSCAN faces'. NOT for GPS-based location clustering (use event-detection-temporal-intelligence-expert), color palette extraction (use color-theory-palette-harmony-expert), semantic image-text matching (use clip-aware-embeddings), or video analysis/frame extraction.
+description: Expert in photo content recognition, intelligent curation, and quality filtering. Specializes in face/animal/place recognition, perceptual hashing for de-duplication, screenshot/meme detection,
+  burst photo selection, and quick indexing strategies. Activate on 'face recognition', 'face clustering', 'perceptual hash', 'near-duplicate', 'burst photo', 'screenshot detection', 'photo curation', 'photo
+  indexing', 'NSFW detection', 'pet recognition', 'DINOHash', 'HDBSCAN faces'. NOT for GPS-based location clustering (use event-detection-temporal-intelligence-expert), color palette extraction (use color-theory-palette-harmony-expert),
+  semantic image-text matching (use clip-aware-embeddings), or video analysis/frame extraction.
 allowed-tools: Read,Write,Edit,Bash,Grep,Glob,mcp__firecrawl__firecrawl_search,WebFetch
-category: AI & Machine Learning
-tags:
+metadata:
+  category: AI & Machine Learning
+  pairs-with:
+  - skill: event-detection-temporal-intelligence-expert
+    reason: Temporal context for photos
+  - skill: wedding-immortalist
+    reason: Curate wedding photo collections
+  tags:
   - face-recognition
   - deduplication
   - curation
   - indexing
   - nsfw
-pairs-with:
-  - skill: event-detection-temporal-intelligence-expert
-    reason: Temporal context for photos
-  - skill: wedding-immortalist
-    reason: Curate wedding photo collections
 ---
 
 # Photo Content Recognition & Curation Expert

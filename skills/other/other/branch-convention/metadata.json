@@ -1,0 +1,17 @@
+{
+  "name": "branch-convention",
+  "repo": "Jimmy-Jung/claude_symbiote",
+  "path": ".claude/skills/branch-convention/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Jimmy-Jung/claude_symbiote",
+  "dir_name": "branch-convention",
+  "downloaded_at": "2026-03-22T05:34:29.163895Z",
+  "author": "Jimmy-Jung",
+  "source_url": "https://github.com/Jimmy-Jung/claude_symbiote/blob/main/.claude/skills/branch-convention/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jimmy-Jung/claude_symbiote/blob/main/.claude/skills/branch-convention/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

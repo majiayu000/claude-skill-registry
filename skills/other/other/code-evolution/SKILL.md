@@ -21,6 +21,20 @@ Evaluate whether code modifications maintain or degrade design quality.
 
 ## Core Principles
 
+### Technical Debt
+
+Technical debt doesn't come from catastrophic decisions. It comes from hundreds of small, reasonable shortcuts that compound silently until the codebase starts fighting back. Calling it "debt" at all is generous because the financial kind gets repaid.
+
+#### During Modifications
+
+- Debt in the area being modified → fix it now (context is fresh, fix is cheapest)
+- Debt elsewhere affecting the modification → document it, fix if feasible
+- Never add to the pile. Each modification should reduce debt, not increase it
+
+#### Refactoring
+
+Refactoring is not a special event. It is the normal expression of strategic programming applied to existing code. Continuous small improvements, not periodic large refactors.
+
 ### The "Designed This Way" Standard
 
 > "Ideally, when you have finished with each change, the system will have the structure it would have had if you had designed it from the start with that change in mind." — John Ousterhout, _A Philosophy of Software Design_
@@ -39,21 +53,19 @@ When the ideal refactoring takes three months and you have two hours, the strate
 
 ### The "Smallest Possible Change" Trap
 
-There is no neutral gear.
-
-> "If you're not making the design better, you are probably making it worse." — John Ousterhout, _A Philosophy of Software Design_
+There is no neutral gear. Every change either improves the design or degrades it.
 
 Each minimal change typically introduces a special case, a dependency, or a conditional that doesn't belong. Once, negligible. Across hundreds of modifications over years, this is how well-designed systems become legacy nightmares.
 
 ### Repetition Audit
 
-After a modification, check:
+After a modification, ask yourself:
 
-- Was similar code copy-pasted rather than extracted?
 - Does the same logic now exist in multiple places?
-- Will the next change of this type require edits in multiple locations?
+- Was similar code duplicated instead of abstracted?
+- Would a similar change require edits in multiple locations?
 
-> "If the same piece of code (or code that is almost the same) appears over and over again, that's a red flag that you haven't found the right abstractions." — John Ousterhout, _A Philosophy of Software Design_
+Repeated code is a red flag that the right abstraction hasn't been found yet.
 
 #### Two Strategies
 
@@ -72,31 +84,17 @@ Five maintenance rules:
 
 2. **Put comments in code, not commit logs**: developers navigate code spatially, not chronologically
 
-   > "Comments belong in the code, not the commit log." — John Ousterhout, _A Philosophy of Software Design_
-
 3. **Document each decision exactly once**: duplicated documentation drifts invisibly
+
 4. **Check the diffs before committing**: verify documentation still matches behavior
+
 5. **Prefer higher-level comments**: abstract comments that describe _what_ and _why_ survive code changes better than detailed _how_ comments. As Ousterhout writes, "the farther a comment is from the code it describes, the more abstract it should be"
-
-### Technical Debt
-
-> "Unlike financial debt, most technical debt is never fully repaid." — John Ousterhout, _A Philosophy of Software Design_
-
-No settlement date, only ongoing interest. It accumulates not through catastrophic decisions but through hundreds of small shortcuts, each locally defensible, collectively corrosive.
-
-### During Modifications
-
-- Debt in the area being modified → fix it now (context is fresh, fix is cheapest)
-- Debt elsewhere affecting the modification → document it, fix if feasible
-- Never add to the pile. Each modification should reduce debt, not increase it
-
-Refactoring is not a special event. It is the normal expression of strategic programming applied to existing code. Continuous small improvements, not periodic large refactors.
 
 ## Review Process
 
 1. **Apply the "designed this way" test**: Does the modification look native or bolted-on?
 2. **Check for incremental complexity**: Did the change add special cases, dependencies, parameters, or flags?
-3. **Run repetition audit**: Did the change introduce or perpetuate copy-paste?
+3. **Run repetition audit**: Did the change introduce or perpetuate duplication?
 4. **Verify comment maintenance**: Are all affected comments updated?
 5. **Assess debt trajectory**: Is the modification reducing or increasing technical debt?
 6. **Recommend**: Specific improvements to make the change feel designed-in

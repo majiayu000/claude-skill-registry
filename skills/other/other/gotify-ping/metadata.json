@@ -1,0 +1,17 @@
+{
+  "name": "gotify-ping",
+  "repo": "abl030/nixosconfig",
+  "path": ".claude/skills/gotify-ping/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/abl030/nixosconfig",
+  "dir_name": "gotify-ping",
+  "downloaded_at": "2026-03-22T06:39:16.151209Z",
+  "author": "abl030",
+  "source_url": "https://github.com/abl030/nixosconfig/blob/master/.claude/skills/gotify-ping/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/abl030/nixosconfig/blob/master/.claude/skills/gotify-ping/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

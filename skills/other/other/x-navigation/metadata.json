@@ -2,8 +2,16 @@
   "name": "x-navigation",
   "repo": "az9713/whatsapp-claude-old",
   "path": ".claude/skills/x-navigation/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/az9713/whatsapp-claude-old",
   "dir_name": "x-navigation",
-  "downloaded_at": "2026-02-22T06:27:58.082944Z"
+  "downloaded_at": "2026-03-22T07:07:54.394242Z",
+  "author": "az9713",
+  "source_url": "https://github.com/az9713/whatsapp-claude-old/blob/main/.claude/skills/x-navigation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/az9713/whatsapp-claude-old/blob/main/.claude/skills/x-navigation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

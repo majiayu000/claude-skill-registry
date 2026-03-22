@@ -58,6 +58,21 @@ evaluation_criteria:
   token_efficiency: 25
   tool_integration: 20
   claude_sdk_compliance: 10
+modules:
+- modules/advanced-tool-use-analysis.md
+- modules/authoring-checklist.md
+- modules/evaluation-criteria.md
+- modules/evaluation-framework.md
+- modules/evaluation-workflows.md
+- modules/integration-testing.md
+- modules/integration.md
+- modules/multi-metric-evaluation-methodology.md
+- modules/performance-benchmarking.md
+- modules/pressure-testing.md
+- modules/quality-metrics.md
+- modules/skill-authoring-best-practices.md
+- modules/trigger-isolation-analysis.md
+- modules/troubleshooting.md
 ---
 # Skills Evaluation and Improvement
 

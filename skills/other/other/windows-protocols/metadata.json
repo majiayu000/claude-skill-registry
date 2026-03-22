@@ -1,0 +1,17 @@
+{
+  "name": "windows-protocols",
+  "repo": "awakecoding/openspecs",
+  "path": "skills/windows-protocols/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/awakecoding/openspecs",
+  "dir_name": "windows-protocols",
+  "downloaded_at": "2026-03-22T07:06:48.852504Z",
+  "author": "awakecoding",
+  "source_url": "https://github.com/awakecoding/openspecs/blob/master/skills/windows-protocols/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/awakecoding/openspecs/blob/master/skills/windows-protocols/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

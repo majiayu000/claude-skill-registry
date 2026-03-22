@@ -36,8 +36,24 @@ west build -b native_sim samples/hello_world
 west debug
 ```
 
+## Automation Tools
+- **[native_log_scan.py](scripts/native_log_scan.py)**: Scan native simulation logs for common crash/failure signatures.
+
+## Examples & Templates
+- **[native_sim_ci_checklist.md](assets/native_sim_ci_checklist.md)**: Starter checklist for CI simulation coverage.
+
+## Validation Checklist
+- [ ] `west build -b native_sim` succeeds for at least one sample and one app target.
+- [ ] Built binary runs on host and emits expected startup logs.
+- [ ] Host debugger (GDB/Valgrind) can attach and surface expected symbols.
+- [ ] Simulation test path is integrated into CI (for example Twister native_sim run).
+
 ## Resources
 
 - **[References](references/)**:
   - `simulation_basics.md`: Architectural overview and usage patterns.
   - `debugging.md`: GDB, Valgrind, and profiling guide.
+- **[Scripts](scripts/)**:
+  - `native_log_scan.py`: Failure signature scanner for native_sim logs.
+- **[Assets](assets/)**:
+  - `native_sim_ci_checklist.md`: CI simulation review checklist.

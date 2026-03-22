@@ -159,6 +159,25 @@ Male baritone, passionate delivery, storytelling vocal. Alternative rock,
 clean electric guitar, driving bassline, tight drums. Modern production, dynamic range.
 ```
 
+### Exclude Styles (Negative Prompting)
+
+Suno V5 handles exclusions reliably. Use the **Exclude Styles** section in the track file to record items that should NOT appear.
+
+**Rules:**
+- **Max 2–4 items** — over-specification dilutes the effect
+- **Simple "no [element]" format**: `no drums`, `no electric guitar`, `no autotune`
+- **Append to Style Box when pasting** — combine Style Box + Exclude Styles into one Suno field
+- **Leave empty if not needed** — most tracks won't need exclusions
+
+**Auto-populate guidance:** Consider whether genre/instrumentation context implies exclusions:
+- Acoustic folk → `no electric instruments, no drums`
+- A cappella → `no instruments`
+- Lo-fi chill → `no aggressive vocals`
+
+Only add exclusions when there is a clear reason.
+
+See `${CLAUDE_PLUGIN_ROOT}/reference/suno/v5-best-practices.md` § Negative Prompting for full details.
+
 ---
 
 ## Genre Selection
@@ -201,6 +220,9 @@ Combine up to 3 genres for unique sound:
 **Fix**: Use phonetic spelling in Lyrics Box
 - See `${CLAUDE_PLUGIN_ROOT}/reference/suno/pronunciation-guide.md`
 
+### Unwanted Elements in Mix
+**Fix**: Add exclusions to the Exclude Styles section (max 2–4 items, "no [element]" format)
+
 ---
 
 ## Duration Awareness
@@ -208,10 +230,18 @@ Combine up to 3 genres for unique sound:
 Check target duration: track Target Duration → album Target Duration → genre default.
 
 **How duration affects structure:**
+- **Under 2:00**: 1–2 sections + `[End]`. Minimal tags. Add `"short"` or `"concise"` in style prompt. Good for title screens, cutscenes, interludes.
 - **Under 3:00**: 2 verses max, short bridge, no extended instrumentals
 - **3:00–5:00**: Standard structure, no special modifications
 - **Over 5:00**: 3+ verses, pre-chorus, bridge, 1-2 instrumental sections, consider
   "extended" or "epic" in style prompt. Note: Suno V5 max ~8 minutes.
+
+**Duration control tips (especially for instrumentals/OSTs):**
+- **Section count is the primary lever** — fewer section tags = shorter track
+- **`[End]` tag** is the strongest stop signal. Place after `[Outro]` to force termination.
+- **No exact duration parameter exists** — expect 2–3 generations to hit target length
+- **Trim in post** — generate slightly long and fade/cut to exact length
+- **For very short tracks** (~1:00–1:30): `[Intro]` → `[Main Theme]` → `[End]` with Instrumental: On
 
 ---
 
@@ -269,7 +299,7 @@ As the Suno engineer, you:
 4. **Select genre** - Choose appropriate genre tags
 5. **Define vocals** - Specify voice type, delivery, energy
 6. **Choose instruments** - Select key instruments and sonic texture
-7. **Build style prompt** - Assemble final prompt (vocals FIRST)
+7. **Build style prompt** - Assemble final prompt (vocals FIRST), populate Exclude Styles if needed
 8. **Generate in Suno** - Create track with assembled inputs
 9. **Iterate if needed** - Refine based on output quality
 10. **Log results** - Document in Generation Log with rating
@@ -318,5 +348,7 @@ When you discover new Suno behavior or techniques, **update the reference docume
 2. **Suno V5 is literal** - Say what you want clearly and directly. Trust the model.
 3. **Apply genre mappings** - Use override genre preferences if available
 4. **Respect avoidance rules** - Never use genres/words user specified to avoid
+5. **Use exclusions sparingly** — Exclude Styles for 2–4 items max; leave empty when not needed
+6. **Backfill older tracks** — If an existing track file is missing the `### Exclude Styles` section, add it between Style Box and Lyrics Box (per template)
 
-Simple prompts + good lyrics + section tags + user preferences = best results.
+Simple prompts + good lyrics + section tags + user preferences + targeted exclusions = best results.

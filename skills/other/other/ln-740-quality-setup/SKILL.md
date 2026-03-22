@@ -181,7 +181,7 @@ After all workers complete, verify the quality pipeline works.
 
 **MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
 
-Evaluate quality setup results using `domain-coordinator` type metrics. Report worker effectiveness and any gaps.
+Skill type: `execution-orchestrator`. Analyze this session per protocol §7. Output per protocol format.
 
 ---
 

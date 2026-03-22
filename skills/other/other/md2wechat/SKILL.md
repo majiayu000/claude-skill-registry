@@ -14,13 +14,13 @@ Converts Markdown articles to WeChat Official Account formatted HTML with inline
 
 ```bash
 # Preview HTML (API mode, fast)
-bash skills/md2wechat/scripts/run.sh convert article.md --preview
+md2wechat convert article.md --preview
 
 # Generate AI request / prompt (AI mode, themed)
-bash skills/md2wechat/scripts/run.sh convert article.md --mode ai --theme autumn-warm --preview
+md2wechat convert article.md --mode ai --theme autumn-warm --preview
 
 # Upload to WeChat draft box
-bash skills/md2wechat/scripts/run.sh convert article.md --draft --cover cover.jpg
+md2wechat convert article.md --draft --cover cover.jpg
 ```
 
 ### Config Location
@@ -73,11 +73,11 @@ Prompt catalog:
 Recommended discovery flow:
 
 ```bash
-bash skills/md2wechat/scripts/run.sh capabilities --json
-bash skills/md2wechat/scripts/run.sh providers list --json
-bash skills/md2wechat/scripts/run.sh themes list --json
-bash skills/md2wechat/scripts/run.sh prompts list --json
-bash skills/md2wechat/scripts/run.sh prompts list --kind image --archetype cover --json
+md2wechat capabilities --json
+md2wechat providers list --json
+md2wechat themes list --json
+md2wechat prompts list --json
+md2wechat prompts list --kind image --archetype cover --json
 ```
 
 For image presets, do not assume `archetype` is the only truth. Some infographic presets can also be used as covers. Inspect `primary_use_case`, `compatible_use_cases`, `recommended_aspect_ratios`, and `default_aspect_ratio` from `prompts show --json` before choosing a preset.
@@ -85,20 +85,20 @@ For image presets, do not assume `archetype` is the only truth. Some infographic
 When a task depends on a specific template, inspect it first:
 
 ```bash
-bash skills/md2wechat/scripts/run.sh prompts show cover-default --kind image --json
-bash skills/md2wechat/scripts/run.sh prompts show cover-hero --kind image --archetype cover --tag hero --json
-bash skills/md2wechat/scripts/run.sh prompts show infographic-dark-ticket-cn --kind image --archetype infographic --tag ticket --json
-bash skills/md2wechat/scripts/run.sh prompts show infographic-handdrawn-sketchnote --kind image --archetype infographic --tag sketchnote --json
-bash skills/md2wechat/scripts/run.sh prompts show infographic-apple-keynote-premium --kind image --archetype infographic --tag apple --json
-bash skills/md2wechat/scripts/run.sh prompts show infographic-victorian-engraving-banner --kind image --archetype infographic --tag victorian --json
-bash skills/md2wechat/scripts/run.sh prompts render cover-default --kind image --var article_title='Example' --json
-bash skills/md2wechat/scripts/run.sh generate_cover --article article.md
-bash skills/md2wechat/scripts/run.sh generate_infographic --article article.md --preset infographic-comparison
-bash skills/md2wechat/scripts/run.sh generate_infographic --article article.md --preset infographic-dark-ticket-cn --aspect 21:9
-bash skills/md2wechat/scripts/run.sh generate_infographic --article article.md --preset infographic-handdrawn-sketchnote
-bash skills/md2wechat/scripts/run.sh generate_infographic --article article.md --preset infographic-apple-keynote-premium
-bash skills/md2wechat/scripts/run.sh generate_infographic --article article.md --preset infographic-victorian-engraving-banner --aspect 21:9
-bash skills/md2wechat/scripts/run.sh generate_image --preset cover-hero --article article.md --model gemini-3-pro-image-preview
+md2wechat prompts show cover-default --kind image --json
+md2wechat prompts show cover-hero --kind image --archetype cover --tag hero --json
+md2wechat prompts show infographic-dark-ticket-cn --kind image --archetype infographic --tag ticket --json
+md2wechat prompts show infographic-handdrawn-sketchnote --kind image --archetype infographic --tag sketchnote --json
+md2wechat prompts show infographic-apple-keynote-premium --kind image --archetype infographic --tag apple --json
+md2wechat prompts show infographic-victorian-engraving-banner --kind image --archetype infographic --tag victorian --json
+md2wechat prompts render cover-default --kind image --var article_title='Example' --json
+md2wechat generate_cover --article article.md
+md2wechat generate_infographic --article article.md --preset infographic-comparison
+md2wechat generate_infographic --article article.md --preset infographic-dark-ticket-cn --aspect 21:9
+md2wechat generate_infographic --article article.md --preset infographic-handdrawn-sketchnote
+md2wechat generate_infographic --article article.md --preset infographic-apple-keynote-premium
+md2wechat generate_infographic --article article.md --preset infographic-victorian-engraving-banner --aspect 21:9
+md2wechat generate_image --preset cover-hero --article article.md --model gemini-3-pro-image-preview
 ```
 
 ### Natural Language Image Generation
@@ -263,7 +263,7 @@ Read the markdown file and extract:
 Before picking a theme, inspect the live CLI result:
 
 ```bash
-bash skills/md2wechat/scripts/run.sh themes list --json
+md2wechat themes list --json
 ```
 
 ### AI Themes
@@ -308,7 +308,7 @@ Read [references/themes.md](references/themes.md) for visual intent and prompt e
 Call md2wechat CLI:
 
 ```bash
-bash skills/md2wechat/scripts/run.sh convert article.md --mode api
+md2wechat convert article.md --mode api
 ```
 
 ### AI Mode
@@ -394,7 +394,7 @@ User: "Make a diagram showing user signup flow"
 **I will:**
 1. Create an appropriate prompt based on your description
 2. Prefer a bundled preset when the image is a cover or infographic
-3. Otherwise call: `bash skills/md2wechat/scripts/run.sh generate_image "prompt"`
+3. Otherwise call: `md2wechat generate_image "prompt"`
 3. Return the WeChat URL and media ID
 
 **Use when:** You just need an image, not for any article.
@@ -418,7 +418,7 @@ For each image reference in order:
 #### Local Image
 
 ```bash
-bash skills/md2wechat/scripts/run.sh upload_image "/path/to/image.png"
+md2wechat upload_image "/path/to/image.png"
 ```
 
 Response:
@@ -429,23 +429,23 @@ Response:
 #### Online Image
 
 ```bash
-bash skills/md2wechat/scripts/run.sh download_and_upload "https://example.com/image.png"
+md2wechat download_and_upload "https://example.com/image.png"
 ```
 
 #### AI Generated Image (via CLI)
 
 ```bash
 # Generate with default size (2048x2048 square)
-bash skills/md2wechat/scripts/run.sh generate_image "A cute cat sitting on a windowsill"
+md2wechat generate_image "A cute cat sitting on a windowsill"
 
 # Generate a cover image from bundled prompt presets
-bash skills/md2wechat/scripts/run.sh generate_cover --article article.md
+md2wechat generate_cover --article article.md
 
 # Generate an infographic from bundled prompt presets
-bash skills/md2wechat/scripts/run.sh generate_infographic --article article.md --preset infographic-process
+md2wechat generate_infographic --article article.md --preset infographic-process
 
 # Generate with 16:9 ratio for WeChat cover (recommended)
-bash skills/md2wechat/scripts/run.sh generate_image --preset cover-hero --article article.md --size 2560x1440
+md2wechat generate_image --preset cover-hero --article article.md --size 2560x1440
 ```
 
 **WeChat Cover Images**: For article covers, use 16:9 horizontal ratio (2560x1440 recommended) as it displays better in WeChat's feed and article list. Square images (2048x2048) are cropped in preview.
@@ -497,7 +497,7 @@ Display HTML in markdown code block for user to copy.
 Create draft and run:
 
 ```bash
-bash skills/md2wechat/scripts/run.sh convert article.md --draft --cover cover.jpg
+md2wechat convert article.md --draft --cover cover.jpg
 ```
 
 **Required for draft**:
@@ -670,7 +670,7 @@ A story about memories...
 **Q: "AppID not configured" error**
 A: Set `WECHAT_APPID` and `WECHAT_SECRET` environment variables, or run:
 ```bash
-bash skills/md2wechat/scripts/run.sh config init
+md2wechat config init
 ```
 
 **Q: Config file not working**
@@ -717,10 +717,10 @@ curl ip.sb
 A: Program auto-refreshes tokens. If persists:
 ```bash
 # Check config
-bash skills/md2wechat/scripts/run.sh config show
+md2wechat config show
 
 # Re-init if needed
-bash skills/md2wechat/scripts/run.sh config init
+md2wechat config init
 ```
 
 **Q: "create draft failed" error**
@@ -749,7 +749,7 @@ A: WeChat has API limits. Wait and retry:
 # Wait 60 seconds
 sleep 60
 # Retry
-bash skills/md2wechat/scripts/run.sh convert article.md --draft
+md2wechat convert article.md --draft
 ```
 
 ### HTML/Style Issues
@@ -777,24 +777,20 @@ A: WeChat resets `<p>` color to black. Always specify:
 ### Command Issues
 
 **Q: "command not found: md2wechat"**
-A: The `run.sh` wrapper does not assume the repository is the only runtime source. It uses this order:
+A: Coding-agent skill 默认要求 `md2wechat` 已经安装到 `PATH`，不再自带 runtime wrapper 或执行时下载逻辑。
 
-1. cached `md2wechat`
-2. repository-local development binary
-3. `md2wechat` already on `PATH`, but only if its version matches the current skill version
-4. fixed-version GitHub Releases download as the final fallback
-
-If you want to install manually:
+Install the CLI first, then rerun the skill:
 ```bash
-# Use the script first
-bash skills/md2wechat/scripts/run.sh --help
-
-# Or install md2wechat globally and put it on PATH
-# Or download from releases:
-# https://github.com/geekjourneyx/md2wechat-skill/releases
+curl -fsSL https://github.com/geekjourneyx/md2wechat-skill/releases/download/v2.0.3/install.sh | bash
+npx skills add https://github.com/geekjourneyx/md2wechat-skill --skill md2wechat
 ```
 
-If your network cannot access GitHub Releases CDN, install `md2wechat` first or set `MD2WECHAT_SKILL_RELEASE_BASE_URL` to a reachable mirror before using the skill.
+If the installer finished but the current shell still cannot find `md2wechat`, run:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+md2wechat version --json
+```
 
 **Q: AI mode very slow**
 A: AI mode requires Claude API call and takes 10-30 seconds. For faster results, use API mode.
@@ -803,85 +799,85 @@ A: AI mode requires Claude API call and takes 10-30 seconds. For faster results,
 
 ## CLI Commands Reference
 
-All commands go through the `run.sh` wrapper, which handles runtime discovery first and only downloads as a last resort:
+This skill assumes the `md2wechat` CLI is already installed and available on `PATH`:
 
 ```bash
 # Show help
-bash skills/md2wechat/scripts/run.sh --help
+md2wechat --help
 
 # Convert and preview
-bash skills/md2wechat/scripts/run.sh convert article.md --preview
+md2wechat convert article.md --preview
 
 # Convert with AI theme
-bash skills/md2wechat/scripts/run.sh convert article.md --mode ai --theme autumn-warm --preview
+md2wechat convert article.md --mode ai --theme autumn-warm --preview
 
 # Convert and upload to draft
-bash skills/md2wechat/scripts/run.sh convert article.md --draft --cover cover.jpg
+md2wechat convert article.md --draft --cover cover.jpg
 
 # Upload single image
-bash skills/md2wechat/scripts/run.sh upload_image photo.jpg
+md2wechat upload_image photo.jpg
 
 # Download and upload online image
-bash skills/md2wechat/scripts/run.sh download_and_upload https://example.com/image.jpg
+md2wechat download_and_upload https://example.com/image.jpg
 
 # Generate AI image (requires IMAGE_API_KEY)
-bash skills/md2wechat/scripts/run.sh generate_image "A cute cat sitting on a windowsill"
+md2wechat generate_image "A cute cat sitting on a windowsill"
 
 # Generate cover image from bundled presets
-bash skills/md2wechat/scripts/run.sh generate_cover --article article.md
+md2wechat generate_cover --article article.md
 
 # Generate infographic image from bundled presets
-bash skills/md2wechat/scripts/run.sh generate_infographic --article article.md --preset infographic-comparison
+md2wechat generate_infographic --article article.md --preset infographic-comparison
 
 # Generate with 16:9 ratio for WeChat cover via preset (recommended)
-bash skills/md2wechat/scripts/run.sh generate_image --preset cover-hero --article article.md --size 2560x1440
+md2wechat generate_image --preset cover-hero --article article.md --size 2560x1440
 
 # Initialize config
-bash skills/md2wechat/scripts/run.sh config init
+md2wechat config init
 
 # Show config
-bash skills/md2wechat/scripts/run.sh config show
+md2wechat config show
 
 # List available writing styles
-bash skills/md2wechat/scripts/run.sh write --list
+md2wechat write --list
 
 # Write with creator style (interactive)
-bash skills/md2wechat/scripts/run.sh write
+md2wechat write
 
 # Write with specific style (via stdin/piped)
-echo "你的想法或内容" | bash skills/md2wechat/scripts/run.sh write --style dan-koe
+echo "你的想法或内容" | md2wechat write --style dan-koe
 
 # Write with title and heredoc
-bash skills/md2wechat/scripts/run.sh write --style dan-koe --title "文章标题" <<EOF
+md2wechat write --style dan-koe --title "文章标题" <<EOF
 你的内容
 EOF
 
 # Write with specific style
-bash skills/md2wechat/scripts/run.sh write --style dan-koe
+md2wechat write --style dan-koe
 
 # Generate cover prompt only
-bash skills/md2wechat/scripts/run.sh write --style dan-koe --cover-only
+md2wechat write --style dan-koe --cover-only
 
 # Remove AI writing traces (humanize)
-bash skills/md2wechat/scripts/run.sh humanize article.md
+md2wechat humanize article.md
 
 # Humanize with intensity
-bash skills/md2wechat/scripts/run.sh humanize article.md --intensity aggressive
+md2wechat humanize article.md --intensity aggressive
 
 # Write with humanize
-bash skills/md2wechat/scripts/run.sh write --style dan-koe --humanize
+md2wechat write --style dan-koe --humanize
 
 # Create image post (小绿书/newspic)
-bash skills/md2wechat/scripts/run.sh create_image_post -t "Title" --images photo1.jpg,photo2.jpg
+md2wechat create_image_post -t "Title" --images photo1.jpg,photo2.jpg
 
 # Extract images from Markdown
-bash skills/md2wechat/scripts/run.sh create_image_post -t "Title" -m article.md
+md2wechat create_image_post -t "Title" -m article.md
 
 # With description and comments
-bash skills/md2wechat/scripts/run.sh create_image_post -t "Title" -c "Description" --images photo.jpg --open-comment
+md2wechat create_image_post -t "Title" -c "Description" --images photo.jpg --open-comment
 
 # Preview mode (dry-run)
-bash skills/md2wechat/scripts/run.sh create_image_post -t "Test" --images a.jpg,b.jpg --dry-run
+md2wechat create_image_post -t "Test" --images a.jpg,b.jpg --dry-run
 ```
 
 ---
@@ -915,29 +911,29 @@ Create WeChat image-only posts (小绿书/图片消息) with up to 20 images.
 
 ```bash
 # Basic image post
-bash skills/md2wechat/scripts/run.sh create_image_post \
+md2wechat create_image_post \
   -t "Weekend Trip" \
   --images photo1.jpg,photo2.jpg,photo3.jpg
 
 # Extract images from article
-bash skills/md2wechat/scripts/run.sh create_image_post \
+md2wechat create_image_post \
   -t "Travel Diary" \
   -m article.md
 
 # With description and comments enabled
-bash skills/md2wechat/scripts/run.sh create_image_post \
+md2wechat create_image_post \
   -t "Food Blog" \
   -c "Today's lunch" \
   --images food.jpg \
   --open-comment
 
 # Read description from stdin
-echo "Daily check-in" | bash skills/md2wechat/scripts/run.sh create_image_post \
+echo "Daily check-in" | md2wechat create_image_post \
   -t "Daily" \
   --images pic.jpg
 
 # Preview mode
-bash skills/md2wechat/scripts/run.sh create_image_post \
+md2wechat create_image_post \
   -t "Test" \
   --images a.jpg,b.jpg \
   --dry-run

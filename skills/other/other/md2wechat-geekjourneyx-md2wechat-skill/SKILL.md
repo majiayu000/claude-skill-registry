@@ -1,63 +1,115 @@
 ---
 name: md2wechat
-description: Convert Markdown to WeChat Official Account HTML, process images, generate cover and infographic images, and create drafts for OpenClaw.
-metadata: {"openclaw":{"emoji":"📝","homepage":"https://github.com/geekjourneyx/md2wechat-skill","primaryEnv":"WECHAT_APPID","requires":{"env":["WECHAT_APPID","WECHAT_SECRET"]},"install":[{"id":"openclaw-installer-shell","kind":"download","label":"Download fixed-version OpenClaw installer (shell)","url":"https://github.com/geekjourneyx/md2wechat-skill/releases/download/v2.0.1/install-openclaw.sh","os":["darwin","linux"]},{"id":"openclaw-installer-powershell","kind":"download","label":"Download fixed-version installer (PowerShell)","url":"https://github.com/geekjourneyx/md2wechat-skill/releases/download/v2.0.1/install.ps1","os":["win32"]},{"id":"openclaw-skill-bundle","kind":"download","label":"Download OpenClaw skill bundle","url":"https://github.com/geekjourneyx/md2wechat-skill/releases/download/v2.0.1/md2wechat-openclaw-skill.tar.gz","archive":"tar.gz","targetDir":"~/.openclaw/skills","os":["darwin","linux","win32"]},{"id":"openclaw-runtime-linux","kind":"download","label":"Download md2wechat runtime (Linux amd64)","url":"https://github.com/geekjourneyx/md2wechat-skill/releases/download/v2.0.1/md2wechat-linux-amd64","targetDir":"~/.openclaw/tools/md2wechat","os":["linux"]},{"id":"openclaw-runtime-darwin","kind":"download","label":"Download md2wechat runtime (macOS amd64)","url":"https://github.com/geekjourneyx/md2wechat-skill/releases/download/v2.0.1/md2wechat-darwin-amd64","targetDir":"~/.openclaw/tools/md2wechat","os":["darwin"]}]}}
+description: Convert Markdown to WeChat Official Account HTML, inspect supported providers/themes/prompts, generate article images, create drafts, write with creator styles, and remove AI writing traces.
+homepage: https://github.com/geekjourneyx/md2wechat-skill
+metadata: {"clawdbot":{"emoji":"📝","requires":{"bins":["md2wechat"],"env":["WECHAT_APPID","WECHAT_SECRET"]},"install":[{"id":"brew","kind":"brew","formula":"geekjourneyx/tap/md2wechat","bins":["md2wechat"],"label":"Install md2wechat (brew)"},{"id":"go","kind":"go","module":"github.com/geekjourneyx/md2wechat-skill/cmd/md2wechat@latest","bins":["md2wechat"],"label":"Install md2wechat (go)"}]}}
 ---
 
-# md2wechat for OpenClaw
+# md2wechat
 
-Transparency:
+Use `md2wechat` when the user wants to:
+
+- convert Markdown into WeChat Official Account HTML
+- preview or upload drafts
+- inspect live capabilities, providers, themes, and prompts
+- generate covers, infographics, or other article images
+- create image posts
+- write in creator styles or remove AI writing traces
+
+## Defaults And Config
+
+- Use this skill only when `md2wechat` is already available on `PATH`.
+- Draft upload and publish-related actions require `WECHAT_APPID` and `WECHAT_SECRET`.
+- Image generation may require additional image-service configuration in `~/.config/md2wechat/config.yaml`.
+- `convert` defaults to `api` mode unless the user explicitly asks for `--mode ai`.
+- Check configuration in this order:
+  1. `~/.config/md2wechat/config.yaml`
+  2. environment variables such as `MD2WECHAT_BASE_URL`
+  3. project-local `md2wechat.yaml`, `md2wechat.yml`, or `md2wechat.json`
+- If the user asks to switch API domain, update `api.md2wechat_base_url` or `MD2WECHAT_BASE_URL`.
+- Treat live CLI discovery output as the source of truth. Do not guess provider names, theme names, or prompt names from repository files alone.
+
+## Discovery First
+
+Run these before selecting a provider, theme, or prompt:
+
+- `md2wechat version --json`
+- `md2wechat capabilities --json`
+- `md2wechat providers list --json`
+- `md2wechat themes list --json`
+- `md2wechat prompts list --json`
+- `md2wechat prompts list --kind image --json`
+- `md2wechat prompts list --kind image --archetype cover --json`
+
+Inspect a specific resource before using it:
+
+- `md2wechat providers show openrouter --json`
+- `md2wechat themes show autumn-warm --json`
+- `md2wechat prompts show cover-default --kind image --json`
+- `md2wechat prompts show cover-hero --kind image --archetype cover --tag hero --json`
+- `md2wechat prompts show infographic-victorian-engraving-banner --kind image --archetype infographic --tag victorian --json`
+- `md2wechat prompts render cover-default --kind image --var article_title='Example' --json`
+
+When choosing image presets, prefer the prompt metadata returned by `prompts show --json`, especially `primary_use_case`, `compatible_use_cases`, `recommended_aspect_ratios`, and `default_aspect_ratio`.
+
+## Core Commands
+
+Configuration:
+
+- `md2wechat config init`
+- `md2wechat config show --format json`
+- `md2wechat config validate`
+
+Conversion:
+
+- `md2wechat convert article.md --preview`
+- `md2wechat convert article.md --draft --cover cover.jpg`
+- `md2wechat convert article.md --mode ai --theme autumn-warm --preview`
+
+Image handling:
+
+- `md2wechat upload_image photo.jpg`
+- `md2wechat download_and_upload https://example.com/image.jpg`
+- `md2wechat generate_image "A cute cat sitting on a windowsill"`
+- `md2wechat generate_image --preset cover-hero --article article.md --size 2560x1440`
+- `md2wechat generate_cover --article article.md`
+- `md2wechat generate_infographic --article article.md --preset infographic-comparison`
+- `md2wechat generate_infographic --article article.md --preset infographic-dark-ticket-cn --aspect 21:9`
+- `md2wechat generate_infographic --article article.md --preset infographic-handdrawn-sketchnote`
+
+Drafts and image posts:
+
+- `md2wechat create_draft draft.json`
+- `md2wechat test-draft article.html cover.jpg`
+- `md2wechat create_image_post -t "Weekend Trip" --images photo1.jpg,photo2.jpg`
+- `md2wechat create_image_post -t "Travel Diary" -m article.md`
+- `echo "Daily check-in" | md2wechat create_image_post -t "Daily" --images pic.jpg`
+- `md2wechat create_image_post -t "Test" --images a.jpg,b.jpg --dry-run`
+
+Writing and humanizing:
+
+- `md2wechat write --list`
+- `md2wechat write --style dan-koe`
+- `md2wechat write --style dan-koe --input-type fragment article.md`
+- `md2wechat write --style dan-koe --cover-only`
+- `md2wechat write --style dan-koe --cover`
+- `md2wechat write --style dan-koe --humanize --humanize-intensity aggressive`
+- `md2wechat humanize article.md`
+- `md2wechat humanize article.md --intensity aggressive`
+- `md2wechat humanize article.md --show-changes`
+- `md2wechat humanize article.md -o output.md`
+
+## Agent Rules
+
+- Start with discovery commands before committing to a provider, theme, or prompt.
+- Prefer `generate_cover` or `generate_infographic` over a raw `generate_image "prompt"` call when a bundled preset fits the task.
+- Validate config before any draft, publish, or image-post action.
+- If the user asks for AI conversion or style writing, be explicit that the CLI may return an AI request/prompt rather than final HTML or prose unless the workflow completes the external model step.
+- Do not perform draft creation, publishing, or remote image generation unless the user asked for it.
+
+## Safety And Transparency
 
 - Reads local Markdown files and local images.
-- May upload generated images and HTML to WeChat draft and media endpoints.
-- May call external image-generation services to create or enrich images.
-- Draft upload requires `WECHAT_APPID` and `WECHAT_SECRET`.
-- Image generation usually also requires `IMAGE_API_KEY`, plus optional `IMAGE_PROVIDER` / `IMAGE_API_BASE`.
-
-Configuration entry point:
-
-- Check `~/.config/md2wechat/config.yaml` first.
-- To change the API domain, image provider, or confirm default mode behavior, see `docs/CONFIG.md` in the repository.
-- When `--mode` is not provided explicitly, `convert` still defaults to `api`.
-
-## Runtime Boundary
-
-- This skill only executes an already-installed `md2wechat` runtime.
-- It looks for the runtime under `~/.openclaw/tools/md2wechat` first, then falls back to `PATH`.
-- The runtime must also match the current skill version. A mismatched runtime is rejected instead of being executed silently.
-- It does not download binaries at execution time, does not use a cache bootstrapper, and does not silently fall back to remote downloads.
-- `clawhub install md2wechat` currently installs only the skill shell and does **not** guarantee automatic `md2wechat` runtime provisioning.
-- `metadata.openclaw.install` exposes fixed-version install resources and installer entry points; the complete and verifiable installation path is still the fixed-version `install-openclaw.sh` installer.
-
-## Recommended Flow
-
-1. Use the fixed-version OpenClaw installer to install both the skill and the runtime. Do not treat `clawhub install md2wechat` as a complete installation path.
-2. Use discovery commands first to confirm what the current instance supports:
-   - `md2wechat capabilities --json`
-   - `md2wechat providers list --json`
-   - `md2wechat themes list --json`
-   - `md2wechat prompts list --json`
-   - `md2wechat prompts list --kind image --archetype cover --json`
-3. Then run the task you actually need:
-   - `convert <file.md> --preview`
-   - `convert <file.md> --draft --cover <cover.jpg>`
-   - `generate_cover --article <file.md>`
-   - `generate_infographic --article <file.md> --preset infographic-comparison`
-   - `generate_image --preset cover-hero --article <file.md> --model <image-model>`
-   - `create_image_post -m <file.md> -t "<title>"`
-4. If you need AI conversion or AI image generation, add the image-service configuration before running those commands.
-
-When a task depends on a specific resource, inspect it first:
-
-- `md2wechat providers show <name> --json`
-- `md2wechat themes show <name> --json`
-- `md2wechat prompts show <name> --kind <kind> --json`
-- `md2wechat prompts render <name> --kind <kind> --var KEY=VALUE --json`
-
-Recommended image workflow:
-
-- Prefer `generate_cover` for article covers.
-- Prefer `generate_infographic` for infographic-style visual summaries.
-- Only fall back to `generate_image "raw prompt"` when no suitable preset exists.
-
-See [references/runtime.md](references/runtime.md) for the runtime lookup contract.
+- May download remote images when asked.
+- May call external image-generation services when configured.
+- May upload HTML, images, drafts, and image posts to WeChat when the user explicitly requests those actions.

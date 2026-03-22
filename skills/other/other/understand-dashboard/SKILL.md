@@ -27,9 +27,13 @@ Start the Understand Anything dashboard to visualize the knowledge graph for the
    - `${CLAUDE_PLUGIN_ROOT}/packages/dashboard/`
    - The parent directory of this skill file, then `../../packages/dashboard/`
 
-4. Install dependencies if needed:
+4. Install dependencies and build if needed:
    ```bash
    cd <dashboard-dir> && pnpm install --frozen-lockfile 2>/dev/null || pnpm install
+   ```
+   Then ensure the core package is built (the dashboard depends on it):
+   ```bash
+   cd <plugin-root> && pnpm --filter @understand-anything/core build
    ```
 
 5. Start the Vite dev server pointing at the project's knowledge graph:

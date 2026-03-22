@@ -4,7 +4,7 @@ description: "Reviews skills (D1-D11 + M1-M6 criteria) or .claude/commands for q
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # ln-162-skill-reviewer
 
@@ -121,13 +121,13 @@ After all fixes applied:
 | Passive file refs (D2) | {PASS/FAIL} | {list or --} |
 | Definition of Done (D7) | {PASS/FAIL} | {list or --} |
 | Meta-Analysis L1/L2 (D7) | {PASS/FAIL} | {list or --} |
-| Marketplace paths (D8, optional) | {PASS/FAIL/SKIP} | {list or --} |
-| Root docs stale names (D6) | {PASS/FAIL} | {list or --} |
-| Skill count accuracy (D8) | {PASS/FAIL} | {list or --} |
+| Publishing skills (D7) | {PASS/FAIL} | {list or --} |
 | Description triggers (D8) | {PASS/WARN} | {list or --} |
 | Cross-skill contracts (D10) | {PASS/FAIL} | {list or --} |
 | Resource lifecycle (D11) | {PASS/FAIL} | {list or --} |
-| Platform API compat (#15) | {PASS/FAIL} | {list or --} |
+| Execution proximity (D2b) | {PASS/WARN} | {list or --} |
+| Platform API compat (#13) | {PASS/FAIL} | {list or --} |
+| Worker invocation (D8b) | {PASS/FAIL/WARN} | {list or --} |
 
 ### Fixed ({count})
 | # | Skill | Dim | Issue | Fix Applied |
@@ -151,13 +151,9 @@ If zero findings: `All 11 structural dimensions + 6 intent checks clean. PASS.`
 
 ### Phase 7: Volatile Numbers Cleanup
 
-Skill/plugin/category counts go stale after every add/remove. One rule: **counts ONLY in README.md badge** (`skills-NNN`). Everywhere else -- no hardcoded counts.
+Skill/plugin/category counts go stale after every add/remove. Rule: skills MUST NOT hardcode aggregate counts.
 
-**Remove from any file** (including marketplace.json descriptions, CLAUDE.md, AGENTS.md, CHANGELOG.md, SKILL.md):
-- Total skill counts, per-plugin counts, per-category counts
-- Worker/coordinator counts referencing OTHER skills (a skill's OWN internals are fine)
-
-Phase 2 automated check verifies README badge matches actual skill count on disk -- fix if FAIL.
+**Remove from any SKILL.md:** total skill counts, per-plugin counts, per-category counts, worker/coordinator counts referencing OTHER skills. A skill's OWN internals (e.g., "27 criteria") are fine.
 
 ---
 

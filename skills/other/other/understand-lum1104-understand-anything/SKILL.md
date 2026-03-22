@@ -194,13 +194,15 @@ Pass these parameters in the dispatch prompt:
 > [list of edges with type "imports"]
 > ```
 
-After the subagent completes, read `$PROJECT_ROOT/.understand-anything/intermediate/layers.json` to get the layer assignments.
+After the subagent completes, read `$PROJECT_ROOT/.understand-anything/intermediate/layers.json` and normalize it into a final `layers` array. Apply these steps **in order**:
 
-`layers.json` may be either:
-- a top-level JSON array of layer objects, or
-- an envelope object such as `{ "layers": [...] }` from the current prompt/template output
+1. **Unwrap envelope:** If the file contains `{ "layers": [...] }` instead of a plain array, extract the inner array. (The prompt requests a plain array, but LLMs may still produce an envelope.)
+2. **Rename legacy fields:** If any layer object has a `nodes` field instead of `nodeIds`, rename `nodes` → `nodeIds`. If `nodes` entries are objects with an `id` field rather than plain strings, extract just the `id` values into `nodeIds`.
+3. **Synthesize missing IDs:** If any layer is missing an `id`, generate one as `layer:<kebab-case-name>`.
+4. **Convert file paths:** If `nodeIds` entries are raw file paths (not prefixed with `file:`), convert them to `file:<relative-path>`.
+5. **Drop dangling refs:** Remove any `nodeIds` entries that do not exist in the merged node set.
 
-Normalize either form into a final top-level `layers` array before assembling the graph. Each final saved layer object MUST match this exact shape:
+Each element of the final `layers` array MUST have this shape:
 
 ```json
 [
@@ -213,13 +215,7 @@ Normalize either form into a final top-level `layers` array before assembling th
 ]
 ```
 
-Rules:
-- `id` is required and must be unique
-- `nodeIds` is required and must contain graph node IDs, not raw file paths
-- If the intermediate output is an envelope object, unwrap its `layers` array before any other normalization
-- If the subagent returns file paths, convert them to file node IDs before assembling the final graph
-- Drop any `nodeIds` that do not exist in the merged node set
-- Do not use a `nodes` field in the final saved layer objects
+All four fields (`id`, `name`, `description`, `nodeIds`) are required.
 
 **For incremental updates:** Always re-run architecture analysis on the full merged node set, since layer assignments may shift when files change.
 
@@ -272,13 +268,15 @@ Pass these parameters in the dispatch prompt:
 > [imports and calls edges]
 > ```
 
-After the subagent completes, read `$PROJECT_ROOT/.understand-anything/intermediate/tour.json` to get the tour steps.
+After the subagent completes, read `$PROJECT_ROOT/.understand-anything/intermediate/tour.json` and normalize it into a final `tour` array. Apply these steps **in order**:
 
-`tour.json` may be either:
-- a top-level JSON array of tour step objects, or
-- an envelope object such as `{ "steps": [...] }` from the current prompt/template output
+1. **Unwrap envelope:** If the file contains `{ "steps": [...] }` instead of a plain array, extract the inner array. (The prompt requests a plain array, but LLMs may still produce an envelope.)
+2. **Rename legacy fields:** If any step has `nodesToInspect` instead of `nodeIds`, rename it → `nodeIds`. If any step has `whyItMatters` instead of `description`, rename it → `description`.
+3. **Convert file paths:** If `nodeIds` entries are raw file paths, convert them to `file:<relative-path>`.
+4. **Drop dangling refs:** Remove any `nodeIds` entries that do not exist in the merged node set.
+5. **Sort** by `order` before saving.
 
-Normalize either form into a final top-level `tour` array before assembling the graph. Each final saved tour step object MUST match this exact shape:
+Each element of the final `tour` array MUST have this shape:
 
 ```json
 [
@@ -291,31 +289,7 @@ Normalize either form into a final top-level `tour` array before assembling the 
 ]
 ```
 
-Rules:
-- If the intermediate output is an envelope object, unwrap its `steps` array before any other normalization
-- `description` is required; do not use `whyItMatters` in the final saved tour steps
-- `nodeIds` is required; do not use `nodesToInspect` in the final saved tour steps
-- `nodeIds` must reference existing graph node IDs
-- Preserve optional `languageLesson` when present
-- Sort by `order` before saving
-
----
-
-## Phase 5.5 — NORMALIZE
-
-Before assembling the final graph:
-
-- Unwrap legacy or prompt-shaped envelopes before field renaming:
-  - `{ "layers": [...] }` -> use the contained array as the working `layers` value
-  - `{ "steps": [...] }` -> use the contained array as the working `tour` value
-- Convert any layer `nodes` field to `nodeIds`
-- Convert any tour `nodesToInspect` field to `nodeIds`
-- Convert any tour `whyItMatters` field to `description`
-- If layers or tour reference file paths, map them to file node IDs using the `file:<relative-path>` convention
-- Synthesize missing layer IDs as `layer:<kebab-case-name>`
-- Drop unresolved layer and tour node references
-- Ensure the final `layers` value is an array of `{ id, name, description, nodeIds }`
-- Ensure the final `tour` value is an array of `{ order, title, description, nodeIds }`, preserving optional `languageLesson`
+Required fields: `order`, `title`, `description`, `nodeIds`. Preserve optional `languageLesson` when present.
 
 ---
 

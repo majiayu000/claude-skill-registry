@@ -55,10 +55,11 @@ Expected format: `<content-type> <album-name> <track-number>`
 
 **Content types:**
 - `lyrics` - Suno Lyrics Box
-- `style` - Suno Style Box
+- `style` - Suno Style Box (auto-appends Exclude Styles if present)
+- `exclude` - Exclude Styles only (negative prompts)
 - `streaming-lyrics` - Streaming Lyrics (for distributors)
-- `all` - All Suno inputs (Style + Lyrics combined)
-- `suno` - JSON object (title + style + lyrics) for Suno auto-fill via Tampermonkey
+- `all` - All Suno inputs (Style + Exclude + Lyrics combined)
+- `suno` - JSON object (title, style, exclude_styles, lyrics) for Suno auto-fill via Tampermonkey
 
 Examples:
 - `/clipboard lyrics sample-album 03`
@@ -70,7 +71,7 @@ If arguments are missing:
 ```
 Usage: /clipboard <content-type> <album-name> <track-number>
 
-Content types: lyrics, style, streaming-lyrics, all
+Content types: lyrics, style, exclude, streaming-lyrics, all, suno
 
 Example: /clipboard lyrics sample-album 03
 ```
@@ -79,7 +80,7 @@ Example: /clipboard lyrics sample-album 03
 
 Call `format_for_clipboard(album_slug, track_slug, content_type)` — extracts and formats the requested content in one call.
 
-- `content_type`: `"lyrics"`, `"style"`, `"streaming"`, `"all"`, or `"suno"`
+- `content_type`: `"lyrics"`, `"style"`, `"exclude"`, `"streaming"`, `"all"`, or `"suno"`
 - Returns the formatted content ready for clipboard
 - Handles track resolution, section extraction, and formatting automatically
 
@@ -177,7 +178,7 @@ Output:
   Track: 01-intro.md
 
 Contents:
-- Style Box
+- Style Box (with Exclude Styles if present)
 - Lyrics Box
 ```
 
@@ -193,7 +194,7 @@ Output:
   Album: sample-album
   Track: 01-intro.md
 
-Clipboard contains JSON with: title, style, lyrics
+Clipboard contains JSON with: title, style, exclude_styles, lyrics
 Paste into Suno with the Tampermonkey auto-fill script (Ctrl+Shift+V).
 See tools/userscripts/README.md for setup.
 ```

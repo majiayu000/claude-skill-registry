@@ -51,7 +51,7 @@ Orchestrates an entire project from tickets to release-ready code. Implements ba
 Beyond the mainline workflow, the orchestrator has access to additional workflows:
 
 - **`/deliberate`**: Adversarial deliberation for difficult autonomous decisions. Spawns advocates to argue options before rendering a verdict. Prefer this over gut-feel decisions when stakes are high or trade-offs are unclear.
-- **`/bugfix`**: Coordinated bug-fixing for challenging issues encountered during any phase. Handles diagnosis, reproduction, and targeted fixes.
+- **`/bug-fix`**: Coordinated bug-fixing for challenging issues encountered during any phase. Handles diagnosis, reproduction, and targeted fixes.
 
 ## Andon Cord Protocol
 
@@ -186,7 +186,7 @@ Execute the smoke testing procedure established in step 2.
 **On issues found:**
 1. Diagnose the issue
 2. For straightforward fixes: implement, verify, commit
-3. For complex bugs: invoke the `/bugfix` workflow
+3. For complex bugs: invoke the `/bug-fix` workflow
 4. For design-level problems: try `/deliberate` first, then andon cord if unresolvable
 5. Re-run smoke tests after fixes until clean
 
@@ -352,7 +352,7 @@ Status: <current phase>
 **Sub-workflow invocation:**
 - Quality passes (`/refactor`, `/review-arch`, `/review-test`, `/review-doc`, `/review-release`): invoke as skills
 - `/implement-batch`: invoke as a skill with autonomous overrides
-- `/deliberate`, `/bugfix`: invoke as skills when needed
+- `/deliberate`, `/bug-fix`: invoke as skills when needed
 
 ## Abort Conditions
 

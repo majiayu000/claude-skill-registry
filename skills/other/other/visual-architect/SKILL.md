@@ -1,5 +1,5 @@
 ---
-name: paper-visualizer
+name: visual-architect
 description: Transform research papers into professional visual schemas. Analyzes paper logic, selects optimal layout patterns, and generates detailed prompts for AI image generation.
 ---
 

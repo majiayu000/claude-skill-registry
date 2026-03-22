@@ -48,8 +48,6 @@ git commit -m "$(cat <<'EOF'
 docs: review and update project documentation
 
 [Brief description of changes made]
-
-Co-Authored-By: Claude <noreply@anthropic.com>
 EOF
 )"
 ```

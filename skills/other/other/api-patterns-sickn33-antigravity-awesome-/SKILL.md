@@ -81,6 +81,5 @@ Before designing an API:
 |--------|---------|---------|
 | `scripts/api_validator.py` | API endpoint validation | `python scripts/api_validator.py <project_path>` |
 
-
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.

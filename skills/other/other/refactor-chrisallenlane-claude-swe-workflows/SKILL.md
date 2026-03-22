@@ -144,8 +144,12 @@ Review recommendations from scan. Group related changes into atomic batches.
 - GraphQL: `swe-sme-graphql`
 - Ansible: `swe-sme-ansible`
 - Zig: `swe-sme-zig`
+- TypeScript: `swe-sme-typescript`
+- JavaScript: `swe-sme-javascript`
+- HTML: `swe-sme-html`
+- CSS: `swe-sme-css`
 
-**For languages without a dedicated SME** (Python, JavaScript, Rust, etc.): implement directly as orchestrator, following language idioms and project conventions.
+**For languages without a dedicated SME** (Python, Rust, etc.): implement directly as orchestrator, following language idioms and project conventions.
 
 **For mixed-language batches**: split into per-language batches, or implement directly if changes are mechanical (e.g., dead code removal across file types).
 
@@ -198,8 +202,6 @@ git commit -m "$(cat <<'EOF'
 refactor: [brief description of changes]
 
 [Details of what was refactored and why]
-
-Co-Authored-By: Claude <noreply@anthropic.com>
 EOF
 )"
 ```

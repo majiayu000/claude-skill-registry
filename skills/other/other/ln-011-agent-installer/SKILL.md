@@ -1,6 +1,6 @@
 ---
 name: ln-011-agent-installer
-description: "Installs or updates Codex CLI and Gemini CLI to latest versions via npm. Use when CLI agents need installation or update."
+description: "Installs or updates Codex CLI, Gemini CLI, and Claude Code to latest versions. Use when CLI agents need installation or update."
 license: MIT
 ---
 
@@ -11,7 +11,7 @@ license: MIT
 **Type:** L3 Worker
 **Category:** 0XX Shared
 
-Installs or updates CLI agents (Codex, Gemini) via npm global packages. Checks current state, performs install/update, verifies result.
+Installs or updates CLI agents (Codex, Gemini) via npm and updates Claude Code via its built-in command. Checks current state, performs install/update, verifies result.
 
 ---
 
@@ -26,10 +26,18 @@ Installs or updates CLI agents (Codex, Gemini) via npm global packages. Checks c
 
 ## Agent Registry
 
+### npm Agents
+
 | Agent | npm Package | Health Check |
 |-------|-------------|--------------|
 | Codex | `@openai/codex` | `codex --version` |
 | Gemini | `@google/gemini-cli` | `gemini --version` |
+
+### Claude CLI
+
+| Agent | Update Command | Health Check |
+|-------|---------------|--------------|
+| Claude | `claude update` | `claude --version` |
 
 ---
 
@@ -44,28 +52,34 @@ Check Current State  -->  Install/Update  -->  Verify
 For each agent in the registry:
 
 1. Run `{cmd} --version` to detect installed version (first line of output)
-2. Run `npm outdated -g {pkg}` to check if update available
-3. Build state table:
+2. Build state table:
 
 ```
 Current Agent State:
-| Agent  | Installed | Version  | Outdated |
-|--------|-----------|----------|----------|
-| Codex  | yes       | 0.1.2503 | no       |
-| Gemini | no        | -        | -        |
+| Agent  | Installed | Version  |
+|--------|-----------|----------|
+| Codex  | yes       | 0.1.2503 |
+| Gemini | no        | -        |
+| Claude | yes       | 1.0.30   |
 ```
 
 ### Phase 2: Install/Update
 
-For each agent, apply the first matching rule:
+**npm Agents** (Codex, Gemini) -- for each agent, apply the first matching rule:
 
 | Condition | Action | Report |
 |-----------|--------|--------|
 | `disabled: true` | SKIP | "disabled by user" |
-| `dry_run: true` | Show planned command | "dry run - would install/update" |
-| Not installed | `npm install -g {pkg}` | "installed" |
-| Outdated | `npm update -g {pkg}` | "updated" |
-| Current version | SKIP | "already current" |
+| `dry_run: true` | Show planned command | "dry run" |
+| Any other state | `npm install -g {pkg}` | "installed/updated" |
+
+**Claude CLI:**
+
+| Condition | Action | Report |
+|-----------|--------|--------|
+| `disabled: true` | SKIP | "disabled by user" |
+| `dry_run: true` | Show planned command | "dry run" |
+| Any other state | `claude update` | "updated" |
 
 **Error handling:**
 
@@ -88,6 +102,7 @@ Agent Installation:
 |--------|-----------|----------|--------|
 | Codex  | installed | 0.1.2503 | ok     |
 | Gemini | skipped   | -        | disabled by user |
+| Claude | updated   | 1.0.30   | ok     |
 ```
 
 ---
@@ -98,7 +113,7 @@ Agent Installation:
 2. **Fail gracefully.** One agent failure does not block the other
 3. **Global install only.** Always `npm install -g` (CLI tools must be in PATH)
 4. **No side effects.** Only npm global packages are touched. No config files modified
-5. **Idempotent.** Safe to run multiple times. Already-current agents are skipped
+5. **Idempotent.** Safe to run multiple times. `npm install -g` and `claude update` handle already-current versions gracefully
 
 ## Anti-Patterns
 
@@ -113,7 +128,7 @@ Agent Installation:
 
 ## Definition of Done
 
-- [ ] Both agents checked (Codex, Gemini)
+- [ ] All agents checked (Codex, Gemini, Claude)
 - [ ] Disabled agents skipped with report
 - [ ] Install/update commands executed for eligible agents
 - [ ] Version verified after install/update

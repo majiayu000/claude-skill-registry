@@ -277,6 +277,7 @@ Now: What type of album is this?
 - **Thematic** - United by theme (not plot)
 - **Character Study** - Deep dive into one person
 - **Collection** - Standalone songs, loose connection
+- **Original Soundtrack (OST)** - Music for a fictional property's world, scenes, and key moments (games, films, shows)
 
 Which fits your vision?
 ```

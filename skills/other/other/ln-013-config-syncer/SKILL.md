@@ -1,6 +1,6 @@
 ---
 name: ln-013-config-syncer
-description: "Syncs skills and MCP settings from Claude Code to Gemini CLI and Codex CLI via symlinks and config conversion. Use when agent configs need alignment."
+description: "Syncs skills, MCP settings, and hooks from Claude Code to Gemini CLI and Codex CLI via symlinks and config conversion. Use when agent configs need alignment."
 license: MIT
 ---
 
@@ -122,18 +122,12 @@ Tool name mapping in hook matchers:
 | `Write` | `write_file` |
 | `Grep` | `search_files` |
 
-Hook scripts must support both tool name formats. Tool name mapping in scripts:
-
-| Claude Tool | Gemini Tool |
-|---|---|
-| `Read` | `read_file` |
-| `Edit` | `edit_file` |
-| `Write` | `write_file` |
-| `Grep` | `search_files` |
+Hook scripts must support both tool name formats (same mapping as matchers above).
 
 **4b: Claude to Codex**
 
 Codex does NOT support hooks. SKIP hook sync for Codex. Report "hooks not supported by Codex CLI".
+
 
 ### Phase 5: Report
 

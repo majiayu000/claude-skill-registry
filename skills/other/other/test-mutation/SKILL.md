@@ -14,22 +14,27 @@ Systematically introduces small changes (mutations) to source code, runs the tes
 
 **Multi-session by design.** Mutation testing is slow — each mutation requires a full test run. Progress is tracked in `.test-mutations.json` so you can work through a codebase incrementally across sessions.
 
+**Autopilot by default.** After initial setup, the workflow runs unattended through all in-scope modules. It addresses all surviving mutations, commits after each module, and moves on. Human intervention is only needed during setup (scope selection, test command verification) and if an unrecoverable error occurs.
+
 ## Workflow Overview
 
 ```
 ┌─────────────────────────────────────────────────────┐
 │                  TEST MUTATE                        │
 ├─────────────────────────────────────────────────────┤
+│  SETUP (interactive)                                │
 │  1. Initialize (load or create tracking file)       │
 │  2. Detect test command (first run only)            │
-│  3. Determine scope (user picks module)             │
-│  4. Spawn qa-test-mutator agent                     │
-│  5. Update tracking file with results               │
-│  6. Present surviving mutations                     │
-│  7. User selects which to address                   │
-│  8. Spawn SME to write tests                        │
-│  9. Verify (new tests pass + re-mutate confirms)    │
-│  10. Summary + optional commit                      │
+│  3. Determine scope (user selects, default: all)    │
+│                                                     │
+│  EXECUTION (autopilot — no user interaction)        │
+│  For each module in scope:                          │
+│    4. Spawn qa-test-mutator agent                   │
+│    5. Update tracking file with results             │
+│    6. Spawn SME to write tests for ALL survivors    │
+│    7. Verify (new tests pass + re-mutate confirms)  │
+│    8. Commit changes                                │
+│  9. Final summary                                   │
 └─────────────────────────────────────────────────────┘
 ```
 
@@ -105,16 +110,22 @@ Overall: 3/10 modules tested (mutation score: 87%)
 - src/utils/parser.go
 - ...
 
-What would you like to mutate?
+Scope? Enter file names/numbers, or press Enter to test all pending modules.
 ```
 
 **User can:**
-- Pick a specific file by name or number
+- Pick specific files by name or number (e.g., "1, 3, 5" or "src/auth.go")
 - Resume an in-progress file
 - Re-test a completed file (useful after adding tests)
-- Say "next" to get the next pending file
+- Press Enter / say "all" to test all pending modules (this is the default)
 
-**Default:** The next pending module (alphabetical order). If a module is in-progress, suggest resuming it.
+**Default:** All pending modules, processed in alphabetical order. If a module is in-progress, it is processed first.
+
+**After scope is confirmed, the workflow enters autopilot mode. No further user interaction occurs until the run completes or an unrecoverable error is encountered.**
+
+---
+
+### Steps 4-8 repeat for each module in scope (autopilot)
 
 ### 4. Spawn Mutator Agent
 
@@ -144,51 +155,11 @@ Parse the mutator agent's results and update `.test-mutations.json`:
 
 Write the updated tracking file.
 
-### 6. Present Surviving Mutations
+### 6. Spawn SME to Write Tests
 
-**If no survivors (100% mutation score):**
+**If no survivors (100% mutation score):** Log the result and proceed to step 8 (commit).
 
-```
-All N mutations were caught by tests. Mutation score: 100%.
-
-Continue with next module?
-```
-
-Proceed to step 10 (summary) or loop back to step 3 if user wants to continue.
-
-**If survivors exist:**
-
-```
-## Mutation Results: src/payment.go
-
-Mutation Score: 85% (34/40 killed)
-
-### Surviving Mutations (6 found)
-
-1. [Line 42, arithmetic] `amount + fee` → `amount - fee`
-   Context: totalCharge = amount + fee
-   Impact: Fee calculation would be wrong
-
-2. [Line 78, relational] `price > 0` → `price >= 0`
-   Context: if price > 0 { process() }
-   Impact: Zero-price items would be processed
-
-3. [Line 103, logical] `valid && active` → `valid || active`
-   Context: if valid && active { allow() }
-   Impact: Invalid users could be allowed
-
-...
-
-Select which survivors to write tests for (e.g., "1-3, 5" or "all"):
-```
-
-Use `AskUserQuestion` to let the user select. If there are many survivors (>10), present in batches.
-
-### 7. User Selects
-
-Record the user's selection. Group selected items for SME implementation.
-
-### 8. Spawn SME to Write Tests
+**If survivors exist:** Write tests for ALL surviving mutations.
 
 **Detect the appropriate SME based on project language:**
 - Go → `swe-sme-golang`
@@ -197,6 +168,10 @@ Record the user's selection. Group selected items for SME implementation.
 - GraphQL → `swe-sme-graphql`
 - Ansible → `swe-sme-ansible`
 - Zig → `swe-sme-zig`
+- TypeScript → `swe-sme-typescript`
+- JavaScript → `swe-sme-javascript`
+- HTML → `swe-sme-html`
+- CSS → `swe-sme-css`
 
 **For languages without a dedicated SME**, implement the tests directly as orchestrator.
 
@@ -221,11 +196,11 @@ Each test should:
 - Have a clear name indicating what it verifies
 ```
 
-### 9. Verify
+### 7. Verify
 
 **Run the test suite** to confirm new tests pass with the correct (unmutated) code.
 
-**If new tests fail:** Report the failures. Give the SME (or yourself) one chance to fix. If still failing, report to user and let them decide.
+**If new tests fail:** Give the SME (or yourself) one chance to fix. If still failing, log the failure, revert the failing tests (`git restore`), and continue with the next module.
 
 **Re-mutate to confirm kills:** For each addressed surviving mutation:
 
@@ -234,35 +209,13 @@ Each test should:
 3. Verify tests now FAIL (mutation is killed)
 4. Revert (`git restore`)
 
-**If a re-applied mutation still survives:** Report to the user — the new test doesn't actually catch the mutation. The user can decide whether to try again or skip it.
+**If a re-applied mutation still survives:** Log it as an unresolved survivor and continue. Do not retry or prompt the user.
 
 Update the tracking file: mark confirmed kills, update mutation score.
 
-### 10. Summary
+### 8. Commit
 
-```
-## Mutation Testing Session Complete
-
-### This Session
-- Module tested: src/payment.go
-- Mutations applied: 40
-- Killed: 37 (including 3 new kills from tests written this session)
-- Survived: 3 (user declined to address)
-- Mutation score: 92.5%
-- Tests added: 3
-
-### Project Progress
-- Modules complete: 4/10
-- Overall mutation score: 89%
-
-### Files Modified
-- src/payment_test.go: Added 3 tests
-- .test-mutations.json: Updated
-
-Commit these changes?
-```
-
-**If user wants to commit:**
+Automatically commit the changes for this module:
 
 ```bash
 git add [test files] .test-mutations.json
@@ -272,13 +225,49 @@ test: improve mutation coverage for [module]
 Mutation score: X% → Y%
 - Added tests targeting N surviving mutations
 - [brief description of what the new tests verify]
-
-Co-Authored-By: Claude <noreply@anthropic.com>
 EOF
 )"
 ```
 
-**After summary, ask if user wants to continue with the next module.** If yes, loop back to step 3.
+Print a short progress line before moving to the next module:
+
+```
+[3/8] src/payment.go — score: 85% → 95%, 4 tests added. Continuing...
+```
+
+Then loop back to step 4 with the next module in scope.
+
+### 9. Final Summary
+
+After all modules in scope have been processed:
+
+```
+## Mutation Testing Complete
+
+### Modules Tested This Session
+| Module             | Before | After | Tests Added | Unresolved |
+|--------------------|--------|-------|-------------|------------|
+| src/auth.go        | —      | 100%  | 0           | 0          |
+| src/payment.go     | —      | 95%   | 4           | 2          |
+| src/config.go      | —      | 88%   | 3           | 3          |
+
+### Project Progress
+- Modules complete: 8/10
+- Overall mutation score: 91%
+
+### Unresolved Survivors
+- src/payment.go:92 — `maxRetries = 3` → `maxRetries = 4` (constant)
+- src/payment.go:103 — removed `audit.Log(transaction)` (statement deletion)
+- src/config.go:45 — `timeout > 0` → `timeout >= 0` (relational)
+- ...
+
+### Commits Made
+- abc1234 test: improve mutation coverage for auth module
+- def5678 test: improve mutation coverage for payment module
+- ghi9012 test: improve mutation coverage for config module
+```
+
+Report any modules that were skipped due to errors (SME failures, test failures, etc.) and why.
 
 ## Tracking File Format
 
@@ -350,8 +339,9 @@ EOF
 **Do NOT abort for:**
 - Individual mutation failures (record and continue)
 - Partial completion (save progress, can resume next session)
-- SME fails to write a test (report to user, mark as unaddressed)
-- Some re-applied mutations still survive after new tests (report, let user decide)
+- SME fails to write a test (log the failure, revert, continue with next module)
+- Some re-applied mutations still survive after new tests (log as unresolved, continue)
+- New tests fail and cannot be fixed (log, revert, continue with next module)
 
 ## Example Session
 
@@ -370,60 +360,69 @@ Commit tracking file to git, or add to .gitignore?
 
 ## Mutation Testing Progress
 
-8 modules pending. What would you like to mutate?
+8 modules pending.
 
-1. src/auth.go
-2. src/api/handler.go
-3. src/payment.go
-4. src/models/user.go
-5. src/utils/parser.go
-6. src/config.go
-7. src/middleware.go
-8. src/router.go
+Scope? Enter file names/numbers, or press Enter to test all pending.
 
-> 3
+1. src/api/handler.go
+2. src/auth.go
+3. src/config.go
+4. src/middleware.go
+5. src/models/user.go
+6. src/payment.go
+7. src/router.go
+8. src/utils/parser.go
 
-Spawning qa-test-mutator for src/payment.go...
+> [Enter]
 
-## Mutation Results: src/payment.go
+Starting autopilot run for 8 modules...
 
-Mutation Score: 85% (34/40 killed)
+[1/8] Spawning qa-test-mutator for src/api/handler.go...
+      Score: 92% (46/50 killed). Writing tests for 4 survivors...
+      3 killed, 1 unresolved. Score: 92% → 98%.
+      Committed: "test: improve mutation coverage for handler module"
 
-### Surviving Mutations (6 found)
+[2/8] Spawning qa-test-mutator for src/auth.go...
+      Score: 100% (38/38 killed). No survivors.
+      Committed: "test: record mutation coverage for auth module"
 
-1. [Line 42, arithmetic] `amount + fee` → `amount - fee`
-2. [Line 55, relational] `total > 0` → `total >= 0`
-3. [Line 78, logical] `valid && active` → `valid || active`
-4. [Line 92, constant] `maxRetries = 3` → `maxRetries = 4`
-5. [Line 103, statement] removed `audit.Log(transaction)`
-6. [Line 118, control_flow] `if err != nil` → `if err == nil`
+[3/8] Spawning qa-test-mutator for src/config.go...
+      Score: 88% (21/24 killed). Writing tests for 3 survivors...
+      2 killed, 1 unresolved. Score: 88% → 96%.
+      Committed: "test: improve mutation coverage for config module"
 
-Address which survivors?
-> 1-3, 6
+...
 
-Spawning swe-sme-golang to write tests...
-Tests written. Running suite... All pass.
+[8/8] Spawning qa-test-mutator for src/utils/parser.go...
+      Score: 90% (27/30 killed). Writing tests for 3 survivors...
+      3 killed, 0 unresolved. Score: 90% → 100%.
+      Committed: "test: improve mutation coverage for parser module"
 
-Re-applying mutations to verify...
-- Mutation 1 (amount + fee → amount - fee): Now KILLED
-- Mutation 2 (total > 0 → total >= 0): Now KILLED
-- Mutation 3 (valid && active → valid || active): Now KILLED
-- Mutation 6 (err != nil → err == nil): Now KILLED
+## Mutation Testing Complete
 
-## Session Complete
+### Modules Tested This Session
+| Module                 | Before | After | Tests Added | Unresolved |
+|------------------------|--------|-------|-------------|------------|
+| src/api/handler.go     | —      | 98%   | 3           | 1          |
+| src/auth.go            | —      | 100%  | 0           | 0          |
+| src/config.go          | —      | 96%   | 2           | 1          |
+| src/middleware.go      | —      | 94%   | 2           | 1          |
+| src/models/user.go     | —      | 100%  | 1           | 0          |
+| src/payment.go         | —      | 95%   | 4           | 2          |
+| src/router.go          | —      | 91%   | 3           | 2          |
+| src/utils/parser.go    | —      | 100%  | 3           | 0          |
 
-- Module: src/payment.go
-- Mutation score: 85% → 95%
-- Tests added: 4
-- Survivors remaining: 2 (user declined)
+### Project Progress
+- Modules complete: 8/8
+- Overall mutation score: 96%
 
-Project: 1/8 modules complete, score: 95%
+### Unresolved Survivors (7 total)
+- src/api/handler.go:88 — removed `log.Info(request)` (statement deletion)
+- src/config.go:45 — `timeout > 0` → `timeout >= 0` (relational)
+- ...
 
-Commit?
-> Yes
-
-Committed: "test: improve mutation coverage for payment module"
-
-Continue with next module?
-> No
+### Commits Made (8)
+- abc1234 test: improve mutation coverage for handler module
+- def5678 test: record mutation coverage for auth module
+- ...
 ```

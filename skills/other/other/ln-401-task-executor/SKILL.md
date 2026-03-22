@@ -102,6 +102,7 @@ Step 4: Implement
   - 4b Follow task plan/AC, apply KISS/YAGNI
   - 4c Architecture Guard: IF creating service function: (1) 3+ side-effect categories in **leaf** function → split (EXCEPT orchestrator functions that delegate sequentially — these are expected to have 3+ categories);
     (2) get_*/find_*/check_* naming → verify no hidden writes; (3) 3+ service imports in **leaf** function → flatten (orchestrator imports are expected)
+    (4) **Frontend Guard (conditional):** IF affected files include `.tsx/.vue/.svelte/.html/.css` → **MANDATORY READ:** `shared/references/frontend_design_guide.md`. Load project's design_guidelines.md if exists (design tokens source of truth). Verify: one composition per viewport; max 2 typefaces + 1 accent color; cards only when interaction requires; motion max 2-3 purposeful; WCAG 2.1 AA contrast (4.5:1 text, 3:1 UI elements)
   - Update docs and existing tests if impacted
   - Execute verify: methods from task AC (test/command/inspect)
 
@@ -119,7 +120,7 @@ Step 6: Finish
 2b) **Goal gate:** **MANDATORY READ:** `shared/references/goal_articulation_gate.md` — Complete the 4-question gate (<=25 tokens each). State REAL GOAL (deliverable as subject), DONE LOOKS LIKE, NOT THE GOAL, INVARIANTS & HIDDEN CONSTRAINTS.
 2c) **Implementation Blueprint:** From task "Affected Components", find actual file paths via Glob/Grep. Read key sections of each file. Output structured plan: files to create/modify, change order (dependencies first), risks (shared files with parallel tasks). Scope: this task only.
 3) **Start work:** Update this task to In Progress (Linear: update_issue; File: Edit status line); move it in kanban (keep Epic/Story indent).
-4) **Implement (with verification loop):** **Before writing new utilities/handlers**, Grep `src/` for existing patterns (error handling, validation, config access). Reuse if found; if not reusable, document rationale in code comment. Follow checkboxes/plan; keep it simple; avoid hardcoded values; reuse existing components; update docs noted in Affected Components; update existing tests if impacted (no new tests here). Before creating service functions, apply Architecture Guard (cascade depth, interface honesty, flat orchestration). After implementation, execute `verify:` methods from task AC: test → run specified test; command → execute and check output; inspect → verify file/content exists. If any verify fails → fix before proceeding.
+4) **Implement (with verification loop):** **Before writing new utilities/handlers**, Grep `src/` for existing patterns (error handling, validation, config access). Reuse if found; if not reusable, document rationale in code comment. Follow checkboxes/plan; keep it simple; avoid hardcoded values; reuse existing components; update docs noted in Affected Components; update existing tests if impacted (no new tests here). Before creating service functions, apply Architecture Guard (cascade depth, interface honesty, flat orchestration; for frontend files: **MANDATORY READ** `shared/references/frontend_design_guide.md`, load design_guidelines.md if exists, verify composition/typography/WCAG rules). After implementation, execute `verify:` methods from task AC: test → run specified test; command → execute and check output; inspect → verify file/content exists. If any verify fails → fix before proceeding.
 5) **Quality:** Run typecheck and lint (or project equivalents); ensure instructions in Existing Code Impact are addressed.
 6) **Finish:** Mark task To Review (Linear: update_issue; File: Edit status line); update kanban to To Review; add summary comment (what changed, tests run, docs touched).
 
@@ -140,7 +141,7 @@ Before setting To Review, verify all items:
 | 4 | **Docs updated** | Affected Components docs reflect changes |
 | 5 | **Tests pass** | Existing tests still pass after changes |
 | 6 | **Pattern reuse** | New utilities checked against existing codebase; no duplicate patterns introduced |
-| 7 | **Architecture guard** | Cascade depth <= 2 (leaf functions); no hidden writes in read-named functions; no service chains >= 3 in leaf functions (orchestrator imports exempt) |
+| 7 | **Architecture guard** | Cascade depth <= 2 (leaf functions); no hidden writes in read-named functions; no service chains >= 3 in leaf functions (orchestrator imports exempt). Frontend files: composition, typography, WCAG per `shared/references/frontend_design_guide.md` |
 | 8 | **Destructive op safety** | If task has "Destructive Operation Safety" section: (1) backup step executed/planned before destructive code, (2) rollback mechanism exists in code, (3) environment guard present, (4) preview/dry-run evidence attached or referenced |
 | 9 | **Code efficiency** | No unnecessary intermediates, verbose patterns replaced by language idioms, no boilerplate framework handles (per `shared/references/code_efficiency_criterion.md`) |
 

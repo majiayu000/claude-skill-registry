@@ -126,6 +126,7 @@ See [album-types.md](album-types.md) for detailed planning approaches.
 | **Thematic** | United by theme, not plot | Sub-themes, emotional journey |
 | **Character Study** | Deep dive into a person | Aspects, time periods, through-line |
 | **Collection** | Standalone songs, loose connection | Unifying element, flow |
+| **OST** | Music evoking a fictional media property's world and moments | Media type, world, leitmotifs, vocal/instrumental mix |
 
 ### Choosing Between Similar Types
 
@@ -134,6 +135,8 @@ When a concept could fit multiple types, use these criteria:
 - **Documentary vs Character Study**: Does the album focus on **events and timeline** (Documentary) or on **a person's inner life, growth, and contradictions** (Character Study)? An album about a hacker's arrest → Documentary. An album exploring what made them who they are → Character Study.
 - **Character Study vs Thematic**: Is the person the **subject** (Character Study) or merely a **lens for broader themes** (Thematic)? An album about Snowden's choices → Character Study. An album about surveillance using Snowden as one example → Thematic.
 - **Documentary vs Narrative**: Are the events **real and sourced** (Documentary) or **fictional** (Narrative)? Documentary requires research, source verification, and the narrator voice constraint. Narrative has creative freedom.
+- **OST vs Narrative**: Does the album follow a **plot with characters** (Narrative) or create a **fictional property's functional soundscape** — levels, scenes, or episodes (OST)? An album telling a hero's story → Narrative. An album creating the music that hero would hear while playing → OST.
+- **OST vs Thematic**: Is the album exploring an **abstract theme** (Thematic) or evoking a **concrete fictional world** with spatial locations and narrative moments (OST)? An album about "digital isolation" → Thematic. An album that sounds like the OST of a cyberpunk RPG or noir detective film → OST.
 - **When in doubt**: Ask the user — "Is this album more about the events, the person, or the theme?" Their answer determines the type.
 
 ---
@@ -209,7 +212,7 @@ See also: `${CLAUDE_PLUGIN_ROOT}/reference/workflows/album-planning-phases.md`
 
 1. **Artist**: Existing or new?
 2. **Genre**: What sonic palette? (Primary category: hip-hop, electronic, country, folk, rock)
-3. **Type**: Documentary, narrative, thematic, character study, collection?
+3. **Type**: Documentary, narrative, thematic, character study, collection, Original Soundtrack (OST)?
 4. **Scale**: EP (4-6), standard (8-12), double album (15+)?
 5. **Theme/Story**: Central idea/event/character?
 6. **True-story?**: Determines research requirements (RESEARCH.md, SOURCES.md, source verification gate)
@@ -219,6 +222,7 @@ See also: `${CLAUDE_PLUGIN_ROOT}/reference/workflows/album-planning-phases.md`
 - **Documentary**: Research phase, key events, angle
 - **Narrative**: Character, plot, emotional arc
 - **Thematic**: Central theme, sub-themes, motifs
+- **OST**: Media type, world/setting, scene mapping, leitmotif strategy, genre palette, instrumental mix
 - **All types**: Who are the key characters/subjects? What's the emotional core? Why this story?
 
 ### Phase 3: Sonic Direction
@@ -283,6 +287,13 @@ Discuss visual concept early — actual generation happens later via `/bitwize-m
 - **Lyrical motifs**: Repeated phrases, images, metaphors
 - **Sonic motifs**: Recurring sounds, instruments, melodies
 - **Structural motifs**: Parallel song structures
+
+**Document motifs in the album README's Motifs & Threads section** during Phase 4 (Structure Planning):
+- Seed the **Lyrical Motifs** table with planned recurring images/phrases and where they first appear
+- Seed the **Character Threads** table with character arcs across tracks
+- Seed the **Thematic Progression** table showing how each track advances the album's themes
+
+These tables are living documents — the lyric-writer will update them progressively as tracks are written, adding actual lyric references and recurrences.
 
 ### Title Tracks
 **When to have**: Album name is core concept, title track explicates it

@@ -40,7 +40,14 @@ What do you need?
 │     └─ Want portability and type safety
 │        └─ YES -> cdi-events
 ├─ Communicating with external APIs, communication between services
-│  └─ service-communication
+│  ├─ Need asynchronous delivery, replay, or broker-managed fan-out
+│  │  └─ messaging
+│  ├─ Need synchronous request/response calls
+│  │  └─ service-communication
+│  │     ├─ Shared protobuf contract and HTTP/2 streaming fit well
+│  │     │  └─ service-communication-grpc
+│  │     └─ Standard HTTP/JSON or simpler interoperability matters more
+│  │        └─ service-communication-rest
 ├─ Authentication, authorization, identity providers
 │  └─ security
 ├─ Logging, health, metrics, traces, 

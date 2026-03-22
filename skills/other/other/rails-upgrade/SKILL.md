@@ -14,6 +14,12 @@ description: Analyzes Rails applications and generates comprehensive upgrade rep
 
 ---
 
+## Dependencies
+
+- **rails-load-defaults skill** ([github.com/fastruby/rails-load-defaults-skill](https://github.com/fastruby/rails-load-defaults-skill)) — Handles incremental `load_defaults` updates with tiered risk assessment (Tier 1: low-risk, Tier 2: needs codebase grep, Tier 3: requires human review). Must be installed for Step 2 of the upgrade workflow.
+
+---
+
 ## Core Methodology (FastRuby.io Approach)
 
 This skill follows the proven FastRuby.io upgrade methodology:
@@ -87,8 +93,8 @@ Before using `NextRails.next?` in code, ensure the project has `next_rails` set 
 
 1. Add `next_rails` gem to the Gemfile: `gem 'next_rails'`
 2. Run `bundle install`
-3. Run `next --init` to create the `Gemfile.next` symlink
-   - **IMPORTANT:** Before running `next --init`, check if `Gemfile.next` already exists. If it does, **do NOT run `next --init` again** — it will duplicate the `next?` method definition in the Gemfile.
+3. Run `next_rails --init` to create the `Gemfile.next` symlink
+   - **IMPORTANT:** Before running `next_rails --init`, check if `Gemfile.next` already exists. If it does, **do NOT run `next_rails --init` again** — it will duplicate the `next?` method definition in the Gemfile.
 4. Run `bundle install` to install dependencies for the current Rails version
 5. Run `next bundle install` to install dependencies for the next Rails version
    - If `next bundle install` does not work, use: `BUNDLE_GEMFILE=Gemfile.next bundle install`
@@ -117,13 +123,10 @@ Once the upgrade is finalized and the old Rails version is dropped:
 
 ### Step 2: Verify load_defaults Matches Current Rails Version
 - **CRITICAL:** Check if `load_defaults` in `config/application.rb` matches the current Rails gem version
-- If `load_defaults` is BEHIND the current Rails version:
-  - **ASK USER** if they want to update `load_defaults` first
-  - **RECOMMEND** updating `load_defaults` to match current Rails before upgrading to next version
-  - Generate a `load_defaults` update report showing what changes
-  - Run tests again after updating `load_defaults` to verify nothing breaks
+- **DELEGATE** to the `rails-load-defaults` skill for detection and incremental update
+- That skill handles tiered, per-config updates with test runs between each change
 - If `load_defaults` matches current Rails version → Proceed to Step 3
-- See `workflows/load-defaults-verification-workflow.md` for details
+- **DEPENDENCY:** Requires the [rails-load-defaults skill](https://github.com/fastruby/rails-load-defaults-skill)
 
 ### Step 3: Run Breaking Changes Detection (DIRECT)
 - **Claude runs detection checks directly** using Grep, Glob, and Read tools
@@ -241,7 +244,7 @@ If user requests a multi-hop upgrade (e.g., 5.2 → 8.1):
 
 ### Workflow Guides (Load when generating deliverables)
 - `workflows/test-suite-verification-workflow.md` - **MANDATORY FIRST STEP** - How to run and verify test suite
-- `workflows/load-defaults-verification-workflow.md` - **MANDATORY SECOND STEP** - Verify load_defaults matches Rails version
+- **EXTERNAL DEPENDENCY:** `rails-load-defaults` skill - **MANDATORY SECOND STEP** - Verify and update load_defaults to match Rails version (https://github.com/fastruby/rails-load-defaults-skill)
 - `workflows/direct-detection-workflow.md` - How to run breaking change detection directly
 - `workflows/upgrade-report-workflow.md` - How to generate upgrade reports
 - `workflows/app-update-preview-workflow.md` - How to generate app:update previews
@@ -290,40 +293,32 @@ When user requests an upgrade, follow this workflow:
    - Proceed to Step 2
 ```
 
-### Step 2: Detect Current Version & Verify load_defaults
-```
-1. Read Gemfile to find current Rails gem version
-2. Read config/application.rb for load_defaults version
-3. Store: rails_gem_version, load_defaults_version, target_version
-4. Compare rails_gem_version with load_defaults_version
-```
-
-### Step 3: Check load_defaults Alignment (BLOCKING STEP)
+### Step 2: Detect Current Version & Verify load_defaults (BLOCKING STEP)
 ```
 ⚠️  THIS STEP MAY BLOCK THE UPGRADE
 
-1. Read: workflows/load-defaults-verification-workflow.md
-2. If load_defaults_version < rails_gem_version (e.g., load_defaults 7.0 on Rails 7.2):
-   - STOP and inform user of mismatch
-   - Explain: "Your app is on Rails X.Y but using load_defaults X.Z"
-   - RECOMMEND: "Update load_defaults to X.Y before upgrading to next version"
-   - ASK USER: "Would you like to update load_defaults to X.Y first?"
-   - If YES → Generate load_defaults update report, help update, re-run tests
-   - If NO → Warn about risks and proceed (user's choice)
-3. If load_defaults_version == rails_gem_version:
-   - Proceed to Step 4
+1. Read Gemfile to find current Rails gem version
+2. Read config/application.rb for load_defaults version
+3. Compare rails_gem_version with load_defaults_version
+4. If load_defaults_version < rails_gem_version:
+   - DELEGATE to the rails-load-defaults skill for incremental update
+   - That skill walks through each config change one at a time, grouped by risk tier
+   - Tests are re-run between each change
+   - Do NOT proceed until load_defaults matches the current Rails version
+5. If load_defaults_version == rails_gem_version:
+   - Proceed to Step 3
 ```
 
 ### Step 4: Set Up Dual-Boot with next_rails (IF NOT ALREADY SET UP)
 ```
-⚠️  DO NOT run next --init if Gemfile.next already exists.
+⚠️  DO NOT run next_rails --init if Gemfile.next already exists.
     Running it twice duplicates the next? method definition in the Gemfile.
 
 1. Check if Gemfile.next already exists
 2. If Gemfile.next does NOT exist:
    a. Add gem 'next_rails' to Gemfile (all environments, not just development)
    b. Run: bundle install
-   c. Run: next --init
+   c. Run: next_rails --init
    d. Run: bundle install
    e. Run: next bundle install (fallback: BUNDLE_GEMFILE=Gemfile.next bundle install)
 3. If Gemfile.next ALREADY exists:
@@ -426,16 +421,13 @@ Before starting ANY upgrade:
 5. If tests PASS → Record baseline and proceed
 
 **Action - Step 2 (MANDATORY: Verify load_defaults):**
-1. Load: `workflows/load-defaults-verification-workflow.md`
-2. Read Gemfile.lock for current Rails gem version
-3. Read config/application.rb for load_defaults version
-4. If load_defaults < Rails gem version:
+1. Read Gemfile.lock for current Rails gem version
+2. Read config/application.rb for load_defaults version
+3. If load_defaults < Rails gem version:
    - INFORM user: "Your app uses Rails X.Y but load_defaults is set to X.Z"
-   - RECOMMEND: "Update load_defaults to X.Y before upgrading to the next version"
-   - ASK: "Would you like to update load_defaults to X.Y first? (Recommended)"
-   - If YES → Help update load_defaults, re-run tests, then proceed
-   - If NO → Warn about risks, proceed with upgrade
-5. If load_defaults matches → Proceed to Step 3
+   - DELEGATE to the `rails-load-defaults` skill for incremental, tiered update
+   - That skill handles per-config analysis, test runs, and risk assessment
+4. If load_defaults matches → Proceed to Step 3
 
 **Action - Step 3 (Run Detection Directly):**
 1. Validate upgrade path
@@ -577,7 +569,7 @@ A successful upgrade assistance session:
   - Informs user of the mismatch
   - Recommends updating `load_defaults` to match current Rails BEFORE upgrading to next version
   - Asks user for confirmation before proceeding
-- New workflow file: `workflows/load-defaults-verification-workflow.md`
+- ~~New workflow file: `workflows/load-defaults-verification-workflow.md`~~ (removed in v3.0 — replaced by external `rails-load-defaults` skill dependency)
 
 **v2.1 Changes:**
 - Added mandatory test suite verification as Step 1 of all upgrade workflows

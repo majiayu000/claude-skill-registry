@@ -51,6 +51,7 @@ Display this help information to the user in a clear, organized format.
 - `/bitwize-music:pronunciation-specialist` - Scan for pronunciation risks
 - `/bitwize-music:explicit-checker` - Verify explicit content flags
 - `/bitwize-music:plagiarism-checker` - Check lyrics for phrases matching existing songs
+- `/bitwize-music:voice-checker` - Detect AI-written patterns in lyrics and prose
 - `/bitwize-music:pre-generation-check` - Final pre-generation checkpoint (6 gates)
 - `/bitwize-music:validate-album` - Validate album structure and paths
 

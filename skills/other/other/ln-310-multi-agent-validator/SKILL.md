@@ -91,26 +91,33 @@ node shared/agents/agent_runner.mjs --agent {name} --prompt-file .agent-review/{
 
 > **PREREQUISITE:** Phase 2 completed. If health check was never run → go back to Phase 2.
 
-**mode=story:**
+**MANDATORY READ:** Load `references/phase2_research_audit.md`, `shared/references/research_tool_fallback.md`
 
-**MANDATORY READ:** Load `references/phase2_research_audit.md` — full procedure: domain extraction, inline documentation, MCP research, Anti-Hallucination, Pre-mortem, Penalty Points (28 criteria).
+**All modes — Steps 3-4 (universal):**
+- MCP Research: criteria #5 (Standards), #6 (Versions), #21 (Alternatives), #28 (Feature Utilization)
+- Anti-Hallucination: verify factual claims per `shared/references/epistemic_protocol.md`
 
-Display: Penalty Points table (criterion, severity, points, description) + Total + Fix Plan.
-Save audit to `.agent-review/{storyId}_phase3_audit.md` (penalty table + pre-mortem + cross-reference findings).
+**mode=story additional (Steps 1-2, 5-7):**
+- Step 1-2: Domain Extraction + Inline Documentation
+- Step 5: Pre-mortem Analysis
+- Step 6: Cross-Reference Analysis
+- Step 7: Penalty Points Calculation (28 criteria)
+- Display: Penalty Points table + Total + Fix Plan
+- Save audit to `.agent-review/{storyId}_phase3_audit.md`
 - **Plan Mode:** Show results → WAIT for approval
 - **Normal Mode:** Proceed to Phase 4
 
-**mode=plan_review / mode=context:**
+**mode=plan_review / mode=context additional:**
 
-**MANDATORY READ:** Load `references/context_review_pipeline.md`, `shared/references/research_tool_fallback.md`, `references/mcp_ref_findings_template.md`
+**MANDATORY READ:** Load `references/context_review_pipeline.md`, `references/mcp_ref_findings_template.md`
 
-While agents run in background:
-1. **Applicability Check** — scan for technology decision signals. No signals → skip MCP Ref, go to Phase 5
+Pipeline (while agents run in background):
+1. **Applicability Check** — scan for technology decision signals. No signals → skip, go to Phase 5
 2. **Stack Detection** — `query_prefix` from: conversation context > `docs/tools_config.md` > indicator files
 3. **Extract Topics (3-5)** — technology decisions, score by weight
-4. **MCP Ref Research** — per `research_tool_fallback.md` chain. Query: `"{query_prefix} {topic} RFC standard best practices {year}"`
-5. **Compare & Correct** — max 5 corrections, cite RFC/standard. Apply directly: mode=plan_review → edit plan file, mode=context → edit reviewed documents. Inline rationale `"(per {RFC}: ...)"`
-6. **Save Findings** → `.agent-review/context/{id}_mcp_ref_findings.md` (per `references/mcp_ref_findings_template.md`)
+4. **Research Execution** — apply #5, #6, #21, #28 + AH per `phase2_research_audit.md` (plan/context actions)
+5. **Compare & Correct** — max 5 corrections, cite RFC/standard. Apply: plan_review → edit plan file, context → edit documents. Inline rationale `"(per {RFC}: ...)"`
+6. **Save Findings** → `.agent-review/context/{id}_mcp_ref_findings.md`
 
 Then proceed to Phase 5.
 
@@ -200,18 +207,16 @@ Mark each `[x]` when verified. ALL must be checked. If ANY unchecked → go back
 - [ ] Critical Verification + Debate executed OR SKIPPED (Phase 5)
 - [ ] Agent process trees verified dead OR SKIPPED (Phase 5)
 - [ ] Review summary saved to `review_history.md` OR SKIPPED (Phase 5)
+- [ ] MCP Ref research (#5, #6, #21, #28, AH) executed OR N/A (Phase 3)
 
 **mode=story additional:**
-- [ ] MCP Ref research executed (Phase 3)
 - [ ] Penalty Points calculated, 28 criteria (Phase 3)
 - [ ] Auto-fix executed, all 11 groups (Phase 4)
 - [ ] Penalty After = 0, Readiness Score = 10 (Phase 4)
-- [ ] Anti-Hallucination: VERIFIED (Phase 3)
 - [ ] AC Coverage: 100% (Phase 4)
 - [ ] Story + Tasks → Todo, kanban updated, comment posted (Phase 6)
 
 **mode=context / mode=plan_review additional:**
-- [ ] MCP Ref research executed OR N/A (Phase 3)
 - [ ] Corrections applied to artifacts OR none needed (Phase 3)
 
 ## Definition of Done

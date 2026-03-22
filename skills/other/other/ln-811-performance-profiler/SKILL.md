@@ -4,7 +4,7 @@ description: "Profiles runtime performance with CPU, memory, and I/O metrics. Us
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # ln-811-performance-profiler
 
@@ -206,6 +206,15 @@ After Level 1 profiler run, evaluate result against suspicion stack from Phase 2
 | Memory baseline abnormal (peak or delta) | Escalate to Level 3 (memory profiler) |
 | Multiple suspicions unresolved — profiler granularity insufficient | Go to Step 3 (targeted instrumentation) |
 | Profiler unavailable or overhead > 20% of wall time | Go to Step 3 (targeted instrumentation) |
+
+### Stop Conditions (Profiler Escalation)
+
+| Condition | Action |
+|-----------|--------|
+| Hotspot identified with clear cause | STOP — proceed to Performance Map |
+| All 3 profiler levels exhausted | STOP — build map from best available data |
+| Instrumentation breaks tests | STOP — revert instrumentation, use non-invasive data only |
+| Profiler overhead > 20% of wall time | STOP — skip to targeted instrumentation |
 
 ### Step 3: Targeted Instrumentation (proactive)
 

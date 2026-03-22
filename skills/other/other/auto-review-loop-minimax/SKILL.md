@@ -218,6 +218,7 @@ When loop ends (positive assessment or max rounds):
 
 - **Large file handling**: If the Write tool fails due to file size, immediately retry using Bash (`cat << 'EOF' > file`) to write in chunks. Do NOT ask the user for permission — just do it silently.
 
+- **Anti-hallucination citations**: When adding references, NEVER fabricate BibTeX. Use DBLP → CrossRef → `[VERIFY]` chain. Do NOT generate BibTeX from memory.
 - Be honest — include negative results and failed experiments
 - Do NOT hide weaknesses to game a positive score
 - Implement fixes BEFORE re-reviewing (don't just promise to fix)

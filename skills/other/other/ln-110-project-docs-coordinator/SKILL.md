@@ -148,6 +148,8 @@ ln-110-project-docs-coordinator (this skill)
 
 ### Phase 2: Delegate to Workers
 
+> **MANDATORY:** All applicable workers MUST be invoked. Workers run in parallel via Agent tool for context isolation.
+
 **2.1 Always invoke (parallel):**
 - `ln-111-root-docs-creator` with Context Store
 - `ln-112-project-core-creator` with full Context Store
@@ -157,9 +159,16 @@ ln-110-project-docs-coordinator (this skill)
 - `ln-113-backend-docs-creator` if hasBackend OR hasDatabase
 - `ln-114-frontend-docs-creator` if hasFrontend
 
-**Delegation Pattern:**
-- Pass Context Store and flags to workers via direct Skill tool invocation
-- Wait for completion
+**Invocation (parallel via Agent tool):**
+```
+Agent(description: "{doc_type} docs via {worker}",
+     prompt: "Invoke Skill(skill: \"{worker}\") with context below.\n\nCONTEXT: {contextStore}",
+     subagent_type: "general-purpose")
+```
+
+**Delegation Rules:**
+- Pass Context Store and flags to workers via Agent+Skill pattern
+- Wait for all Agent completions
 - Collect result (created, skipped, tbd_count, validation)
 
 ### Phase 3: Aggregate Results
@@ -207,6 +216,35 @@ ln-110-project-docs-coordinator (this skill)
 - **Workers self-validate** — coordinator only aggregates
 - **Idempotent** — workers skip existing files
 - **Parallel where possible** — ln-111 and ln-112 can run in parallel
+
+
+## Worker Invocation (MANDATORY)
+
+| Phase | Worker | Context | Condition |
+|-------|--------|--------|-----------|
+| 2 | ln-111-root-docs-creator | Agent (parallel) — root docs | ALWAYS |
+| 2 | ln-112-project-core-creator | Agent (parallel) — core project docs | ALWAYS |
+| 2 | ln-115-devops-docs-creator | Agent (parallel) — infrastructure + runbook | ALWAYS |
+| 2 | ln-113-backend-docs-creator | Agent (parallel) — API spec + DB schema | hasBackend OR hasDatabase |
+| 2 | ln-114-frontend-docs-creator | Agent (parallel) — design guidelines | hasFrontend |
+
+**All workers:** Invoke via Agent tool with Skill — workers get Context Store.
+
+**TodoWrite format (mandatory):**
+```
+- Build Context Store (pending)
+- Invoke ln-111-root-docs-creator (pending)
+- Invoke ln-112-project-core-creator (pending)
+- Invoke ln-115-devops-docs-creator (pending)
+- Invoke ln-113-backend-docs-creator [conditional] (pending)
+- Invoke ln-114-frontend-docs-creator [conditional] (pending)
+- Aggregate results (pending)
+```
+
+**Anti-Patterns:**
+- ❌ Creating documentation files directly instead of invoking workers
+- ❌ Marking worker steps done without Agent+Skill invocation
+- ❌ Skipping conditional workers without checking flags
 
 ### Documentation Standards (passed to workers)
 - **NO_CODE Rule:** Documents describe contracts, not implementations

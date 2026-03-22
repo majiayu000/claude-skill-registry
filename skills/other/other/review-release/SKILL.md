@@ -1,40 +1,38 @@
 ---
 name: review-release
-description: Pre-release readiness review. Scans for debug artifacts, version mismatches, changelog gaps, git hygiene issues, breaking changes, and license compliance. Runs tests and build verification. Interactive — presents findings for human review before release.
+description: Pre-release readiness review. Scans for debug artifacts, version mismatches, changelog gaps, git hygiene issues, breaking changes, and license compliance. Runs tests and build verification. Presents consolidated findings for human review before release.
 model: opus
 ---
 
 # Release Review - Pre-Release Readiness Check
 
-Interactive pre-flight checklist before cutting a release. Spawns a scanner agent for static analysis, runs execution-based checks (tests, build, doc freshness), and presents consolidated findings for human review. Releases are important milestones — this workflow keeps the human tightly in the loop.
+Pre-flight checklist before cutting a release. Spawns a scanner agent for static analysis, runs execution-based checks (tests, build, doc freshness), then presents consolidated findings for human review. Runs all checks without interruption, then presents the full picture for decision-making.
 
 ## Philosophy
 
 **Surface issues, don't silently fix them.** A release is a commitment to users. Every issue deserves human review before shipping. The only auto-fixes offered are mechanical debug artifact removals.
 
-**Fast feedback first.** Run cheap static analysis before expensive execution checks. If there are obvious blockers, the user should know before waiting for a full test suite.
+**Run everything, then report.** Run all checks — static analysis, tests, build, doc freshness — without interruption. Present the full picture at the end so the user can make informed decisions with complete information.
 
 **Err toward reporting.** A false positive costs seconds. A missed issue ships to users.
 
 ## Workflow Overview
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                  RELEASE REVIEW                     │
-├─────────────────────────────────────────────────────┤
-│  1. Determine release context                       │
+┌──────────────────────────────────────────────────────────┐
+│                     RELEASE REVIEW                       │
+├──────────────────────────────────────────────────────────┤
+│  1. Determine release context                            │
 │  2. Spawn qa-release-engineer agent (static analysis)    │
-│  3. Present Phase 1 findings (fast checks)          │
-│  4. User decides: continue to execution checks?     │
-│  5. Run test suite                                  │
-│  6. Run build verification                          │
-│  7. Check documentation freshness                   │
-│  8. Present full consolidated report                │
-│  9. User selects which items to address             │
-│ 10. Implement selected fixes                        │
-│ 11. Re-verify affected checks                       │
-│ 12. Final summary with release recommendation       │
-└─────────────────────────────────────────────────────┘
+│  3. Run test suite                                       │
+│  4. Run build verification                               │
+│  5. Check documentation freshness                        │
+│  6. Present full consolidated report                     │
+│  7. User selects which items to address                  │
+│  8. Implement selected fixes                             │
+│  9. Re-verify affected checks                            │
+│ 10. Final summary with release recommendation            │
+└──────────────────────────────────────────────────────────┘
 ```
 
 ## Workflow Details
@@ -72,43 +70,7 @@ git hygiene, breaking changes, license compliance.
 Return structured findings with severity levels (BLOCKER/WARNING/INFO).
 ```
 
-### 3. Present Phase 1 Findings
-
-Display the agent's findings grouped by severity:
-
-```
-## Release Readiness: Static Analysis
-
-Last tag: v1.2.3 → Target: v1.3.0
-47 commits, 23 files changed
-
-### BLOCKERS (must fix before release)
-1. [GIT] src/auth.go:42 — Merge conflict markers found
-2. [DEBUG] src/api/handler.go:15 — console.log("debug request body")
-3. [VERSION] package.json says 1.2.3, src/version.go says 1.2.2
-
-### WARNINGS (should review)
-4. [CHANGELOG] CHANGELOG.md not updated since v1.2.3
-5. [DEBUG] src/utils.go:88 — TODO: refactor this before release
-6. [LICENSE] New dependency 'foo-lib' has unknown license
-
-### PASSED
-- Git hygiene: No large binaries, no tracked secrets
-- Breaking changes: No public API removals detected
-```
-
-### 4. User Decision Point
-
-**Ask the user:** "Continue with execution checks (tests, build, docs)? These may take a while."
-
-Present options:
-- **Continue**: Proceed with test suite, build verification, doc freshness
-- **Fix blockers first**: Stop here, address blockers, then re-run `/review-release`
-- **Skip to selection**: Go directly to item selection without running execution checks
-
-This pause is important. If there are clear blockers, there's no point waiting for a full test suite.
-
-### 5. Run Test Suite
+### 3. Run Test Suite
 
 **Detect test command** (try in order):
 1. `Makefile` with `test` target → `make test`
@@ -122,7 +84,7 @@ This pause is important. If there are clear blockers, there's no point waiting f
 - PASS → add as INFO: "Test suite: all tests pass"
 - FAIL → add as BLOCKER with failure summary (which tests failed, error output)
 
-### 6. Run Build Verification
+### 4. Run Build Verification
 
 **Skip if user opted out in step 1.**
 
@@ -138,7 +100,7 @@ This pause is important. If there are clear blockers, there's no point waiting f
 - PASS → add as INFO: "Build: clean build successful"
 - FAIL → add as BLOCKER with error output
 
-### 7. Check Documentation Freshness
+### 5. Check Documentation Freshness
 
 **Skip if user opted out in step 1.**
 
@@ -153,9 +115,9 @@ Report which documents appear outdated and what specifically seems wrong.
 
 **Add findings as WARNINGs.** Include a note: "Run `/review-doc` to update documentation before release."
 
-### 8. Present Full Consolidated Report
+### 6. Present Full Consolidated Report
 
-Merge all findings from steps 2-7 into a single numbered list:
+Merge all findings from steps 2-5 into a single numbered list:
 
 ```
 ## Release Readiness Report
@@ -184,7 +146,7 @@ Select items to address (e.g., "1-3", "all blockers", "all"):
 
 **Use `AskUserQuestion`** with multi-select. Support shortcuts: "all blockers", "all warnings", "all", or specific numbers.
 
-### 9. Implement Selected Fixes
+### 7. Implement Selected Fixes
 
 Group selected items by type and handle appropriately:
 
@@ -218,7 +180,7 @@ Suggest running `/review-doc`. Do not attempt fixes.
 #### Breaking changes
 Report only. The user must decide whether to document, revert, or accept.
 
-### 10. Re-verify Affected Checks
+### 8. Re-verify Affected Checks
 
 After implementing fixes, re-verify only the checks that were affected:
 
@@ -228,7 +190,7 @@ After implementing fixes, re-verify only the checks that were affected:
 
 Do NOT re-run the full test suite or build at this step (the user can do that separately). Only re-verify the fast, static checks.
 
-### 11. Final Summary
+### 9. Final Summary
 
 ```
 ## Release Review Complete
@@ -264,8 +226,6 @@ git commit -m "$(cat <<'EOF'
 chore: pre-release cleanup
 
 [Brief description of what was removed/fixed]
-
-Co-Authored-By: Claude <noreply@anthropic.com>
 EOF
 )"
 ```
@@ -278,7 +238,7 @@ EOF
 
 **Agents used:**
 - `qa-release-engineer`: Static analysis scan (step 2)
-- `doc-maintainer`: Documentation freshness assessment only (step 7)
+- `doc-maintainer`: Documentation freshness assessment only (step 5)
 
 **State to maintain (as orchestrator):**
 - Release context (last tag, target version, skipped checks)
@@ -332,37 +292,9 @@ Any checks to skip?
 > Run everything
 
 Spawning qa-release-engineer agent for static analysis...
-
-## Release Readiness: Static Analysis
-
-Last tag: v1.9.2 → Target: v2.0.0
-89 commits, 42 files changed
-
-### BLOCKERS (2)
-1. [DEBUG] src/api/handler.go:15 — fmt.Println("debug: request body", body)
-2. [VERSION] package.json says 1.9.2, src/version.go says 1.9.2 (target is 2.0.0)
-
-### WARNINGS (3)
-3. [CHANGELOG] CHANGELOG.md not updated since v1.9.2
-4. [BREAKING] Removed exported function ParseConfig() — not mentioned in changelog
-5. [DEBUG] TODO markers in 2 files (src/migrate.go:12, src/config.go:55)
-
-### PASSED
-- Git hygiene: Clean working tree, no tracked secrets
-- License compliance: 2 new deps, both MIT (compatible)
-
-Continue with execution checks?
-> Continue
-
 Running tests: go test ./...
-  All tests pass. ✓
-
 Running build: make build
-  Clean build successful. ✓
-
 Checking documentation freshness...
-  Spawning doc-maintainer agent...
-  README.md references removed ParseConfig() function.
 
 ## Release Readiness Report
 

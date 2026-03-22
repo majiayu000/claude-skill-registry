@@ -1,6 +1,6 @@
 ---
 name: ship
-description: Automates the full code release pipeline — branch, commit, push, PR, wait for CI, merge, version bump, release, cleanup.
+description: Automates the full code release pipeline — branch, commit, push, PR, wait for CI, merge, version bump, release, cleanup. Use when the user wants to release code changes, says "ship it", or asks to create a release.
 argument-hint: 'conventional commit message, e.g. "feat: add new feature"'
 model: claude-sonnet-4-6
 allowed-tools:

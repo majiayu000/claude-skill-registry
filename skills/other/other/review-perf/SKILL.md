@@ -88,7 +88,7 @@ Spawn the applicable reviewer(s) **in parallel**.
 
 **Web performance reviewer** (if web content detected and not excluded):
 
-Spawn a `SWE - Web Performance Reviewer` agent:
+Spawn a `swe-web-perf-reviewer` agent:
 
 ```
 Review this project for web performance issues.
@@ -108,7 +108,7 @@ caching assessment, asset delivery assessment, and tooling recommendations.
 
 **Compute performance reviewer** (if non-web source detected and not excluded):
 
-Spawn a `SWE - Performance Reviewer` agent:
+Spawn a `swe-perf-reviewer` agent:
 
 ```
 Review this project for computational performance issues.

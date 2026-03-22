@@ -46,8 +46,9 @@ Workers (ln-301, ln-302) handle the actual Linear/File operations based on `task
 ## Workflow (concise)
 - **Phase 1 Discovery:** Auto-discover Team ID (docs/tasks/kanban_board.md). Resolve storyId: Run Story Resolution Chain per guide (status filter: [Backlog, Todo]).
 - **Phase 2 Decompose (always):** **MANDATORY READ:** `shared/references/goal_articulation_gate.md` — Before building IDEAL plan, state REAL GOAL of this Story in one sentence (the deliverable, not the process). Verify: does the decomposition serve THIS goal? Then: Load Story (AC, Technical Notes, Context), assess complexity, build IDEAL plan (1-8 implementation tasks only), **scan for reusable patterns** (Grep `src/` for error handlers, validators, utilities relevant to task categories — count only; if found, append `**Pattern Hint:** {count} existing {category} patterns in src/. Review for reuse before creating new (Step 4a in ln-401).` to relevant task descriptions), apply Foundation-First execution order, **validate Task Independence**, **assign Parallel Groups**, **define verification methods for each task AC**, extract guide links.
+- **Phase 2b Frontend Detection:** IF Story AC or Technical Notes mention UI/page/component/layout/screen/form/dashboard, OR Affected Components include `.tsx/.vue/.svelte/.html/.css` files → insert "Design Definition" as Task 1 (Parallel Group 1): AC: (1) Visual thesis stated (1 sentence: mood, material, energy), (2) Content plan defined (section sequence), (3) Interaction plan defined (2-3 purposeful motions), (4) If project has design_guidelines.md → loaded and cross-referenced. `verify: inspect (Design Definition documented in task comment)`. **MANDATORY READ:** `shared/references/frontend_design_guide.md` §Design Definition.
 - **Phase 3 Check & Detect Mode:** Query Linear for existing tasks (metadata only). Detect mode by count + user keywords (add/replan).
-- **Phase 4 Delegate:** Call the right worker with Story data, IDEAL plan/append request, guide links, existing task IDs if any; autoApprove=true.
+- **Phase 4 Delegate:** Invoke the right worker via Skill tool (see Invocation below). Pass Story data, IDEAL plan/append request, guide links, existing task IDs if any; autoApprove=true.
 - **Phase 5 Verify:** Ensure worker returns URLs/summary and updated kanban_board.md; report result.
 
 ## Task Plan Readiness Score
@@ -135,6 +136,21 @@ FOR EACH task T IN ordered_plan:
 | Count > 0 AND replan keywords | REPLAN | ln-302-task-replanner | taskType=implementation, Story data, IDEAL plan, guideLinks, existingTaskIds |
 | Count > 0 AND ambiguous | ASK | Clarify with user | — |
 
+
+### Phase 4: Delegate to Worker
+
+> **MANDATORY STEP:** Worker invocation required. Never create/update Linear or task files directly.
+
+**CREATE/ADD mode:**
+```
+Skill(skill: "ln-301-task-creator", args: "{storyId}")
+```
+
+**REPLAN mode:**
+```
+Skill(skill: "ln-302-task-replanner", args: "{storyId}")
+```
+
 ## Plan Mode Behavior
 When invoked in Plan Mode (read-only):
 - Execute Phases 1-3 normally (Discovery, Decompose, Check Existing)
@@ -155,6 +171,21 @@ Add phases to todos before starting:
 - Phase 5: Verify worker result (pending)
 ```
 Mark each as in_progress when starting, completed when done.
+
+
+## Worker Invocation (MANDATORY)
+
+| Mode | Worker | Context |
+|------|--------|--------|
+| CREATE/ADD | ln-301-task-creator | Shared (Skill tool) — creates tasks from IDEAL plan |
+| REPLAN | ln-302-task-replanner | Shared (Skill tool) — compares IDEAL vs existing, applies changes |
+
+**All workers:** Invoke via Skill tool in same context — workers see coordinator's IDEAL plan and scan results.
+
+**Anti-Patterns:**
+- ❌ Creating Linear issues or task files directly instead of invoking workers
+- ❌ Marking Phase 4 done without Skill invocation
+- ❌ Invoking both workers (only one per mode)
 
 ## Critical Rules
 - Decompose-first: always build IDEAL plan before looking at existing tasks.

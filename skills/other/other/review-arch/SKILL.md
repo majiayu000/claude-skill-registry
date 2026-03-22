@@ -158,8 +158,12 @@ Within each category, prefer items that don't depend on other items.
 - GraphQL: `swe-sme-graphql`
 - Ansible: `swe-sme-ansible`
 - Zig: `swe-sme-zig`
+- TypeScript: `swe-sme-typescript`
+- JavaScript: `swe-sme-javascript`
+- HTML: `swe-sme-html`
+- CSS: `swe-sme-css`
 
-**For languages without a dedicated SME** (Python, JavaScript, Rust, Lua, etc.): implement directly as orchestrator, following language idioms and project conventions.
+**For languages without a dedicated SME** (Python, Rust, Lua, etc.): implement directly as orchestrator, following language idioms and project conventions.
 
 **For mixed-language items**: split into per-language batches, or implement directly if changes are mechanical.
 
@@ -214,8 +218,6 @@ git commit -m "$(cat <<'EOF'
 refactor: [brief description of changes]
 
 [Details of what was refactored and why]
-
-Co-Authored-By: Claude <noreply@anthropic.com>
 EOF
 )"
 ```

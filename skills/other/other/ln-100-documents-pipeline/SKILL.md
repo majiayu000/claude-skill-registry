@@ -4,7 +4,7 @@ description: "Creates complete project documentation system (project docs, refer
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Documentation Pipeline (Orchestrator)
 
@@ -63,7 +63,7 @@ The skill follows a 6-phase orchestration workflow: **Legacy Migration (optional
 
 **Process**:
 
-**0.1 Legacy Detection**:
+**0a. Legacy Detection**:
 - Scan project for non-standard documentation using patterns from `references/legacy_detection_patterns.md`:
   - **Root .md files**: `ARCHITECTURE.md`, `REQUIREMENTS.md`, `STACK.md`, `API.md`, `DATABASE.md`, `DEPLOYMENT.md`
   - **Legacy folders**: `documentation/`, `doc/`, `wiki/`, `docs/` with wrong structure
@@ -72,7 +72,7 @@ The skill follows a 6-phase orchestration workflow: **Legacy Migration (optional
 - Build `legacy_manifest`: list of { path, detected_type, target_doc, confidence }
 - If no legacy docs found → skip to Phase 1
 
-**0.2 Content Extraction**:
+**0b. Content Extraction**:
 - For each detected legacy file:
   - Parse markdown structure (headers, lists, code blocks)
   - Apply type-specific extractor (**MANDATORY READ:** Load `references/legacy_detection_patterns.md`):
@@ -87,7 +87,7 @@ The skill follows a 6-phase orchestration workflow: **Legacy Migration (optional
   - Score content quality (0.0-1.0)
 - Store in `extracted_content` object
 
-**0.3 User Confirmation**:
+**0c. User Confirmation**:
 - Display detected legacy files:
   ```
   📂 Legacy Documentation Detected:
@@ -114,7 +114,7 @@ The skill follows a 6-phase orchestration workflow: **Legacy Migration (optional
   - Warn: "Legacy files will remain. This may cause duplication issues."
   - Proceed to Phase 1
 
-**0.4 Backup and Archive**:
+**0d. Backup and Archive**:
 - Create `.archive/legacy-{timestamp}/` directory
 - Structure:
   ```
@@ -133,7 +133,7 @@ The skill follows a 6-phase orchestration workflow: **Legacy Migration (optional
 - Save extracted content to `extracted/`
 - Generate `README_migration.md` with rollback instructions
 
-**0.5 Content Injection**:
+**0e. Content Injection**:
 - Build `migration_context` from extracted content:
   ```json
   {
@@ -154,7 +154,7 @@ The skill follows a 6-phase orchestration workflow: **Legacy Migration (optional
   - Workers use LEGACY_CONTENT as base content (priority over template defaults)
 - Priority order: **Legacy content > Auto-discovery > Template defaults**
 
-**0.6 Cleanup (Legacy Files)**:
+**0f. Cleanup (Legacy Files)**:
 - For root-level files (README.md, CONTRIBUTING.md):
   - Do NOT delete
   - Remove migrated sections using Edit tool
@@ -220,7 +220,7 @@ The skill follows a 6-phase orchestration workflow: **Legacy Migration (optional
 
 **Process** (AUTOMATIC invocations with Skill tool):
 
-**2.1 Create Root + Project Documentation**:
+**2a. Create Root + Project Documentation**:
 - **Invocation**: `Skill(skill: "ln-110-project-docs-coordinator")` → AUTOMATIC
 - **Input**: Pass `LEGACY_CONTENT` from Phase 0 (if migration was performed)
 - **Behavior**: Coordinator gathers context ONCE, then delegates to 5 L3 workers:
@@ -234,7 +234,7 @@ The skill follows a 6-phase orchestration workflow: **Legacy Migration (optional
 - **Validation**: Each L3 worker validates output (SCOPE tags, Maintenance sections)
 - **Verify**: All documents exist before continuing
 
-**2.2 Create Reference Structure + Smart Documents**:
+**2b. Create Reference Structure + Smart Documents**:
 - **Invocation**: `Skill(skill: "ln-120-reference-docs-creator")` → AUTOMATIC
 - **Input**: Pass `context_store` from ln-110 (TECH_STACK enables smart document creation)
 - **Output**: `docs/reference/README.md` + `adrs/`, `guides/`, `manuals/`, `research/` directories + **justified ADRs/Guides/Manuals**
@@ -242,26 +242,26 @@ The skill follows a 6-phase orchestration workflow: **Legacy Migration (optional
 - **Validation**: ln-120 validates output in Phase 2/3
 - **Verify**: Reference hub exists before continuing
 
-**2.3 Create Task Management Docs**:
+**2c. Create Task Management Docs**:
 - **Invocation**: `Skill(skill: "ln-130-tasks-docs-creator")` → AUTOMATIC
 - **Output**: `docs/tasks/README.md` + optionally `kanban_board.md` (if user provides Linear config)
 - **Validation**: ln-130 validates output in Phase 2/3
 - **Verify**: Tasks README exists before continuing
 
-**2.4 Create Test Documentation (Optional)**:
+**2d. Create Test Documentation (Optional)**:
 - **Condition**: If user approved test docs in Phase 1
 - **Invocation**: `Skill(skill: "ln-140-test-docs-creator")` → AUTOMATIC
 - **Output**: `tests/README.md` (test documentation with Story-Level Test Task Pattern)
 - **Validation**: ln-140 validates output in Phase 2/3
 - **Skip**: If "no" → can run ln-140-test-docs-creator later manually
 
-**2.5 Create HTML Presentation**:
+**2e. Create HTML Presentation**:
 - **Invocation**: `Skill(skill: "ln-150-presentation-creator")` → AUTOMATIC
 - **Output**: `docs/presentation/README.md` + `presentation_final.html` + `assets/`
 - **Validation**: ln-150 validates output in Phase 2/3
 - **Verify**: Presentation files exist before continuing
 
-**2.6 Extract Skills from Documentation (Optional)**:
+**2f. Extract Skills from Documentation (Optional)**:
 - **Condition**: User approved skill extraction in Phase 1, or invoked manually later
 - **Invocation**: `Skill(skill: "ln-160-docs-skill-extractor")` → AUTOMATIC
 - **Input**: All docs created by ln-110—ln-150
@@ -293,7 +293,7 @@ Mark each as in_progress when starting, completed when worker returns success.
 
 **Process**:
 
-**4.0 Documentation Quality Check**
+**3a. Documentation Quality Check**
 
 Quick quality check per created document:
 
@@ -305,7 +305,7 @@ Quick quality check per created document:
 
 **Gate:** All FAIL items → fix inline before continuing cleanup. Report quality summary in Phase 4.
 
-**4.1 Scan for duplicate content**
+**3b. Scan for duplicate content**
 
 1. **Read all .md files in docs/**
    - Use Glob tool: `pattern: "docs/**/*.md"`
@@ -342,7 +342,7 @@ Quick quality check per created document:
    - "✓ Removed {count} duplicate sections"
    - List: "{section_name} removed from {file} (canonical: {canonical_file})"
 
-**4.2 Report unexpected files (advisory)**
+**3c. Report unexpected files (advisory)**
 
 1. **List all .md files in docs/**
    - Use Glob tool: `pattern: "docs/**/*.md"`
@@ -354,7 +354,7 @@ Quick quality check per created document:
    - User decides what to do with them
    - Log: "{count} unexpected files found (not in expected structure) — listed for user review"
 
-**4.3 Consolidate knowledge**
+**3d. Consolidate knowledge**
 
 1. **Identify scattered information:**
    - Known patterns:
@@ -379,7 +379,7 @@ Quick quality check per created document:
    - "✓ Consolidated {count} scattered concepts"
    - List: "{concept} consolidated to {SSoT_file}"
 
-**4.4 Cross-link validation**
+**3e. Cross-link validation**
 
 1. **Scan all .md files for internal links:**
    - For each file:
@@ -414,7 +414,7 @@ Quick quality check per created document:
    - "✓ Added {count} missing critical links"
    - List changes
 
-**4.5 Final report**
+**3f. Final report**
 
 ```
 ✅ Global Cleanup Complete:
@@ -442,7 +442,7 @@ Links:
 
 **Process**:
 
-**5.1 Ask User**:
+**4a. Ask User**:
 ```
 Documentation Audit Options:
 1. AUDIT DOCS: Run ln-610-docs-auditor (structure + semantic + comments)
@@ -451,12 +451,12 @@ Documentation Audit Options:
 Choose option (1/2): _
 ```
 
-**5.2 Run Selected Auditor**:
+**4b. Run Selected Auditor**:
 - If AUDIT DOCS selected:
   - **Invocation**: `Skill(skill: "ln-610-docs-auditor")` → AUTOMATIC
   - **Output**: Compliance Score X/10 per category (Structure, Semantic, Comments) + Findings
 
-**5.3 Show Audit Summary**:
+**4c. Show Audit Summary**:
 ```
 📊 Audit Results:
 - Documentation Quality: X/10 overall
@@ -570,7 +570,7 @@ project_root/
 
 **When to use manual approach instead:**
 - Need only HTML rebuild → use [ln-150-presentation-creator](../ln-150-presentation-creator/SKILL.md)
-- Need one specific ADR/guide/manual → use [ln-002-best-practices-researcher](../ln-002-best-practices-researcher/SKILL.md)
+- Need one specific ADR/guide/manual → use shared/templates/ + shared/references/documentation_creation.md
 
 ---
 
@@ -679,12 +679,12 @@ Before completing work, verify ALL checkpoints:
 - [ ] Warning displayed if expected files missing
 
 **✅ Global Cleanup Complete (Phase 3):**
-- [ ] 4.1: Duplicate sections identified and removed (>80% similarity)
-- [ ] 4.1: Links added to canonical locations (principles.md, testing-strategy.md, kanban_board.md)
-- [ ] 4.2: Unexpected files reported (advisory, no auto-archive)
-- [ ] 4.3: Scattered concepts consolidated to Single Source of Truth (SSoT)
-- [ ] 4.4: Internal links validated (broken links fixed, critical links added)
-- [ ] 4.5: Final report generated (counts, lists, actions)
+- [ ] 3b: Duplicate sections identified and removed (>80% similarity)
+- [ ] 3b: Links added to canonical locations (principles.md, testing-strategy.md, kanban_board.md)
+- [ ] 3c: Unexpected files reported (advisory, no auto-archive)
+- [ ] 3d: Scattered concepts consolidated to Single Source of Truth (SSoT)
+- [ ] 3e: Internal links validated (broken links fixed, critical links added)
+- [ ] 3f: Final report generated (counts, lists, actions)
 
 **✅ Documentation Audit (Phase 4 - if selected):**
 - [ ] User selected audit option (AUDIT DOCS / AUDIT COMMENTS / BOTH / SKIP)

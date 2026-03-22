@@ -82,7 +82,7 @@ Each album idea uses this structure:
 ```markdown
 ### [Album Title]
 - **Genre**: [genre] (primary category: hip-hop, electronic, country, folk, rock)
-- **Type**: [Documentary/Narrative/Thematic/Character Study/Collection]
+- **Type**: [Documentary/Narrative/Thematic/Character Study/Collection/Original Soundtrack (OST)]
 - **Concept**: [1-3 sentence description]
 - **Notes**: [any additional notes, references, inspiration]
 - **Added**: [YYYY-MM-DD]
@@ -146,7 +146,7 @@ Add a new album idea with interactive prompts.
 **Steps:**
 1. Get title from argument (or prompt if not provided)
 2. Prompt for genre (with validation against primary categories)
-3. Prompt for type (Documentary/Narrative/Thematic/Character Study/Collection)
+3. Prompt for type (Documentary/Narrative/Thematic/Character Study/Collection/Original Soundtrack (OST))
 4. Prompt for concept (1-3 sentences)
 5. Prompt for notes (optional)
 6. Add current date
@@ -156,7 +156,7 @@ Add a new album idea with interactive prompts.
 **Prompts:**
 ```
 Genre (hip-hop, electronic, country, folk, rock):
-Type (Documentary/Narrative/Thematic/Character Study/Collection):
+Type (Documentary/Narrative/Thematic/Character Study/Collection/Original Soundtrack (OST)):
 Concept (1-3 sentences):
 Notes (optional, press Enter to skip):
 ```

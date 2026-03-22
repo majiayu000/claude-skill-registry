@@ -15,6 +15,7 @@ L3 Worker that creates design_guidelines.md. CONDITIONAL - only invoked when pro
 - Receives Context Store from ln-110-project-docs-coordinator
 - WCAG 2.1 Level AA accessibility compliance
 - Design system documentation
+- **Downstream consumers:** `design_guidelines.md` is loaded by ln-401 (Frontend Guard) and ln-402 (Frontend Review Checks) for runtime design validation against implementation
 - Never gathers context itself; uses coordinator input
 
 ## Invocation (who/when)

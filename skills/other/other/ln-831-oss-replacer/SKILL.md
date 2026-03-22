@@ -4,7 +4,7 @@ description: "Replaces custom modules with OSS packages using atomic keep/discar
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # ln-831-oss-replacer
 
@@ -98,6 +98,15 @@ FOR each replacement candidate (R1..RN):
   5. DELETE: Remove old custom module (only after keep)
   6. LOG: Record replacement for report
 ```
+
+### Stop Conditions (Replace Loop)
+
+| Condition | Action |
+|-----------|--------|
+| All candidates processed | STOP — proceed to Report |
+| 3 consecutive DISCARDs | WARN — "3 replacements failed in a row. Continue?" |
+| Test infrastructure breaks (suite itself fails) | STOP — revert all, report last known good state |
+| No candidates above confidence threshold | STOP — report "no viable replacements found" |
 
 ### Atomic Revert on Discard
 

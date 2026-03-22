@@ -1,6 +1,6 @@
 ---
 name: pre-generation-check
-description: Validates all pre-generation gates before sending tracks to Suno. Checks sources verified, lyrics reviewed, pronunciation resolved, explicit flag set, style prompt complete, and artist names cleared.
+description: Validates all pre-generation gates before sending tracks to Suno. Checks sources verified, lyrics reviewed, pronunciation resolved, explicit flag set, style prompt complete, and artist names cleared. Use before generating tracks on Suno or when the user says "pre-gen check" or "ready to generate".
 argument-hint: <album-name or track-path>
 model: claude-haiku-4-5-20251001
 prerequisites:

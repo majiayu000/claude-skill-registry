@@ -27,7 +27,7 @@ Validates optimization plan (performance_map + hypotheses + context) via paralle
 
 ## Workflow
 
-**Phases:** Load Context + Health Check → Materialize for Agents → Launch Agents → Feasibility Check → Merge + Debate → Verdict
+**Phases:** Load Context + Health Check → Materialize for Agents → Launch Agents → Feasibility Check → Merge + Verify → Verdict
 
 ---
 
@@ -133,13 +133,13 @@ feasibility_result:
 
 ---
 
-## Phase 4: Merge Agent Feedback + Debate
+## Phase 4: Merge Agent Feedback
 
 Wait for agent results, then merge per `shared/references/agent_review_workflow.md`:
 
 1. Parse agent suggestions from both result files
 2. Merge with own feasibility findings (Phase 3)
-3. For EACH suggestion: dedup → evaluate → AGREE or DISAGREE (debate per shared workflow)
+3. For EACH suggestion: dedup → evaluate → AGREE or REJECT (per shared workflow)
 4. Apply accepted corrections directly to `.optimization/{slug}/context.md`:
    - Remove invalid hypotheses
    - Add warnings to concerns
@@ -152,7 +152,19 @@ Display: `"Agent Review: codex ({accepted}/{total}), gemini ({accepted}/{total})
 
 ---
 
-## Phase 5: Verdict
+## Phase 5: Iterative Refinement (MANDATORY when Codex available)
+
+> **PROTOCOL RULE:** Valid skip: Codex unavailable in health check. If skipped → log `"Iterative Refinement: SKIPPED (Codex unavailable)"`.
+
+Execute per `shared/references/agent_review_workflow.md` "Step: Iterative Refinement".
+
+1) **Artifact:** `.optimization/{slug}/context.md` (post-Phase 4 merge state)
+2) **Loop (max 5 iterations):** Build prompt → Codex (foreground) → parse → AGREE/REJECT → apply → repeat
+3) **Display + Persist** per shared workflow
+
+---
+
+## Phase 6: Verdict
 
 | Verdict | Condition |
 |---------|-----------|
@@ -189,7 +201,7 @@ Return verdict to coordinator. On NO_GO: coordinator presents issues to user.
 
 ## References
 
-- `shared/references/agent_review_workflow.md` — merge + debate protocol
+- `shared/references/agent_review_workflow.md` — merge + verification protocol
 - `shared/references/agent_delegation_pattern.md` — agent invocation pattern
 - `shared/agents/prompt_templates/modes/plan_review.md` — plan review template
 - [optimization_review_focus.md](references/optimization_review_focus.md) — optimization-specific focus areas
@@ -203,9 +215,10 @@ Return verdict to coordinator. On NO_GO: coordinator presents issues to user.
 - [ ] Context materialized to `.agent-review/` for agents
 - [ ] Both agents launched (or SKIPPED if unavailable)
 - [ ] Own feasibility check completed (files exist, no conflicts, evidence backing)
-- [ ] Agent results merged and debated
+- [ ] Agent results merged and verified
 - [ ] Agent process trees verified dead after results collection (Phase 4)
 - [ ] Corrections applied to context.md
+- [ ] Iterative Refinement executed or SKIPPED (Phase 5)
 - [ ] Verdict issued (GO / GO_WITH_CONCERNS / NO_GO)
 - [ ] Review summary saved to `.agent-review/review_history.md`
 

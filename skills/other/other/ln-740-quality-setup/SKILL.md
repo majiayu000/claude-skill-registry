@@ -125,6 +125,13 @@ ln-740 (this)
 
 Pass detected stack and existing configs to workers via direct Skill tool invocation. For Python: instruct ln-741 to apply full quality stack per its Completeness Check table.
 
+**Invocations:**
+```
+Skill(skill: "ln-741-linter-configurator", args: "{projectPath}")
+Skill(skill: "ln-742-precommit-setup", args: "{projectPath}")
+Skill(skill: "ln-743-test-infrastructure", args: "{projectPath}")
+```
+
 ---
 
 ## Phase 4: Verification
@@ -164,6 +171,24 @@ After all workers complete, verify the quality pipeline works.
 > **RULE 4:** eslint-config-prettier is REQUIRED when both ESLint and Prettier are configured.
 
 ---
+
+**TodoWrite format (mandatory):**
+```
+- Invoke ln-741-linter-configurator (pending)
+- Invoke ln-742-precommit-setup (pending)
+- Invoke ln-743-test-infrastructure (pending)
+- Verify quality pipeline (pending)
+```
+
+## Worker Invocation (MANDATORY)
+
+| Phase | Worker | Context |
+|-------|--------|---------|
+| 3a | ln-741-linter-configurator | Shared (Skill tool) — ESLint/Prettier, editorconfig, Ruff |
+| 3b | ln-742-precommit-setup | Shared (Skill tool) — Husky, lint-staged, commitlint |
+| 3c | ln-743-test-infrastructure | Shared (Skill tool) — Vitest, xUnit, pytest |
+
+**All workers:** Invoke via Skill tool — workers see coordinator context.
 
 ## Definition of Done
 

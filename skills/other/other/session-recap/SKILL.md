@@ -98,26 +98,30 @@ obsidian vault="knowledge-bank" read path="_sessions/{date}/{session_id}/session
 ```
 
 **Frontmatter metadata** (supplements later phases):
-- `project`, `session_name`, `task_tag`, `tags`, `summary`, `duration_seconds`, `started_at`, `ended_at`
+- `project`, `session_name`, `task_tag`, `tags`, `summary`, `duration_seconds`, `started_at`, `ended_at`, `transcript_source`
 
 **Body navigation** — follow session.md body sections:
 
 | Section | Content | How to use |
 |---------|---------|------------|
 | `## Generated Artifacts` | WikiLinks to docs in `docs/` | Read for additional context |
-| `## Transcripts` | `segment-N/transcript.jsonl` paths | Navigate to transcripts for parsing |
-| `## Agents` | `segment-N/agents/*.jsonl` paths | Optional: read subagent work |
-| `## Plans` | WikiLinks to plan files | Read plans for design context |
+| `## Transcript` | Source path to original `.jsonl` | Use for `parse_transcript.sh` |
+| `## Compaction Points` | Line counts per segment boundary | Context on session length/compaction |
 | `## Memory Snapshot` | WikiLinks to memory/*.md | Read auto-memory for project context |
 
-Then locate the latest transcript segment:
+Then locate the transcript:
 ```bash
-# Find latest segment
-LATEST_SEGMENT=$(ls -d "$SESSION_FOLDER"/segment-* 2>/dev/null | grep -v 'segment-final' | sort -t- -k2 -n | tail -1)
-[ -z "$LATEST_SEGMENT" ] && [ -d "$SESSION_FOLDER/segment-final" ] && LATEST_SEGMENT="$SESSION_FOLDER/segment-final"
+# Preferred: read transcript_source from session.md frontmatter (v2.1+)
+TRANSCRIPT_SOURCE=$(read_frontmatter_prop "$SESSION_FOLDER/session.md" "transcript_source")
 
-# Read transcript
-TRANSCRIPT="$LATEST_SEGMENT/transcript.jsonl"
+if [ -n "$TRANSCRIPT_SOURCE" ] && [ -f "$TRANSCRIPT_SOURCE" ]; then
+    TRANSCRIPT="$TRANSCRIPT_SOURCE"
+else
+    # Fallback for old sessions: find latest segment copy
+    LATEST_SEGMENT=$(ls -d "$SESSION_FOLDER"/segment-* 2>/dev/null | grep -v 'segment-final' | sort -t- -k2 -n | tail -1)
+    [ -z "$LATEST_SEGMENT" ] && [ -d "$SESSION_FOLDER/segment-final" ] && LATEST_SEGMENT="$SESSION_FOLDER/segment-final"
+    TRANSCRIPT="$LATEST_SEGMENT/transcript.jsonl"
+fi
 ```
 
 **If no folder (current conversation mode)**: Skip session.md reading. Analyze current conversation context.

@@ -150,19 +150,30 @@ Skill(skill: "ln-514-test-log-analyzer", args: "review logs since test run start
 
 ### Phase 9: Agent Merge (runs after Phase 8, when agent results arrive — SKIP if agents SKIPPED)
 
-**MANDATORY READ:** Load `shared/references/agent_review_workflow.md` (Critical Verification + Debate), `shared/references/agent_review_memory.md`
+**MANDATORY READ:** Load `shared/references/agent_review_workflow.md` (Critical Verification + Iterative Refinement), `shared/references/agent_review_memory.md`
 
 9a) **Wait for agent results** — read result files as they arrive (process-as-arrive pattern)
-9b) **Critical Verification + Debate** per shared workflow — Claude evaluates each suggestion on merits
+9b) **Critical Verification** per shared workflow — Claude evaluates each suggestion on merits
 9c) **Merge accepted suggestions** into issues list (SEC-, PERF-, MNT-, ARCH-, BP-, OPT-)
     - If `area=security` or `area=correctness` → escalate aggregate to CONCERNS
 9d) **Save review summary** to `.agent-review/review_history.md`
 
-### Phase 10: Calculate Verdict + Return Results
+### Phase 10: Iterative Refinement (MANDATORY when Codex available — SKIP if agents SKIPPED)
+
+> **PROTOCOL RULE:** Valid skip: (1) Codex unavailable in Phase 4 health check, (2) agents SKIPPED. If skipped → log `"Iterative Refinement: SKIPPED"`.
+
+Execute per `shared/references/agent_review_workflow.md` "Step: Iterative Refinement".
+
+1) **Artifact:** Changed files from Story scope (post-Phase 9 merge state)
+2) **Loop (max 5 iterations):** Build prompt → send to Codex (foreground) → parse → AGREE/REJECT each suggestion → apply accepted → repeat until APPROVED or max
+3) **Display:** `"Iterative Refinement: {N} iterations, {total} suggestions, {applied} applied, exit: {reason}"`
+4) **Persist:** `.agent-review/refinement/`, append to `review_history.md`
+
+### Phase 11: Calculate Verdict + Return Results
 
 **MANDATORY READ:** Load `references/gate_levels.md`
 
-#### Step 10.1: Normalize Component Results
+#### Step 11.1: Normalize Component Results
 
 Map each component status to FAIL/CONCERN/ignored using this matrix:
 
@@ -190,7 +201,7 @@ Map each component status to FAIL/CONCERN/ignored using this matrix:
 | log_analysis | REAL_BUGS_FOUND | FAIL | -20 |
 | log_analysis | SKIPPED / NO_LOG_SOURCES | ignored | 0 |
 
-#### Step 10.2: Calculate Quality Verdict
+#### Step 11.2: Calculate Quality Verdict
 
 ```
 fail_count = count of components mapped to FAIL
@@ -208,7 +219,7 @@ ELSE:
   quality_verdict = FAIL
 ```
 
-#### Step 10.3: Return Results
+#### Step 11.3: Return Results
 
 ```yaml
 quality_verdict: PASS | CONCERNS | FAIL
@@ -279,9 +290,10 @@ issues:
 - [ ] Linters executed
 - [ ] ln-513 invoked, regression results returned
 - [ ] ln-514 invoked, log analysis results returned (or SKIPPED/NO_LOG_SOURCES)
+- [ ] Iterative Refinement executed or SKIPPED (Phase 10)
 - [ ] quality_verdict calculated + aggregated results returned
 
-## Phase 11: Meta-Analysis
+## Phase 12: Meta-Analysis
 
 **MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
 

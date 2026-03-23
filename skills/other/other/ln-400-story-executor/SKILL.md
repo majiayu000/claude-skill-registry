@@ -4,7 +4,7 @@ description: "Executes Story tasks in priority order (To Review, To Rework, Todo
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Story Execution Orchestrator
 
@@ -86,6 +86,14 @@ Before delegating a Todo task, verify its plan against current codebase:
 4. If any worker sets status != To Review → STOP and report.
 
 > **Execute → Review → Next.** Never skip review. Reviews are always sequential (ln-402 inline).
+
+### Stop Conditions (Task Loop)
+
+| Condition | Action |
+|-----------|--------|
+| All tasks status = Done | STOP — proceed to Phase 5 (Completion) |
+| Same task in To Rework 3+ consecutive times | STOP — ESCALATE: "Task rework loop detected, need input" |
+| No tasks in processable status (To Review / To Rework / Todo) | STOP — proceed to Phase 5 |
 
 ### Phase 5: Completion
 When all tasks Done:

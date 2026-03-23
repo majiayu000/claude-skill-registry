@@ -292,6 +292,15 @@ For each L2 coordinator:
    ```
 
 2. **Invoke skill:** Pass context as input
+   ```
+   Skill(skill: "ln-820-dependency-upgrader", args: "{projectPath} --mode TRANSFORM")
+   Skill(skill: "ln-720-structure-migrator", args: "{projectPath} --mode {CREATE|TRANSFORM}")
+   Skill(skill: "ln-730-devops-setup", args: "{projectPath}")
+   Skill(skill: "ln-740-quality-setup", args: "{projectPath}")
+   Skill(skill: "ln-760-security-setup", args: "{projectPath}")
+   Skill(skill: "ln-770-crosscutting-setup", args: "{projectPath}")
+   Skill(skill: "ln-780-bootstrap-verifier", args: "{projectPath}")
+   ```
 
 3. **Collect result:**
    ```yaml
@@ -477,6 +486,32 @@ SKIP_TESTS=false
 - `references/verification_checklist.md` — Phase 3 verification steps
 
 ---
+
+**TodoWrite format (mandatory):**
+```
+- Invoke ln-820-dependency-upgrader (conditional TRANSFORM) (pending)
+- Invoke ln-720-structure-migrator (pending)
+- Invoke ln-730-devops-setup (pending)
+- Invoke ln-740-quality-setup (pending)
+- Invoke ln-760-security-setup (pending)
+- Invoke ln-770-crosscutting-setup (pending)
+- Invoke ln-780-bootstrap-verifier (pending)
+- Generate completion report (pending)
+```
+
+## Worker Invocation (MANDATORY)
+
+| Phase | Worker | Context |
+|-------|--------|---------|
+| 3.1 | ln-820-dependency-upgrader | Shared (Skill tool) — upgrade existing deps (TRANSFORM only) |
+| 3.2 | ln-720-structure-migrator | Shared (Skill tool) — scaffold or restructure to Clean Architecture |
+| 3.3 | ln-730-devops-setup | Shared (Skill tool) — Docker, CI/CD, environment config |
+| 3.4 | ln-740-quality-setup | Shared (Skill tool) — linters, pre-commit, test infrastructure |
+| 3.5 | ln-760-security-setup | Shared (Skill tool) — security scanning and hardening |
+| 3.6 | ln-770-crosscutting-setup | Shared (Skill tool) — logging, error handling, CORS, health |
+| 3.7 | ln-780-bootstrap-verifier | Shared (Skill tool) — build, test, Docker verification |
+
+**All workers:** Invoke via Skill tool — workers see coordinator context.
 
 ## Definition of Done
 

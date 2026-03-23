@@ -240,6 +240,26 @@ Options:
 
 ---
 
+**TodoWrite format (mandatory):**
+```
+- Invoke ln-821-npm-upgrader (in_progress)
+- Invoke ln-822-nuget-upgrader (pending)
+- Invoke ln-823-pip-upgrader (pending)
+- Aggregate reports (pending)
+```
+
+## Worker Invocation (MANDATORY)
+
+| Phase | Worker | Context |
+|-------|--------|---------|
+| 3 | ln-821-npm-upgrader | Isolated (Agent tool) — npm/yarn/pnpm dependency upgrades |
+| 3 | ln-822-nuget-upgrader | Isolated (Agent tool) — NuGet dependency upgrades |
+| 3 | ln-823-pip-upgrader | Isolated (Agent tool) — pip/poetry/pipenv dependency upgrades |
+
+**All workers:** Invoke via Agent tool with `isolation: "worktree"` — each worker creates its own branch.
+
+---
+
 ## Definition of Done
 
 - [ ] Pre-flight checks passed (clean git state)

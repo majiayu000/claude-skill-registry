@@ -140,7 +140,7 @@ MUST call `mcp__hex-line__setup_hooks(agent="claude")` immediately after hex-lin
 5. Copies `output-style.md` to `~/.claude/output-styles/hex-line.md`
 6. Sets `outputStyle: "hex-line"` if no style is active (preserves existing style)
 
-**Verification:** After setup_hooks returns, confirm hooks array is non-empty in its response. If empty or error — STOP and report failure. Without hooks, hex-line pipeline does not work.
+**Verification:** After setup_hooks returns, confirm the response contains `Hooks configured for` and does not contain `SKIPPED`, `UNKNOWN_AGENT`, `Error`, or `failed`. If error — STOP and report failure. Without hooks, hex-line pipeline does not work.
 
 ### Phase 4c: Graph Indexing
 
@@ -198,7 +198,7 @@ allowed-tools Migration:
 
 After hex-line is configured with hooks, ensure instruction files have MCP Tool Preferences section. Without this section, agents default to built-in tools in every session — negating the entire hex-line setup.
 
-**MANDATORY READ:** Load `mcp/hex-line-mcp/output-style.md` → use its `# MCP Tool Preferences` section as template. MUST include the full table (Read, Edit, Write, Grep + directory_tree row).
+**MANDATORY READ:** Load `mcp/hex-line-mcp/output-style.md` → use its `# MCP Tool Preferences` section as template. MUST include the full table (Read, Edit for hash edits, Write, Grep, bulk_replace for text rename).
 
 **Steps (MUST execute all):**
 
@@ -274,7 +274,7 @@ Budget: 4 servers ~ 20K tokens (10.0% of context) — OK
 After hex-line is configured, run benchmark on user's repo:
 
 ```bash
-node "$(npm root -g)/@levnikolaevich/hex-line-mcp/benchmark.mjs"
+node "$(npm root -g)/@levnikolaevich/hex-line-mcp/benchmark/index.mjs"
 ```
 
 Display results to user — demonstrates value of the MCP setup just completed.

@@ -1,7 +1,7 @@
 ---
 name: baoyu-url-to-markdown
 description: Fetch any URL and convert to markdown using Chrome CDP. Saves the rendered HTML snapshot alongside the markdown, uses an upgraded Defuddle pipeline with better web-component handling and YouTube transcript extraction, and automatically falls back to the pre-Defuddle HTML-to-Markdown pipeline when needed. If local browser capture fails entirely, it can fall back to the hosted defuddle.md API. Supports two modes - auto-capture on page load, or wait for user signal (for pages requiring login). Use when user wants to save a webpage as markdown.
-version: 1.58.1
+version: 1.59.0
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-url-to-markdown
@@ -30,6 +30,9 @@ Fetches any URL via Chrome CDP, saves the rendered HTML snapshot, and converts i
 |--------|---------|
 | `scripts/main.ts` | CLI entry point for URL fetching |
 | `scripts/html-to-markdown.ts` | Markdown conversion entry point and converter selection |
+| `scripts/parsers/index.ts` | Unified parser entry: dispatches URL-specific rules before generic converters |
+| `scripts/parsers/types.ts` | Unified parser interface shared by all rule files |
+| `scripts/parsers/rules/*.ts` | One file per URL rule, for example X status and X article |
 | `scripts/defuddle-converter.ts` | Defuddle-based conversion |
 | `scripts/legacy-converter.ts` | Pre-Defuddle legacy extraction and markdown conversion |
 | `scripts/markdown-conversion-shared.ts` | Shared metadata parsing and markdown document helpers |
@@ -115,10 +118,13 @@ Full reference: [references/config/first-time-setup.md](references/config/first-
 ## Features
 
 - Chrome CDP for full JavaScript rendering
+- URL-specific parser layer for sites that need custom HTML rules before generic extraction
 - Two capture modes: auto or wait-for-user
 - Save rendered HTML as a sibling `-captured.html` file
 - Clean markdown output with metadata
 - Upgraded Defuddle-first markdown conversion with automatic fallback to the pre-Defuddle extractor from git history
+- X/Twitter pages can use HTML-specific parsing for Tweets and Articles, which improves title/body/media extraction on `x.com` / `twitter.com`
+- `archive.ph` / related archive mirrors can restore the original URL from `input[name=q]` and prefer `#CONTENT` before falling back to the page body
 - Materializes shadow DOM content before conversion so web-component pages survive serialization better
 - YouTube pages can include transcript/caption text in the markdown when YouTube exposes a caption track
 - If local browser capture fails completely, can fall back to `defuddle.md/<url>` and still save markdown
@@ -201,14 +207,16 @@ When `--download-media` is enabled:
 
 Conversion order:
 
-1. Try Defuddle first
-2. For rich pages such as YouTube, prefer Defuddle's extractor-specific output (including transcripts when available) instead of replacing it with the legacy pipeline
-3. If Defuddle throws, cannot load, returns obviously incomplete markdown, or captures lower-quality content than the legacy pipeline, automatically fall back to the pre-Defuddle extractor
-4. If the entire local browser capture flow fails before markdown can be produced, try the hosted `https://defuddle.md/<url>` API and save its markdown output directly
-5. The legacy fallback path uses the older Readability/selector/Next.js-data based HTML-to-Markdown implementation recovered from git history
+1. Try the URL-specific parser layer first when a site rule matches
+2. If no specialized parser matches, try Defuddle
+3. For rich pages such as YouTube, prefer Defuddle's extractor-specific output (including transcripts when available) instead of replacing it with the legacy pipeline
+4. If Defuddle throws, cannot load, returns obviously incomplete markdown, or captures lower-quality content than the legacy pipeline, automatically fall back to the pre-Defuddle extractor
+5. If the entire local browser capture flow fails before markdown can be produced, try the hosted `https://defuddle.md/<url>` API and save its markdown output directly
+6. The legacy fallback path uses the older Readability/selector/Next.js-data based HTML-to-Markdown implementation recovered from git history
 
 CLI output will show:
 
+- `Converter: parser:...` when a URL-specific parser succeeded
 - `Converter: defuddle` when Defuddle succeeds
 - `Converter: legacy:...` plus `Fallback used: ...` when fallback was needed
 - `Converter: defuddle-api` when local browser capture failed and the hosted API was used instead

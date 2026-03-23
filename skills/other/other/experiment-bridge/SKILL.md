@@ -26,8 +26,9 @@ refine-logs/FINAL_PROPOSAL.md
 - **AUTO_DEPLOY = true** — Automatically deploy experiments after implementation + review. Set `false` to manually inspect code before deploying.
 - **SANITY_FIRST = true** — Run the sanity-stage experiment first (smallest, fastest) before launching the rest. Catches setup bugs early.
 - **MAX_PARALLEL_RUNS = 4** — Maximum number of experiments to deploy in parallel (limited by available GPUs).
+- **BASE_REPO = false** — GitHub repo URL to use as base codebase. When set, clone the repo first and implement experiments on top of it. When `false` (default), write code from scratch or reuse existing project files.
 
-> Override: `/experiment-bridge "EXPERIMENT_PLAN.md" — code review: false, auto deploy: false`
+> Override: `/experiment-bridge "EXPERIMENT_PLAN.md" — base repo: https://github.com/org/project`
 
 ## Inputs
 
@@ -71,9 +72,16 @@ Proceeding to implementation.
 
 ### Phase 2: Implement Experiment Code
 
+**If `BASE_REPO` is set** — clone the repo first:
+```bash
+git clone <BASE_REPO> base_repo/
+# Read the repo's README, understand its structure, find entry points
+# Implement experiments by modifying/extending this codebase
+```
+
 For each milestone (in order), write the experiment scripts:
 
-1. **Check existing code** — scan the project for existing experiment scripts, model code, data loaders. Reuse as much as possible.
+1. **Check existing code** — scan the project (or cloned `base_repo/`) for existing experiment scripts, model code, data loaders. Reuse as much as possible.
 
 2. **Implement missing pieces:**
    - Training scripts with proper argparse (all hyperparameters configurable)
@@ -118,7 +126,8 @@ mcp__codex__codex:
     2. Are all hyperparameters from the plan reflected in the code?
     3. Are there any logic bugs (wrong loss function, incorrect data split, missing eval)?
     4. Is the evaluation metric computed correctly?
-    5. Any potential issues (OOM risk, numerical instability, missing seeds)?
+    5. **CRITICAL: Does evaluation use the dataset's actual ground truth labels — NOT another model's output as ground truth?** This is a common and severe bug.
+    6. Any potential issues (OOM risk, numerical instability, missing seeds)?
 
     For each issue found, specify: CRITICAL / MAJOR / MINOR and the exact fix.
 ```
@@ -235,6 +244,7 @@ Ready for Workflow 2:
 ## Key Rules
 
 - **Large file handling**: If the Write tool fails due to file size, immediately retry using Bash (`cat << 'EOF' > file`) to write in chunks. Do NOT ask the user for permission — just do it silently.
+- **CRITICAL — Evaluation must use dataset ground truth.** When writing evaluation scripts, ALWAYS compare model predictions against the dataset's actual ground truth labels/targets — NEVER use another model's output as ground truth. Double-check: (1) ground truth comes from the dataset split, not from a baseline/backbone model, (2) evaluation metrics are computed against the same ground truth for all methods, (3) if the task has official eval scripts, use those.
 - **Follow the plan.** Do not invent experiments not in EXPERIMENT_PLAN.md. If you think something is missing, note it but don't add it.
 - **Sanity first.** Never deploy a full suite without verifying the sanity stage passes.
 - **Reuse existing code.** Scan the project before writing new scripts. Extend, don't duplicate.

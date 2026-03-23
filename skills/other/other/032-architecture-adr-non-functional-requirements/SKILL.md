@@ -32,10 +32,10 @@ Use challenge-first, consultative discovery—ask 1-2 questions at a time, build
 
 ## When to use this skill
 
-- Document quality attributes
-- Create ADR for NFR
-- Non-functional requirements ADR
-- Security performance scalability architecture
+- Create ADR for Non-functional requirements
+- Document Non-functional requirements
+- Capture Non-functional requirements
+- Generate Non-functional requirements in an ADR
 
 ## Reference
 

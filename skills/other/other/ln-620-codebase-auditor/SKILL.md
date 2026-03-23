@@ -1,7 +1,7 @@
 ---
 name: ln-620-codebase-auditor
 description: "Coordinates codebase audit across security, build, code quality, dependencies, and architecture. Use when auditing entire codebase."
-allowed-tools: Read, Grep, Glob, Bash, WebFetch, WebSearch, mcp__Ref, mcp__context7, Skill
+allowed-tools: Read, Grep, Glob, Bash, WebFetch, WebSearch, mcp__Ref, mcp__context7, Skill, mcp__hex-graph__index_project
 license: MIT
 ---
 
@@ -39,6 +39,7 @@ Coordinates 9 specialized audit workers to perform comprehensive codebase qualit
 - `docs/principles.md` - project-specific quality principles
 - Package manifests: `package.json`, `requirements.txt`, `go.mod`, `Cargo.toml`
 - Auto-discover Team ID from `docs/tasks/kanban_board.md`
+- **Supported projects (hex-graph indexed):** For JavaScript, TypeScript/TSX, Python, C#, and PHP projects, run `index_project` and set `graph_indexed: true` in contextStore. For other languages, continue without graph acceleration.
 
 **Extract metadata only** (not full codebase scan):
 - Programming language(s)

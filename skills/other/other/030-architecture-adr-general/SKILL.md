@@ -31,6 +31,19 @@ Before applying any ADR generation, ensure the project validates. If validation 
 - Create Architecture Decision Record
 - Document architecture decision
 - Architecture Decision Record for Java
+- Write ADR
+- Document technical decision
+- Architecture documentation
+- Record design decision
+- Technology choice documentation
+- Framework selection ADR
+- Database choice ADR
+- Architectural trade-offs
+- Technical alternatives evaluation
+- Why did we choose
+- Deployment strategy ADR
+- Infrastructure choice
+- Vendor selection ADR
 
 ## Reference
 

@@ -84,15 +84,15 @@ Delegate to workers in parallel (independent tasks):
 ```
 ln-730 (Coordinator)
     |
-    +---> ln-731-docker-generator (via Agent tool)
+    +---> ln-731-docker-generator (via Skill tool)
     |         Input: stack config, versions
     |         Output: Dockerfile.*, docker-compose.yml, .dockerignore
     |
-    +---> ln-732-cicd-generator (via Agent tool)
+    +---> ln-732-cicd-generator (via Skill tool)
     |         Input: stack config, detected commands
     |         Output: .github/workflows/ci.yml
     |
-    +---> ln-733-env-configurator (via Agent tool)
+    +---> ln-733-env-configurator (via Skill tool)
               Input: detected environment variables
               Output: .env.example, .env.development, .gitignore updates
 ```
@@ -101,6 +101,14 @@ ln-730 (Coordinator)
 - If worker fails, log error and continue with others
 - Report all failures at the end
 - Suggest manual fixes for failed components
+
+
+**Invocations:**
+```
+Skill(skill: "ln-731-docker-generator", args: "{projectPath}")
+Skill(skill: "ln-732-cicd-generator", args: "{projectPath}")
+Skill(skill: "ln-733-env-configurator", args: "{projectPath}")
+```
 
 ### Phase 4: Configuration Verification
 
@@ -149,6 +157,25 @@ Generate summary:
 5. **Version Pinning**: Use detected versions, not hardcoded values.
 
 ---
+
+**TodoWrite format (mandatory):**
+```
+- Invoke ln-731-docker-generator (pending)
+- Invoke ln-732-cicd-generator (pending)
+- Invoke ln-733-env-configurator (pending)
+- Verify configuration (pending)
+- Generate completion report (pending)
+```
+
+## Worker Invocation (MANDATORY)
+
+| Phase | Worker | Context |
+|-------|--------|---------|
+| 3a | ln-731-docker-generator | Shared (Skill tool) — Dockerfiles, docker-compose, .dockerignore |
+| 3b | ln-732-cicd-generator | Shared (Skill tool) — CI/CD pipeline configuration |
+| 3c | ln-733-env-configurator | Shared (Skill tool) — environment files and .gitignore |
+
+**All workers:** Invoke via Skill tool — workers see coordinator context.
 
 ## Definition of Done
 

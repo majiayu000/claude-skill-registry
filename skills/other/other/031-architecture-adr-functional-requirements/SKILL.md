@@ -31,10 +31,10 @@ Use conversational discovery—ask 1-2 questions at a time, build on answers, va
 
 ## When to use this skill
 
-- Document CLI or REST architecture
 - Create ADR for functional requirements
-- ADR for command-line tool or HTTP API
-- Functional requirements ADR
+- Document functional requirements
+- Capture functional requirements
+- Generate functional requirements in an ADR
 
 ## Reference
 

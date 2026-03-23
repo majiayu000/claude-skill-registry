@@ -326,3 +326,70 @@ function Button({ icon: Icon, children, ...props }: ButtonProps) {
 <img src={avatar} alt={`${user.name}'s avatar`} />
 <img src={decoration} alt="" role="presentation" />
 ```
+
+## 3-Layer Token Architecture (Detay)
+
+Design token'lari 3 katmanli organize et. Hicbir component primitive token'a direkt referans vermemeli.
+
+```
+Layer 1: PRIMITIVE (Ham degerler, isim = renk/sayi)
+  --blue-500, --gray-200, --space-4
+
+Layer 2: SEMANTIC (Anlam tasiyan, isim = amac)
+  --color-primary: var(--blue-600)
+  --color-danger: var(--red-500)
+  --color-bg: var(--white)
+
+Layer 3: COMPONENT (Kullanim yeri, isim = component+property)
+  --btn-bg: var(--color-primary)
+  --card-border: var(--color-border)
+  --input-focus: var(--color-primary)
+```
+
+### Tailwind Token Mapping
+
+```typescript
+// tailwind.config.ts - CSS variable'lari Tailwind'e bagla
+theme: {
+  extend: {
+    colors: {
+      primary: {
+        DEFAULT: 'var(--color-primary)',
+        hover: 'var(--color-primary-hover)',
+        subtle: 'var(--color-primary-subtle)',
+      },
+    },
+  },
+}
+
+// Kullanim: className="bg-primary text-white hover:bg-primary-hover"
+// Dark mode token switch CSS variable'dan otomatik gelir
+```
+
+### Dark Mode Token Strategy
+
+```css
+/* Light mode (default) */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #111827;
+  --color-border: #e5e7eb;
+  --color-primary: #2563eb;
+}
+
+/* Dark mode - SADECE semantic token'lari override et */
+.dark {
+  --color-bg: #111827;
+  --color-text: #f9fafb;
+  --color-border: #374151;
+  --color-primary: #3b82f6;
+}
+
+/* Component token'lari DEGiSMEZ - semantic'ten inherit eder */
+/* --card-bg: var(--color-bg) hem light hem dark'ta dogru calisir */
+```
+
+### Referans
+
+- Detayli design system uretimi icin: `design-system-generator` skill
+- Brand tutarliligi icin: `brand-identity` skill

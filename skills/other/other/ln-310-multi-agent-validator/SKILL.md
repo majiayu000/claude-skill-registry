@@ -31,7 +31,7 @@ Validates Stories/Tasks (mode=story), implementation plans (mode=plan_review), o
 - **mode=story:** Validate Story + Tasks (28 criteria), auto-fix, agent review, approve (Backlog→Todo)
 - **mode=plan_review:** Review plans against codebase. Auto-detects in Read-Only Mode. Review with corrections
 - **mode=context:** Review documents/architecture via agents + MCP Ref. Review with corrections
-- **All modes:** Parallel agents (Codex + Gemini), merge, verify, debate, apply
+- **All modes:** Parallel agents (Codex + Gemini), merge, verify, refine, apply
 
 ## Progress Tracking
 
@@ -145,18 +145,34 @@ Zero out penalty points as structural fixes applied (section added, format corre
 
 > **PREREQUISITE:** Phase 2 MUST have completed. If `agents_launched` not set → STOP, go back to Phase 2. An Explore agent is NOT a substitute.
 
-**MANDATORY READ:** Load `shared/references/agent_review_workflow.md` (Critical Verification + Debate), `shared/references/agent_review_memory.md`
+**MANDATORY READ:** Load `shared/references/agent_review_workflow.md` (Critical Verification + Iterative Refinement), `shared/references/agent_review_memory.md`
 
 1) **Wait for agent results** — process-as-arrive
 2) **Parse agent suggestions** from both result files
 3) **MERGE** Claude's findings + Agent suggestions. Re-read lines modified in Phase 4 (agents saw pre-fix state)
-4) **For EACH suggestion:** dedup (own findings + history) → evaluate → AGREE (accept) or DISAGREE (debate per shared workflow)
-5) **Apply accepted** — mode=story: Story/Tasks, mode=plan_review: plan file, mode=context: documents
+4) **For EACH suggestion:** dedup (own findings + history) → evaluate → AGREE (accept) or REJECT (Claude's independent judgment)
+5) **Apply accepted** — mode=story: Story/Tasks, mode=context: documents, mode=plan_review: use best agent's `## Refined Plan` as base (prefer agent with more accepted suggestions), apply remaining accepted suggestions from other agent as patches. If no agent produced refined plan → fall back to individual suggestion application
 6) **Save review summary** → `.agent-review/review_history.md`
 - SKIPPED verdict (0 agents) → proceed unchanged
 - **Display:** `"Agent Review: codex ({accepted}/{total}), gemini ({accepted}/{total}), {N} applied"`
 
-### Phase 6: Approve & Notify (mode=story only)
+### Phase 6: Iterative Refinement (MANDATORY when Codex available)
+
+> **PROTOCOL RULE:** Iterative Refinement is MANDATORY for all modes when Codex is available. Valid skip reasons: (1) Codex unavailable in Phase 2 health check, (2) Codex disabled in `environment_state.json`. "Already reviewed" or "artifact is simple" is NOT a valid skip reason. If skipped → log `"Iterative Refinement: SKIPPED (Codex unavailable)"` and proceed to Phase 7.
+
+Execute per `shared/references/agent_review_workflow.md` "Step: Iterative Refinement".
+
+1) **Determine artifact:** mode=story → Story + Tasks concatenated. mode=plan_review → plan file. mode=context → context docs
+2) **Loop (max 5 iterations):**
+   - Build prompt from `shared/agents/prompt_templates/iterative_refinement.md` with full artifact content
+   - Send to Codex (foreground, synchronous)
+   - Parse result: `verdict == "APPROVED"` → exit. `iteration == 5` → exit. Error → exit. 0 accepted → exit
+   - Claude evaluates each suggestion (AGREE/REJECT), applies accepted fixes
+   - Update artifact, repeat
+3) **Display:** `"Iterative Refinement: {N} iterations, {total} suggestions, {applied} applied, exit: {reason}"`
+4) **Persist:** Save all prompts/results to `.agent-review/refinement/`, append summary to `review_history.md`
+
+### Phase 7: Approve & Notify (mode=story only)
 
 **mode=context/plan_review:** Skip. Return advisory output. Done.
 
@@ -184,7 +200,7 @@ Zero out penalty points as structural fixes applied (section added, format corre
 
 **Coverage thresholds:** 100% = no penalty. 80-99% = -3 penalty. <80% = -5 penalty, NO-GO.
 
-## Phase 7: Workflow Completion Self-Check (MANDATORY — DO NOT SKIP)
+## Phase 8: Workflow Completion Self-Check (MANDATORY — DO NOT SKIP)
 
 Mark each `[x]` when verified. ALL must be checked. If ANY unchecked → go back to failed phase. Display checklist to terminal before final results.
 
@@ -204,7 +220,8 @@ Mark each `[x]` when verified. ALL must be checked. If ANY unchecked → go back
   > ⛔ If unchecked AND environment_state.json showed ≥1 available agent → CRITICAL VIOLATION. Do NOT return results. Return to Phase 2.
 - [ ] Prompt file saved to `.agent-review/` (Phase 2)
 - [ ] Agent results read and parsed OR SKIPPED (Phase 5)
-- [ ] Critical Verification + Debate executed OR SKIPPED (Phase 5)
+- [ ] Critical Verification executed OR SKIPPED (Phase 5)
+- [ ] Iterative Refinement executed or SKIPPED: Codex unavailable (Phase 6)
 - [ ] Agent process trees verified dead OR SKIPPED (Phase 5)
 - [ ] Review summary saved to `review_history.md` OR SKIPPED (Phase 5)
 - [ ] MCP Ref research (#5, #6, #21, #28, AH) executed OR N/A (Phase 3)
@@ -214,7 +231,7 @@ Mark each `[x]` when verified. ALL must be checked. If ANY unchecked → go back
 - [ ] Auto-fix executed, all 11 groups (Phase 4)
 - [ ] Penalty After = 0, Readiness Score = 10 (Phase 4)
 - [ ] AC Coverage: 100% (Phase 4)
-- [ ] Story + Tasks → Todo, kanban updated, comment posted (Phase 6)
+- [ ] Story + Tasks → Todo, kanban updated, comment posted (Phase 7)
 
 **mode=context / mode=plan_review additional:**
 - [ ] Corrections applied to artifacts OR none needed (Phase 3)
@@ -227,15 +244,15 @@ Mark each `[x]` when verified. ALL must be checked. If ANY unchecked → go back
 - [ ] Agent process trees verified dead after results collection (Phase 5)
 - [ ] Research/Audit completed per mode (Phase 3)
 - [ ] Auto-fix executed per mode (Phase 4, mode=story only)
-- [ ] Agent results merged, Critical Verification + Debate executed (Phase 5)
-- [ ] Status transitions applied per mode (Phase 6, mode=story only)
-- [ ] Self-Check all items verified (Phase 7)
+- [ ] Agent results merged, Critical Verification + Iterative Refinement executed (Phase 5-6)
+- [ ] Status transitions applied per mode (Phase 7, mode=story only)
+- [ ] Self-Check all items verified (Phase 8)
 
-## Phase 8: Meta-Analysis
+## Phase 9: Meta-Analysis
 
 **MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
 
-Skill type: `review-coordinator` (with agents). Run after Phase 7 completes. Output to chat using the `review-coordinator — with agents` format.
+Skill type: `review-coordinator` (with agents). Run after Phase 8 completes. Output to chat using the `review-coordinator — with agents` format.
 
 ## Template Loading
 
@@ -251,10 +268,10 @@ Skill type: `review-coordinator` (with agents). Run after Phase 7 completes. Out
 - **Validation criteria:** `references/phase2_research_audit.md` (28 criteria + auto-fix), `references/penalty_points.md`
 - **Validation checklists:** `references/structural_validation.md` (#1-4, #23-24), `standards_validation.md` (#5), `solution_validation.md` (#6, #21, #28), `workflow_validation.md` (#7-13), `quality_validation.md` (#14-15), `dependency_validation.md` (#18-19), `risk_validation.md` (#20), `cross_reference_validation.md` (#25-26), `premortem_validation.md` (#27), `traceability_validation.md` (#16-17, #22)
 - **Templates:** `shared/templates/story_template.md`, `task_template_implementation.md`; local: `docs/templates/`
-- **Agent review:** `shared/references/agent_review_workflow.md`, `agent_delegation_pattern.md`, `agent_review_memory.md`; prompts: `shared/agents/prompt_templates/review_base.md` + `modes/{story,context,plan_review}.md`; challenge: `challenge_review.md`
+- **Agent review:** `shared/references/agent_review_workflow.md`, `agent_delegation_pattern.md`, `agent_review_memory.md`; prompts: `shared/agents/prompt_templates/review_base.md` + `modes/{story,context,plan_review}.md`, `iterative_refinement.md`
 - **Research:** `shared/references/research_tool_fallback.md`, `references/context_review_pipeline.md`, `domain_patterns.md`, `mcp_ref_findings_template.md`, `shared/references/research_methodology.md`, `shared/references/documentation_creation.md`
 - **Other:** `shared/templates/linear_integration.md`, `shared/references/ac_validation_rules.md`
 
 ---
-**Version:** 7.0.0
-**Last Updated:** 2026-02-03
+**Version:** 8.0.0
+**Last Updated:** 2026-03-22

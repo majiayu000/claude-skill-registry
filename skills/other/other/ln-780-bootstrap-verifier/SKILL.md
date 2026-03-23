@@ -92,17 +92,33 @@ Aggregate all results into final verification report.
 
 ---
 
-## Worker Invocation
+**TodoWrite format (mandatory):**
+```
+- Pre-flight checks (in_progress)
+- Invoke ln-781-build-verifier (pending)
+- Invoke ln-782-test-runner (pending)
+- Invoke ln-783-container-launcher (pending)
+- Generate verification report (pending)
+```
 
-Use Skill tool to delegate work:
+## Worker Invocation (MANDATORY)
 
-| Worker | Invocation | Data Passed |
-|--------|------------|-------------|
-| ln-781-build-verifier | `Skill: ln-781-build-verifier` | Detected project types |
-| ln-782-test-runner | `Skill: ln-782-test-runner` | Build status, skip flag |
-| ln-783-container-launcher | `Skill: ln-783-container-launcher` | Compose file path |
+| Phase | Worker | Context |
+|-------|--------|---------|
+| 2 | ln-781-build-verifier | Shared (Skill tool) — build verification for detected project types |
+| 3 | ln-782-test-runner | Shared (Skill tool) — test suite execution |
+| 4 | ln-783-container-launcher | Shared (Skill tool) — container launch + health checks |
+
+**All workers:** Invoke via Skill tool — workers see coordinator context.
 
 **Sequential execution required:** Build -> Test -> Container
+
+**Invocations:**
+```
+Skill(skill: "ln-781-build-verifier", args: "{detected_project_types}")
+Skill(skill: "ln-782-test-runner", args: "{build_status}")
+Skill(skill: "ln-783-container-launcher", args: "{compose_file_path}")
+```
 
 ---
 

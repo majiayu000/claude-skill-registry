@@ -572,6 +572,29 @@ Cycles 2+ auto-continue — user already approved optimization goal. Stop condit
 
 ---
 
+**TodoWrite format (mandatory):**
+```
+- Invoke ln-811-performance-profiler (in_progress)
+- Invoke ln-812-optimization-researcher (pending)
+- Write optimization context (pending)
+- Invoke ln-813-optimization-plan-validator (pending)
+- Invoke ln-814-optimization-executor (pending)
+- Aggregate results + report (pending)
+```
+
+## Worker Invocation (MANDATORY)
+
+| Phase | Worker | Context |
+|-------|--------|---------|
+| 2 | ln-811-performance-profiler | Shared (Skill tool) — runtime profiling, baseline measurement |
+| 4 | ln-812-optimization-researcher | Shared (Skill tool) — competitive analysis, hypothesis generation |
+| 7 | ln-813-optimization-plan-validator | Isolated (Agent tool) — reads context.md, agent review + feasibility |
+| 8 | ln-814-optimization-executor | Isolated (Agent tool) — reads context.md, strike execution + bisect |
+
+**All workers:** ln-811/ln-812 via Skill tool (shared context); ln-813/ln-814 via Agent tool (isolated context, reads from disk).
+
+---
+
 ## Definition of Done
 
 - [ ] Input parsed into structured problem statement (target, metric, max_cycles)

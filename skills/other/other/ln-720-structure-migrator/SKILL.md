@@ -184,7 +184,7 @@ Context:
 
 ## Critical Rules
 
-- **Orchestrator Pattern:** Analyze and delegate via Agent tool, do not execute transformations directly
+- **Orchestrator Pattern:** Analyze and delegate via Skill tool, do not execute transformations directly
 - **Mode Awareness:** Pass correct mode to all workers — CREATE vs TRANSFORM determines worker behavior
 - **Conditional Workers:** ln-724 runs ONLY in TRANSFORM mode when platform artifacts detected; SKIP otherwise
 - **Sequential Workers:** Execute in order (ln-724 conditional → ln-721 → ln-722 → ln-723)
@@ -193,7 +193,35 @@ Context:
 - **Build Verification:** All builds must pass (`npm run build`, `dotnet build`)
 - **Rollback Ready:** Keep backup branch until verification complete (TRANSFORM mode)
 
+**Invocations:**
+```
+Skill(skill: "ln-724-artifact-cleaner", args: "{projectPath}")  # TRANSFORM only, conditional
+Skill(skill: "ln-721-frontend-restructure", args: "{projectPath} --mode {SCAFFOLD|RESTRUCTURE}")
+Skill(skill: "ln-722-backend-generator", args: "{projectPath}")
+Skill(skill: "ln-723-seed-data-generator", args: "{projectPath} --mode {GENERATE|MIGRATE}")
+```
+
 ---
+
+**TodoWrite format (mandatory):**
+```
+- Invoke ln-724-artifact-cleaner (conditional TRANSFORM) (pending)
+- Invoke ln-721-frontend-restructure (pending)
+- Invoke ln-722-backend-generator (pending)
+- Invoke ln-723-seed-data-generator (pending)
+- Verify structure and builds (pending)
+```
+
+## Worker Invocation (MANDATORY)
+
+| Phase | Worker | Context |
+|-------|--------|---------|
+| 3a | ln-724-artifact-cleaner | Shared (Skill tool) — remove platform artifacts (TRANSFORM only, conditional) |
+| 3b | ln-721-frontend-restructure | Shared (Skill tool) — scaffold or restructure frontend |
+| 3c | ln-722-backend-generator | Shared (Skill tool) — generate backend project structure |
+| 3d | ln-723-seed-data-generator | Shared (Skill tool) — generate or migrate seed data |
+
+**All workers:** Invoke via Skill tool — workers see coordinator context.
 
 ## Definition of Done
 

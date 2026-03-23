@@ -49,9 +49,32 @@ What do you need?
 │  │     └─ Standard HTTP/JSON or simpler interoperability matters more
 │  │        └─ service-communication-rest
 ├─ Authentication, authorization, identity providers
-│  └─ security
-├─ Logging, health, metrics, traces, 
-│  └─ observability
+│  ├─ Need core Quarkus security concepts, RBAC, built-in auth mechanisms, or custom policies
+│  │  └─ security-core
+│  ├─ Protect endpoints with OpenID Connect
+│  │  ├─ Inbound bearer tokens, browser login redirects, or hybrid OIDC apps
+│  │  │  └─ security-oidc
+│  │  └─ Outbound token acquisition, refresh, exchange, or propagation to downstream services
+│  │     └─ security-oidc-client
+│  ├─ Need JWT verification or token building without full OIDC integration
+│  │  └─ security-jwt
+│  ├─ Need username/password identity stores backed by JPA, JDBC, or LDAP
+│  │  └─ security-identity-providers
+│  ├─ Need passkeys or WebAuthn flows
+│  │  └─ security-webauthn
+│  └─ Need to test secured applications
+│     └─ security-testing
+├─ Logging, health, metrics, traces
+│  ├─ Need help choosing signals, management exposure, or local observability stack
+│  │  └─ observability
+│  ├─ Logging configuration, JSON logs, MDC, and log shipping
+│  │  └─ observability-logging
+│  ├─ Liveness/readiness/startup probes and Health UI
+│  │  └─ observability-health
+│  ├─ Metrics, Micrometer registries, and Prometheus/OTLP export
+│  │  └─ observability-metrics
+│  └─ Distributed tracing, propagation, and OpenTelemetry
+│     └─ observability-tracing
 ├─ Native image, jars, and container packaging
 │  └─ native-and-packaging
 ├─ Testing 

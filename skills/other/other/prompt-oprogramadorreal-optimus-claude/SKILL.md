@@ -110,7 +110,7 @@ Based on the task type and target tool, select the appropriate prompt architectu
 | ComfyUI node-based workflow | K — ComfyUI |
 | Breaking down / adapting existing prompt | L — Prompt Decompiler |
 
-If the target is Claude Code and the task involves exploration or planning rather than execution, use Template M. If ambiguous, ask: "Should Claude Code explore and create a plan, or execute changes directly?"
+If the target is Claude Code and the task involves exploration or planning rather than execution, use Template M. If ambiguous, ask: "Should Claude Code explore and create a plan, or execute changes directly?" When using Template M: your output is a PROMPT — NEVER produce the plan itself. The prompt must be self-contained because it starts a new conversation with no prior context.
 
 If the task doesn't clearly match one template, default to RTF (A) for simple tasks or RISEN (C) for complex ones.
 
@@ -181,7 +181,8 @@ Output in this exact structure:
 
 Recommend the next step based on context:
 
-- If the prompt was for Claude Code and the user is in an active project → suggest `/optimus:tdd` to build test-first from the prompt, or `/optimus:commit` to commit related work. Mention they can paste the prompt directly or in a new conversation.
+- If the prompt was for Claude Code plan mode → tell the user to paste the prompt as the **first message in a new Claude Code conversation started in plan mode**. Do not suggest pasting it in the current conversation.
+- If the prompt was for Claude Code (regular mode) and the user is in an active project → suggest `/optimus:tdd` to build test-first from the prompt, or `/optimus:commit` to commit related work. Mention they can paste the prompt directly or in a new conversation.
 - If the prompt was for an external tool and the user has related code changes → suggest `/optimus:commit` to commit related work
 - If the user might need another prompt → "Need a prompt for another tool or task? Just describe what you need." If there are pending code changes, also suggest `/optimus:commit`.
 - Default → offer to craft another prompt or refine the current one. If the project lacks setup, suggest `/optimus:init`.

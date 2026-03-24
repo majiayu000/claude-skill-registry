@@ -27,8 +27,9 @@ refine-logs/FINAL_PROPOSAL.md
 - **SANITY_FIRST = true** — Run the sanity-stage experiment first (smallest, fastest) before launching the rest. Catches setup bugs early.
 - **MAX_PARALLEL_RUNS = 4** — Maximum number of experiments to deploy in parallel (limited by available GPUs).
 - **BASE_REPO = false** — GitHub repo URL to use as base codebase. When set, clone the repo first and implement experiments on top of it. When `false` (default), write code from scratch or reuse existing project files.
+- **COMPACT = false** — When `true`, (1) read `IDEA_CANDIDATES.md` instead of full `IDEA_REPORT.md` if available, (2) append experiment results to `EXPERIMENT_LOG.md` after collection.
 
-> Override: `/experiment-bridge "EXPERIMENT_PLAN.md" — base repo: https://github.com/org/project`
+> Override: `/experiment-bridge "EXPERIMENT_PLAN.md" — compact: true, base repo: https://github.com/org/project`
 
 ## Inputs
 
@@ -37,7 +38,8 @@ This skill expects one or more of:
 1. **`refine-logs/EXPERIMENT_PLAN.md`** (best) — claim-driven experiment roadmap from `/experiment-plan`
 2. **`refine-logs/EXPERIMENT_TRACKER.md`** — run-by-run execution table
 3. **`refine-logs/FINAL_PROPOSAL.md`** — method description for implementation context
-4. **`IDEA_REPORT.md`** — fallback if refine-logs don't exist
+4. **`IDEA_CANDIDATES.md`** — compact idea summary (preferred when `COMPACT: true`)
+5. **`IDEA_REPORT.md`** — full brainstorm output (fallback)
 
 If none exist, ask the user what experiments to implement.
 
@@ -186,8 +188,9 @@ Deploy now? Or review the code first?
 As experiments complete:
 
 1. **Parse output files** (JSON/CSV/logs) for key metrics
-2. **Update `refine-logs/EXPERIMENT_TRACKER.md`** — fill in Status and Notes columns
-3. **Check success criteria** from EXPERIMENT_PLAN.md — did each experiment meet its bar?
+2. **Training quality check** — if W&B data is available (CLAUDE.md has `wandb: true` and `wandb_project`), invoke `/training-check` to detect NaN, loss divergence, plateaus, or overfitting. If W&B is not configured, skip silently.
+3. **Update `refine-logs/EXPERIMENT_TRACKER.md`** — fill in Status and Notes columns
+4. **Check success criteria** from EXPERIMENT_PLAN.md — did each experiment meet its bar?
 4. **Write initial results summary:**
 
 ```markdown
@@ -222,6 +225,34 @@ As experiments complete:
 ## Next Step
 → /auto-review-loop "[topic]"
 ```
+
+### Phase 5.5: Write Compact Log (when COMPACT = true)
+
+**Skip entirely if `COMPACT` is `false`.**
+
+Append each completed experiment to `EXPERIMENT_LOG.md`:
+
+```markdown
+## [Run ID] — [timestamp]
+- **System**: [method name]
+- **Config**: [key hyperparameters]
+- **Result**: [primary metric = X.XX]
+- **Verdict**: [positive / negative / inconclusive]
+- **Reproduce**: `python train.py --config configs/run_id.yaml --seed 42`
+```
+
+This structured log survives session recovery — downstream skills read it instead of parsing screen output.
+
+### Phase 5.6: Auto Ablation Planning
+
+After main experiments (M2) complete with positive results, invoke `/ablation-planner` to design ablation studies:
+
+- Read the main results and method description
+- Generate a claim-driven ablation plan: which components to remove, what to compare, expected outcomes
+- Append ablation blocks to `refine-logs/EXPERIMENT_PLAN.md` and `refine-logs/EXPERIMENT_TRACKER.md`
+- If main results are negative or inconclusive, skip ablation planning and note in the summary
+
+If `/ablation-planner` is not available, skip silently — the existing EXPERIMENT_PLAN.md ablation blocks (if any) remain unchanged.
 
 ### Phase 6: Handoff
 

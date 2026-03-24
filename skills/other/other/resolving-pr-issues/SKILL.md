@@ -4,7 +4,7 @@ description: >
   Multi-agent review resolution with trust-but-verify methodology. Accepts a PR number/URL
   or a local code-review report file. Extracts review comments, verifies each with parallel
   agents using confidence scoring (0-100), filters false positives, presents a triage report
-  for approval, then applies fixes and replies. Use when user runs /pr-issue-resolve, mentions
+  for approval, then applies fixes and replies. Use when user runs /resolve-review, mentions
   "resolve PR comments", "address review feedback", "fix PR suggestions", "handle review
   comments", or "resolve review findings".
 disable-model-invocation: true

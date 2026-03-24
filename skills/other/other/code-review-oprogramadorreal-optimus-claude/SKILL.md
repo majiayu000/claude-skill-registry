@@ -149,7 +149,7 @@ Before proceeding, check whether a test command is available (from `.claude/CLAU
 
 If a test command is available, warn the user:
 
-> **Deep mode** runs up to 5 iterative review-fix passes. Each iteration is a full multi-agent review cycle — credit and time consumption multiplies with iteration count. Fixes are applied automatically at each iteration without per-change approval. Low test coverage increases the chance of undetected breakage; consider running `/optimus:unit-test` first to strengthen the safety net.
+> **Deep mode** runs up to 5 iterative review-fix passes. Each iteration is a full multi-agent review cycle — credit and time consumption multiplies with iteration count. Fixes are applied automatically at each iteration without per-change approval. Low test coverage increases the chance of undetected breakage; consider running `/optimus:unit-test` first to strengthen the safety net. Each iteration also accumulates context — on large codebases, output quality may degrade in later iterations.
 >
 > Test command: `[test command from CLAUDE.md]`
 
@@ -364,7 +364,7 @@ After applying fixes and running tests, check termination conditions in order:
 
 1. **All fixes this iteration were reverted** due to test failures → stop to prevent a loop of failed attempts. Report: "Deep mode stopped — all fixes in iteration [N] caused test failures."
 2. **No fixes were applied** (all findings lacked actionable code edits) → stop. Report: "Deep mode stopped — remaining findings require manual review."
-3. **`iteration-count` equals 5** → cap reached. Report: "Deep mode reached the iteration cap (5). Remaining findings may exist — re-run `/optimus:code-review deep` in a fresh conversation to continue."
+3. **`iteration-count` equals 5** → cap reached. Report: "Deep mode reached the iteration cap (5). Remaining findings may exist — continue in a fresh conversation: re-run `/optimus:code-review deep`, or narrow scope with `/optimus:code-review deep \"focus on <area>\"`."
 4. **Otherwise** → continue to the next pass (iteration report and loop-back below).
 
 **For all four conditions above**, present the iteration report immediately after the termination/continuation message. This report is informational and non-blocking — no user prompt follows:
@@ -385,7 +385,7 @@ Column definitions:
 - **Guideline / Category** — The specific project guideline violated (or "General: bug/security" for non-guideline findings), plus the category (Bug, Security, Guideline Violation, Code Quality, Test Coverage Gap)
 - **Status** — `fixed`, `reverted — test failure`, `reverted — attempt 2`, or `persistent — fix failed`
 
-For condition 4 (continue), after presenting the iteration report also show the progress summary: "Iteration [N] of up to 5 — [total-fixed] findings fixed so far, [total-reverted] reverted. Starting next pass..." Then increment `iteration-count` and **return to Step 4** for the next analysis pass. When returning to Step 4, re-gather the current diff (the codebase has changed due to applied fixes) and focus agents on files that had findings in any previous iteration plus any newly modified files.
+For condition 4 (continue), after presenting the iteration report also show the progress summary: "Iteration [N] of up to 5 — [total-fixed] findings fixed so far, [total-reverted] reverted. Starting next pass..." If the **next** iteration will be 3 or higher, append to the progress summary: "Note: context is accumulating — if output quality degrades, consider finishing remaining findings in a fresh conversation." Then increment `iteration-count` and **return to Step 4** for the next analysis pass. When returning to Step 4, re-gather the current diff (the codebase has changed due to applied fixes) and focus agents on files that had findings in any previous iteration plus any newly modified files.
 
 ### Consolidated report
 

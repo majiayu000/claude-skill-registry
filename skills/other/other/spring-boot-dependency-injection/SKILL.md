@@ -1,180 +1,183 @@
 ---
 name: spring-boot-dependency-injection
-description: Provides dependency injection patterns for Spring Boot projects covering constructor-first patterns, optional collaborator handling, bean selection, and validation practices. Use when configuring beans, wiring dependencies, or troubleshooting injection issues.
+description: Provides dependency injection patterns for Spring Boot projects, including constructor-first design, optional collaborator handling, bean selection, and wiring validation. Use when creating services and configurations, replacing field injection, or troubleshooting ambiguous or fragile Spring wiring.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
 # Spring Boot Dependency Injection
 
-This skill captures the dependency injection approach promoted in this repository: constructor-first design, explicit optional collaborators, and deterministic configuration that keeps services testable and framework-agnostic.
-
 ## Overview
 
-- Prioritize constructor injection to keep dependencies explicit, immutable, and mockable.
-- Treat optional collaborators through guarded setters or providers while documenting defaults.
-- Resolve bean ambiguity intentionally through qualifiers, primary beans, and profiles.
-- Validate wiring with focused unit tests before relying on Spring's TestContext framework.
+Use this skill to keep Spring Boot wiring explicit, testable, and predictable.
+
+The core model is simple:
+- constructor injection for mandatory collaborators
+- explicit strategies for optional collaborators
+- configuration classes that make bean selection obvious
+
+This skill is about shaping code so it remains easy to test without depending on the Spring container for every unit test.
 
 ## When to Use
 
-- Implement constructor injection for new `@Service`, `@Component`, or `@Repository` classes.
-- Replace legacy field injection while modernizing Spring modules.
-- Configure optional or pluggable collaborators (feature flags, multi-tenant adapters).
-- Audit bean definitions before adding integration tests or migrating Spring Boot versions.
+Use this skill when:
+- creating a new `@Service`, `@Component`, `@Repository`, or `@Configuration` class
+- replacing field injection in legacy Spring code
+- resolving multiple beans of the same type with qualifiers or primary beans
+- handling optional features, adapters, or integrations without null-driven wiring
+- reviewing circular dependencies or brittle context startup failures
+- preparing code for direct constructor-based unit testing
+
+Typical trigger phrases include `spring dependency injection`, `constructor injection`, `replace field injection`, `qualifier vs primary`, and `optional bean`.
 
 ## Instructions
 
-Follow these steps to implement proper dependency injection in Spring Boot:
+### 1. Separate mandatory and optional collaborators
 
-### 1. Identify Dependencies
+For each class, identify:
+- mandatory collaborators required for correct behavior
+- optional collaborators that enable integrations, caching, notifications, or feature-flagged behavior
 
-List all collaborators required by each class. Distinguish between mandatory dependencies (required for operation) and optional dependencies (feature-specific).
+Mandatory collaborators belong in the constructor. Optional ones need an explicit strategy such as `ObjectProvider`, conditional beans, or a no-op implementation.
 
-### 2. Apply Constructor Injection
+### 2. Default to constructor injection
 
-Create constructors that accept all mandatory dependencies. Mark fields as final. Use Lombok `@`RequiredArgsConstructor to reduce boilerplate.
+For application services and adapters:
+- inject mandatory dependencies through the constructor
+- keep injected fields `final`
+- instantiate the class directly in unit tests without starting Spring
 
-### 3. Handle Optional Collaborators
+A single constructor is usually enough; `@Autowired` is unnecessary in that case.
 
-For optional dependencies, provide setter methods with `@`Autowired(required = false) or use ObjectProvider<T> for lazy resolution. Include default no-op implementations.
+### 3. Resolve optional behavior intentionally
 
-### 4. Configure Beans
+Good options include:
+- `ObjectProvider<T>` when lazy access is useful
+- `@ConditionalOnProperty` or `@ConditionalOnMissingBean` when wiring should change by configuration
+- a no-op implementation when the caller should not care whether the feature is enabled
 
-Declare `@`Bean methods in `@`Configuration classes. Use conditional annotations (`@`ConditionalOnProperty, `@`ConditionalOnMissingBean) for environment-specific beans.
+Avoid nullable collaborators that leave runtime behavior ambiguous.
 
-### 5. Resolve Ambiguity
+### 4. Use bean selection annotations only when needed
 
-Apply `@`Primary to default implementations. Use `@`Qualifier with specific names when multiple beans of the same type exist.
+When multiple beans share the same type:
+- use `@Primary` for the default implementation
+- use `@Qualifier` for named variants
+- keep the qualifier names stable and easy to grep
 
-### 6. Validate Wiring
+If selection rules become complex, move them into a dedicated configuration class instead of spreading them across services.
 
-Write unit tests that instantiate classes directly with mock dependencies. Add slice tests (`@`WebMvcTest, `@`DataJpaTest) to verify Spring context loads without errors.
+### 5. Keep wiring in configuration, not business code
 
-### 7. Review Configuration
+Use `@Configuration` and `@Bean` methods when:
+- the object comes from a third-party library
+- conditional creation logic is needed
+- you need environment-specific wiring or explicit composition
 
-Ensure no field injection (`@`Autowired on fields) remains. Verify circular dependencies are resolved through domain events or extracted services.
+Business services should not know how infrastructure collaborators are instantiated.
 
-## Prerequisites
+### 6. Validate wiring with the smallest useful test
 
-- Align project with Java 17+ and Spring Boot 3.5.x (or later) to leverage records and `@ServiceConnection`.
-- Keep build tooling ready to run `./gradlew test` or `mvn test` for validation.
-- Load supporting material from `./references/` when deeper patterns or samples are required.
+Test in this order:
+- direct constructor-based unit tests for service behavior
+- slice tests when Spring MVC, JPA, or messaging integration matters
+- full `@SpringBootTest` only when container-wide wiring must be proven
 
-## Workflow
-
-### 1. Map Collaborators
-- Inventory constructors, `@Autowired` members, and configuration classes.
-- Classify dependencies as mandatory (must exist) or optional (feature-flagged, environment-specific).
-
-### 2. Apply Constructor Injection
-- Introduce constructors (or Lombok `@RequiredArgsConstructor`) that accept every mandatory collaborator.
-- Mark injected fields `final` and protect invariants with `Objects.requireNonNull` if Lombok is not used.
-- Update `@Configuration` or `@Bean` factories to pass dependencies explicitly; consult `./references/reference.md` for canonical bean wiring.
-
-### 3. Handle Optional Collaborators
-- Supply setters annotated with `@Autowired(required = false)` or inject `ObjectProvider<T>` for lazy access.
-- Provide deterministic defaults (for example, no-op implementations) and document them inside configuration modules.
-- Follow `./references/examples.md#example-2-setter-injection-for-optional-dependencies` for a full workflow.
-
-### 4. Resolve Bean Selection
-- Choose `@Primary` for dominant implementations and `@Qualifier` for niche variants.
-- Use profiles, conditional annotations, or factory methods to isolate environment-specific wiring.
-- Reference `./references/reference.md#conditional-bean-registration` for conditional and profile-based samples.
-
-### 5. Validate Wiring
-- Write unit tests that instantiate classes manually with mocks to prove Spring-free testability.
-- Add slice or integration tests (`@WebMvcTest`, `@DataJpaTest`, `@SpringBootTest`) only after constructor contracts are validated.
-- Reuse patterns in `./references/reference.md#testing-with-dependency-injection` to select the proper test style.
+This keeps failures localized and makes dependency problems obvious.
 
 ## Examples
 
-### Basic Constructor Injection
+### Example 1: Constructor-first application service
+
 ```java
 @Service
-@RequiredArgsConstructor
 public class UserService {
+
     private final UserRepository userRepository;
-    private final EmailService emailService;
+    private final EmailSender emailSender;
+
+    public UserService(UserRepository userRepository, EmailSender emailSender) {
+        this.userRepository = userRepository;
+        this.emailSender = emailSender;
+    }
 
     public User register(UserRegistrationRequest request) {
-        User user = User.create(request.email(), request.name());
-        userRepository.save(user);
-        emailService.sendWelcome(user);
+        User user = userRepository.save(User.from(request));
+        emailSender.sendWelcome(user);
         return user;
     }
 }
 ```
-- Instantiate directly in tests: `new UserService(mockRepo, mockEmailService);` with no Spring context required.
 
-### Intermediate: Optional Dependency with Guarded Setter
+This class is easy to instantiate directly in a unit test with mocks.
+
+### Example 2: Optional dependency with a no-op fallback
+
 ```java
 @Service
 public class ReportService {
+
     private final ReportRepository reportRepository;
-    private CacheService cacheService = CacheService.noOp();
+    private final NotificationGateway notificationGateway;
 
-    public ReportService(ReportRepository reportRepository) {
+    public ReportService(
+        ReportRepository reportRepository,
+        ObjectProvider<NotificationGateway> notificationGatewayProvider
+    ) {
         this.reportRepository = reportRepository;
-    }
-
-    @Autowired(required = false)
-    public void setCacheService(CacheService cacheService) {
-        this.cacheService = cacheService;
+        this.notificationGateway = notificationGatewayProvider.getIfAvailable(NotificationGateway::noOp);
     }
 }
 ```
-- Provide fallbacks such as `CacheService.noOp()` to ensure deterministic behavior when the optional bean is absent.
 
-### Advanced: Conditional Configuration Across Modules
+This keeps optional behavior explicit without leaking `null` handling through the rest of the class.
+
+### Example 3: Multiple beans with clear selection
+
 ```java
 @Configuration
-@Import(DatabaseConfig.class)
-public class MessagingConfig {
+public class PaymentConfiguration {
 
     @Bean
-    @ConditionalOnProperty(name = "feature.notifications.enabled", havingValue = "true")
-    public NotificationService emailNotificationService(JavaMailSender sender) {
-        return new EmailNotificationService(sender);
+    @Primary
+    PaymentGateway stripeGateway() {
+        return new StripePaymentGateway();
     }
 
     @Bean
-    @ConditionalOnMissingBean(NotificationService.class)
-    public NotificationService noopNotificationService() {
-        return NotificationService.noOp();
+    @Qualifier("fallbackGateway")
+    PaymentGateway mockGateway() {
+        return new MockPaymentGateway();
     }
 }
 ```
-- Combine `@Import`, profiles, and conditional annotations to orchestrate cross-cutting modules.
 
-Additional worked examples (including tests and configuration wiring) are available in `./references/examples.md`.
+Use `@Primary` for the default path and `@Qualifier` only where a specific variant is required.
 
 ## Best Practices
 
-- Prefer constructor injection for mandatory dependencies; allow Spring 4.3+ to infer `@Autowired` on single constructors.
-- Encapsulate optional behavior inside dedicated adapters or providers instead of accepting `null` pointers.
-- Keep service constructors lightweight; extract orchestrators when dependency counts exceed four.
-- Favor domain interfaces in the domain layer and defer framework imports to infrastructure adapters.
-- Document bean names and qualifiers in shared constants to avoid typo-driven mismatches.
+- Prefer constructor injection for mandatory dependencies.
+- Keep service constructors small; if a class needs too many collaborators, the design probably wants another abstraction.
+- Use no-op or conditional beans instead of nullable optional dependencies.
+- Keep framework-specific creation logic in configuration classes.
+- Test services without Spring first, then add container tests only where they add value.
+- Remove field injection during refactors instead of extending it.
 
 ## Constraints and Warnings
 
-- Avoid field injection and service locator patterns because they obscure dependencies and impede unit testing.
-- Prevent circular dependencies by publishing domain events or extracting shared abstractions.
-- Limit `@Lazy` usage to performance-sensitive paths and record the deferred initialization risk.
-- Do not add profile-specific beans without matching integration tests that activate the profile.
-- Ensure each optional collaborator has a deterministic default or feature-flag handling path.
-- Never use `@Autowired` on fields when constructor injection is possible.
-- Be aware that optional dependencies can lead to `NullPointerException` if not properly handled.
-- Profile-specific beans can cause runtime errors if profiles are not correctly activated.
+- Field injection hides dependencies and makes tests harder to write.
+- Circular dependencies are usually a design problem, not a wiring trick to solve with `@Lazy`.
+- Overusing qualifiers can make the codebase hard to reason about; prefer better abstractions or clearer configuration.
+- Optional collaborators still need deterministic behavior when absent.
+- Full-context tests can hide the real source of wiring failures if used too early.
 
-## Reference Materials
+## References
 
-- [extended documentation covering annotations, bean scopes, testing, and anti-pattern mitigations](references/reference.md)
-- [progressive examples from constructor injection basics to multi-module configurations](references/examples.md)
-- [curated excerpts from the official Spring Framework documentation (constructor vs setter guidance, conditional wiring)](references/spring-official-dependency-injection.md)
+- `references/reference.md`
+- `references/examples.md`
+- `references/spring-official-dependency-injection.md`
 
 ## Related Skills
 
-- `spring-boot-crud-patterns` – service-layer orchestration patterns that rely on constructor injection.
-- `spring-boot-rest-api-standards` – controller-layer practices that assume explicit dependency wiring.
-- `unit-test-service-layer` – Mockito-based testing patterns for constructor-injected services.
+- `spring-boot-crud-patterns`
+- `spring-boot-rest-api-standards`
+- `unit-test-service-layer`

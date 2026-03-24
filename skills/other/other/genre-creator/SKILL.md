@@ -23,7 +23,10 @@ Create a new genre README.md for the bitwize-music genre library at `${CLAUDE_PL
 6. **Create directory**: `genres/{slug}/`
 7. **Write README.md** following the exact template below
 8. **Update INDEX.md**: Add genre to category table, alphabetical list, and all applicable Quick Reference tables (Tempo, Energy, Instrumentation, Vocals, Mood, Era)
-9. **Do NOT create** an `artists/` subdirectory — those are created separately when artist deep-dives are written
+9. **Update mastering presets**: Add the new genre to both mastering preset files:
+   - `tools/mastering/genre-presets.yaml` — Add YAML entry with `target_lufs`, `cut_highmid`, `cut_highs` values appropriate for the genre. Place in the correct category section or create a new one.
+   - `skills/mastering-engineer/genre-presets.md` — Add a new `### Genre Name` section under `## Genre Presets` with LUFS target, dynamics, EQ focus, MCP command, and characteristics.
+10. **Do NOT create** an `artists/` subdirectory — those are created separately when artist deep-dives are written
 
 ## README.md Template
 

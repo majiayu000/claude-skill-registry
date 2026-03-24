@@ -9,7 +9,7 @@ Improve unit test coverage for existing code. Requires `/optimus:init` to have s
 
 ## Step 1: Pre-flight
 
-Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/multi-repo-detection.md` for workspace detection. If a multi-repo workspace is detected, process each repo independently: run Steps 1–6 inside each repo that has `.claude/CLAUDE.md`. Report results per repo. If no repos have been initialized, suggest running `/optimus:init` first from the workspace root.
+Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/multi-repo-detection.md` for workspace detection. If a multi-repo workspace is detected, process each repo independently: run Steps 1-5 inside each repo that has `.claude/CLAUDE.md`. Report results per repo. If no repos have been initialized, suggest running `/optimus:init` first from the workspace root.
 
 Check that `.claude/CLAUDE.md` exists. If it doesn't, stop and recommend running `/optimus:init` first — the project needs baseline context before test generation can be effective.
 
@@ -34,64 +34,42 @@ Parse optional path argument (e.g., `/optimus:unit-test src/api`) to limit scope
 
 For monorepos and multi-repo workspaces, detect project structure using the same approach as `/optimus:init` — reference `$CLAUDE_PLUGIN_ROOT/skills/init/SKILL.md` Step 1 for detection logic (multi-repo workspace detection, workspace configs, manifest scanning, supporting signals). Process each project/repo independently.
 
-## Step 2: Discovery
+## Step 2: Discovery & Coverage Analysis (agent-assisted)
 
-For each subproject (or the single project), scan for:
+Delegate test infrastructure scanning, test execution, and coverage analysis to a reconnaissance agent to keep the main context clean for test writing.
 
-- **Existing test files** — `*.test.*`, `*.spec.*`, `*_test.*`, `__tests__/`, `tests/`, `test/`, `spec/`
-- **Test framework** — configuration files and manifest dependencies (jest, vitest, mocha, pytest, junit, xunit, rspec, gtest, etc.)
-- **Test runner commands** — from `testing.md`, `CLAUDE.md`, `package.json` scripts, `Makefile`, `Cargo.toml`, etc.
-- **Coverage tooling** — whether coverage measurement is already configured and available
+For each subproject (or the single project):
 
-**Exclude git submodules:** Skip directories containing a `.git` *file* (not directory) — these are submodules pointing to external repositories and should not be scanned for test targets or test files.
+Read `$CLAUDE_PLUGIN_ROOT/skills/unit-test/references/agent-prompts.md` for the full prompt template, scanning patterns, execution rules, and return format for the Discovery & Coverage Reconnaissance Agent.
 
-Present a summary table to the user:
+Launch 1 `general-purpose` Agent tool call using the Agent 1 prompt from the agent-prompts.md file.
 
-```
-## Discovery Summary
+| Agent | Role | Runs when |
+|-------|------|-----------|
+| 1 — Discovery & Coverage Reconnaissance | Scan test files/frameworks/runners, run existing tests, measure coverage, classify code testability | Always |
 
-| Property | Status |
-|----------|--------|
-| Test framework | [framework name] / Not detected |
-| Test files found | [N] files |
-| Test runner command | [command] / Not found |
-| Coverage tooling | [tool name] / Not configured |
-```
+Wait for the agent to complete.
 
-**If no test framework is detected**, stop and report: "No test framework found. Run `/optimus:init` (or re-run it) to install a test framework and set up test infrastructure before using this skill." Do not proceed to test generation without a working framework.
+### Stop gates (evaluated from agent results)
 
-## Step 3: Coverage Analysis and Achievable Threshold Estimation
+**If no test framework is detected** in the agent's Discovery Results, stop and report: "No test framework found. Run `/optimus:init` (or re-run it) to install a test framework and set up test infrastructure before using this skill." Do not proceed to test generation without a working framework.
 
-Before writing any tests:
+**If the agent's Test Suite Execution reports failures:**
+- **Fail - assertion** (tests compile and run, but some fail) — stop and report. A clean baseline is required before adding new tests. Report failing tests in the Step 5 "Bugs Discovered" section.
+- **Fail - build** (build/bootstrap failures) — stop and report. Test infrastructure should have been verified by `/optimus:init`. Recommend re-running `/optimus:init` to fix build-level issues.
 
-1. **Run existing test suite.** If tests fail:
-   - **Test assertion failures** (tests compile and run, but some fail) — stop and report. A clean baseline is required before adding new tests. Report failing tests in the Step 6 "Bugs Discovered" section.
-   - **Build/bootstrap failures** — stop and report. Test infrastructure should have been verified by `/optimus:init`. Recommend re-running `/optimus:init` to fix build-level issues.
+### Present to user
 
-2. **Measure baseline coverage:**
-   - If coverage tooling is available → run coverage and record baseline numbers
-   - If coverage tooling is NOT configured → do heuristic gap analysis (source files vs test files by naming convention)
+From the agent's results, present the **Discovery Summary** and **Coverage Analysis** to the user. This sets clear expectations and reinforces the conservative constraint.
 
-3. **Estimate achievable coverage** without requiring risky refactoring:
-   - **Testable code** — pure functions, exported APIs, business logic with clear inputs/outputs, utility modules, data transformations
-   - **Untestable without refactoring** — hardcoded dependencies, tightly coupled modules, inline DB/HTTP calls without injection, deeply nested side effects, global state mutations
+### Data carried forward
 
-4. **Present to the user:**
+- **Test runner command** and **framework identity** → Step 4 (test execution and idioms)
+- **Coverage tooling** → Step 5 (final measurement)
+- **Testability classification** → Step 3 (plan prioritization — testable items become candidates, untestable items are skipped)
+- **Baseline coverage** → Step 5 (before/after comparison)
 
-```
-## Coverage Analysis
-
-- Current coverage: [X]%
-- Estimated achievable without refactoring: ~[Y]%
-- Gap requiring structural changes: ~[Z]%
-
-The remaining ~[Z]% would require structural changes (dependency injection,
-repository pattern extraction, etc.) — that's the domain of /optimus:refactor.
-```
-
-This sets clear expectations and reinforces the conservative constraint.
-
-## Step 4: Test Generation Plan
+## Step 3: Test Generation Plan
 
 Create a prioritized list, **capped at 10 items per run**:
 
@@ -115,7 +93,7 @@ Present the plan, then use `AskUserQuestion` — header "Plan", question "How wo
 
 If the user selects **Selective**, ask which item numbers to proceed with (e.g., "1, 3, 5").
 
-## Step 5: Test Writing
+## Step 4: Test Writing
 
 ### Quality standards
 
@@ -154,7 +132,7 @@ For each approved item:
 
 After all tests are written, run the **full test suite** to ensure no regressions. Follow the verification protocol from `$CLAUDE_PLUGIN_ROOT/skills/init/references/verification-protocol.md` — run tests fresh, read complete output, and report actual results with evidence before claiming success.
 
-## Step 6: Summary
+## Step 5: Summary
 
 Report to the user:
 

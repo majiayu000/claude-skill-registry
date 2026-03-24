@@ -23,12 +23,33 @@ Use this skill when the user or task requires:
 - Downloading file attachments from messages
 - Checking agent identity or messaging status
 
+## Agent Identification (`--id`)
+
+Every command (except `amp-init.sh`) accepts `--id <uuid>` to specify which agent you're operating as. The UUID comes from the agent's `config.json` (`agent.id` field).
+
+```bash
+# Operate as a specific agent
+amp-inbox.sh --id 6bbdaeb8-8a85-4d0b-8f8c-3c217486eae8
+amp-send.sh --id <uuid> alice "Hello" "Hi there"
+```
+
+**Resolution order** (first match wins):
+1. `AMP_DIR` env var (AI Maestro sets this)
+2. `--id <uuid>` argument
+3. `CLAUDE_AGENT_ID` env var
+4. `CLAUDE_AGENT_NAME` env var / tmux session
+5. Single agent auto-select (if only one agent exists)
+
+If multiple agents exist and none of the above resolve, the CLI lists available agents with UUIDs.
+
 ## Identity Check (Run First)
 
 **Before using any messaging commands, ALWAYS verify your identity:**
 
 ```bash
 amp-identity.sh
+# Or with explicit agent:
+amp-identity.sh --id <uuid>
 ```
 
 If you see "Not initialized", run:
@@ -104,24 +125,24 @@ amp-init.sh --name my-agent --tenant myteam # Override tenant
 ### amp-identity.sh — Check Identity
 
 ```bash
-amp-identity.sh          # Human-readable output
-amp-identity.sh --json   # JSON output for parsing
-amp-identity.sh --brief  # One-line summary
+amp-identity.sh                     # Human-readable output
+amp-identity.sh --json              # JSON output for parsing
+amp-identity.sh --id <uuid> --json  # Check specific agent's identity
 ```
 
 ### amp-status.sh — Show Status
 
 ```bash
-amp-status.sh            # Full status with registrations
-amp-status.sh --json     # JSON output
+amp-status.sh                   # Full status with registrations
+amp-status.sh --id <uuid>       # Status for specific agent
 ```
 
 ### amp-inbox.sh — Check Inbox
 
 ```bash
-amp-inbox.sh             # Show unread messages
-amp-inbox.sh --all       # Show all messages
-amp-inbox.sh --count     # Count only
+amp-inbox.sh                    # Show unread messages
+amp-inbox.sh --all              # Show all messages
+amp-inbox.sh --id <uuid> --all  # Specific agent's inbox
 ```
 
 ### amp-read.sh — Read a Message
@@ -223,7 +244,7 @@ User Keys are sensitive credentials tied to the user's account and billing. They
 
 Agents should map these user intents to the appropriate commands:
 
-- "Check my inbox" → `amp-inbox.sh`
+- "Check my inbox" → `amp-inbox.sh` to list, then `amp-read.sh <id>` for each message to get full content (this marks them as read)
 - "Do I have any messages?" → `amp-inbox.sh --count`
 - "Send a message to alice saying hello" → `amp-send.sh alice "Hello" "hello"`
 - "Tell backend-api that the build is ready" → `amp-send.sh backend-api "Build ready" "..."`

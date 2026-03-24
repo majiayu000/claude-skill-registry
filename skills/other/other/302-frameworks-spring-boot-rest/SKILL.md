@@ -1,6 +1,6 @@
 ---
 name: 302-frameworks-spring-boot-rest
-description: Use when you need to design, review, or improve REST APIs with Spring Boot — including HTTP methods, resource URIs, status codes, DTOs, versioning, error handling, security, API documentation, controller advice, and problem details for errors. Part of the skills-for-java project
+description: Use when you need to design, review, or improve REST APIs with Spring Boot — including HTTP methods, resource URIs, status codes, DTOs, versioning, deprecation and sunset headers, content negotiation (JSON and vendor media types), ISO-8601 instants in DTOs, pagination/sorting/filtering, Bean Validation at the boundary, idempotency, ETag concurrency, HTTP caching, error handling, security, API documentation, controller advice, and problem details for errors. Part of the skills-for-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -12,15 +12,23 @@ Apply REST API design principles for Spring Boot applications.
 
 **What is covered in this Skill?**
 
-- HTTP methods (GET, POST, PUT, PATCH, DELETE)
+- HTTP methods (GET, POST, PUT, PATCH, DELETE) — semantic consistency
 - Resource URI design
 - HTTP status codes
-- Request/response DTOs
-- API versioning
+- Request/response DTOs with lean contracts
+- API versioning (URI, header, or media type — applied consistently)
+- Bean Validation at the boundary (@Valid/@Validated on controller inputs, 400 on failure)
+- Pagination, sorting, and filtering (Page/Pageable with caps)
+- ISO-8601 instants with offset (OffsetDateTime, Instant) in JSON contracts
+- Content negotiation (JSON default; vendor media types when meaningful)
+- Idempotency-Key support for POST creates; 409 Conflict for collisions
+- ETag concurrency with If-Match/If-None-Match; 412 Precondition Failed / 304 Not Modified
+- HTTP caching discipline (Cache-Control, ETag, Last-Modified)
+- Deprecation and sunset headers (Deprecation, Sunset, Link rel="successor-version")
 - Error handling
-- API security
+- API security (TLS, authentication, authorization, input validation)
 - Documentation (OpenAPI)
-- Controller advice and problem details
+- Controller advice and problem details (RFC 7807)
 
 **Scope:** Apply recommendations based on the reference rules and good/bad code examples.
 

@@ -89,7 +89,37 @@ Generate `campaign.md` first — it's the strategy foundation that informs all p
 
 **Present to user for approval before proceeding to platform copy.**
 
-### 4. Platform Selection
+### 4. Language Selection
+
+**Before generating any copy, determine the output language(s).**
+
+**If override exists** with a `## Language` section in `promotion-preferences.md`, use that preference without asking.
+
+**Otherwise, ask:**
+```
+What language(s) should the promo copy be written in?
+
+[1] English (default)
+[2] German (Deutsch)
+[3] French (Français)
+[4] Spanish (Español)
+[5] Bilingual — two languages per post (e.g., DE + EN, FR + EN)
+[6] Other — tell me which language(s)
+```
+
+**Bilingual mode**: When two languages are selected, each post gets both versions stacked in the same code block, separated by a `---` divider. The primary language comes first, the secondary language second. Hashtags stay in English (international discovery).
+
+**Override file addition** (`{overrides}/promotion-preferences.md`):
+```markdown
+## Language
+- Primary: de
+- Secondary: en
+- Mode: bilingual
+```
+
+Store the selected language(s) and apply to all generated copy in this session.
+
+### 5. Platform Selection
 
 **If platform specified in arguments**, generate only that platform.
 
@@ -107,7 +137,7 @@ Which platforms should I generate copy for?
 [5] YouTube
 ```
 
-### 5. Per-Platform Generation
+### 6. Per-Platform Generation
 
 For each selected platform, generate native content following the structures in [copy-formulas.md](copy-formulas.md) and best practices from the reference guide.
 
@@ -149,7 +179,7 @@ For each selected platform, generate native content following the structures in 
 - Social links section
 - 3-5 hashtags
 
-### 6. Present for Approval
+### 7. Present for Approval
 
 Present each platform's generated copy with metrics:
 
@@ -182,7 +212,7 @@ Actions:
   [N] Next platform — skip this platform
 ```
 
-### 7. Write Approved Copy
+### 8. Write Approved Copy
 
 Write approved copy to the `promo/` directory in the album path:
 
@@ -201,7 +231,7 @@ Write approved copy to the `promo/` directory in the album path:
 promo/twitter.md already has content. Overwrite? [Y/n]
 ```
 
-### 8. Summary and Next Steps
+### 9. Summary and Next Steps
 
 After all platforms are written:
 
@@ -261,6 +291,14 @@ Follow the researched best practices:
 - **YouTube**: 3-5, first 3 shown above title
 - **Never use**: #MusicPromotion, #SoundCloudPromotion, #FollowBack, #Like4Like
 
+### Language Handling
+- Write all copy in the language(s) selected in Step 4
+- **Bilingual mode**: Primary language first, `---` divider, secondary language second — both in the same code block
+- **Twitter exception**: Bilingual mode uses separate tweets per language (one tweet per language, or thread), NOT stacked in one tweet — 280 chars is too tight for two languages
+- **Hashtags**: Always in English for international discovery, regardless of copy language
+- **Quoted lyrics**: Keep in original language with a brief translation in parentheses if the copy language differs
+- **Platform notes** (Notes section at bottom of each file): Always in English for consistency
+
 ### Override Respect
 If `promotion-preferences.md` override exists:
 - Follow tone and voice preferences
@@ -268,6 +306,7 @@ If `promotion-preferences.md` override exists:
 - Apply messaging theme preferences (always/never mention)
 - Use hashtag preferences (always include, avoid list)
 - Follow AI positioning guidance
+- Follow language preferences (primary, secondary, mode)
 
 ---
 
@@ -276,13 +315,15 @@ If `promotion-preferences.md` override exists:
 1. **Read copy-formulas.md** at invocation — it has the hook formulas and post structures
 2. **Streaming lyrics only** — never Suno phonetic lyrics in public copy
 3. **Campaign.md first** — strategy before platform copy
-4. **Present before writing** — show generated copy with metrics for approval
-5. **Native per platform** — different tone, length, structure for each
-6. **Match promo-reviewer format** — headings + code blocks for section-by-section review
-7. **Check override** — load `promotion-preferences.md` for tone, platforms, messaging
-8. **Suggest promo-reviewer next** — always end with the recommendation to review
-9. **Placeholder links** — use `[Streaming Link]` where real URLs will go
-10. **Preserve album voice** — the copy should feel consistent with the album's themes and tone
+4. **Language before platforms** — determine output language(s) before generating any copy
+5. **Present before writing** — show generated copy with metrics for approval
+6. **Native per platform** — different tone, length, structure for each
+7. **Match promo-reviewer format** — headings + code blocks for section-by-section review
+8. **Check override** — load `promotion-preferences.md` for tone, platforms, messaging, language
+9. **Suggest promo-reviewer next** — always end with the recommendation to review
+10. **Placeholder links** — use `[Streaming Link]` where real URLs will go
+11. **Preserve album voice** — the copy should feel consistent with the album's themes and tone
+12. **Hashtags in English** — always English hashtags for discovery, even when copy is in another language
 
 **Your deliverable**: Populated `promo/` directory with platform-specific copy ready for review.
 

@@ -1,6 +1,6 @@
 ---
 name: 301-frameworks-spring-boot-core
-description: Use when you need to review, improve, or build Spring Boot applications — including proper usage of @SpringBootApplication, component annotations (@Controller, @Service, @Repository), bean definition and scoping, configuration classes and @ConfigurationProperties, component scanning, conditional configuration and profiles, constructor injection, bean minimization, and scheduled tasks. Part of the skills-for-java project
+description: Use when you need to review, improve, or build Spring Boot 4.0.x applications — including proper usage of @SpringBootApplication, component annotations (@Controller, @Service, @Repository), bean definition and scoping, configuration classes and @ConfigurationProperties (with @Validated), component scanning, conditional configuration and profiles, constructor injection, @Primary and @Qualifier for multiple beans of the same type, bean minimization, graceful shutdown, virtual threads, Jakarta EE namespace consistency, and scheduled tasks. Part of the skills-for-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -15,11 +15,15 @@ Apply Spring Boot Core guidelines for annotations, bean management, configuratio
 - @SpringBootApplication and main application class
 - Component annotations: @RestController, @Service, @Repository
 - Bean definition, scoping, lifecycle
-- Configuration classes and @ConfigurationProperties
+- Configuration classes and @ConfigurationProperties (with @Validated for fail-fast startup)
 - Component scanning and package organization
-- Conditional configuration and profiles
+- Conditional configuration and profiles (@Profile, @ConditionalOn*)
 - Constructor dependency injection
+- @Primary and @Qualifier for disambiguation when multiple beans share a type
 - Bean minimization and composition
+- Graceful shutdown for in-flight work
+- Virtual threads on supported stacks for concurrency-bound workloads
+- Jakarta EE namespace consistency (jakarta.* preferred; avoid mixing legacy javax.annotation / javax.validation)
 - Scheduled tasks and background processing
 
 **Scope:** Apply recommendations based on the reference rules and good/bad code examples.

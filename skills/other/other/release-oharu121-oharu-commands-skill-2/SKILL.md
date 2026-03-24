@@ -1,12 +1,12 @@
 ---
 name: release
-description: Create a GitHub issue, commit, tag, and push a release. Detects repo type and runs mode-specific pre-flight checks with user confirmation at every step.
+description: Create a GitHub issue, commit, tag, and push a release. Detects repo type and runs mode-specific validation checks with user confirmation at every step.
 user-invocable: true
 ---
 
 # Release Skill
 
-Orchestrate a full release: repo detection, pre-flight, GitHub issue, commit, tag, push.
+Orchestrate a full release: repo detection, validation, GitHub issue, commit, tag, push.
 
 **IMPORTANT:** Every interaction with the user MUST go through `AskUserQuestion`. Never
 prompt with plain text and wait for a reply — always use the tool.
@@ -39,10 +39,74 @@ cat .claude/skills/release/config.json 2>/dev/null
 | Field | Effect when set |
 |-------|----------------|
 | `language` | Skip Step 1.5 — use this language directly |
-| `repo_mode` | Skip detection — use this mode directly; pre-flight still runs |
-| `preflight_confirm: false` | Skip the confirmation gate — pre-flight runs silently without asking "Proceed?" |
+| `repo_mode` | Skip detection — use this mode directly; validation still runs |
+| `preflight_confirm: false` | Skip the confirmation gate — validation runs silently without asking "Proceed?" |
 
 All fields are optional. Missing fields fall back to the interactive flow.
+
+---
+
+## Reusable Patterns
+
+### Safe GitHub Body Write
+
+When creating a GitHub issue or release with markdown body content, **never** pass the body
+inline via `--body` with shell quoting — backticks, tables, and special characters will break.
+
+Instead:
+
+1. Write the markdown content to `.release-tmp/<filename>.md` using the Write tool
+2. Pass `--body-file .release-tmp/<filename>.md` to `gh issue create` or `gh release create`
+3. After creation, verify the body is not empty:
+
+```bash
+# For issues:
+gh issue view <number> --json body --jq '.body | length'
+# For releases:
+gh release view v<version> --json body --jq '.body | length'
+```
+
+If the length is 0, stop the flow and report the error.
+
+### Resume State
+
+On startup (before Phase 0), check for an existing state file:
+
+```bash
+cat .release-tmp/state.json 2>/dev/null
+```
+
+**State schema:**
+
+```json
+{
+  "schema_version": 1,
+  "phase_completed": 2,
+  "issue_number": 42,
+  "issue_url": "https://github.com/...",
+  "version": "v2.1.0",
+  "title": "...",
+  "mode": "skills-gems",
+  "language": "en"
+}
+```
+
+**If state file exists**, use AskUserQuestion:
+- "Found release state from a previous run (phase \<N\> completed, issue #\<N\>). Resume?"
+- Options: "Yes, resume from Phase \<N+1\>", "Start fresh"
+
+If "Start fresh" is selected, use a follow-up AskUserQuestion:
+- "Close the orphaned issue #\<N\> from the previous run?"
+- Options: "Yes, close it", "No, leave it open"
+
+Then delete `.release-tmp/state.json` and proceed from Phase 0.
+
+**Save state** at the end of Phase 1 and Phase 2:
+
+```bash
+mkdir -p .release-tmp
+# Write state.json via the Write tool with current progress
+```
 
 ---
 
@@ -71,24 +135,24 @@ Classify into one or more modes:
 
 **Otherwise**, use AskUserQuestion to confirm:
 
-> "Detected: **\<mode\>**. Pre-flight will run: \<summary from pattern file\>. Proceed?"
+> "Detected: **\<mode\>**. Validation will run: \<summary from pattern file\>. Proceed?"
 
 Options:
 - "Yes, proceed" (Recommended)
-- "Skip pre-flight"
+- "Skip validation"
 - "Override mode" → follow-up AskUserQuestion: skills-gems / npm / python / monorepo / generic
 
 ---
 
-## Phase 1: Pre-flight
+## Phase 1: Validation
 
 Read and follow `SKILLS_DIR/patterns/<mode>.md`.
 
-Pre-flight always runs for the configured/detected mode — `preflight_confirm: false` only
-skips the confirmation gate, not the pre-flight itself.
+Validation always runs for the configured/detected mode — `preflight_confirm: false` only
+skips the confirmation gate, not the validation itself.
 
-If pre-flight passes, continue to Phase 2.
-If pre-flight fails, stop — do not continue until resolved.
+If validation passes, continue to Phase 2.
+If validation fails, stop — do not continue until resolved.
 
 ---
 
@@ -165,13 +229,25 @@ gh api repos/{owner}/{repo}/milestones -f title="<version>" -f state="open"
 
 Read `SKILLS_DIR/templates/issue-body.md` for the body format.
 
+Use the **Safe GitHub Body Write** pattern:
+
+1. Write the issue body to `.release-tmp/issue-body.md` using the Write tool
+2. Create the issue with `--body-file`:
+
 ```bash
+mkdir -p .release-tmp
 gh issue create \
   --title "<title>" \
   --label "<labels>" \
   --assignee "@me" \
   --milestone "<version>" \
-  --body "<body>"
+  --body-file .release-tmp/issue-body.md
+```
+
+3. Verify the body is not empty:
+
+```bash
+gh issue view <number> --json body --jq '.body | length'
 ```
 
 Omit `--milestone` if version was skipped.
@@ -231,9 +307,12 @@ Use AskUserQuestion:
 If custom: use AskUserQuestion "Other" for free input.
 
 ```bash
-git add .
+git add <specific-files>
 git commit -m "<message>"
 ```
+
+**Important:** Do not use `git add .` — explicitly list the files that were changed as part
+of this release to prevent accidentally staging unrelated files.
 
 ### Step 10: Tag Version
 
@@ -259,10 +338,23 @@ On failure: show manual command.
 
 Skip if version was skipped.
 
+Read `SKILLS_DIR/templates/release-notes.md` for the release notes format.
+
+Use the **Safe GitHub Body Write** pattern:
+
+1. Write release notes to `.release-tmp/release-notes.md` using the Write tool
+2. Create the release with `--notes-file`:
+
 ```bash
 gh release create v<version> \
   --title "<version> - <plan-title>" \
-  --notes "<plan-content-without-header>"
+  --notes-file .release-tmp/release-notes.md
+```
+
+3. Verify the body is not empty:
+
+```bash
+gh release view v<version> --json body --jq '.body | length'
 ```
 
 Write release notes in the language selected in Step 1.5.
@@ -310,7 +402,7 @@ Use markdown link syntax so URLs are clickable in the IDE:
 |----------|--------|
 | Remote fetch fails | Warn and continue |
 | Pull conflicts | Stop, instruct to resolve manually |
-| Pre-flight fails | Stop, AskUserQuestion: skip or fix |
+| Validation fails | Stop, AskUserQuestion: skip or fix |
 | Commit fails | Stop (likely pre-commit hook) |
 | Tag already exists | Stop, AskUserQuestion with next version suggestion |
 | Push fails | Warn, show manual command |

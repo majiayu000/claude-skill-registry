@@ -1,6 +1,6 @@
 ---
 name: 321-frameworks-spring-boot-testing-unit-tests
-description: Use when you need to write unit tests for Spring Boot applications — including pure unit tests with @ExtendWith(MockitoExtension.class) for @Service/@Component, slice tests with @WebMvcTest and @MockBean for controllers, @JsonTest for JSON serialization. For framework-agnostic Java use @131-java-testing-unit-testing. Part of the skills-for-java project
+description: Use when you need to write unit tests for Spring Boot applications — including pure unit tests with @ExtendWith(MockitoExtension.class) for @Service/@Component, slice tests with @WebMvcTest and @MockitoBean for controllers, @JsonTest for JSON serialization, parameterized tests with @CsvSource/@MethodSource, test profiles, and @TestConfiguration. For framework-agnostic Java use @131-java-testing-unit-testing. For integration tests use @322-frameworks-spring-boot-testing-integration-tests. Part of the skills-for-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -13,9 +13,12 @@ Apply Spring Boot unit testing guidelines with Mockito.
 **What is covered in this Skill?**
 
 - Pure unit tests: @ExtendWith(MockitoExtension.class), @Mock, @InjectMocks for @Service/@Component (no Spring context)
-- Slice tests: @WebMvcTest, @MockBean for controllers
-- @JsonTest for JSON serialization
-- @TestConfiguration, @ActiveProfiles for test setup
+- Slice tests: @WebMvcTest, @MockitoBean for controllers (Spring Boot 4.0.x — @MockBean removed)
+- @JsonTest for JSON serialization with correct JSON value assertions (extractingJsonPathStringValue, etc.)
+- Parameterized tests: @ParameterizedTest with @CsvSource or @MethodSource over copy-pasted methods
+- Java records for domain objects in tests
+- @TestConfiguration, @ActiveProfiles, @Primary fixed-clock beans for deterministic test setup
+- Modern mocking API: @MockitoBean / @MockitoSpyBean; @MockBean/@SpyBean are deprecated/removed in Boot 4.0.x
 
 **Scope:** Apply recommendations based on the reference rules and good/bad code examples. For integration tests use @322-frameworks-spring-boot-testing-integration-tests.
 

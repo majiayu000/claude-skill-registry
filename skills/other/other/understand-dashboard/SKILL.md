@@ -19,13 +19,31 @@ Start the Understand Anything dashboard to visualize the knowledge graph for the
    No knowledge graph found. Run /understand first to analyze this project.
    ```
 
-3. Find the dashboard code. The dashboard is at `packages/dashboard/` relative to this plugin's root directory. Use the Bash tool to resolve the path:
+3. Find the dashboard code. The dashboard is at `packages/dashboard/` relative to this plugin's root directory. Check these paths in order and use the first that exists:
+   - `~/.understand-anything-plugin/packages/dashboard/` (universal symlink, all installs)
+   - `${CLAUDE_PLUGIN_ROOT}/packages/dashboard/` (Claude Code plugin)
+   - Two levels up from this skill file's real path: `../../packages/dashboard/` (self-relative fallback)
+
+   Use the Bash tool to resolve:
    ```bash
-   PLUGIN_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+   SKILL_REAL=$(realpath ~/.agents/skills/understand-dashboard 2>/dev/null || readlink -f ~/.agents/skills/understand-dashboard 2>/dev/null || echo "")
+   SELF_RELATIVE=$([ -n "$SKILL_REAL" ] && cd "$SKILL_REAL/../.." 2>/dev/null && pwd || echo "")
+
+   PLUGIN_ROOT=""
+   for candidate in \
+     "$HOME/.understand-anything-plugin" \
+     "${CLAUDE_PLUGIN_ROOT}" \
+     "$SELF_RELATIVE"; do
+     if [ -n "$candidate" ] && [ -d "$candidate/packages/dashboard" ]; then
+       PLUGIN_ROOT="$candidate"; break
+     fi
+   done
+
+   if [ -z "$PLUGIN_ROOT" ]; then
+     echo "Error: Cannot find the understand-anything plugin root. Make sure you followed the installation instructions and that ~/.understand-anything-plugin exists."
+     exit 1
+   fi
    ```
-   Or locate it by checking these paths in order:
-   - `${CLAUDE_PLUGIN_ROOT}/packages/dashboard/`
-   - The parent directory of this skill file, then `../../packages/dashboard/`
 
 4. Install dependencies and build if needed:
    ```bash

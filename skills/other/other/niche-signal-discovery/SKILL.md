@@ -20,9 +20,9 @@ Discover differential signals between Closed Won and Closed Lost accounts by ext
 - ❌ No exa API key (accessed via Deepline)
 - ❌ No crustdata API key (accessed via Deepline)
 - ❌ No external Python packages (no pip install needed)
-- ❌ No OpenAI/Anthropic API keys (deterministic analysis, no LLM calls)
+- ❌ No OpenAI/Anthropic API keys (Deepline manages any model access used in discovery)
 
-**Credits:** Enrichment consumes Deepline credits (~6 credits/company for exa + crustdata). Always get user approval before running paid enrichment.
+**Credits:** Enrichment consumes Deepline credits (~6 credits/company for exa + crustdata). Discovery prompts with `deeplineagent` are additional paid calls. Always get user approval before running paid enrichment.
 
 ## Deepline-First Principle
 
@@ -74,13 +74,11 @@ Not all signals are equal. From actual runs across multiple verticals, signals f
 
 **CRITICAL: Do this FIRST before any enrichment or config generation.**
 
-Use web search to understand what the target company sells and who they sell to:
+Use `deeplineagent` to understand what the target company sells and who they sell to:
 
 ```bash
-# Example
-WebSearch: "{{company-domain}} product what do they sell"
-WebSearch: "{{company-domain}} customers use cases who uses"
-WebFetch: https://{{company-domain}}/ "What does {{company}} sell? Who are their target customers?"
+# Example prompt
+deeplineagent: "Research {{company-domain}}. Summarize what the company sells, who they sell to, what makes them different, and any example customers. Use Deepline-managed tools if needed."
 ```
 
 **Document the following:**
@@ -94,31 +92,28 @@ WebFetch: https://{{company-domain}}/ "What does {{company}} sell? Who are their
 
 ## Step 0.5: Ecosystem Discovery
 
-Use web search to discover the competitive landscape and buyer ecosystem:
+Use `deeplineagent` to discover the competitive landscape and buyer ecosystem:
 
 **Competitor Discovery:**
 ```bash
-WebSearch: "{product category} software companies"
-WebSearch: "{product category} alternatives competitors"
+deeplineagent: "Research the competitive landscape for {product category}. List 3-5 relevant software companies or alternatives."
 ```
 
-Example: For a creative ops/DAM tool, search `"{product category} software alternatives competitors"`.
+Example: For a creative ops/DAM tool, ask for the main `"{product category} software alternatives competitors"`.
 
 **Tech Stack Discovery:**
 ```bash
-WebSearch: "{buyer persona} common tools tech stack"
-WebSearch: "{{industry}} companies use what software"
+deeplineagent: "Research the common software stack for {buyer persona}. Group the tools by category."
 ```
 
-Example: For creative teams, search `"creative teams common tools software stack"`.
+Example: For creative teams, ask for the common `"creative teams software stack"`.
 
 **Job Role Discovery:**
 ```bash
-WebSearch: "{buyer persona} job titles roles responsibilities"
-WebSearch: "companies hiring {buyer persona} job listings"
+deeplineagent: "Research the common job titles, responsibilities, and hiring patterns for {buyer persona}. Return 10-15 role variants."
 ```
 
-Example: For creative ops, search `"creative operations job titles creative director content manager"`.
+Example: For creative ops, ask for `"creative operations job titles creative director content manager"`.
 
 
 **Document findings:**

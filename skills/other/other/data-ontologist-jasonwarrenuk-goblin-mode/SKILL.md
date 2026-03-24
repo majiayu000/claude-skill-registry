@@ -1,7 +1,6 @@
 ---
 name: data-ontologist
 description: This skill should be used when the user mentions "database design", "schema design", "graph database", "document database", "polyglot persistence", "data modeling", "Neo4j", "Supabase", "PostgreSQL", "MongoDB", discusses database architecture, choosing databases, or integrating multiple databases. Addresses when to use relational vs graph vs document databases and integration patterns.
-version: 1.0.0
 ---
 
 # Polyglot Persistence Architecture

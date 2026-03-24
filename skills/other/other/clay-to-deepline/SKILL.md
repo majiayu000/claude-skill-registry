@@ -5,7 +5,7 @@ description: >
   a Clay table JSON export, a Clay API response (GET /v3/tables/{id} or POST bulk-fetch-records),
   or a Clay workbook URL and wants to: (1) fetch records using Deepline instead of Clay's API,
   (2) replicate AI action columns (Claygent, use-ai, chat-gpt-schema-mapper, octave-qualify-person)
-  using deepline enrich with call_ai/exa_search/run_javascript, or (3) convert any Clay workflow
+  using deepline enrich with deeplineagent/exa_search/run_javascript, or (3) convert any Clay workflow
   into a standalone bash+deepline script that runs locally without Clay.
 ---
 
@@ -126,7 +126,7 @@ graph TD
     E --> F
 ```
 
-Use `classDef` colors: blue = local (run_javascript), orange = remote API, green = AI (call_ai).
+Use `classDef` colors: blue = local (`run_javascript`), orange = remote API, green = AI (`deeplineagent`).
 
 ### 1.3 — Pass Plan
 
@@ -150,10 +150,10 @@ Example (illustrative — actual aliases must match your table's column names):
 | 3 | work_email | cost_aware_first_name_and_domain_to_email_waterfall | fields.first_name, fields.last_name, fields.company_domain | Primary |
 | 4 | work_email_li | person_linkedin_to_email_waterfall | fields.linkedin_url | Fallback for rows where 3 returned empty |
 | 5 | email_valid | leadmagic_email_validation | work_email | Optional final gate |
-| 6 | job_function | call_ai haiku | fields.job_title | |
-| 7 | company_research | call_ai haiku + WebSearch | fields.company_domain | Pass 1 of 2 |
-| 8 | strategic_initiatives | call_ai sonnet json_mode | company_research | Pass 2 of 2 |
-| 9 | qualify_person | call_ai sonnet json_mode | fields.*, strategic_initiatives | ICP score |
+| 6 | job_function | deeplineagent | fields.job_title | Classification |
+| 7 | company_research | deeplineagent or exa_search -> deeplineagent | fields.company_domain | Pass 1 of 2 |
+| 8 | strategic_initiatives | deeplineagent + jsonSchema | company_research | Pass 2 of 2 |
+| 9 | qualify_person | deeplineagent + jsonSchema | fields.*, strategic_initiatives | ICP score |
 ```
 
 ### 1.4 — Assumptions Log
@@ -198,7 +198,7 @@ Before assuming how many AI passes a pipeline has, check actual cell values acro
 | `NO_CELL` | Action never fired | Build from scratch |
 | `"Status Code: 200"` / `{"status":200}` | HTTP/webhook action (n8n, Zapier) — NOT AI output | `run_javascript` fetch or stub |
 | `""` (empty string) | Column ran but produced nothing, or was disabled | Treat as NO_CELL |
-| Varied generation-shaped text | Actual AI output | `call_ai` |
+| Varied generation-shaped text | Actual AI output | `deeplineagent` |
 
 A column in the schema may never have run. Always verify cell values before counting AI passes. An empty or "Status Code: 200" column is not a pipeline step.
 
@@ -263,13 +263,13 @@ Answer these **before writing scripts** based on what Phase 1 revealed. Only ans
 
 **Architecture choice: `deepline enrich` CLI vs Python SDK**
 
-For Claygent-heavy tables (multiple `use-ai (claygent+web)` columns), the validated pattern is a **pure Python script** that calls `deepline tools execute exa_search` for web search and the Anthropic SDK directly for `call_ai`. This approach:
-- Avoids `deepline enrich` entirely for AI passes — no `--with "col=call_ai:..."` syntax
+For Claygent-heavy tables (multiple `use-ai (claygent+web)` columns), the validated pattern is a **pure Python script** that calls `deepline tools execute exa_search` for external research and `deepline tools execute deeplineagent` for AI synthesis. This approach:
+- Avoids `deepline enrich` entirely for AI passes when the logic is easier to orchestrate in Python
 - Enables true parallel execution with `ThreadPoolExecutor` across both rows and passes simultaneously
 - Gives full control over retry logic, confidence gates, and conditional branching
 - Is compatible with `{{field}}` interpolation only when accessing `clay_record` data directly in Python (`json.loads(row['clay_record'])`) rather than via `deepline enrich --in-place`
 
-The `deepline enrich` CLI pattern (shown below) still applies for non-AI passes (`run_javascript`, email waterfall, provider lookups) and for simple single-column enrichments.
+The `deepline enrich` CLI pattern (shown below) still applies for non-AI passes (`run_javascript`, email waterfall, provider lookups) and for simple single-column `deeplineagent` enrichments.
 
 **Cookie pattern (mandatory):**
 ```bash
@@ -339,8 +339,8 @@ deepline tools search "<what the action does>"
 # Step 2 — inspect the best candidate
 deepline tools get <candidate_tool_id>
 
-# Step 3 — if nothing found, fall back to call_ai
-# Use call_ai haiku for classification/extraction, sonnet for generation/research
+# Step 3 — if nothing found, fall back to deeplineagent
+# Use deeplineagent with jsonSchema for structured outputs; split exa_search and synthesis for research-heavy work
 ```
 
 **Discovery examples by Clay action type:**
@@ -353,20 +353,20 @@ deepline tools get <candidate_tool_id>
 | `company-*` / `enrich-company-*` | `deepline tools search "company enrich"` | `apollo_enrich_company`, `prospeo_enrich_company` |
 | `add-to-campaign-*` | `deepline tools search "add leads campaign"` | `instantly_add_to_campaign`, `smartlead_api_request` |
 | `social-media-*` | `deepline tools search "linkedin posts scrape"` | `crustdata_linkedin_posts`, `apify_run_actor_sync` |
-| Completely novel action | `deepline tools search "<verb> <noun from column name>"` | Use top result or `call_ai` fallback |
+| Completely novel action | `deepline tools search "<verb> <noun from column name>"` | Use top result or `deeplineagent` fallback |
 
-**When to use `call_ai` fallback**: If `deepline tools search` returns no relevant tools, or the action involves LLM judgment (classification, scoring, generation, summarization), use `call_ai`. Reconstruct the prompt from `portableSchema.inputsBinding[name=prompt].formulaText` or the cell values in `bulkFetchRecords`.
+**When to use `deeplineagent` fallback**: If `deepline tools search` returns no relevant tools, or the action involves model judgment (classification, scoring, generation, summarization), use `deeplineagent`. Reconstruct the prompt from `portableSchema.inputsBinding[name=prompt].formulaText` or the cell values in `bulkFetchRecords`.
 
 | Clay action | Deepline tool | Test status |
 |---|---|---|
 | `generate-email-permutations` + entire email waterfall + `validate-email` | **`cost_aware_first_name_and_domain_to_email_waterfall`** (primary) + manual `perm_fln` + `leadmagic_email_validation` + `person_linkedin_to_email_waterfall` (fallback). See Pass Plan 5a–5e. **⚠️ `person_linkedin_to_email_waterfall` alone = ~13% match rate vs ~99% with permutation-first approach.** CLI syntax: `deepline enrich --input seed.csv --output out.csv --with '{"alias":"email_result","tool":"cost_aware_first_name_and_domain_to_email_waterfall","payload":{"first_name":"{{first_name}}","last_name":"{{last_name}}","domain":"{{domain}}"}}'` — the play expansion is previewed before running and the waterfall stops early once a valid email is found. | ✅ Tested — found `patrick.valle@zoominfo.com` (status=valid) via dot pattern on first try; 7 downstream providers skipped |
 | `enrich-person-with-mixrank-v2` | `leadmagic_profile_search` → `crustdata_person_enrichment` | Not yet tested against real Clay Mixrank output |
 | `lookup-company-in-other-table` | `run_javascript` (local CSV join) | Not yet tested |
-| `chat-gpt-schema-mapper` | `call_ai` haiku; use json_mode when you need structured extraction (despite the name implying no schema) | ✅ Tested (analogous to `data_warehouse` + `job_function` passes) |
-| `use-ai` (no web) | `call_ai` haiku or sonnet | ✅ Tested (data_warehouse, job_function, technical_resources_readiness, key_gtm_friction passes) |
-| `use-ai` (claygent + web) | **Binary search optimizer** — Pass 1: 3× parallel `exa_search` (highlights-only, ~10x cheaper) targeting financial/IR, product launches, new segments → Pass 2: `call_ai` sonnet json_mode synthesis with `confidence: "high\|medium\|low"` and `missing_angles: [...]` → **Binary gate**: only if `confidence != "high"`: Pass 3a targeted follow-up exa searches on `missing_angles` → Pass 3b: re-synthesize → Pass 3c: primary-source deep-read (IR site, newsroom, official blog — scored by domain type) with `text: True` → final synthesis. Tracks `research_confidence` and `research_passes` columns. | ✅ Tested — 26 rows, side-by-side vs Clay traces (see empirical results in Phase 3) |
-| `octave-qualify-person` | `call_ai` sonnet + json_mode ICP scorer | ✅ Tested — 26 rows |
-| `octave-run-sequence-runner` | Pass 1: `call_ai` haiku (signals) → Pass 2: `call_ai` sonnet (email) | Pattern tested (find_tension_mapping + verified_pvp_messages); not yet validated against a real sequence-runner Clay column |
+| `chat-gpt-schema-mapper` | `deeplineagent`; add `jsonSchema` when you need structured extraction | ✅ Tested (analogous to `data_warehouse` + `job_function` passes) |
+| `use-ai` (no web) | `deeplineagent` | ✅ Tested (data_warehouse, job_function, technical_resources_readiness, key_gtm_friction passes) |
+| `use-ai` (claygent + web) | **Binary search optimizer** — Pass 1: 3× parallel `exa_search` (highlights-only, ~10x cheaper) targeting financial/IR, product launches, new segments → Pass 2: `deeplineagent` synthesis with `jsonSchema` containing `confidence: "high\|medium\|low"` and `missing_angles: [...]` → **Binary gate**: only if `confidence != "high"`: Pass 3a targeted follow-up exa searches on `missing_angles` → Pass 3b: re-synthesize → Pass 3c: primary-source deep-read (IR site, newsroom, official blog — scored by domain type) with `text: true` → final synthesis. Tracks `research_confidence` and `research_passes` columns. | ✅ Tested — 26 rows, side-by-side vs Clay traces (see empirical results in Phase 3) |
+| `octave-qualify-person` | `deeplineagent` + `jsonSchema` ICP scorer | ✅ Tested — 26 rows |
+| `octave-run-sequence-runner` | Pass 1: `deeplineagent` (signals) → Pass 2: `deeplineagent` (email) | Pattern tested (find_tension_mapping + verified_pvp_messages); not yet validated against a real sequence-runner Clay column |
 | `add-lead-to-campaign` (Smartlead) | `smartlead_api_request` POST /v1/campaigns/{id}/leads | Not yet tested |
 | `add-lead-to-campaign` (Instantly) | `instantly_add_to_campaign` — use `deepline tools execute instantly_add_to_campaign --payload '{"campaign_id":"<id>","contacts":[{"email":"...","first_name":"...","last_name":"...","company":"..."}]}'`. List campaigns first with `instantly_list_campaigns`. | ✅ Tested — `{"pushed": 1, "failed": 0, "errors": []}` |
 | `exa_search` | `exa_search` (direct) | ✅ Tested extensively — highlights-only and full-text modes, include_domains |
@@ -380,7 +380,7 @@ deepline tools get <candidate_tool_id>
 
 Use whenever replicating a `use-ai (claygent + web)` column. Full pattern, pass structure, `_extract_primary_source_url()` implementation, confidence calibration data, failure modes, and search angle variants: **[binary-search-optimizer.md](references/binary-search-optimizer.md)**
 
-**Summary:** Pass A: 3× parallel `exa_search` (highlights-only, domain-quoted queries) → Pass B: `call_ai` sonnet json_mode with `confidence` + `missing_angles` fields → **gate**: if `confidence == "high"` stop → Pass C: follow-up searches on `missing_angles` → Pass D: re-synthesize → Pass E: primary-source deep-read via `_extract_primary_source_url(company_domain=domain)`.
+**Summary:** Pass A: 3× parallel `exa_search` (highlights-only, domain-quoted queries) → Pass B: `deeplineagent` synthesis with `jsonSchema` containing `confidence` + `missing_angles` → **gate**: if `confidence == "high"` stop → Pass C: follow-up searches on `missing_angles` → Pass D: re-synthesize → Pass E: primary-source deep-read via `_extract_primary_source_url(company_domain=domain)`.
 
 Always add `research_confidence` and `research_passes` tracking columns. `low` confidence ≠ bad output (26-row test: 0% high, 35% medium, 65% low — but 50% of `low` rows had specific useful content).
 
@@ -389,12 +389,12 @@ Always add `research_confidence` and `research_passes` tracking columns. `low` c
 ## Critical Rules
 
 - **Execution ordering**: `run_javascript` columns must be executed before adding `--in-place` columns that reference their values. See [execution-ordering.md](references/execution-ordering.md).
-- **Conditional row execution**: Never run expensive paid columns (provider waterfalls, validation APIs) on rows where a cheaper stage already found the answer. Use the filter → enrich → merge pattern: after each "find" stage, filter to only rows still missing a value, then run the next stage on that subset only. See [execution-ordering.md](references/execution-ordering.md) for the full pattern. Free columns (`run_javascript`, `call_ai`) are exempt — always run on all rows.
+- **Conditional row execution**: Never run expensive paid columns (provider waterfalls, validation APIs) on rows where a cheaper stage already found the answer. Use the filter → enrich → merge pattern: after each "find" stage, filter to only rows still missing a value, then run the next stage on that subset only. See [execution-ordering.md](references/execution-ordering.md) for the full pattern. Local `run_javascript` columns are exempt — always run them on all rows.
 - **Flatten first** (CLI pattern): `fields=run_javascript:{flatten clay_record}` — required before any `{{fields.xxx}}` reference when using `deepline enrich --in-place`. **Not required when using the Python SDK approach** — just call `json.loads(row['clay_record'])` directly in Python and access any key.
 - **2-level max interpolation**: `{{col.field}}` works; `{{col.field.nested}}` fails. Flatten first (CLI) or go multi-level in Python.
 - **`MAX_LONG` cap warning**: If you add a row-count cap for expensive downstream passes (e.g. `row_range_long = row_range[:20]`), make sure to document this explicitly — it's easy to miss that some batches silently skip rows beyond the cap on a `full` run.
-- **Always use structured JSON for `call_ai`**: Make a **single** `call_ai` invocation per column and extract all needed fields from the structured JSON response. Never make multiple `call_ai` calls where one structured-output call would suffice. Use `json_mode` when the output is a schema (scores, labels, structured analysis). Example: `qualify_person` should return one JSON object with `score`, `tier`, and `reasoning` — not three separate calls.
-- **json_mode output**: `call_ai` with `json_mode` outputs `{output, extracted_json}`. Reference downstream as `{{col.extracted_json}}`.
+- **Always use structured JSON for `deeplineagent`**: Make a **single** `deeplineagent` invocation per column and extract all needed fields from one structured response. Never make multiple model calls where one `jsonSchema` output would suffice. Example: `qualify_person` should return one JSON object with `score`, `tier`, and `reasoning` — not three separate calls.
+- **Structured output access**: `deeplineagent` with `jsonSchema` stores the object directly in the cell. Reference downstream flat fields as `{{col.field_name}}`. If you need deeper nesting than one object level, flatten it first with `run_javascript`.
 - **Separate passes for deps**: A column referenced by `{{xxx}}` must be in a prior enrich call.
 - **Python subprocess for payloads**: Use `python3 -c "import json; print('col=tool:' + json.dumps({...}))"` — never hand-write JSON with embedded JS in bash strings.
 - **Cookie in env**: Never embed `CLAY_COOKIE` value in code — always `process.env.CLAY_COOKIE`.
@@ -424,9 +424,9 @@ python3 /path/to/skill/scripts/compare.py ground_truth.csv enriched.csv \
 |---|---|---|
 | Email (`work_email`) | DL found rate ≥ 95% of Clay found rate | compare.py auto-flags |
 | Classify (`job_function`) | ≥ 95% exact match on pilot rows | compare.py distribution output |
-| Structured (`call_ai` json_mode) | `extracted_json` present in 100% of rows, all schema fields populated | Spot-check 5 rows |
+| Structured (`deeplineagent` + `jsonSchema`) | Object present in 100% of rows, all schema fields populated | Spot-check 5 rows |
 | Fetch (`run_javascript`) | 100% non-null for all mapped fields | compare.py fill rate |
-| Claygent/web research (`exa_search` + `call_ai`) | `is_failed_research()` returns False on ≥ 85% of rows | See confidence calibration section |
+| Claygent/web research (`exa_search` + `deeplineagent`) | `is_failed_research()` returns False on ≥ 85% of rows | See confidence calibration section |
 
 ### Empirical results from 26-row production test (March 2026)
 
@@ -478,8 +478,8 @@ This matches Clay's own accuracy characteristics — Clay uses the same ZeroBoun
 
 ## Pilot Gate (before paid tools)
 
-`run_javascript` and `call_ai` are free — no gate needed.
-For `exa_search`, `leadmagic_*`, `hunter_*`, and other paid tools: run rows 0:1 first.
+`run_javascript` needs no pilot gate.
+For `deeplineagent`, `exa_search`, `leadmagic_*`, `hunter_*`, and other non-trivial or paid tools: run rows 0:1 first.
 
 ```bash
 ./claygent_replicate.sh           # pilot: row 0 only

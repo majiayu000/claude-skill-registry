@@ -1,6 +1,6 @@
 ---
 name: session-manager
-description: Manage current Claude Code session metadata — set project, task_tag, tags, and summary on session.md via Obsidian CLI. Use this skill whenever the user wants to tag, categorize, name, label, summarize, or organize the current session. Triggers on phrases like "tag this session", "this was about X", "mark this as", "set task to", "session summary", "what task is this session", "call this session", "categorize this as", "set project to", or any mention of session metadata, task grouping, or session organization. Even if the user just casually mentions what the session was about ("we were working on the auth refactor"), use this skill to offer to set the task_tag.
+description: Manage current Claude Code session metadata — set project, tags, and summary on session.md via Obsidian CLI. Use this skill whenever the user wants to tag, categorize, name, label, summarize, or organize the current session. Triggers on phrases like "tag this session", "this was about X", "mark this as", "session summary", "call this session", "categorize this as", "set project to", or any mention of session metadata or session organization. Even if the user just casually mentions what the session was about ("we were working on the auth refactor"), use this skill to offer to set tags.
 ---
 
 # Session Manager
@@ -32,7 +32,6 @@ If the session docs path is not in your system prompt, ask the user for the sess
 | Property | Type | Purpose |
 |----------|------|---------|
 | `project` | text | Project name (auto-set from cwd at session start, customizable) |
-| `task_tag` | text | Groups sessions working on the same task (queried by Dataview) |
 | `tags` | list | Freeform categorization (e.g., brainstorming, debugging, architecture) |
 | `summary` | text | One-line description of what the session accomplished |
 
@@ -57,11 +56,6 @@ User: "set project to sundayhao-plugins"
 obsidian vault="knowledge-bank" property:set name="project" value="sundayhao-plugins" path="_sessions/2026-03-04/abc123/session.md"
 ```
 
-User: "tag this session as refactor-bidrequest"
-```bash
-obsidian vault="knowledge-bank" property:set name="task_tag" value="refactor-bidrequest" path="_sessions/2026-03-04/abc123/session.md"
-```
-
 User: "add tags brainstorming and architecture"
 ```bash
 obsidian vault="knowledge-bank" property:set name="tags" value="brainstorming, architecture" type="list" path="_sessions/2026-03-04/abc123/session.md"
@@ -76,7 +70,7 @@ User: "what's this session tagged as?"
 ```bash
 obsidian vault="knowledge-bank" read path="_sessions/2026-03-04/abc123/session.md"
 ```
-Then extract and report the `task_tag`, `tags`, and `summary` from the frontmatter.
+Then extract and report the `tags` and `summary` from the frontmatter.
 
 ## On Invocation
 
@@ -87,7 +81,6 @@ Every time this skill is invoked, **always start by reading the current session.
    ```
    **Current Session**
    - project: <value or empty>
-   - task_tag: <value or empty>
    - tags: <value or empty>
    - summary: <value or empty>
    ```
@@ -98,5 +91,5 @@ If the user invoked the skill without a specific request, show the status and li
 ## Constraints
 
 - ONLY operates on the **current active session** — do NOT modify other sessions
-- ONLY updates `project`, `task_tag`, `tags`, and `summary`
+- ONLY updates `project`, `tags`, and `summary`
 - Always confirm the update to the user after running the command

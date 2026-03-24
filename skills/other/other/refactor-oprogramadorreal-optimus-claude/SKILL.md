@@ -77,7 +77,7 @@ Before proceeding, check whether a test command is available (from `.claude/CLAU
 
 If a test command is available, warn the user:
 
-> **Deep mode** runs up to [cap] iterative refactoring passes. Each iteration is a full multi-agent analysis cycle — credit and time consumption multiplies with iteration count. Fixes are applied automatically at each iteration without per-change approval. Low test coverage increases the chance of undetected breakage; consider running `/optimus:unit-test` first to strengthen the safety net.
+> **Deep mode** runs up to [cap] iterative refactoring passes. Each iteration is a full multi-agent analysis cycle — credit and time consumption multiplies with iteration count. Fixes are applied automatically at each iteration without per-change approval. Low test coverage increases the chance of undetected breakage; consider running `/optimus:unit-test` first to strengthen the safety net. Each iteration also accumulates context — on large codebases, output quality may degrade in later iterations.
 >
 > Test command: `[test command from CLAUDE.md]`
 
@@ -318,7 +318,7 @@ After applying changes and running tests, check termination conditions (the iter
 
 1. **All changes in this iteration were reverted due to test failures** → stop to prevent a loop of failed attempts. Report: "Deep mode stopped — all findings in iteration [N] caused test failures."
 2. **No changes were applied** (all findings lacked actionable code edits) → stop. Report: "Deep mode stopped — remaining findings require manual review."
-3. **`iteration-count` >= the cap** → cap reached. Report: "Deep mode reached the iteration cap ([cap]). Remaining findings may exist — re-run `/optimus:refactor deep [higher-cap]` with a larger iteration cap, or narrow scope with `/optimus:refactor deep \"focus on <area>\"`."
+3. **`iteration-count` >= the cap** → cap reached. Report: "Deep mode reached the iteration cap ([cap]). Remaining findings may exist — continue in a fresh conversation: re-run `/optimus:refactor deep`, increase the cap with `/optimus:refactor deep [higher-cap]`, or narrow scope with `/optimus:refactor deep \"focus on <area>\"`."
 4. **Otherwise** → continue to the next pass (iteration report and loop-back below).
 
 **For all four conditions above**, present the iteration report immediately after the termination/continuation message. This report is informational and non-blocking — no user prompt follows:
@@ -339,7 +339,7 @@ Column definitions:
 - **Guideline / Category** — Specific project rule violated, barrier type, or quality category
 - **Status** — `fixed`, `reverted — test failure`, `reverted — attempt 2`, or `persistent — fix failed`
 
-For condition 4 (continue), after presenting the iteration report also show the progress summary: "Iteration [N] of up to [cap] — [total-applied] findings applied so far, [total-reverted] reverted. Starting next pass..." Then increment `iteration-count` and **return to Step 4** for the next analysis pass. Keep the same scope from Step 1.
+For condition 4 (continue), after presenting the iteration report also show the progress summary: "Iteration [N] of up to [cap] — [total-applied] findings applied so far, [total-reverted] reverted. Starting next pass..." If the **next** iteration will be 3 or higher, append to the progress summary: "Note: context is accumulating — if output quality degrades, consider finishing remaining findings in a fresh conversation." Then increment `iteration-count` and **return to Step 4** for the next analysis pass. Keep the same scope from Step 1.
 
 After the loop ends, present a cumulative report across all iterations:
 

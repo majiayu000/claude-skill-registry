@@ -98,7 +98,7 @@ obsidian vault="knowledge-bank" read path="_sessions/{date}/{session_id}/session
 ```
 
 **Frontmatter metadata** (supplements later phases):
-- `project`, `session_name`, `task_tag`, `tags`, `summary`, `duration_seconds`, `started_at`, `ended_at`, `transcript_source`
+- `project`, `session_name`, `tags`, `summary`, `duration_seconds`, `started_at`, `ended_at`, `transcript_source`
 
 **Body navigation** — follow session.md body sections:
 

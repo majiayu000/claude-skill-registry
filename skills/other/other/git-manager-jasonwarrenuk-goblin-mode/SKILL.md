@@ -1,7 +1,7 @@
 ---
 name: git-manager
 description: This skill should be used when the user mentions "git", "branch", "commit", "merge", "pull request", "PR", "version control", discusses branching strategy, commit conventions, collaboration workflows, or needs help with git operations. Addresses git best practices, branch management, commit messages, and LazyGit integration.
-version: 1.0.0
+user-invocable: false
 ---
 
 # Git Workflow Patterns

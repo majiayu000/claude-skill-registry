@@ -1,6 +1,6 @@
 ---
 name: 323-frameworks-spring-boot-testing-acceptance-tests
-description: Use when you need to implement acceptance tests from a Gherkin .feature file for Spring Boot apps — finding @acceptance scenarios, happy path with RestAssured, @SpringBootTest, Testcontainers for DB/Kafka, WireMock for external REST. Requires .feature file in context. Part of the skills-for-java project
+description: Use when you need to implement acceptance tests from a Gherkin .feature file for Spring Boot applications — including finding scenarios tagged @acceptance, implementing happy path tests with TestRestTemplate, @SpringBootTest, Testcontainers with @ServiceConnection for DB/Kafka, and WireMock for external REST stubs. Requires .feature file in context. Part of the skills-for-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -8,19 +8,20 @@ metadata:
 ---
 # Spring Boot acceptance tests from Gherkin
 
-Implement acceptance tests from Gherkin feature files in Spring Boot projects. Given a .feature file in context, find @acceptance-tagged scenarios and implement happy-path tests with @SpringBootTest, RestAssured, Testcontainers, and WireMock.
+Implement acceptance tests from Gherkin feature files in Spring Boot projects. Given a .feature file in context, find @acceptance-tagged scenarios and implement happy-path tests with @SpringBootTest, TestRestTemplate, Testcontainers, and WireMock.
 
 **What is covered in this Skill?**
 
 - Parse Gherkin .feature files to find scenarios tagged @acceptance or @acceptance-tests
 - Implement happy-path acceptance tests (one test per scenario)
-- @SpringBootTest(webEnvironment = RANDOM_PORT), @LocalServerPort
-- @DynamicPropertySource for Testcontainers and WireMock coordinates
-- RestAssured for REST API testing (given/when/then, status codes, JSON body assertions)
+- @SpringBootTest(webEnvironment = RANDOM_PORT), @Autowired TestRestTemplate (auto-configured, no extra dependency)
+- @ServiceConnection for Testcontainers (Spring Boot 4.0.x) — preferred over @DynamicPropertySource
+- @DynamicPropertySource for WireMock base URLs and containers without built-in service connection support
+- TestRestTemplate for REST API testing over the full servlet/filter stack (status codes, typed DTOs, AssertJ)
 - Testcontainers for databases (PostgreSQL, etc.) and Kafka
-- WireMock for stubbing external REST APIs
-- BaseAcceptanceTest base class with Spring Boot test utilities
-- Given-When-Then structure mapping Gherkin steps to setup, request, and assertions
+- WireMock for stubbing external REST APIs (not internal @Service beans)
+- @DisplayName echoing Gherkin scenario title for BDD fidelity
+- Given-When-Then structure mapping Gherkin steps to setup, HTTP call, and assertions
 
 **Preconditions:** (1) The Gherkin .feature file must be in context. (2) The project must use Spring Boot. For framework-agnostic Java, use @133-java-testing-acceptance-tests.
 

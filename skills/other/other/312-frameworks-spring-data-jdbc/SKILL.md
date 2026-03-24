@@ -12,12 +12,15 @@ Apply Spring Data JDBC guidelines with Java records.
 
 **What is covered in this Skill?**
 
-- Records for entity classes
+- Records for entity classes (immutable, constructor-friendly)
+- @Table for naming when record name differs from the table name
+- @Embedded to inline value-object columns into the parent row without a separate table
 - Repository pattern
-- Immutable updates
-- Aggregate relationships
-- Custom queries
-- Transaction management
+- Immutable updates with static factories for new rows and with* helpers for updates
+- save() INSERT vs UPDATE semantics driven by @Id nullability
+- Aggregate boundaries: one repository per aggregate root, Set for one-to-many inside the root, foreign keys between aggregates
+- Custom queries with @Query and named parameters (no user-input concatenation)
+- Transaction management (@Transactional on services; readOnly where appropriate)
 - Single query loading (N+1 avoidance)
 
 **Scope:** Apply recommendations based on the reference rules and good/bad code examples.

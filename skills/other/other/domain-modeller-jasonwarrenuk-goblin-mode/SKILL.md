@@ -1,7 +1,6 @@
 ---
 name: domain-modeller
 description: This skill should be used when the user mentions "domain model", "entity relationships", "data model", "system model", "map the domain", "what are the entities", "how does this connect", discusses designing a new feature or system, plans architecture, or needs to understand the shape of a problem before coding. Addresses model-first thinking — understanding the domain before writing solutions.
-version: 1.0.0
 ---
 
 # Domain Modeller

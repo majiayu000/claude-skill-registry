@@ -1,7 +1,7 @@
 ---
 name: frontend-styler
 description: This skill should be used when the user mentions "layout issues", "styling problems", "CSS fixes", "style consistency", "unify styles", "visual bugs", discusses frontend styling, works on UI components, or asks about component styling approaches. Applies to Svelte/SvelteKit projects primarily, with general frontend principles.
-version: 1.0.0
+user-invocable: false
 ---
 
 # Frontend Styling

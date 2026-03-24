@@ -17,11 +17,11 @@ Requires `APIFY_API_TOKEN` env var (or `--token` flag). Install dependency: `pip
 ```bash
 # Search with date range (recommended — uses Twitter native since:/until: operators)
 python3 skills/twitter-scraper/scripts/search_twitter.py \
-  --query "GrowthX.ai" --since 2026-02-15 --until 2026-02-23
+  --query "YourCompany" --since 2026-02-15 --until 2026-02-23
 
 # Quick summary of recent mentions
 python3 skills/twitter-scraper/scripts/search_twitter.py \
-  --query "@growthxai" --max-tweets 20 --output summary
+  --query "@yourhandle" --max-tweets 20 --output summary
 
 # Search without date filtering
 python3 skills/twitter-scraper/scripts/search_twitter.py \
@@ -61,7 +61,7 @@ correctly server-side.
 
 ```json
 {
-  "searchTerms": ["\"GrowthX.ai\" since:2026-02-15 until:2026-02-22"],
+  "searchTerms": ["\"YourCompany\" since:2026-02-15 until:2026-02-22"],
   "maxTweets": 50,
   "searchMode": "live"
 }

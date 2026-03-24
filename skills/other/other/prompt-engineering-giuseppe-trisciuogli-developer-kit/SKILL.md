@@ -1,6 +1,11 @@
 ---
 name: prompt-engineering
-description: This skill should be used when creating, optimizing, or implementing advanced prompt patterns including few-shot learning, chain-of-thought reasoning, prompt optimization workflows, template systems, and system prompt design. It provides comprehensive frameworks for building production-ready prompts with measurable performance improvements.
+description: >
+  Provides workflows to write, debug, and optimize prompts for LLMs, including
+  few-shot example selection, chain-of-thought structuring, system prompt
+  design, and template composition. Use when the user asks to write or improve
+  a prompt, wants help with few-shot examples, chain-of-thought, system prompts,
+  prompt templates, or asks how to get better results from an LLM.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
@@ -8,25 +13,30 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 ## Overview
 
-This skill provides comprehensive frameworks for creating, optimizing, and implementing advanced prompt patterns that significantly improve LLM performance across various tasks and models. It covers few-shot learning, chain-of-thought reasoning, prompt optimization workflows, template systems, and system prompt design for production-ready AI applications.
+Use this skill to design prompt systems that are clear, testable, and reusable.
+It covers prompt drafting, optimization, evaluation, and production-oriented
+patterns for few-shot prompting, reasoning workflows, templates, and system
+prompts.
+
+Keep the main workflow in this file and load the targeted reference files only
+for the pattern you are applying.
 
 ## When to Use
 
 Use this skill when:
-- Creating new prompts for complex reasoning or analytical tasks
-- Optimizing existing prompts for better accuracy or efficiency
-- Implementing few-shot learning with strategic example selection
-- Designing chain-of-thought reasoning for multi-step problems
-- Building reusable prompt templates and systems
-- Developing system prompts for consistent model behavior
-- Troubleshooting poor prompt performance or failure modes
-- Scaling prompt systems for production use cases
 
-## Core Prompt Engineering Patterns
+- A user asks to write, rewrite, or improve a prompt
+- A prompt needs better structure, reliability, or output formatting
+- Few-shot examples or reasoning scaffolds are needed
+- A system prompt or reusable prompt template must be created
+- An existing prompt needs measurable optimization and testing
 
-### 1. Few-Shot Learning Implementation
+Read the relevant files in `references/` when you need deeper guidance on a
+specific pattern.
 
-Select examples using semantic similarity and diversity sampling to maximize learning within context window constraints.
+## Core Patterns
+
+### 1. Few-Shot Learning
 
 #### Example Selection Strategy
 - Use `references/few-shot-patterns.md` for comprehensive selection frameworks
@@ -35,26 +45,28 @@ Select examples using semantic similarity and diversity sampling to maximize lea
 - Prioritize diverse examples that cover problem space variations
 - Order examples from simple to complex for progressive learning
 
-#### Few-Shot Template Structure
+#### Few-Shot Example (Sentiment Classification)
 ```
-Example 1 (Basic case):
-Input: {representative_input}
-Output: {expected_output}
+Classify the sentiment as Positive, Negative, or Neutral.
 
-Example 2 (Edge case):
-Input: {challenging_input}
-Output: {robust_output}
+Text: "I love this product! It exceeded my expectations."
+Sentiment: Positive
+Reasoning: Enthusiastic language, positive adjectives, satisfaction
 
-Example 3 (Error case):
-Input: {problematic_input}
-Output: {corrected_output}
+Text: "The app keeps crashing when I upload large files."
+Sentiment: Negative
+Reasoning: Complaint about functionality, frustration indicator
 
-Now handle: {target_input}
+Text: "It arrived on time, as described."
+Sentiment: Neutral
+Reasoning: Factual statement, no strong emotion either way
+
+Text: "{user_input}"
+Sentiment:
+Reasoning:
 ```
 
 ### 2. Chain-of-Thought Reasoning
-
-Elicit step-by-step reasoning for complex problem-solving through structured thinking patterns.
 
 #### Implementation Patterns
 - Reference `references/cot-patterns.md` for detailed reasoning frameworks
@@ -79,9 +91,7 @@ Analysis: {solution_justification}
 Final Answer: {conclusion_with_confidence}
 ```
 
-### 3. Prompt Optimization Workflows
-
-Implement iterative refinement processes with measurable performance metrics and systematic A/B testing.
+### 3. Prompt Optimization
 
 #### Optimization Process
 - Use `references/optimization-frameworks.md` for comprehensive optimization strategies
@@ -91,16 +101,9 @@ Implement iterative refinement processes with measurable performance metrics and
 - Use statistical significance testing for A/B validation
 - Document optimization iterations and their impacts
 
-#### Performance Metrics Framework
-- **Accuracy**: Task completion rate and output correctness
-- **Consistency**: Response stability across multiple runs
-- **Efficiency**: Token usage and response time optimization
-- **Robustness**: Performance across edge cases and variations
-- **Safety**: Adherence to guidelines and harm prevention
+Track these metrics: accuracy, consistency, token efficiency, robustness, safety. See `references/optimization-frameworks.md` for measurement utilities.
 
-### 4. Template Systems Architecture
-
-Build modular, reusable prompt components with variable interpolation and conditional sections.
+### 4. Template Systems
 
 #### Template Design Principles
 - Reference `references/template-systems.md` for modular template frameworks
@@ -133,8 +136,6 @@ Background: {background_information}
 ```
 
 ### 5. System Prompt Design
-
-Design comprehensive system prompts that establish consistent model behavior, output formats, and safety constraints.
 
 #### System Prompt Components
 - Use `references/system-prompt-design.md` for detailed design guidelines
@@ -190,9 +191,9 @@ You are an expert {role} specializing in {domain} with {experience_level} of exp
    - Incorporate safety guidelines and constraints
 
 4. **Validate and Test**
-   - Test with diverse input scenarios including edge cases
-   - Measure performance against defined success criteria
-   - Iterate refinement based on testing results
+   - Test with at least 3 inputs: one happy path, one edge case, one adversarial
+   - Measure accuracy and token usage against defined success criteria
+   - Change one variable at a time, re-test, keep only what improves metrics
    - Document optimization decisions and their rationale
 
 ### Workflow 2: Optimize Existing Prompt
@@ -210,10 +211,10 @@ You are an expert {role} specializing in {domain} with {experience_level} of exp
    - Refine template structure for better clarity
 
 3. **Implementation and Testing**
-   - Deploy optimized prompts with controlled rollout
-   - Monitor performance metrics in production environment
-   - Compare against baseline using statistical significance
-   - Document improvements and lessons learned
+   - Re-run the same test cases from step 1 against the optimized prompt
+   - If accuracy < baseline, revert the change and try a different hypothesis
+   - If accuracy >= baseline but < 90%, return to step 2 with a new strategy
+   - Document the winning change and its measured impact
 
 ### Workflow 3: Scale Prompt Systems
 
@@ -229,21 +230,27 @@ You are an expert {role} specializing in {domain} with {experience_level} of exp
    - Build automated testing frameworks for prompt validation
    - Establish update and deployment workflows
 
-## Quality Assurance
+## Quality Gates
 
-### Validation Requirements
-- Test prompts with at least 10 diverse scenarios
-- Include edge cases, boundary conditions, and failure modes
-- Verify output format compliance and structural consistency
-- Validate safety guideline adherence and harm prevention
-- Measure performance across multiple model runs
+- Accuracy >90% on 10+ diverse test cases before shipping
+- <5% variance across 3+ repeated runs
+- All edge cases and adversarial inputs handled gracefully
+- Output format matches spec on every test case
 
-### Performance Standards
-- Achieve >90% task completion for well-defined use cases
-- Maintain <5% variance across multiple runs for consistency
-- Optimize token usage without sacrificing accuracy
-- Ensure response latency meets application requirements
-- Demonstrate robust handling of edge cases and unexpected inputs
+## Best Practices
+
+- Optimize one variable at a time so results stay attributable
+- Keep prompts explicit about task, context, constraints, and output format
+- Prefer a small number of strong examples over many repetitive ones
+- Test prompts against happy-path, edge-case, and adversarial inputs
+- Move long pattern details to `references/` instead of bloating `SKILL.md`
+
+## Constraints and Warnings
+
+- Do not assume longer prompts are better; extra detail often adds ambiguity
+- Avoid exposing hidden reasoning requirements when a concise rationale is enough
+- Validate prompts on representative inputs before claiming improvement
+- Keep model-specific assumptions explicit because behavior varies across models
 
 ## Integration with Other Skills
 
@@ -261,85 +268,18 @@ This skill integrates seamlessly with:
 - `references/template-systems.md`: Modular template design and implementation
 - `references/system-prompt-design.md`: System prompt architecture and best practices
 
-## Usage Examples
-
-### Example 1: Classification Task with Few-Shot Learning
-```
-Classify customer feedback into categories using semantic similarity for example selection and diversity sampling for edge case coverage.
-```
-
-### Example 2: Complex Reasoning with Chain-of-Thought
-```
-Implement step-by-step reasoning for financial analysis with verification steps and confidence scoring.
-```
-
-### Example 3: Template System for Customer Service
-```
-Create modular templates with role-based components and conditional sections for different inquiry types.
-```
-
-### Example 4: System Prompt for Code Generation
-```
-Design comprehensive system prompt with behavioral guidelines, output requirements, and safety constraints.
-```
-
 ## Common Pitfalls and Solutions
 
-- **Overfitting examples**: Use diverse example sets with semantic variety
-- **Context window overflow**: Implement strategic example selection and compression
-- **Inconsistent outputs**: Specify clear output formats and validation requirements
-- **Poor generalization**: Include edge cases and boundary conditions in training examples
-- **Safety violations**: Incorporate comprehensive content policies and harm prevention
+| Pitfall | Fix |
+|---|---|
+| Wrong output format | Add a concrete output example at the end of the prompt |
+| Inconsistent answers | Add 2-3 few-shot examples showing expected reasoning |
+| Hallucination | Add "If unsure, say 'I don't know'" + constrain the answer domain |
+| Too verbose | Add explicit word/sentence limit + "Be concise" instruction |
+| Missed edge cases | Add an edge-case few-shot example |
 
-## Performance Optimization
+## Constraints
 
-- Monitor token usage and implement compression strategies
-- Use caching for repeated prompt components
-- Optimize example selection for maximum learning efficiency
-- Implement progressive disclosure for complex prompt systems
-- Balance prompt complexity with response quality requirements
-
-## Best Practices
-
-### Design Principles
-- Write clear, specific instructions that leave no ambiguity
-- Structure prompts with logical sections and consistent formatting
-- Use role-based prompts for consistent behavioral patterns
-- Include concrete examples to demonstrate expected outputs
-- Define output format requirements explicitly
-
-### Implementation Guidelines
-- Start with simple prompts and iterate based on testing
-- Test with diverse input scenarios including edge cases
-- Document prompt versions and their performance metrics
-- Implement error handling for unexpected inputs
-- Monitor performance in production environments
-
-### Common Pitfalls to Avoid
-- Overfitting examples to specific patterns
-- Ignoring context window limitations and token budgeting
-- Neglecting output format specifications
-- Failing to handle edge cases and error scenarios
-- Not measuring and tracking prompt performance over time
-
-## Constraints and Warnings
-
-### Model Limitations
-- Different models have varying capabilities and token limits
-- Complex prompts may exceed context windows unexpectedly
-- Model behavior can vary across different versions
-- Some reasoning tasks require specific prompting techniques
-
-### Resource Considerations
-- Longer prompts consume more tokens and increase costs
-- Complex few-shot examples impact context usage
-- Multiple model calls for optimization increase expenses
-- Testing requires sufficient sample sizes for statistical significance
-
-### Quality Requirements
-- Validate prompts with domain-specific test cases
-- Ensure prompts generalize beyond training examples
-- Implement monitoring for prompt performance drift
-- Regularly review and update prompts as requirements evolve
-
-This skill provides the foundational patterns and methodologies for building production-ready prompt systems that consistently deliver high performance across diverse use cases and model types.
+- Test across target models — capabilities and token limits vary
+- Keep few-shot examples to 3-5 to manage context usage
+- Validate with domain-specific test cases before production

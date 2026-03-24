@@ -1,6 +1,6 @@
 ---
 name: docs-updater
-description: Automatically updates project documentation by analyzing git changes between the current branch and the last release tag. Performs git diff analysis to identify modifications, then updates README.md, CHANGELOG.md following Keep a Changelog standard, and discovers documentation folders for contextual updates. Use when preparing a release, maintaining documentation sync, or before creating a pull request. Triggers on "update docs", "update changelog", "sync documentation", "update readme", "prepare release documentation".
+description: Provides automated documentation updates by analyzing git changes between the current branch and the last release tag. Performs git diff analysis to identify modifications, then updates README.md, CHANGELOG.md following Keep a Changelog standard, and discovers documentation folders for contextual updates. Use when preparing a release, maintaining documentation sync, or before creating a pull request. Triggers on "update docs", "update changelog", "sync documentation", "update readme", "prepare release documentation".
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob
 ---
 

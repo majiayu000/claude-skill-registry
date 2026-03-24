@@ -29,10 +29,66 @@ Each phase builds on the previous one's output. The final deliverables are a val
 - **AUTO_PROCEED = true** — If user doesn't respond at a checkpoint, automatically proceed with the best option after presenting results. Set to `false` to always wait for explicit user confirmation.
 - **REVIEWER_MODEL = `gpt-5.4`** — Model used via Codex MCP. Must be an OpenAI model (e.g., `gpt-5.4`, `o3`, `gpt-4o`). Passed to sub-skills.
 - **ARXIV_DOWNLOAD = false** — When `true`, `/research-lit` downloads the top relevant arXiv PDFs during Phase 1. When `false` (default), only fetches metadata. Passed through to `/research-lit`.
+- **COMPACT = false** — When `true`, generate compact summary files for short-context models and session recovery. Writes `IDEA_CANDIDATES.md` (top 3-5 ideas only) at the end of this workflow. Downstream skills read this instead of the full `IDEA_REPORT.md`.
+- **REF_PAPER = false** — Reference paper to base ideas on. Accepts: local PDF path, arXiv URL, or any paper URL. When set, the paper is summarized first (`REF_PAPER_SUMMARY.md`), then idea generation uses it as context. Combine with `base repo` for "improve this paper with this codebase" workflows.
 
-> 💡 These are defaults. Override by telling the skill, e.g., `/idea-discovery "topic" — pilot budget: 4h per idea, 20h total` or `/idea-discovery "topic" — arxiv download: true`.
+> 💡 These are defaults. Override by telling the skill, e.g., `/idea-discovery "topic" — ref paper: https://arxiv.org/abs/2406.04329` or `/idea-discovery "topic" — compact: true`.
 
 ## Pipeline
+
+### Phase 0.5: Reference Paper Summary (when REF_PAPER is set)
+
+**Skip entirely if `REF_PAPER` is `false`.**
+
+Summarize the reference paper before searching the literature:
+
+1. **If arXiv URL** (e.g., `https://arxiv.org/abs/2406.04329`):
+   - Invoke `/arxiv "ARXIV_ID" — download` to fetch the PDF
+   - Read the first 5 pages (title, abstract, intro, method overview)
+
+2. **If local PDF path** (e.g., `papers/reference.pdf`):
+   - Read the PDF directly (first 5 pages)
+
+3. **If other URL**:
+   - Fetch and extract content via WebFetch
+
+4. **Generate `REF_PAPER_SUMMARY.md`**:
+
+```markdown
+# Reference Paper Summary
+
+**Title**: [paper title]
+**Authors**: [authors]
+**Venue**: [venue, year]
+
+## What They Did
+[2-3 sentences: core method and contribution]
+
+## Key Results
+[Main quantitative findings]
+
+## Limitations & Open Questions
+[What the paper didn't solve, acknowledged weaknesses, future work suggestions]
+
+## Potential Improvement Directions
+[Based on the limitations, what could be improved or extended?]
+
+## Codebase
+[If `base repo` is also set: link to the repo and note which parts correspond to the paper]
+```
+
+**🚦 Checkpoint:** Present the summary to the user:
+
+```
+📄 Reference paper summarized:
+- Title: [title]
+- Key limitation: [main gap]
+- Improvement directions: [2-3 bullets]
+
+Proceeding to literature survey with this as context.
+```
+
+Phase 1 and Phase 2 will use `REF_PAPER_SUMMARY.md` as additional context — `/research-lit` searches for related and competing work, `/idea-creator` generates ideas that build on or improve the reference paper.
 
 ### Phase 1: Literature Survey
 
@@ -63,13 +119,14 @@ Does this match your understanding? Should I adjust the scope before generating 
 
 ### Phase 2: Idea Generation + Filtering + Pilots
 
-Invoke `/idea-creator` with the landscape context:
+Invoke `/idea-creator` with the landscape context (and `REF_PAPER_SUMMARY.md` if available):
 
 ```
 /idea-creator "$ARGUMENTS"
 ```
 
 **What this does:**
+- If `REF_PAPER_SUMMARY.md` exists, include it as context — ideas should build on, improve, or extend the reference paper
 - Brainstorm 8-12 concrete ideas via GPT-5.4 xhigh
 - Filter by feasibility, compute cost, quick novelty search
 - Deep validate top ideas (full novelty check + devil's advocate)
@@ -199,6 +256,29 @@ Finalize `IDEA_REPORT.md` with all accumulated information:
 - [ ] /auto-review-loop to iterate until submission-ready
 - [ ] Or invoke /research-pipeline for the complete end-to-end flow
 ```
+
+### Phase 5.5: Write Compact Files (when COMPACT = true)
+
+**Skip entirely if `COMPACT` is `false`.**
+
+Write `IDEA_CANDIDATES.md` — a lean summary of the top 3-5 surviving ideas:
+
+```markdown
+# Idea Candidates
+
+| # | Idea | Pilot Signal | Novelty | Reviewer Score | Status |
+|---|------|-------------|---------|---------------|--------|
+| 1 | [title] | +X% | Confirmed | X/10 | RECOMMENDED |
+| 2 | [title] | +Y% | Confirmed | X/10 | BACKUP |
+| 3 | [title] | Negative | — | — | ELIMINATED |
+
+## Active Idea: #1 — [title]
+- Hypothesis: [one sentence]
+- Key evidence: [pilot result]
+- Next step: /experiment-bridge or /research-refine
+```
+
+This file is intentionally small (~30 lines) so downstream skills and session recovery can read it without loading the full `IDEA_REPORT.md` (~200+ lines).
 
 ## Key Rules
 

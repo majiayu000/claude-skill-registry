@@ -41,11 +41,7 @@ Locate the test runner command from `testing.md`, `CLAUDE.md`, or project manife
 
 ### Check quality agents (optional)
 
-Check whether these project-level agent files exist:
-- `.claude/agents/code-simplifier.md`
-- `.claude/agents/test-guardian.md`
-
-Record which are available — they will be used in the Quality Gate step after cycling completes. If neither exists, the quality gate will be skipped. This is not a blocker; recommend `/optimus:init` if missing and the user wants agent-backed quality checks.
+Read the **Pre-flight** section of `$CLAUDE_PLUGIN_ROOT/skills/tdd/references/quality-gate.md`.
 
 ## Step 2: Suitability Analysis
 
@@ -118,31 +114,7 @@ All TDD work will be committed to this branch.
 
 ### Worktree isolation (optional)
 
-After branch creation, offer git worktree isolation so the user's main workspace stays clean.
-
-First, read `$CLAUDE_PLUGIN_ROOT/skills/worktree/references/worktree-setup.md` for the shared worktree setup procedure. Run the **worktree detection guard** from that reference. If the guard detects you are already inside a linked worktree, skip this subsection entirely and proceed to "Decompose into behaviors" — the user is already in an isolated environment.
-
-If the guard passes (not inside a worktree), derive a **worktree directory name** by replacing `/` with `-` in the branch name (e.g., `feat/add-password-reset` → `feat-add-password-reset`). Use this as `<worktree-dir>`.
-
-Use `AskUserQuestion` — header "Workspace", question "Use a git worktree for isolated development? Your main workspace stays on the original branch.":
-- **Use worktree (Recommended)** — "Work in `.worktrees/<worktree-dir>` — main workspace stays clean, enables parallel work"
-- **Stay on branch** — "Work directly on the branch in the current directory (standard git workflow)"
-
-If the user chooses worktree isolation, follow the **setup procedure** from the shared worktree reference using `<branch-name>` and `<original-branch>` from above. The procedure handles creating `.worktrees/`, ensuring it is gitignored, switching the main workspace back, creating the worktree, running project setup, and verifying the test baseline.
-
-After successful worktree creation, report:
-
-```
-## Worktree
-
-Working in: `.worktrees/<worktree-dir>`
-Main workspace: `<original-branch>` (unchanged)
-Tests: passing ✓
-```
-
-If worktree creation fails (e.g., git version too old, filesystem issues), fall back to the standard branch workflow silently and inform the user.
-
-**Important**: When using a worktree, all subsequent steps (4–9) must run commands inside the worktree directory. Use `cd .worktrees/<worktree-dir>` before running tests, linting, or git commands. File paths in reports should be relative to the project root for clarity.
+Read `$CLAUDE_PLUGIN_ROOT/skills/tdd/references/tdd-worktree-orchestration.md` and follow the **Setup** section, using `<branch-name>` and `<original-branch>` from above.
 
 ### Decompose into behaviors
 
@@ -333,42 +305,9 @@ If no behaviors remain, or the user chooses "Stop here", proceed to Step 8 (Qual
 
 ## Step 8: Quality Gate (parallel agents)
 
-If no quality agents were found in Step 1, skip this step entirely and proceed to Step 9.
+If no quality agents were found in Step 1, skip to Step 9.
 
-This step runs after all Red-Green-Refactor cycles are complete. It launches available project agents in parallel for a holistic review of all code written during the TDD session. Running agents here — not per-cycle — catches cross-cycle issues (duplication between behaviors, naming drift, accumulated pattern violations, edge-case coverage gaps) that are invisible within a single cycle.
-
-### Gather changed files
-
-Collect all files changed during the TDD session: `git diff --name-only <original-branch>...HEAD` (where `<original-branch>` is the branch recorded in Step 3). This is the scope for both agents.
-
-### Launch parallel agents
-
-Launch up to 2 `general-purpose` Agent tool calls simultaneously — one per available agent. Only launch agents whose definition files exist (checked in Step 1).
-
-Read `$CLAUDE_PLUGIN_ROOT/skills/tdd/references/agent-prompts.md` for the full prompt templates for both agents.
-
-### Present findings
-
-After both agents complete, present a consolidated quality report:
-
-```
-## Quality Gate
-
-### Code Simplifier
-[Findings from code-simplifier, or "No issues found — code follows project guidelines."]
-
-### Test Guardian
-[Findings from test-guardian, or "All code has test coverage. No structural barriers detected."]
-```
-
-If no agents produced findings, report "Quality gate passed — no issues found" and proceed silently to Step 9.
-
-### Act on findings
-
-If either agent produced findings, apply fixes for each one. After all fixes are applied, run the test suite:
-
-- **All tests pass** — stage and commit with a conventional message (e.g., `refactor(scope): address quality gate findings`). Proceed to Step 9.
-- **Tests fail** — revert all fixes, then re-apply one at a time with a test run after each. Keep fixes that pass, revert those that fail. Present a fix summary listing which fixes were applied and which were reverted (with reason "fix broke tests"). Stage and commit kept fixes with a conventional message (e.g., `refactor(scope): address quality gate findings`). Proceed to Step 9.
+Read `$CLAUDE_PLUGIN_ROOT/skills/tdd/references/quality-gate.md` and follow the **Execution** section. Use `<original-branch>` from Step 3 to scope the changed files. When complete, proceed to Step 9.
 
 ## Step 9: Summary, Push, and PR/MR
 
@@ -447,14 +386,7 @@ If behaviors remain unfinished, note them and suggest re-running `/optimus:tdd` 
 
 ### Worktree cleanup
 
-If a worktree was used (Step 3), offer cleanup after the PR/MR is created:
-
-1. Switch to the main workspace directory (parent of `.worktrees/`)
-2. Remove the worktree: `git worktree remove .worktrees/<worktree-dir>`
-   - If removal **fails due to uncommitted changes**, inform the user: "Worktree has uncommitted changes. Commit or discard them first, or use `git worktree remove --force .worktrees/<worktree-dir>` to discard and remove."
-3. If the `.worktrees/` directory is now empty, remove it: `rmdir .worktrees 2>/dev/null`
-
-If the user prefers to keep the worktree (e.g., for further work), skip cleanup and note: "Worktree `.worktrees/<worktree-dir>` is still active. Remove it manually with `git worktree remove .worktrees/<worktree-dir>` when done."
+If a worktree was used (Step 3), read `$CLAUDE_PLUGIN_ROOT/skills/tdd/references/tdd-worktree-orchestration.md` and follow the **Cleanup** section.
 
 Recommend running `/optimus:code-review` to review the PR/MR before merging.
 

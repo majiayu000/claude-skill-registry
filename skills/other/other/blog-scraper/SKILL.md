@@ -17,7 +17,7 @@ For RSS mode (free), only dependency is `pip install requests`. No API key neede
 ```bash
 # Scrape a blog's RSS feed
 python3 skills/blog-scraper/scripts/scrape_blogs.py \
-  --urls "https://growthx.ai/blog" --days 30
+  --urls "https://example.com/blog" --days 30
 
 # Multiple blogs with keyword filter
 python3 skills/blog-scraper/scripts/scrape_blogs.py \

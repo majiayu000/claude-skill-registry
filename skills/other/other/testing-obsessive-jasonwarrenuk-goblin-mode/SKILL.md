@@ -1,7 +1,6 @@
 ---
 name: testing-obsessive
 description: This skill should be used when the user mentions "write tests", "test coverage", "testing strategy", "unit tests", "integration tests", "e2e tests", "vitest", "jest", discusses testing approaches, asks about test patterns, or works on test files. Addresses testing fundamentals with emphasis on Vitest and Svelte component testing using pragmatic, risk-based approaches.
-version: 1.0.0
 ---
 
 # Testing Foundations

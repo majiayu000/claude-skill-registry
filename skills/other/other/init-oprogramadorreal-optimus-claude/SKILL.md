@@ -31,46 +31,27 @@ If the user chooses **Scaffold new project**: read and execute `$CLAUDE_PLUGIN_R
 
 If the user chooses **Continue anyway**: proceed with normal Step 1 detection below.
 
-### Project detection
+### Project detection (agent-assisted)
 
-**Identify project type and package manager:** Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/tech-stack-detection.md` for the manifest-to-type table, package manager detection table, and command prefix rules. Apply those tables to the current project. For the .NET note in that reference, list all solution projects and their roles in the CLAUDE.md Project Structure section. For the Dart/Flutter note, document the commands in CLAUDE.md.
+Delegate codebase analysis to a detection agent to keep the main context clean for CLAUDE.md generation.
 
-**Extract**: Project name, tech stack, build system, available scripts.
+Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/agent-prompts.md` for the full prompt template, detection algorithms, and return format for the Codebase Detection Agent.
 
-**Analyze structure and extract doc insights:**
-- Top-level directories for architecture pattern
-- Entry points (main.ts, index.ts, app.module.ts, main.dart, etc.)
-- README.md, CONTRIBUTING.md, ARCHITECTURE.md, docs/ directory files
-- Monorepo: also each subproject's README.md
+Read these reference files and provide their content to the agent as context before the Agent 1 prompt:
+- `$CLAUDE_PLUGIN_ROOT/skills/init/references/tech-stack-detection.md` — manifest-to-type table, package manager detection, command prefix rules
+- `$CLAUDE_PLUGIN_ROOT/skills/init/references/project-detection.md` — full detection algorithm
 
-**Source code is the source of truth.** Manifests and actual project files always override what documentation claims. When reading existing docs:
-1. **Extract non-code insights** — information not derivable from source code alone:
-   - Architecture rationale and design decisions ("why" content for CLAUDE.md)
-   - Contributor workflow conventions (branching strategy, PR process, commit format)
-   - Coding conventions not enforced by linters (naming schemes, architectural boundaries)
-2. **Discard** any insight **from project docs (README, CONTRIBUTING, etc.)** that directly contradicts source code (e.g., doc says "we use Redux" but only Zustand is in dependencies). Keep insights that are neither confirmed nor contradicted — non-code conventions and rationale are inherently unverifiable from source alone. This discard rule applies only to insight extraction from project documentation — content in existing CLAUDE.md files is handled separately by the Step 1b audit, where the standard of proof is stricter.
+Launch 1 `general-purpose` Agent tool call using the Agent 1 prompt from the agent-prompts.md file, prepended with the reference file contents above.
 
-Factual contradictions in existing docs (wrong commands, outdated tech references, etc.) are detected and addressed in Step 6b.
+| Agent | Role | Runs when |
+|-------|------|-----------|
+| 1 — Codebase Detection | Manifest reading, tech-stack detection, structure detection, doc insight extraction, existing files inventory, test infrastructure check | Always |
 
-These insights flow into generated files in Steps 4–6b. The Detection Summary confirms doc reading occurred, but do not narrate insights during analysis.
+Wait for the agent to complete. Use the agent's **Detection Results** to populate the Step 1 Checkpoint below.
 
-**Check for project structure:** Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/project-detection.md` for the full detection algorithm — multi-repo workspace detection (Step 0), workspace configs (Step A), manifest scanning with depth-2 checks (Step B), supporting signals (Step C), and subproject enumeration rules.
+**Ambiguous structure handling:** If the agent's Detection Results report the project structure as "ambiguous" (supporting signals but insufficient evidence), use `AskUserQuestion` to resolve: ask the user to confirm whether this is a monorepo and identify subproject directories. Update the Detection Results accordingly before proceeding to the checkpoint.
 
-**Decision summary:**
-- No `.git/` in current dir + 2+ child dirs with `.git/` → confirmed multi-repo workspace
-- Workspace config found → confirmed monorepo
-- 2+ projects with manifests → confirmed monorepo (but see .NET consolidation below)
-- Supporting signals + 1 manifest dir → likely monorepo, ask user to confirm
-- Supporting signals only → insufficient evidence, ask user to identify subproject dirs
-- No signals → single project (one repo, one codebase — not a monorepo)
-
-**.NET solution consolidation:** When a single root `.sln` references all discovered `.csproj` files, collapse them into 1 project before applying the matrix above. Non-`.csproj` manifests still count separately.
-
-**If monorepo detected:** Inform user of detection signals and identified subprojects with tech stacks in the Detection Summary (Step 1 Checkpoint).
-
-**If multi-repo workspace detected:** List each repo with its path and detected tech stack in the Detection Summary (Step 1 Checkpoint). For each repo, also report whether it is internally a monorepo or single project.
-
-**Nested project handling:** When a repo has no manifest at its git root, but exactly 1 qualifying project in a subdirectory (via depth-2 check), and the root-as-project check fails for that repo — treat it as a **single project with a nested app root**. This applies both when running init directly in a repo and when processing repos within a multi-repo workspace. Note the subdirectory path; all commands in the generated CLAUDE.md must reference it (e.g., `cd ngapp && npm run build`).
+Factual contradictions in existing docs (wrong commands, outdated tech references, etc.) are detected and addressed in Step 6b. Doc-sourced insights from the agent's results flow into generated files in Steps 4-6b.
 
 ### Step 1 Checkpoint
 
@@ -100,45 +81,32 @@ If no test infrastructure was detected, include this note in the Detection Summa
 
 > **Tests:** No test framework, test script, or test directory detected — you will be asked whether to install a test framework in Step 5c. Strongly recommended: multiple optimus skills depend on test infrastructure.
 
-### Step 1b: Documentation Audit (only when existing docs found)
+### Step 1b: Documentation Audit (agent-assisted, only when existing docs found)
 
 **Skip this step entirely if no existing documentation files were found in the inventory.** Proceed directly to Step 2.
 
-**Plugin version check:** Read `$CLAUDE_PLUGIN_ROOT/.claude-plugin/plugin.json` to get the current plugin version. Then check if `.claude/.optimus-version` exists in the project. If it does, read its content (a semver string, e.g., `1.11.0`). Compare the two:
-- **Current plugin version is newer than stored version (compare major, minor, patch as integers)** → the plugin has been updated since the last run. Include this in the Audit Report header: "Plugin updated from vX.Y.Z to vA.B.C — templates may have improved." During the audit below, do **not** shortcut any file as "Accurate" without also comparing it against the current template — plugin-side template improvements should surface as findings.
-- **Same version or no `.optimus-version` file** → proceed with normal audit behavior.
+Delegate the audit comparison to an agent to keep the main context clean for file generation.
 
-If existing docs were found, analyze them to identify what needs updating:
+Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/agent-prompts.md` for the full prompt template, comparison dimensions, classification rules, and return format for the Documentation Audit Agent.
 
-1. **Read all existing doc files** from the inventory (CLAUDE.md, settings.json, all `.claude/docs/*.md` except `coding-guidelines.md`, and for monorepos each subproject's CLAUDE.md and `docs/*.md`).
+Launch 1 `general-purpose` Agent tool call using the Agent 2 prompt from the agent-prompts.md file. **Provide the Detection Results from Step 1 as context** at the start of the agent prompt (before the agent-prompts.md template content).
 
-2. **Compare documented state vs detected state:**
+| Agent | Role | Runs when |
+|-------|------|-----------|
+| 2 — Documentation Audit | Plugin version check, compare docs vs detected state, classify as Outdated/Missing/Accurate/User-added | Existing docs found in inventory |
 
-| Dimension | Check |
-|-----------|-------|
-| **Commands** | Do build/test/lint commands in CLAUDE.md match current manifest scripts? |
-| **Tech stack** | Does the documented stack match current dependencies in manifest files? |
-| **Structure** | Do folder names, entry points, and architecture references in docs match the actual filesystem? |
-| **Doc coverage** | Are there detected project aspects (test framework, UI deps, complex architecture) with no corresponding doc? Are there docs for aspects no longer present? |
-| **Monorepo** | Do subproject tables match current workspace members? Any added/removed subprojects? |
-| **Custom content** | Does CLAUDE.md contain sections, bullets, or instructions not matching any template section or detected project aspect (e.g., deployment notes, workflow conventions, known gotchas)? Classify as **User-added**. |
+Wait for the agent to complete. Present the agent's **Audit Report** to the user.
 
-3. **Present an Audit Report** to the user, organized as:
-   - **Outdated** — items in docs that no longer match the project (with specific before/after)
-   - **Missing** — project aspects that should have docs but don't
-   - **Accurate** — items that are still correct (brief summary, no action needed)
-   - **User-added** — content not derivable from the codebase (custom conventions, workflow rules, architecture decisions). Preserved by default. If source code **directly contradicts** a user-added item (e.g., user wrote "deploy with Docker" but no Dockerfile or Docker dependency exists), classify it as Outdated instead — but flag it in the audit report as "previously user-added" so the user can confirm before removal.
+**Standard of proof (enforced by agent):** Only content directly contradicted by source code is classified as Outdated. When a user-added item appears outdated, use `AskUserQuestion` to confirm before discarding — the user may have context that isn't visible in the codebase.
 
-**Standard of proof:** Only classify content as Outdated when source code **directly contradicts** a specific claim. Content that is neither confirmed nor contradicted is **not outdated** — classify it as Accurate or User-added as appropriate. When a user-added item appears outdated, use `AskUserQuestion` to confirm before discarding — the user may have context that isn't visible in the codebase.
+Use `AskUserQuestion` — header "Audit", question "How would you like to handle the documentation audit findings?":
+- **Update all** — "Apply all recommended changes"
+- **Selective** — "Pick which findings to apply by number"
+- **Fresh start** — "Regenerate template content from scratch, but carry forward user-added sections"
 
-4. Use `AskUserQuestion` — header "Audit", question "How would you like to handle the documentation audit findings?":
-   - **Update all** — "Apply all recommended changes"
-   - **Selective** — "Pick which findings to apply by number"
-   - **Fresh start** — "Regenerate template content from scratch, but carry forward user-added sections"
+If the user selects **Selective**, ask which finding numbers to apply. Unapproved findings are left as-is (existing content preserved).
 
-   If the user selects **Selective**, ask which finding numbers to apply. Unapproved findings are left as-is (existing content preserved).
-
-Remember the user's choice and approved findings. Steps 2–6 will reference them to make targeted updates rather than full overwrites. (Step 6b runs independently — see Step 6b.)
+Remember the user's choice and approved findings. Steps 2-6 will reference them to make targeted updates rather than full overwrites. (Step 6b runs independently — see Step 6b.)
 
 **Fresh start preservation:** Before regenerating, extract all User-added content from existing CLAUDE.md. After generating from template, re-insert user-added content in the most appropriate section. Present the merged result to the user before writing.
 

@@ -191,6 +191,52 @@ On each page, read the browser console for:
 - **CSP violations** — severity: Medium
 - **Deprecation warnings** — severity: Low
 
+#### Network Error Detection (thorough + exhaustive)
+
+**Critical**: Visual browsing misses API failures that the UI hides. Data-fetching libraries (TanStack Query, SWR) swallow HTTP errors and show empty/loading states instead of error messages. A component showing "No results found" might actually be getting a 403 — but the UI looks normal.
+
+Monitor network responses throughout the entire audit session. If using Playwright, attach a response listener before browsing starts:
+
+```javascript
+// Inject into page or use Playwright's page.on('response')
+// Collect all non-2xx API responses
+const networkErrors = [];
+// After each page navigation, check for failed fetch/XHR requests
+// by reading the browser's network log or console output
+```
+
+If using Chrome MCP, use `read_network_requests` to check for failed API calls after each page visit.
+
+**What to collect**: URL, HTTP status, method, the page you were on when it happened.
+
+**Severity mapping**:
+| Status | Severity | What it usually means |
+|--------|----------|----------------------|
+| 500+ | Critical | Server error — something is broken |
+| 403 | High | Permission error OR route collision (static route shadowed by `/:param`) |
+| 404 | Medium | Missing endpoint — may be a renamed/removed API route |
+| 401 | Low | Expected for unauthenticated probes, but flag if it happens on authenticated pages |
+| CORS error | High | API endpoint missing CORS headers — feature broken in production |
+
+**What this catches that visual browsing misses**:
+- Route collisions (e.g. `GET /api/boards/users` shadowed by `GET /api/boards/:boardId`)
+- Endpoints that fail silently (TanStack Query shows empty data instead of error)
+- CORS issues only visible in production
+- Auth middleware rejecting valid sessions
+- Missing endpoints after refactoring
+
+**Report format**: Group by status code in a "Network Errors" section:
+```markdown
+## Network Errors (detected during browsing)
+
+### 403 Forbidden (2 endpoints)
+- `GET /api/boards/users` on /app/boards/123 — likely route collision with /:boardId
+- `POST /api/settings/theme` on /app/settings — permission check failing
+
+### 500 Internal Server Error (1 endpoint)
+- `GET /api/reports/summary` on /app/dashboard — server error
+```
+
 ### Autonomy by Depth
 
 | Action | quick | standard | thorough |

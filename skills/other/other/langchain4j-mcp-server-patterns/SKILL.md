@@ -1,69 +1,116 @@
 ---
 name: langchain4j-mcp-server-patterns
-description: Provides Model Context Protocol (MCP) server implementation patterns with LangChain4j. Use when building MCP servers to extend AI capabilities with custom tools, resources, and prompt templates.
+description: Provides LangChain4j patterns for implementing MCP servers, exposing tools, resources, and prompts, and integrating MCP clients with AI services. Use when building a Java MCP server, connecting LangChain4j to external MCP servers, or securing tool exposure for agent workflows.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch
 ---
 
 # LangChain4j MCP Server Implementation Patterns
 
-Implement Model Context Protocol (MCP) servers with LangChain4j to extend AI capabilities with standardized tools, resources, and prompt templates.
-
 ## Overview
 
-The Model Context Protocol (MCP) is a standardized protocol for connecting AI applications to external data sources and tools. LangChain4j provides MCP server implementation patterns that enable AI systems to dynamically discover and execute tools, access resources, and use prompt templates through a standardized interface.
+Use this skill to design and implement Model Context Protocol (MCP) integrations with LangChain4j.
+
+The main concerns are:
+- defining a clean tool, resource, and prompt surface
+- choosing the right transport and bootstrap model
+- filtering unsafe capabilities before exposing them to agents or applications
+
+Keep `SKILL.md` focused on the implementation flow. Use the bundled references for expanded examples and API-level detail.
 
 ## When to Use
 
-Use this skill when building:
-- AI applications requiring external tool integration
-- Enterprise MCP servers with multi-domain support (GitHub, databases, APIs)
-- Dynamic tool providers with context-aware filtering
-- Resource-based data access systems for AI models
-- Prompt template servers for standardized AI interactions
-- Scalable AI agents with resilient tool execution
-- Multi-modal AI applications with diverse data sources
-- Spring Boot applications with MCP integration
-- Production-ready MCP servers with security and monitoring
+Use this skill when:
+- building a Java MCP server that exposes tools, resources, or prompts
+- integrating LangChain4j with one or more external MCP servers
+- wiring MCP support into a Spring Boot application
+- filtering available tools by tenant, user role, or runtime context
+- adding observability, resilience, and safe failure handling around MCP interactions
+- reviewing an MCP integration for prompt-injection and side-effect risks
+
+Typical trigger phrases include `langchain4j mcp`, `java mcp server`, `mcp tool provider`, `spring boot mcp`, and `connect langchain4j to mcp`.
 
 ## Instructions
 
-Follow these steps to implement an MCP server with LangChain4j:
+### 1. Design the MCP surface before writing code
 
-### 1. Create Tool Provider
+Decide what the server should expose:
+- tools for actions with clear inputs and side effects
+- resources for read-only or structured data access
+- prompts only when a reusable template adds real value
 
-Implement `ToolProvider` to define executable tools:
+Keep names stable, descriptions concrete, and schemas small enough for a client or model to understand quickly.
+
+### 2. Implement providers with narrow responsibilities
+
+Use separate classes for each concern:
+- tool provider for executable functions
+- resource provider for discoverable and readable data
+- prompt provider for reusable prompt templates
+
+Validate arguments before execution and return clear error messages for invalid input or unavailable dependencies.
+
+### 3. Choose the transport intentionally
+
+Use:
+- stdio for local integrations, CLI tools, and sidecar processes
+- HTTP or SSE for remote or shared services
+
+Pin external server versions and document how the process is started, authenticated, and monitored.
+
+### 4. Bridge MCP into LangChain4j carefully
+
+When consuming MCP servers from LangChain4j:
+- initialize clients during application startup
+- cache tool lists only when stale metadata is acceptable
+- filter tools by trust level, environment, or user permissions
+- fail closed for dangerous tools rather than exposing everything by default
+
+### 5. Add resilience and security controls
+
+At minimum:
+- bound execution time for external calls
+- log server and tool identity for each failure
+- sanitize content returned by external resources before using it downstream
+- isolate privileged tools behind allowlists, qualifiers, or role checks
+
+### 6. Validate the full workflow
+
+Before shipping:
+- verify tool discovery and invocation with a real MCP client
+- test disconnected or slow server behavior
+- confirm that tool filtering matches the intended authorization model
+- check that prompts and resources do not leak secrets or unsafe instructions
+
+## Examples
+
+### Example 1: Minimal tool provider and stdio server bootstrap
 
 ```java
 class WeatherToolProvider implements ToolProvider {
 
     @Override
     public List<ToolSpecification> listTools() {
-        return List.of(ToolSpecification.builder()
-            .name("get_weather")
-            .description("Get weather for a city")
-            .inputSchema(Map.of(
-                "type", "object",
-                "properties", Map.of(
-                    "city", Map.of("type", "string", "description", "City name")
-                ),
-                "required", List.of("city")
-            ))
-            .build());
+        return List.of(
+            ToolSpecification.builder()
+                .name("get_weather")
+                .description("Return the current weather for a city")
+                .inputSchema(Map.of(
+                    "type", "object",
+                    "properties", Map.of(
+                        "city", Map.of("type", "string")
+                    ),
+                    "required", List.of("city")
+                ))
+                .build()
+        );
     }
 
     @Override
     public String executeTool(String name, String arguments) {
-        // Parse arguments and execute tool logic
-        return "Weather data result";
+        return weatherService.lookup(arguments);
     }
 }
-```
 
-### 2. Configure MCP Server
-
-Create and start the MCP server:
-
-```java
 MCPServer server = MCPServer.builder()
     .server(new StdioServer.Builder())
     .addToolProvider(new WeatherToolProvider())
@@ -72,496 +119,50 @@ MCPServer server = MCPServer.builder()
 server.start();
 ```
 
-### 3. Add Resource Provider
+Use this pattern for local tool execution or a sidecar process started by another application.
 
-Implement resource providers for data access:
-
-```java
-class CompanyResourceProvider
-    implements ResourceListProvider, ResourceReadHandler {
-
-    @Override
-    public List<McpResource> listResources() {
-        return List.of(
-            McpResource.builder()
-                .uri("policies")
-                .name("Company Policies")
-                .mimeType("text/plain")
-                .build()
-        );
-    }
-
-    @Override
-    public String readResource(String uri) {
-        return loadResourceContent(uri);
-    }
-}
-```
-
-### 4. Integrate with Spring Boot
-
-Configure MCP server in Spring Boot application:
+### Example 2: Expose MCP tools to a LangChain4j AI service with filtering
 
 ```java
-@Bean
-public MCPSpringConfig mcpServer(List<ToolProvider> tools) {
-    return MCPSpringConfig.builder()
-        .tools(tools)
-        .server(new StdioServer.Builder())
-        .build();
-}
-```
-
-### 5. Implement Security
-
-Add tool filtering for access control:
-
-```java
-McpToolProvider secureProvider = McpToolProvider.builder()
-    .mcpClients(mcpClient)
-    .filter((client, tool) -> {
-        if (tool.name().startsWith("admin_") && !isAdmin()) {
-            return false;
-        }
-        return true;
-    })
-    .build();
-```
-
-## Quick Start
-
-### Basic MCP Server
-
-Create a simple MCP server with one tool:
-
-```java
-MCPServer server = MCPServer.builder()
-    .server(new StdioServer.Builder())
-    .addToolProvider(new SimpleWeatherToolProvider())
-    .build();
-
-server.start();
-```
-
-### Spring Boot Integration
-
-Configure MCP server in Spring Boot:
-
-```java
-@Bean
-public MCPSpringConfig mcpServer(List<ToolProvider> tools) {
-    return MCPSpringConfig.builder()
-        .tools(tools)
-        .server(new StdioServer.Builder())
-        .build();
-}
-```
-
-## Core Concepts
-
-### MCP Architecture
-
-MCP standardizes AI application connections:
-- **Tools**: Executable functions (database queries, API calls)
-- **Resources**: Data sources (files, schemas, documentation)
-- **Prompts**: Pre-configured templates for tasks
-- **Transport**: Communication layer (stdio, HTTP, WebSocket)
-
-```
-AI Application ←→ MCP Client ←→ Transport ←→ MCP Server ←→ External Service
-```
-
-### Key Components
-
-- **MCPServer**: Main server instance with configuration
-- **ToolProvider**: Tool specification and execution interface
-- **ResourceListProvider/ResourceReadHandler**: Resource access
-- **PromptListProvider/PromptGetHandler**: Template management
-- **Transport**: Communication mechanisms (stdio, HTTP)
-
-## Implementation Patterns
-
-### Tool Provider Pattern
-
-Create tools with proper schema validation:
-
-```java
-class WeatherToolProvider implements ToolProvider {
-
-    @Override
-    public List<ToolSpecification> listTools() {
-        return List.of(ToolSpecification.builder()
-            .name("get_weather")
-            .description("Get weather for a city")
-            .inputSchema(Map.of(
-                "type", "object",
-                "properties", Map.of(
-                    "city", Map.of("type", "string", "description", "City name")
-                ),
-                "required", List.of("city")
-            ))
-            .build());
-    }
-
-    @Override
-    public String executeTool(String name, String arguments) {
-        // Parse arguments and execute tool logic
-        return "Weather data result";
-    }
-}
-```
-
-### Resource Provider Pattern
-
-Provide static and dynamic resources:
-
-```java
-class CompanyResourceProvider
-    implements ResourceListProvider, ResourceReadHandler {
-
-    @Override
-    public List<McpResource> listResources() {
-        return List.of(
-            McpResource.builder()
-                .uri("policies")
-                .name("Company Policies")
-                .mimeType("text/plain")
-                .build()
-        );
-    }
-
-    @Override
-    public String readResource(String uri) {
-        return loadResourceContent(uri);
-    }
-}
-```
-
-### Prompt Template Pattern
-
-Create reusable prompt templates:
-
-```java
-class PromptTemplateProvider
-    implements PromptListProvider, PromptGetHandler {
-
-    @Override
-    public List<Prompt> listPrompts() {
-        return List.of(
-            Prompt.builder()
-                .name("code-review")
-                .description("Review code for quality")
-                .build()
-        );
-    }
-
-    @Override
-    public String getPrompt(String name, Map<String, String> args) {
-        return applyTemplate(name, args);
-    }
-}
-```
-
-## Transport Configuration
-
-### Stdio Transport
-
-Local process communication:
-
-```java
-McpTransport transport = new StdioMcpTransport.Builder()
-    .command(List.of("npm", "exec", "@modelcontextprotocol/server-everything@0.6.2"))
-    .logEvents(true)
-    .build();
-```
-
-### HTTP Transport
-
-Remote server communication:
-
-```java
-McpTransport transport = new HttpMcpTransport.Builder()
-    .sseUrl("http://localhost:3001/sse")
-    .logRequests(true)
-    .logResponses(true)
-    .build();
-```
-
-## Client Integration
-
-### MCP Client Setup
-
-Connect to MCP servers:
-
-```java
-McpClient client = new DefaultMcpClient.Builder()
-    .key("my-client")
-    .transport(transport)
-    .cacheToolList(true)
-    .build();
-
-// List available tools
-List<ToolSpecification> tools = client.listTools();
-```
-
-### Tool Provider Integration
-
-Bridge MCP servers to LangChain4j AI services:
-
-```java
-McpToolProvider provider = McpToolProvider.builder()
-    .mcpClients(mcpClient)
+McpToolProvider toolProvider = McpToolProvider.builder()
+    .mcpClients(mcpClients)
     .failIfOneServerFails(false)
-    .filter((client, tool) -> filterByPermissions(tool))
+    .filter((client, tool) -> !tool.name().startsWith("admin_"))
     .build();
 
-// Integrate with AI service
-AIAssistant assistant = AiServices.builder(AIAssistant.class)
+Assistant assistant = AiServices.builder(Assistant.class)
     .chatModel(chatModel)
-    .toolProvider(provider)
+    .toolProvider(toolProvider)
     .build();
 ```
 
-## Security & Best Practices
-
-### Tool Security
-
-Implement secure tool filtering:
-
-```java
-McpToolProvider secureProvider = McpToolProvider.builder()
-    .mcpClients(mcpClient)
-    .filter((client, tool) -> {
-        if (tool.name().startsWith("admin_") && !isAdmin()) {
-            return false;
-        }
-        return true;
-    })
-    .build();
-```
-
-### Resource Security
-
-Apply access controls to resources:
-
-```java
-public boolean canAccessResource(String uri, User user) {
-    return resourceService.hasAccess(uri, user);
-}
-```
-
-### Error Handling
-
-Implement robust error handling:
-
-```java
-try {
-    String result = mcpClient.executeTool(request);
-} catch (McpException e) {
-    log.error("MCP execution failed: {}", e.getMessage());
-    return fallbackResult();
-}
-```
-
-## Advanced Patterns
-
-### Multi-Server Configuration
-
-Configure multiple MCP servers:
-
-```java
-@Bean
-public List<McpClient> mcpClients(List<ServerConfig> configs) {
-    return configs.stream()
-        .map(this::createMcpClient)
-        .collect(Collectors.toList());
-}
-
-@Bean
-public McpToolProvider multiServerProvider(List<McpClient> clients) {
-    return McpToolProvider.builder()
-        .mcpClients(clients)
-        .failIfOneServerFails(false)
-        .build();
-}
-```
-
-### Dynamic Tool Discovery
-
-Runtime tool filtering based on context:
-
-```java
-McpToolProvider contextualProvider = McpToolProvider.builder()
-    .mcpClients(clients)
-    .filter((client, tool) -> isToolAllowed(user, tool, context))
-    .build();
-```
-
-### Health Monitoring
-
-Monitor MCP server health:
-
-```java
-@Component
-public class McpHealthChecker {
-
-    @Scheduled(fixedRate = 30000) // 30 seconds
-    public void checkServers() {
-        mcpClients.forEach(client -> {
-            try {
-                client.listTools();
-                markHealthy(client.key());
-            } catch (Exception e) {
-                markUnhealthy(client.key(), e.getMessage());
-            }
-        });
-    }
-}
-```
-
-## Configuration
-
-### Application Properties
-
-Configure MCP servers in application.yml:
-
-```yaml
-mcp:
-  servers:
-    github:
-      type: docker
-      command: ["/usr/local/bin/docker", "run", "-e", "GITHUB_TOKEN", "-i", "mcp/github"]
-      log-events: true
-    database:
-      type: stdio
-      command: ["/usr/bin/npm", "exec", "@modelcontextprotocol/server-sqlite@0.6.2"]
-      log-events: false
-```
-
-### Spring Boot Configuration
-
-Configure MCP with Spring Boot:
-
-```java
-@Configuration
-@EnableConfigurationProperties(McpProperties.class)
-public class McpConfiguration {
-
-    @Bean
-    public MCPServer mcpServer(List<ToolProvider> providers) {
-        return MCPServer.builder()
-            .server(new StdioServer.Builder())
-            .addToolProvider(providers)
-            .enableLogging(true)
-            .build();
-    }
-}
-```
-
-## Examples
-
-### Example 1: Weather Tool Execution
-
-**Input:**
-```java
-// Client invokes the weather tool
-Map<String, Object> args = Map.of("city", "Milan");
-String result = mcpClient.executeTool("get_weather", mapper.writeValueAsString(args));
-```
-
-**Output:**
-```json
-{
-  "city": "Milan",
-  "temperature": 22,
-  "condition": "Partly Cloudy",
-  "humidity": 65,
-  "unit": "celsius"
-}
-```
-
-### Example 2: Resource Retrieval
-
-**Input:**
-```java
-// Client requests a resource by URI
-String content = mcpClient.readResource("policies");
-```
-
-**Output:**
-```
-Company Remote Work Policy v2.0
-Effective Date: January 1, 2025
-
-1. Employees may work remotely up to 3 days per week...
-```
-
-### Example 3: Multi-Server Tool Discovery
-
-**Input:**
-```java
-// List all tools from connected MCP servers
-List<ToolSpecification> tools = mcpToolProvider.tools();
-tools.forEach(t -> System.out.println(t.name() + ": " + t.description()));
-```
-
-**Output:**
-```
-get_weather: Get current weather for a city
-search_documents: Search company knowledge base
-send_notification: Send notification to user
-admin_backup: Create system backup (admin only)
-```
-
----
-
-Refer to [examples.md](./references/examples.md) for comprehensive implementation examples including:
-- Basic MCP server setup
-- Multi-tool enterprise servers
-- Resource and prompt providers
-- Spring Boot integration
-- Error handling patterns
-- Security implementations
-
-## API Reference
-
-Complete API documentation is available in [api-reference.md](./references/api-reference.md) covering:
-- Core MCP classes and interfaces
-- Transport configuration
-- Client and server patterns
-- Error handling strategies
-- Configuration management
-- Testing and validation
+Use this pattern when you want LangChain4j to consume external MCP servers while still enforcing trust boundaries.
 
 ## Best Practices
 
-1. **Resource Management**: Always close MCP clients properly using try-with-resources
-2. **Error Handling**: Implement graceful degradation when servers fail
-3. **Security**: Use tool filtering and resource access controls
-4. **Performance**: Enable caching and optimize tool execution
-5. **Monitoring**: Implement health checks and observability
-6. **Testing**: Create comprehensive test suites with mocks
-7. **Documentation**: Document tools, resources, and prompts clearly
-8. **Configuration**: Use structured configuration for maintainability
-
-## References
-
-- [LangChain4j Documentation](https://langchain4j.com/docs/)
-- [Model Context Protocol Specification](https://modelcontextprotocol.org/)
-- [API Reference](./references/api-reference.md)
-- [Examples](./references/examples.md)
+- Keep each tool focused, deterministic, and well-described.
+- Prefer explicit schemas over free-form string arguments.
+- Separate read-only resources from tools with side effects.
+- Filter or disable privileged tools by default.
+- Pin external MCP server packages or container versions.
+- Capture metrics for connection failures, invocation latency, and tool error rates.
+- Store longer protocol details and framework-specific wiring in `references/` instead of expanding `SKILL.md` indefinitely.
 
 ## Constraints and Warnings
 
-- MCP servers should implement proper resource cleanup when stopped.
-- **External MCP Server Security**: Only connect to trusted, verified MCP servers; external servers (including those launched via `npm exec` or HTTP/SSE endpoints) can expose untrusted tools, resources, and prompts that may influence agent behavior through indirect prompt injection.
-- **Pin MCP Server Versions**: Always pin npm packages to specific versions (e.g., `@modelcontextprotocol/server-everything@0.6.2`) to prevent supply-chain attacks from unpinned dependencies.
-- **Validate External Content**: Content retrieved from MCP server resources (e.g., GitHub issues, database records) is untrusted user-generated data; validate and sanitize before acting on it.
-- Tool execution errors should be handled gracefully; never expose stack traces to clients.
-- Resource URIs should be validated to prevent directory traversal attacks.
-- Prompt templates should sanitize user inputs to prevent injection attacks.
-- Stdio transport requires proper process lifecycle management.
-- HTTP transport should implement authentication and rate limiting.
-- Multi-server configurations require careful handling of server failures.
-- Tool caching should have appropriate TTLs to prevent stale data.
-- Be cautious with tools that have external side effects; they may be called unexpectedly by AI models.
+- External MCP servers are untrusted integration boundaries and may expose malicious or misleading content.
+- Do not forward raw resource content directly into autonomous tool execution without validation.
+- Some LangChain4j and MCP APIs evolve quickly; adapt class names and builders to the versions already used in the project.
+- Long-running or stateful tools need explicit timeout, cancellation, and cleanup behavior.
+- Stdio-based servers require process lifecycle management and robust logging.
+
+## References
+
+- `references/examples.md`
+- `references/api-reference.md`
+
+## Related Skills
+
+- `prompt-engineering`
+- `spring-ai` 
+- `clean-architecture`

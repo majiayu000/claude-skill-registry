@@ -142,6 +142,18 @@ Identify the tool and route accordingly. Read full templates from [references/te
 
 ---
 
+**MiniMax (M2.7 / M2.5)**
+- OpenAI-compatible API — prompts that work with GPT models transfer directly
+- Strong at instruction following, structured output, and long-context synthesis — 1M context window on M2.7
+- M2.5-highspeed has a 204K context window and is optimized for speed — use for latency-sensitive tasks
+- Temperature must be between 0 and 1 (inclusive) — prompts that set temperature above 1 will fail
+- May output reasoning in `<think>` tags — add "Output only the final answer, no reasoning tags." if the user does not want visible thinking
+- Good at code generation, JSON output, and multi-step analysis — leverage these strengths
+- Responds well to explicit role assignment and structured prompts with clear output format specifications
+- For function calling: supports OpenAI-style tool definitions — include tool schemas directly
+
+---
+
 **Claude Code**
 - Agentic — runs tools, edits files, executes commands autonomously
 - Starting state + target state + allowed actions + forbidden actions + stop conditions + checkpoints

@@ -13,38 +13,29 @@ disable-model-invocation: true
 
 Ensure the project has accurate, whole-project-scope "how to run in development mode" instructions in the README — covering prerequisites, installation, external services, environment config, and run commands. Detect existing instructions and audit them against actual project state. Create or update with user approval.
 
-## Step 1: Detect Full Project Context
+## Step 1: Detect Full Project Context (agent-assisted)
 
-Build a comprehensive understanding of the project — enough to write accurate setup instructions.
+Delegate project scanning to a detection agent to keep the main context clean for content generation.
 
-**Read shared references for detection:**
+Read `$CLAUDE_PLUGIN_ROOT/skills/dev-setup/references/agent-prompts.md` for the full prompt template, detection tasks, and return format for the Project Context Detection Agent.
+
+Read these reference files and provide their content to the agent as context before the Agent 1 prompt:
 - `$CLAUDE_PLUGIN_ROOT/skills/init/references/multi-repo-detection.md` — workspace detection
 - `$CLAUDE_PLUGIN_ROOT/skills/init/references/project-detection.md` — monorepo/single-project detection
 - `$CLAUDE_PLUGIN_ROOT/skills/init/references/tech-stack-detection.md` — manifest → tech stack + package manager
+- `$CLAUDE_PLUGIN_ROOT/skills/dev-setup/references/dev-setup-sections.md` — signal-to-section mapping and external services detection
 
-**Shortcut when init was already run:** If `.claude/.optimus-version` exists, read `.claude/CLAUDE.md` for pre-detected tech stack, package manager, commands, and project structure. Still read manifests directly to verify and to capture details init doesn't store (engine constraints, dependency versions, service configs). If `.claude/.optimus-version` is absent, do full detection from manifests using the shared references above.
+Launch 1 `general-purpose` Agent tool call using the Agent 1 prompt from the agent-prompts.md file, prepended with the reference file contents above.
 
-**Detect tech stack and package manager** using the `tech-stack-detection.md` tables. Extract: project name, tech stack(s), build/test/lint/dev commands from manifest scripts, runtime version constraints (e.g., `engines.node` in package.json, `python_requires` in pyproject.toml, `rust-version` in Cargo.toml, `environment.sdk` in pubspec.yaml).
+| Agent | Role | Runs when |
+|-------|------|-----------|
+| 1 — Project Context Detection | Tech stack, PM, project structure, external services, env config, infrastructure signals, dev workflow signals | Always |
 
-**Detect project structure** using `project-detection.md` and `multi-repo-detection.md`. Determine: single project, monorepo (with subproject list and per-subproject tech stacks), or multi-repo workspace (with repo list).
-
-**Detect external services and dependencies** — read `$CLAUDE_PLUGIN_ROOT/skills/dev-setup/references/dev-setup-sections.md` for the signal-to-section mapping table. Scan for:
-
-- `docker-compose.yml` / `compose.yml`: parse `services` for databases (postgres, mysql, mongo, redis, elasticsearch), message queues (rabbitmq, kafka), caches, and other infrastructure. Note which services have `build:` (app services) vs image-only (infrastructure services).
-- `Dockerfile` / `Dockerfile.dev`: indicates Docker-based dev workflow.
-- `Makefile` / `Justfile`: scan for targets like `dev`, `start`, `setup`, `run`, `serve`, `up`, `docker-up`.
-- `Procfile` / `Procfile.dev`: process runner (foreman, overmind, honcho).
-- `.env.example` / `.env.sample` / `.env.template`: environment variable templates — read to understand required config variables.
-- Database config: `database.yml`, `prisma/schema.prisma`, `alembic.ini`, `knexfile.*`, `ormconfig.*`, migration directories.
-- Private registry indicators: `.npmrc` (registry config), `pip.conf`, `.pypirc`, Maven `settings.xml` references.
-- System tool requirements from configs: `nvm`/`.nvmrc`/`.node-version`, `pyenv`/`.python-version`, `rustup`/`rust-toolchain.toml`, `.tool-versions` (asdf).
-- Code generation: protobuf configs, `openapi-generator`, `build_runner` in Dart dev_dependencies, `sqlc.yaml`, GraphQL codegen configs (`codegen.ts`, `.graphqlrc.*`).
-- For monorepos: aggregate all services and dependencies across subprojects.
-- For multi-repo workspaces: gather context per repo, then synthesize a whole-workspace view (all repos' services, shared infrastructure, cross-repo dependencies).
+Wait for the agent to complete. Use the agent's **Context Detection Results** to populate the Step 1 Checkpoint below.
 
 ### Step 1 Checkpoint
 
-Print a **Context Summary** to the user:
+Print a **Context Summary** from the agent's Context Detection Results:
 
 - **Tech stack(s)** and **package manager(s)**
 - **Project structure** (single / monorepo with subprojects / multi-repo with repos)
@@ -55,35 +46,26 @@ Print a **Context Summary** to the user:
 
 Give the user a chance to correct misdetections before proceeding.
 
-## Step 2: Scan Existing Dev Instructions
+## Step 2: Scan Existing Dev Instructions (agent-assisted)
 
-Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/readme-section-detection.md` for the detection algorithm.
+Delegate documentation scanning to an audit agent that cross-checks existing docs against the detected project state.
 
-**Read the following documentation files** (skip any that don't exist):
-- Root `README.md`
-- `CONTRIBUTING.md`
-- `docs/development.md`, `docs/setup.md`, `docs/getting-started.md`
+Read `$CLAUDE_PLUGIN_ROOT/skills/dev-setup/references/agent-prompts.md` for the full prompt template, audit tasks, and return format for the Dev Instructions Audit Agent.
 
-For each file that exists, read its full content, then apply the detection algorithm from the reference above.
+Read this reference file and provide its content to the agent as context before the Agent 2 prompt:
+- `$CLAUDE_PLUGIN_ROOT/skills/init/references/readme-section-detection.md` — heading patterns, section boundary detection, classification rules
 
-For monorepos: focus on the root README (whole-project scope). Individual subproject READMEs are NOT the target — the goal is instructions to run everything together.
+Launch 1 `general-purpose` Agent tool call using the Agent 2 prompt from the agent-prompts.md file. **Provide the Context Detection Results from Step 1 as context** at the start of the agent prompt (before the readme-section-detection.md content and Agent 2 template).
 
-For multi-repo workspaces: scan workspace root `README.md` if it exists.
+| Agent | Role | Runs when |
+|-------|------|-----------|
+| 2 — Dev Instructions Audit | Read docs, apply heading detection, classify each aspect, cross-check against detected state | Always |
 
-**Classify each aspect** as: **Found & accurate**, **Found but outdated**, **Partial**, or **Missing**.
-
-Aspects to check:
-- **Prerequisites** — runtimes, system tools, version managers
-- **Installation** — dependency install commands
-- **External Services** — databases, queues, caches, how to start them
-- **Environment Config** — `.env` setup, required variables
-- **Running in Dev Mode** — start commands, expected URLs/ports
-- **Building** — production build command
-- **Testing** — test command, coverage
+Wait for the agent to complete. Use the agent's **Dev Instructions Audit Results** for the Step 3 assessment.
 
 ## Step 3: Present Assessment and Plan
 
-Present findings as a table with status per aspect (use the classification from Step 2).
+Present findings as a table with status per aspect (use the classification from the Dev Instructions Audit Results).
 
 **If all aspects are "Found & accurate":** Report to user — no action needed. Skip to Step 6 (report only).
 

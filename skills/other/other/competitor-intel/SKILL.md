@@ -11,6 +11,8 @@ description: >
 
 Automated competitor monitoring and intelligence gathering system.
 
+**Important:** Before running any competitor intel commands, ask the user which competitors they want to track. Do not assume or hardcode competitor names.
+
 ## Quick Start
 
 ### One-Time: Research a New Competitor
@@ -29,7 +31,7 @@ Then run an agent research session to populate the profile.
 python3 competitor-intel/scripts/run_daily.py
 
 # Or for a specific competitor
-python3 competitor-intel/scripts/run_daily.py --competitor growthx
+python3 competitor-intel/scripts/run_daily.py --competitor <competitor-slug>
 ```
 
 ### Weekly: Deep Dive + LinkedIn
@@ -57,9 +59,11 @@ python3 competitor-intel/scripts/generate_report.py --type weekly --date 2026-02
 
 ## Tracked Competitors
 
+Competitors are configured per-project. Ask the user which competitors to track, then add them here:
+
 | Competitor | Slug | Status |
 |---|---|---|
-| GrowthX.ai | growthx | Active |
+| *(ask user)* | — | — |
 
 ## Automation
 

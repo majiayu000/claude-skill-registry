@@ -21,24 +21,36 @@ PR=$(gh pr view --json number -q '.number')
 LAST_PUSH=$(git log -1 --format=%cI HEAD)
 
 # Inline review comments - filter out replies (keep only originals)
-gh api repos/$REPO/pulls/$PR/comments --jq '
+gh api repos/$REPO/pulls/$PR/comments?per_page=100 --jq '
   [.[] | select(.in_reply_to_id == null) |
    {id, path, user: .user.login, created_at, body: .body[0:200]}]
 '
 
 # PR-level reviews with non-empty body (CodeRabbit sections, Gemini, etc.)
-gh api repos/$REPO/pulls/$PR/reviews --jq '
+gh api repos/$REPO/pulls/$PR/reviews?per_page=100 --jq '
   [.[] | select(.body | length > 0) |
    {id, user: .user.login, state, submitted_at, body: .body[0:500]}]
 '
 ```
+
+**Cross-check review-attached comments**: CodeRabbit's review body states "Actionable comments posted: N". If the general `pulls/$PR/comments` endpoint returns fewer than N new originals from that reviewer, some comments are only available via the review-specific endpoint. Fetch them and merge by comment ID:
+
+```bash
+# $REVIEW_ID from the reviews fetch above; $EXPECTED from parsing "Actionable comments posted: N"
+gh api repos/$REPO/pulls/$PR/reviews/$REVIEW_ID/comments?per_page=100 --jq '
+  [.[] | select(.in_reply_to_id == null) |
+   {id, path, user: .user.login, created_at, body: .body[0:200]}]
+'
+```
+
+Deduplicate by `id` before continuing. Comments found only via the review-specific endpoint are valid inline comments and should be treated identically (same classification, same `in_reply_to` reply mechanism).
 
 **Filter new vs already-seen**: compare `created_at`/`submitted_at` with `$LAST_PUSH`. Comments posted after the last push are new. Mark older comments as "previous round" in the summary table.
 
 **Parse CodeRabbit review bodies**: the initial fetch truncates bodies for classification. For reviews from CodeRabbit (`user.login` starts with `coderabbitai`), fetch the full body separately:
 
 ```bash
-gh api repos/$REPO/pulls/$PR/reviews --jq '
+gh api repos/$REPO/pulls/$PR/reviews?per_page=100 --jq '
   [.[] | select(.user.login | startswith("coderabbitai")) |
    {id, submitted_at, body}]
 '
@@ -46,16 +58,18 @@ gh api repos/$REPO/pulls/$PR/reviews --jq '
 
 CodeRabbit posts structured `<details>` blocks containing outside-diff, duplicate, and nitpick comments. Each block includes file path, line range, severity, and optionally a "Prompt for AI Agents" with pre-built context. See `references/coderabbit_parsing.md` for full parsing guide.
 
-**Use CodeRabbit AI prompts when available**: if a comment (or the review body) contains a "Prompt for AI Agents" `<details>` block, use it to understand the issue and suggested approach. Always read the actual code before proposing a fix.
+**Use CodeRabbit AI prompts when available**: if a comment (or the review body) contains a "Prompt for AI Agents" `<details>` block, use it to understand the issue and suggested approach. Always read the actual code before proposing a fix. If the review body contains a "Prompt for all review comments with AI agents" block, read it first for cross-comment context before processing individual comments.
 
 Classify all comments by severity and process in order: CRITICAL > HIGH > MEDIUM > LOW.
 
 | Severity | Indicators | Action |
 |----------|------------|--------|
-| CRITICAL | `critical.svg`, `_🔒 Security_`, `_🔴 Critical_`, "security", "vulnerability" | Must fix |
-| HIGH | `high-priority.svg`, `_⚠️ Potential issue_`, `_🐛 Bug_`, `_🟠 Major_`, "High Severity" | Should fix |
+| CRITICAL | `critical.svg`, `_🔒 Security_`, `_🚨 Critical_`, `_🔴 Critical_`, "security", "vulnerability" | Must fix |
+| HIGH | `high-priority.svg`, `_⚠️ Potential issue_`, `_🐛 Bug_`, `_⚡ Performance_`, `_🟠 Major_`, "High Severity" | Should fix |
 | MEDIUM | `medium-priority.svg`, `_🛠️ Refactor suggestion_`, `_💡 Suggestion_`, "Medium Severity" | Recommended |
 | LOW | `low-priority.svg`, `_🧹 Nitpick_`, `_🔧 Optional_`, `_🟡 Minor_`, `_🔵 Trivial_`, `_⚪ Info_`, "style", "nit" | Optional |
+
+When a comment has both a type label and a secondary color badge (e.g., `_💡 Suggestion_ | _🟠 Major_`), the color badge is the **binding** severity and overrides the type-based default.
 
 See `references/severity_guide.md` for full detection patterns (Gemini badges, CodeRabbit emoji, Cursor comments, keyword fallback, related comments heuristics).
 
@@ -177,6 +191,7 @@ When bots (Gemini, Codex, etc.) review every push:
 ## Important rules
 
 - **ALWAYS** fetch both inline comments (`pulls/$PR/comments`) and review bodies (`pulls/$PR/reviews`)
+- **ALWAYS** cross-check "Actionable comments posted: N" against found originals; fetch `pulls/$PR/reviews/$REVIEW_ID/comments` when count mismatches
 - **ALWAYS** parse CodeRabbit review bodies for all section types (outside diff, duplicate, minor, nitpick)
 - **ALWAYS** use CodeRabbit "Prompt for AI Agents" as primary context when available
 - **ALWAYS** show the review summary table before processing

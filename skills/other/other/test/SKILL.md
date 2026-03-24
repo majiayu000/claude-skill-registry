@@ -30,7 +30,7 @@ You are the plugin's automated test runner. Execute each test, track pass/fail, 
 For fast automated validation, run the pytest suite:
 
 ```bash
-python3 -m pytest tests/ -v
+~/.bitwize-music/venv/bin/python3 -m pytest ${CLAUDE_PLUGIN_ROOT}/tests/ -v
 ```
 
 This covers:
@@ -39,10 +39,10 @@ This covers:
 
 Run specific categories:
 ```bash
-python3 -m pytest tests/plugin/test_skills.py -v       # Skills only
-python3 -m pytest tests/plugin/ -v                      # All plugin tests
-python3 -m pytest tests/unit/ -v                        # All unit tests
-python3 -m pytest tests/ -m "not slow" -v               # Skip slow tests
+~/.bitwize-music/venv/bin/python3 -m pytest ${CLAUDE_PLUGIN_ROOT}/tests/plugin/test_skills.py -v       # Skills only
+~/.bitwize-music/venv/bin/python3 -m pytest ${CLAUDE_PLUGIN_ROOT}/tests/plugin/ -v                      # All plugin tests
+~/.bitwize-music/venv/bin/python3 -m pytest ${CLAUDE_PLUGIN_ROOT}/tests/unit/ -v                        # All unit tests
+~/.bitwize-music/venv/bin/python3 -m pytest ${CLAUDE_PLUGIN_ROOT}/tests/ -m "not slow" -v               # Skip slow tests
 ```
 
 Pytest catches common issues fast. For deep behavioral tests, use the full test suite below.
@@ -121,16 +121,16 @@ For rapid validation during development, use pytest directly:
 
 ```bash
 # Run all tests
-python3 -m pytest tests/ -v
+~/.bitwize-music/venv/bin/python3 -m pytest ${CLAUDE_PLUGIN_ROOT}/tests/ -v
 
 # Run specific test modules
-python3 -m pytest tests/plugin/test_skills.py tests/plugin/test_templates.py -v
+~/.bitwize-music/venv/bin/python3 -m pytest ${CLAUDE_PLUGIN_ROOT}/tests/plugin/test_skills.py ${CLAUDE_PLUGIN_ROOT}/tests/plugin/test_templates.py -v
 
 # Verbose with short tracebacks
-python3 -m pytest tests/ -v --tb=short
+~/.bitwize-music/venv/bin/python3 -m pytest ${CLAUDE_PLUGIN_ROOT}/tests/ -v --tb=short
 
 # Quiet mode (for CI/logs)
-python3 -m pytest tests/ -q --tb=line
+~/.bitwize-music/venv/bin/python3 -m pytest ${CLAUDE_PLUGIN_ROOT}/tests/ -q --tb=line
 ```
 
 Test modules in `tests/plugin/`:

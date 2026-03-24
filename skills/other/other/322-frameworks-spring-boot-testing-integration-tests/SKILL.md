@@ -1,6 +1,6 @@
 ---
 name: 322-frameworks-spring-boot-testing-integration-tests
-description: Use when you need to write or improve integration tests — including Testcontainers, TestRestTemplate, data management, test structure, and performance optimization for integration tests. Part of the skills-for-java project
+description: Use when you need to write or improve integration tests — including Testcontainers with @ServiceConnection, @DataJdbcTest persistence slices, TestRestTemplate or MockMvcTester for HTTP, data isolation, and container lifecycle management for Spring Boot 4.0.x. Part of the skills-for-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -8,16 +8,20 @@ metadata:
 ---
 # Java Integration Testing Guidelines
 
-Apply Java integration testing guidelines.
+Apply Java integration testing guidelines for Spring Boot 4.0.x.
 
 **What is covered in this Skill?**
 
-- Integration test scope and purpose
-- Testcontainers for dependencies
-- TestRestTemplate for API testing
-- Data management strategies
-- Test structure and assertions
-- Performance and cleanup
+- Integration test scope and purpose (verify wiring and contracts, not unit-test duplication)
+- Testcontainers with @ServiceConnection for zero-config wiring (preferred)
+- @DynamicPropertySource as fallback for containers without built-in service connection support
+- Static @Container instances shared across test methods for performance
+- MockMvcTester for fluent AssertJ-based HTTP assertions (Spring Boot 4.0.x)
+- TestRestTemplate for full HTTP stack testing
+- @DataJdbcTest / @DataJpaTest persistence slices (load only persistence layer, start faster)
+- Data isolation: each test owns its scenario; no shared mutable state or ordering assumptions
+- @MockitoBean for mock registration (Spring Boot 4.0.x — @MockBean removed)
+- Resource lifecycle: Testcontainers JUnit integration for teardown; *IT / integration test separation
 
 **Scope:** Apply recommendations based on the reference rules and good/bad code examples.
 

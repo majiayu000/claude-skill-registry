@@ -150,6 +150,7 @@
     {"name": "data-visualization-expert", "repo": "alirezarezvani/claude-skills", "path": "data/visualization-expert", "description": "Create compelling data visualizations", "category": "data", "tags": ["visualization", "charts", "dashboards", "d3"], "stars": 0},
     {"name": "data-ml-engineer", "repo": "alirezarezvani/claude-skills", "path": "data/ml-engineer", "description": "Machine learning model development and deployment", "category": "data", "tags": ["ml", "machine-learning", "models", "training"], "stars": 0},
     {"name": "data-sql-expert", "repo": "alirezarezvani/claude-skills", "path": "data/sql-expert", "description": "Write optimized SQL queries and database operations", "category": "data", "tags": ["sql", "database", "queries", "optimization"], "stars": 0},
-    {"name": "awesome-claude-skills", "repo": "travisvn/awesome-claude-skills", "path": "", "description": "A curated list of awesome Claude Skills, resources, and tools", "category": "productivity", "tags": ["awesome", "list", "curated", "resources"], "stars": 0}
+    {"name": "awesome-claude-skills", "repo": "travisvn/awesome-claude-skills", "path": "", "description": "A curated list of awesome Claude Skills, resources, and tools", "category": "productivity", "tags": ["awesome", "list", "curated", "resources"], "stars": 0},
+    {"name": "pagerunner-skill", "repo": "Enreign/pagerunner-skill", "path": "", "description": "Real Chrome browser automation for AI agents. Authenticated sessions using real Chrome profiles, PII anonymization, multi-agent coordination via daemon and KV store.", "category": "development", "tags": ["browser", "automation", "mcp", "chrome", "security"], "stars": 0, "featured": false}
   ]
 }

@@ -1,6 +1,6 @@
 ---
 name: wiremock-standalone-docker
-description: Provides patterns for running WireMock as a standalone Docker container to mock external APIs for integration and end-to-end testing. Use when testing API integrations without modifying application code, simulating third-party services, or testing error scenarios.
+description: Provides patterns and configurations for running WireMock as a standalone Docker container. Generates mock HTTP endpoints, creates stub mappings for testing, validates integration scenarios, and simulates error conditions. Use when you need to mock APIs, create a mock server, stub external services, simulate third-party APIs, or fake API responses for integration testing.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
@@ -8,18 +8,16 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 ## Overview
 
-This skill provides comprehensive patterns for running WireMock as a standalone Docker container to mock external third-party APIs during integration and end-to-end testing phases. Unlike the `unit-test-wiremock-rest-api` skill which embeds WireMock within Java unit tests, this skill focuses on running WireMock as a separate service that simulates real API behavior.
+Provides patterns for running WireMock as a standalone Docker container to mock external APIs during integration and end-to-end testing. Runs WireMock as a separate service that simulates real API behavior for testing HTTP clients, retry logic, and error handling.
 
-## When to Use This Skill
+## When to Use
 
-Use this skill when:
-- Setting up mock servers for integration testing
-- Simulating third-party API responses without modifying test code
-- Testing error scenarios (timeouts, 5xx errors, rate limiting)
-- Running end-to-end tests with external service dependencies
-- Creating portable, reproducible test environments
-- Testing HTTP client configurations and retry logic
-- Demonstrating API contracts before real service implementation
+Use when you need to:
+- Mock external APIs during integration or end-to-end testing
+- Simulate error conditions (timeouts, 5xx, rate limiting) without real services
+- Test HTTP client configurations, retry logic, and error handling
+- Create portable, reproducible test environments
+- Validate API contracts before implementing the real service
 
 ## Instructions
 
@@ -65,11 +63,19 @@ Create JSON stub files in `wiremock/mappings/` for each scenario:
 docker compose up -d
 ```
 
-### Step 5: Configure HTTP Client
+### Step 5: Verify WireMock is Running
+
+```bash
+curl http://localhost:8080/__admin/mappings
+```
+
+Expected: Returns empty array `{"mappings":[]}` if no stubs loaded, or your stub definitions. If you get connection refused, check that the container is running: `docker compose ps`
+
+### Step 6: Configure HTTP Client
 
 Point your application to `http://localhost:8080` (or `http://wiremock:8080` in Docker network) instead of the real API.
 
-### Step 6: Test Edge Cases
+### Step 7: Test Edge Cases
 
 Always test: 200, 400, 401, 403, 404, 429, 500, timeouts, malformed responses.
 
@@ -141,7 +147,18 @@ services:
 - Ensure port 8080 is available or map to a different port
 - Configure Docker networking when running multiple containers
 - Enable `--global-response-templating` for dynamic responses
-- WireMock resets on container restart
+- WireMock resets mappings on container restart
+
+## Troubleshooting
+
+**Requests don't match stubs?**
+Check what WireMock received: `curl http://localhost:8080/__admin/requests` — shows unmatched requests with details about what was actually sent.
+
+**Stub file not loading?**
+Verify file location: place JSON stubs in `wiremock/mappings/` and response files in `wiremock/__files/`. Check file permissions.
+
+**Connection refused errors?**
+Run `docker compose ps` to verify the container is running. Check port conflicts with `lsof -i :8080`.
 
 ## References
 

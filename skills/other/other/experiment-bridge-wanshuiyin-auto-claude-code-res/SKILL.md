@@ -23,8 +23,10 @@ refine-logs/FINAL_PROPOSAL.md
 - **AUTO_DEPLOY = true** — Automatically deploy experiments after implementation. Set `false` to review code before deploying.
 - **SANITY_FIRST = true** — Run the sanity-stage experiment first (smallest, fastest) before launching the rest. Catches setup bugs early.
 - **MAX_PARALLEL_RUNS = 4** — Maximum number of experiments to deploy in parallel (limited by available GPUs).
+- **BASE_REPO = false** — GitHub repo URL to use as a base codebase. When set, clone it first and implement experiments on top of it.
+- **COMPACT = false** — When `true`, prefer `IDEA_CANDIDATES.md` over the full `IDEA_REPORT.md`, and append completed runs to `EXPERIMENT_LOG.md`.
 
-> Override: `/experiment-bridge "EXPERIMENT_PLAN.md" — auto deploy: false, max parallel: 2`
+> Override: `/experiment-bridge "EXPERIMENT_PLAN.md" — compact: true, base repo: https://github.com/org/project`
 
 ## Inputs
 
@@ -33,7 +35,8 @@ This skill expects one or more of:
 1. **`refine-logs/EXPERIMENT_PLAN.md`** (best) — claim-driven experiment roadmap from `/experiment-plan`
 2. **`refine-logs/EXPERIMENT_TRACKER.md`** — run-by-run execution table
 3. **`refine-logs/FINAL_PROPOSAL.md`** — method description for implementation context
-4. **`IDEA_REPORT.md`** — fallback if refine-logs don't exist
+4. **`IDEA_CANDIDATES.md`** — compact idea summary (preferred when `COMPACT = true`)
+5. **`IDEA_REPORT.md`** — fallback if refine-logs don't exist
 
 If none exist, ask the user what experiments to implement.
 
@@ -68,9 +71,15 @@ Proceeding to implementation.
 
 ### Phase 2: Implement Experiment Code
 
+**If `BASE_REPO` is set** — clone the repo first:
+
+```bash
+git clone <BASE_REPO> base_repo/
+```
+
 For each milestone (in order), write the experiment scripts:
 
-1. **Check existing code** — scan the project for existing experiment scripts, model code, data loaders. Reuse as much as possible.
+1. **Check existing code** — scan the project (or cloned `base_repo/`) for existing experiment scripts, model code, and data loaders. Reuse as much as possible.
 
 2. **Implement missing pieces:**
    - Training scripts with proper argparse (all hyperparameters configurable)
@@ -88,6 +97,7 @@ For each milestone (in order), write the experiment scripts:
    - Is the random seed fixed and controllable?
    - Are results saved in a parseable format (JSON/CSV)?
    - Does the code match FINAL_PROPOSAL.md's method description?
+   - **CRITICAL**: does evaluation compare predictions against dataset ground truth, never another model's output?
 
 ### Phase 3: Sanity Check (if SANITY_FIRST = true)
 
@@ -138,9 +148,10 @@ Deploy now? Or review the code first?
 As experiments complete:
 
 1. **Parse output files** (JSON/CSV/logs) for key metrics
-2. **Update `refine-logs/EXPERIMENT_TRACKER.md`** — fill in Status and Notes columns
-3. **Check success criteria** from EXPERIMENT_PLAN.md — did each experiment meet its bar?
-4. **Write initial results summary:**
+2. **Training quality check** — if W&B data is available, invoke `/training-check` to detect NaN, loss divergence, plateaus, or overfitting. If W&B is not configured, skip silently.
+3. **Update `refine-logs/EXPERIMENT_TRACKER.md`** — fill in Status and Notes columns
+4. **Check success criteria** from EXPERIMENT_PLAN.md — did each experiment meet its bar?
+5. **Write initial results summary:**
 
 ```markdown
 # Initial Experiment Results
@@ -175,6 +186,32 @@ As experiments complete:
 → /auto-review-loop "[topic]"
 ```
 
+### Phase 5.5: Write Compact Log (when COMPACT = true)
+
+**Skip entirely if `COMPACT` is `false`.**
+
+Append each completed experiment to `EXPERIMENT_LOG.md`:
+
+```markdown
+## [Run ID] — [timestamp]
+- **System**: [method name]
+- **Config**: [key hyperparameters]
+- **Result**: [primary metric = X.XX]
+- **Verdict**: [positive / negative / inconclusive]
+- **Reproduce**: `python train.py --config configs/run_id.yaml --seed 42`
+```
+
+### Phase 5.6: Auto Ablation Planning
+
+After main experiments (M2) complete with positive results, invoke `/ablation-planner` to design ablation studies:
+
+- Read the main results and method description
+- Generate a claim-driven ablation plan: which components to remove, what to compare, and expected outcomes
+- Append ablation blocks to `refine-logs/EXPERIMENT_PLAN.md` and `refine-logs/EXPERIMENT_TRACKER.md`
+- If main results are negative or inconclusive, skip ablation planning and note that in the summary
+
+If `/ablation-planner` is unavailable, skip silently.
+
 ### Phase 6: Handoff
 
 Present final status:
@@ -196,6 +233,7 @@ Ready for Workflow 2:
 ## Key Rules
 
 - **Large file handling**: If the Write tool fails due to file size, immediately retry using Bash (`cat << 'EOF' > file`) to write in chunks. Do NOT ask the user for permission — just do it silently.
+- **CRITICAL — Evaluation must use dataset ground truth.** Always compare model predictions against the dataset's actual labels/targets, never another model's output. If the task has official eval scripts, prefer them.
 - **Follow the plan.** Do not invent experiments not in EXPERIMENT_PLAN.md. If you think something is missing, note it but don't add it.
 - **Sanity first.** Never deploy a full suite without verifying the sanity stage passes.
 - **Reuse existing code.** Scan the project before writing new scripts. Extend, don't duplicate.

@@ -47,7 +47,12 @@ If the user pastes a Stitch design URL like `https://stitch.withgoogle.com/proje
 2. Call `[prefix]:list_projects` with `filter: "view=owned"` → select project by title → extract numeric ID
 3. Call `[prefix]:list_screens` with `projects/[projectId]` → pick the representative screen
 4. Call `[prefix]:get_screen` with numeric `projectId` and `screenId`
-5. Call `[prefix]:get_project` with `projects/[projectId]` → get `designTheme` (font, roundness, customColor, colorMode)
+5. Call `[prefix]:get_project` with `projects/[projectId]` → get full `designTheme` including:
+   - Core: `colorMode`, `customColor`, `colorVariant`, `roundness`, `spacingScale`
+   - Fonts: `headlineFont`, `bodyFont`, `labelFont`
+   - Colors: `namedColors` (40+ semantic tokens), override colors
+   - Documentation: `designMd` (auto-generated design system — if present, use as foundation for DESIGN.md)
+   - Backgrounds: `backgroundLight`, `backgroundDark`
 
 ### Download the assets
 
@@ -70,10 +75,14 @@ Work through these layers systematically:
 ### 2.1 Project identity
 - Project title and numeric ID (from `name` field)
 - `deviceType` (MOBILE / DESKTOP / TABLET / AGNOSTIC)
-- `designTheme.font`, `designTheme.roundness`, `designTheme.colorMode` from `get_project`
+- `designTheme.headlineFont`, `designTheme.bodyFont`, `designTheme.labelFont` (font roles)
+- `designTheme.roundness`, `designTheme.colorMode`, `designTheme.colorVariant`
+- `designTheme.spacingScale` (0=minimal, 1=compact, 2=normal, 3=spacious)
 
 ### 2.2 Visual atmosphere
-Describe the aesthetic in 2–3 sentences. Go beyond generic adjectives — what does it feel like? What editorial or product category does it evoke?
+If `designTheme.description` exists, use it as the starting point. If `designTheme.designMd` exists, it contains a full design system document — extract the creative direction, do's/don'ts, and component philosophy from it.
+
+Then describe the aesthetic in 2–3 sentences. Go beyond generic adjectives — what does it feel like? What editorial or product category does it evoke?
 
 Examples:
 - "Sophisticated minimalist sanctuary — gallery-like spaciousness, photography-first, Scandinavian calm"
@@ -81,6 +90,11 @@ Examples:
 - "Warm artisanal brand — handcrafted feel, organic textures, generous breathing room"
 
 ### 2.3 Color palette
+
+**If `namedColors` is available from `get_project`:** Use it as the authoritative color source. It provides 40+ semantic tokens (primary, secondary, tertiary, surface hierarchy, error states, inverse variants). Map these directly to palette documentation instead of guessing from HTML.
+
+**If `backgroundLight`/`backgroundDark` are available:** Use them as the canonical background colors for light/dark modes.
+
 For each key color, write:
 ```
 [Descriptive name] ([hex]) — [functional role]

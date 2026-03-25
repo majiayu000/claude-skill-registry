@@ -1,6 +1,6 @@
 ---
 name: zod-validation-utilities
-description: Provides practical Zod v4 validation utilities and schema patterns for TypeScript applications. Use when designing validation layers for API payloads, forms, configuration, and domain input parsing with strong type inference.
+description: Creates reusable Zod v4 schemas, validates API payloads, forms, and configuration input, transforms and coerces data safely, and handles validation errors with strong type inference for TypeScript applications. Use when designing validation layers, parsing `z.string()`, `z.object()`, or `z.email()` schemas, or implementing runtime type-safe data validation.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob
 ---
 
@@ -26,6 +26,18 @@ Production-ready Zod v4 patterns for reusable, type-safe validation with minimal
 4. Keep business invariants in `refine`/`superRefine` close to schema definitions
 5. Export both schema and inferred types (`z.input`/`z.output`) for consistency
 6. Reuse utility schemas (email, id, dates, pagination) to reduce duplication
+
+## Validation Workflow
+
+When integrating validation into an API handler or service:
+
+1. **Define** the schema at the boundary (handler, queue, config loader)
+2. **Parse** with `safeParse` to handle errors gracefully
+3. **Check** `result.success` to branch on failure/success
+4. **Use** `result.data` with full type inference in success path
+5. **Return** formatted errors or proceed with validated data
+
+See example 7 (`safeParse` workflow) for the complete pattern.
 
 ## Examples
 
@@ -155,6 +167,29 @@ const form = useForm<ProfileFormInput, unknown, ProfileFormOutput>({
   criteriaMode: "all",
 });
 ```
+
+### 7) Error handling workflow with `safeParse`
+
+```ts
+import { z } from "zod";
+import type { ZodError } from "zod";
+
+const ResultSchema = z.object({ id: z.string(), name: z.string() });
+
+function parseAndHandle(input: unknown) {
+  const result = ResultSchema.safeParse(input);
+
+  if (!result.success) {
+    const error = result.error as ZodError;
+    console.error("Validation failed:", error.errors);
+    return { success: false as const, error: error.format() };
+  }
+
+  return { success: true as const, data: result.data };
+}
+```
+
+> **Tip**: For advanced discriminated union patterns and complex React Hook Form workflows, see `references/advanced-patterns.md`.
 
 ## Best Practices
 

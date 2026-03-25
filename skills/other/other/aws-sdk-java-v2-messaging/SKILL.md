@@ -8,47 +8,38 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 ## Overview
 
-Provide comprehensive AWS messaging patterns using AWS SDK for Java 2.x for both SQS and SNS services. Include client setup, queue management, message operations, subscription management, and Spring Boot integration patterns.
+Provides patterns for SQS queues and SNS topics with AWS SDK for Java 2.x: client setup, queue management, message operations, subscriptions, and Spring Boot integration.
 
 ## When to Use
 
-Use this skill when working with:
-- Amazon SQS queues for message queuing
-- SNS topics for event publishing and notification
-- FIFO queues and standard queues
-- Dead Letter Queues (DLQ) for message handling
-- SNS subscriptions with email, SMS, SQS, Lambda endpoints
-- Pub/sub messaging patterns and event-driven architectures
-- Spring Boot integration with AWS messaging services
-- Testing strategies using LocalStack or Testcontainers
+- Setting up SQS queues (standard or FIFO) for message buffering
+- Implementing pub/sub with SNS topics and subscriptions
+- Processing messages from SQS queues with long polling
+- Configuring dead letter queues (DLQ) for error handling
+- Integrating AWS messaging with Spring Boot applications
+- Building event-driven architectures with SQS/SNS
 
-## Quick Start
+## Examples
 
-### Dependencies
+### Quick Setup
 
+**Dependencies:**
 ```xml
-<!-- SQS -->
 <dependency>
     <groupId>software.amazon.awssdk</groupId>
     <artifactId>sqs</artifactId>
 </dependency>
-
-<!-- SNS -->
 <dependency>
     <groupId>software.amazon.awssdk</groupId>
     <artifactId>sns</artifactId>
 </dependency>
 ```
 
-### Basic Client Setup
-
+**Client Configuration:**
 ```java
-import software.amazon.awssdk.regions.Region;
-import software.amazon.awssdk.services.sqs.SqsClient;
-import software.amazon.awssdk.services.sns.SnsClient;
-
 SqsClient sqsClient = SqsClient.builder()
     .region(Region.US_EAST_1)
+    .credentialsProvider(DefaultCredentialsProvider.create())
     .build();
 
 SnsClient snsClient = SnsClient.builder()
@@ -56,45 +47,30 @@ SnsClient snsClient = SnsClient.builder()
     .build();
 ```
 
-## Examples
+### SQS Operations
 
-### Basic SQS Operations
-
-#### Create and Send Message
+**Create and Send Message:**
 ```java
-import software.amazon.awssdk.regions.Region;
-import software.amazon.awssdk.services.sqs.SqsClient;
-import software.amazon.awssdk.services.sqs.model.*;
-
-// Setup SQS client
-SqsClient sqsClient = SqsClient.builder()
-    .region(Region.US_EAST_1)
-    .build();
-
-// Create queue
 String queueUrl = sqsClient.createQueue(CreateQueueRequest.builder()
     .queueName("my-queue")
     .build()).queueUrl();
 
-// Send message
 String messageId = sqsClient.sendMessage(SendMessageRequest.builder()
     .queueUrl(queueUrl)
     .messageBody("Hello, SQS!")
     .build()).messageId();
 ```
 
-#### Receive and Delete Message
+**Receive and Delete Message:**
 ```java
-// Receive messages with long polling
 ReceiveMessageResponse response = sqsClient.receiveMessage(ReceiveMessageRequest.builder()
     .queueUrl(queueUrl)
     .maxNumberOfMessages(10)
     .waitTimeSeconds(20)
     .build());
 
-// Process and delete messages
 response.messages().forEach(message -> {
-    System.out.println("Received: " + message.body());
+    processMessage(message.body());
     sqsClient.deleteMessage(DeleteMessageRequest.builder()
         .queueUrl(queueUrl)
         .receiptHandle(message.receiptHandle())
@@ -102,36 +78,8 @@ response.messages().forEach(message -> {
 });
 ```
 
-### Basic SNS Operations
-
-#### Create Topic and Publish
+**FIFO Queue:**
 ```java
-import software.amazon.awssdk.services.sns.SnsClient;
-import software.amazon.awssdk.services.sns.model.*;
-
-// Setup SNS client
-SnsClient snsClient = SnsClient.builder()
-    .region(Region.US_EAST_1)
-    .build();
-
-// Create topic
-String topicArn = snsClient.createTopic(CreateTopicRequest.builder()
-    .name("my-topic")
-    .build()).topicArn();
-
-// Publish message
-String messageId = snsClient.publish(PublishRequest.builder()
-    .topicArn(topicArn)
-    .subject("Test Notification")
-    .message("Hello, SNS!")
-    .build()).messageId();
-```
-
-### Advanced Examples
-
-#### FIFO Queue Pattern
-```java
-// Create FIFO queue
 Map<QueueAttributeName, String> attributes = Map.of(
     QueueAttributeName.FIFO_QUEUE, "true",
     QueueAttributeName.CONTENT_BASED_DEDUPLICATION, "true"
@@ -142,180 +90,145 @@ String fifoQueueUrl = sqsClient.createQueue(CreateQueueRequest.builder()
     .attributes(attributes)
     .build()).queueUrl();
 
-// Send FIFO message with group ID
-String fifoMessageId = sqsClient.sendMessage(SendMessageRequest.builder()
+sqsClient.sendMessage(SendMessageRequest.builder()
     .queueUrl(fifoQueueUrl)
     .messageBody("Order #12345")
     .messageGroupId("orders")
     .messageDeduplicationId(UUID.randomUUID().toString())
-    .build()).messageId();
+    .build());
 ```
 
-#### SNS to SQS Subscription
-```java
-// Create SQS queue for subscription
-String subscriptionQueueUrl = sqsClient.createQueue(CreateQueueRequest.builder()
-    .queueName("notification-subscriber")
-    .build()).queueUrl();
+### SNS Operations
 
-// Get queue ARN
+**Create Topic and Publish:**
+```java
+String topicArn = snsClient.createTopic(CreateTopicRequest.builder()
+    .name("my-topic")
+    .build()).topicArn();
+
+snsClient.publish(PublishRequest.builder()
+    .topicArn(topicArn)
+    .subject("Test Notification")
+    .message("Hello, SNS!")
+    .build());
+```
+
+**SNS to SQS Subscription:**
+```java
 String queueArn = sqsClient.getQueueAttributes(GetQueueAttributesRequest.builder()
-    .queueUrl(subscriptionQueueUrl)
+    .queueUrl(queueUrl)
     .attributeNames(QueueAttributeName.QUEUE_ARN)
     .build()).attributes().get(QueueAttributeName.QUEUE_ARN);
 
-// Subscribe SQS to SNS
-String subscriptionArn = snsClient.subscribe(SubscribeRequest.builder()
+snsClient.subscribe(SubscribeRequest.builder()
     .protocol("sqs")
     .endpoint(queueArn)
     .topicArn(topicArn)
-    .build()).subscriptionArn();
+    .build());
 ```
 
-### Spring Boot Integration Example
-
+### Spring Boot Integration
 ```java
 @Service
 @RequiredArgsConstructor
 public class OrderNotificationService {
-
     private final SnsClient snsClient;
     private final ObjectMapper objectMapper;
 
     @Value("${aws.sns.order-topic-arn}")
     private String orderTopicArn;
 
-    public void sendOrderNotification(Order order) {
-        try {
-            String jsonMessage = objectMapper.writeValueAsString(order);
-
-            snsClient.publish(PublishRequest.builder()
-                .topicArn(orderTopicArn)
-                .subject("New Order Received")
-                .message(jsonMessage)
-                .messageAttributes(Map.of(
-                    "orderType", MessageAttributeValue.builder()
-                        .dataType("String")
-                        .stringValue(order.getType())
-                        .build()))
-                .build());
-
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to send order notification", e);
-        }
+    public void sendOrderNotification(Order order) throws JsonProcessingException {
+        snsClient.publish(PublishRequest.builder()
+            .topicArn(orderTopicArn)
+            .subject("New Order Received")
+            .message(objectMapper.writeValueAsString(order))
+            .messageAttributes(Map.of(
+                "orderType", MessageAttributeValue.builder()
+                    .dataType("String")
+                    .stringValue(order.getType())
+                    .build()))
+            .build());
     }
 }
 ```
 
-## Best Practices
-
-### SQS Best Practices
-- **Use long polling**: Set `waitTimeSeconds` (20-40 seconds) to reduce empty responses
-- **Batch operations**: Use `sendMessageBatch` for multiple messages to reduce API calls
-- **Visibility timeout**: Set appropriately based on message processing time (default 30 seconds)
-- **Delete messages**: Always delete messages after successful processing
-- **Handle duplicates**: Implement idempotent processing for retries
-- **Implement DLQ**: Route failed messages to dead letter queues for analysis
-- **Monitor queue depth**: Use CloudWatch alarms for high queue backlog
-- **Use FIFO queues**: When message order and deduplication are critical
-
-### SNS Best Practices
-- **Use filter policies**: Reduce noise by filtering messages at the source
-- **Message attributes**: Add metadata for subscription routing decisions
-- **Retry logic**: Handle transient failures with exponential backoff
-- **Monitor failed deliveries**: Set up CloudWatch alarms for failed notifications
-- **Security**: Use IAM policies for access control and data encryption
-- **FIFO topics**: Use when order and deduplication are critical
-- **Avoid large payloads**: Keep messages under 256KB for optimal performance
-
-### General Guidelines
-- **Region consistency**: Use the same region for all AWS resources
-- **Resource naming**: Use consistent naming conventions for queues and topics
-- **Error handling**: Implement proper exception handling and logging
-- **Testing**: Use LocalStack for local development and testing
-- **Documentation**: Document subscription endpoints and message formats
-
 ## Instructions
 
-### Setup AWS Credentials
-Configure AWS credentials using environment variables, AWS CLI, or IAM roles:
+### Implement Message Processing (with Validation)
+
+1. **Create queues/topics** with appropriate configuration
+2. **Send messages** and validate `messageId` is returned
+3. **Receive messages** with long polling (`waitTimeSeconds: 20`)
+4. **Process messages** - validate payload before processing
+5. **Delete messages** only after successful processing - verify deletion response
+6. **Check DLQ** periodically for failed messages using `redrivePolicy`
+7. **Verify delivery** - monitor CloudWatch `NumberOfMessagesSent` metric
+
+**Validation Checklist:**
+```java
+// After send
+if (messageId == null || messageId.isEmpty()) {
+    throw new MessagingException("Message send failed - no messageId returned");
+}
+
+// After receive
+if (response.messages().isEmpty()) {
+    log.debug("No messages available - normal with long polling");
+}
+
+// After delete
+if (!deleteResponse.sdkHttpResponse().isSuccessful()) {
+    throw new MessagingException("Message deletion failed");
+}
+```
+
+### Setup Credentials
 ```bash
 export AWS_ACCESS_KEY_ID=your-access-key
 export AWS_SECRET_ACCESS_KEY=your-secret-key
 export AWS_REGION=us-east-1
 ```
 
-### Configure Clients
-```java
-// Basic client configuration
-SqsClient sqsClient = SqsClient.builder()
-    .region(Region.US_EAST_1)
-    .build();
-
-// Advanced client with custom configuration
-SnsClient snsClient = SnsClient.builder()
-    .region(Region.US_EAST_1)
-    .credentialsProvider(DefaultCredentialsProvider.create())
-    .httpClient(UrlConnectionHttpClient.create())
-    .build();
-```
-
-### Implement Message Processing
-1. **Connect** to SQS/SNS using the AWS SDK clients
-2. **Create** queues and topics as needed
-3. **Send/receive** messages with appropriate timeout settings
-4. **Process** messages in batches for efficiency
-5. **Delete** messages after successful processing
-6. **Handle** failures with proper error handling and retries
-
-### Integrate with Spring Boot
-1. **Configure** beans for `SqsClient` and `SnsClient` in `@Configuration` classes
-2. **Use** `@Value` to inject queue URLs and topic ARNs from properties
-3. **Create** service classes with business logic for messaging operations
-4. **Implement** error handling with `@Retryable` or custom retry logic
-5. **Test** integration using Testcontainers or LocalStack
-
 ### Monitor and Debug
-- Use AWS CloudWatch for monitoring queue depth and message metrics
-- Enable AWS SDK logging for debugging client operations
-- Implement proper logging for message processing activities
-- Use AWS X-Ray for distributed tracing in production environments
+- CloudWatch metrics: `ApproximateNumberOfMessages`, `NumberOfMessagesSent`, `NumberOfMessagesReceived`
+- Enable SDK logging: `software.amazon.awssdk` at DEBUG level
+- Use X-Ray for distributed tracing
 
-## Troubleshooting
+## Best Practices
 
-### Common Issues
-- **Queue does not exist**: Verify queue URL and permissions
-- **Message not received**: Check visibility timeout and consumer logic
-- **Permission denied**: Verify IAM policies and credentials
-- **Connection timeout**: Check network connectivity and region configuration
-- **Rate limiting**: Implement retry logic with exponential backoff
+**SQS:**
+- Use long polling (20-40s) to reduce empty responses and costs
+- Always delete messages after successful processing
+- Implement idempotent processing for duplicate handling
+- Configure DLQ (`redrivePolicy`) for failed messages
+- Use FIFO queues when order matters (300 msg/sec limit)
 
-### Performance Optimization
-- Use long polling to reduce empty responses
-- Batch message operations to minimize API calls
-- Adjust visibility timeout based on processing time
-- Implement connection pooling and reuse clients
-- Use appropriate message sizes to avoid fragmentation
+**SNS:**
+- Use filter policies to reduce unnecessary deliveries
+- Keep messages under 256KB
+- Implement retry with exponential backoff
+- Monitor `NumberOfNotificationFailed` metric
+
+**General:**
+- Use IAM roles over static credentials
+- Reuse clients (they are thread-safe)
+- Test with LocalStack or Testcontainers
 
 ## Detailed References
 
-For comprehensive API documentation and advanced patterns, see:
-
-- [references/detailed-sqs-operations.md](references/detailed-sqs-operations.md) - Complete SQS operations reference
-- [references/detailed-sns-operations.md](references/detailed-sns-operations.md) - Complete SNS operations reference
-- [references/spring-boot-integration.md](references/spring-boot-integration.md) - Spring Boot integration patterns
-- [references/aws-official-documentation.md](references/aws-official-documentation.md) - Official AWS documentation and best practices
+- [references/detailed-sqs-operations.md](references/detailed-sqs-operations.md)
+- [references/detailed-sns-operations.md](references/detailed-sns-operations.md)
+- [references/spring-boot-integration.md](references/spring-boot-integration.md)
+- [references/aws-official-documentation.md](references/aws-official-documentation.md)
 
 ## Constraints and Warnings
 
-- **Message Size**: SQS and SNS messages limited to 256KB
-- **Visibility Timeout**: SQS messages become visible again after timeout if not deleted
-- **Input Validation**: Always validate and sanitize message body content before processing; SQS/SNS messages may contain untrusted user-generated payloads that should never be directly interpreted as commands or injected into templates without sanitization
-- **FIFO Naming**: FIFO queues and topics must end with `.fifo` suffix
-- **FIFO Throughput**: FIFO queues have lower throughput limits (300 msg/sec)
-- **Message Retention**: SQS messages retained maximum 14 days
-- **Dead Letter Queues**: Configure DLQ to prevent message loss
-- **Subscription Limits**: SNS topics have limits on number of subscriptions
-- **Filter Policies**: SNS filter policies have complexity limits
-- **Cross-Region**: SQS queues are region-specific; SNS topics can be cross-region
-- **Cost**: Both services charge per API call and data transfer
+- **Message Size**: Maximum 256KB for SQS and SNS
+- **Visibility Timeout**: Undeleted messages reappear after timeout - always delete after processing
+- **Input Validation**: Sanitize message body before processing - messages may contain untrusted payloads
+- **FIFO Naming**: Must end with `.fifo` suffix
+- **FIFO Throughput**: 300 msg/sec per queue (use partitioning for higher throughput)
+- **Message Retention**: SQS retains messages max 14 days
+- **DLQ Required**: Configure dead letter queue to prevent message loss
+- **Region-Specific**: SQS queues are region-specific; cross-region requires SNS

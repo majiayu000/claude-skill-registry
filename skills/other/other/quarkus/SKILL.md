@@ -1,9 +1,13 @@
 ---
-name: quarkus-platform
-description: Guides implementation, debugging, and architecture decisions across the Quarkus platform and extension ecosystem. Use when building or maintaining Quarkus applications, selecting extensions, or troubleshooting build and runtime behavior.
+name: quarkus
+description: Guides Quarkus development across REST APIs, CDI dependency injection, Hibernate ORM, Panache, configuration, OpenAPI, templates, messaging, security, observability, packaging, and tooling. Use when building Quarkus applications, adding endpoints or clients, configuring datasources or OIDC, debugging build or runtime issues, or choosing extensions.
+license: MIT
+metadata:
+  author: b6k-dev
+  version: "0.1.0"
 ---
 
-# Quarkus Platform
+# Quarkus
 
 Use this as the entrypoint skill for Quarkus work in any kind of project.
 Use decision tree below to find the right domain, then load detailed references.
@@ -77,14 +81,21 @@ What do you need?
 │     └─ observability-tracing
 ├─ Native image, jars, and container packaging
 │  └─ native-and-packaging
+│     ├─ Need a native build, closed-world metadata, native SSL, or native-only runtime behavior
+│     │  └─ native-image
+│     ├─ Need JVM artifact shape decisions: `fast-jar`, `uber-jar`, `mutable-jar`, layout, or re-augmentation
+│     │  └─ packaging-jars
+│     └─ Need container image packaging: Jib, Docker, Podman, OpenShift, Buildpacks, tags, push, or base images
+│        └─ packaging-containers
 ├─ Testing 
-│  └─ testing 
+│  └─ Start with the feature module you are testing (for example `security-testing` or `native-image`)
 └─ Dev mode, CLI, build plugins
    └─ tooling
 ```
 
 ## General guidelines 
 
+- Quarkus resolves much of its framework wiring at build time, so expect many integration mistakes to fail during build or startup rather than deep at runtime.
 - Align all extension versions through the Quarkus platform BOM.
 - Start with the smallest extension set, then add only what the feature needs.
 - Never skip writing high-level integration tests and prefer them opposed to unit testing individual components. Only write unit tests when they are actually beneficial, e.g. implementing methods with complex logic

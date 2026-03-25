@@ -1,6 +1,6 @@
 ---
 name: typescript-security-review
-description: Provides comprehensive security review capability for TypeScript and Node.js applications, validates code against XSS, injection, CSRF, JWT/OAuth2 flaws, dependency CVEs, and secrets exposure. Use when performing security audits, before deployment, reviewing authentication/authorization implementations, or ensuring OWASP compliance for Express, NestJS, and Next.js. Triggers on "security review", "check for security issues", "TypeScript security audit".
+description: Provides security review capability for TypeScript/Node.js applications, validates code against XSS, injection, CSRF, JWT/OAuth2 flaws, dependency CVEs, and secrets exposure. Use when performing security audits, before deployment, reviewing authentication/authorization implementations, or ensuring OWASP compliance for Express, NestJS, and Next.js. Triggers on "security review", "check for security issues", "TypeScript security audit".
 allowed-tools: Read, Edit, Grep, Glob, Bash
 ---
 
@@ -8,9 +8,7 @@ allowed-tools: Read, Edit, Grep, Glob, Bash
 
 ## Overview
 
-This skill provides structured, comprehensive security review for TypeScript and Node.js applications. It evaluates code against OWASP Top 10, framework-specific security best practices, and production-readiness security criteria. The review produces actionable findings classified by severity (Critical, High, Medium, Low) with concrete remediation examples.
-
-This skill delegates to the `typescript-security-expert` agent for deep security analysis when invoked through the agent system.
+Security review for TypeScript/Node.js applications. Evaluates code against OWASP Top 10, framework-specific patterns, and production-readiness criteria. Findings are classified by severity (Critical, High, Medium, Low) with remediation examples. Delegates to the `typescript-security-expert` agent for deep analysis.
 
 ## When to Use
 
@@ -27,27 +25,45 @@ This skill delegates to the `typescript-security-expert` agent for deep security
 
 ## Instructions
 
-1. **Identify Scope**: Determine which files and modules are under security review. Prioritize authentication, authorization, data handling, API endpoints, and configuration files. Use `grep` to find security-sensitive patterns (`eval`, `exec`, `innerHTML`, password handling, JWT operations).
+1. **Identify Scope**: Determine which files and modules are under review. Prioritize authentication, authorization, data handling, API endpoints, and configuration files. Use `grep` to find security-sensitive patterns (`eval`, `exec`, `innerHTML`, password handling, JWT operations).
 
-2. **Check Authentication & Authorization**: Review JWT implementation (signing algorithm, expiration, refresh tokens), OAuth2/OIDC integration, session management, password hashing (bcrypt/argon2), and multi-factor authentication. Verify that all protected routes enforce authentication.
+   **Checkpoint**: Verify at least 3 security-sensitive files/modules identified before proceeding.
 
-3. **Scan for Injection Vulnerabilities**: Check for SQL/NoSQL injection in database queries, command injection in `exec`/`spawn`, template injection, and LDAP injection. Verify that all user input is validated and parameterized queries are used.
+2. **Check Authentication & Authorization**: Review JWT implementation (signing algorithm, expiration, refresh tokens), OAuth2/OIDC integration, session management, password hashing (bcrypt/argon2), and multi-factor authentication. Verify protected routes enforce authentication.
 
-4. **Review Input Validation**: Check that all API inputs are validated with Zod, Joi, or class-validator. Verify schema completeness — no missing fields, proper type constraints, length limits, and format validation. Check for validation bypass paths.
+   **Checkpoint**: Use `grep` to confirm all route handlers have auth guards or middleware applied.
 
-5. **Assess XSS Prevention**: Review React component output for `dangerouslySetInnerHTML` usage, check Content Security Policy headers, verify HTML sanitization for user-generated content, and check template rendering in server-side code.
+3. **Scan for Injection Vulnerabilities**: Check for SQL/NoSQL injection in database queries, command injection in `exec`/`spawn`, template injection, and LDAP injection. Verify parameterized queries and input validation.
 
-6. **Check Secrets Management**: Scan for hardcoded credentials, API keys, and secrets in source code. Verify `.env` files are gitignored, environment variables are validated at startup, and secrets are accessed through proper management services.
+   **Checkpoint**: Use `grep` to confirm all database queries use parameterization — no string concatenation with user input.
 
-7. **Review Dependency Security**: Run `npm audit` or check `package-lock.json` for known vulnerabilities. Identify outdated dependencies with known CVEs. Check for unnecessary dependencies that increase attack surface.
+4. **Review Input Validation**: Check API inputs validated with Zod, Joi, or class-validator. Verify schema completeness — proper type constraints, length limits, format validation. Check for validation bypass paths.
 
-8. **Evaluate Security Headers & Configuration**: Check for helmet.js or manual security header configuration. Review CORS policy, rate limiting, HTTPS enforcement, cookie security flags (HttpOnly, Secure, SameSite), and CSP configuration.
+   **Checkpoint**: Verify all public API endpoints have corresponding validation schemas.
 
-9. **Produce Security Report**: Generate a structured report with severity-classified findings (Critical, High, Medium, Low), remediation guidance with code examples, and a security posture summary.
+5. **Assess XSS Prevention**: Review React components for `dangerouslySetInnerHTML` usage, check Content Security Policy headers, verify HTML sanitization for user-generated content. See `references/xss-prevention.md` for detailed patterns.
+
+   **Checkpoint**: Use `grep` to confirm any `dangerouslySetInnerHTML` usage has sanitization via DOMPurify or equivalent.
+
+6. **Check Secrets Management**: Scan for hardcoded credentials, API keys, secrets in source code. Verify `.env` files are gitignored, secrets accessed through proper management services.
+
+   **Checkpoint**: Run `grep -r "password\|secret\|api.*key\|token" --include="*.ts"` to identify potential secrets in code.
+
+7. **Review Dependency Security**: Run `npm audit` or check `package-lock.json` for known vulnerabilities. Identify outdated dependencies with CVEs. Check for unnecessary dependencies.
+
+   **Checkpoint**: Verify `npm audit` results are reviewed and critical vulnerabilities addressed.
+
+8. **Evaluate Security Headers & Configuration**: Check helmet.js or manual security header configuration. Review CORS policy, rate limiting, HTTPS enforcement, cookie security flags (HttpOnly, Secure, SameSite), and CSP. See `references/security-headers.md` for configuration examples.
+
+   **Checkpoint**: Use `grep` to confirm helmet or equivalent security headers are applied globally.
+
+9. **Produce Security Report**: Generate structured report with severity-classified findings, remediation guidance with code examples, and security posture summary.
+
+   **Feedback Loop**: If Critical or High vulnerabilities found, re-scan related modules for similar patterns before finalizing. Use `grep` to identify if the same vulnerability pattern exists elsewhere.
 
 ## Examples
 
-### Example 1: JWT Security Review
+### JWT Security Review
 
 ```typescript
 // ❌ Critical: Weak JWT configuration
@@ -60,13 +76,8 @@ function generateToken(user: User) {
   // Missing expiration, weak secret, no algorithm specification
 }
 
-function verifyToken(token: string) {
-  return jwt.verify(token, SECRET); // No algorithm restriction
-}
-
 // ✅ Secure: Proper JWT configuration
 import jwt from 'jsonwebtoken';
-import { randomBytes } from 'crypto';
 
 const JWT_SECRET = process.env.JWT_SECRET;
 if (!JWT_SECRET || JWT_SECRET.length < 32) {
@@ -95,7 +106,7 @@ function verifyToken(token: string): JwtPayload {
 }
 ```
 
-### Example 2: SQL Injection Prevention
+### SQL Injection Prevention
 
 ```typescript
 // ❌ Critical: SQL injection vulnerability
@@ -128,105 +139,7 @@ async function findUser(email: string) {
 }
 ```
 
-### Example 3: Input Validation
-
-```typescript
-// ❌ High: Missing input validation
-app.post('/api/users', async (req, res) => {
-  const user = await createUser(req.body);
-  res.json(user);
-});
-
-// ✅ Secure: Comprehensive input validation with Zod
-import { z } from 'zod';
-
-const createUserSchema = z.object({
-  name: z.string().min(1).max(100).trim(),
-  email: z.string().email().max(254).toLowerCase(),
-  password: z.string()
-    .min(12, 'Password must be at least 12 characters')
-    .regex(/[A-Z]/, 'Must contain uppercase letter')
-    .regex(/[a-z]/, 'Must contain lowercase letter')
-    .regex(/[0-9]/, 'Must contain a number'),
-  role: z.enum(['user', 'editor']).default('user'),
-});
-
-app.post('/api/users', async (req, res) => {
-  const result = createUserSchema.safeParse(req.body);
-  if (!result.success) {
-    return res.status(400).json({ errors: result.error.flatten() });
-  }
-  const user = await createUser(result.data);
-  res.status(201).json(user);
-});
-```
-
-### Example 4: XSS Prevention
-
-```tsx
-// ❌ High: XSS vulnerability through dangerouslySetInnerHTML
-function Comment({ content }: { content: string }) {
-  return <div dangerouslySetInnerHTML={{ __html: content }} />;
-}
-
-// ✅ Secure: Sanitize HTML before rendering
-import DOMPurify from 'isomorphic-dompurify';
-
-function Comment({ content }: { content: string }) {
-  const sanitized = DOMPurify.sanitize(content, {
-    ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a', 'p', 'br'],
-    ALLOWED_ATTR: ['href', 'target', 'rel'],
-  });
-  return <div dangerouslySetInnerHTML={{ __html: sanitized }} />;
-}
-
-// ✅ Better: Use a markdown renderer instead of raw HTML
-import ReactMarkdown from 'react-markdown';
-
-function Comment({ content }: { content: string }) {
-  return <ReactMarkdown>{content}</ReactMarkdown>;
-}
-```
-
-### Example 5: Security Headers and Configuration
-
-```typescript
-// ❌ Medium: Missing security headers and permissive CORS
-const app = express();
-app.use(cors()); // Allows all origins
-
-// ✅ Secure: Comprehensive security configuration
-import helmet from 'helmet';
-import cors from 'cors';
-import rateLimit from 'express-rate-limit';
-
-const app = express();
-
-app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'"],
-      styleSrc: ["'self'", "'unsafe-inline'"],
-      imgSrc: ["'self'", 'data:', 'https:'],
-    },
-  },
-  hsts: { maxAge: 31536000, includeSubDomains: true, preload: true },
-}));
-
-app.use(cors({
-  origin: process.env.ALLOWED_ORIGINS?.split(',') ?? [],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-}));
-
-app.use(rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-  standardHeaders: true,
-  legacyHeaders: false,
-}));
-```
+See `references/xss-prevention.md` for XSS patterns and `references/security-headers.md` for security headers configuration.
 
 ## Review Output Format
 
@@ -280,4 +193,7 @@ Prioritized action items with code examples for the most critical fixes.
 See the `references/` directory for detailed security documentation:
 - `references/owasp-typescript.md` — OWASP Top 10 mapped to TypeScript/Node.js patterns
 - `references/common-vulnerabilities.md` — Common vulnerability patterns and remediation
-- `references/dependency-security.md` — Dependency scanning and supply chain security guide
+- `references/dependency-security.md` — Dependency scanning and supply chain security
+- `references/xss-prevention.md` — XSS prevention patterns for React and server-side
+- `references/security-headers.md` — Security headers and CORS configuration examples
+- `references/input-validation.md` — Input validation patterns with Zod and class-validator

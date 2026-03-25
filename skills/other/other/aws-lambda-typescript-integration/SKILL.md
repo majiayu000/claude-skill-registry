@@ -1,6 +1,6 @@
 ---
 name: aws-lambda-typescript-integration
-description: Provides AWS Lambda integration patterns for TypeScript with cold start optimization. Use when deploying TypeScript functions to AWS Lambda, choosing between NestJS framework and raw TypeScript approaches, optimizing cold starts, configuring API Gateway or ALB integration, or implementing serverless TypeScript applications. Triggers include "create lambda typescript", "deploy typescript lambda", "nestjs lambda aws", "raw typescript lambda", "aws lambda typescript performance".
+description: Provides AWS Lambda integration patterns for TypeScript with cold start optimization. Use when creating or deploying TypeScript Lambda functions, choosing between NestJS framework and raw TypeScript approaches, optimizing cold starts, configuring API Gateway or ALB integration, or implementing serverless TypeScript applications. Triggers include "create lambda typescript", "deploy typescript lambda", "nestjs lambda aws", "raw typescript lambda", "aws lambda typescript performance".
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
@@ -10,22 +10,20 @@ Patterns for creating high-performance AWS Lambda functions in TypeScript with o
 
 ## Overview
 
-This skill provides complete patterns for AWS Lambda TypeScript development, covering two main approaches:
+Two approaches for TypeScript Lambda:
 
-1. **NestJS Framework** - Full-featured framework with dependency injection, modular architecture, and extensive ecosystem
-2. **Raw TypeScript** - Minimal overhead approach with maximum control and smaller bundle size
+1. **NestJS Framework** - Dependency injection, modular architecture, larger bundle (100KB+)
+2. **Raw TypeScript** - Minimal overhead, smaller bundle (<50KB), maximum control
 
-Both approaches support API Gateway and ALB integration with production-ready configurations.
+Both support API Gateway and ALB integration.
 
 ## When to Use
 
-Use this skill when:
 - Creating new Lambda functions in TypeScript
-- Migrating existing TypeScript applications to Lambda
-- Optimizing cold start performance for TypeScript Lambda
-- Choosing between framework-based and minimal TypeScript approaches
+- Optimizing cold start performance
+- Choosing between NestJS and minimal TypeScript
 - Configuring API Gateway or ALB integration
-- Setting up deployment pipelines for TypeScript Lambda
+- Setting up CI/CD for TypeScript Lambda
 
 ## Instructions
 
@@ -267,6 +265,20 @@ Resources:
             Method: ANY
 ```
 
+### Deployment Validation
+
+**Pre-deploy checks:**
+1. Run `npm test` - verify all tests pass
+2. Run `npm run build` - confirm TypeScript compiles without errors
+3. Verify bundle size < 50MB (unzipped)
+4. Run `serverless invoke local` or `sam local invoke` - test locally
+
+**Post-deploy verification:**
+1. Run `serverless invoke` or `aws lambda invoke` - verify handler executes
+2. Test API endpoint via curl or Postman
+3. Check CloudWatch logs for errors
+4. Verify cold start time meets SLA
+
 For complete deployment configurations including CI/CD, see [Serverless Deployment](references/serverless-deployment.md).
 
 ## Constraints and Warnings
@@ -317,10 +329,7 @@ For detailed guidance on specific topics:
 
 ### Example 1: Create a NestJS REST API
 
-**Input:**
-```
-Create a TypeScript Lambda REST API using NestJS for a todo application
-```
+**Input:** `Create a TypeScript Lambda REST API using NestJS for a todo application`
 
 **Process:**
 1. Initialize NestJS project with `nest new`
@@ -329,18 +338,16 @@ Create a TypeScript Lambda REST API using NestJS for a todo application
 4. Configure `serverless.yml` with API Gateway events
 5. Deploy with Serverless Framework
 
-**Output:**
-- Complete NestJS project structure
-- REST API with CRUD endpoints
-- DynamoDB integration
-- Deployment configuration
+**Validation:**
+- Run `serverless invoke local -f api` - verify handler works
+- Check bundle size < 250MB
+- Test deployed endpoint returns 200 OK
+
+**Output:** NestJS project with REST API, DynamoDB integration, deployment config
 
 ### Example 2: Create a Raw TypeScript Lambda
 
-**Input:**
-```
-Create a minimal TypeScript Lambda function with optimal cold start
-```
+**Input:** `Create a minimal TypeScript Lambda function with optimal cold start`
 
 **Process:**
 1. Set up TypeScript project with esbuild
@@ -349,17 +356,16 @@ Create a minimal TypeScript Lambda function with optimal cold start
 4. Set up SAM or Serverless deployment
 5. Optimize bundle size with tree shaking
 
-**Output:**
-- Minimal TypeScript Lambda project
-- Optimized bundle < 50KB
-- Cold start < 100ms
+**Validation:**
+- Run `sam local invoke` - test locally before deploying
+- Verify bundle < 50KB with `du -sh dist/`
+- Confirm cold start < 100ms via CloudWatch
+
+**Output:** Minimal TypeScript Lambda, bundle < 50KB, cold start < 100ms
 
 ### Example 3: Deploy with GitHub Actions
 
-**Input:**
-```
-Configure CI/CD for TypeScript Lambda with SAM
-```
+**Input:** `Configure CI/CD for TypeScript Lambda with SAM`
 
 **Process:**
 1. Create GitHub Actions workflow
@@ -368,10 +374,12 @@ Configure CI/CD for TypeScript Lambda with SAM
 4. Bundle with esbuild
 5. Deploy with SAM
 
-**Output:**
-- Complete `.github/workflows/deploy.yml`
-- Multi-stage pipeline
-- Integrated test automation
+**Validation:**
+- Verify CI pipeline runs `npm test` successfully
+- Confirm `sam validate` passes in pipeline
+- Check CloudFormation stack created successfully
+
+**Output:** GitHub Actions workflow, multi-stage pipeline, test automation
 
 ## Version
 

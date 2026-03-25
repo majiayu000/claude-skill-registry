@@ -6,1137 +6,355 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 # Spring Boot JWT Security
 
-Comprehensive JWT (JSON Web Token) authentication and authorization patterns for Spring Boot 3.5.x applications using Spring Security 6.x and the JJWT library. This skill provides production-ready implementations for stateless authentication, role-based access control, and integration with modern authentication providers.
+JWT authentication and authorization patterns for Spring Boot 3.5.x using Spring Security 6.x and JJWT. Covers token generation, validation, refresh strategies, RBAC/ABAC, and OAuth2 integration.
 
 ## Overview
 
-JWT authentication enables stateless, scalable security for Spring Boot applications. This skill covers complete JWT lifecycle management including token generation, validation, refresh strategies, and integration patterns with database-backed and OAuth2 authentication providers. Implementations follow Spring Security 6.x best practices with modern SecurityFilterChain configuration.
+This skill provides implementation patterns for stateless JWT authentication in Spring Boot applications. It covers the complete authentication flow including token generation with JJWT 0.12.6, Bearer/cookie-based authentication, refresh token rotation, and method-level authorization with `@PreAuthorize` expressions.
+
+Key capabilities:
+- Access and refresh token generation with configurable expiration
+- Bearer token and HttpOnly cookie authentication strategies
+- Integration with Spring Data JPA and OAuth2 providers
+- RBAC with role/permission-based `@PreAuthorize` rules
+- Token revocation and blacklisting for logout/rotation
 
 ## When to Use
 
-Use this skill when:
-- Implementing stateless authentication for REST APIs
-- Building SPA (Single Page Application) backends with JWT
-- Securing microservices with token-based authentication
-- Integrating with OAuth2 providers (Google, GitHub, etc.)
-- Implementing role-based or permission-based access control
-- Setting up JWT refresh token strategies
-- Migrating from session-based to token-based authentication
-- Building mobile API backends
-- Implementing cross-origin authentication with CORS
+Activate when user requests involve:
+- "Implement JWT authentication", "secure REST API with tokens"
+- "Spring Security 6.x configuration", "SecurityFilterChain setup"
+- "Role-based access control", "RBAC", `` `@PreAuthorize` ``
+- "Refresh token", "token rotation", "token revocation"
+- "OAuth2 integration", "social login", "Google/GitHub auth"
+- "Stateless authentication", "SPA backend security"
+- "JWT filter", "OncePerRequestFilter", "Bearer token"
+- "Cookie-based JWT", "HttpOnly cookie"
+- "Permission-based access control", "custom PermissionEvaluator"
 
-## Prerequisites
+## Quick Reference
 
-- Java 17+ (for records and pattern matching)
-- Spring Boot 3.5.x (for Spring Security 6.x integration)
-- JJWT library (io.jsonwebtoken) for JWT operations
-- Maven or Gradle build system
-- Basic understanding of Spring Security concepts
+### Dependencies (JJWT 0.12.6)
 
-## Dependencies
+| Artifact | Scope |
+|----------|-------|
+| `spring-boot-starter-security` | compile |
+| `spring-boot-starter-oauth2-resource-server` | compile |
+| `io.jsonwebtoken:jjwt-api:0.12.6` | compile |
+| `io.jsonwebtoken:jjwt-impl:0.12.6` | runtime |
+| `io.jsonwebtoken:jjwt-jackson:0.12.6` | runtime |
+| `spring-security-test` | test |
 
-### Maven
+See [references/jwt-quick-reference.md](references/jwt-quick-reference.md) for Maven and Gradle snippets.
 
-```xml
-<dependencies>
-    <!-- Spring Security -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-security</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-data-jpa</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-validation</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
-    </dependency>
+### Key Configuration Properties
 
-    <!-- JWT Library -->
-    <dependency>
-        <groupId>io.jsonwebtoken</groupId>
-        <artifactId>jjwt-api</artifactId>
-        <version>0.12.6</version>
-    </dependency>
-    <dependency>
-        <groupId>io.jsonwebtoken</groupId>
-        <artifactId>jjwt-impl</artifactId>
-        <version>0.12.6</version>
-        <scope>runtime</scope>
-    </dependency>
-    <dependency>
-        <groupId>io.jsonwebtoken</groupId>
-        <artifactId>jjwt-jackson</artifactId>
-        <version>0.12.6</version>
-        <scope>runtime</scope>
-    </dependency>
+| Property | Example Value | Notes |
+|----------|--------------|-------|
+| `jwt.secret` | `${JWT_SECRET}` | Min 256 bits, never hardcode |
+| `jwt.access-token-expiration` | `900000` | 15 min in milliseconds |
+| `jwt.refresh-token-expiration` | `604800000` | 7 days in milliseconds |
+| `jwt.issuer` | `my-app` | Validated on every token |
+| `jwt.cookie-name` | `jwt-token` | For cookie-based auth |
+| `jwt.cookie-http-only` | `true` | Always true in production |
+| `jwt.cookie-secure` | `true` | Always true with HTTPS |
 
-    <!-- Database -->
-    <dependency>
-        <groupId>com.h2database</groupId>
-        <artifactId>h2</artifactId>
-        <scope>runtime</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.postgresql</groupId>
-        <artifactId>postgresql</artifactId>
-        <scope>runtime</scope>
-    </dependency>
+### Authorization Annotations
 
-    <!-- Testing -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-test</artifactId>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.security</groupId>
-        <artifactId>spring-security-test</artifactId>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.testcontainers</groupId>
-        <artifactId>junit-jupiter</artifactId>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.security</groupId>
-        <artifactId>spring-security-test</artifactId>
-        <scope>test</scope>
-    </dependency>
-</dependencies>
-```
-
-### Gradle
-
-```kotlin
-dependencies {
-    // Spring Security
-    implementation("org.springframework.boot:spring-boot-starter-security")
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
-
-    // JWT Library
-    implementation("io.jsonwebtoken:jjwt-api:0.12.6")
-    implementation("io.jsonwebtoken:jjwt-impl:0.12.6")
-    implementation("io.jsonwebtoken:jjwt-jackson:0.12.6")
-
-    // Database
-    runtimeOnly("com.h2database:h2")
-    runtimeOnly("org.postgresql:postgresql")
-
-    // Testing
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.springframework.security:spring-security-test")
-    testImplementation("org.testcontainers:junit-jupiter")
-}
-```
+| Annotation | Example |
+|-----------|---------|
+| `@PreAuthorize("hasRole('ADMIN')")` | Role check |
+| `@PreAuthorize("hasAuthority('USER_READ')")` | Permission check |
+| `@PreAuthorize("hasPermission(#id, 'Doc', 'READ')")` | Domain object check |
+| `@PreAuthorize("@myService.canAccess(#id)")` | Spring bean check |
 
 ## Instructions
 
-Follow these steps to implement JWT authentication in Spring Boot:
+### Step 1 — Add Dependencies
 
-### 1. Add Dependencies
+Include `spring-boot-starter-security`, `spring-boot-starter-oauth2-resource-server`, and the three JJWT artifacts in your build file. See [references/jwt-quick-reference.md](references/jwt-quick-reference.md) for exact Maven/Gradle snippets.
 
-Include spring-boot-starter-security, spring-boot-starter-oauth2-resource-server, and JJWT library (jjwt-api, jjwt-impl, jjwt-jackson) in your project.
-
-### 2. Configure JWT Properties
-
-Set JWT secret, access token expiration, refresh token expiration, and issuer in application.yml. Never hardcode secrets in version control.
-
-### 3. Create JWT Service
-
-Implement JwtService with methods to generate tokens, extract claims, validate tokens, and check expiration. Use Jwts.builder() for token creation.
-
-### 4. Implement JWT Filter
-
-Create JwtAuthenticationFilter extending OncePerRequestFilter. Extract JWT from Authorization header or cookie, validate it, and set SecurityContext authentication.
-
-### 5. Configure Security Filter Chain
-
-Set up SecurityConfig with `@`EnableWebSecurity and `@`EnableMethodSecurity. Configure stateless session management, CSRF disabled, and authorization rules.
-
-### 6. Create Authentication Endpoints
-
-Implement /register, /authenticate, /refresh, and /logout endpoints. Return access and refresh tokens on successful authentication.
-
-### 7. Implement Refresh Token Strategy
-
-Store refresh tokens in database with expiration and revocation status. Implement token rotation for enhanced security.
-
-### 8. Add Authorization Rules
-
-Apply `@`PreAuthorize annotations with role-based (hasRole) or permission-based (hasAuthority) checks to protected endpoints.
-
-### 9. Test Security Configuration
-
-Write tests for authentication success/failure, authorization access control, and token validation scenarios.
-
-## Quick Start
-
-### 1. Application Configuration
+### Step 2 — Configure application.yml
 
 ```yaml
-# application.yml
-spring:
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: ${GOOGLE_CLIENT_ID}
-            client-secret: ${GOOGLE_CLIENT_SECRET}
-            scope: openid, profile, email
-
 jwt:
-  secret: ${JWT_SECRET:my-very-secret-key-that-is-at-least-256-bits-long}
-  access-token-expiration: 86400000    # 24 hours in milliseconds
-  refresh-token-expiration: 604800000 # 7 days in milliseconds
-  issuer: spring-boot-jwt-example
+  secret: ${JWT_SECRET:change-me-min-32-chars-in-production}
+  access-token-expiration: 900000
+  refresh-token-expiration: 604800000
+  issuer: my-app
   cookie-name: jwt-token
-  cookie-secure: false                 # Set to true in production with HTTPS
   cookie-http-only: true
-  cookie-same-site: lax
+  cookie-secure: false   # true in production
 ```
 
-### 2. Modern Spring Security 6.x Configuration
+See [references/jwt-complete-configuration.md](references/jwt-complete-configuration.md) for the full properties reference.
+
+### Step 3 — Implement JwtService
+
+Core operations: generate access token, generate refresh token, extract username, validate token.
+
+```java
+@Service
+public class JwtService {
+
+    public String generateAccessToken(UserDetails userDetails) {
+        return Jwts.builder()
+            .subject(userDetails.getUsername())
+            .issuer(issuer)
+            .issuedAt(new Date())
+            .expiration(new Date(System.currentTimeMillis() + accessTokenExpiration))
+            .claim("authorities", getAuthorities(userDetails))
+            .signWith(getSigningKey())
+            .compact();
+    }
+
+    public boolean isTokenValid(String token, UserDetails userDetails) {
+        try {
+            String username = extractUsername(token);
+            return username.equals(userDetails.getUsername()) && !isTokenExpired(token);
+        } catch (JwtException e) {
+            return false;
+        }
+    }
+}
+```
+
+See [references/jwt-complete-configuration.md](references/jwt-complete-configuration.md) for the complete JwtService including key management and claim extraction.
+
+### Step 4 — Create JwtAuthenticationFilter
+
+Extend `OncePerRequestFilter` to extract a JWT from the `Authorization: Bearer` header (or HttpOnly cookie), validate it, and set the `SecurityContext`.
+
+```java
+@Component
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request,
+            HttpServletResponse response, FilterChain chain)
+            throws ServletException, IOException {
+        String authHeader = request.getHeader("Authorization");
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            chain.doFilter(request, response);
+            return;
+        }
+        String jwt = authHeader.substring(7);
+        String username = jwtService.extractUsername(jwt);
+        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+            UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+            if (jwtService.isTokenValid(jwt, userDetails)) {
+                UsernamePasswordAuthenticationToken authToken =
+                    new UsernamePasswordAuthenticationToken(
+                        userDetails, null, userDetails.getAuthorities());
+                authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                SecurityContextHolder.getContext().setAuthentication(authToken);
+            }
+        }
+        chain.doFilter(request, response);
+    }
+}
+```
+
+See [references/configuration.md](references/configuration.md) for the cookie-based variant.
+
+### Step 5 — Configure SecurityFilterChain
 
 ```java
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-@RequiredArgsConstructor
 public class SecurityConfig {
-
-    private final JwtAuthenticationFilter jwtAuthFilter;
-    private final AuthenticationProvider authenticationProvider;
-    private final LogoutHandler logoutHandler;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-            .csrf(csrf -> csrf.disable())
-            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .authorizeHttpRequests(authz -> authz
-                .requestMatchers("/api/auth/**").permitAll()
-                .requestMatchers("/api/public/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api-docs/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/swagger-ui/**").permitAll()
-                .anyRequest().authenticated()
-            )
-            .authenticationProvider(authenticationProvider)
-            .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
-            .logout(logout -> logout
-                .logoutUrl("/api/auth/logout")
-                .addLogoutHandler(logoutHandler)
-                .logoutSuccessHandler((request, response, authentication) ->
-                    SecurityContextHolder.clearContext())
-            );
-
-        return http.build();
-    }
-
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOriginPatterns(List.of("*"));
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(List.of("*"));
-        configuration.setAllowCredentials(true);
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
-}
-```
-
-### 3. JWT Service Implementation
-
-```java
-@Service
-@RequiredArgsConstructor
-@Slf4j
-public class JwtService {
-
-    @Value("${jwt.secret}")
-    private String secret;
-
-    @Value("${jwt.access-token-expiration}")
-    private long accessTokenExpiration;
-
-    @Value("${jwt.refresh-token-expiration}")
-    private long refreshTokenExpiration;
-
-    @Value("${jwt.issuer}")
-    private String issuer;
-
-    private final RefreshTokenService refreshTokenService;
-
-    /**
-     * Generate access token for user
-     */
-    public String generateAccessToken(UserDetails userDetails) {
-        return generateToken(userDetails, accessTokenExpiration);
-    }
-
-    /**
-     * Generate refresh token for user
-     */
-    public String generateRefreshToken(UserDetails userDetails) {
-        return refreshTokenService.createRefreshToken(userDetails.getUsername());
-    }
-
-    /**
-     * Extract username from JWT token
-     */
-    public String extractUsername(String token) {
-        return extractClaims(token).getSubject();
-    }
-
-    /**
-     * Extract claims from JWT token
-     */
-    private Claims extractClaims(String token) {
-        return Jwts.parser()
-                .verifyWith(getSigningKey())
-                .build()
-                .parseSignedClaims(token)
-                .getPayload();
-    }
-
-    /**
-     * Validate JWT token
-     */
-    public boolean isTokenValid(String token, UserDetails userDetails) {
-        try {
-            final String username = extractUsername(token);
-            return (username.equals(userDetails.getUsername()) &&
-                    !isTokenExpired(token) &&
-                    extractClaims(token).getIssuer().equals(issuer));
-        } catch (JwtException | IllegalArgumentException e) {
-            log.debug("Invalid JWT token: {}", e.getMessage());
-            return false;
-        }
-    }
-
-    /**
-     * Check if token is expired
-     */
-    private boolean isTokenExpired(String token) {
-        return extractClaims(token).getExpiration().before(new Date());
-    }
-
-    /**
-     * Generate token with expiration
-     */
-    private String generateToken(UserDetails userDetails, long expiration) {
-        Date now = new Date();
-        Date expiryDate = new Date(now.getTime() + expiration);
-
-        return Jwts.builder()
-                .setSubject(userDetails.getUsername())
-                .setIssuer(issuer)
-                .setIssuedAt(now)
-                .setExpiration(expiryDate)
-                .claim("authorities", getAuthorities(userDetails))
-                .claim("type", "access")
-                .signWith(getSigningKey())
-                .compact();
-    }
-
-    /**
-     * Get signing key from secret
-     */
-    private SecretKey getSigningKey() {
-        byte[] keyBytes = secret.getBytes(StandardCharsets.UTF_8);
-        return Keys.hmacShaKeyFor(keyBytes);
-    }
-
-    /**
-     * Extract authorities from user details
-     */
-    private List<String> getAuthorities(UserDetails userDetails) {
-        return userDetails.getAuthorities().stream()
-                .map(GrantedAuthority::getAuthority)
-                .collect(Collectors.toList());
-    }
-}
-```
-
-### 3. JWT Authentication Filter
-
-```java
-@Component
-@RequiredArgsConstructor
-public class JwtAuthenticationFilter extends OncePerRequestFilter {
-
-    private final JwtService jwtService;
-    private final UserDetailsService userDetailsService;
-
-    @Override
-    protected void doFilterInternal(
-            @NonNull HttpServletRequest request,
-            @NonNull HttpServletResponse response,
-            @NonNull FilterChain filterChain) throws ServletException, IOException {
-
-        final String authHeader = request.getHeader("Authorization");
-        final String jwt;
-        final String userEmail;
-
-        // Check for Bearer token
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            // Check for JWT cookie
-            String jwtCookie = WebUtils.getCookie(request, "jwt-token") != null
-                ? WebUtils.getCookie(request, "jwt-token").getValue()
-                : null;
-
-            if (jwtCookie != null) {
-                jwt = jwtCookie;
-                userEmail = jwtService.extractUsername(jwt);
-
-                if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-                    UserDetails userDetails = userDetailsService.loadUserByUsername(userEmail);
-
-                    if (jwtService.isTokenValid(jwt, userDetails)) {
-                        UsernamePasswordAuthenticationToken authToken =
-                            new UsernamePasswordAuthenticationToken(
-                                userDetails,
-                                null,
-                                userDetails.getAuthorities()
-                            );
-                        authToken.setDetails(
-                            new WebAuthenticationDetailsSource().buildDetails(request)
-                        );
-                        SecurityContextHolder.getContext().setAuthentication(authToken);
-                    }
-                }
-            }
-
-            filterChain.doFilter(request, response);
-            return;
-        }
-
-        jwt = authHeader.substring(7);
-        userEmail = jwtService.extractUsername(jwt);
-
-        if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            UserDetails userDetails = userDetailsService.loadUserByUsername(userEmail);
-
-            if (jwtService.isTokenValid(jwt, userDetails)) {
-                UsernamePasswordAuthenticationToken authToken =
-                    new UsernamePasswordAuthenticationToken(
-                        userDetails,
-                        null,
-                        userDetails.getAuthorities()
-                    );
-                authToken.setDetails(
-                    new WebAuthenticationDetailsSource().buildDetails(request)
-                );
-                SecurityContextHolder.getContext().setAuthentication(authToken);
-            }
-        }
-
-        filterChain.doFilter(request, response);
-    }
-}
-```
-
-### 4. Security Configuration
-
-```java
-@Configuration
-@EnableWebSecurity
-@RequiredArgsConstructor
-@EnableMethodSecurity(prePostEnabled = true)
-public class SecurityConfig {
-
-    private final JwtAuthenticationFilter jwtAuthFilter;
-    private final AuthenticationProvider authenticationProvider;
-    private final LogoutHandler logoutHandler;
-
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
+        return http
             .csrf(AbstractHttpConfigurer::disable)
+            .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                // Public endpoints
-                .requestMatchers("/api/v1/auth/**").permitAll()
-                .requestMatchers("/api/v1/oauth2/**").permitAll()
-                .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                .requestMatchers("/health").permitAll()
-
-                // Admin endpoints
-                .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
-
-                // Protected endpoints
+                .requestMatchers("/api/auth/**", "/swagger-ui/**").permitAll()
                 .anyRequest().authenticated()
-            )
-            .sessionManagement(sess -> sess
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
             .authenticationProvider(authenticationProvider)
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
-            .oauth2Login(oauth2 -> oauth2
-                .loginPage("/oauth2/authorization/google")
-                .defaultSuccessUrl("/api/v1/auth/oauth2/success", true)
-                .failureUrl("/api/v1/auth/oauth2/failure")
-            )
-            .logout(logout -> logout
-                .logoutUrl("/api/v1/auth/logout")
-                .addLogoutHandler(logoutHandler)
-                .logoutSuccessHandler((request, response, authentication) ->
-                    SecurityContextHolder.clearContext())
-            );
-
-        return http.build();
-    }
-
-    @Bean
-    public AuthenticationProvider authenticationProvider(UserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
-        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(userDetailsService);
-        authProvider.setPasswordEncoder(passwordEncoder);
-        return authProvider;
-    }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
-        return config.getAuthenticationManager();
+            .build();
     }
 }
 ```
 
-## Authentication Controllers
+See [references/jwt-complete-configuration.md](references/jwt-complete-configuration.md) for CORS, logout handler, and OAuth2 login integration.
+
+### Step 6 — Create Authentication Endpoints
+
+Expose `/register`, `/authenticate`, `/refresh`, and `/logout` via `@RestController`. Return `accessToken` + `refreshToken` in the response body (and optionally set an HttpOnly cookie).
+
+See [references/examples.md](references/examples.md) for the complete `AuthenticationController` and `AuthenticationService`.
+
+### Step 7 — Implement Refresh Token Strategy
+
+Store refresh tokens in the database with `user_id`, `expiry_date`, `revoked`, and `expired` columns. On `/refresh`, verify the stored token, revoke it, and issue a new pair (token rotation).
+
+See [references/token-management.md](references/token-management.md) for `RefreshToken` entity, rotation logic, and Redis-based blacklisting.
+
+### Step 8 — Add Authorization Rules
+
+Use `@EnableMethodSecurity` and `@PreAuthorize` annotations for fine-grained control:
 
 ```java
-@RestController
-@RequestMapping("/api/v1/auth")
-@RequiredArgsConstructor
-@Slf4j
-public class AuthenticationController {
-
-    private final AuthenticationService authenticationService;
-
-    @PostMapping("/register")
-    public ResponseEntity<AuthenticationResponse> register(
-            @Valid @RequestBody RegisterRequest request) {
-        log.info("Registering new user: {}", request.getEmail());
-        return ResponseEntity.ok(authenticationService.register(request));
-    }
-
-    @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> authenticate(
-            @Valid @RequestBody AuthenticationRequest request) {
-        log.info("Authenticating user: {}", request.getEmail());
-        AuthenticationResponse response = authenticationService.authenticate(request);
-
-        return ResponseEntity.ok()
-                .header("Set-Cookie", createJwtCookie(response.getAccessToken()))
-                .body(response);
-    }
-
-    @PostMapping("/refresh")
-    public ResponseEntity<AuthenticationResponse> refreshToken(
-            @RequestBody RefreshTokenRequest request) {
-        log.info("Refreshing token for user");
-        return ResponseEntity.ok(authenticationService.refreshToken(request));
-    }
-
-    @GetMapping("/me")
-    public ResponseEntity<UserProfile> getCurrentUser() {
-        return ResponseEntity.ok(authenticationService.getCurrentUser());
-    }
-
-    private String createJwtCookie(String token) {
-        return String.format(
-            "jwt-token=%s; Path=/; HttpOnly; SameSite=Lax; Max-Age=%d",
-            token,
-            86400 // 24 hours
-        );
-    }
-}
-```
-
-## Authorization Patterns
-
-### Role-Based Access Control (RBAC)
-
-```java
-@RestController
-@RequestMapping("/api/v1/admin")
-@RequiredArgsConstructor
 @PreAuthorize("hasRole('ADMIN')")
-public class AdminController {
+public Page<UserResponse> getAllUsers(Pageable pageable) { ... }
 
-    private final AdminService adminService;
-
-    @GetMapping("/users")
-    @PreAuthorize("hasAuthority('ADMIN_READ')")
-    public ResponseEntity<Page<UserResponse>> getAllUsers(Pageable pageable) {
-        return ResponseEntity.ok(adminService.getAllUsers(pageable));
-    }
-
-    @DeleteMapping("/users/{id}")
-    @PreAuthorize("hasAuthority('ADMIN_DELETE')")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-        adminService.deleteUser(id);
-        return ResponseEntity.noContent().build();
-    }
-
-    @PostMapping("/users/{id}/roles")
-    @PreAuthorize("hasAuthority('ADMIN_MANAGE_ROLES')")
-    public ResponseEntity<UserResponse> assignRole(
-            @PathVariable Long id,
-            @Valid @RequestBody AssignRoleRequest request) {
-        return ResponseEntity.ok(adminService.assignRole(id, request));
-    }
-}
+@PreAuthorize("hasPermission(#documentId, 'Document', 'READ')")
+public Document getDocument(Long documentId) { ... }
 ```
 
-### Permission-Based Access Control
+See [references/authorization-patterns.md](references/authorization-patterns.md) for RBAC entity model, `PermissionEvaluator`, and ABAC patterns.
 
-```java
-@Service
-@RequiredArgsConstructor
-public class DocumentService {
-
-    @PreAuthorize("hasPermission(#documentId, 'Document', 'READ')")
-    public Document getDocument(Long documentId) {
-        return documentRepository.findById(documentId)
-                .orElseThrow(() -> new DocumentNotFoundException(documentId));
-    }
-
-    @PreAuthorize("hasPermission(#documentId, 'Document', 'WRITE') or hasRole('ADMIN')")
-    public Document updateDocument(Long documentId, UpdateDocumentRequest request) {
-        Document document = getDocument(documentId);
-        document.setContent(request.content());
-        return documentRepository.save(document);
-    }
-
-    @PreAuthorize("@documentSecurityService.canAccess(#userEmail, #documentId)")
-    public Document shareDocument(String userEmail, Long documentId) {
-        // Implementation
-    }
-}
-```
-
-### Custom Permission Evaluator
-
-```java
-@Component
-@RequiredArgsConstructor
-public class DocumentPermissionEvaluator implements PermissionEvaluator {
-
-    private final DocumentRepository documentRepository;
-
-    @Override
-    public boolean hasPermission(
-            Authentication authentication,
-            Object targetDomainObject,
-            Object permission) {
-
-        if (authentication == null || !(targetDomainObject instanceof Document)) {
-            return false;
-        }
-
-        Document document = (Document) targetDomainObject;
-        String username = authentication.getName();
-        String requiredPermission = (String) permission;
-
-        // Admin can do anything
-        if (hasRole(authentication, "ADMIN")) {
-            return true;
-        }
-
-        // Owner can read and write
-        if (document.getOwner().getUsername().equals(username)) {
-            return "READ".equals(requiredPermission) || "WRITE".equals(requiredPermission);
-        }
-
-        // Check shared permissions
-        return document.getSharedWith().stream()
-                .anyMatch(share -> share.getUser().getUsername().equals(username)
-                        && share.getPermission().name().equals(requiredPermission));
-    }
-
-    @Override
-    public boolean hasPermission(
-            Authentication authentication,
-            Serializable targetId,
-            String targetType,
-            Object permission) {
-
-        if (!"Document".equals(targetType)) {
-            return false;
-        }
-
-        Document document = documentRepository.findById((Long) targetId).orElse(null);
-        return document != null && hasPermission(authentication, document, permission);
-    }
-
-    private boolean hasRole(Authentication authentication, String role) {
-        return authentication.getAuthorities().stream()
-                .anyMatch(auth -> auth.getAuthority().equals("ROLE_" + role));
-    }
-}
-```
-
-## Database Entities
-
-```java
-@Entity
-@Table(name = "users")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(unique = true, nullable = false)
-    private String username;
-
-    @Column(unique = true, nullable = false)
-    private String email;
-
-    @Column(nullable = false)
-    private String password;
-
-    @Builder.Default
-    @Enumerated(EnumType.STRING)
-    private Role role = Role.USER;
-
-    @Builder.Default
-    private boolean enabled = true;
-
-    @Builder.Default
-    private boolean accountNonExpired = true;
-
-    @Builder.Default
-    private boolean accountNonLocked = true;
-
-    @Builder.Default
-    private boolean credentialsNonExpired = true;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<RefreshToken> refreshTokens = new HashSet<>();
-
-    @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
-    private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
-}
-
-@Entity
-@Table(name = "refresh_tokens")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class RefreshToken {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(nullable = false, unique = true)
-    private String token;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
-
-    @Builder.Default
-    private boolean revoked = false;
-
-    @Builder.Default
-    private boolean expired = false;
-
-    @Column(name = "expiry_date")
-    private LocalDateTime expiryDate;
-
-    @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
-    private LocalDateTime createdAt;
-}
-```
-
-## Testing JWT Security
+### Step 9 — Write Security Tests
 
 ```java
 @SpringBootTest
 @AutoConfigureMockMvc
-@TestPropertySource(properties = {
-    "jwt.secret=test-secret-key-for-testing-only",
-    "jwt.access-token-expiration=3600000"
-})
-class AuthenticationControllerTest {
-
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Autowired
-    private ObjectMapper objectMapper;
-
-    @Autowired
-    private JwtService jwtService;
-
-    @Test
-    void shouldAuthenticateUser() throws Exception {
-        AuthenticationRequest request = AuthenticationRequest.builder()
-                .email("test@example.com")
-                .password("password123")
-                .build();
-
-        mockMvc.perform(post("/api/v1/auth/authenticate")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(request)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.accessToken").exists())
-                .andExpect(jsonPath("$.refreshToken").exists())
-                .andExpect(jsonPath("$.user.email").value("test@example.com"));
-    }
+class AuthControllerTest {
 
     @Test
     void shouldDenyAccessWithoutToken() throws Exception {
-        mockMvc.perform(get("/api/v1/admin/users"))
-                .andExpect(status().isUnauthorized());
+        mockMvc.perform(get("/api/orders"))
+            .andExpect(status().isUnauthorized());
     }
 
     @Test
     @WithMockUser(roles = "ADMIN")
     void shouldAllowAdminAccess() throws Exception {
-        mockMvc.perform(get("/api/v1/admin/users"))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void shouldValidateJwtToken() throws Exception {
-        UserDetails userDetails = User.withUsername("test@example.com")
-                .password("password")
-                .roles("USER")
-                .build();
-
-        String token = jwtService.generateAccessToken(userDetails);
-
-        mockMvc.perform(get("/api/v1/auth/me")
-                .header("Authorization", "Bearer " + token))
-                .andExpect(status().isOk());
+        mockMvc.perform(get("/api/admin/users"))
+            .andExpect(status().isOk());
     }
 }
 ```
+
+See [references/testing.md](references/testing.md) and [references/jwt-testing-guide.md](references/jwt-testing-guide.md) for full test suites, Testcontainers setup, and a security test checklist.
 
 ## Best Practices
 
-### 1. Modern JWT Patterns
+### Token Security
+- Use minimum 256-bit secret keys — load from environment variables, never hardcode
+- Set short access token lifetimes (15 min); use refresh tokens for longer sessions
+- Implement token rotation: revoke old refresh token when issuing a new one
+- Use `jti` (JWT ID) claim for blacklisting on logout
 
-#### Key Rotation Strategy
-```java
-@Component
-@RequiredArgsConstructor
-public class JwtKeyRotationService {
+### Cookie vs Bearer Header
+- Prefer HttpOnly cookies for browser clients (XSS-safe)
+- Use `Authorization: Bearer` header for mobile/API clients
+- Set `Secure`, `SameSite=Lax` or `Strict` on cookies in production
 
-    private final SecretKeyRepository keyRepository;
-    private final CacheManager cacheManager;
+### Spring Security 6.x
+- Use `SecurityFilterChain` bean — never extend `WebSecurityConfigurerAdapter`
+- Disable CSRF only for stateless APIs; keep it enabled for session-based flows
+- Use `@EnableMethodSecurity` instead of deprecated `@EnableGlobalMethodSecurity`
+- Validate `iss` and `aud` claims; reject tokens from untrusted issuers
 
-    @Scheduled(cron = "0 0 0 * * ?") // Daily at midnight
-    public void rotateKeys() {
-        SecretKey newKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
-        keyRepository.save(new SecretKeyEntity(newKey, LocalDateTime.now()));
-        cacheManager.getCache("jwt-keys").clear();
-    }
-}
-```
+### Performance
+- Cache `UserDetails` with `@Cacheable` to avoid DB lookup on every request
+- Cache signing key derivation (avoid re-computing HMAC key per request)
+- Use Redis for refresh token storage at scale
 
-#### Token Blacklisting
-```java
-@Service
-@RequiredArgsConstructor
-public class TokenBlacklistService {
-
-    private final RedisTemplate<string, string> redisTemplate;
-    private static final String BLACKLIST_PREFIX = "blacklist:jwt:";
-
-    public void blacklistToken(String token, long expirationTime) {
-        String tokenId = extractTokenId(token);
-        redisTemplate.opsForValue().set(
-            BLACKLIST_PREFIX + tokenId,
-            "1",
-            expirationTime,
-            TimeUnit.MILLISECONDS
-        );
-    }
-
-    public boolean isBlacklisted(String token) {
-        String tokenId = extractTokenId(token);
-        return Boolean.TRUE.equals(redisTemplate.hasKey(BLACKLIST_PREFIX + tokenId));
-    }
-}
-```
-
-### 2. Security Configuration
-
-- **Always use HTTPS** in production for JWT token transmission
-- **Set appropriate cookie flags**: `HttpOnly`, `Secure`, `SameSite`
-- **Use strong secret keys**: minimum 256 bits for HMAC algorithms
-- **Implement token expiration**: Don't use tokens with infinite lifetime
-- **Validate all inputs**: Never trust JWT claims without validation
-- **Implement key rotation**: Regularly rotate signing keys
-- **Use token blacklisting**: For logout and security incidents
-
-### 2. Token Management
-
-```java
-// Implement refresh token rotation
-public class RefreshTokenService {
-
-    @Transactional
-    public String rotateRefreshToken(String oldToken) {
-        RefreshToken refreshToken = refreshTokenRepository.findByToken(oldToken)
-                .orElseThrow(() -> new RefreshTokenException("Invalid refresh token"));
-
-        // Revoke old token
-        refreshToken.setRevoked(true);
-        refreshTokenRepository.save(refreshToken);
-
-        // Generate new token
-        return createRefreshToken(refreshToken.getUser().getUsername());
-    }
-}
-```
-
-### 3. Performance Optimization
-
-```java
-// Cache user details to avoid database hits
-@Service
-@RequiredArgsConstructor
-public class CachedUserDetailsService implements UserDetailsService {
-
-    private final UserRepository userRepository;
-    private final CacheManager cacheManager;
-
-    @Override
-    @Cacheable(value = "users", key = "#username")
-    public UserDetails loadUserByUsername(String username) {
-        User user = userRepository.findByEmail(username)
-                .orElseThrow(() -> new UsernameNotFoundException(username));
-        return new CustomUserDetails(user);
-    }
-}
-```
-
-### 4. Monitoring and Audit
-
-```java
-@Component
-@RequiredArgsConstructor
-@Slf4j
-public class SecurityAuditService {
-
-    @EventListener
-    public void handleAuthenticationSuccess(AuthenticationSuccessEvent event) {
-        log.info("Authentication success for user: {}", event.getAuthentication().getName());
-        // Store audit event
-    }
-
-    @EventListener
-    public void handleAuthenticationFailure(AuthenticationFailureEvent event) {
-        log.warn("Authentication failure for user: {}", event.getAuthentication().getName());
-        // Store security event
-    }
-
-    @EventListener
-    public void handleAuthorizationFailure(AuthorizationFailureEvent event) {
-        log.warn("Authorization denied for user: {} on resource: {}",
-                event.getAuthentication().getName(),
-                event.getConfigAttributes());
-    }
-}
-```
-
-## Constraints and Warnings
-
-### 1. Token Size Limitations
-- JWT tokens should stay under HTTP header size limits (typically 8KB)
-- Avoid storing large amounts of data in JWT claims
-- Use references instead of embedding complete objects
-
-### 2. Security Considerations
-- Never store sensitive information in JWT tokens
-- Implement proper token revocation strategies
-- Use different keys for different environments (dev, staging, prod)
-- Regularly rotate signing keys
-- Always use HTTPS in production environments
-- Set appropriate cookie flags: `HttpOnly`, `Secure`, `SameSite`
-- Use strong secret keys: minimum 256 bits for HMAC algorithms
-
-### 3. Token Expiration
-- Implement token expiration to limit the window of vulnerability
-- Use short-lived access tokens with refresh token rotation
-- Never use tokens with infinite lifetime
-
-### 4. Performance Considerations
-- Cache user details to avoid database hits on every request
-- Consider token blacklisting for logout and security incidents
-- Monitor token validation latency in production
-
-### 5. Common Pitfalls
-- Do not validate JWT signatures on the client side
-- Never accept tokens from untrusted sources
-- Always validate token issuer (`iss`) and audience (`aud`) claims
-- Be aware that JWT claims are not encrypted, only signed
+### What NOT to Do
+- Do not store sensitive data (passwords, PII) in JWT claims — claims are only signed, not encrypted
+- Do not issue tokens with infinite lifetime
+- Do not accept tokens without validating signature and expiration
+- Do not share signing keys across environments
 
 ## Examples
 
-### Input: Login Request
+### Basic Authentication Flow
 
-```json
-{
-  "email": "user@example.com",
-  "password": "SecurePass123!"
-}
-```
+```java
+@RestController
+@RequestMapping("/api/auth")
+@RequiredArgsConstructor
+public class AuthController {
 
-### Output: Authentication Response
+    private final AuthService authService;
 
-```json
-{
-  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-  "tokenType": "Bearer",
-  "expiresIn": 86400,
-  "user": {
-    "id": 1,
-    "email": "user@example.com",
-    "role": "USER"
-  }
-}
-```
-
-### Input: Registration Request
-
-```json
-{
-  "username": "newuser",
-  "email": "newuser@example.com",
-  "password": "SecurePass123!",
-  "confirmPassword": "SecurePass123!"
-}
-```
-
-### Output: Registration Response
-
-```json
-{
-  "id": 2,
-  "username": "newuser",
-  "email": "newuser@example.com",
-  "role": "USER",
-  "createdAt": "2024-01-15T10:30:00Z"
-}
-```
-
-### Input: Protected API Request Without Token
-
-```bash
-curl -X GET http://localhost:8080/api/v1/orders
-```
-
-### Output: 401 Unauthorized
-
-```json
-{
-  "timestamp": "2024-01-15T10:35:00Z",
-  "status": 401,
-  "error": "Unauthorized",
-  "message": "Full authentication is required to access this resource"
-}
-```
-
-### Input: Protected API Request With Token
-
-```bash
-curl -X GET http://localhost:8080/api/v1/orders \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-```
-
-### Output: 200 OK
-
-```json
-{
-  "content": [
-    {
-      "id": 1,
-      "orderNumber": "ORD-001",
-      "status": "COMPLETED",
-      "total": 99.99
+    @PostMapping("/authenticate")
+    public ResponseEntity<AuthResponse> authenticate(
+            @RequestBody LoginRequest request) {
+        return ResponseEntity.ok(authService.authenticate(request));
     }
-  ],
-  "pageable": {
-    "page": 0,
-    "size": 20,
-    "total": 1
-  }
+
+    @PostMapping("/refresh")
+    public ResponseEntity<AuthResponse> refresh(@RequestBody RefreshRequest request) {
+        return ResponseEntity.ok(authService.refreshToken(request.refreshToken()));
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<Void> logout() {
+        authService.logout();
+        return ResponseEntity.ok().build();
+    }
 }
 ```
 
-### Input: Refresh Token Request
+### JWT Authorization on Controller Method
 
-```json
-{
-  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+```java
+@RestController
+@RequestMapping("/api/admin")
+@PreAuthorize("hasRole('ADMIN')")
+public class AdminController {
+
+    @GetMapping("/users")
+    public ResponseEntity<List<UserResponse>> getAllUsers() {
+        return ResponseEntity.ok(adminService.getAllUsers());
+    }
 }
 ```
 
-### Output: New Access Token
+See [references/examples.md](references/examples.md) for complete entity models and service implementations.
 
-```json
-{
-  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-  "tokenType": "Bearer",
-  "expiresIn": 86400
-}
-```
+## References
 
-## Reference Materials
+| File | Content |
+|------|---------|
+| [references/jwt-quick-reference.md](references/jwt-quick-reference.md) | Dependencies, minimal service, common patterns |
+| [references/jwt-complete-configuration.md](references/jwt-complete-configuration.md) | Full config: properties, SecurityFilterChain, JwtService, OAuth2 RS |
+| [references/configuration.md](references/configuration.md) | JWT config beans, CORS, CSRF, error handling, session options |
+| [references/examples.md](references/examples.md) | Complete application setup: controllers, services, entities |
+| [references/authorization-patterns.md](references/authorization-patterns.md) | RBAC/ABAC entity model, PermissionEvaluator, SpEL expressions |
+| [references/token-management.md](references/token-management.md) | Refresh token entity, rotation, blacklisting with Redis |
+| [references/testing.md](references/testing.md) | Unit and MockMvc tests, test utilities |
+| [references/jwt-testing-guide.md](references/jwt-testing-guide.md) | Testcontainers, load testing, security test checklist |
+| [references/security-hardening.md](references/security-hardening.md) | Security headers, HSTS, rate limiting, audit logging |
+| [references/performance-optimization.md](references/performance-optimization.md) | Caffeine cache config, async validation, connection pooling |
+| [references/oauth2-integration.md](references/oauth2-integration.md) | Google/GitHub OAuth2 login, OAuth2UserService |
+| [references/microservices-security.md](references/microservices-security.md) | Inter-service JWT propagation, resource server config |
+| [references/migration-spring-security-6x.md](references/migration-spring-security-6x.md) | Migration from Spring Security 5.x |
+| [references/troubleshooting.md](references/troubleshooting.md) | Common errors, debugging tips |
 
-- [Complete JWT Configuration Guide](references/jwt-complete-configuration.md) - Consolidated configuration patterns for Spring Security 6.x
-- [JWT Testing Guide](references/jwt-testing-guide.md) - Comprehensive testing strategies
-- [JWT Quick Reference](references/jwt-quick-reference.md) - Common patterns and quick examples
-- [Complete implementation examples](references/examples.md)
-- [Security hardening checklist](references/security-hardening.md)
-- [Migration guide for Spring Security 6.x](references/migration-spring-security-6x.md)
+## Constraints and Warnings
+
+### Security Constraints
+- JWT tokens are signed but not encrypted — do not include sensitive data in claims
+- Always validate `exp`, `iss`, and `aud` claims before trusting the token
+- Signing keys must be at least 256 bits; never use weak keys in production
+- Load secrets from environment variables or secure vaults, never from config files
+- SameSite cookie attribute is essential for CSRF protection in cookie-based flows
+
+### Spring Security 6.x Constraints
+- `WebSecurityConfigurerAdapter` is removed — use `SecurityFilterChain` beans only
+- `@EnableGlobalMethodSecurity` is deprecated — use `@EnableMethodSecurity`
+- Lambda DSL is required for `HttpSecurity` configuration (no method chaining)
+- `WebSecurityConfigurerAdapter.order()` replaced by `@Order` on `@Configuration` classes
+
+### Token Constraints
+- Access tokens should expire in 5-15 minutes for security
+- Refresh tokens should be stored server-side (DB or Redis), never in localStorage
+- Implement token blacklisting for immediate revocation on logout
+- `jti` claim is required for token blacklisting to work correctly
 
 ## Related Skills
 
-- `spring-boot-dependency-injection` - Constructor injection patterns used throughout
-- `spring-boot-rest-api-standards` - REST API security patterns and error handling
-- `unit-test-security-authorization` - Testing Spring Security configurations
-- `spring-data-jpa` - User entity and repository patterns
-- `spring-boot-actuator` - Security monitoring and health endpoints
+- `spring-boot-dependency-injection` — Constructor injection patterns used throughout
+- `spring-boot-rest-api-standards` — REST API security patterns and error handling
+- `unit-test-security-authorization` — Testing Spring Security configurations
+- `spring-data-jpa` — User entity and repository patterns
+- `spring-boot-actuator` — Security monitoring and health endpoints

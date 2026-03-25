@@ -25,6 +25,16 @@ Draft a LaTeX paper based on: **$ARGUMENTS**
 
 If no PAPER_PLAN.md exists, ask the user to run `/paper-plan` first or provide a brief outline.
 
+## Orchestra-Guided Writing Overlay
+
+Keep the existing workflow, file layout, and defaults. Use the shared references below only when they improve writing quality:
+
+- Read `../shared-references/writing-principles.md` before drafting the Abstract, Introduction, Related Work, or when prose feels generic
+- Read `../shared-references/venue-checklists.md` during the final write-up and submission-readiness pass
+- Read `../shared-references/citation-discipline.md` only when the built-in DBLP/CrossRef workflow is insufficient
+
+These references are support material, not extra workflow phases.
+
 ## Templates
 
 ### Venue-Specific Setup
@@ -120,9 +130,12 @@ Process sections in order. For each section:
 4. **Insert figures/tables** — use snippets from `figures/latex_includes.tex`
 5. **Add citations** — use `\citep{}` / `\citet{}` (all three venues use `natbib`)
 
+Before drafting the front matter, re-read the one-sentence contribution from `PAPER_PLAN.md`. The Abstract and Introduction should make that takeaway obvious before the reader reaches the full method.
+
 #### Section-Specific Guidelines
 
 **§0 Abstract:**
+- Use the 5-part flow from `../shared-references/writing-principles.md`: what, why hard, how, evidence, strongest result
 - Must be self-contained (understandable without reading the paper)
 - Structure: problem → approach → key result → implication
 - Include one concrete quantitative result
@@ -210,6 +223,8 @@ If both DBLP and CrossRef return nothing, mark the entry with `% [VERIFY]` comme
 
 **Why this matters:** LLM-generated BibTeX frequently hallucinates venue names, page numbers, or even co-authors. DBLP and CrossRef return publisher-verified metadata. Upstream skills (`/research-lit`, `/novelty-check`) may mention papers from LLM memory — this fetch chain is the gate that prevents hallucinated citations from entering the final `.bib`.
 
+If the DBLP/CrossRef flow is not enough, load `../shared-references/citation-discipline.md` for stricter fallback rules before adding placeholders.
+
 **Automated bib cleaning** — use this Python pattern to extract only cited entries:
 
 ```python
@@ -232,6 +247,14 @@ This prevents bib bloat (e.g., 948 lines → 215 lines in testing).
 ### Step 5: De-AI Polish (from kgraph57/paper-writer-skill)
 
 After drafting all sections, scan for common AI writing patterns and fix them:
+
+First apply the sentence-level clarity rules from `../shared-references/writing-principles.md`:
+
+- keep subject and verb close together
+- put familiar context first and new information later
+- place the most important information near the end of the sentence
+- let each paragraph do one job
+- use verbs for actions instead of nominalized nouns
 
 **Content patterns to fix:**
 - Significance inflation ("groundbreaking", "revolutionary" → use measured language)
@@ -298,6 +321,8 @@ Before declaring done:
 - [ ] references.bib contains ONLY cited entries (no bloat)
 - [ ] **No stale section files** — every .tex in `sections/` is `\input`ed by `main.tex`
 - [ ] **Section files match main.tex** — file numbering and `\input` paths are consistent
+- [ ] Venue-specific required sections/checklists satisfied (read `../shared-references/venue-checklists.md` if needed)
+- [ ] A skim reader can recover the main claim from the title, abstract, introduction, and Figure 1/captions
 
 ## Key Rules
 
@@ -314,8 +339,13 @@ Before declaring done:
 - **Clean bib** — references.bib must only contain entries that are actually `\cite`d
 - **Section count is flexible** — match PAPER_PLAN structure, don't force into 5 sections
 - **Backup before overwrite** — never destroy existing `paper/` directory without backing up
+- **Front-load the contribution** — do not hide the payoff until the experiments or appendix
 
 ## Writing Quality Reference
+
+- `../shared-references/writing-principles.md` — story framing, abstract/introduction patterns, sentence-level clarity, reviewer reading order
+- `../shared-references/venue-checklists.md` — ICLR/NeurIPS/ICML submission requirements to check before declaring done
+- `../shared-references/citation-discipline.md` — stricter fallback for ambiguous citations
 
 Principles from [Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills):
 
@@ -333,4 +363,3 @@ De-AI patterns from [kgraph57/paper-writer-skill](https://github.com/kgraph57/pa
 ## Acknowledgements
 
 Writing methodology adapted from [Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills) (CCF award-winning methodology). Citation verification from [claude-scholar](https://github.com/Galaxy-Dawn/claude-scholar) and [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills). De-AI polish from [kgraph57/paper-writer-skill](https://github.com/kgraph57/paper-writer-skill). Backup mechanism from [baoyu-skills](https://github.com/jimliu/baoyu-skills).
-

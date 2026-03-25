@@ -27,10 +27,25 @@ Each phase builds on the previous one's output. The final deliverables are a val
 - **AUTO_PROCEED = true** — If user doesn't respond at a checkpoint, automatically proceed with the best option after presenting results. Set to `false` to always wait for explicit user confirmation.
 - **REVIEWER_MODEL = `gpt-5.4`** — Model used via a secondary Codex agent. Must be an OpenAI model (e.g., `gpt-5.4`, `o3`, `gpt-4o`). Passed to sub-skills.
 - **ARXIV_DOWNLOAD = false** — When `true`, `/research-lit` downloads the top relevant arXiv PDFs during Phase 1. When `false` (default), only fetches metadata. Passed through to `/research-lit`.
+- **COMPACT = false** — When `true`, generate compact summary files for short-context sessions and downstream skills. Writes `IDEA_CANDIDATES.md`.
+- **REF_PAPER = false** — Reference paper to base ideas on. Accepts a local PDF path, arXiv URL, or paper URL. When set, summarize it first and use it as idea-generation context.
 
-> 💡 These are defaults. Override by telling the skill, e.g., `/idea-discovery "topic" — pilot budget: 4h per idea, 20h total` or `/idea-discovery "topic" — arxiv download: true`.
+> 💡 These are defaults. Override by telling the skill, e.g., `/idea-discovery "topic" — ref paper: https://arxiv.org/abs/2406.04329` or `/idea-discovery "topic" — compact: true`.
 
 ## Pipeline
+
+### Phase 0.5: Reference Paper Summary (when REF_PAPER is set)
+
+**Skip entirely if `REF_PAPER` is `false`.**
+
+Summarize the reference paper before searching the literature:
+
+1. **If arXiv URL** — invoke `/arxiv "ARXIV_ID" — download` to fetch the PDF, then read the first 5 pages.
+2. **If local PDF path** — read the PDF directly, focusing on the title, abstract, introduction, and method overview.
+3. **If other URL** — fetch the content and extract the method, results, and limitations.
+4. **Generate `REF_PAPER_SUMMARY.md`** with: what the paper did, key results, limitations/open questions, and plausible improvement directions.
+
+Use `REF_PAPER_SUMMARY.md` as additional context in both Phase 1 and Phase 2.
 
 ### Phase 1: Literature Survey
 
@@ -61,13 +76,14 @@ Does this match your understanding? Should I adjust the scope before generating 
 
 ### Phase 2: Idea Generation + Filtering + Pilots
 
-Invoke `/idea-creator` with the landscape context:
+Invoke `/idea-creator` with the landscape context and `REF_PAPER_SUMMARY.md` if available:
 
 ```
 /idea-creator "$ARGUMENTS"
 ```
 
 **What this does:**
+- If `REF_PAPER_SUMMARY.md` exists, include it as context so ideas explicitly build on, improve, or extend the reference paper
 - Brainstorm 8-12 concrete ideas via GPT-5.4 xhigh
 - Filter by feasibility, compute cost, quick novelty search
 - Deep validate top ideas (full novelty check + devil's advocate)
@@ -198,6 +214,27 @@ Finalize `IDEA_REPORT.md` with all accumulated information:
 - [ ] Or invoke /research-pipeline for the complete end-to-end flow
 ```
 
+### Phase 5.5: Write Compact Files (when COMPACT = true)
+
+**Skip entirely if `COMPACT` is `false`.**
+
+Write `IDEA_CANDIDATES.md` — a lean summary of the top 3-5 surviving ideas:
+
+```markdown
+# Idea Candidates
+
+| # | Idea | Pilot Signal | Novelty | Reviewer Score | Status |
+|---|------|-------------|---------|---------------|--------|
+| 1 | [title] | +X% | Confirmed | X/10 | RECOMMENDED |
+| 2 | [title] | +Y% | Confirmed | X/10 | BACKUP |
+| 3 | [title] | Negative | — | — | ELIMINATED |
+
+## Active Idea: #1 — [title]
+- Hypothesis: [one sentence]
+- Key evidence: [pilot result]
+- Next step: /experiment-bridge or /research-refine
+```
+
 ## Key Rules
 
 - **Large file handling**: If the Write tool fails due to file size, immediately retry using Bash (`cat << 'EOF' > file`) to write in chunks. Do NOT ask the user for permission — just do it silently.
@@ -221,4 +258,3 @@ After this pipeline produces a validated top idea:
 
 Or use /research-pipeline for the full end-to-end flow.
 ```
-

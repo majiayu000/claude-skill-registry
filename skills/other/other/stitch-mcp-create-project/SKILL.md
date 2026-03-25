@@ -52,9 +52,27 @@ The tool returns a `name` field in the format `projects/NUMERIC_ID`. You must ex
 ```json
 {
   "name": "projects/3780309359108792857",
-  "title": "Analytics Dashboard"
+  "title": "Analytics Dashboard",
+  "createTime": "2026-03-24T14:30:00Z",
+  "visibility": "PRIVATE",
+  "deviceType": "PHONE",
+  "projectType": "TEXT_TO_UI",
+  "designTheme": {
+    "colorMode": "LIGHT",
+    "customColor": "",
+    "colorVariant": "TONAL_SPOT",
+    "roundness": "ROUND_TWELVE",
+    "spacingScale": 1,
+    "headlineFont": "ROBOTO",
+    "bodyFont": "ROBOTO",
+    "labelFont": "ROBOTO",
+    "namedColors": {},
+    "designMd": ""
+  }
 }
 ```
+
+> The `designTheme` populates with full values (including `designMd` and `namedColors`) after the first screen is generated. For a brand-new project, expect mostly empty/default theme values.
 
 **Extract:**
 - **Full name:** `projects/3780309359108792857` → use for `list_screens`, `get_project`

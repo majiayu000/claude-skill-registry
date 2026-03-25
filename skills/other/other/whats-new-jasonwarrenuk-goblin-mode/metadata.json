@@ -1,0 +1,17 @@
+{
+  "name": "whats-new",
+  "repo": "JasonWarrenUK/goblin-mode",
+  "path": "skills/whats-new/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/JasonWarrenUK/goblin-mode",
+  "dir_name": "whats-new-jasonwarrenuk-goblin-mode",
+  "downloaded_at": "2026-03-25T01:11:56.721239Z",
+  "author": "JasonWarrenUK",
+  "source_url": "https://github.com/JasonWarrenUK/goblin-mode/blob/main/skills/whats-new/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JasonWarrenUK/goblin-mode/blob/main/skills/whats-new/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

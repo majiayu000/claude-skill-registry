@@ -32,7 +32,7 @@ You must have a `projectId` before calling this. If you don't have one:
     "projectId": "3780309359108792857",
     "prompt": "[Full structured prompt — see below]",
     "deviceType": "MOBILE",
-    "modelId": "GEMINI_3_PRO"
+    "modelId": "GEMINI_3_1_PRO"
   }
 }
 ```
@@ -70,8 +70,9 @@ For best results, use the `stitch-ui-prompt-architect` skill to assemble the pro
 ### `modelId`
 | Value | Use when |
 |-------|---------|
-| `GEMINI_3_PRO` | **Recommended** — high-fidelity, complex layouts, production quality |
-| `GEMINI_3_FLASH` | Wireframes, rapid iteration, when speed matters more than quality |
+| `GEMINI_3_1_PRO` | **Recommended** — complex layouts, high fidelity |
+| `GEMINI_3_FLASH` | Fast iteration, wireframes, simple changes |
+| `GEMINI_3_PRO` | **Deprecated.** Still works but will be removed. Use `GEMINI_3_1_PRO` instead. |
 
 ## After generating
 

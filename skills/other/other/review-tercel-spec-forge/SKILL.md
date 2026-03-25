@@ -93,6 +93,7 @@ Check each review target document against the following checklist:
   - Overview: Feature index listing all generated specs, dependency graph
 
 #### 3.2 Internal Consistency
+- **Component name matching**: For every feature spec file (`docs/features/{name}.md`), verify there is a corresponding row in the tech-design's §8.1 Component Overview with an identical slug. Raise a Critical finding if a feature spec exists with no matching component or vice versa — this breaks the traceability chain and confuses downstream consumers like code-forge.
 - Do feature spec API signatures match the tech-design's API Design section?
 - Do component boundaries in feature specs align with tech-design's Component Overview?
 - Are data models consistent across documents? (field names, types, relationships)

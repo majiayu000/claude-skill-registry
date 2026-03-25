@@ -81,12 +81,32 @@ Mobile High-Fidelity login screen for a fintech app.
 ### 1. Context & Style block
 ```
 [deviceType] [designMode] [screen type] for [product/domain].
-[styleKeywords joined as adjectives] aesthetic.
+[styleKeywords joined as adjectives] aesthetic. [colorVariant] color palette.
 [theme] mode.
-Background: [derive from theme + domain].
+Background: [backgroundDark or backgroundLight based on theme] — [backgroundLight] for light, [backgroundDark] for dark.
 Primary: [primaryColor] ([color name]).
-Font: [font].
+Headline font: [headlineFont]. Body font: [bodyFont]. Label font: [labelFont].
+Roundness: [roundness]. Spacing: [spacingScale description].
 ```
+
+**colorVariant descriptors for the prompt:**
+- MONOCHROME → "monochromatic, single-hue palette"
+- NEUTRAL → "subdued neutral palette"
+- TONAL_SPOT → "tonal spot accents on neutral base"
+- VIBRANT → "vibrant, bold color palette"
+- EXPRESSIVE → "expressive, multicolor palette"
+- FIDELITY → "high-fidelity brand color matching"
+- CONTENT → "content-adaptive palette"
+- RAINBOW / FRUIT_SALAD → "colorful, playful palette"
+
+**spacingScale descriptors:**
+- 0 → "minimal spacing, data-dense"
+- 1 → "compact spacing"
+- 2 → "comfortable spacing"
+- 3 → "spacious, breathing layout"
+
+**When an existing project's DesignTheme is available** (passed from orchestrator with `designMd`):
+Include relevant design rules from `designMd` in the context block — typography philosophy, color usage rules, component patterns, and do's/don'ts. This ensures new screens match the established design system.
 
 ### 2. Layout Structure block
 Derive from deviceType and screen type:
@@ -134,8 +154,14 @@ Input spec:
 {
   "theme": "LIGHT",
   "primaryColor": "#6366F1",
-  "font": "DM Sans",
-  "roundness": "Medium",
+  "headlineFont": "DM_SANS",
+  "bodyFont": "DM_SANS",
+  "labelFont": "IBM_PLEX_SANS",
+  "colorVariant": "TONAL_SPOT",
+  "roundness": "ROUND_EIGHT",
+  "spacingScale": 1,
+  "backgroundLight": "#FFFFFF",
+  "backgroundDark": "#18181B",
   "density": "COMPACT",
   "designMode": "HIGH_FIDELITY",
   "styleKeywords": ["Productivity", "SaaS", "Structured"],
@@ -145,11 +171,11 @@ Input spec:
 
 Output prompt:
 ```
-Desktop High-Fidelity analytics dashboard. Productivity SaaS aesthetic. Light mode. Background: White (#ffffff). Primary: Indigo (#6366F1). Font: DM Sans. Clean, structured, data-dense.
+Desktop High-Fidelity analytics dashboard. Productivity SaaS aesthetic. Tonal spot accents on neutral base. Light mode. Background: White (#FFFFFF). Primary: Indigo (#6366F1). Headline font: DM Sans. Body font: DM Sans. Label font: IBM Plex Sans. Roundness: 8px. Compact spacing, data-dense layout.
 
 Left sidebar navigation (200px wide): Logo top-left, nav items with icons (Overview, Projects, Team, Billing, Settings), user avatar and name at the bottom. Main content: Top bar with 'Good morning, Sarah' and date. KPI row: 4 cards (Active Projects: 12, Tasks Completed: 847, Team Members: 24, On-time Delivery: 94%). Main chart: 'Velocity' line chart (last 30 days). Bottom split: 'Recent Activity' feed left, 'Upcoming Deadlines' list right.
 
-KPI cards: indigo number, grey label, subtle upward trend arrow in green. Line chart: indigo primary line, grey grid, hover tooltip. Activity feed: avatar, action text, timestamp. Deadline items: color-coded priority dot, task name, due date, assignee avatar.
+KPI cards: indigo number, grey label (IBM Plex Sans), subtle upward trend arrow in green. Line chart: indigo primary line, grey grid, hover tooltip. Activity feed: avatar, action text, timestamp. Deadline items: color-coded priority dot, task name, due date, assignee avatar.
 ```
 
 ---

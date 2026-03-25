@@ -8,1874 +8,341 @@ allowed-tools: Read, Write, Bash
 
 ## Overview
 
-Create production-ready Amazon RDS infrastructure using AWS CloudFormation templates. This skill covers RDS instances (MySQL, PostgreSQL, Aurora, MariaDB), DB clusters, multi-AZ deployments, parameter groups, subnet groups, security groups, template structure best practices, parameter patterns, and cross-stack references for modular, reusable infrastructure as code.
+Create production-ready Amazon RDS infrastructure using AWS CloudFormation templates. Covers RDS instances (MySQL, PostgreSQL, Aurora), DB clusters, multi-AZ deployments, parameter groups, subnet groups, security groups, and cross-stack references.
 
 ## When to Use
 
-Use this skill when:
-- Creating new RDS database instances (MySQL, PostgreSQL, Aurora, MariaDB)
-- Configuring DB clusters with read replicas
-- Setting up multi-AZ deployments for high availability
-- Creating DB parameter groups and option groups
-- Configuring DB subnet groups for VPC deployment
-- Implementing template Parameters with AWS-specific types
-- Creating Outputs for cross-stack references
-- Organizing templates with Mappings and Conditions
-- Designing reusable, modular CloudFormation templates
-- Integrating with Secrets Manager for credential management
+- Creating RDS instances (MySQL, PostgreSQL, Aurora) or DB clusters with read replicas
+- Setting up multi-AZ deployments or configuring parameter/subnet groups
+- Integrating with Secrets Manager or implementing cross-stack references
+
+## Quick Reference
+
+| Component | CloudFormation Type | Use Case |
+|-----------|-------------------|----------|
+| DB Instance | `AWS::RDS::DBInstance` | Single database instance |
+| DB Cluster | `AWS::RDS::DBCluster` | Aurora cluster |
+| DB Subnet Group | `AWS::RDS::DBSubnetGroup` | VPC deployment |
+| Parameter Group | `AWS::RDS::DBParameterGroup` | Database configuration |
+| Security Group | `AWS::EC2::SecurityGroup` | Network access control |
+| Secrets Manager | `AWS::SecretsManager::Secret` | Credential storage |
 
 ## Instructions
 
-Follow these steps to create RDS infrastructure with CloudFormation:
+### Step 1 — Define Database Parameters
 
-1. **Define Database Parameters**: Specify instance type, engine, and credentials
-2. **Configure Subnet Group**: Set up VPC subnets for database deployment
-3. **Create Parameter Group**: Define database engine-specific settings
-4. **Set Up Security Groups**: Configure network access controls
-5. **Enable Multi-AZ**: Deploy standby instance for high availability
-6. **Configure Backup**: Set retention periods and snapshot schedules
-7. **Add Monitoring**: Enable enhanced monitoring and performance insights
-8. **Implement Secrets**: Use Secrets Manager for credential rotation
+Use AWS-specific parameter types for validation.
 
-For complete examples, see the [EXAMPLES.md](references/examples.md) file.
+```yaml
+Parameters:
+  DBInstanceClass:
+    Type: AWS::RDS::DBInstance::InstanceType
+    Default: db.t3.micro
+    AllowedValues: [db.t3.micro, db.t3.small, db.t3.medium]
 
-## Examples
+  Engine:
+    Type: String
+    Default: mysql
+    AllowedValues: [mysql, postgres, aurora-mysql, aurora-postgresql]
 
-The following examples demonstrate common RDS patterns:
+  MasterUsername:
+    Type: String
+    Default: admin
+    AllowedPattern: "^[a-zA-Z][a-zA-Z0-9]*$"
+    MinLength: 1
+    MaxLength: 16
 
-### Example 1: MySQL RDS Instance
+  MasterUserPassword:
+    Type: String
+    NoEcho: true
+    MinLength: 8
+    MaxLength: 41
+```
+
+See [template-structure.md](references/template-structure.md) for advanced parameter patterns, mappings, conditions, and cross-stack references.
+
+### Step 2 — Create DB Subnet Group
+
+Required for VPC deployment with subnets in different AZs.
+
+```yaml
+DBSubnetGroup:
+  Type: AWS::RDS::DBSubnetGroup
+  Properties:
+    DBSubnetGroupDescription: Subnet group for RDS
+    SubnetIds:
+      - !Ref PrivateSubnet1
+      - !Ref PrivateSubnet2
+```
+
+See [database-components.md](references/database-components.md) for parameter groups, option groups, and engine-specific configurations.
+
+### Step 3 — Configure Security Group
+
+Restrict access to application tier only.
+
+```yaml
+DBSecurityGroup:
+  Type: AWS::EC2::SecurityGroup
+  Properties:
+    GroupDescription: Security group for RDS
+    VpcId: !Ref VpcId
+    SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: 3306
+        ToPort: 3306
+        SourceSecurityGroupId: !Ref AppSecurityGroup
+```
+
+See [security-secrets.md](references/security-secrets.md) for VPC security groups, encryption, Secrets Manager integration, and IAM authentication.
+
+### Step 4 — Launch RDS Instance
+
+Configure instance with subnet group, security group, and settings.
 
 ```yaml
 DBInstance:
   Type: AWS::RDS::DBInstance
   Properties:
     DBInstanceIdentifier: !Sub "${AWS::StackName}-mysql"
-    Engine: mysql
-    DBInstanceClass: db.t3.micro
-    MasterUsername: !Ref DBUsername
-    MasterUserPassword: !Ref DBPassword
+    DBInstanceClass: !Ref DBInstanceClass
+    Engine: !Ref Engine
+    MasterUsername: !Ref MasterUsername
+    MasterUserPassword: !Ref MasterUserPassword
     AllocatedStorage: 20
     StorageType: gp3
-    VPCSecurityGroups:
-      - !Ref DBSecurityGroup
     DBSubnetGroupName: !Ref DBSubnetGroup
-```
-
-### Example 2: Aurora Cluster
-
-```yaml
-DBCluster:
-  Type: AWS::RDS::DBCluster
-  Properties:
-    DatabaseName: !Ref DBName
-    Engine: aurora-mysql
-    MasterUsername: !Ref DBUsername
-    MasterUserPassword: !Ref DBPassword
-    DBClusterParameterGroupName: !Ref DBParameterGroup
-    DBSubnetGroupName: !Ref DBSubnetGroup
-    VpcSecurityGroupIds:
-      - !Ref DBSecurityGroup
-
-DBInstance:
-  Type: AWS::RDS::DBInstance
-  Properties:
-    DBClusterIdentifier: !Ref DBCluster
-    DBInstanceClass: db.t3.medium
-    Engine: aurora-mysql
-```
-
-### Example 3: PostgreSQL with Multi-AZ
-
-```yaml
-DBInstance:
-  Type: AWS::RDS::DBInstance
-  Properties:
-    DBInstanceIdentifier: !Sub "${AWS::StackName}-postgres"
-    Engine: postgres
-    DBInstanceClass: db.t3.medium
-    MasterUsername: !Ref DBUsername
-    MasterUserPassword: !Ref DBPassword
-    AllocatedStorage: 50
-    StorageType: gp3
+    VPCSecurityGroups: [!Ref DBSecurityGroup]
+    StorageEncrypted: true
     MultiAZ: true
-    DBSubnetGroupName: !Ref DBSubnetGroup
-    VpcSecurityGroupIds:
-      - !Ref DBSecurityGroup
+    BackupRetentionPeriod: 7
+    DeletionProtection: false
 ```
 
-For complete production-ready examples, see [EXAMPLES.md](references/examples.md).
+See [database-components.md](references/database-components.md) for MySQL, PostgreSQL, Aurora cluster configurations, and parameter groups.
 
-## Quick Start
+### Step 5 — Enable High Availability
 
-### Basic MySQL RDS Instance
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Simple MySQL RDS instance with basic configuration
-
-Parameters:
-  DBInstanceIdentifier:
-    Type: String
-    Default: mydatabase
-    Description: Database instance identifier
-
-  MasterUsername:
-    Type: String
-    Default: admin
-    Description: Master username
-
-  MasterUserPassword:
-    Type: String
-    NoEcho: true
-    Description: Master user password
-
-  DBInstanceClass:
-    Type: String
-    Default: db.t3.micro
-    AllowedValues:
-      - db.t3.micro
-      - db.t3.small
-      - db.t3.medium
-
-Resources:
-  DBSubnetGroup:
-    Type: AWS::RDS::DBSubnetGroup
-    Properties:
-      DBSubnetGroupDescription: Subnet group for RDS
-      SubnetIds:
-        - !Ref PrivateSubnet1
-        - !Ref PrivateSubnet2
-
-  DBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBInstanceIdentifier: !Ref DBInstanceIdentifier
-      DBInstanceClass: !Ref DBInstanceClass
-      Engine: mysql
-      MasterUsername: !Ref MasterUsername
-      MasterUserPassword: !Ref MasterUserPassword
-      DBSubnetGroupName: !Ref DBSubnetGroup
-      VPCSecurityGroups:
-        - !Ref DBSecurityGroup
-      AllocatedStorage: "20"
-      StorageType: gp3
-      MultiAZ: false
-
-Outputs:
-  DBInstanceEndpoint:
-    Description: Database endpoint address
-    Value: !GetAtt DBInstance.Endpoint.Address
-
-  DBInstancePort:
-    Description: Database port
-    Value: !GetAtt DBInstance.Endpoint.Port
-```
-
-### Aurora MySQL Cluster
+Configure multi-AZ deployment for production.
 
 ```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Aurora MySQL cluster with writer and reader instances
-
-Parameters:
-  DBClusterIdentifier:
-    Type: String
-    Default: my-aurora-cluster
-    Description: Cluster identifier
-
-  MasterUsername:
-    Type: String
-    Default: admin
-
-  MasterUserPassword:
-    Type: String
-    NoEcho: true
-
-Resources:
-  DBSubnetGroup:
-    Type: AWS::RDS::DBSubnetGroup
-    Properties:
-      DBSubnetGroupDescription: Subnet group for Aurora
-      SubnetIds:
-        - !Ref PrivateSubnet1
-        - !Ref PrivateSubnet2
-
-  DBCluster:
-    Type: AWS::RDS::DBCluster
-    Properties:
-      DBClusterIdentifier: !Ref DBClusterIdentifier
-      Engine: aurora-mysql
-      MasterUsername: !Ref MasterUsername
-      MasterUserPassword: !Ref MasterUserPassword
-      DBSubnetGroupName: !Ref DBSubnetGroup
-      VPCSecurityGroups:
-        - !Ref DBSecurityGroup
-      DatabaseName: mydb
-      EngineMode: provisioned
-      Port: 3306
-
-  DBInstanceWriter:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBInstanceIdentifier: !Sub ${DBClusterIdentifier}-writer
-      DBClusterIdentifier: !Ref DBCluster
-      Engine: aurora-mysql
-      DBInstanceClass: db.t3.medium
-
-  DBInstanceReader:
-    Type: AWS::RDS::DBInstance
-    DependsOn: DBInstanceWriter
-    Properties:
-      DBInstanceIdentifier: !Sub ${DBClusterIdentifier}-reader
-      DBClusterIdentifier: !Ref DBCluster
-      Engine: aurora-mysql
-      DBInstanceClass: db.t3.medium
-      PromotionTier: 2
-
-Outputs:
-  ClusterEndpoint:
-    Description: Writer endpoint
-    Value: !GetAtt DBCluster.Endpoint
-
-  ReaderEndpoint:
-    Description: Reader endpoint
-    Value: !GetAtt DBCluster.ReadEndpoint
-```
-
-## Template Structure
-
-### Template Sections Overview
-
-AWS CloudFormation templates are JSON or YAML files with specific sections. Each section serves a purpose in defining your infrastructure.
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09  # Required - template version
-Description: Optional description string  # Optional description
-
-# Section order matters for readability but CloudFormation accepts any order
-Mappings: {}       # Static configuration tables
-Metadata: {}       # Additional information about resources
-Parameters: {}     # Input values for customization
-Rules: {}          # Parameter validation rules
-Conditions: {}     # Conditional resource creation
-Transform: {}      # Macro processing (e.g., AWS::Serverless)
-Resources: {}      # AWS resources to create (REQUIRED)
-Outputs: {}        # Return values after stack creation
-```
-
-### Format Version
-
-The `AWSTemplateFormatVersion` identifies the template version. Current version is `2010-09-09`.
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: My RDS Database Template
-```
-
-### Description
-
-Add a description to document the template's purpose. Must appear after the format version.
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: >
-  This template creates an RDS MySQL instance with:
-  - Multi-AZ deployment for high availability
-  - Encrypted storage
-  - Automated backups
-  - Performance Insights enabled
-```
-
-### Metadata
-
-Use `Metadata` for additional information about resources or parameters, including AWS::CloudFormation::Interface for parameter grouping.
-
-```yaml
-Metadata:
-  AWS::CloudFormation::Interface:
-    ParameterGroups:
-      - Label:
-          default: Database Configuration
-        Parameters:
-          - DBInstanceIdentifier
-          - Engine
-          - DBInstanceClass
-      - Label:
-          default: Credentials
-        Parameters:
-          - MasterUsername
-          - MasterUserPassword
-      - Label:
-          default: Network
-        Parameters:
-          - DBSubnetGroupName
-          - VPCSecurityGroups
-    ParameterLabels:
-      DBInstanceIdentifier:
-        default: Database Instance ID
-      MasterUsername:
-        default: Master Username
-```
-
-### Resources Section
-
-The `Resources` section is the only required section. It defines AWS resources to provision.
-
-```yaml
-Resources:
-  # DB Subnet Group (required for VPC deployment)
-  DBSubnetGroup:
-    Type: AWS::RDS::DBSubnetGroup
-    Properties:
-      DBSubnetGroupDescription: Subnet group for RDS deployment
-      SubnetIds:
-        - !Ref PrivateSubnet1
-        - !Ref PrivateSubnet2
-
-  # DB Parameter Group
-  DBParameterGroup:
-    Type: AWS::RDS::DBParameterGroup
-    Properties:
-      Description: Custom parameter group for MySQL
-      Family: mysql8.0
-      Parameters:
-        max_connections: 200
-        innodb_buffer_pool_size: 1073741824
-
-  # DB Instance
-  DBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBInstanceIdentifier: mydbinstance
-      DBInstanceClass: db.t3.micro
-      Engine: mysql
-      MasterUsername: admin
-      MasterUserPassword: !Ref DBPassword
-      DBSubnetGroupName: !Ref DBSubnetGroup
-      DBParameterGroupName: !Ref DBParameterGroup
-```
-
-## Parameters
-
-### Parameter Types
-
-Use AWS-specific parameter types for validation and easier selection in the console.
-
-```yaml
-Parameters:
-  # DB instance identifier
-  DBInstanceIdentifier:
-    Type: String
-    Description: Database instance identifier
-
-  # AWS-specific parameter types for validation
-  DBInstanceClass:
-    Type: AWS::RDS::DBInstance::InstanceType
-    Description: RDS instance class
-    Default: db.t3.micro
-
-  # Engine version from SSM
-  EngineVersion:
-    Type: AWS::RDS::DBInstance::Version
-    Description: Database engine version
-    Default: 8.0
-
-  # For existing VPC security groups
-  VPCSecurityGroups:
-    Type: List<AWS::EC2::SecurityGroup::Id>
-    Description: Security groups for RDS instance
-```
-
-### AWS::RDS::DBInstance::InstanceType Values
-
-Common RDS instance types:
-
-```yaml
-Parameters:
-  DBInstanceClass:
-    Type: String
-    AllowedValues:
-      - db.t3.micro
-      - db.t3.small
-      - db.t3.medium
-      - db.t3.large
-      - db.t3.xlarge
-      - db.t3.2xlarge
-      - db.m5.large
-      - db.m5.xlarge
-      - db.m5.2xlarge
-      - db.m5.4xlarge
-      - db.r5.large
-      - db.r5.xlarge
-      - db.r5.2xlarge
-```
-
-### Parameter Constraints
-
-Add constraints to validate parameter values.
-
-```yaml
-Parameters:
-  DBInstanceIdentifier:
-    Type: String
-    Description: Database instance identifier
-    Default: mydatabase
-    AllowedPattern: "^[a-zA-Z][a-zA-Z0-9]*$"
-    ConstraintDescription: Must begin with a letter; contain only alphanumeric characters
-    MinLength: 1
-    MaxLength: 63
-
-  MasterUsername:
-    Type: String
-    Description: Master username
-    Default: admin
-    AllowedPattern: "^[a-zA-Z][a-zA-Z0-9]*$"
-    MinLength: 1
-    MaxLength: 16
-    NoEcho: true
-
-  MasterUserPassword:
-    Type: String
-    Description: Master user password
-    NoEcho: true
-    MinLength: 8
-    MaxLength: 41
-    AllowedPattern: "[a-zA-Z0-9]*"
-
-  AllocatedStorage:
-    Type: Number
-    Description: Allocated storage in GB
-    Default: 20
-    MinValue: 20
-    MaxValue: 65536
-
-  DBPort:
-    Type: Number
-    Description: Database port
-    Default: 3306
-    MinValue: 1150
-    MaxValue: 65535
-```
-
-### Engine and Version Parameters
-
-```yaml
-Parameters:
-  Engine:
-    Type: String
-    Description: Database engine
-    Default: mysql
-    AllowedValues:
-      - mysql
-      - postgres
-      - oracle-ee
-      - oracle-se2
-      - sqlserver-ee
-      - sqlserver-se
-      - sqlserver-ex
-      - sqlserver-web
-      - aurora
-      - aurora-mysql
-      - aurora-postgresql
-      - mariadb
-
-  EngineVersion:
-    Type: String
-    Description: Database engine version
-    Default: 8.0.35
-
-  DBFamily:
-    Type: String
-    Description: Parameter group family
-    Default: mysql8.0
-    AllowedValues:
-      - mysql5.6
-      - mysql5.7
-      - mysql8.0
-      - postgres11
-      - postgres12
-      - postgres13
-      - postgres14
-      - postgres15
-      - postgres16
-      - aurora5.6
-      - aurora-mysql5.7
-      - aurora-mysql8.0
-      - aurora-postgresql11
-      - aurora-postgresql14
-```
-
-### SSM Parameter Types
-
-Reference Systems Manager parameters for dynamic values.
-
-```yaml
-Parameters:
-  LatestMySQLVersion:
-    Type: AWS::SSM::Parameter::Value<String>
-    Description: Latest MySQL version from SSM
-    Default: /rds/mysql/latest/version
-
-  LatestPostgreSQLVersion:
-    Type: AWS::SSM::Parameter::Value<String>
-    Description: Latest PostgreSQL version from SSM
-    Default: /rds/postgres/latest/version
-```
-
-### NoEcho for Sensitive Data
-
-Use `NoEcho` for passwords and sensitive values to mask them in console output.
-
-```yaml
-Parameters:
-  MasterUserPassword:
-    Type: String
-    Description: Master user password
-    NoEcho: true
-    MinLength: 8
-    MaxLength: 41
-```
-
-## Mappings
-
-Use `Mappings` for static configuration data based on regions or instance types.
-
-```yaml
-Mappings:
-  InstanceTypeConfig:
-    db.t3.micro:
-      CPU: 2
-      MemoryGiB: 1
-      StorageGB: 20
-    db.t3.small:
-      CPU: 2
-      MemoryGiB: 2
-      StorageGB: 20
-    db.t3.medium:
-      CPU: 2
-      MemoryGiB: 4
-      StorageGB: 20
-    db.m5.large:
-      CPU: 2
-      MemoryGiB: 8
-      StorageGB: 100
-
-  RegionDatabasePort:
-    us-east-1:
-      MySQL: 3306
-      PostgreSQL: 5432
-    us-west-2:
-      MySQL: 3306
-      PostgreSQL: 5432
-    eu-west-1:
-      MySQL: 3306
-      PostgreSQL: 5432
-
-Resources:
-  DBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBInstanceClass: !FindInMap [InstanceTypeConfig, !Ref DBInstanceClass, CPU]
-      Engine: mysql
-      # ...
-```
-
-## Conditions
-
-Use `Conditions` to conditionally create resources based on parameters.
-
-```yaml
-Parameters:
-  EnableMultiAZ:
-    Type: String
-    Default: false
-    AllowedValues:
-      - true
-      - false
-
-  EnableEncryption:
-    Type: String
-    Default: true
-    AllowedValues:
-      - true
-      - false
-
-  Environment:
-    Type: String
-    Default: development
-    AllowedValues:
-      - development
-      - staging
-      - production
-
 Conditions:
-  IsMultiAZ: !Equals [!Ref EnableMultiAZ, true]
-  IsEncrypted: !Equals [!Ref EnableEncryption, true]
   IsProduction: !Equals [!Ref Environment, production]
 
 Resources:
   DBInstance:
     Type: AWS::RDS::DBInstance
     Properties:
-      MultiAZ: !Ref EnableMultiAZ
-      StorageEncrypted: !Ref EnableEncryption
-      # Production gets automated backups
+      MultiAZ: !If [IsProduction, true, false]
       BackupRetentionPeriod: !If [IsProduction, 35, 7]
       DeletionProtection: !If [IsProduction, true, false]
+      EnablePerformanceInsights: !If [IsProduction, true, false]
 ```
 
-### Condition Functions
+See [high-availability.md](references/high-availability.md) for multi-AZ deployments, read replicas, Aurora auto-scaling, enhanced monitoring, and disaster recovery.
 
-```yaml
-Conditions:
-  IsDev: !Equals [!Ref Environment, development]
-  IsStaging: !Equals [!Ref Environment, staging]
-  IsProduction: !Equals [!Ref Environment, production]
+### Step 6 — Define Outputs
 
-  HasLicense: !Not [!Condition IsDev]
-
-Resources:
-  DBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      # Use license-included for production
-      LicenseModel: !If [HasLicense, "license-included", "bring-your-own-license"]
-      # Production uses provisioned IOPS
-      StorageType: !If [IsProduction, "io1", "gp3"]
-      Iops: !If [IsProduction, 3000, !Ref AWS::NoValue]
-```
-
-## Transform
-
-Use `Transform` for macros like AWS::Serverless for SAM templates.
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Transform: AWS::Serverless-2016-10-31
-Description: Serverless RDS application template
-
-Globals:
-  Function:
-    Timeout: 30
-    Runtime: python3.11
-
-Resources:
-  RDSFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      Handler: app.handler
-      CodeUri: function/
-      Policies:
-        - RDSFullAccessPolicy:
-            DBInstanceIdentifier: !Ref DBInstanceIdentifier
-      Environment:
-        Variables:
-          DB_HOST: !GetAtt DBInstance.Endpoint.Address
-          DB_NAME: !Ref DBName
-          DB_USER: !Ref MasterUsername
-```
-
-## Outputs and Cross-Stack References
-
-### Basic Outputs
+Export connection details for application stacks.
 
 ```yaml
 Outputs:
-  DBInstanceId:
-    Description: Database Instance ID
-    Value: !Ref DBInstance
-
   DBInstanceEndpoint:
     Description: Database endpoint address
-    Value: !GetAtt DBInstance.Endpoint.Address
-
-  DBInstancePort:
-    Description: Database port
-    Value: !GetAtt DBInstance.Endpoint.Port
-
-  DBInstanceArn:
-    Description: Database Instance ARN
-    Value: !GetAtt DBInstance.Arn
-
-  DBInstanceClass:
-    Description: Database Instance Class
-    Value: !Ref DBInstanceClass
-```
-
-### Exporting Values for Cross-Stack References
-
-Export values so other stacks can import them.
-
-```yaml
-Outputs:
-  DBInstanceId:
-    Description: Database Instance ID for other stacks
-    Value: !Ref DBInstance
-    Export:
-      Name: !Sub ${AWS::StackName}-DBInstanceId
-
-  DBInstanceEndpoint:
-    Description: Database endpoint for application stacks
     Value: !GetAtt DBInstance.Endpoint.Address
     Export:
       Name: !Sub ${AWS::StackName}-DBEndpoint
 
   DBInstancePort:
-    Description: Database port for application stacks
+    Description: Database port
     Value: !GetAtt DBInstance.Endpoint.Port
     Export:
       Name: !Sub ${AWS::StackName}-DBPort
 
   DBConnectionString:
-    Description: Full connection string for applications
-    Value: !Sub jdbc:mysql://${DBInstanceEndpoint}:${DBInstancePort}/${DBName}
-    Export:
-      Name: !Sub ${AWS::StackName}-DBConnectionString
+    Description: Connection string
+    Value: !Sub jdbc:mysql://${DBInstance.Endpoint.Address}:${DBInstance.Endpoint.Port}/${DBName}
 ```
 
-### Importing Values in Another Stack
+See [template-structure.md](references/template-structure.md) for cross-stack reference patterns and import/export strategies.
 
-```yaml
-Parameters:
-  # Import via AWS::RDS::DBInstance::Id for console selection
-  DBInstanceId:
-    Type: AWS::RDS::DBInstance::Id
-    Description: RDS instance ID from database stack
+### Validation Steps
 
-  # Or use Fn::ImportValue for programmatic access
-  DBEndpoint:
-    Type: String
-    Description: Database endpoint address
+Always validate before deploying, especially to production.
 
-Resources:
-  ApplicationDatabaseConfig:
-    Type: AWS::SSM::Parameter
-    Properties:
-      Name: /app/database/endpoint
-      Value: !Ref DBEndpoint
-      Type: String
-```
+```bash
+# Validate the template syntax
+aws cloudformation validate-template --template-body file://template.yaml
 
-### Cross-Stack Reference Pattern
+# Review the change set before applying updates
+aws cloudformation create-change-set \
+  --stack-name my-rds-stack \
+  --template-body file://template.yaml \
+  --change-set-type UPDATE
 
-Create a dedicated database stack that exports values:
+aws cloudformation describe-change-set --change-set-name <arn>
 
-```yaml
-# database-stack.yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Database infrastructure stack
-
-Parameters:
-  EnvironmentName:
-    Type: String
-    Default: production
-
-Resources:
-  DBSubnetGroup:
-    Type: AWS::RDS::DBSubnetGroup
-    Properties:
-      DBSubnetGroupDescription: !Sub Subnet group for ${EnvironmentName}
-      SubnetIds:
-        - !Ref PrivateSubnet1
-        - !Ref PrivateSubnet2
-
-  DBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBInstanceClass.t3.medium: db
-      Engine: mysql
-      MasterUsername: admin
-      MasterUserPassword: !Ref DBPassword
-      DBSubnetGroupName: !Ref DBSubnetGroup
-      VPCSecurityGroups:
-        - !Ref DBSecurityGroup
-      MultiAZ: true
-      StorageEncrypted: true
-
-Outputs:
-  DBInstanceId:
-    Value: !Ref DBInstance
-    Export:
-      Name: !Sub ${EnvironmentName}-DBInstanceId
-
-  DBEndpoint:
-    Value: !GetAtt DBInstance.Endpoint.Address
-    Export:
-      Name: !Sub ${EnvironmentName}-DBEndpoint
-
-  DBArn:
-    Value: !GetAtt DBInstance.Arn
-    Export:
-      Name: !Sub ${EnvironmentName}-DBArn
-
-  DBSubnetGroupName:
-    Value: !Ref DBSubnetGroup
-    Export:
-      Name: !Sub ${EnvironmentName}-DBSubnetGroupName
-```
-
-Application stack imports these values:
-
-```yaml
-# application-stack.yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Application stack that imports from database stack
-
-Parameters:
-  DatabaseStackName:
-    Type: String
-    Description: Name of the database stack
-    Default: database-stack
-
-Resources:
-  ApplicationConfig:
-    Type: AWS::SSM::Parameter
-    Properties:
-      Name: /app/database/endpoint
-      Value: !ImportValue
-        Fn::Sub: ${DatabaseStackName}-DBEndpoint
-      Type: String
-
-  LambdaFunction:
-    Type: AWS::Lambda::Function
-    Properties:
-      Runtime: python3.11
-      Handler: app.handler
-      Environment:
-        Variables:
-          DB_ENDPOINT: !ImportValue
-            Fn::Sub: ${DatabaseStackName}-DBEndpoint
-```
-
-## RDS Database Components
-
-### DB Subnet Group
-
-Required for VPC deployment. Must include at least 2 subnets in different AZs.
-
-```yaml
-Resources:
-  DBSubnetGroup:
-    Type: AWS::RDS::DBSubnetGroup
-    Properties:
-      DBSubnetGroupDescription: Subnet group for RDS instance
-      SubnetIds:
-        - !Ref PrivateSubnet1
-        - !Ref PrivateSubnet2
-        - !Ref PrivateSubnet3
-      Tags:
-        - Key: Name
-          Value: !Sub ${AWS::StackName}-dbsubnet
-```
-
-### DB Parameter Group
-
-Custom parameter groups for database configuration.
-
-```yaml
-Resources:
-  DBParameterGroup:
-    Type: AWS::RDS::DBParameterGroup
-    Properties:
-      Description: Custom parameter group for MySQL 8.0
-      Family: mysql8.0
-      Parameters:
-        # Connection settings
-        max_connections: 200
-        max_user_connections: 200
-
-        # Memory settings
-        innodb_buffer_pool_size: 1073741824
-        innodb_buffer_pool_instances: 4
-
-        # Query cache (MySQL 5.7)
-        query_cache_type: 1
-        query_cache_size: 268435456
-
-        # Timezone
-        default_time_zone: "+00:00"
-
-        # Character set
-        character_set_server: utf8mb4
-        collation_server: utf8mb4_unicode_ci
-
-      Tags:
-        - Key: Name
-          Value: !Sub ${AWS::StackName}-dbparam
-```
-
-### DB Option Group
-
-For database features like Oracle XML or SQL Server features.
-
-```yaml
-Resources:
-  DBOptionGroup:
-    Type: AWS::RDS::DBOptionGroup
-    Properties:
-      EngineName: oracle-ee
-      MajorEngineVersion: "19"
-      OptionGroupDescription: Option group for Oracle 19c
-      Options:
-        - OptionName: OEM
-          OptionVersion: "19"
-          Port: 5500
-          VpcSecurityGroupMemberships:
-            - !Ref OEMSecurityGroup
-        - OptionName: SSL
-          OptionSettings:
-            - Name: SQLNET.SSL_VERSION
-              Value: "1.2"
-```
-
-### DB Instance - MySQL
-
-```yaml
-Resources:
-  MySQLDBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBInstanceIdentifier: mysql-instance
-      DBInstanceClass: db.t3.medium
-      Engine: mysql
-      EngineVersion: "8.0.35"
-      MasterUsername: !Ref MasterUsername
-      MasterUserPassword: !Ref MasterUserPassword
-      AllocatedStorage: "100"
-      StorageType: gp3
-      DBSubnetGroupName: !Ref DBSubnetGroup
-      VPCSecurityGroups:
-        - !Ref DBSecurityGroup
-      DBParameterGroupName: !Ref DBParameterGroup
-      StorageEncrypted: true
-      MultiAZ: true
-      BackupRetentionPeriod: 35
-      DeletionProtection: true
-      EnablePerformanceInsights: true
-      PerformanceInsightsRetentionPeriod: 731
-      AutoMinorVersionUpgrade: false
-      Tags:
-        - Key: Environment
-          Value: !Ref Environment
-```
-
-### DB Instance - PostgreSQL
-
-```yaml
-Resources:
-  PostgreSQLDBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBInstanceIdentifier: postgres-instance
-      DBInstanceClass: db.t3.medium
-      Engine: postgres
-      EngineVersion: "16.1"
-      MasterUsername: !Ref MasterUsername
-      MasterUserPassword: !Ref MasterUserPassword
-      AllocatedStorage: "100"
-      StorageType: gp3
-      DBSubnetGroupName: !Ref DBSubnetGroup
-      VPCSecurityGroups:
-        - !Ref DBSecurityGroup
-      DBParameterGroupName: !Ref DBParameterGroup
-      StorageEncrypted: true
-      MultiAZ: true
-      BackupRetentionPeriod: 35
-      DeletionProtection: true
-      EnablePerformanceInsights: true
-      PubliclyAccessible: false
-```
-
-### Aurora MySQL Cluster
-
-```yaml
-Resources:
-  AuroraMySQLCluster:
-    Type: AWS::RDS::DBCluster
-    Properties:
-      DBClusterIdentifier: aurora-mysql-cluster
-      Engine: aurora-mysql
-      EngineVersion: "8.0.mysql_aurora.3.02.0"
-      MasterUsername: !Ref MasterUsername
-      MasterUserPassword: !Ref MasterUserPassword
-      DatabaseName: mydb
-      DBSubnetGroupName: !Ref DBSubnetGroup
-      VPCSecurityGroups:
-        - !Ref DBSecurityGroup
-      DBClusterParameterGroupName: !Ref AuroraClusterParameterGroup
-      StorageEncrypted: true
-      EngineMode: provisioned
-      Port: 3306
-      EnableIAMDatabaseAuthentication: true
-
-  AuroraDBInstanceWriter:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBInstanceIdentifier: aurora-writer
-      DBClusterIdentifier: !Ref AuroraMySQLCluster
-      Engine: aurora-mysql
-      DBInstanceClass: db.r5.large
-      PromotionTier: 1
-
-  AuroraDBInstanceReader:
-    Type: AWS::RDS::DBInstance
-    DependsOn: AuroraDBInstanceWriter
-    Properties:
-      DBInstanceIdentifier: aurora-reader
-      DBClusterIdentifier: !Ref AuroraMySQLCluster
-      Engine: aurora-mysql
-      DBInstanceClass: db.r5.large
-      PromotionTier: 2
-```
-
-### Aurora PostgreSQL Cluster
-
-```yaml
-Resources:
-  AuroraPostgresCluster:
-    Type: AWS::RDS::DBCluster
-    Properties:
-      DBClusterIdentifier: aurora-pg-cluster
-      Engine: aurora-postgresql
-      EngineVersion: "15.4"
-      MasterUsername: !Ref MasterUsername
-      MasterUserPassword: !Ref MasterUserPassword
-      DatabaseName: mydb
-      DBSubnetGroupName: !Ref DBSubnetGroup
-      VPCSecurityGroups:
-        - !Ref DBSecurityGroup
-      StorageEncrypted: true
-      EngineMode: provisioned
-      Port: 5432
-
-  AuroraPostgresInstanceWriter:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBInstanceIdentifier: aurora-pg-writer
-      DBClusterIdentifier: !Ref AuroraPostgresCluster
-      Engine: aurora-postgresql
-      DBInstanceClass: db.r5.large
-      PromotionTier: 1
-
-  AuroraPostgresInstanceReader:
-    Type: AWS::RDS::DBInstance
-    DependsOn: AuroraPostgresInstanceWriter
-    Properties:
-      DBInstanceIdentifier: aurora-pg-reader
-      DBClusterIdentifier: !Ref AuroraPostgresCluster
-      Engine: aurora-postgresql
-      DBInstanceClass: db.r5.large
-      PromotionTier: 2
-```
-
-### Aurora Serverless Cluster
-
-```yaml
-Resources:
-  AuroraServerlessCluster:
-    Type: AWS::RDS::DBCluster
-    Properties:
-      DBClusterIdentifier: aurora-serverless
-      Engine: aurora-mysql
-      EngineVersion: "5.6.mysql_aurora.2.12.0"
-      MasterUsername: !Ref MasterUsername
-      MasterUserPassword: !Ref MasterUserPassword
-      DatabaseName: mydb
-      DBSubnetGroupName: !Ref DBSubnetGroup
-      VPCSecurityGroups:
-        - !Ref DBSecurityGroup
-      EngineMode: serverless
-      ScalingConfiguration:
-        AutoPause: true
-        MinCapacity: 2
-        MaxCapacity: 32
-        SecondsUntilAutoPause: 300
-```
-
-### DB Cluster Parameter Group (Aurora)
-
-```yaml
-Resources:
-  AuroraClusterParameterGroup:
-    Type: AWS::RDS::DBClusterParameterGroup
-    Properties:
-      Description: Custom cluster parameter group for Aurora MySQL
-      Family: aurora-mysql8.0
-      Parameters:
-        character_set_server: utf8mb4
-        collation_server: utf8mb4_unicode_ci
-        max_connections: 1000
-        innodb_buffer_pool_size: 2147483648
-        slow_query_log: "ON"
-        long_query_time: 2
-```
-
-## Security and Secrets
-
-### Using Secrets Manager for Credentials
-
-```yaml
-Resources:
-  DBCredentialsSecret:
-    Type: AWS::SecretsManager::Secret
-    Properties:
-      Name: !Sub ${AWS::StackName}/rds/credentials
-      Description: RDS database credentials
-      SecretString: !Sub |
-        {
-          "username": "${MasterUsername}",
-          "password": "${MasterUserPassword}",
-          "host": !GetAtt DBInstance.Endpoint.Address,
-          "port": !GetAtt DBInstance.Endpoint.Port,
-          "dbname": "mydb"
-        }
-
-  DBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBInstanceClass: db.t3.medium
-      Engine: mysql
-      MasterUsername: !Sub "{{resolve:secretsmanager:${DBCredentialsSecret}:SecretString:username}}"
-      MasterUserPassword: !Sub "{{resolve:secretsmanager:${DBCredentialsSecret}:SecretString:password}}"
-      # ...
-```
-
-### DB Security Group (for EC2-Classic)
-
-```yaml
-Resources:
-  DBSecurityGroup:
-    Type: AWS::RDS::DBSecurityGroup
-    Properties:
-      DBSecurityGroupDescription: Security group for RDS instance
-      EC2VpcId: !Ref VPCId
-      # For EC2-Classic, use DBSecurityGroupIngress
-      DBSecurityGroupIngress:
-        - EC2SecurityGroupId: !Ref AppSecurityGroup
-        - EC2SecurityGroupName: default
-```
-
-### VPC Security Groups (Recommended)
-
-For VPC deployment, use EC2 security groups instead:
-
-```yaml
-Resources:
-  DBSecurityGroup:
-    Type: AWS::EC2::SecurityGroup
-    Properties:
-      GroupDescription: Security group for RDS
-      VpcId: !Ref VPCId
-      GroupName: !Sub ${AWS::StackName}-rds-sg
-      SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: 3306
-          ToPort: 3306
-          SourceSecurityGroupId: !Ref AppSecurityGroup
-      Tags:
-        - Key: Name
-          Value: !Sub ${AWS::StackName}-rds-sg
-
-  AppSecurityGroup:
-    Type: AWS::EC2::SecurityGroup
-    Properties:
-      GroupDescription: Security group for application
-      VpcId: !Ref VPCId
-      SecurityGroupEgress:
-        - IpProtocol: tcp
-          FromPort: 3306
-          ToPort: 3306
-          DestinationSecurityGroupId: !Ref DBSecurityGroup
-```
-
-## High Availability and Multi-AZ
-
-### Multi-AZ Deployment
-
-```yaml
-Parameters:
-  EnableMultiAZ:
-    Type: String
-    Default: true
-    AllowedValues:
-      - true
-      - false
-
-Resources:
-  DBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      # Multi-AZ is not supported for Aurora clusters (automatic)
-      MultiAZ: !Ref EnableMultiAZ
-      # For multi-AZ, use a standby in a different AZ
-      AvailabilityZone: !If
-        - IsMultiAZ
-        - !Select [1, !GetAZs '']
-        - !Ref AWS::NoValue
-      # For single-AZ, specify no AZ (AWS selects)
-```
-
-### Read Replicas
-
-```yaml
-Resources:
-  # Primary instance
-  PrimaryDBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBInstanceClass: db.r5.large
-      Engine: mysql
-      SourceDBInstanceIdentifier: !Ref ExistingDBInstance
-
-  # Read replica in different region
-  CrossRegionReadReplica:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBInstanceIdentifier: my-cross-region-replica
-      SourceDBInstanceIdentifier: !Sub arn:aws:rds:us-west-2:${AWS::AccountId}:db:${PrimaryDBInstance}
-      DBInstanceClass: db.r5.large
-      Engine: mysql
-```
-
-### Enhanced Monitoring and Performance Insights
-
-```yaml
-Resources:
-  DBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      EnablePerformanceInsights: true
-      PerformanceInsightsRetentionPeriod: 731
-      PerformanceInsightsKMSKeyId: !Ref PerformanceInsightsKey
-
-      # Enhanced Monitoring
-      MonitoringInterval: 60
-      MonitoringRoleArn: !GetAtt MonitoringRole.Arn
-
-      # Database insights
-      EnableCloudwatchLogsExports:
-        - audit
-        - error
-        - general
-        - slowquery
-
-# IAM Role for Enhanced Monitoring
-Resources:
-  MonitoringRole:
-    Type: AWS::IAM::Role
-    Properties:
-      AssumeRolePolicyDocument:
-        Version: "2012-10-17"
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service: monitoring.rds.amazonaws.com
-            Action: sts:AssumeRole
-      ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/service-role/AmazonRDSEnhancedMonitoringRole
+# Execute the change set if the preview looks correct
+aws cloudformation execute-change-set --change-set-name <arn>
 ```
 
 ## Best Practices
 
-### Use AWS-Specific Parameter Types
+| Category | Practice | Implementation |
+|----------|----------|----------------|
+| Security | Encryption at rest | `StorageEncrypted: true` with KMS key |
+| Security | Credential management | Use Secrets Manager integration |
+| Security | Network isolation | Private subnets, restrictive SG rules |
+| Security | IAM authentication | Enable `IAMDatabaseAuthentication` |
+| HA | Multi-AZ deployment | `MultiAZ: true` for production |
+| HA | Deletion protection | `DeletionProtection: true` for production |
+| HA | Backup retention | 35 days for production, 7 for dev |
+| HA | Read replicas | Use for read-heavy workloads |
+| Cost | Storage type | Use `gp3` for cost efficiency |
+| Cost | Instance sizing | Right-size based on workload |
+| Cost | Serverless | Consider Aurora Serverless for variable loads |
+| Operations | Change sets | Always review before applying updates |
+| Operations | Drift detection | Enable for template compliance |
+| Operations | Monitoring | Configure CloudWatch alarms |
 
-Always use AWS-specific parameter types for validation and easier selection.
+See [operational-practices.md](references/operational-practices.md) for detailed guidance on stack policies, termination protection, and backup strategies.
+
+## Examples
+
+Complete production-ready RDS instance with MultiAZ, encryption, and Secrets Manager integration:
 
 ```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Production RDS Instance
+
 Parameters:
-  DBInstanceClass:
-    Type: AWS::RDS::DBInstance::InstanceType
-    Description: RDS instance type
-
-  DBInstanceIdentifier:
+  VpcId:
+    Type: AWS::EC2::VPC::Identifier
+  SubnetIds:
+    Type: List<AWS::EC2::Subnet::Identifier>
+  AppSecurityGroupId:
+    Type: AWS::EC2::SecurityGroup::Id
+  Environment:
     Type: String
-    AllowedPattern: "^[a-zA-Z][a-zA-Z0-9]*$"
-```
+    AllowedValues: [dev, staging, production]
+  MasterUsername:
+    Type: String
+    Default: dbadmin
 
-### Enable Encryption at Rest
-
-Always enable encryption for production databases.
-
-```yaml
-Resources:
-  DBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      StorageEncrypted: true
-      KmsKeyId: !Ref EncryptionKey
-```
-
-### Use Multi-AZ for Production
-
-```yaml
 Conditions:
   IsProduction: !Equals [!Ref Environment, production]
 
 Resources:
-  DBInstance:
-    Type: AWS::RDS::DBInstance
+  DBSubnetGroup:
+    Type: AWS::RDS::DBSubnetGroup
     Properties:
-      MultiAZ: !If [IsProduction, true, false]
-      BackupRetentionPeriod: !If [IsProduction, 35, 7]
-      DeletionProtection: !If [IsProduction, true, false]
-```
+      DBSubnetGroupDescription: !Sub "${AWS::StackName} subnet group"
+      SubnetIds: !Ref SubnetIds
 
-### Enable Performance Insights
-
-```yaml
-Resources:
-  DBInstance:
-    Type: AWS::RDS::DBInstance
+  DBSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
     Properties:
-      EnablePerformanceInsights: true
-      PerformanceInsightsRetentionPeriod: 731
-      PerformanceInsightsKMSKeyId: !Ref PK
-```
-
-### Use Proper Naming Conventions
-
-```yaml
-Resources:
-  DBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      Tags:
-        - Key: Name
-          Value: !Sub ${Environment}-${Application}-rds
-        - Key: Environment
-          Value: !Ref Environment
-        - Key: Application
-          Value: !Ref ApplicationName
-        - Key: ManagedBy
-          Value: CloudFormation
-```
-
-### Use Secrets Manager for Credentials
-
-```yaml
-Resources:
-  DBCredentials:
-    Type: AWS::SecretsManager::Secret
-    Properties:
-      Name: !Sub ${AWS::StackName}/rds/credentials
-      SecretString: !Sub '{"username":"${MasterUsername}","password":"${MasterUserPassword}"}'
+      GroupDescription: !Sub "${AWS::StackName} RDS security group"
+      VpcId: !Ref VpcId
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 3306
+          ToPort: 3306
+          SourceSecurityGroupId: !Ref AppSecurityGroupId
 
   DBInstance:
     Type: AWS::RDS::DBInstance
+    DeletionPolicy: Snapshot
+    UpdateReplacePolicy: Snapshot
     Properties:
-      MasterUsername: !Sub "{{resolve:secretsmanager:${DBCredentials}:SecretString:username}}"
-      MasterUserPassword: !Sub "{{resolve:secretsmanager:${DBCredentials}:SecretString:password}}"
-```
-
-### Separate Database and Application Stacks
-
-```yaml
-# database-stack.yaml - Rarely changes
-AWSTemplateFormatVersion: 2010-09-09
-Description: Database infrastructure (VPC, subnets, RDS instance)
-Resources:
-  DBSubnetGroup: AWS::RDS::DBSubnetGroup
-  DBInstance: AWS::RDS::DBInstance
-  DBParameterGroup: AWS::RDS::DBParameterGroup
-
-# application-stack.yaml - Changes frequently
-AWSTemplateFormatVersion: 2010-09-09
-Description: Application resources
-Parameters:
-  DatabaseStackName:
-    Type: String
-Resources:
-  ApplicationConfig: AWS::SSM::Parameter
-```
-
-### Use Pseudo Parameters
-
-Use pseudo parameters for region-agnostic templates.
-
-```yaml
-Resources:
-  DBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBInstanceIdentifier: !Sub ${AWS::StackName}-${AWS::Region}
-      Tags:
-        - Key: Region
-          Value: !Ref AWS::Region
-        - Key: AccountId
-          Value: !Ref AWS::AccountId
-```
-
-### Validate Before Deployment
-
-```bash
-# Validate template
-aws cloudformation validate-template --template-body file://template.yaml
-
-# Use cfn-lint for advanced validation
-pip install cfn-lint
-cfn-lint template.yaml
-
-# Check for AWS-specific issues
-cfn-lint template.yaml --region us-east-1
-```
-
-## Stack Policies
-
-Stack policies protect critical resources from unintended updates during stack operations. For RDS databases, this is essential to prevent accidental modifications that could cause data loss or downtime.
-
-### Basic Stack Policy
-
-```yaml
-{
-  "Statement" : [
-    {
-      "Effect" : "Allow",
-      "Action" : "Update:*",
-      "Principal": "*",
-      "Resource" : "*"
-    },
-    {
-      "Effect" : "Deny",
-      "Action" : "Update:*",
-      "Principal": "*",
-      "Resource" : "LogicalResourceId/DBInstance"
-    },
-    {
-      "Effect" : "Deny",
-      "Action" : "Update:*",
-      "Principal": "*",
-      "Resource" : "LogicalResourceId/DBCluster"
-    }
-  ]
-}
-```
-
-### Stack Policy for Production RDS
-
-```yaml
-{
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": "Update:*",
-      "Principal": "*",
-      "Resource": "*"
-    },
-    {
-      "Effect": "Deny",
-      "Action": [
-        "Update:Replace",
-        "Update:Delete"
-      ],
-      "Principal": "*",
-      "Resource": "LogicalResourceId/DBInstance"
-    },
-    {
-      "Effect": "Deny",
-      "Action": [
-        "Update:Replace",
-        "Update:Delete"
-      ],
-      "Principal": "*",
-      "Resource": "LogicalResourceId/DBCluster"
-    },
-    {
-      "Effect": "Deny",
-      "Action": "Update:Delete",
-      "Principal": "*",
-      "Resource": "LogicalResourceId/DBSubnetGroup"
-    },
-    {
-      "Effect": "Allow",
-      "Action": "Update:Modify",
-      "Principal": "*",
-      "Resource": "LogicalResourceId/DBInstance",
-      "Condition": {
-        "StringEquals": {
-          "ResourceAttribute/StorageEncrypted": "true"
-        }
-      }
-    }
-  ]
-}
-```
-
-### Setting Stack Policy
-
-```bash
-# Set stack policy during creation
-aws cloudformation create-stack \
-  --stack-name my-rds-stack \
-  --template-body file://template.yaml \
-  --stack-policy-body file://stack-policy.json
-
-# Set stack policy on existing stack
-aws cloudformation set-stack-policy \
-  --stack-name my-rds-stack \
-  --stack-policy-body file://stack-policy.json
-
-# View current stack policy
-aws cloudformation get-stack-policy \
-  --stack-name my-rds-stack \
-  --query StackPolicyBody \
-  --output text
-```
-
-## Termination Protection
-
-Termination protection is **critical for RDS databases** as it prevents accidental deletion that could result in data loss. This should be enabled for all production databases.
-
-### Enabling Termination Protection
-
-```bash
-# Enable termination protection on stack creation
-aws cloudformation create-stack \
-  --stack-name production-rds \
-  --template-body file://template.yaml \
-  --enable-termination-protection
-
-# Enable termination protection on existing stack
-aws cloudformation update-termination-protection \
-  --stack-name production-rds \
-  --enable-termination-protection
-
-# Check if termination protection is enabled
-aws cloudformation describe-stacks \
-  --stack-name production-rds \
-  --query 'Stacks[0].EnableTerminationProtection' \
-  --output boolean
-
-# Disable termination protection (requires confirmation)
-aws cloudformation update-termination-protection \
-  --stack-name production-rds \
-  --no-enable-termination-protection
-```
-
-### Termination Protection in Template
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: RDS instance with termination protection enabled
-
-Resources:
-  DBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBInstanceIdentifier: production-db
-      DBInstanceClass: db.r5.large
+      DBInstanceIdentifier: !Sub "${AWS::StackName}-mysql"
+      DBInstanceClass: db.t3.medium
       Engine: mysql
+      EngineVersion: '8.0'
       MasterUsername: !Ref MasterUsername
       MasterUserPassword: !Ref MasterUserPassword
+      AllocatedStorage: 50
+      StorageType: gp3
       StorageEncrypted: true
-      MultiAZ: true
-      DeletionProtection: true
-      # Termination protection is set at stack level, not resource level
-```
-
-### Deletion Protection vs Termination Protection
-
-| Feature | DeletionProtection | Termination Protection |
-|---------|-------------------|------------------------|
-| **Level** | Resource level (DBInstance) | Stack level |
-| **Prevents** | DELETE_DB_INSTANCE API call | CloudFormation stack deletion |
-| **Console UI** | Instance settings | Stack settings |
-| **Override** | Cannot be overridden | Can be disabled with confirmation |
-| **Recommended for** | All production RDS instances | All production stacks with RDS |
-
-### Deletion Protection Best Practice
-
-```yaml
-Conditions:
-  IsProduction: !Equals [!Ref Environment, production]
-
-Resources:
-  DBInstance:
-    Type: AWS::RDS::DBInstance
-    Properties:
-      # Always enable deletion protection
-      DeletionProtection: !If [IsProduction, true, false]
-      # Additional production safeguards
+      KmsKeyId: !Ref KmsKeyId
+      DBSubnetGroupName: !Ref DBSubnetGroup
+      VPCSecurityGroups: [!Ref DBSecurityGroup]
       MultiAZ: !If [IsProduction, true, false]
       BackupRetentionPeriod: !If [IsProduction, 35, 7]
+      DeletionProtection: !If [IsProduction, true, false]
+      EnablePerformanceInsights: !If [IsProduction, true, false]
+      PerformanceInsightsRetentionPeriod: !If [IsProduction, 731, 7]
+
+  KmsKeyId:
+    Type: AWS::KMS::Key
+    Condition: IsProduction
+    Properties:
+      Description: KMS key for RDS encryption
+      EnableKeyRotation: true
+      KeyPolicy:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: Enable IAM User Permissions
+            Effect: Allow
+            Principal:
+              AWS: !Sub arn:aws:iam::${AWS::AccountId}:root
+            Action: kms:*
+            Resource: '*'
+
+Outputs:
+  DBEndpoint:
+    Description: Database endpoint
+    Value: !GetAtt DBInstance.Endpoint.Address
+    Export:
+      Name: !Sub ${AWS::StackName}-DBEndpoint
+  DBPort:
+    Description: Database port
+    Value: !GetAtt DBInstance.Endpoint.Port
+    Export:
+      Name: !Sub ${AWS::StackName}-DBPort
 ```
 
-## Drift Detection
+See [examples.md](references/examples.md) for additional examples including Aurora clusters, read replicas, and multi-region setups.
 
-Drift detection identifies when the actual infrastructure configuration differs from the CloudFormation template. This is crucial for RDS to ensure security and compliance.
+## References
 
-### Detecting Drift
+### Core Configuration
+- **[template-structure.md](references/template-structure.md)** — Template sections, parameters, mappings, conditions, outputs, cross-stack references
+- **[database-components.md](references/database-components.md)** — DB instances, clusters, parameter groups, subnet groups, Aurora configurations
+- **[security-secrets.md](references/security-secrets.md)** — Security groups, encryption, Secrets Manager, IAM authentication
+- **[high-availability.md](references/high-availability.md)** — Multi-AZ, read replicas, Aurora auto-scaling, disaster recovery
 
-```bash
-# Detect drift on entire stack
-aws cloudformation detect-stack-drift \
-  --stack-name production-rds
+### Operational Guides
+- **[operational-practices.md](references/operational-practices.md)** — Stack policies, termination protection, drift detection, change sets, monitoring
+- **[constraints.md](references/constraints.md)** — Resource limits, operational constraints, security constraints, cost considerations
 
-# Detect drift on specific resources
-aws cloudformation detect-stack-drift \
-  --stack-name production-rds \
-  --logical-resource-ids DBInstance,DBParameterGroup
-
-# Get drift detection status
-aws cloudformation describe-stack-drift-detection-status \
-  --stack-drift-detection-id <detection-id>
-
-# Check drift status for all resources
-aws cloudformation describe-stack-resource-drifts \
-  --stack-name production-rds
-```
-
-### Drift Detection Status Response
-
-```json
-{
-  "StackResourceDrifts": [
-    {
-      "LogicalResourceId": "DBInstance",
-      "PhysicalResourceId": "production-db-instance-id",
-      "ResourceType": "AWS::RDS::DBInstance",
-      "StackId": "arn:aws:cloudformation:us-east-1:123456789:stack/production-rds/...",
-      "DriftStatus": "MODIFIED",
-      "PropertyDifferences": [
-        {
-          "PropertyPath": "MultiAZ",
-          "ExpectedValue": "true",
-          "ActualValue": "false"
-        },
-        {
-          "PropertyPath": "BackupRetentionPeriod",
-          "ExpectedValue": "35",
-          "ActualValue": "7"
-        }
-      ]
-    }
-  ]
-}
-```
-
-### Automated Drift Detection Schedule
-
-```bash
-# Create a Lambda function to check drift weekly
-# and send SNS notification if drift is detected
-
-aws events put-rule \
-  --name rds-drift-detection \
-  --schedule-expression "rate(7 days)"
-
-aws events put-targets \
-  --rule rds-drift-detection \
-  --targets "Id"="1","Arn"="arn:aws:lambda:us-east-1:123456789:function/drift-checker"
-```
-
-### Drift Detection Script
-
-```bash
-#!/bin/bash
-# check-rds-drift.sh
-
-STACK_NAME=$1
-DRIFT_STATUS=$(aws cloudformation detect-stack-drift \
-  --stack-name $STACK_NAME \
-  --query StackDriftStatus \
-  --output text 2>/dev/null)
-
-if [ "$DRIFT_STATUS" == "DRIFTED" ]; then
-  echo "Drift detected on stack $STACK_NAME"
-  aws cloudformation describe-stack-resources \
-    --stack-name $STACK_NAME \
-    --query 'StackResources[?ResourceStatusReason!=`null`]' \
-    --output table
-  # Send notification
-  aws sns publish \
-    --topic-arn arn:aws:sns:us-east-1:123456789:rds-drift-alert \
-    --message "Drift detected on stack $STACK_NAME"
-else
-  echo "No drift detected on stack $STACK_NAME"
-fi
-```
-
-## Change Sets
-
-Change sets allow you to preview how proposed changes will affect your stack before execution. This is essential for RDS to understand potential impact.
-
-### Creating and Viewing a Change Set
-
-```bash
-# Create change set for stack update
-aws cloudformation create-change-set \
-  --stack-name production-rds \
-  --change-set-name preview-changes \
-  --template-body file://updated-template.yaml \
-  --capabilities CAPABILITY_IAM \
-  --change-set-type UPDATE
-
-# List change sets for a stack
-aws cloudformation list-change-sets \
-  --stack-name production-rds
-
-# Describe change set
-aws cloudformation describe-change-set \
-  --stack-name production-rds \
-  --change-set-name preview-changes
-
-# Execute change set
-aws cloudformation execute-change-set \
-  --stack-name production-rds \
-  --change-set-name preview-changes
-
-# Delete change set (if not executing)
-aws cloudformation delete-change-set \
-  --stack-name production-rds \
-  --change-set-name preview-changes
-```
-
-### Change Set Response Example
-
-```json
-{
-  "ChangeSetName": "preview-changes",
-  "ChangeSetId": "arn:aws:cloudformation:us-east-1:123456789:changeSet/...",
-  "StackId": "arn:aws:cloudformation:us-east-1:123456789:stack/...",
-  "Status": "CREATE_COMPLETE",
-  "Changes": [
-    {
-      "Type": "Resource",
-      "ResourceChange": {
-        "Action": "Modify",
-        "LogicalResourceId": "DBInstance",
-        "PhysicalResourceId": "production-db",
-        "ResourceType": "AWS::RDS::DBInstance",
-        "Replacement": "False",
-        "Scope": [
-          "Properties"
-        ],
-        "Details": [
-          {
-            "Target": {
-              "Attribute": "Properties",
-              "Name": "MultiAZ"
-            },
-            "Evaluation": "Static",
-            "ChangeSource": "Parameter",
-            "BeforeValue": "false",
-            "AfterValue": "true"
-          }
-        ]
-      }
-    }
-  ]
-}
-```
-
-### Change Set for RDS Modifications
-
-```bash
-# Change set that will modify RDS instance class
-aws cloudformation create-change-set \
-  --stack-name production-rds \
-  --change-set-name modify-instance-class \
-  --template-body file://modify-instance-template.yaml \
-  --parameters parameter-overrides DBInstanceClass=db.r5.xlarge
-
-# Change set for adding read replica
-aws cloudformation create-change-set \
-  --stack-name production-rds \
-  --change-set-name add-read-replica \
-  --template-body file://add-replica-template.yaml
-
-# Change set that requires replacement (causes downtime)
-aws cloudformation create-change-set \
-  --stack-name production-rds \
-  --change-set-name change-engine-version \
-  --template-body file://change-version-template.yaml
-```
-
-### Change Set Types
-
-| Change Set Type | Description | Use Case |
-|----------------|-------------|----------|
-| `UPDATE` | Creates changes for existing stack | Modifying existing resources |
-| `CREATE` | Simulates stack creation | Validating new templates |
-| `IMPORT` | Imports existing resources | Moving resources to CloudFormation |
-
-### Change Set Best Practices for RDS
-
-```bash
-# Always create change set before updating RDS
-aws cloudformation create-change-set \
-  --stack-name production-rds \
-  --change-set-name pre-update-preview \
-  --template-body file://updated-template.yaml
-
-# Review changes carefully
-aws cloudformation describe-change-set \
-  --stack-name production-rds \
-  --change-set-name pre-update-preview \
-  --query 'Changes[].ResourceChange'
-
-# Check for replacement operations
-aws cloudformation describe-change-set \
-  --stack-name production-rds \
-  --change-set-name pre-update-preview \
-  --query 'Changes[?ResourceChange.Replacement==`True`]'
-
-# Only execute if changes are acceptable
-aws cloudformation execute-change-set \
-  --stack-name production-rds \
-  --change-set-name pre-update-preview
-```
-
-## Related Resources
-
-- For advanced patterns: See [EXAMPLES.md](references/examples.md)
-- For reference: See [REFERENCE.md](references/reference.md)
-- AWS CloudFormation User Guide: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/
-- RDS Documentation: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/
-- RDS Best Practices: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_BestPractices.html
-- Aurora Documentation: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/
+### Additional Resources
+- **[examples.md](references/examples.md)** — Complete production-ready examples
+- **[reference.md](references/reference.md)** — CloudFormation RDS resource reference
 
 ## Constraints and Warnings
 
 ### Resource Limits
-
-- **Instance Storage Limits**: Maximum storage size varies by instance class and engine
-- **Database Name Limits**: Database name identifiers have specific length and character requirements
-- **Parameter Groups**: Maximum number of DB parameter groups per account
-- **Option Groups**: Some options are not compatible with specific database engines
-
-### Operational Constraints
-
-- **Instance Replacement**: Certain modifications (like engine version upgrade) require instance replacement with downtime
-- **Snapshot Storage**: Manual snapshots incur storage costs even after instance deletion
-- **Multi-AZ Deployment**: Multi-AZ deployments double compute costs but provide HA
-- **Backup Retention**: Changing backup retention period affects storage costs
-
-### Security Constraints
-
-- **Master Credentials**: Master user password cannot be retrieved after creation; must be reset if lost
-- **Encryption at Rest**: Once enabled, encryption cannot be disabled for RDS storage
-- **VPC Access**: RDS instances must be in VPC; public access not recommended
-- **Security Groups**: Security group rules must allow traffic from application tier only
+- Maximum storage size varies by engine (up to 64 TB for MySQL/PostgreSQL)
+- Maximum 500 resources per CloudFormation stack
+- Parameter group limits vary by account/region
 
 ### Cost Considerations
+- Multi-AZ deployments cost approximately double single-AZ
+- Provisioned IOPS (io1) significantly increases costs
+- Backup storage beyond free tier incurs monthly costs
+- Manual snapshots incur storage costs even after instance deletion
 
-- **Instance Class Costs**: Larger instance classes significantly increase hourly costs
-- **Multi-AZ Premium**: Multi-AZ deployments cost approximately double single-AZ
-- **IOPS Costs**: Provisioned IOPS (io1) storage type significantly increases costs
-- **Backup Storage**: Automated backups beyond free tier incur monthly GB storage costs
-- **Data Transfer**: Inter-AZ data transfer for Multi-AZ replication incurs costs
+### Security Constraints
+- Master password cannot be retrieved after creation
+- Encryption at rest cannot be disabled once enabled
+- RDS instances must be in VPC (public access not recommended)
+- Security group rules must restrict access to application tier
 
-### Performance Constraints
+### Operational Constraints
+- Certain modifications (engine version, storage type) require instance replacement with downtime
+- Maintenance windows may cause brief service interruptions
+- Read replicas may lag behind primary by seconds to minutes
+- Not all database engines available in all regions
 
-- **Storage Autoscaling**: Storage autoscaling has minimum and maximum increments
-- **Connection Limits**: Maximum connections vary by instance class and database engine
-- **Maintenance Windows**: Maintenance windows may cause brief service interruptions
-- **Read Replica Lag**: Read replicas may lag behind primary by seconds to minutes
-
-### Availability Constraints
-
-- **Region Availability**: Not all database engines are available in all regions
-- **Version Support**: Older database versions may be deprecated and require upgrades
-- **Instance Type Availability**: Some instance types may not be available in all AZs
-
-## Additional Files
+See [constraints.md](references/constraints.md) for complete constraints, troubleshooting guides, and performance considerations.

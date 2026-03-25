@@ -37,7 +37,7 @@ You must have both a `projectId` AND at least one `screenId` of an existing scre
       "aspects": ["COLOR_SCHEME", "IMAGES"]
     },
     "deviceType": "DESKTOP",
-    "modelId": "GEMINI_3_PRO"
+    "modelId": "GEMINI_3_1_PRO"
   }
 }
 ```
@@ -100,8 +100,9 @@ Same enum: `MOBILE`, `DESKTOP`, `TABLET`, `AGNOSTIC`
 
 | Value | Use when |
 |-------|---------|
-| `GEMINI_3_PRO` | Higher quality variants, complex designs |
-| `GEMINI_3_FLASH` | Faster iteration, simpler screens |
+| `GEMINI_3_1_PRO` | **Recommended** — complex layouts, high fidelity |
+| `GEMINI_3_FLASH` | Fast iteration, wireframes, simple changes |
+| `GEMINI_3_PRO` | **Deprecated.** Still works but will be removed. Use `GEMINI_3_1_PRO` instead. |
 
 ## Output
 

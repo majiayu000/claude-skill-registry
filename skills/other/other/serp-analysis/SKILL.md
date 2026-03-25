@@ -1,18 +1,14 @@
 ---
 name: serp-analysis
-version: "3.0.0"
-description: 'This skill should be used when the user asks to "analyze search results", "SERP analysis", "what ranks for", "SERP features", "why does this page rank", "what is on page one for this query", "who ranks for this keyword", or "what does Google show for". Analyzes search engine results pages (SERPs) to understand ranking factors, SERP features, user intent patterns, and AI overview triggers. Essential for understanding what it takes to rank. For tracking rankings over time, see rank-tracker. For keyword discovery, see keyword-research.'
+version: "4.0.0"
+description: 'Analyze search engine results pages to understand ranking factors, SERP features, user intent patterns, and AI overview triggers. Use when the user asks to "analyze search results", "SERP analysis", "what ranks for", "SERP features", "why does this page rank", "featured snippets", "AI overviews", or "what does Google show for". For tracking rankings over time, see rank-tracker. For keyword discovery, see keyword-research.'
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 allowed-tools: WebFetch
+homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 metadata:
-  openclaw:
-    requires:
-      env: []
-      bins: []
-    primaryEnv: AHREFS_API_KEY
   author: aaron-he-zhu
-  version: "3.0.0"
+  version: "4.0.0"
   geo-relevance: "high"
   tags:
     - seo
@@ -49,7 +45,7 @@ metadata:
 # SERP Analysis
 
 
-> **[SEO & GEO Skills Library](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · Install all: `npx skills add aaron-he-zhu/seo-geo-claude-skills`
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
 
 <details>
 <summary>Browse all 20 skills</summary>
@@ -117,6 +113,8 @@ Why does [URL] rank #1 for [keyword]?
 ```
 
 ## Data Sources
+
+> **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
 > See [CONNECTORS.md](../../CONNECTORS.md) for tool category placeholders.
 

@@ -6,7 +6,7 @@ description: >
   comparing plan vs reality, documenting risks, or planning next milestones.
   Triggers: "roadmap", "project status", "blockers", "risks", "progress", "next milestone",
   "gaps", "what's done".
-argument-hint: status | gaps | next | delta | blockers | risks | update | specs
+argument-hint: "[--deep] status | gaps | next | delta | blockers | risks | update | specs"
 allowed-tools: Read, Glob, Grep, Write, Bash
 ---
 
@@ -16,50 +16,7 @@ Synthesize project documentation and codebase state into actionable status repor
 
 ## Context Discovery
 
-**Run this protocol before any analysis to understand the project.**
-
-### Priority 1: Explicit Configuration
-
-Read `.arkhe.yaml` from project root. Extract `roadmap:` section:
-
-```yaml
-roadmap:
-  output_dir: arkhe/roadmap
-  context_dir: .arkhe/roadmap
-  status_file: docs/PROJECT-STATUS.md
-```
-
-### Priority 1b: Johnny Decimal Detection
-
-Check if the project uses Johnny Decimal documentation structure:
-1. Read `.jd-config.json` at project root — if present, use its `root` (default: `docs`) and `areas` map
-2. If no config, glob for `docs/[0-9][0-9]-*/` — if 2+ matches exist, J.D structure is present
-
-If J.D detected, supplement Priority 4 (Documentation Scan) globs:
-- Glob `{jd_root}/[0-9][0-9]-*/**/*.md` to capture all area docs
-- Read ALL areas — roadmap analysis requires comprehensive coverage
-- Deprioritize `90-*` (archive) — read last, note content may be outdated
-- Keep existing non-J.D paths as fallback
-
-### Priority 2: Rich Context
-
-If `{context_dir}` exists, read all `.md` files — especially `documents.md` for the document map and `architecture.md` for module structure.
-
-### Priority 3: Project Identity
-
-Read `CLAUDE.md` and `README.md` to understand project scope and conventions.
-
-### Priority 4: Documentation Scan
-
-Glob for documentation, planning, and status files:
-
-```
-docs/**/*.md, plan/**/*.md, specs/**/*.md, arkhe/specs/*/spec.md
-```
-
-### Priority 5: Codebase Scan
-
-Detect tech stack from build files, then scan for modules, routes, models, tests, and migrations.
+Run the shared context discovery protocol in [CONTEXT_DISCOVERY.md](../../references/CONTEXT_DISCOVERY.md). Execute all phases in order (use thorough scan mode for Phase 7). Store results for analysis below.
 
 ## Arguments
 
@@ -79,16 +36,7 @@ Parse from `$ARGUMENTS`:
 
 ## Module Maturity Scale
 
-Rate each module using this shared vocabulary:
-
-| Level | Description |
-|-------|-------------|
-| **Stub** | Directory/package exists, maybe a placeholder |
-| **Domain Started** | Entities/models/types defined |
-| **Service Layer** | Business logic implemented |
-| **API Ready** | Endpoints/routes exposed |
-| **Tested** | Tests covering key paths |
-| **Production Ready** | Fully tested, documented, monitoring-ready |
+Rate each module using the shared vocabulary in [MATURITY_SCALE.md](../../references/MATURITY_SCALE.md).
 
 ## Mode Execution
 
@@ -201,12 +149,17 @@ Verify status against codebase, not just what the spec says.
 - **Honest** — distinguish between "verified working" and "files exist but untested"
 - `update` writes files after user confirmation; all other modes output to chat
 
+## Deep Mode (`--deep`)
+
+When `$ARGUMENTS` contains `--deep`, run the full multi-agent pipeline with **parallel cross-perspective analysis**. Three Sonnet agents analyze the project simultaneously from PM, Architect, and Roadmap perspectives, then a synthesizer merges findings and surfaces contradictions.
+
+See [WORKFLOW.md](WORKFLOW.md) § Deep Pipeline for the 5-phase execution protocol.
+
+**Patterns applied**: Pipeline, Supervisor-Worker, Parallel Execution, Confession, Confidence-Gated Completion.
+
 ## Lane Discipline
 
-- Do NOT produce user stories or requirements — that's the PM's domain.
-- Do NOT produce architecture documents or ADRs — that's the architect's domain.
-- Do NOT write source code, tests, or config files.
-- Don't confuse planning documents with implementation — a design doc is NOT a built feature.
+See the Roadmap Analyst section of [LANE_DISCIPLINE.md](../../references/LANE_DISCIPLINE.md). Stay in your lane.
 
 ## References
 

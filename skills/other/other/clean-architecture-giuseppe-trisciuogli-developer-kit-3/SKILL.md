@@ -18,7 +18,6 @@ This skill provides comprehensive guidance for implementing Clean Architecture, 
 - Designing ports and adapters for swappable implementations
 - Applying Domain-Driven Design tactical patterns (entities, value objects, aggregates)
 - Creating testable business logic without Spring context dependencies
-- Trigger phrases: **"implement clean architecture"**, **"ports and adapters pattern"**, **"separate domain from infrastructure"**, **"hexagonal architecture Spring Boot"**, **"DDD aggregate design"**
 
 ## Instructions
 
@@ -117,8 +116,23 @@ The domain layer must have zero dependencies on Spring or any framework.
 6. **Constructor Injection**: Mandatory dependencies via final fields
 7. **DTO Mapping**: Separate domain models from API contracts
 8. **Transaction Boundaries**: Place `@`Transactional in application services
+9. **Factory Methods**: Use `Entity.create()` for invariant enforcement during construction
+10. **Separate JPA Entities**: Keep domain entities separate from JPA entities with mappers
 
-### 8. Write Tests
+### 8. Validate Architecture Compliance
+
+After implementing each layer, verify the dependency rules are respected:
+
+- **Domain Layer Check**: Run `grep -r "@Service\|@Component\|@Autowired" domain/` to ensure zero Spring imports
+- **ArchUnit Test**: Add dependency tests to verify no infrastructure imports in domain layer:
+  ```java
+  noClasses().that().resideInPackage("..domain..")
+      .should().accessClassesThat().resideInAnyPackage("..spring..", "..infrastructure..");
+  ```
+- **Entity Exposure Check**: Verify JPA entities are never returned from domain services
+- **Transaction Check**: Confirm `@`Transactional only on application layer services, never on domain
+
+### 9. Write Tests
 
 - **Domain Tests**: Pure unit tests without Spring context, fast execution
 - **Application Tests**: Unit tests with mocked ports using Mockito
@@ -354,16 +368,16 @@ class OrderServiceTest {
 
 ## Best Practices
 
-1. **Dependency Rule**: Domain has zero dependencies on Spring or other frameworks - this is the most critical principle
-2. **Immutable Value Objects**: Use Java records for value objects with built-in validation in compact constructors
-3. **Rich Domain Models**: Place business logic in entities, not services - avoid anemic domain models
-4. **Repository Pattern**: Domain defines interface, infrastructure implements - never the reverse
-5. **Domain Events**: Decouple side effects from primary operations using event-driven patterns
-6. **Constructor Injection**: Mandatory dependencies via final fields with Lombok `@`RequiredArgsConstructor
-7. **DTO Mapping**: Separate domain models from API contracts - never expose entities directly
-8. **Transaction Boundaries**: Place `@`Transactional in application services, never in domain layer
-9. **Factory Methods**: Use static factory methods like `Entity.create()` for entity construction with invariant enforcement
-10. **Separate JPA Entities**: Keep domain entities separate from JPA entities with mappers between them
+- **Domain purity**: Keep the domain layer free of Spring annotations and framework imports — zero dependencies on outer layers
+- **Feature-based packages**: Organize by business capability (`order/`, `customer/`) rather than technical role, with each feature containing all four layers
+- **Immutable value objects**: Use Java records for value objects with built-in validation in compactors — immutable by design
+- **Rich domain models**: Place business logic in entities and aggregates, not in application services — services orchestrate, entities encapsulate
+- **Always map**: Separate JPA entities from domain models using MapStruct or manual mappers; never expose JPA entities outside infrastructure
+- **Domain events for decoupling**: Use `DomainEventPublisher` to decouple cross-aggregate side effects instead of direct service calls
+- **Transaction boundaries in application layer**: Place `@Transactional` only on application services, never on domain classes
+- **Factory methods for invariants**: Use `Entity.create(...)` static methods to enforce invariants at construction time
+- **Enforce with ArchUnit**: Add ArchUnit tests in the test suite to verify no Spring or infrastructure imports reach the domain layer
+- **Strongly-typed IDs**: Use `record OrderId(UUID value)` instead of raw `UUID` to prevent ID confusion across aggregates
 
 ## Constraints and Warnings
 

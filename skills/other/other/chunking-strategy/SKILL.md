@@ -1,6 +1,6 @@
 ---
 name: chunking-strategy
-description: Provides optimal chunking strategies in RAG systems and document processing pipelines. Use when building retrieval-augmented generation systems, vector databases, or processing large documents that require breaking into semantically meaningful segments for embeddings and search.
+description: Provides chunking strategies for RAG systems. Generates chunk size recommendations (256-1024 tokens), overlap percentages (10-20%), and semantic boundary detection methods. Validates semantic coherence and evaluates retrieval precision/recall metrics. Use when building retrieval-augmented generation systems, vector databases, or processing large documents.
 allowed-tools: Read, Write, Bash
 ---
 
@@ -8,138 +8,146 @@ allowed-tools: Read, Write, Bash
 
 ## Overview
 
-Implement optimal chunking strategies for Retrieval-Augmented Generation (RAG) systems and document processing pipelines. This skill provides a comprehensive framework for breaking large documents into smaller, semantically meaningful segments that preserve context while enabling efficient retrieval and search.
+Provides chunking strategies for RAG systems, vector databases, and document processing. Recommends chunk sizes, overlap percentages, and boundary detection methods; validates semantic coherence; evaluates retrieval metrics.
 
 ## When to Use
 
-Use this skill when building RAG systems, optimizing vector search performance, implementing document processing pipelines, handling multi-modal content, or performance-tuning existing RAG systems with poor retrieval quality.
+Use when building or optimizing RAG systems, vector search pipelines, document chunking workflows, or performance-tuning existing systems with poor retrieval quality.
 
 ## Instructions
 
 ### Choose Chunking Strategy
 
-Select appropriate chunking strategy based on document type and use case:
+Select based on document type and use case:
 
 1. **Fixed-Size Chunking** (Level 1)
    - Use for simple documents without clear structure
    - Start with 512 tokens and 10-20% overlap
-   - Adjust size based on query type: 256 for factoid, 1024 for analytical
+   - Adjust: 256 for factoid queries, 1024 for analytical
 
 2. **Recursive Character Chunking** (Level 2)
-   - Use for documents with clear structural boundaries
-   - Implement hierarchical separators: paragraphs → sentences → words
-   - Customize separators for document types (HTML, Markdown)
+   - Use for documents with structural boundaries
+   - Hierarchical separators: paragraphs → sentences → words
+   - Customize for document types (HTML, Markdown, JSON)
 
 3. **Structure-Aware Chunking** (Level 3)
-   - Use for structured documents (Markdown, code, tables, PDFs)
+   - Use for structured content (Markdown, code, tables, PDFs)
    - Preserve semantic units: functions, sections, table blocks
-   - Validate structure preservation post-splitting
+   - Validate structure preservation post-split
 
 4. **Semantic Chunking** (Level 4)
    - Use for complex documents with thematic shifts
-   - Implement embedding-based boundary detection
-   - Configure similarity threshold (0.8) and buffer size (3-5 sentences)
+   - Embedding-based boundary detection with 0.8 similarity threshold
+   - Buffer size: 3-5 sentences
 
 5. **Advanced Methods** (Level 5)
-   - Use Late Chunking for long-context embedding models
-   - Apply Contextual Retrieval for high-precision requirements
-   - Monitor computational costs vs. retrieval improvements
+   - Late Chunking for long-context models
+   - Contextual Retrieval for high-precision requirements
+   - Monitor computational cost vs. retrieval gain
 
-Reference detailed strategy implementations in [references/strategies.md](references/strategies.md).
+Reference: [references/strategies.md](references/strategies.md).
 
 ### Implement Chunking Pipeline
 
-Follow these steps to implement effective chunking:
-
 1. **Pre-process documents**
-   - Analyze document structure and content types
+   - Analyze structure, content types, information density
    - Identify multi-modal content (tables, images, code)
-   - Assess information density and complexity
 
-2. **Select strategy parameters**
-   - Choose chunk size based on embedding model context window
-   - Set overlap percentage (10-20% for most cases)
-   - Configure strategy-specific parameters
+2. **Select parameters**
+   - Chunk size: embedding model context window / 4
+   - Overlap: 10-20% for most cases
+   - Strategy-specific settings
 
 3. **Process and validate**
-   - Apply chosen chunking strategy
-   - Validate semantic coherence of chunks
+   - Apply chunking strategy
+   - Validate coherence: run `evaluate_chunks.py --coherence` (see below)
    - Test with representative documents
 
 4. **Evaluate and iterate**
-   - Measure retrieval precision and recall
-   - Monitor processing latency and resource usage
-   - Optimize based on specific use case requirements
+   - Measure precision and recall
+   - If precision < 0.7: reduce chunk_size by 25% and re-evaluate
+   - If recall < 0.6: increase overlap by 10% and re-evaluate
+   - Monitor latency and memory usage
 
-Reference detailed implementation guidelines in [references/implementation.md](references/implementation.md).
+Reference: [references/implementation.md](references/implementation.md).
 
-### Evaluate Performance
+### Validate Chunk Quality
 
-Use these metrics to evaluate chunking effectiveness:
+Run validation commands to assess chunk quality:
 
-- **Retrieval Precision**: Fraction of retrieved chunks that are relevant
-- **Retrieval Recall**: Fraction of relevant chunks that are retrieved
-- **End-to-End Accuracy**: Quality of final RAG responses
-- **Processing Time**: Latency impact on overall system
-- **Resource Usage**: Memory and computational costs
+```bash
+# Check semantic coherence (requires sentence-transformers)
+python -c "
+from sentence_transformers import SentenceTransformer
+model = SentenceTransformer('all-MiniLM-L6-v2')
+chunks = [...]  # your chunks
+embeddings = model.encode(chunks)
+similarity = (embeddings @ embeddings.T).mean()
+print(f'Cohesion: {similarity:.3f}')  # target: 0.3-0.7
+"
 
-Reference detailed evaluation framework in [references/evaluation.md](references/evaluation.md).
+# Measure retrieval precision
+python -c "
+relevant = sum(1 for c in retrieved if c in relevant_chunks)
+precision = relevant / len(retrieved)
+print(f'Precision: {precision:.2f}')  # target: >= 0.7
+"
+
+# Check chunk size distribution
+python -c "
+import numpy as np
+sizes = [len(c.split()) for c in chunks]
+print(f'Mean: {np.mean(sizes):.0f}, Std: {np.std(sizes):.0f}')
+print(f'Min: {min(sizes)}, Max: {max(sizes)}')
+"
+```
+
+Reference: [references/evaluation.md](references/evaluation.md).
 
 ## Examples
 
-### Basic Fixed-Size Chunking
+### Fixed-Size Chunking
 
 ```python
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-# Configure for factoid queries
 splitter = RecursiveCharacterTextSplitter(
     chunk_size=256,
     chunk_overlap=25,
     length_function=len
 )
-
 chunks = splitter.split_documents(documents)
 ```
 
 ### Structure-Aware Code Chunking
 
 ```python
-def chunk_python_code(code):
-    """Split Python code into semantic chunks"""
-    import ast
+import ast
 
+def chunk_python_code(code):
     tree = ast.parse(code)
     chunks = []
-
     for node in ast.walk(tree):
         if isinstance(node, (ast.FunctionDef, ast.ClassDef)):
             chunks.append(ast.get_source_segment(code, node))
-
     return chunks
 ```
 
-### Semantic Chunking with Embeddings
+### Semantic Chunking
 
 ```python
 def semantic_chunk(text, similarity_threshold=0.8):
-    """Chunk text based on semantic boundaries"""
     sentences = split_into_sentences(text)
     embeddings = generate_embeddings(sentences)
-
-    chunks = []
-    current_chunk = [sentences[0]]
-
+    chunks, current = [], [sentences[0]]
     for i in range(1, len(sentences)):
-        similarity = cosine_similarity(embeddings[i-1], embeddings[i])
-
-        if similarity < similarity_threshold:
-            chunks.append(" ".join(current_chunk))
-            current_chunk = [sentences[i]]
+        sim = cosine_similarity(embeddings[i-1], embeddings[i])
+        if sim < similarity_threshold:
+            chunks.append(" ".join(current))
+            current = [sentences[i]]
         else:
-            current_chunk.append(sentences[i])
-
-    chunks.append(" ".join(current_chunk))
+            current.append(sentences[i])
+    chunks.append(" ".join(current))
     return chunks
 ```
 
@@ -148,44 +156,40 @@ def semantic_chunk(text, similarity_threshold=0.8):
 ### Core Principles
 - Balance context preservation with retrieval precision
 - Maintain semantic coherence within chunks
-- Optimize for embedding model constraints
-- Preserve document structure when beneficial
+- Optimize for embedding model context window constraints
 
-### Implementation Guidelines
-- Start simple with fixed-size chunking (512 tokens, 10-20% overlap)
-- Test thoroughly with representative documents
-- Monitor both accuracy metrics and computational costs
-- Iterate based on specific document characteristics
+### Implementation
+- Start with fixed-size (512 tokens, 15% overlap)
+- Iterate based on document characteristics
+- Test with domain-specific documents before deployment
 
-### Common Pitfalls to Avoid
-- Over-chunking: Creating too many small, context-poor chunks
-- Under-chunking: Missing relevant information due to oversized chunks
-- Ignoring document structure and semantic boundaries
-- Using one-size-fits-all approach for diverse content types
-- Neglecting overlap for boundary-crossing information
+### Pitfalls to Avoid
+- Over-chunking: context-poor small chunks
+- Under-chunking: missing information in oversized chunks
+- Ignoring semantic boundaries and document structure
+- One-size-fits-all for diverse content types
 
 ## Constraints and Warnings
 
 ### Resource Considerations
-- Semantic and contextual methods require significant computational resources
+- Semantic methods require significant compute resources
 - Late chunking needs long-context embedding models
 - Complex strategies increase processing latency
-- Monitor memory usage for large document processing
+- Monitor memory for large document batches
 
 ### Quality Requirements
-- Validate chunk semantic coherence post-processing
-- Test with domain-specific documents before deployment
-- Ensure chunks maintain standalone meaning where possible
-- Implement proper error handling for edge cases
+- Validate semantic coherence post-processing
+- Test with representative documents before deployment
+- Ensure chunks maintain standalone meaning
+- Implement error handling for malformed content
 
 ## References
 
-Reference detailed documentation in the [references/](references/) folder:
-- [strategies.md](references/strategies.md) - Detailed strategy implementations
-- [implementation.md](references/implementation.md) - Complete implementation guidelines
-- [evaluation.md](references/evaluation.md) - Performance evaluation framework
-- [tools.md](references/tools.md) - Recommended libraries and frameworks
-- [research.md](references/research.md) - Key research papers and findings
-- [advanced-strategies.md](references/advanced-strategies.md) - 11 comprehensive chunking methods
-- [semantic-methods.md](references/semantic-methods.md) - Semantic and contextual approaches
-- [visualization-tools.md](references/visualization-tools.md) - Evaluation and visualization tools
+- [strategies.md](references/strategies.md) - Detailed strategies
+- [implementation.md](references/implementation.md) - Implementation guidelines
+- [evaluation.md](references/evaluation.md) - Performance metrics
+- [tools.md](references/tools.md) - Libraries and frameworks
+- [research.md](references/research.md) - Research papers
+- [advanced-strategies.md](references/advanced-strategies.md) - 11 advanced methods
+- [semantic-methods.md](references/semantic-methods.md) - Semantic approaches
+- [visualization-tools.md](references/visualization-tools.md) - Visualization tools

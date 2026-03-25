@@ -123,6 +123,8 @@ ${BUN_X} {baseDir}/scripts/weibo-article.ts article.md --cover ./cover.jpg
 - Title: 32 characters max (truncated with warning if longer)
 - Summary/导语: 44 characters max (auto-regenerated from content if longer)
 
+**Markdown-to-HTML**: Do NOT pass any `--theme` parameter when converting markdown to HTML. Use the default theme (no theme argument).
+
 **Article Workflow**:
 1. Opens `https://card.weibo.com/article/v3/editor`
 2. Clicks "写文章" button, waits for editor to become editable

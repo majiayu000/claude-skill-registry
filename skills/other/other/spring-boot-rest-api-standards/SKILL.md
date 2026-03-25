@@ -6,25 +6,18 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 # Spring Boot REST API Standards
 
-This skill provides comprehensive guidance for building RESTful APIs in Spring Boot applications with consistent design patterns, proper error handling, validation, and architectural best practices based on REST principles and Spring Boot conventions.
-
 ## Overview
 
-Spring Boot REST API standards establish consistent patterns for building production-ready REST APIs. These standards cover resource-based URL design, proper HTTP method usage, status code conventions, DTO patterns, validation, error handling, pagination, security headers, and architectural layering. Implement these patterns to ensure API consistency, maintainability, and adherence to REST principles.
+REST API design standards for Spring Boot covering URL design, HTTP methods, status codes, DTOs, validation, error handling, pagination, and security headers.
 
-## When to Use This Skill
+## When to Use
 
-Use this skill when:
-- Creating new REST endpoints and API routes
-- Designing request/response DTOs and API contracts
-- Planning HTTP methods and status codes
+- Creating REST endpoints and API routes
+- Designing DTOs and API contracts
 - Implementing error handling and validation
-- Setting up pagination, filtering, and sorting
-- Designing security headers and CORS policies
-- Implementing HATEOAS (Hypermedia As The Engine Of Application State)
-- Reviewing REST API architecture and design patterns
-- Building microservices with consistent API standards
-- Documenting API endpoints with clear contracts
+- Setting up pagination and filtering
+- Configuring security headers and CORS
+- Reviewing REST API architecture
 
 ## Instructions
 
@@ -78,6 +71,12 @@ Follow these steps to create well-designed REST API endpoints:
    - Configure CORS policies
    - Set content security policy
    - Include X-Frame-Options, X-Content-Type-Options
+
+**Validation checkpoints:**
+- After step 1-2: Verify URL structure follows REST conventions (/users not /getUsers)
+- After step 3: Test each endpoint returns correct status codes
+- After step 4-5: Validate DTOs with curl or HTTPie before proceeding
+- After step 6: Confirm error responses match standardized format
 
 ## Examples
 
@@ -198,117 +197,35 @@ public class GlobalExceptionHandler {
 @RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
-    private final EmailService emailService;
-    // Dependencies are explicit and testable
 }
 ```
 
-### 2. Prefer Immutable DTOs
+### 2. Prefer Immutable DTOs (Java Records or `@Value`)
 ```java
-// Java records (JDK 16+)
-public record UserResponse(Long id, String name, String email, LocalDateTime createdAt) {}
-
-// Lombok @Value for immutability
-@Value
-public class UserResponse {
-    Long id;
-    String name;
-    String email;
-    LocalDateTime createdAt;
-}
+public record UserResponse(Long id, String name, String email) {}
 ```
 
-### 3. Validate Input Early
-```java
-@PostMapping
-public ResponseEntity<UserResponse> createUser(@Valid @RequestBody CreateUserRequest request) {
-    // Validation happens automatically before method execution
-    return ResponseEntity.status(HttpStatus.CREATED).body(userService.create(request));
-}
-```
-
-### 4. Use ResponseEntity Flexibly
-```java
-return ResponseEntity.status(HttpStatus.CREATED)
-    .header("Location", "/api/users/" + created.getId())
-    .header("X-Total-Count", String.valueOf(userService.count()))
-    .body(created);
-```
-
-### 5. Implement Proper Transaction Management
+### 3. Implement Proper Transaction Management
 ```java
 @Service
 @Transactional
 public class UserService {
-
     @Transactional(readOnly = true)
-    public Optional<User> findById(Long id) {
-        return userRepository.findById(id);
-    }
+    public Optional<User> findById(Long id) { return userRepository.findById(id); }
 
     @Transactional
-    public User create(User user) {
-        return userRepository.save(user);
-    }
+    public User create(User user) { return userRepository.save(user); }
 }
-```
-
-### 6. Add Meaningful Logging
-```java
-@Slf4j
-@Service
-public class UserService {
-    public User create(User user) {
-        log.info("Creating user with email: {}", user.getEmail());
-        return userRepository.save(user);
-    }
-}
-```
-
-### 7. Document APIs with Javadoc
-```java
-/**
- * Retrieves a user by id.
- *
- * @param id the user id
- * @return ResponseEntity containing a UserResponse
- * @throws ResponseStatusException with 404 if user not found
- */
-@GetMapping("/{id}")
-public ResponseEntity<UserResponse> getUserById(@PathVariable Long id)
 ```
 
 ## Constraints and Warnings
 
-### 1. Never Expose Entities Directly
-Use DTOs to separate API contracts from domain models. This prevents accidental exposure of internal data structures and allows API evolution without database schema changes.
-
-### 2. Follow REST Conventions Strictly
-- Use nouns for resource names, not verbs
-- Use correct HTTP methods for operations
-- Use plural resource names (/users, not /user)
-- Return appropriate HTTP status codes for each operation
-
-### 3. Handle All Exceptions Globally
-Use `@`RestControllerAdvice to catch all exceptions consistently. Don't let raw exceptions bubble up to clients.
-
-### 4. Always Paginate Large Result Sets
-For GET endpoints that might return many results, implement pagination to prevent performance issues and DDoS vulnerabilities.
-
-### 5. Validate All Input Data
-Never trust client input. Use Jakarta validation annotations on all request DTOs to validate data at the controller boundary.
-
-### 6. Use Constructor Injection Exclusively
-Avoid field injection (`@Autowired`) for better testability and explicit dependency declaration.
-
-### 7. Keep Controllers Thin
-Controllers should only handle HTTP request/response adaptation. Delegate business logic to service layers.
-
-### 8. API Versioning
-Always version APIs from the start (e.g., `/v1/users`) to allow future changes without breaking existing clients.
-
-### 9. Sensitive Data Protection
-Never log or expose sensitive data (passwords, tokens, PII) in API responses or logs.
+1. **Never expose entities directly** - Use DTOs to separate API contracts from domain models
+2. **Follow REST conventions** - Use nouns for resources (/users), correct HTTP methods, plural names, proper status codes
+3. **Handle all exceptions globally** - Use `@RestControllerAdvice`, never let raw exceptions bubble up
+4. **Always paginate large result sets** - Prevent performance issues and DDoS vulnerabilities
+5. **Validate all input data** - Use Jakarta validation annotations on request DTOs
+6. **Never expose sensitive data** - Don't log or expose passwords, tokens, PII
 
 ## References
 

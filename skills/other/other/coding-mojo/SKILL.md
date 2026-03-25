@@ -2,7 +2,7 @@
 name: coding-mojo
 description: Develop and run Mojo code in Claude.ai containers. Handles installation, compilation, and execution. Use when writing Mojo code, benchmarking Mojo vs Python, or when user mentions Mojo, Modular, or MAX. Routes to Modular's official skills (mojo-syntax, mojo-python-interop, mojo-gpu-fundamentals) for language-specific correction layers.
 metadata:
-  version: 0.2.0
+  version: 0.2.1
 ---
 
 # Mojo Development in Claude.ai Containers
@@ -17,7 +17,10 @@ Install once per session (~20s via uv, ~500MB). Skip if already installed.
 if mojo --version 2>/dev/null; then
   echo "Mojo already installed"
 else
-  uv pip install --system --break-system-packages modular 2>&1 | tail -5
+  # Compiler binary without ML extras (~350MB saved)
+  uv pip install --system --break-system-packages modular --no-deps 2>&1 | tail -5
+  # Entry points + base deps (numpy, pyyaml, rich)
+  uv pip install --system --break-system-packages mojo max 2>&1 | tail -5
   mojo --version
 fi
 ```

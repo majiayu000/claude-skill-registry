@@ -8,13 +8,10 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 ## Overview
 
-SpringDoc OpenAPI is a library that automates the generation of OpenAPI 3.0 documentation for Spring Boot projects. It provides a Swagger UI web interface for exploring and testing APIs without writing additional configuration. This skill provides comprehensive patterns for integrating SpringDoc into Spring Boot 3.x applications, documenting REST endpoints, securing API documentation, and customizing the generated specification.
-
-Implement comprehensive REST API documentation using SpringDoc OpenAPI 3.0 and Swagger UI in Spring Boot 3.x applications.
+SpringDoc OpenAPI automates generation of OpenAPI 3.0 documentation for Spring Boot projects with a Swagger UI web interface for exploring and testing APIs.
 
 ## When to Use
 
-Use this skill when you need to:
 - Set up SpringDoc OpenAPI in Spring Boot 3.x projects
 - Generate OpenAPI 3.0 specifications for REST APIs
 - Configure and customize Swagger UI
@@ -24,644 +21,244 @@ Use this skill when you need to:
 - Document pageable and sortable endpoints
 - Add examples and schemas to API endpoints
 - Customize OpenAPI definitions programmatically
-- Generate API documentation for WebMvc or WebFlux applications
 - Support multiple API groups and versions
 - Document error responses and exception handlers
 - Add JSR-303 Bean Validation to API documentation
 - Support Kotlin-based Spring Boot APIs
 
+## Quick Reference
+
+| Concept | Description |
+|---------|-------------|
+| **Dependencies** | `springdoc-openapi-starter-webmvc-ui` for WebMvc, `springdoc-openapi-starter-webflux-ui` for WebFlux |
+| **Configuration** | `application.yml` with `springdoc.api-docs.*` and `springdoc.swagger-ui.*` properties |
+| **Access Points** | OpenAPI JSON: `/v3/api-docs`, Swagger UI: `/swagger-ui/index.html` |
+| **Core Annotations** | `@Tag`, `@Operation`, `@ApiResponse`, `@Parameter`, `@Schema`, `@SecurityRequirement` |
+| **Security** | Configure security schemes in OpenAPI bean, apply with `@SecurityRequirement` |
+| **Pagination** | Use `@ParameterObject` with Spring Data `Pageable` |
+
 ## Instructions
 
-Follow these steps to implement comprehensive API documentation with SpringDoc OpenAPI:
+### 1. Add Dependencies
 
-### 1. Add Dependencies and Configure
+Add SpringDoc starter for your application type (WebMvc or WebFlux). See [dependency-setup.md](references/dependency-setup.md) for Maven/Gradle configuration.
 
-Add the appropriate SpringDoc starter dependency for your application type (WebMvc or WebFlux) and configure basic settings in application.yml or application.properties.
+### 2. Configure SpringDoc
 
-### 2. Document Controllers
-
-Use OpenAPI annotations (`@`Tag, `@`Operation, `@`ApiResponse, `@`Parameter) to add descriptive information to your REST controllers. Group related endpoints under tags and document all response codes.
-
-### 3. Document Models
-
-Apply `@`Schema annotations to DTOs and entities to document field constraints, examples, and validation rules. Hide internal fields and mark read-only properties appropriately.
-
-### 4. Configure Security
-
-Set up security schemes for authentication methods (JWT Bearer, OAuth2, Basic Auth) and apply `@`SecurityRequirement to protected endpoints.
-
-### 5. Test Documentation
-
-Access Swagger UI at /swagger-ui/index.html to verify documentation completeness. Test endpoints directly from the UI to ensure examples are accurate.
-
-### 6. Customize for Production
-
-Configure API grouping, versioning, and customize UI appearance. Set up build plugins to generate OpenAPI JSON/YAML files during the build process.
-
-### 7. Integrate with CI/CD
-
-Add API documentation generation to your build pipeline and consider automated contract testing.
-
-## Setup Dependencies
-
-### Add Maven Dependencies
-
-```xml
-<!-- Standard WebMVC support -->
-<dependency>
-    <groupId>org.springdoc</groupId>
-    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-    <version>2.8.13</version> // Use latest stable version
-</dependency>
-
-<!-- Optional: therapi-runtime-javadoc for JavaDoc support -->
-<dependency>
-    <groupId>com.github.therapi</groupId>
-    <artifactId>therapi-runtime-javadoc</artifactId>
-    <version>0.15.0</version> // Use latest stable version
-    <scope>provided</scope>
-</dependency>
-
-<!-- WebFlux support -->
-<dependency>
-    <groupId>org.springdoc</groupId>
-    <artifactId>springdoc-openapi-starter-webflux-ui</artifactId>
-    <version>2.8.13</version> // Use latest stable version
-</dependency>
-```
-
-### Add Gradle Dependencies
-
-```gradle
-// Standard WebMVC support
-implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.13'
-
-// Optional: therapi-runtime-javadoc for JavaDoc support
-implementation 'com.github.therapi:therapi-runtime-javadoc:0.15.0'
-
-// WebFlux support
-implementation 'org.springdoc:springdoc-openapi-starter-webflux-ui:2.8.13'
-```
-
-## Configure SpringDoc
-
-### Basic Configuration
-
-```properties
-# application.properties
-springdoc.api-docs.path=/api-docs
-springdoc.swagger-ui.path=/swagger-ui-custom.html
-springdoc.swagger-ui.operationsSorter=method
-springdoc.swagger-ui.tagsSorter=alpha
-springdoc.swagger-ui.enabled=true
-springdoc.api-docs.enabled=true
-springdoc.packages-to-scan=com.example.controller
-springdoc.paths-to-match=/api/**
-```
+Set basic configuration in `application.yml`:
 
 ```yaml
-# application.yml
 springdoc:
   api-docs:
     path: /api-docs
-    enabled: true
   swagger-ui:
     path: /swagger-ui.html
-    enabled: true
     operationsSorter: method
-    tagsSorter: alpha
-    tryItOutEnabled: true
-  packages-to-scan: com.example.controller
-  paths-to-match: /api/**
 ```
 
-### Access Endpoints
+See [configuration.md](references/configuration.md) for advanced options.
 
-After configuration:
-- **OpenAPI JSON**: `http://localhost:8080/v3/api-docs`
-- **OpenAPI YAML**: `http://localhost:8080/v3/api-docs.yaml`
-- **Swagger UI**: `http://localhost:8080/swagger-ui/index.html`
+### 3. Document Controllers
 
-## Document Controllers
-
-### Basic Controller Documentation
+Use OpenAPI annotations to add descriptive information:
 
 ```java
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.web.bind.annotation.*;
-
 @RestController
-@RequestMapping("/api/books")
 @Tag(name = "Book", description = "Book management APIs")
 public class BookController {
 
-    @Operation(
-        summary = "Retrieve a book by ID",
-        description = "Get a Book object by specifying its ID. The response includes id, title, author and description."
-    )
-    @ApiResponses(value = {
-        @ApiResponse(
-            responseCode = "200",
-            description = "Successfully retrieved book",
-            content = @Content(schema = @Schema(implementation = Book.class))
-        ),
-        @ApiResponse(
-            responseCode = "404",
-            description = "Book not found"
-        )
-    })
+    @Operation(summary = "Get book by ID")
+    @ApiResponse(responseCode = "200", description = "Book found")
     @GetMapping("/{id}")
-    public Book findById(
-        @Parameter(description = "ID of book to retrieve", required = true)
-        @PathVariable Long id
-    ) {
-        return repository.findById(id)
-            .orElseThrow(() -> new BookNotFoundException());
-    }
+    public Book findById(@PathVariable Long id) { }
 }
 ```
 
-### Document Request Bodies
+See [controller-documentation.md](references/controller-documentation.md) for patterns.
+
+### 4. Document Models
+
+Apply `@Schema` annotations to DTOs:
 
 ```java
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
-import io.swagger.v3.oas.annotations.media.ExampleObject;
-
-@Operation(summary = "Create a new book")
-@PostMapping
-@ResponseStatus(HttpStatus.CREATED)
-public Book createBook(
-    @RequestBody(
-        description = "Book to create",
-        required = true,
-        content = @Content(
-            schema = @Schema(implementation = Book.class),
-            examples = @ExampleObject(
-                value = """
-                {
-                    "title": "Clean Code",
-                    "author": "Robert C. Martin",
-                    "isbn": "978-0132350884",
-                    "description": "A handbook of agile software craftsmanship"
-                }
-                """
-            )
-        )
-    )
-    Book book
-) {
-    return repository.save(book);
-}
-```
-
-## Document Models
-
-### Entity with Validation
-
-```java
-import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.*;
-
-@Entity
-@Schema(description = "Book entity representing a published book")
+@Schema(description = "Book entity")
 public class Book {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Schema(description = "Unique identifier", example = "1", accessMode = Schema.AccessMode.READ_ONLY)
+    @Schema(example = "1", accessMode = Schema.AccessMode.READ_ONLY)
     private Long id;
 
-    @NotBlank(message = "Title is required")
-    @Size(min = 1, max = 200)
-    @Schema(description = "Book title", example = "Clean Code", required = true, maxLength = 200)
+    @Schema(example = "Clean Code", required = true)
     private String title;
-
-    @Pattern(regexp = "^(?:ISBN(?:-1[03])?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$")
-    @Schema(description = "ISBN number", example = "978-0132350884")
-    private String isbn;
-
-    // Additional fields, constructors, getters, setters
 }
 ```
 
-### Hidden Fields
+See [model-documentation.md](references/model-documentation.md) for validation patterns.
+
+### 5. Configure Security
+
+Set up security schemes in OpenAPI bean:
 
 ```java
-@Schema(hidden = true)
-private String internalField;
-
-@JsonIgnore
-@Schema(accessMode = Schema.AccessMode.READ_ONLY)
-private LocalDateTime createdAt;
-```
-
-## Document Security
-
-### JWT Bearer Authentication
-
-```java
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import io.swagger.v3.oas.models.Components;
-import io.swagger.v3.oas.models.security.SecurityScheme;
-
-@Configuration
-public class OpenAPISecurityConfig {
-
-    @Bean
-    public OpenAPI customOpenAPI() {
-        return new OpenAPI()
-            .components(new Components()
-                .addSecuritySchemes("bearer-jwt", new SecurityScheme()
-                    .type(SecurityScheme.Type.HTTP)
-                    .scheme("bearer")
-                    .bearerFormat("JWT")
-                    .description("JWT authentication")
-                )
-            );
-    }
-}
-
-// Apply security requirement
-@RestController
-@RequestMapping("/api/books")
-@SecurityRequirement(name = "bearer-jwt")
-public class BookController {
-    // All endpoints require JWT authentication
-}
-```
-
-### OAuth2 Configuration
-
-```java
-import io.swagger.v3.oas.models.security.OAuthFlow;
-import io.swagger.v3.oas.models.security.OAuthFlows;
-import io.swagger.v3.oas.models.security.Scopes;
-
 @Bean
 public OpenAPI customOpenAPI() {
     return new OpenAPI()
         .components(new Components()
-            .addSecuritySchemes("oauth2", new SecurityScheme()
-                .type(SecurityScheme.Type.OAUTH2)
-                .flows(new OAuthFlows()
-                    .authorizationCode(new OAuthFlow()
-                        .authorizationUrl("https://auth.example.com/oauth/authorize")
-                        .tokenUrl("https://auth.example.com/oauth/token")
-                        .scopes(new Scopes()
-                            .addString("read", "Read access")
-                            .addString("write", "Write access")
-                        )
-                    )
-                )
+            .addSecuritySchemes("bearer-jwt", new SecurityScheme()
+                .type(SecurityScheme.Type.HTTP)
+                .scheme("bearer")
+                .bearerFormat("JWT")
             )
         );
 }
 ```
 
-## Document Pagination
+Apply with `@SecurityRequirement(name = "bearer-jwt")` on controllers. See [security-configuration.md](references/security-configuration.md).
 
-### Spring Data Pageable Support
+### 6. Document Pagination
+
+Use `@ParameterObject` for Spring Data `Pageable`:
 
 ```java
-import org.springdoc.core.annotations.ParameterObject;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-
-@Operation(summary = "Get paginated list of books")
 @GetMapping("/paginated")
-public Page<Book> findAllPaginated(
-    @ParameterObject Pageable pageable
-) {
+public Page<Book> findAll(@ParameterObject Pageable pageable) {
     return repository.findAll(pageable);
 }
 ```
 
-## Advanced Configuration
+See [pagination-support.md](references/pagination-support.md).
 
-### Multiple API Groups
+### 7. Test Documentation
 
-```java
-import org.springdoc.core.models.GroupedOpenApi;
+Access Swagger UI at `/swagger-ui/index.html` to verify documentation completeness.
 
-@Bean
-public GroupedOpenApi publicApi() {
-    return GroupedOpenApi.builder()
-        .group("public")
-        .pathsToMatch("/api/public/**")
-        .build();
-}
+### 8. Customize for Production
 
-@Bean
-public GroupedOpenApi adminApi() {
-    return GroupedOpenApi.builder()
-        .group("admin")
-        .pathsToMatch("/api/admin/**")
-        .build();
-}
-```
-
-### Custom Operation Customizer
-
-```java
-import org.springdoc.core.customizers.OperationCustomizer;
-
-@Bean
-public OperationCustomizer customizeOperation() {
-    return (operation, handlerMethod) -> {
-        operation.addExtension("x-custom-field", "custom-value");
-        return operation;
-    };
-}
-```
-
-### Hide Endpoints
-
-```java
-@Operation(hidden = true)
-@GetMapping("/internal")
-public String internalEndpoint() {
-    return "Hidden from docs";
-}
-
-// Hide entire controller
-@Hidden
-@RestController
-public class InternalController {
-    // All endpoints hidden
-}
-```
-
-## Document Exception Responses
-
-### Global Exception Handler
-
-```java
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-@RestControllerAdvice
-public class GlobalExceptionHandler {
-
-    @ExceptionHandler(BookNotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    @Operation(hidden = true)
-    public ErrorResponse handleBookNotFound(BookNotFoundException ex) {
-        return new ErrorResponse("BOOK_NOT_FOUND", ex.getMessage());
-    }
-
-    @ExceptionHandler(ValidationException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @Operation(hidden = true)
-    public ErrorResponse handleValidation(ValidationException ex) {
-        return new ErrorResponse("VALIDATION_ERROR", ex.getMessage());
-    }
-}
-
-@Schema(description = "Error response")
-public record ErrorResponse(
-    @Schema(description = "Error code", example = "BOOK_NOT_FOUND")
-    String code,
-
-    @Schema(description = "Error message", example = "Book with ID 123 not found")
-    String message,
-
-    @Schema(description = "Timestamp", example = "2024-01-15T10:30:00Z")
-    LocalDateTime timestamp
-) {}
-```
-
-## Build Integration
-
-### Maven Plugin
-
-```xml
-<plugin>
-    <groupId>org.springdoc</groupId>
-    <artifactId>springdoc-openapi-maven-plugin</artifactId>
-    <version>1.4</version>
-    <executions>
-        <execution>
-            <phase>integration-test</phase>
-            <goals>
-                <goal>generate</goal>
-            </goals>
-        </execution>
-    </executions>
-    <configuration>
-        <apiDocsUrl>http://localhost:8080/v3/api-docs</apiDocsUrl>
-        <outputFileName>openapi.json</outputFileName>
-        <outputDir>${project.build.directory}</outputDir>
-    </configuration>
-</plugin>
-```
-
-### Gradle Plugin
-
-```gradle
-plugins {
-    id 'org.springdoc.openapi-gradle-plugin' version '1.9.0'
-}
-
-openApi {
-    apiDocsUrl = "http://localhost:8080/v3/api-docs"
-    outputDir = file("$buildDir/docs")
-    outputFileName = "openapi.json"
-}
-```
-
-## Examples
-
-### Complete REST Controller Example
-
-```java
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springdoc.core.annotations.ParameterObject;
-import org.springframework.web.bind.annotation.*;
-import jakarta.validation.Valid;
-
-@RestController
-@RequestMapping("/api/books")
-@Tag(name = "Book", description = "Book management APIs")
-@SecurityRequirement(name = "bearer-jwt")
-public class BookController {
-
-    private final BookService bookService;
-
-    public BookController(BookService bookService) {
-        this.bookService = bookService;
-    }
-
-    @Operation(summary = "Get all books")
-    @ApiResponses(value = {
-        @ApiResponse(
-            responseCode = "200",
-            description = "Found all books",
-            content = @Content(
-                mediaType = "application/json",
-                array = @ArraySchema(schema = @Schema(implementation = Book.class))
-            )
-        )
-    })
-    @GetMapping
-    public List<Book> getAllBooks() {
-        return bookService.getAllBooks();
-    }
-
-    @Operation(summary = "Get paginated books")
-    @GetMapping("/paginated")
-    public Page<Book> getBooksPaginated(@ParameterObject Pageable pageable) {
-        return bookService.getBooksPaginated(pageable);
-    }
-
-    @Operation(summary = "Get book by ID")
-    @ApiResponses(value = {
-        @ApiResponse(responseCode = "200", description = "Book found"),
-        @ApiResponse(responseCode = "404", description = "Book not found")
-    })
-    @GetMapping("/{id}")
-    public Book getBookById(@PathVariable Long id) {
-        return bookService.getBookById(id);
-    }
-
-    @Operation(summary = "Create new book")
-    @ApiResponses(value = {
-        @ApiResponse(responseCode = "201", description = "Book created successfully"),
-        @ApiResponse(responseCode = "400", description = "Invalid input")
-    })
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public Book createBook(@Valid @RequestBody Book book) {
-        return bookService.createBook(book);
-    }
-
-    @Operation(summary = "Update book")
-    @ApiResponses(value = {
-        @ApiResponse(responseCode = "200", description = "Book updated"),
-        @ApiResponse(responseCode = "404", description = "Book not found")
-    })
-    @PutMapping("/{id}")
-    public Book updateBook(@PathVariable Long id, @Valid @RequestBody Book book) {
-        return bookService.updateBook(id, book);
-    }
-
-    @Operation(summary = "Delete book")
-    @ApiResponses(value = {
-        @ApiResponse(responseCode = "204", description = "Book deleted"),
-        @ApiResponse(responseCode = "404", description = "Book not found")
-    })
-    @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteBook(@PathVariable Long id) {
-        bookService.deleteBook(id);
-    }
-}
-```
+Configure API grouping, versioning, and build plugins. See [advanced-configuration.md](references/advanced-configuration.md) and [build-integration.md](references/build-integration.md).
 
 ## Best Practices
 
-1. **Use descriptive operation summaries and descriptions**
-   - Summary: Short, clear statement (< 120 chars)
-   - Description: Detailed explanation with use cases
-
-2. **Document all response codes**
-   - Include success (2xx), client errors (4xx), server errors (5xx)
-   - Provide meaningful descriptions for each
-
-3. **Add examples to request/response bodies**
-   - Use `@ExampleObject` for realistic examples
-   - Include edge cases when relevant
-
-4. **Leverage JSR-303 validation annotations**
-   - SpringDoc auto-generates constraints from validation annotations
-   - Reduces duplication between code and documentation
-
-5. **Use `@ParameterObject` for complex parameters**
-   - Especially useful for Pageable, custom filter objects
-   - Keeps controller methods clean
-
-6. **Group related endpoints with `@`Tag**
-   - Organize API by domain entities or features
-   - Use consistent tag names across controllers
-
-7. **Document security requirements**
-   - Apply `@SecurityRequirement` where authentication needed
-   - Configure security schemes globally in OpenAPI bean
-
-8. **Hide internal/admin endpoints appropriately**
-   - Use `@Hidden` or create separate API groups
-   - Prevent exposing internal implementation details
-
-9. **Customize Swagger UI for better UX**
-   - Enable filtering, sorting, try-it-out features
-   - Set appropriate default behaviors
-
-10. **Version your API documentation**
-    - Include version in OpenAPI Info
-    - Consider multiple API groups for versioned APIs
-
-## Common Annotations Reference
-
-### Core Annotations
-
-- `@Tag`: Group operations under a tag
-- `@Operation`: Describe a single API operation
-- `@ApiResponse` / `@ApiResponses`: Document response codes
-- `@Parameter`: Document a single parameter
-- `@RequestBody`: Document request body (OpenAPI version)
-- `@Schema`: Document model schema
-- `@SecurityRequirement`: Apply security to operations
-- `@Hidden`: Hide from documentation
-- `@ParameterObject`: Document complex objects as parameters
-
-### Validation Annotations (Auto-documented)
-
-- `@NotNull`, `@NotBlank`, `@NotEmpty`: Required fields
-- `@Size(min, max)`: String/collection length constraints
-- `@Min`, `@Max`: Numeric range constraints
-- `@Pattern`: Regex validation
-- `@Email`: Email validation
-- `@DecimalMin`, `@DecimalMax`: Decimal constraints
-- `@Positive`, `@PositiveOrZero`, `@Negative`, `@NegativeOrZero`
-
-## Troubleshooting
-
-For common issues and solutions, refer to the troubleshooting guide in @references/troubleshooting.md
-
-## Constraints and Warnings
-
-- Do not expose sensitive data in API examples or schema descriptions.
-- Keep OpenAPI annotations minimal to avoid cluttering controller code; use global configurations when possible.
-- Large API definitions can impact Swagger UI performance; consider grouping APIs by domain.
-- Schema generation may not work correctly with complex generic types; use explicit `@Schema` annotations.
-- Avoid circular references in DTOs as they cause infinite recursion in schema generation.
-- Security schemes must be properly configured before using `@SecurityRequirement` annotations.
-- Hidden endpoints (`@Operation(hidden = true)`) are still visible in code and may leak through other documentation tools.
-
-## Related Skills
-
-- `spring-boot-rest-api-standards` - REST API design standards
-- `spring-boot-dependency-injection` - Dependency injection patterns
-- `unit-test-controller-layer` - Testing REST controllers
-- `spring-boot-actuator` - Production monitoring and management
+- **Use descriptive operation summaries**: Short (< 120 chars), clear statements
+- **Document all response codes**: Include success (2xx), client errors (4xx), server errors (5xx)
+- **Add examples to request/response bodies**: Use `@ExampleObject` for realistic examples
+- **Leverage JSR-303 validation annotations**: SpringDoc auto-generates constraints from validation annotations
+- **Use `@ParameterObject` for complex parameters**: Especially for Pageable, custom filter objects
+- **Group related endpoints with `@Tag`**: Organize API by domain entities or features
+- **Document security requirements**: Apply `@SecurityRequirement` where authentication needed
+- **Hide internal endpoints appropriately**: Use `@Hidden` or create separate API groups
+- **Customize Swagger UI for better UX**: Enable filtering, sorting, try-it-out features
+- **Version your API documentation**: Include version in OpenAPI Info
 
 ## References
 
-- [Comprehensive SpringDoc documentation](references/springdoc-official.md)
-- [Common issues and solutions](references/troubleshooting.md)
+- **[dependency-setup.md](references/dependency-setup.md)** — Maven/Gradle dependencies and version selection
+- **[configuration.md](references/configuration.md)** — Basic and advanced configuration options
+- **[controller-documentation.md](references/controller-documentation.md)** — Controller and endpoint documentation patterns
+- **[model-documentation.md](references/model-documentation.md)** — Entity, DTO, and validation documentation
+- **[security-configuration.md](references/security-configuration.md)** — JWT, OAuth2, Basic Auth, API key configuration
+- **[pagination-support.md](references/pagination-support.md)** — Pageable, Slice, and custom pagination patterns
+- **[advanced-configuration.md](references/advanced-configuration.md)** — API groups, customizers, OpenAPI bean configuration
+- **[exception-handling.md](references/exception-handling.md)** — Exception documentation and error response schemas
+- **[build-integration.md](references/build-integration.md)** — Maven/Gradle plugins and CI/CD integration
+- **[complete-examples.md](references/complete-examples.md)** — Full controller, entity, and configuration examples
+- **[annotations-reference.md](references/annotations-reference.md)** — Complete annotation reference with attributes
+- **[springdoc-official.md](references/springdoc-official.md)** — Official SpringDoc documentation
+- **[troubleshooting.md](references/troubleshooting.md)** — Common issues and solutions
+
+## Constraints and Warnings
+
+- Do not expose sensitive data in API examples or schema descriptions
+- Keep OpenAPI annotations minimal to avoid cluttering controller code; use global configurations when possible
+- Large API definitions can impact Swagger UI performance; consider grouping APIs by domain
+- Schema generation may not work correctly with complex generic types; use explicit `@Schema` annotations
+- Avoid circular references in DTOs as they cause infinite recursion in schema generation
+- Security schemes must be properly configured before using `@SecurityRequirement` annotations
+- Hidden endpoints (`@Operation(hidden = true)`) are still visible in code and may leak through other documentation tools
+
+## Examples
+
+### Basic Controller Documentation
+
+```java
+@RestController
+@Tag(name = "Books", description = "Book management APIs")
+@RequestMapping("/api/books")
+public class BookController {
+
+    @Operation(
+        summary = "Get book by ID",
+        description = "Retrieves detailed information about a specific book"
+    )
+    @ApiResponse(responseCode = "200", description = "Book found")
+    @ApiResponse(responseCode = "404", description = "Book not found")
+    @GetMapping("/{id}")
+    public Book getBook(@PathVariable Long id) {
+        return bookService.findById(id);
+    }
+
+    @Operation(summary = "Create new book")
+    @SecurityRequirement(name = "bearer-jwt")
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Book createBook(@Valid @RequestBody CreateBookRequest request) {
+        return bookService.create(request);
+    }
+}
+```
+
+### Documented Model with Validation
+
+```java
+@Schema(description = "Book entity")
+public class Book {
+    @Schema(description = "Unique identifier", example = "1", accessMode = Schema.AccessMode.READ_ONLY)
+    private Long id;
+
+    @Schema(description = "Book title", example = "Clean Code", required = true)
+    @NotBlank
+    @Size(min = 1, max = 200)
+    private String title;
+
+    @Schema(description = "Author name", example = "Robert C. Martin")
+    @NotBlank
+    private String author;
+
+    @Schema(description = "Price in USD", example = "29.99", minimum = "0")
+    @NotNull
+    @DecimalMin("0.0")
+    private BigDecimal price;
+}
+```
+
+### Security Configuration
+
+```java
+@Bean
+public OpenAPI customOpenAPI() {
+    return new OpenAPI()
+        .info(new Info()
+            .title("Book API")
+            .version("1.0.0")
+            .description("REST API for book management"))
+        .components(new Components()
+            .addSecuritySchemes("bearer-jwt", new SecurityScheme()
+                .type(SecurityScheme.Type.HTTP)
+                .scheme("bearer")
+                .bearerFormat("JWT"))
+            .addSecuritySchemes("api-key", new SecurityScheme()
+                .type(SecurityScheme.Type.APIKEY)
+                .in(SecurityScheme.In.HEADER)
+                .name("X-API-Key")));
+}
+```
+
+## Related Skills
+
+- `spring-boot-rest-api-standards` — REST API design standards
+- `spring-boot-dependency-injection` — Dependency injection patterns
+- `unit-test-controller-layer` — Testing REST controllers
+- `spring-boot-actuator` — Production monitoring and management
+
+## External Resources
+
 - [SpringDoc Official Documentation](https://springdoc.org/)
 - [OpenAPI 3.0 Specification](https://swagger.io/specification/)
 - [Swagger UI Configuration](https://swagger.io/docs/open-source-tools/swagger-ui/usage/configuration/)

@@ -1,17 +1,13 @@
 ---
 name: rank-tracker
-version: "3.0.0"
-description: 'This skill should be used when the user asks to "track rankings", "check keyword positions", "ranking changes", "monitor SERP positions", "how am I ranking", "where do I rank for this keyword", "did my rankings change", or "keyword position tracking". Tracks and analyzes keyword ranking positions over time for both traditional search results and AI-generated responses. Monitors ranking changes, identifies trends, and alerts on significant movements. For automated alerting, see alert-manager. For comprehensive reports, see performance-reporter.'
+version: "4.0.0"
+description: 'Track keyword ranking positions and SERP position changes over time in both traditional search and AI-generated responses. Use when the user asks to "track rankings", "check keyword positions", "monitor SERP positions", "how am I ranking", "where do I rank for this keyword", "did my rankings change", "ranking changes", or "keyword position tracking". For automated alerting, see alert-manager. For comprehensive reports, see performance-reporter.'
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 metadata:
-  openclaw:
-    requires:
-      env: []
-      bins: []
-    primaryEnv: AHREFS_API_KEY
   author: aaron-he-zhu
-  version: "3.0.0"
+  version: "4.0.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -46,7 +42,7 @@ metadata:
 # Rank Tracker
 
 
-> **[SEO & GEO Skills Library](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · Install all: `npx skills add aaron-he-zhu/seo-geo-claude-skills`
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
 
 <details>
 <summary>Browse all 20 skills</summary>
@@ -112,6 +108,8 @@ Create a ranking report for [domain/campaign]
 ```
 
 ## Data Sources
+
+> **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
 > See [CONNECTORS.md](../../CONNECTORS.md) for tool category placeholders.
 

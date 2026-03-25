@@ -1,6 +1,6 @@
 ---
 name: aws-cost-optimization
-description: Provides structured AWS cost optimization guidance using five pillars (right-sizing, elasticity, pricing models, storage optimization, monitoring) and twelve actionable best practices. Use when optimizing AWS costs, reviewing AWS spending, finding unused AWS resources, implementing FinOps practices, reducing EC2/EBS/S3 bills, configuring AWS Budgets, or performing AWS Well-Architected cost reviews.
+description: Provides structured AWS cost optimization guidance using five pillars (right-sizing, elasticity, pricing models, storage optimization, monitoring) and twelve actionable best practices with executable AWS CLI examples. Use when optimizing AWS costs, reviewing AWS spending, finding unused AWS resources, implementing FinOps practices, reducing EC2/EBS/S3 bills, configuring AWS Budgets, or performing AWS Well-Architected cost reviews.
 allowed-tools: Read, Write, Bash
 ---
 
@@ -8,11 +8,10 @@ allowed-tools: Read, Write, Bash
 
 ## Overview
 
-Guide a structured AWS cost review covering right-sizing, elasticity, pricing models, storage optimization, and continuous monitoring. This skill references AWS native tools (Cost Explorer, Budgets, Compute Optimizer, Trusted Advisor, Cost Anomaly Detection) and delivers twelve actionable best practices organized under five optimization pillars.
+Guide a structured AWS cost review covering right-sizing, elasticity, pricing models, storage optimization, and continuous monitoring. References AWS native tools (Cost Explorer, Budgets, Compute Optimizer, Trusted Advisor, Cost Anomaly Detection) and delivers twelve prioritized best practices organized under five optimization pillars. All examples use the AWS CLI.
 
 ## When to Use
 
-Use this skill when:
 - Optimizing AWS costs or reviewing AWS spending
 - Finding unused or under-utilized AWS resources
 - Implementing FinOps practices for cloud cost governance
@@ -21,23 +20,15 @@ Use this skill when:
 - Configuring AWS Budgets, Cost Explorer, or Cost Anomaly Detection
 - Performing an AWS Well-Architected Framework cost pillar review
 - Cleaning up orphaned EBS snapshots or unused volumes
-- Implementing cost allocation tagging strategies
 - Automating start/stop schedules for non-production workloads
 
-Trigger phrases:
-- "Optimize my AWS costs"
-- "Review AWS spending"
-- "Find unused AWS resources"
-- "Help me with FinOps"
-- "How can I reduce my EC2 bill?"
-- "Clean up unused EBS volumes"
-- "Set up AWS Budgets"
+Trigger: "Optimize my AWS costs", "Review AWS spending", "Find unused AWS resources", "Help me with FinOps", "Reduce my EC2 bill", "Clean up unused EBS volumes", "Set up AWS Budgets"
 
 ## Instructions
 
 ### Five Optimization Pillars
 
-When performing a cost review, work through each pillar in order:
+Work through each pillar in order during a cost review.
 
 #### Pillar 1 — Right-Size
 
@@ -63,7 +54,7 @@ Schedule instance stop/start and leverage Auto Scaling Groups.
 
 Choose the optimal mix of On-Demand, Spot, Reserved Instances, and Savings Plans.
 
-1. Analyze steady-state baseline using Cost Explorer "RI Coverage" and "Savings Plans Coverage" reports
+1. Analyze steady-state baseline using Cost Explorer RI Coverage and Savings Plans Coverage reports
 2. Recommend Compute Savings Plans for consistent baseline compute
 3. Suggest Spot Instances for fault-tolerant, stateless workloads (batch, CI/CD runners)
 4. Evaluate existing Reserved Instances for utilization; resell unused RIs on the RI Marketplace
@@ -89,37 +80,6 @@ Establish continuous cost governance.
 4. Set up a monthly Cost Explorer saved report for leadership review
 5. Create a Trusted Advisor check schedule for cost optimization recommendations
 
-### Twelve Actionable Best Practices
-
-Present these to the user as a prioritized checklist:
-
-| # | Best Practice | Pillar | AWS Tool |
-|---|---|---|---|
-| 1 | Choose appropriate AWS region (cost, latency, data sovereignty) | Right-Size | AWS Pricing Calculator |
-| 2 | Schedule start/stop for non-production instances | Elasticity | Instance Scheduler / EventBridge |
-| 3 | Identify under-utilized EC2 instances | Right-Size | Cost Explorer / Compute Optimizer |
-| 4 | Reduce EC2 costs with Spot Instances | Pricing Model | EC2 Spot / Spot Fleet |
-| 5 | Optimize Auto Scaling Group policies | Elasticity | Auto Scaling / CloudWatch |
-| 6 | Use or resell under-utilized Reserved Instances | Pricing Model | RI Marketplace / Cost Explorer |
-| 7 | Leverage Compute Savings Plans | Pricing Model | Savings Plans Console |
-| 8 | Monitor and delete unused EBS volumes | Storage | EC2 Console / Trusted Advisor |
-| 9 | Identify and clean up orphaned EBS snapshots | Storage | Data Lifecycle Manager |
-| 10 | Remove idle load balancers; use CloudFront | Right-Size | Trusted Advisor / CloudFront |
-| 11 | Implement cost allocation tagging | Monitoring | AWS Tag Editor / Cost Allocation Tags |
-| 12 | Automate anomaly detection | Monitoring | AWS Cost Anomaly Detection |
-
-### AWS Native Tools Reference
-
-| Tool | Purpose |
-|---|---|
-| AWS Cost Explorer | Visualize, filter, and forecast AWS spend by service, account, or tag |
-| AWS Budgets | Set custom spend/usage budgets with threshold alerts |
-| AWS Pricing Calculator | Model and compare pricing for new or changed workloads |
-| AWS Compute Optimizer | ML-driven right-sizing recommendations for EC2, EBS, Lambda |
-| AWS Trusted Advisor | Automated checks for cost optimization, security, performance |
-| Amazon Data Lifecycle Manager | Automate EBS snapshot creation and retention policies |
-| AWS Cost Anomaly Detection | ML-powered anomaly detection with root-cause analysis |
-
 ### Review Process
 
 Follow this structured flow when the user asks for a cost review:
@@ -133,55 +93,150 @@ Follow this structured flow when the user asks for a cost review:
 
 ## Examples
 
-### Example 1 — Quick Cost Audit
+### Example 1 — List Unattached EBS Volumes
 
-User: "Review my AWS spending and find quick wins."
+User: "Find unused EBS volumes in my account."
 
-Response approach:
-1. Request access to Cost Explorer data or ask the user to share a CSV export
-2. Identify the top-5 services by spend
-3. Run through Pillars 1 (Right-Size) and 4 (Storage) for immediate savings
-4. Check for unattached EBS volumes and idle load balancers via Trusted Advisor
-5. Present three quick wins with estimated monthly savings
+CLI commands to include in the response:
 
-### Example 2 — EC2 Right-Sizing
+```bash
+# List all EBS volumes in available (unattached) state
+aws ec2 describe-volumes \
+  --filters Name=status,Values=available \
+  --query 'Volumes[*].{VolumeId:VolumeId,Size:Size,Type:VolumeType,Zone:AvailabilityZone,CreateTime:CreateTime}' \
+  --output table
+
+# Get monthly cost estimate for unused volumes (approx $0.08/GB/mo for gp3)
+aws ec2 describe-volumes \
+  --filters Name=status,Values=available \
+  --query 'length(Volumes[*].[VolumeId,Size])' \
+  --output text
+
+# List orphaned snapshots (not linked to any AMI)
+aws ec2 describe-snapshots \
+  --owner-ids self \
+  --query 'Snapshots[?!contains(Description, `ami-`)].[SnapshotId,VolumeId,StartTime,Size]'
+```
+
+### Example 2 — EC2 Right-Sizing with Compute Optimizer
 
 User: "How can I reduce my EC2 bill?"
 
-Response approach:
-1. List all running EC2 instances by family and size
-2. Pull CloudWatch CPU/memory utilization for the past 14 days
-3. Cross-reference with Compute Optimizer recommendations
-4. Recommend specific instance type changes (e.g., m5.xlarge → m5.large)
-5. Suggest Spot Instances for stateless workloads
-6. Evaluate Savings Plans for steady-state baseline
+CLI commands to include in the response:
 
-### Example 3 — Storage Cleanup
+```bash
+# Get Compute Optimizer right-sizing recommendations for EC2
+aws compute-optimizer get-ec2-instance-recommendations \
+  --query 'instanceRecommendations[*].{InstanceArn:instanceArn,CurrentInstanceType:currentInstanceType,RecommendedInstanceType:recommendations[0].instanceType,MonthlySaving:recommendations[0].estimatedMonthlySavings.value}' \
+  --output table
 
-User: "Clean up unused EBS volumes and snapshots."
+# Pull average CPU utilization for an instance over 14 days
+aws cloudwatch get-metric-statistics \
+  --namespace AWS/EC2 \
+  --metric-name CPUUtilization \
+  --dimensions Name=InstanceId,Value=i-1234567890abcdef0 \
+  --start-time 2026-03-09T00:00:00Z \
+  --end-time 2026-03-23T00:00:00Z \
+  --period 86400 \
+  --statistics Average \
+  --output table
 
-Response approach:
-1. List all EBS volumes in `available` state across regions
-2. Identify orphaned snapshots not linked to active AMIs
-3. Calculate monthly cost of unused storage
-4. Recommend deletion after confirming no data-loss risk
-5. Set up Data Lifecycle Manager for automated snapshot retention
+# List all running instances by type for baseline analysis
+aws ec2 describe-instances \
+  --filters Name=instance-state-name,Values=running \
+  --query 'Reservations[].Instances[].[InstanceId,InstanceType,Tags[?Key==`Name`].Value|[0],State.Name]' \
+  --output table
+```
 
-### Example 4 — FinOps Governance Setup
+### Example 3 — Cost Explorer and Budgets Setup
 
-User: "Help me set up FinOps practices for my AWS accounts."
+User: "Set up AWS Budgets and monitor my spend."
 
-Response approach:
-1. Define a cost allocation tagging strategy with mandatory tags
-2. Configure AWS Budgets with tiered alerts (50%, 80%, 100%)
-3. Enable Cost Anomaly Detection for each linked account
-4. Set up a monthly Cost Explorer saved report
-5. Propose a 30/60/90-day FinOps maturity roadmap
+CLI commands to include in the response:
+
+```bash
+# Create a monthly cost budget with alert thresholds at 50%, 80%, 100%
+aws budgets create-budget \
+  --account-id 123456789012 \
+  --budget '{
+    "BudgetName": "Monthly-Cost-Budget",
+    "BudgetLimit": {"Amount": "5000", "Unit": "USD"},
+    "TimeUnit": "MONTHLY",
+    "BudgetType": "COST"
+  }' \
+  --notifications-with-subscribers '[{"Notification": {"ComparisonOperator": "GREATER_THAN", "NotificationType": "ACTUAL", "Threshold": 80},"Subscribers": [{"Address": "email@example.com","SubscriptionType": "EMAIL"}]}]'
+
+# Get top-5 cost drivers from Cost Explorer (last 30 days)
+aws ce get-cost-and-usage \
+  --time-period Start=2026-02-23,End=2026-03-23 \
+  --granularity MONTHLY \
+  --metrics "BlendedCost" "UnblendedCost" \
+  --group-by Type=DIMENSION,Key=SERVICE \
+  --query 'ResultsByTime[0].Groups[*].{Service:Keys[0],BlendedCost:Metrics.BlendedCost.Amount}' \
+  --output table
+
+# Enable Cost Anomaly Detection alert
+aws ce create-anomaly-monitor \
+  --monitor-name "Daily-Cost-Anomaly" \
+  --monitor-arn "arn:aws:ce::123456789012:anomaly-monitor/cost-explorer"
+```
+
+### Example 4 — S3 Lifecycle and Storage Tiering
+
+User: "Optimize my S3 storage costs."
+
+CLI commands to include in the response:
+
+```bash
+# List S3 buckets with size and storage class distribution
+aws s3api list-buckets --query 'Buckets[*].Name'
+aws s3api get-bucket-storage-type-aggregation --bucket YOUR-BUCKET-NAME
+
+# Apply S3 Intelligent-Tiering lifecycle rule for objects older than 90 days
+aws s3api put-bucket-lifecycle-configuration \
+  --bucket YOUR-BUCKET-NAME \
+  --lifecycle-configuration '{
+    "Rules": [{
+      "ID": "MoveToIntelligentTiering",
+      "Status": "Enabled",
+      "Filter": {},
+      "Transitions": [
+        {"Days": 30, "StorageClass": "INTELLIGENT_TIERING"},
+        {"Days": 90, "StorageClass": "GLACIER_IR"}
+      ]
+    }]
+  }'
+```
+
+### Example 5 — Spot Instances and Savings Plans
+
+User: "Should I use Spot Instances or Savings Plans?"
+
+CLI commands to include in the response:
+
+```bash
+# Check current RI and Savings Plans coverage
+aws ce get-savings-plans-coverage \
+  --time-period Start=2026-01-01,End=2026-03-23 \
+  --granularity MONTHLY
+
+# List available Spot price history for an instance type
+aws ec2 describe-spot-price-history \
+  --instance-types t3.medium \
+  --product-description "Linux/UNIX" \
+  --availability-zone us-east-1a \
+  --query 'SpotPriceHistory[*].{Price:SpotPrice,Date:Timestamp}' \
+  --output table
+
+# Estimate savings with Savings Plans vs On-Demand
+aws savingsplans describe-savings-plans-rates \
+  --savings-plan-arn arn:aws:savingsplans::123456789012:savings-plan/SP-EXAMPLE
+```
 
 ## Best Practices
 
 ### General Principles
-- Always quantify estimated savings in dollars per month before recommending changes
+- Quantify estimated savings in dollars per month before recommending changes
 - Never delete resources without confirming backup and data-loss risk first
 - Prioritize quick wins (high impact, low effort) before long-term structural changes
 - Use tags consistently — untagged resources are invisible to cost governance
@@ -194,7 +249,7 @@ Response approach:
 - Test Spot Instance interruption handling before migrating production workloads
 - Confirm data sovereignty and compliance requirements before suggesting region changes
 
-### Cost Optimization Anti-Patterns to Avoid
+### Anti-Patterns to Avoid
 - Buying Reserved Instances before right-sizing (locks in waste)
 - Ignoring data transfer costs between regions and AZs
 - Over-provisioning "just in case" without auto-scaling
@@ -210,4 +265,33 @@ Response approach:
 - **Spot Instances risk**: 2-minute interruption warning — use for stateless/fault-tolerant workloads only
 - **Irreversible actions**: Never delete resources without confirming backups exist
 - **Compliance implications**: Region changes may affect data sovereignty and latency
-- **Some features require support**: Cost Explorer and Compute Optimizer need Business/Enterprise Support
+- **Support tier**: Cost Explorer and Compute Optimizer need Business/Enterprise Support
+
+## AWS Tools Quick Reference
+
+| Tool | Use Case |
+|---|---|
+| Cost Explorer | Visualize and filter AWS spend by service, account, or tag |
+| AWS Budgets | Set custom spend budgets with threshold alerts |
+| AWS Pricing Calculator | Model pricing for new or changed workloads |
+| Compute Optimizer | ML-driven right-sizing recommendations for EC2, EBS, Lambda |
+| Trusted Advisor | Automated cost optimization, security, performance checks |
+| Data Lifecycle Manager | Automate EBS snapshot creation and retention |
+| Cost Anomaly Detection | ML-powered spend anomaly alerts with root-cause analysis |
+
+## Twelve Best Practices Checklist
+
+| # | Practice | Pillar |
+|---|---|---|
+| 1 | Choose appropriate AWS region (cost, latency, data sovereignty) | Right-Size |
+| 2 | Schedule start/stop for non-production instances | Elasticity |
+| 3 | Identify under-utilized EC2 instances | Right-Size |
+| 4 | Reduce EC2 costs with Spot Instances | Pricing Model |
+| 5 | Optimize Auto Scaling Group policies | Elasticity |
+| 6 | Use or resell under-utilized Reserved Instances | Pricing Model |
+| 7 | Leverage Compute Savings Plans | Pricing Model |
+| 8 | Monitor and delete unused EBS volumes | Storage |
+| 9 | Identify and clean up orphaned EBS snapshots | Storage |
+| 10 | Remove idle load balancers; use CloudFront | Right-Size |
+| 11 | Implement cost allocation tagging | Monitoring |
+| 12 | Automate anomaly detection | Monitoring |

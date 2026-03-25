@@ -1,6 +1,6 @@
 ---
 name: langchain4j-ai-services-patterns
-description: Provides patterns to build declarative AI Services with LangChain4j using interface-based patterns, annotations, memory management, tools integration, and advanced application patterns. Use when implementing type-safe AI-powered features with minimal boilerplate code in Java applications.
+description: Provides patterns to build declarative AI Services with LangChain4j for LLM integration, chatbot development, AI agent implementation, and conversational AI in Java. Generates type-safe AI services using interface-based patterns, annotations, memory management, and tools integration. Use when creating AI-powered Java applications with minimal boilerplate, implementing conversational AI with memory, or building AI agents with function calling.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
@@ -8,23 +8,18 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 This skill provides guidance for building declarative AI Services with LangChain4j using interface-based patterns, annotations for system and user messages, memory management, tools integration, and advanced AI application patterns that abstract away low-level LLM interactions.
 
+## Overview
+
+LangChain4j AI Services define AI functionality using Java interfaces with annotations, providing type-safe, declarative AI with minimal boilerplate.
+
 ## When to Use
 
 Use this skill when:
-- Building declarative AI-powered interfaces with minimal boilerplate code
-- Creating type-safe AI services with Java interfaces and annotations
-- Implementing conversational AI systems with memory management
-- Designing AI services that can call external tools and functions
-- Building multi-agent systems with specialized AI components
-- Creating AI services with different personas and behaviors
-- Implementing RAG (Retrieval-Augmented Generation) patterns declaratively
-- Building production AI applications with proper error handling and validation
-- Creating AI services that return structured data types (enums, POJOs, lists)
-- Implementing streaming AI responses with reactive patterns
-
-## Overview
-
-LangChain4j AI Services allow you to define AI-powered functionality using plain Java interfaces with annotations, eliminating the need for manual prompt construction and response parsing. This pattern provides type-safe, declarative AI capabilities with minimal boilerplate code.
+- Building declarative AI services with minimal boilerplate using Java interfaces
+- Creating type-safe conversational AI with memory management
+- Implementing AI agents with function/tool calling capabilities
+- Designing AI services returning structured data (enums, POJOs, lists)
+- Integrating RAG patterns declaratively
 
 ## Instructions
 
@@ -35,17 +30,17 @@ Follow these steps to create declarative AI Services with LangChain4j:
 Create a Java interface with method signatures for AI interactions:
 
 ```java
-public interface Assistant {
+interface Assistant {
     String chat(String userMessage);
 }
 ```
 
-### 2. Add Annotations for Messages
+### 2. Add Annotations for System and User Messages
 
 Use `@SystemMessage` and `@UserMessage` annotations to define prompts:
 
 ```java
-public interface CustomerSupportBot {
+interface CustomerSupportBot {
     @SystemMessage("You are a helpful customer support agent for TechCorp")
     String handleInquiry(String customerMessage);
 
@@ -56,17 +51,21 @@ public interface CustomerSupportBot {
 
 ### 3. Create AI Service Instance
 
-Use `AiServices` builder to create implementation:
+Use `AiServices` builder or create to instantiate the service:
 
 ```java
+// Simple creation
+Assistant assistant = AiServices.create(Assistant.class, chatModel);
+
+// Or with builder for advanced configuration
 Assistant assistant = AiServices.builder(Assistant.class)
     .chatModel(chatModel)
     .build();
 ```
 
-### 4. Configure Memory for Conversations
+### 4. Configure Memory for Multi-turn Conversations
 
-Add memory management for multi-turn conversations:
+Add memory management using `@MemoryId` for multi-user scenarios:
 
 ```java
 interface MultiUserAssistant {
@@ -81,63 +80,7 @@ Assistant assistant = AiServices.builder(MultiUserAssistant.class)
 
 ### 5. Integrate Tools for Function Calling
 
-Register tools to enable AI to execute external functions:
-
-```java
-class Calculator {
-    @Tool("Add two numbers") double add(double a, double b) { return a + b; }
-}
-
-MathGenius mathGenius = AiServices.builder(MathGenius.class)
-    .chatModel(model)
-    .tools(new Calculator())
-    .build();
-```
-
-## Quick Start
-
-### Basic AI Service Definition
-
-```java
-interface Assistant {
-    String chat(String userMessage);
-}
-
-// Create instance - LangChain4j generates implementation
-Assistant assistant = AiServices.create(Assistant.class, chatModel);
-
-// Use the service
-String response = assistant.chat("Hello, how are you?");
-```
-
-### System Message and Templates
-
-```java
-interface CustomerSupportBot {
-    @SystemMessage("You are a helpful customer support agent for TechCorp")
-    String handleInquiry(String customerMessage);
-
-    @UserMessage("Analyze sentiment: {{it}}")
-    String analyzeSentiment(String feedback);
-}
-
-CustomerSupportBot bot = AiServices.create(CustomerSupportBot.class, chatModel);
-```
-
-### Memory Management
-
-```java
-interface MultiUserAssistant {
-    String chat(@MemoryId String userId, String userMessage);
-}
-
-Assistant assistant = AiServices.builder(MultiUserAssistant.class)
-    .chatModel(model)
-    .chatMemoryProvider(userId -> MessageWindowChatMemory.withMaxMessages(10))
-    .build();
-```
-
-### Tool Integration
+Register tools using `@Tool` annotation to enable AI function execution:
 
 ```java
 class Calculator {
@@ -152,6 +95,31 @@ MathGenius mathGenius = AiServices.builder(MathGenius.class)
     .chatModel(model)
     .tools(new Calculator())
     .build();
+```
+
+### 6. Validate and Test
+
+Test AI services with concrete validation patterns:
+
+```java
+// 1. Test with sample inputs
+String response = assistant.chat("Hello, how are you?");
+assert response != null && !response.isEmpty();
+
+// 2. Validate structured outputs with assertions
+Sentiment result = bot.analyzeSentiment("Great product!");
+assert result == Sentiment.POSITIVE;
+
+// 3. Log tool calls with side effects for audit
+MathGenius math = AiServices.builder(MathGenius.class)
+    .chatModel(model)
+    .tools(new Calculator())
+    .build();
+
+// 4. Test memory isolation between users
+String userA = assistant.chat("User A message", "session-a");
+String userB = assistant.chat("User B message", "session-b");
+assert !userA.equals(userB); // Verify memory isolation
 ```
 
 ## Examples

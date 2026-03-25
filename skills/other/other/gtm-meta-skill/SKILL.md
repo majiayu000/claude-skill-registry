@@ -1,6 +1,6 @@
 ---
 name: gtm-meta-skill
-description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, builtwith, cloudflare, crustdata, deepline_native, deeplineagent, dropleads, exa, firecrawl, forager, google_search, heyreach, hubspot, hunter, icypeas, instantly, leadmagic, lemlist, parallel, peopledatalabs, prospeo, salesforce, smartlead, snowflake, zerobounce."
+description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, builtwith, cloudflare, crustdata, deepline_native, deeplineagent, dropleads, exa, firecrawl, forager, google_search, heyreach, hubspot, hunter, icypeas, instantly, leadmagic, lemlist, parallel, peopledatalabs, prospeo, salesforce, serper, smartlead, snowflake, zerobounce."
 ---
 
 # GTM Meta Skill
@@ -64,6 +64,7 @@ When a recipe matches: **follow it step-by-step as your execution plan.** Recipe
 | `enriching-and-researching.md` | Finding contacts/people at known companies via the persona lookup play |
 | `enriching-and-researching.md` | Contact-to-email routing and native email recovery plays |
 | `actor-contracts.md` | Apify actor selection, known actor IDs, input schemas |
+| `competitive-social-listening.md` | Find who engages with competitors' LinkedIn posts — reactions, comments, senior buyer filtering, engagement dashboard |
 
 If none match, grep for more specific keywords: `Grep pattern="<keyword>" path="<directory containing this SKILL.md>/recipes/" glob="*.md" output_mode="files_with_matches"`
 
@@ -268,6 +269,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Summary: Use field inspection before custom writes, object-specific create/update/delete tools for standard CRM records, and list tools for incremental reads with pagination handoff.
   Last reviewed: 2026-03-20
 
+- [serper playbook](provider-playbooks/serper.md)
+  Summary: Use Serper for broad live Google web search and local/maps recall. Strong first step before structured extraction or enrichment.
+  Last reviewed: 2026-03-23
+
 - [smartlead playbook](provider-playbooks/smartlead.md)
   Summary: List campaigns first, then push leads with Smartlead field names and confirm campaign stats afterward.
   Last reviewed: 2026-03-05
@@ -286,6 +291,7 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 - Even for company → ICP person flows, enrich works: search and filter as part of the process, with providers like Apify to guide.
 - Even when you don't have a CSV, create one and use deepline enrich.
 - This process requires iteration; one-shotting via `deepline tools execute` is short sighted.
+- For `run_javascript` in `deepline enrich`, put JS in `payload.code`; the current row is auto-injected as `row` at runtime, so you usually should not pass `row` yourself.
 - If a command created CSV outside enrich, register it with the Session UI so a table card appears: `deepline session output --csv <csv_path> --label "My Results"`. This is the lightweight alternative to `deepline enrich` for surfacing output in the Session UI.
 - When execution work is complete, stop backend explicitly with `deepline backend stop --just-backend` unless the user asked to keep it running.
 - In chat, send the file path + playground status, not pasted CSV rows, unless explicitly requested.

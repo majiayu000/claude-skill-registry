@@ -35,6 +35,9 @@ You must have the design system's asset `name` before calling this. If you don't
       "theme": {
         "colorMode": "DARK",
         "font": "GEIST",
+        "headlineFont": "GEIST",
+        "bodyFont": "GEIST",
+        "labelFont": "GEIST",
         "roundness": "ROUND_TWELVE",
         "saturation": 2,
         "customColor": "#818CF8",

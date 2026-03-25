@@ -65,12 +65,12 @@ Each functional requirement is structured as a complete use case specification w
 
 - **Requirement ID and Title**: The unique identifier and a concise descriptive title.
 - **Description**: A clear statement of what the system shall do, written from the perspective of the system behavior rather than the implementation approach.
-- **Actors**: The user classes or external systems that participate in this requirement.
+- **Actors**: The user classes or external systems that participate in this requirement. Actors include both human users and AI agent consumers — if a requirement is exercised by an API client, automation tool, or other programmatic consumer, list that actor explicitly with its interaction pattern (REST API, async event, webhook, etc.).
 - **Preconditions**: The conditions that must be true before the requirement can be exercised.
 - **Main Flow**: A numbered sequence of steps describing the standard successful path through the use case.
 - **Alternative Flows**: Branches from the main flow covering variations, error conditions, and edge cases.
 - **Postconditions**: The observable state of the system after successful completion of the main flow.
-- **Acceptance Criteria**: Specific, testable conditions that must be met for the requirement to be considered satisfied. Each acceptance criterion should be verifiable through inspection, demonstration, test, or analysis.
+- **Acceptance Criteria**: Specific, testable conditions that must be met for the requirement to be considered satisfied. Each acceptance criterion should be verifiable through inspection, demonstration, test, or analysis. For agent-facing requirements, acceptance criteria must be machine-verifiable — expressed as exact input/output contracts (e.g., "Given POST /api/v1/users with body {name, email}, then response status is 201 and JSON body contains {id, email, created_at}") rather than human-subjective descriptions.
 - **Priority**: The importance level of the requirement (P0 = must-have, P1 = should-have, P2 = nice-to-have), consistent with the prioritization used in the upstream PRD.
 - **Source**: A reference back to the PRD item or stakeholder request that originated this requirement.
 

@@ -19,63 +19,57 @@ Do not treat `SKILL.md` as a full IAM encyclopedia. Use the bundled references f
 
 ## When to Use
 
-Use this skill when:
-- creating IAM roles for Lambda, ECS, EC2, Step Functions, or other AWS services
-- defining inline policies, managed policies, and permission boundaries in CloudFormation
-- modeling cross-account assume-role access with constrained trust policies
-- exporting IAM role ARNs or managed policy ARNs to downstream stacks
-- reviewing wildcard permissions, boundary drift, or role replacement risk
-- creating small reusable IAM stacks for platform or application teams
-
-Typical trigger phrases include `cloudformation iam`, `iam role template`, `assume role policy`, `permission boundary`, `cross account role`, and `least privilege cloudformation`.
+- Creating IAM roles for Lambda, ECS, EC2, Step Functions, or other AWS services
+- Defining inline policies, managed policies, and permission boundaries in CloudFormation
+- Modeling cross-account assume-role access with constrained trust policies
+- Exporting IAM role ARNs or managed policy ARNs to downstream stacks
+- Reviewing wildcard permissions, boundary drift, or role replacement risk
+- Creating reusable IAM stacks for platform or application teams
 
 ## Instructions
 
-### 1. Prefer roles, then define the trust boundary first
+### 1. Define the trust boundary first
 
-Start by deciding who or what needs to assume the role:
-- AWS service principal such as Lambda or ECS tasks
-- a user or role in another AWS account
-- a federated identity provider or workload identity flow
+Identify who or what assumes the role (service principal, cross-account principal, or federated identity), then write the trust policy with explicit principals and conditions before adding permissions.
 
-Write the trust policy first so the principal and assumption conditions are explicit before you add permissions.
+### 2. Grant the minimum permission set
 
-### 2. Add the smallest permission set that supports the workload
+Use inline policies for role-specific access; use managed policies for shared patterns across principals. Scope actions and resources tightly, and use conditions where possible.
 
-Grant only the actions and resources the workload needs:
-- use inline policies for highly local role-specific access
-- use managed policies when the same access pattern is shared across multiple principals
-- scope resources tightly and use conditions where possible
+### 3. Apply permission boundaries for delegated role creation
 
-Keep permission documents readable; break up very large policies instead of hiding complexity in one giant statement.
-
-### 3. Use permission boundaries and naming conventions intentionally
-
-Permission boundaries help platform teams constrain delegated role creation.
-
-Apply them when:
-- teams create or extend roles in their own stacks
-- you need guardrails around privileged services such as IAM, KMS, or Organizations
-- you want to separate maximum allowed permissions from application-specific policies
+Use permission boundaries when teams create or extend roles in their own stacks, when guardrails are needed around privileged services (IAM, KMS, Organizations), or to separate maximum allowed permissions from application-specific policies.
 
 Name roles and policies consistently so stack outputs and audits remain easy to trace.
 
-### 4. Model cross-account access carefully
+### 4. Model cross-account access
 
-For cross-account roles:
-- trust only the exact source account, role, or principal type that needs access
-- add conditions such as `sts:ExternalId` when appropriate
-- keep the permission policy separate from the trust policy so audits stay clear
-- export only the ARNs or names that consuming accounts actually need
+For cross-account roles: trust only the exact source account or principal, add `sts:ExternalId` conditions when appropriate, keep permission and trust policies separate, and export only the ARNs that consuming accounts need.
 
-### 5. Validate the effective behavior, not just the template
+### 5. Validate the template and policy behavior
 
-Before rollout:
-- validate the template and review change sets
-- inspect trust relationships for unintended principals
-- review wildcard actions and resources
-- test assume-role behavior from the real caller when possible
-- confirm policy attachment, boundary application, and stack outputs match the intended security model
+Before rollout, use these commands to verify the template and IAM behavior:
+
+```bash
+# Validate CloudFormation template syntax
+aws cloudformation validate-template --template-body file://template.yaml
+
+# Preview changes before applying
+aws cloudformation create-change-set \
+  --stack-name <stack-name> \
+  --template-body file://template.yaml \
+  --change-set-type CREATE
+
+# Simulate whether a principal can perform specific actions
+aws iam simulate-principal-policy \
+  --policy-source-arn arn:aws:iam::123456789012:role/LambdaExecutionRole \
+  --action-names dynamodb:GetItem dynamodb:PutItem
+
+# Check for wildcards in IAM policies within the template
+aws cloudformation list-stack-resources --stack-name <stack-name>
+```
+
+After deployment, confirm policy attachments and stack outputs match the intended security model.
 
 ## Examples
 

@@ -1,6 +1,6 @@
 ---
 name: aws-lambda-php-integration
-description: Provides AWS Lambda integration patterns for PHP with Symfony using the Bref framework. Use when deploying PHP/Symfony applications to AWS Lambda, optimizing cold starts, configuring API Gateway integration, or implementing serverless PHP applications with Bref. Triggers include "create lambda php", "deploy symfony lambda", "bref lambda aws", "php lambda cold start", "aws lambda php performance", "symfony serverless", "php serverless framework".
+description: Provides AWS Lambda integration patterns for PHP with Symfony using the Bref framework. Creates Lambda handler classes, configures runtime layers, sets up SQS/SNS event triggers, implements warm-up strategies, and optimizes cold starts. Use when deploying PHP/Symfony applications to AWS Lambda, configuring API Gateway integration, implementing serverless PHP applications, or optimizing Lambda performance with Bref. Triggers include "create lambda php", "deploy symfony lambda", "bref lambda aws", "php lambda cold start", "aws lambda php performance", "symfony serverless", "php serverless framework".
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
@@ -10,21 +10,18 @@ Patterns for deploying PHP and Symfony applications on AWS Lambda using the Bref
 
 ## Overview
 
-This skill provides complete patterns for AWS Lambda PHP development with two main approaches:
+Two approaches available:
+- **Bref Framework** - Standard PHP on Lambda with Symfony support, built-in routing, cold start < 2s
+- **Raw PHP** - Minimal overhead, maximum control, cold start < 500ms
 
-1. **Bref Framework** - The standard solution for PHP on Lambda with Symfony support, built-in routing, and cold start optimization
-2. **Raw PHP** - Minimal overhead approach with maximum control
-
-Both approaches support API Gateway integration with production-ready configurations.
+Both support API Gateway integration with production-ready configurations.
 
 ## When to Use
 
-Use this skill when:
 - Creating new Lambda functions in PHP
 - Migrating existing Symfony applications to Lambda
-- Optimizing cold start performance for PHP Lambda
-- Choosing between Bref-based and minimal PHP approaches
-- Configuring API Gateway integration
+- Optimizing cold start performance
+- Configuring API Gateway or SQS/SNS event triggers
 - Setting up deployment pipelines for PHP Lambda
 
 ## Instructions
@@ -65,7 +62,7 @@ my-lambda-function/
     └── Services/
 ```
 
-### 3. Implementation Examples
+### 3. Implementation
 
 **Symfony with Bref:**
 ```php
@@ -99,18 +96,14 @@ main(function ($event) {
 });
 ```
 
-## Core Concepts
-
-### Cold Start Optimization
-
-PHP cold start depends on framework initialization. Key strategies:
+### 4. Cold Start Optimization
 
 1. **Lazy loading** - Defer heavy services until needed
-2. **Disable unused Symfony features** - Turn off validation, annotations, etc.
+2. **Disable unused Symfony features** - Turn off validation, annotations
 3. **Optimize composer autoload** - Use classmap for production
 4. **Use Bref optimized runtime** - Leverage PHP 8.x optimizations
 
-### Connection Management
+### 5. Connection Management
 
 ```php
 // Cache AWS clients at function level
@@ -133,32 +126,14 @@ class DatabaseService
 }
 ```
 
-### Environment Configuration
-
-```php
-// config/services.yaml
-parameters:
-    env(DATABASE_URL): null
-    env(APP_ENV): 'dev'
-
-services:
-    App\Service\Configuration:
-        arguments:
-            $tableName: '%env(DATABASE_URL)%'
-```
-
 ## Best Practices
 
-### Memory and Timeout Configuration
+### Memory and Timeout
 
 - **Memory**: Start with 512MB for Symfony, 256MB for raw PHP
-- **Timeout**: Set based on expected processing time
-  - Symfony: 10-30 seconds for cold start buffer
-  - Raw PHP: 3-10 seconds typically sufficient
+- **Timeout**: Symfony 10-30s for cold start buffer, Raw PHP 3-10s typically sufficient
 
 ### Dependencies
-
-Keep `composer.json` minimal:
 
 ```json
 {
@@ -175,8 +150,6 @@ Keep `composer.json` minimal:
 ```
 
 ### Error Handling
-
-Return proper Lambda responses:
 
 ```php
 try {
@@ -201,8 +174,6 @@ try {
 
 ### Logging
 
-Use structured logging:
-
 ```php
 error_log(json_encode([
     'level' => 'info',
@@ -212,11 +183,10 @@ error_log(json_encode([
 ]));
 ```
 
-## Deployment Options
+## Deployment
 
-### Quick Start
+### Serverless Configuration
 
-**Serverless Framework:**
 ```yaml
 # serverless.yml
 service: symfony-lambda-api
@@ -240,15 +210,23 @@ functions:
       - http:
           path: /{proxy+}
           method: ANY
-      - http:
-          path: /
-          method: ANY
 ```
 
-**Deploy with Bref:**
+### Deploy and Validate
+
 ```bash
+# 1. Install Bref
 composer require bref/bref --dev
+
+# 2. Test locally (validate before deploy)
+sam local invoke -e event.json
+
+# 3. Deploy
 vendor/bin/bref deploy
+
+# 4. Verify deployment
+aws lambda invoke --function-name symfony-lambda-api-api \
+  --payload '{"path": "/", "httpMethod": "GET"}' /dev/stdout
 ```
 
 ### Symfony Full Configuration
@@ -330,75 +308,52 @@ custom:
 - Enable CloudTrail for audit logging
 - Set proper CORS headers
 
-## References
-
-For detailed guidance on specific topics:
-
-- **[Bref Lambda](references/bref-lambda.md)** - Complete Bref setup, Symfony integration, routing
-- **[Raw PHP Lambda](references/raw-php-lambda.md)** - Minimal handler patterns, caching, packaging
-- **[Serverless Deployment](references/serverless-deployment.md)** - Serverless Framework, SAM, CI/CD pipelines
-- **[Testing Lambda](references/testing-lambda.md)** - PHPUnit, SAM Local, integration testing
-
 ## Examples
 
 ### Example 1: Create a Symfony Lambda API
 
-**Input:**
-```
-Create a Symfony Lambda REST API using Bref for a todo application
-```
+**Input:** "Create a Symfony Lambda REST API using Bref for a todo application"
 
 **Process:**
 1. Initialize Symfony project with `composer create-project`
 2. Install Bref: `composer require bref/bref`
 3. Configure serverless.yml
 4. Set up routes in config/routes.yaml
-5. Configure deployment with `vendor/bin/bref deploy`
+5. **Test locally**: `sam local invoke`
+6. **Deploy**: `vendor/bin/bref deploy`
+7. **Verify**: `aws lambda invoke --function-name <name> --payload '{}'`
 
-**Output:**
-- Complete Symfony project structure
-- REST API with CRUD endpoints
-- DynamoDB integration
-- Deployment configuration
+**Output:** Complete Symfony project structure with REST API, DynamoDB integration, deployment configuration
 
 ### Example 2: Optimize Cold Start for Symfony
 
-**Input:**
-```
-My Symfony Lambda has 5 second cold start, how do I optimize it?
-```
+**Input:** "My Symfony Lambda has 5 second cold start, how do I optimize it?"
 
 **Process:**
 1. Analyze services loaded at startup
 2. Disable unused Symfony features (validation, annotations)
 3. Use lazy loading for heavy services
 4. Optimize composer autoload
-5. Consider using raw PHP if full framework not needed
+5. **Measure**: Deploy and invoke to verify cold start < 2s
 
-**Output:**
-- Refactored Symfony configuration
-- Optimized cold start < 2s
-- Service analysis report
+**Output:** Refactored Symfony configuration with cold start < 2s
 
 ### Example 3: Deploy with GitHub Actions
 
-**Input:**
-```
-Configure CI/CD for Symfony Lambda with Serverless Framework
-```
+**Input:** "Configure CI/CD for Symfony Lambda with Serverless Framework"
 
 **Process:**
 1. Create GitHub Actions workflow
 2. Set up PHP environment with composer
 3. Run PHPUnit tests
-4. Deploy with Serverless Framework
-5. Configure environment protection for prod
+4. **Deploy** with Serverless Framework
+5. **Validate**: Check Lambda function exists and responds
 
-**Output:**
-- Complete .github/workflows/deploy.yml
-- Multi-stage pipeline
-- Integrated test automation
+**Output:** Complete .github/workflows/deploy.yml with multi-stage pipeline and test automation
 
-## Version
+## References
 
-Version: 1.0.0
+- **[Bref Lambda](references/bref-lambda.md)** - Complete Bref setup, Symfony integration, routing
+- **[Raw PHP Lambda](references/raw-php-lambda.md)** - Minimal handler patterns, caching, packaging
+- **[Serverless Deployment](references/serverless-deployment.md)** - Serverless Framework, SAM, CI/CD pipelines
+- **[Testing Lambda](references/testing-lambda.md)** - PHPUnit, SAM Local, integration testing

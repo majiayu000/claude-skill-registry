@@ -162,15 +162,14 @@ if (Test-Path "$HOME/.baoyu-skills/baoyu-cover-image/EXTEND.md") { "user" }
 5. **Detect language**: Compare source, user input, EXTEND.md preference
 6. **Determine output directory**: Per File Structure rules
 
-**⚠️ People in Reference Images — MUST follow all 3 rules:**
+**⚠️ People in Reference Images:**
 
 If reference images contain **people** who should appear in the cover:
 
-1. **`usage: direct`** — MUST set in refs description file. NEVER use `style` or `palette` when people need to appear
-2. **Per-character description** — MUST describe each person's distinctive features (hair, glasses, skin tone, clothing) in `refs/ref-NN-{slug}.md`. Vague descriptions like "a man" will fail
-3. **`--ref` flag** — MUST pass reference image via `--ref` in Step 4 so the model sees actual faces
+- **Model supports `--ref`** (default): Copy image to `refs/`, pass via `--ref` at generation. No description file needed — the model sees the face directly.
+- **Model does NOT support `--ref`** (Jimeng, Seedream 3.0): Create `refs/ref-NN-{slug}.md` with per-character description (hair, glasses, skin tone, clothing). Embed as MUST/REQUIRED instructions in prompt text.
 
-See [reference-images.md § Character Analysis](references/workflow/reference-images.md) for description format.
+See [reference-images.md](references/workflow/reference-images.md) for full decision table.
 
 ### Step 2: Confirm Options ⚠️
 

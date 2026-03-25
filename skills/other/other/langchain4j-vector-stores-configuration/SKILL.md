@@ -10,22 +10,13 @@ Configure vector stores for Retrieval-Augmented Generation applications with Lan
 
 ## Overview
 
-Vector stores are essential components for RAG (Retrieval-Augmented Generation) systems, enabling efficient storage and retrieval of document embeddings for semantic search. LangChain4J provides a unified abstraction over multiple vector database backends including PostgreSQL/pgvector, Pinecone, MongoDB Atlas, Milvus, Neo4j, and in-memory stores for development.
+LangChain4J provides a unified abstraction for vector stores (PostgreSQL/pgvector, Pinecone, MongoDB Atlas, Milvus, Neo4j) with builder-based configuration, metadata filtering, and hybrid search support.
 
 ## When to Use
 
-To configure vector stores when:
-
-- Building RAG applications requiring embedding storage and retrieval
-- Implementing semantic search in Java applications
-- Integrating LLMs with vector databases for context-aware responses
-- Configuring multi-modal embedding storage for text, images, or other data
-- Setting up hybrid search combining vector similarity and full-text search
-- Migrating between different vector store providers
-- Optimizing vector database performance for production workloads
-- Building AI-powered applications with memory and persistence
-- Implementing document chunking and embedding pipelines
-- Creating recommendation systems based on vector similarity
+- Configuring vector stores for semantic search and RAG applications
+- Setting up embedding storage with metadata filtering and hybrid search
+- Optimizing vector database performance for production AI workloads
 
 ## Instructions
 
@@ -49,6 +40,17 @@ public EmbeddingStore<TextSegment> embeddingStore() {
         .build();
 }
 ```
+
+### Validation Workflow
+
+Follow this workflow to ensure correct vector store setup:
+
+1. **Configure**: Build the embedding store with required dimensions and connection parameters
+2. **Test connection**: Verify store connectivity with a health check before ingesting data
+3. **Validate dimensions**: Confirm embedding model dimensions match store configuration
+4. **Ingest test data**: Add a small batch of test documents to verify ingestion works
+5. **Run test query**: Execute a sample semantic search to confirm retrieval accuracy
+6. **Proceed to production**: Only after all steps pass, proceed with full data ingestion
 
 ### Configure Multiple Vector Stores
 

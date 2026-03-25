@@ -8,14 +8,11 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 ## Overview
 
-Use this skill to keep Spring Boot wiring explicit, testable, and predictable.
-
-The core model is simple:
-- constructor injection for mandatory collaborators
-- explicit strategies for optional collaborators
-- configuration classes that make bean selection obvious
-
-This skill is about shaping code so it remains easy to test without depending on the Spring container for every unit test.
+Provides constructor-first dependency injection patterns for Spring Boot:
+- mandatory collaborators via constructor injection
+- optional collaborators via `ObjectProvider` or no-op fallbacks
+- bean selection via `@Primary` and `@Qualifier`
+- validation via minimal context tests before full integration
 
 ## When to Use
 
@@ -27,7 +24,6 @@ Use this skill when:
 - reviewing circular dependencies or brittle context startup failures
 - preparing code for direct constructor-based unit testing
 
-Typical trigger phrases include `spring dependency injection`, `constructor injection`, `replace field injection`, `qualifier vs primary`, and `optional bean`.
 
 ## Instructions
 
@@ -75,14 +71,24 @@ Use `@Configuration` and `@Bean` methods when:
 
 Business services should not know how infrastructure collaborators are instantiated.
 
-### 6. Validate wiring with the smallest useful test
+### 6. Validate wiring explicitly
 
-Test in this order:
-- direct constructor-based unit tests for service behavior
-- slice tests when Spring MVC, JPA, or messaging integration matters
-- full `@SpringBootTest` only when container-wide wiring must be proven
+After writing a new service or configuration:
 
-This keeps failures localized and makes dependency problems obvious.
+1. **Verify the bean loads** with a minimal context test:
+   ```java
+   @SpringBootTest
+   @ContextConfiguration(classes = UserService.class)
+   class UserServiceWiringTest {
+       @Autowired UserService userService;
+       @Test void serviceIsInstantiated() { assertNotNull(userService); }
+   }
+   ```
+2. **Run constructor-based unit tests** for service behavior (no Spring needed).
+3. **Add slice tests** only when MVC, JPA, or messaging integration must be verified.
+4. **Reserve `@SpringBootTest`** for container-wide wiring validation.
+
+Failures at step 1 indicate wiring issues before business logic is added.
 
 ## Examples
 

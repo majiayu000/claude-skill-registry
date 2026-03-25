@@ -1,0 +1,17 @@
+{
+  "name": "mapping-webapp",
+  "repo": "oaustegard/claude-skills",
+  "path": "mapping-webapp/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "mapping-webapp",
+  "downloaded_at": "2026-03-25T01:34:14.718524Z",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/mapping-webapp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oaustegard/claude-skills/blob/main/mapping-webapp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

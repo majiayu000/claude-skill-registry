@@ -44,32 +44,107 @@ Three output files:
 
 If multiple screens exist, retrieve all of them. Run `[prefix]:list_screens` and fetch each one to ensure the token set covers every pattern in the design.
 
-## Step 2: Extract raw design values
+## Step 1.5: Read project DesignTheme (ground truth)
 
-From the Stitch HTML and screenshot, extract:
+Before parsing HTML, get the authoritative design data from the Stitch API. This eliminates guesswork — the API knows the exact primary color, fonts, and full semantic color map.
 
-### Colors
-Identify every distinct color. For each, determine:
-- **Exact hex value** (from Tailwind config in `<head>`, or infer from screenshot)
-- **Semantic role**: What does this color DO? (primary action, surface, text, border, error, success...)
-- **Usage frequency**: How dominant is it?
+1. **Call `get_project`** with `projects/[projectId]`
+2. **Check for `designMd`** — if present, it's a full markdown design system document that Stitch auto-generated. Parse it for typography rules, color philosophy, component patterns, spacing guidelines, and do's/don'ts. This is the most valuable single field.
+3. **Extract `namedColors`** — a 40+ token semantic color map. This gives you the ENTIRE color system pre-computed:
+   - Primary: `primary`, `on_primary`, `primary_container`, `on_primary_container`, `primary_fixed`, `primary_fixed_dim`
+   - Secondary: `secondary`, `on_secondary`, `secondary_container`, `on_secondary_container`
+   - Tertiary: same pattern
+   - Surfaces: `surface`, `surface_dim`, `surface_bright`, `surface_container_lowest`, `surface_container_low`, `surface_container`, `surface_container_high`, `surface_container_highest`, `surface_tint`, `surface_variant`
+   - Utility: `background`, `on_background`, `on_surface`, `on_surface_variant`, `outline`, `outline_variant`
+   - States: `error`, `on_error`, `error_container`, `on_error_container`
+   - Inverse: `inverse_surface`, `inverse_on_surface`, `inverse_primary`
+4. **Extract structural values:**
 
-Aim for 8-12 semantic tokens, not 50 specific shades.
+| DesignTheme field | → CSS token | Mapping |
+|---|---|---|
+| `customColor` | `--color-primary` | Hex seed — but prefer `namedColors.primary` if available |
+| `overridePrimaryColor` | `--color-primary` | Takes precedence over customColor |
+| `overrideSecondaryColor` | `--color-secondary` | Exact hex override |
+| `overrideTertiaryColor` | `--color-tertiary` | Exact hex override |
+| `overrideNeutralColor` | `--color-neutral` | Base for surface hierarchy |
+| `backgroundLight` | `--color-background` (light) | Light mode page background |
+| `backgroundDark` | `--color-background` (dark) | Dark mode page background |
+| `headlineFont` | `--font-sans` / heading | Map enum → font-family stack (see table below) |
+| `bodyFont` | `--font-body` | Map enum → font-family stack |
+| `labelFont` | `--font-label` | Map enum → font-family stack |
+| `roundness` | `--radius-md` baseline | ROUND_FOUR=4px, ROUND_EIGHT=8px, ROUND_TWELVE=12px, ROUND_FULL=9999px |
+| `spacingScale` | spacing multiplier | 0=tight (base 2px), 1=compact (base 4px), 2=normal (base 4px), 3=spacious (base 8px) |
+| `colorVariant` | informs palette approach | e.g., FIDELITY means stick to brand colors, VIBRANT means boost saturation |
 
-### Typography
+**Font enum → CSS font-family mapping:**
+
+| Stitch enum | CSS font-family |
+|---|---|
+| `INTER` | `'Inter', system-ui, sans-serif` |
+| `DM_SANS` | `'DM Sans', system-ui, sans-serif` |
+| `GEIST` | `'Geist', system-ui, sans-serif` |
+| `SPACE_GROTESK` | `'Space Grotesk', system-ui, sans-serif` |
+| `MANROPE` | `'Manrope', system-ui, sans-serif` |
+| `PLUS_JAKARTA_SANS` | `'Plus Jakarta Sans', system-ui, sans-serif` |
+| `WORK_SANS` | `'Work Sans', system-ui, sans-serif` |
+| `IBM_PLEX_SANS` | `'IBM Plex Sans', system-ui, sans-serif` |
+| `RUBIK` | `'Rubik', system-ui, sans-serif` |
+| `SORA` | `'Sora', system-ui, sans-serif` |
+| `EPILOGUE` | `'Epilogue', system-ui, sans-serif` |
+| `NUNITO_SANS` | `'Nunito Sans', system-ui, sans-serif` |
+| `LEXEND` | `'Lexend', system-ui, sans-serif` |
+| `PUBLIC_SANS` | `'Public Sans', system-ui, sans-serif` |
+| `SOURCE_SANS_THREE` | `'Source Sans 3', system-ui, sans-serif` |
+| `MONTSERRAT` | `'Montserrat', system-ui, sans-serif` |
+| `HANKEN_GROTESK` | `'Hanken Grotesk', system-ui, sans-serif` |
+| `ARIMO` | `'Arimo', system-ui, sans-serif` |
+| `BE_VIETNAM_PRO` | `'Be Vietnam Pro', system-ui, sans-serif` |
+| `SPLINE_SANS` | `'Spline Sans', system-ui, sans-serif` |
+| `METROPOLIS` | `'Metropolis', system-ui, sans-serif` |
+| `EB_GARAMOND` | `'EB Garamond', Georgia, serif` |
+| `LITERATA` | `'Literata', Georgia, serif` |
+| `SOURCE_SERIF_FOUR` | `'Source Serif 4', Georgia, serif` |
+| `LIBRE_CASLON_TEXT` | `'Libre Caslon Text', Georgia, serif` |
+| `NEWSREADER` | `'Newsreader', Georgia, serif` |
+| `DOMINE` | `'Domine', Georgia, serif` |
+| `NOTO_SERIF` | `'Noto Serif', Georgia, serif` |
+
+5. **Use these as the baseline.** Then use HTML analysis (Step 2) only for values the API doesn't provide: motion/transition durations, exact spacing pixel values, shadow definitions, additional colors beyond the namedColors set.
+
+**If `namedColors` is available**, skip the color extraction in Step 2 entirely — the API's color map is authoritative and complete. Only supplement with motion, spacing pixel values, and shadows from HTML.
+
+**If `designMd` is available**, use it as the foundation for the DESIGN.md output (Step 5). Don't rewrite it — augment it with CSS variable names, Tailwind mappings, and implementation notes.
+
+## Step 2: Extract supplementary values from HTML
+
+If Step 1.5 provided `namedColors` and `designMd`, you only need HTML for:
+
+### Motion
+- Transition durations used (or infer: 150ms for micro, 300ms for panels)
+- Easing styles (linear, ease-out, spring-like)
+
+### Spacing pixel values
+- Exact gap/padding values used in the design
+- Shadow definitions
+
+### Additional colors (rare)
+Only if the design uses colors not in `namedColors` — check for gradients, overlays, or custom accent colors.
+
+**If Step 1.5 did NOT provide namedColors** (older projects without designMd), fall back to full HTML extraction:
+
+### Colors (fallback)
+Identify every distinct color from the Tailwind config in `<head>` or infer from screenshot. For each, determine semantic role and usage frequency. Aim for 8-12 semantic tokens.
+
+### Typography (fallback)
 - Font families (heading, body, mono — if present)
 - Type scale sizes (the actual `px` or `rem` values used in the design)
 - Font weights used
 - Line heights
 
-### Spacing & geometry
+### Spacing & geometry (fallback)
 - Base spacing unit (usually 4px or 8px)
 - Border radius values
 - Shadow definitions
-
-### Motion
-- Transition durations used (or infer: 150ms for micro, 300ms for panels)
-- Easing styles (linear, ease-out, spring-like)
 
 ## Step 3: Generate `design-tokens.css`
 
@@ -83,32 +158,42 @@ Create `design-tokens.css` with full light + dark mode token sets.
 - `--shadow-*` — Elevation
 - `--motion-*` — Animation timing
 
-**Template:**
+**Template (when namedColors is available from API — preferred):**
 ```css
 /* =============================================================
    Design Tokens — extracted from Stitch project: [Project Name]
    Generated by stitch-design-system skill
+   Source: DesignTheme API (namedColors) + HTML supplementary
    ============================================================= */
 
 /* ---- Light mode (default) ---- */
 :root {
-  /* Colors: Semantic roles, not visual names */
-  --color-background:       [hex];  /* Page background */
-  --color-surface:          [hex];  /* Card, panel backgrounds */
-  --color-surface-elevated: [hex];  /* Tooltip, dropdown backgrounds */
-  --color-primary:          [hex];  /* Primary CTA, key actions */
-  --color-primary-hover:    [hex];  /* Primary at hover state */
-  --color-primary-fg:       [hex];  /* Text/icon on primary bg */
-  --color-secondary:        [hex];  /* Secondary actions, accents */
-  --color-secondary-fg:     [hex];  /* Text/icon on secondary bg */
-  --color-text:             [hex];  /* Body text */
-  --color-text-muted:       [hex];  /* Secondary, supporting text */
-  --color-text-disabled:    [hex];  /* Disabled element text */
-  --color-border:           [hex];  /* Dividers, input borders */
-  --color-border-focus:     [hex];  /* Focus ring color */
-  --color-error:            [hex];  /* Error states */
-  --color-success:          [hex];  /* Success states */
-  --color-warning:          [hex];  /* Warning states */
+  /* Colors: Direct mapping from Stitch namedColors API response */
+  --color-primary:          [namedColors.primary];
+  --color-on-primary:       [namedColors.on_primary];
+  --color-primary-container: [namedColors.primary_container];
+  --color-secondary:        [namedColors.secondary];
+  --color-on-secondary:     [namedColors.on_secondary];
+  --color-tertiary:         [namedColors.tertiary];
+  --color-on-tertiary:      [namedColors.on_tertiary];
+  --color-error:            [namedColors.error];
+  --color-on-error:         [namedColors.on_error];
+  --color-background:       [namedColors.background];
+  --color-on-background:    [namedColors.on_background];
+  --color-surface:          [namedColors.surface];
+  --color-on-surface:       [namedColors.on_surface];
+  --color-surface-variant:  [namedColors.surface_variant];
+  --color-on-surface-variant: [namedColors.on_surface_variant];
+  --color-surface-container: [namedColors.surface_container];
+  --color-surface-container-low: [namedColors.surface_container_low];
+  --color-surface-container-high: [namedColors.surface_container_high];
+  --color-surface-container-highest: [namedColors.surface_container_highest];
+  --color-outline:          [namedColors.outline];
+  --color-outline-variant:  [namedColors.outline_variant];
+  --color-inverse-surface:  [namedColors.inverse_surface];
+  --color-inverse-on-surface: [namedColors.inverse_on_surface];
+  --color-inverse-primary:  [namedColors.inverse_primary];
+  --color-surface-tint:     [namedColors.surface_tint];
 
   /* Typography */
   --font-sans:    [font-family-stack];   /* Heading and UI font */

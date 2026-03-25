@@ -1,6 +1,6 @@
 ---
 name: spring-boot-crud-patterns
-description: Provides repeatable CRUD workflows for Spring Boot 3 services with Spring Data JPA and feature-focused architecture. Use when modeling aggregates, repositories, controllers, and DTOs for REST APIs.
+description: Provides and generates complete CRUD workflows for Spring Boot 3 services. Creates feature-focused architecture with Spring Data JPA aggregates, repositories, DTOs, controllers, and REST APIs. Validates domain invariants and transaction boundaries. Use when modeling Java backend services, REST API endpoints, database operations, web service patterns, or JPA entities for Spring Boot applications.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
@@ -8,240 +8,246 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 ## Overview
 
-Deliver feature-aligned CRUD services that separate domain, application, presentation, and infrastructure layers while preserving Spring Boot 3.5+ conventions. This skill distills the essential workflow and defers detailed code listings to reference files for progressive disclosure.
+Provides complete CRUD workflows for Spring Boot 3.5+ services using feature-focused architecture. Creates and validates domain aggregates, JPA repositories, application services, and REST controllers with proper separation of concerns. Defer detailed code listings to reference files for progressive disclosure.
 
 ## When to Use
 
-- Implement REST endpoints for create/read/update/delete workflows backed by Spring Data JPA.
-- Refine feature packages following DDD-inspired architecture with aggregates, repositories, and application services.
-- Introduce DTO records, request validation, and controller mappings for external clients.
+- Create REST endpoints for create/read/update/delete workflows backed by Spring Data JPA.
+- Implement feature packages following DDD-inspired architecture with aggregates, repositories, and application services.
+- Define DTO records, request validation, and controller mappings for external clients.
 - Diagnose CRUD regressions, repository contracts, or transaction boundaries in existing Spring Boot services.
-- Trigger phrases: **"implement Spring CRUD controller"**, **"refine feature-based repository"**, **"map DTOs for JPA aggregate"**, **"add pagination to REST list endpoint"**.
+- Trigger phrases: **"implement Spring CRUD controller"**, **"create an endpoint"**, **"add database entity"**, **"refine feature-based repository"**, **"map DTOs for JPA aggregate"**, **"add pagination to REST list endpoint"**.
 
 ## Instructions
 
-Follow these steps to implement feature-aligned CRUD services:
+Follow this streamlined workflow to deliver feature-aligned CRUD services with explicit validation gates:
 
-### 1. Establish Feature Package Structure
-
-Create feature/<name>/ directories with domain, application, presentation, and infrastructure subpackages to maintain architectural boundaries.
+### 1. Establish Feature Structure
+Create `feature/<name>/` directories with `domain`, `application`, `presentation`, and `infrastructure` subpackages.
+**Validate**: Verify directory structure matches the feature boundary before proceeding.
 
 ### 2. Define Domain Model
+Create entity classes with invariants enforced through factory methods (`create`, `update`). Keep domain logic framework-free.
+**Validate**: Assert all invariants are covered by unit tests before advancing.
 
-Create entity classes with invariants enforced through factory methods (create, update). Keep domain logic framework-free without Spring annotations.
+### 3. Expose Domain Ports
+Declare repository interfaces in `domain/repository` describing persistence contracts without implementation details.
+**Validate**: Confirm interface signatures match domain operations.
 
-### 3. Declare Repository Interfaces
+### 4. Provide Infrastructure Adapter
+Create JPA entities in `infrastructure/persistence` that map to domain models. Implement Spring Data repositories.
+**Validate**: Run `@DataJpaTest` to verify entity mapping and repository integration.
 
-Define domain repository interfaces in domain/repository that describe persistence contracts without implementation details.
+### 5. Implement Application Services
+Create `@Transactional` service classes that orchestrate domain operations and DTO mapping.
+**Validate**: Ensure transaction boundaries are correct and optimistic locking is applied where needed.
 
-### 4. Implement Infrastructure Adapters
+### 6. Define DTOs and Controllers
+Use Java records for API contracts with `jakarta.validation` annotations. Map REST endpoints with proper status codes.
+**Validate**: Test validation constraints and verify HTTP status codes (201 POST, 200 GET, 204 DELETE).
 
-Create JPA entities in infrastructure/persistence that map to domain models. Implement Spring Data repositories that delegate to domain interfaces.
+### 7. Validate and Deploy
+Run integration tests with Testcontainers. Verify migrations (Liquibase/Flyway) mirror the aggregate schema.
+**Validate**: Execute full test suite before deployment; confirm schema migration scripts are applied.
 
-### 5. Build Application Services
-
-Create `@`Service classes with `@`Transactional methods that orchestrate domain operations, repository access, and DTO mapping.
-
-### 6. Define Request/Response DTOs
-
-Use Java records or immutable classes for API contracts. Apply jakarta.validation annotations for input validation.
-
-### 7. Expose REST Controllers
-
-Create `@`RestController classes mapped to /api endpoints. Return ResponseEntity with appropriate status codes (201 for POST, 204 for DELETE).
-
-### 8. Write Tests
-
-Unit test domain logic in isolation. Use `@`DataJpaTest and Testcontainers for integration testing of persistence layer.
-
-## Prerequisites
-
-- Java 17+ project using Spring Boot 3.5.x (or later) with `spring-boot-starter-web` and `spring-boot-starter-data-jpa`.
-- Constructor injection enabled (Lombok `@RequiredArgsConstructor` or explicit constructors).
-- Access to a relational database (Testcontainers recommended for integration tests).
-- Familiarity with validation (`jakarta.validation`) and error handling (`ResponseStatusException`).
-
-## Quickstart Workflow
-
-1. **Establish Feature Structure**  
-   Create `feature/<name>/` directories for `domain`, `application`, `presentation`, and `infrastructure`.
-2. **Model the Aggregate**  
-   Define domain entities and value objects without Spring dependencies; capture invariants in methods such as `create` and `update`.
-3. **Expose Domain Ports**  
-   Declare repository interfaces in `domain/repository` describing persistence contracts.
-4. **Provide Infrastructure Adapter**  
-   Implement Spring Data adapters in `infrastructure/persistence` that map domain models to JPA entities and delegate to `JpaRepository`.
-5. **Implement Application Services**  
-   Create transactional use cases under `application/service` that orchestrate aggregates, repositories, and mapping logic.
-6. **Publish REST Controllers**  
-   Map DTO records under `presentation/rest`, expose endpoints with proper status codes, and wire validation annotations.
-7. **Validate with Tests**  
-   Run unit tests for domain logic and repository/service tests with Testcontainers for persistence verification.
-
-Consult `references/examples-product-feature.md` for complete code listings that align with each step.
-
-## Implementation Patterns
-
-### Domain Layer
-
-- Define immutable aggregates with factory methods (`Product.create`) to centralize invariants.
-- Use value objects (`Money`, `Stock`) to enforce type safety and encapsulate validation.
-- Keep domain objects framework-free; avoid `@Entity` annotations in the domain package when using adapters.
-
-### Application Layer
-
-- Wrap use cases in `@Service` classes using constructor injection and `@Transactional`.
-- Map requests to domain operations and persist through domain repositories.
-- Return response DTOs or records produced by dedicated mappers to decouple domain from transport.
-
-### Infrastructure Layer
-
-- Implement adapters that translate between domain aggregates and JPA entities; prefer MapStruct or manual mappers for clarity.
-- Configure repositories with Spring Data interfaces (e.g., `JpaRepository<ProductEntity, String>`) and custom queries for pagination or batch updates.
-- Externalize persistence properties (naming strategies, DDL mode) via `application.yml`; see `references/spring-official-docs.md`.
-
-### Presentation Layer
-
-- Structure controllers by feature (`ProductController`) and expose REST paths (`/api/products`).
-- Return `ResponseEntity` with appropriate codes: `201 Created` on POST, `200 OK` on GET/PUT/PATCH, `204 No Content` on DELETE.
-- Apply `@Valid` on request DTOs and handle errors with `@ControllerAdvice` or `ResponseStatusException`.
-
-## Validation and Observability
-
-- Write unit tests that assert domain invariants and repository contracts; refer to `references/examples-product-feature.md` integration test snippets.
-- Use `@DataJpaTest` and Testcontainers to validate persistence mapping, pagination, and batch operations.
-- Surface health and metrics through Spring Boot Actuator; monitor CRUD throughput and error rates.
-- Log key actions at `info` for lifecycle events (create, update, delete) and use structured logging for audit trails.
+See `references/examples-product-feature.md` for complete code aligned with each step.
 
 ## Examples
 
-### Input: Product Create Request
+### Java Code Example: Product Feature
 
+```java
+// feature/product/domain/Product.java
+package com.example.product.domain;
+
+import java.math.BigDecimal;
+import java.time.Instant;
+
+public record Product(
+    String id,
+    String name,
+    String description,
+    BigDecimal price,
+    int stock,
+    Instant createdAt,
+    Instant updatedAt
+) {
+    public static Product create(String name, String desc, BigDecimal price, int stock) {
+        if (name == null || name.isBlank()) throw new IllegalArgumentException("Name required");
+        if (price == null || price.compareTo(BigDecimal.ZERO) < 0) throw new IllegalArgumentException("Invalid price");
+        return new Product(null, name.trim(), desc, price, stock, Instant.now(), null);
+    }
+
+    public Product withPrice(BigDecimal newPrice) {
+        return new Product(id, name, description, newPrice, stock, createdAt, Instant.now());
+    }
+}
+```
+
+```java
+// feature/product/domain/repository/ProductRepository.java
+package com.example.product.domain.repository;
+
+import com.example.product.domain.Product;
+import java.util.Optional;
+
+public interface ProductRepository {
+    Product save(Product product);
+    Optional<Product> findById(String id);
+    void deleteById(String id);
+}
+```
+
+```java
+// feature/product/infrastructure/persistence/ProductJpaEntity.java
+package com.example.product.infrastructure.persistence;
+
+import jakarta.persistence.*;
+import java.math.BigDecimal;
+import java.time.Instant;
+
+@Entity @Table(name = "products")
+public class ProductJpaEntity {
+    @Id @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
+    private String name;
+    private String description;
+    private BigDecimal price;
+    private int stock;
+    private Instant createdAt;
+    private Instant updatedAt;
+
+    // getters, setters, constructor from domain (omitted for brevity)
+}
+```
+
+```java
+// feature/product/infrastructure/persistence/JpaProductRepository.java
+package com.example.product.infrastructure.persistence;
+
+import com.example.product.domain.Product;
+import com.example.product.domain.repository.ProductRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class JpaProductRepository implements ProductRepository {
+    private final SpringDataProductRepository springData;
+
+    public JpaProductRepository(SpringDataProductRepository springData) {
+        this.springData = springData;
+    }
+
+    @Override
+    public Product save(Product product) {
+        ProductJpaEntity entity = toEntity(product);
+        ProductJpaEntity saved = springData.save(entity);
+        return toDomain(saved);
+    }
+
+    // findById, deleteById implementations...
+}
+```
+
+```java
+// feature/product/presentation/rest/ProductController.java
+package com.example.product.presentation.rest;
+
+import com.example.product.domain.Product;
+import com.example.product.domain.repository.ProductRepository;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController @RequestMapping("/api/products")
+public class ProductController {
+    private final ProductService service;
+
+    public ProductController(ProductService service) { this.service = service; }
+
+    @PostMapping
+    public ResponseEntity<ProductResponse> create(@Valid @RequestBody CreateProductRequest req) {
+        Product product = service.create(req.toDomain());
+        return ResponseEntity.status(201).body(ProductResponse.from(product));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductResponse> getById(@PathVariable String id) {
+        return service.findById(id)
+            .map(p -> ResponseEntity.ok(ProductResponse.from(p)))
+            .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable String id) {
+        service.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    // record DTOs
+    public record CreateProductRequest(
+        @NotBlank String name,
+        String description,
+        @NotNull @DecimalMin("0.01") java.math.BigDecimal price,
+        @Min(0) int stock
+    ) {
+        Product toDomain() { return Product.create(name, description, price, stock); }
+    }
+
+    public record ProductResponse(String id, String name, java.math.BigDecimal price) {
+        static ProductResponse from(Product p) { return new ProductResponse(p.id(), p.name(), p.price()); }
+    }
+}
+```
+
+### JSON Input/Output Examples
+
+**Create Request:**
 ```json
 {
   "name": "Wireless Keyboard",
-  "description": "Ergonomic wireless keyboard with backlight",
+  "description": "Ergonomic keyboard",
   "price": 79.99,
   "stock": 50
 }
 ```
 
-### Output: Created Product Response
-
+**Created Response (201):**
 ```json
 {
   "id": "prod-123",
   "name": "Wireless Keyboard",
-  "description": "Ergonomic wireless keyboard with backlight",
   "price": 79.99,
-  "stock": 50,
-  "createdAt": "2024-01-15T10:30:00Z",
-  "_links": {
-    "self": "/api/products/prod-123",
-    "update": "/api/products/prod-123",
-    "delete": "/api/products/prod-123"
-  }
+  "_links": { "self": "/api/products/prod-123" }
 }
 ```
 
-### Input: Product Update Request
-
-```json
-{
-  "price": 69.99,
-  "stock": 45
-}
-```
-
-### Output: Updated Product Response
-
-```json
-{
-  "id": "prod-123",
-  "name": "Wireless Keyboard",
-  "description": "Ergonomic wireless keyboard with backlight",
-  "price": 69.99,
-  "stock": 45,
-  "updatedAt": "2024-01-15T11:45:00Z",
-  "_links": {
-    "self": "/api/products/prod-123"
-  }
-}
-```
-
-### Input: Delete Product
-
-```bash
-curl -X DELETE http://localhost:8080/api/products/prod-123
-```
-
-### Output: 204 No Content
-
-```
-HTTP/1.1 204 No Content
-```
-
-### Input: List Products with Pagination
-
+**Paginated List Request:**
 ```bash
 curl "http://localhost:8080/api/products?page=0&size=10&sort=name,asc"
 ```
 
-### Output: Paginated Product List
-
-```json
-{
-  "content": [
-    {
-      "id": "prod-123",
-      "name": "Wireless Keyboard",
-      "price": 69.99,
-      "stock": 45
-    },
-    {
-      "id": "prod-456",
-      "name": "Wireless Mouse",
-      "price": 29.99,
-      "stock": 100
-    }
-  ],
-  "pageable": {
-    "page": 0,
-    "size": 10,
-    "total": 2,
-    "totalPages": 1
-  },
-  "_links": {
-    "self": "/api/products?page=0&size=10",
-    "next": null,
-    "last": "/api/products?page=0&size=10"
-  }
-}
-```
-
 ## Best Practices
 
-- Favor feature modules with clear boundaries; colocate domain, application, and presentation code per aggregate.
-- Keep DTOs immutable via Java records; convert domain types at the service boundary.
-- Guard write operations with transactions and optimistic locking where concurrency matters.
+- Co-locate domain, application, and presentation code per aggregate within feature packages.
+- Use Java records for immutable DTOs; convert domain types at the service boundary.
+- Apply transactions and optimistic locking for write operations.
 - Normalize pagination defaults (page, size, sort) and document query parameters.
-- Capture links between commands and events where integration with messaging or auditing is required.
+- Log CRUD lifecycle events (create, update, delete) at info level with structured audit trails.
+- Surface health and metrics through Spring Boot Actuator; monitor throughput and error rates.
 
 ## Constraints and Warnings
 
-- Avoid exposing JPA entities directly in controllers to prevent lazy-loading leaks and serialization issues.
-- Do not mix field injection with constructor injection; maintain immutability for easier testing.
-- Refrain from embedding business logic in controllers or repository adapters; keep it in domain/application layers.
-- Validate input aggressively to prevent constraint violations and produce consistent error payloads.
-- Ensure migrations (Liquibase/Flyway) mirror aggregate evolution before deploying schema changes.
+- **Never** expose JPA entities directly in controllers to prevent lazy-loading leaks and serialization issues.
+- **Never** mix field injection with constructor injection; maintain immutability for testability.
+- **Never** embed business logic in controllers or repository adapters; keep it in domain/application layers.
+- **Always** validate input aggressively to prevent constraint violations and produce consistent error payloads.
+- **Always** ensure migrations (Liquibase/Flyway) mirror aggregate evolution before deploying schema changes.
+- **Always** run integration tests with Testcontainers before merging to prevent persistence regressions.
 
 ## References
 
-- [HTTP method matrix, annotation catalog, DTO patterns.](references/crud-reference.md)
-- [Progressive examples from starter to advanced feature implementation.](references/examples-product-feature.md)
-- [Excerpts from official Spring guides and Spring Boot reference documentation.](references/spring-official-docs.md)
-- [Python generator to scaffold CRUD boilerplate from entity spec.](scripts/generate_crud_boilerplate.py) Usage: `python skills/spring-boot-crud-patterns/scripts/generate_crud_boilerplate.py --spec entity.json --package com.example.product --output ./generated`
-- Templates required: place .tpl files in `skills/spring-boot-crud-patterns/references/` or pass `--templates-dir <path>`; no fallback to built-ins. See `references/README.md`.
-- Usage guide: [references/generator-usage.md](references/generator-usage.md)
-- Example spec: `skills/spring-boot-crud-patterns/assets/specs/product.json`
-- Example with relationships: `skills/spring-boot-crud-patterns/assets/specs/product_with_rel.json`
+- [HTTP methods, annotations, DTO patterns](references/crud-reference.md)
+- [Progressive examples from starter to advanced](references/examples-product-feature.md)
+- [Spring Boot official documentation](references/spring-official-docs.md)
+- [CRUD generator script](scripts/generate_crud_boilerplate.py) - `python scripts/generate_crud_boilerplate.py --spec entity.json --package com.example.product --output ./generated`

@@ -8,32 +8,15 @@ allowed-tools: Read, Write, Edit, Bash
 
 ## Overview
 
-This skill provides comprehensive authentication patterns for Next.js 15+ applications using the App Router architecture and Auth.js 5. It covers the complete authentication lifecycle from initial setup to production-ready implementations with role-based access control.
-
-Key capabilities include:
-- Auth.js 5 setup with Next.js App Router
-- Protected routes using Middleware
-- Session management in Server Components
-- Authentication checks in Server Actions
-- OAuth provider integration (GitHub, Google, etc.)
-- Role-based access control (RBAC)
-- JWT and database session strategies
-- Comprehensive testing patterns
+Provides authentication implementation patterns for Next.js 15+ App Router using Auth.js 5 (NextAuth.js), covering the complete authentication lifecycle from initial setup to production-ready role-based access control implementations.
 
 ## When to Use
 
-Use this skill when implementing authentication for Next.js 15+ with App Router:
-
-- Setting up Auth.js 5 (NextAuth.js) from scratch
+- Setting up Auth.js 5 from scratch or adding OAuth providers
 - Implementing protected routes with Middleware
-- Handling authentication in Server Components
-- Securing Server Actions with auth checks
-- Configuring OAuth providers (Google, GitHub, Discord, etc.)
+- Handling authentication in Server Components and Server Actions
 - Implementing role-based access control (RBAC)
-- Managing sessions with JWT or database strategy
-- Creating credential-based authentication
-- Handling sign-in/sign-out flows
-- Testing authentication flows
+- Creating credential-based or OAuth sign-in/sign-out flows
 
 ## Instructions
 
@@ -403,91 +386,6 @@ export function CreateTodoForm() {
 ```
 
 **Output:** Todo created only for authenticated user; unauthorized requests throw error.
-
-### Example 4: OAuth Sign-In Button
-
-**Input:** User should be able to sign in with GitHub
-
-**Implementation:**
-
-```tsx
-// components/auth/sign-in-button.tsx
-"use client";
-
-import { signIn, signOut, useSession } from "next-auth/react";
-
-export function AuthButton() {
-  const { data: session, status } = useSession();
-
-  if (status === "loading") {
-    return <button disabled>Loading...</button>;
-  }
-
-  if (session) {
-    return (
-      <button onClick={() => signOut()}>
-        Sign out {session.user?.name}
-      </button>
-    );
-  }
-
-  return (
-    <button onClick={() => signIn("github")}>
-      Sign in with GitHub
-    </button>
-  );
-}
-```
-
-**Output:** Button shows "Sign in with GitHub" for unauthenticated users, "Sign out {name}" for authenticated users.
-
-### Example 5: Credentials Provider Login
-
-**Input:** Implement email/password login
-
-**Implementation:**
-
-```tsx
-// auth.ts
-import Credentials from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs";
-
-export const { handlers, auth, signIn, signOut } = NextAuth({
-  providers: [
-    Credentials({
-      name: "credentials",
-      credentials: {
-        email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" },
-      },
-      async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          return null;
-        }
-
-        const user = await db.user.findUnique({
-          where: { email: credentials.email },
-        });
-
-        if (!user || !user.password) {
-          return null;
-        }
-
-        const isValid = await bcrypt.compare(
-          credentials.password,
-          user.password
-        );
-
-        return isValid
-          ? { id: user.id, email: user.email, name: user.name }
-          : null;
-      },
-    }),
-  ],
-});
-```
-
-**Output:** Users can authenticate with email/password against your database.
 
 ## Best Practices
 

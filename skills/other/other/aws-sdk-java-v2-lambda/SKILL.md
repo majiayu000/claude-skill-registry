@@ -8,33 +8,32 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 ## Overview
 
-AWS Lambda is a compute service that runs code without the need to manage servers. Your code runs automatically, scaling up and down with pay-per-use pricing. Use this skill to implement AWS Lambda operations using AWS SDK for Java 2.x in applications and services.
+AWS Lambda is a compute service that runs code without managing servers. Use this skill to implement AWS Lambda operations using AWS SDK for Java 2.x in applications and services.
 
 ## When to Use
 
-Use this skill when:
-- Invoking Lambda functions programmatically
-- Creating or updating Lambda functions
-- Managing Lambda function configurations
-- Working with Lambda environment variables
-- Managing Lambda layers and aliases
-- Implementing asynchronous Lambda invocations
-- Integrating Lambda with Spring Boot
+- Invoking Lambda functions from Java applications
+- Deploying and updating Lambda functions via SDK
+- Managing function configurations and layers
+- Integrating Lambda with Spring Boot applications
+
+## Quick Reference
+
+| Operation | SDK Method | Use Case |
+|-----------|------------|----------|
+| **Invoke** | `invoke()` | Synchronous/async function invocation |
+| **List Functions** | `listFunctions()` | Get all Lambda functions |
+| **Get Config** | `getFunction()` | Retrieve function configuration |
+| **Create Function** | `createFunction()` | Create new Lambda function |
+| **Update Code** | `updateFunctionCode()` | Deploy new function code |
+| **Update Config** | `updateFunctionConfiguration()` | Modify settings (timeout, memory, env vars) |
+| **Delete Function** | `deleteFunction()` | Remove Lambda function |
 
 ## Instructions
 
-Follow these steps to work with AWS Lambda:
+### 1. Add Dependencies
 
-1. **Add Dependencies** - Include Lambda SDK dependency
-2. **Create Client** - Instantiate LambdaClient with proper configuration
-3. **Invoke Functions** - Use invoke() with appropriate invocation type
-4. **Handle Responses** - Parse response payloads and handle function errors
-5. **Manage Functions** - Create, update, or delete Lambda functions
-6. **Configure Environment** - Set environment variables and concurrency limits
-7. **Integrate with Spring** - Configure Lambda beans and services
-8. **Test Locally** - Use mocks or LocalStack for development testing
-
-## Dependencies
+Include Lambda SDK dependency in `pom.xml`:
 
 ```xml
 <dependency>
@@ -43,260 +42,119 @@ Follow these steps to work with AWS Lambda:
 </dependency>
 ```
 
-## Client Setup
+See [client-setup.md](references/client-setup.md) for complete setup.
 
-To use AWS Lambda, create a LambdaClient with the required region configuration:
+### 2. Create Client
+
+Instantiate `LambdaClient` with proper configuration:
 
 ```java
-import software.amazon.awssdk.regions.Region;
-import software.amazon.awssdk.services.lambda.LambdaClient;
-
 LambdaClient lambdaClient = LambdaClient.builder()
     .region(Region.US_EAST_1)
     .build();
 ```
 
-For asynchronous operations, use LambdaAsyncClient:
+For async operations, use `LambdaAsyncClient`.
+
+### 3. Invoke Lambda Function
+
+Synchronous invocation:
 
 ```java
-import software.amazon.awssdk.services.lambda.LambdaAsyncClient;
-
-LambdaAsyncClient asyncLambdaClient = LambdaAsyncClient.builder()
-    .region(Region.US_EAST_1)
+InvokeRequest request = InvokeRequest.builder()
+    .functionName("my-function")
+    .payload(SdkBytes.fromUtf8String(payload))
     .build();
+
+InvokeResponse response = lambdaClient.invoke(request);
+
+return response.payload().asUtf8String();
 ```
 
-## Invoke Lambda Function
+See [invocation-patterns.md](references/invocation-patterns.md) for patterns.
 
-### Synchronous Invocation
+### 4. Handle Responses
 
-Invoke Lambda functions synchronously to get immediate results:
+Parse response payloads and check for errors:
 
 ```java
-import software.amazon.awssdk.services.lambda.model.*;
-import software.amazon.awssdk.core.SdkBytes;
-
-public String invokeLambda(LambdaClient lambdaClient,
-                           String functionName,
-                           String payload) {
-    InvokeRequest request = InvokeRequest.builder()
-        .functionName(functionName)
-        .payload(SdkBytes.fromUtf8String(payload))
-        .build();
-
-    InvokeResponse response = lambdaClient.invoke(request);
-
-    return response.payload().asUtf8String();
+if (response.functionError() != null) {
+    throw new LambdaInvocationException("Lambda error: " + response.functionError());
 }
+
+String result = response.payload().asUtf8String();
 ```
 
-### Asynchronous Invocation
+### 5. Manage Functions
 
-Use asynchronous invocation for fire-and-forget scenarios:
+Create, update, or delete Lambda functions:
 
 ```java
-public void invokeLambdaAsync(LambdaClient lambdaClient,
-                              String functionName,
-                              String payload) {
-    InvokeRequest request = InvokeRequest.builder()
-        .functionName(functionName)
-        .invocationType(InvocationType.EVENT) // Asynchronous
-        .payload(SdkBytes.fromUtf8String(payload))
-        .build();
+// Create
+CreateFunctionRequest createRequest = CreateFunctionRequest.builder()
+    .functionName("my-function")
+    .runtime(Runtime.JAVA17)
+    .role(roleArn)
+    .code(code)
+    .build();
 
-    InvokeResponse response = lambdaClient.invoke(request);
+lambdaClient.createFunction(createRequest);
 
-    System.out.println("Status: " + response.statusCode());
+// Verify function is active before proceeding
+GetFunctionRequest getRequest = GetFunctionRequest.builder()
+    .functionName("my-function")
+    .build();
+GetFunctionResponse getResponse = lambdaClient.getFunction(getRequest);
+if (!"Active".equals(getResponse.configuration().state())) {
+    throw new IllegalStateException("Function not active: " + getResponse.configuration().stateReason());
 }
+
+// Update code
+UpdateFunctionCodeRequest updateCodeRequest = UpdateFunctionCodeRequest.builder()
+    .functionName("my-function")
+    .zipFile(SdkBytes.fromByteArray(zipBytes))
+    .build();
+
+lambdaClient.updateFunctionCode(updateCodeRequest);
+
+// Wait for deployment to complete
+Waiter<GetFunctionConfigurationRequest> waiter = lambdaClient.waiter();
+waiter.waitUntilFunctionUpdatedActive(GetFunctionConfigurationRequest.builder()
+    .functionName("my-function")
+    .build());
 ```
 
-### Invoke with JSON Objects
+See [function-management.md](references/function-management.md) for complete patterns.
 
-Work with JSON payloads for complex data structures:
+### 6. Configure Environment
+
+Set environment variables and concurrency limits:
 
 ```java
-import com.fasterxml.jackson.databind.ObjectMapper;
+Environment env = Environment.builder()
+    .variables(Map.of(
+        "DB_URL", "jdbc:postgresql://db",
+        "LOG_LEVEL", "INFO"
+    ))
+    .build();
 
-public <T> String invokeLambdaWithObject(LambdaClient lambdaClient,
-                                         String functionName,
-                                         T requestObject) throws Exception {
-    ObjectMapper mapper = new ObjectMapper();
-    String jsonPayload = mapper.writeValueAsString(requestObject);
+UpdateFunctionConfigurationRequest configRequest = UpdateFunctionConfigurationRequest.builder()
+    .functionName("my-function")
+    .environment(env)
+    .timeout(60)
+    .memorySize(512)
+    .build();
 
-    InvokeRequest request = InvokeRequest.builder()
-        .functionName(functionName)
-        .payload(SdkBytes.fromUtf8String(jsonPayload))
-        .build();
-
-    InvokeResponse response = lambdaClient.invoke(request);
-
-    return response.payload().asUtf8String();
-}
+lambdaClient.updateFunctionConfiguration(configRequest);
 ```
 
-### Parse Typed Responses
+### 7. Integrate with Spring Boot
 
-Parse JSON responses into typed objects:
-
-```java
-public <T> T invokeLambdaAndParse(LambdaClient lambdaClient,
-                                  String functionName,
-                                  Object request,
-                                  Class<T> responseType) throws Exception {
-    ObjectMapper mapper = new ObjectMapper();
-    String jsonPayload = mapper.writeValueAsString(request);
-
-    InvokeRequest invokeRequest = InvokeRequest.builder()
-        .functionName(functionName)
-        .payload(SdkBytes.fromUtf8String(jsonPayload))
-        .build();
-
-    InvokeResponse response = lambdaClient.invoke(invokeRequest);
-
-    String responseJson = response.payload().asUtf8String();
-
-    return mapper.readValue(responseJson, responseType);
-}
-```
-
-## Function Management
-
-### List Functions
-
-List all Lambda functions for the current account:
+Configure Lambda beans and services:
 
 ```java
-public List<FunctionConfiguration> listFunctions(LambdaClient lambdaClient) {
-    ListFunctionsResponse response = lambdaClient.listFunctions();
-
-    return response.functions();
-}
-```
-
-### Get Function Configuration
-
-Retrieve function configuration and metadata:
-
-```java
-public FunctionConfiguration getFunctionConfig(LambdaClient lambdaClient,
-                                                String functionName) {
-    GetFunctionRequest request = GetFunctionRequest.builder()
-        .functionName(functionName)
-        .build();
-
-    GetFunctionResponse response = lambdaClient.getFunction(request);
-
-    return response.configuration();
-}
-```
-
-### Update Function Code
-
-Update Lambda function code with new deployment package:
-
-```java
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
-public void updateFunctionCode(LambdaClient lambdaClient,
-                               String functionName,
-                               String zipFilePath) throws IOException {
-    byte[] zipBytes = Files.readAllBytes(Paths.get(zipFilePath));
-
-    UpdateFunctionCodeRequest request = UpdateFunctionCodeRequest.builder()
-        .functionName(functionName)
-        .zipFile(SdkBytes.fromByteArray(zipBytes))
-        .publish(true)
-        .build();
-
-    UpdateFunctionCodeResponse response = lambdaClient.updateFunctionCode(request);
-
-    System.out.println("Updated function version: " + response.version());
-}
-```
-
-### Update Function Configuration
-
-Modify function settings like timeout, memory, and environment variables:
-
-```java
-public void updateFunctionConfiguration(LambdaClient lambdaClient,
-                                        String functionName,
-                                        Map<String, String> environment) {
-    Environment env = Environment.builder()
-        .variables(environment)
-        .build();
-
-    UpdateFunctionConfigurationRequest request = UpdateFunctionConfigurationRequest.builder()
-        .functionName(functionName)
-        .environment(env)
-        .timeout(60)
-        .memorySize(512)
-        .build();
-
-    lambdaClient.updateFunctionConfiguration(request);
-}
-```
-
-### Create Function
-
-Create new Lambda functions with code and configuration:
-
-```java
-public void createFunction(LambdaClient lambdaClient,
-                          String functionName,
-                          String roleArn,
-                          String handler,
-                          String zipFilePath) throws IOException {
-    byte[] zipBytes = Files.readAllBytes(Paths.get(zipFilePath));
-
-    FunctionCode code = FunctionCode.builder()
-        .zipFile(SdkBytes.fromByteArray(zipBytes))
-        .build();
-
-    CreateFunctionRequest request = CreateFunctionRequest.builder()
-        .functionName(functionName)
-        .runtime(Runtime.JAVA17)
-        .role(roleArn)
-        .handler(handler)
-        .code(code)
-        .timeout(60)
-        .memorySize(512)
-        .build();
-
-    CreateFunctionResponse response = lambdaClient.createFunction(request);
-
-    System.out.println("Function ARN: " + response.functionArn());
-}
-```
-
-### Delete Function
-
-Remove Lambda functions when no longer needed:
-
-```java
-public void deleteFunction(LambdaClient lambdaClient, String functionName) {
-    DeleteFunctionRequest request = DeleteFunctionRequest.builder()
-        .functionName(functionName)
-        .build();
-
-    lambdaClient.deleteFunction(request);
-}
-```
-
-## Spring Boot Integration
-
-### Configuration
-
-Configure Lambda clients as Spring beans:
-
-```java
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
 @Configuration
 public class LambdaConfiguration {
-
     @Bean
     public LambdaClient lambdaClient() {
         return LambdaClient.builder()
@@ -304,150 +162,26 @@ public class LambdaConfiguration {
             .build();
     }
 }
-```
-
-### Lambda Invoker Service
-
-Create a service for Lambda function invocation:
-
-```java
-import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
 public class LambdaInvokerService {
-
-    private final LambdaClient lambdaClient;
-    private final ObjectMapper objectMapper;
-
-    @Autowired
-    public LambdaInvokerService(LambdaClient lambdaClient, ObjectMapper objectMapper) {
-        this.lambdaClient = lambdaClient;
-        this.objectMapper = objectMapper;
-    }
-
     public <T, R> R invoke(String functionName, T request, Class<R> responseType) {
-        try {
-            String jsonPayload = objectMapper.writeValueAsString(request);
-
-            InvokeRequest invokeRequest = InvokeRequest.builder()
-                .functionName(functionName)
-                .payload(SdkBytes.fromUtf8String(jsonPayload))
-                .build();
-
-            InvokeResponse response = lambdaClient.invoke(invokeRequest);
-
-            if (response.functionError() != null) {
-                throw new LambdaInvocationException(
-                    "Lambda function error: " + response.functionError());
-            }
-
-            String responseJson = response.payload().asUtf8String();
-
-            return objectMapper.readValue(responseJson, responseType);
-
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to invoke Lambda function", e);
-        }
-    }
-
-    public void invokeAsync(String functionName, Object request) {
-        try {
-            String jsonPayload = objectMapper.writeValueAsString(request);
-
-            InvokeRequest invokeRequest = InvokeRequest.builder()
-                .functionName(functionName)
-                .invocationType(InvocationType.EVENT)
-                .payload(SdkBytes.fromUtf8String(jsonPayload))
-                .build();
-
-            lambdaClient.invoke(invokeRequest);
-
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to invoke Lambda function async", e);
-        }
+        // Implementation
     }
 }
 ```
 
-### Typed Lambda Client
+See [spring-boot-integration.md](references/spring-boot-integration.md) for complete integration.
 
-Create type-safe interfaces for Lambda services:
+### 8. Test Locally
 
-```java
-public interface OrderProcessor {
-    OrderResponse processOrder(OrderRequest request);
-}
+Use mocks or LocalStack for development testing.
 
-@Service
-public class LambdaOrderProcessor implements OrderProcessor {
-
-    private final LambdaInvokerService lambdaInvoker;
-
-    @Value("${lambda.order-processor.function-name}")
-    private String functionName;
-
-    public LambdaOrderProcessor(LambdaInvokerService lambdaInvoker) {
-        this.lambdaInvoker = lambdaInvoker;
-    }
-
-    @Override
-    public OrderResponse processOrder(OrderRequest request) {
-        return lambdaInvoker.invoke(functionName, request, OrderResponse.class);
-    }
-}
-```
-
-## Error Handling
-
-Implement comprehensive error handling for Lambda operations:
-
-```java
-public String invokeLambdaSafe(LambdaClient lambdaClient,
-                               String functionName,
-                               String payload) {
-    try {
-        InvokeRequest request = InvokeRequest.builder()
-            .functionName(functionName)
-            .payload(SdkBytes.fromUtf8String(payload))
-            .build();
-
-        InvokeResponse response = lambdaClient.invoke(request);
-
-        // Check for function error
-        if (response.functionError() != null) {
-            String errorMessage = response.payload().asUtf8String();
-            throw new RuntimeException("Lambda error: " + errorMessage);
-        }
-
-        // Check status code
-        if (response.statusCode() != 200) {
-            throw new RuntimeException("Lambda invocation failed with status: " +
-                response.statusCode());
-        }
-
-        return response.payload().asUtf8String();
-
-    } catch (LambdaException e) {
-        System.err.println("Lambda error: " + e.awsErrorDetails().errorMessage());
-        throw e;
-    }
-}
-
-public class LambdaInvocationException extends RuntimeException {
-    public LambdaInvocationException(String message) {
-        super(message);
-    }
-
-    public LambdaInvocationException(String message, Throwable cause) {
-        super(message, cause);
-    }
-}
-```
+See [testing.md](references/testing.md) for testing patterns.
 
 ## Examples
 
-### Example 1: Basic Lambda Invocation
+### Basic Invocation
 
 ```java
 public String invokeFunction(LambdaClient client, String functionName, String payload) {
@@ -466,140 +200,85 @@ public String invokeFunction(LambdaClient client, String functionName, String pa
 }
 ```
 
-### Example 2: Async Invocation
+### Async Invocation
 
 ```java
 public void invokeAsync(LambdaClient client, String functionName, Map<String, Object> event) {
-    try {
-        String jsonPayload = new ObjectMapper().writeValueAsString(event);
+    String jsonPayload = new ObjectMapper().writeValueAsString(event);
 
-        InvokeRequest request = InvokeRequest.builder()
-            .functionName(functionName)
-            .invocationType(InvocationType.EVENT)
-            .payload(SdkBytes.fromUtf8String(jsonPayload))
-            .build();
+    InvokeRequest request = InvokeRequest.builder()
+        .functionName(functionName)
+        .invocationType(InvocationType.EVENT)
+        .payload(SdkBytes.fromUtf8String(jsonPayload))
+        .build();
 
-        client.invoke(request);
-
-    } catch (Exception e) {
-        throw new RuntimeException("Async invocation failed", e);
-    }
+    client.invoke(request);
 }
 ```
 
-### Example 3: Spring Boot Service
+### Spring Boot Service
 
 ```java
 @Service
 public class LambdaService {
-
     private final LambdaClient lambdaClient;
-    private final ObjectMapper objectMapper;
-
-    @Value("${lambda.user-processor-function}")
-    private String userProcessorFunction;
 
     public UserResponse processUser(UserRequest request) {
-        try {
-            String payload = objectMapper.writeValueAsString(request);
+        String payload = objectMapper.writeValueAsString(request);
 
-            InvokeResponse response = lambdaClient.invoke(
-                InvokeRequest.builder()
-                    .functionName(userProcessorFunction)
-                    .payload(SdkBytes.fromUtf8String(payload))
-                    .build()
-            );
+        InvokeResponse response = lambdaClient.invoke(
+            InvokeRequest.builder()
+                .functionName("user-processor")
+                .payload(SdkBytes.fromUtf8String(payload))
+                .build()
+        );
 
-            return objectMapper.readValue(
-                response.payload().asUtf8String(),
-                UserResponse.class
-            );
-
-        } catch (Exception e) {
-            throw new RuntimeException("User processing failed", e);
-        }
+        return objectMapper.readValue(
+            response.payload().asUtf8String(),
+            UserResponse.class
+        );
     }
 }
 ```
 
-For comprehensive code examples, see the references section:
-
-- **Basic examples** - Simple invocation patterns and function management
-- **Spring Boot integration** - Complete Spring Boot configuration and service patterns
-- **Testing examples** - Unit and integration test patterns
-- **Advanced patterns** - Complex scenarios and best practices
-
-## Constraints and Warnings
-
-- **Payload Size**: Lambda payload limited to 6MB for sync invocation, 256KB for async
-- **Timeout**: Maximum function timeout is 15 minutes
-- **Memory**: Memory configuration affects CPU and network performance
-- **Concurrency**: Account-level concurrency limits can cause throttling
-- **Cold Starts**: New invocations may have delays for initialization
-- **VPC**: VPC functions need proper security group and subnet configuration
-- **Layers**: Lambda layers count towards deployment package size limit
-- **Reserved Concurrency**: Prevents throttling but limits maximum scaling
-- **Event Source Mappings**: Some event sources require special configuration
-- **Cost**: Unexpected usage can lead to high bills; set budgets and alerts
+See [examples.md](references/examples.md) for more examples.
 
 ## Best Practices
 
-1. **Reuse Lambda clients**: Create once and reuse across invocations
-2. **Set appropriate timeouts**: Match client timeout to Lambda function timeout
-3. **Use async invocation**: For fire-and-forget scenarios
-4. **Handle errors properly**: Check for function errors and status codes
-5. **Use environment variables**: For function configuration
-6. **Implement retry logic**: For transient failures
-7. **Monitor invocations**: Use CloudWatch metrics
-8. **Version functions**: Use aliases and versions for production
-9. **Use VPC**: For accessing resources in private subnets
-10. **Optimize payload size**: Keep payloads small for better performance
+- **Reuse clients**: Create `LambdaClient`/`LambdaAsyncClient` once; they are thread-safe
+- **Use async client**: For fire-and-forget invocations, use `LambdaAsyncClient` with `CompletableFuture`
+- **Verify deployments**: Always wait for function state to be `Active` after create/update operations
+- **Limit payload size**: Keep request/response payloads under 256KB for async, 6MB for sync invocations
+- **Configure timeouts**: Set client read timeout slightly higher than Lambda function timeout
+- **Use latest runtime**: Specify `Runtime.JAVA17` or newer for improved cold start performance
 
-## Testing
+## Constraints and Warnings
 
-Test Lambda services using mocks and test assertions:
-
-```java
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-
-@ExtendWith(MockitoExtension.class)
-class LambdaInvokerServiceTest {
-
-    @Mock
-    private LambdaClient lambdaClient;
-
-    @Mock
-    private ObjectMapper objectMapper;
-
-    @InjectMocks
-    private LambdaInvokerService service;
-
-    @Test
-    void shouldInvokeLambdaSuccessfully() throws Exception {
-        // Test implementation
-    }
-}
-```
-
-## Related Skills
-
-- `@`aws-sdk-java-v2-core - Core AWS SDK patterns and client configuration
-- `@`spring-boot-dependency-injection - Spring dependency injection best practices
-- `@`unit-test-service-layer - Service testing patterns with Mockito
-- `@`spring-boot-actuator - Production monitoring and health checks
+- **Payload Limit**: 6MB (sync), 256KB (async invocation)
+- **Timeout**: Max 900 seconds (15 minutes) per invocation
+- **Cold Starts**: JVM-based functions have longer cold starts; use GraalVM Native Image for improvement
+- **Deployment Size**: Function code + layers must not exceed 50MB (zipped) or 250MB (unzipped)
+- **Concurrency**: Default 1000 per region; use reserved concurrency to guarantee capacity
+- **Cost**: Monitor with CloudWatch metrics; set billing alerts to prevent runaway costs
 
 ## References
 
-For detailed information and examples, see the following reference files:
+- **[client-setup.md](references/client-setup.md)** — Client configuration and setup
+- **[invocation-patterns.md](references/invocation-patterns.md)** — Synchronous and async invocation patterns
+- **[function-management.md](references/function-management.md)** — Create, update, delete functions
+- **[spring-boot-integration.md](references/spring-boot-integration.md)** — Spring Boot configuration and services
+- **[testing.md](references/testing.md)** — Unit and integration testing patterns
+- **[examples.md](references/examples.md)** — Complete code examples and integration patterns
+- **[official-documentation.md](references/official-documentation.md)** — AWS Lambda concepts and API reference
 
-- **[Official Documentation](references/official-documentation.md)** - AWS Lambda concepts, API reference, and official guidance
-- **[Examples](references/examples.md)** - Complete code examples and integration patterns
+## Related Skills
 
-## Additional Resources
+- `aws-sdk-java-v2-core` — Core AWS SDK patterns and client configuration
+- `spring-boot-dependency-injection` — Spring dependency injection best practices
+- `unit-test-service-layer` — Service testing patterns with Mockito
+- `spring-boot-actuator` — Production monitoring and health checks
+
+## External Resources
 
 - [Lambda Examples on GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/lambda)
 - [Lambda API Reference](https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/lambda/package-summary.html)

@@ -1,88 +1,30 @@
 ---
 name: spring-data-neo4j
-description: Provides Spring Data Neo4j integration patterns for graph database development. Use when working with Neo4j graph databases, node entities, relationships, Cypher queries, reactive Neo4j operations, or Spring Data Neo4j repositories.
+description: Provides Spring Data Neo4j integration patterns for Spring Boot applications. Use when you need to work with a graph database, Neo4j nodes and relationships, Cypher queries, or Spring Data Neo4j. Creates node entities with @Node annotation, defines relationships with @Relationship, writes Cypher queries using @Query, configures imperative and reactive Neo4j repositories, implements graph traversal patterns, and sets up testing with embedded databases.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
 # Spring Data Neo4j Integration Patterns
 
-## When to Use This Skill
-
-To use this skill when you need to:
-- Set up Spring Data Neo4j in a Spring Boot application
-- Create and map graph node entities and relationships
-- Implement Neo4j repositories with custom queries
-- Write Cypher queries using `@`Query annotations
-- Configure Neo4j connections and dialects
-- Test Neo4j repositories with embedded databases
-- Work with both imperative and reactive Neo4j operations
-- Map complex graph relationships with bidirectional or unidirectional directions
-- Use Neo4j's internal ID generation or custom business keys
-
 ## Overview
 
-Spring Data Neo4j provides three levels of abstraction for Neo4j integration:
-- **Neo4j Client**: Low-level abstraction for direct database access
-- **Neo4j Template**: Medium-level template-based operations
-- **Neo4j Repositories**: High-level repository pattern with query derivation
+Provides Spring Data Neo4j integration patterns for Spring Boot applications. Covers node entity mapping with `@Node` and `@Relationship`, repository configuration (imperative and reactive), custom Cypher queries with `@Query`, and integration testing with embedded Neo4j databases.
 
-Key features include reactive and imperative operation modes, immutable entity mapping, custom query support via `@`Query annotation, Spring's Conversion Service integration, and full support for graph relationships and traversals.
+## When to Use
+
+Use this skill when working with:
+- Graph databases and Neo4j integration in Spring Boot
+- Node entities, relationships, and Cypher queries
+- Spring Data Neo4j repositories (imperative or reactive)
+- Neo4j testing with embedded databases
 
 ## Instructions
 
-### Set Up Spring Data Neo4j
+### 1. Set Up Spring Data Neo4j
 
-1. **Add the dependency:**
-   - Maven: `spring-boot-starter-data-neo4j`
-   - Gradle: `implementation 'org.springframework.boot:spring-boot-starter-data-neo4j'`
+**Add the dependency:**
 
-2. **Configure connection properties:**
-   ```properties
-   spring.neo4j.uri=bolt://localhost:7687
-   spring.neo4j.authentication.username=neo4j
-   spring.neo4j.authentication.password=secret
-   ```
-
-3. **Configure Cypher-DSL dialect (recommended):**
-   ```java
-   @Bean
-   Configuration cypherDslConfiguration() {
-       return Configuration.newConfig()
-           .withDialect(Dialect.NEO4J_5).build();
-   }
-   ```
-
-### Define Node Entities
-
-1. **Use `@`Node annotation to mark entity classes**
-2. **Choose ID strategy:**
-   - Business key as `@`Id (immutable, natural identifier)
-   - Generated `@`Id `@`GeneratedValue (Neo4j internal ID)
-3. **Define relationships with `@`Relationship annotation**
-4. **Keep entities immutable with final fields**
-5. **Use `@`Property for custom property names**
-
-### Create Repositories
-
-1. **Extend appropriate repository interface:**
-   - `Neo4jRepository<Entity, ID>` for imperative operations
-   - `ReactiveNeo4jRepository<Entity, ID>` for reactive operations
-2. **Use query derivation for simple queries**
-3. **Apply `@`Query annotation for complex Cypher queries**
-4. **Use $paramName syntax for parameters**
-
-### Test Your Implementation
-
-1. **Use `@`DataNeo4jTest for repository testing**
-2. **Set up Neo4j Harness with test fixtures**
-3. **Test both positive and edge cases**
-4. **Clean up test data between tests**
-
-## Quick Setup
-
-### Dependencies
-
-**Maven:**
+Maven:
 ```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -90,27 +32,22 @@ Key features include reactive and imperative operation modes, immutable entity m
 </dependency>
 ```
 
-**Gradle:**
+Gradle:
 ```groovy
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-neo4j'
-}
+implementation 'org.springframework.boot:spring-boot-starter-data-neo4j'
 ```
 
-### Configuration
-
-**application.properties:**
+**Configure connection in application.properties:**
 ```properties
 spring.neo4j.uri=bolt://localhost:7687
 spring.neo4j.authentication.username=neo4j
 spring.neo4j.authentication.password=secret
 ```
 
-**Configure Neo4j Cypher-DSL Dialect:**
+**Configure Cypher-DSL dialect (recommended):**
 ```java
 @Configuration
 public class Neo4jConfig {
-
     @Bean
     Configuration cypherDslConfiguration() {
         return Configuration.newConfig()
@@ -118,6 +55,40 @@ public class Neo4jConfig {
     }
 }
 ```
+
+> **Validation Checkpoint**: Run `MATCH (n) RETURN count(n)` via cypher-shell to verify the connection works before proceeding.
+
+### 2. Define Node Entities
+
+1. **Use `@`Node annotation** to mark entity classes
+2. **Choose ID strategy:**
+   - Business key as `@`Id (immutable, natural identifier)
+   - Generated `@`Id `@`GeneratedValue (Neo4j internal ID)
+3. **Define relationships** with `@`Relationship annotation
+4. **Keep entities immutable** with final fields
+5. **Use `@`Property** for custom property names
+
+> **Validation Checkpoint**: If entity save fails, check for constraint violations—duplicate IDs violate uniqueness constraints.
+
+### 3. Create Repositories
+
+1. **Extend repository interface:**
+   - `Neo4jRepository<Entity, ID>` for imperative operations
+   - `ReactiveNeo4jRepository<Entity, ID>` for reactive operations
+2. **Use query derivation** for simple queries
+3. **Apply `@`Query annotation** for complex Cypher queries
+4. **Use `$`paramName syntax** for parameters
+
+> **Validation Checkpoint**: Test repository with `findAll()` first—if empty, verify the Neo4j instance is running and credentials are correct.
+
+### 4. Test Your Implementation
+
+1. **Use `@`DataNeo4jTest** for repository testing with test slicing
+2. **Set up Neo4j Harness** with embedded database and fixtures
+3. **Provide test data** via `withFixture()` Cypher queries
+4. **Clean up test data** between tests
+
+> **Validation Checkpoint**: If tests fail with "Connection refused", ensure the embedded Neo4j started successfully in `@BeforeAll`.
 
 ## Basic Entity Mapping
 
@@ -401,6 +372,18 @@ See [examples](./references/examples.md) for comprehensive code examples.
 - Immutable entities require proper wither methods for generated IDs.
 - Relationships in Spring Data Neo4j are not lazy-loaded by default; consider projection for large graphs.
 - The Neo4j Java driver is not compatible with reactive streams; use the reactive driver for reactive operations.
+
+## Troubleshooting
+
+| Problem | Cause | Solution |
+|---------|-------|----------|
+| `Connection refused` on localhost:7687 | Neo4j server not running | Start Neo4j or use embedded Neo4j for tests |
+| `Authentication failed` | Wrong credentials | Check `spring.neo4j.authentication.username/password` |
+| Entity not saved / `MATCH` returns nothing | Transaction not committed | Add `@Transactional` or verify auto-commit settings |
+| `ConstraintViolationException` on save | Duplicate `@Id` value | Ensure IDs are unique or use `@GeneratedValue` |
+| Relationships missing in results | Wrong `@Relationship` direction | Check `Direction.INCOMING/OUTGOING/UNDIRECTED` |
+| `@Query` returns wrong data | Cypher parameter syntax | Use `$paramName` not `$ {paramName}` |
+| Test fails with `@DataNeo4jTest` | Embedded Neo4j not started | Ensure `@BeforeAll` starts Neo4j before tests |
 
 ## References
 

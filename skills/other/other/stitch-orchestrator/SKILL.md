@@ -138,6 +138,21 @@ If any of these are missing — re-invoke the prompt architect. Don't send vague
 
 If creating new: Call `stitch-mcp-create-project` → get `projectId` (both numeric and full-path forms)
 
+#### Step 4a: Pull DesignTheme from existing project (consistency gate)
+
+**When reusing an existing project**, read its DesignTheme to keep new screens visually consistent:
+
+1. Call `stitch-mcp-get-project` with `projects/[projectId]`
+2. Extract the `designTheme` from the response
+3. **If `designMd` exists:** this project has a full design system. Pass key values as constraints to the spec generator (Step 2) to override its guesses:
+   - `headlineFont`, `bodyFont`, `labelFont` → override spec's font selection
+   - `colorVariant`, `customColor` → override spec's color derivation
+   - `roundness`, `spacingScale` → override spec's geometry
+4. **If `namedColors` exists:** pass the full color map to `stitch-design-system` later (Step 7) — it eliminates HTML parsing for colors
+5. Store the DesignTheme for reference throughout the workflow
+
+This prevents the spec generator from picking a different font or color scheme for new screens in an established project.
+
 #### Step 4b: Check for existing design systems
 
 After selecting a project:
@@ -153,7 +168,7 @@ Call `stitch-mcp-generate-screen-from-text` with:
 - `projectId`: numeric ID (no `projects/` prefix)
 - `prompt`: assembled prompt from Step 3
 - `deviceType`: from Design Spec
-- `modelId`: `GEMINI_3_PRO` (default) or `GEMINI_3_FLASH` (if user wants fast iteration)
+- `modelId`: `GEMINI_3_1_PRO` (default — high fidelity) or `GEMINI_3_FLASH` (fast iteration, wireframes)
 
 > ⏱ **Generation timing:** Stitch typically takes 60–180 seconds to generate a screen. This is normal — do NOT retry or assume failure during this window.
 >

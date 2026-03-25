@@ -379,4 +379,180 @@ const MarketSchema = z.object({
 // Auto-generate spec at /api/docs.json
 ```
 
+## Plan-Based Authorization
+
+### Tier-Aware Middleware
+
+```typescript
+enum PlanTier {
+  FREE = 'free',
+  PRO = 'pro',
+  ENTERPRISE = 'enterprise'
+}
+
+interface PlanLimits {
+  tier: PlanTier
+  rateLimit: number          // requests per minute
+  maxItems: number           // max resources
+  features: Set<string>      // enabled features
+}
+
+const PLAN_LIMITS: Record<PlanTier, PlanLimits> = {
+  [PlanTier.FREE]:       { tier: PlanTier.FREE, rateLimit: 60, maxItems: 100, features: new Set(['read']) },
+  [PlanTier.PRO]:        { tier: PlanTier.PRO, rateLimit: 600, maxItems: 10_000, features: new Set(['read', 'write', 'export']) },
+  [PlanTier.ENTERPRISE]: { tier: PlanTier.ENTERPRISE, rateLimit: 6000, maxItems: Infinity, features: new Set(['read', 'write', 'export', 'audit', 'sso']) },
+}
+
+function requireFeature(feature: string) {
+  return (req: Request, res: Response, next: NextFunction) => {
+    const plan = PLAN_LIMITS[req.user.planTier as PlanTier]
+    if (!plan.features.has(feature)) {
+      return apiError(res, 'FORBIDDEN', `Feature "${feature}" requires ${PlanTier.PRO} plan or higher`)
+    }
+    next()
+  }
+}
+
+function requireQuota(countFn: (userId: string) => Promise<number>) {
+  return async (req: Request, res: Response, next: NextFunction) => {
+    const plan = PLAN_LIMITS[req.user.planTier as PlanTier]
+    const current = await countFn(req.user.id)
+    if (current >= plan.maxItems) {
+      return apiError(res, 'FORBIDDEN', `Plan limit reached (${plan.maxItems} items). Upgrade to increase.`)
+    }
+    next()
+  }
+}
+
+// Usage
+router.post('/exports', requireFeature('export'), async (req, res) => { /* ... */ })
+router.post('/projects', requireQuota(countUserProjects), async (req, res) => { /* ... */ })
+```
+
+## Serverless Rate Limiting
+
+### Sliding Window without Redis
+
+```typescript
+// In-memory sliding window — single-instance only
+// WARNING: Resets on cold start (serverless). For production multi-instance,
+// use Redis/Upstash. Add MAX_ENTRIES cap to prevent memory exhaustion from IP flooding.
+const windows = new Map<string, number[]>()
+
+function slidingWindowRateLimit(
+  key: string,
+  maxRequests: number,
+  windowMs: number
+): { allowed: boolean; remaining: number; retryAfter: number } {
+  const now = Date.now()
+  const windowStart = now - windowMs
+
+  // Get or create timestamps array
+  const timestamps = windows.get(key) ?? []
+  const valid = timestamps.filter(t => t > windowStart)
+
+  if (valid.length >= maxRequests) {
+    const oldestInWindow = valid[0]
+    const retryAfter = Math.ceil((oldestInWindow + windowMs - now) / 1000)
+    return { allowed: false, remaining: 0, retryAfter }
+  }
+
+  valid.push(now)
+  windows.set(key, valid)
+  return { allowed: true, remaining: maxRequests - valid.length, retryAfter: 0 }
+}
+
+// Cleanup stale entries periodically
+setInterval(() => {
+  const cutoff = Date.now() - 60_000
+  for (const [key, timestamps] of windows) {
+    const valid = timestamps.filter(t => t > cutoff)
+    if (valid.length === 0) windows.delete(key)
+    else windows.set(key, valid)
+  }
+}, 60_000)
+```
+
+## API Key Authentication
+
+```typescript
+import { randomBytes, createHash, timingSafeEqual } from 'crypto'
+
+// SECURITY: For in-memory secret comparison, always use timingSafeEqual
+// DB lookups by hash are safe (constant-time at DB level)
+
+// Generate: give raw key to user, store hash
+function generateApiKey(prefix: string): { raw: string; hash: string } {
+  const raw = `${prefix}_${randomBytes(24).toString('base64url')}`
+  const hash = createHash('sha256').update(raw).digest('hex')
+  return { raw, hash }
+}
+
+// Verify: hash incoming key, compare with stored hash
+async function verifyApiKey(rawKey: string): Promise<ApiKeyRecord | null> {
+  const hash = createHash('sha256').update(rawKey).digest('hex')
+  return db.apiKey.findFirst({
+    where: { hash, revokedAt: null, expiresAt: { gt: new Date() } }
+  })
+}
+
+// Middleware
+async function apiKeyAuth(req: Request, res: Response, next: NextFunction) {
+  const key = req.headers['x-api-key'] as string
+  if (!key) return apiError(res, 'UNAUTHORIZED', 'API key required')
+
+  const record = await verifyApiKey(key)
+  if (!record) return apiError(res, 'UNAUTHORIZED', 'Invalid or expired API key')
+
+  // Scope check
+  if (!record.scopes.includes(req.method.toLowerCase())) {
+    return apiError(res, 'FORBIDDEN', 'API key lacks required scope')
+  }
+
+  req.user = { id: record.ownerId, keyId: record.id }
+  next()
+}
+```
+
+## Usage Metering and Quota Management
+
+```typescript
+interface UsageRecord {
+  tenantId: string
+  metric: string      // 'api_calls' | 'storage_bytes' | 'ai_tokens'
+  value: number
+  period: string      // '2026-03' (monthly bucket)
+}
+
+async function trackUsage(tenantId: string, metric: string, increment: number): Promise<void> {
+  const period = new Date().toISOString().slice(0, 7) // YYYY-MM
+  await db.usage.upsert({
+    where: { tenantId_metric_period: { tenantId, metric, period } },
+    update: { value: { increment } },
+    create: { tenantId, metric, period, value: increment }
+  })
+}
+
+async function checkQuota(tenantId: string, metric: string, limit: number): Promise<boolean> {
+  const period = new Date().toISOString().slice(0, 7)
+  const usage = await db.usage.findUnique({
+    where: { tenantId_metric_period: { tenantId, metric, period } }
+  })
+  return (usage?.value ?? 0) < limit
+}
+
+// Middleware
+function meteringMiddleware(metric: string, increment = 1) {
+  return async (req: Request, res: Response, next: NextFunction) => {
+    const plan = PLAN_LIMITS[req.user.planTier as PlanTier]
+    const withinQuota = await checkQuota(req.user.tenantId, metric, plan.rateLimit * 60 * 24)
+    if (!withinQuota) {
+      return apiError(res, 'RATE_LIMITED', `Monthly ${metric} quota exceeded. Upgrade plan.`)
+    }
+    await trackUsage(req.user.tenantId, metric, increment)
+    next()
+  }
+}
+```
+
 **Remember**: Consistent versioning and validation contracts make APIs maintainable across client teams and breaking-change deployments.

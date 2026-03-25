@@ -10,13 +10,7 @@ Build modern React applications using Next.js 16+ with App Router architecture.
 
 ## Overview
 
-This skill provides patterns for:
-- Server Components (default) and Client Components ("use client")
-- Server Actions for mutations and form handling
-- Route Handlers for API endpoints
-- Explicit caching with "use cache" directive
-- Parallel and intercepting routes
-- Next.js 16 async APIs and proxy.ts
+This skill provides patterns for Server Components (default) and Client Components ("use client"), Server Actions for mutations and form handling, Route Handlers for API endpoints, explicit caching with "use cache" directive, parallel and intercepting routes, and Next.js 16 async APIs and proxy.ts.
 
 ## When to Use
 
@@ -33,27 +27,15 @@ Activate when user requests involve:
 
 ## Quick Reference
 
-### File Conventions
-
-| File | Purpose |
-|------|---------|
-| `page.tsx` | Route page component |
-| `layout.tsx` | Shared layout wrapper |
-| `loading.tsx` | Suspense loading UI |
-| `error.tsx` | Error boundary |
-| `not-found.tsx` | 404 page |
-| `template.tsx` | Re-mounting layout |
-| `route.ts` | API Route Handler |
-| `default.tsx` | Parallel route fallback |
-| `proxy.ts` | Routing boundary (Next.js 16) |
-
-### Directives
-
-| Directive | Purpose |
-|-----------|---------|
-| `"use server"` | Mark Server Action functions |
-| `"use client"` | Mark Client Component boundary |
-| `"use cache"` | Enable explicit caching (Next.js 16) |
+| File | Purpose | Directive | Purpose |
+|------|---------|-----------|---------|
+| `page.tsx` | Route page | `"use server"` | Server Action function |
+| `layout.tsx` | Shared layout | `"use client"` | Client Component boundary |
+| `loading.tsx` | Suspense loading | `"use cache"` | Explicit caching (Next.js 16) |
+| `error.tsx` | Error boundary | | |
+| `not-found.tsx` | 404 page | | |
+| `route.ts` | API Route Handler | | |
+| `proxy.ts` | Routing boundary | | |
 
 ## Instructions
 
@@ -63,9 +45,9 @@ Activate when user requests involve:
 npx create-next-app@latest my-app --typescript --tailwind --app --turbopack
 ```
 
-### Implement Server Component
+### Server Component
 
-Server Components are the default in App Router.
+Server Components are the default in App Router. They run on the server and can use async/await.
 
 ```tsx
 // app/users/page.tsx
@@ -77,15 +59,11 @@ async function getUsers() {
 
 export default async function UsersPage() {
   const users = await getUsers();
-  return (
-    <main>
-      {users.map(user => <UserCard key={user.id} user={user} />)}
-    </main>
-  );
+  return <main>{users.map(user => <UserCard key={user.id} user={user} />)}</main>;
 }
 ```
 
-### Implement Client Component
+### Client Component
 
 Add `"use client"` when using hooks, browser APIs, or event handlers.
 
@@ -96,17 +74,13 @@ import { useState } from "react";
 
 export default function Counter() {
   const [count, setCount] = useState(0);
-  return (
-    <button onClick={() => setCount(c => c + 1)}>
-      Count: {count}
-    </button>
-  );
+  return <button onClick={() => setCount(c => c + 1)}>Count: {count}</button>;
 }
 ```
 
-### Create Server Action
+### Server Action
 
-Define actions in separate files with "use server" directive.
+Define actions in separate files with `"use server"` directive.
 
 ```tsx
 // app/actions.ts
@@ -117,7 +91,6 @@ import { revalidatePath } from "next/cache";
 export async function createUser(formData: FormData) {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
-
   await db.user.create({ data: { name, email } });
   revalidatePath("/users");
 }
@@ -133,64 +106,51 @@ import { createUser } from "./actions";
 
 export default function UserForm() {
   const [state, formAction, pending] = useActionState(createUser, {});
-
   return (
     <form action={formAction}>
       <input name="name" />
       <input name="email" type="email" />
-      <button type="submit" disabled={pending}>
-        {pending ? "Creating..." : "Create"}
-      </button>
+      <button type="submit" disabled={pending}>{pending ? "Creating..." : "Create"}</button>
     </form>
   );
 }
 ```
 
-See [references/server-actions.md](references/server-actions.md) for validation with Zod, optimistic updates, and advanced patterns.
+See [references/server-actions.md](references/server-actions.md) for Zod validation, optimistic updates, and advanced patterns.
 
 ### Configure Caching
 
-Use "use cache" directive for explicit caching (Next.js 16+).
+Use `"use cache"` directive for explicit caching (Next.js 16+).
 
 ```tsx
 "use cache";
 
 import { cacheLife, cacheTag } from "next/cache";
 
-export default async function ProductPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-
   cacheTag(`product-${id}`);
   cacheLife("hours");
-
   const product = await fetchProduct(id);
   return <ProductDetail product={product} />;
 }
 ```
 
-See [references/caching-strategies.md](references/caching-strategies.md) for cache profiles, on-demand revalidation, and advanced caching patterns.
+See [references/caching-strategies.md](references/caching-strategies.md) for cache profiles, on-demand revalidation, and advanced patterns.
 
-### Create Route Handler
-
-Implement API endpoints using Route Handlers.
+### Route Handler
 
 ```ts
 // app/api/users/route.ts
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
-  const users = await db.user.findMany();
-  return NextResponse.json(users);
+  return NextResponse.json(await db.user.findMany());
 }
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
-  const user = await db.user.create({ data: body });
-  return NextResponse.json(user, { status: 201 });
+  return NextResponse.json(await db.user.create({ data: body }), { status: 201 });
 }
 ```
 
@@ -198,42 +158,31 @@ Dynamic segments use `[param]`:
 
 ```ts
 // app/api/users/[id]/route.ts
-interface RouteParams {
-  params: Promise<{ id: string }>;
-}
-
-export async function GET(request: NextRequest, { params }: RouteParams) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const user = await db.user.findUnique({ where: { id } });
-
-  if (!user) {
-    return NextResponse.json({ error: "Not found" }, { status: 404 });
-  }
-
+  if (!user) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json(user);
 }
 ```
 
-### Handle Next.js 16 Async APIs
+### Next.js 16 Async APIs
 
 All Next.js APIs are async in version 16.
 
 ```tsx
-import { cookies, headers, draftMode } from "next/headers";
+import { cookies, headers } from "next/headers";
 
 export default async function Page() {
   const cookieStore = await cookies();
   const headersList = await headers();
-  const { isEnabled } = await draftMode();
-
   const session = cookieStore.get("session")?.value;
   const userAgent = headersList.get("user-agent");
-
   return <div>...</div>;
 }
 ```
 
-Params and searchParams are also async:
+Params and searchParams are also Promise-based:
 
 ```tsx
 export default async function Page({
@@ -251,28 +200,17 @@ export default async function Page({
 
 See [references/nextjs16-migration.md](references/nextjs16-migration.md) for migration guide and proxy.ts configuration.
 
-### Implement Parallel Routes
+### Parallel Routes
 
 Use `@folder` convention for parallel route slots.
 
 ```tsx
 // app/dashboard/layout.tsx
-export default function DashboardLayout({
-  children,
-  team,
-  analytics,
-}: {
-  children: React.ReactNode;
-  team: React.ReactNode;
-  analytics: React.ReactNode;
-}) {
+export default function DashboardLayout({ children, team, analytics }: Record<string, React.ReactNode>) {
   return (
     <div>
       {children}
-      <div className="grid grid-cols-2">
-        {team}
-        {analytics}
-      </div>
+      <div className="grid grid-cols-2">{team}{analytics}</div>
     </div>
   );
 }
@@ -280,63 +218,37 @@ export default function DashboardLayout({
 
 ```tsx
 // app/dashboard/@team/page.tsx
-export default function TeamPage() {
-  return <div>Team Section</div>;
-}
+export default function TeamPage() { return <div>Team Section</div>; }
 
 // app/dashboard/@analytics/page.tsx
-export default function AnalyticsPage() {
-  return <div>Analytics Section</div>;
-}
+export default function AnalyticsPage() { return <div>Analytics Section</div>; }
 ```
 
 See [references/routing-patterns.md](references/routing-patterns.md) for intercepting routes, route groups, and dynamic routes.
 
 ## Best Practices
 
-### Server vs Client Decision
+**Server vs Client Decision:**
+- Start with Server Component (default)
+- Use Client Component only for: React hooks (useState, useEffect), browser APIs (window, document), event handlers (onClick, onSubmit), or client-only libraries
 
-1. Start with Server Component (default)
-2. Use Client Component only for:
-   - React hooks (useState, useEffect, useContext)
-   - Browser APIs (window, document, localStorage)
-   - Event handlers (onClick, onSubmit)
-   - Client-only libraries
-
-### Data Fetching
-
+**Data Fetching:**
 - Fetch in Server Components when possible
 - Use React's `cache()` for deduplication
 - Parallelize independent fetches
 - Add Suspense boundaries with `loading.tsx`
 
-### Caching Strategy
-
-```tsx
-"use cache";
-import { cacheLife, cacheTag } from "next/cache";
-
-// Set cache duration
-cacheLife("hours");
-
-// Tag for revalidation
-cacheTag("resource-name");
-```
-
-### Performance Checklist
-
+**Performance Checklist:**
 - Use `loading.tsx` for Suspense boundaries
 - Use `next/image` for optimized images
 - Use `next/font` for font optimization
-- Enable React Compiler in `next.config.ts`
-- Add `error.tsx` for error handling
-- Add `not-found.tsx` for 404 handling
+- Add `error.tsx` and `not-found.tsx` for error handling
 
 ## Examples
 
-### Example 1: Create Blog Post with Server Action
+### Example 1: Blog Post Form with Server Action
 
-**Input:** Create a form to submit blog posts with validation
+**Input:** Create a form to submit blog posts with Zod validation
 
 **Output:**
 ```tsx
@@ -346,21 +258,11 @@ cacheTag("resource-name");
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
 
-const schema = z.object({
-  title: z.string().min(5),
-  content: z.string().min(10),
-});
+const schema = z.object({ title: z.string().min(5), content: z.string().min(10) });
 
 export async function createPost(formData: FormData) {
-  const parsed = schema.safeParse({
-    title: formData.get("title"),
-    content: formData.get("content"),
-  });
-
-  if (!parsed.success) {
-    return { errors: parsed.error.flatten().fieldErrors };
-  }
-
+  const parsed = schema.safeParse({ title: formData.get("title"), content: formData.get("content") });
+  if (!parsed.success) return { errors: parsed.error.flatten().fieldErrors };
   await db.post.create({ data: parsed.data });
   revalidatePath("/blog");
   return { success: true };
@@ -376,26 +278,21 @@ import { createPost } from "../actions";
 
 export default function NewPostPage() {
   const [state, formAction, pending] = useActionState(createPost, {});
-
   return (
     <form action={formAction}>
       <input name="title" placeholder="Title" />
       {state.errors?.title && <span>{state.errors.title[0]}</span>}
-
       <textarea name="content" placeholder="Content" />
       {state.errors?.content && <span>{state.errors.content[0]}</span>}
-
-      <button type="submit" disabled={pending}>
-        {pending ? "Publishing..." : "Publish"}
-      </button>
+      <button type="submit" disabled={pending}>{pending ? "Publishing..." : "Publish"}</button>
     </form>
   );
 }
 ```
 
-### Example 2: Product Page with Caching
+### Example 2: Cached Product Page
 
-**Input:** Create a cached product page with revalidation
+**Input:** Create a cached product page with on-demand revalidation
 
 **Output:**
 ```tsx
@@ -404,33 +301,17 @@ export default function NewPostPage() {
 
 import { cacheLife, cacheTag } from "next/cache";
 
-export default async function ProductPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-
   cacheTag(`product-${id}`, "products");
   cacheLife("hours");
-
   const product = await db.product.findUnique({ where: { id } });
-
-  if (!product) {
-    notFound();
-  }
-
-  return (
-    <article>
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
-      <p>${product.price}</p>
-    </article>
-  );
+  if (!product) notFound();
+  return <article><h1>{product.name}</h1><p>{product.description}</p></article>;
 }
 ```
 
-```tsx
+```ts
 // app/api/revalidate/route.ts
 import { revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
@@ -444,27 +325,16 @@ export async function POST(request: Request) {
 
 ### Example 3: Dashboard with Parallel Routes
 
-**Input:** Create a dashboard with sidebar and main content areas
+**Input:** Create a dashboard with sidebar and stats areas
 
 **Output:**
 ```tsx
 // app/dashboard/layout.tsx
-export default function DashboardLayout({
-  children,
-  sidebar,
-  stats,
-}: {
-  children: React.ReactNode;
-  sidebar: React.ReactNode;
-  stats: React.ReactNode;
-}) {
+export default function DashboardLayout({ children, sidebar, stats }: Record<string, React.ReactNode>) {
   return (
     <div className="flex">
       <aside className="w-64">{sidebar}</aside>
-      <main className="flex-1">
-        <div className="grid grid-cols-3">{stats}</div>
-        {children}
-      </main>
+      <main className="flex-1"><div className="grid grid-cols-3">{stats}</div>{children}</main>
     </div>
   );
 }
@@ -472,49 +342,37 @@ export default function DashboardLayout({
 
 ```tsx
 // app/dashboard/@sidebar/page.tsx
-export default function Sidebar() {
-  return <nav>{/* Navigation links */}</nav>;
-}
+export default function Sidebar() { return <nav>{/* Navigation links */}</nav>; }
 
 // app/dashboard/@stats/page.tsx
 export default async function Stats() {
   const stats = await fetchStats();
-  return (
-    <>
-      <div>Users: {stats.users}</div>
-      <div>Orders: {stats.orders}</div>
-      <div>Revenue: {stats.revenue}</div>
-    </>
-  );
+  return <><div>Users: {stats.users}</div><div>Orders: {stats.orders}</div></>;
 }
 ```
 
 ## Constraints and Warnings
 
-### Constraints
-
+**Constraints:**
 - Server Components cannot use browser APIs or React hooks
 - Client Components cannot be async (no direct data fetching)
 - `cookies()`, `headers()`, `draftMode()` are async in Next.js 16
 - `params` and `searchParams` are Promise-based in Next.js 16
-- Server Actions must be defined with "use server" directive
+- Server Actions must be defined with `"use server"` directive
 
-### Warnings
-
-- Attempting to use `await` in a Client Component will cause a build error
-- Accessing `window` or `document` in Server Components will throw an error
-- Forgetting to await `cookies()` or `headers()` in Next.js 16 will result in a Promise instead of the actual values
-- Server Actions without proper validation can expose your database to unauthorized access
-- **External Data Fetching**: Server Components that fetch data from external APIs (`fetch()` calls to third-party URLs) process untrusted content; always validate, sanitize, and type-check fetched responses before rendering, and use environment variables for API URLs rather than hardcoding them
+**Warnings:**
+- Using `await` in a Client Component causes a build error
+- Accessing `window` or `document` in Server Components throws an error
+- Forgetting to `await` cookies() or headers() in Next.js 16 returns a Promise instead of the value
+- Server Actions without proper validation can expose the database to unauthorized access
+- **External Data Fetching**: Server Components that `fetch()` third-party URLs process untrusted content — always validate, sanitize, and type-check responses; use environment variables for API URLs rather than hardcoding them
 
 ## References
 
-Consult these files for detailed patterns:
-
-- **[references/app-router-fundamentals.md](references/app-router-fundamentals.md)** - Server/Client Components, file conventions, navigation, next/image, next/font
-- **[references/routing-patterns.md](references/routing-patterns.md)** - Parallel routes, intercepting routes, route groups, dynamic routes
-- **[references/caching-strategies.md](references/caching-strategies.md)** - "use cache", cacheLife, cacheTag, revalidation
-- **[references/server-actions.md](references/server-actions.md)** - Server Actions, useActionState, validation, optimistic updates
-- **[references/nextjs16-migration.md](references/nextjs16-migration.md)** - Async APIs, proxy.ts, Turbopack, config
-- **[references/data-fetching.md](references/data-fetching.md)** - Data patterns, Suspense, streaming
-- **[references/metadata-api.md](references/metadata-api.md)** - generateMetadata, OpenGraph, sitemap
+- **[references/app-router-fundamentals.md](references/app-router-fundamentals.md)** — Server/Client Components, file conventions, navigation
+- **[references/routing-patterns.md](references/routing-patterns.md)** — Parallel routes, intercepting routes, route groups
+- **[references/caching-strategies.md](references/caching-strategies.md)** — "use cache", cacheLife, cacheTag, revalidation
+- **[references/server-actions.md](references/server-actions.md)** — Server Actions, useActionState, validation, optimistic updates
+- **[references/nextjs16-migration.md](references/nextjs16-migration.md)** — Async APIs, proxy.ts, Turbopack, config
+- **[references/data-fetching.md](references/data-fetching.md)** — Data patterns, Suspense, streaming
+- **[references/metadata-api.md](references/metadata-api.md)** — generateMetadata, OpenGraph, sitemap

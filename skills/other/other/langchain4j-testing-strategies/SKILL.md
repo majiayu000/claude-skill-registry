@@ -1,6 +1,6 @@
 ---
 name: langchain4j-testing-strategies
-description: Provides testing strategies for LangChain4j-powered applications. Handles mocking LLM responses, testing retrieval chains, and validating AI workflows. Use when testing AI-powered features reliably.
+description: Provides unit test, integration test, and mock AI patterns for LangChain4j applications. Creates mock LLM responses, tests retrieval chains, validates RAG workflows, and implements Testcontainers-based integration tests for Java AI services. Use when unit testing AI services, integration testing LangChain4j components, mocking AI models, or testing LLM-based Java applications.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
@@ -8,32 +8,22 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 ## Overview
 
-LangChain4J testing requires specialized strategies due to the non-deterministic nature of LLM responses and the complexity of AI workflows. This skill provides comprehensive patterns for unit testing with mocks, integration testing with Testcontainers, and end-to-end testing for RAG systems, AI Services, and tool execution.
+Patterns for unit testing with mocks, integration testing with Testcontainers, and end-to-end validation of RAG systems, AI Services, and tool execution.
 
-## When to Use This Skill
+## When to Use
 
-Use this skill when:
-- Building AI-powered applications with LangChain4J
-- Writing unit tests for AI services and guardrails
-- Setting up integration tests with real LLM models
-- Creating mock-based tests for faster test execution
-- Using Testcontainers for isolated testing environments
-- Testing RAG (Retrieval-Augmented Generation) systems
-- Validating tool execution and function calling
-- Testing streaming responses and async operations
-- Setting up end-to-end tests for AI workflows
-- Implementing performance and load testing
+- **Unit testing AI services**: When you need fast, isolated tests for services using LangChain4j AiServices
+- **Integration testing LangChain4j components**: When testing real ChatModel, EmbeddingModel, or RAG pipelines with Testcontainers
+- **Mocking AI models**: When you need deterministic responses without calling external APIs
+- **Testing LLM-based Java applications**: When validating RAG workflows, tool execution, or retrieval chains
 
 ## Instructions
 
-To test LangChain4J applications effectively, follow these key strategies:
+### 1. Unit Testing with Mocks
 
-### 1. Start with Unit Testing
-
-Use mock models for fast, isolated testing of business logic. See `references/unit-testing.md` for detailed examples.
+Use mock models for fast, isolated testing. See `references/unit-testing.md`.
 
 ```java
-// Example: Mock ChatModel for unit tests
 ChatModel mockModel = mock(ChatModel.class);
 when(mockModel.generate(any(String.class)))
     .thenReturn(Response.from(AiMessage.from("Mocked response")));
@@ -45,17 +35,16 @@ var service = AiServices.builder(AiService.class)
 
 ### 2. Configure Testing Dependencies
 
-Setup proper Maven/Gradle dependencies for testing. See `references/testing-dependencies.md` for complete configuration.
+Setup Maven/Gradle dependencies. See `references/testing-dependencies.md`.
 
-**Key dependencies**:
-- `langchain4j-test` - Testing utilities and guardrail assertions
-- `testcontainers` - Integration testing with containerized services
+- `langchain4j-test` - Guardrail assertions
+- `testcontainers` - Containerized testing
 - `mockito` - Mock external dependencies
-- `assertj` - Better assertions
+- `assertj` - Fluent assertions
 
-### 3. Implement Integration Tests
+### 3. Integration Testing with Testcontainers
 
-Test with real services using Testcontainers. See `references/integration-testing.md` for container setup examples.
+Test with real services. See `references/integration-testing.md`.
 
 ```java
 @Testcontainers
@@ -67,30 +56,52 @@ class OllamaIntegrationTest {
 
     @Test
     void shouldGenerateResponse() {
+        // Verify container is healthy
+        assertTrue(ollama.isRunning());
+        await().atMost(30, TimeUnit.SECONDS)
+            .until(() -> ollama.getLogs().contains("API server listening"));
+
         ChatModel model = OllamaChatModel.builder()
                 .baseUrl(ollama.getEndpoint())
                 .build();
+
+        // Verify model responds before running tests
+        assertDoesNotThrow(() -> model.generate("ping"));
+
         String response = model.generate("Test query");
         assertNotNull(response);
     }
 }
 ```
 
-### 4. Test Advanced Features
+### 4. Advanced Features
 
-For streaming responses, memory management, and complex workflows, refer to `references/advanced-testing.md`.
+Streaming, memory, error handling patterns in `references/advanced-testing.md`.
 
-### 5. Apply Testing Workflows
+### 5. Testing Workflow
 
-Follow testing pyramid patterns and best practices from `references/workflow-patterns.md`.
+Follow the testing pyramid from `references/workflow-patterns.md`:
 
-- **70% Unit Tests**: Fast, isolated business logic testing
-- **20% Integration Tests**: Real service interactions
-- **10% End-to-End Tests**: Complete user workflows
+- **70% Unit Tests**: Fast, isolated with mocks
+- **20% Integration Tests**: Real services with health checks
+- **10% End-to-End Tests**: Complete workflows
+
+```
+70% Unit Tests ─ Mock ChatModel, guardrails, edge cases
+20% Integration Tests ─ Testcontainers, vector stores, RAG
+10% End-to-End Tests ─ Complete user journeys
+```
+
+### Troubleshooting
+
+- **Container fails to start**: Check Docker daemon is running, verify image exists, increase timeout
+- **Model not responding**: Verify baseUrl is correct, check container logs, ensure model is loaded
+- **Test timeout**: Increase `@Timeout` duration for slow models, check container resource limits
+- **Flaky tests**: Add retry logic or health checks before assertions
 
 ## Examples
 
-### Basic Unit Test
+### Unit Test
 
 ```java
 @Test
@@ -118,9 +129,16 @@ class RAGIntegrationTest {
         DockerImageName.parse("ollama/ollama:0.5.4")
     );
 
+    @BeforeAll
+    static void waitForContainerReady() {
+        await().atMost(60, TimeUnit.SECONDS)
+            .until(() -> ollama.getLogs().contains("API server listening"));
+    }
+
     @Test
     void shouldCompleteRAGWorkflow() {
-        // Setup models and stores
+        assertTrue(ollama.isRunning());
+
         var chatModel = OllamaChatModel.builder()
                 .baseUrl(ollama.getEndpoint())
                 .build();
@@ -136,7 +154,6 @@ class RAGIntegrationTest {
                 .embeddingModel(embeddingModel)
                 .build();
 
-        // Test complete workflow
         var assistant = AiServices.builder(RagAssistant.class)
                 .chatLanguageModel(chatModel)
                 .contentRetriever(retriever)
@@ -151,125 +168,42 @@ class RAGIntegrationTest {
 
 ## Best Practices
 
-### Test Isolation
-- Each test must be independent
-- Use `@BeforeEach` and `@AfterEach` for setup/teardown
-- Avoid sharing state between tests
-
-### Mock External Dependencies
-- Never call real APIs in unit tests
-- Use mocks for ChatModel, EmbeddingModel, and external services
-- Test error handling scenarios
-
-### Performance Considerations
-- Unit tests should run in < 50ms
-- Integration tests should use container reuse
-- Include timeout assertions for slow operations
-
-### Quality Assertions
-- Test both success and error scenarios
-- Validate response coherence and relevance
-- Include edge case testing (empty inputs, large payloads)
-
-## Reference Documentation
-
-For comprehensive testing guides and API references, see the included reference documents:
-
-- **[Testing Dependencies](references/testing-dependencies.md)** - Maven/Gradle configuration and setup
-- **[Unit Testing](references/unit-testing.md)** - Mock models, guardrails, and individual components
-- **[Integration Testing](references/integration-testing.md)** - Testcontainers and real service testing
-- **[Advanced Testing](references/advanced-testing.md)** - Streaming, memory, and error handling
-- **[Workflow Patterns](references/workflow-patterns.md)** - Test pyramid and best practices
+- Use `@BeforeEach`/`@AfterEach` for test isolation
+- Never call real APIs in unit tests; use mocks
+- Include `@Timeout` for external service calls
+- Test both success and error handling scenarios
+- Validate response coherence and edge cases
 
 ## Common Patterns
 
 ### Mock Strategy
 ```java
-// For fast unit tests
 ChatModel mockModel = mock(ChatModel.class);
 when(mockModel.generate(anyString())).thenReturn(Response.from(AiMessage.from("Mocked")));
-
-// For specific responses
 when(mockModel.generate(eq("Hello"))).thenReturn(Response.from(AiMessage.from("Hi")));
-when(mockModel.generate(contains("Java"))).thenReturn(Response.from(AiMessage.from("Java response")));
-```
-
-### Test Configuration
-```java
-// Use test-specific profiles
-@TestPropertySource(properties = {
-    "langchain4j.ollama.base-url=http://localhost:11434"
-})
-class TestConfig {
-    // Test with isolated configuration
-}
+when(mockModel.generate(contains("Java"))).thenReturn(Response.from(AiMessage.from("Java")));
 ```
 
 ### Assertion Helpers
 ```java
-// Custom assertions for AI responses
 assertThat(response).isNotNull().isNotEmpty();
 assertThat(response).containsAll(expectedKeywords);
 assertThat(response).doesNotContain("error");
 ```
 
-## Performance Requirements
+## Reference Documentation
 
-- **Unit Tests**: < 50ms per test
-- **Integration Tests**: Use container reuse for faster startup
-- **Timeout Tests**: Include `@Timeout` for external service calls
-- **Memory Management**: Test conversation window limits and cleanup
-
-## Security Considerations
-
-- Never use real API keys in tests
-- Mock external API calls completely
-- Test prompt injection detection
-- Validate output sanitization
-
-## Testing Pyramid Implementation
-
-```
-70% Unit Tests
-  ├─ Business logic validation
-  ├─ Guardrail testing
-  ├─ Mock tool execution
-  └─ Edge case handling
-
-20% Integration Tests
-  ├─ Testcontainers with Ollama
-  ├─ Vector store testing
-  ├─ RAG workflow validation
-  └─ Performance benchmarking
-
-10% End-to-End Tests
-  ├─ Complete user journeys
-  ├─ Real model interactions
-  └─ Performance under load
-```
-
-## Related Skills
-
-- `spring-boot-test-patterns`
-- `unit-test-service-layer`
-- `unit-test-boundary-conditions`
-
-## References
-- [Testing Dependencies](references/testing-dependencies.md)
-- [Unit Testing](references/unit-testing.md)
-- [Integration Testing](references/integration-testing.md)
-- [Advanced Testing](references/advanced-testing.md)
-- [Workflow Patterns](references/workflow-patterns.md)
+- **[Testing Dependencies](references/testing-dependencies.md)** - Maven/Gradle configuration
+- **[Unit Testing](references/unit-testing.md)** - Mock models, guardrails
+- **[Integration Testing](references/integration-testing.md)** - Testcontainers, real services
+- **[Advanced Testing](references/advanced-testing.md)** - Streaming, memory, error handling
+- **[Workflow Patterns](references/workflow-patterns.md)** - Test pyramid, best practices
 
 ## Constraints and Warnings
 
-- AI model responses are non-deterministic; tests should use mocks for reliability.
-- Real API calls in tests should be avoided to prevent costs and rate limiting issues.
-- Integration tests with Testcontainers require Docker to be available.
-- Memory management tests should verify proper cleanup between test runs.
-- Tool execution tests should validate both success and failure scenarios.
-- Streaming response tests require proper handling of partial data.
-- RAG tests need properly seeded embedding stores for consistent results.
-- Performance tests may have high variance due to LLM response times.
-- Always use test-specific configuration profiles to avoid affecting production data.
-- Mock-based tests cannot guarantee actual LLM behavior; supplement with integration tests.
+- AI responses are non-deterministic; use mocks for reliable unit tests
+- Avoid real API calls in tests to prevent costs and rate limiting
+- Integration tests require Docker; use container health checks
+- RAG tests need properly seeded embedding stores
+- Mock-based tests cannot guarantee actual LLM behavior; supplement with integration tests
+- Use test-specific configuration profiles; never affect production data

@@ -1,111 +1,126 @@
 ---
 name: searching-codebases
 description: >
-  Semantic code search with full pipeline: download, map, index, search, extract
-  in a single invocation. Finds implementations by concept when identifiers are
-  unknown — "retry logic" finds TokenBucketRateLimiter. Use when exploring GitHub
-  repos, searching by intent rather than exact name, evaluating unfamiliar
-  codebases, or answering "how does X work in this repo". Triggers on "search
-  this repo", "find where X is implemented", "what handles Y", "evaluate this
-  codebase", "explore this repo", or any natural-language question about code in
-  a repository.
+  Find code by regex pattern or natural language concept in any codebase.
+  Auto-routes between n-gram indexed regex search (2-20x faster than ripgrep)
+  and TF-IDF semantic search. Expands results to full functions via AST maps.
+  Accepts GitHub URLs, local directories, uploaded files/archives, or project
+  knowledge. Use when asked to find implementations, search for patterns,
+  explore unfamiliar repos, or answer "where is X" / "how does Y work" about
+  code. Triggers on "search this repo", "find where X is", "grep for",
+  "what handles Y", regex patterns, or natural-language questions about code.
+metadata:
+  version: 1.0.0
 ---
 
 # Searching Codebases
 
-Run the pipeline. Read the report. Synthesize.
+Find code in any codebase by pattern or concept. One entry point, two
+search strategies, automatic routing.
+
+## Prerequisites
+
+```bash
+uv tool install ripgrep
+```
+
+Tree-sitter (for structural maps) installs automatically when needed.
 
 ## Primary Command
 
 ```bash
-python3 SKILL_DIR/scripts/pipeline.py REPO_PATH_OR_URL "query1" ["query2" ...] [OPTIONS]
+SKILL_DIR=/mnt/skills/user/searching-codebases
+
+python3 $SKILL_DIR/scripts/search.py SOURCE "query1" ["query2" ...] [OPTIONS]
 ```
 
-Replace `SKILL_DIR` with this skill's installed path. The pipeline runs the
-full sequence internally — download, structural mapping, TF-IDF indexing,
-search, context extraction — and outputs a single structured report to stdout.
+SOURCE is any of:
+- Local directory path
+- GitHub URL (downloads tarball automatically)
+- `uploads` (uses `/mnt/user-data/uploads/`)
+- `project` (uses `/mnt/project/`)
+- Path to a `.zip` or `.tar.gz` archive
 
-**One tool call. One report. No manual step-by-step.**
+## Search Modes
 
-Examples:
+**Regex mode** (patterns, identifiers, literal text):
+```bash
+python3 $SKILL_DIR/scripts/search.py ./repo "def handle_error"
+python3 $SKILL_DIR/scripts/search.py ./repo "class.*Exception" --regex
+python3 $SKILL_DIR/scripts/search.py ./repo "TODO|FIXME|HACK"
+```
+
+**Semantic mode** (concepts, natural language):
+```bash
+python3 $SKILL_DIR/scripts/search.py ./repo "retry logic with backoff" --semantic
+python3 $SKILL_DIR/scripts/search.py ./repo "authentication flow"
+python3 $SKILL_DIR/scripts/search.py ./repo "error handling strategy"
+```
+
+Auto-detection: short queries and code-like tokens → regex. Multi-word
+natural language → semantic. Override with `--regex` or `--semantic`.
+
+## Options
+
+- `--regex` / `--semantic`: Force search mode
+- `--expand`: Return full function bodies instead of matching lines
+- `--map-only`: Generate structural maps only (delegates to mapping-codebases)
+- `--benchmark`: Compare indexed regex vs brute-force ripgrep
+- `--branch NAME`: Git branch for GitHub URLs (default: main)
+- `--skip DIRS`: Comma-separated directories to skip
+- `--json`: Machine-readable output
+- `-v`: Show index stats and query routing decisions
+
+## How It Works
+
+**Regex search** builds a sparse n-gram inverted index over all files.
+Queries are decomposed into literal fragments, looked up in the index
+to identify candidate files (typically 90-99% reduction), then verified
+with ripgrep. Frequency-weighted n-grams make rare character sequences
+more selective.
+
+**Semantic search** builds a TF-IDF index over code chunks (functions,
+classes, map entries). Queries are ranked by cosine similarity. Structural
+maps from mapping-codebases enrich the index when available.
+
+**Context expansion** (`--expand`) uses `_MAP.md` files to identify function
+boundaries, returning complete structural units rather than line fragments.
+
+**Small codebases** (< 20 files) skip indexing entirely — direct ripgrep is
+faster when there's nothing to narrow.
+
+## Mixed Queries
+
+Multiple queries can use different modes in a single invocation. Each query
+is auto-routed independently, and indexes are built once per mode:
 
 ```bash
-# Explore a GitHub repo with targeted queries
-python3 SKILL_DIR/scripts/pipeline.py https://github.com/org/repo \
-  "authentication flow" "error handling" "rate limiting"
-
-# Local repo, single query
-python3 SKILL_DIR/scripts/pipeline.py ./local-repo "retry logic with backoff"
-
-# Structure overview only (no search queries)
-python3 SKILL_DIR/scripts/pipeline.py https://github.com/org/repo --map-only
-
-# Skip mapping for faster search (loses _MAP.md enrichment)
-python3 SKILL_DIR/scripts/pipeline.py ./repo "query" --no-map
-
-# Custom branch
-python3 SKILL_DIR/scripts/pipeline.py https://github.com/org/repo "query" --branch develop
+python3 $SKILL_DIR/scripts/search.py ./repo \
+  "class.*Error" \
+  "error recovery strategy" \
+  "def retry"
 ```
 
-Options: `--skip DIRS` (comma-separated, default covers common noise),
-`--top N` (results per query, default 5), `--map-only`, `--no-map`,
-`--branch NAME`.
+## Dependencies
 
-## What the Pipeline Does
+- **mapping-codebases**: Generates `_MAP.md` files for context expansion and
+  TF-IDF enrichment. Not required — search works without maps, just with
+  less context in results.
+- **ripgrep**: Required for regex verification. Install via `uv tool install ripgrep`.
+- **scikit-learn**: Required for semantic mode. Installs automatically.
 
-```
-resolve_repo ──┐
-               ├──→ generate_maps ──→ search_and_extract ──→ compile_report
-install_deps ──┘
-```
+## When NOT to Use
 
-0. **resolve_repo**: Downloads tarball from GitHub (with retry) or validates
-   local path. Parallelizes with dependency installation.
-1. **install_deps**: Ensures tree-sitter-language-pack is available for mapping.
-2. **generate_maps**: Runs codemap.py (from mapping-codebases) to produce
-   `_MAP.md` files. These dense signature files enrich the search index.
-3. **search_and_extract**: Builds TF-IDF index once, runs all queries,
-   extracts implementation context via line-targeted reads for top hits.
-4. **compile_report**: Assembles README summary + structural map + ranked
-   search results + extracted code into a single markdown report.
+- Repos under ~10 files: just read them directly
+- Exact identifier known: `rg "identifier" /path` is simpler
+- Need AST-precise extraction (complete function bodies via tree-sitter):
+  use exploring-codebases with `--expand-full` instead
 
-## Reading the Report
+## Files
 
-The report contains four sections:
-
-1. **Overview** — README excerpt for project context
-2. **Code Structure** — Root `_MAP.md` showing directory layout, exports, signatures
-3. **Search Results** — Per-query ranked matches with scores and file locations
-4. **Extracted Implementations** — Actual code for the highest-scoring matches
-
-Scores above 0.3 are strong matches. Scores 0.1–0.3 are plausible leads.
-Below 0.1 is noise — rephrase the query with more domain-specific terms.
-
-## Follow-Up Searches
-
-After reading the pipeline report, use `code_rag.py` directly for targeted
-follow-up queries against the already-downloaded repo:
-
-```bash
-python3 SKILL_DIR/scripts/code_rag.py search /path/to/repo "specific query" --grouped
-```
-
-This reuses the local repo without re-downloading. The index rebuilds in
-~50ms–2s depending on repo size. Use this for refinement, not as the primary
-search method.
-
-## When NOT to Use This
-
-Skip this for repos under ~10 files — just read them directly. Skip this when
-the exact identifier is already known — grep directly. For AST-precise
-structural extraction (complete function bodies via tree-sitter), use
-exploring-codebases instead.
-
-## Limitations
-
-TF-IDF has no morphological awareness — "clean" won't match "cleaning" unless
-both forms appear in the corpus. Enrich sparse queries with synonyms:
-"retry exponential backoff error recovery" beats "retry" alone.
-
-Covers: Python, JS/JSX, TS/TSX, MJS/MTS, YAML/YML, Markdown, `_MAP.md`.
-Dot-directories and common build artifacts are skipped by default.
+- `scripts/search.py` — Entry point, query routing, output formatting
+- `scripts/resolve.py` — Input source resolution (GitHub, uploads, archives)
+- `scripts/context.py` — AST/map-based context expansion
+- `scripts/ngram_index.py` — Sparse n-gram inverted index, regex decomposition
+- `scripts/sparse_ngrams.py` — Core n-gram algorithms, frequency weights
+- `scripts/code_rag.py` — TF-IDF semantic search over code chunks

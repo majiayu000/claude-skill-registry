@@ -8,20 +8,11 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 ## Overview
 
-To implement persistence layers with Spring Data JPA, create repository interfaces that provide automatic CRUD operations, entity relationships, query methods, and advanced features like pagination, auditing, and performance optimization.
+Provides patterns for Spring Data JPA repositories, entity relationships, queries, pagination, auditing, and transactions.
 
 ## When to Use
 
-Use this Skill when:
-- Implementing repository interfaces with automatic CRUD operations
-- Creating entities with relationships (one-to-one, one-to-many, many-to-many)
-- Writing queries using derived method names or custom `@`Query annotations
-- Setting up pagination and sorting for large datasets
-- Implementing database auditing with timestamps and user tracking
-- Configuring transactions and exception handling
-- Using UUID as primary keys for distributed systems
-- Optimizing performance with database indexes
-- Setting up multiple database configurations
+Creating repositories with CRUD operations, entity relationships, `@Query` annotations, pagination, auditing, or UUID primary keys.
 
 ## Instructions
 
@@ -70,6 +61,7 @@ To implement a repository interface:
    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
    private List<Order> orders = new ArrayList<>();
    ```
+   **Validation:** Test cascade behavior with a small dataset before applying to production data. Verify delete operations don't cascade unexpectedly.
 
 3. **Set up database auditing:**
    ```java
@@ -91,6 +83,21 @@ To implement a repository interface:
 1. **Mark read-only operations with `@`Transactional(readOnly = true)**
 2. **Use explicit transaction boundaries for modifying operations**
 3. **Specify rollback conditions when needed**
+
+### Validate and Optimize
+
+**1. Verify entity configuration:**
+- Test cascade behavior in a transaction before production deployment
+- Validate bidirectional relationships sync correctly
+
+**2. Optimize query performance:**
+- Run `EXPLAIN ANALYZE` on queries against large tables
+- If performance issues detected: add indexes → verify with EXPLAIN → repeat
+- Use `@EntityGraph` to prevent N+1 queries
+
+**3. Validate pagination:**
+- Ensure indexed columns support pagination queries
+- Test with large datasets to verify cursor stability
 
 ## Examples
 
@@ -154,26 +161,13 @@ public class Order {
 - Always provide proper `@Id` and `@GeneratedValue` annotations
 - Use explicit `@Table` and `@Column` annotations
 
-### Repository Queries
-- Use derived queries for simple conditions
-- Use `@Query` for complex queries to avoid long method names
-- Always use `@Param` for query parameters
-- Return `Optional<T>` for single results
-- Apply `@Transactional` on modifying operations
-
 ### Performance Optimization
 - Use appropriate fetch strategies (LAZY vs EAGER)
 - Implement pagination for large datasets
 - Use database indexes for frequently queried fields
 - Consider using `@EntityGraph` to avoid N+1 query problems
 
-### Transaction Management
-- Mark read-only operations with `@Transactional(readOnly = true)`
-- Use explicit transaction boundaries
-- Avoid long-running transactions
-- Specify rollback conditions when needed
-
-## Reference Documentation
+### Reference Documentation
 
 For comprehensive examples, detailed patterns, and advanced configurations, see:
 

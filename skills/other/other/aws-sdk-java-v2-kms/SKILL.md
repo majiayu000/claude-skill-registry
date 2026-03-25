@@ -8,31 +8,26 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 ## Overview
 
-This skill provides comprehensive patterns for AWS Key Management Service (KMS) using AWS SDK for Java 2.x. Focus on implementing secure encryption solutions with proper key management, envelope encryption, and Spring Boot integration patterns.
+Provides AWS KMS patterns using AWS SDK for Java 2.x. Covers key management, encryption/decryption, envelope encryption, digital signatures, and Spring Boot integration.
 
 ## Instructions
 
-Follow these steps to work with AWS KMS:
-
-1. **Set Up IAM Permissions** - Grant kms:* actions as needed with least privilege
-2. **Create KMS Client** - Instantiate KmsClient with proper region and credentials
-3. **Create or Import Keys** - Use createKey() or import existing key material
-4. **Set Key Policies** - Define who can use/manage each key
-5. **Encrypt Data** - Use encrypt() for small data (<4KB) directly
-6. **Use Envelope Encryption** - For larger data, generate and encrypt data keys
-7. **Implement Digital Signatures** - Create signing keys and verify signatures
-8. **Rotate Keys** - Enable automatic key rotation for compliance
+1. **Set Up IAM Permissions** - Grant kms:* actions with least privilege
+2. **Create KMS Client** - Instantiate KmsClient with region and credentials
+3. **Create Keys** - Use createKey() → **Verify key state is ENABLED before proceeding**
+4. **Set Key Policies** - Define key usage permissions → **Test access before production**
+5. **Encrypt Data** - Use encrypt() for data <4KB; **Verify ciphertext is not empty**
+6. **Envelope Encryption** - For larger data, use generateDataKey() → **Verify data key generation succeeded**
+7. **Digital Signatures** - Create signing keys → **Verify signatureValid=true after sign/verify**
+8. **Key Rotation** - Enable auto-rotation → **Confirm rotation schedule is active**
 
 ## When to Use
 
-Use this skill when:
-- Creating and managing symmetric encryption keys for data protection
-- Implementing client-side encryption and envelope encryption patterns
-- Generating data keys for local data encryption with KMS-managed keys
-- Setting up digital signatures and verification with asymmetric keys
-- Integrating encryption capabilities into Spring Boot applications
-- Implementing secure key lifecycle management
-- Setting up key rotation policies and access controls
+- Creating/managing symmetric encryption keys for data protection
+- Implementing envelope encryption for large data
+- Generating data keys for local encryption with KMS-managed keys
+- Setting up digital signatures with asymmetric keys
+- Integrating encryption into Spring Boot applications
 
 ## Dependencies
 
@@ -167,45 +162,56 @@ public String decryptData(KmsClient kmsClient, String ciphertextBase64) {
 
 ```java
 public DataKeyResult encryptWithEnvelope(KmsClient kmsClient, String masterKeyId, byte[] data) {
-    // Generate data key
-    GenerateDataKeyRequest keyRequest = GenerateDataKeyRequest.builder()
-        .keyId(masterKeyId)
-        .keySpec(DataKeySpec.AES_256)
-        .build();
+    try {
+        GenerateDataKeyRequest keyRequest = GenerateDataKeyRequest.builder()
+            .keyId(masterKeyId)
+            .keySpec(DataKeySpec.AES_256)
+            .build();
 
-    GenerateDataKeyResponse keyResponse = kmsClient.generateDataKey(keyRequest);
+        GenerateDataKeyResponse keyResponse = kmsClient.generateDataKey(keyRequest);
 
-    // Encrypt data with data key
-    byte[] encryptedData = encryptWithAES(data,
-        keyResponse.plaintext().asByteArray());
+        // Validate response
+        if (keyResponse.plaintext() == null || keyResponse.ciphertextBlob() == null) {
+            throw new IllegalStateException("Data key generation returned null");
+        }
 
-    // Clear plaintext key from memory
-    Arrays.fill(keyResponse.plaintext().asByteArray(), (byte) 0);
+        byte[] encryptedData = encryptWithAES(data, keyResponse.plaintext().asByteArray());
 
-    return new DataKeyResult(
-        encryptedData,
-        keyResponse.ciphertextBlob().asByteArray());
+        // Clear plaintext key from memory
+        Arrays.fill(keyResponse.plaintext().asByteArray(), (byte) 0);
+
+        return new DataKeyResult(encryptedData, keyResponse.ciphertextBlob().asByteArray());
+
+    } catch (KmsException e) {
+        throw new RuntimeException("Envelope encryption failed: " + e.awsErrorDetails().errorCode(), e);
+    }
 }
 
-public byte[] decryptWithEnvelope(KmsClient kmsClient,
-                                  DataKeyResult encryptedEnvelope) {
-    // Decrypt data key
-    DecryptRequest keyDecryptRequest = DecryptRequest.builder()
-        .ciphertextBlob(SdkBytes.fromByteArray(
-            encryptedEnvelope.encryptedKey()))
-        .build();
+public byte[] decryptWithEnvelope(KmsClient kmsClient, DataKeyResult encryptedEnvelope) {
+    try {
+        DecryptRequest keyDecryptRequest = DecryptRequest.builder()
+            .ciphertextBlob(SdkBytes.fromByteArray(encryptedEnvelope.encryptedKey()))
+            .build();
 
-    DecryptResponse keyDecryptResponse = kmsClient.decrypt(keyDecryptRequest);
+        DecryptResponse keyDecryptResponse = kmsClient.decrypt(keyDecryptRequest);
 
-    // Decrypt data with decrypted key
-    byte[] decryptedData = decryptWithAES(
-        encryptedEnvelope.encryptedData(),
-        keyDecryptResponse.plaintext().asByteArray());
+        // Validate response
+        if (keyDecryptResponse.plaintext() == null) {
+            throw new IllegalStateException("Key decryption returned null");
+        }
 
-    // Clear plaintext key from memory
-    Arrays.fill(keyDecryptResponse.plaintext().asByteArray(), (byte) 0);
+        byte[] decryptedData = decryptWithAES(
+            encryptedEnvelope.encryptedData(),
+            keyDecryptResponse.plaintext().asByteArray());
 
-    return decryptedData;
+        // Clear plaintext key from memory
+        Arrays.fill(keyDecryptResponse.plaintext().asByteArray(), (byte) 0);
+
+        return decryptedData;
+
+    } catch (KmsException e) {
+        throw new RuntimeException("Envelope decryption failed: " + e.awsErrorDetails().errorCode(), e);
+    }
 }
 ```
 

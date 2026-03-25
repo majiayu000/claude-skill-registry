@@ -20,10 +20,10 @@ Four principles dominate this skill:
 
 ```
 User input (PROBLEM + vague APPROACH)
-  -> Phase 0 (Claude): Freeze Problem Anchor
-  -> Phase 1 (Claude): Scan grounding papers -> identify technical gap -> choose the sharpest route -> write focused proposal
+  -> Phase 0 (Local step): Freeze Problem Anchor
+  -> Phase 1 (Local step): Scan grounding papers -> identify technical gap -> choose the sharpest route -> write focused proposal
   -> Phase 2 (Codex/GPT-5.4): Review for fidelity, specificity, contribution quality, and frontier leverage
-  -> Phase 3 (Claude): Anchor check + simplicity check -> revise method -> rewrite full proposal
+  -> Phase 3 (Local step): Anchor check + simplicity check -> revise method -> rewrite full proposal
   -> Phase 4 (Codex, same agent): Re-evaluate revised proposal
   -> Repeat Phase 3-4 until OVERALL SCORE >= 9 or MAX_ROUNDS reached
   -> Phase 5: Save full history to refine-logs/
@@ -43,10 +43,29 @@ User input (PROBLEM + vague APPROACH)
 
 > Override via argument if needed, e.g. `/research-refine "problem | approach" -- max rounds: 3, threshold: 9`.
 
+## State Persistence (Checkpoint Recovery)
+
+Long-running refinement sessions may fail mid-way (API timeout, context compaction, or session interruption). To avoid losing completed work, persist state to `refine-logs/REFINE_STATE.json` after each phase boundary:
+
+```json
+{
+  "phase": "review",
+  "round": 1,
+  "agent_id": "019cd392-...",
+  "last_score": 6.5,
+  "last_verdict": "REVISE",
+  "status": "in_progress",
+  "timestamp": "2026-03-22T20:00:00"
+}
+```
+
+Write after each completed phase. On completion, set `"status": "completed"`.
+
 ## Output Structure
 
 ```
 refine-logs/
+├── REFINE_STATE.json
 ├── round-0-initial-proposal.md
 ├── round-1-review.md
 ├── round-1-refinement.md
@@ -63,6 +82,21 @@ Every `round-N-refinement.md` must contain a **full anchored proposal**, not jus
 
 ## Workflow
 
+### Initialization (Checkpoint Recovery)
+
+Before starting any phase, check whether a previous run left a checkpoint:
+
+1. **Check for `refine-logs/REFINE_STATE.json`**:
+   - If it does not exist → fresh start
+   - If it exists and `status` is `"completed"` → fresh start
+   - If it exists and `status` is `"in_progress"` but `timestamp` is older than 24 hours → fresh start
+   - If it exists and `status` is `"in_progress"` within 24 hours → resume
+2. **On resume**:
+   - Read all existing `refine-logs/round-*.md` files and `score-history.md`
+   - Recover `agent_id` for reviewer continuity
+   - Resume from the next phase based on the saved `phase`
+3. **On fresh start**, ensure `refine-logs/` exists and proceed to Phase 0.
+
 ### Phase 0: Freeze the Problem Anchor
 
 Before proposing anything, extract the user's immutable bottom-line problem. This anchor must be copied verbatim into every proposal and every refinement round.
@@ -76,6 +110,8 @@ Write:
 - **Success condition**: What evidence would make the user say "yes, this method addresses the actual problem"?
 
 If later reviewer feedback would change the problem being solved, mark that as **drift** and push back or adapt carefully.
+
+**Checkpoint:** Write `refine-logs/REFINE_STATE.json` with `{"phase": "anchor", "round": 0, "agent_id": null, "last_score": null, "last_verdict": null, "status": "in_progress", "timestamp": "<now>"}`.
 
 ### Phase 1: Build the Initial Proposal
 
@@ -249,6 +285,8 @@ Use this structure:
 - Timeline:
 ```
 
+**Checkpoint:** Update `refine-logs/REFINE_STATE.json` with `{"phase": "proposal", "round": 0, ...}`.
+
 ### Phase 2: External Method Review (Round 1)
 
 Send the full proposal to GPT-5.4 for an **elegance-first, frontier-aware, method-first** review. The reviewer should spend most of the critique budget on the method itself, not on expanding the experiment menu.
@@ -323,6 +361,8 @@ spawn_agent:
 **CRITICAL: Save the FULL raw response** verbatim.
 
 Save review to `refine-logs/round-1-review.md` with the raw response in a `<details>` block.
+
+**Checkpoint:** Update `refine-logs/REFINE_STATE.json` with `{"phase": "review", "round": 1, "agent_id": "<saved>", "last_score": <parsed>, "last_verdict": "<parsed>", ...}`.
 
 ### Phase 3: Parse Feedback and Revise the Method
 
@@ -424,6 +464,8 @@ Save to `refine-logs/round-N-refinement.md`:
 [Full updated proposal from Problem Anchor through Claim-Driven Validation Sketch]
 ```
 
+**Checkpoint:** Update `refine-logs/REFINE_STATE.json` with `{"phase": "refine", "round": N, ...}`.
+
 ### Phase 4: Re-evaluation (Round 2+)
 
 Send the revised proposal back to GPT-5.4 in the **same agent**:
@@ -462,6 +504,8 @@ send_input:
 ```
 
 Save review to `refine-logs/round-N-review.md`.
+
+**Checkpoint:** Update `refine-logs/REFINE_STATE.json` with `{"phase": "review", "round": N, "agent_id": "<saved>", "last_score": <parsed>, "last_verdict": "<parsed>", ...}`.
 
 Then return to Phase 3 until:
 
@@ -620,6 +664,8 @@ Final proposal: refine-logs/FINAL_PROPOSAL.md
 Suggested next step: /experiment-plan
 ```
 
+**Checkpoint:** Update `refine-logs/REFINE_STATE.json` with `{"phase": "done", "status": "completed", ...}`.
+
 ## Key Rules
 
 - **Large file handling**: If the Write tool fails due to file size, immediately retry using Bash (`cat << 'EOF' > file`) to write in chunks. Do NOT ask the user for permission — just do it silently.
@@ -661,4 +707,3 @@ Typical flow:
 6. Later loops operate on results, not just ideas
 
 This skill also works standalone if you already know the problem and just need the method to become concrete.
-

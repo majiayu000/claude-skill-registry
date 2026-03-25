@@ -17,20 +17,20 @@ export function generateMetadata({ params }): Metadata {
   const product = getProduct(params.slug)
 
   return {
-    title: `${product.name} | MyStore`,        // 50-60 chars
+    title: `${product.name} | Your App`,        // 50-60 chars
     description: product.summary.slice(0, 155), // 150-160 chars
     alternates: {
-      canonical: `https://mystore.com/products/${params.slug}`,
+      canonical: `https://example.com/products/${params.slug}`,
       languages: {
-        'en': `https://mystore.com/en/products/${params.slug}`,
-        'tr': `https://mystore.com/tr/products/${params.slug}`,
+        'en': `https://example.com/en/products/${params.slug}`,
+        'tr': `https://example.com/tr/products/${params.slug}`,
       }
     },
     openGraph: {
       title: product.name,
       description: product.summary,
-      url: `https://mystore.com/products/${params.slug}`,
-      siteName: 'MyStore',
+      url: `https://example.com/products/${params.slug}`,
+      siteName: 'Your App',
       images: [{
         url: product.imageUrl,
         width: 1200,
@@ -74,7 +74,7 @@ function ProductJsonLd({ product }: { product: Product }) {
     },
     offers: {
       '@type': 'Offer',
-      url: `https://mystore.com/products/${product.slug}`,
+      url: `https://example.com/products/${product.slug}`,
       priceCurrency: 'USD',
       price: product.price,
       availability: product.inStock
@@ -82,7 +82,7 @@ function ProductJsonLd({ product }: { product: Product }) {
         : 'https://schema.org/OutOfStock',
       seller: {
         '@type': 'Organization',
-        name: 'MyStore',
+        name: 'Your App',
       }
     },
     aggregateRating: product.reviewCount > 0 ? {
@@ -227,15 +227,15 @@ export default async function sitemap(): MetadataRoute.Sitemap {
   const posts = await getAllBlogPosts()
 
   return [
-    { url: 'https://mystore.com', lastModified: new Date(), priority: 1.0 },
+    { url: 'https://example.com', lastModified: new Date(), priority: 1.0 },
     ...products.map(p => ({
-      url: `https://mystore.com/products/${p.slug}`,
+      url: `https://example.com/products/${p.slug}`,
       lastModified: p.updatedAt,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     })),
     ...posts.map(p => ({
-      url: `https://mystore.com/blog/${p.slug}`,
+      url: `https://example.com/blog/${p.slug}`,
       lastModified: p.updatedAt,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
@@ -249,7 +249,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       { userAgent: '*', allow: '/', disallow: ['/api/', '/admin/', '/checkout/'] },
     ],
-    sitemap: 'https://mystore.com/sitemap.xml',
+    sitemap: 'https://example.com/sitemap.xml',
   }
 }
 ```
@@ -267,6 +267,123 @@ export default function robots(): MetadataRoute.Robots {
 - [ ] robots.txt blocks API, admin, and auth routes from crawling
 - [ ] hreflang tags for multi-language sites
 
+## SaaS Landing Page Anatomy
+
+```
+┌──────────────────────────────────────┐
+│  Nav: Logo | Features | Pricing | CTA │ ← Sticky, minimal
+├──────────────────────────────────────┤
+│  HERO SECTION                        │
+│  H1: Value proposition (6-12 words)  │
+│  Subtitle: How it works (1 sentence) │
+│  CTA button + social proof line      │
+│  Hero image/screenshot               │
+├──────────────────────────────────────┤
+│  SOCIAL PROOF BAR                    │
+│  "Trusted by X teams" + logos        │
+├──────────────────────────────────────┤
+│  FEATURES (3-4 cards)                │
+│  Icon + Title + 1 sentence each      │
+├──────────────────────────────────────┤
+│  HOW IT WORKS (3 steps)              │
+│  Step 1 → Step 2 → Step 3           │
+├──────────────────────────────────────┤
+│  TESTIMONIALS (2-3 quotes)           │
+│  Photo + Name + Role + Quote         │
+├──────────────────────────────────────┤
+│  PRICING (3 tiers)                   │
+│  Free | Pro (highlighted) | Enterprise│
+├──────────────────────────────────────┤
+│  FAQ (5-8 questions, JSON-LD)        │
+├──────────────────────────────────────┤
+│  FINAL CTA                           │
+│  Repeat hero CTA with urgency        │
+├──────────────────────────────────────┤
+│  FOOTER                              │
+│  Legal links + sitemap links         │
+└──────────────────────────────────────┘
+```
+
+### Hero Section Formulas
+
+```
+Formula 1 — Problem-Solution:
+  H1: "Stop [pain point]. Start [desired outcome]."
+  Example: "Stop losing leads. Start converting visitors."
+
+Formula 2 — Before-After:
+  H1: "[Tool] turns [bad state] into [good state]."
+  Example: "[Product] turns messy spreadsheets into real-time dashboards."
+
+Formula 3 — Social Proof Lead:
+  H1: "[N]+ teams use [tool] to [outcome]."
+  Example: "2,000+ teams use [Product] to ship 3x faster."
+```
+
+### Pricing Page SEO
+
+```typescript
+// Pricing page structured data
+function PricingJsonLd({ plans }: { plans: Plan[] }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Pricing',
+    description: 'Plans and pricing for Your App',
+    mainEntity: plans.map(plan => ({
+      '@type': 'Offer',
+      name: plan.name,
+      price: plan.price,
+      priceCurrency: 'USD',
+      description: plan.description,
+      eligibleDuration: { '@type': 'QuantitativeValue', value: 1, unitCode: 'MON' }
+    }))
+  }
+
+  return <script type="application/ld+json">{JSON.stringify(schema)}</script>
+}
+
+// SEO tips for pricing pages:
+// - Title: "[Product] Pricing — Free, Pro & Enterprise Plans"
+// - Include pricing in meta description (Google shows it in snippets)
+// - Use comparison table with feature checkmarks
+// - FAQ section below pricing (common objections → JSON-LD)
+// - "Free tier" callout improves CTR from search results
+```
+
+### SaaS-Specific Structured Data
+
+```typescript
+// SoftwareApplication schema (rich results for SaaS)
+function SoftwareAppJsonLd({ app }: { app: SaaSApp }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: app.name,
+    applicationCategory: app.category,  // 'BusinessApplication', 'DeveloperApplication'
+    operatingSystem: 'Web',
+    offers: {
+      '@type': 'AggregateOffer',
+      lowPrice: app.freeTier ? '0' : app.lowestPrice,
+      highPrice: app.highestPrice,
+      priceCurrency: 'USD',
+      offerCount: app.planCount
+    },
+    aggregateRating: app.reviewCount > 0 ? {
+      '@type': 'AggregateRating',
+      ratingValue: app.avgRating,
+      ratingCount: app.reviewCount,
+      bestRating: 5,
+      worstRating: 1
+    } : undefined,
+    screenshot: app.screenshotUrl,
+    featureList: app.features.join(', ')
+  }
+
+  return <script type="application/ld+json">{JSON.stringify(schema)}</script>
+}
+```
+
 ## Anti-Patterns
 
 - Client-side only rendering: search engines may not execute JS
@@ -275,3 +392,5 @@ export default function robots(): MetadataRoute.Robots {
 - Blocking CSS/JS in robots.txt: prevents proper rendering by crawlers
 - Infinite scroll without pagination URLs: content invisible to crawlers
 - Meta description over 160 chars: truncated in search results
+- Pricing page without structured data: misses rich snippet opportunity
+- Landing page H1 focused on brand, not value: low click-through from SERPs

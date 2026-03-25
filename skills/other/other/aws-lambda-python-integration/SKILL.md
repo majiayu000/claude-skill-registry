@@ -10,12 +10,7 @@ Patterns for creating high-performance AWS Lambda functions in Python with optim
 
 ## Overview
 
-This skill provides complete patterns for AWS Lambda Python development, covering two main approaches:
-
-1. **AWS Chalice Framework** - Full-featured framework with built-in routing, dependency injection, and local testing server
-2. **Raw Python** - Minimal overhead approach with maximum flexibility and control
-
-Both approaches support API Gateway and ALB integration with production-ready configurations.
+AWS Lambda Python integration with two approaches: **AWS Chalice** (full-featured framework) and **Raw Python** (minimal overhead). Both support API Gateway/ALB integration with production-ready configurations.
 
 ## When to Use
 
@@ -92,7 +87,7 @@ def lambda_handler(event, context):
 
 ### Cold Start Optimization
 
-Python has excellent cold start performance. Key strategies:
+Key strategies:
 
 1. **Initialize at module level** - Persists across warm invocations
 2. **Use lazy loading** - Defer heavy imports until needed
@@ -191,6 +186,8 @@ See [Raw Python Lambda](references/raw-python-lambda.md#logging) for advanced pa
 
 ### Quick Start
 
+> **Validation Checkpoint:** Always run `serverless print` or `sam validate` before deploying to catch configuration errors early.
+
 **Serverless Framework:**
 ```yaml
 # serverless.yml
@@ -232,8 +229,11 @@ Resources:
 ```bash
 chalice new-project my-api
 cd my-api
+chalice local 8080  # Test locally before deploying
 chalice deploy --stage dev
 ```
+
+> **Validation Checkpoint:** Test locally with `chalice local` or `sam local invoke` before deploying to production.
 
 For complete deployment configurations including CI/CD, environment-specific settings, and advanced SAM/Serverless patterns, see [Serverless Deployment](references/serverless-deployment.md).
 
@@ -249,7 +249,7 @@ For complete deployment configurations including CI/CD, environment-specific set
 
 ### Python-Specific Considerations
 
-- **Cold start**: Python has excellent cold start performance, but avoid heavy imports at module level
+- **Cold start**: Python has excellent cold start performance; avoid heavy imports at module level
 - **Dependencies**: Keep `requirements.txt` minimal; use Lambda Layers for shared dependencies
 - **Native dependencies**: Must be compiled for Amazon Linux 2 (x86_64 or arm64)
 
@@ -259,6 +259,8 @@ For complete deployment configurations including CI/CD, environment-specific set
 2. **Not handling Lambda context** - Use `context.get_remaining_time_in_millis()` for timeout awareness
 3. **Not validating input** - Always validate and sanitize event data
 4. **Printing sensitive data** - Be careful with logs and CloudWatch
+
+**Error Recovery:** If deployment fails, check CloudWatch logs for initialization errors and run `sam logs` to diagnose issues.
 
 ### Security Considerations
 

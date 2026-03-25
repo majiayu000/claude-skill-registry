@@ -1,74 +1,33 @@
 ---
 name: langchain4j-spring-boot-integration
-description: Provides integration patterns for LangChain4j with Spring Boot. Handles auto-configuration, dependency injection, and Spring ecosystem integration. Use when embedding LangChain4j into Spring Boot applications.
+description: Provides integration patterns for LangChain4j with Spring Boot. Configures AI model beans, sets up chat memory with Spring context, integrates RAG pipelines with Spring Data, and handles auto-configuration, dependency injection, and Spring ecosystem integration. Use when embedding LangChain4j into Spring Boot applications, building Java LLM applications with @Bean configuration, or setting up Spring AI patterns.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
 # LangChain4j Spring Boot Integration
 
-To accomplish integration of LangChain4j with Spring Boot applications, follow this comprehensive guidance covering auto-configuration, declarative AI Services, chat models, embedding stores, and production-ready patterns for building AI-powered applications.
+Integrate LangChain4j with Spring Boot using declarative AI Services, auto-configuration, and Spring Boot starters. Configure AI model beans, set up chat memory, implement RAG pipelines with Spring Data, and build production-ready AI applications.
 
 ## When to Use
 
-To accomplish integration of LangChain4j with Spring Boot when:
+Use this skill when:
 - Integrating LangChain4j into existing Spring Boot applications
 - Building AI-powered microservices with Spring Boot
+- Configuring AI model beans with `@Bean` annotations
 - Setting up auto-configuration for AI models and services
 - Creating declarative AI Services with Spring dependency injection
-- Configuring multiple AI providers (OpenAI, Azure, Ollama, etc.)
-- Implementing RAG systems with Spring Boot
-- Setting up observability and monitoring for AI components
+- Implementing RAG systems with Spring Data integrations
+- Setting up chat memory with Spring context management
+- Configuring multiple AI providers (OpenAI, Azure, Ollama, Anthropic)
 - Building production-ready AI applications with Spring Boot
 
 ## Overview
 
-LangChain4j Spring Boot integration provides declarative AI Services through Spring Boot starters, enabling automatic configuration of AI components based on properties. The integration combines the power of Spring dependency injection with LangChain4j's AI capabilities, allowing developers to create AI-powered applications using interface-based definitions with annotations.
-
-## Core Concepts
-
-To accomplish basic setup of LangChain4j with Spring Boot:
-
-**Add Dependencies:**
-```xml
-<!-- Core LangChain4j -->
-<dependency>
-    <groupId>dev.langchain4j</groupId>
-    <artifactId>langchain4j-spring-boot-starter</artifactId>
-    <version>1.8.0</version> // Use latest version
-</dependency>
-
-<!-- OpenAI Integration -->
-<dependency>
-    <groupId>dev.langchain4j</groupId>
-    <artifactId>langchain4j-open-ai-spring-boot-starter</artifactId>
-    <version>1.8.0</version>
-</dependency>
-```
-
-**Configure Properties:**
-```properties
-# application.properties
-langchain4j.open-ai.chat-model.api-key=${OPENAI_API_KEY}
-langchain4j.open-ai.chat-model.model-name=gpt-4o-mini
-langchain4j.open-ai.chat-model.temperature=0.7
-```
-
-**Create Declarative AI Service:**
-```java
-@AiService
-interface CustomerSupportAssistant {
-    @SystemMessage("You are a helpful customer support agent for TechCorp.")
-    String handleInquiry(String customerMessage);
-}
-```
+LangChain4j Spring Boot integration provides declarative AI Services through Spring Boot starters, enabling automatic configuration of AI components based on properties. Combine Spring dependency injection with LangChain4j's AI capabilities using interface-based definitions with annotations.
 
 ## Instructions
 
-Follow these step-by-step instructions to integrate LangChain4j with Spring Boot:
-
 ### 1. Add Dependencies
-
-Include the necessary Spring Boot starters in your `pom.xml` or `build.gradle`:
 
 ```xml
 <!-- Core LangChain4j Spring Boot Starter -->
@@ -87,8 +46,6 @@ Include the necessary Spring Boot starters in your `pom.xml` or `build.gradle`:
 ```
 
 ### 2. Configure Application Properties
-
-Set up the AI model configuration in `application.properties` or `application.yml`:
 
 ```properties
 # application.properties
@@ -114,8 +71,6 @@ langchain4j:
 
 ### 3. Create Declarative AI Service
 
-Define an AI service interface with annotations:
-
 ```java
 import dev.langchain4j.service.spring.AiService;
 
@@ -125,20 +80,18 @@ public interface CustomerSupportAssistant {
     @SystemMessage("You are a helpful customer support agent for TechCorp.")
     String handleInquiry(String customerMessage);
 
-    @UserMessage("Translate the following text to {{language}}: {{text}}")
+    @UserMessage("Translate to {{language}}: {{text}}")
     String translate(String text, String language);
 }
 ```
 
 ### 4. Enable Component Scanning
 
-Ensure the AI service is in a package scanned by Spring:
-
 ```java
 @SpringBootApplication
 @ComponentScan(basePackages = {
     "com.yourcompany",
-    "dev.langchain4j.service.spring"  // For AiService scanning
+    "dev.langchain4j.service.spring"
 })
 public class Application {
     public static void main(String[] args) {
@@ -165,88 +118,74 @@ public class CustomerService {
 }
 ```
 
+### 6. Verify the Integration
+
+After setup, verify the configuration:
+1. Start the application and check logs for `LangChain4jSpringBootAutoConfiguration` activation
+2. Confirm AI service beans are registered: look for `CustomerSupportAssistant` in Spring context
+3. Test the service: invoke `assistant.handleInquiry("test")` and verify a response is returned
+
 ## Configuration
 
-To accomplish Spring Boot configuration for LangChain4j:
+**Property-Based Configuration:** Configure AI models through `application.properties` for different providers.
 
-**Property-Based Configuration:** Configure AI models through application properties for different providers.
-
-**Manual Bean Configuration:** For advanced configurations, define beans manually using `@`Configuration.
-
-**Multiple Providers:** Support for multiple AI providers with explicit wiring when needed.
-
-## Declarative AI Services
-
-To accomplish interface-based AI service definitions:
-
-**Basic AI Service:** Create interfaces with `@`AiService annotation and define methods with message templates.
-
-**Streaming AI Service:** Implement streaming responses using Reactor or Project Reactor.
-
-**Explicit Wiring:** Specify which model to use with `@`AiService(wiringMode = EXPLICIT, chatModel = "modelBeanName").
-
-## RAG Implementation
-
-To accomplish RAG system implementation:
-
-**Embedding Stores:** Configure various embedding stores (PostgreSQL/pgvector, Neo4j, Pinecone, etc.).
-
-**Document Ingestion:** Implement document processing and embedding generation.
-
-**Content Retrieval:** Set up content retrieval mechanisms for knowledge augmentation.
-
-## Tool Integration
-
-To accomplish AI tool integration:
-
-**Spring Component Tools:** Define tools as Spring components with `@`Tool annotations.
-
-**Database Access Tools:** Create tools for database operations and business logic.
-
-**Tool Registration:** Automatically register tools with AI services.
-
-## Examples
-
-### Basic AI Service
+**Manual Bean Configuration:** For advanced configurations, define beans manually:
 
 ```java
-@AiService
-public interface ChatAssistant {
-    @SystemMessage("You are a helpful assistant.")
-    String chat(String message);
+@Configuration
+public class AiConfig {
+
+    @Bean
+    public ChatModel chatModel(@Value("${OPENAI_API_KEY}") String apiKey) {
+        return OpenAiChatModel.builder()
+            .apiKey(apiKey)
+            .modelName("gpt-4o-mini")
+            .temperature(0.7)
+            .build();
+    }
 }
 ```
 
-### AI Service with Memory
+**Multiple Providers:** Use explicit wiring when configuring multiple AI providers:
+
+```java
+@AiService(wiringMode = WiringMode.EXPLICIT)
+interface MultiProviderAssistant {
+    @AiServiceAnnotation
+    ChatModel openAiModel;
+
+    @AiServiceAnnotation
+    ChatModel azureModel;
+}
+```
+
+## Declarative AI Services
+
+**Basic AI Service:** Create interfaces with `@AiService` annotation and define methods with message templates.
+
+**Streaming AI Service:** Implement streaming responses using Project Reactor:
+
+```java
+@AiService
+public interface StreamingAssistant {
+    @SystemMessage("You are a helpful assistant.")
+    Flux<String> chatStream(String message);
+}
+```
+
+**Chat Memory:** Set up conversation memory with Spring context:
 
 ```java
 @AiService
 public interface ConversationalAssistant {
-    @SystemMessage("You are a helpful assistant with memory of conversations.")
+    @SystemMessage("You are a helpful assistant with memory.")
     String chat(@MemoryId String userId, String message);
 }
 ```
 
-### AI Service with Tools
+## RAG Implementation
 
-```java
-@Component
-public class Calculator {
-    @Tool("Calculate the sum of two numbers")
-    public double add(double a, double b) {
-        return a + b;
-    }
-}
-
-@AiService
-public interface MathAssistant {
-    String solve(String problem);
-}
-
-// Spring automatically registers the Calculator tool
-```
-
-### RAG Configuration
+**Embedding Stores:** Configure embedding stores for RAG pipelines with Spring Data:
 
 ```java
 @Configuration
@@ -275,36 +214,92 @@ public interface RagAssistant {
 }
 ```
 
-To understand implementation patterns, refer to the comprehensive examples in [references/examples.md](references/examples.md).
+**Document Ingestion:** Use `ContentInjector` and `DocumentSplitter` for processing documents.
+**Content Retrieval:** Configure `EmbeddingStoreContentRetriever` for knowledge augmentation.
+
+## Tool Integration
+
+**Spring Component Tools:** Define tools as Spring components:
+
+```java
+@Component
+public class Calculator {
+    @Tool("Calculate the sum of two numbers")
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+
+@AiService
+public interface MathAssistant {
+    String solve(String problem);
+}
+```
+
+## Examples
+
+### Basic AI Service
+
+```java
+@AiService
+public interface ChatAssistant {
+    @SystemMessage("You are a helpful assistant.")
+    String chat(String message);
+}
+```
+
+### AI Service with Memory
+
+```java
+@AiService
+public interface ConversationalAssistant {
+    @SystemMessage("You are a helpful assistant with memory of conversations.")
+    String chat(@MemoryId String userId, String message);
+}
+```
+
+### AI Service with Tools
+
+```java
+@Component
+public class WeatherService {
+    @Tool("Get weather for a city")
+    public String getWeather(String city) {
+        return "Sunny, 22°C in " + city;
+    }
+}
+
+@AiService
+public interface WeatherAssistant {
+    String getWeatherForCity(String city);
+}
+```
+
+For more examples (including RAG configurations, streaming assistants, and multi-provider setups), refer to [references/examples.md](references/examples.md).
 
 ## Best Practices
 
-To accomplish production-ready AI applications:
-
 - **Use Property-Based Configuration:** External configuration over hardcoded values
-- **Implement Proper Error Handling:** Graceful degradation and meaningful error responses
-- **Use Profiles for Different Environments:** Separate configurations for development, testing, and production
-- **Implement Proper Logging:** Debug AI service calls and monitor performance
-- **Secure API Keys:** Use environment variables and never commit to version control
-- **Handle Failures:** Implement retry mechanisms and fallback strategies
-- **Monitor Performance:** Add metrics and health checks for observability
+- **Use Profiles:** Separate configurations for development, testing, and production
+- **Add Proper Logging:** Debug AI service calls and monitor performance
+- **Implement Retry Mechanisms:** Handle transient failures with backoff strategies
+- **Monitor Token Usage:** Track token consumption and implement limits
 
 ## References
 
-For detailed API references, advanced configurations, and additional patterns, refer to:
-
-- [API Reference](references/references.md) - Complete API reference and configurations
+For detailed API references and advanced configurations:
+- [API Reference](references/references.md) - Complete API documentation
 - [Examples](references/examples.md) - Comprehensive implementation examples
 - [Configuration Guide](references/configuration.md) - Deep dive into configuration options
 
 ## Constraints and Warnings
 
-- API keys must be stored securely using environment variables or secret management systems.
-- AI model responses are non-deterministic; tests should account for variability.
-- Rate limits may apply to AI providers; implement proper retry and backoff strategies.
-- Memory providers store conversation history; implement proper cleanup for multi-user scenarios.
-- Token costs can accumulate quickly; monitor usage and implement token limits.
-- Streaming responses require proper error handling for partial failures.
-- Not all AI providers support all features; check provider-specific documentation.
-- Explicit wiring mode should be used when multiple chat models are configured.
-- AI-generated outputs should be validated before use in production systems.
+- Store API keys securely using environment variables or secret management systems
+- AI model responses are non-deterministic; tests should account for variability
+- Rate limits may apply to AI providers; implement proper retry and backoff strategies
+- Memory providers store conversation history; implement cleanup for multi-user scenarios
+- Token costs accumulate quickly; monitor usage and implement token limits
+- Streaming responses require proper error handling for partial failures
+- Check provider-specific documentation for supported features
+- Use explicit wiring mode when multiple chat models are configured
+- Validate AI-generated outputs before use in production systems

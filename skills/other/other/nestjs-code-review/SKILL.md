@@ -8,22 +8,15 @@ allowed-tools: Read, Edit, Grep, Glob, Bash
 
 ## Overview
 
-This skill provides structured, comprehensive code review for NestJS applications. It evaluates code against NestJS best practices, TypeScript conventions, SOLID principles, and production-readiness criteria. The review produces actionable findings categorized by severity (Critical, Warning, Suggestion) with concrete code examples for improvements.
-
-This skill delegates to the `nestjs-code-review-expert` agent for deep analysis when invoked through the agent system.
+Provides structured code review for NestJS applications. Findings categorized by severity (Critical, Warning, Suggestion) with actionable recommendations. Delegates to `nestjs-code-review-expert` agent for deep analysis.
 
 ## When to Use
 
-- Reviewing NestJS controllers, services, modules, or providers before merging
-- Validating proper use of decorators (`@Controller`, `@Injectable`, `@Module`, etc.)
-- Checking dependency injection patterns and provider scoping
-- Reviewing REST API endpoints for standards compliance
-- Evaluating error handling with exception filters
-- Assessing guard and interceptor implementations
-- Reviewing database integration (TypeORM, Prisma, Drizzle ORM)
-- Validating DTO definitions and validation pipes
-- After implementing new NestJS features or refactoring modules
-- Checking microservices patterns (message/event patterns, transport layers)
+- "review NestJS code", "NestJS code review", "check my NestJS controller/service"
+- Before merging pull requests or after implementing new features
+- Validating NestJS decorators, DI patterns, guard implementations
+- Architecture validation for NestJS modules and providers
+- Reviewing DTOs, pipes, interceptors, and database integration (TypeORM, Prisma, Drizzle)
 
 ## Instructions
 
@@ -41,7 +34,9 @@ This skill delegates to the `nestjs-code-review-expert` agent for deep analysis 
 
 7. **Review Testing**: Assess test coverage for controllers, services, guards, and pipes. Verify proper mocking strategies and that tests validate behavior, not implementation details.
 
-8. **Produce Review Report**: Generate a structured report with severity-classified findings (Critical, Warning, Suggestion), positive observations, and prioritized recommendations with code examples.
+8. **Validate Findings** (Required checkpoint): Before finalizing, verify each Critical and Warning finding has reproducible evidence (file path, line numbers, exact code snippet) and a concrete, actionable fix. Remove or downgrade findings that are style preferences, overly subjective, or lack concrete remediation.
+
+9. **Produce Review Report**: Generate structured report with severity-classified findings (Critical, Warning, Suggestion), positive observations, and prioritized recommendations with code examples.
 
 ## Examples
 

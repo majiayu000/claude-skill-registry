@@ -37,7 +37,7 @@ You must have both a `projectId` AND at least one `screenId` before calling this
     "selectedScreenIds": ["88805abc123def456"],
     "prompt": "Change the background to dark mode (#09090B). Make the primary color indigo (#818CF8). Increase the font size of the header to 32px bold.",
     "deviceType": "DESKTOP",
-    "modelId": "GEMINI_3_PRO"
+    "modelId": "GEMINI_3_1_PRO"
   }
 }
 ```
@@ -77,8 +77,9 @@ Same enum as `generate_screen_from_text`: `MOBILE`, `DESKTOP`, `TABLET`, `AGNOST
 
 | Value | Use when |
 |-------|---------|
-| `GEMINI_3_PRO` | Complex edits — layout changes, multi-component updates |
-| `GEMINI_3_FLASH` | Simple edits — color swaps, text changes, quick iterations |
+| `GEMINI_3_1_PRO` | **Recommended** — complex layouts, high fidelity |
+| `GEMINI_3_FLASH` | Fast iteration, wireframes, simple changes |
+| `GEMINI_3_PRO` | **Deprecated.** Still works but will be removed. Use `GEMINI_3_1_PRO` instead. |
 
 ## Handling `output_components`
 

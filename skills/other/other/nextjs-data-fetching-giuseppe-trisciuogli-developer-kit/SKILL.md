@@ -8,21 +8,20 @@ allowed-tools: Read, Write, Edit, Bash
 
 ## Overview
 
-This skill provides comprehensive patterns for data fetching in Next.js App Router applications. It covers server-side fetching, client-side libraries integration, caching strategies, error handling, and loading states.
+Provides patterns for data fetching in Next.js App Router: server-side fetching, SWR/React Query integration, ISR, revalidation, error boundaries, and loading states.
 
 ## When to Use
 
-Use this skill for:
 - Implementing data fetching in Next.js App Router
-- Choosing between Server Components and Client Components for data fetching
-- Setting up SWR or React Query integration
-- Implementing parallel data fetching patterns
-- Configuring ISR and revalidation strategies
-- Creating error boundaries for data fetching
+- Choosing between Server Components and Client Components
+- Setting up SWR or React Query for client-side caching
+- Configuring ISR, time-based, or on-demand revalidation
+- Handling loading and error states
+- Building forms with Server Actions
 
 ## Instructions
 
-### Server Component Fetching (Default)
+### Server Component Fetching
 
 Fetch directly in async Server Components:
 
@@ -35,7 +34,6 @@ async function getPosts() {
 
 export default async function PostsPage() {
   const posts = await getPosts();
-
   return (
     <ul>
       {posts.map((post) => (
@@ -48,7 +46,7 @@ export default async function PostsPage() {
 
 ### Parallel Data Fetching
 
-Fetch multiple resources in parallel:
+Use `Promise.all()` for independent requests:
 
 ```tsx
 async function getDashboardData() {
@@ -57,7 +55,6 @@ async function getDashboardData() {
     fetch('/api/posts').then(r => r.json()),
     fetch('/api/analytics').then(r => r.json()),
   ]);
-
   return { user, posts, analytics };
 }
 
@@ -73,29 +70,22 @@ export default async function DashboardPage() {
 async function getUserPosts(userId: string) {
   const user = await fetch(`/api/users/${userId}`).then(r => r.json());
   const posts = await fetch(`/api/users/${userId}/posts`).then(r => r.json());
-
   return { user, posts };
 }
 ```
-
-## Caching and Revalidation
 
 ### Time-based Revalidation (ISR)
 
 ```tsx
 async function getPosts() {
   const res = await fetch('https://api.example.com/posts', {
-    next: {
-      revalidate: 60 // Revalidate every 60 seconds
-    }
+    next: { revalidate: 60 } // Revalidate every 60 seconds
   });
   return res.json();
 }
 ```
 
 ### On-Demand Revalidation
-
-Use route handlers with `revalidateTag` or `revalidatePath`:
 
 ```tsx
 // app/api/revalidate/route.ts
@@ -112,15 +102,12 @@ export async function POST(request: NextRequest) {
 }
 ```
 
-Tag cached data for selective revalidation:
+Tag data for selective revalidation:
 
 ```tsx
 async function getPosts() {
   const res = await fetch('https://api.example.com/posts', {
-    next: {
-      tags: ['posts'],
-      revalidate: 3600
-    }
+    next: { tags: ['posts'], revalidate: 3600 }
   });
   return res.json();
 }
@@ -129,7 +116,6 @@ async function getPosts() {
 ### Opt-out of Caching
 
 ```tsx
-// Dynamic rendering (no caching)
 async function getRealTimeData() {
   const res = await fetch('https://api.example.com/data', {
     cache: 'no-store'
@@ -137,7 +123,7 @@ async function getRealTimeData() {
   return res.json();
 }
 
-// Or use dynamic export
+// Or:
 export const dynamic = 'force-dynamic';
 ```
 
@@ -177,8 +163,6 @@ export function Posts() {
 
 Install: `npm install @tanstack/react-query`
 
-Setup provider:
-
 ```tsx
 // app/providers.tsx
 'use client';
@@ -204,182 +188,23 @@ export function Providers({ children }: { children: React.ReactNode }) {
 }
 ```
 
-Use in components:
-
-```tsx
-'use client';
-
-import { useQuery } from '@tanstack/react-query';
-
-export function Posts() {
-  const { data, error, isLoading } = useQuery({
-    queryKey: ['posts'],
-    queryFn: async () => {
-      const res = await fetch('/api/posts');
-      if (!res.ok) throw new Error('Failed to fetch');
-      return res.json();
-    },
-  });
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
-
-  return (
-    <ul>
-      {data.map((post: any) => (
-        <li key={post.id}>{post.title}</li>
-      ))}
-    </ul>
-  );
-}
-```
-
-See [react-query.md](references/react-query.md) for advanced patterns.
+See [react-query.md](references/react-query.md) for mutations, optimistic updates, infinite queries, and advanced patterns.
 
 ## Error Boundaries
 
-### Creating Error Boundaries
+Wrap client-side data fetching in Error Boundaries to handle failures gracefully:
 
-```tsx
-// app/components/ErrorBoundary.tsx
-'use client';
+See [error-boundaries.md](references/error-boundaries.md) for full `ErrorBoundary` implementations (basic, with reset callback) and usage examples with data fetching.
 
-import { Component, ReactNode } from 'react';
+## Server Actions
 
-interface Props {
-  children: ReactNode;
-  fallback: ReactNode;
-}
+Use Server Actions for mutations with cache revalidation:
 
-interface State {
-  hasError: boolean;
-}
-
-export class ErrorBoundary extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError(): State {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Error caught by boundary:', error, errorInfo);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return this.props.fallback;
-    }
-
-    return this.props.children;
-  }
-}
-```
-
-### Using Error Boundaries with Data Fetching
-
-```tsx
-// app/posts/page.tsx
-import { ErrorBoundary } from '../components/ErrorBoundary';
-import { Posts } from './Posts';
-import { PostsError } from './PostsError';
-
-export default function PostsPage() {
-  return (
-    <ErrorBoundary fallback={<PostsError />}>
-      <Posts />
-    </ErrorBoundary>
-  );
-}
-```
-
-### Error Boundary with Reset
-
-```tsx
-'use client';
-
-import { Component, ReactNode } from 'react';
-
-interface Props {
-  children: ReactNode;
-  fallback: (props: { reset: () => void }) => ReactNode;
-}
-
-interface State {
-  hasError: boolean;
-}
-
-export class ErrorBoundary extends Component<Props, State> {
-  state = { hasError: false };
-
-  static getDerivedStateFromError(): State {
-    return { hasError: true };
-  }
-
-  reset = () => {
-    this.setState({ hasError: false });
-  };
-
-  render() {
-    if (this.state.hasError) {
-      return this.props.fallback({ reset: this.reset });
-    }
-
-    return this.props.children;
-  }
-}
-```
-
-## Server Actions for Mutations
-
-```tsx
-// app/actions/posts.ts
-'use server';
-
-import { revalidateTag } from 'next/cache';
-
-export async function createPost(formData: FormData) {
-  const title = formData.get('title') as string;
-  const content = formData.get('content') as string;
-
-  const response = await fetch('https://api.example.com/posts', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ title, content }),
-  });
-
-  if (!response.ok) {
-    throw new Error('Failed to create post');
-  }
-
-  revalidateTag('posts');
-  return response.json();
-}
-```
-
-```tsx
-// app/posts/CreatePostForm.tsx
-'use client';
-
-import { createPost } from '../actions/posts';
-
-export function CreatePostForm() {
-  return (
-    <form action={createPost}>
-      <input name="title" placeholder="Title" required />
-      <textarea name="content" placeholder="Content" required />
-      <button type="submit">Create Post</button>
-    </form>
-  );
-}
-```
+See [server-actions.md](references/server-actions.md) for complete examples including form validation with `useActionState`, error handling, and cache invalidation.
 
 ## Loading States
 
-### Loading.tsx Pattern
+### loading.tsx Pattern
 
 ```tsx
 // app/posts/loading.tsx
@@ -401,19 +226,13 @@ export default function PostsLoading() {
 import { Suspense } from 'react';
 import { PostsList } from './PostsList';
 import { PostsSkeleton } from './PostsSkeleton';
-import { PopularPosts } from './PopularPosts';
 
 export default function PostsPage() {
   return (
     <div>
       <h1>Posts</h1>
-
       <Suspense fallback={<PostsSkeleton />}>
         <PostsList />
-      </Suspense>
-
-      <Suspense fallback={<div>Loading popular...</div>}>
-        <PopularPosts />
       </Suspense>
     </div>
   );
@@ -422,58 +241,36 @@ export default function PostsPage() {
 
 ## Best Practices
 
-1. **Default to Server Components** - Fetch data in Server Components when possible for better performance
-
-2. **Use parallel fetching** - Use `Promise.all()` for independent data requests
-
+1. **Default to Server Components** — Fetch in Server Components for better performance
+2. **Use parallel fetching** — `Promise.all()` for independent requests to reduce latency
 3. **Choose appropriate caching**:
-   - Static data: Long revalidation intervals or no revalidation
-   - Dynamic data: Short revalidation or `cache: 'no-store'`
-   - User-specific: Use dynamic rendering
-
-4. **Handle errors gracefully** - Wrap client data fetching in error boundaries
-
-5. **Use loading states** - Implement `loading.tsx` or Suspense boundaries
-
-6. **Prefer SWR/React Query for**:
-   - Real-time data
-   - User interactions requiring immediate feedback
-   - Data that needs background updates
-
-7. **Use Server Actions for**:
-   - Form submissions
-   - Mutations that need to revalidate cache
-   - Operations requiring server-side logic
+   - Static data: long revalidation intervals
+   - Dynamic data: short revalidation or `cache: 'no-store'`
+   - User-specific data: use dynamic rendering
+4. **Handle errors gracefully** — Wrap client data fetching in error boundaries
+5. **Implement loading states** — Use `loading.tsx` or Suspense boundaries
+6. **Prefer SWR/React Query for**: real-time data, user interactions, background updates
+7. **Use Server Actions for**: form submissions, mutations requiring cache revalidation
 
 ## Constraints and Warnings
 
 ### Critical Constraints
 
-- Server Components cannot use hooks like `useState`, `useEffect`, or data fetching libraries (SWR, React Query)
+- Server Components cannot use hooks (`useState`, `useEffect`) or client data fetching libraries
 - Client Components must include the `'use client'` directive
-- The `fetch` API in Next.js extends the standard Web API with Next.js-specific caching options
-- Server Actions require the `'use server'` directive and can only be called from Client Components or form actions
+- The `fetch` API in Next.js extends standard Web fetch with Next.js-specific caching options
+- Server Actions require `'use server'` and can only be called from Client Components or form actions
 
 ### Common Pitfalls
 
-1. **Fetching in loops**: Avoid fetching data inside loops in Server Components; use parallel fetching instead
-2. **Cache poisoning**: Be careful with `cache: 'force-cache'` for user-specific data
-3. **Memory leaks**: Always clean up subscriptions in Client Components when using real-time data
-4. **Hydration mismatches**: Ensure server and client render the same initial state when using React Query hydration
-
-## Decision Matrix
-
-| Scenario | Solution |
-|----------|----------|
-| Static content, infrequent updates | Server Component + ISR |
-| Dynamic content, user-specific | Server Component + `cache: 'no-store'` |
-| Real-time updates | Client Component + SWR/React Query |
-| User interactions | Client Component + mutation library |
-| Mixed requirements | Server for initial, Client for updates |
+1. **Fetching in loops** — Avoid sequential fetches in Server Components; use parallel fetching
+2. **Cache poisoning** — Do not use `force-cache` for user-specific or personalized data
+3. **Memory leaks** — Clean up subscriptions in Client Components when using real-time data
+4. **Hydration mismatches** — Ensure server and client render the same initial state with React Query hydration
 
 ## Examples
 
-### Example 1: Basic Server Component with ISR
+### Example 1: Blog with ISR
 
 **Input:** Create a blog page that fetches posts and updates every hour.
 
@@ -504,9 +301,9 @@ export default async function BlogPage() {
 
 **Output:** Page statically generated at build time, revalidated every hour.
 
-### Example 2: Parallel Data Fetching for Dashboard
+### Example 2: Dashboard with Parallel Fetching
 
-**Input:** Build a dashboard showing user profile, stats, and recent activity.
+**Input:** Build a dashboard showing user profile, stats, and recent activity in parallel.
 
 ```tsx
 // app/dashboard/page.tsx
@@ -531,80 +328,4 @@ export default async function DashboardPage() {
 }
 ```
 
-**Output:** All three requests execute concurrently, reducing total load time.
-
-### Example 3: Real-time Data with SWR
-
-**Input:** Display live cryptocurrency prices that update every 5 seconds.
-
-```tsx
-// app/crypto/PriceTicker.tsx
-'use client';
-
-import useSWR from 'swr';
-
-const fetcher = (url: string) => fetch(url).then(r => r.json());
-
-export function PriceTicker() {
-  const { data, error } = useSWR('/api/crypto/prices', fetcher, {
-    refreshInterval: 5000,
-    revalidateOnFocus: true,
-  });
-
-  if (error) return <div>Failed to load prices</div>;
-  if (!data) return <div>Loading...</div>;
-
-  return (
-    <div className="ticker">
-      <span>BTC: ${data.bitcoin}</span>
-      <span>ETH: ${data.ethereum}</span>
-    </div>
-  );
-}
-```
-
-**Output:** Component displays live-updating prices with automatic refresh.
-
-### Example 4: Form Submission with Server Action
-
-**Input:** Create a contact form that submits data and refreshes the cache.
-
-```tsx
-// app/actions/contact.ts
-'use server';
-
-import { revalidateTag } from 'next/cache';
-
-export async function submitContact(formData: FormData) {
-  const data = {
-    name: formData.get('name'),
-    email: formData.get('email'),
-    message: formData.get('message'),
-  };
-
-  await fetch('https://api.example.com/contact', {
-    method: 'POST',
-    body: JSON.stringify(data),
-  });
-
-  revalidateTag('messages');
-}
-```
-
-```tsx
-// app/contact/page.tsx
-import { submitContact } from '../actions/contact';
-
-export default function ContactPage() {
-  return (
-    <form action={submitContact}>
-      <input name="name" placeholder="Name" required />
-      <input name="email" type="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Message" required />
-      <button type="submit">Send</button>
-    </form>
-  );
-}
-```
-
-**Output:** Form submits via Server Action, cache is invalidated on success.
+**Output:** All three requests execute concurrently, minimizing total load time.

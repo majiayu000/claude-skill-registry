@@ -8,9 +8,7 @@ allowed-tools: Read, Edit, Grep, Glob, Bash
 
 ## Overview
 
-This skill provides structured, comprehensive code review for Next.js applications built with the App Router. It evaluates code against Next.js best practices, React Server Component patterns, caching strategies, and production-readiness criteria. The review produces actionable findings categorized by severity (Critical, Warning, Suggestion) with concrete code examples for improvements.
-
-This skill delegates to the `typescript-software-architect-review` agent for deep architectural analysis when invoked through the agent system.
+Evaluates Next.js App Router code against best practices for Server Components, Client Components, Server Actions, caching strategies, and production-readiness criteria. Produces actionable findings categorized by severity with concrete code examples. Delegates to `typescript-software-architect-review` agent for architectural analysis.
 
 ## When to Use
 
@@ -41,7 +39,9 @@ This skill delegates to the `typescript-software-architect-review` agent for dee
 
 7. **Review Metadata & SEO**: Check `generateMetadata` functions, Open Graph tags, structured data, `robots.txt`, and `sitemap.xml` configurations. Verify dynamic metadata is properly implemented for pages with variable content.
 
-8. **Produce Review Report**: Generate a structured report with severity-classified findings (Critical, Warning, Suggestion), positive observations, and prioritized recommendations with code examples.
+8. **Validate Findings**: Before finalizing, verify each issue by checking the actual code context. Confirm the pattern violation exists, ensure the suggested fix is applicable to the codebase, and remove any false positives.
+
+9. **Produce Review Report**: Generate a structured report with severity-classified findings (Critical, Warning, Suggestion), positive observations, and prioritized recommendations with code examples.
 
 ## Examples
 

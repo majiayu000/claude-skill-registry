@@ -8,7 +8,7 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 ## Overview
 
-Provides comprehensive guidance for working with Nx monorepos in TypeScript/JavaScript projects. Nx is a smart build system with advanced caching, affected command execution, and powerful generators for React, Next.js, NestJS, and more. This skill covers workspace creation, project generation, task execution, caching strategies, Module Federation, and CI/CD integration.
+Provides guidance for Nx monorepo management in TypeScript/JavaScript projects. Covers workspace creation, project generation, task execution, caching strategies, Module Federation, and CI/CD integration.
 
 ## When to Use
 
@@ -45,6 +45,7 @@ Use this skill when:
    ```bash
    npx create-nx-workspace@latest my-workspace --preset=react
    ```
+   **Verify:** `nx show projects` lists the new workspace projects
 
 ### Project Generation
 
@@ -61,6 +62,7 @@ Use this skill when:
    # TypeScript library
    nx g @nx/js:lib my-util
    ```
+   **Verify:** `nx show projects` lists the new lib
 
 3. **Generate a component in lib:**
    ```bash
@@ -71,6 +73,7 @@ Use this skill when:
    ```bash
    nx g @nx/nest:app my-api
    ```
+   **Verify:** `nx show projects` lists `my-api` and `nx run my-api:build` succeeds
 
 ### Task Execution
 
@@ -182,6 +185,7 @@ Use affected commands in CI to only build/test changed projects:
 npx create-nx-workspace@latest my-workspace
 # Select: Integrated Monorepo → React → Integrated monorepo (Nx Cloud)
 ```
+**Verify:** `cd my-workspace && nx show projects` lists the created app
 
 **Expected Result:** Workspace created with:
 - `apps/` directory with React app
@@ -215,6 +219,7 @@ nx g @nx/react:component button --project=shared-ui
 # Import in app (tsconfig paths auto-configured)
 import { Button } from '@my-workspace/shared-ui'
 ```
+**Verify:** `nx run shared-ui:build` completes successfully and `nx graph` shows the dependency link to your app
 
 **Expected Result:** Buildable library at `libs/shared-ui` with proper TypeScript path mapping configured.
 
@@ -234,6 +239,7 @@ nx g @nx/react:remote product-catalog --host=dashboard
 nx run dashboard:serve
 nx run product-catalog:serve
 ```
+**Verify:** Both servers start without errors and `nx graph` shows dashboard → product-catalog remote connection
 
 **Expected Result:** Two separate applications running where product-catalog loads dynamically into dashboard at runtime.
 
@@ -251,6 +257,8 @@ nx show project my-app --json | grep implicitDependencies
 ```
 
 **Solution:** Add explicit dependency configuration or use `namedInputs` in `nx.json` to exclude certain files from triggering builds.
+
+**Verify Fix Worked:** Make a change to the unrelated lib, run `nx affected -t build` — `my-app` should not appear in the affected projects list.
 
 ## Best Practices
 

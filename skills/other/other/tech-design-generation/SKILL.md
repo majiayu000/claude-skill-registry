@@ -47,8 +47,8 @@ This automated scanning ensures the generated design document is grounded in the
 
 Search for matching upstream documents that feed into this design. Determine the operating mode:
 
-- **Upstream mode**: PRD and/or SRS found → design will trace to formal requirement IDs
-- **Idea-first mode**: Idea draft found at `ideas/<feature-name>/draft.md`, no PRD/SRS → §3.5 User Scenarios, §3.6 Acceptance Criteria, and §3.7 Success Metrics are derived from the idea draft's problem statement, MVP scope, and demand validation results
+- **Upstream mode**: PRD and/or SRS found → design will trace to formal requirement IDs. If BOTH an idea draft and a PRD exist, the PRD takes precedence as the source of truth (it is a formalized version of the idea). Read the idea draft only for supplementary context that the PRD may not cover.
+- **Idea-first mode**: Idea draft found at `ideas/<feature-name>/draft.md`, no PRD/SRS → §3.5 User Scenarios, §3.6 Acceptance Criteria, and §3.7 Success Metrics are derived from the idea draft's problem statement, MVP scope, and demand validation results. If the idea draft scenarios are vague or generic, ask clarifying questions to make them concrete enough for §3.5.
 - **Standalone mode**: No upstream documents → these sections are populated from user clarification answers
 
 **Upstream mode search:**
@@ -70,6 +70,7 @@ Present the user with targeted clarifying questions. These questions fill gaps t
 - Security requirements including authentication method and data sensitivity.
 - Deployment strategy including cloud provider, orchestration, and environment topology.
 - Timeline constraints that might affect technical decisions.
+- **Agent consumers**: Are there programmatic consumers for this system (API clients, automation tools, other services integrating programmatically)? If yes, describe their integration patterns (REST API, async events, webhooks, SDK) and key workflows. Agent-facing systems need explicit API contracts, machine-verifiable response schemas, and structured error codes designed for programmatic consumption — not just human-friendly error messages.
 
 Do not proceed to generation until the user has answered enough questions to inform the core design sections.
 

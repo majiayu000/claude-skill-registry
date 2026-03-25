@@ -6,7 +6,7 @@ description: >
   prioritizing features by impact, comparing approaches, analyzing user needs, or planning next work.
   Triggers: "user story", "acceptance criteria", "scope", "prioritize", "compare requirements",
   "user needs", "what to build next".
-argument-hint: stories <feature> | prioritize | scope <feature> | validate | needs | compare <A> vs <B> | next
+argument-hint: "[--deep] stories <feature> | prioritize | scope <feature> | validate | needs | compare <A> vs <B> | next"
 allowed-tools: Read, Glob, Grep, Write
 ---
 
@@ -16,54 +16,7 @@ Analyze features from the user perspective, write user stories, validate scope, 
 
 ## Context Discovery
 
-**Run this protocol before any analysis to understand the project.**
-
-### Priority 1: Explicit Configuration
-
-Read `.arkhe.yaml` from project root. Extract `roadmap:` section:
-
-```yaml
-roadmap:
-  output_dir: arkhe/roadmap
-  context_dir: .arkhe/roadmap
-  status_file: docs/PROJECT-STATUS.md
-```
-
-If `context_dir` exists, read all `.md` files in it — especially `project.md` for personas, domain, and constraints.
-
-### Priority 1b: Johnny Decimal Detection
-
-Check if the project uses Johnny Decimal documentation structure:
-1. Read `.jd-config.json` at project root — if present, use its `root` (default: `docs`) and `areas` map
-2. If no config, glob for `docs/[0-9][0-9]-*/` — if 2+ matches exist, J.D structure is present
-
-If J.D detected, supplement Priority 3 (Dynamic Discovery) globs:
-- Add `{jd_root}/10-*/**/*.md` (product specs, features, roadmap)
-- Add `{jd_root}/00-*/**/*.md` (planning, requirements, setup)
-- Add `{jd_root}/30-*/**/*.md` (research relevant to product)
-- Skip `90-*` (archive) unless searching historical context
-- Keep existing non-J.D paths as fallback
-
-### Priority 2: Project Identity
-
-Read `CLAUDE.md` and `README.md` from the project root to understand:
-- What the project does and who it serves
-- Key constraints and conventions
-- Tech stack and architecture decisions
-
-### Priority 3: Dynamic Discovery
-
-Glob for planning and documentation files:
-
-```
-docs/**/*.md, plan/**/*.md, specs/**/*.md, arkhe/specs/*/spec.md
-```
-
-Scan build files to detect tech stack (Gradle, Maven, npm, Cargo, Go, Python, Ruby, Elixir). See [WORKFLOW.md](WORKFLOW.md) Phase 5 for the complete detection table.
-
-### Priority 4: Codebase Scan
-
-Light scan to understand what's built (modules, routes, models, tests).
+Run the shared context discovery protocol in [CONTEXT_DISCOVERY.md](../../references/CONTEXT_DISCOVERY.md). Execute all phases in order. Store results for use in analysis below.
 
 ## Arguments
 
@@ -96,7 +49,7 @@ See [WORKFLOW.md](WORKFLOW.md) for detailed execution steps and output templates
 
 ## Module Maturity Scale
 
-Use the shared vocabulary: Stub, Domain Started, Service Layer, API Ready, Tested, Production Ready. See [roadmap SKILL.md](../roadmap/SKILL.md) for full definitions.
+Use the shared vocabulary in [MATURITY_SCALE.md](../../references/MATURITY_SCALE.md).
 
 ## Output Rules
 
@@ -123,12 +76,17 @@ Where `{output_dir}` comes from `.arkhe.yaml` (default: `arkhe/roadmap`).
 | `compare <A> vs <B>` | `{a-slug}-vs-{b-slug}.md` |
 | `next` | `{YYYY-MM-DD}-next.md` |
 
+## Deep Mode (`--deep`)
+
+When `$ARGUMENTS` contains `--deep`, run the full multi-agent pipeline instead of conversational analysis. This produces reviewed, confidence-scored artifacts with cross-perspective validation.
+
+See [WORKFLOW.md](WORKFLOW.md) § Deep Pipeline for the 5-phase execution protocol.
+
+**Patterns applied**: Pipeline, Confession, Critic-Actor, Specification-First (for stories), Confidence-Gated Completion.
+
 ## Lane Discipline
 
-- Do NOT produce architecture documents, ADRs, or technical designs — that's the architect's domain.
-- Do NOT write source code, tests, or config files.
-- Do NOT produce compliance analysis.
-- Separate confirmed facts from assumptions. Flag assumptions with `[NEEDS VALIDATION]`.
+See the PM section of [LANE_DISCIPLINE.md](../../references/LANE_DISCIPLINE.md). Stay in your lane.
 
 ## References
 

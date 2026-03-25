@@ -8,23 +8,19 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 ## Overview
 
-Provides comprehensive guidance for working with Turborepo monorepos in TypeScript/JavaScript projects. Turborepo is a high-performance build system written in Rust that optimizes task execution through intelligent caching, parallelization, and dependency graph analysis. This skill covers workspace creation, task configuration, framework integration (Next.js, NestJS, Vite), testing setup, CI/CD pipelines, and performance optimization.
+Provides guidance for Turborepo monorepo management: workspace creation, `turbo.json` task configuration, Next.js/NestJS integration, testing pipelines (Vitest/Jest), CI/CD setup, and build performance optimization.
 
 ## When to Use
 
-Use this skill when:
-- Creating a new Turborepo workspace or initializing in an existing project
-- Configuring `turbo.json` tasks with proper dependencies and outputs
-- Setting up Next.js or NestJS applications in a monorepo
-- Configuring Vitest or Jest testing pipelines
-- Implementing CI/CD workflows (GitHub Actions, CircleCI, GitLab CI)
-- Setting up remote caching or Vercel Remote Cache
-- Optimizing build times and cache hit ratios
-- Managing package configurations for specific apps/libs
-- Debugging task dependency issues
-- Migrating from other monorepo tools to Turborepo
-
-**Trigger phrases:** "create Turborepo workspace", "Turborepo monorepo", "turbo.json config", "Turborepo Next.js", "Turborepo NestJS", "Turborepo CI/CD", "Vitest Turborepo"
+- Create or initialize Turborepo workspaces
+- Configure `turbo.json` tasks with dependencies and outputs
+- Set up Next.js/NestJS apps in monorepo structure
+- Configure Vitest/Jest test pipelines
+- Build CI/CD workflows (GitHub Actions, GitLab CI)
+- Implement remote caching with Vercel Remote Cache
+- Optimize build times and cache hit ratios
+- Debug task dependency or cache issues
+- Migrate from other monorepo tools to Turborepo
 
 ## Instructions
 
@@ -32,134 +28,66 @@ Use this skill when:
 
 1. **Create a new workspace:**
    ```bash
-   # Using pnpm (recommended)
    pnpm create turbo@latest my-workspace
-
-   # Using npm
-   npm create turbo@latest my-workspace
-
-   # Using yarn
-   yarn create turbo my-workspace
+   cd my-workspace
    ```
 
-2. **Initialize in an existing project:**
+2. **Initialize in existing project:**
    ```bash
    pnpm add -D -w turbo
    ```
 
-3. **Create turbo.json in root:**
+3. **Create turbo.json in root** (minimal config):
    ```json
    {
      "$schema": "https://turborepo.dev/schema.json",
      "pipeline": {
-       "build": {
-         "dependsOn": ["^build"],
-         "outputs": ["dist/**", ".next/**"]
-       },
-       "lint": {
-         "outputs": []
-       },
-       "test": {
-         "dependsOn": ["build"],
-         "outputs": ["coverage/**"]
-       }
+       "build": { "dependsOn": ["^build"], "outputs": ["dist/**", ".next/**"] },
+       "lint": { "outputs": [] },
+       "test": { "dependsOn": ["build"], "outputs": ["coverage/**"] }
      }
    }
    ```
 
 4. **Add scripts to root package.json:**
    ```json
-   {
-     "scripts": {
-       "build": "turbo run build",
-       "dev": "turbo run dev",
-       "lint": "turbo run lint",
-       "test": "turbo run test",
-       "clean": "turbo run clean"
-     }
-   }
+   { "scripts": { "build": "turbo run build", "dev": "turbo run dev", "lint": "turbo run lint", "test": "turbo run test", "clean": "turbo run clean" } }
+   ```
+
+5. **Validate task graph before CI:**
+   ```bash
+   turbo run build --dry-run --filter=...  # Verify task execution order
    ```
 
 ### Task Configuration
 
-1. **Configure task dependencies:**
+1. **Configure tasks** in `turbo.json`:
    ```json
-   {
-     "pipeline": {
-       "build": {
-         "dependsOn": ["^build"],
-         "outputs": ["dist/**"]
-       },
-       "test": {
-         "dependsOn": ["build"],
-         "outputs": ["coverage/**"]
-       },
-       "lint": {
-         "outputs": []
-       }
-     }
-   }
+   { "pipeline": { "build": { "dependsOn": ["^build"], "outputs": ["dist/**"] }, "test": { "dependsOn": ["build"], "outputs": ["coverage/**"] }, "lint": { "outputs": [] } } }
    ```
 
-2. **Run tasks across packages:**
+2. **Run tasks:**
    ```bash
-   # Run task for all packages
-   turbo run build
-
-   # Run multiple tasks
-   turbo run lint test build
-
-   # Run for specific package
-   turbo run build --filter=web
+   turbo run build                      # All packages
+   turbo run lint test build           # Multiple tasks
+   turbo run build --filter=web       # Specific package
    ```
 
-3. **Use transit nodes for parallel type checking:**
+3. **Parallel type checking** (use transit nodes to avoid cache issues):
    ```json
-   {
-     "pipeline": {
-       "transit": {
-         "dependsOn": ["^transit"]
-       },
-       "typecheck": {
-         "dependsOn": ["transit"],
-         "outputs": []
-       }
-     }
-   }
+   { "pipeline": { "transit": { "dependsOn": ["^transit"] }, "typecheck": { "dependsOn": ["transit"] } } }
+   ```
+
+4. **Validate before committing:**
+   ```bash
+   turbo run build --dry-run  # Check task order and affected packages
    ```
 
 ### Framework Integration
 
-1. **Next.js app configuration:**
-   ```json
-   {
-     "pipeline": {
-       "build": {
-         "dependsOn": ["^build"],
-         "outputs": [".next/**", "!.next/cache/**"],
-         "env": ["NEXT_PUBLIC_*"]
-       }
-     }
-   }
-   ```
-   See [references/nextjs-config.md](references/nextjs-config.md) for complete Next.js setup.
+**Next.js:** outputs `".next/**"` and env `["NEXT_PUBLIC_*"]` - See [references/nextjs-config.md](references/nextjs-config.md)
 
-2. **NestJS API configuration:**
-   ```json
-   {
-     "pipeline": {
-       "build": {
-         "dependsOn": ["^build"],
-         "outputs": ["dist/**"]
-       },
-       "start:dev": {
-         "cache": false,
-         "persistent": true
-       }
-     }
-   }
-   ```
-   See [references/nestjs-config.md](references/nestjs-config.md) for complete NestJS setup.
+**NestJS:** outputs `"dist/**"`, dev tasks with `cache: false, persistent: true` - See [references/nestjs-config.md](references/nestjs-config.md)
 
 ### Testing Setup
 
@@ -202,16 +130,24 @@ Use this skill when:
 
 ### CI/CD Setup
 
-1. **GitHub Actions basic workflow:**
+1. **GitHub Actions with validation checkpoints:**
    ```yaml
    - name: Install dependencies
      run: pnpm install
 
+   - name: Validate affected packages (dry-run)
+     run: pnpm turbo run build --filter=[HEAD^] --dry-run
+     # VALIDATE: Review output to confirm only expected packages will build
+
    - name: Run tests
      run: pnpm run test --filter=[HEAD^]
 
-   - name: Build
+   - name: Build affected packages
      run: pnpm run build --filter=[HEAD^]
+
+   - name: Verify cache hits
+     run: pnpm turbo run build --filter=[HEAD^] --dry-run | grep "Cache"
+     # VALIDATE: Confirm cache hits for unchanged packages
    ```
 
 2. **Remote cache setup:**
@@ -282,21 +218,6 @@ Use this skill when:
 - **Build tasks** - `dependsOn: ["^build"]`: build, compile
 - **Test tasks** - `dependsOn: ["build"]`: test, e2e
 - **Dev tasks** - `cache: false, persistent: true`: dev, watch
-
-### Workspace Structure
-
-```
-my-workspace/
-├── apps/
-│   ├── web/           # Next.js app
-│   └── api/           # NestJS backend
-├── packages/
-│   ├── ui/            # React component library
-│   └── config/        # Shared configs
-├── turbo.json
-├── package.json
-└── pnpm-workspace.yaml
-```
 
 ## Common Issues
 

@@ -25,9 +25,10 @@ Determine whether to run a full analysis or incremental update.
    ```bash
    git rev-parse HEAD
    ```
-3. Create the intermediate output directory:
+3. Create the intermediate and temp output directories:
    ```bash
    mkdir -p $PROJECT_ROOT/.understand-anything/intermediate
+   mkdir -p $PROJECT_ROOT/.understand-anything/tmp
    ```
 4. Check if `$PROJECT_ROOT/.understand-anything/knowledge-graph.json` exists. If it does, read it.
 5. Check if `$PROJECT_ROOT/.understand-anything/meta.json` exists. If it does, read it to get `gitCommitHash`.
@@ -54,7 +55,7 @@ Determine whether to run a full analysis or incremental update.
      find $PROJECT_ROOT -maxdepth 2 -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/dist/*' | head -100
      ```
      Store as `$DIR_TREE`.
-   - Detect the project entry point by checking for common patterns: `src/index.ts`, `src/main.ts`, `src/App.tsx`, `main.py`, `main.go`, `src/main.rs`, `index.js`. Store first match as `$ENTRY_POINT`.
+   - Detect the project entry point by checking for common patterns (in order): `src/index.ts`, `src/main.ts`, `src/App.tsx`, `index.js`, `main.py`, `manage.py`, `app.py`, `wsgi.py`, `asgi.py`, `run.py`, `__main__.py`, `main.go`, `cmd/*/main.go`, `src/main.rs`, `src/lib.rs`, `src/main/java/**/Application.java`, `Program.cs`, `config.ru`, `index.php`. Store first match as `$ENTRY_POINT`.
 
 ---
 
@@ -98,7 +99,14 @@ After the subagent completes, read `$PROJECT_ROOT/.understand-anything/intermedi
 
 Batch the file list from Phase 1 into groups of **5-10 files each** (aim for balanced batch sizes).
 
-For each batch, dispatch a subagent using the prompt template at `./file-analyzer-prompt.md`. Run up to **3 subagents concurrently** using parallel dispatch. Read the template once, then for each batch pass the full template content as the subagent's prompt, appending the following additional context:
+For each batch, dispatch a subagent using the prompt template at `./file-analyzer-prompt.md`. Run up to **3 subagents concurrently** using parallel dispatch.
+
+**Build the combined prompt template:**
+1. Read the base template at `./file-analyzer-prompt.md`.
+2. **Language context injection:** For each language detected in Phase 1 (e.g., `python`), read the file at `./languages/<language-id>.md` (e.g., `./languages/python.md`) and append its content after the base template under a `## Language Context` header. If the file does not exist for a detected language, skip it silently and continue. These files are in the `languages/` subdirectory next to this SKILL.md file. Use `ls ./languages/` to discover available language files if needed.
+3. **Framework addendum injection:** For each framework detected in Phase 1 (e.g., `Django`), read the file at `./frameworks/<framework-id-lowercase>.md` (e.g., `./frameworks/django.md`) and append its full content after the language context. If the file does not exist for a detected framework, skip it silently and continue. These files are in the `frameworks/` subdirectory next to this SKILL.md file. Use `ls ./frameworks/` to discover available framework files if needed.
+
+Then for each batch pass the combined template content as the subagent's prompt, appending the following additional context:
 
 > **Additional context from main session:**
 >
@@ -106,13 +114,7 @@ For each batch, dispatch a subagent using the prompt template at `./file-analyze
 > Frameworks detected: `<frameworks from Phase 1>`
 > Languages: `<languages from Phase 1>`
 >
-> Framework-specific guidance:
-> - If React/Next.js: files in `app/` or `pages/` are routes, `components/` are UI, `lib/` or `utils/` are utilities
-> - If Express/Fastify: files in `routes/` are API endpoints, `middleware/` is middleware, `models/` or `db/` is data
-> - If Python Django: `views.py` are controllers, `models.py` is data, `urls.py` is routing, `templates/` is UI
-> - If Go: `cmd/` is entry points, `internal/` is private packages, `pkg/` is public packages
->
-> Use this context to produce more accurate summaries and better classify file roles.
+> Use the language context and framework addendums (appended above) to produce more accurate summaries and better classify file roles.
 
 Fill in batch-specific parameters below and dispatch:
 
@@ -158,7 +160,12 @@ Merge all file-analyzer results into a single set of nodes and edges. Then perfo
 
 ## Phase 4 — ARCHITECTURE
 
-Dispatch a subagent using the prompt template at `./architecture-analyzer-prompt.md`. Read the template file and pass the full content as the subagent's prompt, appending the following additional context:
+**Build the combined prompt template:**
+1. Read the base template at `./architecture-analyzer-prompt.md`.
+2. **Language context injection:** For each language detected in Phase 1 (e.g., `python`), read the file at `./languages/<language-id>.md` (e.g., `./languages/python.md`) and append its content after the base template under a `## Language Context` header. If the file does not exist for a detected language, skip it silently and continue. These files are in the `languages/` subdirectory next to this SKILL.md file.
+3. **Framework addendum injection:** For each framework detected in Phase 1 (e.g., `Django`), read the file at `./frameworks/<framework-id-lowercase>.md` (e.g., `./frameworks/django.md`) and append its full content after the language context. If the file does not exist for a detected framework, skip it silently and continue. These files are in the `frameworks/` subdirectory next to this SKILL.md file.
+
+Pass the combined content as the subagent's prompt, appending the following additional context:
 
 > **Additional context from main session:**
 >
@@ -169,13 +176,7 @@ Dispatch a subagent using the prompt template at `./architecture-analyzer-prompt
 > $DIR_TREE
 > ```
 >
-> Framework-specific layer hints:
-> - If React/Next.js: `app/` or `pages/` → UI Layer, `api/` → API Layer, `lib/` → Service Layer, `components/` → UI Layer
-> - If Express: `routes/` → API Layer, `controllers/` → Service Layer, `models/` → Data Layer, `middleware/` → Middleware Layer
-> - If Python Django: `views/` → API Layer, `models/` → Data Layer, `templates/` → UI Layer, `management/` → CLI Layer
-> - If Go: `cmd/` → Entry Points, `internal/` → Service Layer, `pkg/` → Shared Library, `api/` → API Layer
->
-> Use the directory tree and framework hints to inform layer assignments. Directory structure is strong evidence for layer boundaries.
+> Use the directory tree, language context, and framework addendums (appended above) to inform layer assignments. Directory structure is strong evidence for layer boundaries.
 
 Pass these parameters in the dispatch prompt:
 
@@ -379,6 +380,7 @@ Pass these parameters in the dispatch prompt:
 3. Clean up intermediate files:
    ```bash
    rm -rf $PROJECT_ROOT/.understand-anything/intermediate
+   rm -rf $PROJECT_ROOT/.understand-anything/tmp
    ```
 
 4. Report a summary to the user containing:

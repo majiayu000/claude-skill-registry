@@ -19,13 +19,11 @@ Both approaches support API Gateway and ALB integration with production-ready co
 
 ## When to Use
 
-Use this skill when:
-- Creating new Lambda functions in Java
-- Migrating existing Java applications to Lambda
-- Optimizing cold start performance for Java Lambda
-- Choosing between framework-based and minimal Java approaches
+- Deploying Java functions to AWS Lambda
+- Optimizing cold starts below 1 second
+- Choosing between Micronaut and Raw Java approaches
 - Configuring API Gateway or ALB integration
-- Setting up deployment pipelines for Java Lambda
+- Setting up CI/CD pipelines for Java Lambda
 
 ## Instructions
 
@@ -36,20 +34,18 @@ Use this skill when:
 | Micronaut | < 1s | Complex apps, DI needed, enterprise | Medium |
 | Raw Java | < 500ms | Simple handlers, minimal overhead | Low |
 
+**Validate**: Confirm the approach fits your use case before proceeding.
+
 ### 2. Project Structure
 
 ```
 my-lambda-function/
 ├── build.gradle (or pom.xml)
-├── src/
-│   └── main/
-│       ├── java/
-│       │   └── com/example/
-│       │       └── Handler.java
-│       └── resources/
-│           └── application.yml (Micronaut only)
+├── src/main/java/com/example/Handler.java
 └── serverless.yml (or template.yaml)
 ```
+
+**Validate**: Verify project structure matches the template.
 
 ### 3. Implementation Examples
 
@@ -80,7 +76,6 @@ public class MyFunction implements Function<APIGatewayProxyRequestEvent, APIGate
 ```java
 public class MyHandler implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
 
-    // Singleton pattern for warm invocations
     private static final MyService service = new MyService();
 
     @Override
@@ -92,29 +87,19 @@ public class MyHandler implements RequestHandler<APIGatewayProxyRequestEvent, AP
 }
 ```
 
-## Core Concepts
+**Validate**: Run `sam local invoke` to verify handler works before deployment.
 
-### Cold Start Optimization
-
-Cold start time depends on initialization code. Key strategies:
-
-1. **Lazy Initialization** - Defer heavy setup from constructor
-2. **Singleton Pattern** - Cache initialized services as static fields
-3. **Minimal Dependencies** - Reduce JAR size by excluding unused libraries
-4. **AOT Compilation** - Micronaut's ahead-of-time compilation eliminates reflection
+## Core Patterns
 
 ### Connection Management
 
 ```java
-// GOOD: Initialize once, reuse across invocations
+// Initialize once, reuse across invocations
 private static final DynamoDbClient dynamoDb = DynamoDbClient.builder()
     .region(Region.US_EAST_1)
     .build();
 
-// AVOID: Creating clients in handler method
-public APIGatewayProxyResponseEvent handleRequest(...) {
-    DynamoDbClient client = DynamoDbClient.create(); // Slow on every invocation
-}
+// Avoid: Creating clients in handler (slow on every invocation)
 ```
 
 ### Error Handling
@@ -123,8 +108,7 @@ public APIGatewayProxyResponseEvent handleRequest(...) {
 @Override
 public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent request, Context context) {
     try {
-        // Business logic
-        return successResponse(result);
+        return successResponse(process(request));
     } catch (ValidationException e) {
         return errorResponse(400, e.getMessage());
     } catch (Exception e) {
@@ -136,23 +120,20 @@ public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent re
 
 ## Best Practices
 
-### Memory and Timeout Configuration
+### Configuration
 
 - **Memory**: Start with 512MB, adjust based on profiling
-- **Timeout**: Set based on cold start + expected processing time
-  - Micronaut: 10-30 seconds for cold start buffer
-  - Raw Java: 5-10 seconds typically sufficient
+- **Timeout**: Micronaut 10-30s, Raw Java 5-10s
+- **Runtime**: Java 17 or 21 for best performance
 
 ### Packaging
 
 - Use Gradle Shadow Plugin or Maven Shade Plugin
 - Exclude unnecessary dependencies
-- Target Java 17 or 21 for best performance
 
 ### Monitoring
 
 - Enable X-Ray tracing for performance analysis
-- Log initialization time separately from processing time
 - Use CloudWatch Insights to track cold vs warm starts
 
 ## Deployment Options
@@ -161,16 +142,13 @@ public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent re
 
 ```yaml
 service: my-java-lambda
-
 provider:
   name: aws
   runtime: java21
   memorySize: 512
   timeout: 10
-
 package:
   artifact: build/libs/function.jar
-
 functions:
   api:
     handler: com.example.Handler
@@ -180,12 +158,13 @@ functions:
           method: ANY
 ```
 
+**Validate**: Run `serverless deploy` with `--stage dev` first.
+
 ### AWS SAM
 
 ```yaml
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-
 Resources:
   MyFunction:
     Type: AWS::Serverless::Function
@@ -203,16 +182,11 @@ Resources:
             Method: ANY
 ```
 
+**Validate**: Run `sam validate` before deploying.
+
 ## Constraints and Warnings
 
-### Lambda Limits
-
-- **Deployment package**: 250MB unzipped maximum
-- **Memory**: 128MB to 10GB
-- **Timeout**: 15 minutes maximum
-- **Concurrent executions**: 1000 default (adjustable)
-
-### Java-Specific Considerations
+### Java-Specific Constraints
 
 - **Reflection**: Minimize use; prefer AOT compilation (Micronaut)
 - **Classpath scanning**: Slows cold start; use explicit configuration
@@ -249,6 +223,7 @@ Create a Java Lambda function using Micronaut to handle user REST API
 3. Implement methods for GET/POST/PUT/DELETE
 4. Configure application.yml with AOT optimizations
 5. Set up packaging with Shadow plugin
+6. **Validate**: Test locally with SAM CLI before deploying
 
 **Output:**
 - Complete project structure
@@ -268,6 +243,7 @@ My Java Lambda has 3 second cold start, how do I optimize it?
 3. Reduce dependencies in build.gradle
 4. Configure optimized JVM options
 5. Consider provisioned concurrency
+6. **Validate**: Measure cold start with CloudWatch metrics after changes
 
 **Output:**
 - Refactored code with singleton pattern

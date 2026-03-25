@@ -1,0 +1,17 @@
+{
+  "name": "organize",
+  "repo": "mcpware/claude-code-organizer",
+  "path": "skills/organize/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mcpware/claude-code-organizer",
+  "dir_name": "organize",
+  "downloaded_at": "2026-03-25T01:32:37.473544Z",
+  "author": "mcpware",
+  "source_url": "https://github.com/mcpware/claude-code-organizer/blob/main/skills/organize/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mcpware/claude-code-organizer/blob/main/skills/organize/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

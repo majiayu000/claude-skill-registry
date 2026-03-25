@@ -8,17 +8,13 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 ## Overview
 
-This skill provides a curated set of best practices for building production-grade NestJS applications. All guidelines are grounded in the [Official NestJS Documentation](https://docs.nestjs.com/) and enforce consistent, maintainable, and scalable patterns.
+Grounded in the [Official NestJS Documentation](https://docs.nestjs.com/), this skill enforces modular architecture, dependency injection scoping, exception filters, DTO validation with `class-validator`, and Drizzle ORM integration patterns.
 
 ## When to Use
 
-- Designing or refactoring NestJS module architecture
-- Implementing dependency injection with custom or scoped providers
-- Creating exception filters and standardizing error responses
-- Validating DTOs with `class-validator` and `ValidationPipe`
-- Integrating Drizzle ORM within NestJS providers
-- Reviewing NestJS code for architectural anti-patterns
-- Onboarding new developers to a NestJS codebase
+- Designing/refactoring NestJS modules or dependency injection
+- Creating exception filters, validating DTOs, or integrating Drizzle ORM
+- Reviewing code for anti-patterns or onboarding to a NestJS codebase
 
 ## Instructions
 
@@ -113,40 +109,34 @@ See `references/db-drizzle-patterns.md` for enforcement rules.
 
 ## Examples
 
-### Example 1: Creating a New Domain Module
+### Example: New Domain Module with Validation
 
-When building a new "Product" feature:
+When building a "Product" feature, follow this workflow:
 
+**1. Create the module with proper encapsulation:**
 ```typescript
 // product/product.module.ts
 @Module({
   imports: [DatabaseModule],
   controllers: [ProductController],
   providers: [ProductService, ProductRepository],
-  exports: [ProductService],
+  exports: [ProductService], // Only export what others need
 })
 export class ProductModule {}
 ```
 
-### Example 2: DTO with Full Validation
-
+**2. Create validated DTOs:**
 ```typescript
 // product/dto/create-product.dto.ts
 import { IsString, IsNumber, IsPositive, MaxLength } from 'class-validator';
 
 export class CreateProductDto {
-  @IsString()
-  @MaxLength(255)
-  readonly name: string;
-
-  @IsNumber()
-  @IsPositive()
-  readonly price: number;
+  @IsString() @MaxLength(255) readonly name: string;
+  @IsNumber() @IsPositive() readonly price: number;
 }
 ```
 
-### Example 3: Service with Proper Error Handling
-
+**3. Service with error handling:**
 ```typescript
 @Injectable()
 export class ProductService {
@@ -154,12 +144,19 @@ export class ProductService {
 
   async findById(id: string): Promise<Product> {
     const product = await this.productRepository.findById(id);
-    if (product === null) {
-      throw new ProductNotFoundException(id);
-    }
+    if (!product) throw new ProductNotFoundException(id);
     return product;
   }
 }
+```
+
+**4. Verify module registration:**
+```bash
+# Check module is imported in AppModule
+grep -r "ProductModule" src/app.module.ts
+
+# Run e2e to confirm exports work
+npx jest --testPathPattern="product"
 ```
 
 ## Constraints and Warnings

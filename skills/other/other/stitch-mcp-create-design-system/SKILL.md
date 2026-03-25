@@ -31,6 +31,9 @@ Creates a new Stitch Design System — a reusable theme configuration that can b
       "theme": {
         "colorMode": "LIGHT",
         "font": "DM_SANS",
+        "headlineFont": "DM_SANS",
+        "bodyFont": "DM_SANS",
+        "labelFont": "DM_SANS",
         "roundness": "ROUND_EIGHT",
         "saturation": 3,
         "customColor": "#6366F1",
@@ -62,7 +65,10 @@ Creates a new Stitch Design System — a reusable theme configuration that can b
 | Field | Type | Values | Description |
 |-------|------|--------|-------------|
 | `colorMode` | enum | `LIGHT`, `DARK` | Base appearance mode |
-| `font` | enum | See font list below | Primary typeface |
+| `font` | enum | See font list below | **Deprecated** — sets all three font roles. Use the specific fields below instead |
+| `headlineFont` | enum | See font list below | Typeface for headings and titles |
+| `bodyFont` | enum | See font list below | Typeface for body text and paragraphs |
+| `labelFont` | enum | See font list below | Typeface for labels, captions, and UI chrome |
 | `roundness` | enum | `ROUND_FOUR`, `ROUND_EIGHT`, `ROUND_TWELVE`, `ROUND_FULL` | Border radius scale |
 | `saturation` | int | 1–4 | Color vibrancy (1 = muted, 4 = vivid) |
 | `customColor` | string | Hex color | Primary brand color |

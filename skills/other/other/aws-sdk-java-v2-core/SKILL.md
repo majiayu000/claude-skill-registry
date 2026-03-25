@@ -19,67 +19,70 @@ Keep `SKILL.md` focused on setup and delivery flow. Use the `references/` files 
 
 ## When to Use
 
-Use this skill when:
-- creating a new AWS SDK for Java 2.x integration in a Java or Spring Boot service
-- choosing between sync clients (`S3Client`, `DynamoDbClient`) and async clients (`S3AsyncClient`, `SqsAsyncClient`)
-- configuring the default credential provider chain, profiles, IAM roles, or web identity auth
-- tuning HTTP connection pooling, timeouts, retries, and observability
-- debugging common startup issues such as missing region, invalid credentials, or resource leaks
-- preparing integration tests with LocalStack, Testcontainers, or real AWS environments
-
-Typical trigger phrases include `aws sdk java v2`, `configure aws client`, `java aws credentials`, `s3 client bean`, `aws sdk timeout`, and `spring boot aws sdk`.
+- Creating or hardening AWS SDK for Java 2.x service clients
+- Wiring Spring Boot beans for AWS integration
+- Debugging auth, region, or credential issues
+- Choosing between sync (`S3Client`, `DynamoDbClient`) and async (`S3AsyncClient`, `SqsAsyncClient`) clients
 
 ## Instructions
 
-### 1. Start with the service client and execution model
+### 1. Select the service client type
 
-Choose the smallest client surface that solves the problem:
-- use synchronous clients for request/response application flows
-- use asynchronous clients when concurrency, streaming, or backpressure matter
-- create one reusable client per service and configuration profile instead of rebuilding clients per request
+- Sync clients (`S3Client`, `DynamoDbClient`) for request/response flows
+- Async clients (`S3AsyncClient`, `SqsAsyncClient`) for concurrency, streaming, or backpressure
+- Reuse one client per service and configuration profile
 
-### 2. Prefer the default credential and region resolution flow
+### 2. Configure credential and region resolution
 
-Default resolution is usually the right starting point:
-- local development: shared AWS config, SSO, or environment variables
+Use `DefaultCredentialsProvider` with environment-aware defaults:
+- local dev: shared AWS config, SSO, or environment variables
 - CI/CD: web identity or injected environment variables
 - AWS runtime: ECS task roles, EKS IRSA, or EC2 instance profiles
 
-Only hardcode or explicitly override the credential provider when there is a real need such as multi-account access, test isolation, or profile switching.
+Override only for multi-account access, test isolation, or profile switching.
 
-### 3. Configure HTTP client, timeouts, and retries explicitly
+**Verify**: Call `StsClient.getCallerIdentity()` at startup to confirm credentials resolve.
 
-Set these values intentionally for production services:
+### 3. Configure HTTP client, timeouts, and retries
+
+Set production values explicitly:
 - API call timeout and attempt timeout
 - connection timeout and max connections or concurrency
 - retry strategy aligned with service quotas and idempotency
-- proxy or TLS settings only when required by the environment
 
-Use Apache for most synchronous clients and Netty for most async clients unless the project already standardizes on something else.
+Use ApacheHttpClient for sync and NettyNioAsyncHttpClient for async.
+
+**Verify**: Confirm timeouts and retry behavior under failure conditions.
 
 ### 4. Wire clients as application-level dependencies
 
-In Spring Boot or modular Java applications:
-- expose clients as beans or factory-managed singletons
-- inject them through constructors
-- keep credential and region selection in configuration, not business services
-- close custom HTTP clients and SDK clients during shutdown if the lifecycle is not managed automatically
+In Spring Boot:
+- expose clients as `@Bean` singletons
+- inject through constructors
+- keep credential and region in configuration files
 
-### 5. Handle failures close to integration boundaries
+**Verify**: Check clients are not created inside hot execution paths.
+
+Close custom HTTP clients and SDK clients during shutdown if lifecycle is not managed automatically.
+
+### 5. Handle failures at integration boundaries
 
 At the boundary layer:
 - catch `SdkException` or service-specific exceptions
 - distinguish retryable failures from auth, quota, and validation failures
-- log request context, but never secrets or raw credentials
-- return application-level errors rather than leaking AWS SDK exceptions through the domain layer
+- log request context, never secrets or raw credentials
 
-### 6. Validate locally before shipping
+### 6. Run integration tests before shipping
 
-Before merging or deploying:
 - verify region and caller identity in the target environment
-- run integration tests against LocalStack, Testcontainers, or a sandbox AWS account
-- confirm timeouts and retry behavior under failure conditions
-- check that clients are reused and not created inside hot execution paths
+- run tests against LocalStack, Testcontainers, or a sandbox account
+- use `@PostConstruct` in Spring Boot configuration to fail fast on startup if credentials are missing
+
+```java
+StsClient stsClient = StsClient.builder().build();
+GetCallerIdentityResponse identity = stsClient.getCallerIdentity();
+// Logs: Successfully authenticated as: {identity.arn()}
+```
 
 ## Examples
 
@@ -106,11 +109,6 @@ public class AwsClientConfiguration {
 }
 ```
 
-Why this works:
-- credentials stay outside application code
-- timeouts are explicit
-- the client is reusable and easy to test
-
 ### Example 2: Async client for high-concurrency workloads
 
 ```java
@@ -126,8 +124,6 @@ SqsAsyncClient sqsAsyncClient = SqsAsyncClient.builder()
         .build())
     .build();
 ```
-
-Use this pattern when you need non-blocking SDK calls and the rest of the application is prepared to consume futures or reactive wrappers.
 
 ## Best Practices
 

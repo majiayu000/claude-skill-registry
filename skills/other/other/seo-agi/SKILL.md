@@ -157,6 +157,7 @@ Google's AI retrieves content in ~500-token (~375 word) chunks. LLMs chunk at ~6
 
 ### Chunk Rules:
 - **Question-Based H2s:** Every H2 must match a real search query or a "Query Fan-Out" question (the logical follow-up an AI will suggest). Use PAA data from research to inform these.
+- **Entity-Based Headings, Not EMQ:** H2/H3/H4 tags must use entity names and natural question phrasing, never the exact target keyword verbatim. Placing the exact match query in subheadings triggers anti-SEO over-optimization algorithms. Use the main entities of the topic instead (e.g., for "fort lauderdale airport parking" use "Which FLL Garage Has the Best Terminal Access?" not "Fort Lauderdale Airport Parking Garages").
 - **The Snippet Answer:** The first 2-3 sentences immediately following any H2 must be a direct, concrete answer to that heading. No preamble. No definitions.
 - **The Contrast Statement:** Within the chunk, include explicit X vs. Y comparisons with numbers (e.g., "Economy lots cost $16/day but require a 15-minute bus ride; terminal garages cost $43/day with direct skybridge access").
 - **Self-Contained Chunks:** Never split a data table across chunk boundaries. Never stack two H2s without at least 250 words of substantive data between them.
@@ -268,8 +269,10 @@ Instead cite specifically:
 
 Use this structure unless the brief explicitly requires something else.
 
-### 1. Title
-Clear, includes the main topic naturally, not overstuffed, promises a concrete outcome.
+### 1. Title + URL
+Title: Clear, includes the main topic naturally, not overstuffed, promises a concrete outcome. The exact match keyword should appear in the title.
+
+URL: Streamline to feature the target keyword with no unnecessary extra words. Adding filler words into the URL hurts rankings. Example: `/airports/fll` not `/airports/fort-lauderdale-fll-airport-parking-guide-2026`.
 
 ### 2. Opening Answer Block (first 100-150 words)
 Answer the main query directly. Explain what makes this page useful or different. Preview the most important distinctions.
@@ -292,6 +295,9 @@ Specific scenarios where this is the wrong choice. At least one line a competito
 ### 8. Conclusion / Next Step
 Direct. Summarize the decision and next action. Do not restate the entire page.
 
+### 9. Interactive Elements (when applicable)
+Where the page type supports it, recommend or include embedded tools: cost calculators, comparison widgets, availability checkers, or survey elements. AI Overviews cannot scrape or replace interactive functionality. These elements defend traffic against AI-generated answers and improve engagement signals (Nav Boost). Not every page needs one, but every comparison or pricing page should consider it.
+
 ---
 
 ## 9. ABSOLUTE WRITING RULES
@@ -309,7 +315,12 @@ Direct. Summarize the decision and next action. Do not restate the entire page.
 - Generic praise repeated across all items in a listicle
 - Keyword stuffing
 - Jump-link TOC patterns that create weak fragment URLs
-- Content that sits outside your core service topical circle (a wildlife recovery site does not need a post on the industrial uses of guano — wide topical circles dilute AI authority signals and confuse intent classification)
+- Content that sits outside your core service topical circle (a wildlife recovery site does not need a post on the industrial uses of guano -- wide topical circles dilute AI authority signals and confuse intent classification)
+- **Multiple H1 tags** -- one H1 per page, always. Multiple H1s are a confirmed structural weakness
+- **Exact match keyword in meta description** -- this is a major over-optimization and spam signal. Meta descriptions should use entity names and value-proposition language, not the verbatim target keyword
+- **Keyword stuffing in image alt text** -- every image needs alt text, but it must be descriptive of the image content, not loaded with target keywords. Stuffed alt text is a negative ranking signal
+- **Duplicate or near-duplicate content** across pages on the same site. Content must be fresh and unique. Duplicate content is a significant vulnerability to scrapers and core updates
+- **Weak internal linking** -- pages need sufficient internal links pointing to them. If a page has far fewer internal links than competitor pages targeting the same keyword, its ranking potential is capped
 
 ### Always Do:
 - Short to medium sentences, concrete nouns, explicit comparisons
@@ -508,9 +519,13 @@ Run before every delivery. If any answer is NO, revise before delivering.
 | 18 | Meta description <155 chars with value prop? | YES/NO |
 | 19 | Content inside site's core topical circle? | YES/NO |
 | 20 | `reddit_test` and `information_gain` in frontmatter? | YES/NO |
-| | **Score: X/20** | |
+| 21 | Single H1 tag only (no multiple H1s)? | YES/NO |
+| 22 | No exact-match keyword in meta description? | YES/NO |
+| 23 | No exact-match keyword stuffed in H2/H3/H4 tags? | YES/NO |
+| 24 | Image alt text descriptive, not keyword-stuffed? | YES/NO |
+| | **Score: X/24** | |
 
-Pages scoring below 16/20 must be revised before delivery. Items marked NO must include a note on what needs to be fixed.
+Pages scoring below 20/24 must be revised before delivery. Items marked NO must include a note on what needs to be fixed.
 
 ---
 

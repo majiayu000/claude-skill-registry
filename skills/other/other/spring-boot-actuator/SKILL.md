@@ -18,81 +18,61 @@ allowed-tools: Read, Write, Bash
 - Trigger: "export metrics to prometheus" – Wire Micrometer registries and tune metric exposure.
 - Trigger: "debug actuator startup" – Inspect condition evaluations and startup metrics when endpoints are missing or slow.
 
+## Quick Start
+```xml
+<!-- Maven -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```
+```gradle
+// Gradle
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+}
+```
+After adding the dependency, verify endpoints respond:
+```bash
+curl http://localhost:8080/actuator/health
+curl http://localhost:8080/actuator/info
+```
+
 ## Instructions
 
-Follow these steps to configure Spring Boot Actuator for production-grade monitoring:
-
 ### 1. Add Actuator Dependency
-
-Include spring-boot-starter-actuator in your build configuration (Maven or Gradle).
+Include `spring-boot-starter-actuator` in your build configuration.
+> **Validate**: Restart the service and confirm `/actuator/health` and `/actuator/info` respond with `200 OK`.
 
 ### 2. Expose Required Endpoints
-
-Configure management.endpoints.web.exposure.include property with the specific endpoints you need. Avoid exposing sensitive endpoints like /env, /heapdump in production.
-
-### 3. Secure Management Traffic
-
-Apply Spring Security to management endpoints using `@`Configuration class with EndpointRequest matcher. Consider using a dedicated management port for additional isolation.
-
-### 4. Configure Health Probes
-
-Enable readiness and liveness probes with management.endpoint.health.probes.enabled=true. Create health groups to aggregate relevant indicators.
-
-### 5. Set Up Metrics Export
-
-Configure Micrometer registry for your monitoring system (Prometheus, OTLP, Wavefront). Add application tags for cross-service correlation.
-
-### 6. Enable Diagnostic Endpoints
-
-Turn on /actuator/startup, /actuator/conditions, and /actuator/httpexchanges for incident response troubleshooting.
-
-### 7. Validate Configuration
-
-Test each endpoint is accessible and returns expected data. Verify health checks integrate with your orchestrator (Kubernetes, Cloud Foundry).
-
-## Quick Start
-1. Add the starter dependency.
-   ```xml
-   <!-- Maven -->
-   <dependency>
-       <groupId>org.springframework.boot</groupId>
-       <artifactId>spring-boot-starter-actuator</artifactId>
-   </dependency>
-   ```
-   ```gradle
-   // Gradle
-   dependencies {
-       implementation "org.springframework.boot:spring-boot-starter-actuator"
-   }
-   ```
-2. Restart the service and verify `/actuator/health` and `/actuator/info` respond with `200 OK`.
-
-## Implementation Workflow
-
-### 1. Expose the required endpoints
 - Set `management.endpoints.web.exposure.include` to the precise list or `"*"` for internal deployments.
 - Adjust `management.endpoints.web.base-path` (e.g., `/management`) when the default `/actuator` conflicts with routing.
 - Review detailed endpoint semantics in `references/endpoint-reference.md`.
+> **Validate**: `curl http://localhost:8080/actuator` returns the list of exposed endpoints.
 
-### 2. Secure management traffic
+### 3. Secure Management Traffic
 - Apply an isolated `SecurityFilterChain` using `EndpointRequest.toAnyEndpoint()` with role-based rules.
 - Combine `management.server.port` with firewall controls or service mesh policies for operator-only access.
 - Keep `/actuator/health/**` publicly accessible only when required; otherwise enforce authentication.
+> **Validate**: Unauthenticated requests to protected endpoints return `401 Unauthorized`.
 
-### 3. Configure health probes
+### 4. Configure Health Probes
 - Enable `management.endpoint.health.probes.enabled=true` for `/health/liveness` and `/health/readiness`.
 - Group indicators via `management.endpoint.health.group.*` to match platform expectations.
-- Implement custom indicators by extending `HealthIndicator` or `ReactiveHealthContributor`; sample implementations live in `references/examples.md#custom-health-indicator`.
+- Implement custom indicators by extending `HealthIndicator` or `ReactiveHealthContributor`; sample implementations in `references/examples.md#custom-health-indicator`.
+> **Validate**: `/actuator/health/readiness` returns `UP` with all mandatory components before promoting to production.
 
-### 4. Publish metrics and traces
+### 5. Publish Metrics and Traces
 - Activate Micrometer exporters (Prometheus, OTLP, Wavefront, StatsD) via `management.metrics.export.*`.
 - Apply `MeterRegistryCustomizer` beans to add `application`, `environment`, and business tags for observability correlation.
 - Surface HTTP request metrics with `server.observation.*` configuration when using Spring Boot 3.2+.
+> **Validate**: Scrape `/actuator/prometheus` and confirm required meters (`http.server.requests`, `jvm.memory.used`) are present.
 
-### 5. Enable diagnostics tooling
+### 6. Enable Diagnostics Tooling
 - Turn on `/actuator/startup` (Spring Boot 3.5+) and `/actuator/conditions` during incident response to inspect auto-configuration decisions.
 - Register an `HttpExchangeRepository` (e.g., `InMemoryHttpExchangeRepository`) before enabling `/actuator/httpexchanges` for request auditing.
 - Consult `references/endpoint-reference.md` for endpoint behaviors and limits.
+> **Validate**: `/actuator/startup` and `/actuator/conditions` return valid JSON payloads.
 
 ## Examples
 

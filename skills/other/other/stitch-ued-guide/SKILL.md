@@ -36,8 +36,59 @@ The most effective Stitch prompts follow this 4-part structure:
 
 | Model | When to use |
 |-------|-------------|
-| `GEMINI_3_PRO` | High-fidelity designs, complex layouts, when quality matters — **recommended default** |
+| `GEMINI_3_1_PRO` | High-fidelity designs, complex layouts, when quality matters — **recommended default** |
 | `GEMINI_3_FLASH` | Fast iteration, wireframes, rapid exploration, when speed matters |
+| `GEMINI_3_PRO` | **Deprecated** — still works but will be removed. Use `GEMINI_3_1_PRO` instead |
+
+## Color variant reference (colorVariant)
+
+Controls how Stitch derives the full color palette from your `primaryColor`:
+
+| colorVariant | Visual effect | Best for |
+|---|---|---|
+| `MONOCHROME` | Single-hue, editorial feel | Luxury, minimal, text-heavy, portfolios |
+| `NEUTRAL` | Subdued, professional | Corporate, enterprise, medical |
+| `TONAL_SPOT` | Balanced accent spots on neutral base | SaaS, productivity, dashboards |
+| `VIBRANT` | Bold, energetic colors | Consumer apps, social, food |
+| `EXPRESSIVE` | Multicolor, dynamic | Creative, gaming, entertainment |
+| `FIDELITY` | Precise brand color matching | Brand-heavy, marketing, landing pages |
+| `CONTENT` | Palette adapts to content | Media, editorial, photo-heavy |
+| `RAINBOW` | Full spectrum | Kids apps, events, playful |
+| `FRUIT_SALAD` | Warm multicolor | Food, lifestyle, wellness |
+
+## Spacing scale reference (spacingScale)
+
+| spacingScale | Effect | Best for |
+|---|---|---|
+| 0 | Minimal spacing — very tight, data-dense | Admin panels, data tables, terminal-style UIs |
+| 1 | Compact — efficient use of space | Dashboards, dense mobile lists, SaaS tools |
+| 2 | Normal — comfortable breathing room | Standard apps, consumer products |
+| 3 | Spacious — generous whitespace | Landing pages, marketing, portfolios, luxury |
+
+## DesignTheme API field reference
+
+Quick reference for all DesignTheme fields returned by `get_project`:
+
+| Field | Type | Description |
+|---|---|---|
+| `colorMode` | LIGHT / DARK | Base theme mode |
+| `customColor` | hex string | Seed color for palette generation |
+| `colorVariant` | enum (9 values) | How palette is derived from seed |
+| `headlineFont` | font enum (28 values) | Display/headline typeface |
+| `bodyFont` | font enum | Body text typeface |
+| `labelFont` | font enum | Labels, captions, metadata typeface |
+| `font` | font enum | **Deprecated** — use headlineFont/bodyFont/labelFont |
+| `roundness` | ROUND_FOUR/EIGHT/TWELVE/FULL | Corner radius preset |
+| `spacingScale` | integer 0-3 | Layout density |
+| `namedColors` | object (40+ tokens) | Full semantic color map (Material 3) |
+| `designMd` | string | Auto-generated design system markdown |
+| `description` | string | Brief aesthetic description |
+| `overridePrimaryColor` | hex | Explicit primary override |
+| `overrideSecondaryColor` | hex | Explicit secondary override |
+| `overrideTertiaryColor` | hex | Explicit tertiary override |
+| `overrideNeutralColor` | hex | Explicit neutral base override |
+| `backgroundLight` | hex | Light mode background |
+| `backgroundDark` | hex | Dark mode background |
 
 ## Layout patterns
 

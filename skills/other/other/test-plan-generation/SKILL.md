@@ -69,6 +69,8 @@ Do not proceed to generation until the user has answered enough questions to fil
 
 Using the answers from Step 3 and the context from Steps 1 and 2, generate the full Test Plan by filling in every applicable section of `references/template.md`. Follow the writing guidelines and standards described in the sections below. Generate all Mermaid diagrams inline. Assign test case IDs, priorities, and types as you go.
 
+**Real DB enforcement gate**: After generating all test cases, scan every test case's `DB Approach` field. Any test case that performs a Create, Read, Update, or Delete operation against the project's own database MUST have `DB Approach: Real DB`. If you find `Mock` for a database-touching test case, rewrite it to use TestContainers or a real test database instance. Mocks are only acceptable for external third-party services the project does not control.
+
 ### Step 5 -- Build Traceability
 
 After generating the Test Plan, construct the Requirements Traceability Matrix (RTM). Map every SRS requirement ID (both functional and non-functional) to one or more test case IDs. Flag any requirements that lack test coverage and any test cases that do not trace back to a stated requirement. The RTM is the primary mechanism for proving that testing is complete and aligned with the specification.

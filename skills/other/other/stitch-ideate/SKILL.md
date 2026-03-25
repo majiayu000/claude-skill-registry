@@ -439,7 +439,7 @@ Each direction needs its own project (to keep designs organized) and its own ful
   - `projectId`: numeric ID only (no `projects/` prefix)
   - `prompt`: the **full PRD text** — product overview, design system, all screen specs, build guide
   - `deviceType`: from PRD (usually `DESKTOP` or `MOBILE`)
-  - `modelId`: `GEMINI_3_PRO` (default for high-fidelity multi-screen generation)
+  - `modelId`: `GEMINI_3_1_PRO` (default for high-fidelity multi-screen generation). Note: `GEMINI_3_PRO` is deprecated — always use `GEMINI_3_1_PRO`.
 
 After generation, hand off to the **orchestrator's Step 5b** (post-generation iteration menu) for edit/variant/convert options.
 

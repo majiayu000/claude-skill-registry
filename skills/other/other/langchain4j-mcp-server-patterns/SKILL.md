@@ -1,6 +1,6 @@
 ---
 name: langchain4j-mcp-server-patterns
-description: Provides LangChain4j patterns for implementing MCP servers, exposing tools, resources, and prompts, and integrating MCP clients with AI services. Use when building a Java MCP server, connecting LangChain4j to external MCP servers, or securing tool exposure for agent workflows.
+description: Provides LangChain4j patterns for implementing MCP (Model Context Protocol) servers, creating Java AI tools, exposing tool calling capabilities, and integrating MCP clients with AI services. Use when building a Java MCP server, implementing tool calling in Java, connecting LangChain4j to external MCP servers, or securing tool exposure for agent workflows.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch
 ---
 

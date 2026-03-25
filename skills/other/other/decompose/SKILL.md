@@ -72,7 +72,7 @@ Based on the interview, determine: **single** or **multi-split**.
 | Single cohesive system with tightly coupled components | Single |
 | Fully specifiable in a few paragraphs | Single |
 | No architectural decisions needed at the boundary level | Single |
-| Too unclear even after interview — need PRD to discover structure | Single |
+| Too unclear even after interview — need PRD to discover structure | Single (suggest running `/spec-forge:prd` first to clarify scope) |
 
 **Good split characteristics:**
 - Cohesive purpose — a clear goal or outcome
@@ -176,7 +176,7 @@ END_MANIFEST -->
 ```
 
 **FEATURE_MANIFEST rules:**
-- Must be at the TOP of the file (before any other content)
+- **CRITICAL**: Must be the VERY FIRST thing in the file — no YAML front-matter, no headings, no blank lines before the `<!-- FEATURE_MANIFEST` comment. The spec-forge chain parser reads from the top and will fail to recognize the manifest if anything precedes it.
 - One sub-feature per line, kebab-case (e.g., `user-auth`, `payment-processing`)
 - Names become directory names under `docs/` — each sub-feature gets `docs/{name}/tech-design.md`
 - This block is machine-parseable; the rest of the file is for humans

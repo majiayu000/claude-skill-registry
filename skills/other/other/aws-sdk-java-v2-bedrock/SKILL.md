@@ -1,39 +1,24 @@
 ---
 name: aws-sdk-java-v2-bedrock
-description: Provides Amazon Bedrock patterns using AWS SDK for Java 2.x. Use when working with foundation models (listing, invoking), text generation, image generation, embeddings, streaming responses, or integrating generative AI with Spring Boot applications.
+description: Provides Amazon Bedrock patterns using AWS SDK for Java 2.x. Invokes foundation models (Claude, Llama, Titan), generates text and images, creates embeddings for RAG, streams real-time responses, and configures Spring Boot integration. Use when asking about Bedrock integration, Java SDK for AI models, AWS generative AI, Claude/Llama invocation, embeddings for RAG, or Spring Boot AI setup.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
 # AWS SDK for Java 2.x - Amazon Bedrock
 
-## When to Use
-
-Use this skill when:
-- Listing and inspecting foundation models on Amazon Bedrock
-- Invoking foundation models for text generation (Claude, Llama, Titan)
-- Generating images with AI models (Stable Diffusion)
-- Creating text embeddings for RAG applications
-- Implementing streaming responses for real-time generation
-- Working with multiple AI providers through unified API
-- Integrating generative AI into Spring Boot applications
-- Building AI-powered chatbots and assistants
-
 ## Overview
 
-Amazon Bedrock provides access to foundation models from leading AI providers through a unified API. This skill covers patterns for working with various models including Claude, Llama, Titan, and Stability Diffusion using AWS SDK for Java 2.x.
+Invokes foundation models through AWS SDK for Java 2.x. Configures clients, builds model-specific JSON payloads, handles streaming responses with error recovery, creates embeddings for RAG, integrates generative AI into Spring Boot applications, and implements exponential backoff for resilience.
 
-## Instructions
+## When to Use
 
-Follow these steps to work with Amazon Bedrock:
-
-1. **Set Up AWS Credentials** - Configure credentials with appropriate Bedrock permissions
-2. **Enable Bedrock Access** - Request access to specific foundation models in the AWS Console
-3. **Add Dependencies** - Include bedrock and bedrockruntime dependencies
-4. **Create Clients** - Instantiate BedrockClient for management and BedrockRuntimeClient for invocation
-5. **List Models** - Query available foundation models and their capabilities
-6. **Invoke Models** - Build proper payloads for each model provider's format
-7. **Handle Streaming** - Implement streaming response handlers for real-time generation
-8. **Integrate with Spring** - Configure beans and services for enterprise applications
+- Invoke Claude, Llama, Titan, or Stable Diffusion for text/image generation
+- Configure BedrockClient and BedrockRuntimeClient instances
+- Build and parse model-specific payloads (Claude, Titan, Llama formats)
+- Stream real-time AI responses with async handlers and error recovery
+- Create embeddings for retrieval-augmented generation
+- Integrate generative AI into Spring Boot microservices
+- Handle throttling with exponential backoff retry logic
 
 ## Quick Start
 
@@ -60,7 +45,7 @@ Follow these steps to work with Amazon Bedrock:
 </dependency>
 ```
 
-### Basic Client Setup
+### Client Setup
 
 ```java
 import software.amazon.awssdk.regions.Region;
@@ -78,26 +63,59 @@ BedrockRuntimeClient bedrockRuntimeClient = BedrockRuntimeClient.builder()
     .build();
 ```
 
-## Core Patterns
+## Instructions
+
+Follow these steps for production-ready Bedrock integration:
+
+1. **Configure AWS Credentials** - Set up IAM roles with Bedrock permissions (avoid access keys)
+2. **Enable Model Access** - Request access to specific foundation models in AWS Console
+3. **Initialize Clients** - Create reusable `BedrockClient` and `BedrockRuntimeClient` instances
+4. **Validate Model Availability** - Test with a simple invocation before production use
+5. **Build Payloads** - Create model-specific JSON payloads with proper format
+6. **Handle Responses** - Parse response structure and extract content
+7. **Implement Streaming** - Use response stream handlers for real-time generation
+8. **Add Error Handling** - Implement retry logic with exponential backoff
+
+**Validation Checkpoint**: Always test with a simple prompt (e.g., "Hello") before production use to verify model access and response parsing.
+
+## Examples
+
+### Text Generation with Claude
+
+```java
+public String generateWithClaude(BedrockRuntimeClient client, String prompt) {
+    JSONObject payload = new JSONObject()
+        .put("anthropic_version", "bedrock-2023-05-31")
+        .put("max_tokens", 1000)
+        .put("messages", new JSONObject[]{
+            new JSONObject().put("role", "user").put("content", prompt)
+        });
+
+    InvokeModelResponse response = client.invokeModel(InvokeModelRequest.builder()
+        .modelId("anthropic.claude-sonnet-4-5-20250929-v1:0")
+        .body(SdkBytes.fromUtf8String(payload.toString()))
+        .build());
+
+    JSONObject responseBody = new JSONObject(response.body().asUtf8String());
+    return responseBody.getJSONArray("content")
+        .getJSONObject(0)
+        .getString("text");
+}
+```
 
 ### Model Discovery
 
 ```java
 import software.amazon.awssdk.services.bedrock.model.*;
-import java.util.List;
 
 public List<FoundationModelSummary> listFoundationModels(BedrockClient bedrockClient) {
     return bedrockClient.listFoundationModels().modelSummaries();
 }
 ```
 
-### Model Invocation
+### Multi-Model Invocation
 
 ```java
-import software.amazon.awssdk.core.SdkBytes;
-import software.amazon.awssdk.services.bedrockruntime.model.*;
-import org.json.JSONObject;
-
 public String invokeModel(BedrockRuntimeClient client, String modelId, String prompt) {
     JSONObject payload = createPayload(modelId, prompt);
 
@@ -132,30 +150,72 @@ private JSONObject createPayload(String modelId, String prompt) {
 }
 ```
 
-### Streaming Responses
+### Streaming Response with Error Handling
 
 ```java
-public void streamResponse(BedrockRuntimeClient client, String modelId, String prompt) {
-    JSONObject payload = createPayload(modelId, prompt);
+public String streamResponseWithRetry(BedrockRuntimeClient client, String modelId, String prompt, int maxRetries) {
+    int attempt = 0;
+    while (attempt < maxRetries) {
+        try {
+            JSONObject payload = createPayload(modelId, prompt);
+            StringBuilder fullResponse = new StringBuilder();
 
-    InvokeModelWithResponseStreamRequest streamRequest =
-        InvokeModelWithResponseStreamRequest.builder()
-            .modelId(modelId)
-            .body(SdkBytes.fromUtf8String(payload.toString()))
-            .build();
+            InvokeModelWithResponseStreamRequest request = InvokeModelWithResponseStreamRequest.builder()
+                .modelId(modelId)
+                .body(SdkBytes.fromUtf8String(payload.toString()))
+                .build();
 
-    client.invokeModelWithResponseStream(streamRequest,
-        InvokeModelWithResponseStreamResponseHandler.builder()
-            .onEventStream(stream -> {
-                stream.forEach(event -> {
-                    if (event instanceof PayloadPart) {
-                        PayloadPart payloadPart = (PayloadPart) event;
-                        String chunk = payloadPart.bytes().asUtf8String();
-                        processChunk(modelId, chunk);
-                    }
-                });
-            })
-            .build());
+            client.invokeModelWithResponseStream(request,
+                InvokeModelWithResponseStreamResponseHandler.builder()
+                    .onEventStream(stream -> stream.forEach(event -> {
+                        if (event instanceof PayloadPart) {
+                            String chunk = ((PayloadPart) event).bytes().asUtf8String();
+                            fullResponse.append(chunk);
+                        }
+                    }))
+                    .onError(e -> System.err.println("Stream error: " + e.getMessage()))
+                    .build());
+
+            return fullResponse.toString();
+        } catch (Exception e) {
+            attempt++;
+            if (attempt >= maxRetries) {
+                throw new RuntimeException("Stream failed after " + maxRetries + " attempts", e);
+            }
+            try {
+                Thread.sleep((long) Math.pow(2, attempt) * 1000); // Exponential backoff
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+                throw new RuntimeException("Interrupted during retry", ie);
+            }
+        }
+    }
+    throw new RuntimeException("Unexpected error in streaming");
+}
+```
+
+### Exponential Backoff for Throttling
+
+```java
+import software.amazon.awssdk.awscore.exception.AwsServiceException;
+
+public <T> T invokeWithRetry(Supplier<T> invocation, int maxRetries) {
+    int attempt = 0;
+    while (attempt < maxRetries) {
+        try {
+            return invocation.get();
+        } catch (AwsServiceException e) {
+            if (e.statusCode() == 429 || e.statusCode() >= 500) {
+                attempt++;
+                if (attempt >= maxRetries) throw e;
+                long delayMs = Math.min(1000 * (1L << attempt) + (long) (Math.random() * 1000), 30000);
+                Thread.sleep(delayMs);
+            } else {
+                throw e;
+            }
+        }
+    }
+    throw new IllegalStateException("Should not reach here");
 }
 ```
 
@@ -178,7 +238,6 @@ public double[] createEmbeddings(BedrockRuntimeClient client, String text) {
     for (int i = 0; i < embeddingArray.length(); i++) {
         embeddings[i] = embeddingArray.getDouble(i);
     }
-
     return embeddings;
 }
 ```
@@ -208,281 +267,86 @@ public class BedrockConfiguration {
 public class BedrockAIService {
 
     private final BedrockRuntimeClient bedrockRuntimeClient;
+    private final ObjectMapper mapper;
 
     @Value("${bedrock.default-model-id:anthropic.claude-sonnet-4-5-20250929-v1:0}")
     private String defaultModelId;
 
-    public BedrockAIService(BedrockRuntimeClient bedrockRuntimeClient) {
+    public BedrockAIService(BedrockRuntimeClient bedrockRuntimeClient, ObjectMapper mapper) {
         this.bedrockRuntimeClient = bedrockRuntimeClient;
+        this.mapper = mapper;
     }
 
     public String generateText(String prompt) {
-        return generateText(prompt, defaultModelId);
-    }
-
-    public String generateText(String prompt, String modelId) {
-        Map<String, Object> payload = createPayload(modelId, prompt);
-        String payloadJson = new ObjectMapper().writeValueAsString(payload);
+        Map<String, Object> payload = Map.of(
+            "anthropic_version", "bedrock-2023-05-31",
+            "max_tokens", 1000,
+            "messages", List.of(Map.of("role", "user", "content", prompt))
+        );
 
         InvokeModelResponse response = bedrockRuntimeClient.invokeModel(
-            request -> request
-                .modelId(modelId)
-                .body(SdkBytes.fromUtf8String(payloadJson)));
+            InvokeModelRequest.builder()
+                .modelId(defaultModelId)
+                .body(SdkBytes.fromUtf8String(mapper.writeValueAsString(payload)))
+                .build());
 
-        return extractTextFromResponse(modelId, response.body().asUtf8String());
+        return extractText(response.body().asUtf8String());
     }
 }
 ```
 
-## Basic Usage Example
-
-```java
-BedrockRuntimeClient client = BedrockRuntimeClient.builder()
-    .region(Region.US_EAST_1)
-    .build();
-
-String prompt = "Explain quantum computing in simple terms";
-String response = invokeModel(client, "anthropic.claude-sonnet-4-5-20250929-v1:0", prompt);
-System.out.println(response);
-```
+See [examples directory](references/aws-sdk-examples.md) for comprehensive usage patterns.
 
 ## Best Practices
 
 ### Model Selection
-- **Claude 4.5 Sonnet**: Best for complex reasoning, analysis, and creative tasks
+- **Claude 4.5 Sonnet**: Complex reasoning, analysis, and creative tasks
 - **Claude 4.5 Haiku**: Fast and affordable for real-time applications
-- **Claude 3.7 Sonnet**: Most advanced reasoning capabilities
-- **Llama 3.1**: Latest generation open-source alternative, good for general tasks
+- **Llama 3.1**: Open-source alternative for general tasks
 - **Titan**: AWS native, cost-effective for simple text generation
 
-### Performance Optimization
-- Reuse client instances (don't create new clients for each request)
+### Performance
+- Reuse client instances (avoid creating new clients per request)
 - Use async clients for I/O operations
 - Implement streaming for long responses
 - Cache foundation model lists
 
 ### Security
 - Never log sensitive prompt data
-- Use IAM roles for authentication (never access keys)
-- Implement rate limiting for public applications
+- Use IAM roles for authentication
 - Sanitize user inputs to prevent prompt injection
+- Implement rate limiting for public applications
 
-### Error Handling
-- Implement retry logic for throttling (exponential backoff)
-- Handle model-specific validation errors
-- Validate responses before processing
-- Use proper exception handling for different error types
+## Constraints and Warnings
 
-### Cost Optimization
-- Use appropriate max_tokens limits
-- Choose cost-effective models for simple tasks
-- Cache embeddings when possible
-- Monitor usage and set budget alerts
+- **Cost Management**: Bedrock API calls incur charges per token; implement usage monitoring and budget alerts.
+- **Model Access**: Foundation models must be enabled in AWS Console; verify region availability.
+- **Rate Limits**: Implement exponential backoff for throttling; check per-model limits.
+- **Payload Size**: Maximum payload size varies by model; use chunking for large documents.
+- **Streaming Complexity**: Handle partial content and error recovery carefully.
+- **Data Privacy**: Prompts and responses may be logged by AWS; review data policies.
+- **Credentials**: Never embed credentials in code; use IAM roles for EC2/Lambda.
 
 ## Common Model IDs
 
-```java
-// Claude Models
-public static final String CLAUDE_SONNET_4_5 = "anthropic.claude-sonnet-4-5-20250929-v1:0";
-public static final String CLAUDE_HAIKU_4_5 = "anthropic.claude-haiku-4-5-20251001-v1:0";
-public static final String CLAUDE_OPUS_4_1 = "anthropic.claude-opus-4-1-20250805-v1:0";
-public static final String CLAUDE_3_7_SONNET = "anthropic.claude-3-7-sonnet-20250219-v1:0";
-public static final String CLAUDE_OPUS_4 = "anthropic.claude-opus-4-20250514-v1:0";
-public static final String CLAUDE_SONNET_4 = "anthropic.claude-sonnet-4-20250514-v1:0";
-public static final String CLAUDE_3_5_SONNET_V2 = "anthropic.claude-3-5-sonnet-20241022-v2:0";
-public static final String CLAUDE_3_5_HAIKU = "anthropic.claude-3-5-haiku-20241022-v1:0";
-public static final String CLAUDE_3_OPUS = "anthropic.claude-3-opus-20240229-v1:0";
+- Claude Sonnet 4.5: `anthropic.claude-sonnet-4-5-20250929-v1:0`
+- Claude Haiku 4.5: `anthropic.claude-haiku-4-5-20251001-v1:0`
+- Llama 3.1 70B: `meta.llama3-1-70b-instruct-v1:0`
+- Titan Embeddings: `amazon.titan-embed-text-v1`
 
-// Llama Models
-public static final String LLAMA_3_3_70B = "meta.llama3-3-70b-instruct-v1:0";
-public static final String LLAMA_3_2_90B = "meta.llama3-2-90b-instruct-v1:0";
-public static final String LLAMA_3_2_11B = "meta.llama3-2-11b-instruct-v1:0";
-public static final String LLAMA_3_2_3B = "meta.llama3-2-3b-instruct-v1:0";
-public static final String LLAMA_3_2_1B = "meta.llama3-2-1b-instruct-v1:0";
-public static final String LLAMA_4_MAV_17B = "meta.llama4-maverick-17b-instruct-v1:0";
-public static final String LLAMA_4_SCOUT_17B = "meta.llama4-scout-17b-instruct-v1:0";
-public static final String LLAMA_3_1_405B = "meta.llama3-1-405b-instruct-v1:0";
-public static final String LLAMA_3_1_70B = "meta.llama3-1-70b-instruct-v1:0";
-public static final String LLAMA_3_1_8B = "meta.llama3-1-8b-instruct-v1:0";
-public static final String LLAMA_3_70B = "meta.llama3-70b-instruct-v1:0";
-public static final String LLAMA_3_8B = "meta.llama3-8b-instruct-v1:0";
+See [Model Reference](references/model-reference.md) for complete list.
 
-// Amazon Titan Models
-public static final String TITAN_TEXT_EXPRESS = "amazon.titan-text-express-v1";
-public static final String TITAN_TEXT_LITE = "amazon.titan-text-lite-v1";
-public static final String TITAN_EMBEDDINGS = "amazon.titan-embed-text-v1";
-public static final String TITAN_IMAGE_GENERATOR = "amazon.titan-image-generator-v1";
+## References
 
-// Stable Diffusion
-public static final String STABLE_DIFFUSION_XL = "stability.stable-diffusion-xl-v1";
-
-// Mistral AI Models
-public static final String MISTRAL_LARGE_2407 = "mistral.mistral-large-2407-v1:0";
-public static final String MISTRAL_LARGE_2402 = "mistral.mistral-large-2402-v1:0";
-public static final String MISTRAL_SMALL_2402 = "mistral.mistral-small-2402-v1:0";
-public static final String MISTRAL_PIXTRAL_2502 = "mistral.pixtral-large-2502-v1:0";
-public static final String MISTRAL_MIXTRAL_8X7B = "mistral.mixtral-8x7b-instruct-v0:1";
-public static final String MISTRAL_7B = "mistral.mistral-7b-instruct-v0:2";
-
-// Amazon Nova Models
-public static final String NOVA_PREMIER = "amazon.nova-premier-v1:0";
-public static final String NOVA_PRO = "amazon.nova-pro-v1:0";
-public static final String NOVA_LITE = "amazon.nova-lite-v1:0";
-public static final String NOVA_MICRO = "amazon.nova-micro-v1:0";
-public static final String NOVA_CANVAS = "amazon.nova-canvas-v1:0";
-public static final String NOVA_REEL = "amazon.nova-reel-v1:1";
-
-// Other Models
-public static final String COHERE_COMMAND = "cohere.command-text-v14";
-public static final String DEEPSEEK_R1 = "deepseek.r1-v1:0";
-public static final String DEEPSEEK_V3_1 = "deepseek.v3-v1:0";
-```
-
-## Examples
-
-### Example 1: Simple Text Generation with Claude
-
-```java
-public String generateWithClaude(BedrockRuntimeClient client, String prompt) {
-    JSONObject payload = new JSONObject()
-        .put("anthropic_version", "bedrock-2023-05-31")
-        .put("max_tokens", 1000)
-        .put("messages", new JSONObject[]{
-            new JSONObject().put("role", "user").put("content", prompt)
-        });
-
-    InvokeModelResponse response = client.invokeModel(InvokeModelRequest.builder()
-        .modelId("anthropic.claude-sonnet-4-5-20250929-v1:0")
-        .body(SdkBytes.fromUtf8String(payload.toString()))
-        .build());
-
-    JSONObject responseBody = new JSONObject(response.body().asUtf8String());
-    return responseBody.getJSONArray("content")
-        .getJSONObject(0)
-        .getString("text");
-}
-```
-
-### Example 2: Streaming Response
-
-```java
-public void streamResponse(BedrockRuntimeClient client, String modelId, String prompt) {
-    JSONObject payload = new JSONObject()
-        .put("anthropic_version", "bedrock-2023-05-31")
-        .put("max_tokens", 500)
-        .put("messages", new JSONObject[]{
-            new JSONObject().put("role", "user").put("content", prompt)
-        });
-
-    InvokeModelWithResponseStreamRequest request = InvokeModelWithResponseStreamRequest.builder()
-        .modelId(modelId)
-        .body(SdkBytes.fromUtf8String(payload.toString()))
-        .build();
-
-    client.invokeModelWithResponseStream(request,
-        InvokeModelWithResponseStreamResponseHandler.builder()
-            .onEventStream(stream -> stream.forEach(event -> {
-                if (event instanceof PayloadPart) {
-                    String chunk = ((PayloadPart) event).bytes().asUtf8String();
-                    System.out.print(chunk);
-                }
-            }))
-            .build());
-}
-```
-
-### Example 3: Spring Boot Service
-
-```java
-@Service
-public class BedrockService {
-
-    private final BedrockRuntimeClient client;
-    private final ObjectMapper mapper;
-
-    @Value("${bedrock.model:anthropic.claude-sonnet-4-5-20250929-v1:0}")
-    private String modelId;
-
-    public String generate(String prompt) {
-        try {
-            Map<String, Object> payload = Map.of(
-                "anthropic_version", "bedrock-2023-05-31",
-                "max_tokens", 1000,
-                "messages", List.of(Map.of(
-                    "role", "user",
-                    "content", prompt
-                ))
-            );
-
-            InvokeModelResponse response = client.invokeModel(
-                InvokeModelRequest.builder()
-                    .modelId(modelId)
-                    .body(SdkBytes.fromUtf8String(mapper.writeValueAsString(payload)))
-                    .build()
-            );
-
-            return extractText(response.body().asUtf8String());
-        } catch (Exception e) {
-            throw new RuntimeException("Bedrock invocation failed", e);
-        }
-    }
-}
-```
-
-See the [examples directory](references/aws-sdk-examples.md) for comprehensive usage patterns.
-
-## Advanced Topics
-
-See the [Advanced Topics](references/advanced-topics.md) for:
-- Multi-model service patterns
-- Advanced error handling with retries
-- Batch processing strategies
-- Performance optimization techniques
-- Custom response parsing
-
-## Model Reference
-
-See the [Model Reference](references/model-reference.md) for:
-- Detailed model specifications
-- Payload/response formats for each provider
-- Performance characteristics
-- Model selection guidelines
-- Configuration templates
-
-## Testing Strategies
-
-See the [Testing Strategies](references/testing-strategies.md) for:
-- Unit testing with mocked clients
-- Integration testing with LocalStack
-- Performance testing
-- Streaming response testing
-- Test data management
+- [Advanced Topics](references/advanced-topics.md) - Multi-model patterns, advanced error handling
+- [Model Reference](references/model-reference.md) - Detailed specifications, payload formats
+- [Testing Strategies](references/testing-strategies.md) - Unit testing, LocalStack integration
+- [AWS Bedrock User Guide](references/aws-bedrock-user-guide.md)
+- [AWS SDK Examples](references/aws-sdk-examples.md)
+- [Supported Models](references/bedrock-models-supported.md)
 
 ## Related Skills
 
 - `aws-sdk-java-v2-core` - Core AWS SDK patterns
 - `langchain4j-ai-services-patterns` - LangChain4j integration
 - `spring-boot-dependency-injection` - Spring DI patterns
-- `spring-boot-test-patterns` - Spring testing patterns
-
-## Constraints and Warnings
-
-- **Cost Management**: Bedrock API calls incur charges per token; implement usage monitoring and set budget alerts to avoid unexpected costs.
-- **Model Access**: Foundation models must be explicitly enabled in the AWS Console before use; verify model availability in your region.
-- **Rate Limits**: Bedrock has per-model and account-level throttling limits; implement exponential backoff for production workloads.
-- **Region Availability**: Not all models are available in all regions; check model availability before deployment.
-- **Payload Size**: Maximum payload size varies by model; for large documents, consider chunking strategies.
-- **Streaming Complexity**: Streaming responses require careful handling of partial content and error recovery.
-- **Security**: Never embed credentials in code; use IAM roles for EC2/Lambda, environment variables for local development.
-- **Prompt Injection**: Sanitize user inputs to prevent prompt injection attacks that could manipulate model behavior.
-- **Data Privacy**: Prompts and responses may be logged by AWS; review data handling policies for sensitive applications.
-
-## References
-
-- [AWS Bedrock User Guide](references/aws-bedrock-user-guide.md)
-- [AWS SDK for Java 2.x Documentation](references/aws-sdk-java-bedrock-api.md)
-- [Bedrock API Reference](references/aws-bedrock-api-reference.md)
-- [AWS SDK Examples](references/aws-sdk-examples.md)
-- [Official AWS Examples](references/bedrock-code-examples.md)
-- [Supported Models](references/bedrock-models-supported.md)
-- [Runtime Examples](references/bedrock-runtime-code-examples.md)

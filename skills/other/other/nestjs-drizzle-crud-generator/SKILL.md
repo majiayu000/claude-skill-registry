@@ -8,7 +8,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 ## Overview
 
-This skill automatically generates complete CRUD (Create, Read, Update, Delete) modules for NestJS applications using Drizzle ORM. It creates all necessary files following the zaccheroni-monorepo patterns.
+Automatically generates complete CRUD modules for NestJS applications using Drizzle ORM. Creates all necessary files following the zaccheroni-monorepo patterns: feature modules, controllers, services, Zod-validated DTOs, Drizzle schemas, and Jest unit tests.
 
 ## When to Use
 
@@ -20,93 +20,61 @@ This skill automatically generates complete CRUD (Create, Read, Update, Delete) 
 
 ## Instructions
 
-### Step 1: Identify Feature Requirements
+### Step 1: Define Entity Fields
 
-Before generating, gather:
+Gather entity definition:
 - Entity name (e.g., `user`, `product`, `order`)
-- List of fields with types
-- Required fields vs optional fields
+- List of fields with types (see `references/field-types.md` for supported types)
+- Required fields vs optional fields with defaults
 
 ### Step 2: Run the Generator
-
-Execute the generation script:
 
 ```bash
 python scripts/generate_crud.py --feature <name> --fields '<json-array>' --output <path>
 ```
 
-### Step 3: Field Definition Format
+### Step 3: Verify Generated Files
 
-Fields must be defined as JSON array with name, type, and required properties.
+Check that all expected files were created:
 
-### Step 4: Integrate Module
+```bash
+ls -la libs/server/<feature-name>/src/lib/
+```
 
-After generation, integrate the module into your NestJS application.
+Expected structure:
+```
+controllers/
+services/
+dto/
+schema/
+<feature>-feature.module.ts
+```
+
+### Step 4: Run TypeScript Compilation
+
+```bash
+cd libs/server && npx tsc --noEmit
+```
+
+### Step 5: Execute Unit Tests
+
+```bash
+cd libs/server && npm test -- --testPathPattern=<feature-name>
+```
 
 ## Examples
 
-### Example 1: Generate a User module
+### Generate a User module
 
 ```bash
 python scripts/generate_crud.py \
   --feature user \
-  --fields '[{"name": "name", "type": "string", "required": true}, {"name": "email", "type": "string", "required": true}, {"name": "password", "type": "string", "required": true}]' \
+  --fields '[{"name": "name", "type": "string", "required": true}, {"name": "email", "type": "email", "required": true}, {"name": "password", "type": "string", "required": true}]' \
   --output ./libs/server
 ```
 
-### Example 2: Generate a Product module
+### Generate a Product module
 
-```bash
-python scripts/generate_crud.py \
-  --feature product \
-  --fields '[{"name": "title", "type": "string", "required": true}, {"name": "price", "type": "number", "required": true}, {"name": "description", "type": "text", "required": false}, {"name": "inStock", "type": "boolean", "required": false, "default": true}]' \
-  --output ./libs/server
-```
-
-## Quick Start
-
-### Step 1: Identify Feature Requirements
-
-Before generating, gather:
-- Entity name (e.g., `user`, `product`, `order`)
-- List of fields with types
-- Required fields vs optional fields
-
-### Step 2: Run the Generator
-
-Execute the generation script:
-
-```bash
-python scripts/generate_crud.py --feature <name> --fields '<json-array>' --output <path>
-```
-
-### Step 3: Field Definition Format
-
-Fields must be defined as JSON array:
-
-```json
-[
-  {"name": "name", "type": "string", "required": true},
-  {"name": "email", "type": "string", "required": true},
-  {"name": "age", "type": "integer", "required": false},
-  {"name": "isActive", "type": "boolean", "required": false, "default": true},
-  {"name": "price", "type": "number", "required": true},
-  {"name": "description", "type": "text", "required": false},
-  {"name": "uuid", "type": "uuid", "required": false}
-]
-```
-
-### Step 4: Example Commands
-
-Generate a User module:
-```bash
-python scripts/generate_crud.py \
-  --feature user \
-  --fields '[{"name": "name", "type": "string", "required": true}, {"name": "email", "type": "string", "required": true}, {"name": "password", "type": "string", "required": true}]' \
-  --output ./libs/server
-```
-
-Generate a Product module:
 ```bash
 python scripts/generate_crud.py \
   --feature product \
@@ -115,8 +83,6 @@ python scripts/generate_crud.py \
 ```
 
 ## Generated Structure
-
-The generator creates this directory structure:
 
 ```
 libs/server/{feature-name}/
@@ -137,19 +103,6 @@ libs/server/{feature-name}/
 │       └── schema/
 │           └── {feature}.table.ts
 ```
-
-## Supported Field Types
-
-| Type | Drizzle Column | Zod Schema |
-|------|---------------|------------|
-| string | text | z.string() |
-| text | text | z.string() |
-| number | real | z.number() |
-| integer | integer | z.number().int() |
-| boolean | boolean | z.boolean() |
-| date | timestamp | z.date() |
-| uuid | uuid | z.string().uuid() |
-| email | text | z.string().email() |
 
 ## Features
 
@@ -201,19 +154,9 @@ import { {{FeatureName}}FeatureModule } from '@your-org/server-{{feature}}';
 export class AppModule {}
 ```
 
-## Field Options
-
-Each field supports:
-- `name`: Field name
-- `type`: Data type (string, text, number, integer, boolean, date, uuid, email)
-- `required`: Boolean for mandatory fields
-- `default`: Default value for non-required fields
-- `maxLength`: Maximum length for strings
-- `minLength`: Minimum length for strings
-
 ## Dependencies
 
-The generated code requires:
+Required packages:
 - `@nestjs/common`
 - `@nestjs/core`
 - `drizzle-orm`
@@ -223,16 +166,15 @@ The generated code requires:
 
 ## Best Practices
 
-1. **Verify generated code**: Always review generated files before committing
-2. **Run tests**: Execute unit tests to verify the generated code works
-3. **Customize as needed**: Add business logic to services after generation
-4. **Database migrations**: Manually create migrations for the generated schema
-5. **Type safety**: Use the generated types in your application code
+1. **Verify before commit**: Always run `tsc --noEmit` and tests before committing generated code
+2. **Customize services**: Add business logic to generated services after validation
+3. **Database migrations**: Create migrations separately for generated Drizzle schemas
+4. **Use generated types**: Reference generated types in your application code
+5. **Review DTOs**: Adjust Zod validation rules based on your API requirements
 
 ## Constraints and Warnings
 
-- **Soft delete only**: The generated delete method uses soft delete (sets `deletedAt`). Hard deletes require manual modification
-- **No authentication**: Generated code does not include auth guards - add them separately
-- **Basic CRUD only**: Complex queries or business logic must be implemented manually
-- **JSON field escaping**: When passing fields JSON on command line, use single quotes around the JSON array
-
+- **Soft delete only**: Delete operations use soft delete (`deletedAt` timestamp). Hard deletes require manual modification
+- **No authentication**: Generated code does not include auth guards - add them based on your security requirements
+- **Basic CRUD only**: Complex queries, transactions, or business logic must be implemented manually
+- **JSON escaping**: Use single quotes around the JSON array when passing fields on command line

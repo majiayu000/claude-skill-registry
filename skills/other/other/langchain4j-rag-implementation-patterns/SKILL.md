@@ -1,28 +1,21 @@
 ---
 name: langchain4j-rag-implementation-patterns
-description: Provides Retrieval-Augmented Generation (RAG) implementation patterns with LangChain4j. Handles document ingestion pipelines, embedding stores, vector search strategies, and knowledge-enhanced AI applications. Use when creating question-answering systems over document collections or AI assistants with external knowledge bases.
+description: Provides Retrieval-Augmented Generation (RAG) implementation patterns with LangChain4j for Java. Generates document ingestion pipelines, embedding stores, vector search, and semantic search capabilities. Use when building chat-with-documents systems, document Q&A over PDFs or text files, AI assistants with knowledge bases, semantic search over document repositories, or knowledge-enhanced AI applications with source attribution.
 allowed-tools: Read, Write, Bash
 ---
 
 # LangChain4j RAG Implementation Patterns
 
-## When to Use This Skill
-
-Use this skill when:
-- Building knowledge-based AI applications requiring external document access
-- Implementing question-answering systems over large document collections
-- Creating AI assistants with access to company knowledge bases
-- Building semantic search capabilities for document repositories
-- Implementing chat systems that reference specific information sources
-- Creating AI applications requiring source attribution
-- Building domain-specific AI systems with curated knowledge
-- Implementing hybrid search combining vector similarity with traditional search
-- Creating AI applications requiring real-time document updates
-- Building multi-modal RAG systems with text, images, and other content types
-
 ## Overview
 
-Implement complete Retrieval-Augmented Generation (RAG) systems with LangChain4j. RAG enhances language models by providing relevant context from external knowledge sources, improving accuracy and reducing hallucinations.
+Implements RAG systems with LangChain4j: document ingestion pipelines, embedding stores, and vector search for chat-with-documents and knowledge-enhanced AI applications.
+
+## When to Use This Skill
+
+- Building chat-with-documents systems or document Q&A over PDFs, text files, or web pages
+- Creating AI assistants with access to company knowledge bases or external sources
+- Implementing semantic search or hybrid search over document repositories
+- Building domain-specific AI with curated knowledge and source attribution
 
 ## Instructions
 
@@ -46,7 +39,9 @@ Create a new Spring Boot project with required dependencies:
 
 ### Setup Document Ingestion
 
-Configure document loading and processing:
+Configure document loading and processing with validation:
+
+**Validation Checkpoint**: After ingestion, verify embedding count matches segment count and test retrieval with a sample query.
 
 ```java
 @Configuration
@@ -88,6 +83,23 @@ public class DocumentIngestionService {
         List<TextSegment> segments = splitter.split(document);
         List<Embedding> embeddings = embeddingModel.embedAll(segments).content();
         embeddingStore.addAll(embeddings, segments);
+
+        // Validation: verify embedding count matches segments
+        if (embeddings.size() != segments.size()) {
+            throw new IllegalStateException("Embedding count mismatch: expected " + segments.size() + ", got " + embeddings.size());
+        }
+    }
+
+    public boolean validateIngestion(String testQuery) {
+        // Validation: test retrieval with sample query
+        Embedding queryEmbedding = embeddingModel.embed(testQuery).content();
+        List<EmbeddingMatch<TextSegment>> results = embeddingStore.search(
+            EmbeddingSearchRequest.builder()
+                .queryEmbedding(queryEmbedding)
+                .maxResults(1)
+                .build()
+        ).matches();
+        return !results.isEmpty();
     }
 }
 ```
@@ -95,6 +107,8 @@ public class DocumentIngestionService {
 ### Configure Content Retrieval
 
 Setup content retrieval with filtering:
+
+**Validation Checkpoint**: After configuration, test retrieval with a known query to verify embeddings are searchable.
 
 ```java
 @Configuration
@@ -319,6 +333,14 @@ public class HybridSearchService {
 
 ## Troubleshooting
 
+### Validation Failures
+
+**Embedding Count Mismatch**: Thrown when segments != embeddings. Check splitter configuration and model availability.
+
+**Empty Retrieval Results**: Call `validateIngestion(testQuery)` to verify embeddings are searchable. Check if document was ingested successfully.
+
+**Low Retrieval Scores**: Verify minScore threshold (default 0.7) is not too high for your use case. Test with known queries.
+
 ### Common Issues
 
 **Poor Retrieval Results**
@@ -326,6 +348,7 @@ public class HybridSearchService {
 - Verify embedding model compatibility
 - Ensure metadata filters are not too restrictive
 - Consider adding re-ranking step
+- Run validation to confirm embeddings exist
 
 **Slow Performance**
 - Use cached embeddings for frequent queries

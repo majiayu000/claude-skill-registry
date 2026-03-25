@@ -12,25 +12,22 @@ Sage is a WordPress theme framework by Roots that provides modern development pr
 
 ## When to Use
 
-Use this skill when working with WordPress theme development using the Sage (Roots) framework. Specific scenarios include:
-
 - Creating new Sage themes from scratch or from composer templates
 - Setting up Blade templates, layouts, and reusable components
 - Configuring build tools (Bud/Vite) for asset compilation
 - Working with WordPress template hierarchy in Blade format
 - Integrating Advanced Custom Fields (ACF) with Blade templates
-- Debugging theme rendering or asset loading issues
-- Optimizing theme performance and following best practices
+- Debugging theme rendering, asset loading, or build issues
 
 ## Instructions
 
-1. **Theme Setup**: Use `composer create-project roots/sage` to create new themes
-2. **Blade Templates**: Place templates in `resources/views/` following WordPress hierarchy
-3. **Components**: Create reusable components in `resources/views/components/`
-4. **Build**: Run `npm install` and `npm run dev` for development, `npm run build` for production
-5. **ACF Integration**: Use `get_field()` and `have_rows()` directives in Blade templates
-6. **Asset Management**: Configure Bud entry points in `bud.config.js`
-7. **Output Escape**: Always escape output with `{{ }}` or WordPress escape functions
+1. **Set up the environment**: Install PHP 8.0+, Node.js 18+, Composer, and create a new Sage theme with `composer create-project roots/sage`
+2. **Configure build tools**: Run `npm install && composer install`, then configure `bud.config.js` for asset entries and Tailwind
+3. **Create Blade templates**: Place templates in `resources/views/`, using layouts in `layouts/`, components in `components/`
+4. **Wire up WordPress templates**: Map WordPress template hierarchy to Blade files (e.g., `page.blade.php` for page templates)
+5. **Integrate ACF fields**: Use `get_field()` for basic fields, `have_rows()` loops for repeaters and flexible content
+6. **Build and verify**: Run `npm run build`, verify `public/manifest.json` exists, check browser console for asset errors
+7. **Deploy**: Ensure the production build step (`npm run build`) runs during deployment; raw source files cannot be served directly
 
 ## Examples
 
@@ -326,6 +323,12 @@ add_action('init', function() {
 
 ## Troubleshooting
 
+**Build workflow validation** (always run in order):
+1. `npm run build` completes without errors
+2. Verify `public/manifest.json` exists and contains asset entries
+3. Test locally in browser before production push
+4. Check browser console for asset 404 errors
+
 **Build issues**:
 ```bash
 # Clear cache
@@ -335,6 +338,10 @@ npm run clean
 rm -rf node_modules public
 npm install
 npm run build
+
+# Validate build output
+ls -la public/
+cat public/manifest.json | head -20
 ```
 
 **Blade not compiling**: Check `public/manifest.json` exists after build

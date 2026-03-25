@@ -1,575 +1,218 @@
 ---
 name: langchain4j-tool-function-calling-patterns
-description: Provides tool and function calling patterns with LangChain4j. Handles defining tools, function calls, and LLM agent integration. Use when building agentic applications that interact with tools.
+description: "Provides and generates LangChain4j tool and function calling patterns: annotates methods as tools with @Tool, configures tool executors, registers tools with AiServices, validates tool parameters, and handles tool execution errors. Use when building AI agents that call tools, define function specifications, manage tool responses, or integrate external APIs with LLM-driven applications."
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch
 ---
 
 # LangChain4j Tool & Function Calling Patterns
 
-Define tools and enable AI agents to interact with external systems, APIs, and services using LangChain4j's annotation-based and programmatic tool system.
+Provides patterns for annotating methods as tools, configuring tool executors, registering tools with AI services, validating parameters, and handling tool execution errors in LangChain4j applications.
 
 ## Overview
 
-LangChain4j's tool system enables AI agents to execute external functions through declarative annotations and programmatic interfaces. Tools are defined using the `@Tool` annotation and automatically registered with AI services, allowing LLMs to perform actions beyond text generation such as database queries, API calls, and calculations.
+LangChain4j uses the `@Tool` annotation to expose Java methods as callable functions for AI agents. The `AiServices` builder registers tools with a chat model, enabling LLMs to perform actions beyond text generation: database queries, API calls, calculations, and business system integrations. Parameters use `@P` for descriptions that guide the LLM.
 
-## When to Use This Skill
+## When to Use
 
-Use this skill when:
-- Building AI applications that need to interact with external APIs and services
-- Creating AI assistants that can perform actions beyond text generation
-- Implementing AI systems that need access to real-time data (weather, stocks, etc.)
-- Building multi-agent systems where agents can use specialized tools
-- Creating AI applications with database read/write capabilities
-- Implementing AI systems that need to integrate with existing business systems
-- Building context-aware AI applications where tool availability depends on user state
-- Developing production AI applications that require robust error handling and monitoring
+- Building AI agents that call external tools (weather, stocks, database queries)
+- Defining function specifications for LLM tool use (`@Tool`, `@P` annotations)
+- Registering and managing tool sets with `AiServices.builder().tools()`
+- Handling tool execution errors, timeouts, and hallucinated tool names
+- Implementing context-aware tools that inject user state via `@ToolMemoryId`
+- Configuring dynamic tool providers for large or conditional tool sets
 
 ## Instructions
 
-Follow these steps to implement tools with LangChain4j:
+### 1. Annotate Methods with `@Tool`
 
-### 1. Define Tool Methods
-
-Create methods annotated with `@Tool` in a class:
+Define a tool class with methods annotated `@Tool`. Provide a description as the first parameter. Use `@P` for each parameter description.
 
 ```java
 public class WeatherTools {
+    private final WeatherService weatherService;
+
+    public WeatherTools(WeatherService weatherService) {
+        this.weatherService = weatherService;
+    }
+
     @Tool("Get current weather for a city")
     public String getWeather(
-        @P("City name") String city,
-        @P("Temperature unit (celsius or fahrenheit)", required = false) String unit) {
-        // Implementation
+            @P("City name") String city,
+            @P("Temperature unit: celsius or fahrenheit") String unit) {
         return weatherService.getWeather(city, unit);
     }
 }
 ```
 
-### 2. Configure Parameter Descriptions
+**Validate**: Create an instance and confirm the class loads without errors.
 
-Use `@P` annotation for clear parameter descriptions that help the LLM understand how to call the tool:
+### 2. Register Tools with AiServices
 
-```java
-@Tool("Calculate total order amount")
-public double calculateOrderTotal(
-    @P("List of product IDs") List<String> productIds,
-    @P("Customer discount percentage", required = false) Double discount) {
-    // Implementation
-}
-```
-
-### 3. Register Tools with AI Service
-
-Connect tools to an AI service using the AiServices builder:
+Use `AiServices.builder()` to register tool instances with the chat model.
 
 ```java
 MathAssistant assistant = AiServices.builder(MathAssistant.class)
     .chatModel(chatModel)
-    .tools(new Calculator(), new WeatherService())
+    .tools(new Calculator(), new WeatherTools(weatherService))
     .build();
 ```
+
+**Validate**: Call `assistant.chat("What is 2 + 2?")` and verify the LLM responds without throwing.
+
+### 3. Test Tool Invocation End-to-End
+
+Send a prompt that triggers tool usage and verify the tool executes and its result is incorporated.
+
+```java
+String response = assistant.chat("What is the weather in Rome?");
+System.out.println(response);
+```
+
+**Validate**: Check logs for tool invocation and confirm the response uses the tool output.
 
 ### 4. Handle Tool Execution Errors
 
-Implement error handling for tool failures:
+Add error handlers to gracefully manage failures without exposing stack traces.
 
 ```java
 AiServices.builder(Assistant.class)
     .chatModel(chatModel)
     .tools(new ExternalServiceTools())
     .toolExecutionErrorHandler((request, exception) -> {
-        log.error("Tool execution failed: {}", exception.getMessage());
+        logger.error("Tool '{}' failed: {}", request.name(), exception.getMessage());
         return "An error occurred while processing your request";
     })
+    .hallucinatedToolNameStrategy(request ->
+        ToolExecutionResultMessage.from(request,
+            "Error: tool '" + request.name() + "' does not exist"))
+    .toolArgumentsErrorHandler((error, context) ->
+        ToolErrorHandlerResult.text("Invalid arguments: " + error.getMessage()))
     .build();
 ```
 
-### 5. Monitor Tool Usage
+**Validate**: Trigger an error condition and confirm the LLM receives a safe error message.
 
-Track tool calls for debugging and analytics:
+### 5. Optimize for Performance and Scale
 
-```java
-Result<String> result = assistant.chat(question);
-result.toolExecutions().forEach(execution ->
-    log.info("Executed tool: {} in {}ms",
-        execution.request().name(),
-        execution.duration().toMillis())
-);
-```
-
-## Setup and Configuration
-
-### Basic Tool Registration
-
-```java
-// Define tools using @Tool annotation
-public class CalculatorTools {
-    @Tool("Add two numbers")
-    public double add(double a, double b) {
-        return a + b;
-    }
-}
-
-// Register with AiServices builder
-interface MathAssistant {
-    String ask(String question);
-}
-
-MathAssistant assistant = AiServices.builder(MathAssistant.class)
-    .chatModel(chatModel)
-    .tools(new CalculatorTools())
-    .build();
-```
-
-### Builder Configuration Options
-
-```java
-AiServices.builder(AssistantInterface.class)
-
-    // Static tool registration
-    .tools(new Calculator(), new WeatherService())
-
-    // Dynamic tool provider
-    .toolProvider(new DynamicToolProvider())
-
-    // Concurrent execution
-    .executeToolsConcurrently()
-
-    // Error handling
-    .toolExecutionErrorHandler((request, exception) -> {
-        return "Error: " + exception.getMessage();
-    })
-
-    // Memory for context
-    .chatMemoryProvider(userId -> MessageWindowChatMemory.withMaxMessages(20))
-
-    .build();
-```
-
-## Core Patterns
-
-### Basic Tool Definition
-
-Use `@Tool` annotation to define methods as executable tools:
-
-```java
-public class BasicTools {
-
-    @Tool("Add two numbers")
-    public int add(@P("first number") int a, @P("second number") int b) {
-        return a + b;
-    }
-
-    @Tool("Get greeting")
-    public String greet(@P("name to greet") String name) {
-        return "Hello, " + name + "!";
-    }
-}
-```
-
-### Parameter Descriptions and Validation
-
-Provide clear parameter descriptions using `@P` annotation:
-
-```java
-public class WeatherService {
-
-    @Tool("Get current weather conditions")
-    public String getCurrentWeather(
-        @P("City name or coordinates") String location,
-        @P("Temperature unit (celsius, fahrenheit)", required = false) String unit) {
-
-        // Implementation with validation
-        if (location == null || location.trim().isEmpty()) {
-            return "Location is required";
-        }
-
-        return weatherClient.getCurrentWeather(location, unit);
-    }
-}
-```
-
-### Complex Parameter Types
-
-Use Java records and descriptions for complex objects:
-
-```java
-public class OrderService {
-
-    @Description("Customer order information")
-    public record OrderRequest(
-        @Description("Customer ID") String customerId,
-        @Description("List of items") List<OrderItem> items,
-        @JsonProperty(required = false) @Description("Delivery instructions") String instructions
-    ) {}
-
-    @Tool("Create customer order")
-    public String createOrder(OrderRequest order) {
-        return orderService.processOrder(order);
-    }
-}
-```
-
-## Advanced Features
-
-### Memory Context Integration
-
-Access user context using `@ToolMemoryId`:
-
-```java
-public class PersonalizedTools {
-
-    @Tool("Get user preferences")
-    public String getPreferences(
-        @ToolMemoryId String userId,
-        @P("Preference category") String category) {
-
-        return preferenceService.getPreferences(userId, category);
-    }
-}
-```
-
-### Dynamic Tool Provisioning
-
-Create tools that change based on context:
-
-```java
-public class ContextAwareToolProvider implements ToolProvider {
-
-    @Override
-    public ToolProviderResult provideTools(ToolProviderRequest request) {
-        String message = request.userMessage().singleText().toLowerCase();
-        var builder = ToolProviderResult.builder();
-
-        if (message.contains("weather")) {
-            builder.add(weatherToolSpec, weatherExecutor);
-        }
-
-        if (message.contains("calculate")) {
-            builder.add(calcToolSpec, calcExecutor);
-        }
-
-        return builder.build();
-    }
-}
-```
-
-### Immediate Return Tools
-
-Return results immediately without full AI response:
-
-```java
-public class QuickTools {
-
-    @Tool(value = "Get current time", returnBehavior = ReturnBehavior.IMMEDIATE)
-    public String getCurrentTime() {
-        return LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
-    }
-}
-```
-
-## Error Handling
-
-### Tool Error Handling
-
-Handle tool execution errors gracefully:
+Enable concurrent tool execution and set timeouts for long-running tools.
 
 ```java
 AiServices.builder(Assistant.class)
     .chatModel(chatModel)
-    .tools(new ExternalServiceTools())
-    .toolExecutionErrorHandler((request, exception) -> {
-        if (exception instanceof ApiException) {
-            return "Service temporarily unavailable: " + exception.getMessage();
-        }
-        return "An error occurred while processing your request";
-    })
+    .tools(new DbTools(), new HttpTools())
+    .executeToolsConcurrently(Executors.newFixedThreadPool(5))
+    .toolExecutionTimeout(Duration.ofSeconds(30))
     .build();
 ```
 
-### Resilience Patterns
-
-Implement circuit breakers and retries:
-
-```java
-public class ResilientService {
-
-    private final CircuitBreaker circuitBreaker = CircuitBreaker.ofDefaults("external-api");
-
-    @Tool("Get external data")
-    public String getExternalData(@P("Data identifier") String id) {
-        return circuitBreaker.executeSupplier(() -> {
-            return externalApi.getData(id);
-        });
-    }
-}
-```
-
-## Integration Examples
-
-### Multi-Domain Tool Service
-
-```java
-@Service
-public class MultiDomainToolService {
-
-    public String processRequest(String userId, String request, String domain) {
-        String contextualRequest = String.format("[Domain: %s] %s", domain, request);
-
-        Result<String> result = assistant.chat(userId, contextualRequest);
-
-        // Log tool usage
-        result.toolExecutions().forEach(execution ->
-            analyticsService.recordToolUsage(userId, domain, execution.request().name()));
-
-        return result.content();
-    }
-}
-```
-
-### Streaming with Tool Execution
-
-```java
-interface StreamingAssistant {
-    TokenStream chat(String message);
-}
-
-StreamingAssistant assistant = AiServices.builder(StreamingAssistant.class)
-    .streamingChatModel(streamingChatModel)
-    .tools(new Tools())
-    .build();
-
-TokenStream stream = assistant.chat("What's the weather and calculate 15*8?");
-
-stream
-    .onToolExecuted(execution ->
-        System.out.println("Executed: " + execution.request().name()))
-    .onPartialResponse(System.out::print)
-    .onComplete(response -> System.out.println("Complete!"))
-    .start();
-```
-
-## Best Practices
-
-### Tool Design Guidelines
-
-1. **Descriptive Names**: Use clear, actionable tool names
-2. **Parameter Validation**: Validate inputs before processing
-3. **Error Messages**: Provide meaningful error messages
-4. **Return Types**: Use appropriate return types that LLMs can understand
-5. **Performance**: Avoid blocking operations in tools
-
-### Security Considerations
-
-1. **Permission Checks**: Validate user permissions before tool execution
-2. **Input Sanitization**: Sanitize all tool inputs
-3. **Audit Logging**: Log tool usage for security monitoring
-4. **Rate Limiting**: Implement rate limiting for external APIs
-
-### Performance Optimization
-
-1. **Concurrent Execution**: Use `executeToolsConcurrently()` for independent tools
-2. **Caching**: Cache frequently accessed data
-3. **Monitoring**: Monitor tool performance and error rates
-4. **Resource Management**: Handle external service timeouts gracefully
+**Validate**: Run concurrent requests and confirm no thread contention or deadlocks.
 
 ## Examples
 
-### Simple Calculator Tool
+### Calculator Tool with Full Class
 
 ```java
-public class CalculatorTools {
-
-    @Tool("Add two numbers")
-    public double add(@P("First number") double a,
-                      @P("Second number") double b) {
-        return a + b;
-    }
-
-    @Tool("Multiply two numbers")
-    public double multiply(@P("First number") double a,
-                           @P("Second number") double b) {
-        return a * b;
+public class Calculator {
+    @Tool("Perform basic arithmetic")
+    public double calculate(
+            @P("Expression like 2+2 or 10*5") String expression) {
+        // Parse and evaluate expression
+        return eval(expression);
     }
 }
 
-// Usage
-interface MathAssistant {
-    String ask(String question);
-}
-
-MathAssistant assistant = AiServices.builder(MathAssistant.class)
-    .chatModel(chatModel)
-    .tools(new CalculatorTools())
+Assistant assistant = AiServices.builder(Assistant.class)
+    .chatModel(ChatModel.builder()
+        .apiKey(System.getenv("API_KEY"))
+        .model("gpt-4o")
+        .build())
+    .tools(new Calculator())
     .build();
-
-String result = assistant.ask("What is 15 times 7 plus 3?");
 ```
 
-### Database Access Tool
+### Immediate Return Tool (No LLM Response)
 
 ```java
-@Component
-public class DatabaseTools {
-
-    private final CustomerRepository repository;
-
-    @Tool("Get customer information by ID")
-    public Customer getCustomer(@P("Customer ID") Long customerId) {
-        return repository.findById(customerId)
-            .orElseThrow(() -> new IllegalArgumentException("Customer not found"));
-    }
-
-    @Tool("Update customer email address")
-    public String updateEmail(
-        @P("Customer ID") Long customerId,
-        @P("New email address") String newEmail) {
-        Customer customer = repository.findById(customerId)
-            .orElseThrow(() -> new IllegalArgumentException("Customer not found"));
-        customer.setEmail(newEmail);
-        repository.save(customer);
-        return "Email updated successfully";
-    }
-}
-```
-
-### REST API Tool
-
-```java
-@Component
-public class ApiTools {
-
-    private final WebClient webClient;
-
-    @Tool("Get current stock price")
-    public String getStockPrice(@P("Stock symbol") String symbol) {
-        return webClient.get()
-            .uri("/api/stocks/{symbol}", symbol)
-            .retrieve()
-            .bodyToMono(String.class)
-            .block();
-    }
-}
-```
-
-### Context-Aware Tool with Memory ID
-
-```java
-public class UserPreferencesTools {
-
-    @Tool("Get user preferences for a category")
-    public String getPreferences(
-        @ToolMemoryId String userId,
-        @P("Preference category (e.g., theme, language)") String category) {
-        return preferencesService.getPreferences(userId, category);
-    }
-
-    @Tool("Set user preference")
-    public String setPreference(
-        @ToolMemoryId String userId,
-        @P("Preference category") String category,
-        @P("Preference value") String value) {
-        preferencesService.setPreference(userId, category, value);
-        return "Preference saved";
-    }
+@Tool(value = "Send email notification", returnBehavior = ReturnBehavior.IMMEDIATELY)
+public void sendEmail(@P("Recipient email address") String to,
+                     @P("Email subject") String subject,
+                     @P("Email body") String body) {
+    emailService.send(to, subject, body);
 }
 ```
 
 ### Dynamic Tool Provider
 
 ```java
-public class DynamicToolProvider implements ToolProvider {
-
-    private final Map<String, Object> availableTools = new HashMap<>();
-
-    public void registerTool(String name, ToolSpecification spec, ToolExecutor executor) {
-        availableTools.put(name, new ToolWithSpec(spec, executor));
+ToolProvider provider = request -> {
+    if (request.userContext().contains("admin")) {
+        return List.of(new AdminTools());
     }
+    return List.of(new UserTools());
+};
 
-    @Override
-    public ToolProviderResult provideTools(ToolProviderRequest request) {
-        var builder = ToolProviderResult.builder();
-        String message = request.userMessage().singleText().toLowerCase();
-
-        // Dynamically filter tools based on user message
-        if (message.contains("weather")) {
-            builder.add(weatherToolSpec, weatherExecutor);
-        }
-        if (message.contains("calculate") || message.contains("math")) {
-            builder.add(calculatorToolSpec, calculatorExecutor);
-        }
-
-        return builder.build();
-    }
-}
+AiServices.builder(Assistant.class)
+    .chatModel(chatModel)
+    .toolProvider(provider)
+    .build();
 ```
 
-## Reference Documentation
+## Best Practices
 
-For detailed API reference, examples, and advanced patterns, see:
-
-- [API Reference](./references/references.md) - Complete API documentation
-- [Implementation Patterns](./references/implementation-patterns.md) - Advanced implementation examples
-- [Examples](./references/examples.md) - Practical usage examples
+- **Descriptive `@Tool` names**: Use imperative verbs ("Get", "Send", "Calculate") with clear scope
+- **Precise `@P` descriptions**: Include format, constraints, and valid values — vague descriptions cause incorrect LLM calls
+- **Safe error handling**: Never expose stack traces; return user-friendly error strings
+- **Timeout configuration**: Always set `.toolExecutionTimeout()` for external service calls
+- **Concurrent execution**: Enable `.executeToolsConcurrently()` when tools are independent
+- **Input validation**: Validate parameters inside the tool method; return descriptive errors
+- **Permission checks**: Perform authorization inside the tool, not at the AI service level
+- **Audit logging**: Log tool name, parameters, and execution result for debugging and compliance
 
 ## Common Issues and Solutions
 
-### Tool Not Found
+| Issue | Solution |
+|-------|----------|
+| LLM calls non-existent tool | Add `.hallucinatedToolNameStrategy()` returning a safe error message |
+| Tools receive wrong parameters | Refine `@P` descriptions; add `.toolArgumentsErrorHandler()` |
+| Tool execution hangs | Set `.toolExecutionTimeout(Duration.ofSeconds(N))` |
+| Rate limit errors from external API | Add retry logic or rate limiter inside the tool method |
+| LLM ignores tool output | Ensure the tool returns a string the LLM can interpret |
 
-**Problem**: LLM calls tools that don't exist
+See [references/error-handling.md](references/error-handling.md) for resilience patterns and [references/core-patterns.md](references/core-patterns.md) for parameter and return type details.
 
-**Solution**: Implement hallucination handler:
+## Quick Reference
 
-```java
-.hallucinatedToolNameStrategy(request -> {
-    return ToolExecutionResultMessage.from(request,
-        "Error: Tool '" + request.name() + "' does not exist");
-})
-```
-
-### Parameter Validation Errors
-
-**Problem**: Tools receive invalid parameters
-
-**Solution**: Add input validation and error handlers:
-
-```java
-.toolArgumentsErrorHandler((error, context) -> {
-    return ToolErrorHandlerResult.text("Invalid arguments: " + error.getMessage());
-})
-```
-
-### Performance Issues
-
-**Problem**: Tools are slow or timeout
-
-**Solution**: Use concurrent execution and resilience patterns:
-
-```java
-.executeToolsConcurrently(Executors.newFixedThreadPool(5))
-.toolExecutionTimeout(Duration.ofSeconds(30))
-```
-
-## Related Skills
-
-- `langchain4j-ai-services-patterns`
-- `langchain4j-rag-implementation-patterns`
-- `langchain4j-spring-boot-integration`
-
-## References
-
-- [LangChain4j Tool & Function Calling - API References](./references/references.md)
-- [LangChain4j Tool & Function Calling - Implementation Patterns](./references/implementation-patterns.md)
-- [LangChain4j Tool & Function Calling - Examples](./references/examples.md)
+| Annotation / API | Purpose |
+|-----------------|---------|
+| `@Tool` | Marks a method as a callable tool |
+| `@P` | Describes a tool parameter for the LLM |
+| `@ToolMemoryId` | Injects conversation/user ID into the tool |
+| `AiServices.builder()` | Creates AI service with registered tools |
+| `ReturnBehavior.IMMEDIATELY` | Execute tool without waiting for LLM response |
+| `ToolProvider` | Dynamic tool provisioning based on context |
+| `executeToolsConcurrently()` | Run independent tool calls in parallel |
+| `toolExecutionTimeout()` | Timeout for individual tool calls |
 
 ## Constraints and Warnings
 
-- Tools with side effects should have clear descriptions warning about potential impacts.
-- AI models may call tools in unexpected orders or with unexpected parameters.
-- Tool execution can be expensive; implement rate limiting and timeout handling.
-- Never pass sensitive data (API keys, passwords) in tool descriptions or responses.
-- Large tool sets can confuse AI models; consider using dynamic tool providers.
-- Tool execution errors should be handled gracefully; never expose stack traces to AI models.
-- Be cautious with tools that modify data; AI models may call them multiple times.
-- Parameter descriptions should be precise; vague descriptions lead to incorrect tool usage.
-- Tools with long execution times should implement timeout handling.
-- Test tools thoroughly before exposing them to AI models to prevent unexpected behavior.
+- **Sensitive data**: Never pass API keys, passwords, or credentials in `@Tool` or `@P` descriptions
+- **Side effects**: Tools that modify data should warn in their description; AI models may call them multiple times
+- **Large tool sets**: Excessive tools confuse LLM models — use `ToolProvider` for conditional registration
+- **Blocking operations**: Tools should not perform long synchronous I/O without timeout configuration
+- **Stack trace exposure**: Always route exceptions through error handlers that return safe strings
+- **Parameter precision**: Vague `@P` descriptions directly cause incorrect tool calls — be specific about formats and constraints
+- **Concurrent safety**: Ensure tool classes are stateless or thread-safe when using `executeToolsConcurrently()`
+
+## Related Skills
+
+- `langchain4j-ai-services-patterns` — High-level AI service configuration
+- `langchain4j-rag-implementation-patterns` — RAG retrieval with tool integration
+- `langchain4j-spring-boot-integration` — Tool registration in Spring Boot applications
+
+## References
+
+- **[references/setup-configuration.md](references/setup-configuration.md)** — Maven setup, chat model configuration, first tool registration
+- **[references/core-patterns.md](references/core-patterns.md)** — Basic tool definition, complex parameters, return types
+- **[references/advanced-features.md](references/advanced-features.md)** — Memory context, dynamic tool providers, streaming, immediate return
+- **[references/error-handling.md](references/error-handling.md)** — Error handlers, retry logic, monitoring
+- **[references/integration-examples.md](references/integration-examples.md)** — Database, REST API, and context-aware tool examples

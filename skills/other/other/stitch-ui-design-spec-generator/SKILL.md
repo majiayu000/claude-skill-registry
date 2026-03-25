@@ -25,6 +25,9 @@ You can also use it directly when a user asks: "What design spec would work for 
 **Type B — PRD document or summary:**
 > Provide a file path or paste PRD content. Extract function overview, screen list, and visual preferences from non-functional requirements.
 
+**Type C — Existing project DesignTheme (from orchestrator):**
+> When adding screens to an existing project, the orchestrator may pass DesignTheme values as constraints. Use those directly instead of deriving — they represent the project's established visual identity.
+
 ## Logic rules — apply in order
 
 ### 1. Analyze tone → derive style keywords and colors
@@ -55,38 +58,63 @@ You can also use it directly when a user asks: "What design spec would work for 
 | "wireframe", "sketch", "low-fi", "draft" | WIREFRAME |
 | All other cases | HIGH_FIDELITY |
 
-### 4. Determine roundness
+### 4. Determine roundness (API enum values)
 
 | Style keywords contain | → roundness |
 |---|---|
-| "sharp", "brutalist", "corporate", "enterprise" | Low |
-| "modern", "clean", "professional" | Medium |
-| "friendly", "playful", "card", "soft", "rounded" | High |
+| "sharp", "brutalist", "corporate", "enterprise", "terminal" | `ROUND_FOUR` |
+| "modern", "clean", "professional", "balanced" | `ROUND_EIGHT` |
+| "friendly", "playful", "card", "soft", "rounded" | `ROUND_TWELVE` |
+| "pill", "bubble", "very rounded", "capsule" | `ROUND_FULL` |
 
-### 5. Determine density
+### 5. Determine density + spacingScale
 
-| Context | → density |
+| Context | → density | → spacingScale |
+|---|---|---|
+| Data tables, dashboards, admin panels | COMPACT | 0 or 1 |
+| Mobile apps, social, consumer | COMFORTABLE | 2 |
+| Marketing pages, landing pages, portfolios | SPACIOUS | 3 |
+
+### 6. Determine colorVariant
+
+The `colorVariant` controls how Stitch derives the full color palette from your `primaryColor`. Pick based on the visual identity:
+
+| Domain / Tone | → colorVariant |
 |---|---|
-| Data tables, dashboards, admin panels | COMPACT |
-| Mobile apps, social, consumer | COMFORTABLE |
-| Marketing pages, landing pages, portfolios | SPACIOUS |
+| Corporate, Medical, Finance | `NEUTRAL` or `TONAL_SPOT` |
+| Luxury, Fashion, Minimal, Editorial | `MONOCHROME` or `FIDELITY` |
+| Productivity, SaaS, Enterprise | `TONAL_SPOT` |
+| Creative, Gaming, Cyberpunk | `VIBRANT` or `EXPRESSIVE` |
+| Lifestyle, Food, Social | `VIBRANT` or `CONTENT` |
+| Playful, Kids, Events | `RAINBOW` or `FRUIT_SALAD` |
+| Brand-heavy, Marketing, Landing pages | `FIDELITY` |
 
-## Output format
+Quick reference:
+- `MONOCHROME` — single-hue, editorial feel
+- `NEUTRAL` — subdued, professional
+- `TONAL_SPOT` — balanced accent spots on neutral base
+- `VIBRANT` — bold, energetic colors
+- `EXPRESSIVE` — multicolor, dynamic
+- `FIDELITY` — sticks close to the exact brand colors
+- `CONTENT` — palette adapts to content
+- `RAINBOW` — full spectrum
+- `FRUIT_SALAD` — warm multicolor
 
-Always output **exactly this JSON structure** — no extra fields, no explanations:
+### 7. Determine fonts (headline / body / label)
 
-```json
-{
-  "theme": "DARK" | "LIGHT",
-  "primaryColor": "#HEXCODE",
-  "font": "Font Name",
-  "roundness": "High" | "Medium" | "Low",
-  "density": "COMPACT" | "COMFORTABLE" | "SPACIOUS",
-  "designMode": "WIREFRAME" | "HIGH_FIDELITY",
-  "styleKeywords": ["Keyword1", "Keyword2", "Keyword3"],
-  "deviceType": "MOBILE" | "TABLET" | "DESKTOP" | "AGNOSTIC"
-}
-```
+The API supports three separate font roles. Default behavior: all three = same font. Split them for specific design approaches:
+
+**Same font (default for most projects):**
+> All three set to the same value (e.g., `INTER` / `INTER` / `INTER`)
+
+**Split fonts (use when the design benefits from typographic contrast):**
+
+| Design approach | headlineFont | bodyFont | labelFont |
+|---|---|---|---|
+| Editorial / magazine | `EB_GARAMOND` or `LITERATA` | `INTER` or `DM_SANS` | `INTER` or `DM_SANS` |
+| Brutalist / hacker | `SPACE_GROTESK` | `INTER` | `IBM_PLEX_SANS` |
+| Luxury / high-end | `LIBRE_CASLON_TEXT` | `MANROPE` | `MANROPE` |
+| Data-heavy dashboard | `INTER` | `INTER` | `IBM_PLEX_SANS` or `SOURCE_SANS_THREE` |
 
 **Font selection guide — use Stitch enum names exactly:**
 
@@ -105,6 +133,49 @@ Full font list: `BE_VIETNAM_PRO`, `EPILOGUE`, `INTER`, `LEXEND`, `MANROPE`, `NEW
 `WORK_SANS`, `DOMINE`, `LIBRE_CASLON_TEXT`, `EB_GARAMOND`, `LITERATA`, `SOURCE_SERIF_FOUR`,
 `MONTSERRAT`, `METROPOLIS`, `SOURCE_SANS_THREE`, `NUNITO_SANS`, `ARIMO`, `HANKEN_GROTESK`,
 `RUBIK`, `GEIST`, `DM_SANS`, `IBM_PLEX_SANS`, `SORA`
+
+### 8. Determine background colors
+
+| theme | → backgroundLight | → backgroundDark |
+|---|---|---|
+| DARK (default) | `#FAFAFA` | Derive from domain — deep grey `#0F0F11` for tech, warm `#1A1816` for lifestyle |
+| LIGHT | Derive — pure `#FFFFFF` for corporate, warm `#FFFBF5` for lifestyle | `#18181B` |
+
+## Output format
+
+Always output **exactly this JSON structure** — no extra fields, no explanations:
+
+```json
+{
+  "theme": "DARK",
+  "primaryColor": "#6366F1",
+  "headlineFont": "SPACE_GROTESK",
+  "bodyFont": "INTER",
+  "labelFont": "INTER",
+  "colorVariant": "FIDELITY",
+  "roundness": "ROUND_EIGHT",
+  "spacingScale": 2,
+  "backgroundLight": "#FAFAFA",
+  "backgroundDark": "#131315",
+  "density": "COMFORTABLE",
+  "designMode": "HIGH_FIDELITY",
+  "styleKeywords": ["Clean", "Professional", "Focused"],
+  "deviceType": "DESKTOP"
+}
+```
+
+Field types:
+- `theme`: `"DARK"` | `"LIGHT"`
+- `primaryColor`: hex string
+- `headlineFont`, `bodyFont`, `labelFont`: Stitch font enum (see list above)
+- `colorVariant`: `"MONOCHROME"` | `"NEUTRAL"` | `"TONAL_SPOT"` | `"VIBRANT"` | `"EXPRESSIVE"` | `"FIDELITY"` | `"CONTENT"` | `"RAINBOW"` | `"FRUIT_SALAD"`
+- `roundness`: `"ROUND_FOUR"` | `"ROUND_EIGHT"` | `"ROUND_TWELVE"` | `"ROUND_FULL"`
+- `spacingScale`: integer 0-3
+- `backgroundLight`, `backgroundDark`: hex string
+- `density`: `"COMPACT"` | `"COMFORTABLE"` | `"SPACIOUS"`
+- `designMode`: `"WIREFRAME"` | `"HIGH_FIDELITY"`
+- `styleKeywords`: array of 2-4 adjectives
+- `deviceType`: `"MOBILE"` | `"TABLET"` | `"DESKTOP"` | `"AGNOSTIC"`
 
 ## Integration
 

@@ -30,41 +30,141 @@ Expert guide for creating and managing a centralized Design System using Tailwin
 
 ### Step 1: Initialize Design System Configuration
 
-1. **Assess the project**: Check if Tailwind CSS and shadcn/ui are already installed
-2. **Create the globals.css**: Set up the central CSS file with design tokens
-3. **Configure Tailwind**: Use the `@theme` directive (v4.1+) or `tailwind.config.js` (v3)
-4. **Install shadcn/ui**: Initialize with the CLI and configure the theme
+Run these commands to set up the project:
+
+```bash
+# Check if Tailwind is installed
+npx tailwindcss --version
+
+# For Tailwind v4 (recommended)
+npx @tailwindcss/vite@latest init   # or: npm install -D tailwindcss @tailwindcss/vite
+
+# Initialize shadcn/ui CLI
+npx shadcn@latest init
+
+# Install core shadcn/ui components
+npx shadcn@latest add button card input -y
+```
+
+**Validation checkpoint**: After setup, verify with:
+```bash
+ls src/components/ui/        # Should list installed components
+cat src/app/globals.css       # Should contain @tailwind directives
+```
 
 ### Step 2: Define Design Tokens
 
-Design tokens are the foundation. Define them as CSS custom properties in `globals.css`:
+Create `src/app/globals.css` with your design tokens:
 
-- **Colors**: Brand palette, semantic colors, surface colors
-- **Typography**: Font families, sizes, weights, line heights
-- **Spacing**: Consistent spacing scale
-- **Borders**: Radius, widths
-- **Shadows**: Elevation levels
-- **Animations**: Transition durations and easing functions
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand Colors */
+    --primary: oklch(0.55 0.18 250);
+    --primary-foreground: oklch(0.985 0 0);
+
+    /* Semantic Colors */
+    --background: oklch(0.99 0 0);
+    --foreground: oklch(0.15 0 0);
+    --secondary: oklch(0.96 0.01 250);
+    --secondary-foreground: oklch(0.20 0 0);
+
+    /* Validation: all colors must have foreground pair */
+    --destructive: oklch(0.55 0.22 25);
+    --destructive-foreground: oklch(0.985 0 0);
+  }
+
+  .dark {
+    --primary: oklch(0.65 0.20 250);
+    --background: oklch(0.14 0 0);
+    --foreground: oklch(0.97 0 0);
+    --secondary: oklch(0.25 0.02 250);
+  }
+}
+```
+
+**Validation checkpoint**: Verify tokens are valid CSS:
+```bash
+grep -E "^[[:space:]]*--[a-z-]+:" src/app/globals.css | wc -l
+# Should return count of defined tokens (e.g., 10+)
+```
 
 ### Step 3: Configure Theming Infrastructure
 
-Set up light/dark mode support and expose tokens to Tailwind via `@theme inline`.
+Bridge CSS variables to Tailwind utilities (Tailwind v4.1+):
+
+```css
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+```
+
+Add dark mode class toggle in `components/providers/theme-provider.tsx`:
+```tsx
+import { useEffect } from "react";
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.classList.toggle("dark", isDark);
+  }, []);
+  return <>{children}</>;
+}
+```
+
+**Validation checkpoint**: Test dark mode:
+```bash
+document.documentElement.classList.contains("dark") // in browser console
+```
 
 ### Step 4: Wrap shadcn/ui Components
 
-Create design system primitives that enforce token usage and provide consistent API.
+Create `src/components/ds/Button.tsx`:
+```tsx
+import { Button as ShadcnButton } from "@/components/ui/button";
 
-### Step 5: Document and Validate
+type DSVariant = "primary" | "secondary" | "destructive" | "ghost";
+const variantMap: Record<DSVariant, "default" | "secondary" | "destructive" | "ghost"> = {
+  primary: "default", secondary: "secondary",
+  destructive: "destructive", ghost: "ghost",
+};
 
-Create a living style guide and validate token usage across the codebase.
+export function Button({ variant = "primary", ...props }: { variant?: DSVariant } & React.ComponentProps<typeof ShadcnButton>) {
+  return <ShadcnButton variant={variantMap[variant]} {...props} />;
+}
+```
+
+**Validation checkpoint**: Verify build passes:
+```bash
+npx tsc --noEmit src/components/ds/Button.tsx
+```
+
+### Step 5: Validate and Document
+
+Run the token validation script:
+```bash
+REQUIRED=("primary" "primary-foreground" "background" "foreground" "secondary" "secondary-foreground")
+for token in "${REQUIRED[@]}"; do
+  grep -q "$token:" src/app/globals.css || echo "MISSING: --$token"
+done
+```
+
+**Validation checkpoint**: Ensure all shadcn components use DS tokens:
+```bash
+grep -r "bg-primary\|text-primary\|bg-background" src/components/ds/
+```
 
 ## Examples
 
-### Complete globals.css with Design Tokens
+### Adding Custom Tokens
 
-See `references/globals.css.example` for a complete, production-ready `globals.css` with all design tokens configured.
-
-Quick example for adding custom tokens:
+Extend the base tokens in `globals.css`:
 
 ```css
 :root {
@@ -87,10 +187,10 @@ Usage: `<div className="bg-warning text-warning-foreground">Warning</div>`
 
 ### Wrapping shadcn/ui Components as Design System Primitives
 
-Create constrained design system components that enforce token usage.
-See `references/component-wrapping.md` for complete examples including Button, Text, and Stack primitives.
+See `references/component-wrapping.md` for complete examples including Button, Text, and Stack primitives with full TypeScript types.
 
-Quick example:
+Create constrained design system components that enforce token usage.
+Inline example:
 
 ```tsx
 import { Button as ShadcnButton } from "@/components/ui/button";

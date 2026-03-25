@@ -27,40 +27,11 @@ Use this skill when:
 
 Follow these steps to create Auto Scaling infrastructure with CloudFormation:
 
-1. **Define Parameters**: Use AWS-specific parameter types for validation (e.g., `AWS::EC2::Image::Id`)
-2. **Configure Launch Resources**: Create LaunchConfiguration or LaunchTemplate with proper instance settings
-3. **Create Auto Scaling Group**: Specify min/max/desired capacity and associate with launch resource
-4. **Add Scaling Policies**: Implement target tracking, step, or simple scaling policies
-5. **Configure Health Checks**: Set up ELB or EC2 health checks with appropriate grace periods
-6. **Add Lifecycle Hooks**: Implement hooks for custom actions during instance lifecycle
-7. **Set Up Monitoring**: Configure CloudWatch alarms for scaling triggers
-8. **Use Cross-Stack References**: Export ASG names and ARNs for other stacks to import
+### 1. Define Parameters
 
-For complete examples, see the [EXAMPLES.md](references/examples.md) file.
-
-## CloudFormation Template Structure
-
-### Base Template with Standard Format
+Specify capacity and instance settings with AWS-specific parameter types:
 
 ```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Auto Scaling group with load balancer
-
-Metadata:
-  AWS::CloudFormation::Interface:
-    ParameterGroups:
-      - Label:
-          default: Auto Scaling Configuration
-        Parameters:
-          - MinSize
-          - MaxSize
-          - DesiredCapacity
-      - Label:
-          default: Instance Configuration
-        Parameters:
-          - InstanceType
-          - AmiId
-
 Parameters:
   MinSize:
     Type: Number
@@ -78,78 +49,8 @@ Parameters:
     Description: Desired number of instances
 
   InstanceType:
-    Type: String
-    Default: t3.micro
-    AllowedValues:
-      - t3.micro
-      - t3.small
-      - t3.medium
-      - t3.large
-
-  AmiId:
-    Type: AWS::EC2::Image::Id
-    Description: AMI ID for instances
-
-Mappings:
-  EnvironmentConfig:
-    dev:
-      InstanceType: t3.micro
-      MinSize: 1
-      MaxSize: 3
-    staging:
-      InstanceType: t3.medium
-      MinSize: 2
-      MaxSize: 6
-    production:
-      InstanceType: t3.large
-      MinSize: 3
-      MaxSize: 12
-
-Conditions:
-  IsProduction: !Equals [!Ref Environment, production]
-  UseSpotInstances: !Or [!Equals [!Ref Environment, dev], !Equals [!Ref Environment, staging]]
-
-Resources:
-  # Auto Scaling Group
-  MyAutoScalingGroup:
-    Type: AWS::AutoScaling::AutoScalingGroup
-    Properties:
-      AutoScalingGroupName: !Sub "${AWS::StackName}-asg"
-      MinSize: !Ref MinSize
-      MaxSize: !Ref MaxSize
-      DesiredCapacity: !Ref DesiredCapacity
-      VPCZoneIdentifier: !Ref SubnetIds
-      LaunchConfigurationName: !Ref MyLaunchConfiguration
-      LoadBalancerNames:
-        - !Ref MyLoadBalancer
-      HealthCheckType: ELB
-      HealthCheckGracePeriod: 300
-      TerminationPolicies:
-        - OldestInstance
-        - Default
-      Tags:
-        - Key: Environment
-          Value: !Ref Environment
-          PropagateAtLaunch: true
-        - Key: ManagedBy
-          Value: CloudFormation
-          PropagateAtLaunch: true
-
-Outputs:
-  AutoScalingGroupName:
-    Description: Name of the Auto Scaling Group
-    Value: !Ref MyAutoScalingGroup
-```
-
-## Parameters Best Practices
-
-### AWS-Specific Parameter Types
-
-```yaml
-Parameters:
-  # AWS-specific types for validation
-  InstanceType:
     Type: AWS::EC2::Instance::Type
+    Default: t3.micro
     Description: EC2 instance type
 
   AmiId:
@@ -159,214 +60,13 @@ Parameters:
   SubnetIds:
     Type: List<AWS::EC2::Subnet::Id>
     Description: Subnets for Auto Scaling group
-
-  SecurityGroupIds:
-    Type: List<AWS::EC2::SecurityGroup::Id>
-    Description: Security groups for instances
-
-  LoadBalancerArn:
-    Type: AWS::ElasticLoadBalancingV2::LoadBalancer::Arn
-    Description: Application Load Balancer ARN
-
-  TargetGroupArn:
-    Type: AWS::ElasticLoadBalancingV2::TargetGroup::Arn
-    Description: Target Group ARN for ALB
-
-  LaunchTemplateId:
-    Type: AWS::EC2::LaunchTemplate::LaunchTemplateId
-    Description: Launch template ID
-
-  ScalingPolicyArn:
-    Type: AWS::AutoScaling::ScalingPolicy::Arn
-    Description: Scaling policy ARN
 ```
 
-### Parameter Constraints
+### 2. Create Launch Configuration
+
+Define instance launch settings:
 
 ```yaml
-Parameters:
-  MinSize:
-    Type: Number
-    Default: 1
-    Description: Minimum number of instances
-    MinValue: 0
-    MaxValue: 1000
-    ConstraintDescription: Must be between 0 and 1000
-
-  MaxSize:
-    Type: Number
-    Default: 10
-    Description: Maximum number of instances
-    MinValue: 1
-    MaxValue: 1000
-    ConstraintDescription: Must be between 1 and 1000
-
-  DesiredCapacity:
-    Type: Number
-    Default: 2
-    Description: Desired number of instances
-    MinValue: 0
-    MaxValue: 1000
-
-  InstanceType:
-    Type: String
-    Default: t3.micro
-    Description: EC2 instance type
-    ConstraintDescription: Must be a valid EC2 instance type
-
-  AmiId:
-    Type: AWS::EC2::Image::Id
-    Description: AMI ID
-
-  EnvironmentName:
-    Type: String
-    Default: dev
-    Description: Deployment environment
-    AllowedValues:
-      - dev
-      - staging
-      - production
-    ConstraintDescription: Must be dev, staging, or production
-```
-
-### SSM Parameter References
-
-```yaml
-Parameters:
-  LatestAmiId:
-    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
-    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
-    Description: Latest Amazon Linux 2 AMI from SSM
-
-  InstanceConfiguration:
-    Type: AWS::SSM::Parameter::Value<String>
-    Default: /myapp/instance-configuration
-    Description: Instance configuration from SSM
-```
-
-## Outputs and Cross-Stack References
-
-### Export/Import Patterns
-
-```yaml
-# Stack A - Network and Auto Scaling Stack
-AWSTemplateFormatVersion: 2010-09-09
-Description: Auto Scaling infrastructure stack
-
-Resources:
-  MyAutoScalingGroup:
-    Type: AWS::AutoScaling::AutoScalingGroup
-    Properties:
-      AutoScalingGroupName: !Sub "${AWS::StackName}-asg"
-      MinSize: 2
-      MaxSize: 10
-      DesiredCapacity: 2
-      VPCZoneIdentifier: !Ref SubnetIds
-      LaunchConfigurationName: !Ref MyLaunchConfiguration
-
-Outputs:
-  AutoScalingGroupName:
-    Description: Name of the Auto Scaling Group
-    Value: !Ref MyAutoScalingGroup
-    Export:
-      Name: !Sub "${AWS::StackName}-AutoScalingGroupName"
-
-  AutoScalingGroupArn:
-    Description: ARN of the Auto Scaling Group
-    Value: !Sub "arn:aws:autoscaling:${AWS::Region}:${AWS::AccountId}:autoScalingGroup:*:autoScalingGroupName/${MyAutoScalingGroup}"
-    Export:
-      Name: !Sub "${AWS::StackName}-AutoScalingGroupArn"
-
-  LaunchConfigurationName:
-    Description: Name of the Launch Configuration
-    Value: !Ref MyLaunchConfiguration
-    Export:
-      Name: !Sub "${AWS::StackName}-LaunchConfigurationName"
-```
-
-```yaml
-# Stack B - Application Stack (imports from Stack A)
-AWSTemplateFormatVersion: 2010-09-09
-Description: Application stack using Auto Scaling from infrastructure stack
-
-Parameters:
-  InfraStackName:
-    Type: String
-    Default: infra-stack
-    Description: Name of the infrastructure stack
-
-Resources:
-  ScalingPolicy:
-    Type: AWS::AutoScaling::ScalingPolicy
-    Properties:
-      PolicyName: !Sub "${AWS::StackName}-scale-up"
-      PolicyType: StepScaling
-      AdjustmentType: PercentChangeInCapacity
-      Cooldown: 300
-      StepAdjustments:
-        - MetricIntervalLowerBound: 0
-          MetricIntervalUpperBound: 10000
-          ScalingAdjustment: 200
-        - MetricIntervalLowerBound: 10000
-          ScalingAdjustment: 400
-      AutoScalingGroupName: !ImportValue
-        !Sub "${InfraStackName}-AutoScalingGroupName"
-```
-
-### Nested Stacks for Modularity
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Main stack with nested Auto Scaling stacks
-
-Parameters:
-  TemplateBucketName:
-    Type: String
-    Description: S3 bucket containing nested stack templates
-
-Resources:
-  # Nested stack for EC2 Auto Scaling
-  EC2AutoScalingStack:
-    Type: AWS::CloudFormation::Stack
-    Properties:
-      TemplateURL: !Sub "https://${TemplateBucketName}.s3.amazonaws.com/templates/ec2-asg.yaml"
-      TimeoutInMinutes: 15
-      Parameters:
-        Environment: !Ref Environment
-        InstanceType: !Ref InstanceType
-        MinSize: !Ref MinSize
-        MaxSize: !Ref MaxSize
-
-  # Nested stack for scaling policies
-  ScalingPoliciesStack:
-    Type: AWS::CloudFormation::Stack
-    Properties:
-      TemplateURL: !Sub "https://${TemplateBucketName}.s3.amazonaws.com/templates/scaling-policies.yaml"
-      TimeoutInMinutes: 15
-      Parameters:
-        AutoScalingGroupName: !GetAtt EC2AutoScalingStack.Outputs.AutoScalingGroupName
-        Environment: !Ref Environment
-```
-
-## Launch Configurations
-
-### Base Launch Configuration
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Auto Scaling with Launch Configuration
-
-Parameters:
-  InstanceType:
-    Type: String
-    Default: t3.micro
-
-  AmiId:
-    Type: AWS::EC2::Image::Id
-
-  KeyName:
-    Type: AWS::EC2::KeyPair::KeyName
-
 Resources:
   MyLaunchConfiguration:
     Type: AWS::AutoScaling::LaunchConfiguration
@@ -378,144 +78,45 @@ Resources:
       SecurityGroups:
         - !Ref InstanceSecurityGroup
       InstanceMonitoring: Enabled
-      SpotPrice: !If [UseSpot, "0.05", !Ref AWS::NoValue]
       UserData:
         Fn::Base64: |
           #!/bin/bash
           yum update -y
           yum install -y httpd
           systemctl start httpd
-          echo "Hello from Auto Scaling" > /var/www/html/index.html
-
-  InstanceSecurityGroup:
-    Type: AWS::EC2::SecurityGroup
-    Properties:
-      GroupName: !Sub "${AWS::StackName}-instance-sg"
-      GroupDescription: Security group for instances
-      VpcId: !Ref VPCId
-      SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: 80
-          ToPort: 80
-          CidrIp: 0.0.0.0/0
-        - IpProtocol: tcp
-          FromPort: 22
-          ToPort: 22
-          CidrIp: 0.0.0.0/0
-
-Conditions:
-  UseSpot: !Equals [!Ref UseSpotInstances, true]
-
-Parameters:
-  UseSpotInstances:
-    Type: String
-    Default: false
-    AllowedValues:
-      - true
-      - false
 ```
 
-## Launch Templates
+### 3. Create Auto Scaling Group
 
-### Launch Template with Customization
+Specify min/max/desired capacity and networking:
 
 ```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Auto Scaling with Launch Template
-
-Parameters:
-  InstanceType:
-    Type: String
-    Default: t3.micro
-
-  AmiId:
-    Type: AWS::EC2::Image::Id
-
 Resources:
-  MyLaunchTemplate:
-    Type: AWS::EC2::LaunchTemplate
-    Properties:
-      LaunchTemplateName: !Sub "${AWS::StackName}-lt"
-      LaunchTemplateData:
-        ImageId: !Ref AmiId
-        InstanceType: !Ref InstanceType
-        Monitoring:
-          Enabled: true
-        NetworkInterfaces:
-          - DeviceIndex: 0
-            AssociatePublicIpAddress: false
-            Groups:
-              - !Ref InstanceSecurityGroup
-        TagSpecifications:
-          - ResourceType: instance
-            Tags:
-              - Key: Name
-                Value: !Sub "${AWS::StackName}-instance"
-              - Key: Environment
-                Value: !Ref Environment
-        UserData:
-          Fn::Base64: |
-            #!/bin/bash
-            yum update -y
-            systemctl enable httpd
-            systemctl start httpd
-
-  InstanceSecurityGroup:
-    Type: AWS::EC2::SecurityGroup
-    Properties:
-      GroupName: !Sub "${AWS::StackName}-sg"
-      GroupDescription: Security group for instances
-      VpcId: !Ref VPCId
-
   MyAutoScalingGroup:
     Type: AWS::AutoScaling::AutoScalingGroup
     Properties:
       AutoScalingGroupName: !Sub "${AWS::StackName}-asg"
-      MinSize: 2
-      MaxSize: 10
-      DesiredCapacity: 2
+      MinSize: !Ref MinSize
+      MaxSize: !Ref MaxSize
+      DesiredCapacity: !Ref DesiredCapacity
       VPCZoneIdentifier: !Ref SubnetIds
-      LaunchTemplate:
-        LaunchTemplateId: !Ref MyLaunchTemplate
-        Version: !GetAtt MyLaunchTemplate.LatestVersionNumber
-```
-
-## Auto Scaling Groups
-
-### ASG with Load Balancer
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Auto Scaling group with Application Load Balancer
-
-Resources:
-  MyAutoScalingGroup:
-    Type: AWS::AutoScaling::AutoScalingGroup
-    Properties:
-      AutoScalingGroupName: !Sub "${AWS::StackName}-asg"
-      MinSize: 2
-      MaxSize: 10
-      DesiredCapacity: 2
-      VPCZoneIdentifier: !Ref PrivateSubnetIds
       LaunchConfigurationName: !Ref MyLaunchConfiguration
       TargetGroupARNs:
         - !Ref MyTargetGroup
       HealthCheckType: ELB
       HealthCheckGracePeriod: 300
-      TerminationPolicies:
-        - OldestInstance
-        - Default
-      InstanceMaintenancePolicy:
-        MinHealthyPercentage: 50
-        MaxHealthyPercentage: 200
       Tags:
         - Key: Environment
           Value: !Ref Environment
           PropagateAtLaunch: true
-        - Key: Name
-          Value: !Sub "${AWS::StackName}-instance"
-          PropagateAtLaunch: true
+```
 
+### 4. Configure Load Balancer Integration
+
+Set up ALB for traffic distribution:
+
+```yaml
+Resources:
   MyTargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
@@ -524,149 +125,25 @@ Resources:
       Protocol: HTTP
       VpcId: !Ref VPCId
       HealthCheckPath: /
-      HealthCheckIntervalSeconds: 30
-      HealthCheckTimeoutSeconds: 5
-      HealthyThresholdCount: 5
-      UnhealthyThresholdCount: 2
       TargetType: instance
+
+  MyLoadBalancer:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    Properties:
+      Name: !Sub "${AWS::StackName}-alb"
+      Scheme: internet-facing
+      Type: application
+      Subnets:
+        - !Ref PublicSubnet1
+        - !Ref PublicSubnet2
 ```
 
-### ASG with Launch Template and Mixed Instances
+### 5. Add Scaling Policies
+
+Implement target tracking scaling:
 
 ```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Auto Scaling with Mixed Instances Policy
-
 Resources:
-  MyLaunchTemplate:
-    Type: AWS::EC2::LaunchTemplate
-    Properties:
-      LaunchTemplateName: !Sub "${AWS::StackName}-lt"
-      LaunchTemplateData:
-        ImageId: !Ref AmiId
-        InstanceType: t3.micro
-        KeyName: !Ref KeyName
-
-  MyAutoScalingGroup:
-    Type: AWS::AutoScaling::AutoScalingGroup
-    Properties:
-      AutoScalingGroupName: !Sub "${AWS::StackName}-asg"
-      MinSize: 2
-      MaxSize: 10
-      DesiredCapacity: 2
-      VPCZoneIdentifier: !Ref SubnetIds
-      LaunchTemplate:
-        LaunchTemplateId: !Ref MyLaunchTemplate
-        Version: !GetAtt MyLaunchTemplate.LatestVersionNumber
-      MixedInstancesPolicy:
-        InstancesDistribution:
-          OnDemandAllocationStrategy: prioritized
-          OnDemandBaseCapacity: 2
-          OnDemandPercentageAboveBaseCapacity: 50
-          SpotAllocationStrategy: capacity-optimized
-          SpotInstancePools: 3
-          SpotMaxPrice: !Ref MaxSpotPrice
-        LaunchTemplate:
-          LaunchTemplateId: !Ref MyLaunchTemplate
-          Overrides:
-            - InstanceType: t3.micro
-            - InstanceType: t3.small
-            - InstanceType: t3.medium
-```
-
-### ASG with Lifecycle Hooks
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Auto Scaling with lifecycle hooks
-
-Resources:
-  MyLaunchConfiguration:
-    Type: AWS::AutoScaling::LaunchConfiguration
-    Properties:
-      LaunchConfigurationName: !Sub "${AWS::StackName}-lc"
-      ImageId: !Ref AmiId
-      InstanceType: t3.micro
-
-  MyAutoScalingGroup:
-    Type: AWS::AutoScaling::AutoScalingGroup
-    Properties:
-      AutoScalingGroupName: !Sub "${AWS::StackName}-asg"
-      MinSize: 2
-      MaxSize: 10
-      DesiredCapacity: 2
-      VPCZoneIdentifier: !Ref SubnetIds
-      LaunchConfigurationName: !Ref MyLaunchConfiguration
-
-  # Lifecycle Hook - Instance Launch
-  LifecycleHookLaunch:
-    Type: AWS::AutoScaling::LifecycleHook
-    Properties:
-      LifecycleHookName: !Sub "${AWS::StackName}-launch-hook"
-      AutoScalingGroupName: !Ref MyAutoScalingGroup
-      LifecycleTransition: autoscaling:EC2_INSTANCE_LAUNCHING
-      HeartbeatTimeout: 900
-      NotificationTargetARN: !Ref SnsTopicArn
-      RoleARN: !GetAtt LifecycleHookRole.Arn
-
-  # Lifecycle Hook - Instance Termination
-  LifecycleHookTermination:
-    Type: AWS::AutoScaling::LifecycleHook
-    Properties:
-      LifecycleHookName: !Sub "${AWS::StackName}-termination-hook"
-      AutoScalingGroupName: !Ref MyAutoScalingGroup
-      LifecycleTransition: autoscaling:EC2_INSTANCE_TERMINATING
-      HeartbeatTimeout: 3600
-      NotificationTargetARN: !Ref SnsTopicArn
-      RoleARN: !GetAtt LifecycleHookRole.Arn
-
-  # IAM Role for Lifecycle Hooks
-  LifecycleHookRole:
-    Type: AWS::IAM::Role
-    Properties:
-      RoleName: !Sub "${AWS::StackName}-lifecycle-role"
-      AssumeRolePolicyDocument:
-        Version: "2012-10-17"
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service: autoscaling.amazonaws.com
-            Action: sts:AssumeRole
-      Policies:
-        - PolicyName: !Sub "${AWS::StackName}-lifecycle-policy"
-          PolicyDocument:
-            Version: "2012-10-17"
-            Statement:
-              - Effect: Allow
-                Action:
-                  - sns:Publish
-                Resource: !Ref SnsTopicArn
-
-  SnsTopic:
-    Type: AWS::SNS::Topic
-    Properties:
-      TopicName: !Sub "${AWS::StackName}-lifecycle"
-```
-
-## Scaling Policies
-
-### Target Tracking Policy
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Auto Scaling with Target Tracking scaling policy
-
-Resources:
-  MyAutoScalingGroup:
-    Type: AWS::AutoScaling::AutoScalingGroup
-    Properties:
-      AutoScalingGroupName: !Sub "${AWS::StackName}-asg"
-      MinSize: 2
-      MaxSize: 10
-      DesiredCapacity: 2
-      VPCZoneIdentifier: !Ref SubnetIds
-      LaunchConfigurationName: !Ref MyLaunchConfiguration
-
   TargetTrackingPolicy:
     Type: AWS::AutoScaling::ScalingPolicy
     Properties:
@@ -680,34 +157,33 @@ Resources:
         DisableScaleIn: false
 ```
 
-### Step Scaling Policy
+### 6. Configure Lifecycle Hooks
+
+Implement hooks for graceful instance management:
 
 ```yaml
 Resources:
-  StepScalingPolicy:
-    Type: AWS::AutoScaling::ScalingPolicy
+  LifecycleHookTermination:
+    Type: AWS::AutoScaling::LifecycleHook
     Properties:
-      PolicyName: !Sub "${AWS::StackName}-step-scaling"
-      PolicyType: StepScaling
-      AdjustmentType: PercentChangeInCapacity
-      Cooldown: 300
-      StepAdjustments:
-        - MetricIntervalLowerBound: 0
-          MetricIntervalUpperBound: 10000
-          ScalingAdjustment: 200
-        - MetricIntervalLowerBound: 10000
-          MetricIntervalUpperBound: 20000
-          ScalingAdjustment: 400
-        - MetricIntervalLowerBound: 20000
-          ScalingAdjustment: 600
+      LifecycleHookName: !Sub "${AWS::StackName}-termination-hook"
       AutoScalingGroupName: !Ref MyAutoScalingGroup
+      LifecycleTransition: autoscaling:EC2_INSTANCE_TERMINATING
+      HeartbeatTimeout: 300
+      NotificationTargetARN: !Ref SNSTopic
+      RoleARN: !Ref LifecycleHookRole
+```
 
-  # Alarm for Step Scaling
+### 7. Set Up Monitoring
+
+Configure CloudWatch alarms for scaling triggers:
+
+```yaml
+Resources:
   HighCpuAlarm:
     Type: AWS::CloudWatch::Alarm
     Properties:
       AlarmName: !Sub "${AWS::StackName}-high-cpu"
-      AlarmDescription: Alarm when CPU utilization is high
       MetricName: CPUUtilization
       Namespace: AWS/EC2
       Dimensions:
@@ -718,551 +194,190 @@ Resources:
       EvaluationPeriods: 3
       Threshold: 70
       ComparisonOperator: GreaterThanThreshold
-      AlarmActions:
-        - !Ref StepScalingPolicy
 ```
 
-### Simple Scaling Policy
+### 8. Configure Outputs and Cross-Stack References
+
+Export ASG configuration for other stacks:
 
 ```yaml
-Resources:
-  SimpleScalingPolicy:
-    Type: AWS::AutoScaling::ScalingPolicy
-    Properties:
-      PolicyName: !Sub "${AWS::StackName}-simple-scale-up"
-      PolicyType: SimpleScaling
-      AdjustmentType: ChangeInCapacity
-      ScalingAdjustment: 1
-      Cooldown: 300
-      AutoScalingGroupName: !Ref MyAutoScalingGroup
+Outputs:
+  AutoScalingGroupName:
+    Description: Name of the Auto Scaling Group
+    Value: !Ref MyAutoScalingGroup
+    Export:
+      Name: !Sub "${AWS::StackName}-AutoScalingGroupName"
 
-  ScaleDownPolicy:
-    Type: AWS::AutoScaling::ScalingPolicy
-    Properties:
-      PolicyName: !Sub "${AWS::StackName}-simple-scale-down"
-      PolicyType: SimpleScaling
-      AdjustmentType: ChangeInCapacity
-      ScalingAdjustment: -1
-      Cooldown: 600
-      AutoScalingGroupName: !Ref MyAutoScalingGroup
-
-  HighCpuAlarm:
-    Type: AWS::CloudWatch::Alarm
-    Properties:
-      AlarmName: !Sub "${AWS::StackName}-high-cpu"
-      MetricName: CPUUtilization
-      Namespace: AWS/EC2
-      Dimensions:
-        - Name: AutoScalingGroupName
-          Value: !Ref MyAutoScalingGroup
-      Statistic: Average
-      Period: 120
-      EvaluationPeriods: 2
-      Threshold: 80
-      ComparisonOperator: GreaterThanThreshold
-      AlarmActions:
-        - !Ref SimpleScalingPolicy
-
-  LowCpuAlarm:
-    Type: AWS::CloudWatch::Alarm
-    Properties:
-      AlarmName: !Sub "${AWS::StackName}-low-cpu"
-      MetricName: CPUUtilization
-      Namespace: AWS/EC2
-      Dimensions:
-        - Name: AutoScalingGroupName
-          Value: !Ref MyAutoScalingGroup
-      Statistic: Average
-      Period: 300
-      EvaluationPeriods: 2
-      Threshold: 30
-      ComparisonOperator: LessThanThreshold
-      AlarmActions:
-        - !Ref ScaleDownPolicy
+  AutoScalingGroupArn:
+    Description: ARN of the Auto Scaling Group
+    Value: !GetAtt MyAutoScalingGroup.AutoScalingGroupArn
+    Export:
+      Name: !Sub "${AWS::StackName}-AutoScalingGroupArn"
 ```
 
-### Scheduled Scaling
+## Examples
+
+### Complete Auto Scaling Template
+
+Full end-to-end template with VPC, ASG, ALB, and scaling policies:
 
 ```yaml
-Resources:
-  ScheduledScaleUp:
-    Type: AWS::AutoScaling::ScheduledAction
-    Properties:
-      ScheduledActionName: !Sub "${AWS::StackName}-scheduled-scale-up"
-      AutoScalingGroupName: !Ref MyAutoScalingGroup
-      MinSize: 5
-      MaxSize: 15
-      DesiredCapacity: 5
-      StartTime: "2024-01-01T08:00:00Z"
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Auto Scaling Group with ALB integration
 
-  ScheduledScaleDown:
-    Type: AWS::AutoScaling::ScheduledAction
-    Properties:
-      ScheduledActionName: !Sub "${AWS::StackName}-scheduled-scale-down"
-      AutoScalingGroupName: !Ref MyAutoScalingGroup
-      MinSize: 2
-      MaxSize: 10
-      DesiredCapacity: 2
-      StartTime: "2024-01-01T20:00:00Z"
-
-  # Recurring schedule using cron
-  RecurringScaleUp:
-    Type: AWS::AutoScaling::ScheduledAction
-    Properties:
-      ScheduledActionName: !Sub "${AWS::StackName}-morning-scale-up"
-      AutoScalingGroupName: !Ref MyAutoScalingGroup
-      MinSize: 5
-      MaxSize: 15
-      DesiredCapacity: 5
-      Recurrence: "0 8 * * *"
-```
-
-## ECS Auto Scaling
-
-### ECS Service Scaling
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: ECS service with Auto Scaling
+Parameters:
+  Environment:
+    Type: String
+    Default: production
+  InstanceType:
+    Type: AWS::EC2::Instance::Type
+    Default: t3.micro
+  AmiId:
+    Type: AWS::EC2::Image::Id
+  VpcId:
+    Type: AWS::EC2::VPC::Id
+  SubnetIds:
+    Type: List<AWS::EC2::Subnet::Id>
 
 Resources:
-  # ECS Cluster
-  EcsCluster:
-    Type: AWS::ECS::Cluster
-    Properties:
-      ClusterName: !Sub "${AWS::StackName}-cluster"
-
-  # Task Definition
-  TaskDefinition:
-    Type: AWS::ECS::TaskDefinition
-    Properties:
-      Family: !Sub "${AWS::StackName}-task"
-      Cpu: "512"
-      Memory: "1024"
-      NetworkMode: awsvpc
-      RequiresCompatibilities:
-        - FARGATE
-      ContainerDefinitions:
-        - Name: web
-          Image: nginx:latest
-          PortMappings:
-            - ContainerPort: 80
-          LogConfiguration:
-            LogDriver: awslogs
-            Options:
-              awslogs-group: !Ref LogGroup
-              awslogs-region: !Ref AWS::Region
-
-  # ECS Service
-  EcsService:
-    Type: AWS::ECS::Service
-    Properties:
-      ServiceName: !Sub "${AWS::StackName}-service"
-      Cluster: !Ref EcsCluster
-      TaskDefinition: !Ref TaskDefinition
-      DesiredCount: 2
-      LaunchType: FARGATE
-      NetworkConfiguration:
-        AwsvpcConfiguration:
-          AssignPublicIp: DISABLED
-          SecurityGroups:
-            - !Ref ServiceSecurityGroup
-          Subnets: !Ref PrivateSubnets
-      LoadBalancers:
-        - ContainerName: web
-          ContainerPort: 80
-          TargetGroupArn: !Ref TargetGroup
-
-  # Application Auto Scaling Target
-  ScalableTarget:
-    Type: AWS::ApplicationAutoScaling::ScalableTarget
-    Properties:
-      MaxCapacity: 10
-      MinCapacity: 2
-      ResourceId: !Sub "service/${EcsCluster}/${EcsService.Name}"
-      RoleARN: !GetAtt EcsServiceScalingRole.Arn
-      ScalableDimension: ecs:service:DesiredCount
-      ServiceNamespace: ecs
-
-  # Target Tracking Scaling Policy
-  EcsTargetTrackingPolicy:
-    Type: AWS::ApplicationAutoScaling::ScalingPolicy
-    Properties:
-      PolicyName: !Sub "${AWS::StackName}-ecs-target-tracking"
-      PolicyType: TargetTrackingScaling
-      ScalingTargetId: !Ref ScalableTarget
-      TargetTrackingScalingPolicyConfiguration:
-        PredefinedMetricSpecification:
-          PredefinedMetricType: ECSServiceAverageCPUUtilization
-        TargetValue: 70
-        ScaleInCooldown: 300
-        ScaleOutCooldown: 60
-
-  # Log Group
-  LogGroup:
-    Type: AWS::Logs::LogGroup
-    Properties:
-      LogGroupName: !Sub "/ecs/${AWS::StackName}"
-      RetentionInDays: 30
-
-  # Security Group
-  ServiceSecurityGroup:
+  InstanceSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupName: !Sub "${AWS::StackName}-service-sg"
-      GroupDescription: Security group for ECS service
-      VpcId: !Ref VPCId
+      GroupDescription: Security group for ASG instances
+      VpcId: !Ref VpcId
+      SecurityGroupEgress:
+        - CidrIp: 0.0.0.0/0
+          IpProtocol: "-1"
 
-  # Application Load Balancer Target Group
   TargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
-      Name: !Sub "${AWS::StackName}-ecs-tg"
+      Name: !Sub "${AWS::StackName}-tg"
       Port: 80
       Protocol: HTTP
-      VpcId: !Ref VPCId
-      TargetType: ip
+      VpcId: !Ref VpcId
+      HealthCheckPath: /health
+      TargetType: instance
 
-  # IAM Role for ECS Service Scaling with Least Privilege
-  EcsServiceScalingRole:
-    Type: AWS::IAM::Role
+  LaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
     Properties:
-      RoleName: !Sub "${AWS::StackName}-ecs-scaling-role"
-      AssumeRolePolicyDocument:
-        Version: "2012-10-17"
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service: application-autoscaling.amazonaws.com
-            Action: sts:AssumeRole
-      Policies:
-        - PolicyName: !Sub "${AWS::StackName}-ecs-scaling-policy"
-          PolicyDocument:
-            Version: "2012-10-17"
-            Statement:
-              - Effect: Allow
-                Action:
-                  - ecs:DescribeServices
-                  - ecs:UpdateService
-                Resource: !Sub "arn:aws:ecs:${AWS::Region}:${AWS::AccountId}:service/${EcsCluster}/*"
-```
-
-## Lambda Provisioned Concurrency Scaling
-
-### Lambda with Provisioned Concurrency Auto Scaling
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Lambda with Application Auto Scaling for provisioned concurrency
-
-Resources:
-  # Lambda Function
-  MyLambdaFunction:
-    Type: AWS::Lambda::Function
-    Properties:
-      FunctionName: !Sub "${AWS::StackName}-function"
-      Runtime: python3.11
-      Handler: app.handler
-      Code:
-        S3Bucket: !Ref CodeBucket
-        S3Key: lambda/function.zip
-      MemorySize: 512
-      Timeout: 30
-      Role: !GetAtt LambdaExecutionRole.Arn
-
-  # Lambda Version
-  LambdaVersion:
-    Type: AWS::Lambda::Version
-    Properties:
-      FunctionName: !Ref MyLambdaFunction
-      Description: Version for provisioned concurrency
-
-  # Application Auto Scaling Scalable Target
-  LambdaScalableTarget:
-    Type: AWS::ApplicationAutoScaling::ScalableTarget
-    Properties:
-      MaxCapacity: 20
-      MinCapacity: 5
-      ResourceId: !Sub "function:${MyLambdaFunction}:${LambdaVersion.Version}"
-      RoleARN: !GetAtt LambdaScalingRole.Arn
-      ScalableDimension: lambda:function:ProvisionedConcurrency
-      ServiceNamespace: lambda
-
-  # Target Tracking Scaling Policy
-  LambdaTargetTrackingPolicy:
-    Type: AWS::ApplicationAutoScaling::ScalingPolicy
-    Properties:
-      PolicyName: !Sub "${AWS::StackName}-lambda-target-tracking"
-      PolicyType: TargetTrackingScaling
-      ScalingTargetId: !Ref LambdaScalableTarget
-      TargetTrackingScalingPolicyConfiguration:
-        TargetValue: 90
-        PredefinedMetricSpecification:
-          PredefinedMetricType: LambdaProvisionedConcurrencyUtilization
-        ScaleInCooldown: 120
-        ScaleOutCooldown: 60
-
-  # Lambda Execution Role
-  LambdaExecutionRole:
-    Type: AWS::IAM::Role
-    Properties:
-      RoleName: !Sub "${AWS::StackName}-lambda-role"
-      AssumeRolePolicyDocument:
-        Version: "2012-10-17"
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service: lambda.amazonaws.com
-            Action: sts:AssumeRole
-      ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-
-  # IAM Role for Lambda Scaling with Least Privilege
-  LambdaScalingRole:
-    Type: AWS::IAM::Role
-    Properties:
-      RoleName: !Sub "${AWS::StackName}-lambda-scaling-role"
-      AssumeRolePolicyDocument:
-        Version: "2012-10-17"
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service: application-autoscaling.amazonaws.com
-            Action: sts:AssumeRole
-      Policies:
-        - PolicyName: !Sub "${AWS::StackName}-lambda-scaling-policy"
-          PolicyDocument:
-            Version: "2012-10-17"
-            Statement:
-              - Effect: Allow
-                Action:
-                  - lambda:PutProvisionedConcurrencyConfig
-                  - lambda:GetProvisionedConcurrencyConfig
-                Resource: !Sub "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:${MyLambdaFunction}:*"
-```
-
-## Conditions and Transform
-
-### Conditions for Environment-Specific Scaling
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Auto Scaling with conditional scaling configuration
-
-Parameters:
-  Environment:
-    Type: String
-    Default: dev
-    AllowedValues:
-      - dev
-      - staging
-      - production
-
-Conditions:
-  IsProduction: !Equals [!Ref Environment, production]
-  IsStaging: !Equals [!Ref Environment, staging]
-  UseSpot: !Or [!Equals [!Ref Environment, dev], !Equals [!Ref Environment, staging]]
-  UseAlb: !Not [!Equals [!Ref Environment, dev]]
-  EnableDetailedMonitoring: !Not [!Equals [!Ref Environment, dev]]
-
-Resources:
-  MyLaunchConfiguration:
-    Type: AWS::AutoScaling::LaunchConfiguration
-    Properties:
-      LaunchConfigurationName: !Sub "${AWS::StackName}-lc"
+      LaunchTemplateName: !Sub "${AWS::StackName}-lt"
       ImageId: !Ref AmiId
-      InstanceType: !If [IsProduction, t3.large, !If [IsStaging, t3.medium, t3.micro]]
-      InstanceMonitoring: !If [EnableDetailedMonitoring, Enabled, Basic]
+      InstanceType: !Ref InstanceType
+      SecurityGroupIds:
+        - !Ref InstanceSecurityGroup
 
-  MyAutoScalingGroup:
-    Type: AWS::AutoScaling::AutoScalingGroup
-    Properties:
-      AutoScalingGroupName: !Sub "${AWS::StackName}-asg"
-      MinSize: !If [IsProduction, 3, !If [IsStaging, 2, 1]]
-      MaxSize: !If [IsProduction, 12, !If [IsStaging, 6, 3]]
-      DesiredCapacity: !If [IsProduction, 3, !If [IsStaging, 2, 1]]
-      VPCZoneIdentifier: !Ref SubnetIds
-      LaunchConfigurationName: !Ref MyLaunchConfiguration
-      HealthCheckType: !If [UseAlb, ELB, EC2]
-      HealthCheckGracePeriod: !If [UseAlb, 300, 300]
-```
-
-### Transform for Code Reuse
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Transform: AWS::Serverless-2016-10-31
-
-Description: Using SAM for simplified Auto Scaling
-
-Globals:
-  Function:
-    Timeout: 30
-    Runtime: python3.11
-    Tracing: Active
-    Environment:
-      Variables:
-        LOG_LEVEL: INFO
-
-Parameters:
-  Environment:
-    Type: String
-    Default: dev
-
-Resources:
-  # Auto Scaling Group using SAM
-  WebServerGroup:
-    Type: AWS::Serverless::Application
-    Properties:
-      Location: ./asg-template.yaml
-      Parameters:
-        Environment: !Ref Environment
-```
-
-## CloudFormation Stack Management Best Practices
-
-### Stack Policies
-
-Stack Policies prevent unintentional updates to critical stack resources. Use them to protect Auto Scaling Groups from accidental modifications or deletions.
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Stack with policy to protect Auto Scaling resources
-
-Resources:
-  MyAutoScalingGroup:
+  AutoScalingGroup:
     Type: AWS::AutoScaling::AutoScalingGroup
     Properties:
       AutoScalingGroupName: !Sub "${AWS::StackName}-asg"
       MinSize: 2
       MaxSize: 10
-      DesiredCapacity: 2
+      DesiredCapacity: 4
+      LaunchTemplate:
+        LaunchTemplateId: !Ref LaunchTemplate
+        Version: !GetAtt LaunchTemplate.LatestVersionNumber
       VPCZoneIdentifier: !Ref SubnetIds
-      LaunchConfigurationName: !Ref MyLaunchConfiguration
+      TargetGroupARNs:
+        - !Ref TargetGroup
+      HealthCheckType: ELB
+      HealthCheckGracePeriod: 300
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-instance"
+          PropagateAtLaunch: true
 
-  MyLaunchConfiguration:
-    Type: AWS::AutoScaling::LaunchConfiguration
+  ScalingPolicy:
+    Type: AWS::AutoScaling::ScalingPolicy
     Properties:
-      LaunchConfigurationName: !Sub "${AWS::StackName}-lc"
-      ImageId: !Ref AmiId
-      InstanceType: t3.micro
+      PolicyName: !Sub "${AWS::StackName}-cpu-policy"
+      PolicyType: TargetTrackingScaling
+      AutoScalingGroupName: !Ref AutoScalingGroup
+      TargetTrackingConfiguration:
+        PredefinedMetricSpecification:
+          PredefinedMetricType: ASGAverageCPUUtilization
+        TargetValue: 70
 
-Metadata:
-  AWS::CloudFormation::StackPolicy:
-    Statement:
-      - Effect: Allow
-        Resource: "*"
-        Action: Update:Modify
-      - Effect: Deny
-        Resource: "*"
-        Action: Update:Delete
-        Condition:
-          StringEquals:
-            ResourceType:
-              - AWS::AutoScaling::AutoScalingGroup
-              - AWS::AutoScaling::LaunchConfiguration
+Outputs:
+  AutoScalingGroupName:
+    Value: !Ref AutoScalingGroup
+    Export:
+      Name: !Sub "${AWS::StackName}-ASG-Name"
 ```
 
-### Termination Protection
+### Validation Commands
 
-Enable termination protection to prevent accidental deletion of Auto Scaling Groups. This is critical for production environments.
-
-```bash
-# Enable termination protection on an existing stack
-aws cloudformation update-termination-protection \
-  --stack-name my-auto-scaling-stack \
-  --enable-termination-protection
-
-# Check if termination protection is enabled
-aws cloudformation describe-stacks \
-  --stack-name my-auto-scaling-stack \
-  --query "Stacks[0].EnableTerminationProtection"
-```
-
-### Drift Detection
-
-Detect when your Auto Scaling infrastructure has been modified outside of CloudFormation.
+Validate template and test changes before deployment:
 
 ```bash
-# Detect drift on a stack
-aws cloudformation detect-stack-drift \
-  --stack-name my-auto-scaling-stack
+# Validate CloudFormation template
+aws cloudformation validate-template --template-body file://template.yaml
 
-# Get drift detection status
-aws cloudformation describe-stack-drift-detection-status \
-  --stack-name my-auto-scaling-stack
-
-# Get drift detection results
-aws cloudformation describe-stack-resource-drifts \
-  --stack-name my-auto-scaling-stack
-
-# Check specific resource drift
-aws cloudformation describe-stack-resource-drifts \
-  --stack-name my-auto-scaling-stack \
-  --stack-resource-drifts-not-in-sync
-```
-
-### Change Sets
-
-Use Change Sets to preview and review changes before applying them to your Auto Scaling infrastructure.
-
-```bash
-# Create a change set
+# Create change set to preview changes
 aws cloudformation create-change-set \
-  --stack-name my-auto-scaling-stack \
-  --change-set-name my-changeset \
+  --stack-name my-asg-stack \
   --template-body file://template.yaml \
-  --parameters ParameterKey=Environment,ParameterValue=production
-
-# List change sets
-aws cloudformation list-change-sets \
-  --stack-name my-auto-scaling-stack
+  --change-set-type CREATE
 
 # Describe change set
 aws cloudformation describe-change-set \
-  --stack-name my-auto-scaling-stack \
-  --change-set-name my-changeset
+  --stack-name my-asg-stack \
+  --change-set-name <change-set-id>
 
 # Execute change set
 aws cloudformation execute-change-set \
-  --stack-name my-auto-scaling-stack \
-  --change-set-name my-changeset
+  --stack-name my-asg-stack \
+  --change-set-name <change-set-id>
 ```
 
-```yaml
-# Automated change set creation in CI/CD pipeline
-Resources:
-  ChangeSetRole:
-    Type: AWS::IAM::Role
-    Properties:
-      AssumeRolePolicyDocument:
-        Version: "2012-10-17"
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service: cloudformation.amazonaws.com
-            Action: sts:AssumeRole
-      Policies:
-        - PolicyName: ChangeSetPolicy
-          PolicyDocument:
-            Version: "2012-10-17"
-            Statement:
-              - Effect: Allow
-                Action:
-                  - autoscaling:Describe*
-                  - cloudwatch:Describe*
-                  - ec2:Describe*
-                Resource: "*"
-              - Effect: Allow
-                Action:
-                  - autoscaling:UpdateAutoScalingGroup
-                  - autoscaling:CreateOrUpdateTags
-                  - cloudwatch:PutMetricAlarm
-                  - cloudwatch:DeleteAlarms
-                Resource:
-                  - !Sub "arn:aws:autoscaling:${AWS::Region}:${AWS::AccountId}:autoScalingGroup:*:autoScalingGroupName/*"
-                  - !Sub "arn:aws:cloudwatch:${AWS::Region}:${AWS::AccountId}:alarm:*"
+### Verification Commands
+
+Verify ASG health and configuration after deployment:
+
+```bash
+# Describe Auto Scaling Groups
+aws autoscaling describe-auto-scaling-groups \
+  --auto-scaling-group-names my-asg-stack-asg
+
+# Check instance health
+aws autoscaling describe-auto-scaling-instances \
+  --instance-ids <instance-id>
+
+# Verify scaling policies
+aws autoscaling describe-policies \
+  --auto-scaling-group-name my-asg-stack-asg
+
+# Review scaling activities
+aws autoscaling describe-scaling-activities \
+  --auto-scaling-group-name my-asg-stack-asg
 ```
+
+## Constraints and Warnings
+
+### Resource Limits
+
+- ASG max size: 10000 instances (request limit increase for more)
+- Max 20 launch configurations per account (use Launch Templates instead)
+- Lifecycle hooks: 50 per ASG
+- Scaling policies: 20 per ASG (Target Tracking limit)
+- Cooldown period: 300 seconds default (decrease cautiously)
+
+### Operational Warnings
+
+- Do not update both Launch Configuration and Launch Template on the same ASG in one update
+- Always use `UpdatePolicy` for graceful updates and instance refresh
+- Set `HealthCheckGracePeriod` >= expected instance initialization time
+- Lifecycle hook timeout must accommodate graceful shutdown procedures
+- Spot Instances: set `InstanceMaintenancePolicy` to avoid unexpected terminations
+
+### Security Warnings
+
+- Never hardcode credentials; use IAM instance profiles
+- Use Service-Linked Roles for Auto Scaling (`aws-autoscaling.amazonaws.com`)
+- Restrict ASG describe permissions to prevent information disclosure
+- KMS keys for EBS encryption must be created in same region as ASG
+- Cross-stack references export names must be unique per region
 
 ## Best Practices
 
@@ -1273,6 +388,7 @@ Resources:
 - Implement lifecycle hooks for graceful shutdown
 - Configure appropriate termination policies
 - Use mixed instances policies for diversity
+- Set appropriate health check grace periods
 
 ### Cost Optimization
 
@@ -1281,6 +397,7 @@ Resources:
 - Configure aggressive scale-in policies
 - Use scheduled scaling for predictable patterns
 - Monitor and optimize regularly
+- Set appropriate minimum capacity to avoid over-provisioning
 
 ### Monitoring
 
@@ -1289,105 +406,23 @@ Resources:
 - Use lifecycle hooks for logging and analytics
 - Configure SNS notifications for scaling events
 - Implement detailed monitoring for troubleshooting
+- Use multiple scaling policies for optimal response
 
 ### Security
 
-- Use IAM roles with minimum permissions
+- Use IAM roles with least privilege permissions
 - Encrypt EBS volumes with KMS
 - Configure restrictive security groups
 - Use VPC with appropriate subnets
-- Implement parameter store for sensitive configuration
-- Avoid using broad managed policies like `CloudWatchFullAccess`
-- Use specific permissions instead of broad managed policies
+- Implement Parameter Store for sensitive configuration
+- Avoid broad managed policies (use specific permissions)
+- Configure appropriate instance profiles
 
-#### Least Privilege IAM Examples
+## References
 
-```yaml
-# Instead of CloudWatchFullAccess, use specific permissions
-ScalingAlarmRole:
-  Type: AWS::IAM::Role
-  Properties:
-    RoleName: !Sub "${AWS::StackName}-scaling-alarm-role"
-    AssumeRolePolicyDocument:
-      Version: "2012-10-17"
-      Statement:
-        - Effect: Allow
-          Principal:
-            Service: autoscaling.amazonaws.com
-          Action: sts:AssumeRole
-    Policies:
-      - PolicyName: !Sub "${AWS::StackName}-cloudwatch-specific-policy"
-        PolicyDocument:
-          Version: "2012-10-17"
-          Statement:
-            - Effect: Allow
-              Action:
-                - cloudwatch:PutMetricAlarm
-                - cloudwatch:DescribeAlarms
-                - cloudwatch:DeleteAlarms
-                - cloudwatch:EnableAlarmActions
-                - cloudwatch:DisableAlarmActions
-              Resource: !Sub "arn:aws:cloudwatch:${AWS::Region}:${AWS::AccountId}:alarm:*"
-```
+For detailed implementation guidance, see:
 
-## Examples
-
-The following examples demonstrate common Auto Scaling patterns:
-
-### Example 1: EC2 Auto Scaling Group with ALB
-
-Complete ASG with Application Load Balancer, health checks, and target tracking scaling:
-
-```yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: Production EC2 Auto Scaling with ALB
-
-Resources:
-  MyAutoScalingGroup:
-    Type: AWS::AutoScaling::AutoScalingGroup
-    Properties:
-      AutoScalingGroupName: !Sub "${AWS::StackName}-asg"
-      MinSize: 2
-      MaxSize: 10
-      DesiredCapacity: 2
-      VPCZoneIdentifier: !Ref SubnetIds
-      LaunchConfigurationName: !Ref MyLaunchConfiguration
-      TargetGroupARNs:
-        - !Ref MyTargetGroup
-      HealthCheckType: ELB
-      HealthCheckGracePeriod: 300
-```
-
-### Example 2: Target Tracking Scaling Policy
-
-```yaml
-TargetTrackingPolicy:
-  Type: AWS::AutoScaling::ScalingPolicy
-  Properties:
-    PolicyName: !Sub "${AWS::StackName}-target-tracking"
-    PolicyType: TargetTrackingScaling
-    AutoScalingGroupName: !Ref MyAutoScalingGroup
-    TargetTrackingConfiguration:
-      PredefinedMetricSpecification:
-        PredefinedMetricType: ASGAverageCPUUtilization
-      TargetValue: 70
-```
-
-### Example 3: Lifecycle Hooks
-
-```yaml
-LifecycleHookLaunch:
-  Type: AWS::AutoScaling::LifecycleHook
-  Properties:
-    LifecycleHookName: !Sub "${AWS::StackName}-launch-hook"
-    AutoScalingGroupName: !Ref MyAutoScalingGroup
-    LifecycleTransition: autoscaling:EC2_INSTANCE_LAUNCHING
-    HeartbeatTimeout: 900
-    NotificationTargetARN: !Ref SnsTopicArn
-    RoleARN: !GetAtt LifecycleHookRole.Arn
-```
-
-For complete production-ready examples, see [EXAMPLES.md](references/examples.md).
+- **[constraints.md](references/constraints.md)** - Resource limits (ASG limits, scaling policy limits, lifecycle hook limits), scaling constraints (cooldown periods, health check grace periods, min/max capacity), operational constraints (mixed instances policy, predictive scaling, instance refresh), security constraints (IAM roles, service-linked roles, KMS permissions), and cost considerations (Spot instance termination, over-provisioning, scaling frequency)
 
 ## Related Resources
 
@@ -1395,46 +430,3 @@ For complete production-ready examples, see [EXAMPLES.md](references/examples.md
 - [AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/)
 - [Auto Scaling Best Practices](https://docs.aws.amazon.com/autoscaling/plans/userguide/auto-scaling-best-practices.html)
 - [Application Auto Scaling](https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html)
-
-## Additional Files
-
-## Constraints and Warnings
-
-### Resource Limits
-
-- **Auto Scaling Group Limits**: Maximum 100 Auto Scaling Groups per region per AWS account
-- **Launch Configuration/Launch Template Limits**: Maximum number of launch configurations and templates per region
-- **Scaling Policy Limits**: Maximum 500 step adjustments in a step scaling policy
-- **Lifecycle Hooks**: Maximum number of lifecycle hooks per Auto Scaling Group varies by instance type
-
-### Scaling Constraints
-
-- **Cooldown Periods**: Scaling cooldowns prevent rapid scale-in/scale-out oscillations but can delay response to demand changes
-- **Health Check Grace Period**: Too short grace period may cause termination of instances still bootstrapping
-- **Minimum/Maximum Capacity**: Exceeding these limits prevents scaling operations
-- **Instance Termination**: Scale-in terminates instances without graceful shutdown by default
-
-### Operational Constraints
-
-- **Mixed Instances Policy**: Not all instance types support on-demand/Spot allocation
-- **Predictive Scaling**: Requires at least 24 hours of metric data before predictions are accurate
-- **Instance Refresh**: Replacing all instances simultaneously can cause service disruption
-- **Scaling Policies**: Multiple scaling policies targeting the same metric can cause unpredictable behavior
-
-### Cost Considerations
-
-- **Spot Instances**: Can be terminated with 2-minute notice; not suitable for stateful workloads
-- **Over-provisioning**: Setting minimum capacity too high leads to unnecessary costs
-- **Scaling Frequency**: Frequent scaling activities can accumulate costs from instance provisioning
-
-### Security Constraints
-
-- **IAM Roles**: Auto Scaling requires IAM roles with appropriate permissions for lifecycle hooks
-- **Service-Linked Roles**: Auto Scaling requires creation of service-linked role for certain operations
-- **Launch Template Permissions**: Launch templates referencing encrypted AMIs require KMS permissions
-
-## Additional Files
-
-For complete details on resources and their properties, consult:
-- [REFERENCE.md](references/reference.md) - Detailed reference guide for all CloudFormation resources
-- [EXAMPLES.md](references/examples.md) - Complete production-ready examples

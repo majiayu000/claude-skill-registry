@@ -21,12 +21,23 @@ The skill expects one or more of these in the project directory:
 2. **GPT54_AUTO_REVIEW.md** — auto-review loop conclusions
 3. **Experiment results** — JSON files in `figures/`, screen logs, tables
 4. **IDEA_REPORT.md** — from idea-discovery pipeline (if applicable)
+5. **CLAIMS_FROM_RESULTS.md** — structured claim judgment from `/result-to-claim` (preferred if available)
 
 If none exist, ask the user to describe the paper's contribution in 3-5 sentences.
+
+## Orchestra-Guided Writing Overlay
+
+Keep the existing workflow and outputs, but use the shared references below to improve the quality of the story and outline:
+
+- Read `../shared-references/writing-principles.md` when framing the Abstract, Introduction, Related Work, or hero figure
+- Read `../shared-references/venue-checklists.md` before freezing the outline for a specific venue
+- Load these references only when they help; they are support material, not a new workflow phase
 
 ## Workflow
 
 ### Step 1: Extract Claims and Evidence
+
+**First check for `CLAIMS_FROM_RESULTS.md`** — if it exists, use it as the starting point for claims and merge it with any additional evidence from the narrative documents below.
 
 Read all available narrative documents and extract:
 
@@ -47,6 +58,12 @@ Build a **Claims-Evidence Matrix**:
 ### Step 2: Determine Paper Type and Structure
 
 Based on TARGET_VENUE and paper content, classify and select structure.
+
+Before committing to a structure, apply the narrative principle from `../shared-references/writing-principles.md`:
+
+- The paper should tell one coherent technical story
+- By the end of the Introduction, the outline should make the **What**, **Why**, and **So What** explicit
+- Front-load the most important material: title, abstract, introduction, and hero figure
 
 **IMPORTANT**: The section count is FLEXIBLE (5-8 sections). Choose what fits the content best. The templates below are starting points, not rigid constraints.
 
@@ -252,4 +269,3 @@ Save the final outline to `PAPER_PLAN.md` in the project root:
 ## Acknowledgements
 
 Outline methodology inspired by [Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills) (claim-evidence mapping), [claude-scholar](https://github.com/Galaxy-Dawn/claude-scholar) (citation verification), and [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) (claim verification protocol).
-

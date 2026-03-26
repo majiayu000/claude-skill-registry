@@ -37,8 +37,9 @@ Gather context before drafting. Include Execution Instructions in every plan. Ne
 - Design an implementation plan
 - Structure a development plan
 - Create a structured design plan
-- Plan before implementing a Java feature
-- Refactoring plan
+- Refactor the plan
+- Improve the plan
+- Update the plan
 
 ## Reference
 

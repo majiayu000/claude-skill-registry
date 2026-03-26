@@ -5,7 +5,7 @@ disable-model-invocation: true
 
 # Unit Test Coverage Improvement
 
-Improve unit test coverage for existing code. Requires `/optimus:init` to have set up test infrastructure (framework, coverage tooling, test-guardian agent, testing docs) first. Conservative by design — only adds new test files, never refactors or restructures existing source code. If code is untestable as-is, it flags it rather than changing it. Refactoring is the domain of `/optimus:refactor`.
+Improve unit test coverage for existing code. Requires `/optimus:init` to have set up test infrastructure (framework, coverage tooling, testing docs) first. Conservative by design — only adds new test files, never refactors or restructures existing source code. If code is untestable as-is, it flags it rather than changing it. Refactoring is the domain of `/optimus:refactor`.
 
 ## Step 1: Pre-flight
 
@@ -40,13 +40,14 @@ Delegate test infrastructure scanning, test execution, and coverage analysis to 
 
 For each subproject (or the single project):
 
-Read `$CLAUDE_PLUGIN_ROOT/skills/unit-test/references/agent-prompts.md` for the full prompt template, scanning patterns, execution rules, and return format for the Discovery & Coverage Reconnaissance Agent.
+Read `$CLAUDE_PLUGIN_ROOT/skills/unit-test/agents/shared-constraints.md` for agent constraints.
+Read `$CLAUDE_PLUGIN_ROOT/skills/unit-test/agents/test-infrastructure-analyzer.md` for the full prompt template, scanning patterns, execution rules, and return format for the Test Infrastructure Analyzer Agent.
 
-Launch 1 `general-purpose` Agent tool call using the Agent 1 prompt from the agent-prompts.md file.
+Launch 1 `general-purpose` Agent tool call using the prompt from test-infrastructure-analyzer.md, prepended with the shared constraints.
 
 | Agent | Role | Runs when |
 |-------|------|-----------|
-| 1 — Discovery & Coverage Reconnaissance | Scan test files/frameworks/runners, run existing tests, measure coverage, classify code testability | Always |
+| 1 — Test Infrastructure Analysis | Scan test files/frameworks/runners, run existing tests, measure coverage, classify code testability | Always |
 
 Wait for the agent to complete.
 

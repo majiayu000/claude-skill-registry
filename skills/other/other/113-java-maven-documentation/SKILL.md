@@ -31,6 +31,7 @@ Before generating any content, read every pom.xml in the workspace. Only include
 - Create DEVELOPER.md
 - Generate DEVELOPER.md
 - Maven project documentation
+- Add Maven documentation
 - Plugin goals reference
 - Maven Profiles table
 - Submodules table

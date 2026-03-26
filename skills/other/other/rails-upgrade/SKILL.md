@@ -16,7 +16,8 @@ description: Analyzes Rails applications and generates comprehensive upgrade rep
 
 ## Dependencies
 
-- **rails-load-defaults skill** ([github.com/fastruby/rails-load-defaults-skill](https://github.com/fastruby/rails-load-defaults-skill)) — Handles incremental `load_defaults` updates with tiered risk assessment (Tier 1: low-risk, Tier 2: needs codebase grep, Tier 3: requires human review). Must be installed for Step 2 of the upgrade workflow.
+- **rails-load-defaults skill** ([github.com/ombulabs/claude-code_rails-load-defaults-skill](https://github.com/ombulabs/claude-code_rails-load-defaults-skill)) — Handles incremental `load_defaults` updates with tiered risk assessment (Tier 1: low-risk, Tier 2: needs codebase grep, Tier 3: requires human review). Must be installed for Step 2 of the upgrade workflow.
+- **dual-boot skill** ([github.com/ombulabs/claude-code_dual-boot-skill](https://github.com/ombulabs/claude-code_dual-boot-skill)) — Sets up and manages dual-boot environments using the `next_rails` gem. Covers setup, `NextRails.next?` code patterns, CI configuration, and post-upgrade cleanup. Must be installed for Step 4 of the upgrade workflow.
 
 ---
 
@@ -33,7 +34,7 @@ This skill follows the proven FastRuby.io upgrade methodology:
 7. **Backwards Compatible Changes** - Deploy small changes to production before version bump
 
 **Key Resources:**
-- See `reference/dual-boot-strategy.md` for dual-boot setup with `next_rails`
+- **DELEGATE** to the `dual-boot` skill for dual-boot setup with `next_rails` (see Dependencies)
 - See `reference/deprecation-warnings.md` for managing deprecations
 - See `reference/staying-current.md` for maintaining upgrades over time
 
@@ -41,73 +42,15 @@ This skill follows the proven FastRuby.io upgrade methodology:
 
 ## CRITICAL: Dual-Boot Code Pattern with `NextRails.next?`
 
-### Always Use `NextRails.next?` — Never Use `respond_to?`
+When proposing code fixes that must work with both the current and target Rails versions (dual-boot), **always use `NextRails.next?` from the `next_rails` gem** — never use `respond_to?` or other feature-detection patterns.
 
-When proposing code fixes that must work with both the current and target Rails versions (dual-boot), **always use `NextRails.next?` from the `next_rails` gem** instead of `respond_to?` or other feature-detection patterns.
+**DELEGATE** to the `dual-boot` skill for:
+- Setup and initialization (`next_rails --init`, `Gemfile.next`)
+- `NextRails.next?` code patterns and examples
+- CI configuration for dual-boot testing
+- Post-upgrade cleanup (removing dual-boot branches)
 
-**Why `respond_to?` is problematic:**
-- It is **hard to understand**: a reader must know which Rails version added or removed the method to understand what the branch is really about
-- It is **hard to maintain**: `respond_to?` checks accumulate over time and become impossible to clean up because their intent ("which Rails version is this for?") is lost
-- It is **fragile**: it couples code to framework implementation details and may produce false positives (e.g., a method exists but behaves differently) or false negatives (e.g., a gem monkey-patches the method in)
-- It **obscures intent**: the code does not communicate *why* there are two paths — only that some method may or may not exist
-
-**Why `NextRails.next?` is better:**
-- It is **explicit and readable**: anyone reading the code immediately understands "this branch is for the next Rails version"
-- It is **easy to clean up**: after the upgrade, search for `NextRails.next?` and remove all branches, keeping only the new-version code
-- It is **the standard**: it is the established dual-boot mechanism in the FastRuby.io methodology
-
-### Pattern: Use `NextRails.next?` for Version-Dependent Code
-
-❌ **WRONG — Do NOT use `respond_to?`:**
-```ruby
-# BAD: Hard to understand, hard to maintain, intent is unclear
-if config.respond_to?(:fixture_paths=)
-  config.fixture_paths = ["#{::Rails.root}/spec/fixtures"]
-else
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
-end
-```
-
-✅ **CORRECT — Use `NextRails.next?`:**
-```ruby
-# GOOD: Explicit dual-boot branching — clear intent, easy to clean up later
-if NextRails.next?
-  config.fixture_paths = ["#{::Rails.root}/spec/fixtures"]
-else
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
-end
-```
-
-### When to Apply This Pattern
-
-Use `NextRails.next?` branching whenever a breaking change requires different code for the current vs. target Rails version, including but not limited to:
-
-- **Configuration changes** (e.g., `fixture_path` → `fixture_paths`, `config.secrets` → `config.credentials`)
-- **API changes** (e.g., method renames, changed signatures, removed methods)
-- **Gem version differences** (e.g., different gem APIs across Rails versions)
-- **Initializer changes** (e.g., different middleware, different default settings)
-
-### Prerequisites
-
-Before using `NextRails.next?` in code, ensure the project has `next_rails` set up:
-
-1. Add `next_rails` gem to the Gemfile: `gem 'next_rails'`
-2. Run `bundle install`
-3. Run `next_rails --init` to create the `Gemfile.next` symlink
-   - **IMPORTANT:** Before running `next_rails --init`, check if `Gemfile.next` already exists. If it does, **do NOT run `next_rails --init` again** — it will duplicate the `next?` method definition in the Gemfile.
-4. Run `bundle install` to install dependencies for the current Rails version
-5. Run `next bundle install` to install dependencies for the next Rails version
-   - If `next bundle install` does not work, use: `BUNDLE_GEMFILE=Gemfile.next bundle install`
-
-If `next_rails` is NOT set up, **set it up first** before proposing any dual-boot code changes. See `reference/dual-boot-strategy.md`.
-
-### After Upgrade Completes
-
-Once the upgrade is finalized and the old Rails version is dropped:
-- Remove all `if NextRails.next?` / `else` branches
-- Keep only the `NextRails.next?` (new version) code path
-- Remove the `next_rails` gem from the Gemfile if no longer needed
-- This cleanup is part of the post-upgrade checklist
+**DEPENDENCY:** Requires the [dual-boot skill](https://github.com/ombulabs/claude-code_dual-boot-skill)
 
 ---
 
@@ -126,7 +69,7 @@ Once the upgrade is finalized and the old Rails version is dropped:
 - **DELEGATE** to the `rails-load-defaults` skill for detection and incremental update
 - That skill handles tiered, per-config updates with test runs between each change
 - If `load_defaults` matches current Rails version → Proceed to Step 3
-- **DEPENDENCY:** Requires the [rails-load-defaults skill](https://github.com/fastruby/rails-load-defaults-skill)
+- **DEPENDENCY:** Requires the [rails-load-defaults skill](https://github.com/ombulabs/claude-code_rails-load-defaults-skill)
 
 ### Step 3: Run Breaking Changes Detection (DIRECT)
 - **Claude runs detection checks directly** using Grep, Glob, and Read tools
@@ -244,7 +187,7 @@ If user requests a multi-hop upgrade (e.g., 5.2 → 8.1):
 
 ### Workflow Guides (Load when generating deliverables)
 - `workflows/test-suite-verification-workflow.md` - **MANDATORY FIRST STEP** - How to run and verify test suite
-- **EXTERNAL DEPENDENCY:** `rails-load-defaults` skill - **MANDATORY SECOND STEP** - Verify and update load_defaults to match Rails version (https://github.com/fastruby/rails-load-defaults-skill)
+- **EXTERNAL DEPENDENCY:** `rails-load-defaults` skill - **MANDATORY SECOND STEP** - Verify and update load_defaults to match Rails version (https://github.com/ombulabs/claude-code_rails-load-defaults-skill)
 - `workflows/direct-detection-workflow.md` - How to run breaking change detection directly
 - `workflows/upgrade-report-workflow.md` - How to generate upgrade reports
 - `workflows/app-update-preview-workflow.md` - How to generate app:update previews
@@ -254,7 +197,7 @@ If user requests a multi-hop upgrade (e.g., 5.2 → 8.1):
 - `examples/multi-hop-upgrade.md` - Multi-hop upgrade example
 
 ### Reference Materials
-- `reference/dual-boot-strategy.md` - Dual-boot with next_rails gem
+- **EXTERNAL DEPENDENCY:** `dual-boot` skill - Dual-boot setup and management with next_rails (https://github.com/ombulabs/claude-code_dual-boot-skill)
 - `reference/deprecation-warnings.md` - Finding and fixing deprecations
 - `reference/staying-current.md` - Keeping up with Rails releases
 - `reference/breaking-changes-by-version.md` - Quick lookup
@@ -311,21 +254,12 @@ When user requests an upgrade, follow this workflow:
 
 ### Step 4: Set Up Dual-Boot with next_rails (IF NOT ALREADY SET UP)
 ```
-⚠️  DO NOT run next_rails --init if Gemfile.next already exists.
-    Running it twice duplicates the next? method definition in the Gemfile.
-
-1. Check if Gemfile.next already exists
-2. If Gemfile.next does NOT exist:
-   a. Add gem 'next_rails' to Gemfile (all environments, not just development)
-   b. Run: bundle install
-   c. Run: next_rails --init
-   d. Run: bundle install
-   e. Run: next bundle install (fallback: BUNDLE_GEMFILE=Gemfile.next bundle install)
-3. If Gemfile.next ALREADY exists:
-   - Skip initialization — dual-boot is already set up
-   - Verify next_rails gem is in Gemfile, add if missing
-   - Run: bundle install
-   - Run: next bundle install (fallback: BUNDLE_GEMFILE=Gemfile.next bundle install)
+DELEGATE to the dual-boot skill for setup and initialization.
+That skill handles:
+- Checking if Gemfile.next already exists (to avoid duplicate next? method)
+- Adding next_rails gem and running next_rails --init
+- Installing dependencies for both Rails versions
+- Configuring the Gemfile with if next? conditionals
 ```
 
 ### Step 5: Validate Upgrade Path
@@ -525,7 +459,7 @@ Before delivering, verify:
 10. **Load Workflows as Needed** (don't hold everything in memory)
 11. **Sequential Process is Critical** (tests → load_defaults check → detection → reports)
 12. **Follow FastRuby.io Methodology** (incremental upgrades, assessment first)
-13. **Always Use `NextRails.next?` for Dual-Boot Code** (NEVER use `respond_to?` for version branching — it is hard to understand, hard to maintain, and obscures intent. Use `NextRails.next?` from the `next_rails` gem instead. See "Dual-Boot Code Pattern" section above.)
+13. **Always Use `NextRails.next?` for Dual-Boot Code** (NEVER use `respond_to?` for version branching. DELEGATE to the `dual-boot` skill for patterns and setup.)
 
 ---
 

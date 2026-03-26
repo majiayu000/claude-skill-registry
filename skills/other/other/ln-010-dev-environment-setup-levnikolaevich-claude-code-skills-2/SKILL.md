@@ -75,7 +75,12 @@ Skip disabled agents. Record "not found" for missing agents.
 
 One `claude mcp list` call. Parse into map per server: `registered`, `connected`.
 
-Then for each registered hex package: `npm outdated -g @levnikolaevich/{pkg}` — captures `outdated: true/false`.
+For each registered hex package:
+1. `npm view @levnikolaevich/{pkg} version` — registry latest
+2. npx cache scan: find `{cacheRoot}/_npx/**/node_modules/@levnikolaevich/{pkg}/package.json` — cached version
+3. Compare: registry > cached → `outdated: true`. Cache miss → `outdated: unknown` (treat as needs-refresh).
+
+Note: hex packages run via `npx -y`, NOT global install. Never use `npm outdated -g`.
 
 Detect deprecated servers (from ln-012 deprecated list in its SKILL.md).
 
@@ -136,7 +141,7 @@ Environment Assessment:
 | Worker | SKIP when | RUN when |
 |--------|-----------|----------|
 | ln-011 | All agents: (available) OR (disabled) | Any agent: not available AND not disabled |
-| ln-012 | All servers connected + not outdated AND hooks OK AND permissions complete AND no deprecated AND output style OK | Any: missing/disconnected/outdated server, hooks missing, permissions missing, deprecated found, output style missing/outdated |
+| ln-012 | All servers connected + not outdated AND permissions complete AND no deprecated AND output style OK | Any: missing/disconnected/outdated server, permissions missing, deprecated found, output style missing/outdated |
 | ln-013 | All targets: (disabled) OR (linked + synced) | Any non-disabled target: not linked OR servers not synced |
 | ln-014 | All instruction files exist AND quality OK (no timestamps, has compact, has MCP prefs) | Any file missing OR quality issues |
 
@@ -149,7 +154,7 @@ Dispatch Plan:
 | Worker | Action | Reason                           |
 |--------|--------|----------------------------------|
 | ln-011 | RUN    | codex not installed               |
-| ln-012 | SKIP   | all servers connected, hooks ok   |
+| ln-012 | SKIP   | all servers connected, permissions ok |
 | ln-013 | RUN    | codex symlink missing             |
 | ln-014 | RUN    | AGENTS.md, GEMINI.md missing      |
 ```
@@ -172,6 +177,8 @@ Full verification after workers complete. This is the **acceptance check** — c
 **3a: Verify CLI Agents**
 - `codex --version`, `gemini --version`, `claude --version` for each non-disabled agent
 - Record: available, version
+- Compare Phase 3a versions against Phase 1a versions
+- If any version changed during the session: INFO "Agent {name} updated from {v1} to {v2} during setup"
 
 **3b: Verify MCP Servers**
 - `claude mcp list` → verify all registered servers `Connected`
@@ -183,9 +190,13 @@ Full verification after workers complete. This is the **acceptance check** — c
 | 6-8 | WARN | "Consider disabling unused MCP servers" |
 | >8 | WARN | "Significant context impact" |
 
-**3c: Verify Hooks**
+**3c: Verify & Refresh Hooks**
 
-**MANDATORY READ:** Load `shared/references/hook_health_check.md`
+**Step 1:** Always call `mcp__hex-line__setup_hooks(agent="all")` (idempotent).
+This ensures hook.mjs and output-style.md are always current, even when ln-012 is skipped.
+Verify response contains `Hooks configured for`. If error → report FAIL, continue.
+
+**Step 2:** **MANDATORY READ:** Load `shared/references/hook_health_check.md`
 
 - Validate hooks from `hooks/hooks.json` (plugin) and `.claude/settings.local.json` (project)
 - Check JSON syntax, script existence, dependencies
@@ -198,18 +209,20 @@ Full verification after workers complete. This is the **acceptance check** — c
 
 **3e: Best Practices Audit**
 
-| # | Check | Pass | Fail | Source |
-|---|-------|------|------|--------|
-| 1 | MCP servers <=5 | <=25K tokens | WARN budget exceeded | 3b |
-| 2 | CLAUDE.md exists | Found | Created by ln-014 | 3d |
-| 3 | CLAUDE.md compact | <100 lines | INFO consider compacting | 3d |
-| 4 | No timestamps in CLAUDE.md | Clean | WARN prompt cache breakage | 3d |
-| 5 | Hooks configured and enabled | All hooks active | WARN missing hooks | 3c |
-| 6 | Project MCP gate | `enableAllProjectMcpServers: false` | WARN security risk | 3b |
-| 7 | Codex shell isolation | Env inheritance restricted | SUGGEST hardening | 3a |
-| 8 | Gemini auto-compression | `chatCompression` set | SUGGEST enabling | 3a |
-| 9 | Verification tools | test/lint in package.json | INFO missing tooling | 3b |
-| 10 | Output style installed | hex-line.md exists + active | WARN not installed (ln-012 will fix) | 1f |
+| # | Check | Pass | Fail | Auto-fix |
+|---|-------|------|------|----------|
+| 1 | MCP servers <=5 | <=25K tokens | WARN budget exceeded | — (user decides) |
+| 2 | CLAUDE.md exists | Found | Created by ln-014 | — |
+| 3 | CLAUDE.md compact | <100 lines | INFO consider compacting | — (user decides) |
+| 4 | No timestamps | Clean | FIX: remove lines matching `\d{4}-\d{2}-\d{2}.\d{2}:\d{2}` and standalone `Last Updated: {date}` | auto |
+| 5 | Hooks configured | All hooks active | Fixed by Phase 3c | setup_hooks already called |
+| 6 | Project MCP gate | `enableAllProjectMcpServers: false` | FIX: set to false in settings.json | auto |
+| 7 | Codex shell isolation | Env restricted | SUGGEST | — (user decides) |
+| 8 | Gemini auto-compression | `chatCompression` set | SUGGEST | — (user decides) |
+| 9 | Verification tools | test/lint found | INFO | — |
+| 10 | Output style installed | hex-line active | Fixed by Phase 3c | setup_hooks already called |
+
+**Auto-fix policy:** Checks marked "FIX" are applied automatically (unless `dry_run: true`). Checks marked "Fixed by Phase 3c" are resolved by the setup_hooks call. Remaining WARN/INFO/SUGGEST require user action.
 
 **3f: Write State**
 
@@ -220,10 +233,12 @@ Full verification after workers complete. This is the **acceptance check** — c
    - `claude_md`: exists, line_count, has_timestamps, has_compact_instructions
    - `best_practices`: score and findings
    - `last_assessment`: dispatch plan outcome (workers_run, workers_skipped)
-   - **NOT persisted** (verify-time only): MCP servers, MCP budget, hooks — shown in report but not written to file (native CC settings are source of truth)
+   - `hooks`: object with `mode` field (`"blocking"` or `"advisory"`, default `"blocking"`). Read by hook.mjs at runtime
+   - **NOT persisted** (verify-time only): MCP servers, MCP budget — shown in report but not written to file (native CC settings are source of truth)
 3. **Migrate legacy paths** (idempotent — skips if already migrated):
    ```
    mkdir -p .hex-skills
+
    FOR each {old, new} IN:
      .agent-review/              -> .hex-skills/agent-review/
      .codegraph/                 -> .hex-skills/codegraph/
@@ -232,7 +247,23 @@ Full verification after workers complete. This is the **acceptance check** — c
      .optimization/              -> .hex-skills/optimization/
      docs/environment_state.json -> .hex-skills/environment_state.json
    IF old exists AND new does NOT exist: mv old new
-   Clean .gitignore: remove lines matching old patterns
+
+   # .codegraph/ migration note: hex-graph-mcp >= 0.4.0 already writes to .hex-skills/codegraph/.
+   # Old .codegraph/ may be locked by a running MCP process from an older version.
+   # IF mv fails (EBUSY/locked): skip, WARN "restart Claude Code first, then re-run ln-010".
+   # After restart the new hex-graph process writes to .hex-skills/codegraph/ and old .codegraph/ is stale.
+
+   Clean .gitignore (line-by-line, surgical removal):
+     Remove ONLY lines that EXACTLY match these legacy patterns:
+       /.codegraph
+       /.agent-review
+       /.pipeline
+       /.worktrees
+       /.optimization
+       docs/environment_state.json
+     Method: grep -v with exact match, or mcp__hex-line__edit_file with set_line per line.
+     NEVER use replace_between on .gitignore -- risk of deleting adjacent unrelated entries.
+     After removal: verify no unrelated lines were affected (read file, compare line count).
    ```
 4. **Ensure gitignore:** If `.hex-skills/` not in `.gitignore` -> append:
    ```
@@ -321,7 +352,7 @@ Skill type: `execution-orchestrator`. Analyze this session per protocol §7. Out
 - [ ] Dispatch plan built and displayed (Phase 2)
 - [ ] Only needed workers invoked (Phase 2d)
 - [ ] Full verification pass completed (Phase 3)
-- [ ] Best practices audit table shown with 9 checks (Phase 3e)
+- [ ] Best practices audit table shown with 10 checks (Phase 3e)
 - [ ] `.hex-skills/environment_state.json` written with dispatch plan outcome (Phase 3f)
 - [ ] `.hex-skills/environment_state.json` covered in `.gitignore`
 - [ ] Existing `disabled` flags preserved across rescan
@@ -329,5 +360,5 @@ Skill type: `execution-orchestrator`. Analyze this session per protocol §7. Out
 
 ---
 
-**Version:** 2.0.0
-**Last Updated:** 2026-03-23
+**Version:** 2.2.0
+**Last Updated:** 2026-03-25

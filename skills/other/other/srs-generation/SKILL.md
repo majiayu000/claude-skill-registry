@@ -28,7 +28,11 @@ The SRS generation process follows a six-step workflow designed to produce a com
 
 ### Step 1: Scan Context
 
-Before writing a single requirement, the skill scans the current project to build context. It examines the project directory structure (top three levels), reads the project README if available, and surveys the `docs/` directory for existing documentation. This scanning phase establishes the technical landscape -- programming languages, frameworks, existing APIs, data stores -- so that requirements are grounded in the real project environment rather than written in a vacuum.
+Before writing a single requirement, scan the project to build context:
+
+@../shared/project-context.md
+
+Execute the Project Context Protocol (PC.1 through PC.3) to establish the technical landscape — programming languages, frameworks, project profile, existing APIs, data stores. This ensures requirements are grounded in the real project environment rather than written in a vacuum. The detected project profile (PC.3) determines which non-functional requirement categories are most relevant (e.g., database-backed projects need data integrity NFRs; CLI tools need usability NFRs).
 
 ### Step 2: Find the Upstream PRD
 
@@ -122,4 +126,4 @@ The SRS generation skill relies on two reference files:
 
 ## Output Convention
 
-The final SRS document is written to `docs/<feature-name>/srs.md` in the project root, where `<feature-name>` is a sanitized, lowercase, hyphen-separated slug derived from the user's input. The `docs/<feature-name>/` directory is created if it does not already exist. If a file with the same name already exists, confirm with the user before overwriting. This naming convention places all documents for a feature in a single `docs/<feature-name>/` directory (`prd.md`, `srs.md`, `tech-design.md`, `test-plan.md`) and enables automatic upstream document discovery by downstream skills.
+The final SRS document is written to `docs/<feature-name>/srs.md` in the project root, where `<feature-name>` is a sanitized, lowercase, hyphen-separated slug derived from the user's input. The `docs/<feature-name>/` directory is created if it does not already exist. If a file with the same name already exists, confirm with the user before overwriting. This naming convention places all documents for a feature in a single `docs/<feature-name>/` directory (`prd.md`, `srs.md`, `tech-design.md`, `test-cases.md`) and enables automatic upstream document discovery by downstream skills.

@@ -1,6 +1,6 @@
 ---
 name: nw-ad-critique-dimensions
-description: Review dimensions for acceptance test quality - happy path bias, GWT compliance, business language purity, coverage completeness, walking skeleton user-centricity, and priority validation
+description: Review dimensions for acceptance test quality - happy path bias, GWT compliance, business language purity, coverage completeness, walking skeleton user-centricity, priority validation, observable behavior assertions, and traceability coverage
 user-invocable: false
 disable-model-invocation: true
 ---
@@ -64,6 +64,58 @@ Questions: 1. Is this the largest bottleneck? (timing data or gap analysis) | 2.
 
 Severity: blocker if wrong problem addressed, high if no measurement data.
 
+## Dimension 7: Observable Behavior Assertions
+
+**Pattern**: Tests assert internal state or method calls instead of observable behavior.
+
+For EVERY Then step in EVERY scenario, apply this mechanical checklist:
+
+1. Does the assertion check a return value from a driving port call? YES = pass, NO = flag.
+2. Does the assertion check an observable outcome (user sees X, system produces Y)? YES = pass, NO = flag.
+3. Does the assertion check internal state, private fields, or method call counts? YES = REJECT the scenario.
+
+**Concrete violations to flag**:
+- `assert mock_repo.save.called` — asserts method call, not observable outcome
+- `assert len(db.query(Order).all()) == 1` — asserts internal DB state
+- `assert obj._internal_field == "value"` — asserts private state
+- `assert os.path.exists("output.json")` — asserts file existence (implementation detail)
+
+**Concrete passing assertions**:
+- `assert result.is_confirmed()` — observable business outcome
+- `assert result.order_number is not None` — return value from driving port
+- `assert "confirmation" in customer_notification.subject` — observable user outcome
+
+**Relationship to Dim 5 (Walking Skeleton User-Centricity)**:
+- Dim 5 validates walking skeleton SCOPE (user goal framing vs technical layer framing)
+- Dim 7 validates ASSERTION TYPE for ALL scenarios (walking skeletons AND focused scenarios)
+- A scenario can pass Dim 5 (good user-centric framing) and fail Dim 7 (internal state assertions)
+
+Severity: high (tests coupled to implementation break on refactoring).
+
+## Dimension 8: Traceability Coverage
+
+**Pattern**: Scenarios exist without traceability to upstream wave artifacts.
+
+Two mandatory traceability checks:
+
+**Check A — Story-to-Scenario mapping**:
+1. Read `docs/feature/{feature-id}/discuss/user-stories.md`
+2. Extract ALL story IDs (e.g., US-01, US-02)
+3. For EACH story ID, verify at least one scenario references it (via tag or comment)
+4. Flag EVERY story ID with zero matching scenarios as BLOCKER
+
+**Check B — Environment-to-Scenario mapping**:
+1. Read `docs/feature/{feature-id}/devops/environments.yaml`
+2. If missing, use defaults: `clean`, `with-pre-commit`, `with-stale-config`
+3. For EACH environment, verify at least one walking skeleton includes a Given clause referencing that environment's preconditions
+4. Flag EVERY environment with zero matching Given clauses as HIGH
+
+**What this dimension does NOT cover**:
+- KPI measurability — that is PO-reviewer scope during DELIVER post-merge gate
+- Scenario quality — covered by Dims 1-7
+
+Severity: blocker for Check A (untraceable requirements), high for Check B (untested environments).
+
 ## Review Output Format
 
 ```yaml
@@ -99,5 +151,29 @@ issues_identified:
       severity: "high"
       recommendation: "Reframe: title as user goal, Then steps as observable user outcomes"
 
+  observable_behavior:
+    - issue: "Scenario '{name}' Then step asserts internal state: {assertion}"
+      severity: "high"
+      recommendation: "Replace with observable outcome assertion: {alternative}"
+
+  traceability_coverage:
+    - issue: "Story {US-ID} has no matching scenario"
+      severity: "blocker"
+      recommendation: "Create at least one scenario tagged @{US-ID}"
+    - issue: "Environment '{env}' has no matching Given clause in walking skeletons"
+      severity: "high"
+      recommendation: "Add walking skeleton with Given clause: 'Given a {env} environment with {preconditions}'"
+
 approval_status: "approved|rejected_pending_revisions|conditionally_approved"
 ```
+
+## Reviewer Scope Boundaries
+
+The acceptance-designer-reviewer (Sentinel) owns Dimensions 1-8 during DISTILL.
+
+Responsibilities that belong to OTHER reviewers (do NOT evaluate these):
+- **KPI measurability**: PO-reviewer validates during DELIVER post-merge gate
+- **Infrastructure readiness**: PA-reviewer validates during DEVOPS-to-DISTILL handoff
+- **Code quality**: Software-crafter-reviewer validates during DELIVER Phase 4
+
+If a finding touches KPI measurement or infrastructure readiness, tag it `@escalate:{reviewer}` in the review output and move on. Do NOT attempt to evaluate it.

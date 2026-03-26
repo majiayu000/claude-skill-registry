@@ -50,8 +50,8 @@ Scan for all files that optimus skills may have created. Only list files that ac
 - `.claude/docs/testing.md`
 - `.claude/docs/styling.md`
 - `.claude/docs/architecture.md`
-- `.claude/agents/code-simplifier.md`
-- `.claude/agents/test-guardian.md`
+- `.claude/agents/code-simplifier.md` *(legacy — from previous optimus versions)*
+- `.claude/agents/test-guardian.md` *(legacy — from previous optimus versions)*
 - `.claude/hooks/format-python.py`
 - `.claude/hooks/format-node.js`
 - `.claude/hooks/format-rust.sh`
@@ -87,8 +87,8 @@ For these files, read both the project file and the corresponding template from 
 
 | Project file | Template source |
 |---|---|
-| `.claude/agents/code-simplifier.md` | `$CLAUDE_PLUGIN_ROOT/skills/init/templates/agents/code-simplifier.md` |
-| `.claude/agents/test-guardian.md` | `$CLAUDE_PLUGIN_ROOT/skills/init/templates/agents/test-guardian.md` |
+| `.claude/agents/code-simplifier.md` | `$CLAUDE_PLUGIN_ROOT/agents/code-simplifier.md` *(legacy — agents now live at plugin level)* |
+| `.claude/agents/test-guardian.md` | `$CLAUDE_PLUGIN_ROOT/agents/test-guardian.md` *(legacy — agents now live at plugin level)* |
 | `.claude/hooks/format-python.py` | `$CLAUDE_PLUGIN_ROOT/skills/init/templates/hooks/format-python.py` |
 | `.claude/hooks/format-node.js` | `$CLAUDE_PLUGIN_ROOT/skills/init/templates/hooks/format-node.js` |
 | `.claude/hooks/format-rust.sh` | `$CLAUDE_PLUGIN_ROOT/skills/init/templates/hooks/format-rust.sh` |
@@ -111,7 +111,7 @@ These files have ALL content filled in by init from project analysis — no temp
 
 | Project file | Template fingerprint (line 1 HTML comment) | Template section headings |
 |---|---|---|
-| `.claude/CLAUDE.md` | `<!-- Keep this file and .claude/docs/ updated when project structure, conventions, or tooling changes -->` | `Conventions`, `Commands`, `Project Structure`, `Before Writing Code`, `Documentation`, `Agents` |
+| `.claude/CLAUDE.md` | `<!-- Keep this file and .claude/docs/ updated when project structure, conventions, or tooling changes -->` | `Conventions`, `Commands`, `Project Structure`, `Before Writing Code`, `Documentation` |
 | `.claude/docs/testing.md` | *(no comment — check heading)* First line: `# Testing` | `Test Runner`, `Running Tests`, `Test Structure`, `Writing Tests`, `Workflow`, `Coverage` |
 | `.claude/docs/styling.md` | *(no comment — check heading)* First line: `# Styling` | `Stack`, `Conventions`, `File Organization`, `Adding New Components` |
 | `.claude/docs/architecture.md` | *(no comment — check heading)* First line: `# Architecture` | `Overview`, `Directory Map`, `Data Flow`, `Key Patterns`, `Dependencies Between Modules` |

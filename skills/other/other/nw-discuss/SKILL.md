@@ -169,6 +169,8 @@ Luna crafts LeanUX stories informed by JTBD + journey artifacts. Every story tra
 **Handoff To**: nw-solution-architect (DESIGN wave) + nw-platform-architect (DEVOPS wave, KPIs only)
 **Deliverables**: Journey artifacts + story map + requirements + outcome KPIs | JTBD artifacts (when selected)
 
+DISCUSS hands off to BOTH DESIGN (full artifacts) and DEVOPS (outcome-kpis.md only). DEVOPS and DESIGN can proceed in parallel — DESIGN receives the complete artifact set while DEVOPS receives only the KPI file to drive observability and instrumentation design.
+
 ## Wave Decisions Summary
 
 Before completing DISCUSS, produce `docs/feature/{feature-id}/discuss/wave-decisions.md`:

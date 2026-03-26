@@ -1,5 +1,5 @@
 ---
-name: ux-researcher-designer
+name: "ux-researcher-designer"
 description: UX research and design toolkit for Senior UX Designer/Researcher including data-driven persona generation, journey mapping, usability testing frameworks, and research synthesis. Use for user research, persona creation, journey mapping, and design validation.
 ---
 
@@ -412,3 +412,8 @@ Detailed reference guides in `references/`:
 - [ ] Findings include evidence
 - [ ] Recommendations are actionable
 - [ ] Priorities justified
+
+## Related Skills
+
+- **UI Design System** (`product-team/ui-design-system/`) — Research findings inform design system decisions
+- **Product Manager Toolkit** (`product-team/product-manager-toolkit/`) — Customer interview analysis complements persona research

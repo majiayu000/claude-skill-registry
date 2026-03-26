@@ -393,7 +393,7 @@ Based on user choice:
 **Fill gaps**: For identified gaps, suggest which spec-forge skill to use:
 - Missing architecture doc → `/spec-forge:tech-design`
 - Missing requirements → `/spec-forge:prd` or `/spec-forge:srs`
-- Missing test plan → `/spec-forge:test-plan`
+- Missing test cases → `/spec-forge:test-cases`
 - Missing strategy/research → manual writing or `/spec-forge:idea` for exploration
 
 **Reorganize**: Execute file moves/renames step by step, confirming with user before each destructive action (deletes, merges). Update internal links after moves.

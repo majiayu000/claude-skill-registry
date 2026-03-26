@@ -21,14 +21,20 @@ Validate agent files in `.claude/agents/` for correct format.
 
 ```yaml
 ---
-name: agent-name          # Required: lowercase, hyphenated
-description: Brief desc   # Required: under 100 chars
+name: agent-name          # Required: lowercase, hyphenated, 3-50 chars
+description: >            # Required: 10-5000 chars, include triggering conditions + <example> blocks
+  Use this agent when [conditions]. Examples:
+  <example>
+  Context: [situation]
+  user: "[request]"
+  assistant: "[response using this agent]"
+  </example>
 color: cyan               # Required: yellow, red, green, blue, magenta, cyan
-tools:                    # Required: YAML list format
+model: sonnet             # Required: inherit, haiku, sonnet, opus, best, sonnet[1m], opus[1m], opusplan
+tools:                    # Optional: YAML list (omit = all tools available)
   - Read
   - Write
   - Grep
-model: sonnet             # Required: inherit, haiku, sonnet, opus, best, sonnet[1m], opus[1m], opusplan
 # forkContext: "true"     # Optional: run in forked context (string "true"/"false")
 # maxTurns: 20            # Optional: max conversation turns (positive integer)
 skills:                    # Optional: auto-load skills (array)
@@ -42,10 +48,14 @@ mcpServers:                # Optional: MCP server refs or objects (array)
 hooks:                     # Optional: agent-scoped lifecycle hooks
   PreToolUse:
     - matcher: Write
-      command: ./validate.sh
+      hooks:
+        - type: command
+          command: ./validate.sh
   PostToolUse:
     - matcher: Bash
-      command: ./log.sh
+      hooks:
+        - type: command
+          command: ./log.sh
 permissionMode: default    # Optional: permission handling
 disallowedTools:           # Optional: explicit tool blocking
   - NotebookEdit
@@ -73,13 +83,13 @@ inherit, haiku, sonnet, opus, best, sonnet[1m], opus[1m], opusplan
 ## Validation Checklist
 
 ### Required Fields
-- [ ] `name` exists (lowercase, hyphenated)
-- [ ] `description` exists (under 100 chars)
-- [ ] `tools` exists (YAML list format, not bracket array)
+- [ ] `name` exists (lowercase, hyphenated, 3-50 chars)
+- [ ] `description` exists (10-5000 chars, recommend 200-1000 with `<example>` blocks)
 - [ ] `color` is set (valid color name)
 - [ ] `model` is set (inherit/haiku/sonnet/opus/best/sonnet[1m]/opus[1m]/opusplan)
 
 ### Optional Fields
+- [ ] `tools` are valid tool names, YAML list format (omit = all tools available)
 - [ ] `skills` references existing skills (array, if set)
 - [ ] `forkContext` is string "true" or "false" (if set)
 - [ ] `maxTurns` is positive integer (if set)

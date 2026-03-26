@@ -39,16 +39,22 @@ arguments:                    # Optional: structured argument definitions
     description: What the argument does
     required: true
 disable-model-invocation: false  # Optional: prevent programmatic invocation
-hooks:                        # Optional: lifecycle hooks
-  pre_tool_call:
-    command: ./scripts/pre-check.sh
-    once: false
-  post_tool_call:
-    command: ./scripts/post-check.sh
-    once: false
+hooks:                        # Optional: lifecycle hooks (same format as settings.json)
+  PreToolUse:
+    - matcher: Write
+      hooks:
+        - type: command
+          command: ./scripts/validate.sh
+  PostToolUse:
+    - matcher: Bash
+      hooks:
+        - type: command
+          command: ./scripts/log.sh
   Stop:
-    command: ./scripts/verify.sh
-    once: false
+    - hooks:
+        - type: command
+          command: ./scripts/verify.sh
+          once: true
 ---
 ```
 

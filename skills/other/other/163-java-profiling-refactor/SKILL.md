@@ -29,7 +29,9 @@ Verify that changes pass all tests before considering the refactoring complete.
 
 ## When to use this skill
 
-- Refactor performance
+- Refactor the code with profiling
+- Apply profiling
+- Refactor the code with profiling
 - Optimize hot path
 - Performance refactoring
 

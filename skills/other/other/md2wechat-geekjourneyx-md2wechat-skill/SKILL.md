@@ -63,8 +63,10 @@ Configuration:
 Conversion:
 
 - `md2wechat convert article.md --preview`
+- `md2wechat convert article.md -o output.html`
 - `md2wechat convert article.md --draft --cover cover.jpg`
 - `md2wechat convert article.md --mode ai --theme autumn-warm --preview`
+- `md2wechat convert article.md --title "新标题" --author "作者名" --digest "摘要"`
 
 Image handling:
 
@@ -98,6 +100,25 @@ Writing and humanizing:
 - `md2wechat humanize article.md --intensity aggressive`
 - `md2wechat humanize article.md --show-changes`
 - `md2wechat humanize article.md -o output.md`
+
+## Article Metadata Rules
+
+For `convert`, metadata resolution is:
+
+- Title: `--title` -> `frontmatter.title` -> first Markdown heading -> `未命名文章`
+- Author: `--author` -> `frontmatter.author`
+- Digest: `--digest` -> `frontmatter.digest` -> `frontmatter.summary` -> `frontmatter.description`
+
+Limits enforced by the CLI:
+
+- `--title`: max 32 characters
+- `--author`: max 16 characters
+- `--digest`: max 128 characters
+
+Draft behavior:
+
+- If digest is still empty when creating a draft, the draft layer generates one from article HTML content with a 120-character fallback.
+- Creating a draft requires `--cover`.
 
 ## Agent Rules
 

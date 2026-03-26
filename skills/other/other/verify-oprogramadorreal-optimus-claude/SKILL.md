@@ -256,7 +256,7 @@ Distribute items across agents to maximize parallelism. If only 1-2 Functional i
 
 ### Launch parallel agents
 
-Read `$CLAUDE_PLUGIN_ROOT/skills/verify/references/agent-prompts.md` for the full prompt templates.
+Read the agent prompt files from `$CLAUDE_PLUGIN_ROOT/skills/verify/agents/` for individual agent prompts. Read `$CLAUDE_PLUGIN_ROOT/skills/verify/agents/shared-constraints.md` for the shared constraints applying to all verification agents.
 
 Launch up to 4 `general-purpose` Agent tool calls simultaneously — one per agent type that has assigned items. Each agent receives:
 - The sandbox worktree path

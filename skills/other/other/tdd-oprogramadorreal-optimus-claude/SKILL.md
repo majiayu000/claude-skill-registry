@@ -39,10 +39,6 @@ Locate the test runner command from `testing.md`, `CLAUDE.md`, or project manife
 - **Tests fail** — stop and report. Existing failures must be resolved before TDD can begin (a failing suite makes Red/Green indistinguishable)
 - **No test runner found** — stop and recommend running `/optimus:init` first to set up test infrastructure (framework, runner, coverage tooling, `testing.md`)
 
-### Check quality agents (optional)
-
-Read the **Pre-flight** section of `$CLAUDE_PLUGIN_ROOT/skills/tdd/references/quality-gate.md`.
-
 ## Step 2: Suitability Analysis
 
 Before starting TDD cycles, analyze whether the user's task is a good fit for test-driven development.
@@ -305,9 +301,13 @@ If no behaviors remain, or the user chooses "Stop here", proceed to Step 8 (Qual
 
 ## Step 8: Quality Gate (parallel agents)
 
-If no quality agents were found in Step 1, skip to Step 9.
+Read these files for the quality gate:
+- `$CLAUDE_PLUGIN_ROOT/skills/tdd/agents/shared-constraints.md` — shared constraints for both agents
+- `$CLAUDE_PLUGIN_ROOT/skills/tdd/agents/code-simplifier.md` — code-simplifier prompt
+- `$CLAUDE_PLUGIN_ROOT/skills/tdd/agents/test-guardian.md` — test-guardian prompt
+- `$CLAUDE_PLUGIN_ROOT/skills/tdd/references/quality-gate.md` — execution procedure
 
-Read `$CLAUDE_PLUGIN_ROOT/skills/tdd/references/quality-gate.md` and follow the **Execution** section. Use `<original-branch>` from Step 3 to scope the changed files. When complete, proceed to Step 9.
+Follow the **Execution** section in `quality-gate.md`. Use `<original-branch>` from Step 3 to scope the changed files. When complete, proceed to Step 9.
 
 ## Step 9: Summary, Push, and PR/MR
 
@@ -336,7 +336,7 @@ If there are uncommitted changes (e.g., the user stopped mid-cycle before the au
 - Tests passing: all ✓
 - Files created: [list new files]
 - Files modified: [list modified files]
-- Quality gate: code-simplifier ([N] findings), test-guardian ([N] findings) [or "skipped — agents not installed"]
+- Quality gate: code-simplifier ([N] findings), test-guardian ([N] findings)
 
 ### Coverage
 [Detect coverage command from: testing.md coverage section, test runner built-in flag

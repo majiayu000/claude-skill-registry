@@ -1,6 +1,7 @@
 ---
 name: nw-roadmap-review-checks
 description: Roadmap-specific validation checks for architecture reviews. Load when reviewing roadmaps for implementation readiness.
+user-invocable: false
 disable-model-invocation: true
 ---
 

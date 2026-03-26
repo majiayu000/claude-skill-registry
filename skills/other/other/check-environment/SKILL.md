@@ -12,13 +12,13 @@ Verify your development environment is ready for Director Mode.
 
 ## Checks Performed
 
-### 1. Essential Tools
+### 1. Director Mode Dependencies
 
-| Tool | Purpose | Check |
-|------|---------|-------|
-| git | Version control | `git --version` |
-| node | JavaScript runtime | `node --version` |
-| npm/pnpm | Package manager | `npm --version` |
+| Tool | Purpose | Check | Required |
+|------|---------|-------|----------|
+| git | Version control | `git --version` | Yes |
+| python3 | Hook config merging (install.sh) | `python3 --version` | Yes |
+| jq | JSON processing in hooks | `jq --version` | Yes |
 
 ### 2. Claude Code Version
 
@@ -27,17 +27,31 @@ claude --version
 ```
 Minimum: **2.0.0+**
 
-### 3. Project Structure
+### 3. Project-Specific Tools
 
-- [ ] `package.json` exists
-- [ ] `.gitignore` exists
-- [ ] Source directory exists
+Auto-detect project type and check relevant tools:
 
-### 4. Git Status
+| Project Type | Detected By | Tools to Check |
+|---|---|---|
+| Node.js | `package.json` | `node --version`, `npm --version` or `pnpm --version` |
+| Python | `requirements.txt`, `pyproject.toml` | `python3 --version`, `pip --version` |
+| Rust | `Cargo.toml` | `rustc --version`, `cargo --version` |
+| Go | `go.mod` | `go version` |
+| Java | `pom.xml`, `build.gradle` | `java --version`, `mvn --version` or `gradle --version` |
+
+### 4. Director Mode Installation
+
+- [ ] `.claude/` directory exists
+- [ ] `.claude/skills/` populated (31 skills expected)
+- [ ] `.claude/agents/` populated (14 agents expected)
+- [ ] `.claude/hooks/` populated (5 hook scripts expected)
+- [ ] `.claude/settings.local.json` has hooks configured
+- [ ] `CLAUDE.md` exists
+
+### 5. Git Status
 
 - [ ] Inside git repository
-- [ ] Clean working tree
-- [ ] On feature branch
+- [ ] Clean working tree (or note uncommitted changes)
 
 ---
 
@@ -46,25 +60,32 @@ Minimum: **2.0.0+**
 ```markdown
 ## Environment Check Results
 
-### Essential Tools
+### Director Mode Dependencies
 - [x] git: 2.39.0
+- [x] python3: 3.11.0
+- [x] jq: 1.7
+
+### Claude Code
+- [x] Version: 2.1.76
+
+### Project Tools (Node.js detected)
 - [x] node: 20.10.0
 - [x] pnpm: 8.12.0
 
-### Claude Code
-- [x] Version: 2.1.3 (up to date)
-
-### Project Structure
-- [x] package.json found
-- [x] .gitignore found
-- [x] src/ directory found
+### Director Mode Installation
+- [x] .claude/ directory exists
+- [x] 31 skills installed
+- [x] 14 agents installed
+- [x] 5 hooks installed
+- [x] settings.local.json configured
+- [x] CLAUDE.md exists
 
 ### Git Status
 - [x] Git repository initialized
 - [ ] Warning: 3 uncommitted changes
 
 ### Summary
-**Status**: Ready (with warnings)
+**Status**: Ready
 ```
 
 ---
@@ -73,7 +94,11 @@ Minimum: **2.0.0+**
 
 | Issue | Action |
 |-------|--------|
-| Missing git | Install git |
-| Missing node | Install Node.js LTS |
-| No package.json | Run `npm init` |
-| Old Claude Code | Update Claude Code |
+| Missing python3 | Install Python 3: `brew install python3` (macOS) or `apt install python3` (Linux) |
+| Missing jq | Install jq: `brew install jq` (macOS) or `apt install jq` (Linux) |
+| Missing git | Install git for your OS |
+| Missing node | Install Node.js LTS: https://nodejs.org |
+| Old Claude Code | Run `claude update` |
+| No .claude/ | Run install script: `./install.sh .` |
+| Hooks not configured | Re-run install or check `.claude/settings.local.json` |
+| No CLAUDE.md | Run `/project-init` or `/claude-md-template` |

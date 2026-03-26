@@ -1,21 +1,6 @@
 ---
 name: github-code-review
-version: 1.0.0
 description: Comprehensive GitHub code review with AI-powered swarm coordination
-category: github
-tags: [code-review, github, swarm, pr-management, automation]
-author: Claude Code Flow
-requires:
-  - github-cli
-  - ruv-swarm
-  - claude-flow
-capabilities:
-  - Multi-agent code review
-  - Automated PR management
-  - Security and performance analysis
-  - Swarm-based review orchestration
-  - Intelligent comment generation
-  - Quality gate enforcement
 ---
 
 # GitHub Code Review Skill

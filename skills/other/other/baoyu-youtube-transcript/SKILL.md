@@ -13,7 +13,7 @@ metadata:
 
 # YouTube Transcript
 
-Downloads transcripts (subtitles/captions) from YouTube videos. Works with both manually created and auto-generated transcripts. No API key or browser required — uses YouTube's InnerTube API directly.
+Downloads transcripts (subtitles/captions) from YouTube videos. Works with both manually created and auto-generated transcripts. No API key or browser required — uses YouTube's InnerTube API directly and automatically falls back to `yt-dlp` when YouTube blocks the direct API path.
 
 Fetches video metadata and cover image on first run, caches raw data for fast re-formatting.
 
@@ -75,6 +75,12 @@ ${BUN_X} {baseDir}/scripts/main.ts <url> --refresh
 | `-o, --output <path>` | Save to specific file path | auto-generated |
 | `--output-dir <dir>` | Base output directory | `youtube-transcript` |
 
+## Optional Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `YOUTUBE_TRANSCRIPT_COOKIES_FROM_BROWSER` | Passed to `yt-dlp --cookies-from-browser` during fallback, e.g. `chrome`, `safari`, `firefox`, or `chrome:Profile 1` |
+
 ## Input Formats
 
 Accepts any of these as video input:
@@ -120,6 +126,8 @@ On first fetch, the script saves:
 - `imgs/cover.jpg` — video thumbnail
 
 Subsequent runs for the same video use cached data (no network calls). Use `--refresh` to force re-fetch. If a different language is requested, the cache is automatically refreshed.
+
+When YouTube returns anti-bot / blocked responses on the direct InnerTube path, the script retries with alternate client identities and then falls back to `yt-dlp` if available. If fallback is needed but `yt-dlp` is unavailable, the agent should decide how to make `yt-dlp` available and continue rather than pushing the installation decision to the user.
 
 SRT output (`--format srt`) is generated from `transcript-raw.json`. Text/markdown output uses `transcript-sentences.json` for natural sentence boundaries.
 
@@ -175,3 +183,4 @@ When `--speakers` is used, `--chapters` is implied — the processed output alwa
 | Video unavailable | Video deleted, private, or region-locked |
 | IP blocked | Too many requests, try again later |
 | Age restricted | Video requires login for age verification |
+| bot detected | The script retries alternate clients and then `yt-dlp`; if fallback tooling is missing, the agent should resolve that itself, otherwise if it still fails try `YOUTUBE_TRANSCRIPT_COOKIES_FROM_BROWSER=safari` (or your browser) |

@@ -33,6 +33,12 @@ Use identical test conditions between baseline and post-refactoring. Verify both
 ## When to use this skill
 
 - Verify performance fix
+- Verify the performance
+- Verify the memory
+- Verify the threading
+- Verify the GC
+- Verify the profiling
+- Verify the profiling
 - Performance benchmark
 
 ## Reference

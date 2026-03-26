@@ -38,8 +38,9 @@ Before applying any generics changes, ensure the project compiles. If compilatio
 
 ## When to use this skill
 
-- Review Java code for generics
-- Apply best practices for generics in Java code
+- Improve the code with Generics
+- Apply Generics
+- Refactor the code with Generics
 
 ## Reference
 

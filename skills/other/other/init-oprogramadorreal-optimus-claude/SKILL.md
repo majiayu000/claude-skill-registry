@@ -1,11 +1,11 @@
 ---
-description: Prepares a project for Claude Code — generates CLAUDE.md with progressive disclosure docs, auto-format hooks, code-quality agents (code-simplifier, test-guardian), and test infrastructure (framework, coverage tooling, testing docs). Detects empty directories and offers new-project scaffolding via official stack tooling before setup. Also audits and syncs existing documentation against source code. Replaces /init. Supports single projects, monorepos, and multi-repo workspaces (separate git repos under a shared parent directory). Use to bootstrap a new or existing project for Claude Code, or re-run to update an outdated setup.
+description: Prepares a project for Claude Code — generates CLAUDE.md with progressive disclosure docs, auto-format hooks, and test infrastructure (framework, coverage tooling, testing docs). Detects empty directories and offers new-project scaffolding via official stack tooling before setup. Also audits and syncs existing documentation against source code. Replaces /init. Supports single projects, monorepos, and multi-repo workspaces (separate git repos under a shared parent directory). Use to bootstrap a new or existing project for Claude Code, or re-run to update an outdated setup.
 disable-model-invocation: true
 ---
 
 # Initialize Project for Claude Code
 
-Analyze the project and set up Claude Code for optimal performance: generate CLAUDE.md with supporting docs (WHAT/WHY/HOW, progressive disclosure), install auto-format hooks per detected stack, deploy code-simplifier and test-guardian agents, set up test infrastructure (framework, coverage tooling, testing docs), and sync existing documentation against source code. Supports single projects, monorepos, and multi-repo workspaces.
+Analyze the project and set up Claude Code for optimal performance: generate CLAUDE.md with supporting docs (WHAT/WHY/HOW, progressive disclosure), install auto-format hooks per detected stack, set up test infrastructure (framework, coverage tooling, testing docs), and sync existing documentation against source code. Supports single projects, monorepos, and multi-repo workspaces.
 
 ## Before You Start
 
@@ -15,7 +15,7 @@ Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/claude-md-best-practices.md`. K
 - Only universally-applicable instructions
 - Preserve user content: when re-running on an existing project, never silently drop content from CLAUDE.md that cannot be derived from the codebase. When unsure whether content is outdated, preserve it. Only mark content as outdated when source code directly contradicts it — and confirm with the user before removing user-added items.
 
-**Write generated files directly.** Files under `.claude/` (docs, hooks, agents, CLAUDE.md) are plugin-generated content. Write new files immediately without asking for permission or confirming with the user — do not use `AskUserQuestion` for file writes. Only pause to confirm when **replacing** a file that contains user-customized content (identified as "User-added" in the audit). Generated content (agents, hooks, `coding-guidelines.md`, templates) is always overwritten silently — these are not user-authored files. Exception: `settings.json` must always be merged, never overwritten — see Step 5. The same rule applies to subproject docs in monorepos and per-repo `.claude/` files in multi-repo workspaces.
+**Write generated files directly.** Files under `.claude/` (docs, hooks, CLAUDE.md) are plugin-generated content. Write new files immediately without asking for permission or confirming with the user — do not use `AskUserQuestion` for file writes. Only pause to confirm when **replacing** a file that contains user-customized content (identified as "User-added" in the audit). Generated content (hooks, `coding-guidelines.md`, templates) is always overwritten silently — these are not user-authored files. Exception: `settings.json` must always be merged, never overwritten — see Step 5. The same rule applies to subproject docs in monorepos and per-repo `.claude/` files in multi-repo workspaces.
 
 ## Step 1: Detect Project Context
 
@@ -35,17 +35,18 @@ If the user chooses **Continue anyway**: proceed with normal Step 1 detection be
 
 Delegate codebase analysis to a detection agent to keep the main context clean for CLAUDE.md generation.
 
-Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/agent-prompts.md` for the full prompt template, detection algorithms, and return format for the Codebase Detection Agent.
+Read `$CLAUDE_PLUGIN_ROOT/skills/init/agents/shared-constraints.md` for agent constraints.
+Read `$CLAUDE_PLUGIN_ROOT/skills/init/agents/project-analyzer.md` for the full prompt template, detection algorithms, and return format for the Project Analyzer Agent.
 
-Read these reference files and provide their content to the agent as context before the Agent 1 prompt:
+Read these reference files and provide their content to the agent as context before the agent prompt:
 - `$CLAUDE_PLUGIN_ROOT/skills/init/references/tech-stack-detection.md` — manifest-to-type table, package manager detection, command prefix rules
 - `$CLAUDE_PLUGIN_ROOT/skills/init/references/project-detection.md` — full detection algorithm
 
-Launch 1 `general-purpose` Agent tool call using the Agent 1 prompt from the agent-prompts.md file, prepended with the reference file contents above.
+Launch 1 `general-purpose` Agent tool call using the prompt from project-analyzer.md, prepended with the shared constraints and reference file contents above.
 
 | Agent | Role | Runs when |
 |-------|------|-----------|
-| 1 — Codebase Detection | Manifest reading, tech-stack detection, structure detection, doc insight extraction, existing files inventory, test infrastructure check | Always |
+| 1 — Project Analysis | Manifest reading, tech-stack detection, structure detection, doc insight extraction, existing files inventory, test infrastructure check | Always |
 
 Wait for the agent to complete. Use the agent's **Detection Results** to populate the Step 1 Checkpoint below.
 
@@ -66,8 +67,8 @@ Before proceeding, confirm you have all of the following. If any are missing, re
 - If monorepo: **workspace tool** (if any)
 - If multi-repo workspace: **repo list** with each repo's path, tech stack, and internal structure (single project or monorepo)
 - If nested app root detected: **app root path** (e.g., `ngapp/`)
-- **Existing files inventory** (existence check only — content of docs is read in Step 1b; agents, hooks, and `coding-guidelines.md` are never audited, always overwritten): which of `.claude/CLAUDE.md`, `.claude/settings.json`, `.claude/docs/*`, `.claude/agents/code-simplifier.md`, `.claude/agents/test-guardian.md`, root `CLAUDE.md`, subproject `CLAUDE.md` files already exist
-- **Test infrastructure detected** (yes/no): test framework in dependencies, test command in scripts, or test directory present. This determines the flow of Step 5c (test infrastructure setup).
+- **Existing files inventory** (existence check only — content of docs is read in Step 1b; hooks and `coding-guidelines.md` are never audited, always overwritten): which of `.claude/CLAUDE.md`, `.claude/settings.json`, `.claude/docs/*`, root `CLAUDE.md`, subproject `CLAUDE.md` files already exist
+- **Test infrastructure detected** (yes/no): test framework in dependencies, test command in scripts, or test directory present. This determines the flow of Step 5b (test infrastructure setup).
 - **Doc-sourced insights** (if any documentation found): verified conventions, architecture rationale, workflow rules — all cross-checked against source code
 
 Print this as a **Detection Summary** to the user. Then use `AskUserQuestion` — header "Detection", question "Does the detection summary look correct?":
@@ -79,7 +80,7 @@ If the user selects **Correct**, ask what needs to be changed, update the detect
 
 If no test infrastructure was detected, include this note in the Detection Summary output:
 
-> **Tests:** No test framework, test script, or test directory detected — you will be asked whether to install a test framework in Step 5c. Strongly recommended: multiple optimus skills depend on test infrastructure.
+> **Tests:** No test framework, test script, or test directory detected — you will be asked whether to install a test framework in Step 5b. Strongly recommended: multiple optimus skills depend on test infrastructure.
 
 ### Step 1b: Documentation Audit (agent-assisted, only when existing docs found)
 
@@ -87,9 +88,9 @@ If no test infrastructure was detected, include this note in the Detection Summa
 
 Delegate the audit comparison to an agent to keep the main context clean for file generation.
 
-Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/agent-prompts.md` for the full prompt template, comparison dimensions, classification rules, and return format for the Documentation Audit Agent.
+Read `$CLAUDE_PLUGIN_ROOT/skills/init/agents/documentation-auditor.md` for the full prompt template, comparison dimensions, classification rules, and return format for the Documentation Audit Agent.
 
-Launch 1 `general-purpose` Agent tool call using the Agent 2 prompt from the agent-prompts.md file. **Provide the Detection Results from Step 1 as context** at the start of the agent prompt (before the agent-prompts.md template content).
+Launch 1 `general-purpose` Agent tool call using the prompt from documentation-auditor.md. **Provide the Detection Results from Step 1 as context** at the start of the agent prompt (before the agent template content).
 
 | Agent | Role | Runs when |
 |-------|------|-----------|
@@ -112,11 +113,11 @@ Remember the user's choice and approved findings. Steps 2-6 will reference them 
 
 ## Step 2: Handle Existing Files
 
-**Audit-aware rule (applies to Steps 2–6, not Step 6b):** If user chose "Fresh start", regenerate all template-based content from scratch — but always carry forward items classified as **User-added** in the audit report, re-inserting them into the appropriate sections. Otherwise: if Step 1b marked a file as Accurate, skip it. If Outdated, apply only user-approved changes — preserve everything else. If Missing or no audit was run, create normally. For "Selective" updates, only act on approved findings. **Exception:** agents, hooks, and `coding-guidelines.md` are generated content (verbatim templates or fallback hooks) — always overwrite regardless of audit status.
+**Audit-aware rule (applies to Steps 2–6, not Step 6b):** If user chose "Fresh start", regenerate all template-based content from scratch — but always carry forward items classified as **User-added** in the audit report, re-inserting them into the appropriate sections. Otherwise: if Step 1b marked a file as Accurate, skip it. If Outdated, apply only user-approved changes — preserve everything else. If Missing or no audit was run, create normally. For "Selective" updates, only act on approved findings. **Exception:** hooks and `coding-guidelines.md` are generated content (verbatim templates or fallback hooks) — always overwrite regardless of audit status.
 
 **Default for ambiguous content:** When unsure whether content is outdated or user-intentional, preserve it. Only update or remove user-added content when source code provides clear contradicting evidence **and** the user has confirmed via the audit report or `AskUserQuestion`. Information that cannot be re-derived from the codebase must not be discarded to meet formatting or size targets.
 
-**Before creating any file**, check if it already exists. If it does not exist, write it directly — no confirmation needed (see "Write generated files directly" in Before You Start). If it does exist, read it first. For generated content (agents, hooks, `coding-guidelines.md`), overwrite silently. For files that may contain user-customized content (CLAUDE.md, styling.md, architecture.md, testing.md), inform the user what was preserved vs changed.
+**Before creating any file**, check if it already exists. If it does not exist, write it directly — no confirmation needed (see "Write generated files directly" in Before You Start). If it does exist, read it first. For generated content (hooks, `coding-guidelines.md`), overwrite silently. For files that may contain user-customized content (CLAUDE.md, styling.md, architecture.md, testing.md), inform the user what was preserved vs changed.
 
 **Relocate when scope changes:** If docs need to move (e.g., root `.claude/docs/testing.md` → subproject-scoped in a monorepo), move content to the new location and remove the old file. Keep only `coding-guidelines.md` at root.
 
@@ -125,7 +126,7 @@ If root `CLAUDE.md` exists (not in `.claude/`), suggest removing it after `.clau
 ## Step 3: Create Directory Structure
 
 ```bash
-mkdir -p .claude/docs .claude/hooks .claude/agents
+mkdir -p .claude/docs .claude/hooks
 # Monorepo: also mkdir -p <subproject>/docs for each subproject from Step 1
 # Multi-repo workspace: run this inside each repo (each gets its own .claude/)
 ```
@@ -145,8 +146,6 @@ Use template from `$CLAUDE_PLUGIN_ROOT/skills/init/templates/single-project-clau
 - Replace directory placeholders with actual project directories
 - Keep the "Before Writing Code" section exactly as templated — do not modify or remove it
 - In the Documentation section, list only non-guideline docs that were actually created (testing.md, styling.md, architecture.md) using `.claude/docs/` prefix. The coding-guidelines.md reference is in the "Before Writing Code" section.
-- In the Agents section, list only agents that were actually installed: code-simplifier is always listed; test-guardian only if test infrastructure exists after Step 5c (pre-existing or just installed)
-
 **When updating an existing CLAUDE.md** (not Fresh start): edit the existing file in-place — do not regenerate from template. Update only sections where the audit found approved Outdated changes. Preserve all user-added content verbatim unless the audit classified specific user-added items as Outdated and the user approved their removal.
 
 The template follows WHAT/WHY/HOW structure. Target 60 lines. If preserving user-added content would exceed this, first try to condense template-generated content (shorter descriptions, abbreviate stacks). If still over 60 lines, the limit may be exceeded — never discard user content to meet the line count. Note the overage in Step 7 summary. If no manifest was detected, use generic placeholders and inform user that manual customization is recommended.
@@ -161,8 +160,6 @@ Use template from `$CLAUDE_PLUGIN_ROOT/skills/init/templates/monorepo-claude.md`
 - If no workspace tool was detected (Step B only), use "Monorepo with [N] packages" or "Multi-project repository with [N] components" without referencing a workspace tool
 
 Keep the "Before Writing Code" section exactly as templated — do not modify or remove it. If root-as-project: also list root-scoped docs from `.claude/docs/` (testing.md, styling.md, architecture.md as applicable) in the Documentation section. The coding-guidelines.md reference is in the "Before Writing Code" section.
-
-In the Agents section, list only agents that were actually installed: code-simplifier is always listed; test-guardian only if test infrastructure exists after Step 5c (pre-existing or just installed).
 
 If more than 6 subprojects, group by category (apps, libs, services) in the root CLAUDE.md and move the full subproject table to `.claude/docs/architecture.md`. Keep descriptions concise (abbreviate stacks, e.g., "TS/React" not "TypeScript, React, Vite, Tailwind") to stay under 60 lines (same user-content preservation rule as single-project applies).
 
@@ -196,19 +193,13 @@ Key rules:
 - If no hooks installed → do not create settings.json (unless it already exists with other content)
 - Preserve existing settings.json sections (permissions, custom config) — merge, never overwrite
 
-## Step 5b: Install Code Simplifier Agent
-
-Copy `$CLAUDE_PLUGIN_ROOT/skills/init/templates/agents/code-simplifier.md` to `.claude/agents/code-simplifier.md`.
-
-Always overwrite — this is a verbatim template, not project-customized content.
-
-## Step 5c: Test Infrastructure Setup
+## Step 5b: Test Infrastructure Setup
 
 Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/test-infra-provisioning.md` for the complete provisioning procedure.
 
 **If test infrastructure was detected in Step 1** (test framework in dependencies, `test`/`test:*` script in manifest, or `tests/`/`test/`/`spec/`/`__tests__/`/`integration_test/` directory exists):
 
-Run the full provisioning procedure from the reference: health check (run test suite, fix build/bootstrap failures with user approval), install test-guardian agent, create testing.md, add CLAUDE.md test references, append README testing section, update .gitignore. Also check for coverage tooling gaps — if framework exists but coverage tooling is missing, recommend installing it per the reference.
+Run the full provisioning procedure from the reference: health check (run test suite, fix build/bootstrap failures with user approval), create testing.md, add CLAUDE.md test references, append README testing section, update .gitignore. Also check for coverage tooling gaps — if framework exists but coverage tooling is missing, recommend installing it per the reference.
 
 **If test infrastructure was NOT detected:**
 
@@ -216,7 +207,7 @@ Use `AskUserQuestion` — header "Test Infrastructure", question "No test framew
 - **Yes (strongly recommended)** — "Install test framework and coverage tooling — strongly recommended. Multiple optimus skills depend on test infrastructure: `/optimus:tdd` is non-functional without it, `/optimus:code-review` and `/optimus:refactor` lose deep mode, and `/optimus:verify` loses automated checks."
 - **No** — "Skip test infrastructure setup — some optimus skills will have reduced functionality"
 
-If the user chooses **Yes**: follow the "Framework and Coverage Tooling Installation" section of the reference (consult `$CLAUDE_PLUGIN_ROOT/skills/init/references/test-framework-recommendations.md`, ask user approval for specific framework, install, then run health check). After installation, run the full Optimus Infrastructure Provisioning from the reference (test-guardian, testing.md, CLAUDE.md refs, README section, .gitignore).
+If the user chooses **Yes**: follow the "Framework and Coverage Tooling Installation" section of the reference (consult `$CLAUDE_PLUGIN_ROOT/skills/init/references/test-framework-recommendations.md`, ask user approval for specific framework, install, then run health check). After installation, run the full Optimus Infrastructure Provisioning from the reference (testing.md, CLAUDE.md refs, README section, .gitignore).
 
 If the user chooses **No**: skip all test infrastructure provisioning. In Step 7 summary, include: "⚠ Test infrastructure was not installed — `/optimus:tdd` will not work, and `/optimus:code-review`, `/optimus:refactor`, and `/optimus:verify` will have reduced functionality. Re-run `/optimus:init` to install test infrastructure later."
 
@@ -225,7 +216,7 @@ If the user chooses **No**: skip all test infrastructure provisioning. In Step 7
 **Always create in `.claude/docs/`:**
 - `coding-guidelines.md` - Use template from `$CLAUDE_PLUGIN_ROOT/skills/init/templates/docs/coding-guidelines.md` (replace [PROJECT NAME]). Shared across the entire repo. Always overwrite — this is a verbatim template, not project-customized content.
 
-**Create based on these detection rules** (`testing.md` is handled by Step 5c, not here):
+**Create based on these detection rules** (`testing.md` is handled by Step 5b, not here):
 
 | File | Template | Create when ANY of these are true |
 |------|----------|-----------------------------------|
@@ -236,7 +227,7 @@ Use each template as a skeleton — fill in all placeholders with actual project
 
 **Placement rules:**
 - **Single project:** All files go in `.claude/docs/`.
-- **Monorepo:** `styling.md` and `architecture.md` go in each subproject's `docs/` folder, scoped to that subproject's stack. Apply the detection rules above **per subproject** (e.g., skip `styling.md` for a subproject with no UI deps). `testing.md` placement is handled by Step 5c's provisioning reference. For root-as-project, its scoped docs go in `.claude/docs/` alongside the shared `coding-guidelines.md`. Each subproject can also get its own `coding-guidelines.md` only if its conventions differ significantly from root.
+- **Monorepo:** `styling.md` and `architecture.md` go in each subproject's `docs/` folder, scoped to that subproject's stack. Apply the detection rules above **per subproject** (e.g., skip `styling.md` for a subproject with no UI deps). `testing.md` placement is handled by Step 5b's provisioning reference. For root-as-project, its scoped docs go in `.claude/docs/` alongside the shared `coding-guidelines.md`. Each subproject can also get its own `coding-guidelines.md` only if its conventions differ significantly from root.
 
 ## Step 6b: Sync Existing Documentation
 
@@ -285,15 +276,12 @@ Run through this checklist. **Fix any failures before reporting to the user.**
 - Each `testing.md`, `styling.md`, `architecture.md`: References the project's actual frameworks, tooling, and directory names.
 - Monorepo: each subproject's `CLAUDE.md` exists, mentions subproject name, and is <= 60 lines (soft limit — same user-content preservation rule applies).
 - `.claude/hooks/*`: Each template-based hook matches its template. Each custom hook (unsupported stack) follows the pattern of existing shell-based hooks (e.g., `format-rust.sh`) and satisfies `unsupported-stack-fallback.md` step 3 validation rules.
-- `.claude/agents/code-simplifier.md`: File exists and matches template.
-- `.claude/agents/test-guardian.md` (if test infrastructure exists after Step 5c — pre-existing or just installed): File exists and matches template.
 - **Sync changes (Step 6b)**: If sync changes were applied, verify each modified file still has valid markdown and no truncated content.
 
 **Cross-reference checks:**
 - Every doc listed in a CLAUDE.md Documentation section actually exists as a file.
-- Every agent listed in a CLAUDE.md Agents section actually exists as a file in `.claude/agents/`.
 - Monorepo: every subproject in root CLAUDE.md's Architecture table has a corresponding `CLAUDE.md` file.
-- Multi-repo workspace (if workspace root `CLAUDE.md` was created): every repo listed in it has its own `.claude/CLAUDE.md` file. Each repo's `.claude/` is self-contained (has its own coding-guidelines, hooks, agents).
+- Multi-repo workspace (if workspace root `CLAUDE.md` was created): every repo listed in it has its own `.claude/CLAUDE.md` file. Each repo's `.claude/` is self-contained (has its own coding-guidelines, hooks).
 
 **If any check fails:** Fix the issue, then re-verify. Do not proceed to the summary until all checks pass.
 
@@ -310,7 +298,7 @@ Run through this checklist. **Fix any failures before reporting to the user.**
 |----------|---------|
 | **Project** | [project name] — [tech stack summary] |
 | **Structure** | [Single project / Monorepo with N packages / Multi-repo workspace with N repos] |
-| **Files created** | [count] files ([list: CLAUDE.md, settings.json, docs created, hooks, agents]) |
+| **Files created** | [count] files ([list: CLAUDE.md, settings.json, docs created, hooks]) |
 | **Formatters** | [which formatter hooks were installed, or "None"] |
 | **Test infra** | [Pre-existing: framework name / Installed: framework name / Not installed] |
 | **Doc sync** | [N corrections applied / No contradictions found / Skipped] |
@@ -320,11 +308,11 @@ Run through this checklist. **Fix any failures before reporting to the user.**
 
 After the table, include conditional warnings:
 
-If test infrastructure was installed from scratch in Step 5c (no pre-existing test framework — the user chose "Yes" to install one), include a strong warning:
+If test infrastructure was installed from scratch in Step 5b (no pre-existing test framework — the user chose "Yes" to install one), include a strong warning:
 
 > ⚠ **Important:** Test framework was installed but the project has no test files yet. The test command will pass with 0 tests — this is a false safety net. Other optimus skills (`/optimus:code-review` deep mode, `/optimus:refactor` deep mode, `/optimus:verify`) rely on tests to validate changes. **Run `/optimus:unit-test` next** to write initial tests and establish real coverage.
 
-If the user declined test infrastructure in Step 5c, include:
+If the user declined test infrastructure in Step 5b, include:
 
 > ⚠ **Note:** Test infrastructure was not installed — `/optimus:tdd` will not work, and `/optimus:code-review`, `/optimus:refactor`, and `/optimus:verify` will have reduced functionality. Re-run `/optimus:init` to install test infrastructure later.
 

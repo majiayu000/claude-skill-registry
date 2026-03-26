@@ -36,8 +36,9 @@ Before applying any functional exception handling changes, ensure the project va
 
 ## When to use this skill
 
-- Review Java code for functional exception handling
-- Apply best practices for functional exception handling in Java code
+- Improve the code with Functional Exception Handling
+- Apply Functional Exception Handling
+- Refactor the code with Functional Exception Handling
 
 ## Reference
 

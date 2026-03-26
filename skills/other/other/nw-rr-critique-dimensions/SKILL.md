@@ -1,6 +1,7 @@
 ---
 name: nw-rr-critique-dimensions
 description: Critique dimensions and scoring for research document reviews
+user-invocable: false
 disable-model-invocation: true
 ---
 

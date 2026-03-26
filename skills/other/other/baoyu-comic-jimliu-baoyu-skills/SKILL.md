@@ -216,7 +216,7 @@ Analyze → [Check Existing?] → [Confirm: Style + Reviews] → Storyboard → 
 
 **7.1 Generate character sheet first**:
 - **Backup rule**: If `characters/characters.png` exists, rename to `characters/characters-backup-YYYYMMDD-HHMMSS.png`
-- Invoke an installed image generation skill such as `baoyu-image-gen`
+- Invoke an installed image generation skill such as `baoyu-imagine`
 - Read that skill's `SKILL.md` and follow its documented interface rather than calling its scripts directly
 - Use `characters/characters.md` as the prompt-file input
 - Save output to `characters/characters.png`

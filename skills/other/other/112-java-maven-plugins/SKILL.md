@@ -46,9 +46,8 @@ Before applying plugin recommendations, ensure the project is in a valid state. 
 
 ## When to use this skill
 
-- Configure Maven plugins in pom.xml
-- Add Maven plugins to pom.xml
-- Improve Maven plugins configuration in pom.xml
+- Add Maven plugins in pom.xml
+- Improve Maven plugins in pom.xml
 
 ## Reference
 

@@ -32,7 +32,13 @@ Validate profiling results represent realistic load before analysis. Document as
 ## When to use this skill
 
 - Analyze JFR profile
-- Profile analysis
+- Analyze the profile
+- Analyze the performance
+- Analyze the memory
+- Analyze the threading
+- Analyze the GC
+- Analyze the profiling
+- Analyze the profiling
 - Performance analysis
 
 ## Reference

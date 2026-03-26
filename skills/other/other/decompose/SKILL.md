@@ -31,12 +31,15 @@ Analyze project scope and determine whether to treat it as a single feature or s
 
 Scan the project to understand what exists:
 
-1. Use Glob to scan the project directory tree (top 3 levels)
-2. Read the project README.md if it exists
-3. Scan `docs/` for existing specification documents and project manifests
-4. Check if `ideas/{feature-name}/draft.md` exists — if found, read it for context on scope
+@../shared/project-context.md
 
-Summarize what you learned in 2-3 sentences. Do not present this to the user — it is internal context for the interview.
+Execute PC.1 (Project Discovery) and PC.3 (Project Profile):
+
+1. Project structure, README, existing docs (PC.1)
+2. Project profile — Web API, CLI, Frontend, etc. (PC.3)
+3. Check if `ideas/{feature-name}/draft.md` exists — if found, read it for context on scope
+
+The project profile informs the decomposition: a monorepo with multiple apps has different split criteria than a single-purpose API. Summarize what you learned in 2-3 sentences. Do not present this to the user — it is internal context for the interview.
 
 ### Step 2: Scope Interview
 

@@ -14,7 +14,7 @@ If setup or runtime issues appear, check `references/troubleshooting.md`.
 
 ```python
 # Non-session utilities
-create_spreadsheet(path)
+create_spreadsheet(path, source=None)              # source: path to .json or .xml file to import
 export_spreadsheet(path, output_path, export_format)   # formats: "pdf", "xlsx", "csv"
 snapshot_area(doc_path, output_path, sheet="Sheet1", row=0, col=0, width=None, height=None, dpi=150)
 
@@ -382,7 +382,7 @@ from calc import snapshot_area
 
 result = snapshot_area(doc_path, "/tmp/revenue.png", sheet="Revenue Data", row=0, col=0, dpi=150)
 print(result.file_path, result.width, result.height)
-Path(result.file_path).unlink(missing_ok=True)   # cleanup used snapshots
+Path(result.file_path).unlink(missing_ok=True)   # clean up used snapshots
 ```
 
 Use snapshots to verify chart placement, formatting, and sheet layout before delivery.
@@ -395,4 +395,6 @@ Use snapshots to verify chart placement, formatting, and sheet layout before del
 - Assuming `create_chart()` picks a random later target name; when `title` is set, targeting the chart by that same name is the safest follow-up pattern.
 - Forgetting `chart.data_range.*` fields when patching chart operations.
 - Expecting exact requested PNG dimensions from `snapshot_area()`; Calc export can differ by a small amount.
+- Forgetting to clean up captured snapshots after inspection.
 - Calling session methods after `session.close()`.
+- JSON / XML import requires LibreOffice 26.2+.

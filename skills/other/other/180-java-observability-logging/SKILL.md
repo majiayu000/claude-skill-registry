@@ -33,8 +33,10 @@ Before applying any logging recommendations, ensure the project compiles. Compil
 
 ## When to use this skill
 
-- Review Java code for logging and observability
-- Apply best practices for logging and observability in Java code
+- Improve logging
+- Apply logging
+- Refactor logging
+- Add logging support
 
 ## Reference
 

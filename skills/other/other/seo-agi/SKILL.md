@@ -1,5 +1,6 @@
 ---
 name: seo-agi
+version: 1.3.0
 description: >
   Write SEO pages that rank on Google AND get cited by LLMs. Uses live SERP data,
   500-token chunk architecture, and the Reddit Test quality gate.
@@ -269,6 +270,14 @@ Instead cite specifically:
 
 Use this structure unless the brief explicitly requires something else.
 
+### 0. AI Summary Nugget (mandatory, first element after frontmatter)
+Every page must open with a 200-character (max) fact-dense summary block designed for LLM scrapers to cite as a consensus source. This block sits above the H1 as a `<div class="ai-summary">` or equivalent.
+
+**Format:** One to two sentences. Pure facts, no marketing language. Include the primary entity, the key number, and the core distinction. Example:
+> FLL airport parking: $20/day long-term, $36/day short-term, $10/day overflow (peak only). Off-site lots start at ~$6/day with shuttle. Rates effective Nov 2024.
+
+**Why:** Perplexity, Gemini, and ChatGPT extract the highest-confidence, shortest factual passage as their "answer nugget." A pre-built nugget at position zero gives them exactly what they need, increasing your citation probability.
+
 ### 1. Title + URL
 Title: Clear, includes the main topic naturally, not overstuffed, promises a concrete outcome. The exact match keyword should appear in the title.
 
@@ -297,6 +306,17 @@ Direct. Summarize the decision and next action. Do not restate the entire page.
 
 ### 9. Interactive Elements (when applicable)
 Where the page type supports it, recommend or include embedded tools: cost calculators, comparison widgets, availability checkers, or survey elements. AI Overviews cannot scrape or replace interactive functionality. These elements defend traffic against AI-generated answers and improve engagement signals (Nav Boost). Not every page needs one, but every comparison or pricing page should consider it.
+
+### 10. Original Research / Data Experiment Block (mandatory)
+Every page must include a section framed as original research, a data experiment, or a first-hand observation. This satisfies Google's highest-priority E-E-A-T signal: **Experience**.
+
+**How to execute:**
+- Frame a portion of the content as a specific test, analysis, or observation (e.g., "In our 12-point analysis of FLL garage fill rates..." or "We tracked 30 days of off-site shuttle wait times and found...")
+- If real first-party data exists, use it. If not, structure the section around a novel comparison, calculation, or cross-reference that no competitor has published (e.g., "We cross-referenced official county rates with 6 off-site aggregators to build this break-even matrix")
+- The block must contain at least one specific data point, methodology note, or observation timeframe
+- Tag any unverified claims with `{{VERIFY}}` as usual
+
+**Rule:** Pages without an original research or data experiment section will not score above 20/28 on the quality checklist. This is the single strongest differentiator against AI-generated commodity content.
 
 ---
 
@@ -357,6 +377,15 @@ Google Maps and similar platforms are rolling out "Ask Maps" features — natura
 - Posts updated at least bi-weekly (freshness signal for conversational pull)
 
 **Rule:** If your GBP cannot answer "who has [service] available [specific condition]?" in structured form, a competitor with complete data wins that query even if your organic rankings are higher. Treat GBP structured fields as AEO markup, not optional admin work.
+
+### Map Traffic Shifting -- Internal Link to Map Embed
+When optimizing local pages, explicitly add an internal link from high-traffic informational pages directly to the primary Map Embed or location page. This shifts user interaction signals (clicks, dwell, map engagement) from purely informational content toward local/commercial intent pages, strengthening the map pack signals that Google uses for local ranking.
+
+**How to execute:**
+- Identify your highest-traffic informational pages (check GSC for top queries by clicks)
+- Add a contextual internal link from those pages to your primary location or map-embed page (e.g., "See our [City] location on the map" or "Find the nearest [service] facility")
+- The link should feel natural in context, not forced. Place it where a reader would logically want to see a map or directions
+- This is especially effective for multi-location businesses where informational hub pages attract organic traffic but map pack listings need engagement signals
 
 ### Listicles
 - Each item must be substantively different
@@ -464,11 +493,13 @@ When the user provides a target keyword and brief:
 
 7. **Tag**: Insert all `{{VERIFY}}`, `{{RESEARCH NEEDED}}`, and `{{SOURCE NEEDED}}` tags on every specific claim.
 
-8. **Schema Markup**: Generate complete JSON-LD schema block(s) at the end of the page. Required per page type (Section 6). Also embed key entities inline using RDFa or Microdata spans where appropriate. Do NOT skip this step.
+8. **Recursive Fact-Check (Entity Consensus Validation)**: Before finalizing, validate every factual claim against at least two other high-ranking sources for the same topic. This ensures Entity Consensus -- if Google and LLMs see the same fact confirmed across multiple authoritative pages, they trust it more. If a claim is unique to your page and cannot be corroborated by any other source, flag it with `{{SOURCE NEEDED: unique claim -- no corroborating source found}}` and add evidence backing before publish. Do not remove unique claims that are genuinely original research -- instead, make the methodology explicit so the claim is self-evidencing.
 
-9. **Quality Checklist**: Run the checklist (Section 14) and **print the scorecard in the output** (see Section 14 for format). If any item fails, revise before delivering.
+9. **Schema Markup**: Generate complete JSON-LD schema block(s) at the end of the page. Required per page type (Section 6). Also embed key entities inline using RDFa or Microdata spans where appropriate. Do NOT skip this step.
 
-10. **Save**: Output to `~/Documents/SEO-AGI/pages/` (new pages) or `~/Documents/SEO-AGI/rewrites/` (rewrites).
+10. **Quality Checklist**: Run the checklist (Section 14) and **print the scorecard in the output** (see Section 14 for format). If any item fails, revise before delivering.
+
+11. **Save**: Output to `~/Documents/SEO-AGI/pages/` (new pages) or `~/Documents/SEO-AGI/rewrites/` (rewrites).
 
 ### Rewrite Protocol
 
@@ -525,7 +556,18 @@ Run before every delivery. If any answer is NO, revise before delivering.
 | 24 | Image alt text descriptive, not keyword-stuffed? | YES/NO |
 | | **Score: X/24** | |
 
-Pages scoring below 20/24 must be revised before delivery. Items marked NO must include a note on what needs to be fixed.
+| 25 | AI Summary Nugget (200-char) present at top of page? | YES/NO |
+| 26 | Original Research / Data Experiment block present? | YES/NO |
+| 27 | Map-to-informational internal link present (local pages only)? | YES/NO |
+| 28 | Every claim validated against 2+ high-ranking sources (Entity Consensus)? | YES/NO |
+| | **Score: X/28** | |
+
+Pages scoring below 22/28 must be revised before delivery. Items marked NO must include a note on what needs to be fixed.
+
+### Spam Resilience Priority: Technical Relevance > Human Tone
+In the 2025-2026 spam update cycle, Google is prioritizing **technical relevance density** (factual accuracy, entity coverage, structured data completeness) over "human-sounding" prose. A page that is factually perfect, entity-rich, and operationally detailed but "sounds like AI" will outperform a page with warm, conversational tone but thin substance.
+
+**Rule:** Do NOT downgrade a page for sounding clinical or data-heavy if it passes the Reddit Test and Information Gain Test. Volume and relevance are currently outperforming "human-like" fluff. Prioritize adding more facts, more structure, and more verifiable claims over softening the language to sound more natural. The anti-spam algorithms are targeting thin content and keyword stuffing, not technically dense content.
 
 ---
 

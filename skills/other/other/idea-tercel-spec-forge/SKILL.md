@@ -551,7 +551,7 @@ To start the spec chain:
 Optional (on-demand):
   /spec-forge:prd {idea-name}     PRD (for stakeholders)
   /spec-forge:srs {idea-name}     SRS (for compliance/audit)
-  /spec-forge:test-plan {idea-name} Test Plan (for formal QA)
+  /spec-forge:test-cases {idea-name} Test cases with coverage matrix
 ```
 
 Note: The actual `graduated` status is set by the `/spec-forge` chain command after it successfully generates the tech-design.

@@ -415,7 +415,7 @@ Pass these parameters in the dispatch prompt:
 | Type | Description | ID Convention |
 |---|---|---|
 | `file` | Source file | `file:<relative-path>` |
-| `function` | Function or method | `func:<relative-path>:<name>` |
+| `function` | Function or method | `function:<relative-path>:<name>` |
 | `class` | Class, interface, or type | `class:<relative-path>:<name>` |
 | `module` | Logical module or package | `module:<name>` |
 | `concept` | Abstract concept or pattern | `concept:<name>` |

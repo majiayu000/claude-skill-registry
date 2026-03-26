@@ -28,8 +28,9 @@ Before applying any documentation generation, ensure the project validates. If v
 
 ## When to use this skill
 
-- Review Java code for documentation
-- Apply best practices for documentation in Java code
+- Improve the code with documentation
+- Apply documentation
+- Refactor the code with documentation
 
 ## Reference
 

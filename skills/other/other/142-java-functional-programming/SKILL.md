@@ -40,8 +40,9 @@ Before applying any functional programming changes, ensure the project compiles.
 
 ## When to use this skill
 
-- Review Java code for functional programming
-- Apply best practices for functional programming in Java code
+- Improve the code with Functional Programming
+- Apply Functional Programming
+- Refactor the code with Functional Programming
 
 ## Reference
 

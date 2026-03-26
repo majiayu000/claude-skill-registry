@@ -144,13 +144,36 @@ Check each file for content that breaks prefix-based prompt caching:
 | 6 | MCP Tool Preferences | Table mapping built-in → MCP tools | Missing — agents use suboptimal tools |
 | 7 | No tool output examples | No large code blocks or command outputs | Found — bloats every turn |
 
+### Phase 5b: Auto-fix Fixable Issues
+
+For each FAIL in Phase 5, attempt auto-fix before reporting:
+
+| # | Issue | Fix | Skip when |
+|---|-------|-----|----------|
+| 5 | Missing Compact Instructions | Insert `## Compact Instructions` section before `## Navigation` | `dry_run: true` |
+| 6 | Missing MCP Tool Preferences | Insert table from hex-line output-style template | `dry_run: true` or hex-line not registered |
+| 1 | Missing build/test commands | WARN only (project-specific, cannot auto-generate) | -- |
+| 2 | Abstract principles found | WARN only (requires human judgment) | -- |
+
+**Compact Instructions template** (insert before `## Navigation` or after last rules section):
+
+```markdown
+## Compact Instructions
+
+Preserve during /compact: [Critical Rules], [MCP Tool Preferences table],
+[Navigation table], [language/communication rules], [hard boundaries (NEVER/ALWAYS)].
+Drop examples and explanations first.
+```
+
+Adapt per agent: GEMINI.md uses "context compression" instead of "/compact".
+
 ## Phase 6: Cross-Agent Consistency
 
 Compare content across all found instruction files:
 
 | Check | Pass | Fail |
 |-------|------|------|
-| MCP Tool Preferences | Same table in all files | Missing in some files |
+| MCP Tool Preferences | Same table in all files | Inconsistent content across files |
 | Critical Rules | Same core rules | Divergent rules |
 | Build/test commands | Same commands | Different or missing |
 | Structural sections | Same section order | Inconsistent structure |
@@ -169,7 +192,7 @@ Created:  (omit section if nothing created)
 Audit:
 | File       | Lines | ~Tokens | Cache-safe | Quality | Issues |
 |------------|-------|---------|------------|---------|--------|
-| CLAUDE.md  | 80    | 2,100   | OK         | 6/7     | Missing Compact Instructions |
+| CLAUDE.md  | 80    | 2,100   | OK         | 7/7     | Compact Instructions added |
 | AGENTS.md  | 77    | 2,000   | OK         | 7/7     | OK |
 | GEMINI.md  | 75    | 1,950   | OK         | 7/7     | OK |
 
@@ -177,7 +200,6 @@ Cross-agent: OK (or N inconsistencies listed)
 
 Recommendations:
 1. Run /init (ln-100) for full context-aware CLAUDE.md with project-specific rules
-2. Add ## Compact Instructions to CLAUDE.md
 ```
 
 ## Definition of Done
@@ -187,9 +209,10 @@ Recommendations:
 - [ ] Token budget within limits (≤2,500 tokens each)
 - [ ] No prompt cache breakers found (or reported as WARN)
 - [ ] Content quality checks passed (or issues reported)
+- [ ] Auto-fixable issues resolved (Compact Instructions, MCP Tool Preferences) or reported if dry_run
 - [ ] Cross-agent consistency verified
 - [ ] Report generated with creation log and actionable recommendations
 - [ ] No conflicting external plugins detected (or user confirmed keep)
 
-**Version:** 2.1.0
-**Last Updated:** 2026-03-24
+**Version:** 2.2.0
+**Last Updated:** 2026-03-25

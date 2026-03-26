@@ -21,16 +21,26 @@ Verify `hooks` section exists and is valid.
   "hooks": {
     "PreToolUse": [...],
     "PostToolUse": [...],
+    "UserPromptSubmit": [...],
     "Stop": [...],
-    "Notification": [...]
+    "SubagentStop": [...],
+    "SessionStart": [...],
+    "SessionEnd": [...],
+    "PreCompact": [...],
+    "PostCompact": [...],
+    "Notification": [...],
+    "Elicitation": [...],
+    "ElicitationResult": [...]
   }
 }
 ```
 
 ### 3. Validate Each Hook Entry
-- [ ] `type` is "command"
-- [ ] `command` path exists
-- [ ] Script is executable
+- [ ] `type` is "command" or "prompt"
+- [ ] If `type: "command"`: `command` path exists and script is executable
+- [ ] If `type: "prompt"`: `prompt` string is non-empty
+- [ ] `timeout` is positive integer if present (default: 60s command, 30s prompt)
+- [ ] `once` is boolean if present
 
 ### 4. Validate Hook Scripts
 - [ ] File exists and is executable

@@ -1,6 +1,6 @@
 ---
 name: cloudflare
-description: Cloudflare platform management via Wrangler CLI and Browser Rendering REST API. Deploy Pages sites, manage Workers, KV namespaces, R2 buckets, D1 databases, Queues, Vectorize indexes, Workflows, and Hyperdrive connections. Also provides budget web scraping, crawling, screenshots, and PDF generation via cf_browser.py (Browser Rendering API). Use when deploying to Cloudflare, managing CF infrastructure, configuring wrangler.toml, working with CF storage services, setting up Cloudflare Pages projects, or when you need cheap/free web scraping as an alternative to Firecrawl. Triggers on Cloudflare, wrangler, Pages deploy, KV namespace, R2 bucket, D1 database, CF Workers, Cloudflare DNS, Vectorize, Queues, Workflows, Hyperdrive, cf_browser, Browser Rendering, budget scrape.
+description: Cloudflare platform management via Wrangler CLI, Agents SDK, and Browser Rendering REST API. Deploy Pages sites, manage Workers, KV namespaces, R2 buckets, D1 databases, Queues, Vectorize indexes, Workflows, and Hyperdrive connections. Build stateful AI agents with Code Mode (MCP tools as TypeScript APIs in sandboxed Workers). Also provides budget web scraping, crawling, screenshots, and PDF generation via cf_browser.py (Browser Rendering API). Use when deploying to Cloudflare, managing CF infrastructure, configuring wrangler.toml, working with CF storage services, setting up Cloudflare Pages projects, building AI agents on Workers, or when you need cheap/free web scraping as an alternative to Firecrawl. Triggers on Cloudflare, wrangler, Pages deploy, KV namespace, R2 bucket, D1 database, CF Workers, Cloudflare DNS, Vectorize, Queues, Workflows, Hyperdrive, cf_browser, Browser Rendering, budget scrape, Cloudflare Agents SDK, Code Mode, codemode, AI agent Workers, MCP tools to TypeScript.
 ---
 
 # Cloudflare & Wrangler CLI
@@ -118,6 +118,48 @@ wrangler tail my-worker
 ```
 
 Note: `wrangler init` is deprecated — use `npm create cloudflare@latest` instead.
+
+---
+
+## Agents SDK & Code Mode
+
+Build stateful AI agents on Cloudflare Workers with durable state, MCP tool consumption, and sandboxed dynamic code execution.
+
+**Code Mode** converts AI SDK and MCP tools into TypeScript APIs that LLMs write code against, executed in isolated V8 Worker sandboxes (millisecond cold start, fetch/connect blocked by default).
+
+### Quick Start
+
+```bash
+# Scaffold an Agents project
+npm create cloudflare@latest my-agent -- --template agents
+
+# Install Code Mode
+npm install @cloudflare/codemode ai zod
+```
+
+### Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| `Agent<Env, State>` | Base class for stateful agents on Workers (extends `DurableObject`) |
+| `createCodeTool()` | Wraps AI SDK tools into a single code tool the LLM writes against |
+| `DynamicWorkerExecutor` | Runs LLM-generated TypeScript in isolated V8 sandbox |
+| `this.mcp.getAITools()` | Consume external MCP tools inside an Agent |
+| `generateTypes()` | Auto-generate TypeScript declarations from tool definitions |
+| `worker_loaders` binding | Required in wrangler.jsonc for Code Mode sandbox |
+
+### When to Use
+
+| Need | Approach |
+|------|----------|
+| Static API endpoint or cron | Standard Worker (`wrangler deploy`) |
+| Stateful agent with conversations | Agents SDK (`extends Agent`) |
+| LLM composing multiple tools dynamically | Code Mode (`@cloudflare/codemode`) |
+| Consuming external MCP servers | Agents SDK with `this.mcp` |
+
+**Note:** Dynamic Worker Loader API is in closed beta for production. Available locally via `wrangler dev`.
+
+**Full API reference and examples:** `references/agents-sdk-codemode.md`
 
 ---
 
@@ -285,3 +327,4 @@ Uses `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN` (preferred) or `CLOUDFLARE
 | `references/wrangler-commands.md` | Full Wrangler CLI command reference with all flags |
 | `references/pages-config.md` | Pages config: `_headers`, `_redirects`, build presets, env vars |
 | `references/browser-rendering-api.md` | Browser Rendering REST API: endpoints, params, pricing, limits |
+| `references/agents-sdk-codemode.md` | Agents SDK & Code Mode: API surface, wrangler config, security, examples |

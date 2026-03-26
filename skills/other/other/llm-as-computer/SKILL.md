@@ -2,7 +2,7 @@
 name: llm-as-computer
 description: Execute programs on a compiled transformer stack machine where every instruction fetch and memory read is a parabolic attention head. Demonstrates that transformer attention + FF layers can implement a working computer. Use when user mentions "llm-as-computer", "lac", "stack machine", "compiled transformer", "percepta", "parabolic attention", "execute program", or asks to run/trace programs on the transformer executor.
 metadata:
-  version: 1.0.0
+  version: 1.0.1
   repo: oaustegard/llm-as-computer
 ---
 

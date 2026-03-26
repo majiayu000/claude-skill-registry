@@ -24,7 +24,9 @@ Delegate tasks to Google Gemini CLI to save Claude context.
 ## Prerequisites
 
 ```bash
-npm install -g @anthropic/gemini-cli
+# Install Gemini CLI (Google)
+npm install -g @google/gemini-cli
+# Or via: https://github.com/google-gemini/gemini-cli
 ```
 
 ---

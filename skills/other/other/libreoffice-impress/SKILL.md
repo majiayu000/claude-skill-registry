@@ -121,7 +121,7 @@ TextFormatting(
     font_name=None,
     font_size=None,
     color=None,          # named color or integer
-    align=None,          # "left" | "center" | "right" | "justify"
+    align=None,          # "left" | "center" | "right" | "justify" | "start" | "end"
 )
 ```
 
@@ -346,7 +346,7 @@ from impress import snapshot_slide
 
 result = snapshot_slide(doc_path, 0, "/tmp/slide1.png")
 print(result.file_path, result.width, result.height)
-Path(result.file_path).unlink(missing_ok=True)   # cleanup used snapshots
+Path(result.file_path).unlink(missing_ok=True)   # clean up used snapshots
 ```
 
 Use snapshots to verify slide layout after text edits, master-page changes,
@@ -359,4 +359,6 @@ table/chart placement, or other visual operations.
 - Using fragile single-word text anchors when a fuller phrase is available.
 - Expecting exact shape names after LibreOffice-native slide duplication; UNO may rename duplicates such as `Name 1`.
 - Supplying malformed JSON in `items` or `data` patch fields.
+- Forgetting to clean up captured snapshots after inspection.
 - Calling session methods after `session.close()`.
+- The `"start"` and `"end"` paragraph alignment options require LibreOffice 26.2+.

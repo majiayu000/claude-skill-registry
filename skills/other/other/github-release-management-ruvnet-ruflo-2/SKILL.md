@@ -1,24 +1,7 @@
 ---
 name: github-release-management
-version: 2.0.0
-description: Comprehensive GitHub release orchestration with AI swarm coordination for automated versioning, testing, deployment, and rollback management
-category: github
-tags: [release, deployment, versioning, automation, ci-cd, swarm, orchestration]
-author: Claude Flow Team
-requires:
-  - gh (GitHub CLI)
-  - claude-flow
-  - ruv-swarm (optional for enhanced coordination)
-  - mcp-github (optional for MCP integration)
-dependencies:
-  - git
-  - npm or yarn
-  - node >= 20.0.0
-related_skills:
-  - github-pr-management
-  - github-issue-tracking
-  - github-workflow-automation
-  - multi-repo-coordination
+description: |
+  Comprehensive GitHub release orchestration with AI swarm coordination for automated versioning, testing, deployment, and rollback management
 ---
 
 # GitHub Release Management Skill

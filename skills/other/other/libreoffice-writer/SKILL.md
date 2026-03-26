@@ -14,8 +14,8 @@ If setup or runtime issues appear, check `references/troubleshooting.md`.
 
 ```python
 # Non-session utilities
-create_document(path)
-export_document(path, output_path, export_format)   # formats: "pdf", "docx"
+create_document(path, source=None)              # source: path to .md file to import
+export_document(path, output_path, export_format)   # formats: "pdf", "docx", "md"
 snapshot_page(doc_path, output_path, page=1, dpi=150)
 
 # Session (primary editing API)
@@ -94,7 +94,7 @@ TextFormatting(
     font_name=None,
     font_size=None,
     color=None,          # named color or integer
-    align=None,          # "left" | "center" | "right" | "justify"
+    align=None,          # "left" | "center" | "right" | "justify" | "start" | "end"
     line_spacing=None,
     spacing_before=None,
     spacing_after=None,
@@ -266,7 +266,7 @@ from writer import snapshot_page
 
 result = snapshot_page(doc_path, "/tmp/page1.png", page=1, dpi=150)
 print(result.file_path, result.width, result.height)
-Path(result.file_path).unlink(missing_ok=True)   # cleanup used snapshots
+Path(result.file_path).unlink(missing_ok=True)   # clean up used snapshots
 ```
 
 Use snapshots to verify layout after formatting, list edits, image placement, or table changes.
@@ -278,4 +278,7 @@ Use snapshots to verify layout after formatting, list edits, image placement, or
 - Using anchors that are too short or too common; prefer full-sentence or paragraph-level anchor text plus `after` / `before` bounds when possible.
 - Expecting `align` to apply only to a phrase; Writer applies paragraph alignment to the containing paragraph.
 - Supplying malformed JSON in `items` or `data` patch fields.
+- Forgetting to clean up captured snapshots after inspection.
 - Calling `session.export()` or other methods after `session.close()`.
+- The Markdown filter for markdown import / export requires LibreOffice 26.2+.
+- The `"start"` and `"end"` paragraph alignment options require LibreOffice 26.2+.

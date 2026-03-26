@@ -47,7 +47,14 @@ Generate a custom agent file based on requirements.
 ```yaml
 ---
 name: agent-name            # Required: lowercase, hyphenated, 3-50 chars
-description: Brief desc     # Required: triggering conditions + <example> blocks
+description: >              # Required: 200-1000 chars recommended, include <example> blocks
+  Use this agent when [triggering conditions]. Examples:
+  <example>
+  Context: [situation]
+  user: "[request]"
+  assistant: "[response]"
+  <commentary>[why this agent]</commentary>
+  </example>
 color: cyan                 # Required: yellow, red, green, blue, magenta, cyan
 tools:                      # Optional: YAML list (omit = all tools)
   - Read

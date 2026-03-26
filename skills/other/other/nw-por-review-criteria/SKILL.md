@@ -1,6 +1,7 @@
 ---
 name: nw-por-review-criteria
 description: Review dimensions and bug patterns for journey artifact reviews
+user-invocable: false
 disable-model-invocation: true
 ---
 
@@ -74,7 +75,7 @@ Uninstall from: ~/.claude/agents/nw/  <-- HARDCODED
 CLI commands without slash equivalents. Check both contexts exist.
 ```
 Terminal: crafter run
-Claude Code: /nw:execute  <-- EXISTS?
+Claude Code: /nw-execute  <-- EXISTS?
 ```
 
 ## Review Output Schema

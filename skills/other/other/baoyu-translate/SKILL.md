@@ -1,7 +1,7 @@
 ---
 name: baoyu-translate
 description: Translates articles and documents between languages with three modes - quick (direct), normal (analyze then translate), and refined (analyze, translate, review, polish). Supports custom glossaries and terminology consistency via EXTEND.md. Use when user asks to "translate", "翻译", "精翻", "translate article", "translate to Chinese/English", "改成中文", "改成英文", "convert to Chinese", "localize", "本地化", or needs any document translation. Also triggers for "refined translation", "精细翻译", "proofread translation", "快速翻译", "快翻", "这篇文章翻译一下", or when a URL or file is provided with translation intent.
-version: 1.56.1
+version: 1.57.0
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-translate
@@ -189,12 +189,12 @@ Before translating chunks:
    - Splits at markdown block boundaries to preserve structure
    - If a single block exceeds the threshold, falls back to line splitting, then word splitting
 4. **Assemble translation prompt**:
-   - Main agent reads `01-analysis.md` (if exists) and assembles shared context using Part 1 of [references/subagent-prompt-template.md](references/subagent-prompt-template.md) — inlining the resolved style preset (from `--style` flag, EXTEND.md `style` setting, or default `storytelling`), content background, merged glossary, and comprehension challenges
+   - Main agent reads `01-analysis.md` (if exists) and assembles shared context using Part 1 of [references/subagent-prompt-template.md](references/subagent-prompt-template.md) — inlining: target style + source voice assessment, content background, merged glossary, figurative language mapping (structured table), comprehension challenges (with reasoning), and translation challenges (structural/creative)
    - Save as `02-prompt.md` in the output directory (shared context only, no task instructions)
 5. **Draft translation via subagents** (if Agent tool available):
    - Spawn one subagent **per chunk**, all in parallel (Part 2 of the template)
-   - Each subagent reads `02-prompt.md` for shared context, translates its chunk, saves to `chunks/chunk-NN-draft.md`
-   - Terminology consistency is guaranteed by the shared `02-prompt.md` (glossary + comprehension challenges from analysis)
+   - Each subagent reads `02-prompt.md` for shared context, receives chunk position info (chunk N of M + brief context of where it sits in the argument), translates its chunk, saves to `chunks/chunk-NN-draft.md`
+   - Consistency is guaranteed by the shared `02-prompt.md` (glossary, figurative language mapping, comprehension challenges, source voice, and translation challenges from analysis)
    - If no chunks (content under threshold): spawn one subagent for the entire source file
    - If Agent tool is unavailable, translate chunks sequentially inline using `02-prompt.md`
 6. **Merge**: Once all subagents complete, combine translated chunks in order. If `chunks/frontmatter.md` exists, prepend it. Save as `03-draft.md` (refined) or `translation.md` (normal)

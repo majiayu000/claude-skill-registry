@@ -32,7 +32,9 @@ Copy bash scripts exactly from templates. Ensure JVM flags are applied for profi
 
 ## When to use this skill
 
-- Review Java code for profiling
+- Improve the code with profiling
+- Apply Profiling
+- Refactor the code with profiling
 - Add profiling support
 
 ## Reference

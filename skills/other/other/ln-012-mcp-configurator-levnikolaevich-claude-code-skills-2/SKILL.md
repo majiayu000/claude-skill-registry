@@ -67,12 +67,12 @@ For each connected hex server, run in parallel:
 npm view @levnikolaevich/${PKG} version 2>/dev/null
 ```
 
-Then compare npm latest against the newest locally cached npx package version using one cross-platform Node probe:
-1. `npm config get cache` -> capture cache root
-2. Run a Node script that scans `{cacheRoot}/_npx/**/node_modules/@levnikolaevich/${PKG}/package.json`
-3. Pick the newest discovered version by semver/mtime and treat it as the best local proxy for the package version that `npx` will reuse
+Then compare npm latest against the running local version:
+1. **npx cache probe:** `npm config get cache` -> scan `{cacheRoot}/_npx/**/node_modules/@levnikolaevich/${PKG}/package.json` -> pick newest by semver/mtime
 
-If the cache probe finds nothing, report `running=unknown` and treat the server as refresh-recommended rather than claiming it is current.
+Use the npx cache version. If probe returns nothing, report `running=unknown` and treat the server as refresh-recommended rather than claiming it is current.
+
+Note: hex packages run via `npx -y`, NOT global install. Never probe global npm paths.
 
 | npm latest | cached local version | Action |
 |------------|---------|--------|
@@ -114,19 +114,25 @@ Registration commands (OS-dependent prefix):
 
 | OS | Prefix | Why |
 |----|--------|-----|
-| Windows | `cmd /c npx` | Windows requires `cmd /c` wrapper to execute npx |
+| Windows (bash/MSYS2) | `MSYS_NO_PATHCONV=1 claude mcp add ... -- cmd /c npx` | MSYS2/Git Bash converts `/c` -> `C:/` in args. `MSYS_NO_PATHCONV=1` prevents this |
+| Windows (PowerShell/cmd) | `cmd /c npx` | No path conversion issue in native shells |
 | macOS / Linux | `npx` | Direct execution |
 
-| Server | Command (replace `{NPX}` with OS prefix above) |
+| Server | Command (Windows bash — always prefix with `MSYS_NO_PATHCONV=1`) |
 |--------|----------|
-| hex-line | `claude mcp add -s user hex-line -- {NPX} -y @levnikolaevich/hex-line-mcp` |
-| hex-ssh | `claude mcp add -s user hex-ssh -- {NPX} -y @levnikolaevich/hex-ssh-mcp` |
-| hex-graph | `claude mcp add -s user hex-graph -- {NPX} -y @levnikolaevich/hex-graph-mcp` |
+| hex-line | `MSYS_NO_PATHCONV=1 claude mcp add -s user hex-line -- cmd /c npx -y @levnikolaevich/hex-line-mcp` |
+| hex-ssh | `MSYS_NO_PATHCONV=1 claude mcp add -s user hex-ssh -- cmd /c npx -y @levnikolaevich/hex-ssh-mcp` |
+| hex-graph | `MSYS_NO_PATHCONV=1 claude mcp add -s user hex-graph -- cmd /c npx -y @levnikolaevich/hex-graph-mcp` |
 | context7 | `claude mcp add -s user --transport http context7 https://mcp.context7.com/mcp` |
 | Ref | `claude mcp add -s user --transport http Ref https://api.ref.tools/mcp` |
 | linear | `claude mcp add -s user --transport http linear-server https://mcp.linear.app/mcp` |
 
 4. Verify: `claude mcp list` -> check all registered show `Connected`. This is the only second `claude mcp list` call (post-mutation verify). Retry + report failures.
+
+**Windows MSYS2 path validation (MANDATORY on win32):**
+After registration, read `~/.claude.json` -> verify each hex server's `args[0]` is `"/c"` not `"C:/"`.
+If corrupted: fix via `mcp__hex-line__edit_file` (set_line the arg to `"/c"`).
+
 
 **Error handling:**
 
@@ -139,7 +145,7 @@ Registration commands (OS-dependent prefix):
 
 ### Phase 3: Hooks & Output Style [CRITICAL]
 
-MUST call `mcp__hex-line__setup_hooks(agent="claude")` immediately after hex-line registration. This configures:
+MUST call `mcp__hex-line__setup_hooks(agent="all")` AFTER all Phase 2 registrations complete (not just hex-line). This ensures the latest hook.mjs and output-style.md from the updated package are installed.
 
 **Hooks** (in `~/.claude/settings.json`):
 1. `PreToolUse` hook — redirects built-in Read/Edit/Write/Grep to hex-line equivalents
@@ -152,6 +158,10 @@ MUST call `mcp__hex-line__setup_hooks(agent="claude")` immediately after hex-lin
 6. Sets `outputStyle: "hex-line"` if no style is active (preserves existing style)
 
 **Verification:** Response must contain `Hooks configured for`. If `SKIPPED`, `UNKNOWN_AGENT`, `Error`, or `failed` — STOP.
+
+**Note:** `setup_hooks(agent="all")` also syncs MCP server entries and hook paths for Gemini. Codex is reported as "not supported" (expected). After this call, ln-013 should verify Gemini state rather than blindly overwriting.
+
+**Note:** ln-010 Phase 3c also calls `setup_hooks(agent="all")` unconditionally during verification. Double-call is intentional and harmless (idempotent). Ensures hooks are current even when ln-012 is not dispatched.
 
 ### Phase 4: Graph Indexing
 
@@ -262,6 +272,7 @@ MCP Configuration:
 6. **Grant permissions.** After registration, add `mcp__{server}` to user settings
 7. **Minimize `claude mcp list` calls.** Phase 1 runs it once (discovery). Phase 2 reuses that data. Only Phase 2 Step 4 runs it again (post-mutation verify). Max 2 calls total
 8. **Always check npm drift.** Connected != up to date. Compare npm latest against the newest locally cached npx package version before skipping
+9. **MSYS2 path safety.** On Windows with Git Bash/MSYS2, always prefix `claude mcp add` with `MSYS_NO_PATHCONV=1`. After registration, verify `args[0]` in `.claude.json` is `"/c"` not `"C:/"`. Fix inline if corrupted.
 
 ## Anti-Patterns
 
@@ -274,6 +285,8 @@ MCP Configuration:
 | Calculate token budget | Not this worker's responsibility |
 | Run `claude mcp list` in every phase | Run once in Phase 1, reuse in Phase 2, verify once after mutations |
 | Assume connected = up to date | Check `npm view` version vs newest cached npx package version |
+| Call `setup_hooks` before all packages re-registered | Call `setup_hooks(agent="all")` AFTER all Phase 2 registrations complete |
+| Run `claude mcp add` without MSYS_NO_PATHCONV on Windows bash | Always `MSYS_NO_PATHCONV=1 claude mcp add ...` or verify+fix args after |
 
 ---
 
@@ -291,5 +304,5 @@ MCP Configuration:
 
 ---
 
-**Version:** 1.3.0
-**Last Updated:** 2026-03-24
+**Version:** 1.4.1
+**Last Updated:** 2026-03-25

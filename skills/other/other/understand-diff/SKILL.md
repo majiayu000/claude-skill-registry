@@ -13,7 +13,7 @@ The knowledge graph JSON has this structure:
 - `project` — {name, description, languages, frameworks, analyzedAt, gitCommitHash}
 - `nodes[]` — each has {id, type, name, filePath, summary, tags[], complexity, languageNotes?}
   - Node types: file, function, class, module, concept
-  - IDs: `file:path`, `func:path:name`, `class:path:name`
+  - IDs: `file:path`, `function:path:name`, `class:path:name`
 - `edges[]` — each has {source, target, type, direction, weight}
   - Key types: imports, contains, calls, depends_on
 - `layers[]` — each has {id, name, description, nodeIds[]}

@@ -161,8 +161,63 @@ If `outcome-kpis.md` exists in the feature's discuss directory, Apex MUST read i
 - Dashboard design (which metrics to visualize)
 - Alerting rules (guardrail metric thresholds)
 
+## Mandatory Deliverable: Environment Inventory
+
+BEFORE completing the DEVOPS wave, produce `docs/feature/{feature-id}/devops/environments.yaml` with this structure:
+
+```yaml
+# environments.yaml — consumed by DISTILL for Mandate 4 (Environmental Realism)
+target_environments:
+  - name: clean
+    description: "Fresh install, no prior state"
+    platform: [linux, macos, wsl]
+    preconditions: []
+  - name: with-pre-commit
+    description: "Pre-commit hooks installed and active"
+    platform: [linux, macos, wsl]
+    preconditions: ["pre-commit installed", "core.hooksPath set to .git/hooks"]
+  - name: with-stale-config
+    description: "Outdated configuration from prior version"
+    platform: [linux, macos]
+    preconditions: ["legacy config present", "version mismatch"]
+
+coexistence_matrix:
+  - tool: pre-commit
+    must_not_break: true
+  - tool: husky
+    must_not_break: true
+
+platform_coverage:
+  macOS: [12.x, 13.x, 14.x]
+  Linux: [Ubuntu 22.04, Ubuntu 24.04]
+  WSL: [WSL2]
+  CI: [GitHub Actions ubuntu-latest]
+
+deployment_assumptions:
+  - "Installation MUST be idempotent (safe to run twice)"
+  - "Uninstall MUST remove only nWave artifacts"
+  - "Hooks MUST survive alongside existing hook managers"
+```
+
+For features that do NOT install into systems (pure business logic), the environment inventory contains only `target_environments: [{name: clean, platform: [linux, macos]}]`.
+
+DISTILL reads this file to parametrize acceptance scenarios over target environments. If this file is missing, DISTILL uses defaults (clean, with-pre-commit, with-stale-config) — but coverage gaps are the PA's responsibility.
+
+## Peer Review Gate
+
+AFTER producing all deliverables, dispatch `@nw-platform-architect-reviewer` to review platform readiness artifacts. BLOCK handoff on rejection.
+
+Review scope:
+- CI/CD pipeline correctness and completeness
+- Environment inventory coverage (all deployment targets)
+- Observability design alignment with outcome KPIs
+- Infrastructure security and deployment strategy soundness
+
+On REJECTION: revise artifacts per reviewer findings and re-submit. Max 2 attempts before escalating to user.
+
 ## Success Criteria
 
+- [ ] Environment inventory produced (`environments.yaml` with target environments and coexistence matrix)
 - [ ] CI/CD pipeline design finalized and documented
 - [ ] Logging infrastructure design complete (structured logging|aggregation)
 - [ ] Monitoring and alerting design complete (metrics|dashboards|SLOs/SLIs)
@@ -174,12 +229,13 @@ If `outcome-kpis.md` exists in the feature's discuss directory, Apex MUST read i
 - [ ] Outcome KPIs instrumentation designed (if outcome-kpis.md exists)
 - [ ] Data collection pipeline documented for each KPI
 - [ ] Dashboard mockup or spec includes all outcome KPIs
+- [ ] Peer review approved by @nw-platform-architect-reviewer
 - [ ] Handoff accepted by nw-acceptance-designer (DISTILL wave)
 
 ## Next Wave
 
 **Handoff To**: nw-acceptance-designer (DISTILL wave)
-**Deliverables**: Infrastructure design documents informing test environment setup
+**Deliverables**: Infrastructure design documents + `environments.yaml` (mandatory for DISTILL Mandate 4)
 
 ## Examples
 

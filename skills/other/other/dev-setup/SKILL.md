@@ -17,19 +17,20 @@ Ensure the project has accurate, whole-project-scope "how to run in development 
 
 Delegate project scanning to a detection agent to keep the main context clean for content generation.
 
-Read `$CLAUDE_PLUGIN_ROOT/skills/dev-setup/references/agent-prompts.md` for the full prompt template, detection tasks, and return format for the Project Context Detection Agent.
+Read `$CLAUDE_PLUGIN_ROOT/skills/dev-setup/agents/shared-constraints.md` for agent constraints.
+Read `$CLAUDE_PLUGIN_ROOT/skills/dev-setup/agents/dev-environment-detector.md` for the full prompt template, detection tasks, and return format for the Dev Environment Detector Agent.
 
-Read these reference files and provide their content to the agent as context before the Agent 1 prompt:
+Read these reference files and provide their content to the agent as context before the agent prompt:
 - `$CLAUDE_PLUGIN_ROOT/skills/init/references/multi-repo-detection.md` — workspace detection
 - `$CLAUDE_PLUGIN_ROOT/skills/init/references/project-detection.md` — monorepo/single-project detection
 - `$CLAUDE_PLUGIN_ROOT/skills/init/references/tech-stack-detection.md` — manifest → tech stack + package manager
 - `$CLAUDE_PLUGIN_ROOT/skills/dev-setup/references/dev-setup-sections.md` — signal-to-section mapping and external services detection
 
-Launch 1 `general-purpose` Agent tool call using the Agent 1 prompt from the agent-prompts.md file, prepended with the reference file contents above.
+Launch 1 `general-purpose` Agent tool call using the prompt from dev-environment-detector.md, prepended with the shared constraints and reference file contents above.
 
 | Agent | Role | Runs when |
 |-------|------|-----------|
-| 1 — Project Context Detection | Tech stack, PM, project structure, external services, env config, infrastructure signals, dev workflow signals | Always |
+| 1 — Dev Environment Detection | Tech stack, PM, project structure, external services, env config, infrastructure signals, dev workflow signals | Always |
 
 Wait for the agent to complete. Use the agent's **Context Detection Results** to populate the Step 1 Checkpoint below.
 
@@ -50,22 +51,22 @@ Give the user a chance to correct misdetections before proceeding.
 
 Delegate documentation scanning to an audit agent that cross-checks existing docs against the detected project state.
 
-Read `$CLAUDE_PLUGIN_ROOT/skills/dev-setup/references/agent-prompts.md` for the full prompt template, audit tasks, and return format for the Dev Instructions Audit Agent.
+Read `$CLAUDE_PLUGIN_ROOT/skills/dev-setup/agents/dev-setup-auditor.md` for the full prompt template, audit tasks, and return format for the Dev Setup Auditor Agent.
 
-Read this reference file and provide its content to the agent as context before the Agent 2 prompt:
+Read this reference file and provide its content to the agent as context before the agent prompt:
 - `$CLAUDE_PLUGIN_ROOT/skills/init/references/readme-section-detection.md` — heading patterns, section boundary detection, classification rules
 
-Launch 1 `general-purpose` Agent tool call using the Agent 2 prompt from the agent-prompts.md file. **Provide the Context Detection Results from Step 1 as context** at the start of the agent prompt (before the readme-section-detection.md content and Agent 2 template).
+Launch 1 `general-purpose` Agent tool call using the prompt from dev-setup-auditor.md. **Provide the Context Detection Results from Step 1 as context** at the start of the agent prompt (before the readme-section-detection.md content and agent template).
 
 | Agent | Role | Runs when |
 |-------|------|-----------|
-| 2 — Dev Instructions Audit | Read docs, apply heading detection, classify each aspect, cross-check against detected state | Always |
+| 2 — Dev Setup Audit | Read docs, apply heading detection, classify each aspect, cross-check against detected state | Always |
 
-Wait for the agent to complete. Use the agent's **Dev Instructions Audit Results** for the Step 3 assessment.
+Wait for the agent to complete. Use the agent's **Dev Setup Audit Results** for the Step 3 assessment.
 
 ## Step 3: Present Assessment and Plan
 
-Present findings as a table with status per aspect (use the classification from the Dev Instructions Audit Results).
+Present findings as a table with status per aspect (use the classification from the Dev Setup Audit Results).
 
 **If all aspects are "Found & accurate":** Report to user — no action needed. Skip to Step 6 (report only).
 

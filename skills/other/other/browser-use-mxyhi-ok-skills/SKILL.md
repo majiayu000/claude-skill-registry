@@ -18,8 +18,8 @@ For setup details, see https://github.com/browser-use/browser-use/blob/main/brow
 
 ## Core Workflow
 
-1. **Navigate**: `browser-use open <url>` -- starts browser if needed
-2. **Inspect**: `browser-use state` -- returns clickable elements with indices
+1. **Navigate**: `browser-use open <url>` — starts browser if needed
+2. **Inspect**: `browser-use state` — returns clickable elements with indices
 3. **Interact**: use indices from state (`browser-use click 5`, `browser-use input 3 "text"`)
 4. **Verify**: `browser-use state` or `browser-use screenshot` to confirm
 5. **Repeat**: browser stays open between commands
@@ -49,11 +49,11 @@ browser-use scroll up                     # Scroll up
 browser-use switch <tab>                  # Switch to tab by index
 browser-use close-tab [tab]              # Close tab (current if no index)
 
-# Page State -- always run state first to get element indices
+# Page State — always run state first to get element indices
 browser-use state                         # URL, title, clickable elements with indices
 browser-use screenshot [path.png]         # Screenshot (base64 if no path, --full for full page)
 
-# Interactions -- use indices from state
+# Interactions — use indices from state
 browser-use click <index>                 # Click element by index
 browser-use click <x> <y>                 # Click at pixel coordinates
 browser-use type "text"                   # Type into focused element
@@ -85,7 +85,7 @@ browser-use cookies clear [--url <url>]   # Clear cookies
 browser-use cookies export <file>         # Export to JSON
 browser-use cookies import <file>         # Import from JSON
 
-# Python -- persistent session with browser access
+# Python — persistent session with browser access
 browser-use python "code"                 # Execute Python (variables persist across calls)
 browser-use python --file script.py       # Run file
 browser-use python --vars                 # Show defined variables
@@ -165,7 +165,7 @@ Requires Chrome with remote debugging enabled. Falls back to probing ports 9222/
 ### Exposing Local Dev Servers
 
 ```bash
-browser-use tunnel 3000                            # -> https://abc.trycloudflare.com
+browser-use tunnel 3000                            # → https://abc.trycloudflare.com
 browser-use open https://abc.trycloudflare.com     # Browse the tunnel
 ```
 
@@ -185,7 +185,7 @@ browser-use open https://abc.trycloudflare.com     # Browse the tunnel
 
 1. **Always run `state` first** to see available elements and their indices
 2. **Use `--headed` for debugging** to see what the browser is doing
-3. **Sessions persist** -- browser stays open between commands
+3. **Sessions persist** — browser stays open between commands
 4. **CLI aliases**: `bu`, `browser`, and `browseruse` all work
 
 ## Troubleshooting

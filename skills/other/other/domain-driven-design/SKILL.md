@@ -1,6 +1,7 @@
 ---
 name: domain-driven-design
 description: Expert guidance for Domain-Driven Design architecture and implementation. Use when designing complex business systems, defining bounded contexts, structuring domain models, choosing between modular monolith vs microservices, implementing aggregates/entities/value objects, or when users mention "DDD", "domain-driven design", "bounded context", "aggregate", "domain model", "ubiquitous language", "event storming", "context mapping", "domain events", "anemic domain model", strategic design, tactical patterns, or domain modeling. Helps make architectural decisions, identify subdomains, design aggregates, and avoid common DDD pitfalls.
+spring-boot-version: "4.0"
 ---
 
 # Domain-Driven Design Skill
@@ -24,11 +25,9 @@ DDD manages complexity through alignment between software and business reality. 
 
 ## Core Workflow
 
-1. **Domain Discovery** → Identify subdomains and their strategic importance
-2. **Bounded Context Definition** → Draw boundaries where language changes
-3. **Context Mapping** → Define integration patterns between contexts
-4. **Architecture Selection** → Choose modular monolith vs microservices
-5. **Tactical Implementation** → Apply patterns within core domains only
+1. Domain Discovery → 2. Bounded Context Definition → 3. Context Mapping → 4. Architecture Selection → 5. Tactical Implementation
+
+See [WORKFLOW.md](WORKFLOW.md) for detailed step-by-step instructions for each phase.
 
 ## Quick Reference
 
@@ -75,6 +74,7 @@ Consider microservices when:
 - **Strategic Patterns**: See [references/STRATEGIC-PATTERNS.md](references/STRATEGIC-PATTERNS.md) for subdomains, bounded contexts, context mapping, event storming
 - **Tactical Patterns**: See [references/TACTICAL-PATTERNS.md](references/TACTICAL-PATTERNS.md) for entities, value objects, aggregates, services, repositories
 - **Architecture Alignment**: See [references/ARCHITECTURE-ALIGNMENT.md](references/ARCHITECTURE-ALIGNMENT.md) for clean/hexagonal architecture, modular monolith, microservices
+- **Workflow**: See [WORKFLOW.md](WORKFLOW.md) for detailed step-by-step DDD implementation process
 - **Anti-Patterns**: See [references/ANTI-PATTERNS.md](references/ANTI-PATTERNS.md) for common pitfalls and how to avoid them
 - **Examples**: See [EXAMPLES.md](EXAMPLES.md) for scenario walkthroughs applying DDD concepts
 - **Troubleshooting**: See [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for common issues and solutions
@@ -87,12 +87,12 @@ Consider microservices when:
 4. **One aggregate per transaction** - Cross-aggregate consistency via domain events
 5. **Persistence ignorance** - Domain layer has no infrastructure dependencies
 
-## Implementation Skills
+## Related Skills
 
-For framework-specific implementation of these patterns:
-
-- **Spring Boot data layer**: See `spring-boot-data-ddd` skill for JPA/JDBC aggregates, repositories, transactions
-- **Spring Boot web layer**: See `spring-boot-web-api` skill for controllers, validation, exception handling  
-- **Spring Modulith**: See `spring-boot-modulith` skill for module structure and event-driven communication
-
-These skills provide Spring Boot 4 implementation patterns for the DDD concepts defined here.
+| Need | Skill |
+|------|-------|
+| Data layer implementation | `spring-boot-data-ddd` — JPA/JDBC aggregates, repositories, transactions |
+| REST API layer | `spring-boot-web-api` — Controllers, validation, exception handling |
+| Module boundaries | `spring-boot-modulith` — Module structure, event-driven communication |
+| Testing patterns | `spring-boot-testing` — Aggregate tests, module tests, Scenario API |
+| Security for domains | `spring-boot-security` — Method-level authorization, role-based access |

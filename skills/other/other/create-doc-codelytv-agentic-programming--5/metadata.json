@@ -1,0 +1,17 @@
+{
+  "name": "create-doc",
+  "repo": "CodelyTV/agentic_programming-course",
+  "path": "05-mcps/3-mcp_vs_cli/4-multiple_cli/.agents/skills/create-doc/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/CodelyTV/agentic_programming-course",
+  "dir_name": "create-doc-codelytv-agentic-programming--5",
+  "downloaded_at": "2026-03-27T01:15:32.127625Z",
+  "author": "CodelyTV",
+  "source_url": "https://github.com/CodelyTV/agentic_programming-course/blob/main/05-mcps/3-mcp_vs_cli/4-multiple_cli/.agents/skills/create-doc/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CodelyTV/agentic_programming-course/blob/main/05-mcps/3-mcp_vs_cli/4-multiple_cli/.agents/skills/create-doc/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

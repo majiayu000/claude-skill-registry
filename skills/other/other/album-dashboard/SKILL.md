@@ -9,6 +9,7 @@ allowed-tools:
   - Read
   - Glob
   - Grep
+  - bitwize-music-mcp
 ---
 
 ## Your Task

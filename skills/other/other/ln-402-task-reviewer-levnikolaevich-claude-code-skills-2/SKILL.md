@@ -151,7 +151,7 @@ Step 8: Mechanical Verification
 
 Step 9: Update & Commit
   - Set task status, update kanban, post review comment
-  - If Done: commit ALL uncommitted changes in branch (git add -A)
+  - If Done: leave branch changes uncommitted for downstream branch ownership rules
 ```
 
 ## Workflow (concise)
@@ -214,7 +214,7 @@ Step 9: Update & Commit
    - If only nits: apply minor fixes and set Done.
    - If issues remain: set To Rework with comment explaining why (best-practice ref) and how to fix.
    - Side-effect bugs do NOT block current task's Done status (they are separate tasks).
-   - **If Done:** commit ALL uncommitted changes in the branch (not just task-related files): `git add -A && git commit -m "Implement {task_id}: {task_title}"`. This includes any changes from previous tasks, auto-fixes, or generated files — everything currently unstaged/staged goes into this commit.
+   - **If Done:** leave branch changes uncommitted and hand off the accepted task state with review comment + summary artifact.
 8) **Mechanical Verification (if Done):**
    **MANDATORY READ:** `shared/references/ci_tool_detection.md`
    IF verdict == Done:
@@ -227,7 +227,7 @@ Step 9: Update & Commit
 
 ## Review Quality Score
 
-**Context:** Quantitative review result helps ln-400 orchestrator make data-driven decisions and tracks review consistency.
+**Context:** Quantitative review results make downstream decisions auditable and track review consistency.
 
 **Formula:** `Quality Score = 100 - (20 × BLOCKER_count) - (10 × CONCERN_count) - (3 × NIT_count)`
 
@@ -256,10 +256,17 @@ Step 9: Update & Commit
 - Keep task language (EN/RU) in edits/comments.
 - Mechanical checks (lint/typecheck) run ONLY when verdict is Done; skip for To Rework.
 
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
+
+Write `.hex-skills/runtime-artifacts/runs/{run_id}/task-status/{task_id}.json` with the final review transition before finishing.
+
 ## Definition of Done
 - [ ] Steps 1-9 completed: task resolved, context loaded, review checks passed, AC validated, side-effect bugs created, mechanical verification passed, decision applied.
-- [ ] If Done: ALL uncommitted changes committed (`git add -A`) with task ID; task removed from kanban. If To Rework: task moved with fix guidance.
+- [ ] If Done: task removed from kanban after review acceptance. If To Rework: task moved with fix guidance.
 - [ ] Review comment posted (findings + [BUG] list if any).
+- [ ] Runtime summary artifact written to the shared task-status location.
 
 ## Reference Files
 - **Tools config:** `shared/references/tools_config_guide.md`

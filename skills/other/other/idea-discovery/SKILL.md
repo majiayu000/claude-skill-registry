@@ -36,6 +36,24 @@ Each phase builds on the previous one's output. The final deliverables are a val
 
 ## Pipeline
 
+### Phase 0: Load Research Brief (if available)
+
+Before starting any other phase, check for a detailed research brief in the project:
+
+1. Look for `RESEARCH_BRIEF.md` in the project root (or path passed as `$ARGUMENTS`)
+2. If found, read it and extract:
+   - Problem statement and context
+   - Constraints (compute, data, timeline, venue)
+   - What the user already tried / what didn't work
+   - Domain knowledge and non-goals
+   - Existing results (if any)
+3. Use this as the primary context for all subsequent phases — it replaces the one-line prompt
+4. If both `RESEARCH_BRIEF.md` and a one-line `$ARGUMENTS` exist, merge them (brief takes priority for details, argument sets the direction)
+
+If no brief exists, proceed normally with `$ARGUMENTS` as the research direction.
+
+> 💡 Create a brief from the template: `cp templates/RESEARCH_BRIEF_TEMPLATE.md RESEARCH_BRIEF.md`
+
 ### Phase 0.5: Reference Paper Summary (when REF_PAPER is set)
 
 **Skip entirely if `REF_PAPER` is `false`.**

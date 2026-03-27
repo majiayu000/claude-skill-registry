@@ -11,6 +11,7 @@ allowed-tools:
   - Edit
   - Glob
   - Grep
+  - bitwize-music-mcp
 ---
 
 ## Your Task

@@ -11,6 +11,7 @@ allowed-tools:
   - Grep
   - Bash
   - AskUserQuestion
+  - bitwize-music-mcp
 ---
 
 ## Your Task

@@ -9,6 +9,7 @@ allowed-tools:
   - Bash
   - Glob
   - Grep
+  - bitwize-music-mcp
 ---
 
 # Album Validator Agent

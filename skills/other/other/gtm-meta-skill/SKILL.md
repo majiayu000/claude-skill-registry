@@ -1,6 +1,6 @@
 ---
 name: gtm-meta-skill
-description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, builtwith, cloudflare, crustdata, deepline_native, deeplineagent, dropleads, exa, firecrawl, forager, google_search, heyreach, hubspot, hunter, icypeas, instantly, leadmagic, lemlist, parallel, peopledatalabs, prospeo, salesforce, serper, smartlead, snowflake, zerobounce."
+description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, builtwith, cloudflare, crustdata, deepline_native, deeplineagent, dropleads, exa, firecrawl, forager, heyreach, hubspot, hunter, icypeas, instantly, leadmagic, lemlist, parallel, peopledatalabs, prospeo, salesforce, serper, smartlead, snowflake, zerobounce."
 ---
 
 # GTM Meta Skill
@@ -220,10 +220,6 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 - [forager playbook](provider-playbooks/forager.md)
   Summary: Use totals endpoints first (free) to estimate volume, then search/lookup with reveal flags for contacts. Strong for verified mobiles.
   Last reviewed: 2026-02-28
-
-- [google_search playbook](provider-playbooks/google_search.md)
-  Summary: Use Google Search for broad web recall, then follow up with extraction/enrichment tools for structured workflows.
-  Last reviewed: 2026-02-12
 
 - [heyreach playbook](provider-playbooks/heyreach.md)
   Summary: Resolve campaign IDs first, then batch inserts and confirm campaign stats after writes.

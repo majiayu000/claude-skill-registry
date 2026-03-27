@@ -1,7 +1,7 @@
 ---
 name: ln-614-docs-fact-checker
 description: "Verifies claims in .md files (paths, versions, counts, configs, endpoints) against codebase, cross-checks contradictions. Use when auditing docs accuracy."
-allowed-tools: Read, Grep, Glob, Bash
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline, mcp__hex_graph__index_project, mcp__hex_graph__search_symbols, mcp__hex_graph__find_references
 license: MIT
 ---
 
@@ -9,21 +9,23 @@ license: MIT
 
 # Documentation Fact-Checker (L3 Worker)
 
+**Type:** L3 Worker
+
 Specialized worker that extracts verifiable claims from documentation and validates each against the actual codebase.
 
 ## Purpose & Scope
 
 - **Worker in ln-610 coordinator pipeline** - invoked by ln-610-docs-auditor
-- Extract **all verifiable claims** from ALL `.md` files in project
+- Prioritize canonical and high-claim docs, then extract verifiable claims from markdown documentation
 - Verify each claim against codebase (Grep/Glob/Read/Bash)
 - Detect **cross-document contradictions** (same fact stated differently)
 - Includes `docs/reference/`, `docs/tasks/`, `tests/` in scope
-- Single invocation (not per-document) — cross-doc checks require global view
+- Single invocation (not per-document) -> cross-doc checks require global view
 - Does NOT check scope alignment or structural quality
 
 ## Inputs (from Coordinator)
 
-**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`, `shared/references/docs_quality_contract.md`, `shared/references/docs_quality_rules.json`, and `shared/references/markdown_read_protocol.md`.
 
 Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 
@@ -35,16 +37,22 @@ Extract tech stack, project root, output_dir from contextStore.
 
 ### Phase 2: Discover Documents
 
-Glob ALL `.md` files in project. Exclude:
+Glob markdown docs in project. Exclude:
 - `node_modules/`, `.git/`, `dist/`, `build/`
 - `docs/project/.audit/` (audit output, not project docs)
 - `CHANGELOG.md` (historical by design)
+
+If `docs/project/.context/doc_registry.json` exists:
+- load it first
+- prioritize `doc_role=canonical`
+- prioritize files with dense claim types (paths, endpoints, versions, commands)
+- de-prioritize navigation hubs unless contradictions point back to them
 
 ### Phase 3: Extract Claims (Layer 1)
 
 **MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
 
-For each document, extract verifiable claims using Grep/regex patterns.
+For each prioritized document, use section-first reads to extract verifiable claims using Grep/regex patterns.
 
 **MANDATORY READ:** Load [references/claim_extraction_rules.md](references/claim_extraction_rules.md) for detailed extraction patterns per claim type.
 
@@ -81,13 +89,13 @@ For each extracted claim, verify against codebase:
 | Docker/infra | Grep docker-compose.yml for image tags, ports | INFRA_MISMATCH |
 
 **False positive filtering (Layer 2 reasoning):**
-- Template placeholders (`{placeholder}`, `YOUR_*`, `<project>`, `xxx`) — skip
-- Example/hypothetical paths (preceded by "e.g.", "for example", "such as") — skip
-- Future-tense claims ("will add", "planned", "TODO") — skip or LOW
-- Conditional claims ("if using X, configure Y") — verify only if X detected in tech_stack
-- External service paths (URLs, external repos) — skip
-- Paths in SCOPE/comment HTML blocks describing other projects — skip
-- `.env.example` values — skip (expected to differ from actual)
+- Template placeholders (`{placeholder}`, `YOUR_*`, `<project>`, `xxx`) -> skip
+- Example/hypothetical paths (preceded by "e.g.", "for example", "such as") -> skip
+- Future-tense claims ("will add", "planned", "TODO") -> skip or LOW
+- Conditional claims ("if using X, configure Y") -> verify only if X detected in tech_stack
+- External service paths (URLs, external repos) -> skip
+- Paths in SCOPE/comment HTML blocks describing other projects -> skip
+- `.env.example` values -> skip (expected to differ from actual)
 
 ### Phase 5: Cross-Document Consistency
 
@@ -139,7 +147,7 @@ Calculate score using penalty formula. Write report.
 
 | Issue Type | Severity | Rationale |
 |------------|----------|-----------|
-| PATH_NOT_FOUND (critical file: CLAUDE.md, runbook, api_spec) | CRITICAL | Setup/onboarding fails |
+| PATH_NOT_FOUND (critical file: AGENTS.md, CLAUDE.md, runbook, api_spec) | CRITICAL | Setup/onboarding fails |
 | PATH_NOT_FOUND (other docs) | HIGH | Misleading reference |
 | VERSION_MISMATCH (major version) | HIGH | Fundamentally wrong |
 | VERSION_MISMATCH (minor/patch) | MEDIUM | Cosmetic drift |
@@ -174,8 +182,11 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - **No false positives:** Better to miss an issue than report incorrectly. When uncertain, classify as LOW with note
 - **Location precision:** Always include `file:line` for programmatic navigation
 - **Broad scope:** Scan ALL .md files — do not skip docs/reference/, tests/, or task docs
+- **Targeted depth:** Spend the deepest verification effort on canonical and high-claim docs first
 - **Cross-doc matters:** Contradictions between documents erode trust more than single-doc errors
 - **Batch efficiently:** Extract all claims first, then verify in batches by type (all paths together, all versions together)
+- **Shared placeholder policy:** Respect allowlisted setup placeholders from `docs_quality_rules.json`; do not escalate them in task setup docs
+- **Use hex-graph when useful:** For code entities and references, prefer graph queries over repeated grep when it reduces ambiguity
 
 ## Definition of Done
 

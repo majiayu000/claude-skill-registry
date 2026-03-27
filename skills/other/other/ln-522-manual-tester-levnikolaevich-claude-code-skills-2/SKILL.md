@@ -17,6 +17,8 @@ license: MIT
 
 # Manual Tester
 
+**Type:** L3 Worker
+
 Manually verifies Story AC on running code and reports structured results for the quality gate.
 
 ## Purpose & Scope
@@ -27,7 +29,7 @@ Manually verifies Story AC on running code and reports structured results for th
 - No status changes or task creation.
 
 ## When to Use
-- **Invoked by ln-520-test-planner** after ln-521-test-researcher completes
+- Use when a Story needs hands-on acceptance-criteria verification before automated planning
 - Research comment "## Test Research:" exists on Story (from ln-521)
 - All implementation tasks in Story status = Done
 

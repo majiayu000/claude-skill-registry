@@ -1,6 +1,7 @@
 ---
 name: spring-boot-data-ddd
 description: Spring Boot 4 data layer implementation for Domain-Driven Design. Use when implementing JPA or JDBC aggregates, Spring Data repositories, transactional services, projections, or entity auditing. Covers aggregate roots with AbstractAggregateRoot, value object mapping, EntityGraph for N+1 prevention, and Spring Boot 4 specifics (JSpecify null-safety, AOT repositories). For DDD concepts and design decisions, see the domain-driven-design skill.
+spring-boot-version: "4.0"
 ---
 
 # Spring Boot Data Layer for DDD
@@ -18,11 +19,9 @@ Spring Data JDBC enforces aggregate boundaries naturally—recommended for new D
 
 ## Core Workflow
 
-1. **Define aggregate root** → Extend `AbstractAggregateRoot<T>` for domain events
-2. **Map value objects** → Use `@Embedded` or `@Converter` for immutability
-3. **Create repository interface** → One per aggregate root, extend appropriate base
-4. **Implement service layer** → `@Transactional` on public methods, one aggregate per transaction
-5. **Add projections** → Interface or record-based for read operations
+1. Define aggregate root → 2. Map value objects → 3. Create repository → 4. Implement service layer → 5. Add projections
+
+See [WORKFLOW.md](WORKFLOW.md) for detailed step-by-step instructions with code examples.
 
 ## Quick Patterns
 
@@ -68,11 +67,21 @@ public interface UserRepository extends
 
 ## Detailed References
 
+- **Workflow**: See [WORKFLOW.md](WORKFLOW.md) for detailed step-by-step data layer implementation
 - **Examples**: See [EXAMPLES.md](EXAMPLES.md) for complete working code examples
 - **Troubleshooting**: See [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for common issues and Boot 4 migration
 - **Aggregates & Entities**: See [references/AGGREGATES.md](references/AGGREGATES.md) for complete patterns with value objects, typed IDs, auditing
 - **Repositories & Queries**: See [references/REPOSITORIES.md](references/REPOSITORIES.md) for custom queries, projections, specifications
 - **Transactions**: See [references/TRANSACTIONS.md](references/TRANSACTIONS.md) for propagation, isolation, cross-aggregate consistency
+
+## Related Skills
+
+| Need | Skill |
+|------|-------|
+| DDD concepts and design | `domain-driven-design` |
+| REST API for aggregates | `spring-boot-web-api` |
+| Module boundaries | `spring-boot-modulith` |
+| Repository testing | `spring-boot-testing` |
 
 ## Anti-Pattern Checklist
 

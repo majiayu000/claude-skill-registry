@@ -1,0 +1,17 @@
+{
+  "name": "mobile-app-debugging",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/mobile-app-debugging/skills/mobile-app-debugging/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "mobile-app-debugging-secondsky-claude-skills",
+  "downloaded_at": "2026-03-27T01:41:34.439863Z",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/mobile-app-debugging/skills/mobile-app-debugging/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/secondsky/claude-skills/blob/main/plugins/mobile-app-debugging/skills/mobile-app-debugging/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

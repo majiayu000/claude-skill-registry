@@ -9,6 +9,7 @@ allowed-tools:
   - Grep
   - WebSearch
   - WebFetch
+  - bitwize-music-mcp
 ---
 
 ## Your Task

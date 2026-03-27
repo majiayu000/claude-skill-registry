@@ -19,8 +19,10 @@ Synchronizes skills (via symlinks) and MCP/hook settings from Claude Code (sourc
 
 | Direction | Content |
 |-----------|---------|
-| **Input** | OS info, `disabled` flags per agent, `targets` (gemini/codex/both), `dry_run` flag |
-| **Output** | Per-target sync status (synced / skipped / failed) |
+| **Input** | OS info, `disabled` flags per agent, `targets` (gemini/codex/both), `dry_run` flag, optional `runId`, optional `summaryArtifactPath` |
+| **Output** | Structured summary envelope with per-target sync status (synced / skipped / failed) |
+
+If `summaryArtifactPath` is provided, write the same summary JSON there. If not provided, return the summary inline and remain fully standalone.
 
 ---
 
@@ -72,7 +74,6 @@ Decision logic:
 | No link exists | Create link |
 
 ### Phase 3: Sync MCP Settings
-
 IF agent `disabled: true` → SKIP for that target.
 
 **3a: Claude to Gemini (JSON to JSON)**
@@ -128,6 +129,23 @@ Hook scripts must support both tool name formats (same mapping as matchers above
 
 Codex does NOT support hooks. SKIP hook sync for Codex. Report "hooks not supported by Codex CLI".
 
+### Phase 4c: Gemini MCP Policy
+
+Gemini CLI policy engine blocks MCP tool calls by default (error: "Tool execution denied by policy") even with `--yolo`. Fix: ensure `~/.gemini/policies/allow-mcp.toml` exists.
+
+| Condition | Action |
+|-----------|--------|
+| File exists with `mcpName` allow rule | SKIP |
+| File missing or no allow rule | Create `~/.gemini/policies/allow-mcp.toml` |
+
+File content:
+
+```toml
+[[rule]]
+mcpName = "*"
+decision = "allow"
+priority = 200
+```
 
 ### Phase 5: Report
 
@@ -141,6 +159,7 @@ Config Sync:
 | MCP sync       | Codex  | 4 servers synced (1 new)       |
 | Hooks sync     | Gemini | 3 events synced                |
 | Hooks sync     | Codex  | skipped (not supported)        |
+| MCP policy     | Gemini | allow-mcp.toml created         |
 ```
 
 ---
@@ -174,6 +193,7 @@ Config Sync:
 - [ ] MCP settings synced with correct format conversion (JSON for Gemini, TOML for Codex)
 - [ ] Hook events and tool names mapped for Gemini
 - [ ] Codex hooks skipped with report
+- [ ] Gemini MCP policy file verified/created
 - [ ] Backup files created before any config modification
 - [ ] Final report table displayed
 

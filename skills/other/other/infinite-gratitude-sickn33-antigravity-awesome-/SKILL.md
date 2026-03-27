@@ -15,7 +15,6 @@ date_added: "2026-02-27"
 A multi-agent research skill designed for parallel research execution. It orchestrates 10 agents to conduct deep research, battle-tested with real case studies.
 
 ## When to Use
-
 Use this skill when you need to perform extensive, parallelized research on a topic, leveraging multiple agents to gather and synthesize information more efficiently than a single linear process.
 
 ## How to Use

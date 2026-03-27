@@ -10,6 +10,7 @@ allowed-tools:
   - Read
   - Glob
   - WebSearch
+  - bitwize-music-mcp
 requirements:
   external:
     - name: Chromium

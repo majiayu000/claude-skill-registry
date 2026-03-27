@@ -10,7 +10,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 7XX Project Bootstrap
-**Parent:** ln-780-bootstrap-verifier
 
 ---
 
@@ -35,7 +34,7 @@ Detects project types, restores dependencies, executes builds, and verifies succ
 
 | Scenario | Use This Skill |
 |----------|---------------|
-| Called by ln-780 orchestrator | Yes |
+| Standalone-capable | Yes |
 | Standalone build verification | Yes |
 | CI/CD pipeline build step | Yes |
 | Test execution needed | No, use ln-782 |

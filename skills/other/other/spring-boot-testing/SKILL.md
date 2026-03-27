@@ -1,6 +1,7 @@
 ---
 name: spring-boot-testing
 description: Spring Boot 4 testing strategies and patterns. Use when writing unit tests, slice tests (@WebMvcTest, @DataJpaTest), integration tests, Testcontainers with @ServiceConnection, security testing (@WithMockUser, JWT), or Modulith event testing with Scenario API. Covers the critical @MockitoBean migration from @MockBean.
+spring-boot-version: "4.0"
 ---
 
 # Spring Boot 4 Testing
@@ -92,8 +93,12 @@ See [EXAMPLES.md](EXAMPLES.md) for complete working examples including:
 
 ## Related Skills
 
-- `spring-boot-security` — For authentication/authorization configuration patterns
-- `spring-boot-modulith` — For module boundary and event-driven architecture patterns
+| Need | Skill |
+|------|-------|
+| Security configuration | `spring-boot-security` |
+| Module boundaries | `spring-boot-modulith` |
+| Data layer patterns | `spring-boot-data-ddd` |
+| Controller patterns | `spring-boot-web-api` |
 
 ## Critical Reminders
 

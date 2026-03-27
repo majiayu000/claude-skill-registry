@@ -10,6 +10,7 @@ allowed-tools:
   - Grep
   - Glob
   - Bash
+  - bitwize-music-mcp
 requirements:
   external:
     - name: AnthemScore

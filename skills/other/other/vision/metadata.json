@@ -2,8 +2,16 @@
   "name": "vision",
   "repo": "aiskillstore/marketplace",
   "path": "skills/0xsero/vision/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/aiskillstore/marketplace",
   "dir_name": "vision",
-  "downloaded_at": "2026-02-13T01:20:43.287113Z"
+  "downloaded_at": "2026-03-27T01:23:47.365858Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/0xsero/vision/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/0xsero/vision/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

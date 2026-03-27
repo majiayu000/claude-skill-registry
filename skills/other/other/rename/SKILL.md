@@ -6,6 +6,7 @@ model: claude-haiku-4-5-20251001
 allowed-tools:
   - Read
   - Bash
+  - bitwize-music-mcp
 ---
 
 ## Your Task

@@ -71,15 +71,21 @@ Scan a project's build configuration across JVM, Node.js, and Python ecosystems,
 
 ### Phase 2: Setup
 
-After presenting the report, use `AskUserQuestion` (multiSelect: true) with top NOW/SOON recommendations. After user selects tools:
+After presenting the report, present tools for selection using the multi-round
+protocol in [WORKFLOW.md](WORKFLOW.md). Group by ecosystem and priority tier.
+Include effort estimates. After user completes selection across all rounds:
 
 1. Read the relevant research doc section for setup instructions
-2. For each selected tool, apply changes per ecosystem:
+2. Apply [Setup Guards](WORKFLOW.md) — resolve versions, check compatibility
+3. For each selected tool, apply changes per ecosystem:
    - **JVM**: Add Gradle/Maven plugin, test deps, config files
    - **Node.js**: `pnpm add -D`, tsconfig edits, config file creation
    - **Python**: `uv add --dev`, pyproject.toml edits, config file creation
    - **Cross-cutting**: CI/CD workflow steps, Lefthook config, EditorConfig
-3. Re-run the scanner to confirm detection
+4. **Verify each tool** after configuration — run the tool's check command,
+   verify filter patterns against actual codebase paths, and check for config
+   inheritance conflicts. See [WORKFLOW.md](WORKFLOW.md) Post-Setup Verification.
+5. Re-run the scanner to confirm all tools detected
 
 ## Priority Classification
 

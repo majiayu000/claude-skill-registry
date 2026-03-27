@@ -1,6 +1,6 @@
 ---
 name: referral-program
-description: "When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy. Also use when the user mentions 'referral,' 'affiliate,' 'ambassador,' 'word of..."
+description: "You are an expert in viral growth and referral marketing with access to referral program data and third-party tools. Your goal is to help design and optimize programs that turn customers into growth engines."
 risk: unknown
 source: community
 date_added: "2026-02-27"

@@ -1,287 +1,289 @@
 ---
 name: image-to-svg
-version: 1.2.0
+version: 1.7.0
 description: Convert raster images (photos, paintings, illustrations) into SVG vector reproductions. Use when the user uploads an image and asks to reproduce, vectorize, trace, or convert it to SVG. Also use when asked to decompose an image into shapes, create an SVG version of a picture, or faithfully reproduce artwork as vector graphics. Do NOT use for creating original SVG illustrations from text descriptions — only for converting existing raster images.
 ---
  
 # Image to SVG Reproduction
  
 Convert raster images into faithful SVG reproductions using data-driven color quantization and contour extraction. **Never hand-draw shapes from visual interpretation** — always extract geometry from the actual pixel data.
- 
+
 ## Core Principle
- 
+
 **Trust the data, not your imagination.** Claude's visual interpretation of images is unreliable for precise color matching, shape positioning, and spatial relationships. Every shape, color, and position must come from computational analysis of the source pixels.
- 
-## Pipeline Overview
- 
-```
-Source Image → Preprocessing → Color Quantization → Edge Map → Contour Extraction → SVG Assembly
-```
- 
-## Step 1: Preprocessing
- 
-```python
-import cv2
-import numpy as np
- 
-img = cv2.imread('source.jpg')
-rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
- 
-# Edge-preserving blur to remove texture while keeping shape boundaries
-# Bilateral filter preserves edges; Gaussian smooths remaining noise
-# Use GENTLE settings — aggressive blur destroys subtle color differences
-blurred = cv2.bilateralFilter(rgb, 9, 50, 50)
-blurred = cv2.GaussianBlur(blurred, (3, 3), 0)
-```
- 
-**Do NOT boost saturation during preprocessing.** This distorts colors away from the original. Color correction, if needed, should be done as a final targeted step.
- 
-## Step 2: Color Quantization (K-means)
- 
-```python
-# Downscale for fast K-means, then apply centers to full resolution
-small = cv2.resize(blurred, (600, 390))
-pixels = small.reshape(-1, 3).astype(np.float32)
- 
-K = 28–36  # More K = finer color separation, but more noise
-criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 150, 0.1)
-_, labels, centers = cv2.kmeans(pixels, K, None, criteria, 8, cv2.KMEANS_PP_CENTERS)
-centers = centers.astype(np.uint8)
- 
-# Apply centers to full-res image
-full_px = blurred.reshape(-1, 3).astype(np.float32)
-dists = np.linalg.norm(full_px[:, None, :] - centers[None, :, :].astype(np.float32), axis=2)
-full_labels = np.argmin(dists, axis=1)
-```
- 
-**Save and inspect the quantized image** before proceeding. It represents the ceiling of what the SVG can achieve.
- 
-## Step 3: Background Detection
- 
-Identify background clusters by edge contact — background colors dominate image borders.
- 
-```python
-from collections import Counter
- 
-label_img = full_labels.reshape(h_orig, w_orig)
-counts = Counter(full_labels)
-sorted_clusters = sorted(counts.items(), key=lambda x: -x[1])
- 
-bg_clusters = set()
-bg_id = sorted_clusters[0][0]
- 
-for cid, cnt in sorted_clusters:
-    c = centers[cid]
-    pct = cnt / len(full_labels) * 100
-    mask = (label_img == cid)
-    edge_px = mask[0,:].sum() + mask[-1,:].sum() + mask[:,0].sum() + mask[:,-1].sum()
-    edge_ratio = edge_px / (2 * (h_orig + w_orig))
-    
-    # High edge contact + large area = definite background
-    if edge_ratio > 0.15 and pct > 3.0:
-        bg_clusters.add(cid)
-```
- 
-**Be conservative with background merging.** Only merge colors that are nearly identical to background AND heavily touch edges. Subtle features (like a gray band between two shapes) will be destroyed by aggressive merging. When in doubt, keep the color.
 
-## Step 3b: Structural Edge Map
+## Quick Start
 
-Use the seeing-images skill to create a reference edge map. This distinguishes real structural boundaries from gradient-transition artifacts during contour extraction.
+```bash
+pip install opencv-python-headless scikit-image scipy scikit-learn --break-system-packages -q
+apt-get install -y librsvg2-bin -qq
+```
 
 ```python
 import sys
-sys.path.insert(0, '/mnt/skills/user/seeing-images/scripts')
-from see import edges
+sys.path.insert(0, '/mnt/skills/user/image-to-svg/scripts')
+from pipeline import image_to_svg
 
-edge_path = edges(source_path, threshold=50)
-edge_img = cv2.imread(edge_path, cv2.IMREAD_GRAYSCALE)
-edge_img = cv2.resize(edge_img, (w_orig, h_orig))
+svg, flow = image_to_svg("source.jpg", mode="painting")
+
+with open("output.svg", "w") as f:
+    f.write(svg)
+
+flow.summary()  # timing + status per step
 ```
- 
-## Step 4: Contour Extraction (Boundary-Aware)
 
-The standard K-means + contour pipeline creates "woodcut" artifacts: thin dark shapes at color boundaries where gradient transitions get quantized into separate dark clusters. Two mechanisms prevent this.
+## Mode Selection
 
-For each non-background color cluster:
- 
+**Look at the image** and ask: "Does this have smooth gradients or hard edges?" Gradients → higher K. Hard edges → lower K.
+
+| Mode | K | Best for | Dark shape gating |
+|------|---|----------|-------------------|
+| `"graphic"` | 28 | Logos, icons, Kandinsky, flat design | Loose (keeps thin lines) |
+| `"illustration"` | 40 | Comics, editorial, digital art | Moderate |
+| `"painting"` | 56 | Renaissance, Impressionist, watercolor | Standard |
+| `"photo"` | 64 | Portraits, landscapes, still life | Standard (prevents woodcut artifacts) |
+
+Default is `"painting"`. When uncertain, start there.
+
+**Tradeoffs**: K=64 produces ~2300 shapes (~1.2MB SVG) vs K=28's ~1000 shapes (~550KB). Processing time roughly doubles with K. The quality gain in tonal gradation is substantial for photos but wasted on graphic art.
+
+All mode defaults (K, dark_lum, compactness_min, etc.) can be overridden via `**kwargs`:
 ```python
-DARK_LUM_THRESHOLD = 55  # Luminance below this = "dark cluster"
-k_morph = np.ones((3,3), np.uint8)
-k_dilate = np.ones((3,3), np.uint8)  # MUST be 3x3. 5x5 causes blotchy artifacts.
-
-for cid, cnt in sorted_clusters:
-    if cid in bg_clusters:
-        continue
-    
-    c = centers[cid]
-    lum = 0.299*c[0] + 0.587*c[1] + 0.114*c[2]
-    is_dark = lum < DARK_LUM_THRESHOLD
-    
-    mask = (label_img == cid).astype(np.uint8) * 255
-    
-    # FIX 1: Dilate non-dark regions to fill boundary gaps
-    # Lighter regions grow ~1.5px, covering the dark artifact zones
-    if not is_dark:
-        mask = cv2.dilate(mask, k_dilate, iterations=1)
-    
-    # Morphological cleanup
-    mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, k_morph, iterations=2)
-    mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, k_morph, iterations=1)
-    
-    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    
-    for contour in contours:
-        area = cv2.contourArea(contour)
-        if area < 40:
-            continue
-        
-        peri = cv2.arcLength(contour, True)
-        compactness = (4 * 3.14159 * area / (peri * peri)) if peri > 0 else 1
-        
-        # FIX 2: Gate dark shapes — keep real features, skip boundary artifacts
-        if is_dark:
-            contour_mask = np.zeros((h_orig, w_orig), dtype=np.uint8)
-            cv2.drawContours(contour_mask, [contour], -1, 255, -1)
-            edge_overlap = cv2.bitwise_and(edge_img, contour_mask)
-            edge_density = edge_overlap.sum() / max(contour_mask.sum(), 1)
-            
-            # Keep if: compact (real dark area), edge-aligned, or large
-            if not (compactness > 0.08 or edge_density > 0.15
-                    or area > (h_orig * w_orig * 0.01)):
-                continue  # Skip: thin dark boundary artifact
-        
-        # Simplify contour to reduce SVG path complexity
-        eps = 0.002 * peri
-        approx = cv2.approxPolyDP(contour, eps, True)
-        
-        # Convert to SVG path (simple polygon — smallest file size)
-        pts = approx.reshape(-1, 2).astype(float)
-        pts[:, 0] *= scale_x  # scale to SVG viewBox
-        pts[:, 1] *= scale_y
-        
-        path_d = f"M {pts[0][0]:.1f},{pts[0][1]:.1f}"
-        for p in pts[1:]:
-            path_d += f" L {p[0]:.1f},{p[1]:.1f}"
-        path_d += " Z"
+svg, flow = image_to_svg("source.jpg", mode="graphic", K=12, min_area=20)
 ```
 
-**Why this works**: Boundary artifacts are thin (low compactness) AND don't correspond to real structural edges. Real dark features (eyes, hair, outlines in graphic art) have compact shapes or align with Sobel-detected edges.
+## Palette Remapping (Warhol Effects)
 
-**Tuning**:
-- `DARK_LUM_THRESHOLD`: 55 works broadly; lower for dark images, higher for bright
-- Dilation kernel: 3×3 is the sweet spot. **Do NOT use 5×5** — causes blotchy artifacts in hair/foliage.
-- `compactness > 0.08`: Keeps all but the thinnest ribbon artifacts. Previous value of 0.15 was too aggressive — filtered real facial detail.
-- `edge_density > 0.15`: Keeps shapes with even modest edge alignment. Previous value of 0.3 filtered legitimate dark features like nostrils, lip shadows, brow lines.
- 
-## Step 5: Z-Ordering (Painter's Algorithm)
- 
-Sort shapes by area descending — biggest shapes drawn first (behind), smallest last (on top):
- 
+Separate structure from color: K-means finds regions, palette remapping assigns bold colors. This produces screen-print / pop art effects.
+
 ```python
-shapes.sort(key=lambda x: -x['area'])
+# Named preset
+svg, flow = image_to_svg("photo.jpg", mode="graphic", K=4, palette="pop")
+
+# Custom hex list (darkest → lightest mapping order)
+svg, flow = image_to_svg("photo.jpg", mode="graphic", K=8,
+    palette=["#000", "#dc143c", "#ff69b4", "#ffd700", "#32cd32", "#00bfff", "#ff8c00", "#f5f5f5"])
+
+# Override background separately
+svg, flow = image_to_svg("photo.jpg", mode="graphic", K=4, palette="ocean", bg_color="#000000")
 ```
- 
-This naturally handles layering: large background elements go behind small foreground details.
- 
-**Z-order rule for nested shapes:** If shape A contains shape B, A must be drawn BEFORE B. For ring structures (like a red ring with a black center), the order is:
-1. Red ring (largest)
-2. Any transition band (middle) — AFTER the ring so it paints ON TOP
-3. Black center (smallest) — AFTER everything so it covers the inner area
- 
-## Step 6: SVG Assembly
- 
+
+**Built-in presets**: `bw`, `mono3`, `mono4`, `pop`, `pop2`, `neon`, `warhol4`, `warhol6`, `warhol8`, `sunset`, `ocean`
+
+**How it works**: Unique shape colors are sorted by luminance. Palette entries are mapped proportionally — `palette[0]` replaces the darkest cluster, `palette[-1]` replaces the lightest. Background defaults to the lightest palette entry unless `bg_color` is set. Palette length doesn't need to match K exactly; colors are binned proportionally.
+
+**Portraits**: Use K=16-24 even with bold palettes. Facial features (glasses, beard, brow) need tonal range that low K eliminates. A good rule of thumb: palette length ≈ K/3 for clean luminance binning. At K=8 with a 4-color palette, a face becomes an undifferentiated blob.
+
+**Contrast preprocessing warning**: External contrast boosting (contrast-stretch, sigmoidal-contrast) can confuse background detection. The pipeline's edge-contact heuristic assumes untouched luminance distributions — aggressive tone-mapping pushes subject tones into background-adjacent bins, causing misclassification (e.g., dark jacket regions classified as background and mapped to the lightest palette color). If you see subject regions tearing to the background color, try without preprocessing first. The pipeline's own bilateral blur + optional kuwahara/oilpaint handles tonal separation.
+
+### Background Detection Override (`bg_clusters`)
+
+Control which clusters are treated as background:
+
 ```python
-svg_lines = [
-    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {SVG_W} {SVG_H}">',
-    f'  <rect width="{SVG_W}" height="{SVG_H}" fill="{bg_hex}"/>',
-]
-for shape in shapes:
-    svg_lines.append(f'  <path d="{shape["path"]}" fill="{shape["color"]}"/>')
-svg_lines.append('</svg>')
+# Auto-detect (default) — edge-contact heuristic
+svg, flow = image_to_svg("photo.jpg", mode="illustration", K=20, palette="warhol6")
+
+# Disable — no clusters removed, no background rect color override
+svg, flow = image_to_svg("photo.jpg", mode="illustration", K=20, palette="warhol6", bg_clusters=0)
+
+# Force specific cluster indices (from quantize step's sorted_clusters output)
+svg, flow = image_to_svg("photo.jpg", mode="illustration", K=20, palette="warhol6", bg_clusters=[2, 5])
 ```
- 
-## Handling Subtle Color Differences
- 
-When two regions have similar luminance but different hue/saturation (e.g., a gray band next to a dark background), K-means in RGB space will merge them. Use **HSV multispectral analysis**:
- 
+
+Use `bg_clusters=0` when palette remapping already controls all colors explicitly and background detection is getting in the way. Use `bg_clusters=[list]` when you know which clusters are background but the heuristic misidentifies them.
+
+### Portrait Pop-Art Recipe (Warhol Style)
+
+```python
+# Key: enough K for facial features, palette length ~K/3, modest smoothing
+# Do NOT apply contrast preprocessing — it breaks background detection.
+results = image_to_svg_batch("portrait.jpg", [
+    {"name": "hot",   "mode": "illustration", "K": 20, "smooth": "kuwahara:6",
+     "palette": ["#000", "#D4145A", "#FF6B9D", "#FF85C0", "#FFD700", "#FFEF82", "#FFF8DC"]},
+    {"name": "cool",  "mode": "illustration", "K": 20, "smooth": "kuwahara:6",
+     "palette": ["#0D0035", "#4A00E0", "#7B68EE", "#00D4FF", "#7FFFD4", "#B0FFE0", "#E0FFFF"]},
+    {"name": "earth", "mode": "illustration", "K": 20, "smooth": "kuwahara:6",
+     "palette": ["#1a0a00", "#8B4513", "#CD853F", "#DEB887", "#F5DEB3", "#FAEBD7", "#FFF8DC"]},
+    {"name": "neon",  "mode": "illustration", "K": 20, "smooth": "kuwahara:6",
+     "palette": ["#0d0d0d", "#ff00ff", "#00ff00", "#ffff00", "#00ffff", "#ff69b4", "#f5f5f5"]},
+], svg_width=700)
+```
+
+Why this works: K=20 preserves enough tonal clusters for facial structure (glasses, beard, brow ridge). 7-color palettes give ~K/3 luminance bins — enough variation to separate features without muddying. `kuwahara:6` smooths texture without dissolving edges (`:12` erases glasses). Raw source → pipeline smoothing only; no external contrast manipulation.
+
+## ImageMagick Preprocessing (smooth)
+
+Reduce shape count and SVG file size by 20-45% using ImageMagick edge-preserving filters before quantization. Requires ImageMagick on PATH (pre-installed on Claude.ai containers).
+
+```python
+# Oilpaint: bold, painterly smoothing (default strength=8)
+svg, flow = image_to_svg("photo.jpg", mode="photo", smooth="oilpaint")
+
+# Stronger smoothing = fewer shapes, more stylized
+svg, flow = image_to_svg("photo.jpg", mode="illustration", K=32, smooth="oilpaint:12")
+
+# Kuwahara: subtler, preserves more structure (default strength=5)
+svg, flow = image_to_svg("photo.jpg", mode="painting", smooth="kuwahara:7")
+
+# Works with batch API too
+results = image_to_svg_batch("photo.jpg", [
+    {"name": "raw",      "mode": "photo"},
+    {"name": "smooth",   "mode": "photo", "smooth": "oilpaint"},
+    {"name": "stylized", "mode": "illustration", "K": 32, "smooth": "oilpaint:12", "palette": "pop"},
+])
+```
+
+**Available filters**: `oilpaint` (ImageMagick `-paint`), `kuwahara` (ImageMagick `-kuwahara`). Append `:N` for custom strength.
+
+**How it works**: The IM filter runs before the pipeline's bilateral+Gaussian blur. Both are edge-preserving smoothers at different scales — IM handles coarse texture, bilateral handles fine detail. The result is cleaner K-means regions with fewer fragmented shapes.
+
+**Measured impact** (1206×1597 photo, K=32):
+
+| smooth | Shapes | SVG size | Reduction |
+|--------|--------|----------|-----------|
+| none | 3381 | 1868KB | — |
+| oilpaint (8) | 2385 | 1329KB | -29% |
+| oilpaint:12 | 1842 | 1065KB | -43% |
+| kuwahara (5) | 2719 | 1453KB | -22% |
+| kuwahara:7 | 2000 | 1152KB | -38% |
+
+## Pipeline Architecture
+
+Uses the [flowing](/mnt/skills/user/flowing/SKILL.md) DAG runner. Steps with independent inputs run in parallel:
+
+```
+preprocess → quantize → ┬─ detect_background ─┬─ extract_contours → assemble_svg
+                        └─ edge_map           ─┘
+```
+
+Steps:
+1. **preprocess** — Bilateral + Gaussian blur (edge-preserving texture removal)
+2. **quantize** — K-means color quantization at chosen K
+3. **detect_background** — Identifies background clusters by edge contact (parallel with edge_map)
+4. **edge_map** — Sobel edge detection via `cv2.Sobel` (parallel with detect_background)
+5. **extract_contours** — Per-cluster contour extraction with dark territory awareness and woodcut prevention (d=1 dilation; stroke handles gaps)
+6. **assemble_svg** — Z-ordered painter's algorithm assembly with stroke=fill gap coverage
+
+### Resume on failure
+
+```python
+svg, flow = image_to_svg("source.jpg", mode="photo")
+# If extract_contours failed:
+flow.override(extract_contours, corrected_shapes)
+flow.resume()  # quantize, detect_background, edge_map stay cached
+```
+
+
+## Batch API
+
+Generate multiple variants from one image, sharing computation across runs with the same K:
+
+```python
+from pipeline import image_to_svg_batch
+
+results = image_to_svg_batch("photo.jpg", [
+    {"name": "photo",   "mode": "photo"},
+    {"name": "warhol",  "mode": "graphic", "K": 12, "palette": "warhol4"},
+    {"name": "neon",    "mode": "graphic", "K": 12, "palette": "neon"},
+    {"name": "sunset",  "mode": "graphic", "K": 12, "palette": "sunset"},
+    {"name": "bw",      "mode": "graphic", "K": 16, "palette": "bw"},
+], svg_width=1400)
+
+for name, svg in results.items():
+    with open(f"{name}.svg", "w") as f:
+        f.write(svg)
+```
+
+Variants sharing the same K run the pipeline (preprocess → quantize → edge_map → extract_contours) **once**, then fan out at assembly for palette remapping. This guarantees structural identity across palette variants (same shapes, same paths) and saves ~20-60s per shared K group.
+
+**Verification still applies in batch mode.** The turnkey feel of batch processing makes it easy to skip the side-by-side comparison — don't. Render at least one variant per K group and verify before delivering. Background detection failures and palette mapping issues are invisible without rendering.
+
+## Verification Protocol
+
+**After EVERY run, render and visually compare side-by-side.** This is non-negotiable.
+
+```python
+import subprocess
+from PIL import Image
+
+subprocess.run(['rsvg-convert', '-w', '1400', 'output.svg', '-o', 'output.png'])
+
+orig = Image.open('source.jpg')
+rendered = Image.open('output.png')
+target_h = 800
+orig_r = orig.resize((int(orig.width * target_h / orig.height), target_h))
+rend_r = rendered.resize((int(rendered.width * target_h / rendered.height), target_h))
+gap = 20
+comp = Image.new('RGB', (orig_r.width + rend_r.width + gap, target_h), (255,255,255))
+comp.paste(orig_r, (0, 0))
+comp.paste(rend_r, (orig_r.width + gap, 0))
+comp.save('comparison.png')
+# LOOK AT comparison.png BEFORE claiming success
+```
+
+## Manual Post-Processing
+
+### Handling Subtle Color Differences
+
+When two regions have similar luminance but different hue/saturation, K-means in RGB space merges them. Use **HSV multispectral analysis**:
+
 ```python
 hsv = cv2.cvtColor(rgb, cv2.COLOR_RGB2HSV)
 h_ch, s_ch, v_ch = hsv[:,:,0], hsv[:,:,1], hsv[:,:,2]
- 
-# Example: separate a gray band (low saturation) from red (high saturation)
-# even though they have similar brightness
+
+# Separate gray (low saturation) from red (high saturation) at similar brightness
 red_mask = ((h_ch < 12) | (h_ch > 168)) & (s_ch > 120) & (v_ch > 80)
 gray_mask = (s_ch < 80) & (v_ch > 40) & (v_ch < 120) & spatial_constraint
 ```
- 
-**Saturation is the key discriminator** for colors that look similar in grayscale but are visually distinct to humans.
- 
-## Positioning Overlays
- 
-When adding shapes that weren't captured by quantization:
- 
-- **ALWAYS derive coordinates from the SVG render**, not the source image
-- The extraction pipeline shifts positions due to contour simplification
-- Render the SVG, detect boundaries in the render, create the overlay in render-pixel coordinates
-- Verify by overlaying on the render BEFORE inserting
- 
+
+**Saturation is the key discriminator** for colors that look similar in grayscale but are visually distinct.
+
+### Positioning Overlays
+
+When adding shapes not captured by quantization, **derive coordinates from the SVG render**, not the source image. The extraction pipeline shifts positions due to contour simplification.
+
 ```python
 # WRONG: extract from source, insert into SVG (coordinate mismatch)
 # RIGHT: render SVG → detect gap in render → create shape in render coords → insert
 svg_render = cv2.imread('rendered_svg.png')
-# ... find boundaries in svg_render ...
-# ... shapes are already in SVG pixel coordinates
 ```
- 
-## Verification Protocol
- 
-**After EVERY change, render and visually compare side-by-side before claiming success.** This is non-negotiable.
- 
-```python
-# Render SVG
-subprocess.run(['rsvg-convert', '-w', '1400', '-h', '940', 'output.svg', '-o', 'output.png'])
- 
-# Create side-by-side comparison
-orig_crop = orig.crop((region))
-svg_crop = svg.crop((region))
-comparison = Image.new('RGB', (w1 + w2 + gap, h), bg)
-comparison.paste(orig_crop, (0, 0))
-comparison.paste(svg_crop, (w1 + gap, 0))
-comparison.save('comparison.png')
- 
-# LOOK AT comparison.png BEFORE proceeding
-```
- 
-## Anti-Patterns (What NOT to Do)
- 
-1. **Never hand-draw shapes** from your visual interpretation of the image. Your spatial reasoning about colors, positions, and shapes is unreliable. Use CV extraction.
- 
-2. **Never claim a fix works without rendering and comparing.** "Should now be filled" is not verification — a rendered comparison is.
- 
-3. **Never use geometric primitives (circles, rectangles) to approximate extracted contours.** The data has the actual shape; use it.
- 
-4. **Never extract coordinates from the source image and insert into the SVG** without verifying alignment. The contour extraction pipeline shifts positions.
- 
-5. **Never boost saturation globally.** This pushes colors away from the original. If colors need correction, do targeted per-color adjustments based on measured ΔE.
- 
-6. **Never aggressively merge near-background colors.** Subtle features live in these clusters. Only merge colors that are <10 RGB distance from background AND heavily touch image edges.
- 
-7. **Don't use bezier smoothing unless specifically requested.** Simple L (line-to) polygons produce smaller SVGs. Bezier C commands triple the coordinate count per segment.
 
-8. **Don't use a dilation kernel larger than 3×3.** 5×5 was tested and causes blotchy artifacts in fine-detail areas like hair and foliage.
- 
-## File Size Guidelines
- 
-- Simple polygons (`M ... L ... L ... Z`): ~2 bytes per coordinate
-- Bezier curves (`C c1x,c1y c2x,c2y x,y`): ~6 bytes per coordinate  
-- Target: 500-1000 paths for a complex image, 400-900KB SVG
-- Use `approxPolyDP` with epsilon ~0.002 * arc_length for good quality/size tradeoff
- 
+## Gap Coverage: stroke=fill
+
+Every `<path>` element gets `stroke="{fill}" stroke-width="4" stroke-linejoin="round"`. This bleeds each shape outward by 2px with its own fill color, covering inter-cluster gaps with the locally correct color.
+
+**Why stroke beats dilation for gaps**: Dilation operates on binary masks *before* contour simplification — it blurs detail. Stroke operates on final polygons *after* `approxPolyDP` — it catches all gaps including those introduced by simplification. Pure vector, no file size penalty beyond attribute bytes (~12%).
+
+**Background fallback**: When `detect_background` finds no clusters, the bg rect uses `#000000` (black) instead of white. Black reads as shadow; white reads as absence.
+
+**Dilation** is reduced to `iterations=1` — just enough for morphological noise cleanup. Gap coverage is fully handled by stroke.
+
+## Anti-Patterns
+
+1. **Never hand-draw shapes** from visual interpretation. Use CV extraction.
+2. **Never claim a fix works without rendering and comparing.** A rendered comparison is the only verification.
+3. **Never use geometric primitives** (circles, rectangles) to approximate extracted contours.
+4. **Never extract coordinates from the source image and insert into the SVG** without verifying alignment.
+5. **Never boost saturation globally.** Do targeted per-color adjustments based on measured ΔE.
+6. **Never aggressively merge near-background colors.** Only merge colors <10 RGB distance from background AND heavily touching edges.
+7. **Don't use bezier smoothing unless requested.** Simple L polygons produce smaller SVGs.
+8. **Don't use a dilation kernel larger than 3×3.** Use `iterations=1` on a 3×3 kernel — stroke=fill handles gap coverage in vector space, so dilation only needs to close noise holes.
+
+## Known Limitations
+
+- **Thin linework**: The dark shape gating that prevents woodcut artifacts in photos can filter deliberate thin lines in graphic art. The `"graphic"` mode loosens this, but very fine crosshatching may still degrade.
+- **Ring/arc structures**: Large dark rings (like Kandinsky's outer circle) fragment across multiple K-means clusters. Each cluster's contours are independent, so the ring doesn't form one smooth shape. A dark-cluster-merging step would help.
+- **Gradient transitions**: At any K, smooth gradients produce staircase banding. Higher K reduces this but never eliminates it.
+
 ## Dependencies
- 
+
 ```bash
-pip install opencv-python-headless scikit-image scipy --break-system-packages
+pip install opencv-python-headless scikit-image scipy scikit-learn --break-system-packages
 apt-get install -y librsvg2-bin  # for rsvg-convert
 ```
 
-**Cross-skill dependency**: [seeing-images](/mnt/skills/user/seeing-images/SKILL.md) — the `edges()` function is used in Step 3b for structural edge detection.
+**Compiled acceleration**: `nn_assign.c` is auto-compiled on first use if `gcc` is available (27x faster label assignment). Falls back to numpy if unavailable.
+
+**Cross-skill dependencies** (resolved automatically by pipeline.py):
+- [flowing](/mnt/skills/user/flowing/SKILL.md) — DAG workflow runner

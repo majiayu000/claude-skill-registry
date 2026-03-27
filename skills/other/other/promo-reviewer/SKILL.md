@@ -8,6 +8,7 @@ allowed-tools:
   - Edit
   - Glob
   - Grep
+  - bitwize-music-mcp
 ---
 
 # Promo Reviewer Skill

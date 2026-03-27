@@ -1,7 +1,7 @@
 ---
 name: teach-impeccable
 description: One-time setup that gathers design context for your project and saves it to your AI config file. Run once to establish persistent design guidelines.
-user-invokable: true
+user-invocable: true
 ---
 
 Gather design context for this project, then persist it for all future sessions.
@@ -21,7 +21,7 @@ Note what you've learned and what remains unclear.
 
 ## Step 2: Ask UX-Focused Questions
 
-STOP and call the AskUserQuestion tool to clarify. Focus only on what you couldn't infer from the codebase:
+ask the user directly to clarify what you cannot infer. Focus only on what you couldn't infer from the codebase:
 
 ### Users & Purpose
 - Who uses this? What's their context when using it?
@@ -66,6 +66,6 @@ Synthesize your findings and the user's answers into a `## Design Context` secti
 
 Write this section to `.impeccable.md` in the project root. If the file already exists, update the Design Context section in place.
 
-Then STOP and call the AskUserQuestion tool to clarify. whether they'd also like the Design Context appended to CLAUDE.md. If yes, append or update the section there as well.
+Then ask the user directly to clarify what you cannot infer. whether they'd also like the Design Context appended to .github/copilot-instructions.md. If yes, append or update the section there as well.
 
 Confirm completion and summarize the key design principles that will now guide all future work.

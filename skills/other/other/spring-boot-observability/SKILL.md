@@ -1,6 +1,7 @@
 ---
 name: spring-boot-observability
-description: Spring Boot 4 observability with Actuator, Micrometer, and OpenTelemetry. Use when configuring health indicators, custom metrics, distributed tracing, production endpoint exposure, or Kubernetes/Cloud Run probes. Covers Actuator security, Micrometer Timer/Counter/Gauge patterns, and OpenTelemetry span customization.
+description: Spring Boot 4 observability with Actuator, Micrometer, and OpenTelemetry. Use when configuring health indicators, health checks, custom metrics, distributed tracing, production endpoint exposure, Kubernetes probes, Cloud Run probes, logging, or monitoring. Covers Actuator endpoint security, Micrometer Timer/Counter/Gauge patterns, OpenTelemetry span customization, liveness/readiness probe setup, and metric tag best practices.
+spring-boot-version: "4.0"
 ---
 
 # Spring Boot Observability
@@ -60,8 +61,12 @@ See [EXAMPLES.md](EXAMPLES.md) for complete working examples including:
 
 ## Related Skills
 
-- `spring-boot-verify` — For dependency and configuration validation
-- `spring-boot-security` — For securing Actuator endpoints with Spring Security
+| Need | Skill |
+|------|-------|
+| Dependency validation | `spring-boot-verify` |
+| Actuator security | `spring-boot-security` |
+| Actuator testing | `spring-boot-testing` |
+| Module metrics | `spring-boot-modulith` |
 
 ## Critical Reminders
 

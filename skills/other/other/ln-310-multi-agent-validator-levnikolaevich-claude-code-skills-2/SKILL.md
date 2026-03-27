@@ -1,6 +1,6 @@
 ---
 name: ln-310-multi-agent-validator
-description: "Validates Stories, plans, or context via parallel multi-agent review with GO/NO-GO verdict. Use when changes need cross-agent validation before proceeding."
+description: "Validates Stories, plans, or context via deterministic multi-agent review with runtime-controlled status gates. Use before execution or approval."
 license: MIT
 ---
 
@@ -11,7 +11,7 @@ license: MIT
 
 # Multi-Agent Validator
 
-Validates Stories/Tasks (mode=story), implementation plans (mode=plan_review), or arbitrary context (mode=context) with parallel multi-agent review and critical verification.
+Validates Stories/Tasks (`mode=story`), implementation plans (`mode=plan_review`), or arbitrary context (`mode=context`) with deterministic runtime state, parallel external review, critical verification, and optional approval.
 
 ## Inputs
 
@@ -21,247 +21,258 @@ Validates Stories/Tasks (mode=story), implementation plans (mode=plan_review), o
 | `plan {file}` | mode=plan_review | args or auto | Plan file to review. Auto-detected from `.claude/plans/` if Read-Only Mode active and no args |
 | `context` | mode=context | conversation history, git diff | Review current discussion context + changed files |
 
-**Mode detection:** `"plan"` or `"plan {file}"` or Read-Only Mode active with no args → mode=plan_review. `"context"` → mode=context. Anything else → mode=story.
+**Mode detection:** `"plan"` or `"plan {file}"` or Read-Only Mode active with no args -> `mode=plan_review`. `"context"` -> `mode=context`. Anything else -> `mode=story`.
 
-> **Terminology:** `mode=plan_review` = review mode (evaluating a plan document). "Plan Mode" / "Read-Only Mode" = execution flag (framework-level, applies to ALL modes). These are independent concepts.
+> **Terminology:** `mode=plan_review` is the review target. Plan Mode / Read-Only Mode is the framework execution flag. They are independent.
 
-> **Plan Mode compatibility:** ln-310 runs normally in Plan Mode. `.hex-skills/agent-review/` is git-ignored — writing prompts, results, and context there is NOT a project modification. If the framework blocks a write, request permission — the user expects file operations in `.hex-skills/agent-review/`. Agent launches (Bash background) are external processes and always work.
+> **Plan Mode compatibility:** `.hex-skills/agent-review/` remains git-ignored. Runtime state, prompts, results, logs, and materialized context files may be written there even in Plan Mode.
 
 **Resolution (mode=story):** Story Resolution Chain. **Status filter:** Backlog
 
 ## Purpose
 
-- **mode=story:** Validate Story + Tasks (28 criteria), auto-fix, agent review, approve (Backlog→Todo)
-- **mode=plan_review:** Review plans against codebase. Auto-detects in Read-Only Mode. Review with corrections
-- **mode=context:** Review documents/architecture via agents + MCP Ref. Review with corrections
-- **All modes:** Parallel agents (Codex + Gemini), merge, verify, refine, apply
+- `mode=story`: validate Story + Tasks against 28 criteria, auto-fix structural issues, merge agent review, then approve (`Backlog -> Todo`) only after zero remaining blockers
+- `mode=plan_review`: review plan against codebase, standards, and alternatives; apply accepted corrections
+- `mode=context`: review architecture/documents/context materials; apply accepted corrections
+- All modes: run deterministic agent review with runtime checkpoints, critical verification, and Codex refinement
 
 ## Progress Tracking
 
-Create TodoWrite items from Phase headings below:
-1. Each phase = todo item. Mark `in_progress` → `completed`
-2. Phase 2 and Phase 5 MUST appear as explicit items (CRITICAL — DO NOT SKIP)
-3. Phase 7: mark each `[ ]` → `[x]` as you go
+Create TodoWrite items from phase headings below:
+1. Each phase = one todo item
+2. Phase 2 and Phase 5 MUST appear explicitly
+3. Phase 8 checklist items must be marked as they are verified
 
 ## Workflow
 
-### Phase 0: Tools Config
+### Phase 0: Config + Runtime Start
 
 **MANDATORY READ:** Load `shared/references/tools_config_guide.md`, `shared/references/storage_mode_detection.md`, `shared/references/input_resolution_pattern.md`
+**MANDATORY READ:** Load `shared/references/review_runtime_contract.md`
 
-Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
-- **mode=plan_review:** `tools_config.md` is optional — `task_provider` not used. If absent: `task_provider = "N/A"`, proceed silently.
-- **mode=story | mode=context:** `tools_config.md` required.
+1. Detect `task_provider` from tools config.
+   - `mode=plan_review`: `tools_config.md` optional. If absent, use `task_provider = "N/A"`.
+   - `mode=story | mode=context`: `tools_config.md` required.
+2. Resolve `mode`, `identifier`, and storage mode.
+3. Build runtime manifest with:
+   - `storage_mode`
+   - `story_ref | plan_ref | context_ref`
+   - `expected_agents = ["codex", "gemini"]`
+   - `artifact_paths` for prompt/result/log/metadata roots
+   - `phase_policy` (`story`: phase4/phase7 required; others: `skipped_by_mode`)
+4. Save manifest to `.hex-skills/agent-review/runtime/{identifier}_manifest.json`
+5. Start runtime:
 
-Initialize: `agents_launched = UNSET`. MUST be set to `true` or `SKIPPED` in Phase 2.
-> **PROTOCOL RULE:** Any reasoning that "this task is too small/simple to require agents" is a PROTOCOL VIOLATION. Task scope does NOT change the agent launch requirement.
+```bash
+node shared/scripts/review-runtime/cli.mjs start \
+  --skill ln-310 \
+  --mode {mode} \
+  --identifier {identifier} \
+  --manifest-file .hex-skills/agent-review/runtime/{identifier}_manifest.json
+```
 
-### Phase 1: Discovery & Loading
+6. Write Phase 0 checkpoint after config + runtime start succeed.
 
-**Step 1:** Resolve storyId per input_resolution_pattern.md
+### Phase 1: Discovery & Materialization
 
-**Step 2:** Load metadata: Story ID/title/status/labels, child Task IDs/titles/status/labels
-- IF `task_provider` = `linear`: `get_issue(storyId)` + `list_issues(parentId=storyId)`
-- IF `task_provider` = `file`: `Read story.md` + `Glob("docs/tasks/epics/*/stories/*/tasks/*.md")`
-- Auto-discover: Team ID (`docs/tasks/kanban_board.md`), project docs (`CLAUDE.md`), epic from Story.project
+1. Resolve primary artifact:
+   - `story`: resolve Story + child Tasks
+   - `plan_review`: resolve plan file, or auto-detect latest `.claude/plans/*.md`
+   - `context`: resolve identifier and materialize chat-derived context if needed
+2. Load metadata:
+   - `linear`: `get_issue(storyId)` + `list_issues(parentId=storyId)`
+   - `file`: read `story.md` + task files
+3. Materialize any non-project file paths into `.hex-skills/agent-review/context/`
+4. Checkpoint Phase 1 with resolved refs and metadata summary.
 
-### Phase 2: Agent Launch (CRITICAL — DO NOT SKIP)
+### Phase 2: Agent Launch
 
 **MANDATORY READ:** Load `shared/references/agent_review_workflow.md`, `shared/references/agent_delegation_pattern.md`
 
-> **CRITICAL:** Agent launch is NOT optional. Executes for ALL modes. The ONLY valid skip: health check returned 0 agents. An Explore agent or ad-hoc research is NOT a substitute. Set `agents_launched` = `true` | `SKIPPED` before proceeding.
+1. Run health check:
 
-> **BLOCKING GATE:** If you find yourself reasoning about skipping agents due to task simplicity, small scope, or "already reviewed" — STOP. Return to the start of Phase 2. The ONLY valid exit without launching is: health_check returned 0 agents.
-
-1) **Health Check** (all modes): Read `.hex-skills/environment_state.json` → exclude disabled. **File not found → proceed with all agents (default=enabled, no exclusions).** Run `node shared/agents/agent_runner.mjs --health-check`. 0 available → `agents_launched = SKIPPED`
-2) **Prepare references:**
-   - mode=story: Story/Task URLs (linear) or file paths (file)
-   - mode=context: resolve identifier (default: `review_YYYYMMDD_HHMMSS`), materialize context if from chat → `.hex-skills/agent-review/context/{id}_context.md`
-   - mode=plan_review: auto-detect plan (Glob `.claude/plans/*.md`, most recent by mtime). No plan → error. Clean `.hex-skills/agent-review/context/` (delete all files). Materialize: copy plan file → `.hex-skills/agent-review/context/{identifier}_plan.md`. Use local path as `{plan_ref}`
-3) **Build prompt:** Assemble from `shared/agents/prompt_templates/review_base.md` + `modes/{mode}.md` (per shared workflow "Step: Build Prompt"). Replace mode-specific placeholders. Save to `.hex-skills/agent-review/{id}_{mode}review_prompt.md`
-4) **Launch BOTH agents** as background tasks. `agents_launched = true`
-
-**Exact command (per agent_delegation_pattern.md):**
-```
-node shared/agents/agent_runner.mjs --agent {name} --prompt-file .hex-skills/agent-review/{agent}/{id}_{mode}review_prompt.md --output-file .hex-skills/agent-review/{agent}/{id}_{mode}review_result.md --cwd {project_dir}
+```bash
+node shared/agents/agent_runner.mjs --health-check --json
 ```
 
-**Prompt persistence:** Save prompt to `.hex-skills/agent-review/` before launching agents. Agents are always launched as Bash background tasks — they are external OS processes and are not affected by Claude Code plan mode.
+2. Exclude agents disabled in `.hex-skills/environment_state.json`.
+3. If `available_count = 0`:
+   - set `agents_skipped_reason`
+   - checkpoint Phase 2 with `health_check_done=true`, `agents_available=0`
+   - advance to Phase 3
+4. Otherwise:
+   - ensure `.hex-skills/agent-review/{agent}/` exists
+   - build per-agent prompt from `review_base.md` + `modes/{story,context,plan_review}.md`
+   - save prompt to `.hex-skills/agent-review/{agent}/{identifier}_{review_type}_prompt.md`
+5. Launch every available agent with explicit metadata file:
 
-> **Parallelism:** Agents run in background through Phases 3-4. Results merged in Phase 5.
+```bash
+node shared/agents/agent_runner.mjs \
+  --agent {name} \
+  --prompt-file .hex-skills/agent-review/{agent}/{identifier}_{review_type}_prompt.md \
+  --output-file .hex-skills/agent-review/{agent}/{identifier}_{review_type}_result.md \
+  --metadata-file .hex-skills/agent-review/{agent}/{identifier}_{review_type}_metadata.json \
+  --cwd {project_dir}
+```
+
+6. Register each launched agent in runtime:
+
+```bash
+node shared/scripts/review-runtime/cli.mjs register-agent \
+  --skill ln-310 \
+  --agent {name} \
+  --prompt-file .hex-skills/agent-review/{agent}/{identifier}_{review_type}_prompt.md \
+  --result-file .hex-skills/agent-review/{agent}/{identifier}_{review_type}_result.md \
+  --log-file .hex-skills/agent-review/{agent}/{identifier}_{review_type}.log \
+  --metadata-file .hex-skills/agent-review/{agent}/{identifier}_{review_type}_metadata.json
+```
+
+7. Checkpoint Phase 2 with `health_check_done`, `agents_available`, `agents_required`, optional `agents_skipped_reason`.
 
 ### Phase 3: Research & Audit
 
-> **PREREQUISITE:** Phase 2 completed. If health check was never run → go back to Phase 2.
-
 **MANDATORY READ:** Load `references/phase2_research_audit.md`, `shared/references/research_tool_fallback.md`
 
-**All modes — Steps 3-4 (universal):**
-- MCP Research: criteria #5 (Standards), #6 (Versions), #21 (Alternatives), #28 (Feature Utilization)
-- Anti-Hallucination: verify factual claims per `shared/references/epistemic_protocol.md`
+Common work:
+- MCP research for #5, #6, #21, #28
+- Anti-hallucination verification per `shared/references/epistemic_protocol.md`
 
-**mode=story additional (Steps 1-2, 5-7):**
-- Step 1-2: Domain Extraction + Inline Documentation
-- Step 5: Pre-mortem Analysis
-- Step 6: Cross-Reference Analysis
-- Step 7: Penalty Points Calculation (28 criteria)
-- Display: Penalty Points table + Total + Fix Plan
-- Save audit to `.hex-skills/agent-review/{storyId}_phase3_audit.md`
-- **Plan Mode:** Show results → WAIT for approval
-- **Normal Mode:** Proceed to Phase 4
+`mode=story`:
+- domain extraction + inline documentation
+- pre-mortem analysis
+- cross-reference analysis
+- penalty points calculation across all 28 criteria
+- save audit to `.hex-skills/agent-review/{storyId}_phase3_audit.md`
 
-**mode=plan_review / mode=context additional:**
+`mode=plan_review | mode=context`:
+- **MANDATORY READ:** Load `references/context_review_pipeline.md`, `references/mcp_ref_findings_template.md`
+- run applicability -> stack detection -> topics -> research -> compare/correct -> findings save
 
-**MANDATORY READ:** Load `references/context_review_pipeline.md`, `references/mcp_ref_findings_template.md`
+Checkpoint Phase 3 with audit/research summary.
 
-Pipeline (while agents run in background):
-1. **Applicability Check** — scan for technology decision signals. No signals → skip, go to Phase 5
-2. **Stack Detection** — `query_prefix` from: conversation context > `docs/tools_config.md` > indicator files
-3. **Extract Topics (3-5)** — technology decisions, score by weight
-4. **Research Execution** — apply #5, #6, #21, #28 + AH per `phase2_research_audit.md` (plan/context actions)
-5. **Compare & Correct** — max 5 corrections, cite RFC/standard. Apply: plan_review → edit plan file, context → edit documents. Inline rationale `"(per {RFC}: ...)"`
-6. **Save Findings** → `.hex-skills/agent-review/context/{id}_mcp_ref_findings.md`
-
-Then proceed to Phase 5.
-
-### Phase 4: Auto-Fix (mode=story only)
+### Phase 4: Auto-Fix (`mode=story` only)
 
 **MANDATORY READ per group:** Load the checklist as you execute each group.
 
 | # | Group | Checklist |
 |---|-------|-----------|
-| 1 | **Structural (#1-#4, #23-#24)** — template, AC, Architecture, Assumptions | `references/structural_validation.md` |
-| 2 | **Standards (#5)** — RFC/OWASP (before YAGNI/KISS) | `references/standards_validation.md` |
-| 3 | **Solution (#6, #21, #28)** — library versions, alternatives, feature utilization | `references/solution_validation.md` |
-| 4 | **Workflow (#7-#13)** — test strategy, docs, size, YAGNI, KISS | `references/workflow_validation.md` |
-| 5 | **Quality (#14-#15)** — documentation, hardcoded values | `references/quality_validation.md` |
-| 6 | **Dependencies (#18-#19/#19b)** — no forward deps, parallel groups | `references/dependency_validation.md` |
-| 7 | **Cross-Reference (#25-#26)** — AC overlap, task duplication | `references/cross_reference_validation.md` |
-| 8 | **Risk (#20)** — implementation risk analysis | `references/risk_validation.md` |
-| 9 | **Pre-mortem (#27)** — Tiger/Paper Tiger/Elephant | `references/premortem_validation.md` |
-| 10 | **Verification (#22)** — AC verify methods | `references/traceability_validation.md` |
-| 11 | **Traceability (#16-#17)** — Story-Task alignment, AC coverage (LAST) | `references/traceability_validation.md` |
+| 1 | Structural (#1-#4, #23-#24) | `references/structural_validation.md` |
+| 2 | Standards (#5) | `references/standards_validation.md` |
+| 3 | Solution (#6, #21, #28) | `references/solution_validation.md` |
+| 4 | Workflow (#7-#13) | `references/workflow_validation.md` |
+| 5 | Quality (#14-#15) | `references/quality_validation.md` |
+| 6 | Dependencies (#18-#19/#19b) | `references/dependency_validation.md` |
+| 7 | Cross-Reference (#25-#26) | `references/cross_reference_validation.md` |
+| 8 | Risk (#20) | `references/risk_validation.md` |
+| 9 | Pre-mortem (#27) | `references/premortem_validation.md` |
+| 10 | Verification (#22) | `references/traceability_validation.md` |
+| 11 | Traceability (#16-#17) | `references/traceability_validation.md` |
 
-Zero out penalty points as structural fixes applied (section added, format corrected, placeholder inserted). FLAGGED if auto-fix impossible (human judgment required) → penalty stays, user resolves. Test Strategy section: exist but empty. Maximum Penalty: 113 points.
+Rules:
+- zero out penalty points only when the defect is actually repaired
+- use `FLAGGED` only when human judgment is required and auto-fix cannot safely continue
+- test strategy section may exist but remain empty
+- max penalty = 113
 
-### Phase 5: Merge + Critical Verification (MANDATORY — DO NOT SKIP)
+Checkpoint Phase 4 with penalty before/after, flagged items, and coverage summary.
 
-> **PREREQUISITE:** Phase 2 MUST have completed. If `agents_launched` not set → STOP, go back to Phase 2. An Explore agent is NOT a substitute.
+For `mode=plan_review | mode=context`, checkpoint Phase 4 as `{"status":"skipped_by_mode"}`.
 
-**MANDATORY READ:** Load `shared/references/agent_review_workflow.md` (Critical Verification + Iterative Refinement), `shared/references/agent_review_memory.md`
+### Phase 5: Merge + Critical Verification
 
-1) **BLOCKING GATE — Wait for ALL agents:**
-   - For EACH agent launched in Phase 2: check if result file exists
-   - Result file EXISTS → agent done, proceed to parse
-   - Result file MISSING → Use `TaskOutput` to check background task. If still running: **WAIT** (do NOT proceed to step 2). If completed: read result. If no background task found: run Liveness Protocol
-   - Liveness Protocol → ALIVE (log growing) → **KEEP WAITING**. DEAD (all 3 checks confirm) → mark failed
-   - **EXIT CONDITION:** ALL agents resolved (result file exists OR confirmed DEAD via full Liveness Protocol). Only then proceed to step 2
-   - ⛔ Proceeding to step 2 with ANY agent still ALIVE or UNRESOLVED is a PROTOCOL VIOLATION
+1. Sync every launched agent through runtime:
 
-> **ANTI-PATTERN:** "Codex is still running, I'll process Gemini results and move on" — NO. You MUST wait for ALL agents. The only valid exit: every agent has a result file OR is confirmed DEAD via Liveness Protocol (all 3 checks with explicit output).
-2) **Parse agent suggestions** from both result files
-3) **MERGE** Claude's findings + Agent suggestions. Re-read lines modified in Phase 4 (agents saw pre-fix state)
-4) **For EACH suggestion:** dedup (own findings + history) → evaluate → AGREE (accept) or REJECT (Claude's independent judgment)
-5) **Apply accepted** — mode=story: Story/Tasks, mode=context: documents, mode=plan_review: use best agent's `## Refined Plan` as base (prefer agent with more accepted suggestions), apply remaining accepted suggestions from other agent as patches. If no agent produced refined plan → fall back to individual suggestion application
-6) **Save review summary** → `.hex-skills/agent-review/review_history.md`
-- SKIPPED verdict (0 agents) → proceed unchanged
-- **Display:** `"Agent Review: codex ({accepted}/{total}), gemini ({accepted}/{total}), {N} applied"`
+```bash
+node shared/scripts/review-runtime/cli.mjs sync-agent --skill ln-310
+```
 
-### Phase 6: Iterative Refinement (MANDATORY when Codex available)
+2. Do not merge until all required agents are in `result_ready | dead | failed | skipped`.
+3. Parse available result files.
+4. For each suggestion:
+   - deduplicate against own findings + review history
+   - verify independently
+   - mark `AGREE` or `REJECT`
+5. Apply accepted suggestions:
+   - `story`: patch Story/Tasks after re-reading Phase 4 output
+   - `context`: patch target docs/context files
+   - `plan_review`: prefer best `## Refined Plan`, then apply remaining accepted patches
+6. Save review summary to `.hex-skills/agent-review/review_history.md`
+7. Checkpoint Phase 5 with `merge_summary`.
 
-> **PROTOCOL RULE:** Iterative Refinement is MANDATORY for all modes when Codex is available. Valid skip reasons: (1) Codex disabled in `environment_state.json`, (2) Codex failed Phase 2 health check (`codex --version` failed), (3) Codex confirmed DEAD via Liveness Protocol (log stale + process dead). "Timeout pending" or "result not ready" is NOT a valid skip — run Liveness Protocol first. If Codex is ALIVE (log growing), WAIT for it. If skipped → log `"Iterative Refinement: SKIPPED (Codex dead — confirmed via Liveness Protocol)"` and proceed to Phase 7.
->
-> **PRE-FLIGHT:** If Phase 5 resolved Codex as "failed" but did NOT run full Liveness Protocol (all 3 checks: log mtime, log content, process check — with explicit output for each), STOP — go back and run Liveness Protocol NOW. A missing result file without Liveness Protocol evidence is NOT confirmation of Codex death.
+### Phase 6: Iterative Refinement
 
-Execute per `shared/references/agent_review_workflow.md` "Step: Iterative Refinement".
+**MANDATORY READ:** Load `shared/agents/prompt_templates/iterative_refinement.md`
 
-1) **Determine artifact:** mode=story → Story + Tasks concatenated. mode=plan_review → plan file. mode=context → context docs
-2) **Loop (max 5 iterations):**
-   - Build prompt from `shared/agents/prompt_templates/iterative_refinement.md` with full artifact content
-   - Delete previous iteration's result file (if iteration > 1) — prevents Codex from reading stale feedback
-   - Send to Codex (foreground, synchronous)
-   - Parse result: `verdict == "APPROVED"` → exit. `iteration == 5` → exit. Error → exit. 0 accepted → exit
-   - Claude evaluates each suggestion (AGREE/REJECT), applies accepted fixes
-   - Update artifact, repeat
-3) **Display:** `"Iterative Refinement: {N} iterations, {total} suggestions, {applied} applied, exit: {reason}"`
-4) **Persist:** Save all prompts/results to `.hex-skills/agent-review/refinement/`, append summary to `review_history.md`
+1. Determine artifact:
+   - `story`: Story + Tasks concatenation
+   - `plan_review`: plan file
+   - `context`: context docs
+2. Run Codex refinement loop up to 5 iterations if Codex was available in Phase 2.
+3. Skip only with machine-readable reason:
+   - disabled
+   - unavailable in health check
+   - dead/failed after runtime sync
+4. Persist prompts/results to `.hex-skills/agent-review/refinement/`
+5. Checkpoint Phase 6 with `iterations`, `exit_reason`, `applied`.
 
-### Phase 7: Approve & Notify (mode=story only)
+### Phase 7: Approve & Notify (`mode=story` only)
 
-**mode=context/plan_review:** Skip. Return advisory output. Done.
+1. Set Story + Tasks to `Todo`; update `kanban_board.md` to `APPROVED`.
+   - `linear`: `save_issue({id, state: "Todo"})`
+   - `file`: edit `**Status:** -> Todo`
+2. Retry status transition once if needed. If still failing -> verdict becomes `NO_GO`.
+3. Write audit comment / file with penalty before/after, fixes, docs, and standards evidence.
+4. If comment fails after status success -> warn, do not revert status.
+5. Checkpoint Phase 7 with approval/status result.
 
-- **Step 1 (critical):** Set Story + Tasks to Todo; update `kanban_board.md` APPROVED
-  - linear: `save_issue({id, state: "Todo"})` for each
-  - file: Edit `**Status:**` → `Todo` in story.md + task files
-  - **MUST succeed before Step 2.** If fails → retry once → escalate as NO-GO
-- **Step 2 (audit):** Summary comment — Penalty Points (Before→After=0), Auto-Fixes, Docs Created, Standards Evidence
-  - linear: `save_comment({issueId, body})`
-  - file: Write to `docs/tasks/epics/.../comments/{ISO-timestamp}.md`
-  - If comment fails after Step 1 succeeded → WARN, do not revert status
-- **Display** tabular output (Before/After scores)
+For `mode=plan_review | mode=context`, checkpoint Phase 7 as `{"status":"skipped_by_mode"}`.
+
+### Phase 8: Runtime Self-Check
+
+Build the final checklist from runtime state. This is a projection of machine-readable checkpoints, not a second source of truth.
+
+Required checks:
+- [ ] Phase 0 checkpoint exists
+- [ ] Phase 1 checkpoint exists
+- [ ] Phase 2 recorded health check and launch/skip result
+- [ ] Phase 3 audit/research checkpoint exists
+- [ ] Phase 4 checkpoint exists (`story`) or `skipped_by_mode` (`plan_review/context`)
+- [ ] All required agents resolved before Phase 5 merge
+- [ ] Phase 5 merge summary exists
+- [ ] Phase 6 refinement exit reason exists
+- [ ] Phase 7 checkpoint exists (`story`) or `skipped_by_mode`
+- [ ] Final verdict and user-facing output are ready
+
+Write Phase 8 checkpoint with `pass=true|false`. Complete runtime only after `pass=true`.
 
 ## Final Assessment Model
 
 | Metric | Before | After | Meaning |
 |--------|--------|-------|---------|
-| **Penalty Points** | Raw audit total | Remaining after fixes | 0 = all fixed |
-| **Readiness Score** | `10 - (Before / 5)` | `10 - (After / 5)` | Quality confidence (1-10) |
-| **Anti-Hallucination** | — | VERIFIED / FLAGGED | Technical claims verified via MCP Ref/Context7 |
-| **AC Coverage** | — | N/N (target 100%) | Each AC mapped to >=1 Task |
-| **Gate** | — | GO / NO-GO | Final verdict |
+| Penalty Points | Raw audit total | Remaining after fixes | 0 = all fixed |
+| Readiness Score | `10 - (Before / 5)` | `10 - (After / 5)` | Quality confidence (1-10) |
+| Anti-Hallucination | — | VERIFIED / FLAGGED | Technical claims verified via MCP Ref/Context7 |
+| AC Coverage | — | N/N (target 100%) | Each AC mapped to >=1 Task |
+| Gate | — | GO / NO_GO | Final verdict |
 
-**GO:** Penalty After = 0 AND no FLAGGED. **NO-GO:** Penalty After > 0 OR any FLAGGED (auto-fix impossible → penalty stays, user resolves).
-
-**Coverage thresholds:** 100% = no penalty. 80-99% = -3 penalty. <80% = -5 penalty, NO-GO.
-
-## Phase 8: Workflow Completion Self-Check (MANDATORY — DO NOT SKIP)
-
-Mark each `[x]` when verified. ALL must be checked. If ANY unchecked → go back to failed phase. Display checklist to terminal before final results.
-
-### Stop Conditions (Self-Check)
-
-| Condition | Action |
-|-----------|--------|
-| All checklist items verified | STOP — return results |
-| Self-check retry count >= 2 | STOP — report with unchecked items listed as CONCERNS |
-| Agents unavailable AND agent items unchecked | STOP — mark agent items SKIPPED, continue |
-
-**All modes:**
-- [ ] tools_config loaded, task_provider extracted (Phase 0)
-- [ ] Metadata loaded — not skimmed (Phase 1)
-- [ ] `agent_runner.mjs --health-check` executed (Phase 2)
-- [ ] Agents launched as background tasks OR SKIPPED: 0 agents (Phase 2)
-  > ⛔ If unchecked AND environment_state.json showed ≥1 available agent → CRITICAL VIOLATION. Do NOT return results. Return to Phase 2.
-- [ ] Prompt file saved to `.hex-skills/agent-review/` (Phase 2)
-- [ ] Agent results read and parsed OR SKIPPED (Phase 5)
-- [ ] Critical Verification executed OR SKIPPED (Phase 5)
-- [ ] Iterative Refinement executed or SKIPPED: Codex confirmed dead via Liveness Protocol (Phase 6)
-  > ⛔ If SKIPPED but Codex was launched in Phase 2 AND no Liveness Protocol output exists in conversation → CRITICAL VIOLATION. Return to Phase 5, run Liveness Protocol, then re-evaluate Phase 6.
-- [ ] Agent process trees verified dead OR SKIPPED (Phase 5)
-- [ ] Review summary saved to `review_history.md` OR SKIPPED (Phase 5)
-- [ ] MCP Ref research (#5, #6, #21, #28, AH) executed OR N/A (Phase 3)
-
-**mode=story additional:**
-- [ ] Penalty Points calculated, 28 criteria (Phase 3)
-- [ ] Auto-fix executed, all 11 groups (Phase 4)
-- [ ] Penalty After = 0, Readiness Score = 10 (Phase 4)
-- [ ] AC Coverage: 100% (Phase 4)
-- [ ] Story + Tasks → Todo, kanban updated, comment posted (Phase 7)
-
-**mode=context / mode=plan_review additional:**
-- [ ] Corrections applied to artifacts OR none needed (Phase 3)
+Rules:
+- `GO`: Penalty After = 0 and no `FLAGGED`
+- `NO_GO`: Penalty After > 0 or any `FLAGGED`
+- coverage: 100% = pass; 80-99% = -3 penalty; <80% = -5 penalty and `NO_GO`
 
 ## Definition of Done
 
-- [ ] Tools config loaded, task_provider extracted (Phase 0)
-- [ ] Metadata loaded (Phase 1)
-- [ ] Agent health check executed, agents launched or SKIPPED (Phase 2)
-- [ ] Agent process trees verified dead after results collection (Phase 5)
-- [ ] Research/Audit completed per mode (Phase 3)
-- [ ] Auto-fix executed per mode (Phase 4, mode=story only)
-- [ ] Agent results merged, Critical Verification + Iterative Refinement executed (Phase 5-6)
-- [ ] Status transitions applied per mode (Phase 7, mode=story only)
-- [ ] Self-Check all items verified (Phase 8)
+- [ ] Runtime manifest created and `start` executed successfully
+- [ ] Discovery/materialization checkpointed
+- [ ] Agent health check executed and recorded in runtime
+- [ ] Every launched agent registered with prompt/result/log/metadata paths
+- [ ] Research/Audit completed per mode and checkpointed
+- [ ] Story auto-fix completed or non-story Phase 4 skipped by mode
+- [ ] Agent results merged only after all required agents resolved
+- [ ] Review summary saved to `review_history.md`
+- [ ] Iterative Refinement executed or skipped with machine-readable reason
+- [ ] Story approval/status transition completed or non-story Phase 7 skipped by mode
+- [ ] Phase 8 self-check passed and runtime completed
 
 ## Phase 9: Meta-Analysis
 
@@ -274,18 +285,18 @@ Skill type: `review-coordinator` (with agents). Run after Phase 8 completes. Out
 **Templates:** `story_template.md`, `task_template_implementation.md`
 
 1. Check if `docs/templates/{template}.md` exists in target project
-2. IF NOT: copy `shared/templates/{template}.md` → `docs/templates/{template}.md`, replace `{{TEAM_ID}}`, `{{DOCS_PATH}}`
+2. If not, copy `shared/templates/{template}.md` -> `docs/templates/{template}.md`
 3. Use local copy for all validation
 
 ## Reference Files
 
-- **Core config:** `shared/references/tools_config_guide.md`, `storage_mode_detection.md`, `input_resolution_pattern.md`, `plan_mode_pattern.md`
-- **Validation criteria:** `references/phase2_research_audit.md` (28 criteria + auto-fix), `references/penalty_points.md`
-- **Validation checklists:** `references/structural_validation.md` (#1-4, #23-24), `standards_validation.md` (#5), `solution_validation.md` (#6, #21, #28), `workflow_validation.md` (#7-13), `quality_validation.md` (#14-15), `dependency_validation.md` (#18-19), `risk_validation.md` (#20), `cross_reference_validation.md` (#25-26), `premortem_validation.md` (#27), `traceability_validation.md` (#16-17, #22)
-- **Templates:** `shared/templates/story_template.md`, `task_template_implementation.md`; local: `docs/templates/`
-- **Agent review:** `shared/references/agent_review_workflow.md`, `agent_delegation_pattern.md`, `agent_review_memory.md`; prompts: `shared/agents/prompt_templates/review_base.md` + `modes/{story,context,plan_review}.md`, `iterative_refinement.md`
-- **Research:** `shared/references/research_tool_fallback.md`, `references/context_review_pipeline.md`, `domain_patterns.md`, `mcp_ref_findings_template.md`, `shared/references/research_methodology.md`, `shared/references/documentation_creation.md`
-- **Other:** `shared/templates/linear_integration.md`, `shared/references/ac_validation_rules.md`
+- Core config: `shared/references/tools_config_guide.md`, `storage_mode_detection.md`, `input_resolution_pattern.md`, `plan_mode_pattern.md`
+- Runtime: `shared/references/review_runtime_contract.md`, `shared/scripts/review-runtime/cli.mjs`
+- Validation criteria: `references/phase2_research_audit.md`, `references/penalty_points.md`
+- Validation checklists: `references/structural_validation.md`, `standards_validation.md`, `solution_validation.md`, `workflow_validation.md`, `quality_validation.md`, `dependency_validation.md`, `risk_validation.md`, `cross_reference_validation.md`, `premortem_validation.md`, `traceability_validation.md`
+- Agent review: `shared/references/agent_review_workflow.md`, `agent_delegation_pattern.md`, `agent_review_memory.md`
+- Prompt templates: `shared/agents/prompt_templates/review_base.md`, `modes/{story,context,plan_review}.md`, `iterative_refinement.md`
+- Research: `shared/references/research_tool_fallback.md`, `references/context_review_pipeline.md`, `domain_patterns.md`, `mcp_ref_findings_template.md`, `shared/references/research_methodology.md`
 
 ---
 **Version:** 8.0.0

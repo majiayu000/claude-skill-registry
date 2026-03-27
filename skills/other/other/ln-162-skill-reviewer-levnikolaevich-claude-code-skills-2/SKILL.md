@@ -11,9 +11,11 @@ license: MIT
 **Type:** L3 Worker (standalone-capable)
 **Category:** 1XX Documentation Pipeline
 
-Universal skill reviewer with two auto-detected modes. Invocable standalone or by ln-160 coordinator.
+Universal reviewer with two modes:
+- `SKILL` for `ln-*/SKILL.md`
+- `COMMAND` for `.claude/commands/*.md`
 
-> **Plan Mode behavior:** ln-162 is a review/analysis skill — Phases 1-4 and 6-7 ARE the research. Execute them fully in Plan Mode (read files, run checks, analyze dimensions, read diffs). Write the Phase 6 report + Phase 5 fix list into the plan file. After plan approval, apply Phase 5 edits.
+> **Plan Mode behavior:** Phases 1-4 and 6-7 are research. Run them fully in Plan Mode, write the report plus fix list into the plan, and apply edits only after approval.
 
 ---
 
@@ -21,171 +23,140 @@ Universal skill reviewer with two auto-detected modes. Invocable standalone or b
 
 | Condition | Mode | Review Profile |
 |-----------|------|----------------|
-| `ln-*/SKILL.md` files exist in CWD | **SKILL** | Full D1-D11 + M1-M6 |
-| `.claude/commands/*.md` files exist | **COMMAND** | Structural + actionability |
-| Both exist | **SKILL** (default) | Override: `$ARGUMENTS = commands` |
-
----
+| `ln-*/SKILL.md` files exist in CWD | SKILL | Full D1-D11 + M1-M6 |
+| `.claude/commands/*.md` files exist | COMMAND | Structural + actionability |
+| Both exist | SKILL | Override with `$ARGUMENTS=commands` |
 
 ## Input
 
 `$ARGUMENTS` options:
-- Empty -> auto-detect mode + auto-detect scope
+- empty -> auto-detect mode and scope
 - `ln-400 ln-500` -> SKILL mode, specific skills
 - `commands` -> COMMAND mode, all `.claude/commands/*.md`
 - `deploy.md run-tests.md` -> COMMAND mode, specific files
 
-When invoked by ln-160 coordinator: receives list of file paths to review in COMMAND mode.
+When invoked by another skill, file paths may be passed directly.
 
 ---
 
 ## SKILL Mode
 
-Review SKILL.md files against 11 structural dimensions + 6 intent checks. Fix in-place. Report with PASS/FAIL verdict.
-
 ### Phase 1: Scope Detection
 
-**If `$ARGUMENTS` provided:** treat each token as a skill directory prefix (e.g., `ln-400` matches `ln-400-story-executor/`). Glob `{prefix}*/SKILL.md` per token.
+If `$ARGUMENTS` is provided:
+- treat each token as a skill directory prefix
+- glob `{prefix}*/SKILL.md`
 
-**If `$ARGUMENTS` empty:** auto-detect from git:
-```bash
-git diff --name-only HEAD
-git diff --name-only --cached
-git ls-files --others --exclude-standard
-```
-Extract unique skill dirs (pattern `ln-\d+-[^/]+`) and shared paths (`shared/`). If shared files changed, Grep all `ln-*/SKILL.md` for references to changed filenames.
+If `$ARGUMENTS` is empty:
+- inspect git diff, staged files, and untracked files
+- collect primary skill dirs
+- collect affected skills referencing changed shared files
+- collect dependency skills from worker tables and `Skill()` invocations
 
-**Build scope:**
-1. **Primary** -- skills with directly changed files
-2. **Affected** -- skills referencing changed shared files
-3. **Dependencies** -- for each primary skill, extract `ln-\d{3,4}` references from its SKILL.md (callers, callees, worker tables)
-
-Deduplicate. Report: `Scope: N primary, M affected, K dependency skills.`
+Report:
+`Scope: {N} primary, {M} affected, {K} dependency skills.`
 
 ### Phase 2: Automated Verification
 
-Run the automated checks script against all SKILL.md files in scope:
+Run:
 
 ```bash
 bash references/run_checks.sh {scoped SKILL.md files}
 ```
 
-Record failures -- they feed D7/D8 as pre-verified violations. Every FAIL is confirmed -- no judgment needed, no skipping. Check definitions: `references/automated_checks.md`.
+Automated failures are pre-verified. Record every one.
 
-### Phase 3: Eleven-Dimension Review
+### Phase 3: Structural Review
 
-**MANDATORY READ:** Load `references/structural_review.md` and `docs/architecture/SKILL_ARCHITECTURE_GUIDE.md`
+**MANDATORY READ:** Load `references/structural_review.md` and `shared/references/skill_contract.md`
 
-Read every SKILL.md in scope. Check ALL dimensions (D1-D11) across ALL skills. For each primary skill, also read the SKILL.md of ALL skills it delegates to (Worker Invocation table entries) to verify D10 (behavioral contracts) and D11 (resource lifecycle). Phase 2 failures are pre-verified -- include directly, do not re-check.
+Review every skill in scope across D1-D11.
+
+Treat these as structural issues, not style nits:
+- missing `**Type:**` when role-sensitive checks depend on it
+- worker independence violations in L3 workers
+- broken shared paths
+- stale root-doc assumptions after `AGENTS.md canonical / CLAUDE.md thin shim`
+- markdown-analysis skills missing `markdown_read_protocol.md`
+- extraction or audit skills contradicting the shared docs-quality contract
+- skills contradicting the shared skill contract
 
 ### Phase 4: Intent Review
 
 **MANDATORY READ:** Load `references/intent_review.md`
 
-Evaluate DESIGN INTENT of changes. Applies to primary skills only. For each primary skill, read the git diff (`git diff HEAD -- {skill_dir}/`).
+Apply M1-M6 to primary skills only. Read the git diff for each primary skill.
 
 ### Phase 5: Fix
 
-For each finding:
-- **Fixable** (wrong path, stale ref, missing bidirectional ref, duplicated content) -- fix immediately via Edit
-- **Ambiguous** (conflicting thresholds where correct value unclear) -- list in report, do NOT guess
-- **SIMPLIFY** (from Phase 4) with unambiguous action -- fix immediately
-- **REVERT** (from Phase 4) -- roll back the change via Edit
-- **RETHINK** (from Phase 4) -- do NOT fix, pass to Phase 6 report
+Auto-fix deterministic issues:
+- wrong paths
+- stale references
+- duplicated wording
+- worker-independence violations with exact removals
+- copied docs shell sections in command files
 
-After all fixes applied:
-- **Holistic compaction:** re-read each primary SKILL.md end-to-end. Apply D5 tiebreaker to whole file -- merge duplicate rules, combine overlapping tables, deduplicate cross-section instructions. Fix as SIMPLIFY.
+Do not guess on ambiguous behavior.
+
+After fixes, re-read each primary skill end-to-end and compress redundant wording without changing behavior.
 
 ### Phase 6: Report
 
-**Verdict rules:**
-- Any D1-D11 violation NOT auto-fixed -> **FAIL**
-- Only RETHINK findings (no unfixed violations) -> **PASS with CONCERNS**
-- Zero findings -> **PASS**
+Verdict rules:
+- any structural violation not auto-fixed -> `FAIL`
+- only advisory intent concerns remain -> `PASS with CONCERNS`
+- zero findings -> `PASS`
 
-```
+Report format:
+
+```text
 ## Skill Coherence Review -- {PASS|PASS with CONCERNS|FAIL}
 
-**Scope:** {list of reviewed skills}
+**Scope:** {reviewed skills}
 **Verdict:** {verdict}
-
-### Automated Checks (Phase 2)
-| Check | Result | Failures |
-|-------|--------|----------|
-| Frontmatter (D7) | {PASS/FAIL} | {list or --} |
-| Version/Date (D7) | {PASS/FAIL} | {list or --} |
-| Size <=800 (D8) | {PASS/FAIL} | {list or --} |
-| Description <=200 (D8) | {PASS/FAIL} | {list or --} |
-| MANDATORY READ paths (D2) | {PASS/FAIL} | {list or --} |
-| Orphan references (D7) | {PASS/FAIL} | {list or --} |
-| Passive file refs (D2) | {PASS/FAIL} | {list or --} |
-| Definition of Done (D7) | {PASS/FAIL} | {list or --} |
-| Meta-Analysis L1/L2 (D7) | {PASS/FAIL} | {list or --} |
-| Publishing skills (D7) | {PASS/FAIL} | {list or --} |
-| Description triggers (D8) | {PASS/WARN} | {list or --} |
-| Cross-skill contracts (D10) | {PASS/FAIL} | {list or --} |
-| Resource lifecycle (D11) | {PASS/FAIL} | {list or --} |
-| Execution proximity (D2b) | {PASS/WARN} | {list or --} |
-| Platform API compat (#13) | {PASS/FAIL} | {list or --} |
-| Worker invocation (D8b) | {PASS/FAIL/WARN} | {list or --} |
-
-### Fixed ({count})
-| # | Skill | Dim | Issue | Fix Applied |
-|---|-------|-----|-------|-------------|
-
-### Intent Findings ({count})
-**M5 Classification:** {R} requested, {D} derived, {S} speculative ({K} kept, {V} reverted)
-
-| # | Skill | Dim | Finding | Category |
-|---|-------|-----|---------|----------|
-
-### Remaining Concerns ({count})
-| # | Skill | Dim | Issue | Why Not Auto-Fixed |
-|---|-------|-----|-------|--------------------|
-
-### Clean
-Dimensions with no findings: {list}
 ```
-
-If zero findings: `All 11 structural dimensions + 6 intent checks clean. PASS.`
 
 ### Phase 7: Volatile Numbers Cleanup
 
-Skill/plugin/category counts go stale after every add/remove. Rule: skills MUST NOT hardcode aggregate counts.
-
-**Remove from any SKILL.md:** total skill counts, per-plugin counts, per-category counts, worker/coordinator counts referencing OTHER skills. A skill's OWN internals (e.g., "27 criteria") are fine.
+Remove stale aggregate counts from SKILL.md files. Keep only local counts intrinsic to the reviewed file.
 
 ---
 
 ## COMMAND Mode
 
-Review `.claude/commands/*.md` files against structural + actionability criteria.
-
 **MANDATORY READ:** Load `references/command_review_criteria.md`
 
 ### Phase 1: Scope Detection
 
-**If file paths provided:** review those files.
-**If `commands` keyword:** Glob `.claude/commands/*.md`.
-**If invoked by ln-160:** use file list from coordinator.
+- explicit file paths -> review those files
+- `commands` -> glob `.claude/commands/*.md`
+- coordinator-supplied file list -> review those files
 
 ### Phase 2: Review
 
-For each command file, apply all criteria from `references/command_review_criteria.md`.
+For each command file:
+- apply all command review criteria
+- verify source provenance
+- verify no copied docs shell sections remain
 
 ### Phase 3: Fix
 
-Auto-fix where possible (add missing frontmatter, truncate description). Flag unfixable issues.
+Auto-fix where safe:
+- missing frontmatter
+- missing `allowed-tools`
+- description too long
+- missing `Last Updated`
+- exact copied docs shell sections
 
 ### Phase 4: Report
 
-```
+```text
 ## Command Review -- {N} files
 
 | File | Verdict | Issues |
 |------|---------|--------|
 
-Verdicts: PASS / FIXED / WARN
+Verdicts: PASS / FIXED / WARN / FAIL
 Pass rate: {X}%
 ```
 
@@ -193,40 +164,39 @@ Pass rate: {X}%
 
 ## Rules
 
-- Automated checks (Phase 2) are NON-NEGOTIABLE -- every FAIL must appear in report
-- Do NOT skip any dimension for any skill in scope
-- If unsure whether something violates a rule -- it violates the rule (strict interpretation)
-- Read ALL skills in scope before reporting
-- Fix errors immediately, do not defer
-- Do NOT update versions or dates unless user explicitly requests it
-- `shared/` changes affect every skill that references them -- check reverse dependencies
-- Intent review (M1-M6) evaluates DESIGN, not correctness -- findings are judgment-based (M6 is advisory/NOTE severity)
-- RETHINK findings are advisory -- explain WHY, author decides WHETHER to act
-- REVERT findings are executed immediately -- changes without concrete defect are rolled back
-- SPECULATIVE items (M5) without user response default to REVERT -- no silent acceptance of model-generated additions
-
----
+- Automated checks are non-negotiable.
+- Read all scoped files before reporting.
+- Fix deterministic issues immediately.
+- Do not update versions or dates unless the user explicitly requests it.
+- `shared/` changes affect all referencing skills.
+- Worker independence is mandatory for L3 workers:
+  - no `**Coordinator:**`
+  - no `**Parent:**`
+  - no required caller declaration
+- Docs-model drift is a structural defect, not a preference.
+- `Agent Teams` / `TeamCreate` are deprecated outside clearly marked historical references.
 
 ## Reference Files
 
-- **Structural review:** `references/structural_review.md` (D1-D11)
-- **Intent review:** `references/intent_review.md` (M1-M6)
-- **Automated checks:** `references/automated_checks.md` + `references/run_checks.sh`
-- **Deprecated APIs:** `references/deprecated_apis.md` (Check #15)
-- **Command review:** `references/command_review_criteria.md` (COMMAND mode)
-- **Marketplace checker:** `references/check_marketplace.mjs` (used by /review-skills command)
+- `references/structural_review.md`
+- `references/intent_review.md`
+- `references/automated_checks.md`
+- `references/run_checks.sh`
+- `references/deprecated_apis.md`
+- `references/command_review_criteria.md`
+- `references/check_marketplace.mjs`
 
 ## Definition of Done
 
-- [ ] Scope detected (primary + affected + dependency skills)
-- [ ] Phase 2 automated checks executed for all skills in scope
-- [ ] D1-D11 dimensions reviewed across all skills
-- [ ] M1-M6 intent evaluated for primary skills
-- [ ] Fixable findings auto-fixed via Edit
-- [ ] Post-fix holistic compaction applied to each primary SKILL.md
-- [ ] Report generated with PASS/PASS with CONCERNS/FAIL verdict
+- [ ] Scope detected
+- [ ] Automated checks executed
+- [ ] D1-D11 reviewed across all scoped skills
+- [ ] M1-M6 evaluated for primary skills
+- [ ] Fixable findings auto-fixed
+- [ ] Post-fix holistic compaction completed
+- [ ] Final verdict report generated
 
 ---
 
 **Version:** 1.0.0
-**Last Updated:** 2026-03-13
+**Last Updated:** 2026-03-26

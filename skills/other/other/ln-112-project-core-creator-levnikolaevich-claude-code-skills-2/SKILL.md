@@ -8,6 +8,8 @@ license: MIT
 
 # Project Core Documentation Creator
 
+**Type:** L3 Worker
+
 L3 Worker that creates 4 core project documentation files. These are ALWAYS created regardless of project type.
 
 ## Purpose & Scope
@@ -39,6 +41,8 @@ From coordinator:
 - `targetDir`: Project root directory
 
 **LEGACY_CONTENT** is used as base content when creating documents. Priority: **Legacy > Auto-discovery > Template defaults**.
+
+**MANDATORY READ:** Load `shared/references/docs_quality_contract.md`, `shared/references/docs_quality_rules.json`, and `shared/references/markdown_read_protocol.md`.
 
 ## Documents Created (4)
 
@@ -89,29 +93,41 @@ For each document (requirements.md, architecture.md, tech_stack.md, patterns_cat
        - Link to existing ADRs if pattern names match
        - Mark: `<!-- Auto-detected by ln-112, audit with ln-640 -->`
    - Replace `{{PLACEHOLDER}}` with Context Store values
+   - Preserve the shared opening contract: `SCOPE`, `DOC_KIND`, `DOC_ROLE`, `READ_WHEN`, `SKIP_WHEN`, `PRIMARY_SOURCES`
+   - Preserve the standard top sections: `Quick Navigation`, `Agent Entry`, `Maintenance`
    - Generate C4 diagrams from SRC_STRUCTURE (for architecture.md, if no legacy diagrams)
    - Insert ADR links (for architecture.md Section 8)
-   - Mark `[TBD: X]` for missing data
+   - Never leave template markers in published project docs
+   - If data is missing: omit the claim or use a concise neutral fallback, but do NOT emit `[TBD: ...]`
 
 ### Phase 3: Self-Validate
 For each created document:
-1. Check SCOPE tag in first 10 lines
-2. Check required sections (from questions_core.md)
-3. Validate specific format requirements:
+1. Check SCOPE tag and metadata markers in the opening block
+2. Check required top sections (`Quick Navigation`, `Agent Entry`, `Maintenance`)
+3. Check required sections (from questions_core.md)
+4. Validate specific format requirements:
    - requirements.md: FR-XXX identifiers, MoSCoW labels
    - architecture.md: 11 sections, C4 diagrams, ADR references
    - tech_stack.md: versions, rationale for each technology
-4. Check Maintenance section
-5. Auto-fix issues where possible
+5. Check docs-quality contract compliance (no forbidden placeholders, no leaked template metadata, valid doc kind/role)
+6. Auto-fix issues where possible
 
 ### Phase 4: Return Status
 Return to coordinator:
 ```json
 {
-  "created": ["docs/project/requirements.md", ...],
-  "skipped": [],
-  "tbd_count": 5,
-  "validation": "OK",
+  "created_files": ["docs/project/requirements.md", "docs/project/architecture.md", "docs/project/tech_stack.md", "docs/architecture/patterns_catalog.md"],
+  "skipped_files": [],
+  "quality_inputs": {
+    "doc_paths": ["docs/project/requirements.md", "docs/project/architecture.md", "docs/project/tech_stack.md", "docs/architecture/patterns_catalog.md"],
+    "owners": {
+      "docs/project/requirements.md": "ln-112-project-core-creator",
+      "docs/project/architecture.md": "ln-112-project-core-creator",
+      "docs/project/tech_stack.md": "ln-112-project-core-creator",
+      "docs/architecture/patterns_catalog.md": "ln-112-project-core-creator"
+    }
+  },
+  "validation_status": "passed",
   "diagrams_generated": 3
 }
 ```
@@ -122,7 +138,7 @@ Return to coordinator:
 - **C4 diagrams:** Generated from SRC_STRUCTURE in Mermaid format
 - **ADR integration:** Section 8 links to docs/reference/adrs/
 - **arc42 compliance:** ISO/IEC/IEEE 42010:2022 structure
-- **TBD markers:** Use `[TBD: X]` for missing data
+- **Publishable output:** Core project docs must not contain `[TBD: ...]`, `TODO`, or leaked template metadata
 
 ### NO_CODE_EXAMPLES Rule (MANDATORY)
 Documents describe **contracts and decisions**, NOT implementations:
@@ -144,7 +160,7 @@ Tables > Mermaid/ASCII diagrams > Lists > Text
 - [ ] C4 diagrams generated (Context, Container, Component)
 - [ ] ADR links populated
 - [ ] Patterns auto-detected and added to catalog
-- [ ] Self-validation passed (SCOPE, sections, format)
+- [ ] Self-validation passed (metadata markers, top sections, format)
 - [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
 - [ ] Status returned to coordinator
 

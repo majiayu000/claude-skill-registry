@@ -121,7 +121,58 @@ done
 
 **If `--dry-run`:** Display what would be deleted but skip the deletion.
 
-### Step 6: Remote Merged Branch Cleanup (if --remote)
+### Step 6: Squash-Merged Branch Cleanup
+
+Detect branches whose changes are already in base via squash-and-merge or rebase-merge. Uses `git cherry` to compare patch-ids.
+
+```bash
+echo "=== SQUASH-MERGED BRANCHES ==="
+squash_branches=""
+for branch in $(git for-each-ref --format='%(refname:short)' refs/heads/); do
+  [ "$branch" = "$BASE_BRANCH" ] && continue
+  current=$(git branch --show-current)
+  [ "$branch" = "$current" ] && continue
+
+  # Skip branches already detected as merged
+  merged=$(git branch --merged "$BASE_BRANCH" | grep -w "$branch" | wc -l | tr -d ' ')
+  [ "$merged" -gt 0 ] && continue
+
+  # Count commits on branch since merge-base
+  merge_base=$(git merge-base "$BASE_BRANCH" "$branch" 2>/dev/null)
+  [ -z "$merge_base" ] && continue
+  unique_commits=$(git log --oneline "$merge_base".."$branch" --no-merges 2>/dev/null | wc -l | tr -d ' ')
+  [ "$unique_commits" -eq 0 ] && continue
+
+  # git cherry: + means NOT in base, - means equivalent exists in base
+  unpicked=$(git cherry "$BASE_BRANCH" "$branch" 2>/dev/null | grep '^+' | wc -l | tr -d ' ')
+  if [ "$unpicked" -eq 0 ]; then
+    relative=$(git log -1 --format='%cr' "$branch")
+    echo "  $branch ($relative)"
+    squash_branches="$squash_branches $branch"
+  fi
+done
+squash_count=$(echo "$squash_branches" | wc -w | tr -d ' ')
+if [ "$squash_count" -eq 0 ]; then
+  echo "  (none)"
+fi
+echo "Found $squash_count squash-merged branch(es)"
+```
+
+**If squash-merged branches exist and not `--dry-run`:**
+
+Ask the user for confirmation: _"These N branches were squash-merged into BASE_BRANCH (verified via git cherry). Delete them?"_
+
+If confirmed, delete each branch. Note: must use `-D` (force) since git doesn't recognize squash merges as merged:
+
+```bash
+for branch in $squash_branches; do
+  git branch -D "$branch"
+done
+```
+
+**If `--dry-run`:** Display what would be deleted but skip the deletion.
+
+### Step 7: Remote Merged Branch Cleanup (if --remote)
 
 Only execute if `--remote` flag was provided.
 
@@ -162,7 +213,7 @@ done
 
 **If `--dry-run`:** Display what would be deleted but skip the deletion.
 
-### Step 7: Stale Unmerged Branch Report
+### Step 8: Stale Unmerged Branch Report
 
 List inactive unmerged branches (past threshold) with ahead/behind counts. **Never delete these** — only display them.
 
@@ -185,7 +236,9 @@ git for-each-ref --sort=committerdate --format='%(refname:short) %(committerdate
   timestamp=$(echo "$line" | awk '{print $2}')
   relative=$(echo "$line" | cut -d' ' -f3-)
 
+  # Skip base branch and squash-merged branches (already handled in Step 6)
   [ "$branch" = "$BASE_BRANCH" ] && continue
+  echo "$squash_branches" | grep -qw "$branch" && continue
 
   if [[ "$timestamp" =~ ^[0-9]+$ ]] && [ "$timestamp" -lt "$threshold" ]; then
     merged=$(git branch --merged "$BASE_BRANCH" | grep -w "$branch" | wc -l | tr -d ' ')
@@ -207,20 +260,21 @@ To delete these branches manually:
   Remote:  git push origin --delete <branch>
 ```
 
-### Step 8: Summary Report
+### Step 9: Summary Report
 
 Present a summary of all actions taken:
 
 ```
 === CLEANUP SUMMARY ===
 Local merged branches deleted: N
+Squash-merged branches deleted: N
 Remote merged branches deleted: N (or "skipped — use --remote")
 Stale unmerged branches flagged: N (manual review)
 ```
 
 ## Important Caveats
 
-- **Squash merges**: Branches merged via squash-and-merge on GitHub will NOT appear as "merged" in `git branch --merged`. They show as unmerged even though their changes are in the base branch. Check stale unmerged branches carefully.
+- **Squash merges**: Detected automatically using `git cherry` (patch-id comparison). These require `-D` (force delete) since git doesn't recognize them as merged. Edge cases: amended commits after squash or partial cherry-picks may not be detected.
 - **Current branch**: The current branch is never deleted, even if merged.
 - **Protected branches**: `main`, `master`, and the base branch are always excluded from deletion.
 - **Remote permissions**: Deleting remote branches requires push access to the remote.
@@ -234,4 +288,4 @@ For more details, see:
 
 ## Version
 
-1.0.0
+1.1.0

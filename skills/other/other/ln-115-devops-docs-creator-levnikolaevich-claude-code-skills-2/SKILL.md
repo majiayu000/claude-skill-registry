@@ -8,6 +8,8 @@ license: MIT
 
 # DevOps Documentation Creator
 
+**Type:** L3 Worker
+
 L3 Worker that creates infrastructure.md and runbook.md. Infrastructure inventory is always created; runbook is conditional on Docker presence.
 
 ## Purpose & Scope
@@ -40,6 +42,8 @@ From coordinator:
 - `targetDir`: Project root directory
 - `flags`: { hasDocker }
 
+**MANDATORY READ:** Load `shared/references/docs_quality_contract.md`, `shared/references/docs_quality_rules.json`, and `shared/references/markdown_read_protocol.md`.
+
 ## Documents Created (2: 1 always + 1 conditional)
 
 | File | Condition | Questions | Auto-Discovery |
@@ -61,14 +65,16 @@ From coordinator:
 3. If not exists:
    - Copy `references/templates/infrastructure_template.md`
    - Replace placeholders with Context Store values
+   - Preserve the shared opening contract and standard top sections from the template
    - Populate Server Inventory from SERVER_INVENTORY
    - Populate Port Allocation from DOCKER_SERVICES port mappings
    - Populate Deployed Services from DOCKER_SERVICES
    - Populate CI/CD Pipeline from CI_CD_PIPELINE
-   - Mark `[TBD: X]` for missing data
+   - Never leave template markers in published infrastructure docs
+   - If data is missing: omit the claim or use a concise neutral fallback, but do NOT emit `[TBD: ...]`
 4. **Conditional Section Pruning:**
-   - If no CI/CD detected: mark CI/CD Pipeline section as `[TBD: Configure CI/CD]`
-   - If no ARTIFACT_REPOSITORY: mark Artifact Repository as `[TBD: Configure registry]`
+   - If no CI/CD detected: replace with concise empty-state note, not `[TBD: ...]`
+   - If no ARTIFACT_REPOSITORY: replace with concise empty-state note, not `[TBD: ...]`
    - If single server / no SERVER_INVENTORY: simplify to single-column table
    - If !HAS_GPU: remove GPU column from Server Inventory and Deployed Services
    - Populate Deployed Services ONLY from DOCKER_SERVICES (no generic examples)
@@ -80,37 +86,47 @@ From coordinator:
 4. If not exists:
    - Copy `references/templates/runbook_template.md`
    - Replace placeholders with Context Store values
+   - Preserve the shared opening contract and standard top sections from the template
    - Populate setup steps from package.json scripts
    - Extract env vars from .env.example
-   - Mark `[TBD: X]` for missing data
+   - Never leave template markers in published runbooks
+   - If data is missing: omit the claim or use a concise neutral fallback, but do NOT emit `[TBD: ...]`
 5. **Conditional Section Pruning:**
    - If DEPLOYMENT_SCALE != "multi" or "auto-scaling": Remove scaling/load balancer sections
    - If !HAS_GPU: Remove GPU-related sections (nvidia runtime, CUDA)
    - If service not in DOCKER_SERVICES: Remove that service's examples
-   - If DEVOPS_CONTACTS empty: Mark as `[TBD: Provide DevOps team contacts via Q50]`
+   - If DEVOPS_CONTACTS empty: replace with concise empty-state note, not `[TBD: ...]`
    - Populate service dependencies ONLY from DOCKER_SERVICES
    - Populate port mapping ONLY from docker-compose.yml ports section
 
 ### Phase 3: Self-Validate
 **For infrastructure.md:**
-1. Check SCOPE tag
-2. Validate sections: Server Inventory, Port Allocation, Deployed Services
-3. Check no procedural content leaked (belongs in runbook.md)
-4. Check Maintenance section
+1. Check SCOPE tag and metadata markers
+2. Check required top sections (`Quick Navigation`, `Agent Entry`, `Maintenance`)
+3. Validate sections: Server Inventory, Port Allocation, Deployed Services
+4. Check no procedural content leaked (belongs in runbook.md)
+5. Check docs-quality contract compliance (no forbidden placeholders, no leaked template metadata, valid doc kind/role)
 
 **For runbook.md (if created):**
-1. Check SCOPE tag
-2. Validate sections: Local Development Setup, Deployment, Troubleshooting
-3. Check env vars documented
-4. Check Maintenance section
+1. Check SCOPE tag and metadata markers
+2. Check required top sections (`Quick Navigation`, `Agent Entry`, `Maintenance`)
+3. Validate sections: Local Development Setup, Deployment, Troubleshooting
+4. Check env vars documented
+5. Check docs-quality contract compliance (no forbidden placeholders, no leaked template metadata, valid doc kind/role)
 
 ### Phase 4: Return Status
 ```json
 {
-  "created": ["docs/project/infrastructure.md", "docs/project/runbook.md"],
-  "skipped": [],
-  "tbd_count": 3,
-  "validation": "OK"
+  "created_files": ["docs/project/infrastructure.md", "docs/project/runbook.md"],
+  "skipped_files": [],
+  "quality_inputs": {
+    "doc_paths": ["docs/project/infrastructure.md", "docs/project/runbook.md"],
+    "owners": {
+      "docs/project/infrastructure.md": "ln-115-devops-docs-creator",
+      "docs/project/runbook.md": "ln-115-devops-docs-creator"
+    }
+  },
+  "validation_status": "passed"
 }
 ```
 
@@ -122,6 +138,7 @@ From coordinator:
 - **Heavy auto-discovery:** Most data from docker-compose.yml, .env.example, package.json, SSH config
 - **Reproducible:** Setup steps must be testable and repeatable
 - **Idempotent:** Never overwrite existing files
+- **Publishable output:** No `[TBD: ...]`, `TODO`, or leaked template metadata in DevOps docs
 
 ### NO_CODE_EXAMPLES Rule (MANDATORY)
 Both documents describe **inventory/procedures**, NOT implementations:

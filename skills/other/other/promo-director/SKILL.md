@@ -9,6 +9,7 @@ allowed-tools:
   - Read
   - Bash
   - Glob
+  - bitwize-music-mcp
 requirements:
   external:
     - name: ffmpeg

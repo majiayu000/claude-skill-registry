@@ -9,7 +9,7 @@ metadata:
 
 # Vercel React Best Practices
 
-Comprehensive performance optimization guide for React and Next.js applications, maintained by Vercel. Contains 64 rules across 8 categories, prioritized by impact to guide automated refactoring and code generation.
+Comprehensive performance optimization guide for React and Next.js applications, maintained by Vercel. Contains 65 rules across 8 categories, prioritized by impact to guide automated refactoring and code generation.
 
 ## When to Apply
 
@@ -60,6 +60,7 @@ Reference these guidelines when:
 - `server-hoist-static-io` - Hoist static I/O (fonts, logos) to module level
 - `server-serialization` - Minimize data passed to client components
 - `server-parallel-fetching` - Restructure components to parallelize fetches
+- `server-parallel-nested-fetching` - Chain nested fetches per item in Promise.all
 - `server-after-nonblocking` - Use after() for non-blocking operations
 
 ### 4. Client-Side Data Fetching (MEDIUM-HIGH)
@@ -116,6 +117,7 @@ Reference these guidelines when:
 - `js-set-map-lookups` - Use Set/Map for O(1) lookups
 - `js-tosorted-immutable` - Use toSorted() for immutability
 - `js-flatmap-filter` - Use flatMap to map and filter in one pass
+- `js-request-idle-callback` - Defer non-critical work to browser idle time
 
 ### 8. Advanced Patterns (LOW)
 

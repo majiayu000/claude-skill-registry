@@ -1,23 +1,27 @@
 ---
 name: ln-613-code-comments-auditor
-description: "Checks WHY-not-WHAT, density, forbidden content, docstrings quality, actuality, legacy cleanup. Use when auditing code comments."
+description: "Checks inline code documentation quality: WHY-not-WHAT, density, forbidden content, docstrings quality, actuality, legacy cleanup. Use when auditing comments and docstrings."
 allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline
 license: MIT
 ---
 
 > **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
 
-# Code Comments Auditor (L3 Worker)
+# Inline Code Documentation Auditor (L3 Worker)
 
-Specialized worker auditing code comments and docstrings quality.
+**Type:** L3 Worker
+
+Specialized worker auditing inline code documentation quality: comments, docstrings, and language-specific documentation blocks.
 
 ## Purpose & Scope
 
 - **Worker in ln-610 coordinator pipeline** - invoked by ln-610-docs-auditor
-- Audit code comments for **quality and compliance** across 6 categories
+- Audit inline code documentation for **quality and compliance** across 6 categories
 - Universal for any tech stack (auto-detect comment syntax)
 - Return structured findings to coordinator with severity, location, recommendations
-- Calculate compliance score (X/10) for Code Comments category
+- Calculate compliance score (X/10) for Inline Code Documentation category
+- Scope is limited to comments/docstrings/JSDoc/XML docs
+- Out of scope: code design quality, naming quality, test quality, architecture quality, or feature correctness except where comments contradict code
 
 ## Inputs (from Coordinator)
 
@@ -56,7 +60,7 @@ Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-Write report to `{output_dir}/613-code-comments.md` with `category: "Code Comments"` and checks: why_not_what, density, forbidden_content, docstrings_quality, actuality, legacy_cleanup.
+Write report to `{output_dir}/613-code-comments.md` with `category: "Inline Code Documentation"` and checks: why_not_what, density, forbidden_content, docstrings_quality, actuality, legacy_cleanup.
 
 Return summary to coordinator:
 ```
@@ -81,7 +85,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 - **Do not auto-fix:** Report violations only; coordinator aggregates for user
 - **Fix code, not rules:** NEVER modify rules files (*_rules.md, *_standards.md) to make violations pass
-- **Code is truth:** When comment contradicts code, flag comment for update
+- **Code is truth:** When comment contradicts code, flag the documentation for update; do not turn this into a general code-quality review
 - **WHY > WHAT:** Comments explaining obvious behavior should be removed
 - **Universal:** Works with any language; detect comment syntax automatically
 - **Location precision:** Always include `file:line` for programmatic navigation

@@ -2,8 +2,16 @@
   "name": "gemini-image",
   "repo": "aiskillstore/marketplace",
   "path": "skills/ceeon/gemini-image/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/aiskillstore/marketplace",
   "dir_name": "gemini-image",
-  "downloaded_at": "2026-02-11T01:24:48.528800Z"
+  "downloaded_at": "2026-03-27T01:23:51.598398Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/ceeon/gemini-image/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/ceeon/gemini-image/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

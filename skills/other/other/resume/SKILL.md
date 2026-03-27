@@ -7,6 +7,7 @@ allowed-tools:
   - Read
   - Glob
   - Bash
+  - bitwize-music-mcp
 ---
 
 # Resume Album Work

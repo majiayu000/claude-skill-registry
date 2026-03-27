@@ -4,226 +4,211 @@ description: "Analyzes Story and builds optimal task plan (1-8 tasks), then rout
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
 
-# Linear Task Planner (Orchestrator)
+# Task Coordinator
 
-Coordinates creation or replanning of implementation tasks for a Story. Builds the ideal plan first, then routes to workers.
+**Type:** L2 Domain Coordinator
+**Category:** 3XX Planning
+
+Runtime-backed task planning coordinator. The runtime owns readiness gating, pause/resume, and worker result tracking.
+
+## MANDATORY READ
+
+Load these before execution:
+- `shared/references/coordinator_runtime_contract.md`
+- `shared/references/task_planning_runtime_contract.md`
+- `shared/references/coordinator_summary_contract.md`
+- `shared/references/tools_config_guide.md`
+- `shared/references/storage_mode_detection.md`
+- `shared/references/problem_solving.md`
+- `shared/references/creation_quality_checklist.md`
+
+## Purpose
+
+- resolve Story context once
+- build an ideal implementation task plan before checking existing tasks
+- run a deterministic readiness gate
+- detect `CREATE`, `ADD`, or `REPLAN`
+- delegate to standalone workers
 
 ## Inputs
 
-| Input | Required | Source | Description |
-|-------|----------|--------|-------------|
-| `storyId` | Yes | args, git branch, kanban, user | Story to process |
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `storyId` | Yes | Story to plan |
+| `autoApprove` | No | If false, runtime may pause for readiness approval |
 
-**Resolution:** Story Resolution Chain.
-**Status filter:** Backlog, Todo
+## Runtime
 
-## Purpose & Scope
-- Auto-discover Team ID, load Story context (AC, Technical Notes, Context)
-- Build optimal implementation task plan (1-8 implementation tasks; NO test/refactoring tasks) in Foundation-First order
-- Detect mode and delegate: CREATE/ADD -> ln-301-task-creator, REPLAN -> ln-302-task-replanner
-- Strip any Non-Functional Requirements; only functional scope becomes tasks
-- Never creates/updates Linear or kanban directly (workers do)
+Runtime family: `task-planning-runtime`
 
-## Task Storage Mode
+Identifier:
+- `story-{storyId}`
 
-**MANDATORY READ:** Load `shared/references/tools_config_guide.md`, `shared/references/storage_mode_detection.md`, and `shared/references/input_resolution_pattern.md`
+Phases:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_DISCOVERY`
+3. `PHASE_2_DECOMPOSE`
+4. `PHASE_3_READINESS_GATE`
+5. `PHASE_4_MODE_DETECTION`
+6. `PHASE_5_DELEGATE`
+7. `PHASE_6_VERIFY`
+8. `PHASE_7_SELF_CHECK`
 
-Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
+Terminal phases:
+- `DONE`
+- `PAUSED`
 
-Workers (ln-301, ln-302) handle the actual Linear/File operations based on `task_provider`.
+## Phase Map
 
-## When to Use
-- Need tasks for a Story with clear AC/Technical Notes
-- Story requirements changed and existing tasks must be updated
-- Only for implementation tasks (test tasks → ln-404, refactoring → quality gate)
+### Phase 1: Discovery
 
-## Quality Criteria
+Resolve Story and collect only the inputs required for task planning:
+- Story AC
+- Technical Notes
+- Context
+- task provider
 
-**MANDATORY READ:** Load `shared/references/creation_quality_checklist.md` §Task Creation Checklist for validation criteria that ln-310 will enforce.
+Checkpoint payload:
+- `discovery_ready`
 
-## Workflow (concise)
-- **Phase 1 Discovery:** Auto-discover Team ID (docs/tasks/kanban_board.md). Resolve storyId: Run Story Resolution Chain per guide (status filter: [Backlog, Todo]).
-- **Phase 2 Decompose (always):** **MANDATORY READ:** `shared/references/goal_articulation_gate.md` — Before building IDEAL plan, state REAL GOAL of this Story in one sentence (the deliverable, not the process). Verify: does the decomposition serve THIS goal? Then: Load Story (AC, Technical Notes, Context), assess complexity, build IDEAL plan (1-8 implementation tasks only), **scan for reusable patterns** (Grep `src/` for error handlers, validators, utilities relevant to task categories — count only; if found, append `**Pattern Hint:** {count} existing {category} patterns in src/. Review for reuse before creating new (Step 4a in ln-401).` to relevant task descriptions), apply Foundation-First execution order, **validate Task Independence**, **assign Parallel Groups**, **define verification methods for each task AC**, extract guide links.
-- **Phase 2b Frontend Detection:** IF Story AC or Technical Notes mention UI/page/component/layout/screen/form/dashboard, OR Affected Components include `.tsx/.vue/.svelte/.html/.css` files → insert "Design Definition" as Task 1 (Parallel Group 1): AC: (1) Visual thesis stated (1 sentence: mood, material, energy), (2) Content plan defined (section sequence), (3) Interaction plan defined (2-3 purposeful motions), (4) If project has design_guidelines.md → loaded and cross-referenced. `verify: inspect (Design Definition documented in task comment)`. **MANDATORY READ:** `shared/references/frontend_design_guide.md` §Design Definition.
-- **Phase 3 Check & Detect Mode:** Query Linear for existing tasks (metadata only). Detect mode by count + user keywords (add/replan).
-- **Phase 4 Delegate:** Invoke the right worker via Skill tool (see Invocation below). Pass Story data, IDEAL plan/append request, guide links, existing task IDs if any; autoApprove=true.
-- **Phase 5 Verify:** Ensure worker returns URLs/summary and updated kanban_board.md; report result.
+### Phase 2: Decompose
 
-## Task Plan Readiness Score
+Build the ideal task plan before checking existing tasks.
 
-**Context:** Validates plan quality before delegation to workers, preventing rework.
+Rules:
+- implementation tasks only
+- 1-8 tasks
+- no tests or refactoring tasks here
+- preserve foundation-first order
+- assign meaningful verification intent
 
-After building IDEAL plan (Phase 2), score 7 criteria:
+Checkpoint payload:
+- `ideal_plan_summary`
 
-| # | Criterion | Check |
-|---|-----------|-------|
-| 1 | **Independence** | No forward dependencies between tasks (Task N uses only 1..N-1) |
-| 2 | **AC clarity** | Each task AC has measurable outcome AND verification method (test/command/inspect) |
-| 3 | **Tech confidence** | All referenced technologies/patterns are known or researched |
-| 4 | **Scope isolation** | Tasks don't overlap with sibling Stories' tasks. Load siblings (`list_issues project=Epic.id`), compare Affected Components and file paths for structural overlap |
-| 5 | **Architecture compliance** | Tasks reference correct layers (DB→Repo→Service→API), no planned cross-layer violations (e.g., API task doing direct DB calls) |
-| 6 | **Parallel groups valid** | Tasks in same group have no mutual dependencies; all deps point to earlier groups; numbers sequential |
-| 7 | **Destructive op safety** | Tasks with data deletion/migration/schema changes include safety plan (backup, rollback, blast radius) |
+### Phase 3: Readiness Gate
 
-**Score = count of PASS criteria (0-7)**
-- 6-7/7: Delegate to worker
-- 4-5/7: Show warnings to user, fix or proceed
-- <4/7: Rework plan before delegation
+Score the plan before delegation.
 
-## Verification Methods for Task AC
+Scoring policy:
+- `6-7` -> continue
+- `4-5` -> `PAUSED` for approval or improvement
+- `<4` -> blocked until plan is corrected
 
-**Context:** Goal-Driven Execution pattern — define HOW to verify each AC at planning time so executor (ln-401) can loop through verifications after implementation.
+Checkpoint payload:
+- `readiness_score`
+- `readiness_findings`
 
-When building IDEAL plan (Phase 2), each task AC must include a `verify:` method:
+### Phase 4: Mode Detection
 
-| Method | When to Use | Example |
-|--------|-------------|---------|
-| **test** | Existing test covers AC | `verify: test (test_auth.py::test_login_success)` |
-| **command** | CLI command validates outcome | `verify: command (curl -X POST /users → 201)` |
-| **inspect** | File/output check | `verify: inspect (migration file has email column)` |
+Detect:
+- `CREATE`
+- `ADD`
+- `REPLAN`
 
-**Rule:** At least 1 AC per task must use `test` or `command` (not all `inspect`).
+Pause when mode is ambiguous.
 
-**MANDATORY READ:** Load `shared/references/ac_validation_rules.md` §5 for full format and examples.
+Checkpoint payload:
+- `mode_detection`
 
-## Task Independence Validation
+### Phase 5: Delegate
 
-Rules per `creation_quality_checklist.md` #19 (dependencies) and #13 (Foundation-First order).
+Delegate to exactly one worker:
+- `ln-301-task-creator`
+- `ln-302-task-replanner`
 
-**Examples:**
-- ❌ WRONG: "Task 2: Validate token (requires Task 3 to generate keys)"
-- ✅ RIGHT: "Task 1: Generate keys" → "Task 2: Validate token (uses Task 1 keys)"
+Workers remain standalone-capable. They may optionally write `task-plan` summary artifacts, but must always return the same structured summary even without artifact writing.
 
-**If forward dependency detected:** Reorder, refactor to remove dependency, or split into sequential parts.
+Record the result through runtime `record-plan`.
 
-## Parallel Group Assignment
+### Phase 6: Verify
 
-After building IDEAL plan and validating independence, assign **Parallel Group** numbers to enable concurrent execution in ln-400.
+Verify worker result and resulting task plan outcome.
 
-**Algorithm:**
-```
-group = 1
-FOR EACH task T IN ordered_plan:
-  deps = tasks that T depends on (from Related/Context)
-  IF any dep is in CURRENT group:
-    group++
-  T.parallel_group = group
-```
+Checkpoint payload:
+- `verification_summary`
+- `final_result`
 
-**Example:**
-| Task | Dependencies | Group |
-|------|-------------|-------|
-| T1: DB migration | none | 1 |
-| T2: UserRepo | T1 | 2 |
-| T3: ProductRepo | T1 | 2 |
-| T4: UserService | T2 | 3 |
-| T5: API endpoint | T4 | 4 |
+### Phase 7: Self-Check
 
-**Rules:**
-- Tasks in the same group have NO mutual dependencies (only depend on previous groups)
-- Group numbers are sequential (1, 2, 3...), no gaps
-- Single-task groups are valid (sequential execution, same as current behavior)
-- Write `**Parallel Group:** {N}` in each task document (per `shared/templates/task_template_implementation.md`)
-- **Backward compatibility:** if task lacks `**Parallel Group:**` field, ln-400 treats it as its own group (sequential)
+Confirm:
+- phase coverage
+- readiness gate was respected
+- worker result was recorded
+- verification completed
 
-## Mode Matrix
-| Condition | Mode | Delegate | Payload |
-|-----------|------|----------|---------|
-| Count = 0 | CREATE | ln-301-task-creator | taskType=implementation, Story data, IDEAL plan, guideLinks |
-| Count > 0 AND "add"/"append" | ADD | ln-301-task-creator | taskType=implementation, appendMode=true, newTaskDescription, guideLinks |
-| Count > 0 AND replan keywords | REPLAN | ln-302-task-replanner | taskType=implementation, Story data, IDEAL plan, guideLinks, existingTaskIds |
-| Count > 0 AND ambiguous | ASK | Clarify with user | — |
+Checkpoint payload:
+- `pass`
+- `final_result`
 
+## Pending Decisions
 
-### Phase 4: Delegate to Worker
+Use runtime `PAUSED + pending_decision` for:
+- ambiguous `ADD` vs `REPLAN`
+- readiness approval for score `4-5`
+- missing critical Story context
 
-> **MANDATORY STEP:** Worker invocation required. Never create/update Linear or task files directly.
+## Worker Contract
 
-**CREATE/ADD mode:**
-```
-Skill(skill: "ln-301-task-creator", args: "{storyId}")
-```
+Workers:
+- do not know the coordinator
+- do not read runtime state
+- remain standalone
+- may receive `summaryArtifactPath`
+- return shared summary envelope either way
 
-**REPLAN mode:**
-```
-Skill(skill: "ln-302-task-replanner", args: "{storyId}")
-```
-
-## Plan Mode Behavior
-When invoked in Plan Mode (read-only):
-- Execute Phases 1-3 normally (Discovery, Decompose, Check Existing)
-- Phase 4: DO NOT delegate to workers — instead show IDEAL plan preview:
-  - Task titles, goals, estimates, Foundation-First order
-  - Mode detected (CREATE/ADD/REPLAN)
-  - What worker WOULD be invoked (ln-301 or ln-302)
-- Phase 5: Write plan summary to plan file (not Linear)
-- NO Linear API calls, NO kanban updates, NO worker invocations
-
-**TodoWrite format (mandatory):**
-Add phases to todos before starting:
-```
-- Phase 1: Discovery (in_progress)
-- Phase 2: Decompose & Build IDEAL Plan (pending)
-- Phase 3: Check Existing & Detect Mode (pending)
-- Phase 4: Delegate to ln-301/ln-302 (pending)
-- Phase 5: Verify worker result (pending)
-```
-Mark each as in_progress when starting, completed when done.
-
+Expected summary kind:
+- `task-plan`
 
 ## Worker Invocation (MANDATORY)
 
-| Mode | Worker | Context |
-|------|--------|--------|
-| CREATE/ADD | ln-301-task-creator | Shared (Skill tool) — creates tasks from IDEAL plan |
-| REPLAN | ln-302-task-replanner | Shared (Skill tool) — compares IDEAL vs existing, applies changes |
+| Phase | Worker | Context |
+|-------|--------|---------|
+| 5 | `ln-301-task-creator` | CREATE or ADD path |
+| 5 | `ln-302-task-replanner` | REPLAN path |
 
-**All workers:** Invoke via Skill tool in same context — workers see coordinator's IDEAL plan and scan results.
+```text
+Skill(skill: "ln-301-task-creator", args: "{storyId}")
+Skill(skill: "ln-302-task-replanner", args: "{storyId}")
+```
 
-**Anti-Patterns:**
-- ❌ Creating Linear issues or task files directly instead of invoking workers
-- ❌ Marking Phase 4 done without Skill invocation
-- ❌ Invoking both workers (only one per mode)
+## TodoWrite format (mandatory)
+
+```text
+- Phase 1: Discover Story context (pending)
+- Phase 2: Build ideal task plan (pending)
+- Phase 3: Run readiness gate (pending)
+- Phase 4: Detect mode (pending)
+- Phase 5: Delegate to worker (pending)
+- Phase 6: Verify worker result (pending)
+- Phase 7: Self-check (pending)
+```
 
 ## Critical Rules
-- Decompose-first: always build IDEAL plan before looking at existing tasks.
-- Foundation-First execution order per `creation_quality_checklist.md` #13.
-- Task limits: 1-8 implementation tasks, 3-5h each (3-5 tasks optimal). Test task created later by test planner.
-- Linear creation must be sequential: create one task, confirm success, then create the next (no bulk) to catch errors early.
-- **HARD CONSTRAINT:** This skill creates ONLY implementation tasks (taskType=implementation). NEVER include test tasks, manual testing tasks, or refactoring tasks in the plan. Test tasks are created LATER by test planner (after manual testing passes). Refactoring tasks are created by quality gate when code quality issues found.
-- No code snippets in descriptions; workers own task documents and Linear/kanban updates.
-- Language preservation: keep Story language (EN/RU) in any generated content by workers.
 
-## Definition of Done (orchestrator)
-- [ ] Team ID discovered; storyId resolved (per input_resolution_pattern.md)
-- [ ] Story loaded; IDEAL plan built (1-8 implementation tasks only) with Foundation-First order and guide links
-- [ ] NO test or refactoring tasks in IDEAL plan (only taskType=implementation)
-- [ ] Existing tasks counted; mode selected (CREATE/ADD/REPLAN or ask)
-- [ ] Worker invoked with correct payload and autoApprove=true
-- [ ] Worker summary received (Linear URLs/operations) and kanban update confirmed
-- [ ] Next steps returned to user
+- Build the ideal plan before looking at existing tasks.
+- Readiness gate is the only source of delegation readiness.
+- Do not create test or refactoring tasks in this skill.
+- Do not keep approval state in chat-only form.
+- Consume worker summaries, not free-text worker prose.
+
+## Definition of Done
+
+- [ ] Runtime started with Story-scoped identifier
+- [ ] Discovery checkpointed
+- [ ] Ideal plan checkpointed
+- [ ] Readiness gate checkpointed
+- [ ] Mode detection checkpointed
+- [ ] Task-plan worker summary recorded
+- [ ] Verification checkpointed
+- [ ] Self-check passed
 
 ## Meta-Analysis
 
 **MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
 
-Skill type: `planning-coordinator`. Run after all phases complete. Output to chat using the `planning-coordinator` format.
-
-## Reference Files
-- **Tools config:** `shared/references/tools_config_guide.md`
-- **Storage mode operations:** `shared/references/storage_mode_detection.md`
-- **[MANDATORY] Problem-solving approach:** `shared/references/problem_solving.md`
-- **Orchestrator lifecycle:** `shared/references/orchestrator_pattern.md`
-- **Auto-discovery patterns:** `shared/references/auto_discovery_pattern.md`
-- **Decompose-first pattern:** `shared/references/decompose_first_pattern.md`
-- **Plan mode behavior:** `shared/references/plan_mode_pattern.md`
-- **Numbering conventions:** `shared/references/numbering_conventions.md` (Task per-Story numbering)
-- Templates (centralized): `shared/templates/task_template_implementation.md`
-- Local copies: `docs/templates/task_template_implementation.md` (in target project, created by workers)
-- Replan algorithm details: `ln-302-task-replanner/references/replan_algorithm.md`
-- Auto-discovery notes: `CLAUDE.md`, `docs/tasks/kanban_board.md`
+Skill type: `planning-coordinator`. Run after all phases complete. Output to chat using the protocol format.
 
 ---
 **Version:** 4.0.0

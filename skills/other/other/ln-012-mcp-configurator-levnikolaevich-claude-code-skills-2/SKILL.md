@@ -19,8 +19,10 @@ Configures MCP servers in Claude Code: installs npm packages, registers servers,
 
 | Direction | Content |
 |-----------|---------|
-| **Input** | OS info, `dry_run` flag |
-| **Output** | Per-server status (`configured` / `added` / `updated` / `skipped` / `failed`) |
+| **Input** | OS info, `dry_run` flag, optional `runId`, optional `summaryArtifactPath` |
+| **Output** | Structured summary envelope with per-server status (`configured` / `added` / `updated` / `skipped` / `failed`) |
+
+If `summaryArtifactPath` is provided, write the same summary JSON there. If not provided, return the summary inline and remain fully standalone.
 
 ---
 
@@ -161,7 +163,7 @@ MUST call `mcp__hex-line__setup_hooks(agent="all")` AFTER all Phase 2 registrati
 
 **Note:** `setup_hooks(agent="all")` also syncs MCP server entries and hook paths for Gemini. Codex is reported as "not supported" (expected). After this call, ln-013 should verify Gemini state rather than blindly overwriting.
 
-**Note:** ln-010 Phase 3c also calls `setup_hooks(agent="all")` unconditionally during verification. Double-call is intentional and harmless (idempotent). Ensures hooks are current even when ln-012 is not dispatched.
+**Note:** `setup_hooks(agent="all")` is idempotent. Calling it again during later verification is safe and keeps hooks current.
 
 ### Phase 4: Graph Indexing
 

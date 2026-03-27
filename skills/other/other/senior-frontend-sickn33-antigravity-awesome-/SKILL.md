@@ -11,7 +11,6 @@ date_added: "2026-03-07"
 Frontend development patterns, performance optimization, and automation tools for React/Next.js applications.
 
 ## When to Use
-
 - Use when scaffolding a new React or Next.js project with TypeScript and Tailwind CSS.
 - Use when generating new components or custom hooks.
 - Use when analyzing and optimizing bundle sizes for frontend applications.

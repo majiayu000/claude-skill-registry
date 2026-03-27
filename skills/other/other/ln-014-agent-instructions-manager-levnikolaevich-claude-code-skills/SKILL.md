@@ -13,6 +13,15 @@ license: MIT
 
 Creates missing instruction files and audits all (CLAUDE.md, AGENTS.md, GEMINI.md) for quality, consistency, and best practices.
 
+## Input / Output
+
+| Direction | Content |
+|-----------|---------|
+| **Input** | project context, `dry_run` flag, optional `runId`, optional `summaryArtifactPath` |
+| **Output** | Structured summary envelope with created files, audit findings, and warnings |
+
+If `summaryArtifactPath` is provided, write the same summary JSON there. If not provided, return the summary inline and remain fully standalone.
+
 ## When to Use
 
 - After editing any instruction file

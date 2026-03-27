@@ -299,6 +299,12 @@ If target metric not reached after all hypotheses:
 
 ---
 
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
+
+Write `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-execution/{slug}.json` before finishing.
+
 ## Definition of Done
 
 - [ ] Baseline established using same metric type as observed problem
@@ -312,6 +318,7 @@ If target metric not reached after all hypotheses:
 - [ ] Report returned with baseline, final, improvement%, strike result
 - [ ] All changes on isolated branch, pushed to remote
 - [ ] Gap analysis provided if target metric not met
+- [ ] Optimization execution artifact written to the shared location
 
 ---
 

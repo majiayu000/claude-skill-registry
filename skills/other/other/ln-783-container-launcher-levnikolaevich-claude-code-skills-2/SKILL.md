@@ -10,7 +10,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 7XX Project Bootstrap
-**Parent:** ln-780-bootstrap-verifier
 
 ---
 
@@ -36,7 +35,7 @@ Builds Docker images, launches containers, and performs comprehensive health ver
 
 | Scenario | Use This Skill |
 |----------|---------------|
-| Called by ln-780 orchestrator | Yes |
+| Standalone-capable | Yes |
 | Standalone container launch | Yes |
 | Development environment setup | Yes |
 | Production deployment | No, use proper CI/CD |

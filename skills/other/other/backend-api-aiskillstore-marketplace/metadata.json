@@ -2,8 +2,16 @@
   "name": "backend-api",
   "repo": "aiskillstore/marketplace",
   "path": "skills/devanb/backend-api/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/aiskillstore/marketplace",
   "dir_name": "backend-api-aiskillstore-marketplace",
-  "downloaded_at": "2026-02-10T16:28:53.037593Z"
+  "downloaded_at": "2026-03-27T01:23:52.240840Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/devanb/backend-api/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/devanb/backend-api/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

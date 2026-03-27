@@ -13,6 +13,7 @@ allowed-tools:
   - Glob
   - WebFetch
   - WebSearch
+  - bitwize-music-mcp
 ---
 
 ## Your Task

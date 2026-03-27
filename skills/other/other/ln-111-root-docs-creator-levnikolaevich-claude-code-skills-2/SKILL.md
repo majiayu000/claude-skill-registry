@@ -1,6 +1,6 @@
 ---
 name: ln-111-root-docs-creator
-description: "Creates root documentation files (CLAUDE.md, docs/README.md, standards, principles, tools config). Use for initial project doc setup."
+description: "Creates root documentation files (AGENTS.md, CLAUDE.md, docs/README.md, standards, principles, tools config). Use for initial project doc setup."
 license: MIT
 ---
 
@@ -8,10 +8,12 @@ license: MIT
 
 # Root Documentation Creator
 
-L3 Worker that creates 5 root documentation files using templates and Context Store from coordinator.
+**Type:** L3 Worker
+
+L3 Worker that creates 6 root documentation files using templates and Context Store from coordinator.
 
 ## Purpose & Scope
-- Creates 5 root documentation files (entry points for AI agents + tool configuration)
+- Creates 6 root documentation files (entry points for AI agents + tool configuration)
 - Receives Context Store from ln-110-project-docs-coordinator
 - Replaces placeholders with project-specific data
 - Self-validates structure and content (22 questions)
@@ -34,12 +36,15 @@ From coordinator:
 
 **LEGACY_CONTENT** is used as base content when creating principles.md. Priority: **Legacy > Template defaults**.
 
-## Documents Created (5)
+**MANDATORY READ:** Load `shared/references/docs_quality_contract.md` and `shared/references/docs_quality_rules.json`.
+
+## Documents Created (6)
 
 | File | Target Sections | Questions |
 |------|-----------------|-----------|
-| CLAUDE.md | Critical Rules, Documentation Navigation, Development Commands, Maintenance | Q1-Q6 |
-| docs/README.md | Overview, Standards, Writing Guidelines, Quick Navigation, Maintenance | Q7-Q13 |
+| AGENTS.md | Quick Navigation, Agent Entry, Critical Rules, Development Commands, Maintenance | Q1-Q6 |
+| CLAUDE.md | Quick Navigation, Agent Entry, Anthropic-specific notes, Maintenance | Q1-Q6 |
+| docs/README.md | Quick Navigation, Agent Entry, Documentation Map, Maintenance | Q7-Q13 |
 | docs/documentation_standards.md | Quick Reference (60+ requirements), 12 main sections, Maintenance | Q14-Q16 |
 | docs/principles.md | Core Principles (8), Decision Framework, Anti-Patterns, Verification, Maintenance | Q17-Q22 |
 | docs/tools_config.md | Task Management, Research, File Editing, External Agents, Git | Auto-detected |
@@ -52,11 +57,22 @@ From coordinator:
 3. Set defaults for missing optional keys
 
 ### Phase 2: Create Documents
-For each document (CLAUDE.md, docs/README.md, documentation_standards.md, principles.md):
+For each document (AGENTS.md, CLAUDE.md, docs/README.md, documentation_standards.md, principles.md, tools_config.md):
 1. Check if file exists (idempotent)
 2. If exists: skip with log
 3. If not exists:
    - Copy template from `references/templates/`
+   - Enforce the shared header contract:
+     - `SCOPE`
+     - `DOC_KIND`
+     - `DOC_ROLE`
+     - `READ_WHEN`
+     - `SKIP_WHEN`
+     - `PRIMARY_SOURCES`
+   - Enforce the shared top-section contract:
+     - `## Quick Navigation`
+     - `## Agent Entry`
+     - `## Maintenance`
    - **Check LEGACY_CONTENT for this document type:**
      - For `principles.md`: If `LEGACY_CONTENT.legacy_principles` exists:
        - Use `legacy_principles.principles[]` as base for "## Core Principles" section
@@ -66,8 +82,14 @@ For each document (CLAUDE.md, docs/README.md, documentation_standards.md, princi
        - Mark: `<!-- Migrated from legacy documentation -->` at top of relevant sections
      - For other documents: Use template as-is (no legacy content applicable)
    - Replace `{{PLACEHOLDER}}` with Context Store values
-   - Mark `[TBD: X]` for missing data (never leave empty placeholders)
+   - Never leave template markers in published root docs
+   - If data is missing: omit the claim or use a concise neutral fallback, but do NOT emit `[TBD: ...]`
    - Write file
+
+**Root entrypoint rule:**
+- `AGENTS.md` is the canonical machine-facing map
+- `CLAUDE.md` must stay thin and point to `AGENTS.md`
+- Do not duplicate the full project knowledge base in both files
 
 ### Phase 2b: Create Tools Config
 
@@ -88,20 +110,32 @@ For `docs/tools_config.md`:
 
 ### Phase 3: Self-Validate
 For each created document:
-1. Check SCOPE tag in first 10 lines
-2. Check required sections (from questions_root.md)
-3. Check Maintenance section (Update Triggers, Verification, Last Updated)
-4. Check POSIX endings (single newline at end)
-5. Auto-fix issues where possible
+1. Check SCOPE tag in first 12 lines
+2. Check metadata markers (`DOC_KIND`, `DOC_ROLE`, `READ_WHEN`, `SKIP_WHEN`, `PRIMARY_SOURCES`)
+3. Check `Quick Navigation`, `Agent Entry`, and `Maintenance`
+4. Check required sections (from questions_root.md)
+5. Check docs-quality contract compliance (no forbidden placeholders, no leaked template metadata)
+6. Check POSIX endings (single newline at end)
+7. Auto-fix issues where possible
 
 ### Phase 4: Return Status
 Return to coordinator:
 ```json
 {
-  "created": ["CLAUDE.md", "docs/README.md", ...],
-  "skipped": [],
-  "tbd_count": 3,
-  "validation": "OK"
+  "created_files": ["AGENTS.md", "CLAUDE.md", "docs/README.md", "docs/documentation_standards.md", "docs/principles.md", "docs/tools_config.md"],
+  "skipped_files": [],
+  "quality_inputs": {
+    "doc_paths": ["AGENTS.md", "CLAUDE.md", "docs/README.md", "docs/documentation_standards.md", "docs/principles.md", "docs/tools_config.md"],
+    "owners": {
+      "AGENTS.md": "ln-111-root-docs-creator",
+      "CLAUDE.md": "ln-111-root-docs-creator",
+      "docs/README.md": "ln-111-root-docs-creator",
+      "docs/documentation_standards.md": "ln-111-root-docs-creator",
+      "docs/principles.md": "ln-111-root-docs-creator",
+      "docs/tools_config.md": "ln-111-root-docs-creator"
+    }
+  },
+  "validation_status": "passed"
 }
 ```
 
@@ -110,9 +144,10 @@ Return to coordinator:
 ### Core Rules
 - **Idempotent:** Never overwrite existing files; skip and log
 - **No context gathering:** All data comes from coordinator's Context Store
-- **TBD markers:** Use `[TBD: placeholder_name]` for missing data, never `{{PLACEHOLDER}}`
+- **Publishable output:** Root docs must not contain `[TBD: ...]`, `TODO`, or leaked template metadata
 - **Language:** All root docs in English (universal standards)
 - **SCOPE tags:** Required in first 10 lines of each file
+- **Map-first root model:** `AGENTS.md` is canonical; `CLAUDE.md` is a compatibility shim
 
 ### NO_CODE_EXAMPLES Rule (MANDATORY)
 Root documents define **navigation and standards**, NOT implementations:
@@ -130,14 +165,14 @@ Tables/ASCII > Lists (enumerations only) > Text (last resort)
 
 ## Definition of Done
 - [ ] Context Store received and validated
-- [ ] 5 root documents created (or skipped if exist)
-- [ ] All placeholders replaced (or marked TBD); tools_config.md uses detected values
-- [ ] Self-validation passed (SCOPE, sections, Maintenance, POSIX)
+- [ ] 6 root documents created (or skipped if exist)
+- [ ] All placeholders replaced; no `[TBD: ...]` markers or template metadata remain in root docs
+- [ ] Self-validation passed (SCOPE, metadata markers, top sections, Maintenance, POSIX)
 - [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
 - [ ] Status returned to coordinator
 
 ## Reference Files
-- Templates: `references/templates/claude_md_template.md`, `docs_root_readme_template.md`, `documentation_standards_template.md`, `principles_template.md`, `tools_config_template.md`
+- Templates: `references/templates/agents_md_template.md`, `claude_md_template.md`, `docs_root_readme_template.md`, `documentation_standards_template.md`, `principles_template.md`, `tools_config_template.md`
 - Questions: `references/questions_root.md` (Q1-Q22)
 - **Tools config guide:** `shared/references/tools_config_guide.md` (detection and bootstrap pattern)
 

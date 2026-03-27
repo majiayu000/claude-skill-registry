@@ -12,6 +12,7 @@ allowed-tools:
   - Grep
   - Glob
   - Bash
+  - bitwize-music-mcp
 ---
 
 ## Your Task

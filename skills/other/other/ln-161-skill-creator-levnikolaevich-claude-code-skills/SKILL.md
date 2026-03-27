@@ -10,9 +10,8 @@ license: MIT
 
 **Type:** L3 Worker (standalone-capable)
 **Category:** 1XX Documentation Pipeline
-**Coordinator:** ln-160-docs-skill-extractor (optional)
 
-Creates `.claude/commands/*.md` files from procedural documentation sections. Transforms declarative prose into imperative executable instructions.
+Creates `.claude/commands/*.md` files from procedural documentation sections. It converts procedural prose into imperative command instructions without changing the source docs.
 
 ---
 
@@ -20,9 +19,10 @@ Creates `.claude/commands/*.md` files from procedural documentation sections. Tr
 
 | Aspect | Details |
 |--------|---------|
-| **Input** | Procedural doc sections (from ln-160 contextStore or standalone scan) |
+| **Input** | Approved procedural sections or standalone docs scan |
 | **Output** | `.claude/commands/*.md` files in target project |
 | **Template** | `references/command_template.md` |
+| **Read mode** | Section-first markdown reading |
 
 ---
 
@@ -30,39 +30,45 @@ Creates `.claude/commands/*.md` files from procedural documentation sections. Tr
 
 | Mode | Trigger | Behavior |
 |------|---------|----------|
-| **Worker** | Invoked by ln-160 with contextStore | Use provided sections directly |
-| **Standalone** | Invoked directly with `$ARGUMENTS` | Self-discover + classify docs |
+| **Provided sections** | Context contains `approved_sections` | Use supplied sections directly |
+| **Standalone** | Invoked directly with `$ARGUMENTS` | Self-discover, classify, and create commands |
 
 ### Standalone Discovery
 
-When invoked directly (not via ln-160):
-1. If `$ARGUMENTS` = file paths -> read those docs, extract procedural sections
-2. If `$ARGUMENTS` = "all" or empty -> scan `docs/` recursively
-3. Classify sections using same rules as ln-160 Phase 2
-
-**MANDATORY READ:** Load `../ln-160-docs-skill-extractor/references/classification_rules.md` (standalone mode only)
-
-4. Present extraction plan to user via AskUserQuestion
-5. Create approved commands
-6. Recommend user to run ln-162-skill-reviewer for quality review
+When invoked without `approved_sections`:
+1. Read `shared/references/procedural_extraction_rules.md`, `shared/references/markdown_read_protocol.md`, and `shared/references/docs_quality_contract.md`
+2. Scan docs-first sources:
+   - `docs/**/*.md`
+   - `tests/README.md`
+   - `tests/manual/**/*`
+   - `README.md`
+   - `CONTRIBUTING.md`
+3. Use `AGENTS.md`, `CLAUDE.md`, and `docs/project/.context/doc_registry.json` only to route discovery
+4. Classify candidate sections with the shared procedural extraction rules
+5. Present the extraction plan to the user for approval
+6. Create approved commands
 
 ---
 
-## Workflow (Worker Mode)
+## Workflow
 
 ### Phase 1: Prepare
 
-Receive contextStore with approved procedural sections:
-```yaml
-approved_sections:
-  - source_file: docs/project/runbook.md
-    section_header: "Deployment"
-    line_range: [45, 92]
-    command_name: deploy.md
-  - source_file: tests/README.md
-    section_header: "Running Tests"
-    line_range: [15, 48]
-    command_name: run-tests.md
+Receive or build this normalized input:
+
+```json
+{
+  "approved_sections": [
+    {
+      "source_file": "docs/project/runbook.md",
+      "section_header": "Deployment",
+      "line_range": [45, 92],
+      "command_name": "deploy.md",
+      "doc_kind": "how-to",
+      "doc_role": "canonical"
+    }
+  ]
+}
 ```
 
 **MANDATORY READ:** Load `references/command_template.md`
@@ -71,40 +77,40 @@ approved_sections:
 
 For each approved section:
 
-1. **Read source** -- extract section content from source file at specified line range
-
-2. **Detect allowed-tools** -- infer from content:
+1. Read the source section using the shared markdown read protocol
+2. Ignore standardized doc shell content if it appears in the selected range:
+   - header markers such as `DOC_KIND`, `DOC_ROLE`, `READ_WHEN`, `SKIP_WHEN`, `PRIMARY_SOURCES`
+   - `Quick Navigation`
+   - `Agent Entry`
+   - `Maintenance`
+3. Detect `allowed-tools`
 
 | Content Pattern | Tool |
 |----------------|------|
-| bash/sh code blocks, shell commands | Bash |
-| File read/load references | Read |
-| File modify/update instructions | Edit |
-| Search/find in files | Grep, Glob |
-| Skill invocations | Skill |
-| User confirmation steps | AskUserQuestion |
+| shell commands or fenced `bash` / `sh` blocks | Bash |
+| file reads or config inspection | Read |
+| file updates | Edit |
+| search steps | Grep, Glob |
+| skill calls | Skill |
+| approval gates | AskUserQuestion |
 
-3. **Transform content** using rules below
-
-4. **Write file** to `.claude/commands/{command_name}`
-
-### Transformation Rules
+4. Transform the content with these rules:
 
 | Rule | From | To |
 |------|------|----|
-| Voice | Declarative ("The system uses X") | Imperative ("Run X") |
-| Code blocks | Preserve as-is | Keep unchanged |
-| Numbered lists | Description-style | Ordered workflow steps with ### headers |
-| Verification | Implicit ("should work") | Explicit verification commands |
-| Doc metadata | SCOPE tags, Maintenance sections | Remove |
-| Troubleshooting | Prose | Table format (Issue / Solution) |
-| Prerequisites | Mentioned inline | Dedicated Prerequisites table |
-| Related docs | Inline references | Related Documentation section with relative links |
-| Trigger phrases | Missing in source | Append "Use when {inferred from section context}" to description |
+| Voice | Declarative prose | Imperative instructions |
+| Code blocks | Source shell blocks | Preserve when executable |
+| Numbered lists | Doc prose | Ordered workflow steps |
+| Verification | Implicit expectations | Explicit verification checks |
+| Doc shell | Metadata and navigation | Remove |
+| Source provenance | Implied only | Explicit `Source` section |
+| Related docs | Inline refs | `Related Documentation` section |
+
+5. Write `.claude/commands/{command_name}` if the file does not already exist
 
 ### Phase 3: Report
 
-Return to coordinator (or display to user in standalone mode):
+Return:
 
 ```yaml
 created:
@@ -112,36 +118,34 @@ created:
     source: docs/project/runbook.md#Deployment
     lines: 85
     tools: [Bash, Read]
-  - file: .claude/commands/run-tests.md
-    source: tests/README.md#Running Tests
-    lines: 62
-    tools: [Bash]
-summary: "Created 2 commands from 2 procedural sections"
+summary: "Created 1 command from 1 procedural section"
 ```
 
 ---
 
 ## Critical Rules
 
-- **Template-driven:** All output follows `references/command_template.md` structure
-- **Preserve source:** Never modify or delete source documentation files
-- **No invention:** Only extract content that exists in source docs. Do NOT add commands, steps, or paths not found in the original
-- **Imperative voice:** Every instruction must be actionable -- no passive descriptions
-- **Relative paths:** All file references in created commands use paths relative to project root
-- **Idempotent:** If command file already exists, skip (do not overwrite)
-
----
+- **Template-driven:** All output follows `references/command_template.md`.
+- **Preserve source:** Never modify or delete source docs.
+- **No invention:** Do not add commands, steps, or paths absent from the source.
+- **Imperative voice:** Every retained instruction must be actionable.
+- **No copied doc shell:** Do not copy `DOC_KIND`, `DOC_ROLE`, `Quick Navigation`, `Agent Entry`, or `Maintenance` into commands.
+- **Source provenance:** Every generated command must point back to its source doc and section.
+- **Relative paths:** File references must stay relative to project root.
+- **Idempotent:** Skip existing command files; do not overwrite them.
 
 ## Definition of Done
 
-- [ ] Source sections read at specified line ranges
-- [ ] Allowed-tools detected per content patterns
-- [ ] Content transformed to imperative voice (all transformation rules applied)
-- [ ] Files written to `.claude/commands/{command_name}`
-- [ ] Existing command files not overwritten (idempotent)
-- [ ] Report returned with created file list and summary
+- [ ] Approved sections received or discovered
+- [ ] Source sections read with section-first protocol
+- [ ] Allowed-tools detected per command
+- [ ] Content transformed into imperative workflow steps
+- [ ] Standard doc shell content removed from command output
+- [ ] Source provenance included in each created command
+- [ ] Existing command files not overwritten
+- [ ] Creation report returned
 
 ---
 
 **Version:** 1.0.0
-**Last Updated:** 2026-03-13
+**Last Updated:** 2026-03-26

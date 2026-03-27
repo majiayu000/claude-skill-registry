@@ -7,6 +7,7 @@ allowed-tools:
   - Read
   - Bash
   - Write
+  - bitwize-music-mcp
 ---
 
 ## Your Task

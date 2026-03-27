@@ -2,8 +2,16 @@
   "name": "devflow",
   "repo": "aiskillstore/marketplace",
   "path": "skills/cygnusfear/devflow/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/aiskillstore/marketplace",
   "dir_name": "devflow",
-  "downloaded_at": "2026-02-11T01:24:47.995256Z"
+  "downloaded_at": "2026-03-27T01:23:50.935103Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/cygnusfear/devflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/cygnusfear/devflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

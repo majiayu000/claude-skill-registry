@@ -19,8 +19,10 @@ Installs or updates CLI agents via npm and Claude CLI. Single pass per agent: in
 
 | Direction | Content |
 |-----------|----------|
-| **Input** | OS info, `disabled` flags per agent, `dry_run` flag |
-| **Output** | Per-agent status: `installed` / `updated` / `skipped` / `disabled` / `failed` |
+| **Input** | OS info, `disabled` flags per agent, `dry_run` flag, optional `runId`, optional `summaryArtifactPath` |
+| **Output** | Structured summary envelope with per-agent status: `installed` / `updated` / `skipped` / `disabled` / `failed` |
+
+If `summaryArtifactPath` is provided, write the same summary JSON there. If not provided, return the summary inline and remain fully standalone.
 
 ---
 

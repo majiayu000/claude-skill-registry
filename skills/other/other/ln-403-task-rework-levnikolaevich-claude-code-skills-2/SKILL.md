@@ -9,6 +9,8 @@ license: MIT
 
 # Task Rework Executor
 
+**Type:** L3 Worker
+
 Executes rework for a single task marked To Rework and hands it back for review.
 
 ## Purpose & Scope
@@ -59,12 +61,19 @@ Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
 - No new tests/tasks created here; only update existing tests if impacted.
 - **Do NOT commit.** Leave all changes uncommitted — the reviewer reviews and commits.
 
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
+
+Write `.hex-skills/runtime-artifacts/runs/{run_id}/task-status/{task_id}.json` before finishing.
+
 ## Definition of Done
 - [ ] Task and review feedback fully read; actions mapped.
 - [ ] Fixes applied; docs/tests updated as required.
 - [ ] Quality checks passed (typecheck/lint or project standards).
 - [ ] Root cause classified (missing context | wrong pattern | unclear AC | doc gap); doc/template updated if gap found.
 - [ ] Status set to To Review; kanban updated; summary comment with fixed items + root cause.
+- [ ] Runtime summary artifact written to the shared task-status location.
 
 ## Reference Files
 - **Tools config:** `shared/references/tools_config_guide.md`

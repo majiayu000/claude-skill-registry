@@ -8,6 +8,8 @@ license: MIT
 
 # Project Documentation Coordinator
 
+**Type:** L2 Coordinator
+
 L2 Coordinator that gathers project context once and delegates document creation to specialized L3 workers.
 
 ## Purpose & Scope
@@ -16,6 +18,7 @@ L2 Coordinator that gathers project context once and delegates document creation
 - **Delegates to 5 workers** — passes Context Store to each worker
 - **Aggregates results** — collects status from all workers, returns summary
 - Solves the "context loss" problem by gathering data once and passing explicitly
+- Builds the routing table used by `ln-100` docs-quality repair loop
 
 ## Invocation (who/when)
 - **ln-100-documents-pipeline:** Invoked as first L2 coordinator in documentation pipeline
@@ -40,6 +43,8 @@ L2 Coordinator that gathers project context once and delegates document creation
 ```
 
 **LEGACY_CONTENT** is passed to workers as base content. Priority: **Legacy > Auto-discovery > Template defaults**.
+
+**MANDATORY READ:** Load `shared/references/docs_quality_contract.md`.
 
 ## Architecture
 
@@ -169,15 +174,16 @@ Agent(description: "{doc_type} docs via {worker}",
 **Delegation Rules:**
 - Pass Context Store and flags to workers via Agent+Skill pattern
 - Wait for all Agent completions
-- Collect result (created, skipped, tbd_count, validation)
+- Collect normalized result (`created_files`, `skipped_files`, `quality_inputs`, `validation_status`)
 
 ### Phase 3: Aggregate Results
 
 1. Collect status from all workers
-2. Sum totals: created files, skipped files, TBD markers
+2. Sum totals: created files, skipped files
 3. Report any validation warnings
 4. Return aggregated summary to ln-100
 5. **Include Context Store** for subsequent workers (ln-120 needs TECH_STACK)
+6. Merge `quality_inputs.owners` from all workers into one repair-routing table
 
 **Output:**
 ```json
@@ -185,9 +191,9 @@ Agent(description: "{doc_type} docs via {worker}",
   "workers_invoked": 5,
   "total_created": 11,
   "total_skipped": 0,
-  "total_tbd": 8,
-  "validation_status": "OK",
-  "files": [
+  "validation_status": "passed",
+  "created_files": [
+    "AGENTS.md",
     "CLAUDE.md",
     "docs/README.md",
     "docs/documentation_standards.md",
@@ -201,6 +207,14 @@ Agent(description: "{doc_type} docs via {worker}",
     "docs/project/infrastructure.md",
     "docs/project/runbook.md"
   ],
+  "quality_inputs": {
+    "doc_paths": ["AGENTS.md", "CLAUDE.md", "docs/README.md", "docs/project/architecture.md"],
+    "owners": {
+      "AGENTS.md": "ln-111-root-docs-creator",
+      "CLAUDE.md": "ln-111-root-docs-creator",
+      "docs/project/architecture.md": "ln-112-project-core-creator"
+    }
+  },
   "context_store": {
     "PROJECT_NAME": "...",
     "TECH_STACK": { "frontend": "React 18", "backend": "Express 4.18", "database": "PostgreSQL 15" },
@@ -216,6 +230,7 @@ Agent(description: "{doc_type} docs via {worker}",
 - **Workers self-validate** — coordinator only aggregates
 - **Idempotent** — workers skip existing files
 - **Parallel where possible** — ln-111 and ln-112 can run in parallel
+- **Repair routing table required** — every created doc path must map to one owning creator
 
 
 ## Worker Invocation (MANDATORY)

@@ -32,6 +32,8 @@ It orchestrates two major workflows plus the implementation bridge between them.
 
 ### Stage 1: Idea Discovery (Workflow 1)
 
+If `RESEARCH_BRIEF.md` exists in the project root, it will be automatically loaded as detailed context (replaces one-line prompt). See `templates/RESEARCH_BRIEF_TEMPLATE.md`.
+
 Invoke the idea discovery pipeline:
 
 ```

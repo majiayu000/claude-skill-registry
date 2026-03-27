@@ -11,6 +11,7 @@ allowed-tools:
   - Write
   - Glob
   - Grep
+  - bitwize-music-mcp
 ---
 
 # Promo Writer Skill

@@ -269,6 +269,12 @@ Read-only worker — all phases use MCP research tools (Ref, Context7, WebSearch
 
 ---
 
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
+
+Write `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-research/{slug}.json` before finishing.
+
 ## Definition of Done
 
 - [ ] Competitive analysis completed (industry benchmarks, competitor approaches)
@@ -278,7 +284,8 @@ Read-only worker — all phases use MCP research tools (Ref, Context7, WebSearch
 - [ ] Local codebase checked for existing unused capabilities
 - [ ] 3-7 hypotheses generated, ordered by expected impact
 - [ ] Dependencies and conflicts between hypotheses identified
-- [ ] Research report returned to coordinator with sources
+- [ ] Research report prepared with sources
+- [ ] Optimization research artifact written to the shared location
 
 ---
 

@@ -1,0 +1,17 @@
+{
+  "name": "review-this-branch",
+  "repo": "JasonWarrenUK/goblin-mode",
+  "path": "skills/review-this-branch/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/JasonWarrenUK/goblin-mode",
+  "dir_name": "review-this-branch",
+  "downloaded_at": "2026-03-27T01:17:32.586164Z",
+  "author": "JasonWarrenUK",
+  "source_url": "https://github.com/JasonWarrenUK/goblin-mode/blob/main/skills/review-this-branch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JasonWarrenUK/goblin-mode/blob/main/skills/review-this-branch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

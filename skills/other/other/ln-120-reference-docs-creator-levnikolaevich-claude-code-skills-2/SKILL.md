@@ -8,6 +8,8 @@ license: MIT
 
 # Reference Documentation Creator
 
+**Type:** L2 Worker
+
 This skill creates the reference documentation structure (docs/reference/) and **smart documents** (ADRs, Guides, Manuals) based on project's TECH_STACK. Documents are created only when justified (nontrivial technology choices with alternatives).
 
 ## Purpose
@@ -46,6 +48,8 @@ This skill should be used directly when:
 
 **TECH_STACK** is used for smart document creation in Phase 2.
 
+**MANDATORY READ:** Load `shared/references/docs_quality_contract.md`, `shared/references/docs_quality_rules.json`, and `shared/references/markdown_read_protocol.md`.
+
 ## Workflow
 
 The skill follows a 4-phase workflow: **CREATE STRUCTURE** → **SMART DOCUMENT CREATION** → **VALIDATE STRUCTURE** → **VALIDATE CONTENT**. Phase 2 creates documents only for justified technology choices.
@@ -71,13 +75,15 @@ The skill follows a 4-phase workflow: **CREATE STRUCTURE** → **SMART DOCUMENT 
   - Skip creation
   - Log: "✓ docs/reference/README.md already exists, proceeding to validation"
 - If NOT exists:
-  - Copy template: `ln-112-reference-docs-creator/references/reference_readme_template.md` → `docs/reference/README.md`
+  - Copy template: `ln-120-reference-docs-creator/references/reference_readme_template.md` → `docs/reference/README.md`
   - Replace placeholders:
     - `{{VERSION}}` — "1.0.0"
     - `{{DATE}}` — current date (YYYY-MM-DD)
-    - `{{ADR_LIST}}` — kept as placeholder (filled in Phase 4)
-    - `{{GUIDE_LIST}}` — kept as placeholder (filled in Phase 4)
-    - `{{MANUAL_LIST}}` — kept as placeholder (filled in Phase 4)
+    - `{{ADR_LIST}}` — `- No ADRs yet. Add the first ADR when a nontrivial decision is accepted.`
+    - `{{GUIDE_LIST}}` — `- No project guides yet. Add guides when patterns need project-specific explanation.`
+    - `{{MANUAL_LIST}}` — `- No package manuals yet. Add manuals only for complex external APIs.`
+    - `{{RESEARCH_LIST}}` — `- No research notes yet. Add research only when a concrete question is investigated.`
+  - Preserve the shared opening contract and standard top sections from the template
   - Log: "✓ Created docs/reference/README.md from template"
 
 **1.3 Output**:
@@ -205,13 +211,13 @@ For each package with complex API:
 
 **Process**:
 
-**2.1 Check SCOPE tag**:
+**2.1 Check opening contract**:
 - Read `docs/reference/README.md` (first 5 lines)
-- Check for `<!-- SCOPE: ... -->` tag
+- Check for `<!-- SCOPE: ... -->` tag and metadata markers
 - Expected: `<!-- SCOPE: Reference documentation hub (ADRs, Guides, Manuals) with links to subdirectories -->`
 - If missing:
-  - Use Edit tool to add SCOPE tag at line 1 (after first heading)
-  - Track violation: `scope_tag_added = True`
+  - Use Edit tool to add missing opening markers near the top of the file
+  - Track violation: `opening_contract_fixed = True`
 
 **2.2 Check required sections**:
 - Load expected sections from `references/questions.md`
@@ -291,12 +297,12 @@ sections = [
     "name": "Architecture Decision Records (ADRs)",
     "question": "Where are architecture decisions documented?",
     "directory": "docs/reference/adrs/",
-    "placeholder": "{{ADR_LIST}}",
+    "empty_state": "No ADRs yet.",
     "glob_pattern": "docs/reference/adrs/*.md",
     "heuristics": [
       "Contains link: [ADRs](adrs/) or [adrs](adrs/)",
       "Mentions 'Architecture Decision Record' or 'ADR'",
-      "Has placeholder {{ADR_LIST}} or actual list",
+      "Has actual list or empty-state note",
       "Length > 30 words"
     ]
   },
@@ -304,11 +310,11 @@ sections = [
     "name": "Project Guides",
     "question": "Where are reusable project patterns documented?",
     "directory": "docs/reference/guides/",
-    "placeholder": "{{GUIDE_LIST}}",
+    "empty_state": "No project guides yet.",
     "glob_pattern": "docs/reference/guides/*.md",
     "heuristics": [
       "Contains link: [Guides](guides/) or [guides](guides/)",
-      "Has placeholder {{GUIDE_LIST}} or actual list",
+      "Has actual list or empty-state note",
       "Length > 20 words"
     ]
   },
@@ -316,11 +322,11 @@ sections = [
     "name": "Package Manuals",
     "question": "Where are third-party package references documented?",
     "directory": "docs/reference/manuals/",
-    "placeholder": "{{MANUAL_LIST}}",
+    "empty_state": "No package manuals yet.",
     "glob_pattern": "docs/reference/manuals/*.md",
     "heuristics": [
       "Contains link: [Manuals](manuals/) or [manuals](manuals/)",
-      "Has placeholder {{MANUAL_LIST}} or actual list",
+      "Has actual list or empty-state note",
       "Length > 20 words"
     ]
   },
@@ -328,11 +334,11 @@ sections = [
     "name": "Research",
     "question": "Where are research/investigation documents stored?",
     "directory": "docs/reference/research/",
-    "placeholder": "{{RESEARCH_LIST}}",
+    "empty_state": "No research notes yet.",
     "glob_pattern": "docs/reference/research/*.md",
     "heuristics": [
       "Contains link: [Research](research/) or [research](research/)",
-      "Has placeholder {{RESEARCH_LIST}} or actual list",
+      "Has actual list or empty-state note",
       "Length > 20 words"
     ]
   }
@@ -349,7 +355,7 @@ For each section in sections:
    - If ANY heuristic passes → content valid, skip to next section
    - If ALL fail → content invalid, continue
 
-3. **Auto-discovery** (if content invalid or placeholder present):
+3. **Auto-discovery** (if content invalid or empty-state present):
    - Scan directory using Glob tool (section.glob_pattern)
    - If files found:
      - Extract filenames
@@ -359,11 +365,11 @@ For each section in sections:
        - [02-Repository Pattern](guides/02-repository-pattern.md)
        - [Axios 1.6](manuals/axios-1.6.md)
        ```
-     - Use Edit tool to replace placeholder with generated list
+     - Use Edit tool to replace empty-state text with generated list
      - Track change: `sections_populated += 1`
    - If NO files:
-     - Keep placeholder as-is
-     - Track: `placeholders_kept += 1`
+     - Keep concise empty-state note
+     - Track: `empty_states_kept += 1`
 
 4. **Skip external API calls**:
    - Do NOT use MCP Ref search (template already has format examples)
@@ -450,10 +456,10 @@ Tables (Do/Don't/When) > ASCII diagrams > Lists > Text
 
 ## Prerequisites
 
-**Invoked by**: ln-110-documents-pipeline orchestrator
+**Invoked by**: ln-100-documents-pipeline orchestrator
 
 **Requires**:
-- `docs/` directory (created by ln-111-project-docs-creator)
+- `docs/` directory (created by ln-111-root-docs-creator or already present in target project)
 
 **Creates**:
 - `docs/reference/` directory structure with README hub
@@ -489,20 +495,42 @@ Before completing work, verify ALL checkpoints:
 - [ ] Each created document has real content (not placeholders)
 
 **✅ Phase 3 - Structure Validated:**
-- [ ] SCOPE tag present in first 5 lines
+- [ ] SCOPE tag and metadata markers present near top
+- [ ] Quick Navigation, Agent Entry, and Maintenance sections present
 - [ ] Four registry sections present (ADRs, Guides, Manuals, Research)
 - [ ] Maintenance section present at end
 - [ ] POSIX file endings compliant
 
 **✅ Phase 4 - Content Validated:**
 - [ ] All sections checked against questions.md
-- [ ] Placeholders populated from auto-discovery (including Phase 2 documents)
+- [ ] Empty-state notes or actual entries present in all registries (no raw placeholders)
 - [ ] No validation heuristic failures
 
 **✅ Reporting:**
 - [ ] Phase 1 logged: creation summary
 - [ ] Phase 2 logged: smart creation (created/skipped counts)
 - [ ] Phase 3 logged: structural fixes (if any)
+
+## Return Contract
+
+Return normalized status to ln-100:
+
+```json
+{
+  "created_files": ["docs/reference/README.md", "docs/reference/adrs/adr-001-frontend.md"],
+  "skipped_files": [],
+  "quality_inputs": {
+    "doc_paths": ["docs/reference/README.md", "docs/reference/adrs/adr-001-frontend.md"],
+    "owners": {
+      "docs/reference/README.md": "ln-120-reference-docs-creator",
+      "docs/reference/adrs/adr-001-frontend.md": "ln-120-reference-docs-creator"
+    }
+  },
+  "validation_status": "passed"
+}
+```
+
+**✅ Reporting (continued):**
 - [ ] Phase 4 logged: content updates (if any)
 
 ## Meta-Analysis

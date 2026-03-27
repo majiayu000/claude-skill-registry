@@ -1,7 +1,7 @@
 ---
 name: ln-612-semantic-content-auditor
 description: "Checks document semantic content against SCOPE and project goals, coverage gaps, off-topic content, SSOT. Use when auditing documentation relevance."
-allowed-tools: Read, Grep, Glob, Bash
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline
 license: MIT
 ---
 
@@ -9,12 +9,14 @@ license: MIT
 
 # Semantic Content Auditor (L3 Worker)
 
-Specialized worker auditing semantic accuracy of project documentation.
+**Type:** L3 Worker
+
+Specialized worker auditing semantic fitness of project documentation.
 
 ## Purpose & Scope
 
 - **Worker in ln-610 coordinator pipeline** - invoked by ln-610-docs-auditor for each project document
-- Verify document content **matches stated SCOPE** (document purpose)
+- Verify document content matches stated SCOPE and declared document kind
 - Check content **aligns with project goals** (value contribution)
 - Return structured findings to coordinator with severity, location, fix suggestions
 - Does NOT verify facts against codebase
@@ -25,7 +27,7 @@ Called ONLY for project documents (not reference/tasks):
 
 | Document | Verification Focus |
 |----------|-------------------|
-| `CLAUDE.md` | Instructions serve stated purpose, no off-topic content |
+| `AGENTS.md` / `CLAUDE.md` | Entry instructions stay scoped, navigable, and free of off-topic content |
 | `docs/README.md` | Navigation scope correct, descriptions relevant |
 | `docs/documentation_standards.md` | Standards applicable to this project type |
 | `docs/principles.md` | Principles relevant to project architecture |
@@ -42,7 +44,7 @@ Called ONLY for project documents (not reference/tasks):
 
 ## Inputs (from Coordinator)
 
-**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`, `shared/references/docs_quality_contract.md`, and `shared/references/markdown_read_protocol.md`.
 
 Receives from coordinator per invocation:
 
@@ -55,16 +57,33 @@ Receives from coordinator per invocation:
 
 ## Workflow
 
-### Phase 1: SCOPE EXTRACTION
+### Phase 1: Header and Contract Extraction
 
-1. Read document first 20 lines
-2. Parse `<!-- SCOPE: ... -->` comment
-3. If no SCOPE tag, infer from document type (see Verification Rules)
-4. Record stated purpose/boundaries
+1. Read document header and top sections first
+2. Parse:
+   - `SCOPE`
+   - `DOC_KIND`
+   - `DOC_ROLE`
+   - `READ_WHEN`
+   - `SKIP_WHEN`
+   - `PRIMARY_SOURCES`
+3. If no SCOPE tag, infer from document type
+4. Infer expected `DOC_KIND` from the shared contract when missing
+5. Record stated purpose and routing boundaries
 
-### Phase 2: CONTENT-SCOPE ALIGNMENT
+### Phase 2: Doc-Kind-Aware Semantic Audit
 
-Analyze document sections against stated scope:
+Judge the document according to its kind:
+
+| DOC_KIND | Main semantic question |
+|----------|------------------------|
+| `index` | Does it route efficiently and avoid deep factual overload? |
+| `reference` | Is it precise, complete enough, and easy to lookup? |
+| `how-to` | Is the procedure actionable and sequenced correctly? |
+| `explanation` | Does it build the right mental model and rationale? |
+| `record` | Does it preserve the decision trace and consequences? |
+
+Analyze the document against stated scope and kind:
 
 | Check | Finding Type |
 |-------|--------------|
@@ -72,6 +91,11 @@ Analyze document sections against stated scope:
 | Scope aspect not covered | MISSING_COVERAGE |
 | Excessive detail beyond scope | SCOPE_CREEP |
 | Content duplicated elsewhere | SSOT_VIOLATION |
+
+Read strategy:
+- header + top sections first
+- read only the body sections needed for judgment
+- read the full file only when the semantic judgment is unsafe without it
 
 **Scoring:**
 - 10/10: All content serves scope, scope fully covered
@@ -98,7 +122,7 @@ Coverage: how completely the scope is addressed. Relevance: how much content ser
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-Write report to `{output_dir}/612-semantic-{doc-slug}.md` where `doc-slug` is derived from document filename (e.g., `architecture`, `tech_stack`, `claude_md`).
+Write report to `{output_dir}/612-semantic-{doc-slug}.md` where `doc-slug` is derived from document filename (e.g., `architecture`, `tech_stack`, `agents_md`).
 
 With `category: "Semantic Content"` and checks: scope_alignment.
 
@@ -112,20 +136,22 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- **Read before judge:** Always read full document before reporting issues
+- **Read progressively:** Use section-first reading; full reads only when needed for safe judgment
 - **Scope inference:** If no SCOPE tag, use document filename to infer expected scope
+- **Doc-kind aware:** Judge by document purpose, not one generic rubric
 - **No false positives:** Better to miss an issue than report incorrectly
 - **Location precision:** Always include line number for findings
 - **Actionable fixes:** Every finding must have concrete fix suggestion
 - **No fact-checking:** Do NOT verify paths, versions, endpoints against code
+- **Shared class registry:** Document boundaries come from `docs_quality_contract.md`; do not invent alternate scope rules per file
 
 ## Definition of Done
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- [ ] Document read completely
-- [ ] SCOPE extracted or inferred
+- [ ] Header contract extracted or inferred
 - [ ] Content-scope alignment analyzed (OFF_TOPIC, MISSING_COVERAGE, SCOPE_CREEP, SSOT_VIOLATION)
+- [ ] Semantic judgment applied according to DOC_KIND
 - [ ] Score calculated using penalty algorithm
 - [ ] Report written to `{output_dir}/612-semantic-{doc-slug}.md` (atomic single Write call)
 - [ ] Summary returned to coordinator

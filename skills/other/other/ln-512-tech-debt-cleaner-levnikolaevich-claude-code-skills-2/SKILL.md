@@ -9,6 +9,8 @@ license: MIT
 
 # Tech Debt Cleaner (L3 Worker)
 
+**Type:** L3 Worker
+
 Automated cleanup of safe, low-risk tech debt findings from codebase audits.
 
 ## Purpose & Scope
@@ -45,7 +47,7 @@ Automated cleanup of safe, low-risk tech debt findings from codebase audits.
 
 ## When to Use
 
-- **Invoked by ln-510-quality-coordinator** Phase 3 (after ln-511 code quality check)
+- Use after code quality analysis when safe low-risk cleanup can be applied
 - **Standalone:** After `ln-620` codebase audit completes (user triggers manually)
 - **Scheduled:** As periodic "garbage collection" for codebase hygiene
 

@@ -1,18 +1,15 @@
 ---
 name: distill
-description: Strip designs to their essence by removing unnecessary complexity. Great design is simple, powerful, and clean.
-user-invokable: true
-args:
-  - name: target
-    description: The feature or component to distill (optional)
-    required: false
+description: Strip designs to their essence by removing unnecessary complexity. Great design is simple, powerful, and clean. Use when the user asks to simplify, declutter, reduce noise, remove elements, or make a UI cleaner and more focused.
+user-invocable: true
+argument-hint: "[target]"
 ---
 
 Remove unnecessary complexity from designs, revealing the essential elements and creating clarity through ruthless simplification.
 
 ## MANDATORY PREPARATION
 
-Use the frontend-design skill — it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no design context exists yet, you MUST run teach-impeccable first.
+Invoke /frontend-design — it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no design context exists yet, you MUST run /teach-impeccable first.
 
 ---
 
@@ -34,7 +31,7 @@ Analyze what makes the design feel complex or cluttered:
    - What can be removed, hidden, or combined?
    - What's the 20% that delivers 80% of value?
 
-If any of these are unclear from the codebase, STOP and call the AskUserQuestion tool to clarify.
+If any of these are unclear from the codebase, ask the user directly to clarify what you cannot infer.
 
 **CRITICAL**: Simplicity is not about removing features - it's about removing obstacles between users and their goals. Every element should justify its existence.
 

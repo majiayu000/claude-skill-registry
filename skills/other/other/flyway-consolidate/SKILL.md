@@ -2,6 +2,7 @@
 name: flyway-consolidate
 description: Analyze and consolidate Flyway SQL migrations into clean, domain-grouped CREATE TABLE migrations for pre-production projects. Use when consolidating database migrations, refactoring Flyway schemas, simplifying migration history, grouping tables by domain, or when user mentions "consolidate migrations", "merge migrations", "clean up Flyway", "refactor schema", "baseline migrations".
 disable-model-invocation: true
+spring-boot-version: "4.0"
 ---
 
 # Flyway Migration Consolidation

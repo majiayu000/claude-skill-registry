@@ -81,7 +81,43 @@ fi
 echo "Total merged: $merged_count"
 ```
 
-### Step 5: List Inactive Unmerged Branches
+### Step 5: Detect Squash-Merged Branches
+
+Detect branches whose changes are already in base via squash-and-merge or rebase-merge. Uses `git cherry` to compare patch-ids — if all commits have equivalents in base, the branch is squash-merged and safe to delete.
+
+```bash
+echo "=== SQUASH-MERGED BRANCHES (safe to delete) ==="
+squash_count=0
+squash_list=""
+for branch in $(git for-each-ref --format='%(refname:short)' refs/heads/); do
+  [ "$branch" = "$BASE_BRANCH" ] && continue
+
+  # Skip branches already detected as merged
+  merged=$(git branch --merged "$BASE_BRANCH" | grep -w "$branch" | wc -l | tr -d ' ')
+  [ "$merged" -gt 0 ] && continue
+
+  # Count commits on branch since merge-base
+  merge_base=$(git merge-base "$BASE_BRANCH" "$branch" 2>/dev/null)
+  [ -z "$merge_base" ] && continue
+  unique_commits=$(git log --oneline "$merge_base".."$branch" --no-merges 2>/dev/null | wc -l | tr -d ' ')
+  [ "$unique_commits" -eq 0 ] && continue
+
+  # git cherry: + means NOT in base, - means equivalent exists in base
+  unpicked=$(git cherry "$BASE_BRANCH" "$branch" 2>/dev/null | grep '^+' | wc -l | tr -d ' ')
+  if [ "$unpicked" -eq 0 ]; then
+    relative=$(git log -1 --format='%cr' "$branch")
+    echo "  $branch ($relative)"
+    squash_count=$((squash_count + 1))
+    squash_list="$squash_list|$branch"
+  fi
+done
+if [ "$squash_count" -eq 0 ]; then
+  echo "  (none)"
+fi
+echo "Total squash-merged: $squash_count"
+```
+
+### Step 6: List Inactive Unmerged Branches
 
 Find local branches NOT merged into base with no commits within the threshold period. Include ahead/behind counts:
 
@@ -92,8 +128,9 @@ git for-each-ref --sort=committerdate --format='%(refname:short) %(committerdate
   timestamp=$(echo "$line" | awk '{print $2}')
   relative=$(echo "$line" | cut -d' ' -f3-)
 
-  # Skip base branch and current branch
+  # Skip base branch, current branch, and squash-merged branches
   [ "$branch" = "$BASE_BRANCH" ] && continue
+  echo "$squash_list" | grep -qw "$branch" && continue
 
   # Check if branch is inactive (older than threshold)
   if [[ "$timestamp" =~ ^[0-9]+$ ]] && [ "$timestamp" -lt "$threshold" ]; then
@@ -110,7 +147,7 @@ git for-each-ref --sort=committerdate --format='%(refname:short) %(committerdate
 done
 ```
 
-### Step 6: Remote Branch Analysis (if --remote)
+### Step 7: Remote Branch Analysis (if --remote)
 
 Only execute this step if `--remote` flag was provided.
 
@@ -123,7 +160,7 @@ if ! git fetch --prune 2>/dev/null; then
 fi
 ```
 
-If the fetch warning was shown, skip the rest of Step 6. Otherwise, continue:
+If the fetch warning was shown, skip the rest of Step 7. Otherwise, continue:
 
 List remote merged branches:
 
@@ -158,7 +195,7 @@ git for-each-ref --sort=committerdate --format='%(refname:short) %(committerdate
 done
 ```
 
-### Step 7: Summary
+### Step 8: Summary
 
 Present a summary report:
 
@@ -173,6 +210,7 @@ echo "Base branch: $BASE_BRANCH"
 echo "Inactivity threshold: $THRESHOLD_MONTHS months"
 echo "Total local branches: $total_local"
 echo "Merged into $BASE_BRANCH: $merged_into_base"
+echo "Squash-merged (detected via git cherry): $squash_count"
 ```
 
 After the summary, suggest cleanup commands (but **never execute them**):
@@ -187,7 +225,7 @@ Cleanup commands (run manually):
 
 ## Important Caveats
 
-- **Squash merges**: Branches merged via squash-and-merge on GitHub will NOT appear as "merged" in `git branch --merged`. They show as unmerged even though their changes are in the base branch. Review inactive unmerged branches carefully.
+- **Squash merges**: Branches merged via squash-and-merge are detected using `git cherry` (patch-id comparison). Edge cases where detection may fail: amended commits after squash, or partial cherry-picks. If a branch appears in "inactive unmerged" but you know it was squash-merged, verify with `git cherry main <branch>`.
 - **Read-only**: This skill never deletes branches. Deletion commands are shown as suggestions only.
 - **Remote analysis**: The `--remote` flag runs `git fetch --prune` which contacts the remote. This requires network access.
 
@@ -200,4 +238,4 @@ For more details, see:
 
 ## Version
 
-1.0.0
+1.1.0

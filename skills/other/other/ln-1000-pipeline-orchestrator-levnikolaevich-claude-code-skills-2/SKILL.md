@@ -473,7 +473,7 @@ TodoWrite format (mandatory):
 5. **Quality cycle limit.** Max 2 quality FAILs per Story (original + 1 rework). After 2nd FAIL, escalate to user
 6. **Worktree lifecycle.** ln-1000 creates worktree in Phase 3.4. Branch finalization (commit, push) by ln-500. Worktree cleanup by ln-1000 in Phase 5 (lead is in worktree, so ln-500 skips cleanup)
 7. **Stage notes.** Lead writes `.hex-skills/pipeline/stage_N_notes_{id}.md` after each stage for Pipeline Report
-8. **Checkpoints.** CLI scripts write `.hex-skills/pipeline/checkpoint-{id}.json` via `node $PIPELINE checkpoint` after each stage
+8. **Checkpoints.** CLI scripts write run-scoped runtime state under `.hex-skills/pipeline/runtime/runs/{run_id}/` via `node $PIPELINE checkpoint` after each stage
 
 ## Known Issues
 

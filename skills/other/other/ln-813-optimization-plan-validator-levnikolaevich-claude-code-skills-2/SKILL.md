@@ -35,6 +35,7 @@ Validates optimization plan (performance_map + hypotheses + context) via paralle
 
 **MANDATORY READ:** Load `shared/references/agent_review_workflow.md`
 **MANDATORY READ:** Load `shared/references/agent_delegation_pattern.md`
+**MANDATORY READ:** Load `shared/references/review_runtime_contract.md`
 
 ### Slug Resolution
 
@@ -57,10 +58,11 @@ If missing → Block: "context.md incomplete — run profiler and researcher fir
 ### Step 2: Agent Health Check
 
 ```
-node shared/agents/agent_runner.mjs --health-check
+node shared/agents/agent_runner.mjs --health-check --json
 ```
 
-- 0 agents available → `agents_launched = SKIPPED`, proceed with own feasibility check only
+- Start review runtime for `ln-813` with `mode=plan_review`, `identifier={slug}`, and `expected_agents=["codex","gemini"]`
+- 0 agents available → checkpoint runtime with `agents_skipped_reason`, proceed with own feasibility check only
 - Agents available → continue to Phase 1
 
 ---
@@ -85,23 +87,29 @@ Replace default `{focus_areas}` in prompt with:
 
 ## Phase 2: Launch Agents (Background)
 
-Launch BOTH agents as background Bash tasks:
+Launch available agents as background tasks and register them in review runtime:
 
 ```bash
 node shared/agents/agent_runner.mjs \
   --agent codex \
   --prompt-file .hex-skills/agent-review/codex/{id}_optimization_review_prompt.md \
   --output-file .hex-skills/agent-review/codex/{id}_optimization_review.md \
+  --metadata-file .hex-skills/agent-review/codex/{id}_optimization_review_metadata.json \
   --cwd {project_root}
 
 node shared/agents/agent_runner.mjs \
   --agent gemini \
   --prompt-file .hex-skills/agent-review/gemini/{id}_optimization_review_prompt.md \
   --output-file .hex-skills/agent-review/gemini/{id}_optimization_review.md \
+  --metadata-file .hex-skills/agent-review/gemini/{id}_optimization_review_metadata.json \
   --cwd {project_root}
 ```
 
-Both run in background (`run_in_background=true`). Proceed to Phase 3 while agents work.
+After each launch:
+- register agent in review runtime with prompt/result/log/metadata paths
+- checkpoint launch summary (`health_check_done`, `agents_available`, `agents_required`)
+
+Proceed to Phase 3 while agents work.
 
 ---
 
@@ -135,18 +143,20 @@ feasibility_result:
 
 ## Phase 4: Merge Agent Feedback
 
-Wait for agent results, then merge per `shared/references/agent_review_workflow.md`:
+Sync review runtime agent state, then merge per `shared/references/agent_review_workflow.md`:
 
-1. Parse agent suggestions from both result files
-2. Merge with own feasibility findings (Phase 3)
-3. For EACH suggestion: dedup → evaluate → AGREE or REJECT (per shared workflow)
-4. Apply accepted corrections directly to `.hex-skills/optimization/{slug}/context.md`:
+1. Do not merge until every required agent is `result_ready | dead | failed | skipped`
+2. Parse agent suggestions from all available result files
+3. Merge with own feasibility findings (Phase 3)
+4. For EACH suggestion: dedup → evaluate → AGREE or REJECT (per shared workflow)
+5. Apply accepted corrections directly to `.hex-skills/optimization/{slug}/context.md`:
    - Remove invalid hypotheses
    - Add warnings to concerns
    - Adjust `conflicts_with` if agents found errors
    - Add missing hypotheses if agents identified gaps
 
 Save review summary → `.hex-skills/agent-review/review_history.md`
+Checkpoint merge summary in review runtime
 
 Display: `"Agent Review: codex ({accepted}/{total}), gemini ({accepted}/{total}), {N} corrections applied"`
 
@@ -161,6 +171,7 @@ Execute per `shared/references/agent_review_workflow.md` "Step: Iterative Refine
 1) **Artifact:** `.hex-skills/optimization/{slug}/context.md` (post-Phase 4 merge state)
 2) **Loop (max 5 iterations):** Build prompt → Codex (foreground) → parse → AGREE/REJECT → apply → repeat
 3) **Display + Persist** per shared workflow
+4) Checkpoint refinement summary in review runtime
 
 ---
 
@@ -188,6 +199,12 @@ Return verdict to coordinator. On NO_GO: coordinator presents issues to user.
 
 ---
 
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
+
+Write `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-validation/{slug}.json` before finishing.
+
 ## Error Handling
 
 | Error | Recovery |
@@ -203,6 +220,7 @@ Return verdict to coordinator. On NO_GO: coordinator presents issues to user.
 
 - `shared/references/agent_review_workflow.md` — merge + verification protocol
 - `shared/references/agent_delegation_pattern.md` — agent invocation pattern
+- `shared/references/review_runtime_contract.md` — deterministic runtime contract
 - `shared/agents/prompt_templates/modes/plan_review.md` — plan review template
 - [optimization_review_focus.md](references/optimization_review_focus.md) — optimization-specific focus areas
 
@@ -212,6 +230,7 @@ Return verdict to coordinator. On NO_GO: coordinator presents issues to user.
 
 - [ ] Context file loaded and validated (all required sections present)
 - [ ] Agent health check performed
+- [ ] Review runtime started and launch checkpoint recorded
 - [ ] Context materialized to `.hex-skills/agent-review/` for agents
 - [ ] Both agents launched (or SKIPPED if unavailable)
 - [ ] Own feasibility check completed (files exist, no conflicts, evidence backing)
@@ -221,6 +240,7 @@ Return verdict to coordinator. On NO_GO: coordinator presents issues to user.
 - [ ] Iterative Refinement executed or SKIPPED (Phase 5)
 - [ ] Verdict issued (GO / GO_WITH_CONCERNS / NO_GO)
 - [ ] Review summary saved to `.hex-skills/agent-review/review_history.md`
+- [ ] Optimization validation artifact written to the shared location
 
 ---
 

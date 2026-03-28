@@ -1,6 +1,8 @@
 ---
 name: project-execution
-description: "Execute plans with checkpoints and quality gates. Skip if no plan exists."
+description: "Execute implementation plans systematically with progress tracking, checkpoint validation, and quality gates. Use when an implementation plan is ready for execution. Skip if no plan exists."
+version: 1.7.1
+alwaysApply: false
 # Custom metadata (not used by Claude for matching):
 model_preference: claude-sonnet-4
 tools_allowed: all
@@ -8,6 +10,9 @@ category: workflow
 tags: [execution, implementation, progress-tracking, quality-gates, tdd]
 complexity: intermediate
 estimated_tokens: 2100
+progressive_loading: true
+references:
+- references/mission-report.md
 ---
 ## Table of Contents
 
@@ -435,6 +440,22 @@ On track? = Estimated completion <= Sprint end date
 - `/attune:execute` - Invoke this skill
 - `/attune:execute --task [ID]` - Execute specific task
 - `/attune:execute --resume` - Resume from checkpoint
+
+## Mission Report
+
+At mission completion, produce a Mission Report using the
+template from `references/mission-report.md`. The report documents:
+
+- **Mission identification**: Links to brief, spec, plan
+- **Duration**: Start, end, total time
+- **Outcome**: success | partial | failed
+- **Delivered artifacts**: Files created/modified/deleted
+- **Decisions**: Key choices with rationale
+- **Validation evidence**: Tests, reviews, demos
+- **Follow-ups**: Recommended next steps
+
+See `references/mission-report.md` for the full template and
+example reports for successful, partial, and failed missions.
 
 ## Examples
 

@@ -1,6 +1,6 @@
 ---
 name: elixir-idioms
-description: "OTP/BEAM patterns and core Elixir idioms — GenServer, Supervisor, Task, Registry, pattern matching, with chains, pipes, error tuples, mix tasks. Load for process design, supervision trees, language idiom refactoring, or BEAM debugging. NOT for Ecto/LiveView/Oban/Phoenix — use dedicated skills."
+description: "Reference OTP/BEAM patterns and core Elixir idioms — GenServer, Supervisor, Task, Registry, pattern matching, with chains, pipes, error tuples, mix tasks. Use when designing processes, supervision trees, refactoring language idioms, or debugging BEAM issues. NOT for Ecto/LiveView/Oban/Phoenix — use dedicated skills."
 effort: medium
 user-invocable: false
 ---

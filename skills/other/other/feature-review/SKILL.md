@@ -9,6 +9,8 @@ description: 'Feature review and prioritization with RICE/WSJF/Kano scoring. Cre
   Use when: reviewing features or suggesting new features
 
   DO NOT use when: evaluating single feature scope - use scope-guard.'
+version: 1.7.1
+alwaysApply: false
 category: workflow-methodology
 tags:
 - feature-review
@@ -206,6 +208,23 @@ See [tradeoff-dimensions.md](modules/tradeoff-dimensions.md) for criteria.
 2. Apply labels (feature, enhancement, priority/*).
 3. Link to related issues.
 4. Confirm with user before creation.
+
+**Deferred capture for high-scoring suggestions:**
+After the user confirms which suggestions to act on, any
+high-scoring suggestion (score > 2.5) that is not acted on
+should be preserved as a deferred item.
+Run once per skipped high-scoring suggestion:
+
+```bash
+python3 scripts/deferred_capture.py \
+  --title "<suggestion title>" \
+  --source feature-review \
+  --context "RICE score: <score>. <description>"
+```
+
+This runs automatically without prompting the user.
+Suggestions with scores of 2.5 or below do not need
+to be captured.
 
 ## Configuration
 

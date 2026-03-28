@@ -1,6 +1,8 @@
 ---
 name: project-specification
-description: "Transform project briefs into testable specifications with acceptance criteria. Use for requirements translation, spec creation, pre-implementation. Skip if spec exists or still exploring."
+description: "Transform project briefs into testable specifications with user stories, acceptance criteria, and measurable requirements. Use when starting from a project brief that needs formal specification. Skip if a spec already exists."
+version: 1.7.1
+alwaysApply: false
 # Custom metadata (not used by Claude for matching):
 model_preference: claude-sonnet-4
 category: workflow
@@ -161,7 +163,44 @@ For detailed specification writing workflows, this skill delegates to `spec-kit:
 
 **Rationale**: [Why these are excluded]
 ```
-**Verification:** Run the command with `--help` flag to verify availability.
+
+### 5.1. Backlog Issue Creation (MANDATORY)
+
+After writing the Out of Scope section, create a GitHub
+issue for each deferred item so it is tracked in the
+backlog. This prevents good ideas from being lost in
+spec documents nobody re-reads.
+
+```bash
+# For each out-of-scope item:
+gh issue create \
+  --title "[Backlog] <feature>: <brief description>" \
+  --body "## Context
+Identified during specification of <project>.
+Spec: <path-to-spec>
+
+## Description
+<what the item is and why it was deferred>
+
+## References
+<links to spec section, related issues>" \
+  --label "feature,low-priority"
+```
+
+Report created issues in the spec under Out of Scope:
+
+```markdown
+## Out of Scope (v1.0)
+
+- Codex session format (#332)
+- SVG/MP4/WebM output (#333)
+- Interactive session picker (#334)
+```
+
+**Skip conditions:**
+- `--no-auto-issues` flag passed
+- Item is trivially small (one-line change)
+- Item already exists as a GitHub issue
 
 ## Clarification Workflow
 

@@ -1,6 +1,6 @@
 ---
 name: dep-check
-description: Check for outdated, deprecated, or vulnerable dependencies with upgrade suggestions
+description: Use when the user wants to check dependencies, find outdated packages, or audit for vulnerabilities.
 disable-model-invocation: true
 allowed-tools: Read, Bash
 ---

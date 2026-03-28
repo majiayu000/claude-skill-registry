@@ -3,6 +3,8 @@ name: risk-classification
 description: 'Inline risk classification for agent tasks using a 4-tier model. Hybrid
   routing: GREEN/YELLOW use heuristic file-pattern matching, RED/CRITICAL escalate
   to war-room-checkpoint for full reversibility scoring.'
+version: 1.7.1
+alwaysApply: false
 category: infrastructure
 tags:
 - risk
@@ -31,6 +33,7 @@ modules:
 - modules/tier-definitions.md
 - modules/heuristic-classifier.md
 - modules/verification-gates.md
+- modules/readiness-levels.md
 ---
 ## Table of Contents
 
@@ -108,11 +111,27 @@ Add risk tier to task metadata for downstream consumption:
 
 Tasks without `risk_tier` metadata default to **GREEN** (backward compatible).
 
+## Readiness Levels
+
+The 4-tier Readiness Levels system provides clear risk
+classification with required controls per tier:
+
+| Level | Name | When | Required Controls |
+|-------|------|------|-------------------|
+| 0 | Routine | Low blast radius, easy rollback | Basic validation, rollback step |
+| 1 | Watch | User-visible changes | Review, negative test, rollback note |
+| 2 | Elevated | Security/compliance/data | Adversarial review, risk checklist |
+| 3 | Critical | Irreversible, regulated | Human confirmation, two-step verification |
+
+See `modules/readiness-levels.md` for full level definitions,
+selection decision tree, and integration guidance.
+
 ## Module Reference
 
 - **tier-definitions.md**: Detailed tier criteria, boundaries, and override mechanism
 - **heuristic-classifier.md**: File-pattern rules for automated classification
 - **verification-gates.md**: Per-tier verification requirements and parallel safety matrix
+- **readiness-levels.md**: 4-tier risk system with required controls per level
 
 ## Integration Pattern
 

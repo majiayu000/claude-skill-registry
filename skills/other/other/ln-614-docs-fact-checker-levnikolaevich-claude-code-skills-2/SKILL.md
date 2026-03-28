@@ -164,11 +164,15 @@ Calculate score using penalty formula. Write report.
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Write report to `{output_dir}/614-fact-checker.md` with `category: "Fact Accuracy"` and checks: path_claims, version_claims, count_claims, endpoint_claims, config_claims, command_claims, entity_claims, line_ref_claims, cross_doc.
 
-Return summary to coordinator:
+Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 ```
-Report written: docs/project/.audit/ln-610/{YYYY-MM-DD}/614-fact-checker.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/614-fact-checker.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -181,7 +185,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - **Evidence required:** Every finding includes verification command used and result
 - **No false positives:** Better to miss an issue than report incorrectly. When uncertain, classify as LOW with note
 - **Location precision:** Always include `file:line` for programmatic navigation
-- **Broad scope:** Scan ALL .md files — do not skip docs/reference/, tests/, or task docs
+- **Broad scope:** Scan ALL .md files -- do not skip docs/reference/, tests/, or task docs
 - **Targeted depth:** Spend the deepest verification effort on canonical and high-claim docs first
 - **Cross-doc matters:** Contradictions between documents erode trust more than single-doc errors
 - **Batch efficiently:** Extract all claims first, then verify in batches by type (all paths together, all versions together)
@@ -200,7 +204,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] False positives filtered via Layer 2 reasoning
 - [ ] Score calculated using penalty algorithm
 - [ ] Report written to `{output_dir}/614-fact-checker.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

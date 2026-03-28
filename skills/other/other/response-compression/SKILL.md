@@ -1,6 +1,8 @@
 ---
 name: response-compression
 description: hype, and unnecessary framing. Includes termination and directness guidelines.
+version: 1.7.1
+alwaysApply: true
 category: optimization
 tags:
 - tokens

@@ -2,10 +2,10 @@
   "category": "planning",
   "code": "oth",
   "count": 2,
-  "updated_at": "2026-03-27T01:59:09.757373Z",
+  "updated_at": "2026-03-28T01:52:39.733892Z",
   "skills": [
     {
-      "name": "brainstorming-technickai-ai-coding-config",
+      "name": "brainstorming",
       "description": "Use when rough ideas need design before code, requirements are fuzzy, multiple approaches exist, or you need to explore options before implementation",
       "repo": "TechNickAI/ai-coding-config",
       "path": "",
@@ -17,7 +17,7 @@
       "source": "github.com/TechNickAI/ai-coding-config"
     },
     {
-      "name": "brainstorming",
+      "name": "brainstorming-technickai-ai-coding-config",
       "description": "Use when rough ideas need design before code, requirements are fuzzy, multiple approaches exist, or you need to explore options before implementation",
       "repo": "TechNickAI/ai-coding-config",
       "path": "",

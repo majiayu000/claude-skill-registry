@@ -1,6 +1,6 @@
 ---
 name: phx:init
-description: Initialize Elixir/Phoenix plugin in a project. Installs auto-activation rules into CLAUDE.md for complexity detection, interview mode, Iron Laws enforcement, and reference auto-loading.
+description: Initialize Elixir/Phoenix plugin in a project. Installs auto-activation rules into CLAUDE.md for complexity detection, interview mode, Iron Laws enforcement, and reference auto-loading. Use when setting up the plugin in a new project or updating an existing installation.
 effort: low
 argument-hint: [--update]
 ---
@@ -15,6 +15,12 @@ Install the Elixir/Phoenix plugin's behavioral instructions into the project's C
 /phx:init           # First-time installation
 /phx:init --update  # Update existing installation with latest rules
 ```
+
+## Iron Laws
+
+1. **NEVER overwrite content outside plugin markers** — User-written CLAUDE.md rules must be preserved verbatim
+2. **Always detect stack before generating** — Never assume Phoenix/Ecto versions
+3. **Always validate after installation** — Verify markers present and stack correct
 
 ## Workflow
 
@@ -67,6 +73,8 @@ find lib -name "*.ex" 2>/dev/null | wc -l
 1. Find content between `<!-- ELIXIR-PHOENIX-PLUGIN:START -->` and `<!-- ELIXIR-PHOENIX-PLUGIN:END -->`
 2. Replace with latest behavioral instructions
 3. Preserve everything outside the markers
+
+**CRITICAL: NEVER overwrite or delete existing CLAUDE.md content outside the plugin markers** — user-written rules, project conventions, and other plugin sections must be preserved verbatim
 
 ### Step 4: Generate Content
 

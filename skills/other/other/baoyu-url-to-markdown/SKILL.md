@@ -1,7 +1,7 @@
 ---
 name: baoyu-url-to-markdown
-description: Fetch any URL and convert to markdown using Chrome CDP. Saves the rendered HTML snapshot alongside the markdown, uses an upgraded Defuddle pipeline with better web-component handling and YouTube transcript extraction, and automatically falls back to the pre-Defuddle HTML-to-Markdown pipeline when needed. If local browser capture fails entirely, it can fall back to the hosted defuddle.md API. Supports two modes - auto-capture on page load, or wait for user signal (for pages requiring login). Use when user wants to save a webpage as markdown.
-version: 1.59.0
+description: Fetch any URL and convert to markdown using baoyu-fetch CLI (Chrome CDP with site-specific adapters). Built-in adapters for X/Twitter, YouTube transcripts, Hacker News threads, and generic pages via Defuddle. Handles login/CAPTCHA via interaction wait modes. Use when user wants to save a webpage as markdown.
+version: 1.60.0
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-url-to-markdown
@@ -13,29 +13,18 @@ metadata:
 
 # URL to Markdown
 
-Fetches any URL via Chrome CDP, saves the rendered HTML snapshot, and converts it to clean markdown.
+Fetches any URL via `baoyu-fetch` CLI (Chrome CDP + site-specific adapters) and converts it to clean markdown.
 
-## Script Directory
+## CLI Setup
 
-**Important**: All scripts are located in the `scripts/` subdirectory of this skill.
+**Important**: The CLI source is vendored in the `scripts/vendor/baoyu-fetch/` subdirectory of this skill.
 
 **Agent Execution Instructions**:
 1. Determine this SKILL.md file's directory path as `{baseDir}`
-2. Script path = `{baseDir}/scripts/<script-name>.ts`
+2. CLI entry point = `{baseDir}/scripts/vendor/baoyu-fetch/src/cli.ts`
 3. Resolve `${BUN_X}` runtime: if `bun` installed → `bun`; if `npx` available → `npx -y bun`; else suggest installing bun
-4. Replace all `{baseDir}` and `${BUN_X}` in this document with actual values
-
-**Script Reference**:
-| Script | Purpose |
-|--------|---------|
-| `scripts/main.ts` | CLI entry point for URL fetching |
-| `scripts/html-to-markdown.ts` | Markdown conversion entry point and converter selection |
-| `scripts/parsers/index.ts` | Unified parser entry: dispatches URL-specific rules before generic converters |
-| `scripts/parsers/types.ts` | Unified parser interface shared by all rule files |
-| `scripts/parsers/rules/*.ts` | One file per URL rule, for example X status and X article |
-| `scripts/defuddle-converter.ts` | Defuddle-based conversion |
-| `scripts/legacy-converter.ts` | Pre-Defuddle legacy extraction and markdown conversion |
-| `scripts/markdown-conversion-shared.ts` | Shared metadata parsing and markdown document helpers |
+4. `${READER}` = `${BUN_X} {baseDir}/scripts/vendor/baoyu-fetch/src/cli.ts`
+5. Replace all `${READER}` in this document with the resolved value
 
 ## Preferences (EXTEND.md)
 
@@ -56,23 +45,17 @@ if (Test-Path "$xdg/baoyu-skills/baoyu-url-to-markdown/EXTEND.md") { "xdg" }
 if (Test-Path "$HOME/.baoyu-skills/baoyu-url-to-markdown/EXTEND.md") { "user" }
 ```
 
-┌────────────────────────────────────────────────────────┬───────────────────┐
-│                          Path                          │     Location      │
-├────────────────────────────────────────────────────────┼───────────────────┤
-│ .baoyu-skills/baoyu-url-to-markdown/EXTEND.md          │ Project directory │
-├────────────────────────────────────────────────────────┼───────────────────┤
-│ $HOME/.baoyu-skills/baoyu-url-to-markdown/EXTEND.md    │ User home         │
-└────────────────────────────────────────────────────────┴───────────────────┘
+| Path | Location |
+|------|----------|
+| `.baoyu-skills/baoyu-url-to-markdown/EXTEND.md` | Project directory |
+| `$HOME/.baoyu-skills/baoyu-url-to-markdown/EXTEND.md` | User home |
 
-┌───────────┬───────────────────────────────────────────────────────────────────────────┐
-│  Result   │                                  Action                                   │
-├───────────┼───────────────────────────────────────────────────────────────────────────┤
-│ Found     │ Read, parse, apply settings                                               │
-├───────────┼───────────────────────────────────────────────────────────────────────────┤
-│ Not found │ **MUST** run first-time setup (see below) — do NOT silently create defaults │
-└───────────┴───────────────────────────────────────────────────────────────────────────┘
+| Result | Action |
+|--------|--------|
+| Found | Read, parse, apply settings |
+| Not found | **MUST** run first-time setup (see below) — do NOT silently create defaults |
 
-**EXTEND.md Supports**: Download media by default | Default output directory | Default capture mode | Timeout settings
+**EXTEND.md Supports**: Download media by default | Default output directory
 
 ### First-Time Setup (BLOCKING)
 
@@ -107,54 +90,63 @@ Full reference: [references/config/first-time-setup.md](references/config/first-
 **EXTEND.md → CLI mapping**:
 | EXTEND.md key | CLI argument | Notes |
 |---------------|-------------|-------|
-| `download_media: 1` | `--download-media` | |
-| `default_output_dir: ./posts/` | `--output-dir ./posts/` | Directory path. Do NOT pass to `-o` (which expects a file path) |
+| `download_media: 1` | `--download-media` | Requires `--output` to be set |
+| `default_output_dir: ./posts/` | Agent constructs `--output ./posts/{domain}/{slug}.md` | Agent generates path, not a direct CLI flag |
 
 **Value priority**:
-1. CLI arguments (`--download-media`, `-o`, `--output-dir`)
+1. CLI arguments (`--download-media`, `--output`)
 2. EXTEND.md
 3. Skill defaults
 
 ## Features
 
-- Chrome CDP for full JavaScript rendering
-- Browser strategy fallback: default headless first, then visible Chrome on technical failure
-- URL-specific parser layer for sites that need custom HTML rules before generic extraction
-- Two capture modes: auto or wait-for-user
-- Save rendered HTML as a sibling `-captured.html` file
-- Clean markdown output with metadata
-- Upgraded Defuddle-first markdown conversion with automatic fallback to the pre-Defuddle extractor from git history
-- X/Twitter pages can use HTML-specific parsing for Tweets and Articles, which improves title/body/media extraction on `x.com` / `twitter.com`
-- `archive.ph` / related archive mirrors can restore the original URL from `input[name=q]` and prefer `#CONTENT` before falling back to the page body
-- Materializes shadow DOM content before conversion so web-component pages survive serialization better
-- YouTube pages can include transcript/caption text in the markdown when YouTube exposes a caption track
-- If local browser capture fails completely, can fall back to `defuddle.md/<url>` and still save markdown
-- Handles login-required pages via wait mode
+- Chrome CDP for full JavaScript rendering via `baoyu-fetch` CLI
+- Site-specific adapters: X/Twitter, YouTube, Hacker News, generic (Defuddle)
+- Automatic adapter selection based on URL, or force with `--adapter`
+- Interaction gate detection: Cloudflare, reCAPTCHA, hCAPTCHA, custom challenges
+- Two capture modes: headless (default) or interactive with wait-for-interaction
+- Clean markdown output with YAML front matter
+- Structured JSON output available via `--format json`
+- X/Twitter: extracts tweets, threads, and X Articles with media
+- YouTube: transcript/caption extraction, chapters, cover images
+- Hacker News: threaded comment parsing with proper nesting
+- Generic: Defuddle extraction with Readability fallback
 - Download images and videos to local directories
+- Chrome profile persistence for authenticated sessions
+- Debug artifact output for troubleshooting
 
 ## Usage
 
 ```bash
-# Auto mode (default) - capture when page loads
-${BUN_X} {baseDir}/scripts/main.ts <url>
+# Default: headless capture, markdown to stdout
+${READER} <url>
 
-# Force headless only
-${BUN_X} {baseDir}/scripts/main.ts <url> --browser headless
+# Save to file
+${READER} <url> --output article.md
 
-# Force visible browser
-${BUN_X} {baseDir}/scripts/main.ts <url> --browser headed
+# Save with media download
+${READER} <url> --output article.md --download-media
 
-# Wait mode - wait for user signal before capture
-${BUN_X} {baseDir}/scripts/main.ts <url> --wait
+# Headless mode (explicit)
+${READER} <url> --headless --output article.md
 
-# Save to specific file
-${BUN_X} {baseDir}/scripts/main.ts <url> -o output.md
+# Wait for interaction (login/CAPTCHA) — auto-detect and continue
+${READER} <url> --wait-for interaction --output article.md
 
-# Save to a custom output directory (auto-generates filename)
-${BUN_X} {baseDir}/scripts/main.ts <url> --output-dir ./posts/
+# Wait for interaction — manual control (Enter to continue)
+${READER} <url> --wait-for force --output article.md
 
-# Download images and videos to local directories
-${BUN_X} {baseDir}/scripts/main.ts <url> --download-media
+# JSON output
+${READER} <url> --format json --output article.json
+
+# Force specific adapter
+${READER} <url> --adapter youtube --output transcript.md
+
+# Connect to existing Chrome
+${READER} <url> --cdp-url http://localhost:9222 --output article.md
+
+# Debug artifacts
+${READER} <url> --output article.md --debug-dir ./debug/
 ```
 
 ## Options
@@ -162,112 +154,122 @@ ${BUN_X} {baseDir}/scripts/main.ts <url> --download-media
 | Option | Description |
 |--------|-------------|
 | `<url>` | URL to fetch |
-| `-o <path>` | Output file path — must be a **file** path, not directory (default: auto-generated) |
-| `--output-dir <dir>` | Base output directory — auto-generates `{dir}/{domain}/{slug}.md` (default: `./url-to-markdown/`) |
-| `--wait` | Wait for user signal before capturing |
-| `--browser <mode>` | Browser strategy: `auto` (default), `headless`, or `headed` |
-| `--headless` | Shortcut for `--browser headless` |
-| `--headed` | Shortcut for `--browser headed` |
+| `--output <path>` | Output file path (default: stdout) |
+| `--format <type>` | Output format: `markdown` (default) or `json` |
+| `--json` | Shorthand for `--format json` |
+| `--adapter <name>` | Force adapter: `x`, `youtube`, `hn`, or `generic` (default: auto-detect) |
+| `--headless` | Force headless Chrome (no visible window) |
+| `--wait-for <mode>` | Interaction wait mode: `none` (default), `interaction`, or `force` |
+| `--wait-for-interaction` | Alias for `--wait-for interaction` |
+| `--wait-for-login` | Alias for `--wait-for interaction` |
 | `--timeout <ms>` | Page load timeout (default: 30000) |
-| `--download-media` | Download image/video assets to local `imgs/` and `videos/`, and rewrite markdown links to local relative paths |
+| `--interaction-timeout <ms>` | Login/CAPTCHA wait timeout (default: 600000 = 10 min) |
+| `--interaction-poll-interval <ms>` | Poll interval for interaction checks (default: 1500) |
+| `--download-media` | Download images/videos to local `imgs/` and `videos/`, rewrite markdown links. Requires `--output` |
+| `--media-dir <dir>` | Base directory for downloaded media (default: same as `--output` directory) |
+| `--cdp-url <url>` | Reuse existing Chrome DevTools Protocol endpoint |
+| `--browser-path <path>` | Custom Chrome/Chromium binary path |
+| `--chrome-profile-dir <path>` | Chrome user data directory (default: `BAOYU_CHROME_PROFILE_DIR` env or `./baoyu-skills/chrome-profile`) |
+| `--debug-dir <dir>` | Write debug artifacts (document.json, markdown.md, page.html, network.json) |
 
 ## Capture Modes
 
 | Mode | Behavior | Use When |
 |------|----------|----------|
-| Auto (default) | Try headless first, then retry in visible Chrome if needed | Public pages, static content, unknown pages |
-| Wait (`--wait`) | User signals when ready | Login-required, lazy loading, paywalls |
+| Default | Headless Chrome, auto-extract on network idle | Public pages, static content |
+| `--headless` | Explicit headless (same as default) | Clarify intent |
+| `--wait-for interaction` | Opens visible Chrome, auto-detects login/CAPTCHA gates, waits for them to clear, then continues | Login-required, CAPTCHA-protected |
+| `--wait-for force` | Opens visible Chrome, auto-detects OR accepts Enter keypress to continue | Complex flows, lazy loading, paywalls |
 
-**Wait mode workflow**:
-1. Run with `--wait` → script outputs "Press Enter when ready"
-2. Ask user to confirm page is ready
-3. Send newline to stdin to trigger capture
+**Interaction gate auto-detection**:
+- Cloudflare Turnstile / "just a moment" pages
+- Google reCAPTCHA
+- hCaptcha
+- Custom challenge / verification screens
 
-**Default browser fallback**:
-1. Auto mode starts with headless Chrome and captures on network idle
-2. If headless capture fails technically, retry with visible Chrome
-3. If a shared Chrome session for this profile already exists, reuse it instead of launching a new browser
-4. The script does not hard-code login or paywall detection; the agent must inspect the captured markdown or HTML and decide whether to rerun with `--browser headed --wait`
+**Wait-for-interaction workflow**:
+1. Run with `--wait-for interaction` → Chrome opens visibly
+2. CLI auto-detects login/CAPTCHA gates
+3. User completes login or solves CAPTCHA in the browser
+4. CLI auto-detects gate cleared → captures page
+5. If `--wait-for force` is used, user can also press Enter to trigger capture manually
 
 ## Agent Quality Gate
 
-**CRITICAL**: The agent must treat headless capture as provisional. Some sites render differently in headless mode and can silently return an error shell, partially hydrated page, or low-quality extraction **without** causing the CLI to fail.
+**CRITICAL**: The agent must treat default headless capture as provisional. Some sites render differently in headless mode and can silently return low-quality content without causing the CLI to fail.
 
-After every run that used `--browser auto` or `--browser headless`, the agent **MUST** inspect the saved markdown first, and inspect the saved `-captured.html` when the markdown looks suspicious.
+After every headless run, the agent **MUST** inspect the saved markdown output.
 
 ### Quality checks the agent must perform
 
 1. Confirm the markdown title matches the target page, not a generic site shell
 2. Confirm the body contains the expected article or page content, not just navigation, footer, or a generic error
-3. Watch for obvious failure signs such as:
+3. Watch for obvious failure signs:
    - `Application error`
    - `This page could not be found`
-   - login, signup, subscribe, or verification shells
-   - extremely short markdown for a page that should be long-form
-   - raw framework payloads or mostly boilerplate content
+   - Login, signup, subscribe, or verification shells
+   - Extremely short markdown for a page that should be long-form
+   - Raw framework payloads or mostly boilerplate content
 4. If the result is low quality, incomplete, or clearly wrong, do **not** accept the run as successful just because the CLI exited with code 0
+
+**Tip**: Use `--format json` to get structured output including `status`, `login.state`, and `interaction` fields for programmatic quality assessment. A `"status": "needs_interaction"` response means the page requires manual interaction.
 
 ### Recovery workflow the agent must follow
 
-1. First run with default `auto` unless there is already a clear reason to use wait mode
+1. First run headless (default) unless there is already a clear reason to use interaction mode
 2. Review markdown quality immediately after the run
-3. If the content is low quality, rerun locally with visible Chrome:
-   - `--browser headed` for ordinary rendering issues
-   - `--browser headed --wait` when the page may need login, anti-bot interaction, cookie acceptance, or extra hydration time
-4. If `--wait` is used, tell the user exactly what to do:
-   - if login is required, ask them to sign in
-   - if the page needs time to hydrate, ask them to wait until the full content is visible
-   - once ready, ask them to press Enter so capture can continue
-5. Only fall back to hosted `defuddle.md` after the local browser strategies have failed or are clearly lower fidelity
+3. If the content is low quality or indicates login/CAPTCHA:
+   - `--wait-for interaction` for auto-detected gates (login, CAPTCHA, Cloudflare)
+   - `--wait-for force` when the page needs manual browsing, scroll loading, or complex interaction
+4. If `--wait-for` is used, tell the user exactly what to do:
+   - If login is required, ask them to sign in in the browser
+   - If CAPTCHA appears, ask them to solve it
+   - If the page needs time to load, ask them to wait until content is visible
+   - For `--wait-for force`: tell them to press Enter when ready
+5. If JSON output shows `"status": "needs_interaction"`, switch to `--wait-for interaction` automatically
+
+## Output Path Generation
+
+The agent must construct the output file path since `baoyu-fetch` does not auto-generate paths.
+
+**Algorithm**:
+1. Determine base directory from EXTEND.md `default_output_dir` or default `./url-to-markdown/`
+2. Extract domain from URL (e.g., `example.com`)
+3. Generate slug from URL path or page title (kebab-case, 2-6 words)
+4. Construct: `{base_dir}/{domain}/{slug}/{slug}.md` — each URL gets its own directory so media files stay isolated
+5. Conflict resolution: append timestamp `{slug}-YYYYMMDD-HHMMSS/{slug}-YYYYMMDD-HHMMSS.md`
+
+Pass the constructed path to `--output`. Media files (`--download-media`) are saved into subdirectories next to the markdown file, keeping each URL's assets self-contained.
 
 ## Output Format
 
-Each run saves two files side by side:
+Markdown output to stdout (or file with `--output`) as clean markdown text.
 
-- Markdown: YAML front matter with `url`, `title`, `description`, `author`, `published`, optional `coverImage`, and `captured_at`, followed by converted markdown content
-- HTML snapshot: `*-captured.html`, containing the rendered page HTML captured from Chrome
-
-When Defuddle or page metadata provides a language hint, the markdown front matter also includes `language`.
-
-The HTML snapshot is saved before any markdown media localization, so it stays a faithful capture of the page DOM used for conversion.
-If the hosted `defuddle.md` API fallback is used, markdown is still saved, but there is no local `-captured.html` snapshot for that run.
-
-## Output Directory
-
-Default: `url-to-markdown/<domain>/<slug>.md`
-With `--output-dir ./posts/`: `./posts/<domain>/<slug>.md`
-
-HTML snapshot path uses the same basename:
-
-- `url-to-markdown/<domain>/<slug>-captured.html`
-- `./posts/<domain>/<slug>-captured.html`
-
-- `<slug>`: From page title or URL path (kebab-case, 2-6 words)
-- Conflict resolution: Append timestamp `<slug>-YYYYMMDD-HHMMSS.md`
+JSON output (`--format json`) returns structured data including:
+- `adapter` — which adapter handled the URL
+- `status` — `"ok"` or `"needs_interaction"`
+- `login` — login state detection (`logged_in`, `logged_out`, `unknown`)
+- `interaction` — interaction gate details (kind, provider, prompt)
+- `document` — structured content (url, title, author, publishedAt, content blocks, metadata)
+- `media` — collected media assets with url, kind, role
+- `markdown` — converted markdown text
+- `downloads` — media download results (when `--download-media` used)
 
 When `--download-media` is enabled:
-- Images are saved to `imgs/` next to the markdown file
-- Videos are saved to `videos/` next to the markdown file
+- Images are saved to `imgs/` next to the output file (or in `--media-dir`)
+- Videos are saved to `videos/` next to the output file (or in `--media-dir`)
 - Markdown media links are rewritten to local relative paths
 
-## Conversion Fallback
+## Built-in Adapters
 
-Conversion order:
+| Adapter | URLs | Key Features |
+|---------|------|-------------|
+| `x` | x.com, twitter.com | Tweets, threads, X Articles, media, login detection |
+| `youtube` | youtube.com, youtu.be | Transcript/captions, chapters, cover image, metadata |
+| `hn` | news.ycombinator.com | Threaded comments, story metadata, nested replies |
+| `generic` | Any URL (fallback) | Defuddle extraction, Readability fallback, auto-scroll, network idle detection |
 
-1. Try the URL-specific parser layer first when a site rule matches
-2. If no specialized parser matches, try Defuddle
-3. For rich pages such as YouTube, prefer Defuddle's extractor-specific output (including transcripts when available) instead of replacing it with the legacy pipeline
-4. If Defuddle throws, cannot load, returns obviously incomplete markdown, or captures lower-quality content than the legacy pipeline, automatically fall back to the pre-Defuddle extractor
-5. If the agent determines the captured result is a login screen, verification screen, or paywall shell, rerun locally with `--browser headed --wait` and ask the user to complete access before capture
-6. If the entire local browser capture flow still fails before markdown can be produced, try the hosted `https://defuddle.md/<url>` API and save its markdown output directly
-7. The legacy fallback path uses the older Readability/selector/Next.js-data based HTML-to-Markdown implementation recovered from git history
-
-CLI output will show:
-
-- `Converter: parser:...` when a URL-specific parser succeeded
-- `Converter: defuddle` when Defuddle succeeds
-- `Converter: legacy:...` plus `Fallback used: ...` when fallback was needed
-- `Converter: defuddle-api` when local browser capture failed and the hosted API was used instead
+Adapter is auto-selected based on URL. Use `--adapter <name>` to override.
 
 ## Media Download Workflow
 
@@ -275,42 +277,47 @@ Based on `download_media` setting in EXTEND.md:
 
 | Setting | Behavior |
 |---------|----------|
-| `1` (always) | Run script with `--download-media` flag |
-| `0` (never) | Run script without `--download-media` flag |
+| `1` (always) | Run CLI with `--download-media --output <path>` |
+| `0` (never) | Run CLI with `--output <path>` (no media download) |
 | `ask` (default) | Follow the ask-each-time flow below |
 
 ### Ask-Each-Time Flow
 
-1. Run script **without** `--download-media` → markdown saved
+1. Run CLI **without** `--download-media` with `--output <path>` → markdown saved
 2. Check saved markdown for remote media URLs (`https://` in image/video links)
 3. **If no remote media found** → done, no prompt needed
 4. **If remote media found** → use `AskUserQuestion`:
    - header: "Media", question: "Download N images/videos to local files?"
    - "Yes" — Download to local directories
    - "No" — Keep remote URLs
-5. If user confirms → run script **again** with `--download-media` (overwrites markdown with localized links)
+5. If user confirms → run CLI **again** with `--download-media --output <same-path>` (overwrites markdown with localized links)
 
 ## Environment Variables
 
 | Variable | Description |
 |----------|-------------|
-| `URL_CHROME_PATH` | Custom Chrome executable path |
-| `URL_DATA_DIR` | Custom data directory |
-| `URL_CHROME_PROFILE_DIR` | Custom Chrome profile directory |
+| `BAOYU_CHROME_PROFILE_DIR` | Chrome user data directory (can also use `--chrome-profile-dir`) |
 
-**Troubleshooting**: Chrome not found → set `URL_CHROME_PATH`. Timeout → increase `--timeout`. Complex pages → try `--wait` mode. If markdown quality is poor, inspect the saved `-captured.html` and check whether the run logged a legacy fallback.
+**Troubleshooting**: Chrome not found → use `--browser-path`. Timeout → increase `--timeout`. Login/CAPTCHA pages → use `--wait-for interaction`. Debug → use `--debug-dir` to inspect captured HTML and network logs.
 
 ### YouTube Notes
 
-- The upgraded Defuddle path uses async extractors, so YouTube pages can include transcript text directly in the markdown body.
-- Transcript availability depends on YouTube exposing a caption track. Videos with captions disabled, restricted playback, or blocked regional access may still produce description-only output.
-- If the page needs time to finish loading descriptions, chapters, or player metadata, prefer `--wait` and capture after the watch page is fully hydrated.
+- YouTube adapter extracts transcripts/captions automatically when available
+- Transcript format: `[MM:SS] Text segment` with chapter headings
+- Transcript availability depends on YouTube exposing a caption track. Videos with captions disabled or restricted playback may produce description-only output
+- Use `--wait-for force` if the page needs time to finish loading player metadata
 
-### Hosted API Fallback
+### X/Twitter Notes
 
-- The hosted fallback endpoint is `https://defuddle.md/<url>`. In shell form: `curl https://defuddle.md/stephango.com`
-- Use it only when the local Chrome/CDP capture path fails outright. The local path still has higher fidelity because it can save the captured HTML and handle authenticated pages.
-- The hosted API already returns Markdown with YAML frontmatter, so save that response as-is and then apply the normal media-localization step if requested.
+- Extracts single tweets, threads, and X Articles
+- Auto-detects login state; if logged out and content requires auth, JSON output will show `"status": "needs_interaction"`
+- Use `--wait-for interaction` for login-protected content
+
+### Hacker News Notes
+
+- Parses threaded comments with proper nesting and reply hierarchy
+- Includes story metadata (title, URL, author, score, comment count)
+- Shows comment deletion/dead status
 
 ## Extension Support
 

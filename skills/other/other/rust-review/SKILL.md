@@ -4,6 +4,9 @@ description: 'Use this skill for Rust-specific code audits. Use when reviewing R
   code, auditing unsafe blocks, analyzing ownership patterns, scanning Cargo dependencies
   for security. Do not use when general code review without Rust - use unified-review.
   DO NOT use when: performance profiling - use parseltongue:python-performance pattern.'
+version: 1.7.1
+globs: "**/*.rs"
+alwaysApply: false
 category: code-review
 tags:
 - rust
@@ -26,13 +29,20 @@ estimated_tokens: 400
 progressive_loading: true
 dependencies:
 - pensive:shared
-- imbue:evidence-logging
+- imbue:proof-of-work
 modules:
 - ownership-analysis.md
 - error-handling.md
 - concurrency-patterns.md
 - unsafe-audit.md
 - cargo-dependencies.md
+- silent-returns.md
+- collection-types.md
+- sql-injection.md
+- cfg-test-misuse.md
+- error-messages.md
+- duplicate-validators.md
+- builtin-preference.md
 ---
 ## Table of Contents
 
@@ -108,6 +118,9 @@ Load modules as needed based on review scope:
 **Dependency Review**:
 - See `modules/cargo-dependencies.md` for vulnerability scanning
 
+**Idiomatic Patterns**:
+- See `modules/builtin-preference.md` for conversion traits and builtin preference
+
 ## Core Workflow
 
 1. **Ownership Analysis**: Check borrowing, lifetimes, clone patterns
@@ -136,6 +149,7 @@ Load modules as needed based on review scope:
 
 ### Idioms
 - [ ] Standard traits implemented
+- [ ] Conversion traits preferred over helper functions
 - [ ] Error types well-designed
 - [ ] Documentation complete
 

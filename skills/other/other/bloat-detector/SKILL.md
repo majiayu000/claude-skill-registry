@@ -4,6 +4,8 @@ description: 'Detect codebase bloat through progressive analysis: dead code, dup
   complexity, documentation bloat. Use when context usage high, quarterly maintenance,
   pre-release cleanup, before refactoring. Do not use when active feature development,
   time-sensitive bugs, codebase < 1000 lines.'
+version: 1.7.1
+alwaysApply: false
 category: conservation
 tags:
 - bloat

@@ -9,6 +9,8 @@ license: MIT
 
 # Implementation Task Executor
 
+**Type:** L3 Worker
+
 Executes a single implementation (or refactor) task from Todo to To Review using the task description and linked guides.
 
 ## Purpose & Scope
@@ -161,6 +163,12 @@ Before setting To Review, verify all items:
 - Preserve Foundation-First ordering from orchestrator; do not reorder tasks.
 - **Do NOT commit.** Leave all changes uncommitted — the reviewer reviews and commits.
 
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
+
+Write `.hex-skills/runtime-artifacts/runs/{run_id}/task-status/{task_id}.json` before finishing.
+
 ## Definition of Done
 - [ ] Task selected and set to In Progress; kanban updated accordingly.
 - [ ] Guides/manuals/ADRs/research read; approach aligned with task Technical Approach.
@@ -168,6 +176,7 @@ Before setting To Review, verify all items:
 - [ ] Docs and impacted tests updated.
 - [ ] Typecheck and lint passed (or project quality commands) with evidence in comment.
 - [ ] Task set to To Review; kanban moved to To Review; summary comment added.
+- [ ] Runtime summary artifact written to the shared task-status location.
 
 ## Reference Files
 - **Tools config:** `shared/references/tools_config_guide.md`

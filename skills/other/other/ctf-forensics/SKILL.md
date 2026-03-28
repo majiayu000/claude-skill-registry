@@ -12,6 +12,30 @@ metadata:
 
 Quick reference for forensics CTF challenges. Each technique has a one-liner here; see supporting files for full details.
 
+## Prerequisites
+
+**Python packages (all platforms):**
+```bash
+pip install volatility3 Pillow numpy matplotlib
+```
+
+**Linux (apt):**
+```bash
+apt install binwalk foremost libimage-exiftool-perl tshark sleuthkit \
+  ffmpeg steghide testdisk john pcapfix
+```
+
+**macOS (Homebrew):**
+```bash
+brew install binwalk exiftool wireshark sleuthkit ffmpeg \
+  testdisk john-jumbo
+```
+
+**Ruby gems (all platforms):**
+```bash
+gem install zsteg
+```
+
 ## Additional Resources
 
 - [3d-printing.md](3d-printing.md) - 3D printing forensics (PrusaSlicer binary G-code, QOIF, heatshrink)
@@ -28,6 +52,12 @@ Quick reference for forensics CTF challenges. Each technique has a one-liner her
 - [signals-and-hardware.md](signals-and-hardware.md) - Hardware signal decoding with decode code (VGA frame parsing, HDMI TMDS symbol decode, DisplayPort 8b/10b + LFSR descrambler), Voyager Golden Record audio, Saleae Logic 2 UART decode, Flipper Zero .sub files, side-channel power analysis (DPA), keyboard acoustic side-channel, CD audio disc image steganography (CIRC de-interleaving + spiral rendering), Linux input_event keylogger dump parsing
 
 ---
+
+## When to Pivot
+
+- If you recover an encrypted blob and the hard part becomes RSA, AES, or lattice work, switch to `/ctf-crypto`.
+- If the evidence really points to malware staging, beacon config extraction, or packed samples, switch to `/ctf-malware`.
+- If the artifact is a web app backup or API dump and the remaining problem is application logic, switch to `/ctf-web`.
 
 ## Quick Start Commands
 
@@ -222,6 +252,8 @@ See [windows.md](windows.md) for WMI repository analysis details.
 - **WPA/WEP WiFi decryption:** `aircrack-ng -w wordlist capture.pcap` cracks WPA handshake; WEP cracked with enough IVs. See [network.md](network.md#wpawep-wifi-decryption-from-pcap-defcamp-ctf-2016).
 - **PCAP repair:** `pcapfix -d corrupted.pcap` repairs broken PCAP headers/checksums for Wireshark loading. See [network.md](network.md#corrupted-pcap-repair-with-pcapfix-csaw-ctf-2016).
 - **USB HID keyboard decoding:** Extract 8-byte HID reports from USB captures; byte 2 = keycode, byte 0 = modifiers (Shift). See [network-advanced.md](network-advanced.md#usb-hid-keyboard-capture-decoding-ekoparty-ctf-2016).
+- **dnscat2 reassembly:** Decode hex/base32 subdomain labels, strip 9-byte dnscat2 header, deduplicate retransmissions, reassemble payload. See [network-advanced.md](network-advanced.md#dnscat2-traffic-reassembly-from-dns-pcap-bsidessf-2017).
+- **USB keyboard LED exfiltration:** Host-to-device HID SET_REPORT packets toggle Caps Lock LED. Timing encodes Morse code. See [network-advanced.md](network-advanced.md#usb-keyboard-led-morse-code-exfiltration-bitsctf-2017).
 
 See [network.md](network.md) for SMB3 decryption, credential extraction, and [linux-forensics.md](linux-forensics.md) for full TLS/TFTP/USB workflows.
 
@@ -292,6 +324,7 @@ See [linux-forensics.md](linux-forensics.md) for full browser credential decrypt
 - **Linux input_event keylogger parsing:** 24-byte `struct input_event` binary dump; filter `type==1` (EV_KEY), `value==1` (press), map keycodes via `input-event-codes.h`. See [signals-and-hardware.md](signals-and-hardware.md#linux-input_event-keylogger-dump-parsing-pwn2win-2016).
 - **VBA macro cell data to binary:** Excel cells with numeric values; VBA `CByte((val-78)/3)` transforms to ELF bytes. Reimplement in Python, never run the macro. See [linux-forensics.md](linux-forensics.md#vba-macro-forensics---excel-cell-data-to-elf-binary-sharif-ctf-2016).
 - **RGB parity steganography:** Sum R+G+B per pixel; even=white, odd=black renders hidden binary bitmap. See [stego-image.md](stego-image.md#rgb-parity-steganography-break-in-2016).
+- **Hidden PDF objects:** Unreferenced content stream objects not in `/Kids` array. Add to `/Kids`, increment `/Count`, re-render. See [network-advanced.md](network-advanced.md#unreferenced-pdf-objects-with-hidden-pages-sharifctf-7-2016).
 
 ## SMB RID Recycling via LSARPC (Midnight 2026)
 

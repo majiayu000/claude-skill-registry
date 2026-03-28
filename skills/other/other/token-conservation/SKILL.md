@@ -5,12 +5,13 @@ description: 'Use this skill at the START of every session. This is MANDATORY fo
   prompt sizes spike, tool calls increase, before long-running analyses or massive
   context loads. Do not use when context-optimization already handles the scenario.
   DO NOT use when: simple queries with minimal context.'
+version: 1.7.1
+alwaysApply: true
 progressive_loading: true
 dependencies:
   hub: []
   modules: []
 ---
-
 # Token Conservation Workflow
 
 ## When To Use
@@ -35,8 +36,18 @@ dependencies:
 - Capture remaining budget and set a max token target for this task.
 
 ## Step 2 – Context Plan (`context-plan`)
-- Decide exactly which files/snippets to expose. Prefer `Read` with `offset`/`limit`
-  params or `Grep` tool over loading whole files. Avoid `cat`/`sed`/`awk` via Bash
+- **Set a discovery read budget BEFORE reading any files.** Count each `Read` call
+  and each content-mode `Grep` as one read. Glob and files-with-matches Grep are free.
+  - Implement from spec/requirements: **max 8 reads**
+  - Bug fix at known location: **max 5 reads**
+  - Refactor with known scope: **max 1 read per file being changed**
+  - Open exploration: **max 15 reads**
+- **Read order** (most valuable first): spec/requirements, files to modify,
+  imports/interfaces, then stop and start writing.
+- **When budget is spent**: ask the user if more context is needed. Do NOT
+  self-authorize additional reads. Only explicit user approval overrides the budget.
+- Prefer `Read` with `offset`/`limit` params or `Grep` tool over loading whole files.
+  A `Read` targeting <50 lines counts as 0.5 reads. Avoid `cat`/`sed`/`awk` via Bash
   — Claude Code 2.1.21+ steers toward native file tools (Read, Edit, Write, Grep, Glob).
 - **PDFs (Claude Code 2.1.30+)**: Use `Read` with `pages: "1-5"` for targeted PDF reading
   instead of loading entire documents. Large PDFs (>10 pages) return a lightweight

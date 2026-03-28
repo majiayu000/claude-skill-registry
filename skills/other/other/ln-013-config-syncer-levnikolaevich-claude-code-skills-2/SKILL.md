@@ -20,9 +20,9 @@ Synchronizes skills (via symlinks) and MCP/hook settings from Claude Code (sourc
 | Direction | Content |
 |-----------|---------|
 | **Input** | OS info, `disabled` flags per agent, `targets` (gemini/codex/both), `dry_run` flag, optional `runId`, optional `summaryArtifactPath` |
-| **Output** | Structured summary envelope with per-target sync status (synced / skipped / failed) |
+| **Output** | Structured summary envelope with `payload.status` = `completed` / `skipped` / `error`, plus per-target sync outcomes in `changes` / `detail` |
 
-If `summaryArtifactPath` is provided, write the same summary JSON there. If not provided, return the summary inline and remain fully standalone.
+If `summaryArtifactPath` is provided, write the same summary JSON there. If not provided, return the summary inline and remain fully standalone. If `runId` is not provided, generate a standalone `run_id` before emitting the summary envelope.
 
 ---
 

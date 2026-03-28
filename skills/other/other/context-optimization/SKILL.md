@@ -5,6 +5,8 @@ description: 'Use this skill BEFORE starting complex tasks. Check context levels
   multi-step operations planned, context pressure is high. Do not use when simple
   single-step tasks with low context usage. DO NOT use when: already using mcp-code-execution
   for tool chains.'
+version: 1.7.1
+alwaysApply: false
 category: conservation
 token_budget: 150
 progressive_loading: true

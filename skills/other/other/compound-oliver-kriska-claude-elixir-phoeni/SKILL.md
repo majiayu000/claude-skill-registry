@@ -70,6 +70,7 @@ When user says "that worked", "it's fixed", "problem solved",
 2. **Symptoms must be specific** — not "it broke"
 3. **Root cause is WHY, not WHAT**
 4. **One problem per file**
+5. **NEVER document a fix before verifying it works** — run `mix compile && mix test` first; unverified solutions poison the knowledge base
 
 ## Integration with Workflow
 

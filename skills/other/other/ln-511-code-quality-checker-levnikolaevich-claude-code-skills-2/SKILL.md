@@ -9,6 +9,9 @@ license: MIT
 
 # Code Quality Checker
 
+**Type:** L3 Worker
+**Category:** 5XX Quality
+
 Analyzes Done implementation tasks with quantitative Code Quality Score based on metrics, MCP Ref validation, and issue penalties.
 
 ## Inputs
@@ -202,6 +205,25 @@ Formula: `Code Quality Score = 100 - metric_penalties - issue_penalties`
 - **Context7 for libraries:** When reviewing library usage, query-docs to verify correct patterns.
 - Language preservation in comments (EN/RU).
 - Do not create tasks or change statuses; caller decides next actions.
+
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/quality_summary_contract.md`
+
+Accept optional `summaryArtifactPath`.
+
+Summary kind:
+- `quality-worker`
+
+Required payload semantics:
+- `worker = "ln-511"`
+- `status`
+- `verdict`
+- `score`
+- `issues`
+- `warnings`
+
+Write the summary to the provided artifact path or return the same envelope in structured output.
 
 ## Definition of Done
 

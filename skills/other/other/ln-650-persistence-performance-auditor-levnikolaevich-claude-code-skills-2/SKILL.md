@@ -9,6 +9,8 @@ license: MIT
 
 # Persistence & Performance Auditor (L2 Coordinator)
 
+**Type:** L2 Coordinator
+
 Coordinates 4 specialized audit workers to perform database efficiency, transaction correctness, runtime performance, and resource lifecycle analysis.
 
 ## Purpose & Scope
@@ -20,6 +22,52 @@ Coordinates 4 specialized audit workers to perform database efficiency, transact
 - Write report to `docs/project/persistence_audit.md` (file-based, no task creation)
 - Manual invocation by user; not part of Story pipeline
 - **Independent from ln-620** (can be run separately or after ln-620)
+
+**MANDATORY READ:** Load `shared/references/audit_runtime_contract.md`, `shared/references/audit_summary_contract.md`, and `shared/references/audit_coordinator_aggregation.md`.
+
+## Runtime Contract
+
+Use `shared/scripts/audit-runtime/cli.mjs` as orchestration SSOT.
+
+Runtime phase map:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_DISCOVERY`
+3. `PHASE_2_RESEARCH`
+4. `PHASE_3_PREPARE_OUTPUT`
+5. `PHASE_4_DELEGATE`
+6. `PHASE_5_AGGREGATE`
+7. `PHASE_6_WRITE_REPORT`
+8. `PHASE_7_RESULTS_LOG`
+9. `PHASE_8_CLEANUP`
+10. `PHASE_9_SELF_CHECK`
+11. `DONE`
+12. `PAUSED`
+
+Run-scoped worker artifacts:
+- reports: `.hex-skills/runtime-artifacts/runs/{run_id}/audit-report/`
+- summaries: `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/`
+- public report: `docs/project/persistence_audit.md`
+- public trend log: `docs/project/.audit/results_log.md`
+
+## Worker Invocation (MANDATORY)
+
+| Phase | Worker | Context | Condition |
+|-------|--------|---------|-----------|
+| 4 | ln-651, ln-652, ln-653, ln-654 | Agent -> shared contextStore + `summaryArtifactPath` | always |
+
+**TodoWrite format (mandatory):**
+```
+- Resolve runtime config and phase order (pending)
+- Discover DB/ORM/runtime metadata (pending)
+- Research best practices (pending)
+- Prepare runtime artifact dirs (pending)
+- Invoke ln-651..ln-654 with summaryArtifactPath (pending)
+- Aggregate JSON worker summaries and report evidence (pending)
+- Write consolidated report (pending)
+- Append results log (pending)
+- Cleanup runtime artifacts (pending)
+- Run self-check and complete runtime (pending)
+```
 
 ## Workflow
 
@@ -42,7 +90,7 @@ Coordinates 4 specialized audit workers to perform database efficiency, transact
 - Package manifests: `requirements.txt`, `pyproject.toml`, `package.json`, `go.mod`
 - Auto-discover Team ID from `docs/tasks/kanban_board.md`
 - **Index codebase graph (if available):** IF `hex-graph` MCP server is available:
-  - `index_project(path=codebase_root)` — builds/refreshes code graph
+  - `index_project(path=codebase_root)` -- builds/refreshes code graph
   - Add `graph_indexed: true` to contextStore for workers (ln-651 uses find_references/trace_paths for N+1 detection, ln-652 uses trace_paths for event channels)
 
 **Extract DB-specific metadata:**
@@ -60,11 +108,11 @@ Coordinates 4 specialized audit workers to perform database efficiency, transact
 ```
 Grep("pg_notify|NOTIFY|CREATE TRIGGER", path="alembic/versions/")
   OR path="migrations/"
-→ Store: db_config.triggers = [{table, event, function, channel_name}]
+-> Store: db_config.triggers = [{table, event, function, channel_name}]
 
 Grep("LISTEN\s+\w+|\.subscribe\(|\.on\(.*channel|redis.*subscribe", path="src/")
   OR path="app/"
-→ Store: db_config.event_subscribers = [{channel_name, file, line, technology}]
+-> Store: db_config.event_subscribers = [{channel_name, file, line, technology}]
 ```
 
 ## Phase 2: Research Best Practices (ONCE)
@@ -90,14 +138,16 @@ Grep("LISTEN\s+\w+|\.subscribe\(|\.on\(.*channel|redis.*subscribe", path="src/")
     "pool_size": 10
   },
   "codebase_root": "/project",
-  "output_dir": "docs/project/.audit/ln-650/{YYYY-MM-DD}"
+  "output_dir": ".hex-skills/runtime-artifacts/runs/{run_id}/audit-report"
 }
 ```
+
+Coordinator also computes one `summaryArtifactPath` per worker invocation under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/`.
 
 ## Phase 3: Prepare Output Directory
 
 ```bash
-mkdir -p {output_dir}   # Worker files cleaned up after consolidation (Phase 8)
+mkdir -p {output_dir}   # plus sibling audit-worker summary directory
 ```
 
 ## Phase 4: Delegate to Workers
@@ -116,6 +166,10 @@ mkdir -p {output_dir}   # Worker files cleaned up after consolidation (Phase 8)
 **Invocation (4 workers in PARALLEL):**
 ```javascript
 FOR EACH worker IN [ln-651, ln-652, ln-653, ln-654]:
+  worker_context = {
+    ...contextStore,
+    summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/" + worker + ".json"
+  }
   Agent(description: "Audit via " + worker,
        prompt: "Execute audit worker.
 
@@ -123,25 +177,19 @@ Step 1: Invoke worker:
   Skill(skill: \"" + worker + "\")
 
 CONTEXT:
-" + JSON.stringify(contextStore),
+" + JSON.stringify(worker_context),
        subagent_type: "general-purpose")
 ```
 
-**Worker Output Contract (File-Based):**
+**Worker Output Contract:**
 
-Workers follow the shared file-based audit contract, write reports to `{output_dir}/`, and return compact score/severity summaries for aggregation.
-
-Expected summary format:
-```text
-Report written: docs/project/.audit/ln-650/{YYYY-MM-DD}/651-query-efficiency.md
-Score: 6.0/10 | Issues: 8 (C:0 H:3 M:4 L:1)
-```
+Workers follow the shared audit contract, write markdown reports to `{output_dir}/`, and write JSON summaries to `summaryArtifactPath`.
 
 ## Phase 5: Aggregate Results (File-Based)
 
 **MANDATORY READ:** Load `shared/references/audit_coordinator_aggregation.md` and `shared/references/context_validation.md`.
 
-Use the shared aggregation pattern for parsing worker summaries, rolling up severity totals, reading worker files, and assembling the final report.
+Use the shared aggregation pattern for parsing JSON worker summaries, rolling up severity totals, reading worker files, and assembling the final report.
 
 Local rules for this coordinator:
 - Overall score = average of 4 category scores.
@@ -154,19 +202,19 @@ Apply Rules 1, 6 to merged findings:
 ```
 FOR EACH finding WHERE severity IN (HIGH, MEDIUM):
   # Rule 1: ADR/Planned Override
-  IF finding matches ADR → advisory "[Planned: ADR-XXX]"
+  IF finding matches ADR -> advisory "[Planned: ADR-XXX]"
 
   # Rule 6: Execution Context
   IF finding.check IN (blocking_io, redundant_fetch, transaction_wide, cpu_bound):
     context = 0
-    - Function in __init__/setup/bootstrap/migrate → context += 1
-    - File in tasks/jobs/cron/                      → context += 1
-    - Has timeout/safeguard nearby                  → context += 1
-    - Small data (<100KB file, <100 items dataset)  → context += 1
-    IF context >= 3 → advisory
-    IF context >= 1 → severity -= 1
+    - Function in __init__/setup/bootstrap/migrate -> context += 1
+    - File in tasks/jobs/cron/                      -> context += 1
+    - Has timeout/safeguard nearby                  -> context += 1
+    - Small data (<100KB file, <100 items dataset)  -> context += 1
+    IF context >= 3 -> advisory
+    IF context >= 1 -> severity -= 1
 
-Downgraded findings → "Advisory Findings" section in report.
+Downgraded findings -> "Advisory Findings" section in report.
 Recalculate overall score excluding advisory findings from penalty.
 ```
 
@@ -262,14 +310,14 @@ Append one row to `docs/project/.audit/results_log.md` with: Skill=`ln-650`, Met
 rm -rf {output_dir}
 ```
 
-Delete the dated output directory (`docs/project/.audit/ln-650/{YYYY-MM-DD}/`). The consolidated report and results log already preserve all audit data.
+Delete the run-scoped runtime artifact directory (`.hex-skills/runtime-artifacts/runs/{run_id}/`) after consolidation. The consolidated report and results log already preserve the required audit outputs.
 
 ## Definition of Done
 
 - [ ] Tech stack discovered (DB type, ORM, async framework)
 - [ ] DB-specific metadata extracted (triggers, session config, pool settings)
 - [ ] Best practices researched via MCP tools
-- [ ] contextStore built with output_dir = `docs/project/.audit/ln-650/{YYYY-MM-DD}`
+- [ ] contextStore built with output_dir = `.hex-skills/runtime-artifacts/runs/{run_id}/audit-report`
 - [ ] Output directory created for worker reports
 - [ ] All 4 workers invoked in PARALLEL and completed; each wrote report to `{output_dir}/`
 - [ ] Results aggregated from return values (scores) + file reads (findings tables)
@@ -290,7 +338,7 @@ Delete the dated output directory (`docs/project/.audit/ln-650/{YYYY-MM-DD}/`). 
 
 **MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
 
-Skill type: `review-coordinator` (workers only). Run after all phases complete. Output to chat using the `review-coordinator — workers only` format.
+Skill type: `review-coordinator` (workers only). Run after all phases complete. Output to chat using the `review-coordinator -- workers only` format.
 
 ## Reference Files
 

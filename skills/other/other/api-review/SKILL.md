@@ -4,6 +4,8 @@ description: 'Use this skill for API surface evaluation and design review. Use w
   reviewing API design, auditing consistency, governing documentation, researching
   API exemplars. Do not use when architecture review - use architecture-review. DO
   NOT use when: implementation bugs - use bug-review.'
+version: 1.7.1
+alwaysApply: false
 category: code-review
 tags:
 - api

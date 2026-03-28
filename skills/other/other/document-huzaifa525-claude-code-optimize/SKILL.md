@@ -1,6 +1,6 @@
 ---
 name: document
-description: Generate documentation, JSDoc, or docstrings for a file or module
+description: Use when the user wants to add documentation, JSDoc, docstrings, or API docs to existing code.
 disable-model-invocation: true
 allowed-tools: Read, Grep, Glob, Edit, Bash
 argument-hint: "[file or directory]"

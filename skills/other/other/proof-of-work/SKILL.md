@@ -6,6 +6,8 @@ description: 'Enforces "prove before claim" discipline - validation, testing, an
   workflow optimized, performance improved, or issue resolved. Do not use when asking
   questions or for work clearly in-progress. MANDATORY: This skill is required before
   any completion claim.'
+version: 1.7.1
+alwaysApply: false
 category: workflow-methodology
 tags:
 - validation
@@ -32,7 +34,6 @@ modules:
 - modules/todowrite-patterns.md
 - modules/validation-protocols.md
 ---
-
 > Claims without evidence fail the people who depend on
 > your work. Proof-of-work is humility in practice:
 > "it looks correct" is not "I verified it works."

@@ -1,6 +1,6 @@
 ---
 name: testing
-description: "Elixir testing patterns - ExUnit, Mox, factories (ExMachina), LiveView test helpers. Load when working on *_test.exs files, test/support/ helpers, factory files, or fixing test failures (sandbox, async, flaky). Covers ConnCase, DataCase, assert_receive, verify_on_exit!. DO NOT load for non-test .ex files or manual QA tasks."
+description: "Provide Elixir testing patterns — ExUnit, Mox, factories (ExMachina), LiveView test helpers. Use when working on *_test.exs files, test/support/ helpers, factory files, or fixing test failures (sandbox, async, flaky). Covers ConnCase, DataCase, assert_receive, verify_on_exit!. DO NOT load for non-test .ex files or manual QA tasks."
 effort: medium
 user-invocable: false
 ---

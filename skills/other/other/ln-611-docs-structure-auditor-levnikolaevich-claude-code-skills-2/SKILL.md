@@ -71,11 +71,15 @@ Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Write report to `{output_dir}/611-structure.md` with `category: "Documentation Structure"` and checks: hierarchy_links, ssot, compression, requirements_compliance, freshness_indicators, legacy_cleanup, stack_adaptation.
 
-Return summary to coordinator:
+Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 ```
-Report written: docs/project/.audit/ln-610/{YYYY-MM-DD}/611-structure.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/611-structure.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -102,7 +106,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated using penalty algorithm
 - [ ] Report written to `{output_dir}/611-structure.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 
@@ -112,5 +116,3 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ---
 **Version:** 1.0.0
 **Last Updated:** 2026-03-01
-
-

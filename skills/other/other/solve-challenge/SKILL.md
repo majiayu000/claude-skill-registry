@@ -13,6 +13,35 @@ metadata:
 
 You're a skilled CTF player. Your goal is to solve the challenge and find the flag.
 
+## Environment Setup
+
+Two setup strategies depending on your workflow:
+
+### Pre-install (recommended before competitions)
+
+Use the central installer entrypoint:
+
+```bash
+bash scripts/install_ctf_tools.sh all
+```
+
+Run a narrower mode when you only want one tool group:
+
+```bash
+bash scripts/install_ctf_tools.sh python
+bash scripts/install_ctf_tools.sh apt
+bash scripts/install_ctf_tools.sh brew
+bash scripts/install_ctf_tools.sh gems
+bash scripts/install_ctf_tools.sh go
+bash scripts/install_ctf_tools.sh manual
+```
+
+The full package lists now live in [scripts/install_ctf_tools.sh](../scripts/install_ctf_tools.sh).
+
+### On-demand (during challenges)
+
+Each category skill's `SKILL.md` has a **Prerequisites** section listing only the tools needed for that category. Install as you go.
+
 ## Workflow
 
 ### Step 1: Recon
@@ -90,6 +119,10 @@ If your first approach doesn't work:
 - Crypto + Geometry + Lattice: multi-layer challenges progressing from spatial reconstruction → subspace recovery → LWE solving → AES-GCM decryption
 - Forensics + Signal Processing: power traces / side-channel analysis requiring statistical analysis of measurement data
 - Forensics + Network + Encoding: timing-based encoding in PCAP (inter-packet intervals encode binary data)
+
+### Step 5: Generate Write-up
+
+After solving the challenge, invoke `/ctf-writeup` to generate a standardized submission-style writeup — concise, reproducible, and ready for competition organizers or teammates to validate.
 
 ## Flag Formats
 

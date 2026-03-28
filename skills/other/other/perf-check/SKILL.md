@@ -1,6 +1,6 @@
 ---
 name: perf-check
-description: Analyze code for performance issues — N+1 queries, memory leaks, bundle size, slow patterns
+description: Use when the user wants to check performance, find slow code, identify bottlenecks, or audit efficiency.
 disable-model-invocation: true
 allowed-tools: Read, Grep, Glob, Bash
 context: fork

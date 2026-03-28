@@ -1,6 +1,9 @@
 ---
 name: tech-tutorial
 description: Plan, draft, and refine technical tutorials for developers.
+version: 1.7.1
+globs: "**/*.md"
+alwaysApply: false
   Use when writing step-by-step guides, getting-started walkthroughs, or
   concept explanations backed by working code. Do not use for API reference
   docs (use doc-generator) or prose cleanup (use slop-detector).
@@ -28,7 +31,6 @@ dependencies:
 - scribe:shared
 - scribe:slop-detector
 ---
-
 # Tech Tutorial
 
 A good technical tutorial has one goal: move a reader from not knowing

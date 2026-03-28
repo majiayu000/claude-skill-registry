@@ -1,6 +1,9 @@
 ---
 name: slop-detector
 description: Detect and flag AI-generated content markers in documentation and prose.
+version: 1.7.1
+globs: "**/*.md"
+alwaysApply: false
   Use when reviewing documentation for AI markers, cleaning up LLM-generated content,
   or auditing prose quality. Do not use when generating new content (use doc-generator)
   or learning writing styles (use style-learner).
@@ -33,7 +36,6 @@ modules:
 dependencies:
 - scribe:shared
 ---
-
 # AI Slop Detection
 
 AI slop is identified by patterns of usage rather than individual words. While a single "delve" might be acceptable, its proximity to markers like "tapestry" or "embark" signals generated text. We analyze the density of these markers per 100 words, their clustering, and whether the overall tone fits the document type.

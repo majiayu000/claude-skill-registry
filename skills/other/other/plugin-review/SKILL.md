@@ -4,6 +4,8 @@ description: "Tiered plugin quality review with dependency-aware
   scoping. Use when: reviewing plugin changes, preparing PRs,
   pre-release validation. Do not use when: single skill analysis
   (use /analyze-skill), creating new skills (use /create-skill)."
+version: 1.7.1
+alwaysApply: false
 category: plugin-management
 tags:
 - review
@@ -21,7 +23,6 @@ tools:
 - generate_dependency_map.py
 progressive_loading: true
 ---
-
 # Plugin Review
 
 Tiered quality review of plugins with dependency-aware scoping.
@@ -34,6 +35,8 @@ Tiered quality review of plugins with dependency-aware scoping.
 - [Module Loading](#module-loading)
 - [Verdict](#verdict)
 - [Output Format](#output-format)
+- [Quality Gate Mode](#quality-gate-mode)
+- [Configuration](#configuration)
 
 ## Tiers
 
@@ -94,7 +97,47 @@ Plugin          test  lint  type  reg   verdict
 <name>          PASS  PASS  PASS  PASS  PASS
 ...
 
-Verdict: <PASS|WARN|FAIL> (N/N plugins healthy)
+Verdict: <PASS|PASS-WITH-WARNINGS|FAIL> (N/N plugins healthy)
 ```
 
 PR and release tiers add scorecard sections.
+
+## Quality Gate Mode
+
+The `--quality-gate` flag enables CI/CD integration with
+exit codes that distinguish warnings from failures:
+
+- `0`: all quality gates passed
+- `1`: warnings present but gates passed (non-blocking)
+- `2`: quality gate failures (blocking)
+- `3`: critical issues found (blocking)
+
+Use `--fail-on warning` to treat warnings as blocking.
+
+## Configuration
+
+Place a `.plugin-review.yaml` file in the plugin root
+to customize thresholds and focus areas:
+
+```yaml
+plugin_review:
+  quality_gates:
+    structure_min: 80
+    skills_min: 75
+    hooks_min: 70
+    tokens_max_total: 50000
+    bloat_max_percentage: 15
+  focus_areas:
+    - skills
+    - hooks
+    - tokens
+  exclude_patterns:
+    - "*/legacy/*"
+    - "*/deprecated/*"
+  severity_overrides:
+    missing_description: warning
+    large_file: info
+```
+
+See the `/plugin-review` command reference for full
+usage examples.

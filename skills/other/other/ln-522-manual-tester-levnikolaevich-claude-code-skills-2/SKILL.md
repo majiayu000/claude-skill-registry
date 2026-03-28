@@ -134,6 +134,23 @@ To create expected files:
 - No fixes or status changes; only evidence and verdict.
 - Script must be idempotent (can rerun anytime).
 
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/test_planning_summary_contract.md`
+
+Accept optional `summaryArtifactPath`.
+
+Summary kind:
+- `test-planning-worker`
+
+Required payload semantics:
+- `worker = "ln-522"`
+- `status`
+- `warnings`
+- `manual_result_path`
+
+Write the summary to the provided artifact path or return the same envelope in structured output.
+
 ## Definition of Done
 - [ ] `tests/manual/` structure exists (config.sh, README.md, test-all.sh, results/ created if missing).
 - [ ] `tests/manual/results/` added to project `.gitignore`.

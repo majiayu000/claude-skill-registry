@@ -1,6 +1,6 @@
 ---
 name: phx:intro
-description: Interactive introduction to the Elixir/Phoenix plugin. Walks through commands, workflow, and features in 6 sections.
+description: Walk through the Elixir/Phoenix plugin commands, workflow, and features in 6 interactive sections. Use when a new user wants to learn what the plugin offers or needs a refresher on available commands.
 effort: low
 argument-hint: [--section N]
 ---
@@ -46,6 +46,7 @@ For each section:
 1. **ONE section at a time** — never dump all content at once
 2. **User controls pace** — always offer to stop between sections
 3. **Clean formatting** — use tables and code blocks, not walls of text
+4. **NEVER skip the user's questions** — tutorial is interactive, not a monologue; if the user asks a question mid-section, answer it before continuing
 
 ## Closing Message
 

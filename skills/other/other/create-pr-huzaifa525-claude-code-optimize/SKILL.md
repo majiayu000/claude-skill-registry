@@ -1,6 +1,6 @@
 ---
 name: create-pr
-description: Create a GitHub PR with auto-generated title, description, and test plan
+description: Use when the user wants to create a pull request, open a PR, or submit changes for review.
 disable-model-invocation: true
 allowed-tools: Bash
 argument-hint: "[base-branch]"

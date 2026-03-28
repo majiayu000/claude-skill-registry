@@ -9,6 +9,8 @@ license: MIT
 
 # Open Source Replacer
 
+**Type:** L3 Worker
+
 L3 Worker that discovers custom modules, analyzes their purpose, and finds battle-tested open-source replacements via MCP Research.
 
 ## Purpose & Scope
@@ -19,7 +21,7 @@ L3 Worker that discovers custom modules, analyzes their purpose, and finds battl
 - Evaluate alternatives: stars, maintenance, license, CVE status, API compatibility
 - Score replacement confidence (HIGH/MEDIUM/LOW)
 - Generate migration plan for viable replacements
-- Output: file-based report to `docs/project/.audit/`
+- Output: markdown evidence report in runtime artifacts plus machine-readable JSON summary for coordinator transport
 
 **Out of Scope:**
 - Pattern-based detection of known reinvented wheels (custom sorting, hand-rolled validation)
@@ -31,7 +33,7 @@ L3 Worker that discovers custom modules, analyzes their purpose, and finds battl
 ```
 - codebase_root: string        # Project root
 - tech_stack: object            # Language, framework, package manager, existing dependencies
-- output_dir: string            # e.g., "docs/project/.audit/ln-640/{YYYY-MM-DD}"
+- output_dir: string            # e.g., ".hex-skills/runtime-artifacts/runs/{run_id}/audit-report"
 
 # Domain-aware (optional, from coordinator)
 - domain_mode: "global" | "domain-aware"   # Default: "global"
@@ -125,8 +127,8 @@ FOR EACH module WHERE module.goal extracted:
   # Strategy 3: Ref (documentation search)
   ref_search_documentation("{goal.domain} {tech_stack.language} recommended library")
 
-  # Strategy 4: Ecosystem alignment — check if existing project dependencies
-  # already cover this goal (e.g., project uses Zod → check zod plugins first)
+  # Strategy 4: Ecosystem alignment -- check if existing project dependencies
+  # already cover this goal (e.g., project uses Zod -> check zod plugins first)
   FOR EACH dep IN tech_stack.existing_dependencies:
     IF dep.ecosystem overlaps goal.domain:
       WebSearch("{dep.name} {goal.domain} plugin extension")
@@ -154,10 +156,10 @@ FOR EACH module, FOR EACH alternative:
   WebSearch("{alternative.name} CVE vulnerability security advisory")
   IF unpatched HIGH/CRITICAL CVE found:
     security_status = "VULNERABLE"
-    → Cap confidence at LOW, add warning to Findings
+    -> Cap confidence at LOW, add warning to Findings
   ELIF patched CVE (older version):
     security_status = "PATCHED_CVE"
-    → Note in report, no confidence cap
+    -> Note in report, no confidence cap
   ELSE:
     security_status = "CLEAN"
 
@@ -196,6 +198,8 @@ FOR EACH module, FOR EACH alternative:
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Build report in memory, write to `{output_dir}/645-open-source-replacer[-{domain}].md`.
 
 ```markdown
@@ -212,7 +216,7 @@ critical: 0
 high: {N}
 medium: {N}
 low: {N}
-status: complete
+status: completed
 -->
 
 ## Checks
@@ -273,7 +277,7 @@ status: complete
 ### Phase 6: Return Summary
 
 ```
-Report written: docs/project/.audit/ln-640/{YYYY-MM-DD}/645-open-source-replacer[-{domain}].md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/645-open-source-replacer[-{domain}].md
 Score: X.X/10 | Issues: N (C:0 H:N M:N L:N)
 ```
 
@@ -290,7 +294,7 @@ Severity mapping:
 - **HIGH:** HIGH confidence replacement for module >200 LOC
 - **MEDIUM:** MEDIUM confidence, or HIGH confidence for 100-200 LOC
 - **LOW:** LOW confidence (partial coverage only)
-- **Exception:** Custom module with domain-specific logic not covered by OSS package → skip. Feature parity <80% → skip recommendation. **Layer 2:** Verify replacement has full feature parity before recommending
+- **Exception:** Custom module with domain-specific logic not covered by OSS package -> skip. Feature parity <80% -> skip recommendation. **Layer 2:** Verify replacement has full feature parity before recommending
 
 ## Critical Rules
 
@@ -321,7 +325,7 @@ Severity mapping:
 - [ ] Confidence scored for each replacement (HIGH/MEDIUM/LOW)
 - [ ] Migration plan generated for HIGH/MEDIUM confidence replacements
 - [ ] Report written to `{output_dir}/645-open-source-replacer[-{domain}].md`
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

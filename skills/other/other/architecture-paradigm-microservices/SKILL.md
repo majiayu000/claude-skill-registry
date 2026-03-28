@@ -7,6 +7,8 @@ description: 'Consult this skill when designing or evolving microservices archit
   first. DO NOT use when: small team with low organizational complexity. DO NOT use
   when: lack of DevOps maturity or limited platform engineering resources. DO NOT
   use when: strong transactional consistency required across operations.'
+version: 1.7.1
+alwaysApply: false
 category: architectural-pattern
 tags:
 - architecture

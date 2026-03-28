@@ -1,6 +1,6 @@
 ---
 name: phx:pr-review
-description: Address PR review comments — fetch, categorize, draft responses, optionally fix code. Use whenever the user has PR feedback to address, mentions review comments, or shares a PR URL or number. Also use when the user asks to respond to or fix reviewer suggestions.
+description: Address PR review comments and feedback on Elixir/Phoenix code. Use when the user says "I got review comments on my PR", shares a PR URL to respond to, needs to address reviewer feedback, or a reviewer flagged an issue (like N+1 queries) to fix. Retrieves comments, drafts responses, and optionally fixes code. NOT for doing a code review yourself (review) or challenging code (challenge).
 effort: high
 argument-hint: <PR number or URL> [--fix]
 disable-model-invocation: true

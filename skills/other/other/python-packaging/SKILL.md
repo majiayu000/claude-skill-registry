@@ -4,6 +4,9 @@ description: 'Consult this skill for Python package creation and distribution. U
   when creating Python packages, configuring pyproject.toml, setting up entry points,
   publishing to PyPI, CI/CD for packages. Do not use when testing packages - use python-testing
   instead. DO NOT use when: optimizing package performance - use python-performance.'
+version: 1.7.1
+globs: "**/*.py"
+alwaysApply: false
 category: packaging
 tags:
 - python

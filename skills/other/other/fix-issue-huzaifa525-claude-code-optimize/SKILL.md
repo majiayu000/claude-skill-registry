@@ -1,6 +1,6 @@
 ---
 name: fix-issue
-description: Fetch a GitHub issue, understand requirements, implement the fix, write tests, and commit
+description: Use when the user wants to fix a GitHub issue by number, resolve a bug report, or close an issue.
 disable-model-invocation: true
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 argument-hint: "[issue-number]"

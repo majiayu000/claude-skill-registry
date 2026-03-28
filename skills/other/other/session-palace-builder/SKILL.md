@@ -5,6 +5,8 @@ description: 'Consult this skill for session-scoped temporary knowledge structur
   tracking session-specific state. Do not use when permanent knowledge structures
   needed - use memory-palace-architect. DO NOT use when: searching existing knowledge
   - use knowledge-locator.'
+version: 1.7.1
+alwaysApply: false
 category: session-management
 tags:
 - session

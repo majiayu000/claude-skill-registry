@@ -162,6 +162,25 @@ commit_sha: "abc1234" | null
 - **Git-aware:** Only operate on tracked files. Skip untracked or ignored files.
 - **Exclusions:** Skip generated code, vendor directories, minified files, test fixtures.
 
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/quality_summary_contract.md`
+
+Accept optional `summaryArtifactPath`.
+
+Summary kind:
+- `quality-worker`
+
+Required payload semantics:
+- `worker = "ln-512"`
+- `status`
+- `verdict`
+- `issues`
+- `warnings`
+- `artifact_path`
+
+Write the summary to the provided artifact path or return the same envelope in structured output.
+
 ## Definition of Done
 
 - [ ] Audit report loaded and parsed

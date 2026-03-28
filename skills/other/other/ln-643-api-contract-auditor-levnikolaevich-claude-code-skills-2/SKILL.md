@@ -9,6 +9,8 @@ license: MIT
 
 # API Contract Auditor (L3 Worker)
 
+**Type:** L3 Worker
+
 Specialized worker auditing API contracts, method signatures at service boundaries, and DTO usage patterns.
 
 ## Purpose & Scope
@@ -29,7 +31,7 @@ Specialized worker auditing API contracts, method signatures at service boundari
 - locations: string[]          # Service/API directories
 - adr_reference: string        # Path to related ADR
 - bestPractices: object        # Best practices from MCP Ref/Context7
-- output_dir: string           # e.g., "docs/project/.audit/ln-640/{YYYY-MM-DD}"
+- output_dir: string           # e.g., ".hex-skills/runtime-artifacts/runs/{run_id}/audit-report"
 
 # Domain-aware (optional, from coordinator)
 - domain_mode: "global" | "domain-aware"   # Default: "global"
@@ -41,7 +43,7 @@ Specialized worker auditing API contracts, method signatures at service boundari
 
 ### Phase 0: Load References
 
-**MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology. Load `references/detection_patterns.md` — language-specific Grep patterns for all 5 rules.
+**MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology. Load `references/detection_patterns.md` -- language-specific Grep patterns for all 5 rules.
 
 ### Phase 1: Discover Service Boundaries
 
@@ -62,7 +64,7 @@ scan_root = scan_path IF domain_mode == "domain-aware" ELSE codebase_root
 |---|------|----------|---------------|
 | 1 | Layer Leakage | HIGH/MEDIUM | Service/domain accepts HTTP types (Request, parsed_body, headers) |
 | 2 | Missing DTO | MEDIUM/LOW | 4+ params repeated in 2+ methods without grouping DTO |
-| 3 | Entity Leakage | HIGH/MEDIUM | ORM entity returned from API without response DTO. Downgrade when: internal API with no external consumers → LOW |
+| 3 | Entity Leakage | HIGH/MEDIUM | ORM entity returned from API without response DTO. Downgrade when: internal API with no external consumers -> LOW |
 | 4 | Error Contracts | MEDIUM/LOW | Mixed error patterns (raise + return None) in same service |
 | 5 | Redundant Overloads | LOW/MEDIUM | Method pairs with `_with_`/`_and_` suffix differing by 1-2 params |
 | 6 | Architectural Honesty | HIGH/MEDIUM | Read-named function (get_/find_/check_/validate_/is_/has_) body contains write side-effects. Exclusions per `shared/references/ai_ready_architecture.md` |
@@ -115,7 +117,7 @@ scan_root = scan_path IF domain_mode == "domain-aware" ELSE codebase_root
 
 **Primary score** uses penalty formula (same as all workers):
 ```
-penalty = (critical × 2.0) + (high × 1.0) + (medium × 0.5) + (low × 0.2)
+penalty = (critical x 2.0) + (high x 1.0) + (medium x 0.5) + (low x 0.2)
 score = max(0, 10 - penalty)
 ```
 
@@ -124,6 +126,8 @@ score = max(0, 10 - penalty)
 ### Phase 4: Write Report
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
+
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
 
 ```
 # Build markdown report in memory with:
@@ -141,7 +145,7 @@ ELSE:
 ### Phase 5: Return Summary
 
 ```
-Report written: docs/project/.audit/ln-640/{YYYY-MM-DD}/643-api-contract-users.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/643-api-contract-users.md
 Score: 6.75/10 (C:65 K:70 Q:55 I:80) | Issues: 4 (H:2 M:1 L:1)
 ```
 
@@ -167,7 +171,7 @@ Score: 6.75/10 (C:65 K:70 Q:55 I:80) | Issues: 4 (H:2 M:1 L:1)
 - [ ] Issues identified with severity, location, suggestion, effort
 - [ ] If domain-aware: findings tagged with domain field
 - [ ] Report written to `{output_dir}/643-api-contract[-{domain}].md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

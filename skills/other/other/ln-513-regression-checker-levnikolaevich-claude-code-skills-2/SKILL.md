@@ -8,6 +8,9 @@ license: MIT
 
 # Regression Checker
 
+**Type:** L3 Worker
+**Category:** 5XX Quality
+
 Runs the existing test suite to ensure no regressions after implementation changes.
 
 ## Inputs
@@ -54,6 +57,25 @@ Read target project files if they exist: `docs/project/infrastructure.md`, `docs
 - No selective test runs; run full suite.
 - Do not fix tests or change status; only report.
 - Language preservation in comment (EN/RU).
+
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/quality_summary_contract.md`
+
+Accept optional `summaryArtifactPath`.
+
+Summary kind:
+- `quality-worker`
+
+Required payload semantics:
+- `worker = "ln-513"`
+- `status`
+- `verdict`
+- `issues`
+- `warnings`
+- `artifact_path`
+
+Write the summary to the provided artifact path or return the same envelope in structured output.
 
 ## Definition of Done
 

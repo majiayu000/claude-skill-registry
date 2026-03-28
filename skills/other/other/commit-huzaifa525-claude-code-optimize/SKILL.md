@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Generate conventional commit messages from staged changes and commit
+description: Use when the user wants to commit changes, save work, or create a git commit message.
 disable-model-invocation: true
 allowed-tools: Bash
 ---
@@ -51,6 +51,18 @@ Generate a commit message and commit staged changes.
    ```
    git log --oneline -1
    ```
+
+## Pre-Delivery Checklist
+
+Before committing, verify:
+
+- [ ] `git diff --cached` was read (not just `--stat`)
+- [ ] Commit prefix matches the change type (feat/fix/refactor/etc.)
+- [ ] Subject line is under 72 characters
+- [ ] Subject uses imperative mood ("Add" not "Added")
+- [ ] No sensitive files staged (.env, credentials, keys)
+- [ ] No unrelated changes bundled in the same commit
+- [ ] Body explains WHY if the change is non-obvious
 
 ## If nothing is staged
 

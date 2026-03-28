@@ -9,6 +9,8 @@ description: 'Create clear, testable specifications with user stories and accept
   Use when: creating new specifications or writing acceptance criteria
 
   DO NOT use when: converting specs to tasks - use task-planning.'
+version: 1.7.1
+alwaysApply: false
 category: specification
 tags:
 - speckit
@@ -31,7 +33,6 @@ modules:
 - specification-structure
 - checklist-dimensions
 ---
-
 # Spec Writing
 
 ## Overview

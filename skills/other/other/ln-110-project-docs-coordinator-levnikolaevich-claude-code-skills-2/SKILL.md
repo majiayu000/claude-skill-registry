@@ -9,8 +9,9 @@ license: MIT
 # Project Documentation Coordinator
 
 **Type:** L2 Coordinator
+**Category:** 1XX Documentation Pipeline
 
-L2 Coordinator that gathers project context once and delegates document creation to specialized L3 workers.
+Runtime-backed docs coordinator. The runtime owns context assembly checkpoints, conditional worker fan-out, and docs-generation summary aggregation.
 
 ## Purpose & Scope
 - **Single context gathering** — analyzes project once, builds Context Store
@@ -19,6 +20,28 @@ L2 Coordinator that gathers project context once and delegates document creation
 - **Aggregates results** — collects status from all workers, returns summary
 - Solves the "context loss" problem by gathering data once and passing explicitly
 - Builds the routing table used by `ln-100` docs-quality repair loop
+
+## Runtime Contract
+
+**MANDATORY READ:** Load `shared/references/coordinator_runtime_contract.md`, `shared/references/docs_runtime_contract.md`, `shared/references/docs_generation_summary_contract.md`
+
+Runtime family: `docs-runtime`
+
+Identifier:
+- `project-docs`
+
+Phases:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_CONTEXT_ASSEMBLY`
+3. `PHASE_2_DETECTION`
+4. `PHASE_3_DELEGATE`
+5. `PHASE_4_AGGREGATE`
+6. `PHASE_5_SELF_CHECK`
+
+Worker summary contract:
+- `ln-111..115` may receive `summaryArtifactPath`
+- each worker writes or returns `docs-generation` summary envelope
+- ln-110 consumes worker summaries, not free-text worker prose
 
 ## Invocation (who/when)
 - **ln-100-documents-pipeline:** Invoked as first L2 coordinator in documentation pipeline
@@ -245,7 +268,7 @@ Agent(description: "{doc_type} docs via {worker}",
 
 **All workers:** Invoke via Agent tool with Skill — workers get Context Store.
 
-**TodoWrite format (mandatory):**
+## TodoWrite format (mandatory)
 ```
 - Build Context Store (pending)
 - Invoke ln-111-root-docs-creator (pending)

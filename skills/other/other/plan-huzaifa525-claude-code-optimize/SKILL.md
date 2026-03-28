@@ -1,6 +1,6 @@
 ---
 name: plan
-description: Create a detailed implementation plan with task breakdown, dependencies, and file mapping
+description: Use when the user wants to plan a feature, design an implementation approach, or break down a complex task before coding.
 disable-model-invocation: true
 allowed-tools: Read, Grep, Glob, Bash
 context: fork

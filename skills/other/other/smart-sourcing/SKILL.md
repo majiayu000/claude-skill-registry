@@ -1,6 +1,8 @@
 ---
 name: smart-sourcing
 description: balancing accuracy with token efficiency.
+version: 1.7.1
+alwaysApply: true
 category: optimization
 tags:
 - sourcing
@@ -12,7 +14,6 @@ tools:
 complexity: low
 estimated_tokens: 400
 ---
-
 # Smart Sourcing
 
 Intelligent sourcing that requires citations only when the cost is justified by the value of verification.

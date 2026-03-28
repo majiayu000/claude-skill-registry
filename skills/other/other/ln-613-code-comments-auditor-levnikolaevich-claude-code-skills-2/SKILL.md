@@ -33,7 +33,7 @@ Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 
 1) **Parse Context:** Extract tech stack, project root, output_dir from contextStore
 2) **Scan:** Find all source files (use `tech_stack` for detection)
-   **Hex-line acceleration:** Use `outline(path)` to understand code structure (functions, classes) before analyzing comments — identifies which code sections to scan.
+   **Hex-line acceleration:** Use `outline(path)` to understand code structure (functions, classes) before analyzing comments -- identifies which code sections to scan.
 3) **Extract:** Parse inline comments + docstrings/JSDoc
 4) **Audit:** Run 6 category checks (see Audit Categories below)
 5) **Collect Findings:** Record each violation with severity, location (file:line), effort estimate (S/M/L), recommendation
@@ -60,11 +60,15 @@ Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Write report to `{output_dir}/613-code-comments.md` with `category: "Inline Code Documentation"` and checks: why_not_what, density, forbidden_content, docstrings_quality, actuality, legacy_cleanup.
 
-Return summary to coordinator:
+Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 ```
-Report written: docs/project/.audit/ln-610/{YYYY-MM-DD}/613-code-comments.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/613-code-comments.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -100,7 +104,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated using penalty algorithm
 - [ ] Report written to `{output_dir}/613-code-comments.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

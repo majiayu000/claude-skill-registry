@@ -5,6 +5,8 @@ description: Surfaces expert frameworks and proven methodologies before creating
   masters. Use when starting creation workflows, evaluating methodology gaps, or seeking
   domain expertise. Do not use if you already have a specific methodology or are fixing
   syntax/structural issues.
+version: 1.7.1
+alwaysApply: false
 category: meta-skills
 tags:
 - methodology

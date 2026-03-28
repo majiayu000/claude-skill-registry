@@ -9,6 +9,8 @@ license: MIT
 
 # Transaction Correctness Auditor (L3 Worker)
 
+**Type:** L3 Worker
+
 Specialized worker auditing database transaction patterns for correctness, scope, and trigger interaction.
 
 ## Purpose & Scope
@@ -71,7 +73,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (datab
 - **CRITICAL:** Missing commit for NOTIFY/LISTEN-based real-time features (SSE, WebSocket)
 - **HIGH:** Missing commit for triggers that update materialized data
 
-**Exception:** Single atomic operation with no intermediate observable state → downgrade CRITICAL to MEDIUM. Transaction scope documented as intentional (ADR, architecture comment) → downgrade one level
+**Exception:** Single atomic operation with no intermediate observable state -> downgrade CRITICAL to MEDIUM. Transaction scope documented as intentional (ADR, architecture comment) -> downgrade one level
 
 **Recommendation:**
 - Add `session.commit()` at progress milestones (throttled: every N%, every T seconds)
@@ -160,20 +162,20 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (datab
   - EventEmitter/WebSocket: Grep for `\.on\(["']([^"']+)` in handler/listener directories
   - Extract: `{channel_name, source_file, source_line, technology}`
 - **Step 3:** Cross-reference publishers vs subscribers:
-  - Exact match: `publisher.channel_name == subscriber.channel_name` → OK
-  - Near-miss: Levenshtein distance <= 2 OR one is substring of the other → flag as MISMATCH
-  - Orphaned publisher: channel exists in publishers but not in subscribers → flag as ORPHAN
-  - Orphaned subscriber: channel exists in subscribers but not in publishers → flag as ORPHAN
+  - Exact match: `publisher.channel_name == subscriber.channel_name` -> OK
+  - Near-miss: Levenshtein distance <= 2 OR one is substring of the other -> flag as MISMATCH
+  - Orphaned publisher: channel exists in publishers but not in subscribers -> flag as ORPHAN
+  - Orphaned subscriber: channel exists in subscribers but not in publishers -> flag as ORPHAN
 
 **Layer 2 Context Analysis (MANDATORY):**
-- If channel name comes from shared config constant or env var (e.g., `CHANNEL = os.environ["EVENT_CHANNEL"]`) and both publisher and subscriber use same source → NOT a mismatch
-- If channel uses dynamic suffix pattern (e.g., `job_events:{job_id}`) and both sides use same template → NOT orphaned
+- If channel name comes from shared config constant or env var (e.g., `CHANNEL = os.environ["EVENT_CHANNEL"]`) and both publisher and subscriber use same source -> NOT a mismatch
+- If channel uses dynamic suffix pattern (e.g., `job_events:{job_id}`) and both sides use same template -> NOT orphaned
 - Exclude test files (`**/test*/**`, `**/*.test.*`) from both publisher and subscriber discovery
 
 **Severity:**
 - **CRITICAL:** Channel name mismatch (near-miss: publisher sends to `job_events`, subscriber listens on `job_event`)
-- **HIGH:** Orphaned publisher — events sent but never consumed (data loss risk if events carry state changes)
-- **MEDIUM:** Orphaned subscriber — listener registered but no publisher found (dead code or future feature)
+- **HIGH:** Orphaned publisher -- events sent but never consumed (data loss risk if events carry state changes)
+- **MEDIUM:** Orphaned subscriber -- listener registered but no publisher found (dead code or future feature)
 
 **Recommendation:**
 - For mismatches: unify channel name to a single constant shared between publisher and subscriber
@@ -190,11 +192,15 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (datab
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Write report to `{output_dir}/652-transaction-correctness.md` with `category: "Transaction Correctness"` and checks: missing_intermediate_commits, scope_too_wide, scope_too_narrow, missing_rollback, long_held_transaction, event_channel_consistency.
 
-Return summary to coordinator:
+Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 ```
-Report written: docs/project/.audit/ln-650/{YYYY-MM-DD}/652-transaction-correctness.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/652-transaction-correctness.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -220,7 +226,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated using penalty algorithm
 - [ ] Report written to `{output_dir}/652-transaction-correctness.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

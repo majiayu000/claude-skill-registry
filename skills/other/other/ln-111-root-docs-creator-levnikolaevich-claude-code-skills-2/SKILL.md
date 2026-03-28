@@ -163,13 +163,33 @@ Root documents define **navigation and standards**, NOT implementations:
 ### Format Priority (MANDATORY)
 Tables/ASCII > Lists (enumerations only) > Text (last resort)
 
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/docs_generation_summary_contract.md`
+
+Accept optional `summaryArtifactPath`.
+
+Summary kind:
+- `docs-generation`
+
+Required payload semantics:
+- `worker = "ln-111"`
+- `status`
+- `created_files`
+- `skipped_files`
+- `quality_inputs`
+- `validation_status`
+- `warnings`
+
+Write the summary to the provided artifact path or return the same envelope in structured output.
+
 ## Definition of Done
 - [ ] Context Store received and validated
 - [ ] 6 root documents created (or skipped if exist)
 - [ ] All placeholders replaced; no `[TBD: ...]` markers or template metadata remain in root docs
 - [ ] Self-validation passed (SCOPE, metadata markers, top sections, Maintenance, POSIX)
 - [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
-- [ ] Status returned to coordinator
+- [ ] Status returned
 
 ## Reference Files
 - Templates: `references/templates/agents_md_template.md`, `claude_md_template.md`, `docs_root_readme_template.md`, `documentation_standards_template.md`, `principles_template.md`, `tools_config_template.md`

@@ -1,6 +1,8 @@
 ---
 name: agent-teams
 description: Coordinate Claude Code Agent Teams through filesystem-based protocol. Use
+version: 1.7.1
+alwaysApply: false
   when orchestrating multiple Claude agents on parallel tasks, need task dependency
   management, multi-agent code review or implementation. Do not use when single-agent
   work suffices, task is not parallelizable.
@@ -38,6 +40,7 @@ modules:
 references:
 - ../../../leyline/skills/error-patterns/SKILL.md
 - ../../../leyline/skills/service-registry/SKILL.md
+- references/team-formation.md
 ---
 ## Table of Contents
 
@@ -179,6 +182,21 @@ See `modules/messaging-protocol.md` for message types and inbox operations.
 ## Crew Roles
 
 Each team member has a `role` that determines their capabilities and task compatibility. Five roles are defined: `implementer` (default), `researcher`, `tester`, `reviewer`, and `architect`. Roles constrain which risk tiers an agent can handle — see `modules/crew-roles.md` for the full capability matrix and role-risk compatibility table.
+
+## Team Formation
+
+For mission-level team sizing, use the Team Formation rules
+from `references/team-formation.md`. This defines:
+
+- **Role definitions**: Coordinator (mission lead), Agents (task owners),
+  Reviewer (adversarial challenger)
+- **Team sizing rules**: Simple (1), Moderate (2-4), Complex (5-7),
+  Critical (5-10)
+- **Maximum team size**: 10 agents (coordination overhead limit)
+- **File ownership rules**: Prevent conflicts with clear ownership
+
+See `references/team-formation.md` for full team sizing
+guidance and example team formations.
 
 ## Health Monitoring
 

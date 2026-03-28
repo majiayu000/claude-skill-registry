@@ -1,6 +1,6 @@
 ---
 name: intent-detection
-description: "Internal router for ambiguous work requests. Load when user says \"add/build/implement feature\", \"fix/debug/investigate bug\", \"review/audit code\", \"refactor/clean up\", \"slow/performance\", \"PR comments\", \"research/evaluate library\", or \"that fixed it\" — WITHOUT an explicit /phx: slash command."
+description: "Route ambiguous Elixir/Phoenix work requests to the correct /phx: workflow. Use when the user's intent is unclear and needs routing: \"not sure where to start\", \"how to approach this\", \"what's the right workflow\", vague multi-step requests without a /phx: command, or mixed intents (bug + refactor, feature + review). Suggests plan vs investigate vs review vs quick based on complexity signals."
 effort: medium
 user-invocable: false
 ---
@@ -83,6 +83,17 @@ When a task matches a workflow command, check complexity before suggesting:
 1. **NEVER block on suggestion** — If user starts explaining, just do the work
 2. **One suggestion max** — Don't re-suggest if user ignores first suggestion
 3. **Commands are shortcuts, not gates** — All work can be done without commands
+
+## Routing Logic Example
+
+```
+if has_slash_command($ARGUMENTS) -> follow command directly
+elif has_stack_trace(message) -> suggest /phx:investigate
+elif matches("add|build|implement", message) and multi_step -> suggest /phx:plan
+elif matches("fix", message) and small_scope -> handle directly or /phx:quick
+elif matches("review|audit", message) -> suggest /phx:review
+else -> handle directly (no suggestion)
+```
 
 ## Integration
 

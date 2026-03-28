@@ -12,6 +12,23 @@ metadata:
 
 Quick reference for OSINT CTF challenges. Each technique has a one-liner here; see supporting files for full details.
 
+## Prerequisites
+
+**Python packages (all platforms):**
+```bash
+pip install shodan Pillow
+```
+
+**Linux (apt):**
+```bash
+apt install whois dnsutils nmap libimage-exiftool-perl imagemagick curl
+```
+
+**macOS (Homebrew):**
+```bash
+brew install whois bind nmap exiftool imagemagick curl
+```
+
 ## Additional Resources
 
 - [social-media.md](social-media.md) - Twitter/X (user IDs, Snowflake timestamps, Nitter, memory.lol, Wayback CDX), Tumblr (blog checks, post JSON, avatars), BlueSky search + API, Unicode homoglyph steganography, Discord API, username OSINT (namechk, whatsmyname, Osint Industries), username metadata mining (postal codes), platform false positives, multi-platform chains, Strava fitness route OSINT
@@ -19,6 +36,12 @@ Quick reference for OSINT CTF challenges. Each technique has a one-liner here; s
 - [web-and-dns.md](web-and-dns.md) - Google dorking (including TBS image filters), Google Docs/Sheets enumeration, DNS recon (TXT, zone transfers), Wayback Machine, FEC research, Tor relay lookups, GitHub repository analysis, Telegram bot investigation, WHOIS investigation (reverse WHOIS, historical WHOIS, IP/ASN lookup), fake service banner detection via nmap fingerprinting
 
 ---
+
+## When to Pivot
+
+- If you already have the files or packets locally and now need extraction or carving, switch to `/ctf-forensics`.
+- If the task becomes active exploitation of a live HTTP service, switch to `/ctf-web`.
+- If you uncover malware samples, beacons, or suspicious binaries during attribution, switch to `/ctf-malware`.
 
 ## String Identification
 

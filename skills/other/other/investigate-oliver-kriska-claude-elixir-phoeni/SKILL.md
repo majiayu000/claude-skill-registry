@@ -44,6 +44,8 @@ confirm what's already obvious (confirmed waste: session c135330a).
 2. **Check the obvious before going deep** — Compile errors, missing migrations, atom/string mismatches explain 80% of bugs; exhausting the Ralph Wiggum checklist saves hours
 3. **Check changeset errors before UI debugging** — Silent form saves are almost always `{:error, changeset}` with validation failures, not viewport or JS issues
 4. **Consult compound docs before investigating fresh** — A previously solved problem saves the entire investigation cycle; always search `.claude/solutions/` first
+5. **NEVER guess at a fix before reproducing** — Reproduce first, then identify root cause, then fix. Skipping steps causes wrong fixes
+6. **DO NOT apply a fix without confirming root cause** — Verify your hypothesis with evidence (logs, tests, IO.inspect) before changing code
 
 ## Investigation Workflow
 
@@ -112,11 +114,11 @@ changeset}` with no visible UI feedback.
 
 ### Step 6: Identify Root Cause
 
-What's actually happening vs what should happen.
+Find what's actually happening vs what should happen.
 
 ## Autonomous Iteration
 
-For autonomous debugging, use `/ralph-loop:ralph-loop` with
+Use `/ralph-loop:ralph-loop` for autonomous debugging with
 clear completion criteria and `--max-iterations`.
 
 ## References

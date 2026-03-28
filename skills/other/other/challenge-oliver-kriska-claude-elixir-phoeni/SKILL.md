@@ -18,11 +18,9 @@ Rigorous, critical review patterns inspired by Boris Cherny's "Grill me" approac
 
 ## Adversarial Lenses (Apply to ALL Modes)
 
-Before diving into mode-specific checks, apply these three lenses:
-
-1. **"What Would Break This?"** — Describe realistic scenarios where this code fails catastrophically. Not edge cases — production failure modes under load, during deploys, with unexpected data.
-2. **"Assumption Stress Test"** — List every assumption this code relies on. Which are most fragile? (e.g., "assumes user always has an email", "assumes this query returns < 1000 rows")
-3. **"Contradictions Finder"** — Find contradictions between tests and implementation, docs and behavior, or between different parts of the changeset.
+1. **"What Would Break This?"** — Production failure modes under load, during deploys, with unexpected data
+2. **"Assumption Stress Test"** — List every assumption; which are most fragile?
+3. **"Contradictions Finder"** — Find contradictions between tests/implementation, docs/behavior, or within the changeset
 
 ## Challenge Modes
 
@@ -115,25 +113,30 @@ Senior engineer review checklist:
 
 ## Prior Findings Deduplication (MANDATORY)
 
-**CRITICAL**: This step prevents the "3 challenges to clear" problem
-where identical issues are re-discovered across consecutive runs.
-Session data confirms this happens without explicit dedup enforcement.
+CRITICAL: Prevents re-discovering identical issues across consecutive runs.
 
-Before running a challenge, **ALWAYS** check for prior review output:
+1. **Search** `.claude/plans/*/reviews/` and `.claude/reviews/` for prior findings
+2. **Read ALL** prior findings before analyzing code
+3. **Check each finding** against priors:
+   - Fixed → **SKIP** | Still present → **PERSISTENT** (one line) | New → **NEW** (full analysis) | Reintroduced → **REGRESSION**
+4. **Present**: NEW first (full), then PERSISTENT (one-line), then REGRESSION
 
-1. **Search** for existing reviews in `.claude/plans/*/reviews/` and `.claude/reviews/`
-2. If prior findings exist, **read ALL of them** before analyzing code
-3. Build a PRIOR_FINDINGS list with file:line references
-4. During analysis, check each potential finding against PRIOR_FINDINGS:
-   - If the exact code location was flagged AND is now fixed → **SKIP entirely**
-   - If flagged AND still present → Mark **PERSISTENT** (one line, not full re-analysis)
-   - If NOT in prior findings → Mark **NEW** (full analysis)
-   - If was fixed but reintroduced → Mark **REGRESSION**
-5. **Only NEW findings get full analysis** — PERSISTENT gets one-line mention
+## Example Challenge Output
 
-When presenting results, show NEW findings first, then PERSISTENT
-(one-line each), then REGRESSION. Never re-analyze code that was
-already flagged — just check if the fix was applied.
+```markdown
+## Challenge: Ecto — Orders Migration
+
+### FINDING 1: Table lock risk (HIGH)
+AddColumn on `orders` (2.1M rows) will lock table during deploy.
+**Proof needed**: Run `SELECT count(*) FROM orders` — if >1M, use
+`ALTER TABLE ... ADD COLUMN ... DEFAULT NULL` (no lock).
+
+### FINDING 2: Missing index (MEDIUM)
+New `WHERE status = ?` query on line 45 has no index.
+**Action**: Add `create index(:orders, [:status])` to migration.
+
+### Status: BLOCKED — 2 unresolved findings
+```
 
 ## Usage
 

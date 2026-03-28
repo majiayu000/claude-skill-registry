@@ -36,6 +36,8 @@ Optional transport inputs:
 - `runId`
 - `summaryArtifactPath`
 
+If `runId` is not provided, generate a standalone `run_id` before emitting the summary envelope.
+
 ## Output Contract
 
 Always build a structured summary envelope:

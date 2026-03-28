@@ -2,7 +2,7 @@
   "category": "analysis",
   "code": "oth",
   "count": 3,
-  "updated_at": "2026-03-27T01:59:07.968209Z",
+  "updated_at": "2026-03-28T01:52:38.200780Z",
   "skills": [
     {
       "name": "agent-ops-reality-audit-majiayu000-claude-skill-regist",
@@ -17,8 +17,8 @@
       "source": "github.com/majiayu000/claude-skill-registry"
     },
     {
-      "name": "agent-ops-article-verification",
-      "description": "Systematically deconstruct written content into verifiable claims, validate each using search/documentation, and facilitate informed discussion through structured interviewing.",
+      "name": "agent-ops-docker-review",
+      "description": "Docker image reviews, optimization, and step-building guidance. Analyzes Dockerfiles for best practices, security issues, and anti-patterns.",
       "repo": "majiayu000/claude-skill-registry",
       "path": "",
       "branch": "main",
@@ -29,8 +29,8 @@
       "source": "github.com/majiayu000/claude-skill-registry"
     },
     {
-      "name": "agent-ops-docker-review",
-      "description": "Docker image reviews, optimization, and step-building guidance. Analyzes Dockerfiles for best practices, security issues, and anti-patterns.",
+      "name": "agent-ops-article-verification",
+      "description": "Systematically deconstruct written content into verifiable claims, validate each using search/documentation, and facilitate informed discussion through structured interviewing.",
       "repo": "majiayu000/claude-skill-registry",
       "path": "",
       "branch": "main",

@@ -64,7 +64,7 @@ When a recipe matches: **follow it step-by-step as your execution plan.** Recipe
 | `enriching-and-researching.md` | Finding contacts/people at known companies via the persona lookup play |
 | `enriching-and-researching.md` | Contact-to-email routing and native email recovery plays |
 | `actor-contracts.md` | Apify actor selection, known actor IDs, input schemas |
-| `competitive-social-listening.md` | Find who engages with competitors' LinkedIn posts — reactions, comments, senior buyer filtering, engagement dashboard |
+| `enriching-and-researching.md` | Social listening — scrape LinkedIn post engagers (`linkedin_post_to_engagers`) and ICP-qualify them (`engagers_to_icp_qualification`) |
 
 If none match, grep for more specific keywords: `Grep pattern="<keyword>" path="<directory containing this SKILL.md>/recipes/" glob="*.md" output_mode="files_with_matches"`
 
@@ -407,7 +407,7 @@ When credits at zero, link to https://code.deepline.com/dashboard/billing to top
 - **Enrich / waterfall / coalesce** → You MUST have [enriching-and-researching.md](enriching-and-researching.md) open. It contains `deepline enrich` syntax, waterfall column patterns, and coalescing logic. Default waterfall order: dropleads → hunter → leadmagic → deepline_native → crustdata → peopledatalabs.
 - **Custom signals / messaging** → Read [enriching-and-researching.md](enriching-and-researching.md) (custom signals section). Use `run_javascript` for deterministic transforms/template logic and `deeplineagent` for AI work. Start from `prompts.json`.
 - **Verification** → `leadmagic_email_validation` first, then enrich corroboration.
-- **LinkedIn scraping** → Apify actors, by far the best. Search `recipes/actor-contracts.md` for known actor IDs.
+- **LinkedIn scraping** → Apify actors, by far the best. Search `actor-contracts.md` for known actor IDs.
 - For phone recovery, read [enriching-and-researching.md](enriching-and-researching.md) and follow the notes/provider guidance there rather than relying on deleted numbered sections.
 
 Provider path heuristics:
@@ -434,7 +434,7 @@ curl -s "https://code.deepline.com/api/v2/cli/install" | bash
 **Sites requiring auth:** Don't use Apify. Tell the user to use Claude in Chrome or guide them through Inspect Element to get a curl command with headers (user is non-technical).
 
 1. If user provides actor ID/name/URL: use it directly.
-2. If not, search `recipes/actor-contracts.md` for the actor id, or try deepline tools search.
+2. If not, search `actor-contracts.md` for the actor id, or try deepline tools search.
 3. If not present, run discovery search.
 4. Avoid rental-priced actors.
 5. Pick value-over-quality-fit; when tied, choose best evidence-quality/price balance.

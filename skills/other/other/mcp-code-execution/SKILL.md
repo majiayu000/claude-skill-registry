@@ -5,6 +5,8 @@ description: 'Use this skill BEFORE building complex tool chains. Optimize proac
   datasets (>10k rows), large files (>50KB), context usage >25%. Do not use when simple
   tool calls that do not chain. DO NOT use when: context pressure is low and tools
   are fast.'
+version: 1.7.1
+alwaysApply: false
 progressive_loading: true
 dependencies:
   hub:

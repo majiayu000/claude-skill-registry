@@ -1,7 +1,7 @@
 ---
 name: image-to-svg
-version: 1.7.0
-description: Convert raster images (photos, paintings, illustrations) into SVG vector reproductions. Use when the user uploads an image and asks to reproduce, vectorize, trace, or convert it to SVG. Also use when asked to decompose an image into shapes, create an SVG version of a picture, or faithfully reproduce artwork as vector graphics. Do NOT use for creating original SVG illustrations from text descriptions — only for converting existing raster images.
+version: 1.8.0
+description: Convert raster images (photos, paintings, illustrations, line art) into SVG vector reproductions. Use when the user uploads an image and asks to reproduce, vectorize, trace, or convert it to SVG. Also use when asked to decompose an image into shapes, create an SVG version of a picture, or faithfully reproduce artwork as vector graphics. Handles graphic/line-art inputs (Kandinsky, architectural drawings, ink work) via a compositional pipeline that extracts lines as SVG strokes. Do NOT use for creating original SVG illustrations from text descriptions — only for converting existing raster images.
 ---
  
 # Image to SVG Reproduction
@@ -51,6 +51,53 @@ All mode defaults (K, dark_lum, compactness_min, etc.) can be overridden via `**
 ```python
 svg, flow = image_to_svg("source.jpg", mode="graphic", K=12, min_area=20)
 ```
+
+## Compositional Pipeline (Line Art)
+
+For images dominated by lines, strokes, and geometric shapes (Kandinsky, architectural drawings, technical illustrations, comic ink work), the standard fill-only pipeline produces jagged filled polygons instead of clean strokes. The compositional pipeline solves this with two passes:
+
+**Pass 1 — Line Extraction**: Isolate thin features via morphological erosion → skeletonize to 1px centerlines → Hough line detection → merge collinear fragments → measure stroke width → sample color. Emits SVG `<line>` elements with `stroke-width`.
+
+**Pass 2 — Fill Extraction**: Suppress line regions from image (replace with local background estimate via median blur) → run standard K-means quantization on the cleaned image → contour extraction → `<path>` fills.
+
+**Composition**: Fills render behind strokes in layered `<g>` groups.
+
+```python
+# Auto-detect: classifies input and routes automatically
+svg, flow = image_to_svg("kandinsky.jpg", mode="graphic")
+
+# Force compositional pipeline
+svg, flow = image_to_svg("technical_drawing.png", mode="graphic", pipeline="compositional")
+
+# Force fill-only (previous default behavior)
+svg, flow = image_to_svg("photo.jpg", mode="painting", pipeline="fill")
+```
+
+**Pipeline selection** (`pipeline` parameter):
+| Value | Behavior |
+|-------|----------|
+| `"auto"` (default) | Classify input via edge density + luminance bimodality + Hough line count. Route to compositional for graphic art, fill-only for photos. |
+| `"fill"` | Force fill-only pipeline. Use for photos, paintings, or when compositional produces unwanted results. |
+| `"compositional"` | Force two-pass pipeline. Use for line art, technical drawings, or ink work where you know lines are present. |
+
+**Auto-classification heuristics**: An image is classified as graphic when it has high edge density (>5% edge pixels) combined with bimodal luminance distribution (>0.35 bimodality coefficient), or high straight-line density (>3 Hough lines per 10k pixels).
+
+**SVG output structure** (compositional):
+```xml
+<svg ...>
+  <rect ... />        <!-- background -->
+  <g id="fills">      <!-- filled regions (painter's algorithm) -->
+    <path ... />
+  </g>
+  <g id="strokes">    <!-- line strokes (on top) -->
+    <line x1="..." y1="..." x2="..." y2="..." stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+</svg>
+```
+
+**Stroke width control**: Measured perpendicular to each detected line, then scaled by 0.65x and capped at 4.5 SVG units. This prevents thick features from rendering as bloated strokes while keeping thin lines crisp.
+
+**Current limitation — straight lines only**: Hough transform detects straight segments. Curved strokes (arcs, spirals) are not yet extracted as strokes — they fall through to the fill pass. Future work: `cv2.fitEllipse` or spline fitting on skeleton branches.
 
 ## Palette Remapping (Warhol Effects)
 
@@ -150,20 +197,36 @@ results = image_to_svg_batch("photo.jpg", [
 
 ## Pipeline Architecture
 
-Uses the [flowing](/mnt/skills/user/flowing/SKILL.md) DAG runner. Steps with independent inputs run in parallel:
+Uses the [flowing](/mnt/skills/user/flowing/SKILL.md) DAG runner. Steps with independent inputs run in parallel.
+
+### Fill-only pipeline (`pipeline="fill"`)
 
 ```
 preprocess → quantize → ┬─ detect_background ─┬─ extract_contours → assemble_svg
                         └─ edge_map           ─┘
 ```
 
-Steps:
+### Compositional pipeline (`pipeline="compositional"`)
+
+```
+classify_input ──→ extract_lines ──→ suppress_line_regions ──→ [fill pipeline on cleaned image]
+                        │                                              │
+                        └──────────── lines ───────────────────→ assemble_compositional ←── fills
+```
+
+Steps (fill-only):
 1. **preprocess** — Bilateral + Gaussian blur (edge-preserving texture removal)
 2. **quantize** — K-means color quantization at chosen K
 3. **detect_background** — Identifies background clusters by edge contact (parallel with edge_map)
 4. **edge_map** — Sobel edge detection via `cv2.Sobel` (parallel with detect_background)
 5. **extract_contours** — Per-cluster contour extraction with dark territory awareness and woodcut prevention (d=1 dilation; stroke handles gaps)
 6. **assemble_svg** — Z-ordered painter's algorithm assembly with stroke=fill gap coverage
+
+Additional steps (compositional):
+1. **classify_input** — Edge density + bimodality + Hough line count analysis
+2. **extract_lines** — Morphological thin-feature isolation → skeletonize → Hough → merge collinear → measure stroke width → sample color
+3. **suppress_line_regions** — Replace line pixels with median-blur background estimate
+4. **assemble_compositional** — Layer fills behind strokes in grouped SVG
 
 ### Resume on failure
 
@@ -272,9 +335,11 @@ Every `<path>` element gets `stroke="{fill}" stroke-width="4" stroke-linejoin="r
 
 ## Known Limitations
 
-- **Thin linework**: The dark shape gating that prevents woodcut artifacts in photos can filter deliberate thin lines in graphic art. The `"graphic"` mode loosens this, but very fine crosshatching may still degrade.
+- **Thin linework** (fill-only): The dark shape gating that prevents woodcut artifacts in photos can filter deliberate thin lines in graphic art. The `"graphic"` mode loosens this, but very fine crosshatching may still degrade. Use `pipeline="compositional"` for line-art inputs — it extracts thin features as SVG strokes instead.
+- **Curved lines** (compositional): Hough transform only detects straight line segments. Curved strokes (arcs, spirals, freehand curves) fall through to the fill pass and render as filled polygons. Future work: `cv2.fitEllipse` or spline fitting on skeleton branches.
 - **Ring/arc structures**: Large dark rings (like Kandinsky's outer circle) fragment across multiple K-means clusters. Each cluster's contours are independent, so the ring doesn't form one smooth shape. A dark-cluster-merging step would help.
 - **Gradient transitions**: At any K, smooth gradients produce staircase banding. Higher K reduces this but never eliminates it.
+- **Parallel line groups** (compositional): Dense hatching or ruled lines may merge incorrectly if the perpendicular distance between adjacent lines is below the merge threshold (6px). The merge step currently doesn't detect parallel-but-offset lines as distinct strokes.
 
 ## Dependencies
 

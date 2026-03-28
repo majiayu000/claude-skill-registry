@@ -1,11 +1,11 @@
 ---
-description: Reviews local changes, PRs/MRs, or branch diffs against project coding guidelines using up to 6 parallel review agents (bug detection, security/logic, guideline compliance x2, code simplification, test coverage). Use before committing, on open PRs/MRs, or to review any branch diff. HIGH SIGNAL only: real bugs, logic errors, security concerns, and guideline violations. Supports a "deep" mode for iterative auto-fix — reviews and fixes code in a loop until zero findings remain.
+description: Reviews local changes, PRs/MRs, or branch diffs against project coding guidelines using up to 7 parallel review agents (bug detection, security/logic, guideline compliance x2, code simplification, test coverage, contract quality). Use before committing, on open PRs/MRs, or to review any branch diff. HIGH SIGNAL only: real bugs, logic errors, security concerns, and guideline violations. Supports a "deep" mode for iterative auto-fix — reviews and fixes code in a loop until zero findings remain.
 disable-model-invocation: true
 ---
 
 # Code Review
 
-Analyze local git changes (or a PR/MR) against the project's coding guidelines, using up to 6 parallel review agents for comprehensive coverage. High-signal findings only: bugs, logic errors, security issues, guideline violations. Excludes style concerns, subjective suggestions, and linter-catchable issues.
+Analyze local git changes (or a PR/MR) against the project's coding guidelines, using up to 7 parallel review agents for comprehensive coverage. High-signal findings only: bugs, logic errors, security issues, guideline violations. Excludes style concerns, subjective suggestions, and linter-catchable issues.
 
 **Progress visibility** — When starting each step, show a brief one-line progress indicator (e.g., "**[Step 2/8]** Loading project context..."). Keep it short — the indicator orients the user, not narrate internals.
 
@@ -147,13 +147,13 @@ Then use `AskUserQuestion` — header "Deep mode", question "Proceed with deep m
 
 If the user did not invoke with `deep`, skip this step.
 
-If the user selects **Normal mode**, continue with the standard single-pass flow. Record the user's choice as a `deep-mode` flag for subsequent steps. If deep mode is confirmed, initialize `iteration-count` to 1, `total-fixed` to 0, `total-reverted` to 0, and `accumulated-findings` to an empty list. Each entry in `accumulated-findings` tracks: **file** (with line), **category** (Bug, Security, Guideline Violation, Code Quality, Test Coverage Gap), **guideline** (the specific project rule, or "General: bug/security"), **summary** (one-sentence description of the issue), **fix description** (brief description of the fix applied or attempted), **iteration** (which iteration discovered it), and **status** (updated through apply/test phases).
+If the user selects **Normal mode**, continue with the standard single-pass flow. Record the user's choice as a `deep-mode` flag for subsequent steps. If deep mode is confirmed, initialize `iteration-count` to 1, `total-fixed` to 0, `total-reverted` to 0, and `accumulated-findings` to an empty list. Each entry in `accumulated-findings` tracks: **file** (with line), **category** (Bug, Security, Guideline Violation, Code Quality, Test Coverage Gap, Contract Quality), **guideline** (the specific project rule, or "General: bug/security/contract quality"), **summary** (one-sentence description of the issue), **fix description** (brief description of the fix applied or attempted), **iteration** (which iteration discovered it), and **status** (updated through apply/test phases).
 
-## Step 4: Parallel Multi-Agent Review (up to 6 agents)
+## Step 4: Parallel Multi-Agent Review (up to 7 agents)
 
-6 review agents, all launched in parallel for maximum coverage.
+Up to 7 review agents, launched in parallel for maximum coverage.
 
-Launch up to 6 `general-purpose` Agent tool calls simultaneously. Agents 1–5 always run; Agent 6 runs when test infrastructure is detected (see agent overview below).
+Launch up to 7 `general-purpose` Agent tool calls simultaneously. Agents 1–5 always run; Agent 6 runs when test infrastructure is detected; Agent 7 runs when contract-related files are changed (see agent overview below).
 
 Each agent receives the list of changed file paths from Step 1.
 
@@ -172,17 +172,26 @@ If deep mode is active and `iteration-count` > 1, prepend the iteration context 
 | Agent | Role | Prompt file |
 |-------|------|-------------|
 | 1 — Bug Detector | Null access, off-by-one, race conditions, resource leaks, type mismatches | `bug-detector.md` |
-| 2 — Security & Logic | SQL injection, XSS, hardcoded secrets, missing auth, API contract violations | `security-reviewer.md` |
+| 2 — Security & Logic | SQL injection, XSS, hardcoded secrets, missing auth, security-relevant API violations | `security-reviewer.md` |
 | 3 — Guideline Compliance A | Explicit violations of project docs with exact rule citations | `guideline-reviewer.md` |
 | 4 — Guideline Compliance B | Same task as Agent 3 — independent review reduces false negatives | `guideline-reviewer.md` |
 | 5 — Code Simplifier | Unnecessary complexity, naming, dead code, pattern violations | `code-simplifier.md` |
 | 6 — Test Guardian | Test coverage gaps, structural barriers to testability | `test-guardian.md` |
+| 7 — Contracts Reviewer | Backward compatibility, type safety, contract versioning, encapsulation | `contracts-reviewer.md` |
 
-Agents 1–5 always run. Agent 6 (Test Guardian) runs when test infrastructure is detected (`.claude/docs/testing.md` or subproject `docs/testing.md` exists). Each agent: max 8 findings, structured list format. Guideline agents (3–4) are constructed dynamically based on Step 2's doc loading results (single project vs monorepo paths).
+Agents 1–5 always run. Agent 6 (Test Guardian) runs when test infrastructure is detected (`.claude/docs/testing.md` or subproject `docs/testing.md` exists). Agent 7 (Contracts Reviewer) runs when changed files include contract-related paths (see activation rules below). Each agent: max 8 findings, structured list format. Guideline agents (3–4) are constructed dynamically based on Step 2's doc loading results (single project vs monorepo paths).
 
-### Execution
+### Contracts Reviewer activation (Agent 7)
 
-Launch up to 6 `general-purpose` Agent tool calls simultaneously (5 or 6, depending on Agent 6 availability). Wait for all launched agents to complete before proceeding to Step 5.
+Agent 7 activates when **any** changed file from Step 1 matches at least one of these patterns:
+
+**Directory patterns** — file path contains any of: `api/`, `routes/`, `controllers/`, `endpoints/`, `handlers/`, `graphql/`, `proto/`, `grpc/`
+
+**File patterns** — file name matches any of: `*.dto.*`, `*.schema.*`, `*.contract.*`, `openapi.*`, `swagger.*`, `*.proto`, `*.graphql`, `*.gql`
+
+If no changed file matches, skip Agent 7 entirely (zero cost).
+
+Wait for all launched agents to complete before proceeding to Step 5.
 
 ## Step 5: Validate Findings
 
@@ -243,8 +252,8 @@ Before presenting findings, write a concise summary (2–4 sentences) of what th
 ### Severity
 
 - **Critical** — Bugs, security vulnerabilities, runtime failures
-- **Warning** — Guideline violations, missing error handling, test coverage gaps for critical paths
-- **Suggestion** — Code quality improvements, minor guideline drift, test coverage gaps for non-critical paths
+- **Warning** — Guideline violations, missing error handling, test coverage gaps for critical paths, backward-incompatible contract changes
+- **Suggestion** — Code quality improvements, minor guideline drift, test coverage gaps for non-critical paths, minor contract quality issues
 
 ### Finding cap
 
@@ -267,7 +276,7 @@ Maximum **15 findings** across all sources, prioritized by severity then confide
 - Lines changed: +[A] / -[R]
 - Findings: [N] (Critical: [N], Warning: [N], Suggestion: [N])
 - Docs used: [list of docs loaded]
-- Agents: bug-detector, security-reviewer, guideline-A, guideline-B, code-simplifier[, test-guardian]
+- Agents: bug-detector, security-reviewer, guideline-A, guideline-B, code-simplifier[, test-guardian][, contracts-reviewer]
 - Verdict: CHANGES LOOK GOOD / ISSUES FOUND
 
 ### Change Summary
@@ -275,10 +284,10 @@ Maximum **15 findings** across all sources, prioritized by severity then confide
 
 ### Findings
 
-**[N]. [Finding title]** (Critical/Warning/Suggestion — [Bug/Security/Guideline/Quality/Test Gap])
+**[N]. [Finding title]** (Critical/Warning/Suggestion — [Bug/Security/Guideline/Quality/Test Gap/Contract])
 - **File:** `file:line`
-- **Category:** [Bug | Security | Guideline Violation | Code Quality | Test Coverage Gap]
-- **Guideline:** [which project guideline, or "General: bug/security"]
+- **Category:** [Bug | Security | Guideline Violation | Code Quality | Test Coverage Gap | Contract Quality]
+- **Guideline:** [which project guideline, or "General: bug/security/contract quality"]
 - **Issue:** [concrete description]
 - **Current:**
   ```
@@ -368,7 +377,7 @@ Column definitions:
 - **File** — `file:line`
 - **What Changed** — Brief description of the fix applied or attempted
 - **Reason** — Why the change was needed (the issue/problem)
-- **Guideline / Category** — The specific project guideline violated (or "General: bug/security" for non-guideline findings), plus the category (Bug, Security, Guideline Violation, Code Quality, Test Coverage Gap)
+- **Guideline / Category** — The specific project guideline violated (or "General: bug/security/contract quality" for non-guideline findings), plus the category (Bug, Security, Guideline Violation, Code Quality, Test Coverage Gap, Contract Quality)
 - **Status** — `fixed`, `reverted — test failure`, `reverted — attempt 2`, or `persistent — fix failed`
 
 For condition 4 (continue), after presenting the iteration report also show the progress summary: "Iteration [N] of up to 5 — [total-fixed] findings fixed so far, [total-reverted] reverted. Starting next pass..." If the **next** iteration will be 3 or higher, append to the progress summary: "Note: context is accumulating — if output quality degrades, consider finishing remaining findings in a fresh conversation." Then increment `iteration-count` and **return to Step 4** for the next analysis pass. When returning to Step 4, re-gather the current diff (the codebase has changed due to applied fixes) and focus agents on files that had findings in any previous iteration plus any newly modified files.

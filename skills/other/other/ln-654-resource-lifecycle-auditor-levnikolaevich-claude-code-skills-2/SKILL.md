@@ -9,6 +9,8 @@ license: MIT
 
 # Resource Lifecycle Auditor (L3 Worker)
 
+**Type:** L3 Worker
+
 Specialized worker auditing resource acquisition/release patterns, scope mismatches, and connection pool hygiene.
 
 ## Purpose & Scope
@@ -155,7 +157,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (datab
 - **HIGH:** Session/connection acquired without cleanup guarantee (leak on exception)
 - **MEDIUM:** File handle or cursor without cleanup in non-critical path
 
-**Exception:** Session acquired and released before streaming/long-poll begins → skip. NullPool / `pool_size` config documented as serverless design → skip.
+**Exception:** Session acquired and released before streaming/long-poll begins -> skip. NullPool / `pool_size` config documented as serverless design -> skip.
 
 **Recommendation:** Ensure resources are cleaned up on all exit paths (context managers, try-finally, or framework-managed lifecycle).
 
@@ -283,11 +285,15 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (datab
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Write report to `{output_dir}/654-resource-lifecycle.md` with `category: "Resource Lifecycle"` and checks: resource_scope_mismatch, streaming_resource_holding, missing_cleanup, pool_configuration, error_path_leak, factory_vs_injection.
 
-Return summary to coordinator:
+Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 ```
-Report written: docs/project/.audit/ln-650/{YYYY-MM-DD}/654-resource-lifecycle.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/654-resource-lifecycle.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -318,7 +324,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated using penalty algorithm
 - [ ] Report written to `{output_dir}/654-resource-lifecycle.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

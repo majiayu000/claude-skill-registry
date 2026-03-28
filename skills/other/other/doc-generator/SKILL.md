@@ -1,6 +1,9 @@
 ---
 name: doc-generator
 description: Generate or remediate documentation with human-quality writing and style
+version: 1.7.1
+globs: "**/*.md"
+alwaysApply: false
   adherence. Use when creating new documentation, rewriting AI-generated content,
   or applying style profiles. Do not use for slop detection only (use slop-detector)
   or learning styles (use style-learner).
@@ -27,7 +30,6 @@ dependencies:
 - scribe:shared
 - scribe:slop-detector
 ---
-
 # Documentation Generator
 
 Documentation must be grounded in specific claims rather than abstract adjectives. We avoid filler phrases like "In today's fast-paced world" and focus on delivering useful information directly. Each claim should be supported by evidence, such as specific version numbers or request rates, rather than vague descriptors like "comprehensive."

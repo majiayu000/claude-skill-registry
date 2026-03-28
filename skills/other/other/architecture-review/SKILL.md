@@ -4,6 +4,8 @@ description: 'Use this skill for architecture assessment and compliance. Use whe
   reviewing architecture decisions, auditing ADR compliance, analyzing coupling, validating
   design principles. Do not use when selecting architecture paradigms - use archetypes
   skills. DO NOT use when: API surface review - use api-review.'
+version: 1.7.1
+alwaysApply: false
 category: architecture
 tags:
 - architecture

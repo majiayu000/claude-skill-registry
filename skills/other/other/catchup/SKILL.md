@@ -5,6 +5,8 @@ description: 'Use this skill to quickly understand "what changed and what matter
   sprint progress, analyzing git history for context. Do not use when doing detailed
   diff analysis - use diff-analysis instead. DO NOT use when: full code review needed
   - use review-core instead.'
+version: 1.7.1
+alwaysApply: false
 category: analysis-methods
 tags:
 - summarization

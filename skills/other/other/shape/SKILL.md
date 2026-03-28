@@ -1,15 +1,13 @@
 ---
 name: shape
-description: Bridge WHAT (intent) to HOW (implementation). Use when spec is clear but approach is not. Triggers on "shape this", "how should I build", "implementation approach".
+description: Resolves technical HOW decisions — architecture choices, technology selection, and design patterns — from a defined spec or intent. Distinct from hope:intent (which clarifies WHAT to build): shape starts when the goal is clear but the technical path is not. Use when: needing an implementation roadmap, choosing between architectural approaches, or resolving design trade-offs before coding. Triggers on: "shape this", "architecture for X", "how should I build", "system design", "technical approach", "design this", "which pattern", "implementation plan".
 ---
 
-Decide HOW before building. Shape works dimension by dimension — each aspect that needs a HOW decision gets expert-informed choices the user selects from. This prevents collapsing multi-faceted decisions into a single recommendation.
+Decide HOW before building. Shape works dimension by dimension — each aspect that needs a HOW decision gets expert-informed choices the user selects from.
 
 For tasks with 1 dimension and an obvious approach, collapse to Step 1 → Step 5.
 
 ## Presentation
-
-These rules govern HOW shape communicates across all steps.
 
 - **Minto pyramid via AskUserQuestion** — Label = recommendation (conclusion first). Description = one-line tradeoff (always visible). Detail panel = structured plain text in AskUserQuestion's monospace preview box — short lines (~50 chars), ALL CAPS for section headers, dashes for bullets, ASCII tables for structure. No markdown formatting (renders as literal text, not rich text). The choice prompt IS the presentation — no text walls before it.
 - **Batch independent choices** — Non-conflicting dimensions go into a single AskUserQuestion (up to 4 questions per call). Only separate dimensions where one choice constrains another.
@@ -25,9 +23,11 @@ Parse the intent brief (or user's spec). Identify:
 - Goal and constraints
 - Shaping dimensions — aspects needing HOW decisions (architecture, data model, API design, testing, deployment, etc.)
 
-Search the codebase for existing patterns, conventions, and prior art. Then search beyond — GitHub repos, web results, documentation — for how others have solved this. Prior art search is a distinct step from codebase grep.
+**Prior art gate** — Do not proceed to Step 2 until this is done with tool calls:
+1. Grep/Glob the codebase for existing implementations relevant to each dimension
+2. WebSearch / WebFetch for how others have solved this outside the codebase
 
-Summarize research internally. Present only what's relevant to shaping dimensions — 5-10 brief bullets, not architecture reports. The user needs to know what exists and what constrains the HOW, not a tour of the entire codebase.
+Reasoning about what probably exists is not prior art search. Document findings as 5-10 brief bullets. Empty findings ("nothing found") must be stated explicitly.
 
 **Dichotomy of control** — Ask via AskUserQuestion: what's actually within the user's control? Scope the shaping to match their timeline and accountability. Work that depends on other teams, external approvals, or infrastructure they can't change should be documented as externalities, not shaped as if the user can decide them.
 
@@ -47,7 +47,7 @@ Infer the domain type — high-stakes (security, financial, compliance) or explo
 
 Present dimensions to the user via AskUserQuestion (multiSelect): "Which aspects matter for this task?"
 
-Not every task needs every dimension shaped. A CSS fix needs zero. A new API endpoint might need architecture + data model + testing. The user decides.
+Not every task needs every dimension. The user decides.
 
 Infer reversibility per scoped dimension: Type 2 (reversible — move fast) or Type 1 (irreversible — deep analysis). State classifications as a brief line. Only ask if ambiguous. This sets the depth of shaping per dimension.
 
@@ -62,7 +62,6 @@ For each scoped dimension:
    Take consult's output and reshape it into AskUserQuestion choices (see step 3 below). State who was consulted in a brief line.
 
 2. **Reason through** — Apply relevant techniques internally based on domain type and dimension. These are your reasoning toolkit — use them, present the insights they produce in plain language:
-   - Search for prior art and existing libraries — every library not written is ~1000 bugs avoided. Burden of proof is on building, not using. (always)
    - Identify failure modes, make broken states unrepresentable — what remains is the solution space. (high-stakes or irreversible dimensions)
    - Question complexity cost — can this be deleted instead of built? Is this earning its complexity? (always)
    - Ask how constraints improve the design, not just limit it. (when constraints feel blocking)

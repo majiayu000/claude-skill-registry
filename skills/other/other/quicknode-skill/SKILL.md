@@ -1,6 +1,6 @@
 ---
 name: quicknode-skill
-description: Quicknode blockchain infrastructure including RPC endpoints (80+ chains), Streams (real-time data), Webhooks, IPFS storage, Marketplace Add-ons (Token API, NFT API, DeFi tools), Solana DAS API (Digital Asset Standard), Key-Value Store, gRPC streaming (Yellowstone for Solana, Hypercore for Hyperliquid), and x402 pay-per-request RPC. Use when setting up blockchain infrastructure, configuring real-time data pipelines, processing blockchain events, storing data on IPFS, using Quicknode-specific APIs, querying Solana NFTs/tokens/compressed assets, persisting state with Key-Value Store, or building low-latency gRPC streams. Triggers on mentions of Quicknode, Streams, qn_ methods, IPFS pinning, Quicknode add-ons, DAS API, Digital Asset Standard, compressed NFT, cNFT, getAssetsByOwner, searchAssets, Key-Value Store, KV store, qnLib, Yellowstone, gRPC, Geyser, Hypercore, Hyperliquid, HYPE, evm, rpc, ethereum, blockchain, solana, or x402.
+description: Quicknode blockchain infrastructure including RPC endpoints (80+ chains), Streams (real-time data), Webhooks, IPFS storage, Marketplace Add-ons (Token API, NFT API, DeFi tools), Solana DAS API (Digital Asset Standard), Key-Value Store, gRPC streaming (Yellowstone for Solana, Hypercore for Hyperliquid), SQL Explorer (direct SQL access to indexed blockchain data), and x402 pay-per-request RPC. Use when setting up blockchain infrastructure, configuring real-time data pipelines, processing blockchain events, storing data on IPFS, using Quicknode-specific APIs, querying Solana NFTs/tokens/compressed assets, persisting state with Key-Value Store, querying blockchain data with SQL, analyzing trading data, or building low-latency gRPC streams. Triggers on mentions of Quicknode, Streams, qn_ methods, IPFS pinning, Quicknode add-ons, DAS API, Digital Asset Standard, compressed NFT, cNFT, getAssetsByOwner, searchAssets, Key-Value Store, KV store, qnLib, Yellowstone, gRPC, Geyser, Hypercore, Hyperliquid, HYPE, SQL Explorer, SQL query, blockchain data, trading data, indexed data, evm, rpc, ethereum, blockchain, solana, or x402.
 ---
 
 # Quicknode Blockchain Infrastructure
@@ -33,9 +33,11 @@ description: Quicknode blockchain infrastructure including RPC endpoints (80+ ch
 | **DAS API** | Solana Digital Asset Standard (add-on) | NFT/token queries, compressed NFTs, asset search |
 | **Yellowstone gRPC** | Solana Geyser streaming (add-on) | Real-time account, transaction, slot data |
 | **Hypercore** | Hyperliquid gRPC/JSON-RPC/WS (beta) | Trades, orders, book updates, blocks, TWAP, events, writer actions |
+| **SQL Explorer** | Direct SQL access to indexed blockchain data | Trading analytics, historical queries, market analysis |
 | **Admin API** | REST API for account management | Endpoint CRUD, usage monitoring, billing |
 | **Key-Value Store** | Serverless key-value and list storage (beta) | Persistent state for Streams, dynamic address lists |
-| **x402** | Pay-per-request RPC via USDC micropayments | Keyless RPC access, AI agents, pay-as-you-go |
+| **x402** | Pay-per-request ($0.001/call) or credit drawdown ($10/1M) RPC via stablecoins | Keyless RPC access, AI agents, pay-as-you-go |
+| **MPP** | Pay-per-request RPC via IETF Payment Authentication headers | AI agents, multi-service payments, high-volume sessions |
 
 ## RPC Endpoints
 
@@ -350,6 +352,38 @@ Quicknode's data delivery infrastructure for the Hyperliquid L1 chain. Provides 
 
 See [references/hypercore-hyperliquid-reference.md](references/hypercore-hyperliquid-reference.md) for complete HyperCore and Hyperliquid documentation.
 
+## SQL Explorer
+
+Direct SQL access to indexed blockchain data without requiring infrastructure. Query billions of rows of on-chain data using standard SQL syntax and receive results in seconds.
+
+**Docs:** https://www.quicknode.com/docs/sql-explorer
+
+### Quick Setup
+
+```bash
+curl -X POST 'https://api.quicknode.com/sql/rest/v1/query' \
+  -H 'x-api-key: YOUR_API_KEY' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "query": "SELECT timestamp, coin, side, price, size FROM hyperliquid_trades WHERE block_time > now() - INTERVAL 1 HOUR ORDER BY block_number DESC LIMIT 10",
+    "clusterId": "hyperliquid-core-mainnet"
+  }'
+```
+
+### Coverage
+
+**Hyperliquid (HyperCore)** - Tables covering trades, orders, fills, funding, order book diffs, perpetual markets, spot markets, blocks, transactions, system actions, builder activity, staking, ledger updates, and more.
+
+### Key Features
+
+- **Infrastructure-free** - No database or indexer setup required
+- **Standard SQL** - Full SQL syntax including joins, subqueries, CTEs, window functions
+- **40+ pre-built queries** - Common patterns for trading analytics, whale tracking, liquidations
+- **Optimized performance** - Monthly partitioning, sort keys, columnar storage
+- **REST API** - Execute queries programmatically via HTTPS
+
+See [references/sql-explorer.md](references/sql-explorer.md) for complete table schemas, query examples, optimization tips, and API reference.
+
 ## Quicknode SDK
 
 Official JavaScript/TypeScript SDK for Quicknode services.
@@ -439,7 +473,7 @@ Docs: https://www.quicknode.com/docs/key-value-store
 
 ## x402 (Pay-Per-Request RPC)
 
-Pay-per-request RPC access via USDC micropayments on Base. No API key required — authenticate with Sign-In with Ethereum (SIWE), purchase credits, and access 140+ chain endpoints.
+Pay-per-request RPC access via stablecoin payments. No API key required. Two access patterns: pay-per-request ($0.001/call, no auth needed) and credit drawdown (SIWX auth, $10/1M requests). Supports USDC on Base/Polygon/Solana and USDG on XLayer. Access 140+ chain endpoints.
 
 ### Quick Setup
 
@@ -473,6 +507,41 @@ const response = await x402Fetch("https://x402.quicknode.com/ethereum-mainnet", 
 ```
 
 See [references/x402-reference.md](references/x402-reference.md) for complete x402 documentation including SIWE authentication, credit management, and the `@x402/fetch` wrapper.
+
+## MPP (Machine Payments Protocol)
+
+Pay-per-request RPC access via IETF Payment Authentication headers. No API key required. Two intent types: charge ($0.001/request) and session ($0.00001/request via off-chain vouchers). Payment via PathUSD on Tempo or USDC on Solana. Access 140+ chain endpoints.
+
+### Quick Setup
+
+```typescript
+import { Mppx, tempo } from 'mppx/client'
+import { privateKeyToAccount } from 'viem/accounts'
+
+const account = privateKeyToAccount(process.env.PRIVATE_KEY as `0x${string}`)
+
+// Polyfills globalThis.fetch — handles 402 challenges automatically
+Mppx.create({
+  methods: [tempo({ account })],
+})
+
+// Charge intent ($0.001/req) — payment is transparent
+const response = await fetch('https://mpp.quicknode.com/tempo-mainnet', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    jsonrpc: '2.0',
+    id: 1,
+    method: 'eth_blockNumber',
+    params: [],
+  }),
+})
+
+const { result } = await response.json()
+console.log('Block number:', BigInt(result))
+```
+
+See [references/mpp-reference.md](references/mpp-reference.md) for complete MPP documentation including charge vs session intents, Solana setup, CLI usage, and payment receipts.
 
 ## Common Patterns
 
@@ -525,6 +594,13 @@ const ethBalance = await chains.ethereum.client.getBalance({ address: '0x...' })
 3. **Process events** — handle ~12 blocks/sec throughput
 4. **Use Info API** (`/info`) for account state and market metadata
 
+### Historical Trading Analysis with SQL Explorer
+
+1. **Query historical trades** — `SELECT * FROM hyperliquid_trades WHERE block_time > ...`
+2. **Aggregate metrics** — Use `GROUP BY` for volume, counts, averages
+3. **Join tables** — Combine trades, orders, funding for comprehensive analysis
+4. **Export data** — Results as JSON for downstream processing
+
 ## Best Practices
 
 ### RPC
@@ -552,6 +628,13 @@ const ethBalance = await chains.ethereum.client.getBalance({ address: '0x...' })
 - Set appropriate commitment levels (Yellowstone: CONFIRMED for most use cases, FINALIZED for irreversibility)
 - Send keepalive pings (every 10s for Yellowstone, every 30s for Hypercore) to maintain connections
 
+### SQL Explorer
+- Always filter by time ranges for partition pruning (`WHERE block_time > ...`)
+- Use LIMIT on exploratory queries to reduce data scanned
+- Leverage sort keys (check schema reference) for optimal query performance
+- Start with pre-built queries and customize for your needs
+- Monitor query statistics (rows_read, bytes_read) to optimize performance
+
 ## Documentation Links
 
 ### Quicknode Products
@@ -565,8 +648,12 @@ const ethBalance = await chains.ethereum.client.getBalance({ address: '0x...' })
 - **Yellowstone gRPC**: https://www.quicknode.com/docs/solana/yellowstone-grpc/overview
 - **Hyperliquid**: https://www.quicknode.com/docs/hyperliquid
 - **Hyperliquid gRPC**: https://www.quicknode.com/docs/hyperliquid/grpc-api
+- **SQL Explorer**: https://www.quicknode.com/docs/sql-explorer
+- **SQL Explorer REST API**: https://www.quicknode.com/docs/sql-explorer/rest-api/overview
+- **Hyperliquid Queries**: https://www.quicknode.com/docs/sql-explorer/rest-api/hyperliquid-queries
 - **Key-Value Store**: https://www.quicknode.com/docs/key-value-store
 - **x402**: https://x402.quicknode.com
+- **MPP**: https://mpp.quicknode.com
 
 ### Chain-Specific Docs
 - **Ethereum**: https://www.quicknode.com/docs/ethereum
@@ -583,6 +670,7 @@ const ethBalance = await chains.ethereum.client.getBalance({ address: '0x...' })
 - **Platform Overview (llms.txt)**: https://www.quicknode.com/llms.txt — High-level index of all Quicknode products, chains, guides, and solutions
 - **Docs Index (llms.txt)**: https://www.quicknode.com/docs/llms.txt — Per-chain and per-product documentation index (links to `https://www.quicknode.com/docs/{chain-or-product}/llms.txt`)
 - **x402 (llms.txt)**: https://x402.quicknode.com/llms.txt
+- **MPP (llms.txt)**: https://mpp.quicknode.com/llms.txt
 
 ### Additional Resources
 - **Quicknode Guides**: https://www.quicknode.com/guides

@@ -64,21 +64,8 @@ summary in each agent's prompt as "PRIOR FINDINGS" with instruction:
 a plan, scope ALL agents to the plan's changed files in a single pass.
 Do NOT run a scoped review followed by a broader review — one pass per role.
 
-**Create Claude Code tasks** for each review agent BEFORE spawning.
-This gives real-time progress visibility:
-
-```
-For each agent to spawn:
-  TaskCreate({
-    subject: "{Agent Name} review",
-    description: "Review changed files for {focus area}",
-    activeForm: "Running {Agent Name}..."
-  })
-  TaskUpdate({taskId, status: "in_progress"})
-```
-
-Then spawn agents using the Agent tool. Do NOT analyze code
-yourself — delegate to agents.
+**Create a Claude Code task per agent** (TaskCreate + TaskUpdate to in_progress) BEFORE spawning.
+Spawn agents using the Agent tool — do NOT analyze code yourself.
 
 **For `/phx:review` or `/phx:review all` — select agents dynamically
 based on the diff, then spawn selected agents in ONE message (parallel):**
@@ -167,7 +154,7 @@ anything.
 then offer via `AskUserQuestion`: `/phx:triage` (recommended), `/phx:plan`,
 fix directly, or "I'll handle it myself".
 
-**On PASS / PASS WITH WARNINGS**: Suggest `/phx:compound`, `/phx:learn`.
+**On PASS / PASS WITH WARNINGS**: Suggest `/phx:compound`, `/phx:learn-from-fix`.
 
 **Convention extraction**: After presenting findings, offer: "Any findings
 to suppress or enforce as conventions?" See `${CLAUDE_SKILL_DIR}/references/conventions.md`.

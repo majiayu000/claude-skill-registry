@@ -5,6 +5,8 @@ description: 'Interactive project initialization with git setup, workflows, hook
 
 
   project setup, initialization, scaffold, bootstrap, new project.'
+version: 1.7.1
+alwaysApply: false
 model: claude-sonnet-4
 tools:
 - Read

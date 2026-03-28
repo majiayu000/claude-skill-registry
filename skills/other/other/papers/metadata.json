@@ -1,0 +1,17 @@
+{
+  "name": "papers",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/tome/skills/papers/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "papers",
+  "downloaded_at": "2026-03-28T01:19:42.011671Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/master/plugins/tome/skills/papers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athola/claude-night-market/blob/master/plugins/tome/skills/papers/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

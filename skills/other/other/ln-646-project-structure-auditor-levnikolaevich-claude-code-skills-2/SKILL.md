@@ -9,6 +9,8 @@ license: MIT
 
 # Project Structure Auditor
 
+**Type:** L3 Worker
+
 L3 Worker that audits the physical directory structure of a project against framework-specific conventions and hygiene best practices.
 
 ## Purpose & Scope
@@ -30,7 +32,7 @@ L3 Worker that audits the physical directory structure of a project against fram
 
 ```
 - codebase_root: string        # Root directory to scan
-- output_dir: string           # e.g., "docs/project/.audit/ln-640/{YYYY-MM-DD}"
+- output_dir: string           # e.g., ".hex-skills/runtime-artifacts/runs/{run_id}/audit-report"
 
 # Domain-aware (optional, from coordinator)
 - domain_mode: "global" | "domain-aware"   # Default: "global"
@@ -266,6 +268,8 @@ IF len(test_files) > 0:
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`, `shared/references/audit_scoring.md`, and `shared/templates/audit_worker_report_template.md`.
 
+If `summaryArtifactPath` is present, write JSON summary per `shared/references/audit_summary_contract.md`. Compact text output is fallback only.
+
 ```
 # 7a: Calculate score via shared formula
 # 7b: Build report in memory using the shared audit worker template
@@ -282,7 +286,7 @@ ELSE:
   Write to {output_dir}/646-structure.md
 
 # 7e: Return summary
-Report written: docs/project/.audit/ln-640/{YYYY-MM-DD}/646-structure[-{domain}].md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/646-structure[-{domain}].md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -291,7 +295,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/references/audit_scoring.md`.
 
 Severity mapping:
-- **HIGH:** Build artifacts tracked, missing .gitignore, source in wrong location, multiple lock files, missing secrets in .gitignore. **Exception:** Build artifacts in Git LFS → skip
+- **HIGH:** Build artifacts tracked, missing .gitignore, source in wrong location, multiple lock files, missing secrets in .gitignore. **Exception:** Build artifacts in Git LFS -> skip
 - **MEDIUM:** Missing framework dirs, junk drawers, temp files, platform remnants, missing stack-specific gitignore entries, naming violations >10%
 - **LOW:** IDE/OS patterns missing, inconsistent dir naming, mixed test patterns, minor config issues
 
@@ -321,7 +325,7 @@ Severity mapping:
 - [ ] If domain-aware: all Glob scoped to `scan_path`, findings tagged with domain
 - [ ] Score calculated per `audit_scoring.md`
 - [ ] Report written to `{output_dir}/646-structure[-{domain}].md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

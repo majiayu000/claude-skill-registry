@@ -1,6 +1,6 @@
 ---
 name: intent
-description: Turn rough ideas into clear work orders. Use when request is vague like "add a button", "make it better", "fix the thing". Triggers on ambiguous or underspecified requests.
+description: Turn rough ideas into clear work orders before planning or building. Use when request is vague like "add a button", "make it better", "fix the thing". Triggers on ambiguous or underspecified requests. Produces a brief with scope, acceptance criteria, and stop conditions.
 ---
 
 Clarify WHAT before building anything. Every criterion must be testable by a stranger. Clarity over completeness — a partial spec with boolean criteria beats a thorough spec with vague ones.

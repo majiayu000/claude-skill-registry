@@ -1,6 +1,6 @@
 ---
 name: token-check
-description: Analyze current session token usage and suggest optimizations
+description: Use when the user asks about token usage, session cost, or wants to check optimization effectiveness.
 disable-model-invocation: true
 allowed-tools: Bash
 ---

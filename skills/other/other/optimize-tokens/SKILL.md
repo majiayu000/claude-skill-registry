@@ -1,6 +1,6 @@
 ---
 name: optimize-tokens
-description: Search the web for latest Claude Code token optimization tips and analyze current project setup
+description: Use when the user wants to reduce token costs, find savings opportunities, or optimize Claude Code usage.
 disable-model-invocation: true
 allowed-tools: Read, Grep, Glob, Bash, WebSearch, WebFetch
 ---

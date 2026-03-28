@@ -154,6 +154,26 @@ Both documents describe **inventory/procedures**, NOT implementations:
 ### Format Priority (MANDATORY)
 Tables (env vars, ports, services, servers) > Lists (setup steps) > Text
 
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/docs_generation_summary_contract.md`
+
+Accept optional `summaryArtifactPath`.
+
+Summary kind:
+- `docs-generation`
+
+Required payload semantics:
+- `worker = "ln-115"`
+- `status`
+- `created_files`
+- `skipped_files`
+- `quality_inputs`
+- `validation_status`
+- `warnings`
+
+Write the summary to the provided artifact path or return the same envelope in structured output.
+
 ## Definition of Done
 - [ ] infrastructure.md created (always)
 - [ ] runbook.md created if hasDocker
@@ -161,7 +181,7 @@ Tables (env vars, ports, services, servers) > Lists (setup steps) > Text
 - [ ] Runbook: setup steps, deployment, troubleshooting documented
 - [ ] All env vars from .env.example included in runbook
 - [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
-- [ ] Status returned to coordinator
+- [ ] Status returned
 
 ## Reference Files
 - Templates: `references/templates/infrastructure_template.md`, `references/templates/runbook_template.md`

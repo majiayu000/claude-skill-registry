@@ -12,7 +12,7 @@ license: MIT
 
 # Quality Coordinator
 
-Sequential coordinator for code quality pipeline. Invokes workers (ln-511 → ln-512 → ln-513 → ln-514), runs inline agent review in parallel with Phases 5-8, merges all results, and returns quality_verdict.
+Runtime-backed quality coordinator. The runtime owns phase transitions, worker summary tracking, and deterministic resume while ln-510 still performs the same quality orchestration.
 
 ## Inputs
 
@@ -33,6 +33,33 @@ Sequential coordinator for code quality pipeline. Invokes workers (ln-511 → ln
 - Invoke ln-514-test-log-analyzer (classify errors, assess log quality)
 - Return quality_verdict + aggregated results
 - Calculate quality_verdict per normalization matrix + `references/gate_levels.md`
+
+## Runtime Contract
+
+**MANDATORY READ:** Load `shared/references/coordinator_runtime_contract.md`, `shared/references/quality_runtime_contract.md`, `shared/references/quality_summary_contract.md`, `shared/references/review_runtime_contract.md`
+
+Runtime family: `quality-runtime`
+
+Identifier:
+- Story ID
+
+Phases:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_DISCOVERY`
+3. `PHASE_2_CODE_QUALITY`
+4. `PHASE_3_CLEANUP`
+5. `PHASE_4_AGENT_REVIEW`
+6. `PHASE_5_CRITERIA`
+7. `PHASE_6_LINTERS`
+8. `PHASE_7_REGRESSION`
+9. `PHASE_8_LOG_ANALYSIS`
+10. `PHASE_9_FINALIZE`
+11. `PHASE_10_SELF_CHECK`
+
+Worker summary contract:
+- `ln-511`, `ln-512`, `ln-513`, `ln-514` may receive `summaryArtifactPath`
+- each worker writes or returns `quality-worker` summary envelope
+- ln-510 consumes worker summaries, not free-text worker prose
 
 ## When to Use
 - All implementation tasks in Story status = Done
@@ -262,7 +289,7 @@ issues:
 
 Write `.hex-skills/runtime-artifacts/runs/{run_id}/story-quality/{story_id}.json` before finishing.
 
-**TodoWrite format (mandatory):**
+## TodoWrite format (mandatory)
 ```
 - Invoke ln-511-code-quality-checker (in_progress)
 - Invoke ln-512-tech-debt-cleaner (pending)

@@ -4,6 +4,8 @@ description: 'Use this skill as foundation for git workflows. Use when verifying
   state before other git operations, checking staged changes, preflight checks before
   commits or PRs. Do not use when full commit workflow - use commit-messages instead.
   DO NOT use when: full PR preparation - use pr-prep.'
+version: 1.7.1
+alwaysApply: false
 category: workspace-ops
 tags:
 - git
@@ -34,7 +36,6 @@ hooks:
 
       '
 ---
-
 # Git Workspace Review
 
 ## Table of Contents

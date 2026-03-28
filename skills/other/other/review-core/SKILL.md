@@ -5,6 +5,8 @@ description: 'Use this skill at the BEGINNING of any detailed review for consist
   for capturing context and findings, ensuring comparable review outputs. Do not use
   when quick catchup without formal review - use catchup. DO NOT use when: diff-focused
   analysis - use diff-analysis.'
+version: 1.7.1
+alwaysApply: false
 category: review-patterns
 tags:
 - workflow
@@ -21,7 +23,6 @@ usage_patterns:
 complexity: intermediate
 estimated_tokens: 1500
 ---
-
 # Core Review Workflow
 
 ## Table of Contents

@@ -9,6 +9,8 @@ description: 'Data-grid architecture for high-traffic stateful workloads with li
   Use when: traffic overwhelms database nodes or linear scalability needed
 
   DO NOT use when: data does not fit in memory or simpler caching suffices.'
+version: 1.7.1
+alwaysApply: false
 category: architectural-pattern
 tags:
 - architecture
@@ -29,7 +31,6 @@ usage_patterns:
 complexity: high
 estimated_tokens: 800
 ---
-
 # The Space-Based Architecture Paradigm
 
 

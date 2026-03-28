@@ -9,6 +9,8 @@ license: MIT
 
 # Layer Boundary Auditor
 
+**Type:** L3 Worker
+
 L3 Worker that audits architectural layer boundaries and detects violations.
 
 ## Purpose & Scope
@@ -32,7 +34,7 @@ L3 Worker that audits architectural layer boundaries and detects violations.
 - architecture_path: string    # Path to docs/architecture.md
 - codebase_root: string        # Root directory to scan
 - skip_violations: string[]    # Files to skip (legacy)
-- output_dir: string           # e.g., "docs/project/.audit/ln-640/{YYYY-MM-DD}"
+- output_dir: string           # e.g., ".hex-skills/runtime-artifacts/runs/{run_id}/audit-report"
 
 # Domain-aware (optional, from coordinator)
 - domain_mode: "global" | "domain-aware"   # Default: "global"
@@ -48,7 +50,7 @@ L3 Worker that audits architectural layer boundaries and detects violations.
 
 ### Phase 1: Discover Architecture
 
-**MANDATORY READ:** Load `../ln-640-pattern-evolution-auditor/references/layer_rules.md` — use Architecture Presets (fallback), I/O Pattern Boundary Rules (Phase 2), Coverage Checks (Phase 4), Cross-Layer Consistency rules (Phase 3).
+**MANDATORY READ:** Load `../ln-640-pattern-evolution-auditor/references/layer_rules.md` -- use Architecture Presets (fallback), I/O Pattern Boundary Rules (Phase 2), Coverage Checks (Phase 4), Cross-Layer Consistency rules (Phase 3).
 
 ```
 Read docs/architecture.md
@@ -71,9 +73,9 @@ Build ruleset:
 
 
 **Graph acceleration (if available):** IF `contextStore.graph_indexed` OR `.hex-skills/codegraph/index.db` exists:
-- **Module coupling:** `get_module_metrics(path=scan_root)` — Ca/Ce/Instability per module. Use to identify tightly-coupled layers.
-- **Cross-layer calls:** `find_references(symbol)` for transaction/session functions — trace commit/rollback ownership across layers.
-- **Orchestration depth:** `trace_paths(start=service_function, path_kind="calls", direction="forward", depth=3)` — measure chain depth for flat orchestration check.
+- **Module coupling:** `get_module_metrics(path=scan_root)` -- Ca/Ce/Instability per module. Use to identify tightly-coupled layers.
+- **Cross-layer calls:** `find_references(symbol)` for transaction/session functions -- trace commit/rollback ownership across layers.
+- **Orchestration depth:** `trace_paths(start=service_function, path_kind="calls", direction="forward", depth=3)` -- measure chain depth for flat orchestration check.
 - Fall back to grep-based detection below if graph unavailable.
 ### Phase 2: Detect Layer Violations
 
@@ -130,7 +132,7 @@ layers_with_commits = count([repo_commits, service_commits, api_commits].filter(
 | repo + service commits | HIGH | Ambiguous UoW owner (repo vs service) |
 | service + api commits | MEDIUM | Transaction control spans service + API |
 
-**Exception:** Saga pattern / distributed transactions with explicit compensating actions → downgrade CRITICAL to MEDIUM. UoW boundary documented with `// architecture decision` or ADR → skip.
+**Exception:** Saga pattern / distributed transactions with explicit compensating actions -> downgrade CRITICAL to MEDIUM. UoW boundary documented with `// architecture decision` or ADR -> skip.
 
 **Recommendation:** Choose single UoW owner (service layer recommended), remove commit() from other layers
 
@@ -160,16 +162,16 @@ local_in_repo = Grep("AsyncSessionLocal\(\)", "**/repositories/**/*.py")
 
 #### 3.3 Flat Orchestration Violations
 
-**What:** Service-layer functions calling other services that call yet other services — deep orchestration chains.
+**What:** Service-layer functions calling other services that call yet other services -- deep orchestration chains.
 
-**Detection:** **MANDATORY READ:** Load `shared/references/ai_ready_architecture.md` — map service imports, find chain depth.
+**Detection:** **MANDATORY READ:** Load `shared/references/ai_ready_architecture.md` -- map service imports, find chain depth.
 
 **Violation Rules:**
 
 | Condition | Severity | Issue |
 |-----------|----------|-------|
-| Service chain >= 3 (A→B→C→D) | HIGH | Deep orchestration |
-| Service chain = 2 (A→B→C) | MEDIUM | Consider flattening |
+| Service chain >= 3 (A->B->C->D) | HIGH | Deep orchestration |
+| Service chain = 2 (A->B->C) | MEDIUM | Consider flattening |
 
 **Recommendation:** Extract orchestrator calling all services at same level. Each service becomes a sink.
 
@@ -217,6 +219,8 @@ IF len(unique_files) > 2:
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 ```
 # Build markdown report in memory with:
 # - AUDIT-META (standard penalty-based: score, counts)
@@ -233,7 +237,7 @@ ELSE:
 ### Phase 7: Return Summary
 
 ```
-Report written: docs/project/.audit/ln-640/{YYYY-MM-DD}/642-layer-boundary-users.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/642-layer-boundary-users.md
 Score: 4.5/10 | Issues: 8 (C:1 H:3 M:4 L:0)
 ```
 
@@ -260,7 +264,7 @@ Score: 4.5/10 | Issues: 8 (C:1 H:3 M:4 L:0)
 - [ ] Violations list with severity, location, suggestion
 - [ ] If domain-aware: all Grep scoped to scan_path, findings tagged with domain
 - [ ] Report written to `{output_dir}/642-layer-boundary[-{domain}].md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

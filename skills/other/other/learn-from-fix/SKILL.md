@@ -1,6 +1,6 @@
 ---
-name: phx:learn
-description: Capture lessons learned after fixing a bug or receiving a correction from the user. Use whenever the user corrects your approach, points out a mistake, or teaches you a project-specific pattern. Updates knowledge base to prevent future mistakes.
+name: phx:learn-from-fix
+description: Capture lessons learned after fixing an Elixir/Phoenix bug or receiving a correction. Covers ecto query mistakes, liveview mount anti-patterns, oban worker issues, and iron law violations. Use when the user corrects your approach or teaches a project-specific pattern. Updates knowledge base to prevent future mistakes.
 effort: low
 argument-hint: <description of what was fixed>
 ---
@@ -13,9 +13,9 @@ to prevent future mistakes.
 ## Usage
 
 ```
-/phx:learn Fixed N+1 query in user listing - was missing preload
-/phx:learn String vs atom key mismatch in params handling
-/phx:learn LiveView assign_async needs render_async in tests
+/phx:learn-from-fix Fixed N+1 query in user listing - was missing preload
+/phx:learn-from-fix String vs atom key mismatch in params handling
+/phx:learn-from-fix LiveView assign_async needs render_async in tests
 ```
 
 ## Workflow
@@ -88,6 +88,12 @@ Lesson captured in [location]
 Pattern: Do NOT [bad pattern] — instead [good pattern]
 Category: [Ecto/LiveView/OTP/Testing/etc]
 ```
+
+## Iron Laws
+
+1. **NEVER edit plugin files** — files under `~/.claude/plugins/` are cached and overwritten on updates
+2. **DO NOT duplicate existing lessons** — always check CLAUDE.md and memory before writing
+3. **Capture the root cause, not the symptom** — "missing preload" not "query was slow"
 
 ## References (READ-ONLY — do NOT edit)
 

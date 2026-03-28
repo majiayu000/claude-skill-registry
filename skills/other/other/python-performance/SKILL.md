@@ -4,6 +4,9 @@ description: 'Consult this skill for Python performance profiling and optimizati
   Use when debugging slow code, identifying bottlenecks, optimizing memory, benchmarking
   performance, production profiling. Do not use when async concurrency - use python-async
   instead. DO NOT use when: CPU/GPU system monitoring - use conservation:cpu-gpu-performance.'
+version: 1.7.1
+globs: "**/*.py"
+alwaysApply: false
 category: performance
 tags:
 - python
@@ -31,7 +34,6 @@ modules:
 - benchmarking-tools
 - best-practices
 ---
-
 # Python Performance Optimization
 
 Profiling and optimization patterns for Python code.

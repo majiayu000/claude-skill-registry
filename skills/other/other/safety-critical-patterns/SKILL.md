@@ -4,6 +4,8 @@ description: 'Guidelines from the NASA Power of 10 rules for writing robust, ver
   code. Adapted for general software development with context-appropriate rigor. Use
   when writing critical code paths, reviewing for robustness, improving code quality.
   Do not use as rigid requirements for all code - match rigor to consequence.'
+version: 1.7.1
+alwaysApply: false
 category: code-quality
 tags:
 - safety
@@ -22,7 +24,6 @@ dependencies:
 - pensive:shared
 - pensive:code-refinement
 ---
-
 # Safety-Critical Coding Patterns
 
 Guidelines adapted from NASA's Power of 10 rules for safety-critical software.

@@ -9,6 +9,8 @@ license: MIT
 
 # Query Efficiency Auditor (L3 Worker)
 
+**Type:** L3 Worker
+
 Specialized worker auditing database query patterns for redundancy, inefficiency, and misuse.
 
 ## Purpose & Scope
@@ -65,7 +67,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (datab
 **Severity:**
 - **HIGH:** Redundant fetch in API request handler (adds latency per request)
 - **MEDIUM:** Redundant fetch in background job (less critical)
-- **Downgrade when:** Fetch in initialization/migration code (runs once) → LOW. Admin-only endpoint with low traffic → downgrade one level
+- **Downgrade when:** Fetch in initialization/migration code (runs once) -> LOW. Admin-only endpoint with low traffic -> downgrade one level
 
 **Recommendation:** Pass entity object instead of ID, or remove second fetch when `expire_on_commit=False`
 
@@ -85,7 +87,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (datab
 **Severity:**
 - **HIGH:** Loop over >10 items (N separate round-trips to DB)
 - **MEDIUM:** Loop over <=10 items
-- **Downgrade when:** Loop in bootstrap/migration code (runs once) → LOW. Admin-only endpoint → downgrade one level
+- **Downgrade when:** Loop in bootstrap/migration code (runs once) -> LOW. Admin-only endpoint -> downgrade one level
 
 **Recommendation:** Replace with single `UPDATE ... WHERE id IN (...)` or `session.execute(update(Model).where(Model.id.in_(ids)))`
 
@@ -166,11 +168,15 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (datab
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Write report to `{output_dir}/651-query-efficiency.md` with `category: "Query Efficiency"` and checks: redundant_fetch, n_update_delete_loop, unnecessary_resolve, over_fetching, missing_bulk_ops, wrong_caching_scope.
 
-Return summary to coordinator:
+Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 ```
-Report written: docs/project/.audit/ln-650/{YYYY-MM-DD}/651-query-efficiency.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/651-query-efficiency.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -195,7 +201,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated using penalty algorithm
 - [ ] Report written to `{output_dir}/651-query-efficiency.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

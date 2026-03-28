@@ -1,0 +1,17 @@
+{
+  "name": "svg-portrait-mode",
+  "repo": "oaustegard/claude-skills",
+  "path": "svg-portrait-mode/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "svg-portrait-mode",
+  "downloaded_at": "2026-03-28T01:32:58.574901Z",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/svg-portrait-mode/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oaustegard/claude-skills/blob/main/svg-portrait-mode/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

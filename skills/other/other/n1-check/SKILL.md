@@ -1,6 +1,6 @@
 ---
 name: ecto:n1-check
-description: "Scan Ecto code for N+1 query anti-patterns: Repo calls inside Enum.map/each/for loops, association access without preload, missing nested preloads. Use when user reports excessive queries in logs, wants an N+1 audit, or asks to find missing preloads. NOT for general Ecto guidance — use ecto-patterns."
+description: "Scan Ecto code for N+1 query anti-patterns: Repo calls inside Enum.map/each/for loops, association access without preload, missing nested preloads. Use when user reports excessive database queries in logs, wants an N+1 audit, or asks to find missing preloads. NOT for broad Ecto guidance — use ecto-patterns."
 effort: medium
 allowed-tools: Read, Grep, Glob, Bash
 ---

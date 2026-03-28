@@ -1,6 +1,6 @@
 ---
 name: planning
-description: Persistent markdown planning for complex tasks. Auto-activates when a task requires 5+ steps. Creates and updates task_plan.md to track progress across sessions.
+description: Use when a task requires 5+ steps, multiple file changes, or cross-session progress tracking. Auto-activates for complex multi-step work.
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 ---
 

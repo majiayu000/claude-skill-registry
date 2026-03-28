@@ -1,6 +1,8 @@
 ---
 name: evaluation-framework
 description: Consult this skill when building evaluation or scoring systems. Use when
+version: 1.7.1
+alwaysApply: false
   implementing evaluation systems, creating quality gates, designing scoring rubrics,
   building decision frameworks. Do not use when simple pass/fail without scoring needs.
 category: infrastructure

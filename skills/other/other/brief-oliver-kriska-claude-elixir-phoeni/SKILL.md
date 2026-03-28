@@ -1,6 +1,6 @@
 ---
 name: phx:brief
-description: Interactive briefing of a plan file. Explains reasoning and solution in progressive sections so developers understand before approving or after completion. Use when team members need to understand a plan without reading the full document.
+description: Interactive briefing of an Elixir/Phoenix plan file. Explains reasoning, ecto schema decisions, liveview component choices, and solution shape in progressive sections so developers understand before approving or after completion. Use when team members need to understand a plan without reading the full document.
 effort: low
 argument-hint: [path to plan file]
 ---
@@ -97,6 +97,7 @@ See `${CLAUDE_SKILL_DIR}/references/briefing-guide.md` for section content templ
    programming concepts
 5. **Keep each section under 20 lines** — this is a briefing,
    not a lecture
+6. **NEVER skip sections or auto-start work** — briefing is read-only; do not execute plan tasks or launch `/phx:work` without explicit user request
 
 ## Closing Message
 

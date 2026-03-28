@@ -1,6 +1,6 @@
 ---
 name: hexdocs-fetcher
-description: Fetches HexDocs documentation efficiently using WebFetch tool with automatic HTML-to-markdown conversion for context efficiency. Use this INSTEAD of direct WebFetch when looking up any Elixir library documentation on hexdocs.pm. Handles module docs, function docs, guides, and changelogs for any Hex package. Dramatically reduces token usage compared to raw HTML fetching.
+description: "Retrieves HexDocs documentation for Elixir/Phoenix/Hex libraries with automatic HTML-to-markdown conversion for context savings. Use when looking up Elixir library docs on hexdocs.pm instead of raw web requests. Handles module docs, function docs, guides, and changelogs for any Hex package."
 effort: low
 ---
 
@@ -113,3 +113,9 @@ mcp__tidewave__get_docs(module: "Oban.Worker")
 ```
 
 This fetches docs for the exact version in your `mix.lock`.
+
+## Iron Laws
+
+1. **NEVER fetch entire HexDocs sites** — always target specific modules or guides
+2. **Use focused prompts** — generic fetches waste tokens; specify what to extract
+3. **Prefer Tidewave when available** — exact version match beats generic hexdocs.pm

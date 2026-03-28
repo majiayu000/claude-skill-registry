@@ -3,6 +3,9 @@ name: pytest-config
 description: 'Standardized pytest configuration for Claude Night Market plugin testing
   with reusable fixtures and CI integration. Use when configuring pytest, setting up
   conftest patterns, or establishing shared test fixtures.'
+version: 1.7.1
+globs: ["**/conftest.py", "**/pytest.ini", "**/pyproject.toml"]
+alwaysApply: false
 category: infrastructure
 tags:
 - pytest

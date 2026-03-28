@@ -102,7 +102,7 @@ Files to review:
 | 14 | Event channels | Channel name consistency in diff |
 | 15 | CI Checks | lint/typecheck pass per ci_tool_detection.md |
 
-Expected output: Verdict (Done/To Rework) + Issues + Fix actions
+Expected output: Verdict (`Done | To Rework`) + Issues + Fix actions
 ```
 
 ## Progress Tracking with TodoWrite

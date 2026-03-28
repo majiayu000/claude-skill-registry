@@ -9,6 +9,8 @@ description: 'Coarse-grained service architecture for deployment independence wi
   Use when: teams need deployment independence without microservices complexity
 
   DO NOT use when: fine-grained scaling needed - use microservices.'
+version: 1.7.1
+alwaysApply: false
 category: architectural-pattern
 tags:
 - architecture
@@ -28,7 +30,6 @@ usage_patterns:
 complexity: medium
 estimated_tokens: 700
 ---
-
 # The Service-Based Architecture Paradigm
 
 

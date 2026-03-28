@@ -7,6 +7,8 @@ description: >-
   findings, and generates a formatted report. Use when the
   user invokes /tome:research or asks to research a topic
   in depth. Do not use for simple web searches.
+version: 1.7.1
+alwaysApply: false
 category: orchestration
 tags:
   - research
@@ -30,7 +32,6 @@ orchestrates:
   - tome:triz
   - tome:synthesize
 ---
-
 # Research Session Orchestrator
 
 Run a full multi-source research session: classify the

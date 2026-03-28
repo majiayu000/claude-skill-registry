@@ -1,15 +1,11 @@
 ---
 name: architecture-paradigm-functional-core
 description: 'Functional Core, Imperative Shell: isolate deterministic logic from
-  side effects for testability.
-
-
-  Triggers: functional-core, imperative-shell, pure functions, side-effects, testability
-
-  Use when: business logic is entangled with I/O or tests are brittle
-
-  DO NOT use when: simple scripting without complex logic, or performance-critical
-  hot paths where immutability overhead matters.'
+  side effects for testability. Use when business logic is entangled with I/O or
+  tests are brittle. Do not use when simple scripting without complex logic, or
+  performance-critical hot paths where immutability overhead matters.'
+version: 1.7.1
+alwaysApply: false
 category: architectural-pattern
 tags:
 - architecture
@@ -31,7 +27,6 @@ usage_patterns:
 complexity: intermediate
 estimated_tokens: 1200
 ---
-
 # The Functional Core, Imperative Shell Paradigm
 
 

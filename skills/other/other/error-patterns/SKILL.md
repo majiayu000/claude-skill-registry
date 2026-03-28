@@ -5,6 +5,8 @@ description: 'Standardized error handling patterns with classification, recovery
 
 
   error handling, error recovery, graceful degradation, resilience.'
+version: 1.7.1
+alwaysApply: false
 category: infrastructure
 tags:
 - errors

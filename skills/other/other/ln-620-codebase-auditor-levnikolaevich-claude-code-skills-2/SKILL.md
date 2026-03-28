@@ -9,6 +9,8 @@ license: MIT
 
 # Codebase Auditor (L2 Coordinator)
 
+**Type:** L2 Coordinator
+
 Coordinates 9 specialized audit workers to perform comprehensive codebase quality analysis.
 
 ## Purpose & Scope
@@ -19,6 +21,57 @@ Coordinates 9 specialized audit workers to perform comprehensive codebase qualit
 - Aggregate worker results into single consolidated report
 - Write report to `docs/project/codebase_audit.md` (file-based, no task creation)
 - Manual invocation by user; not part of Story pipeline
+
+**MANDATORY READ:** Load `shared/references/audit_runtime_contract.md`, `shared/references/audit_summary_contract.md`, `shared/references/audit_coordinator_aggregation.md`, and `shared/references/audit_coordinator_domain_mode.md`.
+
+## Runtime Contract
+
+Use `shared/scripts/audit-runtime/cli.mjs` as orchestration SSOT.
+
+Runtime phase map:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_DISCOVERY`
+3. `PHASE_2_APPLICABILITY_GATE`
+4. `PHASE_3_RESEARCH`
+5. `PHASE_4_DOMAIN_DISCOVERY`
+6. `PHASE_5_DELEGATE`
+7. `PHASE_6_AGGREGATE`
+8. `PHASE_7_WRITE_REPORT`
+9. `PHASE_8_RESULTS_LOG`
+10. `PHASE_9_CLEANUP`
+11. `PHASE_10_SELF_CHECK`
+12. `DONE`
+13. `PAUSED`
+
+Run-scoped worker artifacts:
+- reports: `.hex-skills/runtime-artifacts/runs/{run_id}/audit-report/`
+- summaries: `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/`
+- public report: `docs/project/codebase_audit.md`
+- public trend log: `docs/project/.audit/results_log.md`
+
+## Worker Invocation (MANDATORY)
+
+| Phase | Worker | Context | Condition |
+|-------|--------|---------|-----------|
+| 5 | ln-621, ln-622, ln-625, ln-626, ln-627, ln-628, ln-629 | Agent -> shared contextStore + `summaryArtifactPath` | only if applicable after Phase 2 |
+| 5 | ln-623, ln-624 | Agent -> per-domain context + `summaryArtifactPath` | `domain_mode="domain-aware"` |
+| 5 | ln-623, ln-624 | Agent -> shared contextStore + `summaryArtifactPath` | `domain_mode="global"` |
+
+**TodoWrite format (mandatory):**
+```
+- Resolve runtime config and phase order (pending)
+- Discover project metadata (pending)
+- Apply worker applicability gate (pending)
+- Research best practices (pending)
+- Detect domains and prepare runtime artifact dirs (pending)
+- Invoke applicable global workers with summaryArtifactPath (pending)
+- Invoke domain-aware workers with summaryArtifactPath [conditional] (pending)
+- Aggregate JSON worker summaries and report evidence (pending)
+- Write consolidated report (pending)
+- Append results log (pending)
+- Cleanup runtime artifacts (pending)
+- Run self-check and complete runtime (pending)
+```
 
 ## Workflow
 
@@ -59,7 +112,7 @@ Determine project type from tech_stack metadata and skip inapplicable workers.
 | CLI tool | No web framework, has CLI framework (Typer/Click/Commander/cobra/etc.) | ln-627 (health checks), ln-629 (graceful shutdown) |
 | Library/SDK | No entry point, only exports | ln-627, ln-629 |
 | Script/Lambda | Single entry, <500 LOC | ln-627, ln-628 (concurrency), ln-629 |
-| Web Service | Has web framework (Express/FastAPI/ASP.NET/Spring/etc.) | None — all applicable |
+| Web Service | Has web framework (Express/FastAPI/ASP.NET/Spring/etc.) | None -- all applicable |
 | Worker/Queue | Has queue framework (Bull/Celery/etc.) | None |
 
 **Algorithm:**
@@ -98,9 +151,11 @@ Skipped workers are NOT delegated. They get score "N/A" in report and are exclud
   "best_practices": {...},
   "principles": {...},
   "codebase_root": "...",
-  "output_dir": "docs/project/.audit/ln-620/{YYYY-MM-DD}"
+  "output_dir": ".hex-skills/runtime-artifacts/runs/{run_id}/audit-report"
 }
 ```
+
+Coordinator also computes one `summaryArtifactPath` per worker invocation under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/`.
 
 ## Phase 4: Domain Discovery
 
@@ -114,7 +169,7 @@ Detect `domain_mode` and `all_domains` using the shared pattern. This coordinato
 
 ### Phase 5.0: Prepare Output Directory
 
-Create `{output_dir}` before delegation. Worker files are cleaned up after consolidation (see Phase 9).
+Create `{output_dir}` and the sibling audit-worker summary directory before delegation. Runtime artifacts are cleaned up after consolidation (see Phase 9).
 
 ### Phase 5a: Global Workers (PARALLEL)
 
@@ -133,6 +188,10 @@ Create `{output_dir}` before delegation. Worker files are cleaned up after conso
 **Invocation (filter by Phase 2 applicability gate):**
 ```javascript
 FOR EACH worker IN applicable_workers:
+  worker_context = {
+    ...contextStore,
+    summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/" + worker + "-global.json"
+  }
   Agent(description: "Codebase audit via " + worker,
        prompt: "Execute audit worker.
 
@@ -140,7 +199,7 @@ Step 1: Invoke worker:
   Skill(skill: \"" + worker + "\")
 
 CONTEXT:
-" + JSON.stringify(contextStore),
+" + JSON.stringify(worker_context),
        subagent_type: "general-purpose")
 ```
 
@@ -151,7 +210,7 @@ CONTEXT:
 | # | Worker | Priority | What It Audits | Output File |
 |---|--------|----------|----------------|-------------|
 | 3 | ln-623-code-principles-auditor | HIGH | DRY/KISS/YAGNI violations, TODO/FIXME, error handling, DI | `623-principles-{domain}.md` |
-| 4 | ln-624-code-quality-auditor | MEDIUM | Cyclomatic complexity, O(n²), N+1 queries, magic numbers | `624-quality-{domain}.md` |
+| 4 | ln-624-code-quality-auditor | MEDIUM | Cyclomatic complexity, O(n^2), N+1 queries, magic numbers | `624-quality-{domain}.md` |
 
 **Invocation:**
 ```javascript
@@ -161,7 +220,8 @@ IF domain_mode == "domain-aware":
       domain_context = {
         ...contextStore,
         domain_mode: "domain-aware",
-        current_domain: { name: domain.name, path: domain.path }
+        current_domain: { name: domain.name, path: domain.path },
+        summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/" + worker + "-" + domain.name + ".json"
       }
       Agent(description: "Audit " + domain.name + " via " + worker,
            prompt: "Execute audit worker.
@@ -174,6 +234,10 @@ CONTEXT:
            subagent_type: "general-purpose")
 ELSE:
   FOR EACH worker IN [ln-623, ln-624]:
+    worker_context = {
+      ...contextStore,
+      summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/" + worker + "-global.json"
+    }
     Agent(description: "Codebase audit via " + worker,
          prompt: "Execute audit worker.
 
@@ -181,7 +245,7 @@ Step 1: Invoke worker:
   Skill(skill: \"" + worker + "\")
 
 CONTEXT:
-" + JSON.stringify(contextStore),
+" + JSON.stringify(worker_context),
          subagent_type: "general-purpose")
 ```
 
@@ -191,7 +255,7 @@ All invocations in single message for maximum parallelism.
 
 **MANDATORY READ:** Load `shared/references/audit_coordinator_aggregation.md`.
 
-Use the shared aggregation pattern for output directory checks, return-value parsing, category score tables, severity totals, and domain health summaries.
+Use the shared aggregation pattern for runtime artifact checks, JSON summary parsing, category score tables, severity totals, and domain health summaries.
 
 ### Step 6.1: Cross-Domain DRY Analysis (if domain-aware)
 
@@ -199,11 +263,11 @@ Read **only** ln-623 report files to extract `FINDINGS-EXTENDED` JSON block:
 ```
 principle_files = Glob("{output_dir}/623-principles-*.md")
 FOR EACH file IN principle_files:
-  Read file → extract <!-- FINDINGS-EXTENDED [...] --> JSON
+  Read file -> extract <!-- FINDINGS-EXTENDED [...] --> JSON
   Filter findings with pattern_signature field
 
 Group by pattern_signature across domains:
-  IF same signature in 2+ domains → create Cross-Domain DRY finding:
+  IF same signature in 2+ domains -> create Cross-Domain DRY finding:
     severity: HIGH
     principle: "Cross-Domain DRY Violation"
     list all affected domains and locations
@@ -215,12 +279,12 @@ Group by pattern_signature across domains:
 Read each worker report file and copy Findings table into corresponding report section:
 ```
 FOR EACH report_file IN Glob("{output_dir}/6*.md"):
-  Read file → extract "## Findings" table rows
+  Read file -> extract "## Findings" table rows
   Insert into matching category section in final report
 ```
 
-**Global categories** (Security, Build, etc.) → single Findings table per category.
-**Domain-aware categories** → subtables per domain (one per file).
+**Global categories** (Security, Build, etc.) -> single Findings table per category.
+**Domain-aware categories** -> subtables per domain (one per file).
 
 ### Step 6.3: Context Validation (Post-Filter)
 
@@ -234,26 +298,26 @@ Apply Rules 1-5 to assembled findings. Uses data already in context:
 ```
 FOR EACH finding IN assembled_findings WHERE severity IN (HIGH, MEDIUM):
   # Rule 1: ADR/Planned Override
-  IF finding matches ADR title/description → advisory "[Planned: ADR-XXX]"
+  IF finding matches ADR title/description -> advisory "[Planned: ADR-XXX]"
 
   # Rule 2: Trivial DRY
-  IF DRY finding AND duplicated_lines < 5 → remove finding
+  IF DRY finding AND duplicated_lines < 5 -> remove finding
 
   # Rule 3: Cohesion (god_classes, long_methods, large_file)
   IF size-based finding:
     Read flagged file ONCE, check 4 cohesion indicators
-    IF cohesion >= 3 → advisory "[High cohesion module]"
+    IF cohesion >= 3 -> advisory "[High cohesion module]"
 
   # Rule 4: Already-Latest
   IF dependency finding: cross-check ln-622 audit output
-    IF latest + 0 CVEs → remove finding
+    IF latest + 0 CVEs -> remove finding
 
   # Rule 5: Locality/Single-Consumer
   IF DRY/schema finding: Grep import count
-    IF import_count == 1 → advisory "[Single consumer, locality correct]"
-    IF import_count <= 3 with different API contracts → advisory "[API contract isolation]"
+    IF import_count == 1 -> advisory "[Single consumer, locality correct]"
+    IF import_count <= 3 with different API contracts -> advisory "[API contract isolation]"
 
-Downgraded findings → "Advisory Findings" section in report.
+Downgraded findings -> "Advisory Findings" section in report.
 Recalculate category scores excluding advisory findings from penalty.
 ```
 
@@ -274,7 +338,7 @@ Append one row to `docs/project/.audit/results_log.md` with: Skill=`ln-620`, Met
 ## Critical Rules
 
 - **Worker applicability:** Skip inapplicable workers based on project type (Phase 2); skipped workers get "N/A" score
-- **Two-stage delegation:** Global workers + Domain-aware workers (2 × N domains)
+- **Two-stage delegation:** Global workers + Domain-aware workers (2 x N domains)
 - **Domain discovery:** Auto-detect domains from folder structure; fallback to global mode
 - **Parallel execution:** All applicable workers (global + domain-aware) run in PARALLEL
 - **Single context gathering:** Research best practices ONCE, pass contextStore to all workers
@@ -289,7 +353,7 @@ Append one row to `docs/project/.audit/results_log.md` with: Skill=`ln-620`, Met
 rm -rf {output_dir}
 ```
 
-Delete the dated output directory (`docs/project/.audit/ln-620/{YYYY-MM-DD}/`). The consolidated report and results log already preserve all audit data.
+Delete the run-scoped runtime artifact directory (`.hex-skills/runtime-artifacts/runs/{run_id}/`) after consolidation. The consolidated report and results log already preserve the required audit outputs.
 
 ## Definition of Done
 
@@ -297,7 +361,7 @@ Delete the dated output directory (`docs/project/.audit/ln-620/{YYYY-MM-DD}/`). 
 - [ ] Best practices researched via MCP tools for major dependencies
 - [ ] Domain discovery completed (domain_mode determined)
 - [ ] contextStore built with tech stack + best practices + domain info + output_dir
-- [ ] `docs/project/.audit/ln-620/{YYYY-MM-DD}/` directory created for worker reports
+- [ ] `.hex-skills/runtime-artifacts/runs/{run_id}/audit-report/` directory created for worker reports
 - [ ] Worker output directory cleaned up after consolidation
 - [ ] Applicable global workers invoked in PARALLEL; each wrote report to `{output_dir}/`
 - [ ] Domain-aware workers invoked in PARALLEL; each wrote report to `{output_dir}/`
@@ -330,7 +394,7 @@ Worker SKILL.md files contain the detailed audit rules:
 
 **MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
 
-Skill type: `review-coordinator` (workers only). Run after all phases complete. Output to chat using the `review-coordinator — workers only` format.
+Skill type: `review-coordinator` (workers only). Run after all phases complete. Output to chat using the `review-coordinator -- workers only` format.
 
 ## Reference Files
 

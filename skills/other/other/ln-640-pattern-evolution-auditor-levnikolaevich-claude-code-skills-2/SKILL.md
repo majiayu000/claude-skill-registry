@@ -9,6 +9,8 @@ license: MIT
 
 # Pattern Evolution Auditor
 
+**Type:** L2 Coordinator
+
 L2 Coordinator that analyzes implemented architectural patterns against current best practices and tracks evolution over time.
 
 ## Purpose & Scope
@@ -20,6 +22,35 @@ L2 Coordinator that analyzes implemented architectural patterns against current 
 - Track quality trends over time (improving/stable/declining)
 - Output: `docs/project/patterns_catalog.md` (file-based)
 
+**MANDATORY READ:** Load `shared/references/audit_runtime_contract.md`, `shared/references/audit_summary_contract.md`, `shared/references/audit_coordinator_aggregation.md`, and `shared/references/audit_coordinator_domain_mode.md`.
+
+## Runtime Contract
+
+Use `shared/scripts/audit-runtime/cli.mjs` as orchestration SSOT.
+
+Runtime phase map:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_BASELINE_DETECTION`
+3. `PHASE_2_RESEARCH`
+4. `PHASE_3_DOMAIN_DISCOVERY`
+5. `PHASE_4_BOUNDARY_AUDITS`
+6. `PHASE_5_PATTERN_ANALYSIS`
+7. `PHASE_6_AGGREGATE`
+8. `PHASE_7_GAP_ANALYSIS`
+9. `PHASE_8_WRITE_REPORT`
+10. `PHASE_9_RETURN_RESULT`
+11. `PHASE_10_RESULTS_LOG`
+12. `PHASE_11_CLEANUP`
+13. `PHASE_12_SELF_CHECK`
+14. `DONE`
+15. `PAUSED`
+
+Run-scoped worker artifacts:
+- reports: `.hex-skills/runtime-artifacts/runs/{run_id}/audit-report/`
+- summaries: `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/`
+- public report: `docs/project/patterns_catalog.md`
+- public trend log: `docs/project/.audit/results_log.md`
+
 ## 4-Score Model
 
 | Score | What it measures | Threshold |
@@ -29,7 +60,7 @@ L2 Coordinator that analyzes implemented architectural patterns against current 
 | **Quality** | Readability, maintainability, no smells, SOLID, no duplication | 70% |
 | **Implementation** | Code exists, production use, integrated, monitored | 70% |
 
-## Worker Invocation
+## Worker Invocation (MANDATORY)
 
 **MANDATORY READ:** Load `shared/references/task_delegation_pattern.md`.
 
@@ -45,6 +76,21 @@ L2 Coordinator that analyzes implemented architectural patterns against current 
 
 All delegations use Agent with `subagent_type: "general-purpose"`. Keep Phase 4 workers parallel where inputs are independent; keep ln-641 in Phase 5 because pattern scoring depends on earlier boundary and graph evidence.
 
+**TodoWrite format (mandatory):**
+```
+- Resolve runtime config and phase order (pending)
+- Detect baseline/adaptive patterns (pending)
+- Research pattern best practices (pending)
+- Detect domains and prepare runtime artifact dirs (pending)
+- Invoke Phase 4 workers with summaryArtifactPath (pending)
+- Invoke ln-641 pattern analyzers with summaryArtifactPath (pending)
+- Aggregate JSON worker summaries and report evidence (pending)
+- Write/update patterns catalog (pending)
+- Append results log (pending)
+- Cleanup runtime artifacts (pending)
+- Run self-check and complete runtime (pending)
+```
+
 ## Workflow
 
 **MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
@@ -53,56 +99,56 @@ All delegations use Agent with `subagent_type: "general-purpose"`. Keep Phase 4 
 
 ```
 1. Load docs/project/patterns_catalog.md
-   IF missing → create from shared/templates/patterns_template.md
-   IF exists → verify template conformance:
+   IF missing -> create from shared/templates/patterns_template.md
+   IF exists -> verify template conformance:
      required_sections = ["Score Legend", "Pattern Inventory", "Discovered Patterns",
        "Layer Boundary Status", "API Contract Status", "Quick Wins",
        "Patterns Requiring Attention", "Pattern Recommendations",
        "Excluded Patterns", "Summary"]
      FOR EACH section IN required_sections:
        IF section NOT found in catalog:
-         → Append section from shared/templates/patterns_template.md
+         -> Append section from shared/templates/patterns_template.md
      Verify table columns match template (e.g., Recommendation in Quick Wins)
-     IF columns mismatch → update table headers, preserve existing data rows
+     IF columns mismatch -> update table headers, preserve existing data rows
 
-2. Load docs/reference/adrs/*.md → link patterns to ADRs
-   Load docs/reference/guides/*.md → link patterns to Guides
+2. Load docs/reference/adrs/*.md -> link patterns to ADRs
+   Load docs/reference/guides/*.md -> link patterns to Guides
 
 3. Auto-detect baseline patterns
    FOR EACH pattern IN pattern_library.md "Pattern Detection" table:
      Grep(detection_keywords) on codebase
-     IF found but not in catalog → add as "Undocumented (Baseline)"
+     IF found but not in catalog -> add as "Undocumented (Baseline)"
 ```
 
 4. **Index codebase graph (if available):** IF `hex-graph` MCP server is available:
-   - `index_project(path=codebase_root)` — builds/refreshes code graph
+   - `index_project(path=codebase_root)` -- builds/refreshes code graph
    - Add `graph_indexed: true` to contextStore for workers (ln-641 uses find_implementations, ln-642 uses trace_paths/find_references)
-   - **Graph-assisted pattern discovery:** `search_symbols(query=GoF_suffix, kind="class")` — find Factory*, Builder*, Strategy* etc. by structure, not just name. `find_implementations(symbol)` — discover all implementations of abstract/interface classes.
+   - **Graph-assisted pattern discovery:** `search_symbols(query=GoF_suffix, kind="class")` -- find Factory*, Builder*, Strategy* etc. by structure, not just name. `find_implementations(symbol)` -- discover all implementations of abstract/interface classes.
 
 ### Phase 1b: Adaptive Discovery
 
-**MANDATORY READ:** Load `references/pattern_library.md` — use "Discovery Heuristics" section.
+**MANDATORY READ:** Load `references/pattern_library.md` -- use "Discovery Heuristics" section.
 
 Predefined patterns are a **seed, not a ceiling**. Discover project-specific patterns beyond the baseline.
 
 ```
 # Structural heuristics (from pattern_library.md)
 1. Class naming: Grep GoF suffixes (Factory|Builder|Strategy|Adapter|Observer|...)
-2. Abstract hierarchy: ABC/Protocol with 2+ implementations → Template Method/Strategy
-3. Fluent interface: return self chains → Builder
-4. Registration dict: _registry + register() → Registry
-5. Middleware chain: app.use/add_middleware → Chain of Responsibility
-6. Event listeners: @on_event/@receiver/signal → Observer
-7. Decorator wrappers: @wraps/functools.wraps → Decorator
+2. Abstract hierarchy: ABC/Protocol with 2+ implementations -> Template Method/Strategy
+3. Fluent interface: return self chains -> Builder
+4. Registration dict: _registry + register() -> Registry
+5. Middleware chain: app.use/add_middleware -> Chain of Responsibility
+6. Event listeners: @on_event/@receiver/signal -> Observer
+7. Decorator wrappers: @wraps/functools.wraps -> Decorator
 
 # Document-based heuristics
-8. ADR/Guide filenames + H1 headers → extract pattern names not in library
-9. Architecture.md → grep pattern terminology
-10. Code comments → "pattern:|@pattern|design pattern"
+8. ADR/Guide filenames + H1 headers -> extract pattern names not in library
+9. Architecture.md -> grep pattern terminology
+10. Code comments -> "pattern:|@pattern|design pattern"
 
 # Output per discovered pattern:
   {name, evidence: [files], confidence: HIGH|MEDIUM|LOW, status: "Discovered"}
-  → Add to catalog "Discovered Patterns (Adaptive)" section
+  -> Add to catalog "Discovered Patterns (Adaptive)" section
 ```
 
 ### Phase 1c: Pattern Recommendations
@@ -111,18 +157,18 @@ Suggest patterns that COULD improve architecture (advisory, NOT scored).
 
 ```
 # Check conditions from pattern_library.md "Pattern Recommendations" table
-# E.g., external API calls without retry → recommend Resilience
-# E.g., 5+ constructor params → recommend Builder/Parameter Object
-# E.g., direct DB access from API layer → recommend Repository
+# E.g., external API calls without retry -> recommend Resilience
+# E.g., 5+ constructor params -> recommend Builder/Parameter Object
+# E.g., direct DB access from API layer -> recommend Repository
 
-→ Add to catalog "Pattern Recommendations" section
+-> Add to catalog "Pattern Recommendations" section
 ```
 
 ### Phase 1d: Applicability Verification
 
 Verify each detected pattern is actually implemented, not just a keyword false positive.
 
-**MANDATORY READ:** Load `references/scoring_rules.md` — use "Required components by pattern" table.
+**MANDATORY READ:** Load `references/scoring_rules.md` -- use "Required components by pattern" table.
 
 ```
 FOR EACH detected_pattern IN (baseline_detected + adaptive_discovered):
@@ -131,7 +177,7 @@ FOR EACH detected_pattern IN (baseline_detected + adaptive_discovered):
     IF pattern.confidence == "LOW" AND len(pattern.evidence.files) < 3:
       pattern.status = "EXCLUDED"
       pattern.exclusion_reason = "Low confidence, insufficient evidence"
-      → Add to catalog "Excluded Patterns" section
+      -> Add to catalog "Excluded Patterns" section
       CONTINUE
   ELSE:
     # Baseline patterns: check minimum 2 structural components
@@ -143,7 +189,7 @@ FOR EACH detected_pattern IN (baseline_detected + adaptive_discovered):
     IF found_count < 2:
       pattern.status = "EXCLUDED"
       pattern.exclusion_reason = "Found {found_count}/{len(components)} components"
-      → Add to catalog "Excluded Patterns" section
+      -> Add to catalog "Excluded Patterns" section
       CONTINUE
 
   pattern.status = "VERIFIED"
@@ -151,17 +197,17 @@ FOR EACH detected_pattern IN (baseline_detected + adaptive_discovered):
 # Step 2: Semantic applicability via MCP Ref (after structural check passes)
 FOR EACH pattern WHERE pattern.status == "VERIFIED":
   ref_search_documentation("{pattern.name} {tech_stack.language} idiom vs architectural pattern")
-  WebSearch("{pattern.name} {tech_stack.language} — language feature or design pattern?")
+  WebSearch("{pattern.name} {tech_stack.language} -- language feature or design pattern?")
 
   IF evidence shows pattern is language idiom / stdlib feature / framework built-in:
     pattern.status = "EXCLUDED"
     pattern.exclusion_reason = "Language idiom / built-in feature, not architectural pattern"
-    → Add to catalog "Excluded Patterns" section
+    -> Add to catalog "Excluded Patterns" section
 
 # Cleanup: remove stale patterns from previous audits
 FOR EACH pattern IN existing_catalog WHERE NOT detected in current scan:
-  → REMOVE from Pattern Inventory
-  → Add to "Excluded Patterns" with reason "No longer detected in codebase"
+  -> REMOVE from Pattern Inventory
+  -> Add to "Excluded Patterns" with reason "No longer detected in codebase"
 ```
 
 ### Phase 2: Best Practices Research
@@ -174,14 +220,14 @@ FOR EACH pattern WHERE last_audit > 30 days OR never:
   IF pattern.library: query-docs(library_id, "{pattern}")
   WebSearch("{pattern} implementation best practices 2026")
 
-  → Store: contextStore.bestPractices[pattern]
+  -> Store: contextStore.bestPractices[pattern]
 ```
 
 ### Phase 3: Domain Discovery + Output Setup
 
 **MANDATORY READ:** Load `shared/references/audit_coordinator_domain_mode.md`.
 
-Use the shared domain discovery pattern to set `domain_mode` and `all_domains`. Then create `docs/project/.audit/ln-640/{YYYY-MM-DD}/`. Worker files are cleaned up after consolidation (see Phase 11).
+Use the shared domain discovery pattern to set `domain_mode` and `all_domains`. Then create `.hex-skills/runtime-artifacts/runs/{run_id}/audit-report/` and the sibling audit-worker summary directory. Runtime artifacts are cleaned up after consolidation (see Phase 11).
 
 ### Phase 4: Layer Boundary + API Contract + Dependency Graph Audit
 
@@ -191,7 +237,8 @@ IF domain_mode == "domain-aware":
     domain_context = {
       ...contextStore,
       domain_mode: "domain-aware",
-      current_domain: { name: domain.name, path: domain.path }
+      current_domain: { name: domain.name, path: domain.path },
+      summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/" + worker + "-" + domain.name + ".json"
     }
     FOR EACH worker IN [ln-642, ln-643, ln-644, ln-645, ln-646, ln-647]:
       Agent(description: "Audit " + domain.name + " via " + worker,
@@ -205,6 +252,10 @@ CONTEXT:
            subagent_type: "general-purpose")
 ELSE:
   FOR EACH worker IN [ln-642, ln-643, ln-644, ln-645, ln-646, ln-647]:
+    worker_context = {
+      ...contextStore,
+      summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/" + worker + "-global.json"
+    }
     Agent(description: "Pattern evolution audit via " + worker,
          prompt: "Execute audit worker.
 
@@ -212,7 +263,7 @@ Step 1: Invoke worker:
   Skill(skill: \"" + worker + "\")
 
 CONTEXT:
-" + JSON.stringify(contextStore),
+" + JSON.stringify(worker_context),
          subagent_type: "general-purpose")
 
 # Apply layer deductions from ln-642 return values (score + issue counts)
@@ -225,6 +276,11 @@ CONTEXT:
 # ln-641 stays GLOBAL (patterns are cross-cutting, not per-domain)
 # Only VERIFIED patterns from Phase 1d (skip EXCLUDED)
 FOR EACH pattern IN catalog WHERE pattern.status == "VERIFIED":
+  worker_context = {
+    ...contextStore,
+    pattern: pattern,
+    summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/ln-641-" + slug(pattern.name) + ".json"
+  }
   Agent(description: "Analyze " + pattern.name + " via ln-641",
        prompt: "Execute audit worker.
 
@@ -232,7 +288,7 @@ Step 1: Invoke worker:
   Skill(skill: \"ln-641-pattern-analyzer\")
 
 CONTEXT:
-" + JSON.stringify({...contextStore, pattern: pattern}),
+" + JSON.stringify(worker_context),
        subagent_type: "general-purpose")
 ```
 
@@ -240,7 +296,7 @@ CONTEXT:
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-All workers write reports to `{output_dir}/` and return minimal summary:
+All workers write reports to `{output_dir}/` and write JSON summaries to `summaryArtifactPath`:
 
 | Worker | Return Format | File |
 |--------|--------------|------|
@@ -252,7 +308,7 @@ All workers write reports to `{output_dir}/` and return minimal summary:
 | ln-646 | `Score: X.X/10 \| Issues: N (C:N H:N M:N L:N)` | `646-structure[-{domain}].md` |
 | ln-647 | `Score: X.X/10 \| Issues: N (C:N H:N M:N L:N)` | `647-env-config[-{domain}].md` |
 
-Coordinator parses scores/counts from return values (0 file reads for aggregation tables). Reads files only for cross-domain aggregation (Phase 6) and report assembly (Phase 8).
+Coordinator parses scores/counts from JSON summaries. Reads files only for cross-domain aggregation (Phase 6) and report assembly (Phase 8).
 
 ### Phase 6: Cross-Domain Aggregation (File-Based)
 
@@ -260,7 +316,7 @@ Coordinator parses scores/counts from return values (0 file reads for aggregatio
 IF domain_mode == "domain-aware":
   # Step 1: Read DATA-EXTENDED from ln-642 files
   FOR EACH file IN Glob("{output_dir}/642-layer-boundary-*.md"):
-    Read file → extract <!-- DATA-EXTENDED ... --> JSON + Findings table
+    Read file -> extract <!-- DATA-EXTENDED ... --> JSON + Findings table
   # Group findings by issue type across domains
   FOR EACH issue_type IN unique(ln642_findings.issue):
     domains_with_issue = ln642_findings.filter(f => f.issue == issue_type).map(f => f.domain)
@@ -274,7 +330,7 @@ IF domain_mode == "domain-aware":
 
   # Step 2: Read DATA-EXTENDED from ln-643 files
   FOR EACH file IN Glob("{output_dir}/643-api-contract-*.md"):
-    Read file → extract <!-- DATA-EXTENDED ... --> JSON (issues with principle + domain)
+    Read file -> extract <!-- DATA-EXTENDED ... --> JSON (issues with principle + domain)
   # Group findings by rule across domains
   FOR EACH rule IN unique(ln643_issues.principle):
     domains_with_issue = ln643_issues.filter(i => i.principle == rule).map(i => i.domain)
@@ -288,7 +344,7 @@ IF domain_mode == "domain-aware":
 
   # Step 3: Read DATA-EXTENDED from ln-644 files
   FOR EACH file IN Glob("{output_dir}/644-dep-graph-*.md"):
-    Read file → extract <!-- DATA-EXTENDED ... --> JSON (cycles, sdp_violations)
+    Read file -> extract <!-- DATA-EXTENDED ... --> JSON (cycles, sdp_violations)
   # Cross-domain cycles
   FOR EACH cycle IN ln644_cycles:
     domains_in_cycle = unique(cycle.path.map(m => m.domain))
@@ -302,7 +358,7 @@ IF domain_mode == "domain-aware":
 
   # Step 4: Read DATA-EXTENDED from ln-645 files
   FOR EACH file IN Glob("{output_dir}/645-open-source-replacer-*.md"):
-    Read file → extract <!-- DATA-EXTENDED ... --> JSON (replacements array)
+    Read file -> extract <!-- DATA-EXTENDED ... --> JSON (replacements array)
   # Group findings by goal/alternative across domains
   FOR EACH goal IN unique(ln645_replacements.goal):
     domains_with_same = ln645_replacements.filter(r => r.goal == goal).map(r => r.domain)
@@ -330,7 +386,7 @@ IF domain_mode == "domain-aware":
 
   # Step 6: Read DATA-EXTENDED from ln-647 files
   FOR EACH file IN Glob("{output_dir}/647-env-config-*.md"):
-    Read file → extract <!-- DATA-EXTENDED ... --> JSON
+    Read file -> extract <!-- DATA-EXTENDED ... --> JSON
   # Group env sync issues across domains
   FOR EACH issue_type IN ["missing_from_example", "dead_in_example", "default_desync"]:
     domains_with_issue = ln647_data.filter(d => d.sync_stats[issue_type] > 0).map(d => d.domain)
@@ -382,7 +438,7 @@ graph_score = parse_score(ln644_return)                     # 0-10
 structure_score = parse_score(ln646_return)                   # 0-10
 env_config_score = parse_score(ln647_return)                  # 0-10
 
-# Step 2: Calculate architecture_health_score (ln-645 NOT included — separate metric)
+# Step 2: Calculate architecture_health_score (ln-645 NOT included -- separate metric)
 all_scores = pattern_scores + [layer_score, api_score, graph_score, structure_score, env_config_score]
 architecture_health_score = round(average(all_scores) * 10)  # 0-100 scale
 
@@ -513,7 +569,7 @@ Append one row to `docs/project/.audit/results_log.md` with: Skill=`ln-640`, Met
 rm -rf {output_dir}
 ```
 
-Delete the dated output directory (`docs/project/.audit/ln-640/{YYYY-MM-DD}/`). The consolidated report and results log already preserve all audit data.
+Delete the run-scoped runtime artifact directory (`.hex-skills/runtime-artifacts/runs/{run_id}/`) after consolidation. The consolidated report and results log already preserve the required audit outputs.
 
 ## Definition of Done
 
@@ -534,7 +590,7 @@ Delete the dated output directory (`docs/project/.audit/ln-640/{YYYY-MM-DD}/`). 
 
 **MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
 
-Skill type: `review-coordinator` (workers only). Run after all phases complete. Output to chat using the `review-coordinator — workers only` format.
+Skill type: `review-coordinator` (workers only). Run after all phases complete. Output to chat using the `review-coordinator -- workers only` format.
 
 ## Reference Files
 

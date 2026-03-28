@@ -2,8 +2,16 @@
   "name": "doc-writer",
   "repo": "aiskillstore/marketplace",
   "path": "skills/0xhiroki/doc-writer/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/aiskillstore/marketplace",
   "dir_name": "doc-writer",
-  "downloaded_at": "2026-02-11T01:24:51.210790Z"
+  "downloaded_at": "2026-03-28T01:17:48.021396Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/0xhiroki/doc-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/0xhiroki/doc-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

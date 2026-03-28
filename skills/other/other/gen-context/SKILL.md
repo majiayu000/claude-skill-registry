@@ -1,6 +1,6 @@
 ---
 name: gen-context
-description: Generate a fresh project context summary. Use when starting a new session or when the project has changed significantly.
+description: Use when starting a new session, the project has changed significantly, or you need a fresh context summary.
 allowed-tools: Read, Grep, Glob, Bash
 context: fork
 agent: Explore

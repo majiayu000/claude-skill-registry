@@ -9,6 +9,8 @@ license: MIT
 
 # Concurrency Auditor (L3 Worker)
 
+**Type:** L3 Worker
+
 Specialized worker auditing concurrency, async patterns, and cross-process resource access.
 
 ## Purpose & Scope
@@ -29,24 +31,24 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 
 **MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
 
-1) **Parse context** — extract tech_stack, language, output_dir from contextStore
+1) **Parse context** -- extract tech_stack, language, output_dir from contextStore
 2) **Per check (1-7):**
    - **Layer 1:** Grep/Glob scan to find candidates
    - **Layer 2:** Read 20-50 lines around each candidate. Apply check-specific critical questions. Classify: confirmed / false positive / needs-context
 3) **Collect** confirmed findings with severity, location, effort, recommendation
 4) **Calculate score** per `shared/references/audit_scoring.md`
-5) **Write Report** — build in memory, write to `{output_dir}/628-concurrency.md` (atomic single Write)
+5) **Write Report** -- build in memory, write to `{output_dir}/628-concurrency.md` (atomic single Write)
 6) **Return Summary** to coordinator
 
 ## Audit Rules
 
-**Unified severity escalation:** For ALL checks — if finding affects payment/auth/financial code → escalate to **CRITICAL** regardless of other factors.
+**Unified severity escalation:** For ALL checks -- if finding affects payment/auth/financial code -> escalate to **CRITICAL** regardless of other factors.
 
 ### 1. Async/Event-Loop Races (CWE-362)
 
 **What:** Shared state corrupted across await/yield boundaries in single-threaded async code.
 
-**Layer 1 — Grep patterns:**
+**Layer 1 -- Grep patterns:**
 
 | Language | Pattern | Grep |
 |----------|---------|------|
@@ -56,7 +58,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 | Python | Shared module-level state in async | Module-level `\w+\s*=` + modified inside `async def` |
 | All | Shared cache without lock | `\.set\(|\.put\(|\[\w+\]\s*=` in async function without lock/mutex nearby |
 
-**Layer 2 — Critical questions:**
+**Layer 2 -- Critical questions:**
 - Is the variable shared (module/global scope) or local?
 - Can two async tasks interleave at this await point?
 - Is there a lock/mutex/semaphore guarding the access?
@@ -71,7 +73,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 
 **What:** Shared mutable state accessed from multiple threads/goroutines without synchronization.
 
-**Layer 1 — Grep patterns:**
+**Layer 1 -- Grep patterns:**
 
 | Language | Pattern | Grep |
 |----------|---------|------|
@@ -82,8 +84,8 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 | Rust | Rc in multi-thread context | `Rc<RefCell` + `thread::spawn\|tokio::spawn` in same file |
 | Node.js | Worker Threads shared state | `workerData\|SharedArrayBuffer\|parentPort` + mutable access without `Atomics` |
 
-**Layer 2 — Critical questions:**
-- Is this struct/object actually shared between threads? (single-threaded code → FP)
+**Layer 2 -- Critical questions:**
+- Is this struct/object actually shared between threads? (single-threaded code -> FP)
 - Is mutex/lock in embedded struct or imported module? (grep may miss it)
 - Is `go func` capturing by value (safe) or by reference (unsafe)?
 
@@ -93,11 +95,11 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 
 **Effort:** M
 
-### 3. TOCTOU — Time-of-Check Time-of-Use (CWE-367)
+### 3. TOCTOU -- Time-of-Check Time-of-Use (CWE-367)
 
 **What:** Resource state checked, then used, but state can change between check and use.
 
-**Layer 1 — Grep patterns:**
+**Layer 1 -- Grep patterns:**
 
 | Language | Check | Use | Grep |
 |----------|-------|-----|------|
@@ -108,7 +110,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 | Go | `os.Stat()` | `os.Open()` | `os\.Stat\(` near `os\.Open\(\|os\.Create\(` |
 | Java | `.exists()` | `new FileInputStream` | `\.exists\(\)` near `new File\|FileInputStream\|FileOutputStream` |
 
-**Layer 2 — Critical questions:**
+**Layer 2 -- Critical questions:**
 - Is the check used for control flow (vulnerable) or just logging (safe)?
 - Is there a lock/retry around the check-then-use sequence?
 - Is the file in a temp directory controlled by the application (lower risk)?
@@ -124,7 +126,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 
 **What:** Lock acquisition in inconsistent order, or lock held during blocking operation.
 
-**Layer 1 — Grep patterns:**
+**Layer 1 -- Grep patterns:**
 
 | Language | Pattern | Grep |
 |----------|---------|------|
@@ -136,7 +138,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 | Java | Nested synchronized | `synchronized\s*\(` (multiline: nested blocks with different monitors) |
 | JS | Async mutex nesting | `await\s+\w+\.acquire\(\)` (two different mutexes in same function) |
 
-**Layer 2 — Critical questions:**
+**Layer 2 -- Critical questions:**
 - Are these the same lock (reentrant = OK) or different locks (deadlock risk)?
 - Is the lock ordering consistent across all call sites?
 - Does the external call inside lock have a timeout?
@@ -151,7 +153,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 
 **What:** Synchronous blocking calls inside async functions or event loop handlers.
 
-**Layer 1 — Grep patterns:**
+**Layer 1 -- Grep patterns:**
 
 | Language | Blocking Call | Grep | Replacement |
 |----------|--------------|------|-------------|
@@ -162,7 +164,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 | Node.js | `execSync` in async | `execSync\|spawnSync` in async handler | `exec` with promises |
 | Node.js | Sync crypto in async | `crypto\.pbkdf2Sync\|crypto\.scryptSync` | `crypto.pbkdf2` (callback) |
 
-**Layer 2 — Critical questions:**
+**Layer 2 -- Critical questions:**
 - Is this in a hot path (API handler) or cold path (startup script)?
 - Is the blocking duration significant (>100ms)?
 - Is there a legitimate reason (e.g., sync read of small config at startup)?
@@ -177,7 +179,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 
 **What:** Multiple concurrent accessors compete for same resource without coordination.
 
-**Layer 1 — Grep patterns:**
+**Layer 1 -- Grep patterns:**
 
 | Pattern | Risk | Grep |
 |---------|------|------|
@@ -185,7 +187,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 | IPC without coordination | Message ordering | `process\.send\|parentPort\.postMessage` in concurrent loops |
 | Concurrent file append | Interleaved writes | Multiple `appendFile\|fs\.write` to same path from parallel tasks |
 
-**Layer 2 — Critical questions:**
+**Layer 2 -- Critical questions:**
 - Are multiple writers actually concurrent? (Sequential = safe)
 - Is there OS-level atomicity guarantee? (e.g., `O_APPEND` for small writes)
 - Is ordering important for correctness?
@@ -200,7 +202,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 
 **What:** Multiple processes or process+OS accessing same exclusive resource, including operations with non-obvious side effects on shared OS resources.
 
-**Layer 1 — Grep entry points:**
+**Layer 1 -- Grep entry points:**
 
 | Pattern | Risk | Grep |
 |---------|------|------|
@@ -210,7 +212,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 | Terminal escape sequences | stdout triggers terminal OS access | `\\x1b\\]\|\\033\\]\|writeOsc\|xterm` |
 | External clipboard tools | Clipboard via spawned process | `pbcopy\|xclip\|xsel\|clip\.exe` |
 
-**Layer 2 — This check relies on reasoning more than any other:**
+**Layer 2 -- This check relies on reasoning more than any other:**
 
 1. **Build Resource Inventory:**
 
@@ -244,11 +246,15 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Write report to `{output_dir}/628-concurrency.md` with `category: "Concurrency"` and checks: async_races, thread_safety, toctou, deadlock_potential, blocking_io, resource_contention, cross_process_races.
 
-Return summary to coordinator:
+Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 ```
-Report written: docs/project/.audit/ln-620/{YYYY-MM-DD}/628-concurrency.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/628-concurrency.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -256,7 +262,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- **Do not auto-fix:** Report only — concurrency fixes require careful human review
+- **Do not auto-fix:** Report only -- concurrency fixes require careful human review
 - **Two-layer detection:** Always apply Layer 2 reasoning after Layer 1 grep. Never report raw grep matches without context analysis
 - **Language-aware detection:** Use language-specific patterns per check
 - **Unified CRITICAL escalation:** Any finding in payment/auth/financial code = CRITICAL
@@ -274,7 +280,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated per `shared/references/audit_scoring.md`
 - [ ] Report written to `{output_dir}/628-concurrency.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

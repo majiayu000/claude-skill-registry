@@ -1,6 +1,6 @@
 ---
 name: oban
-description: "Oban job processing — workers, perform/1, queues, cron scheduling, retries, unique jobs, idempotency. Oban Pro workflows/batches/process/1. Oban.Worker, Oban.Testing, assert_enqueued, perform_job, queue config, backoff. Prevents atom-key args, struct serialization, non-idempotent jobs."
+description: "Reference Oban job processing patterns — workers, perform/1, queues, cron scheduling, retries, unique jobs, idempotency. Oban Pro workflows/batches/process/1. Oban.Worker, Oban.Testing, assert_enqueued, perform_job, queue config, backoff. Use when writing or reviewing Oban workers, job args, queue config, or debugging failed jobs."
 effort: medium
 user-invocable: false
 ---

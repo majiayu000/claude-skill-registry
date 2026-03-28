@@ -6,6 +6,8 @@ description: >-
   session and merges new findings into it. Use after a
   /tome:research session completes to explore areas of
   interest.
+version: 1.7.1
+alwaysApply: false
 category: research
 tags:
   - refinement
@@ -13,8 +15,17 @@ tags:
   - drill-down
 estimated_tokens: 200
 ---
-
 # Dig Deeper
+
+## When To Use
+
+- Drilling into a subtopic after an initial research session
+- Narrowing results to a specific channel (e.g. papers only)
+
+## When NOT To Use
+
+- Starting a new research topic (use `/tome:research` first)
+- Synthesizing results (use `/tome:synthesize`)
 
 Refine an active research session interactively.
 

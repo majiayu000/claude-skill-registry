@@ -61,6 +61,37 @@ Scan the entire knowledge base and report:
 - These represent broken bidirectional links that reduce discoverability from the target entry's side
 - Report: list of unidirectional pairs with source entry, target entry, and direction of missing link
 
+#### g. Broken See Links
+- For each `- see:` link in entries, verify that the target file exists under `entries/`
+- Resolve entries/-relative paths (e.g., `2026/03/slug.md`) and legacy filename-only paths (`slug.md`)
+- Report: list of entries with broken see links, including the missing target path
+
+#### h. Broken File References
+- For each `- ref:` link pointing to a local file path (not external URLs), verify the target exists
+- Resolve relative paths from the entry's location
+- Report: list of entries with broken ref links
+
+#### i. Oversized Entries
+- Entries exceeding **500 KB**: report as warning (consider splitting)
+- Entries exceeding **1 MB**: report as action required (split recommended)
+- Entries exceeding **300 lines**: report as suggestion (may benefit from splitting)
+- Report: list of oversized entries with size, line count, and tags
+
+#### j. Synthesis Candidates
+- Active entries sharing 2+ tags with 3+ entries in the cluster, and no `synthesis` entry exists for that tag combination
+- `fragment` entries older than 60 days that have accumulated 2+ `see:` links (hub-forming signal)
+- Report with prompt: "These entries may be ready for synthesis. Create one?"
+
+#### k. Superseded Chain Check
+- Entries with `status: superseded` must have a valid `superseded_by` path
+- Check that the replacement entry exists and is `active`
+- Report broken superseded chains
+
+#### l. Missing Overview
+- For each tag used by 5+ active entries, check if an `overview` type entry exists for that topic
+- An overview entry is identified by `type: overview` in frontmatter
+- Report: list of tags with entry count but no overview, suggesting overview creation
+
 ### 2. Topic Review (`topic:<keyword or tag>`)
 Deep dive into a specific topic:
 
@@ -82,6 +113,12 @@ Interactively fix issues found in the health check:
    - **Orphan entries**: Search for related entries and add see links (using the same search procedure as record-knowledge step 4)
    - **Missing connections**: Add see links between suggested pairs (with user-facing notification)
    - **Unidirectional links**: Add the missing reverse `- see:` link to the target entry so both entries link to each other
+   - **Broken see links**: Search `entries/` for the target filename — if found at a different path (e.g., migrated to YYYY/MM/), auto-fix the link. If not found, report for manual review
+   - **Broken file references**: Report for manual review (target may need to be created or the ref removed)
+   - **Oversized entries**: Propose splitting using the split procedure from `record-knowledge` — ask for confirmation before splitting
+   - **Synthesis candidates**: Draft a synthesis entry template from the candidate entries — ask for user review before creating
+   - **Broken superseded chains**: Report for manual review (the replacement entry may need to be created or the superseded_by path corrected)
+   - **Missing overviews**: Generate an overview entry template for the user to review — do NOT auto-create, ask for confirmation first
    - **Unregistered tags**: Auto-add missing tags to the registry in `.claude/knowledge/CLAUDE.md` under the appropriate section
    - **Unused tags**: Report for manual review (do not auto-delete)
 3. Report actions taken
@@ -97,6 +134,12 @@ Interactively fix issues found in the health check:
 - Stale entries (>90 days): N
 - Missing connections: N suggested
 - Unidirectional links: N
+- Broken see links: N
+- Broken file references: N
+- Oversized entries: N
+- Synthesis candidates: N
+- Broken superseded chains: N
+- Missing overviews: N
 - Tag issues: N
 
 ## Stale Entries
@@ -119,15 +162,48 @@ Interactively fix issues found in the health check:
 |--------|--------|-------------------|
 | [title](slug.md) | [title](slug.md) | target → source |
 
+## Broken See Links
+| Entry | Broken Target |
+|-------|---------------|
+| [title](YYYY/MM/slug.md) | `YYYY/MM/missing.md` |
+
+## Broken File References
+| Entry | Broken Ref |
+|-------|------------|
+| [title](YYYY/MM/slug.md) | `../../../path/to/missing` |
+
+## Oversized Entries
+| Entry | Size | Lines | Tags | Severity |
+|-------|------|-------|------|----------|
+| [title](YYYY/MM/slug.md) | 1.2 MB | 542 | #tag1 | action required |
+| [title](YYYY/MM/slug.md) | 600 KB | 380 | #tag2 | warning |
+
+## Synthesis Candidates
+| Tag Cluster | Entries | Suggestion |
+|-------------|---------|------------|
+| #tag1 #tag2 | entry-a, entry-b, entry-c | Ready for synthesis |
+
+## Broken Superseded Chains
+| Entry | superseded_by | Issue |
+|-------|---------------|-------|
+| [title](YYYY/MM/slug.md) | `YYYY/MM/missing.md` | Replacement not found |
+
+## Missing Overviews
+| Tag | Entry Count | Suggestion |
+|-----|-------------|------------|
+| #tag1 | N | Consider creating an overview entry |
+
 ## Tag Issues
 - Unregistered: #tag1, #tag2
 - Unused: #tag3
 - Near-duplicates: #foo / #foos
+
+**Tip**: Run `scripts/regenerate-tag-registry.py --write` to rebuild the tag registry from entries.
 ```
 
 ## Procedure
 
-1. Glob `.claude/knowledge/entries/*.md` to list all entries
+1. Glob `.claude/knowledge/entries/**/*.md` to list all entries (recursively, including YYYY/MM/ subdirectories)
 2. Read each entry's YAML frontmatter (title, status, created, tags) and scan for `- see:` lines
 3. Read `.claude/knowledge/CLAUDE.md` for the tag registry
 4. Analyze and generate the report based on the selected mode

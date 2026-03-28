@@ -2,11 +2,11 @@
   "category": "system",
   "code": "oth",
   "count": 7,
-  "updated_at": "2026-03-27T01:59:09.812808Z",
+  "updated_at": "2026-03-28T01:52:39.780767Z",
   "skills": [
     {
-      "name": "constitution-validator-agent",
-      "description": "Constitutional compliance validator. Enforces all 5 Constitutional Articles to ensure AI trading decisions comply with human-defined rules. Works as second line of defense alongside Risk Agent.",
+      "name": "portfolio-manager-agent",
+      "description": "Portfolio allocation and rebalancing optimizer. Manages asset allocation across stocks/cash/bonds, performs periodic rebalancing, and ensures diversification according to market regime and risk tolera",
       "repo": "majiayu000/claude-skill-registry",
       "path": "",
       "branch": "main",
@@ -17,8 +17,8 @@
       "source": "github.com/majiayu000/claude-skill-registry"
     },
     {
-      "name": "portfolio-manager-agent",
-      "description": "Portfolio allocation and rebalancing optimizer. Manages asset allocation across stocks/cash/bonds, performs periodic rebalancing, and ensures diversification according to market regime and risk tolera",
+      "name": "constitution-validator-agent",
+      "description": "Constitutional compliance validator. Enforces all 5 Constitutional Articles to ensure AI trading decisions comply with human-defined rules. Works as second line of defense alongside Risk Agent.",
       "repo": "majiayu000/claude-skill-registry",
       "path": "",
       "branch": "main",

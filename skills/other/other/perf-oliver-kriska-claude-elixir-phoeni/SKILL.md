@@ -1,8 +1,8 @@
 ---
 name: phx:perf
-description: Analyze Elixir/Phoenix code for performance issues — N+1 queries, LiveView memory, query patterns, OTP bottlenecks. Use whenever the user mentions slowness, timeouts, high memory, slow queries, or wants to optimize any part of their Phoenix application. Also use before deploying performance-sensitive features.
+description: Analyze Elixir/Phoenix code for performance issues — N+1 queries, missing preload calls, liveview assign memory bloat, ecto query optimization, genserver bottlenecks. Use when the user mentions slowness, timeouts, high memory, or wants to optimize their Phoenix application. Also use before deploying performance-sensitive features.
 effort: high
-argument-hint: [page|context|module] [--focus ecto|liveview|otp]
+argument-hint: "[page|context|module] [--focus ecto|liveview|otp]"
 disable-model-invocation: true
 ---
 
@@ -30,12 +30,13 @@ and OTP layers. Prioritize findings by impact and effort.
 1. **MEASURE BEFORE OPTIMIZING** — Never optimize without evidence of a problem
 2. **DATABASE FIRST** — 90% of Elixir performance issues are query-related
 3. **ONE CHANGE AT A TIME** — Isolate optimizations to measure impact
+4. **NEVER benchmark in dev mode** — Always use `MIX_ENV=prod` for performance measurements; dev mode includes code reloading, debug logging, and unoptimized compilation that invalidate results
 
 ## Workflow
 
 ### Step 1: Identify Scope
 
-If specific file provided, focus there. Otherwise:
+Check specific file if provided. Otherwise scan full project:
 
 ```bash
 # Find hot paths: contexts, LiveViews, workers

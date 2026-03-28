@@ -1,6 +1,6 @@
 ---
 name: migrate
-description: Migrate code between frameworks, libraries, or API versions
+description: Use when the user wants to migrate, upgrade, or move from one framework, library, or API version to another.
 disable-model-invocation: true
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 argument-hint: "[from] [to]"

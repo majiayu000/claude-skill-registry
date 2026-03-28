@@ -1,6 +1,6 @@
 ---
 name: crypto-bd-agent
-description: Autonomous crypto business development patterns — multi-chain token discovery, 100-point scoring with wallet forensics, x402 micropayments, ERC-8004 on-chain identity, LLM cascade routing, and...
+description: "Production-tested patterns for building AI agents that autonomously discover, > evaluate, and acquire token listings for cryptocurrency exchanges."
 risk: safe
 source: community
 tags: null

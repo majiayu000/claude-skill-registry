@@ -7,6 +7,8 @@ description: >-
   Diligence, Foresight), layer-specific guidance, a
   decision heuristic for identifying stewardship moments,
   and a reflection template for workflow boundaries.
+version: 1.7.1
+alwaysApply: true
 category: cross-plugin-patterns
 tags:
   - stewardship
@@ -29,8 +31,18 @@ modules:
   - modules/foresight.md
   - modules/reflection.md
 ---
-
 # Stewardship
+
+## When To Use
+
+- Working on any plugin and making design decisions
+- Reviewing code for quality and contributor experience
+- Reflecting at workflow boundaries (pre-commit, post-PR)
+
+## When NOT To Use
+
+- Quick one-line fixes that do not affect design
+- External projects outside the night-market ecosystem
 
 Apply these principles whenever you touch a plugin. The full
 manifesto with research origins is at `STEWARDSHIP.md` in the

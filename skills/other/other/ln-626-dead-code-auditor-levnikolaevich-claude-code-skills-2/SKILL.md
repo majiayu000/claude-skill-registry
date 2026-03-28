@@ -9,6 +9,8 @@ license: MIT
 
 # Dead Code Auditor (L3 Worker)
 
+**Type:** L3 Worker
+
 Specialized worker auditing unused and unreachable code.
 
 ## Purpose & Scope
@@ -33,8 +35,8 @@ Receives `contextStore` with tech stack, codebase root, output_dir.
    - **ESM/JS/TS projects:** Use `index_project` then `find_unused_exports` as primary detection for unused exports. Keep grep-based detection as fallback for non-JS languages or when graph is unavailable.
 3) Analyze context per candidate (Layer 2):
    - Unused functions: used via dynamic import/reflection? Exported in public API? Used in other packages (monorepo)?
-   - Commented code: TODO with context or algorithm explanation → FP. Truly dead code block → confirmed
-   - Legacy shims: read git blame — age? Is there an issue/PR tracking removal?
+   - Commented code: TODO with context or algorithm explanation -> FP. Truly dead code block -> confirmed
+   - Legacy shims: read git blame -- age? Is there an issue/PR tracking removal?
 4) Collect confirmed findings
 5) Calculate score
 6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/626-dead-code.md` in single Write call
@@ -113,11 +115,15 @@ Receives `contextStore` with tech stack, codebase root, output_dir.
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Write report to `{output_dir}/626-dead-code.md` with `category: "Dead Code"` and checks: unreachable_code, unused_exports, commented_code, legacy_shims.
 
-Return summary to coordinator:
+Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 ```
-Report written: docs/project/.audit/ln-620/{YYYY-MM-DD}/626-dead-code.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/626-dead-code.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -146,7 +152,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated per `shared/references/audit_scoring.md`
 - [ ] Report written to `{output_dir}/626-dead-code.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ---
 **Version:** 3.0.0

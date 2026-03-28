@@ -6,6 +6,8 @@ description: >
   state reconciliation. Provides triage decision trees and
   step-by-step procedures to restore forward progress without
   losing work.
+version: 1.7.1
+alwaysApply: false
 category: infrastructure
 tags:
 - recovery
@@ -38,13 +40,13 @@ modules:
 - modules/context-overflow.md
 - modules/merge-conflict-resolution.md
 - modules/state-reconciliation.md
+- modules/risk-assessment-checklist.md
 ---
-
 ## Table of Contents
 
 - [Overview](#overview)
-- [When to Use](#when-to-use)
-- [When NOT to Use](#when-not-to-use)
+- [When To Use](#when-to-use)
+- [When NOT To Use](#when-not-to-use)
 - [Damage Triage](#damage-triage)
 - [Module Reference](#module-reference)
 - [Integration Pattern](#integration-pattern)
@@ -65,7 +67,7 @@ The skill does not prevent failures. It defines what to do after
 one has already happened, so recovery is consistent, auditable,
 and does not silently discard work.
 
-## When to Use
+## When To Use
 
 - An agent process crashed and left files in an unknown state
 - A session hit the context limit and cannot load prior decisions
@@ -106,6 +108,27 @@ When multiple failure types overlap, start with
 `state-reconciliation.md` to establish a known baseline, then
 address the specific failure class.
 
+## Risk Assessment Checklist
+
+Before executing Level 1+ tasks, complete the risk assessment
+checklist from `modules/risk-assessment-checklist.md`. Answer
+these five questions:
+
+1. **What could fail in production?** — List specific failure
+   scenarios
+2. **How would we detect it quickly?** — Monitoring, alerts,
+   logs
+3. **What is the fastest safe rollback?** — Step-by-step
+   procedure
+4. **What dependency could invalidate this plan?** — External
+   dependencies
+5. **What assumption is least certain?** — Weakest link in
+   the plan
+
+Required for Level 1 (Watch) and above. See
+`modules/risk-assessment-checklist.md` for the full template and
+examples.
+
 ## Module Reference
 
 - **crash-recovery.md**: Triage, checkpoint inspection, and
@@ -118,6 +141,8 @@ address the specific failure class.
 - **state-reconciliation.md**: Protocol for reconciling
   divergent state across task list, git index, and on-disk
   artifacts.
+- **risk-assessment-checklist.md**: Pre-execution checklist for
+  Level 1+ tasks.
 
 ## Integration Pattern
 

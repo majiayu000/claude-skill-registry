@@ -150,20 +150,25 @@ tags: "#tag1 #tag2"
 ## Creating a Plan
 
 1. Create `.claude/tasks/<slug>-<account>-<date>/` following the naming convention
-2. **Search related knowledge**: Grep `.claude/knowledge/entries/` for tags and keywords related to the plan's topic. Look for:
+2. **Issue link check** (strongly recommended):
+   a. Search for related issues: `gh issue list -S "<keywords>"` (includes open issues)
+   b. Search closed issues too: `gh issue list -S "<keywords>" --state closed` to avoid creating duplicate work
+   c. If a related issue exists, use the `-i<issue>` naming convention (e.g., `auth_refactor-i42-bob-20260304/`)
+   d. If no issue exists, consider creating one for team visibility before proceeding
+3. **Search related knowledge**: Grep `.claude/knowledge/entries/` for tags and keywords related to the plan's topic. Look for:
    - Past pitfalls (`#pitfall`) that may recur
    - Design decisions and their rationale
    - Related tooling or configuration knowledge
-3. Write `plan-v1.md` with: approach, design decisions, background, completion criteria. If related knowledge was found in step 2, include a **Related Knowledge** section:
+4. Write `plan-v1.md` with: approach, design decisions, background, completion criteria. If related knowledge was found in step 3, include a **Related Knowledge** section:
    ```markdown
    ## Related Knowledge
-   - [entry title](../../knowledge/entries/slug.md) — why it's relevant
+   - [entry title](../../knowledge/entries/YYYY/MM/slug.md) — why it's relevant
    ```
-4. **Capture detailed context**: If the plan involves context too detailed for `plan-v1.md` (investigation results, API behavior, configuration specifics, design trade-off analysis), create `context-YYYYMMDD-HHMMSS-topic.md` in the task directory. Plans summarize *what* and *why*; context files preserve the *details* that future sessions need to resume work. Only invoke `record-knowledge` for findings that are universally valuable to the team beyond this specific task
-5. Write `todo.md` with a checkbox task list
-6. Write `readme.md` with the plan's purpose and current state
-7. Add an entry to `.claude/tasks/readme.md`
-8. **Issue sync**: If linked to an issue, update the issue body with the plan summary (approach, phases, completion criteria)
+5. **Capture detailed context**: If the plan involves context too detailed for `plan-v1.md` (investigation results, API behavior, configuration specifics, design trade-off analysis), create `context-YYYYMMDD-HHMMSS-topic.md` in the task directory. Plans summarize *what* and *why*; context files preserve the *details* that future sessions need to resume work. Only invoke `record-knowledge` for findings that are universally valuable to the team beyond this specific task
+6. Write `todo.md` with a checkbox task list
+7. Write `readme.md` with the plan's purpose and current state
+8. Add an entry to `.claude/tasks/readme.md`
+9. **Issue sync**: If linked to an issue, update the issue body with the plan summary (approach, phases, completion criteria)
 
 ## Working on Tasks
 

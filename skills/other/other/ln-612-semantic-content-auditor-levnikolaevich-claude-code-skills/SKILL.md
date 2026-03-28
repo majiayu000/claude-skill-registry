@@ -122,13 +122,17 @@ Coverage: how completely the scope is addressed. Relevance: how much content ser
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Write report to `{output_dir}/612-semantic-{doc-slug}.md` where `doc-slug` is derived from document filename (e.g., `architecture`, `tech_stack`, `agents_md`).
 
 With `category: "Semantic Content"` and checks: scope_alignment.
 
-Return summary to coordinator:
+Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 ```
-Report written: docs/project/.audit/ln-610/{YYYY-MM-DD}/612-semantic-architecture.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/612-semantic-architecture.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -154,7 +158,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Semantic judgment applied according to DOC_KIND
 - [ ] Score calculated using penalty algorithm
 - [ ] Report written to `{output_dir}/612-semantic-{doc-slug}.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

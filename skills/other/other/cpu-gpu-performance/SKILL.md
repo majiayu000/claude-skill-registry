@@ -5,6 +5,8 @@ description: 'Use this skill BEFORE resource-intensive operations. Establish bas
   with token-conservation), planning builds or training that could pin CPUs/GPUs for
   >1 minute, retrying failed resource-heavy commands. Do not use when simple operations
   with no resource impact. DO NOT use when: quick single-file operations.'
+version: 1.7.1
+alwaysApply: false
 progressive_loading: true
 dependencies:
   hub:

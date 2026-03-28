@@ -1,6 +1,6 @@
 ---
 name: compound-docs
-description: Searchable solution documentation system with YAML frontmatter. Builds institutional knowledge from solved problems. Use proactively when consulting past solutions before investigating new issues.
+description: "Searchable Elixir/Phoenix/Ecto solution documentation system with YAML frontmatter. Builds institutional knowledge from solved problems. Use when consulting past solutions before investigating new issues."
 effort: low
 user-invocable: false
 ---

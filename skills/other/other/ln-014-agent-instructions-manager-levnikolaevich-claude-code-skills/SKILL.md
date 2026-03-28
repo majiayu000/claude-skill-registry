@@ -18,9 +18,9 @@ Creates missing instruction files and audits all (CLAUDE.md, AGENTS.md, GEMINI.m
 | Direction | Content |
 |-----------|---------|
 | **Input** | project context, `dry_run` flag, optional `runId`, optional `summaryArtifactPath` |
-| **Output** | Structured summary envelope with created files, audit findings, and warnings |
+| **Output** | Structured summary envelope with `payload.status` = `completed` / `skipped` / `error`, plus created files, audit findings, and warnings in `changes` / `detail` |
 
-If `summaryArtifactPath` is provided, write the same summary JSON there. If not provided, return the summary inline and remain fully standalone.
+If `summaryArtifactPath` is provided, write the same summary JSON there. If not provided, return the summary inline and remain fully standalone. If `runId` is not provided, generate a standalone `run_id` before emitting the summary envelope.
 
 ## When to Use
 

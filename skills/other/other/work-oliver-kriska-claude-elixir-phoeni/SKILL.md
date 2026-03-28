@@ -1,6 +1,6 @@
 ---
 name: phx:work
-description: Use after /phx:plan to systematically implement features, or with --continue to resume interrupted work. Executes plan tasks with progress tracking and verification after each step.
+description: Execute Elixir/Phoenix plan tasks with progress tracking. Use after /phx:plan to implement features with mix compile and mix test verification after each step, or --continue to resume interrupted work.
 effort: high
 argument-hint: <path to plan file>
 ---
@@ -44,7 +44,7 @@ Execute tasks from a plan file with checkpoint tracking and verification.
 
 ## Step 1: Research Decision
 
-For plans with >3 tasks, ask the user:
+Ask the user for plans with >3 tasks:
 
 > This plan has {count} remaining tasks across {count} phases.
 >
@@ -71,8 +71,8 @@ grep -rl "KEYWORD" .claude/solutions/ 2>/dev/null
 ```
 
 Apply findings: skip dead-ends, follow decisions, reuse patterns.
-If a task's intent is ambiguous, ask the user before implementing
-rather than guessing — corrections are expensive.
+Always ask the user when a task's intent is ambiguous —
+never guess, corrections are expensive.
 
 ## Step 3: Load, Create Task List, and Resume
 
@@ -91,7 +91,7 @@ For each unchecked `- [ ] [Pn-Tm] Description`:
   })
 ```
 
-Already-checked items (`[x]`): skip, don't create tasks for them.
+Skip already-checked items (`[x]`) — don't create tasks for them.
 Set up `blockedBy` dependencies between phases (Phase 2 tasks
 blocked by Phase 1 tasks).
 
@@ -101,7 +101,7 @@ See `${CLAUDE_SKILL_DIR}/references/resume-strategies.md` for all resume modes.
 
 ## Step 4: Execute Tasks
 
-For each unchecked task (`- [ ] [Pn-Tm][agent] Description`):
+Execute each unchecked task (`- [ ] [Pn-Tm][agent] Description`):
 
 1. **Start task**: `TaskUpdate({taskId, status: "in_progress"})`
 2. **Route** by `[agent]` annotation (see `${CLAUDE_SKILL_DIR}/references/execution-guide.md`)
@@ -161,13 +161,13 @@ Next: {first unchecked task ID and description}.
 Key decisions: {brief list from this session}.
 ```
 
-This gives a fresh session context beyond just checkboxes.
+Include context beyond checkboxes for fresh session resume.
 
 **NEVER** auto-start /phx:review or any other phase.
 
 ## Step 6: Check for Additional Plans
 
-After completion, check for other pending plans:
+Check for other pending plans after completion:
 
 ```bash
 ls .claude/plans/*/plan.md 2>/dev/null

@@ -5,6 +5,8 @@ description: 'Automatic context management with graceful handoff to continuation
   automatic continuation without manual /clear. The key insight: Subagents have fresh
   context windows. By delegating remaining work to a continuation subagent, we achieve
   effective "auto-clear" without stopping the workflow.'
+version: 1.7.1
+alwaysApply: false
 category: conservation
 token_budget: 200
 progressive_loading: true
@@ -91,7 +93,7 @@ Before triggering auto-clear, gather:
 
 ### Step 1.5: Finalize Task List Before Handoff
 
-**CRITICAL**: Before saving state or spawning a continuation agent, reconcile the task list:
+**Important**: Before saving state or spawning a continuation agent, reconcile the task list:
 
 1. **Review all tasks** via `TaskList`
 2. **Mark completed tasks** as `completed` via `TaskUpdate` — do NOT leave done work as `in_progress`
@@ -102,7 +104,7 @@ This prevents the continuation agent from creating duplicate tasks.
 
 ### Step 2: Save Session State
 
-**IMPORTANT**: If `.claude/session-state.md` already exists, you MUST Read it first before writing (Claude Code requires reading existing files before overwriting). Create the `.claude/` directory if it doesn't exist.
+**Important**: If `.claude/session-state.md` already exists, always Read it first before writing (Claude Code requires reading existing files before overwriting). Create the `.claude/` directory if it doesn't exist.
 
 Write to `.claude/session-state.md` (or `$CONSERVE_SESSION_STATE_PATH`):
 
@@ -119,8 +121,8 @@ Reason: Context threshold exceeded (80%+)
 **Source Command**: [do-issue | execute-plan | etc.]
 **Remaining Tasks**: [list of pending items]
 
-> **CRITICAL**: If `auto_continue: true` or mode is `dangerous`/`unattended`,
-> the continuation agent MUST NOT pause for user confirmation.
+> **Important**: If `auto_continue: true` or mode is `dangerous`/`unattended`,
+> the continuation agent should not pause for user confirmation.
 > Continue executing all remaining tasks until completion.
 
 ## Current Task
@@ -181,7 +183,7 @@ if parent_state and parent_state.get("execution_mode"):
 
 ### Step 3: Spawn Continuation Agent
 
-Use the Task tool to delegate. **CRITICAL**: Include execution mode in the task prompt:
+Use the Task tool to delegate. **Important**: Include execution mode in the task prompt:
 
 ```
 Task: Continue the work from session checkpoint
@@ -204,11 +206,11 @@ Instructions:
 
 The session state file contains all necessary context to continue without interruption.
 
-**EXECUTION MODE INHERITANCE**: You MUST inherit and propagate the execution
+**Execution mode inheritance**: Always inherit and propagate the execution
 mode from the session state. If the parent was in dangerous/unattended mode,
 you are also in that mode. Do not ask the user for confirmation.
 
-**TASK DEDUPLICATION**: Do NOT create duplicate tasks. The parent has already
+**Task deduplication**: Do not create duplicate tasks. The parent has already
 populated the task list. Use TaskUpdate on existing task IDs only.
 ```
 

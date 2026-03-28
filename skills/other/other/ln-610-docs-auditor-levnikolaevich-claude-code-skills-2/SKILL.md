@@ -33,7 +33,31 @@ Coordinates specialized audit workers to perform quality analysis for project kn
 - Write report to `docs/project/docs_audit.md` (file-based, no task creation)
 - Manual invocation by user or maintenance workflows
 
-**MANDATORY READ:** Load `shared/references/docs_quality_contract.md` and `shared/references/markdown_read_protocol.md`.
+**MANDATORY READ:** Load `shared/references/audit_runtime_contract.md`, `shared/references/audit_summary_contract.md`, `shared/references/docs_quality_contract.md`, and `shared/references/markdown_read_protocol.md`.
+
+## Runtime Contract
+
+Use `shared/scripts/audit-runtime/cli.mjs` as orchestration SSOT.
+
+Runtime phase map:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_DISCOVERY`
+3. `PHASE_2_BUILD_CONTEXT`
+4. `PHASE_3_DELEGATE`
+5. `PHASE_4_AGGREGATE`
+6. `PHASE_5_CONTEXT_VALIDATION`
+7. `PHASE_6_WRITE_REPORT`
+8. `PHASE_7_RESULTS_LOG`
+9. `PHASE_8_CLEANUP`
+10. `PHASE_9_SELF_CHECK`
+11. `DONE`
+12. `PAUSED`
+
+Runtime artifact layout for this coordinator:
+- worker reports: `.hex-skills/runtime-artifacts/runs/{run_id}/audit-report/`
+- worker JSON summaries: `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/`
+- public report: `docs/project/docs_audit.md`
+- public trend log: `docs/project/.audit/results_log.md`
 
 ## Workflow
 
@@ -78,11 +102,11 @@ FOR doc IN [AGENTS.md, CLAUDE.md, docs/README.md, docs/documentation_standards.m
   "audit_scope": "full|docs-only|comments-only",
   "tech_stack": {"language": "...", "frameworks": [...]},
   "project_root": "...",
-  "output_dir": "docs/project/.audit/ln-610/{YYYY-MM-DD}"
+  "output_dir": ".hex-skills/runtime-artifacts/runs/{run_id}/audit-report"
 }
 ```
 
-Where `{YYYY-MM-DD}` is current date (e.g., `2026-03-01`).
+Coordinator also computes per-worker `summaryArtifactPath` values under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/`.
 
 If `docs/project/.context/doc_registry.json` exists, add:
 
@@ -96,7 +120,7 @@ If `docs/project/.context/doc_registry.json` exists, add:
 mkdir -p {output_dir}
 ```
 
-Worker files are cleaned up after consolidation (see Phase 9).
+Create sibling summary directory before delegation. Runtime artifacts are cleaned up after consolidation (see Phase 9).
 
 ## Worker Invocation (MANDATORY)
 
@@ -136,12 +160,16 @@ Active workers in PARALLEL via Agent tool:
 | ln-613-code-comments-auditor | 1 when `audit_scope in [comments-only, full]` | `{output_dir}/613-code-comments.md` |
 | ln-614-docs-fact-checker | 1 | `{output_dir}/614-fact-checker.md` |
 
-ln-614 receives only `contextStore` and discovers `.md` files internally. Workers follow the shared file-based audit contract and return compact summaries with report path, score, and severity counts.
+ln-614 receives only `contextStore` and discovers `.md` files internally. Every worker also receives `summaryArtifactPath`; coordinators consume JSON summaries first and read markdown reports only for findings/evidence.
 
 **Invocation:**
 ```javascript
 // Global workers -> activate by scope:
 FOR EACH worker IN active_global_workers:
+  worker_context = {
+    ...contextStore,
+    summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/" + worker + ".json"
+  }
   Agent(description: "Docs audit via " + worker,
        prompt: "Execute audit worker.
 
@@ -149,12 +177,16 @@ Step 1: Invoke worker:
   Skill(skill: \"" + worker + "\")
 
 CONTEXT:
-" + JSON.stringify(contextStore),
+" + JSON.stringify(worker_context),
        subagent_type: "general-purpose")
 
 // Per-document worker (ln-612) -> N invocations:
 FOR EACH doc IN semantic_targets:
-  doc_context = { ...contextStore, doc_path: doc }
+  doc_context = {
+    ...contextStore,
+    doc_path: doc,
+    summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/ln-612-" + slug(doc) + ".json"
+  }
   Agent(description: "Semantic audit " + doc + " via ln-612",
        prompt: "Execute audit worker.
 
@@ -170,7 +202,7 @@ CONTEXT:
 
 **MANDATORY READ:** Load `shared/references/audit_coordinator_aggregation.md`.
 
-Use the shared aggregation pattern for summary parsing, worker report reads, severity rollups, and final report assembly.
+Use the shared aggregation pattern for JSON summary parsing, worker report reads, severity rollups, and final report assembly.
 
 Category weights:
 
@@ -286,12 +318,12 @@ Append one row to `docs/project/.audit/results_log.md` with: Skill=`ln-610`, Met
 rm -rf {output_dir}
 ```
 
-Delete the dated output directory (`docs/project/.audit/ln-610/{YYYY-MM-DD}/`). The consolidated report and results log already preserve all audit data.
+Delete the run-scoped runtime artifact directory (`.hex-skills/runtime-artifacts/runs/{run_id}/`) after consolidation. The consolidated report and results log already preserve the required audit outputs.
 
 ## Definition of Done
 
 - [ ] Project metadata discovered (tech stack, doc list)
-- [ ] contextStore built with output_dir = `docs/project/.audit/ln-610/{YYYY-MM-DD}`
+- [ ] contextStore built with output_dir = `.hex-skills/runtime-artifacts/runs/{run_id}/audit-report`
 - [ ] Output directory created for worker reports
 - [ ] All workers required by `audit_scope` invoked and completed
 - [ ] Worker reports aggregated: active category scores + overall

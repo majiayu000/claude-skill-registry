@@ -1,12 +1,19 @@
 ---
 name: project-brainstorming
-description: "Guide project ideation through Socratic questioning and constraint analysis for actionable project briefs. Use for starting projects, exploring problems, comparing approaches, feasibility. Skip if requirements are clear."
+description: "Guide project ideation through structured Socratic questioning to generate actionable project briefs with approach comparisons. Use when starting a new project or evaluating alternatives. Skip if requirements are already clear."
+version: 1.7.1
+alwaysApply: false
 # Custom metadata (not used by Claude for matching):
 model_preference: claude-sonnet-4
 category: workflow
 tags: [brainstorming, ideation, planning, requirements, socratic-method]
 complexity: intermediate
 estimated_tokens: 2800
+progressive_loading: true
+dependencies:
+  modules:
+    - modules/spec-review-loop.md
+    - modules/deferred-capture.md
 ---
 ## Table of Contents
 
@@ -191,6 +198,31 @@ Guide project ideation through Socratic questioning, constraint analysis, and st
 - [Trade-off 1 with mitigation]
 - [Trade-off 2 with mitigation]
 ```
+**Verification:** Run the command with `--help` flag to verify availability.
+
+
+**Design for Isolation**:
+
+When generating approaches, evaluate each against two
+isolation tests:
+
+1. **Comprehension test**: Can someone understand what
+   each unit does without reading its internals? If a
+   unit requires reading implementation details to
+   understand its purpose, the boundary is wrong.
+2. **Change test**: Can you change a unit's internals
+   without breaking its consumers? If changing
+   implementation details forces changes elsewhere,
+   the interface is leaking.
+
+**File size as design signal**: Files exceeding 500 lines
+(Python/Go) or 300 lines (JavaScript/TypeScript) often
+indicate a unit is doing too much. This is a design
+smell, not just a style issue. When flagging large files,
+suggest extracting specific concerns (e.g., "Extract
+validation logic into a separate module to improve
+testability").
+
 **Verification:** Run the command with `--help` flag to verify availability.
 
 ### Phase 3.5: War Room Deliberation (REQUIRED)
@@ -418,6 +450,27 @@ Save session to `.attune/brainstorm-session.json`:
 - User explicitly requests to stop after brainstorming
 
 **Do NOT prompt the user for confirmation** — this is a lightweight checkpoint, not an interactive gate. The user can always interrupt if needed.
+
+
+### Phase 6.5: Spec Review Gate
+
+**Automatic Trigger**: After Phase 6 saves the project
+brief, and before invoking the next phase, run the spec
+review loop.
+
+**Procedure**:
+1. Load `modules/spec-review-loop.md` for the review
+   prompt template
+2. Dispatch haiku-model subagent with the spec content
+3. If ISSUES FOUND: fix issues, re-dispatch (max 3
+   iterations)
+4. If APPROVED or 3 iterations exhausted: proceed to
+   Phase 6 continuation
+
+**Bypass Conditions**:
+- `--standalone` flag was provided
+- `--skip-review` flag was provided
+- Spec document is under 200 words (too small to review)
 
 ## Related Skills
 

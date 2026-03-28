@@ -6,6 +6,8 @@ description: 'Reference these patterns to validate consistency across the ecosys
   standard workflow structures. Do not use when pattern is specific to one skill only.
   DO NOT use when: pattern is still evolving - wait for stability. DO NOT use when:
   pattern is context-dependent requiring variations.'
+version: 1.7.1
+alwaysApply: false
 category: meta-infrastructure
 tags:
 - patterns
@@ -16,7 +18,6 @@ tags:
 dependencies: []
 estimated_tokens: 400
 ---
-
 # Shared Patterns
 
 Reusable patterns and templates for skill and hook development.

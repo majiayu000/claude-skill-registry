@@ -10,6 +10,9 @@ description: 'Cross-plugin testing quality metrics and standards. Referenced by 
   Use when: test quality evaluation, coverage thresholds, quality standards
 
   DO NOT use when: simple scripts without quality requirements.'
+version: 1.7.1
+globs: "**/test_*.py"
+alwaysApply: false
 category: infrastructure
 tags:
 - testing
@@ -29,7 +32,6 @@ modules:
 - modules/best-practices.md
 - modules/content-assertion-levels.md
 ---
-
 # Testing Quality Standards
 
 Shared quality standards and metrics for testing across all plugins in the Claude Night Market ecosystem.

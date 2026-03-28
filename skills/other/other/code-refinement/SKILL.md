@@ -8,6 +8,8 @@ description: 'Analyze and improve living code quality: duplication, algorithmic 
   selecting architecture paradigms (use archetypes skills). This skill actively improves
   living code, complementing bloat detection (dead code removal) with quality refinement
   (living code improvement).'
+version: 1.7.1
+alwaysApply: false
 category: code-quality
 tags:
 - refactoring

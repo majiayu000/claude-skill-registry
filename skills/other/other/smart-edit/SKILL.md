@@ -1,6 +1,6 @@
 ---
 name: smart-edit
-description: Make changes that follow existing codebase patterns. Use when adding new features or modifying existing code to ensure consistency.
+description: Use when adding new features or modifying existing code where following existing codebase patterns matters.
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 argument-hint: "[what to add/change]"
 ---

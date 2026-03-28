@@ -1,6 +1,6 @@
 ---
 name: phx:boundaries
-description: Validate Phoenix context boundaries and dependencies using mix xref. Use when reviewing PRs, before major refactors, when contexts feel tangled, or when a module has too many cross-context dependencies. Also use when planning context splits or evaluating architecture health.
+description: Analyze Phoenix context boundaries, cross-context calls, and module coupling using mix xref. Use when checking what's calling across context boundaries, whether contexts are too tightly coupled, validating module dependencies for architecture review, reviewing PRs for boundary violations, or planning context splits. Also use before major refactors or when evaluating architecture health.
 effort: medium
 argument-hint: [--assess|--fix]
 allowed-tools: Read, Grep, Glob, Bash
@@ -86,6 +86,7 @@ mix xref graph --format cycles
 2. **Schemas are pure data** - No side effects, no Repo calls in schema modules
 3. **Contexts own their schemas** - Don't import schemas from other contexts
 4. **Explicit dependencies only** - Cross-context calls must be intentional
+5. **DO NOT refactor context boundaries without running `mix xref` first** — Refactoring without dependency data creates new violations; always map the dependency graph before moving modules
 
 ## Dependency Rules
 

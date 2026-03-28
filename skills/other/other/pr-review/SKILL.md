@@ -4,6 +4,8 @@ description: 'Use this skill for scope-focused PR reviews. Use when reviewing PR
   validating against requirements, triaging findings to backlog, preventing overengineering.
   Do not use when preparing PRs - use pr-prep instead. DO NOT use when: deep code
   review - use pensive:unified-review.'
+version: 1.7.1
+alwaysApply: false
 category: review
 tags:
 - pr
@@ -30,7 +32,9 @@ modules:
 - modules/educational-insights.md
 - modules/github-comments.md
 - modules/knowledge-capture.md
+- modules/pr-hygiene.md
 - modules/version-validation.md
+- modules/pr-hygiene.md
 dependencies:
 - leyline:git-platform
 - sanctum:shared
@@ -239,6 +243,28 @@ See `modules/version-validation.md` for detailed validation procedures.
 
 **All version mismatches are BLOCKING unless explicitly waived by maintainer.**
 
+### Phase 3.5: PR Hygiene Checks
+
+Before diving into code, run the PR hygiene checks from
+`modules/pr-hygiene.md`:
+
+1. **Atomicity check**: Does this PR contain one logical
+   change? Flag mixed commit types (feat + refactor + fix),
+   formatting commits bundled with logic, or changes spanning
+   unrelated subsystems. Large PRs get 30% defect detection
+   vs 75% for focused ones.
+
+2. **Agent curation check**: Does the code show signs of
+   iterative AI generation without a cleanup pass? Look for
+   redundant implementations, premature abstractions, incomplete
+   refactors, and scope drift.
+
+3. **Self-review signals**: Are there unsquashed fixup commits,
+   debug statements, or commented-out code that suggest the
+   author did not read their own diff before sending?
+
+Classify findings per `modules/pr-hygiene.md` severity tables.
+
 ### Phase 4: Code Review with Scope Context
 
 Use `pensive:unified-review` on the changed files. For comment quality assessment, see `modules/comment-guidelines.md`.
@@ -390,6 +416,8 @@ A PR should be approved when:
 - [ ] IN-SCOPE issues are resolved or acknowledged
 - [ ] BACKLOG items are tracked as GitHub issues
 - [ ] Tests cover new code paths
+- [ ] Tests would fail if the fix were reverted (the revert test)
+- [ ] No obvious agent-generated code left uncurated
 
 ## Anti-Patterns to Avoid
 
@@ -412,6 +440,21 @@ A PR should be approved when:
 > "The file you imported from has some issues..."
 
 **Do:** That's a separate PR. Create an issue if important.
+
+### Don't: Tests That Prove Old Code Was Bad
+> "Here's a test showing the old behavior was wrong."
+
+**Do:** Write tests that break if your fix is reverted.
+Tests should protect against regressions in *your* code,
+not document why the change was needed. See
+`modules/pr-hygiene.md` Principle 4.
+
+### Don't: Bundling Unrelated Changes
+> "I also reformatted the file and fixed a typo in another module."
+
+**Do:** One PR = one logical change. Formatting, refactors,
+and unrelated fixes belong in separate PRs. See
+`modules/pr-hygiene.md` Principle 2.
 
 ## Integration with Other Tools
 

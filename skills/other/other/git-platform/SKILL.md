@@ -10,6 +10,8 @@ description: 'Git platform detection and cross-platform command mapping for GitH
   or command
 
   Do not use directly: consumed by sanctum and other plugins as infrastructure.'
+version: 1.7.1
+alwaysApply: false
 category: infrastructure
 tags:
 - git

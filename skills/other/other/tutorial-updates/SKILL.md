@@ -13,6 +13,8 @@ description: 'Orchestrate tutorial generation from VHS tapes and Playwright spec
 
 
   DO NOT use when: only updating text - use doc-updates.'
+version: 1.7.1
+alwaysApply: false
 category: artifact-generation
 tags:
 - tutorial

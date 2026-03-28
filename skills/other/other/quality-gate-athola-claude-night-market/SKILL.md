@@ -5,6 +5,8 @@ description: >
   Runs convention checks and invokes review skills
   for each quality step. Supports self-review (pre-PR)
   and PR-review (other agents' PRs) modes.
+version: 1.7.1
+alwaysApply: false
 category: orchestration
 tags:
   - egregore
@@ -19,8 +21,18 @@ tools:
 complexity: intermediate
 estimated_tokens: 300
 ---
-
 # Quality Gate
+
+## When To Use
+
+- Running quality checks on egregore work items
+- Self-review before creating a PR
+- Reviewing another agent's PR in PR-review mode
+
+## When NOT To Use
+
+- Manual code reviews outside egregore pipeline
+- One-off lint or format checks (use `make lint` directly)
 
 Orchestrate the QUALITY stage of egregore's pipeline.
 Each quality step runs convention checks from the codex

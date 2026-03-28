@@ -2,7 +2,7 @@
   "category": "core",
   "code": "oth",
   "count": 6,
-  "updated_at": "2026-03-27T01:59:07.970624Z",
+  "updated_at": "2026-03-28T01:52:38.202843Z",
   "skills": [
     {
       "name": "agent-ops-testing",
@@ -53,8 +53,8 @@
       "source": "github.com/majiayu000/claude-skill-registry"
     },
     {
-      "name": "agent-ops-spec",
-      "description": "Manage specification documents in .agent/specs/. Use when user provides requirements, acceptance criteria, or feature descriptions that need to be tracked and validated against implementation.",
+      "name": "agent-ops-state",
+      "description": "Maintain .agent state files. Use at session start, after meaningful steps, and before concluding: read/update constitution/memory/focus/issues/baseline consistently.",
       "repo": "majiayu000/claude-skill-registry",
       "path": "",
       "branch": "main",
@@ -65,8 +65,8 @@
       "source": "github.com/majiayu000/claude-skill-registry"
     },
     {
-      "name": "agent-ops-state",
-      "description": "Maintain .agent state files. Use at session start, after meaningful steps, and before concluding: read/update constitution/memory/focus/issues/baseline consistently.",
+      "name": "agent-ops-spec",
+      "description": "Manage specification documents in .agent/specs/. Use when user provides requirements, acceptance criteria, or feature descriptions that need to be tracked and validated against implementation.",
       "repo": "majiayu000/claude-skill-registry",
       "path": "",
       "branch": "main",

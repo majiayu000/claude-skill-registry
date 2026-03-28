@@ -333,12 +333,12 @@ WHILE true:
 ```
 # 0. Signal pipeline complete
 pre_cleanup_status = Bash: node $PIPELINE status --story {id}
-IF pre_cleanup_status.state.stage != "DONE":
+IF pre_cleanup_status.state.phase != "DONE":
   Bash: node $PIPELINE advance --story {id} --to DONE
 
 # 1. Self-verify against Definition of Done
 status = Bash: node $PIPELINE status --story {id}
-final_state = status.state.stage OR "DONE"
+final_state = status.state.phase OR "DONE"
 verification = {
   story_selected:   status.state.story_id == id
   story_processed:  final_state IN ("DONE", "PAUSED")
@@ -459,6 +459,17 @@ Delete .hex-skills/pipeline/ directory
 | 2 | ln-400-story-executor | `Skill(skill: "ln-400-story-executor", args: "{id}")` |
 | 3 | ln-500-story-quality-gate | `Skill(skill: "ln-500-story-quality-gate", args: "{id}")` |
 
+## TodoWrite format (mandatory)
+
+```text
+- Phase 1: Resolve Story and business context (pending)
+- Phase 2: Ask targeted business questions only if needed (pending)
+- Phase 3: Setup pipeline runtime and worktree state (pending)
+- Phase 4: Execute stage 0 -> 3 sequentially with ASSERT guards (pending)
+- Phase 5: Write report, clean worktree, and finalize runtime state (pending)
+- Phase 6: Run pipeline meta-analysis (pending)
+```
+
 TodoWrite format (mandatory):
 ```
 {content: "Stage N: {name} (ln-NNN)", status: "pending", activeForm: "{verb}ing"}
@@ -529,7 +540,7 @@ When invoked in Plan Mode, show available Stories and ask user which one to plan
 
 - [ ] User selected Story (`state.story_id` is set)
 - [ ] Business questions resolved (stored OR skip)
-- [ ] Story processed to terminal state (`state.stage IN ("DONE", "PAUSED")`)
+- [ ] Story processed to terminal state (`state.phase IN ("DONE", "PAUSED")`)
 - [ ] Per-stage ASSERT verifications passed (kanban re-read after each stage)
 - [ ] Stage notes written for each completed stage
 - [ ] Pipeline report generated (file exists at `docs/tasks/reports/`)

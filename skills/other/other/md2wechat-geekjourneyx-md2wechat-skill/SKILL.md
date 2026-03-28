@@ -10,7 +10,8 @@ metadata: {"clawdbot":{"emoji":"📝","requires":{"bins":["md2wechat"],"env":["W
 Use `md2wechat` when the user wants to:
 
 - convert Markdown into WeChat Official Account HTML
-- preview or upload drafts
+- inspect resolved article metadata, readiness, and publish risks before conversion
+- generate a local preview artifact or upload drafts
 - inspect live capabilities, providers, themes, and prompts
 - generate covers, infographics, or other article images
 - create image posts
@@ -62,6 +63,8 @@ Configuration:
 
 Conversion:
 
+- `md2wechat inspect article.md`
+- `md2wechat preview article.md`
 - `md2wechat convert article.md --preview`
 - `md2wechat convert article.md -o output.html`
 - `md2wechat convert article.md --draft --cover cover.jpg`
@@ -119,12 +122,20 @@ Draft behavior:
 
 - If digest is still empty when creating a draft, the draft layer generates one from article HTML content with a 120-character fallback.
 - Creating a draft requires `--cover`.
+- `inspect` is the source-of-truth command for resolved metadata, readiness, and checks.
+- `preview` v1 writes a standalone local HTML preview file. It does not start a workbench, write back to Markdown, upload images, or create drafts.
+- `convert --preview` is still the convert-path preview flag; it is not the same thing as the standalone `preview` command.
+- `preview --mode ai` is degraded confirmation only; it must not be treated as final AI-generated layout.
+- `--title` / `--author` / `--digest` affect draft metadata, not necessarily visible body HTML.
+- Markdown images are only uploaded/replaced during `--upload` or `--draft`, not during plain `convert --preview`.
 
 ## Agent Rules
 
 - Start with discovery commands before committing to a provider, theme, or prompt.
+- Prefer the confirm-first flow for article work: `inspect` -> `preview` -> `convert` / `--draft`.
 - Prefer `generate_cover` or `generate_infographic` over a raw `generate_image "prompt"` call when a bundled preset fits the task.
 - Validate config before any draft, publish, or image-post action.
+- If draft creation returns `45004`, check digest/summary/description before assuming the body content is too long.
 - If the user asks for AI conversion or style writing, be explicit that the CLI may return an AI request/prompt rather than final HTML or prose unless the workflow completes the external model step.
 - Do not perform draft creation, publishing, or remote image generation unless the user asked for it.
 

@@ -9,6 +9,8 @@ license: MIT
 
 # Env Config Auditor (L3 Worker)
 
+**Type:** L3 Worker
+
 Specialized worker auditing environment variable configuration, synchronization, and hygiene.
 
 ## Purpose & Scope
@@ -41,11 +43,11 @@ Receives `contextStore` with tech stack, codebase root, output_dir, domain_mode,
 
 ```
 1. Parse: codebase_root, output_dir, tech_stack, domain_mode, scan_path
-2. Determine primary language from tech_stack → select env usage patterns from config_rules.md
+2. Determine primary language from tech_stack -> select env usage patterns from config_rules.md
 3. Determine project type:
-   - web_service: Express/FastAPI/ASP.NET/Spring → all checks apply
-   - cli_tool: Click/Typer/Commander/cobra → C1.3 optional, C4.1 optional
-   - library: exports only → C1.1 optional, C4.1 skip
+   - web_service: Express/FastAPI/ASP.NET/Spring -> all checks apply
+   - cli_tool: Click/Typer/Commander/cobra -> C1.3 optional, C4.1 optional
+   - library: exports only -> C1.1 optional, C4.1 skip
 ```
 
 ### Phase 2: File Inventory (Layer 1 only)
@@ -99,7 +101,7 @@ FOR EACH pattern IN config_rules.env_usage_patterns[tech_stack.language]:
 IF tech_stack.language == "python":
   settings_classes = Grep("class\s+\w+\(.*BaseSettings", scan_root, glob: "*.py")
   FOR EACH cls IN settings_classes:
-    Read class body → extract fields → convert to SCREAMING_SNAKE_CASE
+    Read class body -> extract fields -> convert to SCREAMING_SNAKE_CASE
     Apply env_prefix if configured
     Add to code_vars
 
@@ -113,10 +115,10 @@ IF exists(.env.example):
 # Step 3c: Extract vars from docker-compose environment
 docker_vars = {}  # {var_name: value}
 FOR EACH compose_file IN docker_compose:
-  Parse environment: section(s) → extract var=value pairs
+  Parse environment: section(s) -> extract var=value pairs
   docker_vars.update(parsed)
 
-# C2.1: Code→Example sync (Layer 2 mandatory)
+# C2.1: Code->Example sync (Layer 2 mandatory)
 missing_from_example = code_vars.keys() - example_vars.keys()
 FOR EACH var IN missing_from_example:
   # Layer 2: filter false positives
@@ -131,7 +133,7 @@ FOR EACH var IN missing_from_example:
       recommendation: "Add {var} to .env.example with documented default",
       effort: "S")
 
-# C2.2: Example→Code sync (dead vars, Layer 2 mandatory)
+# C2.2: Example->Code sync (dead vars, Layer 2 mandatory)
 dead_vars = example_vars.keys() - code_vars.keys()
 FOR EACH var IN dead_vars:
   # Layer 2: check infrastructure usage
@@ -179,7 +181,7 @@ IF len(non_screaming) > 0:
 
 # Prefix consistency check (Layer 2)
 prefixes = group_by_concept(all_vars)
-# e.g., {database: [DB_HOST, DB_PORT, DATABASE_URL]} → conflicting prefixes
+# e.g., {database: [DB_HOST, DB_PORT, DATABASE_URL]} -> conflicting prefixes
 conflicting = find_conflicting_prefixes(prefixes)
 IF conflicting:
   FOR EACH group IN conflicting:
@@ -283,7 +285,9 @@ FOR EACH var IN code_vars WHERE var.has_default == true:
 3. Write to {output_dir}/647-env-config.md (atomic single Write call)
    IF domain_mode == "domain-aware": 647-env-config-{domain}.md
 
-4. Return summary to coordinator:
+4. Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
    Report written: {output_dir}/647-env-config.md
    Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
@@ -295,6 +299,8 @@ FOR EACH var IN code_vars WHERE var.has_default == true:
 ## Output Format
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
+
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
 
 Write report to `{output_dir}/647-env-config.md` with `category: "Env Configuration"` and checks: env_example_exists, env_committed, env_specific_files, code_to_example_sync, example_to_code_sync, default_desync, naming_convention, redundant_vars, missing_comments, startup_validation, sensitive_defaults.
 
@@ -322,7 +328,7 @@ Write report to `{output_dir}/647-env-config.md` with `category: "Env Configurat
 - [ ] Findings collected with severity, location, check ID, effort, recommendation
 - [ ] Score calculated per `shared/references/audit_scoring.md`
 - [ ] Report written to `{output_dir}/647-env-config.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ---
 **Version:** 1.0.0

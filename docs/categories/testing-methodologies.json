@@ -2,21 +2,9 @@
   "category": "testing-methodologies",
   "code": "oth",
   "count": 4,
-  "updated_at": "2026-03-27T01:59:09.892641Z",
+  "updated_at": "2026-03-28T01:52:39.849341Z",
   "skills": [
     {
-      "name": "quality-metrics-proffesor-for-testing-agentic-",
-      "description": "Measure quality effectively with actionable metrics. Use when establishing quality dashboards, defining KPIs, or evaluating test effectiveness.",
-      "repo": "proffesor-for-testing/agentic-qe",
-      "path": "",
-      "branch": "main",
-      "category": "testing-methodologies",
-      "tags": [],
-      "stars": 140,
-      "install": "proffesor-for-testing/agentic-qe",
-      "source": "github.com/proffesor-for-testing/agentic-qe"
-    },
-    {
       "name": "api-testing-patterns",
       "description": "Comprehensive API testing patterns including contract testing, REST/GraphQL testing, and integration testing. Use when testing APIs or designing API test strategies.",
       "repo": "proffesor-for-testing/agentic-qe",
@@ -43,6 +31,18 @@
     {
       "name": "api-testing-patterns",
       "description": "Comprehensive API testing patterns including contract testing, REST/GraphQL testing, and integration testing. Use when testing APIs or designing API test strategies.",
+      "repo": "proffesor-for-testing/agentic-qe",
+      "path": "",
+      "branch": "main",
+      "category": "testing-methodologies",
+      "tags": [],
+      "stars": 140,
+      "install": "proffesor-for-testing/agentic-qe",
+      "source": "github.com/proffesor-for-testing/agentic-qe"
+    },
+    {
+      "name": "quality-metrics-proffesor-for-testing-agentic-",
+      "description": "Measure quality effectively with actionable metrics. Use when establishing quality dashboards, defining KPIs, or evaluating test effectiveness.",
       "repo": "proffesor-for-testing/agentic-qe",
       "path": "",
       "branch": "main",

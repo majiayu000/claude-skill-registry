@@ -9,6 +9,8 @@ license: MIT
 
 # Dependencies & Reuse Auditor (L3 Worker)
 
+**Type:** L3 Worker
+
 Specialized worker auditing dependency management, code reuse, and security vulnerabilities.
 
 ## Purpose & Scope
@@ -41,9 +43,9 @@ Receives `contextStore` with tech stack, package manifest paths, codebase root, 
 1) Parse context + mode parameter + output_dir
 2) Run dependency checks (Layer 1: audit tools, based on mode)
 3) Analyze context per candidate (Layer 2):
-   - Available Features: read usage — is lodash used for 1 function (easy replace) or deeply integrated (hard)?
-   - Custom Implementations: read code — truly reimplementing a library, or domain-specific logic?
-   - Vulnerability: read code — is the vulnerable API actually called in this project?
+   - Available Features: read usage -- is lodash used for 1 function (easy replace) or deeply integrated (hard)?
+   - Custom Implementations: read code -- truly reimplementing a library, or domain-specific logic?
+   - Vulnerability: read code -- is the vulnerable API actually called in this project?
 4) Collect findings
 5) Calculate score
 6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/625-dependencies.md` in single Write call
@@ -132,10 +134,10 @@ Receives `contextStore` with tech stack, package manifest paths, codebase root, 
 - **LOW:** CVSS 0.1-3.9 (fix when convenient)
 
 **Fix Classification:**
-- Patch update (x.x.Y) → safe auto-fix
-- Minor update (x.Y.0) → usually safe
-- Major update (Y.0.0) → manual review required
-- No fix available → document and monitor
+- Patch update (x.x.Y) -> safe auto-fix
+- Minor update (x.Y.0) -> usually safe
+- Major update (Y.0.0) -> manual review required
+- No fix available -> document and monitor
 
 **Recommendation:** Update to fixed version, verify lock file integrity
 
@@ -153,11 +155,15 @@ Receives `contextStore` with tech stack, package manifest paths, codebase root, 
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Write report to `{output_dir}/625-dependencies.md` with `category: "Dependencies & Reuse"` and checks: outdated_packages, unused_deps, available_natives, custom_implementations, vulnerability_scan.
 
-Return summary to coordinator:
+Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 ```
-Report written: docs/project/.audit/ln-620/{YYYY-MM-DD}/625-dependencies.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/625-dependencies.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -189,7 +195,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Findings collected with severity, location, effort, fix_type, recommendation
 - [ ] Score calculated per `shared/references/audit_scoring.md`
 - [ ] Report written to `{output_dir}/625-dependencies.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ---
 **Version:** 4.0.0

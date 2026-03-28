@@ -1,0 +1,17 @@
+{
+  "name": "spec-driven-workflow",
+  "repo": "alirezarezvani/claude-skills",
+  "path": "engineering/spec-driven-workflow/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alirezarezvani/claude-skills",
+  "dir_name": "spec-driven-workflow-alirezarezvani-claude-skills",
+  "downloaded_at": "2026-03-28T01:18:50.585279Z",
+  "author": "alirezarezvani",
+  "source_url": "https://github.com/alirezarezvani/claude-skills/blob/main/engineering/spec-driven-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alirezarezvani/claude-skills/blob/main/engineering/spec-driven-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -6,6 +6,8 @@ description: 'Consult this skill when designing data pipelines or transformation
   selecting from multiple paradigms - use architecture-paradigms first. DO NOT use
   when: data flow is not sequential or predictable. DO NOT use when: complex branching/merging
   logic dominates.'
+version: 1.7.1
+alwaysApply: false
 category: architectural-pattern
 tags:
 - architecture
@@ -26,7 +28,6 @@ usage_patterns:
 complexity: medium
 estimated_tokens: 700
 ---
-
 # The Pipeline (Pipes and Filters) Paradigm
 
 ## When to Employ This Paradigm

@@ -1,6 +1,8 @@
 ---
 name: rule-catalog
 description: Browse the rule catalog and guide installation. Use when looking for
+version: 1.7.1
+alwaysApply: false
   ready-made rules, installing standard rules, browsing available categories. Do not
   use when writing custom rules - use writing-rules skill instead.
 category: hook-development
@@ -23,7 +25,6 @@ usage_patterns:
 - browsing-rules
 - installing-rules
 ---
-
 ## When To Use
 
 - Browsing available hookify rules by category

@@ -6,6 +6,8 @@ description: |
   cargo-packager, cargo-makepad, WASM, Android, iOS,
   distribution, installer, .deb, .dmg, .nsis,
   GitHub Actions, CI, action, marketplace
+risk: unknown
+source: community
 ---
 
 # Makepad Packaging & Deployment

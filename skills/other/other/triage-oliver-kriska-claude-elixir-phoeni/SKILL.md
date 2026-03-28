@@ -1,6 +1,6 @@
 ---
 name: phx:triage
-description: Interactive triage of review findings. Present each finding for human decision — approve, skip, or customize priority. Use after /phx:review to filter findings before fixing.
+description: Interactive triage of Elixir/Phoenix review findings — ecto query issues, liveview anti-patterns, security gaps, iron law violations. Present each finding for human decision — approve, skip, or customize priority. Use after /phx:review to filter findings before fixing.
 effort: low
 argument-hint: [path to review file]
 ---
@@ -92,6 +92,7 @@ Triage complete: {n} to fix, {n} skipped, {n} deferred.
    any user guidance for better fixes
 5. **Suggest compound after triage** — If triage reveals solved patterns
    (root cause identified, fix known), mention `/phx:compound`
+6. **NEVER auto-decide severity or auto-dismiss findings** — the human assigns final priority; present the agent's severity as a recommendation, not a verdict
 
 ## Integration with Workflow
 

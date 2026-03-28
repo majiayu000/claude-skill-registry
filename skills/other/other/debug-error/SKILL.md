@@ -1,6 +1,6 @@
 ---
 name: debug-error
-description: Analyze an error message or stack trace, find root cause, and implement fix
+description: Use when the user has an error, bug, stack trace, failing test, or unexpected behavior to diagnose.
 disable-model-invocation: true
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 argument-hint: "[error message or description]"

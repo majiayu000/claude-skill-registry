@@ -1,6 +1,6 @@
 ---
 name: setup
-description: Auto-generate CLAUDE.md and .claudeignore for the current project by analyzing the codebase
+description: Use when the user wants to set up Claude Code for a project, initialize optimization, or generate CLAUDE.md.
 disable-model-invocation: true
 allowed-tools: Read, Grep, Glob, Bash, Write
 argument-hint: "[optional: project name]"

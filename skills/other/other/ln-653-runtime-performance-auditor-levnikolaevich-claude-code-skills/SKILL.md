@@ -9,6 +9,8 @@ license: MIT
 
 # Runtime Performance Auditor (L3 Worker)
 
+**Type:** L3 Worker
+
 Specialized worker auditing runtime performance anti-patterns in async and general code.
 
 ## Purpose & Scope
@@ -67,7 +69,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 **Severity:**
 - **HIGH:** Blocking IO in API request handler (blocks entire event loop)
 - **MEDIUM:** Blocking IO in background task/worker
-- **Downgrade when:** Blocking IO in `__init__`/setup/bootstrap (not request path) → LOW. Small file (<1KB) read in non-hot path → skip
+- **Downgrade when:** Blocking IO in `__init__`/setup/bootstrap (not request path) -> LOW. Small file (<1KB) read in non-hot path -> skip
 
 **Recommendation:** Use `aiofiles`, `asyncio.to_thread()`, or `loop.run_in_executor()` for file operations; use `httpx.AsyncClient` instead of `requests`
 
@@ -101,7 +103,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 **Severity:**
 - **HIGH:** `time.sleep()` in async API handler (freezes all concurrent requests)
 - **MEDIUM:** `time.sleep()` in async background task
-- **Downgrade when:** `time.sleep` in CLI/script (not async server) → skip
+- **Downgrade when:** `time.sleep` in CLI/script (not async server) -> skip
 
 **Recommendation:** Replace with `await asyncio.sleep(N)`
 
@@ -165,11 +167,15 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Write report to `{output_dir}/653-runtime-performance.md` with `category: "Runtime Performance"` and checks: blocking_io_in_async, unnecessary_list_allocation, sync_sleep_in_async, string_concat_in_loop, missing_to_thread, redundant_data_copies.
 
-Return summary to coordinator:
+Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 ```
-Report written: docs/project/.audit/ln-650/{YYYY-MM-DD}/653-runtime-performance.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/653-runtime-performance.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -195,7 +201,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated using penalty algorithm
 - [ ] Report written to `{output_dir}/653-runtime-performance.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

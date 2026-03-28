@@ -1,6 +1,6 @@
 ---
 name: onboard
-description: Generate a comprehensive onboarding guide for new developers joining the project
+description: Use when a new developer needs to understand the project, or the user asks for an onboarding or setup guide.
 disable-model-invocation: true
 allowed-tools: Read, Grep, Glob, Bash
 context: fork

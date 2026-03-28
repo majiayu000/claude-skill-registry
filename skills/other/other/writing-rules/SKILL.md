@@ -9,6 +9,8 @@ description: 'Create markdown-based behavioral rules preventing unwanted actions
   Use when: preventing dangerous commands, blocking debug commits, enforcing conventions
 
   DO NOT use when: hook scope (abstract:hook-scope-guide), SDK hooks (abstract:hook-authoring), evaluating hooks (abstract:hooks-eval).'
+version: 1.7.1
+alwaysApply: false
 category: hook-development
 tags:
 - hookify

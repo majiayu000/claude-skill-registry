@@ -1,6 +1,9 @@
 ---
 name: style-learner
 description: Learn and extract writing style patterns from exemplar text for consistent
+version: 1.7.1
+globs: "**/*.md"
+alwaysApply: false
   application. Use when creating a style guide from existing content, ensuring consistency
   across documents, learning a specific author's voice, customizing AI output style.
   Do not use when detecting AI slop - use slop-detector instead. just need to clean
@@ -29,7 +32,6 @@ dependencies:
 - scribe:shared
 - scribe:slop-detector
 ---
-
 # Style Learning Skill
 
 Extract and codify writing style from exemplar text for consistent application.

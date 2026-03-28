@@ -1,6 +1,6 @@
 ---
 name: consult
-description: Simulates expert perspectives grounded in documented positions. Use when asking "what would [expert] say", "best practice", "panel", "debate", or needing domain guidance. Triggers on expert names, style requests, tradeoff questions, or "stuck on".
+description: Simulates expert panels, compares documented positions across thought leaders, and synthesizes anonymous recommendations grouped by concern. Invoke when facing design tradeoffs, architecture decisions, repeated failure modes, or domain questions where multiple perspectives would reduce decision regret. Triggers on: expert names, "panel", "debate", "what would [X] say", "stuck on", style requests.
 ---
 
 Simulate expert perspectives by reasoning from documented positions to the user's context. Productive disagreement over comfortable consensus.
@@ -72,7 +72,7 @@ TRADEOFF:
 
 The label already states the suggestion. The description already states why it matters. The detail panel goes one level deeper — it does not repeat the label or restate the suggestion.
 
-Forbidden in detail panels: POSITIONS, TENSION, CONCERN headers. No expert names. No attribution. These sections bloat panels and hide content behind scroll.
+Forbidden in detail panels: POSITIONS, TENSION, CONCERN headers. These sections bloat panels and hide content behind scroll.
 
 Always include a "Go deeper" option (no detail panel needed).
 

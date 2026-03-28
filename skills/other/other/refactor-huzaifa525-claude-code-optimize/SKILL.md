@@ -1,6 +1,6 @@
 ---
 name: refactor
-description: Refactor code while preserving behavior — reads tests first, refactors, verifies tests pass
+description: Use when the user wants to refactor, clean up, restructure, or reorganize existing code without changing behavior.
 disable-model-invocation: true
 allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 argument-hint: "[what to refactor]"

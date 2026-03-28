@@ -5,6 +5,8 @@ description: 'Quota tracking, threshold monitoring, and graceful degradation for
 
 
   quota, rate limiting, usage limits, thresholds.'
+version: 1.7.1
+alwaysApply: false
 category: infrastructure
 tags:
 - quota

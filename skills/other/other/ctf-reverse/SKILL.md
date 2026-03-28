@@ -12,6 +12,26 @@ metadata:
 
 Quick reference for RE challenges. For detailed techniques, see supporting files.
 
+## Prerequisites
+
+**Python packages (all platforms):**
+```bash
+pip install frida-tools angr qiling uncompyle6 capstone lief z3-solver
+```
+
+**Linux (apt):**
+```bash
+apt install gdb radare2 binutils strace ltrace apktool upx
+```
+
+**macOS (Homebrew):**
+```bash
+brew install gdb radare2 binutils apktool upx ghidra
+```
+
+**Manual install:**
+- pwndbg — Linux: [GitHub](https://github.com/pwndbg/pwndbg), macOS: `brew install pwndbg/tap/pwndbg-gdb`
+
 ## Additional Resources
 
 - [tools.md](tools.md) - Static analysis tools (GDB, Ghidra, radare2, IDA, Binary Ninja, dogbolt.org, RISC-V with Capstone, Unicorn emulation, Python bytecode, WASM, Android APK, .NET, packed binaries)
@@ -29,6 +49,12 @@ Quick reference for RE challenges. For detailed techniques, see supporting files
 - [platforms-hardware.md](platforms-hardware.md) - Hardware and advanced architecture RE: HD44780 LCD controller GPIO reconstruction, RISC-V advanced (custom extensions, privileged modes, debugging), ARM64/AArch64 reversing and exploitation (calling convention, ROP gadgets, qemu-aarch64-static emulation)
 
 ---
+
+## When to Pivot
+
+- If you already understand the binary and now need heap, ROP, or kernel exploitation, switch to `/ctf-pwn`.
+- If the challenge is really about recovering deleted files, PCAP data, or disk artifacts, switch to `/ctf-forensics`.
+- If the target is a web app and you are only reversing a small client-side helper script, switch to `/ctf-web`.
 
 ## Problem-Solving Workflow
 
@@ -466,3 +492,11 @@ Esoteric language using iterated fraction multiplication. Invert by swapping num
 ## Opcode-Only Trace Reconstruction (0CTF 2016)
 
 Execution traces with only opcodes (no data) still leak info through branch decisions. Sorting algorithm comparisons reveal element ordering. Reconstruct by deduplicating trace, splitting into basic blocks. See [tools-dynamic.md](tools-dynamic.md#opcode-only-trace-reconstruction-0ctf-2016).
+
+## Thread Race Signed Integer Overflow (Codegate 2017)
+
+Game binary with thread-unsafe skill lock. Race between skill selection and damage calculation; `cdqe` sign-extends 0xFFFFFFFF to -1 (signed), causing HP overflow on subtraction. See [patterns-ctf-3.md](patterns-ctf-3.md#thread-race-condition-with-signed-integer-overflow-codegate-2017).
+
+## ESP32/Xtensa Firmware Reversing (Insomni'hack 2017)
+
+No IDA support — use radare2 + ESP-IDF ROM linker script (`esp32.rom.ld`) for symbol resolution. Cross-reference with public ESP-IDF HTTP server examples to identify app logic. See [patterns-ctf-3.md](patterns-ctf-3.md#esp32xtensa-firmware-reversing-with-rom-symbol-map-insomnihack-2017).

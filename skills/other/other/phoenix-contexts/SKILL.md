@@ -1,6 +1,6 @@
 ---
 name: phoenix-contexts
-description: "Phoenix context module design: creating/splitting contexts, adding context functions, cross-context boundaries, Scope struct (1.8+), Ecto.Multi in contexts, PubSub broadcasting. Also: router pipelines, scope blocks, verified routes, plugs, controller delegation to contexts, JSON API controllers."
+description: "Provide Phoenix context module design patterns: creating/splitting contexts, adding context functions, cross-context boundaries, Scope struct (1.8+), Ecto.Multi, PubSub broadcasting, router pipelines, scope blocks, verified routes, plugs, controller delegation, JSON API controllers. Use when editing context modules, routers, controllers, or designing bounded domain boundaries."
 effort: medium
 user-invocable: false
 ---

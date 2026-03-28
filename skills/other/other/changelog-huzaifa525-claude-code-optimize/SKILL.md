@@ -1,6 +1,6 @@
 ---
 name: changelog
-description: Generate a changelog from git history since the last tag, grouped by type
+description: Use when the user wants a changelog, release notes, or asks what changed since the last release.
 disable-model-invocation: true
 allowed-tools: Bash, Read, Write
 ---

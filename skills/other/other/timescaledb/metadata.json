@@ -2,8 +2,16 @@
   "name": "timescaledb",
   "repo": "aiskillstore/marketplace",
   "path": "skills/2025emma/timescaledb/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/aiskillstore/marketplace",
   "dir_name": "timescaledb",
-  "downloaded_at": "2026-02-17T01:15:50.225738Z"
+  "downloaded_at": "2026-03-28T01:17:49.597996Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/2025emma/timescaledb/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/2025emma/timescaledb/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

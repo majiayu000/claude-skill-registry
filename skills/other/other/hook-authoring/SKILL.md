@@ -6,6 +6,8 @@ description: 'Use this skill BEFORE writing any hook. Check even if unsure. Use 
   operations in production. Do not use when logic belongs in core skill - use Skills
   instead. DO NOT use when: complex multi-step workflows needed - use Agents instead.
   DO NOT use when: behavior better suited for custom tool.'
+version: 1.7.1
+alwaysApply: false
 category: hook-development
 tags:
 - hooks

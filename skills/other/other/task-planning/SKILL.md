@@ -9,6 +9,8 @@ description: 'Generate phased, dependency-ordered tasks from specs. Identifies p
   Use when: converting specifications to implementation tasks
 
   DO NOT use when: writing specs - use spec-writing. Not for execution - use speckit-implement.'
+version: 1.7.1
+alwaysApply: false
 category: planning
 tags:
 - speckit
@@ -32,7 +34,6 @@ usage_patterns:
 complexity: intermediate
 estimated_tokens: 1200
 ---
-
 # Task Planning
 
 ## Overview

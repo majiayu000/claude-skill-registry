@@ -9,6 +9,8 @@ license: MIT
 
 # Observability Auditor (L3 Worker)
 
+**Type:** L3 Worker
+
 Specialized worker auditing logging, monitoring, and observability.
 
 ## Purpose & Scope
@@ -33,8 +35,8 @@ Receives `contextStore` with tech stack, framework, codebase root, output_dir.
 3) Check observability patterns (Layer 1: grep)
 4) Analyze context per candidate (Layer 2):
    - Structured logging: is this a library (no logging OK) or a service (logging required)?
-   - Health endpoints: web service → required. CLI/library → skip
-   - Request tracing: monolith → less needed. Microservice → critical
+   - Health endpoints: web service -> required. CLI/library -> skip
+   - Request tracing: monolith -> less needed. Microservice -> critical
 5) Collect confirmed findings
 6) Calculate score
 7) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/627-observability.md` in single Write call
@@ -111,11 +113,15 @@ Receives `contextStore` with tech stack, framework, codebase root, output_dir.
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Write report to `{output_dir}/627-observability.md` with `category: "Observability"` and checks: structured_logging, health_endpoints, metrics_collection, request_tracing, log_levels.
 
-Return summary to coordinator:
+Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 ```
-Report written: docs/project/.audit/ln-620/{YYYY-MM-DD}/627-observability.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/627-observability.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -142,7 +148,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated per `shared/references/audit_scoring.md`
 - [ ] Report written to `{output_dir}/627-observability.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ---
 **Version:** 3.0.0

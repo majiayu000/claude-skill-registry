@@ -9,6 +9,8 @@ license: MIT
 
 # Pattern Analyzer
 
+**Type:** L3 Worker
+
 L3 Worker that analyzes a single architectural pattern against best practices and calculates 4 scores.
 
 ## Purpose & Scope
@@ -30,7 +32,7 @@ L3 Worker that analyzes a single architectural pattern against best practices an
 - pattern: string          # Pattern name (e.g., "Job Processing")
 - locations: string[]      # Known file paths/directories
 - bestPractices: object    # Best practices from MCP Ref/Context7/WebSearch
-- output_dir: string       # e.g., "docs/project/.audit/ln-640/{YYYY-MM-DD}"
+- output_dir: string       # e.g., ".hex-skills/runtime-artifacts/runs/{run_id}/audit-report"
 ```
 
 > **Note:** All patterns arrive pre-verified (passed ln-640 Phase 1d applicability gate with >= 2 structural components confirmed).
@@ -41,15 +43,15 @@ L3 Worker that analyzes a single architectural pattern against best practices an
 
 ### Phase 1: Find Implementations
 
-**MANDATORY READ:** Load `../ln-640-pattern-evolution-auditor/references/pattern_library.md` — use "Pattern Detection (Grep)" table for detection keywords per pattern.
+**MANDATORY READ:** Load `../ln-640-pattern-evolution-auditor/references/pattern_library.md` -- use "Pattern Detection (Grep)" table for detection keywords per pattern.
 
 ```
 IF pattern.source == "adaptive":
-  # Pattern discovered by coordinator Phase 1b — evidence already provided
+  # Pattern discovered by coordinator Phase 1b -- evidence already provided
   files = pattern.evidence.files
   SKIP detection keyword search (already done in Phase 1b)
 ELSE:
-  # Baseline pattern — use library detection keywords
+  # Baseline pattern -- use library detection keywords
   files = Glob(locations)
   additional = Grep("{pattern_keywords}", "**/*.{ts,js,py,rb,cs,java}")
   files = deduplicate(files + additional)
@@ -65,19 +67,19 @@ FOR EACH file IN files (limit: 10 key files):
 
 ### Phase 3: Calculate 4 Scores
 
-**MANDATORY READ:** Load `../ln-640-pattern-evolution-auditor/references/scoring_rules.md` — follow Detection column for each criterion.
+**MANDATORY READ:** Load `../ln-640-pattern-evolution-auditor/references/scoring_rules.md` -- follow Detection column for each criterion.
 
 | Score | Source in scoring_rules.md | Max |
 |-------|---------------------------|-----|
-| Compliance | "Compliance Score" section — industry standard, naming, conventions, anti-patterns | 100 |
-| Completeness | "Completeness Score" section — required components table (per pattern), error handling, tests | 100 |
-| Quality | "Quality Score" section — method length, complexity, code smells, SOLID | 100 |
-| Implementation | "Implementation Score" section — compiles, production usage, integration, monitoring | 100 |
+| Compliance | "Compliance Score" section -- industry standard, naming, conventions, anti-patterns | 100 |
+| Completeness | "Completeness Score" section -- required components table (per pattern), error handling, tests | 100 |
+| Quality | "Quality Score" section -- method length, complexity, code smells, SOLID | 100 |
+| Implementation | "Implementation Score" section -- compiles, production usage, integration, monitoring | 100 |
 
 **Scoring process for each criterion:**
 1. Run the Detection Grep/Glob from scoring_rules.md
-2. If matches found → add points per criterion
-3. If anti-pattern/smell detected → subtract per deduction table
+2. If matches found -> add points per criterion
+3. If anti-pattern/smell detected -> subtract per deduction table
 4. Document evidence: file path + line for each score justification
 
 ### Phase 4: Identify Issues and Gaps
@@ -93,8 +95,8 @@ FOR EACH bestPractice NOT implemented:
   })
 
 # Layer 2 context check (MANDATORY):
-# Deviation documented in code comment or ADR? → downgrade to LOW
-# Pattern intentionally simplified for project scale? → skip
+# Deviation documented in code comment or ADR? -> downgrade to LOW
+# Pattern intentionally simplified for project scale? -> skip
 
 
 gaps = {
@@ -114,8 +116,10 @@ gaps = {
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 ```
-# Build pattern name slug: "Job Processing" → "job-processing"
+# Build pattern name slug: "Job Processing" -> "job-processing"
 slug = pattern.name.lower().replace(" ", "-")
 
 # Build markdown report in memory with:
@@ -130,7 +134,7 @@ Write to {output_dir}/641-pattern-{slug}.md (atomic single Write call)
 ### Phase 7: Return Summary
 
 ```
-Report written: docs/project/.audit/ln-640/{YYYY-MM-DD}/641-pattern-job-processing.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/641-pattern-job-processing.md
 Score: 7.9/10 (C:72 K:85 Q:68 I:90) | Issues: 3 (H:1 M:2 L:0)
 ```
 
@@ -155,7 +159,7 @@ Score: 7.9/10 (C:72 K:85 Q:68 I:90) | Issues: 3 (H:1 M:2 L:0)
 - [ ] Gaps documented (missing components, inconsistencies)
 - [ ] Recommendations provided
 - [ ] Report written to `{output_dir}/641-pattern-{slug}.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

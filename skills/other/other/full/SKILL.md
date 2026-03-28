@@ -46,7 +46,7 @@ Cycles back automatically if review finds issues.
 │                                                                  │
 │  On Completion:                                                  │
 │  Auto-compound: Capture solved problems → .claude/solutions/     │
-│  Auto-suggest: /phx:document → /phx:learn                       │
+│  Auto-suggest: /phx:document → /phx:learn-from-fix                       │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
 ```
@@ -58,7 +58,7 @@ STATES: INITIALIZING → DISCOVERING → PLANNING → WORKING →
         VERIFYING → REVIEWING → COMPLETED → COMPOUNDING | BLOCKED
 ```
 
-Track state in `.claude/plans/{slug}/progress.md` AND via Claude Code
+Save state in `.claude/plans/{slug}/progress.md` AND via Claude Code
 tasks. Create one task per phase at start, mark `in_progress` on
 entry and `completed` on exit:
 
@@ -73,9 +73,8 @@ TaskCreate({subject: "Capture solutions", activeForm: "Compounding..."})
 
 Set up `blockedBy` dependencies between phases (sequential).
 
-On COMPLETED: auto-run COMPOUNDING phase to capture solved problems as searchable
-solution docs in `.claude/solutions/`. Then suggest `/phx:document` for docs and
-`/phx:learn` for quick pattern capture.
+Run COMPOUNDING phase on COMPLETED to capture solved problems in `.claude/solutions/`.
+Suggest `/phx:document` for docs and `/phx:learn-from-fix` for quick pattern capture.
 
 ## Cycle Limits
 
@@ -85,7 +84,7 @@ solution docs in `.claude/solutions/`. Then suggest `/phx:document` for docs and
 | `--max-retries` | 3 | Max retries per task |
 | `--max-blockers` | 5 | Max blockers before stopping |
 
-When limits exceeded, output INCOMPLETE status with remaining work and recommended action.
+Stop with INCOMPLETE status when limits exceeded. List remaining work and recommended action.
 
 ## Integration
 
@@ -93,7 +92,7 @@ When limits exceeded, output INCOMPLETE status with remaining work and recommend
 /phx:full = /phx:plan → /phx:work → /phx:verify → /phx:review → (fix → /phx:verify) → /phx:compound
 ```
 
-For fully autonomous execution with Ralph Wiggum Loop:
+Use Ralph Wiggum Loop for fully autonomous execution:
 
 ```bash
 /ralph-loop:ralph-loop "/phx:full {feature}" --completion-promise "DONE" --max-iterations 50

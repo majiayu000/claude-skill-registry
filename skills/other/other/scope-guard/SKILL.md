@@ -5,6 +5,8 @@ description: 'Use this skill BEFORE implementing any new feature. Important for
   functionality, branches approach size limits (1000/1500/2000 lines, 15/25/30
   commits). Do not use when feature is already approved and in progress. DO NOT
   use when: simple bug fixes with clear scope.'
+version: 1.7.1
+alwaysApply: false
 category: workflow-methodology
 tags:
 - anti-overengineering
@@ -28,7 +30,6 @@ modules:
 - modules/branch-management.md
 - modules/baseline-scenarios.md
 ---
-
 > Building more than what is needed takes choices away
 > from those who work here next. Scope-guard is humility
 > and foresight: preserving freedom by building only

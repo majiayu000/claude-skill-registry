@@ -8,6 +8,9 @@ license: MIT
 
 # Epic Coordinator
 
+**Type:** L2 Domain Coordinator
+**Category:** 2XX Planning
+
 Universal Epic management coordinator that handles both creation and replanning through scope decomposition.
 
 ## Purpose
@@ -26,6 +29,51 @@ This skill should be used when:
 - Define clear scope boundaries and success criteria for each domain
 
 **Output:** 3-7 Linear Projects (logical domains/modules)
+
+## Runtime Contract
+
+**MANDATORY READ:** Load `shared/references/coordinator_runtime_contract.md`, `shared/references/epic_planning_runtime_contract.md`, `shared/references/epic_plan_summary_contract.md`
+
+Runtime family: `epic-planning-runtime`
+
+Identifier:
+- scope identifier
+
+Phases:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_DISCOVERY`
+3. `PHASE_2_RESEARCH`
+4. `PHASE_3_PLAN`
+5. `PHASE_4_MODE_DETECTION`
+6. `PHASE_5_PREVIEW`
+7. `PHASE_6_DELEGATE`
+8. `PHASE_7_FINALIZE`
+9. `PHASE_8_SELF_CHECK`
+
+Decision handling:
+- preview/confirmation is runtime `PAUSED + pending_decision`
+- ln-210 writes final `epic-plan` summary for ln-200 when used as downstream coordinator
+
+## Worker Invocation (MANDATORY)
+
+| Phase | Worker | Context |
+|-------|--------|---------|
+| 6 | None | CREATE/REPLAN execution is inline inside ln-210; no downstream Skill worker is delegated |
+
+**Downstream contract:** ln-210 is itself a worker for `ln-200` and writes `epic-plan` machine-readable output after inline Epic create/replan execution completes.
+
+## TodoWrite format (mandatory)
+
+```text
+- Phase 1: Discover scope and project context (pending)
+- Phase 2: Research only what changes Epic boundaries (pending)
+- Phase 3: Build ideal Epic plan (pending)
+- Phase 4: Detect mode and validate Infra Epic need (pending)
+- Phase 5: Preview and confirm plan (pending)
+- Phase 6: Execute create/replan flow (pending)
+- Phase 7: Finalize epic-plan summary (pending)
+- Phase 8: Self-check (pending)
+```
 
 ## Core Concepts
 

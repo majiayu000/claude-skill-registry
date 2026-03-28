@@ -110,13 +110,33 @@ API spec documents **contracts**, NOT implementations:
 ### Format Priority (MANDATORY)
 Tables (endpoints, schemas) > Mermaid (ER diagrams) > Lists > Text
 
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/docs_generation_summary_contract.md`
+
+Accept optional `summaryArtifactPath`.
+
+Summary kind:
+- `docs-generation`
+
+Required payload semantics:
+- `worker = "ln-113"`
+- `status`
+- `created_files`
+- `skipped_files`
+- `quality_inputs`
+- `validation_status`
+- `warnings`
+
+Write the summary to the provided artifact path or return the same envelope in structured output.
+
 ## Definition of Done
 - [ ] Conditions checked (hasBackend, hasDatabase)
 - [ ] Applicable documents created
 - [ ] ER diagram generated (if database_schema.md created)
 - [ ] Self-validation passed (metadata markers, top sections, format)
 - [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
-- [ ] Status returned to coordinator
+- [ ] Status returned
 
 ## Reference Files
 - Templates: `references/templates/api_spec_template.md`, `database_schema_template.md`

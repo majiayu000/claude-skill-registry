@@ -1,6 +1,6 @@
 ---
 name: phx:research
-description: Research an Elixir/Phoenix topic on the web, or evaluate a Hex library with --library flag. Use whenever the user needs to learn about an Elixir library, pattern, or best practice they are unfamiliar with. Also use when evaluating Hex dependencies, comparing approaches, or investigating how other projects solve a problem. Searches ElixirForum, HexDocs, blogs, and GitHub.
+description: "Research an Elixir/Phoenix topic on the web, or evaluate a Hex library with --library flag. Use whenever the user needs to learn about an Elixir library, Phoenix pattern, Ecto best practice, or LiveView technique they are unfamiliar with. Also use when evaluating Hex dependencies, comparing approaches, or investigating how other Elixir projects solve a problem. Searches ElixirForum, HexDocs, blogs, and GitHub."
 effort: high
 disable-model-invocation: true
 ---

@@ -23,7 +23,7 @@ L3 Worker that builds and analyzes the module dependency graph to enforce archit
 - Calculate Robert C. Martin metrics (Ca, Ce, Instability) + Lakos aggregate (CCD, NCCD)
 - Validate Stable Dependencies Principle (SDP)
 - Support baseline/freeze for incremental legacy adoption (per ArchUnit FreezingArchRule)
-- **Adaptive:** 3-tier architecture detection — custom rules > docs > auto-detect
+- **Adaptive:** 3-tier architecture detection -- custom rules > docs > auto-detect
 
 **Out of Scope** (owned by other workers):
 - I/O isolation violations (grep-based) -> ln-642-layer-boundary-auditor
@@ -35,7 +35,7 @@ L3 Worker that builds and analyzes the module dependency graph to enforce archit
 ```
 - architecture_path: string    # Path to docs/architecture.md
 - codebase_root: string        # Root directory to scan
-- output_dir: string           # e.g., "docs/project/.audit/ln-640/{YYYY-MM-DD}"
+- output_dir: string           # e.g., ".hex-skills/runtime-artifacts/runs/{run_id}/audit-report"
 
 # Domain-aware (optional, from coordinator)
 - domain_mode: "global" | "domain-aware"   # Default: "global"
@@ -54,9 +54,9 @@ L3 Worker that builds and analyzes the module dependency graph to enforce archit
 
 ### Phase 1: Discover Architecture (Adaptive)
 
-**MANDATORY READ:** Load `references/dependency_rules.md` — use 3-Tier Priority Chain, Architecture Presets, Auto-Detection Heuristics.
+**MANDATORY READ:** Load `references/dependency_rules.md` -- use 3-Tier Priority Chain, Architecture Presets, Auto-Detection Heuristics.
 
-Architecture detection uses **3-tier priority** — explicit config wins over docs, docs win over auto-detection:
+Architecture detection uses **3-tier priority** -- explicit config wins over docs, docs win over auto-detection:
 
 ```
 # Priority 1: Explicit project config
@@ -109,7 +109,7 @@ ELSE:
 
 ### Phase 2: Build Dependency Graph
 
-**MANDATORY READ:** Load `references/import_patterns.md` — use Language Detection, Import Grep Patterns, Module Resolution Algorithm, Exclusion Lists.
+**MANDATORY READ:** Load `references/import_patterns.md` -- use Language Detection, Import Grep Patterns, Module Resolution Algorithm, Exclusion Lists.
 
 ```
 scan_root = scan_path IF domain_mode == "domain-aware" ELSE codebase_root
@@ -170,8 +170,8 @@ FOR EACH (A, B) WHERE B IN graph[A] AND A IN graph[B]:
     severity: "HIGH",
     fix: suggest_cycle_fix(A, B)
   })
-  # Layer 2: Test-only dependencies (devDependencies, test imports) → skip cycle
-  # Plugin/extension architecture with documented bidirectional design → downgrade to LOW
+  # Layer 2: Test-only dependencies (devDependencies, test imports) -> skip cycle
+  # Plugin/extension architecture with documented bidirectional design -> downgrade to LOW
 
 # Transitive cycles via DFS (A -> B -> C -> A)
 visited = {}
@@ -206,9 +206,9 @@ Repeat DFS on folder_graph for folder-level cycles
 ```
 
 **Cycle-breaking recommendations** (from Clean Architecture Ch14):
-1. **DIP** — extract interface in depended-upon module, implement in depending module
-2. **Extract Shared Component** — move shared code to new module both depend on
-3. **Domain Events / Message Bus** — for cross-domain cycles, decouple via async communication
+1. **DIP** -- extract interface in depended-upon module, implement in depending module
+2. **Extract Shared Component** -- move shared code to new module both depend on
+3. **Domain Events / Message Bus** -- for cross-domain cycles, decouple via async communication
 
 ### Phase 4: Validate Boundary Rules
 
@@ -271,7 +271,7 @@ FOR EACH rule IN rules.required:
 
 **hex-graph acceleration:** For projects with `.hex-skills/codegraph/index.db`, use `get_module_metrics` for instant Ca/Ce/I calculation. Fall back to manual computation when graph is unavailable.
 
-**MANDATORY READ:** Load `references/graph_metrics.md` — use Metric Definitions, Thresholds per Layer, SDP Algorithm, Lakos Formulas.
+**MANDATORY READ:** Load `references/graph_metrics.md` -- use Metric Definitions, Thresholds per Layer, SDP Algorithm, Lakos Formulas.
 
 ```
 # Per-module metrics (Robert C. Martin)
@@ -285,7 +285,7 @@ FOR EACH module IN graph:
 # SDP validation (Stable Dependencies Principle)
 FOR EACH edge (A -> B) IN graph:
   IF metrics[A].I < metrics[B].I:
-    # Stable module depends on less stable module — SDP violation
+    # Stable module depends on less stable module -- SDP violation
     sdp_violations.append({
       from: A, to: B,
       I_from: metrics[A].I, I_to: metrics[B].I,
@@ -320,7 +320,7 @@ IF NCCD > 1.5:
 
 ### Phase 6: Baseline Support
 
-Inspired by ArchUnit FreezingArchRule — enables incremental adoption in legacy projects.
+Inspired by ArchUnit FreezingArchRule -- enables incremental adoption in legacy projects.
 
 ```
 baseline_path = docs/project/dependency_baseline.json
@@ -340,7 +340,7 @@ IF file_exists(baseline_path):
     save_json(baseline_path, current)
 
 ELSE:
-  # First run — report all
+  # First run -- report all
   active_findings = all_violations
   baseline_info = {new: len(all_violations), resolved: 0, frozen: 0}
   # Suggest: output note "Run with update_baseline=true to freeze current violations"
@@ -361,6 +361,8 @@ score = max(0, 10 - penalty)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 ```
 # Build markdown report in memory with:
 # - AUDIT-META (standard penalty-based: score, counts)
@@ -377,7 +379,7 @@ ELSE:
 ### Phase 9: Return Summary
 
 ```
-Report written: docs/project/.audit/ln-640/{YYYY-MM-DD}/644-dep-graph-users.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/644-dep-graph-users.md
 Score: 6.5/10 | Issues: 8 (C:1 H:3 M:3 L:1)
 ```
 
@@ -385,14 +387,14 @@ Score: 6.5/10 | Issues: 8 (C:1 H:3 M:3 L:1)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
-- **Adaptive architecture** — never assume one style; detect from project structure or docs
-- **3-tier priority** — custom rules > architecture.md > auto-detection
-- **Hybrid support** — projects mix styles; apply different presets per zone
-- **Custom = safe mode** — if no pattern detected, only check cycles + metrics (no false boundary violations)
-- **Internal only** — exclude stdlib, third-party from graph (only project modules)
-- **Baseline mode** — when baseline exists, report only NEW violations
-- **Cycle fixes** — always provide actionable recommendation (DIP, Extract Shared, Domain Events)
-- **File + line** — always provide exact import location for violations
+- **Adaptive architecture** -- never assume one style; detect from project structure or docs
+- **3-tier priority** -- custom rules > architecture.md > auto-detection
+- **Hybrid support** -- projects mix styles; apply different presets per zone
+- **Custom = safe mode** -- if no pattern detected, only check cycles + metrics (no false boundary violations)
+- **Internal only** -- exclude stdlib, third-party from graph (only project modules)
+- **Baseline mode** -- when baseline exists, report only NEW violations
+- **Cycle fixes** -- always provide actionable recommendation (DIP, Extract Shared, Domain Events)
+- **File + line** -- always provide exact import location for violations
 
 ## Definition of Done
 
@@ -408,7 +410,7 @@ Score: 6.5/10 | Issues: 8 (C:1 H:3 M:3 L:1)
 - [ ] If domain-aware: all Grep/Glob scoped to scan_path, findings tagged with domain
 - [ ] Score calculated per audit_scoring.md
 - [ ] Report written to `{output_dir}/644-dep-graph[-{domain}].md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

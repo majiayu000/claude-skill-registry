@@ -1,6 +1,6 @@
 ---
 name: deploy
-description: "Elixir/Phoenix deployment: Dockerfile, fly.toml, config/runtime.exs, mix release, rel/ overlays, vm.args.eex, env.sh.eex. Covers Fly.io, Docker, Kubernetes, CI/CD, health checks, production migrations, libcluster/distributed nodes, SSL database verification, BEAM resource limits, asset pipeline, scaling strategy."
+description: "Provide Elixir/Phoenix deployment patterns — Dockerfile, fly.toml, config/runtime.exs, mix release, rel/ overlays, vm.args.eex, env.sh.eex. Use when configuring Fly.io, Docker, Kubernetes, CI/CD, health checks, production migrations, libcluster/distributed nodes, SSL database verification, BEAM resource limits, asset pipeline, or scaling strategy."
 effort: medium
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: phx:quick
-description: Fast implementation mode for small changes — skip planning ceremony, go direct to working code. Use for single-file changes under 50 lines, typo fixes, config tweaks, CSS adjustments, copy changes, or when the user explicitly wants speed over process. For anything larger or touching security, suggest /phx:plan instead.
+description: Implement small Phoenix changes without planning. Use when the user gives a direct instruction to add, update, fix, create, or change something — like adding a field validation, updating router routes, fixing a component for a new prop, creating a migration, or changing a controller response format. Single-file edits under 50 lines. Skip for bug investigation, code review, or large refactors.
 effort: low
 ---
 
@@ -35,6 +35,12 @@ Skip the planning ceremony. Get working code fast.
 2. **Implement** - Write code directly
 3. **Verify** - Quick compile check
 4. **Done** - No ceremony
+
+## Iron Laws
+
+1. **NEVER skip verification** — run `mix compile --warnings-as-errors` after every change, even in quick mode
+2. **DO NOT touch files outside the stated scope** — quick mode means minimal blast radius; if a fix requires changes across multiple domains, escalate to `/phx:plan`
+3. **NEVER bypass security checks for speed** — auth, input validation, and XSS rules apply regardless of change size
 
 ## Rules in Quick Mode
 

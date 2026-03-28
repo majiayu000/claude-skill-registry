@@ -103,7 +103,7 @@ node shared/scripts/story-gate-runtime/cli.mjs advance --to PHASE_7_FINALIZATION
 1. Decide whether planning is needed:
    - no test task -> invoke `ln-520`
    - fast-track -> invoke simplified `ln-520`
-   - test task already exists and is `Done` -> checkpoint as reused
+   - test task already exists and is terminal (`Done | SKIPPED | VERIFIED`) -> checkpoint as reused
 2. Read `.hex-skills/runtime-artifacts/runs/{run_id}/story-tests/{story_id}.json`.
 3. Record test planner result with `record-test-status`.
 4. Checkpoint `PHASE_4_TEST_PLANNING`.
@@ -114,7 +114,7 @@ node shared/scripts/story-gate-runtime/cli.mjs advance --to PHASE_7_FINALIZATION
    - `phase = PAUSED`
    - `resume_action = wait for test task completion`
 2. When resumed, verify:
-   - test task `Done`
+   - test task terminal status is `Done`, `SKIPPED`, or `VERIFIED`
    - coverage summary exists
    - planned scenarios and Story AC coverage are machine-readable
 3. Checkpoint `PHASE_5_TEST_VERIFICATION` with:
@@ -149,7 +149,7 @@ For `PASS | CONCERNS | WAIVED`:
 For `FAIL`:
 
 1. Do not finalize branch as accepted.
-2. Checkpoint `PHASE_7_FINALIZATION` as `skipped_by_verdict`.
+2. Checkpoint `PHASE_7_FINALIZATION` with `status=skipped_by_verdict`.
 3. Record resulting Story status and follow-up task IDs.
 
 ### Phase 8: Self-Check

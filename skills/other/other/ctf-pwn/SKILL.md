@@ -12,6 +12,32 @@ metadata:
 
 Quick reference for binary exploitation (pwn) CTF challenges. Each technique has a one-liner here; see supporting files for full details.
 
+## Prerequisites
+
+**Python packages (all platforms):**
+```bash
+pip install pwntools ropper ROPgadget
+```
+
+**Linux (apt):**
+```bash
+apt install gdb binutils strace ltrace qemu-system-x86
+```
+
+**macOS (Homebrew):**
+```bash
+brew install gdb binutils qemu
+```
+
+**Ruby gems (all platforms):**
+```bash
+gem install one_gadget seccomp-tools
+```
+
+**Manual install:**
+- pwndbg — Linux: [GitHub](https://github.com/pwndbg/pwndbg), macOS: `brew install pwndbg/tap/pwndbg-gdb`
+- checksec — included with pwntools
+
 ## Additional Resources
 
 - [overflow-basics.md](overflow-basics.md) - Stack/global buffer overflow, ret2win, canary bypass, canary byte-by-byte brute force on forking servers, struct pointer overwrite, signed integer bypass, hidden gadgets, stride-based OOB read leak, parser stack overflow via unchecked memcpy length with callee-saved register restoration
@@ -30,6 +56,12 @@ Quick reference for binary exploitation (pwn) CTF challenges. Each technique has
 - [kernel-bypass.md](kernel-bypass.md) - Kernel protection bypass: KASLR/FGKASLR bypass (__ksymtab), KPTI bypass (swapgs trampoline, signal handler, modprobe_path/core_pattern via ROP), SMEP/SMAP bypass, GDB kernel module debugging, initramfs/virtio-9p workflow, exploit templates, exploit delivery
 
 ---
+
+## When to Pivot
+
+- If you do not yet understand what the binary does, switch to `/ctf-reverse` before trying to exploit it.
+- If the service is really a restricted shell, encoding puzzle, or sandbox language challenge, switch to `/ctf-misc`.
+- If the exploit path depends on a web endpoint, session bug, or upload primitive more than memory corruption, switch to `/ctf-web`.
 
 ## Source Code Red Flags
 
@@ -186,7 +218,7 @@ OOB via vulnerable `lseek`, heap grooming with `fork()`, SUID exploits. Check `C
 
 ## Integer Truncation Bypass (int32→int16)
 
-**Pattern:** Input validated as int32 (>= 0), cast to int16_t for bounds check. Value 65534 passes int32 check, becomes -2 as int16_t → OOB array access. Use `xchg rdi, rax; cld; ret` gadget for dynamic fd capture in containerized ORW chains. See [advanced-exploits-2.md](advanced-exploits-2.md#integer-truncation-bypass-int32int16-apoorvctf-2026).
+**Pattern:** Input validated as int32 (>= 0), cast to int16_t for bounds check. Value 65534 passes int32 check, becomes -2 as int16_t → OOB array access. Use `xchg rdi, rax; cld; ret` gadget for dynamic fd capture in containerized ORW chains. See [advanced-exploits-2.md](advanced-exploits-2.md#integer-truncation-bypass-int32-to-int16-apoorvctf-2026).
 
 ## Format String Quick Reference
 
@@ -212,6 +244,7 @@ See [format-string.md](format-string.md) for GOT overwrite patterns, blind pwn, 
 - Check glibc version: `strings libc.so.6 | grep GLIBC`
 - Freed chunks contain libc pointers (fd/bk) -> leak via error messages or missing null-termination
 - Heap feng shui: control alloc order/sizes, create holes, place targets adjacent to overflow source
+- **Unsafe unlink + top chunk consolidation**: After unlink writes self-pointer to BSS, craft fake BSS chunk spanning to top chunk. `free()` consolidates, relocating heap base to BSS. Subsequent mallocs return BSS memory. See [heap-techniques.md](heap-techniques.md#unsafe-unlink-to-bss--top-chunk-consolidation-seccon-2016).
 
 **House of Orange:** Corrupt top chunk size → large malloc forces sysmalloc → old top freed without calling `free()`. Chain with FSOP. See [heap-techniques.md](heap-techniques.md#house-of-orange).
 
@@ -379,7 +412,7 @@ Find writable paths via character devices, target `/etc/passwd` or `/etc/sudoers
 
 ## Signed/Unsigned Char Underflow → Heap Overflow (Midnightflag 2026)
 
-**Pattern:** Size field stored as `signed char`, cast to `unsigned char` for use. `size = -112` → `(unsigned char)(-112) = 144`, overflowing a 127-byte buffer by 17 bytes. Combine with XOR keystream brute-force for byte-precise writes, forge chunk sizes for unsorted bin promotion (libc leak), FSOP stdout for TLS leak, and TLS destructor (`__call_tls_dtors`) overwrite for RCE. See [advanced-exploits-2.md](advanced-exploits-2.md#signedunsigned-char-underflow--heap-overflow--tls-destructor-hijack-midnightflag-2026).
+**Pattern:** Size field stored as `signed char`, cast to `unsigned char` for use. `size = -112` → `(unsigned char)(-112) = 144`, overflowing a 127-byte buffer by 17 bytes. Combine with XOR keystream brute-force for byte-precise writes, forge chunk sizes for unsorted bin promotion (libc leak), FSOP stdout for TLS leak, and TLS destructor (`__call_tls_dtors`) overwrite for RCE. See [advanced-exploits-2.md](advanced-exploits-2.md#signedunsigned-char-underflow-to-heap-overflow--tls-destructor-hijack-midnightflag-2026).
 
 ## TLS Destructor Hijack via `__call_tls_dtors`
 
@@ -389,7 +422,7 @@ Find writable paths via character devices, target `/etc/passwd` or `/etc/sudoers
 
 **Pattern (Canvas of Fear):** Index formula `y * width + x` in signed 32-bit int overflows to negative value, passing bounds check and writing backward into heap metadata. Use to corrupt adjacent chunk sizes/pointers, leak libc via unsorted bin, redirect a data pointer to `environ` for stack leak, then write ROP chain to main's return address. When binary is behind a web API, chain XSS → Fetch API → heap exploit, and inject `\n` in API parameters for command stacking via `sendline()`.
 
-See [advanced-exploits-2.md](advanced-exploits-2.md#signed-int-overflow--negative-oob-heap-write--xss-to-binary-pwn-bridge-midnight-2026) for full exploit chain, XSS bridge pattern, and RGB pixel write primitive.
+See [advanced-exploits-2.md](advanced-exploits-2.md#signed-int-overflow-to-negative-oob-heap-write--xss-to-binary-pwn-bridge-midnight-2026) for full exploit chain, XSS bridge pattern, and RGB pixel write primitive.
 
 ## Custom Shadow Stack Bypass via Pointer Overflow (Midnight 2026)
 
@@ -411,6 +444,14 @@ Format string leak defeats ASLR. SEH (Structured Exception Handler) overwrite wi
 ## SeDebugPrivilege → SYSTEM
 
 `SeDebugPrivilege` + Meterpreter `migrate -N winlogon.exe` -> SYSTEM. See [advanced-exploits-4.md](advanced-exploits-4.md#sedebugprivilege-to-system-rainbowtwo-htb).
+
+## mmap/munmap Size Mismatch UAF (0CTF 2017)
+
+Over-unmap via mmap(small)/munmap(large) destroys adjacent mappings. Thread stack fills gap, old buffer pointer becomes write-into-stack. Race-free UAF variant. See [advanced-exploits-4.md](advanced-exploits-4.md#mmapmunmap-size-mismatch-uaf-for-thread-stack-overlap-0ctf-2017).
+
+## strcspn Indirect Null Byte Injection (BSidesSF 2017)
+
+`strcspn(buf, "\r\n")` + null write truncates strings at injected newlines. Bypasses CGI null-byte filtering for path traversal. See [advanced-exploits-4.md](advanced-exploits-4.md#strcspn-as-indirect-null-byte-injection-bsidessf-2017).
 
 ## Useful Commands
 

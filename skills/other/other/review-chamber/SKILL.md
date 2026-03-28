@@ -1,6 +1,8 @@
 ---
 name: review-chamber
 description: Capture and retrieve PR review knowledge in project memory palaces.
+version: 1.7.1
+alwaysApply: false
 usage_patterns:
 - capture-review: After PR review completion, capture significant findings
 - search-decisions: Find past architectural decisions

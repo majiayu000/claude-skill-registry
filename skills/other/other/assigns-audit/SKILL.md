@@ -1,6 +1,6 @@
 ---
 name: lv:assigns
-description: "Diagnostic audit of LiveView socket assigns — inventories every assign with memory footprint estimates, detects missing temporary_assigns, finds unused assigns, and flags unbounded lists needing streams. Use when investigating LiveView memory bloat, auditing assign efficiency, or explicitly requested via /lv:assigns. NOT for general LiveView patterns or building features."
+description: "Diagnostic audit of LiveView socket assigns — inventories every assign with memory footprint estimates, detects missing temporary_assigns, finds unused assigns, and flags unbounded lists needing streams. Use when investigating LiveView memory bloat, auditing assign efficiency, or explicitly requested via /lv:assigns. NOT for broad LiveView patterns or building features."
 effort: medium
 argument-hint: path/to/live_view.ex
 allowed-tools: Read, Grep, Glob, Bash
@@ -16,6 +16,7 @@ Analyze LiveView socket assigns for memory efficiency, clarity, and best practic
 2. **Use temporary_assigns for transient data** - Flash messages, temp errors, notifications
 3. **Preload only needed fields** - Don't store full Ecto schemas when only needing subset
 4. **Initialize all assigns in mount** - Never access assigns that might not exist
+5. **NEVER modify assigns or code during audit** — this is a read-only diagnostic; report findings only
 
 ## Quick Audit Commands
 

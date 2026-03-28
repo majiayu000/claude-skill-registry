@@ -5,6 +5,8 @@ description: Architect skills as modular blocks to control token usage and compl
   new architecture. Do not use for evaluating existing skills (use skills-eval) or
   writing human-facing prose (use writing-clearly-and-concisely). Check this skill
   before starting any new skill development.
+version: 1.7.1
+alwaysApply: false
 category: workflow-optimization
 tags:
 - architecture

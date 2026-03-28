@@ -20,9 +20,9 @@ Configures MCP servers in Claude Code: installs npm packages, registers servers,
 | Direction | Content |
 |-----------|---------|
 | **Input** | OS info, `dry_run` flag, optional `runId`, optional `summaryArtifactPath` |
-| **Output** | Structured summary envelope with per-server status (`configured` / `added` / `updated` / `skipped` / `failed`) |
+| **Output** | Structured summary envelope with `payload.status` = `completed` / `skipped` / `error`, plus per-server outcomes in `changes` / `detail` |
 
-If `summaryArtifactPath` is provided, write the same summary JSON there. If not provided, return the summary inline and remain fully standalone.
+If `summaryArtifactPath` is provided, write the same summary JSON there. If not provided, return the summary inline and remain fully standalone. If `runId` is not provided, generate a standalone `run_id` before emitting the summary envelope.
 
 ---
 

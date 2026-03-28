@@ -4,6 +4,8 @@ description: 'Run git-workspace-review first to capture repo context. Use when R
   requires structural refresh, adding features to documentation, aligning readme with
   exemplar standards, improving project presentation. Do not use when updating inline
   docs - use doc-updates. DO NOT use when: consolidating ephemeral reports - use doc-consolidation.'
+version: 1.7.1
+alwaysApply: false
 category: artifact-generation
 tags:
 - readme
@@ -31,7 +33,6 @@ dependencies:
 - scribe:slop-detector
 - scribe:doc-generator
 ---
-
 # README Update Workflow
 
 ## When To Use

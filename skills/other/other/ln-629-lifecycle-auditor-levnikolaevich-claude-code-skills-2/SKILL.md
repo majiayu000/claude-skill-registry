@@ -9,6 +9,8 @@ license: MIT
 
 # Lifecycle Auditor (L3 Worker)
 
+**Type:** L3 Worker
+
 Specialized worker auditing application lifecycle and entry points.
 
 ## Purpose & Scope
@@ -31,10 +33,10 @@ Receives `contextStore` with tech stack, deployment type, codebase root, output_
 1) Parse context + output_dir
 2) Check lifecycle patterns (Layer 1: grep for SIGTERM, shutdown handlers, probes)
 3) Analyze context per candidate (Layer 2):
-   - Bootstrap order: read main file — trace actual init sequence, verify dependencies satisfied before use
-   - Graceful shutdown: read signal handlers — do they actually close all resources? Or just log and exit?
-   - Resource cleanup: read shutdown handler — are ALL opened resources (DB, Redis, queues) closed?
-   - Probes: check deployment config (Dockerfile, k8s manifests) — is this containerized?
+   - Bootstrap order: read main file -- trace actual init sequence, verify dependencies satisfied before use
+   - Graceful shutdown: read signal handlers -- do they actually close all resources? Or just log and exit?
+   - Resource cleanup: read shutdown handler -- are ALL opened resources (DB, Redis, queues) closed?
+   - Probes: check deployment config (Dockerfile, k8s manifests) -- is this containerized?
 4) Collect confirmed findings
 5) Calculate score
 6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/629-lifecycle.md` in single Write call
@@ -50,7 +52,7 @@ Receives `contextStore` with tech stack, deployment type, codebase root, output_
 **Severity:**
 - **HIGH:** Incorrect order causes startup failures
 
-**Recommendation:** Initialize in correct order: config → DB → routes → server
+**Recommendation:** Initialize in correct order: config -> DB -> routes -> server
 
 **Effort:** M (refactor startup)
 
@@ -112,11 +114,15 @@ Receives `contextStore` with tech stack, deployment type, codebase root, output_
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Write report to `{output_dir}/629-lifecycle.md` with `category: "Lifecycle"` and checks: bootstrap_order, graceful_shutdown, resource_cleanup, signal_handling, probes.
 
-Return summary to coordinator:
+Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 ```
-Report written: docs/project/.audit/ln-620/{YYYY-MM-DD}/629-lifecycle.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/629-lifecycle.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -143,7 +149,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated per `shared/references/audit_scoring.md`
 - [ ] Report written to `{output_dir}/629-lifecycle.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ---
 **Version:** 3.0.0

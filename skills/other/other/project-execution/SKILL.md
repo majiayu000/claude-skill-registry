@@ -9,6 +9,7 @@ tools_allowed: all
 category: workflow
 tags: [execution, implementation, progress-tracking, quality-gates, tdd]
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 2100
 progressive_loading: true
 references:

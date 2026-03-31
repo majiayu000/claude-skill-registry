@@ -22,6 +22,7 @@ tools:
 - Write
 - TodoWrite
 complexity: medium
+model_hint: standard
 estimated_tokens: 1800
 progressive_loading: true
 modules:

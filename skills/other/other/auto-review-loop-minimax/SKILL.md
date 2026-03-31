@@ -16,7 +16,7 @@ Autonomously iterate: review → implement fixes → re-review, until the extern
 - MAX_ROUNDS = 4
 - POSITIVE_THRESHOLD: score >= 6/10, or verdict contains "accept", "sufficient", "ready for submission"
 - REVIEW_DOC: `AUTO_REVIEW.md` in project root (cumulative log)
-- REVIEWER_MODEL = `MiniMax-M2.5` — Model used via MiniMax API
+- REVIEWER_MODEL = `MiniMax-M2.7` — Model used via MiniMax API
 
 ## API Configuration
 
@@ -30,7 +30,7 @@ If `mcp__minimax-chat__minimax_chat` is available, use it:
 mcp__minimax-chat__minimax_chat:
   prompt: |
     [Review prompt content]
-  model: "MiniMax-M2.5"
+  model: "MiniMax-M2.7"
   system: "You are a senior machine learning researcher..."
 ```
 
@@ -39,11 +39,11 @@ mcp__minimax-chat__minimax_chat:
 If MCP is not available, use curl directly:
 
 ```bash
-curl -s "https://api.minimax.chat/v1/chat/completions" \
+curl -s "https://api.minimax.io/v1/chat/completions" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $MINIMAX_API_KEY" \
   -d '{
-    "model": "MiniMax-M2.5",
+    "model": "MiniMax-M2.7",
     "messages": [
       {"role": "system", "content": "You are a senior ML researcher..."},
       {"role": "user", "content": "[Review prompt]"}
@@ -108,16 +108,16 @@ Send comprehensive context to the external reviewer.
 Use mcp__minimax-chat__minimax_chat tool with:
 - system: "You are a senior machine learning researcher serving as a reviewer for top-tier conferences like NeurIPS, ICML, and ICLR. Provide rigorous, constructive feedback."
 - prompt: [Full review prompt with context]
-- model: "MiniMax-M2.5"
+- model: "MiniMax-M2.7"
 ```
 
 **If MCP NOT available (Fallback):**
 ```bash
-curl -s "https://api.minimax.chat/v1/chat/completions" \
+curl -s "https://api.minimax.io/v1/chat/completions" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $MINIMAX_API_KEY" \
   -d '{
-    "model": "MiniMax-M2.5",
+    "model": "MiniMax-M2.7",
     "messages": [
       {
         "role": "system",
@@ -233,7 +233,7 @@ When loop ends (positive assessment or max rounds):
 **MCP Method (Primary):**
 ```
 mcp__minimax-chat__minimax_chat:
-  model: "MiniMax-M2.5"
+  model: "MiniMax-M2.7"
   system: "You are a senior machine learning researcher serving as a reviewer for top-tier conferences like NeurIPS, ICML, and ICLR. Provide rigorous, constructive feedback."
   prompt: |
     [Round N/MAX_ROUNDS of autonomous review loop]
@@ -265,11 +265,11 @@ mcp__minimax-chat__minimax_chat:
 
 **curl Fallback:**
 ```bash
-curl -s "https://api.minimax.chat/v1/chat/completions" \
+curl -s "https://api.minimax.io/v1/chat/completions" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $MINIMAX_API_KEY" \
   -d '{
-    "model": "MiniMax-M2.5",
+    "model": "MiniMax-M2.7",
     "messages": [
       {
         "role": "system",

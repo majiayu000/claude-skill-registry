@@ -4,6 +4,8 @@ description: 'Use this skill for systematic bug hunting with evidence trails. Us
   when deep bug hunting needed, documenting defects, verifying fixes, systematic debugging
   required. Do not use when test coverage audit - use test-review instead. DO NOT
   use when: architecture issues - use architecture-review.'
+version: 1.7.1
+alwaysApply: false
 category: code-review
 tags:
 - bugs
@@ -22,6 +24,7 @@ usage_patterns:
 - fix-preparation
 - verification-planning
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 450
 progressive_loading: true
 dependencies:

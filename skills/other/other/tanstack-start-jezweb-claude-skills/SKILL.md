@@ -19,11 +19,106 @@ Build a complete full-stack app from nothing. Claude generates every file — no
 | Auth | better-auth (Google OAuth + email/password) |
 | Deployment | Cloudflare Workers |
 
+## Project File Tree
+
+```
+PROJECT_NAME/
+├── src/
+│   ├── routes/
+│   │   ├── __root.tsx              # Root layout (HTML shell, theme, CSS import)
+│   │   ├── index.tsx               # Landing / auth redirect
+│   │   ├── login.tsx               # Login page
+│   │   ├── register.tsx            # Register page
+│   │   ├── _authed.tsx             # Auth guard layout route
+│   │   ├── _authed/
+│   │   │   ├── dashboard.tsx       # Dashboard with stat cards
+│   │   │   ├── items.tsx           # Items list table
+│   │   │   ├── items.$id.tsx       # Edit item
+│   │   │   └── items.new.tsx       # Create item
+│   │   └── api/
+│   │       └── auth/
+│   │           └── $.ts            # better-auth API catch-all
+│   ├── components/
+│   │   ├── ui/                     # shadcn/ui components (auto-installed)
+│   │   ├── app-sidebar.tsx         # Navigation sidebar
+│   │   ├── theme-toggle.tsx        # Light/dark/system toggle
+│   │   ├── user-nav.tsx            # User dropdown menu
+│   │   └── stat-card.tsx           # Dashboard stat card
+│   ├── db/
+│   │   ├── schema.ts               # Drizzle schema (all tables)
+│   │   └── index.ts                # Drizzle client factory
+│   ├── lib/
+│   │   ├── auth.server.ts          # better-auth server config
+│   │   ├── auth.client.ts          # better-auth React hooks
+│   │   └── utils.ts                # cn() helper for shadcn/ui
+│   ├── server/
+│   │   └── functions.ts            # Server functions (CRUD, auth checks)
+│   ├── styles/
+│   │   └── app.css                 # Tailwind v4 + shadcn/ui CSS variables
+│   ├── router.tsx                  # TanStack Router configuration
+│   ├── client.tsx                  # Client entry (hydrateRoot)
+│   ├── ssr.tsx                     # SSR entry
+│   └── routeTree.gen.ts            # Auto-generated route tree (do not edit)
+├── drizzle/                        # Generated migrations
+├── public/                         # Static assets (favicon, etc.)
+├── vite.config.ts
+├── wrangler.jsonc
+├── drizzle.config.ts
+├── tsconfig.json
+├── package.json
+├── .dev.vars                       # Local env vars (NOT committed)
+└── .gitignore
+```
+
+## Dependencies
+
+**Runtime:**
+```json
+{
+  "react": "^19.0.0",
+  "react-dom": "^19.0.0",
+  "@tanstack/react-router": "^1.120.0",
+  "@tanstack/react-start": "^1.120.0",
+  "drizzle-orm": "^0.38.0",
+  "better-auth": "^1.2.0",
+  "zod": "^3.24.0",
+  "class-variance-authority": "^0.7.0",
+  "clsx": "^2.1.0",
+  "tailwind-merge": "^3.0.0",
+  "lucide-react": "^0.480.0"
+}
+```
+
+**Dev:**
+```json
+{
+  "@cloudflare/vite-plugin": "^1.0.0",
+  "@tailwindcss/vite": "^4.0.0",
+  "@vitejs/plugin-react": "^4.4.0",
+  "tailwindcss": "^4.0.0",
+  "typescript": "^5.7.0",
+  "drizzle-kit": "^0.30.0",
+  "wrangler": "^4.0.0",
+  "tw-animate-css": "^1.2.0"
+}
+```
+
+**Scripts:**
+```json
+{
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "deploy": "wrangler deploy",
+  "db:generate": "drizzle-kit generate",
+  "db:migrate:local": "wrangler d1 migrations apply PROJECT_NAME-db --local",
+  "db:migrate:remote": "wrangler d1 migrations apply PROJECT_NAME-db --remote"
+}
+```
+
 ## Workflow
 
 ### Step 1: Gather Project Info
-
-Ask for:
 
 | Required | Optional |
 |----------|----------|
@@ -36,39 +131,93 @@ Ask for:
 
 Create the project directory and all config files from scratch.
 
-**See `references/architecture.md`** for the complete file tree, all dependencies, and config templates.
+**`vite.config.ts`** — Plugin order matters. Cloudflare MUST be first:
 
-Create these files first:
+```typescript
+import { defineConfig } from "vite";
+import { cloudflare } from "@cloudflare/vite-plugin";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import tailwindcss from "@tailwindcss/vite";
+import viteReact from "@vitejs/plugin-react";
 
-1. **`package.json`** — all runtime + dev dependencies with version ranges from architecture.md
-2. **`tsconfig.json`** — strict mode, `@/*` path alias mapped to `src/*`
-3. **`vite.config.ts`** — plugins in correct order: `cloudflare()` → `tailwindcss()` → `tanstackStart()` → `viteReact()`
-4. **`wrangler.jsonc`** — `main: "@tanstack/react-start/server-entry"`, `nodejs_compat` flag, D1 binding placeholder
-5. **`.dev.vars`** — generate `BETTER_AUTH_SECRET` with `openssl rand -hex 32`, set `BETTER_AUTH_URL=http://localhost:3000`, `TRUSTED_ORIGINS=http://localhost:3000`
-6. **`.gitignore`** — node_modules, .wrangler, dist, .output, .dev.vars, .vinxi, .DS_Store
-
-Then:
-
-```bash
-cd PROJECT_NAME
-pnpm install
+export default defineConfig({
+  plugins: [
+    cloudflare({ viteEnvironment: { name: "ssr" } }),
+    tailwindcss(),
+    tanstackStart(),
+    viteReact(),
+  ],
+});
 ```
 
-Create D1 database and update wrangler.jsonc:
+**`wrangler.jsonc`**:
+
+```jsonc
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "PROJECT_NAME",
+  "compatibility_date": "2025-04-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "@tanstack/react-start/server-entry",
+  "account_id": "ACCOUNT_ID",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "PROJECT_NAME-db",
+      "database_id": "DATABASE_ID",
+      "migrations_dir": "drizzle"
+    }
+  ]
+}
+```
+
+Key points: `main` MUST be `"@tanstack/react-start/server-entry"` (Nitro server entry). Use `nodejs_compat` (NOT `node_compat`). Add `account_id` to avoid interactive prompts.
+
+**`tsconfig.json`**:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "paths": { "@/*": ["./src/*"] },
+    "types": ["@cloudflare/workers-types/2023-07-01"]
+  },
+  "include": ["src/**/*", "vite.config.ts"]
+}
+```
+
+**`.dev.vars`** — generate `BETTER_AUTH_SECRET` with `openssl rand -hex 32`:
+
+```
+BETTER_AUTH_SECRET=<generated-hex-32>
+BETTER_AUTH_URL=http://localhost:3000
+TRUSTED_ORIGINS=http://localhost:3000
+# GOOGLE_CLIENT_ID=
+# GOOGLE_CLIENT_SECRET=
+```
+
+**`.gitignore`** — node_modules, .wrangler, dist, .output, .dev.vars, .vinxi, .DS_Store
+
+Then install and create the D1 database:
 
 ```bash
+cd PROJECT_NAME && pnpm install
 npx wrangler d1 create PROJECT_NAME-db
 # Copy the database_id into wrangler.jsonc d1_databases binding
 ```
 
 ### Step 3: Database Schema
 
-Create the Drizzle schema with D1-correct patterns.
-
-**`src/db/schema.ts`** — Define all tables:
-
-- **better-auth tables**: `users`, `sessions`, `accounts`, `verifications` — these are required by better-auth
-- **Application table**: `items` (or whatever the project needs) for CRUD demo
+**`src/db/schema.ts`** — All tables. better-auth requires: `users`, `sessions`, `accounts`, `verifications`. Add application tables (e.g. `items`) for CRUD demo.
 
 D1-specific rules:
 - Use `integer` for timestamps (Unix epoch), NOT Date objects
@@ -88,7 +237,7 @@ export function getDb() {
 }
 ```
 
-**CRITICAL**: Use `import { env } from "cloudflare:workers"` — NOT `process.env`. This is a per-request binding, so create the Drizzle client inside each server function, not at module level.
+**CRITICAL**: Use `import { env } from "cloudflare:workers"` — NOT `process.env`. Create the Drizzle client inside each server function (per-request), not at module level.
 
 **`drizzle.config.ts`**:
 
@@ -102,16 +251,6 @@ export default defineConfig({
 });
 ```
 
-Add migration scripts to `package.json`:
-
-```json
-{
-  "db:generate": "drizzle-kit generate",
-  "db:migrate:local": "wrangler d1 migrations apply PROJECT_NAME-db --local",
-  "db:migrate:remote": "wrangler d1 migrations apply PROJECT_NAME-db --remote"
-}
-```
-
 Generate and apply the initial migration:
 
 ```bash
@@ -121,7 +260,7 @@ pnpm db:migrate:local
 
 ### Step 4: Configure Auth
 
-**`src/lib/auth.server.ts`** — Server-side better-auth configuration:
+**`src/lib/auth.server.ts`** — Server-side better-auth:
 
 ```typescript
 import { betterAuth } from "better-auth";
@@ -145,7 +284,7 @@ export function getAuth() {
 }
 ```
 
-**CRITICAL**: `getAuth()` must be called per-request (inside handler/loader), NOT at module level. The `env` import from `cloudflare:workers` is only available during request handling.
+**CRITICAL**: `getAuth()` must be called per-request (inside handler/loader), NOT at module level.
 
 **`src/lib/auth.client.ts`** — Client-side auth hooks:
 
@@ -155,7 +294,7 @@ import { createAuthClient } from "better-auth/react";
 export const { useSession, signIn, signOut, signUp } = createAuthClient();
 ```
 
-**`src/routes/api/auth/$.ts`** — API catch-all route for better-auth:
+**`src/routes/api/auth/$.ts`** — API catch-all for better-auth:
 
 ```typescript
 import { createAPIFileRoute } from "@tanstack/react-start/api";
@@ -169,23 +308,124 @@ export const APIRoute = createAPIFileRoute("/api/auth/$")({
 
 **CRITICAL**: Auth MUST use an API route (`createAPIFileRoute`), NOT a server function (`createServerFn`). better-auth needs direct request/response access.
 
-### Step 5: App Shell + Theme
+### Step 5: Server Functions
 
-**`src/routes/__root.tsx`** — Root layout with HTML document:
+**Core pattern** — always create DB client inside the handler:
 
-- Render full HTML document with `<HeadContent />` and `<Scripts />` from `@tanstack/react-router`
-- Add `suppressHydrationWarning` on `<html>` for SSR + theme toggle compatibility
-- Import the global CSS file
-- Include theme initialisation script inline to prevent flash of wrong theme
+```typescript
+import { createServerFn } from "@tanstack/react-start";
+import { getDb } from "../db";
 
-**`src/styles/app.css`** — Tailwind v4 + shadcn/ui:
+export const getItems = createServerFn({ method: "GET" }).handler(async () => {
+  const db = getDb();
+  return db.select().from(items).all();
+});
+```
 
-- `@import "tailwindcss"` (v4 syntax)
-- CSS variables for shadcn/ui tokens in `:root` and `.dark`
-- Neutral/monochrome palette (stone, slate, zinc)
-- Use semantic tokens only — never raw Tailwind colours
+**Input validation** with Zod:
 
-**`src/router.tsx`** — Router configuration:
+```typescript
+export const createItem = createServerFn({ method: "POST" })
+  .inputValidator(
+    z.object({
+      name: z.string().min(1),
+      description: z.string().optional(),
+    })
+  )
+  .handler(async ({ data }) => {
+    const db = getDb();
+    const id = crypto.randomUUID();
+    await db.insert(items).values({ id, ...data, createdAt: Date.now() });
+    return { id };
+  });
+```
+
+**Protected server functions** — check auth, throw redirect if unauthenticated:
+
+```typescript
+import { redirect } from "@tanstack/react-router";
+import { getAuth } from "../lib/auth.server";
+
+async function requireSession(request?: Request) {
+  const auth = getAuth();
+  const session = await auth.api.getSession({
+    headers: request?.headers ?? new Headers(),
+  });
+  if (!session) {
+    throw redirect({ to: "/login" });
+  }
+  return session;
+}
+
+export const getSessionFn = createServerFn({ method: "GET" }).handler(
+  async ({ request }) => {
+    const auth = getAuth();
+    return auth.api.getSession({ headers: request.headers });
+  }
+);
+
+export const getItems = createServerFn({ method: "GET" }).handler(
+  async ({ request }) => {
+    const session = await requireSession(request);
+    const db = getDb();
+    return db.select().from(items).where(eq(items.userId, session.user.id)).all();
+  }
+);
+```
+
+**Route loader pattern** — server functions in route `loader`:
+
+```typescript
+export const Route = createFileRoute("/_authed/items")({
+  loader: () => getItems(),
+  component: ItemsPage,
+});
+
+function ItemsPage() {
+  const items = Route.useLoaderData();
+  return <div>{items.map((item) => <div key={item.id}>{item.name}</div>)}</div>;
+}
+```
+
+**Auth guard** (`_authed.tsx`) — use `beforeLoad`:
+
+```typescript
+export const Route = createFileRoute("/_authed")({
+  beforeLoad: async () => {
+    const session = await getSessionFn();
+    if (!session) {
+      throw redirect({ to: "/login" });
+    }
+    return { session };
+  },
+});
+```
+
+Child routes access session via `Route.useRouteContext()`.
+
+**Mutation + invalidation** — after mutations, invalidate router to refetch loaders:
+
+```typescript
+function CreateItemForm() {
+  const router = useRouter();
+  const handleSubmit = async (data: NewItem) => {
+    await createItem({ data });
+    router.invalidate();
+    router.navigate({ to: "/items" });
+  };
+  return <form onSubmit={...}>...</form>;
+}
+```
+
+**Type safety** — use Drizzle's `InferSelectModel` / `InferInsertModel` for server function input/output types. For auth failures, always use `throw redirect()` — not error responses.
+
+### Step 6: App Shell + Theme
+
+**`src/routes/__root.tsx`** — Root layout with full HTML document, `<HeadContent />` and `<Scripts />` from `@tanstack/react-router`. Add `suppressHydrationWarning` on `<html>` for SSR + theme toggle compatibility. Import global CSS. Include inline theme init script to prevent flash.
+
+**`src/styles/app.css`** — `@import "tailwindcss"` (v4 syntax), CSS variables for shadcn/ui tokens in `:root` and `.dark`, neutral/monochrome palette. Use semantic tokens only.
+
+**`src/router.tsx`**:
 
 ```typescript
 import { createRouter as createTanStackRouter } from "@tanstack/react-router";
@@ -202,66 +442,20 @@ declare module "@tanstack/react-router" {
 }
 ```
 
-**`src/client.tsx`** and **`src/ssr.tsx`** — Entry points (standard TanStack Start boilerplate).
+**`src/client.tsx`** and **`src/ssr.tsx`** — standard TanStack Start entry point boilerplate.
 
-Install shadcn/ui components needed for the dashboard:
+Install shadcn/ui (configure to use `src/components`):
 
 ```bash
 pnpm dlx shadcn@latest init --defaults
 pnpm dlx shadcn@latest add button card input label sidebar table dropdown-menu form separator sheet
 ```
 
-**Note**: Configure shadcn to use `src/components` as the components directory.
+**Theme toggle**: three-state (light -> dark -> system -> light). Store in localStorage. Apply `.dark` class on `<html>`. Use JS-only system preference detection — NO CSS `@media (prefers-color-scheme)` queries.
 
-Theme toggle: three-state (light → dark → system → light). Store preference in localStorage. Apply `.dark` class on `<html>`. Use JS-only system preference detection — NO CSS `@media (prefers-color-scheme)` queries.
-
-### Step 6: Routes + Dashboard
-
-Create the route files:
-
-```
-src/routes/
-├── __root.tsx           # Root layout (HTML shell, theme, CSS)
-├── index.tsx            # Landing → redirect to /dashboard if authenticated
-├── login.tsx            # Login form (email/password + Google OAuth button)
-├── register.tsx         # Registration form
-├── _authed.tsx          # Auth guard layout (beforeLoad checks session)
-└── _authed/
-    ├── dashboard.tsx    # Stat cards overview
-    ├── items.tsx        # Items list (table with actions)
-    ├── items.$id.tsx    # Edit item form
-    └── items.new.tsx    # Create item form
-```
-
-**Auth guard pattern** (`_authed.tsx`):
-
-```typescript
-import { createFileRoute, redirect } from "@tanstack/react-router";
-import { getSessionFn } from "../server/auth";
-
-export const Route = createFileRoute("/_authed")({
-  beforeLoad: async () => {
-    const session = await getSessionFn();
-    if (!session) {
-      throw redirect({ to: "/login" });
-    }
-    return { session };
-  },
-});
-```
-
-**Components** (in `src/components/`):
-
-- `app-sidebar.tsx` — shadcn Sidebar with navigation links (Dashboard, Items)
-- `theme-toggle.tsx` — three-state theme toggle button
-- `user-nav.tsx` — user dropdown menu with sign-out action
-- `stat-card.tsx` — reusable stat card for the dashboard
-
-**See `references/server-functions.md`** for `createServerFn` patterns used in route loaders and mutations.
+**Components** in `src/components/`: `app-sidebar.tsx` (navigation), `theme-toggle.tsx`, `user-nav.tsx` (dropdown with sign-out), `stat-card.tsx`.
 
 ### Step 7: CRUD Server Functions
-
-Create server functions for the items resource:
 
 | Function | Method | Purpose |
 |----------|--------|---------|
@@ -271,13 +465,7 @@ Create server functions for the items resource:
 | `updateItem` | POST | Update existing item |
 | `deleteItem` | POST | Delete item by ID |
 
-Each server function:
-1. Gets auth session (redirect if not authenticated)
-2. Creates per-request Drizzle client via `getDb()`
-3. Performs the database operation
-4. Returns typed data
-
-Route loaders call GET server functions. Mutations call POST server functions then `router.invalidate()` to refetch.
+Each server function: (1) gets auth session, (2) creates per-request Drizzle client via `getDb()`, (3) performs DB operation, (4) returns typed data. Route loaders call GET functions. Mutations call POST functions then `router.invalidate()`.
 
 ### Step 8: Verify Locally
 
@@ -285,52 +473,71 @@ Route loaders call GET server functions. Mutations call POST server functions th
 pnpm dev
 ```
 
-Verification checklist:
-
 - [ ] App loads at http://localhost:3000
 - [ ] Register a new account (email/password)
 - [ ] Login and logout work
-- [ ] Dashboard page loads with stat cards
-- [ ] Create a new item via /items/new
-- [ ] Items list shows the new item
-- [ ] Edit item via /items/:id
-- [ ] Delete item from the list
-- [ ] Theme toggle cycles: light → dark → system
-- [ ] Sidebar collapses on mobile viewports
+- [ ] Dashboard loads with stat cards
+- [ ] Create, list, edit, delete items
+- [ ] Theme toggle cycles: light -> dark -> system
+- [ ] Sidebar collapses on mobile
 - [ ] No console errors
 
 ### Step 9: Deploy to Production
 
+**Pre-deploy checklist:**
+- [ ] `wrangler.jsonc` has correct `account_id`
+- [ ] D1 database created and `database_id` set
+- [ ] `main` is `"@tanstack/react-start/server-entry"`
+- [ ] `nodejs_compat` in `compatibility_flags`
+- [ ] `.dev.vars` is in `.gitignore`
+- [ ] No hardcoded secrets in source
+
+**Set production secrets:**
+
 ```bash
-# Set production secrets
 openssl rand -hex 32 | npx wrangler secret put BETTER_AUTH_SECRET
 echo "https://PROJECT.SUBDOMAIN.workers.dev" | npx wrangler secret put BETTER_AUTH_URL
 echo "http://localhost:3000,https://PROJECT.SUBDOMAIN.workers.dev" | npx wrangler secret put TRUSTED_ORIGINS
+```
 
-# If using Google OAuth
+If using Google OAuth:
+```bash
 echo "your-client-id" | npx wrangler secret put GOOGLE_CLIENT_ID
 echo "your-client-secret" | npx wrangler secret put GOOGLE_CLIENT_SECRET
+```
 
-# Migrate remote database
+Add production redirect URI in Google Cloud Console: `https://PROJECT.SUBDOMAIN.workers.dev/api/auth/callback/google`
+
+**Migrate and deploy:**
+
+```bash
 pnpm db:migrate:remote
-
-# Build and deploy
 pnpm build && npx wrangler deploy
 ```
 
-**After first deploy**: Update `BETTER_AUTH_URL` with your actual Worker URL. Add production URL to Google OAuth redirect URIs: `https://your-app.workers.dev/api/auth/callback/google`.
+After first deploy: update `BETTER_AUTH_URL` with actual Worker URL, then redeploy.
 
-**See `references/deployment.md`** for the full production checklist and common mistakes.
+**Post-deploy verification:**
+- [ ] App loads at production URL
+- [ ] Auth login/register works
+- [ ] CRUD operations work
+- [ ] Theme persists across page loads
+
+**Custom domain** (optional): Add in Cloudflare Dashboard -> Workers -> Triggers -> Custom Domains. Update `BETTER_AUTH_URL` and `TRUSTED_ORIGINS` secrets with the custom domain. Update Google OAuth redirect URI. Redeploy.
 
 ## Common Issues
 
-| Symptom | Fix |
-|---------|-----|
-| `env` is undefined in server function | Use `import { env } from "cloudflare:workers"` — must be inside request handler, not module scope |
-| D1 database not found | Check wrangler.jsonc `d1_databases` binding name matches code |
-| Auth redirect loop | `BETTER_AUTH_URL` must match actual URL exactly (protocol + domain, no trailing slash) |
-| Auth silently fails (redirects to home) | Set `TRUSTED_ORIGINS` secret with all valid URLs (comma-separated) |
-| Styles not loading in dev | Ensure `@tailwindcss/vite` plugin is in vite.config.ts |
-| SSR hydration mismatch | Add `suppressHydrationWarning` to `<html>` element |
-| Build fails on Cloudflare | Check `nodejs_compat` in compatibility_flags, `main` field in wrangler.jsonc |
-| Secrets not taking effect | `wrangler secret put` does NOT redeploy — run `npx wrangler deploy` after |
+| Symptom | Cause | Fix |
+|---------|-------|-----|
+| `env` is undefined | Accessed at module level | Use `import { env } from "cloudflare:workers"` inside request handler only |
+| D1 database not found | Binding mismatch | Check `d1_databases` binding name in wrangler.jsonc matches code |
+| Auth redirect loop | URL mismatch | `BETTER_AUTH_URL` must match actual URL exactly (protocol + domain, no trailing slash) |
+| Auth silently fails | Missing origins | Set `TRUSTED_ORIGINS` secret with all valid URLs (comma-separated) |
+| Styles not loading | Missing plugin | Ensure `@tailwindcss/vite` plugin is in vite.config.ts |
+| SSR hydration mismatch | Theme flash | Add `suppressHydrationWarning` to `<html>` element |
+| Build fails on Cloudflare | Bad config | Check `nodejs_compat` flag and `main` field in wrangler.jsonc |
+| Secrets not taking effect | No redeploy | `wrangler secret put` does NOT redeploy — run `npx wrangler deploy` after |
+| Auth endpoints return 404 | Wrong route type | Use `createAPIFileRoute` (API route), not `createServerFn` for better-auth |
+| "redirect_uri_mismatch" | Missing URI | Add production URL to Google Cloud Console OAuth redirect URIs |
+| Cryptic Vite errors | Plugin order | Must be: `cloudflare()` -> `tailwindcss()` -> `tanstackStart()` -> `viteReact()` |
+| "Table not found" 500s | Missing migration | Run `pnpm db:migrate:remote` before deploying |

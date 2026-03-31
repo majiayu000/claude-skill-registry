@@ -83,6 +83,7 @@ If `summaryArtifactPath` is not provided:
 - Keep the worker standalone-capable.
 - Never require coordinator runtime state to operate.
 - Return machine-readable results, not prose-only outcomes.
+- **STOP before save_issue:** verify all 9 sections present in body: Story, Context, Acceptance Criteria, Implementation Tasks, Test Strategy, Technical Notes, Definition of Done, Dependencies, Assumptions. PreToolUse hook will BLOCK creation without them.
 
 ## Definition of Done
 

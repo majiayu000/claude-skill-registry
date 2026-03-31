@@ -5,6 +5,8 @@ description: 'Consult this skill when cultivating and maintaining digital garden
   bases, tending garden health and growth. Do not use when creating memory palace
   structures - use memory-palace-architect. DO NOT use when: evaluating new knowledge
   - use knowledge-intake.'
+version: 1.7.1
+alwaysApply: false
 category: cultivation
 tags:
 - digital-garden
@@ -21,6 +23,7 @@ usage_patterns:
 - knowledge-curation
 - content-lifecycle
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 500
 ---
 ## Table of Contents

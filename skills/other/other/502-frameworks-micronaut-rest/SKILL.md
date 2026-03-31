@@ -1,10 +1,10 @@
 ---
 name: 502-frameworks-micronaut-rest
-description: Use when you need to design, review, or improve REST APIs with Micronaut — including @Controller routes, HTTP status codes, DTOs, Bean Validation, exception handlers, pagination, idempotency, ETag/If-Match, caching headers, versioning, OpenAPI, and security annotations. Part of the skills-for-java project
+description: Use when you need to design, review, or improve REST APIs with Micronaut — including @Controller routes, HTTP status codes, DTOs, Bean Validation, exception handlers, pagination, idempotency, ETag/If-Match, caching headers, versioning, contract-first OpenAPI (OpenAPI Generator), optional runtime OpenAPI via micronaut-openapi, and security annotations. Part of the skills-for-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.13.0-SNAPSHOT
+  version: 0.13.0
 ---
 # Micronaut REST API Guidelines
 
@@ -17,7 +17,7 @@ Apply REST design principles for Micronaut HTTP applications.
 - @Valid on request bodies with Bean Validation
 - Centralized error mapping (ExceptionHandler / problem JSON when applicable)
 - Pagination with Pageable and bounded sizes
-- OpenAPI annotations (@Operation, @Tag)
+- OpenAPI contract file (API-first) and OpenAPI Generator for server stubs
 - Security annotations (@Secured) on sensitive routes
 - Idempotency-Key for retried writes
 - ETag / If-Match for optimistic concurrency
@@ -39,7 +39,7 @@ Compile before REST refactors; verify after.
 ## When to use this skill
 
 - Review or improve Micronaut @Controller REST APIs
-- Add validation, error handling, or OpenAPI documentation to Micronaut HTTP layer
+- Add validation, error handling, or align controllers with the OpenAPI contract on Micronaut HTTP layer
 
 ## Reference
 

@@ -25,6 +25,7 @@ usage_patterns:
 - cli-tool-development
 - library-distribution
 complexity: beginner
+model_hint: fast
 estimated_tokens: 200
 progressive_loading: true
 modules:

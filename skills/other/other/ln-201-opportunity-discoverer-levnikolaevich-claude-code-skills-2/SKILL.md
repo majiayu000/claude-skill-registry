@@ -8,6 +8,9 @@ license: MIT
 
 # Opportunity Discoverer
 
+**Type:** L3 Worker
+**Category:** 2XX Planning
+
 Traffic-First approach to finding next growth direction for existing product.
 
 ## Core Philosophy

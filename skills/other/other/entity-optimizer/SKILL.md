@@ -1,64 +1,80 @@
 ---
 name: entity-optimizer
-version: "4.0.0"
-description: 'Audit and build entity presence across Google Knowledge Graph, Wikidata, and AI systems for brand recognition and AI citations. Use when the user asks to "optimize entity presence", "build knowledge graph", "improve knowledge panel", "entity audit", "establish brand entity", "Google doesn''t know my brand", "no knowledge panel", "establish my brand as an entity". For structured data implementation, see schema-markup-generator. For content-level AI optimization, see geo-content-optimizer.'
+description: "Build entity presence in Knowledge Graph, Wikidata, AI systems for brand recognition and citations. \"Google doesn't know my brand\" / \"品牌搜不到\" / \"没有知识面板\". 实体优化/知识图谱/品牌实体 エンティティ 엔티티 entidad SEO"
+version: "5.1.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 metadata:
   author: aaron-he-zhu
-  version: "4.0.0"
+  version: "5.1.0"
   geo-relevance: "high"
   tags:
     - seo
     - geo
-    - entity optimization
-    - knowledge graph
-    - knowledge panel
-    - brand entity
-    - entity disambiguation
-    - wikidata
-    - structured entities
+    - entity-optimization
     - knowledge-graph
-    - google-knowledge-panel
-    - entity-seo
+    - knowledge-panel
     - brand-entity
-    - entity-recognition
-    - knowledge-base
-    - dbpedia
-    - brand-presence
+    - wikidata
+    - entity-disambiguation
+    - 实体优化
+    - エンティティ
+    - 엔티티
+    - entidad-seo
   triggers:
+    # EN-formal
     - "optimize entity presence"
     - "build knowledge graph"
     - "improve knowledge panel"
     - "entity audit"
     - "establish brand entity"
-    - "knowledge panel"
     - "entity disambiguation"
+    # EN-casual
     - "Google doesn't know my brand"
     - "no knowledge panel"
+    - "establish my brand"
     - "establish my brand as an entity"
+    - "get a Google knowledge card"
+    - "no Wikipedia entry"
+    # EN-question
+    - "how to get a knowledge panel"
+    - "how to build brand entity"
+    # ZH-pro
+    - "实体优化"
+    - "知识图谱"
+    - "品牌实体"
+    - "知识面板"
+    - "品牌词"
+    - "品牌词优化"
+    # ZH-casual
+    - "品牌搜不到"
+    - "没有知识面板"
+    - "Google不认识我的品牌"
+    # JA
+    - "エンティティ最適化"
+    - "ナレッジパネル"
+    # KO
+    - "엔티티 최적화"
+    - "지식 패널"
+    - "구글이 내 브랜드 모르는데?"
+    - "지식 패널 만들려면?"
+    # ES
+    - "optimización de entidad"
+    - "panel de conocimiento"
+    # PT
+    - "otimização de entidade"
+    # Misspellings
+    - "knowlege panel"
+    - "enity optimization"
 ---
 
 # Entity Optimizer
 
 
 > **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
+> **System Mode**: This cross-cutting skill is part of the protocol layer and follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
 
-<details>
-<summary>Browse all 20 skills</summary>
-
-**Research** · [keyword-research](../../research/keyword-research/) · [competitor-analysis](../../research/competitor-analysis/) · [serp-analysis](../../research/serp-analysis/) · [content-gap-analysis](../../research/content-gap-analysis/)
-
-**Build** · [seo-content-writer](../../build/seo-content-writer/) · [geo-content-optimizer](../../build/geo-content-optimizer/) · [meta-tags-optimizer](../../build/meta-tags-optimizer/) · [schema-markup-generator](../../build/schema-markup-generator/)
-
-**Optimize** · [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) · [technical-seo-checker](../../optimize/technical-seo-checker/) · [internal-linking-optimizer](../../optimize/internal-linking-optimizer/) · [content-refresher](../../optimize/content-refresher/)
-
-**Monitor** · [rank-tracker](../../monitor/rank-tracker/) · [backlink-analyzer](../../monitor/backlink-analyzer/) · [performance-reporter](../../monitor/performance-reporter/) · [alert-manager](../../monitor/alert-manager/)
-
-**Cross-cutting** · [content-quality-auditor](../content-quality-auditor/) · [domain-authority-auditor](../domain-authority-auditor/) · **entity-optimizer** · [memory-management](../memory-management/)
-
-</details>
 
 Audits, builds, and maintains entity identity across search engines and AI systems. Entities — the people, organizations, products, and concepts that search engines and AI systems recognize as distinct things — are the foundation of how both Google and LLMs decide *what a brand is* and *whether to cite it*.
 
@@ -67,8 +83,14 @@ Audits, builds, and maintains entity identity across search engines and AI syste
 - **SEO**: Google's Knowledge Graph powers Knowledge Panels, rich results, and entity-based ranking signals. A well-defined entity earns SERP real estate.
 - **GEO**: AI systems resolve queries to entities before generating answers. If an AI cannot identify an entity, it cannot cite it — no matter how good the content is.
 
-## When to Use This Skill
+**System role**: Canonical Entity Profile. It acts as the source of truth for entity identity, associations, and disambiguation across the library.
 
+## When This Must Trigger
+
+Use this when brand or entity identity needs to be established or verified — even if the user doesn't use entity terminology:
+
+- User says "Google doesn't know my brand" or "no knowledge panel"
+- Auto-recommended when `memory/entities/candidates.md` accumulates 3 or more uncanonized entity candidates from other skills
 - Establishing a new brand/person/product as a recognized entity
 - Auditing current entity presence across Knowledge Graph, Wikidata, and AI systems
 - Improving or correcting a Knowledge Panel
@@ -89,7 +111,9 @@ Audits, builds, and maintains entity identity across search engines and AI syste
 6. **Entity Building Plan**: Creates actionable plan to establish or strengthen entity presence
 7. **Disambiguation Strategy**: Resolves confusion with similarly-named entities
 
-## How to Use
+## Quick Start
+
+Start with one of these prompts. Finish with a canonical entity profile and a handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ### Entity Audit
 
@@ -121,9 +145,21 @@ My Knowledge Panel shows incorrect information — fix entity signals for [entit
 AI systems confuse [my entity] with [other entity] — help me disambiguate
 ```
 
+## Skill Contract
+
+**Expected output**: an entity audit, a canonical entity profile, and a short handoff summary ready for `memory/entities/`.
+
+- **Reads**: the entity name, primary domain, known profiles, topic associations, and prior brand context from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Writes**: a user-facing entity report plus a reusable profile that can be stored under `memory/entities/`.
+- **Promotes**: canonical names, sameAs links, disambiguation notes, and entity gaps to `CLAUDE.md`, `memory/entities/`, and `memory/open-loops.md`.
+
+This skill is the sole writer of canonical entity profiles at `memory/entities/<name>.md`. Other skills write entity candidates to `memory/entities/candidates.md` only. When 3+ candidates accumulate, this skill should be recommended.
+
+- **Next handoff**: use the `Next Best Skill` below once the entity truth is clear.
+
 ## Data Sources
 
-> See [CONNECTORS.md](../../CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~knowledge graph + ~~SEO tool + ~~AI monitor + ~~brand monitor connected:**
 Query Knowledge Graph API for entity status, pull branded search data from ~~SEO tool, test AI citation with ~~AI monitor, track brand mentions with ~~brand monitor.
@@ -186,7 +222,7 @@ Test how AI systems identify this entity by querying:
 
 ### Step 2: Entity Signal Audit
 
-Evaluate entity signals across 6 categories. For the detailed 47-signal checklist with verification methods, see [references/entity-signal-checklist.md](./references/entity-signal-checklist.md).
+Evaluate entity signals across 6 categories. For the detailed 47-signal checklist with verification methods, see [references/entity-signal-checklist.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/entity-optimizer/references/entity-signal-checklist.md).
 
 Evaluate each signal as Pass / Fail / Partial with a specific action for each gap. The 6 categories are:
 
@@ -197,7 +233,7 @@ Evaluate each signal as Pass / Fail / Partial with a specific action for each ga
 5. **Third-Party Entity Signals** -- Authoritative mentions, co-citation, reviews, press coverage
 6. **AI-Specific Entity Signals** -- Clear definitions, disambiguation, verifiable claims, crawlability
 
-> **Reference**: Use the audit template in [references/entity-signal-checklist.md](./references/entity-signal-checklist.md) for the full 47-signal checklist with verification methods for each category.
+> **Reference**: Use the audit template in [references/entity-signal-checklist.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/entity-optimizer/references/entity-signal-checklist.md) for the full 47-signal checklist with verification methods for each category.
 
 ### Step 3: Report & Action Plan
 
@@ -269,9 +305,23 @@ Sorted by: impact on entity recognition × effort required
 
 - **CORE-EEAT relevance**: Items A07 (Knowledge Graph Presence) and A08 (Entity Consistency) directly overlap — entity optimization strengthens Authority dimension
 - **CITE relevance**: CITE I01-I10 (Identity dimension) measures entity signals at domain level — entity optimization feeds these scores
-- For content-level audit: [content-quality-auditor](../content-quality-auditor/)
-- For domain-level audit: [domain-authority-auditor](../domain-authority-auditor/)
+- For content-level audit: `content-quality-auditor`
+- For domain-level audit: `domain-authority-auditor`
 ```
+
+### Save Results
+
+After delivering findings to the user, ask:
+
+> "Save these results for future sessions?"
+
+If yes, write a dated summary to the appropriate `memory/` path using filename `YYYY-MM-DD-<topic>.md` containing:
+- One-line verdict or headline finding
+- Top 3-5 actionable items
+- Open loops or blockers
+- Source data references
+
+If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09), also append a one-liner to `memory/hot-cache.md` without asking.
 
 ## Validation Checkpoints
 
@@ -293,7 +343,7 @@ Sorted by: impact on entity recognition × effort required
 
 ## Example
 
-> **Reference**: See [references/example-audit-report.md](./references/example-audit-report.md) for a complete example entity audit report for a B2B SaaS company (CloudMetrics), including AI entity resolution test results, entity health summary, top 3 priority actions, and CORE-EEAT/CITE cross-references.
+> **Reference**: See [references/example-audit-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/entity-optimizer/references/example-audit-report.md) for a complete example entity audit report for a B2B SaaS company (CloudMetrics), including AI entity resolution test results, entity health summary, top 3 priority actions, and CORE-EEAT/CITE cross-references.
 
 ## Tips for Success
 
@@ -307,25 +357,18 @@ Sorted by: impact on entity recognition × effort required
 
 ## Entity Type Reference
 
-> **Reference**: See [references/entity-type-reference.md](./references/entity-type-reference.md) for entity types with key signals, schemas, and disambiguation strategies by situation.
+> **Reference**: See [references/entity-type-reference.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/entity-optimizer/references/entity-type-reference.md) for entity types with key signals, schemas, and disambiguation strategies by situation.
 
 ## Knowledge Panel & Wikidata Optimization
 
-> **Reference**: See [references/knowledge-panel-wikidata-guide.md](./references/knowledge-panel-wikidata-guide.md) for Knowledge Panel claiming/editing, common issues and fixes, Wikidata entry creation, key properties by entity type, and AI entity resolution optimization.
+> **Reference**: See [references/knowledge-panel-wikidata-guide.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/entity-optimizer/references/knowledge-panel-wikidata-guide.md) for Knowledge Panel claiming/editing, common issues and fixes, Wikidata entry creation, key properties by entity type, and AI entity resolution optimization.
 
 ## Reference Materials
 
 Detailed guides for entity optimization:
-- [references/entity-signal-checklist.md](./references/entity-signal-checklist.md) — Complete signal checklist with verification methods
-- [references/knowledge-graph-guide.md](./references/knowledge-graph-guide.md) — Wikidata, Wikipedia, and Knowledge Graph optimization playbook
+- [references/entity-signal-checklist.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/entity-optimizer/references/entity-signal-checklist.md) — Complete signal checklist with verification methods
+- [references/knowledge-graph-guide.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/entity-optimizer/references/knowledge-graph-guide.md) — Wikidata, Wikipedia, and Knowledge Graph optimization playbook
 
-## Related Skills
+## Next Best Skill
 
-- [content-quality-auditor](../content-quality-auditor/) — CORE-EEAT items A07 (Knowledge Graph Presence) and A08 (Entity Consistency) directly relate
-- [domain-authority-auditor](../domain-authority-auditor/) — CITE I01-I10 (Identity dimension) measures entity signals at domain level
-- [schema-markup-generator](../../build/schema-markup-generator/) — Generate Organization, Person, Product, and other entity schema
-- [geo-content-optimizer](../../build/geo-content-optimizer/) — Entity signals feed AI citation probability
-- [competitor-analysis](../../research/competitor-analysis/) — Compare entity presence against competitors
-- [backlink-analyzer](../../monitor/backlink-analyzer/) — Branded backlinks strengthen entity signals
-- [performance-reporter](../../monitor/performance-reporter/) — Track branded search and Knowledge Panel metrics
-- [memory-management](../memory-management/) — Store entity audit results for tracking over time
+- **Primary**: [schema-markup-generator](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/schema-markup-generator/SKILL.md) — turn entity truth into machine-readable implementation.

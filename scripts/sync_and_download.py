@@ -483,6 +483,13 @@ async def download_skills(
     return stats
 
 
+def should_fail_on_empty_download(stats: dict) -> bool:
+    """Return True when the download pass produced only failures."""
+    downloaded = int(stats.get("downloaded", 0))
+    failed = int(stats.get("failed", 0))
+    return downloaded == 0 and failed > 0
+
+
 def main():
     parser = argparse.ArgumentParser(description="Sync and download Claude skills")
     parser.add_argument("--sync-only", action="store_true", help="Only sync index, don't download")
@@ -558,6 +565,11 @@ def main():
         default=0,
         help="Maximum pending skills to process during download (0 = no limit)",
     )
+    parser.add_argument(
+        "--fail-on-empty-download",
+        action="store_true",
+        help="Exit non-zero when download-only mode records failures but no successful downloads",
+    )
     args = parser.parse_args()
 
     # Paths
@@ -619,6 +631,12 @@ def main():
                 max_pending=args.max_pending,
             )
         )
+        if args.fail_on_empty_download and should_fail_on_empty_download(stats):
+            logger.error(
+                "Download gate triggered: downloaded=0 failed=%s; see failure_report.json for details",
+                stats["failed"],
+            )
+            raise SystemExit(1)
 
     elapsed = time.time() - start_time
 

@@ -1,7 +1,10 @@
 ---
 name: scope-coach
-description: This skill should be used when the user mentions "scope", "MVP", "minimum viable", "too much", "overwhelmed", "where do I start", "feature creep", "simplify", "cut scope", "what's essential", or when a conversation reveals expanding complexity, multiple possible approaches, or analysis paralysis. Counterbalances the tendency to over-analyse and over-build.
+description: Anti-scope-creep. Forces the question: what is the smallest thing that delivers value?
 user-invocable: false
+effort: low
+allowed-tools:
+  - Read
 ---
 
 # Scope Coach

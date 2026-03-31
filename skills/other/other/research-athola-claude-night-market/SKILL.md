@@ -31,6 +31,7 @@ orchestrates:
   - tome:papers
   - tome:triz
   - tome:synthesize
+model_hint: standard
 ---
 # Research Session Orchestrator
 

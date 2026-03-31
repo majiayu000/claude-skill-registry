@@ -29,6 +29,7 @@ usage_patterns:
 - algorithm-optimization
 - clean-code-enforcement
 complexity: advanced
+model_hint: deep
 estimated_tokens: 350
 progressive_loading: true
 dependencies:

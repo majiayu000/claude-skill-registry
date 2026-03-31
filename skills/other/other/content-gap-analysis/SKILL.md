@@ -1,66 +1,85 @@
 ---
 name: content-gap-analysis
-version: "4.0.0"
-description: 'Find content opportunities by identifying topics and keywords your competitors cover that you don''t. Use when the user asks to "find content gaps", "what am I missing", "topics to cover", "content opportunities", "what topics am I missing", "where are my content blind spots", "untapped topics", or "content strategy gaps". For broader competitive intelligence, see competitor-analysis. For general keyword discovery, see keyword-research.'
+description: "Find content gaps: topics and keywords competitors cover that you don't. Editorial calendar planning. \"What am I missing\" / \"缺什么内容\" / \"竞品写了什么\". 内容缺口/选题规划/内容机会 コンテンツギャップ 콘텐츠갭 brechas contenido"
+version: "5.1.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 metadata:
   author: aaron-he-zhu
-  version: "4.0.0"
+  version: "5.1.0"
   geo-relevance: "medium"
   tags:
     - seo
     - geo
-    - content gaps
-    - content opportunities
-    - topic analysis
-    - content strategy
-    - competitive content
     - content-gaps
-    - topic-gaps
-    - missing-content
-    - content-opportunities
-    - competitive-gap
-    - topic-coverage
-    - editorial-calendar
+    - topic-analysis
     - content-strategy
+    - editorial-calendar
+    - competitive-gap
+    - content-opportunities
+    - 内容缺口
+    - コンテンツギャップ
+    - 콘텐츠갭
+    - brechas-contenido
   triggers:
+    # EN-formal
     - "find content gaps"
+    - "content opportunities"
+    - "topic analysis"
+    - "content strategy gaps"
+    - "editorial calendar"
+    - "untapped topics"
+    # EN-casual
     - "what am I missing"
     - "topics to cover"
-    - "content opportunities"
     - "what do competitors write about"
-    - "untapped topics"
-    - "content strategy gaps"
-    - "what topics am I missing"
+    - "what should I cover next"
+    - "topics I haven't written about"
     - "they cover this but I don't"
-    - "where are my content blind spots"
+    # EN-question
+    - "what topics am I missing"
+    - "what content should I create"
+    # ZH-pro
+    - "内容缺口分析"
+    - "选题规划"
+    - "内容机会"
+    - "竞品话题"
+    # ZH-casual
+    - "缺什么内容"
+    - "竞品写了什么"
+    - "还应该写什么"
+    # JA
+    - "コンテンツギャップ"
+    - "コンテンツ機会"
+    # KO
+    - "콘텐츠 갭 분석"
+    - "콘텐츠 기회"
+    # ES
+    - "brechas de contenido"
+    - "oportunidades de contenido"
+    # PT
+    - "lacunas de conteúdo"
+    # Misspellings
+    - "content gab analysis"
 ---
 
 # Content Gap Analysis
 
 
 > **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
+> **System Mode**: This research skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
 
-<details>
-<summary>Browse all 20 skills</summary>
-
-**Research** · [keyword-research](../keyword-research/) · [competitor-analysis](../competitor-analysis/) · [serp-analysis](../serp-analysis/) · **content-gap-analysis**
-
-**Build** · [seo-content-writer](../../build/seo-content-writer/) · [geo-content-optimizer](../../build/geo-content-optimizer/) · [meta-tags-optimizer](../../build/meta-tags-optimizer/) · [schema-markup-generator](../../build/schema-markup-generator/)
-
-**Optimize** · [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) · [technical-seo-checker](../../optimize/technical-seo-checker/) · [internal-linking-optimizer](../../optimize/internal-linking-optimizer/) · [content-refresher](../../optimize/content-refresher/)
-
-**Monitor** · [rank-tracker](../../monitor/rank-tracker/) · [backlink-analyzer](../../monitor/backlink-analyzer/) · [performance-reporter](../../monitor/performance-reporter/) · [alert-manager](../../monitor/alert-manager/)
-
-**Cross-cutting** · [content-quality-auditor](../../cross-cutting/content-quality-auditor/) · [domain-authority-auditor](../../cross-cutting/domain-authority-auditor/) · [entity-optimizer](../../cross-cutting/entity-optimizer/) · [memory-management](../../cross-cutting/memory-management/)
-
-</details>
 
 Identifies content opportunities by analyzing gaps between a site's content and competitors'. Surfaces missing topics, untapped keywords, and content formats worth creating.
 
-## When to Use This Skill
+**System role**: Research layer skill. It turns market signals into reusable strategic inputs for the rest of the library.
+
+## When This Must Trigger
+
+Use this when the conversation involves any of these situations — even if the user does not use SEO terminology:
+
+Use this whenever the task needs reusable market intelligence that should influence strategy, not just an ad hoc answer.
 
 - Planning content strategy and editorial calendar
 - Finding quick-win content opportunities
@@ -80,7 +99,9 @@ Identifies content opportunities by analyzing gaps between a site's content and 
 6. **Priority Scoring**: Ranks gaps by impact and effort
 7. **Content Calendar Creation**: Plans gap-filling content schedule
 
-## How to Use
+## Quick Start
+
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ### Basic Gap Analysis
 
@@ -108,11 +129,20 @@ What [content type] do competitors have that I don't?
 What content gaps exist for [audience segment] in my niche?
 ```
 
+## Skill Contract
+
+**Expected output**: a prioritized research brief, evidence-backed findings, and a short handoff summary ready for `memory/research/`.
+
+- **Reads**: user goals, target market inputs, available tool data, and prior strategy from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Writes**: a user-facing research deliverable plus a reusable summary that can be stored under `memory/research/`.
+- **Promotes**: durable keyword priorities, competitor facts, entity candidates, and strategic decisions to `CLAUDE.md`, `memory/decisions.md`, and `memory/research/`; hand canonical entity work to `entity-optimizer`.
+- **Next handoff**: use the `Next Best Skill` below when the findings are ready to drive action.
+
 ## Data Sources
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
-> See [CONNECTORS.md](../../CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~SEO tool + ~~search console + ~~analytics + ~~AI monitor connected:**
 Automatically pull your site's content inventory from ~~search console and ~~analytics (indexed pages, traffic per page, keywords ranking), competitor content data from ~~SEO tool (ranking keywords, top pages, backlink counts), and AI citation patterns from ~~AI monitor. Keyword overlap analysis and gap identification can be automated.
@@ -178,7 +208,7 @@ When a user requests content gap analysis:
 
    Produce a final report with: Executive Summary, Prioritized Gap List (Tier 1 Quick Wins, Tier 2 Strategic Builds, Tier 3 Long-term), Content Calendar, and Success Metrics.
 
-   > **Reference**: See [references/analysis-templates.md](./references/analysis-templates.md) for detailed templates for each step.
+   > **Reference**: See [references/analysis-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/content-gap-analysis/references/analysis-templates.md) for detailed templates for each step.
 
 ## Validation Checkpoints
 
@@ -197,7 +227,7 @@ When a user requests content gap analysis:
 
 ## Example
 
-> **Reference**: See [references/example-report.md](./references/example-report.md) for a complete example analyzing SaaS marketing blog gaps vs. HubSpot and Drift.
+> **Reference**: See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/content-gap-analysis/references/example-report.md) for a complete example analyzing SaaS marketing blog gaps vs. HubSpot and Drift.
 
 ## Advanced Analysis
 
@@ -229,19 +259,27 @@ Find gaps in our [commercial/informational] intent content
 6. **Include GEO opportunities** - Don't just optimize for traditional search
 
 
+
+### Save Results
+
+After delivering findings to the user, ask:
+
+> "Save these results for future sessions?"
+
+If yes, write a dated summary to `memory/research/content-gap-analysis/YYYY-MM-DD-<topic>.md` containing:
+- One-line headline finding
+- Top 3-5 actionable items
+- Open loops or blockers
+- Source data references
+
+If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
+
 ## Reference Materials
 
-- [Analysis Templates](./references/analysis-templates.md) — Detailed templates for each analysis step (inventory, competitor content, keyword gaps, topic gaps, format gaps, GEO gaps, journey, prioritized report)
-- [Gap Analysis Frameworks](./references/gap-analysis-frameworks.md) — Content audit matrices, funnel mapping, and gap prioritization scoring methodologies
-- [Example Report](./references/example-report.md) — Complete example analyzing SaaS marketing blog gaps vs. HubSpot and Drift
+- [Analysis Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/content-gap-analysis/references/analysis-templates.md) — Detailed templates for each analysis step (inventory, competitor content, keyword gaps, topic gaps, format gaps, GEO gaps, journey, prioritized report)
+- [Gap Analysis Frameworks](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/content-gap-analysis/references/gap-analysis-frameworks.md) — Content audit matrices, funnel mapping, and gap prioritization scoring methodologies
+- [Example Report](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/content-gap-analysis/references/example-report.md) — Complete example analyzing SaaS marketing blog gaps vs. HubSpot and Drift
 
-## Related Skills
+## Next Best Skill
 
-- [keyword-research](../keyword-research/) — Deep-dive on gap keywords
-- [competitor-analysis](../competitor-analysis/) — Understand competitor strategies
-- [seo-content-writer](../../build/seo-content-writer/) — Create gap-filling content
-- [content-refresher](../../optimize/content-refresher/) — Refresh existing content to fill identified gaps
-- [internal-linking-optimizer](../../optimize/internal-linking-optimizer/) — Identify and fix internal linking gaps
-- [backlink-analyzer](../../monitor/backlink-analyzer/) — Analyze link gap opportunities
-- [memory-management](../../cross-cutting/memory-management/) — Track content gaps over time
-
+- **Primary**: [seo-content-writer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/SKILL.md) — turn missing topics into a draft or content roadmap.

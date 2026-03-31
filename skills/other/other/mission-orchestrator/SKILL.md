@@ -4,6 +4,8 @@ description: 'Unified lifecycle orchestrator for attune project development. Aut
   project state, selects mission type, routes through phases via Skill() delegation,
   and manages session recovery. Wraps brainstorm-specify-plan-execute into a single
   mission lifecycle.'
+version: 1.7.1
+alwaysApply: false
 category: workflow-orchestration
 tags:
 - mission
@@ -34,6 +36,7 @@ usage_patterns:
 - mission-resume
 - phase-routing
 complexity: advanced
+model_hint: deep
 estimated_tokens: 600
 progressive_loading: true
 modules:
@@ -41,6 +44,9 @@ modules:
 - modules/state-detection.md
 - modules/phase-routing.md
 - modules/mission-state.md
+references:
+- references/mission-charter.md
+- references/progress-report.md
 ---
 ## Table of Contents
 
@@ -89,9 +95,11 @@ Wraps the entire attune development lifecycle (brainstorm → specify → plan �
        a. Pre-phase validation (check prerequisites)
        b. Invoke Skill(attune:{phase-skill})
        c. Post-phase artifact check (verify output exists)
-       d. Update mission state
-       e. User checkpoint (skippable with --auto)
-       f. Error handling via leyline:damage-control
+       d. Post-phase backlog triage (create GitHub issues
+          for out-of-scope items after brainstorm/specify)
+       e. Update mission state
+       f. User checkpoint (skippable with --auto)
+       g. Error handling via leyline:damage-control
        |
 4. Completion
    All phases complete, final state saved
@@ -130,12 +138,45 @@ Missions persist state to `.attune/mission-state.json`. On resume:
 
 See `modules/mission-state.md` for the state schema and recovery protocol.
 
+## Mission Charter
+
+Define mission boundaries using the structured template from
+`references/mission-charter.md`. A Mission Charter specifies:
+
+- **Outcome**: What success looks like
+- **Success metric**: Measurable completion criteria
+- **Deadline**: Time boundary (session, date, or duration)
+- **Constraints**: Token/time budgets, forbidden actions
+- **Scope**: In-scope and out-of-scope areas
+- **Stop criteria**: Conditions that halt the mission
+
+See `references/mission-charter.md` for the full template and
+examples.
+
+## Progress Reports
+
+Track progress with structured checkpoints using
+`references/progress-report.md`. Generate reports at:
+
+- Phase boundaries (between brainstorm→specify→plan→execute)
+- Blocker identification
+- Risk escalation
+- Budget thresholds (50%, 75%, 90%)
+
+See `references/progress-report.md` for the template and
+checkpoint rhythm guidance.
+
 ## Module Reference
 
 - **mission-types.md**: Type definitions, auto-detection logic, custom types
 - **state-detection.md**: Artifact existence checks, quality validation, staleness
 - **phase-routing.md**: Phase execution protocol, transition hooks, error handling
 - **mission-state.md**: State schema, persistence, recovery protocol
+
+## Reference Modules
+
+- **mission-charter.md**: Structured mission definition template
+- **progress-report.md**: Checkpoint status report template
 
 ## Related Skills
 

@@ -10,7 +10,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 7XX Project Bootstrap
-**Parent:** ln-720-structure-migrator
 
 Universal seed data generator with two modes: MIGRATE (parse existing ORM schemas) or GENERATE (create from entity definitions). Outputs to any target format (C#, TypeScript, Python, JSON, SQL).
 

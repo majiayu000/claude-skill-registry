@@ -12,6 +12,7 @@ tags:
 tools:
 - WebSearch
 complexity: low
+model_hint: fast
 estimated_tokens: 400
 ---
 # Smart Sourcing

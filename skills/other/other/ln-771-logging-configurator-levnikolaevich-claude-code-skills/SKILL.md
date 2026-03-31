@@ -8,7 +8,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 7XX Project Bootstrap
-**Parent:** ln-770-crosscutting-setup
 
 Configures structured JSON logging for .NET and Python projects.
 

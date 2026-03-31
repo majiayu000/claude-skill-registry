@@ -9,6 +9,8 @@ description: 'Process external resources into actionable knowledge with evaluati
   Use when: user shares links to articles, papers, or external resources
 
   DO NOT use when: searching existing knowledge - use knowledge-locator.'
+version: 1.7.1
+alwaysApply: false
 category: governance
 tags:
 - knowledge-management
@@ -21,6 +23,7 @@ dependencies:
 - digital-garden-cultivator
 - leyline:evaluation-framework
 - leyline:storage-templates
+- leyline:document-conversion
 - scribe:slop-detector
 scripts: []
 usage_patterns:
@@ -28,6 +31,7 @@ usage_patterns:
 - knowledge-evaluation
 - application-routing
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 950
 ---
 ## Table of Contents
@@ -111,7 +115,7 @@ The act of sharing indicates the resource passed the user's own filter. Our job 
 When a user shares a link:
 
 ```
-1. FETCH    → Retrieve and parse the content
+1. FETCH    → Detect format, retrieve and convert content
 2. EVALUATE → Apply importance criteria
 3. DECIDE   → Storage location and application type
 4. STORE    → Create structured knowledge entry
@@ -121,6 +125,43 @@ When a user shares a link:
 8. APPLY    → Route to codebase or infrastructure updates
 9. PRUNE    → Identify displaced/outdated knowledge
 ```
+
+### Step 1: FETCH with Format Detection
+
+Before retrieving content, detect the source format from
+the URL or file path to choose the right retrieval method.
+
+**Web articles and blog posts** (default path):
+Use WebFetch to retrieve HTML content directly.
+No conversion needed.
+
+**Document URLs** (PDF, DOCX, PPTX, XLSX):
+Apply the `leyline:document-conversion` protocol.
+This tries the markitdown MCP tool first for high-quality
+markdown, then falls back to native Claude Code tools
+(Read for PDFs, etc.), then informs the user if the
+format is unsupported without markitdown.
+
+**Local files** (user shares a file path):
+Construct a `file://` URI from the absolute path and
+apply the `leyline:document-conversion` protocol.
+
+**Format detection heuristics:**
+
+| URL Pattern | Format | Retrieval |
+|-------------|--------|-----------|
+| `*.pdf`, `arxiv.org/pdf/*` | PDF | document-conversion |
+| `*.docx`, `*.doc` | Word | document-conversion |
+| `*.pptx`, `*.ppt` | PowerPoint | document-conversion |
+| `*.xlsx`, `*.xls` | Excel | document-conversion |
+| `*.epub` | E-book | document-conversion |
+| `drive.google.com/*` | Various | document-conversion |
+| Everything else | HTML/web | WebFetch (existing) |
+
+After retrieval (regardless of method), wrap the content
+in external content boundary markers per
+`leyline:content-sanitization` before proceeding to
+Step 2 (EVALUATE).
 
 ### Step 5: Scribe Validation (Required)
 
@@ -148,15 +189,27 @@ Agent(scribe:doc-verifier) "Verify docs/knowledge-corpus/[entry-name].md"
 
 ### Step 7: Discussion Promotion (Score 80+ Only)
 
-When the evaluation score is 80-100 (evergreen), follow
-`modules/discussion-promotion.md` to publish the entry
-to the "Knowledge" Discussion category.
+When the evaluation score is 80-100 (evergreen), you
+MUST execute the Discussion promotion workflow. If the
+score is below 80, skip this step entirely.
+
+**Execute these steps in order:**
+
+1. Read `modules/discussion-promotion.md` for the
+   full GraphQL workflow
+2. Tell the user: "This entry has reached evergreen
+   maturity. Publishing to GitHub Discussions. [Y/n]"
+3. If the user says "n", skip to Step 8 (APPLY)
+4. Run the `gh api graphql` commands from the module
+   to create or update a Discussion in the "Knowledge"
+   category
+5. Update the local corpus entry with `discussion_url`
 
 - If the entry already has a `discussion_url` field,
-  update the existing Discussion instead
-- If the user explicitly declines or promotion fails,
-  continue to Step 8 (APPLY)
-- If the score is below 80, skip this step entirely
+  update the existing Discussion instead of creating
+  a new one
+- If `gh` is unavailable or promotion fails, warn
+  the user and continue to Step 8 (APPLY)
 
 Publishing is the default for qualifying entries. It
 never blocks the intake workflow.

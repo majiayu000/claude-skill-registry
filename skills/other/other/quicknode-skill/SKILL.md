@@ -649,8 +649,10 @@ const ethBalance = await chains.ethereum.client.getBalance({ address: '0x...' })
 - **Hyperliquid**: https://www.quicknode.com/docs/hyperliquid
 - **Hyperliquid gRPC**: https://www.quicknode.com/docs/hyperliquid/grpc-api
 - **SQL Explorer**: https://www.quicknode.com/docs/sql-explorer
-- **SQL Explorer REST API**: https://www.quicknode.com/docs/sql-explorer/rest-api/overview
-- **Hyperliquid Queries**: https://www.quicknode.com/docs/sql-explorer/rest-api/hyperliquid-queries
+- **SQL Explorer REST API**: https://www.quicknode.com/docs/sql-explorer/using-rest-api
+- **Hyperliquid Queries**: - https://www.quicknode.com/docs/sql-explorer/hyperliquid-queries
+- **Schema Reference**: https://www.quicknode.com/docs/sql-explorer/schema-reference
+
 - **Key-Value Store**: https://www.quicknode.com/docs/key-value-store
 - **x402**: https://x402.quicknode.com
 - **MPP**: https://mpp.quicknode.com

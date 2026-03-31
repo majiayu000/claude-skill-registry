@@ -1,6 +1,8 @@
 ---
 name: gemini-delegation
 description: Gemini CLI delegation workflow implementing delegation-core for Google's
+version: 1.7.1
+alwaysApply: false
   Gemini models. Use when delegation-core selected Gemini, need Gemini's 1M+ token
   context window, batch processing required. Do not use when deciding which model
   to use (use delegation-core first), gemini CLI not installed.
@@ -20,6 +22,7 @@ usage_patterns:
 - large-context-analysis
 - batch-processing
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 600
 progressive_loading: true
 modules:

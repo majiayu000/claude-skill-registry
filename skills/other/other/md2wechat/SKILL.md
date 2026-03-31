@@ -15,6 +15,15 @@ Use `md2wechat` when the user wants to:
 - create image posts
 - write in creator styles or remove AI writing traces
 
+## Intent Routing
+
+Choose the command family before doing any publish action:
+
+- Use `convert` / `inspect` / `preview` when the user wants a standard WeChat article draft (`news`), HTML conversion, article metadata, article preview, or a draft that needs `--cover`.
+- Use `create_image_post` when the user says `小绿书`, `图文笔记`, `图片消息`, `newspic`, `多图帖子`, or asks to publish an image-first post rather than an article HTML draft.
+- Do not route `小绿书` / `图文笔记` requests to `convert --draft` just because the user also has a Markdown article. A Markdown file can still be the image source for `create_image_post -m article.md`.
+- Treat `convert --draft` and `create_image_post` as different publish targets, not interchangeable command variants.
+
 ## Defaults And Config
 
 - Assume `md2wechat` is already available on `PATH`.
@@ -46,6 +55,7 @@ Inspect a specific resource before using it:
 
 ```bash
 md2wechat providers show openrouter --json
+md2wechat providers show volcengine --json
 md2wechat themes show autumn-warm --json
 md2wechat prompts show cover-default --kind image --json
 md2wechat prompts show cover-hero --kind image --archetype cover --tag hero --json
@@ -54,6 +64,7 @@ md2wechat prompts render cover-default --kind image --var article_title='Example
 ```
 
 When choosing image presets, prefer the prompt metadata returned by `prompts show --json`, especially `primary_use_case`, `compatible_use_cases`, `recommended_aspect_ratios`, and `default_aspect_ratio`.
+When choosing an image model, prefer `providers show <name> --json` and read `supported_models` before hard-coding `--model`.
 
 ## Core Commands
 
@@ -88,6 +99,7 @@ Drafts and image posts:
 
 - `md2wechat create_draft draft.json`
 - `md2wechat test-draft article.html cover.jpg`
+- `md2wechat create_image_post --help`
 - `md2wechat create_image_post -t "Weekend Trip" --images photo1.jpg,photo2.jpg`
 - `md2wechat create_image_post -t "Travel Diary" -m article.md`
 - `echo "Daily check-in" | md2wechat create_image_post -t "Daily" --images pic.jpg`
@@ -123,7 +135,8 @@ Limits enforced by the CLI:
 Draft behavior:
 
 - If digest is still empty when creating a draft, the draft layer generates one from article HTML content with a 120-character fallback.
-- Creating a draft requires `--cover`.
+- Creating a draft requires either `--cover` or `--cover-media-id`.
+- `--cover` is a local image path contract for article drafts. `--cover-media-id` is for an existing WeChat permanent cover asset. Do not assume a WeChat URL or `mmbiz.qpic.cn` URL can be reused as `thumb_media_id`.
 - `inspect` is the source-of-truth command for resolved metadata, readiness, and checks.
 - `preview` v1 writes a standalone local HTML preview file. It does not start a workbench, write back to Markdown, upload images, or create drafts.
 - `convert --preview` is still the convert-path preview flag; it is not the same thing as the standalone `preview` command.
@@ -134,21 +147,14 @@ Draft behavior:
 ## Agent Rules
 
 - Start with discovery commands before committing to a provider, theme, or prompt.
+- Route by publish target first: article draft => `convert`; image post / 小绿书 / newspic => `create_image_post`.
 - Prefer the confirm-first flow for article work: `inspect` -> `preview` -> `convert` / `--draft`.
+- If the user says `小绿书`, `图文笔记`, `图片消息`, `newspic`, or asks for a multi-image post, prefer `create_image_post` even when the source content lives in Markdown.
 - Prefer `generate_cover` or `generate_infographic` over a raw `generate_image "prompt"` call when a bundled preset fits the task.
 - Validate config before any draft, publish, or image-post action.
 - If draft creation returns `45004`, check digest/summary/description before assuming the body content is too long.
 - If the user asks for AI conversion or style writing, be explicit that the CLI may return an AI request or prompt rather than final HTML or prose unless the workflow completes the external model step.
 - Do not perform draft creation, publishing, or remote image generation unless the user asked for it.
-
-## References
-
-- Theme examples and visual guidance: `references/themes.md`
-- WeChat draft and image-post API details: `references/wechat-api.md`
-- Markdown image syntax and AI placeholders: `references/image-syntax.md`
-- HTML conversion notes: `references/html-guide.md`
-- Writer-style workflow: `references/writing-guide.md`
-- Humanizer workflow: `references/humanizer.md`
 
 ## Safety And Transparency
 

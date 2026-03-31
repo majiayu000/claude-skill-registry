@@ -9,6 +9,8 @@ description: 'Serverless FaaS for event-driven workloads with minimal infrastruc
   Use when: workloads are event-driven with bursty traffic
 
   DO NOT use when: long-running processes or stateful operations required.'
+version: 1.7.1
+alwaysApply: false
 category: architectural-pattern
 tags:
 - architecture
@@ -26,9 +28,9 @@ usage_patterns:
 - event-driven-architectures
 - cost-optimization
 complexity: medium
+model_hint: standard
 estimated_tokens: 700
 ---
-
 # The Serverless Architecture Paradigm
 
 

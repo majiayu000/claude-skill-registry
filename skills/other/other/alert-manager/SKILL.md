@@ -1,68 +1,85 @@
 ---
 name: alert-manager
-version: "4.0.0"
-description: 'Set up automated monitoring and notifications for SEO ranking drops, traffic changes, technical issues, and competitor movements. Use when the user asks to "set up SEO alerts", "notify me when rankings drop", "traffic alerts", "watch competitor changes", "alert me if rankings drop", "notify me of traffic changes", "monitor rankings", or "watch my keywords for changes". For detailed rank analysis, see rank-tracker. For comprehensive reporting, see performance-reporter.'
+description: 'Automated SEO alerts: ranking drops, traffic changes, technical issues, competitor movements with notifications. "Alert if rankings drop" / "排名掉了提醒我" / "流量异常". SEO预警/排名监控/流量报警/自动提醒 アラート設定 알림설정 alertas SEO'
+version: "5.1.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 metadata:
   author: aaron-he-zhu
-  version: "4.0.0"
+  version: "5.1.0"
   geo-relevance: "low"
   tags:
     - seo
     - geo
-    - alerts
-    - monitoring
-    - ranking alerts
-    - traffic monitoring
-    - competitor alerts
-    - seo notifications
-    - proactive monitoring
-    - seo-monitoring
-    - ranking-drop-alert
-    - traffic-drop-alert
-    - technical-monitoring
     - seo-alerts
+    - ranking-alerts
+    - traffic-monitoring
+    - competitor-alerts
     - automated-monitoring
-    - threshold-alerts
     - anomaly-detection
+    - SEO预警
+    - SEOアラート
+    - SEO알림
+    - alertas-seo
   triggers:
+    # EN-formal
     - "set up SEO alerts"
     - "monitor rankings"
-    - "notify me when rankings drop"
-    - "traffic alerts"
-    - "watch competitor changes"
-    - "alert me"
     - "ranking notifications"
+    - "traffic alerts"
+    - "competitor alerts"
+    - "automated monitoring"
+    # EN-casual
+    - "notify me when rankings drop"
     - "alert me if rankings drop"
     - "notify me of traffic changes"
+    - "watch competitor changes"
     - "watch my keywords for changes"
+    - "alert me about changes"
+    # EN-question
+    - "how to monitor my rankings"
+    - "how to set up SEO alerts"
+    # ZH-pro
+    - "SEO预警"
+    - "排名监控"
+    - "流量报警"
+    - "竞品变动提醒"
+    # ZH-casual
+    - "排名掉了提醒我"
+    - "流量异常"
+    - "有变化通知我"
+    # JA
+    - "SEOアラート"
+    - "ランキング監視"
+    # KO
+    - "SEO 알림"
+    - "순위 모니터링"
+    # ES
+    - "alertas SEO"
+    - "monitoreo de rankings"
+    # PT
+    - "alertas de SEO"
+    # Misspellings
+    - "SEO allerts"
 ---
 
 # Alert Manager
 
 
 > **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
+> **System Mode**: This monitoring skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
 
-<details>
-<summary>Browse all 20 skills</summary>
-
-**Research** · [keyword-research](../../research/keyword-research/) · [competitor-analysis](../../research/competitor-analysis/) · [serp-analysis](../../research/serp-analysis/) · [content-gap-analysis](../../research/content-gap-analysis/)
-
-**Build** · [seo-content-writer](../../build/seo-content-writer/) · [geo-content-optimizer](../../build/geo-content-optimizer/) · [meta-tags-optimizer](../../build/meta-tags-optimizer/) · [schema-markup-generator](../../build/schema-markup-generator/)
-
-**Optimize** · [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) · [technical-seo-checker](../../optimize/technical-seo-checker/) · [internal-linking-optimizer](../../optimize/internal-linking-optimizer/) · [content-refresher](../../optimize/content-refresher/)
-
-**Monitor** · [rank-tracker](../rank-tracker/) · [backlink-analyzer](../backlink-analyzer/) · [performance-reporter](../performance-reporter/) · **alert-manager**
-
-**Cross-cutting** · [content-quality-auditor](../../cross-cutting/content-quality-auditor/) · [domain-authority-auditor](../../cross-cutting/domain-authority-auditor/) · [entity-optimizer](../../cross-cutting/entity-optimizer/) · [memory-management](../../cross-cutting/memory-management/)
-
-</details>
 
 Sets up proactive monitoring alerts for critical SEO and GEO metrics. Triggers notifications when rankings drop, traffic changes significantly, technical issues occur, or competitors make moves.
 
-## When to Use This Skill
+**System role**: Monitoring layer skill. It turns performance changes into deltas, alerts, and next actions.
+
+## When This Must Trigger
+
+Use this when the conversation involves any of these situations — even if the user does not use SEO terminology:
+
+Use this whenever the task needs time-aware change detection, escalation, or stakeholder-ready visibility.
 
 - Setting up SEO monitoring systems
 - Creating ranking drop alerts
@@ -82,7 +99,9 @@ Sets up proactive monitoring alerts for critical SEO and GEO metrics. Triggers n
 6. **Alert Response Plans**: Creates action plans for each alert type
 7. **Alert History**: Tracks alert patterns over time
 
-## How to Use
+## Quick Start
+
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ### Set Up Alerts
 
@@ -110,11 +129,20 @@ Set up competitor monitoring for [competitor domains]
 Review and optimize my current SEO alerts
 ```
 
+## Skill Contract
+
+**Expected output**: a delta summary, alert/report output, and a short handoff summary ready for `memory/monitoring/`.
+
+- **Reads**: current metrics, previous baselines, alert thresholds, and reporting context from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Writes**: a user-facing monitoring deliverable plus a reusable summary that can be stored under `memory/monitoring/`.
+- **Promotes**: significant changes, confirmed anomalies, and follow-up actions to `memory/open-loops.md` and `memory/decisions.md`.
+- **Next handoff**: use the `Next Best Skill` below when a change needs action.
+
 ## Data Sources
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
-> See [CONNECTORS.md](../../CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~SEO tool + ~~search console + ~~web crawler connected:**
 Automatically monitor real-time metric feeds for ranking changes via ~~SEO tool API, indexing and coverage alerts from ~~search console, and technical health alerts from ~~web crawler. Set up automated threshold-based alerts with notification delivery.
@@ -158,7 +186,7 @@ When a user requests alert setup:
 
    For each relevant category (Rankings, Traffic, Technical, Backlinks, Competitors, GEO/AI, Brand), define alert name, trigger condition, threshold, and priority level.
 
-   > **Reference**: See [references/alert-configuration-templates.md](./references/alert-configuration-templates.md) for complete alert tables, threshold examples, and response plan templates for all 7 categories.
+   > **Reference**: See [references/alert-configuration-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/references/alert-configuration-templates.md) for complete alert tables, threshold examples, and response plan templates for all 7 categories.
 
 3. **Define Alert Response Plans**
 
@@ -281,18 +309,27 @@ When a user requests alert setup:
 | AI citation loss | Any key query | >20% queries | Weekly |
 | Security issues | Any detected | Any detected | Daily |
 
-> **Reference**: See [references/alert-threshold-guide.md](./references/alert-threshold-guide.md) for baseline establishment, threshold setting methodology, fatigue prevention, escalation paths, and response playbooks.
+> **Reference**: See [references/alert-threshold-guide.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/references/alert-threshold-guide.md) for baseline establishment, threshold setting methodology, fatigue prevention, escalation paths, and response playbooks.
+
+
+### Save Results
+
+After delivering monitoring data or reports to the user, ask:
+
+> "Save these results for future sessions?"
+
+If yes, write a dated summary to `memory/monitoring/YYYY-MM-DD-<topic>.md` containing:
+- One-line headline finding or status change
+- Top 3-5 actionable items
+- Open loops or anomalies requiring follow-up
+- Source data references
+
+If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
 
 ## Reference Materials
 
-- [Alert Threshold Guide](./references/alert-threshold-guide.md) — Recommended thresholds by metric, fatigue prevention strategies, and escalation path templates
+- [Alert Threshold Guide](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/references/alert-threshold-guide.md) — Recommended thresholds by metric, fatigue prevention strategies, and escalation path templates
 
-## Related Skills
+## Next Best Skill
 
-- [rank-tracker](../rank-tracker/) — Ranking data for alerts
-- [backlink-analyzer](../backlink-analyzer/) — Backlink monitoring
-- [technical-seo-checker](../../optimize/technical-seo-checker/) — Technical monitoring
-- [performance-reporter](../performance-reporter/) — Alert summaries in reports
-- [memory-management](../../cross-cutting/memory-management/) — Store alert history and thresholds in project memory
-- [content-refresher](../../optimize/content-refresher/) — Content decay alerts trigger refresh workflows
-
+- **Primary**: [rank-tracker](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/rank-tracker/SKILL.md) — pair alerts with a baseline measurement workflow.

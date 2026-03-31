@@ -1,13 +1,13 @@
 ---
 name: meta-tags-optimizer
-version: "4.0.0"
-description: 'Create and optimize title tags, meta descriptions, Open Graph tags, and Twitter cards for maximum click-through rates. Use when the user asks to "optimize title tag", "write meta description", "improve CTR", "Open Graph tags", "social media preview", "fix my meta tags", or "OG tags not showing". Produces optimized meta tags with character counting, A/B test variations, and CTR analysis. For a broader on-page audit, see on-page-seo-auditor. For structured data markup, see schema-markup-generator.'
+description: 'Optimize title tags, meta descriptions, Open Graph, Twitter cards for maximum CTR with A/B variations. "Click rate is low" / "点击率太低" / "标题不好". 标题优化/元描述/OG标签/CTR メタタグ最適化/CTR改善 메타태그최적화 meta tags SEO'
+version: "5.1.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 metadata:
   author: aaron-he-zhu
-  version: "4.0.0"
+  version: "5.1.0"
   geo-relevance: "low"
   tags:
     - seo
@@ -16,9 +16,15 @@ metadata:
     - meta-description
     - open-graph
     - twitter-card
-    - ctr
+    - ctr-optimization
     - social-sharing
+    - 标题优化
+    - 元描述
+    - メタタグ
+    - 메타태그
+    - meta-tags-seo
   triggers:
+    # EN-formal
     - "optimize title tag"
     - "write meta description"
     - "improve CTR"
@@ -26,34 +32,68 @@ metadata:
     - "social media preview"
     - "title optimization"
     - "meta tags"
+    - "Twitter cards"
+    # EN-casual
     - "my title tag needs work"
     - "low click-through rate"
     - "fix my meta tags"
     - "OG tags not showing"
+    - "social preview looks wrong"
+    - "my click rate is low"
+    # EN-question
+    - "how to write a good title tag"
+    - "how to improve click-through rate"
+    - "what is a good meta description"
+    # EN-competitor
+    - "Yoast SEO title tool"
+    - "RankMath title optimizer"
+    # ZH-pro
+    - "标题标签优化"
+    - "元描述优化"
+    - "OG标签"
+    - "点击率提升"
+    - "社交预览"
+    - "TDK优化"
+    # ZH-casual
+    - "标题不好"
+    - "点击率太低"
+    - "社交分享预览不对"
+    - "标题怎么写"
+    - "TDK怎么写"
+    # JA
+    - "メタタグ最適化"
+    - "タイトルタグ"
+    - "CTR改善"
+    # KO
+    - "메타 태그 최적화"
+    - "제목 태그"
+    - "클릭률 개선"
+    # ES
+    - "optimizar meta tags"
+    - "mejorar CTR"
+    - "etiquetas Open Graph"
+    # PT
+    - "otimizar meta tags"
+    # Misspellings
+    - "meta discription"
+    - "tittle tag"
 ---
 
 # Meta Tags Optimizer
 
 > **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
+> **System Mode**: This build skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
 
-<details>
-<summary>Browse all 20 skills</summary>
-
-**Research** · [keyword-research](../../research/keyword-research/) · [competitor-analysis](../../research/competitor-analysis/) · [serp-analysis](../../research/serp-analysis/) · [content-gap-analysis](../../research/content-gap-analysis/)
-
-**Build** · [seo-content-writer](../seo-content-writer/) · [geo-content-optimizer](../geo-content-optimizer/) · **meta-tags-optimizer** · [schema-markup-generator](../schema-markup-generator/)
-
-**Optimize** · [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) · [technical-seo-checker](../../optimize/technical-seo-checker/) · [internal-linking-optimizer](../../optimize/internal-linking-optimizer/) · [content-refresher](../../optimize/content-refresher/)
-
-**Monitor** · [rank-tracker](../../monitor/rank-tracker/) · [backlink-analyzer](../../monitor/backlink-analyzer/) · [performance-reporter](../../monitor/performance-reporter/) · [alert-manager](../../monitor/alert-manager/)
-
-**Cross-cutting** · [content-quality-auditor](../../cross-cutting/content-quality-auditor/) · [domain-authority-auditor](../../cross-cutting/domain-authority-auditor/) · [entity-optimizer](../../cross-cutting/entity-optimizer/) · [memory-management](../../cross-cutting/memory-management/)
-
-</details>
 
 This skill creates compelling, optimized meta tags that improve click-through rates from search results and enhance social media sharing. It covers title tags, meta descriptions, and social meta tags.
 
-## When to Use This Skill
+**System role**: Build layer skill. It turns briefs and signals into assets that other skills can review, publish, and monitor.
+
+## When This Must Trigger
+
+Use this when the conversation involves any of these situations — even if the user does not use SEO terminology:
+
+Use this whenever the task needs a shippable asset or transformation that should feed directly into quality review, deployment, or monitoring.
 
 - Creating meta tags for new pages
 - Optimizing existing meta tags for better CTR
@@ -73,7 +113,9 @@ This skill creates compelling, optimized meta tags that improve click-through ra
 6. **Character Counting**: Ensures proper length for SERP display
 7. **A/B Test Suggestions**: Provides variations for testing
 
-## How to Use
+## Quick Start
+
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ### Create Meta Tags
 
@@ -97,9 +139,18 @@ Improve these meta tags for better CTR: [current tags]
 Create Open Graph and Twitter card tags for [page/URL]
 ```
 
+## Skill Contract
+
+**Expected output**: a ready-to-use asset or implementation-ready transformation plus a short handoff summary ready for `memory/content/`.
+
+- **Reads**: the brief, target keywords, entity inputs, quality constraints, and prior decisions from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Writes**: a user-facing content, metadata, or schema deliverable plus a reusable summary that can be stored under `memory/content/`.
+- **Promotes**: approved angles, messaging choices, missing evidence, and publish blockers to `CLAUDE.md`, `memory/decisions.md`, and `memory/open-loops.md`.
+- **Next handoff**: use the `Next Best Skill` below when the asset is ready for review or deployment.
+
 ## Data Sources
 
-> See [CONNECTORS.md](../../CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~search console + ~~SEO tool connected:**
 Automatically pull current meta tags, CTR data by query, competitor title/description patterns, SERP preview data, and impression/click metrics to identify optimization opportunities.
@@ -222,11 +273,11 @@ When a user requests meta tag optimization:
 
    Generate OG tags (og:type, og:url, og:title, og:description, og:image), Twitter Card tags, canonical URL, robots, viewport, author, and article-specific tags. Then combine into a complete meta tag block.
 
-   > **Reference**: See [references/meta-tag-code-templates.md](./references/meta-tag-code-templates.md) for OG type selection guide, Twitter card type selection, all HTML code templates, and the complete meta tag block template.
+   > **Reference**: See [references/meta-tag-code-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/meta-tags-optimizer/references/meta-tag-code-templates.md) for OG type selection guide, Twitter card type selection, all HTML code templates, and the complete meta tag block template.
 
 5. **CORE-EEAT Alignment Check**
 
-   Verify meta tags align with content quality standards. Reference: [CORE-EEAT Benchmark](../../references/core-eeat-benchmark.md)
+   Verify meta tags align with content quality standards. Reference: [CORE-EEAT Benchmark](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md)
 
    ```markdown
    ### CORE-EEAT Meta Tag Alignment
@@ -314,7 +365,7 @@ When a user requests meta tag optimization:
 **Keyword**: Included naturally ✅
 **CTA**: "Start podcasting today!" ✅
 
-_Complete meta tag block (with OG, Twitter, Article tags) generated using template from [references/meta-tag-code-templates.md](./references/meta-tag-code-templates.md)._
+_Complete meta tag block (with OG, Twitter, Article tags) generated using template from [references/meta-tag-code-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/meta-tags-optimizer/references/meta-tag-code-templates.md)._
 
 ### A/B Test Variations
 
@@ -337,15 +388,28 @@ _Complete meta tag block (with OG, Twitter, Article tags) generated using templa
 5. **Update regularly** - Add current year, refresh messaging
 6. **Check competitors** - See what's working in your SERP
 
+
+### Save Results
+
+After delivering content or optimization output to the user, ask:
+
+> "Save these results for future sessions?"
+
+If yes, write a dated summary to `memory/content/YYYY-MM-DD-<topic>.md` containing:
+- One-line description of what was created
+- Target keyword and content type
+- Open loops or items needing review
+- Source data references
+
+**Gate check recommended**: Run content-quality-auditor before publishing (PostToolUse hook will remind automatically).
+
+If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
+
 ## Reference Materials
 
-- [Meta Tag Formulas](./references/meta-tag-formulas.md) — Proven title and description formulas
-- [CTR and Social Reference](./references/ctr-and-social-reference.md) — Page-type templates, CTR data, OG best practices
+- [Meta Tag Formulas](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/meta-tags-optimizer/references/meta-tag-formulas.md) — Proven title and description formulas
+- [CTR and Social Reference](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/meta-tags-optimizer/references/ctr-and-social-reference.md) — Page-type templates, CTR data, OG best practices
 
-## Related Skills
+## Next Best Skill
 
-- [seo-content-writer](../seo-content-writer/) — Create content for meta tags
-- [schema-markup-generator](../schema-markup-generator/) — Add structured data
-- [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) — Audit all meta tags
-- [serp-analysis](../../research/serp-analysis/) — Analyze competitor meta tags
-
+- **Primary**: [schema-markup-generator](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/schema-markup-generator/SKILL.md) — complete the SERP packaging with structured data.

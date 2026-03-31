@@ -35,6 +35,7 @@ usage_patterns:
 - dynamic-module-selection
 - token-budget-management
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 800
 progressive_loading: true
 modules:

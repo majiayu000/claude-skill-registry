@@ -10,6 +10,7 @@ tags: [checkpoint, embedded, escalation, reversibility, inline]
 dependencies:
   - attune:war-room
 complexity: lightweight
+model_hint: fast
 estimated_tokens: 400
 progressive_loading: false
 ---

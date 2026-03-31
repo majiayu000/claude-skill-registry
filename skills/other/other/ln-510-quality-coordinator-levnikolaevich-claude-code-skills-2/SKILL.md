@@ -205,7 +205,12 @@ Skill(skill: "ln-514-test-log-analyzer", args: "review logs since test run start
 Execute per `shared/references/agent_review_workflow.md` "Step: Iterative Refinement".
 
 1) **Artifact:** Changed files from Story scope (post-Phase 9 merge state)
-2) **Loop (max 5 iterations):** Build prompt → send to Codex (foreground) → parse → AGREE/REJECT each suggestion → apply accepted → repeat until APPROVED or max
+2) **Loop (max 5 iterations):**
+   - Build prompt → send to Codex (foreground)
+   - **Kill Codex process** (`--verify-dead {pid}`) after each call
+   - Parse → **Architecture Gate** (reject backward-compat shims) → AGREE/REJECT each suggestion → apply accepted
+   - Quality-based exit: loop continues while MEDIUM/HIGH suggestions exist
+   - Synchronous Codex calls may take 5-15 minutes per iteration — this is expected
 3) **Display:** `"Iterative Refinement: {N} iterations, {total} suggestions, {applied} applied, exit: {reason}"`
 4) **Persist:** `.hex-skills/agent-review/refinement/`, append to `review_history.md`
 5) Checkpoint refinement summary in review runtime
@@ -333,7 +338,7 @@ Write `.hex-skills/runtime-artifacts/runs/{run_id}/story-quality/{story_id}.json
 - [ ] ln-512 invoked (or skipped if --fast-track), tech debt cleanup results returned
 - [ ] Agent review runtime started and Phase 4 launch checkpoint recorded
 - [ ] Agent review executed inline (or skipped if --fast-track), results merged in Phase 9
-- [ ] Agent process trees verified dead after results collection (Phase 9)
+- [ ] All Codex/Gemini processes verified dead after Phase 9 merge AND after each Phase 10 iteration (no orphaned processes)
 - [ ] Criteria Validation completed (3 checks)
 - [ ] Linters executed
 - [ ] ln-513 invoked, regression results returned

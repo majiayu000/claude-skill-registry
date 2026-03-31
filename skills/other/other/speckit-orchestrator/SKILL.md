@@ -5,6 +5,8 @@ description: 'Workflow orchestrator for Spec Driven Development. Coordinates ski
 
 
   speckit workflow, spec driven development, speckit commands.'
+version: 1.7.1
+alwaysApply: false
 category: workflow-orchestration
 tags:
 - speckit
@@ -29,6 +31,7 @@ usage_patterns:
 - progress-tracking
 - skill-loading
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 1500
 ---
 ## Table of Contents

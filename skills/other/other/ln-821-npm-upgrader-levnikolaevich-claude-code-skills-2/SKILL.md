@@ -10,7 +10,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 8XX Optimization
-**Parent:** ln-820-dependency-optimization-coordinator
 
 Upgrades Node.js dependencies using npm, yarn, or pnpm with automatic breaking change detection and migration.
 

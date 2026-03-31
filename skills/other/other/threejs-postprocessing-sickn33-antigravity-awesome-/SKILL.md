@@ -521,24 +521,45 @@ function animate() {
 }
 ```
 
-## WebGPU Post-Processing (Three.js r150+)
+## WebGPU Post-Processing (Three.js r183)
+
+The WebGPU renderer uses a node-based `PostProcessing` class instead of `EffectComposer`. Note that `EffectComposer` is **WebGL-only**.
 
 ```javascript
-import { postProcessing } from "three/addons/nodes/Nodes.js";
-import { pass, bloom, dof } from "three/addons/nodes/Nodes.js";
+import * as THREE from "three";
+import { pass, bloom, dof } from "three/tsl";
+import { WebGPURenderer } from "three/addons/renderers/webgpu/WebGPURenderer.js";
 
-// Using node-based system
-const scenePass = pass(scene, camera);
-const bloomNode = bloom(scenePass, 0.5, 0.4, 0.85);
+const renderer = new WebGPURenderer({ antialias: true });
+await renderer.init();
 
+// Create post-processing
 const postProcessing = new THREE.PostProcessing(renderer);
-postProcessing.outputNode = bloomNode;
+
+// Scene pass
+const scenePass = pass(scene, camera);
+
+// Add bloom
+const bloomPass = bloom(scenePass, 0.5, 0.4, 0.85);
+
+// Set output
+postProcessing.outputNode = bloomPass;
 
 // Render
-function animate() {
+renderer.setAnimationLoop(() => {
   postProcessing.render();
-}
+});
 ```
+
+### Key Differences from EffectComposer
+
+| EffectComposer (WebGL)          | PostProcessing (WebGPU)          |
+| ------------------------------- | -------------------------------- |
+| `addPass(new RenderPass(...))`  | `pass(scene, camera)`            |
+| `addPass(new UnrealBloomPass)` | `bloom(scenePass, ...)`          |
+| `composer.render()`             | `postProcessing.render()`        |
+| Chain of passes                 | Node graph with `outputNode`     |
+| GLSL shader passes              | TSL node-based effects           |
 
 ## Performance Tips
 

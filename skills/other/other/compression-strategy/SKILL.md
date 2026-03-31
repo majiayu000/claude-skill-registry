@@ -11,6 +11,7 @@ progressive_loading: true
 dependencies:
   hub: []
   modules: []
+model_hint: standard
 ---
 # Compression Strategy
 

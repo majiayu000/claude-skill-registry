@@ -14,6 +14,7 @@ tags:
   - interactive
   - drill-down
 estimated_tokens: 200
+model_hint: standard
 ---
 # Dig Deeper
 

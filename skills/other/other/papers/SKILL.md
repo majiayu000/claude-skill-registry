@@ -17,6 +17,7 @@ tags:
 dependencies:
   - leyline:document-conversion
 estimated_tokens: 350
+model_hint: standard
 ---
 # Academic Papers Search
 

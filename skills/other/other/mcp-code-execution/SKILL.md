@@ -16,6 +16,7 @@ dependencies:
   - mcp-subagents
   - mcp-patterns
   - mcp-validation
+model_hint: standard
 ---
 ## Table of Contents
 
@@ -65,6 +66,10 @@ python -m module_name --help
 > **Subagent MCP Access Fix (Claude Code 2.1.30+)**: SDK-provided MCP tools are now properly synced to subagents. Prior to 2.1.30, subagents could not access SDK-provided MCP tools — workflows delegating MCP tool usage to subagents were silently broken. No workarounds needed on 2.1.30+.
 
 > **Claude.ai MCP Connectors (Claude Code 2.1.46+)**: Users logged into Claude Code with a claude.ai account may have additional MCP tools auto-loaded from claude.ai/settings/connectors. These tools contribute to the tool search threshold count. If workflows unexpectedly trigger tool search or context inflation, check `/mcp` for claude.ai-sourced connectors. Known reliability issue: connectors can silently disappear (GitHub #21817).
+
+> **MCP Prompt Cache Fix (Claude Code 2.1.70+)**: MCP servers with instructions connecting after the first turn no longer bust the prompt cache. Previously, a late-connecting MCP server would invalidate cached prompt prefixes, increasing token costs for the rest of the session. On 2.1.70+, prompt cache reuse is preserved regardless of when MCP servers connect.
+
+> **ToolSearch Reliability Fix (Claude Code 2.1.70+)**: Empty model responses after ToolSearch are fixed. The server was rendering tool schemas with system-prompt-style tags that could confuse models into stopping early. ToolSearch-heavy workflows (many deferred MCP tools) are now more reliable.
 
 ## When NOT To Use
 

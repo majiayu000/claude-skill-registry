@@ -8,6 +8,7 @@ model_preference: claude-sonnet-4
 category: workflow
 tags: [brainstorming, ideation, planning, requirements, socratic-method]
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 2800
 progressive_loading: true
 dependencies:

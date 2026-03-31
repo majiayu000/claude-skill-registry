@@ -1,71 +1,89 @@
 ---
 name: domain-authority-auditor
-version: "4.0.0"
-description: 'Run the full 40-item CITE domain authority audit across 4 dimensions with domain-type weighting and veto checks. Use when the user asks to "audit domain authority", "domain trust score", "CITE audit", "how authoritative is my site", "domain credibility check", "is my domain trustworthy", "domain credibility score", "domain rating". For content-level assessment, see content-quality-auditor. For link profile details, see backlink-analyzer.'
+description: '40-item CITE domain audit: 4 dimensions, domain-type weighting, veto checks, trust scoring. "Is my site trustworthy" / "域名可信吗" / "权威度多少". 域名权威/网站可信度/域名评分 ドメイン権威 도메인권위 autoridad dominio'
+version: "5.1.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 metadata:
   author: aaron-he-zhu
-  version: "4.0.0"
+  version: "5.1.0"
   geo-relevance: "medium"
   tags:
     - seo
     - geo
-    - domain audit
-    - credibility
-    - domain scoring
     - domain-authority
     - domain-rating
     - domain-trust
-    - trust-signals
-    - site-authority
-    - da-checker
-    - ahrefs-dr
-    - moz-da
     - cite-framework
-    - domain-strength
+    - site-authority
+    - 域名权威
+    - ドメイン権威
+    - 도메인권위
+    - autoridad-dominio
   triggers:
+    # EN-formal
     - "audit domain authority"
-    - "domain trust score"
     - "CITE audit"
-    - "how authoritative is my site"
+    - "domain trust score"
     - "domain credibility check"
     - "domain rating"
     - "site authority"
+    # EN-casual
+    - "how trustworthy is my site"
+    - "is my domain credible"
     - "is my domain trustworthy"
     - "domain credibility score"
+    - "Google penalty recovery"
+    - "my site got penalized"
+    # EN-question
+    - "how authoritative is my site"
+    - "what is my domain authority"
+    # ZH-pro
+    - "域名权威审计"
+    - "网站可信度"
+    - "域名评分"
+    # ZH-casual
+    - "域名可信吗"
+    - "权威度多少"
+    - "网站可信度怎么样"
+    # JA
+    - "ドメイン権威"
+    - "ドメイン評価"
+    # KO
+    - "도메인 권위"
+    - "도메인 신뢰도"
+    # ES
+    - "autoridad de dominio"
+    - "auditoría de dominio"
+    # PT
+    - "autoridade de domínio"
+    # Misspellings
+    - "domain autority"
 ---
 
 # Domain Authority Auditor
 
-> Based on [CITE Domain Rating](https://github.com/aaron-he-zhu/cite-domain-rating). Full benchmark reference: [references/cite-domain-rating.md](../../references/cite-domain-rating.md)
+> Based on [CITE Domain Rating](https://github.com/aaron-he-zhu/cite-domain-rating). Full benchmark reference: [references/cite-domain-rating.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/cite-domain-rating.md)
 
 > **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
+> **System Mode**: This cross-cutting skill is part of the protocol layer and follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
 
-<details>
-<summary>Browse all 20 skills</summary>
-
-**Research** · [keyword-research](../../research/keyword-research/) · [competitor-analysis](../../research/competitor-analysis/) · [serp-analysis](../../research/serp-analysis/) · [content-gap-analysis](../../research/content-gap-analysis/)
-
-**Build** · [seo-content-writer](../../build/seo-content-writer/) · [geo-content-optimizer](../../build/geo-content-optimizer/) · [meta-tags-optimizer](../../build/meta-tags-optimizer/) · [schema-markup-generator](../../build/schema-markup-generator/)
-
-**Optimize** · [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) · [technical-seo-checker](../../optimize/technical-seo-checker/) · [internal-linking-optimizer](../../optimize/internal-linking-optimizer/) · [content-refresher](../../optimize/content-refresher/)
-
-**Monitor** · [rank-tracker](../../monitor/rank-tracker/) · [backlink-analyzer](../../monitor/backlink-analyzer/) · [performance-reporter](../../monitor/performance-reporter/) · [alert-manager](../../monitor/alert-manager/)
-
-**Cross-cutting** · [content-quality-auditor](../content-quality-auditor/) · **domain-authority-auditor** · [entity-optimizer](../entity-optimizer/) · [memory-management](../memory-management/)
-
-</details>
 
 This skill evaluates domain authority across 40 standardized criteria organized in 4 dimensions. It produces a comprehensive audit report with per-item scoring, dimension and weighted scores by domain type, veto item checks, and a prioritized action plan.
 
-**Sister skill**: [content-quality-auditor](../content-quality-auditor/) evaluates content at the page level (80 items). This skill evaluates the domain behind the content (40 items). Together they provide a complete 120-item assessment.
+**Sister skill**: [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md) evaluates content at the page level (80 items). This skill evaluates the domain behind the content (40 items). Together they provide a complete 120-item assessment.
 
 > **Namespace note**: CITE uses C01-C10 for Citation items; CORE-EEAT uses C01-C10 for Contextual Clarity items. In combined 120-item assessments, prefix with the framework name (e.g., CITE-C01 vs CORE-C01) to avoid confusion.
 
-## When to Use This Skill
+**System role**: Citation Trust Gate. It decides whether a domain is credible enough to support ranking, citation, and brand authority work.
 
+## When This Must Trigger
+
+Use this when domain credibility or citation trustworthiness is in question — even if the user doesn't use audit terminology:
+
+- User asks "how trustworthy is my site" or "is my domain credible"
+- When backlink-analyzer finds toxic link ratio above 15%, its handoff summary recommends this gate check
 - Evaluating domain authority before a GEO campaign
 - Benchmarking your domain against competitors
 - Assessing whether a domain is trustworthy as a citation source
@@ -83,7 +101,9 @@ This skill evaluates domain authority across 40 standardized criteria organized 
 6. **Action Plan**: Generates specific, actionable improvement steps
 7. **Cross-Reference**: Optionally pairs with CORE-EEAT for combined diagnosis
 
-## How to Use
+## Quick Start
+
+Start with one of these prompts. Finish with a citation-trust verdict and a handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ### Audit Your Domain
 
@@ -111,9 +131,20 @@ Compare domain authority: [your domain] vs [competitor 1] vs [competitor 2]
 Run full 120-item assessment on [domain]: CITE domain audit + CORE-EEAT content audit on [sample pages]
 ```
 
+## Skill Contract
+
+**Gate verdict**: **TRUSTED** (no veto items, scores above threshold) / **CAUTIOUS** (issues found but no veto) / **UNTRUSTED** (veto item T03, T05, or T09 failed). Always state the verdict prominently at the top of the report.
+
+**Expected output**: a CITE audit report, a citation-trust verdict, and a short handoff summary ready for `memory/audits/domain/`.
+
+- **Reads**: the target domain, supporting authority signals, comparison domains, and prior decisions from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Writes**: a user-facing authority report plus a reusable summary that can be stored under `memory/audits/domain/`.
+- **Promotes**: veto items and domain risks to `memory/hot-cache.md` (auto-saved). Authority context to `memory/audits/domain/`. Results feed into entity-optimizer as authority input for brand's canonical profile.
+- **Next handoff**: use the `Next Best Skill` below once the trust picture is clear.
+
 ## Data Sources
 
-> See [CONNECTORS.md](../../CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
@@ -167,7 +198,7 @@ If any veto item triggers, flag it prominently at the top of the report. CITE Sc
 
 ### Step 2: C + I Audit (20 items)
 
-Evaluate each item against the criteria in [references/cite-domain-rating.md](../../references/cite-domain-rating.md).
+Evaluate each item against the criteria in [references/cite-domain-rating.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/cite-domain-rating.md).
 
 Score each item:
 - **Pass** = 10 points (fully meets criteria)
@@ -302,11 +333,25 @@ For a complete assessment, pair this CITE audit with a CORE-EEAT content audit:
 ### Recommended Next Steps
 
 - For domain authority building: focus on top 5 priorities above
-- For content improvement: use [content-quality-auditor](../content-quality-auditor/) on key pages
-- For backlink strategy: use [backlink-analyzer](../../monitor/backlink-analyzer/) for detailed link analysis
-- For competitor benchmarking: use [competitor-analysis](../../research/competitor-analysis/) with CITE scores
+- For content improvement: use `content-quality-auditor` on key pages
+- For backlink strategy: use `backlink-analyzer` for detailed link analysis
+- For competitor benchmarking: use `competitor-analysis` with CITE scores
 - For tracking progress: run `/seo:report` with CITE score trends
 ```
+
+### Save Results
+
+After delivering findings to the user, ask:
+
+> "Save these results for future sessions?"
+
+If yes, write a dated summary to the appropriate `memory/` path using filename `YYYY-MM-DD-<topic>.md` containing:
+- One-line verdict or headline finding
+- Top 3-5 actionable items
+- Open loops or blockers
+- Source data references
+
+If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09), also append a one-liner to `memory/hot-cache.md` without asking.
 
 ## Validation Checkpoints
 
@@ -327,7 +372,7 @@ For a complete assessment, pair this CITE audit with a CORE-EEAT content audit:
 
 ## Example
 
-See [references/example-report.md](./references/example-report.md) for a complete CITE audit of cloudhosting.com showing veto check, dimension scores, top 5 improvements, action plan, and cross-reference with CORE-EEAT.
+See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/domain-authority-auditor/references/example-report.md) for a complete CITE audit of cloudhosting.com showing veto check, dimension scores, top 5 improvements, action plan, and cross-reference with CORE-EEAT.
 
 ## Tips for Success
 
@@ -339,13 +384,9 @@ See [references/example-report.md](./references/example-report.md) for a complet
 
 ## Reference Materials
 
-- [CITE Domain Rating](../../references/cite-domain-rating.md) — Full 40-item benchmark with dimension definitions, scoring criteria, domain-type weight tables, and veto items
-- [references/example-report.md](./references/example-report.md) — Complete CITE audit example with scored dimensions, top 5 improvements, action plan, and CORE-EEAT cross-reference
+- [CITE Domain Rating](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/cite-domain-rating.md) — Full 40-item benchmark with dimension definitions, scoring criteria, domain-type weight tables, and veto items
+- [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/domain-authority-auditor/references/example-report.md) — Complete CITE audit example with scored dimensions, top 5 improvements, action plan, and CORE-EEAT cross-reference
 
-## Related Skills
+## Next Best Skill
 
-- [content-quality-auditor](../content-quality-auditor/) — Page-level content audit (CORE-EEAT 80 items) — the sister skill
-- [backlink-analyzer](../../monitor/backlink-analyzer/) — Deep-dive into backlink profile (feeds C dimension data)
-- [competitor-analysis](../../research/competitor-analysis/) — Compare CITE scores across competitors
-- [performance-reporter](../../monitor/performance-reporter/) — Track CITE score trends over time
-- [entity-optimizer](../entity-optimizer/) — Entity presence audit; complements CITE I dimension
+- **Primary**: [backlink-analyzer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/backlink-analyzer/SKILL.md) — turn trust or citation issues into link-level investigation.

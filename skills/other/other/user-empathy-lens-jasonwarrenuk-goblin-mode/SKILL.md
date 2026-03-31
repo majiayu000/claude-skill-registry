@@ -1,7 +1,10 @@
 ---
 name: user-empathy-lens
-description: This skill should be used when the user mentions "user experience", "UX", "how would someone use this", "user flow", "onboarding", "confusing", "intuitive", "user needs", "persona", "user story", or when designing features that end-users interact with directly. Addresses understanding users through empathy and inference rather than formal research.
+description: Empathy-driven design: think through how real people experience the software; surface and challenge assumptions.
 user-invocable: false
+effort: low
+allowed-tools:
+  - Read
 ---
 
 # User Empathy Lens

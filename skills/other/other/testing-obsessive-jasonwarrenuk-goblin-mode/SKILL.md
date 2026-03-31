@@ -1,6 +1,16 @@
 ---
 name: testing-obsessive
-description: This skill should be used when the user mentions "write tests", "test coverage", "testing strategy", "unit tests", "integration tests", "e2e tests", "vitest", "jest", discusses testing approaches, asks about test patterns, or works on test files. Addresses testing fundamentals with emphasis on Vitest and Svelte component testing using pragmatic, risk-based approaches.
+description: Pragmatic testing with Vitest: risk-based strategy, Svelte component testing, test-after development.
+user-invocable: false
+effort: medium
+paths:
+  - "**/*.test.*"
+  - "**/*.spec.*"
+allowed-tools:
+  - Read
+  - Glob
+  - Grep
+  - Bash
 ---
 
 # Testing Foundations

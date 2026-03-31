@@ -6,6 +6,8 @@ description: |
   Tier 2 deep-dives into flagged areas (sequential).
   Tier 3 reviews the full codebase (requires approval).
   Always starts at Tier 1 unless explicitly overridden.
+version: 1.7.1
+alwaysApply: false
 category: audit
 tags:
   - audit
@@ -23,6 +25,7 @@ usage_patterns:
   - git-history-review
   - targeted-review
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 600
 modules:
   - modules/escalation-criteria.md
@@ -31,7 +34,6 @@ modules:
 dependencies:
   - imbue:proof-of-work
 ---
-
 # Tiered Audit
 
 ## Table of Contents
@@ -43,7 +45,7 @@ dependencies:
 - [Tier 3: Full Codebase Audit](#tier-3-full-codebase-audit)
 - [Output Contract](#output-contract)
 
-## When to Use
+## When To Use
 
 - Auditing codebase quality, patterns, or problems
 - Reviewing what changed on a branch before merge

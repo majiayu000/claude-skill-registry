@@ -1,6 +1,15 @@
 ---
 name: api-designer
-description: This skill should be used when the user mentions "API design", "TypeScript API", "type-safe API", "endpoint design", "API validation", "Zod", discusses creating APIs, type safety, error handling, or API architecture. Addresses designing clean, type-safe APIs with validation, error handling, and documentation.
+description: Type-safe API design: Zod validation, Result types, SvelteKit endpoints, middleware patterns.
+user-invocable: false
+effort: medium
+paths:
+  - "**/routes/**"
+  - "**/api/**"
+allowed-tools:
+  - Read
+  - Glob
+  - Grep
 ---
 
 # TypeScript API Design

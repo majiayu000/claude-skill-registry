@@ -35,6 +35,7 @@ estimated_tokens: 1200
 modules:
 - modules/evaluation-criteria.md
 - modules/sdk-hook-types.md
+model_hint: standard
 ---
 ## Table of Contents
 

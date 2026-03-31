@@ -116,6 +116,53 @@ pinchtab click e7
 pinchtab snap -i -c
 ```
 
+## Challenge Solving
+
+PinchTab includes a pluggable solver framework that auto-detects and resolves browser challenges (Cloudflare Turnstile, CAPTCHAs, interstitials). Use this **after navigation** when the page shows a challenge instead of the expected content.
+
+**Important:** Solvers work best with `stealthLevel: "full"` in the PinchTab config (or `instanceDefaults.stealthLevel: "full"`). Full stealth mode patches CDP detection vectors, rotates fingerprints, and masks automation signals — all of which challenge providers like Cloudflare check before and after the checkbox click. Without full stealth, the solver may click correctly but the challenge can still fail fingerprint verification.
+
+```bash
+# Auto-detect and solve any challenge on the current page
+curl -X POST http://localhost:9867/solve \
+  -H 'Content-Type: application/json' \
+  -d '{"maxAttempts": 3, "timeout": 30000}'
+
+# Use a specific solver
+curl -X POST http://localhost:9867/solve/cloudflare \
+  -H 'Content-Type: application/json' \
+  -d '{"maxAttempts": 3}'
+
+# Tab-scoped solve
+curl -X POST http://localhost:9867/tabs/TAB_ID/solve \
+  -H 'Content-Type: application/json' \
+  -d '{}'
+
+# List available solvers
+curl http://localhost:9867/solvers
+```
+
+**When to use solve:**
+
+- Page title is "Just a moment..." or similar challenge indicator
+- `pinchtab text` returns empty or challenge-page text after navigation
+- A Cloudflare Turnstile widget blocks the target content
+
+**Workflow pattern:**
+
+```bash
+pinchtab nav https://protected-site.com
+pinchtab text                    # Check if page loaded or shows challenge
+# If challenge detected:
+curl -X POST http://localhost:9867/solve \
+  -H 'Content-Type: application/json' -d '{}'
+pinchtab text                    # Verify: should now show real page content
+```
+
+**Response fields:** `solver` (which solver handled it), `solved` (bool), `challengeType` (e.g. "managed"), `attempts`, `title` (final page title).
+
+The auto-detect mode (`POST /solve` without specifying a solver) tries each registered solver in order and returns immediately with `solved: true, attempts: 0` if no challenge is present. This makes it safe to call speculatively after any navigation.
+
 ## Handling Authentication and State
 
 Pick one of these five patterns before you start interacting with the site.
@@ -315,6 +362,13 @@ curl -X POST http://localhost:9868/action \
   -d '{"kind":"fill","selector":"e3","text":"ada@example.com"}'
 
 curl http://localhost:9868/text
+
+## Instance-scoped solve (instance port, not server port)
+curl -X POST http://localhost:9868/solve \
+  -H "Content-Type: application/json" \
+  -d '{"maxAttempts": 3}'
+
+curl http://localhost:9868/solvers
 ```
 
 Use the API when:
@@ -369,6 +423,18 @@ When you know the page structure, skip the snapshot and use CSS or text selector
 pinchtab click "text:Accept Cookies"
 pinchtab fill "#search" "quarterly report"
 pinchtab click "xpath://button[@type='submit']"
+```
+
+### Navigate through a Cloudflare-protected site
+
+```bash
+pinchtab nav https://protected-site.com
+# Page may show CF challenge ("Just a moment...")
+curl -X POST http://localhost:9867/solve \
+  -H 'Content-Type: application/json' -d '{"maxAttempts": 3}'
+# Now the real page is loaded — proceed normally
+pinchtab snap -i -c
+pinchtab text
 ```
 
 ### Bootstrap an authenticated profile

@@ -1,0 +1,17 @@
+{
+  "name": "assimilate",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter-codex/skills/assimilate/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "assimilate-a5c-ai-babysitter",
+  "downloaded_at": "2026-03-31T01:24:39.080511Z",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/plugins/babysitter-codex/skills/assimilate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a5c-ai/babysitter/blob/main/plugins/babysitter-codex/skills/assimilate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

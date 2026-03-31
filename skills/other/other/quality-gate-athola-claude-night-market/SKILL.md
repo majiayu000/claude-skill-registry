@@ -19,6 +19,7 @@ tools:
   - Grep
   - Skill
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 300
 ---
 # Quality Gate

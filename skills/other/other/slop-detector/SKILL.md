@@ -20,6 +20,7 @@ tools:
 - Grep
 - TodoWrite
 complexity: medium
+model_hint: fast
 estimated_tokens: 4200
 progressive_loading: true
 modules:

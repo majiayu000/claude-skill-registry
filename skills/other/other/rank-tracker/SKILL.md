@@ -1,67 +1,91 @@
 ---
 name: rank-tracker
-version: "4.0.0"
-description: 'Track keyword ranking positions and SERP position changes over time in both traditional search and AI-generated responses. Use when the user asks to "track rankings", "check keyword positions", "monitor SERP positions", "how am I ranking", "where do I rank for this keyword", "did my rankings change", "ranking changes", or "keyword position tracking". For automated alerting, see alert-manager. For comprehensive reports, see performance-reporter.'
+description: 'Track keyword rankings and SERP changes in traditional search and AI responses over time. "How am I ranking" / "查排名" / "排名变了吗". 排名追踪/关键词排名/SERP监控/排名变化 ランキング追跡 순위추적 seguimiento rankings'
+version: "5.1.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 metadata:
   author: aaron-he-zhu
-  version: "4.0.0"
+  version: "5.1.0"
   geo-relevance: "medium"
   tags:
     - seo
     - geo
-    - rank tracking
-    - keyword positions
-    - serp monitoring
-    - ranking trends
-    - position tracking
-    - ai ranking
+    - rank-tracking
     - keyword-rankings
-    - position-tracking
-    - ranking-changes
     - serp-positions
-    - search-visibility
-    - ranking-drops
-    - ranking-improvements
-    - rank-monitoring
+    - ranking-changes
+    - position-tracking
+    - 排名追踪
+    - ランキング追跡
+    - 순위추적
+    - seguimiento-rankings
   triggers:
+    # EN-formal
     - "track rankings"
     - "check keyword positions"
     - "ranking changes"
     - "monitor SERP positions"
-    - "how am I ranking"
     - "keyword tracking"
     - "position monitoring"
+    # EN-casual
+    - "how am I ranking"
     - "where do I rank for this keyword"
     - "did my rankings change"
-    - "keyword position tracking"
+    - "where do I rank now"
+    - "check my positions"
+    # EN-question
+    - "what position am I ranking at"
+    - "how are my rankings doing"
+    # ZH-pro
+    - "排名追踪"
+    - "关键词排名"
+    - "SERP位置监控"
+    - "排名变化"
+    # ZH-casual
+    - "查排名"
+    - "排名变了吗"
+    - "我排第几"
+    # JA
+    - "ランキング追跡"
+    - "検索順位チェック"
+    - "順位変動"
+    - "キーワード順位確認"
+    # KO
+    - "순위 추적"
+    - "키워드 순위"
+    - "순위 확인"
+    - "내 순위 어떻게 됐어?"
+    # ES
+    - "seguimiento de rankings"
+    - "posición en buscadores"
+    - "posicionamiento SEO"
+    - "en qué posición estoy"
+    # PT
+    - "rastreamento de rankings"
+    - "monitoramento de posições"
+    - "posição no Google"
+    # Misspellings
+    - "rank trackng"
 ---
 
 # Rank Tracker
 
 
 > **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
+> **System Mode**: This monitoring skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
 
-<details>
-<summary>Browse all 20 skills</summary>
-
-**Research** · [keyword-research](../../research/keyword-research/) · [competitor-analysis](../../research/competitor-analysis/) · [serp-analysis](../../research/serp-analysis/) · [content-gap-analysis](../../research/content-gap-analysis/)
-
-**Build** · [seo-content-writer](../../build/seo-content-writer/) · [geo-content-optimizer](../../build/geo-content-optimizer/) · [meta-tags-optimizer](../../build/meta-tags-optimizer/) · [schema-markup-generator](../../build/schema-markup-generator/)
-
-**Optimize** · [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) · [technical-seo-checker](../../optimize/technical-seo-checker/) · [internal-linking-optimizer](../../optimize/internal-linking-optimizer/) · [content-refresher](../../optimize/content-refresher/)
-
-**Monitor** · **rank-tracker** · [backlink-analyzer](../backlink-analyzer/) · [performance-reporter](../performance-reporter/) · [alert-manager](../alert-manager/)
-
-**Cross-cutting** · [content-quality-auditor](../../cross-cutting/content-quality-auditor/) · [domain-authority-auditor](../../cross-cutting/domain-authority-auditor/) · [entity-optimizer](../../cross-cutting/entity-optimizer/) · [memory-management](../../cross-cutting/memory-management/)
-
-</details>
 
 Tracks, analyzes, and reports on keyword ranking positions over time. Monitors both traditional SERP rankings and AI/GEO visibility to provide comprehensive search performance insights.
 
-## When to Use This Skill
+**System role**: Monitoring layer skill. It turns performance changes into deltas, alerts, and next actions.
+
+## When This Must Trigger
+
+Use this when the conversation involves any of these situations — even if the user does not use SEO terminology:
+
+Use this whenever the task needs time-aware change detection, escalation, or stakeholder-ready visibility.
 
 - Setting up ranking tracking for new campaigns
 - Monitoring keyword position changes
@@ -81,7 +105,9 @@ Tracks, analyzes, and reports on keyword ranking positions over time. Monitors b
 6. **GEO Visibility Tracking**: Tracks AI citation appearances
 7. **Report Generation**: Creates ranking performance reports
 
-## How to Use
+## Quick Start
+
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ### Set Up Tracking
 
@@ -107,11 +133,20 @@ Compare my rankings to [competitor] for [keywords]
 Create a ranking report for [domain/campaign]
 ```
 
+## Skill Contract
+
+**Expected output**: a delta summary, alert/report output, and a short handoff summary ready for `memory/monitoring/`.
+
+- **Reads**: current metrics, previous baselines, alert thresholds, and reporting context from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Writes**: a user-facing monitoring deliverable plus a reusable summary that can be stored under `memory/monitoring/`.
+- **Promotes**: significant changes, confirmed anomalies, and follow-up actions to `memory/open-loops.md` and `memory/decisions.md`.
+- **Next handoff**: use the `Next Best Skill` below when a change needs action.
+
 ## Data Sources
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
-> See [CONNECTORS.md](../../CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~SEO tool + ~~search console + ~~analytics + ~~AI monitor connected:**
 Automatically pull ranking positions from ~~SEO tool, search impressions/clicks from ~~search console, traffic data from ~~analytics, and AI Overview citation tracking from ~~AI monitor. Daily automated rank checks with historical trend data.
@@ -144,7 +179,7 @@ When a user requests rank tracking or analysis:
 
 7. **Generate Ranking Report** -- Executive summary with overall trend, position distribution, key highlights (wins/concerns/opportunities), detailed analysis, SERP feature report, GEO visibility, competitive position, recommendations.
 
-   > **Reference**: See [references/ranking-analysis-templates.md](./references/ranking-analysis-templates.md) for complete output templates for all 7 steps.
+   > **Reference**: See [references/ranking-analysis-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/rank-tracker/references/ranking-analysis-templates.md) for complete output templates for all 7 steps.
 
 ## Validation Checkpoints
 
@@ -212,17 +247,27 @@ Keywords in top 10 increased from 12 to 17 (+5)
 | Drop off page 1 | Emergency response | Comprehensive audit + recovery plan |
 | Position gained | Document and learn | What worked? Can you replicate? |
 
-> **Reference**: See [references/tracking-setup-guide.md](./references/tracking-setup-guide.md) for root cause taxonomy, CTR benchmarks by position, SERP feature CTR impact, algorithm update assessment, tracking configuration best practices, keyword selection and grouping strategies, and data interpretation guidelines.
+> **Reference**: See [references/tracking-setup-guide.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/rank-tracker/references/tracking-setup-guide.md) for root cause taxonomy, CTR benchmarks by position, SERP feature CTR impact, algorithm update assessment, tracking configuration best practices, keyword selection and grouping strategies, and data interpretation guidelines.
+
+
+### Save Results
+
+After delivering monitoring data or reports to the user, ask:
+
+> "Save these results for future sessions?"
+
+If yes, write a dated summary to `memory/monitoring/YYYY-MM-DD-<topic>.md` containing:
+- One-line headline finding or status change
+- Top 3-5 actionable items
+- Open loops or anomalies requiring follow-up
+- Source data references
+
+If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
 
 ## Reference Materials
 
-- [Tracking Setup Guide](./references/tracking-setup-guide.md) — Configuration best practices, device/location settings, and SERP feature tracking setup
+- [Tracking Setup Guide](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/rank-tracker/references/tracking-setup-guide.md) — Configuration best practices, device/location settings, and SERP feature tracking setup
 
-## Related Skills
+## Next Best Skill
 
-- [keyword-research](../../research/keyword-research/) — Find keywords to track
-- [serp-analysis](../../research/serp-analysis/) — Understand SERP composition
-- [alert-manager](../alert-manager/) — Set up ranking alerts
-- [performance-reporter](../performance-reporter/) — Comprehensive reporting
-- [memory-management](../../cross-cutting/memory-management/) — Store ranking history in project memory
-
+- **Primary**: [alert-manager](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/SKILL.md) — operationalize rank changes into thresholds and follow-ups.

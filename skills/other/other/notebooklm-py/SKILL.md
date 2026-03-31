@@ -52,18 +52,20 @@ For automated environments, multiple accounts, or parallel agent workflows:
 | Variable | Purpose |
 |----------|---------|
 | `NOTEBOOKLM_HOME` | Custom config directory (default: `~/.notebooklm`) |
+| `NOTEBOOKLM_PROFILE` | Active profile name (default: `default`) |
 | `NOTEBOOKLM_AUTH_JSON` | Inline auth JSON - no file writes needed |
 
 **CI/CD setup:** Set `NOTEBOOKLM_AUTH_JSON` from a secret containing your `storage_state.json` contents.
 
-**Multiple accounts:** Use different `NOTEBOOKLM_HOME` directories per account.
+**Multiple accounts:** Use named profiles (`notebooklm profile create work`, then `notebooklm -p work login`). Alternatively, use different `NOTEBOOKLM_HOME` directories per account.
 
 **Parallel agents:** The CLI stores notebook context in a shared file (`~/.notebooklm/context.json`). Multiple concurrent agents using `notebooklm use` can overwrite each other's context.
 
 **Solutions for parallel workflows:**
 1. **Always use explicit notebook ID** (recommended): Pass `-n <notebook_id>` (for `wait`/`download` commands) or `--notebook <notebook_id>` (for others) instead of relying on `use`
-2. **Per-agent isolation:** Set unique `NOTEBOOKLM_HOME` per agent: `export NOTEBOOKLM_HOME=/tmp/agent-$ID`
-3. **Use full UUIDs:** Avoid partial IDs in automation (they can become ambiguous)
+2. **Per-agent isolation via profiles:** `export NOTEBOOKLM_PROFILE=agent-$ID` (each profile gets its own context file)
+3. **Per-agent isolation via home:** Set unique `NOTEBOOKLM_HOME` per agent: `export NOTEBOOKLM_HOME=/tmp/agent-$ID`
+4. **Use full UUIDs:** Avoid partial IDs in automation (they can become ambiguous)
 
 ## Agent Setup Verification
 
@@ -109,6 +111,10 @@ Before starting workflows, verify the CLI is ready:
 - `notebooklm ask "..."` - chat queries (without `--save-as-note`)
 - `notebooklm history` - display conversation history (read-only)
 - `notebooklm source add` - add sources
+- `notebooklm profile list` - list profiles
+- `notebooklm profile create` - create profile
+- `notebooklm profile switch` - switch active profile
+- `notebooklm doctor` - check environment health
 
 **Ask before running:**
 - `notebooklm delete` - destructive
@@ -178,6 +184,14 @@ Before starting workflows, verify the CLI is ready:
 | List languages | `notebooklm language list` |
 | Get language | `notebooklm language get` |
 | Set language | `notebooklm language set zh_Hans` |
+| List profiles | `notebooklm profile list` |
+| Create profile | `notebooklm profile create work` |
+| Switch profile | `notebooklm profile switch work` |
+| Delete profile | `notebooklm profile delete old` |
+| Rename profile | `notebooklm profile rename old new` |
+| Use profile (one-off) | `notebooklm -p work list` |
+| Health check | `notebooklm doctor` |
+| Health check (auto-fix) | `notebooklm doctor --fix` |
 
 **Parallel safety:** Use explicit notebook IDs in parallel workflows. Commands supporting `-n` shorthand: `artifact wait`, `source wait`, `research wait/status`, `download *`. Download commands also support `-a/--artifact`. Other commands use `--notebook`. For chat, use `-c <conversation_id>` to target a specific conversation.
 

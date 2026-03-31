@@ -153,7 +153,19 @@ Wait for completion. Verify:
 - GPU memory usage is within bounds
 - Output format matches expectations
 
-If sanity fails → fix the code, re-run. Do not proceed to full deployment with broken code.
+If sanity fails → **auto-debug before giving up** (max 3 attempts):
+
+1. **Read the error** — parse traceback, stderr, and log files
+2. **Diagnose** — classify the failure:
+   - OOM → reduce batch size or enable gradient checkpointing
+   - ImportError → install missing package
+   - FileNotFoundError → fix path or download data
+   - CUDA error → check GPU availability, reduce model size
+   - NaN/divergence → reduce learning rate, check data preprocessing
+3. **Fix and re-run** — apply the fix, re-run sanity
+4. **Still failing after 3 attempts?** → stop, report the failure with all attempted fixes and error logs. Do not proceed with broken code.
+
+> Never give up on the first failure. Most experiment crashes are fixable without human intervention.
 
 ### Phase 4: Deploy Full Experiments
 
@@ -283,6 +295,7 @@ Ready for Workflow 2:
 - **Update the tracker.** `EXPERIMENT_TRACKER.md` should reflect real status after each run completes.
 - **Don't wait forever.** If an experiment exceeds 2x its estimated time, flag it and move on to the next milestone.
 - **Budget awareness.** Track GPU-hours against the plan's budget. Warn if approaching the limit.
+- **Vast.ai lifecycle.** If using vast.ai instances, destroy them after all experiments complete and results are downloaded. Running instances cost money every second — don't leave them idle. Use `/vast-gpu destroy` or `/vast-gpu destroy-all` when done.
 
 ## Composing with Other Skills
 

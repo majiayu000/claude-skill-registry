@@ -1,0 +1,17 @@
+{
+  "name": "spring-boot",
+  "repo": "sivaprasadreddy/sivalabs-agent-skills",
+  "path": "skills/spring-boot/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sivaprasadreddy/sivalabs-agent-skills",
+  "dir_name": "spring-boot",
+  "downloaded_at": "2026-03-31T01:44:12.348868Z",
+  "author": "sivaprasadreddy",
+  "source_url": "https://github.com/sivaprasadreddy/sivalabs-agent-skills/blob/main/skills/spring-boot/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sivaprasadreddy/sivalabs-agent-skills/blob/main/skills/spring-boot/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

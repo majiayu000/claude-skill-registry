@@ -11,6 +11,7 @@ tags:
 - decision-making
 tools: []
 complexity: low
+model_hint: fast
 estimated_tokens: 450
 ---
 ## Table of Contents

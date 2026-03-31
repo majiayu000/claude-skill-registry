@@ -12,8 +12,20 @@ Monitor: $ARGUMENTS
 ## Workflow
 
 ### Step 1: Check What's Running
+
+**SSH server:**
 ```bash
 ssh <server> "screen -ls"
+```
+
+**Vast.ai instance** (read `ssh_host`, `ssh_port` from `vast-instances.json`):
+```bash
+ssh -p <PORT> root@<HOST> "screen -ls"
+```
+
+Also check vast.ai instance status:
+```bash
+vastai show instances
 ```
 
 ### Step 2: Collect Output from Each Screen
@@ -108,3 +120,4 @@ After results are collected, check `~/.claude/feishu.json`:
 - Compare against the correct baseline (same config)
 - Note if experiments are still running (check progress bars, iteration counts)
 - If results look wrong, check training logs for errors before concluding
+- **Vast.ai cost awareness**: When monitoring vast.ai instances, report the running cost (hours * $/hr from `vast-instances.json`). If all experiments on an instance are done, remind the user to run `/vast-gpu destroy <instance_id>` to stop billing

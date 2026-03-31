@@ -15,6 +15,8 @@ description: 'Architecture-aware project initialization combining online researc
 
 
   DO NOT use when: architecture is already decided - use project-init instead.'
+version: 1.7.1
+alwaysApply: false
 category: project-initialization
 tags:
 - architecture
@@ -34,6 +36,7 @@ usage_patterns:
 - best-practices-research
 - template-customization
 complexity: advanced
+model_hint: deep
 estimated_tokens: 1800
 ---
 ## Table of Contents

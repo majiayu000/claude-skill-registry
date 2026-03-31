@@ -5,6 +5,8 @@ description: 'Consult this skill when formatting final review deliverables. Use 
   findings comparable across reviews. Do not use when capturing evidence during analysis
   - use proof-of-work. DO NOT use when: reviewing changes - use diff-analysis or
   review-core first.'
+version: 1.7.1
+alwaysApply: false
 category: output-patterns
 tags:
 - formatting
@@ -20,6 +22,7 @@ usage_patterns:
 - report-structure
 - consistent-output
 complexity: beginner
+model_hint: fast
 estimated_tokens: 1000
 ---
 ## Table of Contents

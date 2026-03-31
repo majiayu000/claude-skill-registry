@@ -13,6 +13,7 @@ tags:
   - code
   - search
 estimated_tokens: 200
+model_hint: standard
 ---
 # Code Search
 

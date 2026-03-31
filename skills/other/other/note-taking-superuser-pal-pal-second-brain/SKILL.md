@@ -29,7 +29,7 @@ Thresholds for determining if a note warrants a standalone page:
 **Special cases:**
 - Notes with only `[action]` observations → Treat as task list (extract only)
 - Notes with `project: [name]` → Always substantial (project context)
-- Notes with `favorite: true` → User-flagged important (always substantial)
+
 
 **Detection triggers:**
 - If `word_count < 50 AND observation_count < 3` → Flag as insubstantial
@@ -40,7 +40,7 @@ Thresholds for determining if a note warrants a standalone page:
 | Workflow | Trigger | File |
 | :--- | :--- | :--- |
 | **braindump** | "braindump", "brain dump", "capture thoughts", "dump thoughts" | `workflows/braindump.md` |
-| **process_inbox** | "process inbox", "add frontmatter", "scan notes" | `workflows/process_inbox.md` |
+| **process_notes** | "process inbox", "add frontmatter", "scan notes" | `workflows/process_notes.md` |
 | **distribute_notes** | "distribute notes", "move notes to domains", "organize notes" | `workflows/distribute_notes.md` |
 | **ingest_longform** | "ingest PDF", "convert document", "ingest document" | `workflows/ingest_longform.md` |
 | **url_dump** | "url dump", "save link", "bookmark url", "capture url" | `workflows/url_dump.md` |
@@ -69,7 +69,7 @@ User: "braindump"
 **Example 2: Process raw notes in inbox**
 ```
 User: "Process my inbox notes"
--> Invokes process_inbox workflow
+-> Invokes process_notes workflow
 -> Scans Inbox/Notes/ for .md files without YAML frontmatter
 -> Prompts user for domain, project, category assignment
 -> Adds standardized YAML frontmatter

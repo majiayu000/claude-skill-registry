@@ -11,7 +11,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 8XX Optimization
-**Parent:** ln-830-code-modernization-coordinator
 
 Reduces JavaScript/TypeScript bundle size. Metric: bundle size in bytes. Each optimization verified via build with keep/discard pattern. JS/TS projects only.
 

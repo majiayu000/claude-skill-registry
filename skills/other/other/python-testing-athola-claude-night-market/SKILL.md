@@ -6,6 +6,9 @@ description: 'Consult this skill for Python testing implementation and patterns.
   parameterizing tests, setting up CI/CD testing. Do not use when evaluating test
   quality - use pensive:test-review instead. DO NOT use when: infrastructure test
   config - use leyline:pytest-config.'
+version: 1.7.1
+globs: "**/*.py"
+alwaysApply: false
 category: testing
 tags:
 - python
@@ -24,6 +27,7 @@ usage_patterns:
 - test-refactoring
 - ci-cd-integration
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 900
 progressive_loading: true
 modules:

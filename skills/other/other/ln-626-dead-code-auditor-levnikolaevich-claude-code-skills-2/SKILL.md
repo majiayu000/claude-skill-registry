@@ -32,7 +32,8 @@ Receives `contextStore` with tech stack, codebase root, output_dir.
 
 1) Parse context + output_dir
 2) Run dead code detection (Layer 1: linters, grep)
-   - **ESM/JS/TS projects:** Use `index_project` then `find_unused_exports` as primary detection for unused exports. Keep grep-based detection as fallback for non-JS languages or when graph is unavailable.
+   - **Graph-capable projects:** For JavaScript, TypeScript/TSX, Python, C#, and PHP, use `index_project` then `find_unused_exports` as primary detection for unused exports when graph indexing is available.
+   - Keep grep/linter fallback for unsupported languages, graph-unavailable runs, and checks outside export liveness.
 3) Analyze context per candidate (Layer 2):
    - Unused functions: used via dynamic import/reflection? Exported in public API? Used in other packages (monorepo)?
    - Commented code: TODO with context or algorithm explanation -> FP. Truly dead code block -> confirmed

@@ -22,15 +22,12 @@ Edit Elementor pages and manage templates on existing WordPress sites. Produces 
 
 ### Step 1: Identify the Page
 
-Find the page to edit:
-
 ```bash
-# List Elementor pages (pages with _elementor_data meta)
+# List Elementor pages
 wp @site post list --post_type=page --meta_key=_elementor_edit_mode --meta_value=builder \
   --fields=ID,post_title,post_name,post_status
 
-# Get the Elementor edit URL
-# Format: https://example.com/wp-admin/post.php?post={ID}&action=elementor
+# Editor URL format: https://example.com/wp-admin/post.php?post={ID}&action=elementor
 ```
 
 ### Step 2: Choose Editing Method
@@ -46,22 +43,29 @@ wp @site post list --post_type=page --meta_key=_elementor_edit_mode --meta_value
 
 **Rule of thumb**: If you're only changing text or URLs within existing widgets, WP-CLI is faster. For anything structural, use the visual editor via browser.
 
-### Step 3a: Text Updates via WP-CLI (Safe Method)
+### Step 3a: Text Updates via WP-CLI
 
 **Always back up first**:
 
 ```bash
-# Export the Elementor data
 wp @site post meta get {post_id} _elementor_data > /tmp/elementor-backup-{post_id}.json
 ```
+
+**Pre-flight checklist**:
+
+1. Back up the postmeta (above)
+2. Dry run the replacement
+3. Verify the dry run matches expectations (correct number of replacements)
+4. Execute
+5. Flush CSS cache
+6. Verify visually
 
 **Simple text replacement**:
 
 ```bash
-# Dry run — check what would change
+# Dry run
 wp @site search-replace "Old Heading Text" "New Heading Text" wp_postmeta \
-  --include-columns=meta_value \
-  --dry-run --precise
+  --include-columns=meta_value --dry-run --precise
 
 # Execute (after confirming dry run looks correct)
 wp @site search-replace "Old Heading Text" "New Heading Text" wp_postmeta \
@@ -81,25 +85,68 @@ wp @site option delete _elementor_global_css
 wp @site post meta delete-all _elementor_css
 ```
 
+**What's safe to replace**:
+
+| Safe | Risky |
+|------|-------|
+| Headings text | HTML structure |
+| Paragraph text | Widget IDs |
+| Button text and URLs | Section/column settings |
+| Image URLs (same dimensions) | Layout properties |
+| Phone numbers, emails | CSS classes |
+| Addresses | Element ordering |
+
 ### Step 3b: Visual Editing via Browser Automation
 
 For structural changes, use browser automation to interact with Elementor's visual editor.
 
+**Login flow** (skip if already logged in via Chrome MCP):
+
+1. Navigate to `https://example.com/wp-admin/`
+2. Enter username and password
+3. Click "Log In"
+4. Wait for dashboard to load
+
 **Open the editor**:
 
 1. Navigate to `https://example.com/wp-admin/post.php?post={ID}&action=elementor`
-2. Wait for the editor to fully load (Elementor loading screen disappears)
-3. The page appears in the main panel with the widget sidebar on the left
+2. Wait for Elementor loading overlay to disappear (can take 5-10 seconds)
+3. Editor is ready when the left sidebar shows widget panels
 
-**Common editing tasks**:
+**Edit text content**:
 
-1. **Edit text widget**: Click on the text element in the preview → edit inline or in the sidebar
-2. **Edit heading**: Click the heading → update text in the sidebar panel
-3. **Change image**: Click image widget → click the image in sidebar → select new from media library
-4. **Edit button**: Click button → update text, URL, and styling in sidebar
-5. **Save**: Click the green "Update" button (or Ctrl+S)
+1. Click on the text element in the page preview (right panel)
+2. The element becomes selected (blue border)
+3. The left sidebar shows the element's settings
+4. Under "Content" tab, edit the text in the editor field
+5. Changes appear live in the preview
+6. Click "Update" (green button, bottom left) or Ctrl+S
 
-Use playwright-cli for independent sessions:
+**Edit heading**:
+
+1. Click the heading in the preview
+2. Left sidebar > Content tab > "Title" field
+3. Edit the text
+4. Optionally adjust: HTML tag (H1-H6), alignment, link
+5. Save
+
+**Change image**:
+
+1. Click the image widget in the preview
+2. Left sidebar > Content tab > click the image thumbnail
+3. Media Library opens
+4. Select new image or upload
+5. Click "Insert Media"
+6. Save
+
+**Edit button**:
+
+1. Click the button in the preview
+2. Left sidebar > Content tab: Text (label), Link (URL), Icon (optional)
+3. Style tab: colours, typography, border, padding
+4. Save
+
+**Using playwright-cli**:
 
 ```bash
 playwright-cli -s=wp-editor open "https://example.com/wp-admin/"
@@ -109,8 +156,6 @@ playwright-cli -s=wp-editor navigate "https://example.com/wp-admin/post.php?post
 
 Or Chrome MCP if using the user's logged-in session.
 
-See `references/elementor-workflows.md` for detailed browser automation steps.
-
 ### Step 4: Manage Templates
 
 **List saved templates**:
@@ -118,6 +163,19 @@ See `references/elementor-workflows.md` for detailed browser automation steps.
 ```bash
 wp @site post list --post_type=elementor_library --fields=ID,post_title,post_status
 ```
+
+**Export a template** (browser):
+
+1. Navigate to: `https://example.com/wp-admin/edit.php?post_type=elementor_library`
+2. Hover over the template > "Export Template"
+3. Downloads as .json file
+
+**Import a template** (browser):
+
+1. Navigate to: `https://example.com/wp-admin/edit.php?post_type=elementor_library`
+2. Click "Import Templates" at the top
+3. Choose file > upload .json
+4. Template appears in the library
 
 **Apply a template to a new page**:
 
@@ -128,7 +186,7 @@ wp @site post list --post_type=elementor_library --fields=ID,post_title,post_sta
 5. Click "Insert"
 6. Customise and save
 
-**Duplicate an existing page**:
+**Duplicate an existing page via WP-CLI**:
 
 ```bash
 # Get source page's Elementor data
@@ -144,6 +202,22 @@ wp @site post meta update $NEW_ID _elementor_edit_mode "builder"
 wp @site post meta update $NEW_ID _elementor_page_settings "$SOURCE_CSS"
 
 # Regenerate CSS
+wp @site elementor flush-css
+```
+
+**Apply template between pages via WP-CLI**:
+
+```bash
+# Get source data
+SOURCE=$(wp @site post meta get {source_id} _elementor_data)
+SETTINGS=$(wp @site post meta get {source_id} _elementor_page_settings)
+
+# Apply to target
+wp @site post meta update {target_id} _elementor_data "$SOURCE"
+wp @site post meta update {target_id} _elementor_edit_mode "builder"
+wp @site post meta update {target_id} _elementor_page_settings "$SETTINGS"
+
+# Clear cache
 wp @site elementor flush-css
 ```
 
@@ -174,10 +248,10 @@ playwright-cli -s=verify close
 Elementor stores page content as JSON in `_elementor_data` postmeta. The structure is:
 
 ```
-Section → Column → Widget
+Section > Column > Widget
 ```
 
-Each element has an `id`, `elType`, `widgetType`, and `settings` object. Direct manipulation of this JSON is possible but fragile — always back up first and prefer `search-replace` over manual JSON editing.
+Each element has an `id`, `elType`, `widgetType`, and `settings` object. Direct manipulation of this JSON is possible but fragile -- always back up first and prefer `search-replace` over manual JSON editing.
 
 ### CSS Cache
 
@@ -189,6 +263,18 @@ wp @site elementor flush-css
 wp @site option delete _elementor_global_css
 wp @site post meta delete-all _elementor_css
 ```
+
+### Global Widgets
+
+Global widgets are shared across pages. Editing one updates all instances.
+
+```bash
+# List global widgets
+wp @site post list --post_type=elementor_library --meta_key=_elementor_template_type \
+  --meta_value=widget --fields=ID,post_title
+```
+
+**Caution**: Replacing text in a global widget's data affects every page that uses it.
 
 ### Elementor Pro vs Free
 
@@ -212,9 +298,3 @@ wp @site elementor flush-css          # Clear CSS cache
 wp @site elementor library sync       # Sync with template library
 wp @site elementor update db          # Update database after version change
 ```
-
----
-
-## Reference Files
-
-- `references/elementor-workflows.md` — Browser automation steps, template management, safe editing patterns

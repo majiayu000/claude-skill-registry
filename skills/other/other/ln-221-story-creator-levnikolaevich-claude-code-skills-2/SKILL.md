@@ -83,6 +83,7 @@ If `summaryArtifactPath` is not provided:
 - Keep exactly the template-defined Story structure.
 - Insert standards research into Technical Notes, not into ACs.
 - Reject Stories that fail INVEST or exceed AC limits.
+- **STOP before save_issue:** verify all 9 sections present in body: Story, Context, Acceptance Criteria, Implementation Tasks, Test Strategy, Technical Notes, Definition of Done, Dependencies, Assumptions. PreToolUse hook will BLOCK creation without them.
 - Remain standalone-capable.
 - Never require coordinator runtime state to operate.
 

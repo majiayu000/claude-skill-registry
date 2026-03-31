@@ -22,6 +22,7 @@ usage_patterns:
 - consistency-audit
 - documentation-governance
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 400
 progressive_loading: true
 dependencies:

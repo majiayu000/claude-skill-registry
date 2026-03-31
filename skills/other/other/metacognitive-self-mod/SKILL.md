@@ -10,6 +10,7 @@ description: >
 version: 1.7.1
 alwaysApply: false
 trigger: metacognitive, self-modification, improve the improver, meta-improvement, improvement effectiveness, regression detected, improvement failed
+model_hint: standard
 ---
 # Metacognitive Self-Modification
 

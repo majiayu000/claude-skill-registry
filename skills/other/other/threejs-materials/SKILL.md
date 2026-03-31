@@ -515,6 +515,28 @@ function getMaterial(color) {
 material.dispose();
 ```
 
+## NodeMaterial / TSL (Future Direction)
+
+Three.js is moving toward **NodeMaterial** and **TSL (Three.js Shading Language)** as the standard material system, especially for the WebGPU renderer:
+
+```javascript
+import { MeshStandardNodeMaterial } from "three/addons/nodes/Nodes.js";
+import { color, uv, texture } from "three/addons/nodes/Nodes.js";
+
+const material = new MeshStandardNodeMaterial();
+material.colorNode = texture(colorMap, uv());
+```
+
+**Key points:**
+- NodeMaterial works with both WebGL and WebGPU renderers
+- `onBeforeCompile` does **not** work with the WebGPU renderer -- use NodeMaterial instead
+- TSL replaces GLSL for cross-renderer shader compatibility
+- Standard GLSL `ShaderMaterial` continues to work with the WebGL renderer
+
+## Lambert/Phong IBL Support (r183)
+
+As of r183, `MeshLambertMaterial` and `MeshPhongMaterial` support image-based lighting (IBL) via `scene.environment`. Previously, only PBR materials (Standard/Physical) responded to environment maps set on the scene.
+
 ## See Also
 
 - `threejs-textures` - Texture loading and configuration

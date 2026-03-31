@@ -1,7 +1,6 @@
 ---
 name: icon-forge
 description: Generate brand icons as SVG and produce all platform assets including favicon package (ICO, SVG with dark mode, apple-touch-icon), PWA manifest icons, and mobile app icons. Use when user runs /icon-forge, requests "brand icon", "favicon generation", "app icon", or "svg logo" for a project.
-disable-model-invocation: true
 allowed-tools: Bash(uv run *)
 argument-hint: "[brand description or --svg <path>]"
 ---

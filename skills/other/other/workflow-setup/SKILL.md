@@ -1,12 +1,16 @@
 ---
 name: workflow-setup
-description: "Configure GitHub Actions CI/CD for testing, linting, and deployment. Use for CI/CD setup. Skip if CI/CD configured or non-GitHub."
+description: "Configure GitHub Actions CI/CD workflows for automated testing, linting, and deployment pipelines. Use when setting up continuous integration for a GitHub-hosted project. Skip if CI/CD is already configured or the project is not on GitHub."
+version: 1.7.1
+globs: "**/.github/workflows/*.yml"
+alwaysApply: false
 # Custom metadata (not used by Claude for matching):
 model: claude-sonnet-4
 tools: [Read, Write, Bash]
 category: infrastructure
 tags: [github-actions, ci-cd, workflows, automation, testing]
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 1500
 ---
 ## Table of Contents

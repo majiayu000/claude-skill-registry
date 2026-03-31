@@ -25,7 +25,7 @@ npx @mcpware/claude-code-organizer $ARGUMENTS
 
 Opens a drag-and-drop web dashboard showing:
 - All memories, skills, MCP servers, hooks, configs, and plugins
-- Organized by scope hierarchy (Global → Workspace → Project)
+- Shows what loads globally vs per-project (Global and Project scopes)
 - Move items between scopes via drag-and-drop
 - Search, filter, and preview any item
 - Delete items with undo support

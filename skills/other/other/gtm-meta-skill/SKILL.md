@@ -125,10 +125,14 @@ Each new status message marks the previous one as done and appears as the active
 
 Rules:
 - Post the plan **before** running any enrichment/tool commands. This is step zero of every task.
+- Immediately set the first step to running right after posting the plan: `deepline session plan --update 0 --status running`.
 - Update steps as you go — mark `running` when starting, `completed` or `error` when done.
 - Send `session status` messages during step execution to show what you're currently working on.
 - Keep step labels short and descriptive (what, not how).
-- If your plan changes mid-execution, re-post with `--steps` to replace the old plan.
+- Do **not** call `deepline session plan --steps ...` at the end just to mark completion. `--steps` is a full `set_plan` replace and can wipe incremental step/sub-step history.
+- Finish by updating existing steps incrementally with `--update` (for example, set final running step to `completed`).
+- If `--update` fails with `step_index ... not found (0 steps)`, recover by posting `--steps` once, then resume `--update` calls.
+- Only re-post `--steps` mid-run when the plan structure truly changes.
 - When writing output CSVs outside of `deepline enrich`, register them: `deepline session output --csv <path> --label "Label"`.
 
 ### Tool search categories

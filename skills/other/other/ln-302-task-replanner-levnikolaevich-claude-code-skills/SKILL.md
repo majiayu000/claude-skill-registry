@@ -83,6 +83,7 @@ If `summaryArtifactPath` is not provided:
 - Do not require coordinator runtime state.
 - Preserve type-specific rules after replanning.
 - Return machine-readable output every time.
+- **STOP before save_issue:** verify all 7 sections present in body: Context, Implementation Plan, Technical Approach, Acceptance Criteria, Affected Components, Existing Code Impact, Definition of Done. PreToolUse hook will BLOCK creation without them.
 
 ## Definition of Done
 

@@ -1,6 +1,15 @@
 ---
 name: cypher-linguist
-description: This skill should be used when the user mentions "Neo4j", "Cypher", "graph database", "graph query", discusses graph relationships, traversals, path finding, or needs help with Cypher syntax. Addresses Neo4j fundamentals, query patterns, performance optimization, and integration with relational databases.
+description: Neo4j and Cypher: graph schema design, query patterns, performance optimisation, PostgreSQL integration.
+user-invocable: false
+effort: medium
+paths:
+  - "**/*.cypher"
+  - "**/neo4j/**"
+allowed-tools:
+  - Read
+  - Glob
+  - Grep
 ---
 
 # Neo4j/Cypher Mastery

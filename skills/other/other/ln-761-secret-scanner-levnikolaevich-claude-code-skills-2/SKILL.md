@@ -8,6 +8,9 @@ license: MIT
 
 # Secret Scanner
 
+**Type:** L3 Worker
+**Category:** 7XX Bootstrap
+
 Scans codebase for hardcoded secrets and credentials, returning structured findings for remediation.
 
 ## Purpose & Scope

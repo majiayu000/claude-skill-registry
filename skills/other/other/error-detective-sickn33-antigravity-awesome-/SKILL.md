@@ -1,7 +1,7 @@
 ---
 name: error-detective
 description: Search logs and codebases for error patterns, stack traces, and anomalies. Correlates errors across systems and identifies root causes.
-risk: unknown
+risk: safe
 source: community
 date_added: '2026-02-27'
 ---

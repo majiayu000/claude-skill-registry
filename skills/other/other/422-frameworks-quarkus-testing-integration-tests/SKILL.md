@@ -4,9 +4,9 @@ description: Use when you need to write or improve integration tests for Quarkus
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.13.0-SNAPSHOT
+  version: 0.13.0
 ---
-# Quarkus integration testing
+# Quarkus Integration Testing
 
 Apply integration testing patterns for Quarkus with real wiring and reproducible infrastructure.
 

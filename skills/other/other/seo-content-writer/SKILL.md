@@ -1,13 +1,13 @@
 ---
 name: seo-content-writer
-version: "4.0.0"
-description: 'Write search-engine-optimized blog posts, landing pages, and articles with keyword integration, header hierarchy, and featured snippet targeting. Use when the user asks to "write SEO content", "create a blog post", "write an article", "draft optimized content", "write a landing page", or "SEO copywriting". Creates keyword-optimized content using a 12-step workflow with CORE-EEAT checklist, title optimization, meta description, H1/H2/H3 hierarchy, and internal/external linking. For AI-citation optimization, see geo-content-optimizer. For updating existing content, see content-refresher.'
+description: 'Write SEO blog posts, articles, landing pages with keywords, headers, snippet targeting. "Write me a blog post" / "帮我写文章" / "写一篇好文章". SEO文章写作/博客创作/内容优化/排名提升 SEOライティング SEO글쓰기/블로그작성 redacción SEO'
+version: "5.1.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 metadata:
   author: aaron-he-zhu
-  version: "4.0.0"
+  version: "5.1.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -16,43 +16,90 @@ metadata:
     - seo-copywriting
     - content-creation
     - featured-snippet-optimization
-    - how-to-guide
+    - article-writing
+    - landing-page
+    - surferSEO-alternative
+    - clearscope-alternative
+    - SEO文章
+    - 博客写作
+    - SEOライティング
+    - SEO글쓰기
+    - redaccion-seo
   triggers:
+    # EN-formal
     - "write SEO content"
     - "create blog post"
     - "write an article"
     - "content writing"
     - "draft optimized content"
     - "write for SEO"
+    - "SEO copywriting"
     - "blog writing"
+    # EN-casual
+    - "write me a blog post"
     - "write me an article"
-    - "create a blog post about"
-    - "help me write SEO content"
-    - "draft content for"
+    - "help me write about"
+    - "draft an article about"
+    - "I need a blog post"
+    - "create content for my site"
+    # EN-question
+    - "how do I write content that ranks"
+    - "how to write SEO friendly content"
+    - "what makes content rank well"
+    # EN-competitor
+    - "SurferSEO alternative"
+    - "Clearscope alternative"
+    - "Jasper AI alternative for SEO"
+    # ZH-pro
+    - "SEO文章写作"
+    - "SEO内容创作"
+    - "博客写作"
+    - "内容优化"
+    - "内容创作"
+    # ZH-casual
+    - "帮我写文章"
+    - "写一篇博客"
+    - "排名上不去"
+    - "帮我写SEO文章"
+    - "写一篇SEO文章"
+    # JA
+    - "SEOライティング"
+    - "SEO記事作成"
+    - "ブログ記事作成"
+    - "SEOコンテンツ"
+    # KO
+    - "SEO 글쓰기"
+    - "블로그 작성"
+    - "SEO 콘텐츠 작성"
+    - "블로그 글 작성해줘"
+    - "이 주제로 글 써봐"
+    # ES
+    - "redacción SEO"
+    - "escribir artículo SEO"
+    - "contenido optimizado"
+    # PT
+    - "redação SEO"
+    - "escrever artigo SEO"
+    # Misspellings
+    - "SEO copywritting"
+    - "writting SEO content"
 ---
 
 # SEO Content Writer
 
 > **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
+> **System Mode**: This build skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
 
-<details>
-<summary>Browse all 20 skills</summary>
-
-**Research** · [keyword-research](../../research/keyword-research/) · [competitor-analysis](../../research/competitor-analysis/) · [serp-analysis](../../research/serp-analysis/) · [content-gap-analysis](../../research/content-gap-analysis/)
-
-**Build** · **seo-content-writer** · [geo-content-optimizer](../geo-content-optimizer/) · [meta-tags-optimizer](../meta-tags-optimizer/) · [schema-markup-generator](../schema-markup-generator/)
-
-**Optimize** · [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) · [technical-seo-checker](../../optimize/technical-seo-checker/) · [internal-linking-optimizer](../../optimize/internal-linking-optimizer/) · [content-refresher](../../optimize/content-refresher/)
-
-**Monitor** · [rank-tracker](../../monitor/rank-tracker/) · [backlink-analyzer](../../monitor/backlink-analyzer/) · [performance-reporter](../../monitor/performance-reporter/) · [alert-manager](../../monitor/alert-manager/)
-
-**Cross-cutting** · [content-quality-auditor](../../cross-cutting/content-quality-auditor/) · [domain-authority-auditor](../../cross-cutting/domain-authority-auditor/) · [entity-optimizer](../../cross-cutting/entity-optimizer/) · [memory-management](../../cross-cutting/memory-management/)
-
-</details>
 
 This skill creates search-engine-optimized content that ranks well while providing genuine value to readers. It applies proven SEO copywriting techniques, proper keyword integration, and optimal content structure.
 
-## When to Use This Skill
+**System role**: Build layer skill. It turns briefs and signals into assets that other skills can review, publish, and monitor.
+
+## When This Must Trigger
+
+Use this when the conversation involves any of these situations — even if the user does not use SEO terminology:
+
+Use this whenever the task needs a shippable asset or transformation that should feed directly into quality review, deployment, or monitoring.
 
 - Writing blog posts targeting specific keywords
 - Creating landing pages optimized for search
@@ -72,7 +119,9 @@ This skill creates search-engine-optimized content that ranks well while providi
 6. **Readability Enhancement**: Ensures content is accessible and engaging
 7. **Featured Snippet Optimization**: Formats for SERP feature opportunities
 
-## How to Use
+## Quick Start
+
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ### Basic Content Creation
 
@@ -97,9 +146,18 @@ include FAQ section for featured snippets
 Here's my content brief: [brief]. Write SEO-optimized content following this outline.
 ```
 
+## Skill Contract
+
+**Expected output**: a ready-to-use asset or implementation-ready transformation plus a short handoff summary ready for `memory/content/`.
+
+- **Reads**: the brief, target keywords, entity inputs, quality constraints, and prior decisions from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Writes**: a user-facing content, metadata, or schema deliverable plus a reusable summary that can be stored under `memory/content/`.
+- **Promotes**: approved angles, messaging choices, missing evidence, and publish blockers to `CLAUDE.md`, `memory/decisions.md`, and `memory/open-loops.md`.
+- **Next handoff**: use the `Next Best Skill` below when the asset is ready for review or deployment.
+
 ## Data Sources
 
-> See [CONNECTORS.md](../../CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~SEO tool + ~~search console connected:**
 Automatically pull keyword metrics (search volume, difficulty, CPC), competitor content analysis (top-ranking pages, content length, common topics), SERP features (featured snippets, PAA questions), and keyword opportunities (related keywords, question-based queries).
@@ -137,7 +195,7 @@ When a user requests SEO content:
 
 2. **Load CORE-EEAT Quality Constraints**
 
-   Before writing, load content quality standards from the [CORE-EEAT Benchmark](../../references/core-eeat-benchmark.md):
+   Before writing, load content quality standards from the [CORE-EEAT Benchmark](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md):
 
    ```markdown
    ### CORE-EEAT Pre-Write Checklist
@@ -166,9 +224,9 @@ When a user requests SEO content:
    | O10 | Multimedia Structure | Images/videos have captions and carry information |
    | E07 | Practical Tools | Include downloadable templates, checklists, or calculators |
 
-   _These 16 items apply across all content types. For content-type-specific dimension weights, see the Content-Type Weight Table in [core-eeat-benchmark.md](../../references/core-eeat-benchmark.md)._
-   _Full 80-item benchmark: [references/core-eeat-benchmark.md](../../references/core-eeat-benchmark.md)_
-   _For complete content quality audit: use [content-quality-auditor](../../cross-cutting/content-quality-auditor/)_
+   _These 16 items apply across all content types. For content-type-specific dimension weights, see the Content-Type Weight Table in [core-eeat-benchmark.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md)._
+   _Full 80-item benchmark: [references/core-eeat-benchmark.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md)_
+   _For complete content quality audit: use [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md)_
    ```
 
 3. **Research and Plan**
@@ -246,7 +304,7 @@ When a user requests SEO content:
 
    Follow the on-page SEO checklist (keyword placement, content quality, readability, technical elements) and the content writing template (H1 with keyword, hook, sections with H2/H3, FAQ, conclusion with CTA).
 
-   > **Reference**: See [references/seo-writing-checklist.md](./references/seo-writing-checklist.md) for the full on-page SEO checklist, content writing template, and featured snippet optimization patterns.
+   > **Reference**: See [references/seo-writing-checklist.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/references/seo-writing-checklist.md) for the full on-page SEO checklist, content writing template, and featured snippet optimization patterns.
 
    Key requirements while writing:
    - Primary keyword in title, H1, first 100 words, at least one H2, and conclusion
@@ -275,7 +333,7 @@ When a user requests SEO content:
 
     Then verify the 16 CORE-EEAT pre-write constraints (C01, C02, C06, C10, O01, O02, O06, O09, R01, R02, R04, R07, C03, O08, O10, E07) with pass/warning/fail status. List items needing attention.
 
-    _For full 80-item audit, use [content-quality-auditor](../../cross-cutting/content-quality-auditor/)_
+    _For full 80-item audit, use [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md)_
 
 ## Validation Checkpoints
 
@@ -297,7 +355,7 @@ When a user requests SEO content:
 
 **User**: "Write an SEO-optimized article about 'email marketing best practices' targeting small businesses"
 
-> **Reference**: See [references/seo-writing-checklist.md](./references/seo-writing-checklist.md) for the full example output demonstrating a complete SEO article with meta description, H1/H2/H3 hierarchy, statistics with citations, comparison tables, FAQ section, and conclusion with CTA.
+> **Reference**: See [references/seo-writing-checklist.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/references/seo-writing-checklist.md) for the full example output demonstrating a complete SEO article with meta description, H1/H2/H3 hierarchy, statistics with citations, comparison tables, FAQ section, and conclusion with CTA.
 
 The example output demonstrates: keyword in H1 and first 100 words, statistics with sources (DMA, Emarsys), comparison tables, bullet-point lists, pro tips, FAQ section with 40-60 word answers, and a clear CTA in the conclusion.
 
@@ -336,16 +394,28 @@ Write an ultimate guide about [topic] (3,000+ words) targeting [keyword]
 5. **Include visual elements** - Break up text with images, tables, lists
 6. **Update regularly** - Fresh content signals to search engines
 
+
+### Save Results
+
+After delivering content or optimization output to the user, ask:
+
+> "Save these results for future sessions?"
+
+If yes, write a dated summary to `memory/content/YYYY-MM-DD-<topic>.md` containing:
+- One-line description of what was created
+- Target keyword and content type
+- Open loops or items needing review
+- Source data references
+
+**Gate check recommended**: Run content-quality-auditor before publishing (PostToolUse hook will remind automatically).
+
+If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
+
 ## Reference Materials
 
-- [Title Formulas](./references/title-formulas.md) - Proven headline formulas, power words, CTR patterns
-- [Content Structure Templates](./references/content-structure-templates.md) - Templates for blog posts, comparisons, listicles, how-tos, pillar pages
+- [Title Formulas](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/references/title-formulas.md) - Proven headline formulas, power words, CTR patterns
+- [Content Structure Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/references/content-structure-templates.md) - Templates for blog posts, comparisons, listicles, how-tos, pillar pages
 
-## Related Skills
+## Next Best Skill
 
-- [keyword-research](../../research/keyword-research/) — Find keywords to target
-- [geo-content-optimizer](../geo-content-optimizer/) — Optimize for AI citations
-- [meta-tags-optimizer](../meta-tags-optimizer/) — Create compelling meta tags
-- [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) — Audit SEO elements
-- [content-quality-auditor](../../cross-cutting/content-quality-auditor/) — Full 80-item CORE-EEAT audit
-
+- **Primary**: [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md) — gate the draft before publishing or handing it off.

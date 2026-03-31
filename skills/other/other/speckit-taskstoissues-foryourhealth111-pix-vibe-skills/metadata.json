@@ -1,0 +1,17 @@
+{
+  "name": "speckit-taskstoissues",
+  "repo": "foryourhealth111-pixel/Vibe-Skills",
+  "path": "bundled/skills/speckit-taskstoissues/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/foryourhealth111-pixel/Vibe-Skills",
+  "dir_name": "speckit-taskstoissues-foryourhealth111-pix-vibe-skills",
+  "downloaded_at": "2026-03-31T01:32:01.741753Z",
+  "author": "foryourhealth111-pixel",
+  "source_url": "https://github.com/foryourhealth111-pixel/Vibe-Skills/blob/main/bundled/skills/speckit-taskstoissues/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/foryourhealth111-pixel/Vibe-Skills/blob/main/bundled/skills/speckit-taskstoissues/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

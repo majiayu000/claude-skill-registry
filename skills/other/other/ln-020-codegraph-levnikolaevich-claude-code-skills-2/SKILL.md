@@ -51,26 +51,36 @@ Route based on user intent:
 
 | User says | Tool | Parameters |
 |---|---|---|
-| "Show dependencies" / "What uses X?" | `trace_paths` | `{ name: "X", file: "...", path_kind: "mixed", direction: "reverse" }` |
-| "Who calls X?" / "What does X call?" | `trace_paths` | `{ name: "X", file: "...", path_kind: "calls", direction: "reverse"\|"forward" }` |
-| "Tell me about X" / "Context of X" | `get_symbol` | `{ name: "X", file: "..." }` |
-| "Project structure" / "Architecture" | `get_architecture` | `{ path?: "src/" }` |
+| "Show dependencies" / "What uses X?" | `trace_paths` | `{ name: "X", file: "...", path_kind: "mixed", direction: "reverse", path: "{project_path}" }` |
+| "Who calls X?" / "What does X call?" | `trace_paths` | `{ name: "X", file: "...", path_kind: "calls", direction: "reverse"\|"forward", path: "{project_path}" }` |
+| "Tell me about X" / "Context of X" | `get_symbol` | `{ name: "X", file: "...", path: "{project_path}" }` |
+| "Project structure" / "Architecture" | `get_architecture` | `{ path: "{project_path}", scope?: "src/" }` |
 | "Find symbol X" | `search_symbols` | `{ query: "X" }` |
 | "Watch for changes" | `watch_project` | `{ path: "{project_path}" }` |
-| "Find duplicate code" | `find_clones` | `{ type: "all" }` |
-| "Risky hotspots" | `find_hotspots` | `{ minCallers: 2, minComplexity: 5 }` |
-| "Unused exports" | `find_unused_exports` | `{}` |
-| "Circular dependencies" | `find_cycles` | `{}` |
-| "Module coupling" | `get_module_metrics` | `{ minCoupling: 0 }` |
-| "Implementations / overrides" | `find_implementations` | `{ qualified_name: "..." }` |
-| "Dataflow / propagation" | `find_dataflows` | `{ qualified_name: "...", depth: 2 }` |
+| "Find duplicate code" | `find_clones` | `{ path: "{project_path}", type: "all" }` |
+| "Risky hotspots" | `find_hotspots` | `{ path: "{project_path}", min_callers: 2, min_complexity: 5 }` |
+| "Unused exports" | `find_unused_exports` | `{ path: "{project_path}" }` |
+| "Circular dependencies" | `find_cycles` | `{ path: "{project_path}" }` |
+| "Module coupling" | `get_module_metrics` | `{ path: "{project_path}", min_coupling: 0 }` |
+| "Implementations / overrides" | `find_implementations` | `{ name: "X", file: "...", path: "{project_path}" }` |
+| "Dataflow / propagation" | `find_dataflows` | `{ name: "X", file: "...", path: "{project_path}", depth: 2 }` |
+
+**Canonical selector rule:** Semantic tools accept exactly one selector:
+- `symbol_id`
+- `workspace_qualified_name`
+- `qualified_name`
+- `name` + `file`
+
+**Preferred flow:** use `search_symbols` first, then feed the returned `workspace_qualified_name` into `get_symbol`, `trace_paths`, `find_references`, or `find_implementations` for exact follow-up queries.
+
+**Precision controls:** `get_symbol`, `trace_paths`, and `find_references` support `min_confidence` (`low`, `inferred`, `exact`, `precise`) when the caller wants to suppress weaker parser-only facts.
 
 ### Phase 3: Present Results
 
 1. Show MCP tool output directly (markdown tables)
 2. For code snippets referenced in results, use `hex-line read_file` with line ranges
 3. Suggest follow-up queries based on results:
-   - After `search_symbols` → suggest `get_symbol` for top result
+   - After `search_symbols` → suggest `get_symbol` with `workspace_qualified_name` for the top exact match
    - After `get_symbol` → suggest `trace_paths` if refactoring
    - After `trace_paths` → suggest `find_references` or `find_implementations` depending on symbol kind
 
@@ -80,9 +90,9 @@ Route based on user intent:
 |---|---|---|
 | JavaScript | .js, .mjs, .cjs, .jsx | Strongest semantic coverage |
 | TypeScript / TSX | .ts, .tsx | Strongest semantic coverage |
-| Python | .py | Definitions, exports, imports; more limited cross-file semantics |
-| C# | .cs | Definitions, exports, imports, type relations |
-| PHP | .php | Definitions, exports, imports |
+| Python | .py | Workspace-aware definitions, calls, imports, unused exports; optional precise overlay when provider is installed |
+| C# | .cs | Workspace-aware definitions, calls, project/namespace ownership, type relations; optional precise overlay when provider is installed |
+| PHP | .php | Workspace-aware definitions, calls, PSR-4 namespace imports, unused exports; optional precise overlay when provider is installed |
 
 ## MCP Server Setup
 

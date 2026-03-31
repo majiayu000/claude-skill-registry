@@ -127,4 +127,17 @@ Before presenting the review, verify:
 | "The security check is overkill for internal code" | Internal code gets exposed. Check it anyway. |
 | "Tests are passing so it must be fine" | Tests check behavior. Review checks maintainability, security, and conventions. |
 
+## Pre-Delivery Checklist
+
+Before presenting the review, verify:
+
+- [ ] `git diff` and `git diff --cached` were both read
+- [ ] Every changed file was read in full (not just the diff)
+- [ ] Stage 1 (spec compliance) was completed before Stage 2
+- [ ] All security checks were performed (secrets, injection, auth)
+- [ ] Convention compliance was checked against CLAUDE.md
+- [ ] Each issue has file:line, description, and severity
+- [ ] Good practices were acknowledged (not just negatives)
+- [ ] No "probably fine" — every concern is flagged or verified
+
 <!-- Skill by Huzefa Nalkheda Wala | github.com/huzaifa525 | claude-code-optimizer -->

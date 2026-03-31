@@ -8,7 +8,8 @@ license: MIT
 
 # Security Setup Coordinator
 
-L2 Domain Coordinator that orchestrates security scanning and configuration for project bootstrap.
+**Type:** L2 Domain Coordinator
+**Category:** 7XX Bootstrap
 
 ## Purpose & Scope
 
@@ -97,7 +98,7 @@ L2 Domain Coordinator that orchestrates security scanning and configuration for 
 
 ---
 
-## Delegation Pattern
+## Worker Invocation (MANDATORY)
 
 > **CRITICAL:** All delegations use Agent tool with `subagent_type: "general-purpose"` for context isolation.
 
@@ -150,6 +151,22 @@ Mode: vulnerabilities_only (only CVE scan, skip outdated/unused checks)",
 - [ ] Summary report returned to parent orchestrator
 
 ---
+
+## TodoWrite format (mandatory)
+
+```text
+- Phase 1: Invoke secret scanner ln-761 (pending)
+- Phase 2: Invoke dependency auditor ln-625 (pending)
+- Phase 3: Aggregate findings (pending)
+- Phase 4: Generate security artifacts (pending)
+- Phase 5: Return summary (pending)
+```
+
+## Meta-Analysis
+
+**MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
+
+Skill type: `planning-coordinator`. Run after all phases complete. Output to chat using the protocol format.
 
 ## Reference Files
 

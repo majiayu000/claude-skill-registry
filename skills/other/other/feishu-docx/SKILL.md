@@ -1,11 +1,11 @@
 ---
 name: feishu-docx
-description: Export and manage Feishu/Lark cloud documents. Supports docx, sheets, bitable, wiki, WeChat article import/export, document writing, and drive file management. Use this skill when you need to read, analyze, write, or manage content in Feishu knowledge base.
+description: Export, write, and manage Feishu/Lark cloud documents. Supports docx, sheets, bitable, wiki, WeChat article import/export, drive management, and browser-based export for public or browser-readable docs. Use this skill when you need to read, analyze, write, or manage content in a Feishu knowledge base.
 ---
 
 # Feishu Docx Exporter
 
-Export Feishu/Lark cloud documents to Markdown format for AI analysis.
+Export Feishu/Lark cloud documents to Markdown for AI analysis, writing, and automation.
 
 ## Setup (One-time)
 
@@ -16,6 +16,15 @@ feishu-docx config set --app-id YOUR_APP_ID --app-secret YOUR_APP_SECRET
 
 > Token auto-refreshes. No user interaction required.
 
+### Optional: Browser-Based Export
+
+`export-browser` requires Playwright and a Chromium runtime:
+
+```bash
+pip install playwright
+playwright install chromium
+```
+
 ## Export Documents
 
 ```bash
@@ -24,18 +33,32 @@ feishu-docx export "<FEISHU_URL>" -o ./output
 
 The exported Markdown file will be saved with the document's title as filename.
 
+If the document is public or only readable in your current browser session, prefer:
+
+```bash
+feishu-docx export-browser "<FEISHU_OR_LARK_URL>" -o ./output
+```
+
+Or reuse an existing Playwright session:
+
+```bash
+feishu-docx export-browser "<FEISHU_OR_LARK_URL>" --storage-state ./storage_state.json
+```
+
 ### Supported Document Types
 
 - **docx**: Feishu cloud documents → Markdown with images
 - **sheet**: Spreadsheets → Markdown tables
 - **bitable**: Multidimensional tables → Markdown tables
 - **wiki**: Knowledge base nodes → Auto-resolved and exported
+- **public/browser-readable docs**: Browser-based export with local images and attachments
 
 ## Command Reference
 
 | Command | Description |
 |---------|-------------|
 | `feishu-docx export <URL>` | Export document to Markdown |
+| `feishu-docx export-browser <URL>` | Export in a real browser session with local assets |
 | `feishu-docx export-wechat <URL>` | Export WeChat article to Markdown |
 | `feishu-docx create <TITLE>` | Create new document |
 | `feishu-docx create --url <URL>` | Create document from WeChat article |
@@ -65,6 +88,12 @@ feishu-docx export "https://xxx.feishu.cn/wiki/ABC123" -o ./docs
 
 ```bash
 feishu-docx export "https://xxx.feishu.cn/docx/XYZ789" -o ./docs -n meeting_notes
+```
+
+### Export a public or browser-readable doc in a real browser session
+
+```bash
+feishu-docx export-browser "https://xxx.larkoffice.com/wiki/ABC123" -o ./browser_docs
 ```
 
 ### Read content directly (recommended for AI Agent)
@@ -185,7 +214,8 @@ feishu-docx update "https://xxx.feishu.cn/docx/xxx" -b blk123abc -c "新内容"
 
 ## Tips
 
-- Images auto-download to `{doc_title}/` folder
+- Images and attachments auto-download to `{doc_title}/` folder when local assets are available
+- Prefer `export-browser` for public share links or browser-readable docs
 - Use `--stdout` or `-c` for direct content output (recommended for agents)
 - Use `-b` to export with block IDs for later updates
 - Token auto-refreshes, no re-auth needed

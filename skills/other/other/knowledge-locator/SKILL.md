@@ -5,6 +5,8 @@ description: 'Consult this skill when searching or navigating stored knowledge. 
   retrieving from palaces, finding past PR decisions. Do not use when creating new
   palace structures - use memory-palace-architect. DO NOT use when: processing new
   external resources - use knowledge-intake.'
+version: 1.7.1
+alwaysApply: false
 category: navigation
 tags:
 - retrieval
@@ -24,6 +26,7 @@ usage_patterns:
 - discovery
 - review-search
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 500
 ---
 ## Table of Contents

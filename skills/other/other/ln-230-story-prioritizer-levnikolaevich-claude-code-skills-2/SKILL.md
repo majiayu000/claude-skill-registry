@@ -8,6 +8,9 @@ license: MIT
 
 # Story Prioritizer
 
+**Type:** L3 Worker
+**Category:** 2XX Planning
+
 Evaluate Stories using RICE scoring with market research. Generate consolidated prioritization table for Epic.
 
 ## Purpose & Scope

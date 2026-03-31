@@ -32,4 +32,17 @@ Before making any changes for **$ARGUMENTS**, follow this process:
 - Check that no existing tests broke
 - Verify the change integrates with existing code
 
+## Pre-Delivery Checklist
+
+Before presenting the result, verify:
+
+- [ ] At least 2 similar examples were read from the codebase
+- [ ] Naming matches existing conventions (casing, prefixes, suffixes)
+- [ ] File location follows existing project structure
+- [ ] Import style matches the codebase (relative vs absolute, named vs default)
+- [ ] Error handling follows existing patterns (not invented new ones)
+- [ ] Tests added following existing test patterns
+- [ ] No unrelated changes or "while I'm here" improvements
+- [ ] Linter/formatter would pass on the new code
+
 <!-- Skill by Huzefa Nalkheda Wala | claude-code-optimizer -->

@@ -21,6 +21,7 @@ tags:
 dependencies: []
 estimated_tokens: 2500
 complexity: beginner
+model_hint: fast
 provides:
   patterns:
   - rule-writing

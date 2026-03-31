@@ -37,6 +37,7 @@ usage_patterns:
 - command-translation
 - cross-platform-workflows
 complexity: beginner
+model_hint: fast
 estimated_tokens: 400
 progressive_loading: true
 modules:

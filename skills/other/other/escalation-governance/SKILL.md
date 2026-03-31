@@ -7,6 +7,8 @@ description: 'NEVER escalate without investigation first. This is the Iron Law. 
   - investigate root cause first. DO NOT use when: time pressure alone - urgency doesn''t
   change task complexity. DO NOT use when: "just to be safe" - assess actual complexity
   instead.'
+version: 1.7.1
+alwaysApply: false
 category: agent-workflow
 tags:
 - escalation
@@ -16,6 +18,7 @@ tags:
 - orchestration
 dependencies: []
 estimated_tokens: 800
+model_hint: standard
 ---
 ## Table of Contents
 
@@ -211,7 +214,7 @@ Agent starts task at assigned model
 
 **Claude.ai MCP Connectors (Claude Code 2.1.46+)**: Users with claude.ai connectors configured may have additional MCP tools auto-loaded, increasing the total tool description footprint. This makes it more likely that haiku agents will exceed the 10% tool search threshold. When escalation decisions involve MCP-heavy workflows, factor in claude.ai connector tool count via `/mcp`.
 
-**Effort Controls as Escalation Alternative (Opus 4.6 / Claude Code 2.1.32+)**: Opus 4.6 introduces adaptive thinking with effort levels (`low`, `medium`, `high`, `max`). Before escalating between models, consider whether adjusting effort level on the current model would suffice:
+**Effort Controls as Escalation Alternative (Opus 4.6 / Claude Code 2.1.32+)**: Opus 4.6 introduces adaptive thinking with effort levels (`low`, `medium`, `high`). The `max` level was removed in 2.1.72; `high` is now the ceiling. Symbols: ○ (low) ◐ (medium) ● (high). Use `/effort auto` to reset to default. Before escalating between models, consider whether adjusting effort on the current model would suffice:
 
 | Instead of... | Consider... | When |
 |--------------|-------------|------|
@@ -243,6 +246,32 @@ resolve to Opus 4.6 instead of deprecated versions.
 using custom Bedrock inference profiles or non-standard
 Claude model identifiers. Effort controls now work
 reliably across all deployment configurations.
+
+**Default Opus 4.6 on providers (2.1.73+)**: Bedrock,
+Vertex, and Microsoft Foundry now default to Opus 4.6
+(was Opus 4.1). Subagent `model: opus`/`sonnet`/`haiku`
+aliases now resolve to the current version on all
+providers; previously they were silently downgraded to
+older versions (e.g., Opus 4.1 instead of 4.6). This
+fix means agent dispatch workflows on third-party
+providers now match first-party API behavior.
+
+**`modelOverrides` setting (2.1.73+)**: Maps model
+picker entries to provider-specific IDs (Bedrock
+inference profile ARNs, Vertex version names, Foundry
+deployment names). Use when routing model selections to
+specific inference profiles. See the model optimization
+guide for configuration details.
+
+**`/output-style` deprecated (2.1.73+)**: Use `/config`
+instead. Output style is now fixed at session start for
+better prompt caching.
+
+**Full model IDs in agent frontmatter (2.1.74+)**: Agent
+`model:` fields now accept full model IDs (e.g.,
+`claude-opus-4-6`) in addition to aliases (`opus`,
+`sonnet`, `haiku`). Previously, full IDs were silently
+ignored. Agents now accept the same values as `--model`.
 
 Effort controls do NOT replace the escalation governance
 framework: they provide an additional axis. The Iron Law

@@ -11,7 +11,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 8XX Optimization
-**Parent:** ln-830-code-modernization-coordinator
 
 Executes OSS replacement plans from ln-645-open-source-replacer auditor. For each custom module with an OSS alternative: install package, rewrite imports, run tests, keep or discard atomically.
 

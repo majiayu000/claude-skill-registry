@@ -4,11 +4,11 @@ description: Use when you need to write or improve integration tests — includi
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.13.0-SNAPSHOT
+  version: 0.13.0
 ---
-# Java Integration Testing Guidelines
+# Spring Boot Integration Testing
 
-Apply Java integration testing guidelines for Spring Boot 4.0.x.
+Apply Spring Boot integration testing guidelines for Spring Boot 4.0.x.
 
 **What is covered in this Skill?**
 

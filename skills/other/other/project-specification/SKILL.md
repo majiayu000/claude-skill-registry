@@ -8,6 +8,7 @@ model_preference: claude-sonnet-4
 category: workflow
 tags: [specification, requirements, acceptance-criteria, spec-driven-development]
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 2200
 ---
 ## Table of Contents

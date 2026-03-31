@@ -28,6 +28,7 @@ usage_patterns:
 - multi-agent-review
 - task-dependency-management
 complexity: advanced
+model_hint: deep
 estimated_tokens: 450
 progressive_loading: true
 modules:

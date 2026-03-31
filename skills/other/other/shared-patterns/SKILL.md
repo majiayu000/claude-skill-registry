@@ -17,6 +17,7 @@ tags:
 - reusable
 dependencies: []
 estimated_tokens: 400
+model_hint: standard
 ---
 # Shared Patterns
 

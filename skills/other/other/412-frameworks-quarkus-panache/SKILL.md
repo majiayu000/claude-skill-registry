@@ -1,10 +1,10 @@
 ---
 name: 412-frameworks-quarkus-panache
-description: Use when you need data access with Quarkus Hibernate ORM Panache — including PanacheEntity / PanacheEntityBase, PanacheRepository, named and HQL queries, DTO projections (project(Class)), pagination (Page.of()), N+1 avoidance (JOIN FETCH), optimistic locking (@Version / OptimisticLockException), @NamedQuery for validated reusable queries, transactions, @TestTransaction for test isolation, and immutable-friendly patterns. This is the Quarkus analogue to Spring Data for relational persistence. Part of the skills-for-java project
+description: Use when you need data access with Quarkus Hibernate ORM Panache — including PanacheEntity / PanacheEntityBase, PanacheRepository, named queries, JPQL, native SQL, DTO projections (project(Class)), pagination (Page.of()), N+1 avoidance (JOIN FETCH), optimistic locking (@Version / OptimisticLockException), @NamedQuery for validated reusable queries, transactions, @TestTransaction for test isolation, and immutable-friendly patterns. This is the Quarkus analogue to Spring Data for relational persistence. Part of the skills-for-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.13.0-SNAPSHOT
+  version: 0.13.0
 ---
 # Hibernate ORM with Panache
 
@@ -13,16 +13,16 @@ Apply Panache patterns for Hibernate ORM in Quarkus.
 **What is covered in this Skill?**
 
 - Active record (PanacheEntity) vs PanacheRepository — when to use each
-- Parameterized HQL / Panache queries: positional (?1) and named (:param) — no unsafe concatenation
+- Parameterized JPQL / Panache queries: positional (?1) and named (:param) — no unsafe concatenation
 - @NamedQuery on entities for reusable, build-time validated queries
 - DTO projections with project(Class) to avoid exposing managed entities
 - Pagination with Page.of(pageIndex, pageSize) and query.count()
-- N+1 avoidance with JOIN FETCH in HQL queries
+- N+1 avoidance with JOIN FETCH in JPQL queries
 - Optimistic locking with @Version and handling OptimisticLockException
 - @Transactional application services
 - @TestTransaction for automatic rollback in @QuarkusTest tests
 - Mapping entities vs exposing DTOs at REST boundaries
-- Pairing with `@411` for raw SQL when needed
+- Native queries via Hibernate when you want controlled SQL in the same transaction; pairing with `@411` for JDBC when bypassing Hibernate at the boundary
 
 **Scope:** Apply recommendations based on the reference rules and good/bad code examples.
 

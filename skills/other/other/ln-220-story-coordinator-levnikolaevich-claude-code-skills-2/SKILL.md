@@ -132,8 +132,11 @@ Record each result through runtime `record-epic`.
 
 Finalize only after all expected worker summaries are recorded.
 
+**Template compliance gate:** Fetch each created Story via `get_issue`. Run `validateTemplateCompliance(description, 'story')` from `planning-runtime/lib/template-compliance.mjs`. All stories must pass (9 sections in order). Record `template_compliance_passed` in state. Guard blocks SELF_CHECK without it.
+
 Checkpoint payload:
 - `final_result`
+- `template_compliance_passed`
 
 ### Phase 8: Self-Check
 
@@ -211,6 +214,7 @@ Skill(skill: "ln-222-story-replanner", args: "{epicId}")
 - [ ] Mode detection checkpointed
 - [ ] All expected worker summaries recorded
 - [ ] Final result checkpointed
+- [ ] Template compliance passed for all created Stories
 - [ ] Self-check passed
 
 ## Meta-Analysis

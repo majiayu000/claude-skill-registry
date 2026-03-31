@@ -1,14 +1,11 @@
 ---
 name: architecture-paradigm-cqrs-es
 description: 'CQRS and Event Sourcing for auditability, read/write separation, and
-  temporal queries.
-
-
-  Triggers: CQRS, event-sourcing, audit-trail, temporal queries, distributed-systems
-
-  Use when: read/write scaling differs or audit trail required
-
-  DO NOT use when: selecting paradigms (use architecture-paradigms first), simple CRUD without audit needs.'
+  temporal queries. Use when read/write scaling differs or audit trail required.
+  Do not use when selecting paradigms (use architecture-paradigms first), simple CRUD
+  without audit needs.'
+version: 1.7.1
+alwaysApply: false
 category: architectural-pattern
 tags:
 - architecture
@@ -28,9 +25,9 @@ usage_patterns:
 - auditability
 - scalability-optimization
 complexity: high
+model_hint: deep
 estimated_tokens: 800
 ---
-
 # The CQRS and Event Sourcing Paradigm
 
 

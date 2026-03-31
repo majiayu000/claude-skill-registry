@@ -1,69 +1,88 @@
 ---
 name: performance-reporter
-version: "4.0.0"
-description: 'Generate consolidated SEO and GEO performance dashboards combining rankings, traffic, backlinks, and AI visibility metrics for stakeholders. Use when the user asks to "generate SEO report", "performance report", "SEO dashboard", "report to stakeholders", "show me the numbers", "monthly SEO report", "traffic report", or "present SEO results to my boss". For detailed rank tracking, see rank-tracker. For link-specific analysis, see backlink-analyzer.'
+description: 'SEO/GEO dashboards: rankings, traffic, backlinks, AI visibility for stakeholders and executives. "Monthly SEO report" / "出SEO报告" / "汇报给老板". SEO报告/绩效仪表盘/流量报告 SEOレポート SEO리포트 informe SEO'
+version: "5.1.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 metadata:
   author: aaron-he-zhu
-  version: "4.0.0"
+  version: "5.1.0"
   geo-relevance: "medium"
   tags:
     - seo
     - geo
-    - performance report
-    - seo report
-    - traffic analysis
-    - seo dashboard
-    - executive summary
-    - analytics report
-    - kpi tracking
     - seo-reporting
+    - performance-report
     - kpi-dashboard
-    - monthly-report
     - traffic-report
-    - analytics-report
+    - monthly-report
     - stakeholder-report
-    - seo-metrics
-    - organic-traffic
-    - ctr-report
+    - SEO报告
+    - SEOレポート
+    - SEO리포트
+    - informe-seo
   triggers:
+    # EN-formal
     - "generate SEO report"
     - "performance report"
     - "traffic report"
     - "SEO dashboard"
-    - "report to stakeholders"
-    - "monthly report"
     - "SEO analytics"
-    - "show me the numbers"
+    - "monthly report"
+    # EN-casual
+    - "report to stakeholders"
     - "monthly SEO report"
+    - "show me my SEO results"
     - "present SEO results to my boss"
+    - "report to my boss"
+    - "monthly SEO summary"
+    # EN-question
+    - "how are my SEO metrics"
+    - "how is my SEO performing"
+    # ZH-pro
+    - "SEO报告"
+    - "绩效仪表盘"
+    - "流量报告"
+    - "数据看板"
+    # ZH-casual
+    - "出SEO报告"
+    - "汇报给老板"
+    - "看看数据"
+    - "月报"
+    - "出月报"
+    - "周报"
+    # JA
+    - "SEOレポート"
+    - "パフォーマンスレポート"
+    # KO
+    - "SEO 리포트"
+    - "성과 보고서"
+    # ES
+    - "informe SEO"
+    - "reporte de rendimiento"
+    # PT
+    - "relatório SEO"
+    # Misspellings
+    - "SEO repoort"
 ---
 
 # Performance Reporter
 
 
 > **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
+> **System Mode**: This monitoring skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
 
-<details>
-<summary>Browse all 20 skills</summary>
-
-**Research** · [keyword-research](../../research/keyword-research/) · [competitor-analysis](../../research/competitor-analysis/) · [serp-analysis](../../research/serp-analysis/) · [content-gap-analysis](../../research/content-gap-analysis/)
-
-**Build** · [seo-content-writer](../../build/seo-content-writer/) · [geo-content-optimizer](../../build/geo-content-optimizer/) · [meta-tags-optimizer](../../build/meta-tags-optimizer/) · [schema-markup-generator](../../build/schema-markup-generator/)
-
-**Optimize** · [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) · [technical-seo-checker](../../optimize/technical-seo-checker/) · [internal-linking-optimizer](../../optimize/internal-linking-optimizer/) · [content-refresher](../../optimize/content-refresher/)
-
-**Monitor** · [rank-tracker](../rank-tracker/) · [backlink-analyzer](../backlink-analyzer/) · **performance-reporter** · [alert-manager](../alert-manager/)
-
-**Cross-cutting** · [content-quality-auditor](../../cross-cutting/content-quality-auditor/) · [domain-authority-auditor](../../cross-cutting/domain-authority-auditor/) · [entity-optimizer](../../cross-cutting/entity-optimizer/) · [memory-management](../../cross-cutting/memory-management/)
-
-</details>
 
 This skill creates comprehensive SEO and GEO performance reports that combine multiple metrics into actionable insights. It produces executive summaries, detailed analyses, and visual data presentations for stakeholder communication.
 
-## When to Use This Skill
+**System role**: Monitoring layer skill. It turns performance changes into deltas, alerts, and next actions.
+
+## When This Must Trigger
+
+Use this when the conversation involves any of these situations — even if the user does not use SEO terminology:
+
+Use this whenever the task needs time-aware change detection, escalation, or stakeholder-ready visibility.
 
 - Monthly/quarterly SEO reporting
 - Executive stakeholder updates
@@ -84,7 +103,9 @@ This skill creates comprehensive SEO and GEO performance reports that combine mu
 7. **ROI Calculation**: Measures SEO investment returns
 8. **Recommendations**: Suggests actions based on data
 
-## How to Use
+## Quick Start
+
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ### Generate Performance Report
 
@@ -108,11 +129,20 @@ Create a GEO visibility report for [domain]
 Generate a content performance report
 ```
 
+## Skill Contract
+
+**Expected output**: a delta summary, alert/report output, and a short handoff summary ready for `memory/monitoring/`.
+
+- **Reads**: current metrics, previous baselines, alert thresholds, and reporting context from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Writes**: a user-facing monitoring deliverable plus a reusable summary that can be stored under `memory/monitoring/`.
+- **Promotes**: significant changes, confirmed anomalies, and follow-up actions to `memory/open-loops.md` and `memory/decisions.md`.
+- **Next handoff**: use the `Next Best Skill` below when a change needs action.
+
 ## Data Sources
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
-> See [CONNECTORS.md](../../CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~analytics + ~~search console + ~~SEO tool + ~~AI monitor connected:**
 Automatically aggregate traffic metrics from ~~analytics, search performance data from ~~search console, ranking and backlink data from ~~SEO tool, and GEO visibility metrics from ~~AI monitor. Creates comprehensive multi-source reports with historical trends.
@@ -154,7 +184,7 @@ When a user requests a performance report:
 
 11. **Compile Full Report** -- Combine all sections with table of contents, appendix (data sources, methodology, glossary).
 
-   > **Reference**: See [references/report-output-templates.md](./references/report-output-templates.md) for complete output templates for all 11 report sections.
+   > **Reference**: See [references/report-output-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/references/report-output-templates.md) for complete output templates for all 11 report sections.
 
 ## Validation Checkpoints
 
@@ -205,21 +235,27 @@ When a user requests a performance report:
 5. **Customize for audience** - Executives need different info than technical teams
 6. **Track GEO metrics** - AI visibility is increasingly important
 
+
+### Save Results
+
+After delivering monitoring data or reports to the user, ask:
+
+> "Save these results for future sessions?"
+
+If yes, write a dated summary to `memory/monitoring/YYYY-MM-DD-<topic>.md` containing:
+- One-line headline finding or status change
+- Top 3-5 actionable items
+- Open loops or anomalies requiring follow-up
+- Source data references
+
+If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
+
 ## Reference Materials
 
-- [Report Output Templates](./references/report-output-templates.md) — Complete output templates for all 11 report sections
-- [KPI Definitions](./references/kpi-definitions.md) — SEO/GEO metric definitions with benchmarks, good ranges, warning thresholds, trend analysis, and attribution guidance
-- [Report Templates by Audience](./references/report-templates.md) — Copy-ready templates for executive, marketing, technical, and client audiences
+- [Report Output Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/references/report-output-templates.md) — Complete output templates for all 11 report sections
+- [KPI Definitions](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/references/kpi-definitions.md) — SEO/GEO metric definitions with benchmarks, good ranges, warning thresholds, trend analysis, and attribution guidance
+- [Report Templates by Audience](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/performance-reporter/references/report-templates.md) — Copy-ready templates for executive, marketing, technical, and client audiences
 
-## Related Skills
+## Next Best Skill
 
-- [content-quality-auditor](../../cross-cutting/content-quality-auditor/) — Include CORE-EEAT scores as page-level content quality KPIs
-- [domain-authority-auditor](../../cross-cutting/domain-authority-auditor/) — Include CITE score as a domain-level KPI in periodic reports
-- [rank-tracker](../rank-tracker/) — Detailed ranking data
-- [backlink-analyzer](../backlink-analyzer/) — Link profile data
-- [alert-manager](../alert-manager/) — Set up report triggers
-- [serp-analysis](../../research/serp-analysis/) — SERP composition data
-- [memory-management](../../cross-cutting/memory-management/) — Archive reports in project memory
-- [entity-optimizer](../../cross-cutting/entity-optimizer/) — Track branded search and Knowledge Panel metrics
-- [technical-seo-checker](../../optimize/technical-seo-checker/) — Technical health data feeds into reports
-
+- **Primary**: [alert-manager](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/SKILL.md) — turn reporting insights into ongoing monitoring rules.

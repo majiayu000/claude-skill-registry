@@ -1,6 +1,6 @@
 ---
 name: ln-840-benchmark-compare
-description: "Runs a balanced built-in vs hex-line benchmark with scenario manifests, activation checks, diff-based correctness, and a final comparison report."
+description: "Runs built-in vs hex-line benchmark with scenario manifests, activation checks, and diff-based correctness. Use when measuring hex-line MCP performance against built-in tools."
 license: MIT
 ---
 
@@ -32,6 +32,7 @@ Run a clean A/B benchmark in Claude Code: one session with built-in tools only, 
 - `mcp/hex-line-mcp/hook.mjs` exists
 - `skills-catalog/ln-840-benchmark-compare/references/goals.md` exists
 - `skills-catalog/ln-840-benchmark-compare/references/expectations.json` exists
+- `skills-catalog/ln-840-benchmark-compare/references/mcp-bench.json` exists
 
 ---
 

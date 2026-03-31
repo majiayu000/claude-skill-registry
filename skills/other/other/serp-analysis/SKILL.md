@@ -1,35 +1,30 @@
 ---
 name: serp-analysis
-version: "4.0.0"
-description: 'Analyze search engine results pages to understand ranking factors, SERP features, user intent patterns, and AI overview triggers. Use when the user asks to "analyze search results", "SERP analysis", "what ranks for", "SERP features", "why does this page rank", "featured snippets", "AI overviews", or "what does Google show for". For tracking rankings over time, see rank-tracker. For keyword discovery, see keyword-research.'
+description: 'Analyze SERPs: ranking factors, features, intent, AI overviews, featured snippets, People Also Ask. "What ranks for this" / "谁排第一" / "搜索结果分析". SERP分析/搜索结果/精选摘要 検索結果チェック/リッチリザルト 검색결과분석 análisis SERP'
+version: "5.1.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 allowed-tools: WebFetch
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 metadata:
   author: aaron-he-zhu
-  version: "4.0.0"
+  version: "5.1.0"
   geo-relevance: "high"
   tags:
     - seo
     - geo
-    - serp
-    - search results
-    - ranking factors
-    - serp features
-    - ai overviews
-    - featured snippets
-    - search intent
+    - serp-analysis
     - serp-features
     - featured-snippet
-    - google-ai-overview
     - ai-overview
     - people-also-ask
-    - knowledge-panel
-    - serp-composition
-    - position-zero
-    - serp-intent
+    - search-intent
+    - SERP分析
+    - 検索結果分析
+    - 검색결과
+    - analisis-serp
   triggers:
+    # EN-formal
     - "analyze search results"
     - "SERP analysis"
     - "what ranks for"
@@ -37,34 +32,56 @@ metadata:
     - "why does this page rank"
     - "featured snippets"
     - "AI overviews"
+    # EN-casual
     - "what's on page one for this query"
     - "who ranks for this keyword"
     - "what does Google show for"
+    - "what shows up for this search"
+    - "who is on page one"
+    # EN-question
+    - "why does this page rank first"
+    - "what SERP features appear for"
+    # ZH-pro
+    - "SERP分析"
+    - "搜索结果分析"
+    - "精选摘要"
+    - "AI概览"
+    # ZH-casual
+    - "谁排第一"
+    - "搜索结果长什么样"
+    - "谁排在前面"
+    # JA
+    - "検索結果ページ分析"
+    - "検索結果分析"
+    - "強調スニペット"
+    # KO
+    - "검색 결과 분석"
+    - "SERP 분석"
+    # ES
+    - "análisis SERP"
+    - "análisis de resultados de búsqueda"
+    # PT
+    - "análise de SERP"
+    # Misspellings
+    - "serp anaylsis"
 ---
 
 # SERP Analysis
 
 
 > **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
+> **System Mode**: This research skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
 
-<details>
-<summary>Browse all 20 skills</summary>
-
-**Research** · [keyword-research](../keyword-research/) · [competitor-analysis](../competitor-analysis/) · **serp-analysis** · [content-gap-analysis](../content-gap-analysis/)
-
-**Build** · [seo-content-writer](../../build/seo-content-writer/) · [geo-content-optimizer](../../build/geo-content-optimizer/) · [meta-tags-optimizer](../../build/meta-tags-optimizer/) · [schema-markup-generator](../../build/schema-markup-generator/)
-
-**Optimize** · [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) · [technical-seo-checker](../../optimize/technical-seo-checker/) · [internal-linking-optimizer](../../optimize/internal-linking-optimizer/) · [content-refresher](../../optimize/content-refresher/)
-
-**Monitor** · [rank-tracker](../../monitor/rank-tracker/) · [backlink-analyzer](../../monitor/backlink-analyzer/) · [performance-reporter](../../monitor/performance-reporter/) · [alert-manager](../../monitor/alert-manager/)
-
-**Cross-cutting** · [content-quality-auditor](../../cross-cutting/content-quality-auditor/) · [domain-authority-auditor](../../cross-cutting/domain-authority-auditor/) · [entity-optimizer](../../cross-cutting/entity-optimizer/) · [memory-management](../../cross-cutting/memory-management/)
-
-</details>
 
 This skill analyzes Search Engine Results Pages to reveal what's working for ranking content, which SERP features appear, and what triggers AI-generated answers. Understand the battlefield before creating content.
 
-## When to Use This Skill
+**System role**: Research layer skill. It turns market signals into reusable strategic inputs for the rest of the library.
+
+## When This Must Trigger
+
+Use this when the conversation involves any of these situations — even if the user does not use SEO terminology:
+
+Use this whenever the task needs reusable market intelligence that should influence strategy, not just an ad hoc answer.
 
 - Before creating content for a target keyword
 - Understanding why certain pages rank #1
@@ -84,7 +101,9 @@ This skill analyzes Search Engine Results Pages to reveal what's working for ran
 6. **Content Format Recommendations**: Suggests optimal format based on SERP
 7. **Difficulty Assessment**: Evaluates realistic ranking potential
 
-## How to Use
+## Quick Start
+
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ### Basic SERP Analysis
 
@@ -112,11 +131,20 @@ Which of these keywords trigger AI Overviews? [keyword list]
 Why does [URL] rank #1 for [keyword]?
 ```
 
+## Skill Contract
+
+**Expected output**: a prioritized research brief, evidence-backed findings, and a short handoff summary ready for `memory/research/`.
+
+- **Reads**: user goals, target market inputs, available tool data, and prior strategy from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Writes**: a user-facing research deliverable plus a reusable summary that can be stored under `memory/research/`.
+- **Promotes**: durable keyword priorities, competitor facts, entity candidates, and strategic decisions to `CLAUDE.md`, `memory/decisions.md`, and `memory/research/`; hand canonical entity work to `entity-optimizer`.
+- **Next handoff**: use the `Next Best Skill` below when the findings are ready to drive action.
+
 ## Data Sources
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
-> See [CONNECTORS.md](../../CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~SEO tool + ~~search console + ~~AI monitor connected:**
 Automatically fetch SERP snapshots for target keywords, extract ranking page metrics (domain authority, backlinks, content length), pull SERP feature data, and check AI Overview presence using ~~AI monitor. Historical SERP change data and mobile vs. desktop variations can be retrieved automatically.
@@ -171,7 +199,7 @@ When a user requests SERP analysis:
 
    Produce a summary with: Key Findings, Content Requirements to Rank (minimum requirements + differentiators), SERP Feature Strategy, Recommended Content Outline, and Next Steps.
 
-   > **Reference**: See [references/analysis-templates.md](./references/analysis-templates.md) for detailed templates for each step.
+   > **Reference**: See [references/analysis-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/serp-analysis/references/analysis-templates.md) for detailed templates for each step.
 
 ## Validation Checkpoints
 
@@ -190,7 +218,7 @@ When a user requests SERP analysis:
 
 ## Example
 
-> **Reference**: See [references/example-report.md](./references/example-report.md) for a complete example analyzing the SERP for "how to start a podcast".
+> **Reference**: See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/serp-analysis/references/example-report.md) for a complete example analyzing the SERP for "how to start a podcast".
 
 ## Advanced Analysis
 
@@ -228,19 +256,27 @@ Analyze mobile vs desktop SERP differences for [keyword]
 6. **Consider AI Overview optimization** - Growing importance
 
 
+
+### Save Results
+
+After delivering findings to the user, ask:
+
+> "Save these results for future sessions?"
+
+If yes, write a dated summary to `memory/research/serp-analysis/YYYY-MM-DD-<topic>.md` containing:
+- One-line headline finding
+- Top 3-5 actionable items
+- Open loops or blockers
+- Source data references
+
+If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
+
 ## Reference Materials
 
-- [Analysis Templates](./references/analysis-templates.md) — Detailed templates for each analysis step (SERP composition, top results, ranking patterns, features, intent, difficulty, recommendations)
-- [SERP Feature Taxonomy](./references/serp-feature-taxonomy.md) — Complete taxonomy of SERP features with trigger conditions, AI overview framework, intent signals, and volatility assessment
-- [Example Report](./references/example-report.md) — Complete example analyzing the SERP for "how to start a podcast"
+- [Analysis Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/serp-analysis/references/analysis-templates.md) — Detailed templates for each analysis step (SERP composition, top results, ranking patterns, features, intent, difficulty, recommendations)
+- [SERP Feature Taxonomy](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/serp-analysis/references/serp-feature-taxonomy.md) — Complete taxonomy of SERP features with trigger conditions, AI overview framework, intent signals, and volatility assessment
+- [Example Report](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/serp-analysis/references/example-report.md) — Complete example analyzing the SERP for "how to start a podcast"
 
-## Related Skills
+## Next Best Skill
 
-- [keyword-research](../keyword-research/) — Find keywords to analyze
-- [competitor-analysis](../competitor-analysis/) — Deep dive on ranking competitors
-- [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) — Optimize based on findings
-- [geo-content-optimizer](../../build/geo-content-optimizer/) — Optimize for AI citations
-- [meta-tags-optimizer](../../build/meta-tags-optimizer/) — Optimize SERP appearance with meta tags
-- [rank-tracker](../../monitor/rank-tracker/) — Track keyword position changes in SERPs
-- [performance-reporter](../../monitor/performance-reporter/) — Track SERP visibility metrics over time
-
+- **Primary**: [seo-content-writer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/SKILL.md) — turn SERP patterns into a content brief or page structure.

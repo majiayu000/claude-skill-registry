@@ -10,7 +10,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 7XX Project Bootstrap
-**Parent:** ln-720-structure-migrator
 
 Removes platform-specific artifacts from projects exported from online platforms, preparing them for production deployment.
 

@@ -10,7 +10,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 7XX Project Bootstrap
-**Parent:** ln-740-quality-setup
 
 Sets up Git hooks for automated code quality enforcement before commits.
 

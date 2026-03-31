@@ -31,6 +31,7 @@ tools:
 - TodoWrite
 - Glob
 complexity: high
+model_hint: deep
 estimated_tokens: 1100
 progressive_loading: true
 modules:

@@ -36,6 +36,7 @@ usage_patterns:
 - url-content-extraction
 - file-format-conversion
 complexity: basic
+model_hint: fast
 estimated_tokens: 500
 progressive_loading: true
 modules:

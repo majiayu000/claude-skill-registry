@@ -24,6 +24,7 @@ usage_patterns:
 - real-time-processing
 - system-extensibility
 complexity: high
+model_hint: deep
 estimated_tokens: 800
 ---
 # The Event-Driven Architecture Paradigm

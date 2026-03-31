@@ -22,6 +22,7 @@ usage_patterns:
 - acceptance-testing
 - proof-generation
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 3000
 modules:
 - modules/acceptance-criteria.md

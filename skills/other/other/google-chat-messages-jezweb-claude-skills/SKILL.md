@@ -88,48 +88,222 @@ const message = {
 };
 ```
 
-### Widget Types
+## Widget Reference
 
-**Text paragraph** — formatted text block:
+All widget types available in cardsV2 sections.
+
+### textParagraph
+
+Formatted text block. Supports Google Chat formatting (`*bold*`, `_italic_`, `<url|text>`).
+
 ```typescript
-{ textParagraph: { text: '*Bold* and _italic_ text' } }
+{
+  textParagraph: {
+    text: '*Status*: All systems operational\n_Last checked_: 5 minutes ago'
+  }
+}
 ```
 
-**Decorated text** — label + value with optional icon:
+### decoratedText
+
+Labelled value with optional icons. Most versatile widget for key-value data.
+
+**Basic:**
+```typescript
+{
+  decoratedText: {
+    topLabel: 'Environment',
+    text: 'Production',
+    bottomLabel: 'Last deployed 2h ago'
+  }
+}
+```
+
+**With start icon:**
 ```typescript
 {
   decoratedText: {
     topLabel: 'Status',
-    text: 'Deployed',
+    text: 'Healthy',
     startIcon: { knownIcon: 'STAR' }
   }
 }
 ```
 
-**Button list** — action buttons:
+**With custom icon URL:**
+```typescript
+{
+  decoratedText: {
+    topLabel: 'GitHub',
+    text: 'PR #142 merged',
+    startIcon: {
+      iconUrl: 'https://github.githubassets.com/favicons/favicon.svg',
+      altText: 'GitHub'
+    }
+  }
+}
+```
+
+**With button:**
+```typescript
+{
+  decoratedText: {
+    topLabel: 'Alert',
+    text: 'CPU at 95%',
+    button: {
+      text: 'View',
+      onClick: { openLink: { url: 'https://monitoring.example.com' } }
+    }
+  }
+}
+```
+
+**Clickable (whole widget):**
+```typescript
+{
+  decoratedText: {
+    text: 'View full report',
+    wrapText: true,
+    onClick: { openLink: { url: 'https://reports.example.com' } }
+  }
+}
+```
+
+**With wrap text:**
+```typescript
+{
+  decoratedText: {
+    topLabel: 'Description',
+    text: 'This is a longer description that should wrap to multiple lines instead of being truncated',
+    wrapText: true
+  }
+}
+```
+
+### buttonList
+
+One or more action buttons. Buttons open URLs or trigger actions.
+
+**Single button:**
 ```typescript
 {
   buttonList: {
     buttons: [{
-      text: 'View Dashboard',
+      text: 'Open Dashboard',
       onClick: { openLink: { url: 'https://dashboard.example.com' } }
     }]
   }
 }
 ```
 
-**Image** — standalone image:
+**Multiple buttons:**
 ```typescript
-{ image: { imageUrl: 'https://example.com/chart.png', altText: 'Usage chart' } }
+{
+  buttonList: {
+    buttons: [
+      {
+        text: 'Approve',
+        onClick: { openLink: { url: 'https://app.example.com/approve/123' } },
+        color: { red: 0, green: 0.5, blue: 0, alpha: 1 }
+      },
+      {
+        text: 'Reject',
+        onClick: { openLink: { url: 'https://app.example.com/reject/123' } }
+      }
+    ]
+  }
+}
 ```
 
-**Divider** — horizontal separator:
+**Button with icon:**
+```typescript
+{
+  buttonList: {
+    buttons: [{
+      text: 'View on GitHub',
+      icon: { knownIcon: 'BOOKMARK' },
+      onClick: { openLink: { url: 'https://github.com/org/repo/pull/42' } }
+    }]
+  }
+}
+```
+
+### image
+
+Standalone image widget.
+
+```typescript
+{
+  image: {
+    imageUrl: 'https://example.com/chart.png',
+    altText: 'Monthly usage chart'
+  }
+}
+```
+
+### divider
+
+Horizontal line separator between widgets.
+
 ```typescript
 { divider: {} }
 ```
 
-See `references/widget-reference.md` for all widget types with full examples.
-See `references/icon-list.md` for all available knownIcon values.
+### Collapsible Sections
+
+Sections can be collapsed with only the first N widgets visible:
+
+```typescript
+{
+  header: 'Details',
+  collapsible: true,
+  uncollapsibleWidgetsCount: 2,  // Show first 2, collapse rest
+  widgets: [
+    { decoratedText: { topLabel: 'Status', text: 'Active' } },
+    { decoratedText: { topLabel: 'Region', text: 'AU' } },
+    // These start collapsed
+    { decoratedText: { topLabel: 'Instance', text: 'prod-01' } },
+    { decoratedText: { topLabel: 'Memory', text: '2.1 GB' } },
+    { decoratedText: { topLabel: 'CPU', text: '45%' } }
+  ]
+}
+```
+
+## Known Icons
+
+Icons available via `knownIcon` in decoratedText and button widgets.
+
+```typescript
+{ startIcon: { knownIcon: 'STAR' } }
+// or
+{ icon: { knownIcon: 'EMAIL' } }
+```
+
+| Icon Name | Use For |
+|-----------|---------|
+| `AIRPLANE` | Travel, flights |
+| `BOOKMARK` | Save, reference, links |
+| `BUS` | Transport, transit |
+| `CAR` | Driving, transport |
+| `CLOCK` | Time, duration, schedule |
+| `CONFIRMATION_NUMBER_ICON` | Tickets, bookings |
+| `DESCRIPTION` | Documents, files |
+| `DOLLAR` | Money, pricing, cost |
+| `EMAIL` | Email, messages |
+| `INVITE` | Invitations |
+| `MAP_PIN` | Location, address |
+| `MEMBERSHIP` | Members, users |
+| `MULTIPLE_PEOPLE` | Teams, groups |
+| `OFFER` | Deals, promotions |
+| `PERSON` | Individual user |
+| `PHONE` | Phone number, calls |
+| `SHOPPING_CART` | Commerce, purchases |
+| `STAR` | Rating, favourite, important |
+| `STORE` | Shop, retail |
+| `TICKET` | Tickets, events |
+| `VIDEO_CAMERA` | Video, meetings |
+
+For icons not in the list, use `iconUrl` with any publicly accessible image (square, ideally 24x24 or 48x48 pixels).
 
 ## Threading
 
@@ -197,12 +371,6 @@ const digest = buildCard({
     }
   ]
 });
-```
-
-### Simple Text Alert
-
-```typescript
-await sendText(webhookUrl, `*Alert*: CPU usage above 90% on \`worker-prod-1\`\n<${alertUrl}|View Alert>`);
 ```
 
 ## Error Prevention

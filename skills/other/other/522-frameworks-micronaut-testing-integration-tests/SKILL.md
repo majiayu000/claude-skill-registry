@@ -1,10 +1,10 @@
 ---
 name: 522-frameworks-micronaut-testing-integration-tests
-description: Use when you need to write or improve integration tests for Micronaut — @MicronautTest, HttpClient, TestPropertyProvider with Testcontainers, transactional test mode where appropriate, and *IT naming with Failsafe. Part of the skills-for-java project
+description: Use when you need to write or improve integration tests for Micronaut — @MicronautTest, HttpClient, TestPropertyProvider with Testcontainers, transactional test mode where appropriate, and Maven Surefire/Failsafe splits for *Test, *Tests, *IT, and *AT. Part of the skills-for-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.13.0-SNAPSHOT
+  version: 0.13.0
 ---
 # Micronaut Integration Testing
 
@@ -17,15 +17,19 @@ Prove real wiring in Micronaut with containers and HTTP.
 - HttpClient full-stack HTTP assertions
 - @MicronautTest(transactional = true) for rollback where supported
 - Shared containers per class; pinned image tags
-- *IT suffix and maven-failsafe-plugin alignment
+- Maven Surefire/Failsafe: *Test / *Tests vs *IT / *AT; explicit plugin includes and excludes
 
 **Scope:** Apply recommendations based on the reference rules and good/bad code examples.
 
 ## Constraints
 
-Compile before changes; run verify including integration phase.
+Before applying any integration test changes, ensure the project compiles. If compilation fails, stop immediately. After applying improvements, run full verification.
 
 - **MANDATORY**: Run `./mvnw compile` or `mvn compile` before applying any change
+- **PREREQUISITE**: Project must compile successfully and pass basic validation checks before any test refactoring
+- **CRITICAL SAFETY**: If compilation fails, IMMEDIATELY STOP and DO NOT CONTINUE with any recommendations
+- **BLOCKING CONDITION**: Compilation errors must be resolved by the user before proceeding with integration test changes
+- **NO EXCEPTIONS**: Under no circumstances should testing recommendations be applied to a project that fails to compile
 - **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements
 - **BEFORE APPLYING**: Read the reference for detailed rules and examples
 

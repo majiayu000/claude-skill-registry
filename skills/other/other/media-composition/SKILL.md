@@ -15,6 +15,7 @@ tags:
 tools:
 - Bash
 complexity: medium
+model_hint: standard
 estimated_tokens: 450
 progressive_loading: false
 dependencies:

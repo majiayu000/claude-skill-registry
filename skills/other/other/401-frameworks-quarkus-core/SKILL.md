@@ -1,10 +1,10 @@
 ---
 name: 401-frameworks-quarkus-core
-description: Use when building or reviewing core Quarkus applications with CDI beans and scopes, SmallRye Config and profiles, lifecycle, interceptors and events, health probes, virtual threads, and test-friendly design. Part of the skills-for-java project
+description: Use when building or reviewing core Quarkus applications with CDI beans and scopes, SmallRye Config and profiles, lifecycle, interceptors and events, virtual threads, and test-friendly design. Part of the skills-for-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.13.0-SNAPSHOT
+  version: 0.13.0
 ---
 # Quarkus Core Guidelines
 
@@ -21,7 +21,6 @@ Apply Quarkus core guidelines for CDI beans, configuration, profiles, and lifecy
 - @ConfigMapping and structured configuration with Bean Validation (@Valid)
 - Profile-specific properties (%dev, %test, %prod) and @IfBuildProfile
 - Startup and shutdown observers (@Startup, @PreDestroy)
-- SmallRye Health probes (@Liveness, @Readiness)
 - Virtual threads with @RunOnVirtualThread (Java 21+)
 - Native-image safety: @RegisterForReflection, @DisabledOnNativeImage
 
@@ -43,7 +42,7 @@ Before applying any Quarkus changes, ensure the project compiles. If compilation
 - Review Java code for Quarkus application structure and CDI
 - Apply best practices for Quarkus configuration and beans
 - Improve CDI interceptors, events, or programmatic injection in Quarkus
-- Add SmallRye Health probes or virtual-thread configuration
+- Add virtual-thread configuration or tune CDI lifecycle
 
 ## Reference
 

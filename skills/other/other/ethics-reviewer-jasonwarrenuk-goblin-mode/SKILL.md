@@ -1,7 +1,10 @@
 ---
 name: ethics-reviewer
-description: This skill should be used when the user mentions "dark patterns", "accessibility", "a11y", "privacy", "tracking", "analytics", "notifications", "user data", "GDPR", "consent", "manipulation", "sustainability", "performance budget", or when building user-facing features that collect data, send notifications, display urgency, or gate access. Addresses ethical constraints in software design — manipulation, accessibility, privacy, and sustainability.
+description: Passive ethical review: manipulation, accessibility, privacy, sustainability in user-facing features.
 user-invocable: false
+effort: low
+allowed-tools:
+  - Read
 ---
 
 # Ethics Reviewer

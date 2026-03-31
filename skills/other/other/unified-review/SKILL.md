@@ -5,6 +5,8 @@ description: 'Use this skill when orchestrating multiple review types. Use when 
   desired, integrated reporting needed. Do not use when specific review type known
   - use bug-review, test-review, etc. DO NOT use when: architecture-only focus - use
   architecture-review.'
+version: 1.7.1
+alwaysApply: false
 category: orchestration
 tags:
 - review
@@ -21,6 +23,7 @@ usage_patterns:
 - full-review
 - focused-review
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 400
 progressive_loading: true
 dependencies:

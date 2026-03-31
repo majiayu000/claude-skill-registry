@@ -949,6 +949,29 @@ Baseline & 85.2 & 45ms \\
 
 ---
 
+## Citing AI Research Skills
+
+If this library helped with your research — whether for training pipelines, evaluation, paper writing, or any other skill — please consider citing it in your acknowledgments or references:
+
+```bibtex
+@software{ai_research_skills,
+  title     = {AI Research Skills Library},
+  author    = {{Orchestra Research}},
+  year      = {2025},
+  url       = {https://github.com/orchestra-research/AI-research-SKILLs},
+  note      = {Open-source skills library enabling AI agents to autonomously conduct AI research}
+}
+```
+
+A brief mention in your **Acknowledgments** section is also welcome:
+
+```latex
+\section*{Acknowledgments}
+We used the AI Research Skills Library~\cite{ai_research_skills} for [experiment orchestration / evaluation / ...].
+```
+
+---
+
 ## References & Resources
 
 ### Reference Documents (Deep Dives)

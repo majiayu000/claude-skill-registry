@@ -1,28 +1,31 @@
 ---
 name: schema-markup-generator
-version: "4.0.0"
-description: 'Generate Schema.org JSON-LD structured data for FAQ, HowTo, Article, Product, LocalBusiness, and 6 other types targeting rich results. Use when the user asks to "add schema markup", "generate structured data", "JSON-LD", "FAQ schema", "rich snippets", "I want star ratings in Google", or "structured data validation errors". Produces validated markup targeting Google Rich Results, Bing structured data, and AI system understanding. Validates against Google Rich Results Test requirements. For broader technical SEO, see technical-seo-checker. For meta tag optimization, see meta-tags-optimizer.'
+description: 'Generate JSON-LD for FAQ, HowTo, Article, Product, LocalBusiness rich results and AI understanding. "Add structured data" / "添加结构化数据" / "要星级评分". Schema标记/富摘要/JSON-LD/结构化 構造化データ 스키마마크업 datos estructurados'
+version: "5.1.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 allowed-tools: WebFetch
 metadata:
   author: aaron-he-zhu
-  version: "4.0.0"
+  version: "5.1.0"
   geo-relevance: "medium"
   tags:
     - seo
     - structured-data
     - json-ld
     - rich-results
-    - rich-snippets
     - faq-schema
     - howto-schema
     - product-schema
     - article-schema
-    - localbusiness-schema
     - schema-org
+    - 结构化数据
+    - 構造化データ
+    - 스키마마크업
+    - datos-estructurados
   triggers:
+    # EN-formal
     - "add schema markup"
     - "generate structured data"
     - "JSON-LD"
@@ -30,34 +33,56 @@ metadata:
     - "FAQ schema"
     - "schema.org"
     - "structured data markup"
+    # EN-casual
     - "add FAQ rich results"
     - "I want star ratings in Google"
     - "product markup"
     - "recipe schema"
+    - "add structured data to my page"
+    # EN-question
+    - "how to add schema markup"
+    - "how to get rich snippets"
+    # ZH-pro
+    - "结构化数据"
+    - "Schema标记"
+    - "JSON-LD生成"
+    - "富摘要"
+    # ZH-casual
+    - "添加结构化数据"
+    - "要星级评分"
+    - "搜索结果要好看"
+    # JA
+    - "構造化データ"
+    - "スキーママークアップ"
+    - "リッチリザルト"
+    # KO
+    - "스키마 마크업"
+    - "구조화 데이터"
+    # ES
+    - "datos estructurados"
+    - "marcado schema"
+    # PT
+    - "dados estruturados"
+    # Misspellings
+    - "shema markup"
+    - "structred data"
 ---
 
 # Schema Markup Generator
 
 > **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
+> **System Mode**: This build skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
 
-<details>
-<summary>Browse all 20 skills</summary>
-
-**Research** · [keyword-research](../../research/keyword-research/) · [competitor-analysis](../../research/competitor-analysis/) · [serp-analysis](../../research/serp-analysis/) · [content-gap-analysis](../../research/content-gap-analysis/)
-
-**Build** · [seo-content-writer](../seo-content-writer/) · [geo-content-optimizer](../geo-content-optimizer/) · [meta-tags-optimizer](../meta-tags-optimizer/) · **schema-markup-generator**
-
-**Optimize** · [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) · [technical-seo-checker](../../optimize/technical-seo-checker/) · [internal-linking-optimizer](../../optimize/internal-linking-optimizer/) · [content-refresher](../../optimize/content-refresher/)
-
-**Monitor** · [rank-tracker](../../monitor/rank-tracker/) · [backlink-analyzer](../../monitor/backlink-analyzer/) · [performance-reporter](../../monitor/performance-reporter/) · [alert-manager](../../monitor/alert-manager/)
-
-**Cross-cutting** · [content-quality-auditor](../../cross-cutting/content-quality-auditor/) · [domain-authority-auditor](../../cross-cutting/domain-authority-auditor/) · [entity-optimizer](../../cross-cutting/entity-optimizer/) · [memory-management](../../cross-cutting/memory-management/)
-
-</details>
 
 This skill creates Schema.org structured data markup in JSON-LD format to help search engines understand your content and enable rich results in SERPs.
 
-## When to Use This Skill
+**System role**: Build layer skill. It turns briefs and signals into assets that other skills can review, publish, and monitor.
+
+## When This Must Trigger
+
+Use this when the conversation involves any of these situations — even if the user does not use SEO terminology:
+
+Use this whenever the task needs a shippable asset or transformation that should feed directly into quality review, deployment, or monitoring.
 
 - Adding FAQ schema for expanded SERP presence
 - Creating How-To schema for step-by-step content
@@ -77,7 +102,9 @@ This skill creates Schema.org structured data markup in JSON-LD format to help s
 5. **Nested Schema**: Handles complex, multi-type schemas
 6. **Rich Result Eligibility**: Identifies which rich results you can target
 
-## How to Use
+## Quick Start
+
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ### Generate Schema for Content
 
@@ -105,9 +132,18 @@ Generate LocalBusiness schema for [business name and details]
 Review and improve this schema markup: [existing schema]
 ```
 
+## Skill Contract
+
+**Expected output**: a ready-to-use asset or implementation-ready transformation plus a short handoff summary ready for `memory/content/`.
+
+- **Reads**: the brief, target keywords, entity inputs, quality constraints, and prior decisions from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Writes**: a user-facing content, metadata, or schema deliverable plus a reusable summary that can be stored under `memory/content/`.
+- **Promotes**: approved angles, messaging choices, missing evidence, and publish blockers to `CLAUDE.md`, `memory/decisions.md`, and `memory/open-loops.md`.
+- **Next handoff**: use the `Next Best Skill` below when the asset is ready for review or deployment.
+
 ## Data Sources
 
-> See [CONNECTORS.md](../../CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~web crawler connected:**
 Automatically crawl and extract page content (visible text, headings, lists, tables), existing schema markup, page metadata, and structured content elements that map to schema properties.
@@ -127,7 +163,7 @@ When a user requests schema markup:
 
 1. **Identify Content Type and Rich Result Opportunity**
 
-   Reference the [CORE-EEAT Benchmark](../../references/core-eeat-benchmark.md) item **O05 (Schema Markup)** for content-type to schema mapping:
+   Reference the [CORE-EEAT Benchmark](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md) item **O05 (Schema Markup)** for content-type to schema mapping:
 
    ```markdown
    ### CORE-EEAT Schema Mapping (O05)
@@ -174,7 +210,7 @@ When a user requests schema markup:
 
    Based on the identified content type, generate the appropriate JSON-LD schema. Supported types: FAQPage, HowTo, Article/BlogPosting/NewsArticle, Product, LocalBusiness, Organization, BreadcrumbList, Event, Recipe, and combined multi-type schemas.
 
-   > **Reference**: See [references/schema-templates.md](./references/schema-templates.md) for complete, copy-ready JSON-LD templates for all schema types with required and optional properties.
+   > **Reference**: See [references/schema-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/schema-markup-generator/references/schema-templates.md) for complete, copy-ready JSON-LD templates for all schema types with required and optional properties.
 
    For each schema generated, include:
    - All required properties for the chosen type
@@ -335,17 +371,30 @@ Learn SEO from scratch with our comprehensive guide...
 
 ## Schema Type Decision Tree
 
-> **Reference**: See [references/schema-decision-tree.md](./references/schema-decision-tree.md) for the full decision tree (content-to-schema mapping), industry-specific recommendations, implementation priority tiers (P0-P4), and validation quick reference.
+> **Reference**: See [references/schema-decision-tree.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/schema-markup-generator/references/schema-decision-tree.md) for the full decision tree (content-to-schema mapping), industry-specific recommendations, implementation priority tiers (P0-P4), and validation quick reference.
+
+
+### Save Results
+
+After delivering content or optimization output to the user, ask:
+
+> "Save these results for future sessions?"
+
+If yes, write a dated summary to `memory/content/YYYY-MM-DD-<topic>.md` containing:
+- One-line description of what was created
+- Target keyword and content type
+- Open loops or items needing review
+- Source data references
+
+**Gate check recommended**: Run content-quality-auditor before publishing (PostToolUse hook will remind automatically).
+
+If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
 
 ## Reference Materials
 
-- [Schema Templates](./references/schema-templates.md) - Copy-ready JSON-LD templates for all schema types
-- [Validation Guide](./references/validation-guide.md) - Common errors, required properties, testing workflow
+- [Schema Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/schema-markup-generator/references/schema-templates.md) - Copy-ready JSON-LD templates for all schema types
+- [Validation Guide](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/schema-markup-generator/references/validation-guide.md) - Common errors, required properties, testing workflow
 
-## Related Skills
+## Next Best Skill
 
-- [seo-content-writer](../seo-content-writer/) — Create content worth marking up
-- [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) — Audit existing schema
-- [technical-seo-checker](../../optimize/technical-seo-checker/) — Technical validation
-- [entity-optimizer](../../cross-cutting/entity-optimizer/) — Entity audit informs Organization, Person, Product schema
-
+- **Primary**: [technical-seo-checker](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/technical-seo-checker/SKILL.md) — verify implementation quality and deployment readiness.

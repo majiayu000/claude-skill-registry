@@ -40,6 +40,7 @@ hooks:
       # Could export: context pressure events over time
 
       '
+model_hint: standard
 ---
 ## Table of Contents
 

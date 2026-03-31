@@ -32,6 +32,7 @@ usage_patterns:
 - cost-tracking
 - resource-monitoring
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 500
 progressive_loading: true
 modules:

@@ -314,7 +314,9 @@ svg_render = cv2.imread('rendered_svg.png')
 
 ## Gap Coverage: stroke=fill
 
-Every `<path>` element gets `stroke="{fill}" stroke-width="4" stroke-linejoin="round"`. This bleeds each shape outward by 2px with its own fill color, covering inter-cluster gaps with the locally correct color.
+Every `<path>` element gets `stroke="{fill}" stroke-width="{gap_stroke}" stroke-linejoin="round"`. This bleeds each shape outward with its own fill color, covering inter-cluster gaps with the locally correct color.
+
+**Auto-scaling**: `gap_stroke` is computed as `max(1.0, round(svg_width / source_width))`. A 500px source at `svg_width=1000` gets `gap_stroke=2`; a 1000px source gets `gap_stroke=1`. This prevents the "snow" artifact where high-shape-count SVGs show visible light halos at zoom-out from excessive stroke bleed. Override explicitly: `image_to_svg("img.jpg", gap_stroke=3)`.
 
 **Why stroke beats dilation for gaps**: Dilation operates on binary masks *before* contour simplification — it blurs detail. Stroke operates on final polygons *after* `approxPolyDP` — it catches all gaps including those introduced by simplification. Pure vector, no file size penalty beyond attribute bytes (~12%).
 

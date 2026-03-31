@@ -25,6 +25,7 @@ usage_patterns:
 - efficiency-analysis
 - issue-creation
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 2500
 modules:
 - modules/detection-patterns.md

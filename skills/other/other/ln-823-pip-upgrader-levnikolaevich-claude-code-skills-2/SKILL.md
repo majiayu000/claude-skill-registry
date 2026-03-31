@@ -10,7 +10,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 8XX Optimization
-**Parent:** ln-820-dependency-optimization-coordinator
 
 Upgrades Python dependencies with automatic breaking change detection.
 

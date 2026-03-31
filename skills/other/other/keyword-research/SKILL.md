@@ -1,66 +1,122 @@
 ---
 name: keyword-research
-version: "4.0.0"
-description: 'Discover high-value SEO keywords with search intent analysis, difficulty scoring, topic clustering, and AI citation potential. Use when the user asks to "find keywords", "keyword research", "what should I write about", "keyword difficulty score", "identify ranking opportunities", "topic ideas", "what are people searching for", or "long-tail keyword suggestions". For competitor keyword gaps, see competitor-analysis. For topic coverage gaps, see content-gap-analysis.'
+description: 'Find high-value SEO keywords: search volume, difficulty, intent, topic clusters. "What should I write about" / "找选题" / "帮我挖词". 关键词研究/长尾词/搜索量/内容选题 キーワード調査/検索ボリューム 키워드분석/검색량 investigación palabras clave'
+version: "5.1.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
 metadata:
   author: aaron-he-zhu
-  version: "4.0.0"
+  version: "5.1.0"
   geo-relevance: "medium"
   tags:
     - seo
     - geo
     - keywords
+    - keyword-research
+    - search-volume
+    - keyword-difficulty
+    - topic-clusters
+    - long-tail-keywords
+    - search-intent
+    - content-calendar
     - ahrefs
     - semrush
     - google-keyword-planner
-    - kd-score
-    - search-volume
-    - cpc
-    - topic-clusters
-    - pillar-pages
-    - long-tail-keywords
-    - content-calendar
-    - keyword-gap
-    - search-intent-classification
+    - 关键词研究
+    - SEO关键词
+    - キーワード調査
+    - 키워드분석
+    - palabras-clave
   triggers:
-    - "find keywords"
+    # EN-formal
     - "keyword research"
-    - "what should I write about"
+    - "find keywords"
+    - "keyword analysis"
+    - "keyword discovery"
+    - "search volume analysis"
+    - "keyword difficulty"
+    - "topic research"
     - "identify ranking opportunities"
-    - "topic ideas"
-    - "search volume"
-    - "content opportunities"
+    # EN-casual
+    - "what should I write about"
     - "what are people searching for"
-    - "which keywords should I target"
+    - "what are people googling"
+    - "find me topics to write"
     - "give me keyword ideas"
+    - "which keywords should I target"
+    - "why is my traffic low"
+    - "I need content ideas"
+    # EN-question
+    - "how do I find good keywords"
+    - "what keywords should I target"
+    - "how competitive is this keyword"
+    # EN-competitor
+    - "Ahrefs keyword explorer alternative"
+    - "Semrush keyword magic tool"
+    - "Google Keyword Planner alternative"
+    - "Ubersuggest alternative"
+    # ZH-pro
+    - "关键词研究"
+    - "关键词分析"
+    - "搜索量查询"
+    - "关键词难度"
+    - "SEO关键词"
+    - "长尾关键词"
+    - "词库整理"
+    - "关键词布局"
+    - "关键词挖掘"
+    # ZH-casual
+    - "写什么内容好"
+    - "找选题"
+    - "帮我挖词"
+    - "不知道写什么"
+    - "查关键词"
+    - "选词"
+    - "帮我找词"
+    # JA
+    - "キーワード調査"
+    - "キーワードリサーチ"
+    - "SEOキーワード分析"
+    - "検索ボリューム"
+    - "ロングテールキーワード"
+    - "検索意図分析"
+    # KO
+    - "키워드 리서치"
+    - "키워드 분석"
+    - "검색량 분석"
+    - "키워드 어떻게 찾아요?"
+    - "검색어 분석"
+    - "경쟁도 낮은 키워드는?"
+    # ES
+    - "investigación de palabras clave"
+    - "análisis de palabras clave"
+    - "volumen de búsqueda"
+    - "posicionamiento web"
+    - "cómo encontrar palabras clave"
+    # PT
+    - "pesquisa de palavras-chave"
+    # Misspellings
+    - "keywrod research"
+    - "keywork research"
 ---
 
 # Keyword Research
 
 
 > **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
+> **System Mode**: This research skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
 
-<details>
-<summary>Browse all 20 skills</summary>
-
-**Research** · **keyword-research** · [competitor-analysis](../competitor-analysis/) · [serp-analysis](../serp-analysis/) · [content-gap-analysis](../content-gap-analysis/)
-
-**Build** · [seo-content-writer](../../build/seo-content-writer/) · [geo-content-optimizer](../../build/geo-content-optimizer/) · [meta-tags-optimizer](../../build/meta-tags-optimizer/) · [schema-markup-generator](../../build/schema-markup-generator/)
-
-**Optimize** · [on-page-seo-auditor](../../optimize/on-page-seo-auditor/) · [technical-seo-checker](../../optimize/technical-seo-checker/) · [internal-linking-optimizer](../../optimize/internal-linking-optimizer/) · [content-refresher](../../optimize/content-refresher/)
-
-**Monitor** · [rank-tracker](../../monitor/rank-tracker/) · [backlink-analyzer](../../monitor/backlink-analyzer/) · [performance-reporter](../../monitor/performance-reporter/) · [alert-manager](../../monitor/alert-manager/)
-
-**Cross-cutting** · [content-quality-auditor](../../cross-cutting/content-quality-auditor/) · [domain-authority-auditor](../../cross-cutting/domain-authority-auditor/) · [entity-optimizer](../../cross-cutting/entity-optimizer/) · [memory-management](../../cross-cutting/memory-management/)
-
-</details>
 
 Discovers, analyzes, and prioritizes keywords for SEO and GEO content strategies. Identifies high-value opportunities based on search volume, competition, intent, and business relevance.
 
-## When to Use This Skill
+**System role**: Research layer skill. It turns market signals into reusable strategic inputs for the rest of the library.
+
+## When This Must Trigger
+
+Use this when the conversation involves any of these situations — even if the user does not use SEO terminology:
+
+Use this whenever the task needs reusable market intelligence that should influence strategy, not just an ad hoc answer.
 
 - Starting a new content strategy or campaign
 - Expanding into new topics or markets
@@ -79,7 +135,9 @@ Discovers, analyzes, and prioritizes keywords for SEO and GEO content strategies
 5. **Clustering**: Groups related keywords into topic clusters
 6. **GEO Relevance**: Identifies keywords likely to trigger AI responses
 
-## How to Use
+## Quick Start
+
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
 
 ### Basic Keyword Research
 
@@ -107,11 +165,20 @@ Identify question-based keywords for [topic] that AI systems might answer
 What keywords is [competitor URL] ranking for that I should target?
 ```
 
+## Skill Contract
+
+**Expected output**: a prioritized research brief, evidence-backed findings, and a short handoff summary ready for `memory/research/`.
+
+- **Reads**: user goals, target market inputs, available tool data, and prior strategy from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Writes**: a user-facing research deliverable plus a reusable summary that can be stored under `memory/research/`.
+- **Promotes**: durable keyword priorities, competitor facts, entity candidates, and strategic decisions to `CLAUDE.md`, `memory/decisions.md`, and `memory/research/`; hand canonical entity work to `entity-optimizer`.
+- **Next handoff**: use the `Next Best Skill` below when the findings are ready to drive action.
+
 ## Data Sources
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
-> See [CONNECTORS.md](../../CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~SEO tool + ~~search console connected:**
 Automatically pull historical search volume data, keyword difficulty scores, SERP analysis, current rankings from ~~search console, and competitor keyword overlap. The skill will fetch seed keyword metrics, related keyword suggestions, and search trend data.
@@ -289,7 +356,7 @@ When a user requests keyword research:
 
    Produce a report containing: Executive Summary, Top Keyword Opportunities (Quick Wins, Growth, GEO), Topic Clusters, Content Calendar, and Next Steps.
 
-   > **Reference**: See [references/example-report.md](./references/example-report.md) for the full report template and example.
+   > **Reference**: See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/references/example-report.md) for the full report template and example.
 
 ## Validation Checkpoints
 
@@ -308,7 +375,7 @@ When a user requests keyword research:
 
 ## Example
 
-> **Reference**: See [references/example-report.md](./references/example-report.md) for a complete example report for "project management software for small businesses".
+> **Reference**: See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/references/example-report.md) for a complete example report for "project management software for small businesses".
 
 ### Advanced Usage
 
@@ -328,18 +395,28 @@ When a user requests keyword research:
 7. **Review quarterly** - keyword dynamics change over time
 
 
+
+### Save Results
+
+After delivering findings to the user, ask:
+
+> "Save these results for future sessions?"
+
+If yes, write a dated summary to `memory/research/keyword-research/YYYY-MM-DD-<topic>.md` containing:
+- One-line headline finding
+- Top 3-5 actionable items
+- Open loops or blockers
+- Source data references
+
+If any findings should influence ongoing strategy, recommend promoting key conclusions to `memory/hot-cache.md`.
+
 ## Reference Materials
 
-- [Keyword Intent Taxonomy](./references/keyword-intent-taxonomy.md) — Complete intent classification with signal words and content strategies
-- [Topic Cluster Templates](./references/topic-cluster-templates.md) — Hub-and-spoke architecture templates for pillar and cluster content
-- [Keyword Prioritization Framework](./references/keyword-prioritization-framework.md) — Priority scoring matrix, categories, and seasonal keyword patterns
-- [Example Report](./references/example-report.md) — Complete example keyword research report for project management software
+- [Keyword Intent Taxonomy](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/references/keyword-intent-taxonomy.md) — Complete intent classification with signal words and content strategies
+- [Topic Cluster Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/references/topic-cluster-templates.md) — Hub-and-spoke architecture templates for pillar and cluster content
+- [Keyword Prioritization Framework](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/references/keyword-prioritization-framework.md) — Priority scoring matrix, categories, and seasonal keyword patterns
+- [Example Report](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/references/example-report.md) — Complete example keyword research report for project management software
 
-## Related Skills
+## Next Best Skill
 
-- [competitor-analysis](../competitor-analysis/) — See what keywords competitors rank for
-- [content-gap-analysis](../content-gap-analysis/) — Find missing keyword opportunities
-- [seo-content-writer](../../build/seo-content-writer/) — Create content for target keywords
-- [geo-content-optimizer](../../build/geo-content-optimizer/) — Optimize for AI citations
-- [rank-tracker](../../monitor/rank-tracker/) — Monitor keyword position changes over time
-
+- **Primary**: [competitor-analysis](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/competitor-analysis/SKILL.md) — turn keyword opportunities into a competitive benchmark.

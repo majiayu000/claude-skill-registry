@@ -8,7 +8,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 7XX Project Bootstrap
-**Parent:** ln-770-crosscutting-setup
 
 Configures Cross-Origin Resource Sharing (CORS) policy with security-first approach.
 

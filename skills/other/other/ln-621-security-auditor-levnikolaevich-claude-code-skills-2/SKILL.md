@@ -9,6 +9,8 @@ license: MIT
 
 # Security Auditor (L3 Worker)
 
+**Type:** L3 Worker
+
 Specialized worker auditing security vulnerabilities in codebase.
 
 ## Purpose & Scope
@@ -32,11 +34,11 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `principles`, `cod
 1) **Parse Context:** Extract tech stack, best practices, codebase root, output_dir from contextStore
 2) **Scan Codebase (Layer 1):** Run security checks using Glob/Grep patterns (see Audit Rules below)
 3) **Analyze Context (Layer 2):** For each candidate, read surrounding code to classify:
-   - Secrets: test fixture / example / template → FP. Production code → confirmed
-   - SQL injection: ORM parameterization nearby → FP. Raw string concat with user input → confirmed
-   - XSS: framework auto-escapes (React JSX, Go templates) → FP. Unsafe context (`innerHTML`, `| safe`) → confirmed
-   - Deps: vulnerable API not called in project → downgrade. Exploitable path → confirmed
-   - Validation: internal service-to-service endpoint → downgrade. Public API → confirmed
+   - Secrets: test fixture / example / template -> FP. Production code -> confirmed
+   - SQL injection: ORM parameterization nearby -> FP. Raw string concat with user input -> confirmed
+   - XSS: framework auto-escapes (React JSX, Go templates) -> FP. Unsafe context (`innerHTML`, `| safe`) -> confirmed
+   - Deps: vulnerable API not called in project -> downgrade. Exploitable path -> confirmed
+   - Validation: internal service-to-service endpoint -> downgrade. Public API -> confirmed
 4) **Collect Findings:** Record confirmed violations with severity, location (file:line), effort estimate (S/M/L), recommendation
 5) **Calculate Score:** Count violations by severity, calculate compliance score (X/10)
 6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/621-security.md` in single Write call
@@ -135,11 +137,15 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `principles`, `cod
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
+If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+
 Write report to `{output_dir}/621-security.md` with `category: "Security"` and checks: hardcoded_secrets, sql_injection, xss_vulnerabilities, insecure_dependencies, missing_input_validation.
 
-Return summary to coordinator:
+Return summary per `shared/references/audit_summary_contract.md`.
+
+Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 ```
-Report written: docs/project/.audit/ln-620/{YYYY-MM-DD}/621-security.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/621-security.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -162,7 +168,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated using penalty algorithm
 - [ ] Report written to `{output_dir}/621-security.md` (atomic single Write call)
-- [ ] Summary returned to coordinator
+- [ ] Summary written per contract
 
 ## Reference Files
 

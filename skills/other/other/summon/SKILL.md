@@ -40,6 +40,7 @@ modules:
   - modules/budget.md
   - modules/intake.md
   - modules/decisions.md
+model_hint: standard
 ---
 ## Table of Contents
 
@@ -207,7 +208,7 @@ If the last skill call returned a rate limit error:
    `CronCreate` to schedule a one-shot resume prompt at
    the cooldown expiry time. The session stays alive and
    resumes automatically with context preserved.
-5. **Fallback** (pre-2.1.71 or cooldown > 3 days): exit
+5. **Fallback** (pre-2.1.71 or cooldown > 7 days): exit
    gracefully. The watchdog checks cooldown before
    relaunching.
 
@@ -270,7 +271,7 @@ that both reports status and recovers stalled pipelines:
 
 ```
 CronCreate(
-  cron_expression: "*/5 * * * *",
+  cron: "*/5 * * * *",
   prompt: "Check .egregore/manifest.json. If there are pending or active items that are not being processed, resume the orchestration loop by invoking Skill(egregore:summon). Otherwise, report status via /egregore:status.",
   recurring: true
 )
@@ -285,8 +286,9 @@ This serves two purposes:
    next heartbeat detects stalled items and re-enters the
    pipeline automatically.
 
-The cron task is session-scoped and auto-expires after 3
-days. Use `CronDelete` to cancel early if needed.
+The cron task auto-expires after 7 days by default. Use
+`durable: true` to persist across restarts, or
+`CronDelete` to cancel early.
 
 ## Token Budget Protocol
 

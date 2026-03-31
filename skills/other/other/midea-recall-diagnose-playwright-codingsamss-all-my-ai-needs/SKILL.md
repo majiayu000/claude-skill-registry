@@ -1,171 +1,214 @@
 ---
 name: midea-recall-diagnose-playwright
-description: Diagnose or 排查 why a `/rag-recall/api/search/keyword` request did not recall an expected doc or FAQ in sit, uat, or prod. Use when the user wants to 排查 keyword 检索漏召回, provides a full keyword request or an existing requestId plus target docId/faqId values, and expects end-to-end troubleshooting through a Playwright-attached browser session, `trace/recordInfo`, ELK `traceTargetIds` logs, and ES ranking or `_explain` checks. Also use when the user asks to fabricate a live keyword request with `traceTargetIds` and then investigate the resulting requestId.
+description: 用于排查 sit/uat/prod 环境下 `/rag-recall/api/search/keyword` 未召回目标 doc/faq 的问题。支持两种输入：1) 完整请求（headers+body；若 `headers.appId` 缺失但 `body.appId` 存在，可回填）；2) requestId+targetId。统一走“回放 -> ELK -> ES -> 代码最小核对”，禁止 broad search 和冲突口径。
 ---
 
-# Recall Diagnose Playwright
+# Recall 排查（索引路由版）
 
-## Start
+## 0. 优先级与硬规则（必须遵守）
 
-- Prefer `playwright-ext` for platform operations.
-- Use environment split strategy by default:
-  - `sit` / `uat`: local startup evidence first (replay + local execution logs), then `trace/recordInfo` + ELK + ES for cross-check.
-  - `prod`: platform evidence first (`trace/recordInfo` + ELK), then ES only when retrieval root cause still needs proof.
-- Work against browser sessions that are already logged into the target environment.
-- If login is required (for example password/MFA), pause and wait for the user to complete login in the current browser tab, then continue from the same tab.
-- Only after the browser session is confirmed logged in and still inaccessible (for example persistent `403`/network denial), allow direct terminal `curl` for `keyword` replay and `trace/recordInfo` fetch with user-provided headers, then continue ELK/ES checks in Playwright.
-- For `sit` / `uat`, prefer the ES console entry configured in `references/env-config.example.yaml` (or your local override file).
-- Normalize the user input first with `scripts/prepare_diagnosis.py`.
-- Read `references/diagnosis-rules.md` before interpreting any stage outcome.
-- Read `references/platform-playbooks.md` before opening ELK or the ES console.
-- Read `references/env-config.example.yaml` to understand the expected environment resource layout. Prefer a local copy with real URLs when available.
+- **规则优先级**：`SKILL.md` > `references/*.md`。冲突时只按本文件执行。
+- **接口约束**：`keyword` 回放只能用终端 `curl -X POST`，禁止浏览器地址栏访问。
+- **取证范围**：本技能只用 `ELK + ES`，禁止调用 `/rag-recall/api/search/trace/recordInfo`。
+- **执行通道约束（强制）**：除 `keyword` 回放外，ELK/ES 取证一律使用 Playwright 页面操作；禁止 `curl`/脚本直连 ELK。
+- **完整请求强制回放**：拿到 `headers + body` 后，必须先回放并获取 fresh `requestId`，再查 ELK/ES。
+- **回放后 requestId-first**：第一条 ELK 查询必须包含 `requestId + TRACE_TARGET_ES + targetId`。
+- **首条 KQL 精确匹配（强制）**：首条查询中 `requestId/targetId/TRACE_TARGET_ES` 必须完整精确匹配，禁止 `*` 通配（如 `replay_*`）。
+- **禁止 broad search**：回放成功后，禁止先用 `targetId` 单独扫 3 天日志再逐步收敛。
+- **ELK 门禁（强制）**：任何 ELK 查询执行前，必须先通过 `python3 scripts/elk_guard.py ... --kql '<KQL>'` 校验；校验失败禁止继续查 ELK。
+- **时间窗规则**：回放后先查 `回放时间点 ±15 分钟`；无结果再扩到 `now-3d~now`。
+- **TRACE 触发条件（已核对）**：`TRACE_TARGET_ES` 只会在 `traceTargetIds` 非空时打印；若原始请求 `traceTargetIds=[]`，原 `requestId` 很可能查不到该类日志，必须回放并注入 `targetIds`。
+- **TRACE 日志格式（已核对）**：真实生产日志中，`phase=request` 会携带 `requestDsl=...`，`phase=response` 会携带 `isError/tookMs/returnedHitCount/totalHitCount`；`targetUrl` 形如 `GET /<index或逗号分隔索引> [cluster=N] (<desc>)`。样例见 `references/trace-target-es-format.md`。
+- **回放头回填规则（已核对）**：若 `headers.appId` 缺失但 `request.body.appId` 存在，可回填为回放请求头；`appChannel` 同理。除这两个已核对字段外，其他关键鉴权头不得猜。
+- **字段规则**：优先以 ELK `requestDsl` 实际字段为准；字段不明确再查 ES `_mapping`。
+- **ES 路由规则（强制）**：进入 ES 前优先从 ELK `targetUrl` 中的 `[cluster=...]` 直接解析集群；若没有集群标识，再从 `requestDsl` / `targetUrl` 提取实际索引名做路由；禁止固定地址直查。
+- **ES 路由消歧规则（强制）**：若日志已带 `[cluster=...]`，不得再要求用户补 `sourceSystem`；只有在无集群标识且 `requestDsl` 命中共享索引导致多集群歧义时，才可用 `sourceSystem` 辅助消歧；若仍不能唯一定位，必须中止，禁止 fallback。
+- **阶段顺序来源（强制）**：优先用运行时 `CHAIN_NAME` 提取真实阶段顺序；拿不到则动态读取关键链路代码（`SearchLiteFlowService + LiteFlowConstants`）；都失败才回退默认顺序。
+- **阶段顺序门禁（强制）**：首次丢失阶段必须按当前链路顺序判定，未验证前序文本召回证据时，禁止直接判定向量阶段丢失。
+- **首次丢失校验（强制）**：输出结论前必须通过 `python3 scripts/first_loss_guard.py` 校验。
+- **代码后置**：默认先完成回放/ELK/ES 定位，输出前再做最小代码核对。
+- **最小代码集**：只读与“首次丢失阶段”直接相关的 `2~4` 个文件，禁止全量扫代码。
+- **targetIds 上限**：最多 10 个，超出直接拒绝。
+- **缺参处理**：缺少可复用 `appId`（优先 `headers.appId`，其次 `body.appId`）或其他关键鉴权头时，不得猜测，必须要求补齐。
 
-## Accept Inputs
+## 1. 输入模式
 
-- Accept `env`, `targetType`, and one or more `targetIds`.
-- Accept either:
-  - a full live request with `headers + body`, or
-  - an existing `requestId`.
-- Treat `targetType` as `doc` or `faq` only in V1.
-- Reject more than 10 target IDs because `traceTargetIds` only supports 10.
-- If live request headers are missing, do not infer or guess `appId` / `appChannel`. Mark them as unknown and require user-supplied headers or local-log extraction evidence.
+### A. 完整请求模式（优先）
 
-Normalize the input before touching any platform:
+- 输入：`env + targetType + targetIds + request.headers + request.body`
+- 行为：必须先回放，再进入 ELK/ES。
 
-```bash
-python3 scripts/prepare_diagnosis.py --json '{
-  "env": "prod",
-  "targetType": "doc",
-  "targetIds": ["<targetId>"],
-  "request": {
-    "headers": {
-      "appId": "<required-appId>",
-      "appChannel": "<optional-channel>"
-    },
-    "body": {
-      "query": "<query>",
-      "topk": 10,
-      "conditionFilter": {
-        "threshold": 0.45
-      }
-    }
-  }
-}'
-```
+### B. requestId 模式
 
-## Run The Workflow
+- 输入：`env + targetType + targetIds + requestId`
+- 行为：直接 ELK-first；证据不足时要求补全完整请求并执行回放。
 
-1. Normalize the input.
-2. If the user gave a live request, inject a unique `requestId` when missing and always merge `targetIds` into `traceTargetIds` when `conditionFilter` is present.
-3. Choose workflow by `env`:
-   - `sit` / `uat`: replay request on local startup first and capture local phase evidence (`requestId`, cmp stage, hit/miss, key filters).
-   - `prod` or no local runtime available: send live request through logged-in browser session (or use given `requestId`) and continue with trace-first flow.
-4. Fetch `trace/recordInfo` and compact immediately with `scripts/compact_trace.py`. Never read the whole payload into context.
-5. Use local evidence (`sit` / `uat`) plus compacted `stepList` + ELK (`targetId` first) to identify the **first phase where target is lost**.
-6. Report this phase-level conclusion first with minimal key evidence. Do not expand downstream phases by default.
-7. If first-lost phase is `full_range_faqTxtRecall` / `full_range_docTxtRecall`, go to ES and replay the real text DSL only.
-8. In text-recall ES diagnosis, follow this shortest sequence:
-   - check target existence by `targetId` (`knowledge_base_id`/`doc_id`) in the same index alias
-   - replay original DSL
-   - run contrast replay: `keep filter + remove text must` vs `keep filter + keep text must`
-9. If target appears when text must is removed, conclude **query-text match miss (analyzer/minimum_should_match/field scope)**, then use `_explain` only for this target doc.
-10. `_explain` and `_analyze` are single-index operations. Never run them on multi-index aliases. Always:
-   - find target `_index` first via `_search`
-   - run `_explain` / `_analyze` on that concrete `_index`
-11. If the user asks "why query did not match", run `_analyze` overlap evidence **on demand** and report:
-   - query tokens per analyzer
-   - required match threshold per analyzer
-   - `max_hit` and `hitAtLeastRequired`
-   - `max_hit_items` (`knowledge_point_id` + question text)
-12. Enter vector recall diagnosis only when:
-   - first-lost phase is vector recall, or
-   - text-stage evidence is inconsistent and user explicitly asks for deeper checks.
-13. For FAQ retrieval misses, run a simplified-query contrast (`knowTypeList=["FAQ"]`) only when steps above are still insufficient.
-14. If user asks for complete text-recall storage for target FAQ/doc, export text fields only (exclude vectors) and present as:
-   - common fields
-   - deduplicated content block
-   - question/variant list with IDs
+## 2. 30 秒流程卡（固定顺序）
 
-## ELK Time Window
+1. 规范化输入并校验 JSON。
+2. 回放请求（fresh `requestId` + 注入 `traceTargetIds`）。
+3. 先用 `scripts/elk_guard.py` 生成并校验 KQL，再用 `requestId + TRACE_TARGET_ES + targetId` 查 ELK。
+4. 仅当首次丢失在召回阶段时进入 ES 做三步快检。
+5. 输出前做最小代码核对，给出代码证据。
 
-- Default ELK time window is `now-3d` to `now`.
-- Do not expand beyond 3 days unless the user explicitly asks.
-- When results are empty, adjust query first, then check whether the request was actually replayed with trace targets.
+## 3. 标准流程（可执行）
 
-## Missing Trace Evidence
+### 3.1 完整请求模式
 
-- If there is no `trace/recordInfo` data or no `TRACE_TARGET_ES` log for the target within 3 days, treat it as **not reproduced with trace**.
-- In this case, either:
-  - fabricate a replay request that includes `traceTargetIds` and a fresh `requestId`, then send it through the logged-in browser session, or
-  - explicitly ask the user to send one replay request and return the required payload.
-- For `sit` / `uat`, if local replay already produced stable phase evidence, continue diagnosis with local evidence + ES cross-check even when trace evidence is missing.
-
-## Control Token Usage
-
-- Never dump the raw `trace/recordInfo` response into the conversation.
-- Use `scripts/compact_trace.py` in summary mode first.
-- Expand only the suspect `cmpId`.
-- Strip or summarize vectors, embeddings, large arrays, and large response bodies.
-- Prefer `operateMsg`, `cmpId`, `targetUrl`, `hit`, `returnedHitCount`, `totalHitCount`, `threshold`, and rank evidence over full JSON blobs.
-
-Compact the trace before reading details:
+1. 规范化输入：
 
 ```bash
-python3 scripts/compact_trace.py --json '<trace record json>'
+cat >/tmp/diag_input.json <<'JSON'
+<input-json>
+JSON
+jq -e . /tmp/diag_input.json >/dev/null
+python3 scripts/prepare_diagnosis.py --input /tmp/diag_input.json
 ```
 
-Expand a suspect stage only when needed:
+2. 回放前处理：
+- 将 `body.requestId` 替换为 fresh 值（`原ID_replay_<ts>` 或 `uuidgen`）。
+- 将 `targetIds` 合并到 `body.traceTargetIds`。
+- 若 `headers.appId` 缺失但 `body.appId` 存在，可用 `body.appId` 回填请求头；`appChannel` 同理。
+
+3. 执行回放：
 
 ```bash
-python3 scripts/compact_trace.py \
-  --json '<trace record json>' \
-  --expand-step full_range_docTxtRecall
+curl -X POST '<base_url>/rag-recall/api/search/keyword' \
+  -H 'Content-Type: application/json' \
+  -H 'appId: <appId>' \
+  -H 'appChannel: <appChannel>' \
+  -d '<body-with-fresh-requestId-and-traceTargetIds>'
 ```
 
-## Use Platform Priorities
+4. 回放成功判定：
+- 响应中拿到 replay `requestId`。
+- 记录最小摘要：`requestId`、总命中数、错误信息。
 
-- `sit` / `uat`: prefer local runtime evidence first, then `trace/recordInfo`, then ELK `traceTargetIds` logs.
-- `prod`: prefer `trace/recordInfo` for the first structured read, then ELK `traceTargetIds` logs.
-- Default delivery is phase diagnosis plus retrieval root cause when the target is lost in text/vector recall.
-- Prefer ES only for retrieval-stage diagnosis:
-  - raw recall miss
-  - raw recall rank too low
-  - score filter or topN suspicion
-- Do not query ES when the target is already proven to be lost in `full_range_rerank` or a later final filter.
+5. ELK 阶段定位：
+- 查询必须包含：`requestId + targetId + TRACE_TARGET_ES`（可加 `link_id=requestId`）。
+- 查询前必须执行门禁：
 
-## Apply Retrieval Rules
+```bash
+# 生成推荐 KQL
+python3 scripts/elk_guard.py \
+  --request-id '<replayRequestId>' \
+  --target-id '<targetId>' \
+  --mode first \
+  --emit-template
 
-- Treat `TRACE_TARGET_ES phase=response hit=false` as the strongest proof that a target is absent from that ES query's returned set.
-- In ES console operations, clear `input` and `output` before each DSL run to avoid mixed requests/responses.
-- Do not treat `targetBefore=[] targetAfter=[]` alone as proof that the raw ES query missed the target. Those logs can appear after score filtering.
-- Always stop at the first proven lost phase. Do not continue to later phases for default diagnosis.
-- `_explain` / `_analyze` must run on a concrete `_index`, not on a multi-index alias.
-- When the problem is in a retrieval phase, reproduce the original DSL, then check:
-  - total hits
-  - returned hits
-  - target rank
-  - target score
-  - threshold score
-  - `_explain` only if ranking still needs explanation
-- If text DSL with target filter returns `0`, do not classify as "low score". It is a **query-match miss** unless evidence shows post-score filtering.
-- If `keep filter + remove text must` returns target while `keep filter + keep text must` does not, root cause is text query/analyzer/field scope mismatch.
-- Token-overlap (`_analyze`) evidence is optional by default and runs only when user asks for deeper textual mismatch reasons.
-- When the problem is in a rerank phase, stay in trace and ELK evidence and report the exact step.
+# 校验你将要执行的 KQL；失败则停止，不得继续
+python3 scripts/elk_guard.py \
+  --request-id '<replayRequestId>' \
+  --target-id '<targetId>' \
+  --mode first \
+  --kql '<your-kql>'
+```
 
-## Report Findings
+- 首条 KQL 必须直接采用 `--emit-template` 输出，不允许“因为太长”而删减到 requestId-only / targetId-only。
+- 时间窗先用 15 分钟，再扩 3 天。
+- 执行方式：只允许 Playwright（如 `browser_navigate/browser_type/browser_press_key`）；禁止 `curl` ELK API。
+- 先从 ELK 提取该次请求的 `CHAIN_NAME` 阶段顺序，再按顺序找首个 `phase=response hit=false` 的 `cmpId`。
+- 首次丢失结论前必须跑阶段门禁（示例）：
 
-Return the result in this order:
+```bash
+python3 scripts/first_loss_guard.py \
+  --target-type DOC \
+  --chain-line 'CHAIN_NAME[_FULL_RANGE_SEARCH_WITH_LLM_] full_range_meta_filter[...]==>full_range_docTxtRecall[...]==>doc_item_vector_retrieval_batch_es[...]==>full_range_rerank[...]' \
+  --events '[{"cmpId":"full_range_docTxtRecall","phase":"response","hit":true},{"cmpId":"doc_item_vector_retrieval_batch_es","phase":"response","hit":false}]' \
+  --assert-first-loss doc_item_vector_retrieval_batch_es
+```
 
-1. Final phase where the target was lost
-2. Short rationale
-3. Key evidence from trace or ELK
-4. ES ranking evidence only if retrieval was the issue
-5. Next action tied to the proven phase
+- 若没有 `CHAIN_NAME`，直接让脚本从代码提取链路顺序：
 
-## Resources
+```bash
+python3 scripts/first_loss_guard.py \
+  --target-type DOC \
+  --repo-root '<rag-recall-root>' \
+  --chain-id '_FULL_RANGE_SEARCH_WITH_LLM_' \
+  --events '<events-json>'
+```
 
-- Use `scripts/prepare_diagnosis.py` to normalize live-request and requestId-only inputs.
-- Use `scripts/compact_trace.py` to summarize `trace/recordInfo` safely.
-- Use `references/diagnosis-rules.md` for the `cmpId -> phase -> action` mapping.
-- Use `references/platform-playbooks.md` for Playwright, ELK, and ES operating notes.
-- Use `references/env-config.example.yaml` as the environment resource template.
+- `--chain-order` 仅用于调试覆盖，不作为常规输入。
+- 若 `first_loss_guard.py` 返回 `BLOCKED/FAIL`，禁止输出“向量阶段首次丢失”。
+
+6. ES 验证（仅召回阶段进入）：
+- 先解析 ES 控制台路由（示例）：
+
+```bash
+python3 scripts/prepare_diagnosis.py \
+  --input /tmp/diag_input.json \
+  --config references/env-config.local.yaml \
+  --request-dsl '<requestDsl-or-raw-elk-line>' \
+  --source-system '<sourceSystem-if-needed>' | jq '.esConsoleRoute'
+```
+
+- 若脚本报 `requestDsl index route is ambiguous`：先检查是否命中了共享 FAQ 索引；必要时补一个 `sourceSystem` 做消歧。
+- 若脚本报 `unable to resolve ES console route` 或 `sourceSystem ... has no ES cluster mapping`：立即中止并补齐有效的 `requestDsl/sourceSystem` 证据。
+- `Q1` 原始 `requestDsl` 复跑。
+- `Q2` 目标存在性（DOC 用 `doc_id`；FAQ 用 `knowledge_base_id`）。
+- `Q3` 保留 filter + 去掉 text must（仅文本阶段需要）。
+- 执行方式：只允许 Playwright 控制台页面操作；禁止 `curl` 直连 ES。
+
+### 3.2 requestId 模式
+
+1. 直接按 `requestId + targetId + TRACE_TARGET_ES` 查 ELK。
+2. 若 15 分钟无结果，扩到 `now-3d~now`。
+3. 若原始请求 `traceTargetIds=[]` 或扩窗后仍无有效证据，判定“未完成带 trace 的复现”，要求补全完整请求并回放。
+4. 首次丢失在召回阶段时，再进入 ES 三步快检。
+
+## 4. 代码核对（按需触发，输出前必须）
+
+触发条件（任一满足）：
+- 已定位首次丢失阶段，准备输出根因。
+- ELK/ES 证据冲突或无法解释。
+- 用户明确要求查看实现细节。
+
+最小必读文件（按场景选 2~4 个）：
+- 入口与参数约束：
+  - `api/src/main/java/com/midea/jr/robot/rag/recall/api/web/controller/SearchController.java`
+- TRACE 语义：
+  - `infrastructure/src/main/java/com/midea/jr/robot/rag/recall/infrastructure/aspect/EsQueryTraceAspect.java`
+  - `common/src/main/java/com/midea/jr/robot/rag/recall/common/utils/TraceTargetScanUtils.java`
+- cmpId 映射：
+  - `common/src/main/java/com/midea/jr/robot/rag/recall/common/constant/LiteFlowConstants.java`
+- 召回实现：
+  - DOC：`domain/src/main/java/com/midea/jr/robot/rag/recall/domain/search/cmp/fullrange/FullRangeDocTxtRecallCmp.java`
+  - DOC 向量：`domain/src/main/java/com/midea/jr/robot/rag/recall/domain/search/cmp/fullrange/RecallDocItemVectorBatchEsCmp.java`
+  - FAQ：`domain/src/main/java/com/midea/jr/robot/rag/recall/domain/search/cmp/fullrange/FullRangeFaqTxtRecallCmp.java`
+
+## 5. 根因判定最小集
+
+- `phase=response hit=false`：该阶段未命中目标的最高优先级证据。
+- `目标存在性=0`：索引缺数据/发布未生效/索引路由不覆盖。
+- `目标存在性>0 且 原DSL=0`：文本匹配或过滤条件问题。
+- `原DSL>0 但最终未返回`：排序/阈值/TopN 问题。
+- 若已确认丢在 `full_range_rerank` 或之后：停止 ES 深挖，按 rerank/准出问题交付。
+
+## 6. 输出模板（固定）
+
+1. 目标首次丢失阶段（`cmpId`）
+2. 简要原因
+3. ELK 关键证据
+4. 阶段审计（文本/向量/重排各阶段 `response hit=true|false|unknown`）
+5. 代码证据（至少 2 条，`文件:行号`）
+6. 若在召回阶段：ES 证据（`total/returned/rank/score`）
+7. 下一步动作（仅当前阶段相关）
+
+## 7. 违规恢复协议（必须）
+
+- 若出现任一违规（如 `targetId-only`、`requestId-only`、缺 `TRACE_TARGET_ES`、先 broad search），必须立即中止当前路径。
+- 若出现 `requestId` 通配/截断（如 `replay_*`）或首条 KQL 被降级，按违规处理并立即中止。
+- 若出现 `curl` 查询 ELK/ES（非 `keyword` 回放），按违规处理并立即中止。
+- 若出现“未验证文本阶段就判向量阶段”的情况，按违规处理。
+- 先输出一行：`BLOCKED_BY_GUARD: <违规原因>`。
+- 然后从“ELK 阶段定位”重跑：先 `elk_guard.py` 校验通过，再继续。
+
+## 8. 资源
+
+- `scripts/prepare_diagnosis.py`
+- `scripts/elk_guard.py`
+- `scripts/first_loss_guard.py`
+- `references/quick-runbook.md`
+- `references/trace-target-es-format.md`
+- `references/env-config.example.yaml`
+- `references/env-config.local.yaml`

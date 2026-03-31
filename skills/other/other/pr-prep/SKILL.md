@@ -4,6 +4,8 @@ description: 'Use this skill for PR preparation. Use when preparing PRs for subm
   running quality gates, drafting PR descriptions and templates. Do not use when reviewing
   existing PRs - use pr-review instead. DO NOT use when: just generating commit messages
   - use commit-messages.'
+version: 1.7.1
+alwaysApply: false
 category: artifact-generation
 tags:
 - git
@@ -16,6 +18,7 @@ tools:
 - Write
 - TodoWrite
 complexity: medium
+model_hint: standard
 estimated_tokens: 1000
 progressive_loading: true
 modules:
@@ -60,10 +63,11 @@ Use this skill to stage changes and generate a PR summary. Run `Skill(sanctum:gi
 Create `TodoWrite` items for these steps before starting:
 1. `pr-prep:workspace-reviewed`
 2. `pr-prep:quality-gates`
-3. `pr-prep:changes-summarized`
-4. `pr-prep:testing-documented`
-5. `pr-prep:pr-drafted`
-6. `pr-prep:content-verified`
+3. `pr-prep:self-reviewed`
+4. `pr-prep:changes-summarized`
+5. `pr-prep:testing-documented`
+6. `pr-prep:pr-drafted`
+7. `pr-prep:content-verified`
 
 Mark each item as complete as the section is finished.
 
@@ -74,6 +78,48 @@ Confirm that `Skill(sanctum:git-workspace-review)` is complete. If changes were 
 ## Step 2: Run Quality Gates (`quality-gates`)
 
 Execute formatting, linting, and tests using project-specific commands (e.g., `make fmt`, `make lint`, `make test`). Resolve all failures before proceeding. If a task cannot be executed locally, document the reason and the alternative validation performed. Language-specific commands and failure handling are detailed in `modules/quality-gates.md`.
+
+### Capabilities Reference Sync
+
+If any plugin files changed (plugin.json, skills, commands,
+agents, or hooks), run `make docs-sync-check` to verify
+`book/src/reference/capabilities-reference.md` is current.
+If it reports discrepancies, run `/sync-capabilities --fix`
+or update the reference manually before proceeding.
+
+## Step 2.5: Self-Review Pass (`self-reviewed`)
+
+Read the diff as if you are a reviewer seeing it for the
+first time. This catches scope creep, stale debug code,
+and unclear changes before anyone else spends time on
+them.
+
+**Automated checks:**
+
+```bash
+# Check for debug statements left in
+git diff --cached --name-only | xargs grep -nE \
+  '(console\.log|print\(|debugger|TODO|FIXME|HACK|XXX)' \
+  2>/dev/null || true
+
+# Check for commented-out code blocks (3+ consecutive lines)
+git diff --cached | grep -c '^+.*//.*[a-zA-Z]' || true
+
+# Check for formatting-only commits mixed with feature work
+git log --oneline $(git merge-base HEAD origin/master)..HEAD | \
+  grep -iE '(fmt|format|lint|style|whitespace)' || true
+```
+
+**Manual verification:**
+
+- [ ] Read the full diff -- does every change serve the
+      stated goal?
+- [ ] No debug statements or `TODO` markers left in
+- [ ] No commented-out code blocks
+- [ ] No formatting changes mixed with logic changes
+- [ ] No fixup commits that should be squashed
+
+If issues are found, fix them before proceeding.
 
 ## Step 3: Summarize Changes (`changes-summarized`)
 

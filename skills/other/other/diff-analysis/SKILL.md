@@ -5,6 +5,8 @@ description: 'Use this skill for systematic change analysis with risk scoring. U
   notes, categorizing changes by type and impact. Do not use when quick context catchup
   - use catchup instead. DO NOT use when: full PR review - use review-core with pensive
   skills.'
+version: 1.7.1
+alwaysApply: false
 category: analysis-methods
 tags:
 - changes
@@ -22,6 +24,7 @@ usage_patterns:
 - risk-assessment
 - release-preparation
 complexity: intermediate
+model_hint: standard
 progressive_loading: true
 module_strategy: workflow-based
 estimated_tokens: 800

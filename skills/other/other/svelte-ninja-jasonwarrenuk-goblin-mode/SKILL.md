@@ -1,6 +1,16 @@
 ---
 name: svelte-ninja
-description: This skill should be used when the user mentions "Svelte", "SvelteKit", "runes", "$state", "$derived", "$effect", "$props", discusses component patterns, reactive state, routing, load functions, form actions, or needs help with Svelte/SvelteKit code. Addresses Svelte 5 patterns using runes, SvelteKit conventions, and best practices.
+description: Svelte 5 and SvelteKit: runes reactivity, component composition, routing, data loading, form handling.
+user-invocable: false
+effort: medium
+paths:
+  - "**/*.svelte"
+  - "**/+page.*"
+  - "**/+layout.*"
+allowed-tools:
+  - Read
+  - Glob
+  - Grep
 ---
 
 # Svelte/SvelteKit Patterns

@@ -1,6 +1,6 @@
 ---
 name: gtm-meta-skill
-description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, builtwith, cloudflare, crustdata, deepline_native, deeplineagent, dropleads, exa, firecrawl, forager, heyreach, hubspot, hunter, icypeas, instantly, leadmagic, lemlist, parallel, peopledatalabs, prospeo, salesforce, serper, smartlead, snowflake, zerobounce."
+description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Available providers: adyntel, ai_ark, apify, apollo, attio, bettercontact, builtwith, cloudflare, crustdata, deepline_native, deeplineagent, dropleads, exa, firecrawl, forager, fullenrich, heyreach, hubspot, hunter, icypeas, instantly, leadmagic, lemlist, parallel, peopledatalabs, prospeo, salesforce, serper, smartlead, snowflake, zerobounce."
 ---
 
 # GTM Meta Skill
@@ -189,6 +189,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Summary: Use assert_* operations for upserts, query_* operations for filtered reads, standard-object wrappers when you know the Attio object family, and webhook subscriptions with typed event names when you need realtime sync.
   Last reviewed: 2026-03-20
 
+- [bettercontact playbook](provider-playbooks/bettercontact.md)
+  Summary: Submit contacts for async enrichment; poll results with get_result until status is terminated.
+  Last reviewed: 2026-03-30
+
 - [builtwith playbook](provider-playbooks/builtwith.md)
   Summary: Use domain_lookup for live stack inspection, vector_search to discover the right tech label before lists/trends, and bulk_domain_lookup for row-heavy domain batches.
   Last reviewed: 2026-03-21
@@ -202,8 +206,8 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Last reviewed: 2026-02-11
 
 - [deepline_native playbook](provider-playbooks/deepline_native.md)
-  Summary: Launcher actions wait for completion and return final payloads with job_id; finder actions remain available for explicit polling.
-  Last reviewed: 2026-02-23
+  Summary: Launcher actions wait for completion and return final payloads with job_id; search_contact uses the search budget while enrichment-style actions use the higher enrichment budget.
+  Last reviewed: 2026-03-30
 
 - [deeplineagent playbook](provider-playbooks/deeplineagent.md)
   Summary: Use Vercel AI Gateway for plain inference or multi-step research with Deepline-managed tools and billing.
@@ -224,6 +228,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 - [forager playbook](provider-playbooks/forager.md)
   Summary: Use totals endpoints first (free) to estimate volume, then search/lookup with reveal flags for contacts. Strong for verified mobiles.
   Last reviewed: 2026-02-28
+
+- [fullenrich playbook](provider-playbooks/fullenrich.md)
+  Summary: Submit contacts for async enrichment; poll results with get_result until status is FINISHED. Search endpoints are synchronous.
+  Last reviewed: 2026-03-30
 
 - [heyreach playbook](provider-playbooks/heyreach.md)
   Summary: Resolve campaign IDs first, then batch inserts and confirm campaign stats after writes.
@@ -292,6 +300,7 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 - Even when you don't have a CSV, create one and use deepline enrich.
 - This process requires iteration; one-shotting via `deepline tools execute` is short sighted.
 - For `run_javascript` in `deepline enrich`, put JS in `payload.code`; the current row is auto-injected as `row` at runtime, so you usually should not pass `row` yourself.
+- Inside `payload.code`, use `row["Column Name"]` for headers with spaces/punctuation, or `row.simple_alias` for simple names. Do not use `{{row...}}` in template interpolation; `row` only exists inside the JavaScript runtime.
 - If a command created CSV outside enrich, register it with the Session UI so a table card appears: `deepline session output --csv <csv_path> --label "My Results"`. This is the lightweight alternative to `deepline enrich` for surfacing output in the Session UI.
 - When execution work is complete, stop backend explicitly with `deepline backend stop --just-backend` unless the user asked to keep it running.
 - In chat, send the file path + playground status, not pasted CSV rows, unless explicitly requested.

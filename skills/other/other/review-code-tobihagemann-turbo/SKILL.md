@@ -1,6 +1,6 @@
 ---
 name: review-code
-description: "Full code review: launches `/review-test-coverage`, `/review-correctness`, `/review-security`, `/review-quality`, `/review-api-usage`, and `/peer-review-code` in parallel and returns combined findings. Use when the user asks to \"review my code\", \"full code review\", \"review my changes\", or wants a comprehensive code review."
+description: "Full code review: launches `/review-test-coverage`, `/review-correctness`, `/review-security`, `/review-quality`, `/review-api-usage`, and `/peer-review` in parallel and returns combined findings. Use when the user asks to \"review my code\", \"full code review\", \"review my changes\", or wants a comprehensive code review."
 ---
 
 # Review Code
@@ -17,14 +17,16 @@ Determine what to review:
 
 ## Step 2: Run Six Reviews in Parallel
 
-Launch one agent per skill in a single message so they run concurrently (`model: "opus"`, do not set `run_in_background`). Each agent runs its assigned skill with the scope from Step 1:
+Launch six Agent tool calls in a single message so they run concurrently (`model: "opus"`, do not set `run_in_background`). Each agent's prompt includes the scope from Step 1 and instructs it to invoke its assigned skill via the Skill tool:
 
 - `/review-test-coverage`
 - `/review-correctness`
 - `/review-security`
 - `/review-quality`
 - `/review-api-usage`
-- `/peer-review-code`
+- `/peer-review`
+
+For the `/peer-review` agent, the Agent tool call prompt instructs the subagent to: (1) read the SKILL.md of every other review skill listed above, (2) extract their review criteria and "what to look for" sections, (3) compose a single comprehensive review prompt covering all dimensions with the diff command from Step 1, being verbose about what to check, and (4) invoke `/peer-review` via the Skill tool with the composed prompt.
 
 ## Step 3: Return Combined Findings
 

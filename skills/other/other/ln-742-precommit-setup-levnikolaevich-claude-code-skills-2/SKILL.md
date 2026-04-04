@@ -2,6 +2,7 @@
 name: ln-742-precommit-setup
 description: "Configures Husky, lint-staged, commitlint, and Python pre-commit hooks. Use when adding Git hook automation to a project."
 license: MIT
+model: claude-sonnet-4-6
 ---
 
 > **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.

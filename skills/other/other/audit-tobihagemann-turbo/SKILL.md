@@ -39,12 +39,12 @@ Check if `.turbo/threat-model.md` exists. If it does, continue to Step 3.
 
 If missing, use `AskUserQuestion` to ask whether to create one before proceeding. The security review benefits from threat model context, but creating one adds time.
 
-- **Yes** — launch an agent (`model: "opus"`, do not set `run_in_background`) that runs the `/create-threat-model` skill. Wait for completion before continuing.
+- **Yes** — launch an Agent tool call (`model: "opus"`, do not set `run_in_background`) whose prompt instructs it to invoke the `/create-threat-model` skill via the Skill tool. Wait for completion before continuing.
 - **No** — continue without a threat model.
 
 ## Step 3: Launch All Analysis Skills
 
-Launch all agents in parallel (`model: "opus"`, do not set `run_in_background`). Batch across multiple messages if the total exceeds what can be launched at once.
+Launch all Agent tool calls in parallel (`model: "opus"`, do not set `run_in_background`). Batch across multiple messages if the total exceeds what can be launched at once.
 
 ### Partitioned Skills
 
@@ -55,14 +55,16 @@ For each skill below, launch **one agent per partition** with the partition's fi
 | `/review-correctness` | File list |
 | `/review-security` | File list |
 | `/review-api-usage` | File list |
-| `/peer-review-code` | File list |
 | `/review-quality` | File list |
+| `/peer-review` | File list |
 
-Each agent runs its assigned skill with the file scope and returns findings.
+Each agent's prompt includes the partition's file list and instructs it to invoke its assigned skill via the Skill tool.
+
+For the `/peer-review` agent, the Agent tool call prompt instructs the subagent to: (1) read the SKILL.md of every other partitioned skill listed above, (2) extract their review criteria and "what to look for" sections, (3) compose a single comprehensive review prompt covering all dimensions with the file list, being verbose about what to check, and (4) invoke `/peer-review` via the Skill tool with the composed prompt.
 
 ### Project-Wide Skills
 
-Launch one agent each:
+Launch one Agent tool call each. Each agent's prompt instructs it to invoke its assigned skill via the Skill tool:
 
 | Skill | Notes |
 |---|---|
@@ -110,7 +112,7 @@ Write `.turbo/audit.md` using the template below. Populate the dashboard by coun
 ## Detailed Findings
 
 ### Correctness
-<findings from /review-correctness and /peer-review>
+<findings from /review-correctness>
 
 ### Security
 <findings from /review-security>
@@ -157,5 +159,5 @@ Convert the markdown report into a styled, interactive HTML page.
 ## Rules
 
 - If any skill is unavailable or fails, proceed with findings from the remaining skills and note the failure in the report.
-- Correctness findings include results from both `/review-correctness` and `/peer-review-code`. Deduplicate overlapping findings.
+- `/peer-review` covers all concerns (correctness, security, quality). Distribute its findings into their matching category sections. Deduplicate findings that overlap with the specialized reviewers.
 - Does not modify source code, stage files, or commit.

@@ -17,6 +17,7 @@ modules:
 - ./modules/language-detection.md
 - ./modules/metadata-collection.md
 - ./modules/template-rendering.md
+model_hint: standard
 ---
 ## Table of Contents
 

@@ -22,6 +22,7 @@ usage_patterns:
 - threshold-monitoring
 - backlog-management
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 2500
 modules:
 - modules/decision-framework.md

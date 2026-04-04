@@ -3,6 +3,7 @@ name: ln-002-session-analyzer
 description: "Analyzes current or recent session for errors, inefficiencies, and improvement opportunities across skills, tools, hooks, and communication. Use after completing a task or periodically."
 license: MIT
 allowed-tools: "Bash, Read, Glob, Grep, Agent, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__outline"
+model: claude-sonnet-4-6
 ---
 
 > **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.

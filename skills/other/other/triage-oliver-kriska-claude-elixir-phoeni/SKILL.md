@@ -1,6 +1,6 @@
 ---
 name: phx:triage
-description: Interactive triage of Elixir/Phoenix review findings — ecto query issues, liveview anti-patterns, security gaps, iron law violations. Present each finding for human decision — approve, skip, or customize priority. Use after /phx:review to filter findings before fixing.
+description: Triage review findings interactively — approve, skip, or prioritize each issue. Use after /phx:review to filter findings before fixing.
 effort: low
 argument-hint: [path to review file]
 ---

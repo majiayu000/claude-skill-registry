@@ -157,11 +157,11 @@ Report to the user:
 
 ### Not Testable Without Refactoring
 - [List of code flagged as untestable — with brief explanation of what structural change would be needed]
-- To address these, run `/optimus:refactor` to review and restructure the code first.
+- To address these, run `/optimus:refactor testability` to prioritize testability improvements.
 ```
 
 For multi-repo workspaces, present results per repo (one summary block per repo) and include the repo name/path in each section header.
 
-Recommend running `/optimus:refactor` to review code quality, or `/optimus:tdd` to continue development with test-driven workflow.
+Recommend running `/optimus:refactor testability` to prioritize testability improvements (or `/optimus:refactor` for balanced code quality review), or `/optimus:tdd` to continue development with test-driven workflow.
 
 Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.

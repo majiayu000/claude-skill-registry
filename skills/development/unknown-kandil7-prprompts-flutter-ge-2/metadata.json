@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Generate customized PRPROMPTS for Flutter projects from PRD - HIPAA, PCI-DSS, GDPR compliant with Clean Architecture and BLoC patterns",
+  "repo": "Kandil7/prprompts-flutter-generator",
+  "path": ".gemini/skills/automation/qa-auditor/skill.md",
+  "github_branch": "master",
+  "category": "development",
+  "tags": [],
+  "stars": 4,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-kandil7-prprompts-flutter-ge-2",
+  "author": "Kandil7",
+  "source_url": "https://github.com/Kandil7/prprompts-flutter-generator/blob/master/.gemini/skills/automation/qa-auditor/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kandil7/prprompts-flutter-generator/blob/master/.gemini/skills/automation/qa-auditor/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

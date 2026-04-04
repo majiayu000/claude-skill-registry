@@ -63,12 +63,8 @@ Read scratchpad and compound docs before writing any code.
 Skipping this causes rework — scratchpad captures dead-ends
 and decisions from planning that prevent taking wrong paths.
 
-```bash
-# Read full scratchpad — it's short and has critical context
-cat .claude/plans/{slug}/scratchpad.md 2>/dev/null
-# Check compound docs for solved patterns
-grep -rl "KEYWORD" .claude/solutions/ 2>/dev/null
-```
+Read the scratchpad at `.claude/plans/{slug}/scratchpad.md` — it's short and has critical context.
+Then search `.claude/solutions/` for relevant keywords using Grep to find solved patterns.
 
 Apply findings: skip dead-ends, follow decisions, reuse patterns.
 Always ask the user when a task's intent is ambiguous —
@@ -169,9 +165,7 @@ Include context beyond checkboxes for fresh session resume.
 
 Check for other pending plans after completion:
 
-```bash
-ls .claude/plans/*/plan.md 2>/dev/null
-```
+Use Glob to find other plan files matching `.claude/plans/*/plan.md`.
 
 If pending plans exist, inform the user. Do NOT auto-start.
 

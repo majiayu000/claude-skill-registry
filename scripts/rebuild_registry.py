@@ -7,14 +7,19 @@ Scans all skills/*/SKILL.md files and rebuilds the registry index.
 
 import json
 import logging
-from datetime import datetime
-from pathlib import Path
 from collections import defaultdict
+from datetime import datetime, timezone
+from pathlib import Path
 
-from utils import extract_frontmatter, extract_description, load_metadata
+from utils import extract_description, load_metadata
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 logger = logging.getLogger(__name__)
+
+
+def utc_now_isoformat() -> str:
+    """Return a stable UTC timestamp with trailing Z."""
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
 
 def safe_write_registry(registry_path: Path, registry: dict) -> bool:
@@ -150,7 +155,7 @@ def build_category_indexes(skills: list, output_dir: Path):
         cat_data = {
             "category": cat,
             "count": len(cat_skills),
-            "updated_at": datetime.utcnow().isoformat() + "Z",
+            "updated_at": utc_now_isoformat(),
             "skills": sorted(cat_skills, key=lambda x: (-x.get("stars", 0), x["name"])),
         }
         with open(cat_file, "w", encoding="utf-8") as f:
@@ -159,7 +164,7 @@ def build_category_indexes(skills: list, output_dir: Path):
 
     # Index file
     index = {
-        "updated_at": datetime.utcnow().isoformat() + "Z",
+        "updated_at": utc_now_isoformat(),
         "categories": [
             {"name": cat, "count": len(skills)}
             for cat, skills in sorted(categories.items())
@@ -169,17 +174,17 @@ def build_category_indexes(skills: list, output_dir: Path):
         json.dump(index, f, indent=2)
 
 
-def load_collections(sources_dir: Path) -> list:
-    """Load collections from sources/collections.json."""
-    collections_path = sources_dir / "collections.json"
-    if not collections_path.exists():
+def load_plugins(sources_dir: Path) -> list:
+    """Load plugins from sources/plugins.json."""
+    plugins_path = sources_dir / "plugins.json"
+    if not plugins_path.exists():
         return []
     try:
-        with open(collections_path, encoding="utf-8") as f:
+        with open(plugins_path, encoding="utf-8") as f:
             data = json.load(f)
-        return data.get("collections", [])
+        return data.get("plugins", [])
     except Exception as e:
-        logger.warning(f"Failed to load collections: {e}")
+        logger.warning(f"Failed to load plugins: {e}")
         return []
 
 
@@ -245,23 +250,23 @@ if __name__ == "__main__":
         # Sort by stars then name
         unique_skills.sort(key=lambda x: (-x.get("stars", 0), x["name"].lower()))
 
-        # Load collections
-        collections = load_collections(sources_dir)
-        print(f"Collections loaded: {len(collections)}")
+        # Load plugins
+        plugins = load_plugins(sources_dir)
+        print(f"Plugins loaded: {len(plugins)}")
         print()
 
         # Build registry
         registry = {
             "version": "2.1.0",
-            "updated_at": datetime.utcnow().isoformat() + "Z",
+            "updated_at": utc_now_isoformat(),
             "total_count": len(unique_skills),
-            "collection_count": len(collections),
+            "plugin_count": len(plugins),
             "skills": unique_skills,
-            "collections": collections,
+            "plugins": plugins,
         }
 
         if safe_write_registry(registry_path, registry):
-            print(f"Written {registry_path} with {len(unique_skills)} skills, {len(collections)} collections")
+            print(f"Written {registry_path} with {len(unique_skills)} skills, {len(plugins)} plugins")
         else:
             print("Failed to write registry!")
             return

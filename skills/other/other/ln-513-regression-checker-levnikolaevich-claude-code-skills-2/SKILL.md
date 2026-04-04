@@ -2,6 +2,7 @@
 name: ln-513-regression-checker
 description: "Runs existing test suite to catch regressions after implementation changes. Use when Story needs regression verification. No status changes."
 license: MIT
+model: claude-haiku-4-5
 ---
 
 > **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.

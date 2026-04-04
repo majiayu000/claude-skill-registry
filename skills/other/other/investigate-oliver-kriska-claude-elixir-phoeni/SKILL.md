@@ -1,9 +1,8 @@
 ---
 name: phx:investigate
-description: Investigate a bug or error in Elixir/Phoenix code. Use whenever the user reports a bug, error, crash, exception, or unexpected behavior. Also use when seeing stack traces, compile errors, or test failures that need root-cause analysis. Uses Ralph Wiggum approach — checks obvious things first, reads errors literally. Add --parallel for 4-track deep investigation.
+description: Investigate bugs and errors in Elixir/Phoenix — root-cause analysis for crashes, exceptions, stack traces, test failures. Use --parallel for deep 4-track investigation.
 effort: high
 argument-hint: <bug description> [--parallel]
-disable-model-invocation: true
 ---
 
 # Investigate Bug
@@ -51,9 +50,7 @@ confirm what's already obvious (confirmed waste: session c135330a).
 
 ### Step 0: Consult Compound Docs
 
-```bash
-grep -rl "KEYWORD" .claude/solutions/ 2>/dev/null
-```
+Search `.claude/solutions/` for relevant keywords using Grep.
 
 If matching solution exists, present it and ask: "Apply this
 fix, or investigate fresh?"
@@ -84,17 +81,11 @@ This eliminates copy-pasting errors between app and agent.
 
 ### Step 1: Sanity Checks
 
-```bash
-mix compile --warnings-as-errors 2>&1 | head -50
-mix ecto.migrate
-```
+Run `mix compile --warnings-as-errors 2>&1 | head -50`, then `mix ecto.migrate`.
 
 ### Step 2: Reproduce
 
-```bash
-mix test test/path_test.exs --trace
-tail -200 log/dev.log | grep -A 5 -i "error\|exception"
-```
+Run `mix test test/path_test.exs --trace`. Then read the last 200 lines of `log/dev.log` and search for "error" or "exception" patterns.
 
 ### Step 3: Read Error LITERALLY
 

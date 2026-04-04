@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": null,
+  "repo": "rshankras/claude-code-apple-skills",
+  "path": "skills/product/product-agent/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 14,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-rshankras-claude-code-apple-sk",
+  "author": "rshankras",
+  "source_url": "https://github.com/rshankras/claude-code-apple-skills/blob/main/skills/product/product-agent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rshankras/claude-code-apple-skills/blob/main/skills/product/product-agent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

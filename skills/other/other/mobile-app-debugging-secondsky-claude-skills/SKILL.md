@@ -1,6 +1,7 @@
 ---
 name: mobile-app-debugging
 description: Mobile app debugging for iOS, Android, cross-platform frameworks. Use for crashes, memory leaks, performance issues, network problems, or encountering Xcode instruments, Android Profiler, React Native debugger, native bridge errors.
+license: MIT
 ---
 
 # Mobile App Debugging

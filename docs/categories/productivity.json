@@ -1,8 +1,8 @@
 {
   "category": "productivity",
   "code": "pro",
-  "count": 1905,
-  "updated_at": "2026-03-31T02:00:17.719095Z",
+  "count": 1912,
+  "updated_at": "2026-04-04T04:23:19.014107Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -11996,6 +11996,22 @@
       "source": "downloaded"
     },
     {
+      "name": "professional-business-writing",
+      "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
+      "repo": "b33kman/professional-business-writing-skill",
+      "path": "",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "professional-writing",
+        "business-writing",
+        "writing-assistant"
+      ],
+      "stars": 0,
+      "install": "b33kman/professional-business-writing-skill",
+      "source": "Community Skills"
+    },
+    {
       "name": "claude-code-service",
       "description": "Run Claude Code as a background service, web server, or API endpoint instead of CLI. Enable always-on Claude assistance, web UI access, API integrations, scheduled tasks, and automated workflows. Tran",
       "repo": "astoreyai/claude-skills",
@@ -15110,6 +15126,22 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "youtube-transcribe-skill",
+      "description": "Extract subtitles and transcripts from YouTube videos",
+      "repo": "feiskyer/claude-code-settings",
+      "path": "",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "youtube",
+        "transcription",
+        "subtitles"
+      ],
+      "stars": 0,
+      "install": "feiskyer/claude-code-settings",
+      "source": "Community Skills"
+    },
+    {
       "name": "project-memory-recall",
       "description": "Retrieve project-specific insights from file-based memory. Use when working on features, encountering domain-specific questions, or user says \"--project-recall\" or \"--recall\" (you decide which scope,",
       "repo": "hongbietcode/voice-to-slide",
@@ -16240,6 +16272,22 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "writing-plans",
+      "description": "Creates detailed implementation plans with bite-sized tasks",
+      "repo": "obra/superpowers",
+      "path": "",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "planning",
+        "documentation",
+        "writing"
+      ],
+      "stars": 0,
+      "install": "obra/superpowers",
+      "source": "Community Skills"
+    },
+    {
       "name": "task-skill",
       "description": "汎用的なタスクを実施する",
       "repo": "yktakaha4/dotfiles",
@@ -16478,6 +16526,24 @@
       "stars": 0,
       "install": "gjermundgaraba/dotfiles",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "liepin-jobs",
+      "description": "Search jobs on Liepin, apply to positions, view and edit resumes.",
+      "repo": "xllinbupt/MCP2skill",
+      "path": "",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "jobs",
+        "job-search",
+        "liepin",
+        "resume",
+        "career"
+      ],
+      "stars": 0,
+      "install": "xllinbupt/MCP2skill",
+      "source": "Community Skills"
     },
     {
       "name": "freight-intelligence-master",
@@ -17616,6 +17682,22 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "executing-plans",
+      "description": "Batch execution with human checkpoints for implementation",
+      "repo": "obra/superpowers",
+      "path": "",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "execution",
+        "workflow",
+        "automation"
+      ],
+      "stars": 0,
+      "install": "obra/superpowers",
+      "source": "Community Skills"
+    },
+    {
       "name": "start-task",
       "description": "작업 시작. Use when (1) \"랜드 #123 작업 진행\", (2) \"#45 시작하자\",(3) \"이슈 작업 시작해줘\". 이슈 상태 변경 + 브랜치 생성 + Draft PR.",
       "repo": "semicolon-devteam/semo",
@@ -17950,6 +18032,28 @@
       "stars": 0,
       "install": "keberle/fiction-kit-rebound-specialist/.github/skills/draft-initialization",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "deep-research",
+      "description": "Deep research with NotebookLM + web search. Domain boost, source credibility scoring, and post-research artifact generation (podcast, video, slides, quiz).",
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "path": "",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "research",
+        "deep-research",
+        "notebooklm",
+        "perplexity",
+        "gemini",
+        "domain-boost",
+        "academic",
+        "maritime",
+        "legal"
+      ],
+      "stars": 0,
+      "install": "Chris1220-cmd/deep-research-skill",
+      "source": "Community Skills"
     },
     {
       "name": "astro-blog",
@@ -25786,6 +25890,23 @@
       "stars": 0,
       "install": "angreal/angreal/plugin/skills/angreal-patterns",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "brainstorming",
+      "description": "Collaborative design refinement through Socratic dialogue for exploring ideas",
+      "repo": "obra/superpowers",
+      "path": "",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "brainstorming",
+        "design",
+        "collaboration",
+        "ideation"
+      ],
+      "stars": 0,
+      "install": "obra/superpowers",
+      "source": "Community Skills"
     },
     {
       "name": "confluence-page-generator",

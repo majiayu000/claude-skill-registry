@@ -21,7 +21,7 @@ query($owner: String!, $repo: String!, $pr: Int!) {
         nodes {
           id isResolved isOutdated
           comments(first: 50) {
-            nodes { author { login } body path line }
+            nodes { author { login } body path line originalLine diffHunk }
           }
         }
       }
@@ -66,22 +66,30 @@ Show reviews with non-empty body before the file-grouped threads:
 
 For each file with unresolved threads, show:
 
-```
+````
 ## `path/to/file.ts`
 
 ### Line 42 (by @reviewer)
+```diff
+<diffHunk from first comment>
+```
 > Comment body here
 
-### Lines 10-15 (by @another-reviewer) [outdated]
+### Line 10 (by @another-reviewer) [outdated]
+```diff
+<diffHunk from first comment>
+```
 > First comment body
 >
 > **@reply-author:** Reply body
-```
+````
 
 **Formatting rules:**
 - Show top-level review body comments first, grouped under "Review Comments"
 - Then group threads by file path, in the order they appear
 - Within each file, order threads by line number
+- Show the `diffHunk` from the first comment in each thread as a fenced diff code block before the comment body. This is the code context the reviewer was looking at.
+- For the line number, use `line` if available. Fall back to `originalLine` for outdated comments where `line` is null.
 - Show all comments in a thread (the first is the original review comment; subsequent ones are replies)
 - Mark outdated threads with `[outdated]`
 - Use blockquotes for comment bodies

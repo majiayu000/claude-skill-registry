@@ -151,6 +151,8 @@ Required payload semantics:
 
 Write the summary to the provided artifact path or return the same envelope in structured output.
 
+**Standalone default (no coordinator):** Generate `run_id` = `standalone-ln-522-{YYYYMMDD}-{short_hash}`, write summary JSON to `.hex-skills/runtime-artifacts/runs/{run_id}/test-planning-worker/ln-522.json`. Test scripts always go to `tests/manual/` (never project root). NEVER write artifacts to the project root directory.
+
 ## Definition of Done
 - [ ] `tests/manual/` structure exists (config.sh, README.md, test-all.sh, results/ created if missing).
 - [ ] `tests/manual/results/` added to project `.gitignore`.

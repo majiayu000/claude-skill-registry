@@ -1,8 +1,12 @@
 ---
 name: security
-description: "Enforce Elixir/Phoenix security patterns — authentication, authorization, OAuth, session handling, password hashing, access control, input validation, secrets management, CSRF/CSP/CORS headers, rate limiting, path traversal, SSRF prevention, token handling, XSS, SQL injection, atom exhaustion. Use when editing auth files, login/signup flows, RBAC, or API key handling. Skip for non-auth test helpers."
+description: "Enforce Elixir/Phoenix security — auth, OAuth, sessions, CSRF, XSS, SQL injection, input validation, secrets. Use when editing auth files, login flows, RBAC, or API keys."
 effort: medium
 user-invocable: false
+paths:
+  - "**/*auth*.ex"
+  - "**/*session*.ex"
+  - "**/*password*.ex"
 ---
 
 # Elixir/Phoenix Security Reference

@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "My personal dotfiles for my Hyprland/Arch Linux/NeoVim desktop setup.",
+  "repo": "max8989/dots-hyprland",
+  "path": "opencode/.opencode/context/openagents-repo/guides/adding-skill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-max8989-dots-hyprland",
+  "author": "max8989",
+  "source_url": "https://github.com/max8989/dots-hyprland/blob/main/opencode/.opencode/context/openagents-repo/guides/adding-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/max8989/dots-hyprland/blob/main/opencode/.opencode/context/openagents-repo/guides/adding-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

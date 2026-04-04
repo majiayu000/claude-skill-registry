@@ -19,6 +19,7 @@ dependencies:
   modules:
     - modules/waste-signals.md
 complexity: basic
+model_hint: fast
 estimated_tokens: 300
 ---
 # Agent Token Waste Monitoring

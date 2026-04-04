@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "A comprehensive collection of Agent Skills for context engineering, multi-agent architectures, and production agent systems. Use when building, optimizing, or debugging agent systems that require effective context management.",
+  "repo": "muratcankoylan/Agent-Skills-for-Context-Engineering",
+  "path": "skills/hosted-agents/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 7753,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-muratcankoylan-agent-skills-for-con",
+  "author": "muratcankoylan",
+  "source_url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/blob/main/skills/hosted-agents/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/blob/main/skills/hosted-agents/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

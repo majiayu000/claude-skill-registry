@@ -63,7 +63,7 @@ Route based on user intent:
 | "Circular dependencies" | `find_cycles` | `{ path: "{project_path}" }` |
 | "Module coupling" | `get_module_metrics` | `{ path: "{project_path}", min_coupling: 0 }` |
 | "Implementations / overrides" | `find_implementations` | `{ name: "X", file: "...", path: "{project_path}" }` |
-| "Dataflow / propagation" | `find_dataflows` | `{ name: "X", file: "...", path: "{project_path}", depth: 2 }` |
+| "Dataflow / propagation" | `find_dataflows` | `{ source: { symbol: { name: "X", file: "..." }, anchor: { kind: "param", name: "input" } }, sink?: { symbol: { name: "X", file: "..." }, anchor: { kind: "return" } }, path: "{project_path}" }` |
 
 **Canonical selector rule:** Semantic tools accept exactly one selector:
 - `symbol_id`
@@ -72,6 +72,12 @@ Route based on user intent:
 - `name` + `file`
 
 **Preferred flow:** use `search_symbols` first, then feed the returned `workspace_qualified_name` into `get_symbol`, `trace_paths`, `find_references`, or `find_implementations` for exact follow-up queries.
+
+**Dataflow anchors:** `find_dataflows` requires `source.anchor` and optional `sink.anchor`. Use:
+- `param` for function parameters
+- `local` for local variables
+- `return` for function returns
+- `property` with `access_path` for bounded property flow
 
 **Precision controls:** `get_symbol`, `trace_paths`, and `find_references` support `min_confidence` (`low`, `inferred`, `exact`, `precise`) when the caller wants to suppress weaker parser-only facts.
 

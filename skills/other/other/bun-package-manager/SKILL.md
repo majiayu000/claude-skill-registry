@@ -1,6 +1,7 @@
 ---
-name: Bun Package Manager
+name: bun-package-manager
 description: Bun package manager commands (install, add, remove, update), workspaces, lockfiles, npm/yarn/pnpm migration. Use for dependency management with Bun.
+license: MIT
 ---
 
 # Bun Package Manager

@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Quickstart SDK for INDA HR API v2 integration",
+  "repo": "INDA-HR/python_sdk",
+  "path": "docs/OptionalResumeSkill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 8,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-inda-hr-python-sdk",
+  "author": "INDA-HR",
+  "source_url": "https://github.com/INDA-HR/python_sdk/blob/main/docs/OptionalResumeSkill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/INDA-HR/python_sdk/blob/main/docs/OptionalResumeSkill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

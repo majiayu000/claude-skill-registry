@@ -1,7 +1,7 @@
 ---
 name: Linear
 description: Managing Linear issues, projects, and teams. Use when working with Linear tasks, creating issues, updating status, querying projects, or managing team workflows.
-version: 2.6.0
+version: 2.6.1
 allowed-tools:
   - mcp__linear
   - WebFetch(domain:linear.app)

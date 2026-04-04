@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Sistema de desenvolvimento de software orientado por agentes de IA que automatiza e coordena todo o ciclo de vida do desenvolvimento.",
+  "repo": "arbgjr/sdlc_agentico",
+  "path": ".claude/skills/reference-indexer/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 2,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-arbgjr-sdlc-agentico",
+  "author": "arbgjr",
+  "source_url": "https://github.com/arbgjr/sdlc_agentico/blob/main/.claude/skills/reference-indexer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arbgjr/sdlc_agentico/blob/main/.claude/skills/reference-indexer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

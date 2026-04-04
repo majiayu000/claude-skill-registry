@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Gwen",
+  "repo": "lawless-m/Gwen",
+  "path": ".claude/skills/Reverse Proxy Deployment/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-lawless-m-gwen",
+  "author": "lawless-m",
+  "source_url": "https://github.com/lawless-m/Gwen/blob/master/.claude/skills/Reverse Proxy Deployment/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lawless-m/Gwen/blob/master/.claude/skills/Reverse Proxy Deployment/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

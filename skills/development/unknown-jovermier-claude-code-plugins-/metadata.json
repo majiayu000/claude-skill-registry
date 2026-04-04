@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": null,
+  "repo": "jovermier/claude-code-plugins-ip-labs",
+  "path": "plugins/dev/agents/review/agent-native-reviewer/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-jovermier-claude-code-plugins-",
+  "author": "jovermier",
+  "source_url": "https://github.com/jovermier/claude-code-plugins-ip-labs/blob/main/plugins/dev/agents/review/agent-native-reviewer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jovermier/claude-code-plugins-ip-labs/blob/main/plugins/dev/agents/review/agent-native-reviewer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

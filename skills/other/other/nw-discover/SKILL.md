@@ -62,6 +62,18 @@ Execute \*discover for {product-concept-name}.
 - interactive: high | output_format: markdown
 - interview_depth: comprehensive | evidence_standard: past_behavior
 
+## Peer Review Gate
+
+BEFORE handoff to DISCUSS, dispatch `@nw-product-discoverer-reviewer` to review discovery artifacts. BLOCK on rejection.
+
+Review scope:
+- Evidence quality (past behavior, not future intent)
+- Interview coverage and threshold compliance
+- Assumption validation rigor (G1-G4 gates)
+- Lean canvas coherence with interview findings
+
+On REJECTION: revise artifacts per reviewer findings and re-submit. Max 2 attempts before escalating to user.
+
 ## Success Criteria
 
 Refer to Scout's quality gates in ~/.claude/agents/nw/nw-product-discoverer.md.
@@ -69,6 +81,7 @@ Refer to Scout's quality gates in ~/.claude/agents/nw/nw-product-discoverer.md.
 - [ ] All 4 decision gates passed (G1-G4)
 - [ ] Minimum interview thresholds met per phase
 - [ ] Evidence quality standards met (past behavior, not future intent)
+- [ ] Peer review approved by @nw-product-discoverer-reviewer
 - [ ] Handoff accepted by product-owner (DISCUSS wave)
 
 ## Next Wave

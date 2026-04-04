@@ -1,13 +1,15 @@
 ---
 name: seo-content-writer
-description: 'Write SEO blog posts, articles, landing pages with keywords, headers, snippet targeting. "Write me a blog post" / "帮我写文章" / "写一篇好文章". SEO文章写作/博客创作/内容优化/排名提升 SEOライティング SEO글쓰기/블로그작성 redacción SEO'
-version: "5.1.0"
+description: 'Write SEO blog posts, articles, landing pages with keyword integration, header optimization, and snippet targeting. SEO文章写作/内容优化'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when writing SEO-optimized articles, blog posts, landing pages, or product descriptions. Also when the user asks to create content targeting a specific keyword."
+argument-hint: "<topic> <target keyword>"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -334,6 +336,39 @@ When a user requests SEO content:
     Then verify the 16 CORE-EEAT pre-write constraints (C01, C02, C06, C10, O01, O02, O06, O09, R01, R02, R04, R07, C03, O08, O10, E07) with pass/warning/fail status. List items needing attention.
 
     _For full 80-item audit, use [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md)_
+
+#### Issue Classification
+
+When the self-check reveals issues, classify and handle them:
+
+**Auto-correct (fix silently, then document in a `### Changes Made` block after the final content):**
+- Meta description exceeds 160 characters → rewrite to fit while preserving primary keyword and CTA
+- Title tag exceeds 60 characters → shorten while preserving primary keyword
+- Missing alt text on images → generate descriptive alt text
+- Duplicate H2 headings → differentiate with modifiers
+- Keyword density above 2% → replace some instances with semantic variants
+- Missing table of contents → generate TOC with anchor links for articles with 3+ H2 sections
+- Paragraphs exceeding 5 sentences → split at the most natural break point
+
+Use this format for the Changes Made block:
+
+```markdown
+### Changes Made During Self-Check
+
+| Item | Original | Fixed |
+|------|----------|-------|
+| Meta description | 185 chars | 158 chars — removed non-essential qualifier |
+| Keyword density | 2.4% | 1.8% — replaced 3 instances with semantic variants |
+```
+
+**Needs your decision (ask before changing):**
+- H1 wording changes (may affect brand voice)
+- Keyword density below 0.5% (may need structural rewrite)
+- Tone adjustments (formal ↔ casual)
+- Claim strength (e.g., "best" → "top-rated" for compliance)
+- Content length significantly above/below target (±30%)
+- Removing/replacing external links
+- Statistics or data claims that cannot be verified against the cited source
 
 ## Validation Checkpoints
 

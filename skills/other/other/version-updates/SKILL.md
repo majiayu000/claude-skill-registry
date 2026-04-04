@@ -4,6 +4,8 @@ description: 'Use this skill for version management and release preparation. Use
   bumping project versions, updating changelogs, preparing releases, coordinating
   version changes across files. Do not use when just documentation updates - use doc-updates.
   DO NOT use when: full PR preparation - use pr-prep.'
+version: 1.7.1
+alwaysApply: false
 category: artifact-generation
 tags:
 - version
@@ -18,12 +20,12 @@ tools:
 - Bash
 - TodoWrite
 complexity: medium
+model_hint: standard
 estimated_tokens: 700
 dependencies:
 - sanctum:shared
 - sanctum:git-workspace-review
 ---
-
 # Version Update Workflow
 
 ## When To Use

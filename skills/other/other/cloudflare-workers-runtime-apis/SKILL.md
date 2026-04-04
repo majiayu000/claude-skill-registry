@@ -1,6 +1,7 @@
 ---
-name: workers-runtime-apis
+name: cloudflare-workers-runtime-apis
 description: Cloudflare Workers Runtime APIs including Fetch, Streams, Crypto, Cache, WebSockets, and Encoding. Use for HTTP requests, streaming, encryption, caching, real-time connections, or encountering API compatibility, response handling, stream processing errors.
+license: MIT
 ---
 
 # Cloudflare Workers Runtime APIs

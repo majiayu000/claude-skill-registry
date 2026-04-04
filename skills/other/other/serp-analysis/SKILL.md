@@ -1,14 +1,16 @@
 ---
 name: serp-analysis
-description: 'Analyze SERPs: ranking factors, features, intent, AI overviews, featured snippets, People Also Ask. "What ranks for this" / "谁排第一" / "搜索结果分析". SERP分析/搜索结果/精选摘要 検索結果チェック/リッチリザルト 검색결과분석 análisis SERP'
-version: "5.1.0"
+description: 'Analyze SERPs: ranking factors, features, intent patterns, AI overviews, featured snippets. SERP分析/搜索结果'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 allowed-tools: WebFetch
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when analyzing search engine results pages, SERP features, featured snippets, People Also Ask, or understanding ranking patterns for a query."
+argument-hint: "<keyword or query>"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "high"
   tags:
     - seo

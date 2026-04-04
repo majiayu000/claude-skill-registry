@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Claude Flow V3 - Domain-Driven Design Architecture with 15-Agent Swarm Coordination",
+  "repo": "QUXTech/claude-flow",
+  "path": ".claude/skills/worker-integration/skill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-quxtech-claude-flow-2",
+  "author": "QUXTech",
+  "source_url": "https://github.com/QUXTech/claude-flow/blob/main/.claude/skills/worker-integration/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/QUXTech/claude-flow/blob/main/.claude/skills/worker-integration/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

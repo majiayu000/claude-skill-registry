@@ -1,6 +1,7 @@
 ---
 name: woocommerce-dev-cycle
 description: Run tests, linting, and quality checks for WooCommerce development. Use when running tests, fixing code style, or following the development workflow in WooCommerce projects.
+license: MIT
 ---
 
 # WooCommerce Development Cycle

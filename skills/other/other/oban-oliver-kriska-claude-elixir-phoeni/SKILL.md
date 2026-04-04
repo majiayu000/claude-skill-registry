@@ -1,8 +1,13 @@
 ---
 name: oban
-description: "Reference Oban job processing patterns — workers, perform/1, queues, cron scheduling, retries, unique jobs, idempotency. Oban Pro workflows/batches/process/1. Oban.Worker, Oban.Testing, assert_enqueued, perform_job, queue config, backoff. Use when writing or reviewing Oban workers, job args, queue config, or debugging failed jobs."
+description: "Oban job processing — workers, perform/1 (OSS) and process/1 (Pro), queues, cron, retries, unique jobs, idempotency, Oban Pro (Workflow, Batch, Chunk, Smart Engine), Testing. Use when writing Oban workers, queue config, or debugging jobs."
 effort: medium
 user-invocable: false
+paths:
+  - "**/workers/**/*.ex"
+  - "**/*_worker.ex"
+  - "**/*_worker_test.exs"
+  - "**/*_job.ex"
 ---
 
 # Oban Background Jobs Reference
@@ -16,21 +21,22 @@ Quick reference for Elixir Oban patterns.
 ```bash
 grep -E "oban_pro|oban_web" mix.exs
 grep -r "use Oban.Pro.Worker" lib/
+grep -r "Oban.Pro.Engines.Smart" config/
 ```
 
-**If Oban Pro detected**, see `${CLAUDE_SKILL_DIR}/references/oban-pro-basics.md` for key differences:
+**If Oban Pro detected**, use Pro patterns for ALL new workers:
 
 | Standard Oban | Oban Pro |
 |---------------|----------|
 | `use Oban.Worker` | `use Oban.Pro.Worker` |
-| `@impl Oban.Worker` | `@impl Oban.Pro.Worker` |
-| `def perform(%Oban.Job{})` | `def process(%Oban.Job{})` |
+| `def perform(%Job{})` | `def process(%Job{})` |
 | `Oban.Testing` | `Oban.Pro.Testing` |
+| Advisory lock engine | `Oban.Pro.Engines.Smart` |
 
-**Pro features covered**: Workflows, Batches, Structured/Recorded/Encrypted workers.
-See `${CLAUDE_SKILL_DIR}/references/oban-pro-basics.md` for patterns.
-For Pro plugins (Lifeline, Smart Engine, DynamicPrioritizer),
-consult [oban.pro/docs](https://oban.pro/docs).
+**Pro features** (all optional): `args_schema` (typed args), Workflows, Batches, Chunks,
+Relay, hooks, encryption, deadlines, chaining, Smart Engine (global concurrency + rate limiting).
+Pro plugins (DynamicCron, DynamicLifeline, DynamicPruner) **enhance** OSS equivalents — swap module, don't run both.
+See `${CLAUDE_SKILL_DIR}/references/oban-pro-basics.md` for all patterns and migration guide.
 
 ---
 
@@ -42,6 +48,7 @@ consult [oban.pro/docs](https://oban.pro/docs).
 4. **ARGS USE STRING KEYS** — Pattern match `%{"user_id" => id}` not `%{user_id: id}`
 5. **UNIQUE CONSTRAINTS FOR USER ACTIONS** — Prevent double-click duplicates
 6. **NEVER STORE LARGE DATA IN ARGS** — Store references (IDs, paths), not content
+7. **SMART ENGINE: NEVER USE `attempt` TO LIMIT SNOOZES** — Snooze rolls back attempt counter. Use `meta["snoozed"]` instead. Causes infinite loops
 
 ## Quick Worker Template
 
@@ -109,5 +116,6 @@ assert :ok = perform_job(MyApp.Worker, %{id: 1})
 For detailed patterns, see:
 
 - `${CLAUDE_SKILL_DIR}/references/worker-patterns.md` - Worker options, backoff, timeout
-- `${CLAUDE_SKILL_DIR}/references/queue-config.md` - Queue design, pool sizing, cron
-- `${CLAUDE_SKILL_DIR}/references/testing-patterns.md` - Testing, assertions, drain
+- `${CLAUDE_SKILL_DIR}/references/queue-config.md` - Queue design, pool sizing, cron, Smart Engine
+- `${CLAUDE_SKILL_DIR}/references/testing-patterns.md` - Testing, assertions, drain (OSS + Pro)
+- `${CLAUDE_SKILL_DIR}/references/oban-pro-basics.md` - Pro.Worker, Workflow, Batch, Chunk, Relay, plugins

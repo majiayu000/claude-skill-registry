@@ -28,27 +28,19 @@ Extract from the error message:
 
 ### Step 2: Find the Migration
 
-```bash
-grep -r "constraint_name" priv/repo/migrations/
-# Also check: create unique_index, create index, add constraint
-```
+Use Grep to search for the constraint name in `priv/repo/migrations/`. Also check for `create unique_index`, `create index`, `add constraint`.
 
 Verify: Does the migration constraint match the schema's `unique_constraint/3` or `foreign_key_constraint/3` call?
 
 ### Step 3: Find the Schema
 
-```elixir
-# Look for the constraint handling in changeset
-grep -r "unique_constraint\|foreign_key_constraint\|check_constraint" lib/
-```
+Use Grep to find constraint handling in changesets (`unique_constraint`, `foreign_key_constraint`, `check_constraint`) in `lib/`.
 
 ### Step 4: Trace Insert Paths
 
 Find ALL callers that insert/update this schema:
 
-```bash
-grep -r "Repo.insert\|Repo.update\|Repo.insert_all\|cast_assoc.*:schema_name" lib/
-```
+Use Grep to find all insert/update paths (`Repo.insert`, `Repo.update`, `Repo.insert_all`, `cast_assoc`) in `lib/`.
 
 ### Step 5: Identify the Cause
 

@@ -1,6 +1,7 @@
 ---
 name: api-gateway-configuration
 description: Configures API gateways for routing, authentication, rate limiting, and request transformation in microservice architectures. Use when setting up Kong, Nginx, AWS API Gateway, or Traefik for centralized API management.
+license: MIT
 ---
 
 # API Gateway Configuration

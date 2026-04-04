@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Claude Skills 合集 - fork from ComposioHQ with Chinese docs and enhancements",
+  "repo": "frostant/awesome-claude-skills",
+  "path": "langsmith-fetch/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "tags": [],
+  "stars": 1,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-frostant-awesome-claude-skill",
+  "author": "frostant",
+  "source_url": "https://github.com/frostant/awesome-claude-skills/blob/master/langsmith-fetch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frostant/awesome-claude-skills/blob/master/langsmith-fetch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

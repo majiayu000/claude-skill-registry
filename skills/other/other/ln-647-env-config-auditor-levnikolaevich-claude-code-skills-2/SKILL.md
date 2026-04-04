@@ -3,6 +3,7 @@ name: ln-647-env-config-auditor
 description: "Checks env var config sync, missing defaults, naming conventions, startup validation. Use when auditing environment configuration."
 allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__search_symbols, mcp__hex-graph__find_references
 license: MIT
+model: claude-haiku-4-5
 ---
 
 > **Paths:** File paths (`shared/`, `references/`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.

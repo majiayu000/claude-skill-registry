@@ -484,10 +484,11 @@ async def download_skills(
 
 
 def should_fail_on_empty_download(stats: dict) -> bool:
-    """Return True when the download pass produced only failures."""
+    """Return True when the download pass failed on an empty archive."""
     downloaded = int(stats.get("downloaded", 0))
     failed = int(stats.get("failed", 0))
-    return downloaded == 0 and failed > 0
+    skipped = int(stats.get("skipped", 0))
+    return downloaded == 0 and failed > 0 and skipped == 0
 
 
 def main():

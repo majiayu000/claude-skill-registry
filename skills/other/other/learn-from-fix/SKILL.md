@@ -1,6 +1,6 @@
 ---
 name: phx:learn-from-fix
-description: Capture lessons learned after fixing an Elixir/Phoenix bug or receiving a correction. Covers ecto query mistakes, liveview mount anti-patterns, oban worker issues, and iron law violations. Use when the user corrects your approach or teaches a project-specific pattern. Updates knowledge base to prevent future mistakes.
+description: Capture lessons after fixing a bug or receiving a correction — ecto, liveview, oban, iron law mistakes. Use when the user corrects your approach or teaches a pattern.
 effort: low
 argument-hint: <description of what was fixed>
 ---

@@ -169,7 +169,12 @@ Display: `"Agent Review: codex ({accepted}/{total}), gemini ({accepted}/{total})
 Execute per `shared/references/agent_review_workflow.md` "Step: Iterative Refinement".
 
 1) **Artifact:** `.hex-skills/optimization/{slug}/context.md` (post-Phase 4 merge state)
-2) **Loop (max 5 iterations):** Build prompt → Codex (foreground) → parse → AGREE/REJECT → apply → repeat
+2) **Loop (max 5 iterations):**
+   - Build prompt → Codex (foreground)
+   - **Kill Codex process** (`--verify-dead {pid}`) after each call
+   - Parse → **Architecture Gate** (reject backward-compat shims) → AGREE/REJECT → apply accepted
+   - Quality-based exit: loop continues while MEDIUM/HIGH suggestions exist
+   - Synchronous Codex calls may take 5-15 minutes per iteration — this is expected
 3) **Display + Persist** per shared workflow
 4) Checkpoint refinement summary in review runtime
 
@@ -195,7 +200,7 @@ validation_result:
   agent_summary: "codex: PLAN_ACCEPTABLE, gemini: SUGGESTIONS (2 accepted)"
 ```
 
-Return verdict to coordinator. On NO_GO: coordinator presents issues to user.
+Return verdict. On NO_GO, present issues to user.
 
 ---
 
@@ -235,7 +240,7 @@ Write `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-validation/{slug
 - [ ] Both agents launched (or SKIPPED if unavailable)
 - [ ] Own feasibility check completed (files exist, no conflicts, evidence backing)
 - [ ] Agent results merged and verified
-- [ ] Agent process trees verified dead after results collection (Phase 4)
+- [ ] All Codex/Gemini processes verified dead after Phase 4 merge AND after each Phase 5 iteration (no orphaned processes)
 - [ ] Corrections applied to context.md
 - [ ] Iterative Refinement executed or SKIPPED (Phase 5)
 - [ ] Verdict issued (GO / GO_WITH_CONCERNS / NO_GO)

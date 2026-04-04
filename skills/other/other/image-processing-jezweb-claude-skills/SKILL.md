@@ -6,11 +6,27 @@ compatibility: claude-code-only
 
 # Image Processing
 
-Process images for web development. Generate a Pillow script adapted to the user's environment and specific needs.
+Use `img-process` (shipped in `bin/`) for common operations. For complex or custom workflows, generate a Pillow script adapted to the user's environment.
+
+## Quick Reference — img-process CLI
+
+```bash
+img-process resize hero.png --width 1920
+img-process convert logo.png --format webp
+img-process trim logo-raw.jpg -o logo-clean.png --padding 10
+img-process thumbnail photo.jpg --size 200
+img-process optimise hero.jpg --quality 85 --max-width 1920
+img-process og-card -o og.png --title "My App" --subtitle "Built for speed"
+img-process batch ./images --action convert --format webp -o ./optimised
+```
+
+**Use `img-process` when**: the operation is standard (resize, convert, trim, thumbnail, optimise, OG card, batch). This is faster and avoids generating a script each time.
+
+**Generate a custom script when**: the operation needs logic `img-process` doesn't cover (compositing multiple images, watermarks, complex text layouts, conditional processing).
 
 ## Prerequisites
 
-Pillow is usually pre-installed. If not:
+Pillow is required for both `img-process` and custom scripts:
 
 ```bash
 pip install Pillow
@@ -23,12 +39,6 @@ If Pillow is unavailable, use alternatives:
 | `sips` | macOS (built-in) | None | Resize, convert (no trim/OG) |
 | `sharp` | Node.js | `npm install sharp` | Full feature set, high performance |
 | `ffmpeg` | Cross-platform | `brew install ffmpeg` | Resize, convert |
-
-```bash
-# macOS sips examples
-sips --resampleWidth 1920 input.jpg --out resized.jpg
-sips --setProperty format webp input.jpg --out output.webp
-```
 
 ## Output Format Guide
 
@@ -176,22 +186,32 @@ img = img.convert("RGB")
 
 ### Logo Cleanup (client-supplied JPG with white background)
 
-1. Trim whitespace
-2. Convert to PNG (for transparency)
-3. Create favicon-sized version (thumbnail at 512px)
+```bash
+img-process trim logo-raw.jpg -o logo-trimmed.png --padding 10
+img-process thumbnail logo-trimmed.png --size 512 -o favicon-512.png
+```
 
 ### Prepare Hero Image for Production
 
-Resize to max width 1920, convert to WebP, compress at quality 85.
+```bash
+img-process optimise hero.jpg --max-width 1920 --quality 85
+# Outputs hero.webp — resized and compressed
+```
 
 ### Batch Process
 
-For multiple images, generate a single script that loops over all files rather than processing one at a time.
+```bash
+img-process batch ./raw-images --action convert --format webp --quality 85 -o ./optimised
+img-process batch ./photos --action resize --width 800 -o ./thumbnails
+```
 
-## Pipeline with Gemini Image Gen
+### Pipeline with Gemini Image Gen
 
 Generate images with the gemini-image-gen skill, then process them:
 
-1. Generate with Gemini (raw PNG output)
-2. User picks favourite
-3. Optimise: resize to target width, convert to WebP, compress
+```bash
+# After generating with Gemini (raw PNG output):
+img-process optimise generated-image.png --max-width 1920 --quality 85
+# Or batch process all generated images:
+img-process batch ./generated --action optimise -o ./production
+```

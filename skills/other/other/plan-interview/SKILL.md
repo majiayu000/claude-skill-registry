@@ -1,6 +1,7 @@
 ---
 name: plan-interview
 description: Adaptive interview-driven spec generation. Use when converting rough plans into comprehensive specifications, needing structured requirements gathering, or transforming ideas into implementation-ready documentation.
+license: MIT
 ---
 
 # Plan Interview Skill

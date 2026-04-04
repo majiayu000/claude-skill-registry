@@ -2,8 +2,16 @@
   "name": "goal-tracker",
   "repo": "aiskillstore/marketplace",
   "path": "skills/bellabe/goal-tracker/SKILL.md",
+  "github_branch": "main",
   "category": "other",
   "source": "github.com/aiskillstore/marketplace",
   "dir_name": "goal-tracker",
-  "downloaded_at": "2026-02-11T01:24:52.672245Z"
+  "downloaded_at": "2026-04-04T03:47:49.405831Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/bellabe/goal-tracker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/bellabe/goal-tracker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

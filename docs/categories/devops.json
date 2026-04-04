@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5307,
-  "updated_at": "2026-03-31T02:00:16.830325Z",
+  "count": 5308,
+  "updated_at": "2026-04-04T04:23:18.041451Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -69227,6 +69227,24 @@
       "stars": 0,
       "install": "wshobson/agents/plugins/kubernetes-operations/skills/gitops-workflow",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs",
+      "source": "Community Skills"
     },
     {
       "name": "docker-optimizer",

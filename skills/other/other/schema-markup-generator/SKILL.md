@@ -1,14 +1,16 @@
 ---
 name: schema-markup-generator
-description: 'Generate JSON-LD for FAQ, HowTo, Article, Product, LocalBusiness rich results and AI understanding. "Add structured data" / "添加结构化数据" / "要星级评分". Schema标记/富摘要/JSON-LD/结构化 構造化データ 스키마마크업 datos estructurados'
-version: "5.1.0"
+description: 'Generate JSON-LD structured data for FAQ, HowTo, Article, Product, LocalBusiness rich results. Schema标记/结构化数据'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when generating JSON-LD structured data, Schema.org markup, or rich snippet markup for a page."
+argument-hint: "<page URL or content type>"
 allowed-tools: WebFetch
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "medium"
   tags:
     - seo

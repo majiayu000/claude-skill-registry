@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9478,
-  "updated_at": "2026-03-31T02:00:16.531520Z",
+  "count": 9483,
+  "updated_at": "2026-04-04T04:23:17.705522Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -70685,6 +70685,26 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "excalidraw-skill",
+      "description": "Generate hand-drawn style diagrams from natural language using Excalidraw, rendered to PNG/SVG via headless Playwright.",
+      "repo": "Minara-AI/excalidraw-skill",
+      "path": "",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "excalidraw",
+        "diagram",
+        "flowchart",
+        "hand-drawn",
+        "playwright",
+        "visualization",
+        "architecture-diagram"
+      ],
+      "stars": 0,
+      "install": "Minara-AI/excalidraw-skill",
+      "source": "Community Skills"
+    },
+    {
       "name": "learning-language-level-calibration",
       "description": "Assess content difficulty by language proficiency level, calibrate reading level for multilingual learners, adapt content for language proficiency, and design language scaffolding. Use when creating c",
       "repo": "pauljbernard/content",
@@ -71028,6 +71048,23 @@
       "stars": 0,
       "install": "happycog/craft-skill/SKILLS",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator",
+      "source": "Community Skills"
     },
     {
       "name": "task-planner",
@@ -75275,6 +75312,22 @@
       "stars": 0,
       "install": "sandraschi/advanced-memory-mcp/skills/nonsense/i-ching-oracle-guide",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "nanobanana-skill",
+      "description": "Generate or edit images using Google Gemini API",
+      "repo": "feiskyer/claude-code-settings",
+      "path": "",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "gemini",
+        "images",
+        "generation"
+      ],
+      "stars": 0,
+      "install": "feiskyer/claude-code-settings",
+      "source": "Community Skills"
     },
     {
       "name": "managed-package-architecture",
@@ -108559,6 +108612,23 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces",
+      "repo": "julianromli/ai-skills",
+      "path": "",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "frontend",
+        "ui",
+        "design",
+        "web"
+      ],
+      "stars": 0,
+      "install": "julianromli/ai-skills",
+      "source": "Community Skills"
+    },
+    {
       "name": "observability-strategy",
       "description": "Design observability strategy using the three pillars (logs, metrics, traces)",
       "repo": "melodic-software/claude-code-plugins",
@@ -122091,6 +122161,23 @@
       "stars": 0,
       "install": "dwmkerr/ark-claude-code-marketplace",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "frontend-ui-animator",
+      "description": "Add smooth animations and transitions to UI components",
+      "repo": "julianromli/ai-skills",
+      "path": "",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "animation",
+        "ui",
+        "frontend",
+        "motion"
+      ],
+      "stars": 0,
+      "install": "julianromli/ai-skills",
+      "source": "Community Skills"
     },
     {
       "name": "hubspot-create-meeting",

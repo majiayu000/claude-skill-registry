@@ -2,6 +2,7 @@
 name: api-testing
 description: HTTP API testing for TypeScript (Supertest) and Python (httpx, pytest). Test REST APIs, GraphQL, request/response validation, authentication, and error handling.
 allowed-tools: Bash, Read, Edit, Write, Grep, Glob, TodoWrite
+license: MIT
 ---
 
 # API Testing

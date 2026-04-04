@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Claude Code workflow system with commands, skills, quality gates, and automation",
+  "repo": "buckstrdr/claude-workflow-system",
+  "path": ".claude/commands/sp-test-skill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-buckstrdr-claude-workflow-syst",
+  "author": "buckstrdr",
+  "source_url": "https://github.com/buckstrdr/claude-workflow-system/blob/main/.claude/commands/sp-test-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/buckstrdr/claude-workflow-system/blob/main/.claude/commands/sp-test-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

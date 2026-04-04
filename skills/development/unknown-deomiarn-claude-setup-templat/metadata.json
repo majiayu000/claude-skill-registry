@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Use this template for claude code. Improve context management, documentation, cost and delegation of agents",
+  "repo": "deomiarn/claude-setup-template",
+  "path": ".claude/skills/website-builder/Skill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 5,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-deomiarn-claude-setup-templat",
+  "author": "deomiarn",
+  "source_url": "https://github.com/deomiarn/claude-setup-template/blob/main/.claude/skills/website-builder/Skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/deomiarn/claude-setup-template/blob/main/.claude/skills/website-builder/Skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "The universal registry for AI coding tools",
+  "repo": "pr-pm/prpm",
+  "path": ".claude/skills/agent-builder/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 84,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-pr-pm-prpm-2",
+  "author": "pr-pm",
+  "source_url": "https://github.com/pr-pm/prpm/blob/main/.claude/skills/agent-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pr-pm/prpm/blob/main/.claude/skills/agent-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

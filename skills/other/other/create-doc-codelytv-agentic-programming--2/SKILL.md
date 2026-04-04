@@ -11,7 +11,7 @@ Based on the current conversation, create new or improve existing documentation 
 2. Check if a relevant doc already exists in `docs/` (organized by area: `backend/`, `frontend/`, `database/`, etc.).
    - If it exists, improve it while preserving the required structure.
    - If it does not exist, create a new file in the appropriate subfolder.
-3. Read `docs/documentation-guidelines.md` and follow its structure exactly. Every document MUST include these sections in order:
+3. Read @docs/documentation-guidelines.md and follow its structure exactly. Every document MUST include these sections in order:
 ```
 # 🎯 Name of the convention
 

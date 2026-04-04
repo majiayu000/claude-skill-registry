@@ -1,6 +1,6 @@
 ---
 name: phx:boundaries
-description: Analyze Phoenix context boundaries, cross-context calls, and module coupling using mix xref. Use when checking what's calling across context boundaries, whether contexts are too tightly coupled, validating module dependencies for architecture review, reviewing PRs for boundary violations, or planning context splits. Also use before major refactors or when evaluating architecture health.
+description: Analyze Phoenix context boundaries and module coupling via mix xref. Use when checking cross-context calls, validating dependencies, before splitting modules, or reviewing architecture.
 effort: medium
 argument-hint: [--assess|--fix]
 allowed-tools: Read, Grep, Glob, Bash
@@ -35,23 +35,10 @@ Evaluate overall boundary health with a quantified score.
 
 ### Commands for Assessment
 
-```bash
-# Module count per context
-for dir in lib/my_app/*/; do
-  echo "$(basename $dir): $(find $dir -name '*.ex' | wc -l) modules"
-done
-
-# Public function count per context
-for f in lib/my_app/*.ex; do
-  echo "$(basename $f): $(grep -c '^  def ' $f 2>/dev/null || echo 0) public funcs"
-done
-
-# Dependency analysis
-mix xref graph --format stats
-
-# Circular dependencies
-mix xref graph --format cycles
-```
+Use Glob to count `.ex` files per context directory under `lib/my_app/*/`.
+Use Grep to count public function definitions per context file under `lib/my_app/*.ex`.
+Run `mix xref graph --format stats` for dependency analysis.
+Run `mix xref graph --format cycles --label compile` for compile-time circular dependencies.
 
 ### Output Format
 
@@ -101,27 +88,19 @@ mix xref graph --format cycles
 
 ### Check Compile Dependencies
 
-```bash
-mix xref graph --label compile-connected
-```
+Run `mix xref graph --label compile-connected`.
 
 ### Find What Depends on a Context
 
-```bash
-mix xref graph --sink MyApp.Accounts --label compile
-```
+Run `mix xref graph --sink MyApp.Accounts --label compile`.
 
 ### Find What a Module Calls
 
-```bash
-mix xref callers MyApp.Accounts.get_user!/1
-```
+Run `mix xref callers MyApp.Accounts.get_user!/1`.
 
 ### Check for Circular Dependencies
 
-```bash
-mix xref graph --format cycles
-```
+Run `mix xref graph --format cycles --label compile`.
 
 ## Red Flags to Detect
 

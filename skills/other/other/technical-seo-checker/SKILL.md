@@ -1,14 +1,16 @@
 ---
 name: technical-seo-checker
-description: "Technical SEO audit: Core Web Vitals, crawl, indexing, mobile, speed, architecture, redirects. \"My site is slow\" / \"Google找不到\" / \"网站打不开\". 技术SEO/网站速度/爬虫/索引/CWV テクニカルSEO/サイト速度 기술SEO/사이트속도 SEO técnico"
-version: "5.1.0"
+description: 'Technical SEO audit: Core Web Vitals, crawl, indexing, mobile, speed, architecture, redirects. 技术SEO/网站速度'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when checking technical SEO health: site speed, Core Web Vitals, indexing, crawlability, robots.txt, sitemaps, or canonical tags."
+argument-hint: "<URL or domain>"
 allowed-tools: WebFetch
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "low"
   tags:
     - seo

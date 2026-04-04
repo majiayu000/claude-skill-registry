@@ -64,7 +64,7 @@ After building, run these refinement passes in order:
 
 1. **Audit**: Check against `references/anti-patterns.md` + domain-specific impeccable refs below. Score 5 dimensions (a11y, performance, responsive, theming, anti-patterns) 0-4 each. Tag issues P0-P3 per `references/heuristics-scoring.md`.
 2. **Critique**: UX review using `references/heuristics-scoring.md` (Nielsen's 10 heuristics, score 0-4 each, /40). Assess cognitive load via `references/cognitive-load.md` (8-item checklist). Test with 2-3 personas from `references/personas.md`. Run the AI Slop Test: if someone said "AI made this," would they believe it immediately? If yes, fix it.
-3. **Normalize**: Align with project design system if `.design-context.md` exists in project root.
+3. **Normalize**: Align with project design system if `.design-context.md` or `DESIGN.md` exists in project root. Treat their tokens (colors, fonts, spacing) as materials, not a recipe—creative direction from above still leads.
 4. **Harden**: Test edge cases -- long text overflow, RTL, empty states, error states, i18n, keyboard navigation.
 5. **Polish**: Final pass -- alignment, spacing, interaction states, transitions, micro-copy. Every pixel intentional.
 
@@ -78,6 +78,8 @@ Consult `references/` on demand:
 **Mintlify** (dark-first docs): `mintlify-design-tokens.md`, `mintlify-component-patterns.md`, `mintlify-signature-techniques.md`.
 **Anti-patterns**: `anti-patterns.md` (condensed checklist from Impeccable v1.6.0).
 **Critique & Scoring**: `heuristics-scoring.md` (Nielsen's 10, P0-P3 severity), `cognitive-load.md` (8-item checklist, working memory rule), `personas.md` (5 archetypes + project-specific).
+**Design system exemplar**: `linear-design-md.md` (DESIGN.md format—tokens, components, responsive rules from Linear).
 **Advanced techniques**: `sunny-mode-technique.md` (`@property` palette transitions, blend-mode overlays, physics Easter eggs).
 **Impeccable domain refs** (code examples + implementation patterns): `impeccable-typography.md` (font loading, OpenType, scales), `impeccable-color-contrast.md` (OKLCH, dark mode tokens), `impeccable-spatial.md` (container queries, optical alignment), `impeccable-motion.md` (cubic-bezier values, stagger formula, reduced-motion), `impeccable-interaction.md` (Popover API, roving tabindex, dialog), `impeccable-responsive.md` (pointer/hover queries, safe areas, srcset), `impeccable-ux-writing.md` (error templates, voice matrix).
+**Color science** (from meodai/skill.color-expert): `color-science-deep.md` (color spaces decision matrix, HSL limitations, chroma vs saturation, character-first harmony, accessibility statistics, pigment mixing, naming systems), `color-tools-palette.md` (palette generation algorithms, code libraries, analysis/linting, CSS Color 4/5, semantic token architecture, generative art approaches).
 **Component research**: invoke `component-gallery`.

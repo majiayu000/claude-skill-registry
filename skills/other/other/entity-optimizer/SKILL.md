@@ -1,13 +1,15 @@
 ---
 name: entity-optimizer
-description: "Build entity presence in Knowledge Graph, Wikidata, AI systems for brand recognition and citations. \"Google doesn't know my brand\" / \"品牌搜不到\" / \"没有知识面板\". 实体优化/知识图谱/品牌实体 エンティティ 엔티티 entidad SEO"
-version: "5.1.0"
+description: 'Build entity presence in Knowledge Graph, Wikidata, AI systems for brand recognition and citations. 实体优化/知识图谱'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when optimizing entity presence for Knowledge Graph, Wikidata, or AI engine disambiguation. Also for brand entity canonicalization."
+argument-hint: "<entity name or brand>"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "high"
   tags:
     - seo

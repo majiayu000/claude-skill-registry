@@ -9,6 +9,8 @@ description: 'Retrospective workflow evaluation and improvement of skills, agent
   Use when: workflow felt slow, confusing, or needs optimization
 
   DO NOT use when: simple one-off fixes - use fix-pr or do-issue instead.'
+version: 1.7.1
+alwaysApply: false
 category: workflow-ops
 tags:
 - workflow
@@ -24,11 +26,11 @@ tools:
 - Bash
 - TodoWrite
 complexity: medium
+model_hint: standard
 estimated_tokens: 900
 dependencies:
 - sanctum:shared
 ---
-
 # Workflow Improvement
 
 ## When To Use

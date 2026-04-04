@@ -1,8 +1,12 @@
 ---
 name: ecto-patterns
-description: "Provide Ecto patterns for schemas, changesets, queries, migrations, transactions (Multi/transact), associations/preloads, upserts, and full-text search. Use when editing Repo calls, Ecto.Query, schema fields, constraints, cast/put_change, preloading, N+1 fixes, SQL injection prevention, or float-for-money. Skip for Ash.Resource/Ash.Domain modules."
+description: "Ecto patterns — schemas, changesets, queries, migrations, Multi, associations, preloads, upserts. Use when editing Repo calls, Ecto.Query, or schema fields. Skip for Ash."
 effort: medium
 user-invocable: false
+paths:
+  - "**/migrations/*.exs"
+  - "**/*_schema.ex"
+  - "**/*changeset*.ex"
 ---
 
 # Ecto Patterns Reference

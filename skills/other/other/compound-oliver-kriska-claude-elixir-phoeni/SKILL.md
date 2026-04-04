@@ -1,6 +1,6 @@
 ---
 name: phx:compound
-description: Use after fixing any non-trivial bug, resolving a tricky issue, or when the user says "that worked" or "it is fixed". Also suggest proactively after successful /phx:review or /phx:investigate. Captures solved problems as searchable Elixir/Phoenix solution documentation for faster future debugging.
+description: Capture solved problems as searchable solution docs. Use after fixing bugs, when "that worked", or after successful /phx:review or /phx:investigate.
 effort: low
 argument-hint: [description of what was fixed]
 ---
@@ -36,10 +36,8 @@ institutional documentation.
 
 ### Step 2: Search Existing Solutions
 
-```bash
-mkdir -p .claude/solutions
-grep -rl "KEYWORD" .claude/solutions/ 2>/dev/null
-```
+Create `.claude/solutions/` directory if it doesn't exist (run `mkdir -p .claude/solutions`).
+Then search `.claude/solutions/` for relevant keywords using Grep.
 
 If found: **Create new** (different root cause), **Update
 existing** (same root cause, new symptom), or **Skip**.

@@ -18,6 +18,16 @@ For full endpoint reference (all parameters, response schemas, error codes), rea
 
 ---
 
+## IMPORTANT: 3D Printing → Use `meshy-3d-printing` Skill
+
+**If the user's request involves 3D printing** (keywords: print, 3d print, slicer, slice, bambu, orca, prusa, cura, multicolor, 3mf, figurine, miniature, statue, physical model), **use the `meshy-3d-printing` skill instead of this one for the entire workflow.** The printing skill handles generation with correct print-optimized parameters (e.g. `target_formats` with `"3mf"` for multicolor), slicer detection, coordinate conversion, and slicer launch — all in one pipeline.
+
+This skill's `create_task`/`poll_task`/`download` template functions are reused by the printing skill, but the **workflow orchestration** (what to generate, which formats, what to do after) must come from the printing skill when printing is involved.
+
+**Do NOT generate a model with this skill and then hand off to the printing skill** — the printing skill needs to control parameters from the start (e.g. `target_formats`, `should_texture`).
+
+---
+
 ## IMPORTANT: First-Use Session Notice
 
 When this skill is first activated in a session, inform the user:
@@ -192,7 +202,7 @@ MESHY_API_KEY=msy_PASTE_KEY_HERE
 ```
 I'll generate a 3D model of "<prompt>" using the following plan:
 
-  1. Preview (mesh generation) — 20 credits
+  1. Preview (mesh generation) — 5-20 credits (meshy-6/lowpoly: 20, others: 5)
   2. Refine (texturing with PBR) — 10 credits
   3. Download as .glb
 
@@ -219,9 +229,9 @@ Wait for user confirmation before executing.
 
 | User wants to... | API | Endpoint | Credits |
 |---|---|---|---|
-| 3D model from text | Text to 3D | `POST /openapi/v2/text-to-3d` | 20 + 10 |
-| 3D model from one image | Image to 3D | `POST /openapi/v1/image-to-3d` | 20–30 |
-| 3D model from multiple images | Multi-Image to 3D | `POST /openapi/v1/multi-image-to-3d` | 20–30 |
+| 3D model from text | Text to 3D | `POST /openapi/v2/text-to-3d` | 5–20 (preview) + 10 (refine) |
+| 3D model from one image | Image to 3D | `POST /openapi/v1/image-to-3d` | 5–30 |
+| 3D model from multiple images | Multi-Image to 3D | `POST /openapi/v1/multi-image-to-3d` | 5–30 |
 | New textures on existing model | Retexture | `POST /openapi/v1/retexture` | 10 |
 | Change mesh format/topology | Remesh | `POST /openapi/v1/remesh` | 5 |
 | Add skeleton to character | Auto-Rigging | `POST /openapi/v1/rigging` | 5 (includes walking + running) |
@@ -229,6 +239,7 @@ Wait for user confirmation before executing.
 | 2D image from text | Text to Image | `POST /openapi/v1/text-to-image` | 3–9 |
 | Transform a 2D image | Image to Image | `POST /openapi/v1/image-to-image` | 3–9 |
 | Check credit balance | Balance | `GET /openapi/v1/balance` | 0 |
+| Multi-color 3D print | Multi-Color Print | `POST /openapi/v1/print/multi-color` | 10 |
 
 ---
 
@@ -276,7 +287,7 @@ def create_task(endpoint, payload):
     print(f"TASK_CREATED: {task_id}")
     return task_id
 
-def poll_task(endpoint, task_id, timeout=600):
+def poll_task(endpoint, task_id, timeout=300):
     """Poll task with exponential backoff (5s→30s, fixed 15s at 95%+)."""
     elapsed = 0
     delay = 5            # Initial delay: 5s
@@ -423,7 +434,7 @@ print(f"  Project: {project_dir}")
 print(f"  Formats: {', '.join(task['model_urls'].keys())}")
 ```
 
-> **Refine compatibility**: Only previews generated with `meshy-5` or `latest` can be refined. `meshy-6` previews do NOT support refine (API returns 400). If the user wants to refine later, always use `meshy-5` or `latest` for the preview step.
+> **Refine compatibility**: All models (meshy-5, meshy-6, latest) support both preview and refine. The preview and refine `ai_model` should match — mismatched models may return 400 (model mismatch).
 
 ### Image to 3D
 
@@ -464,12 +475,21 @@ download(task["model_urls"]["glb"], "model.glb")
 
 ### Retexture
 
+**IMPORTANT**: Before calling, ask the user to provide a texture style:
+- **Text prompt**: e.g. "rusty metal", "cartoon style" → `text_style_prompt`
+- **Reference image**: URL of style image → `image_style_url`
+One of these is **required**. If both provided, `image_style_url` takes precedence.
+
 ```python
+# REQUIRED: ask user for text_style_prompt OR image_style_url before calling
 task_id = create_task("/openapi/v1/retexture", {
     "input_task_id": "PREVIOUS_TASK_ID",      # or "model_url": "URL"
-    "text_style_prompt": "wooden texture",     # or "image_style_url": "URL"
+    "text_style_prompt": "wooden texture",     # REQUIRED if no image_style_url
+    # "image_style_url": "URL",               # REQUIRED if no text_style_prompt (takes precedence)
     "enable_pbr": True,
     # "remove_lighting": True,     # Remove baked lighting (meshy-6/latest only, default True)
+    # "target_formats": ["glb", "3mf"],  # 3mf must be explicitly requested
+    # "auto_size": True,           # AI auto-estimate real-world height
 })
 task = poll_task("/openapi/v1/retexture", task_id)
 download(task["model_urls"]["glb"], "retextured.glb")
@@ -559,7 +579,7 @@ After task succeeds, report:
 
 1. **Downloaded file paths** and sizes
 2. **Task IDs** (for follow-up operations like refine, rig, retexture)
-3. **Available formats** (list `model_urls` keys)
+3. **Available formats** (list `model_urls` keys — may include glb, fbx, obj, usdz, 3mf)
 4. **Thumbnail URL** if present
 5. **Credits consumed** and remaining balance (run balance check)
 6. **Suggested next steps**:
@@ -567,6 +587,7 @@ After task succeeds, report:
    - Model done → "Want to rig this character for animation?"
    - Rigged → "Want to apply an animation?"
    - Any model → "Want to remesh / export to another format?"
+   - Any textured model → "Want to 3D print this? Multicolor printing is available!" (requires `meshy-3d-printing` skill)
    - Any model → "Want to 3D print this model?" (requires `meshy-3d-printing` skill)
 
 ---
@@ -593,7 +614,9 @@ Task `FAILED` messages:
 - **CORS**: API blocks browser requests. Always server-side.
 - **Asset retention**: Files deleted after **3 days** (non-Enterprise). Download immediately.
 - **PBR maps**: Must set `enable_pbr: true` explicitly.
-- **Format availability**: Check keys in `model_urls` before downloading — not all formats are always present.
+- **Format availability**: Check keys in `model_urls` before downloading — not all formats are always present. 3MF is available from the Multi-Color Print API.
+- **Download format**: ALWAYS ask the user which format they need before downloading. Recommend: GLB (viewing), OBJ (white model printing), 3MF (multicolor printing), FBX (game engines), USDZ (AR). Do NOT download all formats.
+- **3MF format**: 3MF is NOT included in default output of generation endpoints. To get 3MF from generate/remesh/retexture, pass `"3mf"` in `target_formats`. For multicolor 3D printing, the Multi-Color Print API outputs 3MF directly — no need to request it from generate/refine.
 - **Timestamps**: All API timestamps are Unix epoch **milliseconds**.
 - **Large files**: Refined models can be 50–200 MB. Use streaming downloads with timeouts.
 

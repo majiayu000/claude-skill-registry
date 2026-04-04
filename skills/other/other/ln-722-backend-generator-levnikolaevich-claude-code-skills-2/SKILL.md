@@ -10,7 +10,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 7XX Project Bootstrap
-**Parent:** ln-720-structure-migrator
 
 Generates complete .NET backend structure following Clean Architecture principles.
 

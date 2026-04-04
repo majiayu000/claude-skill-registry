@@ -1,13 +1,15 @@
 ---
 name: memory-management
-description: 'Persist SEO/GEO campaign context across Claude sessions. Three-tier memory (HOT/WARM/COLD). Persist keywords, audits, entities across sessions. "Remember this" / "保存进度" / "上次说了什么". 项目记忆/SEO数据保存/跨会话 プロジェクト記憶 프로젝트메모리 memoria SEO'
-version: "5.1.0"
+description: 'Persist SEO/GEO campaign context across Claude sessions with automatic hot-list, active work, and archive tiers. 项目记忆/跨会话'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when reviewing, archiving, or cleaning up campaign memory. Also when the user asks to check saved findings, manage hot cache, or archive old data."
+argument-hint: "[review|archive|cleanup]"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "low"
   tags:
     - seo
@@ -272,6 +274,15 @@ Step 4: Update both CLAUDE.md and memory/monitoring/rank-history/YYYY-MM-DD-rank
 ### 6. Update Triggers, Archive Management & Cross-Skill Integration
 
 > **Reference**: See [references/update-triggers-integration.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/update-triggers-integration.md) for the complete update procedures after ranking checks, competitor analyses, audits, and reports; monthly/quarterly archive routines; and integration points with all 8 connected skills (keyword-research, rank-tracker, competitor-analysis, content-gap-analysis, seo-content-writer, content-quality-auditor, domain-authority-auditor).
+
+### Memory Hygiene Checks
+
+When invoked for review or cleanup:
+
+1. **Line count check**: Count lines in `memory/hot-cache.md`. If >80, list oldest entries for archival.
+2. **Byte check**: If hot-cache exceeds 25KB, warn and recommend trimming long entries.
+3. **Staleness scan**: List memory files older than 30 days that have not been referenced. Recommend archival for files >90 days.
+4. **Frontmatter audit**: Check that all memory files (except hot-cache.md) have `name`, `description`, and `type` in their frontmatter. Report any missing fields.
 
 ### Save Results
 

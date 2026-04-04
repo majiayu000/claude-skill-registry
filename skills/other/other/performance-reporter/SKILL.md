@@ -1,13 +1,15 @@
 ---
 name: performance-reporter
-description: 'SEO/GEO dashboards: rankings, traffic, backlinks, AI visibility for stakeholders and executives. "Monthly SEO report" / "出SEO报告" / "汇报给老板". SEO报告/绩效仪表盘/流量报告 SEOレポート SEO리포트 informe SEO'
-version: "5.1.0"
+description: 'Generate SEO/GEO dashboards: rankings, traffic, backlinks, AI visibility for stakeholders. SEO报告/绩效仪表盘'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when generating SEO performance reports, traffic summaries, ranking reports, or stakeholder-facing dashboards."
+argument-hint: "<domain> [date range]"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "medium"
   tags:
     - seo

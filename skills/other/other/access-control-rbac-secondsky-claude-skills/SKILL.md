@@ -1,6 +1,7 @@
 ---
 name: access-control-rbac
 description: Role-based access control (RBAC) with permissions and policies. Use for admin dashboards, enterprise access, multi-tenant apps, fine-grained authorization, or encountering permission hierarchies, role inheritance, policy conflicts.
+license: MIT
 ---
 
 # Access Control & RBAC

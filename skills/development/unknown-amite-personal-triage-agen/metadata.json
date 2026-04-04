@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "A Minimally Viable Application (MVA) called the \"Personal Task Manager Triage.\" This MVA must be stateful, multi-step, and built using the ReAct agent pattern within a LangGraph framework.",
+  "repo": "amite/personal-triage-agent",
+  "path": ".claude/skills/langchain/langchain/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-amite-personal-triage-agen",
+  "author": "amite",
+  "source_url": "https://github.com/amite/personal-triage-agent/blob/main/.claude/skills/langchain/langchain/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amite/personal-triage-agent/blob/main/.claude/skills/langchain/langchain/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

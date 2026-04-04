@@ -1,6 +1,7 @@
 ---
 name: websocket-implementation
 description: Implements real-time WebSocket communication with connection management, room-based messaging, and horizontal scaling. Use when building chat systems, live notifications, collaborative tools, or real-time dashboards.
+license: MIT
 ---
 
 # WebSocket Implementation

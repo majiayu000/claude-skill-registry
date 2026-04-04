@@ -1,13 +1,15 @@
 ---
 name: alert-manager
-description: 'Automated SEO alerts: ranking drops, traffic changes, technical issues, competitor movements with notifications. "Alert if rankings drop" / "排名掉了提醒我" / "流量异常". SEO预警/排名监控/流量报警/自动提醒 アラート設定 알림설정 alertas SEO'
-version: "5.1.0"
+description: 'Configure SEO alerts for ranking drops, traffic changes, technical issues, competitor movements. SEO预警/排名监控'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when setting up monitoring alerts for rankings, traffic, backlinks, technical issues, or AI visibility changes."
+argument-hint: "<domain> [metric]"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "low"
   tags:
     - seo

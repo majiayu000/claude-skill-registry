@@ -23,6 +23,7 @@ tags:
 dependencies:
 - imbue:scope-guard
 - imbue:review-core
+- tome:research (optional, for --research flag)
 tools:
 - gh (GitHub CLI)
 usage_patterns:
@@ -30,12 +31,15 @@ usage_patterns:
 - prioritization-scoring
 - suggestion-generation
 - github-integration
+- research-enrichment
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 3500
 modules:
 - modules/scoring-framework.md
 - modules/classification-system.md
 - modules/tradeoff-dimensions.md
+- modules/research-enrichment.md
 - modules/configuration.md
 ---
 ## Table of Contents
@@ -116,7 +120,14 @@ Review gaps and suggest new features:
 /feature-review --suggest
 ```
 
-### 4. Upload to GitHub
+### 4. Research-Enriched Scoring
+
+Use tome plugin to adjust scores with external evidence:
+```bash
+/feature-review --research
+```
+
+### 5. Upload to GitHub
 
 Create issues for accepted suggestions:
 ```bash
@@ -194,6 +205,33 @@ Evaluate each feature across quality dimensions:
 | **API Surface** | Is it backward compatible? | 1-5 |
 
 See [tradeoff-dimensions.md](modules/tradeoff-dimensions.md) for criteria.
+
+### Phase 4.5: Research Enrichment (`feature-review:research-enriched`)
+
+**Triggered by:** `--research` flag. Requires tome plugin.
+
+Use tome's multi-source research to adjust scoring factors
+with external evidence. This phase runs between tradeoff
+analysis and gap analysis.
+
+1. **Dispatch research**: For each feature, construct
+   research topics and dispatch tome channels (code-search,
+   discourse, papers, triz) in parallel.
+2. **Synthesize findings**: Merge results across channels
+   using `tome:synthesize`.
+3. **Calculate deltas**: Map findings to scoring factor
+   adjustments using channel-to-factor mapping.
+4. **Apply deltas**: Adjust initial scores by research
+   deltas, clamp to Fibonacci scale, respect max_delta.
+5. **Present evidence**: Show adjustment table with
+   evidence sources and rationale.
+
+See [research-enrichment.md](modules/research-enrichment.md)
+for the full enrichment protocol, delta calculation, and
+graceful degradation behavior.
+
+**Graceful degradation**: If tome is not installed, prints
+a warning and proceeds with initial scores unchanged.
 
 ### Phase 5: Gap Analysis & Suggestions (`feature-review:suggestions-generated`)
 
@@ -285,14 +323,16 @@ These rules apply to all configurations:
 2. `feature-review:classified`
 3. `feature-review:scored`
 4. `feature-review:tradeoffs-analyzed`
-5. `feature-review:suggestions-generated`
-6. `feature-review:issues-created` (if requested)
+5. `feature-review:research-enriched` (if `--research`)
+6. `feature-review:suggestions-generated`
+7. `feature-review:issues-created` (if requested)
 
 ## Integration Points
 
 - **`imbue:scope-guard`**: Provides Worthiness Scores for suggestions.
 - **`sanctum:do-issue`**: Prioritizes issues with high scores.
 - **`superpowers:brainstorming`**: Evaluates new ideas against existing features.
+- **`tome:research`**: Multi-source research for score enrichment (optional, `--research`).
 
 ## Output Format
 
@@ -303,6 +343,25 @@ These rules apply to all configurations:
 |---------|------|------|-------|----------|--------|
 | Auth middleware | Reactive | Dynamic | 2.8 | High | Stable |
 | Skill loader | Reactive | Static | 2.3 | Medium | Needs improvement |
+```
+
+### Research-Enriched Table (with `--research`)
+
+```markdown
+| Feature | Type | Score | Adj. | Priority | Evidence |
+|---------|------|-------|------|----------|----------|
+| Auth    | R/D  | 2.8   | 3.1  | High     | 3 sources |
+| Loader  | R/S  | 2.3   | 2.3  | Medium   | none      |
+
+## Research Evidence
+
+### Code Search (GitHub)
+- 12 implementations, avg 340 stars
+- **Reach**: +1 (broad adoption)
+
+### Discourse (HN/Reddit)
+- 47 mentions, 78% positive
+- **Impact**: +1 (strong demand)
 ```
 
 ### Suggestion Report

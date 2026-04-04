@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Platform-agnostic, production-ready Claude Code configurations with hooks, commands, skills, examples, and more.",
+  "repo": "raintree-technology/claude-starter",
+  "path": ".claude/skills/aptos/shelby/protocol-expert/skill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 35,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-raintree-technology-claude-starter",
+  "author": "raintree-technology",
+  "source_url": "https://github.com/raintree-technology/claude-starter/blob/main/.claude/skills/aptos/shelby/protocol-expert/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/raintree-technology/claude-starter/blob/main/.claude/skills/aptos/shelby/protocol-expert/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

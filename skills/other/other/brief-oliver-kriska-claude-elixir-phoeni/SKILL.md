@@ -1,6 +1,6 @@
 ---
 name: phx:brief
-description: Interactive briefing of an Elixir/Phoenix plan file. Explains reasoning, ecto schema decisions, liveview component choices, and solution shape in progressive sections so developers understand before approving or after completion. Use when team members need to understand a plan without reading the full document.
+description: Interactive briefing of a plan file — explains reasoning, schema decisions, component choices. Use when developers need to understand a plan before approving.
 effort: low
 argument-hint: [path to plan file]
 ---
@@ -42,9 +42,7 @@ Read the plan file and determine mode from phase statuses:
 1. If `$ARGUMENTS` has a path, use it
 2. Otherwise, find latest plan:
 
-   ```bash
-   ls -t .claude/plans/*/plan.md 2>/dev/null | head -1
-   ```
+   Use Glob to find `.claude/plans/*/plan.md` and pick the most recent.
 
 3. If no plan found, tell user and suggest `/phx:plan`
 4. Read the plan file

@@ -28,10 +28,10 @@ After identifying scope, read the actual code in depth to understand:
 
 ## Step 3: Determine Testing Approach
 
-Examine the project type and available skills/MCP tools:
+Always check for project-specific testing skills or MCP tools first. Use the fallbacks below when nothing project-specific is available:
 
-- **Web app** → `/agent-browser` skill
-- **UI/native app** → project-specific UI testing skill or MCP tool if available, otherwise `/peekaboo` skill
+- **Web app** → `/agent-browser` skill if available, otherwise `claude-in-chrome` MCP
+- **UI/native app** → `computer-use` MCP
 - **CLI tool** → direct terminal execution
 - **Library with no entry point** → report that interactive testing is not applicable and stop
 
@@ -93,7 +93,7 @@ Create the `.turbo/` directory if it does not exist. Write the plan to `.turbo/t
 
 ## Approach
 
-<Testing approach: agent-browser / peekaboo / terminal>
+<Testing approach: agent-browser / claude-in-chrome / computer-use / terminal>
 <Dev server command if applicable>
 
 ## Level 1: Basic Functionality

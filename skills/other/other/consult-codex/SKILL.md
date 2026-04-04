@@ -24,13 +24,36 @@ CODEX_TAG=$(head -c 4 /dev/urandom | xxd -p) && mkdir -p .turbo/codex
 codex exec -s read-only -o ".turbo/codex/$CODEX_TAG.txt" "<question with full context>"
 ```
 
-For long context that won't fit inline, write a context file first, then pass it:
+### Prompt Shaping
+
+Structure the question using XML tags for clearer Codex responses:
+
+- `<task>`: The concrete question and relevant context.
+- `<compact_output_contract>`: Desired output shape and brevity requirements.
+- `<structured_output_contract>`: Same purpose but for structured/schema responses.
+- `<grounding_rules>`: When claims must be evidence-based (review, research, root-cause analysis).
+- `<dig_deeper_nudge>`: Push past surface-level findings to check for second-order failures.
+- `<verification_loop>`: When correctness matters — ask Codex to verify before finalizing.
+
+Example prompt for a diagnosis question:
+
+```
+<task>Diagnose why the auth middleware rejects valid tokens after the session refactor.</task>
+<compact_output_contract>Return: (1) most likely root cause, (2) evidence, (3) smallest safe next step.</compact_output_contract>
+<grounding_rules>Ground every claim in the provided context or tool outputs. Label hypotheses explicitly.</grounding_rules>
+```
+
+For correctness-critical questions, add `<verification_loop>` asking Codex to verify its answer before finalizing.
+
+Keep prompts compact. Prefer tighter output contracts over raising reasoning effort. One clear task per Codex turn.
+
+For long context that won't fit inline, write a context file and pipe it via stdin. The prompt stays as the argument, context pipes in as `<stdin>` automatically:
 
 ```bash
 cat > ".turbo/codex/$CODEX_TAG-ctx.txt" << 'EOF'
 <long context here>
 EOF
-codex exec -s read-only -o ".turbo/codex/$CODEX_TAG.txt" "$(cat ".turbo/codex/$CODEX_TAG-ctx.txt")"
+cat ".turbo/codex/$CODEX_TAG-ctx.txt" | codex exec -s read-only -o ".turbo/codex/$CODEX_TAG.txt" "<question>"
 ```
 
 Parse the `session id:` line from the CLI output. This UUID is needed for follow-up turns.

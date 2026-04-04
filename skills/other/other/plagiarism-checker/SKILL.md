@@ -40,8 +40,8 @@ You scan lyrics for phrases that may unintentionally echo existing songs. This i
 
 ### Step 2: Extract Distinctive Phrases
 
-Call `extract_distinctive_phrases(lyrics_text)` MCP tool. This returns:
-- Distinctive 4-7 word n-grams ranked by section priority
+Call `extract_distinctive_phrases(text, max_phrases=15, include_raw_lines=False)` MCP tool. This returns:
+- Distinctive 4-7 word n-grams ranked by section priority (top 15)
 - Pre-formatted search suggestions with quoted phrases + "lyrics"
 - Common cliches already filtered out
 

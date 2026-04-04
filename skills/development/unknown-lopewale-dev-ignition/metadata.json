@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": " full-stack application for provisioning and managing Ignition development environments. It provides a web-based interface for version control, environment management, automation gateway configuration, device management, Vision client testing with QF-Test automation, gateway health monitoring, and real-time terminal access to containers via WebSkt",
+  "repo": "LopeWale/dev_ignition",
+  "path": ".claude/commands/skills/package-skill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 1,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-lopewale-dev-ignition",
+  "author": "LopeWale",
+  "source_url": "https://github.com/LopeWale/dev_ignition/blob/main/.claude/commands/skills/package-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LopeWale/dev_ignition/blob/main/.claude/commands/skills/package-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

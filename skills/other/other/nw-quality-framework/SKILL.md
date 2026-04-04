@@ -30,7 +30,25 @@ Note: Reviewer approval (formerly Gate 12) and Testing Theater detection (former
 - **Implementation**: real functionality (not placeholders) | automated pipeline | happy path coverage | production patterns
 - **Business Value**: meaningful user value | testable AC | measurable success metrics
 - **Real Data**: golden masters present | edge cases tested | no silent errors | API assumptions documented
-- **Test Integrity**: every test falsifiable | behavioral assertions only | no circular verification | no mock-dominated tests | no assertion-free tests (see Testing Theater Self-Check in agent core)
+- **Test Integrity**: every test falsifiable | behavioral assertions only | no circular verification | no mock-dominated tests | no assertion-free tests | no fixture theater (see below)
+
+## Testing Theater Pattern 8: Fixture Theater
+
+**Definition**: Acceptance tests pass because test fixtures create the expected
+end-state directly, rather than exercising production code through the driving port.
+Tests verify the correct outcome from the WRONG source.
+
+**Detection**: After GREEN phase, run `git diff --name-only`. If `files_to_modify`
+from the roadmap step have NO changes but tests flipped from RED to GREEN, this is
+Fixture Theater. The test fixtures are implementing the feature, not production code.
+
+**Litmus test**: Delete the new production code (or revert production files to
+pre-GREEN state). If tests still pass, it's Fixture Theater.
+
+**Prevention**:
+1. Post-GREEN wiring check: every file in `files_to_modify` MUST appear in `git diff`
+2. Acceptance test Given steps set up PRECONDITIONS, never the expected end-state
+3. If `git diff --stat` shows only test files changed after GREEN, BLOCK the COMMIT
 
 ## Build and Test Protocol
 
@@ -104,3 +122,45 @@ Behavior through commands, not data access.
 - Applies to: Domain layer, Application layer (inside the hexagon)
 - Does NOT apply to: Adapters, infrastructure, DTOs, configuration
 - Enforcement phase: GREEN (writing new code) + COMMIT (refactoring)
+
+## Dimension 9: Environmental Realism
+
+### 9a: WS Strategy Audit
+
+- Is the WS strategy declared in wave-decisions.md? (A/B/C/D)
+- Does the WS implementation match the declared strategy?
+- For strategies B/D: is CI configured to run with real adapters?
+
+### 9b: Adapter Coverage Audit (Structured Table)
+
+For EVERY driven port adapter, complete this table:
+
+| Port | InMemory Behavior | Cannot Model | Covered By |
+|------|-------------------|-------------|------------|
+| (port name) | (what InMemory returns) | (real condition it can't model) | (test name that covers the gap) |
+
+If "Covered By" is empty for any row, the test suite has a blind spot. Flag as HIGH.
+
+### 9d: Test Double Input Validation Audit
+
+For EVERY InMemory test double, verify it validates inputs like the real adapter:
+
+| Test Double | Validates None? | Validates empty strings? | Validates ranges? | Matches real preconditions? |
+|-------------|----------------|------------------------|-------------------|---------------------------|
+| (double name) | YES/NO | YES/NO | YES/NO | YES/NO |
+
+If any cell is NO, the test double is a liar — it accepts inputs the real adapter rejects. Flag as HIGH.
+
+A permissive test double creates invisible wiring bugs: tests pass, production crashes.
+
+### 9c: External Boundary Audit
+
+For EVERY external system (subprocess, API, DB):
+- Is there a contract or smoke test?
+- Is it in CI or local-only?
+- What is the cost per run?
+
+Consequence rules:
+- No contract or smoke test for an external system → flag as HIGH
+- Contract test is local-only for a CI-triggered adapter → flag as HIGH
+- Cost per run undocumented → flag as MEDIUM

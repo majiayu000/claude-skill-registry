@@ -1,0 +1,17 @@
+{
+  "name": "video-podcast-maker",
+  "repo": "Agents365-ai/video-podcast-maker",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Agents365-ai/video-podcast-maker",
+  "dir_name": "video-podcast-maker",
+  "downloaded_at": "2026-04-04T03:37:31.654267Z",
+  "author": "Agents365-ai",
+  "source_url": "https://github.com/Agents365-ai/video-podcast-maker/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Agents365-ai/video-podcast-maker/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

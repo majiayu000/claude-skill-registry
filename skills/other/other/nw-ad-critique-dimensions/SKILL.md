@@ -1,6 +1,6 @@
 ---
 name: nw-ad-critique-dimensions
-description: Review dimensions for acceptance test quality - happy path bias, GWT compliance, business language purity, coverage completeness, walking skeleton user-centricity, priority validation, observable behavior assertions, and traceability coverage
+description: Review dimensions for acceptance test quality - happy path bias, GWT compliance, business language purity, coverage completeness, walking skeleton user-centricity, priority validation, observable behavior assertions, traceability coverage, and walking skeleton boundary proof
 user-invocable: false
 disable-model-invocation: true
 ---
@@ -164,12 +164,23 @@ issues_identified:
       severity: "high"
       recommendation: "Add walking skeleton with Given clause: 'Given a {env} environment with {preconditions}'"
 
+  walking_skeleton_boundary:
+    - issue: "WS strategy not declared in wave-decisions.md"
+      severity: "blocker"
+      recommendation: "Auto-detect strategy and confirm with user"
+    - issue: "WS uses @in-memory under Strategy {C/B/D} for local resource adapter"
+      severity: "blocker"
+      recommendation: "Replace InMemory with real adapter (tmp_path, real subprocess)"
+    - issue: "Driven adapter '{name}' has no real I/O integration test"
+      severity: "blocker"
+      recommendation: "Add integration test with real I/O for this adapter"
+
 approval_status: "approved|rejected_pending_revisions|conditionally_approved"
 ```
 
 ## Reviewer Scope Boundaries
 
-The acceptance-designer-reviewer (Sentinel) owns Dimensions 1-8 during DISTILL.
+The acceptance-designer-reviewer (Sentinel) owns Dimensions 1-9 during DISTILL.
 
 Responsibilities that belong to OTHER reviewers (do NOT evaluate these):
 - **KPI measurability**: PO-reviewer validates during DELIVER post-merge gate
@@ -177,3 +188,34 @@ Responsibilities that belong to OTHER reviewers (do NOT evaluate these):
 - **Code quality**: Software-crafter-reviewer validates during DELIVER Phase 4
 
 If a finding touches KPI measurement or infrastructure readiness, tag it `@escalate:{reviewer}` in the review output and move on. Do NOT attempt to evaluate it.
+
+## Dimension 9: Walking Skeleton Boundary Proof
+
+For walking skeleton scenarios, validate that the WS actually proves adapter wiring with real I/O.
+
+### 9a: WS Strategy Declaration
+
+Is the WS strategy declared in wave-decisions.md?
+- NOT declared: BLOCKER (ask the user to confirm auto-detected strategy)
+
+### 9b: WS Strategy-Implementation Match
+
+Does the WS implementation match the declared strategy?
+- Strategy C declared but WS uses @in-memory for all adapters: BLOCKER
+- Strategy B declared but no @requires_external marker for costly deps: HIGH
+
+### 9c: Adapter Integration Coverage
+
+Does every driven adapter have a real I/O integration test?
+- Missing adapter test: BLOCKER regardless of WS strategy
+
+### 9d: Walking Skeleton Fixture Tier
+
+Walking skeleton fixtures — what adapter tier do they use?
+- Litmus test: "If I deleted the real adapter, would this WS still pass?"
+- If YES for a local resource adapter: WS is testing InMemory, not wiring. REJECT.
+
+### 9e: Strategy Drift Detection
+
+Grep for @in-memory on walking skeleton scenarios under strategies B/C/D.
+- If found: HIGH — WS claims real adapters but uses InMemory

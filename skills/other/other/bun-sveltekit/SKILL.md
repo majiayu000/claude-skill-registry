@@ -1,7 +1,9 @@
 ---
-name: Bun SvelteKit
+name: bun-sveltekit
 description: Use when building or running SvelteKit apps on Bun, including SSR, adapters, and Bun-specific APIs
-keywords: [SvelteKit, Svelte 5, Bun, SSR, adapters, Vite, database, file operations]
+metadata:
+  keywords: "SvelteKit, Svelte 5, Bun, SSR, adapters, Vite, database, file operations"
+license: MIT
 ---
 
 # Bun SvelteKit

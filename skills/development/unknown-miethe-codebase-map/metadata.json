@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Visualize your codebase and all code flows with various views.",
+  "repo": "miethe/codebase-map",
+  "path": ".codex/skills/d3js/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-miethe-codebase-map",
+  "author": "miethe",
+  "source_url": "https://github.com/miethe/codebase-map/blob/main/.codex/skills/d3js/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/miethe/codebase-map/blob/main/.codex/skills/d3js/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

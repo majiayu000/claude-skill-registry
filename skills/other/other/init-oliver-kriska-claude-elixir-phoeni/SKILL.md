@@ -1,6 +1,6 @@
 ---
 name: phx:init
-description: Initialize Elixir/Phoenix plugin in a project. Installs auto-activation rules into CLAUDE.md for complexity detection, interview mode, Iron Laws enforcement, and reference auto-loading. Use when setting up the plugin in a new project or updating an existing installation.
+description: Initialize plugin in a project — install Iron Laws, auto-activation rules, and reference auto-loading into CLAUDE.md. Use when setting up or updating the plugin.
 effort: low
 argument-hint: [--update]
 ---
@@ -26,39 +26,20 @@ Install the Elixir/Phoenix plugin's behavioral instructions into the project's C
 
 ### Step 1: Check Existing CLAUDE.md
 
-```bash
-# Check if CLAUDE.md exists
-ls -la CLAUDE.md 2>/dev/null
-
-# Check for existing plugin installation
-grep -q "ELIXIR-PHOENIX-PLUGIN:START" CLAUDE.md 2>/dev/null
-```
+Use Glob to check if `CLAUDE.md` exists. Then use Grep to check for existing `ELIXIR-PHOENIX-PLUGIN:START` marker in `CLAUDE.md`.
 
 ### Step 2: Detect Project Stack
 
 Scan the project to customize the injected instructions:
 
-```bash
-# Phoenix version
-grep -oP 'phoenix.*"~> \K[0-9.]+' mix.exs 2>/dev/null || echo "unknown"
+Read `mix.exs` and use Grep to extract:
 
-# Ecto version
-grep -oP 'ecto.*"~> \K[0-9.]+' mix.exs 2>/dev/null || echo "unknown"
-
-# Oban detection
-grep -q '"oban"' mix.exs && echo "oban"
-grep -q '"oban_pro"' mix.exs && echo "oban_pro"
-
-# Framework detection
-grep -q '"ash"' mix.exs && echo "ash"
-grep -q '"surface"' mix.exs && echo "surface"
-
-# Tidewave detection
-grep -q '"tidewave"' mix.exs && echo "tidewave"
-
-# Project size
-find lib -name "*.ex" 2>/dev/null | wc -l
-```
+- Phoenix version: search for `phoenix.*"~>` in `mix.exs`
+- Ecto version: search for `ecto.*"~>` in `mix.exs`
+- Oban: search for `"oban"` and `"oban_pro"` in `mix.exs`
+- Frameworks: search for `"ash"`, `"surface"` in `mix.exs`
+- Tidewave: search for `"tidewave"` in `mix.exs`
+- Project size: use Glob to count `lib/**/*.ex` files
 
 ### Step 3: Handle Installation Modes
 

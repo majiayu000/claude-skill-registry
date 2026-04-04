@@ -1,13 +1,15 @@
 ---
 name: content-refresher
-description: 'Refresh outdated posts with current stats, new sections, freshness signals to restore rankings. "Traffic is dropping" / "排名下降了" / "文章过时了". 内容更新/文章刷新/排名恢复/流量下降 コンテンツ更新 콘텐츠갱신 actualizar contenido'
-version: "5.1.0"
+description: 'Refresh outdated posts with current stats, new sections, freshness signals to restore rankings. 内容更新/排名恢复'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when updating outdated content, refreshing old articles, improving declining pages, or adding new information to existing content."
+argument-hint: "<URL of outdated content>"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "medium"
   tags:
     - seo

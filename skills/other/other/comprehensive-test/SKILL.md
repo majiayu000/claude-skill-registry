@@ -37,13 +37,15 @@ Work through each level sequentially. Complete all tests in a level before movin
 3. **Level 3: Adversarial Testing** — Execute all tests. Failures here are expected and valuable.
 4. **Level 4: Cross-Cutting Scenarios** — Execute all tests.
 
+If a project-specific testing skill or MCP tool was identified in Step 2, use that. The paths below are fallbacks.
+
 ### Web App Path
 
-Start the dev server if not already running. Wait for it to be ready. Run `/agent-browser` skill for full browser automation documentation.
+Start the dev server if not already running. Wait for it to be ready. If `/agent-browser` is available, run the `/agent-browser` skill. Otherwise, use `claude-in-chrome` MCP to interact with the app.
 
 ### UI/Native App Path
 
-Launch the app. Use available platform-specific MCP tools if present, otherwise run the project-specific UI testing skill if available, or fall back to `/peekaboo` skill.
+Launch the app. Use `computer-use` MCP to interact with the UI.
 
 ### CLI Path
 

@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Claude Agent, Tool, Workflow creation tool",
+  "repo": "thinmintdev/claude-cooker",
+  "path": "generated-skills/codex-cli-bridge/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-thinmintdev-claude-cooker",
+  "author": "thinmintdev",
+  "source_url": "https://github.com/thinmintdev/claude-cooker/blob/master/generated-skills/codex-cli-bridge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thinmintdev/claude-cooker/blob/master/generated-skills/codex-cli-bridge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

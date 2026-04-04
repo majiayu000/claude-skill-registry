@@ -3,6 +3,7 @@ name: ln-613-code-comments-auditor
 description: "Checks inline code documentation quality: WHY-not-WHAT, density, forbidden content, docstrings quality, actuality, legacy cleanup. Use when auditing comments and docstrings."
 allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline
 license: MIT
+model: claude-sonnet-4-6
 ---
 
 > **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.

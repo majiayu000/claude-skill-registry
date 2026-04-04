@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Common skills and configurations",
+  "repo": "LixvYang/common-skills",
+  "path": ".claude/skills/seo-review/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-lixvyang-common-skills",
+  "author": "LixvYang",
+  "source_url": "https://github.com/LixvYang/common-skills/blob/main/.claude/skills/seo-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LixvYang/common-skills/blob/main/.claude/skills/seo-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

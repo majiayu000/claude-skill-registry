@@ -1,0 +1,17 @@
+{
+  "name": "selfaudit",
+  "repo": "sterlingcrispin/claude_slash_commands",
+  "path": "selfaudit/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sterlingcrispin/claude_slash_commands",
+  "dir_name": "selfaudit",
+  "downloaded_at": "2026-04-04T04:06:18.895722Z",
+  "author": "sterlingcrispin",
+  "source_url": "https://github.com/sterlingcrispin/claude_slash_commands/blob/main/selfaudit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sterlingcrispin/claude_slash_commands/blob/main/selfaudit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

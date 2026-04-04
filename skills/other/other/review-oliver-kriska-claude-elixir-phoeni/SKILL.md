@@ -1,9 +1,8 @@
 ---
 name: phx:review
-description: Review code with parallel specialist agents covering tests, security, Ecto, LiveView, and Oban patterns. Use after any implementation to catch bugs, security vulnerabilities, and anti-patterns before committing. Even quick changes benefit from at least a targeted review track.
+description: Review code with parallel agents — tests, security, Ecto, LiveView, Oban. Use after implementation to catch bugs and anti-patterns before committing.
 effort: high
 argument-hint: [test|security|oban|deploy|iron-laws|all]
-disable-model-invocation: true
 ---
 
 # Review Elixir/Phoenix Code
@@ -31,19 +30,13 @@ explain issues — do NOT create tasks or fix anything.
 
 ### Step 1: Identify Changed Files and Prepare Directories
 
-```bash
-# CRITICAL: Create output dirs BEFORE spawning agents — agents
-# cannot create directories and will fail repeatedly on writes
-SLUG="$(basename "$(ls -td .claude/plans/*/ 2>/dev/null | head -1)" 2>/dev/null || echo "review")"
-mkdir -p ".claude/plans/${SLUG}/reviews" ".claude/plans/${SLUG}/summaries"
+**CRITICAL**: Create output dirs BEFORE spawning agents — agents
+cannot create directories and will fail repeatedly on writes.
 
-# If no plan context, use fallback directory
-mkdir -p .claude/reviews
+Determine SLUG from the most recent plan directory (use Glob on `.claude/plans/*/`), default to `"review"`.
+Run `mkdir -p ".claude/plans/${SLUG}/reviews" ".claude/plans/${SLUG}/summaries"` and `mkdir -p .claude/reviews`.
 
-git diff --name-only HEAD~5   # Recent changes (also save as DIFF_BASE)
-git diff --name-only main     # Or changes from main
-# Save diff base for pre-existing detection in Step 3b
-```
+Then run `git diff --name-only HEAD~5` and `git diff --name-only main` to identify changed files. Save the diff base for pre-existing detection in Step 3b.
 
 ### Step 1b: Load Plan Context (Scratchpad)
 

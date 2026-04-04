@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "a centralised hub for development practices, coding standards, and workflow documentation. houses our team's agreed-upon methods, patterns, and guidelines for consistent development practices.",
+  "repo": "plannededge/codebook",
+  "path": ".claude/skills/git-workflow.skill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 1,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-plannededge-codebook",
+  "author": "plannededge",
+  "source_url": "https://github.com/plannededge/codebook/blob/main/.claude/skills/git-workflow.skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/plannededge/codebook/blob/main/.claude/skills/git-workflow.skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

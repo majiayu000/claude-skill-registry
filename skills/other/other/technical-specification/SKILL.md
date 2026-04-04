@@ -1,6 +1,7 @@
 ---
 name: technical-specification
 description: Creates detailed technical specifications for software projects covering requirements, architecture, APIs, and testing strategies. Use when planning features, documenting system design, or creating architecture decision records.
+license: MIT
 ---
 
 # Technical Specification

@@ -1,8 +1,8 @@
 {
   "category": "testing",
   "code": "tst",
-  "count": 6699,
-  "updated_at": "2026-03-31T02:00:17.760552Z",
+  "count": 6702,
+  "updated_at": "2026-04-04T04:23:19.057022Z",
   "skills": [
     {
       "name": "skill-creator",
@@ -27733,6 +27733,22 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "test-driven-development",
+      "description": "TDD discipline with RED-GREEN-REFACTOR cycle. Ensures tests genuinely verify behavior",
+      "repo": "obra/superpowers",
+      "path": "",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "tdd",
+        "testing",
+        "red-green-refactor"
+      ],
+      "stars": 0,
+      "install": "obra/superpowers",
+      "source": "Community Skills"
+    },
+    {
       "name": "intent",
       "description": "Interactive conversation to clarify user intent step-by-step before creating specifications or solutions. Use when requirements are unclear or user has a new idea to explore.",
       "repo": "sofer/.agents",
@@ -32937,6 +32953,24 @@
       "stars": 0,
       "install": "PolicyEngine/policyengine-claude",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "ios-simulator-skill",
+      "description": "iOS Simulator automation for testing with semantic navigation and Xcode integration",
+      "repo": "conorluddy/ios-simulator-skill",
+      "path": "",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "ios",
+        "simulator",
+        "xcode",
+        "testing",
+        "mobile"
+      ],
+      "stars": 0,
+      "install": "conorluddy/ios-simulator-skill",
+      "source": "Community Skills"
     },
     {
       "name": "uk-accountant",
@@ -48540,6 +48574,23 @@
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/plugins/saas-packs/sentry-pack/skills/sentry-reference-architecture",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "stars": 0,
+      "install": "lackeyjb/playwright-skill",
+      "source": "Community Skills"
     },
     {
       "name": "moai-lang-c",

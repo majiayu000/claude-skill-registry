@@ -7,11 +7,25 @@ disable-model-invocation: true
 
 Analyze local git changes (or a PR/MR) against the project's coding guidelines, using up to 7 parallel review agents for comprehensive coverage. High-signal findings only: bugs, logic errors, security issues, guideline violations. Excludes style concerns, subjective suggestions, and linter-catchable issues.
 
-**Progress visibility** — When starting each step, show a brief one-line progress indicator (e.g., "**[Step 2/8]** Loading project context..."). Keep it short — the indicator orients the user, not narrate internals.
+**Progress visibility** — When starting each step, show a brief one-line progress indicator (e.g., "**[Step 2/9]** Activating deep mode..."). Keep it short — the indicator orients the user, not narrate internals.
 
-## Step 1: Determine Review Scope
+## Step 1: Parse Arguments and Verify Prerequisites
 
-Parse arguments and detect what to review.
+### Parse invocation arguments
+
+Extract from the user's arguments:
+1. `deep` flag (present/absent)
+2. `harness` keyword after `deep` (present/absent)
+3. Everything else → scope/focus instructions (natural language, including PR numbers, paths, refs)
+
+Examples:
+- `/optimus:code-review` → local changes, normal mode
+- `/optimus:code-review src/auth` → scope to path, normal mode
+- `/optimus:code-review --pr 42` or `/optimus:code-review #42` → PR mode, normal
+- `/optimus:code-review deep` → local changes, deep mode (8 iterations)
+- `/optimus:code-review deep "focus on src/auth"` → scoped, deep mode
+- `/optimus:code-review deep harness` → harness mode (present command and stop)
+- `/optimus:code-review deep harness "focus on src/auth"` → harness mode, scoped
 
 ### Multi-repo workspace detection
 
@@ -19,7 +33,54 @@ Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/multi-repo-detection.md` for wo
 - Run the git commands below inside each child repo (the workspace root has no `.git/`, so git commands must target individual repos)
 - For PR/MR mode, the user must specify which repo — PRs/MRs belong to individual repos
 - If changed files cannot be mapped to any child repo (e.g., files at the workspace root), ask the user which repo's context to apply
-- Prerequisite loading in Step 2 will resolve per-repo docs independently
+- Prerequisite loading in Step 4 will resolve per-repo docs independently
+
+### Documentation prerequisites
+
+Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/prerequisite-check.md` and apply the prerequisite check (CLAUDE.md + coding-guidelines.md existence, fallback logic).
+
+## Step 2: Deep Mode Activation
+
+### Harness mode detection
+
+If the system prompt contains `HARNESS_MODE_ACTIVE`, read `$CLAUDE_PLUGIN_ROOT/references/harness-mode.md` and follow its single-iteration execution protocol. The reference covers progress file reading, state initialization, and step overrides (including the Step 9 apply/output protocol). Then proceed directly to Step 5 — skip user confirmation.
+
+If `HARNESS_MODE_ACTIVE` is NOT in the system prompt, continue with the standard interactive flow below.
+
+### Skill-triggered harness invocation
+
+If the `harness` keyword was detected in Step 1, read the **Skill-Triggered Invocation** section of `$CLAUDE_PLUGIN_ROOT/references/harness-mode.md` and follow its steps. Pass:
+- `skill_name` = `code-review`
+- `scope` = scope text from Step 1 argument parsing
+- `max_iterations` = not specified (use harness default)
+
+The reference protocol presents the command and stops. Do not proceed to Step 3 or any remaining steps.
+
+### Interactive deep mode
+
+If the `deep` flag was detected in Step 1 (without `harness`), activate deep mode. Deep mode loops review-fix cycles (Steps 5–9) until zero new findings remain or **8 iterations** are reached, then presents a single consolidated report with all fixes already applied as local changes.
+
+Before proceeding, check whether a test command is available (from `.claude/CLAUDE.md`). If no test command exists, deep mode's auto-apply loop has no safety net — fall back to normal mode and warn: "Deep mode requires a test command for safe auto-apply. Falling back to normal mode — re-run `/optimus:init` to set up test infrastructure first." Then continue with the standard single-pass flow.
+
+If a test command is available, warn the user:
+
+> **Deep mode** runs up to 8 iterative review-fix passes. Each iteration is a full multi-agent review cycle — credit and time consumption multiplies with iteration count. Fixes are applied automatically at each iteration without per-change approval. Low test coverage increases the chance of undetected breakage; consider running `/optimus:unit-test` first to strengthen the safety net. Each iteration also accumulates context — on large codebases, output quality may degrade in later iterations.
+>
+> Test command: `[test command from CLAUDE.md]`
+
+Then use `AskUserQuestion` — header "Deep mode", question "Proceed with deep mode?":
+- **Start deep mode** — "Run iterative review-fix until clean (max 8 iterations)"
+- **Normal mode** — "Single pass with manual approval instead"
+
+Tell the user: *Tip: For large codebases or extended sessions, re-run with `/optimus:code-review deep harness` to launch the external harness with fresh context per iteration.*
+
+If the user did not invoke with `deep`, skip this step.
+
+If the user selects **Normal mode**, continue with the standard single-pass flow. Record the user's choice as a `deep-mode` flag for subsequent steps. If deep mode is confirmed, initialize `iteration-count` to 1, `total-fixed` to 0, `total-reverted` to 0, and `accumulated-findings` to an empty list. Each entry in `accumulated-findings` tracks: **file** (with line), **category** (Bug, Security, Guideline Violation, Code Quality, Test Coverage Gap, Contract Quality), **guideline** (the specific project rule, or "General: bug/security/contract quality"), **summary** (one-sentence description of the issue), **fix description** (brief description of the fix applied or attempted), **iteration** (which iteration discovered it), and **status** (updated through apply/test phases).
+
+## Step 3: Determine Review Scope
+
+Detect and gather the changes to review. Use the scope/focus instructions parsed in Step 1.
 
 ### Local changes (default — no arguments)
 
@@ -60,14 +121,14 @@ When the user says "review PR #42", passes `--pr`, `#123`, or a PR URL:
 **GitHub projects:**
 - Verify `gh` is available by running `gh --version`. If not available, inform the user that PR review requires the GitHub CLI (`gh`) and offer to review the branch diff instead
 - Use `gh pr view <N> --json state,isDraft,title,body,baseRefName,headRefName` to get PR metadata
-- Store the `title` and `body` fields as `pr-description` for use in Steps 4 and 5 (author intent context)
+- Store the `title` and `body` fields as `pr-description` for use in Steps 5 and 6 (author intent context)
 - Use `gh pr diff <N>` to get the actual diff
 - If the PR is closed or merged → warn and stop
 
 **GitLab projects:**
 - Verify `glab` is available by running `glab --version`. If not available, inform the user: "This project uses GitLab. PR/MR review requires the GitLab CLI (`glab`). You can use branch diff mode instead: `/optimus:code-review changes since origin/main`." Offer to review the branch diff as a fallback.
 - Use `glab mr view <N> --output json` to get MR metadata
-- Store the `title` and `description` fields as `pr-description` for use in Steps 4 and 5 (author intent context)
+- Store the `title` and `description` fields as `pr-description` for use in Steps 5 and 6 (author intent context)
 - Use `glab mr diff <N>` to get the actual diff
 - If the MR is closed or merged → warn and stop
 
@@ -97,18 +158,14 @@ Present a brief summary before proceeding:
 
 If more than 50 files or 3000 lines are changed, warn the user and suggest narrowing the scope (e.g., specific path or directory).
 
-## Step 2: Verify Prerequisites and Load Project Context
+## Step 4: Load Project Context
 
 ### Multi-repo workspace prerequisite loading
 
 If a multi-repo workspace was detected in Step 1, resolve prerequisites per-repo:
-- Determine which repo(s) the changed files belong to (from the diff file paths gathered in Step 1)
+- Determine which repo(s) the changed files belong to (from the diff file paths gathered in Step 3)
 - Load each repo's `.claude/CLAUDE.md` and `.claude/docs/` independently (not the workspace root)
 - If changes span multiple repos, apply per-repo context when reviewing that repo's files
-
-### Documentation prerequisites
-
-Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/prerequisite-check.md` and apply the prerequisite check (CLAUDE.md + coding-guidelines.md existence, fallback logic).
 
 ### Load constraint docs
 
@@ -127,41 +184,21 @@ Before proceeding to the review, present a brief summary:
 - Docs missing (with fallback status)
 - Project type (single project / monorepo / multi-repo workspace)
 
-Proceed immediately to Step 3 — do not wait for user confirmation.
+Proceed immediately to Step 5 — do not wait for user confirmation.
 
-## Step 3: Deep Mode Activation
-
-If the user invoked with `deep` (e.g., `/optimus:code-review deep`, `/optimus:code-review deep "review PR #42"`, or `/optimus:code-review deep "focus on src/auth"`), activate deep mode. Deep mode loops review-fix cycles (Steps 4–8) until zero new findings remain or **5 iterations** are reached, then presents a single consolidated report with all fixes already applied as local changes.
-
-Before proceeding, check whether a test command is available (from `.claude/CLAUDE.md`). If no test command exists, deep mode's auto-apply loop has no safety net — fall back to normal mode and warn: "Deep mode requires a test command for safe auto-apply. Falling back to normal mode — re-run `/optimus:init` to set up test infrastructure first." Then continue with the standard single-pass flow.
-
-If a test command is available, warn the user:
-
-> **Deep mode** runs up to 5 iterative review-fix passes. Each iteration is a full multi-agent review cycle — credit and time consumption multiplies with iteration count. Fixes are applied automatically at each iteration without per-change approval. Low test coverage increases the chance of undetected breakage; consider running `/optimus:unit-test` first to strengthen the safety net. Each iteration also accumulates context — on large codebases, output quality may degrade in later iterations.
->
-> Test command: `[test command from CLAUDE.md]`
-
-Then use `AskUserQuestion` — header "Deep mode", question "Proceed with deep mode?":
-- **Start deep mode** — "Run iterative review-fix until clean (max 5 iterations)"
-- **Normal mode** — "Single pass with manual approval instead"
-
-If the user did not invoke with `deep`, skip this step.
-
-If the user selects **Normal mode**, continue with the standard single-pass flow. Record the user's choice as a `deep-mode` flag for subsequent steps. If deep mode is confirmed, initialize `iteration-count` to 1, `total-fixed` to 0, `total-reverted` to 0, and `accumulated-findings` to an empty list. Each entry in `accumulated-findings` tracks: **file** (with line), **category** (Bug, Security, Guideline Violation, Code Quality, Test Coverage Gap, Contract Quality), **guideline** (the specific project rule, or "General: bug/security/contract quality"), **summary** (one-sentence description of the issue), **fix description** (brief description of the fix applied or attempted), **iteration** (which iteration discovered it), and **status** (updated through apply/test phases).
-
-## Step 4: Parallel Multi-Agent Review (up to 7 agents)
+## Step 5: Parallel Multi-Agent Review (up to 7 agents)
 
 Up to 7 review agents, launched in parallel for maximum coverage.
 
 Launch up to 7 `general-purpose` Agent tool calls simultaneously. Agents 1–5 always run; Agent 6 runs when test infrastructure is detected; Agent 7 runs when contract-related files are changed (see agent overview below).
 
-Each agent receives the list of changed file paths from Step 1.
+Each agent receives the list of changed file paths from Step 3.
 
 Read the agent prompt files from `$CLAUDE_PLUGIN_ROOT/skills/code-review/agents/` for individual agent prompts. Read `$CLAUDE_PLUGIN_ROOT/skills/code-review/agents/shared-constraints.md` for the shared quality bar, exclusion rules, and false positive guidance applying to all agents.
 
 ### PR/MR context injection (PR/MR mode only)
 
-If a `pr-description` was captured in Step 1 and its body is non-empty, prepend the PR/MR context block to every agent prompt before the file list. Read `$CLAUDE_PLUGIN_ROOT/skills/code-review/agents/context-blocks.md` for the template, truncation rule, and guardrail language.
+If a `pr-description` was captured in Step 3 and its body is non-empty, prepend the PR/MR context block to every agent prompt before the file list. Read `$CLAUDE_PLUGIN_ROOT/skills/code-review/agents/context-blocks.md` for the template, truncation rule, and guardrail language.
 
 ### Iteration context injection (deep mode, iterations 2+)
 
@@ -179,11 +216,11 @@ If deep mode is active and `iteration-count` > 1, prepend the iteration context 
 | 6 — Test Guardian | Test coverage gaps, structural barriers to testability | `test-guardian.md` |
 | 7 — Contracts Reviewer | Backward compatibility, type safety, contract versioning, encapsulation | `contracts-reviewer.md` |
 
-Agents 1–5 always run. Agent 6 (Test Guardian) runs when test infrastructure is detected (`.claude/docs/testing.md` or subproject `docs/testing.md` exists). Agent 7 (Contracts Reviewer) runs when changed files include contract-related paths (see activation rules below). Each agent: max 8 findings, structured list format. Guideline agents (3–4) are constructed dynamically based on Step 2's doc loading results (single project vs monorepo paths).
+Agents 1–5 always run. Agent 6 (Test Guardian) runs when test infrastructure is detected (`.claude/docs/testing.md` or subproject `docs/testing.md` exists). Agent 7 (Contracts Reviewer) runs when changed files include contract-related paths (see activation rules below). Each agent: max 8 findings, structured list format. Guideline agents (3–4) are constructed dynamically based on Step 4's doc loading results (single project vs monorepo paths).
 
 ### Contracts Reviewer activation (Agent 7)
 
-Agent 7 activates when **any** changed file from Step 1 matches at least one of these patterns:
+Agent 7 activates when **any** changed file from Step 3 matches at least one of these patterns:
 
 **Directory patterns** — file path contains any of: `api/`, `routes/`, `controllers/`, `endpoints/`, `handlers/`, `graphql/`, `proto/`, `grpc/`
 
@@ -191,13 +228,13 @@ Agent 7 activates when **any** changed file from Step 1 matches at least one of 
 
 If no changed file matches, skip Agent 7 entirely (zero cost).
 
-Wait for all launched agents to complete before proceeding to Step 5.
+Wait for all launched agents to complete before proceeding to Step 6.
 
-## Step 5: Validate Findings
+## Step 6: Validate Findings
 
 Independently verify each finding to filter false positives. Apply the verification protocol from `$CLAUDE_PLUGIN_ROOT/skills/init/references/verification-protocol.md` — treat agent-reported findings as claims that require independent evidence, not as ground truth.
 
-For each finding from Step 4:
+For each finding from Step 5:
 1. **Context check** — read ±30 lines around the flagged location to verify the issue exists in context
 2. **Intent check** — look for comments, test assertions, or established patterns that explain the code's behavior (what looks like a bug may be intentional)
 3. **Pre-existing check** — verify the issue was introduced by the changes, not pre-existing in unchanged code
@@ -218,7 +255,7 @@ For uninformative commit messages (fewer than 15 characters, or generic like "fi
 
 ### PR/MR description as intent signal
 
-If a `pr-description` was captured in Step 1 (PR/MR mode), use it as an additional intent signal during validation:
+If a `pr-description` was captured in Step 3 (PR/MR mode), use it as an additional intent signal during validation:
 
 - If the PR/MR description explicitly explains **why** a flagged change was made (e.g., "moved validation to middleware" explains removed validation) **and** git history corroborates it → apply one confidence reduction (same as change-intent above)
 - If the PR/MR description claims intent but git history contradicts it or shows no supporting evidence → trust git history over the description (code over claims)
@@ -235,11 +272,11 @@ Assign confidence:
 - **Medium** — plausible issue, some evidence → keep with note
 - **Low** — uncertain, likely false positive → drop
 
-Only findings with High or Medium confidence proceed to Step 6.
+Only findings with High or Medium confidence proceed to Step 7.
 
-## Step 6: Consolidate and Present Findings
+## Step 7: Consolidate and Present Findings
 
-Merge validated findings from Steps 4–5. Deduplicate: if two agents flagged the same file and line range for the same category, keep the more detailed version. For guideline findings flagged by both Agents 3 and 4, merge into one finding and note "confirmed by independent review".
+Merge validated findings from Steps 5–6. Deduplicate: if two agents flagged the same file and line range for the same category, keep the more detailed version. For guideline findings flagged by both Agents 3 and 4, merge into one finding and note "confirmed by independent review".
 
 ### Contradiction resolution
 
@@ -261,9 +298,9 @@ Maximum **15 findings** across all sources, prioritized by severity then confide
 
 ### Deep mode accumulation
 
-**Deep mode:** Instead of presenting the output format below, append this iteration's validated findings to `accumulated-findings`. For each appended finding, record the current `iteration-count` as the finding's iteration number, and preserve the agent's guideline citation and issue description as the finding's guideline and summary fields. Deduplicate against previous iterations: if a finding matches an existing entry by file + line range + category, skip it if the existing entry is marked "(fixed)". If the existing entry is marked "(persistent — fix failed)", annotate the new entry as "(persistent — fix failed)". If the existing entry is marked "(reverted — test failure)", keep the new entry as "(reverted — attempt 2)" so Step 8 retries the fix once more; only promote to "(persistent — fix failed)" if it is reverted again. Then proceed directly to Step 8.
+**Deep mode:** Instead of presenting the output format below, append this iteration's validated findings to `accumulated-findings`. For each appended finding, record the current `iteration-count` as the finding's iteration number, and preserve the agent's guideline citation and issue description as the finding's guideline and summary fields. Deduplicate against previous iterations: if a finding matches an existing entry by file + line range + category, skip it if the existing entry is marked "(fixed)". If the existing entry is marked "(persistent — fix failed)", annotate the new entry as "(persistent — fix failed)". If the existing entry is marked "(reverted — test failure)", keep the new entry as "(reverted — attempt 2)" so Step 9 retries the fix once more; only promote to "(persistent — fix failed)" if it is reverted again. Then proceed directly to Step 9.
 
-**Normal mode:** Present findings using the output format below, then proceed to Step 7.
+**Normal mode:** Present findings using the output format below, then proceed to Step 8.
 
 ### Output format
 
@@ -308,13 +345,13 @@ For PR mode, include full-SHA code links:
 - **GitHub:** `https://github.com/owner/repo/blob/[full-sha]/path#L[start]-L[end]`
 - **GitLab:** Extract the instance URL from `git remote get-url origin` (e.g., `https://gitlab.company.com`), then use: `https://[gitlab-host]/owner/repo/-/blob/[full-sha]/path#L[start]-L[end]`
 
-## Step 7: Offer Actions (Normal Mode)
+## Step 8: Offer Actions (Normal Mode)
 
-**Deep mode:** Skip this step — proceed directly to Step 8.
+**Deep mode:** Skip this step — proceed directly to Step 9.
 
 If the verdict is **CHANGES LOOK GOOD** (no findings), skip this step — do not present any action prompt. Go directly to the recommendation in the "Important" section below.
 
-If the verdict is **ISSUES FOUND**, use `AskUserQuestion` to present actions. The options depend on the review mode determined in Step 1:
+If the verdict is **ISSUES FOUND**, use `AskUserQuestion` to present actions. The options depend on the review mode determined in Step 3:
 
 ### Local changes / branch diff mode
 
@@ -334,13 +371,13 @@ Write the review summary to a secure temp file: `TMPFILE=$(mktemp "${TMPDIR:-/tm
 For GitHub PRs: `gh pr comment <N> --body-file "$TMPFILE"`
 For GitLab MRs: `glab api -X POST "projects/:id/merge_requests/<N>/notes" -F body=@"$TMPFILE"` — this avoids shell metacharacter issues that `glab mr note --message "$(cat ...)"` would have with code snippets in the summary
 
-## Step 8: Apply and Iterate (Deep Mode)
+## Step 9: Apply and Iterate (Deep Mode)
 
 **Normal mode:** Skip this step.
 
 ### Convergence check
 
-If zero findings were added to `accumulated-findings` in this iteration (Step 6 found nothing new), deep mode has converged. Report: "Deep mode complete — no new findings on iteration [N]." Skip to the **Consolidated report** below.
+If zero findings were added to `accumulated-findings` in this iteration (Step 7 found nothing new), deep mode has converged. Report: "Deep mode complete — no new findings on iteration [N]." Skip to the **Consolidated report** below.
 
 ### Apply fixes
 
@@ -359,7 +396,7 @@ After applying fixes and running tests, check termination conditions in order:
 
 1. **All fixes this iteration were reverted** due to test failures → stop to prevent a loop of failed attempts. Report: "Deep mode stopped — all fixes in iteration [N] caused test failures."
 2. **No fixes were applied** (all findings lacked actionable code edits) → stop. Report: "Deep mode stopped — remaining findings require manual review."
-3. **`iteration-count` equals 5** → cap reached. Report: "Deep mode reached the iteration cap (5). Remaining findings may exist — continue in a fresh conversation: re-run `/optimus:code-review deep`, or narrow scope with `/optimus:code-review deep \"focus on <area>\"`."
+3. **`iteration-count` equals 8** → cap reached. Report: "Deep mode reached the iteration cap (8). Remaining findings may exist — continue in a fresh conversation: re-run `/optimus:code-review deep`, or narrow scope with `/optimus:code-review deep \"focus on <area>\"`."
 4. **Otherwise** → continue to the next pass (iteration report and loop-back below).
 
 **For all four conditions above**, present the iteration report immediately after the termination/continuation message. This report is informational and non-blocking — no user prompt follows:
@@ -380,7 +417,7 @@ Column definitions:
 - **Guideline / Category** — The specific project guideline violated (or "General: bug/security/contract quality" for non-guideline findings), plus the category (Bug, Security, Guideline Violation, Code Quality, Test Coverage Gap, Contract Quality)
 - **Status** — `fixed`, `reverted — test failure`, `reverted — attempt 2`, or `persistent — fix failed`
 
-For condition 4 (continue), after presenting the iteration report also show the progress summary: "Iteration [N] of up to 5 — [total-fixed] findings fixed so far, [total-reverted] reverted. Starting next pass..." If the **next** iteration will be 3 or higher, append to the progress summary: "Note: context is accumulating — if output quality degrades, consider finishing remaining findings in a fresh conversation." Then increment `iteration-count` and **return to Step 4** for the next analysis pass. When returning to Step 4, re-gather the current diff (the codebase has changed due to applied fixes) and focus agents on files that had findings in any previous iteration plus any newly modified files.
+For condition 4 (continue), after presenting the iteration report also show the progress summary: "Iteration [N] of up to 8 — [total-fixed] findings fixed so far, [total-reverted] reverted. Starting next pass..." If the **next** iteration will be 3 or higher, append to the progress summary: "Note: context is accumulating — if output quality degrades, consider finishing remaining findings in a fresh conversation." Then increment `iteration-count` and **return to Step 5** for the next analysis pass. When returning to Step 5, re-gather the current diff (the codebase has changed due to applied fixes) and focus agents on files that had findings in any previous iteration plus any newly modified files.
 
 ### Consolidated report
 
@@ -412,7 +449,7 @@ The summary statistics provide a quick overview; the detailed table provides ful
 
 **Part 2 — Detailed findings:**
 
-After the cumulative table, present ALL `accumulated-findings` using the same detailed output format from Step 6 (with Summary block, Change Summary, and individual Findings with code snippets). Add these fields to the Summary block:
+After the cumulative table, present ALL `accumulated-findings` using the same detailed output format from Step 7 (with Summary block, Change Summary, and individual Findings with code snippets). Add these fields to the Summary block:
 
 ```
 - Total iterations: [N]
@@ -425,7 +462,7 @@ Mark each finding's status: "(fixed)", "(reverted — test failure)", "(reverted
 
 ## Important
 
-- Never modify files, commit, push, or post comments without explicit user approval (deep mode has explicit approval via the confirmation step in Step 3 — all changes remain as local modifications for the user to review with `git diff` before committing)
+- Never modify files, commit, push, or post comments without explicit user approval (deep mode has explicit approval via the confirmation step in Step 2 — all changes remain as local modifications for the user to review with `git diff` before committing)
 - This skill is read-only by default — it only analyzes and reports
 - When changes are too broad for effective review, recommend narrowing scope
 
@@ -437,4 +474,4 @@ After the review is complete, recommend the next step based on the outcome:
 Tell the user:
 
 - **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.
-- **Tip (normal mode only):** Single-pass review can miss issues due to LLM attention limits. Run `/optimus:code-review deep` to iterate automatically — it fixes, tests, and repeats until clean (max 5 passes). Requires a test command in `.claude/CLAUDE.md`.
+- **Tip (normal mode only):** Single-pass review can miss issues due to LLM attention limits. Run `/optimus:code-review deep` to iterate automatically — it fixes, tests, and repeats until clean (max 8 passes). Requires a test command in `.claude/CLAUDE.md`.

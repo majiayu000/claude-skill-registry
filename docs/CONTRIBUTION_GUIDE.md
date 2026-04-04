@@ -9,7 +9,7 @@ Registry 有两种实体：
 | 类型 | 说明 | 收录方式 |
 |------|------|----------|
 | **Skill** | 单个 SKILL.md 文件 | 自动爬取 |
-| **Collection** | 技能包（多个 skills + commands + hooks） | 手动审核 |
+| **Plugin** | Claude Code 插件包（多个 skills + commands + hooks） | 手动审核 |
 
 ## Skill 收录流程
 
@@ -40,19 +40,19 @@ Registry 通过 GitHub Code Search 和预设仓库列表自动发现 SKILL.md �
 1. 将仓库 URL 加入 `REPOS_TO_CLONE`
 2. 下一次爬取周期自动收录
 
-## Collection 收录流程
+## Plugin 收录流程
 
-Collection 是打包的技能套件，包含多个 skills、commands、hooks 等。
+Plugin 是 Claude Code 的打包扩展，包含多个 skills、commands、hooks 等。
 
-### 判断标准：何时用 Collection 而非多个 Skill
+### 判断标准：何时用 Plugin 而非多个 Skill
 
 | 信号 | → 收录为 |
 |------|----------|
 | 仓库中有 1 个独立 SKILL.md | Skill |
 | 仓库中有多个**无关联**的 SKILL.md | 多个独立 Skill |
-| 仓库中有多个**内聚**的 SKILL.md，共享安装命令 | Collection |
-| 提供 `npx` / 一键安装，捆绑 skills + commands + hooks | Collection |
-| 同一个 skill 在仓库中存在多个副本（template/plugin/...） | Collection（避免重复） |
+| 仓库中有多个**内聚**的 SKILL.md，共享安装命令 | Plugin |
+| 提供 `npx` / 一键安装，捆绑 skills + commands + hooks | Plugin |
+| 同一个 skill 在仓库中存在多个副本（template/plugin/...） | Plugin（避免重复） |
 
 ### 提交要求
 
@@ -67,20 +67,20 @@ Collection 是打包的技能套件，包含多个 skills、commands、hooks 等
 
 1. **验证仓库**：clone 并确认 SKILL.md 文件存在且质量合格
 2. **安全扫描**：通过 `scripts/security_scanner.py` 检查
-3. **分类决策**：根据上方判断标准决定收录为 Skill 还是 Collection
-4. **写入源文件**：手动添加到 `sources/collections.json`
+3. **分类决策**：根据上方判断标准决定收录为 Skill 还是 Plugin
+4. **写入源文件**：手动添加到 `sources/plugins.json`
 5. **构建验证**：运行 `rebuild_registry.py` 和 `build_search_index.py` 确认输出正确
 6. **关闭 Issue**：回复提交者收录结果
 
 ### 源文件格式
 
-Collections 维护在 `sources/collections.json`：
+Plugins 维护在 `sources/plugins.json`：
 
 ```json
 {
-  "collections": [
+  "plugins": [
     {
-      "name": "collection-name",
+      "name": "plugin-name",
       "description": "简短描述",
       "repo": "owner/repo",
       "category": "product",
@@ -98,13 +98,13 @@ Collections 维护在 `sources/collections.json`：
 }
 ```
 
-Schema 定义：`schema/collection.schema.json`
+Schema 定义：`schema/plugin.schema.json`
 
 ## 去重策略
 
 - Skill 级别：`repo:path` 作为唯一键去重
-- Collection 级别：`name` 唯一，不与 skill 条目合并
-- Collection 内的子 skill **不会**被拆解为独立 skill 条目（避免膨胀）
+- Plugin 级别：`name` 唯一，不与 skill 条目合并
+- Plugin 内的子 skill **不会**被拆解为独立 skill 条目（避免膨胀）
 
 ## 分类列表
 

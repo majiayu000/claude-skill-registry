@@ -1,6 +1,6 @@
 ---
 name: phx:techdebt
-description: Analyze Elixir/Phoenix project for technical debt, duplicate code, and refactoring opportunities. Use when the user mentions code quality concerns, cleanup, refactor, credo issues, or asks about what to improve. Also use before major feature work to identify areas that need attention first.
+description: Analyze Elixir/Phoenix technical debt — duplicates, refactoring opportunities, credo issues. Use when asked about code quality, cleanup, or what to improve.
 effort: medium
 ---
 
@@ -19,9 +19,7 @@ Find and eliminate duplicate code patterns, anti-patterns, and refactoring oppor
 
 ### 1. Run Credo for Automated Detection
 
-```bash
-mix credo --strict
-```
+Run `mix credo --strict`.
 
 Focus on:
 
@@ -31,30 +29,17 @@ Focus on:
 
 ### 2. Find Duplicate Ecto Query Patterns
 
-```bash
-# Repeated Repo calls
-grep -r "Repo.get!\|Repo.get\|Repo.one" lib/ --include="*.ex"
-
-# Duplicate query patterns
-grep -r "from.*in.*where" lib/ --include="*.ex"
-```
+Use Grep to search for repeated Repo calls (`Repo.get!`, `Repo.get`, `Repo.one`) in `lib/**/*.ex`.
+Use Grep to find duplicate query patterns (`from.*in.*where`) in `lib/**/*.ex`.
 
 ### 3. Find Duplicate Validation Logic
 
-```bash
-# Changeset patterns
-grep -r "def changeset" lib/ --include="*.ex" | wc -l
-
-# Repeated validations
-grep -r "validate_required\|validate_format" lib/ --include="*.ex"
-```
+Use Grep with `output_mode: "count"` to count `def changeset` occurrences in `lib/**/*.ex`.
+Use Grep to find repeated validations (`validate_required`, `validate_format`) in `lib/**/*.ex`.
 
 ### 4. Find Copy-Pasted Controller Actions
 
-```bash
-# Similar action patterns
-grep -r "def create\|def update\|def delete" lib/*_web/ --include="*.ex"
-```
+Use Grep to find similar action patterns (`def create`, `def update`, `def delete`) in `lib/*_web/**/*.ex`.
 
 ## Common Duplication Patterns
 

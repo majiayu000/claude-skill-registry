@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "This is a backend service skeleton or boilerplate to speed up development process. Used Echo framework and AI coding agent ready including full suit of agents, skills and workflow.",
+  "repo": "PohLee/go-echo-ai-boilerplate",
+  "path": ".agent/skills/wordpress-penetration-testing/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-pohlee-go-echo-ai-boilerpla",
+  "author": "PohLee",
+  "source_url": "https://github.com/PohLee/go-echo-ai-boilerplate/blob/main/.agent/skills/wordpress-penetration-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PohLee/go-echo-ai-boilerplate/blob/main/.agent/skills/wordpress-penetration-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

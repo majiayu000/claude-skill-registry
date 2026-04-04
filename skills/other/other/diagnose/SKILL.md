@@ -13,7 +13,7 @@ cozempic current --diagnose
 The output includes:
 - **Weight**: total session size in bytes and message count
 - **Tokens**: exact token count (from usage data) or heuristic estimate
-- **Context bar**: visual bar showing % of the 200K context window used
+- **Context bar**: visual bar showing % of the detected context window (200K or 1M)
 - **Vital signs**: progress ticks, file history snapshots, system reminders, thinking content, signatures, tool results
 - **Message type breakdown**: bytes per message type
 - **Top 10 largest messages**: biggest bloat contributors

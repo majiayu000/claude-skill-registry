@@ -9,6 +9,9 @@ license: MIT
 
 # Scope Decomposer (Top Orchestrator)
 
+**Type:** L1 Top Orchestrator
+**Category:** 2XX Planning
+
 Top-level orchestrator for complete initiative decomposition from scope to User Stories through Epic and Story coordinators.
 
 ## Purpose
@@ -22,6 +25,48 @@ Coordinates the complete decomposition pipeline for new initiatives:
 - **Phase 3:** Story Decomposition Loop (delegates to ln-220-story-coordinator per Epic, sequential)
 - **Phase 4:** RICE Prioritization Loop (optional, delegates to ln-230-story-prioritizer per Epic, sequential)
 - **Phase 5:** Summary (total counts + next steps)
+
+## Runtime Contract
+
+**MANDATORY READ:** Load `shared/references/coordinator_runtime_contract.md`, `shared/references/scope_decomposition_runtime_contract.md`, `shared/references/scope_decomposition_summary_contract.md`, `shared/references/epic_plan_summary_contract.md`, `shared/references/coordinator_summary_contract.md`
+
+Runtime family: `scope-decomposition-runtime`
+
+Identifier:
+- scope identifier
+
+Phases:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_DISCOVERY`
+3. `PHASE_2_EPIC_DECOMPOSITION`
+4. `PHASE_3_STORY_LOOP`
+5. `PHASE_4_PRIORITIZATION_LOOP`
+6. `PHASE_5_FINALIZE`
+7. `PHASE_6_SELF_CHECK`
+
+Coordinator summary contract:
+- consume `epic-plan` from `ln-210`
+- consume `story-plan` from `ln-220`
+- keep prioritization loop progress as machine-readable checkpoints
+
+## Worker Invocation (MANDATORY)
+
+```text
+Skill(skill: "ln-210-epic-coordinator", args: "{scopeDoc}")
+Skill(skill: "ln-220-story-coordinator", args: "{epicId}")
+Skill(skill: "ln-230-story-prioritizer", args: "{epicId}")
+```
+
+## TodoWrite format (mandatory)
+
+```text
+- Phase 1: Discover top-level scope context (pending)
+- Phase 2: Run Epic decomposition (pending)
+- Phase 3: Run sequential Story loop (pending)
+- Phase 4: Run optional prioritization loop (pending)
+- Phase 5: Finalize scope summary (pending)
+- Phase 6: Self-check (pending)
+```
 
 ### When to Use This Skill
 

@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Universal PIV (Prime-Implement-Validate) methodology skeleton for Claude Code projects",
+  "repo": "plipowczan/claude-piv-skeleton",
+  "path": ".claude/skills/test-driven-development/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-plipowczan-claude-piv-skeleton",
+  "author": "plipowczan",
+  "source_url": "https://github.com/plipowczan/claude-piv-skeleton/blob/main/.claude/skills/test-driven-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/plipowczan/claude-piv-skeleton/blob/main/.claude/skills/test-driven-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

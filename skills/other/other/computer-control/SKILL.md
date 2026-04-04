@@ -6,6 +6,7 @@ description: 'Guide Claude through computer use API integration - screenshot cap
   keyboard control, agent loop, GUI automation, display toolkit, phantom.'
 version: 1.0.0
 alwaysApply: false
+model_hint: standard
 ---
 # Computer Control Skill
 

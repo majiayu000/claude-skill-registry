@@ -11,6 +11,7 @@ tags:
 - directness
 tools: []
 complexity: low
+model_hint: fast
 estimated_tokens: 500
 ---
 ## Table of Contents

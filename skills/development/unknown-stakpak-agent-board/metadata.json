@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": null,
+  "repo": "stakpak/agent-board",
+  "path": "paks/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 3,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-stakpak-agent-board",
+  "author": "stakpak",
+  "source_url": "https://github.com/stakpak/agent-board/blob/main/paks/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/stakpak/agent-board/blob/main/paks/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

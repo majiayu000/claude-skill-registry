@@ -29,6 +29,7 @@ usage_patterns:
 - high-traffic-workloads
 - linear-scalability
 complexity: high
+model_hint: deep
 estimated_tokens: 800
 ---
 # The Space-Based Architecture Paradigm

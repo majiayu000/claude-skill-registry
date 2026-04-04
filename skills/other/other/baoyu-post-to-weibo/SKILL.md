@@ -141,17 +141,25 @@ If the check fails (warnings in output), alert the user with the specific issues
 
 ---
 
+## Post Type Selection
+
+Unless the user explicitly specifies the post type:
+- **Markdown file** (`.md`) → **Headline Article** (头条文章)
+- **Plain text** / text with images → **Regular Post**
+
 ## Troubleshooting
 
 ### Chrome debug port not ready
 
-If a script fails with `Chrome debug port not ready` or `Unable to connect`, kill existing Chrome CDP instances first, then retry:
+If a script fails with `Chrome debug port not ready` or `Unable to connect`, kill only the CDP Chrome instances (those with `--remote-debugging-port` AND the baoyu-skills profile), then retry:
 
 ```bash
-pkill -f "Chrome.*remote-debugging-port" 2>/dev/null; pkill -f "Chromium.*remote-debugging-port" 2>/dev/null; sleep 2
+pkill -f "remote-debugging-port.*baoyu-skills/chrome-profile" 2>/dev/null; sleep 2
 ```
 
-**Important**: This should be done automatically -- when encountering this error, kill Chrome CDP instances and retry the command without asking the user.
+**CRITICAL**: Never kill all Chrome processes (`pkill -f "Google Chrome"`). Only kill Chrome instances launched by CDP with the baoyu-skills profile directory. The user may have regular Chrome windows open.
+
+**Important**: This should be done automatically -- when encountering this error, kill the CDP Chrome instances and retry the command without asking the user.
 
 ## Notes
 

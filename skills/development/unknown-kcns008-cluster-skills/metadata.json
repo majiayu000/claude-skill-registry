@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": null,
+  "repo": "kcns008/cluster-skills",
+  "path": ".claude/skills/osgrep-skill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 1,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-kcns008-cluster-skills",
+  "author": "kcns008",
+  "source_url": "https://github.com/kcns008/cluster-skills/blob/main/.claude/skills/osgrep-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kcns008/cluster-skills/blob/main/.claude/skills/osgrep-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

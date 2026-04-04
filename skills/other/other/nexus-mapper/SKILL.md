@@ -51,6 +51,11 @@ repo_path: 目标仓库的本地绝对路径（必填）
 - `--add-query templ struct "(component_declaration ...)"` 添加结构查询
 - `--language-config <JSON_FILE>` 复杂配置时使用 JSON 文件
 
+**扫描过滤**：AST 提取与 `raw/file_tree.txt` 生成共享同一套过滤规则：
+- `--exclude-dirs django_static,.go_root` 按目录名或仓库相对路径忽略杂物目录
+- `--use-gitignore` 启用 `<repo_path>/.gitignore` 规则（默认开启），忽略其中声明的文件和目录
+- `--no-gitignore` 不应用 `.gitignore` 规则；此时仍会保留内置排除项和 `--exclude-dirs`
+
 ---
 
 ## 输出格式
@@ -248,6 +253,18 @@ SKILL_DIR="/path/to/nexus-mapper"
 
 # PROFILE 阶段 — 基础用法
 python $SKILL_DIR/scripts/extract_ast.py <repo_path> [--max-nodes 500] \
+  --file-tree-out <repo_path>/.nexus-map/raw/file_tree.txt \
+  > <repo_path>/.nexus-map/raw/ast_nodes.json
+
+# 忽略三方静态资源或杂物目录
+python $SKILL_DIR/scripts/extract_ast.py <repo_path> [--max-nodes 500] \
+  --exclude-dirs django_static,.go_root,third_party/assets \
+  --file-tree-out <repo_path>/.nexus-map/raw/file_tree.txt \
+  > <repo_path>/.nexus-map/raw/ast_nodes.json
+
+# 若希望忽略内置噪音目录，但不要读取 .gitignore
+python $SKILL_DIR/scripts/extract_ast.py <repo_path> [--max-nodes 500] \
+  --no-gitignore \
   --file-tree-out <repo_path>/.nexus-map/raw/file_tree.txt \
   > <repo_path>/.nexus-map/raw/ast_nodes.json
 

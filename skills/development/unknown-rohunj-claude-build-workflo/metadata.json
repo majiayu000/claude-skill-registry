@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Automated workflow for building apps with Claude Code. Describe what you want, answer questions, let it build autonomously.",
+  "repo": "rohunj/claude-build-workflow",
+  "path": "skills/agent-browser/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 211,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-rohunj-claude-build-workflo",
+  "author": "rohunj",
+  "source_url": "https://github.com/rohunj/claude-build-workflow/blob/main/skills/agent-browser/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rohunj/claude-build-workflow/blob/main/skills/agent-browser/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

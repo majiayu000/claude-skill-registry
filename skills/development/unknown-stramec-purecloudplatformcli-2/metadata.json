@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Tweaks to the official pure cloud SDK that is now defunct",
+  "repo": "stramec/purecloudplatformclientv2-rogue",
+  "path": "docs/UserRoutingSkill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-stramec-purecloudplatformcli-2",
+  "author": "stramec",
+  "source_url": "https://github.com/stramec/purecloudplatformclientv2-rogue/blob/main/docs/UserRoutingSkill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/stramec/purecloudplatformclientv2-rogue/blob/main/docs/UserRoutingSkill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

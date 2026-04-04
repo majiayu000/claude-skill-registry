@@ -9,6 +9,18 @@ Read a specification file and decompose it into a series of implementation promp
 
 General skill assignment happens later by `/pick-next-prompt` when each prompt is planned for implementation. However, if the spec implies domain-specific skills, mention those specific skills in the prompt text as hints.
 
+## Task Tracking
+
+At the start, use `TaskCreate` to create a task for each step:
+
+1. Read the spec
+2. Decompose into prompts
+3. Write .turbo/prompts.md
+4. Run `/review-prompt-plan` skill
+5. Run `/evaluate-findings` skill
+6. Run `/apply-findings` skill
+7. Present summary
+
 ## Step 1: Read the Spec
 
 Read the spec file. Default location: `.turbo/spec.md`. Accept a different path if provided by the user.
@@ -98,7 +110,6 @@ After writing the prompt plan and before presenting it to the user:
 1. Run the `/review-prompt-plan` skill with the prompt plan text
 2. Run the `/evaluate-findings` skill on the combined review findings
 3. Run the `/apply-findings` skill on the evaluated findings to incorporate accepted changes into the prompt plan
-4. For medium-confidence findings that require user judgment, use `AskUserQuestion` to present the trade-offs and let the user decide
 
 ## Step 5: Present Summary
 

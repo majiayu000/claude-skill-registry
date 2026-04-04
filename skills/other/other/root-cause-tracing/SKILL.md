@@ -1,7 +1,9 @@
 ---
 name: root-cause-tracing
 description: Systematically trace bugs backward through call stack to find original trigger. Use when errors occur deep in execution and you need to trace back to find the original trigger.
-version: 1.1.0
+metadata:
+  version: "1.1.0"
+license: MIT
 ---
 
 # Root Cause Tracing

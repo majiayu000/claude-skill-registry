@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "https://watson-personal-assistant.github.io/developer",
+  "repo": "Watson-Personal-Assistant/developer",
+  "path": "_content/skill/build-skill.md",
+  "github_branch": "master",
+  "category": "development",
+  "tags": [],
+  "stars": 3,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-watson-personal-assi-developer",
+  "author": "Watson-Personal-Assistant",
+  "source_url": "https://github.com/Watson-Personal-Assistant/developer/blob/master/_content/skill/build-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Watson-Personal-Assistant/developer/blob/master/_content/skill/build-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

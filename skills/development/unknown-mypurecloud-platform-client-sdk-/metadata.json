@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "A Ruby library to interface with the PureCloud Platform API",
+  "repo": "MyPureCloud/platform-client-sdk-ruby",
+  "path": "build/docs/ScimUserRoutingSkill.md",
+  "github_branch": "master",
+  "category": "development",
+  "tags": [],
+  "stars": 1,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-mypurecloud-platform-client-sdk-",
+  "author": "MyPureCloud",
+  "source_url": "https://github.com/MyPureCloud/platform-client-sdk-ruby/blob/master/build/docs/ScimUserRoutingSkill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MyPureCloud/platform-client-sdk-ruby/blob/master/build/docs/ScimUserRoutingSkill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

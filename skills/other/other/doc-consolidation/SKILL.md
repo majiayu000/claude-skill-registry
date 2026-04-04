@@ -24,6 +24,7 @@ modules:
 - modules/content-analysis.md
 - modules/destination-routing.md
 - modules/merge-execution.md
+model_hint: standard
 ---
 ## Table of Contents
 

@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": null,
+  "repo": "adrimaximus/n8n",
+  "path": ".claude/skills/create-pr/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-adrimaximus-n8n",
+  "author": "adrimaximus",
+  "source_url": "https://github.com/adrimaximus/n8n/blob/master/.claude/skills/create-pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adrimaximus/n8n/blob/master/.claude/skills/create-pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -29,6 +29,11 @@ description: "Precise, instant code structure queries for active development —
 └── 没有 → 运行 extract_ast.py 生成 → 再查询
 ```
 
+生成 AST 时，支持与 `nexus-mapper` 一致的扫描过滤：
+- `--exclude-dirs django_static,.go_root` 按目录名或仓库相对路径忽略杂物目录
+- `--use-gitignore` 启用 `<repo_path>/.gitignore` 规则（默认开启），忽略其中声明的文件和目录
+- `--no-gitignore` 不应用 `.gitignore` 规则；此时仍会保留内置排除项和 `--exclude-dirs`
+
 ```bash
 # 默认路径（和 nexus-mapper 的 .nexus-map/ 兼容，可互通）
 AST_JSON="$repo_path/.nexus-map/raw/ast_nodes.json"
@@ -38,11 +43,22 @@ GIT_JSON="$repo_path/.nexus-map/raw/git_stats.json"    # 可选
 mkdir -p "$repo_path/.nexus-map/raw"
 python $SKILL_DIR/scripts/extract_ast.py $repo_path > $AST_JSON
 
+# 若仓库包含大批静态资源、生成物或杂物目录，可显式追加排除项
+python $SKILL_DIR/scripts/extract_ast.py $repo_path \
+  --exclude-dirs django_static,.go_root,third_party/assets \
+  > $AST_JSON
+
+# 若不希望读取 .gitignore，可显式关闭
+python $SKILL_DIR/scripts/extract_ast.py $repo_path \
+  --no-gitignore \
+  > $AST_JSON
+
 # 若需要 git 风险数据（可选，仅在存在 .git 时）
 python $SKILL_DIR/scripts/git_detective.py $repo_path --days 90 > $GIT_JSON
 ```
 
 > `$SKILL_DIR` 为本 Skill 的安装路径（`.agent/skills/nexus-query` 或独立 repo 路径）。
+ > `extract_ast.py` 默认排除 `.git/`、`.nexus-map/`、`node_modules/`、`__pycache__/`、`.venv/`、`dist/`、`build/` 等噪音目录及文件；默认还会读取 `<repo_path>/.gitignore`，忽略其中声明的文件和目录。`--no-gitignore` 仅关闭 `.gitignore` 规则，不会关闭内置排除项，也不会关闭 `--exclude-dirs`。
 
 **依赖安装（首次使用）**：
 ```bash

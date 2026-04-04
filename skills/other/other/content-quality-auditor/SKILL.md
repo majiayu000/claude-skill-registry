@@ -1,14 +1,16 @@
 ---
 name: content-quality-auditor
-description: 'Publish-readiness gate: 80-item CORE-EEAT audit with weighted scoring, veto checks, and fix plan. "Ready to publish?" / "grade my article" / "文章能发吗" / "内容打几分". 内容質量/EEAT評分/発布チェック コンテンツ品質 콘텐츠품질 auditoría EEAT'
-version: "5.1.0"
+description: 'Publish-readiness gate: 80-item CORE-EEAT audit with weighted scoring, veto checks, and fix plan. 内容质量/EEAT评分'
+version: "6.0.0"
 license: Apache-2.0
 allowed-tools: WebFetch
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when auditing content quality before publishing. Runs CORE-EEAT 80-item scoring with veto checks. Also when the user asks for E-E-A-T analysis or publish readiness."
+argument-hint: "<URL or paste content> [keyword]"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "high"
   tags:
     - seo
@@ -157,6 +159,23 @@ Ask the user to provide:
 3. Optional: competitor content for benchmarking
 
 Proceed with the full 80-item audit using provided data. Note in the output which items could not be fully evaluated due to missing access (e.g., backlink data, schema markup, site-level signals).
+
+## Decision Gates
+
+When stopping to ask, always: (1) state the specific value and threshold, (2) offer numbered options with outcomes.
+
+**Stop and ask the user when:**
+- Content is under minimum word count for its type (blog/guide: 300 words; product/landing page: 150 words; FAQ: fewer than 3 entries with 50+ words each) — state the actual count and offer: (1) expand to minimum, (2) continue audit with Insufficient Data flags, (3) cancel
+- Content type cannot be auto-detected — state what you detected and ask to confirm before proceeding
+- Content is primarily media (video/image) with minimal text — ask whether to audit transcript, alt text, or skip
+- More than 50% of a dimension's items are N/A — name the dimension and ask: (1) provide supplementary data, (2) mark entire dimension as Insufficient Data
+- Any veto item triggers — flag it immediately with the item ID and ask: (1) stop for immediate fix, (2) continue full audit and flag in report
+
+**Continue silently (never stop for):**
+- Individual Partial scores within a dimension
+- Missing SEO tool data (mark items as N/A and continue)
+- Low overall score (the report is the deliverable, not a judgment call)
+- User not specifying content type (auto-detect and state your assumption)
 
 ## Instructions
 

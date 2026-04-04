@@ -18,10 +18,10 @@ Resolve scope using the first match:
 
 ## Step 2: Determine Testing Approach
 
-Examine the project type and available skills/MCP tools to choose the right approach.
+Always check for project-specific testing skills or MCP tools first. Use the fallbacks below when nothing project-specific is available:
 
-- **Web app** → `/agent-browser` skill
-- **UI/native app** → project-specific UI testing skill or MCP tool if available, otherwise `/peekaboo` skill
+- **Web app** → `/agent-browser` skill if available, otherwise `claude-in-chrome` MCP
+- **UI/native app** → `computer-use` MCP
 - **CLI tool** → direct terminal execution
 - **Library with no entry point** → report that smoke testing is not applicable and stop
 
@@ -41,15 +41,17 @@ Smoke Test Plan:
 2. [Test description] — verifies [what]
 3. [Test description] — verifies [what]
 
-Approach: [agent-browser / peekaboo / terminal]
+Approach: [agent-browser / claude-in-chrome / computer-use / terminal]
 Dev server command: [command]
 ```
 
 ## Step 4: Execute
 
+If a project-specific testing skill or MCP tool was identified in Step 2, use that. The paths below are fallbacks.
+
 ### Web App Path
 
-Start the dev server if not already running. Wait for it to be ready. Run `/agent-browser` skill for full browser automation documentation.
+Start the dev server if not already running. Wait for it to be ready. If `/agent-browser` is available, run the `/agent-browser` skill. Otherwise, use `claude-in-chrome` MCP to interact with the app.
 
 Core verification loop per test:
 
@@ -63,7 +65,7 @@ Close the browser session and stop the dev server when done.
 
 ### UI/Native App Path
 
-Launch the app. Use available platform-specific MCP tools if present, otherwise run the project-specific UI testing skill if available, or fall back to `/peekaboo` skill.
+Launch the app. Use `computer-use` MCP to interact with the UI.
 
 Core verification loop per test:
 

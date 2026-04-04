@@ -1,6 +1,6 @@
 ---
 name: phx:pr-review
-description: Address PR review comments and feedback on Elixir/Phoenix code. Use when the user says "I got review comments on my PR", shares a PR URL to respond to, needs to address reviewer feedback, or a reviewer flagged an issue (like N+1 queries) to fix. Retrieves comments, drafts responses, and optionally fixes code. NOT for doing a code review yourself (review) or challenging code (challenge).
+description: Address PR review comments on Elixir/Phoenix code — fetch comments, draft responses, optionally fix code. Use when the user shares a PR URL or mentions reviewer feedback.
 effort: high
 argument-hint: <PR number or URL> [--fix]
 disable-model-invocation: true
@@ -27,17 +27,9 @@ and optionally apply code fixes.
 
 ### Step 1: Fetch PR Context
 
-```bash
-# Get PR metadata
-gh pr view {number} --json title,body,state,baseRefName,headRefName
-
-# Get all review comments (inline + general)
-gh api repos/{owner}/{repo}/pulls/{number}/comments --paginate
-gh api repos/{owner}/{repo}/pulls/{number}/reviews --paginate
-
-# Get the diff for context
-gh pr diff {number}
-```
+Run `gh pr view {number} --json title,body,state,baseRefName,headRefName` for PR metadata.
+Run `gh api repos/{owner}/{repo}/pulls/{number}/comments --paginate` and `gh api repos/{owner}/{repo}/pulls/{number}/reviews --paginate` for all review comments.
+Run `gh pr diff {number}` for the diff context.
 
 Parse the PR number from `$ARGUMENTS`. If a URL, extract the
 number from it. Detect `--fix` flag.
@@ -102,11 +94,7 @@ If `--fix` flag provided AND user approves:
 
 After user approves (may edit some):
 
-```bash
-# Post each response as a reply to the original comment
-gh api repos/{owner}/{repo}/pulls/{number}/comments/{id}/replies \
-  -f body="{response}"
-```
+Post each approved response as a reply using `gh api repos/{owner}/{repo}/pulls/{number}/comments/{id}/replies -f body="{response}"`.
 
 ## Iron Laws
 

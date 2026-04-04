@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Curated templates for Claude Code - agents, skills, commands, MCPs",
+  "repo": "vibery-studio/templates",
+  "path": "skills/skill-creator/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 2,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-vibery-studio-templates-2",
+  "author": "vibery-studio",
+  "source_url": "https://github.com/vibery-studio/templates/blob/main/skills/skill-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vibery-studio/templates/blob/main/skills/skill-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

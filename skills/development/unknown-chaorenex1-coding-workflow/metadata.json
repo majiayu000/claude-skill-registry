@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Claude Code 扩展工具库，包含 Skills、Agents 和 Commands (Slash Commands)，用于增强 Claude Code 的能力",
+  "repo": "chaorenex1/coding-workflow",
+  "path": "skills/codex-cli-bridge/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 1,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-chaorenex1-coding-workflow",
+  "author": "chaorenex1",
+  "source_url": "https://github.com/chaorenex1/coding-workflow/blob/main/skills/codex-cli-bridge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chaorenex1/coding-workflow/blob/main/skills/codex-cli-bridge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

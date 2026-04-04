@@ -25,6 +25,7 @@ usage_patterns:
 - memory-optimization
 - algorithm-optimization
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 1200
 progressive_loading: true
 modules:

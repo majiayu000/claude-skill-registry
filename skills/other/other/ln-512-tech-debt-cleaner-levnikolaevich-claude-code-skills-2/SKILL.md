@@ -3,6 +3,7 @@ name: ln-512-tech-debt-cleaner
 description: "Auto-fixes low-risk tech debt (unused imports, dead code, commented-out code) with >=90% confidence. Use when audit findings need safe automated cleanup."
 allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_unused_exports, mcp__hex-graph__find_references, mcp__hex-line__bulk_replace, mcp__hex-line__verify
 license: MIT
+model: claude-sonnet-4-6
 ---
 
 > **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.

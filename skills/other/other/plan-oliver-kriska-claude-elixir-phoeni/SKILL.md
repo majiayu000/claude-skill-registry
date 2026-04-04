@@ -1,9 +1,8 @@
 ---
 name: phx:plan
-description: Plan and design multi-step Phoenix features before implementation. Use when the user wants to build a billing system, add webhook handling, design role-based access control, create a real-time chat feature, architect a new domain, or create a plan from review findings. Produces a step-by-step implementation plan with checkboxes. Use --existing to enhance an existing plan. NOT for small single-file changes (quick), debugging (investigate), or code review (review).
+description: Plan multi-step Phoenix features with specialist agents. Use when building new domains, multi-file features, or creating plans from review findings. Use --existing to enhance a plan.
 effort: high
 argument-hint: <feature description OR path to review/plan file>
-disable-model-invocation: true
 ---
 
 # Plan Elixir/Phoenix Feature
@@ -36,9 +35,10 @@ structured plan with checkboxes.
 
 ## Workflow
 
-1. **Gather context** — File path (skip to agents), clear
-   description, or vague/fuzzy (needs clarification)
-2. **Clarify if vague** — Ask questions ONE at a time
+1. **Gather context** — File path (skip to agents), brainstorm
+   interview.md (skip clarification), clear description, or vague
+2. **Clarify if vague** — Ask questions ONE at a time (skip if
+   brainstorm interview.md exists with Status: COMPLETE)
 3. **Detect depth** — Auto-detect quick/standard/deep
 4. **Runtime context** (Tidewave) — Gather live schemas, routes,
    and warnings before spawning agents (see planning-orchestrator)

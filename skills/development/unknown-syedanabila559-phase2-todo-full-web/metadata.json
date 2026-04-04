@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "This full-stack web application uses Next.js for the frontend, styled with Tailwind CSS. The backend is powered by Python, handling API requests and logic. It connects to a Neon serverless PostgreSQL database, with SQL for data management. This stack ensures scalability, performance, and ease of development.",
+  "repo": "SyedaNabila559/phase2-todo-full-web",
+  "path": ".claude/skills/sqlmodel-task-models/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-syedanabila559-phase2-todo-full-web",
+  "author": "SyedaNabila559",
+  "source_url": "https://github.com/SyedaNabila559/phase2-todo-full-web/blob/main/.claude/skills/sqlmodel-task-models/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SyedaNabila559/phase2-todo-full-web/blob/main/.claude/skills/sqlmodel-task-models/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -61,7 +61,7 @@ Must stay on Node 18. Server has LTS pinned, no upgrade path in scope.
 ### [2026-03-29 14:45] Task: API refactor — Phase 2
 Completed: /users, /products, /categories endpoints
 Remaining: /orders, /payments endpoints
-Blocked on: Stripe webhook secret (Batuhan to provide)
+Blocked on: Stripe webhook secret (user to provide)
 Next action: Start /orders, skip payment until secret arrives
 
 ## Scratch
@@ -209,7 +209,7 @@ Scratch note:
 ```markdown
 ### [2026-03-29 16:15] Pending: Caching strategy
 Options: (a) Redis — fast, requires infra; (b) in-memory — simple, no persistence
-Awaiting Batuhan's confirmation on whether Redis is available in prod.
+Awaiting user confirmation on whether Redis is available in prod.
 ```
 
 This prevents re-deriving the same question after compression.

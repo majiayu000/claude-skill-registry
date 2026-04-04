@@ -1,13 +1,15 @@
 ---
 name: geo-content-optimizer
-description: "Optimize content for AI citations: ChatGPT, Perplexity, AI Overviews, Gemini, Claude, Copilot. Quotable statements, Q&A, attribution. \"AI doesn't mention my brand\" / \"让AI引用我\" / \"AI搜不到\". AI引用优化/GEO优化/AI搜索 AI最適化/コンテンツ最適化 AI최적화 optimización IA"
-version: "5.1.0"
+description: 'Optimize content for AI citations in ChatGPT, Perplexity, AI Overviews, Gemini, Claude. AI引用优化/GEO优化/AI搜索'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when optimizing content for AI engines like ChatGPT, Perplexity, AI Overviews, Gemini, Claude, or Copilot. Also for AI citation optimization and generative engine visibility."
+argument-hint: "<content URL or text> [target AI engine]"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "high"
   tags:
     - geo
@@ -89,7 +91,7 @@ metadata:
 > **System Mode**: This build skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
 
 
-This skill optimizes content to appear in AI-generated responses. As AI systems increasingly answer user queries directly, getting cited by these systems becomes crucial for visibility.
+This skill optimizes content to appear in AI-generated responses. As AI systems increasingly answer user queries directly, getting cited by these systems directly impacts visibility.
 
 **System role**: Build layer skill. It turns briefs and signals into assets that other skills can review, publish, and monitor.
 

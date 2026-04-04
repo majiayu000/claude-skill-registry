@@ -1,6 +1,6 @@
 ---
 name: phx:audit
-description: Project health audit across 5 areas (architecture, performance, security, tests, dependencies) using parallel specialist agents. Use quarterly, before major releases, after large refactors, or when onboarding. Also use when the user mentions "project health", "code quality overview", "how healthy is this codebase", or any request for holistic assessment.
+description: Project health audit and health check — architecture, performance, security, tests, dependencies. Use quarterly, before releases, after refactors, or when asked about project health.
 effort: high
 argument-hint: [--quick|--full|--focus=area|--since=commit]
 ---
@@ -119,12 +119,8 @@ critical issues, top recommendations, and action plan (Immediate/Short-term/Long
 
 Only run essential checks (~2-3 minutes):
 
-```bash
-mix compile --warnings-as-errors
-mix hex.audit && mix deps.audit
-mix xref graph --format stats
-mix test --trace 2>&1 | tail -20
-```
+Run `mix compile --warnings-as-errors`, then `mix hex.audit && mix deps.audit`,
+then `mix xref graph --format stats`, then `mix test --trace 2>&1 | tail -20`.
 
 Skip: Full security scan, N+1 analysis, test quality metrics, architecture deep dive.
 
@@ -144,13 +140,7 @@ Deep dive single area with full specialist resources:
 
 Analyze only changes since a specific commit. Useful for pre-merge checks:
 
-```bash
-# Identify changed files
-git diff --name-only <commit>...HEAD
-
-# Run targeted audits on changed files only
-# Skips full project scan, focuses on modified code
-```
+Run `git diff --name-only <commit>...HEAD` to identify changed files, then run targeted audits on changed files only (skips full project scan).
 
 Combines with other flags: `/phx:audit --since HEAD~5 --focus=security`
 

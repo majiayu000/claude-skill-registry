@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": null,
+  "repo": "synqing/K1.node1",
+  "path": ".claude/agents/vendors/shell-scripting/skills/bats-testing-patterns/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-synqing-k1-node1",
+  "author": "synqing",
+  "source_url": "https://github.com/synqing/K1.node1/blob/main/.claude/agents/vendors/shell-scripting/skills/bats-testing-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/synqing/K1.node1/blob/main/.claude/agents/vendors/shell-scripting/skills/bats-testing-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

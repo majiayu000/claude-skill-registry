@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "📦 Repomix is a powerful tool that packs your entire repository into a single, AI-friendly file. Perfect for when you need to feed your codebase to Large Language Models (LLMs) or other AI tools like Claude, ChatGPT, DeepSeek, Perplexity, Gemini, Gemma, Llama, Grok, and more.",
+  "repo": "yamadashy/repomix",
+  "path": "website/client/src/ru/guide/repomix-explorer-skill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 21427,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-yamadashy-repomix-4",
+  "author": "yamadashy",
+  "source_url": "https://github.com/yamadashy/repomix/blob/main/website/client/src/ru/guide/repomix-explorer-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yamadashy/repomix/blob/main/website/client/src/ru/guide/repomix-explorer-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

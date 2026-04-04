@@ -1,13 +1,15 @@
 ---
 name: domain-authority-auditor
-description: '40-item CITE domain audit: 4 dimensions, domain-type weighting, veto checks, trust scoring. "Is my site trustworthy" / "域名可信吗" / "权威度多少". 域名权威/网站可信度/域名评分 ドメイン権威 도메인권위 autoridad dominio'
-version: "5.1.0"
+description: '40-item CITE domain audit: citation, impact, trust, entity scoring with veto checks. 域名权威/网站可信度'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when auditing domain trust and authority. Runs CITE 40-item scoring with veto checks. Also when the user asks about domain credibility or citation trustworthiness."
+argument-hint: "<domain>"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "medium"
   tags:
     - seo

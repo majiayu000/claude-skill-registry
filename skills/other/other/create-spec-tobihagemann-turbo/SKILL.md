@@ -7,6 +7,18 @@ description: "Guide a collaborative discussion that produces a comprehensive spe
 
 Guide a collaborative discussion to explore a project idea, then synthesize the conversation into a comprehensive specification at `.turbo/spec.md`.
 
+## Task Tracking
+
+At the start, use `TaskCreate` to create a task for each step:
+
+1. Capture the vision
+2. Deep-dive discussion
+3. Draft the spec
+4. Run `/review-spec` skill
+5. Run `/evaluate-findings` skill
+6. Run `/apply-findings` skill
+7. Review and finalize
+
 ## Step 1: Capture the Vision
 
 Absorb whatever the user has provided — a sentence, a paragraph, a brain dump. Do not interrupt or ask questions yet. Restate the vision back in two or three sentences to confirm understanding.
@@ -63,7 +75,6 @@ After drafting the spec and before presenting it to the user:
 1. Run the `/review-spec` skill with the full spec text
 2. Run the `/evaluate-findings` skill on the combined review findings
 3. Run the `/apply-findings` skill on the evaluated findings to incorporate accepted changes into the spec
-4. For medium-confidence findings that require user judgment, use `AskUserQuestion` to present the trade-offs and let the user decide
 
 ## Step 5: Review and Finalize
 

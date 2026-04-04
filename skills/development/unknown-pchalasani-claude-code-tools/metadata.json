@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Practical productivity tools for Claude Code, Codex-CLI, and similar CLI coding agents.",
+  "repo": "pchalasani/claude-code-tools",
+  "path": "plugins/langroid/skills/patterns/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 1179,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-pchalasani-claude-code-tools",
+  "author": "pchalasani",
+  "source_url": "https://github.com/pchalasani/claude-code-tools/blob/main/plugins/langroid/skills/patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pchalasani/claude-code-tools/blob/main/plugins/langroid/skills/patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

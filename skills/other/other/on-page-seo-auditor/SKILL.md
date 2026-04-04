@@ -1,14 +1,16 @@
 ---
 name: on-page-seo-auditor
-description: "Audit on-page SEO: titles, headers, images, links with scored report and fix priorities. \"Why isn't this ranking\" / \"页面诊断\" / \"SEO评分\". 页面SEO审计/排名诊断/网页优化/H1检查 ページSEO監査 페이지SEO감사 auditoría on-page"
-version: "5.1.0"
+description: 'Audit on-page SEO: titles, headers, images, links with scored report and fix priorities. 页面SEO审计/排名诊断'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when auditing a page's on-page SEO health, checking heading structure, keyword placement, image optimization, or content quality signals."
+argument-hint: "<URL> [keyword]"
 allowed-tools: WebFetch
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "medium"
   tags:
     - seo

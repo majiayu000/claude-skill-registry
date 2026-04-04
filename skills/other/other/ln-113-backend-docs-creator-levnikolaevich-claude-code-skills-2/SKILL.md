@@ -2,6 +2,7 @@
 name: ln-113-backend-docs-creator
 description: "Creates backend docs (api_spec.md, database_schema.md). Use when project has backend API or database."
 license: MIT
+model: claude-sonnet-4-6
 ---
 
 > **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.

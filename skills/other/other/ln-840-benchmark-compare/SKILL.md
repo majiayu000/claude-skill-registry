@@ -2,6 +2,7 @@
 name: ln-840-benchmark-compare
 description: "Runs built-in vs hex-line benchmark with scenario manifests, activation checks, and diff-based correctness. Use when measuring hex-line MCP performance against built-in tools."
 license: MIT
+model: claude-haiku-4-5
 ---
 
 > **Paths:** File paths (`shared/`, `references/`) are relative to skills repo root. Locate this SKILL.md directory and go up one level for repo root.

@@ -204,7 +204,7 @@ Run the full provisioning procedure from the reference: health check (run test s
 **If test infrastructure was NOT detected:**
 
 Use `AskUserQuestion` — header "Test Infrastructure", question "No test framework was detected. Would you like to install one?":
-- **Yes (strongly recommended)** — "Install test framework and coverage tooling — strongly recommended. Multiple optimus skills depend on test infrastructure: `/optimus:tdd` is non-functional without it, `/optimus:code-review` and `/optimus:refactor` lose deep mode, and `/optimus:verify` loses automated checks."
+- **Yes (strongly recommended)** — "Install test framework and coverage tooling — strongly recommended. Multiple optimus skills depend on test infrastructure: `/optimus:tdd` is non-functional without it, `/optimus:code-review` and `/optimus:refactor` lose **deep mode** and **deep harness**, and `/optimus:verify` loses automated checks."
 - **No** — "Skip test infrastructure setup — some optimus skills will have reduced functionality"
 
 If the user chooses **Yes**: follow the "Framework and Coverage Tooling Installation" section of the reference (consult `$CLAUDE_PLUGIN_ROOT/skills/init/references/test-framework-recommendations.md`, ask user approval for specific framework, install, then run health check). After installation, run the full Optimus Infrastructure Provisioning from the reference (testing.md, CLAUDE.md refs, README section, .gitignore).
@@ -310,7 +310,7 @@ After the table, include conditional warnings:
 
 If test infrastructure was installed from scratch in Step 5b (no pre-existing test framework — the user chose "Yes" to install one), include a strong warning:
 
-> ⚠ **Important:** Test framework was installed but the project has no test files yet. The test command will pass with 0 tests — this is a false safety net. Other optimus skills (`/optimus:code-review` deep mode, `/optimus:refactor` deep mode, `/optimus:verify`) rely on tests to validate changes. **Run `/optimus:unit-test` next** to write initial tests and establish real coverage.
+> ⚠ **Important:** Test framework was installed but the project has no test files yet. The test command will pass with 0 tests — this is a false safety net. Other optimus skills (`/optimus:code-review` deep mode and deep harness, `/optimus:refactor` deep mode and deep harness, `/optimus:verify`) rely on tests to validate changes. **Run `/optimus:unit-test` next** to write initial tests and establish real coverage.
 
 If the user declined test infrastructure in Step 5b, include:
 

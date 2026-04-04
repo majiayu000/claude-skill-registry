@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Multi-agent trading, swarm intelligence, and GitHub automation plugins for Claude Code. 19 production-grade plugins built from 68+ specialized agents.",
+  "repo": "jmanhype/claude-code-plugin-marketplace",
+  "path": "plugins/ace-context-engineering/skills/ace-skill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 16,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-jmanhype-claude-code-plugin-m",
+  "author": "jmanhype",
+  "source_url": "https://github.com/jmanhype/claude-code-plugin-marketplace/blob/main/plugins/ace-context-engineering/skills/ace-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jmanhype/claude-code-plugin-marketplace/blob/main/plugins/ace-context-engineering/skills/ace-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

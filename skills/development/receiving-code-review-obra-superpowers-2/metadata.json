@@ -1,0 +1,23 @@
+{
+  "name": "receiving-code-review",
+  "description": "Handles feedback incorporation from code reviews",
+  "repo": "obra/superpowers",
+  "path": "receiving-code-review",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [
+    "code-review",
+    "feedback",
+    "improvement"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "receiving-code-review-obra-superpowers-2",
+  "author": "obra",
+  "source_url": "https://github.com/obra/superpowers/blob/main/receiving-code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/obra/superpowers/blob/main/receiving-code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

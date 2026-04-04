@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Modern Electron-based desktop application providing a polished chat interface for CLI AI agents (Claude Code, OpenAI Codex). Supports both desktop and web modes.",
+  "repo": "zhu1090093659/CodeConductor",
+  "path": "skills/xlsx/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 45,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-zhu1090093659-codeconductor",
+  "author": "zhu1090093659",
+  "source_url": "https://github.com/zhu1090093659/CodeConductor/blob/main/skills/xlsx/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zhu1090093659/CodeConductor/blob/main/skills/xlsx/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,6 +1,6 @@
 ---
 name: firecrawl
-description: Firecrawl produces cleaner markdown than WebFetch, handles JavaScript-heavy pages, and avoids content truncation. This skill should be used when fetching URLs, scraping web pages, converting URLs to markdown, extracting web content, searching the web, crawling sites, mapping URLs, LLM-powered extraction, autonomous data gathering with the Agent API, or fetching AI-generated documentation for GitHub repos via DeepWiki. Provides complete coverage of Firecrawl v2.8.0 API endpoints including parallel agents, spark-1-fast model, and sitemap-only crawling.
+description: Firecrawl produces cleaner markdown than WebFetch, handles JavaScript-heavy pages, and avoids content truncation. This skill should be used when fetching URLs, scraping web pages, converting URLs to markdown, extracting web content, searching the web, crawling sites, mapping URLs, LLM-powered extraction, autonomous data gathering with the Agent API, interacting with scraped pages (clicking, filling forms, extracting dynamic content via Interact API), or fetching AI-generated documentation for GitHub repos via DeepWiki. Provides complete coverage of Firecrawl v2 API endpoints including parallel agents, spark-1-fast model, sitemap-only crawling, and the Interact API for post-scrape browser interaction.
 ---
 
 # Firecrawl & Jina Web Scraping
@@ -126,6 +126,8 @@ fc-save URL
 | `extract` | LLM-powered structured extraction | `firecrawl_api.py extract URL --prompt "Find pricing"` |
 | `agent` | Autonomous extraction (no URLs needed) | `firecrawl_api.py agent "Find YC W24 AI startups"` |
 | `parallel-agent` | Bulk agent queries (v2.8.0+) | `firecrawl_api.py parallel-agent "Q1" "Q2" "Q3"` |
+| `interact` | Post-scrape browser interaction | `firecrawl_api.py interact SCRAPE_ID --prompt "Click pricing"` |
+| `interact-stop` | Stop an interact session | `firecrawl_api.py interact-stop SCRAPE_ID` |
 
 **Agent models:** `spark-1-fast` (10 credits, simple), `spark-1-mini` (default), `spark-1-pro` (thorough)
 
@@ -182,6 +184,12 @@ jina https://x.com/username/status/123456
 | Element-level extraction | `scrapling` + CSS selectors | Precision targeting, adaptive tracking |
 | No API key scraping | `scrapling` HTTP fetch | 100% local, no credentials |
 | Site redesign resilience | `scrapling` adaptive mode | SQLite similarity matching |
+| Budget JS-rendered scrape | `cf_browser.py markdown URL` | CF free tier: 10 min/day, $0.09/hr paid |
+| Free static page fetch | `cf_browser.py markdown URL --no-render` | FREE during beta (no JS) |
+| Budget multi-page crawl | `cf_browser.py crawl URL` | 5 free crawls/day, 100 pages each |
+| Incremental re-crawl | `cf_browser.py crawl --modified-since` | Built-in, Firecrawl lacks this |
+| Page screenshot/PDF | `cf_browser.py screenshot/pdf URL` | Built-in CF endpoints, cheaper |
+| AI structured extraction | `cf_browser.py json URL --prompt "..."` | Workers AI included free |
 
 ---
 
@@ -211,6 +219,67 @@ firecrawl search "machine learning best practices 2026" --scrape --scrape-format
 python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py agent \
   "Compare pricing tiers for Firecrawl, Apify, and ScrapingBee"
 ```
+
+### Interact Workflows (Post-Scrape Browser Interaction)
+
+Scrape a page, then take actions on it—click buttons, fill forms, extract dynamic content. Two modes: AI prompts (natural language) and code execution (Node.js/Python/Bash).
+
+#### When to Use Interact vs. Actions
+
+| Need | Use | Why |
+|------|-----|-----|
+| Click/wait before a single scrape | `--actions` on scrape | Fire-and-forget, no session overhead |
+| Multiple interactions with same page | `interact` | Persistent session, back-and-forth |
+| Fill forms, log in, navigate | `interact` | Stateful, multi-step |
+| Simple "wait for JS to load" | `--actions` with `wait` | Cheaper, no session |
+
+#### Basic Interact (AI Prompt Mode)
+```bash
+# Step 1: Scrape and note the Scrape ID from output
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py scrape "https://example.com/pricing"
+
+# Step 2: Interact using natural language
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py interact SCRAPE_ID \
+  --prompt "Click the Enterprise pricing tab"
+
+# Step 3: More interactions on same session
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py interact SCRAPE_ID \
+  --prompt "What is the monthly price for the Enterprise plan?"
+
+# Step 4: Stop when done
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py interact-stop SCRAPE_ID
+```
+
+#### Code Execution Mode (Cheaper)
+```bash
+# Execute Playwright code directly (2 credits/min vs 7 for prompts)
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py interact SCRAPE_ID \
+  --code "const text = await page.locator('.pricing-table').textContent(); console.log(text);"
+
+# Python mode
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py interact SCRAPE_ID \
+  --code "text = await page.locator('.content').text_content(); print(text)" \
+  --language python
+```
+
+#### Persistent Profile (Login Sessions)
+```bash
+# Scrape with a named profile — browser state persists across sessions
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py scrape "https://app.example.com/login" \
+  --profile my-app --json
+
+# Interact to log in
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py interact SCRAPE_ID \
+  --code "await page.fill('#email', 'user@example.com'); await page.fill('#password', 'pass'); await page.click('button[type=submit]');"
+
+# Later: scrape another page with same profile — cookies restored
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py scrape "https://app.example.com/dashboard" \
+  --profile my-app
+```
+
+**Important:** Interact does NOT return page markdown. To get updated content after interaction, use code mode to extract specific elements, or issue a follow-up scrape.
+
+**Full interact reference:** `references/interact-reference.md`
 
 ---
 
@@ -242,6 +311,7 @@ echo $FIRECRAWL_API_KEY
 | `references/firecrawl-api.md` | Firecrawl Search API reference |
 | `references/firecrawl-agent-api.md` | Agent API (spark models, parallel agents, webhooks) |
 | `references/actions-reference.md` | Page actions for dynamic content (click, write, wait, scroll) |
+| `references/interact-reference.md` | Interact API: post-scrape browser interaction (prompt, code, profiles) |
 | `references/branding-format.md` | Brand identity extraction (colors, fonts, UI) |
 
 ## Test Suite

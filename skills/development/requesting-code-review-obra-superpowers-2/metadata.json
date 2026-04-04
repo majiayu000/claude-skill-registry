@@ -1,0 +1,23 @@
+{
+  "name": "requesting-code-review",
+  "description": "Pre-review checklist and validation before code review",
+  "repo": "obra/superpowers",
+  "path": "requesting-code-review",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [
+    "code-review",
+    "checklist",
+    "validation"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "requesting-code-review-obra-superpowers-2",
+  "author": "obra",
+  "source_url": "https://github.com/obra/superpowers/blob/main/requesting-code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/obra/superpowers/blob/main/requesting-code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

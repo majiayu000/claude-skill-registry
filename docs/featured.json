@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-31T02:00:17.836658Z",
+  "updated_at": "2026-04-04T04:23:19.137857Z",
   "count": 100,
   "skills": [
     {
@@ -388,6 +388,18 @@
       "source": "SkillsMP Synced Skills"
     },
     {
+      "name": "unknown",
+      "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
+      "repo": "metabase/metabase",
+      "path": "",
+      "branch": "master",
+      "category": "development",
+      "tags": [],
+      "stars": 45687,
+      "install": "metabase/metabase",
+      "source": "GitHub Code Search Results"
+    },
+    {
       "name": "analytics-events",
       "description": "Add product analytics events to track user interactions in the Metabase frontend",
       "repo": "metabase/metabase",
@@ -398,6 +410,54 @@
       "stars": 45687,
       "install": "metabase/metabase",
       "source": "github.com/metabase/metabase"
+    },
+    {
+      "name": "unknown",
+      "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
+      "repo": "metabase/metabase",
+      "path": "",
+      "branch": "master",
+      "category": "development",
+      "tags": [],
+      "stars": 45687,
+      "install": "metabase/metabase",
+      "source": "GitHub Code Search Results"
+    },
+    {
+      "name": "unknown",
+      "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
+      "repo": "metabase/metabase",
+      "path": "",
+      "branch": "master",
+      "category": "development",
+      "tags": [],
+      "stars": 45687,
+      "install": "metabase/metabase",
+      "source": "GitHub Code Search Results"
+    },
+    {
+      "name": "unknown",
+      "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
+      "repo": "metabase/metabase",
+      "path": "",
+      "branch": "master",
+      "category": "development",
+      "tags": [],
+      "stars": 45687,
+      "install": "metabase/metabase",
+      "source": "GitHub Code Search Results"
+    },
+    {
+      "name": "unknown",
+      "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
+      "repo": "metabase/metabase",
+      "path": "",
+      "branch": "master",
+      "category": "development",
+      "tags": [],
+      "stars": 45687,
+      "install": "metabase/metabase",
+      "source": "GitHub Code Search Results"
     },
     {
       "name": "typescript-write",
@@ -575,6 +635,18 @@
       "stars": 37144,
       "install": "agno-agi/agno",
       "source": "github.com/agno-agi/agno"
+    },
+    {
+      "name": "unknown",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "repo": "obra/superpowers",
+      "path": "",
+      "branch": "main",
+      "category": "development",
+      "tags": [],
+      "stars": 35109,
+      "install": "obra/superpowers",
+      "source": "GitHub Code Search Results"
     },
     {
       "name": "ui-component-doc",
@@ -779,6 +851,18 @@
       "stars": 29211,
       "install": "remotion-dev/remotion",
       "source": "github.com/remotion-dev/remotion"
+    },
+    {
+      "name": "unknown",
+      "description": "Get to green PRs in half the time. Nx optimizes your builds, scales your CI, and fixes failed PRs. Built for developers and AI agents.",
+      "repo": "nrwl/nx",
+      "path": "",
+      "branch": "master",
+      "category": "development",
+      "tags": [],
+      "stars": 27975,
+      "install": "nrwl/nx",
+      "source": "GitHub Code Search Results"
     },
     {
       "name": "run-nx-generator",
@@ -1212,99 +1296,6 @@
       "stars": 22287,
       "install": "jlowin/fastmcp",
       "source": "github.com/jlowin/fastmcp"
-    },
-    {
-      "name": "ui-ux-pro-max-nextlevelbuilder-ui-ux-pro-max",
-      "description": "UI/UX design intelligence. 50 styles, 21 palettes, 50 font pairings, 20 charts, 9 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui). Actions: plan, build, creat",
-      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
-      "path": "",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 22240,
-      "install": "nextlevelbuilder/ui-ux-pro-max-skill",
-      "source": "github.com/nextlevelbuilder/ui-ux-pro-max-skill"
-    },
-    {
-      "name": "agent-memory",
-      "description": "Use this skill when the user asks to save, remember, recall, or organize memories. Triggers on: 'remember this', 'save this', 'note this', 'what did we discuss about...', 'check your notes', 'clean up",
-      "repo": "yamadashy/repomix",
-      "path": "",
-      "branch": "main",
-      "category": "other",
-      "tags": [],
-      "stars": 21427,
-      "install": "yamadashy/repomix",
-      "source": "github.com/yamadashy/repomix"
-    },
-    {
-      "name": "guide",
-      "description": "Repomix bietet einen sofort einsatzbereiten Repomix Explorer Skill, der KI-Codierungsassistenten ermöglicht, Codebasen mit der Repomix CLI zu analysieren und zu erkunden.",
-      "repo": "yamadashy/repomix",
-      "path": "",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 21427,
-      "install": "yamadashy/repomix",
-      "source": "github.com/yamadashy/repomix"
-    },
-    {
-      "name": "guide",
-      "description": "Repomix fournit un skill Repomix Explorer prêt à l'emploi qui permet aux assistants de codage IA d'analyser et d'explorer des bases de code en utilisant Repomix CLI.",
-      "repo": "yamadashy/repomix",
-      "path": "",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 21427,
-      "install": "yamadashy/repomix",
-      "source": "github.com/yamadashy/repomix"
-    },
-    {
-      "name": "agent-memory",
-      "description": "Use this skill when the user asks to save, remember, recall, or organize memories. Triggers on: 'remember this', 'save this', 'note this', 'what did we discuss about...', 'check your notes', 'clean up",
-      "repo": "yamadashy/repomix",
-      "path": ".claude/skills/agent-memory",
-      "branch": "main",
-      "category": "productivity",
-      "tags": [
-        "agent",
-        "memory"
-      ],
-      "stars": 20912,
-      "install": "yamadashy/repomix/.claude/skills/agent-memory",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "agent-memory",
-      "description": "Use this skill when the user asks to save, remember, recall, or organize memories. Triggers on: 'remember this', 'save this', 'note this', 'what did we discuss about...', 'check your notes', 'clean up",
-      "repo": "yamadashy/repomix",
-      "path": ".claude/skills/agent-memory",
-      "branch": "main",
-      "category": "productivity",
-      "tags": [
-        "agent",
-        "memory"
-      ],
-      "stars": 20912,
-      "install": "yamadashy/repomix/.claude/skills/agent-memory",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "website-maintainer",
-      "description": "Use this skill when working on the Repomix documentation website in `website/` directory, including VitePress configuration, multi-language content, or translation workflows.",
-      "repo": "yamadashy/repomix",
-      "path": ".claude/skills/website-maintainer",
-      "branch": "main",
-      "category": "documents",
-      "tags": [
-        "website",
-        "maintainer"
-      ],
-      "stars": 20912,
-      "install": "yamadashy/repomix/.claude/skills/website-maintainer",
-      "source": "SkillsMP Synced Skills"
     }
   ]
 }

@@ -1,13 +1,15 @@
 ---
 name: meta-tags-optimizer
-description: 'Optimize title tags, meta descriptions, Open Graph, Twitter cards for maximum CTR with A/B variations. "Click rate is low" / "点击率太低" / "标题不好". 标题优化/元描述/OG标签/CTR メタタグ最適化/CTR改善 메타태그최적화 meta tags SEO'
-version: "5.1.0"
+description: 'Optimize title tags, meta descriptions, Open Graph, Twitter cards for maximum CTR with A/B variations. 标题优化/元描述/CTR'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when optimizing title tags, meta descriptions, Open Graph tags, or Twitter Cards for a page."
+argument-hint: "<page URL or content>"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "low"
   tags:
     - seo

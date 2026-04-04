@@ -1,6 +1,6 @@
 ---
 name: phx:help
-description: "Navigate Elixir/Phoenix plugin commands — recommend the right /phx: command, skill, or agent for planning, review, debug, deploy, ecto, liveview, or test tasks. Use when the user asks 'which command', 'what should I use', 'how do I', or needs help choosing between plugin workflows. DO NOT trigger for /help (built-in CLI command)."
+description: "Recommend the right /phx: command for planning, review, debug, deploy, or test tasks. Use when \"which command\", \"what should I use\", or \"how do I\". NOT for /help."
 argument-hint: "[description of what you want to do]"
 ---
 
@@ -29,9 +29,9 @@ If `$ARGUMENTS` is non-empty, use it as primary signal.
 
 Always gather ambient context (run in parallel):
 
-1. Check for existing plans: `ls .claude/plans/` — active work in progress?
+1. Check for existing plans: use Glob on `.claude/plans/*/plan.md` — active work in progress?
 2. Check git status: uncommitted changes? which files?
-3. Check for solution docs: `ls .claude/solutions/` — prior knowledge?
+3. Check for solution docs: use Glob on `.claude/solutions/**/*.md` — prior knowledge?
 
 ### Step 2: Classify Intent
 
@@ -42,6 +42,7 @@ Map the user's situation to one of these categories:
 | Category | Signals | Primary Commands |
 |----------|---------|-----------------|
 | **Starting out** | No plans, new to plugin | `/phx:intro` |
+| **Ideation** | "explore", "brainstorm", "not sure", "how to approach", "vague idea" | `/phx:brainstorm` |
 | **New feature** | "add", "build", "implement", multi-file | `/phx:plan` → `/phx:work` |
 | **Quick change** | Single file, <50 lines, "fix typo" | `/phx:quick` |
 | **Bug** | Error, stack trace, "broken", "failing" | `/phx:investigate` |

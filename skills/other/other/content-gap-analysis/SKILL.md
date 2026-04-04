@@ -1,13 +1,15 @@
 ---
 name: content-gap-analysis
-description: "Find content gaps: topics and keywords competitors cover that you don't. Editorial calendar planning. \"What am I missing\" / \"缺什么内容\" / \"竞品写了什么\". 内容缺口/选题规划/内容机会 コンテンツギャップ 콘텐츠갭 brechas contenido"
-version: "5.1.0"
+description: 'Find content gaps: topics and keywords competitors cover that you don''t, with editorial calendar. 内容缺口/选题规划'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when finding content gaps between two domains, discovering missing topics, or identifying coverage holes versus competitors."
+argument-hint: "<your domain> <competitor domain>"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "medium"
   tags:
     - seo

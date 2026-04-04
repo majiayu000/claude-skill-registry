@@ -1,13 +1,15 @@
 ---
 name: rank-tracker
-description: 'Track keyword rankings and SERP changes in traditional search and AI responses over time. "How am I ranking" / "查排名" / "排名变了吗". 排名追踪/关键词排名/SERP监控/排名变化 ランキング追跡 순위추적 seguimiento rankings'
-version: "5.1.0"
+description: 'Track keyword rankings and SERP feature changes in traditional search and AI responses over time. 排名追踪/SERP监控'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when tracking keyword rankings, monitoring position changes, comparing ranking snapshots, or detecting ranking drops."
+argument-hint: "<domain> [keyword list]"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "medium"
   tags:
     - seo

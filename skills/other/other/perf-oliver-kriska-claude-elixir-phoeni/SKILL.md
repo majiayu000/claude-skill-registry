@@ -1,6 +1,6 @@
 ---
 name: phx:perf
-description: Analyze Elixir/Phoenix code for performance issues — N+1 queries, missing preload calls, liveview assign memory bloat, ecto query optimization, genserver bottlenecks. Use when the user mentions slowness, timeouts, high memory, or wants to optimize their Phoenix application. Also use before deploying performance-sensitive features.
+description: Analyze Elixir/Phoenix performance — N+1 queries, assign bloat, ecto optimization, genserver bottlenecks. Use when slowness, timeouts, or high memory reported.
 effort: high
 argument-hint: "[page|context|module] [--focus ecto|liveview|otp]"
 disable-model-invocation: true

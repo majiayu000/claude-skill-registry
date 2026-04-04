@@ -75,3 +75,41 @@ For peer review and escalation protocols, load the review-dimensions skill.
 Complete business capability per slice: UI -> Application -> Domain -> Infrastructure for a specific feature. Slices developed and deployed independently. Focus on business capability over technical layer.
 
 For test doubles policy and violation examples, load the tdd-methodology skill.
+
+## Testing Boundaries per Architectural Layer
+
+| Layer | Test Strategy | Adapter Selection | Rationale |
+|-------|--------------|------------------|-----------|
+| Domain | Pure unit test, zero I/O | N/A (no adapters) | Domain is pure functions — test with pure inputs |
+| Application | InMemory ports for focused scenarios | InMemory doubles | Application orchestrates — test logic, not I/O |
+| Adapter | REAL I/O ALWAYS* | Real system (tmp_path, subprocess, DB) | Adapter IS the I/O boundary — testing with InMemory defeats the purpose |
+
+*Exception: costly subprocesses (claude -p, LLM) and paid external APIs use contract smoke tests tagged `@requires_external` instead of real I/O. See nw-tdd-methodology Mandate 6 for the full adapter type → test type table.
+| WS/E2E | Per declared strategy (A/B/C/D) | Real for local, fake for costly | WS proves wiring — InMemory proves nothing about wiring |
+
+### Key Insight
+
+A pure function stub at a driven port boundary models the port's CONTRACT, not the external system's BEHAVIOR. For every driven port stub, verify that an adapter integration test with real I/O covers the behavioral gap.
+
+### Integration Surface Ratio Heuristic
+
+If the system's primary job is coordinating external processes (orchestrators, ETL, deployment scripts), invest MORE in WS and adapter integration tests than unit tests. If the system's primary job is domain computation (pricing, validation, parsing), the traditional pyramid applies.
+
+### Strategy D Fixture Template
+
+```python
+# conftest.py
+import os
+import pytest
+
+@pytest.fixture
+def subprocess_runner():
+    """Returns real or fake subprocess runner based on E2E mode."""
+    if os.getenv("NWAVE_E2E_REAL_SUBPROCESS") == "1":
+        from myapp.adapters.real_subprocess_runner import RealSubprocessRunner
+        return RealSubprocessRunner()
+    from tests.doubles.fake_subprocess_runner import FakeSubprocessRunner
+    return FakeSubprocessRunner(exit_code=0, stdout="OK")
+```
+
+Naming convention for multi-port Strategy D: `NWAVE_E2E_REAL_{PORT_NAME}` per driven port (e.g., `NWAVE_E2E_REAL_SUBPROCESS`, `NWAVE_E2E_REAL_DATABASE`). Use `NWAVE_E2E_MODE=real` as composite flag to enable ALL real adapters at once for full E2E.

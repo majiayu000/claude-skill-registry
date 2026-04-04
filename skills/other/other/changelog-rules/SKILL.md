@@ -58,9 +58,16 @@ Not every change belongs in a changelog. Changelogs are for humans, not machines
 ## Entry Format
 
 - Imperative present tense without trailing periods (e.g., "Add dark mode support")
-- Concise, human-readable, written from the user's perspective
-- Describe what changed for the user, not implementation details (e.g., "Add dark mode support" not "Implement dark mode toggle component in ThemeProvider")
 - One bullet point per distinct change
+- Concise but complete. Include enough context that users understand the impact.
+
+### User-Centric Writing
+
+Entries describe what changed **for the user**. Focus on outcomes and impact.
+
+- Lead with a user-visible verb: "Add", "Fix", "Improve", "Allow", "Prevent", "Show", "Check". Avoid developer-centric verbs like "Enforce", "Implement", "Refactor", "Handle", "Register".
+- Describe the experience, not the mechanism.
+- When a change prevents a problem or protects the user, say what it does for them.
 
 ## PR and Issue References
 

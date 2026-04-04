@@ -1,0 +1,23 @@
+{
+  "name": "subagent-driven-development",
+  "description": "Two-stage review process - spec compliance then code quality",
+  "repo": "obra/superpowers",
+  "path": "subagent-driven-development",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [
+    "subagents",
+    "review",
+    "quality"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "subagent-driven-development-obra-superpowers-2",
+  "author": "obra",
+  "source_url": "https://github.com/obra/superpowers/blob/main/subagent-driven-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/obra/superpowers/blob/main/subagent-driven-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

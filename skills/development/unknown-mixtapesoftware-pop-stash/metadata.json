@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "LLM Extended Memory and Insight Capture MCP Service",
+  "repo": "MixTapeSoftware/pop_stash",
+  "path": ".claude/skills/design-principles/skill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 2,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-mixtapesoftware-pop-stash",
+  "author": "MixTapeSoftware",
+  "source_url": "https://github.com/MixTapeSoftware/pop_stash/blob/main/.claude/skills/design-principles/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MixTapeSoftware/pop_stash/blob/main/.claude/skills/design-principles/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

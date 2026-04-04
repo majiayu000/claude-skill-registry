@@ -1,6 +1,7 @@
 ---
 name: health-check-endpoints
 description: Health check endpoints for liveness, readiness, dependency monitoring. Use for Kubernetes, load balancers, auto-scaling, or encountering probe failures, startup delays, dependency checks, timeout configuration errors.
+license: MIT
 ---
 
 # Health Check Endpoints

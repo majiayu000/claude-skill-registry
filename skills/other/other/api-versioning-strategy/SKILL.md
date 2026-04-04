@@ -1,6 +1,7 @@
 ---
 name: api-versioning-strategy
 description: Implements API versioning using URL paths, headers, or query parameters with backward compatibility and deprecation strategies. Use when managing multiple API versions, planning breaking changes, or designing migration paths.
+license: MIT
 ---
 
 # API Versioning Strategy

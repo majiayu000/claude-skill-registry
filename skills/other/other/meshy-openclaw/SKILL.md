@@ -190,9 +190,9 @@ For multi-step pipelines (text-to-3d → rig → animate), show the FULL pipelin
 
 | User wants to... | API | Endpoint | Credits |
 |---|---|---|---|
-| 3D model from text | Text to 3D | `POST /openapi/v2/text-to-3d` | 20 + 10 |
-| 3D model from one image | Image to 3D | `POST /openapi/v1/image-to-3d` | 20–30 |
-| 3D model from multiple images | Multi-Image to 3D | `POST /openapi/v1/multi-image-to-3d` | 20–30 |
+| 3D model from text | Text to 3D | `POST /openapi/v2/text-to-3d` | 5–20 (preview) + 10 (refine) |
+| 3D model from one image | Image to 3D | `POST /openapi/v1/image-to-3d` | 5–30 |
+| 3D model from multiple images | Multi-Image to 3D | `POST /openapi/v1/multi-image-to-3d` | 5–30 |
 | New textures on existing model | Retexture | `POST /openapi/v1/retexture` | 10 |
 | Change mesh format/topology | Remesh | `POST /openapi/v1/remesh` | 5 |
 | Add skeleton to character | Auto-Rigging | `POST /openapi/v1/rigging` | 5 |
@@ -200,7 +200,8 @@ For multi-step pipelines (text-to-3d → rig → animate), show the FULL pipelin
 | 2D image from text | Text to Image | `POST /openapi/v1/text-to-image` | 3–9 |
 | Transform a 2D image | Image to Image | `POST /openapi/v1/image-to-image` | 3–9 |
 | Check credit balance | Balance | `GET /openapi/v1/balance` | 0 |
-| 3D print a model | → See Print Pipeline section | — | 20 |
+| 3D print a model (white) | → See Print Pipeline section | — | 20 |
+| Multi-color 3D print | Multi-Color Print | `POST /openapi/v1/print/multi-color` | 10 (+ generation) |
 
 ---
 
@@ -263,7 +264,7 @@ def create_task(endpoint, payload):
     print(f"TASK_CREATED: {task_id}")
     return task_id
 
-def poll_task(endpoint, task_id, timeout=600):
+def poll_task(endpoint, task_id, timeout=300):
     """Poll with exponential backoff (5s→30s, fixed 15s at 95%+)."""
     elapsed, delay, max_delay, backoff, finalize_delay, poll_count = 0, 5, 30, 1.5, 15, 0
     while elapsed < timeout:
@@ -377,7 +378,7 @@ record_task(project_dir, refine_id, "text-to-3d", "refined", prompt=PROMPT, file
 print(f"\nREFINE COMPLETE — Task: {refine_id} | Formats: {', '.join(task['model_urls'].keys())}")
 ```
 
-> **Note:** Only previews from `meshy-5` or `latest` support refine. `meshy-6` previews do NOT (API returns 400).
+> **Note:** All models (meshy-5, meshy-6, latest) support both preview and refine. The preview and refine ai_model should match to avoid 400 errors.
 
 ---
 
@@ -422,11 +423,16 @@ download(task["model_urls"]["glb"], os.path.join(project_dir, "model.glb"))
 
 ### Retexture
 
+**IMPORTANT**: Ask user for texture style first — `text_style_prompt` OR `image_style_url` (one required, image takes precedence if both given).
+
 ```python
+# REQUIRED: ask user for text_style_prompt OR image_style_url
 task_id = create_task("/openapi/v1/retexture", {
     "input_task_id": "PREVIOUS_TASK_ID",
-    "text_style_prompt": "wooden texture",
+    "text_style_prompt": "wooden texture",     # REQUIRED if no image_style_url
+    # "image_style_url": "URL",               # REQUIRED if no prompt (takes precedence)
     "enable_pbr": True,
+    # "target_formats": ["glb", "3mf"],  # 3mf must be explicitly requested
 })
 task = poll_task("/openapi/v1/retexture", task_id)
 project_dir = get_project_dir(task_id, task_type="retexture")
@@ -509,63 +515,111 @@ task = poll_task("/openapi/v1/image-to-image", task_id)
 
 ## 3D Printing Workflow
 
-Trigger when the user mentions: print, 3d print, slicer, slice, bambu, orca, prusa, cura, figurine, miniature, statue, physical model, desk toy, phone stand.
+**IMPORTANT: When the user's request involves 3D printing, use this section for the ENTIRE workflow — including model generation.** Do NOT run the generation workflows above and then come here. This section controls `target_formats` and other print-specific parameters from the start.
 
-### Print Pipelines
+Trigger when the user mentions: print, 3d print, slicer, slice, bambu, orca, prusa, cura, multicolor, multi-color, 3mf, figurine, miniature, statue, physical model, desk toy, phone stand.
 
-**Text-to-3D Print:**
-| Step | Action | Credits |
-|------|--------|---------|
-| 1 | Text to 3D (`mode: "preview"`, no texture) | 20 |
-| 2 | Printability check (see checklist) | 0 |
-| 3 | Download OBJ | 0 |
-| 4 | Open in slicer (direct launch or manual import) | 0 |
-| 5 (optional) | Retexture for multi-color | 10 |
+### Decision: White Model vs Multicolor
 
-**Image-to-3D Print:**
-| Step | Action | Credits |
-|------|--------|---------|
-| 1 | Image to 3D with `should_texture: False` | 20 |
-| 2 | Printability check | 0 |
-| 3 | Download OBJ | 0 |
-| 4 | Open in slicer (direct launch or manual import) | 0 |
+1. **Detect installed slicers** first (see script below)
+2. Ask the user: "White model (single-color) or multicolor?"
+3. If **multicolor**: check for multicolor-capable slicer (OrcaSlicer, Bambu Studio, Creality Print, Elegoo Slicer, Anycubic Slicer Next), ask max_colors (1-16, default 4) and max_depth (3-6, default 4), confirm cost: 40 credits
 
-### Print Download + Slicer Script
-
-Append to the template after task SUCCEEDED:
+### Slicer Detection + Opening
 
 ```python
-import subprocess, shutil
+import subprocess, shutil, platform, os, glob as glob_mod
 
-# Download OBJ for printing
-obj_url = task["model_urls"].get("obj")
-if not obj_url:
-    print("OBJ not available. Available:", list(task["model_urls"].keys()))
-    print("Download GLB and import manually into your slicer.")
-    obj_url = task["model_urls"].get("glb")
+SLICER_MAP = {
+    "OrcaSlicer":           {"mac_app": "OrcaSlicer",          "win_exe": "orca-slicer.exe",         "win_dir": "OrcaSlicer",          "linux_exe": "orca-slicer"},
+    "Bambu Studio":         {"mac_app": "BambuStudio",         "win_exe": "bambu-studio.exe",        "win_dir": "BambuStudio",         "linux_exe": "bambu-studio"},
+    "Creality Print":       {"mac_app": "Creality Print",      "win_exe": "CrealityPrint.exe",       "win_dir": "Creality Print*",     "linux_exe": None},
+    "Elegoo Slicer":        {"mac_app": "ElegooSlicer",        "win_exe": "elegoo-slicer.exe",       "win_dir": "ElegooSlicer",        "linux_exe": None},
+    "Anycubic Slicer Next": {"mac_app": "AnycubicSlicerNext",  "win_exe": "AnycubicSlicerNext.exe",  "win_dir": "AnycubicSlicerNext",  "linux_exe": None},
+    "PrusaSlicer":          {"mac_app": "PrusaSlicer",         "win_exe": "prusa-slicer.exe",        "win_dir": "PrusaSlicer",         "linux_exe": "prusa-slicer"},
+    "UltiMaker Cura":       {"mac_app": "UltiMaker Cura",      "win_exe": "UltiMaker-Cura.exe",     "win_dir": "UltiMaker Cura*",     "linux_exe": None},
+}
+MULTICOLOR_SLICERS = {"OrcaSlicer", "Bambu Studio", "Creality Print", "Elegoo Slicer", "Anycubic Slicer Next"}
 
+def detect_slicers():
+    found = []
+    system = platform.system()
+    for name, info in SLICER_MAP.items():
+        path = None
+        if system == "Darwin":
+            app = info.get("mac_app")
+            if app and os.path.exists(f"/Applications/{app}.app"):
+                path = f"/Applications/{app}.app"
+        elif system == "Windows":
+            win_dir, win_exe = info.get("win_dir", ""), info.get("win_exe", "")
+            for base in [os.environ.get("ProgramFiles", r"C:\Program Files"),
+                         os.environ.get("ProgramFiles(x86)", r"C:\Program Files (x86)")]:
+                if "*" in win_dir:
+                    matches = glob_mod.glob(os.path.join(base, win_dir, win_exe))
+                    if matches: path = matches[0]; break
+                else:
+                    candidate = os.path.join(base, win_dir, win_exe)
+                    if os.path.exists(candidate): path = candidate; break
+        else:
+            exe = info.get("linux_exe")
+            if exe: path = shutil.which(exe)
+        if path:
+            found.append({"name": name, "path": path, "multicolor": name in MULTICOLOR_SLICERS})
+    return found
+
+def open_in_slicer(file_path, slicer_name):
+    info = SLICER_MAP.get(slicer_name, {})
+    system, abs_path = platform.system(), os.path.abspath(file_path)
+    if system == "Darwin":
+        subprocess.run(["open", "-a", info.get("mac_app", slicer_name), abs_path])
+    elif system == "Windows":
+        exe_path = shutil.which(info.get("win_exe", ""))
+        (subprocess.Popen([exe_path, abs_path]) if exe_path else os.startfile(abs_path))
+    else:
+        exe_path = shutil.which(info.get("linux_exe", ""))
+        (subprocess.Popen([exe_path, abs_path]) if exe_path else subprocess.run(["xdg-open", abs_path]))
+    print(f"Opened {abs_path} in {slicer_name}")
+
+slicers = detect_slicers()
+for s in slicers:
+    mc = " [multicolor]" if s["multicolor"] else ""
+    print(f"  - {s['name']}{mc}: {s['path']}")
+```
+
+### White Model Pipeline
+
+| Step | Action | Credits |
+|------|--------|---------|
+| 1 | Generate untextured model | 20 |
+| 2 | Download OBJ | 0 |
+| 3 | Fix OBJ (`fix_obj_for_printing`) | 0 |
+| 4 | Open in slicer | 0 |
+
+Generate with `target_formats` including `"obj"`, then fix for printing:
+
+```python
+# --- Generate for white model printing ---
+# Text to 3D:
+task_id = create_task("/openapi/v2/text-to-3d", {
+    "mode": "preview", "prompt": "USER_PROMPT", "ai_model": "latest",
+    "target_formats": ["obj"],  # Only OBJ for white model printing
+})
+# OR Image to 3D:
+# task_id = create_task("/openapi/v1/image-to-3d", {
+#     "image_url": "URL", "should_texture": False,
+#     "target_formats": ["glb", "obj"],
+# })
+task = poll_task("/openapi/v2/text-to-3d", task_id)
+project_dir = get_project_dir(task_id, "print")
+
+obj_url = task["model_urls"].get("obj") or task["model_urls"].get("glb")
 obj_path = os.path.join(project_dir, "model.obj")
 download(obj_url, obj_path)
 
-# --- Post-process OBJ for slicer compatibility ---
 def fix_obj_for_printing(input_path, output_path=None, target_height_mm=75.0):
-    """
-    Fix OBJ coordinate system, scale, and position for 3D printing slicers.
-    - Rotates from glTF Y-up to slicer Z-up: (x, y, z) -> (x, -z, y)
-    - Scales model to target_height_mm (default 75mm)
-    - Centers model on XY plane (so slicer places it at bed center)
-    - Aligns model bottom to Z=0 (origin at bottom)
-    """
-    if output_path is None:
-        output_path = input_path
-
+    if output_path is None: output_path = input_path
     lines = open(input_path, "r").readlines()
-
-    # Pass 1: rotate vertices Y-up -> Z-up, collect bounds
-    rotated = []
-    min_x, max_x = float("inf"), float("-inf")
-    min_y, max_y = float("inf"), float("-inf")
-    min_z, max_z = float("inf"), float("-inf")
+    rotated, min_x, max_x, min_y, max_y, min_z, max_z = [], float("inf"), float("-inf"), float("inf"), float("-inf"), float("inf"), float("-inf")
     for line in lines:
         if line.startswith("v "):
             parts = line.split()
@@ -577,50 +631,68 @@ def fix_obj_for_printing(input_path, output_path=None, target_height_mm=75.0):
             rotated.append(("v", rx, ry, rz, parts[4:]))
         elif line.startswith("vn "):
             parts = line.split()
-            nx, ny, nz = float(parts[1]), float(parts[2]), float(parts[3])
-            rotated.append(("vn", nx, -nz, ny, []))
+            rotated.append(("vn", float(parts[1]), -float(parts[3]), float(parts[2]), []))
         else:
             rotated.append(("line", line))
-
-    model_height = max_z - min_z
-    scale = target_height_mm / model_height if model_height > 1e-6 else 1.0
-    x_offset = -(min_x + max_x) / 2.0 * scale
-    y_offset = -(min_y + max_y) / 2.0 * scale
-    z_offset = -(min_z * scale)
-
-    # Pass 2: write transformed OBJ
+    h = max_z - min_z
+    s = target_height_mm / h if h > 1e-6 else 1.0
+    xo, yo, zo = -(min_x+max_x)/2*s, -(min_y+max_y)/2*s, -(min_z*s)
     with open(output_path, "w") as f:
         for item in rotated:
             if item[0] == "v":
                 _, rx, ry, rz, extra = item
-                tx = rx * scale + x_offset
-                ty = ry * scale + y_offset
-                tz = rz * scale + z_offset
-                extra_str = " " + " ".join(extra) if extra else ""
-                f.write(f"v {tx:.6f} {ty:.6f} {tz:.6f}{extra_str}\n")
+                e = " "+" ".join(extra) if extra else ""
+                f.write(f"v {rx*s+xo:.6f} {ry*s+yo:.6f} {rz*s+zo:.6f}{e}\n")
             elif item[0] == "vn":
-                _, nx, ny, nz, _ = item
-                f.write(f"vn {nx:.6f} {ny:.6f} {nz:.6f}\n")
+                f.write(f"vn {item[1]:.6f} {item[2]:.6f} {item[3]:.6f}\n")
             else:
                 f.write(item[1])
-
-    print(f"OBJ fixed: rotated Y-up→Z-up, scaled to {target_height_mm:.0f}mm, centered on XY, bottom at Z=0")
+    print(f"OBJ fixed: scaled to {target_height_mm:.0f}mm, Z-up, centered")
 
 fix_obj_for_printing(obj_path, target_height_mm=75.0)
-print(f"\nModel ready for printing: {os.path.abspath(obj_path)}")
+if slicers: open_in_slicer(obj_path, slicers[0]["name"])
 ```
 
-> `target_height_mm`: Default 75mm. Adjust based on user request (e.g. "print at 15cm" → `150.0`).
+### Multicolor Pipeline
 
-**Opening OBJ in slicer:** When the user specifies a slicer (e.g. Bambu Studio, OrcaSlicer, Creality Print, PrusaSlicer, Cura), open the downloaded OBJ file directly:
+| Step | Action | Credits |
+|------|--------|---------|
+| 1 | Generate + texture | 30 |
+| 2 | Multi-color processing | 10 |
+| 3 | Download 3MF | 0 |
+| 4 | Open in multicolor slicer | 0 |
 
-- **macOS**: `subprocess.run(["open", "-a", "<AppName>", obj_path])` — the OS resolves the app location automatically.
-- **Windows / Linux**: Use `shutil.which("<binary_name>")` to find the executable in PATH, then `subprocess.Popen([exe, obj_path])`. If not found, print the file path and instruct manual open.
-- **No slicer specified**: Print the OBJ file path and instruct: File → Import / Open → select .obj file.
+```python
+mc_slicers = [s for s in slicers if s["multicolor"]]
+if not mc_slicers:
+    print("WARNING: No multicolor slicer detected. Install: OrcaSlicer, Bambu Studio, etc.")
 
-### Printability Checklist (Manual Review)
+# --- Generate + texture with target_formats including 3mf ---
+preview_id = create_task("/openapi/v2/text-to-3d", {
+    "mode": "preview", "prompt": "USER_PROMPT", "ai_model": "latest",
+    # No target_formats needed — 3MF comes from multi-color API
+})
+poll_task("/openapi/v2/text-to-3d", preview_id)
 
-> Automated printability analysis API is coming soon.
+refine_id = create_task("/openapi/v2/text-to-3d", {
+    "mode": "refine", "preview_task_id": preview_id, "enable_pbr": True,
+})
+poll_task("/openapi/v2/text-to-3d", refine_id)
+project_dir = get_project_dir(preview_id, "multicolor-print")
+
+# --- Multi-color processing ---
+mc_task_id = create_task("/openapi/v1/print/multi-color", {
+    "input_task_id": refine_id,
+    "max_colors": 4,   # 1-16, ask user
+    "max_depth": 4,     # 3-6, ask user
+})
+task = poll_task("/openapi/v1/print/multi-color", mc_task_id)
+threemf_path = os.path.join(project_dir, "multicolor.3mf")
+download(task["model_urls"]["3mf"], threemf_path)
+if mc_slicers: open_in_slicer(threemf_path, mc_slicers[0]["name"])
+```
+
+### Printability Checklist
 
 | Check | Recommendation |
 |-------|---------------|
@@ -630,15 +702,6 @@ print(f"\nModel ready for printing: {os.path.abspath(obj_path)}")
 | Minimum detail | 0.4mm FDM, 0.05mm resin |
 | Base stability | Flat base or add brim/raft in slicer |
 | Floating parts | All parts connected or printed separately |
-
-### Multi-Color Printing (Manual Guidance)
-
-> Automated multi-color API is coming soon.
-
-1. Use **Retexture** (10 credits) to apply distinct color regions
-2. Download OBJ
-3. In slicer's color painting tool, assign filament colors to regions
-4. Slice with multi-color setup (Bambu AMS, Prusa MMU)
 
 ---
 
@@ -653,6 +716,7 @@ After task succeeds:
    - Preview done → "Want to refine (add textures)?"
    - Model done → "Want to rig this character?"
    - Rigged → "Want to apply a custom animation?"
+   - Any textured model → "Want to 3D print this? Multicolor printing is available!"
    - Any model → "Want to 3D print this?"
 
 ---
@@ -678,9 +742,11 @@ Task `FAILED` messages:
 - **99% stall**: Normal finalization (30–120s). Do NOT interrupt.
 - **Asset retention**: Files deleted after **3 days** (non-Enterprise). Download immediately.
 - **PBR maps**: Must set `enable_pbr: true` explicitly.
-- **Refine**: Only `meshy-5` / `latest` previews support refine; `meshy-6` does not.
+- **Refine**: All models support both preview and refine. Preview and refine ai_model should match.
 - **Rigging**: Humanoid bipedal only, polycount ≤ 300,000.
-- **OBJ for printing**: Always download OBJ for slicer compatibility (3MF not yet available from API). If user specifies a slicer, try to open OBJ directly; otherwise print file path for manual import.
+- **Printing formats**: White model → OBJ with `fix_obj_for_printing()`. Multicolor → 3MF from Multi-Color Print API. Always detect slicer first.
+- **Download format**: Ask the user which format they need before downloading. GLB (viewing), OBJ (printing), 3MF (multicolor), FBX (games), USDZ (AR). Do NOT download all formats.
+- **3MF for multicolor**: Multi-Color Print API outputs 3MF directly — no need to request 3MF from generate/refine. For non-print use cases needing 3MF, pass `"3mf"` in `target_formats`.
 - **Timestamps**: All API timestamps are Unix epoch **milliseconds**.
 
 ---

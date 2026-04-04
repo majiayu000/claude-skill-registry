@@ -1,8 +1,13 @@
 ---
 name: liveview-patterns
-description: "Provide LiveView implementation patterns — real-time notifications with PubSub subscriptions, file upload handlers, reusable modal components, form events with phx-change/phx-submit, async data loading with assign_async, stream-based lists. Use when implementing PubSub notifications, adding file uploads to forms, building LiveView components, or debugging handle_event lifecycle. NOT for writing ExUnit tests (testing), controllers, REST APIs, or Ecto queries."
+description: "LiveView patterns — PubSub, uploads, components, forms, assign_async, streams. Use when building LiveView features or debugging handle_event lifecycle."
 effort: medium
 user-invocable: false
+paths:
+  - "**/*_live.ex"
+  - "**/*_component.ex"
+  - "**/*.sface"
+  - "**/*_channel.ex"
 ---
 
 # LiveView Patterns Reference

@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "A production-ready, batteries-included platform for building, deploying, and scaling AI agents on Kubernetes. Get your agentic workloads running in 5 minutes.",
+  "repo": "raphaelmansuy/k8s-agent-stack",
+  "path": "archive/skills/agent-evaluation-mlflow/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 2,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-raphaelmansuy-k8s-agent-stack",
+  "author": "raphaelmansuy",
+  "source_url": "https://github.com/raphaelmansuy/k8s-agent-stack/blob/main/archive/skills/agent-evaluation-mlflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/raphaelmansuy/k8s-agent-stack/blob/main/archive/skills/agent-evaluation-mlflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

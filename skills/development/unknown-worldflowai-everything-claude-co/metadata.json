@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Claude Code toolkit - agents, commands, skills, rules, and hooks for productive AI-assisted development",
+  "repo": "WorldFlowAI/everything-claude-code",
+  "path": "skills/eval-harness/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-worldflowai-everything-claude-co",
+  "author": "WorldFlowAI",
+  "source_url": "https://github.com/WorldFlowAI/everything-claude-code/blob/main/skills/eval-harness/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WorldFlowAI/everything-claude-code/blob/main/skills/eval-harness/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

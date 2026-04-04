@@ -45,7 +45,7 @@ Two transport types: **stdio** (local process) and **HTTP** (cloud endpoint).
 ## Workflow
 
 ```
-Check Status & Version → Register & Configure → Hooks → Permissions → Migrate → Report
+Check Status & Version → Register & Configure → Verify Runtime Deps → Hooks → Permissions → Migrate → Report
 ```
 
 ### Phase 1: Check Status & Version
@@ -145,6 +145,68 @@ If corrupted: fix via `mcp__hex-line__edit_file` (set_line the arg to `"/c"`).
 | Connection failed after add | WARN, report detail from `claude mcp list` |
 | API key missing (Ref) | Prompt user for key, skip if declined |
 
+
+### Phase 2b: Verify Runtime Dependencies
+
+After registration + connection, verify that MCP packages have all system-level dependencies available. npx installs npm modules, but some packages require system binaries or native compilation that may silently fail.
+
+**Step 1: Identify which servers are connected**
+Reuse Phase 2 verification state. Only check deps for connected hex-* servers.
+
+**Step 2: Verify hex-line-mcp dependencies**
+
+| Dependency | Check | Required | Auto-fix | Fallback |
+|-----------|-------|----------|----------|----------|
+| ripgrep | `rg --version` | Yes | See install table | grep_search fails |
+| git | `git --version` | No | Inform only | `changes` tool disabled |
+
+Ripgrep install by platform:
+
+| Platform | Command |
+|----------|--------|
+| Linux (apt) | `sudo apt-get install -y ripgrep` |
+| Linux (yum) | `sudo yum install -y ripgrep` |
+| macOS | `brew install ripgrep` |
+| Windows (winget) | `winget install BurntSushi.ripgrep.MSVC` |
+| Windows (scoop) | `scoop install ripgrep` |
+| Fallback (npm) | `npm exec --yes -- @vscode/ripgrep-postinstall` |
+
+If `rg --version` fails: ask user whether to auto-install (suggest platform-appropriate command). If user declines, WARN but continue — hex-line will degrade on grep.
+
+**Step 3: Verify hex-graph-mcp dependencies**
+
+| Dependency | Check | Required | Auto-fix | Fallback |
+|-----------|-------|----------|----------|----------|
+| better-sqlite3 | hex-graph connected (Phase 2) | Yes | Needs C++ build tools | hex-graph won't start |
+| basedpyright | `basedpyright-langserver --version` | No | `pip install basedpyright` | Python precise analysis skipped |
+| csharp-ls | `csharp-ls --version` | No | `dotnet tool install -g csharp-ls` | C# precise analysis skipped |
+| phpactor | `phpactor --version` | No | — | PHP precise analysis skipped |
+
+For optional language servers: check availability, report status. Auto-install only if the corresponding runtime is already present (Python for basedpyright, .NET for csharp-ls). Never install a runtime just for a language server.
+
+**Step 4: Verify hex-ssh-mcp dependencies**
+
+No system dependencies (pure JS ssh2). Skip.
+
+**Step 5: Report dependency table**
+
+Print table with columns: Server | Dependency | Status | Action.
+
+| Status | Meaning |
+|--------|---------|
+| OK | Available and functional |
+| INSTALLED | Was missing, auto-installed |
+| WARN | Missing, user declined install |
+| SKIP | Optional, runtime not present |
+| FAIL | Required, cannot install |
+
+**Error handling:**
+
+| Error | Response |
+|-------|----------|
+| Required dep missing + user declines | WARN, continue with degraded functionality |
+| Auto-install fails | WARN, show manual install instructions |
+| Optional dep missing | INFO, note in report |
 ### Phase 3: Hooks & Output Style [CRITICAL]
 
 MUST call `mcp__hex-line__setup_hooks(agent="all")` AFTER all Phase 2 registrations complete (not just hex-line). This ensures the latest hook.mjs and output-style.md from the updated package are installed.
@@ -275,6 +337,7 @@ MCP Configuration:
 7. **Minimize `claude mcp list` calls.** Phase 1 runs it once (discovery). Phase 2 reuses that data. Only Phase 2 Step 4 runs it again (post-mutation verify). Max 2 calls total
 8. **Always check npm drift.** Connected != up to date. Compare npm latest against the newest locally cached npx package version before skipping
 9. **MSYS2 path safety.** On Windows with Git Bash/MSYS2, always prefix `claude mcp add` with `MSYS_NO_PATHCONV=1`. After registration, verify `args[0]` in `.claude.json` is `"/c"` not `"C:/"`. Fix inline if corrupted.
+10. **Verify runtime deps after install.** After Phase 2 registration, check system binaries (rg, git) and optional language servers. Auto-install only with user consent. Never install a runtime just for a language server.
 
 ## Anti-Patterns
 
@@ -289,6 +352,8 @@ MCP Configuration:
 | Assume connected = up to date | Check `npm view` version vs newest cached npx package version |
 | Call `setup_hooks` before all packages re-registered | Call `setup_hooks(agent="all")` AFTER all Phase 2 registrations complete |
 | Run `claude mcp add` without MSYS_NO_PATHCONV on Windows bash | Always `MSYS_NO_PATHCONV=1 claude mcp add ...` or verify+fix args after |
+| Skip runtime dependency verification | Always run Phase 2b after registration to catch missing system binaries |
+| Auto-install system packages without asking | Ask user before running platform package managers (apt, brew, winget) |
 
 ---
 
@@ -297,6 +362,7 @@ MCP Configuration:
 - [ ] MCP packages installed and versions verified against npm registry (Phase 1)
 - [ ] Missing servers registered and verified connected (Phase 2)
 - [ ] Outdated servers re-registered with latest version (Phase 2)
+- [ ] Runtime dependencies verified: ripgrep available, optional deps reported (Phase 2b)
 - [ ] Hooks installed (PreToolUse, PostToolUse, SessionStart) and `disableAllHooks: false` (Phase 3)
 - [ ] Output style installed (Phase 3)
 - [ ] Permissions granted for all configured servers (Phase 7)
@@ -306,5 +372,5 @@ MCP Configuration:
 
 ---
 
-**Version:** 1.4.1
-**Last Updated:** 2026-03-25
+**Version:** 1.5.0
+**Last Updated:** 2026-04-01

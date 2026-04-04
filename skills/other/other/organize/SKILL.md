@@ -14,7 +14,7 @@ Launch the Claude Code Organizer dashboard to visually manage all your customiza
 1. Run the organizer server:
 
 ```bash
-npx @mcpware/claude-code-organizer $ARGUMENTS
+npx @mcpware/claude-code-organizer@latest $ARGUMENTS
 ```
 
 2. Tell the user the dashboard is opening in their browser at `http://localhost:3847` (or the next available port).

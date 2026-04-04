@@ -225,6 +225,8 @@ Required payload semantics:
 
 Write the summary to the provided artifact path or return the same envelope in structured output.
 
+**Standalone default (no coordinator):** Generate `run_id` = `standalone-ln-511-{YYYYMMDD}-{short_hash}`, write summary JSON to `.hex-skills/runtime-artifacts/runs/{run_id}/quality-worker/ln-511.json`. NEVER write artifacts to the project root directory.
+
 ## Definition of Done
 
 - [ ] Story and Done implementation tasks loaded (test tasks excluded)

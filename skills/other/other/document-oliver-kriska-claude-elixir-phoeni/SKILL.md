@@ -1,6 +1,6 @@
 ---
 name: phx:document
-description: Write @moduledoc and @doc annotations into Elixir/Phoenix source files and update READMs. Use ONLY when the user explicitly asks to add, write, or generate @moduledoc/@doc for specific modules, contexts, or schemas they implemented. Do NOT use when fetching library docs from hex.pm, scanning for missing documentation, reviewing code, or giving feedback about documentation quality.
+description: Write @moduledoc and @doc annotations into Elixir source files. Use ONLY when the user explicitly asks to generate documentation for modules, contexts, or schemas.
 effort: low
 argument-hint: [plan-file OR feature-name]
 ---
@@ -38,10 +38,7 @@ Generate documentation for newly implemented features.
 
 ### Step 0: Pre-check (avoid no-op runs)
 
-```bash
-# Check if any NEW .ex files exist in recent commits
-git diff --name-only HEAD~5 | grep '\.ex$' | head -20
-```
+Run `git diff --name-only HEAD~5 | grep '\.ex$' | head -20` to check for new `.ex` files.
 
 If NO new `.ex` files were added (only modifications), skip the full
 audit and report: "No new modules — documentation coverage unchanged."

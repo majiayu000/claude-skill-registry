@@ -5,16 +5,22 @@ description: "Update installed Turbo skills from the local repo with a dynamic c
 
 # Update Turbo
 
-Fetch the latest update instructions from the Turbo repo and follow them.
+Read the latest update instructions from the local repo and follow them.
 
-## Step 1: Fetch Instructions
+## Step 1: Read Instructions
 
-Use `WebFetch` to retrieve the update instructions:
+Read `~/.turbo/config.json` to determine `repoMode`. Determine the upstream remote:
 
-```
-https://raw.githubusercontent.com/tobihagemann/turbo/main/UPDATE.md
+- Clone or source: `origin`
+- Fork: `upstream`
+
+Fetch the remote, then read the latest UPDATE.md:
+
+```bash
+git -C ~/.turbo/repo fetch <remote>
+git -C ~/.turbo/repo show <remote>/main:UPDATE.md
 ```
 
 ## Step 2: Follow Instructions
 
-Follow the fetched UPDATE.md instructions from start to finish.
+Follow the fetched UPDATE.md instructions from start to finish. The fetch from Step 1 satisfies Phase 1 Step 1's fetch requirement.

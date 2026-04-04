@@ -11,15 +11,15 @@ Output files:
 - featured.json - Top 100 skills by stars
 """
 
-import json
-import gzip
-from pathlib import Path
-from datetime import datetime
-from typing import Any, Dict, List, Optional
 import argparse
+import gzip
+import json
 import logging
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, List, Optional
 
-from utils import get_repo_suffix, extract_description, load_metadata
+from utils import extract_description, get_repo_suffix, load_metadata
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 logger = logging.getLogger(__name__)
@@ -42,6 +42,11 @@ CATEGORY_CODES = {
 
 # Known category directories (for scanning)
 KNOWN_CATEGORIES = set(CATEGORY_CODES.keys()) | {"data", "other"}
+
+
+def utc_now_isoformat() -> str:
+    """Return a stable UTC timestamp with trailing Z."""
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
 
 def truncate_text(text: Any, max_length: int) -> str:
@@ -214,7 +219,7 @@ def build_search_index(
 
     # Build minimal search index
     search_index = {
-        "v": datetime.utcnow().strftime("%Y-%m-%d"),
+        "v": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
         "t": len(skills),
         "s": []
     }
@@ -295,7 +300,7 @@ def build_search_index(
 
     # Write category indexes
     category_index = {
-        "updated_at": datetime.utcnow().isoformat() + "Z",
+        "updated_at": utc_now_isoformat(),
         "categories": []
     }
 
@@ -306,7 +311,7 @@ def build_search_index(
             "category": category,
             "code": get_category_code(category),
             "count": len(cat_skills),
-            "updated_at": datetime.utcnow().isoformat() + "Z",
+            "updated_at": utc_now_isoformat(),
             "skills": cat_skills
         }
 
@@ -328,7 +333,7 @@ def build_search_index(
 
     # Write featured
     featured_data = {
-        "updated_at": datetime.utcnow().isoformat() + "Z",
+        "updated_at": utc_now_isoformat(),
         "count": len(featured_skills),
         "skills": featured_skills
     }
@@ -338,19 +343,19 @@ def build_search_index(
     logger.info(f"  featured.json: {len(featured_skills)} skills")
 
     # Write stats
-    collections_count_path = output_dir / "collections.json"
-    collection_count = 0
-    if collections_count_path.exists():
+    plugins_count_path = output_dir / "plugins.json"
+    plugin_count = 0
+    if plugins_count_path.exists():
         try:
-            with open(collections_count_path, 'r', encoding='utf-8') as f:
-                collection_count = json.load(f).get("count", 0)
+            with open(plugins_count_path, 'r', encoding='utf-8') as f:
+                plugin_count = json.load(f).get("count", 0)
         except Exception:
             pass
 
     stats = {
-        "updated_at": datetime.utcnow().isoformat() + "Z",
+        "updated_at": utc_now_isoformat(),
         "total_skills": len(skills),
-        "total_collections": collection_count,
+        "total_plugins": plugin_count,
         "raw_skill_count": raw_skill_count,
         "dedup_skill_count": dedup_skill_count,
         "categories": len(categories),
@@ -378,7 +383,7 @@ def build_search_index(
     with open(output_dir / "stats.json", 'w', encoding='utf-8') as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
 
-    logger.info(f"\nIndex build complete!")
+    logger.info("\nIndex build complete!")
     logger.info(f"  Total skills: {len(skills)}")
     if raw_skill_count is not None:
         logger.info(f"  Raw skill count: {raw_skill_count}")
@@ -404,49 +409,49 @@ def load_from_registry(registry_path: Path) -> List[Dict]:
     return skills
 
 
-def load_collections_from_registry(registry_path: Path) -> List[Dict]:
-    """Load collections from registry.json."""
+def load_plugins_from_registry(registry_path: Path) -> List[Dict]:
+    """Load plugins from registry.json."""
     if not registry_path.exists():
         return []
     try:
         with open(registry_path, 'r', encoding='utf-8') as f:
             registry = json.load(f)
-        return registry.get('collections', [])
+        return registry.get('plugins', [])
     except Exception:
         return []
 
 
-def load_collections_from_source(sources_dir: Path) -> List[Dict]:
-    """Load collections from sources/collections.json."""
-    collections_path = sources_dir / "collections.json"
-    if not collections_path.exists():
+def load_plugins_from_source(sources_dir: Path) -> List[Dict]:
+    """Load plugins from sources/plugins.json."""
+    plugins_path = sources_dir / "plugins.json"
+    if not plugins_path.exists():
         return []
     try:
-        with open(collections_path, 'r', encoding='utf-8') as f:
+        with open(plugins_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        return data.get('collections', [])
+        return data.get('plugins', [])
     except Exception:
         return []
 
 
-def build_collections_index(
-    collections: List[Dict],
+def build_plugins_index(
+    plugins: List[Dict],
     output_dir: Path,
 ) -> None:
-    """Write collections.json to output directory."""
-    if not collections:
+    """Write plugins.json to output directory."""
+    if not plugins:
         return
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    collections_data = {
-        "updated_at": datetime.utcnow().isoformat() + "Z",
-        "count": len(collections),
-        "collections": collections,
+    plugins_data = {
+        "updated_at": utc_now_isoformat(),
+        "count": len(plugins),
+        "plugins": plugins,
     }
-    with open(output_dir / "collections.json", 'w', encoding='utf-8') as f:
-        json.dump(collections_data, f, ensure_ascii=False, indent=2)
+    with open(output_dir / "plugins.json", 'w', encoding='utf-8') as f:
+        json.dump(plugins_data, f, ensure_ascii=False, indent=2)
 
-    logger.info(f"  collections.json: {len(collections)} collections")
+    logger.info(f"  plugins.json: {len(plugins)} plugins")
 
 
 def main():
@@ -492,16 +497,16 @@ def main():
         logger.error("No skills found!")
         exit(1)
 
-    # Load collections
+    # Load plugins
     sources_dir = Path(__file__).parent.parent / "sources"
-    collections = load_collections_from_source(sources_dir)
-    if not collections:
-        collections = load_collections_from_registry(registry_path)
-    if collections:
-        logger.info(f"Loaded {len(collections)} collections")
+    plugins = load_plugins_from_source(sources_dir)
+    if not plugins:
+        plugins = load_plugins_from_registry(registry_path)
+    if plugins:
+        logger.info(f"Loaded {len(plugins)} plugins")
 
-    # Build collections index first (so stats can read it)
-    build_collections_index(collections, output_dir)
+    # Build plugins index first (so stats can read it)
+    build_plugins_index(plugins, output_dir)
 
     build_search_index(
         skills,

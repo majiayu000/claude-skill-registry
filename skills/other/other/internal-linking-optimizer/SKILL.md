@@ -1,13 +1,15 @@
 ---
 name: internal-linking-optimizer
-description: 'Optimize internal links: site architecture, authority distribution, orphan pages, crawl depth. "Site structure is messy" / "内链怎么做" / "孤立页面". 内链优化/站内链接/网站架构/权重 内部リンク最適化 내부링크 enlaces internos'
-version: "5.1.0"
+description: 'Optimize internal links: site architecture, authority distribution, orphan pages, crawl depth analysis. 内链优化/站内架构'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when improving internal link structure, anchor text distribution, orphan pages, or site architecture."
+argument-hint: "<URL or sitemap>"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "low"
   tags:
     - seo

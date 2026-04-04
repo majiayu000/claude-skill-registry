@@ -7,7 +7,7 @@ description: 'Validates Conductor project artifacts for completeness,
   before implementation to verify project context.
 
   '
-risk: unknown
+risk: safe
 source: community
 date_added: '2026-02-27'
 ---

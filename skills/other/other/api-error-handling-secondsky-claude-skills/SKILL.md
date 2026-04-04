@@ -1,6 +1,7 @@
 ---
 name: api-error-handling
 description: Implements standardized API error responses with proper status codes, logging, and user-friendly messages. Use when building production APIs, implementing error recovery patterns, or integrating error monitoring services.
+license: MIT
 ---
 
 # API Error Handling

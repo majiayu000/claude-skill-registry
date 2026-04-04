@@ -151,8 +151,7 @@ Every prompt must include:
 
 - **One Aspect per knesset** — use different names (Athirat, Qedeshot, Tiamat, Kaptaru, Elat, Ma'at, Manat) for concurrent knessets within a knossot
 - **No duplicate names** within a team
-- **Leads use Opus, workers use Sonnet** — balance capability with cost
-- **Haiku for lightweight research** — fast and cheap for Explore agents
+- **Leads use Opus, workers use Sonnet** — balance capability with cost. No Haiku in the swarm—Sonnet is the floor for all daborot, including Explore agents and testers. Research quality degrades too much at the Haiku tier to justify the cost savings.
 
 **Tool Preferences:**
 
@@ -184,6 +183,37 @@ TeamDelete    → clean up (after all teammates shutdown)
 
 ---
 
+## TeammateIdle Auto-Reassignment
+
+When a teammate finishes its assigned task, it goes idle. By default it stops. The `TeammateIdle` hook (v2.1.80+) can intercept this and redirect the teammate to unclaimed tasks—keeping the swarm working until the task list is empty.
+
+**Install the hook** in `settings.json`:
+
+```json
+{
+  "hooks": {
+    "TeammateIdle": [{
+      "type": "command",
+      "command": "bash ~/.claude/skills/minoan-swarm/scripts/teammate-idle-reassign.sh"
+    }]
+  }
+}
+```
+
+**How it works:** The script reads `~/.claude/tasks/{team-name}/*.json` directly, counts unclaimed pending tasks (status=pending, no owner, not blocked), and if any exist, returns exit code 2 with a message telling the teammate to claim the next one. If all tasks are claimed or completed, it exits 0 and the teammate stops gracefully.
+
+**When to use:**
+- Self-claiming swarm patterns where you create many independent tasks and want workers to churn through them
+- Phase completion teams where task count exceeds teammate count
+- Any knesset where you want maximum task throughput without manual lead intervention
+
+**When NOT to use:**
+- Pipeline templates with strict ordering (dependencies handle sequencing)
+- Small teams where the lead actively coordinates
+- When you want teammates to report back before taking more work
+
+---
+
 ## State Management
 
 - Use the shared task list (TaskCreate/TaskUpdate) for structured coordination state
@@ -198,7 +228,7 @@ TeamDelete    → clean up (after all teammates shutdown)
 After launching a team, confirm it is working:
 
 1. `TaskList` — verify tasks are being claimed and progressing
-2. Check teammate output via `Shift+Up/Down` (in-process) or pane clicks (tmux)
+2. Check teammate output via `Shift+Down` to cycle (in-process) or pane clicks (tmux)
 3. The lead receives automatic idle notifications when teammates finish turns
 4. Blocked tasks auto-unblock when their dependencies complete
 

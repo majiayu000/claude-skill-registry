@@ -1,13 +1,15 @@
 ---
 name: keyword-research
-description: 'Find high-value SEO keywords: search volume, difficulty, intent, topic clusters. "What should I write about" / "找选题" / "帮我挖词". 关键词研究/长尾词/搜索量/内容选题 キーワード調査/検索ボリューム 키워드분석/검색량 investigación palabras clave'
-version: "5.1.0"
+description: 'Find high-value SEO keywords: search volume, difficulty, intent classification, topic clusters. 关键词研究/内容选题'
+version: "6.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+when_to_use: "Use when starting keyword research for a new page, topic, or campaign. Also when the user asks about search volume, keyword difficulty, topic clusters, long-tail keywords, or what to write about."
+argument-hint: "<topic or seed keyword> [market/language]"
 metadata:
   author: aaron-he-zhu
-  version: "5.1.0"
+  version: "6.0.0"
   geo-relevance: "medium"
   tags:
     - seo
@@ -197,7 +199,9 @@ Proceed with the full analysis using provided data. Note in the output which met
 
 When a user requests keyword research:
 
-1. **Understand the Context**
+At the start of each phase, announce: **[Phase X/8: Name]** so the user can track progress.
+
+### Phase 1/8: Scope
 
    Ask clarifying questions if not provided:
    - What is your product/service/topic?
@@ -207,7 +211,7 @@ When a user requests keyword research:
    - Any specific geographic targeting?
    - Preferred language?
 
-2. **Generate Seed Keywords**
+### Phase 2/8: Discover
 
    Start with:
    - Core product/service terms
@@ -216,7 +220,7 @@ When a user requests keyword research:
    - Audience-specific terms
    - Industry terminology
 
-3. **Expand Keyword List**
+### Phase 3/8: Variations
 
    For each seed keyword, generate variations:
    
@@ -245,7 +249,7 @@ When a user requests keyword research:
    - [keyword] guide
    ```
 
-4. **Classify Search Intent**
+### Phase 4/8: Classify
 
    Categorize each keyword:
 
@@ -256,7 +260,7 @@ When a user requests keyword research:
    | Commercial | best, review, vs, compare | "best SEO tools [current year]" | Comparison posts, reviews |
    | Transactional | buy, price, discount, order | "buy SEO software" | Product pages, pricing |
 
-5. **Assess Keyword Difficulty**
+### Phase 5/8: Score
 
    Score each keyword (1-100 scale):
 
@@ -281,7 +285,7 @@ When a user requests keyword research:
    - New or emerging topics
    ```
 
-6. **Calculate Opportunity Score**
+#### Opportunity Score
 
    Formula: `Opportunity = (Volume × Intent Value) / Difficulty`
 
@@ -302,7 +306,7 @@ When a user requests keyword research:
    | Research | Low | Low | Low | ⭐⭐ |
    ```
 
-7. **Identify GEO Opportunities**
+### Phase 6/8: GEO-Check — AI Answer Overlap
 
    Keywords likely to trigger AI responses:
    
@@ -323,7 +327,7 @@ When a user requests keyword research:
    - Low commercial intent
    ```
 
-8. **Create Topic Clusters**
+### Phase 7/8: Cluster
 
    Group keywords into content clusters:
 
@@ -352,9 +356,18 @@ When a user requests keyword research:
    [Continue for all cluster keywords...]
    ```
 
-9. **Generate Output Report**
+### Phase 8/8: Deliver
 
    Produce a report containing: Executive Summary, Top Keyword Opportunities (Quick Wins, Growth, GEO), Topic Clusters, Content Calendar, and Next Steps.
+
+   **Quality bar** — every recommendation must include at least one specific number. If it reads like the left column, rewrite it before including.
+
+   | ❌ Generic (rewrite before including) | ✅ Actionable |
+   |---|---|
+   | "Target long-tail keywords for better results" | "Target 'project management for nonprofits' (vol: 320, KD: 22) — no DR>40 sites in top 10" |
+   | "This keyword has good potential" | "Opportunity 8.4: vol 4,800, KD 28, transactional intent — gap analysis shows no content updated since 2023 in top 5" |
+   | "Consider creating content around this topic" | "Write '[Tool A] vs [Tool B] for small teams' — 1,200/mo searches, current #1 is a 2022 article with 12 backlinks" |
+   | "Optimize your page for this keyword" | "Add primary keyword to H1 (currently missing), write a 40-word direct answer in paragraph 1, add 3 internal links from your /blog/ cluster" |
 
    > **Reference**: See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/references/example-report.md) for the full report template and example.
 

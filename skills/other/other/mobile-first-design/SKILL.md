@@ -1,6 +1,7 @@
 ---
 name: mobile-first-design
 description: Designs responsive interfaces starting from mobile screens with progressive enhancement for larger devices. Use when building responsive websites, optimizing for mobile users, or implementing adaptive layouts.
+license: MIT
 ---
 
 # Mobile-First Design

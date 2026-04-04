@@ -1,33 +1,9 @@
 ---
-name: workers-ci-cd
+name: cloudflare-workers-ci-cd
 description: Complete CI/CD guide for Cloudflare Workers using GitHub Actions and GitLab CI. Use for automated testing, deployment pipelines, preview environments, secrets management, or encountering deployment failures, workflow errors, environment configuration issues.
-keywords:
-  - cloudflare-workers
-  - workers-ci-cd
-  - github-actions
-  - gitlab-ci
-  - continuous-integration
-  - continuous-deployment
-  - automated-testing
-  - deployment-pipeline
-  - preview-deployments
-  - staging-deployment
-  - production-deployment
-  - secrets-management
-  - wrangler-deploy
-  - environment-variables
-  - github-secrets
-  - deployment-verification
-  - rollback-strategy
-  - blue-green-deployment
-  - canary-deployment
-  - deployment-gates
-  - ci-cd-best-practices
-  - workflow-automation
-  - pull-request-previews
-  - branch-deployments
 license: MIT
 metadata:
+  keywords: "cloudflare-workers, workers-ci-cd, github-actions, gitlab-ci, continuous-integration, continuous-deployment, automated-testing, deployment-pipeline, preview-deployments, staging-deployment, production-deployment, secrets-management, wrangler-deploy, environment-variables, github-secrets, deployment-verification, rollback-strategy, blue-green-deployment, canary-deployment, deployment-gates, ci-cd-best-practices, workflow-automation, pull-request-previews, branch-deployments"
   version: "1.0.0"
   last_verified: "2025-01-27"
   production_tested: true

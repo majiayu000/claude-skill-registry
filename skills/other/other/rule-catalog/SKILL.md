@@ -15,6 +15,7 @@ tags:
 dependencies: []
 estimated_tokens: 1500
 complexity: beginner
+model_hint: fast
 provides:
   patterns:
   - rule-installation

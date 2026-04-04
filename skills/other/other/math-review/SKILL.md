@@ -4,6 +4,8 @@ description: 'Use this skill for mathematical code verification. Use when review
   math-heavy code, verifying algorithm correctness, checking numerical stability,
   aligning with mathematical standards. Do not use when general algorithm review -
   use architecture-review. DO NOT use when: performance optimization - use parseltongue:python-performance.'
+version: 1.7.1
+alwaysApply: false
 category: specialized
 tags:
 - math
@@ -22,6 +24,7 @@ usage_patterns:
 - derivation-verification
 - stability-assessment
 complexity: advanced
+model_hint: deep
 estimated_tokens: 200
 progressive_loading: true
 dependencies:

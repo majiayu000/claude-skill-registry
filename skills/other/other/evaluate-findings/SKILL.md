@@ -1,42 +1,50 @@
 ---
 name: evaluate-findings
-description: "Critically assess external feedback (code reviews, AI reviewers, PR comments) and decide which suggestions to apply using a confidence-based framework with adversarial verification. Use when the user asks to \"evaluate findings\", \"assess review comments\", \"triage review feedback\", \"evaluate review output\", or \"filter false positives\"."
+description: "Critically assess external feedback (code reviews, AI reviewers, PR comments) and decide which suggestions to apply using adversarial verification. Use when the user asks to \"evaluate findings\", \"assess review comments\", \"triage review feedback\", \"evaluate review output\", or \"filter false positives\"."
 ---
 
 # Evaluate Findings
 
-Confidence-based framework for evaluating external feedback (code reviews, AI suggestions, PR comments). Spawn a Devil's Advocate subagent to critically challenge non-trivial claims using research tools. Triage and classify findings — do not apply fixes. Return results for the main agent to act on.
+Assess external feedback (code reviews, AI suggestions, PR comments) with adversarial verification. Triage findings into binary verdicts. Do not apply fixes.
 
 ## Step 1: Assess Each Finding
 
 For each finding:
 
 1. **Read the referenced code** at the mentioned location — include the full function or logical block, not just the flagged line
-2. **Verify the claim** against the actual code — does the issue genuinely exist?
-3. **Assign confidence**:
+2. **Check for early exits:**
+   - If the finding references code that no longer exists or has since changed, skip it and note that the code has diverged.
+   - If two findings conflict with each other, skip both and document the conflict.
+3. **Determine scope** — clarify whether the issue was introduced by the PR/changeset or is pre-existing. Present this distinction explicitly so the user can decide whether it belongs in this PR's scope.
+   - Pre-existing issues in earlier commits on the same feature branch are in-scope by default — the entire branch is one coherent unit of work.
+   - Out-of-scope findings that are genuinely useful and have low blast radius should be accepted. Only skip out-of-scope findings when the change is disproportionate to the current work.
+4. **Verify the claim** against the actual code — does the issue genuinely exist?
+5. **Assign a verdict and confidence:**
 
-| Level | Criteria | Verdict |
-|-------|----------|---------|
-| **High** (>80%) | Clear bug, typo, missing check, obvious improvement, style violation matching project conventions | Accept |
-| **Medium** (50-80%) | Likely valid but involves judgment calls or unclear project intent | Accept with caveats |
-| **Low** (<50%) | Subjective preference, requires domain knowledge, might break things, reviewer may be wrong | Skip |
+| Verdict | Criteria |
+|---------|----------|
+| **Apply** | The finding is real: clear bug, missing check, genuine improvement, style violation matching project conventions |
+| **Skip** | False positive, subjective preference, reviewer is wrong, or change would be disproportionate |
+| **Escalate** | Genuinely ambiguous: behavior might be intentional, involves product intent, or requires domain knowledge the agent lacks |
+
+Also assign an internal confidence level — **High**, **Medium**, or **Low** — reflecting how certain you are about the verdict. Confidence is used solely to route findings to the Devil's Advocate in Step 2. It does not appear in the output.
+
+**Escalate guidance:** When a finding questions whether behavior is intentional and neither docs, specs, nor code comments clarify the intent, assign Escalate. Do not autonomously accept or reject findings that hinge on product intent. If a counterpart implementation exists elsewhere, suggest checking it for consistency.
+
+**Verdict guidance:**
+
+- Never auto-dismiss findings about security defaults, permission escalation, or fail-open vs fail-closed behavior. Always surface these even if the behavior appears intentional.
+- Readability and clarity improvements that genuinely make code cleaner are valid. Do not auto-classify cosmetic changes as subjective.
+- Be skeptical of "defensive coding" suggestions that wrap natural code in verbose guards without evidence of real-world failures.
+- Weight reviewer authority. Feedback from trusted reviewers (repository maintainers or admins) should be treated with higher credibility even when phrased softly.
 
 ## Step 2: Devil's Advocate
 
-After the initial assessment, spawn a subagent to critically challenge findings from a different angle using research tools.
+After the initial assessment, challenge uncertain findings from a different angle.
 
-### Spawn Condition
+Spawn when any finding has **Medium** or **Low** confidence. Send only those findings to the subagent. High-confidence findings pass through unchallenged. Skip this step entirely if all findings are High confidence.
 
-Spawn when there are **3 or more findings scored Medium or higher** that involve non-trivial claims — API behavior, correctness arguments, performance assertions, or anything not verifiable by reading the code alone.
-
-**Skip** when all findings are clear-cut (typos, missing null checks, style issues) or total count is 1-2 trivial items.
-
-### Subagent Instructions
-
-Launch a single subagent (`model: "opus"`, do not set `run_in_background`). Provide:
-
-1. The challenge-worthy findings with file locations, claims, and initial verdicts
-2. Instructions to challenge each finding — try to prove it wrong, or confirm it with evidence
+Launch a single subagent (`model: "opus"`, do not set `run_in_background`). Provide the Medium/Low-confidence findings with their file locations, claims, and initial verdicts. Instruct the subagent to challenge each finding: try to prove it wrong, or confirm it with evidence.
 
 The subagent picks research tools based on claim type:
 
@@ -48,7 +56,7 @@ The subagent picks research tools based on claim type:
 | Best practice or ecosystem claim | WebSearch |
 | Migration or changelog lookup | WebSearch → WebFetch |
 
-Use whatever documentation tools are available — MCP servers, relevant skills, WebSearch/WebFetch as fallback. The specific tools vary by project setup.
+Use whatever documentation tools are available. The specific tools vary by project setup.
 
 **Budget:** max 2 research actions per finding. If the first action is conclusive, skip the second.
 
@@ -64,45 +72,26 @@ The subagent returns per finding:
 
 Merge subagent results with the initial assessment:
 
-- **Confirmed**: verdict stands, confidence may increase. Note the evidence source.
-- **Disputed**: if originally Accepted → downgrade to Skip or flag with both perspectives. Never silently override — show the disagreement.
+- **Confirmed**: verdict stands. Note the evidence source.
+- **Disputed**: if originally Apply, downgrade to Skip or Escalate. Show both perspectives.
 - **Inconclusive**: verdict stands, note the uncertainty.
 
-Findings not investigated by the subagent keep their original assessment unchanged.
+Findings not investigated by the subagent keep their original verdict.
 
-For accepted findings (high/medium confidence), document what the issue is and where. For medium confidence, note assumptions and risks. For skipped findings (low confidence), document why the suggestion was not accepted and what additional context would be needed to reconsider.
+For Apply findings, document the issue and location. For Escalate findings, note what information would resolve the ambiguity. For Skip findings, document why.
 
 ## Step 4: Format Output
 
-Summarize the evaluated findings in a table.
+Summarize the evaluated findings in a table:
 
-When the Devil's Advocate subagent was **not** spawned:
-
-| File | Issue | Confidence | Verdict |
-|------|-------|------------|---------|
-
-When the subagent ran, add an Investigated column:
-
-| File | Issue | Confidence | Verdict | Investigated |
-|------|-------|------------|---------|--------------|
+| File | Issue | Verdict | Investigated |
+|------|-------|---------|--------------|
 
 Where Investigated shows:
 - *(empty)* — not investigated by subagent
 - **Confirmed** (source) — subagent found supporting evidence
 - **Disputed: [reason]** — subagent found counter-evidence
 
-For disputed findings, add a callout below the table showing both perspectives.
+For disputed findings, add a callout below the table showing both perspectives. For each finding, indicate scope in the Issue column (e.g., "Pre-existing:" prefix).
 
 The caller determines what to do with the evaluated findings.
-
-## Rules
-
-- Never auto-dismiss findings about security defaults, permission escalation, or fail-open vs fail-closed behavior just because a plan or implementation intent specifies different behavior. Plans can have incorrect assumptions about what the safe default should be. Always surface these findings to the user even if you believe the behavior was intentional.
-- If a finding references code that no longer exists or has since changed, skip it and note that the code has diverged.
-- If two findings conflict with each other, skip both and document the conflict.
-- For each finding, clarify whether the issue was introduced by the PR/changeset or is pre-existing. Present this distinction explicitly so the user can decide whether it belongs in this PR's scope.
-- Pre-existing issues in earlier commits on the same feature branch are in-scope by default — the entire branch is one coherent unit of work. Do not auto-skip findings just because they touch code from a prior commit in the branch.
-- Out-of-scope findings that are genuinely useful and have low blast radius (small, contained changes) should be accepted. Only skip out-of-scope findings when the change is disproportionate to the current work.
-- Readability and clarity improvements that genuinely make code cleaner or more consistent are valid findings. Do not auto-classify cosmetic changes as subjective preference. Evaluate each on its merit.
-- Be skeptical of "defensive coding" suggestions that wrap natural code in verbose guards without evidence of real-world failures. These often reduce readability for marginal safety. Score as Low confidence unless the reviewer provides concrete evidence that the unguarded form actually fails.
-- Weight reviewer authority when scoring confidence. Feedback from trusted reviewers (repository maintainers or admins) should be scored Medium or higher even when phrased softly, as they often use indirect language for change requests.

@@ -80,6 +80,8 @@ When DELIVER implementation reveals gaps or contradictions in prior waves:
 
 ## Orchestration Flow
 
+Phases use decimal numbering (0, 0.5, 1, 1.5, 1.6) for pre-roadmap setup. Main phases start at Phase 1 (Roadmap), Phase 2 (Execute), Phase 3 (Refactor), Phase 4 (Review), Phase 5 (Mutation), Phase 6 (Integrity), Phase 7 (Finalize), Phase 8 (Retrospective), Phase 9 (Report).
+
 ```
 INPUT: "{feature-description}"
   |
@@ -121,7 +123,16 @@ INPUT: "{feature-description}"
         test_file and scenario_name fields in each roadmap step from the distilled acceptance tests.
         Each step maps to one acceptance scenario (1 Step = 1 Scenario = 1 TDD Cycle).
      c. Automated quality gate (see below)
-     d. @nw-software-crafter-reviewer reviews (read ~/.claude/skills/nw-review/SKILL.md)
+     c2. Roadmap integrity verification (HARD GATE):
+         PYTHONPATH=$HOME/.claude/lib/python $(command -v python3 || command -v python) -m des.cli.verify_deliver_integrity docs/feature/{feature-id}/deliver/ --roadmap-only
+         Verify: project_id, created_at, total_steps, phases fields present. Step IDs match NN-NN format.
+         BLOCK if any format error. Fix roadmap BEFORE dispatching any crafter.
+         This catches format issues early — NOT at Phase 6 where they block finalization after hours of work.
+     d. @nw-acceptance-designer-reviewer reviews roadmap:
+        - "Does EVERY DISTILL scenario have a corresponding step? Flag orphan scenarios as BLOCKER."
+        - "Does any step cover 8+ scenarios? Tag as @sizing-review-needed."
+        - "Are walking skeleton scenarios mapped to Phase 1 steps (not Phase N)?"
+        Read ~/.claude/skills/nw-review/SKILL.md for review protocol.
      e. Retry once on rejection → stop for manual intervention
   |
   3. Phase 2 — Execute All Steps
@@ -142,6 +153,23 @@ INPUT: "{feature-description}"
         tests (tests matching the feature path, e.g., tests/acceptance/{feature-id}/).
         If any acceptance test fails, fix the issue before proceeding to the next step.
         Do NOT skip or defer failing tests. This applies to EVERY individual step, not just the final one.
+  |
+  3.5. Post-Merge Integration Gate (Hard Gate)
+     AFTER all steps reach COMMIT/PASS and BEFORE Phase 3 (Refactoring):
+     a. Run the FULL acceptance test suite for the feature:
+        pipenv run pytest tests/acceptance/{feature-id}/ -v --tb=short
+     b. Run acceptance tests against EVERY environment in the DEVOPS fixture matrix:
+        - Read docs/feature/{feature-id}/devops/environments.yaml
+        - For EACH environment entry, execute the test suite with that environment's preconditions active
+        - If environments.yaml is missing, use defaults: clean, with-pre-commit, with-stale-config
+     c. BLOCK the merge if ANY acceptance test fails in ANY environment.
+     d. On failure:
+        - Identify the failing environment + test combination
+        - Re-dispatch the crafter to fix the failure (new TDD cycle for the regression)
+        - Re-run the FULL gate after the fix
+     e. On success: record gate passage in execution-log.json:
+        {"gate": "post-merge-integration", "status": "PASS", "environments_tested": ["clean", "with-pre-commit", "with-stale-config"], "timestamp": "ISO-8601"}
+     f. Escalation: If the same test fails in 2+ environments after one fix attempt, STOP and report to the user. Do NOT retry indefinitely.
   |
   4. Phase 3 — Complete Refactoring (L1-L4) [SKIP if rigor.refactor_pass = false]
      a. Collect modified files: git diff --name-only {base-commit}..HEAD -- '*.py' | sort -u

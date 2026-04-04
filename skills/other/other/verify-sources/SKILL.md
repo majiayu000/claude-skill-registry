@@ -33,8 +33,8 @@ You facilitate the **human source verification gate** — the critical checkpoin
 
 ## Step 2: Identify Pending Tracks
 
-1. Call `get_pending_verifications()` — returns all pending tracks grouped by album
-2. Filter to the target album
+1. Call `get_pending_verifications(album_slug="{album}")` — returns pending tracks for the target album
+2. If no album specified, call `get_pending_verifications()` for all albums
 
 If no pending tracks:
 ```

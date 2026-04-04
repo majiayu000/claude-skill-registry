@@ -69,14 +69,7 @@ Use n1-check skill before shipping list views.
 
 ## Searching Solutions
 
-```bash
-# Search by symptom
-grep -rl "NotLoaded" .claude/solutions/
-# Search by tag
-grep -rl "tags:.*preload" .claude/solutions/
-# Search by component
-grep -rl "component: ecto" .claude/solutions/
-```
+Use Grep to search `.claude/solutions/` by symptom (e.g., `NotLoaded`), by tag (e.g., `tags:.*preload`), or by component (e.g., `component: ecto`).
 
 ## Integration
 

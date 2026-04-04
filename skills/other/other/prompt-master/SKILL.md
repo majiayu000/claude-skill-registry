@@ -182,6 +182,18 @@ Identify the tool and route accordingly. Read full templates from [references/te
 
 ---
 
+**Cline (formerly Claude Dev)**
+- Agentic VS Code extension — autonomously edits files, runs terminal commands, uses browser tools
+- Powered by Claude, GPT, or other LLMs — prompting style should match the underlying model
+- Starting state + target state + file scope + stop conditions + approval gates
+- Always specify which files to edit and which to leave untouched
+- Add "Ask before running terminal commands" or "Ask before installing dependencies" to prevent unwanted actions
+- Can read file contents, search codebases, and use browser automation — leverage these for context gathering
+- For multi-step tasks: break into sequential prompts with clear checkpoints
+- Cline shows a task list before executing — review it and adjust scope if needed
+
+---
+
 **GitHub Copilot**
 - Write the exact function signature, docstring, or comment immediately before invoking
 - Describe input types, return type, edge cases, and what the function must NOT do

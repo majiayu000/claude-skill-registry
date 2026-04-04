@@ -200,6 +200,55 @@ Required: revert test to RED-phase version, fix implementation to satisfy origin
 
 ---
 
+## Fixture Theater Detection (ALWAYS BLOCKER)
+
+Acceptance tests pass because test fixtures implement the expected behavior directly, rather than exercising production code through the driving port. The tests verify the correct outcome from the wrong source. This is a form of Testing Theater where the entire GREEN phase is fraudulent -- no production code was changed.
+
+### Detection Signals
+
+| Signal | How to Detect | Severity |
+|--------|---------------|----------|
+| No production files in git diff | `git diff --name-only` after GREEN shows only test files, none of the `files_to_modify` entries | BLOCKER |
+| Given steps create end-state | Test Given/Arrange steps construct the expected output directly instead of setting up preconditions for production code | BLOCKER |
+| Fixture implements behavior | Test helper/fixture contains domain logic that should live in production code | BLOCKER |
+| RED-to-GREEN without production changes | Acceptance test flips from failing to passing but `git diff --stat` shows zero production file changes | BLOCKER |
+
+### Review Procedure
+
+1. After GREEN phase, run `git diff --name-only` and compare against `files_to_modify` from the roadmap step
+2. Every file listed in `files_to_modify` MUST appear in the diff (excluding test files). If any production file is missing: BLOCKER
+3. Apply the **deletion test**: "If I revert ALL changes to test files and fixtures, does the acceptance test still pass with ONLY the production code changes?" If yes: production code is doing the work (PASS). If the test cannot pass without fixture changes: BLOCKER
+4. Inspect test Given/Arrange sections for domain logic that belongs in production code
+
+### Legitimate Exceptions (Not Violations)
+
+- Step explicitly tagged as test-only (e.g., `files_to_modify` lists only test files)
+- Documentation-only steps where no production code is expected
+- Hash update steps where the production change is a constant update in a test file
+
+### Example Finding
+
+```
+FIXTURE THEATER DETECTION: BLOCKER
+
+Step: 02-01 (implement gitignore support in DES plugin)
+Files to modify: [src/des/adapters/.../des_plugin.py]
+
+git diff --name-only after GREEN:
+  tests/des/acceptance/test_plugin_gitignore.py  (fixture modified)
+  tests/conftest.py                               (helper added)
+
+Missing from diff: src/des/adapters/.../des_plugin.py
+
+Verdict: REJECTED. Agent modified test fixtures to produce expected state
+instead of implementing production code in des_plugin.py.
+The acceptance test passes because the fixture creates the expected output,
+not because the driving port (DESPlugin.install()) produces it.
+Required: revert fixture changes, implement production code in des_plugin.py.
+```
+
+---
+
 ## Escalation Verification
 
 When a crafter gets stuck, the correct action is to escalate -- not to silently weaken tests. The reviewer verifies proper escalation protocol was followed.

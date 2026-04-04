@@ -1,6 +1,6 @@
 ---
 name: phx:quick
-description: Implement small Phoenix changes without planning. Use when the user gives a direct instruction to add, update, fix, create, or change something — like adding a field validation, updating router routes, fixing a component for a new prop, creating a migration, or changing a controller response format. Single-file edits under 50 lines. Skip for bug investigation, code review, or large refactors.
+description: Implement small Phoenix changes without planning — add validations, update routes, fix components, create migrations. Use for single-file edits under 50 lines.
 effort: low
 ---
 
@@ -115,16 +115,8 @@ Run /phx:plan [task] for full analysis.
 
 After quick implementation:
 
-```bash
-# Compile check
-mix compile --warnings-as-errors
-
-# If touched Ecto
-mix ecto.migrate
-
-# Quick test
-mix test test/path_test.exs
-```
+Run `mix compile --warnings-as-errors`. If you touched Ecto schemas or migrations,
+run `mix ecto.migrate`. Then run `mix test test/path_test.exs` for affected tests.
 
 ## Example Session
 

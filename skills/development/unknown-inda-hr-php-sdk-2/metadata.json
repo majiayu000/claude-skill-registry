@@ -1,0 +1,19 @@
+{
+  "name": "unknown",
+  "description": "Quickstart SDK for INDA HR API v2 integration ",
+  "repo": "INDA-HR/php_sdk",
+  "path": "docs/Model/BroaderLevelSkill.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 6,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-inda-hr-php-sdk-2",
+  "author": "INDA-HR",
+  "source_url": "https://github.com/INDA-HR/php_sdk/blob/main/docs/Model/BroaderLevelSkill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/INDA-HR/php_sdk/blob/main/docs/Model/BroaderLevelSkill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

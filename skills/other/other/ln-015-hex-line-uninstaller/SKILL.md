@@ -2,6 +2,7 @@
 name: ln-015-hex-line-uninstaller
 description: "Removes hex-line hooks, output style, and cached files from the system. Use when hex-line MCP needs to be fully uninstalled."
 license: MIT
+model: claude-haiku-4-5
 ---
 
 > **Paths:** File paths are relative to skills repo root. Locate this SKILL.md directory and go up one level for repo root.

@@ -1,7 +1,8 @@
 ---
-name: Nuxt Studio
+name: nuxt-studio
 description: This skill should be used when the user asks to "set up Nuxt Studio", "configure Studio OAuth", "deploy Studio to Cloudflare", "add visual editor to Nuxt", "configure studio.domain.com subdomain", "Studio authentication", "Nuxt CMS", or mentions visual content editing, Nuxt Studio module, TipTap editor, Monaco editor, or content management for Nuxt websites.
-version: 1.0.0
+metadata:
+  version: "1.0.0"
 license: MIT
 ---
 

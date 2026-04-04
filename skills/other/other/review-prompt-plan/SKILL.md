@@ -1,6 +1,6 @@
 ---
 name: review-prompt-plan
-description: "Review a prompt plan against its source spec: launches an internal prompt plan review and `/peer-review-prompt-plan` in parallel and returns combined findings. Use when the user asks to \"review my prompt plan\", \"review my prompts\", \"check my prompt plan\", \"critique my prompts\", or wants prompt plan feedback before implementation."
+description: "Review a prompt plan against its source spec: launches an internal prompt plan review and `/peer-review` in parallel and returns combined findings. Use when the user asks to \"review my prompt plan\", \"review my prompts\", \"check my prompt plan\", \"critique my prompts\", or wants prompt plan feedback before implementation."
 ---
 
 # Review Prompt Plan
@@ -19,7 +19,7 @@ Also read the source spec (path listed in the prompt plan's `Source:` field).
 
 ## Step 2: Run Two Reviews in Parallel
 
-Launch two agents in a single message so they run concurrently (`model: "opus"`, do not set `run_in_background`):
+Launch two Agent tool calls in a single message so they run concurrently (`model: "opus"`, do not set `run_in_background`):
 
 ### Internal Prompt Plan Review
 
@@ -28,9 +28,20 @@ Spawn a subagent with the full prompt plan text and the source spec. Instruct it
 1. Apply the prompt plan review dimensions below
 2. Return findings in the output format below
 
-### Run `/peer-review-prompt-plan` Skill
+### Run `/peer-review` Skill
 
-Spawn a subagent to run the `/peer-review-prompt-plan` skill with the prompt plan text.
+Spawn a subagent whose prompt includes the full prompt plan text, the source spec, and the following review prompt, and instructs it to invoke `/peer-review` via the Skill tool:
+
+```
+<task>
+Review the following prompt plan against its source spec. Check for: spec requirements not covered by any prompt, dead ends where a prompt creates something no later prompt consumes, missing prerequisites where a prompt assumes something no prior prompt creates, duplicated requirements across prompts, and incorrect dependency ordering.
+</task>
+
+<structured_output_contract>
+For each issue, state: the problem, which prompt(s) are affected, the impact, a suggested fix, and priority: P0 (spec requirement missing or system broken), P1 (significant gap), P2 (moderate issue), P3 (minor improvement).
+Ignore stylistic preferences. If no issues are found, state that the prompt plan looks sound.
+</structured_output_contract>
+```
 
 ## Step 3: Return Combined Findings
 

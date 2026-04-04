@@ -1,6 +1,6 @@
 ---
 name: phx:examples
-description: Provide practical examples and walkthroughs for Elixir/Phoenix patterns, including plugin workflow demonstrations. Use when the user asks "how do I...", "show me an example of...", "what does X look like", or needs to see a working implementation pattern for Phoenix, LiveView, Ecto, or OTP features. Also triggers when the user asks about plugin commands or wants to see what a workflow produces.
+description: Provide examples and walkthroughs for Phoenix, LiveView, Ecto, OTP patterns. Use when "how do I...", "show me an example", or "what does X look like".
 effort: low
 ---
 

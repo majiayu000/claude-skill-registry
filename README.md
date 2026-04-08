@@ -39,6 +39,7 @@ The largest searchable index of Claude Code skills, aggregated from GitHub and c
 - **Data**: canonical archived skill tree (`skills/**`)
 - **Main**: publish artifact for merged browsing/compatibility consumers
 - **Publish contract**: core dispatches main publish with pinned `core_sha` + `data_sha`
+- **Non-goal for main**: main does not initiate canonical syncs, archive updates, or index generation
 
 ## Quick Start
 

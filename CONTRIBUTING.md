@@ -6,7 +6,7 @@ Thanks for your interest in contributing!
 
 ### Option 1: Open an Issue (Recommended)
 
-Open an [issue](https://github.com/majiayu000/claude-skill-registry/issues/new) with the following info:
+Open an [issue](https://github.com/majiayu000/claude-skill-registry-core/issues/new) with the following info:
 
 - **Name**: Skill name (kebab-case)
 - **Repository**: GitHub URL of your skill repo
@@ -16,11 +16,11 @@ Open an [issue](https://github.com/majiayu000/claude-skill-registry/issues/new) 
 
 We'll review and add it to the registry.
 
-### Option 2: Pull Request to Core Repo
+### Option 2: Pull Request to This Core Repo
 
-This repository (`claude-skill-registry`) is a **read-only publish artifact** auto-generated from [claude-skill-registry-core](https://github.com/majiayu000/claude-skill-registry-core). PRs to this repo will be overwritten on next publish cycle.
+This repository (`claude-skill-registry-core`) is the **authoritative pipeline repo**. The separate main repository (`claude-skill-registry`) is a generated publish artifact and will be overwritten on the next publish cycle.
 
-To submit a PR directly, open it against **[claude-skill-registry-core](https://github.com/majiayu000/claude-skill-registry-core)** and edit `sources/community.json`:
+To submit a PR directly, open it against **this repo** and edit `sources/community.json`:
 
 ```json
 {
@@ -47,5 +47,5 @@ Core (source of truth) ──► Data (skills archive) ──► Main (publish a
 ```
 
 - **Core**: `majiayu000/claude-skill-registry-core` — scripts, sources, CI/CD
-- **Data**: `majiayu000/claude-skill-registry-data` — 46k+ SKILL.md files
-- **Main**: `majiayu000/claude-skill-registry` — merged artifact for browsing
+- **Data**: `majiayu000/claude-skill-registry-data` — archived `SKILL.md` tree
+- **Main**: `majiayu000/claude-skill-registry` — merged artifact published from pinned core + data refs

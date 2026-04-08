@@ -96,15 +96,17 @@ python scripts/security_scanner.py skills/ --strict
 ### 3. GitHub Actions Workflow
 
 Automatically runs on:
-- Daily schedule (sync-data)
-- Push to main (build-index)
-- Manual trigger
+- Daily schedule (`sync-data` in core)
+- Push to core main (`build-index` in core)
+- Manual trigger (`sync-data` / `build-index` in core)
+- Successful core sync dispatches `publish-from-core` in main
 
 **Features**:
 - Discover + sync data repo
 - Security scan for skills
 - Rebuild registry.json
-- Build search index + deploy Pages
+- Build search index + deploy Pages from core
+- Publish merged artifact to main after core/data refs are pinned
 
 ## Common Issues
 

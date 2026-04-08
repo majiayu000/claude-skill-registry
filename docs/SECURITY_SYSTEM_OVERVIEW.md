@@ -66,9 +66,10 @@
 
 ```yaml
 触发事件:
-  - schedule (每天 00:00 UTC)
-  - push to main (build index)
-  - workflow_dispatch (手动触发)
+  - schedule (core `sync-data.yml`)
+  - workflow_dispatch (core `sync-data.yml` / `build-index.yml`)
+  - push to core main (core `build-index.yml`)
+  - repository_dispatch 到 main (`publish-from-core.yml`)
 ```
 
 ### 执行步骤
@@ -81,14 +82,19 @@
    - 重建 registry.json
    - 推送 data + core 变更
 
-2. **Build Index** (`build-index.yml`)
-   - 基于 registry.json 生成搜索索引
+2. **Build Index** (`build-index.yml` in core)
+   - 基于 archive + `registry.json` 生成搜索索引
    - 发布 GitHub Pages
+
+3. **Publish Main Artifact** (`publish-from-core.yml` in main)
+   - 由 core 通过 `repository_dispatch` 触发
+   - 用固定的 `core_sha` + `data_sha` 重建 main
+   - main 仅接收合并产物，不自行做 canonical sync/index
 
 ## 📁 文件结构
 
 ```
-skill-registry/
+claude-skill-registry-core/
 ├── schema/
 │   └── skill.schema.json           # JSON Schema 定义
 ├── scripts/

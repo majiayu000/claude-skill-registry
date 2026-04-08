@@ -285,7 +285,7 @@ When user requests an upgrade, follow this workflow:
    - Proceed to Step 3
 ```
 
-### Step 4: Set Up Dual-Boot with next_rails (IF NOT ALREADY SET UP)
+### Step 3: Set Up Dual-Boot with next_rails (IF NOT ALREADY SET UP)
 ```
 DELEGATE to the dual-boot skill for setup and initialization.
 That skill handles:
@@ -295,14 +295,14 @@ That skill handles:
 - Configuring the Gemfile with if next? conditionals
 ```
 
-### Step 5: Validate Upgrade Path
+### Step 4: Validate Upgrade Path
 ```
 1. Check if upgrade is single-hop or multi-hop
 2. If multi-hop, explain sequential requirement
 3. Plan individual hops
 ```
 
-### Step 6: Run Breaking Changes Detection (DIRECT)
+### Step 5: Run Breaking Changes Detection (DIRECT)
 ```
 Claude runs detection directly using tools - NO script generation needed
 
@@ -316,7 +316,7 @@ Claude runs detection directly using tools - NO script generation needed
 5. Compile all findings into structured data
 ```
 
-### Step 7: Load Report Resources & Generate Reports
+### Step 6: Load Report Resources & Generate Reports
 ```
 1. Read: templates/upgrade-report-template.md
 2. Read: templates/app-update-preview-template.md
@@ -332,7 +332,7 @@ Claude runs detection directly using tools - NO script generation needed
 - **Input:** Actual config files + findings
 - **Output:** Preview with real file paths and changes
 
-### Step 8: Present Reports & Offer Help
+### Step 7: Present Reports & Offer Help
 ```
 1. Present Comprehensive Upgrade Report first
 2. Present app:update Preview Report second

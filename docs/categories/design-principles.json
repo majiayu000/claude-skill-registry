@@ -2,18 +2,18 @@
   "category": "design-principles",
   "code": "oth",
   "count": 1,
-  "updated_at": "2026-04-04T04:23:17.813996Z",
+  "updated_at": "2026-04-08T05:11:33.124420Z",
   "skills": [
     {
       "name": "affordances",
       "description": "Los objetos deben sugerir cómo se usan. Use cuando diseñe botones, controles interactivos, o cualquier elemento que invite a la acción.",
       "repo": "vjrivmon/Setup-Software-IA",
-      "path": "",
+      "path": ".claude/skills/ux-ui/design-principles/affordances/SKILL.md",
       "branch": "main",
       "category": "design-principles",
       "tags": [],
       "stars": 1,
-      "install": "vjrivmon/Setup-Software-IA",
+      "install": "vjrivmon/Setup-Software-IA/.claude/skills/ux-ui/design-principles/affordances/SKILL.md",
       "source": "github.com/vjrivmon/Setup-Software-IA"
     }
   ]

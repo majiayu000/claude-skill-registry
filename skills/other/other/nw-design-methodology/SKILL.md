@@ -40,6 +40,8 @@ Journey Mapping      Emotional Design     TUI Prototyping      Integration Check
 ## Journey Schema
 
 ```yaml
+schema_version: 1
+
 journey:
   name: "{Goal Name}"
   goal: "{What user is trying to accomplish}"
@@ -74,6 +76,10 @@ steps:
     integration_checkpoint: |
       {What must be validated before proceeding}
 
+    failure_modes:
+      - "{What can go wrong at this step — used by DISTILL for error scenario generation}"
+      - "{Another failure scenario}"
+
     gherkin: |
       Scenario: {Step description}
         Given {precondition}
@@ -86,6 +92,11 @@ integration_validation:
     - artifact: "{name}"
       must_match_across: [1, 2, 3]
       failure_message: "{Integration error description}"
+
+changelog:
+  - date: "{YYYY-MM-DD}"
+    feature: "{feature-id}"
+    change: "{What changed in this update}"
 ```
 
 ## Emotional Arc Patterns

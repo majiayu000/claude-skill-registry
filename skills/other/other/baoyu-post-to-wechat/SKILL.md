@@ -352,7 +352,7 @@ WECHAT_APP_SECRET=<user_input>
 | Field | If Missing |
 |-------|------------|
 | Title | Prompt: "Enter title, or press Enter to auto-generate from content" |
-| Summary | Prompt: "Enter summary, or press Enter to auto-generate (recommended for SEO)" |
+| Summary | Use fallback chain: frontmatter `description` → frontmatter `summary` → prompt user or auto-generate |
 | Author | Use fallback chain: CLI `--author` → frontmatter `author` → EXTEND.md `default_author` |
 
 **Auto-Generation Logic**:

@@ -1,7 +1,7 @@
 ---
 name: ln-642-layer-boundary-auditor
 description: "Checks layer boundary violations, transaction boundaries, session ownership, cross-layer consistency. Use when auditing architecture layers."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_references, mcp__hex-graph__trace_paths, mcp__hex-graph__get_module_metrics
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_references, mcp__hex-graph__trace_paths, mcp__hex-graph__inspect_symbol, mcp__hex-graph__analyze_architecture
 license: MIT
 ---
 
@@ -73,9 +73,10 @@ Build ruleset:
 
 
 **Graph acceleration (if available):** IF `contextStore.graph_indexed` OR `.hex-skills/codegraph/index.db` exists:
-- **Module coupling:** `get_module_metrics(path=scan_root)` -- Ca/Ce/Instability per module. Use to identify tightly-coupled layers.
+- **Module coupling:** `analyze_architecture(path=scan_root, verbosity="full")` -- use returned coupling metrics to identify tightly-coupled layers.
 - **Cross-layer calls:** `find_references(symbol)` for transaction/session functions -- trace commit/rollback ownership across layers.
-- **Orchestration depth:** `trace_paths(start=service_function, path_kind="calls", direction="forward", depth=3)` -- measure chain depth for flat orchestration check.
+- **Orchestration depth:** `trace_paths(name="ServiceFn", file="...", path_kind="calls", direction="forward", depth=3, path=scan_root)` -- measure chain depth for flat orchestration check from a concrete service symbol.
+- Empty `trace_paths` from a coarse or module-level selector is not enough to clear a layer; fall back to `inspect_symbol` or grep/manual review when the selector is broad.
 - Fall back to grep-based detection below if graph unavailable.
 ### Phase 2: Detect Layer Violations
 
@@ -219,7 +220,7 @@ IF len(unique_files) > 2:
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
 ```
 # Build markdown report in memory with:

@@ -1,10 +1,6 @@
 ---
 name: cpu-gpu-performance
-description: 'Use this skill BEFORE resource-intensive operations. Establish baselines
-  proactively. location: plugin token_budget: 400. Use when session starts (auto-load
-  with token-conservation), planning builds or training that could pin CPUs/GPUs for
-  >1 minute, retrying failed resource-heavy commands. Do not use when simple operations
-  with no resource impact. DO NOT use when: quick single-file operations.'
+description: 'Establish CPU/GPU baselines before resource-intensive operations. Use for regression detection.'
 version: 1.7.1
 alwaysApply: false
 progressive_loading: true
@@ -12,6 +8,7 @@ dependencies:
   hub:
   - token-conservation
   modules: []
+model_hint: standard
 ---
 ## Table of Contents
 

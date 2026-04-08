@@ -1,6 +1,6 @@
 ---
 name: map-codebase
-description: "Deep architecture report that fans out parallel inspections across different aspects of the codebase (structure, tech stack, APIs, patterns, data flow, dependencies, testing) and synthesizes findings into a comprehensive document at .turbo/codebase-map.md and .turbo/codebase-map.html. Use when the user asks to \"map the codebase\", \"map codebase\", \"architecture report\", \"codebase overview\", \"architecture overview\", \"what am I looking at\", or \"onboard me\"."
+description: "Deep architecture report that fans out parallel inspections across different aspects of the codebase (structure, tech stack, APIs, patterns, data flow, dependencies, testing) and synthesizes findings into a comprehensive document at .turbo/codebase-map.md and .turbo/codebase-map.html. Use when the user asks to \"map the codebase\", \"map codebase\", \"architecture report\", \"codebase overview\", \"architecture overview\", \"what am I looking at\", or \"explain this codebase\"."
 ---
 
 # Map Codebase

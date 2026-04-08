@@ -19,7 +19,7 @@ Print the following menu. Do not read any files — the menu is static.
 ```
 # Architecture Studio
 
-**36 skills, 7 agents** — type /studio [your task] to get routed, or call any skill directly.
+**36 skills, 7 agents** (includes master-schedule) — type /studio [your task] to get routed, or call any skill directly.
 
 ## Agents — describe your task, they figure out the rest
 
@@ -70,18 +70,20 @@ Print the following menu. Do not read any files — the menu is static.
 /product-research — find products from a design brief
 /product-spec-bulk-fetch — extract specs from product URLs
 /product-spec-pdf-parser — extract specs from PDF catalogs
-/product-spec-bulk-cleanup — normalize a messy FF&E schedule
+/product-data-cleanup — normalize a messy FF&E schedule
 /product-enrich — auto-tag products with categories, colors, materials
 /product-match — find similar products
 /product-pair — suggest complementary products
 /product-image-processor — download, resize, remove backgrounds
-/ffe-schedule — format raw product data into a schedule
+/product-data-import — import raw product data into the master schedule
+/master-schedule — connect a product library sheet to the project
 /csv-to-sif — convert CSV to dealer format
 /sif-to-csv — convert dealer format to CSV
 
 ### Presentations
 /slide-deck-generator [topic] — HTML slide deck with editorial layout
 /color-palette-generator — color palettes from descriptions or images
+/resize-images — batch-resize photos for web, social, slides, and print
 ```
 
 That's it. Do not add commentary, suggestions, or follow-up questions. Just print the menu.

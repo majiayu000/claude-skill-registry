@@ -1,8 +1,9 @@
 ---
 name: ln-646-project-structure-auditor
 description: "Checks file hygiene, ignore files, framework conventions, domain/layer organization, naming. Use when auditing project structure."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__get_architecture
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__analyze_architecture
 license: MIT
+model: claude-haiku-4-5
 ---
 
 > **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
@@ -268,7 +269,8 @@ IF len(test_files) > 0:
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`, `shared/references/audit_scoring.md`, and `shared/templates/audit_worker_report_template.md`.
 
-If `summaryArtifactPath` is present, write JSON summary per `shared/references/audit_summary_contract.md`. Compact text output is fallback only.
+When summaryArtifactPath is present, write the JSON summary to that exact path.
+When summaryArtifactPath is absent, write the standalone runtime summary under .hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json and optionally echo the same summary in structured output.
 
 ```
 # 7a: Calculate score via shared formula
@@ -280,13 +282,10 @@ If `summaryArtifactPath` is present, write JSON summary per `shared/references/a
 #   naming_dominant_case
 #   naming_violations_pct
 # 7d: Write report (atomic single Write call)
-IF domain_mode == "domain-aware":
-  Write to {output_dir}/646-structure-{current_domain}.md
-ELSE:
-  Write to {output_dir}/646-structure.md
+Write to {output_dir}/ln-646--{identifier}.md
 
 # 7e: Return summary
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/646-structure[-{domain}].md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-646--{identifier}.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 

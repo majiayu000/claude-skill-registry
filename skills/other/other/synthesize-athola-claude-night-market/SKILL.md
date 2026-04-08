@@ -13,6 +13,7 @@ tags:
   - format
   - report
 estimated_tokens: 150
+model_hint: standard
 ---
 # Finding Synthesis
 

@@ -2,18 +2,18 @@
   "category": "github-integration",
   "code": "oth",
   "count": 1,
-  "updated_at": "2026-04-04T04:23:18.146601Z",
+  "updated_at": "2026-04-08T05:11:33.460612Z",
   "skills": [
     {
       "name": "github-multi-repo",
       "description": "Multi-repository coordination, synchronization, and architecture management with AI swarm orchestration",
       "repo": "mattnigh/skills_collection",
-      "path": "",
+      "path": "collection/pacphi__ampel__claude__skills__github-multi-repo__SKILL.md",
       "branch": "main",
       "category": "github-integration",
       "tags": [],
       "stars": 20,
-      "install": "mattnigh/skills_collection",
+      "install": "mattnigh/skills_collection/collection/pacphi__ampel__claude__skills__github-multi-repo__SKILL.md",
       "source": "github.com/mattnigh/skills_collection"
     }
   ]

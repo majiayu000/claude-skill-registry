@@ -1,13 +1,6 @@
 ---
 name: rigorous-reasoning
-description: 'Prevents sycophantic reasoning through checklist-based analysis, categorical
-  integrity, and evidence-following to uncomfortable conclusions. Red Flags: "I agree
-  that", "You are right", "Great point", "Absolutely", "That is a fair point", "I
-  can see why", agreement without validation, softening conclusions, hedging without
-  evidence, retracting under pressure. Use when analyzing conflicts, evaluating ethical
-  claims, or noticing sycophantic thought patterns. Do not use for routine implementation
-  or simple factual questions. CRITICAL: This skill overrides conversational tendencies
-  toward politeness. Agreement requires validity and accuracy.'
+description: 'Prevent sycophantic reasoning via checklist enforcing evidence-based conclusions and honest analysis.'
 version: 1.7.1
 alwaysApply: false
 category: workflow-methodology

@@ -52,12 +52,17 @@ Based on album and track statuses, identify the workflow phase:
 | Album Status | Track Statuses | Current Phase |
 |--------------|----------------|---------------|
 | Concept | Most "Not Started" | Planning - Need to fill in album README and create tracks |
-| In Progress | Mixed, some "Not Started" | Writing - Need to complete lyrics |
+| Research Complete | Some "Sources Pending" | Verification - Need human verification of sources (documentary albums) |
+| Sources Verified | All sources verified | Ready to Write - Sources cleared, begin lyrics (documentary albums) |
+| In Progress | Mixed, some "Not Started" | Writing - Need to complete lyrics (or route instrumental tracks to suno-engineer) |
 | In Progress | Some "Sources Pending" | Verification - Need human verification of sources |
 | In Progress | All have lyrics | Ready to Generate - Run Ready to Generate checkpoint |
-| In Progress | Some "Generated" | Generating - Continue generating on Suno |
+| In Progress | Some "Generated" | Generating - Continue generating on Suno. Check Generation Logs for rejected tracks needing regeneration |
+| In Progress | All "Generated", none "Final" | Review & Approve - Listen to generated tracks, mark keepers with ✓, regenerate rejected ones |
 | Complete | All "Final" | Mastering - Ready to master audio |
 | Released | All "Final" | Released - Album is live |
+
+**Note**: Non-documentary albums skip `Research Complete` and `Sources Verified` — they go directly from `Concept` → `In Progress`.
 
 ### Step 5: Report to User
 
@@ -69,7 +74,7 @@ Present a clear status report:
    Status: [Album Status]
 
 📊 Progress:
-   - Tracks: [X completed / Y total]
+   - Tracks: [X completed / Y total] ([N vocal, M instrumental])
    - Not Started: X
    - In Progress: Y
    - Generated: Z
@@ -94,6 +99,8 @@ Pick ONE clear recommendation from the decision tree below. Don't list 5 options
 
 **Decision Tree** (evaluate top-to-bottom, first match wins):
 
+**Instrumental detection**: Check each track's frontmatter for `instrumental: true` or Track Details table for `**Instrumental** | Yes`. Instrumental tracks skip the lyrics workflow entirely and go straight to `/bitwize-music:suno-engineer`.
+
 ```
 Album Status = "Concept"
   → "Define the album concept. Run /bitwize-music:album-conceptualizer"
@@ -101,10 +108,14 @@ Album Status = "Concept"
 Album Status = "Research Complete"
   → Any tracks Sources Pending?
     YES → "Sources need verification. Run /bitwize-music:verify-sources [album]"
-    NO  → "Ready to write! Pick a track and use /bitwize-music:lyric-writer"
+    NO  → Any "Not Started" tracks instrumental?
+      YES → "Create Style Box for instrumental track [name]. Use /bitwize-music:suno-engineer"
+      NO  → "Ready to write! Pick a track and use /bitwize-music:lyric-writer"
 
 Album has tracks with "Not Started"
-  → "Write lyrics for [first not-started track]. Use /bitwize-music:lyric-writer"
+  → Is the first not-started track instrumental?
+    YES → "Create Style Box for [track]. Use /bitwize-music:suno-engineer directly (instrumental track)"
+    NO  → "Write lyrics for [first not-started track]. Use /bitwize-music:lyric-writer"
 
 Album has tracks with "In Progress" (lyrics partially written)
   → "Finish lyrics for [first in-progress track]. Use /bitwize-music:lyric-writer"
@@ -112,14 +123,37 @@ Album has tracks with "In Progress" (lyrics partially written)
 Album has tracks with "Sources Pending"
   → "Verify sources for [track]. Run /bitwize-music:verify-sources [album]"
 
-All tracks have lyrics, none generated
-  → "All lyrics complete! Style prompts should be ready. Run /bitwize-music:pronunciation-specialist to check for pronunciation risks, then /bitwize-music:lyric-reviewer for final QC, then /bitwize-music:pre-generation-check to validate all gates before generating on Suno."
+All tracks have lyrics (or Style Box for instrumentals), none generated
+  → Mixed album (vocal + instrumental)?
+    YES → "All tracks ready! Run /bitwize-music:pronunciation-specialist on vocal tracks, then /bitwize-music:lyric-reviewer, then /bitwize-music:pre-generation-check to validate all gates (instrumental tracks auto-skip lyrics gates)."
+    NO  → "All lyrics complete! Style prompts should be ready. Run /bitwize-music:pronunciation-specialist to check for pronunciation risks, then /bitwize-music:lyric-reviewer for final QC, then /bitwize-music:pre-generation-check to validate all gates before generating on Suno."
 
 Some tracks generated, some not
-  → "Generate [first un-generated track] on Suno. Use /bitwize-music:suno-engineer"
+  → Any Generated tracks without ✓ in Generation Log Rating?
+    YES → "Track [name] was generated but not approved. Listen and decide:
+           - Happy? Mark ✓ in Generation Log and set Status: Final
+           - Not happy? Log the reason, then:
+             Style issue → /bitwize-music:suno-engineer to revise Style Box
+             Lyrics issue → /bitwize-music:lyric-writer to fix, then regenerate
+             Bad luck → Regenerate on Suno with same settings (it's non-deterministic)"
+    NO  → "Generate [first un-generated track] on Suno. Use /bitwize-music:suno-engineer"
 
-All tracks generated
-  → "All tracks generated! Import audio with /bitwize-music:import-audio, then master with /bitwize-music:mastering-engineer"
+All tracks generated, none Final
+  → "All tracks generated! Listen to each track and approve:
+     - Mark keepers with ✓ in Generation Log Rating column
+     - Reject and regenerate any that don't meet quality standards
+     - Once all have ✓, batch-approve:
+       Use update_track_field(album_slug, track_slug, 'status', 'Final') for each approved track.
+       Once all Final, album advances to Complete automatically."
+
+All tracks generated, some Final
+  → Any Generated (non-Final) tracks without ✓?
+    YES → "Review track [name] — listen and approve (✓) or regenerate"
+    NO  → "All tracks approved! Batch-approve: update_track_field(album_slug, track_slug, 'status', 'Final') for each.
+           Then import audio with /bitwize-music:import-audio, then master with /bitwize-music:mastering-engineer"
+
+All tracks Final
+  → "All tracks approved! Import audio with /bitwize-music:import-audio, then master with /bitwize-music:mastering-engineer"
 
 Album Status = "Complete"
   → "Album is complete! Release with /bitwize-music:release-director"

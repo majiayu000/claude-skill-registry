@@ -1,9 +1,6 @@
 ---
 name: python-async
-description: 'Consult this skill for async Python patterns and concurrency. Use when
-  building async APIs, concurrent systems, I/O-bound applications, implementing rate
-  limiting, async context managers. Do not use when CPU-bound optimization - use python-performance
-  instead. DO NOT use when: testing async code - use python-testing async module.'
+description: 'Async Python patterns and concurrency: async APIs, I/O-bound apps, rate limiting, context managers'
 version: 1.7.1
 globs: "**/*.py"
 alwaysApply: false

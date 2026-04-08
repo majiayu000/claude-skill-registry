@@ -273,7 +273,15 @@ Read-only worker — all phases use MCP research tools (Ref, Context7, WebSearch
 
 **MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
 
-Write `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-research/{slug}.json` before finishing.
+Emit an `optimization-worker` summary envelope.
+
+Managed mode:
+- `ln-810` passes deterministic `runId` and exact `summaryArtifactPath`
+- write the summary to the provided `summaryArtifactPath`
+
+Standalone mode:
+- omit `runId` and `summaryArtifactPath`
+- write `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-worker/ln-812--{identifier}.json`
 
 ## Definition of Done
 

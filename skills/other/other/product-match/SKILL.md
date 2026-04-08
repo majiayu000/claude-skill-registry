@@ -11,9 +11,9 @@ allowed-tools:
   - WebFetch
   - WebSearch
   - AskUserQuestion
-  - mcp__google__sheets_values_get
-  - mcp__google__sheets_values_update
-  - mcp__google__sheets_spreadsheet_get
+  - mcp__google-sheets__get_sheet_data
+  - mcp__google-sheets__update_cells
+  - mcp__google-sheets__list_sheets
 user-invocable: true
 ---
 
@@ -167,4 +167,4 @@ If the designer picks matches ("save 1 and 3"), write to the master Google Sheet
 - `/product-research` — research finds products from a brief, match finds alternatives to a specific product
 - `/product-enrich` — enrich the matched products with categories and tags
 - `/product-pair` — after matching, find complementary products
-- `/ffe-schedule` — include matched products in a formatted schedule
+- `/product-data-import` — import matched products into the master schedule

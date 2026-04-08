@@ -1,7 +1,7 @@
 ---
 name: ln-623-code-principles-auditor
 description: "Checks DRY, KISS/YAGNI, error handling, DI patterns. Use when auditing code principles compliance."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_clones, mcp__hex-graph__find_implementations, mcp__hex-graph__find_hotspots, mcp__hex-line__outline
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__audit_workspace, mcp__hex-graph__find_implementations, mcp__hex-line__outline
 license: MIT
 ---
 
@@ -15,12 +15,11 @@ Specialized worker auditing code principles (DRY, KISS, YAGNI) and design patter
 
 ## Purpose & Scope
 
-- **Worker in ln-620 coordinator pipeline** - invoked by ln-620-codebase-auditor
 - Audit **code principles** (DRY/KISS/YAGNI, error handling, DI)
 - Return structured findings with severity, location, effort, pattern_signature, recommendations
 - Calculate compliance score (X/10) for Code Principles category
 
-## Inputs (from Coordinator)
+## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
@@ -39,9 +38,9 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `principles`, `cod
 3) **Scan codebase for violations (Layer 1)**
    - All Grep/Glob patterns use `scan_path` (not codebase_root)
    - **Graph acceleration (if available):** IF `contextStore.graph_indexed` OR `.hex-skills/codegraph/index.db` exists:
-     - **DRY (1.1-1.10):** `find_clones(scope=scan_path, type="normalized", cross_file=true)` -- each clone group = DRY candidate. Use clone `type` for severity triage. Fall back to grep patterns if unavailable.
+     - **DRY (1.1-1.10):** `audit_workspace(path=scan_path, verbosity="full")` -- each returned clone group = DRY candidate. Use clone kind and hotspot context for severity triage. Fall back to grep patterns if unavailable.
      - **KISS inheritance:** `find_implementations(symbol)` for abstract classes -- count implementations (1 = KISS candidate). Trace inheritance depth via graph.
-     - **Complexity:** `find_hotspots(path=scan_path, min_complexity=15)` -- pre-identify complex functions for KISS/quality analysis.
+     - **Complexity:** `audit_workspace(path=scan_path, verbosity="full")` -- use returned hotspots to pre-identify complex functions for KISS/quality analysis.
      - **Outline-first read:** `outline(path)` before reading large source files -- understand structure before analyzing principles.
    - Follow step-by-step detection from `detection_patterns.md`
    - Apply exclusions from `detection_patterns.md#exclusions`
@@ -56,7 +55,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `principles`, `cod
    - Tag each finding with `domain: domain_name` (if domain-aware)
    - Assign `pattern_signature` for cross-domain matching by ln-620
 7) **Calculate score using penalty algorithm**
-8) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/623-principles-{domain}.md` (or `623-principles.md` in global mode) in single Write call. **Include `<!-- FINDINGS-EXTENDED -->` JSON block** with pattern_signature fields for cross-domain DRY analysis
+8) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/ln-623--{domain}.md` (or `623-principles.md` in global mode) in single Write call. **Include `<!-- FINDINGS-EXTENDED -->` JSON block** with pattern_signature fields for cross-domain DRY analysis
 9) **Return Summary:** Return minimal summary to coordinator (see Output Format)
 
 ## Two-Layer Detection (MANDATORY)
@@ -183,9 +182,9 @@ All findings require Layer 2 context analysis. Layer 1 finding without Layer 2 =
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/623-principles-{domain}.md` (or `623-principles.md` in global mode) with `category: "Architecture & Design"`.
+Write report to `{output_dir}/ln-623--{domain}.md` (or `623-principles.md` in global mode) with `category: "Architecture & Design"`.
 
 **FINDINGS-EXTENDED block (required for this worker):** After the Findings table, include a `<!-- FINDINGS-EXTENDED -->` JSON block containing all DRY findings with `pattern_signature` for cross-domain matching by ln-620 coordinator. Follow `shared/templates/audit_worker_report_template.md`.
 
@@ -195,9 +194,9 @@ Write report to `{output_dir}/623-principles-{domain}.md` (or `623-principles.md
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/623-principles-users.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-623--users.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -225,7 +224,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Recommendations selected via `references/refactoring_decision_tree.md`
 - [ ] Findings collected with severity, location, effort, pattern_id, pattern_signature, recommendation, domain
 - [ ] Score calculated per `shared/references/audit_scoring.md`
-- [ ] Report written to `{output_dir}/623-principles-{domain}.md` with FINDINGS-EXTENDED block (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-623--{domain}.md` with FINDINGS-EXTENDED block (atomic single Write call)
 - [ ] Summary written per contract
 
 ## Reference Files

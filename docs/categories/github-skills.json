@@ -2,18 +2,18 @@
   "category": "github-skills",
   "code": "oth",
   "count": 1,
-  "updated_at": "2026-04-04T04:23:18.146828Z",
+  "updated_at": "2026-04-08T05:11:33.460809Z",
   "skills": [
     {
       "name": ".github-skills",
       "description": "Build high-integrity experimentation frameworks within React applications.",
       "repo": "harborgrid-justin/lexiflow-premium",
-      "path": "",
+      "path": "frontend/.github-skills/SKILL.md",
       "branch": "main",
       "category": "github-skills",
       "tags": [],
       "stars": 0,
-      "install": "harborgrid-justin/lexiflow-premium",
+      "install": "harborgrid-justin/lexiflow-premium/frontend/.github-skills/SKILL.md",
       "source": "github.com/harborgrid-justin/lexiflow-premium"
     }
   ]

@@ -36,6 +36,9 @@ Lightweight orchestrator for 6-phase software development lifecycle with progres
 - **Ask clarifying questions early** - Identify ambiguities before designing, not after
 - **Use TaskCreate/TaskUpdate** - Track all progress throughout every phase
 - **Load phases progressively** - Only read phase files when entering that phase
+- **Two-stage review** - Spec compliance first, then code quality (wave-level or per-task with `--subagent`)
+- **Evidence-based gates** - Fresh command output required for every quality gate check
+- **Patterns drive Phase 4** - Backpressure (quality gates over prescription), Confession (builder records uncertainties), Critic-Actor (per-wave targeted review), Fresh Context (re-read from disk each wave)
 
 ## Quick Start
 
@@ -62,10 +65,11 @@ Parse from `$ARGUMENTS`:
 | Flag | Effect |
 |------|--------|
 | `--plan-only` | Stop after Phase 2 (save plan, don't implement) |
-| `--validate` | Enable deep validation with opus agent in Phase 4 |
+| `--validate` | Upgrade wave reviewers from sonnet to opus in Phase 4 |
 | `--phase=N` | Execute specific phase only |
 | `--auto` | Autonomous mode (no checkpoints) |
 | `@path/to/spec` | Resume existing plan or run verification from path |
+| `--subagent` | Subagent-per-task mode in Phase 4 (fresh subagent per task with two-stage review) |
 | `--verify-arch` | Verify implementation matches plan.md architecture |
 | `--verify-impl` | Verify implementation meets spec.md requirements |
 
@@ -120,7 +124,9 @@ Load phase files **only when entering that phase**:
 | 2 | sonnet/opus | Architecture design |
 | 3 | haiku | Task breakdown |
 | 4 (implement) | sonnet | Code writing |
-| 4 (validate) | opus | Deep review (if `--validate`) |
+| 4 (spec reviewer) | sonnet | Spec compliance review (opus if `--validate`) |
+| 4 (quality reviewer) | sonnet | Code quality review (opus if `--validate`) |
+| 4 (implementer, `--subagent`) | haiku/sonnet/opus | Task complexity dependent |
 | 5 | - | Summary (no agent) |
 
 ## Spec Directory Structure
@@ -170,6 +176,11 @@ Artifacts are saved incrementally at each phase checkpoint to prevent data loss:
 | [tasks.md.template](templates/tasks.md.template) | 3 | Always (task breakdown) |
 | [wave-context.md.template](templates/wave-context.md.template) | 4 | At each wave checkpoint (context handoff) |
 | [verification-report.md.template](templates/verification-report.md.template) | verify | When `--verify-arch` or `--verify-impl` used |
+| [REVIEW-SPEC.md](reviews/REVIEW-SPEC.md) | 4 | Two-stage review: spec compliance prompt |
+| [REVIEW-QUALITY.md](reviews/REVIEW-QUALITY.md) | 4 | Two-stage review: code quality prompt |
+| [implementer-prompt.md](reviews/implementer-prompt.md) | 4 | Implementer subagent prompt (`--subagent` mode) |
+| [EVIDENCE-GATES.md](EVIDENCE-GATES.md) | 4 | Rationalization prevention guide for quality gates |
+| [SUBAGENT-MODE.md](SUBAGENT-MODE.md) | 4 | Per-task execution protocol (`--subagent` mode) |
 
 ## Configuration
 
@@ -201,9 +212,9 @@ See [WORKFLOW.md](WORKFLOW.md) for the detailed execution flow diagram.
 
 Two mandatory Tier 1 gates (cannot skip, even with `--auto`):
 - **Phase 2c**: Architecture Decision
-- **Phase 4e**: Quality & Completion Gate (RULE ZERO + code review verification)
+- **Step 4.2**: Quality & Completion Gate (RULE ZERO + wave review aggregation)
 
-All other checkpoints are Tier 2 (skippable with `--auto`), including the Domain Research gate (Phase 2a-res).
+All other checkpoints are Tier 2 (skippable with `--auto`), including the Domain Research gate (Phase 2a-res) and the Two-Stage Wave Review (Step 4.1e).
 Conditional escalation to Tier 1 if: DB schema changes, security work, or breaking API changes.
 Conditional RFC creation offered at Phase 2d when escalation triggers are detected.
 

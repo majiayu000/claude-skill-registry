@@ -2,30 +2,30 @@
   "category": "programming-languages",
   "code": "oth",
   "count": 2,
-  "updated_at": "2026-04-04T04:23:19.037328Z",
+  "updated_at": "2026-04-08T05:11:34.949611Z",
   "skills": [
     {
       "name": "typescript-expert",
       "description": "Expert-level TypeScript development with modern tooling, advanced types, and best practices. Use this skill for TypeScript projects requiring type-safe code, modern bundling, and comprehensive testing",
       "repo": "majiayu000/claude-skill-registry",
-      "path": "",
+      "path": "skills/other/typescript-expert/SKILL.md",
       "branch": "main",
       "category": "programming-languages",
       "tags": [],
       "stars": 48,
-      "install": "majiayu000/claude-skill-registry",
+      "install": "majiayu000/claude-skill-registry/skills/other/typescript-expert/SKILL.md",
       "source": "github.com/majiayu000/claude-skill-registry"
     },
     {
       "name": "typescript-expert",
       "description": "Expert-level TypeScript development with modern tooling, advanced types, and best practices. Use this skill for TypeScript projects requiring type-safe code, modern bundling, and comprehensive testing",
       "repo": "majiayu000/claude-skill-registry",
-      "path": "",
+      "path": "skills/other/typescript-expert/SKILL.md",
       "branch": "main",
       "category": "programming-languages",
       "tags": [],
       "stars": 48,
-      "install": "majiayu000/claude-skill-registry",
+      "install": "majiayu000/claude-skill-registry/skills/other/typescript-expert/SKILL.md",
       "source": "github.com/majiayu000/claude-skill-registry"
     }
   ]

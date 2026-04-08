@@ -214,7 +214,7 @@ Why this is better:
 - **With swing-review:** Feed the chosen option into adversarial review for stress-testing
 - **Standalone:** Invoke directly with `/swing-options [question]` for quick decision support
 
-## Anti-Patterns to Avoid
+## Gotchas
 
 - **False diversity:** Don't generate options that are minor variations of the same thing. Each option should represent a fundamentally different approach or paradigm.
 - **Probability theater:** Don't assign specific percentages you can't ground. Use zone labels when you lack observable data. "Conventional" is honest; "p = 37.2%" is not.

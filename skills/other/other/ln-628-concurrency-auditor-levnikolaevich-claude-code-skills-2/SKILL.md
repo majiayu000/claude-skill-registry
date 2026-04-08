@@ -1,7 +1,7 @@
 ---
 name: ln-628-concurrency-auditor
 description: "Checks async races, thread safety, TOCTOU, deadlocks, blocking I/O, resource contention. Use when auditing concurrency safety."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_dataflows, mcp__hex-graph__trace_paths
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__trace_dataflow, mcp__hex-graph__trace_paths
 license: MIT
 ---
 
@@ -15,13 +15,12 @@ Specialized worker auditing concurrency, async patterns, and cross-process resou
 
 ## Purpose & Scope
 
-- **Worker in ln-620 coordinator pipeline**
 - Audit **concurrency** (Category 11: High Priority)
 - 7 checks: async races, thread safety, TOCTOU, deadlocks, blocking I/O, resource contention, cross-process races
 - Two-layer detection: grep finds candidates, agent reasons about context
 - Calculate compliance score (X/10)
 
-## Inputs (from Coordinator)
+## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
@@ -37,7 +36,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
    - **Layer 2:** Read 20-50 lines around each candidate. Apply check-specific critical questions. Classify: confirmed / false positive / needs-context
 3) **Collect** confirmed findings with severity, location, effort, recommendation
 4) **Calculate score** per `shared/references/audit_scoring.md`
-5) **Write Report** -- build in memory, write to `{output_dir}/628-concurrency.md` (atomic single Write)
+5) **Write Report** -- build in memory, write to `{output_dir}/ln-628--global.md` (atomic single Write)
 6) **Return Summary** to coordinator
 
 ## Audit Rules
@@ -246,15 +245,15 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/628-concurrency.md` with `category: "Concurrency"` and checks: async_races, thread_safety, toctou, deadlock_potential, blocking_io, resource_contention, cross_process_races.
+Write report to `{output_dir}/ln-628--global.md` with `category: "Concurrency"` and checks: async_races, thread_safety, toctou, deadlock_potential, blocking_io, resource_contention, cross_process_races.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/628-concurrency.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-628--global.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -279,7 +278,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Layer 2 reasoning applied to each candidate (confirmed / FP / needs-context)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated per `shared/references/audit_scoring.md`
-- [ ] Report written to `{output_dir}/628-concurrency.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-628--global.md` (atomic single Write call)
 - [ ] Summary written per contract
 
 ## Reference Files

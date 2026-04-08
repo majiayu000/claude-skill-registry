@@ -1,7 +1,7 @@
 ---
 name: ln-613-code-comments-auditor
 description: "Checks inline code documentation quality: WHY-not-WHAT, density, forbidden content, docstrings quality, actuality, legacy cleanup. Use when auditing comments and docstrings."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline, mcp__hex-line__read_file
 license: MIT
 model: claude-sonnet-4-6
 ---
@@ -16,7 +16,6 @@ Specialized worker auditing inline code documentation quality: comments, docstri
 
 ## Purpose & Scope
 
-- **Worker in ln-610 coordinator pipeline** - invoked by ln-610-docs-auditor
 - Audit inline code documentation for **quality and compliance** across 6 categories
 - Universal for any tech stack (auto-detect comment syntax)
 - Return structured findings to coordinator with severity, location, recommendations
@@ -24,9 +23,9 @@ Specialized worker auditing inline code documentation quality: comments, docstri
 - Scope is limited to comments/docstrings/JSDoc/XML docs
 - Out of scope: code design quality, naming quality, test quality, architecture quality, or feature correctness except where comments contradict code
 
-## Inputs (from Coordinator)
+## Inputs
 
-**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/references/mcp_tool_preferences.md`.
 
 Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 
@@ -34,12 +33,12 @@ Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 
 1) **Parse Context:** Extract tech stack, project root, output_dir from contextStore
 2) **Scan:** Find all source files (use `tech_stack` for detection)
-   **Hex-line acceleration:** Use `outline(path)` to understand code structure (functions, classes) before analyzing comments -- identifies which code sections to scan.
+   **Hex-line primary path:** Use `outline(path)` and discovery-first `read_file()` for code files before analyzing comments. Use `edit_ready=true, verbosity="full"` only if the audit turns into a follow-up edit. Do not use `hex-graph` here - comment quality is a code-reading problem, not a semantic graph problem.
 3) **Extract:** Parse inline comments + docstrings/JSDoc
 4) **Audit:** Run 6 category checks (see Audit Categories below)
 5) **Collect Findings:** Record each violation with severity, location (file:line), effort estimate (S/M/L), recommendation
 6) **Calculate Score:** Count violations by severity, calculate compliance score (X/10)
-7) **Write Report:** Build full markdown report per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/613-code-comments.md` in single Write call
+7) **Write Report:** Build full markdown report per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/ln-613--global.md` in single Write call
 8) **Return Summary:** Return minimal summary to coordinator (see Output Format)
 
 ## Audit Categories
@@ -61,15 +60,15 @@ Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/613-code-comments.md` with `category: "Inline Code Documentation"` and checks: why_not_what, density, forbidden_content, docstrings_quality, actuality, legacy_cleanup.
+Write report to `{output_dir}/ln-613--global.md` with `category: "Inline Code Documentation"` and checks: why_not_what, density, forbidden_content, docstrings_quality, actuality, legacy_cleanup.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/613-code-comments.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-613--global.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -104,7 +103,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] All 6 categories audited
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated using penalty algorithm
-- [ ] Report written to `{output_dir}/613-code-comments.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-613--global.md` (atomic single Write call)
 - [ ] Summary written per contract
 
 ## Reference Files

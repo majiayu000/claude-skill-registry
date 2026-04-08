@@ -1,7 +1,7 @@
 ---
 name: ln-510-quality-coordinator
 description: "Coordinates code quality checks: metrics, cleanup, agent review, regression, log analysis. Use when Story needs quality_verdict with aggregated results."
-allowed-tools: Read, Grep, Glob, Bash, Skill, mcp__hex-graph__index_project
+allowed-tools: Read, Grep, Glob, Bash, Skill, mcp__hex-graph__index_project, mcp__hex-graph__analyze_changes
 license: MIT
 ---
 
@@ -36,7 +36,7 @@ Runtime-backed quality coordinator. The runtime owns phase transitions, worker s
 
 ## Runtime Contract
 
-**MANDATORY READ:** Load `shared/references/coordinator_runtime_contract.md`, `shared/references/quality_runtime_contract.md`, `shared/references/quality_summary_contract.md`, `shared/references/review_runtime_contract.md`
+**MANDATORY READ:** Load `shared/references/coordinator_runtime_contract.md`, `shared/references/quality_runtime_contract.md`, `shared/references/quality_summary_contract.md`, `shared/references/quality_worker_runtime_contract.md`, `shared/references/review_runtime_contract.md`
 
 Runtime family: `quality-runtime`
 
@@ -57,8 +57,9 @@ Phases:
 11. `PHASE_10_SELF_CHECK`
 
 Worker summary contract:
-- `ln-511`, `ln-512`, `ln-513`, `ln-514` may receive `summaryArtifactPath`
-- each worker writes or returns `quality-worker` summary envelope
+- `ln-511`, `ln-512`, `ln-513`, `ln-514` receive deterministic child `runId` plus exact `summaryArtifactPath`
+- checkpoint child runtime metadata before waiting for the artifact
+- each worker writes a `quality-worker` summary envelope before terminal outcome
 - ln-510 consumes worker summaries, not free-text worker prose
 
 ## When to Use
@@ -82,7 +83,8 @@ Worker summary contract:
 4) **Index codebase graph (if available):** IF `hex-graph` MCP server is available:
    - `index_project(path=codebase_root)` — builds/refreshes code graph for workers
    - Add `graph_indexed: true` to coordinator context for ln-511
-   - Workers use graph tools (find_clones, find_hotspots, etc.) when graph_indexed=true
+   - Workers use graph tools (`audit_workspace`, `analyze_architecture`, `find_references`, `trace_paths`) when graph_indexed=true
+   - If indexing fails or graph path is unavailable, record `graph_indexed: false` and continue without graph-backed evidence
 
 **Fast-track mode:** When invoked with `--fast-track` flag (readiness 10/10), run Phase 2 with `--skip-mcp-ref` (metrics + static only, no MCP Ref), skip Phase 3 (ln-512), run Phase 4 with **1 agent minimum** (reduced from 2). Run Phase 5 (criteria), Phase 6 (linters), Phase 7 (ln-513), Phase 8 (ln-514).
 
@@ -93,17 +95,25 @@ Worker summary contract:
 > **Fast-track:** ln-511 runs with `--skip-mcp-ref` (metrics + static analysis only — catches complexity, DRY, dead code without expensive MCP Ref calls).
 
 1) **Invoke ln-511-code-quality-checker** via Skill tool
+   - Compute `childRunId = {parent_run_id}--ln-511--{storyId}`
+   - Compute artifact path `.hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-511--{storyId}.json`
+   - Materialize manifest `.hex-skills/quality/ln-511--{storyId}_manifest.json`
+   - Start `quality-worker-runtime` and checkpoint `child_run` metadata before delegation
    - Full: ln-511 runs code metrics, MCP Ref validation (OPT/BP/PERF), static analysis
    - Fast-track: ln-511 runs code metrics + static analysis only (skips OPT-, BP-, PERF- MCP Ref checks)
-   - Returns verdict (PASS/CONCERNS/ISSUES_FOUND) + code_quality_score + issues list
+   - Read only the resulting `quality-worker` artifact
 2) **If ln-511 returns ISSUES_FOUND** -> aggregate issues, continue (ln-500 decides action)
 
 **Invocation:**
 ```
 # Full gate:
-Skill(skill: "ln-511-code-quality-checker", args: "{storyId}")
+node shared/scripts/quality-worker-runtime/cli.mjs start --skill ln-511 --story {storyId} --manifest-file .hex-skills/quality/ln-511--{storyId}_manifest.json --run-id {parent_run_id}--ln-511--{storyId} --summary-artifact-path .hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-511--{storyId}.json
+node shared/scripts/quality-runtime/cli.mjs checkpoint --story {storyId} --phase PHASE_2_CODE_QUALITY --payload '{"child_run":{"worker":"ln-511","run_id":"{parent_run_id}--ln-511--{storyId}","summary_artifact_path":".hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-511--{storyId}.json"}}'
+Skill(skill: "ln-511-code-quality-checker", args: "{storyId} --run-id {parent_run_id}--ln-511--{storyId} --summary-artifact-path .hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-511--{storyId}.json")
 # Fast-track:
-Skill(skill: "ln-511-code-quality-checker", args: "{storyId} --skip-mcp-ref")
+node shared/scripts/quality-worker-runtime/cli.mjs start --skill ln-511 --story {storyId} --manifest-file .hex-skills/quality/ln-511--{storyId}_manifest.json --run-id {parent_run_id}--ln-511--{storyId} --summary-artifact-path .hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-511--{storyId}.json
+node shared/scripts/quality-runtime/cli.mjs checkpoint --story {storyId} --phase PHASE_2_CODE_QUALITY --payload '{"child_run":{"worker":"ln-511","run_id":"{parent_run_id}--ln-511--{storyId}","summary_artifact_path":".hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-511--{storyId}.json"}}'
+Skill(skill: "ln-511-code-quality-checker", args: "{storyId} --skip-mcp-ref --run-id {parent_run_id}--ln-511--{storyId} --summary-artifact-path .hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-511--{storyId}.json")
 ```
 
 ### Phase 3: Tech Debt Cleanup (delegate to ln-512 — SKIP if --fast-track)
@@ -112,14 +122,19 @@ Skill(skill: "ln-511-code-quality-checker", args: "{storyId} --skip-mcp-ref")
 > **Fast-track:** SKIP this phase.
 
 1) **Invoke ln-512-tech-debt-cleaner** via Skill tool
+   - Compute deterministic child run inputs for `ln-512`
+   - Start `quality-worker-runtime` and checkpoint `child_run` before delegation
    - ln-512 consumes findings from ln-511 output (passed via coordinator context)
    - Filters to auto-fixable categories (unused imports, dead code, deprecated aliases)
    - Applies safe fixes, verifies build integrity, creates commit
+   - Read only the resulting `quality-worker` artifact
 2) **If ln-512 returns BUILD_FAILED** -> all changes reverted, aggregate issue, continue
 
 **Invocation:**
 ```
-Skill(skill: "ln-512-tech-debt-cleaner", args: "{storyId}")
+node shared/scripts/quality-worker-runtime/cli.mjs start --skill ln-512 --story {storyId} --manifest-file .hex-skills/quality/ln-512--{storyId}_manifest.json --run-id {parent_run_id}--ln-512--{storyId} --summary-artifact-path .hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-512--{storyId}.json
+node shared/scripts/quality-runtime/cli.mjs checkpoint --story {storyId} --phase PHASE_3_TECH_DEBT_CLEANUP --payload '{"child_run":{"worker":"ln-512","run_id":"{parent_run_id}--ln-512--{storyId}","summary_artifact_path":".hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-512--{storyId}.json"}}'
+Skill(skill: "ln-512-tech-debt-cleaner", args: "{storyId} --run-id {parent_run_id}--ln-512--{storyId} --summary-artifact-path .hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-512--{storyId}.json")
 ```
 
 ### Phase 4: Agent Review Launch
@@ -165,26 +180,36 @@ Skill(skill: "ln-512-tech-debt-cleaner", args: "{storyId}")
 ### Phase 7: Regression Tests (delegate to ln-513)
 
 1) **Invoke ln-513-regression-checker** via Skill tool
+   - Compute deterministic child run inputs for `ln-513`
+   - Start `quality-worker-runtime` and checkpoint `child_run` before delegation
    - Runs full test suite, reports PASS/FAIL
    - Runs AFTER ln-512 changes to verify nothing broke
+   - Read only the resulting `quality-worker` artifact
 2) **If regression FAIL** -> aggregate issues, continue
 
 **Invocation:**
 ```
-Skill(skill: "ln-513-regression-checker", args: "{storyId}")
+node shared/scripts/quality-worker-runtime/cli.mjs start --skill ln-513 --story {storyId} --manifest-file .hex-skills/quality/ln-513--{storyId}_manifest.json --run-id {parent_run_id}--ln-513--{storyId} --summary-artifact-path .hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-513--{storyId}.json
+node shared/scripts/quality-runtime/cli.mjs checkpoint --story {storyId} --phase PHASE_7_REGRESSION_TESTS --payload '{"child_run":{"worker":"ln-513","run_id":"{parent_run_id}--ln-513--{storyId}","summary_artifact_path":".hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-513--{storyId}.json"}}'
+Skill(skill: "ln-513-regression-checker", args: "{storyId} --run-id {parent_run_id}--ln-513--{storyId} --summary-artifact-path .hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-513--{storyId}.json")
 ```
 
 ### Phase 8: Test Log Analysis (delegate to ln-514 — runs after ln-513)
 
 1) **Invoke ln-514-test-log-analyzer** via Skill tool with context instructions
+   - Compute deterministic child run inputs for `ln-514`
+   - Start `quality-worker-runtime` and checkpoint `child_run` before delegation
    - Only Real Bugs affect quality verdict; log quality issues are informational
+   - Read only the resulting `quality-worker` artifact
 2) **If ln-514 returns REAL_BUGS_FOUND** -> aggregate issues, continue
 3) **If ln-514 returns NO_LOG_SOURCES** -> status ignored, continue
 4) Post ln-514 report as Linear comment on story
 
 **Invocation:**
 ```
-Skill(skill: "ln-514-test-log-analyzer", args: "review logs since test run start, expected errors from negative test cases")
+node shared/scripts/quality-worker-runtime/cli.mjs start --skill ln-514 --story {storyId} --manifest-file .hex-skills/quality/ln-514--{storyId}_manifest.json --run-id {parent_run_id}--ln-514--{storyId} --summary-artifact-path .hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-514--{storyId}.json
+node shared/scripts/quality-runtime/cli.mjs checkpoint --story {storyId} --phase PHASE_8_LOG_ANALYSIS --payload '{"child_run":{"worker":"ln-514","run_id":"{parent_run_id}--ln-514--{storyId}","summary_artifact_path":".hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-514--{storyId}.json"}}'
+Skill(skill: "ln-514-test-log-analyzer", args: "{storyId} --run-id {parent_run_id}--ln-514--{storyId} --summary-artifact-path .hex-skills/runtime-artifacts/runs/{parent_run_id}/quality-worker/ln-514--{storyId}.json --log-context \"review logs since test run start, expected errors from negative test cases\"")
 ```
 
 ### Phase 9: Agent Merge (runs after Phase 8, when agent results arrive — SKIP if agents SKIPPED)
@@ -195,6 +220,9 @@ Skill(skill: "ln-514-test-log-analyzer", args: "review logs since test run start
 9b) **Critical Verification** per shared workflow — Claude evaluates each suggestion on merits
 9c) **Merge accepted suggestions** into issues list (SEC-, PERF-, MNT-, ARCH-, BP-, OPT-)
     - If `area=security` or `area=correctness` → escalate aggregate to CONCERNS
+9c.1) **Semantic diff snapshot (if graph indexed):**
+    - Run `analyze_changes(path=codebase_root, base_ref="HEAD~1")` to capture changed symbols, deleted API warnings, and high-risk items for the current review branch state
+    - Merge semantic diff findings into the same issue list before final verdict calculation
 9d) **Save review summary** to `.hex-skills/agent-review/review_history.md`
 9e) Checkpoint merge summary in review runtime
 
@@ -297,12 +325,15 @@ Write `.hex-skills/runtime-artifacts/runs/{run_id}/story-quality/{story_id}.json
 ## TodoWrite format (mandatory)
 ```
 - Invoke ln-511-code-quality-checker (in_progress)
+- Start ln-511 child runtime + checkpoint metadata (pending)
 - Invoke ln-512-tech-debt-cleaner (pending)
+- Start ln-512 child runtime + checkpoint metadata (pending)
 - Launch agent review (background) (pending)
 - Criteria Validation (Story deps, AC coverage, DB schema) (pending)
 - Run linters from tech_stack.md (pending)
 - Invoke ln-513-regression-checker (pending)
 - Invoke ln-514-test-log-analyzer (pending)
+- Start ln-513 and ln-514 child runtimes + checkpoint metadata (pending)
 - Merge agent review results (pending)
 - Calculate quality_verdict + return results (pending)
 ```
@@ -311,13 +342,13 @@ Write `.hex-skills/runtime-artifacts/runs/{run_id}/story-quality/{story_id}.json
 
 | Phase | Worker | Context |
 |-------|--------|---------|
-| 2 | ln-511-code-quality-checker | Shared (Skill tool) — code metrics, MCP Ref, static analysis |
-| 3 | ln-512-tech-debt-cleaner | Shared (Skill tool) — auto-fix safe findings from ln-511 |
+| 2 | ln-511-code-quality-checker | Runtime-backed managed Skill call; artifact is the only completion signal |
+| 3 | ln-512-tech-debt-cleaner | Runtime-backed managed Skill call; artifact is the only completion signal |
 | 4 | Inline agent review (Codex + Gemini) | Background — launched after ln-512, merged in Phase 9 |
-| 7 | ln-513-regression-checker | Shared (Skill tool) — full test suite after all changes |
-| 8 | ln-514-test-log-analyzer | Shared (Skill tool) — error classification + log quality after ln-513 |
+| 7 | ln-513-regression-checker | Runtime-backed managed Skill call; artifact is the only completion signal |
+| 8 | ln-514-test-log-analyzer | Runtime-backed managed Skill call; artifact is the only completion signal |
 
-**All workers:** Invoke via Skill tool — workers see coordinator context. Agent review runs inline (no Skill delegation).
+**All workers:** Start `quality-worker-runtime`, checkpoint `child_run`, then invoke via Skill tool with `runId` and `summaryArtifactPath`. Agent review remains inline and separate from worker-runtime orchestration.
 
 **Anti-Patterns:**
 - Running mypy, ruff, pytest directly instead of invoking ln-511/ln-513
@@ -331,11 +362,13 @@ Write `.hex-skills/runtime-artifacts/runs/{run_id}/story-quality/{story_id}.json
 - Single source of truth: rely on Linear metadata for tasks
 - Language preservation in comments (EN/RU)
 - Do not create tasks or change statuses; ln-500 decides next actions
+- Every managed worker run must start through `quality-worker-runtime` before Skill invocation.
 
 ## Definition of Done
 
 - [ ] ln-511 invoked (ALWAYS — full or `--skip-mcp-ref` in fast-track), code quality score returned
 - [ ] ln-512 invoked (or skipped if --fast-track), tech debt cleanup results returned
+- [ ] Child quality runtimes started and checkpointed before every managed worker invoke
 - [ ] Agent review runtime started and Phase 4 launch checkpoint recorded
 - [ ] Agent review executed inline (or skipped if --fast-track), results merged in Phase 9
 - [ ] All Codex/Gemini processes verified dead after Phase 9 merge AND after each Phase 10 iteration (no orphaned processes)

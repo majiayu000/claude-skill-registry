@@ -272,6 +272,14 @@ When reviewing pull requests:
 - When you need neutral, exhaustive analysis without a verdict
 - Personal preferences or subjective design choices
 
+## Gotchas
+
+1. **Steel-man first, always.** Skipping it produces straw-man critiques the author will dismiss. If you can't articulate why the current approach was chosen, you don't understand it well enough to critique it.
+2. **Don't pad with style nitpicks.** "Rename this variable" and "add comments" are not adversarial findings. Attack the architecture, the logic, the edge cases — not formatting.
+3. **Verdict must follow the threshold rules.** Don't upgrade PASS to PASS WITH CONDITIONS because you "feel" something is off. No Major finding = PASS. Period.
+4. **Every criticism needs a fix AND a trade-off.** "This is bad" without a concrete alternative is venting, not reviewing. And every fix has a cost — state it.
+5. **Read the code before reviewing.** Never critique based on file names or descriptions alone. Use Read/Grep to examine actual implementation.
+
 ## Integration Notes
 
 - **With swing-clarify:** Run swing-clarify first on ambiguous requests before invoking this skill. Clarified scope produces better results.

@@ -316,17 +316,23 @@ Type: Bugfix
 
 **If `PILOT_CODEX_SPEC_REVIEW_ENABLED` is `"true"` (from Step 0):**
 
-1. Detect companion path:
+1. Detect companion path, project root, and base branch:
 ```bash
 CODEX_COMPANION=$(ls ~/.claude/plugins/cache/openai-codex/codex/*/scripts/codex-companion.mjs 2>/dev/null | head -1)
+PROJECT_ROOT="${CLAUDE_PROJECT_ROOT:-$(pwd)}"
+# Use worktree base branch if in worktree, otherwise detect repo default branch
+BASE_BRANCH=$(~/.pilot/bin/pilot worktree status --json 2>/dev/null | grep -o '"base_branch":"[^"]*"' | cut -d'"' -f4)
+[ -z "$BASE_BRANCH" ] && BASE_BRANCH=$(cd "$PROJECT_ROOT" && git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's|refs/remotes/origin/||' || echo "main")
 ```
 
-2. Launch adversarial review with specific focus text:
+2. Launch adversarial review with specific focus text from the project root:
 ```bash
-node "$CODEX_COMPANION" adversarial-review --background --base main "Challenge this bugfix plan: <plan summary/root cause>. Plan: <plan-path>. Focus on: wrong root cause, incomplete fix, missing edge cases, regression risk, and whether the fix addresses symptoms vs cause."
+cd "$PROJECT_ROOT" && node "$CODEX_COMPANION" adversarial-review --background --base "$BASE_BRANCH" "Challenge this bugfix plan: <plan summary/root cause>. Plan: <plan-path>. Focus on: wrong root cause, incomplete fix, missing edge cases, regression risk, and whether the fix addresses symptoms vs cause."
 ```
 
-3. Wait for completion:
+**⛔ Use the companion's built-in wait — do NOT use `sleep` loops or poll output files manually.**
+
+3. Wait for completion (this blocks until Codex finishes or times out — no sleep needed):
 ```bash
 node "$CODEX_COMPANION" status <jobId> --wait --timeout-ms 120000 --json
 ```

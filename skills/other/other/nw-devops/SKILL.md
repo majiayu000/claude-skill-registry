@@ -123,47 +123,43 @@ Default if not chosen: **per-feature**.
 Before beginning DEVOPS work, read targeted prior wave artifacts:
 
 1. **DISCOVER** (skip): DESIGN already synthesizes DISCOVER+DISCUSS into architecture. Not needed for infrastructure design.
-2. **DISCUSS** (KPIs only): Read `docs/feature/{feature-id}/discuss/outcome-kpis.md` — drives observability and instrumentation design
-3. **DESIGN** (primary input): Read all files in `docs/feature/{feature-id}/design/` — architecture drives infrastructure decisions
+2. **DISCUSS** (KPIs only): Read `docs/feature/{feature-id}/discuss/outcome-kpis.md` — drives observability and instrumentation design.
+3. **DESIGN** (primary input): Read all files in `docs/feature/{feature-id}/design/` — architecture drives infrastructure decisions.
 
-DESIGN is the direct predecessor and synthesis point — its architecture decisions, component boundaries, and tech stack are the primary input for infrastructure design. Reading DISCOVER or full DISCUSS would duplicate what DESIGN already encoded.
-
-**READING ENFORCEMENT**: You MUST read every file listed in Prior Wave Consultation above using the Read tool before proceeding. After reading, output a confirmation checklist (`✓ {file}` for each read, `⊘ {file} (not found)` for missing). Do NOT skip files that exist — skipping causes infrastructure decisions disconnected from architecture.
+**READING ENFORCEMENT**: Read every file listed above using the Read tool before proceeding. After reading, output a confirmation checklist (`✓ {file}` for each read, `⊘ {file} (not found)` for missing). Do NOT skip files that exist — skipping causes infrastructure decisions disconnected from architecture.
 
 After reading, check whether any DEVOPS decisions would contradict DESIGN architecture. Flag contradictions and resolve with user before proceeding. Example: DESIGN specifies "single-region deployment" but DEVOPS discovers latency requirements from outcome-kpis.md that demand multi-region — this must be resolved.
 
 ## Document Update (Back-Propagation)
 
 When DEVOPS decisions change assumptions from prior waves:
-1. Document the change in a `## Changed Assumptions` section at the end of the affected DEVOPS artifact
-2. Reference the original prior-wave document and quote the original assumption
-3. State the new assumption and the rationale for the change
-4. If infrastructure constraints require architecture changes, note them in `docs/feature/{feature-id}/devops/upstream-changes.md` for the architect to review
+
+1. **Document change** — Add a `## Changed Assumptions` section at the end of the affected DEVOPS artifact. Gate: section present in artifact.
+2. **Reference original** — Quote the original prior-wave document and the original assumption. Gate: quote included.
+3. **State new assumption** — Write the new assumption and rationale for the change. Gate: rationale documented.
+4. **Flag upstream changes** — If infrastructure constraints require architecture changes, write them to `docs/feature/{feature-id}/devops/upstream-changes.md` for the architect to review. Gate: file created if architecture impact exists.
 
 ## Agent Invocation
 
-@nw-platform-architect
-
-Execute platform readiness and infrastructure design for {feature-id}.
-
-Context files: see Prior Wave Consultation above.
-
-**Configuration:**
-- deployment_target: {Decision 1} | container_orchestration: {Decision 2}
-- cicd_platform: {Decision 3} | existing_infrastructure: {Decision 4}
-- observability_and_logging: {Decision 5} | deployment_strategy: {Decision 6}
-- continuous_learning: {Decision 7} | git_branching_strategy: {Decision 8}
-- mutation_testing_strategy: {Decision 9}
-
-**KPI-Driven Observability:**
-If `outcome-kpis.md` exists in the feature's discuss directory, Apex MUST read it and design instrumentation to collect the defined KPIs. Each KPI's "Measured By" and "Measurement Plan" sections drive:
-- Data collection infrastructure (events, logs, analytics)
-- Dashboard design (which metrics to visualize)
-- Alerting rules (guardrail metric thresholds)
+1. **Dispatch** — Invoke `@nw-platform-architect` with the feature-id and configuration below. Gate: agent accepts invocation.
+2. **Provide context** — Pass all prior wave consultation files (see Prior Wave Consultation). Gate: context files attached.
+3. **Pass configuration** — Include all Decision 1-9 selections in the invocation:
+   - deployment_target: {Decision 1} | container_orchestration: {Decision 2}
+   - cicd_platform: {Decision 3} | existing_infrastructure: {Decision 4}
+   - observability_and_logging: {Decision 5} | deployment_strategy: {Decision 6}
+   - continuous_learning: {Decision 7} | git_branching_strategy: {Decision 8}
+   - mutation_testing_strategy: {Decision 9}
+4. **KPI-driven observability** — If `outcome-kpis.md` exists in the feature's discuss directory, Apex MUST read it and design instrumentation to collect the defined KPIs. Each KPI's "Measured By" and "Measurement Plan" sections drive: data collection infrastructure (events, logs, analytics), dashboard design (which metrics to visualize), alerting rules (guardrail metric thresholds). Gate: all KPIs have corresponding instrumentation design.
 
 ## Mandatory Deliverable: Environment Inventory
 
-BEFORE completing the DEVOPS wave, produce `docs/feature/{feature-id}/devops/environments.yaml` with this structure:
+BEFORE completing the DEVOPS wave, produce the environment inventory:
+
+1. **Create file** — Write `docs/feature/{feature-id}/devops/environments.yaml` with the structure below. Gate: file written.
+2. **Populate target environments** — List all deployment environments with name, description, platform, and preconditions. Gate: at least one environment entry present.
+3. **Define coexistence matrix** — List tools that must not break alongside the deployment (e.g., pre-commit, husky). Gate: matrix present.
+4. **Specify platform coverage** — List OS/platform versions to support. Gate: coverage table complete.
+5. **Document deployment assumptions** — List idempotency, uninstall safety, and hook coexistence requirements. Gate: assumptions enumerated.
 
 ```yaml
 # environments.yaml — consumed by DISTILL for Mandate 4 (Environmental Realism)
@@ -205,15 +201,13 @@ DISTILL reads this file to parametrize acceptance scenarios over target environm
 
 ## Peer Review Gate
 
-AFTER producing all deliverables, dispatch `@nw-platform-architect-reviewer` to review platform readiness artifacts. BLOCK handoff on rejection.
+AFTER producing all deliverables, dispatch the reviewer:
 
-Review scope:
-- CI/CD pipeline correctness and completeness
-- Environment inventory coverage (all deployment targets)
-- Observability design alignment with outcome KPIs
-- Infrastructure security and deployment strategy soundness
-
-On REJECTION: revise artifacts per reviewer findings and re-submit. Max 2 attempts before escalating to user.
+1. **Dispatch reviewer** — Invoke `@nw-platform-architect-reviewer` on the produced platform readiness artifacts. Gate: reviewer invoked.
+2. **Verify review scope** — Confirm reviewer covers: CI/CD pipeline correctness and completeness, environment inventory coverage (all deployment targets), observability design alignment with outcome KPIs, infrastructure security and deployment strategy soundness. Gate: all four areas reviewed.
+3. **Handle rejection** — On REJECTION: revise artifacts per reviewer findings and re-submit. Gate: re-submission accepted or escalation triggered.
+4. **Escalate if blocked** — After 2 failed attempts, escalate to user. Gate: max 2 revision cycles before escalation.
+5. **Block handoff** — Do not hand off to DISTILL until review passes. Gate: reviewer approval confirmed.
 
 ## Success Criteria
 

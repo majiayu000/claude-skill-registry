@@ -155,47 +155,46 @@ Active workers in PARALLEL via Agent tool:
 
 | Worker | Invocations | Output |
 |--------|-------------|--------|
-| ln-611-docs-structure-auditor | 1 | `{output_dir}/611-structure.md` |
-| ln-612-semantic-content-auditor | N (per target document) | `{output_dir}/612-semantic-{doc-slug}.md` |
-| ln-613-code-comments-auditor | 1 when `audit_scope in [comments-only, full]` | `{output_dir}/613-code-comments.md` |
-| ln-614-docs-fact-checker | 1 | `{output_dir}/614-fact-checker.md` |
+| ln-611-docs-structure-auditor | 1 | `{output_dir}/ln-611--global.md` |
+| ln-612-semantic-content-auditor | N (per target document) | `{output_dir}/ln-612--{doc-slug}.md` |
+| ln-613-code-comments-auditor | 1 when `audit_scope in [comments-only, full]` | `{output_dir}/ln-613--global.md` |
+| ln-614-docs-fact-checker | 1 | `{output_dir}/ln-614--global.md` |
 
 ln-614 receives only `contextStore` and discovers `.md` files internally. Every worker also receives `summaryArtifactPath`; coordinators consume JSON summaries first and read markdown reports only for findings/evidence.
+
+Managed child runtime sequence for every worker invocation:
+
+1. Compute `identifier`:
+   - global workers: `global`
+   - ln-612: `slug(doc)`
+2. Compute `childRunId = {parent_run_id}--{worker}--{identifier}`.
+3. Compute `childSummaryArtifactPath = .hex-skills/runtime-artifacts/runs/{parent_run_id}/audit-worker/{worker}--{identifier}.json`.
+4. Start the managed child runtime before delegation.
+5. Checkpoint `child_run` metadata before invoking the worker.
+6. Invoke the worker with both `--run-id {childRunId}` and `--summary-artifact-path {childSummaryArtifactPath}`.
+7. After the worker completes, load `{childSummaryArtifactPath}` and record it with `audit-runtime record-worker-result`.
 
 **Invocation:**
 ```javascript
 // Global workers -> activate by scope:
 FOR EACH worker IN active_global_workers:
-  worker_context = {
-    ...contextStore,
-    summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/" + worker + ".json"
-  }
-  Agent(description: "Docs audit via " + worker,
-       prompt: "Execute audit worker.
-
-Step 1: Invoke worker:
-  Skill(skill: \"" + worker + "\")
-
-CONTEXT:
-" + JSON.stringify(worker_context),
-       subagent_type: "general-purpose")
+  identifier = "global"
+  childRunId = parent_run_id + "--" + worker + "--" + identifier
+  childSummaryArtifactPath = ".hex-skills/runtime-artifacts/runs/" + parent_run_id + "/audit-worker/" + worker + "--" + identifier + ".json"
+  node shared/scripts/audit-worker-runtime/cli.mjs start --skill {worker} --identifier {identifier} --manifest-file .hex-skills/audit/{worker}--{identifier}_manifest.json --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}
+  node shared/scripts/audit-runtime/cli.mjs checkpoint --run-id {parent_run_id} --phase PHASE_4_DELEGATE --payload '{"child_run":{"worker":"{worker}","identifier":"{identifier}","run_id":"{childRunId}","summary_artifact_path":"{childSummaryArtifactPath}"}}'
+  Skill(skill: "{worker}", args: "--run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}")
+  node shared/scripts/audit-runtime/cli.mjs record-worker-result --run-id {parent_run_id} --payload-file {childSummaryArtifactPath}
 
 // Per-document worker (ln-612) -> N invocations:
 FOR EACH doc IN semantic_targets:
-  doc_context = {
-    ...contextStore,
-    doc_path: doc,
-    summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/ln-612-" + slug(doc) + ".json"
-  }
-  Agent(description: "Semantic audit " + doc + " via ln-612",
-       prompt: "Execute audit worker.
-
-Step 1: Invoke worker:
-  Skill(skill: \"ln-612-semantic-content-auditor\")
-
-CONTEXT:
-" + JSON.stringify(doc_context),
-       subagent_type: "general-purpose")
+  identifier = slug(doc)
+  childRunId = parent_run_id + "--ln-612--" + identifier
+  childSummaryArtifactPath = ".hex-skills/runtime-artifacts/runs/" + parent_run_id + "/audit-worker/ln-612--" + identifier + ".json"
+  node shared/scripts/audit-worker-runtime/cli.mjs start --skill ln-612 --identifier {identifier} --manifest-file .hex-skills/audit/ln-612--{identifier}_manifest.json --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}
+  node shared/scripts/audit-runtime/cli.mjs checkpoint --run-id {parent_run_id} --phase PHASE_4_DELEGATE --payload '{"child_run":{"worker":"ln-612","identifier":"{identifier}","run_id":"{childRunId}","summary_artifact_path":"{childSummaryArtifactPath}"}}'
+  Skill(skill: "ln-612-semantic-content-auditor", args: "{doc} --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}")
+  node shared/scripts/audit-runtime/cli.mjs record-worker-result --run-id {parent_run_id} --payload-file {childSummaryArtifactPath}
 ```
 
 ## Phase 5: Aggregate Results
@@ -288,6 +287,12 @@ Write consolidated report to `docs/project/docs_audit.md`:
 | Priority | Action | Location | Category |
 |----------|--------|----------|----------|
 | High | ... | ... | ... |
+```
+
+Before moving to results-log and cleanup phases, record the coordinator runtime summary:
+
+```bash
+node shared/scripts/audit-runtime/cli.mjs record-summary --run-id {parent_run_id} --payload '{"schema_version":"1.0.0","summary_kind":"audit-coordinator","run_id":"{parent_run_id}","identifier":"{runtime_identifier}","producer_skill":"ln-610","produced_at":"{iso_timestamp}","payload":{"status":"completed","final_result":"AUDIT_COMPLETE","report_path":"docs/project/docs_audit.md","worker_count":{active_worker_count},"issues_total":{issues_total},"severity_counts":{"critical":{critical_count},"high":{high_count},"medium":{medium_count},"low":{low_count}},"warnings":[]}}'
 ```
 
 ## Scoring Algorithm

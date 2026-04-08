@@ -1,6 +1,6 @@
 ---
 name: response-compression
-description: hype, and unnecessary framing. Includes termination and directness guidelines.
+description: Compress verbose responses by removing filler, hype, and unnecessary framing. Directness and termination guidelines.
 version: 1.7.1
 alwaysApply: true
 category: optimization

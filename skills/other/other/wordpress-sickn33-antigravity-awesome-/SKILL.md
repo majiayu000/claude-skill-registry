@@ -1,6 +1,6 @@
 ---
 name: wordpress
-description: "Complete WordPress development workflow covering theme development, plugin creation, WooCommerce integration, performance optimization, and security hardening."
+description: "Complete WordPress development workflow covering theme development, plugin creation, WooCommerce integration, performance optimization, and security hardening. Includes WordPress 7.0 features: Real-Time Collaboration, AI Connectors, Abilities API, DataViews, and PHP-only blocks."
 category: workflow-bundle
 risk: safe
 source: personal
@@ -13,6 +13,54 @@ date_added: "2026-02-27"
 
 Comprehensive WordPress development workflow covering theme development, plugin creation, WooCommerce integration, performance optimization, and security. This bundle orchestrates skills for building production-ready WordPress sites and applications.
 
+## WordPress 7.0 Features (Backward Compatible)
+
+WordPress 7.0 (April 9, 2026) introduces significant features while maintaining backward compatibility:
+
+### Real-Time Collaboration (RTC)
+- Multiple users can edit simultaneously using Yjs CRDT
+- HTTP polling provider (configurable via `WP_COLLABORATION_MAX_USERS`)
+- Custom transport via `sync.providers` filter
+- **Backward Compatibility**: Falls back to post locking when legacy meta boxes detected
+
+### AI Connectors API
+- Provider-agnostic AI interface in core (`wp_ai_client_prompt()`)
+- Settings > Connectors for centralized API credential management
+- Official providers: OpenAI, Anthropic Claude, Google Gemini
+- **Backward Compatibility**: Works with WordPress 6.9+ via plugin
+
+### Abilities API (Stable in 7.0)
+- Standardized capability declaration system
+- REST API endpoints: `/wp-json/abilities/v1/manifest`
+- MCP adapter for AI agent integration
+- **Backward Compatibility**: Can be used as Composer package in 6.x
+
+### DataViews & DataForm
+- Replaces WP_List_Table on Posts, Pages, Media screens
+- New layouts: table, grid, list, activity
+- Client-side validation (pattern, minLength, maxLength, min, max)
+- **Backward Compatibility**: Plugins using old hooks still work
+
+### PHP-Only Block Registration
+- Register blocks entirely via PHP without JavaScript
+- Auto-generated Inspector controls
+- **Backward Compatibility**: Existing JS blocks continue to work
+
+### Interactivity API Updates
+- `watch()` replaces `effect` from @preact/signals
+- State navigation changes
+- **Backward Compatibility**: Old syntax deprecated but functional
+
+### Admin Refresh
+- New default color scheme
+- View transitions between admin screens
+- **Backward Compatibility**: CSS-level changes, no breaking changes
+
+### Pattern Editing
+- ContentOnly mode defaults for unsynced patterns
+- `disableContentOnlyForUnsyncedPatterns` setting
+- **Backward Compatibility**: Existing patterns work
+
 ## When to Use This Workflow
 
 Use this workflow when:
@@ -22,6 +70,7 @@ Use this workflow when:
 - Setting up WooCommerce stores
 - Optimizing WordPress performance
 - Hardening WordPress security
+- Implementing WordPress 7.0 features (RTC, AI, DataViews)
 
 ## Workflow Phases
 
@@ -33,10 +82,20 @@ Use this workflow when:
 
 #### Actions
 1. Set up local development environment (LocalWP, Docker, or Valet)
-2. Install WordPress
+2. Install WordPress (recommend 7.0+ for new projects)
 3. Configure development database
 4. Set up version control
 5. Configure wp-config.php for development
+
+#### WordPress 7.0 Configuration
+```php
+// wp-config.php - Collaboration settings
+define('WP_COLLABORATION_MAX_USERS', 5);
+
+// AI Connector is enabled by installing a provider plugin
+// (e.g., OpenAI, Anthropic Claude, or Google Gemini connector)
+// No constant needed - configure via Settings > Connectors in admin
+```
 
 #### Copy-Paste Prompts
 ```
@@ -59,6 +118,13 @@ Use @app-builder to scaffold a new WordPress project with modern tooling
 5. Add custom post types and taxonomies
 6. Implement theme customization options
 7. Add responsive design
+8. Test with WordPress 7.0 admin refresh
+
+#### WordPress 7.0 Theme Considerations
+- Block API v3 now reference model
+- Pseudo-element support in theme.json
+- Global Styles custom CSS honors block-defined selectors
+- View transitions for admin navigation
 
 #### Theme Structure
 ```
@@ -108,6 +174,56 @@ Use @tailwind-patterns to style WordPress theme with modern CSS
 6. Implement REST API endpoints
 7. Add settings and options pages
 
+#### WordPress 7.0 Plugin Considerations
+- **RTC Compatibility**: Register post meta with `show_in_rest => true`
+- **AI Integration**: Use `wp_ai_client_prompt()` for AI features
+- **DataViews**: Consider new admin UI patterns
+- **Meta Boxes**: Migrate to block-based UIs for collaboration support
+
+#### RTC-Compatible Post Meta Registration
+```php
+register_post_meta('post', 'custom_field', [
+    'type' => 'string',
+    'single' => true,
+    'show_in_rest' => true,  // Required for RTC
+    'sanitize_callback' => 'sanitize_text_field',
+]);
+```
+
+#### AI Connector Example
+```php
+// Using WordPress 7.0 AI Connector
+// Note: Requires an AI provider plugin (OpenAI, Claude, or Gemini) to be installed and configured
+
+// Basic text generation
+$response = wp_ai_client_prompt('Summarize this content.')
+    ->generate_text();
+
+// With temperature for deterministic output
+$response = wp_ai_client_prompt('Summarize this content.')
+    ->using_temperature(0.2)
+    ->generate_text();
+
+// With model preference (tries first available in list)
+$response = wp_ai_client_prompt('Summarize this content.')
+    ->using_model_preference('gpt-4', 'claude-3-opus', 'gemini-2-pro')
+    ->generate_text();
+
+// For JSON structured output
+$schema = [
+    'type' => 'object',
+    'properties' => [
+        'summary' => ['type' => 'string'],
+        'keywords' => ['type' => 'array', 'items' => ['type' => 'string']]
+    ],
+    'required' => ['summary']
+];
+$response = wp_ai_client_prompt('Analyze this content and return JSON.')
+    ->using_system_instruction('You are a content analyzer.')
+    ->as_json_response($schema)
+    ->generate_text();
+```
+
 #### Plugin Structure
 ```
 plugin-name/
@@ -150,6 +266,12 @@ Use @backend-dev-guidelines to create a WordPress plugin with proper architectur
 7. Implement subscription products
 8. Add custom email templates
 
+#### WordPress 7.0 + WooCommerce Considerations
+- Test checkout with new admin interfaces
+- AI connectors for product descriptions
+- DataViews for order management screens
+- RTC for collaborative order editing
+
 #### Copy-Paste Prompts
 ```
 Use @payment-integration to set up WooCommerce with Stripe
@@ -174,6 +296,12 @@ Use @billing-automation to create subscription products in WooCommerce
 6. Implement lazy loading
 7. Configure OPcache
 8. Set up Redis/Memcached
+
+#### WordPress 7.0 Performance
+- Client-side media processing
+- Font Library enabled for all themes
+- Responsive grid block optimizations
+- View transitions reduce perceived load time
 
 #### Performance Checklist
 - [ ] Page load time < 3 seconds
@@ -204,8 +332,14 @@ Use @web-performance-optimization to audit and improve WordPress performance
 7. Configure security logging
 8. Set up malware scanning
 
+#### WordPress 7.0 Security Considerations
+- PHP 7.4 minimum (drops 7.2/7.3 support)
+- Test Abilities API permission boundaries
+- Verify collaboration data isolation
+- AI connector credential security
+
 #### Security Checklist
-- [ ] WordPress core updated
+- [ ] WordPress core updated (7.0+ recommended)
 - [ ] All plugins/themes updated
 - [ ] Strong passwords enforced
 - [ ] Two-factor authentication enabled
@@ -240,6 +374,13 @@ Use @security-auditor to perform comprehensive security review
 6. Performance testing
 7. Security testing
 
+#### WordPress 7.0 Testing Priorities
+- Test with iframed post editor
+- Verify DataViews integration
+- Test collaboration (RTC) workflows
+- Validate AI connector functionality
+- Test Interactivity API with watch()
+
 #### Copy-Paste Prompts
 ```
 Use @playwright-skill to create E2E tests for WordPress site
@@ -269,7 +410,7 @@ Use @deployment-engineer to set up WordPress deployment pipeline
 
 ## WordPress-Specific Workflows
 
-### Custom Post Type Development
+### Custom Post Type Development (RTC-Compatible)
 ```php
 register_post_type('book', [
     'labels' => [...],
@@ -277,6 +418,15 @@ register_post_type('book', [
     'has_archive' => true,
     'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
     'menu_icon' => 'dashicons-book',
+    'show_in_rest' => true,  // Enable for RTC
+]);
+
+// Register meta with REST API for collaboration
+register_post_meta('book', 'isbn', [
+    'type' => 'string',
+    'single' => true,
+    'show_in_rest' => true,
+    'sanitize_callback' => 'sanitize_text_field',
 ]);
 ```
 
@@ -289,6 +439,130 @@ add_action('rest_api_init', function() {
         'permission_callback' => '__return_true',
     ]);
 });
+```
+
+### WordPress 7.0 AI Connector Usage
+```php
+// Auto-generate post excerpt with AI
+add_action('save_post', function($post_id, $post) {
+    if (wp_is_post_autosave($post_id) || wp_is_post_revision($post_id)) {
+        return;
+    }
+    
+    // Skip if excerpt already exists
+    if (!empty($post->post_excerpt)) {
+        return;
+    }
+    
+    $content = strip_tags($post->post_content);
+    if (empty($content)) {
+        return;
+    }
+    
+    // Check if AI client is available
+    if (!function_exists('wp_ai_client_prompt')) {
+        return;
+    }
+    
+    // Build prompt with input
+    $result = wp_ai_client_prompt(
+        'Create a brief 2-sentence summary of this content: ' . substr($content, 0, 1000)
+    );
+    
+    if (is_wp_error($result)) {
+        return; // Silently fail - don't block post saving
+    }
+    
+    // Use temperature for consistent output
+    $result->using_temperature(0.3);
+    $summary = $result->generate_text();
+    
+    if ($summary && !is_wp_error($summary)) {
+        wp_update_post([
+            'ID' => $post_id,
+            'post_excerpt' => sanitize_textarea_field($summary)
+        ]);
+    }
+}, 10, 2);
+```
+
+### PHP-Only Block Registration (WordPress 7.0)
+```php
+// Register block entirely in PHP
+register_block_type('my-plugin/hello-world', [
+    'render_callback' => function($attributes, $content) {
+        return '<p class="hello-world">Hello, World!</p>';
+    },
+    'attributes' => [
+        'message' => ['type' => 'string', 'default' => 'Hello!']
+    ],
+]);
+```
+
+### Abilities API Registration
+```php
+// Register ability category on correct hook
+add_action('wp_abilities_api_categories_init', function() {
+    wp_register_ability_category('content-creation', [
+        'label' => __('Content Creation', 'my-plugin'),
+        'description' => __('Abilities for generating and managing content', 'my-plugin'),
+    ]);
+});
+
+// Register abilities on correct hook
+add_action('wp_abilities_api_init', function() {
+    wp_register_ability('my-plugin/generate-summary', [
+        'label' => __('Generate Post Summary', 'my-plugin'),
+        'description' => __('Creates an AI-powered summary of a post', 'my-plugin'),
+        'category' => 'content-creation',
+        'input_schema' => [
+            'type' => 'object',
+            'properties' => [
+                'post_id' => ['type' => 'integer', 'description' => 'The post ID to summarize']
+            ],
+            'required' => ['post_id']
+        ],
+        'output_schema' => [
+            'type' => 'object',
+            'properties' => [
+                'summary' => ['type' => 'string', 'description' => 'The generated summary']
+            ]
+        ],
+        'execute_callback' => 'my_plugin_generate_summary_handler',
+        'permission_callback' => function() {
+            return current_user_can('edit_posts');
+        }
+    ]);
+});
+
+// Handler function for the ability
+function my_plugin_generate_summary_handler($input) {
+    $post_id = isset($input['post_id']) ? absint($input['post_id']) : 0;
+    $post = get_post($post_id);
+    
+    if (!$post) {
+        return new WP_Error('invalid_post', 'Post not found');
+    }
+    
+    $content = strip_tags($post->post_content);
+    if (empty($content)) {
+        return ['summary' => ''];
+    }
+    
+    if (!function_exists('wp_ai_client_prompt')) {
+        return new WP_Error('ai_unavailable', 'AI client not available');
+    }
+    
+    $result = wp_ai_client_prompt('Summarize in 2 sentences: ' . substr($content, 0, 1000))
+        ->using_temperature(0.3)
+        ->generate_text();
+    
+    if (is_wp_error($result)) {
+        return $result;
+    }
+    
+    return ['summary' => sanitize_textarea_field($result)];
+}
 ```
 
 ### WooCommerce Custom Product Type
@@ -309,6 +583,7 @@ Before moving to next phase, verify:
 - [ ] Cross-browser tested
 - [ ] Mobile responsive verified
 - [ ] Accessibility checked (WCAG 2.1)
+- [ ] WordPress 7.0 compatibility verified (for new projects)
 
 ## Related Workflow Bundles
 
@@ -316,3 +591,5 @@ Before moving to next phase, verify:
 - `security-audit` - Security testing
 - `testing-qa` - Testing workflow
 - `ecommerce` - E-commerce development
+
+(End of file - total 440 lines)

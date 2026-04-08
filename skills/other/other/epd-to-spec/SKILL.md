@@ -9,8 +9,8 @@ allowed-tools:
   - Glob
   - Grep
   - AskUserQuestion
-  - mcp__google__sheets_values_get
-  - mcp__google__sheets_spreadsheet_get
+  - mcp__google-sheets__get_sheet_data
+  - mcp__google-sheets__list_sheets
 ---
 
 # /epd-to-spec — EPD Specification Writer
@@ -266,11 +266,11 @@ Apply `[VERIFY THRESHOLD]` flags when:
 
 Compile all sections into a single `.md` file organized by division number.
 
-**Default output path**: `~/Documents/Alpaca Labs/{client}/Working/epd-specs-[project-slug].md`
+**Default output path**: `./epd-specs-[project-slug].md`
 
 - Derive `[project-slug]` from the project name or type (lowercase, hyphenated)
 - If no project name: `epd-specs-draft.md`
-- If no client context: `~/Documents/Alpaca Labs/Alpa/Deliverables/`
+- If no client context: `./deliverables/`
 - Ask the user if they want a different path
 
 **File structure:**

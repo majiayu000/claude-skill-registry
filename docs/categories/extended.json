@@ -2,54 +2,54 @@
   "category": "extended",
   "code": "oth",
   "count": 4,
-  "updated_at": "2026-04-04T04:23:18.144162Z",
+  "updated_at": "2026-04-08T05:11:33.459153Z",
   "skills": [
     {
       "name": "agent-ops-install",
       "description": "Install AgentOps into a new or existing project. Handles .agent/ setup and .github/ merging.",
       "repo": "weholt/script-cast",
-      "path": "",
+      "path": ".opencode/skills/agent-ops-install/SKILL.md",
       "branch": "main",
       "category": "extended",
       "tags": [],
       "stars": 1,
-      "install": "weholt/script-cast",
+      "install": "weholt/script-cast/.opencode/skills/agent-ops-install/SKILL.md",
       "source": "github.com/weholt/script-cast"
     },
     {
       "name": "agent-ops-build",
       "description": "Language-aware build orchestration that detects project language and runs appropriate build pipeline",
       "repo": "weholt/script-cast",
-      "path": "",
+      "path": ".opencode/skills/agent-ops-build/SKILL.md",
       "branch": "main",
       "category": "extended",
       "tags": [],
       "stars": 1,
-      "install": "weholt/script-cast",
+      "install": "weholt/script-cast/.opencode/skills/agent-ops-build/SKILL.md",
       "source": "github.com/weholt/script-cast"
     },
     {
       "name": "agent-ops-build",
       "description": "Language-aware build orchestration that detects project language and runs appropriate build pipeline",
       "repo": "weholt/script-cast",
-      "path": "",
+      "path": ".opencode/skills/agent-ops-build/SKILL.md",
       "branch": "main",
       "category": "extended",
       "tags": [],
       "stars": 1,
-      "install": "weholt/script-cast",
+      "install": "weholt/script-cast/.opencode/skills/agent-ops-build/SKILL.md",
       "source": "github.com/weholt/script-cast"
     },
     {
       "name": "agent-ops-install",
       "description": "Install AgentOps into a new or existing project. Handles .agent/ setup and .github/ merging.",
       "repo": "weholt/script-cast",
-      "path": "",
+      "path": ".opencode/skills/agent-ops-install/SKILL.md",
       "branch": "main",
       "category": "extended",
       "tags": [],
       "stars": 1,
-      "install": "weholt/script-cast",
+      "install": "weholt/script-cast/.opencode/skills/agent-ops-install/SKILL.md",
       "source": "github.com/weholt/script-cast"
     }
   ]

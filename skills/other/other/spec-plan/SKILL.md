@@ -421,14 +421,18 @@ Task(
 
 Launch Codex review NOW — it runs in parallel with the Claude reviewer above.
 
-1. Detect companion path:
+1. Detect companion path, project root, and base branch:
 ```bash
 CODEX_COMPANION=$(ls ~/.claude/plugins/cache/openai-codex/codex/*/scripts/codex-companion.mjs 2>/dev/null | head -1)
+PROJECT_ROOT="${CLAUDE_PROJECT_ROOT:-$(pwd)}"
+# Use worktree base branch if in worktree, otherwise detect repo default branch
+BASE_BRANCH=$(~/.pilot/bin/pilot worktree status --json 2>/dev/null | grep -o '"base_branch":"[^"]*"' | cut -d'"' -f4)
+[ -z "$BASE_BRANCH" ] && BASE_BRANCH=$(cd "$PROJECT_ROOT" && git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's|refs/remotes/origin/||' || echo "main")
 ```
 
-2. Launch adversarial review in background. Include the plan's goal/summary as focus text so Codex knows what to challenge:
+2. Launch adversarial review in background from the project root. Include the plan's goal/summary as focus text so Codex knows what to challenge:
 ```bash
-node "$CODEX_COMPANION" adversarial-review --background --base main "Challenge this plan: <plan summary/goal>. Plan file: <plan-path>. Focus on: wrong assumptions, missing edge cases, scope gaps, and design choices that could fail under real-world conditions."
+cd "$PROJECT_ROOT" && node "$CODEX_COMPANION" adversarial-review --background --base "$BASE_BRANCH" "Challenge this plan: <plan summary/goal>. Plan file: <plan-path>. Focus on: wrong assumptions, missing edge cases, scope gaps, and design choices that could fail under real-world conditions."
 ```
 Capture the job ID from stdout. **Do NOT wait** — proceed to collect whichever reviewer finishes first.
 
@@ -451,7 +455,9 @@ Then Read the file once. If not READY after 5 min, re-launch synchronously.
 
 **If Codex was launched above**, collect its results now:
 
-1. Wait for completion:
+**⛔ Use the companion's built-in wait — do NOT use `sleep` loops or poll output files manually.**
+
+1. Wait for completion (this blocks until Codex finishes or times out — no sleep needed):
 ```bash
 node "$CODEX_COMPANION" status <jobId> --wait --timeout-ms 120000 --json
 ```

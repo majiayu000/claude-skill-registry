@@ -27,6 +27,8 @@ Examples:
 - `/pretext illuminated manuscript with live vine growth reflow`
 - `/pretext variable font wave — per-character weight animation`
 - `/pretext glyph morph — letterform interpolation from A to Z`
+- `/pretext letterbox gallery of "BEACON" in Playfair Display italic on dark background`
+- `/pretext glyph-mask calligram — letter R filled with lorem ipsum in Georgia`
 
 ## Do NOT Use This Skill When
 
@@ -52,6 +54,8 @@ These are all achievable without Pretext or opentype.js.
 | **Animated Obstacles** | `layoutNextLine` + `carveTextLineSlots` | Moving creatures/orbs that displace text at 60fps — slot-carving fills BOTH sides of obstacle |
 | **Typographic ASCII** | `prepareWithSegments` (char measurement) | Fluid simulations, 3D wireframes, particle systems rendered as proportional characters |
 | **Calligrams** | `prepareWithSegments` + SDF | Words rendered as shapes using their own letters — hearts, stars, spirals |
+| **Glyph-Mask Calligrams** | Canvas `measureText` + `getImageData` pixel mask | Any font glyph as calligram shape — fill a large letter with small text using pixel-mask technique (no SDF needed, no opentype.js) |
+| **Letterbox Gallery** | Glyph-mask + per-letter `<canvas>` grid | Each character in a string gets its own canvas with text fill, cursor displacement, and independent interaction |
 | **Multi-column Editorial** | All rich APIs combined | Magazine-style layouts with headline fitting, pull quotes, drop caps, column flow |
 
 ### Pretext + opentype.js Effects
@@ -163,6 +167,19 @@ Import only the functions you need. Pin the version. opentype.js cannot parse `.
 | Wet ink decay (tau) | 800–3000ms | 1500 |
 | Glyph morph easing | linear, ease-in-out, spring | ease-in-out |
 
+### Glyph-Mask Calligrams / Letterbox Gallery
+| Parameter | Range | Default |
+|-----------|-------|---------|
+| Canvas size (per letter) | 200–1000px | 500 |
+| Fill font size | 8–24px | 11 |
+| Fill model | `self`, `lorem`, `alphabet`, `custom` | `lorem` |
+| Fill case | `upper`, `lower`, `mixed` | `upper` |
+| Fill columns | 1–4 | 1 |
+| Grid columns (gallery) | 2–6 | 3 |
+| Cursor displacement radius | 50–250px | 100 |
+| Cursor displacement force | 10–50 | 35 |
+| Displacement damping | 0.85–0.98 | 0.94 |
+
 ### opentype.js + flubber — Glyph Morphing
 | Parameter | Range | Default |
 |-----------|-------|---------|
@@ -178,12 +195,14 @@ Import only the functions you need. Pin the version. opentype.js cannot parse `.
 | Typographic palette, brightness, ASCII grid | `references/typographic-ascii.md` |
 | Column flow, obstacles, headline fitting, slot-carving, animated physics | `references/obstacle-routing.md` |
 | SDF shapes, proportional spacing, animation | `references/calligram-shapes.md` |
+| Pixel-mask technique, glyph-mask calligrams, cursor displacement, letterbox gallery | `references/calligram-shapes.md` (Pixel-Mask section) |
 | opentype.js + Pretext integration patterns | `references/opentype-integration.md` |
 | Working accordion template | `assets/templates/height-prediction.html` |
 | Working bubbles template | `assets/templates/shrinkwrap-bubbles.html` |
 | Working editorial template | `assets/templates/editorial-engine.html` |
 | Working ASCII art template | `assets/templates/typographic-ascii.html` |
 | Working calligram template | `assets/templates/calligram.html` |
+| Working letterbox gallery template | `assets/templates/letterbox-gallery.html` |
 | GlyphKit demos (6 working demos, local) | `~/Desktop/Programming/glyphkit/demos/` (machine-specific) |
 
 ## Anti-Patterns

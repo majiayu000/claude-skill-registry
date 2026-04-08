@@ -189,6 +189,48 @@ Task(
 )
 ```
 
+## Invisible Routing Principle
+
+The user should never see the orchestration machinery. They say what they want; the system routes silently.
+
+```
+GOOD: User says "add dark mode" → you silently pick Plan → spawn architect
+BAD:  User says "add dark mode" → you explain routing tables and agent selection
+```
+
+Route invisibly. Act decisively. Only surface choices when genuinely ambiguous.
+
+## Decision Flowchart
+
+```
+User input arrives
+    │
+    ├─ CLEAR intent? ──────→ Route directly (no questions)
+    │   "fix the login bug"     → Fix workflow
+    │   "add a REST endpoint"   → Build workflow
+    │
+    ├─ AMBIGUOUS intent? ──→ Ask MAX 1 clarifying question
+    │   "improve the app"       → "What aspect? Performance / UX / Security?"
+    │   "work on auth"          → "Fix existing auth or build new?"
+    │
+    └─ CONVERSATIONAL? ────→ Don't route. Just respond naturally.
+        "how does X work?"      → Explain directly
+        "what do you think?"    → Give opinion
+```
+
+## Fallback Strategy
+
+When no internal skill or agent fully covers the need:
+
+```
+Step 1: WORKAROUND  → Can an existing skill partially handle it?
+Step 2: COMBO       → Can 2+ skills combine to solve it?
+Step 3: CREATE      → Worth building a new skill? Use /skill-create
+Step 4: EXTERNAL    → Check external-skills-catalog for community options
+```
+
+Reference the `external-skills-catalog` skill when reaching Step 4.
+
 ## Tips
 
 - **Infer when possible:** If the user says "this test is failing", that's clearly a Fix goal
@@ -196,3 +238,5 @@ Task(
 - **Chain agents:** For complex tasks, Research -> Plan -> Premortem -> Build is the recommended flow
 - **Run premortem:** Before Build, always run `/premortem deep` on the plan to catch risks early
 - **Preserve context:** Use handoffs between agents to maintain continuity
+- **Invisible routing:** Never explain the routing decision unless asked
+- **One question max:** If ambiguous, ask at most 1 question before routing

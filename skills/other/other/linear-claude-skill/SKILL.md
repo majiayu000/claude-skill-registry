@@ -421,10 +421,10 @@ Images shared inline in Claude Code are **not** saved to disk automatically — 
 ls -t ~/.claude/projects/<project-path>/*.jsonl | head -1
 
 # Extract all inline images (saves to /tmp by default)
-npx tsx scripts/extract-image.ts <path-to-session.jsonl>
+npm run extract-image -- <path-to-session.jsonl>
 
 # Or specify a custom output directory
-npx tsx scripts/extract-image.ts <path-to-session.jsonl> ~/Desktop
+npm run extract-image -- <path-to-session.jsonl> ~/Desktop
 ```
 
 This saves images to `/tmp/shared-image-0.png`, `/tmp/shared-image-1.png`, etc.
@@ -435,23 +435,23 @@ This saves images to `/tmp/shared-image-0.png`, `/tmp/shared-image-1.png`, etc.
 
 ```bash
 # Standard approach
-npx tsx scripts/linear-ops.ts create-issue "Project Name" "Issue title" "Description"
+npm run ops -- create-issue "Project Name" "Issue title" "Description"
 ```
 
 > **Note**: If you need to target a specific team and `create-issue` picks the wrong one, use GraphQL with explicit `teamId`:
 >
 > ```bash
 > # Get the project's team
-> npx tsx scripts/query.ts 'query { projects(filter: { name: { containsIgnoreCase: "PROJECT NAME" } }) { nodes { id name teams { nodes { id name key } } } } }'
+> npm run query -- 'query { projects(filter: { name: { containsIgnoreCase: "PROJECT NAME" } }) { nodes { id name teams { nodes { id name key } } } } }'
 >
 > # Create with explicit teamId
-> npx tsx scripts/query.ts 'mutation { issueCreate(input: { teamId: "TEAM_UUID", projectId: "PROJECT_UUID", title: "Issue title", description: "Description" }) { success issue { id identifier url } } }'
+> npm run query -- 'mutation { issueCreate(input: { teamId: "TEAM_UUID", projectId: "PROJECT_UUID", title: "Issue title", description: "Description" }) { success issue { id identifier url } } }'
 > ```
 
 ### Step 3: Upload the image and attach to the issue
 
 ```bash
-npx tsx scripts/upload-image.ts /tmp/shared-image-0.png ENG-123 "Optional comment text"
+npm run upload-image -- /tmp/shared-image-0.png ENG-123 "Optional comment text"
 ```
 
 The script will:

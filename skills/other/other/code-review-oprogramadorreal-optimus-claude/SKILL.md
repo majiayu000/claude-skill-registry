@@ -43,7 +43,7 @@ Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/prerequisite-check.md` and appl
 
 ### Harness mode detection
 
-If the system prompt contains `HARNESS_MODE_ACTIVE`, read `$CLAUDE_PLUGIN_ROOT/references/harness-mode.md` and follow its single-iteration execution protocol. The reference covers progress file reading, state initialization, and step overrides (including the Step 9 apply/output protocol). Then proceed directly to Step 5 — skip user confirmation.
+If the system prompt contains `HARNESS_MODE_ACTIVE`, read `$CLAUDE_PLUGIN_ROOT/references/harness-mode.md` and follow its single-iteration execution protocol. The reference covers progress file reading, state initialization, scope and file-list rules, Step 3 / Step 4 overrides under harness mode, and the Step 9 apply/output protocol. Then proceed through Step 3, Step 4, and Step 5 — skip only the Step 2 user confirmation.
 
 If `HARNESS_MODE_ACTIVE` is NOT in the system prompt, continue with the standard interactive flow below.
 
@@ -192,7 +192,7 @@ Up to 7 review agents, launched in parallel for maximum coverage.
 
 Launch up to 7 `general-purpose` Agent tool calls simultaneously. Agents 1–5 always run; Agent 6 runs when test infrastructure is detected; Agent 7 runs when contract-related files are changed (see agent overview below).
 
-Each agent receives the list of changed file paths from Step 3.
+Each agent receives the list of changed file paths (from Step 3 in normal/interactive mode, or from `scope_files.current` in harness mode when pre-populated by the harness).
 
 Read the agent prompt files from `$CLAUDE_PLUGIN_ROOT/skills/code-review/agents/` for individual agent prompts. Read `$CLAUDE_PLUGIN_ROOT/skills/code-review/agents/shared-constraints.md` for the shared quality bar, exclusion rules, and false positive guidance applying to all agents.
 

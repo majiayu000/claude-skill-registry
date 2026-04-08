@@ -1,9 +1,6 @@
 ---
 name: computer-control
-description: 'Guide Claude through computer use API integration - screenshot capture,
-  mouse/keyboard control, agent loops, and sandboxed desktop automation. Use when:
-  computer use, computer control, desktop automation, screenshot capture, mouse control,
-  keyboard control, agent loop, GUI automation, display toolkit, phantom.'
+description: 'Automate desktop GUI workflows via Claude computer use API with screenshot capture and mouse/keyboard control.'
 version: 1.0.0
 alwaysApply: false
 model_hint: standard

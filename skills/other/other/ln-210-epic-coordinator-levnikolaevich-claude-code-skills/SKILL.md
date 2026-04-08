@@ -104,7 +104,7 @@ Decision handling:
 
 ### Phase 0: Tools Config
 
-**MANDATORY READ:** Load `shared/references/tools_config_guide.md`, `shared/references/storage_mode_detection.md`, `shared/references/input_resolution_pattern.md`
+**MANDATORY READ:** Load `shared/references/environment_state_contract.md`, `shared/references/storage_mode_detection.md`, `shared/references/input_resolution_pattern.md`
 
 Extract: `task_provider` = Task Management → Provider
 
@@ -285,6 +285,7 @@ Query kanban_board.md and task provider for existing Epics:
 
 1. **Read Epic Story Counters** table in kanban_board.md
 2. **IF task_provider == "linear":** `list_projects(team=teamId)` to cross-check
+   **ELSE IF task_provider == "github":** `gh issue list -R {REPO} --label epic --state all --json number,title` to cross-check
    **ELSE:** `Glob("docs/tasks/epics/*/epic.md")` to list file-based Epics
 3. **Count existing Epic rows** (excludes header row)
 
@@ -446,6 +447,11 @@ For EACH Epic (in sequential order for numbering consistency):
    - `save_project({name: "Epic {N}: {Title}", description: epic_markdown, team: teamId, state: "planned"})`
    - Collect returned URL
 
+   **ELSE IF task_provider == "github":**
+   - `gh issue create -R {REPO} --title "Epic {N}: {Title}" --body "{epic_markdown}" --label "epic"`
+   - Add to project + set status Backlog (per provider_github.md)
+   - Collect returned issue URL
+
    **ELSE (file mode):**
    - `mkdir -p docs/tasks/epics/epic-{N}-{slug}/stories/`
    - `Write("docs/tasks/epics/epic-{N}-{slug}/epic.md")` with Epic markdown + file headers (`**Status:** Backlog`, `**Created:** {date}`)
@@ -455,7 +461,7 @@ For EACH Epic (in sequential order for numbering consistency):
    - Add new row to Epic Story Counters: `Epic {N} | - | US001 | - | EPN_01`
    - Add to "Epics Overview" → Active: `- [Epic {N}: Title](link) - Backlog`
 
-4. **Collect URL** (Linear mode) or file path (file mode)
+4. **Collect URL** (Linear/GitHub mode) or file path (file mode)
 
 **Step 4: Display Summary**
 
@@ -490,11 +496,11 @@ Next Steps:
 **Full workflow:** **MANDATORY READ:** Load `references/replan_workflow.md` for complete REPLAN process.
 
 **Summary:**
-1. Load existing Epics (IF task_provider == "linear": from Linear API | ELSE: from `docs/tasks/epics/*/epic.md`)
+1. Load existing Epics (IF task_provider == "linear": from Linear API | IF task_provider == "github": from `gh issue list --label epic` | ELSE: from `docs/tasks/epics/*/epic.md`)
 2. Compare IDEAL plan vs existing → Categorize: KEEP/UPDATE/OBSOLETE/CREATE
 3. Show replan summary with diffs and warnings
 4. User confirmation required
-5. Execute operations (IF task_provider == "linear": Linear API | ELSE: Edit/Write epic.md files) + update kanban_board.md
+5. Execute operations (per provider_*.md) + update kanban_board.md
 
 **Constraints:** Never auto-update/archive Epics with Stories In Progress. Never delete (use archived). Always require confirmation.
 
@@ -571,14 +577,14 @@ Skill type: `planning-coordinator`. Run after all phases complete. Output to cha
 
 ## Reference Files
 
-- **MANDATORY READ:** `shared/references/tools_config_guide.md`
+- **MANDATORY READ:** `shared/references/environment_state_contract.md`
 - **MANDATORY READ:** `shared/references/storage_mode_detection.md`
 - **[MANDATORY] Problem-solving approach:** `shared/references/problem_solving.md`
 - **Orchestrator lifecycle:** `shared/references/orchestrator_pattern.md`
 - **Auto-discovery patterns:** `shared/references/auto_discovery_pattern.md`
 - **Decompose-first pattern:** `shared/references/decompose_first_pattern.md`
 - **Numbering conventions:** `shared/references/numbering_conventions.md` (Epic 0 reserved, Linear numbering)
-- **Linear creation workflow:** `shared/references/linear_creation_workflow.md`
+- **Issue creation workflow:** `shared/references/issue_creation_workflow.md`
 - **linear_integration.md:** Discovery patterns + Linear API reference (moved to `shared/templates/linear_integration.md`)
 - **epic_template_universal.md:** Epic template structure
 - **replan_workflow.md:** Complete REPLAN mode workflow (Phase 5b)
@@ -598,5 +604,5 @@ Skill type: `planning-coordinator`. Run after all phases complete. Output to cha
 
 ---
 
-**Version:** 7.0.0
-**Last Updated:** 2025-11-20
+**Version:** 8.0.0
+**Last Updated:** 2026-04-05

@@ -9,9 +9,9 @@ allowed-tools:
   - Glob
   - Grep
   - AskUserQuestion
-  - mcp__google__sheets_values_get
-  - mcp__google__sheets_values_update
-  - mcp__google__sheets_spreadsheet_get
+  - mcp__google-sheets__get_sheet_data
+  - mcp__google-sheets__update_cells
+  - mcp__google-sheets__list_sheets
 ---
 
 # /epd-parser — EPD PDF Parser
@@ -239,7 +239,7 @@ Ask the user (if not already specified): **"Where should I save this?"**
 
 Options:
 - **EPD Google Sheet** — append rows to a dedicated EPD spreadsheet (separate from the FF&E product library). Ask for spreadsheet ID if not already known.
-- **Local CSV** — save to a specified path (default: `~/Documents/Alpaca Labs/{client}/Working/epd-data-YYYY-MM-DD.csv`)
+- **Local CSV** — save to a specified path (default: `./epd-data-YYYY-MM-DD.csv`)
 - **Just the table** — leave as markdown in the conversation
 
 ## CSV Format

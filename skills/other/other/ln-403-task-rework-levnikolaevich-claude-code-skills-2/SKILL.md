@@ -1,7 +1,7 @@
 ---
 name: ln-403-task-rework
 description: "Fixes tasks in To Rework by applying reviewer feedback, then returns to To Review. Use when task was rejected during review."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline, mcp__hex-line__verify, mcp__hex-line__changes
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline, mcp__hex-line__read_file, mcp__hex-line__edit_file, mcp__hex-line__write_file, mcp__hex-line__verify, mcp__hex-line__changes, mcp__hex-line__inspect_path
 license: MIT
 ---
 
@@ -18,8 +18,10 @@ Executes rework for a single task marked To Rework and hands it back for review.
 - Apply fixes per feedback, keep KISS/YAGNI, and align with guides/Technical Approach.
 - Update only this task: To Rework -> In Progress -> To Review; no other tasks touched.
 
-**Hex-line acceleration (if available):** Use `outline(path)` before reading large code files. After edits: `edit_file(base_revision=rev)` → `verify(checksums)`. Use `changes()` to show what was fixed.
+**Hex-line acceleration (if available):** Use `outline(path)` before reading large code files. Use `read_file()` for discovery and `read_file(edit_ready=true, verbosity="full")` before any edit that needs `revision` and checksums. After edits: `edit_file(base_revision=rev)` → `verify(checksums)`. Use `changes()` to show what was fixed.
 ## Inputs
+
+Use `read_file()` and `edit_file()` as the primary path for code/config/script/test files during rework. Keep `read_file()` discovery-first by default; request `edit_ready=true, verbosity="full"` only when you are about to reuse its revision/checksum protocol. Built-in Read/Edit are fallback only when hex-line is unavailable.
 
 | Input | Required | Source | Description |
 |-------|----------|--------|-------------|
@@ -30,7 +32,7 @@ Executes rework for a single task marked To Rework and hands it back for review.
 
 ## Task Storage Mode
 
-**MANDATORY READ:** Load `shared/references/tools_config_guide.md`, `shared/references/storage_mode_detection.md`, and `shared/references/input_resolution_pattern.md`
+**MANDATORY READ:** Load `shared/references/environment_state_contract.md`, `shared/references/storage_mode_detection.md`, and `shared/references/input_resolution_pattern.md`
 
 Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
 
@@ -63,9 +65,12 @@ Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
 
 ## Runtime Summary Artifact
 
-**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
+**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`, `shared/references/worker_runtime_contract.md`, `shared/references/task_worker_runtime_contract.md`
 
-Write `.hex-skills/runtime-artifacts/runs/{run_id}/task-status/{task_id}.json` before finishing.
+Shared contract:
+- emit `summary_kind=task-status`
+- standalone mode omits `runId` and `summaryArtifactPath`
+- managed mode passes both `runId` and exact `summaryArtifactPath` before the worker writes its validated summary
 
 ## Definition of Done
 - [ ] Task and review feedback fully read; actions mapped.
@@ -76,7 +81,7 @@ Write `.hex-skills/runtime-artifacts/runs/{run_id}/task-status/{task_id}.json` b
 - [ ] Runtime summary artifact written to the shared task-status location.
 
 ## Reference Files
-- **Tools config:** `shared/references/tools_config_guide.md`
+- **Environment state:** `shared/references/environment_state_contract.md`
 - **Storage mode operations:** `shared/references/storage_mode_detection.md`
 - **[MANDATORY] Problem-solving approach:** `shared/references/problem_solving.md`
 - Kanban format: `docs/tasks/kanban_board.md`

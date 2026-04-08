@@ -1,7 +1,7 @@
 ---
 name: memory-management
 description: 'Persist SEO/GEO campaign context across Claude sessions with automatic hot-list, active work, and archive tiers. 项目记忆/跨会话'
-version: "6.0.0"
+version: "7.0.0"
 license: Apache-2.0
 compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
@@ -9,7 +9,7 @@ when_to_use: "Use when reviewing, archiving, or cleaning up campaign memory. Als
 argument-hint: "[review|archive|cleanup]"
 metadata:
   author: aaron-he-zhu
-  version: "6.0.0"
+  version: "7.0.0"
   geo-relevance: "low"
   tags:
     - seo
@@ -31,6 +31,9 @@ metadata:
     - "store keyword data"
     - "manage project memory"
     - "project context"
+    - "refresh wiki index"
+    - "build wiki index"
+    - "wiki lint"
     # EN-casual
     - "remember this for next time"
     - "save my keyword data"
@@ -44,6 +47,8 @@ metadata:
     - "项目记忆管理"
     - "SEO数据保存"
     - "跨会话记忆"
+    - "刷新wiki索引"
+    - "项目状况"
     # ZH-casual
     - "保存进度"
     - "上次说了什么"
@@ -92,10 +97,26 @@ Use this whenever project state should survive the current session — even if t
 5. **Demotion**: Moves unreferenced HOT items to WARM (30 days), WARM to COLD (90 days)
 6. **Cross-Skill Aggregation**: When user asks "what do we know", aggregates from all `memory/` subdirectories
 7. **Open Loop Tracking**: Maintains `memory/open-loops.md`, reminds user of stale items via SessionStart hook
+8. **Wiki Index Maintenance**: Compiles `memory/wiki/index.md` — a structured, auto-refreshed index of all WARM files with precise fields (score, 健康度, status, next_action, mtime) and best-effort summaries. Supports project isolation via `memory/wiki/<project>/index.md`. Auto-refreshed on PostToolUse; user confirmation not required (index is a fully rebuildable derived artifact). Delete `memory/wiki/` at any time to revert to pre-wiki behavior.
+9. **Wiki Compiled Pages** (Phase 2): Generates interlinked entity, keyword, and topic pages from WARM files with source hash tracking, contradiction detection, and confidence-labeled reconciliation. Requires user confirmation before writing.
+10. **Wiki Lint** (Phase 2): Detects contradictions, orphan pages, stale claims, missing pages, and source hash mismatches across wiki and WARM files via `/seo:wiki-lint`.
+11. **WARM Retirement Preview** (Phase 3): `wiki-lint --retire-preview` lists WARM files fully covered by wiki compiled pages as retirement candidates. Actual archival to COLD requires explicit user confirmation.
 
 ## Quick Start
 
 Start with one of these prompts. Finish with a hot-cache update plan and a handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
+
+### Initialize Wiki Index
+
+```
+Refresh wiki index
+```
+
+```
+Build wiki index for [project name]
+```
+
+Generates `memory/wiki/index.md` from existing WARM files. Required once to enable wiki features; subsequent refreshes happen automatically.
 
 ### Initialize Memory Structure
 
@@ -156,24 +177,20 @@ What does [internal jargon] mean in this project?
 **Expected output**: a memory update plan, hot-cache changes, and a short handoff summary.
 
 - **Reads**: current campaign facts, new findings from other skills, approved decisions, and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
-- **Writes**: updates to `memory/hot-cache.md`, `memory/open-loops.md`, `memory/decisions.md`, and related `memory/` folders. Also manages WARM-to-COLD archival in `memory/archive/`.
+- **Writes**: updates to `memory/hot-cache.md`, `memory/open-loops.md`, `memory/decisions.md`, and related `memory/` folders. Manages WARM-to-COLD archival in `memory/archive/`. Compiles `memory/wiki/index.md` (auto-refreshed) and wiki compiled pages (user-confirmed).
 - **Promotes**: durable strategy, blockers, terminology, entity candidates, and major deltas. Applies temperature lifecycle rules: promote to HOT on high reference frequency, demote on staleness.
 - **Next handoff**: use the `Next Best Skill` below when the project memory baseline is ready for active work.
 
 ### Temperature Lifecycle Rules
 
-| Condition | Action |
-|-----------|--------|
-| Finding referenced by 2+ skills within 7 days | Promote WARM → HOT (extract ≤3 line summary) |
-| Finding referenced 3+ times within 7 days | Promote WARM → HOT |
-| HOT item unreferenced for 30 days | Demote HOT → WARM (remove from hot-cache.md, keep source file) |
-| WARM file unreferenced for 90 days | Demote WARM → COLD (move to `memory/archive/YYYY-MM-DD-filename.md`) |
+> See [references/promotion-demotion-rules.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/promotion-demotion-rules.md) for the full promotion/demotion table and action procedures.
 
 ### Hook Integration
 
 This skill's behavior is reinforced by the library's prompt-based hooks:
-- **SessionStart**: loads `memory/hot-cache.md`, reminds of stale open loops
-- **Stop**: prompts to save session findings, auto-saves veto issues to hot-cache
+- **SessionStart**: loads `memory/hot-cache.md`, reminds of stale open loops; loads `memory/wiki/<project>/index.md` (or global `index.md`) if it exists; provides light-user guidance based on Quick Status when `next_action` items are available
+- **PostToolUse**: after any WARM file write, silently refreshes `memory/wiki/index.md` (Phase 1); prompts to update compiled pages (Phase 2)
+- **Stop**: prompts to save session findings, auto-saves veto issues to hot-cache; appends changelog entry to index.md bottom
 
 ## Data Sources
 
@@ -198,43 +215,11 @@ When a user requests SEO memory management:
 
 ### 1. Initialize Memory Structure
 
-For new projects, create the following structure:
+For new projects, create the directory structure defined in the [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md). Key directories: `memory/` (decisions, open-loops, glossary, entities, research, content, audits, monitoring) plus `memory/wiki/` (auto-managed compiled index with optional per-project subdirectories).
 
-```markdown
-## Directory Structure
+> **Templates**: [hot-cache-template.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/hot-cache-template.md) · [glossary-template.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/glossary-template.md) · [Wiki spec](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/proposal-wiki-layer-v3.md)
 
-project-root/
-├── CLAUDE.md                           # HOT tier (80 lines max)
-└── memory/
-    ├── decisions.md                    # Major strategic choices
-    ├── open-loops.md                   # Unresolved blockers and follow-ups
-    ├── glossary.md                     # Project terminology
-    ├── entities/
-    │   └── [entity-name].md           # Canonical entity profiles
-    ├── research/
-    │   ├── keywords/                  # Hero, secondary, and opportunity sets
-    │   ├── competitors/               # Competitor overviews and dated analyses
-    │   ├── serp/                      # SERP snapshots and notes
-    │   └── content-gaps/              # Gap summaries and topic opportunities
-    ├── content/
-    │   ├── briefs/                    # Content briefs and approved angles
-    │   ├── calendar/                  # Active and archived campaign plans
-    │   └── published/                 # Dated shipped-content summaries
-    ├── audits/
-    │   ├── content/                   # Content audits
-    │   ├── domain/                    # Domain authority (CITE) audits
-    │   ├── technical/                 # Technical SEO audits
-    │   └── internal-linking/          # Link architecture audits
-    └── monitoring/
-        ├── alerts/                    # Alert history and thresholds
-        ├── rank-history/              # Dated ranking snapshots / CSV exports
-        ├── reports/                   # Monthly, quarterly, campaign reports
-        └── snapshots/                 # Dated hot-cache snapshots
-```
-
-> **Templates**: See [references/hot-cache-template.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/hot-cache-template.md) for the complete CLAUDE.md hot cache template and [references/glossary-template.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/glossary-template.md) for the project glossary template.
-
-### 4. Context Lookup Flow
+### 2. Context Lookup Flow
 
 When a user references something unclear, follow this lookup sequence:
 
@@ -243,16 +228,18 @@ When a user references something unclear, follow this lookup sequence:
 - Is it in primary competitors?
 - Is it in current priorities or campaigns?
 
-**Step 2: Check memory/glossary.md**
+**Step 2: Check Wiki Index** (`memory/wiki/index.md` or project-level) — locate relevant WARM files
+
+**Step 3: Check memory/glossary.md**
 - Is it defined as project terminology?
 - Is it a custom segment or shorthand?
 
-**Step 3: Check Cold Storage**
+**Step 4: Check Cold Storage**
 - Search memory/research/keywords/ for historical keyword context
 - Search memory/research/competitors/ for past analyses
 - Search memory/monitoring/reports/ for archived mentions
 
-**Step 4: Ask User**
+**Step 5: Ask User**
 - If not found in any layer, ask for clarification
 - Log the new term in glossary if it's project-specific
 
@@ -267,15 +254,15 @@ Step 3: Execute ranking check
 Step 4: Update both CLAUDE.md and memory/monitoring/rank-history/YYYY-MM-DD-ranks.csv
 ```
 
-### 5. Promotion & Demotion Logic
+### 3. Promotion & Demotion Logic
 
 > **Reference**: See [references/promotion-demotion-rules.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/promotion-demotion-rules.md) for detailed promotion/demotion triggers (keywords, competitors, metrics, campaigns) and the action procedures for each.
 
-### 6. Update Triggers, Archive Management & Cross-Skill Integration
+### 4. Update Triggers, Archive Management & Cross-Skill Integration
 
 > **Reference**: See [references/update-triggers-integration.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/update-triggers-integration.md) for the complete update procedures after ranking checks, competitor analyses, audits, and reports; monthly/quarterly archive routines; and integration points with all 8 connected skills (keyword-research, rank-tracker, competitor-analysis, content-gap-analysis, seo-content-writer, content-quality-auditor, domain-authority-auditor).
 
-### Memory Hygiene Checks
+### 5. Memory Hygiene Checks
 
 When invoked for review or cleanup:
 
@@ -284,7 +271,7 @@ When invoked for review or cleanup:
 3. **Staleness scan**: List memory files older than 30 days that have not been referenced. Recommend archival for files >90 days.
 4. **Frontmatter audit**: Check that all memory files (except hot-cache.md) have `name`, `description`, and `type` in their frontmatter. Report any missing fields.
 
-### Save Results
+### 6. Save Results
 
 After delivering any memory update or aggregation to the user, ask:
 
@@ -331,67 +318,19 @@ If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09
 
 ## Advanced Features
 
-### Smart Context Loading
-
-```
-Load full context for [campaign name]
-```
-
-Retrieves hot cache + all cold storage files related to campaign.
-
-### Memory Health Check
-
-```
-Run memory health check
-```
-
-Audits memory structure: finds orphaned files, missing timestamps, stale hot cache items, broken references.
-
-### Bulk Promotion/Demotion
-
-```
-Promote all keywords ranking in top 10 to hot cache
-```
-
-```
-Demote all completed campaigns from Q3 2024
-```
-
-### Memory Snapshot
-
-```
-Create memory snapshot for [date/milestone]
-```
-
-Takes point-in-time copy of entire memory structure for major milestones (site launches, algorithm updates, etc.).
-
-### Cross-Project Memory
-
-```
-Compare memory with [other project name]
-```
-
-Identifies keyword overlaps, competitor intersections, and strategy similarities across multiple projects.
+- **Smart Context Loading**: `Load full context for [campaign name]` — retrieves hot cache + all cold storage files for a campaign
+- **Memory Health Check**: `Run memory health check` — finds orphaned files, missing timestamps, stale items, broken references
+- **Bulk Promotion/Demotion**: `Promote all keywords ranking in top 10 to hot cache` / `Demote all completed campaigns from Q3`
+- **Memory Snapshot**: `Create memory snapshot for [date/milestone]` — point-in-time copy for major milestones
+- **Cross-Project Memory**: `Compare memory with [other project]` — keyword overlaps, competitor intersections across projects
+- **Wiki Lint**: `/seo:wiki-lint [--fix] [--project name] [--retire-preview]` — contradictions, orphans, stale claims, hash mismatches. See [commands/wiki-lint.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/commands/wiki-lint.md)
 
 ## Practical Limitations
 
-- **Concurrent access**: If multiple Claude sessions update memory simultaneously, later writes may overwrite earlier ones. Mitigate by using timestamped filenames for audit reports rather than overwriting a single file.
-- **Cold storage retrieval**: Files in `memory/` subdirectories are only loaded when explicitly requested. They do not appear in Claude's context automatically. The hot cache (`CLAUDE.md`) is the primary cross-session mechanism.
-- **CLAUDE.md size**: The HOT cache should stay concise (80 lines max). If it grows too large, archive older metrics to cold storage.
-- **Data freshness**: Memory reflects the last time each skill was run. Stale data (>90 days) should be flagged for refresh.
-
-## Tips for Success
-
-1. **Keep hot cache lean** - memory/hot-cache.md should never exceed 80 lines. If it grows larger, aggressively demote.
-2. **Date everything** - Every file in cold storage should have YYYY-MM-DD in filename or prominent metadata.
-3. **Update after every significant action** - Don't let memory drift from reality. Update immediately after ranking checks, audits, or reports.
-4. **Use glossary liberally** - If you find yourself explaining a term twice, add it to glossary.
-5. **Review hot cache weekly** - Quick scan to ensure everything there is still relevant and active.
-6. **Automate where possible** - If ~~SEO tool or ~~search console connected, write dated exports into `memory/monitoring/rank-history/`.
-7. **Archive aggressively** - Better to have data in cold storage and not need it than clutter hot cache.
-8. **Link between layers** - CLAUDE.md should always reference where detailed data lives ("Full data: memory/research/keywords/").
-9. **Timestamp changes** - When updating CLAUDE.md, always update "Last Updated" date.
-10. **Use memory for continuity** - If you switch between different analysis sessions, memory ensures nothing is forgotten.
+- **Concurrent access**: Use timestamped filenames to avoid overwrites from parallel sessions.
+- **Cold storage retrieval**: WARM/COLD files only load on demand. Hot cache is the primary cross-session mechanism.
+- **Data freshness**: Stale data (>90 days) should be flagged for refresh. Wiki index `mtime` field helps detect staleness.
+- **Wiki compilation**: Index is best-effort for summaries; precise fields (score, status, mtime) are deterministic. Delete `memory/wiki/` anytime to revert.
 
 ## Reference Materials
 

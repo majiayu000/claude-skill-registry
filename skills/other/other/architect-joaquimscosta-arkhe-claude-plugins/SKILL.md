@@ -6,8 +6,8 @@ description: >
   data models, checking pattern conformance, tracing decisions, or reviewing frontend architecture.
   Triggers: "architecture", "module design", "API design", "data model", "boundaries",
   "patterns", "decisions", "frontend architecture".
-argument-hint: "[--deep] module <name> | api <feature> | data-model <feature> | boundaries | patterns | decisions | review <module> | frontend <feature>"
-allowed-tools: Read, Glob, Grep
+argument-hint: "[--deep] module <name> | api <feature> | data-model <feature> | boundaries | patterns | decisions | frontend <feature>"
+allowed-tools: Read, Glob, Grep, Write
 ---
 
 # System Architect
@@ -36,7 +36,6 @@ Parse from `$ARGUMENTS`:
 | `boundaries` | Module boundary and coupling analysis |
 | `patterns` | Pattern conformance check |
 | `decisions` | ADR and decision traceability |
-| `review <module>` | Comprehensive architectural review |
 | `frontend <feature>` | Frontend architecture guidance |
 | _(none)_ | Ask what the user needs architectural guidance on |
 
@@ -44,24 +43,41 @@ Parse from `$ARGUMENTS`:
 
 | Mode | Produces |
 |------|----------|
-| `module <name>` | Structure, domain model, API surface, dependencies, maturity, recommendations |
+| `module <name>` | Structure, domain model, API surface, dependencies, maturity, quality assessment, and prioritized recommendations |
 | `api <feature>` | Endpoint design (method, path, DTOs, auth, pagination, errors) matching existing patterns |
 | `data-model <feature>` | Schema design (tables, types, relationships, indexes, migrations) matching existing models |
 | `boundaries` | Import graph, shared references, coupling analysis, boundary violations |
 | `patterns` | Pattern catalog with codebase examples (layering, DTOs, events, testing) |
 | `decisions` | Decision traceability table (decision, evidence, status) |
-| `review <module>` | Per-area assessment table + prioritized recommendations |
 | `frontend <feature>` | Component hierarchy, data flow, state management, design system integration |
 
 See [WORKFLOW.md](WORKFLOW.md) for detailed execution steps per mode.
 
 ## Output Rules
 
-- **Conversational** — analysis in chat, no files created
+- **Conversational with optional file persistence** — analysis in chat, offer to save
 - **Diagram-friendly** — use Mermaid diagrams when they clarify relationships
 - **Pattern-consistent** — always reference existing codebase patterns
 - **Practical** — recommendations should be implementable
 - **Scoped** — answer the specific question; don't redesign the whole system
+
+## File Persistence
+
+After producing the analysis, ask the user:
+
+> **Save this analysis to `{output_dir}/architecture/{filename}.md`?**
+
+Where `{output_dir}` comes from `.arkhe.yaml` (default: `arkhe/roadmap`).
+
+| Mode | Filename Pattern |
+|------|-----------------|
+| `module <name>` | `module-{name}.md` |
+| `api <feature>` | `api-{feature-slug}.md` |
+| `data-model <feature>` | `data-model-{feature-slug}.md` |
+| `boundaries` | `boundary-analysis.md` |
+| `patterns` | `pattern-catalog.md` |
+| `decisions` | `decision-traceability.md` |
+| `frontend <feature>` | `frontend-{feature-slug}.md` |
 
 ## Deep Mode (`--deep`)
 

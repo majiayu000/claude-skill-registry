@@ -9,9 +9,9 @@ allowed-tools:
   - Glob
   - Grep
   - AskUserQuestion
-  - mcp__google__sheets_values_get
-  - mcp__google__sheets_values_update
-  - mcp__google__sheets_spreadsheet_get
+  - mcp__google-sheets__get_sheet_data
+  - mcp__google-sheets__update_cells
+  - mcp__google-sheets__list_sheets
 ---
 
 # /product-spec-pdf-parser — PDF Product Spec Parser
@@ -33,17 +33,17 @@ Also ask (or use defaults):
 
 ## Output Schema
 
-Products are written to the **master Google Sheet** — the same 33-column schema used by Norma Jean, `/product-research`, and all other data-management skills, plus PDF-specific extra columns. When writing to CSV, use the same column order.
+Products are written to the **master Google Sheet** — the same 33-column schema used by all product skills, plus PDF-specific extra columns. When writing to CSV, use the same column order.
 
 Read `../../schema/product-schema.md` (relative to this SKILL.md) for the full column reference, field formats, and category vocabulary. Read `../../schema/sheet-conventions.md` for CRUD patterns with MCP tools.
 
 Skill-specific column values:
 - **AG (Source):** `pdf-parser`
 - **AF (Status):** `saved`
-- **A (Link):** Blank (no URL for PDFs)
-- **B (Thumbnail):** Blank (no image URL typically)
-- **H (Vendor):** Blank (source is PDF, not a retailer)
-- **U (Sale Price):** Blank (PDFs don't have sale prices)
+- **J (Link):** Blank (no URL for PDFs)
+- **D (Thumbnail):** Blank (no image URL typically)
+- **C (Vendor):** Blank (source is PDF, not a retailer)
+- **V (Sale Price):** Blank (PDFs don't have sale prices)
 - **AC (Image URL):** Blank (no image from PDF)
 
 ### PDF-specific data in Notes (col AE)
@@ -149,8 +149,8 @@ Ask: **"Does this look correct? Should I adjust anything before saving?"**
 Ask the user (if not already specified): **"Where should I save this?"**
 
 Options:
-- **Master Google Sheet** — append rows to the shared product library (same sheet used by Norma Jean). Ask for spreadsheet ID if not already known.
-- **Local CSV** — save to a specified path (default: `~/Documents/Work-Docs/ffe-pdf-parse-YYYY-MM-DD.csv`)
+- **Master Google Sheet** — append rows to the shared product library. Ask for spreadsheet ID if not already known.
+- **Local CSV** — save to a specified path (default: `./ffe-pdf-parse-YYYY-MM-DD.csv`)
 - **Just the table** — leave as markdown in the conversation
 
 ## CSV Format

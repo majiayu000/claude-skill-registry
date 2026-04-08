@@ -2,30 +2,30 @@
   "category": "development-code",
   "code": "oth",
   "count": 2,
-  "updated_at": "2026-04-04T04:23:18.040082Z",
+  "updated_at": "2026-04-08T05:11:33.357405Z",
   "skills": [
     {
       "name": "skill-creator",
       "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workfl",
       "repo": "davepoon/buildwithclaude",
-      "path": "",
+      "path": "plugins/all-skills/skills/skill-creator/SKILL.md",
       "branch": "main",
       "category": "development-code",
       "tags": [],
       "stars": 2299,
-      "install": "davepoon/buildwithclaude",
+      "install": "davepoon/buildwithclaude/plugins/all-skills/skills/skill-creator/SKILL.md",
       "source": "github.com/davepoon/buildwithclaude"
     },
     {
       "name": "skill-creator",
       "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workfl",
       "repo": "davepoon/buildwithclaude",
-      "path": "",
+      "path": "plugins/all-skills/skills/skill-creator/SKILL.md",
       "branch": "main",
       "category": "development-code",
       "tags": [],
       "stars": 2299,
-      "install": "davepoon/buildwithclaude",
+      "install": "davepoon/buildwithclaude/plugins/all-skills/skills/skill-creator/SKILL.md",
       "source": "github.com/davepoon/buildwithclaude"
     }
   ]

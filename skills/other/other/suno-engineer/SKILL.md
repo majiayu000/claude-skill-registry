@@ -21,9 +21,17 @@ allowed-tools:
 
 When invoked with a track file:
 1. Read the track file
-2. Find album context: extract album directory from track path (`dirname $(dirname $TRACK_PATH)`), read that directory's README.md for album-level genre/theme/style. If README missing, use only track-level context.
-3. Construct optimal Suno V5 style prompt and settings
-4. Update the track file's Suno Inputs section
+2. **Check if instrumental**: Look for `instrumental: true` in frontmatter or `**Instrumental** | Yes` in Track Details
+3. Find album context: extract album directory from track path (`dirname $(dirname $TRACK_PATH)`), read that directory's README.md for album-level genre/theme/style. If README missing, use only track-level context.
+4. Construct optimal Suno V5 style prompt and settings
+5. Update the track file's Suno Inputs section
+
+**For instrumental tracks** (no lyric-writer prerequisite):
+- Set `Instrumental: On` in Suno settings
+- Style Box: Focus on genre, instrumentation, mood, tempo — no vocal description needed
+- Lyrics Box: Use structural section tags only (`[Intro]`, `[Main Theme]`, `[Bridge]`, `[Outro]`, `[End]`) — no sung lyrics
+- Skip Streaming Lyrics, Pronunciation Notes, and Phonetic Review sections
+- This skill is the **entry point** for instrumental tracks (they skip lyric-writer entirely)
 
 When invoked with a concept:
 1. Design complete Suno prompting strategy

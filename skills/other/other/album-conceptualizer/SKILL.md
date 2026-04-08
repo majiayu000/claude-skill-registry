@@ -241,6 +241,7 @@ See also: `${CLAUDE_PLUGIN_ROOT}/reference/workflows/album-planning-phases.md`
 - How many tracks can tell this concept?
 - What does each track cover?
 - Working titles, core focus, connection to whole
+- **Vocal or Instrumental?** — For each track, decide if it has vocals or is purely instrumental. Mark instrumental tracks with `instrumental: true` in frontmatter. Mixed albums (especially OST/soundtrack) commonly have both — e.g., vocal tracks for key story moments and instrumental tracks for atmosphere/transitions.
 
 **Sequencing**:
 1. Lay out all tracks in rough order
@@ -329,6 +330,9 @@ Once concept is solid, create:
 2. **RESEARCH.md** (if source-based) - Consolidated research
 3. **SOURCES.md** (if source-based) - Bibliography
 4. `tracks/XX-track-name.md` - Individual track files
+   - For instrumental tracks: set `instrumental: true` in frontmatter and `**Instrumental** | Yes` in Track Details
+   - Instrumental tracks skip lyrics-related workflow sections (Streaming Lyrics, Pronunciation Notes, Phonetic Review Checklist)
+   - Workflow routing: instrumental tracks go directly to `/bitwize-music:suno-engineer` (no lyric-writer/reviewer/pronunciation)
 
 ---
 

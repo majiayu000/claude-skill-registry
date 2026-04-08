@@ -1,14 +1,6 @@
 ---
 name: architecture-paradigm-space-based
-description: 'Data-grid architecture for high-traffic stateful workloads with linear
-  scalability.
-
-
-  space-based, data grid, in-memory, linear scaling, high traffic
-
-  Use when: traffic overwhelms database nodes or linear scalability needed
-
-  DO NOT use when: data does not fit in memory or simpler caching suffices.'
+description: 'Apply data-grid architecture for high-traffic stateful workloads with in-memory processing and linear scalability.'
 version: 1.7.1
 alwaysApply: false
 category: architectural-pattern

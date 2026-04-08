@@ -60,7 +60,7 @@ For each target where `disabled` is not `true`:
 
 | OS | Command |
 |----|---------|
-| Windows | `cmd /c mklink /J "{target}" "{source}"` |
+| Windows | `node -e "require('fs').symlinkSync('{source}', '{target}', 'junction')"` |
 | macOS/Linux | `ln -s "{source}" "{target}"` |
 
 Decision logic:
@@ -72,6 +72,9 @@ Decision logic:
 | Link exists, points wrong | WARN, ask user before replacing |
 | Real directory exists (not link) | WARN, skip (avoid data loss) |
 | No link exists | Create link |
+| Link exists, target does not exist (stale) | WARN "stale junction: {path} → {dead_target}". Remove stale link, recreate with correct target |
+
+**Stale junction detection:** Use `lstatSync()` (succeeds on dangling links) + `statSync()` (throws if target missing). Do NOT rely on `existsSync()` alone — it returns `false` for dangling junctions on Windows, but the filesystem entry still exists and will cause `EEXIST` on create.
 
 ### Phase 3: Sync MCP Settings
 IF agent `disabled: true` → SKIP for that target.
@@ -102,6 +105,8 @@ Codex-only fields (preserve during merge, not mapped from Claude):
 `bearer_token_env_var`, `enabled_tools`, `disabled_tools`, `startup_timeout_sec`, `tool_timeout_sec`, `enabled`, `required`
 
 **Merge strategy (both targets):** Claude servers override target by key name. Target-only servers preserved. Backup `.bak` before writing.
+
+**Windows implementation note:** Config format conversions with regex or backslash escaping (especially JSON→TOML for Codex) MUST use a temporary `.mjs` script file, not inline `node -e` or bash heredocs. Git Bash/MSYS2 mangles backslashes in both forms. Pattern: write temp file → `node "$TEMP/sync.mjs"` → delete after.
 
 ### Phase 4: Sync Hooks
 
@@ -172,6 +177,7 @@ Config Sync:
 4. **Backup before write.** Create `.bak` copy before modifying any config file
 5. **Respect `disabled` flags.** Skip all operations for disabled agents
 6. **Idempotent.** Safe to run multiple times. Already-synced state is skipped
+7. **Non-destructive config writes.** Always read → deep-merge → edit. Never overwrite target config files from scratch. Preserve all keys not mapped from Claude.
 
 ## Anti-Patterns
 
@@ -182,7 +188,9 @@ Config Sync:
 | Create symlinks inside symlinks (circular) | Check link target before creating |
 | Modify config files without backup | Always create `.bak` first |
 | Try to sync hooks to Codex | Report "not supported", skip |
+| Use `cmd /c mklink /J` from Git Bash | Use `fs.symlinkSync(source, target, 'junction')` via Node.js — works from any shell |
 | Auto-replace mispointed symlinks | Ask user before replacing |
+| Overwrite entire config file with only known fields | Read existing → deep-merge only owned fields → edit back |
 
 ---
 
@@ -199,5 +207,5 @@ Config Sync:
 
 ---
 
-**Version:** 1.0.0
-**Last Updated:** 2026-03-20
+**Version:** 1.1.0
+**Last Updated:** 2026-04-05

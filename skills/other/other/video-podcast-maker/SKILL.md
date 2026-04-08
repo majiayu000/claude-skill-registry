@@ -167,9 +167,10 @@ Automated pipeline for professional **Bilibili horizontal knowledge videos** fro
 
 ### Auto Mode (Default)
 
-Full pipeline with sensible defaults. **Only 1 mandatory stop:**
+Full pipeline with sensible defaults. **Mandatory stop at Step 9:**
 
-1. **Step 10**: After 720p preview render — user reviews, confirms before 4K
+1. **Step 9**: Launch Remotion Studio — user reviews in real-time, requests changes until satisfied
+2. **Step 10**: Only triggered when user explicitly says "render 4K" / "render final version"
 
 | Step | Decision | Auto Default |
 |------|----------|-------------|
@@ -177,7 +178,7 @@ Full pipeline with sensible defaults. **Only 1 mandatory stop:**
 | 5 | Media assets | Skip (text-only animations) |
 | 7 | Thumbnail method | Remotion-generated (16:9 + 4:3) |
 | 9 | Outro animation | Pre-made MP4 (white/black by theme) |
-| 9 | Preview method | Preview render (720p, self-validates) |
+| 9 | Preview method | Remotion Studio (mandatory) |
 | 12 | Subtitles | Skip |
 | 14 | Cleanup | Auto-clean temp files |
 
@@ -211,8 +212,9 @@ Hard constraints for video production — visual design is Claude's creative fre
 | **Content Width** | ≥85% of screen width |
 | **Bottom Safe Zone** | Bottom 100px reserved for subtitles |
 | **Audio Sync** | All animations driven by `timing.json` timestamps |
-| **Thumbnail** | MUST generate 16:9 (1920×1080) AND 4:3 (1200×900). Title ≥80px bold, high contrast. |
+| **Thumbnail** | MUST generate 16:9 (1920×1080) AND 4:3 (1200×900). Centered layout, title ≥120px, icons ≥120px, fill most of canvas. See design-guide.md. |
 | **Font** | PingFang SC / Noto Sans SC for Chinese text |
+| **Studio Before Render** | MUST launch `remotion studio` for user review. NEVER render 4K until user explicitly confirms ("render 4K", "render final"). |
 
 ---
 
@@ -303,8 +305,8 @@ At Step 1 start:
  6. Generate publish info (Part 1) → publish_info.md
  7. Generate thumbnails (16:9 + 4:3) → thumbnail_*.png
  8. Generate TTS audio → podcast_audio.wav, timing.json
- 9. Create Remotion composition + Studio preview
-10. Render 4K video → output.mp4
+ 9. Create Remotion composition + Studio preview (mandatory stop)
+10. Render 4K video (only on user request) → output.mp4
 11. Mix background music → video_with_bgm.mp4
 12. Add subtitles (optional) → final_video.mp4
 13. Complete publish info (Part 2) → chapter timestamps

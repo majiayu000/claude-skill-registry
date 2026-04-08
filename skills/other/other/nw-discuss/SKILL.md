@@ -48,12 +48,19 @@ For greenfield projects (no src/ code, no docs/feature/ history), Luna proposes 
 
 ## Prior Wave Consultation
 
-Before beginning DISCUSS work, read prior wave artifacts and project context:
+Before beginning DISCUSS work, read SSOT and prior wave artifacts:
 
-1. **Project context**: `docs/project-brief.md` | `docs/stakeholders.yaml` | `docs/architecture/constraints.md`
-2. **DISCOVER artifacts**: Read all files in `docs/feature/{feature-id}/discover/`
+1. **SSOT** (if `docs/product/` exists):
+   - `docs/product/journeys/{name}.yaml` — existing journey to extend (if applicable)
+   - `docs/product/jobs.yaml` — validated jobs and opportunity scores
+   - `docs/product/vision.md` — product vision
+2. **Project context**: `docs/project-brief.md` | `docs/stakeholders.yaml`
+3. **DISCOVER artifacts**: Read `docs/feature/{feature-id}/discover/` (if present)
+4. **DIVERGE artifacts**: Read `docs/feature/{feature-id}/diverge/recommendation.md` and `job-analysis.md` (if present — job is already validated, do not re-run JTBD)
 
-DISCUSS is the direct successor to DISCOVER — reading all DISCOVER artifacts is appropriate since DISCUSS must synthesize raw evidence into structured requirements.
+**Migration gate**: If `docs/product/` does not exist but `docs/feature/` has existing features, STOP. The project has old-model features that should be migrated to SSOT before new waves run. Guide the user to `docs/guides/migrating-to-ssot-model/README.md` and complete the migration first. If `docs/product/` does not exist and no old features exist (greenfield), DISCUSS will bootstrap it.
+
+DISCUSS follows DISCOVER and optionally DIVERGE — reading SSOT first ensures continuity with prior features, then prior wave artifacts ground requirements in evidence.
 
 **READING ENFORCEMENT**: You MUST read every file listed in Prior Wave Consultation above using the Read tool before proceeding. After reading, output a confirmation checklist (`✓ {file}` for each read, `⊘ {file} (not found)` for missing). Do NOT skip files that exist — skipping causes requirements disconnected from evidence.
 
@@ -62,10 +69,11 @@ After reading, check whether any DISCUSS decisions would contradict DISCOVER evi
 ## Document Update (Back-Propagation)
 
 When DISCUSS decisions change assumptions established in DISCOVER:
-1. Document the change in a `## Changed Assumptions` section at the end of the affected DISCUSS artifact
-2. Reference the original DISCOVER document and quote the original assumption
-3. State the new assumption and the rationale for the change
-4. Do NOT modify DISCOVER documents directly — they represent historical evidence
+
+1. **Document change** — Add a `## Changed Assumptions` section at the end of the affected DISCUSS artifact. Gate: section exists in artifact.
+2. **Reference original** — Quote the original DISCOVER document and the original assumption verbatim. Gate: source document and quote both present.
+3. **State new assumption** — State the new assumption and rationale for the change. Gate: rationale is explicit.
+4. **Preserve DISCOVER** — Do NOT modify DISCOVER documents directly. Gate: DISCOVER documents unchanged.
 
 ## Agent Invocation
 
@@ -83,20 +91,19 @@ Context files: see Prior Wave Consultation above + project context files.
 - walking_skeleton: {Decision 2}
 - output_directory: docs/feature/{feature-id}/discuss/
 
-**Phase 1 -- Jobs-to-be-Done Analysis (OPTIONAL -- when Decision 4 = Yes):**
+## Workflow
+
+At the start of execution, create these tasks using TaskCreate and follow them in order:
+
+### Phase 1: Jobs-to-be-Done Analysis (OPTIONAL — when Decision 4 = Yes)
 
 Grounds all subsequent artifacts in real user motivations.
 
-1. **Job Discovery**: Ask user what users are trying to accomplish. Capture in job story format: "When [situation], I want to [motivation], so I can [outcome]."
-2. **Job Dimensions**: For each job — functional (practical task)|emotional (desired feeling)|social (desired perception)
-3. **Four Forces Analysis**: For each primary job:
-   - **Push** (current frustration): "What frustrated users enough to request this?"
-   - **Pull** (desired future): "What could they do that they cannot now?"
-   - **Anxiety** (adoption concerns): "What concerns about adopting this?"
-   - **Habit** (current behavior): "What behavior must change?"
-   If interview transcripts|support tickets|analytics exist, extract forces from those instead of relying solely on user description.
-4. **Opportunity Scoring** (multiple jobs): Rank by importance vs. satisfaction gap. High importance + low satisfaction = strongest opportunities. Produce scored table.
-5. **JTBD-to-Story Bridge**: Each job story feeds into user stories and acceptance criteria in Phase 3. Every user story must trace to at least one job.
+1. **Job Discovery** — Ask user what users are trying to accomplish. Capture in job story format: "When [situation], I want to [motivation], so I can [outcome]." Gate: all primary jobs documented in job story format.
+2. **Job Dimensions** — For each job, identify functional (practical task), emotional (desired feeling), and social (desired perception) dimensions. Gate: three dimensions documented per job.
+3. **Four Forces Analysis** — For each primary job, document Push (current frustration), Pull (desired future), Anxiety (adoption concerns), Habit (current behavior must change). Extract forces from interview transcripts, support tickets, or analytics when available rather than relying solely on user description. Gate: all four forces documented per job.
+4. **Opportunity Scoring** — Rank jobs by importance vs. satisfaction gap. High importance + low satisfaction = strongest opportunities. Produce scored table. Gate: scored table produced when multiple jobs exist.
+5. **JTBD-to-Story Bridge** — Map each job story to the user stories and acceptance criteria it will feed in Phase 3. Gate: every user story traces to at least one job.
 
 | Artifact | Path |
 |----------|------|
@@ -104,9 +111,16 @@ Grounds all subsequent artifacts in real user motivations.
 | Four Forces | `docs/feature/{feature-id}/discuss/jtbd-four-forces.md` |
 | Opportunity Scores | `docs/feature/{feature-id}/discuss/jtbd-opportunity-scores.md` (when multiple jobs) |
 
-**Phase 2 -- Journey Design:**
+### Phase 2: Journey Design
 
 Luna runs deep discovery (mental model|emotional arc|shared artifacts|error paths) informed by JTBD, produces visual journey + YAML schema + Gherkin scenarios. Each journey maps to one or more identified jobs.
+
+1. **Mental Model Discovery** — Uncover user mental model: what users believe about the system, their vocabulary, and assumptions. Gate: mental model documented with no vague steps.
+2. **Happy Path Definition** — Define all steps start-to-goal with expected outputs at each step. Gate: complete happy path with explicit outputs per step.
+3. **Emotional Arc Design** — Map emotional state at each step. Confidence must build progressively toward goal. Gate: emotional arc coherent with upward trajectory.
+4. **Shared Artifact Tracking** — Identify every `${variable}` or artifact passed between steps. Document single source of truth for each. Gate: every shared artifact has one documented source.
+5. **Error Path Mapping** — Identify failure modes and recovery paths for critical steps. Gate: error paths documented for each high-risk step.
+6. **Gherkin Scenario Generation** — Produce Gherkin scenarios covering happy path and key error paths. Gate: scenarios cover all journey steps.
 
 | Artifact | Path |
 |----------|------|
@@ -115,59 +129,65 @@ Luna runs deep discovery (mental model|emotional arc|shared artifacts|error path
 | Gherkin Scenarios | `docs/feature/{feature-id}/discuss/journey-{name}.feature` |
 | Artifact Registry | `docs/feature/{feature-id}/discuss/shared-artifacts-registry.md` |
 
-**Phase 2.5 -- User Story Mapping:**
+### Phase 2.5: User Story Mapping
+
 Luna loads `user-story-mapping` skill before this phase.
 
-Organizes discovered stories into a visual story map (backbone → walking skeleton → incremental slices). Produces prioritization suggestions based on outcomes identified in earlier phases.
-
-1. **Backbone**: Map user activities (big steps) horizontally across the top
-2. **Walking Skeleton**: Identify minimum slice that delivers end-to-end value
-3. **Release Slices**: Group stories into outcome-based releases
-4. **Prioritization**: Suggest priority order based on outcome impact and dependencies
+1. **Load Skill** — Load `user-story-mapping` skill. Gate: skill loaded.
+2. **Backbone** — Map user activities (big steps) horizontally across the top of the story map. Gate: all major activities identified and ordered.
+3. **Walking Skeleton** — Identify minimum slice that delivers end-to-end value. Gate: walking skeleton slice defined.
+4. **Release Slices** — Group stories into outcome-based releases. Gate: stories grouped into at least two release slices.
+5. **Prioritization** — Suggest priority order based on outcome impact and dependencies. Gate: prioritization rationale documented per slice.
 
 | Artifact | Path |
 |----------|------|
 | Story Map | `docs/feature/{feature-id}/discuss/story-map.md` |
 | Prioritization | `docs/feature/{feature-id}/discuss/prioritization.md` |
 
-**Phase 3 -- Requirements and User Stories:**
+### Phase 3: Requirements and User Stories
 
 Luna crafts LeanUX stories informed by JTBD + journey artifacts. Every story traces to at least one job story. Validates against DoR, invokes peer review, prepares handoff.
 
+1. **Story Drafting** — Craft user stories in LeanUX format. Each story traces to at least one job story from Phase 1 (or states "JTBD skipped" if Decision 4 = No). Gate: every story has a job traceability reference.
+2. **Acceptance Criteria** — Embed testable acceptance criteria in each story. Gate: every AC is verifiable without ambiguity.
+3. **Requirements Completeness** — Calculate requirements completeness score. Gate: score > 0.95.
+4. **Outcome KPIs** — Define measurable outcome KPIs with targets. Gate: each KPI has a numeric target and measurement method.
+5. **DoR Validation** — Validate all 9 DoR items with evidence. Gate: DoR passed with evidence for all 9 items.
+6. **Peer Review** — Invoke peer review. Gate: review approved.
+7. **Handoff Preparation** — Confirm handoff acceptance by nw-solution-architect (DESIGN wave). Gate: handoff accepted.
+
 | Artifact | Path |
 |----------|------|
-| Requirements | `docs/feature/{feature-id}/discuss/requirements.md` |
-| User Stories | `docs/feature/{feature-id}/discuss/user-stories.md` |
-| Acceptance Criteria | `docs/feature/{feature-id}/discuss/acceptance-criteria.md` |
-| DoR Checklist | `docs/feature/{feature-id}/discuss/dor-checklist.md` |
+| User Stories (includes requirements + embedded AC) | `docs/feature/{feature-id}/discuss/user-stories.md` |
+| DoR Validation | `docs/feature/{feature-id}/discuss/dor-validation.md` |
 | Outcome KPIs | `docs/feature/{feature-id}/discuss/outcome-kpis.md` |
 
 ## Success Criteria
 
-- [ ] (when JTBD selected) JTBD analysis complete: all jobs in job story format
-- [ ] (when JTBD selected) Job dimensions identified: functional|emotional|social per job
-- [ ] (when JTBD selected) Four Forces mapped per job (push|pull|anxiety|habit)
-- [ ] (when JTBD selected) Opportunity scores produced (when multiple jobs)
-- [ ] UX journey map with emotional arcs and shared artifacts
-- [ ] (when JTBD selected) Every journey maps to at least one job
-- [ ] Discovery complete: user mental model understood, no vague steps
-- [ ] Happy path defined: all steps start-to-goal with expected outputs
-- [ ] Emotional arc coherent: confidence builds progressively
-- [ ] Shared artifacts tracked: every ${variable} has single documented source
-- [ ] Story map created with backbone, walking skeleton, and release slices
-- [ ] Outcome KPIs defined with measurable targets
-- [ ] Prioritization suggestions based on outcome impact
-- [ ] Requirements completeness score > 0.95
-- [ ] (when JTBD selected) Every user story traces to at least one job story
-- [ ] All acceptance criteria testable
-- [ ] DoR passed: all 9 items validated with evidence
-- [ ] Peer review approved
-- [ ] Handoff accepted by nw-solution-architect (DESIGN wave)
+1. - [ ] (when JTBD selected) JTBD analysis complete: all jobs in job story format
+2. - [ ] (when JTBD selected) Job dimensions identified: functional|emotional|social per job
+3. - [ ] (when JTBD selected) Four Forces mapped per job (push|pull|anxiety|habit)
+4. - [ ] (when JTBD selected) Opportunity scores produced (when multiple jobs)
+5. - [ ] UX journey map with emotional arcs and shared artifacts
+6. - [ ] (when JTBD selected) Every journey maps to at least one job
+7. - [ ] Discovery complete: user mental model understood, no vague steps
+8. - [ ] Happy path defined: all steps start-to-goal with expected outputs
+9. - [ ] Emotional arc coherent: confidence builds progressively
+10. - [ ] Shared artifacts tracked: every ${variable} has single documented source
+11. - [ ] Story map created with backbone, walking skeleton, and release slices
+12. - [ ] Outcome KPIs defined with measurable targets
+13. - [ ] Prioritization suggestions based on outcome impact
+14. - [ ] Requirements completeness score > 0.95
+15. - [ ] (when JTBD selected) Every user story traces to at least one job story
+16. - [ ] All acceptance criteria testable
+17. - [ ] DoR passed: all 9 items validated with evidence
+18. - [ ] Peer review approved
+19. - [ ] Handoff accepted by nw-solution-architect (DESIGN wave)
 
 ## Next Wave
 
 **Handoff To**: nw-solution-architect (DESIGN wave) + nw-platform-architect (DEVOPS wave, KPIs only)
-**Deliverables**: Journey artifacts + story map + requirements + outcome KPIs | JTBD artifacts (when selected)
+**Deliverables**: User stories + story map + outcome KPIs + SSOT journey/jobs updates | JTBD artifacts (when selected)
 
 DISCUSS hands off to BOTH DESIGN (full artifacts) and DEVOPS (outcome-kpis.md only). DEVOPS and DESIGN can proceed in parallel — DESIGN receives the complete artifact set while DEVOPS receives only the KPI file to drive observability and instrumentation design.
 
@@ -193,27 +213,22 @@ Before completing DISCUSS, produce `docs/feature/{feature-id}/discuss/wave-decis
 - {any DISCOVER assumptions changed, with rationale}
 ```
 
-This summary enables DESIGN to quickly assess DISCUSS outcomes. DESIGN reads this plus key artifacts (requirements.md, acceptance-criteria.md, story-map.md, outcome-kpis.md) rather than all DISCUSS files.
+This summary enables DESIGN to quickly assess DISCUSS outcomes. DESIGN reads this plus key artifacts (user-stories.md, story-map.md, outcome-kpis.md) rather than all DISCUSS files.
 
 ## Expected Outputs
 
 ```
-docs/feature/{feature-id}/discuss/
-  jtbd-job-stories.md           (when JTBD selected)
-  jtbd-four-forces.md           (when JTBD selected)
-  jtbd-opportunity-scores.md    (when JTBD selected, multiple jobs)
-  journey-{name}-visual.md
-  journey-{name}.yaml
-  journey-{name}.feature
-  shared-artifacts-registry.md
+docs/feature/{feature-id}/discuss/     (feature delta)
+  user-stories.md               (requirements + embedded AC, each story traces to a job)
   story-map.md
-  prioritization.md
-  requirements.md
-  user-stories.md               (each story traces to a job)
-  acceptance-criteria.md
-  dor-checklist.md
+  dor-validation.md
   outcome-kpis.md
   wave-decisions.md
+
+docs/product/                          (SSOT updates)
+  journeys/{name}.yaml          (create or extend journey schema)
+  journeys/{name}-visual.md     (human-readable journey narrative)
+  jobs.yaml                     (add validated job if new)
 ```
 
 ## Examples

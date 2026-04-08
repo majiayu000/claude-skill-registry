@@ -1,0 +1,216 @@
+---
+description: >-
+  Guides structured design brainstorming — explores the codebase, asks clarifying
+  questions, proposes multiple approaches with trade-offs, and writes an approved
+  design doc to the project. Use before implementation to think through design
+  decisions and avoid premature coding. Produces a persistent artifact that feeds
+  into plan mode and TDD.
+disable-model-invocation: true
+---
+
+# Brainstorm
+
+Guide the user through a structured design conversation that produces a written, approved design document before any implementation begins. The output is a persistent file in the project that feeds into Claude Code plan mode and then into `/optimus:tdd` for test-first implementation.
+
+### The Hard Gate
+
+**No implementation until the design is approved.** Do not invoke any implementation skill, write any production code, scaffold any project structure, or take any implementation action until you have written a design doc and the user has approved it. This applies to all tasks — even seemingly simple ones. Unexamined assumptions in "simple" projects cause the most wasted effort.
+
+## Step 1: Pre-flight
+
+Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/multi-repo-detection.md` for workspace detection. If a multi-repo workspace is detected, process within the repo the user is targeting. If ambiguous, ask which repo.
+
+### Verify prerequisites
+
+Check that `.claude/CLAUDE.md` exists. If it doesn't, stop and recommend running `/optimus:init` first — project context and coding guidelines shape design decisions.
+
+Load these documents:
+
+| Document | Role |
+|----------|------|
+| `.claude/CLAUDE.md` | Project overview, tech stack, architecture |
+| `coding-guidelines.md` | Quality standards that constrain the design |
+
+**Monorepo path note:** Read the "Monorepo Scoping Rule" section of `$CLAUDE_PLUGIN_ROOT/skills/init/references/constraint-doc-loading.md` for doc layout and scoping rules.
+
+### Scan project structure
+
+Explore the project's directory structure, key modules, and existing patterns. This grounds the design conversation in what actually exists — not assumptions.
+
+## Step 2: Gather Intent
+
+### JIRA context detection
+
+Before asking the user for input, check for pre-existing JIRA context:
+
+1. If the user's inline input matches a JIRA key pattern (`[A-Z][A-Z0-9]+-\d+`), check for `docs/jira/<key>.md`. If found, read it and use its Goal and Acceptance Criteria as the brainstorm input. If the file is not found, inform the user ("No task file found for [KEY] — run `/optimus:jira [KEY]` first to fetch it") and proceed with normal intent gathering below.
+
+2. If no inline input (or no JIRA key match), check whether `docs/jira/` exists and contains `.md` files. If so, read each file's YAML frontmatter and select the one with the most recent `date` field. Extract the `issue` field and the Goal section. Present to the user via `AskUserQuestion` — header "JIRA context", question "Found JIRA context: [ISSUE-KEY] — [Goal]. Use this as the basis for design?":
+   - **Use it** — "Design around this JIRA task"
+   - **Ignore** — "Describe a different task"
+
+   If the file's `date` frontmatter field is older than 7 days, add a note: "(This context is [N] days old — you may want to re-run `/optimus:jira` for fresh data.)"
+
+   If **Use it**: use the file's Goal and Acceptance Criteria as the brainstorm input. Proceed to clarifying questions (skip the intent-gathering prompts below).
+   If **Ignore**: proceed with normal intent gathering below.
+
+3. If no `docs/jira/` directory or no files in it, proceed with normal intent gathering below.
+
+### Gather from user
+
+If the user provided a description inline (e.g., `/optimus:brainstorm "add authentication system"`), use it. Otherwise, use `AskUserQuestion` — header "Design scope", question "What do you want to build or change?":
+- **New feature** — "Build something new (e.g., 'Add user authentication')"
+- **Significant change** — "Rework or extend an existing part of the system"
+
+If the description is longer than ~3 sentences (e.g., a pasted spec, ticket, or acceptance criteria), distill it into a **single-sentence goal** and confirm with `AskUserQuestion` — header "Distilled goal", question "I've distilled your input to: '[single-sentence summary]'. Is this accurate?":
+- **Looks good** — "Proceed with this goal"
+- **Adjust** — "Let me refine the focus"
+
+### Clarifying questions
+
+Ask up to **3 clarifying questions** to fill critical gaps — one per `AskUserQuestion` call, prefer multiple-choice options. Focus on:
+- Constraints the user hasn't mentioned (performance, compatibility, security)
+- Scope boundaries (what's in, what's explicitly out)
+- Integration points with existing code
+
+Skip questions if the intent is already clear. Three is the maximum, not the target.
+
+## Step 3: Explore and Propose
+
+### Explore relevant code
+
+Based on the user's goal, explore the codebase areas that the design will touch:
+- Existing modules, patterns, and conventions relevant to the goal
+- Dependencies and integration points
+- Related tests (if any) that reveal expected behavior
+
+### Propose approaches
+
+Present **2-3 approaches** to the user:
+
+```
+## Approaches
+
+### A: [Name]
+[Brief description — 2-3 sentences]
+- **Pros:** [key advantages]
+- **Cons:** [key disadvantages]
+- **Effort:** [Low / Medium / High]
+- **Alignment:** [how well it fits existing patterns]
+
+### B: [Name]
+...
+
+### C: [Name] (optional — only if genuinely distinct)
+...
+
+**Recommendation:** [Approach letter] — [one-sentence rationale]
+```
+
+Use `AskUserQuestion` — header "Approach", question "Which approach should I design in detail?":
+- One option per approach, with the recommendation marked
+
+If the user wants to combine aspects of multiple approaches or suggests a different direction, incorporate their feedback and present a revised approach before proceeding.
+
+## Step 4: Design
+
+Based on the chosen approach, develop a detailed design. Cover each section as applicable — omit sections that don't apply to the task:
+
+- **Goal** — single paragraph: what and why
+- **Approach** — how it works, key decisions and their rationale
+- **Components** — what gets created or modified, each component's responsibility
+- **Interfaces** — how components interact (APIs, data flow, contracts, function signatures)
+- **Edge cases and risks** — what could go wrong, mitigations
+- **Out of scope** — explicit boundaries to prevent scope creep
+
+Present the design in conversation. Use `AskUserQuestion` — header "Design review", question "Does this design look right?":
+- **Approve** — "Write it to a design doc"
+- **Adjust** — "I have feedback before writing"
+
+If the user has feedback, refine the design and present it again. Iterate until approved.
+
+## Step 5: Write Design Doc
+
+Read `$CLAUDE_PLUGIN_ROOT/skills/brainstorm/references/design-doc-format.md` for the template.
+
+### Write the file
+
+- **Path:** `docs/design/YYYY-MM-DD-<topic-slug>.md` — derive the slug from the goal (lowercase, replace non-alphanumeric characters with hyphens, collapse consecutive hyphens, strip leading/trailing hyphens, max 5 words). The slug must match `[a-z0-9]+(-[a-z0-9]+)*` — reject any slug that does not match this pattern
+- Create the `docs/design/` directory if it doesn't exist
+- Fill the template with the approved design content
+- Set **Status** to `Approved`
+
+### Self-review
+
+After writing, read the file back and check for:
+- TODOs, placeholders, or "TBD" markers
+- Internal contradictions (e.g., a component listed in Components but missing from Interfaces)
+- Requirements ambiguous enough to cause someone to build the wrong thing
+- YAGNI violations — features or complexity the user didn't ask for
+
+Fix any issues found. If a fix would change a design decision, ask the user first.
+
+## Step 6: Report
+
+Present the result:
+
+```
+## Design Complete
+
+**Design doc:** `<file-path>`
+**Goal:** <single-sentence goal>
+**Approach:** <chosen approach name>
+**Components:** <count> (<count> new, <count> modified)
+```
+
+## Step 7: Next Step
+
+Handle non-implementation tasks first:
+- **Refactoring task** → tell the user: "Recommend running `/optimus:refactor` to restructure the code. **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch."
+- **Test-only task** → tell the user: "Recommend running `/optimus:unit-test` to write tests for existing code. **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch."
+
+For implementation tasks, assess complexity from the Components table in the design doc:
+
+### Small (1–2 components, <5 behaviors implied)
+
+Tell the user: "This is small enough to implement directly — run `/optimus:tdd` to build it test-first. It will auto-detect the design doc at `<file-path>`. **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch."
+
+### Medium-to-large (3+ components or complex interfaces)
+
+Generate a plan-mode prompt inline, pre-filled from the design doc. Present it as a single copyable block:
+
+````
+```
+## Goal
+[Goal from the design doc]
+
+## Context
+[Synthesize from the design doc's Context and Approach sections.
+Include key decisions, constraints, and the chosen approach rationale.]
+
+## Starting Hints
+- Design doc: <file-path>
+- [Key files/modules identified during codebase exploration in Step 3]
+
+## What to Figure Out
+1. Which existing files and modules need to be modified or extended?
+2. What's the right implementation sequence given the component dependencies?
+3. Are there existing patterns in the codebase to follow or reuse?
+4. What are the risks or edge cases not covered in the design?
+
+## Plan Deliverable
+The plan should include:
+- Proposed approach with rationale
+- Files to create or modify, with what changes
+- Implementation sequence and dependencies
+- Test strategy mapped to each component
+
+## Scope
+- Focus on: [components from the design doc]
+- Out of scope: [from the design doc's Out of Scope section]
+```
+````
+
+Tell the user: "Start a new Claude Code conversation in **plan mode** and paste the prompt above. Once the plan is approved, run `/optimus:tdd` to build it test-first — it will auto-detect the design doc."
+
+Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.

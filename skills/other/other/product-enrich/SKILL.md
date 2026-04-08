@@ -9,9 +9,9 @@ allowed-tools:
   - Glob
   - Grep
   - AskUserQuestion
-  - mcp__google__sheets_values_get
-  - mcp__google__sheets_values_update
-  - mcp__google__sheets_spreadsheet_get
+  - mcp__google-sheets__get_sheet_data
+  - mcp__google-sheets__update_cells
+  - mcp__google-sheets__list_sheets
 user-invocable: true
 ---
 
@@ -114,9 +114,9 @@ Flag any products where enrichment is uncertain:
 
 ### To Google Sheet
 Write enriched fields to the master 33-column schema:
-- Column J (Category) — enriched category
-- Column Q (Materials) — enriched materials
-- Column R (Colors/Finishes) — enriched color
+- Column A (Category) — enriched category
+- Column R (Materials) — enriched materials
+- Column S (Colors/Finishes) — enriched color
 - Column AD (Tags) — enriched style tags, appended to existing tags
 
 Do NOT overwrite existing values unless the field is empty or the user explicitly asks to overwrite.
@@ -141,6 +141,6 @@ Output the enriched table in markdown.
 ## Pairs With
 
 - `/product-spec-bulk-fetch` — fetch specs first, then enrich the results
-- `/product-spec-bulk-cleanup` — cleanup normalizes formatting, enrich adds metadata
-- `/ffe-schedule` — enriched products make better formatted schedules
+- `/product-data-cleanup` — cleanup normalizes formatting, enrich adds metadata
+- `/product-data-import` — enriched products make better formatted schedules
 - `/product-match` — enriched tags help find better matches

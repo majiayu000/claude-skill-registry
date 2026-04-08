@@ -2,30 +2,30 @@
   "category": "local-ai-infrastructure",
   "code": "oth",
   "count": 2,
-  "updated_at": "2026-04-04T04:23:18.147561Z",
+  "updated_at": "2026-04-08T05:11:33.461452Z",
   "skills": [
     {
       "name": "skills",
       "description": "Expertise in calculating and specifying hardware requirements for local AI deployments, including GPU selection, server configuration, storage, and network planning based on workload characteristics a",
       "repo": "mitkox/fteplusai",
-      "path": "",
+      "path": "skills/hardware-sizing.skill.md",
       "branch": "main",
       "category": "local-ai-infrastructure",
       "tags": [],
       "stars": 80,
-      "install": "mitkox/fteplusai",
+      "install": "mitkox/fteplusai/skills/hardware-sizing.skill.md",
       "source": "github.com/mitkox/fteplusai"
     },
     {
       "name": "skills",
       "description": "Expertise in calculating and specifying hardware requirements for local AI deployments, including GPU selection, server configuration, storage, and network planning based on workload characteristics a",
       "repo": "mitkox/fteplusai",
-      "path": "",
+      "path": "skills/hardware-sizing.skill.md",
       "branch": "main",
       "category": "local-ai-infrastructure",
       "tags": [],
       "stars": 80,
-      "install": "mitkox/fteplusai",
+      "install": "mitkox/fteplusai/skills/hardware-sizing.skill.md",
       "source": "github.com/mitkox/fteplusai"
     }
   ]

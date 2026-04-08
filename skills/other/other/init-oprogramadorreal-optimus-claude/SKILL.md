@@ -320,6 +320,8 @@ If the user declined test infrastructure in Step 5b, include:
 
 Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.
 
+Also mention: "If you have JIRA tickets to work from, try `/optimus:jira` to pull structured task context before implementing."
+
 End the report with:
 
 > **Setup complete** — your project now has the foundation for effective AI-assisted development. To reach optimal performance, build on this foundation: strengthen test coverage with `/optimus:unit-test` and refine code quality with `/optimus:refactor`.

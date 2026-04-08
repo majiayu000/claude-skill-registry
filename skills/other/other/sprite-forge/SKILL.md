@@ -109,6 +109,10 @@ See `references/pixel-art-svgs.md` for the rect conversion technique.
 
 ## Pipeline 4: ASCII Art
 
+Two sub-modes: **static** (image-to-ASCII conversion) and **animated** (frame-based ASCII animation components).
+
+### Static — Image to ASCII
+
 Convert images to terminal-renderable character art.
 
 ```bash
@@ -123,6 +127,16 @@ python3 scripts/image_to_ascii.py photo.png --mode jp2a --width 80
 ```
 
 See `references/ascii-art-techniques.md` for character sets, density ramps, and color modes.
+
+### Animated — Frame-Based ASCII Animation Components
+
+Generate React components that cycle through ASCII art frames at a target FPS. Output: TSX component with frame array, animation loop, APPEARANCE config, and ResizeObserver scaling. Distributable via shadcn registry.
+
+Use when the user wants: animated ASCII art, terminal-style loading animations, retro text effects in a React app, ASCII art that moves.
+
+**Existing catalog** (install via shadcn from asciistudio.space): Lightning, Skull, Pitstop, Red Fire, CD, Balls, Star, Rainbow Fire, Hand Fire, Dust. Install: `npx shadcn@latest add https://asciistudio.space/r/<name>.json`
+
+**Generating new animations**: See `references/ascii-animation-components.md` for the component architecture, APPEARANCE config (video/gradient/burn effects), character sets, and generation guidelines. For programmatic patterns (particles, waves, fire), write a frame generator rather than hand-crafting each frame.
 
 ## Pipeline 5: Animated Mascot
 
@@ -198,6 +212,7 @@ See `references/lil-agents-character-spec.md` for the full format spec and `refe
 - `references/video-to-spritesheet.md` — Video-first animation workflow
 - `references/gemini-svg-generation.md` — Gemini SVG-as-code prompt patterns
 - `references/ascii-art-techniques.md` — ASCII/Unicode art techniques
+- `references/ascii-animation-components.md` — Frame-based ASCII animation React components (shadcn pattern)
 - `references/sprite-generation-landscape.md` — Tool comparison (SEELE, Ludo, SpriteCook, etc.)
 - `references/pixel-art-svgs.md` — Pixel grid to SVG rect conversion
 - `references/gsap-timeline-patterns.md` — GSAP animation recipes

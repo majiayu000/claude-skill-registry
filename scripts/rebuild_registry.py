@@ -2,7 +2,7 @@
 """
 Rebuild registry.json from downloaded skills.
 
-Scans all skills/*/SKILL.md files and rebuilds the registry index.
+Scans archived SKILL.md files recursively and rebuilds the registry index.
 """
 
 import json
@@ -27,7 +27,7 @@ def safe_write_registry(registry_path: Path, registry: dict) -> bool:
     temp_path = registry_path.with_suffix('.json.tmp')
     try:
         with open(temp_path, "w", encoding="utf-8") as f:
-            json.dump(registry, f, indent=2, ensure_ascii=False)
+            json.dump(registry, f, ensure_ascii=False, separators=(",", ":"))
 
         temp_path.rename(registry_path)
         return True
@@ -42,11 +42,11 @@ def scan_skills(skills_dir: Path) -> list:
     """
     Scan archived skills and build index.
 
-    Supports category layout:
-    - <root>/<category>/<skill>/SKILL.md
+    Supports archive layout:
+    - <archive-root>/**/SKILL.md
 
-    We detect a "skill directory" by the presence of both SKILL.md and metadata.json
-    in the same folder, which avoids mis-parsing category folders.
+    Metadata is optional for indexing. If metadata.json exists, it augments fields;
+    otherwise fallback values are derived from path/content.
     """
     skills: list[dict] = []
 
@@ -54,23 +54,10 @@ def scan_skills(skills_dir: Path) -> list:
         logger.warning(f"Skills directory not found: {skills_dir}")
         return skills
 
-    for metadata_path in skills_dir.rglob("metadata.json"):
-        skill_dir = metadata_path.parent
-        skill_md = skill_dir / "SKILL.md"
-        if not skill_md.exists():
-            continue
-
+    for skill_md in skills_dir.rglob("SKILL.md"):
+        skill_dir = skill_md.parent
         rel_dir = skill_dir.relative_to(skills_dir)
         rel_parts = rel_dir.parts
-
-        # Skip "category root" folders that also contain many sub-skill folders.
-        # Example: development/ has SKILL.md + metadata.json but also development/<skill>/...
-        try:
-            has_subskills = any((p / "SKILL.md").exists() for p in skill_dir.iterdir() if p.is_dir())
-        except Exception:
-            has_subskills = False
-        if has_subskills:
-            continue
 
         metadata = load_metadata(skill_dir)
 
@@ -78,9 +65,7 @@ def scan_skills(skills_dir: Path) -> list:
         name = metadata.get("name") or (rel_parts[-1] if rel_parts else skill_dir.name)
 
         # Determine category (prefer explicit metadata, then infer from path)
-        inferred_category = "other"
-        if len(rel_parts) >= 2:
-            inferred_category = rel_parts[0]
+        inferred_category = rel_parts[0] if rel_parts else "other"
         category = metadata.get("category") or inferred_category
 
         # Read SKILL.md for description
@@ -99,15 +84,13 @@ def scan_skills(skills_dir: Path) -> list:
         github_path = (
             metadata.get("github_path")
             or metadata.get("path")
-            or ""
+            or "/".join(rel_parts)
         )
         github_branch = (
             metadata.get("github_branch")
             or metadata.get("branch")
             or "main"
         )
-
-        install = f"{repo}/{github_path}" if (repo and github_path) else (repo or f"unknown/{name}")
 
         skill_entry = {
             "name": name,
@@ -118,18 +101,38 @@ def scan_skills(skills_dir: Path) -> list:
             "category": category,
             "tags": metadata.get("tags", []),
             "stars": metadata.get("stars", 0),
-            "install": install,
             "source": metadata.get("source", "local"),
-            "author": metadata.get("author", ""),
-            "source_url": metadata.get("source_url", ""),
-            "license": metadata.get("license", ""),
-            "distribution": metadata.get("distribution", ""),
-            "permission_note": metadata.get("permission_note", ""),
         }
+
+        for key in ("author", "source_url", "license", "distribution", "permission_note"):
+            value = metadata.get(key, "")
+            if value not in ("", None):
+                skill_entry[key] = value
 
         skills.append(skill_entry)
 
     return skills
+
+
+def cleanup_orphan_metadata(skills_dir: Path) -> int:
+    """
+    Remove metadata.json files whose directories do not contain SKILL.md.
+
+    This keeps archive parity clean without enforcing strict metadata schema checks.
+    """
+    skill_dirs = {p.parent for p in skills_dir.rglob("SKILL.md")}
+    removed = 0
+
+    for metadata_path in skills_dir.rglob("metadata.json"):
+        if metadata_path.parent in skill_dirs:
+            continue
+        try:
+            metadata_path.unlink()
+            removed += 1
+        except Exception as e:
+            logger.warning(f"Failed to remove orphan metadata {metadata_path}: {e}")
+
+    return removed
 
 
 def sanitize_category(category: str) -> str:
@@ -213,6 +216,11 @@ if __name__ == "__main__":
         print("=" * 60)
         print()
 
+        print("Cleaning orphan metadata.json files...")
+        orphan_removed = cleanup_orphan_metadata(skills_dir)
+        print(f"Removed {orphan_removed} orphan metadata files")
+        print()
+
         print(f"Scanning skills directory: {skills_dir}")
         skills = scan_skills(skills_dir)
         print(f"Found {len(skills)} skills")
@@ -255,12 +263,18 @@ if __name__ == "__main__":
         print(f"Plugins loaded: {len(plugins)}")
         print()
 
+        archive_skill_md_count_raw = sum(1 for _ in skills_dir.rglob("SKILL.md"))
+        archive_metadata_count_raw = sum(1 for _ in skills_dir.rglob("metadata.json"))
+
         # Build registry
         registry = {
             "version": "2.1.0",
             "updated_at": utc_now_isoformat(),
             "total_count": len(unique_skills),
             "plugin_count": len(plugins),
+            "archive_skill_md_count_raw": archive_skill_md_count_raw,
+            "archive_metadata_count_raw": archive_metadata_count_raw,
+            "registry_skill_count_dedup": len(unique_skills),
             "skills": unique_skills,
             "plugins": plugins,
         }

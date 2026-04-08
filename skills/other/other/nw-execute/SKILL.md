@@ -34,11 +34,11 @@ Before dispatching the agent, read rigor config from `.nwave/des-config.json` (k
 
 ## Dispatcher Workflow
 
-1. Parse parameters: agent name|feature ID|step ID
-2. Read rigor profile from `.nwave/des-config.json` (default: standard)
-3. Validate roadmap and execution-log exist
-4. Grep roadmap for `step_id: "{step-id}"` with ~50 lines context
-5. Extract step fields and invoke Agent tool with DES template below, applying rigor model and phases
+1. **Parse Parameters** — Extract agent name, feature ID, and step ID from invocation. Gate: all three parameters present and non-empty.
+2. **Load Rigor Profile** — Read `.nwave/des-config.json` key `rigor` (default: standard if absent). Gate: config loaded or default applied.
+3. **Validate Context Files** — Confirm `docs/feature/{feature-id}/deliver/roadmap.json` and `execution-log.json` exist. Gate: both files present; report path-not-found if missing.
+4. **Extract Step Context** — Grep roadmap for `step_id: "{step-id}"` with ~50 lines context. Gate: step found; report available step IDs if missing.
+5. **Invoke Agent** — Call Agent tool with DES template below, applying rigor model and phases from step 2. Gate: Agent tool called, not executed inline.
 
 ## Agent Invocation
 
@@ -69,7 +69,7 @@ Load on-demand per phase as specified in your Skill Loading Strategy table.
 {step context from roadmap - name|description|acceptance_criteria|test_file|scenario_name|quality_gates|implementation_notes|dependencies|estimated_hours|deliverables|files_to_modify}
 
 # DESIGN_CONTEXT
-{Summary of architectural decisions relevant to this step, extracted by the orchestrator from design wave artifacts (architecture-design.md, component-boundaries.md, wave-decisions.md). Include: component structure, dependency boundaries, technology choices, and any design constraints that affect implementation. If no design artifacts exist, write "No design artifacts available — use project conventions."}
+{Summary of architectural decisions relevant to this step, extracted by the orchestrator from docs/product/architecture/brief.md and wave-decisions.md. Include: component structure, dependency boundaries, technology choices, and any design constraints that affect implementation. If no design artifacts exist, write "No design artifacts available — use project conventions."}
 
 # TDD_PHASES
 Execute in order:
@@ -157,10 +157,10 @@ If GREEN complete (all tests pass), MUST commit before returning — even at tur
 
 ## Error Handling
 
-- Invalid agent: report available agents
-- Missing roadmap/execution-log: report path not found
-- Step not in roadmap: report available step IDs
-- Dependency failure: explain blocking tasks
+1. **Invalid Agent** — Report available agents from the agent registry. Gate: error message returned, no invocation attempted.
+2. **Missing Context Files** — Report exact path not found for roadmap or execution-log. Gate: clear path reported.
+3. **Step Not in Roadmap** — Report available step IDs from roadmap. Gate: list of valid IDs returned.
+4. **Dependency Failure** — Explain which blocking tasks are incomplete. Gate: blocking step IDs named explicitly.
 
 ## Resume vs Restart
 

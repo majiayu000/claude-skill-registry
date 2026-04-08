@@ -50,7 +50,7 @@ Search for demographic data for the census tract, ZIP code, or municipality:
 
 ## Output Format
 
-Write the analysis to a markdown file at `~/Documents/demographics-analysis-[location-slug].md`.
+Write the analysis to a markdown file at `./demographics-analysis-[location-slug].md`.
 
 ```markdown
 # Demographics Analysis — [Full Address or Location Name]

@@ -17,7 +17,7 @@ Standalone-first worker for Story replanning. It compares ideal Story intent wit
 
 Load these before execution:
 - `shared/references/coordinator_summary_contract.md`
-- `shared/references/tools_config_guide.md`
+- `shared/references/environment_state_contract.md`
 - `shared/references/storage_mode_detection.md`
 - `shared/references/template_loading_pattern.md`
 - `references/replan_algorithm_stories.md`

@@ -263,6 +263,14 @@ Classify every source on discovery.
 - Simple questions answerable from internal knowledge with high confidence
 - Opinion-based questions with no verifiable answer
 
+## Gotchas
+
+1. **Never invent a URL.** If search returns nothing, say "Unverified (no source found)" — do not guess a plausible-looking URL. Fabricated sources destroy all credibility.
+2. **Two articles citing the same study = 1 source.** Trace claims to their origin. A press release quoted by 5 news sites is still one source, not five.
+3. **Vendor benchmarks are Tier B, not A.** Even official engineering blogs have bias when benchmarking their own product. Label the bias explicitly.
+4. **Hedging is not labeling.** "아마도", "seems like", "probably" are banned. Either a claim is Verified (2+ independent sources) or it gets an explicit Unverified/Contested label.
+5. **Don't skip the Verification Matrix.** It's the accountability layer. Without it, the report looks rigorous but has no audit trail.
+
 ## Integration Notes
 
 - **With swing-clarify:** Run swing-clarify first on ambiguous requests before invoking this skill. Clarified scope produces better results.

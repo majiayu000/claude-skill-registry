@@ -9,9 +9,9 @@ allowed-tools:
   - Glob
   - Grep
   - AskUserQuestion
-  - mcp__google__sheets_values_get
-  - mcp__google__sheets_values_update
-  - mcp__google__sheets_spreadsheet_get
+  - mcp__google-sheets__get_sheet_data
+  - mcp__google-sheets__update_cells
+  - mcp__google-sheets__list_sheets
 user-invocable: true
 ---
 
@@ -173,16 +173,18 @@ Item #, SKU, Product, Brand, Qty, List Price, Discount %, Sell Price, Ext List, 
 
 ### Google Sheet (master schema)
 Write to the 33-column schema (defined in `../../schema/product-schema.md`, CRUD patterns in `../../schema/sheet-conventions.md`):
-- Column A (Link) ← ProductURL
-- Column C (Product Name) ← PD
-- Column E (SKU) ← PN
-- Column F (Brand) ← MC expanded
-- Column J (Category) ← GC or PRC
-- Column K-O (Dims) ← parsed from AD where AN=DIM
-- Column P (Weight) ← WT
-- Column T (List Price) ← PL/P1/I1
-- Column U (Sale Price) ← calculated sell price
-- Column S (Selected Finish) ← OD
+See `../../schema/sif-crosswalk.md` for the full column-to-SIF mapping. Key fields:
+
+- Column J (Link) ← ProductURL
+- Column E (Product Name) ← PD
+- Column I (SKU) ← PN
+- Column B (Brand) ← MC expanded
+- Column A (Category) ← GC or PRC
+- Column L-P (Dims) ← parsed from AD where AN=DIM
+- Column Q (Weight) ← WT
+- Column U (List Price) ← PL/P1/I1
+- Column V (Sale Price) ← calculated sell price
+- Column T (Selected Finish) ← OD
 - Column AC (Image URL) ← ImageURL
 - Column AD (Tags) ← TG
 - Column AE (Notes) ← "From SIF: {ST}. Discount: {S-}%. Qty: {QT} · Ext: ${ext_sell}"
@@ -206,6 +208,6 @@ Output the table in conversation.
 ## Pairs With
 
 - `/csv-to-sif` — round-trip: create SIF, send to dealer, parse their quote back
-- `/product-spec-bulk-cleanup` — normalize the parsed data
-- `/ffe-schedule` — reformulate dealer data into a formatted schedule
+- `/product-data-cleanup` — normalize the parsed data
+- `/product-data-import` — reformulate dealer data into a formatted schedule
 - `/product-enrich` — add categories and tags to imported products

@@ -46,6 +46,9 @@ OrbitOS 共享配置，供 orbit-* 系列 skill 自动引用；也可在知识�
 - 图片文件名使用顺序编号：`img-0.ext`、`img-1.ext`、`img-2.ext`（保留原扩展名）
 - 文内图片使用相对路径：`![图 1｜说明](assets/<slug>/img-0.jpg)`，建议补一行图注
 - 仅当用户明确要求“只保留外链”时，才允许不落地图片
+- 原文收录要求：若任务是“收录/归档/完整保存”，必须保留原文块结构（标题/列表/引用/代码块）与原图位置，禁止把图文整体转成纯文本
+- X/Twitter 收录实现：禁止用 `bird read --plain` 作为归档源；必须使用 `bird read --json-full`，从 `content_state.blocks` + `entityMap` + `media_entities` 还原正文与图片
+- X/Twitter 收录的块级重建、类型校验与冗余资产清理，统一以 `bird-twitter` skill 为唯一细则；orbit-os 不重复维护同类实现细节
 
 # 媒体资产规范（链接完整保存，通用）
 

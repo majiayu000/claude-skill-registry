@@ -29,9 +29,9 @@ Create original knowledge comics with flexible art style × tone combinations.
 
 | Option | Values | Description |
 |--------|--------|-------------|
-| `--art` | ligne-claire (default), manga, realistic, ink-brush, chalk | Art style / rendering technique |
+| `--art` | ligne-claire (default), manga, realistic, ink-brush, chalk, minimalist | Art style / rendering technique |
 | `--tone` | neutral (default), warm, dramatic, romantic, energetic, vintage, action | Mood / atmosphere |
-| `--layout` | standard (default), cinematic, dense, splash, mixed, webtoon | Panel arrangement |
+| `--layout` | standard (default), cinematic, dense, splash, mixed, webtoon, four-panel | Panel arrangement |
 | `--aspect` | 3:4 (default, portrait), 4:3 (landscape), 16:9 (widescreen) | Page aspect ratio |
 | `--lang` | auto (default), zh, en, ja, etc. | Output language |
 
@@ -55,6 +55,7 @@ Details: [references/partial-workflows.md](references/partial-workflows.md)
 | `realistic` | 写实 | Digital painting, realistic proportions, sophisticated |
 | `ink-brush` | 水墨 | Chinese brush strokes, ink wash effects |
 | `chalk` | 粉笔 | Chalkboard aesthetic, hand-drawn warmth |
+| `minimalist` | 极简 | Clean black line art, limited spot color, stick-figure characters |
 
 ### Tones (基调)
 
@@ -77,6 +78,8 @@ Presets with special rules beyond art+tone:
 | `--style ohmsha` | `--art manga --tone neutral` | Visual metaphors, NO talking heads, gadget reveals |
 | `--style wuxia` | `--art ink-brush --tone action` | Qi effects, combat visuals, atmospheric elements |
 | `--style shoujo` | `--art manga --tone romantic` | Decorative elements, eye details, romantic beats |
+| `--style concept-story` | `--art manga --tone warm` | Visual symbol system, growth arc, dialogue+action balance |
+| `--style four-panel` | `--art minimalist --tone neutral --layout four-panel` | 起承转合 4-panel structure, B&W + spot color, stick-figure characters |
 
 ### Compatibility Matrix
 
@@ -87,6 +90,7 @@ Presets with special rules beyond art+tone:
 | realistic | neutral, warm, dramatic, vintage | action | romantic, energetic |
 | ink-brush | neutral, dramatic, action, vintage | warm | romantic, energetic |
 | chalk | neutral, warm, energetic | vintage | dramatic, action, romantic |
+| minimalist | neutral | warm, energetic | dramatic, vintage, romantic, action |
 
 Details: [references/auto-selection.md](references/auto-selection.md)
 
@@ -101,6 +105,8 @@ Content signals determine default art + tone + layout (or preset):
 | Personal story, mentor | ligne-claire + warm |
 | Martial arts, wuxia | **wuxia** preset |
 | Romance, school life | **shoujo** preset |
+| Psychology, motivation, business narrative | **concept-story** preset |
+| Business allegory, fable, parable, short insight, 四格 | **four-panel** preset |
 | Biography, balanced | ligne-claire + neutral |
 
 **When preset is recommended**: Load `references/presets/{preset}.md` and apply all special rules.
@@ -172,9 +178,9 @@ Comic Progress:
 - [ ] Step 4: Review outline (conditional)
 - [ ] Step 5: Generate prompts
 - [ ] Step 6: Review prompts (conditional)
-- [ ] Step 7: Generate images ⚠️ CHARACTER REF REQUIRED
-  - [ ] 7.1 Generate character sheet FIRST → characters/characters.png
-  - [ ] 7.2 Generate pages WITH --ref characters/characters.png
+- [ ] Step 7: Generate images
+  - [ ] 7.1 Generate character sheet (if needed) → characters/characters.png
+  - [ ] 7.2 Generate pages (with --ref if character sheet exists)
 - [ ] Step 8: Merge to PDF
 - [ ] Step 9: Completion report
 ```
@@ -205,16 +211,24 @@ Analyze → [Check Existing?] → [Confirm: Style + Reviews] → Storyboard → 
 | 4 | Review outline (if requested) | User approval |
 | 5 | Generate prompts | `prompts/*.md` |
 | 6 | Review prompts (if requested) | User approval |
-| **7.1** | **Generate character sheet FIRST** | `characters/characters.png` |
-| **7.2** | Generate pages **with character ref** | `*.png` files |
+| 7.1 | Generate character sheet (if needed) | `characters/characters.png` |
+| 7.2 | Generate pages (with character ref if available) | `*.png` files |
 | 8 | Merge to PDF | `{slug}.pdf` |
 | 9 | Completion report | Summary |
 
-### Step 7: Image Generation ⚠️ CRITICAL
+### Step 7: Image Generation
 
-**Character reference is MANDATORY for visual consistency.**
+**7.1 Generate character sheet (conditional)**:
 
-**7.1 Generate character sheet first**:
+Character sheet is recommended for multi-page comics with recurring characters, but **NOT required** for all presets:
+
+| Condition | Action |
+|-----------|--------|
+| Multi-page comic with detailed characters | Generate character sheet (recommended) |
+| Preset with simplified characters (e.g., four-panel minimalist) | Skip — prompt descriptions are sufficient |
+| Single-page comic | Skip unless characters are complex |
+
+**When generating character sheet**:
 - **Backup rule**: If `characters/characters.png` exists, rename to `characters/characters-backup-YYYYMMDD-HHMMSS.png`
 - Invoke an installed image generation skill such as `baoyu-imagine`
 - Read that skill's `SKILL.md` and follow its documented interface rather than calling its scripts directly
@@ -222,18 +236,25 @@ Analyze → [Check Existing?] → [Confirm: Style + Reviews] → Storyboard → 
 - Save output to `characters/characters.png`
 - Use aspect ratio `4:3`
 
-**Compress character sheet** (recommended):
-Compress to reduce token usage when used as reference image:
+**Compress character sheet** (recommended when using as `--ref`):
 - Use available image compression skill (if any)
-- Or system tools: `pngquant`, `optipng`, `sips` (macOS)
-- **Keep PNG format**, lossless compression preferred
+- Or system tools: `sips -s format jpeg -s formatOptions 80 input.png --out output.jpg` (macOS)
+- Or: `pngquant --quality=65-80 input.png -o output.png`
+- Compression reduces API payload size and avoids `--ref` failures
 
-**7.2 Generate each page WITH character reference**:
+**7.2 Generate each page**:
 
-| Skill Capability | Strategy |
-|------------------|----------|
-| Supports `--ref` | Pass `characters/characters.png` with EVERY page |
-| No `--ref` support | Prepend character descriptions to EVERY prompt file |
+| Character Sheet | Skill Capability | Strategy |
+|-----------------|------------------|----------|
+| Exists | Supports `--ref` | Pass `characters/characters.png` with EVERY page |
+| Exists | No `--ref` support | Prepend character descriptions to EVERY prompt file |
+| Skipped | — | Prompt file contains all character descriptions inline |
+
+**`--ref` failure recovery**: If generation fails with `--ref`:
+1. **Compress**: Convert reference image to JPEG with reduced quality:
+   `sips -s format jpeg -s formatOptions 70 characters.png --out characters-compressed.jpg`
+2. **Retry** with compressed image as `--ref`
+3. **If still fails**: Fall back to generating WITHOUT `--ref` (prompt-only, character descriptions embedded in prompt text)
 
 **Backup rules for page generation**:
 - If prompt file exists: rename to `prompts/NN-{cover|page}-[slug]-backup-YYYYMMDD-HHMMSS.md`
@@ -241,8 +262,8 @@ Compress to reduce token usage when used as reference image:
 - Invoke the installed image generation skill for each page
 - Use `prompts/01-page-xxx.md` as the prompt-file input
 - Save output to `01-page-xxx.png`
-- Use aspect ratio `3:4`
-- If the chosen skill supports reference images, pass `characters/characters.png` as `--ref`
+- Use aspect ratio from storyboard (default `3:4`, preset may override)
+- If character sheet exists and skill supports reference images, pass as `--ref`
 
 **Full workflow details**: [references/workflow.md](references/workflow.md)
 
@@ -273,10 +294,10 @@ Schema: [references/config/preferences-schema.md](references/config/preferences-
 - [ohmsha-guide.md](references/ohmsha-guide.md) - Ohmsha manga specifics
 
 **Style Definitions**:
-- `references/art-styles/` - Art styles (ligne-claire, manga, realistic, ink-brush, chalk)
+- `references/art-styles/` - Art styles (ligne-claire, manga, realistic, ink-brush, chalk, minimalist)
 - `references/tones/` - Tones (neutral, warm, dramatic, romantic, energetic, vintage, action)
-- `references/presets/` - Presets with special rules (ohmsha, wuxia, shoujo)
-- `references/layouts/` - Layouts (standard, cinematic, dense, splash, mixed, webtoon)
+- `references/presets/` - Presets with special rules (ohmsha, wuxia, shoujo, concept-story, four-panel)
+- `references/layouts/` - Layouts (standard, cinematic, dense, splash, mixed, webtoon, four-panel)
 
 **Workflow**:
 - [workflow.md](references/workflow.md) - Full workflow details
@@ -306,6 +327,6 @@ Schema: [references/config/preferences-schema.md](references/config/preferences-
 - Maintain style consistency via session ID
 - **Step 2 confirmation required** - do not skip
 - **Steps 4/6 conditional** - only if user requested in Step 2
-- **Step 7.1 character sheet MUST be generated before pages** - ensures consistency
-- **Step 7.2 EVERY page MUST reference characters** - use `--ref` or embed descriptions
+- **Step 7.1 character sheet** - recommended for multi-page comics, optional for simple presets
+- **Step 7.2 character reference** - use `--ref` if sheet exists; compress/convert on failure; fall back to prompt-only
 - Watermark/language configured once in EXTEND.md

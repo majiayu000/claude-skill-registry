@@ -2,30 +2,30 @@
   "category": "business-productivity",
   "code": "oth",
   "count": 2,
-  "updated_at": "2026-04-04T04:23:17.199577Z",
+  "updated_at": "2026-04-08T05:11:32.484058Z",
   "skills": [
     {
       "name": "content-research-writer",
       "description": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, iterating on outlines, and providing real-time feedback on each section. Transforms your writing proc",
       "repo": "davepoon/buildwithclaude",
-      "path": "",
+      "path": "plugins/all-skills/skills/content-research-writer/SKILL.md",
       "branch": "main",
       "category": "business-productivity",
       "tags": [],
       "stars": 2299,
-      "install": "davepoon/buildwithclaude",
+      "install": "davepoon/buildwithclaude/plugins/all-skills/skills/content-research-writer/SKILL.md",
       "source": "github.com/davepoon/buildwithclaude"
     },
     {
       "name": "content-research-writer",
       "description": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, iterating on outlines, and providing real-time feedback on each section. Transforms your writing proc",
       "repo": "davepoon/buildwithclaude",
-      "path": "",
+      "path": "plugins/all-skills/skills/content-research-writer/SKILL.md",
       "branch": "main",
       "category": "business-productivity",
       "tags": [],
       "stars": 2299,
-      "install": "davepoon/buildwithclaude",
+      "install": "davepoon/buildwithclaude/plugins/all-skills/skills/content-research-writer/SKILL.md",
       "source": "github.com/davepoon/buildwithclaude"
     }
   ]

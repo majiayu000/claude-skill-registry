@@ -22,7 +22,7 @@ Specialized worker auditing build health and code quality tooling.
 - Return structured findings to coordinator with severity, location, effort, recommendations
 - Calculate compliance score (X/10) for Build Health category
 
-## Inputs (from Coordinator)
+## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
@@ -37,7 +37,7 @@ Receives `contextStore` with: `tech_stack` (including build_tool, test_framework
 3) **Analyze Output Context (Layer 2):** For deprecation warnings -- read notice to determine if removal is imminent or distant. For config issues -- check if dev-only or production config.
 4) **Collect Findings:** Record each violation with severity, location, effort, recommendation
 5) **Calculate Score:** Count violations by severity, calculate compliance score (X/10)
-6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/622-build.md` in single Write call
+6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/ln-622--global.md` in single Write call
 7) **Trend Tracking:** Append build_health metric to results_log per `shared/references/results_log_pattern.md`. Metric: `build_health | 0-10 | penalty formula`. Calculate delta and status (improving/stable/declining) vs previous run.
 8) **Return Summary:** Return minimal summary to coordinator (see Output Format)
 
@@ -137,15 +137,15 @@ Receives `contextStore` with: `tech_stack` (including build_tool, test_framework
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/622-build.md` with `category: "Build Health"` and checks: compilation_errors, linter_warnings, type_errors, test_failures, build_config.
+Write report to `{output_dir}/ln-622--global.md` with `category: "Build Health"` and checks: compilation_errors, linter_warnings, type_errors, test_failures, build_config.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/622-build.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-622--global.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -167,7 +167,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] All 5 build checks completed (compiler, linter, type checker, tests, config)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated using penalty algorithm
-- [ ] Report written to `{output_dir}/622-build.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-622--global.md` (atomic single Write call)
 - [ ] build_health metric appended to results_log with trend status
 - [ ] Summary written per contract
 

@@ -1,9 +1,6 @@
 ---
 name: compression-strategy
-description: 'Analyze current context and recommend compression strategies. Use when
-  context feels bloated, before major task transitions, or when quota is burning
-  fast. location: user token_budget: 150. Do not use when context-optimization already
-  invoked or simple queries.'
+description: 'Analyze current context and recommend compression strategies for bloated or quota-heavy sessions'
 version: 1.7.1
 globs:
 alwaysApply: false

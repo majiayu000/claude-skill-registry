@@ -5,8 +5,8 @@
 > **Data repo (skills archive):** https://github.com/majiayu000/claude-skill-registry-data  
 > **Authority:** core workflows are canonical; main is a publish mirror.  
 <p align="center">
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry-core%2Fstats.json&query=%24.dedup_skill_count&label=Skills%20(dedup)&color=purple&style=flat-square" alt="Skills (dedup)">
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry-core%2Fstats.json&query=%24.raw_skill_count&label=SKILL.md%20files&color=blueviolet&style=flat-square" alt="SKILL.md files">
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry-core%2Fstats.json&query=%24.archive_skill_md_count_raw&label=SKILL.md%20files%20(raw)&color=blueviolet&style=flat-square" alt="SKILL.md files (raw)">
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry-core%2Fstats.json&query=%24.registry_skill_count_dedup&label=Skills%20(dedup)&color=purple&style=flat-square" alt="Skills (dedup)">
   <img src="https://img.shields.io/badge/Updated-Daily-green?style=flat-square" alt="Updated">
   <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License">
   <a href="https://majiayu000.github.io/claude-skill-registry-core/"><img src="https://img.shields.io/badge/Web-Search-blue?style=flat-square" alt="Web Search"></a>
@@ -115,7 +115,7 @@ curl https://majiayu000.github.io/claude-skill-registry-core/categories/developm
 // Lightweight index for fast search (~1MB gzip)
 interface SearchIndex {
   v: string;           // Version (date)
-  t: number;           // Total count
+  t: number;           // Indexed skill count (always s.length)
   s: SkillMini[];      // Skills array
 }
 

@@ -19,15 +19,15 @@ Upgrades Node.js dependencies using npm, yarn, or pnpm with automatic breaking c
 
 | Aspect | Details |
 |--------|---------|
-| **Input** | Project path, package manager type |
-| **Output** | Updated package.json, lock file, migration report |
-| **Supports** | npm, yarn (classic & berry), pnpm |
+| **Input** | Project path, package manager type, upgrade policy |
+| **Output** | Updated package manifest and a machine-readable dependency upgrade summary |
+| **Supports** | npm, yarn (classic and berry), pnpm |
 
 ---
 
 ## Workflow
 
-**Phases:** Pre-flight → Analyze → Security Audit → Check Outdated → Identify Breaking → Apply Upgrades → Apply Migrations → Verify Build → Report
+**Phases:** Pre-flight -> Analyze -> Security Audit -> Check Outdated -> Identify Breaking -> Apply Upgrades -> Apply Migrations -> Verify Build -> Report
 
 ---
 
@@ -35,39 +35,35 @@ Upgrades Node.js dependencies using npm, yarn, or pnpm with automatic breaking c
 
 | Check | Required | Action if Missing |
 |-------|----------|-------------------|
-| Lock file (package-lock.json, yarn.lock, pnpm-lock.yaml) | Yes | Warn and run `npm install` first |
-| package.json | Yes | Block upgrade |
-| Git clean state | Yes | Block (need clean baseline for revert) |
+| `package.json` | Yes | Block upgrade |
+| Lock file (`package-lock.json`, `yarn.lock`, `pnpm-lock.yaml`) | No | Warn and regenerate before final verification |
+| Package manager available | Yes | Block upgrade |
+| Workspace baseline safe | Yes | In managed runs coordinator already prepared it; in standalone runs protect rollback locally |
 
-> Workers assume coordinator (ln-820) already verified git state and created backup.
+### Runtime Coordination
 
-### Worktree & Branch Isolation
-
-**MANDATORY READ:** Load `shared/references/git_worktree_fallback.md` — use ln-821 row.
+Managed runs receive deterministic `runId` and exact `summaryArtifactPath` from `ln-820`.
+Standalone runs remain supported; if runtime arguments are omitted, generate a standalone run-scoped artifact before returning.
 
 ---
 
 ## Phase 1: Analyze Dependencies
 
-Read package.json and categorize dependencies for upgrade priority.
-
-### Dependency Categories
+Read `package.json` and categorize dependencies for upgrade priority.
 
 | Category | Examples | Priority |
 |----------|----------|----------|
-| framework | react, vue, angular | 2 (after peer deps) |
-| build | vite, webpack, esbuild | 3 |
-| ui | @radix-ui/*, tailwindcss | 4 |
-| state | @tanstack/react-query, zustand | 5 |
-| utils | lodash, date-fns | 6 |
-| dev | eslint, prettier, typescript | 7 |
-| peer | @types/*, typescript | 1 (first) |
+| peer | `typescript`, `@types/*` | 1 |
+| framework | `react`, `vue`, `next` | 2 |
+| build | `vite`, `webpack`, `esbuild` | 3 |
+| ui | `@radix-ui/*`, `tailwindcss` | 4 |
+| state | `@tanstack/react-query`, `zustand` | 5 |
+| utils | `lodash`, `date-fns` | 6 |
+| dev | `eslint`, `prettier`, test tooling | 7 |
 
 ---
 
 ## Phase 2: Security Audit
-
-### Commands
 
 | Manager | Command |
 |---------|---------|
@@ -75,19 +71,17 @@ Read package.json and categorize dependencies for upgrade priority.
 | yarn | `yarn audit --level high` |
 | pnpm | `pnpm audit --audit-level high` |
 
-### Actions
+Actions:
 
 | Severity | Action |
 |----------|--------|
-| Critical | Block upgrade, report |
-| High | Warn, continue |
+| Critical | Block and report |
+| High | Warn and continue |
 | Moderate/Low | Log only |
 
 ---
 
 ## Phase 3: Check Outdated
-
-### Commands
 
 | Manager | Command |
 |---------|---------|
@@ -99,38 +93,34 @@ Read package.json and categorize dependencies for upgrade priority.
 
 ## Phase 4: Identify Breaking Changes
 
-### Detection
-
 **MANDATORY READ:** Load [breaking_changes_patterns.md](../ln-820-dependency-optimization-coordinator/references/breaking_changes_patterns.md) for full patterns.
 
-1. Compare current vs latest major versions
-2. Check breaking_changes_patterns.md for known patterns
-3. Query Context7/Ref for migration guides
+Detection flow:
+1. Compare current vs latest major versions.
+2. Check shared breaking-change patterns.
+3. Query Context7 or Ref for migration guides before changing code.
 
-### Common Breaking Changes
+Common breaking examples:
 
 | Package | Breaking Version | Key Changes |
 |---------|------------------|-------------|
-| react | 18 → 19 | JSX Transform, ref as prop |
-| vite | 5 → 6 | ESM only, Node 18+ |
-| eslint | 8 → 9 | Flat config required |
-| tailwindcss | 3 → 4 | CSS-based config |
-| typescript | 5.4 → 5.5+ | Stricter inference |
+| react | 18 -> 19 | JSX transform, refs as props |
+| vite | 5 -> 6 | ESM-only, newer Node baseline |
+| eslint | 8 -> 9 | Flat config |
+| tailwindcss | 3 -> 4 | CSS-first config |
+| typescript | 5.4 -> 5.5+ | Stricter inference |
 
 ---
 
 ## Phase 5: Apply Upgrades
 
-### Upgrade Order
-
-1. **Peer dependencies** (TypeScript, @types/*)
-2. **Framework packages** (React, Vue core)
-3. **Build tools** (Vite, webpack)
-4. **UI libraries** (after framework)
-5. **Utilities** (lodash, date-fns)
-6. **Dev dependencies** (testing, linting)
-
-### Commands
+Upgrade order:
+1. peer dependencies
+2. framework packages
+3. build tools
+4. UI libraries
+5. utilities
+6. dev dependencies
 
 | Manager | Command |
 |---------|---------|
@@ -138,93 +128,67 @@ Read package.json and categorize dependencies for upgrade priority.
 | yarn | `yarn add <package>@latest` |
 | pnpm | `pnpm add <package>@latest` |
 
-### Peer Dependency Conflicts
+Peer dependency conflicts:
 
 | Situation | Solution |
 |-----------|----------|
-| ERESOLVE error | `npm install --legacy-peer-deps` |
-| Still fails | `npm install --force` (last resort) |
+| ERESOLVE | `npm install --legacy-peer-deps` |
+| Still fails | `npm install --force` only as last resort |
 
 ---
 
 ## MCP Tools for Migration Search
 
-### Priority Order (Fallback Strategy)
-
 | Priority | Tool | When to Use |
 |----------|------|-------------|
-| 1 | mcp__context7__query-docs | First choice for library docs |
-| 2 | mcp__Ref__ref_search_documentation | Official docs and GitHub |
-| 3 | WebSearch | Latest info, community solutions |
+| 1 | `mcp__context7__query-docs` | First choice for library docs |
+| 2 | `mcp__Ref__ref_search_documentation` | Official docs and GitHub |
+| 3 | WebSearch | Latest info and community fixes |
 
-### Context7 Usage
-
-| Step | Tool | Parameters |
-|------|------|------------|
-| 1. Find library | mcp__context7__resolve-library-id | libraryName: "react", query: "migration guide" |
-| 2. Query docs | mcp__context7__query-docs | libraryId: "/facebook/react", query: "react 18 to 19 migration" |
-
-### MCP Ref Usage
-
-| Action | Tool | Query Example |
-|--------|------|---------------|
-| Search | mcp__Ref__ref_search_documentation | "react 19 migration guide breaking changes" |
-| Read | mcp__Ref__ref_read_url | URL from search results |
-
-### WebSearch Fallback
-
-Use when Context7/Ref return no results:
-- `"<package> <version> breaking changes migration {current_year}"`
-- `"<package> <error message> fix stackoverflow"`
+Use MCP tools to fetch migration guides before applying non-trivial changes.
 
 ---
 
 ## Phase 6: Apply Migrations
 
-### Process
+1. Use MCP tools to find the current migration guide.
+2. Apply automated code transforms only when the guide supports them.
+3. Log manual follow-up steps for the final report.
 
-1. Use MCP tools (see section above) to find migration guide
-2. Apply automated code transforms via Edit tool
-3. Log manual migration steps for user
-
-> Do NOT apply hardcoded migrations. Always fetch current guides via MCP tools.
+Do not hardcode migrations without checking current documentation.
 
 ---
 
 ## Phase 7: Verify Build
 
-### Commands
-
 | Check | Command |
 |-------|---------|
 | TypeScript | `npm run check` or `npx tsc --noEmit` |
 | Build | `npm run build` |
-| Tests | `npm test` (if available) |
+| Tests | `npm test` if available |
 
-### On Failure
-
-1. Identify failing package from error
-2. Search Context7/Ref for fix
-3. If unresolved: rollback package, continue with others
+On failure:
+1. Identify the failing package.
+2. Search Context7 or Ref for the fix.
+3. If unresolved, rollback that package and continue with the remaining candidates.
 
 ---
 
 ## Phase 8: Report Results
 
-### Report Schema
-
 | Field | Description |
 |-------|-------------|
-| project | Project path |
-| packageManager | npm, yarn, or pnpm |
-| duration | Total time |
-| upgrades.major[] | Breaking changes applied |
-| upgrades.minor[] | Feature updates |
-| upgrades.patch[] | Bug fixes |
-| migrations[] | Applied migrations |
-| skipped[] | Already latest |
-| buildVerification | PASSED or FAILED |
-| warnings[] | Non-blocking issues |
+| `project` | Project path |
+| `packageManager` | npm, yarn, or pnpm |
+| `duration` | Total time |
+| `upgrades.major[]` | Breaking changes applied |
+| `upgrades.minor[]` | Feature updates |
+| `upgrades.patch[]` | Bug fixes |
+| `migrations[]` | Applied migrations |
+| `skipped[]` | Already latest or policy-skipped |
+| `verification` | Build/test/type-check verdict |
+| `warnings[]` | Non-blocking issues |
+| `artifact_path` | Durable worker report path, if written |
 
 ---
 
@@ -232,29 +196,17 @@ Use when Context7/Ref return no results:
 
 ```yaml
 Options:
-  # Upgrade scope
   upgradeType: major          # major | minor | patch
-
-  # Breaking changes
   allowBreaking: true
   autoMigrate: true
-  queryMigrationGuides: true  # Use Context7/Ref
-
-  # Security
-  auditLevel: high            # none | low | moderate | high | critical
-  minimumReleaseAge: 14       # days
-
-  # Peer dependencies
+  queryMigrationGuides: true
+  auditLevel: high
+  minimumReleaseAge: 14
   legacyPeerDeps: false
   force: false
-
-  # Verification
   runBuild: true
   runTests: false
   runTypeCheck: true
-
-  # Rollback
-  createBackup: true
   rollbackOnFailure: true
 ```
 
@@ -264,14 +216,13 @@ Options:
 
 | Error | Cause | Solution |
 |-------|-------|----------|
-| ERESOLVE | Peer dep conflict | --legacy-peer-deps |
-| ENOENT | Missing lock file | npm install first |
-| Build fail | Breaking change | Apply migration via Context7 |
-| Type errors | Version mismatch | Update @types/* |
+| ERESOLVE | Peer dependency conflict | Retry with legacy peer dependency mode |
+| ENOENT | Missing lock file | Regenerate dependencies first |
+| Build fail | Breaking change | Apply migration guide or rollback offending package |
+| Type errors | Version mismatch | Update types or framework peer packages |
 
-### Rollback
-
-Restore package.json and lock file from git, then run clean install to restore previous state.
+Rollback:
+Restore `package.json` and the lock file, then run a clean install to restore the previous state.
 
 ---
 
@@ -282,16 +233,29 @@ Restore package.json and lock file from git, then run clean install to restore p
 
 ---
 
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
+
+Emit a `dependency-worker` summary envelope.
+
+Managed mode:
+- `ln-820` passes deterministic `runId` and exact `summaryArtifactPath`
+- write the summary to the provided `summaryArtifactPath`
+
+Standalone mode:
+- omit `runId` and `summaryArtifactPath`
+- write `.hex-skills/runtime-artifacts/runs/{run_id}/dependency-worker/ln-821--{identifier}.json`
+
 ## Definition of Done
 
-- [ ] Lock file and package.json verified present
-- [ ] Dependencies categorized and prioritized (peer deps first)
-- [ ] Security audit completed (critical blocks upgrade)
-- [ ] Outdated packages identified via `npm/yarn/pnpm outdated`
-- [ ] Breaking changes detected via breaking_changes_patterns.md and MCP tools
-- [ ] Upgrades applied in priority order with rollback on failure
-- [ ] Build and type checks pass after upgrades
-- [ ] Report returned with major/minor/patch counts, migrations, and build status
+- [ ] Package manifest analyzed and dependencies prioritized
+- [ ] Security audit completed for the selected package manager
+- [ ] Outdated packages identified
+- [ ] Breaking changes checked via patterns plus current docs
+- [ ] Upgrades applied with rollback on failure
+- [ ] Build and relevant verification commands pass after upgrades
+- [ ] `dependency-worker` summary artifact written to the managed or standalone path
 
 ---
 

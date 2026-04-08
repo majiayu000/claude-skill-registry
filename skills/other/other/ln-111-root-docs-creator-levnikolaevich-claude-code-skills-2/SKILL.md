@@ -1,6 +1,6 @@
 ---
 name: ln-111-root-docs-creator
-description: "Creates root documentation files (AGENTS.md, CLAUDE.md, docs/README.md, standards, principles, tools config). Use for initial project doc setup."
+description: "Creates root documentation files (AGENTS.md, CLAUDE.md, docs/README.md, standards, principles). Use for initial project doc setup."
 license: MIT
 model: claude-sonnet-4-6
 ---
@@ -11,18 +11,14 @@ model: claude-sonnet-4-6
 
 **Type:** L3 Worker
 
-L3 Worker that creates 6 root documentation files using templates and Context Store from coordinator.
+L3 Worker that creates 5 root documentation files using templates and Context Store from coordinator.
 
 ## Purpose & Scope
-- Creates 6 root documentation files (entry points for AI agents + tool configuration)
+- Creates 5 root documentation files (entry points for AI agents)
 - Receives Context Store from ln-110-project-docs-coordinator
 - Replaces placeholders with project-specific data
 - Self-validates structure and content (22 questions)
 - Never gathers context itself; uses coordinator input
-
-## Invocation (who/when)
-- **ln-110-project-docs-coordinator:** ALWAYS invoked as first worker
-- Never called directly by users
 
 ## Inputs
 From coordinator:
@@ -39,7 +35,7 @@ From coordinator:
 
 **MANDATORY READ:** Load `shared/references/docs_quality_contract.md` and `shared/references/docs_quality_rules.json`.
 
-## Documents Created (6)
+## Documents Created (5)
 
 | File | Target Sections | Questions |
 |------|-----------------|-----------|
@@ -48,7 +44,6 @@ From coordinator:
 | docs/README.md | Quick Navigation, Agent Entry, Documentation Map, Maintenance | Q7-Q13 |
 | docs/documentation_standards.md | Quick Reference (60+ requirements), 12 main sections, Maintenance | Q14-Q16 |
 | docs/principles.md | Core Principles (8), Decision Framework, Anti-Patterns, Verification, Maintenance | Q17-Q22 |
-| docs/tools_config.md | Task Management, Research, File Editing, External Agents, Git | Auto-detected |
 
 ## Workflow
 
@@ -58,7 +53,7 @@ From coordinator:
 3. Set defaults for missing optional keys
 
 ### Phase 2: Create Documents
-For each document (AGENTS.md, CLAUDE.md, docs/README.md, documentation_standards.md, principles.md, tools_config.md):
+For each document (AGENTS.md, CLAUDE.md, docs/README.md, documentation_standards.md, principles.md):
 1. Check if file exists (idempotent)
 2. If exists: skip with log
 3. If not exists:
@@ -92,23 +87,6 @@ For each document (AGENTS.md, CLAUDE.md, docs/README.md, documentation_standards
 - `CLAUDE.md` must stay thin and point to `AGENTS.md`
 - Do not duplicate the full project knowledge base in both files
 
-### Phase 2b: Create Tools Config
-
-**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md`
-
-For `docs/tools_config.md`:
-1. Check if file exists (idempotent — respect existing config, may have been auto-bootstrapped)
-2. If exists: skip with log
-3. If not exists:
-   - Copy template from `references/templates/tools_config_template.md`
-   - **Detect available tools** (replace placeholders with actual values):
-     - Task Management: call `list_teams()` via mcp__linear-server → set Provider/Status/Team ID
-     - Research: call `ref_search_documentation(query="test")` → if active, set Provider=ref. Then call `resolve-library-id(libraryName="react")` for Context7 → set Fallback chain
-     - File Editing: run detection sequence (loaded above)
-     - External Agents: run `codex --version`, `gemini --version` → set Status/Comment
-     - Git: run `git worktree list` → set Worktree/Strategy
-   - Write file with detected values
-
 ### Phase 3: Self-Validate
 For each created document:
 1. Check SCOPE tag in first 12 lines
@@ -123,17 +101,16 @@ For each created document:
 Return to coordinator:
 ```json
 {
-  "created_files": ["AGENTS.md", "CLAUDE.md", "docs/README.md", "docs/documentation_standards.md", "docs/principles.md", "docs/tools_config.md"],
+  "created_files": ["AGENTS.md", "CLAUDE.md", "docs/README.md", "docs/documentation_standards.md", "docs/principles.md"],
   "skipped_files": [],
   "quality_inputs": {
-    "doc_paths": ["AGENTS.md", "CLAUDE.md", "docs/README.md", "docs/documentation_standards.md", "docs/principles.md", "docs/tools_config.md"],
+    "doc_paths": ["AGENTS.md", "CLAUDE.md", "docs/README.md", "docs/documentation_standards.md", "docs/principles.md"],
     "owners": {
       "AGENTS.md": "ln-111-root-docs-creator",
       "CLAUDE.md": "ln-111-root-docs-creator",
       "docs/README.md": "ln-111-root-docs-creator",
       "docs/documentation_standards.md": "ln-111-root-docs-creator",
-      "docs/principles.md": "ln-111-root-docs-creator",
-      "docs/tools_config.md": "ln-111-root-docs-creator"
+      "docs/principles.md": "ln-111-root-docs-creator"
     }
   },
   "validation_status": "passed"
@@ -186,16 +163,16 @@ Write the summary to the provided artifact path or return the same envelope in s
 
 ## Definition of Done
 - [ ] Context Store received and validated
-- [ ] 6 root documents created (or skipped if exist)
+- [ ] 5 root documents created (or skipped if exist)
 - [ ] All placeholders replaced; no `[TBD: ...]` markers or template metadata remain in root docs
 - [ ] Self-validation passed (SCOPE, metadata markers, top sections, Maintenance, POSIX)
 - [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
 - [ ] Status returned
 
 ## Reference Files
-- Templates: `references/templates/agents_md_template.md`, `claude_md_template.md`, `docs_root_readme_template.md`, `documentation_standards_template.md`, `principles_template.md`, `tools_config_template.md`
+- Templates: `references/templates/agents_md_template.md`, `claude_md_template.md`, `docs_root_readme_template.md`, `documentation_standards_template.md`, `principles_template.md`
 - Questions: `references/questions_root.md` (Q1-Q22)
-- **Tools config guide:** `shared/references/tools_config_guide.md` (detection and bootstrap pattern)
+- **Environment state:** `shared/references/environment_state_contract.md` (detection and bootstrap pattern)
 
 ---
 **Version:** 2.1.0

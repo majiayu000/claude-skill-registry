@@ -2,18 +2,20 @@
 name: quality-stack
 description: >
   Scan a project to detect configured quality and testing tools across JVM
-  (Gradle/Maven), Node.js/TypeScript, and Python ecosystems. Cross-reference
-  against research-backed recommendations and assist with setup. Auto-detects
-  project type(s) including monorepos with mixed ecosystems. Use when user asks
-  to "audit tooling", "recommend tools", "quality stack", "what tools am I missing",
-  "setup eslint", "setup detekt", "add coverage", "add ruff", "configure CI quality
-  pipeline", "scan project tools", or "tooling audit".
+  (Gradle/Maven), Android (AGP/Compose/KMP), Node.js/TypeScript, and Python
+  ecosystems. Cross-reference against research-backed recommendations and assist
+  with setup. Auto-detects project type(s) including monorepos with mixed
+  ecosystems. Use when user asks to "audit tooling", "recommend tools", "quality
+  stack", "what tools am I missing", "setup eslint", "setup detekt", "add
+  coverage", "add ruff", "configure CI quality pipeline", "scan project tools",
+  "tooling audit", "android tooling", "android quality", "compose testing",
+  "kmp testing", or "screenshot testing".
 disable-model-invocation: true
 ---
 
 # Quality Stack
 
-Scan a project's build configuration across JVM, Node.js, and Python ecosystems, cross-reference against curated research documents, and assist with tool setup.
+Scan a project's build configuration across JVM, Android, Node.js, and Python ecosystems, cross-reference against curated research documents, and assist with tool setup.
 
 ## Pre-flight
 
@@ -36,6 +38,12 @@ Scan a project's build configuration across JVM, Node.js, and Python ecosystems,
 1. **Run the scanner** on the project root (see Pre-flight above).
 
 2. **Fetch research documents** via WebFetch — only for detected ecosystems:
+
+   **Android** (when `ecosystems` contains `"android"`):
+   ```
+   https://raw.githubusercontent.com/joaquimscosta/arkhe-claude-plugins/main/docs/research/android-ecosystem-tooling.md
+   https://raw.githubusercontent.com/joaquimscosta/arkhe-claude-plugins/main/docs/research/android-testing-ecosystem.md
+   ```
 
    **JVM** (when `ecosystems` contains `"jvm"`):
    ```
@@ -99,6 +107,9 @@ Include effort estimates. After user completes selection across all rounds:
 **Ecosystem-aware rules** — see [WORKFLOW.md](WORKFLOW.md) for full classification tables per ecosystem.
 
 **Key rules:**
+- Android Compose project: NOW Compose UI testing, SOON Roborazzi; SKIP Espresso
+- Android KMP project: NOW commonTest setup, NOW Turbine; SOON Ktor MockEngine
+- Android no lint config: NOW Android Lint baseline; SOON custom lint rules
 - JVM Pure Kotlin: SKIP Error Prone, SpotBugs; JVM Pure Java: SKIP Detekt, ktlint, MockK
 - JVM Spring Boot 4+: SKIP REST Assured, NOW MockMvcTester
 - Node.js no linter: NOW ESLint; no formatter + no Biome: NOW Prettier
@@ -119,6 +130,8 @@ Include effort estimates. After user completes selection across all rounds:
 
 Fetch via WebFetch at runtime — only for detected ecosystems:
 
+- **Android Ecosystem Tooling**: `android-ecosystem-tooling.md`
+- **Android Testing Ecosystem**: `android-testing-ecosystem.md`
 - **JVM Quality Tools**: `jvm-quality-tools-evaluation.md`
 - **JVM Testing Ecosystem**: `kotlin-spring-boot-testing-ecosystem.md`
 - **Node.js Quality Tools**: `node-quality-tools-evaluation.md`
@@ -131,6 +144,7 @@ Fetch via WebFetch at runtime — only for detected ecosystems:
 scripts/
   scan_project.py          # Orchestrator — auto-detects + merges
   scan_jvm.py              # JVM scanner (Gradle/Maven)
+  scan_android.py          # Android scanner (AGP/Compose/KMP)
   scan_node.py             # Node.js/TypeScript scanner
   scan_python.py           # Python scanner
   scan_cross_cutting.py    # Cross-cutting tools (CI, hooks, security)

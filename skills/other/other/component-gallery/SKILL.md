@@ -78,6 +78,19 @@ python3 ~/.claude/skills/component-gallery/scripts/ingest.py --rebuild-rag
 python3 ~/.claude/skills/component-gallery/scripts/build_indexes.py
 ```
 
+## 3D / WebGL Inspiration — mesh3d.gallery
+
+For 3D interactive web experiences, query mesh3d.gallery — a curated directory of 207+ WebGL/Three.js/Spline websites, hand-picked by human curators. Filterable by technology, maker, and tags.
+
+```bash
+# Fetch and search the directory
+python3 ~/.claude/skills/component-gallery/scripts/fetch_mesh3d.py --tech "Three.js"
+python3 ~/.claude/skills/component-gallery/scripts/fetch_mesh3d.py --maker "Lusion"
+python3 ~/.claude/skills/component-gallery/scripts/fetch_mesh3d.py --search "portfolio"
+```
+
+See `references/mesh3d-gallery.md` for the full reference. Use component-gallery for 2D UI patterns, mesh3d.gallery for 3D interaction patterns.
+
 ## Anti-Patterns
 
 **Guessing component structure.** Never invent a component's ARIA pattern, keyboard behavior, or state machine from first principles when the collection contains documented patterns from production design systems. Query first.

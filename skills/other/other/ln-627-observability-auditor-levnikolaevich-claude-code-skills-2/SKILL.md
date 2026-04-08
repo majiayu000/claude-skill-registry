@@ -15,12 +15,11 @@ Specialized worker auditing logging, monitoring, and observability.
 
 ## Purpose & Scope
 
-- **Worker in ln-620 coordinator pipeline**
 - Audit **observability** (Category 10: Medium Priority)
 - Check logging, health checks, metrics, tracing
 - Calculate compliance score (X/10)
 
-## Inputs (from Coordinator)
+## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
@@ -39,7 +38,7 @@ Receives `contextStore` with tech stack, framework, codebase root, output_dir.
    - Request tracing: monolith -> less needed. Microservice -> critical
 5) Collect confirmed findings
 6) Calculate score
-7) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/627-observability.md` in single Write call
+7) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/ln-627--global.md` in single Write call
 8) **Return Summary:** Return minimal summary to coordinator
 
 ## Audit Rules
@@ -113,15 +112,15 @@ Receives `contextStore` with tech stack, framework, codebase root, output_dir.
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/627-observability.md` with `category: "Observability"` and checks: structured_logging, health_endpoints, metrics_collection, request_tracing, log_levels.
+Write report to `{output_dir}/ln-627--global.md` with `category: "Observability"` and checks: structured_logging, health_endpoints, metrics_collection, request_tracing, log_levels.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/627-observability.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-627--global.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -147,7 +146,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] All 5 checks completed (structured logging, health endpoints, metrics, request tracing, log levels)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated per `shared/references/audit_scoring.md`
-- [ ] Report written to `{output_dir}/627-observability.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-627--global.md` (atomic single Write call)
 - [ ] Summary written per contract
 
 ---

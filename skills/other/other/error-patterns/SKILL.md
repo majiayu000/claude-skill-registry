@@ -30,6 +30,7 @@ usage_patterns:
 - resilience-patterns
 - debugging-workflows
 complexity: beginner
+model_hint: fast
 estimated_tokens: 450
 progressive_loading: true
 modules:

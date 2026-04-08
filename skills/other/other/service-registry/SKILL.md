@@ -1,11 +1,8 @@
 ---
 name: service-registry
-description: Consult this skill when implementing service registry patterns. Use when
+description: Service registry patterns for managing external services, health checks, centralized configuration, and unified execution.
 version: 1.7.1
 alwaysApply: false
-  managing multiple external services, implementing health checks, centralizing service
-  configuration, unified service execution. Do not use when single service integration
-  without registry needs.
 category: infrastructure
 tags:
 - services

@@ -16,6 +16,14 @@ allowed-tools:
 
 **Input**: $ARGUMENTS
 
+### Instrumental Guard
+
+When invoked with a track file path, **first check** the track's frontmatter for `instrumental: true` or the Track Details table for `**Instrumental** | Yes`. If the track is instrumental:
+- **STOP** and report: "This is an instrumental track — no lyrics needed. Use `/bitwize-music:suno-engineer` to create the Style Box directly."
+- Do NOT write lyrics for instrumental tracks.
+
+### Vocal Track Workflow
+
 When invoked with a track file path:
 1. Read the track file
 2. Scan existing lyrics for issues (rhyme, prosody, POV, pronunciation)

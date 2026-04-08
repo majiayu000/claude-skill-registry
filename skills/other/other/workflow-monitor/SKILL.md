@@ -1,10 +1,8 @@
 ---
 name: workflow-monitor
-description: automatically create GitHub issues for workflow improvements via /fix-workflow.
+description: Detect workflow failures and inefficient patterns, then create GitHub issues for improvement via /fix-workflow.
 version: 1.7.1
 alwaysApply: false
-  Use when workflows fail, timeout, or show inefficient patterns. Do not use when
-  normal workflow execution, simple command errors.
 category: workflow-methodology
 tags:
 - workflow

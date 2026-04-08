@@ -1,7 +1,7 @@
 ---
 name: understand
 description: Analyze a codebase to produce an interactive knowledge graph for understanding architecture, components, and relationships
-argument-hint: [options]
+argument-hint: [--full|--auto-update|--no-auto-update|--review]
 ---
 
 # /understand
@@ -38,9 +38,16 @@ Determine whether to run a full analysis or incremental update.
    - If `--no-auto-update` is in `$ARGUMENTS`: write `{"autoUpdate": false}` to `$PROJECT_ROOT/.understand-anything/config.json`
    - These flags only set the config — analysis proceeds normally regardless.
 
-4. Check if `$PROJECT_ROOT/.understand-anything/knowledge-graph.json` exists. If it does, read it.
-5. Check if `$PROJECT_ROOT/.understand-anything/meta.json` exists. If it does, read it to get `gitCommitHash`.
-6. **Decision logic:**
+4. **Check for subdomain knowledge graphs to merge:**
+   List all `*knowledge-graph*.json` files in `$PROJECT_ROOT/.understand-anything/` **excluding** `knowledge-graph.json` itself (e.g. `frontend-knowledge-graph.json`, `backend-knowledge-graph.json`). If any subdomain graphs exist, run the merge script bundled with this skill (located next to this SKILL.md file — use the skill directory path, not the project root):
+   ```bash
+   python <SKILL_DIR>/merge-subdomain-graphs.py $PROJECT_ROOT
+   ```
+   The script discovers subdomain graphs, loads the existing `knowledge-graph.json` as a base (if present), and merges everything into `knowledge-graph.json` (deduplicating nodes and edges). Report the merge summary to the user, then continue with the merged graph.
+
+5. Check if `$PROJECT_ROOT/.understand-anything/knowledge-graph.json` exists. If it does, read it.
+6. Check if `$PROJECT_ROOT/.understand-anything/meta.json` exists. If it does, read it to get `gitCommitHash`.
+7. **Decision logic:**
 
    | Condition | Action |
    |---|---|
@@ -58,7 +65,7 @@ Determine whether to run a full analysis or incremental update.
    ```
    If this returns no files, report "Graph is up to date" and STOP.
 
-7. **Collect project context for subagent injection:**
+8. **Collect project context for subagent injection:**
    - Read `README.md` (or `README.rst`, `readme.md`) from `$PROJECT_ROOT` if it exists. Store as `$README_CONTENT` (first 3000 characters).
    - Read the primary package manifest (`package.json`, `pyproject.toml`, `Cargo.toml`, `go.mod`, `pom.xml`) if it exists. Store as `$MANIFEST_CONTENT`.
    - Capture the top-level directory tree:
@@ -104,7 +111,7 @@ After the subagent completes, read `$PROJECT_ROOT/.understand-anything/intermedi
 Store `importMap` in memory as `$IMPORT_MAP` for use in Phase 2 batch construction.
 Store the file list as `$FILE_LIST` with `fileCategory` metadata for use in Phase 2 batch construction.
 
-**Gate check:** If >200 files, inform the user and suggest scoping with a subdirectory argument. Proceed only if user confirms or add guidance that this may take a while.
+**Gate check:** If >100 files, inform the user and suggest scoping with a subdirectory argument. Proceed only if user confirms or add guidance that this may take a while.
 
 ---
 
@@ -157,45 +164,61 @@ Fill in batch-specific parameters below and dispatch:
 > 2. `<path>` (<sizeLines> lines, fileCategory: `<fileCategory>`)
 > ...
 
-After ALL batches complete, read each `batch-<N>.json` file and merge:
-- Combine all `nodes` arrays. If duplicate node IDs exist, keep the later occurrence.
-- Combine all `edges` arrays. Deduplicate by the composite key `source + target + type`.
+After ALL batches complete, run the merge-and-normalize script bundled with this skill (located next to this SKILL.md file — use the skill directory path, not the project root):
+```bash
+python <SKILL_DIR>/merge-batch-graphs.py $PROJECT_ROOT
+```
+
+This script reads all `batch-*.json` files from `$PROJECT_ROOT/.understand-anything/intermediate/`, then in one pass:
+- Combines all nodes and edges across batches
+- Normalizes node IDs (strips double prefixes, project-name prefixes, adds missing prefixes)
+- Normalizes complexity values (`low`→`simple`, `medium`→`moderate`, `high`→`complex`, etc.)
+- Rewrites edge references to match corrected node IDs
+- Deduplicates nodes by ID (keeps last occurrence) and edges by `(source, target, type)`
+- Drops dangling edges referencing missing nodes
+- Logs all corrections and dropped items to stderr
+
+Output: `$PROJECT_ROOT/.understand-anything/intermediate/assembled-graph.json`
+
+Include the script's warnings in `$PHASE_WARNINGS` for the reviewer.
 
 ### Incremental update path
 
 Use the changed files list from Phase 0. Batch and dispatch file-analyzer subagents using the same process as above (20-30 files per batch, up to 5 concurrent, with batchImportData constructed from $IMPORT_MAP), but only for changed files.
 
-After batches complete, merge with the existing graph:
-1. Remove old nodes whose `filePath` matches any changed file
+After batches complete:
+1. Remove old nodes whose `filePath` matches any changed file from the existing graph
 2. Remove old edges whose `source` or `target` references a removed node
-3. Add new nodes and edges from the fresh analysis
+3. Write the pruned existing nodes/edges as `batch-existing.json` in the intermediate directory
+4. Run the same merge script — it will combine `batch-existing.json` with the fresh `batch-*.json` files:
+   ```bash
+   python <SKILL_DIR>/merge-batch-graphs.py $PROJECT_ROOT
+   ```
 
 ---
 
-## Phase 3 — ASSEMBLE
+## Phase 3 — ASSEMBLE REVIEW
 
-Merge all file-analyzer results into a single set of nodes and edges. Then perform normalization and integrity cleanup **in this order**:
+Dispatch a subagent using the `assemble-reviewer` agent definition (at `agents/assemble-reviewer.md`).
 
-1. **Normalize node IDs:** For every node, verify the `id` field follows the convention `<type-prefix>:<path>` where type-prefix is one of `file`, `func`, `class`, `module`, `concept`, `config`, `document`, `service`, `table`, `endpoint`, `pipeline`, `schema`, `resource`. Apply these fixes:
-   - If the ID has a double prefix (e.g., `file:file:src/foo.ts`), strip the duplicate prefix.
-   - If the ID has a project-name prefix (e.g., `my-project:file:src/foo.ts`), strip the project-name portion.
-   - If the ID is a bare file path with no prefix, add the appropriate prefix based on the node's `type` field: `file` → `file:<path>`, `function` → `func:<filePath>:<name>`, `class` → `class:<filePath>:<name>`.
-   - Build a mapping of original IDs → corrected IDs.
+Pass these parameters in the dispatch prompt:
 
-2. **Normalize complexity values:** For every node, verify `complexity` is one of `"simple"`, `"moderate"`, `"complex"`. Apply these mappings for invalid values:
-   - `"low"`, `"easy"` → `"simple"`
-   - `"medium"`, `"intermediate"` → `"moderate"`
-   - `"high"`, `"hard"`, `"difficult"` → `"complex"`
-   - Numeric 1-3 → `"simple"`, 4-6 → `"moderate"`, 7-10 → `"complex"`
-   - Any other value → `"moderate"`
+> Review the assembled graph at `$PROJECT_ROOT/.understand-anything/intermediate/assembled-graph.json`.
+> Project root: `$PROJECT_ROOT`
+> Batch files are at: `$PROJECT_ROOT/.understand-anything/intermediate/batch-*.json`
+> Write review output to: `$PROJECT_ROOT/.understand-anything/intermediate/assemble-review.json`
+>
+> **Merge script report:**
+> ```
+> <paste the full stderr output from merge-batch-graphs.py>
+> ```
+>
+> **Import map for cross-batch edge verification:**
+> ```json
+> $IMPORT_MAP
+> ```
 
-3. **Rewrite edge references:** Using the ID mapping from step 1, update every edge's `source` and `target` fields. This prevents cascading edge drops when only the ID format was wrong.
-
-4. **Remove duplicate node IDs:** If duplicate node IDs exist after normalization, keep the last occurrence.
-
-5. **Remove dangling edges:** Remove any edge whose `source` or `target` references a node ID that does not exist in the merged node set.
-
-6. **Log changes:** Record counts of IDs corrected, complexity values fixed, edges rewritten, duplicates removed, and dangling edges dropped. Include these counts in the Phase warnings list passed to the reviewer.
+After the subagent completes, read `$PROJECT_ROOT/.understand-anything/intermediate/assemble-review.json` and add any notes to `$PHASE_WARNINGS`.
 
 ---
 
@@ -361,8 +384,8 @@ Assemble the full KnowledgeGraph JSON object:
     "analyzedAt": "<ISO 8601 timestamp>",
     "gitCommitHash": "<commit hash from Phase 0>"
   },
-  "nodes": [<all merged nodes from Phase 3>],
-  "edges": [<all merged edges from Phase 3>],
+  "nodes": [<all nodes from assembled-graph.json after Phase 3 review>],
+  "edges": [<all edges from assembled-graph.json after Phase 3 review>],
   "layers": [<layers from Phase 4>],
   "tour": [<steps from Phase 5>]
 }

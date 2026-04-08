@@ -132,7 +132,7 @@ AD=54dia x 28.5H in
 
 **CSV file:**
 ```
-/csv-to-sif ~/Documents/project/ffe-schedule.csv
+/csv-to-sif ~/Documents/project/product-data-import.csv
 ```
 
 **Google Sheet:**
@@ -188,19 +188,21 @@ Auto-detect column mappings from header names:
 
 If using the master 33-column schema (defined in `../../schema/product-schema.md`):
 
+See `../../schema/sif-crosswalk.md` for the full column-to-SIF mapping. Key fields:
+
 | Column | SIF Field |
 |--------|-----------|
-| A (Link) | ProductURL |
-| C (Product Name) | PD |
-| E (SKU) | PN |
-| F (Brand) | MC + MN |
-| J (Category) | GC |
-| K-O (W, D, H, Seat H, Unit) | AD (with AN=DIM) |
-| P (Weight) | WT |
-| Q (Materials) | AD (with AN=MAT) |
-| R (Colors/Finishes) | OD (with ON=FIN) |
-| S (Selected Color/Finish) | OD (primary, replaces R if present) |
-| T (List Price) | PL |
+| A (Category) | GC |
+| B (Brand) | MC + MN |
+| E (Product Name) | PD |
+| I (SKU) | PN |
+| J (Link) | ProductURL |
+| L-P (W, D, H, Seat H, Unit) | AD (with AN=DIM) |
+| Q (Weight) | WT |
+| R (Materials) | AD (with AN=MAT) |
+| S (Colors/Finishes) | OD (with ON=FIN) |
+| T (Selected Color/Finish) | OD (primary, replaces S if present) |
+| U (List Price) | PL |
 | AC (Image URL) | ImageURL |
 | AD (Tags) | TG |
 
@@ -266,16 +268,16 @@ Write the `.sif` file with CRLF line endings:
 ## Step 6: Summary
 
 ```
-✓ Generated ffe-schedule.sif
+✓ Generated product-data-import.sif
   Target: Standard (Hedberg/CAP/ProjectMatrix)
   12 records · 8 fields per record avg
   Manufacturers: HMI (5), KNL (3), STC (2), BLU (2)
   Total list value: $47,830.00
-  Saved to: ~/Documents/project/ffe-schedule.sif
+  Saved to: ~/Documents/project/product-data-import.sif
 ```
 
 ## Pairs With
 
-- `/ffe-schedule` — generate a schedule first, then convert to SIF
+- `/product-data-import` — generate a schedule first, then convert to SIF
 - `/sif-to-csv` — round-trip: CSV → SIF → send to dealer → receive updated SIF → back to CSV
-- `/product-spec-bulk-cleanup` — clean up the CSV before converting
+- `/product-data-cleanup` — clean up the CSV before converting

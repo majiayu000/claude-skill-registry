@@ -146,6 +146,11 @@ For each track file in `{album_path}/tracks/*.md`:
    - Suno Lyrics Box exists
    - If Status is `Generated` or `Final`: Suno Link present
    - If documentary: Sources Verified status
+3. Check instrumental field sync:
+   - Read frontmatter `instrumental` field (true/false/missing)
+   - Read Track Details table `**Instrumental**` row (Yes/No/missing)
+   - If both present and they disagree → `[WARN] {filename} - Instrumental field mismatch: frontmatter={value}, table={value}`
+   - If only one is set → `[WARN] {filename} - Instrumental field missing from {frontmatter|table} (set in {other})`
 
 Output per track:
 - `[PASS] {filename} - Status: {status}, Suno Link: {present/missing}`

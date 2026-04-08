@@ -19,7 +19,7 @@ Load these before execution:
 - `shared/references/coordinator_runtime_contract.md`
 - `shared/references/story_planning_runtime_contract.md`
 - `shared/references/coordinator_summary_contract.md`
-- `shared/references/tools_config_guide.md`
+- `shared/references/environment_state_contract.md`
 - `shared/references/storage_mode_detection.md`
 - `shared/references/problem_solving.md`
 
@@ -92,6 +92,7 @@ Rules:
 - 5-10 Stories when Epic warrants it
 - concise Story statements and observable ACs
 - no orchestration prose inside the plan
+- delegate ACs must specify what equips the actor (context, instructions, tools, configuration), not just what the actor does
 
 Checkpoint payload:
 - `ideal_plan_summary`
@@ -225,7 +226,7 @@ Skill type: `planning-coordinator`. Run after all phases complete. Output to cha
 
 ## Reference Files
 
-- `shared/references/tools_config_guide.md`
+- `shared/references/environment_state_contract.md`
 - `shared/references/storage_mode_detection.md`
 - `references/replan_algorithm.md`
 

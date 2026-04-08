@@ -98,26 +98,46 @@ When user confirms verification for a track:
 
 3. Move to next pending track
 
-## Step 5: Update Album Status
+## Step 5: Update Album Status (Auto-Advance)
 
-After all tracks are verified:
+After processing all tracks, check if the album status should advance:
 
-1. Check if album status should advance:
-   - If album was `Research Complete` → update to `Sources Verified`
-   - If album was `In Progress` and all tracks now verified → note it
+1. Call `get_album_progress(album_slug)` — check how many tracks are now verified
+2. **If ALL tracks are verified** (no more pending):
+   - Read the album README to check current album status
+   - If album status is `Research Complete`:
+     - Update album README: change `| **Status** | Research Complete |` → `| **Status** | Sources Verified |`
+     - Report: "Album status advanced: Research Complete → Sources Verified"
+   - If album status is `In Progress`:
+     - Report: "All track sources verified. Album status stays In Progress (already past research phase)."
+3. **If some tracks still pending**:
+   - Report how many remain and which ones
+4. **Rebuild state cache**: Call `rebuild_state()` to ensure MCP server has fresh data
 
-2. **Rebuild state cache**: Call `rebuild_state()` to ensure MCP server has fresh data
-
-3. **Summary report**:
+5. **Summary report**:
 ```
 VERIFICATION COMPLETE
 =====================
 Album: [title]
 Tracks verified: X/Y
+Album status: [previous] → [new status]
 Date: YYYY-MM-DD
 
 All sources verified. This album is cleared for lyric writing.
 Next step: /bitwize-music:lyric-writer [track] (write lyrics from verified sources)
+```
+
+**Partial verification report** (if some tracks still pending):
+```
+VERIFICATION PROGRESS
+=====================
+Album: [title]
+Tracks verified this session: X
+Tracks still pending: Y
+  - [track-slug] — [reason if known]
+
+Album status: unchanged ([current])
+Resume verification later with /bitwize-music:verify-sources [album]
 ```
 
 ---

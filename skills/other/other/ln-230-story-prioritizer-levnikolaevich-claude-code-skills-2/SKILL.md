@@ -81,7 +81,7 @@ docs/market/[epic-slug]/
 
 ## Tools Config
 
-**MANDATORY READ:** Load `shared/references/tools_config_guide.md`, `shared/references/storage_mode_detection.md`, `shared/references/input_resolution_pattern.md`
+**MANDATORY READ:** Load `shared/references/environment_state_contract.md`, `shared/references/storage_mode_detection.md`, `shared/references/input_resolution_pattern.md`
 
 Extract: `task_provider` = Task Management → Provider
 
@@ -108,6 +108,7 @@ Extract: `task_provider` = Task Management → Provider
 
 2. **Load Epic details:**
    - **IF task_provider == "linear":** `get_project(query=epicId)`
+   - **ELSE IF task_provider == "github":** `gh issue view {epicId} -R {REPO} --json number,title,body`
    - **ELSE:** `Read("docs/tasks/epics/epic-{N}-*/epic.md")`
    - Extract: Epic ID, title, description
 
@@ -141,6 +142,12 @@ Extract: `task_provider` = Task Management → Provider
    **IF task_provider == "linear":**
    ```
    list_issues(project=Epic.id, label="user-story")
+   ```
+   **ELSE IF task_provider == "github":**
+   ```
+   gh api /repos/{O}/{R}/issues/{epic_num}/sub_issues --jq '.[].number'
+   → for each: gh issue view {num} -R {REPO} --json number,title,state,labels
+   → filter: label "user-story"
    ```
    **ELSE (file mode):**
    ```
@@ -176,6 +183,11 @@ Extract: `task_provider` = Task Management → Provider
 **IF task_provider == "linear":**
 ```
 get_issue(id=storyId, includeRelations=false)
+```
+
+**ELSE IF task_provider == "github":**
+```
+gh issue view {storyId} -R {REPO} --json number,title,body,state,labels
 ```
 
 **ELSE (file mode):**
@@ -468,7 +480,7 @@ Skill type: `planning-coordinator`. Run after all phases complete. Output to cha
 
 ## Reference Files
 
-- **MANDATORY READ:** `shared/references/tools_config_guide.md`
+- **MANDATORY READ:** `shared/references/environment_state_contract.md`
 - **MANDATORY READ:** `shared/references/storage_mode_detection.md`
 - **MANDATORY READ:** `shared/references/research_tool_fallback.md`
 
@@ -481,5 +493,5 @@ Skill type: `planning-coordinator`. Run after all phases complete. Output to cha
 
 ---
 
-**Version:** 1.0.0
-**Last Updated:** 2025-12-23
+**Version:** 2.0.0
+**Last Updated:** 2026-04-05

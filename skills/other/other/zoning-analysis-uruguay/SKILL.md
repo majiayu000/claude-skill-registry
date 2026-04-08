@@ -259,7 +259,7 @@ Use the output format below to present a structured analysis.
 
 ### Step 8: Save Report
 
-Save the report as a markdown file to `~/Documents/Alpaca Labs/Estudio Local/Reports/`:
+Save the report as a markdown file to `./`:
 - Single lot: `padron-{number}-{location}.md`
 - Multiple lots: `padrones-{range}-{location}-{count}-lots.md`
 

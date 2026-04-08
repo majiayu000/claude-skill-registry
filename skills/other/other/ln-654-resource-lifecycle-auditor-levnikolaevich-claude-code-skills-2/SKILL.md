@@ -15,13 +15,12 @@ Specialized worker auditing resource acquisition/release patterns, scope mismatc
 
 ## Purpose & Scope
 
-- **Worker in ln-650 coordinator pipeline** - invoked by ln-650-persistence-performance-auditor
 - Audit **resource lifecycle** (Priority: HIGH)
 - Check session/connection scope mismatch, streaming endpoint resource holding, cleanup patterns, pool config
 - Write structured findings to file with severity, location, effort, recommendations
 - Calculate compliance score (X/10) for Resource Lifecycle category
 
-## Inputs (from Coordinator)
+## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
@@ -55,7 +54,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (datab
 
 6) **Calculate score using penalty algorithm**
 
-7) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/654-resource-lifecycle.md` in single Write call
+7) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/ln-654--global.md` in single Write call
 
 8) **Return Summary:** Return minimal summary to coordinator (see Output Format)
 
@@ -285,15 +284,15 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (datab
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/654-resource-lifecycle.md` with `category: "Resource Lifecycle"` and checks: resource_scope_mismatch, streaming_resource_holding, missing_cleanup, pool_configuration, error_path_leak, factory_vs_injection.
+Write report to `{output_dir}/ln-654--global.md` with `category: "Resource Lifecycle"` and checks: resource_scope_mismatch, streaming_resource_holding, missing_cleanup, pool_configuration, error_path_leak, factory_vs_injection.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/654-resource-lifecycle.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-654--global.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -323,7 +322,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
   - resource scope mismatch, streaming resource holding, missing cleanup, pool configuration, error path leak, factory vs injection
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated using penalty algorithm
-- [ ] Report written to `{output_dir}/654-resource-lifecycle.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-654--global.md` (atomic single Write call)
 - [ ] Summary written per contract
 
 ## Reference Files

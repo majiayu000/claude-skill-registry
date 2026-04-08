@@ -6,7 +6,7 @@ description: >
   comparing plan vs reality, documenting risks, or planning next milestones.
   Triggers: "roadmap", "project status", "blockers", "risks", "progress", "next milestone",
   "gaps", "what's done".
-argument-hint: "[--deep] status | gaps | next | delta | blockers | risks | update | specs"
+argument-hint: "[--deep] status | gaps | next | delta | blockers | risks | update [--incremental] | specs | plan [scaffold|show|sync]"
 allowed-tools: Read, Glob, Grep, Write, Bash
 ---
 
@@ -30,8 +30,9 @@ Parse from `$ARGUMENTS`:
 | `delta` | What changed since last assessment |
 | `blockers` | Blocking chain analysis |
 | `risks` | Risk register with likelihood/impact |
-| `update` | Git-history-aware status document update (Phase A: what shipped + Phase B: full scan) |
+| `update` | Git-history-aware status document update (Phase A: what shipped + Phase B: full scan). Add `--incremental` for targeted post-sprint sync (Phase A + targeted edits only) |
 | `specs` | Spec pipeline status verification |
+| `plan` | Consolidated project plan — scaffold, show, or sync phases/specs/ADRs |
 | _(none)_ | Full dashboard (combines status + gaps + next) |
 
 ## Module Maturity Scale
@@ -141,19 +142,71 @@ Spec pipeline verification:
 
 Verify status against codebase, not just what the spec says.
 
+### `plan`
+
+Consolidated project plan — lifecycle management from scaffold to sync.
+
+Read `plan_file` from `.arkhe.yaml` `roadmap:` section (default: `docs/PROJECT-PLAN.md`).
+
+Parse subcommand from remaining arguments:
+
+| Subcommand | Description |
+|------------|-------------|
+| `scaffold` | Create initial PROJECT-PLAN.md from existing project state |
+| `show` | Display current plan as a consolidated view (read-only) |
+| `sync` | Update plan document from current codebase + git state |
+| _(none)_ | Default to `show` if plan doc exists; `scaffold` if it doesn't |
+
+#### `plan scaffold`
+
+Create the initial plan document by consolidating scattered planning artifacts.
+
+1. **Context discovery** — run standard protocol (CONTEXT_DISCOVERY.md)
+2. **Read existing docs** — read `{status_file}`, product roadmaps (`docs/**/roadmap.md`), backlogs (`docs/**/backlog.md`)
+3. **Scan specs** — glob `{specs_dir}/*/spec.md`, extract: spec ID (directory name), title (first `#` heading), status (`Status:` field)
+4. **Scan ADRs** — glob `docs/adr/[0-9]*.md`, extract: number (filename), title (first `#` heading), status
+5. **Auto-detect phase mappings** — run the hybrid linking algorithm (see [WORKFLOW.md](WORKFLOW.md) § Hybrid Linking Algorithm)
+6. **Present proposed plan** — show full document in chat with `[AUTO-LINKED]` markers on detected mappings, `[MANUAL]` on explicit matches, `[UNLINKED]` on unmapped items
+7. **Confirm** — ask user to review linkages and approve; apply corrections
+8. **Write** — write to `{plan_file}`
+
+If `{plan_file}` already exists, warn and offer: overwrite, sync instead, or cancel.
+
+#### `plan show`
+
+Read-only consolidated view.
+
+1. Read `{plan_file}` — if missing, suggest `scaffold`
+2. Parse and present summary: timeline table, progress stats (phases done/total, specs linked/total, ADRs linked/total), active phases, next up
+3. **Drift detection**: if plan doc was last committed >7 days ago and 3+ feat/fix commits exist since, append: `"⚠️ Plan may be stale. Run /roadmap plan sync to update."`
+
+#### `plan sync`
+
+Git-aware update of the plan document — follows the `update` mode's Phase A + Phase B pattern.
+
+1. **Phase A: Git History Scan** — detect since last plan sync: new/modified specs, new ADRs, phase completion signals (feat: commits grouped by PR), backlog changes
+2. **Phase B: Auto-detect new links** — run hybrid linking on any new specs/ADRs from Phase A
+3. **Phase C: Diff and confirm** — show proposed changes as `+`/`-`/`~` markers; ask confirmation
+4. **Phase D: Write** — update `{plan_file}` preserving user-edited sections
+
+See [WORKFLOW.md](WORKFLOW.md) § `plan` for detailed execution protocol.
+
 ## Output Rules
 
 - **Evidence-based** — every claim backed by a file path, migration, or component
 - **Tabular** — use tables for at-a-glance status; prose for analysis
 - **Actionable** — always end with recommended next actions
 - **Honest** — distinguish between "verified working" and "files exist but untested"
-- `update` writes files after user confirmation; all other modes output to chat
+- `update` and `plan scaffold`/`plan sync` show unified diff preview (using `+`/`-`/`~` markers) and require explicit confirmation before writing
+- `--deep` reports are saved by default to `{output_dir}/reports/`; user can opt out
 
 ## Deep Mode (`--deep`)
 
 When `$ARGUMENTS` contains `--deep`, run the full multi-agent pipeline with **parallel cross-perspective analysis**. Three Sonnet agents analyze the project simultaneously from PM, Architect, and Roadmap perspectives, then a synthesizer merges findings and surfaces contradictions.
 
 See [WORKFLOW.md](WORKFLOW.md) § Deep Pipeline for the 5-phase execution protocol.
+
+Phase 4 produces a **Confidence Scoreboard** table with independent scores per finding. Findings below 70 are removed; 70-89 are tagged `[NEEDS VALIDATION]`.
 
 **Patterns applied**: Pipeline, Supervisor-Worker, Parallel Execution, Confession, Confidence-Gated Completion.
 

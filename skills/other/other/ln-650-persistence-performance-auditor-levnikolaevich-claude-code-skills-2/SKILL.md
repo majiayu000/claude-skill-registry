@@ -156,6 +156,8 @@ mkdir -p {output_dir}   # plus sibling audit-worker summary directory
 
 **Workers (ALL 4 in PARALLEL):**
 
+Managed summary artifact pattern: `.hex-skills/runtime-artifacts/runs/{parent_run_id}/audit-worker/{worker}--{identifier}.json`.
+
 | # | Worker | Priority | What It Audits |
 |---|--------|----------|----------------|
 | 1 | ln-651-query-efficiency-auditor | HIGH | Redundant queries, N-UPDATE loops, over-fetching, caching scope |
@@ -166,24 +168,18 @@ mkdir -p {output_dir}   # plus sibling audit-worker summary directory
 **Invocation (4 workers in PARALLEL):**
 ```javascript
 FOR EACH worker IN [ln-651, ln-652, ln-653, ln-654]:
-  worker_context = {
-    ...contextStore,
-    summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/" + worker + ".json"
-  }
-  Agent(description: "Audit via " + worker,
-       prompt: "Execute audit worker.
-
-Step 1: Invoke worker:
-  Skill(skill: \"" + worker + "\")
-
-CONTEXT:
-" + JSON.stringify(worker_context),
-       subagent_type: "general-purpose")
+  identifier = "global"
+  childRunId = parent_run_id + "--" + worker + "--" + identifier
+  childSummaryArtifactPath = ".hex-skills/runtime-artifacts/runs/" + parent_run_id + "/audit-worker/" + worker + "--" + identifier + ".json"
+  node shared/scripts/audit-worker-runtime/cli.mjs start --skill {worker} --identifier {identifier} --manifest-file .hex-skills/audit/{worker}--{identifier}_manifest.json --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}
+  node shared/scripts/audit-runtime/cli.mjs checkpoint --run-id {parent_run_id} --phase PHASE_4_DELEGATE --payload '{"child_run":{"worker":"{worker}","identifier":"{identifier}","run_id":"{childRunId}","summary_artifact_path":"{childSummaryArtifactPath}"}}'
+  Skill(skill: "{worker}", args: "--run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}")
+  node shared/scripts/audit-runtime/cli.mjs record-worker-result --run-id {parent_run_id} --payload-file {childSummaryArtifactPath}
 ```
 
 **Worker Output Contract:**
 
-Workers follow the shared audit contract, write markdown reports to `{output_dir}/`, and write JSON summaries to `summaryArtifactPath`.
+Workers follow the shared audit contract, write markdown reports to `{output_dir}/ln-XXX--{identifier}.md`, and write JSON summaries to `summaryArtifactPath`.
 
 ## Phase 5: Aggregate Results (File-Based)
 
@@ -289,6 +285,12 @@ Recalculate overall score excluding advisory findings from penalty.
 ## Phase 6: Write Report
 
 Write consolidated report to `docs/project/persistence_audit.md` with the Output Format above.
+
+Before results-log and cleanup, record the coordinator runtime summary:
+
+```bash
+node shared/scripts/audit-runtime/cli.mjs record-summary --run-id {parent_run_id} --payload '{"schema_version":"1.0.0","summary_kind":"audit-coordinator","run_id":"{parent_run_id}","identifier":"{runtime_identifier}","producer_skill":"ln-650","produced_at":"{iso_timestamp}","payload":{"status":"completed","final_result":"AUDIT_COMPLETE","report_path":"docs/project/persistence_audit.md","worker_count":4,"issues_total":{issues_total},"severity_counts":{"critical":{critical_count},"high":{high_count},"medium":{medium_count},"low":{low_count}},"warnings":[]}}'
+```
 
 ## Phase 7: Append Results Log
 

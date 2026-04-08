@@ -1,10 +1,8 @@
 ---
 name: architecture-paradigm-client-server
-description: 'Consult this skill when designing client-server systems or API architectures.
-  Use when traditional web/mobile applications with centralized services, clear separation
-  between client and server responsibilities needed. Do not use when selecting from
-  multiple paradigms - use architecture-paradigms first. DO NOT use when: peer-to-peer
-  dominates - consider dedicated P2P patterns.'
+description: 'Client-server architecture for web/mobile apps with centralized services and API design.'
+version: 1.7.1
+alwaysApply: false
 category: architectural-pattern
 tags:
 - architecture
@@ -20,9 +18,9 @@ usage_patterns:
 - distributed-system-design
 - offline-first
 complexity: low
+model_hint: fast
 estimated_tokens: 600
 ---
-
 # The Client-Server and Peer-to-Peer Paradigms
 
 ## When to Employ This Paradigm

@@ -398,6 +398,14 @@ before any projected traffic event exceeding 3x baseline.
 - When the decision is trivially reversible (low stakes don't justify the analysis)
 - When the team needs encouragement, not caution (read the room)
 
+## Gotchas
+
+1. **"It didn't scale" is not a scenario.** Every failure must name specific tech, specific quantities, specific conditions. If you can swap the project name and the scenario still reads the same, it's too generic.
+2. **Leading indicators must pass the intern test.** Could a new team member, given only your description, determine if the threshold is crossed? "Watch for problems" fails. "Consumer lag >10,000 messages on Burrow dashboard" passes.
+3. **"If things go wrong" is not a circuit breaker.** Every trigger must be a measurable condition with a concrete threshold. Every fallback must name a specific alternative, not "find another way."
+4. **Don't soften the failure frame.** The premise is COMPLETE failure — not "underperformance" or "challenges." This extreme framing is what forces creative risk identification.
+5. **Pre-Mortem Summary is not optional.** It's the BLUF. An executive should be able to read only that paragraph and act on it. If it's missing, the analysis is incomplete.
+
 ## Integration Notes
 
 - **With swing-clarify:** Run swing-clarify first on ambiguous requests before invoking this skill. Clarified scope produces better results.

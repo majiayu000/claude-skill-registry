@@ -2,18 +2,18 @@
   "category": "writing",
   "code": "oth",
   "count": 1,
-  "updated_at": "2026-04-04T04:23:19.137130Z",
+  "updated_at": "2026-04-08T05:11:35.048967Z",
   "skills": [
     {
       "name": "blog-post-writer",
       "description": "Create engaging, SEO-optimized blog posts for any industry or topic",
       "repo": "eddiebe147/claude-settings",
-      "path": "",
+      "path": "skills/blog-post-writer/SKILL.md",
       "branch": "main",
       "category": "writing",
       "tags": [],
       "stars": 6,
-      "install": "eddiebe147/claude-settings",
+      "install": "eddiebe147/claude-settings/skills/blog-post-writer/SKILL.md",
       "source": "github.com/eddiebe147/claude-settings"
     }
   ]

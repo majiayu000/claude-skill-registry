@@ -1,5 +1,5 @@
 ---
-name: ln-612-semantic-content-auditor
+name: ln-ln-612--content-auditor
 description: "Checks document semantic content against SCOPE and project goals, coverage gaps, off-topic content, SSOT. Use when auditing documentation relevance."
 allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline
 license: MIT
@@ -15,7 +15,6 @@ Specialized worker auditing semantic fitness of project documentation.
 
 ## Purpose & Scope
 
-- **Worker in ln-610 coordinator pipeline** - invoked by ln-610-docs-auditor for each project document
 - Verify document content matches stated SCOPE and declared document kind
 - Check content **aligns with project goals** (value contribution)
 - Return structured findings to coordinator with severity, location, fix suggestions
@@ -42,7 +41,7 @@ Called ONLY for project documents (not reference/tasks):
 
 **Excluded:** `docs/tasks/`, `docs/reference/`, `docs/presentation/`, `tests/`
 
-## Inputs (from Coordinator)
+## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`, `shared/references/docs_quality_contract.md`, and `shared/references/markdown_read_protocol.md`.
 
@@ -122,17 +121,17 @@ Coverage: how completely the scope is addressed. Relevance: how much content ser
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/612-semantic-{doc-slug}.md` where `doc-slug` is derived from document filename (e.g., `architecture`, `tech_stack`, `agents_md`).
+Write report to `{output_dir}/ln-612--{doc-slug}.md` where `doc-slug` is derived from document filename (e.g., `architecture`, `tech_stack`, `agents_md`).
 
 With `category: "Semantic Content"` and checks: scope_alignment.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/612-semantic-architecture.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-612--architecture.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -157,7 +156,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Content-scope alignment analyzed (OFF_TOPIC, MISSING_COVERAGE, SCOPE_CREEP, SSOT_VIOLATION)
 - [ ] Semantic judgment applied according to DOC_KIND
 - [ ] Score calculated using penalty algorithm
-- [ ] Report written to `{output_dir}/612-semantic-{doc-slug}.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-612--{doc-slug}.md` (atomic single Write call)
 - [ ] Summary written per contract
 
 ## Reference Files

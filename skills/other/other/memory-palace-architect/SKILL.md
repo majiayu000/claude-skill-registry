@@ -1,10 +1,6 @@
 ---
 name: memory-palace-architect
-description: 'Consult this skill when designing permanent memory palace structures.
-  Use when creating new memory palace structures, organizing complex domains, designing
-  spatial layouts for knowledge retention. Do not use when quick knowledge search
-  - use knowledge-locator instead. DO NOT use when: session-specific context - use
-  session-palace-builder.'
+description: 'Design memory palace structures with spatial layouts and domain org.'
 version: 1.7.1
 alwaysApply: false
 category: architecture
@@ -24,6 +20,7 @@ usage_patterns:
 - domain-analysis
 - layout-creation
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 600
 ---
 ## Table of Contents

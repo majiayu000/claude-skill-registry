@@ -1,7 +1,7 @@
 ---
 name: ln-645-open-source-replacer
 description: "Discovers custom modules replaceable by OSS, evaluates alternatives (stars, license, CVE), generates migration plan. Use when reducing custom code."
-allowed-tools: Read, Grep, Glob, Bash, WebFetch, WebSearch, mcp__Ref, mcp__context7, mcp__hex-graph__find_references, mcp__hex-graph__get_module_metrics
+allowed-tools: Read, Grep, Glob, Bash, WebFetch, WebSearch, mcp__Ref, mcp__context7, mcp__hex-graph__find_references, mcp__hex-graph__analyze_architecture
 license: MIT
 ---
 
@@ -198,7 +198,7 @@ FOR EACH module, FOR EACH alternative:
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
 Build report in memory, write to `{output_dir}/645-open-source-replacer[-{domain}].md`.
 

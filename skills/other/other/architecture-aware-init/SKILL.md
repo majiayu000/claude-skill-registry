@@ -1,20 +1,6 @@
 ---
 name: architecture-aware-init
-description: 'Architecture-aware project initialization combining online research
-  with archetype selection.
-
-
-  project initialization, new project, architecture decision, project setup,
-
-  which architecture, choose architecture, project architecture
-
-
-  Use when: initializing a new project and need to select an appropriate architecture
-
-  based on project type, team size, domain complexity, and current best practices
-
-
-  DO NOT use when: architecture is already decided - use project-init instead.'
+description: "Architecture-aware project initialization combining online research with archetype selection."
 version: 1.7.1
 alwaysApply: false
 category: project-initialization

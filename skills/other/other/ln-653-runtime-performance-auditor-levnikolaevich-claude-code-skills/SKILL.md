@@ -1,7 +1,7 @@
 ---
 name: ln-653-runtime-performance-auditor
 description: "Checks blocking IO in async, unnecessary allocations, sync sleep, string concat in loops, redundant copies. Use when auditing runtime performance."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_hotspots
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__audit_workspace
 license: MIT
 ---
 
@@ -15,13 +15,12 @@ Specialized worker auditing runtime performance anti-patterns in async and gener
 
 ## Purpose & Scope
 
-- **Worker in ln-650 coordinator pipeline** - invoked by ln-650-persistence-performance-auditor
 - Audit **runtime performance** (Priority: MEDIUM)
 - Check async anti-patterns, unnecessary allocations, blocking operations
 - Write structured findings to file with severity, location, effort, recommendations
 - Calculate compliance score (X/10) for Runtime Performance category
 
-## Inputs (from Coordinator)
+## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
@@ -46,7 +45,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 
 4) **Calculate score using penalty algorithm**
 
-5) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/653-runtime-performance.md` in single Write call
+5) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/ln-653--global.md` in single Write call
 
 6) **Return Summary:** Return minimal summary to coordinator (see Output Format)
 
@@ -167,15 +166,15 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `codebase_root`, `
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/653-runtime-performance.md` with `category: "Runtime Performance"` and checks: blocking_io_in_async, unnecessary_list_allocation, sync_sleep_in_async, string_concat_in_loop, missing_to_thread, redundant_data_copies.
+Write report to `{output_dir}/ln-653--global.md` with `category: "Runtime Performance"` and checks: blocking_io_in_async, unnecessary_list_allocation, sync_sleep_in_async, string_concat_in_loop, missing_to_thread, redundant_data_copies.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/653-runtime-performance.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-653--global.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -200,7 +199,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
   - blocking IO, unnecessary allocations, sync sleep, string concat, CPU-bound, redundant copies
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated using penalty algorithm
-- [ ] Report written to `{output_dir}/653-runtime-performance.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-653--global.md` (atomic single Write call)
 - [ ] Summary written per contract
 
 ## Reference Files

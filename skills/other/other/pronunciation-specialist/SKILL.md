@@ -18,6 +18,14 @@ allowed-tools:
 
 **Input**: $ARGUMENTS
 
+### Instrumental Guard
+
+When invoked with a track file path, **first check** the track's frontmatter for `instrumental: true` or the Track Details table for `**Instrumental** | Yes`. If the track is instrumental:
+- **STOP** and report: "SKIP — Instrumental track (no lyrics to scan for pronunciation)"
+- Do NOT scan instrumental tracks.
+
+### Vocal Track Workflow
+
 Based on the argument provided:
 - **If given a track file path**: Read it, scan lyrics for pronunciation risks, report issues with fixes
 - **If given lyrics directly**: Scan and flag risky words

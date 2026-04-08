@@ -2,54 +2,54 @@
   "category": "quality",
   "code": "oth",
   "count": 4,
-  "updated_at": "2026-04-04T04:23:19.037834Z",
+  "updated_at": "2026-04-08T05:11:34.950066Z",
   "skills": [
     {
       "name": "quality-gate",
       "description": "Path to Markdown report (for human review)",
       "repo": "majiayu000/claude-skill-registry",
-      "path": "",
+      "path": "skills/other/quality-gate/SKILL.md",
       "branch": "main",
       "category": "quality",
       "tags": [],
       "stars": 48,
-      "install": "majiayu000/claude-skill-registry",
+      "install": "majiayu000/claude-skill-registry/skills/other/quality-gate/SKILL.md",
       "source": "github.com/majiayu000/claude-skill-registry"
     },
     {
       "name": "risk-profile-majiayu000-claude-skill-regist",
       "description": "Number of P0 (critical) tests required",
       "repo": "majiayu000/claude-skill-registry",
-      "path": "",
+      "path": "skills/other/risk-profile/SKILL.md",
       "branch": "main",
       "category": "quality",
       "tags": [],
       "stars": 48,
-      "install": "majiayu000/claude-skill-registry",
+      "install": "majiayu000/claude-skill-registry/skills/other/risk-profile/SKILL.md",
       "source": "github.com/majiayu000/claude-skill-registry"
     },
     {
       "name": "trace-requirements",
       "description": "Predicted quality gate status (PASS/CONCERNS/FAIL)",
       "repo": "mattnigh/skills_collection",
-      "path": "",
+      "path": "collection/adolfoaranaes12__BMAD-ENHANCED__claude__skills__trace-requirements__SKILL.md",
       "branch": "main",
       "category": "quality",
       "tags": [],
       "stars": 20,
-      "install": "mattnigh/skills_collection",
+      "install": "mattnigh/skills_collection/collection/adolfoaranaes12__BMAD-ENHANCED__claude__skills__trace-requirements__SKILL.md",
       "source": "github.com/mattnigh/skills_collection"
     },
     {
       "name": "code-reviewer",
       "description": "Review code for correctness, maintainability, performance, and security. Produce actionable, prioritized feedback and concrete fixes aligned with repo standards.",
       "repo": "Masked-Kunsiquat/crm-orbit2",
-      "path": "",
+      "path": ".codex/skills/code-reviewer/SKILL.md",
       "branch": "main",
       "category": "quality",
       "tags": [],
       "stars": 0,
-      "install": "Masked-Kunsiquat/crm-orbit2",
+      "install": "Masked-Kunsiquat/crm-orbit2/.codex/skills/code-reviewer/SKILL.md",
       "source": "github.com/Masked-Kunsiquat/crm-orbit2"
     }
   ]

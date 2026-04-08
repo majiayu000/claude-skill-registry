@@ -51,7 +51,7 @@ Search for information about the immediate surroundings:
 
 ## Output Format
 
-Write the analysis to a markdown file at `~/Documents/history-[location-slug].md`.
+Write the analysis to a markdown file at `./history-[location-slug].md`.
 
 ```markdown
 # Neighborhood History — [Full Address or Location Name]

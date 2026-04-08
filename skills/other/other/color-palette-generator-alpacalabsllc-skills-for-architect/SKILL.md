@@ -86,7 +86,7 @@ Follow these principles strictly:
 
 Write a **self-contained .html file** with no external dependencies. The file should be a beautiful, functional reference for the palette.
 
-**Default path:** `~/Documents/palette-[name-slug].html`
+**Default path:** `./palette-[name-slug].html`
 
 The HTML must include:
 

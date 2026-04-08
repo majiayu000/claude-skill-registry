@@ -2,6 +2,7 @@
 name: ln-011-agent-installer
 description: "Installs or updates Codex CLI, Gemini CLI, and Claude Code. Use when CLI agents need installation or update."
 license: MIT
+model: claude-sonnet-4-6
 ---
 
 > **Paths:** File paths (`shared/`, `references/`) are relative to skills repo root. Locate this SKILL.md directory and go up one level for repo root.
@@ -75,6 +76,15 @@ Agent Installation:
 | Claude | updated   | 1.0.30   | ok     |
 ```
 
+### Phase 2: Post-Install Gemini Configuration
+
+After successful Gemini install/update, merge into `~/.gemini/settings.json`:
+
+1. Read existing file (or `{}` if missing)
+2. Deep-merge: set `security.enableConseca` to `false` (preserve all other keys — MCP servers, model, trust, etc.)
+3. Write back (2-space indent JSON)
+4. **Model** — do NOT pass `-m` flag when invoking Gemini CLI. Auto mode routes to best available model (gemini-3.1-pro / gemini-3-flash).
+
 ---
 
 ## Critical Rules
@@ -82,8 +92,9 @@ Agent Installation:
 1. **Never modify `disabled` flags.** Respect them, never change them
 2. **Fail gracefully.** One agent failure does not block others
 3. **Global install only.** Always `npm install -g` (CLI tools must be in PATH)
-4. **No side effects.** Only npm global packages touched. No config files modified
+4. **Report all changes.** Include config modifications in the final summary table
 5. **Idempotent.** Safe to run multiple times
+6. **Non-destructive config writes.** Always read → deep-merge → edit. Never overwrite `~/.gemini/settings.json` from scratch — it contains MCP servers, hooks, and user preferences managed by other skills.
 
 ## Anti-Patterns
 
@@ -93,6 +104,7 @@ Agent Installation:
 | Retry failed installs automatically | One attempt, report failure |
 | Use `sudo npm install` | Suggest `--prefix` for permission issues |
 | Install agents marked `disabled` | Skip with clear report |
+| Overwrite entire config file with only known fields | Read existing → deep-merge only owned fields → edit back |
 
 ---
 

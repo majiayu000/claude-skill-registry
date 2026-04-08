@@ -18,6 +18,14 @@ allowed-tools:
 
 **Input**: $ARGUMENTS
 
+### Instrumental Guard
+
+When reviewing a track, **first check** the track's frontmatter for `instrumental: true` or the Track Details table for `**Instrumental** | Yes`. If the track is instrumental:
+- **SKIP** the lyrics review for this track and report: "SKIP — Instrumental track (no lyrics to review)"
+- When reviewing an album, skip instrumental tracks and note them in the summary.
+
+### Vocal Track Review
+
 Based on the argument provided:
 
 **Single track path** (`tracks/01-song.md`):
@@ -27,7 +35,7 @@ Based on the argument provided:
 
 **Album path** (`artists/[artist]/albums/[genre]/album-name/`):
 - Glob all track files in `tracks/`
-- Run 14-point checklist on each
+- Run 14-point checklist on each (skip instrumental tracks)
 - Generate consolidated album report
 
 **Default behavior**:

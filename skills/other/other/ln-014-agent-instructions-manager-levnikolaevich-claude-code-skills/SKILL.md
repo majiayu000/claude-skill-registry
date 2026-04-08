@@ -157,6 +157,12 @@ Check each file for content that breaks prefix-based prompt caching:
 
 For each FAIL in Phase 5, attempt auto-fix before reporting:
 
+**Before any auto-fix insertion:**
+1. Verify insertion point exists (exact heading found at specific line)
+2. If ambiguous (heading not found) — WARN and skip (report as manual fix needed)
+3. After insertion — verify no duplicate `## Compact Instructions` or `## MCP Tool Preferences` sections exist in the file
+
+
 | # | Issue | Fix | Skip when |
 |---|-------|-----|----------|
 | 5 | Missing Compact Instructions | Insert `## Compact Instructions` section before `## Navigation` | `dry_run: true` |
@@ -222,6 +228,8 @@ Recommendations:
 - [ ] Cross-agent consistency verified
 - [ ] Report generated with creation log and actionable recommendations
 - [ ] No conflicting external plugins detected (or user confirmed keep)
+
+**Critical Rule: Non-destructive file edits.** Auto-fix inserts sections at verified positions only. Never rewrite the entire instruction file. Preserve all existing content outside the inserted section.
 
 **Version:** 2.2.0
 **Last Updated:** 2026-03-25

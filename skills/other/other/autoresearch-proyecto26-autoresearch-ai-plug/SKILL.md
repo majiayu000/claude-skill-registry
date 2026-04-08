@@ -22,7 +22,7 @@ argument-hint: "[GOAL] [--max-iterations N]"
 
 # Autoresearch: Autonomous Experiment Loop
 
-An autonomous optimization loop where Claude edits code, runs a benchmark, measures a metric, and keeps improvements or reverts — repeating forever until stopped. Inspired by [Karpathy's autoresearch](https://github.com/karpathy/autoresearch) and [pi-autoresearch](https://github.com/davebcn87/pi-autoresearch).
+An autonomous optimization loop where Claude edits code, runs a benchmark, measures a metric, and keeps improvements or reverts — repeating forever until stopped.
 
 ## Core Concept
 

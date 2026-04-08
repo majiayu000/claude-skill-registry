@@ -1,9 +1,6 @@
 ---
 name: pr-prep
-description: 'Use this skill for PR preparation. Use when preparing PRs for submission,
-  running quality gates, drafting PR descriptions and templates. Do not use when reviewing
-  existing PRs - use pr-review instead. DO NOT use when: just generating commit messages
-  - use commit-messages.'
+description: 'Prepare pull requests by running quality gates, drafting descriptions, and validating tests before submission.'
 version: 1.7.1
 alwaysApply: false
 category: artifact-generation

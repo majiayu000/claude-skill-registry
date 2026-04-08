@@ -1,14 +1,6 @@
 ---
 name: writing-rules
-description: 'Create markdown-based behavioral rules preventing unwanted actions.
-
-
-  create hookify rule, behavioral rule, prevent behavior, block command
-
-
-  Use when: preventing dangerous commands, blocking debug commits, enforcing conventions
-
-  DO NOT use when: hook scope (abstract:hook-scope-guide), SDK hooks (abstract:hook-authoring), evaluating hooks (abstract:hooks-eval).'
+description: 'Create markdown-based behavioral rules to prevent unwanted actions and block dangerous commands'
 version: 1.7.1
 alwaysApply: false
 category: hook-development

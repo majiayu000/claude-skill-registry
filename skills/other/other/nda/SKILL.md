@@ -36,7 +36,7 @@ Use this skill when the user wants to:
 
 ## Execution
 
-Follow the [standard template-filling workflow](../shared/template-filling-execution.md) with these skill-specific details:
+Follow the [standard template-filling workflow](./template-filling-execution.md) with these skill-specific details:
 
 ### Template options
 

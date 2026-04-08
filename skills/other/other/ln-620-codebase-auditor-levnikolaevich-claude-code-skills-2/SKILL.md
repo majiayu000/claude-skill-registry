@@ -171,82 +171,64 @@ Detect `domain_mode` and `all_domains` using the shared pattern. This coordinato
 
 Create `{output_dir}` and the sibling audit-worker summary directory before delegation. Runtime artifacts are cleaned up after consolidation (see Phase 9).
 
-### Phase 5a: Global Workers (PARALLEL)
+### Global Workers (PARALLEL)
 
 **Global workers** scan entire codebase (not domain-aware). Each writes report to `{output_dir}/`.
 
+Managed summary artifact pattern: `.hex-skills/runtime-artifacts/runs/{parent_run_id}/audit-worker/{worker}--{identifier}.json`.
+
 | # | Worker | Priority | What It Audits | Output File |
 |---|--------|----------|----------------|-------------|
-| 1 | ln-621-security-auditor | CRITICAL | Hardcoded secrets, SQL injection, XSS, insecure deps | `621-security.md` |
-| 2 | ln-622-build-auditor | CRITICAL | Compiler/linter errors, deprecations, type errors | `622-build.md` |
-| 5 | ln-625-dependencies-auditor | MEDIUM | Outdated packages, unused deps, custom implementations | `625-dependencies.md` |
-| 6 | ln-626-dead-code-auditor | LOW | Dead code, unused imports/variables, commented-out code | `626-dead-code.md` |
-| 7 | ln-627-observability-auditor | MEDIUM | Structured logging, health checks, metrics, tracing | `627-observability.md` |
-| 8 | ln-628-concurrency-auditor | HIGH | Async races, thread safety, TOCTOU, deadlocks, blocking I/O, contention, cross-process races | `628-concurrency.md` |
-| 9 | ln-629-lifecycle-auditor | MEDIUM | Bootstrap, graceful shutdown, resource cleanup | `629-lifecycle.md` |
+| 1 | ln-621-security-auditor | CRITICAL | Hardcoded secrets, SQL injection, XSS, insecure deps | `ln-621--global.md` |
+| 2 | ln-622-build-auditor | CRITICAL | Compiler/linter errors, deprecations, type errors | `ln-622--global.md` |
+| 5 | ln-625-dependencies-auditor | MEDIUM | Outdated packages, unused deps, custom implementations | `ln-625--global.md` |
+| 6 | ln-626-dead-code-auditor | LOW | Dead code, unused imports/variables, commented-out code | `ln-626--global.md` |
+| 7 | ln-627-observability-auditor | MEDIUM | Structured logging, health checks, metrics, tracing | `ln-627--global.md` |
+| 8 | ln-628-concurrency-auditor | HIGH | Async races, thread safety, TOCTOU, deadlocks, blocking I/O, contention, cross-process races | `ln-628--global.md` |
+| 9 | ln-629-lifecycle-auditor | MEDIUM | Bootstrap, graceful shutdown, resource cleanup | `ln-629--global.md` |
 
 **Invocation (filter by Phase 2 applicability gate):**
 ```javascript
 FOR EACH worker IN applicable_workers:
-  worker_context = {
-    ...contextStore,
-    summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/" + worker + "-global.json"
-  }
-  Agent(description: "Codebase audit via " + worker,
-       prompt: "Execute audit worker.
-
-Step 1: Invoke worker:
-  Skill(skill: \"" + worker + "\")
-
-CONTEXT:
-" + JSON.stringify(worker_context),
-       subagent_type: "general-purpose")
+  identifier = "global"
+  childRunId = parent_run_id + "--" + worker + "--" + identifier
+  childSummaryArtifactPath = ".hex-skills/runtime-artifacts/runs/" + parent_run_id + "/audit-worker/" + worker + "--" + identifier + ".json"
+  node shared/scripts/audit-worker-runtime/cli.mjs start --skill {worker} --identifier {identifier} --manifest-file .hex-skills/audit/{worker}--{identifier}_manifest.json --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}
+  node shared/scripts/audit-runtime/cli.mjs checkpoint --run-id {parent_run_id} --phase PHASE_5_DELEGATE --payload '{"child_run":{"worker":"{worker}","identifier":"{identifier}","run_id":"{childRunId}","summary_artifact_path":"{childSummaryArtifactPath}"}}'
+  Skill(skill: "{worker}", args: "--run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}")
+  node shared/scripts/audit-runtime/cli.mjs record-worker-result --run-id {parent_run_id} --payload-file {childSummaryArtifactPath}
 ```
 
-### Phase 5b: Domain-Aware Workers (PARALLEL per domain)
+### Domain-Aware Workers (PARALLEL per domain)
 
 **Domain-aware workers** run once per domain. Each writes report with domain suffix.
 
 | # | Worker | Priority | What It Audits | Output File |
 |---|--------|----------|----------------|-------------|
-| 3 | ln-623-code-principles-auditor | HIGH | DRY/KISS/YAGNI violations, TODO/FIXME, error handling, DI | `623-principles-{domain}.md` |
-| 4 | ln-624-code-quality-auditor | MEDIUM | Cyclomatic complexity, O(n^2), N+1 queries, magic numbers | `624-quality-{domain}.md` |
+| 3 | ln-623-code-principles-auditor | HIGH | DRY/KISS/YAGNI violations, TODO/FIXME, error handling, DI | `ln-623--{domain}.md` |
+| 4 | ln-624-code-quality-auditor | MEDIUM | Cyclomatic complexity, O(n^2), N+1 queries, magic numbers | `ln-624--{domain}.md` |
 
 **Invocation:**
 ```javascript
 IF domain_mode == "domain-aware":
   FOR EACH domain IN all_domains:
     FOR EACH worker IN [ln-623, ln-624]:
-      domain_context = {
-        ...contextStore,
-        domain_mode: "domain-aware",
-        current_domain: { name: domain.name, path: domain.path },
-        summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/" + worker + "-" + domain.name + ".json"
-      }
-      Agent(description: "Audit " + domain.name + " via " + worker,
-           prompt: "Execute audit worker.
-
-Step 1: Invoke worker:
-  Skill(skill: \"" + worker + "\")
-
-CONTEXT:
-" + JSON.stringify(domain_context),
-           subagent_type: "general-purpose")
+      identifier = domain.name
+      childRunId = parent_run_id + "--" + worker + "--" + identifier
+      childSummaryArtifactPath = ".hex-skills/runtime-artifacts/runs/" + parent_run_id + "/audit-worker/" + worker + "--" + identifier + ".json"
+      node shared/scripts/audit-worker-runtime/cli.mjs start --skill {worker} --identifier {identifier} --manifest-file .hex-skills/audit/{worker}--{identifier}_manifest.json --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}
+      node shared/scripts/audit-runtime/cli.mjs checkpoint --run-id {parent_run_id} --phase PHASE_5_DELEGATE --payload '{"child_run":{"worker":"{worker}","identifier":"{identifier}","run_id":"{childRunId}","summary_artifact_path":"{childSummaryArtifactPath}"}}'
+      Skill(skill: "{worker}", args: "--run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}")
+      node shared/scripts/audit-runtime/cli.mjs record-worker-result --run-id {parent_run_id} --payload-file {childSummaryArtifactPath}
 ELSE:
   FOR EACH worker IN [ln-623, ln-624]:
-    worker_context = {
-      ...contextStore,
-      summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/" + worker + "-global.json"
-    }
-    Agent(description: "Codebase audit via " + worker,
-         prompt: "Execute audit worker.
-
-Step 1: Invoke worker:
-  Skill(skill: \"" + worker + "\")
-
-CONTEXT:
-" + JSON.stringify(worker_context),
-         subagent_type: "general-purpose")
+    identifier = "global"
+    childRunId = parent_run_id + "--" + worker + "--" + identifier
+    childSummaryArtifactPath = ".hex-skills/runtime-artifacts/runs/" + parent_run_id + "/audit-worker/" + worker + "--" + identifier + ".json"
+    node shared/scripts/audit-worker-runtime/cli.mjs start --skill {worker} --identifier {identifier} --manifest-file .hex-skills/audit/{worker}--{identifier}_manifest.json --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}
+    node shared/scripts/audit-runtime/cli.mjs checkpoint --run-id {parent_run_id} --phase PHASE_5_DELEGATE --payload '{"child_run":{"worker":"{worker}","identifier":"{identifier}","run_id":"{childRunId}","summary_artifact_path":"{childSummaryArtifactPath}"}}'
+    Skill(skill: "{worker}", args: "--run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}")
+    node shared/scripts/audit-runtime/cli.mjs record-worker-result --run-id {parent_run_id} --payload-file {childSummaryArtifactPath}
 ```
 
 All invocations in single message for maximum parallelism.
@@ -261,7 +243,7 @@ Use the shared aggregation pattern for runtime artifact checks, JSON summary par
 
 Read **only** ln-623 report files to extract `FINDINGS-EXTENDED` JSON block:
 ```
-principle_files = Glob("{output_dir}/623-principles-*.md")
+principle_files = Glob("{output_dir}/ln-623--*.md")
 FOR EACH file IN principle_files:
   Read file -> extract <!-- FINDINGS-EXTENDED [...] --> JSON
   Filter findings with pattern_signature field
@@ -328,6 +310,12 @@ Recalculate category scores excluding advisory findings from penalty.
 **MANDATORY READ:** Load `shared/templates/codebase_audit_template.md` for report format.
 
 Write consolidated report to `docs/project/codebase_audit.md` using template. Fill all sections with aggregated worker data, include Advisory Findings from context validation. Overwrite previous report (each audit is full snapshot).
+
+Before results-log and cleanup, record the coordinator runtime summary:
+
+```bash
+node shared/scripts/audit-runtime/cli.mjs record-summary --run-id {parent_run_id} --payload '{"schema_version":"1.0.0","summary_kind":"audit-coordinator","run_id":"{parent_run_id}","identifier":"{runtime_identifier}","producer_skill":"ln-620","produced_at":"{iso_timestamp}","payload":{"status":"completed","final_result":"AUDIT_COMPLETE","report_path":"docs/project/codebase_audit.md","worker_count":{active_worker_count},"issues_total":{issues_total},"severity_counts":{"critical":{critical_count},"high":{high_count},"medium":{medium_count},"low":{low_count}},"warnings":[]}}'
+```
 
 ## Phase 8: Append Results Log
 

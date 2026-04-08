@@ -57,10 +57,7 @@ Before beginning DELIVER work, read targeted prior wave artifacts. DISTILL is th
 
 1. **DISCOVER** (skip): Synthesized into DISCUSS, then into DISTILL acceptance tests.
 2. **DISCUSS** (skip): Synthesized into DISTILL acceptance tests. If needed during implementation, read specific files on demand.
-3. **DESIGN** (structural context): Read from `docs/feature/{feature-id}/design/`:
-   - `architecture-design.md` — component structure and C4 diagrams guide implementation
-   - `component-boundaries.md` — dependency-inversion boundaries
-   - `wave-decisions.md` — paradigm, tech stack, upstream changes
+3. **DESIGN** (structural context): Read `docs/product/architecture/brief.md` — component boundaries, driving ports, C4 diagrams, and key architectural decisions. Also read `docs/feature/{feature-id}/design/wave-decisions.md` — paradigm, tech stack, upstream changes.
 4. **DEVOPS** (skip): Infrastructure setup is independent of implementation. Read `wave-decisions.md` only if test environment issues arise.
 5. **DISTILL** (primary input): Read all files in `docs/feature/{feature-id}/distill/` — test scenarios, walking skeleton, acceptance review are the authoritative specification for implementation.
 
@@ -80,148 +77,97 @@ When DELIVER implementation reveals gaps or contradictions in prior waves:
 
 ## Orchestration Flow
 
-Phases use decimal numbering (0, 0.5, 1, 1.5, 1.6) for pre-roadmap setup. Main phases start at Phase 1 (Roadmap), Phase 2 (Execute), Phase 3 (Refactor), Phase 4 (Review), Phase 5 (Mutation), Phase 6 (Integrity), Phase 7 (Finalize), Phase 8 (Retrospective), Phase 9 (Report).
+At the start of execution, create these tasks using TaskCreate and follow them in order:
 
-```
-INPUT: "{feature-description}"
-  |
-  0. Read rigor profile from .nwave/des-config.json (default: standard)
-     Store: agent_model|reviewer_model|tdd_phases|review_enabled|double_review|mutation_enabled|refactor_pass
-  |
-  0.5. Prior Wave Consultation (see section above)
-     Read DISTILL (all) + DESIGN (architecture + boundaries + wave-decisions)|flag contradictions|resolve before proceeding
-     Summarize key design decisions into a reusable DESIGN_CONTEXT block for crafter dispatch (component structure, boundaries, tech choices, data models). This summary is injected into every crafter's DES template so sub-agents make implementation decisions aligned with the architecture.
-  |
-  1. Parse input|derive feature-id (kebab-case)|create docs/feature/{feature-id}/deliver/
-     a. Create execution-log.json if missing via CLI:
-        PYTHONPATH=$HOME/.claude/lib/python $(command -v python3 || command -v python) -m des.cli.init_log --project-dir docs/feature/{feature-id}/deliver --feature-id {feature-id}
-        Do NOT create execution-log.json directly with Write — use the CLI only.
-     b. Create deliver session marker: .nwave/des/deliver-session.json
-  |
-  1.5. Detect development paradigm
-     a. Read project CLAUDE.md (project root, NOT ~/.claude/CLAUDE.md)
-     b. Search "## Development Paradigm"
-     c. Found → extract paradigm: "functional"/@nw-functional-software-crafter or "object-oriented"/@nw-software-crafter (default)
-     d. Not found → ask user "OOP or Functional?"|offer to write to CLAUDE.md
-     e. Store selected crafter for all Phase 2 dispatches
-     f. Functional → property-based testing default|@property tags signal PBT|example-based = fallback
-  |
-  1.6. Detect mutation testing strategy
-     a. Same CLAUDE.md|search "## Mutation Testing Strategy"
-     b. Found → extract: per-feature|nightly-delta|pre-release|disabled
-     c. Not found → default "per-feature"
-     d. Log strategy for traceability
-     Note: Strategy locks at deliver start. CLAUDE.md edits during delivery take effect next run.
-  |
-  2. Phase 1 — Roadmap Creation + Review
-     a. Skip if docs/feature/{feature-id}/deliver/roadmap.json exists with validation.status == "approved"
-        IMPORTANT: Only check the deliver/ subdirectory. If roadmap.json is found in design/ instead,
-        MOVE it to deliver/ and log warning: "Roadmap relocated from design/ to deliver/ — was created in wrong wave."
-     b. @nw-solution-architect creates roadmap.json (read ~/.claude/skills/nw-roadmap/SKILL.md)
-        Step IDs: NN-NN format (01-01, 01-02, 02-01). 01-A or 1-1 = invalid.
-        DISTILL LINKAGE: If docs/feature/{feature-id}/distill/ exists, the architect MUST populate
-        test_file and scenario_name fields in each roadmap step from the distilled acceptance tests.
-        Each step maps to one acceptance scenario (1 Step = 1 Scenario = 1 TDD Cycle).
-     c. Automated quality gate (see below)
-     c2. Roadmap integrity verification (HARD GATE):
-         PYTHONPATH=$HOME/.claude/lib/python $(command -v python3 || command -v python) -m des.cli.verify_deliver_integrity docs/feature/{feature-id}/deliver/ --roadmap-only
-         Verify: project_id, created_at, total_steps, phases fields present. Step IDs match NN-NN format.
-         BLOCK if any format error. Fix roadmap BEFORE dispatching any crafter.
-         This catches format issues early — NOT at Phase 6 where they block finalization after hours of work.
-     d. @nw-acceptance-designer-reviewer reviews roadmap:
-        - "Does EVERY DISTILL scenario have a corresponding step? Flag orphan scenarios as BLOCKER."
-        - "Does any step cover 8+ scenarios? Tag as @sizing-review-needed."
-        - "Are walking skeleton scenarios mapped to Phase 1 steps (not Phase N)?"
-        Read ~/.claude/skills/nw-review/SKILL.md for review protocol.
-     e. Retry once on rejection → stop for manual intervention
-  |
-  3. Phase 2 — Execute All Steps
-     a. Extract steps from roadmap.json in dependency order
-     b. Check execution-log.json for prior completion (resume)
-     c. {selected-crafter} executes 5-phase TDD cycle (read ~/.claude/skills/nw-execute/SKILL.md)
-        Use crafter from step 1.5|@nw-functional-software-crafter → PBT default|@property tags signal PBT
-        IMPORTANT: Use DES Prompt Template from execute.md|Include DES markers (DES-VALIDATION|DES-PROJECT-ID|DES-STEP-ID) + all mandatory sections
-        OUTCOME_RECORDING: agents use DES CLI (PYTHONPATH=$HOME/.claude/lib/python $(command -v python3 || command -v python) -m des.cli.log_phase)|CLI bypass → SubagentStop hook corrects timestamps
-     d. Verify COMMIT/PASS in execution-log.json per step
-     e. Missing phase → RE-DISPATCH agent. NEVER write entries yourself.
-     f. Stop on first failure
-     g. Timeout recovery: GREEN completed → resume (~5 turns)|GREEN partial → resume|Otherwise → restart higher max_turns
-     h. Wiring smoke check: for each step, verify every new function defined in
-        production files has at least one call site in production code (not just tests).
-        Flag "function X defined but only called from tests" → re-dispatch crafter.
-     i. Acceptance test gate: after each step's COMMIT/PASS, run the feature's acceptance
-        tests (tests matching the feature path, e.g., tests/acceptance/{feature-id}/).
-        If any acceptance test fails, fix the issue before proceeding to the next step.
-        Do NOT skip or defer failing tests. This applies to EVERY individual step, not just the final one.
-  |
-  3.5. Post-Merge Integration Gate (Hard Gate)
-     AFTER all steps reach COMMIT/PASS and BEFORE Phase 3 (Refactoring):
-     a. Run the FULL acceptance test suite for the feature:
-        pipenv run pytest tests/acceptance/{feature-id}/ -v --tb=short
-     b. Run acceptance tests against EVERY environment in the DEVOPS fixture matrix:
-        - Read docs/feature/{feature-id}/devops/environments.yaml
-        - For EACH environment entry, execute the test suite with that environment's preconditions active
-        - If environments.yaml is missing, use defaults: clean, with-pre-commit, with-stale-config
-     c. BLOCK the merge if ANY acceptance test fails in ANY environment.
-     d. On failure:
-        - Identify the failing environment + test combination
-        - Re-dispatch the crafter to fix the failure (new TDD cycle for the regression)
-        - Re-run the FULL gate after the fix
-     e. On success: record gate passage in execution-log.json:
-        {"gate": "post-merge-integration", "status": "PASS", "environments_tested": ["clean", "with-pre-commit", "with-stale-config"], "timestamp": "ISO-8601"}
-     f. Escalation: If the same test fails in 2+ environments after one fix attempt, STOP and report to the user. Do NOT retry indefinitely.
-  |
-  4. Phase 3 — Complete Refactoring (L1-L4) [SKIP if rigor.refactor_pass = false]
-     a. Collect modified files: git diff --name-only {base-commit}..HEAD -- '*.py' | sort -u
-        Split: PRODUCTION_FILES (src/) | TEST_FILES (tests/)
-     b. /nw-refactor {files} --levels L1-L4 via {selected-crafter} with DES orchestrator markers:
-        <!-- DES-VALIDATION : required -->|<!-- DES-PROJECT-ID : {feature-id} -->|<!-- DES-MODE : orchestrator -->
-     c. All tests green after each module
-  |
-  5. Phase 4 — Adversarial Review [SKIP if rigor.review_enabled = false]
-     a. If rigor.reviewer_model = "skip" → SKIP phase entirely
-     b. /nw-review @nw-software-crafter-reviewer implementation "{execution-log-path}"
-        Use model=rigor.reviewer_model for reviewer Task invocation
-        Include DES orchestrator markers (same as Phase 3)
-     c. If rigor.double_review = true → run review a second time with different scope focus
-     d. Scope: ALL files modified during feature|includes Testing Theater 7-pattern detection
-     e. One revision pass on rejection → proceed
-  |
-  6. Phase 5 — Mutation Testing [SKIP if rigor.mutation_enabled = false]
-     If rigor.mutation_enabled = false → SKIP regardless of CLAUDE.md strategy
-     Otherwise, apply CLAUDE.md strategy:
-     per-feature → gate ≥80% kill rate (read ~/.claude/skills/nw-mutation-test/SKILL.md)
-     nightly-delta → SKIP|log "handled by CI nightly pipeline"
-     pre-release → SKIP|log "handled at release boundary"
-     disabled → SKIP|log "disabled per project configuration"
-  |
-  7. Phase 6 — Deliver Integrity Verification
-     a. PYTHONPATH=$HOME/.claude/lib/python $(command -v python3 || command -v python) -m des.cli.verify_deliver_integrity docs/feature/{feature-id}/deliver/
-     b. Exit 0 → proceed|Exit 1 → STOP, read output
-     c. No entries = not executed through DES|Partial = incomplete TDD
-     d. Violations → re-execute via Task with DES markers|Only proceed after pass
-  |
-  8. Phase 7 — Finalize
-     a. @nw-platform-architect archives to docs/evolution/ (read ~/.claude/skills/nw-finalize/SKILL.md)
-     b. Commit + push|rm -f .nwave/des/deliver-session.json .nwave/des/des-task-active
-  |
-  9. Phase 8 — Retrospective (conditional)
-     Skip if clean execution|@nw-troubleshooter 5 Whys on issues found
-  |
-  10. Phase 9 — Report Completion
-      Display summary: phases|steps|reviews|artifacts|Return to DISCOVER for next iteration
-```
+0. **Read Rigor Profile** — Read `.nwave/des-config.json` key `rigor`. Store: `agent_model`, `reviewer_model`, `tdd_phases`, `review_enabled`, `double_review`, `mutation_enabled`, `refactor_pass`. Use standard defaults if absent. Gate: rigor profile loaded or defaults set.
+
+0.5. **Prior Wave Consultation** — Read DISTILL (all files in `docs/feature/{feature-id}/distill/`) + DESIGN (`docs/product/architecture/brief.md`, `wave-decisions.md`). Flag contradictions, resolve before proceeding. Summarize key design decisions into a reusable DESIGN_CONTEXT block for crafter dispatch (component structure, boundaries, tech choices, data models). Gate: all required files read, confirmation checklist output, no unresolved contradictions.
+
+1. **Setup** — Parse input, derive `feature-id` (kebab-case), create `docs/feature/{feature-id}/deliver/`.
+   - a. Create `execution-log.json` via CLI: `PYTHONPATH=$HOME/.claude/lib/python $(command -v python3 || command -v python) -m des.cli.init_log --project-dir docs/feature/{feature-id}/deliver --feature-id {feature-id}`. Do NOT use Write tool directly.
+   - b. Create deliver session marker: `.nwave/des/deliver-session.json`.
+   - Gate: directory exists, `execution-log.json` created via CLI, session marker written.
+
+1.5. **Detect Development Paradigm** — Read project `CLAUDE.md` (project root, NOT `~/.claude/CLAUDE.md`). Search "## Development Paradigm".
+   - Found → extract paradigm: `"functional"` → `@nw-functional-software-crafter` or `"object-oriented"` → `@nw-software-crafter` (default).
+   - Not found → ask user "OOP or Functional?", offer to write to `CLAUDE.md`.
+   - Store selected crafter for all Phase 2 dispatches.
+   - Functional → property-based testing default; `@property` tags signal PBT; example-based = fallback.
+   - Gate: crafter selected and stored.
+
+1.6. **Detect Mutation Testing Strategy** — Read same `CLAUDE.md`, search "## Mutation Testing Strategy".
+   - Found → extract: `per-feature` | `nightly-delta` | `pre-release` | `disabled`.
+   - Not found → default `"per-feature"`.
+   - Log strategy for traceability. Note: strategy locks at deliver start; `CLAUDE.md` edits during delivery take effect next run.
+   - Gate: strategy recorded.
+
+2. **Phase 1 — Roadmap Creation + Review** — Gate: roadmap created, integrity verified, reviewer approved.
+   - a. Skip if `docs/feature/{feature-id}/deliver/roadmap.json` exists with `validation.status == "approved"`. If found in `design/` instead, move to `deliver/` and log warning.
+   - b. Dispatch `@nw-solution-architect` to create `roadmap.json` (load `~/.claude/skills/nw-roadmap/SKILL.md`). Step IDs MUST match `NN-NN` format (01-01, 01-02). If `distill/` exists, architect MUST populate `test_file` and `scenario_name` per step.
+   - c. Run automated quality gate (see Roadmap Quality Gate section below).
+   - c2. Run roadmap integrity verification (HARD GATE): `PYTHONPATH=$HOME/.claude/lib/python $(command -v python3 || command -v python) -m des.cli.verify_deliver_integrity docs/feature/{feature-id}/deliver/ --roadmap-only`. BLOCK on any format error; fix before dispatching any crafter.
+   - d. Dispatch `@nw-acceptance-designer-reviewer` to review roadmap (load `~/.claude/skills/nw-review/SKILL.md`): verify every DISTILL scenario has a step, flag orphan scenarios as BLOCKER; flag steps covering 8+ scenarios as `@sizing-review-needed`; verify walking skeleton scenarios map to Phase 1 steps.
+   - e. Retry once on rejection → stop for manual intervention.
+
+3. **Phase 2 — Execute All Steps** — Gate: all steps reach COMMIT/PASS in `execution-log.json`.
+   - a. Extract steps from `roadmap.json` in dependency order.
+   - b. Check `execution-log.json` for prior completion (resume mode).
+   - c. Dispatch selected crafter (from step 1.5) with full DES Prompt Template from `execute.md` (load `~/.claude/skills/nw-execute/SKILL.md`). Include DES markers (`DES-VALIDATION`, `DES-PROJECT-ID`, `DES-STEP-ID`) + all mandatory sections. Functional crafter → PBT default; `@property` tags signal PBT.
+   - d. Verify COMMIT/PASS in `execution-log.json` per step.
+   - e. Missing phase → RE-DISPATCH agent. NEVER write entries directly.
+   - f. Stop on first failure.
+   - g. Timeout recovery: GREEN completed → resume (~5 turns); GREEN partial → resume; otherwise → restart with higher `max_turns`.
+   - h. Wiring smoke check: verify every new function defined in production files has at least one call site in production code (not just tests). Flag "function X defined but only called from tests" → re-dispatch crafter.
+   - i. Acceptance test gate: after each step's COMMIT/PASS, run `tests/acceptance/{feature-id}/`. Fix failures before proceeding to next step. No deferral.
+
+3.5. **Post-Merge Integration Gate (Hard Gate)** — AFTER all steps reach COMMIT/PASS, BEFORE Phase 3. Gate: full acceptance suite passes in all environments.
+   - a. Run `pipenv run pytest tests/acceptance/{feature-id}/ -v --tb=short`.
+   - b. Run acceptance tests against EVERY environment in `docs/feature/{feature-id}/devops/environments.yaml`. If missing, use defaults: `clean`, `with-pre-commit`, `with-stale-config`.
+   - c. BLOCK if ANY test fails in ANY environment.
+   - d. On failure: identify failing environment + test, re-dispatch crafter for new TDD cycle, re-run full gate after fix. If same test fails in 2+ environments after one fix attempt, STOP and report to user.
+   - e. On success: record gate passage in `execution-log.json`: `{"gate": "post-merge-integration", "status": "PASS", "environments_tested": [...], "timestamp": "ISO-8601"}`.
+
+4. **Phase 3 — Complete Refactoring (L1-L4)** — [SKIP if `rigor.refactor_pass = false`]. Gate: all tests green after each module refactored.
+   - a. Collect modified files: `git diff --name-only {base-commit}..HEAD -- '*.py' | sort -u`. Split into PRODUCTION_FILES (`src/`) and TEST_FILES (`tests/`).
+   - b. Run `/nw-refactor {files} --levels L1-L4` via selected crafter with DES orchestrator markers: `<!-- DES-VALIDATION : required -->`, `<!-- DES-PROJECT-ID : {feature-id} -->`, `<!-- DES-MODE : orchestrator -->`.
+
+5. **Phase 4 — Adversarial Review** — [SKIP if `rigor.review_enabled = false` or `rigor.reviewer_model = "skip"`]. Gate: review passed or one revision complete.
+   - a. Dispatch `/nw-review @nw-software-crafter-reviewer implementation "{execution-log-path}"` with `model=rigor.reviewer_model` and DES orchestrator markers.
+   - b. If `rigor.double_review = true` → run review a second time with different scope focus.
+   - c. Scope: ALL files modified during feature; includes Testing Theater 7-pattern detection.
+   - d. One revision pass on rejection → proceed.
+
+6. **Phase 5 — Mutation Testing** — [SKIP if `rigor.mutation_enabled = false`]. Gate: ≥80% kill rate or strategy skip logged.
+   - `per-feature` → gate ≥80% kill rate (load `~/.claude/skills/nw-mutation-test/SKILL.md`).
+   - `nightly-delta` → SKIP; log "handled by CI nightly pipeline".
+   - `pre-release` → SKIP; log "handled at release boundary".
+   - `disabled` → SKIP; log "disabled per project configuration".
+
+7. **Phase 6 — Deliver Integrity Verification** — Gate: `verify_deliver_integrity` exits 0.
+   - a. Run: `PYTHONPATH=$HOME/.claude/lib/python $(command -v python3 || command -v python) -m des.cli.verify_deliver_integrity docs/feature/{feature-id}/deliver/`.
+   - b. Exit 0 → proceed. Exit 1 → STOP, read output.
+   - c. No entries = not executed through DES. Partial = incomplete TDD.
+   - d. Violations → re-execute via Task with DES markers. Proceed only after pass.
+
+8. **Phase 7 — Finalize** — Gate: evolution archived, session markers removed, commit pushed.
+   - a. Dispatch `@nw-platform-architect` to archive to `docs/evolution/` (load `~/.claude/skills/nw-finalize/SKILL.md`).
+   - b. Commit + push. Run: `rm -f .nwave/des/deliver-session.json .nwave/des/des-task-active`.
+
+9. **Phase 8 — Retrospective (conditional)** — Skip if clean execution. Gate: 5 Whys documented or clean-run noted.
+   - On issues found → dispatch `@nw-troubleshooter` for 5 Whys analysis.
+
+10. **Phase 9 — Report Completion** — Display summary: phases, steps, reviews, artifacts. Gate: report output, return to DISCOVER for next iteration.
 
 ## Orchestrator Responsibilities
 
 Follow this flow directly. Do not delegate orchestration.
 
 Per phase:
-1. Read the relevant command file (paths listed above)
-2. Extract instructions and embed them in the Task prompt
-3. Include task boundary instructions to prevent workflow continuation
-4. Verify output artifacts exist after each Task completes
-5. Update .develop-progress.json for resume capability
+1. **Read command file** — Read the relevant command file (paths listed in each phase above).
+2. **Embed instructions** — Extract instructions and embed them in the Task prompt.
+3. **Add task boundary** — Include task boundary instructions to prevent workflow continuation.
+4. **Verify artifacts** — Verify output artifacts exist after each Task completes.
+5. **Update progress** — Update `.develop-progress.json` for resume capability.
 
 ## Task Invocation Pattern
 
@@ -261,7 +207,7 @@ Load on-demand per phase as specified in your Skill Loading Strategy table.
 {Summarize key architectural decisions from design wave artifacts read at step 0.5.
 Include: component structure, dependency-inversion boundaries, technology choices,
 data models, and any design constraints relevant to this step.
-Source files: architecture-design.md, component-boundaries.md, wave-decisions.md.
+Source files: docs/product/architecture/brief.md, wave-decisions.md.
 If no design artifacts exist, write "No design artifacts available — use project conventions."}
 
 # TDD_PHASES
@@ -276,27 +222,26 @@ Target: 30 turns max. If approaching limit, COMMIT current progress.
 
 ## Roadmap Quality Gate (Automated, Zero Token Cost)
 
-After roadmap creation, before reviewer:
-1. AC coupling: flag AC referencing private methods (`_method()`)
-2. Decomposition ratio: flag steps/files > 2.5
-3. Identical patterns: flag 3+ steps with same AC structure (batch them)
-4. Validation-only: flag steps with no files_to_modify
-5. Step ID format: flag non-matching `^\d{2}-\d{2}$`
-6. DISTILL linkage: if docs/feature/{feature-id}/distill/ exists, flag steps missing test_file/scenario_name
+After roadmap creation, before reviewer, run these checks:
 
-HIGH findings → return to architect for one revision.
+1. **AC coupling** — Flag AC referencing private methods (`_method()`). HIGH → return to architect.
+2. **Decomposition ratio** — Flag steps/files > 2.5. HIGH → return to architect.
+3. **Identical patterns** — Flag 3+ steps with same AC structure (batch them). HIGH → return to architect.
+4. **Validation-only** — Flag steps with no `files_to_modify`. HIGH → return to architect.
+5. **Step ID format** — Flag non-matching `^\d{2}-\d{2}$`. HIGH → return to architect.
+6. **DISTILL linkage** — If `docs/feature/{feature-id}/distill/` exists, flag steps missing `test_file`/`scenario_name`. HIGH → return to architect.
 
 ## Skip and Resume
 
-- Check `.develop-progress.json` on start for resume
-- Skip if file exists with validation.status == "approved"
-- Skip completed steps via execution-log.json COMMIT/PASS
-- Max 2 retry per review rejection → stop for manual intervention
+1. **Check progress** — Read `.develop-progress.json` on start for resume state.
+2. **Skip approved roadmap** — Skip Phase 1 if `roadmap.json` exists with `validation.status == "approved"`.
+3. **Skip completed steps** — Skip steps already showing COMMIT/PASS in `execution-log.json`.
+4. **Cap retries** — Max 2 retries per review rejection → stop for manual intervention.
 
 ## Input
 
 - `feature-description` (string, required, min 10 chars)
-- feature-id: strip prefixes (implement|add|create)|remove stop words|kebab-case|max 5 words
+- `feature-id`: strip prefixes (implement|add|create), remove stop words, kebab-case, max 5 words
 
 ## Output Artifacts
 
@@ -329,7 +274,7 @@ Roadmap review (1 review, max 2 attempts)|Per-step 5-phase TDD (PREPARE→RED_AC
 `/nw-deliver "Implement user authentication with JWT"` → roadmap → review → TDD all steps → mutation → finalize → report
 
 ### 2: Resume After Failure
-Same command → loads .develop-progress.json → skips completed → resumes from failure
+Same command → loads `.develop-progress.json` → skips completed → resumes from failure
 
 ### 3: Single Step Alternative
 For manual granular control, use individual commands:

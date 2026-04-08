@@ -1,7 +1,7 @@
 ---
 name: ln-647-env-config-auditor
 description: "Checks env var config sync, missing defaults, naming conventions, startup validation. Use when auditing environment configuration."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__search_symbols, mcp__hex-graph__find_references
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_symbols, mcp__hex-graph__find_references
 license: MIT
 model: claude-haiku-4-5
 ---
@@ -28,7 +28,7 @@ Specialized worker auditing environment variable configuration, synchronization,
 - .gitignore/.dockerignore patterns (project structure auditor domain)
 - Env file generation/scaffolding (bootstrap domain)
 
-## Inputs (from Coordinator)
+## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
@@ -283,13 +283,13 @@ FOR EACH var IN code_vars WHERE var.has_default == true:
      validation_framework: string | null
    }
 
-3. Write to {output_dir}/647-env-config.md (atomic single Write call)
+3. Write to {output_dir}/ln-647--{identifier}.md (atomic single Write call)
    IF domain_mode == "domain-aware": 647-env-config-{domain}.md
 
 4. Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
-   Report written: {output_dir}/647-env-config.md
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
+   Report written: {output_dir}/ln-647--{identifier}.md
    Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -301,9 +301,9 @@ Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/647-env-config.md` with `category: "Env Configuration"` and checks: env_example_exists, env_committed, env_specific_files, code_to_example_sync, example_to_code_sync, default_desync, naming_convention, redundant_vars, missing_comments, startup_validation, sensitive_defaults.
+Write report to `{output_dir}/ln-647--{identifier}.md` with `category: "Env Configuration"` and checks: env_example_exists, env_committed, env_specific_files, code_to_example_sync, example_to_code_sync, default_desync, naming_convention, redundant_vars, missing_comments, startup_validation, sensitive_defaults.
 
 ## Reference Files
 
@@ -328,7 +328,7 @@ Write report to `{output_dir}/647-env-config.md` with `category: "Env Configurat
 - [ ] All 11 checks completed (C1.1-C1.3, C2.1-C2.3, C3.1-C3.3, C4.1-C4.2)
 - [ ] Findings collected with severity, location, check ID, effort, recommendation
 - [ ] Score calculated per `shared/references/audit_scoring.md`
-- [ ] Report written to `{output_dir}/647-env-config.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-647--{identifier}.md` (atomic single Write call)
 - [ ] Summary written per contract
 
 ---

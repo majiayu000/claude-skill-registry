@@ -11,14 +11,14 @@ allowed-tools:
   - WebFetch
   - WebSearch
   - AskUserQuestion
-  - mcp__google__sheets_values_get
-  - mcp__google__sheets_values_update
-  - mcp__google__sheets_spreadsheet_get
+  - mcp__google-sheets__get_sheet_data
+  - mcp__google-sheets__update_cells
+  - mcp__google-sheets__list_sheets
 ---
 
 # /product-research — Product Research
 
-Receives a brief from a designer, researches products across the web, and returns a curated shortlist of candidates. Selected products are saved to the master Google Sheet — the same one used by Norma Jean and the other data-management skills.
+Receives a brief from a designer, researches products across the web, and returns a curated shortlist of candidates. Selected products are saved to the master Google Sheet.
 
 ## How It Works
 
@@ -147,7 +147,7 @@ When the designer picks candidates ("save 1, 3, and 5"), write them to the maste
 
 ### Connecting to the sheet
 
-If not already connected, ask for the Google Sheet ID or URL. Same sheet used by Norma Jean and other skills.
+If not already connected, ask for the Google Sheet ID or URL. Same sheet used by other product skills.
 
 ### Row format
 
@@ -158,7 +158,7 @@ Skill-specific column values:
 - **AF (Status):** `saved`
 - **AD (Tags):** From brief context (e.g. "lobby-reno, walnut")
 - **AE (Notes):** The "Why" reasoning from the presentation
-- **S (Selected Color/Finish):** Blank (designer hasn't configured yet)
+- **T (Selected Color/Finish):** Blank (designer hasn't configured yet)
 
 ### After saving
 
@@ -191,5 +191,4 @@ Each iteration can add more products to the sheet.
 ## Notes
 
 - **JS-rendered product pages** are common (Hem, Muuto, Vitra, etc.). If WebFetch returns no data, use search result snippets + general knowledge. Note when specs are unverified.
-- **Norma Jean is the sidecar.** If the designer says "actually I'll just browse and clip" — that's Norma Jean's job (Alt+C in Chrome). This skill is for when they want Claude to do the research.
-- **The sheet is shared.** Products from this skill live alongside Norma Jean clips, bulk-fetch imports, and PDF extractions. The `Source` column ("research") identifies where each row came from.
+- **The sheet is shared.** Products from this skill live alongside bulk-fetch imports and PDF extractions. The `Source` column ("research") identifies where each row came from.

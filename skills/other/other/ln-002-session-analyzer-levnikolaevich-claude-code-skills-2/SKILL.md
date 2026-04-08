@@ -65,7 +65,7 @@ Scan conversation context directly. You have access to all tool call results, er
 
 ### Recent sessions (`recent` arg)
 
-Find latest session per agent (paths per `shared/references/meta_analysis_protocol.md` §7c):
+Find latest session per agent:
 
 ```bash
 echo "=== LATEST SESSIONS ==="
@@ -74,13 +74,21 @@ echo "## Claude"
 CLAUDE_LATEST=$(stat -c '%Y %n' ~/.claude/projects/*/*.jsonl 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)
 [ -n "$CLAUDE_LATEST" ] && echo "  $CLAUDE_LATEST ($(wc -l < "$CLAUDE_LATEST") lines)" || echo "  No sessions found"
 
+echo "## Claude Active Sessions"
+for f in "$HOME/.claude/sessions"/*.json; do
+  [ -f "$f" ] || continue
+  PID=$(basename "$f" .json)
+  kill -0 "$PID" 2>/dev/null && echo "  ACTIVE: $(cat "$f")" || echo "  STALE: PID=$PID"
+done
+
 echo "## Codex"
 CODEX_LATEST=$(stat -c '%Y %n' ~/.codex/sessions/????/??/??/rollout-*.jsonl 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)
 [ -n "$CODEX_LATEST" ] && echo "  $CODEX_LATEST ($(wc -l < "$CODEX_LATEST") lines)" || echo "  No sessions found"
 
 echo "## Gemini"
-GEMINI_LATEST=$(stat -c '%Y %n' ~/.gemini/tmp/*/chats/session-*.json 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)
-[ -n "$GEMINI_LATEST" ] && echo "  $GEMINI_LATEST" || echo "  No sessions found"
+# JSON path (Linux/macOS) or protobuf path (Windows)
+GEMINI_LATEST=$(stat -c '%Y %n' ~/.gemini/tmp/*/chats/session-*.json ~/.gemini/antigravity/implicit/*.pb 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)
+[ -n "$GEMINI_LATEST" ] && echo "  $GEMINI_LATEST (note: .pb files are protobuf, not grep-parseable)" || echo "  No sessions found"
 ```
 
 ### Extract raw data from JSONL session
@@ -105,6 +113,19 @@ grep -oE 'hook_progress|blocking error|PreToolUse|PostToolUse|hex-confirmed|Obli
 
 echo "=== SKILL/COMMAND INVOCATIONS ==="
 grep -oE '"display":\s*"/[a-z-]+' "$F" 2>/dev/null | sed 's/"display":\s*"//' | sort | uniq -c | sort -rn
+```
+
+### Extract token statistics from Claude JSONL
+
+Run for Claude session file (`$F`) to get real token usage:
+
+```bash
+echo "=== TOKEN STATS ==="
+TOTAL_IN=$(grep -oE '"input_tokens":[0-9]+' "$F" | grep -oE '[0-9]+' | paste -sd+ | bc 2>/dev/null)
+TOTAL_OUT=$(grep -oE '"output_tokens":[0-9]+' "$F" | grep -oE '[0-9]+' | paste -sd+ | bc 2>/dev/null)
+CACHE_CREATE=$(grep -oE '"cache_creation_input_tokens":[0-9]+' "$F" | grep -oE '[0-9]+' | paste -sd+ | bc 2>/dev/null)
+CACHE_READ=$(grep -oE '"cache_read_input_tokens":[0-9]+' "$F" | grep -oE '[0-9]+' | paste -sd+ | bc 2>/dev/null)
+echo "in=${TOTAL_IN:-0} out=${TOTAL_OUT:-0} cache_create=${CACHE_CREATE:-0} cache_read=${CACHE_READ:-0}"
 ```
 
 ---
@@ -249,5 +270,5 @@ Analyze this session per protocol §7. Output per protocol format.
 
 ---
 
-**Version:** 1.0.0
-**Last Updated:** 2026-03-21
+**Version:** 1.1.0
+**Last Updated:** 2026-04-05

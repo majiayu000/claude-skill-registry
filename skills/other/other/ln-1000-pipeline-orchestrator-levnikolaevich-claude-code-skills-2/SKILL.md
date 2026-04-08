@@ -12,7 +12,7 @@ license: MIT
 
 # Pipeline Orchestrator
 
-Drives a selected Story through the full pipeline (task planning -> validation -> execution -> quality gate) by invoking coordinators as Skill() calls in a single context.
+Drives a selected Story through the full pipeline (task planning -> validation -> execution -> quality gate) by invoking coordinators as Skill() calls in a single context and advancing from coordinator stage artifacts.
 
 ## Purpose & Scope
 - Parse kanban board and show available Stories for user selection
@@ -26,17 +26,17 @@ Drives a selected Story through the full pipeline (task planning -> validation -
 
 ```
 L0: ln-1000-pipeline-orchestrator (sequential Skill calls, single context)
-  +-- Skill("ln-300") — task decomposition (internally manages its own workers)
+  +-- Skill("ln-300") — task decomposition (internally manages stateful task-plan workers)
   +-- Skill("ln-310") — validation (internally launches Codex/Gemini agents)
-  +-- Skill("ln-400") — execution (internally dispatches Agent(ln-401/403/404), Skill(ln-402))
-  +-- Skill("ln-500") — quality gate (internally runs ln-510/ln-520, verdict, finalization)
+  +-- Skill("ln-400") — execution (internally dispatches stateful task workers)
+  +-- Skill("ln-500") — quality gate (internally runs artifact-first ln-510/ln-520, verdict, finalization)
 ```
 
-**Key principle:** ln-1000 invokes coordinators via Skill tool. Each coordinator manages its own internal worker dispatch. ln-1000 does NOT modify existing skills — it calls them exactly as a human operator would.
+**Key principle:** ln-1000 invokes coordinators via Skill tool. Each coordinator manages its own internal worker dispatch and emits a stage artifact. ln-1000 does NOT modify existing skills — it calls them exactly as a human operator would and treats coordinator artifacts as the primary completion signal.
 
 ## Task Storage Mode
 
-**MANDATORY READ:** Load `shared/references/tools_config_guide.md` and `shared/references/storage_mode_detection.md`
+**MANDATORY READ:** Load `shared/references/environment_state_contract.md` and `shared/references/storage_mode_detection.md`
 
 Extract: `task_provider` = Task Management -> Provider (`linear` | `file`).
 
@@ -86,9 +86,10 @@ recovery = Bash: node $PIPELINE status
 IF recovery.active == true:
   # Previous run interrupted — resume from CLI state
   1. Extract: story_id, stage, resume_action from recovery JSON
-  2. Re-read kanban board -> verify story still exists
-  3. IF recovery.state.worktree_dir exists: cd {recovery.state.worktree_dir}
-  4. Jump to Phase 4, starting from resume_action
+  2. Read already-written stage artifacts and runtime state
+  3. Re-read kanban board -> secondary verification only
+  4. IF recovery.state.worktree_dir exists: cd {recovery.state.worktree_dir}
+  5. Jump to Phase 4, starting from resume_action
 
 IF recovery.active == false:
   # Fresh start — proceed to Phase 1
@@ -190,7 +191,8 @@ ELSE:
     git diff HEAD > .hex-skills/pipeline/carry-changes.patch
 
   git fetch origin
-  git worktree add -b {branch} {worktree_dir} origin/master
+  base_branch = detect per shared/references/git_scope_detection.md §Base Branch Detection
+  git worktree add -b {branch} {worktree_dir} origin/{base_branch}
 
   IF .hex-skills/pipeline/carry-changes.patch exists:
     git -C {worktree_dir} apply .hex-skills/pipeline/carry-changes.patch && rm .hex-skills/pipeline/carry-changes.patch
@@ -253,8 +255,10 @@ TodoWrite([
 IF target_stage <= 0:
   Bash: node $PIPELINE advance --story {id} --to STAGE_0
   Skill(skill: "ln-300-task-coordinator", args: "{id}")
-  Re-read kanban -> ASSERT tasks exist under Story, count IN 1..8
-  IF ASSERT fails: Bash: node $PIPELINE pause --story {id} --reason "Task creation failed"; ESCALATE
+  Read Stage 0 coordinator artifact -> Bash: node $PIPELINE record-stage-summary --story {id} --payload '{...}'
+  ASSERT Stage 0 artifact: status=completed, stage=0
+  Re-read kanban only as secondary assertion
+  IF ASSERT fails: Bash: node $PIPELINE pause --story {id} --reason "Stage 0 artifact missing or invalid"; ESCALATE
   Write stage notes: .hex-skills/pipeline/stage_0_notes_{id}.md (Key Decisions, Artifacts)
   Bash: node $PIPELINE checkpoint --story {id} --stage 0 --plan-score {score} --tasks-remaining '{JSON tasks}' --last-action "Tasks created"
 
@@ -263,15 +267,16 @@ IF target_stage <= 1:
   Bash: node $PIPELINE advance --story {id} --to STAGE_1
   IF advance fails (guard rejection): handle per error.recovery
   Skill(skill: "ln-310-multi-agent-validator", args: "{id}")
-  Re-read kanban -> ASSERT Story status = Todo
-  Extract readiness_score from ln-310 output
+  Read Stage 1 coordinator artifact -> Bash: node $PIPELINE record-stage-summary --story {id} --payload '{...}'
+  ASSERT artifact verdict = GO and readiness_score >= 5
   IF NO-GO:
     Bash: node $PIPELINE advance --story {id} --to STAGE_1    # retry (guard auto-increments validation_retries)
     IF advance fails: Bash: node $PIPELINE pause --story {id} --reason "Validation retry exhausted"; ESCALATE
     Skill(skill: "ln-310-multi-agent-validator", args: "{id}")    # retry
-    Re-read kanban -> ASSERT Story status = Todo
-  IF still NOT Todo: Bash: node $PIPELINE pause --story {id} --reason "Validation failed"; ESCALATE
-  Extract agents_info from .hex-skills/agent-review/review_history.md or ln-310 output
+    Read retry Stage 1 artifact -> Bash: node $PIPELINE record-stage-summary --story {id} --payload '{...}'
+  Re-read kanban only as secondary assertion
+  IF still NOT Todo: Bash: node $PIPELINE pause --story {id} --reason "Validation artifact or status invalid"; ESCALATE
+  Extract agents_info from Stage 1 artifact metadata or review runtime state
   Write stage notes: .hex-skills/pipeline/stage_1_notes_{id}.md (Verdict, Agent Review, Key Decisions)
   Bash: node $PIPELINE checkpoint --story {id} --stage 1 --verdict {verdict} --readiness {score} --agents-info "{agents}" --last-action "Validated"
 
@@ -287,18 +292,20 @@ WHILE true:
     Bash: node $PIPELINE advance --story {id} --to STAGE_2
     IF advance fails: Bash: node $PIPELINE pause --story {id} --reason "{error}"; ESCALATE; BREAK
     Skill(skill: "ln-400-story-executor", args: "{id}")
-    Re-read kanban -> ASSERT Story status = To Review AND all tasks = Done
-    IF ASSERT fails: Bash: node $PIPELINE pause --story {id} --reason "Stage 2 incomplete"; ESCALATE; BREAK
-    git_stats = parse `git diff --stat origin/master..HEAD`
+    Read Stage 2 coordinator artifact -> Bash: node $PIPELINE record-stage-summary --story {id} --payload '{...}'
+    ASSERT artifact story_status = To Review
+    Re-read kanban only as secondary assertion
+    IF ASSERT fails: Bash: node $PIPELINE pause --story {id} --reason "Stage 2 artifact missing or invalid"; ESCALATE; BREAK
+    git_stats = parse `git diff --stat origin/{base_branch}..HEAD`
     Write stage notes: .hex-skills/pipeline/stage_2_notes_{id}.md (Key Decisions, Git commits)
     Bash: node $PIPELINE checkpoint --story {id} --stage 2 --tasks-completed '{JSON done}' --git-stats '{JSON stats}' --last-action "Implementation complete"
 
   # STAGE 3: Quality Gate (IMPOSSIBLE TO SKIP — next line after Stage 2)
   Bash: node $PIPELINE advance --story {id} --to STAGE_3
   Skill(skill: "ln-500-story-quality-gate", args: "{id}")
-  Re-read kanban -> check Story status
-  Extract quality verdict, score from ln-500 output
-  Extract agents_info from .hex-skills/agent-review/review_history.md or ln-500 output
+  Read Stage 3 coordinator artifact -> Bash: node $PIPELINE record-stage-summary --story {id} --payload '{...}'
+  Extract quality verdict, score, agents_info from Stage 3 artifact
+  Re-read kanban only as secondary assertion
   Write stage notes: .hex-skills/pipeline/stage_3_notes_{id}.md (Verdict, Score, Agent Review, Branch)
   Bash: node $PIPELINE checkpoint --story {id} --stage 3 --verdict {verdict} --quality-score {score} --agents-info "{agents}" --last-action "Quality gate: {verdict}"
 
@@ -355,7 +362,7 @@ FOR N IN 0..3:
 
 # 3. Extract branch info
 branch_name = git branch --show-current
-git_stats_final = git diff --stat origin/master..HEAD (if not already captured)
+git_stats_final = git diff --stat origin/{base_branch}..HEAD (if not already captured)
 
 # 4. Finalize pipeline report
 durations = {N: stage_timestamps.stage_{N}_end - stage_timestamps.stage_{N}_start
@@ -433,10 +440,11 @@ Delete .hex-skills/pipeline/ directory
 # 9. Report results location to user
 ```
 
-## Kanban as Single Source of Truth
+## Coordinator Artifacts as Orchestration Truth
 
-- **Re-read board** after each stage completion for fresh state. Never cache
-- Coordinators (ln-300/310/400/500) update Linear/kanban via their own logic. Lead re-reads and ASSERTs expected state transitions
+- **Read coordinator artifact first** after each stage completion. Never treat prose output as completion truth
+- Re-read board after each stage only as a secondary assertion for expected status transitions
+- Coordinators (ln-300/310/400/500) update Linear/kanban via their own logic. Lead verifies the artifact first, then checks board consistency
 - **Update algorithm:** Follow `shared/references/kanban_update_algorithm.md` for Epic grouping and indentation
 
 ## Error Handling
@@ -444,10 +452,10 @@ Delete .hex-skills/pipeline/ directory
 | Situation | Detection | Action |
 |-----------|----------|--------|
 | ln-300 task creation fails | Skill returns error | Escalate to user: "Cannot create tasks for Story {id}" |
-| ln-310 NO-GO (Score <5) | Re-read kanban, status != Todo | Retry once. If still NO-GO -> ask user |
+| ln-310 NO-GO (Score <5) | Stage 1 artifact verdict != GO | Retry once. If still NO-GO -> ask user |
 | Task in To Rework 3+ times | ln-400 reports rework loop | Escalate: "Task X reworked 3 times, need input" |
-| ln-500 FAIL | Re-read kanban, status = To Rework | Fix tasks auto-created by ln-500. Stage 2 re-entry. Max 2 quality cycles |
-| Skill call error | Exception from Skill() | `node $PIPELINE status` -> re-invoke same Skill (kanban handles task-level resume) |
+| ln-500 FAIL | Stage 3 artifact verdict = FAIL | Fix tasks auto-created by ln-500. Stage 2 re-entry. Max 2 quality cycles |
+| Skill call error | Exception from Skill() | `node $PIPELINE status` -> re-invoke same Skill (runtime + artifacts handle resume) |
 | Context compression | PostCompact hook or manual detection | `node $PIPELINE status` -> extract resume_action -> continue |
 
 ## Worker Invocation (MANDATORY)
@@ -480,7 +488,7 @@ TodoWrite format (mandatory):
 1. **Single Story processing.** User selects which Story to process
 2. **Coordinators via Skill.** Lead invokes ln-300/ln-310/ln-400/ln-500 via Skill tool. Each coordinator manages its own internal worker dispatch (Agent/Skill)
 3. **Skills as-is.** Never modify or bypass existing skill logic
-4. **Kanban verification.** After EVERY Skill call, re-read kanban and ASSERT expected state. Lead never caches kanban state
+4. **Artifact-first verification.** After EVERY Skill call, read coordinator artifact first and re-read kanban only as secondary assertion. Lead never caches stage truth in chat state
 5. **Quality cycle limit.** Max 2 quality FAILs per Story (original + 1 rework). After 2nd FAIL, escalate to user
 6. **Worktree lifecycle.** ln-1000 creates worktree in Phase 3.4. Branch finalization (commit, push) by ln-500. Worktree cleanup by ln-1000 in Phase 5 (lead is in worktree, so ln-500 skips cleanup)
 7. **Stage notes.** Lead writes `.hex-skills/pipeline/stage_N_notes_{id}.md` after each stage for Pipeline Report
@@ -495,7 +503,7 @@ TodoWrite format (mandatory):
 
 ## Anti-Patterns
 - Skipping quality gate after execution (Stage 3 is the next line after Stage 2 -- impossible to skip)
-- Caching kanban state instead of re-reading after each Skill call
+- Treating kanban state as the primary completion signal instead of coordinator artifacts
 - Running mypy/ruff/pytest directly instead of letting coordinators handle it
 - Processing multiple stories without user selection
 - Creating worktrees outside Phase 3.4 (coordinators self-detect feature/*)
@@ -541,7 +549,7 @@ When invoked in Plan Mode, show available Stories and ask user which one to plan
 - [ ] User selected Story (`state.story_id` is set)
 - [ ] Business questions resolved (stored OR skip)
 - [ ] Story processed to terminal state (`state.phase IN ("DONE", "PAUSED")`)
-- [ ] Per-stage ASSERT verifications passed (kanban re-read after each stage)
+- [ ] Per-stage ASSERT verifications passed (artifact first, kanban secondary)
 - [ ] Stage notes written for each completed stage
 - [ ] Pipeline report generated (file exists at `docs/tasks/reports/`)
 - [ ] Pipeline summary shown to user
@@ -569,7 +577,7 @@ Skill type: `execution-orchestrator`. Runs after Phase 5. Pipeline-specific impl
 - **Kanban update algorithm:** `shared/references/kanban_update_algorithm.md`
 - **Settings template:** `references/settings_template.json`
 - **Sleep prevention:** `references/hooks/prevent-sleep.ps1`
-- **Tools config:** `shared/references/tools_config_guide.md`
+- **Environment state:** `shared/references/environment_state_contract.md`
 - **Storage mode operations:** `shared/references/storage_mode_detection.md`
 - **Auto-discovery patterns:** `shared/references/auto_discovery_pattern.md`
 

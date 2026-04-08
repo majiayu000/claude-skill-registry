@@ -4,7 +4,7 @@ description: Use when you need to write fast unit tests for Quarkus applications
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.13.0
+  version: 0.14.0-SNAPSHOT
 ---
 # Quarkus Unit Testing
 

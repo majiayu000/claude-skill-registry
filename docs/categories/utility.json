@@ -2,54 +2,54 @@
   "category": "utility",
   "code": "oth",
   "count": 4,
-  "updated_at": "2026-04-04T04:23:19.136013Z",
+  "updated_at": "2026-04-08T05:11:35.047944Z",
   "skills": [
     {
       "name": "agent-ops-versioning",
       "description": "Manage semantic versioning, changelog generation, and release notes. Auto-generates entries from completed issues or git diff.",
       "repo": "majiayu000/claude-skill-registry",
-      "path": "",
+      "path": "skills/other/agent-ops-versioning/SKILL.md",
       "branch": "main",
       "category": "utility",
       "tags": [],
       "stars": 48,
-      "install": "majiayu000/claude-skill-registry",
+      "install": "majiayu000/claude-skill-registry/skills/other/agent-ops-versioning/SKILL.md",
       "source": "github.com/majiayu000/claude-skill-registry"
     },
     {
       "name": "agent-ops-interview",
       "description": "Conduct structured interviews with the user. Use when multiple decisions need user input: ask ONE question at a time, wait for response, record answer, then proceed to next question.",
       "repo": "majiayu000/claude-skill-registry",
-      "path": "",
+      "path": "skills/other/agent-ops-interview/SKILL.md",
       "branch": "main",
       "category": "utility",
       "tags": [],
       "stars": 48,
-      "install": "majiayu000/claude-skill-registry",
+      "install": "majiayu000/claude-skill-registry/skills/other/agent-ops-interview/SKILL.md",
       "source": "github.com/majiayu000/claude-skill-registry"
     },
     {
       "name": "agent-ops-versioning",
       "description": "Manage semantic versioning, changelog generation, and release notes. Auto-generates entries from completed issues or git diff.",
       "repo": "majiayu000/claude-skill-registry",
-      "path": "",
+      "path": "skills/other/agent-ops-versioning/SKILL.md",
       "branch": "main",
       "category": "utility",
       "tags": [],
       "stars": 48,
-      "install": "majiayu000/claude-skill-registry",
+      "install": "majiayu000/claude-skill-registry/skills/other/agent-ops-versioning/SKILL.md",
       "source": "github.com/majiayu000/claude-skill-registry"
     },
     {
       "name": "agent-ops-interview",
       "description": "Conduct structured interviews with the user. Use when multiple decisions need user input: ask ONE question at a time, wait for response, record answer, then proceed to next question.",
       "repo": "majiayu000/claude-skill-registry",
-      "path": "",
+      "path": "skills/other/agent-ops-interview/SKILL.md",
       "branch": "main",
       "category": "utility",
       "tags": [],
       "stars": 48,
-      "install": "majiayu000/claude-skill-registry",
+      "install": "majiayu000/claude-skill-registry/skills/other/agent-ops-interview/SKILL.md",
       "source": "github.com/majiayu000/claude-skill-registry"
     }
   ]

@@ -1,14 +1,6 @@
 ---
 name: task-planning
-description: 'Generate phased, dependency-ordered tasks from specs. Identifies parallelization
-  opportunities.
-
-
-  task planning, dependency ordering, phased breakdown, parallel tasks
-
-  Use when: converting specifications to implementation tasks
-
-  DO NOT use when: writing specs - use spec-writing. Not for execution - use speckit-implement.'
+description: 'Generate phased, dependency-ordered tasks from specifications with parallelization opportunities and tech-stack patterns.'
 version: 1.7.1
 alwaysApply: false
 category: planning

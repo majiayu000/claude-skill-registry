@@ -19,15 +19,15 @@ Upgrades .NET NuGet packages with automatic breaking change detection and migrat
 
 | Aspect | Details |
 |--------|---------|
-| **Input** | Solution/project path |
-| **Output** | Updated .csproj files, migration report |
+| **Input** | Solution or project path plus upgrade policy |
+| **Output** | Updated `.csproj` files and a machine-readable dependency upgrade summary |
 | **Supports** | .NET 6, 7, 8, 9, 10 |
 
 ---
 
 ## Workflow
 
-**Phases:** Pre-flight → Find Projects → Security Audit → Check Outdated → Identify Breaking → Apply Upgrades → Restore & Build → Report
+**Phases:** Pre-flight -> Find Projects -> Security Audit -> Check Outdated -> Identify Breaking -> Apply Upgrades -> Restore and Build -> Report
 
 ---
 
@@ -35,133 +35,99 @@ Upgrades .NET NuGet packages with automatic breaking change detection and migrat
 
 | Check | Required | Action if Missing |
 |-------|----------|-------------------|
-| .csproj file(s) | Yes | Block upgrade |
-| .sln file | No | Use csproj discovery instead |
-| Git clean state | Yes | Block (need clean baseline for revert) |
+| `.csproj` file(s) | Yes | Block upgrade |
+| `.sln` file | No | Fall back to recursive project discovery |
+| `dotnet` CLI | Yes | Block upgrade |
+| Workspace baseline safe | Yes | In managed runs coordinator already prepared it; in standalone runs protect rollback locally |
 
-> Workers assume coordinator (ln-820) already verified git state and created backup.
+### Runtime Coordination
 
-### Worktree & Branch Isolation
-
-**MANDATORY READ:** Load `shared/references/git_worktree_fallback.md` — use ln-822 row.
+Managed runs receive deterministic `runId` and exact `summaryArtifactPath` from `ln-820`.
+Standalone runs remain supported; if runtime arguments are omitted, generate a standalone run-scoped artifact before returning.
 
 ---
 
 ## Phase 1: Find Projects
 
-### Discovery Methods
-
 | Method | Command |
 |--------|---------|
-| Find .csproj | `Get-ChildItem -Recurse -Filter *.csproj` |
-| From solution | `dotnet sln list` |
+| Find `.csproj` files | `Get-ChildItem -Recurse -Filter *.csproj` |
+| Read solution members | `dotnet sln list` |
 
 ---
 
 ## Phase 2: Security Audit
-
-### Commands
 
 | Check | Command |
 |-------|---------|
 | Vulnerable packages | `dotnet list package --vulnerable` |
 | Outdated packages | `dotnet list package --outdated` |
 
-### Actions
+Actions:
 
 | Severity | Action |
 |----------|--------|
-| Critical | Block upgrade, report |
-| High | Warn, continue |
+| Critical | Block and report |
+| High | Warn and continue |
 | Moderate/Low | Log only |
 
 ---
 
 ## Phase 3: Check Outdated
 
-### Using dotnet-outdated
-
 | Step | Command |
 |------|---------|
-| Install tool | `dotnet tool install --global dotnet-outdated-tool` |
-| Check | `dotnet outdated --output json` |
+| Install helper | `dotnet tool install --global dotnet-outdated-tool` |
+| Detect outdated packages | `dotnet outdated --output json` |
 
 ---
 
 ## Phase 4: Identify Breaking Changes
 
-### Detection
+Detection flow:
+1. Compare current vs latest major versions.
+2. Check [breaking_changes_patterns.md](../ln-820-dependency-optimization-coordinator/references/breaking_changes_patterns.md).
+3. Use MCP tools for migration guides before changing code.
 
-1. Compare current vs latest major versions
-2. Check [breaking_changes_patterns.md](../ln-820-dependency-optimization-coordinator/references/breaking_changes_patterns.md)
-3. Use MCP tools (see below) for migration guides
-
-### Common Breaking Changes
+Common examples:
 
 | Package | Breaking Version | Key Changes |
 |---------|------------------|-------------|
-| Microsoft.EntityFrameworkCore | 8 → 9 | Query changes, migration format |
-| Serilog.AspNetCore | 7 → 8 | Configuration format |
-| Swashbuckle.AspNetCore | 6 → 7 | Minimal API support |
+| Microsoft.EntityFrameworkCore | 8 -> 9 | Query and migration changes |
+| Serilog.AspNetCore | 7 -> 8 | Configuration updates |
+| Swashbuckle.AspNetCore | 6 -> 7 | Minimal API integration changes |
 
 ---
 
 ## MCP Tools for Migration Search
 
-### Priority Order (Fallback Strategy)
-
 | Priority | Tool | When to Use |
 |----------|------|-------------|
-| 1 | mcp__context7__query-docs | First choice for library docs |
-| 2 | mcp__Ref__ref_search_documentation | Official Microsoft docs |
-| 3 | WebSearch | Latest info, community solutions |
+| 1 | `mcp__context7__query-docs` | First choice for library docs |
+| 2 | `mcp__Ref__ref_search_documentation` | Official Microsoft docs |
+| 3 | WebSearch | Latest info and community fixes |
 
-### Context7 Usage
-
-| Step | Tool | Parameters |
-|------|------|------------|
-| 1. Find library | mcp__context7__resolve-library-id | libraryName: "EntityFrameworkCore" |
-| 2. Query docs | mcp__context7__query-docs | query: "EF Core 8 to 9 migration breaking changes" |
-
-### MCP Ref Usage
-
-| Action | Tool | Query Example |
-|--------|------|---------------|
-| Search | mcp__Ref__ref_search_documentation | "dotnet EntityFrameworkCore 9 migration guide" |
-| Read | mcp__Ref__ref_read_url | URL from search results |
-
-### WebSearch Fallback
-
-Use when Context7/Ref return no results:
-- `"<package> .NET <version> breaking changes migration"`
-- `"<error code> <package> fix"`
+Use the tool chain to confirm migrations before applying them.
 
 ---
 
 ## Phase 5: Apply Upgrades
 
-### Priority Order
-
-| Priority | Package Type |
-|----------|--------------|
-| 1 | SDK/Runtime (Microsoft.NET.Sdk) |
-| 2 | Framework (Microsoft.AspNetCore.*) |
-| 3 | EF Core (affects migrations) |
-| 4 | Logging (Serilog.*) |
-| 5 | Other packages |
-
-### Commands
+Priority order:
+1. SDK or runtime packages
+2. framework packages
+3. EF Core
+4. logging packages
+5. everything else
 
 | Action | Command |
 |--------|---------|
-| Update specific | `dotnet add package <name> --version <ver>` |
-| Update all | `dotnet outdated --upgrade` |
+| Update one package | `dotnet add package <name> --version <ver>` |
+| Update many packages | `dotnet outdated --upgrade` |
 
 ---
 
-## Phase 6: Restore & Build
-
-### Commands
+## Phase 6: Restore and Build
 
 | Step | Command |
 |------|---------|
@@ -169,26 +135,24 @@ Use when Context7/Ref return no results:
 | Build | `dotnet build --configuration Release` |
 | Test | `dotnet test` |
 
-### On Failure
-
-1. Identify failing package from error
-2. Search Context7/Ref for migration guide
-3. If unresolved: rollback package, continue
+On failure:
+1. Identify the failing package.
+2. Search Context7 or Ref for the migration guide.
+3. If unresolved, rollback that package and continue.
 
 ---
 
 ## Phase 7: Report Results
 
-### Report Schema
-
 | Field | Description |
 |-------|-------------|
-| solution | Solution path |
-| projects[] | Updated projects |
-| duration | Total time |
-| upgrades[] | Applied upgrades |
-| buildVerification | PASSED or FAILED |
-| testResults | X passed, Y failed |
+| `solution` | Solution path |
+| `projects[]` | Updated projects |
+| `duration` | Total time |
+| `upgrades[]` | Applied upgrades |
+| `verification` | Restore/build/test verdict |
+| `warnings[]` | Non-blocking issues |
+| `artifact_path` | Durable worker report path, if written |
 
 ---
 
@@ -196,18 +160,11 @@ Use when Context7/Ref return no results:
 
 ```yaml
 Options:
-  # Upgrade scope
   upgradeType: major          # major | minor | patch
-
-  # Security
   auditLevel: high
   minimumReleaseAge: 14
-
-  # .NET specific
   includePrerelease: false
   targetFramework: net10.0
-
-  # Verification
   runTests: true
   runBuild: true
 ```
@@ -220,7 +177,7 @@ Options:
 |-------|-------|----------|
 | CS0246 | Missing type | Search for replacement API |
 | NU1605 | Downgrade detected | Check package constraints |
-| Build fail | Breaking change | Apply migration via Context7 |
+| Build fail | Breaking change | Apply migration guide or rollback offending package |
 
 ---
 
@@ -231,15 +188,29 @@ Options:
 
 ---
 
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
+
+Emit a `dependency-worker` summary envelope.
+
+Managed mode:
+- `ln-820` passes deterministic `runId` and exact `summaryArtifactPath`
+- write the summary to the provided `summaryArtifactPath`
+
+Standalone mode:
+- omit `runId` and `summaryArtifactPath`
+- write `.hex-skills/runtime-artifacts/runs/{run_id}/dependency-worker/ln-822--{identifier}.json`
+
 ## Definition of Done
 
-- [ ] All .csproj files discovered (via solution or recursive scan)
-- [ ] Security audit completed (`dotnet list package --vulnerable`)
-- [ ] Outdated packages identified via dotnet-outdated
-- [ ] Breaking changes detected via breaking_changes_patterns.md and MCP tools
-- [ ] Upgrades applied in priority order (SDK > Framework > EF Core > other)
-- [ ] `dotnet restore`, `dotnet build`, `dotnet test` all pass
-- [ ] Report returned with projects updated, upgrades applied, and build/test status
+- [ ] All target `.csproj` files discovered
+- [ ] Security audit completed for NuGet dependencies
+- [ ] Outdated packages identified
+- [ ] Breaking changes checked via patterns plus current docs
+- [ ] Upgrades applied in a safe order with rollback on failure
+- [ ] `dotnet restore`, `dotnet build`, and required tests succeed
+- [ ] `dependency-worker` summary artifact written to the managed or standalone path
 
 ---
 

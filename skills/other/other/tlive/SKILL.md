@@ -89,7 +89,7 @@ Enter numbers (e.g., 1,3):"
 
 **Step 3 — General settings:**
 - Runtime: claude (default) or codex
-- Port (default 8080)
+- Port (default 4590)
 - Public URL (optional, for web links in IM messages)
 - Auto-generate TL_TOKEN (32-char hex)
 

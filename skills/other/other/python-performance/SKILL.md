@@ -1,9 +1,6 @@
 ---
 name: python-performance
-description: 'Consult this skill for Python performance profiling and optimization.
-  Use when debugging slow code, identifying bottlenecks, optimizing memory, benchmarking
-  performance, production profiling. Do not use when async concurrency - use python-async
-  instead. DO NOT use when: CPU/GPU system monitoring - use conservation:cpu-gpu-performance.'
+description: 'Python performance profiling and optimization: bottleneck detection, memory tuning, benchmarking'
 version: 1.7.1
 globs: "**/*.py"
 alwaysApply: false

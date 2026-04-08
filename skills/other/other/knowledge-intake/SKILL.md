@@ -1,14 +1,6 @@
 ---
 name: knowledge-intake
-description: 'Process external resources into actionable knowledge with evaluation,
-  storage, and application decisions.
-
-
-  knowledge intake, article evaluation, paper review, external resource
-
-  Use when: user shares links to articles, papers, or external resources
-
-  DO NOT use when: searching existing knowledge - use knowledge-locator.'
+description: 'Process external resources into stored knowledge with quality evaluation, curation routing, and application decisions.'
 version: 1.7.1
 alwaysApply: false
 category: governance

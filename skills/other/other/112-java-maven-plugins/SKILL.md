@@ -4,7 +4,7 @@ description: Use when you need to add or configure Maven plugins in your pom.xml
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.13.0
+  version: 0.14.0-SNAPSHOT
 ---
 # Maven Plugins: pom.xml Configuration Best Practices
 

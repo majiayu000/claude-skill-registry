@@ -186,6 +186,14 @@ Why this is better:
 - Quick questions ("What does this function do?")
 - When the user explicitly says "just do it" or "use your judgment"
 
+## Gotchas
+
+1. **Don't ask what you can read.** If the project has a `package.json`, `tsconfig.json`, or existing code — check it before asking "what language/framework?" That's not clarification, it's laziness.
+2. **3 questions max is a hard ceiling.** If you need more, the request needs decomposition into sub-tasks, not more interrogation.
+3. **Style preferences are not scope questions.** Naming conventions, folder structure, formatting — use project conventions or sensible defaults. Never block on these.
+4. **State your default for every question.** The user should be able to say "go with defaults" and skip all questions. If your defaults aren't stated, you've failed.
+5. **Green light means GO.** If the request is clear, say so and proceed immediately. Do not ask questions for the sake of appearing thorough.
+
 ## Integration Notes
 
 - **Before everything:** swing-clarify is designed to run FIRST. Clarified scope feeds into all other skills.

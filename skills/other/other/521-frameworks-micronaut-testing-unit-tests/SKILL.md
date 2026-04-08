@@ -4,7 +4,7 @@ description: Use when you need to write unit tests for Micronaut applications ‚Ä
 license: Apache-2.0
 metadata:
   author: Juan Antonio Bre√±a Moral
-  version: 0.13.0
+  version: 0.14.0-SNAPSHOT
 ---
 # Micronaut Unit Testing
 

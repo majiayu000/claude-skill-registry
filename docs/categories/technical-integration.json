@@ -2,30 +2,30 @@
   "category": "technical-integration",
   "code": "oth",
   "count": 2,
-  "updated_at": "2026-04-04T04:23:19.055436Z",
+  "updated_at": "2026-04-08T05:11:34.967604Z",
   "skills": [
     {
       "name": "skills",
       "description": "Structured methodology for objectively evaluating, comparing, and selecting AI tools for vendor replacement initiatives, ensuring data-driven decisions.",
       "repo": "mitkox/fteplusai",
-      "path": "",
+      "path": "skills/tool-evaluation.skill.md",
       "branch": "main",
       "category": "technical-integration",
       "tags": [],
       "stars": 80,
-      "install": "mitkox/fteplusai",
+      "install": "mitkox/fteplusai/skills/tool-evaluation.skill.md",
       "source": "github.com/mitkox/fteplusai"
     },
     {
       "name": "skills",
       "description": "Structured methodology for objectively evaluating, comparing, and selecting AI tools for vendor replacement initiatives, ensuring data-driven decisions.",
       "repo": "mitkox/fteplusai",
-      "path": "",
+      "path": "skills/tool-evaluation.skill.md",
       "branch": "main",
       "category": "technical-integration",
       "tags": [],
       "stars": 80,
-      "install": "mitkox/fteplusai",
+      "install": "mitkox/fteplusai/skills/tool-evaluation.skill.md",
       "source": "github.com/mitkox/fteplusai"
     }
   ]

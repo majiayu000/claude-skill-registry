@@ -2,54 +2,54 @@
   "category": "document-processing",
   "code": "oth",
   "count": 4,
-  "updated_at": "2026-04-04T04:23:18.103860Z",
+  "updated_at": "2026-04-08T05:11:33.420014Z",
   "skills": [
     {
       "name": "pdf",
       "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
       "repo": "davepoon/buildwithclaude",
-      "path": "",
+      "path": "plugins/all-skills/skills/pdf/SKILL.md",
       "branch": "main",
       "category": "document-processing",
       "tags": [],
       "stars": 2299,
-      "install": "davepoon/buildwithclaude",
+      "install": "davepoon/buildwithclaude/plugins/all-skills/skills/pdf/SKILL.md",
       "source": "github.com/davepoon/buildwithclaude"
     },
     {
       "name": "pdf",
       "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
       "repo": "davepoon/buildwithclaude",
-      "path": "",
+      "path": "plugins/all-skills/skills/pdf/SKILL.md",
       "branch": "main",
       "category": "document-processing",
       "tags": [],
       "stars": 2299,
-      "install": "davepoon/buildwithclaude",
+      "install": "davepoon/buildwithclaude/plugins/all-skills/skills/pdf/SKILL.md",
       "source": "github.com/davepoon/buildwithclaude"
     },
     {
       "name": "xlsx",
       "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv",
       "repo": "szweibel/claude-skills",
-      "path": "",
+      "path": "xlsx/SKILL.md",
       "branch": "main",
       "category": "document-processing",
       "tags": [],
       "stars": 0,
-      "install": "szweibel/claude-skills",
+      "install": "szweibel/claude-skills/xlsx/SKILL.md",
       "source": "github.com/szweibel/claude-skills"
     },
     {
       "name": "xlsx",
       "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv",
       "repo": "szweibel/claude-skills",
-      "path": "",
+      "path": "xlsx/SKILL.md",
       "branch": "main",
       "category": "document-processing",
       "tags": [],
       "stars": 0,
-      "install": "szweibel/claude-skills",
+      "install": "szweibel/claude-skills/xlsx/SKILL.md",
       "source": "github.com/szweibel/claude-skills"
     }
   ]

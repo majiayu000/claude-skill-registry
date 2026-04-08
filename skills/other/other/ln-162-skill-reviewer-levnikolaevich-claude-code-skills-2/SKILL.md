@@ -68,7 +68,7 @@ Automated failures are pre-verified. Record every one.
 
 ### Phase 3: Structural Review
 
-**MANDATORY READ:** Load `references/structural_review.md` and `shared/references/skill_contract.md`
+**MANDATORY READ:** Load `references/structural_review.md`, `shared/references/skill_contract.md`, `shared/references/mcp_applicability_matrix.md`, and `shared/references/mcp_tool_preferences.md`
 
 Review every skill in scope across D1-D11.
 
@@ -80,6 +80,10 @@ Treat these as structural issues, not style nits:
 - markdown-analysis skills missing `markdown_read_protocol.md`
 - extraction or audit skills contradicting the shared docs-quality contract
 - skills contradicting the shared skill contract
+- skills that should make `hex-line` primary but only describe built-in file tools
+- skills that should make `hex-graph` primary but still describe grep/manual analysis as the default path
+- skills that add `hex-graph` or `hex-line` with no real applicability per the shared matrix
+- wrong MCP namespaces such as `mcp__hex_graph__...`
 
 ### Phase 4: Intent Review
 

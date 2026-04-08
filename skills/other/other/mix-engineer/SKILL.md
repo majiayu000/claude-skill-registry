@@ -137,14 +137,15 @@ Before polishing, resolve audio path via MCP:
 Before polishing, verify:
 1. **Audio folder exists** — resolve via MCP
 2. **Stems available** — check for `stems/` subdirectory with track folders
-3. If no stems, fall back to full-mix mode (less effective but still valuable)
-4. If no WAV files at all: "No audio files found. Import audio first."
+3. If no WAV files at all: "No audio files found. Import audio first."
 
 ### Step 2: Analyze Mix Issues
 
 ```
 analyze_mix_issues(album_slug)
 ```
+
+This automatically detects stems — if no root WAVs exist but `stems/` has track directories, it analyzes a representative stem from each track. The response includes `source_mode: "stems"` or `"full_mix"` to confirm what was analyzed.
 
 **What to check:**
 - Noise floor level
@@ -159,20 +160,24 @@ analyze_mix_issues(album_slug)
 
 ### Step 3: Choose Settings
 
-**Default (recommended for most albums):**
+**Stems are always preferred.** `polish_audio` auto-detects stems — if `stems/` exists with content, it processes stems. If not, it falls back to full-mix mode automatically. You do NOT need to pass `use_stems` manually.
+
+**Default (auto-detects stems, recommended for most albums):**
 ```
 polish_audio(album_slug)
 ```
 
-**Genre-specific:**
+**Genre-specific (still auto-detects stems):**
 ```
 polish_audio(album_slug, genre="hip-hop")
 ```
 
-**Full-mix fallback:**
+**Force full-mix mode** (only use when you explicitly want to skip available stems):
 ```
 polish_audio(album_slug, use_stems=false)
 ```
+
+> **IMPORTANT:** Never pass `use_stems=false` just because analysis used full WAVs or because you're unsure. The default auto-detection handles this correctly. Only force full-mix mode if the user specifically requests it.
 
 ### Step 4: Dry Run (Preview)
 

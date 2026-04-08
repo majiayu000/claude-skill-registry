@@ -1,13 +1,7 @@
 ---
 name: metacognitive-self-mod
-description: >
-  Analyze and improve the improvement process itself.
-  Implements metacognitive self-modification from the
-  Hyperagents paper (Zhang et al., 2026): the meta agent
-  modifies how future improvements are generated.
-  Auto-triggers on regression detection or low
-  effectiveness rate.
-version: 1.7.1
+description: 'Analyze and improve the improvement process. Use for detecting quality regressions and refining meta-optimization.'
+version: 1.8.1
 alwaysApply: false
 trigger: metacognitive, self-modification, improve the improver, meta-improvement, improvement effectiveness, regression detected, improvement failed
 model_hint: standard

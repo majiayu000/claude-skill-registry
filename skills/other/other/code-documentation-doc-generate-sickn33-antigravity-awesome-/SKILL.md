@@ -1,7 +1,7 @@
 ---
 name: code-documentation-doc-generate
 description: "You are a documentation expert specializing in creating comprehensive, maintainable documentation from code. Generate API docs, architecture diagrams, user guides, and technical references using AI-powered analysis and industry best practices."
-risk: unknown
+risk: safe
 source: community
 date_added: "2026-02-27"
 ---

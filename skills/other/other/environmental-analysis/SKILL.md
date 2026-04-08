@@ -60,7 +60,7 @@ Search for environmental and topographic data:
 
 ## Output Format
 
-Write the analysis to a markdown file at `~/Documents/environmental-analysis-[location-slug].md`.
+Write the analysis to a markdown file at `./environmental-analysis-[location-slug].md`.
 
 ```markdown
 # Environmental Analysis — [Full Address or Location Name]

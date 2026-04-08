@@ -10,9 +10,9 @@ allowed-tools:
   - Grep
   - WebFetch
   - AskUserQuestion
-  - mcp__google__sheets_values_get
-  - mcp__google__sheets_values_update
-  - mcp__google__sheets_spreadsheet_get
+  - mcp__google-sheets__get_sheet_data
+  - mcp__google-sheets__update_cells
+  - mcp__google-sheets__list_sheets
 ---
 
 # /product-spec-bulk-fetch — Bulk Product Spec Fetcher
@@ -31,7 +31,7 @@ If the input format is unclear, ask.
 
 ## Output Schema
 
-Products are written to the **master Google Sheet** — the same 33-column schema used by Norma Jean, `/product-research`, and all other data-management skills. When writing to CSV, use the same column order.
+Products are written to the **master Google Sheet** — the same 33-column schema used by all product skills. When writing to CSV, use the same column order.
 
 Read `../../schema/product-schema.md` (relative to this SKILL.md) for the full column reference, field formats, and category vocabulary. Read `../../schema/sheet-conventions.md` for CRUD patterns with MCP tools.
 
@@ -40,7 +40,7 @@ Skill-specific column values:
 - **AG (Source):** `bulk-fetch`
 - **AD (Tags):** Blank (set by user later)
 - **AE (Notes):** Blank
-- **S (Selected Color/Finish):** Blank (unknown from URL)
+- **T (Selected Color/Finish):** Blank (unknown from URL)
 
 ## Extraction Process
 
@@ -113,12 +113,12 @@ Show a summary table in markdown with all successful + partial results. Flag any
 ### Step 5: Ask about output format
 Ask the user: **"Where should I save this?"**
 Options:
-- **Master Google Sheet** — append rows to the shared product library (same sheet used by Norma Jean). Ask for spreadsheet ID if not already known.
-- **Local CSV** — save to a specified path (default: `~/Documents/Work-Docs/ffe-fetch-YYYY-MM-DD.csv`)
+- **Master Google Sheet** — append rows to the shared product library. Ask for spreadsheet ID if not already known.
+- **Local CSV** — save to a specified path (default: `./ffe-fetch-YYYY-MM-DD.csv`)
 - **Just the table** — leave as markdown in the conversation
 
 ### Step 6: Save
-Write the output in the chosen format using the 33-column master schema. For Google Sheets, use `mcp__google__sheets_values_update` to append rows. Set `Clipped At` to current timestamp and `Source` to `bulk-fetch`.
+Write the output in the chosen format using the 33-column master schema. For Google Sheets, use `mcp__google-sheets__update_cells` to append rows. Set `Clipped At` to current timestamp and `Source` to `bulk-fetch`.
 
 ## CSV Format
 

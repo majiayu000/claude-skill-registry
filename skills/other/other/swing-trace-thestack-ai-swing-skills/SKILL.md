@@ -341,6 +341,14 @@ but heavily weighted)
 - Stress-testing someone else's reasoning (use `swing-review` -- it attacks; this skill *exposes*)
 - Research requiring external source verification (use `swing-research` for facts; this skill traces *reasoning about* facts)
 
+## Gotchas
+
+1. **Quick mode is the default.** Unless `--full` is specified, only run Stages 1, 2, and 5. Don't produce Decision Trees or Confidence Decomposition in quick mode — it wastes context.
+2. **Never assign >80% confidence without citing specific evidence.** "Common knowledge", "well-known", "generally accepted" are not justifications. Name the benchmark, the doc, the test result.
+3. **Weakest Link is mandatory in ALL modes.** Even quick mode. This is the single highest-value output — if you skip it, the entire trace is pointless.
+4. **Rate every assumption.** An assumption without Criticality and Verifiability ratings is incomplete. No exceptions, no "obvious" ones that skip rating.
+5. **Alternative Conclusion must be genuinely reasoned.** "If X is wrong, reconsider" is filler. Trace the actual alternative logic: "If X is wrong, then Y follows because Z."
+
 ## Integration Notes
 
 - **With swing-clarify:** Run swing-clarify first on ambiguous requests before invoking this skill. Clarified scope produces better results.

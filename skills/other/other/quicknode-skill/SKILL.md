@@ -510,7 +510,7 @@ See [references/x402-reference.md](references/x402-reference.md) for complete x4
 
 ## MPP (Machine Payments Protocol)
 
-Pay-per-request RPC access via IETF Payment Authentication headers. No API key required. Two intent types: charge ($0.001/request) and session ($0.00001/request via off-chain vouchers). Payment via PathUSD on Tempo or USDC on Solana. Access 140+ chain endpoints.
+Pay-per-request RPC access via IETF Payment Authentication headers. No API key required. Two intent types: charge ($0.001/request) and session ($0.00001/request via off-chain vouchers). Payment via PathUSD or USDC.e on Tempo mainnet, PathUSD on Tempo testnet, or USDC on Solana. Access 140+ chain endpoints.
 
 ### Quick Setup
 

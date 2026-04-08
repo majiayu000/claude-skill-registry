@@ -2,18 +2,18 @@
   "category": "context-management",
   "code": "oth",
   "count": 1,
-  "updated_at": "2026-04-04T04:23:17.200167Z",
+  "updated_at": "2026-04-08T05:11:32.484590Z",
   "skills": [
     {
       "name": "claude-code-tips",
       "description": "> [!tweet] @zeroxBigBoss · Dec 26, 2025",
       "repo": "januff/claude-code-tips",
-      "path": "",
+      "path": "Claude Code Tips/2025-12-26-handoff-skill.md",
       "branch": "main",
       "category": "context-management",
       "tags": [],
       "stars": 1,
-      "install": "januff/claude-code-tips",
+      "install": "januff/claude-code-tips/Claude Code Tips/2025-12-26-handoff-skill.md",
       "source": "github.com/januff/claude-code-tips"
     }
   ]

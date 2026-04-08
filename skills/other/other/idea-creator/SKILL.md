@@ -25,6 +25,22 @@ Given a broad research direction from the user, systematically generate, validat
 
 ## Workflow
 
+### Phase 0: Load Research Wiki (if active)
+
+**Skip this phase entirely if `research-wiki/` does not exist.**
+
+```
+if research-wiki/query_pack.md exists AND is less than 7 days old:
+    Read query_pack.md and use it as initial landscape context:
+    - Treat listed gaps as priority search seeds
+    - Treat failed ideas as a banlist (do NOT regenerate similar ideas)
+    - Treat top papers as known prior work (do not re-search them)
+    Still run Phase 1 below for papers from the last 3-6 months (wiki may be stale)
+else if research-wiki/ exists but query_pack.md is stale or missing:
+    python3 tools/research_wiki.py rebuild_query_pack research-wiki/
+    Then read query_pack.md as above
+```
+
 ### Phase 1: Landscape Survey (5-10 min)
 
 Map the research area to understand what exists and where the gaps are.
@@ -207,6 +223,34 @@ Write a structured report to `IDEA_REPORT.md` in the project root:
 ## Next Steps
 - [ ] Scale up Idea 1 to full experiment (multi-seed, full dataset)
 - [ ] If confirmed, invoke /auto-review-loop for full iteration
+```
+
+## Phase 7: Write Ideas to Research Wiki (if active)
+
+**Skip this phase entirely if `research-wiki/` does not exist.**
+
+This is critical for spiral learning — without it, `ideas/` stays empty and re-ideation has no memory.
+
+```
+if research-wiki/ exists:
+    for each idea in recommended_ideas + eliminated_ideas:
+        1. Create page: research-wiki/ideas/<idea_id>.md
+           - node_id: idea:<id>
+           - stage: proposed (or: piloted, archived)
+           - outcome: unknown (or: negative, mixed, positive)
+           - based_on: [paper:<slug>, ...]
+           - target_gaps: [gap:<id>, ...]
+           - Include: hypothesis, proposed method, expected outcome
+           - If pilot was run: actual outcome, failure notes, reusable components
+
+        2. Add edges:
+           python3 tools/research_wiki.py add_edge research-wiki/ --from "idea:<id>" --to "paper:<slug>" --type inspired_by --evidence "..."
+           python3 tools/research_wiki.py add_edge research-wiki/ --from "idea:<id>" --to "gap:<id>" --type addresses_gap --evidence "..."
+
+    Rebuild query pack:
+        python3 tools/research_wiki.py rebuild_query_pack research-wiki/
+    Log:
+        python3 tools/research_wiki.py log research-wiki/ "idea-creator wrote N ideas (M recommended, K eliminated)"
 ```
 
 ## Key Rules

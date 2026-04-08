@@ -11,6 +11,12 @@ source: "https://github.com/ksgisang/awt-skill"
 
 AWT gives AI coding tools the ability to see and interact with web applications through a real browser. Your AI designs YAML test scenarios; AWT executes them with Playwright.
 
+## When to Use
+
+- You need AI-assisted end-to-end testing through a real browser with declarative YAML scenarios.
+- The test flow depends on visual matching, OCR, or platform auto-detection instead of stable DOM selectors.
+- You want an E2E toolchain that can both execute tests and explain failures for AI coding workflows.
+
 ## What works now
 - YAML scenarios → Playwright with human-like interaction
 - Visual matching: OpenCV template + OCR (no CSS selectors needed)

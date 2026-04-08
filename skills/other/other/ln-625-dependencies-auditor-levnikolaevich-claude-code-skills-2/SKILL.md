@@ -1,7 +1,7 @@
 ---
 name: ln-625-dependencies-auditor
 description: "Checks outdated packages, unused deps, reinvented wheels, CVE/CVSS vulnerability scan. Use when auditing dependencies."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_unused_exports, mcp__hex-graph__find_references
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__audit_workspace, mcp__hex-graph__find_references
 license: MIT
 ---
 
@@ -15,7 +15,6 @@ Specialized worker auditing dependency management, code reuse, and security vuln
 
 ## Purpose & Scope
 
-- **Worker in ln-620 coordinator pipeline** (full audit mode)
 - **Worker in ln-760 security-setup pipeline** (vulnerabilities_only mode)
 - Audit **dependencies and reuse** (Categories 7+8: Medium Priority)
 - Check outdated packages, unused deps, wheel reinvention, **CVE vulnerabilities**
@@ -27,7 +26,7 @@ Specialized worker auditing dependency management, code reuse, and security vuln
 |-------|--------|---------|-------------|
 | mode | `full` / `vulnerabilities_only` | `full` | `full` = all 5 checks, `vulnerabilities_only` = only CVE scan |
 
-## Inputs (from Coordinator)
+## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
@@ -48,7 +47,7 @@ Receives `contextStore` with tech stack, package manifest paths, codebase root, 
    - Vulnerability: read code -- is the vulnerable API actually called in this project?
 4) Collect findings
 5) Calculate score
-6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/625-dependencies.md` in single Write call
+6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/ln-625--global.md` in single Write call
 7) **Return Summary:** Return minimal summary to coordinator
 
 ---
@@ -155,15 +154,15 @@ Receives `contextStore` with tech stack, package manifest paths, codebase root, 
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/625-dependencies.md` with `category: "Dependencies & Reuse"` and checks: outdated_packages, unused_deps, available_natives, custom_implementations, vulnerability_scan.
+Write report to `{output_dir}/ln-625--global.md` with `category: "Dependencies & Reuse"` and checks: outdated_packages, unused_deps, available_natives, custom_implementations, vulnerability_scan.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/625-dependencies.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-625--global.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -194,7 +193,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] All applicable checks completed (5 for full, 1 for vulnerabilities_only)
 - [ ] Findings collected with severity, location, effort, fix_type, recommendation
 - [ ] Score calculated per `shared/references/audit_scoring.md`
-- [ ] Report written to `{output_dir}/625-dependencies.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-625--global.md` (atomic single Write call)
 - [ ] Summary written per contract
 
 ---

@@ -44,7 +44,7 @@ Component summary contract:
 ```
 ln-100-documents-pipeline (L1 Top Orchestrator - this skill)
 |- ln-110-project-docs-coordinator (L2 Coordinator)
-|  |- ln-111-root-docs-creator (L3 Worker) -> 6 docs
+|  |- ln-111-root-docs-creator (L3 Worker) -> 5 docs
 |  |- ln-112-project-core-creator (L3 Worker) -> 3 docs
 |  |- ln-113-backend-docs-creator (L3 Worker) -> 2 conditional
 |  |- ln-114-frontend-docs-creator (L3 Worker) -> 1 conditional
@@ -205,7 +205,7 @@ The skill follows a 5-phase orchestration workflow: **Legacy Migration (optional
 
 1. **Pre-flight Check** (scan existing documentation):
    - Use Glob tool to check all potential files:
-     - **Root docs** (6 files): `AGENTS.md`, `CLAUDE.md`, `docs/README.md`, `docs/documentation_standards.md`, `docs/principles.md`, `docs/tools_config.md`
+     - **Root docs** (5 files): `AGENTS.md`, `CLAUDE.md`, `docs/README.md`, `docs/documentation_standards.md`, `docs/principles.md`
      - **Reference structure** (5 items): `docs/reference/README.md`, `docs/reference/adrs/`, `docs/reference/guides/`, `docs/reference/manuals/`, `docs/reference/research/`
      - **Tasks docs** (2 files): `docs/tasks/README.md`, `docs/tasks/kanban_board.md`
      - **Project docs** (up to 8 files): `docs/project/requirements.md`, `architecture.md`, `tech_stack.md`, `api_spec.md`, `database_schema.md`, `design_guidelines.md`, `infrastructure.md`, `runbook.md`
@@ -222,7 +222,7 @@ The skill follows a 5-phase orchestration workflow: **Legacy Migration (optional
      ```
 
 2. Show user what will be created:
-   - Root + Project documentation (`AGENTS.md` + `CLAUDE.md` + `docs/README.md` + `documentation_standards.md` + `principles.md` + `tools_config.md` + `docs/project/` via ln-110-project-docs-coordinator)
+   - Root + Project documentation (`AGENTS.md` + `CLAUDE.md` + `docs/README.md` + `documentation_standards.md` + `principles.md` + `docs/project/` via ln-110-project-docs-coordinator)
    - Reference structure (docs/reference/ via ln-120-reference-docs-creator)
    - Task management docs (docs/tasks/ via ln-130-tasks-docs-creator)
    - Test documentation (tests/ via ln-140-test-docs-creator - optional)
@@ -246,12 +246,12 @@ The skill follows a 5-phase orchestration workflow: **Legacy Migration (optional
 - **Invocation**: `Skill(skill: "ln-110-project-docs-coordinator")` -> AUTOMATIC
 - **Input**: Pass `LEGACY_CONTENT` from Phase 0 (if migration was performed)
 - **Behavior**: Coordinator gathers context ONCE, then delegates to 5 L3 workers:
-  - ln-111-root-docs-creator -> 6 root docs (uses LEGACY_CONTENT.legacy_principles if available)
+  - ln-111-root-docs-creator -> 5 root docs (uses LEGACY_CONTENT.legacy_principles if available)
   - ln-112-project-core-creator -> 3 core docs (uses LEGACY_CONTENT.legacy_architecture, legacy_requirements, legacy_tech_stack)
   - ln-113-backend-docs-creator -> 2 conditional (uses LEGACY_CONTENT.legacy_api, legacy_database)
   - ln-114-frontend-docs-creator -> 1 conditional (if hasFrontend)
   - ln-115-devops-docs-creator -> 2 docs: 1 always + 1 conditional (uses LEGACY_CONTENT.legacy_runbook, legacy_infrastructure)
-- **Output**: Root docs (`AGENTS.md` + `CLAUDE.md` + `docs/README.md` + `docs/documentation_standards.md` + `docs/principles.md` + `docs/tools_config.md`) + Project docs (`docs/project/requirements.md`, `architecture.md`, `tech_stack.md`, `infrastructure.md` + conditional: `api_spec.md`, `database_schema.md`, `design_guidelines.md`, `runbook.md`)
+- **Output**: Root docs (`AGENTS.md` + `CLAUDE.md` + `docs/README.md` + `docs/documentation_standards.md` + `docs/principles.md`) + Project docs (`docs/project/requirements.md`, `architecture.md`, `tech_stack.md`, `infrastructure.md` + conditional: `api_spec.md`, `database_schema.md`, `design_guidelines.md`, `runbook.md`)
 - **Store**: Save `context_store` from ln-110 result (contains TECH_STACK for ln-120)
 - **Validation**: Each L3 worker validates output (SCOPE, metadata markers, top sections, Maintenance)
 - **Verify**: All documents exist before continuing
@@ -277,7 +277,7 @@ The skill follows a 5-phase orchestration workflow: **Legacy Migration (optional
 - **Validation**: ln-140 validates output in Phase 2/3
 - **Skip**: If "no" -> can run ln-140-test-docs-creator later manually
 
-**2f. Extract Skills from Documentation (Optional)**:
+**2e. Extract Skills from Documentation (Optional)**:
 - **Condition**: User approved skill extraction in Phase 1, or invoked manually later
 - **Invocation**: `Skill(skill: "ln-160-docs-skill-extractor")` -> AUTOMATIC
 - **Input**: All docs created by ln-110 through ln-140
@@ -695,7 +695,7 @@ Before completing work, verify ALL checkpoints:
 - [ ] Test docs preference captured: "Include test documentation? (yes/no)"
 
 **Coordinator + Workers Invoked Sequentially (Phase 2):**
-- [ ] ln-110-project-docs-coordinator invoked -> Output verified: Root docs (`AGENTS.md` + `CLAUDE.md` + `docs/README.md` + `docs/documentation_standards.md` + `docs/principles.md` + `docs/tools_config.md`) + Project docs (`docs/project/requirements.md`, `architecture.md`, `tech_stack.md` + conditional 3-7 files)
+- [ ] ln-110-project-docs-coordinator invoked -> Output verified: Root docs (`AGENTS.md` + `CLAUDE.md` + `docs/README.md` + `docs/documentation_standards.md` + `docs/principles.md`) + Project docs (`docs/project/requirements.md`, `architecture.md`, `tech_stack.md` + conditional 3-7 files)
 - [ ] ln-120-reference-docs-creator invoked -> Output verified: `docs/reference/README.md` + directories (adrs/, guides/, manuals/, research/) + justified ADRs/Guides/Manuals based on TECH_STACK
 - [ ] ln-130-tasks-docs-creator invoked -> Output verified: `docs/tasks/README.md` + optionally `kanban_board.md`
 - [ ] ln-140-test-docs-creator invoked (if enabled) -> Output verified: `tests/README.md`
@@ -727,7 +727,7 @@ Before completing work, verify ALL checkpoints:
 **Error Handling (if applicable):**
 - [ ] If any worker failed: User notified which worker failed, error message shown, manual invocation recommended, partial progress listed
 
-**Output:** Complete documentation system (`AGENTS.md` + `CLAUDE.md` + docs/ with README.md, documentation_standards.md, principles.md, tools_config.md + optionally tests/) with global cleanup (no duplicates, orphaned files reported, consolidated knowledge, validated cross-links)
+**Output:** Complete documentation system (`AGENTS.md` + `CLAUDE.md` + docs/ with README.md, documentation_standards.md, principles.md + optionally tests/) with global cleanup (no duplicates, orphaned files reported, consolidated knowledge, validated cross-links)
 
 ---
 

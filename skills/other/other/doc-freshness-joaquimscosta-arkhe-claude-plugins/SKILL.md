@@ -7,7 +7,7 @@ description: >
   outdated versions). Use when checking "doc freshness", "stale docs", "documentation drift",
   "broken links", "outdated documentation", "doc accuracy", "docs out of date", "doc audit",
   "doc health", or "verify documentation".
-argument-hint: scan | check <path> | links | drift <path> | cross-doc | claude-md | onboard | report
+argument-hint: scan | check <path> | links | drift <path> | cross-doc | claude-md | onboard | report | setup
 allowed-tools: Read, Glob, Grep, Bash, Write
 ---
 
@@ -50,6 +50,7 @@ Parse from `$ARGUMENTS`:
 | `report` | Persist structured freshness report to `{output_dir}/` |
 | `claude-md` | CLAUDE.md structural drift (plugin counts, components, versions) |
 | `onboard` | Suggest/apply tracking frontmatter to docs that need it |
+| `setup` | Scaffold GitHub Actions workflow for docs-health-action CI |
 | _(none)_ | Full scan (same as `scan`) |
 
 ## Scanning Tiers
@@ -116,6 +117,25 @@ Same as `scan` but write output to `{output_dir}/{YYYY-MM-DD}-freshness.md`.
 2. Uses whitelist of known-maintained docs (READMEs, custom docs)
 3. Generates minimal `title` + `last_updated` frontmatter from git history
 4. On user approval, apply with `--apply` flag
+
+### `setup`
+
+Scaffold a GitHub Actions workflow that runs `joaquimscosta/docs-health-action@v1` on every PR.
+
+1. Check if `.github/workflows/` exists — create if needed
+2. Check if a docs-health workflow already exists — warn and offer to overwrite/skip
+3. Ask user which checks to enable (use `AskUserQuestion` with multiSelect):
+   - `links` (broken internal links and anchors)
+   - `versions` (version references vs ground truth files)
+   - `staleness` (git-based documentation age)
+   - `claude-md` (CLAUDE.md structural drift — Claude Code projects only)
+   - `cross-doc` (cross-document version conflicts)
+   - `frontmatter` (missing tracking frontmatter)
+4. Ask user for failure policy: `errors` (default), `warnings`, or `none` (advisory)
+5. Generate `.github/workflows/docs-health.yml` from template
+6. Show the generated file and confirm before writing
+
+See [WORKFLOW.md](WORKFLOW.md) § `setup` for the full template.
 
 ## Automation Integration
 

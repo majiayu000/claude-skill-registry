@@ -7,6 +7,12 @@ source: community
 
 # Three.js Loaders
 
+## When to Use
+
+- You need to load models, textures, HDR assets, or other external resources in Three.js.
+- The task involves `GLTFLoader`, `TextureLoader`, loading progress, or async asset orchestration.
+- You are managing scene assets rather than authoring geometry or shaders directly.
+
 ## Quick Start
 
 ```javascript

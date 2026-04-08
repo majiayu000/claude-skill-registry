@@ -16,6 +16,12 @@ argument-hint: "[task description]"
 
 Use this skill when you need to:
 
+## When to Use
+
+- You need video or audio perception, indexing, search, or timeline editing from files, URLs, desktop sessions, or live streams.
+- The task involves timestamps, searchable evidence, subtitles, clips, overlays, or real-time monitoring alerts.
+- You want one workflow that combines ingestion, understanding, retrieval, and media actions.
+
 ## 1) Desktop Perception
 - Start/stop a **desktop session** capturing **screen, mic, and system audio**
 - Stream **live context** and store **episodic session memory**

@@ -33,8 +33,8 @@ Read the file directly.
 
 ### If a search term is provided (address, padrón number, etc.)
 Search for matching zoning analysis reports in these locations:
-- `~/Documents/Alpaca Labs/Estudio Local/Reports/` (Uruguay)
-- `~/Documents/Alpaca Labs/` (NYC)
+- `./` (Uruguay)
+- `./` (NYC)
 - Current working directory
 
 Use Glob + Grep to find reports matching the search term. If multiple matches, show the options and ask the user to pick one.
@@ -191,9 +191,9 @@ If `SCENARIOS` is populated (multi-lot analysis with apareadas, unified, etc.):
 
 | File | Pattern |
 |------|---------|
-| `~/Documents/Alpaca Labs/zoning-envelope-250-hudson-st.html` | NYC exact polygon, contextual base+tower |
-| `~/Documents/Alpaca Labs/Estudio Local/Reports/zoning-envelope-padron-444-san-carlos.html` | Uruguay exact polygon, single lot, flat height cap |
-| `~/Documents/Alpaca Labs/Estudio Local/Reports/zoning-envelope-padrones-4096-4119-buenos-aires.html` | Multi-lot, 4 scenario toggles |
+| `./zoning-envelope-250-hudson-st.html` | NYC exact polygon, contextual base+tower |
+| `./zoning-envelope-padron-444-san-carlos.html` | Uruguay exact polygon, single lot, flat height cap |
+| `./zoning-envelope-padrones-4096-4119-buenos-aires.html` | Multi-lot, 4 scenario toggles |
 
 Use these as the code baseline. Copy utility functions verbatim from the Padrón 444 implementation (cleanest version).
 

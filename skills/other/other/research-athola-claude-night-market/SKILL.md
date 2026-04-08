@@ -1,12 +1,6 @@
 ---
 name: research
-description: >-
-  Orchestrate a multi-source research session across code,
-  discourse, academic, and TRIZ channels. Classifies the
-  domain, dispatches parallel research agents, synthesizes
-  findings, and generates a formatted report. Use when the
-  user invokes /tome:research or asks to research a topic
-  in depth. Do not use for simple web searches.
+description: 'Multi-source research across code, discourse, and academic channels.'
 version: 1.7.1
 alwaysApply: false
 category: orchestration

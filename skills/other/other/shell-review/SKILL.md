@@ -88,7 +88,8 @@ find . -not -path "*/.venv/*" -not -path "*/__pycache__/*" \
   -not -path "*/node_modules/*" -not -path "*/.git/*" \
   -name "*.sh" -type f | head -20
 # Check shebangs
-grep -l "^#!/" scripts/ hooks/ 2>/dev/null | head -10
+rg -l "^#!/" scripts/ hooks/ 2>/dev/null | head -10
+# fallback: grep -l "^#!/" scripts/ hooks/ 2>/dev/null | head -10
 ```
 
 Document:

@@ -86,7 +86,7 @@ For monorepos with **full project** scope: ask which subprojects to include (def
 
 ### Harness mode detection
 
-If the system prompt contains `HARNESS_MODE_ACTIVE`, read `$CLAUDE_PLUGIN_ROOT/references/harness-mode.md` and follow its single-iteration execution protocol. The reference covers progress file reading, state initialization, and step overrides (including the Step 8 apply/output protocol). Then proceed directly to Step 3 — skip user confirmation.
+If the system prompt contains `HARNESS_MODE_ACTIVE`, read `$CLAUDE_PLUGIN_ROOT/references/harness-mode.md` and follow its single-iteration execution protocol. The reference covers progress file reading, state initialization, scope and file-list rules, and step overrides (including the Step 8 apply/output protocol). Then proceed through Step 1's scope resolution (branch-diff path only — no `AskUserQuestion`), Step 3, and Step 4 — skip only the Step 2 deep-mode confirmation. If `scope_files.current` is non-empty in the progress file, treat it as the pre-resolved scope (the harness pre-populated it from the feature-branch diff) and skip the Step 1 scope resolution entirely.
 
 If `HARNESS_MODE_ACTIVE` is NOT in the system prompt, continue with the standard interactive flow below.
 
@@ -137,6 +137,7 @@ Apply the "Submodule Exclusion" rule from `$CLAUDE_PLUGIN_ROOT/skills/init/refer
 ### Map analysis areas
 
 Within the chosen scope (Step 1), identify source directories. Skip non-source:
+
 - **Dot-directories**: `.git`, `.github`, `.vscode`, `.idea`, `.claude`, `.husky`
 - **Dependencies**: `node_modules`, `vendor`, `.venv`, `venv`, `env`
 - **Build output**: `dist`, `build`, `out`, `target`, `bin`, `obj`, `coverage`
@@ -147,6 +148,8 @@ Also skip **generated source files** that should never be manually edited: `*.g.
 
 **Single project:** Group files by top-level source directory.
 **Monorepo:** Organize by subproject, then by source directory within each.
+
+**Harness mode:** If `scope_files.current` from the progress file is non-empty, derive analysis areas from the unique parent directories of those files instead of scanning the whole project — this keeps the refactor pass focused on the feature branch's actual footprint.
 
 ### Prioritize by git activity
 

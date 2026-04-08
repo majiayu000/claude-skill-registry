@@ -1,7 +1,7 @@
 ---
 name: ln-640-pattern-evolution-auditor
 description: "Audits architectural patterns against best practices, maintains patterns catalog with compliance scores. Use when auditing pattern evolution."
-allowed-tools: Read, Grep, Glob, Bash, WebFetch, WebSearch, mcp__Ref, mcp__context7, Skill, mcp__hex-graph__index_project, mcp__hex-graph__search_symbols, mcp__hex-graph__find_implementations
+allowed-tools: Read, Grep, Glob, Bash, WebFetch, WebSearch, mcp__Ref, mcp__context7, Skill, mcp__hex-graph__index_project, mcp__hex-graph__find_symbols, mcp__hex-graph__find_implementations
 license: MIT
 ---
 
@@ -95,7 +95,7 @@ All delegations use Agent with `subagent_type: "general-purpose"`. Keep Phase 4 
 
 **MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
 
-### Phase 1a: Baseline Detection
+### Baseline Detection
 
 ```
 1. Load docs/project/patterns_catalog.md
@@ -123,9 +123,9 @@ All delegations use Agent with `subagent_type: "general-purpose"`. Keep Phase 4 
 4. **Index codebase graph (if available):** IF `hex-graph` MCP server is available:
    - `index_project(path=codebase_root)` -- builds/refreshes code graph
    - Add `graph_indexed: true` to contextStore for workers (ln-641 uses find_implementations, ln-642 uses trace_paths/find_references)
-   - **Graph-assisted pattern discovery:** `search_symbols(query=GoF_suffix, kind="class")` -- find Factory*, Builder*, Strategy* etc. by structure, not just name. `find_implementations(symbol)` -- discover all implementations of abstract/interface classes.
+  - **Graph-assisted pattern discovery:** `find_symbols(query=GoF_suffix, kind="class")` -- name-based discovery for classes like Factory*, Builder*, Strategy*. `find_implementations(symbol)` -- discover concrete implementations after exact symbol selection. Structural pattern detection still needs grep/manual verification.
 
-### Phase 1b: Adaptive Discovery
+### Adaptive Discovery
 
 **MANDATORY READ:** Load `references/pattern_library.md` -- use "Discovery Heuristics" section.
 
@@ -151,7 +151,7 @@ Predefined patterns are a **seed, not a ceiling**. Discover project-specific pat
   -> Add to catalog "Discovered Patterns (Adaptive)" section
 ```
 
-### Phase 1c: Pattern Recommendations
+### Pattern Recommendations
 
 Suggest patterns that COULD improve architecture (advisory, NOT scored).
 
@@ -164,7 +164,7 @@ Suggest patterns that COULD improve architecture (advisory, NOT scored).
 -> Add to catalog "Pattern Recommendations" section
 ```
 
-### Phase 1d: Applicability Verification
+### Applicability Verification
 
 Verify each detected pattern is actually implemented, not just a keyword false positive.
 
@@ -231,40 +231,28 @@ Use the shared domain discovery pattern to set `domain_mode` and `all_domains`. 
 
 ### Phase 4: Layer Boundary + API Contract + Dependency Graph Audit
 
+Managed summary artifact pattern: `.hex-skills/runtime-artifacts/runs/{parent_run_id}/audit-worker/{worker}--{identifier}.json`.
+
 ```javascript
 IF domain_mode == "domain-aware":
   FOR EACH domain IN all_domains:
-    domain_context = {
-      ...contextStore,
-      domain_mode: "domain-aware",
-      current_domain: { name: domain.name, path: domain.path },
-      summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/" + worker + "-" + domain.name + ".json"
-    }
     FOR EACH worker IN [ln-642, ln-643, ln-644, ln-645, ln-646, ln-647]:
-      Agent(description: "Audit " + domain.name + " via " + worker,
-           prompt: "Execute audit worker.
-
-Step 1: Invoke worker:
-  Skill(skill: \"" + worker + "\")
-
-CONTEXT:
-" + JSON.stringify(domain_context),
-           subagent_type: "general-purpose")
+      identifier = domain.name
+      childRunId = parent_run_id + "--" + worker + "--" + identifier
+      childSummaryArtifactPath = ".hex-skills/runtime-artifacts/runs/" + parent_run_id + "/audit-worker/" + worker + "--" + identifier + ".json"
+      node shared/scripts/audit-worker-runtime/cli.mjs start --skill {worker} --identifier {identifier} --manifest-file .hex-skills/audit/{worker}--{identifier}_manifest.json --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}
+      node shared/scripts/audit-runtime/cli.mjs checkpoint --run-id {parent_run_id} --phase PHASE_4_BOUNDARY_AUDITS --payload '{"child_run":{"worker":"{worker}","identifier":"{identifier}","run_id":"{childRunId}","summary_artifact_path":"{childSummaryArtifactPath}"}}'
+      Skill(skill: "{worker}", args: "--run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}")
+      node shared/scripts/audit-runtime/cli.mjs record-worker-result --run-id {parent_run_id} --payload-file {childSummaryArtifactPath}
 ELSE:
   FOR EACH worker IN [ln-642, ln-643, ln-644, ln-645, ln-646, ln-647]:
-    worker_context = {
-      ...contextStore,
-      summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/" + worker + "-global.json"
-    }
-    Agent(description: "Pattern evolution audit via " + worker,
-         prompt: "Execute audit worker.
-
-Step 1: Invoke worker:
-  Skill(skill: \"" + worker + "\")
-
-CONTEXT:
-" + JSON.stringify(worker_context),
-         subagent_type: "general-purpose")
+    identifier = "global"
+    childRunId = parent_run_id + "--" + worker + "--" + identifier
+    childSummaryArtifactPath = ".hex-skills/runtime-artifacts/runs/" + parent_run_id + "/audit-worker/" + worker + "--" + identifier + ".json"
+    node shared/scripts/audit-worker-runtime/cli.mjs start --skill {worker} --identifier {identifier} --manifest-file .hex-skills/audit/{worker}--{identifier}_manifest.json --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}
+    node shared/scripts/audit-runtime/cli.mjs checkpoint --run-id {parent_run_id} --phase PHASE_4_BOUNDARY_AUDITS --payload '{"child_run":{"worker":"{worker}","identifier":"{identifier}","run_id":"{childRunId}","summary_artifact_path":"{childSummaryArtifactPath}"}}'
+    Skill(skill: "{worker}", args: "--run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}")
+    node shared/scripts/audit-runtime/cli.mjs record-worker-result --run-id {parent_run_id} --payload-file {childSummaryArtifactPath}
 
 # Apply layer deductions from ln-642 return values (score + issue counts)
 # Detailed violations read from files in Phase 6
@@ -276,20 +264,13 @@ CONTEXT:
 # ln-641 stays GLOBAL (patterns are cross-cutting, not per-domain)
 # Only VERIFIED patterns from Phase 1d (skip EXCLUDED)
 FOR EACH pattern IN catalog WHERE pattern.status == "VERIFIED":
-  worker_context = {
-    ...contextStore,
-    pattern: pattern,
-    summaryArtifactPath: ".hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/ln-641-" + slug(pattern.name) + ".json"
-  }
-  Agent(description: "Analyze " + pattern.name + " via ln-641",
-       prompt: "Execute audit worker.
-
-Step 1: Invoke worker:
-  Skill(skill: \"ln-641-pattern-analyzer\")
-
-CONTEXT:
-" + JSON.stringify(worker_context),
-       subagent_type: "general-purpose")
+  identifier = slug(pattern.name)
+  childRunId = parent_run_id + "--ln-641--" + identifier
+  childSummaryArtifactPath = ".hex-skills/runtime-artifacts/runs/" + parent_run_id + "/audit-worker/ln-641--" + identifier + ".json"
+  node shared/scripts/audit-worker-runtime/cli.mjs start --skill ln-641 --identifier {identifier} --manifest-file .hex-skills/audit/ln-641--{identifier}_manifest.json --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}
+  node shared/scripts/audit-runtime/cli.mjs checkpoint --run-id {parent_run_id} --phase PHASE_5_PATTERN_ANALYSIS --payload '{"child_run":{"worker":"ln-641","identifier":"{identifier}","run_id":"{childRunId}","summary_artifact_path":"{childSummaryArtifactPath}"}}'
+  Skill(skill: "ln-641-pattern-analyzer", args: "--run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}")
+  node shared/scripts/audit-runtime/cli.mjs record-worker-result --run-id {parent_run_id} --payload-file {childSummaryArtifactPath}
 ```
 
 **Worker Output Contract (file-based):**
@@ -300,13 +281,13 @@ All workers write reports to `{output_dir}/` and write JSON summaries to `summar
 
 | Worker | Return Format | File |
 |--------|--------------|------|
-| ln-641 | `Score: X.X/10 (C:N K:N Q:N I:N) \| Issues: N` | `641-pattern-{slug}.md` |
-| ln-642 | `Score: X.X/10 \| Issues: N (C:N H:N M:N L:N)` | `642-layer-boundary[-{domain}].md` |
-| ln-643 | `Score: X.X/10 (C:N K:N Q:N I:N) \| Issues: N` | `643-api-contract[-{domain}].md` |
-| ln-644 | `Score: X.X/10 \| Issues: N (C:N H:N M:N L:N)` | `644-dep-graph[-{domain}].md` |
-| ln-645 | `Score: X.X/10 \| Issues: N (C:N H:N M:N L:N)` | `645-open-source-replacer[-{domain}].md` |
-| ln-646 | `Score: X.X/10 \| Issues: N (C:N H:N M:N L:N)` | `646-structure[-{domain}].md` |
-| ln-647 | `Score: X.X/10 \| Issues: N (C:N H:N M:N L:N)` | `647-env-config[-{domain}].md` |
+| ln-641 | `Score: X.X/10 (C:N K:N Q:N I:N) \| Issues: N` | `ln-641--{slug}.md` |
+| ln-642 | `Score: X.X/10 \| Issues: N (C:N H:N M:N L:N)` | `ln-642--{identifier}.md` |
+| ln-643 | `Score: X.X/10 (C:N K:N Q:N I:N) \| Issues: N` | `ln-643--{identifier}.md` |
+| ln-644 | `Score: X.X/10 \| Issues: N (C:N H:N M:N L:N)` | `ln-644--{identifier}.md` |
+| ln-645 | `Score: X.X/10 \| Issues: N (C:N H:N M:N L:N)` | `ln-645--{identifier}.md` |
+| ln-646 | `Score: X.X/10 \| Issues: N (C:N H:N M:N L:N)` | `ln-646--{identifier}.md` |
+| ln-647 | `Score: X.X/10 \| Issues: N (C:N H:N M:N L:N)` | `ln-647--{identifier}.md` |
 
 Coordinator parses scores/counts from JSON summaries. Reads files only for cross-domain aggregation (Phase 6) and report assembly (Phase 8).
 
@@ -315,7 +296,7 @@ Coordinator parses scores/counts from JSON summaries. Reads files only for cross
 ```
 IF domain_mode == "domain-aware":
   # Step 1: Read DATA-EXTENDED from ln-642 files
-  FOR EACH file IN Glob("{output_dir}/642-layer-boundary-*.md"):
+  FOR EACH file IN Glob("{output_dir}/ln-642--*.md"):
     Read file -> extract <!-- DATA-EXTENDED ... --> JSON + Findings table
   # Group findings by issue type across domains
   FOR EACH issue_type IN unique(ln642_findings.issue):
@@ -329,7 +310,7 @@ IF domain_mode == "domain-aware":
       })
 
   # Step 2: Read DATA-EXTENDED from ln-643 files
-  FOR EACH file IN Glob("{output_dir}/643-api-contract-*.md"):
+  FOR EACH file IN Glob("{output_dir}/ln-643--*.md"):
     Read file -> extract <!-- DATA-EXTENDED ... --> JSON (issues with principle + domain)
   # Group findings by rule across domains
   FOR EACH rule IN unique(ln643_issues.principle):
@@ -343,7 +324,7 @@ IF domain_mode == "domain-aware":
       })
 
   # Step 3: Read DATA-EXTENDED from ln-644 files
-  FOR EACH file IN Glob("{output_dir}/644-dep-graph-*.md"):
+  FOR EACH file IN Glob("{output_dir}/ln-644--*.md"):
     Read file -> extract <!-- DATA-EXTENDED ... --> JSON (cycles, sdp_violations)
   # Cross-domain cycles
   FOR EACH cycle IN ln644_cycles:
@@ -357,7 +338,7 @@ IF domain_mode == "domain-aware":
       })
 
   # Step 4: Read DATA-EXTENDED from ln-645 files
-  FOR EACH file IN Glob("{output_dir}/645-open-source-replacer-*.md"):
+  FOR EACH file IN Glob("{output_dir}/ln-645--*.md"):
     Read file -> extract <!-- DATA-EXTENDED ... --> JSON (replacements array)
   # Group findings by goal/alternative across domains
   FOR EACH goal IN unique(ln645_replacements.goal):
@@ -371,7 +352,7 @@ IF domain_mode == "domain-aware":
       })
 
   # Step 5: Read DATA-EXTENDED from ln-646 files
-  FOR EACH file IN Glob("{output_dir}/646-structure-*.md"):
+  FOR EACH file IN Glob("{output_dir}/ln-646--*.md"):
     Read file -> extract <!-- DATA-EXTENDED ... --> JSON
   # Group findings by dimension across domains
   FOR EACH dimension IN ["junk_drawers", "naming_violations"]:
@@ -385,7 +366,7 @@ IF domain_mode == "domain-aware":
       })
 
   # Step 6: Read DATA-EXTENDED from ln-647 files
-  FOR EACH file IN Glob("{output_dir}/647-env-config-*.md"):
+  FOR EACH file IN Glob("{output_dir}/ln-647--*.md"):
     Read file -> extract <!-- DATA-EXTENDED ... --> JSON
   # Group env sync issues across domains
   FOR EACH issue_type IN ["missing_from_example", "dead_in_example", "default_desync"]:
@@ -551,6 +532,12 @@ reuse_opportunity_score = parse_score(ln645_return)  # 0-10, NOT in architecture
 
 ## Phase 10: Append Results Log
 
+Before appending the results log, record the coordinator runtime summary:
+
+```bash
+node shared/scripts/audit-runtime/cli.mjs record-summary --run-id {parent_run_id} --payload '{"schema_version":"1.0.0","summary_kind":"audit-coordinator","run_id":"{parent_run_id}","identifier":"{runtime_identifier}","producer_skill":"ln-640","produced_at":"{iso_timestamp}","payload":{"status":"completed","final_result":"AUDIT_COMPLETE","report_path":"docs/project/patterns_catalog.md","worker_count":{active_worker_count},"issues_total":{issues_total},"severity_counts":{"critical":{critical_count},"high":{high_count},"medium":{medium_count},"low":{low_count}},"warnings":[]}}'
+```
+
 **MANDATORY READ:** Load `shared/references/results_log_pattern.md`
 
 Append one row to `docs/project/.audit/results_log.md` with: Skill=`ln-640`, Metric=`architecture_health_score`, Scale=`0-100`, Score from Phase 9 output. Calculate Delta vs previous `ln-640` row. Create file with header if missing. Rolling window: max 50 entries.
@@ -609,7 +596,7 @@ Skill type: `review-coordinator` (workers only). Run after all phases complete. 
 - Project structure audit: `../ln-646-project-structure-auditor/SKILL.md`
 - Env config audit: `../ln-647-env-config-auditor/SKILL.md`
 - **MANDATORY READ:** `shared/references/research_tool_fallback.md`
-- **MANDATORY READ:** `shared/references/tools_config_guide.md`
+- **MANDATORY READ:** `shared/references/environment_state_contract.md`
 - **MANDATORY READ:** `shared/references/storage_mode_detection.md`
 
 ---

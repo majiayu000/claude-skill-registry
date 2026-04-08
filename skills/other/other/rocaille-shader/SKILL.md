@@ -1,7 +1,7 @@
 ---
 name: rocaille-shader
-description: Generate Rocaille-style domain warping shaders with sinusoidal displacement. This skill should be used when building WebGL/GLSL visualizations, shader art, procedural backgrounds, or adding organic swirling light effects. Creates characteristic flowing patterns through iterative coordinate warping using the formula v += sin(v.yx + t) / amplitude.
-argument-hint: [warp-count] [color-mode] [format]
+description: Generate Rocaille-style domain warping shaders with sinusoidal displacement, and mouse-reactive liquid logo effects on image/SVG textures. This skill should be used when building WebGL/GLSL visualizations, shader art, procedural backgrounds, organic swirling light effects, or when applying a rippling, bending, chromatically-refracting liquid hover effect to a logo or hero image. Creates characteristic flowing patterns through iterative coordinate warping using the formula v += sin(v.yx + t) / amplitude, and extends the same domain-warp family to texture-sampling pointer-driven effects.
+argument-hint: [--mode rocaille|liquid-logo] [warp-count] [color-mode] [format]
 ---
 
 # Rocaille Shader Skill
@@ -66,6 +66,8 @@ Pre-built templates available in `assets/templates/`:
 | `vanilla-webgl.html` | Pure WebGL2, no dependencies |
 | `p5js.js` | P5.js shader mode integration |
 | `interactive.html` | Full demo with controls |
+| `liquid-logo.glsl` | Shadertoy liquid-logo reference (reads iChannel0) |
+| `liquid-logo.html` | Standalone liquid-logo runtime (drop `logo.png` beside it, or pass `?logo=…`) |
 
 ## Implementation Patterns
 
@@ -125,12 +127,51 @@ vec3 color = vec3(d * 0.2, d * 0.05, d * 0.3);
 vec3 color = mix(vec3(0.1, 0.2, 0.8), vec3(1.0, 0.3, 0.1), d);
 ```
 
+## Liquid Logo Mode
+
+Apply the domain-warp family to a texture instead of a procedural distance
+field. A pointer-driven radial warp + chromatic aberration makes a static
+image or SVG logo ripple, bend, and refract around the cursor, with an
+optional Lissajous idle breathing when the pointer is inactive. Use for
+hero sections, brand reveals, loading moments, or any hover state where
+the logo should feel alive.
+
+### Generate a self-contained HTML
+
+```bash
+python3 scripts/rocaille_generator.py \
+    --mode liquid-logo \
+    --input path/to/logo.svg \
+    --output liquid.html
+```
+
+The output embeds the image as a base64 data URI — the generated HTML is a
+single file with no external dependencies.
+
+### Tuning parameters
+
+| Flag | Default | Effect |
+|------|---------|--------|
+| `--distortion` | `0.40` | Peak UV pull toward the cursor |
+| `--radius` | `0.25` | Gaussian falloff radius (smaller = tighter ripple) |
+| `--decay` | `3.0` | Release decay rate (higher = snappier relax) |
+| `--chroma` | `0.015` | RGB-channel UV split magnitude |
+| `--idle` / `--no-idle` | on | Lissajous idle breathing when cursor is still |
+
+The runtime respects `prefers-reduced-motion` (halves distortion and idle
+amplitude) and pauses its RAF loop on `visibilitychange`, so the effect
+consumes zero GPU when the tab is hidden.
+
+For the shader math (radial Gaussian falloff, UV pull direction,
+cursor-aligned chromatic offset), see `references/liquid-logo.md`.
+
 ## Reference Documentation
 
 For deeper understanding:
 - `references/rocaille-complete.md` - Full 8-step shader breakdown
 - `references/domain-warping.md` - Theory from Inigo Quilez
 - `references/glsl-patterns.md` - Common GLSL patterns used
+- `references/liquid-logo.md` - Liquid logo math (falloff, pull, chromatic offset)
 
 ## Combining Effects
 
@@ -139,3 +180,17 @@ Layer with other techniques:
 - **Grain**: Add `fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453)`
 - **Vignette**: Multiply by `1.0 - length(uv) * 0.5`
 - **Chromatic aberration**: Sample RGB at slightly offset UVs
+
+## Attribution
+
+- **Rocaille domain-warp technique** — the core `v += sin(v.yx + t) / amplitude`
+  formula and the theory behind it come from [Inigo Quilez's domain warping
+  article](https://iquilezles.org/articles/warp/) (iq / Shadertoy).
+- **Liquid Logo mode** — inspired by [**LiquidLogo**](https://gustavwf.supply/product/liquidlogo)
+  by **Gustav WF** ([@gustavwf](https://x.com/gustavwf) / gustavwf.supply), a
+  free Framer component. The liquid-logo shader here is **reimplemented from
+  scratch** from first principles (radial Gaussian falloff, UV displacement,
+  cursor-aligned chromatic offset) — it is not a port of Gustav's code and
+  does not redistribute any of his files. If you want a drop-in Framer
+  component, get it directly from him; if you want a standalone HTML file or
+  a Shadertoy-compatible shader, this skill generates one.

@@ -1,11 +1,30 @@
 ---
 name: meshy
-description: "Generate 3D models via the Meshy API. Supports text-to-3D (preview + refine pipeline), image-to-3D, text-to-texture, task management, model downloads, and batch generation from JSON manifests. Use this skill when creating 3D assets from text prompts, converting images to 3D models, texturing existing models, running batch 3D generation pipelines, or checking Meshy account balance."
+description: "Generate 3D models from text or images via 5 providers: Meshy (text-to-3D, texturing, batch), fal.ai Hunyuan3D Pro (high-fidelity image-to-3D with PBR, $0.225), WaveSpeedAI Rapid (budget image-to-3D at $0.0225), Trellis 2 (poly count control), and Local Depth (free offline ONNX depth maps + mesh, from waydeeper). This skill should be used when creating 3D assets, converting images to 3D models, generating depth maps, generating GLB files, texturing existing models, running batch 3D pipelines, or previewing models in the GLB viewer."
 ---
 
-# Meshy 3D Model Generation
+# 3D Model Generation (Multi-Provider)
 
-Generate 3D models from text prompts, images, or apply textures to existing models via the Meshy API.
+Generate 3D models from text prompts, images, or apply textures to existing models. Four providers with different cost/quality tradeoffs.
+
+## Provider Selection
+
+| Provider | Script | Cost | Speed | Best for |
+|----------|--------|------|-------|----------|
+| **Meshy** (default) | `meshy_text_to_3d.py`, `meshy_image_to_3d.py` | 5-20 credits | 2-7 min | Text-to-3D, texturing, low-poly game assets, batch |
+| **fal.ai Hunyuan3D** | `fal_hunyuan3d.py` | $0.225 | ~2 min | High-fidelity image-to-3D with PBR, text-to-3D |
+| **WaveSpeedAI Rapid** | `wavespeed_rapid.py` | $0.0225 | ~1 min | Bulk iteration, concept validation (16x cheaper) |
+| **Trellis 2** | `trellis2.py` | 15-55 credits | 30s-4 min | Precise poly count control, geometry-only fast runs |
+| **Local Depth** | `depth_local.py` | Free | ~5s | Offline depth maps, local mesh gen, preprocessing |
+
+**Decision guide:**
+- Quick concept check → WaveSpeedAI ($0.02, fastest)
+- Production image-to-3D → fal.ai Hunyuan3D (best PBR quality)
+- Text-to-3D → Meshy (only provider with text prompt support + refine pipeline)
+- Specific poly budget → Trellis 2 (`--decimation 5000` for low-poly)
+- Batch generation → Meshy (`meshy_batch.py` with manifest)
+- Free offline depth/mesh → Local Depth (zero API cost, ONNX on-device)
+- Depth map as preprocessing → Local Depth + any cloud provider for texturing
 
 ## Prerequisites
 
@@ -175,24 +194,6 @@ Subcommands: `list`, `get`, `download`, `balance`. All accept `--json`.
 
 Per-model fields override `defaults`. Required per-model: `id`, `prompt`.
 
-## World War Watcher Integration
-
-```bash
-cd ~/Desktop/Programming/worldwarwatcher
-
-# Generate all 11 tactical models
-uv run ~/.claude/skills/meshy/scripts/meshy_batch.py \
-  scripts/models-manifest.json \
-  --output scripts/models-staging/ \
-  --quiet
-
-# DRACO compress and deploy to public/models/
-bash scripts/prepare-models.sh
-
-# Verify in dev server
-npm run dev
-```
-
 ## Credit Costs
 
 | Operation | Credits |
@@ -222,6 +223,33 @@ World War Watcher's `scripts/prepare-models.sh` automates this for all staged mo
 | `Task FAILED` | Check task error via `meshy_tasks.py get TASK_ID` |
 | `Timeout` | Increase `--timeout` (refine can take 10+ min) |
 | `No GLB URL` | Task may not be complete, or format unavailable |
+
+## Alternative Providers
+
+For full flags, API contracts, and credit costs, see the corresponding reference file:
+
+- **fal.ai Hunyuan3D** → `references/fal-hunyuan3d.md` (credential: `FAL_KEY`)
+- **WaveSpeedAI Rapid** → `references/wavespeed-rapid.md` (credential: `WAVESPEED_API_KEY`)
+- **Trellis 2** → `references/trellis2.md` (credential: `THREEDAI_API_KEY`)
+- **Local Depth** → `references/depth-local.md` (no credential needed — free, local ONNX inference)
+
+All three accept local file paths (auto base64-encoded) or URLs. Run any script with `--help` for flags.
+
+## GLB Viewer
+
+Museum-quality standalone Three.js viewer for previewing generated .glb models. Open in browser — no server needed.
+
+```bash
+# Open with a model URL
+open ~/.claude/skills/meshy/assets/glb-viewer.html?glb=https://cdn.example.com/model.glb
+
+# Or drag-and-drop a local .glb file onto the page
+open ~/.claude/skills/meshy/assets/glb-viewer.html
+```
+
+Features: 7-light PBR gallery rig, bloom/vignette post-processing, SMAA, auto-rotate with graceful pause, ground plane with shadow catcher.
+
+Keyboard: `D` download, `R` toggle rotation, `F` fullscreen.
 
 ## API Reference
 

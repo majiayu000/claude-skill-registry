@@ -11,9 +11,8 @@ license: MIT
 
 **Type:** L2 Domain Coordinator
 **Category:** 8XX Optimization
-**Parent:** ln-700-project-bootstrap
 
-Coordinates dependency upgrades by detecting package managers and delegating to appropriate L3 workers.
+Runtime-backed coordinator for cross-stack dependency upgrades. Detects package managers, delegates to one worker per manager, records machine-readable worker summaries, and emits a final coordinator summary.
 
 ---
 
@@ -21,166 +20,224 @@ Coordinates dependency upgrades by detecting package managers and delegating to 
 
 | Aspect | Details |
 |--------|---------|
-| **Input** | Detected stack from ln-700 |
-| **Output** | All dependencies upgraded to latest compatible versions |
+| **Input** | Project path plus optional upgrade policy |
+| **Output** | Aggregated dependency upgrade report with per-worker results |
 | **Workers** | ln-821 (npm), ln-822 (nuget), ln-823 (pip) |
+| **Runtime** | `.hex-skills/dependency/runtime/runs/{run_id}/` |
 
 ---
 
 ## Workflow
 
-**Phases:** Pre-flight → Detect → Security Audit → Delegate → Collect → Verify → Report
+**Phases:** Pre-flight -> Detect Package Managers -> Security Audit -> Delegate Upgrades -> Collect Results -> Verify Summary -> Report
 
 ---
 
-## Phase 0: Pre-flight Checks
+## Runtime Contract
 
-Verify project state before starting upgrade.
+**MANDATORY READ:** Load `shared/references/ci_tool_detection.md`
+**MANDATORY READ:** Load `shared/references/coordinator_runtime_contract.md`, `shared/references/dependency_runtime_contract.md`, `shared/references/coordinator_summary_contract.md`
+
+Runtime CLI:
+
+```bash
+node shared/scripts/dependency-runtime/cli.mjs start --identifier repo-deps --manifest-file <file>
+node shared/scripts/dependency-runtime/cli.mjs status --identifier repo-deps
+node shared/scripts/dependency-runtime/cli.mjs checkpoint --phase PHASE_3_DELEGATE_UPGRADES --payload '{...}'
+node shared/scripts/dependency-runtime/cli.mjs record-worker-result --payload '{...}'
+node shared/scripts/dependency-runtime/cli.mjs record-summary --payload '{...}'
+node shared/scripts/dependency-runtime/cli.mjs advance --to PHASE_4_COLLECT_RESULTS
+node shared/scripts/dependency-runtime/cli.mjs complete
+```
+
+Required state fields:
+- `worker_plan`
+- `worker_results`
+- `child_runs`
+- `verification_passed`
+- `report_ready`
+- `summary_recorded`
+
+Domain checkpoints:
+- `PHASE_1_DETECT_PACKAGE_MANAGERS`: detected managers, indicator files, skipped managers
+- `PHASE_2_SECURITY_AUDIT`: per-manager audit verdicts, blocking findings, release-age policy
+- `PHASE_3_DELEGATE_UPGRADES`: one `child_run` per delegated worker with worker name, identifier, `runId`, and `summaryArtifactPath`
+- `PHASE_4_COLLECT_RESULTS`: recorded worker summaries plus unresolved failures or warnings
+- `PHASE_5_VERIFY_SUMMARY`: final report path, verification verdict, summary readiness
+
+Guard rules:
+- do not advance from `PHASE_3_DELEGATE_UPGRADES` until every planned worker emitted a valid `dependency-worker` summary
+- do not complete until the final report checkpoint exists and the `dependency-coordinator` summary was recorded
+- consume worker JSON summaries only; never infer worker status from prose output
+
+---
+
+## Phase 0: Pre-flight
+
+Confirm the project is a valid candidate for dependency work before starting the runtime.
 
 | Check | Method | Block if |
 |-------|--------|----------|
-| Uncommitted changes | `git status --porcelain` | Non-empty output |
-| Create backup branch | `git checkout -b upgrade-backup-{timestamp}` | Failure |
-| Lock file exists | Check for lock file | Missing (warn only) |
+| Manifest exists | Runtime `start` validation | Missing |
+| Project path exists | File inspection | Missing |
+| Upgrade policy provided | Manifest or defaults | No |
+| Existing active run for identifier | Runtime active pointer | Conflicting active run |
 
-> Skip upgrade if uncommitted changes exist. User must commit or stash first.
+Default options:
+
+| Option | Default | Meaning |
+|--------|---------|---------|
+| `upgradeType` | `major` | major, minor, or patch |
+| `allowBreaking` | `true` | allow major-version migrations |
+| `minimumReleaseAge` | `14` | skip very recent releases unless security requires them |
+| `testAfterUpgrade` | `true` | workers verify build/tests after changes |
 
 ---
 
 ## Phase 1: Detect Package Managers
 
-### Detection Rules
+Detect one worker target per package-manager family.
 
 | Package Manager | Indicator Files | Worker |
 |-----------------|-----------------|--------|
-| npm | package.json + package-lock.json | ln-821 |
-| yarn | package.json + yarn.lock | ln-821 |
-| pnpm | package.json + pnpm-lock.yaml | ln-821 |
-| nuget | *.csproj files | ln-822 |
-| pip | requirements.txt | ln-823 |
-| poetry | pyproject.toml + poetry.lock | ln-823 |
-| pipenv | Pipfile + Pipfile.lock | ln-823 |
+| npm | `package.json` + `package-lock.json` | ln-821 |
+| yarn | `package.json` + `yarn.lock` | ln-821 |
+| pnpm | `package.json` + `pnpm-lock.yaml` | ln-821 |
+| nuget | `*.csproj` or `*.sln` | ln-822 |
+| pip | `requirements.txt` | ln-823 |
+| poetry | `pyproject.toml` + `poetry.lock` | ln-823 |
+| pipenv | `Pipfile` + `Pipfile.lock` | ln-823 |
+
+Checkpoint payload must include:
+- `detected_managers`
+- `indicator_paths`
+- `worker_plan`
+- `skipped_reasons`
 
 ---
 
-## Phase 2: Security Audit (Pre-flight)
+## Phase 2: Security Audit
 
-### Security Checks
+Perform lightweight pre-flight security and freshness checks before delegating heavy upgrade work.
 
-| Package Manager | Command | Block Upgrade |
-|-----------------|---------|---------------|
-| npm | `npm audit --audit-level=high` | Critical only |
-| pip | `pip-audit --json` | Critical only |
-| nuget | `dotnet list package --vulnerable` | Critical only |
+| Manager Family | Command | Block Condition |
+|----------------|---------|-----------------|
+| Node.js | `npm audit --audit-level=high` or manager equivalent | Critical vulnerability with no allowed override |
+| NuGet | `dotnet list package --vulnerable` | Critical vulnerability with no allowed override |
+| Python | `pip-audit --json` or manager equivalent | Critical vulnerability with no allowed override |
 
-### Release Age Check
+Release-age gate:
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| minimumReleaseAge | 14 days | Skip packages released < 14 days ago |
-| ignoreReleaseAge | false | Override for urgent security patches |
+| `minimumReleaseAge` | `14 days` | Skip packages released too recently |
+| `ignoreReleaseAge` | `false` | Override for urgent security patches |
 
-> Per Renovate best practices: waiting 14 days gives registries time to pull malicious packages.
+Checkpoint payload must include:
+- `audit_results`
+- `blocking_findings`
+- `release_age_policy`
+- `managers_cleared_for_delegation`
 
 ---
 
-## Phase 3: Delegate to Workers
+## Phase 3: Delegate Upgrades
 
-> **CRITICAL:** All delegations use Agent tool with `subagent_type: "general-purpose"` and `isolation: "worktree"` — each worker creates its own branch per `shared/references/git_worktree_fallback.md`.
+Delegate one child run per worker family. Child runs must be deterministic and artifact-driven.
 
-**Prompt template:**
-```
-Agent(description: "Upgrade deps via ln-82X",
-     prompt: "Execute dependency upgrade worker.
+Delegate using the concrete worker identities selected by the routing table below. Do not synthesize family placeholders or guessed skill IDs in prompts.
 
-Step 1: Invoke worker:
-  Skill(skill: \"ln-82X-{worker}\")
-
-CONTEXT:
-{delegationContext}",
-     subagent_type: "general-purpose",
-     isolation: "worktree")
-```
-
-**Anti-Patterns:**
-- ❌ Direct Skill tool invocation without Agent wrapper
-- ❌ Any execution bypassing subagent context isolation
-
-### Delegation Context
-
-Each worker receives standardized context:
+Delegation context:
 
 | Field | Type | Description |
 |-------|------|-------------|
-| projectPath | string | Absolute path to project |
-| packageManager | enum | npm, yarn, pnpm, nuget, pip, poetry, pipenv |
-| options.upgradeType | enum | major, minor, patch |
-| options.allowBreaking | bool | Allow breaking changes |
-| options.testAfterUpgrade | bool | Run tests after upgrade |
+| `projectPath` | string | Absolute path to target project |
+| `packageManager` | enum | npm, yarn, pnpm, nuget, pip, poetry, pipenv |
+| `identifier` | string | Stable worker identifier inside the run |
+| `runId` | string | Deterministic child run id |
+| `summaryArtifactPath` | string | Exact JSON path for the worker summary |
+| `options` | object | Upgrade policy, verification flags, safety flags |
 
-### Worker Selection
+Worker selection:
 
-| Package Manager | Worker | Notes |
-|-----------------|--------|-------|
-| npm, yarn, pnpm | ln-821-npm-upgrader | Handles all Node.js |
-| nuget | ln-822-nuget-upgrader | Handles .NET projects |
-| pip, poetry, pipenv | ln-823-pip-upgrader | Handles all Python |
+| Manager Family | Worker | Notes |
+|----------------|--------|-------|
+| npm, yarn, pnpm | ln-821-npm-upgrader | One child run per detected Node manager |
+| nuget | ln-822-nuget-upgrader | One child run for .NET |
+| pip, poetry, pipenv | ln-823-pip-upgrader | One child run per detected Python manager |
+
+After launching each worker:
+1. Checkpoint `child_run` under `PHASE_3_DELEGATE_UPGRADES`.
+2. Wait for the emitted `dependency-worker` summary envelope.
+3. Record the worker summary with `record-worker-result`.
 
 ---
 
 ## Phase 4: Collect Results
 
-Each worker produces an isolated branch. Coordinator aggregates branch reports.
+Aggregate validated worker summaries only.
 
-### Worker Branches
+Worker summary fields consumed by the coordinator:
 
-| Worker | Branch Pattern | Contents |
-|--------|---------------|----------|
-| ln-821 | `upgrade/ln-821-npm-{ts}` | npm/yarn/pnpm dependency upgrades |
-| ln-822 | `upgrade/ln-822-nuget-{ts}` | NuGet dependency upgrades |
-| ln-823 | `upgrade/ln-823-pip-{ts}` | pip/poetry/pipenv dependency upgrades |
+| Field | Description |
+|-------|-------------|
+| `producer_skill` | worker identity (`ln-821`, `ln-822`, `ln-823`) |
+| `summary_kind` | must be `dependency-worker` |
+| `identifier` | stable worker identifier |
+| `payload.status` | completed, partial, or failed |
+| `payload.upgrades` | applied upgrades with before/after versions |
+| `payload.warnings` | non-blocking issues |
+| `payload.verification` | build/test verification result |
+| `payload.artifact_path` | worker-owned durable report path, if any |
 
-### Result Schema
-
-| Field | Type | Description |
-|-------|------|-------------|
-| worker | string | ln-821, ln-822, or ln-823 |
-| status | enum | success, partial, failed |
-| branch | string | Worker's result branch name |
-| upgrades[] | array | List of upgraded packages |
-| upgrades[].package | string | Package name |
-| upgrades[].from | string | Previous version |
-| upgrades[].to | string | New version |
-| upgrades[].breaking | bool | Is breaking change |
-| warnings[] | array | Non-blocking warnings |
-| errors[] | array | Blocking errors |
+Collection output:
+- `worker_results`
+- `success_count`
+- `partial_count`
+- `failed_count`
+- `blocking_failures`
 
 ---
 
-## Phase 5: Aggregate Reports
+## Phase 5: Verify Summary
 
-Each worker verified independently in its branch (build, tests run by worker itself). Coordinator does NOT rerun verification or rollback packages.
+Prepare the final durable report and verify the coordinator can finish deterministically.
 
-### On Failure
+Verification checklist:
+- every planned worker produced one valid summary envelope
+- aggregate counts match recorded worker results
+- final report path exists or is ready to be written
+- `report_ready` and `verification_passed` are true before completion
 
-1. Branch with failing build/tests logged as "failed" in report
-2. User reviews failed branch independently
+Failure handling:
+1. Keep successful worker results intact.
+2. Mark failed workers explicitly in the coordinator report.
+3. Do not invent rollback actions beyond what workers already verified.
 
 ---
 
-## Phase 6: Report Summary
+## Phase 6: Report
 
-### Report Schema
+Coordinator report schema:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| totalPackages | int | Total packages analyzed |
-| upgraded | int | Successfully upgraded |
-| skipped | int | Already latest |
-| failed | int | Rolled back |
-| breakingChanges | int | Major version upgrades |
-| buildVerified | bool | Build passed after upgrade |
-| duration | string | Total time |
+| Field | Description |
+|-------|-------------|
+| `package_managers` | detected managers handled in this run |
+| `workers_activated` | delegated workers |
+| `total_packages` | packages analyzed across workers |
+| `upgraded` | successful upgrades |
+| `skipped` | already latest or policy-skipped packages |
+| `failed` | packages or worker runs that failed |
+| `breaking_changes` | major-version upgrades or migrations |
+| `verification_passed` | aggregate verification verdict |
+| `per_worker[]` | machine-readable worker result summaries |
+| `warnings[]` | cross-worker warnings |
+
+Completion sequence:
+1. Write the durable report.
+2. Checkpoint the report path and verification verdict.
+3. Record the `dependency-coordinator` summary envelope with `record-summary`.
+4. Complete runtime only after the report checkpoint and coordinator summary exist.
 
 ---
 
@@ -188,48 +245,36 @@ Each worker verified independently in its branch (build, tests run by worker its
 
 ```yaml
 Options:
-  # Upgrade scope
   upgradeType: major          # major | minor | patch
-
-  # Breaking changes
   allowBreaking: true
-  autoMigrate: true           # Apply known migrations
-
-  # Security
+  minimumReleaseAge: 14
   auditLevel: high            # none | low | moderate | high | critical
-  minimumReleaseAge: 14       # days, 0 to disable
-  blockOnVulnerability: true
-
-  # Scope
-  skipDev: false              # Include devDependencies
-  skipOptional: true          # Skip optional deps
-
-  # Verification
   testAfterUpgrade: true
   buildAfterUpgrade: true
-
-  # Rollback
   rollbackOnFailure: true
+  skipDev: false
+  skipOptional: true
 ```
 
 ---
 
 ## Error Handling
 
-### Recoverable Errors
+Recoverable:
 
 | Error | Recovery |
 |-------|----------|
-| Peer dependency conflict | Try --legacy-peer-deps |
-| Build failure | Rollback package, continue |
-| Network timeout | Retry 3 times |
+| Peer dependency conflict | Keep worker result as partial, continue collecting |
+| Build failure in one worker | Preserve failure, continue other workers |
+| Network timeout | Worker retries locally, then reports failure |
 
-### Fatal Errors
+Fatal:
 
 | Error | Action |
 |-------|--------|
-| No package managers found | Skip this step |
-| All builds fail | Report to parent, suggest manual review |
+| No package managers found | Finish with empty-result report |
+| Runtime validation failure | Pause run and require intervention |
+| Missing worker summary for planned child run | Do not advance from collection |
 
 ---
 
@@ -241,33 +286,35 @@ Options:
 ---
 
 **TodoWrite format (mandatory):**
-```
-- Invoke ln-821-npm-upgrader (in_progress)
-- Invoke ln-822-nuget-upgrader (pending)
-- Invoke ln-823-pip-upgrader (pending)
-- Aggregate reports (pending)
+```text
+- Detect package managers (in_progress)
+- Delegate ln-821-npm-upgrader child runs (pending)
+- Delegate ln-822-nuget-upgrader child runs (pending)
+- Delegate ln-823-pip-upgrader child runs (pending)
+- Aggregate dependency-worker summaries (pending)
 ```
 
 ## Worker Invocation (MANDATORY)
 
 | Phase | Worker | Context |
 |-------|--------|---------|
-| 3 | ln-821-npm-upgrader | Isolated (Agent tool) — npm/yarn/pnpm dependency upgrades |
-| 3 | ln-822-nuget-upgrader | Isolated (Agent tool) — NuGet dependency upgrades |
-| 3 | ln-823-pip-upgrader | Isolated (Agent tool) — pip/poetry/pipenv dependency upgrades |
+| 3 | ln-821-npm-upgrader | Isolated child run with `packageManager`, `runId`, and exact `summaryArtifactPath` |
+| 3 | ln-822-nuget-upgrader | Isolated child run with `packageManager`, `runId`, and exact `summaryArtifactPath` |
+| 3 | ln-823-pip-upgrader | Isolated child run with `packageManager`, `runId`, and exact `summaryArtifactPath` |
 
-**All workers:** Invoke via Agent tool with `isolation: "worktree"` — each worker creates its own branch.
+All workers: invoke through Agent tool, checkpoint the child run metadata immediately, then consume the emitted `dependency-worker` summary envelope via `record-worker-result`.
 
 ---
 
 ## Definition of Done
 
-- [ ] Pre-flight checks passed (clean git state)
-- [ ] All package managers detected from indicator files
-- [ ] Security audit completed per manager (critical vulns block upgrade)
-- [ ] Workers delegated with worktree isolation (`isolation: "worktree"`)
-- [ ] Each worker produces isolated branch, pushed to remote
-- [ ] Coordinator report aggregates per-worker results (branch, upgrades, status)
+- [ ] Runtime started with a validated manifest and stable identifier
+- [ ] Package managers detected from project indicators
+- [ ] Pre-flight security and release-age checks completed
+- [ ] One child run delegated per planned worker family
+- [ ] Every child run emitted a valid `dependency-worker` summary
+- [ ] Coordinator report aggregates per-worker upgrades, warnings, and verification results
+- [ ] Final `dependency-coordinator` summary recorded before completion
 
 ---
 

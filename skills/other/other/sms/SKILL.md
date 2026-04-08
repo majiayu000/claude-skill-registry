@@ -272,7 +272,7 @@ python3 ~/.claude/skills/sms/scripts/sms_inbox.py [OPTIONS]
 python3 ~/.claude/skills/sms/scripts/sms_inbox.py
 
 # Show last 5 messages from a specific sender
-python3 ~/.claude/skills/sms/scripts/sms_inbox.py --from "+17327595647" -n 5
+python3 ~/.claude/skills/sms/scripts/sms_inbox.py --from "+15551234567" -n 5
 
 # Mark all as read
 python3 ~/.claude/skills/sms/scripts/sms_inbox.py --mark-all-read

@@ -28,21 +28,10 @@ None (DISCOVER is the first wave).
 
 Before completing DISCOVER, produce `docs/feature/{feature-id}/discover/wave-decisions.md`:
 
-```markdown
-# DISCOVER Decisions — {feature-id}
-
-## Key Decisions
-- [D1] {decision}: {rationale} (see: {source-file})
-
-## Constraints Established
-- {constraint from evidence}
-
-## Validated Assumptions
-- {assumption validated by evidence, with confidence level}
-
-## Invalidated Assumptions
-- {assumption disproved, with evidence reference}
-```
+1. **Record Key Decisions** — List each decision as `[D1] {decision}: {rationale} (see: {source-file})`. Gate: every major discovery choice has a rationale entry.
+2. **Record Constraints** — List each constraint established from evidence. Gate: all constraints have an evidence source.
+3. **Record Validated Assumptions** — List each assumption confirmed, with confidence level. Gate: confidence level stated for each.
+4. **Record Invalidated Assumptions** — List each assumption disproved, with evidence reference. Gate: evidence reference present for each invalidation.
 
 This summary enables downstream waves to quickly assess DISCOVER outcomes without reading all artifacts.
 
@@ -52,27 +41,16 @@ Not applicable (DISCOVER is the first wave — no prior documents to update).
 
 ## Agent Invocation
 
-@nw-product-discoverer
-
-Execute \*discover for {product-concept-name}.
-
-**Context Files:** docs/project-brief.md (if available) | docs/market-context.md (if available)
-
-**Configuration:**
-- interactive: high | output_format: markdown
-- interview_depth: comprehensive | evidence_standard: past_behavior
+1. **Dispatch Agent** — Invoke `@nw-product-discoverer` with `Execute *discover for {product-concept-name}`. Gate: agent dispatched.
+2. **Provide Context Files** — Pass `docs/project-brief.md` and `docs/market-context.md` if available. Gate: available context files referenced.
+3. **Apply Configuration** — Set `interactive: high`, `output_format: markdown`, `interview_depth: comprehensive`, `evidence_standard: past_behavior`. Gate: configuration confirmed.
 
 ## Peer Review Gate
 
-BEFORE handoff to DISCUSS, dispatch `@nw-product-discoverer-reviewer` to review discovery artifacts. BLOCK on rejection.
-
-Review scope:
-- Evidence quality (past behavior, not future intent)
-- Interview coverage and threshold compliance
-- Assumption validation rigor (G1-G4 gates)
-- Lean canvas coherence with interview findings
-
-On REJECTION: revise artifacts per reviewer findings and re-submit. Max 2 attempts before escalating to user.
+1. **Dispatch Reviewer** — Invoke `@nw-product-discoverer-reviewer` before handoff to DISCUSS. Gate: reviewer dispatched, all discovery artifacts available.
+2. **Verify Review Scope** — Reviewer checks: evidence quality (past behavior, not future intent), interview coverage and threshold compliance, assumption validation rigor (G1-G4 gates), lean canvas coherence with interview findings. Gate: all four dimensions assessed.
+3. **Handle Rejection** — On REJECTION: revise artifacts per reviewer findings and re-submit. Gate: max 2 attempts; escalate to user if unresolved.
+4. **Confirm Approval** — Block handoff to DISCUSS until reviewer returns APPROVED. Gate: explicit approval received.
 
 ## Success Criteria
 

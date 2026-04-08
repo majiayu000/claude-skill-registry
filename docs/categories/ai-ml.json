@@ -2,30 +2,30 @@
   "category": "ai-ml",
   "code": "oth",
   "count": 2,
-  "updated_at": "2026-04-04T04:23:17.197561Z",
+  "updated_at": "2026-04-08T05:11:32.481939Z",
   "skills": [
     {
       "name": "flow-nexus-neural",
       "description": "Train and deploy neural networks in distributed E2B sandboxes with Flow Nexus",
       "repo": "mattnigh/skills_collection",
-      "path": "",
+      "path": "collection/whrit__agent-flow__claude__skills__flow-nexus-neural__SKILL.md",
       "branch": "main",
       "category": "ai-ml",
       "tags": [],
       "stars": 20,
-      "install": "mattnigh/skills_collection",
+      "install": "mattnigh/skills_collection/collection/whrit__agent-flow__claude__skills__flow-nexus-neural__SKILL.md",
       "source": "github.com/mattnigh/skills_collection"
     },
     {
       "name": "flow-nexus-neural",
       "description": "Train and deploy neural networks in distributed E2B sandboxes with Flow Nexus",
       "repo": "mattnigh/skills_collection",
-      "path": "",
+      "path": "collection/whrit__agent-flow__claude__skills__flow-nexus-neural__SKILL.md",
       "branch": "main",
       "category": "ai-ml",
       "tags": [],
       "stars": 20,
-      "install": "mattnigh/skills_collection",
+      "install": "mattnigh/skills_collection/collection/whrit__agent-flow__claude__skills__flow-nexus-neural__SKILL.md",
       "source": "github.com/mattnigh/skills_collection"
     }
   ]

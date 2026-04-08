@@ -69,16 +69,8 @@ Read [references/best-practices.md](references/best-practices.md) for writing st
 
 ## Step 5: Review the Skill
 
-After writing all files, spawn a subagent (`model: "opus"`, do not set `run_in_background`) to review the skill. The subagent should:
+After writing all files:
 
-1. Read [references/skill-reviewer.md](references/skill-reviewer.md) for review guidelines
-2. Read all skill files (SKILL.md and any bundled resources)
-3. Produce a review report following the format in the guidelines
-
-## Step 6: Run `/evaluate-findings` Skill
-
-Do not blindly apply all review findings. Run the `/evaluate-findings` skill on the reviewer's recommendations if available.
-
-## Step 7: Run `/apply-findings` Skill
-
-Run the `/apply-findings` skill on the evaluated results. Present the result to the user.
+1. Spawn a subagent (`model: "opus"`, do not set `run_in_background`) to review the skill. The subagent should read [references/skill-reviewer.md](references/skill-reviewer.md) for review guidelines, read all skill files, and produce a review report following the format in the guidelines.
+2. Run the `/evaluate-findings` skill on the review findings
+3. Run the `/apply-findings` skill on the evaluated findings

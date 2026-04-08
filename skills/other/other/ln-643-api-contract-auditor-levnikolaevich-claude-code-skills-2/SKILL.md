@@ -1,7 +1,7 @@
 ---
 name: ln-643-api-contract-auditor
 description: "Checks layer leakage in method signatures, missing DTOs, entity leakage to API, inconsistent error contracts. Use when auditing API contracts."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_references, mcp__hex-graph__search_symbols
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_references, mcp__hex-graph__find_symbols
 license: MIT
 ---
 
@@ -15,7 +15,6 @@ Specialized worker auditing API contracts, method signatures at service boundari
 
 ## Purpose & Scope
 
-- **Worker in ln-640 coordinator pipeline** - invoked by ln-640-pattern-evolution-auditor
 - Audit **API contracts** at architecture level (service boundaries, layer separation)
 - Check layer leakage, DTO patterns, error contract consistency
 - Return structured analysis with 4 scores (compliance, completeness, quality, implementation)
@@ -24,7 +23,7 @@ Specialized worker auditing API contracts, method signatures at service boundari
 - Code duplication (same DTO shape repeated, same mapping logic, same validation)
 - Report only ARCHITECTURE BOUNDARY findings (wrong layer, missing contract)
 
-## Input (from ln-640 coordinator)
+## Inputs
 
 ```
 - pattern: "API Contracts"     # Pattern name
@@ -127,7 +126,7 @@ score = max(0, 10 - penalty)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
 ```
 # Build markdown report in memory with:

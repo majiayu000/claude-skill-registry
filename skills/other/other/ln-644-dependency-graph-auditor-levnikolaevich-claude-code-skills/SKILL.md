@@ -1,7 +1,7 @@
 ---
 name: ln-644-dependency-graph-auditor
 description: "Builds dependency graph, detects cycles, validates boundary rules, calculates coupling metrics (Ca/Ce/I). Use when auditing dependency structure."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__index_project, mcp__hex-graph__find_cycles, mcp__hex-graph__get_module_metrics, mcp__hex-graph__get_architecture
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__index_project, mcp__hex-graph__analyze_architecture, mcp__hex-graph__trace_paths
 license: MIT
 ---
 
@@ -16,7 +16,6 @@ L3 Worker that builds and analyzes the module dependency graph to enforce archit
 
 ## Purpose & Scope
 
-- **Worker in ln-640 coordinator pipeline** - invoked by ln-640-pattern-evolution-auditor
 - Build module dependency graph from import statements (Python, TS/JS, C#, Java)
 - Detect circular dependencies: pairwise (HIGH) + transitive via DFS (CRITICAL)
 - Validate boundary rules: forbidden, allowed, required (per dependency-cruiser pattern)
@@ -157,7 +156,7 @@ FOR EACH source_file IN Glob(language_glob_pattern, root=scan_root):
 
 ### Phase 3: Detect Cycles (ADP)
 
-**hex-graph acceleration:** For projects with `.hex-skills/codegraph/index.db`, use `find_cycles` for instant cycle detection. Fall back to grep-based DFS when graph is unavailable.
+**hex-graph acceleration:** For projects with `.hex-skills/codegraph/index.db`, use `analyze_architecture(verbosity="full")` and inspect returned `cycles` for instant cycle detection. These cycle and coupling metrics are workspace-module level, so single-package repos may collapse to one module. Fall back to grep-based DFS or symbol/file-level tracing when graph output is too coarse for intra-package analysis.
 
 Per Robert C. Martin (Clean Architecture Ch14): "Allow no cycles in the component dependency graph."
 
@@ -269,7 +268,7 @@ FOR EACH rule IN rules.required:
 
 ### Phase 5: Calculate Graph Metrics
 
-**hex-graph acceleration:** For projects with `.hex-skills/codegraph/index.db`, use `get_module_metrics` for instant Ca/Ce/I calculation. Fall back to manual computation when graph is unavailable.
+**hex-graph acceleration:** For projects with `.hex-skills/codegraph/index.db`, use `analyze_architecture(verbosity="full")` and inspect returned `coupling` metrics for instant Ca/Ce/I calculation. Fall back to manual computation when graph is unavailable.
 
 **MANDATORY READ:** Load `references/graph_metrics.md` -- use Metric Definitions, Thresholds per Layer, SDP Algorithm, Lakos Formulas.
 
@@ -361,7 +360,7 @@ score = max(0, 10 - penalty)
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
 ```
 # Build markdown report in memory with:

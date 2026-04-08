@@ -1,6 +1,6 @@
 ---
 name: threejs-particle-canvas
-description: Generate interactive Three.js particle canvases with narrative phase cycles, geodesic lattices, orbital camera controls, and ambient WebGL effects. Self-contained HTML output. This skill should be used when creating particle-based WebGL visualizations, ambient 3D canvases, narrative animation art, generative procedural art, or meditative browser experiences. Built on the Instance pattern (bryhaw.com/instance).
+description: "Generate interactive Three.js particle canvases and WebGPU spinner/loader animations. Two modes: (1) Narrative canvas — particle phase cycles with geodesic lattices, orbital camera, ambient WebGL effects, self-contained HTML. (2) Spinner/loader — parametric curve particle trails via Three.js WebGPU + TSL, for loading indicators and UI components. This skill should be used when creating particle-based WebGL visualizations, ambient 3D canvases, narrative animation art, generative procedural art, meditative browser experiences, spinners, loaders, loading animations, loading indicators, progress indicators, activity indicators, WebGPU spinners, or parametric curve animations."
 argument-hint: [concept or narrative theme]
 ---
 
@@ -119,6 +119,49 @@ Key patterns:
 **Neural**: Resting → Stimulus → Cascade → Synchrony → Oscillation → Quiescence. Cool `#1a237e` / warm `#ffab40`. Torus. Fog 0.015. Cycle 75s (fast). Font: IBM Plex Mono. *Feels like: the inside of a thought.* Signature: Cascade — particles chain-activate like dominoes at 2x speed. Durations: 12, 8, 12, 18, 15, 10. Words: synapse, threshold, cascade, signal, rest, fire, wave, silence.
 
 **Ruin**: Assembly → Inscription → Erosion → Fragment → Memory → Silence. Cool `#d4a574` / warm `#7fb5a0`. Octahedron. Fog 0.018. Cycle 120s (geological). Font: Cormorant Garamond. *Feels like: watching a temple turn to sand.* Signature: Fragment — lattice edges disconnect visibly. Camera below center (phi=1.8), looking up. Durations: 20, 25, 20, 15, 20, 20. Words: fragment, inscription, erosion, memory, silence, stone, time, dust.
+
+## Mode 2: Spinner / Loader
+
+Generate parametric particle-trail spinner animations using Three.js WebGPU + TSL (Three Shading Language). Output: ES module or self-contained HTML. White-on-dark aesthetic with glowing particle trails tracing mathematical curves.
+
+Example: `/threejs-particle-canvas spinner — infinity loop loading indicator with breathing animation`
+
+### Spinner Architecture
+
+Each spinner = shared `Spinner` class + per-spinner `plotFunction` + config. All particle animation runs on GPU via TSL nodes — no CPU-side position updates. See `references/spinner-patterns.md` for the full architecture and code pattern.
+
+### Curve Selection
+
+Choose a parametric curve based on the desired visual. See `references/parametric-curves.md` for all formulas.
+
+| Visual | Curve | Best For |
+|--------|-------|----------|
+| Infinity loop | Lemniscate | Classic loading indicator |
+| Flower/star | Rose curve | Organic, natural feel |
+| Geometric loops | Spirograph | Playful, complex patterns |
+| Figure-8 variants | Lissajous | Technical, oscilloscope aesthetic |
+| Simple ring | Circle | Minimal, universal |
+| Multi-arm | Triskelion | Dynamic, energetic |
+| Romantic | Heart curve | Themed/branded loaders |
+| 3D particle cloud | Sphere | Data processing, heavy computation feel |
+| Expanding coil | Spiral (Archimedean) | Progress, unwinding, search |
+
+### Spinner Validation
+
+```bash
+python3 ~/.claude/skills/threejs-particle-canvas/scripts/validate_spinner.py output.js
+# or for HTML output:
+python3 ~/.claude/skills/threejs-particle-canvas/scripts/validate_spinner.py output.html
+```
+
+## Design References
+
+See `references/design-references.md` for exemplary interactive canvas experiences (Instance, Vellum) with aesthetic analysis — typography, color strategy, interaction models.
+
+**Recommended font stacks:**
+- **Contemplative**: Cormorant (display serif) + IBM Plex Mono (metadata)
+- **Technical**: Space Mono (monospace throughout)
+- **Narrative**: Lora (body serif) + IBM Plex Mono (UI)
 
 ## Anti-Patterns
 

@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """
-Build Search Index v2.0 - Generate lightweight search index
+Build Search Index v2.0 - Generate lightweight search index.
 
-Supports directory structure:
-- skills/{category}/{skill-name}/SKILL.md
+Primary source is the archived skills tree, scanned recursively:
+- <archive-root>/**/SKILL.md
 
 Output files:
 - search-index.json - Minimal index (~1-2MB gzip)
 - categories/*.json - Category-based indexes
 - featured.json - Top 100 skills by stars
+- stats.json - Explicit raw/indexed/deduplicated counters
 """
 
 import argparse
@@ -69,87 +70,89 @@ def get_category_code(category: str) -> str:
 
 
 def scan_skills_v2(skills_dir: Path) -> List[Dict]:
-    """Scan skills directory with structure: skills/{category}/{skill-name}/"""
+    """Recursively scan archive root and index one entry per SKILL.md file."""
     skills = []
 
     if not skills_dir.exists():
         logger.warning(f"Skills directory not found: {skills_dir}")
         return skills
 
-    for category_dir in skills_dir.iterdir():
-        if not category_dir.is_dir():
-            continue
-        if category_dir.name.startswith('.'):
-            continue
+    for skill_md in skills_dir.rglob("SKILL.md"):
+        skill_dir = skill_md.parent
+        rel_parts = skill_dir.relative_to(skills_dir).parts
+        category_name = rel_parts[0] if rel_parts else "other"
+        metadata = load_metadata(skill_dir)
+        dir_name = skill_dir.name
 
-        category_name = category_dir.name
+        # Get skill name (from metadata or directory)
+        name = metadata.get("name") or dir_name
 
-        for skill_dir in category_dir.iterdir():
-            if not skill_dir.is_dir():
-                continue
+        # Remove repo suffix from dir_name if metadata repo is available
+        if name == dir_name:
+            repo_for_suffix = metadata.get("repo", "")
+            suffix = get_repo_suffix(repo_for_suffix)
+            if suffix and dir_name.endswith(f"-{suffix}"):
+                name = dir_name[: -(len(suffix) + 1)]
 
-            skill_md = skill_dir / "SKILL.md"
-            metadata_file = skill_dir / "metadata.json"
+        # Get description
+        description = metadata.get("description", "")
+        if not description:
+            try:
+                content = skill_md.read_text(encoding='utf-8')
+                description = extract_description(content)
+            except Exception:
+                pass
+        if not description:
+            description = f"Skill: {name}"
 
-            if not skill_md.exists():
-                continue
+        # Get category
+        category = metadata.get("category", category_name)
 
-            dir_name = skill_dir.name
+        # Build install path
+        repo = metadata.get("repo", "")
+        github_path = (
+            metadata.get("github_path")
+            or metadata.get("path")
+            or "/".join(rel_parts)
+        )
+        github_branch = (
+            metadata.get("github_branch")
+            or metadata.get("branch")
+            or "main"
+        )
 
-            # Load metadata
-            metadata = load_metadata(skill_dir) if metadata_file.exists() else {}
+        if github_path and repo:
+            install = f"{repo}/{github_path}"
+        elif repo:
+            install = repo
+        else:
+            install = f"local/{'/'.join(rel_parts)}" if rel_parts else f"local/{name}"
 
-            # Get skill name (from metadata or directory)
-            name = metadata.get("name") or dir_name
+        tags = metadata.get("tags", [])
+        if not isinstance(tags, list):
+            tags = []
 
-            # Remove repo suffix from dir_name if metadata repo is available
-            if name == dir_name:
-                repo = metadata.get("repo", "")
-                suffix = get_repo_suffix(repo)
-                if suffix and dir_name.endswith(f"-{suffix}"):
-                    name = dir_name[: -(len(suffix) + 1)]
+        stars = metadata.get("stars", 0)
+        try:
+            stars = int(stars)
+        except (TypeError, ValueError):
+            stars = 0
 
-            # Get description
-            description = metadata.get("description", "")
-            if not description:
-                try:
-                    content = skill_md.read_text(encoding='utf-8')
-                    description = extract_description(content)
-                except Exception:
-                    pass
-            if not description:
-                description = f"Skill: {name}"
+        skill_entry = {
+            "name": name,
+            "dir_name": dir_name,
+            "description": description,
+            "repo": repo,
+            "path": github_path,
+            "branch": github_branch,
+            "category": category,
+            "tags": tags,
+            "stars": stars,
+            "source": metadata.get("source", "downloaded"),
+            "install": install,
+        }
 
-            # Get category
-            category = metadata.get("category", category_name)
-
-            # Build install path
-            repo = metadata.get("repo", "")
-            github_path = metadata.get("github_path", "")
-            github_branch = metadata.get("github_branch", "main")  # Default to main
-
-            if github_path and repo:
-                install = f"{repo}/{github_path}"
-            elif repo:
-                install = repo
-            else:
-                install = f"unknown/{name}"
-
-            skill_entry = {
-                "name": name,
-                "dir_name": dir_name,
-                "description": description,
-                "repo": repo,
-                "path": github_path,
-                "branch": github_branch,
-                "category": category,
-                "tags": metadata.get("tags", []),
-                "stars": metadata.get("stars", 0),
-                "source": metadata.get("source", "downloaded"),
-                "install": install,
-            }
-
-            skills.append(skill_entry)
+        skills.append(skill_entry)
 
     return skills
 
@@ -164,6 +167,10 @@ def load_registry_count(registry_path: Path) -> Optional[int]:
     except Exception:
         return None
 
+    total = registry.get("registry_skill_count_dedup")
+    if isinstance(total, int):
+        return total
+
     total = registry.get("total_count")
     if isinstance(total, int):
         return total
@@ -175,34 +182,12 @@ def load_registry_count(registry_path: Path) -> Optional[int]:
     return None
 
 
-def load_previous_raw_count(output_dir: Path) -> Optional[int]:
-    """Try to keep raw count stable when rebuilding from deduplicated registry only."""
-    stats_path = output_dir / "stats.json"
-    if not stats_path.exists():
-        return None
-    try:
-        with open(stats_path, 'r', encoding='utf-8') as f:
-            stats = json.load(f)
-    except Exception:
-        return None
-
-    raw_count = stats.get("raw_skill_count")
-    if isinstance(raw_count, int):
-        return raw_count
-
-    # Backward-compatible fallback for older stats format
-    total_skills = stats.get("total_skills")
-    if isinstance(total_skills, int):
-        return total_skills
-    return None
-
-
-def count_skill_files(skills_dir: Path) -> Optional[int]:
-    """Count SKILL.md files quickly without full metadata parse."""
+def count_named_files(skills_dir: Path, filename: str) -> Optional[int]:
+    """Count matching files recursively without full metadata parsing."""
     if not skills_dir.exists():
         return None
     try:
-        return sum(1 for _ in skills_dir.rglob("SKILL.md"))
+        return sum(1 for _ in skills_dir.rglob(filename))
     except Exception:
         return None
 
@@ -211,8 +196,9 @@ def build_search_index(
     skills: List[Dict],
     output_dir: Path,
     source_name: str = "skills",
-    raw_skill_count: Optional[int] = None,
-    dedup_skill_count: Optional[int] = None,
+    archive_skill_md_count_raw: Optional[int] = None,
+    archive_metadata_count_raw: Optional[int] = None,
+    registry_skill_count_dedup: Optional[int] = None,
 ) -> Dict[str, Any]:
     """Build the lightweight search index."""
     logger.info(f"Building index from {len(skills)} {source_name}...")
@@ -352,12 +338,14 @@ def build_search_index(
         except Exception:
             pass
 
+    indexed_skill_count_scan_shape = len(skills)
     stats = {
         "updated_at": utc_now_isoformat(),
-        "total_skills": len(skills),
+        "archive_skill_md_count_raw": archive_skill_md_count_raw,
+        "archive_metadata_count_raw": archive_metadata_count_raw,
+        "indexed_skill_count_scan_shape": indexed_skill_count_scan_shape,
+        "registry_skill_count_dedup": registry_skill_count_dedup,
         "total_plugins": plugin_count,
-        "raw_skill_count": raw_skill_count,
-        "dedup_skill_count": dedup_skill_count,
         "categories": len(categories),
         "featured_count": len(featured_skills),
         "index_size_bytes": search_index_path.stat().st_size,
@@ -384,11 +372,13 @@ def build_search_index(
         json.dump(stats, f, ensure_ascii=False, indent=2)
 
     logger.info("\nIndex build complete!")
-    logger.info(f"  Total skills: {len(skills)}")
-    if raw_skill_count is not None:
-        logger.info(f"  Raw skill count: {raw_skill_count}")
-    if dedup_skill_count is not None:
-        logger.info(f"  Deduplicated skill count: {dedup_skill_count}")
+    logger.info(f"  Indexed skills: {indexed_skill_count_scan_shape}")
+    if archive_skill_md_count_raw is not None:
+        logger.info(f"  Archive SKILL.md count (raw): {archive_skill_md_count_raw}")
+    if archive_metadata_count_raw is not None:
+        logger.info(f"  Archive metadata.json count (raw): {archive_metadata_count_raw}")
+    if registry_skill_count_dedup is not None:
+        logger.info(f"  Registry deduplicated count: {registry_skill_count_dedup}")
     logger.info(f"  Categories: {len(categories)}")
 
     return stats
@@ -404,7 +394,15 @@ def load_from_registry(registry_path: Path) -> List[Dict]:
     for skill in skills:
         repo = skill.get('repo', '')
         path = skill.get('path', '')
-        skill['install'] = f"{repo}/{path}" if path else repo
+        name = skill.get('name', 'unknown')
+        if repo and path:
+            skill['install'] = f"{repo}/{path}"
+        elif repo:
+            skill['install'] = repo
+        elif path:
+            skill['install'] = f"local/{path}"
+        else:
+            skill['install'] = f"local/{name}"
 
     return skills
 
@@ -459,7 +457,11 @@ def main():
     parser.add_argument('--skills-dir', '-s', default='skills', help='Skills directory')
     parser.add_argument('--registry', '-r', default='registry.json', help='Registry.json (fallback)')
     parser.add_argument('--output', '-o', default='docs', help='Output directory')
-    parser.add_argument('--use-registry', action='store_true', help='Force use registry.json')
+    parser.add_argument(
+        '--use-registry',
+        action='store_true',
+        help='Fallback to registry.json only when skills dir is unavailable',
+    )
 
     args = parser.parse_args()
 
@@ -467,28 +469,27 @@ def main():
     registry_path = Path(args.registry)
     output_dir = Path(args.output)
 
-    raw_skill_count: Optional[int] = None
-    dedup_skill_count: Optional[int] = None
+    archive_skill_md_count_raw: Optional[int] = None
+    archive_metadata_count_raw: Optional[int] = None
+    registry_skill_count_dedup: Optional[int] = None
 
-    # Prefer scanning skills directory
-    if not args.use_registry and skills_dir.exists():
-        logger.info(f"Scanning skills from {skills_dir}")
+    # Canonical mode: recursively scan archive tree whenever available.
+    if skills_dir.exists():
+        logger.info(f"Scanning archive recursively from {skills_dir}")
+        if args.use_registry:
+            logger.info("Ignoring --use-registry because skills directory exists.")
         skills = scan_skills_v2(skills_dir)
-        source_name = "verified downloaded skills"
-        raw_skill_count = len(skills)
-        dedup_skill_count = load_registry_count(registry_path)
-        if dedup_skill_count is None:
-            dedup_skill_count = len(skills)
+        source_name = "archived skills (recursive)"
+        archive_skill_md_count_raw = count_named_files(skills_dir, "SKILL.md")
+        archive_metadata_count_raw = count_named_files(skills_dir, "metadata.json")
+        registry_skill_count_dedup = load_registry_count(registry_path)
+        if registry_skill_count_dedup is None:
+            registry_skill_count_dedup = len(skills)
     elif registry_path.exists():
         logger.info(f"Loading from registry: {registry_path}")
         skills = load_from_registry(registry_path)
         source_name = "registry entries"
-        dedup_skill_count = len(skills)
-        raw_skill_count = count_skill_files(skills_dir)
-        if raw_skill_count is None:
-            raw_skill_count = load_previous_raw_count(output_dir)
-        if raw_skill_count is None:
-            raw_skill_count = dedup_skill_count
+        registry_skill_count_dedup = len(skills)
     else:
         logger.error("No skills source found!")
         exit(1)
@@ -512,8 +513,9 @@ def main():
         skills,
         output_dir,
         source_name,
-        raw_skill_count=raw_skill_count,
-        dedup_skill_count=dedup_skill_count,
+        archive_skill_md_count_raw=archive_skill_md_count_raw,
+        archive_metadata_count_raw=archive_metadata_count_raw,
+        registry_skill_count_dedup=registry_skill_count_dedup,
     )
 
 

@@ -7,7 +7,7 @@ description: Vibe Code Orchestrator (VCO) is a governed runtime entry that freez
 
 `vibe` is a host-syntax-neutral skill contract.
 
-`/vibe`, `$vibe`, and agent-invoked `vibe` all mean the same thing: enter the same governed runtime, not different entrypoints.
+`/vibe`, `$vibe`, and agent-invoked `vibe` all mean the same thing: enter the same governed runtime, not different runtime authorities.
 
 ## What `vibe` Does
 
@@ -19,10 +19,20 @@ description: Vibe Code Orchestrator (VCO) is a governed runtime entry that freez
 - multi-agent XL orchestration
 - proof, verification, and mandatory cleanup
 
-This runtime is user-facing as one path only.
+This runtime still has one canonical authority: `vibe`.
+
+Hosts may expose discoverable labels such as:
+
+- `Vibe`
+- `Vibe: What Do I Want?`
+- `Vibe: How Do We Do It?`
+- `Vibe: Do It`
+
+Those labels are presentational launch surfaces only.
+They do not create a second runtime.
 
 The user does not choose between `M`, `L`, or `XL` as entry branches.
-Those grades still exist, but only as internal execution strategy.
+Those grades still exist, but only as internal execution strategy, with only `--l` and `--xl` allowed as lightweight public grade-floor overrides.
 
 ## When To Use
 
@@ -55,20 +65,19 @@ Do not use `vibe` for:
 These stages are mandatory.
 They may become lighter for simple work, but they are not skipped as a matter of policy.
 
+Official governed entry also records runtime lineage:
+
+- root or child entry writes `governance-capsule.json`
+- each validated stage transition appends `stage-lineage.json`
+- child-governed startup validates inherited context through `delegation-envelope.json`
+
 ## Runtime Mode
 
 ### `interactive_governed`
 
-Default and effective mode.
+The only supported governed runtime mode.
 
 Use this when the system should still ask the user high-value questions, confirm frozen requirements, and pause at plan approval boundaries.
-
-### `benchmark_autonomous`
-
-Legacy compatibility alias only.
-
-If older callers still pass `benchmark_autonomous`, the runtime silently normalizes it to `interactive_governed`.
-It is not a separate execution plane and it must not create a second unattended control path.
 
 ## Governor And Specialist Contract
 
@@ -94,6 +103,7 @@ Child-governed lanes must:
 - keep `$vibe` at prompt tail to preserve governed discipline
 - inherit frozen requirement and plan context from the root lane
 - stay within assigned ownership boundaries and write scopes
+- validate a root-authored `delegation-envelope.json` and emit a `delegation-validation-receipt.json` before bounded execution
 
 Child-governed lanes must not:
 
@@ -118,10 +128,11 @@ The governed runtime selects the internal grade after `deep_interview` and befor
 
 User-facing behavior stays the same regardless of host syntax:
 
-- one governed entry
+- one governed runtime authority
 - one frozen requirement surface
 - one XL-style plan surface
 - one execution and cleanup contract
+- optional discoverable intent labels that still resolve to canonical `vibe`
 
 Compatibility notes for downstream verification and host adapters:
 
@@ -153,7 +164,6 @@ Produce a structured intent contract containing:
 - inferred assumptions
 
 In `interactive_governed`, this stage may ask direct questions.
-Legacy `benchmark_autonomous` input is normalized before this stage runs, so intent capture stays on the same governed mode.
 
 ### 3. `requirement_doc`
 
@@ -291,7 +301,7 @@ The governed runtime should leave behind:
 ## Maintenance
 
 - Runtime family: governed-runtime-first
-- Version: 2.3.55
-- Updated: 2026-03-30
+- Version: 3.0.0
+- Updated: 2026-04-07
 - Canonical router: `scripts/router/resolve-pack-route.ps1`
 - Primary contract metadata: `core/skill-contracts/v1/vibe.json`

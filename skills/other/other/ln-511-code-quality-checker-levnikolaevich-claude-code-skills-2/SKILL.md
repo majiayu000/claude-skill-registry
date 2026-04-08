@@ -1,7 +1,7 @@
 ---
 name: ln-511-code-quality-checker
 description: "Checks DRY/KISS/YAGNI/architecture compliance with quantitative Code Quality Score. Use when implementation tasks are Done and need quality scoring."
-allowed-tools: Read, Grep, Glob, Bash, WebFetch, mcp__Ref, mcp__context7, mcp__hex-graph__find_clones, mcp__hex-graph__find_cycles, mcp__hex-graph__get_module_metrics, mcp__hex-graph__find_hotspots
+allowed-tools: Read, Grep, Glob, Bash, WebFetch, mcp__Ref, mcp__context7, mcp__hex-line__outline, mcp__hex-graph__audit_workspace, mcp__hex-graph__analyze_architecture
 license: MIT
 ---
 
@@ -22,6 +22,8 @@ Analyzes Done implementation tasks with quantitative Code Quality Score based on
 
 **Resolution:** Story Resolution Chain.
 **Status filter:** In Progress, To Review
+
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md` - use `hex-graph` as the primary path for clone, architecture, and semantic quality evidence when the project is indexed. Fall back to Grep/Read only when graph is unavailable or unsupported.
 
 ## Purpose & Scope
 - Load Story and Done implementation tasks (exclude test tasks)
@@ -168,11 +170,12 @@ Formula: `Code Quality Score = 100 - metric_penalties - issue_penalties`
 
 7) **Analyze code for static issues (assign prefixes):**
    **MANDATORY READ:** `shared/references/clean_code_checklist.md`, `shared/references/destructive_operation_safety.md`
+   - For large code files, use `outline(path)` before targeted reads.
    - SEC-: hardcoded creds, unvalidated input, SQL injection, race conditions
    - SEC-DESTR-: unguarded destructive operations — use code-level guards table from destructive_operation_safety.md (loaded above). Check all 5 guard categories (DB, FS, MIG, ENV, FORCE).
    - MNT-: DRY violations (MNT-DRY-: duplicate logic), dead code (MNT-DC-: per checklist), complex conditionals, poor naming
    - **MNT-DRY- cross-story hotspot scan:** Grep for common pattern signatures (error handlers: `catch.*Error|handleError`, validators: `validate|isValid`, config access: `getSettings|getConfig`) across ALL `src/` files (count mode). If any pattern appears in 5+ files, sample 3 files (Read 50 lines each) and check structural similarity. If >80% similar → MNT-DRY-CROSS (medium, -10 points): `Pattern X duplicated in N files — extract to shared module.`
-   - **MNT-DRY- preferred (hex-graph):** If hex-graph indexed, use `find_clones(scope="src/**", type="normalized", cross_file=true, format="json")`. Each group with 2+ members in different files = MNT-DRY-CROSS. Use `impact` score for priority. Fall back to Grep pattern scan above if hex-graph unavailable.
+   - **MNT-DRY- preferred (hex-graph):** If hex-graph indexed, use `audit_workspace(path=scan_path, verbosity="full")`. Each clone group with 2+ members in different files = MNT-DRY-CROSS. Use returned hotspot and clone context for priority. Fall back to Grep pattern scan above if hex-graph unavailable.
    - **MNT-DC- cross-story unused export scan:** For each file modified by Story, count `export` declarations. Then Grep across ALL `src/` for import references to those exports. Exports with 0 import references → MNT-DC-CROSS (medium, -10 points): `{export} in {file} exported but never imported — remove or mark internal.`
    - **OPT-OSS- cross-reference ln-645 (static, fast-track safe):** IF `docs/project/.audit/ln-640/*/645-open-source-replacer*.md` exists (glob across dates, take latest), check if any HIGH-confidence replacement matches files changed in current Story. IF match found → create OPT-OSS-{N} issue with module path, goal, recommended package, confidence, stars, license from ln-645 report. Severity: high if >200 LOC, medium otherwise. This check reads local files only — no MCP calls — runs even with `--skip-mcp-ref`.
    - ARCH-: layer violations, circular dependencies, guide non-compliance
@@ -208,24 +211,18 @@ Formula: `Code Quality Score = 100 - metric_penalties - issue_penalties`
 
 ## Runtime Summary Artifact
 
-**MANDATORY READ:** Load `shared/references/quality_summary_contract.md`
+**MANDATORY READ:** Load `shared/references/quality_summary_contract.md`, `shared/references/quality_worker_runtime_contract.md`
 
-Accept optional `summaryArtifactPath`.
+Runtime profile:
+- family: `quality-worker`
+- worker: `ln-511`
+- summary kind: `quality-worker`
+- payload fields used by coordinators: `worker`, `status`, `verdict`, `score`, `issues`, `warnings`
 
-Summary kind:
-- `quality-worker`
-
-Required payload semantics:
-- `worker = "ln-511"`
-- `status`
-- `verdict`
-- `score`
-- `issues`
-- `warnings`
-
-Write the summary to the provided artifact path or return the same envelope in structured output.
-
-**Standalone default (no coordinator):** Generate `run_id` = `standalone-ln-511-{YYYYMMDD}-{short_hash}`, write summary JSON to `.hex-skills/runtime-artifacts/runs/{run_id}/quality-worker/ln-511.json`. NEVER write artifacts to the project root directory.
+Invocation rules:
+- standalone: omit `runId` and `summaryArtifactPath`
+- managed: pass both `runId` and exact `summaryArtifactPath`
+- always write the validated summary before terminal outcome
 
 ## Definition of Done
 

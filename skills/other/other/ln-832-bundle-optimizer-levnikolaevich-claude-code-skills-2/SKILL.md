@@ -1,7 +1,7 @@
 ---
 name: ln-832-bundle-optimizer
 description: "Reduces JS/TS bundle size via tree-shaking, code splitting, and unused dependency removal. Use when optimizing frontend bundle size."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_unused_exports
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__audit_workspace
 license: MIT
 ---
 
@@ -12,7 +12,7 @@ license: MIT
 **Type:** L3 Worker
 **Category:** 8XX Optimization
 
-Reduces JavaScript/TypeScript bundle size. Metric: bundle size in bytes. Each optimization verified via build with keep/discard pattern. JS/TS projects only.
+Reduces JavaScript or TypeScript bundle size using keep/discard verification. JS/TS projects only.
 
 ---
 
@@ -20,15 +20,15 @@ Reduces JavaScript/TypeScript bundle size. Metric: bundle size in bytes. Each op
 
 | Aspect | Details |
 |--------|---------|
-| **Input** | JS/TS project (auto-detect from package.json) |
-| **Output** | Smaller bundle, optimization report |
-| **Scope** | JS/TS only (skip for other stacks) |
+| **Input** | JS/TS project path plus optional optimization scope |
+| **Output** | Smaller bundle plus a machine-readable modernization summary |
+| **Scope** | JS/TS only |
 
 ---
 
 ## Workflow
 
-**Phases:** Pre-flight → Baseline → Analyze → Optimize Loop → Report
+**Phases:** Pre-flight -> Baseline -> Analyze -> Optimize Loop -> Report
 
 ---
 
@@ -36,120 +36,103 @@ Reduces JavaScript/TypeScript bundle size. Metric: bundle size in bytes. Each op
 
 | Check | Required | Action if Missing |
 |-------|----------|-------------------|
-| package.json exists | Yes | Block (not a JS/TS project) |
-| Build command available | Yes | Block (need build for size measurement) |
-| dist/ or build/ output | Yes | Run build first to establish baseline |
-| Git clean state | Yes | Block (need clean baseline for revert) |
+| `package.json` exists | Yes | Block optimization |
+| Build command available | Yes | Block optimization |
+| Output directory (`dist/` or `build/`) detectable | Yes | Build once to establish baseline |
+| Workspace baseline safe | Yes | In managed runs coordinator already prepared it; in standalone runs protect rollback locally |
 
-**MANDATORY READ:** Load `shared/references/ci_tool_detection.md` — use Build section for build command detection.
+**MANDATORY READ:** Load `shared/references/ci_tool_detection.md` for build detection.
 
-### Worktree & Branch Isolation
+### Runtime Coordination
 
-**MANDATORY READ:** Load `shared/references/git_worktree_fallback.md` — use ln-832 row.
+Managed runs receive deterministic `runId` and exact `summaryArtifactPath` from `ln-830`.
+Standalone runs remain supported; if runtime arguments are omitted, generate a standalone run-scoped artifact before returning.
 
 ---
 
 ## Phase 1: Establish Baseline
 
-### Measure Current Bundle Size
-
-```
-1. Run build: npm run build (or detected build command)
-2. Measure: total size of dist/ or build/ directory
-3. Record: baseline_bytes, baseline_files
+```text
+1. Run the detected build command.
+2. Measure total size of the output directory.
+3. Record baseline bytes and per-chunk sizes.
 ```
 
 | Metric | How |
 |--------|-----|
-| Total size | Sum of all files in output directory |
-| Per-chunk sizes | Individual JS/CSS file sizes |
-| Source map excluded | Do not count .map files |
+| Total size | Sum all bundle output files except source maps |
+| Per-chunk sizes | Measure individual JS and CSS files |
+| Source map handling | Exclude `.map` files |
 
 ---
 
 ## Phase 2: Analyze Opportunities
 
-### Analysis Tools
-
 | Check | Tool | What It Finds |
-|-------|------|--------------|
-| Unused dependencies | `npx depcheck` | Packages in package.json not imported anywhere |
-| Bundle composition | `npx vite-bundle-visualizer` or `webpack-bundle-analyzer` | Large dependencies, duplicates |
-| Tree-shaking gaps | Manual scan | `import * as` instead of named imports |
-| Code splitting | Route analysis | Large initial bundle, lazy-loadable routes |
+|-------|------|---------------|
+| Unused dependencies | `depcheck` or equivalent | Packages not imported anywhere |
+| Bundle composition | Bundle analyzer | Large dependencies or duplicates |
+| Tree-shaking gaps | Manual scan | Namespace imports or heavy entrypoints |
+| Code splitting gaps | Route analysis | Lazy-load candidates |
 
-### Optimization Categories
+Optimization categories:
 
 | Category | Example | Typical Savings |
 |----------|---------|----------------|
-| Remove unused deps | `lodash` installed but not imported | 10-50KB per dep |
-| Named imports | `import { debounce } from 'lodash-es'` vs `import _ from 'lodash'` | 50-200KB |
-| Lighter alternatives | `date-fns` instead of `moment` | 50-300KB |
-| Dynamic imports | `React.lazy(() => import('./HeavyComponent'))` | Reduce initial load |
-| CSS optimization | Purge unused CSS, minify | 10-100KB |
+| Remove unused deps | dead dependencies | 10-50KB per package |
+| Named imports | `lodash-es` named imports | 50-200KB |
+| Lighter alternatives | replace heavy date or utility libs | 50-300KB |
+| Dynamic imports | lazy-load heavy components | lower initial bundle |
+| CSS optimization | remove unused CSS, minify | 10-100KB |
 
 ---
 
 ## Phase 3: Optimize Loop (Keep/Discard)
 
-### Per-Optimization Cycle
+Per-optimization cycle:
 
-```
-FOR each optimization (O1..ON):
-  1. APPLY: Make change (remove dep, rewrite import, add lazy load)
-  2. BUILD: Run build command
-     IF build FAILS → DISCARD (revert) → next optimization
-  3. MEASURE: New bundle size
-  4. COMPARE:
-     IF new_bytes < baseline_bytes → KEEP (new baseline = new_bytes)
-     IF new_bytes >= baseline_bytes → DISCARD (revert, no improvement)
-  5. LOG: Record result
+```text
+FOR each optimization:
+  1. APPLY the change
+  2. BUILD
+     IF build fails -> DISCARD and revert
+  3. MEASURE new bundle size
+  4. KEEP only if the bundle is smaller than the current baseline
+  5. LOG the result
 ```
 
-### Stop Conditions (Optimize Loop)
+Stop conditions:
 
 | Condition | Action |
 |-----------|--------|
-| All optimizations processed | STOP — proceed to Report |
-| 3 consecutive DISCARDs (no size reduction) | STOP — plateau: "No further reductions found" |
-| Build infrastructure breaks | STOP — revert to last KEEP, report partial results |
-| Bundle already below target size | STOP — "Bundle already optimized" |
+| All optimizations processed | Stop and report |
+| 3 consecutive discards | Stop for plateau |
+| Build infrastructure breaks | Revert to last keep and stop |
+| Bundle already below target | Stop and report |
 
-### Keep/Discard Decision
-
-| Condition | Decision |
-|-----------|----------|
-| Build fails | DISCARD |
-| Bundle smaller | KEEP (update baseline) |
-| Bundle same or larger | DISCARD |
-
-### Optimization Order
-
-| Order | Category | Reason |
-|-------|----------|--------|
-| 1 | Remove unused deps | Safest, immediate savings |
-| 2 | Named imports / tree-shaking | Medium risk, good savings |
-| 3 | Lighter alternatives | Higher risk (API changes) |
-| 4 | Dynamic imports / code splitting | Structural change, test carefully |
-| 5 | CSS optimization | Lowest priority |
+Optimization order:
+1. remove unused dependencies
+2. improve tree-shaking and imports
+3. replace heavy libraries
+4. introduce code splitting
+5. optimize CSS
 
 ---
 
 ## Phase 4: Report Results
 
-### Report Schema
-
 | Field | Description |
 |-------|-------------|
-| project | Project path |
-| baseline_bytes | Original bundle size |
-| final_bytes | Final bundle size |
-| reduction_bytes | Bytes saved |
-| reduction_percent | Percentage reduction |
-| optimizations_applied | Count of kept optimizations |
-| optimizations_discarded | Count + reasons |
-| details[] | Per-optimization: category, description, bytes saved |
-| deps_removed[] | Unused dependencies removed |
+| `project` | Project path |
+| `baseline_bytes` | Original bundle size |
+| `final_bytes` | Final bundle size |
+| `reduction_bytes` | Bytes saved |
+| `reduction_percent` | Percentage reduction |
+| `optimizations_applied` | Count of kept optimizations |
+| `optimizations_discarded` | Count plus reasons |
+| `deps_removed[]` | Dependencies removed |
+| `details[]` | Per-optimization savings |
+| `artifact_path` | Durable worker report path, if written |
 
 ---
 
@@ -157,22 +140,14 @@ FOR each optimization (O1..ON):
 
 ```yaml
 Options:
-  # Build
-  build_command: ""             # Auto-detect from ci_tool_detection.md
-  output_dir: ""                # Auto-detect: dist/ or build/
-
-  # Analysis
+  build_command: ""             # Auto-detect
+  output_dir: ""                # Auto-detect
   run_depcheck: true
-  run_bundle_analyzer: false    # Opens browser, skip in CI
-
-  # Optimization scope
+  run_bundle_analyzer: false
   remove_unused_deps: true
   fix_tree_shaking: true
-  suggest_alternatives: true
-  add_code_splitting: false     # Structural change, opt-in
-
-  # Verification
-  run_build: true
+  replace_heavy_libraries: true
+  enable_code_splitting: true
 ```
 
 ---
@@ -181,27 +156,41 @@ Options:
 
 | Error | Cause | Solution |
 |-------|-------|----------|
-| depcheck not available | Not installed | `npx depcheck` (runs without install) |
-| Build fails after removal | Dep used in dynamic import / config | Revert, mark as false positive |
-| No output directory | Non-standard build setup | Check package.json for output config |
-| Not a JS/TS project | No package.json | Skip entirely with info message |
+| Build fails after optimization | Invalid code or config change | Revert that optimization |
+| No size reduction | Optimization ineffective | Discard it |
+| Analyzer unavailable | Tooling missing | Continue with manual inspection |
 
 ---
 
 ## References
 
-- `shared/references/ci_tool_detection.md` (build detection)
+- [optimization_categories.md](references/optimization_categories.md)
+- `shared/references/ci_tool_detection.md`
 
 ---
 
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
+
+Emit a `modernization-worker` summary envelope.
+
+Managed mode:
+- `ln-830` passes deterministic `runId` and exact `summaryArtifactPath`
+- write the summary to the provided `summaryArtifactPath`
+
+Standalone mode:
+- omit `runId` and `summaryArtifactPath`
+- write `.hex-skills/runtime-artifacts/runs/{run_id}/modernization-worker/ln-832--{identifier}.json`
+
 ## Definition of Done
 
-- [ ] JS/TS project confirmed (package.json present)
-- [ ] Baseline bundle size measured (build + measure dist/)
-- [ ] Unused deps identified via depcheck
-- [ ] Each optimization applied with keep/discard: build passes + smaller → keep
-- [ ] Compound: each kept optimization updates baseline for next
-- [ ] Report returned with baseline, final, reduction%, per-optimization details
+- [ ] Baseline bundle size established from real build output
+- [ ] Optimization opportunities analyzed from bundle composition and project usage
+- [ ] Each optimization evaluated with keep/discard verification
+- [ ] Only size-reducing optimizations kept
+- [ ] Final report captures bundle delta, discarded attempts, and removed dependencies
+- [ ] `modernization-worker` summary artifact written to the managed or standalone path
 
 ---
 

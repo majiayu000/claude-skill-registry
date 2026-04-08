@@ -1,6 +1,6 @@
 ---
 name: smart-sourcing
-description: balancing accuracy with token efficiency.
+description: Select optimal information sources for tool calls and file reads, balancing accuracy with token efficiency.
 version: 1.7.1
 alwaysApply: true
 category: optimization

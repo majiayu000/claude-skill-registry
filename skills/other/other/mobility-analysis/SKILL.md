@@ -49,7 +49,7 @@ Search for transportation data near the site:
 
 ## Output Format
 
-Write the analysis to a markdown file at `~/Documents/mobility-analysis-[location-slug].md`.
+Write the analysis to a markdown file at `./mobility-analysis-[location-slug].md`.
 
 ```markdown
 # Mobility Analysis — [Full Address or Location Name]

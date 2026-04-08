@@ -208,7 +208,15 @@ Return verdict. On NO_GO, present issues to user.
 
 **MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
 
-Write `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-validation/{slug}.json` before finishing.
+Emit an `optimization-worker` summary envelope.
+
+Managed mode:
+- `ln-810` passes deterministic `runId` and exact `summaryArtifactPath`
+- write the summary to the provided `summaryArtifactPath`
+
+Standalone mode:
+- omit `runId` and `summaryArtifactPath`
+- write `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-worker/ln-813--{identifier}.json`
 
 ## Error Handling
 

@@ -1,7 +1,7 @@
 ---
 name: ln-641-pattern-analyzer
 description: "Analyzes single pattern implementation, calculates compliance/completeness/quality scores, identifies gaps. Use when auditing a specific pattern."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_implementations, mcp__hex-graph__search_symbols
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_implementations, mcp__hex-graph__find_symbols
 license: MIT
 ---
 
@@ -26,7 +26,7 @@ L3 Worker that analyzes a single architectural pattern against best practices an
 - Method/class length thresholds (>50, >100, >500 lines)
 - Quality Score focuses on pattern-specific quality (SOLID within pattern, pattern-level smells), not generic code metrics
 
-## Input (from ln-640 coordinator)
+## Inputs
 
 ```
 - pattern: string          # Pattern name (e.g., "Job Processing")
@@ -116,7 +116,7 @@ gaps = {
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
 ```
 # Build pattern name slug: "Job Processing" -> "job-processing"
@@ -128,13 +128,13 @@ slug = pattern.name.lower().replace(" ", "-")
 # - Findings table (issues sorted by severity)
 # - DATA-EXTENDED: {pattern, codeReferences, gaps, recommendations}
 
-Write to {output_dir}/641-pattern-{slug}.md (atomic single Write call)
+Write to {output_dir}/ln-641--{slug}.md (atomic single Write call)
 ```
 
 ### Phase 7: Return Summary
 
 ```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/641-pattern-job-processing.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-641--job-processing.md
 Score: 7.9/10 (C:72 K:85 Q:68 I:90) | Issues: 3 (H:1 M:2 L:0)
 ```
 
@@ -158,7 +158,7 @@ Score: 7.9/10 (C:72 K:85 Q:68 I:90) | Issues: 3 (H:1 M:2 L:0)
 - [ ] Issues identified with severity, category, suggestion, effort
 - [ ] Gaps documented (missing components, inconsistencies)
 - [ ] Recommendations provided
-- [ ] Report written to `{output_dir}/641-pattern-{slug}.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-641--{slug}.md` (atomic single Write call)
 - [ ] Summary written per contract
 
 ## Reference Files

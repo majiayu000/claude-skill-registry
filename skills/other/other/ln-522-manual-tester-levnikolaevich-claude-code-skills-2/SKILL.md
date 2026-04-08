@@ -136,22 +136,20 @@ To create expected files:
 
 ## Runtime Summary Artifact
 
-**MANDATORY READ:** Load `shared/references/test_planning_summary_contract.md`
+**MANDATORY READ:** Load `shared/references/test_planning_summary_contract.md`, `shared/references/test_planning_worker_runtime_contract.md`
 
-Accept optional `summaryArtifactPath`.
+Runtime profile:
+- family: `test-planning-worker`
+- worker: `ln-522`
+- summary kind: `test-planning-worker`
+- payload fields used by coordinators: `worker`, `status`, `warnings`, `manual_result_path`
 
-Summary kind:
-- `test-planning-worker`
+Invocation rules:
+- standalone: omit `runId` and `summaryArtifactPath`
+- managed: pass both `runId` and exact `summaryArtifactPath`
+- always write the validated summary before terminal outcome
 
-Required payload semantics:
-- `worker = "ln-522"`
-- `status`
-- `warnings`
-- `manual_result_path`
-
-Write the summary to the provided artifact path or return the same envelope in structured output.
-
-**Standalone default (no coordinator):** Generate `run_id` = `standalone-ln-522-{YYYYMMDD}-{short_hash}`, write summary JSON to `.hex-skills/runtime-artifacts/runs/{run_id}/test-planning-worker/ln-522.json`. Test scripts always go to `tests/manual/` (never project root). NEVER write artifacts to the project root directory.
+Test scripts always go to `tests/manual/`, never to the project root.
 
 ## Definition of Done
 - [ ] `tests/manual/` structure exists (config.sh, README.md, test-all.sh, results/ created if missing).

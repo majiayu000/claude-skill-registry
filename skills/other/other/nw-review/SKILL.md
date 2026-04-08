@@ -81,26 +81,18 @@ Default model: Haiku (overridden by `rigor.reviewer_model` when set).
 
 ## Agent Invocation
 
-Parse parameters, validate, then invoke via Task tool:
-
-```python
-Task(
-    subagent_type="{agent-name}-reviewer",
-    model=rigor_reviewer_model,  # omit if using default haiku
-    prompt="Review {artifact-type}: {absolute-artifact-path} [step_id={id}]"
-)
-```
-
-Reviewer handles: reading artifact|applying domain expertise|generating structured critique|updating original artifact with review metadata.
+1. **Parse parameters** — Strip `@` from agent name, resolve artifact path to absolute, extract optional step_id, dimensions, from/to range. Gate: all parameters parsed.
+2. **Read rigor config** — Read `.nwave/des-config.json` key `rigor`. If absent, use standard defaults. Gate: rigor profile loaded or defaults applied.
+3. **Validate inputs** — Run all four validation checks below. Gate: zero validation failures.
+4. **Apply rigor overrides** — Check `review_enabled` (skip if false), determine model from `reviewer_model` (default: haiku, skip if "skip"). Gate: execution decision made.
+5. **Invoke reviewer** — Call Task tool with `subagent_type="{agent-name}-reviewer"`, resolved model, and prompt `"Review {artifact-type}: {absolute-artifact-path} [step_id={id}]"`. Reviewer handles reading artifact, applying domain expertise, generating structured critique, updating original artifact with review metadata. Gate: Task tool invoked.
 
 ## Validation (before invoking)
 
-1. Base agent name exists (strip `@`, check agent registry)
-2. Artifact type valid (baseline, roadmap, step, task, implementation)
-3. Artifact file exists at resolved absolute path
-4. step_id provided when artifact type is `step` or `implementation`
-
-On validation failure, return specific error and stop.
+1. **Agent exists** — Strip `@`, check agent name against agent registry. Gate: agent found or return "Unknown agent: {name}. Check available agents with /nw-agents."
+2. **Artifact type valid** — Confirm type is one of: baseline, roadmap, step, task, implementation. Gate: type valid or return "Invalid artifact type: {type}. Use: baseline, roadmap, step, task, implementation."
+3. **Artifact file exists** — Resolve to absolute path and confirm file exists. Gate: file found or return "Artifact not found: {path}."
+4. **step_id present when required** — Require step_id when artifact type is `step` or `implementation`. Gate: step_id provided or return "step_id required for {type} reviews."
 
 ## Success Criteria
 

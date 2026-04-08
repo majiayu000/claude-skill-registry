@@ -12,7 +12,13 @@ argument-hint: '[agent-name] - Optional: --type=[specialist|reviewer|orchestrato
 
 ## Overview
 
-Create a new agent using research-validated v2 approach: focused core (200-400 lines) with Skills for domain knowledge. 5-phase workflow: ANALYZE > DESIGN > CREATE > VALIDATE > REFINE.
+Create a new agent using research-validated v2 approach: focused core (200-400 lines) with Skills for domain knowledge.
+
+1. **ANALYZE** — Identify single clear responsibility, check overlap with existing agents, classify type, determine minimum tools needed. Gate: responsibility defined, no overlap, classification chosen.
+2. **DESIGN** — Select design pattern, define role and divergent principles, plan Skills extraction, draft frontmatter. Gate: pattern selected, principles drafted, frontmatter ready.
+3. **CREATE** — Write agent `.md` using template. Workflow must be numbered task list. Create Skill files if domain knowledge exceeds 50 lines. Gate: agent file written, line count under 400.
+4. **VALIDATE** — Run 14-point validation checklist. Check for anti-patterns. Verify workflow is numbered task list, not prose. Gate: all 14 items pass, zero anti-patterns.
+5. **REFINE** — Address validation failures. Add instructions only for observed failure modes. Re-measure and re-validate. Gate: all items pass, line count reported.
 
 ## Agent Invocation
 

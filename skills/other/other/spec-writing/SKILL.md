@@ -1,14 +1,6 @@
 ---
 name: spec-writing
-description: 'Create clear, testable specifications with user stories and acceptance
-  criteria.
-
-
-  spec writing, feature specification, requirements, user stories
-
-  Use when: creating new specifications or writing acceptance criteria
-
-  DO NOT use when: converting specs to tasks - use task-planning.'
+description: 'Create clear, testable specifications from feature descriptions with user stories, acceptance criteria, and success metrics.'
 version: 1.7.1
 alwaysApply: false
 category: specification
@@ -64,7 +56,7 @@ Focus on user value and business needs rather than implementation details. Avoid
 4. **Success Criteria**: How do we know it works?
 
 ### Optional Sections
-- Non-Functional Requirements (when performance/security critical)
+- Success Criteria (when performance/security critical)
 - Edge Cases (when special handling needed)
 - Dependencies (when external systems involved)
 - Assumptions (when decisions made with incomplete info)

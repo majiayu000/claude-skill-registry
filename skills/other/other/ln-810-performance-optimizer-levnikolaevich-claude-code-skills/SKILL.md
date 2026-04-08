@@ -41,7 +41,8 @@ Runtime CLI:
 ```bash
 node shared/scripts/optimization-runtime/cli.mjs start --slug {slug} --manifest-file .hex-skills/optimization/{slug}/manifest.json
 node shared/scripts/optimization-runtime/cli.mjs status --slug {slug}
-node shared/scripts/optimization-runtime/cli.mjs record-worker-result --worker ln-811 --payload '{...}'
+node shared/scripts/optimization-runtime/cli.mjs record-worker-result --payload '{...}'
+node shared/scripts/optimization-runtime/cli.mjs record-summary --payload '{...}'
 node shared/scripts/optimization-runtime/cli.mjs record-cycle --payload '{...}'
 node shared/scripts/optimization-runtime/cli.mjs checkpoint --phase PHASE_8_EXECUTE --payload '{...}'
 node shared/scripts/optimization-runtime/cli.mjs advance --to PHASE_9_CYCLE_BOUNDARY
@@ -58,11 +59,9 @@ Runtime state is run-scoped, while optimization artifacts stay slug-scoped:
   runtime/runs/{run_id}/state.json
   runtime/runs/{run_id}/checkpoints.json
   runtime/runs/{run_id}/history.jsonl
+  runtime-artifacts/runs/{run_id}/optimization-coordinator/ln-810--{slug}.json
+  runtime-artifacts/runs/{run_id}/optimization-worker/{worker}--{child_identifier}.json
   {slug}/context.md
-  runtime-artifacts/optimization-profile/{slug}.json
-  runtime-artifacts/optimization-research/{slug}.json
-  runtime-artifacts/optimization-validation/{slug}.json
-  runtime-artifacts/optimization-execution/{slug}.json
   {slug}/ln-814-log.tsv
 ```
 
@@ -94,10 +93,14 @@ Runtime state is run-scoped, while optimization artifacts stay slug-scoped:
 
 ### Phase 2: Profile
 
-1. Invoke `ln-811-performance-profiler`.
-2. Read `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-profile/{slug}.json`.
-3. Record the worker result with `record-worker-result`.
-4. Checkpoint `PHASE_2_PROFILE`.
+1. Compute deterministic child metadata:
+   - `identifier=ln-811--{slug}--cycle-{current_cycle}`
+   - child `run_id`
+   - exact `summaryArtifactPath=.hex-skills/runtime-artifacts/runs/{parent_run_id}/optimization-worker/ln-811--{slug}--cycle-{current_cycle}.json`
+2. Checkpoint `PHASE_2_PROFILE` with `child_run`.
+3. Invoke `ln-811-performance-profiler` with the child `runId` and exact `summaryArtifactPath`.
+4. Read the emitted `optimization-worker` summary envelope from the exact artifact path.
+5. Record the worker summary with `record-worker-result`.
 
 ### Phase 3: Wrong Tool Gate
 
@@ -121,11 +124,11 @@ Checkpoint `PHASE_3_WRONG_TOOL_GATE` with:
 
 ### Phase 4: Research
 
-1. Invoke `ln-812-optimization-researcher`.
-2. Read `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-research/{slug}.json`.
-3. Record the worker result.
-4. If no hypotheses remain, stop after aggregate/report.
-5. Checkpoint `PHASE_4_RESEARCH`.
+1. Compute deterministic child metadata for `ln-812`.
+2. Checkpoint `PHASE_4_RESEARCH` with `child_run`.
+3. Invoke `ln-812-optimization-researcher` with the child `runId` and exact `summaryArtifactPath`.
+4. Read and record the emitted `optimization-worker` summary envelope.
+5. If no hypotheses remain, stop after aggregate/report.
 
 ### Phase 5: Set Target
 
@@ -149,20 +152,20 @@ Checkpoint `PHASE_3_WRONG_TOOL_GATE` with:
 
 ### Phase 7: Validate Plan
 
-1. Invoke `ln-813-optimization-plan-validator`.
-2. Read `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-validation/{slug}.json`.
-3. Record worker result.
-4. Checkpoint `PHASE_7_VALIDATE_PLAN`.
+1. Compute deterministic child metadata for `ln-813`.
+2. Checkpoint `PHASE_7_VALIDATE_PLAN` with `validation_verdict` and `child_run`.
+3. Invoke `ln-813-optimization-plan-validator` with the child `runId` and exact `summaryArtifactPath`.
+4. Read and record the emitted `optimization-worker` summary envelope.
 5. If verdict is `NO_GO`, pause runtime until user resolves or waives.
 
 ### Phase 8: Execute
 
 `execution_mode=execute`:
 
-1. Invoke `ln-814-optimization-executor`.
-2. Read `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-execution/{slug}.json`.
-3. Record worker result.
-4. Checkpoint `PHASE_8_EXECUTE` with `execution_result`.
+1. Compute deterministic child metadata for `ln-814`.
+2. Checkpoint `PHASE_8_EXECUTE` with `child_run`.
+3. Invoke `ln-814-optimization-executor` with the child `runId` and exact `summaryArtifactPath`.
+4. Read and record the emitted `optimization-worker` summary envelope.
 
 `execution_mode=plan_only`:
 
@@ -202,7 +205,8 @@ Checkpoint `PHASE_3_WRONG_TOOL_GATE` with:
 2. Checkpoint `PHASE_11_REPORT` with:
    - `report_ready=true`
    - `final_result`
-3. Complete runtime only after this checkpoint exists.
+3. Record the `optimization-coordinator` summary envelope with `record-summary`.
+4. Complete runtime only after the report checkpoint and coordinator summary exist.
 
 ## Worker Invocation (MANDATORY)
 

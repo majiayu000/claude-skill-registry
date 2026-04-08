@@ -71,6 +71,7 @@ Launch one Agent tool call each. Each agent's prompt instructs it to invoke its 
 | `/review-test-coverage` | Project-wide |
 | `/review-dependencies` | Project-wide |
 | `/review-tooling` | Project-wide |
+| `/review-agentic-setup` | Project-wide |
 | `/find-dead-code` | Has its own partitioning |
 
 ## Step 4: Run `/evaluate-findings` Skill
@@ -101,6 +102,7 @@ Write `.turbo/audit.md` using the template below. Populate the dashboard by coun
 | Dependencies | <Pass/Warn/Fail> | <N> | <N> |
 | Tooling | <Pass/Warn/Fail> | <N> | <N> |
 | Dead Code | <Pass/Warn/Fail> | <N> | <N> |
+| Agentic Setup | <Pass/Warn/Fail> | <N> | <N> |
 | Threat Model | <Present/Missing> | — | — |
 
 ### Health Thresholds
@@ -134,6 +136,9 @@ Write `.turbo/audit.md` using the template below. Populate the dashboard by coun
 
 ### Dead Code
 <findings from /find-dead-code>
+
+### Agentic Setup
+<findings from /review-agentic-setup>
 
 ### Threat Model
 <status and summary>

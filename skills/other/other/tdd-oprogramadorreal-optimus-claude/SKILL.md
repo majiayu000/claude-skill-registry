@@ -45,11 +45,23 @@ Before starting TDD cycles, analyze whether the user's task is a good fit for te
 
 ### Gather the task
 
-If the user provided a task description inline (e.g., `/optimus:tdd "Add auth endpoint"`), use it. Otherwise, use `AskUserQuestion` — header "TDD scope", question "What feature or bug fix do you want to implement with TDD?":
+**Context detection** (runs before the task-gathering prompts below — first match wins):
+
+1. **Explicit reference** — if the user's input references a file path ending in `.md` inside `docs/design/` or `docs/jira/`, read that file and use its Goal section as the task description. Proceed to distillation below if the goal is longer than 2-3 sentences.
+
+2. **Design doc auto-discovery** — if no explicit reference but `docs/design/` exists with `.md` files, check the most recent one (by filename date prefix). If its date is within the last 7 days, mention it: "Found design doc `<path>` — use it as the basis for TDD?" via `AskUserQuestion` — header "Design doc", options "Use it" / "Ignore — describe a different task". If its date is older than 7 days, add a note: "(This design doc is [N] days old — you may want to re-run `/optimus:brainstorm` for a fresh design.)" Design docs contain full approach details from `/optimus:brainstorm` — use Goal, Components, and Interfaces sections as the task description.
+
+3. **JIRA context auto-discovery** — if no design doc found (or user ignored it) but `docs/jira/` exists with `.md` files, read each file's YAML frontmatter and select the one with the most recent `date` field. If its date is within the last 7 days, mention it: "Found JIRA context `<path>` — use it as the basis for TDD?" via `AskUserQuestion` — header "JIRA context", options "Use it" / "Ignore — describe a different task". If its date is older than 7 days, add a note: "(This context is [N] days old — you may want to re-run `/optimus:jira` for fresh data.)" JIRA context provides Goal and Acceptance Criteria as the task description.
+
+4. **No context found** — proceed with normal task gathering below.
+
+Design docs take priority over JIRA files because they are more detailed (they incorporate JIRA context if brainstorm consumed it). Detected context feeds into the existing task-gathering cascade below — it does NOT bypass Step 3 decomposition. TDD still independently decomposes the goal into behaviors.
+
+If context detection above resolved a task description (user accepted a design doc or JIRA context), use it — skip the inline/prompt gathering below. Otherwise, if the user provided a task description inline (e.g., `/optimus:tdd "Add auth endpoint"`), use it. Otherwise, use `AskUserQuestion` — header "TDD scope", question "What feature or bug fix do you want to implement with TDD?":
 - **New feature** — "Implement a new capability (e.g., 'Add user authentication endpoint')"
 - **Bug fix** — "Fix a bug by reproducing it with a test first (e.g., 'Login fails when email has uppercase')"
 
-If the task description is longer than ~2-3 sentences (e.g., a pasted spec, Jira ticket, or acceptance criteria list), distill it into a **single-sentence goal** and confirm with `AskUserQuestion` — header "Distilled goal", question "I've distilled your spec to: '[single-sentence summary]'. Is this accurate?":
+If the task description is longer than ~2-3 sentences (e.g., a pasted spec, JIRA ticket, or acceptance criteria list), distill it into a **single-sentence goal** and confirm with `AskUserQuestion` — header "Distilled goal", question "I've distilled your spec to: '[single-sentence summary]'. Is this accurate?":
 - **Looks good** — "Proceed with this goal"
 - **Adjust** — "Let me refine the focus"
 

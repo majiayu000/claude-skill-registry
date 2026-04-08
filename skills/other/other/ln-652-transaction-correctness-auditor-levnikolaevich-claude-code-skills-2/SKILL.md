@@ -20,7 +20,7 @@ Specialized worker auditing database transaction patterns for correctness, scope
 - Write structured findings to file with severity, location, effort, recommendations
 - Calculate compliance score (X/10) for Transaction Correctness category
 
-## Inputs (from Coordinator)
+## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
@@ -50,7 +50,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (datab
 
 5) **Calculate score using penalty algorithm**
 
-6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/652-transaction-correctness.md` in single Write call
+6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/ln-652--global.md` in single Write call
 
 7) **Return Summary:** Return minimal summary to coordinator (see Output Format)
 
@@ -192,15 +192,15 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (datab
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/652-transaction-correctness.md` with `category: "Transaction Correctness"` and checks: missing_intermediate_commits, scope_too_wide, scope_too_narrow, missing_rollback, long_held_transaction, event_channel_consistency.
+Write report to `{output_dir}/ln-652--global.md` with `category: "Transaction Correctness"` and checks: missing_intermediate_commits, scope_too_wide, scope_too_narrow, missing_rollback, long_held_transaction, event_channel_consistency.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/652-transaction-correctness.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-652--global.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -225,7 +225,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
   - missing intermediate commits, scope too wide, scope too narrow, missing rollback, long-held, event channel consistency
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated using penalty algorithm
-- [ ] Report written to `{output_dir}/652-transaction-correctness.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-652--global.md` (atomic single Write call)
 - [ ] Summary written per contract
 
 ## Reference Files

@@ -31,22 +31,25 @@ Finalize a completed feature: verify all steps done|create evolution document|mi
 
 Before dispatching, verify all steps are done — prevents archiving incomplete features.
 
-Parse execution-log.json, verify every step has status DONE. If any step is not DONE, block finalization and list incomplete steps with current status. Do not dispatch until all steps complete.
+1. **Parse execution log** — Read `docs/feature/{feature-id}/deliver/execution-log.json`. Gate: file readable.
+2. **Verify completeness** — Check every step has status `DONE`. Gate: all steps DONE.
+3. **Block or proceed** — If any step is not DONE, list incomplete steps with current status and halt. If all DONE, proceed to dispatch. Gate: zero incomplete steps before dispatch.
 
 ## Phases
 
 ### Phase A — Evolution Document
 
-Create `docs/evolution/YYYY-MM-DD-{feature-id}.md` with:
-- Feature summary, business context, key decisions
-- Steps completed (from execution-log.json)
-- Key wave decisions (extracted from `*/wave-decisions.md` files)
-- Lessons learned, issues encountered
-- Links to migrated permanent artifacts
+1. **Gather source data** — Read `execution-log.json`, `roadmap.json`, and all `*/wave-decisions.md` files. Gate: source files read.
+2. **Extract key decisions** — Pull decisions, issues, and lessons from wave-decisions files. Gate: decisions list assembled.
+3. **Write evolution doc** — Create `docs/evolution/YYYY-MM-DD-{feature-id}.md` with: feature summary, business context, key decisions, steps completed (from execution-log.json), lessons learned, issues encountered, links to migrated permanent artifacts. Gate: file written.
 
 ### Phase B — Migrate Lasting Artifacts
 
-Scan `docs/feature/{feature-id}/` and migrate artifacts with lasting value to permanent directories. Create destination directories as needed.
+1. **Scan workspace** — List all files under `docs/feature/{feature-id}/`. Gate: file list produced.
+2. **Match against destination map** — For each file, apply the destination map below. Gate: migration plan assembled.
+3. **Create destination directories** — Create any missing permanent directories. Gate: directories exist.
+4. **Copy files** — Copy each matched file to its permanent destination. Gate: all copies verified.
+5. **Log skipped files** — Note any files from the discard list (not migrated). Gate: discard list documented.
 
 #### Destination Map
 
@@ -82,21 +85,20 @@ These are process scaffolding — valuable during delivery, disposable after:
 
 ### Phase C — Cleanup Workspace
 
-1. List all remaining files in `docs/feature/{feature-id}/` after migration
-2. Show the list to the user for approval
-3. On approval: `rm -rf docs/feature/{feature-id}/`
-4. If `docs/feature/` directory is now empty: remove it too
+1. **List remaining files** — List all files still in `docs/feature/{feature-id}/` after migration. Gate: list produced.
+2. **Present for approval** — Show the exact list to the user and request approval. Gate: user explicitly approves.
+3. **Remove workspace** — On approval: `rm -rf docs/feature/{feature-id}/`. Gate: directory removed.
+4. **Remove parent if empty** — If `docs/feature/` directory is now empty, remove it too. Gate: no empty parent directory remains.
 
 **NEVER delete without user approval.** Show exactly what will be removed.
 
 ### Phase D — Post-Cleanup Verification
 
-1. Verify all migrated files exist in their destinations
-2. Update architecture doc statuses from "FUTURE DESIGN" to "IMPLEMENTED"
-3. Optionally invoke /nw-document for reference docs (skip with --skip-docs)
-4. Commit in logical groups:
-   - Commit 1: evolution doc + migrated artifacts
-   - Commit 2: workspace cleanup (removal)
+1. **Verify migrated files** — Confirm every file copied in Phase B exists at its destination. Gate: all destinations present.
+2. **Update architecture doc statuses** — Change any "FUTURE DESIGN" labels to "IMPLEMENTED" in migrated architecture docs. Gate: no stale FUTURE DESIGN labels.
+3. **Optionally generate reference docs** — Invoke /nw-document unless `--skip-docs` flag provided. Gate: docs generated or skipped.
+4. **Commit evolution doc and artifacts** — Commit 1: evolution doc + migrated artifacts. Gate: commit created.
+5. **Commit workspace cleanup** — Commit 2: workspace removal. Gate: commit created and pushed.
 
 ## Agent Invocation
 
@@ -105,11 +107,12 @@ These are process scaffolding — valuable during delivery, disposable after:
 Finalize: {feature-id}
 
 **Key constraints:**
-- Follow the 4-phase process (A → B → C → D) in order
-- Create evolution document BEFORE migration (needs source files)
-- Migrate BEFORE cleanup (preserves artifacts)
-- Always show cleanup list and wait for user approval
-- Commit and push after approval
+
+1. Follow the 4-phase process (A → B → C → D) in order.
+2. Create evolution document BEFORE migration (needs source files).
+3. Migrate BEFORE cleanup (preserves artifacts).
+4. Show cleanup list and wait for user approval before removing anything.
+5. Commit and push after approval.
 
 ## Success Criteria
 

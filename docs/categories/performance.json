@@ -2,30 +2,30 @@
   "category": "performance",
   "code": "oth",
   "count": 2,
-  "updated_at": "2026-04-04T04:23:19.000723Z",
+  "updated_at": "2026-04-08T05:11:34.911319Z",
   "skills": [
     {
       "name": "database-optimizer",
       "description": "Analyze and improve database performance through safe, measurable query, index, and configuration optimizations.",
       "repo": "Masked-Kunsiquat/crm-orbit2",
-      "path": "",
+      "path": ".codex/skills/database-optimizer/SKILL.md",
       "branch": "main",
       "category": "performance",
       "tags": [],
       "stars": 0,
-      "install": "Masked-Kunsiquat/crm-orbit2",
+      "install": "Masked-Kunsiquat/crm-orbit2/.codex/skills/database-optimizer/SKILL.md",
       "source": "github.com/Masked-Kunsiquat/crm-orbit2"
     },
     {
       "name": "database-optimizer",
       "description": "Analyze and improve database performance through safe, measurable query, index, and configuration optimizations.",
       "repo": "Masked-Kunsiquat/crm-orbit2",
-      "path": "",
+      "path": ".codex/skills/database-optimizer/SKILL.md",
       "branch": "main",
       "category": "performance",
       "tags": [],
       "stars": 0,
-      "install": "Masked-Kunsiquat/crm-orbit2",
+      "install": "Masked-Kunsiquat/crm-orbit2/.codex/skills/database-optimizer/SKILL.md",
       "source": "github.com/Masked-Kunsiquat/crm-orbit2"
     }
   ]

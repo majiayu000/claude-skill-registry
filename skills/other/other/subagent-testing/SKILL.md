@@ -1,11 +1,7 @@
 ---
 name: subagent-testing
-description: TDD-style testing methodology for skills using fresh subagent instances
-  to prevent priming bias and validate skill effectiveness. Use when validating skill
-  improvements, testing skill effectiveness, preventing priming bias, measuring skill
-  impact on behavior. Do not use when implementing skills (use skill-authoring instead),
-  creating hooks (use hook-authoring instead).
-version: 1.7.1
+description: 'Test skills via RED/GREEN/REFACTOR TDD with fresh subagents. Use when: validating skill behavior, preventing priming bias.'
+version: 1.8.1
 alwaysApply: false
 category: testing
 tags:

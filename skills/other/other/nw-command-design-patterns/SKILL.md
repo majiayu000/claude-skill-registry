@@ -94,9 +94,19 @@ Fix: Extract shared content to preamble skill. Move domain knowledge to agents. 
 
 ## When Commands Should Contain Logic vs Delegate
 
-**Contain in command** (declarative): Which agent to invoke | What context files to read/pass | Success criteria and quality gates | Next wave handoff
+**Contain in command** (declarative):
 
-**Delegate to agent**: Methodology (TDD phases, review criteria, refactoring levels) | Domain-specific templates/schemas | Tool-specific config (cosmic-ray, pytest) | Quality assessment rubrics
+1. Which agent to invoke
+2. What context files to read/pass
+3. Success criteria and quality gates
+4. Next wave handoff
+
+**Delegate to agent**:
+
+1. Methodology (TDD phases, review criteria, refactoring levels)
+2. Domain-specific templates/schemas
+3. Tool-specific config (cosmic-ray, pytest)
+4. Quality assessment rubrics
 
 Rule: if content describes HOW the agent does its work, it belongs in agent definition or skill, not command.
 
@@ -218,9 +228,20 @@ The orchestrator describes WHAT each phase does and WHO does it. The agents know
 
 When optimizing command files for token efficiency:
 
-**Safe to compress**: Prose descriptions → pipe-delimited | Verbose explanations → imperative voice | Filler words ("in order to", "it is important to") → remove | Related bullet items → single line with `|` separators
+**Safe to compress**:
 
-**Never compress**: `### Example N:` section headers — keep verbatim (eval tools and agents depend on these) | AskUserQuestion decision tree options — these are runtime menu items, not documentation | `**Question**:` lines in decision points — runtime behavior | Code blocks and YAML — preserve verbatim | YAML frontmatter — preserve exactly
+1. Prose descriptions → pipe-delimited
+2. Verbose explanations → imperative voice
+3. Filler words ("in order to", "it is important to") → remove
+4. Related bullet items → single line with `|` separators
+
+**Never compress**:
+
+1. `### Example N:` section headers — keep verbatim (eval tools and agents depend on these)
+2. AskUserQuestion decision tree options — these are runtime menu items, not documentation
+3. `**Question**:` lines in decision points — runtime behavior
+4. Code blocks and YAML — preserve verbatim
+5. YAML frontmatter — preserve exactly
 
 **Compression evidence**: Pipe-delimited compression achieves 15-30% token reduction on prose-heavy files. Code-heavy files (PBT skills, code examples) yield <5%. Average across framework: ~7.4% overall.
 

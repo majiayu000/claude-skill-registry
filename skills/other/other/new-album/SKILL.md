@@ -34,29 +34,14 @@ Examples:
 - `protest-songs folk`
 - `the-heist documentary hip-hop`
 
-Valid genres (primary categories):
-- `hip-hop`
-- `electronic`
-- `rock`
-- `folk`
-- `country`
-- `pop`
-- `metal`
-- `jazz`
-- `rnb`
-- `classical`
-- `reggae`
-- `punk`
-- `indie-folk`
-- `blues`
-- `gospel`
-- `latin`
-- `k-pop`
+Valid genres: Any genre that has a directory under `${CLAUDE_PLUGIN_ROOT}/genres/`. Use the slug form (lowercase, hyphenated) — e.g. `deep-house`, `crust-punk`, `k-pop`, `hip-hop`.
+
+To check if a genre is valid, verify `${CLAUDE_PLUGIN_ROOT}/genres/{genre}/README.md` exists.
 
 **Parsing logic:**
 1. If 3 arguments and second is `documentary`: album = arg1, genre = arg3, documentary = true
 2. If 2 arguments: album = arg1, genre = arg2, documentary = false
-3. If 2 arguments and neither matches a valid genre: ask for clarification
+3. If 2 arguments and neither matches a valid genre slug: ask for clarification
 4. If only 1 argument or none: ask the user
 
 **After parsing, if documentary flag was not set, ask:**
@@ -69,8 +54,9 @@ Usage: /new-album <album-name> <genre>
 
 Example: /new-album sample-album electronic
          /new-album the-heist documentary hip-hop
+         /new-album night-drive deep-house
 
-Valid genres: hip-hop, electronic, rock, folk, country, pop, metal, jazz, rnb, classical, reggae, punk, indie-folk, blues, gospel, latin, k-pop
+Genre must match a directory under genres/ (use slug form: deep-house, crust-punk, etc.)
 ```
 
 ## Step 2: Create Album via MCP
@@ -106,6 +92,12 @@ Next steps:
   Option 2 - Manual:
     1. Edit README.md with your album concept
     2. Create tracks with /import-track or manually in tracks/
+
+Tip: For OST/soundtrack albums with a mix of vocal and instrumental
+tracks, the album-conceptualizer will ask about the vocal/instrumental
+split per track. Set `instrumental: true` in track frontmatter for
+instrumental tracks — they skip the lyrics workflow and go directly
+to /bitwize-music:suno-engineer.
 ```
 
 ## Error Handling
@@ -120,7 +112,8 @@ Run /configure to set up.
 ```
 Error: Invalid genre "{genre}"
 
-Valid genres: hip-hop, electronic, rock, folk, country, pop, metal, jazz, rnb, classical, reggae, punk, indie-folk, blues, gospel, latin, k-pop
+No genre directory found at genres/{genre}/. Use a valid genre slug (e.g. hip-hop, deep-house, grindcore).
+Check genres/INDEX.md for the full list.
 ```
 
 **Album already exists:**
@@ -215,20 +208,13 @@ create_album_structure(album_slug, genre, documentary)
 
 The MCP tool reads config, resolves paths, creates directories, and copies templates automatically.
 
-### ❌ Don't: Use wrong genre category
+### ✅ Do: Use the specific genre slug
 
-**Wrong:**
+Any genre with a directory under `genres/` is valid. Use the most specific genre that fits:
+
 ```bash
-# Using subgenre instead of primary category
-/new-album my-album boom-bap        # boom-bap is a subgenre
-/new-album my-album trap            # trap is a subgenre
+/new-album my-album boom-bap        # has its own genre directory
+/new-album my-album deep-house      # specific subgenre
+/new-album my-album grindcore       # specific subgenre
+/new-album my-album hip-hop         # broad category also works
 ```
-
-**Right:**
-```bash
-# Use primary genre category
-/new-album my-album hip-hop         # boom-bap and trap go in hip-hop
-/new-album my-album electronic      # house, techno go in electronic
-```
-
-Valid primary genres: `hip-hop`, `electronic`, `rock`, `folk`, `country`, `pop`, `metal`, `jazz`, `rnb`, `classical`, `reggae`, `punk`, `indie-folk`, `blues`, `gospel`, `latin`, `k-pop`

@@ -1,6 +1,6 @@
 ---
 name: workflow-setup
-description: "Configure GitHub Actions CI/CD workflows for automated testing, linting, and deployment pipelines. Use when setting up continuous integration for a GitHub-hosted project. Skip if CI/CD is already configured or the project is not on GitHub."
+description: "Configure GitHub Actions CI/CD workflows for automated testing, linting, and deployment pipelines."
 version: 1.7.1
 globs: "**/.github/workflows/*.yml"
 alwaysApply: false

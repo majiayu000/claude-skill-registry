@@ -141,10 +141,11 @@ All workflows follow this pattern:
 
 ## Navigation Strategy
 
-**MOC-First**: Always start with Map of Content for the relevant service
-- Achieves 94% context reduction vs reading all documents
-- Only [project-a] and [project-b] have MOCs currently
-- CC and [project-c]: Navigate directly to project files
+**Index or MOC-First**: Start with the best available navigation entry point
+- `_meta/index.md`: Auto-generated catalog of all KB documents — always available, covers every project
+- Service MOCs in `_index/`: Human-curated, deeper context — available for [project-a] and [project-b]
+- For projects without MOCs (CC, [project-c]): use `_meta/index.md` to find relevant documents
+- MOCs achieve 94% context reduction vs reading all documents; index achieves similar reduction with broader coverage
 
 **Reflections-First**: Check `/reflections/` BEFORE technical documentation
 - Learn from documented failures
@@ -214,6 +215,38 @@ Subagents return JSON with:
 
 See [references/json-schemas.md](references/json-schemas.md) for complete schema.
 
+## Query Write-Back
+
+After presenting lookup results, if the synthesis is high-value (cross-cutting insight, novel connection, or actionable recommendation), **offer to file it as a KB document**:
+
+1. Ask the user: "This synthesis could be saved to the knowledge bank. Would you like to file it?"
+2. If accepted, construct a document from the subagent's response fields:
+   - `executive_summary` → Overview section
+   - `relevant_patterns` → Patterns section
+   - `best_practices` → Best Practices section
+   - `reflection_insights` → Lessons Learned section
+3. Follow the kb-ingest workflow (see `skills/kb-ingest/SKILL.md`):
+   - Use existing templates from `session-recap/references/`
+   - Target 5-8 WikiLinks (use `search_cross_references.sh`)
+   - Frontmatter: `source-type: synthesis`, `query: "{original query}"`, `synthesized-from: [list of source doc paths]`
+4. Run integration steps:
+   ```bash
+   source skills/common/generate_index.sh && generate_index "$KB_PATH"
+   source skills/common/obsidian_helpers.sh && append_kb_log "$KB_PATH" "query-writeback" "kb-lookup" "Filed synthesis: [doc title]"
+   ```
+
+**When NOT to write back**: Simple lookups, single-document answers, or when the synthesis doesn't add value beyond what's already in the referenced docs.
+
+## Operation Logging
+
+After completing a lookup, the main agent SHOULD log the query to `_meta/log.md` for audit trail:
+```bash
+source skills/common/obsidian_helpers.sh
+append_kb_log "$KB_PATH" "query" "kb-lookup" "[lookup-type] query for [topic] — [N] docs consulted"
+```
+
+This is lightweight (single line append) and enables the lint operation to track KB usage patterns.
+
 ## Best Practices
 
 | Practice | Rationale |
@@ -227,6 +260,7 @@ See [references/json-schemas.md](references/json-schemas.md) for complete schema
 
 ## Reference Documentation
 
+- **[KB Schema](_meta/schema.md)** - Unified conventions for all KB documents
 - **[Prompt Templates](references/templates.md)** - Complete subagent prompts for Quick/Standard/Deep lookups
 - **[Integration Examples](references/examples.md)** - Usage scenarios and response construction
 - **[JSON Schemas](references/json-schemas.md)** - Response format specifications

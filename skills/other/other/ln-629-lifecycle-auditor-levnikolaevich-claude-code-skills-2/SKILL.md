@@ -16,12 +16,11 @@ Specialized worker auditing application lifecycle and entry points.
 
 ## Purpose & Scope
 
-- **Worker in ln-620 coordinator pipeline**
 - Audit **lifecycle** (Category 12: Medium Priority)
 - Check bootstrap, shutdown, signal handling, probes
 - Calculate compliance score (X/10)
 
-## Inputs (from Coordinator)
+## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
@@ -40,7 +39,7 @@ Receives `contextStore` with tech stack, deployment type, codebase root, output_
    - Probes: check deployment config (Dockerfile, k8s manifests) -- is this containerized?
 4) Collect confirmed findings
 5) Calculate score
-6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/629-lifecycle.md` in single Write call
+6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/ln-629--global.md` in single Write call
 7) **Return Summary:** Return minimal summary to coordinator
 
 ## Audit Rules
@@ -115,15 +114,15 @@ Receives `contextStore` with tech stack, deployment type, codebase root, output_
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/629-lifecycle.md` with `category: "Lifecycle"` and checks: bootstrap_order, graceful_shutdown, resource_cleanup, signal_handling, probes.
+Write report to `{output_dir}/ln-629--global.md` with `category: "Lifecycle"` and checks: bootstrap_order, graceful_shutdown, resource_cleanup, signal_handling, probes.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/629-lifecycle.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-629--global.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -149,7 +148,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] All 5 checks completed (bootstrap order, graceful shutdown, resource cleanup, signal handling, probes)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated per `shared/references/audit_scoring.md`
-- [ ] Report written to `{output_dir}/629-lifecycle.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-629--global.md` (atomic single Write call)
 - [ ] Summary written per contract
 
 ---

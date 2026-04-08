@@ -2,18 +2,18 @@
   "category": "string",
   "code": "oth",
   "count": 1,
-  "updated_at": "2026-04-04T04:23:19.054959Z",
+  "updated_at": "2026-04-08T05:11:34.967028Z",
   "skills": [
     {
       "name": "string",
       "description": "string",
       "repo": "dot-do/mdx",
-      "path": "",
+      "path": "schema/schema.org.ai/Skill.mdx",
       "branch": "main",
       "category": "string",
       "tags": [],
       "stars": 3,
-      "install": "dot-do/mdx",
+      "install": "dot-do/mdx/schema/schema.org.ai/Skill.mdx",
       "source": "github.com/dot-do/mdx"
     }
   ]

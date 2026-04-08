@@ -1,6 +1,6 @@
 ---
 name: project-planning
-description: "Transform specifications into dependency-ordered implementation plans with phased tasks and parallel execution opportunities. Use when a spec is ready for breakdown into tasks. Skip if no spec exists."
+description: "Transform specifications into dependency-ordered implementation plans with phased tasks and parallel work identification."
 version: 1.7.1
 alwaysApply: false
 # Custom metadata (not used by Claude for matching):

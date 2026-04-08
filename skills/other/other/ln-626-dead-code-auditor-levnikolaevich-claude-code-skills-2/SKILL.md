@@ -1,7 +1,7 @@
 ---
 name: ln-626-dead-code-auditor
 description: "Checks unreachable code, unused imports/variables/functions, commented-out code, deprecated patterns. Use when auditing dead code."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__index_project, mcp__hex-graph__find_unused_exports
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__index_project, mcp__hex-graph__audit_workspace
 license: MIT
 ---
 
@@ -15,12 +15,11 @@ Specialized worker auditing unused and unreachable code.
 
 ## Purpose & Scope
 
-- **Worker in ln-620 coordinator pipeline**
 - Audit **dead code** (Category 9: Low Priority)
 - Find unused imports, variables, functions, commented-out code
 - Calculate compliance score (X/10)
 
-## Inputs (from Coordinator)
+## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
@@ -32,7 +31,7 @@ Receives `contextStore` with tech stack, codebase root, output_dir.
 
 1) Parse context + output_dir
 2) Run dead code detection (Layer 1: linters, grep)
-   - **Graph-capable projects:** For JavaScript, TypeScript/TSX, Python, C#, and PHP, use `index_project` then `find_unused_exports` as primary detection for unused exports when graph indexing is available.
+   - **Graph-capable projects:** For JavaScript, TypeScript/TSX, Python, C#, and PHP, use `index_project` then `audit_workspace(verbosity="full")` as primary detection for unused exports when graph indexing is available.
    - Keep grep/linter fallback for unsupported languages, graph-unavailable runs, and checks outside export liveness.
 3) Analyze context per candidate (Layer 2):
    - Unused functions: used via dynamic import/reflection? Exported in public API? Used in other packages (monorepo)?
@@ -40,7 +39,7 @@ Receives `contextStore` with tech stack, codebase root, output_dir.
    - Legacy shims: read git blame -- age? Is there an issue/PR tracking removal?
 4) Collect confirmed findings
 5) Calculate score
-6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/626-dead-code.md` in single Write call
+6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/ln-626--global.md` in single Write call
 7) **Return Summary:** Return minimal summary to coordinator
 
 ## Audit Rules
@@ -116,15 +115,15 @@ Receives `contextStore` with tech stack, codebase root, output_dir.
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/626-dead-code.md` with `category: "Dead Code"` and checks: unreachable_code, unused_exports, commented_code, legacy_shims.
+Write report to `{output_dir}/ln-626--global.md` with `category: "Dead Code"` and checks: unreachable_code, unused_exports, commented_code, legacy_shims.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/626-dead-code.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-626--global.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -152,7 +151,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Clean code checklist loaded from `shared/references/clean_code_checklist.md`
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated per `shared/references/audit_scoring.md`
-- [ ] Report written to `{output_dir}/626-dead-code.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-626--global.md` (atomic single Write call)
 - [ ] Summary written per contract
 
 ---

@@ -1,7 +1,7 @@
 ---
 name: ln-614-docs-fact-checker
 description: "Verifies claims in .md files (paths, versions, counts, configs, endpoints) against codebase, cross-checks contradictions. Use when auditing docs accuracy."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline, mcp__hex_graph__index_project, mcp__hex_graph__search_symbols, mcp__hex_graph__find_references
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline, mcp__hex-line__read_file, mcp__hex-graph__index_project, mcp__hex-graph__find_symbols, mcp__hex-graph__find_references
 license: MIT
 ---
 
@@ -15,7 +15,6 @@ Specialized worker that extracts verifiable claims from documentation and valida
 
 ## Purpose & Scope
 
-- **Worker in ln-610 coordinator pipeline** - invoked by ln-610-docs-auditor
 - Prioritize canonical and high-claim docs, then extract verifiable claims from markdown documentation
 - Verify each claim against codebase (Grep/Glob/Read/Bash)
 - Detect **cross-document contradictions** (same fact stated differently)
@@ -23,9 +22,9 @@ Specialized worker that extracts verifiable claims from documentation and valida
 - Single invocation (not per-document) -> cross-doc checks require global view
 - Does NOT check scope alignment or structural quality
 
-## Inputs (from Coordinator)
+## Inputs
 
-**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`, `shared/references/docs_quality_contract.md`, `shared/references/docs_quality_rules.json`, and `shared/references/markdown_read_protocol.md`.
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`, `shared/references/docs_quality_contract.md`, `shared/references/docs_quality_rules.json`, `shared/references/markdown_read_protocol.md`, `shared/references/mcp_tool_preferences.md`, and `shared/references/mcp_integration_patterns.md`.
 
 Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 
@@ -53,6 +52,8 @@ If `docs/project/.context/doc_registry.json` exists:
 **MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
 
 For each prioritized document, use section-first reads to extract verifiable claims using Grep/regex patterns.
+
+For code files referenced by docs, use `outline()` and discovery-first `read_file()` before built-in reads. Only request `edit_ready=true, verbosity="full"` if verification turns into a follow-up edit. Use `hex-graph` only when entity identity or reference resolution remains ambiguous after direct manifest/file checks.
 
 **MANDATORY READ:** Load [references/claim_extraction_rules.md](references/claim_extraction_rules.md) for detailed extraction patterns per claim type.
 
@@ -164,15 +165,15 @@ Calculate score using penalty formula. Write report.
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/614-fact-checker.md` with `category: "Fact Accuracy"` and checks: path_claims, version_claims, count_claims, endpoint_claims, config_claims, command_claims, entity_claims, line_ref_claims, cross_doc.
+Write report to `{output_dir}/ln-614--global.md` with `category: "Fact Accuracy"` and checks: path_claims, version_claims, count_claims, endpoint_claims, config_claims, command_claims, entity_claims, line_ref_claims, cross_doc.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/614-fact-checker.md
+Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-614--global.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
@@ -190,7 +191,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - **Cross-doc matters:** Contradictions between documents erode trust more than single-doc errors
 - **Batch efficiently:** Extract all claims first, then verify in batches by type (all paths together, all versions together)
 - **Shared placeholder policy:** Respect allowlisted setup placeholders from `docs_quality_rules.json`; do not escalate them in task setup docs
-- **Use hex-graph when useful:** For code entities and references, prefer graph queries over repeated grep when it reduces ambiguity
+- **Use hex-graph only for semantic ambiguity:** For code entities and references, prefer graph queries over repeated grep only when direct manifest/file checks leave symbol identity or reference resolution ambiguous
 
 ## Definition of Done
 
@@ -203,7 +204,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] Cross-document consistency checked
 - [ ] False positives filtered via Layer 2 reasoning
 - [ ] Score calculated using penalty algorithm
-- [ ] Report written to `{output_dir}/614-fact-checker.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-614--global.md` (atomic single Write call)
 - [ ] Summary written per contract
 
 ## Reference Files

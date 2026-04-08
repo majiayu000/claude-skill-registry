@@ -119,7 +119,7 @@ Apply the `[REVIEW REQUIRED]` flag when:
 
 Compile all sections into a single `.md` file organized by division number.
 
-**Default output path**: `~/Documents/outline-specs-[project-slug].md`
+**Default output path**: `./outline-specs-[project-slug].md`
 
 - Derive `[project-slug]` from the project name or type provided by the user (lowercase, hyphenated — e.g., `outline-specs-brannan-office.md`)
 - If no project name is given, use `outline-specs-draft.md`

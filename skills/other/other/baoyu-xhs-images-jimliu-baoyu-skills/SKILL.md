@@ -39,6 +39,10 @@ Break down complex content into eye-catching infographic series for Xiaohongshu 
 # Direct input with options
 /baoyu-xhs-images --style bold --layout comparison
 [paste content]
+
+# Non-interactive (for scheduled tasks / automation)
+/baoyu-xhs-images posts/ai-future/article.md --yes
+/baoyu-xhs-images posts/ai-future/article.md --yes --preset knowledge-card
 ```
 
 ## Options
@@ -48,6 +52,7 @@ Break down complex content into eye-catching infographic series for Xiaohongshu 
 | `--style <name>` | Visual style (see Style Gallery) |
 | `--layout <name>` | Information layout (see Layout Gallery) |
 | `--preset <name>` | Style + layout shorthand (see [Style Presets](references/style-presets.md)) |
+| `--yes` | Non-interactive mode: skip all confirmations. Uses EXTEND.md preferences if found, otherwise uses defaults (no watermark, auto style/layout). Auto-confirms recommended plan (Path A). Suitable for scheduled tasks and automation. |
 
 ## Two Dimensions
 
@@ -237,11 +242,11 @@ Copy and track progress:
 
 ```
 XHS Infographic Progress:
-- [ ] Step 0: Check preferences (EXTEND.md) ⛔ BLOCKING
+- [ ] Step 0: Check preferences (EXTEND.md) ⛔ BLOCKING (--yes: use defaults if not found)
   - [ ] Found → load preferences → continue
-  - [ ] Not found → run first-time setup → MUST complete before Step 1
+  - [ ] Not found → run first-time setup → MUST complete before Step 1 (--yes: skip setup, use defaults)
 - [ ] Step 1: Analyze content → analysis.md
-- [ ] Step 2: Smart Confirm ⚠️ REQUIRED
+- [ ] Step 2: Smart Confirm ⚠️ REQUIRED (--yes: auto-confirm Path A)
   - [ ] Path A: Quick confirm → generate recommended outline
   - [ ] Path B: Customize → adjust then generate outline
   - [ ] Path C: Detailed → 3 outlines → second confirm → generate outline
@@ -252,26 +257,30 @@ XHS Infographic Progress:
 ### Flow
 
 ```
-Input → [Step 0: Preferences] ─┬─ Found → Continue
-                               │
-                               └─ Not found → First-Time Setup ⛔ BLOCKING
-                                              │
-                                              └─ Complete setup → Save EXTEND.md → Continue
-                                                                                      │
-        ┌───────────────────────────────────────────────────────────────────────────┘
-        ↓
-Analyze → [Smart Confirm] ─┬─ Quick: confirm recommended → outline.md → Generate → Complete
-                           │
-                           ├─ Customize: adjust options → outline.md → Generate → Complete
-                           │
-                           └─ Detailed: 3 outlines → [Confirm 2] → outline.md → Generate → Complete
+Input → [--yes?] ─┬─ Yes → [Step 0: Load or defaults] → Analyze → Auto-confirm → Generate → Complete
+                   │
+                   └─ No → [Step 0: Preferences] ─┬─ Found → Continue
+                                                   │
+                                                   └─ Not found → First-Time Setup ⛔ BLOCKING
+                                                                  │
+                                                                  └─ Complete setup → Save EXTEND.md → Continue
+                                                                                                          │
+                    ┌─────────────────────────────────────────────────────────────────────────────────────┘
+                    ↓
+            Analyze → [Smart Confirm] ─┬─ Quick: confirm recommended → outline.md → Generate → Complete
+                                       │
+                                       ├─ Customize: adjust options → outline.md → Generate → Complete
+                                       │
+                                       └─ Detailed: 3 outlines → [Confirm 2] → outline.md → Generate → Complete
 ```
 
 ### Step 0: Load Preferences (EXTEND.md) ⛔ BLOCKING
 
 **Purpose**: Load user preferences or run first-time setup.
 
-**CRITICAL**: If EXTEND.md not found, MUST complete first-time setup before ANY other questions or steps. Do NOT proceed to content analysis, do NOT ask about style, do NOT ask about layout — ONLY complete the preferences setup first.
+**`--yes` mode**: If EXTEND.md found → load it. If not found → use built-in defaults (no watermark, style/layout auto-select, language from content). Do NOT run first-time setup, do NOT create EXTEND.md, do NOT ask any questions. Proceed directly to Step 1.
+
+**CRITICAL** (interactive mode only): If EXTEND.md not found, MUST complete first-time setup before ANY other questions or steps. Do NOT proceed to content analysis, do NOT ask about style, do NOT ask about layout — ONLY complete the preferences setup first.
 
 Check EXTEND.md existence (priority order):
 
@@ -340,7 +349,11 @@ Read source content, save it if needed, and perform deep analysis.
 
 ### Step 2: Smart Confirm ⚠️
 
-**Purpose**: Present auto-recommended plan, let user confirm or adjust. **Do NOT skip.**
+**Purpose**: Present auto-recommended plan, let user confirm or adjust.
+
+**`--yes` mode**: Skip this entire step. Use auto-recommended strategy + style + layout from Step 1 analysis (or `--style`/`--layout`/`--preset` if provided). Generate outline directly using Path A logic → save to `outline.md` → proceed to Step 3. No AskUserQuestion calls.
+
+**Interactive mode**: Do NOT skip.
 
 **Auto-Recommendation Logic**:
 1. Use Auto Selection table to match content signals → best strategy + style + layout
@@ -491,7 +504,7 @@ Reference: `references/config/watermark-guide.md`
 
 **Image Generation Skill Selection**:
 - Check available image generation skills
-- If multiple skills available, ask user preference
+- If multiple skills available: ask user preference (interactive) or use first available skill (`--yes` mode)
 
 **Session Management**:
 If image generation skill supports `--sessionId`:

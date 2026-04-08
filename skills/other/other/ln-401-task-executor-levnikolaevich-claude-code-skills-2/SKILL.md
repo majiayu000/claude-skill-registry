@@ -1,7 +1,7 @@
 ---
 name: ln-401-task-executor
 description: "Executes implementation tasks through Todo, In Progress, To Review. Use when task needs coding with KISS/YAGNI. Not for test tasks."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline, mcp__hex-line__verify, mcp__hex-line__changes
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline, mcp__hex-line__read_file, mcp__hex-line__edit_file, mcp__hex-line__write_file, mcp__hex-line__verify, mcp__hex-line__changes, mcp__hex-line__inspect_path, mcp__hex-graph__index_project, mcp__hex-graph__find_symbols, mcp__hex-graph__inspect_symbol, mcp__hex-graph__analyze_edit_region
 license: MIT
 ---
 
@@ -20,7 +20,7 @@ Executes a single implementation (or refactor) task from Todo to To Review using
 - Run typecheck/lint; update docs/tests/config per task instructions.
 - Not for test tasks (label "tests" goes to ln-404-test-executor).
 
-**Hex-line acceleration (if available):** Use `outline(path)` before reading large code files. After edits: `edit_file(base_revision=rev)` → `verify(checksums)`. Before handoff: `changes()` to review diff.
+**Hex MCP acceleration (if available):** Use `inspect_path()` and `outline(path)` before reading large code files. Use `read_file()` in discovery mode for structure and targeted ranges; when you need `revision` and checksums for a follow-up edit, refresh that file with `read_file(edit_ready=true, verbosity="full")` before `edit_file()`. For edits to existing code, run `index_project(path=project_root)` once and use `analyze_edit_region(...)` before non-trivial edits. After edits: `edit_file(base_revision=rev)` -> `verify(checksums)`. Before handoff: `changes()` to review diff.
 ## Inputs
 
 | Input | Required | Source | Description |
@@ -32,7 +32,7 @@ Executes a single implementation (or refactor) task from Todo to To Review using
 
 ## Task Storage Mode
 
-**MANDATORY READ:** Load `shared/references/tools_config_guide.md`, `shared/references/storage_mode_detection.md`, and `shared/references/input_resolution_pattern.md`
+**MANDATORY READ:** Load `shared/references/environment_state_contract.md`, `shared/references/storage_mode_detection.md`, and `shared/references/input_resolution_pattern.md`
 
 Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
 
@@ -48,7 +48,7 @@ Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
 **Status:** In Progress | **Priority:** High | **Estimate:** 4h
 ```
 
-**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` — ALWAYS use hex-line MCP for code files when available. No fallback to standard Read/Edit unless hex-line is down.
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md` — use hex-line MCP for code files when available and hex-graph for semantic edit-risk questions.
 
 ## Mode Detection
 
@@ -87,6 +87,7 @@ Step 2b: Goal Articulation Gate
 Step 2c: Implementation Blueprint
   - From task "Affected Components": extract file paths (Glob/Grep to find actual paths)
   - Read each file (or key sections) to understand current structure
+  - IF modifying existing code in supported languages: `index_project(path=project_root)` once, then use `find_symbols` / `inspect_symbol` for exact symbol identity and `analyze_edit_region` before editing non-trivial ranges
   - Output:
     ## Implementation Blueprint: {taskId}
     **Files to create:** [list with brief purpose]
@@ -122,9 +123,9 @@ Step 6: Finish
 1) **Resolve taskId:** Run Task Resolution Chain per guide (status filter: [Todo]).
 2) **Load context:** Fetch full task description (Linear: get_issue; File: Read task file); read linked guides/manuals/ADRs/research; auto-discover team/config if needed.
 2b) **Goal gate:** **MANDATORY READ:** `shared/references/goal_articulation_gate.md` — Complete the 4-question gate (<=25 tokens each). State REAL GOAL (deliverable as subject), DONE LOOKS LIKE, NOT THE GOAL, INVARIANTS & HIDDEN CONSTRAINTS.
-2c) **Implementation Blueprint:** From task "Affected Components", find actual file paths via Glob/Grep. Read key sections of each file. Output structured plan: files to create/modify, change order (dependencies first), risks (shared files with parallel tasks). Scope: this task only.
+2c) **Implementation Blueprint:** From task "Affected Components", find actual file paths via Glob/Grep or `inspect_path`. Read key sections of each file. If task changes existing code in supported languages, build graph context once (`index_project`) and use `find_symbols` / `inspect_symbol` for exact symbol identity plus `analyze_edit_region` before editing non-trivial ranges. Output structured plan: files to create/modify, change order (dependencies first), risks (shared files with parallel tasks, external callers, public API surfaces). Scope: this task only.
 3) **Start work:** Update this task to In Progress (Linear: update_issue; File: Edit status line); move it in kanban (keep Epic/Story indent).
-4) **Implement (with verification loop):** **Before writing new utilities/handlers**, Grep `src/` for existing patterns (error handling, validation, config access). Reuse if found; if not reusable, document rationale in code comment. Follow checkboxes/plan; keep it simple; avoid hardcoded values; reuse existing components; update docs noted in Affected Components; update existing tests if impacted (no new tests here). Before creating service functions, apply Architecture Guard (cascade depth, interface honesty, flat orchestration; for frontend files: **MANDATORY READ** `shared/references/frontend_design_guide.md`, load design_guidelines.md if exists, verify composition/typography/WCAG rules). After implementation, execute `verify:` methods from task AC: test → run specified test; command → execute and check output; inspect → verify file/content exists. If any verify fails → fix before proceeding.
+4) **Implement (with verification loop):** **Before writing new utilities/handlers**, Grep `src/` for existing patterns (error handling, validation, config access). Reuse if found; if not reusable, document rationale in code comment. For edits to existing functions, classes, routes, or middleware, run `analyze_edit_region` first and account for external callers, clone siblings, downstream flow, and public API risk. Follow checkboxes/plan; keep it simple; avoid hardcoded values; reuse existing components; update docs noted in Affected Components; update existing tests if impacted (no new tests here). Before creating service functions, apply Architecture Guard (cascade depth, interface honesty, flat orchestration; for frontend files: **MANDATORY READ** `shared/references/frontend_design_guide.md`, load design_guidelines.md if exists, verify composition/typography/WCAG rules). After implementation, execute `verify:` methods from task AC: test → run specified test; command → execute and check output; inspect → verify file/content exists. If any verify fails → fix before proceeding.
 5) **Quality:** Run typecheck and lint (or project equivalents); ensure instructions in Existing Code Impact are addressed.
 6) **Finish:** Mark task To Review (Linear: update_issue; File: Edit status line); update kanban to To Review; add summary comment (what changed, tests run, docs touched).
 
@@ -162,12 +163,16 @@ Before setting To Review, verify all items:
 - No new test creation; only update existing tests if required.
 - Preserve Foundation-First ordering from orchestrator; do not reorder tasks.
 - **Do NOT commit.** Leave all changes uncommitted — the reviewer reviews and commits.
+- Before non-trivial edits to existing code, use graph impact evidence when available instead of guessing blast radius from file names alone.
 
 ## Runtime Summary Artifact
 
-**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
+**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`, `shared/references/worker_runtime_contract.md`, `shared/references/task_worker_runtime_contract.md`
 
-Write `.hex-skills/runtime-artifacts/runs/{run_id}/task-status/{task_id}.json` before finishing.
+Shared contract:
+- emit `summary_kind=task-status`
+- standalone mode omits `runId` and `summaryArtifactPath`
+- managed mode passes both `runId` and exact `summaryArtifactPath` before the worker writes its validated summary
 
 ## Definition of Done
 - [ ] Task selected and set to In Progress; kanban updated accordingly.
@@ -179,7 +184,7 @@ Write `.hex-skills/runtime-artifacts/runs/{run_id}/task-status/{task_id}.json` b
 - [ ] Runtime summary artifact written to the shared task-status location.
 
 ## Reference Files
-- **Tools config:** `shared/references/tools_config_guide.md`
+- **Environment state:** `shared/references/environment_state_contract.md`
 - **Storage mode operations:** `shared/references/storage_mode_detection.md`
 - Guides/manuals/ADRs/research: `docs/guides/`, `docs/manuals/`, `docs/adrs/`, `docs/research/`
 - Kanban format: `docs/tasks/kanban_board.md`

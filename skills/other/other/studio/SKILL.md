@@ -42,6 +42,7 @@ Examples:
 | FF&E schedule, clean up a spreadsheet, room packages, export to SIF, QA a schedule | **FF&E Designer** agent | Agent |
 | EPD, embodied carbon, GWP, LEED materials credits, environmental impact of a material | **Sustainability Specialist** agent | Agent |
 | Presentation, slide deck, color palette, visual identity, deck from a report | **Brand Manager** agent | Agent |
+| Resize images, prepare photos for web / social / slides / print, export renders | **Brand Manager** agent | Agent |
 | CSI specification writing (no sustainability angle) | `/spec-writer` | Skill |
 | Uruguay zoning or lot analysis in Maldonado | `/zoning-analysis-uruguay` | Skill |
 | User names a specific skill (e.g., "run epd-parser", "check landmarks") | That skill directly | Skill |

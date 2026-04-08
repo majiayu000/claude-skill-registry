@@ -1,7 +1,7 @@
 ---
 name: ln-814-optimization-executor
 description: "Executes optimization hypotheses with keep/discard testing loop. Use when applying validated performance improvements."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline, mcp__hex-line__verify, mcp__hex-line__changes
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline, mcp__hex-line__read_file, mcp__hex-line__edit_file, mcp__hex-line__write_file, mcp__hex-line__verify, mcp__hex-line__changes
 license: MIT
 ---
 
@@ -58,6 +58,10 @@ If file not found: check conversation context for the same data (standalone invo
 **MANDATORY READ:** Load `shared/references/git_worktree_fallback.md` — use optimization rows.
 **MANDATORY READ:** Load `shared/references/ci_tool_detection.md` — use Test Frameworks + Benchmarks sections.
 
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md` and `shared/references/mcp_integration_patterns.md`.
+
+Use `hex-line` as the primary path for code/config/script edits in this worker. Profilers and benchmarks stay the source of truth; do not treat `hex-graph` as runtime evidence here.
+
 ### E2E Safety Test
 
 Read `e2e_test_command` from context file (discovered by profiler during test discovery phase).
@@ -65,7 +69,7 @@ Read `e2e_test_command` from context file (discovered by profiler during test di
 | Source | Action |
 |--------|--------|
 | Context has `e2e_test_command` | Use as functional safety gate in Phase 2 |
-| Context has `e2e_test_command = null` | WARN: full test suite serves as fallback gate |
+| Context has `e2e_test_command = null` | WARN: full test suite is the fallback gate |
 | Standalone (no context) | User must provide test command; block if missing |
 
 ---
@@ -303,7 +307,15 @@ If target metric not reached after all hypotheses:
 
 **MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
 
-Write `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-execution/{slug}.json` before finishing.
+Emit an `optimization-worker` summary envelope.
+
+Managed mode:
+- `ln-810` passes deterministic `runId` and exact `summaryArtifactPath`
+- write the summary to the provided `summaryArtifactPath`
+
+Standalone mode:
+- omit `runId` and `summaryArtifactPath`
+- write `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-worker/ln-814--{identifier}.json`
 
 ## Definition of Done
 

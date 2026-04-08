@@ -7,7 +7,8 @@
 <p align="center">
   <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry-core%2Fstats.json&query=%24.archive_skill_md_count_raw&label=SKILL.md%20files%20(raw)&color=blueviolet&style=flat-square" alt="SKILL.md files (raw)">
   <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry-core%2Fstats.json&query=%24.registry_skill_count_dedup&label=Skills%20(dedup)&color=purple&style=flat-square" alt="Skills (dedup)">
-  <img src="https://img.shields.io/badge/Updated-Daily-green?style=flat-square" alt="Updated">
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry-core%2Fstats.json&query=%24.total_plugins&label=Plugins&color=1f6feb&style=flat-square" alt="Plugins">
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmajiayu000.github.io%2Fclaude-skill-registry-core%2Fstats.json&query=%24.updated_at&label=Updated%20UTC&color=2ea043&style=flat-square" alt="Updated UTC">
   <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License">
   <a href="https://majiayu000.github.io/claude-skill-registry-core/"><img src="https://img.shields.io/badge/Web-Search-blue?style=flat-square" alt="Web Search"></a>
 </p>
@@ -97,7 +98,7 @@ curl https://majiayu000.github.io/claude-skill-registry-core/categories/developm
 │  Layer 2: Index Generation                                      │
 │  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐    │
 │  │ search-index   │  │ categories/    │  │ featured.json  │    │
-│  │ .json (~1MB)   │  │ *.json         │  │ (top 100)      │    │
+│  │ .json          │  │ *.json         │  │ (featured set) │    │
 │  └────────────────┘  └────────────────┘  └────────────────┘    │
 └─────────────────────────────────────────────────────────────────┘
                               ↓
@@ -113,7 +114,7 @@ curl https://majiayu000.github.io/claude-skill-registry-core/categories/developm
 ### Search Index Schema
 
 ```typescript
-// Lightweight index for fast search (~1MB gzip)
+// Lightweight index for fast search
 interface SearchIndex {
   v: string;           // Version (date)
   t: number;           // Indexed skill count (always s.length)
@@ -140,7 +141,7 @@ claude-skill-registry-core/
 ├── docs/                   # GitHub Pages
 │   ├── index.html          # Web search UI
 │   ├── search-index.json   # Lightweight search index
-│   ├── featured.json       # Top 100 skills
+│   ├── featured.json       # Featured skills snapshot
 │   └── categories/         # Category indexes
 ├── sources/                # Data sources
 │   ├── anthropic.json

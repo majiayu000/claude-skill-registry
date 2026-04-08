@@ -212,7 +212,7 @@ Category counts are published in the index (`categories/*.json`). Here are the s
 3. Provide: repo URL, name, description, category
 
 **Option 2: Submit via PR**
-1. Fork this repo
+1. Fork `majiayu000/claude-skill-registry-core`
 2. Add your skill to `sources/community.json`:
 
 ```json
@@ -226,7 +226,7 @@ Category counts are published in the index (`categories/*.json`). Here are the s
 }
 ```
 
-3. Submit a PR
+3. Submit a PR to `majiayu000/claude-skill-registry-core` (not `claude-skill-registry`, which is a generated publish artifact)
 
 ### Report Issues
 

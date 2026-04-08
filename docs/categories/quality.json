@@ -2,20 +2,8 @@
   "category": "quality",
   "code": "oth",
   "count": 4,
-  "updated_at": "2026-04-08T16:44:35.112669Z",
+  "updated_at": "2026-04-08T17:02:30.285660Z",
   "skills": [
-    {
-      "name": "risk-profile-majiayu000-claude-skill-regist",
-      "description": "Number of P0 (critical) tests required",
-      "repo": "majiayu000/claude-skill-registry",
-      "path": "skills/other/risk-profile/SKILL.md",
-      "branch": "main",
-      "category": "quality",
-      "tags": [],
-      "stars": 48,
-      "install": "majiayu000/claude-skill-registry/skills/other/risk-profile/SKILL.md",
-      "source": "github.com/majiayu000/claude-skill-registry"
-    },
     {
       "name": "quality-gate",
       "description": "Path to Markdown report (for human review)",
@@ -26,6 +14,18 @@
       "tags": [],
       "stars": 48,
       "install": "majiayu000/claude-skill-registry/skills/other/quality-gate/SKILL.md",
+      "source": "github.com/majiayu000/claude-skill-registry"
+    },
+    {
+      "name": "risk-profile-majiayu000-claude-skill-regist",
+      "description": "Number of P0 (critical) tests required",
+      "repo": "majiayu000/claude-skill-registry",
+      "path": "skills/other/risk-profile/SKILL.md",
+      "branch": "main",
+      "category": "quality",
+      "tags": [],
+      "stars": 48,
+      "install": "majiayu000/claude-skill-registry/skills/other/risk-profile/SKILL.md",
       "source": "github.com/majiayu000/claude-skill-registry"
     },
     {

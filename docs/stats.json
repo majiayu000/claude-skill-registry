@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-08T16:44:35.216023Z",
+  "updated_at": "2026-04-08T17:02:30.387056Z",
   "archive_skill_md_count_raw": 226042,
   "archive_metadata_count_raw": 226042,
   "indexed_skill_count_scan_shape": 226042,
@@ -8,5 +8,5 @@
   "categories": 73,
   "featured_count": 100,
   "index_size_bytes": 49991451,
-  "index_size_gzip_bytes": 14468792
+  "index_size_gzip_bytes": 14468961
 }

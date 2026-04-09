@@ -1,6 +1,7 @@
 ---
 name: api-response-optimization
 description: Optimizes API performance through payload reduction, caching strategies, and compression techniques. Use when improving API response times, reducing bandwidth usage, or implementing efficient caching.
+license: MIT
 ---
 
 # API Response Optimization

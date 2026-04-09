@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/wshobson/agents",
   "dir_name": "gitops-workflow",
-  "downloaded_at": "2026-04-08T04:58:11.963439Z",
+  "downloaded_at": "2026-04-09T01:40:00.433836Z",
   "author": "wshobson",
   "source_url": "https://github.com/wshobson/agents/blob/main/plugins/kubernetes-operations/skills/gitops-workflow/SKILL.md",
   "license": "NOASSERTION",

@@ -1,7 +1,7 @@
 ---
 name: rocaille-shader
-description: Generate Rocaille-style domain warping shaders with sinusoidal displacement, and mouse-reactive liquid logo effects on image/SVG textures. This skill should be used when building WebGL/GLSL visualizations, shader art, procedural backgrounds, organic swirling light effects, or when applying a rippling, bending, chromatically-refracting liquid hover effect to a logo or hero image. Creates characteristic flowing patterns through iterative coordinate warping using the formula v += sin(v.yx + t) / amplitude, and extends the same domain-warp family to texture-sampling pointer-driven effects.
-argument-hint: [--mode rocaille|liquid-logo] [warp-count] [color-mode] [format]
+description: Generate Rocaille-style domain warping shaders with sinusoidal displacement, mouse-reactive liquid logo effects on image/SVG textures, depth-map parallax displacement heroes (Astryx-style hover-reactive statues/busts), and stable fluid simulations over live DOM elements (fluid-dom). This skill should be used when building WebGL/GLSL visualizations, shader art, procedural backgrounds, organic swirling light effects, applying a rippling liquid hover effect to a logo or hero image, creating an editorial hero with a hover-reactive 3D-look bust or statue via depth-map parallax, or wrapping DOM sections in a pointer-reactive Navier-Stokes fluid distortion. Trigger phrases: depth parallax, hover-reactive depth map, statue hero, fluid sim, stable fluid, WebGL-Fluid-Simulation, pointer-reactive fluid.
+argument-hint: [--mode rocaille|liquid-logo|astryx-statue|fluid-dom] [warp-count] [color-mode] [format]
 ---
 
 # Rocaille Shader Skill
@@ -172,6 +172,7 @@ For deeper understanding:
 - `references/domain-warping.md` - Theory from Inigo Quilez
 - `references/glsl-patterns.md` - Common GLSL patterns used
 - `references/liquid-logo.md` - Liquid logo math (falloff, pull, chromatic offset)
+- `references/fluid-dom.md` - Stable fluid sim over live DOM (Navier-Stokes pipeline, VFX-JS lineage)
 
 ## Combining Effects
 
@@ -194,3 +195,14 @@ Layer with other techniques:
   does not redistribute any of his files. If you want a drop-in Framer
   component, get it directly from him; if you want a standalone HTML file or
   a Shadertoy-compatible shader, this skill generates one.
+- **Astryx-statue mode** — pattern studied from
+  [Astryx](https://indigo-type-231733.framer.app/astryx) (Framer + Unicorn
+  Studio). The depth-parallax shader technique descends from [Robin Delaporte's
+  CodePen](https://codepen.io/robin-dela/pen/vaQQNL) (the universal ancestor of
+  web depth-parallax heroes). Production reference:
+  [DepthFlow](https://github.com/BrokenSource/DepthFlow) by BrokenSource (AGPL,
+  reference only — not a dependency).
+- **Fluid-DOM mode** — pattern studied from [Amagi's "Stable Fluid on VFX-JS"
+  CodePen](https://codepen.io/editor/fand/pen/019d61f5-aadf-7e18-851c-0ebd317146c7).
+  Shader lineage: [Pavel DoGreat's WebGL-Fluid-Simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation)
+  (MIT). Theory: Jos Stam, "Real-Time Fluid Dynamics for Games" (GDC 2003).

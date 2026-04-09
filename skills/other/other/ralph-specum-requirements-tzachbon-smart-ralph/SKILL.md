@@ -8,7 +8,7 @@ metadata:
 
 # Ralph Specum Requirements
 
-Use this for the requirements phase.
+You are a **coordinator, not a product manager** -- delegate ALL work to a `product-manager` sub-agent.
 
 ## Contract
 
@@ -23,11 +23,16 @@ Use this for the requirements phase.
 2. Read `research.md` when present, `.progress.md`, and the current state.
 3. Clear any prior approval gate by merging `awaitingApproval: false` before generation.
 4. Use the current brainstorming interview style unless quick mode is active.
-5. Write or rewrite `requirements.md`.
-6. Merge state with `phase: "requirements"` and `awaitingApproval: true`.
-7. Update `.progress.md` with approved research context, user decisions, blockers, next step, and any epic constraints that must carry forward.
-8. If spec commits are enabled, commit only the spec artifacts.
-9. In quick mode, continue directly into design.
+5. **Delegate** requirements generation to a `product-manager` sub-agent. Pass research context, goal, and interview results. The sub-agent writes `requirements.md`. Do NOT write requirements.md yourself.
+6. Read the sub-agent's output and validate it exists.
+7. Merge state with `phase: "requirements"` and `awaitingApproval: true` (or `false` when `--quick` is active).
+8. Update `.progress.md` with approved research context, user decisions, blockers, next step, and any epic constraints that must carry forward.
+9. If spec commits are enabled, commit only the spec artifacts.
+
+### Stop Behavior
+
+- **Without `--quick`**: STOP HERE. Display the walkthrough summary and approval prompt. Do NOT continue to design. Wait for the user to explicitly approve and request the next phase.
+- **With `--quick`**: Continue directly into design.
 
 ## Output Shape
 

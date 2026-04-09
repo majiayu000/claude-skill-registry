@@ -1,7 +1,9 @@
 ---
-name: Bun Runtime
+name: bun-runtime
 description: Use for Bun runtime, bunfig.toml, watch/hot modes, env vars, CLI flags, and module resolution.
-version: 1.0.0
+metadata:
+  version: "1.0.0"
+license: MIT
 ---
 
 # Bun Runtime

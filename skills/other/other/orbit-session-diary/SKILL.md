@@ -10,8 +10,8 @@ description: "Use local Codex/Claude JSONL logs as evidence, then produce a huma
 ## Script Path
 
 ```bash
-SKILLS_HOME="$HOME/.claude/skills"
-SCRIPT="$SKILLS_HOME/orbit-session-diary/scripts/session_diary.py"
+CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
+SCRIPT="$CODEX_HOME/skills/orbit-session-diary/scripts/session_diary.py"
 ```
 
 ## Default Behavior
@@ -106,7 +106,7 @@ python3 "$SCRIPT" --date 2026-02-26
 
 ```bash
 python3 "$SCRIPT" \
-  --vault-root "$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Sam's" \
+  --vault-root "/Users/suqi3/obVault/sams-vault" \
   --date 2026-02-26
 ```
 
@@ -124,6 +124,6 @@ python3 "$SCRIPT" --sources codex,claude
 - 若用户指定不同日记区块标题，可用 `--section-title` 覆盖默认值 `会话总结（自动）`。
 - 日记正文必须由助手人工汇总生成，禁止直接复制脚本证据包到正文。
 - 同步写作时要参考同周其他日期风格，确保关联性与叙事连续性。
-- 若通过终端改动 `.md`，修改后需 `touch <file>` 触发 Obsidian 感知刷新。
+- 若通过终端改动 `.md`，修改后需 `touch "<file>"`（路径含空格时必须加引号）触发 Obsidian 感知刷新。
 - 若用户反馈“写偏了”，先判断是成文偏差还是 evidence 偏差，再反向更新 skill 规则。
 - 如用户要求高准确模式，默认走“逐条 `jsonl` 回看 + 模板写作”，不再依赖自动分类统计。

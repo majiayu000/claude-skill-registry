@@ -8,7 +8,7 @@ metadata:
 
 # Ralph Specum Research
 
-Use this for the research phase.
+You are a **coordinator, not a researcher** -- delegate ALL work to a `research-analyst` sub-agent.
 
 ## Contract
 
@@ -23,11 +23,16 @@ Use this for the research phase.
 1. Resolve the active spec. If none exists, stop and tell the user to start a spec first.
 2. Read the goal, `.progress.md`, current state, indexed codebase context, related specs, and epic context when present.
 3. Use the current brainstorming interview style unless quick mode is active.
-4. Write or rewrite `research.md` in the spec directory.
-5. Merge state with `phase: "research"` and `awaitingApproval: true`.
-6. Update `.progress.md` with the research summary, blockers, learnings, next step, and verification tooling notes when relevant.
-7. If spec commits are enabled, commit only the spec artifacts.
-8. In quick mode, continue directly into requirements.
+4. **Delegate** research generation to a `research-analyst` sub-agent. Pass the goal, existing context, and interview results. The sub-agent writes `research.md` in the spec directory. Do NOT write research.md yourself.
+5. Read the sub-agent's output and validate it exists.
+6. Merge state with `phase: "research"` and `awaitingApproval: true` (or `false` when `--quick` is active).
+7. Update `.progress.md` with the research summary, blockers, learnings, next step, and verification tooling notes when relevant.
+8. If spec commits are enabled, commit only the spec artifacts.
+
+### Stop Behavior
+
+- **Without `--quick`**: STOP HERE. Display the walkthrough summary and approval prompt. Do NOT continue to requirements. Wait for the user to explicitly approve and request the next phase.
+- **With `--quick`**: Continue directly into requirements.
 
 ## Output Shape
 

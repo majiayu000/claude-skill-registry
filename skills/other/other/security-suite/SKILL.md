@@ -1,14 +1,23 @@
 ---
 name: security-suite
-description: 'Composable binary security suite for static analysis, dynamic tracing, contract capture, baseline drift, and policy gating. Triggers: "binary security", "reverse engineer binary", "black-box binary test", "behavioral trace", "baseline diff", "security suite".'
+description: 'Composable security suite for binary and prompt-surface assurance, static analysis, dynamic tracing, repo-native redteam scans, contract capture, baseline drift, and policy gating. Triggers: "binary security", "reverse engineer binary", "black-box binary test", "behavioral trace", "baseline diff", "prompt redteam", "security suite".'
+skill_api_version: 1
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: topic
 metadata:
   tier: execution
   dependencies: []
+output_contract: skills/council/schemas/verdict.json
 ---
 
 # Security Suite
 
-> **Purpose:** Provide composable, repeatable security/internal-testing primitives for authorized binaries.
+> **Purpose:** Provide composable, repeatable security/internal-testing primitives for authorized binaries and repo-managed prompt surfaces.
 
 This skill separates concerns into primitives so security workflows stay testable and reusable.
 
@@ -25,7 +34,8 @@ This skill separates concerns into primitives so security workflows stay testabl
 3. `collect-contract` — machine-readable behavior contract from help-surface probing.
 4. `compare-baseline` — current vs baseline contract drift (added/removed commands, runtime change).
 5. `enforce-policy` — allowlist/denylist gates and severity-based verdict.
-6. `run` — thin orchestrator that composes primitives and writes suite summary.
+6. `collect-redteam` — offline repo-surface attack-pack scan for prompt-injection, tool-misuse, secret-exfiltration, and unsafe-shell regressions.
+7. `run` — thin binary orchestrator that composes primitives and writes suite summary.
 
 ## Quick Start
 
@@ -57,6 +67,17 @@ python3 skills/security-suite/scripts/security_suite.py run \
   --fail-on-policy-fail
 ```
 
+Repo-surface redteam:
+
+```bash
+python3 skills/security-suite/scripts/prompt_redteam.py scan \
+  --repo-root . \
+  --pack-file skills/security-suite/references/agentops-redteam-pack.json \
+  --out-dir .tmp/security-suite-redteam
+```
+
+For OWASP Top 10 code-level review, see [references/owasp-checklist.md](references/owasp-checklist.md).
+
 ## Recommended Workflow
 
 1. Capture baseline on known-good release.
@@ -74,6 +95,7 @@ All outputs are written under `--out-dir`:
 - `compare/baseline-diff.json` (when baseline supplied)
 - `policy/policy-verdict.json` (when policy supplied)
 - `suite-summary.json`
+- `redteam/redteam-results.json` (when repo-surface redteam is run)
 
 This output structure is intentionally machine-consumable for CI gates.
 
@@ -92,6 +114,23 @@ Supported checks:
 - `block_if_removed_commands`
 - `min_command_count`
 
+## Redteam Pack Model
+
+Use [agentops-redteam-pack.json](references/agentops-redteam-pack.json) as the
+starting point for offline repo-surface redteam checks.
+
+Supported target fields:
+
+- `globs`
+- `require_groups`
+- `forbidden_any`
+- `applies_if_any`
+
+Each case expresses a concrete adversarial prompt or operator-bypass attempt and
+binds it to one or more repo-owned files. The first shipped pack covers
+instruction precedence, context overexposure, destructive git misuse, security
+gate bypass, and unsafe shell or secret-handling regressions.
+
 ## Technique Coverage
 
 This suite is designed for broad binary classes, not just CLI metadata:
@@ -101,6 +140,7 @@ This suite is designed for broad binary classes, not just CLI metadata:
 - command/contract capture
 - drift classification
 - policy enforcement and CI verdicting
+- repo-surface redteam checks for prompt and operator-contract regressions
 
 It is intentionally modular so you can add deeper primitives later (syscall tracing, SBOM attestation verification, fuzz harnesses) without rewriting the workflow.
 
@@ -110,6 +150,7 @@ Run:
 
 ```bash
 bash skills/security-suite/scripts/validate.sh
+bash tests/scripts/test-security-suite-redteam.sh
 ```
 
 Smoke test (recommended):
@@ -119,6 +160,15 @@ python3 skills/security-suite/scripts/security_suite.py run \
   --binary "$(command -v ao)" \
   --out-dir .tmp/security-suite-smoke \
   --policy-file skills/security-suite/references/policy-example.json
+```
+
+Repo-surface smoke test:
+
+```bash
+python3 skills/security-suite/scripts/prompt_redteam.py scan \
+  --repo-root . \
+  --pack-file skills/security-suite/references/agentops-redteam-pack.json \
+  --out-dir .tmp/security-suite-redteam-smoke
 ```
 
 ## Examples
@@ -143,6 +193,16 @@ python3 skills/security-suite/scripts/security_suite.py run \
 
 **Result:** The suite exits non-zero if any commands were removed or a policy check failed, blocking the candidate from promotion in the CI pipeline.
 
+### Scenario: Offline Redteam the Repo's Prompt and Skill Surfaces
+
+**User says:** `/security-suite collect-redteam --repo-root .`
+
+**What happens:**
+1. The redteam scanner loads the attack pack from [`agentops-redteam-pack.json`](references/agentops-redteam-pack.json) and evaluates repo-owned control surfaces against concrete attack cases.
+2. It writes `redteam/redteam-results.json` and `redteam/redteam-results.md` under the chosen output directory, then exits non-zero if a fail-severity case is not resisted.
+
+**Result:** The repo gets a deterministic redteam verdict for prompt-injection, tool misuse, context overexposure, secret-handling, and unsafe-shell regressions without needing hosted model scanning.
+
 ## Troubleshooting
 
 | Problem | Cause | Solution |
@@ -152,3 +212,10 @@ python3 skills/security-suite/scripts/security_suite.py run \
 | `contract/contract.json` shows zero commands | The binary does not expose a `--help` surface or uses a non-standard help flag | Verify the binary supports `--help`; for binaries with unusual help interfaces, run `collect-contract` separately with the correct invocation. |
 | Policy verdict fails on `deny_command_patterns` | A new subcommand matches a deny regex in the policy file | Either rename the subcommand or update `deny_command_patterns` in your policy JSON to exclude the legitimate pattern. |
 | `baseline-diff.json` not generated | `--baseline-dir` was not provided or points to a missing directory | Ensure the baseline directory exists and contains a valid `contract/contract.json` from a prior run. |
+| Redteam scan fails after a wording cleanup | The attack pack no longer matches the intended guardrail language in target files | Review `redteam/redteam-results.json`, confirm whether the control regressed or the regex is too brittle, then update the target file or the pack intentionally. |
+
+## Reference Documents
+
+- [references/owasp-checklist.md](references/owasp-checklist.md)
+- [references/agentops-redteam-pack.json](references/agentops-redteam-pack.json)
+- [references/policy-example.json](references/policy-example.json)

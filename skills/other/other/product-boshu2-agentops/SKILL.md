@@ -1,14 +1,23 @@
 ---
 name: product
 description: 'Interactive PRODUCT.md generation. Interviews you about mission, personas, value props, and competitive landscape, then generates a filled-in PRODUCT.md. Triggers: "product", "create product doc", "product definition", "who is this for".'
+skill_api_version: 1
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: full
 metadata:
   tier: product
   dependencies: []
+output_contract: "PRODUCT.md"
 ---
 
 # /product — Interactive PRODUCT.md Generation
 
-> **Purpose:** Guide the user through creating a `PRODUCT.md` that unlocks product-aware council reviews in `/pre-mortem` and `/vibe`.
+> **Purpose:** Guide the user through creating a `PRODUCT.md` that unlocks product-aware reviews in `/pre-mortem` and `/vibe`, including the default quick-mode inline paths.
 
 **YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
 
@@ -81,16 +90,63 @@ Options:
 - Suggestions derived from README/project context
 - "Let me type my own"
 
-#### 3d: Competitive Landscape
+#### 3d: Competitive Positioning
 
 Ask: "What alternatives exist, and how do you differentiate?"
 
-Gather:
-- Alternative names
-- Their strengths
-- Your differentiation
+Gather for each competitor:
+- Alternative name
+- Their strengths (where they win)
+- Your differentiation (where you win)
+- Feature-level comparison (specific capabilities, not just vibes)
 
-If the user says "none" or "skip", write "No direct competitors identified" in the section.
+Then ask: "What is the market trend you're betting on that competitors are ignoring?"
+
+This produces the Strategic Bet section — the contrarian thesis that justifies your product's existence. Examples:
+- "We bet that AI agents will need institutional memory, not just prompts"
+- "We bet that local-first tools will win over cloud-dependent ones"
+
+If the user says "none" or "skip" for competitors, write "No direct competitors identified" but still ask about the strategic bet.
+
+#### 3e: Evidence (Traction + Impact)
+
+Ask: "What evidence do you have that this product works?"
+
+Gather what's available:
+- **Usage data** — stars, downloads, clones, active users, installs
+- **Measured impact** — bugs caught, time saved, regressions prevented, outcomes achieved
+- **User feedback** — testimonials, retention signals, community activity
+
+**Auto-gather if possible:**
+- If the project has a GitHub remote, pull real metrics: `gh api repos/{owner}/{repo} --jq '{stars: .stargazers_count, forks: .forks_count, open_issues: .open_issues_count}'`
+- If `.agents/` exists, count learnings, council verdicts, and retros as usage evidence
+- If `GOALS.md` exists, pull fitness score as a quality metric
+
+If the project is new with no evidence yet, write "Pre-traction — evidence to be gathered" and list what metrics to track.
+
+#### 3f: Known Product Gaps
+
+Ask: "What's broken, missing, or embarrassing about the product right now? Be honest."
+
+This section is the most valuable one for internal product docs. It prevents the doc from being marketing copy. Gather:
+- **Missing capabilities** — features users ask for that don't exist
+- **Broken promises** — things the README claims that don't fully work
+- **Onboarding friction** — where new users get stuck
+- **Technical debt** — known limitations that affect product quality
+
+If the user says "nothing", gently challenge: "Every product has gaps. What would a frustrated user complain about?" Push for at least 2 honest gaps.
+
+#### 3g: Validated Principles (Auto-discovered)
+
+**Do not ask the user.** Scan the project for extracted principles:
+
+1. Check `.agents/planning-rules/` — compiled planning principles
+2. Check `.agents/patterns/` — battle-tested patterns from usage
+3. Check `.agents/learnings/` — accumulated learnings
+
+If any exist, count them and note their source (e.g., "7 planning rules extracted from 544K agent messages"). These will be included in the output as "Validated Principles" — principles proven through usage, not just design assumptions.
+
+If none exist, skip this section in the output.
 
 ### Step 4: Generate PRODUCT.md
 
@@ -107,30 +163,78 @@ last_reviewed: YYYY-MM-DD
 
 {mission from 3a}
 
+## Vision
+
+{one-sentence aspirational framing — what the world looks like if the product succeeds}
+
 ## Target Personas
 
 ### Persona 1: {role}
 - **Goal:** {goal}
 - **Pain point:** {pain point}
+- **Gap exposure:** {which product gaps this persona feels most}
 
 {repeat for each persona}
 
+## What the Product Actually Is
+
+{Describe the product's concrete layers/components. Not marketing copy — what it literally does.
+ Organize by architectural layer, not by feature list. For each layer, explain what gap it closes.}
+
 ## Core Value Propositions
 
-{bullet list from 3c}
+{bullet list from 3c — each value prop should map to a specific gap or outcome it closes}
 
-## Competitive Landscape
+## Design Principles
 
-| Alternative | Strength | Our Differentiation |
-|-------------|----------|---------------------|
-{rows from 3d}
+{If validated principles were discovered in 3g, include them here:}
+
+**Validated Principles (from {source count} {source description}):**
+
+1. **{Principle name}** — {one-line description with link to source}
+
+{If no validated principles exist, include design principles from the interview.}
+
+**Operational principles:**
+
+{List the principles that govern how the product works, not just what it does.}
+
+## Competitive Positioning
+
+| Alternative | Where They Win | Where We Win |
+|-------------|---------------|--------------|
+{rows from 3d — honest about both sides}
+
+## Strategic Bet
+
+{From 3d — the contrarian thesis. What market trend is this product betting on?}
+
+## Evidence
+
+{From 3e — real numbers, not claims}
+
+**Traction:**
+- {metric}: {value} ({time period})
+
+**Measured Impact:**
+- {outcome}: {evidence}
+
+{If pre-traction: "Pre-traction — tracking: {list of metrics to watch}"}
+
+## Known Product Gaps
+
+{From 3f — honest about what's broken}
+
+| Gap | Impact | Status |
+|-----|--------|--------|
+| {gap description} | {who it affects and how} | {open / in-progress / planned} |
 
 ## Usage
 
-This file enables product-aware council reviews:
+This file enables product-aware reviews:
 
-- **`/pre-mortem`** — Automatically includes `product` perspectives (user-value, adoption-barriers, competitive-position) alongside plan-review judges when this file exists.
-- **`/vibe`** — Automatically includes `developer-experience` perspectives (api-clarity, error-experience, discoverability) alongside code-review judges when this file exists.
+- **`/pre-mortem`** — Automatically loads product context when this file exists. Default `--quick` mode includes the context inline; deeper modes add a dedicated `product` perspective alongside plan-review judges.
+- **`/vibe`** — Automatically loads developer-experience context when this file exists. Default `--quick` mode includes the context inline; deeper modes add a dedicated `developer-experience` perspective alongside code-review judges.
 - **`/council --preset=product`** — Run product review on demand.
 - **`/council --preset=developer-experience`** — Run DX review on demand.
 
@@ -145,8 +249,8 @@ Tell the user:
 
 1. **What was created:** `PRODUCT.md` at `{path}`
 2. **What it unlocks:**
-   - `/pre-mortem` will now auto-include product perspectives (user-value, adoption-barriers, competitive-position)
-   - `/vibe` will now auto-include developer-experience perspectives (api-clarity, error-experience, discoverability)
+   - `/pre-mortem` will now load product context by default, including in `--quick` mode; deeper modes add a dedicated product perspective
+   - `/vibe` will now load developer-experience context by default, including in `--quick` mode; deeper modes add a dedicated DX perspective
    - `/council --preset=product` and `/council --preset=developer-experience` are available on demand
 3. **Next steps:** Suggest running `/pre-mortem` on their next plan to see product perspectives in action
 
@@ -162,10 +266,14 @@ Tell the user:
 3. Agent asks user about mission, suggesting "CLI tool for automated dependency updates"
 4. Agent interviews for 2 personas: DevOps Engineer and Backend Developer
 5. Agent asks about value props, user provides: "Zero-config automation, Safe updates, Time savings"
-6. Agent asks about competitors, user mentions Renovate and Dependabot
-7. Agent writes PRODUCT.md with all gathered information and today's review date
+6. Agent asks about competitors, gathers honest where-they-win and where-we-win for each
+7. Agent asks for strategic bet: "We bet that dependency security will become a compliance requirement, not a best practice"
+8. Agent auto-pulls GitHub stats (142 stars, 2.3K clones/14d) and asks about measured impact
+9. Agent pushes for known gaps: user admits "onboarding is confusing" and "no Windows support"
+10. Agent scans .agents/ — finds 12 planning rules and 45 learnings, includes as validated principles
+11. Agent writes PRODUCT.md with Evidence, Competitive Positioning, Known Gaps, and Strategic Bet sections
 
-**Result:** PRODUCT.md created, unlocking product-aware council perspectives in future validations.
+**Result:** PRODUCT.md created with evidence-backed content, unlocking product-aware council perspectives in future validations.
 
 ### Updating Existing Product Doc
 
@@ -188,5 +296,9 @@ Tell the user:
 |---------|-------|----------|
 | No context to pre-populate suggestions | Missing README or project metadata files | Continue with blank suggestions. Ask user to describe project in own words. Extract mission from conversation. |
 | User unclear on personas vs users | Confusion about persona definition | Explain: "Personas are specific user archetypes with goals and pain points. Think of one real person who would use this." Provide example. |
-| Competitive landscape feels forced | Genuinely novel product or niche tool | Accept "No direct competitors" as valid. Focus on alternative approaches (manual processes, scripts) rather than products. |
+| Competitive landscape feels forced | Genuinely novel product or niche tool | Accept "No direct competitors" as valid. Focus on alternative approaches (manual processes, scripts) rather than products. Still ask for strategic bet. |
 | PRODUCT.md feels generic | Insufficient user input or rushed interview | Ask follow-up questions. Request specific examples. Challenge vague statements like "makes things easier" — easier how? Measured how? |
+| User resists Known Gaps section | Discomfort admitting weaknesses | Explain: "This is an internal doc, not marketing. Honest gaps prevent the team from building on false assumptions. Every product has them." Push for at least 2. |
+| No usage data available | Pre-launch or private project | Write "Pre-traction" with a list of metrics to track once launched. The section's presence reminds future updates to fill it in. |
+| `gh api` fails or no GitHub remote | Private repo, no auth, or non-GitHub host | Skip auto-gather gracefully. Ask user to provide metrics manually. |
+| No .agents/ directory for principles | Project doesn't use AgentOps | Skip the validated principles section entirely. Include user-stated design principles instead. |

@@ -1,11 +1,20 @@
 ---
 name: trace
 description: 'Trace design decisions and concepts through session history, handoffs, and git. Triggers: "trace decision", "how did we decide", "where did this come from", "design provenance", "decision history".'
+skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: full
 metadata:
   tier: knowledge
   dependencies:
     - provenance # alternative - for artifact lineage
+output_contract: "stdout: decision provenance chain"
 ---
 
 # Trace Skill

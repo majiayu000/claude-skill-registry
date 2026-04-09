@@ -1,12 +1,20 @@
 ---
 name: research
 description: 'Deep codebase exploration. Triggers: research, explore, investigate, understand, deep dive, current state.'
-allowed-tools: Read, Grep, Glob, Bash
+skill_api_version: 1
+allowed-tools: Read, Grep, Glob, Bash, Write
 metadata:
   tier: execution
   dependencies:
-    - knowledge # optional - queries existing knowledge
     - inject    # optional - injects prior context
+context:
+  window: fork
+  intent:
+    mode: questions
+  sections:
+    exclude: [HISTORY, TASK]
+  intel_scope: topic
+output_contract: skills/research/schemas/findings.json
 ---
 
 # Research Skill
@@ -37,21 +45,33 @@ mkdir -p .agents/research
 **First, search and inject existing knowledge (if ao available):**
 
 ```bash
-# Search knowledge base for relevant learnings, patterns, and prior research
-ao search "<topic>" 2>/dev/null || echo "ao not available, skipping knowledge search"
-
-# Inject relevant context into this session
-ao inject "<topic>" 2>/dev/null || echo "ao not available, skipping knowledge injection"
+# Pull relevant prior knowledge for this topic
+ao lookup --query "<topic>" --limit 5 2>/dev/null || \
+  ao search "<topic>" 2>/dev/null || \
+  echo "ao not available, skipping knowledge search"
 ```
 
-**Review ao search results:** If ao returns relevant learnings or patterns, incorporate them into your research strategy. Look for:
+**Apply retrieved knowledge (mandatory when results returned):**
+
+If ao returns relevant learnings or patterns, do NOT just load them as passive context. For each returned item:
+1. Check: does this learning apply to the current research topic? (answer yes/no)
+2. If yes: note how it shapes your research direction — what questions does it answer? what areas does it warn about?
+3. Cross-reference prior findings against new discoveries in your research output
+4. Cite applicable learnings by filename in the research document's Findings section
+
+After applying, record each citation:
+```bash
+ao metrics cite "<learning-path>" --type applied 2>/dev/null || true
+```
+
+Also look for:
 - Prior research on this topic or related topics
 - Known patterns or anti-patterns
 - Lessons learned from similar investigations
 
 **Search ALL local knowledge locations by content (not just filename):**
 
-Use Grep to search every knowledge directory for the topic. This catches learnings from `/learn`, retros, brainstorms, and plans — not just research artifacts.
+Use Grep to search every knowledge directory for the topic. This catches learnings from `/retro`, brainstorms, and plans — not just research artifacts.
 
 ```bash
 # Search all knowledge locations by content
@@ -78,11 +98,17 @@ Before launching the explore agent, detect which backend is available:
 Record the selected backend — it will be included in the research output document for traceability.
 
 **Read the matching backend reference for concrete tool call examples:**
-- Claude feature contract → `skills/shared/references/claude-code-latest-features.md`
-- Codex → `skills/shared/references/backend-codex-subagents.md`
-- Claude Native Teams → `skills/shared/references/backend-claude-teams.md`
-- Background Tasks → `skills/shared/references/backend-background-tasks.md`
-- Inline → `skills/shared/references/backend-inline.md`
+- Shared Claude feature contract → `skills/shared/references/claude-code-latest-features.md`
+- Local mirrored contract for runtime-local reads → `references/claude-code-latest-features.md`
+- Codex → `references/backend-codex-subagents.md`
+- Claude Native Teams → `references/backend-claude-teams.md`
+- Background Tasks → `references/backend-background-tasks.md`
+- Inline → `references/backend-inline.md`
+
+### Effort and Session Hints
+
+- Set effort to `low` for explore agents — research is breadth-first scanning, not deep reasoning.
+- Use `--from-pr <url>` to scope research to a specific PR's changed files when investigating PR-related topics.
 
 ### Step 3: Launch Explore Agent
 
@@ -97,10 +123,14 @@ Record the selected backend — it will be included in the research output docum
 
 #### Exploration Prompt (all backends)
 
-Use this prompt for whichever backend is selected:
+Use this prompt for whichever backend is selected. The exploration uses **iterative retrieval** (see `references/iterative-retrieval.md`): start broad, score relevance, extract new search terms from high-relevance files, and repeat for up to 3 cycles.
 
 ```
 Thoroughly investigate: <topic>
+
+Use iterative retrieval: after each discovery tier, score results 0-1 for relevance.
+From files scoring 0.5+, extract new search terms (function names, imports, config keys).
+Use extracted terms in subsequent tiers. Max 3 refinement cycles.
 
 Discovery tiers (execute in order, skip if source unavailable):
 
@@ -156,9 +186,11 @@ If your runtime supports spawning parallel subagents, spawn one or more research
 
 If no multi-agent capability is available, perform the exploration **inline** in the current session using file reading, grep, and glob tools directly.
 
-### Step 4: Validate Research Quality (Optional)
+### Step 4: Validate Research Quality (mandatory in auto mode)
 
 **For thorough research, perform quality validation:**
+
+**Auto mode enforcement:** When `--auto` is set, quality validation is mandatory. If depth rating < 2 for any critical area (Step 4b), emit WARN and log to `.agents/research/quality-warning.md`. In interactive mode, this step remains optional.
 
 #### 4a. Coverage Validation
 Check: Did we look everywhere we should? Any unexplored areas?
@@ -191,9 +223,14 @@ After the Explore agent and validation swarm return, write findings to:
 
 Use this format:
 ```markdown
+---
+id: research-YYYY-MM-DD-<topic-slug>
+type: research
+date: YYYY-MM-DD
+---
+
 # Research: <Topic>
 
-**Date:** YYYY-MM-DD
 **Backend:** <codex-sub-agents | claude-native-teams | background-task-fallback | inline>
 **Scope:** <what was investigated>
 
@@ -211,6 +248,26 @@ Use this format:
 ## Recommendations
 <next steps or actions>
 ```
+
+### Step 5.5: Persist Reusable Findings
+
+After the research artifact is written, identify any reusable findings that should influence future work.
+
+Persist only reusable findings, not transient observations, to `.agents/findings/registry.jsonl` using the finding-registry contract:
+
+- include provenance fields: `source.repo`, `source.session`, `source.file`, `source.skill`
+- require `dedup_key`, `pattern`, `detection_question`, `checklist_item`, `applicable_when`, and `confidence`
+- keep lifecycle fields explicit: `status`, `superseded_by`, `ttl_days`, `hit_count`, `last_cited`
+- merge by `dedup_key`
+- use the contract's temp-file-plus-rename atomic write rule
+
+After the registry update, if `hooks/finding-compiler.sh` exists, run:
+
+```bash
+bash hooks/finding-compiler.sh --quiet 2>/dev/null || true
+```
+
+This refreshes promoted findings and compiled prevention outputs in the same session.
 
 ### Step 6: Request Human Approval (Gate 1)
 
@@ -306,3 +363,24 @@ Include in your Explore agent prompt:
 | Auto mode skips important areas | Automated exploration prioritizes breadth over depth | Remove `--auto` flag to enable human approval gate for guided exploration |
 | Explore agent times out | Topic too broad for single exploration pass | Split into smaller focused topics (e.g., "auth flow" vs "entire auth system") |
 | No backend available for spawning | Running in environment without Task or TeamCreate support | Research runs inline — still functional but slower |
+
+## Reference Documents
+
+- [references/iterative-retrieval.md](references/iterative-retrieval.md)
+- [references/deep-research-mcp.md](references/deep-research-mcp.md)
+- [references/backend-background-tasks.md](references/backend-background-tasks.md)
+- [references/backend-claude-teams.md](references/backend-claude-teams.md)
+- [references/backend-codex-subagents.md](references/backend-codex-subagents.md)
+- [references/backend-inline.md](references/backend-inline.md)
+- [references/claude-code-latest-features.md](references/claude-code-latest-features.md)
+- [references/context-discovery.md](references/context-discovery.md)
+- [references/document-template.md](references/document-template.md)
+- [references/failure-patterns.md](references/failure-patterns.md)
+- [references/ralph-loop-contract.md](references/ralph-loop-contract.md)
+- [references/vibe-methodology.md](references/vibe-methodology.md)
+- [../shared/references/backend-background-tasks.md](../shared/references/backend-background-tasks.md)
+- [../shared/references/backend-claude-teams.md](../shared/references/backend-claude-teams.md)
+- [../shared/references/backend-codex-subagents.md](../shared/references/backend-codex-subagents.md)
+- [../shared/references/backend-inline.md](../shared/references/backend-inline.md)
+- [../shared/references/claude-code-latest-features.md](../shared/references/claude-code-latest-features.md)
+- [../shared/references/ralph-loop-contract.md](../shared/references/ralph-loop-contract.md)

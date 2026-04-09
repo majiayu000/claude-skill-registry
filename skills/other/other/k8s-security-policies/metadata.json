@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/wshobson/agents",
   "dir_name": "k8s-security-policies",
-  "downloaded_at": "2026-04-08T04:58:15.173815Z",
+  "downloaded_at": "2026-04-09T01:40:04.810439Z",
   "author": "wshobson",
   "source_url": "https://github.com/wshobson/agents/blob/main/plugins/kubernetes-operations/skills/k8s-security-policies/SKILL.md",
   "license": "NOASSERTION",

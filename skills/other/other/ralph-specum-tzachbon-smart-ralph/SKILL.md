@@ -31,17 +31,17 @@ Handle these intents directly:
 | Intent | Action |
 |--------|--------|
 | Start, new, resume, quick mode | Follow the start flow in `references/workflow.md` |
-| Triage | Decompose a large goal into an epic and dependency-aware specs |
-| Research | Write `research.md` using the research template shape |
-| Requirements | Write `requirements.md` using the requirements template shape |
-| Design | Write `design.md` using the design template shape |
-| Tasks | Write `tasks.md` using the tasks template shape |
-| Implement | Run remaining tasks until completion or a blocker stops progress |
+| Triage | Delegate to `triage-analyst` sub-agent to decompose into epic and specs |
+| Research | Delegate to `research-analyst` sub-agent to write `research.md` |
+| Requirements | Delegate to `product-manager` sub-agent to write `requirements.md` |
+| Design | Delegate to `architect-reviewer` sub-agent to write `design.md` |
+| Tasks | Delegate to `task-planner` sub-agent to write `tasks.md` |
+| Implement | Delegate each task to `spec-executor` sub-agent until complete or blocked |
 | Status | Show active spec, backlog state, and per-root listing |
 | Switch | Update `.current-spec` only |
 | Cancel | Stop execution and clean up state, confirm before destructive delete |
 | Index | Generate `specs/.index/` component and external specs |
-| Refactor | Update existing spec files after implementation learnings |
+| Refactor | Delegate to `refactor-specialist` sub-agent to update spec files |
 | Feedback | Open or draft GitHub feedback |
 | Help | Summarize the surface and next commands |
 
@@ -49,6 +49,7 @@ If the corresponding helper skill is installed and the user invoked it explicitl
 
 ## Core Rules
 
+0. **You are a coordinator, not a doer.** For every phase (research, requirements, design, tasks, implement, triage, refactor), delegate the actual generation work to the appropriate sub-agent. Never write spec artifacts (research.md, requirements.md, design.md, tasks.md) yourself. Your job is to gather context, run the interview, delegate, validate the output, and present results for approval.
 1. Keep the Ralph disk contract stable.
 2. Treat `.claude/ralph-specum.local.md` as the settings source when present.
 3. Default to `./specs` when no valid config exists.
@@ -62,6 +63,16 @@ If the corresponding helper skill is installed and the user invoked it explicitl
 11. Use branch creation or worktree creation when the user asks for branch isolation or the repo policy requires it.
 12. Enter quick mode only when the user explicitly asks Ralph to be autonomous, do it quickly, or continue without pauses.
 13. In quick mode, generate missing artifacts, default task granularity to `fine` when unset, and continue into implementation in the same session.
+
+## Stop Enforcement
+
+After completing any phase artifact (research, requirements, design, tasks), you MUST:
+
+1. Display the walkthrough summary
+2. Present the approval prompt (approve / request changes / continue to next)
+3. **STOP and wait for user response**
+
+The ONLY exception is `--quick` mode. Without `--quick`, you MUST NOT auto-continue to the next phase. This is non-negotiable.
 
 ## Response Handoff
 

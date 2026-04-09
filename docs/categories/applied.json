@@ -2,8 +2,20 @@
   "category": "applied",
   "code": "oth",
   "count": 5,
-  "updated_at": "2026-04-08T17:02:27.855793Z",
+  "updated_at": "2026-04-09T01:53:12.490202Z",
   "skills": [
+    {
+      "name": "81-pipecat",
+      "description": "Create your Pipecat skill from official documentation, then learn to improve it throughout the chapter",
+      "repo": "panaversity/agentfactory",
+      "path": "apps/learn-app/docs/09-Building-Realtime-Voice-Agents/81-pipecat/00-build-pipecat-skill.md",
+      "branch": "main",
+      "category": "applied",
+      "tags": [],
+      "stars": 110,
+      "install": "panaversity/agentfactory/apps/learn-app/docs/09-Building-Realtime-Voice-Agents/81-pipecat/00-build-pipecat-skill.md",
+      "source": "github.com/panaversity/agentfactory"
+    },
     {
       "name": "81-pipecat",
       "description": "Create your Pipecat skill from official documentation, then learn to improve it throughout the chapter",
@@ -26,18 +38,6 @@
       "tags": [],
       "stars": 110,
       "install": "panaversity/agentfactory/apps/learn-app/docs/09-Building-Realtime-Voice-Agents/80-livekit-agents/00-build-livekit-skill.md",
-      "source": "github.com/panaversity/agentfactory"
-    },
-    {
-      "name": "81-pipecat",
-      "description": "Create your Pipecat skill from official documentation, then learn to improve it throughout the chapter",
-      "repo": "panaversity/agentfactory",
-      "path": "apps/learn-app/docs/09-Building-Realtime-Voice-Agents/81-pipecat/00-build-pipecat-skill.md",
-      "branch": "main",
-      "category": "applied",
-      "tags": [],
-      "stars": 110,
-      "install": "panaversity/agentfactory/apps/learn-app/docs/09-Building-Realtime-Voice-Agents/81-pipecat/00-build-pipecat-skill.md",
       "source": "github.com/panaversity/agentfactory"
     },
     {

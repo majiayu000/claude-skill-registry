@@ -31,6 +31,7 @@ If the session docs path is not in your system prompt, ask the user for the sess
 
 | Property | Type | Purpose |
 |----------|------|---------|
+| `session_name` | text | Session name (auto-synced from `/rename` customTitle on invocation) |
 | `project` | text | Project name (auto-set from cwd at session start, customizable) |
 | `tags` | list | Freeform categorization (e.g., brainstorming, debugging, architecture) |
 | `summary` | text | One-line description of what the session accomplished |
@@ -49,6 +50,43 @@ obsidian vault="knowledge-bank" property:set name="<property>" value="<value>" [
 obsidian vault="knowledge-bank" read path="<vault-relative-path>"
 ```
 
+## Tag Suggestion Workflow
+
+When the user wants to set tags, **do NOT set them directly**. Instead, suggest existing tags to promote consistency.
+
+### Step 1: Load existing tags
+
+Read from ccfind's cache (field 5, comma-separated):
+```bash
+CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/ccfind/sessions.tsv"
+cut -f5 "$CACHE" 2>/dev/null | tr ',' '\n' | sed 's/^ *//;s/ *$//' | grep -v '^-$' | grep -v '^$' | sort -u
+```
+
+If the cache doesn't exist, fall back to listing tags from the current session's tags property.
+
+### Step 2: Match user-provided tags against existing ones
+
+For each tag the user provides, check for:
+- **Exact match** — existing tag matches exactly → use it
+- **Similar match** — differs only by hyphenation (`rule-forge` vs `ruleforge`), casing (`A2X` vs `a2x`), or minor spelling → suggest the existing one
+- **No match** — genuinely new tag → mark as new
+
+### Step 3: Present suggestion table
+
+```
+| Your Tag       | Suggestion          | Reason              |
+|----------------|---------------------|---------------------|
+| rule-forge     | → ruleforge (6×)    | existing, no hyphen |
+| debugging      | ✓ debugging (6×)    | exact match         |
+| new-feature    | new                 | no similar existing |
+```
+
+The `(N×)` shows how many sessions already use that tag — higher = more reason to reuse.
+
+### Step 4: Confirm before setting
+
+Ask the user to confirm or adjust. Only set tags after confirmation.
+
 ## Examples
 
 User: "set project to sundayhao-plugins"
@@ -57,6 +95,11 @@ obsidian vault="knowledge-bank" property:set name="project" value="sundayhao-plu
 ```
 
 User: "add tags brainstorming and architecture"
+
+**Do NOT run the command directly.** Instead:
+1. Load existing tags (Step 1)
+2. Both `brainstorming` and `architecture` exist — show confirmation table
+3. After user confirms, then set:
 ```bash
 obsidian vault="knowledge-bank" property:set name="tags" value="brainstorming, architecture" type="list" path="_sessions/2026-03-04/abc123/session.md"
 ```
@@ -74,22 +117,34 @@ Then extract and report the `tags` and `summary` from the frontmatter.
 
 ## On Invocation
 
-Every time this skill is invoked, **always start by reading the current session.md** and displaying a status summary before taking any action:
+Every time this skill is invoked, **always start by reading the current session.md AND checking for a customTitle**, then display a status summary before taking any action:
 
 1. Read the session note using the "Read current metadata" command
-2. Display current values in this format:
+2. Check if the session has been renamed via `/rename` by reading the customTitle from the transcript:
+   ```bash
+   source skills/common/obsidian_helpers.sh
+   read_custom_title "<cwd>" "<session_id>"
+   ```
+   Where `<cwd>` is from session.md's `cwd` property and `<session_id>` is from `session_id` property.
+3. Display current values in this format:
    ```
    **Current Session**
+   - session_name: <value or empty>
    - project: <value or empty>
    - tags: <value or empty>
    - summary: <value or empty>
    ```
-3. Then proceed with the user's request (set properties, or ask what they'd like to update)
+4. If customTitle exists but `session_name` in session.md is empty or different, **automatically set it** and rename the tmux window:
+   ```bash
+   obsidian vault="knowledge-bank" property:set name="session_name" value="<customTitle>" path="<vault-relative-path>"
+   [ -n "$TMUX_PANE" ] && tmux rename-window -t "$TMUX_PANE" "<customTitle>" 2>/dev/null
+   ```
+5. Then proceed with the user's request (set properties, or ask what they'd like to update)
 
 If the user invoked the skill without a specific request, show the status and list what can be set.
 
 ## Constraints
 
 - ONLY operates on the **current active session** — do NOT modify other sessions
-- ONLY updates `project`, `tags`, and `summary`
+- ONLY updates `session_name`, `project`, `tags`, and `summary`
 - Always confirm the update to the user after running the command

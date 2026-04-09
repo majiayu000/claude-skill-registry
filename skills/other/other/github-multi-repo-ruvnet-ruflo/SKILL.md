@@ -42,12 +42,12 @@ Cross-package integration testing and deployment coordination.
 ```bash
 # Basic swarm initialization
 npx claude-flow skill run github-multi-repo init \
-  --repos "org$frontend,org$backend,org$shared" \
+  --repos "org/frontend,org/backend,org/shared" \
   --topology hierarchical
 
 # Advanced initialization with synchronization
 npx claude-flow skill run github-multi-repo init \
-  --repos "org$frontend,org$backend,org$shared" \
+  --repos "org/frontend,org/backend,org/shared" \
   --topology mesh \
   --shared-memory \
   --sync-strategy eventual
@@ -85,8 +85,8 @@ const REPOS = Bash(`gh repo list my-organization --limit 100 \
 // Analyze repository dependencies
 const DEPS = Bash(`gh repo list my-organization --json name | \
   jq -r '.[].name' | while read -r repo; do
-    gh api repos$my-organization/$repo$contents$package.json \
-      --jq '.content' 2>$dev$null | base64 -d | jq '{name, dependencies}'
+    gh api repos/my-organization/$repo/contents/package.json \
+      --jq '.content' 2>/dev/null | base64 -d | jq '{name, dependencies}'
   done | jq -s '.'`)
 
 // Initialize swarm with discovered repositories
@@ -108,10 +108,10 @@ mcp__claude-flow__swarm_init({
 
   // Get matching repositories
   Bash(`gh repo list org --limit 100 --json name \
-    --jq '.[] | select(.name | test("-service$")) | .name' > $tmp$repos.txt`)
+    --jq '.[] | select(.name | test("-service$")) | .name' > /tmp/repos.txt`)
 
   // Execute task across repositories
-  Bash(`cat $tmp$repos.txt | while read -r repo; do
+  Bash(`cat /tmp/repos.txt | while read -r repo; do
     gh repo clone org/$repo /tmp/$repo -- --depth=1
     cd /tmp/$repo
 
@@ -153,25 +153,25 @@ mcp__claude-flow__swarm_init({
   Task("Integration Tester", "Validate synchronization", "tester")
 
   // Read package states
-  Read("$workspaces$ruv-FANN$claude-code-flow$claude-code-flow$package.json")
-  Read("$workspaces$ruv-FANN$ruv-swarm$npm$package.json")
+  Read("/workspaces/ruv-FANN/claude-code-flow/claude-code-flow/package.json")
+  Read("/workspaces/ruv-FANN/ruv-swarm/npm/package.json")
 
   // Align versions using gh CLI
-  Bash(`gh api repos/:owner/:repo$git$refs \
-    -f ref='refs$heads$sync$package-alignment' \
-    -f sha=$(gh api repos/:owner/:repo$git$refs$heads$main --jq '.object.sha')`)
+  Bash(`gh api repos/:owner/:repo/git/refs \
+    -f ref='refs/heads/sync/package-alignment' \
+    -f sha=$(gh api repos/:owner/:repo/git/refs/heads/main --jq '.object.sha')`)
 
   // Update package.json files
-  Bash(`gh api repos/:owner/:repo$contents$package.json \
+  Bash(`gh api repos/:owner/:repo/contents/package.json \
     --method PUT \
     -f message="feat: Align Node.js version requirements" \
-    -f branch="sync$package-alignment" \
+    -f branch="sync/package-alignment" \
     -f content="$(cat aligned-package.json | base64)"`)
 
   // Store sync state
   mcp__claude-flow__memory_usage({
     action: "store",
-    key: "sync$packages$status",
+    key: "sync/packages/status",
     value: {
       timestamp: Date.now(),
       packages_synced: ["claude-code-flow", "ruv-swarm"],
@@ -185,20 +185,20 @@ mcp__claude-flow__swarm_init({
 // Synchronize CLAUDE.md files across packages
 [Documentation Sync]:
   // Get source documentation
-  Bash(`gh api repos/:owner/:repo$contents$ruv-swarm/docs/CLAUDE.md \
-    --jq '.content' | base64 -d > $tmp$claude-source.md`)
+  Bash(`gh api repos/:owner/:repo/contents/ruv-swarm/docs/CLAUDE.md \
+    --jq '.content' | base64 -d > /tmp/claude-source.md`)
 
   // Update target documentation
-  Bash(`gh api repos/:owner/:repo$contents$claude-code-flow/CLAUDE.md \
+  Bash(`gh api repos/:owner/:repo/contents/claude-code-flow/CLAUDE.md \
     --method PUT \
     -f message="docs: Synchronize CLAUDE.md" \
-    -f branch="sync$documentation" \
-    -f content="$(cat $tmp$claude-source.md | base64)"`)
+    -f branch="sync/documentation" \
+    -f content="$(cat /tmp/claude-source.md | base64)"`)
 
   // Track sync status
   mcp__claude-flow__memory_usage({
     action: "store",
-    key: "sync$documentation$status",
+    key: "sync/documentation/status",
     value: { status: "synchronized", files: ["CLAUDE.md"] }
   })
 ```
@@ -209,14 +209,14 @@ mcp__claude-flow__swarm_init({
 [Cross-Package Feature]:
   // Push changes to all packages
   mcp__github__push_files({
-    branch: "feature$github-integration",
+    branch: "feature/github-integration",
     files: [
       {
-        path: "claude-code-flow/.claude$commands$github$github-modes.md",
+        path: "claude-code-flow/.claude/commands/github/github-modes.md",
         content: "[GitHub modes documentation]"
       },
       {
-        path: "ruv-swarm$src$github-coordinator$hooks.js",
+        path: "ruv-swarm/src/github-coordinator/hooks.js",
         content: "[GitHub coordination hooks]"
       }
     ],
@@ -255,8 +255,8 @@ mcp__claude-flow__swarm_init({
   Task("Best Practices Researcher", "Research architecture patterns", "researcher")
 
   // Analyze current structures
-  LS("$workspaces$ruv-FANN$claude-code-flow$claude-code-flow")
-  LS("$workspaces$ruv-FANN$ruv-swarm$npm")
+  LS("/workspaces/ruv-FANN/claude-code-flow/claude-code-flow")
+  LS("/workspaces/ruv-FANN/ruv-swarm/npm")
 
   // Search for best practices
   Bash(`gh search repos "language:javascript template architecture" \
@@ -268,7 +268,7 @@ mcp__claude-flow__swarm_init({
   // Store analysis results
   mcp__claude-flow__memory_usage({
     action: "store",
-    key: "architecture$analysis$results",
+    key: "architecture/analysis/results",
     value: {
       repositories_analyzed: ["claude-code-flow", "ruv-swarm"],
       optimization_areas: ["structure", "workflows", "templates"],
@@ -294,11 +294,11 @@ mcp__claude-flow__swarm_init({
     repo: "claude-project-template",
     files: [
       {
-        path: ".claude$commands$github$github-modes.md",
+        path: ".claude/commands/github/github-modes.md",
         content: "[GitHub modes template]"
       },
       {
-        path: ".claude$config.json",
+        path: ".claude/config.json",
         content: JSON.stringify({
           version: "1.0",
           mcp_servers: {
@@ -336,19 +336,19 @@ mcp__claude-flow__swarm_init({
   repositories.forEach(repo => {
     mcp__github__create_or_update_file({
       repo: "ruv-FANN",
-      path: `${repo}/.github$workflows$integration.yml`,
+      path: `${repo}/.github/workflows/integration.yml`,
       content: `name: Integration Tests
 on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions$checkout@v3
-      - uses: actions$setup-node@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with: { node-version: '20' }
       - run: npm install && npm test`,
       message: "ci: Standardize integration workflow",
-      branch: "structure$standardization"
+      branch: "structure/standardization"
     })
   })
 ```
@@ -369,7 +369,7 @@ jobs:
   // Find all TypeScript repositories
   TS_REPOS=$(Bash(`gh repo list org --limit 100 --json name | \
     jq -r '.[].name' | while read -r repo; do
-      if gh api repos$org/$repo$contents$package.json 2>$dev$null | \
+      if gh api repos/org/$repo/contents/package.json 2>/dev/null | \
          jq -r '.content' | base64 -d | grep -q '"typescript"'; then
         echo "$repo"
       fi
@@ -432,17 +432,17 @@ Part of #$TRACKING_ISSUE"
     while read -r repo; do
       gh repo clone org/$repo /tmp/$repo -- --depth=1
       cd /tmp/$repo
-      npm audit --json > $tmp$audit-$repo.json
+      npm audit --json > /tmp/audit-$repo.json
     done`)
 
   // Apply patches
-  Bash(`for repo in $tmp$audit-*.json; do
+  Bash(`for repo in /tmp/audit-*.json; do
     if [ $(jq '.vulnerabilities | length' $repo) -gt 0 ]; then
-      cd /tmp/$(basename $repo .json | sed 's$audit-//')
+      cd /tmp/$(basename $repo .json | sed 's/audit-//')
       npm audit fix
 
       if npm test; then
-        git checkout -b security$patch-$(date +%Y%m%d)
+        git checkout -b security/patch-$(date +%Y%m%d)
         git add -A
         git commit -m "security: Apply security patches"
         git push origin HEAD
@@ -456,30 +456,30 @@ Part of #$TRACKING_ISSUE"
 
 ### Multi-Repo Config File
 ```yaml
-# .swarm$multi-repo.yml
+# .swarm/multi-repo.yml
 version: 1
 organization: my-org
 
 repositories:
   - name: frontend
-    url: github.com$my-org$frontend
+    url: github.com/my-org/frontend
     role: ui
     agents: [coder, designer, tester]
 
   - name: backend
-    url: github.com$my-org$backend
+    url: github.com/my-org/backend
     role: api
     agents: [architect, coder, tester]
 
   - name: shared
-    url: github.com$my-org$shared
+    url: github.com/my-org/shared
     role: library
     agents: [analyst, coder]
 
 coordination:
   topology: hierarchical
   communication: webhook
-  memory: redis:/$shared-memory
+  memory: redis://shared-memory
 
 dependencies:
   - from: frontend
@@ -516,7 +516,7 @@ const { MultiRepoSwarm } = require('ruv-swarm');
 
 const swarm = new MultiRepoSwarm({
   webhook: {
-    url: 'https:/$swarm-coordinator.example.com',
+    url: 'https://swarm-coordinator.example.com',
     secret: process.env.WEBHOOK_SECRET
   }
 });
@@ -599,7 +599,7 @@ npx claude-flow skill run github-multi-repo microservices \
 ### 2. Library Updates
 ```bash
 npx claude-flow skill run github-multi-repo lib-update \
-  --library "org$shared-lib" \
+  --library "org/shared-lib" \
   --version "2.0.0" \
   --find-consumers \
   --update-imports \
@@ -812,9 +812,9 @@ npx claude-flow skill run github-multi-repo to-monorepo \
 ### Full-Stack Application Update
 ```bash
 npx claude-flow skill run github-multi-repo fullstack-update \
-  --frontend "org$web-app" \
-  --backend "org$api-server" \
-  --database "org$db-migrations" \
+  --frontend "org/web-app" \
+  --backend "org/api-server" \
+  --database "org/db-migrations" \
   --coordinate-deployment
 ```
 
@@ -856,16 +856,16 @@ npx claude-flow skill run github-multi-repo cross-team \
 - `sparc-optimizer` - Performance optimization
 
 ### Related Commands
-- `$github sync-coordinator` - Cross-repo synchronization
-- `$github release-manager` - Coordinated releases
-- `$github repo-architect` - Repository optimization
-- `$sparc architect` - Detailed architecture design
+- `/github sync-coordinator` - Cross-repo synchronization
+- `/github release-manager` - Coordinated releases
+- `/github repo-architect` - Repository optimization
+- `/sparc architect` - Detailed architecture design
 
 ## Support and Resources
 
-- Documentation: https:/$github.com$ruvnet$claude-flow
-- Issues: https:/$github.com$ruvnet$claude-flow$issues
-- Examples: `.claude$examples$github-multi-repo/`
+- Documentation: https://github.com/ruvnet/claude-flow
+- Issues: https://github.com/ruvnet/claude-flow/issues
+- Examples: `.claude/examples/github-multi-repo/`
 
 ---
 

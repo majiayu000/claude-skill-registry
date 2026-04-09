@@ -8,7 +8,7 @@ metadata:
 
 # Ralph Specum Implement
 
-Use this for the implementation phase.
+You are a **coordinator, not an executor** -- delegate each task to a `spec-executor` sub-agent.
 
 ## Contract
 
@@ -29,7 +29,7 @@ Use this for the implementation phase.
    - `totalTasks: total`
    - `taskIndex: next_index`
    - preserve `taskIteration`, `maxTaskIterations`, `globalIteration`, `maxGlobalIterations`, `commitSpec`, and `relatedSpecs`
-5. Execute tasks in order until complete or blocked.
+5. **Delegate** each task to a `spec-executor` sub-agent. Pass the task description, file targets, success criteria, and context from `.progress.md`. The sub-agent implements the task and outputs `TASK_COMPLETE`. Do NOT implement tasks yourself. Execute tasks in order until complete or blocked.
 6. `[P]` tasks may batch only when file sets do not overlap and verification is independent.
 7. `[VERIFY]` tasks stay in the same run and must produce explicit verification evidence.
 8. Marker syntax must be explicitly present in `tasks.md`. If markers are absent, treat tasks as non-batchable by default.

@@ -1,5 +1,5 @@
 ---
-description: Improves unit test coverage on demand — discovers testing gaps and generates tests that follow project conventions. Requires /optimus:init to have set up test infrastructure first. Conservative — only adds new test files, never refactors existing source code. Use when test coverage is low or after adding new code that lacks tests.
+description: Improves unit test coverage on demand — discovers testing gaps and generates tests that follow project conventions. Requires /optimus:init to have set up test infrastructure first. Conservative — only adds new test files, never refactors existing source code. Supports `deep harness` mode for an automated multi-cycle unit-test + testability-refactor loop with fresh context per phase. Use when test coverage is low, after adding new code that lacks tests, or when you want an automated coverage-improvement harness.
 disable-model-invocation: true
 ---
 
@@ -8,6 +8,38 @@ disable-model-invocation: true
 Improve unit test coverage for existing code. Requires `/optimus:init` to have set up test infrastructure (framework, coverage tooling, testing docs) first. Conservative by design — only adds new test files, never refactors or restructures existing source code. If code is untestable as-is, it flags it rather than changing it. Refactoring is the domain of `/optimus:refactor`.
 
 ## Step 1: Pre-flight
+
+### Parse invocation arguments
+
+Extract from the user's arguments:
+1. `deep` flag (present/absent)
+2. `harness` keyword after `deep` (present/absent)
+3. A number immediately after `deep` or `deep harness` → cycle cap (optional, default 5, hard cap 10)
+4. Everything else → scope instructions (optional path)
+
+Examples:
+- `/optimus:unit-test` → normal mode, full project
+- `/optimus:unit-test src/api` → normal mode, scoped
+- `/optimus:unit-test deep` → deep mode (5 cycles)
+- `/optimus:unit-test deep 3` → deep mode (3 cycles)
+- `/optimus:unit-test deep harness` → harness mode, 5 cycles
+- `/optimus:unit-test deep harness 5 "src/api"` → harness mode, scoped
+
+### Harness mode detection
+
+**If system prompt contains `HARNESS_MODE_ACTIVE`:**
+→ Read `$CLAUDE_PLUGIN_ROOT/references/coverage-harness-mode.md`
+→ Follow the "Unit-Test Phase Execution" section
+→ Skip user confirmation (no `AskUserQuestion`)
+→ Skip loops — run Steps 2–4 exactly once, then output structured JSON and stop
+
+**If `harness` keyword detected in arguments:**
+→ Read `$CLAUDE_PLUGIN_ROOT/references/coverage-harness-mode.md` Skill-Triggered Invocation section
+→ Pass: `max_cycles` (from step 1 parsing), `scope` (from step 1 parsing)
+→ The invocation section will resolve the Python environment, build the terminal command pointing to `scripts/test-coverage-harness/main.py`, present it, and stop
+→ Do NOT proceed to Step 2
+
+### Pre-flight checks
 
 Read `$CLAUDE_PLUGIN_ROOT/skills/init/references/multi-repo-detection.md` for workspace detection. If a multi-repo workspace is detected, process each repo independently: run Steps 1-5 inside each repo that has `.claude/CLAUDE.md`. Report results per repo. If no repos have been initialized, suggest running `/optimus:init` first from the workspace root.
 
@@ -87,7 +119,11 @@ Create a prioritized list, **capped at 10 items per run**:
 - Declarative configuration
 - Thin wrappers with no logic
 
-Present the plan, then use `AskUserQuestion` — header "Plan", question "How would you like to proceed with the test generation plan?":
+### User confirmation
+
+**Deep mode (harness or interactive)**: Skip the question — auto-select "Generate tests for all planned items" and proceed directly to Step 4.
+
+**Normal mode**: Present the plan, then use `AskUserQuestion` — header "Plan", question "How would you like to proceed with the test generation plan?":
 - **Approve all** — "Generate tests for all planned items"
 - **Selective** — "Choose specific items by number"
 - **Skip** — "No tests — keep the plan as reference"
@@ -165,3 +201,54 @@ For multi-repo workspaces, present results per repo (one summary block per repo)
 Recommend running `/optimus:refactor testability` to prioritize testability improvements (or `/optimus:refactor` for balanced code quality review), or `/optimus:tdd` to continue development with test-driven workflow.
 
 Tell the user: **Tip:** for best results, start a fresh conversation for the next skill — each skill gathers its own context from scratch.
+
+## Step 6: Harness Output (harness mode only)
+
+If running under `HARNESS_MODE_ACTIVE`, output structured JSON **instead** of the Step 5 markdown summary. Output it in a `json:harness-output` fenced block and then stop — do not loop, do not present recommendations, do not use `AskUserQuestion`.
+
+````
+```json:harness-output
+{
+  "iteration": <cycle number from progress file>,
+  "phase": "unit-test",
+  "coverage": {
+    "tool": "<coverage tool name or null>",
+    "before": <percentage or null>,
+    "after": <percentage or null>,
+    "delta": <percentage or null>
+  },
+  "tests_written": [
+    {
+      "file": "<test file path>",
+      "target_file": "<source file being tested>",
+      "target_description": "<what it tests>",
+      "test_count": <number of test cases>,
+      "status": "<pass | fail-fixed | fail-abandoned>",
+      "failure_reason": "<reason or null>"
+    }
+  ],
+  "untestable_code": [
+    {
+      "file": "<source file path>",
+      "line": <start line>,
+      "end_line": <end line>,
+      "function": "<function or class name>",
+      "barrier": "<hardcoded-dependency | tight-coupling | global-state | ...>",
+      "barrier_description": "<brief explanation>",
+      "suggested_refactoring": "<what refactoring would help>"
+    }
+  ],
+  "bugs_discovered": [
+    {
+      "file": "<path>",
+      "line": <line>,
+      "description": "<bug behavior>",
+      "severity": "<High | Medium | Low>"
+    }
+  ],
+  "no_new_tests": <true if zero new tests were written>,
+  "no_untestable_code": <true if no untestable code was found>,
+  "no_coverage_gained": <true if coverage delta is zero or negative>
+}
+```
+````

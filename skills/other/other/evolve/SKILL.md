@@ -1,494 +1,489 @@
 ---
 name: evolve
-description: Goal-driven fitness-scored improvement loop. Measures goals, picks worst gap, runs /rpi (or parallel /swarm of /rpi cycles), compounds via knowledge flywheel.
-context: fork
-disable-model-invocation: true
+description: Goal-driven fitness-scored improvement loop. Measures goals, picks worst gap, runs /rpi, compounds via knowledge flywheel. Also pulls from open beads when goals all pass. Accepts ordered roadmap via --queue for sequential execution with auto-unblocking. Use when you want to "improve", "iterate", "fix issues", "work through tasks", "evolve", "check goal fitness", "run improvement loop", "pick up next work", or "run roadmap".
+skill_api_version: 1
+user-invocable: true
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: full
 metadata:
   tier: execution
   dependencies:
     - rpi         # required - executes each improvement cycle
     - post-mortem # required - auto-runs at teardown to harvest learnings
+    - compile     # optional - knowledge warmup when --compile is passed
   triggers:
     - evolve
     - improve everything
     - autonomous improvement
     - run until done
+    - roadmap
+    - run queue
+    - pinned queue
+output_contract: "code changes, GOALS.md fitness deltas"
 ---
 
 # /evolve — Goal-Driven Compounding Loop
 
-> **Purpose:** Measure what's wrong. Fix the worst thing. Measure again. Compound.
+> Measure what's wrong. Fix the worst thing. Measure again. Compound.
 
-Thin fitness-scored loop over `/rpi`. The knowledge flywheel provides compounding — each cycle loads learnings from all prior cycles.
+Always-on autonomous loop over `/rpi`. Work selection order:
+0. **Pinned work queue** (`--queue=<file>` or inline roadmap — see `references/pinned-queue.md`)
+1. **Harvested `.agents/rpi/next-work.jsonl` work** (freshest concrete follow-up)
+2. **Open ready beads work** (`bd ready`)
+3. **Failing goals and directive gaps** (`ao goals measure`)
+4. **Testing improvements** (missing/thin coverage, missing regression tests)
+5. **Validation tightening and bug-hunt passes** (gates, audits, bug sweeps)
+6. **Complexity / TODO / FIXME / drift / dead code / stale docs / stale research mining**
+7. **Concrete feature suggestions** derived from repo purpose when no sharper work exists
 
-## Compaction Resilience
+**Work generators** that feed the selection ladder (auto-invoked, skip with `--no-lifecycle`):
+- `Skill(skill="test", args="coverage")` → files with <40% coverage become queue items (Step 3.4)
+- `Skill(skill="refactor", args="--sweep all --dry-run")` → functions with CC > 20 become queue items (Step 3.6)
+- `Skill(skill="deps", args="audit")` → deps with CVSS >= 7.0 or 2+ major versions behind become queue items (Step 3.5)
+- `Skill(skill="perf", args="profile --quick")` → perf findings become queue items when hot paths detected (Step 3.5)
 
-The evolve loop MUST survive context compaction. On session restart, read `cycle-history.jsonl` to determine cycle number and resume from Step 1. See `references/cycle-history.md` for recovery protocol details.
-
-## Known Good Properties
-
-- Severity-based selection naturally orders: code health → architecture →
-  testing → documentation → cleanup. This is the correct ordering.
-  Do not add special-case logic to front-load doc fixes.
-
-**Dormancy is success.** When all goals pass and no harvested work remains, the system enters dormancy — a valid, healthy state. The system does not manufacture work to justify its existence. Nothing to do means everything is working.
-
-## Quick Start
+**Dormancy is last resort.** Empty current queues mean "run the generator layers", not "stop". Only go dormant after the queue layers and generator layers come up empty across multiple consecutive passes.
 
 ```bash
-/evolve                      # Run forever until kill switch or stagnation
-/evolve --max-cycles=5       # Cap at 5 improvement cycles
-/evolve --dry-run            # Measure fitness, show what would be worked on, don't execute
+/evolve                      # Run until kill switch, max-cycles, or real dormancy
+/evolve --max-cycles=5       # Cap at 5 cycles
+/evolve --dry-run            # Show what would be worked on, don't execute
+/evolve --beads-only         # Skip goals measurement, work beads backlog only
+/evolve --quality            # Quality-first mode: prioritize post-mortem findings
+/evolve --quality --max-cycles=10  # Quality mode with cycle cap
+/evolve --compile            # Mine → Defrag warmup before first cycle
+/evolve --compile --max-cycles=5 # Warm knowledge base then run 5 cycles
+/evolve --test-first         # Default strict-quality /rpi execution path
+/evolve --no-test-first      # Explicit opt-out from test-first mode
+/evolve --queue=.agents/evolve/roadmap.md           # Process ordered roadmap
+/evolve --queue=.agents/evolve/roadmap.md --test-first  # Roadmap with strict quality
 ```
+
+## Flags
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--max-cycles=N` | unlimited | Stop after `N` completed cycles |
+| `--dry-run` | off | Show planned cycle actions without executing |
+| `--beads-only` | off | Skip goal measurement and run backlog-only selection |
+| `--skip-baseline` | off | Skip first-run baseline snapshot |
+| `--quality` | off | Prioritize harvested post-mortem findings |
+| `--compile` | off | Run `ao mine` + `ao defrag` warmup before cycle 1 |
+| `--test-first` | on | Pass strict-quality defaults through to `/rpi` |
+| `--no-test-first` | off | Explicitly disable test-first passthrough to `/rpi` |
+| `--queue=<file>` | none | Process items from ordered markdown queue file sequentially before fitness-driven selection |
+| `--no-lifecycle` | off | Skip lifecycle work generators in Steps 3.4-3.6 (/test, /deps, /perf, /refactor). Falls back to manual scanning. |
 
 ## Execution Steps
 
 **YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
 
+**FULLY AUTONOMOUS.** Read `references/autonomous-execution.md`. Every `/rpi` uses `--auto`. Do NOT ask the user anything. Each cycle = complete 3-phase `/rpi` run.
+
 ### Step 0: Setup
 
 ```bash
 mkdir -p .agents/evolve
+ao lookup --query "autonomous improvement cycle" --limit 5 2>/dev/null || true
 ```
 
-Load accumulated learnings (COMPOUNDING):
-```bash
-ao inject 2>/dev/null || true
-```
+**Apply retrieved knowledge:** If learnings are returned, check each for applicability to the current improvement cycle. For applicable learnings, cite by filename and record: `ao metrics cite "<path>" --type applied 2>/dev/null || true`
 
-Parse flags:
-- `--max-cycles=N` (default: **unlimited**) — optional hard cap. Without this flag, the loop runs **forever** until kill switch or stagnation.
-- `--dry-run` — measure and report only, no execution
-- `--skip-baseline` — skip the Step 0.5 baseline sweep
-- `--parallel` — enable parallel goal execution via /swarm per cycle (default: off, sequential)
-- `--max-parallel=N` (default: **3**, cap: **5**) — max goals to improve in parallel per cycle. Only meaningful with `--parallel`.
+Before cycle recovery, load the repo execution profile contract when it exists. The repo execution profile is the source for repo policy; the user prompt should mostly supply mission/objective, not restate startup reads, validation bundle, tracker wrapper rules, or `definition_of_done`.
 
-**Capture session-start SHA** (for multi-commit revert):
-```bash
-SESSION_START_SHA=$(git rev-parse HEAD)
-```
+- Locate `docs/contracts/repo-execution-profile.md` and `docs/contracts/repo-execution-profile.schema.json`.
+- Read the ordered `startup_reads` and bootstrap from those repo paths before selecting work.
+- Cache repo `validation_commands`, `tracker_commands`, and `definition_of_done` into session state.
+- If the repo execution profile is present but missing required fields, stop or downgrade with an explicit warning before cycle 1. Do not silently invent repo policy.
 
-Initialize state:
-```
+Then load the repo-local autodev program contract when it exists. The execution profile remains the repo bootstrap and landing-policy layer; `PROGRAM.md` or `AUTODEV.md` is the repo-local execution layer for the current improvement loop.
+
+- Locate `PROGRAM.md` and `AUTODEV.md`. `PROGRAM.md` takes precedence.
+- Read the resolved program before cycle recovery and cache `program_path`, `mutable_scope`, `immutable_scope`, `validation_commands`, `decision_policy`, and `stop_conditions` into session state.
+- If the program file exists but is structurally invalid, stop or downgrade with an explicit warning before cycle 1. Do not silently ignore a broken operator contract.
+- When a program contract exists, prefer work that can land wholly inside mutable scope. Do not silently widen scope around immutable files.
+
+Recover cycle number, queue/generator streaks, and the last claimed work item from disk (survives context compaction). Initialize `CYCLE` from `cycle-history.jsonl`, recover `IDLE_STREAK`, `GENERATOR_EMPTY_STREAK`, `LAST_SELECTED_SOURCE`, and `CLAIMED_WORK_REF` from `session-state.json`.
+
+**Circuit breakers:** Time-based (60 min no productive work) and consecutive failure (5 in queue mode). See `references/roadmap-queue-patterns.md` for queue-specific circuit breakers.
+
+**Oscillation quarantine:** Pre-populate quarantine list from cycle history (scan for goals with 3+ improved-to-fail transitions). See `references/oscillation.md`.
+
+Parse flags: `--max-cycles=N` (default unlimited), `--dry-run`, `--beads-only`, `--skip-baseline`, `--quality`, `--compile`, `--queue=<file>`.
+
+### Step 0.1: Parse Pinned Queue (--queue only)
+
+Skip if `--queue` was not passed. Read `references/roadmap-queue-patterns.md` for the full queue parsing, state persistence, and resume protocol. See also `references/pinned-queue.md` for format specification and blocker syntax.
+
+Track cycle-level execution state:
+
+```text
 evolve_state = {
-  cycle: 0,
-  max_cycles: <from flag, or Infinity if not set>,
-  dry_run: <from flag, default false>,
-  test_first: <from flag, default false>,
-  parallel: <from --parallel flag, default false>,
-  max_parallel: <from --max-parallel flag, default 3, cap 5>,
-  session_start_sha: $SESSION_START_SHA,
-  idle_streak: 0,         # consecutive cycles with nothing to do
-  max_idle_streak: 3,     # stop after this many consecutive idle cycles
-  history: []
+  cycle: <current cycle number>,
+  mode: <standard|quality|beads-only>,
+  test_first: <true by default; false only when --no-test-first>,
+  repo_profile_path: <docs/contracts/repo-execution-profile.md or null>,
+  startup_reads: <ordered repo bootstrap paths>,
+  validation_commands: <ordered repo validation bundle>,
+  tracker_commands: <repo tracker shell wrappers>,
+  definition_of_done: <repo stop predicates>,
+  program_path: <PROGRAM.md|AUTODEV.md or null>,
+  program_mutable_scope: <declared mutable paths/globs>,
+  program_immutable_scope: <declared immutable paths/globs>,
+  program_validation_commands: <ordered program validation bundle>,
+  program_decision_policy: <ordered keep/revert rules>,
+  program_stop_conditions: <ordered cycle done criteria>,
+  generator_empty_streak: <consecutive passes where all generator layers returned nothing>,
+  last_selected_source: <harvested|beads|goal|directive|testing|validation|bug-hunt|drift|feature>,
+  claimed_work: <null or queue reference being worked>,
+  queue_refresh_count: <incremented after every /rpi cycle>,
+  pinned_queue: <parsed items array or null>,
+  pinned_queue_file: <path or null>,
+  pinned_queue_index: <current 0-based position>,
+  pinned_queue_completed: <array of completed item IDs>,
+  pinned_queue_escalated: <array of escalated items with reasons>,
+  unblock_depth: <current nesting depth, 0 when not unblocking>,
+  unblock_failures: <consecutive failures on current item>,
+  unblock_chain: <stack of blocker IDs being resolved>
 }
 ```
 
-### Step 0.5: Cycle-0 Baseline Sweep
+Persist `evolve_state` to `.agents/evolve/session-state.json` at each cycle boundary, after queue claims, after queue release/finalize, and during teardown. `cycle-history.jsonl` remains the canonical cycle ledger; `session-state.json` carries resume-only state that has not yet earned a committed cycle entry.
 
-Capture a baseline fitness snapshot before the first cycle so every later cycle
-has a comparison anchor.  Skipped on resume (idempotent).
+### Step 0.2: Compile Warmup (--compile only)
 
-```
-if [ "$SKIP_BASELINE" = "true" ]; then
-  log "Skipping baseline sweep (--skip-baseline flag set)"
-  exit 0
-fi
+Skip if `--compile` was not passed or if `--dry-run`. Read `references/knowledge-loop-integration.md` for the full warmup procedure (mine + defrag + signal notes).
 
-if ! [ -f .agents/evolve/fitness-0-baseline.json ]; then
-  # **Preferred (when ao CLI available):**
-  if command -v ao &>/dev/null; then
-    ao goals measure --json > .agents/evolve/fitness-0-baseline.json
-  fi
+### Step 0.5: Baseline (first run only)
 
-  # **Fallback (no ao CLI):**
-  baseline = MEASURE_FITNESS()            # run every GOALS.yaml goal
-  baseline.cycle = 0
-  write ".agents/evolve/fitness-0-baseline.json" baseline
-
-  # Baseline report
-  failing = [g for g in baseline.goals if g.result == "fail"]
-  failing.sort(by=weight, descending)
-  cat > .agents/evolve/cycle-0-report.md << EOF
-  # Cycle-0 Baseline
-  **Total goals:** ${len(baseline.goals)}
-  **Passing:** ${len(baseline.goals) - len(failing)}
-  **Failing:** ${len(failing)}
-  $(for g in failing: "- [weight ${g.weight}] ${g.id}: ${g.result}")
-  EOF
-
-  log "Baseline captured: ${len(failing)}/${len(baseline.goals)} goals failing"
-fi
-
-# Wiring closure check: every check-*.sh must appear in GOALS.yaml
-unwired=$(comm -23 \
-  <(ls scripts/check-*.sh 2>/dev/null | xargs -I{} basename {} | sort) \
-  <(grep -oP 'scripts/check-\S+\.sh' GOALS.yaml | xargs -I{} basename {} | sort))
-if [ -n "$unwired" ]; then
-  for script in $unwired; do
-    add_to_next_work("Unwired script: $script — wire to GOALS.yaml or delete",
-                     severity="high", type="tech-debt")
-  done
-  log "Found $(echo "$unwired" | wc -l | tr -d ' ') unwired scripts — added to next-work"
-fi
-```
+Skip if `--skip-baseline` or `--beads-only` or baseline already exists. Read `references/fitness-scoring.md` for the baseline capture procedure.
 
 ### Step 1: Kill Switch Check
 
-Check at the TOP of every cycle iteration:
+Run at the TOP of every cycle:
 
 ```bash
-# External kill (outside repo — can't be accidentally deleted by agents)
-if [ -f ~/.config/evolve/KILL ]; then
-  echo "KILL SWITCH ACTIVE: $(cat ~/.config/evolve/KILL)"
-  # Write acknowledgment
-  echo "{\"killed_at\": \"$(date -Iseconds)\", \"cycle\": $CYCLE}" > .agents/evolve/KILLED.json
-  exit 0
-fi
-
-# Local convenience stop
-if [ -f .agents/evolve/STOP ]; then
-  echo "STOP file detected: $(cat .agents/evolve/STOP 2>/dev/null)"
-  exit 0
-fi
+CYCLE_START_SHA=$(git rev-parse HEAD)
+[ -f ~/.config/evolve/KILL ] && echo "KILL: $(cat ~/.config/evolve/KILL)" && exit 0
+[ -f .agents/evolve/STOP ] && echo "STOP: $(cat .agents/evolve/STOP 2>/dev/null)" && exit 0
 ```
 
-If either file exists, log reason and **stop immediately**. Do not proceed to measurement.
+### Step 2: Measure Fitness
 
-### Step 2: Measure Fitness (MEASURE_FITNESS)
-
-Read `GOALS.yaml` from repo root.
-
-**Preferred (when ao CLI available):**
-```bash
-if command -v ao &>/dev/null; then
-  ao goals measure --json > .agents/evolve/fitness-${CYCLE}-snapshot.json
-fi
-```
-
-**Fallback (no ao CLI):**
-
-For each goal:
-
-```bash
-# Run the check command
-if eval "$goal_check" > /dev/null 2>&1; then
-  # Exit code 0 = PASS
-  result = "pass"
-else
-  # Non-zero = FAIL
-  result = "fail"
-fi
-```
-
-Record results with **continuous values** (not just pass/fail):
-```bash
-# Write fitness snapshot
-cat > .agents/evolve/fitness-${CYCLE}.json << EOF
-{
-  "cycle": $CYCLE,
-  "timestamp": "$(date -Iseconds)",
-  "cycle_start_sha": "$(git rev-parse HEAD)",
-  "goals": [
-    {"id": "$goal_id", "result": "$result", "weight": $weight, "value": $metric_value, "threshold": $threshold},
-    ...
-  ]
-}
-EOF
-```
-
-For goals with measurable metrics, extract the continuous value:
-- `go-coverage-floor`: parse `go test -cover` output → `"value": 85.7, "threshold": 80`
-- `doc-coverage`: count skills with references/ → `"value": 20, "threshold": 16`
-- `shellcheck-clean`: count of warnings → `"value": 0, "threshold": 0`
-- Other goals: `"value": null` (binary pass/fail only)
-
-**Snapshot enforcement (HARD GATE):** After writing the snapshot, validate it:
-```bash
-if ! jq empty ".agents/evolve/fitness-${CYCLE}.json" 2>/dev/null; then
-  echo "ERROR: Fitness snapshot write failed or invalid JSON. Refusing to proceed."
-  exit 1
-fi
-```
-Do NOT proceed to Step 3 without a valid fitness snapshot.
-
-**Bootstrap mode:** If a check command fails to execute (command not found, permission denied), mark that goal as `"result": "skip"` with a warning. Do NOT block the entire loop because one check is broken.
+Skip if `--beads-only`. Run `scripts/evolve-measure-fitness.sh` to produce a rolling fitness snapshot at `.agents/evolve/fitness-latest.json`. Read `references/fitness-scoring.md` for the full measurement procedure, baseline capture, and post-cycle regression detection.
 
 ### Step 3: Select Work
 
+Selection is a ladder, not a one-shot check. After every productive cycle, return to the TOP of this step and re-read the queue before considering dormancy.
+
+When a repo-local program contract exists, apply a scope filter before Step 4:
+- candidate work that clearly requires immutable-scope edits is not eligible for direct execution
+- prefer harvested, beads, goals, and generated work that can plausibly land within mutable scope
+- if the selected item is inherently out of scope, escalate it or convert it into durable follow-up work instead of invoking `/rpi` and hoping discovery widens scope
+
+**Step 3.0: Pinned work queue** (only when `--queue` is set)
+
+Read `references/roadmap-queue-patterns.md` for the full pinned queue work selection protocol (item-to-prompt mapping, escalation cascade, blocker detection). When pinned queue is active, skip Steps 3.1-3.7 entirely. When exhausted, fall through to normal selection.
+
+**Step 3.1: Harvested work first**
+
+Read `.agents/rpi/next-work.jsonl` and pick the highest-value unconsumed item. Prefer exact repo match, then concrete implementation work, then higher severity. Read `references/knowledge-loop-integration.md` for the claim/release protocol.
+
+**Step 3.2: Open ready beads**
+
+If no harvested item is ready, check `bd ready`. Pick the highest-priority unblocked issue.
+
+**Step 3.3: Failing goals and directive gaps** (skip if `--beads-only`)
+
+First assess directives, then goals:
+- top-priority directive gap from `ao goals measure --directives`
+- highest-weight failing goals (skip quarantined oscillators)
+- lower-weight failing goals
+
+This step exists even when all queued work is empty. Goals are the third source, not the stop condition.
+
+```bash
+DIRECTIVES=$(ao goals measure --directives 2>/dev/null)
+FAILING=$(jq -r '.goals[] | select(.result=="fail") | .id' .agents/evolve/fitness-latest.json | head -1)
 ```
-failing_goals = [g for g in goals if g.result == "fail"]
 
-if not failing_goals:
-  # Comprehensive sweep: if .agents/evolve/last-sweep-date is stale (>7 days) or missing,
-  # run shellcheck, go vet, anti-pattern grep, and coverage floor scan.
-  # Add all findings to next-work.jsonl via add_to_next_work().
-  # Process ALL coverage floors in a single pass (never split across cycles).
-  # Touch .agents/evolve/last-sweep-date when done.
+**Oscillation check:** Before working a failing goal, check if it has oscillated (improved-to-fail transitions >= 3 times). If so, quarantine it and try the next goal. See `references/oscillation.md` and `references/fitness-scoring.md` for the detection procedure.
 
-  # All goals pass — check harvested work from prior /rpi cycles
-  if [ -f .agents/rpi/next-work.jsonl ]; then
-    # Detect current repo for filtering
-    CURRENT_REPO=$(bd config --get prefix 2>/dev/null \
-      || basename "$(git remote get-url origin 2>/dev/null)" .git 2>/dev/null \
-      || basename "$(pwd)")
+**Step 3.4: Testing improvements**
 
-    all_items = read_unconsumed(next-work.jsonl)  # entries with consumed: false
-    # Filter by target_repo: include items where target_repo matches
-    # CURRENT_REPO, target_repo is "*" (cross-repo), or field is absent (backward compat).
-    # Skip items whose target_repo names a different repo.
-    items = [i for i in all_items
-             if i.target_repo in (CURRENT_REPO, "*", None)]
-    if items:
-      evolve_state.idle_streak = 0  # reset — we found work
-      selected_item = max(items, by=severity)  # highest severity first
-      log "All goals met. Picking harvested work: {selected_item.title}"
-      # Execute as an /rpi cycle (Step 4), then mark consumed
-      /rpi "{selected_item.title}" --auto --max-cycles=1 --test-first   # if --test-first set
-      /rpi "{selected_item.title}" --auto --max-cycles=1                 # otherwise
-      mark_consumed(selected_item)  # set consumed: true, consumed_by, consumed_at
-      # Skip Steps 4-5 (already executed above), go to Step 6 (log cycle)
-      log_cycle(cycle, goal_id="next-work:{selected_item.title}", result="harvested")
-      continue loop  # → Step 1 (kill switch check)
+When queues and goals are empty, generate concrete testing work via `/test`:
 
-  # Nothing to do THIS cycle — but don't quit yet
-  evolve_state.idle_streak += 1
-  log "All goals met, no harvested work. Idle streak: {idle_streak}/{max_idle_streak}"
-
-  if evolve_state.idle_streak >= evolve_state.max_idle_streak:
-    log "Stagnation: {max_idle_streak} consecutive idle cycles. Nothing left to improve."
-    STOP → go to Teardown
-
-  # NOT stagnant yet — re-measure next cycle (external changes, new harvested work)
-  log "Re-measuring next cycle in case conditions changed..."
-  continue loop  # → Step 1 (kill switch check)
-
-# Meta-goal guidance: after pruning any allowlist, add a meta-goal that
-# prevents re-accumulation. The meta-goal should fail if allowlist entries
-# have callers. Allowlists without meta-goals are technical debt magnets.
-# See references/goals-schema.md for the meta-goal pattern.
-
-# We have failing goals — reset idle streak
-evolve_state.idle_streak = 0
-
-# Sort by weight (highest priority first)
-failing_goals.sort(by=weight, descending)
-
-# Simple strike check: skip goals that failed the last 3 consecutive cycles
-eligible_goals = []
-for goal in failing_goals:
-  recent = last_3_cycles_for(goal.id)
-  if all(r.result == "regressed" for r in recent):
-    log "Skipping {goal.id}: regressed 3 consecutive cycles. Needs human attention."
-    continue
-  eligible_goals.append(goal)
-
-if not eligible_goals:
-  log "All failing goals have regressed 3+ times. Human intervention needed."
-  STOP → go to Teardown
-
-if evolve_state.parallel and len(eligible_goals) > 1:
-  # PARALLEL: Select top N independent goals (heuristic: non-overlapping check scripts)
-  # True conflicts caught by regression gate (Step 5) which reverts entire wave.
-  selected_goals = select_parallel_goals(eligible_goals, max=evolve_state.max_parallel)
-else:
-  # SEQUENTIAL MODE: Select single worst goal (existing behavior)
-  selected = eligible_goals[0]
 ```
+if --no-lifecycle is NOT set:
+  Skill(skill="test", args="coverage")
+  Only files with < 40% coverage become queue items (severity threshold).
+```
+
+If `/test` is unavailable or `--no-lifecycle` is set, fall back to manual scanning:
+- find packages/files with thin or missing tests
+- look for missing regression tests around recent bug-fix paths
+- identify flaky or absent headless/runtime smokes
+
+Convert any real finding into durable work:
+- add a bead when the work needs tracked backlog ownership, or
+- append a queue item under the shared next-work contract when it should flow directly back into `/rpi`
+
+**Step 3.5: Validation tightening and bug-hunt passes**
+
+If testing improvement generation returns nothing, run lifecycle generators then bug-hunt sweeps:
+
+```
+if --no-lifecycle is NOT set:
+  a) Skill(skill="deps", args="audit")
+     Only deps with CVSS >= 7.0 or 2+ major versions behind become queue items.
+
+  b) if perf-sensitive code detected (benchmarks exist, hot path patterns):
+       Skill(skill="perf", args="profile --quick")
+       Convert significant perf findings to queue items.
+```
+
+If lifecycle generators return nothing or are skipped, fall back to manual sweeps:
+- missing validation gates
+- weak lint/contract coverage
+- bug-hunt style audits for risky areas
+- stale assumptions between docs, contracts, and runtime truth
+
+Again: convert findings into beads or queue items, then immediately select the highest-priority result and continue.
+
+**Step 3.6: Drift / hotspot / dead-code mining**
+
+If the prior generators are empty, mine for complexity debt via `/refactor`:
+
+```
+if --no-lifecycle is NOT set:
+  Skill(skill="refactor", args="--sweep all --dry-run")
+  Only functions with CC > 20 become queue items (severity threshold).
+```
+
+If `/refactor` is unavailable or `--no-lifecycle` is set, fall back to manual mining:
+- complexity hotspots
+- stale TODO/FIXME markers
+- dead code
+- stale docs
+- stale research
+- drift between generated artifacts and source-of-truth files
+
+Do not stop here. Normalize findings into tracked work and continue.
+
+**Step 3.7: Feature suggestions**
+
+If all concrete remediation layers are empty, propose one or more specific feature ideas grounded in the repo purpose, write them as durable work, and continue:
+- create a bead when the feature needs review/backlog treatment
+- or append a queue item with `source: "feature-suggestion"` when it is ready for the next `/rpi` cycle
+
+**Quality mode (`--quality`)** — inverted cascade (findings before directives):
+
+Step 3.0q: Unconsumed high-severity post-mortem findings:
+```bash
+HIGH=$(jq -r 'select(.consumed==false) | .items[] | select(.severity=="high") | .title' \
+  .agents/rpi/next-work.jsonl 2>/dev/null | head -1)
+```
+
+Step 3.1q: Unconsumed medium-severity findings.
+
+Step 3.2q: Open ready beads.
+
+Step 3.3q: Emergency gates (weight >= 5) and top directive gaps.
+
+Step 3.4q: Testing improvements.
+
+Step 3.5q: Validation tightening / bug-hunt / drift mining.
+
+Step 3.6q: Feature suggestions.
+
+This inverts the standard cascade only at the top of the ladder: findings BEFORE goals and directives. It does NOT skip the generator layers.
+
+When evolve picks a finding, claim it first in next-work.jsonl:
+- Set `claim_status: "in_progress"`, `claimed_by: "evolve-quality:cycle-N"`, `claimed_at: "<timestamp>"`
+- Set `consumed: true` only after the /rpi cycle and regression gate succeed
+- If the /rpi cycle fails (regression), clear the claim and leave `consumed: false`
+
+See `references/quality-mode.md` for scoring and full details.
+
+**Nothing found?** HARD GATE — only consider dormancy after the generator layers also came up empty:
+
+```bash
+# Count trailing idle/unchanged entries in cycle-history.jsonl (portable, no tac)
+IDLE_STREAK=$(awk '/"result"\s*:\s*"(idle|unchanged)"/{streak++; next} {streak=0} END{print streak+0}' \
+  .agents/evolve/cycle-history.jsonl 2>/dev/null)
+
+# Pinned queue mode: never consider stagnation while queue has items
+if [ -n "$QUEUE_FILE" ] && [ "$QUEUE_INDEX" -lt "$QUEUE_TOTAL" ]; then
+  # Queue not exhausted — skip stagnation check, return to Step 3.0
+  :
+elif [ "$GENERATOR_EMPTY_STREAK" -ge 2 ] && [ "$IDLE_STREAK" -ge 2 ]; then
+  # Queue layers are empty AND producer layers were empty for the 3rd consecutive pass — STOP
+  echo "Stagnation reached after repeated empty queue + generator passes. Dormancy is the last-resort outcome."
+  # go to Teardown — do NOT log another idle entry
+fi
+```
+
+If the queue layers were empty but a generator pass has not been exhausted 3 times yet, persist the new generator streak in `session-state.json` and loop back to Step 1. Empty pre-cycle queues are not a stop reason by themselves.
+
+A cycle is idle only if NO work source returned actionable work and every generator layer also came up empty. A cycle that targeted an oscillating goal and skipped it counts as idle only after the remaining ladder was exhausted.
+
+If `--dry-run`: report what would be worked on and go to Teardown.
 
 ### Step 4: Execute
 
-**If `--dry-run`:** Report the selected goal (or harvested item) and stop.
+**4.1: Blocker Resolution (pinned queue only)**
 
+If `UNBLOCK_TARGET` is set (from Step 3.0), enter the blocker resolution sub-loop. Read `references/roadmap-queue-patterns.md` for the full blocker resolution protocol (depth limits, escalation cascade, retry logic, dynamic blocker detection).
+
+**4.2: Normal Execution**
+
+Primary engine: `/rpi` for implementation-quality work (all 3 phases mandatory). `/implement` or `/crank` only when a bead has execution-ready scope.
+
+If a repo-local `PROGRAM.md` contract is active, `/rpi` will load it automatically. `/evolve` must compose with that behavior, not bypass it:
+- Do not select work that is obviously outside mutable scope.
+- If a queue item, bead, or goal would require edits under immutable scope, escalate it or convert it into durable follow-up work instead of launching `/rpi`.
+- When work is plausibly in scope but still uncertain, let `/rpi` discovery validate the fit and surface a scope escape explicitly.
+
+For a **harvested item, failing goal, directive gap, testing improvement, validation tightening task, bug-hunt result, drift finding, or feature suggestion**:
 ```
-log "Dry run: would work on '{selected.id}' (weight: {selected.weight})"
-log "Description: {selected.description}"
-log "Check command: {selected.check}"
-
-# Also show queued harvested work (filtered to current repo)
-if [ -f .agents/rpi/next-work.jsonl ]; then
-  all_items = read_unconsumed(next-work.jsonl)
-  items = [i for i in all_items
-           if i.target_repo in (CURRENT_REPO, "*", None)]
-  if items:
-    log "Harvested work queue ({len(items)} items):"
-    for item in items:
-      log "  - [{item.severity}] {item.title} ({item.type})"
-
-STOP → go to Teardown
+Invoke /rpi "{normalized work title}" --auto --max-cycles=1
 ```
 
-**Otherwise:** Run improvement cycle(s) on the selected goal(s).
-
+For a **beads issue**:
 ```
-if evolve_state.parallel and len(selected_goals) > 1:
-  # PARALLEL: Create isolated artifact dirs per goal, TaskCreate for each,
-  # invoke /swarm --worktrees. Each worker runs /rpi independently.
-  # Results written to .agents/evolve/parallel-results/{goal.id}.md
-  # See references/parallel-execution.md for full task template and architecture.
-  /swarm --worktrees
-else:
-  # SEQUENTIAL: Run a single /rpi cycle
-  /rpi "Improve {selected.id}: {selected.description}" --auto --max-cycles=1
+Prefer: /rpi "Land {issue_id}: {title}" --auto --max-cycles=1
+Fallback: /implement {issue_id}
 ```
+Or for an epic with children: `Invoke /crank {epic_id}`.
 
-This internally runs the full lifecycle (per goal):
-- `/research` — understand the problem
-- `/plan` — decompose into issues
-- `/pre-mortem` — validate the plan
-- `/crank` — implement (spawns workers)
-- `/vibe` — validate the code
-- `/post-mortem` — extract learnings + `ao forge` (COMPOUNDING)
+If Step 3 created durable work instead of executing it immediately, re-enter Step 3 and let the newly-created queue/bead item win through the normal selection order.
 
-**Wait for all /rpi cycles to complete before proceeding to Step 5.**
+### Step 5: Regression Gate
 
-In parallel mode, each worker runs a complete /rpi cycle independently. The regression gate (Step 5) runs once after ALL parallel goals complete — not per-goal. See `references/parallel-execution.md` for architecture details.
+After execution, run the project build+test bundle. If the repo execution profile declared `validation_commands`, run them. If a repo-local program contract exists, run its `validation_commands` too, de-duplicated and in declared order after the repo bootstrap checks. Also check `if [ -f scripts/check-wiring-closure.sh ]; then bash scripts/check-wiring-closure.sh; fi`.
 
-### Step 5: Full-Fitness Regression Gate
+Use the program contract's `decision_policy` as the first keep/revert rule set for the cycle:
+- if the cycle breached immutable scope, treat it as regressed
+- if program validation commands fail, treat it as regressed
+- if the decision policy declares a revert rule that fired, revert before consuming claimed work or advancing the queue
 
-**CRITICAL: Re-run ALL goals, not just the target.**
+Treat program `stop_conditions` as per-cycle done criteria. Do not mark claimed work consumed, completed, or productive until both the stop conditions and the regression gate pass.
 
-After /rpi completes, re-run MEASURE_FITNESS on **every goal** (same as Step 2). Write result to `fitness-{CYCLE}-post.json`.
+If not `--beads-only`, re-measure fitness to `fitness-latest-post.json` and detect regressions. The AgentOps CLI is required for fitness measurement. Read `references/fitness-scoring.md` for the full measurement, regression detection, and revert procedure.
 
-Compare the pre-cycle snapshot (`fitness-{CYCLE}.json`) against the post-cycle snapshot (`fitness-{CYCLE}-post.json`) for **ALL goals**:
+Queue finalization after the regression gate: claim it first, then keep `consumed: false` until the /rpi cycle succeeds. After the cycle's `/post-mortem` finishes, immediately re-read `.agents/rpi/next-work.jsonl` before selecting the next item. Read `references/knowledge-loop-integration.md` for full claim/release semantics.
 
-```
-pre_results = load("fitness-{CYCLE}.json")
-post_results = MEASURE_FITNESS()  # writes fitness-{CYCLE}-post.json
+### Step 6: Log Cycle + Commit
 
-# Determine outcome for target goal(s)
-outcome = "improved" if target_now_passes else "unchanged"
+Two paths: productive cycles get committed, idle cycles are local-only.
 
-# FULL REGRESSION CHECK: compare ALL goals (both parallel and sequential)
-newly_failing = [g.id for g in post_results.goals
-                 if pre_results.find(g.id).result == "pass" and g.result == "fail"]
+**PRODUCTIVE cycles** (result is improved, regressed, or harvested): compute quality score (if `--quality`), build queue args (if `--queue`), log via `scripts/evolve-log-cycle.sh`, commit if real changes exist. See `references/roadmap-queue-patterns.md` for queue advancement logic and `references/quality-mode.md` for scoring.
 
-if newly_failing:
-  outcome = "regressed"
-  log "REGRESSION: {newly_failing} started failing"
-  # Revert all commits since cycle start
-  cycle_start_sha = pre_results.cycle_start_sha
-  commit_count = $(git rev-list --count ${cycle_start_sha}..HEAD)
-  if commit_count == 1:
-    git revert HEAD --no-edit
-  elif commit_count > 1:
-    git revert --no-commit ${cycle_start_sha}..HEAD
-    git commit -m "revert: evolve cycle ${CYCLE} regression in {newly_failing}"
-```
-
-**Snapshot enforcement:** Validate `fitness-{CYCLE}-post.json` was written and is valid JSON before proceeding.
-
-### Step 6: Log Cycle
-
-Append to `.agents/evolve/cycle-history.jsonl` with mandatory fields: `cycle`, `goal_id`/`goal_ids`, `result`, `commit_sha`, `goals_passing`, `goals_total`, `goals_added`, `timestamp`. For cycle history JSONL format, mandatory fields, and telemetry details, read `references/cycle-history.md`.
-
-**Compaction-proofing: commit after every cycle.** Uncommitted state does not survive context compaction.
-
-```bash
-bash scripts/log-telemetry.sh evolve cycle-complete cycle=${CYCLE} goal=${selected.id} outcome=${outcome} 2>/dev/null || true
-git add .agents/evolve/cycle-history.jsonl .agents/evolve/fitness-*.json
-git commit -m "evolve: cycle ${CYCLE} — ${selected.id} ${outcome}" --allow-empty
-```
+**IDLE cycles** (nothing found even after generator layers): log via `evolve-log-cycle.sh` with `--result "unchanged"`. No git add, no commit.
 
 ### Step 7: Loop or Stop
 
+```bash
+while true; do
+  # Step 1 .. Step 6
+  # Stop if kill switch, max-cycles, or a real safety breaker triggers
+  # Otherwise increment cycle and re-enter selection
+  CYCLE=$((CYCLE + 1))
+done
 ```
-evolve_state.cycle += 1
 
-# Only stop for max-cycles if the user explicitly set one
-if evolve_state.max_cycles != Infinity and evolve_state.cycle >= evolve_state.max_cycles:
-  log "Max cycles ({max_cycles}) reached."
-  STOP → go to Teardown
-
-# Otherwise: loop back to Step 1 (kill switch check) — run forever
+Push only when productive work has accumulated:
+```bash
+if [ $((PRODUCTIVE_THIS_SESSION % 5)) -eq 0 ] && [ "$PRODUCTIVE_THIS_SESSION" -gt 0 ]; then
+  git push
+fi
 ```
 
 ### Teardown
 
-1. Run `/post-mortem "evolve session: $CYCLE cycles, goals improved: X, harvested: Y"` to harvest learnings from the entire session.
-2. Compute session fitness trajectory (compare baseline vs final snapshot). See `references/teardown.md` for the full trajectory computation and session summary template.
-3. Write `session-summary.md` and report to user.
-
-Report to user:
-```
-## /evolve Complete
-
-Cycles: N of M
-Goals improved: X
-Goals regressed: Y (reverted)
-Goals unchanged: Z
-Post-mortem: <verdict> (see <report-path>)
-
-Run `/evolve` again to continue improving.
-```
-
----
+Read `references/knowledge-loop-integration.md` for the full teardown learning extraction procedure (commit staged artifacts, run `/post-mortem`, push, report summary).
 
 ## Examples
 
-### Basic Improvement Loop
-
 **User says:** `/evolve --max-cycles=5`
+**What happens:** Evolve re-enters the full selection ladder after every `/rpi` cycle and runs producer layers instead of idling on empty queues.
 
-**What happens:**
-1. Baseline sweep captures fitness snapshot (cycle 0)
-2. Measures all GOALS.yaml goals, finds `shellcheck-clean` failing (weight 8)
-3. Runs `/rpi "Improve shellcheck-clean"` — fixes 12 shellcheck warnings
-4. Regression gate confirms no other goals broke
-5. Repeats for up to 5 cycles, improving highest-weight failures first
-
-**Result:** 3 goals improved over 5 cycles, session summary written to `.agents/evolve/session-summary.md`.
-
-### Dry Run Assessment
+**User says:** `/evolve --beads-only`
+**What happens:** Evolve skips goals measurement and works through `bd ready` backlog.
 
 **User says:** `/evolve --dry-run`
+**What happens:** Evolve shows what would be worked on without executing.
 
-**What happens:**
-1. Measures all goals, identifies `go-coverage-floor` failing (value: 72.3, threshold: 80)
-2. Reports what would be worked on without executing
-3. Shows harvested work queue from prior `/rpi` cycles
+**User says:** `/evolve --compile`
+**What happens:** Evolve runs `ao mine` + `ao defrag` at session start to surface fresh signal (orphaned research, code hotspots, oscillating goals) before the first evolve cycle. Use before a long autonomous run or after a burst of development activity.
 
-**Result:** Assessment report showing current fitness state and recommended next improvement.
+**User says:** `/evolve`
+**What happens:** See `references/examples.md` for a worked overnight flow that moves through beads -> harvested work -> goals -> testing -> bug hunt -> feature suggestion before dormancy is considered.
 
-### Parallel Goal Improvement
+**User says:** `/evolve --queue=.agents/evolve/roadmap.md --test-first`
+**What happens:** Evolve processes each item in the roadmap sequentially. When an item is blocked (e.g., `rig-difc` blocked by `rig-8z29`), evolve auto-lands `rig-8z29` via sub-`/rpi` first, then resumes `rig-difc`. After all queue items complete, evolve falls through to fitness-driven selection. If a blocker chain exceeds 2 levels or fails 3 times, the item is escalated and evolve moves to the next one.
 
-**User says:** `/evolve --parallel --max-parallel=3 --max-cycles=2`
+**User says:** `/evolve --queue=.agents/evolve/roadmap.md --max-cycles=20`
+**What happens:** Evolve processes the roadmap but caps at 20 total cycles (including unblock sub-cycles). If the queue isn't finished, queue state is persisted to `.agents/evolve/pinned-queue-state.json` for resume in the next session.
 
-**What happens:**
-1. Measures fitness, finds 4 failing goals
-2. Selects top 3 non-overlapping goals for parallel execution
-3. Spawns `/swarm --worktrees` with one `/rpi` per goal
-4. Regression gate checks ALL goals after parallel wave completes
-5. Repeats for cycle 2
-
-**Result:** Multiple goals improved simultaneously, with full regression protection.
+See `references/examples.md` for detailed walkthroughs.
 
 ## Troubleshooting
 
-| Problem | Cause | Solution |
-|---------|-------|---------|
-| Loop exits immediately | Kill switch file exists (`~/.config/evolve/KILL` or `.agents/evolve/STOP`) | Remove the kill switch file |
-| "Stagnation" after 3 idle cycles | All goals pass and no harvested work remains | This is success — dormancy is healthy. Run again when conditions change |
-| Regression gate reverts cycle | Improvement broke a previously-passing goal | Review reverted changes, narrow the fix scope, re-run |
-| Fitness snapshot invalid JSON | Goal check command produced unexpected output | Check individual goal commands manually, fix broken checks |
-| Goal stuck (3 consecutive regressions) | Strike rule skips goal after 3 failures | Needs manual investigation — review `.agents/evolve/cycle-history.jsonl` |
-| Baseline sweep hangs | A goal check command hangs or takes too long | Use `--skip-baseline` and investigate the slow check |
+| Problem | Solution |
+|---------|----------|
+| Loop exits immediately | Remove `~/.config/evolve/KILL` or `.agents/evolve/STOP` |
+| Stagnation after repeated empty passes | Queue layers and producer layers were empty across multiple passes — dormancy is the fallback outcome |
+| `ao goals measure` hangs | Use `--timeout 30` flag or `--beads-only` to skip |
+| Regression gate reverts | Review reverted changes, narrow scope, re-run; claimed queue items must be released back to available state |
+| Blocker chain too deep (>2 levels) | Reduce blocker dependencies or manually land the deepest blocker before resuming |
+| Queue item escalated after 3 failures | Review the item scope, simplify, or manually unblock; check `.agents/evolve/escalated.md` for details |
+| Queue state lost after compaction | Recover from `.agents/evolve/pinned-queue-state.json` — evolve auto-loads this on restart |
 
----
+See `references/cycle-history.md` for advanced troubleshooting.
 
 ## References
 
-- `references/cycle-history.md` — Cycle history format, recovery protocol, kill switch, flags, troubleshooting
+- `references/cycle-history.md` — JSONL format, recovery protocol, kill switch
 - `references/compounding.md` — Knowledge flywheel and work harvesting
-- `references/goals-schema.md` — GOALS.yaml format
-- `references/artifacts.md` — Generated files and their purposes
-- `references/examples.md` — Detailed usage examples
+- `references/goals-schema.md` — GOALS.yaml format and continuous metrics
 - `references/parallel-execution.md` — Parallel /swarm architecture
-- `references/teardown.md` — Trajectory computation and session summary template
+- `references/teardown.md` — Trajectory computation and session summary
+- `references/examples.md` — Detailed usage examples
+- `references/artifacts.md` — Generated files registry
+- `references/oscillation.md` — Oscillation detection and quarantine
+- `references/quality-mode.md` — Quality-first mode: scoring, priority cascade, artifacts
+- `references/pinned-queue.md` — Pinned queue format, blocker resolution, state persistence
 
 ## See Also
 
 - `skills/rpi/SKILL.md` — Full lifecycle orchestrator (called per cycle)
-- `skills/vibe/SKILL.md` — Code validation (called by /rpi)
-- `skills/council/SKILL.md` — Multi-model judgment (called by /rpi)
+- `skills/crank/SKILL.md` — Epic execution (called for beads epics)
+- `docs/contracts/autodev-program.md` — Repo-local operational contract for bounded autonomous development
 - `GOALS.yaml` — Fitness goals for this repo
+- [test](../test/SKILL.md) — Test generation and coverage analysis
+- [refactor](../refactor/SKILL.md) — Safe, verified refactoring
+- [deps](../deps/SKILL.md) — Dependency audit and vulnerability scanning
+- [perf](../perf/SKILL.md) — Performance profiling and benchmarking
+
+## Reference Documents
+
+- [references/artifacts.md](references/artifacts.md)
+- [references/compounding.md](references/compounding.md)
+- [references/cycle-history.md](references/cycle-history.md)
+- [references/examples.md](references/examples.md)
+- [references/goals-schema.md](references/goals-schema.md)
+- [references/oscillation.md](references/oscillation.md)
+- [references/parallel-execution.md](references/parallel-execution.md)
+- [references/quality-mode.md](references/quality-mode.md)
+- [references/autonomous-execution.md](references/autonomous-execution.md)
+- [references/pinned-queue.md](references/pinned-queue.md)
+- [references/teardown.md](references/teardown.md)
+- [references/fitness-scoring.md](references/fitness-scoring.md)
+- [references/roadmap-queue-patterns.md](references/roadmap-queue-patterns.md)
+- [references/knowledge-loop-integration.md](references/knowledge-loop-integration.md)

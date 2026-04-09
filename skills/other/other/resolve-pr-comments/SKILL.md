@@ -1,11 +1,11 @@
 ---
 name: resolve-pr-comments
-description: "Evaluate, fix, and reply to GitHub pull request review comments. Use when the user asks to \"resolve PR comments\", \"fix review comments\", \"address PR feedback\", \"handle review comments\", \"address review feedback\", \"respond to PR comments\", or \"address code review\"."
+description: "Evaluate, fix, answer, and reply to GitHub pull request review comments. Handles both change requests (fix or skip) and reviewer questions (explain using reasoning recalled from past Claude Code transcripts). Use when the user asks to \"resolve PR comments\", \"fix review comments\", \"address PR feedback\", \"handle review comments\", \"address review feedback\", \"respond to PR comments\", \"answer review questions\", or \"address code review\"."
 ---
 
 # Resolve PR Review Comments
 
-Fetch unresolved review comments from a GitHub PR, critically evaluate each one, fix or skip based on confidence, and reply to each thread.
+Fetch unresolved review comments from a GitHub PR, critically evaluate each one, fix or skip based on confidence, answer reviewer questions using recalled implementation reasoning, and reply to each thread.
 
 ## Task Tracking
 
@@ -14,14 +14,16 @@ At the start, use `TaskCreate` to create a task for each step:
 1. Fetch comments
 2. Triage review body comments
 3. Run `/interpret-feedback` skill
-4. Run `/evaluate-findings` skill
-5. Resolve ambiguities
-6. Choose implementation path
-7. Implement and finalize
-8. Verify fixes
-9. Draft replies
-10. Post replies
-11. Summary
+4. Split questions and change requests
+5. Run `/evaluate-findings` skill
+6. Resolve ambiguities
+7. Choose implementation path
+8. Implement and finalize
+9. Verify fixes
+10. Run `/recall-reasoning` skill for questions
+11. Draft replies
+12. Post replies
+13. Summary
 
 ## Step 1: Fetch Comments
 
@@ -65,7 +67,7 @@ Auto-detect owner, repo, and PR number from current branch if not provided. Filt
 
 For each review body comment (non-empty body, non-PENDING), check whether a commit in the PR already addresses it. Compare the review's `submittedAt` timestamp against each commit's `committedDate`. Only commits **after** the review was submitted can address it.
 
-To determine if a commit addresses a review body comment, start with commit messages. Only read the full diff (`git show <oid>`) when the message alone is ambiguous. A commit addresses a comment when its changes clearly resolve the specific issue described — not merely when it touches the same area.
+To determine if a commit addresses a review body comment, start with commit messages. Only read the full diff (`git show <oid>`) when the message alone is ambiguous. A commit addresses a comment when its changes clearly resolve the specific issue described. Touching the same area is not enough.
 
 Classify each review body comment as:
 - **Addressed**: A subsequent commit clearly resolves the concern. Record the commit SHA.
@@ -77,13 +79,24 @@ Run the `/interpret-feedback` skill on unresolved inline threads authored by hum
 
 Include each thread's `diffHunk` so the interpreters can see the code context the reviewer commented on. For outdated comments where `line` is null, use `originalLine` as the line reference.
 
-## Step 4: Run `/evaluate-findings` Skill
+## Step 4: Split Questions and Change Requests
 
-Run the `/evaluate-findings` skill on the interpreted results to triage each comment.
+Classify each interpreted thread as either a **question** or a **change request** based on the reconciled intent from Step 3.
 
-## Step 5: Resolve Ambiguities
+- **Question** — the reviewer is asking for an explanation or wondering whether something is intentional. The thread does not request any code change. Examples: "Why this approach?", "Is this intentional?", "What is the benefit here?".
+- **Change request** — the reviewer suggests a code change, flags a bug, or proposes an alternative implementation. This includes soft-phrased suggestions ("could we ...", "consider ...") and rhetorical questions that imply a change ("Shouldn't this ...?", "Is there a reason this isn't ...?").
 
-Collect items assigned an Escalate verdict by `/evaluate-findings`. If there are none, skip to Step 6.
+When in doubt, treat a thread as a change request. The verdict from `/evaluate-findings` in Step 5 will catch genuine non-issues.
+
+Produce two lists. Each entry retains the thread ID, file path, line (use `originalLine` when `line` is null), the reviewer's original comment text, and the reconciled intent from Step 3. Questions skip Step 5 and feed into Step 10. Change requests feed into Step 5.
+
+## Step 5: Run `/evaluate-findings` Skill
+
+Run the `/evaluate-findings` skill on the change requests from Step 4 to triage each one. Questions are not evaluated here.
+
+## Step 6: Resolve Ambiguities
+
+Collect items assigned an Escalate verdict by `/evaluate-findings`. If there are none, skip to Step 7.
 
 Output all escalated items as a numbered list. For each item, show:
 
@@ -94,10 +107,10 @@ Output all escalated items as a numbered list. For each item, show:
 Then use `AskUserQuestion` to ask how to handle them. Per item, the options are:
 
 - **Direct answer**: "Do X" — assign an Accept verdict with the user's clarified intent, and pass it to `/apply-findings`
-- **Ask the reviewer**: "Ask them Y" — queue a clarification question to be drafted in Step 9
+- **Ask the reviewer**: "Ask them Y" — queue a clarification question to be drafted in Step 11
 - **Skip**: Remove from processing
 
-## Step 6: Choose Implementation Path
+## Step 7: Choose Implementation Path
 
 Present a summary of accepted findings: count by complexity (mechanical fixes vs. architectural or design changes). Then use `AskUserQuestion` to let the user choose:
 
@@ -106,35 +119,43 @@ Present a summary of accepted findings: count by complexity (mechanical fixes vs
 
 Suggest Full when findings include complex or architectural changes. Suggest Lightweight when all findings are mechanical fixes.
 
-If there are no accepted findings to implement, skip to Step 9.
+If there are no accepted findings to implement, skip to Step 10.
 
-## Step 7: Implement and Finalize
+## Step 8: Implement and Finalize
 
 **Full path:**
 
-Run the `/plan-style` skill. The plan should address each accepted finding from the evaluation, including any items reclassified in Step 5. After plan approval, implement the changes. `/finalize` is included as the plan's final step. The commit SHA from finalize is needed for reply messages.
+Run the `/plan-style` skill. The plan should address each accepted finding from the evaluation, including any items reclassified in Step 6. After plan approval, implement the changes. `/finalize` is included as the plan's final step. The commit SHA from finalize is needed for reply messages.
 
 **Lightweight path:**
 
-1. Run the `/apply-findings` skill on the evaluated results, including any items reclassified in Step 5.
+1. Run the `/apply-findings` skill on the evaluated results, including any items reclassified in Step 6.
 2. If changes were made, run the `/finalize` skill. The commit SHA from finalize is needed for reply messages.
-3. If no changes were made, skip to Step 9.
+3. If no changes were made, skip to Step 10.
 
-## Step 8: Verify Fixes
+## Step 9: Verify Fixes
 
-For each finding that was fixed in Step 7, verify the fix actually addresses the reviewer's concern:
+For each finding that was fixed in Step 8, verify the fix actually addresses the reviewer's concern:
 
 1. Read the current code at the relevant file and location
 2. Compare against the reviewer's comment and `diffHunk` (the code the reviewer was looking at)
 3. Confirm the specific concern is resolved
 
-If the fix did not address the concern (wrong location, incomplete change, or the issue is still present), downgrade it to skipped. Draft a skip reply in Step 9 with the reason: the attempted fix did not resolve the reviewer's concern, with a brief explanation of what remains.
+If the fix did not address the concern (wrong location, incomplete change, or the issue is still present), downgrade it to skipped. Draft a skip reply in Step 11 with the reason: the attempted fix did not resolve the reviewer's concern, with a brief explanation of what remains.
 
-## Step 9: Draft Replies
+## Step 10: Run `/recall-reasoning` Skill for Questions
+
+For each question thread from Step 4, run the `/recall-reasoning` skill to pull the implementation rationale from the original Claude Code session. Pass the thread's file path and line (use `originalLine` when `line` is null).
+
+Record the returned reasoning alongside each question for use in Step 11. If `/recall-reasoning` returns no transcript for a thread, note that and plan to fall back on reading the commit diff and surrounding code when drafting the reply.
+
+If there are no question threads, skip this step.
+
+## Step 11: Draft Replies
 
 Run `/github-voice` to load writing style rules before composing replies. Keep replies to one or two sentences. Avoid bullet-point reasoning or bolded labels.
 
-**Review body comments** (top-level review comments with non-empty body) cannot be replied to via thread replies — they are not threads. Do not attempt to reply to them. Instead, report them in the summary (Step 11) with their triage status from Step 2.
+**Review body comments** (top-level review comments with non-empty body) cannot be replied to via thread replies — they are not threads. Do not attempt to reply to them. Instead, report them in the summary (Step 13) with their triage status from Step 2.
 
 For each processed **inline thread**, draft a reply.
 
@@ -147,11 +168,13 @@ Only add a brief description after the SHA if the fix meaningfully diverges from
 
 **Reply format for skips:** Just state the reasoning for not changing it.
 
-**Reply format for clarifications** (queued in Step 5): Draft the clarification question as directed by the user.
+**Reply format for answers to questions:** Explain the reasoning directly. Draw from the `/recall-reasoning` output when available. When the recalled transcript already says it well, quote or paraphrase the implementer's own words. When no transcript was found, explain based on the current code. Do not cite the transcript or mention Claude — the reply should read as the implementer's own explanation.
+
+**Reply format for clarifications** (queued in Step 6): Draft the clarification question as directed by the user.
 
 Output all drafted replies as text, grouped by file, showing the reviewer's comment and the drafted reply for each thread. Then use `AskUserQuestion` to confirm before posting.
 
-## Step 10: Post Replies
+## Step 12: Post Replies
 
 After confirmation, check whether each thread was resolved between fetching and posting (e.g., CodeRabbit auto-resolves its own threads after a push). Skip resolved threads. Post each confirmed reply using:
 
@@ -164,13 +187,14 @@ mutation($threadId: ID!, $body: String!) {
 }' -f threadId="THREAD_ID" -f body="REPLY_BODY"
 ```
 
-## Step 11: Summary
+## Step 13: Summary
 
 After processing all threads, present a summary table:
 
 - Total unresolved inline threads found
-- Number fixed (high + medium confidence)
-- Number skipped (low confidence)
+- Number fixed (change requests with accepted verdicts)
+- Number skipped (false positives or disproportionate changes)
+- Number of questions answered (split into: answered from recalled transcript, answered from current code)
 - Number of clarification questions posted
 - Review body comments already addressed by commits (list author, state, one-line summary, and the addressing commit SHA)
 - Review body comments requiring manual attention (list author, state, and a one-line summary of each)
@@ -178,7 +202,7 @@ After processing all threads, present a summary table:
 
 ## Rules
 
-- Never resolve or dismiss a review thread — only reply. Let the reviewer resolve.
+- Never resolve or dismiss a review thread. Only reply. Let the reviewer resolve.
 - Process comments in file order to minimize context switching.
 - Stale references and default-to-skip policy are handled by the `/evaluate-findings` skill.
 - When a thread has multiple comments (discussion), read the full thread before deciding.

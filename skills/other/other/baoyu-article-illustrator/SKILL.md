@@ -1,6 +1,6 @@
 ---
 name: baoyu-article-illustrator
-description: Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style two-dimension approach. Use when user asks to "illustrate article", "add images", "generate images for article", or "为文章配图".
+description: Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style × Palette three-dimension approach. Use when user asks to "illustrate article", "add images", "generate images for article", or "为文章配图".
 version: 1.57.0
 metadata:
   openclaw:
@@ -9,18 +9,19 @@ metadata:
 
 # Article Illustrator
 
-Analyze articles, identify illustration positions, generate images with Type × Style consistency.
+Analyze articles, identify illustration positions, generate images with Type × Style × Palette consistency.
 
-## Two Dimensions
+## Three Dimensions
 
 | Dimension | Controls | Examples |
 |-----------|----------|----------|
 | **Type** | Information structure | infographic, scene, flowchart, comparison, framework, timeline |
-| **Style** | Visual aesthetics | notion, warm, minimal, blueprint, watercolor, elegant |
+| **Style** | Rendering approach | notion, warm, minimal, blueprint, watercolor, elegant |
+| **Palette** | Color scheme (optional) | macaron, warm, neon — overrides style's default colors |
 
-Combine freely: `--type infographic --style blueprint`
+Combine freely: `--type infographic --style vector-illustration --palette macaron`
 
-Or use presets: `--preset tech-explainer` → type + style in one flag. See [Style Presets](references/style-presets.md).
+Or use presets: `--preset edu-visual` → type + style + palette in one flag. See [Style Presets](references/style-presets.md).
 
 ## Types
 
@@ -96,13 +97,14 @@ Full procedures: [references/workflow.md](references/workflow.md#step-2-setup--a
 | **Q1: Preset or Type** | [Recommended preset], [alt preset], or manual: infographic, scene, flowchart, comparison, framework, timeline, mixed |
 | **Q2: Density** | minimal (1-2), balanced (3-5), per-section (Recommended), rich (6+) |
 | **Q3: Style** | [Recommended], minimal-flat, sci-fi, hand-drawn, editorial, scene, poster, Other — **skip if preset chosen** |
-| Q4: Language | When article language ≠ EXTEND.md setting |
+| Q4: Palette | Default (style colors), macaron, warm, neon — **skip if preset includes palette or preferred_palette set** |
+| Q5: Language | When article language ≠ EXTEND.md setting |
 
 Full procedures: [references/workflow.md](references/workflow.md#step-3-confirm-settings-)
 
 ### Step 4: Generate Outline
 
-Save `outline.md` with frontmatter (type, density, style, image_count) and entries:
+Save `outline.md` with frontmatter (type, density, style, palette, image_count) and entries:
 
 ```yaml
 ## Illustration 1
@@ -137,7 +139,7 @@ Insert `![description]({relative-path}/NN-{type}-{slug}.png)` after paragraphs. 
 
 ```
 Article Illustration Complete!
-Article: [path] | Type: [type] | Density: [level] | Style: [style]
+Article: [path] | Type: [type] | Density: [level] | Style: [style] | Palette: [palette or default]
 Images: X/N generated
 ```
 
@@ -180,7 +182,7 @@ When input is **pasted content** (no file path), always uses `illustrations/{top
 |------|---------|
 | [references/workflow.md](references/workflow.md) | Detailed procedures |
 | [references/usage.md](references/usage.md) | Command syntax |
-| [references/styles.md](references/styles.md) | Style gallery |
-| [references/style-presets.md](references/style-presets.md) | Preset shortcuts (type + style) |
+| [references/styles.md](references/styles.md) | Style gallery + Palette gallery |
+| [references/style-presets.md](references/style-presets.md) | Preset shortcuts (type + style + palette) |
 | [references/prompt-construction.md](references/prompt-construction.md) | Prompt templates |
 | [references/config/first-time-setup.md](references/config/first-time-setup.md) | First-time setup |

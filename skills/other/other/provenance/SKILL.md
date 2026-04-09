@@ -1,11 +1,20 @@
 ---
 name: provenance
 description: 'Trace knowledge artifact lineage and sources. Find orphans, stale citations. Triggers: "where did this come from", "trace this learning", "knowledge lineage".'
+skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [TASK]
+  intel_scope: full
 metadata:
   tier: background
   dependencies: []
   internal: true
+output_contract: "stdout: lineage report"
 ---
 
 # Provenance Skill
@@ -37,7 +46,7 @@ Look for provenance metadata:
 grep -i "source\|session\|from\|extracted" <artifact-path>
 
 # Search for related transcripts using ao
-ao forge search "<artifact-name>" 2>/dev/null
+ao search "<artifact-name>" 2>/dev/null
 ```
 
 ### Step 3: Search Session Transcripts with CASS

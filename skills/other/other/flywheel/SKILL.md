@@ -1,20 +1,26 @@
 ---
 name: flywheel
 description: 'Knowledge flywheel health monitoring. Checks velocity, pool depths, staleness. Triggers: "flywheel status", "knowledge health", "is knowledge compounding".'
+skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
 model: haiku
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [TASK]
+  intel_scope: full
 metadata:
   tier: background
   dependencies: []
   internal: true
+output_contract: "stdout: flywheel health report (JSON when --json)"
 ---
 
 # Flywheel Skill
-
 Monitor the knowledge flywheel health.
-
 ## The Flywheel Model
-
 ```
 Sessions → Transcripts → Forge → Pool → Promote → Knowledge
      ↑                                               │
@@ -26,21 +32,14 @@ Sessions → Transcripts → Forge → Pool → Promote → Knowledge
 **Friction** = Bottlenecks slowing the flywheel
 
 ## Execution Steps
-
 Given `/flywheel`:
-
 ### Step 1: Measure Knowledge Pools
-
 ```bash
 # Count top-level artifact files (avoid counting directories)
 LEARNINGS=$(find .agents/learnings -maxdepth 1 -type f 2>/dev/null | wc -l)
-
 PATTERNS=$(find .agents/patterns -maxdepth 1 -type f 2>/dev/null | wc -l)
-
 RESEARCH=$(find .agents/research -maxdepth 1 -type f 2>/dev/null | wc -l)
-
 RETROS=$(find .agents/retros -maxdepth 1 -type f 2>/dev/null | wc -l)
-
 echo "Learnings: $LEARNINGS"
 echo "Patterns: $PATTERNS"
 echo "Research: $RESEARCH"
@@ -48,24 +47,18 @@ echo "Retros: $RETROS"
 ```
 
 ### Step 2: Check Recent Activity
-
 ```bash
 # Recent learnings (last 7 days)
 find .agents/learnings -maxdepth 1 -type f -mtime -7 2>/dev/null | wc -l
-
 # Recent research
 find .agents/research -maxdepth 1 -type f -mtime -7 2>/dev/null | wc -l
 ```
-
 ### Step 3: Detect Staleness
-
 ```bash
 # Old artifacts (> 30 days without modification)
 find .agents/ -name "*.md" -mtime +30 2>/dev/null | wc -l
 ```
-
 ### Step 3.5: Check Cache Health
-
 ```bash
 if command -v ao &>/dev/null; then
   # Get citation report (cache metrics)
@@ -93,7 +86,7 @@ else
   # Citation tracking (if citations.jsonl exists)
   if [ -f .agents/ao/citations.jsonl ]; then
     CITATION_COUNT=$(wc -l < .agents/ao/citations.jsonl | tr -d ' ')
-    UNIQUE_CITED=$(grep -o '"learning_file":"[^"]*"' .agents/ao/citations.jsonl 2>/dev/null | sort -u | wc -l | tr -d ' ')
+    UNIQUE_CITED=$(grep -o '"artifact_path":"[^"]*"' .agents/ao/citations.jsonl 2>/dev/null | sort -u | wc -l | tr -d ' ')
     echo "Total citations: $CITATION_COUNT"
     echo "Unique learnings cited: $UNIQUE_CITED"
   else
@@ -112,11 +105,29 @@ fi
 
 ```bash
 if command -v ao &>/dev/null; then
-  ao flywheel status 2>/dev/null || echo "ao flywheel status unavailable"
+  ao metrics flywheel status 2>/dev/null || echo "ao metrics flywheel status unavailable"
   ao status 2>/dev/null || echo "ao status unavailable"
   ao maturity --scan 2>/dev/null || echo "ao maturity unavailable"
-  ao promote-anti-patterns --dry-run 2>/dev/null || echo "ao promote-anti-patterns unavailable"
+  ao anti-patterns 2>/dev/null || echo "ao anti-patterns unavailable"
   ao badge 2>/dev/null || echo "ao badge unavailable"
+
+  # Knowledge maintenance
+  ao dedup --merge 2>/dev/null || true
+  ao contradict 2>/dev/null || true
+  ao constraint review 2>/dev/null || true
+  ao curate status 2>/dev/null || true
+  ao metrics health 2>/dev/null || true
+  ao metrics cite-report --days 30 2>/dev/null || true
+
+  # Active pruning: archive stale, evict low-utility, and curate noisy uncited learnings
+  ao maturity --expire --archive 2>/dev/null || true
+  ao maturity --evict --archive 2>/dev/null || true
+  ao maturity --curate --archive 2>/dev/null || true
+
+  # Retrieval quality: use the representative live corpus when it exists
+  if [ -d cli/cmd/ao/testdata/retrieval-bench-live ]; then
+    ao retrieval-bench --live --corpus cli/cmd/ao/testdata/retrieval-bench-live --json 2>/dev/null || true
+  fi
 else
   echo "ao CLI not available — using file-based metrics"
 
@@ -182,6 +193,11 @@ Health indicator: >90% = Healthy, 70-90% = Warning, <70% = Critical.
 - Stale (90d uncited): <count>
 - Status: <Healthy/Warning/Critical>
 
+## Retrieval Quality
+- Live corpus coverage: <percentage or unavailable>
+- Live corpus learnings: <count or unavailable>
+- Status: <Healthy/Warning/Critical>
+
 ## Health Status
 <Healthy/Warning/Critical>
 
@@ -212,28 +228,60 @@ Tell the user:
 | Research/plan ratio | >0.5 | 0.2-0.5 | <0.2 |
 | Cache hit rate | >80% | 50-80% | <50% |
 
+## Golden Signals
+
+Four golden signals (always shown) reveal whether knowledge is truly compounding or just accumulating noise.
+
+```bash
+ao flywheel status              # table output with golden signals
+ao flywheel status --json       # machine-readable
+```
+
+### The Four Signals
+
+| # | Signal | Question | Key Metric |
+|---|--------|----------|------------|
+| 1 | **Velocity Trend** | Is σρ-δ increasing? | Linear regression slope of baseline velocities (7d/30d) |
+| 2 | **Citation Pipeline** | Are citations useful? | % of feedback with reward > 0.6 |
+| 3 | **Research Closure** | Is research being mined? | % orphaned research (no learning backlink) |
+| 4 | **Reuse Concentration** | Is the whole pool active? | Gini coefficient of citation distribution |
+
+### Verdicts and Thresholds
+
+| Signal | Healthy | Warning | Critical |
+|--------|---------|---------|----------|
+| Velocity Trend | compounding (slope > +0.01) | stagnant | decaying (slope < -0.01) |
+| Citation Pipeline | reinforcing (>60% high-util) | inert (30-60%) | degrading (<30%) |
+| Research Closure | mining (<=10% orphans) | — | hoarding (>=10% orphans) |
+| Reuse Concentration | distributed (Gini<0.4, active>30%) | concentrated | dormant (Gini>0.7 or active<10%) |
+
+**Overall verdict:** 3+ healthy = **compounding**, 3+ critical = **decaying**, mixed = **accumulating**.
+
+### Recommended Actions
+
+| Verdict | Action |
+|---------|--------|
+| **decaying** | Run `/compile` cycle, archive stale artifacts, increase citation via `ao lookup` |
+| **accumulating** | Review orphaned research (`/research`→`/retro` pipeline), improve forge quality |
+| **compounding** | Maintain cadence. Consider capturing baselines (`ao metrics baseline`) for trend tracking |
+
 ## Cache Eviction
-
 Read `references/cache-eviction.md` for the full eviction pipeline (passive tracking → confidence decay → maturity scan → archive).
-
 ## Key Rules
-
-- **Monitor regularly** - flywheel needs attention
-- **Address friction** - bottlenecks slow compounding
+- **Monitor regularly** - flywheel needs attention; address bottlenecks early
 - **Feed the flywheel** - run /retro and /post-mortem
 - **Prune stale knowledge** - archive old artifacts
-
 ## Examples
-
 **User says:** `/flywheel` — Counts pool depths, checks recent activity, validates artifact consistency, writes health report to `.agents/flywheel-status.md`.
-
 **Hook trigger:** After `/post-mortem` — Compares current vs historical metrics, flags velocity drops and friction points.
-
 ## Troubleshooting
-
 | Problem | Cause | Solution |
 |---------|-------|----------|
 | All pool counts zero | `.agents/` directory missing or empty | Run `/post-mortem` or `/retro` to seed knowledge pools |
-| Velocity always zero | No recent extractions (last 7 days) | Run `/forge` + `/extract` to process pending sessions |
+| Velocity always zero | No recent extractions (last 7 days) | Run `/retro` or `/post-mortem` to extract and index learnings |
 | "ao CLI not available" | ao command not installed or not in PATH | Install ao CLI or use manual pool counting fallback |
 | Stale artifacts >50% | Long time since last session or inactive repo | Run `/provenance --stale` to audit and archive old artifacts |
+
+## Reference Documents
+- [references/artifact-consistency.md](references/artifact-consistency.md)
+- [references/promotion-tiers.md](references/promotion-tiers.md)

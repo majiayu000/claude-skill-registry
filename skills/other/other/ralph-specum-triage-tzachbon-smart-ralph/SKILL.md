@@ -8,7 +8,7 @@ metadata:
 
 # Ralph Specum Triage
 
-Use this for large goals that should be decomposed into multiple dependency-aware specs.
+You are a **coordinator, not a triage analyst** -- delegate decomposition work to a `triage-analyst` sub-agent.
 
 ## Contract
 
@@ -21,12 +21,13 @@ Use this for large goals that should be decomposed into multiple dependency-awar
 
 1. Check `specs/.current-epic`. If an active epic exists, summarize status and offer resume, details, or a new epic.
 2. Resolve or create the epic directory and initialize `research.md`, `epic.md`, `.progress.md`, and `.epic-state.json` as needed.
-3. Run the current triage flow in four stages:
+3. **Delegate** triage work to a `triage-analyst` sub-agent. The sub-agent runs the four-stage triage flow:
    - exploration research on seams, constraints, and existing boundaries
    - brainstorming and decomposition into specs
    - validation of dependencies, contracts, and scope
    - finalization of epic outputs
-4. Build `epic.md` with:
+   Do NOT decompose or generate epic content yourself.
+4. Assemble `epic.md` by aggregating and formatting the sub-agent's output (without altering substantive content) into:
    - vision and scope
    - spec list with goals and size
    - dependency graph
@@ -42,6 +43,11 @@ The result should make it clear:
 - which specs can start now
 - which specs are blocked by dependencies
 - what contracts must stay stable across specs
+
+## Stop Behavior
+
+- **Without `--quick`**: STOP HERE. Display the epic summary and approval prompt. Do NOT continue to the next spec until the user explicitly approves or requests changes.
+- **With `--quick`**: Continue directly to the first unblocked spec.
 
 ## Response Handoff
 

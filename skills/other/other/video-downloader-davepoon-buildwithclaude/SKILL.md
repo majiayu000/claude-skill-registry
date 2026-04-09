@@ -82,10 +82,25 @@ python scripts/download_video.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -
 python scripts/download_video.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -q 720p -f webm -o /custom/path
 ```
 
+## Supported URLs
+
+- **HTTPS only** — `http://` links are rejected.
+- **YouTube hosts only** — allowed hostnames include `youtube.com` (and subdomains such as `www`, `m`, `music`), `youtu.be`, and `youtube-nocookie.com` (including `www`). Other sites are rejected.
+
+## yt-dlp installation
+
+The script does **not** install packages into your system Python (no `--break-system-packages`).
+
+1. If `yt-dlp` is on your `PATH`, it is used.
+2. Otherwise it creates a **local virtualenv** at `video-downloader/.venv`, installs `yt-dlp` there with `pip`, and runs that binary.
+3. If venv creation or install fails, follow the printed message or install globally, for example: `pipx install yt-dlp`, `brew install yt-dlp`, or your OS package manager.
+
+The `.venv` directory is gitignored and stays inside the skill folder.
+
 ## How It Works
 
 The skill uses `yt-dlp`, a robust YouTube downloader that:
-- Automatically installs itself if not present
+- Resolves `yt-dlp` via PATH or the skill-local `.venv` as described above
 - Fetches video information before downloading
 - Selects the best available streams matching your criteria
 - Merges video and audio streams when needed
@@ -95,6 +110,5 @@ The skill uses `yt-dlp`, a robust YouTube downloader that:
 
 - Downloads are saved to `/mnt/user-data/outputs/` by default
 - Video filename is automatically generated from the video title
-- The script handles installation of yt-dlp automatically
 - Only single videos are downloaded (playlists are skipped by default)
 - Higher quality videos may take longer to download and use more disk space

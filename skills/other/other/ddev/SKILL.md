@@ -1,0 +1,120 @@
+---
+name: ddev
+description: "DDEV local development environment for Craft CMS projects. Covers config.yaml settings (project type, PHP/Node versions, database, docroot), shorthand commands (ddev composer, ddev craft, ddev npm), add-ons (Redis, Mailpit), custom commands (.ddev/commands/), Vite dev server exposure (web_extra_exposed_ports, web_extra_daemons), database import/export, Xdebug toggling, and troubleshooting. Triggers on: ddev start, ddev craft, ddev composer, ddev ssh, ddev import-db, ddev xdebug, .ddev/config.yaml, web_extra_exposed_ports, web_extra_daemons, ddev add-on, ddev poweroff, ddev describe. Use when running DDEV commands, configuring local environments, or troubleshooting container issues."
+---
+
+# DDEV for Craft CMS Development
+
+## Documentation
+
+- DDEV docs: https://docs.ddev.com/en/stable/
+- Craft CMS quickstart: https://docs.ddev.com/en/stable/users/quickstart/#craft-cms
+- Configuration reference: https://docs.ddev.com/en/stable/users/configuration/config/
+- Custom commands: https://docs.ddev.com/en/stable/users/extend/custom-commands/
+- Additional services: https://docs.ddev.com/en/stable/users/extend/additional-services/
+- Vite integration: https://docs.ddev.com/en/stable/users/usage/developer-tools/#nodejs
+
+When unsure about a DDEV feature, `web_fetch` the relevant docs page.
+
+## Common Pitfalls
+
+- Using `ddev exec composer install` instead of `ddev composer install` — DDEV shorthand commands handle path resolution and environment setup. Always use the shorthand.
+- Forgetting `ddev craft up` does both `migrate/all` and `project-config/apply` — no need to run them separately after pulls or deploys.
+- Exposing the Vite dev server with `ports` instead of `web_extra_exposed_ports` — `ports` causes conflicts when running multiple DDEV projects. `web_extra_exposed_ports` routes through Traefik and works with HTTPS.
+- Running `ddev composer global require` — global packages install inside the container and vanish on restart. Install project-level dependencies only.
+- Setting `nodejs_version` but running `npm install` on the host — Node must run inside the container via `ddev npm` to match the configured version.
+- Editing `.ddev/config.yaml` while containers are running without restarting — changes to config require `ddev restart` to take effect.
+- Using `ddev import-db` without `--target-db=db` on multi-database setups — the default target is `db`, but if you've configured additional databases, be explicit.
+- Missing `#ddev-generated` comment in custom commands — without it, DDEV won't manage or update the file.
+
+## Shorthand Commands
+
+Always use DDEV shorthand over `ddev exec`:
+
+```bash
+ddev composer install          # not ddev exec composer install
+ddev craft up                  # not ddev exec php craft up
+ddev npm install               # not ddev exec npm install
+ddev craft make service        # scaffolding
+```
+
+## Craft CMS Project Type
+
+```yaml
+# .ddev/config.yaml
+name: my-craft-site
+type: craftcms
+docroot: web
+php_version: "8.3"
+database:
+  type: mysql
+  version: "8.0"
+nodejs_version: "20"
+```
+
+DDEV auto-injects: `CRAFT_DB_SERVER`, `CRAFT_DB_USER`, `CRAFT_DB_PASSWORD`, `CRAFT_DB_DATABASE`, `PRIMARY_SITE_URL`.
+
+## Common Commands
+
+```bash
+ddev start                     # Start the project
+ddev stop                      # Stop the project
+ddev restart                   # Restart containers
+ddev ssh                       # SSH into web container
+ddev describe                  # Show project info and URLs
+ddev logs                      # View container logs
+ddev import-db --file=dump.sql # Import database
+ddev export-db --file=dump.sql # Export database
+ddev xdebug on                 # Enable Xdebug
+ddev craft db/backup           # Craft database backup
+```
+
+## Post-Install Auto-Run
+
+Composer scripts auto-run `craft up` after install/update:
+
+```json
+{
+    "scripts": {
+        "post-craft-update": [
+            "@php craft install/check && php craft up --interactive=0 || exit 0"
+        ],
+        "post-update-cmd": "@post-craft-update",
+        "post-install-cmd": "@post-craft-update"
+    }
+}
+```
+
+No need to manually run `ddev craft migrate/all` or `ddev craft project-config/apply` — `ddev craft up` does both, and it auto-runs after `ddev composer install/update`.
+
+## Add-ons
+
+```bash
+ddev add-on get ddev/ddev-redis       # Install Redis
+ddev add-on get ddev/ddev-mailpit     # Install Mailpit
+ddev add-on list                       # List installed add-ons
+ddev add-on remove ddev/ddev-redis    # Remove add-on
+```
+
+## Custom Commands
+
+Place scripts in `.ddev/commands/web/` (container) or `.ddev/commands/host/` (host):
+
+```bash
+#!/usr/bin/env bash
+## Description: Run ECS code style check
+## Usage: check-cs
+## Example: ddev check-cs
+#ddev-generated
+
+cd /var/www/html && composer check-cs
+```
+
+## Troubleshooting
+
+```bash
+ddev poweroff                  # Stop all DDEV projects
+ddev debug router              # Debug router configuration
+ddev debug capabilities        # Check Docker capabilities
+ddev delete --omit-snapshot    # Remove project without snapshot
+```

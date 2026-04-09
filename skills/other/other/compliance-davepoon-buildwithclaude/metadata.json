@@ -1,0 +1,17 @@
+{
+  "name": "compliance",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/feedoracle-compliance/skills/compliance/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "compliance-davepoon-buildwithclaude",
+  "downloaded_at": "2026-04-09T01:21:36.485514Z",
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/feedoracle-compliance/skills/compliance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davepoon/buildwithclaude/blob/main/plugins/feedoracle-compliance/skills/compliance/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

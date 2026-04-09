@@ -33,11 +33,11 @@ Keep recommendations at the OpenAPI layer unless the user explicitly asks for Ja
 
 ## When to use this skill
 
-- Review or author an OpenAPI 3.x spec (YAML or JSON)
-- Improve API contract documentation, examples, or reusable components
-- Define security schemes and global security requirements in OpenAPI
-- Add spec linting or CI validation (e.g. Spectral) for OpenAPI
-- Assess breaking vs compatible changes when evolving a published API contract
+- Review an OpenAPI
+- Improve an OpenAPI
+- Improve API contract
+- Improve API schema design
+- Validate an OpenAPI spec
 
 ## Reference
 

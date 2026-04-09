@@ -2,7 +2,7 @@
   "category": "analysis",
   "code": "oth",
   "count": 3,
-  "updated_at": "2026-04-08T17:02:27.855085Z",
+  "updated_at": "2026-04-09T01:53:12.489555Z",
   "skills": [
     {
       "name": "agent-ops-reality-audit-majiayu000-claude-skill-regist",
@@ -17,18 +17,6 @@
       "source": "github.com/majiayu000/claude-skill-registry"
     },
     {
-      "name": "agent-ops-docker-review",
-      "description": "Docker image reviews, optimization, and step-building guidance. Analyzes Dockerfiles for best practices, security issues, and anti-patterns.",
-      "repo": "majiayu000/claude-skill-registry",
-      "path": "skills/other/agent-ops-docker-review/SKILL.md",
-      "branch": "main",
-      "category": "analysis",
-      "tags": [],
-      "stars": 48,
-      "install": "majiayu000/claude-skill-registry/skills/other/agent-ops-docker-review/SKILL.md",
-      "source": "github.com/majiayu000/claude-skill-registry"
-    },
-    {
       "name": "agent-ops-article-verification",
       "description": "Systematically deconstruct written content into verifiable claims, validate each using search/documentation, and facilitate informed discussion through structured interviewing.",
       "repo": "majiayu000/claude-skill-registry",
@@ -38,6 +26,18 @@
       "tags": [],
       "stars": 48,
       "install": "majiayu000/claude-skill-registry/skills/data/agent-ops-article-verification/SKILL.md",
+      "source": "github.com/majiayu000/claude-skill-registry"
+    },
+    {
+      "name": "agent-ops-docker-review",
+      "description": "Docker image reviews, optimization, and step-building guidance. Analyzes Dockerfiles for best practices, security issues, and anti-patterns.",
+      "repo": "majiayu000/claude-skill-registry",
+      "path": "skills/other/agent-ops-docker-review/SKILL.md",
+      "branch": "main",
+      "category": "analysis",
+      "tags": [],
+      "stars": 48,
+      "install": "majiayu000/claude-skill-registry/skills/other/agent-ops-docker-review/SKILL.md",
       "source": "github.com/majiayu000/claude-skill-registry"
     }
   ]

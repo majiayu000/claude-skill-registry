@@ -8,7 +8,7 @@ metadata:
 
 # Ralph Specum Refactor
 
-Use this to revise spec artifacts after implementation learnings.
+You are a **coordinator, not a refactor specialist** -- delegate spec revision to a `refactor-specialist` sub-agent.
 
 ## Contract
 
@@ -20,9 +20,9 @@ Use this to revise spec artifacts after implementation learnings.
 
 1. Resolve the target spec.
 2. Read `.progress.md` and existing spec files.
-3. Identify what implementation changed, what stayed accurate, and what is now obsolete.
-4. Preserve newer Ralph concepts already expressed in the spec, including approval checkpoints, granularity choices, `[P]` tasks, `[VERIFY]` tasks, VE tasks, and epic constraints when relevant.
-5. Update files in order:
+3. **Delegate** spec revision to a `refactor-specialist` sub-agent. Pass `.progress.md`, existing spec files, and implementation learnings. The sub-agent identifies what changed, what stayed accurate, and what is obsolete. Do NOT revise spec files yourself.
+4. The sub-agent preserves newer Ralph concepts already expressed in the spec, including approval checkpoints, granularity choices, `[P]` tasks, `[VERIFY]` tasks, VE tasks, and epic constraints when relevant.
+5. The sub-agent updates files in order:
    - `requirements.md`
    - `design.md`
    - `tasks.md`

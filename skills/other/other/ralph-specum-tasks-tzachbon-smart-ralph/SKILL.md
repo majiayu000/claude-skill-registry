@@ -8,7 +8,7 @@ metadata:
 
 # Ralph Specum Tasks
 
-Use this for the tasks phase.
+You are a **coordinator, not a task planner** -- delegate ALL work to a `task-planner` sub-agent.
 
 ## Contract
 
@@ -24,15 +24,20 @@ Use this for the tasks phase.
 3. Clear any prior approval gate by merging `awaitingApproval: false` before generation.
 4. Respect `granularity` from state. Allow `--tasks-size fine|coarse` to override it. In quick mode, default unset granularity to `fine`.
 5. Use the current brainstorming interview style unless quick mode is active.
-6. Write or rewrite `tasks.md`.
-7. Count tasks and merge state with:
+6. **Delegate** task planning to a `task-planner` sub-agent. Pass requirements, design, research, and interview context. The sub-agent writes `tasks.md`. Do NOT write tasks.md yourself.
+7. Read the sub-agent's output and validate it exists.
+8. Count tasks and merge state with:
    - `phase: "tasks"`
-   - `awaitingApproval: true`
+   - `awaitingApproval: true` (or `false` when `--quick` is active)
    - `taskIndex: first incomplete or totalTasks`
    - `totalTasks: counted tasks`
-8. Update `.progress.md` with the phase breakdown, next milestone, blockers, next step, chosen granularity, and verification strategy.
-9. If spec commits are enabled, commit only the spec artifacts.
-10. In quick mode, review quickly, then continue directly into implementation.
+9. Update `.progress.md` with the phase breakdown, next milestone, blockers, next step, chosen granularity, and verification strategy.
+10. If spec commits are enabled, commit only the spec artifacts.
+
+### Stop Behavior
+
+- **Without `--quick`**: STOP HERE. Display the walkthrough summary and approval prompt. Do NOT continue to implementation. Wait for the user to explicitly approve and request the next phase.
+- **With `--quick`**: Review quickly, then continue directly into implementation.
 
 ## Output Shape
 

@@ -1,8 +1,8 @@
 {
   "category": "productivity",
   "code": "pro",
-  "count": 1924,
-  "updated_at": "2026-04-09T01:53:14.912736Z",
+  "count": 1930,
+  "updated_at": "2026-04-09T03:22:48.838430Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -12511,6 +12511,24 @@
       "source": "downloaded"
     },
     {
+      "name": "emblem-ai-prompt-examples",
+      "description": "Curated prompt examples for portfolio review, quotes, NFT discovery, prediction markets, and approval-gated wallet workflows.",
+      "repo": "EmblemCompany/Agent-skills",
+      "path": "skills/emblem-ai-prompt-examples",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "prompts",
+        "wallet",
+        "crypto",
+        "examples",
+        "research"
+      ],
+      "stars": 0,
+      "install": "EmblemCompany/Agent-skills/skills/emblem-ai-prompt-examples",
+      "source": "Community Skills"
+    },
+    {
       "name": "project",
       "description": "Manage route-agent project: check status, find next tasks, spawn parallel work. Use when starting work, checking progress, or asking \"what's next?\"",
       "repo": "bendrucker/route-agent",
@@ -13430,6 +13448,26 @@
       "stars": 0,
       "install": "nbbaier/compound-engineering-amp/skills/workflows-plan",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "confluence-to-agent-knowledge-base",
+      "description": "Turn any Confluence Cloud instance into a private, searchable AI knowledge base on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the Atlassian MCP connector.",
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "confluence",
+        "knowledge-base",
+        "atlassian",
+        "mcp",
+        "wiki",
+        "search",
+        "knowledge-management"
+      ],
+      "stars": 0,
+      "install": "miningstore/confluence-to-agent-knowledge-base/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "detecting-format-string",
@@ -15384,6 +15422,24 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "humanizar-texto-es",
+      "description": "Rewrite Spanish AI-generated text to sound naturally human-written using 11 simultaneous linguistic techniques.",
+      "repo": "ToniPerea/humanizar-texto-es",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "spanish",
+        "ai-detection",
+        "text-rewriting",
+        "nlp",
+        "research"
+      ],
+      "stars": 0,
+      "install": "ToniPerea/humanizar-texto-es/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "create-mcp-eval",
       "description": "Create or modify evaluations for MCP Server(s). Use whenever you are tasked with changed MCP evals.",
       "repo": "genmcp/gevals",
@@ -17180,6 +17236,28 @@
       "source": "downloaded"
     },
     {
+      "name": "deep-research",
+      "description": "Deep research with NotebookLM + web search. Domain boost, source credibility scoring, and post-research artifact generation (podcast, video, slides, quiz).",
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "path": "SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "research",
+        "deep-research",
+        "notebooklm",
+        "perplexity",
+        "gemini",
+        "domain-boost",
+        "academic",
+        "maritime",
+        "legal"
+      ],
+      "stars": 0,
+      "install": "Chris1220-cmd/deep-research-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "jj-vcs",
       "description": "Jujutsu (jj) is a powerful Git-compatible version control system with innovative features like automatic rebasing, working-copy-as-a-commit, operation log with undo, and first-class conflict tracking.",
       "repo": "SecKatie/katies-ai-skills",
@@ -18267,6 +18345,22 @@
       "stars": 0,
       "install": "penkzhou/swiss-army-knife-plugin/swiss-army-knife/skills/workflow-logging",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "skills/skill-seekers/SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
+      ],
+      "stars": 0,
+      "install": "yusufkaraaslan/Skill_Seekers/skills/skill-seekers/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "read-task",
@@ -21937,6 +22031,22 @@
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/planned-skills/generated/19-business-automation/meeting-scheduler-helper",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "professional-business-writing",
+      "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
+      "repo": "b33kman/professional-business-writing-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "professional-writing",
+        "business-writing",
+        "writing-assistant"
+      ],
+      "stars": 0,
+      "install": "b33kman/professional-business-writing-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "checkin",

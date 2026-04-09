@@ -1,0 +1,25 @@
+{
+  "name": "emblem-ai",
+  "description": "One-shot user management with multi-chain wallet auth, AI chat surfaces, and app introspection for wallet-enabled applications.",
+  "repo": "EmblemCompany/Agent-skills",
+  "path": "skills/emblem-ai",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [
+    "auth",
+    "wallet",
+    "react",
+    "ai",
+    "crypto"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "emblem-ai",
+  "author": "EmblemCompany",
+  "source_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-ai/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-ai/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

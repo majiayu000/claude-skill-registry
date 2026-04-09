@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19683,
-  "updated_at": "2026-04-09T01:53:13.128394Z",
+  "count": 19687,
+  "updated_at": "2026-04-09T03:22:47.037031Z",
   "skills": [
     {
       "name": "fix",
@@ -109030,6 +109030,24 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "emblem-ai-react",
+      "description": "React integration with auth providers, connect buttons, login hooks, chat components, and wallet-enabled user flows.",
+      "repo": "EmblemCompany/Agent-skills",
+      "path": "skills/emblem-ai-react",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "react",
+        "auth",
+        "wallet",
+        "components",
+        "typescript"
+      ],
+      "stars": 0,
+      "install": "EmblemCompany/Agent-skills/skills/emblem-ai-react",
+      "source": "Community Skills"
+    },
+    {
       "name": "develop-agent-skill",
       "description": "Use PROACTIVELY when creating, reviewing, or updating Claude Code Skills. MUST be invoked before writing any new SKILL.md file. Provides structure, workflows, and validation for skill development.",
       "repo": "mikekelly/develop-agent-skill",
@@ -153841,6 +153859,24 @@
       "stars": 0,
       "install": "fractary/claude-plugins/plugins/codex/skills/config-helper",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "emblem-ai-agent-wallet",
+      "description": "Review-first agent wallet workflows across Solana, Ethereum, Base, BSC, Polygon, Hedera, and Bitcoin.",
+      "repo": "EmblemCompany/Agent-skills",
+      "path": "skills/emblem-ai-agent-wallet",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "wallet",
+        "crypto",
+        "agent",
+        "transactions",
+        "multichain"
+      ],
+      "stars": 0,
+      "install": "EmblemCompany/Agent-skills/skills/emblem-ai-agent-wallet",
+      "source": "Community Skills"
     },
     {
       "name": "github-workflow-authoring",
@@ -230042,6 +230078,24 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "emblem-ai",
+      "description": "One-shot user management with multi-chain wallet auth, AI chat surfaces, and app introspection for wallet-enabled applications.",
+      "repo": "EmblemCompany/Agent-skills",
+      "path": "skills/emblem-ai",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "auth",
+        "wallet",
+        "react",
+        "ai",
+        "crypto"
+      ],
+      "stars": 0,
+      "install": "EmblemCompany/Agent-skills/skills/emblem-ai",
+      "source": "Community Skills"
+    },
+    {
       "name": "cache-health",
       "description": "Performs comprehensive diagnostics on the codex cache system, detects issues, and can fix them automatically with repair operations.Delegates to fractary CLI for health checks and diagnostics.",
       "repo": "fractary/claude-plugins",
@@ -234595,6 +234649,24 @@
       "stars": 0,
       "install": "local/development/aws-mcp-setup",
       "source": "github.com/zxkane/aws-skills"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "automated-test-fix-loop",

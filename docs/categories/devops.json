@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5311,
-  "updated_at": "2026-04-09T01:53:13.358779Z",
+  "count": 5312,
+  "updated_at": "2026-04-09T03:22:47.268700Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -47040,6 +47040,24 @@
       "stars": 0,
       "install": "gtmagents/gtm-agents/devops/channel-pacing-guardrails",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "docker",

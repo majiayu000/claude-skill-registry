@@ -1,0 +1,25 @@
+{
+  "name": "vibe-coding-advisor",
+  "description": "Inject UX principle context into AI coding sessions before generating components and UI flows.",
+  "repo": "uxuiprinciples/agent-skills",
+  "path": "vibe-coding-advisor",
+  "github_branch": "main",
+  "category": "design",
+  "tags": [
+    "vibe-coding",
+    "ux",
+    "ui",
+    "components",
+    "code-generation"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "vibe-coding-advisor",
+  "author": "uxuiprinciples",
+  "source_url": "https://github.com/uxuiprinciples/agent-skills/blob/main/vibe-coding-advisor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/uxuiprinciples/agent-skills/blob/main/vibe-coding-advisor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

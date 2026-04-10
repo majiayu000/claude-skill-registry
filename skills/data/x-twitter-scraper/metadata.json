@@ -1,10 +1,16 @@
 {
   "name": "x-twitter-scraper",
-  "description": "X (Twitter) data platform skill for AI agents. 122 REST API endpoints, 2 MCP tools, 23 extraction types. Search tweets, look up users, post, like, retweet, follow, DM, monitor accounts, run giveaways. Reads from $0.00015/call.",
+  "description": "X (Twitter) data platform skill for AI agents. 122 REST API endpoints, 2 MCP tools, 23 extraction types.",
   "repo": "Xquik-dev/x-twitter-scraper",
   "category": "data",
+  "dir_name": "x-twitter-scraper",
+  "author": "Xquik (Burak Bayir)",
+  "source_url": "https://github.com/Xquik-dev/x-twitter-scraper",
+  "license": "MIT",
+  "copyright": "Copyright 2024-2026 Xquik",
+  "permission_note": "MIT License: Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files, to deal in the Software without restriction.",
+  "distribution": "compatible",
+  "license_class": "compatible",
   "tags": ["twitter", "x", "social-media", "api", "mcp"],
-  "stars": 41,
-  "source": "GitHub",
-  "dir_name": "x-twitter-scraper"
+  "stars": 41
 }

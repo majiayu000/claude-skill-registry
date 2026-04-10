@@ -11,14 +11,16 @@ on:
         default: majiayu000/claude-skill-registry-core
       core_sha:
         description: Core commit SHA
-        required: true
+        required: false
+        default: ""
       data_repo:
         description: Data repository (owner/name)
         required: false
         default: ""
       data_sha:
         description: Data commit SHA
-        required: true
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -43,7 +45,50 @@ jobs:
           INPUT_DATA_REPO: ${{ github.event.inputs.data_repo }}
           INPUT_DATA_SHA: ${{ github.event.inputs.data_sha }}
           DEFAULT_DATA_REPO: ${{ vars.REGISTRY_DATA_REPO }}
+          CORE_TOKEN: ${{ secrets.MAIN_REPO_TOKEN != '' && secrets.MAIN_REPO_TOKEN || github.token }}
+          DATA_TOKEN: ${{ secrets.DATA_REPO_TOKEN != '' && secrets.DATA_REPO_TOKEN || github.token }}
         run: |
+          resolve_head_sha() {
+            local repo="$1"
+            local token="$2"
+            local tmp
+            local code
+            tmp="$(mktemp)"
+            code=$(curl -sS -o "$tmp" -w "%{http_code}" \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer $token" \
+              "https://api.github.com/repos/$repo/commits/main")
+            if [ "$code" != "200" ]; then
+              echo "::error::Failed to resolve main HEAD for $repo (HTTP $code)."
+              cat "$tmp"
+              rm -f "$tmp"
+              return 1
+            fi
+            python3 -c 'import json,sys; payload=json.load(open(sys.argv[1], encoding="utf-8")); sha=payload.get("sha",""); sys.exit(1) if not sha else print(sha)' "$tmp"
+            rm -f "$tmp"
+          }
+
+          validate_sha_exists() {
+            local repo="$1"
+            local sha="$2"
+            local token="$3"
+            local label="$4"
+            local tmp
+            local code
+            tmp="$(mktemp)"
+            code=$(curl -sS -o "$tmp" -w "%{http_code}" \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer $token" \
+              "https://api.github.com/repos/$repo/commits/$sha")
+            if [ "$code" != "200" ]; then
+              echo "::error::$label ref validation failed: $repo@$sha not found (HTTP $code)."
+              cat "$tmp"
+              rm -f "$tmp"
+              return 1
+            fi
+            rm -f "$tmp"
+          }
+
           core_repo="${PAYLOAD_CORE_REPO:-$INPUT_CORE_REPO}"
           core_sha="${PAYLOAD_CORE_SHA:-$INPUT_CORE_SHA}"
           data_repo="${PAYLOAD_DATA_REPO:-$INPUT_DATA_REPO}"
@@ -53,7 +98,7 @@ jobs:
             data_repo="$DEFAULT_DATA_REPO"
           fi
 
-          if [ -z "$core_repo" ] || [ -z "$core_sha" ] || [ -z "$data_repo" ] || [ -z "$data_sha" ]; then
+          if [ -z "$core_repo" ] || [ -z "$data_repo" ]; then
             echo "Missing required publish refs."
             echo "core_repo=$core_repo"
             echo "core_sha=$core_sha"
@@ -61,6 +106,18 @@ jobs:
             echo "data_sha=$data_sha"
             exit 1
           fi
+
+          if [ -z "$core_sha" ]; then
+            core_sha="$(resolve_head_sha "$core_repo" "$CORE_TOKEN")"
+            echo "Resolved core_sha from $core_repo@main: $core_sha"
+          fi
+          if [ -z "$data_sha" ]; then
+            data_sha="$(resolve_head_sha "$data_repo" "$DATA_TOKEN")"
+            echo "Resolved data_sha from $data_repo@main: $data_sha"
+          fi
+
+          validate_sha_exists "$core_repo" "$core_sha" "$CORE_TOKEN" "core"
+          validate_sha_exists "$data_repo" "$data_sha" "$DATA_TOKEN" "data"
 
           echo "core_repo=$core_repo" >> "$GITHUB_OUTPUT"
           echo "core_sha=$core_sha" >> "$GITHUB_OUTPUT"

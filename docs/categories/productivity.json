@@ -1,8 +1,8 @@
 {
   "category": "productivity",
   "code": "pro",
-  "count": 1940,
-  "updated_at": "2026-04-10T11:05:30.706556Z",
+  "count": 1945,
+  "updated_at": "2026-04-10T16:07:51.681820Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -11772,6 +11772,24 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "humanizar-texto-es",
+      "description": "Rewrite Spanish AI-generated text to sound naturally human-written using 11 simultaneous linguistic techniques.",
+      "repo": "ToniPerea/humanizar-texto-es",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "spanish",
+        "ai-detection",
+        "text-rewriting",
+        "nlp",
+        "research"
+      ],
+      "stars": 0,
+      "install": "ToniPerea/humanizar-texto-es/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "competition-organizer-docs",
       "description": "Generate and review documentation for competition organizers using Diataxis framework. Use when writing docs for organizer workflows like creating competitions, managing divisions, scheduling heats, h",
       "repo": "wodsmith/thewodapp",
@@ -17746,6 +17764,28 @@
       "stars": 0,
       "install": "harrysayers7/claudelife/productivity/daily-workflow-automation",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "deep-research",
+      "description": "Deep research with NotebookLM + web search. Domain boost, source credibility scoring, and post-research artifact generation (podcast, video, slides, quiz).",
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "path": "SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "research",
+        "deep-research",
+        "notebooklm",
+        "perplexity",
+        "gemini",
+        "domain-boost",
+        "academic",
+        "maritime",
+        "legal"
+      ],
+      "stars": 0,
+      "install": "Chris1220-cmd/deep-research-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "dispatching-parallel-agents",
@@ -25147,6 +25187,22 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "skills/skill-seekers/SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
+      ],
+      "stars": 0,
+      "install": "yusufkaraaslan/Skill_Seekers/skills/skill-seekers/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "memory-save",
       "description": "Execute when you see \"[MEMORY_KEEPER]\" in hook output. Follow the numbered steps exactly to save session memory.",
       "repo": "ZipperBagCoffee/memory-keeper-plugin",
@@ -25218,6 +25274,26 @@
       "stars": 0,
       "install": "jgtolentino/insightpulse-odoo/docs/claude-code-skills/community/notion-workflow-sync",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "confluence-to-agent-knowledge-base",
+      "description": "Turn any Confluence Cloud instance into a private, searchable AI knowledge base on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the Atlassian MCP connector.",
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "confluence",
+        "knowledge-base",
+        "atlassian",
+        "mcp",
+        "wiki",
+        "search",
+        "knowledge-management"
+      ],
+      "stars": 0,
+      "install": "miningstore/confluence-to-agent-knowledge-base/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "git",
@@ -25821,6 +25897,22 @@
       "stars": 0,
       "install": "Tristan578/research-team-tutorial/productivity/research-orchestrator",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "professional-business-writing",
+      "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
+      "repo": "b33kman/professional-business-writing-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "professional-writing",
+        "business-writing",
+        "writing-assistant"
+      ],
+      "stars": 0,
+      "install": "b33kman/professional-business-writing-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "linear-dev-accelerator",

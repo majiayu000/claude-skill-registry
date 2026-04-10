@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5314,
-  "updated_at": "2026-04-10T11:05:29.112516Z",
+  "count": 5315,
+  "updated_at": "2026-04-10T16:07:50.116307Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -38769,6 +38769,24 @@
       "stars": 0,
       "install": "dvorkinguy/claude-skills-agents/skills/apify-scraper-builder",
       "source": "SkillsMP Synced Skills"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "collaboration-principles",

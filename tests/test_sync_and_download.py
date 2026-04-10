@@ -23,6 +23,115 @@ def test_should_fail_on_empty_download_only_when_all_attempts_fail():
     assert module.should_fail_on_empty_download({"downloaded": 0, "failed": 3, "skipped": 10}) is False
 
 
+def test_manifest_round_trip(tmp_path):
+    module = load_module()
+    manifest_path = tmp_path / "acquisition_manifest.json"
+    entries = {
+        "development:demo-skill": {
+            "repo": "acme/demo",
+            "branch": "main",
+            "relative_path": "skills/demo/SKILL.md",
+            "updated_at": "2026-04-10T00:00:00Z",
+        }
+    }
+
+    module.save_acquisition_manifest(manifest_path, entries)
+    loaded = module.load_acquisition_manifest(manifest_path)
+    assert loaded == entries
+
+
+def test_manifest_loader_tolerates_legacy_and_invalid_entries(tmp_path):
+    module = load_module()
+    manifest_path = tmp_path / "acquisition_manifest.json"
+    manifest_path.write_text(
+        """
+        {
+          "legacy_key": {"repo": "acme/demo", "branch": "main", "relative_path": "SKILL.md"},
+          "bad_key": {"repo": "acme/demo", "branch": "", "relative_path": ""},
+          "bad_type": "oops"
+        }
+        """,
+        encoding="utf-8",
+    )
+
+    loaded = module.load_acquisition_manifest(manifest_path)
+    assert loaded == {
+        "legacy_key": {
+            "repo": "acme/demo",
+            "branch": "main",
+            "relative_path": "SKILL.md",
+            "updated_at": "",
+        }
+    }
+
+
+def test_probe_order_prefers_manifest_hints():
+    module = load_module()
+    manifest_entry = {"branch": "release", "relative_path": "custom/path/SKILL.md"}
+    preferred = {"acme/demo": "main"}
+
+    branch_order = module.build_branch_probe_order(
+        "acme/demo", preferred, manifest_entry, ("main", "master")
+    )
+    path_order = module.build_relative_probe_order(
+        ["skills/demo/SKILL.md", "SKILL.md"], manifest_entry
+    )
+
+    assert branch_order == ["release", "main", "master"]
+    assert path_order == ["custom/path/SKILL.md", "skills/demo/SKILL.md", "SKILL.md"]
+
+
+def test_probe_order_removes_duplicates():
+    module = load_module()
+    manifest_entry = {"branch": "main", "relative_path": "skills/demo/SKILL.md"}
+    preferred = {"acme/demo": "main"}
+
+    branch_order = module.build_branch_probe_order(
+        "acme/demo", preferred, manifest_entry, ("main", "master")
+    )
+    path_order = module.build_relative_probe_order(
+        ["skills/demo/SKILL.md", "SKILL.md", "SKILL.md"], manifest_entry
+    )
+
+    assert branch_order == ["main", "master"]
+    assert path_order == ["skills/demo/SKILL.md", "SKILL.md"]
+
+
+def test_select_shard_skills_is_deterministic():
+    module = load_module()
+    skills = [
+        {"repo": "acme/repo1", "path": "skills/a", "name": "a", "category": "dev"},
+        {"repo": "acme/repo2", "path": "skills/b", "name": "b", "category": "dev"},
+        {"repo": "acme/repo3", "path": "skills/c", "name": "c", "category": "dev"},
+        {"repo": "acme/repo4", "path": "skills/d", "name": "d", "category": "dev"},
+    ]
+    first = module.select_shard_skills(skills, shard_count=3, shard_index=1)
+    second = module.select_shard_skills(skills, shard_count=3, shard_index=1)
+    assert first == second
+
+
+def test_select_shard_skills_partition_has_no_overlap():
+    module = load_module()
+    skills = [
+        {"repo": f"acme/repo{i}", "path": f"skills/{i}", "name": f"s{i}", "category": "dev"}
+        for i in range(15)
+    ]
+    shard_count = 4
+    buckets = []
+    for idx in range(shard_count):
+        bucket = module.select_shard_skills(skills, shard_count=shard_count, shard_index=idx)
+        keys = {module.skill_key(item) for item in bucket}
+        buckets.append(keys)
+
+    combined = set().union(*buckets)
+    original = {module.skill_key(item) for item in skills}
+
+    assert combined == original
+    for i in range(shard_count):
+        for j in range(i + 1, shard_count):
+            assert buckets[i].isdisjoint(buckets[j])
+
+
 def test_main_exits_when_fail_on_empty_download_is_enabled(monkeypatch):
     module = load_module()
 

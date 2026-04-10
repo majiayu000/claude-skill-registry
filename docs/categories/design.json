@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9494,
-  "updated_at": "2026-04-10T11:05:28.768415Z",
+  "count": 9495,
+  "updated_at": "2026-04-10T16:07:49.770765Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -92738,6 +92738,23 @@
       "stars": 0,
       "install": "CloudAI-X/claude-workflow-v2/skills/designing-architecture",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "task-splitting",

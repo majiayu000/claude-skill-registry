@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "updated_at": "2026-04-10T15:55:39.780998Z",
+  "total_count": 9,
+  "entries": {
+    "conorluddy/ios-simulator-skill": {
+      "repo": "conorluddy/ios-simulator-skill",
+      "branch": "main",
+      "relative_path": "ios-simulator-skill/SKILL.md",
+      "updated_at": "2026-04-10T15:55:30.510577Z"
+    },
+    "ToniPerea/humanizar-texto-es": {
+      "repo": "ToniPerea/humanizar-texto-es",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-04-10T15:55:30.609113Z"
+    },
+    "miningstore/confluence-to-agent-knowledge-base": {
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-04-10T15:55:30.639016Z"
+    },
+    "b33kman/professional-business-writing-skill": {
+      "repo": "b33kman/professional-business-writing-skill",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-04-10T15:55:30.694188Z"
+    },
+    "Enreign/pagerunner-skill": {
+      "repo": "Enreign/pagerunner-skill",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-04-10T15:55:31.614760Z"
+    },
+    "Chris1220-cmd/deep-research-skill": {
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "branch": "master",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-04-10T15:55:31.904770Z"
+    },
+    "alonw0/web-asset-generator": {
+      "repo": "alonw0/web-asset-generator",
+      "branch": "main",
+      "relative_path": "skills/web-asset-generator/SKILL.md",
+      "updated_at": "2026-04-10T15:55:32.938814Z"
+    },
+    "varfolomejev/query-victorialogs": {
+      "repo": "varfolomejev/query-victorialogs",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-04-10T15:55:33.342337Z"
+    },
+    "yusufkaraaslan/Skill_Seekers": {
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "branch": "master",
+      "relative_path": "skills/skill-seekers/SKILL.md",
+      "updated_at": "2026-04-10T15:55:33.524764Z"
+    }
+  }
+}

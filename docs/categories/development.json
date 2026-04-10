@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19690,
-  "updated_at": "2026-04-10T11:05:28.882352Z",
+  "count": 19691,
+  "updated_at": "2026-04-10T16:07:49.886429Z",
   "skills": [
     {
       "name": "fix",
@@ -251895,6 +251895,24 @@
       "stars": 0,
       "install": "pedrovhb/conductor-claude/development/conductor-context",
       "source": "local"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "launch-planning-frameworks",

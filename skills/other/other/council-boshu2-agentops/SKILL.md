@@ -1,12 +1,20 @@
 ---
 name: council
 description: 'Multi-model consensus council. Spawns parallel judges with configurable perspectives. Modes: validate, brainstorm, research. Triggers: "council", "get consensus", "multi-model review", "multi-perspective review", "council validate", "council brainstorm", "council research".'
-context: fork
+skill_api_version: 1
+context:
+  window: isolated
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: full
 metadata:
   tier: judgment
   dependencies:
     - standards   # optional - loaded for code validation context
   replaces: judge
+output_contract: skills/council/schemas/verdict.json
 ---
 
 # /council — Multi-Model Consensus Council
@@ -59,11 +67,12 @@ Council requires a runtime that can **spawn parallel subagents** and (for `--deb
 Skills describe WHAT to do, not WHICH tool to call. See `skills/shared/SKILL.md` for the capability contract.
 
 **After detecting your backend, read the matching reference for concrete spawn/wait/message/cleanup examples:**
-- Claude feature contract → `skills/shared/references/claude-code-latest-features.md`
-- Claude Native Teams → `skills/shared/references/backend-claude-teams.md`
-- Codex Sub-Agents / CLI → `skills/shared/references/backend-codex-subagents.md`
-- Background Tasks → `skills/shared/references/backend-background-tasks.md`
-- Inline (`--quick`) → `skills/shared/references/backend-inline.md`
+- Shared Claude feature contract → `skills/shared/references/claude-code-latest-features.md`
+- Local mirrored contract for runtime-local reads → `references/claude-code-latest-features.md`
+- Claude Native Teams → `references/backend-claude-teams.md`
+- Codex Sub-Agents / CLI → `references/backend-codex-subagents.md`
+- Background Tasks → `references/backend-background-tasks.md`
+- Inline (`--quick`) → `references/backend-inline.md`
 
 See also `references/cli-spawning.md` for council-specific spawning flow (phases, timeouts, output collection).
 
@@ -90,6 +99,20 @@ Skip `--debate` for routine validation where consensus is expected. Debate adds 
 
 Natural language works — the skill infers task type from your prompt.
 
+### First-pass rigor gate for plan/spec validation (MANDATORY)
+
+When mode is `validate` and the target is a plan/spec/contract (or contains boundary rules, state transitions, or conformance tables), judges must apply this gate before returning `PASS`:
+
+1. Canonical mutation + ack sequence is explicit, single-path, and non-contradictory.
+2. Consume-at-most-once path is crash-safe with explicit atomic boundary and restart recovery semantics.
+3. Status/precedence behavior is defined with a field-level truth table and anomaly reason codes for conflicting evidence.
+4. Conformance includes explicit boundary failpoint tests and deterministic assertions for replay/no-duplicate-effect outcomes.
+
+Verdict policy for this gate:
+- Missing or contradictory gate item: minimum `WARN`.
+- Missing deterministic conformance coverage for any gate item: minimum `WARN`.
+- Critical lifecycle invariant not mechanically verifiable: `FAIL`.
+
 ---
 
 ## Architecture
@@ -109,7 +132,7 @@ reads each judge's output file sequentially with the Read tool and synthesizes.
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │  Phase 1: Build Packet (JSON)                                   │
-│  - Task type (validate/brainstorm/research)                      │
+│  - Task type (validate/brainstorm/research)                     │
 │  - Target description                                           │
 │  - Context (files, diffs, prior decisions)                      │
 │  - Perspectives to assign                                       │
@@ -117,9 +140,9 @@ reads each judge's output file sequentially with the Read tool and synthesizes.
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│  Phase 1a: Select spawn backend                                  │
-│  codex_subagents | claude_teams | background_fallback            │
-│  Team lead = spawner (this agent)                                │
+│  Phase 1a: Select spawn backend                                 │
+│  codex_subagents | claude_teams | background_fallback           │
+│  Team lead = spawner (this agent)                               │
 └─────────────────────────────────────────────────────────────────┘
                               │
             ┌─────────────────┴─────────────────┐
@@ -171,6 +194,39 @@ reads each judge's output file sequentially with the Read tool and synthesizes.
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+### Step 1b: Load Project Reviewer Config
+
+Check for project-level reviewer configuration before spawning judges:
+
+```bash
+REVIEWER_CONFIG=".agents/reviewer-config.md"
+if [ -f "$REVIEWER_CONFIG" ]; then
+    # Parse YAML frontmatter for reviewer list
+    # Example .agents/reviewer-config.md:
+    # ---
+    # reviewers:
+    #   - security-sentinel
+    #   - architecture-strategist
+    #   - code-simplicity-reviewer
+    # plan_reviewers:
+    #   - architecture-strategist
+    # skip_reviewers:
+    #   - performance-oracle
+    # ---
+    # Additional review context goes in the markdown body.
+fi
+```
+
+If `reviewer-config.md` exists:
+- Use `reviewers` list to select which judge perspectives to spawn
+- Use `plan_reviewers` for plan validation specifically
+- Use `skip_reviewers` to exclude perspectives even if preset includes them
+- Pass markdown body as additional context to all judges
+
+If no config exists, use defaults (current behavior unchanged).
+
+For schema details and an example, see `references/reviewer-config-example.md`.
+
 ### Graceful Degradation
 
 | Failure | Behavior |
@@ -186,6 +242,16 @@ reads each judge's output file sequentially with the Read tool and synthesizes.
 Timeout: 120s per agent (configurable via `--timeout=N` in seconds).
 
 **Minimum quorum:** At least 1 agent must respond for a valid council. If 0 agents respond, return error.
+
+### Effort Levels for Judges
+
+Use the effort command to optimize token spend per judge role:
+
+| Agent Role | Recommended Effort | Rationale |
+|------------|-------------------|-----------|
+| Judges (validate/research) | `low` | Judges review evidence, not implement — shallow reasoning suffices |
+| Explorers | `low` | Fast breadth-first scanning |
+| Chairman (consolidation) | `medium` | Needs balanced reasoning for consensus synthesis |
 
 ### Pre-Flight Checks
 
@@ -215,6 +281,10 @@ The packet sent to each agent. **File contents are included inline** — agents 
 
 If `.agents/ao/environment.json` exists, include it in the context packet so judges can reason about available tools and environment state.
 
+Judge prompt boundary:
+- Do NOT include `.agents/` references in judge prompts.
+- Do NOT instruct judges to search `.agents/` directories. Judges operate on the council packet only.
+
 ```json
 {
   "council_packet": {
@@ -240,7 +310,8 @@ If `.agents/ao/environment.json` exists, include it in the context packet so jud
       "prior_decisions": [
         "Using JWT, not sessions",
         "Refresh tokens required"
-      ]
+      ],
+      "empirical_results": "(optional) test output, CLI flag verification, or Wave 0 findings — include when evaluating feasibility"
     },
     "perspective": "skeptic (only when --preset or --perspectives used)",
     "perspective_description": "What could go wrong? (only when --preset or --perspectives used)",
@@ -252,6 +323,7 @@ If `.agents/ao/environment.json` exists, include it in the context packet so jud
         {
           "severity": "critical | significant | minor",
           "category": "security | architecture | performance | style",
+          "id": "(optional) Stable finding ID for cross-skill correlation (e.g., f-council-001)",
           "description": "What was found",
           "location": "file:line if applicable",
           "recommendation": "How to address",
@@ -261,11 +333,17 @@ If `.agents/ao/environment.json` exists, include it in the context packet so jud
         }
       ],
       "recommendation": "Concrete next step",
-      "schema_version": 2
+      "schema_version": 3
     }
   }
 }
 ```
+
+### Empirical Evidence Rule
+
+When evaluating **implementation feasibility** (e.g., "will this CLI flag work?", "can these tools coexist?"), always include empirical test results in `context.empirical_results`. Judges reasoning from assumptions produce false verdicts — a Codex judge once gave a false FAIL on `-s read-only` because Wave 0 test output was not in the packet. The rule: **run the experiment first, then let judges evaluate the evidence.**
+
+Wrapper skills (`/vibe`, `/pre-mortem`) should include relevant test output when the council target involves tooling behavior, flag combinations, or runtime compatibility.
 
 ---
 
@@ -347,6 +425,19 @@ Disagreement handling:
 
 All reports write to `.agents/council/YYYY-MM-DD-<type>-<target>.md`.
 
+### Finding Extraction (Flywheel Closure)
+
+After writing the council report, extract significant findings for the knowledge flywheel:
+
+1. **Skip if PASS.** Nothing to extract from successful reviews.
+2. **Filter findings:** Keep only severity >= `significant` AND confidence >= `MEDIUM`.
+3. **Classify each:** `learning` (process gap), `finding` (code/design defect), or `rule` (repeatable constraint).
+4. **Compute dedup key:** `sha256(finding_description)`. Skip if already in the file.
+5. **Append** one JSON line per finding to `.agents/council/extraction-candidates.jsonl`.
+
+Candidates are staged for human review or `/post-mortem` consumption — they are **never** auto-promoted to MEMORY.md.
+
+See [references/finding-extraction.md](references/finding-extraction.md) for the full schema and classification heuristics.
 
 ---
 
@@ -361,11 +452,13 @@ All reports write to `.agents/council/YYYY-MM-DD-<type>-<target>.md`.
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `COUNCIL_TIMEOUT` | 120 | Agent timeout in seconds |
-| `COUNCIL_CODEX_MODEL` | (user's default) | Override Codex model for --mixed. Omit `-m` flag to use the user's configured default. |
+| `COUNCIL_CODEX_MODEL` | gpt-5.3-codex | Override Codex model for --mixed. Set explicitly to pin Codex judge behavior; omit to use user's configured default. |
 | `COUNCIL_CLAUDE_MODEL` | sonnet | Claude model for judges (sonnet default — use opus for high-stakes via `--profile=thorough`) |
 | `COUNCIL_EXPLORER_MODEL` | sonnet | Model for explorer sub-agents |
 | `COUNCIL_EXPLORER_TIMEOUT` | 60 | Explorer timeout in seconds |
 | `COUNCIL_R2_TIMEOUT` | 90 | Maximum wait time for R2 debate completion after sending debate messages. Shorter than R1 since judges already have context. |
+| `AGENTOPS_MODEL_TIER` | (none) | Global default model tier. Overridden by skill-specific env vars and explicit flags. |
+| `AGENTOPS_COUNCIL_MODEL_TIER` | (none) | Council-specific model tier override. Maps to COUNCIL_CLAUDE_MODEL via tier→profile mapping. |
 
 ### Flags
 
@@ -382,7 +475,8 @@ All reports write to `.agents/council/YYYY-MM-DD-<type>-<target>.md`.
 | `--explorers=N` | Explorer sub-agents per judge (default: 0, max: 5). Max effective value depends on judge count. Total agents capped at 12. |
 | `--explorer-model=M` | Override explorer model (default: sonnet) |
 | `--technique=<name>` | Brainstorm technique (scamper, six-hats, reverse). Case-insensitive. Only applicable to brainstorm mode — error if combined with validate/research. If omitted, unstructured brainstorm (current behavior). See `references/brainstorm-techniques.md`. |
-| `--profile=<name>` | Model quality profile (thorough, balanced, fast). Error if unrecognized name. Overridden by `COUNCIL_CLAUDE_MODEL` env var (highest priority), then by explicit `--count`/`--deep`/`--mixed`. See `references/model-profiles.md`. |
+| `--profile=<name>` | Model quality profile (balanced, budget, fast, inherit, quality, thorough). Error if unrecognized name. Overridden by `COUNCIL_CLAUDE_MODEL` env var (highest priority), then by explicit `--count`/`--deep`/`--mixed`. See `references/model-profiles.md`. |
+| `--tier=<name>` | Cost tier alias for --profile (quality, balanced, budget). Maps to profile names. See `references/model-profiles.md`. |
 
 ---
 
@@ -399,7 +493,7 @@ All reports write to `.agents/council/YYYY-MM-DD-<type>-<target>.md`.
 /council --deep --preset=architecture research the auth system  # 3 judges with architecture personas
 /council --mixed validate this plan                             # 3 Claude + 3 Codex
 /council --deep --explorers=3 research upgrade patterns         # 12 agents (3 judges x 4)
-/council --preset=security-audit --deep validate the API        # attacker, defender, compliance
+/council --preset=security-audit --deep validate the API        # attacker, defender, compliance, web-security
 /council --preset=doc-review validate README.md                  # 4 doc judges with named perspectives
 /council brainstorm caching strategies for the API              # 2 judges explore options
 /council --technique=scamper brainstorm API improvements               # structured SCAMPER brainstorm
@@ -465,17 +559,17 @@ All reports write to `.agents/council/YYYY-MM-DD-<type>-<target>.md`.
 
 ---
 
-## Migration from /judge
+## Migration from judge
 
-`/council` replaces `/judge`. Migration:
+`/council` replaces the old judge skill. Migration:
 
 | Old | New |
 |-----|-----|
-| `/judge recent` | `/council validate recent` |
-| `/judge 2 opus` | `/council recent` (default) |
-| `/judge 3 opus` | `/council --deep recent` |
+| judge recent | `/council validate recent` |
+| judge 2 opus | `/council recent` (default) |
+| judge 3 opus | `/council --deep recent` |
 
-The `/judge` skill is deprecated. Use `/council`.
+**Deprecated:** The /judge skill was replaced by `/council` in v2.8. The judge skill will be removed in v3.0. Migrate all judge invocations to `/council`.
 
 ---
 
@@ -531,3 +625,32 @@ Judge names: `judge-{N}` for independent judges (e.g., `judge-1`, `judge-2`), or
 - `skills/swarm/SKILL.md` — Multi-agent orchestration
 - `skills/standards/SKILL.md` — Language-specific coding standards
 - `skills/research/SKILL.md` — Codebase exploration (complementary to council research mode)
+
+## Reference Documents
+
+- [references/model-routing.md](references/model-routing.md)
+- [references/backend-background-tasks.md](references/backend-background-tasks.md)
+- [references/backend-claude-teams.md](references/backend-claude-teams.md)
+- [references/backend-codex-subagents.md](references/backend-codex-subagents.md)
+- [references/backend-inline.md](references/backend-inline.md)
+- [references/brainstorm-techniques.md](references/brainstorm-techniques.md)
+- [references/claude-code-latest-features.md](references/claude-code-latest-features.md)
+- [references/model-profiles.md](references/model-profiles.md)
+- [references/presets.md](references/presets.md)
+- [references/quick-mode.md](references/quick-mode.md)
+- [references/ralph-loop-contract.md](references/ralph-loop-contract.md)
+- [references/agent-prompts.md](references/agent-prompts.md)
+- [references/cli-spawning.md](references/cli-spawning.md)
+- [references/debate-protocol.md](references/debate-protocol.md)
+- [references/explorers.md](references/explorers.md)
+- [references/finding-extraction.md](references/finding-extraction.md)
+- [references/output-format.md](references/output-format.md)
+- [references/personas.md](references/personas.md)
+- [references/caching-guidance.md](references/caching-guidance.md)
+- [references/reviewer-config-example.md](references/reviewer-config-example.md)
+- [../shared/references/backend-background-tasks.md](../shared/references/backend-background-tasks.md)
+- [../shared/references/backend-claude-teams.md](../shared/references/backend-claude-teams.md)
+- [../shared/references/backend-codex-subagents.md](../shared/references/backend-codex-subagents.md)
+- [../shared/references/backend-inline.md](../shared/references/backend-inline.md)
+- [../shared/references/claude-code-latest-features.md](../shared/references/claude-code-latest-features.md)
+- [../shared/references/ralph-loop-contract.md](../shared/references/ralph-loop-contract.md)

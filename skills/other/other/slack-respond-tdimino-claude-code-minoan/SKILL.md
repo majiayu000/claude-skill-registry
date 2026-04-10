@@ -20,6 +20,8 @@ If not running, start it:
 cd ~/.claude/skills/slack/daemon && python3 slack_listen.py --bg
 ```
 
+**Note**: This skill loads soul.md via dynamic context injection (`!cat`), so it works independently of `/ensoul`. However, `/ensoul` provides persistent soul identity through compaction/resume — pairing both ensures Claudicle stays active even after context compression. `/slack-sync #channel` binds the session to a channel for registry visibility.
+
 ## Current Inbox
 
 !`source ~/.zshrc 2>/dev/null; python3 ~/.claude/skills/slack/scripts/slack_check.py 2>&1`
@@ -65,10 +67,10 @@ source ~/.zshrc 2>/dev/null; python3 ~/.claude/skills/slack/scripts/slack_format
 
 Post an italic thinking message to Slack so the user sees Claudicle is processing. Save the returned timestamp (`ts`) for deletion later.
 
-**Base URL**: `https://github.com/tdimino/claude-code-minoan`
+**Base URL**: `https://github.com/aldea-ai/Claude-Code-Aldea`
 
 ```bash
-source ~/.zshrc 2>/dev/null; python3 ~/.claude/skills/slack/scripts/slack_post.py "CHANNEL" "_⚙️ <https://github.com/tdimino/claude-code-minoan|processing>..._" --thread "THREAD_TS" --json
+source ~/.zshrc 2>/dev/null; python3 ~/.claude/skills/slack/scripts/slack_post.py "CHANNEL" "_⚙️ <https://github.com/aldea-ai/Claude-Code-Aldea|processing>..._" --thread "THREAD_TS" --json
 ```
 
 The `--json` flag returns the message timestamp. Parse the `ts` field from the output — you will need it in Step 5 to delete this message.
@@ -77,12 +79,12 @@ If the message requires research (Exa search, Firecrawl, file reading), post add
 
 | Situation | Thinking Message |
 |-----------|-----------------|
-| Using Exa search | `_🔍 <https://github.com/tdimino/claude-code-minoan\|searching exa>: "query"..._` |
-| Using Firecrawl | `_🌐 <https://github.com/tdimino/claude-code-minoan\|fetching> URL..._` |
-| Reading files | `_📄 <https://github.com/tdimino/claude-code-minoan\|reading> path/to/file..._` |
-| Deep reasoning | `_🧠 <https://github.com/tdimino/claude-code-minoan\|pondering>..._` |
-| Updating memory | `_💾 <https://github.com/tdimino/claude-code-minoan\|updating user model>..._` |
-| Reacting to message | `_✨ <https://github.com/tdimino/claude-code-minoan\|reacting>..._` |
+| Using Exa search | `_🔍 <https://github.com/aldea-ai/Claude-Code-Aldea\|searching exa>: "query"..._` |
+| Using Firecrawl | `_🌐 <https://github.com/aldea-ai/Claude-Code-Aldea\|fetching> URL..._` |
+| Reading files | `_📄 <https://github.com/aldea-ai/Claude-Code-Aldea\|reading> path/to/file..._` |
+| Deep reasoning | `_🧠 <https://github.com/aldea-ai/Claude-Code-Aldea\|pondering>..._` |
+| Updating memory | `_💾 <https://github.com/aldea-ai/Claude-Code-Aldea\|updating user model>..._` |
+| Reacting to message | `_✨ <https://github.com/aldea-ai/Claude-Code-Aldea\|reacting>..._` |
 
 Keep track of ALL thinking message timestamps for cleanup.
 

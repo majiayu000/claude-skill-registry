@@ -1,6 +1,14 @@
 ---
 name: oss-docs
 description: 'Scaffold and audit OSS documentation packs for open source projects. Triggers: "add OSS docs", "setup contributing guide", "add changelog", "prepare for open source", "add AGENTS.md", "OSS documentation".'
+skill_api_version: 1
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: topic
 license: MIT
 compatibility: Requires git
 metadata:
@@ -8,7 +16,8 @@ metadata:
   version: "1.0.0"
   tier: contribute
   internal: false
-allowed-tools: Read Write Edit Glob Grep Bash
+allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+output_contract: "CONTRIBUTING.md, CHANGELOG.md, AGENTS.md"
 ---
 
 # OSS Documentation Skill
@@ -173,7 +182,7 @@ This project uses **<tool>** for <purpose>. Run `<onboard-cmd>` to get started.
 **DON'T:**
 - Overwrite existing content without confirmation
 - Generate code documentation (use `$doc`)
-- Create CI/CD files (use `$golden-init`)
+- Create CI/CD files (out of scope — configure CI/CD separately)
 
 ## Examples
 
@@ -203,3 +212,9 @@ This project uses **<tool>** for <purpose>. Run `<onboard-cmd>` to get started.
 | Existing docs conflict | Legacy text diverges from current behavior | Reconcile with current code/process and mark obsolete sections |
 | Contributor path unclear | Missing setup/testing guidance | Add explicit quickstart and validation commands |
 | Open-source handoff incomplete | Session-end workflow not reflected | Add landing-the-plane and release hygiene steps |
+
+## Reference Documents
+
+- [references/beads-patterns.md](references/beads-patterns.md)
+- [references/documentation-tiers.md](references/documentation-tiers.md)
+- [references/project-types.md](references/project-types.md)

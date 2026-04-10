@@ -41,9 +41,13 @@ uv run ~/.claude/skills/linkedin-export/scripts/li_parse.py <zip> --output /cust
 
 **Output**: `~/.claude/skills/linkedin-export/data/parsed.json`
 
-Parses: messages, connections, profile, positions, education, skills, endorsements, invitations, recommendations, shares, reactions, certifications.
+Parses 23 CSV types:
 
-Auto-detects CSV column names (case-insensitive) to handle LinkedIn format changes between exports.
+**Core**: messages, connections, profile, positions, education, skills, endorsements, invitations, recommendations, shares, reactions, certifications
+
+**Extended**: comments (548), projects (3), honors (2), organizations (3), volunteering (1), languages (9), events (12), member_follows (828), job_applications (443, merged from multiple files), recommendations_given (3), inferences (4)
+
+Auto-detects CSV column names (case-insensitive), handles LinkedIn's preamble format (Connections.csv), and merges split files (Job Applications).
 
 ---
 
@@ -148,23 +152,28 @@ uv run ~/.claude/skills/linkedin-export/scripts/li_ingest.py --prepare-only
 uv run ~/.claude/skills/linkedin-export/scripts/li_ingest.py --rebuild
 ```
 
-**Collection**: `linkedin-tdimino` (fixed/600/100 chunking, BM25-heavy hybrid search)
+**Collection**: `linkedin-tdimino` (fixed/600/100 chunking, reranker enabled, 13 docs, 2.14 MB)
 
-**Query examples**:
+**Query (default: retrieve-only, Claude synthesizes)**:
 ```bash
-rlama run linkedin-tdimino --query "What did I discuss with [person]?"
-rlama run linkedin-tdimino --query "Who works at [company]?"
-rlama run linkedin-tdimino --query "What are my top skills?"
+# Retrieve raw chunks — Claude reads and synthesizes (best quality)
+python3 ~/.claude/skills/rlama/scripts/rlama_retrieve.py linkedin-tdimino "What projects has Tom built?" -k 10
+
+# Fallback: local LLM answers (only without Claude)
+rlama run linkedin-tdimino --query "Who works at Google?"
 ```
 
-**RLAMA document structure**:
+**RLAMA document structure (13 files)**:
 - `messages-conversations-{a-f,g-l,m-r,s-z}.md` — Conversations grouped alphabetically
 - `connections-companies.md` — Connections by company
 - `connections-timeline.md` — Connections by year
 - `profile-positions-education.md` — Resume data
 - `endorsements-skills.md` — Skills and endorsements
 - `shares-reactions.md` — Posts and activity
-- `INDEX.md` — Collection metadata
+- `comments-activity.md` — 548 comments with dates and links
+- `projects-honors-volunteering.md` — Projects, honors, volunteering, organizations
+- `metadata-languages-events-follows.md` — Languages, events, follows, job applications, recommendations given, inferences
+- `INDEX.md` — Collection metadata and counts
 
 ---
 
@@ -172,22 +181,33 @@ rlama run linkedin-tdimino --query "What are my top skills?"
 
 See `references/linkedin-export-format.md` for complete CSV column documentation.
 
-**Key files in the LinkedIn export ZIP**:
+**Key files in the LinkedIn export ZIP (23 parsed)**:
 
 | CSV | Contents |
 |-----|----------|
 | `messages.csv` | All messages and InMail |
-| `Connections.csv` | 1st-degree connections |
+| `Connections.csv` | 1st-degree connections (preamble format) |
 | `Profile.csv` | Profile data |
 | `Positions.csv` | Work history |
 | `Education.csv` | Education |
 | `Skills.csv` | Listed skills |
-| `Endorsement_Received_Info.csv` | Endorsements |
+| `Endorsement_Received_Info.csv` | Endorsements received |
 | `Invitations.csv` | Connection requests |
-| `Recommendations_Received.csv` | Recommendations |
+| `Recommendations_Received.csv` | Recommendations received |
 | `Shares.csv` | Posts and shares |
 | `Reactions.csv` | Post reactions |
 | `Certifications.csv` | Certifications |
+| `Comments.csv` | Comments on posts |
+| `Projects.csv` | Projects (Bazaar, Dream Daimon, etc.) |
+| `Honors.csv` | Awards and hackathon wins |
+| `Organizations.csv` | Clubs and groups |
+| `Volunteering.csv` | Volunteer roles |
+| `Languages.csv` | Language proficiencies |
+| `Events.csv` | LinkedIn events |
+| `Member_Follows.csv` | People/companies followed |
+| `Jobs/Job Applications*.csv` | Job applications (split across multiple files) |
+| `Recommendations_Given.csv` | Recommendations written |
+| `Inferences_about_you.csv` | LinkedIn's inferences |
 
 ---
 

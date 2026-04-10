@@ -150,7 +150,7 @@ Check each file for content that breaks prefix-based prompt caching:
 | 3 | No redundant docs | No API docs, no full architecture description | Found content discoverable from code |
 | 4 | Has hard boundaries | Found `NEVER\|ALWAYS\|MUST\|DO NOT` rules | Missing explicit prohibitions |
 | 5 | Compact Instructions section | `## Compact Instructions` present with preservation priorities | Missing — sessions lose decisions on /compact |
-| 6 | MCP Tool Preferences | Table mapping built-in → MCP tools | Missing — agents use suboptimal tools |
+| 6 | MCP Tool Preferences | Canonical policy section matches `shared/references/mcp_tool_preferences.md` | Missing or outdated — agents use suboptimal tools |
 | 7 | No tool output examples | No large code blocks or command outputs | Found — bloats every turn |
 
 ### Phase 5b: Auto-fix Fixable Issues
@@ -166,7 +166,7 @@ For each FAIL in Phase 5, attempt auto-fix before reporting:
 | # | Issue | Fix | Skip when |
 |---|-------|-----|----------|
 | 5 | Missing Compact Instructions | Insert `## Compact Instructions` section before `## Navigation` | `dry_run: true` |
-| 6 | Missing MCP Tool Preferences | Insert table from hex-line output-style template | `dry_run: true` or hex-line not registered |
+| 6 | Missing or outdated MCP Tool Preferences | Insert or replace section from `shared/references/mcp_tool_preferences.md` | `dry_run: true` |
 | 1 | Missing build/test commands | WARN only (project-specific, cannot auto-generate) | -- |
 | 2 | Abstract principles found | WARN only (requires human judgment) | -- |
 
@@ -188,7 +188,7 @@ Compare content across all found instruction files:
 
 | Check | Pass | Fail |
 |-------|------|------|
-| MCP Tool Preferences | Same table in all files | Inconsistent content across files |
+| MCP Tool Preferences | Same canonical policy section in all files | Inconsistent content across files |
 | Critical Rules | Same core rules | Divergent rules |
 | Build/test commands | Same commands | Different or missing |
 | Structural sections | Same section order | Inconsistent structure |

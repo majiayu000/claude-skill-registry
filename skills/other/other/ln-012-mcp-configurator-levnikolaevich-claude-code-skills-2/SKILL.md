@@ -334,18 +334,19 @@ Scan project commands/skills to replace built-in tools with hex-line equivalents
 
 ### Phase 6: Update Instruction Files [CRITICAL]
 
-Ensure instruction files have MCP Tool Preferences section.
+Ensure instruction files have the canonical MCP Tool Preferences policy section.
 
-**MANDATORY READ:** Load `mcp/hex-line-mcp/output-style.md` -> use its `# MCP Tool Preferences` section as template.
+**MANDATORY READ:** Load `skills-catalog/shared/references/mcp_tool_preferences.md` -> use it as the SSOT for instruction-file MCP policy.
 
 **Steps:**
 
 1. For each file: CLAUDE.md, GEMINI.md, AGENTS.md (if exists in project)
 2. Search for `## MCP Tool Preferences` or `### MCP Tool Preferences`
 3. If MISSING -> insert before `## Navigation` (or at end of conventions/rules block)
-4. If PRESENT but OUTDATED -> update table rows to match template
-5. For GEMINI.md: adapt tool names (`Read` -> `read_file`, `Edit` -> `edit_file`, `Grep` -> `search_files`)
-6. Preserve the template's guidance about `base_revision`, `verify`, retry helpers, and preserving existing file line endings
+4. If PRESENT but OUTDATED -> replace the full section so it matches the shared reference, not just the table rows
+5. Preserve the shared policy's hard boundaries: MCP-first for repo search/read/edit, shell and built-ins as explicit fallback only
+6. For GEMINI.md: adapt agent-specific tool names only where needed, but preserve the same policy meaning and fallback rules
+7. Preserve the policy guidance about `base_revision`, `verify`, retry helpers, summary-first search, and avoiding shell repo-wide search/read patterns when MCP covers the task
 
 **Skip conditions:**
 

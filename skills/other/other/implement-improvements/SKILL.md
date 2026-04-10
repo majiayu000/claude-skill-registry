@@ -7,11 +7,7 @@ description: "Plan and implement improvements from the .turbo/improvements.md ba
 
 Validate and implement improvements from `.turbo/improvements.md`.
 
-## Step 1: Run `/plan-style` Skill
-
-Run the `/plan-style` skill to load planning conventions.
-
-## Step 2: Read the Backlog
+## Step 1: Read the Backlog
 
 Read `.turbo/improvements.md`. If the file does not exist, tell the user there are no improvements to implement and stop.
 
@@ -23,7 +19,7 @@ Parse all entries, extracting for each:
 - **Why** (rationale)
 - **Noted** (date)
 
-## Step 3: Validate Against Current Codebase
+## Step 2: Validate Against Current Codebase
 
 Improvements can go stale: files get renamed, code gets refactored, issues get fixed as side effects of other work. Before planning, validate each improvement.
 
@@ -40,7 +36,7 @@ Classify each entry as:
 
 When in doubt, classify as Active. The cost of re-examining a resolved issue is low; dismissing a valid improvement is high.
 
-## Step 4: Report Findings
+## Step 3: Report Findings
 
 Present a summary to the user:
 
@@ -64,12 +60,12 @@ Use `AskUserQuestion` to confirm:
 2. Whether to remove stale entries from the backlog
 3. Resolution for any unclear items
 
-## Step 5: Plan
+## Step 4: Run `/turboplan` Skill
 
-Design an implementation plan that addresses all confirmed improvements together, looking for:
+Run the `/turboplan` skill with the confirmed active improvements as the task description. Include these planning constraints:
 
-- **Synergies** — Improvements touching the same files or areas should be grouped
-- **Dependencies** — Order improvements so that foundational changes come first
+- **Synergies** — Group improvements that touch the same files or areas
+- **Dependencies** — Order so foundational changes come first
 - **Conflicts** — Flag if two improvements contradict each other
 
-The plan must include a step to clean up `.turbo/improvements.md`: remove implemented and stale entries, keep skipped or deferred ones. Delete the file if all entries are removed.
+Tell turboplan that the plan must include a final implementation step: "Clean up `.turbo/improvements.md` — remove implemented and stale entries, keep skipped or deferred ones, delete the file if all entries are removed."

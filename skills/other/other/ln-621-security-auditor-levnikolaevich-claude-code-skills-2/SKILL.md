@@ -1,7 +1,7 @@
 ---
 name: ln-621-security-auditor
 description: "Checks hardcoded secrets, SQL injection, XSS, insecure deps, input validation. Use when auditing security."
-allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__find_dataflows
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__trace_dataflow
 license: MIT
 ---
 
@@ -15,13 +15,12 @@ Specialized worker auditing security vulnerabilities in codebase.
 
 ## Purpose & Scope
 
-- **Worker in ln-620 coordinator pipeline** - invoked by ln-620-codebase-auditor
 - Audit codebase for **security vulnerabilities** (Category 1: Critical Priority)
 - Scan for hardcoded secrets, SQL injection, XSS, insecure dependencies, missing input validation
 - Return structured findings to coordinator with severity, location, effort, recommendations
 - Calculate compliance score (X/10) for Security category
 
-## Inputs (from Coordinator)
+## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
@@ -41,7 +40,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `principles`, `cod
    - Validation: internal service-to-service endpoint -> downgrade. Public API -> confirmed
 4) **Collect Findings:** Record confirmed violations with severity, location (file:line), effort estimate (S/M/L), recommendation
 5) **Calculate Score:** Count violations by severity, calculate compliance score (X/10)
-6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/621-security.md` in single Write call
+6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/ln-621--global.md` in single Write call
 7) **Return Summary:** Return minimal summary to coordinator (see Output Format)
 
 ## Audit Rules (Priority: CRITICAL)
@@ -137,17 +136,13 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `principles`, `cod
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/621-security.md` with `category: "Security"` and checks: hardcoded_secrets, sql_injection, xss_vulnerabilities, insecure_dependencies, missing_input_validation.
+Write report to `{output_dir}/ln-621--global.md` with `category: "Security"` and checks: hardcoded_secrets, sql_injection, xss_vulnerabilities, insecure_dependencies, missing_input_validation.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
-```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/621-security.md
-Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
-```
+Standalone mode still writes the same JSON summary to a worker-owned run-scoped artifact path per shared contract.
 
 ## Critical Rules
 
@@ -167,7 +162,7 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - [ ] All 5 security checks completed (secrets, SQL injection, XSS, deps, validation)
 - [ ] Findings collected with severity, location, effort, recommendation
 - [ ] Score calculated using penalty algorithm
-- [ ] Report written to `{output_dir}/621-security.md` (atomic single Write call)
+- [ ] Report written to `{output_dir}/ln-621--global.md` (atomic single Write call)
 - [ ] Summary written per contract
 
 ## Reference Files

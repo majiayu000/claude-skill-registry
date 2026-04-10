@@ -1,6 +1,7 @@
 ---
 name: maz-ui
 description: Maz-UI v4 - Modern Vue & Nuxt component library with 50+ standalone components, composables, directives, theming, i18n, and SSR support. Use when building Vue/Nuxt applications with forms, dialogs, tables, animations, or need responsive design system with dark mode.
+license: MIT
 ---
 
 # Maz-UI v4 - Vue & Nuxt Component Library

@@ -1,15 +1,18 @@
 ---
 name: codex-team
 description: 'Use when you have 2+ tasks that Codex agents should execute. Runtime-native: Codex sub-agents when available, Codex CLI fallback otherwise. Handles file conflicts via merge/wave strategies. Triggers: "codex team", "spawn codex", "codex agents", "use codex for", "codex fix".'
+skill_api_version: 1
+context: fork
 metadata:
   tier: cross-vendor
+output_contract: ".agents/swarm/results/*.json"
 ---
 
 # Codex Team
 
 The lead orchestrates, Codex agents execute. Each agent gets one focused task. The team lead prevents file conflicts before spawning — the orchestrator IS the lock manager.
 
-For Claude-runtime feature compatibility (agents/hooks/worktree/settings), use `skills/shared/references/claude-code-latest-features.md` when this skill falls back to `/swarm`.
+For Claude-runtime feature compatibility (agents/hooks/worktree/settings), use the shared contract at `skills/shared/references/claude-code-latest-features.md`, mirrored locally at `references/claude-code-latest-features.md`, when this skill falls back to `/swarm`.
 
 ## When to Use
 
@@ -38,20 +41,21 @@ if ! which codex > /dev/null 2>&1; then
   # Fallback: use /swarm
 fi
 
-# Model availability test
-CODEX_MODEL="${CODEX_MODEL:-gpt-5.3-codex}"
-if ! codex exec --full-auto -m "$CODEX_MODEL" -C "$(pwd)" "echo ok" > /dev/null 2>&1; then
-  echo "Codex model $CODEX_MODEL unavailable. Falling back to /swarm."
+# Model availability test (uses the user's configured Codex default)
+if ! codex exec --full-auto -C "$(pwd)" "echo ok" > /dev/null 2>&1; then
+  echo "Default Codex model unavailable. Falling back to /swarm."
 fi
 ```
 
 ## Canonical Command
 
 ```bash
-codex exec --full-auto -m "gpt-5.3-codex" -C "$(pwd)" -o <output-file> "<prompt>"
+codex exec --full-auto -C "$(pwd)" -o <output-file> "<prompt>"
 ```
 
-Flag order: `--full-auto` -> `-m` -> `-C` -> `-o` -> prompt. Always this order.
+Uses the user's default Codex model. Add `-m "<model>"` before `-C` only when you intentionally want to pin a specific model.
+
+Flag order: `--full-auto` -> `-C` -> `-o` -> prompt (insert `-m` before `-C` only when overriding the model).
 
 **Valid flags:** `--full-auto`, `-m`, `-C`, `-o`, `--json`, `--output-schema`, `--add-dir`, `-s`
 
@@ -62,7 +66,7 @@ Flag order: `--full-auto` -> `-m` -> `-C` -> `-o` -> prompt. Always this order.
 When tasks span multiple repos/directories, use `--add-dir` to grant access:
 
 ```bash
-codex exec --full-auto -m gpt-5.3-codex -C "$(pwd)" --add-dir /path/to/other/repo -o output.md "prompt"
+codex exec --full-auto -C "$(pwd)" --add-dir /path/to/other/repo -o output.md "prompt"
 ```
 
 The `--add-dir` flag is repeatable for multiple additional directories.
@@ -72,7 +76,7 @@ The `--add-dir` flag is repeatable for multiple additional directories.
 Add `--json` to stream JSONL events to stdout for real-time monitoring:
 
 ```bash
-codex exec --full-auto --json -m gpt-5.3-codex -C "$(pwd)" -o output.md "prompt" 2>/dev/null
+codex exec --full-auto --json -C "$(pwd)" -o output.md "prompt" 2>/dev/null
 ```
 
 Key events:
@@ -158,9 +162,9 @@ spawn_agent(message="Fix log rotation in pkg/log.go:rotateLogFile...")
 Codex CLI backend:
 
 ```
-Bash(command='codex exec --full-auto -m "gpt-5.3-codex" -C "$(pwd)" -o .agents/codex-team/auth-fix.md "Fix the null check in pkg/auth.go:validateToken around line 89..."', run_in_background=true)
-Bash(command='codex exec --full-auto -m "gpt-5.3-codex" -C "$(pwd)" -o .agents/codex-team/config-fix.md "Add timeout field to internal/config.go:Config struct..."', run_in_background=true)
-Bash(command='codex exec --full-auto -m "gpt-5.3-codex" -C "$(pwd)" -o .agents/codex-team/logging-fix.md "Fix log rotation in pkg/log.go:rotateLogFile..."', run_in_background=true)
+Bash(command='codex exec --full-auto -C "$(pwd)" -o .agents/codex-team/auth-fix.md "Fix the null check in pkg/auth.go:validateToken around line 89..."', run_in_background=true)
+Bash(command='codex exec --full-auto -C "$(pwd)" -o .agents/codex-team/config-fix.md "Add timeout field to internal/config.go:Config struct..."', run_in_background=true)
+Bash(command='codex exec --full-auto -C "$(pwd)" -o .agents/codex-team/logging-fix.md "Fix log rotation in pkg/log.go:rotateLogFile..."', run_in_background=true)
 ```
 
 **Strategy: Merge (same file)**
@@ -171,7 +175,7 @@ Combine all fixes into a single agent prompt:
 spawn_agent(message="Fix these 3 issues in cmd/zeus.go: (1) rename spec_path to spec_location in QUEST_REQUEST payload (2) remove beads field (3) fix dispatch counter increment location")
 
 # CLI equivalent:
-Bash(command='codex exec --full-auto -m "gpt-5.3-codex" -C "$(pwd)" -o .agents/codex-team/zeus-fixes.md \
+Bash(command='codex exec --full-auto -C "$(pwd)" -o .agents/codex-team/zeus-fixes.md \
   "Fix these 3 issues in cmd/zeus.go: \
    (1) Line 245: rename spec_path to spec_location in QUEST_REQUEST payload \
    (2) Line 250: remove the spurious beads field from the payload \
@@ -271,88 +275,6 @@ For multi-wave Wave 2+ prompts, also include:
 - **Timeout:** 2 minutes default per agent. Increase with `timeout` param for larger tasks
 - **Max waves:** 3 recommended. If you need more, reconsider task decomposition
 
-## Team Runner Backend (Headless Orchestration)
-
-For headless batch execution of multiple Codex agents with structured output, use the team-runner script. This is the recommended backend when you need deterministic orchestration without interactive sessions.
-
-### When to Use Team Runner
-
-- Headless CI/CD or automation contexts
-- Batch execution where all agents run from a single spec file
-- When you need structured JSONL event monitoring and token tracking
-- When you need retry logic and consolidated reporting
-
-### Team Spec Format
-
-Create a JSON spec file conforming to `lib/schemas/team-spec.json`:
-
-```json
-{
-  "team_id": "my-team-001",
-  "repo_path": "/path/to/repo",
-  "agents": [
-    {
-      "name": "fix-auth",
-      "prompt": "Fix the null check in pkg/auth.go:validateToken around line 89",
-      "files": ["pkg/auth.go"],
-      "output_file": "auth-fix.json",
-      "sandbox_level": "workspace-write"
-    },
-    {
-      "name": "fix-config",
-      "prompt": "Add timeout field to internal/config.go:Config struct",
-      "files": ["internal/config.go"],
-      "output_file": "config-fix.json",
-      "sandbox_level": "read-only"
-    }
-  ]
-}
-```
-
-### Running
-
-```bash
-# Execute team
-bash lib/scripts/team-runner.sh path/to/team-spec.json
-
-# Dry run (shows commands without executing)
-TEAM_RUNNER_DRY_RUN=1 bash lib/scripts/team-runner.sh path/to/team-spec.json
-```
-
-### Components
-
-| Component | Path | Purpose |
-|-----------|------|---------|
-| Team runner | `lib/scripts/team-runner.sh` | Orchestrator: pre-flight, spawn, validate, report |
-| Stream watcher | `lib/scripts/watch-codex-stream.sh` | JSONL event monitor with idle timeout detection |
-| Team spec schema | `lib/schemas/team-spec.json` | Input validation schema |
-| Worker output schema | `lib/schemas/worker-output.json` | Structured output schema (compatible with `--output-schema`) |
-
-### Features
-
-- **Pre-flight checks:** Validates codex, jq, git availability; sets `BEADS_NO_DAEMON=1`
-- **JSONL event watching:** Monitors `turn.completed` events, tracks token usage, detects idle agents
-- **Retry logic:** Up to 3 attempts per failed agent with context injection
-- **Sandbox mapping:** `workspace-write` -> `--full-auto`, `read-only` -> `-s read-only`, `full-access` -> `-s danger-full-access`
-- **Consolidated reporting:** Generates `team-report.md` with per-agent status, tokens, duration
-
-### Environment Variables
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `CODEX_MODEL` | `gpt-5.3-codex` | Model for all agents |
-| `CODEX_IDLE_TIMEOUT` | `60` | Seconds before idle timeout (exit 2) |
-| `TEAM_RUNNER_MAX_AGENTS` | `6` | Max concurrent agents |
-| `TEAM_RUNNER_DRY_RUN` | unset | Set to `1` for dry run |
-
-### Output
-
-Results are written to `.agents/teams/<team_id>/`:
-- `<agent-name>/output.json` — Agent output artifact
-- `<agent-name>/events.jsonl` — Raw JSONL event stream
-- `<agent-name>/status.json` — Watcher status (tokens, duration, exit code)
-- `team-report.md` — Consolidated team report
-
 ## Fallback
 
 If Codex is unavailable, delegate to `/swarm` which auto-selects the best available backend (native teams with messaging/redirect/graceful shutdown, or background tasks as last resort):
@@ -367,8 +289,8 @@ Skill(skill="swarm")
 
 | Item | Value |
 |------|-------|
-| Model | `gpt-5.3-codex` |
-| Command | `codex exec --full-auto -m "gpt-5.3-codex" -C "$(pwd)" -o <file> "prompt"` |
+| Model | User's configured Codex default (`-m "<model>"` to pin one) |
+| Command | `codex exec --full-auto -C "$(pwd)" -o <file> "prompt"` |
 | Output dir | `.agents/codex-team/` |
 | Max agents/wave | 6 recommended |
 | Timeout | 120s default |
@@ -428,7 +350,12 @@ Skill(skill="swarm")
 | Problem | Cause | Solution |
 |---------|-------|----------|
 | Codex CLI not found | `codex` not installed or not on PATH | Run `npm i -g @openai/codex` or use fallback `/swarm` |
-| Model `gpt-5.3-codex` unavailable | ChatGPT account, not API account | Use API account or switch to `gpt-4o` |
+| Default Codex model unavailable | Account/config mismatch or unsupported default | Verify `codex exec --full-auto -C "$(pwd)" "echo ok"` works, or pin a supported model with `-m "<model>"` |
 | Agents produce file conflicts | Multiple agents editing same file | Use file-target analysis and apply merge or multi-wave strategy |
 | Agent timeout with no output | Task too complex or vague prompt | Break into smaller tasks, add specific file:line instructions |
 | Output files empty or missing | `-o` path invalid or permission denied | Check `.agents/codex-team/` directory exists and is writable |
+
+## Reference Documents
+
+- [references/claude-code-latest-features.md](references/claude-code-latest-features.md)
+- [../shared/references/claude-code-latest-features.md](../shared/references/claude-code-latest-features.md)

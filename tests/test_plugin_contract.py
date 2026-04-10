@@ -9,7 +9,6 @@ if str(SCRIPTS_DIR) not in sys.path:
 
 import build_search_index  # noqa: E402
 import rebuild_registry  # noqa: E402
-import update_data_readme  # noqa: E402
 
 
 def test_load_plugins_reads_plugins_source(tmp_path):
@@ -226,37 +225,3 @@ def test_cleanup_orphan_metadata_removes_only_orphans(tmp_path):
     assert removed == 1
     assert (good_dir / "metadata.json").exists()
     assert not orphan_meta.exists()
-
-
-def test_update_data_readme_rewrites_archive_count_and_date(tmp_path):
-    archive_dir = tmp_path / "archive"
-    skill_a = archive_dir / "development" / "skill-a"
-    skill_b = archive_dir / "docs" / "skill-b"
-    skill_a.mkdir(parents=True)
-    skill_b.mkdir(parents=True)
-    (skill_a / "SKILL.md").write_text("# a", encoding="utf-8")
-    (skill_b / "SKILL.md").write_text("# b", encoding="utf-8")
-
-    readme = tmp_path / "README.md"
-    readme.write_text(
-        "\n".join(
-            [
-                "# Claude Skill Registry (Data)",
-                "",
-                "**Archive size**",
-                "- **162,170** `SKILL.md` files (as of 2026-02-05)",
-                "",
-            ]
-        ),
-        encoding="utf-8",
-    )
-
-    changed = update_data_readme.update_readme(
-        readme,
-        archive_dir,
-        as_of_date="2026-04-08",
-    )
-
-    updated = readme.read_text(encoding="utf-8")
-    assert changed is True
-    assert "- **2** `SKILL.md` files (as of 2026-04-08)" in updated

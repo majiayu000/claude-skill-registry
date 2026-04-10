@@ -15,7 +15,7 @@ Universal Epic management coordinator that handles both creation and replanning 
 
 ## Purpose
 
-Coordinates Epic creation (CREATE) and replanning (REPLAN) from scope decomposition, producing 3-7 Linear Projects with batch preview, auto-extraction from docs/HTML, and Decompose-First Pattern.
+Coordinates Epic creation (CREATE) and replanning (REPLAN) from scope decomposition. Discovery and research stay read-only until preview is approved; execution remains inline inside ln-210.
 
 ## When to Use This Skill
 
@@ -53,6 +53,11 @@ Phases:
 Decision handling:
 - preview/confirmation is runtime `PAUSED + pending_decision`
 - ln-210 writes final `epic-plan` summary for ln-200 when used as downstream coordinator
+
+Coordinator artifact flow:
+- execution remains inline inside ln-210
+- `PHASE_7_FINALIZE` writes the coordinator summary through `node shared/scripts/epic-planning-runtime/cli.mjs record-plan-summary`
+- managed parent flow stores the artifact at `.hex-skills/runtime-artifacts/runs/{parent_run_id}/epic-plan/{identifier}.json`
 
 ## Worker Invocation (MANDATORY)
 
@@ -108,9 +113,9 @@ Decision handling:
 
 Extract: `task_provider` = Task Management → Provider
 
-### Phase 1: Discovery & Research
+### Phase 1: Discovery
 
-**Objective:** Gather all necessary context before Epic decomposition.
+**Objective:** Gather the minimum context required to shape Epic boundaries before any preview or mutation.
 
 **Step 0: Resolve scopeDoc** (per input_resolution_pattern.md, adapted for scope):
 - IF args provided (scope description or doc path) → use args
@@ -126,7 +131,11 @@ Auto-discovers Team ID and Next Epic Number from `docs/tasks/kanban_board.md`:
 
 **MANDATORY READ:** Load `CLAUDE.md` — sections "Configuration Auto-Discovery" and "Linear Integration".
 
-**Step 2: Project Research**
+### Phase 2: Research
+
+**Objective:** Research only what changes Epic boundaries, Infra Epic need, or batch preview quality.
+
+**Step 1: Project Research**
 
 **Objective:** Research project documentation AND frontend code to understand context BEFORE asking user questions.
 
@@ -166,9 +175,9 @@ Auto-discovers Team ID and Next Epic Number from `docs/tasks/kanban_board.md`:
    - Merge domains from docs + HTML (deduplicate, consolidate similar)
    - Example: "User Auth" (from docs) + "Login" (from HTML) → "User Management"
 
-**Fallback:** If docs AND HTML missing → Skip to Phase 2, will ask user basic questions
+**Fallback:** If docs AND HTML missing → Skip to scope questioning; do not invent research-heavy detail
 
-**Step 3: Infrastructure Epic Decision**
+**Step 2: Infrastructure Epic Decision**
 
 **Objective:** Determine if Infrastructure Epic (Epic 0) should be proposed.
 
@@ -191,7 +200,7 @@ Auto-discovers Team ID and Next Epic Number from `docs/tasks/kanban_board.md`:
 
 **Decision:** Store YES/NO decision for use in Phase 2
 
-**Output from Phase 1:**
+**Output from Discovery + Research:**
 - Team ID, Next Epic Number
 - Project context (business goals, domains from docs + HTML, tech stack, infrastructure needs) - if found
 - Infrastructure Epic decision (YES/NO)
@@ -255,6 +264,8 @@ Type "confirm" to proceed, or modify the list
 - User modifies → Update domain list, show again
 
 **Output:** Approved Epic list (Epic 0-N or Epic 1-N) ready for next phase
+
+**Read-only preparation rule:** Domain extraction, HTML scanning, and Infrastructure Epic detection may be gathered up front. Do not move into creation/replan until preview is confirmed.
 
 ### Epic Quality Gate
 
@@ -551,9 +562,11 @@ Before completing work, verify ALL checkpoints:
   - Epic Story Counters row added
   - Epics Overview updated
 - [ ] Summary displayed with all Epic URLs
+- [ ] Coordinator `epic-plan` summary recorded during finalize
 
 **✅ Epic Replan Complete (Phase 5b - REPLAN only):**
 - **MANDATORY READ:** Load `references/replan_workflow.md` for full checklist
+- [ ] Coordinator `epic-plan` summary recorded during finalize
 
 **Output:** List of Linear Project URLs (Epic {N}: {Title}) + Next Epic Number value
 

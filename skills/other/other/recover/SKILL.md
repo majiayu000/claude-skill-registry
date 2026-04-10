@@ -1,14 +1,21 @@
 ---
 name: recover
-description: 'Post-compaction context recovery. Detects in-progress RPI and evolve sessions, loads knowledge, shows recent work and pending tasks. Triggers: "recover", "lost context", "where was I", "what was I working on".'
+description: 'Post-compaction context recovery. Detects in-progress RPI and evolve sessions, loads knowledge, shows recent work and pending tasks. In Codex v0.115.0+, native hooks handle lifecycle automatically; for older versions, it prefers the explicit hookless fallback path. Triggers: "recover", "lost context", "where was I", "what was I working on".'
+skill_api_version: 1
+context:
+  window: inherit
+  intent:
+    mode: none
+  intel_scope: none
 metadata:
   tier: session
   dependencies: []
+output_contract: "stdout: recovered context summary"
 ---
 
 # /recover — Context Recovery After Compaction
 
-> **Purpose:** Help you get back up to speed after Claude Code context compaction. Automatically detects in-progress work (RPI runs, evolve cycles), loads relevant knowledge, and summarizes what you were doing and what's next.
+> **Purpose:** Help you get back up to speed after context compaction. Automatically detects in-progress work (RPI runs, evolve cycles), loads relevant knowledge, summarizes what you were doing and what's next. Codex v0.115.0+ uses native hooks automatically; for older Codex versions, prefers the explicit hookless fallback path (`ao codex start`/`ao codex stop`).
 
 **YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
 
@@ -21,6 +28,8 @@ metadata:
 ```bash
 /recover              # Full recovery dashboard
 /recover --json       # Machine-readable JSON output
+ao codex status       # Codex hookless lifecycle health
+ao codex start        # Rebuild startup context explicitly in Codex
 ```
 
 ---
@@ -91,12 +100,32 @@ else
 fi
 ```
 
+**Call 6 — Codex Lifecycle (if available):**
+```bash
+if command -v ao &>/dev/null; then
+  echo "=== CODEX_STATUS ==="
+  ao codex status --json 2>/dev/null || echo "CODEX_STATUS=UNAVAILABLE"
+else
+  echo "AO_UNAVAILABLE"
+fi
+```
+
 ### Step 2: Load Context from Knowledge Base
 
 If RPI state detected, run:
 ```bash
 if command -v ao &>/dev/null; then
-  ao inject --apply-decay --format markdown --max-tokens 2000
+  ao lookup --query "rpi recovery context" --limit 5 2>/dev/null || true
+fi
+```
+
+**Apply retrieved knowledge:** If learnings are returned, check each for applicability to the recovery context. Cite applicable learnings by filename and record: `ao metrics cite "<path>" --type applied 2>/dev/null || true`
+
+If Codex hookless fallback mode is detected (pre-v0.115.0, no native hooks), also run:
+
+```bash
+if command -v ao &>/dev/null && { [ -n "${CODEX_THREAD_ID:-}" ] || [ "${CODEX_INTERNAL_ORIGINATOR_OVERRIDE:-}" = "Codex Desktop" ]; }; then
+  ao codex start --no-maintenance 2>/dev/null || true
 fi
 ```
 
@@ -193,7 +222,7 @@ QUICK COMMANDS
   /plan         Decompose work into issues
   /implement    Execute a single issue
   /crank        Autonomous epic execution
-  /vibe         Validate code quality
+  /validation   Full close-out and learnings
 ══════════════════════════════════════════════════════════════
 ```
 
@@ -203,15 +232,14 @@ Evaluate context top-to-bottom. Use the FIRST matching condition:
 
 | Priority | Condition | Suggestion |
 |----------|-----------|------------|
-| 1 | Unread messages in inbox | "Check messages: `/inbox`" |
-| 2 | RPI run in-progress + phase=research | "Continue research: `/research` or `/plan` if ready" |
-| 3 | RPI run in-progress + phase=plan | "Review plan: `/pre-mortem` to validate before coding" |
-| 4 | RPI run in-progress + phase=implement | "Resume implementation: `/implement <next-issue-id>`" |
-| 5 | RPI run in-progress + phase=validate | "Complete cycle: `/post-mortem` to extract learnings" |
-| 6 | Evolve cycle in-progress | "Continue autonomous improvements: `/evolve --resume`" |
-| 7 | In-progress issues exist | "Continue work: `/implement <issue-id>`" |
+| 1 | RPI run in-progress + phase=research | "Continue research: `/research` or `/plan` if ready" |
+| 2 | RPI run in-progress + phase=plan | "Review plan: `/pre-mortem` to validate before coding" |
+| 3 | RPI run in-progress + phase=implement | "Resume implementation: `/implement <next-issue-id>`" |
+| 4 | RPI run in-progress + phase=validate | "Complete cycle: `/validation` to extract learnings and close out" |
+| 5 | Evolve cycle in-progress | "Continue autonomous improvements: `/evolve --resume`" |
+| 6 | In-progress issues exist | "Continue work: `/implement <issue-id>`" |
 | 8 | Ready issues available | "Pick next issue: `/implement <first-ready-id>`" |
-| 9 | Uncommitted changes | "Review changes: `/vibe recent`" |
+| 9 | Uncommitted changes | "Review recent work: `/validation`" |
 | 10 | Clean state, nothing pending | "Session recovered. Start with `/status` to plan next work" |
 
 ### Step 6: JSON Output (--json flag)
@@ -276,7 +304,7 @@ Render this with a single code block. No visual dashboard when `--json` is activ
 **What happens:**
 1. Agent runs 5 parallel bash calls to gather state
 2. Agent detects RPI run in phased-state.json (phase=2, epic ag-l2pu)
-3. Agent runs `ao inject` to load relevant knowledge
+3. Agent runs `ao lookup --query "rpi recovery context"` to load relevant knowledge
 4. Agent shows goal, current phase (plan), cycle 1, started 2 hours ago
 5. Agent lists 2 in-progress issues and 3 ready issues
 6. Agent shows clean git state, recent commit
@@ -293,7 +321,7 @@ Render this with a single code block. No visual dashboard when `--json` is activ
 2. Agent finds no RPI run
 3. Agent detects evolve cycle (most recent: cycle 3, result "improved", goals_fixed=["goal1", "goal2"])
 4. Agent shows timestamp (1 hour ago), items_completed (8)
-5. Agent loads knowledge with `ao inject`
+5. Agent loads knowledge with `ao lookup --query "evolve cycle recovery"`
 6. Agent suggests: "Continue autonomous improvements: `/evolve --resume`"
 
 **Result:** Dashboard confirms evolve cycle, shows progress, offers resume command.
@@ -321,6 +349,6 @@ Render this with a single code block. No visual dashboard when `--json` is activ
 | Shows "BD_UNAVAILABLE" or "GT_UNAVAILABLE" | CLI tools not installed or not in PATH | Install missing tools: `brew install bd` or `brew install gt`. Skill gracefully degrades by showing available state only. |
 | RPI state shows wrong phase | Stale phased-state.json not updated | Check timestamp of `.agents/rpi/phased-state.json`. If stale, it may be from a previous run. Run `/status` to verify current phase. |
 | Evolve history shows wrong cycle | Old cycle-history.jsonl entries not pruned | Tail -3 shows most recent entries. Check all entries with `tail -20 .agents/evolve/cycle-history.jsonl`. |
-| Knowledge injection fails silently | ao CLI not installed or no knowledge artifacts | Ensure ao installed: `brew install ao`. If no learnings exist, run `/post-mortem` to seed the knowledge base. |
+| Knowledge injection fails silently | ao CLI not installed or no knowledge artifacts | Ensure ao installed: `brew install ao`. If no learnings exist, run `/validation` to seed the knowledge base. |
 | Suggested action doesn't match context | State-aware rules didn't capture edge case | Use `--json` to inspect raw state and verify which condition matched. Review priority table in Step 5. |
 | JSON output malformed | Parallel bash calls returned unexpected format | Check each bash call individually. Ensure jq parsing works on actual data. Validate JSON structure before returning to user. |

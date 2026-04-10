@@ -1,44 +1,33 @@
 ---
 name: openai-knowledge
-description: Use when working with the OpenAI API (Responses API) or OpenAI platform features (tools, streaming, Realtime API, auth, models, rate limits, MCP) and you need authoritative, up-to-date documentation (schemas, examples, limits, edge cases). Prefer the OpenAI Developer Documentation MCP server tools when available; otherwise guide the user to enable `openaiDeveloperDocs`.
+description: Compatibility alias for OpenAI platform documentation guidance. Delegate to the canonical local `openai-docs` payload while preserving route compatibility.
 ---
 
-# OpenAI Knowledge
+# openai-knowledge (Compatibility Alias)
 
-## Overview
+## Purpose
 
-Use the OpenAI Developer Documentation MCP server to search and fetch exact docs (markdown), then base your answer on that text instead of guessing.
+Provide a stable compatibility alias for callers that still request
+`openai-knowledge`, while canonical OpenAI documentation guidance is maintained
+under the sibling `openai-docs` skill directory.
 
-## Workflow
+This preserves:
 
-### 1) Check whether the Docs MCP server is available
+- existing route compatibility for `openai-knowledge`
+- `skills-lock` and catalog continuity for legacy callers
+- a thin alias surface instead of duplicated docs guidance payload
 
-If the `mcp__openaiDeveloperDocs__*` tools are available, use them.
+## Resolution Order
 
-If you are unsure, run `codex mcp list` and check for `openaiDeveloperDocs`.
+1. Use the canonical local `openai-docs` skill payload first.
+2. Reuse its canonical materials:
+   - `../openai-docs/SKILL.md`
+   - `../openai-docs/references/**`
+   - `../openai-docs/scripts/**`
+3. Keep this alias directory thin and free of duplicated heavy payload.
 
-### 2) Use MCP tools to pull exact docs
+## Minimal Workflow
 
-- Search first, then fetch the specific page or pages.
-  - `mcp__openaiDeveloperDocs__search_openai_docs` → pick the best URL.
-  - `mcp__openaiDeveloperDocs__fetch_openai_doc` → retrieve the exact markdown (optionally with an `anchor`).
-- When you need endpoint schemas or parameters, use:
-  - `mcp__openaiDeveloperDocs__get_openapi_spec`
-  - `mcp__openaiDeveloperDocs__list_api_endpoints`
-
-Base your answer on the fetched text and quote or paraphrase it precisely. Do not invent flags, field names, defaults, or limits.
-
-### 3) If MCP is not configured, guide setup (do not change config unless asked)
-
-Provide one of these setup options, then ask the user to restart the Codex session so the tools load:
-
-- CLI:
-  - `codex mcp add openaiDeveloperDocs --url https://developers.openai.com/mcp`
-- Config file (`~/.codex/config.toml`):
-  - Add:
-    ```toml
-    [mcp_servers.openaiDeveloperDocs]
-    url = "https://developers.openai.com/mcp"
-    ```
-
-Also point to: https://developers.openai.com/resources/docs-mcp#quickstart
+1. Read `../openai-docs/SKILL.md` for the full OpenAI docs workflow.
+2. Use canonical references and scripts from `../openai-docs/`.
+3. Report under `openai-knowledge` only when a caller explicitly requested this alias.

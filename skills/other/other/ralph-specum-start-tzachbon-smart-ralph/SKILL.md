@@ -48,7 +48,7 @@ Use this for the `start` and `new` entrypoints.
 9. Write `.progress.md` with goal, current phase, next step, blockers, learnings, and skill discovery results when used.
 10. On resume, prefer `tasks.md` and present files over stale state when they disagree.
 11. In quick mode, generate missing artifacts in order, skip normal approval pauses, and continue into implementation in the same run.
-12. Without quick mode or explicit autonomy, stop after setup and ask whether to continue to research.
+12. **Without quick mode or explicit autonomy: STOP HERE after setup. Do NOT proceed to research. Wait for the user to explicitly ask to continue.** This is non-negotiable.
 
 ## Branch Isolation
 

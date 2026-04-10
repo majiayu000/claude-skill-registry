@@ -16,7 +16,8 @@ Evaluate Stories using RICE scoring with market research. Generate consolidated 
 ## Purpose & Scope
 
 - Prioritize Stories AFTER ln-220 creates them
-- Research market size and competition per Story
+- Triage all Stories cheaply before doing deep research
+- Research market size and competition only where it changes prioritization confidence
 - Calculate RICE score for each Story
 - Generate prioritization table (P0/P1/P2/P3)
 - Output: docs/market/[epic-slug]/prioritization.md
@@ -33,10 +34,6 @@ Evaluate Stories using RICE scoring with market research. Generate consolidated 
 - Epic has no Stories yet (run ln-220 first)
 - Stories are purely technical (infrastructure, refactoring)
 - Prioritization already exists in docs/market/
-
-**Who calls this skill:**
-- **ln-200-scope-decomposer** Phase 4 (optional, sequential per Epic)
-- **User (manual)** - standalone after ln-220-story-coordinator
 
 ---
 
@@ -61,6 +58,30 @@ Evaluate Stories using RICE scoring with market research. Generate consolidated 
 docs/market/[epic-slug]/
 └── prioritization.md    # Consolidated table + RICE details + sources
 ```
+
+## Runtime Contract
+
+**MANDATORY READ:** Load `shared/references/planning_worker_runtime_contract.md`, `shared/references/coordinator_summary_contract.md`
+
+Runtime family: `planning-worker-runtime`
+
+Identifier:
+- `epic-{epicId}`
+
+Phases:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_DISCOVERY`
+3. `PHASE_2_LOAD_STORY_METADATA`
+4. `PHASE_3_ANALYZE_STORIES`
+5. `PHASE_4_GENERATE_PRIORITIZATION`
+6. `PHASE_5_WRITE_SUMMARY`
+7. `PHASE_6_SELF_CHECK`
+
+Summary contract:
+- `summary_kind=story-prioritization-worker`
+- payload includes `epic_id`, `depth`, `stories_analyzed`, `priority_distribution`, `top_story_ids`, `prioritization_path`, `warnings`
+- managed mode writes to caller-provided `summaryArtifactPath`
+- default managed artifact path pattern: `.hex-skills/runtime-artifacts/runs/{parent_run_id}/story-prioritization-worker/ln-230--{identifier}.json`
 
 **Table columns (from user requirements):**
 
@@ -134,7 +155,7 @@ Extract: `task_provider` = Task Management → Provider
 
 ### Phase 2: Load Stories Metadata (3 min)
 
-**Objective:** Build Story queue with metadata only (token efficiency).
+**Objective:** Build Story queue with metadata only and prepare rough scoring inputs for all Stories.
 
 **Process:**
 
@@ -156,6 +177,7 @@ Extract: `task_provider` = Task Management → Provider
 
 2. **Extract metadata only:**
    - Story ID, title, status
+   - minimal Epic context if available
    - **DO NOT** load full descriptions yet
 
 3. **Filter Stories:**
@@ -166,17 +188,25 @@ Extract: `task_provider` = Task Management → Provider
    - Order by: existing priority (if any), then by ID
    - Count: N Stories to process
 
-**Output:** Story queue (ID + title), ~50 tokens/Story
+**Output:** Story queue (ID + title + minimal context), ~50-80 tokens/Story
 
 ---
 
-### Phase 3: Story-by-Story Analysis Loop (5-10 min/Story)
+### Phase 3: Two-Pass Story Analysis
 
-**Objective:** For EACH Story: load description, research, score RICE.
+**Objective:** Score all Stories cheaply first, then spend deep research only on candidates where it changes the decision.
 
-**Critical:** Process Stories ONE BY ONE for token efficiency!
+**Critical:** Keep maximum context to one full Story at a time even during deep research.
 
-#### Per-Story Steps:
+#### Pass A: Cheap Triage For All Stories
+
+For each Story, load only enough detail to estimate:
+- customer problem
+- rough solution shape
+- likely reach
+- likely impact
+- likely effort
+- initial confidence tier
 
 ##### Step 3.1: Load Story Description
 
@@ -201,7 +231,30 @@ Read("docs/tasks/epics/epic-{N}-*/stories/us{NNN}-*/story.md")
 - **Solution:** From Technical Notes (implementation approach)
 - **Rationale:** From AC + Success Criteria
 
-##### Step 3.2: Research Market Size
+##### Step 3.2: Build rough RICE estimate
+
+Use Story + Epic context to assign:
+- rough `Reach`
+- rough `Impact`
+- rough `Effort`
+- initial `Confidence`
+
+Mark one of:
+- `full_research_required`
+- `rough_estimate_ok`
+- `borderline_needs_review`
+
+**Send to Pass B only if:**
+- candidate looks P0/P1 on rough score
+- confidence is low
+- Story is near a priority threshold
+- Story has strategic or market-sensitive uncertainty
+
+#### Pass B: Selective Deep Research
+
+Only for Stories selected in Pass A, run full external research.
+
+##### Step 3.3: Research Market Size
 
 **WebSearch queries (based on depth):**
 ```
@@ -224,7 +277,7 @@ Read("docs/tasks/epics/epic-{N}-*/stories/us{NNN}-*/story.md")
 - News article → Confidence 0.7-0.8
 - Blog/Forum → Confidence 0.5-0.6
 
-##### Step 3.3: Research Competition
+##### Step 3.4: Research Competition
 
 **WebSearch queries:**
 ```
@@ -242,7 +295,7 @@ Read("docs/tasks/epics/epic-{N}-*/stories/us{NNN}-*/story.md")
 | 6-10 | 4 | Mature |
 | >10 | 5 | Red Ocean |
 
-##### Step 3.4: Calculate RICE Score
+##### Step 3.5: Calculate final RICE Score
 
 ```
 RICE = (Reach x Impact x Confidence) / Effort
@@ -289,7 +342,7 @@ For each RICE factor, assess data confidence level:
 | 7-8 | 2-3 months | External dependencies |
 | 9-10 | 3+ months | New infrastructure |
 
-##### Step 3.5: Determine Priority
+##### Step 3.6: Determine Priority
 
 | Priority | RICE Threshold | Competition Override |
 |----------|----------------|---------------------|
@@ -298,13 +351,14 @@ For each RICE factor, assess data confidence level:
 | P2 (Medium) | >= 5 | - |
 | P3 (Low) | < 5 | Competition = 5 (Red Ocean) forces P3 |
 
-##### Step 3.6: Store and Clear
+##### Step 3.7: Store and Clear
 
 - Append row to in-memory results table
+- Mark whether row is `full-research` or `rough-estimate`
 - Clear Story description from context
 - Move to next Story in queue
 
-**Output per Story:** Complete row for prioritization table
+**Output per Story:** Complete row for prioritization table with confidence tier
 
 ---
 
@@ -321,6 +375,7 @@ For each RICE factor, assess data confidence level:
 2. **Generate markdown:**
    - Use template from references/prioritization_template.md
    - Fill: Priority Summary, Main Table, RICE Details, Sources
+   - Explicitly show whether each Story used full research or rough estimate
 
 3. **Save file:**
    ```
@@ -372,8 +427,8 @@ docs/market/[epic-slug]/prioritization.md
 | deep | 8-10 min | 80-100 min |
 
 **Time management rules:**
-- If Story exceeds time budget: Skip deep research, use estimates (Confidence 0.5)
-- If total exceeds budget: Switch to "quick" depth for remaining Stories
+- If Story exceeds time budget: keep rough estimate, mark lower confidence
+- If total exceeds budget: reserve deep research only for high-potential or borderline Stories
 - Parallel WebSearch where possible (market + competition)
 
 ---
@@ -415,32 +470,41 @@ ln-300 (Story → Tasks)
 - ln-300 processes Stories in priority order
 - Stakeholders review before implementation
 
+Structured worker output:
+- return the prioritization summary envelope even in standalone mode
+- write the same JSON artifact when `summaryArtifactPath` is provided
+
 ---
 
 ## Critical Rules
 
-1. **Source all data** - Every Market number needs source + date
-2. **Prefer recent data** - last 2 years, warn if older
-3. **Cross-reference** - 2+ sources for Market size (reduce error)
-4. **Time-box strictly** - Skip depth for speed if needed
-5. **Confidence levels** - Mark High/Medium/Low for estimates
-6. **No speculation** - Only sourced claims, note "[No data]" gaps
-7. **One Story at a time** - Token efficiency critical
-8. **Preserve language** - If user asks in Russian, respond in Russian
+1. **Triage first** - do cheap scoring across all Stories before deep research
+2. **Source all deep-research data** - every Market number needs source + date
+3. **Prefer recent data** - last 2 years, warn if older
+4. **Cross-reference when depth justifies it** - use 2+ sources for market-sensitive Stories
+5. **Time-box strictly** - keep rough estimates when deeper research will not change the decision
+6. **Confidence levels** - mark High/Medium/Low and whether score is rough or full-research
+7. **No speculation** - only sourced claims, note "[No data]" gaps
+8. **One Story at a time** - token efficiency critical
+9. **Preserve language** - if user asks in Russian, respond in Russian
 
 ---
 
 ## Definition of Done
 
 - [ ] Epic validated (Linear or file mode)
-- [ ] All Stories loaded (metadata, then descriptions per-Story)
-- [ ] Market research completed (2+ sources per Story)
+- [ ] All Stories loaded through metadata-first queue
+- [ ] Pass A rough triage completed for all Stories
+- [ ] Deep research limited to high-potential or low-confidence Stories
 - [ ] RICE score calculated for each Story
 - [ ] Competition index assigned (1-5)
 - [ ] Priority assigned (P0/P1/P2/P3)
+- [ ] Confidence tier and research depth visible in output
 - [ ] Table sorted by Priority + RICE
 - [ ] File saved to docs/market/[epic-slug]/prioritization.md
 - [ ] Summary with top priorities and next steps
+- [ ] Structured `story-prioritization-worker` summary returned
+- [ ] Summary artifact written when `summaryArtifactPath` is provided
 - [ ] Total time within budget
 
 ---
@@ -476,7 +540,7 @@ ln-230-story-prioritizer epic="Epic 7" stories="US001,US002,US003"
 
 **MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
 
-Skill type: `planning-coordinator`. Run after all phases complete. Output to chat using the `planning-coordinator` format.
+Skill type: `planning-worker`. Run after all phases complete. Output to chat using the `planning-worker` format.
 
 ## Reference Files
 

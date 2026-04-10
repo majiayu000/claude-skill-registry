@@ -1,5 +1,5 @@
 ---
-description: Reviews local changes, PRs/MRs, or branch diffs against project coding guidelines using up to 7 parallel review agents (bug detection, security/logic, guideline compliance x2, code simplification, test coverage, contract quality). Use before committing, on open PRs/MRs, or to review any branch diff. HIGH SIGNAL only: real bugs, logic errors, security concerns, and guideline violations. Supports a "deep" mode for iterative auto-fix — reviews and fixes code in a loop until zero findings remain.
+description: Reviews local changes, PRs/MRs, or branch diffs against project coding guidelines using up to 7 parallel review agents (bug detection, security/logic, guideline compliance x2, code simplification, test coverage, contract quality). Use before committing, on open PRs/MRs, or to review any branch diff. HIGH SIGNAL only: real bugs, logic errors, security concerns, and guideline violations. Supports a "deep" mode for iterative auto-fix — reviews and fixes code in a loop until clean.
 disable-model-invocation: true
 ---
 
@@ -216,7 +216,7 @@ If deep mode is active and `iteration-count` > 1, prepend the iteration context 
 | 6 — Test Guardian | Test coverage gaps, structural barriers to testability | `test-guardian.md` |
 | 7 — Contracts Reviewer | Backward compatibility, type safety, contract versioning, encapsulation | `contracts-reviewer.md` |
 
-Agents 1–5 always run. Agent 6 (Test Guardian) runs when test infrastructure is detected (`.claude/docs/testing.md` or subproject `docs/testing.md` exists). Agent 7 (Contracts Reviewer) runs when changed files include contract-related paths (see activation rules below). Each agent: max 8 findings, structured list format. Guideline agents (3–4) are constructed dynamically based on Step 4's doc loading results (single project vs monorepo paths).
+Agents 1–5 always run. Agent 6 (Test Guardian) runs when test infrastructure is detected (`.claude/docs/testing.md` or subproject `docs/testing.md` exists). Agent 7 (Contracts Reviewer) runs when changed files include contract-related paths (see activation rules below). Each agent returns a structured list of findings, bounded by the Finding Cap rule in `$CLAUDE_PLUGIN_ROOT/references/shared-agent-constraints.md`. Guideline agents (3–4) are constructed dynamically based on Step 4's doc loading results (single project vs monorepo paths).
 
 ### Contracts Reviewer activation (Agent 7)
 

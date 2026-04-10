@@ -106,7 +106,7 @@ Based on the question type, search for relevant information:
 |---------------|----------------|
 | "How do I..." | Grep for keywords in SKILL.md files, README.md, docs/ |
 | Bug report | Grep for mentioned function/file, check git log for recent fixes |
-| Configuration | Read docs/tools_config.md, CLAUDE.md, relevant SKILL.md |
+| Configuration | Read .hex-skills/environment_state.json, CLAUDE.md, relevant SKILL.md |
 | Feature request | Check if feature already exists, grep for related patterns |
 | Installation | Read README.md installation section, plugin.json |
 

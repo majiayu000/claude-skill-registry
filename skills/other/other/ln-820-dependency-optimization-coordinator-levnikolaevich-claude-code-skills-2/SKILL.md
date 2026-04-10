@@ -302,7 +302,18 @@ Fatal:
 | 3 | ln-822-nuget-upgrader | Isolated child run with `packageManager`, `runId`, and exact `summaryArtifactPath` |
 | 3 | ln-823-pip-upgrader | Isolated child run with `packageManager`, `runId`, and exact `summaryArtifactPath` |
 
-All workers: invoke through Agent tool, checkpoint the child run metadata immediately, then consume the emitted `dependency-worker` summary envelope via `record-worker-result`.
+All workers: start the child runtime, checkpoint the `child_run` metadata, then invoke the worker skill explicitly and consume the emitted `dependency-worker` summary envelope via `record-worker-result`.
+
+```text
+# One invocation per detected package manager (sequential per family):
+node shared/scripts/dependency-runtime/cli.mjs start --skill {worker} --identifier {packageManager} --manifest-file {workerManifestPath} --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}
+node shared/scripts/optimization-runtime/cli.mjs checkpoint --phase PHASE_3_DELEGATE --payload '{"child_run":{"worker":"{worker}","run_id":"{childRunId}","summary_artifact_path":"{childSummaryArtifactPath}","package_manager":"{packageManager}"}}'
+Skill(skill: "{worker}", args: "{packageManager} --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}")
+Read {childSummaryArtifactPath}
+node shared/scripts/optimization-runtime/cli.mjs record-worker-result --payload-file {childSummaryArtifactPath}
+```
+
+Worker token substitution: `{worker}` is one of `ln-821-npm-upgrader`, `ln-822-nuget-upgrader`, `ln-823-pip-upgrader`.
 
 ---
 

@@ -104,11 +104,11 @@ python3 skills/pain-language-engagers/scripts/pain_language_engagers.py \
 
 **What the script does:**
 
-1. **Keyword search** — `harvestapi/linkedin-post-search` for each pain keyword
+1. **Keyword search** — `apimaestro/linkedin-posts-search-scraper-no-cookies` for each pain keyword
 2. **Post author extraction** — People who wrote pain posts = direct leads (free, no API call)
 3. **Company page discovery** — Extract company pages from keyword results
 4. **Company page engager scraping** — `harvestapi/linkedin-company-posts` for each company page, pain-filtered
-5. **Profile enrichment** — `supreme_coder/linkedin-profile-scraper` for all profiles (gets headline + location)
+5. **Profile enrichment** — `harvestapi/linkedin-profile-scraper` for all profiles (gets headline + location)
 6. **ICP classification** — Using the client-specific ICP/vendor keyword lists from config
 7. **Dedup + CSV export**
 
@@ -142,7 +142,7 @@ Common adjustments:
 
 ## Phase 4: Output
 
-CSV exported to `skills/pain-language-engagers/output/{client-name}-{date}.csv` with columns:
+CSV exported to the current working directory as `{client-name}-{date}.csv` with columns:
 
 | Column | Description |
 |--------|-------------|
@@ -162,9 +162,9 @@ CSV exported to `skills/pain-language-engagers/output/{client-name}-{date}.csv` 
 
 - **Apify API token** — set as `APIFY_API_TOKEN` in `.env`
 - **Apify actors used:**
-  - `harvestapi/linkedin-post-search` (keyword search)
+  - `apimaestro/linkedin-posts-search-scraper-no-cookies` (keyword search)
   - `harvestapi/linkedin-company-posts` (company page scraping)
-  - `supreme_coder/linkedin-profile-scraper` (profile enrichment)
+  - `harvestapi/linkedin-profile-scraper` (profile enrichment)
 
 ## Example Usage
 

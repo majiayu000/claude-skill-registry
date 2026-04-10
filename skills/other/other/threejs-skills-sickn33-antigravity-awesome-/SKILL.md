@@ -22,13 +22,29 @@ Systematically create high-quality 3D scenes and interactive experiences using T
 
 ### 1. Essential Three.js Imports
 
-Always use the correct CDN version (r128):
+Use ES module import maps for modern Three.js (r183+):
 
-```javascript
-import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
+```html
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.183.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.183.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+</script>
 ```
 
-**CRITICAL**: Do NOT use example imports like `THREE.OrbitControls` - they won't work on the CDN.
+For production with npm/vite/webpack:
+
+```javascript
+import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+```
 
 ### 2. Scene Initialization
 
@@ -55,16 +71,21 @@ document.body.appendChild(renderer.domElement);
 
 ### 3. Animation Loop
 
-Use requestAnimationFrame for smooth rendering:
+Use `renderer.setAnimationLoop()` (preferred) or `requestAnimationFrame`:
 
 ```javascript
-function animate() {
-  requestAnimationFrame(animate);
-
-  // Update object transformations here
+// Preferred: setAnimationLoop (handles WebXR compatibility)
+renderer.setAnimationLoop(() => {
   mesh.rotation.x += 0.01;
   mesh.rotation.y += 0.01;
+  renderer.render(scene, camera);
+});
 
+// Alternative: manual requestAnimationFrame
+function animate() {
+  requestAnimationFrame(animate);
+  mesh.rotation.x += 0.01;
+  mesh.rotation.y += 0.01;
   renderer.render(scene, camera);
 }
 animate();
@@ -93,13 +114,11 @@ Choose appropriate geometry types:
 - `PlaneGeometry` - flat surfaces, ground planes
 - `TorusGeometry` - donuts, rings
 
-**IMPORTANT**: Do NOT use `CapsuleGeometry` (introduced in r142, not available in r128)
+**CapsuleGeometry** is available (stable since r142):
 
-**Alternatives for capsules:**
-
-- Combine `CylinderGeometry` + 2 `SphereGeometry`
-- Use `SphereGeometry` with adjusted parameters
-- Create custom geometry with vertices
+```javascript
+new THREE.CapsuleGeometry(0.5, 1, 4, 8); // radius, length, capSegments, radialSegments
+```
 
 ### 3. Apply Materials
 
@@ -162,9 +181,26 @@ function animate() {
 }
 ```
 
-### Custom Camera Controls (OrbitControls Alternative)
+### OrbitControls
 
-Since `THREE.OrbitControls` isn't available on CDN, implement custom controls:
+With import maps or build tools, OrbitControls works directly:
+
+```javascript
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+
+// Update in animation loop
+renderer.setAnimationLoop(() => {
+  controls.update();
+  renderer.render(scene, camera);
+});
+```
+
+### Custom Camera Controls (Alternative)
+
+For lightweight custom controls without importing OrbitControls:
 
 ```javascript
 let isDragging = false;
@@ -338,18 +374,18 @@ const material = new THREE.MeshStandardMaterial({
 
 ### Common Pitfalls to Avoid
 
-- ❌ Using `THREE.OrbitControls` - not available on CDN
-- ❌ Using `THREE.CapsuleGeometry` - requires r142+
+- ❌ Using `outputEncoding` instead of `outputColorSpace` (renamed in r152)
 - ❌ Forgetting to add objects to scene with `scene.add()`
 - ❌ Using lit materials without adding lights
 - ❌ Not handling window resize
 - ❌ Forgetting to call `renderer.render()` in animation loop
+- ❌ Using `THREE.Clock` without considering `THREE.Timer` (recommended in r183)
 
 ## Example Workflow
 
 User: "Create an interactive 3D sphere that responds to mouse movement"
 
-1. **Setup**: Import Three.js (r128), create scene/camera/renderer
+1. **Setup**: Import Three.js, create scene/camera/renderer
 2. **Geometry**: Create `SphereGeometry(1, 32, 32)` for smooth sphere
 3. **Material**: Use `MeshStandardMaterial` for realistic look
 4. **Lighting**: Add ambient + directional lights
@@ -449,7 +485,7 @@ const material = new THREE.MeshStandardMaterial({
 // Improve color accuracy and HDR rendering
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 1.0;
-renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.outputColorSpace = THREE.SRGBColorSpace; // Was outputEncoding in older versions
 
 // Makes colors more vibrant and realistic
 ```
@@ -474,7 +510,7 @@ geometry.setAttribute("position", new THREE.BufferAttribute(vertices, 3));
 
 ### Post-Processing Effects
 
-While advanced post-processing may not be available in r128 CDN, basic effects can be achieved with shaders and render targets.
+Post-processing effects are available via import maps or build tools. See `threejs-postprocessing` skill for EffectComposer, bloom, DOF, and more.
 
 ### Group Objects
 
@@ -490,36 +526,64 @@ scene.add(group);
 
 Three.js artifacts require systematic setup:
 
-1. Import correct CDN version (r128)
+1. Import Three.js via import maps or build tools
 2. Initialize scene, camera, renderer
 3. Create geometry + material = mesh
 4. Add lighting if using lit materials
-5. Implement animation loop
+5. Implement animation loop (prefer `setAnimationLoop`)
 6. Handle window resize
-7. Avoid r128 incompatible features
+7. Set `renderer.outputColorSpace = THREE.SRGBColorSpace`
 
 Follow these patterns for reliable, performant 3D experiences.
 
-## Modern Three.js & Production Practices
+## Modern Three.js Practices (r183)
 
-While this skill focuses on CDN-based Three.js (r128) for artifact compatibility, here's what you'd do in production environments:
-
-### Modular Imports with Build Tools
+### Modular Imports
 
 ```javascript
-// In production with npm/vite/webpack:
+// With npm/vite/webpack:
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 ```
 
-**Benefits:**
+### WebGPU Renderer (Alternative)
 
-- Tree-shaking (smaller bundle sizes)
-- Access to full example library (OrbitControls, loaders, etc.)
-- Latest Three.js features (r150+)
-- TypeScript support
+Three.js r183 includes a WebGPU renderer as an alternative to WebGL:
+
+```javascript
+import { WebGPURenderer } from "three/addons/renderers/webgpu/WebGPURenderer.js";
+
+const renderer = new WebGPURenderer({ antialias: true });
+await renderer.init();
+renderer.setSize(window.innerWidth, window.innerHeight);
+```
+
+WebGPU uses TSL (Three.js Shading Language) instead of GLSL for custom shaders. See `threejs-shaders` for details.
+
+### Timer (r183 Recommended)
+
+`THREE.Timer` is recommended over `THREE.Clock` as of r183:
+
+```javascript
+const timer = new THREE.Timer();
+
+renderer.setAnimationLoop(() => {
+  timer.update();
+  const delta = timer.getDelta();
+  const elapsed = timer.getElapsed();
+
+  mesh.rotation.y += delta;
+  renderer.render(scene, camera);
+});
+```
+
+**Benefits over Clock:**
+
+- Not affected by page visibility (pauses when tab is hidden)
+- Cleaner API design
+- Better integration with `setAnimationLoop`
 
 ### Animation Libraries (GSAP Integration)
 
@@ -625,7 +689,7 @@ loader.load("model.gltf", (gltf) => {
 
 ### When to Use What
 
-**CDN Approach (Current Skill):**
+**Import Map Approach:**
 
 - Quick prototypes and demos
 - Educational content
@@ -636,19 +700,16 @@ loader.load("model.gltf", (gltf) => {
 
 - Client projects and portfolios
 - Complex applications
-- Need latest features (r150+)
 - Performance-critical applications
 - Team collaboration with version control
 
 ### Recommended Production Stack
 
 ```
-Three.js (latest) + Vite/Webpack
+Three.js r183 + Vite
 ├── GSAP (animations)
 ├── React Three Fiber (optional - React integration)
 ├── Drei (helper components)
 ├── Leva (debug GUI)
 └── Post-processing effects
 ```
-
-This skill provides CDN-compatible foundations. In production, you'd layer on these modern tools for professional results.

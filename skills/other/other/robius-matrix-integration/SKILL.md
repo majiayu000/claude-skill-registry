@@ -17,7 +17,7 @@ Best practices for integrating external APIs with Makepad applications based on 
 - **Robrix**: Matrix SDK integration - sliding sync, timeline subscriptions, real-time updates
 - **Moly**: OpenAI/LLM API integration - SSE streaming, MCP protocol, multi-provider support
 
-## Triggers
+## When to Use
 
 Use this skill when:
 - Integrating Matrix SDK with Makepad

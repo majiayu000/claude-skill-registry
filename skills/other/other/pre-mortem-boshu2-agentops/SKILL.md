@@ -1,10 +1,19 @@
 ---
 name: pre-mortem
 description: 'Validate a plan or spec before implementation using multi-model council. Answer: Is this good enough to implement? Triggers: "pre-mortem", "validate plan", "validate spec", "is this ready".'
+skill_api_version: 1
 metadata:
   tier: judgment
   dependencies:
     - council  # multi-model judgment
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: full
+output_contract: skills/council/schemas/verdict.json
 ---
 
 # Pre-Mortem Skill
@@ -45,17 +54,88 @@ ls -lt .agents/specs/ 2>/dev/null | head -3
 
 Use the most recent file. If nothing found, ask user.
 
-### Step 1.5: Default Inline Mode
+### Step 1.4: Retrieve Prior Learnings (Mandatory)
+
+Before review, retrieve learnings relevant to this plan's domain:
+```bash
+if command -v ao &>/dev/null; then
+    ao lookup --query "<plan goal or title>" --limit 5 2>/dev/null | head -30
+fi
+```
+If learnings are returned, include them as `known_context` in the review packet. Cite any learning by filename when it influences a prediction. Skip silently if ao is unavailable or returns no results.
+
+### Step 1.4b: Load Compiled Prevention First (Mandatory)
+
+Before quick or deep review, load compiled checks from `.agents/pre-mortem-checks/*.md` when they exist. This is separate from flywheel search and does NOT get skipped by `--quick`.
+
+Use the tracked contracts in `docs/contracts/finding-compiler.md` and `docs/contracts/finding-registry.md`:
+
+- prefer compiled pre-mortem checks first
+- rank by severity, `applicable_when` overlap, language overlap, and literal plan-text overlap
+- when the plan names files, rank changed-file overlap ahead of generic keyword matches
+- cap at top 5 findings / check files
+- if compiled checks are missing, incomplete, or fewer than the matched finding set, fall back to `.agents/findings/registry.jsonl`
+- fail open:
+  - missing compiled directory or registry -> skip silently
+  - empty compiled directory or registry -> skip silently
+  - malformed line -> warn and ignore that line
+  - unreadable file -> warn once and continue without findings
+
+Include matched entries in the council packet as `known_risks` with:
+- `id`
+- `pattern`
+- `detection_question`
+- `checklist_item`
+
+Use the same ranked packet contract as `/plan`: compiled checks first, then active findings fallback, then matching high-severity next-work context when relevant. Avoid re-ranking with an unrelated heuristic inside pre-mortem; the point is consistent carry-forward, not a fresh retrieval policy per phase.
+
+**Record citations for applied knowledge:**
+
+After including matched entries as `known_risks`, record each citation so the flywheel feedback loop can track influence:
+```bash
+# Only use "applied" when the finding actually influenced the council packet.
+# Use "retrieved" for items loaded but not referenced in the risk assessment.
+ao metrics cite "<finding-path>" --type applied 2>/dev/null || true   # influenced risk assessment
+ao metrics cite "<finding-path>" --type retrieved 2>/dev/null || true # loaded but not used
+```
+
+**Section evidence:** When lookup results include `section_heading`, `matched_snippet`, or `match_confidence` fields, prefer the matched section over the whole file — it pinpoints the relevant portion. Higher `match_confidence` (>0.7) means the section is a strong match; lower values (<0.4) are weaker signals. Use the `matched_snippet` as the primary context rather than reading the full file.
+
+### Step 1.5: Fast Path (--quick mode)
 
 **By default, pre-mortem runs inline (`--quick`)** — single-agent structured review, no spawning. This catches real implementation issues at ~10% of full council cost (proven in ag-nsx: 3 actionable bugs found inline that would have caused runtime failures).
 
-**Skip Steps 1a and 1b** (knowledge search, product context) unless `--deep`, `--mixed`, `--debate`, or `--explorers` is set. These pre-processing steps are for multi-judge council packets only.
+In `--quick` mode, skip Steps 1a and 1b as standalone pre-processing phases. If `PRODUCT.md` exists, Step 1b's product context is still loaded inline during the quick review. `--deep`, `--mixed`, `--debate`, and `--explorers` add the dedicated product perspective and wider council fan-out.
 
 To escalate to full multi-judge council, use `--deep` (4 judges) or `--mixed` (cross-vendor).
 
+### Step 1.6: Scope Mode Selection
+
+Before running council, determine the review posture. Three modes:
+
+| Mode | When to Use | Posture |
+|------|-------------|---------|
+| **SCOPE EXPANSION** | Greenfield features, user says "go big" | Dream big. What's the 10-star version? Push scope UP. |
+| **HOLD SCOPE** | Bug fixes, refactors, most plans | Maximum rigor within accepted scope. Make it bulletproof. |
+| **SCOPE REDUCTION** | Plan touches >15 files, overbuilt | Strip to essentials. What's the minimum that ships value? |
+
+**Auto-detection (when user doesn't specify):**
+- Greenfield feature → default EXPANSION
+- Bug fix or hotfix → default HOLD SCOPE
+- Refactor → default HOLD SCOPE
+- Plan touching >15 files → suggest REDUCTION
+- User says "go big" / "ambitious" → EXPANSION
+
+**Critical rule:** Once mode is selected, COMMIT to it in the council packet. Do not silently drift. Include `scope_mode: <expansion|hold|reduction>` in the council packet context.
+
+**Mode-specific council instructions:**
+- **EXPANSION:** Add to judge prompt: "What would make this 10x more ambitious for 2x the effort? What's the platonic ideal? List 3 delight opportunities."
+- **HOLD SCOPE:** Add to judge prompt: "The plan's scope is accepted. Your job: find every failure mode, test every edge case, ensure observability. Do not argue for less work."
+- **REDUCTION:** Add to judge prompt: "Find the minimum viable version. Everything else is deferred. What can be a follow-up? Separate must-ship from nice-to-ship."
+
 ### Step 1a: Search Knowledge Flywheel
 
-**Skip unless `--deep`, `--mixed`, or `--debate`.**
+**Skip if `--quick`.** Only run this step for `--deep`, `--mixed`, or `--debate`.
 
 ```bash
 if command -v ao &>/dev/null; then
@@ -66,7 +146,7 @@ If ao returns prior plan review findings, include them as context for the counci
 
 ### Step 1b: Check for Product Context
 
-**Skip unless `--deep`, `--mixed`, or `--debate`.**
+**Skip if `--quick` as a separate pre-processing phase.** In quick mode, the same product context is still loaded inline during review. In non-quick modes, add the dedicated product perspective.
 
 ```bash
 if [ -f PRODUCT.md ]; then
@@ -76,18 +156,25 @@ fi
 
 When `PRODUCT.md` exists in the project root AND the user did NOT pass an explicit `--preset` override:
 1. Read `PRODUCT.md` content and include in the council packet via `context.files`
-2. Add a single consolidated `product` perspective to the council invocation:
+2. In `--quick` mode, keep the review inline and require the reviewer to assess user-value, adoption-barriers, and competitive-position directly from `PRODUCT.md`.
+3. In non-quick modes, add a single consolidated `product` perspective to the council invocation:
    ```
    /council --preset=plan-review --perspectives="product" validate <plan-path>
    ```
    This yields 3 judges total (2 plan-review + 1 product). The product judge covers user-value, adoption-barriers, and competitive-position in a single review.
-3. With `--deep`: 5 judges (4 plan-review + 1 product).
+4. With `--deep`: 5 judges (4 plan-review + 1 product).
 
 When `PRODUCT.md` exists BUT the user passed an explicit `--preset`: skip product auto-include (user's explicit preset takes precedence).
 
 When `PRODUCT.md` does not exist: proceed to Step 2 unchanged.
 
 > **Tip:** Create `PRODUCT.md` from `docs/PRODUCT-TEMPLATE.md` to enable product-aware plan validation.
+
+### Step 1.7: Load Council FAIL Patterns (Mandatory)
+
+Read `skills/pre-mortem/references/council-fail-patterns.md` for the top 8 council FAIL patterns to check against.
+
+These patterns are derived from 124 analyzed FAIL verdicts across 946 council sessions. They apply to both `--quick` and `--deep` modes.
 
 ### Step 2: Run Council Validation
 
@@ -96,6 +183,8 @@ When `PRODUCT.md` does not exist: proceed to Step 2 unchanged.
 /council --quick validate <plan-path>
 ```
 Single-agent structured review. Catches real implementation issues at ~10% of full council cost. Sufficient for most plans (proven across 6+ epics).
+
+Default (2 judges with plan-review perspectives) applies when you intentionally run non-quick council mode.
 
 **With --deep (4 judges with plan-review perspectives):**
 ```
@@ -133,6 +222,114 @@ Each judge spawns 3 explorers to investigate aspects of the plan's feasibility a
 ```
 Enables adversarial two-round review for plan validation. Use for high-stakes plans where multiple valid approaches exist. See `/council` docs for full --debate details.
 
+### Step 2.4: Temporal Interrogation (--deep and --temporal)
+
+**Included automatically with `--deep`.** Also available via `--temporal` flag for quick reviews.
+
+Walk through the plan's implementation timeline to surface time-dependent risks:
+
+| Phase | Questions |
+|-------|-----------|
+| **Hour 1: Setup** | What blocks the first meaningful code change? Are dependencies available? |
+| **Hour 2: Core** | Which files change in what order? Are there circular dependencies? |
+| **Hour 4: Integration** | What fails when components connect? Which error paths are untested? |
+| **Hour 6+: Ship** | What "should be quick" but historically isn't? What context is lost overnight? |
+
+Add to each judge's prompt when temporal interrogation is active:
+
+```
+TEMPORAL INTERROGATION: Walk through this plan's implementation timeline.
+For each phase (Hour 1, 2, 4, 6+), identify:
+1. What blocks progress at this point?
+2. What fails silently at this point?
+3. What compounds if not caught at this point?
+Report temporal findings in a separate "Timeline Risks" section.
+```
+
+**Auto-triggered** (even without `--deep`) when the plan has 5+ files or 3+ sequential dependencies.
+
+**Retro history correlation:** When `.agents/retro/index.jsonl` has 2+ entries, load the last 5 retros and check for recurring timeline-phase failures. Auto-escalate severity for phases that caused issues in prior retros.
+
+Temporal findings appear in the report as a `## Timeline Risks` table. See [references/temporal-interrogation.md](references/temporal-interrogation.md) for the full framework.
+
+### Step 2.5: Error & Rescue Map (Mandatory for plans with external calls)
+
+When the plan introduces methods, services, or codepaths that can fail, the council packet MUST include an Error & Rescue Map. If the plan omits one, generate it during review.
+
+Include in the council packet as `context.error_map`:
+
+| Method/Codepath | What Can Go Wrong | Exception/Error | Rescued? | Rescue Action | User Sees |
+|-----------------|-------------------|-----------------|----------|---------------|-----------|
+| `ServiceName#method` | API timeout | `TimeoutError` | Y/N | Retry 2x, then raise | "Service unavailable" |
+
+**Rules:**
+- Every external call (API, database, file I/O) must have at least one row
+- `rescue StandardError` or bare `except:` is always a smell — name specific exceptions
+- Every rescued error must: retry with backoff, degrade gracefully, OR re-raise with context
+- For LLM/AI calls: map malformed response, empty response, hallucinated JSON, and refusal as separate failure modes
+- Each GAP (unrescued error) is a finding with severity=significant
+
+See `references/error-rescue-map-template.md` for the full template with worked examples.
+
+### Step 2.6: Council FAIL Pattern Check (Mandatory)
+
+**Council FAIL Pattern Check:** Evaluate the plan against the top 8 council FAIL patterns (see [references/council-fail-patterns.md](references/council-fail-patterns.md)): missing mechanical verification, self-assessment, context rot, propagation blindness, plan oscillation, dead infrastructure activation, missing rollback map, and four-surface closure gap. Each pattern violation is a finding with severity based on the calibration table in the reference.
+
+Add to each judge's prompt:
+
+```
+COUNCIL FAIL PATTERN CHECK: Review this plan for the top 8 council FAIL patterns:
+1. Missing mechanical verification — are all gates automated?
+2. Self-assessment — is validation external to the implementer?
+3. Context rot — are phase boundaries enforced with fresh sessions?
+4. Propagation blindness — is the full change surface enumerated?
+5. Plan oscillation — is direction validated before propagation?
+6. Dead infrastructure activation — does the plan provision anything without activation tests?
+7. Missing rollback map — does any production-state change lack a rollback procedure?
+8. Four-surface closure — does the plan address Code + Docs + Examples + Proof for every feature?
+Report FAIL pattern findings in a "FAIL Pattern Risks" section.
+```
+
+**Auto-triggered** for all plans (both `--quick` and `--deep` modes).
+
+### Step 2.7: Test Pyramid Coverage Check (Mandatory)
+
+Validate that the plan includes appropriate test levels per the test pyramid standard (`test-pyramid.md` in the standards skill).
+
+**Check each issue in the plan:**
+
+| Question | Expected | Finding if Missing |
+|----------|----------|--------------------|
+| Does any issue touching external APIs include L0 (contract) tests? | Yes | severity=significant: "Missing contract tests for API boundary" |
+| Does every feature/bug issue include L1 (unit) tests? | Yes | severity=significant: "Missing unit tests for feature/bug issue" |
+| Do cross-module changes include L2 (integration) tests? | Yes | severity=moderate: "Missing integration tests for cross-module change" |
+| Are L4+ levels deferred to human gate (not agent-planned)? | Yes | severity=low: "Agent planning L4+ tests — these require human-defined scenarios" |
+
+Add to each judge's prompt when test pyramid check is active:
+
+```
+TEST PYRAMID CHECK: Review the plan's test coverage against the L0-L7 pyramid.
+For each issue, verify:
+1. Are the right test levels specified? (L0 for boundaries, L1 for behavior, L2 for integration)
+2. Are there gaps where tests should exist but aren't planned?
+3. Are any agent-autonomous levels (L0-L3) missing from code-change issues?
+Report test pyramid findings in a "Test Coverage Gaps" section.
+```
+
+**Auto-triggered** when any issue in the plan modifies source code files (`.go`, `.py`, `.ts`, `.rs`, `.js`).
+
+### Step 2.8: Input Validation Check (Mandatory for enum-like fields)
+
+When the plan introduces or modifies fields with a bounded set of valid values (enums, tier names, mode strings, status codes), verify the plan includes validation logic.
+
+| Question | Expected | Finding if Missing |
+|----------|----------|--------------------|
+| Does every new enum-like field have a validation guard? | Yes | severity=significant: "No validation for enum field — invalid values pass silently" |
+| Is there a defined fallback for unrecognized values? | Yes | severity=moderate: "No fallback behavior specified for invalid input" |
+| Are valid values defined as a constant set (not inline strings)? | Yes | severity=low: "Valid values are inline strings — extract to named constant set" |
+
+**Auto-triggered** when the plan introduces struct fields with comments mentioning valid values, config fields with bounded options, or string fields parsed from user input.
+
 ### Step 3: Interpret Council Verdict
 
 | Council Verdict | Pre-Mortem Result | Action |
@@ -146,21 +343,52 @@ Enables adversarial two-round review for plan validation. Use for high-stakes pl
 **Write to:** `.agents/council/YYYY-MM-DD-pre-mortem-<topic>.md`
 
 ```markdown
-# Pre-Mortem: <Topic>
+---
+id: pre-mortem-YYYY-MM-DD-<topic-slug>
+type: pre-mortem
+date: YYYY-MM-DD
+source: "[[.agents/plans/YYYY-MM-DD-<plan-slug>]]"
+prediction_ids:
+  - pm-YYYYMMDD-001
+  - pm-YYYYMMDD-002
+---
 
-**Date:** YYYY-MM-DD
-**Plan/Spec:** <path>
+# Pre-Mortem: <Topic>
 
 ## Council Verdict: PASS / WARN / FAIL
 
-| Judge | Verdict | Key Finding |
-|-------|---------|-------------|
-| Missing-Requirements | ... | ... |
-| Feasibility | ... | ... |
-| Scope | ... | ... |
+| ID | Judge | Finding | Severity | Prediction |
+|----|-------|---------|----------|------------|
+| pm-YYYYMMDD-001 | Missing-Requirements | ... | significant | <what will go wrong> |
+| pm-YYYYMMDD-002 | Feasibility | ... | significant | <what will go wrong> |
+| pm-YYYYMMDD-003 | Scope | ... | moderate | <what will go wrong> |
+
+## Pseudocode Fixes
+
+**Every finding that implies a code change MUST include implementation-ready pseudocode**, not prose-only descriptions. Write the pseudocode in the language of the target file. Workers read issue descriptions, not pre-mortem reports — vague prose leads to workers reimplementing the bug.
+
+Format each code-fix finding as:
+
+```
+Finding: F1 — <concise description>
+Severity: <severity>
+Fix (pseudocode):
+  ```<language>
+  // pseudocode in the target file's language
+  if tier == "inherit" || tier == "" {
+      return "balanced"  // inherit always resolves to balanced
+  }
+  ```
+Affected files: <path(s)>
+```
+
+Prose-only fix descriptions (e.g., "The inherit tier should fall back to balanced") are insufficient when the fix involves specific logic. If a finding is purely architectural or process-related with no code change, prose is acceptable.
 
 ## Shared Findings
 - ...
+
+## Known Risks Applied
+- `<finding-id>` — `<why it matched this plan>`
 
 ## Concerns Raised
 - ...
@@ -174,6 +402,38 @@ Enables adversarial two-round review for plan validation. Use for high-stakes pl
 [ ] ADDRESS - Fix concerns before implementing
 [ ] RETHINK - Fundamental issues, needs redesign
 ```
+
+Each finding gets a unique prediction ID (`pm-YYYYMMDD-NNN`) for downstream correlation. See [references/prediction-tracking.md](references/prediction-tracking.md) for the full tracking lifecycle.
+
+### Step 4.5: Persist Reusable Findings
+
+If the verdict is `WARN` or `FAIL`, persist only the reusable plan/spec failures to `.agents/findings/registry.jsonl`.
+
+Use the finding-registry contract:
+
+- required fields: `dedup_key`, provenance, `pattern`, `detection_question`, `checklist_item`, `applicable_when`, `confidence`
+- `applicable_when` must use the controlled vocabulary from the contract
+- append or merge by `dedup_key`
+- use the contract's temp-file-plus-rename atomic write rule
+
+Do NOT write every comment. Persist only findings that should change future planning or review behavior.
+
+After the registry update, if `hooks/finding-compiler.sh` exists, run:
+
+```bash
+bash hooks/finding-compiler.sh --quiet 2>/dev/null || true
+```
+
+This refreshes `.agents/findings/*.md`, `.agents/planning-rules/*.md`, `.agents/pre-mortem-checks/*.md`, and draft constraint metadata in the same session. `session-end-maintenance.sh` remains the idempotent backstop.
+
+### Step 4.6: Copy Pseudocode Fixes into Plan Issues
+
+When pre-mortem findings are applied to plan issues (via `TaskUpdate`, `bd update`, or manual edit), **copy the pseudocode block verbatim into the issue body**. Workers read issue descriptions — they do not read pre-mortem reports. If the pseudocode lives only in the pre-mortem report, workers will reimplement the fix from scratch and often get it wrong.
+
+For each finding with a pseudocode fix:
+1. Identify which plan issue the finding applies to
+2. Append a `## Pre-Mortem Fix` section to that issue's description containing the pseudocode block and affected file paths
+3. If no matching issue exists, note the gap in the report's Recommendation section
 
 ### Step 5: Record Ratchet Progress
 
@@ -275,3 +535,14 @@ Tell the user:
 - `skills/council/SKILL.md` — Multi-model validation council
 - `skills/plan/SKILL.md` — Create implementation plans
 - `skills/vibe/SKILL.md` — Validate code after implementation
+
+## Reference Documents
+
+- [references/council-fail-patterns.md](references/council-fail-patterns.md)
+- [references/enhancement-patterns.md](references/enhancement-patterns.md)
+- [references/error-rescue-map-template.md](references/error-rescue-map-template.md)
+- [references/failure-taxonomy.md](references/failure-taxonomy.md)
+- [references/simulation-prompts.md](references/simulation-prompts.md)
+- [references/prediction-tracking.md](references/prediction-tracking.md)
+- [references/spec-verification-checklist.md](references/spec-verification-checklist.md)
+- [references/temporal-interrogation.md](references/temporal-interrogation.md)

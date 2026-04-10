@@ -72,5 +72,9 @@ Read [references/best-practices.md](references/best-practices.md) for writing st
 After writing all files:
 
 1. Spawn a subagent (`model: "opus"`, do not set `run_in_background`) to review the skill. The subagent should read [references/skill-reviewer.md](references/skill-reviewer.md) for review guidelines, read all skill files, and produce a review report following the format in the guidelines.
+   - **For new skills**, frame the review as open-ended: propose improvements, convention checks, writing quality.
+   - **For modified skills** (simplification, restructuring, bug fix), frame the review as regression-focused: check whether the change broke anything. Tell the reviewer not to propose new features.
+   - **For same-session iteration** (re-reviewing a skill after applying findings from a previous review in the same session), treat as modified: the review is checking whether the fixes broke anything.
+   - **For batch changes** (multiple skills created or modified in the same session), launch parallel review subagents in a single message with multiple Agent tool calls, one per skill, so they run concurrently.
 2. Run the `/evaluate-findings` skill on the review findings
 3. Run the `/apply-findings` skill on the evaluated findings

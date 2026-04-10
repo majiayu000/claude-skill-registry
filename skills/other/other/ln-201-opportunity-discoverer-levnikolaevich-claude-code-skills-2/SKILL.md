@@ -53,9 +53,33 @@ Most fail because they:
 ## Purpose & Scope
 
 - Discover growth direction BEFORE Epic creation
-- Filter ideas through sequential KILL funnel
+- Filter ideas through evidence-first KILL funnel
 - Output: one recommended idea + one traffic channel
 - Position: before ln-210 (Epic Coordinator)
+
+## Runtime Contract
+
+**MANDATORY READ:** Load `shared/references/planning_worker_runtime_contract.md`, `shared/references/coordinator_summary_contract.md`
+
+Runtime family: `planning-worker-runtime`
+
+Identifier:
+- discovery work item identifier
+
+Phases:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_INPUT_PROCESSING`
+3. `PHASE_2_KILL_FUNNEL`
+4. `PHASE_3_RANK_SURVIVORS`
+5. `PHASE_4_WRITE_DISCOVERY_REPORT`
+6. `PHASE_5_WRITE_SUMMARY`
+7. `PHASE_6_SELF_CHECK`
+
+Summary contract:
+- `summary_kind=opportunity-discovery-worker`
+- standalone mode may return the summary without artifact persistence
+- managed mode writes the same JSON to `summaryArtifactPath`
+- default managed artifact path pattern: `.hex-skills/runtime-artifacts/runs/{parent_run_id}/opportunity-discovery-worker/ln-201--{identifier}.json`
 
 ## When to Use
 
@@ -89,25 +113,39 @@ Most fail because they:
 
 ## KILL Funnel Pipeline
 
-Ideas pass through 6 sequential filters. **Fail any filter = KILL immediately.**
+Ideas do not go through 4 separate research-heavy passes anymore. Each idea gets one bundled evidence pass first.
 
 ```
-Idea → [Traffic?] → [Demand?] → [Competition?] → [Revenue?] → [Interest?] → [MVP?] → SURVIVOR
-              ↓           ↓            ↓             ↓            ↓           ↓
-            KILL        KILL         KILL          KILL         KILL        KILL
+Idea → [Evidence bundle: traffic + demand + competition + revenue]
+          ↓
+      [Hard kill matrix]
+          ↓
+     [Interest gate]
+          ↓
+      [MVP gate]
+          ↓
+       SURVIVOR
 ```
 
-### Filter 1: Traffic Channel
+### Evidence Bundle (single research pass)
 
-**Question:** Where do people look for this solution?
+**Question:** Is there enough external evidence to justify deeper evaluation?
 
-**Research:**
+**Research bundle:**
 ```
 WebSearch: "[idea] how people find solutions"
-WebSearch: "[idea] customer acquisition channels"
+WebSearch: "[idea] search volume {current_year}"
+WebSearch: "[idea] competitors {current_year}"
+WebSearch: "[idea] pricing SaaS"
 ```
 
-**Valid channels:**
+Extract four signals in one pass:
+- **Traffic channel:** Where do people actively look for this solution?
+- **Demand:** Search volume, trend direction, or strong community pain signal
+- **Competition:** Competitor count and ocean type
+- **Revenue:** Plausible price band and willingness to pay pattern
+
+**Traffic channel examples:**
 
 | Channel | Signal | Best for |
 |---------|--------|----------|
@@ -118,82 +156,25 @@ WebSearch: "[idea] customer acquisition channels"
 | **Paid Ads** | Competitors running ads | Proven demand |
 | **Outbound** | Clear ICP, reachable | B2B high-ticket |
 
-**KILL if:** No identifiable channel where people actively look for solution.
-
-**Output:** Channel name + rationale
-
----
-
-### Filter 2: Existing Demand
-
-**Question:** Are people already searching for this?
-
-**Research:**
-```
-WebSearch: "[idea] search volume {current_year}"
-WebSearch: "[idea] Google Trends"
-WebSearch: "[problem] forum discussions reddit"
-```
-
-**Demand signals:**
-
-| Signal | Source | Interpretation |
-|--------|--------|----------------|
-| Search volume | Google Keyword Planner, Ahrefs | Direct demand |
-| Trend direction | Google Trends | Growing/declining |
-| Forum activity | Reddit, HackerNews, StackOverflow | Pain level |
-| Competitor traffic | SimilarWeb, SEMrush | Market size |
-
-**KILL thresholds:**
+**Demand thresholds:**
 
 | Volume | Verdict |
 |--------|---------|
 | >10K/month | Strong demand |
 | 1K-10K/month | Viable niche |
-| <1K/month | **KILL** — insufficient demand |
+| <1K/month | Weak unless compensated by very strong niche signal |
 
-**Output:** Monthly volume estimate + trend
-
----
-
-### Filter 3: Competition (Blue/Red Ocean)
-
-**Question:** Can we enter this market?
-
-**Research:**
-```
-WebSearch: "[idea] competitors {current_year}"
-WebSearch: "[idea] alternatives comparison"
-```
-
-**Classification:**
+**Competition thresholds:**
 
 | Competitors | Index | Ocean | Verdict |
 |-------------|-------|-------|---------|
-| 0 | 1 | Blue | Opportunity (validate demand exists) |
+| 0 | 1 | Blue | Opportunity if demand is real |
 | 1-2 | 2 | Emerging | Best entry point |
 | 3-5 | 3 | Growing | Differentiation needed |
 | 6-10 | 4 | Mature | Hard but possible |
-| >10 | 5 | Red | **KILL** — commoditized |
+| >10 | 5 | Red | Often kill-worthy |
 
-**KILL if:** Index 5 (Red Ocean) — too many competitors, race to bottom.
-
-**Output:** Competitor count + Ocean type
-
----
-
-### Filter 4: Revenue Potential
-
-**Question:** Will people pay enough?
-
-**Research:**
-```
-WebSearch: "[idea] pricing SaaS"
-WebSearch: "[competitor] pricing plans"
-WebSearch: "[idea] willingness to pay"
-```
-
-**Revenue indicators:**
+**Revenue thresholds:**
 
 | ARPU | Market type | Viability |
 |------|-------------|-----------|
@@ -201,15 +182,19 @@ WebSearch: "[idea] willingness to pay"
 | $50-100 | Professional | Good |
 | $20-50 | Prosumer | Viable |
 | $5-20 | Consumer | Volume needed |
-| <$5 | Ad-supported | **KILL** |
+| <$5 | Ad-supported | Usually not worth it |
 
-**KILL if:** <$20/user — not worth the effort for small team.
+### Hard Kill Matrix
 
-**Output:** Estimated $/user + pricing model
+Kill immediately when any hard-stop condition is true:
+- no identifiable traffic channel
+- demand clearly below viable threshold with no compensating niche signal
+- competition index = 5 and no clear wedge
+- expected revenue below $20/user for a small-team business
 
----
+Record the kill reason and stop analysis for that idea.
 
-### Filter 5: Personal Interest
+### Personal Interest
 
 **Question:** Will you enjoy building this?
 
@@ -229,13 +214,15 @@ Rate your interest in building [idea]:
 - High interest = sustained motivation through hard times
 - You'll spend 2+ years on this
 
+**When to ask:** Only for ideas that survive the external evidence bundle.
+
 **KILL if:** Score 1-2 — you'll quit before PMF.
 
 **Output:** Score 1-5
 
 ---
 
-### Filter 6: MVP-ability
+### MVP-ability
 
 **Question:** Can you launch in 4 weeks?
 
@@ -257,6 +244,8 @@ Rate your interest in building [idea]:
 | 2-4 | Minor learning curve | Good |
 | 4-8 | Some new tech | Acceptable |
 | >8 | Significant infrastructure | **KILL** |
+
+**When to assess:** Only for ideas that survive external evidence + interest gate.
 
 **KILL if:** >8 weeks to MVP — too slow to validate.
 
@@ -282,33 +271,26 @@ Rate your interest in building [idea]:
    mkdir -p docs/reference/research/
    ```
 
-**Output:** Idea queue (3-10 items)
+**Output:** Idea queue (3-10 items) and checkpoint for `PHASE_1_INPUT_PROCESSING`
 
 ---
 
 ### Phase 2: KILL Funnel (per idea)
 
-**Process each idea sequentially through all 6 filters:**
+**Process each idea through one bundled evidence pass, then the personal filters only for survivors:**
 
 ```
 FOR each idea:
-    Filter 1: Traffic Channel
-        IF no channel → KILL, log reason, NEXT idea
+    Build evidence bundle:
+        traffic + demand + competition + revenue
 
-    Filter 2: Existing Demand
-        IF <1K/month → KILL, log reason, NEXT idea
+    Apply hard kill matrix
+        IF failed → KILL, log reason, NEXT idea
 
-    Filter 3: Competition
-        IF Index 5 → KILL, log reason, NEXT idea
-
-    Filter 4: Revenue
-        IF <$20/user → KILL, log reason, NEXT idea
-
-    Filter 5: Interest
-        AskUserQuestion for rating
+    Ask Interest
         IF score 1-2 → KILL, log reason, NEXT idea
 
-    Filter 6: MVP-ability
+    Assess MVP-ability
         IF >8 weeks → KILL, log reason, NEXT idea
 
     → SURVIVOR: add to survivors list
@@ -316,7 +298,8 @@ FOR each idea:
 
 **Token efficiency:**
 - Process ONE idea at a time
-- KILL early = less research needed
+- One research bundle per idea instead of four separate research phases
+- KILL early = no interest prompt, no MVP assessment
 - Clear context after each idea
 
 ---
@@ -343,6 +326,15 @@ FOR each idea:
 ### Phase 4: Output (2 min)
 
 **Generate:** `docs/reference/research/[YYYY-MM-DD]-discovery.md`
+
+Also emit structured runtime summary:
+- `schema_version`
+- `summary_kind=opportunity-discovery-worker`
+- `run_id`
+- `identifier`
+- `producer_skill=ln-201`
+- `produced_at`
+- payload with `input_mode`, `ideas_analyzed`, `generated_ideas`, `survivors_count`, `killed_count`, `top_recommendation`, `report_path`, `warnings`
 
 **Structure:**
 
@@ -421,11 +413,12 @@ ln-220 (Story Coordinator)
 ## Critical Rules
 
 1. **Traffic first** — no traffic channel = no analysis
-2. **KILL immediately** — don't score dead ideas
-3. **One recommendation** — avoid paralysis
-4. **No surveys** — real search data only
-5. **Interest matters** — you'll quit if bored
-6. **MVP speed** — slow launch = slow learning
+2. **Bundle evidence once** — do not run separate research-heavy phases if one pass can answer traffic, demand, competition, and revenue
+3. **KILL immediately** — don't score dead ideas
+4. **One recommendation** — avoid paralysis
+5. **No surveys** — real search data only
+6. **Interest matters** — ask only for externally viable ideas
+7. **MVP speed** — slow launch = slow learning
 
 ---
 
@@ -466,11 +459,14 @@ $50/user pricing proven, can MVP in 3 weeks with existing skills.
 ## Definition of Done
 
 - [ ] Ideas brainstormed from product context and market signals
-- [ ] KILL funnel applied: each idea passed/killed at each filter stage
+- [ ] Evidence bundle collected for each idea before kill decisions
+- [ ] Hard kill matrix applied before interest and MVP checks
 - [ ] Survivors scored and ranked
 - [ ] Discovery document generated at `docs/reference/research/[YYYY-MM-DD]-discovery.md`
 - [ ] TOP RECOMMENDATION identified with channel + rationale
 - [ ] KILL Log documents all eliminated ideas with reasons
+- [ ] Structured `opportunity-discovery-worker` summary returned
+- [ ] Summary artifact written when `summaryArtifactPath` is provided
 
 ## Reference Files
 

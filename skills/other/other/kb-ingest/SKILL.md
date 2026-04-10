@@ -1,33 +1,24 @@
 ---
 name: kb-ingest
-description: Ingest external sources (articles, gists, docs, URLs) into the knowledge bank through interactive discussion. Follows the LLM Wiki pattern — READ source, DISCUSS key takeaways with user, CREATE wiki pages, INTEGRATE into existing knowledge. Triggers on "ingest this", "add to knowledge bank", "process this article", or when user provides external reference material for long-term retention.
+description: Ingest external sources into the knowledge bank through interactive study or quick filing. Two modes — Quick (summarize → file) and Study (theme-by-theme deep dive with online research and personal notes → multi-layer KB output → optional blog/slack synthesis). Triggers on "ingest this", "study this article", "add to knowledge bank", "learn from this", "process this article", "take notes on this", "what are the key takeaways", "break this down for me", or when user provides external reference material for long-term retention. Also use when user says "let's go through this", wants to deeply engage with a source document, or shares an article/gist/doc and asks about its content.
 user-invocable: true
 ---
 
 # Knowledge Bank Ingest
 
-Ingest external knowledge sources into the knowledge bank through an interactive workflow. Unlike session-recap (which extracts from Claude Code sessions), this skill handles standalone sources — articles, gists, design docs, PDFs, URLs, or any knowledge-bearing document.
+Ingest external knowledge sources into the knowledge bank. Two modes serve different depths of engagement:
 
-**Knowledge Bank Location**: Read from `~/.claude/plugins/config/second-brain/config.json`. Configure via `skills/common/setup_kb_path.sh --configure`.
+- **Quick mode**: Summarize → agree on doc type → file to KB. For sources you want to preserve but don't need to deeply study.
+- **Study mode**: Theme-by-theme deep dive with online research → personal notes → multi-layer KB output → optional synthesis. For sources you want to actively learn from and potentially share.
 
-**Philosophy**: A single source can touch multiple KB pages. The discussion between you and the user shapes what gets preserved — this is not a summarizer, it's a collaborative knowledge integration tool.
+**Knowledge Bank Location**: Read from `~/.claude/plugins/config/second-brain/config.json`.
+
+**Philosophy**: The discussion between you and the user shapes what gets preserved — this is not a summarizer, it's a collaborative knowledge integration tool. A single source can touch multiple KB pages.
 
 ---
 
 ## Invocation
 
-### Manual
-- **Slash command**: `/second-brain:kb-ingest`
-- **Skill tool**: `Skill({ skill: "second-brain:kb-ingest" })`
-
-### Natural Language Triggers
-- "Ingest this article into the knowledge bank"
-- "Add this to the KB"
-- "Process this document for the knowledge bank"
-- "I want to save the key insights from this"
-
-### Arguments
-Provide a source path, URL, or indicate inline content:
 ```
 /second-brain:kb-ingest /path/to/article.md
 /second-brain:kb-ingest https://example.com/interesting-post
@@ -35,98 +26,122 @@ Provide a source path, URL, or indicate inline content:
 
 ---
 
-## Workflow
+## Step 1: READ
 
-### Step 1: READ
+Read the source document (file path → Read tool, URL → WebFetch, inline → accept directly).
 
-Read the source document:
-- **File path**: Use Read tool directly
-- **URL**: Use WebFetch to retrieve content
-- **Inline text**: Accept content pasted by the user
+For large sources (>100KB), apply the [distillation guide](../session-recap/references/distillation-guide.md).
 
-For large sources (>100KB), apply the [distillation guide](../session-recap/references/distillation-guide.md) — extract essentials, target 95% size reduction.
+Identify the source's major themes, key concepts, and actionable patterns.
 
-Identify:
-- Key concepts, patterns, and principles
-- Actionable techniques or methodologies
-- Connections to existing KB knowledge
+---
 
-### Step 2: DISCUSS
+## Step 2: MODE SELECT
 
-Present key takeaways to the user and engage in interactive discussion:
+After reading, use the **AskUserQuestion tool** to let the user choose their engagement mode:
+
+- **Quick** — Summarize key points, agree on doc type, file to KB
+- **Study** — Walk through theme by theme with online research and personal notes, then create multi-layer KB output
+
+---
+
+## Step 3: ENGAGE
+
+### Quick Mode
 
 1. **Summarize** the source's main contributions (3-5 bullet points)
-2. **Propose** what's worth preserving and as what type:
-   - Concept doc — if the source reveals an architectural pattern or principle
-   - Component doc — if it describes a specific system or tool
-   - Best practice doc — if it documents a reusable methodology
-   - Multiple docs — if the source covers several distinct topics
-3. **Ask** the user:
-   - What resonates most? What should be emphasized?
-   - What's the project context? (determines KB placement under `projects/{project}/`)
-   - Anything to add from their own experience?
+2. **Propose** what to preserve and as what type (concept / component / best-practice / multiple)
+3. Use the **AskUserQuestion tool** to confirm: What resonates? What project context? Anything to add from their own experience?
+4. Proceed to Step 4 (CREATE) once agreed
 
-The discussion itself generates insights beyond the raw source. Capture these.
+### Study Mode
 
-**Example:**
-```
-Source: Article on event sourcing patterns
-Summarize: "3 key takeaways: (1) events as source of truth, (2) projection 
-  rebuilds from event stream, (3) snapshot optimization for large streams"
-Propose: "This maps to a concept doc — fits under projects/cc/concepts/ 
-  since it's an architectural pattern we could apply to session management"
-Ask: "Does this connect to any patterns you've seen in your codebase? 
-  Should we emphasize the snapshot optimization angle?"
-```
+Walk through the source **theme by theme**. For each theme:
 
-### Step 3: CREATE
+1. **Present** — explain the core idea, key examples, and why it matters
+2. **Explore** — research online (WebSearch/WebFetch) to find 2-3 relevant pieces that enrich the theme: related work, counter-arguments, real-world applications. The goal is to add context, not exhaustively survey. See [study-mode-guide.md](references/study-mode-guide.md) for depth guidance and a walkthrough example.
+3. **Pause** — let the user note their takeaways in their own words
+4. **Capture** — record the user's personal insights, reframings, and connections to existing knowledge. The user often synthesizes more sharply than the source — preserve their framing, not just the article's.
+5. **Repeat** for the next theme until the source is covered
 
-Generate KB document(s) incorporating both the source content AND discussion insights.
+The user's notes are first-class output — they're not just "discussion", they're the learning record that becomes the study docs in Step 4.
 
-**Templates**: Use existing templates from `session-recap/references/`:
-- [concept-template.md](../session-recap/references/concept-template.md)
-- [component-template.md](../session-recap/references/component-template.md)
-- [best-practice-template.md](../session-recap/references/best-practice-template.md)
+---
 
-**Cross-references**: Run cross-reference discovery:
-```bash
-./skills/session-recap/scripts/search_cross_references.sh "keyword" [project]
-```
-Target 5-8 WikiLinks (lower than session-recap's 10-15 since standalone ingests have less cross-referencing context).
+## Step 4: CREATE
 
-**Frontmatter** (MUST include):
+### Quick Mode Output
+
+Generate concept/component/best-practice doc(s) as in the [ingest guide](references/ingest-guide.md). Target 5-8 WikiLinks.
+
+### Study Mode Output — Three Layers
+
+Study mode produces three layers of documentation, each serving a different future use:
+
+| Layer | Location | Purpose |
+|-------|----------|---------|
+| **Source copy** | `projects/{project}/sources/` | Original article with KB frontmatter — raw material for re-reading |
+| **Digest** | `projects/{project}/study/` | Numbered principles organized by category — quick reference |
+| **Learning notes** | `projects/{project}/study/` | Per-theme notes capturing the interactive discussion and online research — personal thinking record |
+
+Plus the standard concept/component/best-practice docs distilled from the study.
+
+**Frontmatter for all docs:**
 ```yaml
 ---
 title: Document Title
 aliases: [Alt 1, Alt 2]
 tags: [category, topic]
-type: concept|component|best-practice
+type: concept|component|best-practice|study|source
 created: YYYY-MM-DD
 modified: YYYY-MM-DD
 project: {project}
 source-type: article|document|url|gist
 ingested-from: /path/to/source.md or https://url
+source-doc: "[[Source Document Title]]"
 ---
 ```
 
-**Obsidian Syntax**: When obsidian skills are available, MUST invoke `/obsidian:obsidian-markdown` before creating documents.
+**Cross-references**: Run `search_cross_references.sh "keyword" [project]`. Target 5-8 WikiLinks.
 
-**Updating existing docs**: If the new knowledge connects to or supersedes existing KB pages, update them too — add cross-references, revise outdated claims, note where new data strengthens or challenges existing content. This follows the LLM Wiki principle that a single ingest can touch multiple pages.
+**Obsidian Syntax**: When obsidian skills are available, invoke `/obsidian:obsidian-markdown` before creating documents.
 
-### Step 4: INTEGRATE
+**Updating existing docs**: If new knowledge connects to or supersedes existing KB pages, update them — add cross-references, revise outdated claims, note where new data strengthens or challenges existing content.
+
+---
+
+## Step 5: SYNTHESIZE (optional, after Study mode)
+
+After Study mode CREATE is complete, use the **AskUserQuestion tool** to ask what synthesis the user wants:
+
+- **Blog post** — Synthesize into a listicle-style blog post following the [blog synthesis guide](references/blog-synthesis-guide.md)
+- **Slack message** — Concise narrative prose (~150 words), no bullets, links at bottom
+- **Skip** — No synthesis needed, KB docs are sufficient
+
+The synthesis draws from the digest + learning notes + user's personal reframings — not the raw source. The user's voice and analytical angle are the value-add over the original article.
+
+**Key principle**: The user owns their voice. Present drafts, but expect the user to rewrite key passages (especially openings). Polish what they give you — don't ghostwrite.
+
+Save synthesis outputs to the session docs folder:
+- `docs/polished-blog-YYYYMMDD/` — original draft, polished version, changelog, feedback
+- `docs/polished-slack-YYYYMMDD/` — same structure for Slack
+
+---
+
+## Step 6: INTEGRATE
 
 After creating/updating documents:
 
-1. **Regenerate index**:
+1. **Regenerate index** (so new docs appear in the unified catalog):
 ```bash
 source skills/common/generate_index.sh
 generate_index "$KB_PATH"
 ```
 
-2. **Append operation log**:
+2. **Append operation log** (audit trail for KB changes):
 ```bash
 source skills/common/obsidian_helpers.sh
-append_kb_log "$KB_PATH" "ingest" "kb-ingest" "Ingested [source name]. Created: [docs]. Updated: [docs]"
+append_kb_log "$KB_PATH" "ingest" "kb-ingest" "Ingested [source]. Created: [docs]. Updated: [docs]"
 ```
 
 3. **Verify** created documents:
@@ -142,39 +157,26 @@ append_kb_log "$KB_PATH" "ingest" "kb-ingest" "Ingested [source name]. Created: 
 For multiple sources: "Ingest all .md files in /path/to/folder/"
 
 - READ all sources first
-- DISCUSS as a batch — present combined takeaways, let user prioritize
+- ENGAGE as a batch — present combined takeaways, let user prioritize
 - CREATE docs per source (or merged if topics overlap)
 - INTEGRATE once at the end
-
----
-
-## Key Design Decisions
-
-| Decision | Rationale |
-|----------|-----------|
-| Interactive DISCUSS step | User's context and emphasis shape what gets preserved — not a blind summarizer |
-| 5-8 WikiLinks (not 10-15) | Standalone ingests have less cross-referencing context than full session recaps |
-| Reuse session-recap templates | No duplication — one set of templates for all KB documents |
-| No daily log | Daily logs are session-recap's responsibility |
-| No reflection gate | Reflections come from *doing* work, not reading about it |
-| Can update existing pages | LLM Wiki principle — a single source can touch multiple wiki pages |
 
 ---
 
 ## Resources
 
 - [KB Schema](_meta/schema.md) — Unified conventions for all KB documents
-- [Ingest Guide](references/ingest-guide.md) — Source types, classification, and quality standards
+- [Ingest Guide](references/ingest-guide.md) — Source types, classification, quality standards
+- [Study Mode Guide](references/study-mode-guide.md) — Theme walkthrough example, explore depth guidance, capturing user notes
+- [Blog Synthesis Guide](references/blog-synthesis-guide.md) — How to create blog posts from studied material
 - [Distillation Guide](../session-recap/references/distillation-guide.md) — For large sources
 
 ---
 
 ## Completion Criteria
 
-Ingest is complete when:
-
-1. Source has been read and discussed with user
-2. KB document(s) created with valid frontmatter and 5-8 WikiLinks
-3. Obsidian syntax validation passes
-4. `_meta/index.md` regenerated
-5. `_meta/log.md` entry appended
+| Mode | Complete when |
+|------|---------------|
+| **Quick** | KB doc(s) created with frontmatter and 5-8 WikiLinks, index regenerated, log appended |
+| **Study** | Source copy + digest + learning notes + concept docs created, index regenerated, log appended |
+| **Study + Synthesis** | All of Study, plus polished blog/slack output in session docs |

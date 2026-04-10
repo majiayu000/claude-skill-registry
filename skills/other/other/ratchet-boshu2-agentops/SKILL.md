@@ -1,11 +1,20 @@
 ---
 name: ratchet
 description: 'Brownian Ratchet progress gates for RPI workflow. Check, record, verify. Triggers: "check gate", "verify progress", "ratchet status".'
+skill_api_version: 1
 user-invocable: false
+context:
+  window: isolated
+  intent:
+    mode: none
+  sections:
+    exclude: [HISTORY, INTEL, TASK]
+  intel_scope: none
 metadata:
   tier: background
   dependencies: []
   internal: true
+output_contract: "stdout: gate check result"
 ---
 
 # Ratchet Skill
@@ -76,7 +85,7 @@ ao ratchet skip <step> --reason "<why>" 2>/dev/null
 | `plan` | Plan artifact exists | `.agents/plans/*.md` |
 | `implement` | Code + tests pass | Source files |
 | `vibe` | /vibe passes | `.agents/vibe/*.md` |
-| `post-mortem` | Learnings extracted | `.agents/retros/*.md` |
+| `post-mortem` | Learnings extracted | `.agents/learnings/*.md` |
 
 ## Chain Storage
 

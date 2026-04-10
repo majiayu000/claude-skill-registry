@@ -4,7 +4,7 @@ description: Use when you need to review, improve, or refactor Java code for gen
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0-SNAPSHOT
+  version: 0.14.0
 ---
 # Java Generics Best Practices
 

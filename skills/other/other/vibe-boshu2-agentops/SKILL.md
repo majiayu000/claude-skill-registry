@@ -1,21 +1,32 @@
 ---
 name: vibe
 description: 'Comprehensive code validation. Runs complexity analysis then multi-model council. Answer: Is this code ready to ship? Triggers: "vibe", "validate code", "check code", "review code", "code quality", "is this ready".'
+skill_api_version: 1
 metadata:
   tier: judgment
   dependencies:
     - council    # multi-model judgment
     - complexity # complexity analysis
+    - bug-hunt   # proactive code audit
     - standards  # loaded for language-specific context
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: full
+output_contract: skills/council/schemas/verdict.json
 ---
 
 # Vibe Skill
 
 > **Purpose:** Is this code ready to ship?
 
-Two steps:
+Three steps:
 1. **Complexity analysis** — Find hotspots (radon, gocyclo)
-2. **Council validation** — Multi-model judgment
+2. **Bug hunt audit** — Systematic sweep for concrete bugs
+3. **Council validation** — Multi-model judgment
 
 ---
 
@@ -26,16 +37,60 @@ Two steps:
 /vibe recent                             # same as above
 /vibe src/auth/                          # validates specific path
 /vibe --quick recent                     # fast inline check, no agent spawning
+/vibe --structured recent                # 6-phase verification report (build→types→lint→tests→security→diff)
 /vibe --deep recent                      # 3 judges instead of 2
+/vibe --sweep recent                     # deep audit: per-file explorers + council
 /vibe --mixed recent                     # cross-vendor (Claude + Codex)
 /vibe --preset=security-audit src/auth/  # security-focused review
 /vibe --explorers=2 recent               # judges with explorer sub-agents
 /vibe --debate recent                    # two-round adversarial review
+/vibe --tier=quality recent              # use quality tier for council calls
 ```
 
 ---
 
 ## Execution Steps
+
+### Step 0: Load Prior Review Context
+
+Before reviewing, pull relevant learnings from prior code reviews and known patterns:
+
+```bash
+if command -v ao &>/dev/null; then
+    ao lookup --query "<target-scope> code review patterns" --limit 3 2>/dev/null || true
+fi
+```
+
+**Apply retrieved knowledge (mandatory when results returned):**
+
+If learnings or patterns are returned, do NOT just load them as passive context. For each returned item:
+1. Check: does this learning apply to the code under review? (answer yes/no)
+2. If yes: include it as a `known_risk` in your review — state the pattern, what to look for, and whether the code exhibits it
+3. Cite the learning by filename in your review output when it influences a finding
+
+After applying, record the citation:
+```bash
+ao metrics cite "<learning-path>" --type applied 2>/dev/null || true
+```
+
+Skip silently if ao is unavailable or returns no results.
+
+**Project reviewer config:** If `.agents/reviewer-config.md` exists, its full config (`reviewers`, `plan_reviewers`, `skip_reviewers`) is passed to council for judge selection. See `skills/council/SKILL.md` Step 1b.
+
+### Crank Checkpoint Detection
+
+Before scanning for changed files via git diff, check if a crank checkpoint exists:
+
+```bash
+if [ -f .agents/vibe-context/latest-crank-wave.json ]; then
+    echo "Crank checkpoint found — using files_changed from checkpoint"
+    FILES_CHANGED=$(jq -r '.files_changed[]' .agents/vibe-context/latest-crank-wave.json 2>/dev/null)
+    WAVE_COUNT=$(jq -r '.wave' .agents/vibe-context/latest-crank-wave.json 2>/dev/null)
+    echo "Wave $WAVE_COUNT checkpoint: $(echo "$FILES_CHANGED" | wc -l | tr -d ' ') files changed"
+fi
+```
+
+When a crank checkpoint is available, use its `files_changed` list instead of re-detecting via `git diff`. This ensures vibe validates exactly the files that crank modified.
 
 ### Step 1: Determine Target
 
@@ -53,11 +108,23 @@ If nothing found, ask user.
 Return immediately with: "PASS (no changes to review) — no modified files detected."
 Do NOT spawn agents for empty file lists.
 
+### Step 1.5a: Structured Verification Path (--structured mode)
+
+**If `--structured` flag is set**, run a 6-phase mechanical verification pipeline instead of the council flow. This produces a machine-readable verification report suitable for PR gates and CI integration.
+
+Phases: Build → Types → Lint → Tests → Security → Diff Review.
+
+Read `references/verification-report.md` for the full report template and per-phase commands. Each phase is fail-fast — if Build fails, skip remaining phases and report NOT READY.
+
+After all phases complete, write the structured report to `.agents/council/YYYY-MM-DD-verification-<target>.md` and output the summary table to the user.
+
+**When to use:** Pre-PR gate, CI integration, when you need a mechanical pass/fail rather than judgment-based review.
+
 ### Step 1.5: Fast Path (--quick mode)
 
-**If `--quick` flag is set**, skip Steps 2a–2e (constraint tests, metadata checks, OL validation, codex review, knowledge search, product context) and jump directly to Step 4 with inline council. Complexity analysis (Step 2) still runs — it's cheap and informative.
+**If `--quick` flag is set**, skip Steps 2a through 2e as heavy pre-processing, plus 2.5 and 2f, and jump to Step 4 with inline council after Steps 2.3, 2.4, 2g, and Step 3. Domain checklists, compiled-prevention loading, test-pyramid inventory, and inline product context are cheap and high-value, so they still run in quick mode. Complexity analysis (Step 2) still runs — it's cheap and informative.
 
-**Why:** Steps 2a–2e add 30–90 seconds of pre-processing that feed multi-judge council packets. In --quick mode (single inline agent), these inputs aren't worth the cost — the inline reviewer reads files directly.
+**Why:** Steps 2.5 and 2a–2f add 30–90 seconds of pre-processing that mainly feed multi-judge council packets. In --quick mode (single inline agent), those inputs are not worth the cost, but test-pyramid and product-context checks still shape the inline review meaningfully.
 
 ### Step 2: Run Complexity Analysis
 
@@ -106,164 +173,143 @@ fi
 
 **Include complexity findings in council context.**
 
-### Step 2a: Run Constraint Tests
+### Step 2.3: Load Domain-Specific Checklists
 
-**Skip if `--quick` (see Step 1.5).**
+Detect code patterns in the target files and load matching domain-specific checklists from `standards/references/`:
 
-**If the project has constraint tests, run them before council:**
+| Trigger | Checklist | Detection |
+|---------|-----------|-----------|
+| SQL/ORM code | `sql-safety-checklist.md` | Files contain SQL queries, ORM imports (`database/sql`, `sqlalchemy`, `prisma`, `activerecord`, `gorm`, `knex`), or migration files in changeset |
+| LLM/AI code | `llm-trust-boundary-checklist.md` | Files import `anthropic`, `openai`, `google.generativeai`, or match `*llm*`, `*prompt*`, `*completion*` patterns |
+| Concurrent code | `race-condition-checklist.md` | Files use goroutines, `threading`, `asyncio`, `multiprocessing`, `sync.Mutex`, `concurrent.futures`, or shared file I/O patterns |
+| Codex skills | `codex-skill.md` | Files under `skills-codex/`, or files matching `*codex*SKILL.md`, `convert.sh`, `skills-codex-overrides/`, or converter scripts |
 
-```bash
-# Check if constraint tests exist (Olympus pattern)
-if [ -d "internal/constraints" ] && ls internal/constraints/*_test.go &>/dev/null; then
-  echo "Running constraint tests..."
-  go test ./internal/constraints/ -run TestConstraint -v 2>&1
-  # If FAIL → include failures in council context as CRITICAL findings
-  # If PASS → note "N constraint tests passed" in report
-fi
-```
+For each matched checklist, load it via the Read tool and include relevant items in the council packet as `context.domain_checklists`. Multiple checklists can be loaded simultaneously.
 
-**Why:** Constraint tests catch mechanical violations (ghost references, TOCTOU races, dead code at entry points) that council judges miss. Proven by Argus ghost ref in ol-571 — council gave PASS while constraint test caught it.
+Skip silently if no patterns match. This step runs in both `--quick` and full modes (domain checklists are cheap to load and high-value).
 
-Include constraint test results in the council packet context. Failed constraint tests are CRITICAL findings that override council PASS verdict.
+**Steps 2.4-2f, 2h, 3-3.6 (Deep Checks & Pre-Council Prep):** Read `references/deep-checks.md` for compiled prevention, prior findings, pre-council deep analysis checks, product context, spec loading, suppressions, pre-mortem correlation, and model cost tiers. Loaded automatically unless `--quick` mode is set. In `--quick` mode, skip directly to Step 2g.
 
-### Step 2b: Metadata Verification Checklist (MANDATORY)
+**Compiled prevention inputs:** Load `.agents/pre-mortem-checks/` and `.agents/planning-rules/` when available. These compiled artifacts contain known_risks from prior findings that inform the review — carry matched finding IDs into council context so judges can assess whether the flywheel prevented rediscovery.
 
-**Skip if `--quick` (see Step 1.5).**
+### Step 2a: Prior Findings Check
 
-Run mechanical checks BEFORE council — catches errors LLMs estimate instead of measure:
-1. **File existence** — every path in `git diff --name-only HEAD~3` must exist on disk
-2. **Line counts** — if a file claims "N lines", verify with `wc -l`
-3. **Cross-references** — internal markdown links resolve to existing files
-4. **Diagram sanity** — files with >3 ASCII boxes should have matching labels
+**Skip if `--quick`.** Load prior findings from `.agents/findings/registry.jsonl`.
 
-Include failures in council packet as `context.metadata_failures` (MECHANICAL findings). If all pass, note in report.
+### Step 2b: Constraint Tests
 
-### Step 2c: Deterministic Validation (Olympus)
+**Skip if `--quick`.** Run compiled constraint tests from `.agents/constraints/`.
 
-**Skip if `--quick` (see Step 1.5).**
+### Step 2c: Metadata Checks
 
-**Guard:** Only run when `.ol/config.yaml` exists AND `which ol` succeeds. Skip silently otherwise.
+**Skip if `--quick`.** Verify file metadata consistency.
 
-**Implementation:**
+### Step 2.5: OL Validation
 
-```bash
-# Run ol-validate.sh
-skills/vibe/scripts/ol-validate.sh
-ol_exit_code=$?
+**Skip if `--quick`.** Run organizational-lint checks.
 
-case $ol_exit_code in
-  0)
-    # Passed: include the validation report in vibe output
-    echo "✅ Deterministic validation passed"
-    # Append the report section to council context and vibe report
-    ;;
-  1)
-    # Failed: abort vibe with FAIL verdict
-    echo "❌ Deterministic validation FAILED"
-    echo "VIBE FAILED — Olympus Stage1 validation did not pass"
-    exit 1
-    ;;
-  2)
-    # Skipped: note and continue
-    echo "⚠️ OL validation skipped"
-    # Continue to council
-    ;;
-esac
-```
+### Step 2d: Knowledge Search
 
-**Behavior:**
-- **Exit 0 (passed):** Include the validation report section in vibe output and council context. Proceed normally.
-- **Exit 1 (failed):** Auto-FAIL the vibe. Do NOT proceed to council.
-- **Exit 2 (skipped):** Note "OL validation skipped" in report. Proceed to council.
+**Skip if `--quick`.** Search for relevant prior learnings via `ao lookup`.
 
-### Step 2.5: Codex Review (if available)
+### Step 2e: Bug Hunt
 
-**Skip if `--quick` (see Step 1.5).**
+**Skip if `--quick`.** Run proactive bug-hunt audit on target files.
 
-Run a fast, diff-focused code review via Codex CLI before council:
+### Step 2f: Codex Review
 
-```bash
-echo "$(date -Iseconds) preflight: checking codex" >> .agents/council/preflight.log
-if which codex >> .agents/council/preflight.log 2>&1; then
-  codex review --uncommitted > .agents/council/codex-review-pre.md 2>&1 && \
-    echo "Codex review complete — output at .agents/council/codex-review-pre.md" || \
-    echo "Codex review skipped (failed)"
-else
-  echo "Codex review skipped (CLI not found)"
-fi
-```
+**Skip if `--quick`.** When `--mixed` is passed and Codex CLI is available, send the first 2000 chars of the diff to Codex for a parallel review. Cap input at 2000 chars to stay within Codex context budgets.
 
-**If output exists**, summarize and include in council packet (cap at 2000 chars to prevent context bloat):
+### Step 3: Product Context
+
+**Skip if `--quick` as a separate judge-fanout step.** When `PRODUCT.md` exists and the user did not pass an explicit `--preset` override, quick mode still loads DX expectations inline in the single-agent review. In non-quick modes, add a DX (developer experience) judge: 2 independent + 1 DX judge (3 judges total). The DX judge evaluates whether the code aligns with the product's stated personas and value propositions.
+
+### Step 2g: Test Pyramid Inventory (MANDATORY)
+
+Assess test coverage against the test pyramid standard (the test pyramid standard (loaded via `/standards`)).
+
+Read `skills/vibe/references/test-pyramid-weighting.md` for test pyramid weighting — L3+ tests found all production bugs, weight them 5x.
+
+**Test Pyramid Weighting:** Weight test coverage by level: L0–L1 at 1x, L2 at 3x, L3+ at 5x. Unit-only coverage is a WARN signal, not a PASS. See `references/test-pyramid-weighting.md`.
+
+**Run even in `--quick` mode** — this is cheap (file existence checks) and high-signal.
+
+1. **Identify changed modules** from git diff or target scope
+2. **For each changed module, check coverage pyramid (L0–L3):**
+   - L0: Does a contract/spec enforcement test cover this module?
+   - L1: Does a unit test file exist for this module?
+   - L2: If module crosses boundaries, does an integration test exist?
+3. **For boundary-touching code, check bug-finding pyramid (BF1–BF5):**
+   - BF4 (Chaos): Do external call sites have failure injection tests?
+   - BF1 (Property): Do data transformations have property tests?
+   - BF2 (Golden): Do output generators have golden file tests?
+4. **Compute weighted pyramid score** for changed code paths:
+
+   **Formula:**
+   ```
+   weighted_score = (L0_count x 1 + L1_count x 1 + L2_count x 3 + L3_count x 5 + L4_count x 5) / max_possible
+   ```
+   Where `max_possible = total_test_count x 5` (the score if every test were L3+).
+
+   Count tests at each level for changed code paths:
+   - L0: Build/compile checks (weight 1)
+   - L1: Unit tests (weight 1)
+   - L2: Integration tests (weight 3)
+   - L3: E2E/system tests (weight 5)
+   - L4: Smoke/fresh-context tests (weight 5)
+
+   **Interpretation:**
+   - `weighted_score >= 0.6` — strong pyramid, L2+ tests present
+   - `0.3 <= weighted_score < 0.6` — acceptable, but recommend more integration tests
+   - `weighted_score < 0.3` AND all tests are L0-L1 only — **WARN: unit-only test coverage** (feeds into vibe verdict as a WARN signal, not a separate gate)
+
+   **Satisfaction exposure:** The `weighted_score` is also exposed as `satisfaction_score` (with source `"test-pyramid-weighted"`) in the test_pyramid output block. Downstream consumers (e.g., `/validation` STEP 1.8 holdout evaluation) can use `satisfaction_score` as a normalized quality signal.
+
+   **Include in council packet and vibe report output:**
+   ```
+   ## Test Pyramid Score
+   | Level | Count | Weight | Contribution |
+   |-------|-------|--------|--------------|
+   | L0    | 2     | 1x     | 2            |
+   | L1    | 8     | 1x     | 8            |
+   | L2    | 0     | 3x     | 0            |
+   | L3    | 0     | 5x     | 0            |
+   | L4    | 0     | 5x     | 0            |
+   | **Total** | **10** | | **10 / 50 = 0.20** |
+   WARN: weighted_score 0.20 < 0.3 and all tests are L0-L1 only
+   ```
+
+5. **Build coverage table** and include in council packet as `context.test_pyramid`:
+
 ```json
-"codex_review": {
-  "source": "codex review --uncommitted",
-  "content": "<first 2000 chars of .agents/council/codex-review-pre.md>"
+"test_pyramid": {
+  "coverage": {
+    "L0": {"status": "pass", "files": ["test_spec_enforcement.py"]},
+    "L1": {"status": "pass", "files": ["test_module.py"]},
+    "L2": {"status": "gap", "reason": "crosses subsystem boundary, no integration test"}
+  },
+  "bug_finding": {
+    "BF4_chaos": {"status": "gap", "reason": "external API calls without failure injection"},
+    "BF1_property": {"status": "na", "reason": "no data transformations in scope"}
+  },
+  "weighted_score": 0.20,
+  "satisfaction_score": 0.20,
+  "satisfaction_source": "test-pyramid-weighted",
+  "score_breakdown": {"L0": 2, "L1": 8, "L2": 0, "L3": 0, "L4": 0},
+  "max_possible": 50,
+  "warn_unit_only": true,
+  "verdict": "WARN: weighted_score 0.20 < 0.3, all tests L0-L1 only"
 }
 ```
 
-**IMPORTANT:** The raw codex review can be 50k+ chars. Including the full text in every judge's packet multiplies token cost by N judges. Truncate to the first 2000 chars (covers the summary and top findings). Judges can read the full file from disk if they need more detail.
+**Verdict rules:**
+- `weighted_score < 0.3` AND all tests L0-L1 only — **WARN: unit-only coverage** (include in council findings)
+- Missing L1 on feature code — **WARN** (include in council findings)
+- Missing L0 on spec-changing code — **WARN**
+- Missing BF4 on boundary code — **WARN** (advisory, not blocking)
+- All levels covered with `weighted_score >= 0.6` — no mention needed
 
-This gives council judges a Codex-generated review as pre-existing context — cheap, fast, diff-focused. It does NOT replace council judgment; it augments it.
-
-**Skip conditions:**
-- Codex CLI not on PATH → skip silently
-- `codex review` fails → skip silently, proceed with council only
-- No uncommitted changes → skip (nothing to review)
-
-### Step 2d: Search Knowledge Flywheel
-
-**Skip if `--quick` (see Step 1.5).**
-
-```bash
-if command -v ao &>/dev/null; then
-    ao search "code review findings <target>" 2>/dev/null | head -10
-fi
-```
-If ao returns prior code review patterns for this area, include them in the council packet context. Skip silently if ao is unavailable or returns no results.
-
-### Step 2e: Check for Product Context
-
-**Skip if `--quick` (see Step 1.5).**
-
-```bash
-if [ -f PRODUCT.md ]; then
-  # PRODUCT.md exists — include developer-experience perspectives
-fi
-```
-
-When `PRODUCT.md` exists in the project root AND the user did NOT pass an explicit `--preset` override:
-1. Read `PRODUCT.md` content and include in the council packet via `context.files`
-2. Add a single consolidated `developer-experience` perspective to the council invocation:
-   - **With spec:** `/council --preset=code-review --perspectives="developer-experience" validate <target>` (3 judges: 2 code-review + 1 DX)
-   - **Without spec:** `/council --perspectives="developer-experience" validate <target>` (3 judges: 2 independent + 1 DX)
-   The DX judge covers api-clarity, error-experience, and discoverability in a single review.
-3. With `--deep`: adds 1 more judge per mode (4 judges total).
-
-When `PRODUCT.md` exists BUT the user passed an explicit `--preset`: skip DX auto-include (user's explicit preset takes precedence).
-
-When `PRODUCT.md` does not exist: proceed to Step 3 unchanged.
-
-> **Tip:** Create `PRODUCT.md` from `docs/PRODUCT-TEMPLATE.md` to enable developer-experience-aware code review.
-
-### Step 3: Load the Spec (New)
-
-**Skip if `--quick` (see Step 1.5).**
-
-Before invoking council, try to find the relevant spec/bead:
-
-1. **If target looks like a bead ID** (e.g., `na-0042`): `bd show <id>` to get the spec
-2. **Search for plan doc:** `ls .agents/plans/ | grep <target-keyword>`
-3. **Check git log:** `git log --oneline | head -10` to find the relevant bead reference
-
-If a spec is found, include it in the council packet's `context.spec` field:
-```json
-{
-  "spec": {
-    "source": "bead na-0042",
-    "content": "<the spec/bead description text>"
-  }
-}
-```
+When coverage gaps are found, run `/test <module>` to generate test candidates for uncovered code.
 
 ### Step 4: Run Council Validation
 
@@ -288,8 +334,9 @@ The spec content is injected into the council packet context so the `spec-compli
 - Complexity hotspots (from Step 2)
 - Git diff context
 - Spec content (when found, in `context.spec`)
+- Sweep manifest (when `--deep` or `--sweep`, in `context.sweep_manifest` — judges shift to adjudication mode, see `references/deep-audit-protocol.md`)
 
-All council flags pass through: `--quick` (inline), `--mixed` (cross-vendor), `--preset=<name>` (override perspectives), `--explorers=N`, `--debate` (adversarial 2-round). See Quick Start examples and `/council` docs.
+All council flags pass through: `--quick` (inline), `--mixed` (cross-vendor), `--preset=<name>` (override perspectives), `--explorers=N`, `--debate` (adversarial 2-round), `--tier=<name>` (model cost tier: quality/balanced/budget). See Quick Start examples and `/council` docs.
 
 ### Step 5: Council Checks
 
@@ -306,6 +353,8 @@ Each judge reviews for:
 
 ### Step 6: Interpret Verdict
 
+## Council Verdict:
+
 | Council Verdict | Vibe Result | Action |
 |-----------------|-------------|--------|
 | PASS | Ready to ship | Merge/deploy |
@@ -314,52 +363,9 @@ Each judge reviews for:
 
 ### Step 7: Write Vibe Report
 
-**Write to:** `.agents/council/YYYYMMDDTHHMMSSZ-vibe-<target>.md` (use `date -u +%Y%m%dT%H%M%SZ`)
+**Write to:** `.agents/council/YYYY-MM-DD-vibe-<target>.md` (use `date +%Y-%m-%d`)
 
-```markdown
-# Vibe Report: <Target>
-
-**Date:** YYYY-MM-DD
-**Files Reviewed:** <count>
-
-## Complexity Analysis
-
-**Status:** ✅ Completed | ⚠️ Skipped (<reason>)
-
-| File | Score | Rating | Notes |
-|------|-------|--------|-------|
-| src/auth.py | 15 | C | Consider breaking up |
-| src/utils.py | 4 | A | Good |
-
-**Hotspots:** <list files with C or worse>
-**Skipped reason:** <if skipped, explain why - e.g., "radon not installed">
-
-## Council Verdict: PASS / WARN / FAIL
-
-| Judge | Verdict | Key Finding |
-|-------|---------|-------------|
-| Error-Paths | ... | ... (with spec — code-review preset) |
-| API-Surface | ... | ... (with spec — code-review preset) |
-| Spec-Compliance | ... | ... (with spec — code-review preset) |
-| Judge 1 | ... | ... (no spec — 2 independent judges) |
-| Judge 2 | ... | ... (no spec — 2 independent judges) |
-| Judge 3 | ... | ... (no spec — 2 independent judges) |
-
-## Shared Findings
-- ...
-
-## Concerns Raised
-- ...
-
-## Recommendation
-<council recommendation>
-
-## Decision
-
-[ ] SHIP - Complexity acceptable, council passed
-[ ] FIX - Address concerns before shipping
-[ ] REFACTOR - High complexity, needs rework
-```
+Read `references/report-format.md` for the full vibe report markdown template. The report includes: complexity analysis, council verdict table, shared/critical/informational findings, all findings (when `--deep`/`--sweep`), recommendation, and decision checkboxes.
 
 ### Step 8: Report to User
 
@@ -377,9 +383,9 @@ After council verdict:
    - Suggest: "Run /post-mortem to capture learnings and complete the cycle."
 2. If verdict is FAIL:
    - Do NOT record ratchet progress.
-   - Extract top 5 findings from the council report for structured retry context:
+   - Extract ALL findings from the council report for structured retry context (group by category if >20):
      ```
-     Read the council report. For each finding (max 5), format as:
+     Read the council report. For each finding, format as:
      FINDING: <description> | FIX: <fix or recommendation> | REF: <ref or location>
 
      Fallback for v1 findings (no fix/why/ref fields):
@@ -390,54 +396,29 @@ After council verdict:
 
 ### Step 9.5: Feed Findings to Flywheel
 
-**If verdict is WARN or FAIL**, write top findings as a lightweight learning for future sessions:
+**If verdict is WARN or FAIL**, persist reusable findings to `.agents/findings/registry.jsonl` and optionally mirror the broader narrative to a learning file.
+
+Registry write rules:
+
+- persist only reusable issues that should change future review or implementation behavior
+- require `dedup_key`, provenance, `pattern`, `detection_question`, `checklist_item`, `applicable_when`, and `confidence`
+- `applicable_when` must use the controlled vocabulary from the finding-registry contract
+- append or merge by `dedup_key`
+- use the contract's temp-file-plus-rename atomic write rule
+
+If a broader prose summary still helps, also write the existing anti-pattern learning file to `.agents/learnings/YYYY-MM-DD-vibe-<target>.md`. Skip both if verdict is PASS.
+
+After the registry update, if `hooks/finding-compiler.sh` exists, run:
 
 ```bash
-if [[ "$VERDICT" == "WARN" || "$VERDICT" == "FAIL" ]]; then
-  mkdir -p .agents/learnings
-  LEARNING_FILE=".agents/learnings/$(date -u +%Y-%m-%d)-vibe-$(echo "$TARGET" | tr '/' '-' | head -c 40).md"
-  cat > "$LEARNING_FILE" <<EOF
----
-type: anti-pattern
-source: vibe
-date: $(date -Iseconds)
-confidence: high
----
-
-# Vibe findings: $TARGET
-
-$(for finding in "${TOP_FINDINGS[@]:0:3}"; do
-  echo "- **${finding.severity}:** ${finding.description} (${finding.location})"
-done)
-
-**Recommendation:** ${COUNCIL_RECOMMENDATION}
-EOF
-
-  # Index for flywheel if ao available
-  if command -v ao &>/dev/null; then
-    ao forge markdown "$LEARNING_FILE" 2>/dev/null || true
-  fi
-fi
+bash hooks/finding-compiler.sh --quiet 2>/dev/null || true
 ```
 
-**Why:** Vibe catches anti-patterns repeatedly across epics but they evaporate unless `/post-mortem` runs. This captures findings at the point of discovery — lightweight (one file write, no `/retro` invocation) and immediately available to future sessions via inject.
-
-**Skip if:** PASS verdict (nothing to learn from clean code).
+This keeps the same-session post-mortem path synchronized with the latest reusable findings. `session-end-maintenance.sh` remains the idempotent backstop.
 
 ### Step 10: Test Bead Cleanup
 
-After validation completes (regardless of verdict), clean up any stale test beads to prevent bead pollution:
-
-```bash
-# Test bead hygiene: close any beads created by test/validation runs
-if command -v bd &>/dev/null; then
-  test_beads=$(bd list --status=open 2>/dev/null | grep -iE "test bead|test quest|smoke test" | awk '{print $1}')
-  if [ -n "$test_beads" ]; then
-    echo "$test_beads" | xargs bd close 2>/dev/null || true
-    log "Cleaned up $(echo "$test_beads" | wc -l | tr -d ' ') test beads"
-  fi
-fi
-```
+After validation completes, clean up stale test beads (`bd list --status=open | grep -iE "test bead|test quest"`) via `bd close` to prevent bead pollution. Skip if `bd` unavailable.
 
 ---
 
@@ -453,6 +434,7 @@ fi
 /vibe                      ← You are here
     │
     ├── Complexity analysis (find hotspots)
+    ├── Bug hunt audit (find concrete bugs)
     └── Council validation (multi-model judgment)
     │
     ├── PASS → ship it
@@ -514,14 +496,49 @@ See `references/examples.md` for additional examples: security audit with spec c
 | "COMPLEXITY SKIPPED: radon not installed" | Python complexity analyzer missing | Install with `pip install radon` or skip complexity (council still runs). |
 | "COMPLEXITY SKIPPED: gocyclo not installed" | Go complexity analyzer missing | Install with `go install github.com/fzipp/gocyclo/cmd/gocyclo@latest` or skip. |
 | Vibe returns PASS but constraint tests fail | Council LLMs miss mechanical violations | Check `.agents/council/<timestamp>-vibe-*.md` for constraint test results. Failed constraints override council PASS. Fix violations and re-run. |
-| Codex review skipped | Codex CLI not on PATH or no uncommitted changes | Install Codex CLI (`brew install codex`) or commit changes first. Vibe proceeds without codex review. |
+| Codex review skipped | `--mixed` not passed, Codex CLI not on PATH, or no uncommitted changes | Codex review is opt-in — pass `--mixed` to enable. Also requires Codex CLI on PATH and uncommitted changes. |
 | "No modified files detected" | Clean working tree, no recent commits | Make changes or specify target path explicitly: `/vibe src/auth/`. |
 | Spec-compliance judge not spawned | No spec found in beads/plans | Reference bead ID in commit message or create plan doc in `.agents/plans/`. Without spec, vibe uses 2 independent judges (3 with `--deep`). |
 
 ---
 
+## Write-Time Quality Hook
+
+The `hooks/write-time-quality.sh` PostToolUse hook runs automatically after every Write/Edit tool call, catching common anti-patterns at edit time rather than review time. It checks:
+
+- **Go:** unchecked errors, `fmt.Print` in library code
+- **Python:** bare `except:`, `eval`/`exec`, missing type hints on public functions
+- **Shell:** missing `set -euo pipefail`, unquoted variables
+
+The hook is non-blocking (always exits 0) and outputs warnings via JSON. See [references/write-time-quality.md](references/write-time-quality.md) for the full design.
+
 ## See Also
 
 - `skills/council/SKILL.md` — Multi-model validation council
 - `skills/complexity/SKILL.md` — Standalone complexity analysis
+- `skills/bug-hunt/SKILL.md` — Proactive code audit and bug investigation
 - `.agents/specs/conflict-resolution-algorithm.md` — Conflict resolution between agent findings
+- [test](../test/SKILL.md) — Test generation and coverage analysis
+- [perf](../perf/SKILL.md) — Performance profiling and benchmarking
+
+## Reference Documents
+
+- [references/deep-checks.md](references/deep-checks.md)
+- [references/verification-report.md](references/verification-report.md)
+- [references/write-time-quality.md](references/write-time-quality.md)
+- [references/deep-audit-protocol.md](references/deep-audit-protocol.md)
+- [references/examples.md](references/examples.md)
+- [references/go-patterns.md](references/go-patterns.md)
+- [references/go-standards.md](references/go-standards.md)
+- [references/json-standards.md](references/json-standards.md)
+- [references/markdown-standards.md](references/markdown-standards.md)
+- [references/patterns.md](references/patterns.md)
+- [references/python-standards.md](references/python-standards.md)
+- [references/report-format.md](references/report-format.md)
+- [references/rust-standards.md](references/rust-standards.md)
+- [references/shell-standards.md](references/shell-standards.md)
+- [references/typescript-standards.md](references/typescript-standards.md)
+- [references/vibe-coding.md](references/vibe-coding.md)
+- [references/vibe-suppressions.md](references/vibe-suppressions.md)
+- [references/test-pyramid-weighting.md](references/test-pyramid-weighting.md)
+- [references/yaml-standards.md](references/yaml-standards.md)

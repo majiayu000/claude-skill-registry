@@ -36,6 +36,10 @@ Validates Stories/Tasks (`mode=story`), implementation plans (`mode=plan_review`
 - `mode=context`: review architecture/documents/context materials; apply accepted corrections
 - All modes: run deterministic agent review with runtime checkpoints, critical verification, and Codex refinement
 
+Mode gating:
+- `story`: full phase graph
+- `plan_review | context`: checkpoint Phase 4, Phase 5, and Phase 8 as `skipped_by_mode` as soon as each phase is reached, then advance immediately
+
 ## Progress Tracking
 
 Create TodoWrite items from phase headings below:
@@ -99,7 +103,7 @@ node shared/agents/agent_runner.mjs --health-check --json
 3. If `available_count = 0`:
    - set `agents_skipped_reason`
    - checkpoint Phase 2 with `health_check_done=true`, `agents_available=0`
-   - advance to Phase 3
+   - advance to Phase 3 immediately without launch bookkeeping
 4. Otherwise:
    - ensure `.hex-skills/agent-review/{agent}/` exists
    - build per-agent prompt from `review_base.md` + `modes/{story,context,plan_review}.md`
@@ -167,7 +171,7 @@ Checkpoint Phase 3 with audit/research summary.
 5. Update runtime state with `docs_checkpoint: { docs_created: [...paths], docs_skipped_reason: "..." }`. If `docs_created` is empty, `docs_skipped_reason` is required (e.g., "no domain patterns matched"). Guard blocks `PHASE_4_DOCS -> PHASE_5_AUTOFIX/PHASE_6_MERGE` without this.
 6. Checkpoint Phase 4 with docs summary.
 
-For `mode=plan_review | mode=context`, checkpoint Phase 4 as `{"status":"skipped_by_mode"}`.
+For `mode=plan_review | mode=context`, checkpoint Phase 4 as `{"status":"skipped_by_mode"}` and advance immediately.
 
 ### Phase 5: Auto-Fix (`mode=story` only)
 
@@ -195,11 +199,11 @@ Rules:
 
 Checkpoint Phase 5 with penalty before/after, flagged items, and coverage summary.
 
-For `mode=plan_review | mode=context`, checkpoint Phase 5 as `{"status":"skipped_by_mode"}`.
+For `mode=plan_review | mode=context`, checkpoint Phase 5 as `{"status":"skipped_by_mode"}` and advance immediately.
 
 ### Phase 6: Merge + Critical Verification
 
-1. Sync every launched agent through runtime:
+1. Sync every launched agent through runtime once at the merge boundary:
 
 ```bash
 node shared/scripts/review-runtime/cli.mjs sync-agent --skill ln-310
@@ -228,7 +232,7 @@ node shared/scripts/review-runtime/cli.mjs sync-agent --skill ln-310
    - `story`: Story + Tasks concatenation
    - `plan_review`: plan file
    - `context`: context docs
-2. Run Codex refinement loop (max 5 iterations) if Codex was available in Phase 2. Each iteration uses a different review perspective (Generic → Dry-Run → New Dev → Adversarial → Final Sweep). Loop exits on 2 consecutive APPROVED or MAX_ITER.
+2. Run Codex refinement loop (max 5 iterations) if Codex was available in Phase 2. Each iteration uses a different review perspective (Generic → Dry-Run → New Dev → Adversarial → Final Sweep). Loop exits on 2 consecutive APPROVED, `CONVERGED_LOW_IMPACT`, or MAX_ITER.
    > **Synchronous Codex calls may take 5-15 minutes per iteration. This is expected.** Do NOT abort or skip iterations because a call takes several minutes. The runner's hard timeout (30 min) is the only valid abort boundary.
    >
    > **Architecture Gate per iteration:** Before applying fixes from each refinement iteration, verify: "Does this fix implement the correct architecture directly, without backward compatibility shims or legacy workarounds?" Reject fixes that introduce unnecessary compat layers.
@@ -243,7 +247,9 @@ node shared/scripts/review-runtime/cli.mjs sync-agent --skill ln-310
 
 > **No quality-based skip criteria.** Phase 7 skip is determined ONLY by Codex availability, never by penalty score, FLAGGED count, or agent agreement level. If Codex is available, Phase 7 MUST execute at least 1 iteration.
 >
-> **Repeat decision (iterations 2+):** Continue if ANY suggestion has severity HIGH or any remaining_risk has severity >= MEDIUM. Otherwise stop (CONVERGED_LOW_IMPACT).
+> **Bounded cheap lane:** If iteration 1 finds no HIGH-severity suggestions and no remaining risk above LOW, stop immediately with `CONVERGED_LOW_IMPACT` instead of forcing extra passes.
+>
+> **Repeat decision (iterations 2+):** Continue if ANY suggestion has severity HIGH or any remaining_risk has severity >= MEDIUM. Otherwise stop (`CONVERGED_LOW_IMPACT`).
 
 4. Persist prompts/results to `.hex-skills/agent-review/refinement/`
 5. Checkpoint Phase 7 with `iterations` (int), `exit_reason` (one of: CONVERGED, CONVERGED_LOW_IMPACT, MAX_ITER, ERROR, SKIPPED), `applied` (int: total fixes applied).
@@ -262,7 +268,7 @@ node shared/scripts/review-runtime/cli.mjs sync-agent --skill ln-310
 6. If comment fails after status success -> warn, do not revert status.
 7. Checkpoint Phase 8 with gate result and approval/status result.
 
-For `mode=plan_review | mode=context`, checkpoint Phase 8 as `{"status":"skipped_by_mode"}`.
+For `mode=plan_review | mode=context`, checkpoint Phase 8 as `{"status":"skipped_by_mode"}` and advance immediately.
 
 For `mode=story`, after Story routing is resolved, write a Stage 1 coordinator artifact with:
 - `summary_kind=pipeline-stage`
@@ -288,7 +294,7 @@ Required checks:
 - [ ] Phase 5 checkpoint exists (`story`) or `skipped_by_mode` (`plan_review/context`)
 - [ ] All required agents resolved before Phase 6 merge
 - [ ] Phase 6 merge summary exists
-- [ ] Phase 7 refinement: iterations >= 1 when Codex available, or SKIPPED with valid reason
+- [ ] Phase 7 refinement: iterations >= 1 when Codex available, or SKIPPED with valid reason, or single-pass `CONVERGED_LOW_IMPACT`
 - [ ] All Codex/Gemini processes verified dead (no orphaned agent processes)
 - [ ] Phase 8 checkpoint exists (`story`) or `skipped_by_mode`
 - [ ] Final verdict and user-facing output are ready
@@ -324,7 +330,7 @@ Phase 8 approval consumes this model before any Story status mutation.
 - [ ] Story auto-fix completed or non-story Phase 5 skipped by mode
 - [ ] Agent results merged only after all required agents resolved
 - [ ] Review summary saved to `review_history.md`
-- [ ] Iterative Refinement: iterations >= 1 when Codex available, or SKIPPED with valid reason
+- [ ] Iterative Refinement: iterations >= 1 when Codex available, or SKIPPED with valid reason, or single-pass `CONVERGED_LOW_IMPACT`
 - [ ] Story approval/status transition executed only on `GO`, or Story intentionally remains in `Backlog` on `NO_GO`, or non-story Phase 8 skipped by mode
 - [ ] Phase 9 self-check passed and runtime completed
 

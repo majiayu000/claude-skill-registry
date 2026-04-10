@@ -17,11 +17,13 @@ Run `codex exec` with `-o` to capture the response cleanly. Default to `-s read-
 
 **All `codex` Bash calls require `dangerouslyDisableSandbox: true`** (network access to OpenAI API). Use `.turbo/` as the temp directory — it is in the working directory (sandbox-writable), gitignored, and avoids `$TMPDIR` path mismatches between sandbox and non-sandbox mode.
 
+**Non-piped `codex exec` invocations require `< /dev/null`** to avoid hanging on stdin. Codex reads from stdin whenever stdin is non-TTY, and in subprocess contexts the harness leaves stdin connected to a pipe that never EOFs — codex blocks forever, printing only `Reading additional input from stdin...`. The piped form (`cat file | codex exec "..."`) is safe — `cat` closes the pipe after the file.
+
 Generate a random session tag at the start to keep files unique for parallel use:
 
 ```bash
 CODEX_TAG=$(head -c 4 /dev/urandom | xxd -p) && mkdir -p .turbo/codex
-codex exec -s read-only -o ".turbo/codex/$CODEX_TAG.txt" "<question with full context>"
+codex exec -s read-only -o ".turbo/codex/$CODEX_TAG.txt" "<question with full context>" < /dev/null
 ```
 
 ### Prompt Shaping
@@ -76,7 +78,7 @@ If no follow-up is needed, skip to the Synthesize step.
 Resume the session with the parsed session ID (not `--last`, which is unsafe for parallel use):
 
 ```bash
-codex exec resume <session-id> -o ".turbo/codex/$CODEX_TAG.txt" "<follow-up question>"
+codex exec resume <session-id> -o ".turbo/codex/$CODEX_TAG.txt" "<follow-up question>" < /dev/null
 ```
 
 The `-s` flag is not available for `resume`. It inherits sandbox settings from the original session.

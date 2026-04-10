@@ -4,7 +4,7 @@ description: Use when you need to review, improve, or build Spring Boot 4.0.x ap
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0-SNAPSHOT
+  version: 0.14.0
 ---
 # Spring Boot Core Guidelines
 

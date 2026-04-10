@@ -1,6 +1,14 @@
 ---
 name: pr-implement
 description: 'Fork-based PR implementation with isolation check. Runs isolation check before starting work. Triggers: "implement PR", "implement contribution", "fork implementation", "code the PR".'
+skill_api_version: 1
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: topic
 license: MIT
 compatibility: Requires git, gh CLI
 metadata:
@@ -8,7 +16,8 @@ metadata:
   version: "1.0.0"
   tier: contribute
   internal: false
-allowed-tools: Read Write Edit Bash Grep Glob
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob
+output_contract: "code changes on fork branch"
 ---
 
 # PR Implement Skill

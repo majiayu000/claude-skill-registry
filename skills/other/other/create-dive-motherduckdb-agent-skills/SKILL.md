@@ -19,6 +19,7 @@ Use this skill when the user needs a persistent, shareable Dive rather than a on
 
 - Validate the underlying SQL and schema first with `explore` and `query`.
 - Keep Dive queries fully qualified and SQL-heavy; let React handle presentation, not data reshaping.
+- When a Dive uses shared databases in `REQUIRED_DATABASES`, always suffix the `alias` (e.g. `_share`) so it cannot collide with an existing database name. Never set `alias` to conflict with an existing database name.
 - Start from a named theme direction such as `Corporate Dashboard`, `Tufte Minimal`, or `FT Salmon` instead of vague visual prompts.
 - Prefer one query per visual section rather than one giant cross-purpose query.
 - Preview locally before saving when the environment supports it.

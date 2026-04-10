@@ -49,7 +49,17 @@ Before searching, determine:
 - Is this a mood-based request ("something atmospheric") or specific ("films about secret societies")?
 - Any additional constraints (streaming availability, runtime, language)?
 
-### Step 2: Use Perplexity for Discourse
+### Step 2: Search the Archive First
+
+Before any external search, read `~/Desktop/Programming/crypt-librarian/films.json` and check for:
+- **Existing entries** matching the request (by category, theme, director, or connections)
+- **Ratings and commentary** from Tom and Mary to calibrate taste for this search
+- **To-watch queue** entries that already satisfy the request
+- **Connection fields** on existing films that point to undiscovered candidates
+
+The archive is ground truth. It contains rated films with calibrated taste data, curated commentary, and thematic connections that external searches cannot replicate. Present archive matches first, then supplement with external discovery for gaps.
+
+### Step 3: Use Perplexity for Discourse
 
 Query Perplexity for critical discourse, retrospectives, and thematic analysis.
 
@@ -65,7 +75,7 @@ Query Perplexity for critical discourse, retrospectives, and thematic analysis.
 
 Perplexity excels at synthesizing critical opinion and finding thematic connections.
 
-### Step 3: Use Exa for Film Discovery
+### Step 4: Use Exa for Film Discovery
 
 Two options for Exa access:
 
@@ -102,7 +112,7 @@ python scripts/exa_film_search.py research "occult ritual films similar to Eyes 
 
 Requires: `EXA_API_KEY` environment variable, `pip install requests`
 
-### Step 4: Use Firecrawl for Deep Scraping
+### Step 5: Use Firecrawl for Deep Scraping
 
 Alternative to Exa crawling — use the CLI for local scraping:
 
@@ -118,7 +128,7 @@ firecrawl scrape <url>
 
 See `references/sources.md` for curated URLs and full tool documentation.
 
-### Step 5: Cross-Reference and Filter
+### Step 6: Cross-Reference and Filter
 
 After gathering candidates:
 
@@ -127,7 +137,7 @@ After gathering candidates:
 3. **Confirm no Asian origin** — Per preference
 4. **Assess against touchstones** — Does it share DNA with the calibration films?
 
-### Step 6: Present Recommendations
+### Step 7: Present Recommendations
 
 Format recommendations as:
 
@@ -136,7 +146,23 @@ Format recommendations as:
 Brief description emphasizing why it fits the Crypt Librarian sensibility.
 Content notes: [any relevant warnings]
 Available on: [streaming/physical if known]
+Trailer: [YouTube link]
 ```
+
+### Step 8: Find YouTube Trailers
+
+For each recommended film, search YouTube for the official trailer to give the user a quick preview. Use WebFetch or Exa to locate links:
+
+```bash
+python3 ~/.claude/skills/exa-search/scripts/exa_search.py "Film Title Year official trailer" --domains youtube.com -n 1
+```
+
+Alternatively, construct a YouTube search URL for each film:
+```
+https://www.youtube.com/results?search_query=Film+Title+Year+official+trailer
+```
+
+Include the trailer link in the recommendation. Prefer official studio uploads over fan re-uploads.
 
 ## Thematic Search Patterns
 

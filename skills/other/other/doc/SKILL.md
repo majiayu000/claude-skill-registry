@@ -1,10 +1,19 @@
 ---
 name: doc
-description: 'This skill should be used when the user asks to "generate documentation", "validate docs", "check doc coverage", "find missing docs", "create code-map", "sync documentation", "update docs", or needs guidance on documentation generation and validation for any repository type. Triggers: doc, documentation, code-map, doc coverage, validate docs.'
+description: 'Generates, validates, and syncs documentation for any repository type. Produces code-maps, checks doc coverage, finds missing docs, and validates existing documentation against code. Triggers: doc, documentation, code-map, doc coverage, validate docs, generate docs, sync docs, update docs, find missing docs.'
+skill_api_version: 1
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: topic
 metadata:
   tier: product
   dependencies:
     - standards  # loads markdown standards
+output_contract: "documentation files"
 ---
 
 # Doc Skill
@@ -245,3 +254,9 @@ Tell the user:
 | Generated docs lack examples | Missing context about typical usage | Read existing tests to find usage patterns. Check README for code samples. Ask user for typical use case if unclear. |
 | Discover command finds too many items | Low existing documentation coverage | Prioritize by running `discover` on specific subdirectories. Focus on public API first, internal utilities later. Use `--limit` to process in batches. |
 | Validation shows docs out of sync | Code changed after docs written | Re-run `gen` command for affected features. Consider adding git hook to flag doc updates needed when code changes. |
+
+## Reference Documents
+
+- [references/generation-templates.md](references/generation-templates.md)
+- [references/project-types.md](references/project-types.md)
+- [references/validation-rules.md](references/validation-rules.md)

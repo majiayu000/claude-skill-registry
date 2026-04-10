@@ -28,7 +28,7 @@ Gather the symptom and establish what is actually happening:
 
 3. **Establish reproduction** — run the failing command, test, or operation. If the problem cannot be reproduced (intermittent, environment-specific), document the constraints and proceed with historical evidence.
 
-Record the exact reproduction command and its output for verification.
+Record the exact reproduction command and its output for verification. For intermittent or long-running reproductions, use the Monitor tool to tail logs filtered for relevant signals (errors, stack traces, specific identifiers) so failures surface live while you work.
 
 ## Step 2: Isolate
 

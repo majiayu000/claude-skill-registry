@@ -65,6 +65,14 @@ Do not use `vibe` for:
 These stages are mandatory.
 They may become lighter for simple work, but they are not skipped as a matter of policy.
 
+Discoverable wrapper labels may request an earlier terminal stage.
+That changes where the current run stops, not which runtime owns authority.
+The bounded stop targets are:
+
+- `Vibe: What Do I Want?` -> `requirement_doc`
+- `Vibe: How Do We Do It?` -> `xl_plan`
+- `Vibe` and `Vibe: Do It` -> `phase_cleanup`
+
 Official governed entry also records runtime lineage:
 
 - root or child entry writes `governance-capsule.json`
@@ -85,9 +93,9 @@ Use this when the system should still ask the user high-value questions, confirm
 
 That means:
 
-- router-selected specialist skills may appear as bounded recommendations or route truth
+- governed `vibe` runs must surface bounded specialist recommendations and must treat router-selected specialist skills as route truth or executable recommendation candidates
 - runtime-selected skill remains `vibe` for governed entry
-- specialist help is allowed only as bounded native-mode assistance
+- eligible specialist help must auto-promote into bounded native-mode assistance by default
 - specialist help must preserve the specialist skill's own workflow, inputs, outputs, and validation style
 - specialist help must not create a second requirement doc, second plan surface, or second runtime authority
 
@@ -114,7 +122,7 @@ Child-governed lanes must not:
 Specialist dispatch under hierarchy:
 
 - `approved_dispatch`: root-approved specialist usage in the frozen plan
-- `local_suggestion`: child-detected specialist suggestion that stays advisory until root escalation approval
+- `local_suggestion`: residual child-detected specialist suggestion that only remains advisory when blocked, degraded, or explicitly forced to escalate
 
 ## Internal Execution Grades
 
@@ -193,7 +201,7 @@ Execute the approved plan.
 L grade executes planned units serially in the native governed lane.
 XL grade executes waves sequentially and may run only independent units in bounded parallel within a step.
 If subagents are spawned, their prompts must end with `$vibe`.
-If specialist skills are used, execute them as bounded native dispatch units only when root-approved in the frozen plan; otherwise keep them as advisory `local_suggestion` until escalation approval.
+Governed `vibe` runs must emit specialist recommendations; eligible recommendations must auto-promote into bounded native dispatch units, and only blocked, degraded, or forced-escalation cases should remain `local_suggestion`.
 If subagents run in child-governed lanes, they must inherit root-frozen context and must not reopen canonical requirement or plan truth surfaces.
 
 ### 6. `phase_cleanup`

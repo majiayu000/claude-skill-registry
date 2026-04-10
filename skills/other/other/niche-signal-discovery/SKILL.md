@@ -10,316 +10,171 @@ Discover differential signals between Closed Won and Closed Lost accounts by ext
 
 ## Prerequisites
 
-**Required:**
-
-- **Deepline CLI** — All enrichment runs through `deepline enrich` (no separate API keys for exa, crustdata, etc.)
-- **Python 3** — Analysis script uses standard library only (csv, json, re, argparse — no pip packages)
-
-**NOT required:**
-
-- ❌ No exa API key (accessed via Deepline)
-- ❌ No crustdata API key (accessed via Deepline)
-- ❌ No external Python packages (no pip install needed)
-- ❌ No OpenAI/Anthropic API keys (Deepline manages any model access used in discovery)
-
-**Credits:** Enrichment consumes Deepline credits (~6 credits/company for exa + crustdata). Discovery prompts with `deeplineagent` are additional paid calls. Always get user approval before running paid enrichment.
+- **Deepline CLI** — All enrichment runs through `deepline enrich`. No separate API keys for exa/crustdata/apollo etc.
+- **Python 3** stdlib only — no pip dependencies for any shipped script.
+- **Credits** — ~6 credits/company for enrichment. Step 7 contact discovery is additional. **Always get user approval before paid steps.**
 
 ## Deepline-First Principle
 
-**Always use Deepline CLI (`deepline enrich`, `deepline tools`, `deepline playground`) for enrichment, data extraction, and batch operations.** Deepline provides:
-- Batch enrichment with automatic CSV column management
-- Built-in tool integrations (exa_search, crustdata, apollo, etc.)
-- Playground UI for inspecting and iterating on enrichment results
-- Idempotent reruns — re-running updates existing columns instead of duplicating
+Use `deepline enrich` for all enrichment, `deepline tools execute` for one-offs, `deepline playground` for inspection. Reruns are idempotent. Refer to `gtm-meta-skill` for command patterns and provider playbooks.
 
-Use `deepline enrich` for all enrichment steps. Use `deepline tools execute` for one-off tool calls. Use `deepline playground` for inspecting results. Refer to the `gtm-meta-skill` for Deepline command patterns and provider playbooks.
+## Input requirements
 
-## Input Requirements
-
-- Won and lost customer domain lists (minimum 20 won + 10 lost for statistical significance)
-- **Lookalike companies can supplement Won** — If the Closed Won list is small (<15), Lookalike companies (companies resembling ideal customers that haven't purchased) can be treated as Won to increase sample size. Add a Dataset Caveat to the report noting this.
-- **Target company context** — What they sell, who they sell to, key personas (discovered in Step 0)
+- Won and lost customer domain lists (≥20 won + ≥10 lost for statistical significance)
+- **Lookalikes can supplement Won** if Closed Won < 15. Add a Dataset Caveat to the report.
+- **Target company context** from Step 0 — what they sell, who they sell to, key personas.
 
 ## Pipeline
 
 ```
-0. Discover target company (what they sell, who they sell to, differentiation)
-0.5. Discover ecosystem (competitors, tech stack category, buyer personas)
-1. Prepare input CSV (domain, status) — deduplicate domains that appear in both won and lost
-1.5. Generate vertical-specific configs (keywords, tools, job roles)
-2. Multi-page website extraction + job listings (Deepline enrichment)
-3. Quality gate — verify file completeness + coverage (>80% with content)
-3.5. Review generated configs (validate against enriched data)
-4. Run differential analysis (scripts/analyze_signals.py)
-5. Generate report (using references/report-template.md)
-6. Review with signal interpretation rules (references/signal-interpretation.md)
+0.    Discover target company (what they sell, who they sell to)
+0.5.  Discover ecosystem (competitors, tech stack, buyer personas)
+1.    Prepare input CSV (deduplicate within won/lost groups)
+1.0.5 Build "do not re-contact" index from user's existing list (scripts/dedupe_utils.py)
+1.5.  Generate vertical-specific configs (keywords, tools, job roles)
+2.    Multi-page website + job extraction (deepline enrich)
+3.    Quality gate — verify file completeness + coverage (>80%)
+3.5.  Review configs against enriched data
+4.    Differential analysis (scripts/analyze_signals.py)
+5.    Generate report — every top signal must include cited evidence
+6.    Signal interpretation review
+7.    Top 10 net-new prospects [REQUIRED] + contacts/emails [optional, costs credits]
 ```
 
-## Signal Reliability Hierarchy
+**Step 7 is required.** A signal report without 10 actionable companies forces the reader to do their own prospecting pass — exactly the expensive thing they wanted to skip. Contacts/emails are optional only because they cost extra credits; always offer them.
 
-Not all signals are equal. From actual runs across multiple verticals, signals follow a clear reliability order:
+## Signal reliability hierarchy
 
-| Rank | Signal Source | Reliability | Why |
-|------|---|---|---|
-| 1 | **Job listings** (hiring for domain-related roles) | Highest | Active budget + acknowledged pain. A company hiring 3 AEs is a stronger signal than "sales" on their website. |
-| 2 | **Analyst validation** (Gartner, Forrester mentions) | Very High | Enterprise maturity + category awareness. Typically 4-7x lift, rarely appears in lost group. |
-| 3 | **Compliance infrastructure** (SOC2, GDPR, ISO) | High | Procurement maturity + enterprise readiness. Companies with compliance pages have formal approval processes. |
-| 4 | **Buyer pain language** (on careers/blog pages) | High | Operational awareness of the problem — e.g., "fragmented tools" at 3-6x lift for creative ops targets. |
-| 5 | **Tech stack tools** (niche SaaS specific to persona) | Medium | Infrastructure readiness — niche SaaS tools at 2-4x lift for vertical-specific buyers. |
-| 6 | **Website product/marketing content** | Variable | Can indicate buyer OR competitor — source context is everything. |
+Highest → lowest confidence:
 
-**When website signals fail:** For B2B infrastructure tools (AR automation, billing, compliance), buyers DON'T publish their pain on public websites. A wholesale distributor talks about their products on their website, not accounts receivable challenges. For these verticals, prioritize job listings, tech stack, and firmographic signals over website keyword matching.
+1. **Job listings** — active budget + acknowledged pain. Highest-intent.
+2. **Analyst validation** (Gartner/Forrester) — typically 4-7x lift, rare in lost.
+3. **Compliance infrastructure** (SOC2/GDPR/ISO) — procurement maturity.
+4. **Buyer pain language** on careers/blog — operational awareness.
+5. **Tech stack tools** (niche SaaS) — infrastructure readiness.
+6. **Website product/marketing content** — variable; can be buyer OR competitor.
 
-## Step 0: Target Company Discovery
+**When website signals fail:** For B2B back-office tools (AR, billing, compliance), buyers don't publish their pain on marketing pages. Prioritize jobs + tech stack + firmographics for these verticals.
 
-**CRITICAL: Do this FIRST before any enrichment or config generation.**
+## What NOT to use for scoring
 
-Use `deeplineagent` to understand what the target company sells and who they sell to:
+CRM fields populated by AE activity — catalyst note count, OCR-derived counts (`number_of_champions_c`, `number_of_decision_makers_c`), MEDDPICC picklists, any "did the AE do X on this opp" field — correlate with win-rate as **engagement artifacts, not causal signals**. They get filled in *after* the AE decides an opp is worth working. **Never use them as scoring inputs.** On one real run, catalyst notes showed "109x lift" — almost made the TL;DR before we caught the direction of causality.
+
+Rule of thumb: every scoring input must be observable BEFORE the AE touches the account. Read `references/scoring-pitfalls.md` for the full list and the "safer alternative read" for loss-reason data.
+
+## Step 0: Target company discovery
+
+**Do this FIRST.** The entire pipeline (exa query, keywords, tech stack, job roles) adapts based on this discovery; skipping it produces generic/irrelevant signals.
 
 ```bash
-# Example prompt
-deeplineagent: "Research {{company-domain}}. Summarize what the company sells, who they sell to, what makes them different, and any example customers. Use Deepline-managed tools if needed."
+deeplineagent: "Research {{company-domain}}. Summarize what the company sells, who they sell to, what makes them different, and any example customers."
 ```
 
-**Document the following:**
+Document: (1) product category, (2) target buyer persona, (3) key differentiation, (4) example customers.
 
-1. **Product category** — e.g., "Creative Operations & DAM platform", "AR automation software", "Sales engagement platform"
-2. **Target buyer persona** — e.g., "Marketing and creative teams", "Finance/AR teams", "Sales Development Reps"
-3. **Key differentiation** — What makes them unique vs competitors
-4. **Example customers** (if available) — Who currently uses the product
+## Step 0.5: Ecosystem discovery
 
-**Why this matters:** The entire pipeline (exa query, keywords, tech stack, job roles) adapts based on this discovery. Skipping this step results in generic/irrelevant signals.
+Three parallel `deeplineagent` queries:
 
-## Step 0.5: Ecosystem Discovery
+- **Competitors** — `"{product category} software alternatives competitors"` → 3-5 names
+- **Tech stack** — `"{buyer persona} software stack"` → 10-15 tools by category
+- **Job roles** — `"{buyer persona} job titles"` → 10-15 title variations
 
-Use `deeplineagent` to discover the competitive landscape and buyer ecosystem:
+These feed Step 1.5 config generation.
 
-**Competitor Discovery:**
-```bash
-deeplineagent: "Research the competitive landscape for {product category}. List 3-5 relevant software companies or alternatives."
-```
-
-Example: For a creative ops/DAM tool, ask for the main `"{product category} software alternatives competitors"`.
-
-**Tech Stack Discovery:**
-```bash
-deeplineagent: "Research the common software stack for {buyer persona}. Group the tools by category."
-```
-
-Example: For creative teams, ask for the common `"creative teams software stack"`.
-
-**Job Role Discovery:**
-```bash
-deeplineagent: "Research the common job titles, responsibilities, and hiring patterns for {buyer persona}. Return 10-15 role variants."
-```
-
-Example: For creative ops, ask for `"creative operations job titles creative director content manager"`.
-
-
-**Document findings:**
-
-- Competitor products (3-5 names) — Used to identify migration opportunities (companies currently using these tools)
-- Common tech stack tools (10-15 by category) — Used for infrastructure signals
-- Buyer job titles (10-15 variations) — Used for hiring intent signals
-
-## Step 1: Prepare Input CSV
-
-Create `output/{{company}}-icp-input.csv`:
+## Step 1: Prepare input CSV
 
 ```csv
 domain,status
 customer1.com,won
-customer2.com,won
 non-customer1.com,lost
-non-customer2.com,lost
 ```
 
-**CRITICAL — Deduplicate before enrichment.** If the same domain appears in both won and lost groups (same company, multiple CRM deals), Deepline may only fetch job listings once (for the first row). The duplicate domain's content is identical in both groups — including it pollutes lift scores and causes `won_with_jobs` to be undercounted. Always check and remove duplicate domains before running enrichment:
+**Deduplicate within the input.** If a domain appears in BOTH won and lost (same company, multiple deals), Deepline only fetches job listings once — silently undercounting `won_with_jobs`. Remove ALL rows for cross-group domains:
 
 ```python
-# Check for duplicates after building the input CSV
 from collections import Counter
-domain_counts = Counter(r['domain'] for r in rows)
-duplicate_domains = {d for d, c in domain_counts.items() if c > 1}
-if duplicate_domains:
-    print(f"WARNING: {len(duplicate_domains)} domains appear in both won and lost:")
-    for d in sorted(duplicate_domains):
-        print(f"  {{d}}")
-    print("Remove these rows before enrichment — they pollute lift scores.")
+counts = Counter(r['domain'] for r in rows)
+duplicate_domains = {d for d, c in counts.items() if c > 1}
+# Drop every row in duplicate_domains, not just one copy.
 ```
 
-If duplicates exist, remove ALL rows for those domains (not just one copy). The same company with different deal outcomes tells us nothing about what distinguishes buyers from non-buyers.
+## Step 1.0.5: Build "do not re-contact" index
 
-## Step 1.5: Generate Vertical-Specific Configs
+Before any prospects ship in Step 7, dedupe candidates against whatever "already known" list the user provides — customers, CRM export, past outbound, a previous run's output. **Always ask explicitly**; if the user has no list, note it as a caveat in the final report rather than silently skipping.
 
-**Using the discovery from Steps 0 and 0.5**, create three JSON config files.
-
-See `references/keyword-catalog.md` for JSON format and generation guidance.
+**Order: apex domain first, fuzzy company name as fallback.** Use the shipped helper — it handles public-suffix multi-label TLDs (`co.uk`, `co.jp`, `com.au`) and corporate-suffix stripping:
 
 ```bash
-# Create config files in output/{{company}}/
-output/{{company}}-keywords.json    # keyword categories
-output/{{company}}-tools.json       # tech stack tools by category
-output/{{company}}-job-roles.json   # job role categories
+python3 scripts/dedupe_utils.py --selftest   # one-time sanity check
+python3 scripts/dedupe_utils.py \
+    --existing customers.csv --candidates prospects_raw.csv \
+    --out-actionable prospects_actionable.csv --out-matched already_known.csv
 ```
 
-**Generation approach:**
+Don't silently drop CRM matches — **categorize** them: Net-new / Account-only / Re-engage / Active-open / Current-customer.
 
-1. **Keywords** — Mix of:
-   - Product category terms (e.g., "creative ops", "asset management" for a DAM tool)
-   - Buyer pain points (e.g., "fragmented tools", "content discovery")
-   - Competitor names for migration segment (e.g., "bynder", "widen") — companies using these are migration opportunities, not excluded
-   - Generic business maturity (e.g., "security", "compliance", "integrations")
+**Read `references/dedupe.md`** for the failure modes (raw-string match missing `amsynergy.nikon.com → nikon.com` cost 24 of 50 prospects in one run), category definitions, and library usage.
 
-2. **Tech Stack** — Tools from ecosystem discovery:
-   - Infrastructure tools buyer persona uses (e.g., "figma", "adobe creative cloud")
-   - Adjacent tools in buyer workflow (e.g., "contentful", "monday.com")
-   - Competitor tools for migration segment — companies using these represent displacement opportunities
+## Step 1.5: Generate vertical-specific configs
 
-3. **Job Roles** — Titles from role discovery:
-   - Buyer persona variations (e.g., "creative director", "content manager", "brand manager")
-   - Adjacent roles (e.g., "marketing operations", "brand designer")
-   - Generic growth roles (e.g., "product", "engineering")
+Create three JSON files in `output/{{company}}/`:
 
-See `references/keyword-catalog.md` for multi-vertical examples (creative ops, AR automation, sales engagement, developer tools). Each example includes keywords, tools, and job roles for that vertical.
-
-**Validation:** Do the generated configs match the target's vertical and buyer persona? If not, refine based on Step 0/0.5 findings.
-
-## Step 2: Deepline Enrichment
-
-**CRITICAL: Never scrape just the homepage.** Use `exa_search` with `contents.text` to discover AND scrape ~8 pages per domain in a single API call.
-
-**Generate exa query dynamically based on target's product category:**
-
-```bash
-# Generic query (works for most B2B SaaS selling to marketing/sales/product teams)
-QUERY="company product features integrations customers security pricing careers about case-studies"
-
-# For tools selling to back-office teams (finance, HR, legal):
-# Buyers don't publish pain on marketing pages — add compliance/audit pages where signals live
-QUERY="company product features integrations customers security pricing careers compliance audit regulatory about"
-
-# For developer tools:
-# Add documentation/API pages — these reveal infrastructure maturity and integration readiness
-QUERY="company product features documentation api changelog github integrations security pricing careers about"
-
-# For creative/marketing tools:
-QUERY="company product features portfolio use cases creative workflow customers integrations security pricing careers about"
-
-# For sales tools:
-QUERY="company product features playbooks outbound pipeline customers integrations security pricing careers about"
+```
+{{company}}-keywords.json    # product category, pain language, competitor names, maturity terms
+{{company}}-tools.json       # niche SaaS tools by category
+{{company}}-job-roles.json   # buyer persona job titles
 ```
 
-**Example:**
+**Read `references/keyword-catalog.md`** for the JSON schema, generation patterns, and multi-vertical examples (creative ops, AR automation, sales engagement, developer tools).
+
+**Validation:** Do the configs match the target's vertical and buyer persona? If not, refine based on Step 0/0.5 findings.
+
+## Step 2: Deepline enrichment
+
+**Never scrape just the homepage.** Use `exa_search` with `contents.text` to discover AND scrape ~8 pages per domain in one call.
+
+Generate the exa query dynamically based on the target's product category — see `gtm-meta-skill` for query variants by buyer type (back-office, developer, creative, sales).
 
 ```bash
 deepline enrich \
   --input output/{{company}}-icp-input.csv \
   --output output/{{company}}-enriched.csv \
-  --with '{"alias":"website","tool":"exa_search","payload":{"query":"{{exa-query-from-above}}","numResults":8,"type":"auto","includeDomains":["{{domain}}"],"contents":{"text":{"maxCharacters":3000,"verbosity":"compact","includeSections":["body"]}}}}' \
-  --with '{"alias":"jobs","tool":"crustdata_job_listings","payload":{"companyDomains":"{{domain}}","limit":50}}' \
- 
+  --with '{"alias":"website","tool":"exa_search","payload":{"query":"{{exa-query}}","numResults":8,"type":"auto","includeDomains":["{{domain}}"],"contents":{"text":{"maxCharacters":3000,"verbosity":"compact","includeSections":["body"]}}}}' \
+  --with '{"alias":"jobs","tool":"crustdata_job_listings","payload":{"companyDomains":"{{domain}}","limit":50}}'
 ```
 
-**Why exa_search with contents (not parallel_extract)?**
-- Discovers pages AND returns content in one call — no separate page discovery step
-- ~8 pages per domain, ~3K chars each = ~24K chars per company
-- Cost: ~5 credits/company (exa) + ~1 credit (crustdata jobs) = ~6 credits/company
+**Cost:** ~5 credits/company (exa) + ~1 credit (crustdata) = **~6 credits/company**. Get user approval first.
 
-Get user credit approval before running. Example: "60 companies x 6 credits = ~360 credits."
+## Step 3: Quality gate
 
-## Step 3: Quality Gate
-
-**CRITICAL — Verify file completeness BEFORE running analysis.** `deepline enrich` returns control to the terminal before OS buffers fully flush to disk. Running the analysis script immediately after enrichment completes can read a partially-written file where job columns for the last N rows haven't synced yet — resulting in `won_with_jobs: 0` or severely undercounted job data. Always verify:
+`deepline enrich` returns to terminal **before** OS buffers fully flush. Running the analysis script immediately can read a partially-written file and produce `won_with_jobs: 0` even when data is fine. Always verify:
 
 ```bash
-# 1. Check row count matches input
 INPUT_ROWS=$(wc -l < output/{{company}}-icp-input.csv)
 OUTPUT_ROWS=$(wc -l < output/{{company}}-enriched.csv)
-echo "Input: $INPUT_ROWS rows, Output: $OUTPUT_ROWS rows"
-# Output should equal input (both include header)
-
-# 2. Spot-check job data for a known won account with job listings
-python3 -c "
-import csv, json, sys
-csv.field_size_limit(sys.maxsize)
-with open('output/{{company}}-enriched.csv') as f:
-    rows = list(csv.DictReader(f))
-won_rows = [r for r in rows if r.get('status') == 'won']
-jobs_col = 'jobs'  # or use column index
-has_jobs = sum(1 for r in won_rows if r.get(jobs_col, '').strip() not in ('', '{}', 'null'))
-print(f'Won rows with job data: {{has_jobs}}/{len(won_rows)}')
-# If this is 0 and you know won accounts should have listings, wait and re-run
-"
+echo "Input: $INPUT_ROWS, Output: $OUTPUT_ROWS"  # should match
 ```
 
-If `won_with_jobs` is 0 but you expect job data:
+Then spot-check that won rows have job data, that website coverage is >80%, and that average content depth is 6-8 pages / 12-20K chars per company.
 
-1. Wait 5-10 seconds (OS buffer flush)
-2. Re-run the verification check
-3. If still 0, check column indices — the enriched CSV uses `website` and `jobs` column names, NOT `__dl_full_result__`. Use `--website-col N --jobs-col N` overrides.
+**Read `references/quality-gate.md`** for the full verification script, the buffer-flush retry pattern, and the "auto-extracted domain validation" check that has caught up to **53% false-positive rates** in CRM-exported customer lists.
 
-After file verification, check coverage:
-- **Coverage**: >80% of companies should have website content. If <80%, check domain spelling and retry failed rows.
-- **Content depth**: Average should be 6-8 pages per company, 12-20K chars.
-- **Job listings**: Won companies should have more job data than lost (expected — larger/scaling companies win more).
-
-If coverage is poor, re-run failed domains with `--rows` targeting specific rows.
-
-### Domain Validation (if using auto-extracted customer lists)
-
-If customer domains came from automated extraction (CRM exports, Exa API, case study scraping) rather than a manually verified list, validate that domains actually belong to the named companies. From actual runs: **up to 53% of auto-extracted customers can be false positives** — competitors selling the same product, domain mismatches, and unrelated companies.
+## Step 3.5: Review configs against enriched data
 
 ```bash
-# Check for suspicious domain patterns
-python3 -c "
-import csv, sys
-csv.field_size_limit(sys.maxsize)
-with open('output/{{company}}-enriched.csv') as f:
-    rows = list(csv.DictReader(f))
-for r in rows:
-    domain = r.get('domain', '')
-    # Flag content platforms used as source URLs, not company domains
-    if any(x in domain for x in ['blog.', 'medium.com', 'substack.', 'wordpress.']):
-        print(f'WARNING: {{domain}} looks like a content platform, not a company domain')
-    # Flag very short domains that might be generic
-    if len(domain.split('.')[0]) <= 2:
-        print(f'CHECK: {{domain}} — very short domain, verify it belongs to the expected company')
-"
-```
-
-**Red flags for false positives:**
-- Domain is a subdomain of the target company (blog.target.com)
-- Domain belongs to a well-known AI/tech company but the "customer" is a different firm (domain resolution failed)
-- Company appears in competitor case studies, not target's own customer list
-- Company is itself a vendor in the same product category (they SELL the solution, they don't BUY it)
-
-## Step 3.5: Review Generated Configs
-
-**Before running analysis**, spot-check the generated configs against enriched data:
-
-```bash
-# Sample a few enriched companies
 deepline playground output/{{company}}-enriched.csv
-
-# In playground UI, check:
-# - Do website pages mention the keywords in keywords.json?
-# - Do job listings mention the roles in job-roles.json?
-# - Do integrations/tech stack pages mention the tools in tools.json?
 ```
 
 **Red flags:**
+- Keyword in <10% of enriched companies → too niche, broaden
+- Keyword in >90% → too generic, refine
+- Product-category keywords appear frequently in Won → wrong product category, those companies are competitors not buyers
+- Job roles missing from actual listings → wrong buyer persona
 
-- Keywords appear in <10% of enriched companies → too niche, broaden
-- Keywords appear in >90% of companies → too generic, refine
-- Product category keywords (what the target SELLS) appear frequently in Won companies → wrong product category, these companies are competitors not buyers
-- Job roles missing from actual job listings → wrong buyer persona, revise
+Fix and regenerate configs if needed.
 
-**Fix and re-generate configs if needed.**
-
-## Step 4: Differential Analysis
-
-Run the analysis script with the config files:
+## Step 4: Differential analysis
 
 ```bash
 python3 scripts/analyze_signals.py \
@@ -330,160 +185,88 @@ python3 scripts/analyze_signals.py \
   --output output/{{company}}-analysis.json
 ```
 
-The script auto-detects `__dl_full_result__` columns for website and jobs data. Override with `--website-col N --jobs-col N` if needed.
+The script computes substring-match presence, Laplace-smoothed lift, source breakdown (website/jobs/both), tech-stack mentions, job-role prevalence, anti-fit signals, and **per-keyword evidence quotes** (±40 chars with URLs) — the evidence array is what Step 5 renders.
 
-**What the script computes:**
+## Step 5: Report generation
 
-- Substring-match presence per company per keyword (NOT exact-token TF-IDF)
-- Laplace-smoothed lift: `((won + 0.5) / (won_total + 1)) / ((lost + 0.5) / (lost_total + 1))`
-- Source breakdown per keyword (website only / jobs only / both)
-- Tech stack tool mentions across categories
-- Job role prevalence in won vs lost
-- Anti-fit signals (lift < 0.5x)
-- Source evidence: exact quotes (±40 chars) with page URLs and job listing URLs per keyword
+**Read `references/report-template.md`** for the full report structure (Quick Reference Dashboard at the top, then detail sections), the signal-strength visual scale, Apollo URL format, and all quality rules. Critical rules in brief:
 
-## Step 5: Report Generation
+- Raw counts always (`15% (6)`, not just `15%`); sample sizes in headers (`Won (n=37)`)
+- Bold only signals with lift > 2x AND count ≥ 3 companies
+- Flag n=1 signals — they're statistically meaningless
+- **Source evidence is mandatory for every top signal** (lift ≥ 1.5 AND won ≥ 3) — 3-5 cited quotes per signal with source type, company, page/job title, ±40-char quote, and live URL. The analysis script outputs this; render it, don't decide whether to. Signals without 3+ citations get demoted and flagged `*(insufficient evidence)*`.
+- Annotate each evidence quote with ✅ (clear buyer signal) or ⚠️ (vendor-adjacent — the company sells something similar, so the keyword on their product page isn't a buyer signal)
+- Tier 1 cheatsheet point values must match the Section 6 scoring model — cross-check both before shipping
 
-Read `references/report-template.md` for the full report structure and quality rules.
+## Step 6: Signal interpretation
 
-**Report structure overview:**
-
-1. **Section 0: Quick Reference Dashboard** ← Start here. Required before all other sections.
-   - **0.1 TLDR** — 5 bullets: #1 signal, best-fit archetype, fastest path to pipeline, hard skip flags, scoring summary
-   - **0.2 Signal Strength at a Glance** — Two visual tables (positive + anti-fit) with 🟩🟥 emoji lift bars sorted by lift
-   - **0.3 Platform Search Recipes** — Pre-built Apollo URLs (people + company searches) and Google operators
-   - **0.4 Buyer Persona Quick Reference** — 3–5 personas with titles, pain points, signals, and Apollo links
-   - **0.5 Lead Scoring Cheatsheet** — All scoring signals in one table with "How to Check" column
-2. Sections 1–9: Full data and methodology (existing format, unchanged)
-
-**Signal Strength Bar scale** (use in Section 0.2):
-```
-≥10x → 🟩🟩🟩🟩🟩🟩   ≥4x  → 🟩🟩🟩🟩🟩   ≥2.5x → 🟩🟩🟩🟩
-≥2.0x → 🟩🟩🟩         ≥1.5x → 🟩🟩         ≥1.0x → 🟩
-≥0.4x → 🟥🟥           ≥0.25x → 🟥🟥🟥       ≥0.15x → 🟥🟥🟥🟥
-≥0.07x → 🟥🟥🟥🟥🟥    <0.07x → 🟥🟥🟥🟥🟥🟥
-```
-
-**Apollo URL format** (use in Section 0.3 and 0.4):
-```
-People: https://app.apollo.io/#/people?personTitles[]=Title+One&personTitles[]=Title+Two&personSeniorities[]=vp&personSeniorities[]=director&qOrganizationKeywordTags[]=vertical&organizationLocations[]=United+States&page=1
-Companies: https://app.apollo.io/#/companies?qOrganizationKeywordTags[]=keyword&organizationLocations[]=United+States&organizationNumEmployeesRanges[]=201-500&page=1
-```
-Use `qOrganizationKeywordTags[]` for keyword filters (not hardcoded industry tag IDs).
-
-Key quality rules for all sections:
-- **Raw counts always**: `15% (6)` not just `15%`
-- **Sample sizes in headers**: `Won (n=37)`, `Lost (n=18)`
-- **Bold only lift > 2x AND count >= 3 companies** — a signal in 1 company with 10x lift is less reliable than a signal in 4 companies with 3x lift
-- **Flag n=1 signals**: If a signal appears in only 1 won company, add a note: `*(single company — verify before using in scoring)*`. In the scoring model, give n=1 signals 0.3x weight vs n=3+ signals.
-- **Source breakdown for ALL keyword tables**: Add a Source column showing `3w / 20j / 2both` format (3 website-only, 20 jobs-only, 2 from both). This is critical for distinguishing website-only signals (lower confidence) from job-listing signals (higher confidence).
-  ```markdown
-  | Keyword | Won (n=X) | Lost (n=Y) | Lift | Source (w/j/both) | Interpretation |
-  ```
-- **Source evidence required**: After each keyword table, add exact quotes with linked sources for top 3 keywords. The analysis script outputs `evidence` per keyword with `company`, `source_type`, `quote`, `url`, and `page_title`/`job_title`. Format:
-  ```
-  > **Evidence — "keyword":**
-  > - [company.com](url) (page title): "...exact quote with keyword..."
-  > - [company.com](url) (job: "Job Title"): "...exact quote from listing..."
-  ```
-- **Niche tech stack tools**: Report specific SaaS tools by category, not generic keywords. "AWS", "GitHub", "Slack" appear on most B2B sites — these aren't differentiating.
-- **Anti-fit signals in separate section**
-- **Interpretation column required**: Explains WHY each signal matters for the target company
-- **Vendor-adjacent evidence annotation**: When citing evidence quotes, annotate each with ✅ (clear buyer signal) or ⚠️ (vendor-adjacent — e.g., the company's own product/pricing page mentions the keyword because they sell something similar). This prevents treating competitor evidence as buyer evidence.
-- **Scoring reconciliation**: Section 0.5 (Lead Scoring Cheatsheet) and Section 6 (Scoring Model) MUST have matching point values. After writing both sections, cross-check every signal's point allocation. Mismatches confuse users who reference both.
-- **Dataset caveat**: If the dataset uses Lookalikes as Won, has small sample sizes, or other limitations, add a "Dataset Caveat" subsection to the Executive Summary explaining what the limitations are and how they affect interpretation.
-
-## Step 6: Signal Interpretation Review
-
-Read `references/signal-interpretation.md` before writing interpretation columns. Key rules:
-- Website content mentioning what the target sells = competitor signal (NOT buyer)
+**Read `references/signal-interpretation.md`** before writing interpretation columns. Key rules:
+- Website content mentioning what the target sells = competitor signal (not buyer)
 - Job listings = highest-intent buyer signal
 - Same keyword means different things on product page vs careers page vs blog
 - Tech stack tools need context — do they create or solve the target's problem?
 
-## Enrichment Data Structure
+## Step 7: Top 10 net-new prospects (required)
 
-Website data: `__dl_full_result__` column containing exa_search response.
-```
-data.results[].text — page content
-data.results[].url — page URL
-data.results[].title — page title
-```
+**10 companies are required for every run; contacts + emails are optional** (additional Deepline credits). Always offer contact discovery; only run it if the user approves the spend.
 
-Job listings: `__dl_full_result__` column containing crustdata response.
-```
-data.listings[].title — job title (NOT "job_title")
-data.listings[].description — job description (NOT "job_description")
-data.listings[].category — job category
-data.listings[].url — listing URL
+```bash
+# Companies only — no extra credits beyond Step 2 enrichment:
+python3 scripts/find_contacts.py --input prospects_actionable.csv --output top10.csv --top 10 --no-contacts
+
+# Companies + contacts + emails — asks for credit approval.
+# --roles is REQUIRED in --contacts mode and must be the buyer-persona job
+# titles surfaced in YOUR Step 0/0.5 (not a stale list from a different vertical):
+python3 scripts/find_contacts.py --input prospects_actionable.csv --output top10.csv --top 10 \
+    --contacts --roles "<persona job titles from Step 0.5>"
 ```
 
-## Credit Estimation
+When `--contacts` is on, the orchestrator runs a 3-phase chain via Deepline:
+1. `company_to_contact_by_role_waterfall` (free, mature companies)
+2. **`exa_search_people` fallback for any company Phase 1 missed** — mandatory. On the run that motivated this, Phase 1 returned 0 contacts on all 10 top prospects (small/non-US industrial); Exa found 15 real contacts at 6 of those 10 in the same pass.
+3. `person_linkedin_only_to_email_waterfall` with **apex-domain validation** — providers return stale addresses (`@orbitalatk.com` for someone now at X-Bow, personal Gmails, wrong-company false positives). Mismatched apex → publish "(email not found)", keep the raw value in `raw_email` for auditing.
 
-| Step | Credits per row | Total (60 companies) |
-|------|----------------|---------------------|
-| exa_search with contents | ~5 | ~300 |
-| crustdata_job_listings | ~1 | ~60 |
-| **Total** | **~6** | **~360** |
+**Read `references/step-7-prospects.md`** for the required vs. optional output fields, the prospect-card skeleton, the Phase 2 Exa guardrails (title parsing + company-match filter), and the "10 is a ceiling, not a floor" guidance.
 
-Always get user approval before running paid enrichment steps.
+## Enrichment data structure
 
-## Common Pitfalls
+After unwrap, each enriched row has:
 
-1. **Skipping target discovery (Step 0)** — Without understanding what the target sells, you'll generate generic/irrelevant configs.
-2. **Homepage-only scraping** — Always use multi-page discovery. Homepage alone misses pricing, integrations, security, careers.
-3. **Using hardcoded examples** — Don't copy sales-focused keywords for a creative-ops tool. Generate configs per vertical.
-4. **Generic tech stack** — "AWS", "GitHub", "Slack" appear on most B2B sites and aren't differentiating. Search for niche SaaS tools specific to the buyer persona (e.g., Figma for creative teams, NetSuite for finance teams).
-5. **Ignoring source context** — "prospect" on a product page = seller signal. "prospect" in a job listing = buyer signal. Same keyword, opposite meaning.
-6. **Missing lost data** — Verify lost companies have content before analysis. Empty lost = meaningless lift scores.
-7. **Substring false positives** — "sequenc" matches "consequences". Spot-check high-lift keywords for false matches.
-8. **Skipping config review (Step 3.5)** — Always validate generated configs against enriched data before analysis.
-9. **Duplicate domains in input** — CRM exports often have the same company in both won and lost (multiple deals). Deepline only fetches job listings once per domain, so the duplicate's job data lands on one row only — silently undercounting `won_with_jobs`. Always deduplicate in Step 1.
-10. **Running analysis immediately after enrichment** — `deepline enrich` returns to terminal before OS buffers flush. Run the file completeness check in Step 3 before executing `analyze_signals.py`. A `won_with_jobs: 0` result when you expect data is the symptom; re-running the analysis (without re-enriching) fixes it.
-11. **Domain mismatches in auto-extracted lists** — When using CRM exports or automated customer discovery, domain → company name mapping can be wrong. In actual runs, up to 53% of auto-extracted domains were false positives. Always validate domains against expected company names before enrichment.
-12. **Treating vendor signals as buyer signals** — "accounts receivable automation" on a company's product page means they SELL AR tools (competitor). The same phrase in a job listing means they NEED AR tools (buyer). Source context is everything — see `references/signal-interpretation.md`.
-13. **Trusting n=1 signals** — A signal in 1 won company with 0 lost = mathematically high lift but statistically meaningless. Require 3+ companies for Tier 1 scoring signals. Flag single-company signals in the report with a verification note.
-14. **Expecting website signals for back-office tools** — Companies buying AR automation, billing, or compliance tools don't discuss these needs on their marketing websites. For these verticals, rely on job listings (hiring AR Manager = budget + pain), tech stack (NetSuite, Salesforce in jobs), and firmographics (wholesale/distribution/manufacturing) instead.
-15. **Including generic business words as signals** — "platform", "automat*", "integrat*" appear at near-identical rates in won and lost (1.0-1.1x lift). These are baseline terms, not differentiators. Focus on signals with lift > 1.5x that are specific to the target's vertical.
+- `website` cell → JSON with `data.results[]`, each item: `{text, url, title}`
+- `jobs` cell → JSON with `data.listings[]`, each item: `{title, description, url, category}` (note: `title` not `job_title`)
 
-## Proven Signal Patterns (from actual runs)
+`scripts/analyze_signals.py` auto-detects these columns; override with `--website-col N --jobs-col N` if your CSV uses different column names.
 
-These patterns have been validated across multiple customer analyses spanning creative ops, sales engagement, AR automation, legal tech, and GTM tools. Use them as a starting point when interpreting results — but always validate against the specific target's vertical.
+## Common pitfalls (top 6 — full list in references/pitfalls.md)
 
-### High-Confidence Positive Signals
+1. **Skipping target discovery (Step 0)** → generic/irrelevant configs.
+2. **Homepage-only scraping** → misses pricing, integrations, security, careers.
+3. **Generic tech stack** ("AWS", "GitHub", "Slack" appear on most B2B sites) → search for niche SaaS specific to the buyer persona.
+4. **Trusting n=1 signals** → require 3+ companies for Tier 1 scoring; flag single-company signals with a verification note.
+5. **Raw-string dedupe missing parent domains** — `amsynergy.nikon.com ≠ nikon.com` for naive comparison. Always use `extract_apex()`. **24 of 50 "net-new" prospects in one real run were already in the CRM** as parent-domain entries the raw-string dedupe missed.
+6. **Trusting confirmation-biased CRM fields** (catalyst notes, OCR counts, MEDDPICC) as signals — they're downstream of AE engagement, not causal. Read the "What NOT to use for scoring" section above.
 
-| Signal Pattern | Typical Lift | Validated For | What It Means |
-|---|---|---|---|
-| Analyst validation (Gartner, Forrester) | 4.5x-6.5x | Enterprise B2B SaaS | Company has evaluated the category, has enterprise procurement process |
-| Hiring for ICP-related roles | 3.8x-5.5x | All verticals | Active budget + acknowledged pain — highest-intent signal |
-| Published case studies | 3.7x | Product-led + sales-assist | Mature marketing org, values proof points, vendor-friendly |
-| Compliance infrastructure (GDPR, SOC2, ISO) | 2.1x-6.5x | Enterprise tools | Formal approval processes, security reviews, higher close rates |
-| Buyer pain language (e.g., "fragmented tools") | 2.9x-5.2x | Creative ops, MarTech | Operational awareness of the specific problem the target solves |
-| SDK/webhook/API presence | 2.5x-3.5x | Developer-adjacent tools | Developer culture, integrates tools programmatically |
-| Contact sales / sales-led GTM | 2.2x-5.5x | Enterprise sales tools | Human-led sales motion = AE-dependent = sales engagement tool buyer |
-| Niche tech stack (Figma, Frame.io, NetSuite) | 1.5x-5.5x | Vertical-specific | Infrastructure readiness for the target's integration ecosystem |
+**Read `references/pitfalls.md`** for the full 18-item list including substring false positives, vendor-vs-buyer signal context, back-office-tool interpretation, and shipping-without-prospects.
 
-### High-Confidence Anti-Fit Signals
+## Proven signal patterns
 
-| Signal Pattern | Typical Lift | What It Means |
-|---|---|---|
-| Consumer signals (shopper, checkout, cancel, debit) | 0.2x | B2C company, not B2B sales org |
-| Retention/churn language | 0.2x-0.4x | Consumer subscription model, not enterprise buying |
-| Selling same product category | 0.1x-0.3x | Competitor, not buyer — they SELL the solution |
-| No job listings in 12+ months | N/A | Not growing, no hiring budget |
-
-### Scoring Model Guidance
-
-From actual runs, a 0-100 point model with three tiers works well:
-- **Tier 1: Core Fit (0-40 pts)** — Compliance, analyst validation, structural signals
-- **Tier 2: Buying Intent (0-30 pts)** — Hiring for domain roles, pain language, tech stack
-- **Tier 3: Infrastructure Readiness (0-30 pts)** — API presence, integration maturity, case studies
-
-Score thresholds: 60+ = Tier 1 immediate outreach, 35-59 = Tier 2 trigger-based, <35 = nurture or skip.
+**Read `references/proven-signals.md`** for typical lift ranges across verticals (analyst validation 4.5-6.5x, hiring signals 3.8-5.5x, compliance infra 2.1-6.5x, etc.), high-confidence anti-fit patterns (consumer signals 0.2x, retention/churn 0.2-0.4x), and a starter 0-100 scoring model with three tiers (Core Fit / Buying Intent / Infrastructure Readiness).
 
 ## References
 
-- **[keyword-catalog.md](references/keyword-catalog.md)**: Read when generating configs (Step 1.5). Contains JSON format, generation patterns, and multi-vertical examples.
-- **[report-template.md](references/report-template.md)**: Read when generating the report (Step 5). Full section structure, table formats, inline example format, quality rules.
-- **[signal-interpretation.md](references/signal-interpretation.md)**: Read when writing interpretation columns or reviewing signal quality. Buyer vs seller vs competitor rules.
-- **[scripts/analyze_signals.py](scripts/analyze_signals.py)**: Deterministic analysis script. Run in Step 4. Auto-detects columns, accepts custom keywords/tools via JSON.
+- **`references/keyword-catalog.md`** — JSON schema + multi-vertical examples for Step 1.5 config generation
+- **`references/dedupe.md`** — Step 1.0.5 dedupe failure modes, categorization rules, library usage
+- **`references/quality-gate.md`** — Step 3 verification scripts, buffer-flush retry pattern, auto-extracted-domain validation
+- **`references/report-template.md`** — Step 5 full report structure, signal-strength scale, Apollo URL format, all quality rules
+- **`references/signal-interpretation.md`** — Step 6 buyer-vs-seller-vs-competitor rules
+- **`references/step-7-prospects.md`** — Step 7 prospect-card skeleton, Exa guardrails, Phase 3 apex validation
+- **`references/scoring-pitfalls.md`** — Confirmation-biased CRM fields to exclude from scoring
+- **`references/pitfalls.md`** — Full 18-item pitfalls list
+- **`references/proven-signals.md`** — Typical lift ranges + scoring model guidance
+- **`scripts/analyze_signals.py`** — Step 4 differential analysis. Auto-detects columns.
+- **`scripts/dedupe_utils.py`** — Step 1.0.5 + Step 7 email validation. `extract_apex()`, `norm_name()`, `match_against_existing()`. Stdlib only. `--selftest` flag for one-time install verification.
+- **`scripts/find_contacts.py`** — Step 7 orchestrator. `--contacts` / `--no-contacts` toggle, 3-phase Deepline chain.
+
+## Changelog
+
+- **2026-04-07** — Added Step 1.0.5 (dedupe with apex helper), Step 7 (top 10 prospects required, contacts optional via `--contacts`/`--no-contacts`), `references/scoring-pitfalls.md` warning about confirmation-biased CRM fields, mandatory citation rule. Shipped `scripts/dedupe_utils.py` + `scripts/find_contacts.py`. Aggressively trimmed inline detail to references — moved Step 3 quality gate, Step 5 quality rules, Common Pitfalls (items 7-15), and Proven Signal Patterns into `references/`. SKILL.md went from 650 to ~250 lines via progressive disclosure.

@@ -503,7 +503,8 @@ AGENTDB_QUIC_PEERS=host1:4433,host2:4433
 
 ```bash
 # Check firewall allows UDP port 4433
-sudo ufw allow 4433$udp
+# NOTE: Requires administrator privileges - for reference only
+sudo ufw allow 4433/udp
 
 # Verify peers are reachable
 ping host1

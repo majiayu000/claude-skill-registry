@@ -1,6 +1,6 @@
 ---
 name: threejs-particle-canvas
-description: "Generate interactive Three.js particle canvases and WebGPU spinner/loader animations. Two modes: (1) Narrative canvas — particle phase cycles with geodesic lattices, orbital camera, ambient WebGL effects, self-contained HTML. (2) Spinner/loader — parametric curve particle trails via Three.js WebGPU + TSL, for loading indicators and UI components. This skill should be used when creating particle-based WebGL visualizations, ambient 3D canvases, narrative animation art, generative procedural art, meditative browser experiences, spinners, loaders, loading animations, loading indicators, progress indicators, activity indicators, WebGPU spinners, or parametric curve animations."
+description: "Generate interactive Three.js canvases in four modes: (1) Narrative canvas — particle phase cycles with geodesic lattices. (2) Spinner/loader — parametric curve particle trails via WebGPU + TSL. (3) Infinite Gallery Tunnel — scroll-driven procedural corridor with walled images. (4) Living Specimens — glTF creatures with behavior physics. Ships a shared Phosphor Vigil FX module (feedback trails, CRT composite, scanlines, chromatic aberration) that is importable standalone into any Three.js scene. Output is self-contained HTML. This skill should be used when creating particle WebGL art, ambient 3D canvases, spinners, loaders, infinite scroll galleries, tunnel flythroughs, animated glTF specimens, or when adding a CRT post-processing pipeline to an existing Three.js project."
 argument-hint: [concept or narrative theme]
 ---
 
@@ -101,12 +101,20 @@ Key patterns:
 
 | Working on... | Load |
 |---|---|
-| Source architecture, section map | `references/instance-anatomy.md` |
-| Particle systems, BufferGeometry, states | `references/particle-patterns.md` |
-| Phase state machine, transitions | `references/phase-engine.md` |
-| Camera, mouse/touch/keyboard | `references/camera-and-input.md` |
-| Fog, stars, vignette, threads | `references/atmosphere.md` |
-| Full source (1,192 lines) | `assets/instance-source.html` |
+| Mode 1 source architecture, section map | `references/instance-anatomy.md` |
+| Mode 1 particle systems, BufferGeometry, states | `references/particle-patterns.md` |
+| Mode 1 phase state machine, transitions | `references/phase-engine.md` |
+| Mode 1 camera, mouse/touch/keyboard | `references/camera-and-input.md` |
+| Mode 1 fog, stars, vignette, threads | `references/atmosphere.md` |
+| Mode 1 full source (1,192 lines) | `assets/instance-source.html` |
+| Mode 2 spinner class + TSL patterns | `references/spinner-patterns.md` |
+| Mode 2 parametric curves | `references/parametric-curves.md` |
+| Mode 3 tunnel architecture, path gen, ring spawn | `references/tunnel-patterns.md` |
+| Mode 3 full source | `assets/tunnel-gallery-source.html` |
+| Mode 4 specimen architecture, behavior physics, glTF | `references/specimen-patterns.md` |
+| Mode 4 full source | `assets/butterfly-specimen-source.html` |
+| Shared Phosphor Vigil FX pipeline | `references/phosphor-vigil-fx.md` |
+| Shared FX module (importable standalone) | `assets/phosphor-vigil.js` |
 
 ## Theme Presets
 
@@ -154,6 +162,97 @@ python3 ~/.claude/skills/threejs-particle-canvas/scripts/validate_spinner.py out
 python3 ~/.claude/skills/threejs-particle-canvas/scripts/validate_spinner.py output.html
 ```
 
+## Mode 3: Infinite Gallery Tunnel
+
+A scroll-driven procedural corridor with images embedded on the four walls of each tunnel cell. Catmull-Rom interpolated infinite path, custom wireframe-grid GLSL shader with depth-based fog, lazy image spawning with cleanup behind the camera. Vanilla port of [thebuggeddev/Infinitor](https://github.com/thebuggeddev/Infinitor), extended with keyboard scroll, touch-scoped pointer handling, and optional phosphor-vigil post-FX.
+
+Example: `/threejs-particle-canvas tunnel — infinite scrollable gallery of Aegean frescoes`
+
+### Config
+
+| Parameter | Default | Effect |
+|---|---|---|
+| `tubularSegments` | 300 | Tunnel mesh resolution |
+| `radius` | 10 | Tunnel half-width |
+| `pointSpacing` | 20 | Distance between path control points |
+| `imageDensity` | 0.6 | Probability a ring spawns images |
+| `maxImagesPerRing` | 3 | Spawn count per active ring |
+| `gridScale` | `(20, 1)` | Wireframe grid density (length × width) |
+| `fogStart` / `fogEnd` | 50 / 300 | Wireframe-to-bg fade distance |
+| `scrollSpeed` | 0.15 | Wheel delta multiplier |
+| `scrollEasing` | 0.08 | Smooth interpolation factor |
+| `theme` | `"dark"` | Dark/light invert |
+| `fx` | `"none"` | Set to `"phosphor-vigil"` for CRT |
+| `imageSource` | `(seed) => url` | URL generator for seed mode |
+| `images` | `null` | Static manifest — when non-null, cycled |
+
+### Velocity-driven phosphor trails
+
+When `fx: "phosphor-vigil"` is set, scroll velocity feeds the shared velocity channel with a clamp (±50 units/frame) and a low-pass filter (0.3). The clamp prevents a single hard scroll from producing a magenta halo flash through the feedback shader on first interaction, and the filter smooths the chromatic trails so motion eases in rather than jumping. See `references/tunnel-patterns.md` for the animate-loop math.
+
+### Image injection sentinel
+
+The template contains a literal sentinel (`// IMAGES_INJECTION_POINT`) followed by a `const IMAGE_MANIFEST = null;` line. `image-well --format tunnel` rewrites that const to populate the corridor with search-result URLs. Never rename the sentinel or the const.
+
+See `references/tunnel-patterns.md` for the full anatomy.
+
+## Mode 4: Living Specimens
+
+A scene anchored around animated glTF creatures that exhibit behavior, not choreography. Three instances of a rigged model (butterflies, parrots, fish, jellyfish) with `followMouse` and `wander` behaviors, soft-wall repulsion, velocity-modulated flap speed, per-instance HSL emissive tint, and four-light cinematic lighting. Vanilla port of [celescript.dev/experiments/3d-butterfly](https://celescript.dev/experiments/3d-butterfly). Phosphor-vigil FX on by default — the trails are the point of the scene.
+
+Example: `/threejs-particle-canvas butterfly — three emerald and amber moths chasing the cursor through a scanline void`
+
+### Config
+
+| Parameter | Default | Effect |
+|---|---|---|
+| `modelUrl` | Parrot.glb (jsdelivr) | Any rigged glTF/glb |
+| `specimenCount` | 3 | Instance count |
+| `behaviors` | `["followMouse","wander","wander"]` | Per-instance behavior |
+| `scales` | `[0.020, 0.018, 0.022]` | Per-instance scale |
+| `colorShifts` | `[0, 0.6, 0.05]` | HSL emissive tints |
+| `flapSpeed` | `i => 2 + 0.3*i` | Per-instance animation timeScale base |
+| `releaseDecayTime` | 0.8s | Follow-blend decay when mouse leaves |
+| `mobileScale` | 0.65 | Down-scale on ≤768px screens |
+| `fx` | `"phosphor-vigil"` | Default on — the trails *are* the scene |
+
+### Signature moment
+
+**Release.** When the mouse leaves the canvas, the `followMouse` specimen preserves its last chase velocity, then decays through `releaseDecayTime` seconds into wander mode. Combined with the feedback trail, this creates a readable "let-go" beat that is the emotional center of the scene.
+
+### Swappable models
+
+Template defaults to Three.js's `Parrot.glb` (stable jsdelivr URL, CC0). Swap `modelUrl` for any rigged glTF/glb — butterfly, bird, fish, jellyfish. Adjust `scales` per-model since the same scale value gives very different results across source sizes.
+
+See `references/specimen-patterns.md` for the full physics and rendering pipeline.
+
+## Shared FX: Phosphor Vigil
+
+`assets/phosphor-vigil.js` — a 4-pass post-processing pipeline shared across Modes 3 & 4 and importable into any Three.js project. Feedback trail ping-pong (RGB-shifted by velocity, iridescent oil-slick tint), bloom threshold, box blur, CRT composite (barrel distortion, chromatic aberration, dual-frequency scanlines, RGB subpixel shadow mask, vignette, dual-frequency flicker, phosphor glow, grain, warm/green tint).
+
+```js
+import { PhosphorVigil } from './phosphor-vigil.js';
+
+const fx = new PhosphorVigil(renderer, { width, height });
+// replaces renderer.render(scene, camera) in the animate loop:
+fx.setVelocity(sharedVelocity);
+fx.render(scene, camera, elapsedTime);
+```
+
+Every shader constant is preserved verbatim from celescript's `ButterflyScene` bundle. The module is importable as a standalone ES module into other Three.js projects — drop it into World War Watcher's Vector Ghost Protocol work or any other Three.js scene without re-deriving a single shader line. See `references/phosphor-vigil-fx.md` for full pipeline docs and the configurable knobs table.
+
+### Mode 3 tunnel validation
+
+```bash
+python3 ~/.claude/skills/threejs-particle-canvas/scripts/validate_tunnel.py output.html
+```
+
+### Mode 4 specimen validation
+
+```bash
+python3 ~/.claude/skills/threejs-particle-canvas/scripts/validate_specimen.py output.html
+```
+
 ## Design References
 
 See `references/design-references.md` for exemplary interactive canvas experiences (Instance, Vellum) with aesthetic analysis — typography, color strategy, interaction models.
@@ -178,6 +277,10 @@ See `references/design-references.md` for exemplary interactive canvas experienc
 - Never skip WebGL error handling — always provide a text fallback
 - Never use pure black (`#000000`) — use rich off-blacks (`#050508`, `#0a0a12`)
 - Never default to icosahedron — derive geometry from the concept
+- Never embed the phosphor-vigil shaders inline — always `import { PhosphorVigil } from './phosphor-vigil.js'`, the pipeline is shared identity across modes
+- Never rename the `IMAGES_INJECTION_POINT` sentinel or the `IMAGE_MANIFEST` const in Mode 3 — the image-well bridge depends on both
+- Never clone skinned meshes with plain `.clone()` in Mode 4 — always `SkeletonUtils.clone` from `three/addons/utils/SkeletonUtils.js`
+- Never use drei (`useGLTF`, `useAnimations`) — load models directly via `GLTFLoader` and animate via `AnimationMixer`
 
 ## Post-Generation QA
 

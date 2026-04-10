@@ -106,4 +106,5 @@ If any test failed, include the relevant snapshot, screenshot, or output showing
 - Never modify code. This skill is read-only verification. If a test fails, report the failure — do not attempt to fix it.
 - If the dev server fails to start, report the error and stop.
 - Keep tests focused on the determined scope.
+- Use the Monitor tool to tail app logs for errors or warnings while verifying, so backend failures surface alongside UI checks.
 - To diagnose failures, run the `/investigate` skill on the smoke test report.

@@ -4,7 +4,8 @@ description: Use when user provides a topic and wants an automated video podcast
 argument-hint: "[topic]"
 effort: high
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Agent
-# --- Claude Code fields above, OpenClaw/SkillsMP fields below ---
+# --- Frontmatter fields above are primarily for Claude Code / OpenClaw.
+# Other agents such as Codex should ignore unknown fields and follow the workflow below. ---
 author: Agents365-ai
 category: Content Creation
 version: 2.0.0
@@ -39,14 +40,14 @@ metadata:
 >
 > This skill depends on `remotion-best-practices`. **You MUST invoke it before proceeding:**
 > ```
-> Skill tool: skill="remotion-best-practices"
+> Invoke the skill/tool named: remotion-best-practices
 > ```
 
 # Video Podcast Maker
 
 ## Quick Start
 
-Open Claude Code and say: **"Make a video podcast about $ARGUMENTS"**
+Open your coding agent and say: **"Make a video podcast about $ARGUMENTS"**
 
 Or invoke directly: `/video-podcast-maker AI Agent tutorial`
 
@@ -59,7 +60,7 @@ Extract visual design patterns from reference videos or images, store them in a 
 ### Commands
 
 ```bash
-# Learn from images (Claude Vision analyzes design patterns)
+# Learn from images (use your agent's image analysis capability to analyze design patterns)
 python3 learn_design.py ./screenshot1.png ./screenshot2.png
 
 # Learn from a local video (ffmpeg extracts frames automatically)
@@ -101,16 +102,19 @@ Before choosing visual design in Step 9, check for matching style profiles or re
 
 ## Auto Update Check
 
-**Agent behavior:** Check for updates at most once per day (throttled by timestamp file):
+**Agent behavior:** Check for updates at most once per day (throttled by timestamp file).
+Before any shell command that reads files from this skill, resolve `SKILL_DIR` to the directory containing `SKILL.md`.
+If your agent exposes a built-in skill directory variable such as `${CLAUDE_SKILL_DIR}`, you may map it to `SKILL_DIR`.
 
 ```bash
-STAMP="${CLAUDE_SKILL_DIR}/.last_update_check"
+SKILL_DIR="${SKILL_DIR:-${CLAUDE_SKILL_DIR}}"
+STAMP="${SKILL_DIR}/.last_update_check"
 NOW=$(date +%s)
 LAST=$(cat "$STAMP" 2>/dev/null || echo 0)
 if [ $((NOW - LAST)) -gt 86400 ]; then
-  timeout 5 git -C ${CLAUDE_SKILL_DIR} fetch --quiet 2>/dev/null || true
-  LOCAL=$(git -C ${CLAUDE_SKILL_DIR} rev-parse HEAD 2>/dev/null)
-  REMOTE=$(git -C ${CLAUDE_SKILL_DIR} rev-parse origin/main 2>/dev/null)
+  timeout 5 git -C "${SKILL_DIR}" fetch --quiet 2>/dev/null || true
+  LOCAL=$(git -C "${SKILL_DIR}" rev-parse HEAD 2>/dev/null)
+  REMOTE=$(git -C "${SKILL_DIR}" rev-parse origin/main 2>/dev/null)
   echo "$NOW" > "$STAMP"
   if [ -n "$LOCAL" ] && [ -n "$REMOTE" ] && [ "$LOCAL" != "$REMOTE" ]; then
     echo "UPDATE_AVAILABLE"
@@ -122,7 +126,7 @@ else
 fi
 ```
 
-- **Update available**: Ask user via AskUserQuestion. Yes → `git -C ${CLAUDE_SKILL_DIR} pull`. No → continue.
+- **Update available**: Ask the user whether to pull updates. Yes → `git -C "${SKILL_DIR}" pull`. No → continue.
 - **Up to date / Skipped**: Continue silently.
 
 ---
@@ -143,7 +147,7 @@ Automated pipeline for professional **Bilibili horizontal knowledge videos** fro
 > - Resolution: 3840×2160 (4K) or 1920×1080 (1080p)
 > - Style: Clean white (default)
 
-**Tech stack:** Claude + Azure TTS + Remotion + FFmpeg
+**Tech stack:** Coding agent + TTS backend + Remotion + FFmpeg
 
 ### Output Specs
 
@@ -197,13 +201,13 @@ Prompts at each decision point. Activated by:
 
 ## Workflow State & Resume
 
-> **Planned feature (not yet implemented).** Currently, workflow progress is tracked via Claude's conversation context. If a session is interrupted, re-invoke the skill and Claude will check existing files in `videos/{name}/` to determine where to resume.
+> **Planned feature (not yet implemented).** Currently, workflow progress is tracked via the agent's conversation context. If a session is interrupted, re-invoke the skill and inspect existing files in `videos/{name}/` to determine where to resume.
 
 ---
 
 ## Technical Rules
 
-Hard constraints for video production — visual design is Claude's creative freedom:
+Hard constraints for video production. Visual design remains the agent's creative freedom within these rules:
 
 | Rule | Requirement |
 |------|-------------|
@@ -220,12 +224,12 @@ Hard constraints for video production — visual design is Claude's creative fre
 
 ## Additional Resources
 
-Claude loads these files on demand — **do NOT load all at once**:
+Load these files on demand — **do NOT load all at once**:
 
 - **[references/workflow-steps.md](references/workflow-steps.md)**: Detailed step-by-step instructions (Steps 1-14). Load at workflow start.
 - **[references/design-guide.md](references/design-guide.md)**: Visual minimums, typography, layout patterns, checklists. **MUST load before Step 9.**
 - **[references/troubleshooting.md](references/troubleshooting.md)**: Error fixes, BGM options, preference commands, preference learning. Load on error or user request.
-- **[examples/](examples/)**: Real production video projects. Claude may reference these for composition structure and timing.json format.
+- **[examples/](examples/)**: Real production video projects. The agent may reference these for composition structure and `timing.json` format.
 
 ---
 

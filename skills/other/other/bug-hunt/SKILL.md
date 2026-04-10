@@ -1,10 +1,19 @@
 ---
 name: bug-hunt
-description: 'Investigate suspected bugs with git archaeology and root cause analysis. Triggers: "bug", "broken", "doesn''t work", "failing", "investigate bug", "debug", "find the bug", "troubleshoot".'
+description: 'Investigate suspected bugs or run proactive code audits. Triggers: "bug", "broken", "doesn''t work", "failing", "investigate bug", "debug", "find the bug", "troubleshoot", "audit code", "find bugs in", "code audit", "hunt bugs".'
+skill_api_version: 1
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: topic
 metadata:
   tier: execution
   dependencies:
     - beads  # optional - for issue tracking
+output_contract: "diagnosis report, optional fix commits"
 ---
 
 # Bug Hunt Skill
@@ -13,13 +22,24 @@ metadata:
 
 **YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
 
-Systematic investigation to find root cause and design a complete fix.
+Systematic investigation to find root cause and design a complete fix — or proactive audit to find hidden bugs before they bite.
 
 **Requires:**
 - session-start.sh has executed (creates `.agents/` directories for output)
 - bd CLI (beads) for issue tracking if creating follow-up issues
 
-## The 4-Phase Structure
+## Modes
+
+| Mode | Invocation | When |
+|------|------------|------|
+| **Investigation** | `/bug-hunt <symptom>` | You have a known bug or failure |
+| **Audit** | `/bug-hunt --audit <scope>` | Proactive sweep for hidden bugs |
+
+Investigation mode uses the 4-phase structure below. Audit mode uses systematic read-and-classify — see [Audit Mode](#audit-mode).
+
+---
+
+## The 4-Phase Structure (Investigation Mode)
 
 | Phase | Focus | Output |
 |-------|-------|--------|
@@ -33,6 +53,22 @@ Systematic investigation to find root cause and design a complete fix.
 ## Execution Steps
 
 Given `/bug-hunt <symptom>`:
+
+---
+
+### Step 0: Load Prior Bug Context
+
+Before investigating, check for prior learnings about this area of the codebase:
+
+```bash
+if command -v ao &>/dev/null; then
+    ao lookup --query "<symptom-keywords> bug patterns" --limit 3 2>/dev/null || true
+fi
+```
+
+**Apply retrieved knowledge:** If learnings are returned, check each for applicability to the current bug. For applicable learnings (e.g., prior bugs in same area, known fragile patterns), include as investigation leads and cite by filename. Record: `ao metrics cite "<path>" --type applied 2>/dev/null || true`
+
+Prior bug reports, fix patterns, and known fragile areas reduce investigation time.
 
 ---
 
@@ -159,6 +195,108 @@ Fix at the ROOT CAUSE, not at symptoms.
 
 Run the failing test - it should now pass.
 
+If the bug is in a high-complexity function, consider `/refactor` after fix to prevent recurrence.
+
+---
+
+## Audit Mode
+
+When invoked with `--audit`, bug-hunt switches to a proactive sweep. No symptom needed — you're hunting for bugs that haven't been reported yet.
+
+```bash
+/bug-hunt --audit cli/internal/goals/     # audit a package
+/bug-hunt --audit src/auth/               # audit a directory
+/bug-hunt --audit .                        # audit recent changes in repo
+```
+
+### Audit Step 1: Scope
+
+Identify target files from the scope argument:
+
+```bash
+# Find source files in scope
+find <scope> -name "*.go" -o -name "*.py" -o -name "*.ts" -o -name "*.rs" | head -50
+```
+
+If scope is `.` or broad (>50 files), narrow to recently changed files:
+
+```bash
+git log --since="2 weeks ago" --name-only --pretty=format: -- <scope> | sort -u | head -30
+```
+
+### Audit Step 2: Systematic Read
+
+Read **every file** in scope line by line. For each file, check:
+
+| Category | What to Look For |
+|----------|-----------------|
+| **Resource Leaks** | Unclosed handles, orphaned processes, missing cleanup/defer |
+| **String Safety** | Byte-level truncation of UTF-8, unsanitized input |
+| **Dead Code** | Unreachable branches, unused constants, shadowed variables |
+| **Hardcoded Values** | Paths, URLs, repo-specific assumptions that won't work elsewhere |
+| **Edge Cases** | Empty input, nil/zero values, boundary conditions |
+| **Concurrency** | Unprotected shared state, goroutine leaks, missing signal handlers |
+| **Error Handling** | Swallowed errors, missing context, wrong error types |
+
+**Key discipline:** Read line by line. Do not skim. The proven methodology (5 bugs found, 0 hypothesis failures) came from careful reading, not heuristic scanning.
+
+**USE THE TASK TOOL** (subagent_type: "Explore") for large scopes — split files across parallel agents.
+
+### Audit Step 3: Classify Findings
+
+For each finding, assign severity:
+
+| Severity | Criteria | Examples |
+|----------|----------|---------|
+| **HIGH** | Data loss, security, resource leak, process orphaning | Zombie processes, SQL injection, file handle leak |
+| **MEDIUM** | Wrong output, incorrect defaults, silent data corruption | UTF-8 truncation, hardcoded paths, wrong error code |
+| **LOW** | Dead code, cosmetic, minor inconsistency | Unreachable branch, unused import, style violation |
+
+Performance bugs (slow queries, memory leaks, N+1) → escalate to `/perf` for deeper analysis.
+
+### Audit Step 4: Write Audit Report
+
+**For audit report format, read `skills/bug-hunt/references/audit-report-template.md`.**
+
+Write to `.agents/research/YYYY-MM-DD-bug-<scope-slug>.md`.
+
+Report to user with a summary table:
+
+```
+| # | Bug | Severity | File | Fix |
+|---|-----|----------|------|-----|
+| 1 | <description> | HIGH | <file:line> | <proposed fix> |
+```
+
+Include failure count (hypothesis tests that didn't confirm). Zero failures = clean audit.
+
+### Bug-Finding Pyramid Modes (BF1–BF5)
+
+When running `--audit`, check for missing bug-finding test coverage:
+
+**BF4 — Chaos/Negative Testing (highest bug-finding power):**
+For every file that makes external calls (APIs, databases, filesystems), verify:
+- [ ] Timeout injection test exists
+- [ ] Connection failure test exists
+- [ ] Permission denied test exists
+- [ ] Corrupt input test exists
+
+If any boundary lacks failure injection → flag as finding (severity: significant).
+
+**BF5 — Script Functional Testing:**
+For every .sh script that calls external tools (oc, kubectl, helm):
+- [ ] Stub-based functional test exists
+- [ ] JSON output schema validated
+- [ ] Both healthy and unhealthy stub paths tested
+
+If scripts lack functional tests → flag as finding (severity: moderate).
+
+**BF1 — Property-Based Testing:**
+For every data transformation (parse/render/serialize):
+- [ ] Property test with randomized inputs exists
+
+**Reference:** the test pyramid standard in `/standards` for full BF level definitions and per-language tooling.
+
 ---
 
 ## Step 5: Write Bug Report
@@ -227,6 +365,19 @@ Common bug patterns to check:
 
 **Result:** Regression traced to commit abc1234, type conversion error fixed at root cause in validation logic.
 
+### Proactive Code Audit
+
+**User says:** `/bug-hunt --audit cli/internal/goals/`
+
+**What happens:**
+1. Agent scopes to all `.go` files in the goals package
+2. Agent reads each file line by line, checking for resource leaks, string safety, dead code, etc.
+3. Agent finds 5 bugs: zombie process groups (HIGH), UTF-8 truncation (MEDIUM), hardcoded paths (MEDIUM), lost paragraph breaks (LOW), dead branch (LOW)
+4. All findings confirmed on first pass — 0 hypothesis failures
+5. Audit report written to `.agents/research/2026-02-24-bug-goals-go.md`
+
+**Result:** 5 concrete bugs with severity, file:line, and proposed fix — ready for implementation without debugging.
+
 ## Troubleshooting
 
 | Problem | Cause | Solution |
@@ -235,3 +386,14 @@ Common bug patterns to check:
 | Git archaeology returns too many commits | Broad search or high-churn file | Narrow timeframe with `--since` flag, focus on specific function with `git blame`, search commit messages for related keywords. |
 | Hit 3-failure limit during hypothesis testing | Multiple incorrect hypotheses or complex root cause | Escalate to architecture review. Read `failure-categories.md` to determine if failures are countable. Consider asking for domain expert input. |
 | Bug report missing key information | Incomplete investigation or skipped steps | Verify all 4 phases completed. Ensure root cause identified with file:line. Check git blame ran for responsible commit. |
+
+## Reference Documents
+
+- [references/audit-report-template.md](references/audit-report-template.md)
+- [references/bug-report-template.md](references/bug-report-template.md)
+- [references/failure-categories.md](references/failure-categories.md)
+
+## See Also
+
+- [refactor](../refactor/SKILL.md) — Safe refactoring for complex bug-prone code
+- [perf](../perf/SKILL.md) — Performance profiling for performance-related bugs

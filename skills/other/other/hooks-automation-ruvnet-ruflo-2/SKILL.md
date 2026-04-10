@@ -103,7 +103,7 @@ Options:
   --require-confirmation    Request user confirmation for risky commands
 
 Examples:
-  npx claude-flow hook pre-bash -c "rm -rf $tmp$cache"
+  npx claude-flow hook pre-bash -c "rm -rf /tmp/cache"
   npx claude-flow hook pre-bash --command "docker build ." --estimate-resources
 ```
 

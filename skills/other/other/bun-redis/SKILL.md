@@ -1,6 +1,7 @@
 ---
-name: Bun Redis
+name: bun-redis
 description: Use when working with Redis in Bun (ioredis, Upstash), caching, pub/sub, session storage, or key-value operations.
+license: MIT
 ---
 
 # Bun Redis

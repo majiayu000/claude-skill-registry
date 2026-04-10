@@ -14,6 +14,8 @@ Three tools for different operations. Choose by task:
 | **Session** | `bird` | Browser cookies | Free | Posting, replying, bookmarks, mentions, media |
 | **Archival** | `smaug` | Via bird | Free | Bookmark/likes processing, AI-powered filing |
 
+> **Alternative**: `opencli twitter` provides 25 free session-based commands (post, reply, search, bookmarks, follow, block, etc.) via Chrome session reuse. Prefer opencli for routine Twitter operations. Use x-search for deep research with cost tracking. bird CLI remains available as fallback.
+
 ## Setup
 
 ### x-search (Official API v2)
@@ -111,19 +113,19 @@ Pull the latest tweets from named account groups, filtered by time window. Uses 
 
 ```bash
 # Read today's tweets from a feed group
-bun run ~/.claude/skills/twitter/x-search/x-search.ts feed mygroup --since 1d
+bun run ~/.claude/skills/twitter/x-search/x-search.ts feed geopolitics --since 1d
 
 # Last week from all groups
-bun run ~/.claude/skills/twitter/x-search/x-search.ts feed all --since 7d
+bun run ~/.claude/skills/twitter/x-search/x-search.ts feed all-feeds --since 7d
 
 # Custom accounts (comma-separated)
-bun run ~/.claude/skills/twitter/x-search/x-search.ts feed user1,user2,user3 --since 1d
+bun run ~/.claude/skills/twitter/x-search/x-search.ts feed imetatronink,Megatron_ron --since 1d
 
 # Free via bird CLI (no API cost)
-bun run ~/.claude/skills/twitter/x-search/x-search.ts feed mygroup --since 1d --bird
+bun run ~/.claude/skills/twitter/x-search/x-search.ts feed geopolitics --since 1d --bird
 
 # Save as markdown research doc
-bun run ~/.claude/skills/twitter/x-search/x-search.ts feed mygroup --since 7d --markdown --save
+bun run ~/.claude/skills/twitter/x-search/x-search.ts feed all-feeds --since 7d --markdown --save
 ```
 
 Feed options: `--since 1d|7d|1h|3h|12h`, `--limit N` (tweets per account, default 4), `--bird` (free), `--markdown`, `--save`, `--json`, `--no-cache`.
@@ -132,15 +134,15 @@ Feed options: `--since 1d|7d|1h|3h|12h`, `--limit N` (tweets per account, defaul
 
 ```bash
 bun run ~/.claude/skills/twitter/x-search/x-search.ts feedgroup                              # list all
-bun run ~/.claude/skills/twitter/x-search/x-search.ts feedgroup show mygroup                  # show group
+bun run ~/.claude/skills/twitter/x-search/x-search.ts feedgroup show geopolitics              # show group
 bun run ~/.claude/skills/twitter/x-search/x-search.ts feedgroup create tech "Tech follows"
-bun run ~/.claude/skills/twitter/x-search/x-search.ts feedgroup add tech karpathy "AI research"
-bun run ~/.claude/skills/twitter/x-search/x-search.ts feedgroup remove tech karpathy
+bun run ~/.claude/skills/twitter/x-search/x-search.ts feedgroup add tech kaboreas "K8s/infra"
+bun run ~/.claude/skills/twitter/x-search/x-search.ts feedgroup remove tech kaboreas
 bun run ~/.claude/skills/twitter/x-search/x-search.ts feedgroup delete tech
-bun run ~/.claude/skills/twitter/x-search/x-search.ts feedgroup alias daily tech,news
+bun run ~/.claude/skills/twitter/x-search/x-search.ts feedgroup alias daily geopolitics,palestine
 ```
 
-Groups stored at `~/.claude/skills/twitter/x-search/data/feedgroups.json`. Ships empty — populate with your own accounts.
+Pre-configured groups: `geopolitics` (18 accounts), `palestine` (3 accounts), alias `all-feeds` (all 21). Stored at `~/.claude/skills/twitter/x-search/data/feedgroups.json`.
 
 ### Watchlist
 
@@ -301,7 +303,6 @@ Wait for reset. x-search shows reset time. bird: wait a few minutes.
 |------|------|-----|
 | Search tweets by topic | x-search | Official API, cost-tracked, cached |
 | Research a topic deeply | x-search | Multi-page, markdown output, save |
-| Daily feed from followed accounts | x-search feed | Cheap batched OR-query, grouped output |
 | Monitor specific accounts | x-search watchlist | Batch check with cost tracking |
 | Post a tweet or reply | x-search post/reply | Official API, reliable, $0.01/post |
 | Post with media | bird | Free, media upload support |

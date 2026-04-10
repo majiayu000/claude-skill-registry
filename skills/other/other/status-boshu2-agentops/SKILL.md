@@ -1,11 +1,18 @@
 ---
 name: status
 description: 'Single-screen dashboard showing current work, recent validations, flywheel health, and suggested next action. Triggers: "status", "dashboard", "what am I working on", "where was I".'
+skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
 model: haiku
+context:
+  window: inherit
+  intent:
+    mode: none
+  intel_scope: none
 metadata:
   tier: session
   dependencies: []
+output_contract: "stdout: dashboard"
 ---
 
 # /status — Workflow Dashboard
@@ -44,8 +51,8 @@ fi
 
 # Ratchet status via CLI
 if command -v ao &>/dev/null; then
-  ao ratchet status -o json 2>/dev/null || echo "RATCHET_UNAVAILABLE"
-  ao task-status -o json 2>/dev/null || echo "TASK_STATUS_UNAVAILABLE"
+  ao ratchet status --json 2>/dev/null || echo "RATCHET_UNAVAILABLE"
+  ao task-status --json 2>/dev/null || echo "TASK_STATUS_UNAVAILABLE"
 fi
 ```
 
@@ -70,11 +77,11 @@ fi
 # Learnings count
 echo "LEARNINGS=$(ls .agents/learnings/ 2>/dev/null | wc -l | tr -d ' ')"
 echo "PATTERNS=$(ls .agents/patterns/ 2>/dev/null | wc -l | tr -d ' ')"
-echo "PENDING=$(ls .agents/knowledge/pending/ 2>/dev/null | wc -l | tr -d ' ')"
+echo "PENDING=$(ls .agents/forge/ 2>/dev/null | wc -l | tr -d ' ')"
 
 # Flywheel health + badge
 if command -v ao &>/dev/null; then
-  ao flywheel status 2>/dev/null || echo "FLYWHEEL_UNAVAILABLE"
+  ao metrics flywheel status 2>/dev/null || echo "FLYWHEEL_UNAVAILABLE"
   ao badge 2>/dev/null || echo "BADGE_UNAVAILABLE"
 fi
 ```
@@ -104,6 +111,15 @@ if command -v gt &>/dev/null; then
   gt mail inbox 2>/dev/null | head -5
 else
   echo "GT_UNAVAILABLE"
+fi
+```
+
+**Call 6 — Session Quality Signals:**
+```bash
+if [ -f .agents/signals/session-quality.jsonl ]; then
+  tail -10 .agents/signals/session-quality.jsonl
+else
+  echo "NO_SIGNALS"
 fi
 ```
 
@@ -162,6 +178,13 @@ GIT STATE
 INBOX
   <message count or "No messages" or "gt not installed">
 
+SESSION QUALITY SIGNALS
+  <last 10 entries from .agents/signals/session-quality.jsonl as table>
+  | Timestamp | Signal | Detail | Session |
+  |-----------|--------|--------|---------|
+  <parsed from JSON lines: .timestamp, .signal, .detail, .session>
+  <or "No quality signals recorded." if file missing or empty>
+
 ──────────────────────────────────────────────────
 SUGGESTED NEXT ACTION
   <state-aware suggestion — see Step 3>
@@ -173,8 +196,8 @@ QUICK COMMANDS
   /pre-mortem   Validate plan before coding
   /implement    Execute a single issue
   /crank        Autonomous epic execution
-  /vibe         Validate code quality
-  /post-mortem  Extract learnings, close cycle
+  /validation   Full close-out and learnings
+  /vibe         Targeted code review
 ══════════════════════════════════════════════════
 ```
 
@@ -184,17 +207,16 @@ Evaluate state top-to-bottom. Use the FIRST matching condition:
 
 | Priority | Condition | Suggestion |
 |----------|-----------|------------|
-| 1 | Inbox has unread messages | "Check messages: `/inbox`" |
-| 2 | No ratchet chain exists | "Start with `/quickstart` or `/research` to begin a workflow" |
-| 3 | Research done, no plan | "Run `/plan` to decompose research into actionable issues" |
-| 4 | Plan done, no pre-mortem | "Run `/pre-mortem` to validate the plan before coding" |
-| 5 | Issues in-progress | "Continue working: `/implement <issue-id>` or `/crank` for autonomous execution" |
-| 6 | Ready issues available | "Pick up next issue: `/implement <first-ready-id>`" |
-| 7 | Uncommitted changes | "Review changes: `/vibe recent`" |
-| 8 | Implementation done, no vibe | "Run `/vibe` for final code validation" |
-| 9 | Recent WARN/FAIL verdict | "Address findings in `<report-path>`, then re-run `/vibe`" |
-| 10 | Vibe passed, no post-mortem | "Run `/post-mortem` to extract learnings and complete the cycle" |
-| 11 | Pending knowledge items | "Promote learnings: `ao pool list --status pending -o json`, then `ao pool stage <id>` and `ao pool promote <id>`" |
+| 1 | No ratchet chain exists | "Start with `/quickstart` or `/research` to begin a workflow" |
+| 2 | Research done, no plan | "Run `/plan` to decompose research into actionable issues" |
+| 3 | Plan done, no pre-mortem | "Run `/pre-mortem` to validate the plan before coding" |
+| 4 | Issues in-progress | "Continue working: `/implement <issue-id>` or `/crank` for autonomous execution" |
+| 5 | Ready issues available | "Pick up next issue: `/implement <first-ready-id>`" |
+| 6 | Uncommitted changes | "Review recent work: `/validation`" |
+| 7 | Implementation done, no vibe | "Run `/validation` for final close-out" |
+| 8 | Recent WARN/FAIL verdict | "Address findings in `<report-path>`, then re-run `/validation`" |
+| 10 | Vibe passed, no post-mortem | "Run `/validation` to complete closeout and extract learnings" |
+| 11 | Pending knowledge items | "Promote learnings: `ao pool list --status pending --json`, then `ao pool stage <id>` and `ao pool promote <id>`" |
 | 12 | Clean state, nothing pending | "All clear. Start with `/research` or `/plan` to find new work" |
 
 ### Step 4: JSON Output (--json flag)
@@ -232,6 +254,9 @@ If the user passed `--json`, output all dashboard data as structured JSON instea
     "recent_commits": ["abc1234 fix: thing", "def5678 feat: other"]
   },
   "inbox": { "count": 0 },
+  "session_quality_signals": [
+    { "timestamp": "2026-03-31T14:22:00Z", "signal": "drift", "detail": "3 corrections in 5min", "session": "abc123" }
+  ],
   "suggestion": {
     "priority": 5,
     "message": "Continue working: /implement ag-042.2"
@@ -279,6 +304,6 @@ Render this with a single code block. No visual dashboard when `--json` is activ
 | Problem | Cause | Solution |
 |---------|-------|----------|
 | Shows "BD_UNAVAILABLE" or "AO_UNAVAILABLE" | CLI tools not installed or not in PATH | Install missing tools: `brew install bd` or `brew install ao`. Skill gracefully degrades by showing available state only. |
-| Ratchet phase shows stale data | Old chain.jsonl not cleaned up | Check timestamp of `.agents/ao/chain.jsonl`. If stale, delete it or run `/post-mortem` to complete cycle and reset state. |
+| Ratchet phase shows stale data | Old chain.jsonl not cleaned up | Check timestamp of `.agents/ao/chain.jsonl`. If stale, delete it or run `/validation` to complete cycle and reset state. |
 | Suggested action doesn't match intent | State-aware rules didn't capture edge case | Review priority table in Step 3. May need to refine conditions. Use `--json` to inspect raw state and debug rule matching. |
 | JSON output malformed | Parallel bash calls returned unexpected format | Check each bash call individually. Ensure jq parsing works on actual data. Validate JSON structure with `jq .` before returning to user. |

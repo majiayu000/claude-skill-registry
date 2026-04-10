@@ -1,6 +1,6 @@
 ---
 name: minoan-frontend-design
-description: This skill should be used when building web components, pages, artifacts, posters, or applications (websites, landing pages, dashboards, React components, HTML/CSS layouts, or styling/beautifying any web UI). Creates distinctive, production-grade frontend interfaces with high design quality that avoids generic AI aesthetics.
+description: This skill should be used when building web components, pages, artifacts, posters, or applications (websites, landing pages, dashboards, React components, HTML/CSS layouts, or styling/beautifying any web UI), including editorial heroes with hover-reactive depth-parallax busts or statues (Astryx pattern) and pointer-reactive fluid effects over DOM sections. Creates distinctive, production-grade frontend interfaces with high design quality that avoids generic AI aesthetics.
 ---
 
 <!-- Creative core: syncretic-v3 (eval/skills/syncretic-v3.md). See eval/skills/INDEX.md for lineage. -->
@@ -73,7 +73,7 @@ After building, run these refinement passes in order:
 Consult `references/` on demand:
 
 **Engineering**: `vercel-web-interface-guidelines.md`, `design-system-checklist.md`.
-**Techniques**: `creative-arsenal.md`, `design-dials.md`, `editorial-patterns.md` (eval-tested).
+**Techniques**: `creative-arsenal.md`, `design-dials.md`, `editorial-patterns.md` (eval-tested), `astryx-hero.md` (depth-parallax editorial hero + fluid-dom sibling links). **Shader cross-ref**: `~/.claude/skills/rocaille-shader/references/fluid-dom.md` (pointer-reactive fluid over DOM sections).
 **Stripe** (light-mode): `stripe-design-tokens.md`, `stripe-component-patterns.md`, `stripe-signature-techniques.md`.
 **Mintlify** (dark-first docs): `mintlify-design-tokens.md`, `mintlify-component-patterns.md`, `mintlify-signature-techniques.md`.
 **Anti-patterns**: `anti-patterns.md` (condensed checklist from Impeccable v1.6.0).

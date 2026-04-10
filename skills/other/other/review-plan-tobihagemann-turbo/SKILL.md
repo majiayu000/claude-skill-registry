@@ -45,11 +45,9 @@ Ignore stylistic preferences and minor wording. If no issues are found, state th
 </structured_output_contract>
 ```
 
-## Step 3: Return Combined Findings
+## Step 3: Aggregate Combined Findings
 
-Wait for both agents to complete. Aggregate their findings with attribution (reviewer: "internal" or "peer") and return them to the caller.
-
-The caller determines what to do with the findings (evaluate, apply, or present to the user).
+Wait for both agents to complete. Aggregate their findings with attribution (reviewer: "internal" or "peer").
 
 ## Plan Determination Criteria
 
@@ -67,6 +65,13 @@ Flag an issue only when ALL of these hold:
 - **Scope** — Requirements addressed without creep. No missing requirements from the original ask
 - **Ordering** — Step dependency issues, missing prerequisites, circular dependencies
 - **Buildability** — Steps specific enough to execute without getting stuck. No logical gaps between steps
+- **Concreteness** — Every Implementation Step references at least one concrete anchor: a `file_path:line_number`, a named function, a named symbol, or a named file to create. Vague directives are buildability gaps. Flag any step that contains only the following without a concrete anchor:
+  - "add validation", "handle edge cases", "as needed", "etc.", "and so on"
+  - "similar to step N" without restating the anchor (a back-reference is fine if step N already has a concrete file/symbol the reader can follow)
+  - "mirror the existing pattern" without naming the pattern's location
+  - "update related files", "wire it up" without naming the files or wiring point
+  - Placeholder language: "TBD", "TODO", "fill in later"
+- **Verification** — The plan has a verification section (the `## Verification` block in the `/draft-plan` template) that describes how to confirm the change works. Flag if missing, or if it is vague ("run tests" without naming which tests or what to look for)
 - **Pattern Alignment** — Proposed approach follows existing codebase patterns where applicable. Deviations from established patterns are justified
 - **Design Direction** — Whether the chosen approach is the simplest safe option. Challenge assumptions the plan depends on and flag when a different approach would be safer or simpler
 - **Failure Modes** — How the design handles partial failure, race conditions, stale state, rollback, data loss, and degraded dependencies

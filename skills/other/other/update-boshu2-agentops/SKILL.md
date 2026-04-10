@@ -1,10 +1,19 @@
 ---
 name: update
 description: 'Reinstall all AgentOps skills globally from the latest source. Triggers: "update skills", "reinstall skills", "sync skills".'
-disable-model-invocation: true
+skill_api_version: 1
+user-invocable: true
+context:
+  window: isolated
+  intent:
+    mode: none
+  sections:
+    exclude: [HISTORY, INTEL, TASK]
+  intel_scope: none
 metadata:
   tier: meta
   dependencies: []
+output_contract: "~/.claude/skills/ (installed copies)"
 ---
 
 # /update — Reinstall AgentOps Skills
@@ -20,7 +29,7 @@ metadata:
 ### Step 1: Install
 
 ```bash
-npx skills@latest add boshu2/agentops --all -g
+bash <(curl -fsSL https://raw.githubusercontent.com/boshu2/agentops/main/scripts/install.sh)
 ```
 
 Run this command. Wait for it to complete.
@@ -29,10 +38,10 @@ Run this command. Wait for it to complete.
 
 Confirm the output shows all skills installed with no failures.
 
-If any skills failed to install, report which ones failed and suggest re-running or manual sync:
+If any skills failed to install, report which ones failed and suggest re-running the installer. If the failure is isolated to one skill, tell the user to inspect the target agent's installed skill or plugin directory and restore just that skill from the latest repo copy.
 ```bash
-# Manual sync for a failed skill (replace <skill-name>):
-yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/
+# Retry the full installer:
+bash <(curl -fsSL https://raw.githubusercontent.com/boshu2/agentops/main/scripts/install.sh)
 ```
 
 ### Step 3: Report
@@ -48,7 +57,7 @@ Tell the user:
 **User says:** `/update`
 
 **What happens:**
-1. Runs `npx skills@latest add boshu2/agentops --all -g` to pull the latest skills from the repository and install them globally.
+1. Runs the install script to pull the latest skills from the repository and install them globally.
 2. Verifies the output confirms all skills installed with no failures.
 3. Reports the total count of successfully installed skills.
 
@@ -59,18 +68,18 @@ Tell the user:
 **User says:** `/update` (after a previous run failed for some skills)
 
 **What happens:**
-1. Runs `npx skills@latest add boshu2/agentops --all -g` which re-attempts installation of all skills from the latest source.
-2. Detects that 2 of 30 skills failed to install and identifies them by name.
-3. Reports the failures and provides manual sync commands (e.g., `yes | cp -r skills/<name>/ ~/.claude/skills/<name>/`) as a fallback.
+1. Re-runs the install script which re-downloads and overwrites all skills from the latest source.
+2. Detects that 2 of 50 skills failed to install and identifies them by name.
+3. Reports the failures and provides manual sync commands as a fallback.
 
-**Result:** 28 skills installed successfully, with clear instructions to manually sync the 2 that failed.
+**Result:** 48 skills installed successfully, with clear instructions to retry the installer and recover the 2 failed skills from the latest repo copy if needed.
 
 ## Troubleshooting
 
 | Problem | Cause | Solution |
 |---------|-------|----------|
-| `npx: command not found` | Node.js/npm is not installed or not on PATH | Install Node.js (v18+) via Homebrew (`brew install node`) or your preferred package manager |
-| `ERR! 404 Not Found` from npx | The `skills` package or the `boshu2/agentops` repository is unreachable | Check network connectivity and verify the repository exists. If behind a proxy, configure npm proxy settings |
-| Individual skills fail to install while others succeed | Permissions issue or corrupted skill directory in `~/.claude/skills/` | Use the manual sync fallback: `yes \| cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/` |
-| Skills installed but not available in new sessions | The global skills directory (`~/.claude/skills/`) is not on the agent's skill search path | Verify `~/.claude/skills/` exists and contains the installed skill directories. Restart the agent session |
-| `EACCES: permission denied` during install | The `~/.claude/skills/` directory has restrictive permissions | Fix with `chmod -R u+rwX ~/.claude/skills/` and re-run `/update` |
+| `curl: command not found` | curl is not installed | Install curl via your package manager |
+| Download fails | Network or GitHub unreachable | Check connectivity; retry |
+| Individual skills fail | Permissions issue in the agent's install or plugin directory | Fix permissions on the target agent's install home, then re-run `/update` |
+| Skills not available after install | Agent session not restarted | Restart your agent session |
+| `EACCES: permission denied` | Restrictive permissions on the install target | Fix permissions on the install target, then re-run `/update` |

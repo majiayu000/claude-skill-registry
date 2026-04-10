@@ -1,23 +1,34 @@
 ---
 name: shared
-description: Shared reference documents for distributed mode skills (not directly invocable)
+description: Shared reference documents for multi-agent skills (not directly invocable)
+skill_api_version: 1
 user-invocable: false
+context:
+  window: isolated
+  intent:
+    mode: none
+  sections:
+    exclude: [HISTORY, INTEL, TASK]
+  intel_scope: none
 metadata:
   tier: library
   internal: true
+output_contract: "reference documents (loaded JIT)"
 ---
 
 # Shared References
 
 This directory contains shared reference documents used by multiple skills:
 
-- `agent-mail-protocol.md` - Message protocol for distributed mode coordination
 - `validation-contract.md` - Verification requirements for accepting spawned work
 - `references/claude-code-latest-features.md` - Claude Code feature contract (slash commands, agent isolation, hooks, settings)
 - `references/backend-claude-teams.md` - Concrete examples for Claude native teams (`TeamCreate` + `SendMessage`)
 - `references/backend-codex-subagents.md` - Concrete examples for Codex CLI and Codex sub-agents
 - `references/backend-background-tasks.md` - Fallback: `Task(run_in_background=true)`
 - `references/backend-inline.md` - Degraded single-agent mode (no spawn)
+- `references/claude-cli-verified-commands.md` - Verified Claude CLI command shapes and caveats
+- `references/codex-cli-verified-commands.md` - Verified Codex CLI command shapes and caveats
+- `references/cli-command-failures-2026-02-26.md` - Dated failure log and mitigations from live runs
 
 These are **not directly invocable skills**. They are loaded by other skills (council, crank, swarm, research, implement) when needed.
 
@@ -44,10 +55,11 @@ fi
 | Capability | When Missing | Fallback Behavior |
 |------------|-------------|-------------------|
 | `bd` | Issue tracking unavailable | Use TaskList for tracking. Note "install bd for persistent issue tracking" |
-| `ao` | Knowledge flywheel unavailable | Write learnings to `.agents/knowledge/` directly. Skip flywheel metrics |
+| `ao` | Knowledge flywheel unavailable | Write learnings to `.agents/learnings/` directly. Skip flywheel metrics |
 | `gt` | Workspace management unavailable | Work in current directory. Skip convoy/sling operations |
 | `codex` | CLI missing or model unavailable | Fall back to runtime-native agents. Council pre-flight checks CLI presence (`which codex`) and model availability for `--mixed` mode. |
 | `cass` | Session search unavailable | Skip transcript search. Note "install cass for session history" |
+| Model tier config | `.agentops/config.yaml` missing | Use built-in defaults (quality=opus, balanced=sonnet, budget=haiku). Tier resolution falls through to "balanced". |
 
 ### Required Multi-Agent Capabilities
 
@@ -102,17 +114,16 @@ Use capability detection at runtime, not hardcoded tool names. The same skill mu
 
 > **Prefer native teams over background tasks.** Native teams provide messaging, redirect, and graceful shutdown. Background tasks are fire-and-forget with no steering — only a speedometer and emergency brake.
 
-| Capability | Codex Sub-Agents | Claude Native Teams | Background Tasks | Distributed (tmux) |
-|------------|------------------|---------------------|------------------|---------------------|
-| Observe output | `wait()` result | `SendMessage` delivery | `TaskOutput` (tail) | Agent Mail inbox |
-| Send message mid-flight | `send_input` | `SendMessage` | **NO** | Agent Mail |
-| Pause / resume | NO | Idle → wake via `SendMessage` | **NO** | `tmux` detach/attach |
-| Graceful stop | `close_agent` | `shutdown_request` | **TaskStop (lossy)** | `tmux kill-session` |
-| Redirect to different task | `send_input` | `SendMessage` | **NO** | Agent Mail |
-| Adjust scope mid-flight | `send_input` | `SendMessage` | **NO** | Agent Mail |
-| File conflict prevention | Manual `git worktree` routing | Native `isolation: worktree` + lead-only commits | None | File reservations |
-| Crash recovery | NO | NO | NO | **YES** (tmux persists) |
-| Process isolation | YES (sub-process) | Shared worktree | Shared worktree | **YES** (separate process) |
+| Capability | Codex Sub-Agents | Claude Native Teams | Background Tasks |
+|------------|------------------|---------------------|------------------|
+| Observe output | `wait()` result | `SendMessage` delivery | `TaskOutput` (tail) |
+| Send message mid-flight | `send_input` | `SendMessage` | **NO** |
+| Pause / resume | NO | Idle → wake via `SendMessage` | **NO** |
+| Graceful stop | `close_agent` | `shutdown_request` | **TaskStop (lossy)** |
+| Redirect to different task | `send_input` | `SendMessage` | **NO** |
+| Adjust scope mid-flight | `send_input` | `SendMessage` | **NO** |
+| File conflict prevention | Manual `git worktree` routing | Native `isolation: worktree` + lead-only commits | None |
+| Process isolation | YES (sub-process) | Shared worktree | Shared worktree |
 
 **When to use each:**
 
@@ -120,7 +131,6 @@ Use capability detection at runtime, not hardcoded tool names. The same skill mu
 |----------|---------|
 | Quick parallel tasks, coordination needed | Claude Native Teams |
 | Codex-specific execution | Codex Sub-Agents |
-| Long-running work, need debug/recovery | Distributed (tmux + Agent Mail) |
 | No team APIs available (last resort) | Background Tasks |
 
 ### Skill Invocation Across Runtimes
@@ -146,7 +156,7 @@ Skills that chain to other skills (e.g., `/rpi` calls `/research`, `/vibe` calls
 | `Task(subagent_type="...")` | `task(subagent_type="...")` | Same semantics, different casing |
 | `Skill(skill="X")` | `skill` tool (read-only) | Load content, then follow inline |
 | `AskUserQuestion` | `question` | Same purpose, different name |
-| `TodoWrite` | `todo` | Same purpose, different name |
+| `TaskCreate`, `TaskUpdate`, `TaskList`, `TaskGet` | `todo` | Task tracking (Claude uses 4 tools, OpenCode uses 1) |
 | `Read`, `Write`, `Edit`, `Bash`, `Glob`, `Grep` | Same names | Identical across runtimes |
 
 ### Rules
@@ -155,3 +165,18 @@ Skills that chain to other skills (e.g., `/rpi` calls `/research`, `/vibe` calls
 2. **Always inform** — tell the user what was skipped and how to enable it
 3. **Preserve core function** — the skill's primary purpose must still work without optional CLIs
 4. **Progressive enhancement** — CLIs add capabilities, their absence removes them cleanly
+
+## Reference Documents
+
+- [references/content-hash-cache.md](references/content-hash-cache.md)
+- [references/compaction-signals.md](references/compaction-signals.md)
+- [references/backend-background-tasks.md](references/backend-background-tasks.md)
+- [references/backend-claude-teams.md](references/backend-claude-teams.md)
+- [references/backend-codex-subagents.md](references/backend-codex-subagents.md)
+- [references/backend-inline.md](references/backend-inline.md)
+- [references/claude-code-latest-features.md](references/claude-code-latest-features.md)
+- [references/claude-cli-verified-commands.md](references/claude-cli-verified-commands.md)
+- [references/codex-cli-verified-commands.md](references/codex-cli-verified-commands.md)
+- [references/cli-command-failures-2026-02-26.md](references/cli-command-failures-2026-02-26.md)
+- [references/ralph-loop-contract.md](references/ralph-loop-contract.md)
+- [references/orchestration-as-prompt.md](references/orchestration-as-prompt.md)

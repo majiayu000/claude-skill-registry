@@ -1,6 +1,6 @@
 ---
 name: ln-840-benchmark-compare
-description: "Runs built-in vs hex-line benchmark with scenario manifests, activation checks, and diff-based correctness. Use when measuring hex-line MCP performance against built-in tools."
+description: "Runs a canonical built-in vs hex-line benchmark with scenario manifests, activation checks, and diff-based correctness. Use when measuring hex-line MCP performance against Claude built-in tools or when preparing the canonical suite for later external baselines."
 license: MIT
 model: claude-haiku-4-5
 ---
@@ -12,7 +12,7 @@ model: claude-haiku-4-5
 **Type:** L3 Worker
 **Category:** 8XX Optimization -> 840 Benchmark
 
-Run a clean A/B benchmark in Claude Code: one session with built-in tools only, one with `hex-line`. The benchmark is scenario-based, diff-validated, and manifest-driven. It measures activation, correctness, time, cost, and tokens.
+Run a clean A/B benchmark in Claude Code: one session with built-in tools only, one with `hex-line`. The benchmark is scenario-based, diff-validated, manifest-driven, and runtime-backed. It measures activation, correctness, time, cost, and tokens. The current runner is intentionally scoped to this internal A/B. It does not, by itself, prove best-in-class against external alternatives.
 
 ---
 
@@ -21,7 +21,7 @@ Run a clean A/B benchmark in Claude Code: one session with built-in tools only, 
 | Direction | Content |
 |-----------|----------|
 | **Input** | Repo checkout containing `mcp/hex-line-mcp/`, optional `references/goals.md`, optional `references/expectations.json` |
-| **Output** | Comparison report in `skills-catalog/ln-840-benchmark-compare/results/{date}-comparison.md` |
+| **Output** | Comparison report in `skills-catalog/ln-840-benchmark-compare/results/{date}-comparison.md` plus machine-readable benchmark summary artifact |
 
 ---
 
@@ -45,6 +45,16 @@ bash skills-catalog/ln-840-benchmark-compare/scripts/run-benchmark.sh \
   [skills-catalog/ln-840-benchmark-compare/references/expectations.json]
 ```
 
+Optional extra session profile:
+
+```bash
+EXTRA_SESSION_ID=other-mcp \
+EXTRA_SESSION_LABEL="Other MCP" \
+EXTRA_MCP_CONFIG=/abs/path/to/other-mcp.json \
+EXTRA_SETTINGS='{"disableAllHooks":true}' \
+bash skills-catalog/ln-840-benchmark-compare/scripts/run-benchmark.sh
+```
+
 The runner handles:
 - syntax preflight
 - SessionStart preflight
@@ -52,6 +62,17 @@ The runner handles:
 - isolated worktrees per scenario/session
 - per-scenario diffs
 - final comparison report
+
+Current scope:
+- built-in Claude session
+- Claude plus `hex-line`
+- optional third Claude-compatible session profile through `EXTRA_SESSION_*` environment variables
+
+External baseline note:
+- use the same `goals.md` and `expectations.json`
+- do not rewrite scenarios to fit the external tool
+- do not make "top tool" claims from the internal A/B alone
+- the optional third session profile is only valid when it can emit the same `stream-json` log shape and diff artifacts
 
 ---
 
@@ -68,6 +89,7 @@ Rules:
 - Do not design the suite to favor `hex-line`.
 - Every scenario in `goals.md` must have a matching entry in `expectations.json`.
 - `expectations.json` is the source of truth for correctness.
+- The same pair must be reused unchanged for any future external baseline.
 
 Supported expectation fields per scenario:
 
@@ -139,6 +161,7 @@ Interpretation rules:
 - `invalid run` means setup/adoption failure, not product performance
 - scenario `FAIL` means correctness contract was not met
 - activation is part of product quality for `hex-line`, not external noise
+- this report is necessary for internal A/B evaluation, but not sufficient for best-alternative claims
 
 ---
 
@@ -152,6 +175,79 @@ Interpretation rules:
 
 Do not treat raw time/cost as sufficient without scenario correctness.
 
+## External Baseline Policy
+
+- This skill owns the canonical suite, not a universal leaderboard.
+- If maintainers compare `hex-line` against external alternatives, they must reuse the same `goals.md`, `expectations.json`, and diff-based evaluation rules.
+- External runs may use different harnesses, but they must preserve the same task text, starting commit, and correctness contract.
+- If an external tool cannot satisfy the contract format, record that as a harness limitation instead of rewriting the suite to accommodate it.
+- A report that only covers built-in Claude vs `hex-line` must say so explicitly.
+
+---
+
+## Runtime Contract
+
+**MANDATORY READ:** Load shared/references/benchmark_worker_runtime_contract.md, shared/references/coordinator_summary_contract.md
+
+Runtime CLI:
+
+```bash
+node shared/scripts/benchmark-worker-runtime/cli.mjs start --skill ln-840-benchmark-compare --identifier suite-default --manifest-file <file>
+node shared/scripts/benchmark-worker-runtime/cli.mjs checkpoint --skill ln-840-benchmark-compare --identifier suite-default --phase PHASE_0_CONFIG --payload '{...}'
+node shared/scripts/benchmark-worker-runtime/cli.mjs record-summary --skill ln-840-benchmark-compare --identifier suite-default --payload '{...}'
+node shared/scripts/benchmark-worker-runtime/cli.mjs complete --skill ln-840-benchmark-compare --identifier suite-default
+```
+
+Required state fields:
+- `report_ready`
+- `summary_recorded`
+- `final_result`
+- `self_check_passed`
+
+Domain checkpoints:
+- `PHASE_0_CONFIG`
+- `PHASE_1_PREFLIGHT`
+- `PHASE_2_LOAD_SUITE`
+- `PHASE_3_RUN_SCENARIOS`
+- `PHASE_4_PARSE_RESULTS`
+- `PHASE_5_WRITE_REPORT`
+- `PHASE_6_WRITE_SUMMARY`
+- `PHASE_7_SELF_CHECK`
+
+Guard rules:
+- do not advance without checkpointing the current phase
+- do not complete before `benchmark-worker` summary is recorded
+- do not complete before self-check passes
+
+### Runtime Coordination
+
+- Managed runs may pass deterministic `runId` and exact `summaryArtifactPath`.
+- Standalone runs are supported. If both are omitted, runtime creates a standalone run and writes the default summary artifact path for the `benchmark-worker` family.
+
+---
+
+## Runtime Summary Artifact
+
+**MANDATORY READ:** Load shared/references/coordinator_summary_contract.md
+
+Emit a `benchmark-worker` summary envelope after the comparison report is written.
+
+Managed mode:
+- write to the exact `summaryArtifactPath`
+
+Standalone mode:
+- write `.hex-skills/runtime-artifacts/runs/{run_id}/benchmark-worker/ln-840-benchmark-compare--{identifier}.json`
+
+Recommended payload:
+- `scenarios_total`
+- `scenarios_passed`
+- `scenarios_failed`
+- `activation_valid`
+- `validity_verdict`
+- `report_path`
+- `warnings`
+- `metrics`
+
 ---
 
 ## Known Pitfalls
@@ -163,6 +259,7 @@ Do not treat raw time/cost as sufficient without scenario correctness.
 | Worktree already exists from prior crash | Remove it before adding a new one |
 | Diff artifacts missing | Treat scenario correctness as failed |
 | Simple scenario favors built-ins | Keep it in the suite if it is common; honesty beats cherry-picking |
+| External comparison uses edited scenarios or relaxed expectations | Treat the comparison as invalid |
 
 ---
 
@@ -174,7 +271,9 @@ Do not treat raw time/cost as sufficient without scenario correctness.
 - [ ] Each scenario runs in two clean worktrees from the same commit
 - [ ] Parser evaluates activation and scenario correctness from logs plus diffs
 - [ ] Final report is saved to `skills-catalog/ln-840-benchmark-compare/results/`
+- [ ] `benchmark-worker` summary artifact is written to the managed or standalone runtime path
 - [ ] Temporary worktrees are removed
+- [ ] Report states clearly whether it is internal A/B only or includes additional external baselines
 
 ---
 

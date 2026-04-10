@@ -1,9 +1,18 @@
 ---
 name: reverse-engineer-rpi
 description: 'Reverse-engineer a product into a feature catalog, code map, and specs. Uses RPI-style loop with verification gates. Triggers: “reverse engineer”, “catalog features”, “feature inventory”, “code map”, “docs to code mapping”, “binary analysis”.'
+skill_api_version: 1
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: topic
 metadata:
   tier: execution
   internal: false
+output_contract: "feature catalog, code map, specs"
 ---
 
 # /reverse-engineer-rpi
@@ -110,56 +119,45 @@ When `--upstream-ref` is provided:
 }
 ```
 
-## Contract JSON Outputs (`output_dir/contracts/`)
+## Contract Outputs (`output_dir/`)
 
-Repo-mode analysis writes machine-checkable contract JSON under `output_dir/contracts/`. These files use only relative paths, sorted lists, and stable keys — no absolute paths, no run-specific timestamps — so they can be committed as golden fixtures and diffed across runs.
+Repo-mode analysis writes machine-checkable contract files under `output_dir/`. These files use only relative paths, sorted lists, and stable keys — no absolute paths, no run-specific timestamps — so they can be committed as golden fixtures and diffed across runs.
 
-**Primary contract file:** `output_dir/contracts/repo-contract.json`
+**Primary contract files:**
 
-This file captures the mechanically-extracted CLI, config/env, and artifact surface of the target product. Fields include:
+| File | Description |
+|------|-------------|
+| `feature-registry.yaml` | Structured feature inventory with mechanically-extracted CLI, config/env, and artifact surface |
+| `cli-surface-contracts.txt` | CLI surface: commands, flags, help text, framework, language |
+| `docs-features.txt` | Features extracted from documentation (docs say vs code proves) |
+| `clone-metadata.json` | Upstream repo URL, pinned ref, resolved commit SHA, clone date |
 
-| Field | Description |
-|-------|-------------|
-| `schema_version` | Integer; increment when field semantics change |
-| `product_name` | Product name as supplied to the script |
-| `upstream_commit` | Git HEAD SHA of the analysis root (when a git repo) |
-| `cli` | CLI surface: `bin` map, `help_text`, `framework`, `language` |
-| `config_env` | Config file path and env vars with per-var file evidence (relative paths, sorted) |
-| `artifact_io` | Manifest inventory and template file hashes (from `artifact-registry.json`) |
-| `schema_files` | Discovered schema-like files (JSON Schema, OpenAPI, protobuf, etc.) |
+Example `feature-registry.yaml` structure:
 
-Example `repo-contract.json` structure:
-
-```json
-{
-  "schema_version": 1,
-  "product_name": "cc-sdd",
-  "upstream_commit": "abc1234...",
-  "cli": {
-    "language": "node",
-    "framework": null,
-    "bin": { "cc-sdd": "dist/cli.js" },
-    "help_text": "Usage: cc-sdd [options] ..."
-  },
-  "config_env": {
-    "config_file": ".cc-sdd/config.json",
-    "env_vars": [
-      { "name": "CC_SDD_TOKEN", "evidence": ["src/config.ts"] }
-    ]
-  },
-  "artifact_io": {
-    "manifests": ["templates/manifests/default.json"],
-    "template_files": 12
-  },
-  "schema_files": []
-}
+```yaml
+schema_version: 1
+product_name: cc-sdd
+upstream_commit: "abc1234..."
+features:
+  - name: cli-entry
+    cli:
+      language: node
+      bin:
+        cc-sdd: dist/cli.js
+      help_text: "Usage: cc-sdd [options] ..."
+  - name: config-surface
+    config_env:
+      config_file: ".cc-sdd/config.json"
+      env_vars:
+        - name: CC_SDD_TOKEN
+          evidence: ["src/config.ts"]
 ```
 
-> Note: `output_dir/contracts/` is written by `--mode=repo` (or `--mode=both`). Binary-mode outputs (`binary-analysis.md`, `binary-symbols.txt`, etc.) remain directly under `output_dir/`.
+> Note: Contract outputs are written by `--mode=repo` (or `--mode=both`). Binary-mode outputs (`binary-analysis.md`, `binary-symbols.txt`, etc.) remain directly under `output_dir/`.
 
 ## Fixture Test Workflow
 
-Golden fixtures allow regression detection: commit a known-good `contracts/` snapshot alongside the pinned `clone-metadata.json`, then diff future runs against it.
+Golden fixtures allow regression detection: commit a known-good fixture snapshot (contract files alongside the pinned `clone-metadata.json`), then diff future runs against it.
 
 ### Running Fixture Tests
 
@@ -169,9 +167,9 @@ bash skills/reverse-engineer-rpi/scripts/repo_fixture_test.sh
 
 This script (implemented in ag-w77.3):
 
-1. Reads `skills/reverse-engineer-rpi/fixtures/cc-sdd/clone-metadata.json` to determine the pinned upstream ref.
+1. Reads `skills/reverse-engineer-rpi/fixtures/cc-sdd-v2.1.0/clone-metadata.json` to determine the pinned upstream ref.
 2. Runs `reverse_engineer_rpi.py` in repo mode with that ref into a temp output dir.
-3. Diffs the generated `contracts/repo-contract.json` against the committed golden fixture.
+3. Diffs the generated outputs against the committed golden fixtures (`feature-registry.yaml`, `cli-surface-contracts.txt`, `docs-features.txt`).
 4. Exits 0 if they match; exits non-zero with a unified diff if they drift.
 
 The test requires network access to clone the upstream repo.
@@ -189,22 +187,24 @@ python3 skills/reverse-engineer-rpi/scripts/reverse_engineer_rpi.py cc-sdd \
   --output-dir=".tmp/cc-sdd-refresh/"
 
 # 2. Copy contracts into the fixture directory
-cp -r .tmp/cc-sdd-refresh/contracts/ \
-  skills/reverse-engineer-rpi/fixtures/cc-sdd/contracts/
+cp .tmp/cc-sdd-refresh/feature-registry.yaml \
+  skills/reverse-engineer-rpi/fixtures/cc-sdd-v2.1.0/feature-registry.yaml
 
 # 3. Update the pinned clone metadata
 cp .tmp/cc-sdd-refresh/clone-metadata.json \
-  skills/reverse-engineer-rpi/fixtures/cc-sdd/clone-metadata.json
+  skills/reverse-engineer-rpi/fixtures/cc-sdd-v2.1.0/clone-metadata.json
 
 # 4. Commit the updated fixtures
-git add skills/reverse-engineer-rpi/fixtures/cc-sdd/
+git add skills/reverse-engineer-rpi/fixtures/cc-sdd-v2.1.0/
 git commit -m "fix(reverse-engineer-rpi): update cc-sdd golden fixtures to <new-tag-or-sha>"
 ```
 
 Fixture files that must be committed for the test to pass:
 
-- `skills/reverse-engineer-rpi/fixtures/cc-sdd/clone-metadata.json`
-- `skills/reverse-engineer-rpi/fixtures/cc-sdd/contracts/repo-contract.json`
+- `skills/reverse-engineer-rpi/fixtures/cc-sdd-v2.1.0/clone-metadata.json`
+- `skills/reverse-engineer-rpi/fixtures/cc-sdd-v2.1.0/feature-registry.yaml`
+- `skills/reverse-engineer-rpi/fixtures/cc-sdd-v2.1.0/cli-surface-contracts.txt`
+- `skills/reverse-engineer-rpi/fixtures/cc-sdd-v2.1.0/docs-features.txt`
 
 ## Script-Driven Workflow
 
@@ -272,7 +272,7 @@ This must show:
 1. The script shallow-clones the upstream repo at the pinned tag `v1.0.0` and records the resolved SHA in `clone-metadata.json`.
 2. It scans the repo for CLI entry points, config/env surface, schema files, and artifact manifests, then writes `feature-inventory.md`, `feature-registry.yaml`, contract JSON, and all spec files under the output directory.
 
-**Result:** A complete feature catalog and machine-checkable `contracts/repo-contract.json` are generated under `.agents/research/cc-sdd/`, ready for golden-fixture diffing.
+**Result:** A complete feature catalog and machine-checkable `feature-registry.yaml` are generated under `.agents/research/cc-sdd/`, ready for golden-fixture diffing.
 
 ### Scenario: Binary Analysis With Security Audit
 

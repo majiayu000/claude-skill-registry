@@ -1,7 +1,7 @@
 ---
 name: i18n-localization
 description: "Internationalization and localization patterns. Detecting hardcoded strings, managing translations, locale files, RTL support."
-risk: unknown
+risk: safe
 source: community
 date_added: "2026-02-27"
 ---

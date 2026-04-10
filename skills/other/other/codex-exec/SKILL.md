@@ -8,7 +8,7 @@ description: "Run autonomous task execution using the codex CLI. Use when the us
 Autonomous task execution via the codex CLI. Runs non-interactively. Progress streams to stderr; final result on stdout.
 
 ```bash
-codex exec "task description"
+codex exec "task description" < /dev/null
 ```
 
 For large context, pipe it via stdin. The prompt stays as the argument, context is passed as `<stdin>` automatically:
@@ -16,6 +16,22 @@ For large context, pipe it via stdin. The prompt stays as the argument, context 
 ```bash
 cat context.txt | codex exec "question about the context"
 ```
+
+## Sandbox
+
+**All `codex` Bash calls require `dangerouslyDisableSandbox: true`** (network access to OpenAI API). Without it, codex crashes with an `Operation not permitted` panic from the `system-configuration` crate before the model runs.
+
+## Stdin Gotcha
+
+Codex reads from stdin whenever stdin is non-TTY (per `codex exec --help`: "If stdin is piped and a prompt is also provided, stdin is appended as a `<stdin>` block"). In subagent and subprocess contexts the harness leaves stdin connected to a pipe that never EOFs, so a bare `codex exec "..."` hangs forever, printing only `Reading additional input from stdin...`.
+
+Always redirect stdin on non-piped invocations:
+
+```bash
+codex exec "task description" < /dev/null
+```
+
+The piped form (`cat context.txt | codex exec "..."`) is safe — `cat` closes the pipe after the file, sending EOF.
 
 ## Permission Levels
 

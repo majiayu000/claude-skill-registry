@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5313,
-  "updated_at": "2026-04-10T02:04:35.072188Z",
+  "count": 5314,
+  "updated_at": "2026-04-10T11:05:29.112516Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -29379,6 +29379,24 @@
       "stars": 0,
       "install": "pluginagentmarketplace/custom-plugin-devops/devops/containers-skill",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "symfonydoctrine-batch-processing",

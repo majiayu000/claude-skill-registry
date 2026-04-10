@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9493,
-  "updated_at": "2026-04-10T02:04:34.731535Z",
+  "count": 9494,
+  "updated_at": "2026-04-10T11:05:28.768415Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -32372,6 +32372,23 @@
       "stars": 0,
       "install": "Overlord-Z/ClaudeShack/skills/style-master",
       "source": "downloaded"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "quantum-mechanics-explainer",

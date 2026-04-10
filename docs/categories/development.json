@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19689,
-  "updated_at": "2026-04-10T02:04:34.843416Z",
+  "count": 19690,
+  "updated_at": "2026-04-10T11:05:28.882352Z",
   "skills": [
     {
       "name": "fix",
@@ -159413,6 +159413,24 @@
       "stars": 0,
       "install": "Sologa/codex-pipeline/.codex/skills/venue-templates/SKILL.md",
       "source": "GitHub Code Search Results"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "archaeology-orchestrator",

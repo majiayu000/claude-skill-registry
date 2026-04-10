@@ -1,8 +1,8 @@
 {
   "category": "productivity",
   "code": "pro",
-  "count": 1935,
-  "updated_at": "2026-04-10T02:04:36.945729Z",
+  "count": 1940,
+  "updated_at": "2026-04-10T11:05:30.706556Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -18371,6 +18371,22 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "professional-business-writing",
+      "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
+      "repo": "b33kman/professional-business-writing-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "professional-writing",
+        "business-writing",
+        "writing-assistant"
+      ],
+      "stars": 0,
+      "install": "b33kman/professional-business-writing-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "workflow-logging",
       "description": "工作流过程日志格式规范和写入模式。定义 JSONL 和文本两种格式的日志结构、事件类型、级别定义和写入方法。",
       "repo": "penkzhou/swiss-army-knife-plugin",
@@ -18592,6 +18608,24 @@
       "stars": 0,
       "install": "frr149/mot/.claude/skills/archive-tasks",
       "source": "SkillsMP Synced Skills"
+    },
+    {
+      "name": "humanizar-texto-es",
+      "description": "Rewrite Spanish AI-generated text to sound naturally human-written using 11 simultaneous linguistic techniques.",
+      "repo": "ToniPerea/humanizar-texto-es",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "spanish",
+        "ai-detection",
+        "text-rewriting",
+        "nlp",
+        "research"
+      ],
+      "stars": 0,
+      "install": "ToniPerea/humanizar-texto-es/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "oe-workflow-routing",
@@ -19315,6 +19349,28 @@
       "stars": 0,
       "install": "cipherstash/cipherpowers/plugin/skills/revising-findings",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "deep-research",
+      "description": "Deep research with NotebookLM + web search. Domain boost, source credibility scoring, and post-research artifact generation (podcast, video, slides, quiz).",
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "path": "SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "research",
+        "deep-research",
+        "notebooklm",
+        "perplexity",
+        "gemini",
+        "domain-boost",
+        "academic",
+        "maritime",
+        "legal"
+      ],
+      "stars": 0,
+      "install": "Chris1220-cmd/deep-research-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "julien-workflow-skill-router",
@@ -22846,6 +22902,26 @@
       "stars": 0,
       "install": "DNYoussef/ai-chrome-extension/.claude/skills/meta-tools/when-managing-token-budget-use-token-budget-advisor",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "confluence-to-agent-knowledge-base",
+      "description": "Turn any Confluence Cloud instance into a private, searchable AI knowledge base on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the Atlassian MCP connector.",
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "confluence",
+        "knowledge-base",
+        "atlassian",
+        "mcp",
+        "wiki",
+        "search",
+        "knowledge-management"
+      ],
+      "stars": 0,
+      "install": "miningstore/confluence-to-agent-knowledge-base/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "forky",
@@ -27108,6 +27184,22 @@
       "stars": 0,
       "install": "Cloudhabil/AGI-Server/productivity/scaffolding-reducer",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "skills/skill-seekers/SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
+      ],
+      "stars": 0,
+      "install": "yusufkaraaslan/Skill_Seekers/skills/skill-seekers/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "work-item-planning",

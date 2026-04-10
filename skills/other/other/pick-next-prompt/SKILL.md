@@ -1,55 +1,58 @@
 ---
 name: pick-next-prompt
-description: "Pick the next prompt from .turbo/prompts.md and plan its implementation. Use when the user asks to \"pick next prompt\", \"next prompt\", \"continue prompt plan\", \"what's next\", \"next implementation step\", or \"continue with the plan\"."
+description: "Pick the next ready shell from a prompt plan in .turbo/prompt-plans/ and hand it to /turboplan for fill-in. Use when the user asks to \"pick next prompt\", \"next prompt\", \"continue prompt plan\", \"what's next\", \"next implementation step\", or \"continue with the plan\"."
 ---
 
 # Pick Next Prompt
 
-Pick the next prompt from `.turbo/prompts.md` and plan its implementation.
+Pick the next ready shell from a prompt plan index at `.turbo/prompt-plans/<slug>.md` and hand it to `/turboplan` in shell mode.
 
-## Step 1: Run `/plan-style` Skill
+## Step 1: Resolve the Prompt Plan Index
 
-Run the `/plan-style` skill to load planning conventions.
+Determine which prompt plan index to read using these rules in order:
 
-## Step 2: Read the Prompt Plan
+1. **Explicit path** — If the user passed a file path, use it
+2. **Explicit slug** — If a slug was passed, resolve to `.turbo/prompt-plans/<slug>.md`
+3. **In-progress wins** — Glob `.turbo/prompt-plans/*.md`. If exactly one index has any prompt with `Status: in-progress`, use it. This is the prompt plan currently being worked on.
+4. **Single file** — If exactly one index file exists, use it
+5. **Most recent** — If no index has an in-progress prompt and rule 3 did not resolve, use the most recently modified file
+6. **Legacy fallback** — If `.turbo/prompt-plans/` does not exist but `.turbo/prompts.md` exists, tell the user to re-run `/create-prompt-plan` to upgrade to shells, and halt.
+7. **Nothing found** — If no prompt plan exists, tell the user to run `/turboplan` for a complex task (which will route to `/create-spec` + `/create-prompt-plan`) and stop
 
-Read `.turbo/prompts.md`. Parse all prompts extracting:
-- Prompt number and title
-- Status (`pending`, `in-progress`, `done`)
-- Dependencies (`Depends on` field)
-- The prompt text block
+If multiple files have in-progress prompts (concurrent work in different feature branches), use `AskUserQuestion` to let the user pick.
 
-Also read `.turbo/spec.md` (or the spec path referenced in the prompt plan header) for full context.
+State the resolved index path before continuing.
 
-## Step 3: Pick the Next Prompt
+Read the index file. Each prompt entry uses bold-prefixed inline markers under a `## Prompt N:` heading. Parse:
+
+- Prompt number and title (from the `## Prompt N: <title>` heading)
+- Status (`**Status:** pending` / `in-progress` / `done`)
+- Shell file path (`**Shell:** <path>`)
+- Dependencies (`**Depends on:** none` or `Prompt N`)
+
+## Step 2: Pick the Next Ready Shell
 
 Find the first `pending` prompt whose dependencies are all `done`.
 
-- **If found**: proceed to Step 4
-- **If all prompts are `done`**: report completion to the user — the plan is finished
-- **If remaining prompts are blocked**: report which prompts are blocked and by what
+- **If found** — proceed to Step 3
+- **If all prompts are `done`** — report completion to the user — the plan is finished
+- **If remaining prompts are blocked** — report which prompts are blocked and by what
 
-## Step 4: Adapt the Prompt
+## Step 3: Mark In-Progress and Read the Shell
 
-Re-read the spec and compare against the current project state. Adjust the prompt if implementation has diverged:
+Update the index file to mark the selected prompt `in-progress`.
 
-- **File paths changed** — update references to match actual structure
-- **Architecture evolved** — adjust the prompt to work with what was actually built
-- **Scope shifted** — add or remove items based on what prior work produced
-- **New information** — incorporate discoveries from previous sessions
+Read the shell file at the path from the prompt's `Shell:` field. Verify the file exists and contains the expected shell structure (Context, Produces, Consumes, Covers Spec Requirements, Implementation Steps, Open Questions). If the shell file is missing, stop and report — the index and shell files are out of sync.
 
-Update `.turbo/prompts.md` with adjustments to the selected prompt. For affected future prompts, update their Context and Depends-on fields if the adaptation changes what they can assume.
+## Step 4: Run `/turboplan` Skill
 
-Mark the selected prompt `in-progress` in `.turbo/prompts.md`.
+Run the `/turboplan` skill, passing the shell file path as input.
 
-## Step 5: Plan
-
-Using the selected prompt as the requirements, explore the codebase, design the implementation, and write a detailed plan (exact file paths, function signatures, data flow, test cases).
-
-The plan's final step must instruct: "Mark prompt N as `done` in `.turbo/prompts.md`."
+Tell `/turboplan` (via its task description) that the plan's final implementation step must include: "Mark prompt N as `done` in the prompt plan index at `<index path>`."
 
 ## Rules
 
-- Never modify the spec file — only `.turbo/prompts.md` is writable (besides the plan file)
-- If the prompt plan file does not exist, tell the user to run `/create-prompt-plan` first
-- Keep adaptations minimal — adjust only what diverged, do not rewrite prompts unnecessarily
+- Never modify the spec file.
+- Do not pre-verify Consumes or refresh surveys here.
+- Do not re-draft or re-analyze the shell.
+- If the index references a shell file that does not exist, halt. Do not silently recover by regenerating the shell.

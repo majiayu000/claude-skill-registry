@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19687,
-  "updated_at": "2026-04-09T03:22:47.037031Z",
+  "count": 19689,
+  "updated_at": "2026-04-10T02:04:34.843416Z",
   "skills": [
     {
       "name": "fix",
@@ -54100,6 +54100,18 @@
       "stars": 2,
       "install": "HTRamsey/claude-config/skills/code-smell-detection",
       "source": "downloaded"
+    },
+    {
+      "name": "unknown",
+      "description": "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.",
+      "repo": "harivansh-afk/claude-code-vertical",
+      "path": "skill-index/skills/tmux/SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [],
+      "stars": 2,
+      "install": "harivansh-afk/claude-code-vertical/skill-index/skills/tmux/SKILL.md",
+      "source": "GitHub Code Search Results"
     },
     {
       "name": "security-scanner",
@@ -121357,6 +121369,24 @@
       "stars": 0,
       "install": "joelhooks/swarm-tools/packages/opencode-swarm-plugin/global-skills/learning-systems",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "buildkite-issue-solver",

@@ -42,4 +42,4 @@ Add or update entries in the Unreleased section following `/changelog-rules` con
 ## Rules
 
 - Never modify released version sections. Only the Unreleased section is in scope.
-- Do not stage the modified file. The caller is responsible for staging.
+- Do not stage the modified file. Staging is handled separately.

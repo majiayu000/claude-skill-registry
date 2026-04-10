@@ -29,6 +29,7 @@ Load these before execution:
 - perform focused standards research when it changes Technical Notes
 - build the ideal Story plan before checking existing Stories
 - detect routing and mode per epic group
+- batch child manifest/artifact preparation before delegation
 - delegate creation or replanning to standalone workers
 
 ## Inputs
@@ -59,6 +60,10 @@ Phases:
 Terminal phases:
 - `DONE`
 - `PAUSED`
+
+Summary flow:
+- consume child `story-plan-worker` artifacts from `ln-221` / `ln-222`
+- write coordinator `story-plan` artifact during `PHASE_7_FINALIZE`
 
 ## Phase Map
 
@@ -121,17 +126,33 @@ Checkpoint payload:
 
 ### Phase 6: Delegate
 
+Phase 6 has two internal steps.
+
+**Phase 6a: Prepare delegation**
+- finalize routing groups
+- materialize worker manifests
+- precompute `run_id` and `summary_artifact_path` for each child
+- checkpoint the expected worker set before execution
+
+**Phase 6b: Execute delegation**
+
 Delegate by group:
 - `ln-221-story-creator`
 - `ln-222-story-replanner`
 
-Workers remain standalone-capable. They may optionally write `story-plan` summary artifacts, but must always return the same structured summary even without artifact writing.
+Workers remain standalone-capable. In managed mode the coordinator starts them through `planning-worker-runtime`, passes `runId + summaryArtifactPath`, stores the launch metadata in `child_run`, then records the resulting worker artifact through `record-epic`.
 
-Record each result through runtime `record-epic`.
+Worker summary kind:
+- `story-plan-worker`
 
 ### Phase 7: Finalize
 
 Finalize only after all expected worker summaries are recorded.
+
+Coordinator output:
+- build one `story-plan` summary for the parent runtime
+- write it through `node shared/scripts/story-planning-runtime/cli.mjs record-plan-summary`
+- persist the artifact before advancing to `PHASE_8_SELF_CHECK`
 
 **Template compliance gate:** Fetch each created Story via `get_issue`. Run `validateTemplateCompliance(description, 'story')` from `planning-runtime/lib/template-compliance.mjs`. All stories must pass (9 sections in order). Record `template_compliance_passed` in state. Guard blocks SELF_CHECK without it.
 
@@ -170,7 +191,8 @@ Workers:
 - return shared summary envelope either way
 
 Expected summary kind:
-- `story-plan`
+- child workers: `story-plan-worker`
+- coordinator output: `story-plan`
 
 ## Worker Invocation (MANDATORY)
 
@@ -180,8 +202,13 @@ Expected summary kind:
 | 6 | `ln-222-story-replanner` | REPLAN path |
 
 ```text
-Skill(skill: "ln-221-story-creator", args: "{epicId}")
-Skill(skill: "ln-222-story-replanner", args: "{epicId}")
+node shared/scripts/planning-worker-runtime/cli.mjs start --skill {worker} --identifier {identifier} --manifest-file {workerManifestPath} --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}
+child_run = { skill, run_id, identifier, summary_artifact_path }
+childSummaryArtifactPath = .hex-skills/runtime-artifacts/runs/{parent_run_id}/story-plan-worker/{worker}--{identifier}.json
+Skill(skill: "{worker}", args: "{identifier} --ideal-plan {idealPlanJSON} --epic {epicId} --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}")
+Read {childSummaryArtifactPath}
+node shared/scripts/story-planning-runtime/cli.mjs record-epic --epic {epicId} --payload-file {childSummaryArtifactPath}
+node shared/scripts/story-planning-runtime/cli.mjs record-plan-summary --epic {epicId} --payload-file {coordinatorSummaryPath}
 ```
 
 ## TodoWrite format (mandatory)
@@ -192,7 +219,8 @@ Skill(skill: "ln-222-story-replanner", args: "{epicId}")
 - Phase 3: Build ideal Story plan (pending)
 - Phase 4: Route Stories by Epic (pending)
 - Phase 5: Detect mode per group (pending)
-- Phase 6: Delegate to worker(s) (pending)
+- Phase 6a: Prepare delegation batch (pending)
+- Phase 6b: Execute worker(s) sequentially (pending)
 - Phase 7: Finalize result (pending)
 - Phase 8: Self-check (pending)
 ```
@@ -202,6 +230,7 @@ Skill(skill: "ln-222-story-replanner", args: "{epicId}")
 - Build the ideal plan before checking existing Stories.
 - Use research only to improve Technical Notes and implementation realism.
 - Do not keep routing or preview approvals in chat-only state.
+- Batch only read-only preparation. Do not parallelize Story mutations across routed groups unless runtime semantics explicitly allow it.
 - Do not create or update Stories directly when a worker should do it.
 - Consume worker summaries, not free-text worker prose.
 
@@ -214,6 +243,7 @@ Skill(skill: "ln-222-story-replanner", args: "{epicId}")
 - [ ] Routing checkpointed
 - [ ] Mode detection checkpointed
 - [ ] All expected worker summaries recorded
+- [ ] Coordinator `story-plan` summary recorded
 - [ ] Final result checkpointed
 - [ ] Template compliance passed for all created Stories
 - [ ] Self-check passed

@@ -114,7 +114,7 @@ Then use `AskUserQuestion` to ask how to handle them. Per item, the options are:
 
 Present a summary of accepted findings: count by complexity (mechanical fixes vs. architectural or design changes). Then use `AskUserQuestion` to let the user choose:
 
-- **Full** — Enter plan mode via `/plan-style` for review, approval, implementation, and finalize
+- **Full** — Run `/turboplan` for drafting, refinement, approval, implementation, and finalize
 - **Lightweight** — Apply directly via `/apply-findings`, then `/finalize`
 
 Suggest Full when findings include complex or architectural changes. Suggest Lightweight when all findings are mechanical fixes.
@@ -125,7 +125,7 @@ If there are no accepted findings to implement, skip to Step 10.
 
 **Full path:**
 
-Run the `/plan-style` skill. The plan should address each accepted finding from the evaluation, including any items reclassified in Step 6. After plan approval, implement the changes. `/finalize` is included as the plan's final step. The commit SHA from finalize is needed for reply messages.
+Run the `/turboplan` skill with the accepted findings (including any items reclassified in Step 6) as the task description. Turboplan handles drafting, refinement, user confirmation, implementation, and finalize. The commit SHA from finalize is needed for reply messages.
 
 **Lightweight path:**
 

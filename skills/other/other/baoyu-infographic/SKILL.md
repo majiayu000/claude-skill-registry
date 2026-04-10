@@ -1,6 +1,6 @@
 ---
 name: baoyu-infographic
-description: Generates professional infographics with 21 layout types and 20 visual styles. Analyzes content, recommends layout×style combinations, and generates publication-ready infographics. Use when user asks to create "infographic", "信息图", "visual summary", "可视化", or "高密度信息大图".
+description: Generates professional infographics with 21 layout types and 21 visual styles. Analyzes content, recommends layout×style combinations, and generates publication-ready infographics. Use when user asks to create "infographic", "信息图", "visual summary", "可视化", or "高密度信息大图".
 version: 1.56.1
 metadata:
   openclaw:
@@ -26,7 +26,7 @@ Two dimensions: **layout** (information structure) × **style** (visual aestheti
 | Option | Values |
 |--------|--------|
 | `--layout` | 21 options (see Layout Gallery), default: bento-grid |
-| `--style` | 20 options (see Style Gallery), default: craft-handmade |
+| `--style` | 21 options (see Style Gallery), default: craft-handmade |
 | `--aspect` | Named: landscape (16:9), portrait (9:16), square (1:1). Custom: any W:H ratio (e.g., 3:4, 4:3, 2.35:1) |
 | `--lang` | en, zh, ja, etc. |
 
@@ -82,6 +82,7 @@ Full definitions: `references/layouts/<layout>.md`
 | `pop-laboratory` | Blueprint grid, coordinate markers, lab precision |
 | `morandi-journal` | Hand-drawn doodle, warm Morandi tones |
 | `retro-pop-grid` | 1970s retro pop art, Swiss grid, thick outlines |
+| `hand-drawn-edu` | Macaron pastels, hand-drawn wobble, stick figures |
 
 Full definitions: `references/styles/<style>.md`
 
@@ -104,6 +105,8 @@ Full definitions: `references/styles/<style>.md`
 | Product Guide | `dense-modules` + `morandi-journal` |
 | Technical Guide | `dense-modules` + `pop-laboratory` |
 | Trendy Guide | `dense-modules` + `retro-pop-grid` |
+| Educational Diagram | `hub-spoke` + `hand-drawn-edu` |
+| Process Tutorial | `linear-progression` + `hand-drawn-edu` |
 
 Default: `bento-grid` + `craft-handmade`
 
@@ -259,7 +262,7 @@ Report: topic, layout, style, aspect, language, output path, files created.
 - `references/structured-content-template.md` - Content format
 - `references/base-prompt.md` - Prompt template
 - `references/layouts/<layout>.md` - 21 layout definitions
-- `references/styles/<style>.md` - 20 style definitions
+- `references/styles/<style>.md` - 21 style definitions
 
 ## Extension Support
 

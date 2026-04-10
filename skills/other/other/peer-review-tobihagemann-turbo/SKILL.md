@@ -5,13 +5,13 @@ description: "Run an independent peer review via codex. Use when the user asks t
 
 # Peer Review
 
-Independent peer review via codex. Runs `/codex-exec` in read-only mode with a caller-provided review prompt.
+Independent peer review via codex. Runs `/codex-exec` in read-only mode with a review prompt that was passed in or derived from context.
 
 ## Step 1: Identify the Review Prompt
 
 Determine the review prompt:
 
-- If the **caller provided a review prompt** (in the Agent task context), use it as-is
+- If a **review prompt was passed in** (in the Agent task context), use it as-is
 - If **no prompt was provided** (standalone invocation), determine what to review from conversation context and build a prompt using `/codex-exec` XML tags (`<task>`, `<structured_output_contract>`, and optionally `<dig_deeper_nudge>`)
 
 When building a standalone prompt, use P0-P3 priorities: P0 (fundamentally flawed), P1 (significant gap), P2 (moderate issue), P3 (minor improvement). Example:
@@ -39,6 +39,6 @@ Delegate each review dimension to a separate sub-agent using spawn_agent so they
 
 See `/codex-exec` [references/parallel-execution.md](../codex-exec/references/parallel-execution.md) for details on codex parallel execution.
 
-## Step 3: Return Findings
+## Step 3: Output Findings
 
-Return the codex output. The caller determines what to do with the findings.
+Output the codex findings.

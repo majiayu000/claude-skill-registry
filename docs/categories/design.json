@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9492,
-  "updated_at": "2026-04-09T03:22:46.923394Z",
+  "count": 9493,
+  "updated_at": "2026-04-10T02:04:34.731535Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -107606,6 +107606,23 @@
       "stars": 0,
       "install": "zeeshan080/ai-native-robotics/.claude/skills/student-language-guide",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "networking-controls",

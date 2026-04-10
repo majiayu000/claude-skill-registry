@@ -242,6 +242,6 @@ python3 ~/.claude/skills/exa-search/scripts/exa_research.py \
 ## Integration with Project
 
 This skill outputs to the ATK-UX-Research git repository:
-- `~/Desktop/ATK-UX-Research/`
+- `/Users/tomdimino/Desktop/ATK-UX-Research/`
 
 Commit findings after each research session.

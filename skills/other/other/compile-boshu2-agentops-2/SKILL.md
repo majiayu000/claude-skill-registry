@@ -449,14 +449,18 @@ clean without requiring manual `/compile` invocations. The hook:
 - Runs only `ao defrag --prune --dedup` (no compilation or mining)
 - Has a 20-second timeout to avoid blocking session teardown
 
-For full compilation, invoke `/compile` manually or schedule via cron:
+For full compilation, invoke `/compile` manually or schedule it with your host OS:
 
 ```bash
-# Schedule nightly compilation on bushido (Ollama backend)
-ao schedule create --name "nightly-compile" \
-  --cron "0 3 * * *" \
-  --command "AGENTOPS_COMPILE_RUNTIME=ollama ao compile --compile-only"
+# Example: external cron entry for nightly compilation on bushido
+0 3 * * * AGENTOPS_COMPILE_RUNTIME=ollama ao compile --compile-only
 ```
+
+AgentOps does **not** currently ship a first-class `ao schedule` command. If you
+want unattended compilation today, use your host scheduler (`launchd`, `cron`,
+`systemd`, CI, etc.) to invoke `ao compile --compile-only`. If you want the
+broader private overnight loop, use `ao overnight start` instead of inventing a
+parallel Dream wrapper inside `/compile`.
 
 ## Flags
 
@@ -481,7 +485,7 @@ ao schedule create --name "nightly-compile" \
 
 **User says:** `/compile --since 7d` — Mines with a wider window (7 days).
 
-**Scheduled:** Nightly compilation on bushido GPU via Ollama.
+**Scheduled externally:** Nightly compilation on bushido GPU via Ollama.
 
 **Pre-evolve warmup:** Run `/compile` before `/evolve` for a fresh, validated knowledge base.
 

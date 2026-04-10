@@ -22,14 +22,14 @@ Six phases:
 ## Quick Start
 
 ```bash
-$/post-mortem                    # wraps up recent work
-$/post-mortem epic-123           # wraps up specific epic
-$/post-mortem --quick "insight"  # quick-capture single learning (no council)
-$/post-mortem --process-only     # skip council+extraction, run Phase 3-5 on backlog
-$/post-mortem --skip-activate    # extract + process but don't write MEMORY.md
-$/post-mortem --deep recent      # thorough council review
-$/post-mortem --mixed epic-123   # cross-vendor (Claude + Codex)
-$/post-mortem --skip-checkpoint-policy epic-123  # skip ratchet chain validation
+$post-mortem                    # wraps up recent work
+$post-mortem epic-123           # wraps up specific epic
+$post-mortem --quick "insight"  # quick-capture single learning (no council)
+$post-mortem --process-only     # skip council+extraction, run Phase 3-5 on backlog
+$post-mortem --skip-activate    # extract + process but don't write MEMORY.md
+$post-mortem --deep recent      # thorough council review
+$post-mortem --mixed epic-123   # cross-vendor (Claude + Codex)
+$post-mortem --skip-checkpoint-policy epic-123  # skip ratchet chain validation
 ```
 
 ### Codex Closeout
@@ -49,7 +49,7 @@ ao codex status
 
 | Flag | Default | Description |
 |------|---------|-------------|
-| `--quick "text"` | off | Quick-capture a single learning directly to `.agents/learnings/` without running a full post-mortem. Formerly handled by `$/retro --quick`. |
+| `--quick "text"` | off | Quick-capture a single learning directly to `.agents/learnings/` without running a full post-mortem. Formerly handled by `$retro --quick`. |
 | `--process-only` | off | Skip council and extraction (Phase 1-2). Run Phase 3-5 on the existing backlog only. |
 | `--skip-activate` | off | Extract and process learnings but do not write to MEMORY.md (skip Phase 4 promotions). |
 | `--deep` | off | 3 judges (default for post-mortem) |
@@ -63,7 +63,7 @@ ao codex status
 
 ## Quick Mode
 
-Given `$/post-mortem --quick "insight text"`:
+Given `$post-mortem --quick "insight text"`:
 
 ### Quick Step 1: Generate Slug
 
@@ -93,7 +93,7 @@ utility: 0.5
 
 ## Source
 
-Quick capture via `$/post-mortem --quick`
+Quick capture via `$post-mortem --quick`
 ```
 
 This skips the full pipeline — writes directly to learnings, no council or backlog processing.
@@ -104,7 +104,7 @@ This skips the full pipeline — writes directly to learnings, no council or bac
 Learned: <one-line summary>
 Saved to: .agents/learnings/YYYY-MM-DD-quick-<slug>.md
 
-For deeper reflection, use `$/post-mortem` without --quick.
+For deeper reflection, use `$post-mortem` without --quick.
 ```
 
 **Done.** Return immediately after confirmation.
@@ -117,7 +117,7 @@ For deeper reflection, use `$/post-mortem` without --quick.
 
 Before proceeding, verify:
 1. **Git repo exists:** `git rev-parse --git-dir 2>/dev/null` — if not, error: "Not in a git repository"
-2. **Work was done:** `git log --oneline -1 2>/dev/null` — if empty, error: "No commits found. Run $/implement first."
+2. **Work was done:** `git log --oneline -1 2>/dev/null` — if empty, error: "No commits found. Run `$implement` first."
 3. **Epic context:** If epic ID provided, verify it has closed children. If 0 closed children, error: "No completed work to review."
 
 **If `--process-only`:** Skip Pre-Flight Checks through Step 3. Jump directly to Phase 3: Process Backlog.
@@ -237,7 +237,7 @@ Read `references/metadata-verification.md` for the full verification procedure. 
 
 **Skip if `--quick` or `--skip-sweep`.**
 
-Before council runs, dispatch a deep audit sweep to systematically discover issues across all changed files. This uses the same protocol as `$/vibe --deep` — see the deep audit protocol in the vibe skill (`skills/vibe/`) for the full specification.
+Before council runs, dispatch a deep audit sweep to systematically discover issues across all changed files. This uses the same protocol as `$vibe --deep` — see the deep audit protocol in the vibe skill (`skills/vibe/`) for the full specification.
 
 In summary:
 
@@ -258,10 +258,10 @@ In summary:
 
 ## Council Verdict:
 
-Run `$/council` with the **retrospective** preset and always 3 judges:
+Run `$council` with the **retrospective** preset and always 3 judges:
 
 ```
-$/council --deep --preset=retrospective validate <epic-or-recent>
+$council --deep --preset=retrospective validate <epic-or-recent>
 ```
 
 **Default (3 judges with retrospective perspectives):**
@@ -281,15 +281,15 @@ The plan/spec content is injected into the council packet context so the `plan-c
 
 **With --quick (inline, no spawning):**
 ```
-$/council --quick validate <epic-or-recent>
+$council --quick validate <epic-or-recent>
 ```
 Single-agent structured review. Fast wrap-up without spawning.
 
 **With debate mode:**
 ```
-$/post-mortem --debate epic-123
+$post-mortem --debate epic-123
 ```
-Enables adversarial two-round review for post-implementation validation. Use for high-stakes shipped work where missed findings have production consequences. See `$/council` docs for full --debate details.
+Enables adversarial two-round review for post-implementation validation. Use for high-stakes shipped work where missed findings have production consequences. See `$council` docs for full --debate details.
 
 **Advanced options (passed through to council):**
 - `--mixed` — Cross-vendor (Claude + Codex) with retrospective perspectives
@@ -497,11 +497,11 @@ Tell the user:
 3. Any follow-up items
 4. Location of post-mortem report
 5. Knowledge flywheel status
-6. **Suggested next `$/rpi` command** from the harvested `## Next Work` section (ALWAYS — this is how the flywheel spins itself)
+6. **Suggested next `$rpi` command** from the harvested `## Next Work` section (ALWAYS — this is how the flywheel spins itself)
 7. ALL proactive improvements, organized by priority (highlight one quick win)
 8. Knowledge lifecycle summary (Phase 3-5 stats)
 
-**The next `$/rpi` suggestion is MANDATORY, not opt-in.** After every post-mortem, present the highest-severity harvested item as a ready-to-copy command:
+**The next `$rpi` suggestion is MANDATORY, not opt-in.** After every post-mortem, present the highest-severity harvested item as a ready-to-copy command:
 
 ```markdown
 ## Flywheel: Next Cycle
@@ -513,7 +513,7 @@ Based on this post-mortem, the highest-priority follow-up is:
 
 Ready to run:
 ```
-$/rpi "<title>"
+$rpi "<title>"
 ```
 
 Or see all N harvested items in `.agents/rpi/next-work.jsonl`.
@@ -526,22 +526,22 @@ If no items were harvested, write: "Flywheel stable — no follow-up items ident
 ## Integration with Workflow
 
 ```
-$/plan epic-123
+$plan epic-123
     |
     v
-$/pre-mortem (council on plan)
+$pre-mortem (council on plan)
     |
     v
-$/implement
+$implement
     |
     v
-$/vibe (council on code)
+$vibe (council on code)
     |
     v
 Ship it
     |
     v
-$/post-mortem              <-- You are here
+$post-mortem              <-- You are here
     |
     |-- Phase 1: Council validates implementation
     |-- Phase 2: Extract learnings (inline)
@@ -549,12 +549,12 @@ $/post-mortem              <-- You are here
     |-- Phase 4: Activate (promote to MEMORY.md, compile constraints)
     |-- Phase 5: Retire stale learnings
     |-- Phase 6: Harvest next work
-    |-- Suggest next $/rpi --------------------+
+    |-- Suggest next $rpi --------------------+
                                               |
     +----------------------------------------+
     |  (flywheel: learnings become next work)
     v
-$/rpi "<highest-priority enhancement>"
+$rpi "<highest-priority enhancement>"
 ```
 
 ---
@@ -563,22 +563,22 @@ $/rpi "<highest-priority enhancement>"
 
 ### Wrap Up Recent Work
 
-**User says:** `$/post-mortem`
+**User says:** `$post-mortem`
 
 **What happens:**
 1. Agent scans recent commits.
-2. Runs `$/council --deep validate recent`.
+2. Runs `$council --deep validate recent`.
 3. Extracts learnings, processes backlog, and promotes items.
 4. Harvests next-work to `.agents/rpi/next-work.jsonl`.
 
-**Result:** Report with learnings, stats, and a suggested `$/rpi` command.
+**Result:** Report with learnings, stats, and a suggested `$rpi` command.
 
 ### Other Modes
 
-- **Epic-specific:** `$/post-mortem ag-5k2` — review against the target plan
-- **Quick capture:** `$/post-mortem --quick "insight"` — write a learning without council
-- **Process-only:** `$/post-mortem --process-only` — run backlog processing only
-- **Cross-vendor:** `$/post-mortem --mixed ag-3b7` — broaden judgment coverage
+- **Epic-specific:** `$post-mortem ag-5k2` — review against the target plan
+- **Quick capture:** `$post-mortem --quick "insight"` — write a learning without council
+- **Process-only:** `$post-mortem --process-only` — run backlog processing only
+- **Cross-vendor:** `$post-mortem --mixed ag-3b7` — broaden judgment coverage
 
 ## Troubleshooting
 
@@ -594,7 +594,7 @@ $/rpi "<highest-priority enhancement>"
 ## See Also
 
 - `skills/council/SKILL.md` — Multi-model validation council
-- `skills/vibe/SKILL.md` — Council validates code (`$/vibe` after coding)
+- `skills/vibe/SKILL.md` — Council validates code (`$vibe` after coding)
 - `skills/pre-mortem/SKILL.md` — Council validates plans (before implementation)
 
 

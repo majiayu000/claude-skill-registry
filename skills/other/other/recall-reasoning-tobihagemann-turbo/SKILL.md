@@ -58,7 +58,7 @@ Synthesize a concise summary tied to the question being answered:
 - Quote the implementer's own words when they already say it well.
 - Keep it to one or two paragraphs. Don't narrate the whole session.
 
-If `status` is anything other than `ok`, report that no reasoning was found and fall back to reading the commit diff and surrounding code. Say so explicitly so the caller can decide whether the answer still holds up.
+If `status` is anything other than `ok`, report that no reasoning was found and fall back to reading the commit diff and surrounding code. Say so explicitly so it's clear whether the answer still holds up.
 
 ## Step 3: Output
 

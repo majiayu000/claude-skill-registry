@@ -1,7 +1,7 @@
 ---
 name: ln-402-task-reviewer
 description: "Reviews task implementation for quality, code standards, and test coverage. Use when task is in To Review. Sets task Done or To Rework."
-allowed-tools: Read, Grep, Glob, Bash, WebFetch, mcp__context7, mcp__hex-graph__find_clones, mcp__hex-graph__find_references, mcp__hex-line__changes
+allowed-tools: Read, Grep, Glob, Bash, WebFetch, mcp__context7, mcp__hex-graph__audit_workspace, mcp__hex-graph__find_references, mcp__hex-graph__analyze_changes, mcp__hex-line__changes
 license: MIT
 ---
 
@@ -33,7 +33,7 @@ license: MIT
 
 ## Phase 0: Tools Config
 
-**MANDATORY READ:** Load `shared/references/tools_config_guide.md`, `shared/references/storage_mode_detection.md`, and `shared/references/input_resolution_pattern.md`
+**MANDATORY READ:** Load `shared/references/environment_state_contract.md`, `shared/references/storage_mode_detection.md`, and `shared/references/input_resolution_pattern.md`
 
 Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
 
@@ -158,7 +158,7 @@ Step 9: Update & Commit
 1) **Resolve taskId:** Run Task Resolution Chain per guide (status filter: [To Review]).
 2) **Load task:** Load full task and parent Story independently. Detect type (label "tests" -> test task, else implementation/refactor).
 3) **Read context:** Full task + parent Story; load affected components/docs; review diffs if available.
-   **Hex-line acceleration:** Use `changes(path="src/", compare_against="HEAD~1")` for AST-level diff review — shows structural changes, not whitespace.
+   **Hex MCP acceleration:** Prefer `analyze_changes(path=project_root, base_ref="HEAD~1")` for semantic risk snapshot when graph is indexed; use `changes(path="src/", compare_against="HEAD~1")` for AST-level diff review of structural changes.
 3b) **Goal gate:** **MANDATORY READ:** `shared/references/goal_articulation_gate.md` — Before reviewing, state: (1) REAL GOAL: what specific quality question must this review answer for THIS task? (2) DONE: what evidence proves quality is sufficient? (3) NOT THE GOAL: what would a surface-level rubber-stamp look like? (4) INVARIANTS: what non-obvious constraint exists (side-effects on other modules, implicit AC)?
 4) **Review checks:**
    > **Spec-first gate:** Quick AC pre-check: scan task AC against implementation. If any AC is clearly unmet (BLOCKER-level) → immediate To Rework, skip remaining quality checks. Full AC validation still runs in Step 5.
@@ -167,7 +167,7 @@ Step 9: Update & Commit
    - Approach: diff aligned with Technical Approach in Story. If different → rationale documented in code comments.
    - **Clean code:** Per checklist — verify all 4 categories. Replaced implementations fully removed. If refactoring changed API — callers updated, old signatures removed. <!-- Defense-in-depth: also checked by ln-511 MNT-DC- -->
    - **Cross-file DRY:** For each NEW function/class/handler created by task, Grep `src/` for similar names/patterns (count mode). If 3+ files contain similar logic → add CONCERN: `MNT-DRY-CROSS: {pattern} appears in {count} files — consider extracting to shared module.` This catches cross-story duplication that per-task review misses. <!-- Defense-in-depth: also checked by ln-511 MNT-DRY- -->
-   - **Cross-file DRY preferred (hex-graph):** If hex-graph indexed, use `find_clones(scope="src/**", kind="function", cross_file=true, format="json")`. Filter groups where any member is in task-modified files. Each match = CONCERN: `MNT-DRY-CROSS`. Fall back to Grep name search above if hex-graph unavailable.
+   - **Cross-file DRY preferred (hex-graph):** If hex-graph indexed, use `audit_workspace(path=scan_path, verbosity="full")` and inspect returned `clones`. Filter groups where any member is in task-modified files. Each match = CONCERN: `MNT-DRY-CROSS`. Fall back to Grep name search above if hex-graph unavailable.
    - No hardcoded creds/URLs/magic numbers; config in env/config.
    - Destructive operation guards: use code-level guards table from destructive_operation_safety.md (loaded above). CRITICAL/HIGH severity → BLOCKER: SEC-DESTR-{ID}. MEDIUM severity → CONCERN: SEC-DESTR-{ID}.
    - Error handling: all external calls (API, DB, file I/O) wrapped in try/catch or equivalent. No swallowed exceptions. Layering respected; reuse existing components. <!-- Defense-in-depth: layers also checked by ln-511 ARCH-LB- -->
@@ -258,9 +258,12 @@ Step 9: Update & Commit
 
 ## Runtime Summary Artifact
 
-**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`
+**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`, `shared/references/worker_runtime_contract.md`, `shared/references/task_worker_runtime_contract.md`
 
-Write `.hex-skills/runtime-artifacts/runs/{run_id}/task-status/{task_id}.json` with the final review transition before finishing.
+Shared contract:
+- emit `summary_kind=task-status`
+- standalone mode omits `runId` and `summaryArtifactPath`
+- managed mode passes both `runId` and exact `summaryArtifactPath` before the worker writes its validated review outcome
 
 ## Definition of Done
 - [ ] Steps 1-9 completed: task resolved, context loaded, review checks passed, AC validated, side-effect bugs created, mechanical verification passed, decision applied.
@@ -269,7 +272,7 @@ Write `.hex-skills/runtime-artifacts/runs/{run_id}/task-status/{task_id}.json` w
 - [ ] Runtime summary artifact written to the shared task-status location.
 
 ## Reference Files
-- **Tools config:** `shared/references/tools_config_guide.md`
+- **Environment state:** `shared/references/environment_state_contract.md`
 - **Storage mode operations:** `shared/references/storage_mode_detection.md`
 - **[MANDATORY] Problem-solving approach:** `shared/references/problem_solving.md`
 - **AC validation rules:** `shared/references/ac_validation_rules.md`

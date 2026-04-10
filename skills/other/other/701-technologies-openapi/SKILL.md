@@ -4,7 +4,7 @@ description: Use when you need framework-agnostic OpenAPI 3.x guidance — spec 
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0-SNAPSHOT
+  version: 0.14.0
 ---
 # OpenAPI 3.x best practices
 
@@ -17,17 +17,17 @@ Help teams produce maintainable **OpenAPI 3.x** contracts that stay aligned with
 - Reusable `components` (schemas, parameters, responses, security schemes) and examples
 - Validation and CI: spec linting, breaking-change checks, pre-codegen gates
 - Security modeling in the contract (schemes, scopes, global vs operation security)
-- Clear **delegation** to framework REST skills for runtime and generator-specific work
+- Clear boundaries between contract-first design and runtime implementation concerns
 
-**Scope:** Contract-first quality only. For **Spring Boot**, **Quarkus**, or **Micronaut** REST implementation details, use the matching `302`, `402`, or `502` skill. For **CATS fuzz testing** against a contract, use `134-java-testing-fuzzing-testing`.
+**Scope:** Contract-first quality only. Focus this skill on OpenAPI design, quality, and governance guidance.
 
 ## Constraints
 
 Keep recommendations at the OpenAPI layer unless the user explicitly asks for Java framework integration. After editing this repository's XML sources, regenerate skills and verify the build.
 
 - **MANDATORY**: Run `./mvnw compile` or `mvn compile` before proposing Java or Maven changes in the same change set
-- **FRAMEWORK**: Defer OpenAPI Generator goals, controller bindings, and runtime `/openapi` exposure to `@302-frameworks-spring-boot-rest`, `@402-frameworks-quarkus-rest`, or `@502-frameworks-micronaut-rest`
-- **FUZZING**: Defer CATS execution and CI fuzz pipelines to `@134-java-testing-fuzzing-testing`
+- **FRAMEWORK**: Keep guidance contract-centric; do not prescribe framework-specific controller wiring or runtime exposure details
+- **FUZZING**: Keep fuzzing guidance high-level and contract-focused without linking to external skill identifiers
 - **MANDATORY**: Regenerate skills with `./mvnw clean install -pl skills-generator` after editing skill or system-prompt XML in this repo
 - **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` before promoting changes
 

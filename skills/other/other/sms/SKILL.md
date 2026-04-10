@@ -1,6 +1,6 @@
 ---
 name: sms
-description: "Send, read, listen, respond, and manage SMS conversations via Telnyx and Twilio. Supports 8 phone numbers across both providers with auto-detection, conversation threading, MMS, real-time inbound listening, and soul-aware auto-reply. 8 Python scripts for SMS operations."
+description: "Send, read, listen, respond, and manage SMS conversations via Telnyx and Twilio. Supports 8 phone numbers across both providers with auto-detection, conversation threading, MMS, real-time inbound listening, background watcher, batch reply processor, and soul-aware auto-reply. 10 Python scripts for SMS operations."
 ---
 
 # SMS Skill
@@ -205,6 +205,8 @@ Process unhandled SMS using the **current Claude Code session** as the LLM. No s
 
 The slash command loads inbox, soul.md, and memory context dynamically, then walks through a 6-step cognitive pipeline (internal monologue → external dialogue → user model check → user model update → soul state check → soul state update). Replies are sent via `sms_send.py` and all memory layers are updated.
 
+The command also starts a **background watcher** (`sms_watch.py`) after processing, which polls for new inbound messages every 5 seconds and notifies the session when one arrives—creating a continuous two-way SMS loop.
+
 **Use this when**: You're in an active Claude Code session and want to reply to SMS.
 
 #### Mode B: `sms_respond.py` Daemon (Standalone)
@@ -249,7 +251,88 @@ Both modes require `sms_listen.py` running to feed `inbox.jsonl`.
 - User models — per-phone-number personality profiles
 - Soul memory — cross-conversation soul state
 
-### 7. sms_inbox.py — Read Inbound Inbox
+### 7. sms_watch.py — Background Watcher for Claude Code
+
+Polls `inbox.jsonl` for new unhandled messages. Designed as a `run_in_background` bash task—exits when a new message is detected, printing a structured line for Claude Code to parse.
+
+```bash
+python3 ~/.claude/skills/sms/scripts/sms_watch.py [OPTIONS]
+```
+
+| Flag | Description |
+|------|-------------|
+| `--interval N` | Poll interval in seconds (default: 5) |
+| `--enrich` | On detect, also print sender's memory context (user model, soul state, recent conversation) |
+
+**Output on detect**: `{"event": "NEW_SMS", "id": "...", "from": "...", "to": "...", "body": "..."}`
+**Output on detect with --enrich**: Same JSON line, followed by `---MEMORY_CONTEXT---` and the sender's user model, soul state, and recent conversation history.
+**Output on timeout/kill**: `NO_NEW_SMS`
+
+**Examples**:
+```bash
+# Start watcher (run as background task in Claude Code)
+python3 ~/.claude/skills/sms/scripts/sms_watch.py
+
+# Enriched mode — pre-loads memory context for faster processing
+python3 ~/.claude/skills/sms/scripts/sms_watch.py --enrich
+
+# Faster polling
+python3 ~/.claude/skills/sms/scripts/sms_watch.py --interval 3
+```
+
+### 8. sms_process_reply.py — Batch Reply Processor
+
+Sends SMS reply and performs all 9 memory operations in a single call. Replaces the 9 separate `python3 -c` invocations from the `/sms-respond` pipeline.
+
+```bash
+python3 ~/.claude/skills/sms/scripts/sms_process_reply.py [OPTIONS]
+```
+
+| Flag | Description |
+|------|-------------|
+| `--phone NUMBER` | Sender's E.164 number (required) |
+| `--our-number NUMBER` | Our number they texted (required) |
+| `--message-id ID` | Inbox message ID (required) |
+| `--message-text TEXT` | Original inbound message text (required) |
+| `--reply-text TEXT` | External dialogue text to send (required) |
+| `--monologue-text TEXT` | Internal monologue text (required) |
+| `--monologue-verb VERB` | Monologue verb (default: thought) |
+| `--dialogue-verb VERB` | Dialogue verb (default: said) |
+| `--user-model-check BOOL` | Whether user model was updated (default: false) |
+| `--user-model-md MD` | Updated user model markdown (if check was true) |
+| `--soul-updates JSON` | JSON dict of soul state updates |
+| `--stdin-json` | Read all args from stdin as JSON (avoids shell quoting) |
+| `--dry-run` | Skip sending SMS, do memory operations only |
+
+**Examples**:
+```bash
+# Basic reply with memory update
+python3 ~/.claude/skills/sms/scripts/sms_process_reply.py \
+    --phone "+17327595647" \
+    --our-number "+18557066006" \
+    --message-id "SM0334c637c6017dbf84eae2a7fd824abd" \
+    --message-text "Hello there" \
+    --reply-text "Hello! Good to hear from you." \
+    --monologue-text "A friendly greeting." \
+    --monologue-verb "noticed" \
+    --dialogue-verb "replied" \
+    --user-model-check false
+
+# With soul state update
+python3 ~/.claude/skills/sms/scripts/sms_process_reply.py \
+    --phone "+17327595647" \
+    --our-number "+18557066006" \
+    --message-id "SM..." \
+    --message-text "text" \
+    --reply-text "reply" \
+    --monologue-text "monologue" \
+    --dialogue-verb "said" \
+    --user-model-check true \
+    --user-model-md "# Updated model" \
+    --soul-updates '{"currentTopic": "testing", "emotionalState": "engaged"}'
+```
+
+### 9. sms_inbox.py — Read Inbound Inbox
 
 Read messages collected by `sms_listen.py`.
 
@@ -272,7 +355,7 @@ python3 ~/.claude/skills/sms/scripts/sms_inbox.py [OPTIONS]
 python3 ~/.claude/skills/sms/scripts/sms_inbox.py
 
 # Show last 5 messages from a specific sender
-python3 ~/.claude/skills/sms/scripts/sms_inbox.py --from "+15551234567" -n 5
+python3 ~/.claude/skills/sms/scripts/sms_inbox.py --from "+17327595647" -n 5
 
 # Mark all as read
 python3 ~/.claude/skills/sms/scripts/sms_inbox.py --mark-all-read

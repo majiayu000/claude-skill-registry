@@ -145,6 +145,53 @@ includeDomains: [
 4. **Cross-reference** multiple search approaches
 5. **Use technical terms** in queries for better results
 
+## Domain: Subquadratic Attention
+
+Research domain for post-transformer attention mechanisms that break the O(n^2) barrier. Active area with rapid publication cadence (2024–2026).
+
+### Key Papers
+
+| Paper | Year | Key Contribution |
+|-------|------|------------------|
+| FlashAttention-2 (Dao) | 2023 | IO-aware exact attention — foundation for all subsequent work |
+| DuoAttention | 2024 | Split attention heads into retrieval (sparse) vs streaming (full) |
+| Ring Attention | 2024 | Distributed sequence parallelism across devices |
+| MoBA (Mixture of Block Attention) | 2025 | Block-sparse top-k gating with Triton kernel, 1M tokens |
+| NSA (Native Sparse Attention, DeepSeek) | 2025 | Hardware-aligned sparse attention patterns |
+| TokenSelect | 2025 | Dynamic per-layer token pruning |
+
+### Pre-Built Search Queries
+
+```
+# Exa (research_paper category)
+"subquadratic attention mechanism" --category "research paper" --after 2024-01-01
+"block sparse attention triton kernel" --category "research paper"
+"mixture of attention heads sparse" --category "research paper"
+"linear attention transformer approximation" --category "research paper" --after 2024-06-01
+
+# ArXiv (cs.LG + cs.CL)
+search_papers({ query: "subquadratic attention sparse transformer", max_results: 20, sort_by: "submitted_date" })
+search_papers({ query: "block sparse FlashAttention kernel", max_results: 10 })
+```
+
+### Evaluation Criteria
+
+When comparing subquadratic attention mechanisms, benchmark on:
+
+| Criterion | What to Measure |
+|-----------|-----------------|
+| Quality | Perplexity degradation vs full attention at target sequence length |
+| Speed | Wall-clock speedup on consumer GPUs (RTX 4090, M4 Max) |
+| Memory | Reduction factor at 128K / 512K / 1M context |
+| Compatibility | Drop-in replacement vs requires retraining |
+| Sparsity | How much computation is actually skipped (e.g., 95% at 1M tokens) |
+
+### Local Implementation Reference
+
+Working MoBA implementation with Triton kernels: `~/Desktop/Aldea/01-Repos/perplexity-clone/model/moba_block_sparse.py`
+
+---
+
 ## Reference Documentation
 
 For detailed parameters and advanced usage:

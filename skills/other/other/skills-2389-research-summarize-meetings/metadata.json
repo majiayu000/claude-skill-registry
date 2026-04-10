@@ -1,0 +1,17 @@
+{
+  "name": "skills",
+  "repo": "2389-research/summarize-meetings",
+  "path": "skills/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/2389-research/summarize-meetings",
+  "dir_name": "skills-2389-research-summarize-meetings",
+  "downloaded_at": "2026-04-10T01:18:08.990681Z",
+  "author": "2389-research",
+  "source_url": "https://github.com/2389-research/summarize-meetings/blob/main/skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/2389-research/summarize-meetings/blob/main/skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

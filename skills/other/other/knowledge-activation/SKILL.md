@@ -136,7 +136,7 @@ The substrate surfaces remain:
 **Activate the full outer loop for an active goal**
 
 ```bash
-/knowledge-activation
+$knowledge-activation
 ao knowledge activate --goal "productize knowledge activation"
 ```
 

@@ -218,6 +218,20 @@ for img_path in ["ref1.jpg", "ref2.jpg", "ref3.jpg"]:
 
 ## Prompting Best Practices
 
+### Text Rendering (99%+ accuracy)
+
+Gemini 3 Pro achieves near-perfect text rendering with these rules:
+
+1. **Quote exact text** — wrap desired text in double quotes within the prompt: `render the text "WORLD WAR WATCHER" in green monospace`
+2. **Keep text short** — under 10 words per text element for highest accuracy
+3. **Specify font style** — "monospace", "serif", "sans-serif", "handwritten"
+4. **Specify color** — use named colors or hex: `in phosphor green (#2dd4bf)`
+5. **Specify position** — "on the right side", "centered at the top", "bottom-left corner"
+6. **Use reference images** — `generate_with_references.py` preserves character likeness while adding text
+7. **Avoid military/war terms in text prompts** — content policy may block. Use "cinematic", "professional", "dark" instead of "military command center"
+
+Verified in production: OG card for World War Watcher commentary pages generated with all three text elements ("WORLD WAR WATCHER", "DISPATCHES", "Kothar wa Khasis") rendered correctly on first attempt using quoted strings + reference image approach.
+
 ### Essential Structure
 
 Follow this formula for best results:

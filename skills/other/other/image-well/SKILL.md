@@ -65,7 +65,7 @@ Add Tier 2 keys to `~/.config/env/secrets.env` for expanded coverage.
 --preset NAME           Use a preset group
 --limit N               Max results per source (default: 10)
 --license LICENSE       Filter: cc0, cc-by, cc-by-sa, any
---format FORMAT         table, json, download, urls
+--format FORMAT         table, json, download, urls, html, tunnel
 --output DIR            Download directory (default: ./well-images/)
 --no-cache              Skip result cache
 --timeout N             Per-source timeout in seconds (default: 15)

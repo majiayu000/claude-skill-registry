@@ -9,11 +9,17 @@ Run two AI spec reviews in parallel and return combined findings.
 
 ## Step 1: Identify the Spec
 
-Determine the spec to review:
+Determine the spec to review using these rules in order:
 
-- If **spec text** is in conversation context, use it
-- If a **spec file path** was provided, read the file
-- If **neither** was provided, check for a spec at `.turbo/spec.md`
+1. **Spec text in conversation** — If full spec text is already in context, use it
+2. **Explicit path** — If a file path was provided, read it
+3. **Explicit slug** — If a slug was provided, resolve to `.turbo/specs/<slug>.md`
+4. **Single file** — Glob `.turbo/specs/*.md`. If exactly one file exists, read it
+5. **Most recent** — If multiple files exist, read the most recently modified
+6. **Legacy fallback** — If `.turbo/specs/` does not exist but `.turbo/spec.md` exists, use it
+7. **Nothing found** — If no spec exists, say so and stop
+
+If multiple files exist and the most-recent choice is non-obvious, use `AskUserQuestion` to let the user pick from the candidates.
 
 ## Step 2: Run Two Reviews in Parallel
 
@@ -46,11 +52,9 @@ Ignore stylistic preferences and minor wording. If no issues are found, state th
 </structured_output_contract>
 ```
 
-## Step 3: Return Combined Findings
+## Step 3: Aggregate Combined Findings
 
-Wait for both agents to complete. Aggregate their findings with attribution (reviewer: "internal" or "peer") and return them to the caller.
-
-The caller determines what to do with the findings (evaluate, apply, or present to the user).
+Wait for both agents to complete. Aggregate their findings with attribution (reviewer: "internal" or "peer").
 
 ## Spec Determination Criteria
 

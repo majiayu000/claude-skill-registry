@@ -1,6 +1,7 @@
 ---
 name: plan
 description: 'Epic decomposition into trackable issues. Triggers: "create a plan", "plan implementation", "break down into tasks", "decompose into features", "create beads issues from research", "what issues should we create", "plan out the work".'
+skill_api_version: 1
 metadata:
   tier: execution
   dependencies:
@@ -9,6 +10,12 @@ metadata:
     - pre-mortem # optional - suggested before crank
     - crank      # optional - suggested for execution
     - implement  # optional - suggested for single issue
+context:
+  window: fork
+  intent:
+    mode: task
+  intel_scope: topic
+output_contract: ".agents/plans/YYYY-MM-DD-*.md, beads (via bd create)"
 ---
 
 # Plan Skill
@@ -24,6 +31,9 @@ metadata:
 | Flag | Default | Description |
 |------|---------|-------------|
 | `--auto` | off | Skip human approval gate. Used by `/rpi --auto` for fully autonomous lifecycle. |
+| `--fast-path` | off | Force Minimal detail template (see Step 3.2) |
+| `--skip-symbol-check` | off | Skip symbol verification in Step 3.6 (for greenfield plans) |
+| `--skip-audit-gate` | off | Skip baseline audit gate in Step 6 (for documentation-only plans) |
 
 ## Execution Steps
 
@@ -47,9 +57,72 @@ Use Grep to search `.agents/` for related content. If research exists, read it w
 ```bash
 if command -v ao &>/dev/null; then
     ao search "<topic> plan decomposition patterns" 2>/dev/null | head -10
+    ao lookup --query "<goal>" --limit 5 2>/dev/null | head -30
 fi
 ```
-If ao returns relevant learnings or patterns, incorporate them into the plan. Skip silently if ao is unavailable or returns no results.
+**Apply retrieved knowledge (mandatory when results returned):**
+
+If ao returns relevant learnings or patterns, do NOT just load them as passive context. For each returned item:
+1. Check: does this learning apply to the current planning goal? (answer yes/no)
+2. If yes: incorporate as a planning constraint — does it warn about scope? suggest decomposition? flag a known pitfall?
+3. Cite applicable learnings by filename when they influence a planning decision
+
+After reviewing, record each citation with the correct type:
+```bash
+# Only use "applied" when the learning actually influenced your output.
+# Use "retrieved" for items that were loaded but not referenced in your work.
+ao metrics cite "<learning-path>" --type applied 2>/dev/null || true   # influenced a decision
+ao metrics cite "<learning-path>" --type retrieved 2>/dev/null || true # loaded but not used
+```
+
+**Section evidence:** When lookup results include `section_heading`, `matched_snippet`, or `match_confidence` fields, prefer the matched section over the whole file — it pinpoints the relevant portion. Higher `match_confidence` (>0.7) means the section is a strong match; lower values (<0.4) are weaker signals. Use the `matched_snippet` as the primary context rather than reading the full file.
+
+Skip silently if ao is unavailable or returns no results.
+
+### Step 2.1: Load Compiled Prevention First (Mandatory)
+
+Before decomposition, load compiled planning rules from `.agents/planning-rules/*.md` when they exist. This is the primary prevention surface for `/plan` in the compiler-enabled flow.
+
+Use the tracked contracts in `docs/contracts/finding-compiler.md` and `docs/contracts/finding-registry.md`:
+
+- prefer compiled planning rules first
+- match by finding ID, `applicable_when` overlap, language overlap, and literal goal-text overlap
+- when file inventory is known, rank by changed-file overlap before falling back to weaker textual matches
+- cap the injected set at top 5 findings / rule files
+- if compiled planning rules are missing, incomplete, or fewer than the matched finding set, fall back to `.agents/findings/registry.jsonl`
+- fail open:
+  - missing compiled directory or registry -> skip silently
+  - empty compiled directory or registry -> skip silently
+  - malformed line -> warn and ignore that line
+  - unreadable file -> warn once and continue without findings
+
+Use the selected planning rules / active findings as hard planning context before issue decomposition. Record the applied finding IDs and how they changed the plan. These become required context for the written plan, not optional side notes.
+
+**Ranked packet contract:** Treat compiled planning rules, active findings, and matching high-severity `next-work.jsonl` items as one ranked packet, not three unrelated lookups. The packet must prefer the strongest overlap in this order:
+1. literal goal-text overlap
+2. `applicable_when` / issue-type overlap
+3. language overlap
+4. changed-file overlap (once the file table exists)
+5. backlog severity / repo affinity for next-work items
+
+### Step 2.2: Read and Validate Research Content
+
+If research files exist, read the most recent one and verify it contains substantive findings before proceeding:
+
+```bash
+LATEST_RESEARCH=$(ls -t .agents/research/*.md 2>/dev/null | head -1)
+if [ -n "$LATEST_RESEARCH" ]; then
+    # Verify research has substantive content (not just frontmatter)
+    if grep -qE '^## (Summary|Key Files|Findings|Key Findings|Architecture|Executive Summary|Recommendations|Part [0-9])' "$LATEST_RESEARCH"; then
+        echo "Research validated: $LATEST_RESEARCH"
+    else
+        echo "WARNING: Research file exists but lacks standard sections (Summary, Key Files, Findings, Key Findings, Architecture, Executive Summary, or Recommendations)."
+        echo "Consider running /research first for a thorough exploration."
+    fi
+fi
+```
+
+**Read the validated research file** with the Read tool before proceeding to Step 3. Do not plan based solely on file existence — understanding the research content is essential for accurate decomposition.
 
 ### Step 3: Explore the Codebase (if needed)
 
@@ -97,7 +170,24 @@ Run grep/wc/ls commands to count the current state of what you're changing:
 | "update stale docs" | "Rewrite 4 specs (verified: `ls docs/specs/*.md \| wc -l` = 4)" |
 | "add missing sections" | "Add Examples to 27 skills (verified: `grep -L '## Examples' skills/*/SKILL.md \| wc -l` = 27)" |
 
+- **File size limits:** check `wc -l` on files near size limits (especially SKILL.md files with the 800-line lint limit). If a planned change will push a file past the limit, split or refactor before implementation.
+- **Test fixtures affected:** count test fixtures upstream of any filter/gate/hook being added or modified with `grep -rn 'func Test' <test-dir>/ | wc -l`. Changing a gate without updating its test fixtures causes false-green CI.
+
 Ground truth with numbers prevents scope creep and makes completion verifiable. In ol-571, the audit found 5,752 LOC to remove — without it, the plan would have been vague. In ag-dnu, wrong counts (11 vs 14, 0 vs 7) caused a pre-mortem FAIL that a simple grep audit would have prevented.
+
+### Step 3.2: Scale Detail by Complexity
+
+Auto-select plan detail level based on issue count and goal complexity:
+
+| Level | Criteria | Template | Description |
+|-------|----------|----------|-------------|
+| **Minimal** | 1-2 issues, fast complexity | Bullet points per issue | Title, 2-line description, acceptance criteria, files list |
+| **Standard** | 3-6 issues, standard complexity | Current plan format | Full implementation specs, tests, verification |
+| **Deep** | 7+ issues, full complexity, or `--deep` | Extended format | Symbol-level specs, data transformation tables, design briefs, cross-wave registry |
+
+Read [references/detail-templates.md](references/detail-templates.md) for the template definitions.
+
+**Override:** `--deep` forces Deep regardless of issue count. `--fast-path` forces Minimal.
 
 ### Step 3.5: Generate Implementation Detail (Mandatory)
 
@@ -131,7 +221,7 @@ For each logical change group, provide symbol-level detail:
    - "Reuse `readRunHeartbeat()` at `rpi_phased.go:1963`"
    - "Call existing `parsePhasedState()` at `rpi_phased.go:1924`"
 
-3. **Inline code blocks** — for non-obvious constructs (struct definitions, CLI flags, config snippets):
+3. **Inline code blocks** — for non-obvious constructs (struct definitions, CLI flags, config snippets). Verify all inline snippets compile with `go build ./...` before including them in issue descriptions — workers copy them verbatim:
    ```go
    type RPIConfig struct {
        WorktreeMode string `yaml:"worktree_mode" json:"worktree_mode"`
@@ -152,6 +242,29 @@ For each test file, list specific test functions with one-line descriptions:
 - `TestRateLimitMiddleware_OverLimit`: Request exceeding limit returns 429
 - `TestRateLimitMiddleware_ResetAfterWindow`: Counter resets after time window
 ```
+
+#### Test Level Classification
+
+For each test in the plan, classify its pyramid level per the test pyramid standard (`test-pyramid.md` in the standards skill):
+
+| Test | Level | Rationale |
+|------|-------|-----------|
+| `TestRateLimitMiddleware_UnderLimit` | L1 (Unit) | Single function behavior in isolation |
+| `TestRateLimitMiddleware_Integration` | L2 (Integration) | Middleware + config store interaction |
+| `TestRateLimitMiddleware_E2E` | L3 (Component) | Full request pipeline with mocked Redis |
+
+Include `test_levels` metadata in each issue's validation block:
+```json
+{
+  "test_levels": {
+    "required": ["L0", "L1"],
+    "recommended": ["L2"],
+    "rationale": "Reason for level selection"
+  }
+}
+```
+
+Agents own L0–L3 autonomously. L4+ requires human-defined scenarios — flag these as "human gate" items in the plan.
 
 #### Verification Procedures
 
@@ -174,6 +287,52 @@ Add a `## Verification` section with runnable bash sequences that reproduce the 
 
 **Why this matters:** The golden plan pattern (file tables + symbol-level specs + verification procedures) enabled single-pass implementation of an 8-file, 5-area change with zero ambiguity. Category-level specs ("modify classifyRunStatus") force implementers to rediscover symbols, causing divergence and rework.
 
+#### Data Transformation Mapping Tables (Mandatory for Filtering)
+
+When a plan declares any struct-level filtering, exclusion, or allowlist logic:
+- Create an explicit mapping table showing **source field → output transformation**
+- Format: source name → fields affected → transformation (zeroed, renamed, computed)
+
+Example from context orchestration (na-0v2):
+
+| Section Name | Fields Zeroed |
+|---|---|
+| `HISTORY` | `Sessions` |
+| `INTEL` | `Learnings`, `Patterns` |
+| `TASK` | `BeadID`, `Predecessor` |
+
+**Why:** Without explicit mapping tables, workers misinterpret data transformations. In na-0v2, section→field mapping ambiguity was caught only in pre-mortem. An explicit table prevents the concern entirely.
+
+### Step 3.6: Symbol Verification (Mandatory)
+
+For each function, struct, or type cited in the plan's implementation specs, grep the codebase to verify it exists:
+
+```bash
+# For each symbol referenced in the plan
+grep -rn "func <symbolName>" --include="*.go" . 2>/dev/null
+grep -rn "type <symbolName>" --include="*.go" . 2>/dev/null
+grep -rn "class <symbolName>" --include="*.py" . 2>/dev/null
+```
+
+**If >20% of cited symbols are stale (not found in codebase):**
+- **WARN** with list of stale references and their plan locations
+- Do NOT block — stale refs may indicate renamed symbols that workers can resolve
+- Log stale refs to plan document under `## Stale Symbol Warnings`
+
+**Opt-out:** `--skip-symbol-check` flag (for greenfield plans where symbols don't yet exist).
+
+### Anti-Pattern Pre-Flight
+
+Before finalizing issue decomposition, verify the plan avoids these confirmed failure modes:
+
+| Anti-Pattern | Detection Question | Gate |
+|---|---|---|
+| **Brainstorm masquerading as plan** | Does every issue have mechanically verifiable acceptance criteria? | FAIL if any issue lacks `files_exist`, `content_check`, `tests`, or `command` conformance checks |
+| **Dead infrastructure** | Does the plan provision anything without an activation test? | WARN if infrastructure is created without a corresponding smoke test issue |
+| **Propagation surface blindness** | Has the full propagation surface been enumerated for renames/refactors? | FAIL if structural changes lack a propagation surface table |
+| **40% context budget violation** | Will implementation sessions need to load >40% context window for knowledge? | WARN if injected knowledge exceeds estimated budget |
+| **Commit-per-session anti-pattern** | Does the wave structure enforce commit-per-wave? | WARN if no explicit commit cadence in execution order |
+
 ### Step 4: Decompose into Issues
 
 Analyze the goal and break it into discrete, implementable issues. For each issue define:
@@ -181,6 +340,7 @@ Analyze the goal and break it into discrete, implementable issues. For each issu
 - **Description**: What needs to be done
 - **Dependencies**: Which issues must complete first (if any)
 - **Acceptance criteria**: How to verify it's done
+- **Test levels**: Which pyramid levels (L0–L3) this issue's tests cover (see the test pyramid standard (`test-pyramid.md` in the standards skill))
 
 #### Design Briefs for Rewrites
 
@@ -200,6 +360,15 @@ Without a design brief, workers invent design decisions. In ol-571, a spec rewri
   - Enables N parallel workers instead of 1 serial worker
 - **Shared files between issues** → serialize or assign to same worker
 
+#### Operationalization Heuristics
+
+Each issue must be immediately executable by a swarm worker without further research:
+
+- **File ownership (`metadata.files`):** List every file the issue touches. Workers use this for conflict detection.
+- **Validation commands (`metadata.validation`):** Include runnable checks (e.g., `go test ./...`, `bash -n script.sh`). Workers run these before reporting done.
+- **Homogeneous wave grouping:** Group issues by work type (all Go, all docs, all shell) within the same wave. Mixed-type waves cause toolchain context-switching and increase conflict risk.
+- **Same-file serialization:** If two issues touch the same file, flag them for serialization (different waves) or merge into one issue. Never assign same-file issues to parallel workers.
+
 #### Conformance Checks
 
 For each issue's acceptance criteria, derive at least one **mechanically verifiable** conformance check using validation-contract.md types. These checks bridge the gap between spec intent and implementation verification.
@@ -217,6 +386,23 @@ For each issue's acceptance criteria, derive at least one **mechanically verifia
 - Checks MUST use validation-contract.md types: `files_exist`, `content_check`, `command`, `tests`, `lint`
 - Prefer `content_check` and `files_exist` (fast, deterministic) over `command` (slower, environment-dependent)
 - If acceptance criteria cannot be mechanically verified, flag it as underspecified
+- When adding entries to config files enumerated by tests, search for hardcoded count assertions: `grep -rn 'len.*!=\|len.*==\|expected.*count' <test-dir>/`
+
+#### Schema Strictness Pre-Flight (WARN)
+
+When any issue's file list includes JSON schema files (`*.schema.json`, files in `schemas/`), check for `additionalProperties: false`:
+
+```bash
+for f in <issue-files matching *.schema.json or schemas/*.json>; do
+  if grep -q '"additionalProperties":\s*false' "$f" 2>/dev/null; then
+    echo "WARN: $f has additionalProperties:false — new fields require schema update BEFORE consumer changes"
+  fi
+done
+```
+
+**If triggered:** Ensure schema-modifying issues are in an earlier wave than issues that reference the new fields. This prevents implementation failures where consumer SKILL.md files reference fields that the schema doesn't yet allow.
+
+This is advisory (WARN, not FAIL). The wave decomposition in Step 5 must respect this ordering.
 
 ### Step 5: Compute Waves
 
@@ -225,6 +411,64 @@ Group issues by dependencies for parallel execution:
 - **Wave 2**: Issues depending only on Wave 1
 - **Wave 3**: Issues depending on Wave 2
 - Continue until all issues assigned
+
+**Planning Rules Compliance (Mandatory Gate):** After computing waves, fill in the Planning Rules Compliance checklist. Read [references/planning-rules.md](references/planning-rules.md) for detection questions and evidence. Every rule MUST have an explicit justification or N/A rationale. Empty justification = INCOMPLETE plan.
+
+```markdown
+## Planning Rules Compliance
+
+| Rule | Status | Justification |
+|------|--------|---------------|
+| PR-001: Mechanical Enforcement | PASS / N-A | [every integration point has a mechanical gate, OR why N/A] |
+| PR-002: External Validation | PASS / N-A | [all validation gates are external, OR why N/A] |
+| PR-003: Feedback Loops | PASS / N-A | [each output has a named consumer, OR why N/A] |
+| PR-004: Separation Over Layering | PASS / N-A | [component boundaries are explicit contracts, OR why N/A] |
+| PR-005: Process Gates First | PASS / N-A | [process gates verified before tool changes, OR why N/A] |
+| PR-006: Cross-Layer Consistency | PASS / N-A | [all layers agree on shared parameters, OR why N/A] |
+| PR-007: Phased Rollout | PASS / N-A | [changes phased by risk with validation between waves, OR why N/A] |
+
+Unchecked rules: 0
+```
+
+If any rule row has an empty Justification column, mark the plan output as **INCOMPLETE** and do not proceed to Step 6 until all rows are filled.
+
+#### File-Level Dependency Matrix (Mandatory)
+
+Before assigning issues to waves, build a file-conflict matrix. For EACH issue, list which files it modifies. If any file appears in 2+ same-wave issues, either:
+- **Serialize** them (move one to a later wave), or
+- **Merge** them into a single issue assigned to one worker.
+
+```markdown
+## File-Conflict Matrix
+
+| File | Issues |
+|------|--------|
+| `src/auth.go` | Issue 1, Issue 3 | ← CONFLICT: serialize or merge
+| `src/config.go` | Issue 2 |
+| `src/auth_test.go` | Issue 1 |
+```
+
+**Why:** Issue-level dependency graphs miss shared-file conflicts. In context-orchestration-leverage, two tracks both modified `rpi_phased_handoff.go` and required an unplanned Wave 2a/2b split. A file-conflict matrix would have caught this during planning.
+
+#### Cross-Wave Shared File Registry (Mandatory)
+
+After computing waves, build a **cross-wave file registry** listing every file that appears in issues across different waves. These files are collision risks because later-wave worktrees are created from a base SHA that may not include earlier-wave changes.
+
+```markdown
+## Cross-Wave Shared Files
+
+| File | Wave 1 Issues | Wave 2+ Issues | Mitigation |
+|------|---------------|----------------|------------|
+| `src/auth_test.go` | Issue 1 | Issue 5 | Wave 2 worktree must branch from post-Wave-1 SHA |
+| `src/config.go` | Issue 2 | Issue 6 | Serial: Issue 6 blocked by Issue 2 |
+```
+
+**If any file appears in multiple waves:**
+1. Ensure the later-wave issue explicitly declares a dependency on the earlier-wave issue that touches the same file (so `bd dep add` / `addBlockedBy` is set).
+2. Flag the file in the plan's `## Cross-Wave Shared Files` section so `/crank` can enforce worktree base refresh between waves.
+3. For test files shared across waves, prefer splitting test additions into the same wave as the code they test — avoid a separate "test coverage" issue that touches files already modified in an earlier wave.
+
+**Why:** In na-vs9, Wave 2 agents started from pre-Wave-1 SHA. A Wave 2 test coverage issue overwrote Wave 1's `.md→.json` fix in `rpi_phased_test.go` because the worktree didn't include Wave 1's commit. The cross-wave registry makes these collisions visible during planning.
 
 #### Validate Dependency Necessity
 
@@ -239,14 +483,26 @@ False dependencies reduce parallelism. Pre-mortem judges will also flag these. I
 
 **Write to:** `.agents/plans/YYYY-MM-DD-<goal-slug>.md`
 
+**Baseline Audit Gate (mechanical):** Before writing the plan, verify the `## Baseline Audit` table has at least 1 row with both a command and a result:
+- If `## Baseline Audit` is empty or missing: **BLOCK** with "Plan lacks baseline audit. Run quantitative checks first."
+- If any row has a command but no result (or vice versa): **WARN** with "Incomplete audit row — run the command and record the result."
+- **Opt-out:** `--skip-audit-gate` flag (for documentation-only plans with no quantitative claims).
+
 ```markdown
+---
+id: plan-YYYY-MM-DD-<goal-slug>
+type: plan
+date: YYYY-MM-DD
+source: "[[.agents/research/YYYY-MM-DD-<research-slug>]]"
+---
+
 # Plan: <Goal>
 
-**Date:** YYYY-MM-DD
-**Source:** <research doc if any>
-
 ## Context
-<1-2 paragraphs explaining the problem, current state, and why this change is needed>
+<1-2 paragraphs explaining the problem, current state, and why this change is needed. Include `Applied findings: <id, id, ...>` from `.agents/planning-rules/*.md` first, with `.agents/findings/registry.jsonl` as fallback.>
+
+Applied findings:
+- `<finding-id>` — `<how it changed the plan>`
 
 ## Files to Modify
 
@@ -341,6 +597,27 @@ In `path/to/file.go`:
 **Wave 2** (after Wave 1): Issue 2, Issue 4
 **Wave 3** (after Wave 2): Issue 5
 
+## Planning Rules Compliance
+
+| Rule | Status | Justification |
+|------|--------|---------------|
+| PR-001: Mechanical Enforcement | PASS / N-A | [justification] |
+| PR-002: External Validation | PASS / N-A | [justification] |
+| PR-003: Feedback Loops | PASS / N-A | [justification] |
+| PR-004: Separation Over Layering | PASS / N-A | [justification] |
+| PR-005: Process Gates First | PASS / N-A | [justification] |
+| PR-006: Cross-Layer Consistency | PASS / N-A | [justification] |
+| PR-007: Phased Rollout | PASS / N-A | [justification] |
+
+Unchecked rules: 0
+
+## Post-Merge Cleanup
+
+After bulk-merging wave results, audit for scaffold-era names:
+- Rename placeholder function/variable names (e.g., `handleThing`, `processItem`) to domain-specific names
+- Search with `grep -rn 'TODO\|FIXME\|HACK\|XXX' <modified-files>` for deferred cleanup markers
+- If any `skills/` files were modified, run `scripts/regen-codex-hashes.sh` to sync codex parity and copy reference files.
+
 ## Next Steps
 - Run `/pre-mortem` to validate plan
 - Run `/crank` for autonomous execution
@@ -415,7 +692,31 @@ bd create --title "<task>" --body "Description...
 
 **`bd ready` returns the current wave** - all unblocked issues that can run in parallel.
 
-Without bd issues, the ratchet validator cannot track gate progress. This is required for `/crank` autonomous execution and `/post-mortem` validation.
+Beads-backed issues are the preferred path because they give `/crank` richer dependency data and make ratchet progress easier to inspect. When bd is unavailable or degraded, keep the plan file + execution packet path accurate and continue in file-backed mode for `/crank` and `/validation`.
+
+### Step 7b: Verify Validation Blocks (Post-Creation Check)
+
+After creating all beads issues, verify that every issue body contains a fenced validation block. Missing validation blocks break the plan-to-crank pipeline — `/crank` cannot extract conformance checks from issues that lack them.
+
+```bash
+if command -v bd &>/dev/null && [[ -n "$EPIC_ID" ]]; then
+    MISSING_VALIDATION=()
+    for ISSUE_ID in $ALL_CREATED_ISSUES; do
+        if ! bd show "$ISSUE_ID" 2>/dev/null | grep -q '```validation'; then
+            MISSING_VALIDATION+=("$ISSUE_ID")
+        fi
+    done
+    if [[ ${#MISSING_VALIDATION[@]} -gt 0 ]]; then
+        echo "WARNING: ${#MISSING_VALIDATION[@]} issue(s) missing validation blocks: ${MISSING_VALIDATION[*]}"
+        echo "  /crank will fall back to default files_exist checks for these issues."
+        echo "  Consider adding ```validation``` blocks with conformance checks."
+    else
+        echo "All ${#ALL_CREATED_ISSUES[@]} issues have validation blocks."
+    fi
+fi
+```
+
+This is a warning gate, not a blocker — plans can proceed without validation blocks, but crank execution will use weaker fallback checks.
 
 ### Step 8: Request Human Approval (Gate 2)
 
@@ -453,7 +754,7 @@ Tell the user:
 1. Plan document location
 2. Number of issues identified
 3. Wave structure for parallel execution
-4. Tasks created (in-session task IDs)
+4. Tasks created (beads issue IDs or file-backed task refs)
 5. Next step: `/pre-mortem` for failure simulation, then `/crank` for execution
 
 ## Key Rules
@@ -466,63 +767,33 @@ Tell the user:
 
 ## Examples
 
-### Plan from Research
+**`/plan "add user authentication"`** — Reads research, decomposes into 5 issues (middleware, session store, token validation, tests, docs), creates epic with 2 waves, writes plan to `.agents/plans/`.
 
-**User says:** `/plan "add user authentication"`
+**`/plan --auto "refactor payment module"`** — Skips approval gates, creates 3-wave/8-issue epic autonomously, ready for `/crank`.
 
-**What happens:**
-1. Agent reads recent research from `.agents/research/2026-02-13-authentication-system.md`
-2. Explores codebase to identify integration points
-3. Decomposes into 5 issues: middleware, session store, token validation, tests, docs
-4. Creates epic `ag-5k2` with 5 child issues in 2 waves
-5. Output written to `.agents/plans/2026-02-13-add-user-authentication.md`
+**`/plan "remove dead code"`** — Runs quantitative audit (3,003 LOC), creates issues with exact file/LOC targets, includes deletion verification checks.
 
-**Result:** Epic with dependency graph, conformance checks, and wave structure for parallel execution.
+**`/plan "add stale run detection to RPI status"`** — Symbol-level detail: names exact functions, struct fields, JSON tags, test names. Implementer executes in a single pass.
 
-### Plan with Auto Mode
-
-**User says:** `/plan --auto "refactor payment module"`
-
-**What happens:**
-1. Agent skips human approval gates
-2. Searches knowledge base for refactoring patterns
-3. Creates epic and child issues automatically
-4. Records ratchet progress
-
-**Result:** Fully autonomous plan creation with 3 waves, 8 issues, ready for `/crank`.
-
-### Plan Cleanup Epic with Audit
-
-**User says:** `/plan "remove dead code"`
-
-**What happens:**
-1. Agent runs quantitative audit: 3,003 LOC across 3 packages
-2. Creates issues grounded in audit numbers (not vague "cleanup")
-3. Each issue specifies exact files and line count reduction
-4. Output includes deletion verification checks
-
-**Result:** Scoped cleanup plan with measurable completion criteria (e.g., "Delete 1,500 LOC from pkg/legacy").
-
-### Plan with Implementation Detail (Symbol-Level)
-
-**User says:** `/plan "add stale run detection to ao rpi status"`
-
-**What happens:**
-1. Agent explores codebase, finds `classifyRunStatus` at `rpi_status.go:850`, `phasedState` at `rpi_phased.go:100`
-2. Produces file inventory: 4 files to modify, 2 new files
-3. Each implementation section names exact functions, parameters, struct fields with JSON tags
-4. Tests section lists `TestClassifyRunStatus_StaleWorktree`, `TestDetermineRunLiveness_MissingWorktree` with descriptions
-5. Verification section provides manual simulation: create fake stale run, check `ao rpi status` output
-
-**Result:** Implementer can execute the plan in a single pass without rediscovering any symbol names, reducing implementation time by ~50% and eliminating spec-divergence rework.
+See [references/examples.md](references/examples.md) for full walkthroughs.
 
 ## Troubleshooting
 
-| Problem | Cause | Solution |
-|---------|-------|----------|
-| bd create fails | Beads not initialized in repo | Run `bd init --prefix <prefix>` first |
-| Dependencies not created | Issues created without explicit `bd dep add` calls | Verify plan output includes dependency commands. Re-run to regenerate |
-| Plan too large | Research scope was too broad, resulting in >20 issues | Narrow the goal or split into multiple epics |
-| Wave structure incorrect | False dependencies declared (logical ordering, not file conflicts) | Review dependency necessity: does blocked issue modify blocker's files? |
-| Conformance checks missing | Acceptance criteria not mechanically verifiable | Add `files_exist`, `content_check`, `tests`, or `command` checks per validation-contract.md |
-| Epic has no children | Plan created but bd commands failed silently | Check `bd list --type epic` output; re-run plan with bd CLI available |
+| Problem | Solution |
+|---------|----------|
+| bd create fails | Run `bd init --prefix <prefix>` first |
+| Plan too large (>20 issues) | Narrow goal or split into multiple epics |
+| Wave structure incorrect | Review dependencies: does blocked issue modify blocker's files? |
+| Conformance checks missing | Add `files_exist`, `content_check`, `tests`, or `command` checks |
+
+See [references/examples.md](references/examples.md) for more troubleshooting scenarios.
+
+## Reference Documents
+
+- [references/planning-rules.md](references/planning-rules.md) — seven compiled planning rules (mechanical enforcement, external validation, feedback loops, separation, process gates, cross-layer consistency, phased rollout).
+- [references/plan-mutations.md](references/plan-mutations.md)
+- [references/complexity-estimation.md](references/complexity-estimation.md)
+- [references/detail-templates.md](references/detail-templates.md)
+- [references/examples.md](references/examples.md)
+- [references/sdd-patterns.md](references/sdd-patterns.md)
+- [references/templates.md](references/templates.md)

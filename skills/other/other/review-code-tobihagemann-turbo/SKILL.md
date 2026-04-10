@@ -28,11 +28,9 @@ Launch six Agent tool calls in a single message so they run concurrently (`model
 
 For the `/peer-review` agent, the Agent tool call prompt instructs the subagent to: (1) read the SKILL.md of every other review skill listed above, (2) extract their review criteria and "what to look for" sections, (3) compose a single comprehensive review prompt covering all dimensions with the diff command from Step 1, being verbose about what to check, and (4) invoke `/peer-review` via the Skill tool with the composed prompt.
 
-## Step 3: Return Combined Findings
+## Step 3: Aggregate Combined Findings
 
-Wait for all six agents to complete. Aggregate their findings with attribution (reviewer name, file path, description) and return them to the caller.
-
-The caller determines what to do with the findings (evaluate, apply, or present to the user).
+Wait for all six agents to complete. Aggregate their findings with attribution (reviewer name, file path, description).
 
 ## Rules
 

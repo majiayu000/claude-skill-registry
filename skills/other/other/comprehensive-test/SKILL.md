@@ -86,4 +86,5 @@ Update `.turbo/test-plan.md` by checking off completed tests and annotating resu
 - Always clean up: close browser sessions, stop dev servers started by this skill.
 - Never modify application code. This skill is read-only verification. Report failures without attempting to fix them.
 - If the dev server fails to start, report the error and stop.
+- Use the Monitor tool to tail app logs for errors or warnings while running tests, so backend failures surface alongside test observations.
 - To diagnose failures, run the `/investigate` skill on the test report.

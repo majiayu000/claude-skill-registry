@@ -1,6 +1,6 @@
 ---
 name: user-model-builder
-description: "Build complete userModels for people Claude Code collaborates with. Creates core persona files, social dossiers with voice analysis, content archives, and INDEX registration. Use when asked to create a user model, build a persona, or document someone's voice and identity."
+description: "Build complete userModels for people Claudicle collaborates with. Creates core persona files, social dossiers with voice analysis, content archives, and INDEX registration. Use when asked to create a user model, build a persona, or document someone's voice and identity."
 argument-hint: [person-name]
 ---
 

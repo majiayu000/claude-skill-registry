@@ -128,6 +128,23 @@ append_kb_log "$KB_PATH" "lint" "kb-lint" "N errors, N warnings, N info findings
 
 ---
 
+### Step 4: FIX (optional)
+
+After presenting the report, use **AskUserQuestion tool** to offer resolution:
+
+- **Fix broken WikiLinks** — For each broken link, classify as:
+  - **Stub candidate** — the target *should* exist but hasn't been documented yet. Create a stub file with `status: stub` (see below).
+  - **Near-match** — an existing doc with a similar name could resolve it. Add an alias to the existing doc.
+  - **Bad reference** — the WikiLink itself is wrong (typo, template placeholder). Fix or remove it from the source file.
+  - **Template placeholder** — generic WikiLinks like `[[Related Concept 1]]`. Remove from source files.
+- **Fix index drift** — Run `generate_index.sh` to rebuild `_meta/index.md`
+- **Fix missing frontmatter** — Add required YAML fields to flagged documents
+- **Skip** — Just the report, no fixes needed
+
+See [fix-guide.md](references/fix-guide.md) for stub creation templates, classification heuristics, alias resolution, and template placeholder removal details.
+
+---
+
 ## Interpreting Results
 
 | Severity | Meaning | Action |
@@ -136,29 +153,18 @@ append_kb_log "$KB_PATH" "lint" "kb-lint" "N errors, N warnings, N info findings
 | **Warning** | Quality degradation | Fix soon — orphans and drift reduce discoverability |
 | **Info** | Potential staleness | Review periodically — may need updating or archiving |
 
-## Suggested Fixes
-
-| Finding | Fix |
-|---------|-----|
-| Broken WikiLink | Rename target to match, or update the reference |
-| Missing frontmatter | Add required YAML fields to the document |
-| Orphan document | Add WikiLinks from related docs, or archive if obsolete |
-| Index drift | Run `generate_index.sh` to rebuild `_meta/index.md` |
-| Stale document | Review and update, or move to `archive/` if obsolete |
-
 ---
 
 ## Resources
 
 - [KB Schema](_meta/schema.md) — Conventions that lint checks enforce
+- [Fix Guide](references/fix-guide.md) — Stub creation, alias resolution, template cleanup
 
 ---
 
 ## Completion Criteria
 
-Lint is complete when:
-
-1. All 5 checks have run
-2. Lint report generated at `_meta/lint-report-YYYY-MM-DD.md`
-3. Operation log entry appended to `_meta/log.md`
-4. Findings summarized to user with severity counts
+| Mode | Complete when |
+|------|---------------|
+| **Report only** | All 5 checks run, lint report generated, log appended, findings summarized |
+| **Report + Fix** | All of above, plus chosen fixes applied, index regenerated |

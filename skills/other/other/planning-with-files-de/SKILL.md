@@ -1,6 +1,6 @@
 ---
 name: planning-with-files-de
-description: Manus-artiges Dateiplanungssystem zur Organisation und Verfolgung des Fortschritts komplexer Aufgaben. Erstellt task_plan.md, findings.md und progress.md. Wird verwendet, wenn der Benutzer plant, zerlegt oder organisiert: mehrstufige Projekte, Forschungsaufgaben oder Arbeiten mit über 5 Tool-Aufrufen. Unterstützt automatische Sitzungswiederherstellung nach /clear. Auslöser: Aufgabenplanung, Projektplanung, Arbeitsplan erstellen, Aufgaben analysieren, Projekt organisieren, Fortschritt verfolgen, Mehrstufige Planung, Hilf mir bei der Planung, Projekt zerlegen
+description: "Manus-artiges Dateiplanungssystem zur Organisation und Verfolgung des Fortschritts komplexer Aufgaben. Erstellt task_plan.md, findings.md und progress.md. Wird verwendet, wenn der Benutzer plant, zerlegt oder organisiert: mehrstufige Projekte, Forschungsaufgaben oder Arbeiten mit über 5 Tool-Aufrufen. Unterstützt automatische Sitzungswiederherstellung nach /clear. Auslöser: Aufgabenplanung, Projektplanung, Arbeitsplan erstellen, Aufgaben analysieren, Projekt organisieren, Fortschritt verfolgen, Mehrstufige Planung, Hilf mir bei der Planung, Projekt zerlegen"
 user-invocable: true
 allowed-tools: "Read, Write, Edit, Bash, Glob, Grep"
 hooks:

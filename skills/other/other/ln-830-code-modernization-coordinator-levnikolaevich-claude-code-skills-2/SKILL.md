@@ -12,7 +12,7 @@ license: MIT
 **Type:** L2 Domain Coordinator
 **Category:** 8XX Optimization
 
-Coordinates code modernization by delegating to L3 workers: ln-831 (OSS replacer) and ln-832 (bundle optimizer). Executes migration plans from 6XX audit findings.
+Runtime-backed coordinator for code modernization. Delegates OSS replacement and bundle-size work to isolated child runs, records machine-readable worker summaries, and emits a final coordinator summary.
 
 ---
 
@@ -20,142 +20,190 @@ Coordinates code modernization by delegating to L3 workers: ln-831 (OSS replacer
 
 | Aspect | Details |
 |--------|---------|
-| **Input** | Audit report (ln-645 migration plan) OR target module |
-| **Output** | Modernized codebase with verification proof |
+| **Input** | Audit report, target module, or modernization scope |
+| **Output** | Aggregated modernization report with durable worker artifacts |
 | **Workers** | ln-831 (OSS replacer), ln-832 (bundle optimizer) |
+| **Runtime** | `.hex-skills/modernization/runtime/runs/{run_id}/` |
 
 ---
 
 ## Workflow
 
-**Phases:** Pre-flight → Analyze Input → Delegate → Collect → Verify → Report
+**Phases:** Pre-flight -> Analyze Input -> Delegate Workers -> Collect Results -> Verify Summary -> Report
 
 ---
 
-## Phase 0: Pre-flight Checks
+## Runtime Contract
+
+**MANDATORY READ:** Load `shared/references/ci_tool_detection.md`
+**MANDATORY READ:** Load `shared/references/coordinator_runtime_contract.md`, `shared/references/modernization_runtime_contract.md`, `shared/references/coordinator_summary_contract.md`
+
+Runtime CLI:
+
+```bash
+node shared/scripts/modernization-runtime/cli.mjs start --identifier repo-modernization --manifest-file <file>
+node shared/scripts/modernization-runtime/cli.mjs status --identifier repo-modernization
+node shared/scripts/modernization-runtime/cli.mjs checkpoint --phase PHASE_2_DELEGATE_WORKERS --payload '{...}'
+node shared/scripts/modernization-runtime/cli.mjs record-worker-result --payload '{...}'
+node shared/scripts/modernization-runtime/cli.mjs record-summary --payload '{...}'
+node shared/scripts/modernization-runtime/cli.mjs advance --to PHASE_3_COLLECT_RESULTS
+node shared/scripts/modernization-runtime/cli.mjs complete
+```
+
+Required state fields:
+- `worker_plan`
+- `worker_results`
+- `child_runs`
+- `verification_passed`
+- `report_ready`
+- `summary_recorded`
+
+Domain checkpoints:
+- `PHASE_1_ANALYZE_INPUT`: target modules, worker selection, stack detection
+- `PHASE_2_DELEGATE_WORKERS`: one `child_run` per delegated worker with worker name, `runId`, and `summaryArtifactPath`
+- `PHASE_3_COLLECT_RESULTS`: recorded worker summaries and unresolved failures
+- `PHASE_4_VERIFY_SUMMARY`: final report path, verification verdict, summary readiness
+
+Guard rules:
+- do not advance from `PHASE_2_DELEGATE_WORKERS` until every planned worker emitted a valid `modernization-worker` summary
+- do not complete until the final report checkpoint exists and the `modernization-coordinator` summary was recorded
+- consume worker JSON summaries only; never infer worker status from prose output
+
+---
+
+## Phase 0: Pre-flight
+
+Confirm the modernization request has a valid scope and a deterministic runtime target.
 
 | Check | Required | Action if Missing |
 |-------|----------|-------------------|
-| Audit report OR target module | Yes | Block modernization |
-| Git clean state | Yes | Block (need clean baseline for revert) |
-| Test infrastructure | Yes | Block (workers need tests for keep/discard) |
-
-**MANDATORY READ:** Load `shared/references/ci_tool_detection.md` for test/build detection.
+| Audit report or target module | Yes | Block modernization |
+| Project path | Yes | Block modernization |
+| Verification command available | Yes | Block if workers cannot verify changes |
+| Existing active run for identifier | No | Pause if conflicting run exists |
 
 ---
 
 ## Phase 1: Analyze Input
 
-### Worker Selection
+Select workers based on project type and findings.
+
+Worker selection:
 
 | Condition | ln-831 | ln-832 |
 |-----------|--------|--------|
-| ln-645 findings present (OSS candidates) | Yes | No |
-| JS/TS project with package.json | No | Yes |
-| Both conditions | Yes | Yes |
-| Target module specified | Yes | No |
+| Audit findings include OSS candidates | Yes | No |
+| JS/TS project with `package.json` | No | Yes |
+| Both conditions true | Yes | Yes |
+| Explicit target module only | Yes | Optional if bundle impact exists |
 
-### Stack Detection
+Stack detection:
 
 | Indicator | Stack | ln-832 Eligible |
 |-----------|-------|----------------|
-| package.json + JS/TS files | JS/TS | Yes |
-| *.csproj | .NET | No |
-| requirements.txt / pyproject.toml | Python | No |
-| go.mod | Go | No |
+| `package.json` + JS/TS files | JS/TS | Yes |
+| `*.csproj` | .NET | No |
+| `requirements.txt` or `pyproject.toml` | Python | No |
+| `go.mod` | Go | No |
+
+Checkpoint payload must include:
+- `input_source`
+- `worker_plan`
+- `stack_detection`
+- `skipped_reasons`
 
 ---
 
-## Phase 2: Delegate to Workers
+## Phase 2: Delegate Workers
 
-> **CRITICAL:** All delegations use Agent tool with `subagent_type: "general-purpose"` and `isolation: "worktree"` — each worker creates its own branch per `shared/references/git_worktree_fallback.md`.
+Delegate one child run per selected worker. Child runs are deterministic and artifact-driven.
 
-### Delegation Protocol
+Delegate using the concrete worker identities selected by the routing rules below. Do not synthesize family placeholders or guessed skill IDs in prompts.
 
-```
-FOR each selected worker:
-  Agent(description: "Modernize via ln-83X",
-       prompt: "Execute modernization worker.
-
-Step 1: Invoke worker:
-  Skill(skill: \"ln-83X-{worker}\")
-
-CONTEXT:
-{delegationContext}",
-       subagent_type: "general-purpose",
-       isolation: "worktree")
-```
-
-### Delegation Context
+Delegation context:
 
 | Field | Type | Description |
 |-------|------|-------------|
-| projectPath | string | Absolute path to project |
-| auditReport | string | Path to codebase_audit.md (if applicable) |
-| targetModule | string | Target module path (if applicable) |
-| options.runTests | bool | Run tests after modernization |
+| `projectPath` | string | Absolute path to the target project |
+| `auditReport` | string | Path to audit output when applicable |
+| `targetModule` | string | Optional focused module path |
+| `identifier` | string | Stable worker identifier |
+| `runId` | string | Deterministic child run id |
+| `summaryArtifactPath` | string | Exact JSON path for the worker summary |
+| `options` | object | Verification flags and worker-specific settings |
 
-### Execution Order
-
-| Order | Worker | Reason |
-|-------|--------|--------|
-| 1 | ln-831 (OSS replacer) | May add/remove packages, affecting bundle |
-| 2 | ln-832 (bundle optimizer) | Runs AFTER package changes are settled |
-
-**Rules:**
-- Workers run sequentially — ln-831 package changes affect ln-832 baseline.
-- **Dependent workers share branch:** ln-832 launches in ln-831's branch so it sees OSS replacement changes.
+Delegation rules:
+- launch `ln-831` before `ln-832` when both are selected
+- `ln-832` consumes the project state produced by accepted modernization changes, not a guessed baseline
+- checkpoint every child run before waiting on its result
+- record every emitted worker summary with `record-worker-result`
 
 ---
 
 ## Phase 3: Collect Results
 
-Each worker produces an isolated branch. Coordinator aggregates branch reports.
+Aggregate validated worker summaries only.
 
-### Worker Branches
-
-| Worker | Branch Pattern | Contents |
-|--------|---------------|----------|
-| ln-831 | `modernize/ln-831-{module}-{ts}` | OSS replacements |
-| ln-832 | `modernize/ln-832-bundle-{ts}` | Bundle optimizations |
-
-### Result Schema
-
-| Field | Type | Description |
-|-------|------|-------------|
-| worker | string | ln-831 or ln-832 |
-| status | enum | success, partial, failed |
-| branch | string | Worker's result branch name |
-| changes_applied | int | Number of kept changes |
-| changes_discarded | int | Number of discarded attempts |
-| details | object | Worker-specific report |
-
----
-
-## Phase 4: Aggregate Reports
-
-Each worker verified independently in its branch (tests, build run by worker itself). Coordinator does NOT rerun verification or revert worker changes.
-
-### On Failure
-
-1. Branch with failing tests logged as "failed" in report
-2. User reviews failed branch independently
-
----
-
-## Phase 5: Report Summary
-
-### Report Schema
+Worker summary fields consumed by the coordinator:
 
 | Field | Description |
 |-------|-------------|
-| input_source | Audit report or target module |
-| workers_activated | Which workers ran |
-| modules_replaced | OSS replacements applied (ln-831) |
-| loc_removed | Custom code lines removed (ln-831) |
-| bundle_reduction | Bundle size reduction in bytes/% (ln-832) |
-| build_verified | PASSED or FAILED |
-| per_worker[] | Individual worker reports |
+| `producer_skill` | worker identity (`ln-831` or `ln-832`) |
+| `summary_kind` | must be `modernization-worker` |
+| `identifier` | stable worker identifier |
+| `payload.status` | completed, partial, or failed |
+| `payload.changes_applied` | kept changes |
+| `payload.changes_discarded` | discarded experiments |
+| `payload.verification` | build/test verification result |
+| `payload.artifact_path` | worker-owned durable report path |
+| `payload.warnings` | non-blocking issues |
+
+Collection output:
+- `worker_results`
+- `success_count`
+- `partial_count`
+- `failed_count`
+- `warnings`
+
+---
+
+## Phase 4: Verify Summary
+
+Prepare the final modernization report and verify the coordinator can finish deterministically.
+
+Verification checklist:
+- every planned worker produced one valid summary envelope
+- aggregate counts match recorded worker results
+- final report path exists or is ready to be written
+- `report_ready` and `verification_passed` are true before completion
+
+Failure handling:
+1. Keep successful worker results intact.
+2. Mark failed workers explicitly in the coordinator report.
+3. Do not invent rollback actions beyond what workers already verified.
+
+---
+
+## Phase 5: Report
+
+Coordinator report schema:
+
+| Field | Description |
+|-------|-------------|
+| `input_source` | audit report or target module |
+| `workers_activated` | delegated workers |
+| `modules_replaced` | OSS replacements applied |
+| `loc_removed` | custom code removed |
+| `bundle_reduction` | final bundle reduction summary |
+| `verification_passed` | aggregate verification verdict |
+| `per_worker[]` | machine-readable worker result summaries |
+| `warnings[]` | cross-worker warnings |
+
+Completion sequence:
+1. Write the durable report.
+2. Checkpoint the report path and verification verdict.
+3. Record the `modernization-coordinator` summary envelope with `record-summary`.
+4. Complete runtime only after the report checkpoint and coordinator summary exist.
 
 ---
 
@@ -163,41 +211,33 @@ Each worker verified independently in its branch (tests, build run by worker its
 
 ```yaml
 Options:
-  # Input
   audit_report: "docs/project/codebase_audit.md"
   target_module: ""
-
-  # Workers
   enable_oss_replacer: true
   enable_bundle_optimizer: true
-
-  # Verification
   run_tests: true
   run_build: true
-
-  # Safety
-  revert_on_build_failure: true
 ```
 
 ---
 
 ## Error Handling
 
-### Recoverable Errors
+Recoverable:
 
 | Error | Recovery |
 |-------|----------|
-| ln-831 failure | Continue with ln-832 |
-| ln-832 failure | Report partial success (ln-831 results valid) |
-| Build failure | Revert last worker, re-verify |
+| ln-831 partial result | Continue with ln-832 if still applicable |
+| ln-832 failure | Preserve ln-831 result and report partial modernization |
+| Build failure in one worker | Keep failure in coordinator report, continue collection |
 
-### Fatal Errors
+Fatal:
 
 | Error | Action |
 |-------|--------|
-| No workers activated | Report "no modernization targets found" |
-| All workers failed | Report failures, suggest manual review |
-| Dirty git state | Block with "commit or stash changes first" |
+| No workers activated | Finish with empty-result report |
+| Runtime validation failure | Pause run and require intervention |
+| Missing worker summary for planned child run | Do not advance from collection |
 
 ---
 
@@ -205,36 +245,49 @@ Options:
 
 - `../ln-831-oss-replacer/SKILL.md`
 - `../ln-832-bundle-optimizer/SKILL.md`
-- `../ln-645-open-source-replacer/SKILL.md` (audit companion)
+- `../ln-645-open-source-replacer/SKILL.md`
 - `shared/references/ci_tool_detection.md`
 
 ---
 
 **TodoWrite format (mandatory):**
-```
-- Invoke ln-831-oss-replacer (in_progress)
-- Invoke ln-832-bundle-optimizer (pending)
-- Aggregate reports (pending)
+```text
+- Analyze modernization input (in_progress)
+- Delegate ln-831-oss-replacer child run (pending)
+- Delegate ln-832-bundle-optimizer child run (pending)
+- Aggregate modernization-worker summaries (pending)
 ```
 
 ## Worker Invocation (MANDATORY)
 
 | Phase | Worker | Context |
 |-------|--------|---------|
-| 2 | ln-831-oss-replacer | Isolated (Agent tool) — OSS replacements for custom code |
-| 2 | ln-832-bundle-optimizer | Isolated (Agent tool) — bundle size optimization (runs after ln-831) |
+| 2 | ln-831-oss-replacer | Isolated child run with `runId` and exact `summaryArtifactPath` |
+| 2 | ln-832-bundle-optimizer | Isolated child run with `runId` and exact `summaryArtifactPath` |
 
-**All workers:** Invoke via Agent tool with `isolation: "worktree"` — sequential execution, ln-831 before ln-832.
+All workers: start the child runtime, checkpoint the `child_run` metadata, then invoke the worker skill explicitly and consume the emitted `modernization-worker` summary envelope via `record-worker-result`.
+
+```text
+# Sequential per selected worker (ln-831 before ln-832 when both selected):
+node shared/scripts/modernization-runtime/cli.mjs start --skill {worker} --identifier {identifier} --manifest-file {workerManifestPath} --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}
+node shared/scripts/optimization-runtime/cli.mjs checkpoint --phase PHASE_2_DELEGATE --payload '{"child_run":{"worker":"{worker}","run_id":"{childRunId}","summary_artifact_path":"{childSummaryArtifactPath}"}}'
+Skill(skill: "{worker}", args: "{identifier} --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}")
+Read {childSummaryArtifactPath}
+node shared/scripts/optimization-runtime/cli.mjs record-worker-result --payload-file {childSummaryArtifactPath}
+```
+
+Worker token substitution: `{worker}` is `ln-831-oss-replacer` or `ln-832-bundle-optimizer`.
 
 ---
 
 ## Definition of Done
 
-- [ ] Input analyzed (audit report or target module)
-- [ ] Appropriate workers selected based on input and stack
-- [ ] Workers delegated with worktree isolation (`isolation: "worktree"`, ln-831 before ln-832)
-- [ ] Each worker produces isolated branch, pushed to remote
-- [ ] Coordinator report aggregates per-worker results (branch, changes, status)
+- [ ] Runtime started with a validated manifest and stable identifier
+- [ ] Modernization scope analyzed and workers selected from real input
+- [ ] One child run delegated per selected worker
+- [ ] Every child run emitted a valid `modernization-worker` summary
+- [ ] Coordinator report aggregates replacements, bundle changes, warnings, and verification results
+- [ ] Final `modernization-coordinator` summary recorded before completion
 
 ---
 

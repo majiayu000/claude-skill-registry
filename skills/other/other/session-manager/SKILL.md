@@ -85,7 +85,10 @@ The `(N×)` shows how many sessions already use that tag — higher = more reaso
 
 ### Step 4: Confirm before setting
 
-Ask the user to confirm or adjust. Only set tags after confirmation.
+Use the **AskUserQuestion** tool to confirm. Only set tags after the user approves:
+```
+AskUserQuestion({ question: "Suggested tags: [table]. Confirm or adjust?" })
+```
 
 ## Examples
 
@@ -117,7 +120,7 @@ Then extract and report the `tags` and `summary` from the frontmatter.
 
 ## On Invocation
 
-Every time this skill is invoked, **always start by reading the current session.md AND checking for a customTitle**, then display a status summary before taking any action:
+Every time this skill is invoked, **always** perform steps 1-4 before handling the user's request. These steps run on **every invocation regardless** of what the user asked (tags, summary, or anything else):
 
 1. Read the session note using the "Read current metadata" command
 2. Check if the session has been renamed via `/rename` by reading the customTitle from the transcript:
@@ -126,7 +129,17 @@ Every time this skill is invoked, **always start by reading the current session.
    read_custom_title "<cwd>" "<session_id>"
    ```
    Where `<cwd>` is from session.md's `cwd` property and `<session_id>` is from `session_id` property.
-3. Display current values in this format:
+3. If customTitle exists but `session_name` in session.md is empty or different, **automatically set it**:
+   ```bash
+   obsidian vault="knowledge-bank" property:set name="session_name" value="<customTitle>" path="<vault-relative-path>"
+   ```
+4. **Always rename the tmux window** to the current session_name (whether from customTitle or already in session.md). This MUST run on every invocation:
+   ```bash
+   tmux set-window-option -t "$TMUX_PANE" automatic-rename off 2>/dev/null
+   tmux rename-window -t "$TMUX_PANE" "<session_name>" 2>/dev/null
+   ```
+   Run these as actual Bash tool calls. `$TMUX_PANE` is available in Claude's shell environment when launched from tmux. Skip only if session_name is empty.
+5. Display current values in this format:
    ```
    **Current Session**
    - session_name: <value or empty>
@@ -134,17 +147,14 @@ Every time this skill is invoked, **always start by reading the current session.
    - tags: <value or empty>
    - summary: <value or empty>
    ```
-4. If customTitle exists but `session_name` in session.md is empty or different, **automatically set it** and rename the tmux window:
-   ```bash
-   obsidian vault="knowledge-bank" property:set name="session_name" value="<customTitle>" path="<vault-relative-path>"
-   [ -n "$TMUX_PANE" ] && tmux rename-window -t "$TMUX_PANE" "<customTitle>" 2>/dev/null
+6. Then proceed with the user's request. If the request is ambiguous or the skill was invoked without a specific request, use the **AskUserQuestion** tool:
    ```
-5. Then proceed with the user's request (set properties, or ask what they'd like to update)
-
-If the user invoked the skill without a specific request, show the status and list what can be set.
+   AskUserQuestion({ question: "What would you like to update?\n- tags\n- summary\n- project" })
+   ```
 
 ## Constraints
 
 - ONLY operates on the **current active session** — do NOT modify other sessions
 - ONLY updates `session_name`, `project`, `tags`, and `summary`
+- **Use AskUserQuestion tool** for all confirmations and prompts (not plain text questions). This ensures the user gets a proper input prompt.
 - Always confirm the update to the user after running the command

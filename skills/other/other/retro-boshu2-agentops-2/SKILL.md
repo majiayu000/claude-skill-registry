@@ -15,14 +15,18 @@ Quick-capture a learning to the knowledge flywheel. For comprehensive retrospect
 Given `$retro --quick "insight text"` or `$retro "insight text"`:
 
 1. Generate a slug from the content: first meaningful words, lowercase, hyphens, max 50 chars.
-2. Write directly to `.agents/learnings/YYYY-MM-DD-quick-<slug>.md`:
+2. Resolve the active bead with `timeout_run 1 bd current 2>/dev/null || echo ""`.
+3. Write directly to `.agents/learnings/YYYY-MM-DD-quick-<slug>.md`:
 
 ```markdown
 ---
 type: learning
 source: retro-quick
+source_bead: <active bead id when available>
+source_phase: validate
 date: YYYY-MM-DD
 maturity: provisional
+utility: 0.5
 ---
 
 # Learning: <Short Title>
@@ -39,7 +43,9 @@ maturity: provisional
 Quick capture via `$retro --quick`
 ```
 
-3. Confirm:
+If no bead is active, omit `source_bead` intentionally and still set `source_phase: validate`.
+
+4. Confirm:
 
 ```
 Learned: <one-line summary>
@@ -56,8 +62,22 @@ For comprehensive knowledge extraction, use `$post-mortem`.
 
 **What happens:**
 1. Agent generates slug: `macos-cp-alias-overwrite`
-2. Agent writes learning to `.agents/learnings/2026-03-03-quick-macos-cp-alias-overwrite.md`
-3. Agent confirms: `Learned: macOS cp alias prompts — use /bin/cp`
+2. Agent resolves the active bead with `timeout_run 1 bd current 2>/dev/null || echo ""`
+3. Agent writes learning to `.agents/learnings/2026-03-03-quick-macos-cp-alias-overwrite.md` with provenance fields like:
+
+```markdown
+---
+type: learning
+source: retro-quick
+source_bead: bd-123
+source_phase: validate
+date: 2026-03-03
+maturity: provisional
+utility: 0.5
+---
+```
+
+4. Agent confirms: `Learned: macOS cp alias prompts — use /bin/cp`
 
 ## Troubleshooting
 

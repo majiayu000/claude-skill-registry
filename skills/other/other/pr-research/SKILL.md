@@ -1,6 +1,14 @@
 ---
 name: pr-research
 description: 'Upstream codebase exploration for open source contribution. Outputs contribution guidelines, PR patterns, and maintainer expectations. Triggers: "pr research", "upstream research", "contribution research", "explore upstream repo".'
+skill_api_version: 1
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: topic
 license: MIT
 compatibility: Requires git, gh CLI
 metadata:
@@ -8,7 +16,8 @@ metadata:
   version: "1.0.0"
   tier: contribute
   internal: false
-allowed-tools: Read Write Bash Grep Glob
+allowed-tools: Read, Write, Bash, Grep, Glob
+output_contract: ".agents/research/YYYY-MM-DD-upstream-*.md"
 ---
 
 # PR Research Skill
@@ -211,3 +220,7 @@ $pr-research <repo> -> $pr-plan <research> -> implement -> $pr-prep
 | Too many possible issues | Scope not constrained | Filter by labels, component paths, and recent maintainer activity |
 | Suggested work seems risky | Hidden dependency or broad blast radius | Downscope to narrower file/domain boundary and restate assumptions |
 | Output is too generic | Insufficient repository evidence | Add concrete file/PR references and explicit pattern findings |
+
+## Reference Documents
+
+- [references/upstream-research-checklist.md](references/upstream-research-checklist.md)

@@ -71,6 +71,7 @@ Transform content into professional slide deck images.
 | `corporate` | clean + professional + geometric + balanced | Investor decks, proposals |
 | `minimal` | clean + neutral + geometric + minimal | Executive briefings |
 | `sketch-notes` | organic + warm + handwritten + balanced | Educational, tutorials |
+| `hand-drawn-edu` | organic + macaron + handwritten + balanced | Educational diagrams, process explainers |
 | `watercolor` | organic + warm + humanist + minimal | Lifestyle, wellness |
 | `dark-atmospheric` | clean + dark + editorial + balanced | Entertainment, gaming |
 | `notion` | clean + neutral + geometric + dense | Product demos, SaaS |
@@ -88,7 +89,7 @@ Transform content into professional slide deck images.
 | Dimension | Options | Description |
 |-----------|---------|-------------|
 | **Texture** | clean, grid, organic, pixel, paper | Visual texture and background treatment |
-| **Mood** | professional, warm, cool, vibrant, dark, neutral | Color temperature and palette style |
+| **Mood** | professional, warm, cool, vibrant, dark, neutral, macaron | Color temperature and palette style |
 | **Typography** | geometric, humanist, handwritten, editorial, technical | Headline and body text styling |
 | **Density** | minimal, balanced, dense | Information density per slide |
 
@@ -99,6 +100,7 @@ Full specs: `references/dimensions/*.md`
 | Content Signals | Preset |
 |-----------------|--------|
 | tutorial, learn, education, guide, beginner | `sketch-notes` |
+| hand-drawn, infographic, diagram, process, onboarding | `hand-drawn-edu` |
 | classroom, teaching, school, chalkboard | `chalkboard` |
 | architecture, system, data, analysis, technical | `blueprint` |
 | creative, children, kids, cute | `vector-illustration` |
@@ -393,6 +395,8 @@ options:
     description: "Blues, grays, analytical"
   - label: "vibrant"
     description: "High saturation, bold"
+  - label: "macaron"
+    description: "Pastel blocks (blue, mint, lavender, peach) on cream"
 ```
 (Note: "dark", "neutral" available via Other)
 

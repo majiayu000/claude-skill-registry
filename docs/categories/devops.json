@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5312,
-  "updated_at": "2026-04-09T03:22:47.268700Z",
+  "count": 5313,
+  "updated_at": "2026-04-10T02:04:35.072188Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -46346,6 +46346,24 @@
       "stars": 0,
       "install": "enuno/claude-command-and-control/INTEGRATION/processed/bitcoin-mining",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "model-drift-detector",

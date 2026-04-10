@@ -16,7 +16,7 @@ Runtime-backed task planning coordinator. The runtime owns readiness gating, pau
 
 **MANDATORY READ:** Load `shared/references/coordinator_runtime_contract.md`, `shared/references/task_planning_runtime_contract.md`, `shared/references/coordinator_summary_contract.md`, and `shared/references/task_plan_worker_runtime_contract.md`
 **MANDATORY READ:** Load `shared/references/environment_state_contract.md`, `shared/references/storage_mode_detection.md`, `shared/references/problem_solving.md`, and `shared/references/creation_quality_checklist.md`
-**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md`, `shared/references/mcp_integration_patterns.md`, and `shared/references/agent_delegation_pattern.md` for Phase 3 external validation
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md`, `shared/references/mcp_integration_patterns.md`, and `shared/references/agent_delegation_pattern.md` when Phase 3 external validation is triggered
 
 ## Purpose
 
@@ -128,19 +128,39 @@ Scoring policy:
 
 Self-check: verify each layer (Foundation, Invocation, Knowledge, Wiring) has at least one task when the traceability table contains buildable artifacts in the corresponding segments.
 
-#### Step 2: External traceability validation
+#### Step 2: Conditional external traceability validation
 
+Run this step only when at least one trigger is true:
+- readiness score is `4-5`
+- mode looks ambiguous (`ADD` vs `REPLAN`)
+- AC-to-task coverage is incomplete
+- task boundaries or layer ownership still conflict after self-score
+
+If triggered:
 1. Run agent health check: `node shared/agents/agent_runner.mjs --health-check --json`
 2. If agent available (prefer `gemini-review`, fallback `codex-review`):
    a. Build validation prompt from `shared/agents/prompt_templates/traceability_validator.md`
    b. Fill placeholders with Phase 1 discovery and Phase 2 output
    c. Save filled prompt to `.hex-skills/task-planning/{identifier}_traceability_prompt.md`
-   d. Launch agent via agent_runner.mjs
+   d. Launch agent via agent_runner.mjs:
+
+      ```bash
+      node shared/agents/agent_runner.mjs \
+        --agent {gemini-review|codex-review} \
+        --prompt-file .hex-skills/task-planning/{identifier}_traceability_prompt.md \
+        --output-file .hex-skills/task-planning/{identifier}_traceability_result.json \
+        --cwd {project_dir}
+      ```
+
    e. Parse result JSON for gaps
    f. For each MISSING gap: readiness_score -= 1
    g. For each BUNDLED gap: readiness_score -= 0.5
    h. If MISSING gaps found: re-enter Phase 2. Max 1 re-decomposition.
-3. If no agent available: log and apply self-check as fallback with degraded confidence.
+3. If no agent available: log and keep the local score with degraded confidence.
+
+If not triggered:
+- set `traceability_validation = self_check_only`
+- advance without external validation
 
 Checkpoint payload:
 - `readiness_score`
@@ -161,7 +181,7 @@ Checkpoint payload:
 
 ### Phase 5: Delegate
 
-Delegate to exactly one worker:
+Single mutation handoff. Delegate to exactly one worker:
 - `ln-301-task-creator`
 - `ln-302-task-replanner`
 
@@ -183,7 +203,7 @@ Coordinator context to pass to workers:
 
 ### Phase 6: Verify
 
-Verify worker result and resulting task plan outcome.
+Verify the worker result and the resulting task set only. Do not reopen decomposition unless verification proves the worker output is invalid.
 
 **Template compliance gate:** Fetch each created Task via `get_issue`. Run `validateTemplateCompliance(description, 'task')` from `planning-runtime/lib/template-compliance.mjs`. All tasks must pass (7 sections in order). Record `template_compliance_passed` in state. Guard blocks SELF_CHECK without it.
 
@@ -253,9 +273,9 @@ node shared/scripts/task-planning-runtime/cli.mjs record-plan --story {storyId} 
 ```text
 - Phase 1: Discover Story context (pending)
 - Phase 2: Build ideal task plan (pending)
-- Phase 3: Run readiness gate (self-score + external traceability validation) (pending)
+- Phase 3: Run readiness gate (local score first, external validation only if triggered) (pending)
 - Phase 4: Detect mode (pending)
-- Phase 5: Start child runtime, checkpoint child metadata, and delegate to worker (pending)
+- Phase 5: Start child runtime, checkpoint child metadata, and perform the single worker handoff (pending)
 - Phase 6: Verify worker result (pending)
 - Phase 7: Self-check (pending)
 ```

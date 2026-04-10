@@ -26,7 +26,7 @@ This queues the session for knowledge extraction.
 
 ## Promote Mode
 
-Given `$/forge --promote`:
+Given `$forge --promote`:
 
 ### Promote Step 1: Find Pending Files
 
@@ -69,7 +69,7 @@ Queue cleared.
 
 ## Manual Execution
 
-Given `$/forge [path]`:
+Given `$forge [path]`:
 
 ### Step 1: Identify Transcript
 
@@ -188,7 +188,7 @@ Tell the user:
 
 Forged candidates enter at Tier 0:
 ```
-Transcript → $/forge → .agents/forge/ (Tier 0)
+Transcript → $forge → .agents/forge/ (Tier 0)
                            ↓
                    Human review or 2+ citations
                    OR auto-promote (confidence >= 0.7, ao-free fallback)
@@ -213,13 +213,13 @@ Transcript → $/forge → .agents/forge/ (Tier 0)
 1. Hook calls `ao forge transcript --last-session --queue --quiet`
 2. CLI analyzes session transcript for decisions, learnings, failures, patterns
 3. CLI writes session ID to `.agents/ao/pending.jsonl` queue
-4. Next session start triggers `$/forge --promote` to process the queue
+4. Next session start triggers `$forge --promote` to process the queue
 
 **Result:** Session transcript automatically queued for knowledge extraction without user action.
 
 ### Manual Transcript Mining
 
-**User says:** `$/forge <path>` or "mine this transcript for knowledge"
+**User says:** `$forge <path>` or "mine this transcript for knowledge"
 
 **What happens:**
 1. Agent identifies transcript path or uses `ao forge transcript --last-session`

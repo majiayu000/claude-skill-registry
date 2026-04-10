@@ -1,6 +1,6 @@
 ---
 name: using-agentops
-description: 'Meta skill explaining the RPI workflow. Hook-capable runtimes inject it at session start; Codex uses it through the explicit startup fallback. Covers Research-Plan-Implement workflow, Knowledge Flywheel, and skill catalog.'
+description: 'Meta skill explaining the AgentOps operating model. Hook-capable runtimes inject it at session start; Codex uses it through the explicit startup fallback. Covers bookkeeping, validation, primitives, flows, the RPI lifecycle, and the skill catalog.'
 skill_api_version: 1
 user-invocable: false
 context:
@@ -14,13 +14,23 @@ metadata:
   tier: meta
   dependencies: []
   internal: true
-output_contract: "stdout: workflow guide"
+output_contract: "stdout: operating guide"
 ---
 
-# RPI Workflow
+# AgentOps Operating Model
 
-You have access to workflow skills for structured development.
-## The RPI Workflow
+AgentOps is the operational layer for coding agents.
+
+Publicly, it gives you four things:
+
+- **Bookkeeping** — captured learnings, findings, and reusable context
+- **Validation** — plan and code review before work ships
+- **Primitives** — single skills, hooks, and CLI surfaces
+- **Flows** — named compositions like `/research`, `/validation`, and `/rpi`
+
+Technically, AgentOps acts as a context compiler: raw session signal becomes reusable knowledge, compiled prevention, and better next work.
+
+## Core Flow: RPI
 
 ```
 Research → Plan → Implement → Validate
@@ -69,16 +79,6 @@ ao lookup --query "x"  # Search knowledge by relevance
 
 **Output:** `.agents/learnings/`, `.agents/patterns/`
 
-### Release Phase
-
-```bash
-/release [version]     # Full release: changelog + bump + commit + tag
-/release --check       # Readiness validation only (GO/NO-GO)
-/release --dry-run     # Preview without writing
-```
-
-**Output:** Updated CHANGELOG.md, version bumps, git tag, `docs/releases/`
-
 ## Phase-to-Skill Mapping
 
 | Phase | Primary Skill | Supporting Skills |
@@ -86,18 +86,14 @@ ao lookup --query "x"  # Search knowledge by relevance
 | **Discovery** | `/discovery` | `/brainstorm`, `/research`, `/plan`, `/pre-mortem` |
 | **Implement** | `/crank` | `/implement` (single issue), `/swarm` (parallel execution) |
 | **Validate** | `/validation` | `/vibe`, `/post-mortem`, `/retro`, `/forge` |
-| **Release** | `/release` | — |
 
 **Choosing the skill:**
 - Use `/implement` for **single issue** execution. **Now defaults to TDD-first** — writes failing tests before implementing. Skip with `--no-tdd`.
 - Use `/crank` for **autonomous epic execution** (loops waves via swarm until done). Auto-generates file-ownership maps to prevent worker conflicts.
-- Use `/swarm` directly for **parallel execution** without beads (TaskList only).
 - Use `/discovery` for the **discovery phase only** (brainstorm → search → research → plan → pre-mortem).
 - Use `/validation` for the **validation phase only** (vibe → post-mortem → retro → forge).
 - Use `/rpi` for **full lifecycle** — delegates to `/discovery` → `/crank` → `/validation`.
 - Use `/ratchet` to **gate/record progress** through RPI.
-
-## Available Skills
 
 ## Start Here (12 starters)
 
@@ -181,11 +177,7 @@ These are the skills every user needs first. Everything else is available when y
 
 ## Knowledge Flywheel
 
-Every `/post-mortem` feeds back to `/research`:
-
-1. **Learnings** extracted → `.agents/learnings/`
-2. **Patterns** discovered → `.agents/patterns/`
-3. **Research** enriched → Future sessions benefit
+Every `/post-mortem` promotes learnings and patterns into `.agents/` so future `/research` starts with better context instead of zero.
 
 ## Runtime Modes
 

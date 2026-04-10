@@ -16,6 +16,7 @@ Standalone-first worker for Story replanning. It compares ideal Story intent wit
 ## MANDATORY READ
 
 Load these before execution:
+- `shared/references/planning_worker_runtime_contract.md`
 - `shared/references/coordinator_summary_contract.md`
 - `shared/references/environment_state_contract.md`
 - `shared/references/storage_mode_detection.md`
@@ -36,11 +37,41 @@ Optional transport inputs:
 - `runId`
 - `summaryArtifactPath`
 
+The worker must remain fully usable without caller-provided `runId` and without `summaryArtifactPath`. In standalone mode it generates its own `run_id` before emitting the summary envelope.
+
+## Runtime
+
+Runtime family: `planning-worker-runtime`
+
+Identifier:
+- `epic-{epicId}`
+
+Phases:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_RESOLVE_CONTEXT`
+3. `PHASE_2_LOAD_EXISTING_STORIES`
+4. `PHASE_3_CLASSIFY_REPLAN`
+5. `PHASE_4_CONFIRM_OR_AUTOAPPROVE`
+6. `PHASE_5_APPLY_REPLAN`
+7. `PHASE_6_UPDATE_KANBAN`
+8. `PHASE_7_WRITE_SUMMARY`
+9. `PHASE_8_SELF_CHECK`
+
+Managed child-run mode:
+- caller starts the runtime with `--run-id` and `--summary-artifact-path`
+- runtime writes the final summary artifact directly to the caller-provided path
+- parent coordinator records the resulting `story-plan-worker` artifact
+
+Standalone mode:
+- runtime generates its own `run_id`
+- runtime still returns the same structured summary envelope
+- artifact writing is optional unless `summaryArtifactPath` is provided
+
 ## Output Contract
 
 Always build a structured summary envelope:
 - `schema_version`
-- `summary_kind=story-plan`
+- `summary_kind=story-plan-worker`
 - `run_id`
 - `identifier`
 - `producer_skill=ln-222`
@@ -64,6 +95,9 @@ If `summaryArtifactPath` is provided:
 
 If `summaryArtifactPath` is not provided:
 - return the same summary in structured output only
+
+Managed artifact path pattern:
+- `.hex-skills/runtime-artifacts/runs/{parent_run_id}/story-plan-worker/ln-222--{identifier}.json`
 
 ## Workflow
 

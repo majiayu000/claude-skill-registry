@@ -1,6 +1,6 @@
 ---
 name: planning-with-files-es
-description: Sistema de planificación basado en archivos estilo Manus para organizar y rastrear el progreso de tareas complejas. Crea task_plan.md, findings.md y progress.md. Cuando el usuario solicita planificación, desglose u organización de proyectos multipaso, tareas de investigación o trabajos que requieren más de 5 llamadas a herramientas. Soporta recuperación automática de sesión tras /clear. Palabras clave: planificación de tareas, planificación de proyecto, crear plan de trabajo, analizar tareas, organizar proyecto, seguimiento de progreso, planificación multipaso, ayúdame a planificar, desglosar proyecto
+description: "Sistema de planificación basado en archivos estilo Manus para organizar y rastrear el progreso de tareas complejas. Crea task_plan.md, findings.md y progress.md. Cuando el usuario solicita planificación, desglose u organización de proyectos multipaso, tareas de investigación o trabajos que requieren más de 5 llamadas a herramientas. Soporta recuperación automática de sesión tras /clear. Palabras clave: planificación de tareas, planificación de proyecto, crear plan de trabajo, analizar tareas, organizar proyecto, seguimiento de progreso, planificación multipaso, ayúdame a planificar, desglosar proyecto"
 user-invocable: true
 allowed-tools: "Read, Write, Edit, Bash, Glob, Grep"
 hooks:

@@ -60,13 +60,20 @@ Start the Understand Anything dashboard to visualize the knowledge graph for the
    ```
    Run this in the background so the user can continue working.
 
-6. Report to the user:
+6. **Capture the access token URL from the server output.** The Vite server prints a line like:
    ```
-   Dashboard started at http://localhost:5173
+   🔑  Dashboard URL: http://127.0.0.1:<PORT>?token=<TOKEN>
+   ```
+   Extract the full URL including the `?token=` parameter. The token is required to access the knowledge graph data — without it the dashboard will show an "Access Token Required" gate.
+
+7. Report to the user, including the full tokenized URL:
+   ```
+   Dashboard started at http://127.0.0.1:<PORT>?token=<TOKEN>
    Viewing: <project-dir>/.understand-anything/knowledge-graph.json
 
    The dashboard is running in the background. Press Ctrl+C in the terminal to stop it.
    ```
+   **Important:** Always include the `?token=` parameter in the URL you share. If you omit it, the user will be blocked by the token gate and have to manually find the token in the terminal output.
 
 ## Notes
 

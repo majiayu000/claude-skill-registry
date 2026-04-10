@@ -77,8 +77,7 @@ Output is pure SVG—no external dependencies. Includes `prefers-reduced-motion`
 After Gemini generates a draft:
 
 1. Read the generated file
-2. Apply `minoan-frontend-creative` standards: commit to The One Thing, personality fonts, bold color, rendering resilience
-3. Apply `minoan-frontend-engineering` standards: OKLCH colors, Tailwind v4, Radix primitives, APCA contrast, semantic HTML, accessibility
+2. Apply `minoan-frontend-design` standards: commit to The One Thing, personality fonts, bold color, OKLCH colors, Tailwind v4, Radix primitives, APCA contrast, semantic HTML, accessibility
 4. Write the polished output to the project
 
 Gemini drafts fast. Claude refines with taste.

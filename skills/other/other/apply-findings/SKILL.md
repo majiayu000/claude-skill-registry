@@ -11,7 +11,7 @@ Apply evaluated findings from the conversation context. Findings must have been 
 
 Collect all findings from the conversation context. Findings should have Verdict columns (Apply, Skip, Escalate) from `/evaluate-findings`.
 
-If findings are unevaluated (raw output without verdicts), stop and instruct the caller to run `/evaluate-findings` first.
+If findings are unevaluated (raw output without verdicts), stop and say to run `/evaluate-findings` first.
 
 ## Step 2: Apply in File Order
 

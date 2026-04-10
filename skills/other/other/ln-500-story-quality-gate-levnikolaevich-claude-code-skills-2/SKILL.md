@@ -207,7 +207,7 @@ Build final checklist from runtime state:
 Checkpoint `PHASE_8_SELF_CHECK` with `pass=true|false`.
 Complete runtime only after `pass=true`.
 
-## Coordinator Invocation (MANDATORY)
+## Worker Invocation (MANDATORY)
 
 | Phase | Worker | Purpose |
 |-------|--------|---------|

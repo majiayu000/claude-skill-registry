@@ -59,26 +59,30 @@ Running session-recap in the same session would miss the final conversation cont
 
 ---
 
-## Quick Reference
-
-| Input | Output |
-|-------|--------|
-| Session folder path | Daily log + extracted docs |
-| Current conversation | Daily log + extracted docs |
-
-| Document Type | Cross-Refs Required |
-|---------------|-------------------|
-| Technical docs | 10-15 (MUST) |
-| Reflections | 5-8 (MUST) |
-
----
-
 ## RFC 2119 Keywords
 
 This skill uses RFC 2119 keywords:
 - **MUST**: Absolute requirement, cannot be skipped
 - **SHOULD**: Valid exceptions may exist but require conscious weighing
 - **MAY**: Truly optional
+
+---
+
+## Full Recap — No Shortcuts
+
+Every session recap executes all 5 phases completely — no exceptions. A daily log alone is not a recap; it's a log entry. The knowledge bank compounds from extracted concepts, reflections, and best practices, not from session summaries. Skipping phases produces a diary, not a brain.
+
+Even when processing many sessions, each session gets its own full Phase 2.1 reflection gate, Phase 2.4 source ingestion plan, and Phase 3 document creation. Do not batch sessions into a single daily log or skip phases for throughput.
+
+## Batch Recap
+
+When recapping multiple sessions (e.g., "recap all sessions since March 29"):
+
+1. **Discover** — list all sessions in date range, read each session.md for metadata
+2. **Triage** — skip sessions with no transcript, trivial (<5 user messages), or already recapped
+3. **Process chronologically** — full 5-phase workflow per session, each gets its own daily log + extracted docs
+4. **Parallelize when independent** — different projects/topics can use parallel agents; same investigation thread should be sequential for cross-references
+5. **Integrate once at end** — index regeneration and log append after all sessions, not per session
 
 ---
 

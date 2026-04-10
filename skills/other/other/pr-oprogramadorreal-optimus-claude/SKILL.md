@@ -169,7 +169,11 @@ Gather change data using the existing PR/MR's **target branch** (saved in Step 4
 
 #### Phase 2 — Scan existing content for non-diff information
 
-Review the existing PR/MR title and body (saved from Step 4) for information that **cannot be derived from code changes**. Examples: issue/ticket references (`#45`, `JIRA-123`), deployment instructions, external links, reviewer-directed notes, or follow-up tasks. Discard anything that is outdated, factually wrong based on current diffs, or already covered by the freshly generated content. If useful non-diff information is found:
+Review the existing PR/MR title and body (saved from Step 4) for information that **cannot be derived from code changes**. Examples: issue/ticket references (`#45`, `JIRA-123`), deployment instructions, external links, reviewer-directed notes, or follow-up tasks.
+
+**Never preserve facts that are derivable from the current diff** — version numbers, file counts, function/class/symbol names, path names, line counts, or changed-file lists. These must come from Phase 1's fresh content. If the existing body contains such a fact (for example, "plugin version incremented from 1.56.1 to 1.59.0"), discard the old value and use the one re-derived from the current diff, even if the old value was correct when the PR was first opened. Rebases and force-pushes can change any of these, so the description must always match what reviewers see in "Files changed".
+
+Discard anything that is outdated, factually wrong based on current diffs, or already covered by the freshly generated content. If useful non-diff information is found:
 
 1. **Standard sections**: Integrate at a natural position within the matching section of the new content (e.g., issue references in Summary, manual verification steps in Test plan).
 2. **Non-standard sections**: If the existing body has sections outside the four standard ones (e.g., `## Deployment notes`, `## Related issues`) that contain non-diff information still relevant, preserve them after `## Test plan`.

@@ -4,7 +4,7 @@ description: Use when you need framework-agnostic WireMock guidance — stub des
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.14.0-SNAPSHOT
+  version: 0.14.0
 ---
 # WireMock best practices
 

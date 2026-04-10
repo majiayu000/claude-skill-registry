@@ -7,11 +7,7 @@ description: "Fetch and rank open GitHub issues by community engagement, present
 
 Rank open GitHub issues by engagement and plan the selected issue.
 
-## Step 1: Run `/plan-style` Skill
-
-Run the `/plan-style` skill to load planning conventions.
-
-## Step 2: Fetch and Rank Issues
+## Step 1: Fetch and Rank Issues
 
 Run `gh issue list` to fetch open issues with engagement data:
 
@@ -27,7 +23,7 @@ Calculate an engagement score for each issue:
 
 Sort issues by engagement score descending.
 
-## Step 3: Present Top 3
+## Step 2: Present Top 3
 
 Present the top 3 issues in a numbered list. For each issue, show:
 
@@ -41,13 +37,13 @@ If fewer than 3 open issues exist, present all of them.
 
 If no open issues exist, inform the user and stop.
 
-## Step 4: User Picks an Issue
+## Step 3: User Picks an Issue
 
 Ask the user to pick one of the presented issues (or request to see more).
 
 If the user asks to **see more**, present the next 3 issues from the ranked list.
 
-## Step 5: Read the Full Issue
+## Step 4: Read the Full Issue
 
 Fetch the complete issue details for the selected issue:
 
@@ -57,11 +53,9 @@ gh issue view <number> --json number,title,body,url,labels,comments,reactionGrou
 
 Read the full issue body and comments to understand the requirements and any discussion context.
 
-## Step 6: Plan
+## Step 5: Run `/turboplan` Skill
 
-Using the issue as the requirements, explore the codebase, design the implementation, and write a detailed plan (exact file paths, function signatures, data flow, test cases).
-
-The plan's final step must instruct: "Close issue #N or reference it in the PR with `Closes #N`."
+Run the `/turboplan` skill with the issue body as the task description. Tell turboplan that the plan must include a final implementation step: "Close issue #N or reference it in the PR with `Closes #N`."
 
 ## Rules
 

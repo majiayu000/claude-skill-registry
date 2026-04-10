@@ -116,7 +116,7 @@ Provider auto-detection: model names with `/` → OpenRouter, otherwise → Toge
 
 Small local models (7B) use a tuned prompt optimized for Qwen (structured output, anti-hedge, domain-keyword aware). Cloud providers use a strict research-grade prompt with mandatory citations. Reasoning mode (`--reasoning`) uses `qwen3.5:9b` with the strict prompt and 4096 max tokens—best local option for complex cross-document synthesis.
 
-First run builds an embedding cache (~30s for 3K chunks, ~10min for 25K chunks). Subsequent queries are <1s. Large RAGs use incremental checkpointing—if Ollama crashes mid-build, re-run to resume from the last checkpoint. Individual chunks are truncated to 5K chars to stay within nomic-embed-text's context window.
+First run builds an embedding cache (~30s for 3K chunks, ~10min for 25K chunks). Subsequent queries are <1s. Large RAGs use incremental checkpointing—if Ollama crashes mid-build, re-run to resume from the last checkpoint. Individual chunks are truncated to 5K chars to stay within the embedding model's context window.
 
 **Benchmarking:**
 

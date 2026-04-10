@@ -292,7 +292,7 @@ OpenPlanter methodology composes with existing Claude Code skills:
 | Parallel investigation threads | `minoan-swarm` | Elat Research Swarm with domain-split investigators |
 | Academic/legal research | `academic-research` | Case law, regulatory filings, citations |
 | Twitter/social media OSINT | `twitter` | `x-search` for entity mentions, `bird` for profile data |
-| Timeline curation | Custom skill | Entity resolution and temporal analysis for non-military domains |
+| Daimonic timeline curation | `worldwarwatcher-update` | Mazkir ha-Milḥamat entity resolution for non-military domains |
 
 ### US Public Records Datasets
 

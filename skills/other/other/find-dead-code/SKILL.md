@@ -103,7 +103,7 @@ Apply these filters to the merged results from Steps 2 and 3:
 2. **Re-export chains**: Trace barrel files (`index.ts`, `__init__.py`) before declaring a symbol dead. A symbol re-exported through a barrel may have indirect consumers.
 3. **Dynamic usage**: Flag symbols that might be used via reflection (`getattr`, `importlib`, `reflect` package in Go, `proc_macro` in Rust), string-based lookups, or decorator/attribute registration as "likely dead" rather than "definite"
 4. **Cross-package references**: In monorepos, verify a symbol isn't imported by a sibling package before declaring it dead
-5. **Design docs / specs / roadmaps**: If the project has spec files, roadmaps, or TODO files (e.g., `.turbo/spec.md`, `ROADMAP.md`, `TODO.md`), cross-reference test-only findings against them. Test-only APIs may be planned features awaiting integration — flag as **investigate** rather than **delete**
+5. **Design docs / specs / roadmaps**: If the project has spec files, roadmaps, or TODO files (e.g., `.turbo/specs/`, `ROADMAP.md`, `TODO.md`), cross-reference test-only findings against them. Test-only APIs may be planned features awaiting integration — flag as **investigate** rather than **delete**
 
 Classify each finding:
 - **Definite dead**: zero references outside its definition file

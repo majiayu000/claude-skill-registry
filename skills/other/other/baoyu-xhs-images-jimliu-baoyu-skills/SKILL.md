@@ -1,6 +1,6 @@
 ---
 name: baoyu-xhs-images
-description: Generates Xiaohongshu (Little Red Book) infographic series with 11 visual styles and 8 layouts. Breaks content into 1-10 cartoon-style images optimized for XHS engagement. Use when user mentions "小红书图片", "XHS images", "RedNote infographics", "小红书种草", or wants social media infographics for Chinese platforms.
+description: "DEPRECATED: Migrated to baoyu-image-cards. Generates Xiaohongshu (Little Red Book) infographic series with 11 visual styles and 8 layouts. Breaks content into 1-10 cartoon-style images optimized for XHS engagement. Use when user mentions \"小红书图片\", \"XHS images\", \"RedNote infographics\", \"小红书种草\", or wants social media infographics for Chinese platforms."
 version: 1.56.1
 metadata:
   openclaw:
@@ -8,6 +8,8 @@ metadata:
 ---
 
 # Xiaohongshu Infographic Series Generator
+
+> **⚠️ DEPRECATED**: This skill has been migrated to `baoyu-image-cards`. Print a bold red warning to the user **in the user's language** (use ANSI escape `\033[1;31m`) stating that `baoyu-xhs-images` has been migrated to `baoyu-image-cards` and they should use `baoyu-image-cards` instead. Then STOP — do NOT continue executing this skill.
 
 Break down complex content into eye-catching infographic series for Xiaohongshu with multiple style options.
 

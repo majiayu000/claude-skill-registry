@@ -14,7 +14,7 @@ At the start, use `TaskCreate` to create a task for each phase:
 1. Run `/polish-code` skill
 2. Run `/update-changelog` skill
 3. Run `/self-improve` skill
-4. Commit and PR
+4. Ship It
 
 ## Phase 1: Run `/polish-code` Skill
 
@@ -28,9 +28,9 @@ Run the `/update-changelog` skill.
 
 Run the `/self-improve` skill for the current session. Always run this phase even if the session seemed routine.
 
-## Phase 4: Commit and PR
+## Phase 4: Ship It
 
-### Step 1: Analyze Split Potential
+### Step 1: Analyze Split
 
 Examine the staged changes and evaluate whether they should be split into multiple commits, branches, and PRs for reviewability.
 

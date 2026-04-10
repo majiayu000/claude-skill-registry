@@ -3,7 +3,7 @@ name: validation
 description: 'Full validation phase orchestrator. Vibe + post-mortem + retro + forge. Reviews implementation quality, extracts learnings, feeds the knowledge flywheel. Triggers: "validation", "validate", "validate work", "review and learn", "validation phase", "post-implementation review".'
 ---
 
-# /validation — Full Validation Phase Orchestrator
+# $validation — Full Validation Phase Orchestrator
 
 **YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
 

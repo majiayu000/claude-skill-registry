@@ -1,10 +1,6 @@
 ---
 name: token-conservation
-description: 'Use this skill at the START of every session. This is MANDATORY for
-  quota management. location: plugin token_budget: 300. Use when session starts (mandatory),
-  prompt sizes spike, tool calls increase, before long-running analyses or massive
-  context loads. Do not use when context-optimization already handles the scenario.
-  DO NOT use when: simple queries with minimal context.'
+description: 'Enforce token quota management at session start with conservation rules, delegation checks, and compression review.'
 version: 1.7.1
 alwaysApply: true
 progressive_loading: true
@@ -94,15 +90,3 @@ or justify why neither was necessary, to inform future context-handling decision
   - "next turn: provide only failing test output lines 40-60"
 - Explicit reminder about `/new` or `/compact` whenever you determine it would save
   tokens (otherwise state that no reset/compaction is needed yet).
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

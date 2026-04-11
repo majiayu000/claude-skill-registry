@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19691,
-  "updated_at": "2026-04-10T16:07:49.886429Z",
+  "count": 19693,
+  "updated_at": "2026-04-11T01:59:11.134512Z",
   "skills": [
     {
       "name": "fix",
@@ -92290,6 +92290,24 @@
       "stars": 0,
       "install": "nphillips/2025-12-24-proof-points-skill/proof-points",
       "source": "downloaded"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "dev-log",
@@ -235577,6 +235595,24 @@
       "stars": 0,
       "install": "violabg/pictionary-game/development/convex-ai-card-generation",
       "source": "local"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "zensical-development",

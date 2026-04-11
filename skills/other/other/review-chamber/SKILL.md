@@ -11,6 +11,7 @@ usage_patterns:
 dependencies:
 - memory-palace:knowledge-intake
 - sanctum:pr-review
+model_hint: standard
 ---
 ## Table of Contents
 
@@ -296,15 +297,3 @@ python scripts/palace_manager.py search "authentication" \
 - See `modules/capture-workflow.md` for detailed capture process
 - See `modules/evaluation-criteria.md` for knowledge worth assessment
 - See `modules/search-patterns.md` for query optimization
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

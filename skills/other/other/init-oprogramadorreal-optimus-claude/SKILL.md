@@ -69,6 +69,7 @@ Before proceeding, confirm you have all of the following. If any are missing, re
 - If nested app root detected: **app root path** (e.g., `ngapp/`)
 - **Existing files inventory** (existence check only — content of docs is read in Step 1b; hooks and `coding-guidelines.md` are never audited, always overwritten): which of `.claude/CLAUDE.md`, `.claude/settings.json`, `.claude/docs/*`, root `CLAUDE.md`, subproject `CLAUDE.md` files already exist
 - **Test infrastructure detected** (yes/no): test framework in dependencies, test command in scripts, or test directory present. This determines the flow of Step 5b (test infrastructure setup).
+- **Skill authoring detected** (yes/no): reported by the Project Analyzer agent per the structural rule in `$CLAUDE_PLUGIN_ROOT/skills/init/agents/project-analyzer.md` (also applied in the Step 6 install table). A yes means the project authors markdown instructions for an AI agent as part of its stack (Claude Code plugin, Codex skill repo, prompt library, or similar). Determines whether Step 6 installs `skill-writing-guidelines.md`.
 - **Doc-sourced insights** (if any documentation found): verified conventions, architecture rationale, workflow rules — all cross-checked against source code
 
 Print this as a **Detection Summary** to the user. Then use `AskUserQuestion` — header "Detection", question "Does the detection summary look correct?":
@@ -117,9 +118,9 @@ Remember the user's choice and approved findings. Steps 2-6 will reference them 
 
 **Default for ambiguous content:** When unsure whether content is outdated or user-intentional, preserve it. Only update or remove user-added content when source code provides clear contradicting evidence **and** the user has confirmed via the audit report or `AskUserQuestion`. Information that cannot be re-derived from the codebase must not be discarded to meet formatting or size targets.
 
-**Before creating any file**, check if it already exists. If it does not exist, write it directly — no confirmation needed (see "Write generated files directly" in Before You Start). If it does exist, read it first. For generated content (hooks, `coding-guidelines.md`), overwrite silently. For files that may contain user-customized content (CLAUDE.md, styling.md, architecture.md, testing.md), inform the user what was preserved vs changed.
+**Before creating any file**, check if it already exists. If it does not exist, write it directly — no confirmation needed (see "Write generated files directly" in Before You Start). If it does exist, read it first. For generated content (hooks, `coding-guidelines.md`), overwrite silently. For files that may contain user-customized content (CLAUDE.md, styling.md, architecture.md, testing.md, skill-writing-guidelines.md), inform the user what was preserved vs changed.
 
-**Relocate when scope changes:** If docs need to move (e.g., root `.claude/docs/testing.md` → subproject-scoped in a monorepo), move content to the new location and remove the old file. Keep only `coding-guidelines.md` at root.
+**Relocate when scope changes:** If docs need to move (e.g., root `.claude/docs/testing.md` → subproject-scoped in a monorepo), move content to the new location and remove the old file. Keep only `coding-guidelines.md` and `skill-writing-guidelines.md` at root.
 
 If root `CLAUDE.md` exists (not in `.claude/`), suggest removing it after `.claude/CLAUDE.md` is created.
 
@@ -144,8 +145,8 @@ Use template from `$CLAUDE_PLUGIN_ROOT/skills/init/templates/single-project-clau
 - Fill the Conventions section with 2-5 bullets drawn from doc-sourced insights (Step 1): architectural patterns, naming conventions, key entry points, and non-obvious rules. If no insights were found, infer conventions from the project structure (e.g., "Express routes in `src/routes/`, middleware in `src/middleware/`", "CLI entry point at `src/index.ts` using Commander.js").
 - Replace command placeholders with real commands using the detected package manager
 - Replace directory placeholders with actual project directories
-- Keep the "Before Writing Code" section exactly as templated — do not modify or remove it
-- In the Documentation section, list only non-guideline docs that were actually created (testing.md, styling.md, architecture.md) using `.claude/docs/` prefix. The coding-guidelines.md reference is in the "Before Writing Code" section.
+- In the "Before Writing Code" section: if skill authoring was detected in Step 1, replace the HTML comment placeholder with the concrete sentence: "For changes to markdown instruction files (under skills/, agents/, prompts/, commands/, or instructions/), ALWAYS read `.claude/docs/skill-writing-guidelines.md` instead — those files follow different quality rules than code." If skill authoring was NOT detected, remove the HTML comment entirely, leaving only the coding-guidelines sentence. Do not modify the rest of the section.
+- In the Documentation section, list only non-guideline docs that were actually created (testing.md, styling.md, architecture.md) using `.claude/docs/` prefix. The coding-guidelines.md and skill-writing-guidelines.md references are in the "Before Writing Code" section.
 **When updating an existing CLAUDE.md** (not Fresh start): edit the existing file in-place — do not regenerate from template. Update only sections where the audit found approved Outdated changes. Preserve all user-added content verbatim unless the audit classified specific user-added items as Outdated and the user approved their removal.
 
 The template follows WHAT/WHY/HOW structure. Target 60 lines. If preserving user-added content would exceed this, first try to condense template-generated content (shorter descriptions, abbreviate stacks). If still over 60 lines, the limit may be exceeded — never discard user content to meet the line count. Note the overage in Step 7 summary. If no manifest was detected, use generic placeholders and inform user that manual customization is recommended.
@@ -159,7 +160,7 @@ Use template from `$CLAUDE_PLUGIN_ROOT/skills/init/templates/monorepo-claude.md`
 - If a workspace tool was detected (Step A), include "managed by [tool]" in the description line
 - If no workspace tool was detected (Step B only), use "Monorepo with [N] packages" or "Multi-project repository with [N] components" without referencing a workspace tool
 
-Keep the "Before Writing Code" section exactly as templated — do not modify or remove it. If root-as-project: also list root-scoped docs from `.claude/docs/` (testing.md, styling.md, architecture.md as applicable) in the Documentation section. The coding-guidelines.md reference is in the "Before Writing Code" section.
+In the "Before Writing Code" section, apply the same skill-authoring replacement rule as the Single project flow above — if detected, replace the HTML comment placeholder with the concrete sentence; if not detected, remove the HTML comment entirely. Do not modify the rest of the section. If root-as-project: also list root-scoped docs from `.claude/docs/` (testing.md, styling.md, architecture.md as applicable) in the Documentation section. The coding-guidelines.md and skill-writing-guidelines.md references are in the "Before Writing Code" section.
 
 If more than 6 subprojects, group by category (apps, libs, services) in the root CLAUDE.md and move the full subproject table to `.claude/docs/architecture.md`. Keep descriptions concise (abbreviate stacks, e.g., "TS/React" not "TypeScript, React, Vite, Tailwind") to stay under 60 lines (same user-content preservation rule as single-project applies).
 
@@ -178,6 +179,7 @@ For each detected subproject (except root-as-project/root-as-member — the root
 - Include only commands specific to this subproject (run from its directory)
 - Reference its local `docs/` folder for detailed documentation
 - Mention parent monorepo name in the opening line
+- If skill authoring was detected at the repo level, replace the HTML comment placeholder at the bottom of the template with the concrete sentence: "Root `.claude/docs/skill-writing-guidelines.md` applies to markdown instruction files in any subproject (skills/, agents/, prompts/, commands/, instructions/)." If not detected, remove the HTML comment entirely.
 - Keep under 60 lines (same user-content preservation rule as single-project applies)
 
 ## Step 5: Install Formatter Hooks
@@ -222,12 +224,15 @@ If the user chooses **No**: skip all test infrastructure provisioning. In Step 7
 |------|----------|-----------------------------------|
 | `styling.md` | `$CLAUDE_PLUGIN_ROOT/skills/init/templates/docs/styling.md` | Manifest lists a UI framework (react, vue, angular, svelte, solid) OR lists CSS tooling (tailwindcss, styled-components, sass, less, postcss) OR `.css`/`.scss`/`.less` files exist in `src/` OR manifest is `pubspec.yaml` with Flutter SDK dependency (Flutter apps are UI applications with theme, widget, and styling conventions) |
 | `architecture.md` | `$CLAUDE_PLUGIN_ROOT/skills/init/templates/docs/architecture.md` | Project has 3+ top-level source directories (excluding config, tests, docs, build output) OR uses recognized pattern directories (controllers/, services/, repositories/, handlers/, models/) |
+| `skill-writing-guidelines.md` | `$CLAUDE_PLUGIN_ROOT/skills/init/templates/docs/skill-writing-guidelines.md` | **Skill authoring detected** in Step 1: a directory named `skills/`, `agents/`, `prompts/`, `commands/`, or `instructions/` exists (at the repo root or, in monorepos, at any subproject root), contains ≥2 subdirectories, and **every** such subdirectory contains a file named `SKILL.md`, `AGENT.md`, `PROMPT.md`, `COMMAND.md`, or `INSTRUCTION.md` (case-insensitive). This signals the project authors markdown instructions for an AI agent as part of its stack. |
 
 Use each template as a skeleton — fill in all placeholders with actual project details (framework names, commands, directory paths, conventions). Don't leave any `[placeholder]` text in the final output.
 
+**`skill-writing-guidelines.md` install semantics:** Unlike `coding-guidelines.md` (verbatim template, silent overwrite), `skill-writing-guidelines.md` is a skill-authoring project's project-specific lens for reviewing markdown instruction files and is expected to be customized by maintainers. When the file does not exist, write it from the template, replacing `[PROJECT NAME]`. When it **already exists**, use review-and-propose behavior (same semantics as `testing.md`): read the existing content, compare against the template, propose any additions or corrections via the normal audit flow, and preserve user-added sections. Never silently overwrite.
+
 **Placement rules:**
 - **Single project:** All files go in `.claude/docs/`.
-- **Monorepo:** `styling.md` and `architecture.md` go in each subproject's `docs/` folder, scoped to that subproject's stack. Apply the detection rules above **per subproject** (e.g., skip `styling.md` for a subproject with no UI deps). `testing.md` placement is handled by Step 5b's provisioning reference. For root-as-project, its scoped docs go in `.claude/docs/` alongside the shared `coding-guidelines.md`. Each subproject can also get its own `coding-guidelines.md` only if its conventions differ significantly from root.
+- **Monorepo:** `styling.md` and `architecture.md` go in each subproject's `docs/` folder, scoped to that subproject's stack. Apply the detection rules above **per subproject** (e.g., skip `styling.md` for a subproject with no UI deps). `testing.md` placement is handled by Step 5b's provisioning reference. `skill-writing-guidelines.md` is shared at root (`.claude/docs/`) — same as `coding-guidelines.md`. Skill-authoring detection is applied **at the repo level**: if any subproject contains a skill-authoring stack, install `skill-writing-guidelines.md` once at root. For root-as-project, its scoped docs go in `.claude/docs/` alongside the shared guidelines. Each subproject can also get its own `coding-guidelines.md` only if its conventions differ significantly from root.
 
 ## Step 6b: Sync Existing Documentation
 
@@ -273,6 +278,7 @@ Run through this checklist. **Fix any failures before reporting to the user.**
 - `.claude/CLAUDE.md`: Actual project name, real commands, Conventions section (single project), Documentation section. Line count <= 60 (soft limit — may exceed if user-added content requires it; verify overage is not caused by template bloat).
 - `.claude/settings.json` (if created): `hooks.PostToolUse` references every installed hook file and vice versa. If file had custom sections (permissions, etc.), verify they're preserved.
 - `.claude/docs/coding-guidelines.md`: `[PROJECT NAME]` replaced with actual name.
+- `.claude/docs/skill-writing-guidelines.md` (if skill-authoring was detected): `[PROJECT NAME]` replaced with actual name. If the file pre-existed, verify that user-added sections were preserved.
 - Each `testing.md`, `styling.md`, `architecture.md`: References the project's actual frameworks, tooling, and directory names.
 - Monorepo: each subproject's `CLAUDE.md` exists, mentions subproject name, and is <= 60 lines (soft limit — same user-content preservation rule applies).
 - `.claude/hooks/*`: Each template-based hook matches its template. Each custom hook (unsupported stack) follows the pattern of existing shell-based hooks (e.g., `format-rust.sh`) and satisfies `unsupported-stack-fallback.md` step 3 validation rules.

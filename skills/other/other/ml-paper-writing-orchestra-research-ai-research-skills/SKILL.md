@@ -1,16 +1,18 @@
 ---
 name: ml-paper-writing
-description: Write publication-ready ML/AI/Systems papers for NeurIPS, ICML, ICLR, ACL, AAAI, COLM, OSDI, NSDI, ASPLOS, SOSP. Use when drafting papers from research repos, structuring arguments, verifying citations, or preparing camera-ready submissions. Includes LaTeX templates, reviewer guidelines, and citation verification workflows.
-version: 1.1.0
+description: Write publication-ready ML/AI papers for NeurIPS, ICML, ICLR, ACL, AAAI, COLM. Use when drafting papers from research repos, structuring arguments, verifying citations, or preparing camera-ready submissions. For systems venues (OSDI, NSDI, ASPLOS, SOSP), use systems-paper-writing instead.
+version: 1.2.0
 author: Orchestra Research
 license: MIT
-tags: [Academic Writing, NeurIPS, ICML, ICLR, ACL, AAAI, COLM, OSDI, NSDI, ASPLOS, SOSP, LaTeX, Paper Writing, Citations, Research, Systems]
+tags: [Academic Writing, NeurIPS, ICML, ICLR, ACL, AAAI, COLM, LaTeX, Paper Writing, Citations, Research]
 dependencies: [semanticscholar, arxiv, habanero, requests]
 ---
 
-# ML Paper Writing for Top AI & Systems Conferences
+# ML Paper Writing for Top AI Conferences
 
-Expert-level guidance for writing publication-ready papers targeting **NeurIPS, ICML, ICLR, ACL, AAAI, COLM** (ML/AI venues) and **OSDI, NSDI, ASPLOS, SOSP** (Systems venues). This skill combines writing philosophy from top researchers (Nanda, Farquhar, Karpathy, Lipton, Steinhardt) with practical tools: LaTeX templates, citation verification APIs, and conference checklists.
+Expert-level guidance for writing publication-ready papers targeting **NeurIPS, ICML, ICLR, ACL, AAAI, COLM**. This skill combines writing philosophy from top researchers (Nanda, Farquhar, Karpathy, Lipton, Steinhardt) with practical tools: LaTeX templates, citation verification APIs, and conference checklists.
+
+**For systems venues (OSDI, NSDI, ASPLOS, SOSP)**, use the [systems-paper-writing](../systems-paper-writing/) skill, which provides paragraph-level structural blueprints, writing patterns, venue-specific checklists, and LaTeX templates for systems conferences.
 
 ## Core Philosophy: Collaborative Writing
 
@@ -450,23 +452,13 @@ Understanding reviewer behavior helps prioritize your effort:
 | **AAAI 2026** | 7 pages | +1 | Strict style file adherence |
 | **COLM 2025** | 9 pages | +1 | Focus on language models |
 
-### Systems Conferences
-
-| Conference | Page Limit | Extra for Camera-Ready | Key Requirement | Template |
-|------------|------------|------------------------|-----------------|----------|
-| **OSDI 2026** | 12 pages | +2 (14 pages) | Research + Operational Systems tracks | USENIX |
-| **NSDI 2027** | 12 pages | varies | Prescreening via Introduction; 3 tracks | USENIX |
-| **ASPLOS 2027** | 12 pages (ACM) | varies | Rapid review on first 2 pages; dual cycles | ACM SIGPLAN |
-| **SOSP 2026** | 12 pages | varies | Optional artifact evaluation; author response | ACM SIGPLAN |
-
-**Detailed Systems conference info**: See [references/systems-conferences.md](references/systems-conferences.md) for deadlines, track descriptions, submission rules, and format conversion guides.
+**Systems Conferences (OSDI, NSDI, ASPLOS, SOSP)**: See the [systems-paper-writing](../systems-paper-writing/) skill for page limits, templates, deadlines, and submission rules.
 
 **Universal Requirements:**
 - Double-blind review (anonymize submissions)
 - References don't count toward page limit
 - Appendices unlimited but reviewers not required to read
 - LaTeX required for all venues
-- **Systems venues**: USENIX uses custom `.sty`; ACM uses `acmart.cls`
 
 **LaTeX Templates:** See [templates/](templates/) directory for all conference templates.
 
@@ -624,14 +616,7 @@ Only remove template artifacts when paper is nearly complete:
 | AAAI 2026 | `aaai2026-unified-template.tex` | `aaai2026.sty` | Very strict compliance |
 | COLM 2025 | `colm2025_conference.tex` | `colm2025_conference.sty` | Similar to ICLR |
 
-#### Systems Conferences
-
-| Conference | Main File | Key Style File | Notes |
-|------------|-----------|----------------|-------|
-| OSDI 2026 | `main.tex` | `usenix-2020-09.sty` | USENIX format, 12pp, two-column, 10pt |
-| NSDI 2027 | `main.tex` | `usenix-2020-09.sty` | Same USENIX format as OSDI |
-| ASPLOS 2027 | `main.tex` | `acmart.cls` (`sigplan`) | ACM SIGPLAN format, 12pp |
-| SOSP 2026 | `main.tex` | `acmart.cls` (`sigplan`) | ACM SIGPLAN, same as ASPLOS |
+**Systems Conference Templates** (OSDI, NSDI, ASPLOS, SOSP): See the [systems-paper-writing](../systems-paper-writing/) skill.
 
 ---
 
@@ -663,15 +648,7 @@ Format Conversion Checklist:
 | ICLR → AAAI | 9 → 7 pages | Significant cuts needed, strict style adherence |
 | Any → COLM | varies → 9 | Reframe for language model focus |
 
-#### Systems Conference Conversions
-
-| From → To | Key Adjustments |
-|-----------|------------------|
-| ML → OSDI/NSDI | USENIX template; add system design + implementation sections |
-| ML → ASPLOS/SOSP | ACM SIGPLAN template; reframe for systems contribution |
-| OSDI ↔ SOSP | USENIX ↔ ACM SIGPLAN; similar page limits, different style files |
-
-**Full conversion guide**: See [references/systems-conferences.md](references/systems-conferences.md#format-conversion-ml-venue--systems-venue) for detailed guidance.
+**ML → Systems Conversion**: When converting to OSDI, NSDI, ASPLOS, or SOSP, see the [systems-paper-writing](../systems-paper-writing/) skill for format conversion guidance, templates, and structural differences.
 
 **Step 2: Content Migration (NOT Template Merge)**
 
@@ -717,16 +694,7 @@ When expanding (e.g., ICML 8 → ICLR 9):
 | **AAAI** | Strict adherence to style file (no modifications) |
 | **NeurIPS** | Paper checklist (appendix), lay summary if accepted |
 
-#### Systems Venues
-
-| Target Venue | Key Required Additions |
-|--------------|------------------------|
-| **OSDI 2026** | Choose Research or Operational Systems track; anonymize system name |
-| **NSDI 2027** | Strong Introduction (prescreening); choose track |
-| **ASPLOS 2027** | Self-contained first 2 pages (rapid review); resubmission note |
-| **SOSP 2026** | ACM SIGPLAN format; optional Artifact Evaluation |
-
-**Full requirements**: See [references/systems-conferences.md](references/systems-conferences.md#submission-rules) for details.
+**Systems Venues** (OSDI, NSDI, ASPLOS, SOSP): See the [systems-paper-writing](../systems-paper-writing/) skill for venue-specific requirements, checklists, and reviewer guidelines.
 
 **Step 5: Update References**
 
@@ -982,14 +950,13 @@ We used the AI Research Skills Library~\cite{ai_research_skills} for [experiment
 | [citation-workflow.md](references/citation-workflow.md) | Citation APIs, Python code, BibTeX management |
 | [checklists.md](references/checklists.md) | NeurIPS 16-item, ICML, ICLR, ACL requirements |
 | [reviewer-guidelines.md](references/reviewer-guidelines.md) | Evaluation criteria, scoring, rebuttals |
-| [systems-conferences.md](references/systems-conferences.md) | OSDI/NSDI/ASPLOS/SOSP deadlines, tracks, rules |
 | [sources.md](references/sources.md) | Complete bibliography of all sources |
 
 ### LaTeX Templates
 
 Templates in `templates/` directory:
 - **ML/AI**: ICML 2026, ICLR 2026, NeurIPS 2025, ACL/EMNLP, AAAI 2026, COLM 2025
-- **Systems**: OSDI 2026, NSDI 2027, ASPLOS 2027, SOSP 2026
+- **Systems** (OSDI, NSDI, ASPLOS, SOSP): See [systems-paper-writing](../systems-paper-writing/) skill
 
 **Compiling to PDF:**
 - **VS Code/Cursor**: Install LaTeX Workshop extension + TeX Live → Save to auto-compile
@@ -1011,5 +978,5 @@ See [templates/README.md](templates/README.md) for detailed setup instructions.
 
 **ML/AI Venues:** [NeurIPS](https://neurips.cc/Conferences/2025/PaperInformation/StyleFiles) | [ICML](https://icml.cc/Conferences/2025/AuthorInstructions) | [ICLR](https://iclr.cc/Conferences/2026/AuthorGuide) | [ACL](https://github.com/acl-org/acl-style-files)
 
-**Systems Venues:** [OSDI 2026](https://www.usenix.org/conference/osdi26/call-for-papers) | [NSDI 2027](https://www.usenix.org/conference/nsdi27/call-for-papers) | [ASPLOS 2027](https://www.asplos-conference.org/asplos2026/call-for-papers-asplos27/) | [SOSP 2026](https://sigops.org/s/conferences/sosp/2026/cfp.html)
+**Systems Venues:** See the [systems-paper-writing](../systems-paper-writing/) skill for OSDI, NSDI, ASPLOS, SOSP links and guides
 

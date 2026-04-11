@@ -263,7 +263,7 @@ Read `skills/vibe/references/test-pyramid-weighting.md` for test pyramid weighti
    - `0.3 <= weighted_score < 0.6` — acceptable, but recommend more integration tests
    - `weighted_score < 0.3` AND all tests are L0-L1 only — **WARN: unit-only test coverage** (feeds into vibe verdict as a WARN signal, not a separate gate)
 
-   **Satisfaction exposure:** The `weighted_score` is also exposed as `satisfaction_score` (with source `"test-pyramid-weighted"`) in the test_pyramid output block. Downstream consumers (e.g., `/validation` STEP 1.8 holdout evaluation) can use `satisfaction_score` as a normalized quality signal.
+   **Satisfaction exposure:** The `weighted_score` is also exposed as `satisfaction_score` (with source `"test-pyramid-weighted"`) in the test_pyramid output block AND promoted to the top-level verdict JSON as `satisfaction_score` (verdict schema field, `skills/council/schemas/verdict.json`: number 0.0-1.0, "Probabilistic satisfaction score (0.0 = unsatisfied, 1.0 = fully satisfied). Optional — absent means not computed."). Downstream consumers (e.g., `/validation` STEP 1.8 holdout evaluation) can use `satisfaction_score` as a normalized quality signal.
 
    **Include in council packet and vibe report output:**
    ```

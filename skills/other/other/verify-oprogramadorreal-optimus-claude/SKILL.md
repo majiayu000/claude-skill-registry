@@ -68,7 +68,7 @@ Record which commands are available — unavailable commands will be skipped in 
 - Commits ahead: [N]
 - Tech stack: [detected stack]
 - Commands: test ✓/✗, build ✓/✗, lint ✓/✗, type-check ✓/✗
-- Docs: CLAUDE.md ✓/✗, coding-guidelines.md ✓/✗, testing.md ✓/✗
+- Docs: CLAUDE.md ✓/✗, coding-guidelines.md ✓/✗, skill-writing-guidelines.md ✓/✗/n/a, testing.md ✓/✗
 ```
 
 ## Step 2: Gather Verification Plan

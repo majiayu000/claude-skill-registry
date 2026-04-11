@@ -132,6 +132,7 @@ These are the skills every user needs first. Everything else is available when y
 | `/crank` | Autonomous epic loop (uses swarm for each wave) |
 | `/swarm` | Fresh-context parallel execution (Ralph pattern) |
 | `/evolve` | Goal-driven fitness-scored improvement loop |
+| `/dream` | Interactive Dream operator surface for setup, bedtime runs, and morning reports |
 | `/doc` | Documentation generation |
 | `/retro` | Quick-capture a learning (full retro → /post-mortem) |
 | `/validation` | Full validation phase orchestrator (vibe → post-mortem → retro → forge) |

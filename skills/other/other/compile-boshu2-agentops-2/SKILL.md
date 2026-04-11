@@ -449,31 +449,48 @@ clean without requiring manual `/compile` invocations. The hook:
 - Runs only `ao defrag --prune --dedup` (no compilation or mining)
 - Has a 20-second timeout to avoid blocking session teardown
 
-For full compilation, invoke `/compile` manually or schedule it with your host OS:
+For full compilation, invoke `/compile` manually or schedule the headless compiler
+script with your host OS:
 
 ```bash
 # Example: external cron entry for nightly compilation on bushido
-0 3 * * * AGENTOPS_COMPILE_RUNTIME=ollama ao compile --compile-only
+0 3 * * * cd /path/to/repo && AGENTOPS_COMPILE_RUNTIME=ollama bash skills/compile/scripts/compile.sh --force
 ```
 
-AgentOps does **not** currently ship a first-class `ao schedule` command. If you
+AgentOps does **not** currently ship a first-class scheduler subcommand for this
+flow, and the CLI does **not** expose a dedicated compile subcommand. If you
 want unattended compilation today, use your host scheduler (`launchd`, `cron`,
-`systemd`, CI, etc.) to invoke `ao compile --compile-only`. If you want the
-broader private overnight loop, use `ao overnight start` instead of inventing a
-parallel Dream wrapper inside `/compile`.
+`systemd`, CI, etc.) to invoke `bash skills/compile/scripts/compile.sh`.
+If you want the broader private overnight loop, use `ao overnight start`
+instead of inventing a parallel Dream wrapper inside `/compile`.
 
-## Flags
+## Interactive Modes
+
+These modes describe the interactive `/compile` skill behavior:
+
+| Mode | Description |
+|------|-------------|
+| `--compile-only` | Skip mine/grow, just compile + lint |
+| `--lint-only` | Only lint the existing compiled wiki |
+| `--defrag-only` | Only run defrag/cleanup |
+| `--mine-only` | Only run mine + grow (legacy behavior) |
+| `--full` | Full cycle: mine → grow → compile → lint → defrag |
+| `--since 26h` | Time window for the mine phase |
+| `--incremental` | Skip unchanged source files (hash-based) |
+| `--force` | Recompile all articles regardless of hashes |
+
+## Headless Script Flags
+
+For unattended runs, `bash skills/compile/scripts/compile.sh` supports:
 
 | Flag | Default | Description |
 |------|---------|-------------|
-| `--compile-only` | off | Skip mine/grow, just compile + lint |
-| `--lint-only` | off | Only run lint pass on existing wiki |
-| `--defrag-only` | off | Only run defrag/cleanup |
-| `--mine-only` | off | Only run mine + grow (legacy behavior) |
-| `--full` | on | Full cycle: mine → grow → compile → lint → defrag |
-| `--since` | `26h` | Time window for mine phase |
+| `--sources <dir>` | `.agents` | Source root for learnings, patterns, research, retros, forge, and knowledge |
+| `--output <dir>` | `.agents/compiled` | Target directory for compiled wiki output |
 | `--incremental` | on | Skip unchanged source files (hash-based) |
 | `--force` | off | Recompile all articles regardless of hashes |
+| `--lint-only` | off | Only run the lint pass on the existing compiled wiki |
+| `--full` | on | Accepted for parity; default behavior already runs the full headless compile path |
 
 ## Examples
 

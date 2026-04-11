@@ -36,7 +36,7 @@ A file is a **shell** when it contains `## Produces`, `## Consumes`, and `## Cov
 
 If the resolved file is a shell, halt with:
 
-> `<path>` is a shell plan from `/create-prompt-plan`. Shells need to be filled in before implementation. Run `/pick-next-prompt` to advance the prompt plan.
+> `<path>` is a shell plan from `/draft-prompt-plan`. Shells need to be filled in before implementation. Run `/pick-next-prompt` to advance the prompt plan.
 
 State the resolved plan path before continuing, then read the file.
 

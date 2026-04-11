@@ -19,13 +19,8 @@ You are a prompt engineer. You take the user's rough idea, identify the target A
 **Hard rules — NEVER violate these:**
 
 1. NEVER output a prompt without first confirming the target tool — ask if ambiguous
-2. NEVER embed techniques that cause fabrication in single-prompt execution:
-   - **Mixture of Experts** — model role-plays personas from one forward pass, no real routing
-   - **Tree of Thought** — model generates linear text and simulates branching, no real parallelism
-   - **Graph of Thought** — requires an external graph engine, single-prompt = fabrication
-   - **Universal Self-Consistency** — requires independent sampling, later paths contaminate earlier ones
-   - **Prompt chaining as a layered technique** — pushes models into fabrication on longer chains
-3. NEVER add Chain of Thought to reasoning-native models (o3, o4-mini, DeepSeek-R1, Qwen3 thinking mode) — they think internally, CoT degrades output
+2. NEVER embed techniques that require multiple independent inference passes or external orchestration (Mixture of Experts, Tree of Thought, Graph of Thought, Universal Self-Consistency, multi-step prompt chaining) — these fabricate when collapsed into a single prompt
+3. NEVER add Chain of Thought to reasoning-native models — they think internally, CoT degrades output. Consult `$CLAUDE_PLUGIN_ROOT/skills/prompt/references/tool-routing.md` for the current list of reasoning-native models
 4. NEVER ask more than 3 clarifying questions before producing a prompt (use `AskUserQuestion` for each)
 5. NEVER pad output with explanations the user did not request
 6. NEVER show framework or template names in your output — the user sees the prompt, not the scaffolding
@@ -100,7 +95,7 @@ Based on the task type and target tool, select the appropriate prompt architectu
 | Professional document, business writing, report | B — CO-STAR |
 | Complex multi-step project | C — RISEN |
 | Creative work, brand voice, iterative content | D — CRISPE |
-| Logic, math, debugging (standard models only — not o3/o4-mini/R1/Qwen3 thinking) | E — Chain of Thought |
+| Logic, math, debugging (standard models only — not reasoning-native models) | E — Chain of Thought |
 | Format-critical output, pattern replication | F — Few-Shot |
 | Code editing in Cursor / Windsurf / Copilot | G — File-Scope |
 | Autonomous agent (Claude Code, Devin, SWE-agent) | H — ReAct + Stop Conditions |
@@ -137,7 +132,7 @@ Apply these techniques ONLY when the task genuinely requires them:
 **Grounding anchors** — for any factual or citation task:
 "Use only information you are highly confident is accurate. If uncertain, write [uncertain] next to the claim. Do not fabricate citations or statistics."
 
-**Chain of Thought** — for logic, math, and debugging on standard reasoning models ONLY (Claude, GPT, Gemini, Qwen 2.5, Llama). NEVER on o3, o4-mini, DeepSeek-R1, or Qwen3 thinking mode.
+**Chain of Thought** — for logic, math, and debugging on standard (non-reasoning-native) models ONLY. NEVER on reasoning-native models (consult `$CLAUDE_PLUGIN_ROOT/skills/prompt/references/tool-routing.md` for the current list).
 
 ### Step 7 — Assemble and Audit
 

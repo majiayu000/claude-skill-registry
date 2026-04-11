@@ -198,15 +198,3 @@ To update workflows to latest versions:
 
 - `Skill(attune:project-init)` - Full project initialization
 - `Skill(sanctum:pr-prep)` - PR preparation with CI checks
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

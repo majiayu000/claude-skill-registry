@@ -1,11 +1,20 @@
 ---
 name: forge
 description: 'Mine transcripts for knowledge - decisions, learnings, failures, patterns. Triggers: "forge insights", "mine transcripts", "extract knowledge".'
+skill_api_version: 1
 user-invocable: false
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [TASK]
+  intel_scope: full
 metadata:
   tier: background
   dependencies: []
   internal: true
+output_contract: ".agents/learnings/*.md, .agents/patterns/*.md"
 ---
 
 # Forge Skill
@@ -23,6 +32,55 @@ ao forge transcript --last-session --queue --quiet
 
 This queues the session for knowledge extraction.
 
+## Flags
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--promote` | off | Process pending extractions from `.agents/knowledge/pending/` and promote to `.agents/learnings/`. Absorbs the former extract skill. |
+
+## Promote Mode
+
+Given `/forge --promote`:
+
+### Promote Step 1: Find Pending Files
+
+```bash
+ls -lt .agents/knowledge/pending/*.md 2>/dev/null
+ls -lt .agents/ao/pending.jsonl 2>/dev/null
+```
+
+If no pending files found, report "No pending extractions" and exit.
+
+### Promote Step 2: Process Each Pending File
+
+For each file in `.agents/knowledge/pending/`:
+1. Read the file content
+2. Validate it has required fields (`# Learning:`, `**Category**:`, `**Confidence**:`)
+3. Copy to `.agents/learnings/` (preserving filename)
+4. Remove the source file from `.agents/knowledge/pending/`
+
+### Promote Step 3: Process Pending Queue
+
+```bash
+if [ -f .agents/ao/pending.jsonl ] && [ -s .agents/ao/pending.jsonl ]; then
+  # Process each queued session
+  cat .agents/ao/pending.jsonl
+  # After processing, clear the queue
+  > .agents/ao/pending.jsonl
+fi
+```
+
+### Promote Step 4: Report
+
+```
+Promoted N learnings from pending → .agents/learnings/
+Queue cleared.
+```
+
+**Done.** Return immediately after reporting.
+
+---
+
 ## Manual Execution
 
 Given `/forge [path]`:
@@ -32,7 +90,7 @@ Given `/forge [path]`:
 **With ao CLI:**
 ```bash
 # Mine recent sessions
-ao forge --recent
+ao forge transcript --last-session
 
 # Mine specific transcript
 ao forge transcript <path>
@@ -43,6 +101,8 @@ Look at recent conversation history and extract learnings manually.
 
 ### Step 2: Extract Knowledge Types
 
+Read `skills/forge/references/uncaptured-lesson-patterns.md` for signal patterns and the 26 known uncaptured lesson categories.
+
 Look for these patterns in the transcript:
 
 | Type | Signals | Weight |
@@ -51,6 +111,8 @@ Look for these patterns in the transcript:
 | **Learning** | "learned that", "discovered", "realized" | 0.9 |
 | **Failure** | "failed because", "broke when", "didn't work" | 1.0 |
 | **Pattern** | "always do X", "the trick is", "pattern:" | 0.7 |
+
+**Uncaptured Lesson Matching:** During transcript scanning, match events against the 26 known uncaptured lesson patterns (see `references/uncaptured-lesson-patterns.md`). Pre-fill learning templates with matched pattern metadata (category, base confidence, pattern number tag).
 
 ### Step 3: Write Candidates
 
@@ -96,9 +158,9 @@ else
     case "$CONF" in
       high) CONF_NUM=0.9 ;; medium) CONF_NUM=0.6 ;; low) CONF_NUM=0.3 ;; *) CONF_NUM=$CONF ;;
     esac
-    # Auto-promote if confidence >= 0.7
+    # Auto-promote if confidence >= 0.7, prepending required frontmatter
     if (( $(echo "$CONF_NUM >= 0.7" | bc -l) )); then
-      cp "$f" .agents/learnings/
+      { printf -- '---\ntype: learning\nsource: forge\ndate: %s\nmaturity: provisional\nutility: 0.5\n---\n' "$(date +%Y-%m-%d)"; cat "$f"; } > .agents/learnings/"$(basename "$f")"
       TITLE=$(head -1 "$f" | sed 's/^# //')
       echo "{\"file\": \".agents/learnings/$(basename $f)\", \"title\": \"$TITLE\", \"keywords\": [], \"timestamp\": \"$(date -Iseconds)\"}" >> .agents/ao/search-index.jsonl
       echo "Auto-promoted (confidence $CONF): $(basename $f)"
@@ -108,12 +170,33 @@ else
 fi
 ```
 
-### Step 5: Report Results
+### Step 5: Update Capture Tracking
+
+After extracting learnings that match uncaptured lesson patterns (Step 2), record which patterns were captured. This state lives in `.agents/forge/capture-tracking.json` (a runtime artifact, never in `skills/`).
+
+```bash
+mkdir -p .agents/forge
+```
+
+1. Read `.agents/forge/capture-tracking.json` if it exists, otherwise start with `{}`
+2. For each matched pattern, add or update an entry keyed by pattern number:
+   ```json
+   {
+     "3": {"captured": true, "date": "2026-03-30", "learning_path": ".agents/learnings/tooling/use-bin-cp.md"},
+     "7": {"captured": true, "date": "2026-03-29", "learning_path": ".agents/learnings/operations/worktree-commit.md"}
+   }
+   ```
+3. Write the updated JSON back to `.agents/forge/capture-tracking.json`
+
+Pattern numbers correspond to the numbered headings in `references/uncaptured-lesson-patterns.md` (1-30, 26 total patterns).
+
+### Step 6: Report Results
 
 Tell the user:
 - Number of items extracted by type
 - Location of forge output
 - Candidates ready for promotion to learnings
+- **Capture progress:** "X/26 uncaptured lesson patterns captured" (read from `.agents/forge/capture-tracking.json`)
 
 ## The Quality Pool
 
@@ -144,7 +227,7 @@ Transcript → /forge → .agents/forge/ (Tier 0)
 1. Hook calls `ao forge transcript --last-session --queue --quiet`
 2. CLI analyzes session transcript for decisions, learnings, failures, patterns
 3. CLI writes session ID to `.agents/ao/pending.jsonl` queue
-4. Next session start triggers `/extract` to process the queue
+4. Next session start triggers `/forge --promote` to process the queue
 
 **Result:** Session transcript automatically queued for knowledge extraction without user action.
 
@@ -153,7 +236,7 @@ Transcript → /forge → .agents/forge/ (Tier 0)
 **User says:** `/forge <path>` or "mine this transcript for knowledge"
 
 **What happens:**
-1. Agent identifies transcript path or uses `ao forge --recent`
+1. Agent identifies transcript path or uses `ao forge transcript --last-session`
 2. Agent scans transcript for knowledge patterns (decisions, learnings, failures, patterns)
 3. Agent scores each extraction by confidence (0.0-1.0)
 4. Agent writes candidates to `.agents/forge/YYYY-MM-DD-forge.md`
@@ -170,3 +253,7 @@ Transcript → /forge → .agents/forge/ (Tier 0)
 | Low confidence scores | Weak signals or vague conversation | Focus sessions on concrete decisions and explicit learnings |
 | forge --queue fails | CLI not available or permission error | Manually append to `.agents/ao/pending.jsonl` with session metadata |
 | Duplicate forge outputs | Same session forged multiple times | Check forge filenames before writing; ao CLI handles dedup automatically |
+
+## Reference Documents
+
+- [references/uncaptured-lesson-patterns.md](references/uncaptured-lesson-patterns.md) — signal patterns and 26 known uncaptured lesson categories for transcript mining

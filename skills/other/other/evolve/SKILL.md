@@ -64,6 +64,15 @@ Always-on autonomous loop over `/rpi`. Work selection order:
 /evolve --queue=.agents/evolve/roadmap.md --test-first  # Roadmap with strict quality
 ```
 
+## Delineation vs /dream
+
+| Lane | Runs | Mutates code? | Mutates corpus? | Outer loop? | Budget |
+|------|------|---------------|-----------------|-------------|--------|
+| `/dream` | nightly, private local | **No** | **Yes (heavy)** | **Yes (convergence)** | wall-clock + plateau |
+| `/evolve` | daytime, operator-driven | Yes (via `/rpi`) | Yes (light) | Yes | cycle cap |
+
+Dream owns the knowledge compounding layer; `/evolve` owns the code compounding layer. Both share fitness-measurement substrate via `corpus.Compute` / `ao goals measure`. Run Dream overnight, then start each day with `/evolve` against the freshly-compounded corpus with a clean fitness baseline.
+
 ## Flags
 
 | Flag | Default | Description |
@@ -462,6 +471,7 @@ See `references/cycle-history.md` for advanced troubleshooting.
 
 ## See Also
 
+- `skills/dream/SKILL.md` — the nightly knowledge compounder; absorbs /harvest and runs the compounding loop overnight
 - `skills/rpi/SKILL.md` — Full lifecycle orchestrator (called per cycle)
 - `skills/crank/SKILL.md` — Epic execution (called for beads epics)
 - `docs/contracts/autodev-program.md` — Repo-local operational contract for bounded autonomous development

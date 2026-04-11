@@ -1,10 +1,6 @@
 ---
 name: digital-garden-cultivator
-description: 'Consult this skill when cultivating and maintaining digital gardens.
-  Use when managing note collections, creating link structures, maintaining knowledge
-  bases, tending garden health and growth. Do not use when creating memory palace
-  structures - use memory-palace-architect. DO NOT use when: evaluating new knowledge
-  - use knowledge-intake.'
+description: 'Cultivate digital gardens: manage notes, link structures, knowledge bases, and garden health'
 version: 1.7.1
 alwaysApply: false
 category: cultivation

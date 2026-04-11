@@ -1,15 +1,6 @@
 ---
 name: git-platform
-description: 'Git platform detection and cross-platform command mapping for GitHub,
-  GitLab, and Bitbucket.
-
-
-  git platform, forge, github, gitlab, bitbucket, cross-platform
-
-  Use when: executing forge operations (issues, PRs/MRs, CI, API calls) in any skill
-  or command
-
-  Do not use directly: consumed by sanctum and other plugins as infrastructure.'
+description: 'Git platform detection and cross-platform command mapping for GitHub, GitLab, and Bitbucket'
 version: 1.7.1
 alwaysApply: false
 category: infrastructure

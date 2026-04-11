@@ -36,8 +36,16 @@ estimated_tokens: 350
    - `git diff --cached --stat`
    - `git diff --cached`
    - `git log --oneline -5`
+   - When sem is available (see `leyline:sem-integration`):
+     `sem diff --staged --json` for entity-level changes
 
    If nothing is staged, tell the user and stop.
+
+   When sem output is available, use entity names
+   (function, class, method) in the commit subject and
+   body instead of parsing raw diff hunks. For example,
+   "add function validate_webhook_url" instead of
+   "add validation logic to notify.py".
 
 2. **Classify**: Pick type (`feat`, `fix`, `docs`, `refactor`,
    `test`, `chore`, `style`, `perf`, `ci`) and optional scope.

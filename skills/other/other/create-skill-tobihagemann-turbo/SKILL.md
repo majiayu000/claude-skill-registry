@@ -67,14 +67,27 @@ To begin implementation, start with the reusable resources identified above: `sc
 
 Read [references/best-practices.md](references/best-practices.md) for writing style, structure, and content guidelines before writing SKILL.md.
 
+## Task Tracking
+
+At the start of Step 5, use `TaskCreate` to create a task for each remaining step:
+
+- "Review the skill" for Step 5
+- "Run /evaluate-findings skill" for Step 6
+- "Run /apply-findings skill" for Step 7
+
 ## Step 5: Review the Skill
 
-After writing all files:
+After writing all files, spawn a subagent (`model: "opus"`, do not set `run_in_background`) to review the skill. The subagent should read [references/skill-reviewer.md](references/skill-reviewer.md) for review guidelines, read all skill files, and produce a review report following the format in the guidelines.
 
-1. Spawn a subagent (`model: "opus"`, do not set `run_in_background`) to review the skill. The subagent should read [references/skill-reviewer.md](references/skill-reviewer.md) for review guidelines, read all skill files, and produce a review report following the format in the guidelines.
-   - **For new skills**, frame the review as open-ended: propose improvements, convention checks, writing quality.
-   - **For modified skills** (simplification, restructuring, bug fix), frame the review as regression-focused: check whether the change broke anything. Tell the reviewer not to propose new features.
-   - **For same-session iteration** (re-reviewing a skill after applying findings from a previous review in the same session), treat as modified: the review is checking whether the fixes broke anything.
-   - **For batch changes** (multiple skills created or modified in the same session), launch parallel review subagents in a single message with multiple Agent tool calls, one per skill, so they run concurrently.
-2. Run the `/evaluate-findings` skill on the review findings
-3. Run the `/apply-findings` skill on the evaluated findings
+- **For new skills**, frame the review as open-ended: propose improvements, convention checks, writing quality.
+- **For modified skills** (simplification, restructuring, bug fix), frame the review as regression-focused: check whether the change broke anything. Tell the reviewer not to propose new features.
+- **For same-session iteration** (re-reviewing a skill after applying findings from a previous review in the same session), treat as modified: the review is checking whether the fixes broke anything.
+- **For batch changes** (multiple skills created or modified in the same session), launch parallel review subagents in a single message with multiple Agent tool calls, one per skill, so they run concurrently.
+
+## Step 6: Run `/evaluate-findings` Skill
+
+Run the `/evaluate-findings` skill on the review findings.
+
+## Step 7: Run `/apply-findings` Skill
+
+Run the `/apply-findings` skill on the evaluated findings.

@@ -50,6 +50,8 @@ SKILL.md is the routing layer — it tells you WHERE to go, not HOW to execute. 
 | **Researching companies or people, understanding what they build, figuring out use cases, personalizing based on mission/product/industry, enriching a CSV, adding data columns, waterfall enrichment, finding emails/phones/LinkedIn, coalescing data, custom signals, `run_javascript` / `deeplineagent` steps, Apify actors — any task that adds or transforms row-level data** | [enriching-and-researching.md](enriching-and-researching.md)           | `deepline enrich` syntax and all flags. Waterfall patterns with fallback chains. `run_javascript` / `deeplineagent` routing. Multi-pass pipeline patterns (research pass → generation pass). Coalescing patterns. Email/phone/LinkedIn waterfall orders. Custom signal buckets. Apify actor selection. GTM definitions and defaults. |
 | **Writing cold emails, personalizing outreach, lead scoring, qualification, sequence design, campaign copy, inspecting CSVs in Playground.** If the task also requires researching companies/people to inform the writing, read [enriching-and-researching.md](enriching-and-researching.md) too — it has the multi-pass pipeline pattern.                                         | [writing-outreach.md](writing-outreach.md)                             | Prompt templates from `prompts.json`. Scoring rubrics. Email length/tone/structure rules. Personalization patterns. Qualification frameworks. Playground inspection commands.                                                                                                                                                        |
 
+If you are hand-authoring enrich columns instead of using a native play, jump straight to the "Handmade step shape quick reference" section in [enriching-and-researching.md](enriching-and-researching.md). That section spells out the exact runtime contract for `run_javascript`, `extract_js`, `result`, and persisted `matched_result`.
+
 ### Recipes: step-by-step playbooks for specific tasks (check before executing)
 
 The `recipes/` directory contains battle-tested playbooks. **Before you start executing, scan this list and read any recipe that matches your task.**
@@ -295,8 +297,8 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Last reviewed: 2026-04-08
 
 - [parallel playbook](provider-playbooks/parallel.md)
-  Summary: Prefer run-task/search/extract primitives and avoid monitor/stream complexity for agent workflows.
-  Last reviewed: 2026-02-11
+  Summary: Prefer run-task/search/extract primitives; if run-task times out, fetch later with get-task-run-result.
+  Last reviewed: 2026-04-10
 
 - [peopledatalabs playbook](provider-playbooks/peopledatalabs.md)
   Summary: Use clean/autocomplete helpers to normalize input before costly person/company search and enrich calls. Treat company search as a last-resort structured path, and prefer payload files or heredocs for non-trivial SQL-style queries.

@@ -1,6 +1,6 @@
 ---
 name: project-execution
-description: "Execute implementation plans systematically with progress tracking, checkpoint validation, and quality gates. Use when an implementation plan is ready for execution. Skip if no plan exists."
+description: "Execute implementation plans with progress tracking, checkpoint validation, and quality gates."
 version: 1.7.1
 alwaysApply: false
 # Custom metadata (not used by Claude for matching):
@@ -15,50 +15,6 @@ progressive_loading: true
 references:
 - references/mission-report.md
 ---
-## Table of Contents
-
-- [When to Use](#when-to-use)
-- [Integration](#integration)
-- [Execution Framework](#execution-framework)
-- [Pre-Execution Phase](#pre-execution-phase)
-- [Task Execution Loop](#task-execution-loop)
-- [Post-Execution Phase](#post-execution-phase)
-- [Task Execution Pattern](#task-execution-pattern)
-- [TDD Workflow](#tdd-workflow)
-- [Checkpoint Validation](#checkpoint-validation)
-- [Progress Tracking](#progress-tracking)
-- [Execution State](#execution-state)
-- [Progress Reports](#progress-reports)
-- [Yesterday](#yesterday)
-- [Today](#today)
-- [Blockers](#blockers)
-- [Metrics](#metrics)
-- [Completed ([X] tasks)](#completed-([x]-tasks))
-- [In Progress ([Y] tasks)](#in-progress-([y]-tasks))
-- [Blocked ([Z] tasks)](#blocked-([z]-tasks))
-- [Burndown](#burndown)
-- [Risks](#risks)
-- [Blocker Management](#blocker-management)
-- [Blocker Detection](#blocker-detection)
-- [Systematic Debugging](#systematic-debugging)
-- [Escalation](#escalation)
-- [Blocker: [TASK-XXX] - [Issue]](#blocker:-[task-xxx]---[issue])
-- [Quality Assurance](#quality-assurance)
-- [Definition of Done](#definition-of-done)
-- [Testing Strategy](#testing-strategy)
-- [Velocity Tracking](#velocity-tracking)
-- [Burndown Metrics](#burndown-metrics)
-- [Velocity Adjustments](#velocity-adjustments)
-- [Related Skills](#related-skills)
-- [Related Agents](#related-agents)
-- [Related Commands](#related-commands)
-- [Examples](#examples)
-
-
-# Project Execution Skill
-
-Execute implementation plan systematically with checkpoints, validation, and progress tracking.
-
 ## When To Use
 
 - After planning phase completes
@@ -461,15 +417,3 @@ example reports for successful, partial, and failed missions.
 ## Examples
 
 See `/attune:execute` command documentation for complete examples.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

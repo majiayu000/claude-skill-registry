@@ -3,6 +3,7 @@ name: compare-masters
 description: Use when user asks to compare masters, compare schools, compare perspectives, 对比, 各宗怎么看, 不同宗派, 禅净之争, 性相之辩, 空有之争, or wants multiple masters to answer the same question. Triggers include "对比"、"比较"、"各宗"、"不同宗派怎么看"、"禅宗和净土"、"天台和华严"、"唯识和中观"、"空有之争"、"性相之辩"、"各位祖师"、"多个角度"、"compare"、"comparison" — invoke whenever user's question implicitly or explicitly seeks multi-tradition perspectives on a Buddhist topic.
 version: 0.3.0
 license: MIT
+kind: meta-skill
 verified_by: xr843
 verified_at: 2026-04-06
 ---

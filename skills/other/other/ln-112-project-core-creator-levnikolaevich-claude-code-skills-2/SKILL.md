@@ -34,13 +34,7 @@ From coordinator:
   - EXTERNAL_SYSTEMS (from .env.example)
   - CODE_CONVENTIONS (from eslint, prettier)
   - ADR_LIST (from docs/reference/adrs/)
-  - **LEGACY_CONTENT** (optional, from ln-100 Phase 0 migration):
-    - `legacy_architecture`: { layers[], components[], diagrams[], data_flow }
-    - `legacy_requirements`: { functional[], non_functional[], user_stories[] }
-    - `legacy_tech_stack`: { frontend, backend, database, versions }
 - `targetDir`: Project root directory
-
-**LEGACY_CONTENT** is used as base content when creating documents. Priority: **Legacy > Auto-discovery > Template defaults**.
 
 **MANDATORY READ:** Load `shared/references/docs_quality_contract.md`, `shared/references/docs_quality_rules.json`, and `shared/references/markdown_read_protocol.md`.
 
@@ -61,37 +55,24 @@ From coordinator:
 3. Extract architecture-specific data (SRC_STRUCTURE, DEPENDENCIES)
 
 ### Phase 2: Create Documents
-For each document (requirements.md, architecture.md, tech_stack.md, patterns_catalog.md):
+For each document (`docs/project/requirements.md`, `docs/project/architecture.md`, `docs/project/tech_stack.md`, `docs/architecture/patterns_catalog.md`):
 1. Check if file exists (idempotent)
 2. If exists: skip with log
 3. If not exists:
    - Copy template from `references/templates/`
-   - **Check LEGACY_CONTENT for this document type:**
-     - For `architecture.md`: If `LEGACY_CONTENT.legacy_architecture` exists:
-       - Use `legacy_architecture.layers[]` for "## Building Block View" (Section 5)
-       - Use `legacy_architecture.components[]` for component descriptions
-       - Use `legacy_architecture.diagrams[]` for existing diagrams (preserve mermaid/images)
-       - Use `legacy_architecture.data_flow` for "## Runtime View" (Section 6)
-       - Merge with auto-discovered SRC_STRUCTURE (legacy takes priority)
-       - Mark: `<!-- Migrated from legacy documentation -->` at top of merged sections
-     - For `requirements.md`: If `LEGACY_CONTENT.legacy_requirements` exists:
-       - Use `legacy_requirements.functional[]` as base for FR-XXX requirements
-       - Use `legacy_requirements.user_stories[]` if FR format not found
-       - Augment with template structure (add MoSCoW labels if missing)
-     - For `tech_stack.md`: If `LEGACY_CONTENT.legacy_tech_stack` exists:
-       - Use `legacy_tech_stack.versions` as base for technology versions
-       - Merge with auto-discovered TECH_STACK (legacy versions take priority)
-       - Use `legacy_tech_stack.rationale` for decision explanations
-     - For `patterns_catalog.md`:
-       - Copy template from `shared/templates/patterns_template.md`
-       - **Auto-detect patterns in codebase:**
-         - Grep("Queue|Worker|Job|Bull") → Job Processing
-         - Grep("EventEmitter|publish|subscribe") → Event-Driven
-         - Grep("Cache|Redis|Memcached") → Caching
-         - Grep("CircuitBreaker|Retry") → Resilience
-       - Add detected patterns as "Status: Detected" (not yet audited)
-       - Link to existing ADRs if pattern names match
-       - Mark: `<!-- Auto-detected by ln-112, audit with ln-640 -->`
+   - `docs/project/requirements.md`: derive requirements from current product/project sources and normalize to FR-XXX structure
+   - `docs/project/architecture.md`: derive structure from current source tree, ADRs, and runtime boundaries; generate diagrams from live code facts
+   - `docs/project/tech_stack.md`: derive versions and rationale from current dependencies and config files
+   - `docs/architecture/patterns_catalog.md`:
+     - Copy template from `shared/templates/patterns_template.md`
+     - **Auto-detect patterns in the current codebase:**
+       - Grep("Queue|Worker|Job|Bull") → Job Processing
+       - Grep("EventEmitter|publish|subscribe") → Event-Driven
+       - Grep("Cache|Redis|Memcached") → Caching
+       - Grep("CircuitBreaker|Retry") → Resilience
+     - Add detected patterns as "Status: Detected" (not yet audited)
+     - Link to existing ADRs if pattern names match
+     - Mark: `<!-- Auto-detected by ln-112, audit with ln-640 -->`
    - Replace `{{PLACEHOLDER}}` with Context Store values
    - Preserve the shared opening contract: `SCOPE`, `DOC_KIND`, `DOC_ROLE`, `READ_WHEN`, `SKIP_WHEN`, `PRIMARY_SOURCES`
    - Preserve the standard top sections: `Quick Navigation`, `Agent Entry`, `Maintenance`
@@ -185,7 +166,7 @@ Write the summary to the provided artifact path or return the same envelope in s
 - [ ] Status returned
 
 ## Reference Files
-- Templates: `references/templates/requirements_template.md`, `architecture_template.md`, `tech_stack_template.md`
+- Templates: `references/templates/requirements_template.md`, `references/templates/architecture_template.md`, `references/templates/tech_stack_template.md`
 - Patterns template: `shared/templates/patterns_template.md`
 - Questions: `references/questions_core.md` (Q23-Q38)
 

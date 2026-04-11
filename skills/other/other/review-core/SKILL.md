@@ -1,10 +1,6 @@
 ---
 name: review-core
-description: 'Use this skill at the BEGINNING of any detailed review for consistent
-  structure. Use when starting any detailed review workflow, needing consistent structure
-  for capturing context and findings, ensuring comparable review outputs. Do not use
-  when quick catchup without formal review - use catchup. DO NOT use when: diff-focused
-  analysis - use diff-analysis.'
+description: 'Reusable scaffolding for review workflows with context establishment, evidence capture, and structured output.'
 version: 1.7.1
 alwaysApply: false
 category: review-patterns
@@ -36,7 +32,6 @@ estimated_tokens: 1500
 6. [Step 3 – Capture Evidence](#step-3--capture-evidence-review-coreevidence-captured)
 7. [Step 4 – Structure Deliverables](#step-4--structure-deliverables-review-coredeliverables-structured)
 8. [Step 5 – Contingency Plan](#step-5--contingency-plan-review-corecontingencies-documented)
-9. [Troubleshooting](#troubleshooting)
 
 ## When To Use
 - Use this skill at the beginning of any detailed review workflow (e.g., for architecture, math, or an API).
@@ -93,15 +88,3 @@ estimated_tokens: 1500
 ## Exit Criteria
 - All TodoWrite items complete with concrete notes (commands run, files listed, evidence paths).
 - Domain-specific review can now assume consistent context/evidence/deliverable scaffolding and focus on specialized analysis.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

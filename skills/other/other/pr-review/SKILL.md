@@ -40,6 +40,7 @@ dependencies:
 - sanctum:version-updates
 - pensive:unified-review
 - imbue:proof-of-work
+- imbue:justify
 - memory-palace:review-chamber
 - scribe:slop-detector
 - scribe:doc-generator
@@ -56,6 +57,7 @@ dependencies:
 - [Phase 3: Requirements Validation](#phase-3-requirements-validation)
 - [Phase 1.5: Version Validation (MANDATORY)](#phase-15-version-validation-mandatory)
 - [Phase 4: Code Review with Scope Context](#phase-4-code-review-with-scope-context)
+- [Phase 4.5: Additive Bias Audit](#phase-45-additive-bias-audit)
 - [Phase 5: Backlog Triage](#phase-5-backlog-triage)
 - [Phase 6: Generate Report](#phase-6-generate-report)
 - [Phase 7: Knowledge Capture](#phase-7-knowledge-capture)
@@ -279,6 +281,33 @@ Scope check: Is input validation mentioned in requirements?
 ```
 **Verification:** Run the command with `--help` flag to verify availability.
 
+### Phase 4.5: Additive Bias Audit
+
+Run `Skill(imbue:justify)` on the PR changes to detect
+AI additive bias, test-logic tampering, and unnecessary
+complexity.
+
+**Key checks:**
+
+1. **Additive bias score** -- flag changes with high
+   add/delete ratio (>5:1) that lack justification
+2. **Iron Law compliance** -- verify test assertions were
+   not weakened to match broken implementations
+3. **Minimal intervention** -- confirm each changed file
+   was necessary and the change was the smallest fix
+
+**Classify justify findings using the scope framework:**
+
+| Justify Signal | Likely Classification |
+|---------------|----------------------|
+| Test logic tampered | BLOCKING |
+| High additive bias, no justification | IN-SCOPE |
+| Premature abstraction | SUGGESTION |
+| Compatibility shim | BACKLOG |
+
+Include the additive bias score and Iron Law status in
+the Phase 6 report.
+
 ### Phase 5: Backlog Triage
 
 For each BACKLOG item, create an issue on the detected platform:
@@ -494,16 +523,3 @@ Apply `scribe:slop-detector` to PR body:
 ## Supporting Modules
 
 - [GitHub PR comment patterns](modules/github-comments.md) - `gh api` patterns for inline and summary PR comments
-
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

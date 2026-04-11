@@ -27,6 +27,7 @@ usage_patterns:
 - verification-gate-routing
 - parallel-safety-validation
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 500
 progressive_loading: true
 modules:

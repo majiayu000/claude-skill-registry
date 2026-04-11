@@ -1,6 +1,6 @@
 ---
 name: precommit-setup
-description: "Configure pre-commit hooks for linting, type checking, formatting, and testing to enforce quality gates before commits. Use when setting up quality gates for a project. Skip if pre-commit is already configured."
+description: "Configure pre-commit hooks for linting, type checking, formatting, and testing to enforce quality gates on every commit."
 version: 1.7.1
 globs: "**/.pre-commit-config.yaml"
 alwaysApply: false
@@ -10,6 +10,7 @@ tools: [Read, Write, Bash]
 category: infrastructure
 tags: [pre-commit, quality-gates, linting, type-checking, testing]
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 1800
 ---
 ## Table of Contents

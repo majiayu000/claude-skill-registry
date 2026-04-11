@@ -1,9 +1,6 @@
 ---
 name: makefile-review
-description: 'Use this skill for Makefile audit and optimization. Use when auditing
-  Makefiles, reviewing build system, checking portability, eliminating recipe duplication.
-  Do not use when creating new Makefiles - use abstract:make-dogfood. DO NOT use when:
-  architecture review - use architecture-review.'
+description: 'Audit Makefiles for build correctness, portability, and recipe duplication'
 version: 1.7.1
 globs: "**/Makefile"
 alwaysApply: false

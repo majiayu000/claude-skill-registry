@@ -31,6 +31,7 @@ usage_patterns:
 - usage-analytics
 - session-management
 complexity: beginner
+model_hint: fast
 estimated_tokens: 450
 progressive_loading: true
 modules:
@@ -169,15 +170,3 @@ grep "2025-12-05" ~/.claude/leyline/usage/my-service.jsonl
 - Operation logged with all required fields
 - Session tracked for grouping
 - Logs queryable for analytics
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

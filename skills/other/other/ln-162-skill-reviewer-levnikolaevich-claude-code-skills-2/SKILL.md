@@ -61,8 +61,16 @@ Report:
 Run:
 
 ```bash
-bash references/run_checks.sh {scoped SKILL.md files}
+# Never pass a giant mixed scope in one invocation.
+# Split by `ln-NXX` family or by coordinator/worker group.
+bash references/run_checks.sh {batch_1 SKILL.md files}
+bash references/run_checks.sh {batch_2 SKILL.md files}
 ```
+
+Batching rules:
+- keep each invocation within one `ln-NXX` family when possible
+- if scope mixes coordinators and workers, split them into separate invocations
+- if one family is still large, chunk it into 5-10 files per invocation
 
 Automated failures are pre-verified. Record every one.
 

@@ -9,6 +9,12 @@ source: community
 
 Review changes on this branch for bugs, security vulnerabilities, and code quality issues.
 
+## When to Use
+
+- You need a review focused on bugs, security issues, or risky code changes.
+- The task involves auditing the current branch diff rather than implementing new behavior.
+- You want a structured review process with checklist-driven verification against changed files.
+
 ## Phase 1: Complete Input Gathering
 
 1. Get the FULL diff: `git diff $(gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name')...HEAD`

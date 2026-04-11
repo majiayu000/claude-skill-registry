@@ -30,6 +30,7 @@ references that other skills load based on file types being processed.
 | LLM Trust Boundaries | `references/llm-trust-boundary-checklist.md` | vibe, pre-mortem (when LLM code detected) |
 | Race Conditions | `references/race-condition-checklist.md` | vibe, pre-mortem (when concurrent code detected) |
 | Codex Skills | `references/codex-skill.md` | vibe (when `skills-codex/` or converter files detected) |
+| Behavioral Discipline | `references/behavioral-discipline.md` | implement, review, vibe, pre-mortem |
 | Test Pyramid | `references/test-pyramid.md` | plan, pre-mortem, implement, crank, validation, post-mortem |
 
 ## How It Works
@@ -64,6 +65,7 @@ Specialized checklists for high-risk code patterns. Loaded automatically by `$vi
 | `llm-trust-boundary-checklist.md` | `anthropic`, `openai` imports, prompt templates, `*llm*`/`*prompt*` files | Prompt injection, output validation, cost control |
 | `race-condition-checklist.md` | Goroutines, threads, `asyncio`, `sync.Mutex`, shared file I/O | Shared state, file races, database races |
 | `codex-skill.md` | Files under `skills-codex/`, `convert.sh`, `skills-codex-overrides/` | Codex API conformance, prohibited primitives, tool mapping |
+| `behavioral-discipline.md` | Execution, review, or plan-validation tasks with ambiguity or broad blast radius | Hidden assumptions, overbuilding, drive-by edits, weak verification |
 
 Skills detect triggers via file content patterns and import statements. Each checklist's "When to Apply" section defines exact detection rules.
 
@@ -83,6 +85,7 @@ For comprehensive audits, skills can load extended standards from
 Skills that use standards:
 - `$vibe` - Loads based on changed file types
 - `$implement` - Loads for files being modified
+- `$review` - Loads for change-quality and blast-radius checks
 - `$doc` - Loads markdown standards
 - `$bug-hunt` - Loads for root cause analysis
 - `$complexity` - Loads for refactoring recommendations
@@ -127,6 +130,7 @@ Skills that use standards:
 ## Reference Documents
 
 - [references/common-standards.md](references/common-standards.md)
+- [references/behavioral-discipline.md](references/behavioral-discipline.md)
 - [references/examples-troubleshooting-template.md](references/examples-troubleshooting-template.md)
 - [references/go.md](references/go.md)
 - [references/json.md](references/json.md)
@@ -149,6 +153,7 @@ Skills that use standards:
 ### references/
 
 - [references/codex-skill.md](references/codex-skill.md)
+- [references/behavioral-discipline.md](references/behavioral-discipline.md)
 - [references/common-standards.md](references/common-standards.md)
 - [references/examples-troubleshooting-template.md](references/examples-troubleshooting-template.md)
 - [references/go.md](references/go.md)
@@ -169,5 +174,4 @@ Skills that use standards:
 ### scripts/
 
 - `scripts/validate.sh`
-
 

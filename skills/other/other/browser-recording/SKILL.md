@@ -17,6 +17,7 @@ tools:
 - Write
 - Bash
 complexity: medium
+model_hint: standard
 estimated_tokens: 500
 progressive_loading: true
 modules:
@@ -213,15 +214,3 @@ Default output paths:
 ## See Also
 
 - scry:gif-generation: Convert video to optimized GIF
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

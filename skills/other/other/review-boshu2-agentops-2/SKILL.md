@@ -57,6 +57,17 @@ ao metrics cite "<learning-path>" --type applied 2>/dev/null || true
 
 Skip silently if ao is unavailable or returns no results.
 
+### Step 0.5: Apply Behavioral Discipline
+
+Load the behavioral discipline standard from `$standards` before reviewing the diff. Use it to answer four questions:
+
+1. What assumptions does this change make, and were they surfaced or silently chosen?
+2. Could the same outcome be achieved with a smaller or more local change?
+3. Does every changed line trace back to the stated goal?
+4. Does the verification prove the claimed behavior, or only that the code builds?
+
+If any answer is weak, record the problem as a finding. Hidden assumptions, speculative abstractions, drive-by edits, and weak verification are review defects, not style preferences.
+
 ---
 
 ### Step 1: Fetch the Diff
@@ -160,6 +171,9 @@ Review every changed file against the SCORED checklist. For each category, activ
 - [ ] Abstraction level is appropriate (not over-engineered, not under-abstracted)
 - [ ] API surface is minimal and consistent with existing patterns
 - [ ] Changes are cohesive (single concern per PR, not mixing refactoring with features)
+- [ ] Ambiguity was surfaced instead of silently assumed away
+- [ ] No speculative flexibility or abstractions beyond the stated need
+- [ ] Every changed line traces to the requested outcome or required cleanup
 - [ ] Dependencies flow in the right direction (no circular imports)
 - [ ] Test coverage: new code has tests, tests verify behavior (not just coverage)
 - [ ] Breaking changes are documented and intentional

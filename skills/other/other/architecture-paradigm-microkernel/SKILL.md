@@ -1,15 +1,8 @@
 ---
 name: architecture-paradigm-microkernel
-description: 'Minimal core system with plugin-based feature extensibility for platform
-  development.
-
-
-  Triggers: microkernel, plugin-architecture, extensibility, platform-design
-
-  Use when: platforms/IDEs/marketplaces, core stability critical, plugin isolation
-  needed
-
-  DO NOT use when: selecting paradigms (use architecture-paradigms first), no extensibility needed.'
+description: 'Microkernel architecture with a minimal core and plugin-based extensibility for platforms.'
+version: 1.7.1
+alwaysApply: false
 category: architectural-pattern
 tags:
 - architecture
@@ -27,9 +20,9 @@ usage_patterns:
 - platform-development
 - extensibility-design
 complexity: high
+model_hint: deep
 estimated_tokens: 900
 ---
-
 # The Microkernel (Plugin) Architecture Paradigm
 
 
@@ -67,15 +60,3 @@ estimated_tokens: 900
   - **Mitigation**: Use semantic versioning (SemVer) rigorously for both the core and the plugins. Where necessary, provide abstraction layers or "shims" to maintain backward compatibility with older plugins.
 - **Core System Bloat**:
   - **Mitigation**: There is often pressure to add feature logic to the stable core. Aggressively resist this temptation. The core should remain minimal, with new features implemented as plugins whenever possible.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

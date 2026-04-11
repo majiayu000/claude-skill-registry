@@ -1,10 +1,6 @@
 ---
 name: context-optimization
-description: 'Use this skill BEFORE starting complex tasks. Check context levels proactively.
-  Use when context usage approaches 50% of window, tasks need decomposition, complex
-  multi-step operations planned, context pressure is high. Do not use when simple
-  single-step tasks with low context usage. DO NOT use when: already using mcp-code-execution
-  for tool chains.'
+description: 'Analyze and optimize context window usage with MECW principles, memory tiering, session routing, and subagent coordination.'
 version: 1.7.1
 alwaysApply: false
 category: conservation
@@ -15,7 +11,6 @@ modules:
 - modules/findings-format.md
 - modules/mecw-assessment.md
 - modules/mecw-principles.md
-- modules/mecw-theory.md
 - modules/memory-tiers.md
 - modules/session-routing.md
 - modules/subagent-coordination.md
@@ -44,7 +39,6 @@ model_hint: standard
 ---
 ## Table of Contents
 
-- [Quick Start](#quick-start)
 - [When to Use](#when-to-use)
 - [Core Hub Responsibilities](#core-hub-responsibilities)
 - [Module Selection Strategy](#module-selection-strategy)
@@ -54,14 +48,6 @@ model_hint: standard
 
 
 # Context Optimization Hub
-
-## Quick Start
-
-### Basic Usage
-```bash
-# Analyze current context usage
-python -m conserve.context_analyzer
-```
 
 ## When To Use
 
@@ -128,8 +114,7 @@ def select_optimal_modules(context_situation, task_complexity):
 
 ## Resources
 
-- **MECW Theory**: See `modules/mecw-principles.md` for core concepts and the 50% rule.
-- **MECW Theory (Extended)**: See `modules/mecw-theory.md` for pressure levels, compliance checking, and monitoring patterns.
+- **MECW Theory**: See `modules/mecw-principles.md` for core concepts, the 50% rule, and quick-start code examples.
 - **Context Analysis**: See `modules/mecw-assessment.md` for risk identification.
 - **Workflow Delegation**: See `modules/subagent-coordination.md` for decomposition patterns.
 - **Context Waiting**: See `modules/context-waiting.md` for deferred loading strategies.

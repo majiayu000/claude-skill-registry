@@ -25,6 +25,7 @@ dependencies:
 - sanctum:shared
 - sanctum:git-workspace-review
 - imbue:proof-of-work
+- imbue:justify
 - imbue:structured-output
 - scribe:slop-detector
 - scribe:doc-generator
@@ -107,6 +108,13 @@ git log --oneline $(git merge-base HEAD origin/master)..HEAD | \
   grep -iE '(fmt|format|lint|style|whitespace)' || true
 ```
 
+**Additive bias audit:**
+
+Run `Skill(imbue:justify)` to compute the additive bias
+score and check Iron Law compliance. If the score is
+YELLOW or above, justify each flagged signal before
+proceeding. If RED or STOP, rethink the approach.
+
 **Manual verification:**
 
 - [ ] Read the full diff -- does every change serve the
@@ -115,6 +123,8 @@ git log --oneline $(git merge-base HEAD origin/master)..HEAD | \
 - [ ] No commented-out code blocks
 - [ ] No formatting changes mixed with logic changes
 - [ ] No fixup commits that should be squashed
+- [ ] Additive bias score is GREEN or justified YELLOW
+- [ ] Iron Law compliance: PASS (no test tampering)
 
 If issues are found, fix them before proceeding.
 

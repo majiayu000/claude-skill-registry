@@ -1,6 +1,6 @@
 ---
 name: 002-agents-inventory
-description: Use when you need to generate a checklist document with embedded agents inventory, following the embedded template exactly and producing AGENTS-JAVA.md in the project root. Part of the skills-for-java project
+description: Use when you need to generate a checklist document with embedded agents inventory, following the embedded template exactly and producing INVENTORY-AGENTS-JAVA.md in the project root. Part of the skills-for-java project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
@@ -13,7 +13,7 @@ Create a comprehensive checklist document for embedded agents inventory by follo
 **What is covered in this Skill?**
 
 - Exact-template checklist generation
-- Output file creation as `AGENTS-JAVA.md`
+- Output file creation as `INVENTORY-AGENTS-JAVA.md`
 - Strict adherence to listed sections and content
 
 ## Constraints
@@ -27,7 +27,7 @@ Follow the template exactly without adding or removing sections, rows, or detail
 ## When to use this skill
 
 - Create embedded agents inventory checklist
-- Generate AGENTS-JAVA.md
+- Generate INVENTORY-AGENTS-JAVA.md
 - Use @002-agents-inventory
 
 ## Reference

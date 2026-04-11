@@ -1,6 +1,6 @@
 ---
 name: ln-012-mcp-configurator
-description: "Installs MCP packages, registers servers in Claude Code, configures hooks, permissions, IDE extension permission mode, and migrations. Use when MCP needs setup or reconfiguration."
+description: "Use when installing MCP packages and configuring Claude-side MCP registration, hooks, permissions, IDE extension mode, and migrations."
 license: MIT
 ---
 
@@ -11,18 +11,60 @@ license: MIT
 **Type:** L3 Worker
 **Category:** 0XX Shared
 
-Configures MCP servers in Claude Code: installs npm packages, registers servers, installs hooks and output style, migrates allowed-tools, updates instruction files, grants permissions.
+Invocation is agent-agnostic. Target surfaces are Claude-specific: this skill configures Claude Code MCP settings, hook/style sync, permissions, and Claude Code IDE extension permission mode.
 
 ---
+
+## MANDATORY READ
+
+**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`, `shared/references/environment_worker_runtime_contract.md`, and `shared/references/worker_runtime_contract.md`
 
 ## Input / Output
 
 | Direction | Content |
 |-----------|---------|
-| **Input** | OS info, `dry_run` flag, optional `apply_ide_override` flag (default `false` — Phase 7b is detection-only without it), optional `runId`, optional `summaryArtifactPath` |
+| **Input** | OS info, `dry_run` flag, optional `apply_ide_override` flag (default `false` — Phase 6b is detection-only without it), optional `runId`, optional `summaryArtifactPath` |
 | **Output** | Structured summary envelope with `payload.status` = `completed` / `skipped` / `error`, plus per-server outcomes in `changes` / `detail`, plus IDE extension state in `payload.ide_extension` |
 
 If `summaryArtifactPath` is provided, write the same summary JSON there. If not provided, return the summary inline and remain fully standalone. If `runId` is not provided, generate a standalone `run_id` before emitting the summary envelope.
+
+## Runtime
+
+Runtime family: `environment-worker-runtime`
+
+Phase profile:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_CHECK_STATUS_AND_VERSION`
+3. `PHASE_2_REGISTER_AND_CONFIGURE`
+4. `PHASE_3_VERIFY_GRAPH_PROVIDER_DEPS`
+5. `PHASE_4_HOOKS_AND_OUTPUT_STYLE`
+6. `PHASE_5_GRAPH_INDEXING`
+7. `PHASE_6_MIGRATE_ALLOWED_TOOLS`
+8. `PHASE_7_PERMISSION_SURFACES`
+9. `PHASE_8_WRITE_SUMMARY`
+10. `PHASE_9_SELF_CHECK`
+
+Runtime rules:
+- emit `summary_kind=env-mcp-config`
+- standalone runs generate their own `run_id` and write the default worker-family artifact path
+- managed runs require both `runId` and `summaryArtifactPath` and must write the summary to the exact provided path
+- always write the validated summary artifact before terminal outcome
+
+## Output Contract
+
+Always build a structured `env-mcp-config` summary envelope per:
+- `shared/references/coordinator_summary_contract.md`
+- `shared/references/environment_worker_runtime_contract.md`
+
+Payload fields:
+- `servers`
+- `permissions`
+- `ide_extension`
+- `hooks_synced`
+- `output_style_synced`
+- `allowed_tools_migrated`
+- `graph_provider_status`
+- `status`
 
 ---
 
@@ -268,7 +310,7 @@ After all Phase 2 registrations complete:
 2. Verify the startup sync results below
 
 **Hooks** (in `~/.claude/settings.json`):
-1. `PreToolUse` hook — redirects built-in Read/Edit/Write/Grep to hex-line equivalents
+1. `PreToolUse` hook — redirects built-in Read/Edit/Write/Grep/Glob to hex-line equivalents (`Glob` -> `inspect_path(pattern=...)`)
 2. `PostToolUse` hook — compresses verbose tool output (RTK filter)
 3. `SessionStart` hook — injects MCP Tool Preferences reminder
 4. **`disableAllHooks`:** After verifying hooks are synced, read `~/.claude/settings.json`, set `disableAllHooks: false` (merge, preserve all other fields), write back. This is appropriate here because the user explicitly invoked setup and wants hooks active. autoSync does NOT manage this flag — it only syncs hook file content and entries.
@@ -311,10 +353,11 @@ Scan project commands/skills to replace built-in tools with hex-line equivalents
 | `Edit` | `mcp__hex-line__edit_file` |
 | `Write` | `mcp__hex-line__write_file` |
 | `Grep` | `mcp__hex-line__grep_search` |
+| `Glob` | `mcp__hex-line__inspect_path` |
 
 **Steps:**
 
-1. Glob `.claude/commands/*.md` + `.claude/skills/*/SKILL.md` in current project
+1. Discover `.claude/commands/*.md` via `mcp__hex-line__inspect_path(path=".claude/commands", pattern="*.md", max_entries=0)` and `.claude/skills/*/SKILL.md` via `mcp__hex-line__inspect_path(path=".claude/skills", pattern="SKILL.md", max_entries=0)`
 2. For each file: parse YAML frontmatter, extract `allowed-tools`
 3. For each mapping entry:
    a. If built-in present AND hex equivalent absent -> add hex equivalent, remove built-in (except `Read` and `Bash`)
@@ -332,30 +375,9 @@ Scan project commands/skills to replace built-in tools with hex-line equivalents
 | All hex equivalents present | Skip file, report "already migrated" |
 | `dry_run: true` | Show planned changes |
 
-### Phase 6: Update Instruction Files [CRITICAL]
+### Phase 6: Grant Permissions
 
-Ensure instruction files have the canonical MCP Tool Preferences policy section.
-
-**MANDATORY READ:** Load `skills-catalog/shared/references/mcp_tool_preferences.md` -> use it as the SSOT for instruction-file MCP policy.
-
-**Steps:**
-
-1. For each file: CLAUDE.md, GEMINI.md, AGENTS.md (if exists in project)
-2. Search for `## MCP Tool Preferences` or `### MCP Tool Preferences`
-3. If MISSING -> insert before `## Navigation` (or at end of conventions/rules block)
-4. If PRESENT but OUTDATED -> replace the full section so it matches the shared reference, not just the table rows
-5. Preserve the shared policy's hard boundaries: MCP-first for repo search/read/edit, shell and built-ins as explicit fallback only
-6. For GEMINI.md: adapt agent-specific tool names only where needed, but preserve the same policy meaning and fallback rules
-7. Preserve the policy guidance about `base_revision`, `verify`, retry helpers, summary-first search, and avoiding shell repo-wide search/read patterns when MCP covers the task
-
-**Skip conditions:**
-
-| Condition | Action |
-|-----------|--------|
-| File doesn't exist | Skip |
-| Section already matches template | Skip, report "up to date" |
-
-### Phase 7: Grant Permissions
+Instruction files and `MCP Tool Preferences` content are owned by `ln-014-agent-instructions-manager`. This skill must not create or rewrite `CLAUDE.md`, `AGENTS.md`, or `GEMINI.md`.
 
 Ensure built-in tools and MCP server prefixes are in `~/.claude/settings.json` -> `permissions.allow[]`.
 
@@ -391,7 +413,7 @@ Ensure built-in tools and MCP server prefixes are in `~/.claude/settings.json` -
 
 **Idempotent:** existing universal entries skipped. Only specific sub-entries are consolidated into universal ones.
 
-### Phase 7b: Verify IDE Extension Permission Mode
+### Phase 6b: Verify IDE Extension Permission Mode
 
 The Claude Code IDE extension (Cursor / VSCode) has its own `claudeCode.initialPermissionMode` setting that **overrides** `permissions.defaultMode` from `~/.claude/settings.json` when Claude runs through the IDE. Default value is `"default"` — this silently ignores any project-level `bypassPermissions` from `.claude/settings.local.json`. To actually enable bypass when running through the IDE, two extension settings must be set together.
 
@@ -465,7 +487,7 @@ When applying changes:
 - Users may legitimately want different modes per IDE (e.g. `acceptEdits` in Cursor for daily work, `bypassPermissions` in a separate VSCode profile for sandbox automation)
 - Aligns with the no-agent-config-modification rule from the host project memory: detection always, writes only on explicit consent
 
-### Phase 8: Report
+### Phase 7: Report
 
 **Status table:**
 
@@ -484,6 +506,7 @@ IDE Extension Permission Mode:
 |---------|-------------------|-----------------------|---------------------------------|-----------------|-----------------------------------|
 | Cursor  | 2.1.92            | bypassPermissions     | true                            | bypass-active   | aligned                           |
 | VSCode  | (not installed)   | —                     | —                               | no-ide          | n/a                               |
+
 ```
 
 ---
@@ -502,7 +525,7 @@ IDE Extension Permission Mode:
 10. **Verify graph-specific deps after install.** After Phase 2 registration, check system binaries for hex-line, graph-specific optional providers, and optional SCIP exporters for detected project languages. Auto-install only with user consent. Never install project runtimes or framework packages here.
 11. **Report EOL churn risk, do not hide it.** If `.gitattributes`, `.editorconfig`, or Git config suggest working-tree line-ending rewrites, warn explicitly instead of silently changing repo policy here.
 12. **Non-destructive config writes.** Always read → merge → edit. Never overwrite config files from scratch. Preserve all keys/sections not owned by this skill.
-13. **IDE extension settings are detection-first.** Phase 7b reads `claudeCode.*` keys from Cursor / VSCode user settings and reports the effective permission mode, but never writes IDE settings without `apply_ide_override=true` AND an explicit user prompt confirmation. IDE settings are vendor-specific and changing `bypassPermissions` is a security decision the user must own.
+13. **IDE extension settings are detection-first.** Phase 6b reads `claudeCode.*` keys from Cursor / VSCode user settings and reports the effective permission mode, but never writes IDE settings without `apply_ide_override=true` AND an explicit user prompt confirmation. IDE settings are vendor-specific and changing `bypassPermissions` is a security decision the user must own.
 
 ## Anti-Patterns
 
@@ -522,6 +545,8 @@ IDE Extension Permission Mode:
 | Overwrite entire config file with only known fields | Read existing → deep-merge only owned fields → edit back |
 | Silently flip `claudeCode.initialPermissionMode` to `bypassPermissions` because the project asked for it | Detect, WARN about the override, require `apply_ide_override=true` AND explicit user confirmation before writing IDE settings |
 | Set `initialPermissionMode = "bypassPermissions"` without also setting `allowDangerouslySkipPermissions = true` | Both keys are required together — without the gate the mode silently degrades to default |
+| Treat IDE `bypassPermissions` as a substitute for Codex CLI defaults | Keep Codex execution-default ownership in `ln-013-config-syncer` |
+| Mutate `~/.codex/config.toml` from this worker because it is also permission-related | Route the actual Codex CLI write to `ln-013-config-syncer` |
 | Tell user to use Reload Window after changing IDE settings | Always tell user to fully Quit + reopen — extension reads settings only at activation, not on Reload Window |
 
 ---
@@ -534,11 +559,12 @@ IDE Extension Permission Mode:
 - [ ] Graph-specific dependencies verified: ripgrep available, detected hex-graph providers and SCIP exporters reported (Phase 2b)
 - [ ] Hooks auto-synced after first `hex-line` startup (PreToolUse, PostToolUse, SessionStart) and `disableAllHooks: false` (Phase 3)
 - [ ] Output style installed (Phase 3)
-- [ ] Permissions granted for all configured servers (Phase 7)
-- [ ] IDE extension permission mode detected for installed Cursor / VSCode and reported with WARN if it overrides project `defaultMode` (Phase 7b). Writes only with `apply_ide_override=true` AND user consent.
+- [ ] Permissions granted for all configured servers (Phase 6)
+- [ ] IDE extension permission mode detected for installed Cursor / VSCode and reported with WARN if it overrides project `defaultMode` (Phase 6b). Writes only with `apply_ide_override=true` AND user consent.
 - [ ] Project allowed-tools migrated (Phase 5)
-- [ ] MCP Tool Preferences in all instruction files (Phase 6)
-- [ ] Status table with version column displayed (Phase 8) including IDE extension permission mode row
+- [ ] Status table with version column displayed (Phase 7) including IDE extension permission mode row
+- [ ] Structured summary returned
+- [ ] Summary artifact written to the managed or standalone runtime path
 
 ---
 

@@ -1,4 +1,5 @@
 ---
+name: research-add-fields
 user-invocable: true
 description: Add field definitions to existing research outline.
 allowed-tools: Bash, Read, Write, Glob, WebSearch, Task, AskUserQuestion

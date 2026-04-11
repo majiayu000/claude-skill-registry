@@ -2,6 +2,7 @@
 name: ln-721-frontend-restructure
 description: "Scaffolds new React projects or restructures monoliths to component-based architecture. Use when setting up frontend structure."
 license: MIT
+model: claude-sonnet-4-6
 ---
 
 > **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
@@ -10,7 +11,6 @@ license: MIT
 
 **Type:** L3 Worker
 **Category:** 7XX Project Bootstrap
-**Parent:** ln-720-structure-migrator
 
 Frontend structure worker with two modes: SCAFFOLD (generate minimal React project from template) or RESTRUCTURE (migrate monolith to component-based architecture).
 

@@ -27,13 +27,16 @@ command -v bd >/dev/null && echo "BD=true" || echo "BD=false"
 Output exactly this (no additions, no diagrams):
 
 ```
-AgentOps gives your coding agent three things it doesn't have by default:
+AgentOps is the operational layer for coding agents.
 
-  Memory    — sessions accumulate learnings in .agents/ and surface them back
-  Judgment  — $council spawns independent judges to validate plans and code
-  Workflow  — $rpi delegates $discovery → $crank → $validation in one command
+It gives your coding agent four things it doesn't have by default:
 
-Key skills: $rpi  $discovery  $validation  $implement  $research  $council  $swarm  $status
+  Bookkeeping — sessions capture learnings, findings, and reusable context in .agents/
+  Validation  — $council, $pre-mortem, and $vibe challenge plans and code before shipping
+  Primitives  — skills, hooks, and the ao CLI give you building blocks for almost any interaction
+  Flows       — $research, $implement, $validation, and $rpi can run alone or compose end to end
+
+Key skills: $rpi  $research  $validation  $implement  $council  $pre-mortem  $swarm  $status
 Full reference: $quickstart --catalog
 ```
 
@@ -44,13 +47,13 @@ Match the first row that applies. Output only that message — nothing else.
 | Condition | Message |
 |-----------|---------|
 | GIT=false | "⚠ Not in a git repo. Run `git init` first." |
-| AO=false + CODEX=true | "📦 Install ao CLI first:\n  brew tap boshu2/agentops https://github.com/boshu2/homebrew-agentops\n  brew install agentops\n  ao init && ao seed\nThen: `$rpi \"a small goal\"` to run your first cycle.\nCodex entry skills will auto-run `ao codex ensure-start` once per thread." |
+| AO=false + CODEX=true | "📦 Install ao CLI first:\n  brew tap boshu2/agentops https://github.com/boshu2/homebrew-agentops\n  brew install agentops\n  ao init && ao seed\nThen: `$rpi \"a small goal\"` to run your first cycle.\nCodex CLI v0.115.0+ uses native hooks by default after install; older versions fall back to `ao codex ensure-start`." |
 | AO=false | "📦 Install ao CLI first:\n  brew tap boshu2/agentops https://github.com/boshu2/homebrew-agentops\n  brew install agentops\n  ao init --hooks && ao seed\nThen: `$rpi \"a small goal\"` to run your first cycle." |
-| AGENTS=false + CODEX=true | "🌱 ao is installed but not initialized here.\n  Run `$bootstrap` to set up GOALS.md, PRODUCT.md, .agents/, and hooks.\n  Or manually: `ao init && ao seed && ao codex start`\nThen: `$rpi \"a small goal\"` to run your first cycle." |
+| AGENTS=false + CODEX=true | "🌱 ao is installed but not initialized here.\n  Run `$bootstrap` to set up GOALS.md, PRODUCT.md, .agents/, and hooks.\n  Or manually: `ao init && ao seed`\nThen: `$rpi \"a small goal\"` to run your first cycle.\nCodex CLI v0.115.0+ uses native hooks by default after install; older versions fall back to `ao codex ensure-start`." |
 | AGENTS=false | "🌱 ao is installed but not initialized here.\n  Run `$bootstrap` to set up GOALS.md, PRODUCT.md, .agents/, and hooks.\n  Or manually: `ao init --hooks && ao seed`\nThen: `$rpi \"a small goal\"` to run your first cycle." |
-| BD=false + CODEX=true | "✅ Codex fallback ready.\n  Start with `$rpi \"your goal\"`, `$research <topic>`, or `$status` — entry skills auto-run `ao codex ensure-start` once per thread\n  Finish with `$validation`, `$post-mortem`, or `$handoff` — dedicated closeout skills auto-run `ao codex ensure-stop`\n  Manual escape hatch: `ao codex status`\n  Want issue tracking? `brew install boshu2/agentops/beads && bd init --prefix <prefix>`" |
+| BD=false + CODEX=true | "✅ Codex native-hooks path ready.\n  Start with `$rpi \"your goal\"`, `$research <topic>`, or `$status`\n  On Codex CLI v0.115.0+, native hooks handle startup and closeout automatically after install.\n  Older versions fall back to entry skills auto-running `ao codex ensure-start` once per thread and closeout skills auto-running `ao codex ensure-stop`.\n  Manual escape hatch: `ao codex status`\n  Want issue tracking? `brew install boshu2/agentops/beads && bd init --prefix <prefix>`" |
 | BD=false | "✅ Flywheel active. Start now:\n  `$rpi \"your goal\"` — full $discovery → $crank → $validation pipeline\n  `$validation` — close out recent work and capture learnings\n  `$research <topic>` — explore the codebase\n  Want issue tracking? `brew install boshu2/agentops/beads && bd init --prefix <prefix>`" |
-| BD=true + CODEX=true | "✅ Codex full stack ready.\n  `bd ready` — see open work\n  Start with `$rpi \"your goal\"`, `$research <topic>`, or `$status` — entry skills auto-run `ao codex ensure-start` once per thread\n  Finish with `$validation`, `$post-mortem`, or `$handoff` — dedicated closeout skills auto-run `ao codex ensure-stop`\n  Manual escape hatch: `ao codex status`" |
+| BD=true + CODEX=true | "✅ Codex full stack ready.\n  `bd ready` — see open work\n  Start with `$rpi \"your goal\"`, `$research <topic>`, or `$status`\n  On Codex CLI v0.115.0+, native hooks handle startup and closeout automatically after install.\n  Older versions fall back to entry skills auto-running `ao codex ensure-start` once per thread and closeout skills auto-running `ao codex ensure-stop`.\n  Manual escape hatch: `ao codex status`" |
 | BD=true | "✅ Full stack ready.\n  `bd ready` — see open work\n  `$rpi \"your goal\"` — start a new goal from scratch\n  `$status` — see current session state" |
 
 ---
@@ -80,7 +83,7 @@ Starting a new project? Run `$scaffold <language> <name>` to generate project st
 | Problem | Solution |
 |---------|----------|
 | Skills not installed | `bash <(curl -fsSL https://raw.githubusercontent.com/boshu2/agentops/main/scripts/install.sh)` |
-| Codex has no startup/session-end hooks | Entry skills auto-run `ao codex ensure-start` once per thread and dedicated closeout skills auto-run `ao codex ensure-stop`; `ao codex status` is the manual escape hatch |
+| Codex on older versions (pre-v0.115.0) | Codex CLI v0.115.0+ uses native hooks by default after install. Older versions fall back to entry skills auto-running `ao codex ensure-start` and closeout skills auto-running `ao codex ensure-stop`; `ao codex status` is the manual escape hatch |
 | Flywheel count is 0 | First session — run `$rpi "a small goal"` to start it |
 | Want the full skill catalog | Ask: "show me all the skills" or see `references/full-catalog.md` |
 

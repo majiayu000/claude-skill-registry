@@ -1,6 +1,14 @@
 ---
 name: pr-retro
 description: 'Learn from PR outcomes. Analyzes accept/reject patterns and updates contribution lessons. Triggers: "pr retro", "learn from PR", "PR outcome", "why was PR rejected", "analyze PR feedback".'
+skill_api_version: 1
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: topic
 license: MIT
 compatibility: Requires git, gh CLI
 metadata:
@@ -8,7 +16,8 @@ metadata:
   version: "1.0.0"
   tier: contribute
   internal: false
-allowed-tools: Read Write Bash Grep Glob
+allowed-tools: Read, Write, Bash, Grep, Glob
+output_contract: ".agents/learnings/YYYY-MM-DD-pr-*.md"
 ---
 
 # PR Retro Skill
@@ -20,7 +29,7 @@ Learn from PR outcomes by analyzing accept/reject patterns.
 After a PR is merged or rejected, analyze what worked and what didn't to
 improve future contributions.
 
-**Output:** `.agents/retros/YYYY-MM-DD-pr-{repo}-{outcome}.md`
+**Output:** `.agents/learnings/YYYY-MM-DD-pr-{repo}-{outcome}.md`
 
 **When to Use**:
 - After a PR is merged (capture success patterns)
@@ -151,7 +160,7 @@ gh pr view <number> --json reviews --jq '.reviews[] | select(.state == "CHANGES_
 
 ## Phase 6: Output
 
-Write to `.agents/retros/YYYY-MM-DD-pr-{repo}-{outcome}.md`
+Write to `.agents/learnings/YYYY-MM-DD-pr-{repo}-{outcome}.md`
 
 ```markdown
 # PR Retro: {repo} #{number}

@@ -155,7 +155,7 @@ Checkpoint `PHASE_3_WRONG_TOOL_GATE` with:
 1. Compute deterministic child metadata for `ln-813`.
 2. Checkpoint `PHASE_7_VALIDATE_PLAN` with `validation_verdict` and `child_run`.
 3. Invoke `ln-813-optimization-plan-validator` with the child `runId` and exact `summaryArtifactPath`.
-4. Read and record the emitted `optimization-worker` summary envelope.
+4. Read and record the emitted `evaluation-coordinator` summary envelope.
 5. If verdict is `NO_GO`, pause runtime until user resolves or waives.
 
 ### Phase 8: Execute
@@ -210,11 +210,11 @@ Checkpoint `PHASE_3_WRONG_TOOL_GATE` with:
 
 ## Worker Invocation (MANDATORY)
 
-| Phase | Worker | Purpose |
+| Phase | Skill | Purpose |
 |-------|--------|---------|
 | 2 | `ln-811-performance-profiler` | Build measured performance map |
 | 4 | `ln-812-optimization-researcher` | Research hypotheses and targets |
-| 7 | `ln-813-optimization-plan-validator` | Validate feasibility via runtime-backed review |
+| 7 | `ln-813-optimization-plan-validator` | Validate feasibility via evaluation-platform review (L2 Coordinator) |
 | 8 | `ln-814-optimization-executor` | Execute optimization strike and bisect |
 
 ```javascript

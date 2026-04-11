@@ -1,4 +1,5 @@
 ---
+name: research-deep
 user-invocable: true
 description: Read research outline, launch independent agent for each item for deep research. Disable task output.
 allowed-tools: Bash, Read, Write, Glob, WebSearch, Task
@@ -62,10 +63,10 @@ Task is complete only after validation passes.
 ## Task
 Research name: GitHub Copilot
 category: International Product
-description: Developed by Microsoft/GitHub, first mainstream AI coding assistant, ~40% market share, output structured JSON to /home/weizhena/AIcoding/aicoding-history/results/GitHub_Copilot.json
+description: Developed by Microsoft/GitHub, first mainstream AI coding assistant, ~40% market share, output structured JSON to {project_dir}/results/GitHub_Copilot.json
 
 ## Field Definitions
-Read /home/weizhena/AIcoding/aicoding-history/fields.yaml to get all field definitions
+Read {project_dir}/fields.yaml to get all field definitions
 
 ## Output Requirements
 1. Output JSON according to fields defined in fields.yaml
@@ -74,11 +75,11 @@ Read /home/weizhena/AIcoding/aicoding-history/fields.yaml to get all field defin
 4. All field values must be in English
 
 ## Output Path
-/home/weizhena/AIcoding/aicoding-history/results/GitHub_Copilot.json
+{project_dir}/results/GitHub_Copilot.json
 
 ## Validation
 After completing JSON output, run validation script to ensure complete field coverage:
-python ~/.claude/skills/research/validate_json.py -f /home/weizhena/AIcoding/aicoding-history/fields.yaml -j /home/weizhena/AIcoding/aicoding-history/results/GitHub_Copilot.json
+python ~/.claude/skills/research/validate_json.py -f {project_dir}/fields.yaml -j {project_dir}/results/GitHub_Copilot.json
 Task is complete only after validation passes.
 ```
 

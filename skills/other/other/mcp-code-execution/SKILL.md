@@ -1,10 +1,6 @@
 ---
 name: mcp-code-execution
-description: 'Use this skill BEFORE building complex tool chains. Optimize proactively.
-  location: plugin token_budget: 200. Use when >3 tools chained sequentially, large
-  datasets (>10k rows), large files (>50KB), context usage >25%. Do not use when simple
-  tool calls that do not chain. DO NOT use when: context pressure is low and tools
-  are fast.'
+description: 'Optimize multi-tool workflow chains via MCP server integration for processing large datasets, files, or complex pipelines.'
 version: 1.7.1
 alwaysApply: false
 progressive_loading: true
@@ -213,15 +209,3 @@ When MECW limits exceeded:
 - **MECW Compliance**: 100% adherence to 50% context rule
 - **Token Efficiency**: Maintain >80% savings vs traditional methods
 - **Module Coordination**: <5% overhead for hub orchestration
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

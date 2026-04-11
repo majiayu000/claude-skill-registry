@@ -74,7 +74,7 @@ Do NOT load existing tasks here. Existing tasks load in Phase 4 only.
 - For Stories that modify existing code in supported languages, build graph context once:
   - `index_project(path=project_root)`
   - `analyze_architecture(path=project_root, verbosity="minimal")`
-  - `find_symbols` + `inspect_symbol` for named components from Story AC or Technical Notes
+  - `find_symbols` + `inspect_symbol` for named components from Story AC or Technical Notes, but only after narrowing `path` where possible; if symbol discovery is truncated, refine to `name + file` or `workspace_qualified_name` before planning from it
 - Use graph context to confirm real affected modules and entrypoints before decomposition
 
 Checkpoint payload:

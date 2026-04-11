@@ -106,6 +106,11 @@ STEP 1.8 ── Stage 4: Behavioral Validation (holdout scenarios + agent-built 
             Skip if: no .agents/holdout/ AND no .agents/specs/, or --no-behavioral
             Read `references/step-1.8-behavioral-validation.md` for full sub-steps.
             Loads holdout scenarios + agent specs → evaluator council → satisfaction gate.
+            Evaluates each scenario and aggregates results into `satisfaction_score`
+            (verdict schema field, `skills/council/schemas/verdict.json`: number 0.0-1.0,
+            "Probabilistic satisfaction score (0.0 = unsatisfied, 1.0 = fully satisfied)").
+            Per-dimension scores populate `satisfaction_breakdown`. The aggregated
+            `satisfaction_score` seeds downstream gates and the phase summary.
             PASS/WARN? → continue | FAIL? → <promise>FAIL</promise>, stop
 
 STEP 2  ──  if epic_id:

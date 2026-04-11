@@ -29,6 +29,7 @@ dependencies:
 - pensive:shared
 - pensive:safety-critical-patterns
 - imbue:proof-of-work
+- imbue:justify
 modules:
 - modules/duplication-analysis.md
 - modules/algorithm-efficiency.md
@@ -70,8 +71,6 @@ Analyze and improve living code quality across six dimensions.
 
 - Removing
   dead/unused code (use conserve:bloat-detector)
-- Removing
-  dead/unused code (use conserve:bloat-detector)
 
 ## Analysis Dimensions
 
@@ -83,6 +82,39 @@ Analyze and improve living code quality across six dimensions.
 | 4 | Architectural Fit | `architectural-fit` | Paradigm mismatches, coupling violations, leaky abstractions |
 | 5 | Anti-Slop Patterns | `clean-code-checks` | Premature abstraction, enterprise cosplay, hollow patterns |
 | 6 | Error Handling | `clean-code-checks` | Bare excepts, swallowed errors, happy-path-only |
+| 7 | Additive Bias | `imbue:justify` | Workarounds over root fixes, test tampering, unnecessary additions |
+
+## Plugin-Specific Patterns
+
+Detection patterns for plugin and skill codebases where
+standard code quality heuristics miss structural issues.
+
+### Delegation Stub Bodies
+
+A skill that declares "delegates to X" but still carries the
+full template body is doing double duty. The delegating skill
+should be a thin wrapper (under 30 lines) that routes to the
+target. Flag any delegating skill whose body exceeds 50 lines.
+
+### Module Explosion
+
+Flag skills with 10+ module files where 40% or more of content
+overlaps. Signal: two modules covering the same API surface
+from different angles (e.g., both describing the same config
+options or the same CLI flags).
+
+### Oversized Single Modules
+
+Flag individual module files exceeding 500 lines as candidates
+for splitting or trimming. Large modules defeat progressive
+loading by forcing full-file reads for partial information.
+
+### Dead Python References
+
+Skills referencing Python commands (`python -m module.name` or
+`python -c "from module import ..."`) where the referenced
+module does not exist in the plugin's `src/` directory. These
+are stale references to renamed or removed code.
 
 ## Progressive Loading
 
@@ -128,6 +160,9 @@ find . -not -path "*/.venv/*" -not -path "*/__pycache__/*" \
 ### Step 2: Dimensional Scan (`refine:scan-complete`)
 
 Load relevant modules and execute analysis per tier level.
+For dimension 7 (Additive Bias), run `Skill(imbue:justify)`
+to compute the bias score, check Iron Law compliance,
+and flag unnecessary additions or workarounds.
 
 ### Step 3: Prioritize (`refine:prioritized`)
 

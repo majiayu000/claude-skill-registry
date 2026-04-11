@@ -1,10 +1,6 @@
 ---
 name: session-palace-builder
-description: 'Consult this skill for session-scoped temporary knowledge structures.
-  Use when working on complex multi-step projects, preserving context across interruptions,
-  tracking session-specific state. Do not use when permanent knowledge structures
-  needed - use memory-palace-architect. DO NOT use when: searching existing knowledge
-  - use knowledge-locator.'
+description: 'Build session-scoped temporary knowledge structures for multi-step projects. Use when working on complex tasks spanning turns.'
 version: 1.7.1
 alwaysApply: false
 category: session-management
@@ -143,15 +139,3 @@ Create → Populate → Navigate → Export/Archive
 - `memory-palace-architect` - Export important concepts to permanent palaces
 - `knowledge-locator` - Search session content
 - `digital-garden-cultivator` - Seed garden with session insights
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

@@ -16,8 +16,8 @@ Determine which prompt plan index to read using these rules in order:
 3. **In-progress wins** — Glob `.turbo/prompt-plans/*.md`. If exactly one index has any prompt with `Status: in-progress`, use it. This is the prompt plan currently being worked on.
 4. **Single file** — If exactly one index file exists, use it
 5. **Most recent** — If no index has an in-progress prompt and rule 3 did not resolve, use the most recently modified file
-6. **Legacy fallback** — If `.turbo/prompt-plans/` does not exist but `.turbo/prompts.md` exists, tell the user to re-run `/create-prompt-plan` to upgrade to shells, and halt.
-7. **Nothing found** — If no prompt plan exists, tell the user to run `/turboplan` for a complex task (which will route to `/create-spec` + `/create-prompt-plan`) and stop
+6. **Legacy fallback** — If `.turbo/prompt-plans/` does not exist but `.turbo/prompts.md` exists, tell the user to re-run `/draft-prompt-plan` to upgrade to shells, and halt.
+7. **Nothing found** — If no prompt plan exists, tell the user to run `/turboplan` for a complex task (which will route to `/draft-spec` + `/draft-prompt-plan`) and stop
 
 If multiple files have in-progress prompts (concurrent work in different feature branches), use `AskUserQuestion` to let the user pick.
 

@@ -55,7 +55,7 @@ Route based on user intent:
 | "Who calls X?" / "What does X call?" | `trace_paths` | `{ name: "X", file: "...", path_kind: "calls", direction: "reverse"\|"forward", path: "{project_path}" }` |
 | "Tell me about X" / "Context of X" | `inspect_symbol` | `{ name: "X", file: "...", path: "{project_path}" }` |
 | "Project structure" / "Architecture" | `analyze_architecture` | `{ path: "{project_path}", scope?: "src/" }` |
-| "Find symbol X" | `find_symbols` | `{ query: "X" }` |
+| "Find symbol X" | `find_symbols` | `{ path: "{project_path}", query: "X" }` |
 | "Find `app.get(...)` / `router.use(...)` / `server.registerTool(...)` pattern" | `grep_search` | `{ path: "{project_path}", pattern: "app\\.get\\(|router\\.use\\(|server\\.registerTool\\(" }` |
 | "Find duplicate code / hotspots / unused exports" | `audit_workspace` | `{ path: "{project_path}", scope?: "src/", verbosity: "full" }` |
 | "Circular dependencies / module coupling" | `analyze_architecture` | `{ path: "{project_path}", verbosity: "full" }` |
@@ -70,9 +70,11 @@ Route based on user intent:
 - `qualified_name`
 - `name` + `file`
 
-**Preferred flow:** use `find_symbols` first, then feed the returned `workspace_qualified_name` into `inspect_symbol`, `trace_paths`, `find_references`, or `find_implementations` for exact follow-up queries.
+**Preferred flow:** use `find_symbols` only after narrowing `path` as much as practical, then feed the returned `workspace_qualified_name` into `inspect_symbol`, `trace_paths`, `find_references`, or `find_implementations` for exact follow-up queries.
 
 **Query boundary rule:** `find_symbols` is name-based discovery only. For code fragments like `export function` or unresolved member-call patterns like `app.get(...)`, use `grep_search` instead of treating them as symbols.
+
+**Ambiguity rule:** if `find_symbols` returns `truncated: true` or a large `candidate_count`, refine with `path`, then `name + file` or `workspace_qualified_name` instead of widening the graph query.
 
 **Path rule:** `path` may be the indexed project root or any file/subdirectory inside that indexed project.
 
@@ -89,7 +91,8 @@ Route based on user intent:
 1. Show MCP tool output directly (markdown tables)
 2. For code snippets referenced in results, use `hex-line read_file` with line ranges; add `edit_ready=true, verbosity="full"` only when you intend to carry revision/checksums into an edit
 3. Suggest follow-up queries based on results:
-   - After `find_symbols` → suggest `inspect_symbol` with `workspace_qualified_name` for the top exact match
+  - After `find_symbols` with a clean top match → suggest `inspect_symbol` with `workspace_qualified_name`
+  - After `find_symbols` with `truncated: true` → suggest narrowing `path` or switching to `name + file` before any deeper graph tool
    - After `inspect_symbol` → suggest `trace_paths` if refactoring
    - After `trace_paths` → suggest `find_references` or `find_implementations` depending on symbol kind
    - After empty `trace_paths` from a broad or module-level selector → suggest `inspect_symbol` or `analyze_architecture` instead of assuming there are no dependencies

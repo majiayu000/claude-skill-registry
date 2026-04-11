@@ -160,15 +160,3 @@ deploy: build ## Deploy to production
 
 - `Skill(attune:project-init)` - Full project initialization
 - `Skill(abstract:makefile-dogfooder)` - Makefile testing and validation
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

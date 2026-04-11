@@ -1,10 +1,19 @@
 ---
 name: beads
-description: 'This skill should be used when the user asks to "track issues", "create beads issue", "show blockers", "what''s ready to work on", "beads routing", "prefix routing", "cross-rig beads", "BEADS_DIR", "two-level beads", "town vs rig beads", "slingable beads", or needs guidance on git-based issue tracking with the bd CLI.'
+description: 'Manages git-based issue tracking using the bd CLI: creates issues, tracks blockers, routes work across rigs (independent workstreams with their own issue prefixes), and organizes beads (issues) hierarchically with parent-child dependencies. Beads marked "slingable" are ready to hand off between agents or sessions. Use when: "track issues", "create beads issue", "show blockers", "what''s ready to work on", "beads routing", "prefix routing", "cross-rig beads", "slingable beads", or git-based issue tracking with bd.'
+skill_api_version: 1
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: topic
 metadata:
   tier: library
   dependencies: []
   internal: true
+output_contract: "beads (via bd CLI)"
 ---
 
 # Beads - Persistent Task Memory for AI Agents
@@ -17,9 +26,26 @@ Graph-based issue tracker that survives conversation compaction.
 
 **Key Distinction**:
 - **bd**: Multi-session work, dependencies, survives compaction, git-backed
-- **TodoWrite**: Single-session tasks, linear execution, conversation-scoped
+- **Task tools (TaskCreate/TaskUpdate/TaskList)**: Single-session tasks, status tracking, conversation-scoped
 
 **Decision Rule**: If resuming in 2 weeks would be hard without bd, use bd.
+
+## Operating Rules
+
+- Treat live `bd` reads as authoritative. Use `bd show`, `bd ready`, `bd list`, and `bd export` to inspect current tracker state. Do not treat `.beads/issues.jsonl` as the primary decision source when live `bd` data is available.
+- Treat `.beads/issues.jsonl` as a git-friendly export artifact. If the repo tracks `.beads/issues.jsonl` and you mutate tracker state, refresh it explicitly with `bd export -o .beads/issues.jsonl`.
+- After closing or materially updating a child issue, reconcile the open parent in the same session. Update stale "remaining gap" notes immediately, and close the parent when the child resolved the parent's last real gap.
+- If `bd ready` returns a broad umbrella issue, do not implement directly against vague parent wording. First narrow the remaining gap into an execution-ready child issue, then land the child and reconcile the parent.
+- Normalize stale queue items instead of silently skipping them. Rewrite broad or partially absorbed beads to the actual remaining gap.
+- Use this post-mutation sequence when tracker state changed:
+
+```bash
+bd ...                              # mutate tracker state
+bd export -o .beads/issues.jsonl    # if tracked in git
+bd vc status
+bd dolt commit -m "..."             # if tracker changes are pending
+bd dolt push                        # only if a Dolt remote is configured
+```
 
 ## Prerequisites
 
@@ -61,3 +87,19 @@ Graph-based issue tracker that survives conversation compaction.
 | "not a git repository" error | bd requires git repo, current dir not initialized | Run `git init` or navigate to git repo root |
 | "beads not initialized" error | .beads/ directory missing | Human runs `bd init --prefix <prefix>` once |
 | Issue ID format errors | Wrong prefix or malformed ID | Check rigs.json for correct prefix, follow `<prefix>-<tag>-<num>` format |
+
+## Reference Documents
+
+- [references/ANTI_PATTERNS.md](references/ANTI_PATTERNS.md)
+- [references/BOUNDARIES.md](references/BOUNDARIES.md)
+- [references/CLI_REFERENCE.md](references/CLI_REFERENCE.md)
+- [references/DEPENDENCIES.md](references/DEPENDENCIES.md)
+- [references/INTEGRATION_PATTERNS.md](references/INTEGRATION_PATTERNS.md)
+- [references/ISSUE_CREATION.md](references/ISSUE_CREATION.md)
+- [references/MOLECULES.md](references/MOLECULES.md)
+- [references/PATTERNS.md](references/PATTERNS.md)
+- [references/RESUMABILITY.md](references/RESUMABILITY.md)
+- [references/ROUTING.md](references/ROUTING.md)
+- [references/STATIC_DATA.md](references/STATIC_DATA.md)
+- [references/TROUBLESHOOTING.md](references/TROUBLESHOOTING.md)
+- [references/WORKFLOWS.md](references/WORKFLOWS.md)

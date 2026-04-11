@@ -16,13 +16,12 @@ Specialized worker auditing structural quality of project documentation.
 
 ## Purpose & Scope
 
-- **Worker in ln-610 coordinator pipeline** - invoked by ln-610-docs-auditor
 - Audit documentation for **structural quality** across 7 categories
 - Scan all `.md` files in project, build hierarchy from `AGENTS.md` when present
 - Return structured findings to coordinator with severity, location, recommendations
 - Calculate compliance score (X/10) for Documentation Structure
 
-## Inputs (from Coordinator)
+## Inputs
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`, `shared/references/docs_quality_contract.md`, `shared/references/docs_quality_rules.json`, and `shared/references/markdown_read_protocol.md`.
 
@@ -72,17 +71,13 @@ Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-If summaryArtifactPath is present, write JSON summary per shared/references/audit_summary_contract.md. Compact text output is fallback only.
+Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
 Write report to `{output_dir}/611-structure.md` with `category: "Documentation Structure"` and checks: hierarchy_links, ssot, compression, requirements_compliance, freshness_indicators, legacy_cleanup, stack_adaptation.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-Legacy compact text output is allowed only when `summaryArtifactPath` is absent:
-```
-Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/611-structure.md
-Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
-```
+Standalone mode still writes the same JSON summary to a worker-owned run-scoped artifact path per shared contract.
 
 ## Critical Rules
 

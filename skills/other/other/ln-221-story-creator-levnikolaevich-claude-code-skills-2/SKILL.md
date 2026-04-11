@@ -16,6 +16,7 @@ Standalone-first worker for Story creation. It may be called directly or as part
 ## MANDATORY READ
 
 Load these before execution:
+- `shared/references/planning_worker_runtime_contract.md`
 - `shared/references/coordinator_summary_contract.md`
 - `shared/references/environment_state_contract.md`
 - `shared/references/storage_mode_detection.md`
@@ -37,11 +38,40 @@ Optional transport inputs:
 
 The worker must remain fully usable without caller-provided `runId` and without `summaryArtifactPath`. In standalone mode it generates its own `run_id` before emitting the summary envelope.
 
+## Runtime
+
+Runtime family: `planning-worker-runtime`
+
+Identifier:
+- `epic-{epicId}`
+
+Phases:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_RESOLVE_CONTEXT`
+3. `PHASE_2_LOAD_TEMPLATE`
+4. `PHASE_3_GENERATE_STORIES`
+5. `PHASE_4_VALIDATE_STORIES`
+6. `PHASE_5_CONFIRM_OR_AUTOAPPROVE`
+7. `PHASE_6_APPLY_CREATE`
+8. `PHASE_7_UPDATE_KANBAN`
+9. `PHASE_8_WRITE_SUMMARY`
+10. `PHASE_9_SELF_CHECK`
+
+Managed child-run mode:
+- caller starts the runtime with `--run-id` and `--summary-artifact-path`
+- runtime writes the final summary artifact directly to the caller-provided path
+- parent coordinator records the resulting `story-plan-worker` artifact
+
+Standalone mode:
+- runtime generates its own `run_id`
+- runtime still returns the same structured summary envelope
+- artifact writing is optional unless `summaryArtifactPath` is provided
+
 ## Output Contract
 
 Always build a structured summary envelope:
 - `schema_version`
-- `summary_kind=story-plan`
+- `summary_kind=story-plan-worker`
 - `run_id`
 - `identifier`
 - `producer_skill=ln-221`
@@ -66,6 +96,9 @@ If `summaryArtifactPath` is provided:
 If `summaryArtifactPath` is not provided:
 - return the same summary in structured output only
 
+Managed artifact path pattern:
+- `.hex-skills/runtime-artifacts/runs/{parent_run_id}/story-plan-worker/ln-221--{identifier}.json`
+
 ## Workflow
 
 1. Resolve task provider and Epic context if not already provided.
@@ -76,7 +109,8 @@ If `summaryArtifactPath` is not provided:
 6. Show preview unless `autoApprove=true`.
 7. Create Stories in Linear or file mode.
 8. Update kanban.
-9. Return structured summary.
+9. Write `story-plan-worker` summary.
+10. Return structured summary.
 
 ## Critical Rules
 

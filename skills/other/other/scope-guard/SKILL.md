@@ -1,10 +1,6 @@
 ---
 name: scope-guard
-description: 'Use this skill BEFORE implementing any new feature. Important for
-  scope control. Use when evaluating features during brainstorming, planning new
-  functionality, branches approach size limits (1000/1500/2000 lines, 15/25/30
-  commits). Do not use when feature is already approved and in progress. DO NOT
-  use when: simple bug fixes with clear scope.'
+description: 'Pre-implementation scope control: evaluate feature necessity and enforce branch size limits'
 version: 1.7.1
 alwaysApply: false
 category: workflow-methodology
@@ -59,7 +55,7 @@ modules:
 - [Integration Points](#integration-points)
 - [With superpowers:brainstorming](#with-superpowers:brainstorming)
 - [With superpowers:writing-plans](#with-superpowers:writing-plans)
-- [During superpowers:execute-plan](#during-superpowers:execute-plan)
+- [During superpowers:executing-plans](#during-superpowers-executing-plans)
 - [Required TodoWrite Items](#required-todowrite-items)
 - [Related Skills](#related-skills)
 - [Module Reference](#module-reference)
@@ -241,7 +237,7 @@ Before finalizing implementation plan:
 
 **Self-invoke prompt:** "Before finalizing this plan, let me verify scope with scope-guard."
 
-### During superpowers:execute-plan
+### During superpowers:executing-plans
 
 Periodically during execution:
 1. Run threshold check: lines, files, commits, days
@@ -275,15 +271,3 @@ When evaluating a feature, create these todos:
 - **[anti-overengineering.md](modules/anti-overengineering.md)** - Rules, patterns, red flags
 - **[branch-management.md](modules/branch-management.md)** - Thresholds, monitoring, zones
 - **[baseline-scenarios.md](modules/baseline-scenarios.md)** - Testing scenarios and validation
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

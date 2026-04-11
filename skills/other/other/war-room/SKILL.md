@@ -27,24 +27,6 @@ tools:
   - Read
   - Write
 ---
-## Table of Contents
-
-- [Overview](#overview)
-- [Reversibility-Based Routing](#reversibility-based-routing)
-- [When to Use](#when-to-use)
-- [When NOT to Use](#when-not-to-use)
-- [Expert Panel](#expert-panel)
-- [Deliberation Protocol](#deliberation-protocol)
-- [Integration](#integration)
-- [Usage](#usage)
-- [Output](#output)
-- [Configuration](#configuration)
-- [Related Skills](#related-skills)
-
-# War Room Skill
-
-Orchestrate multi-LLM deliberation for complex strategic decisions.
-
 ## Overview
 
 The War Room convenes multiple AI experts to analyze problems from diverse perspectives, challenge assumptions through adversarial review, and synthesize optimal approaches under the guidance of a Supreme Commander.

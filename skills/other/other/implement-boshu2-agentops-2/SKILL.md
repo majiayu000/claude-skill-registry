@@ -94,6 +94,22 @@ fi
 
 This produces a 5-section briefing (GOALS, HISTORY, INTEL, TASK, PROTOCOL) at `.agents/rpi/briefing-current.md` with secrets redacted. Read it before gathering additional context.
 
+### Step 2b: Apply Behavioral Discipline
+
+Before exploring or editing, load the behavioral discipline standard from `$standards` and write a short execution frame for yourself:
+
+- `Assumptions:` what is known, what is ambiguous, and which unknowns would change the solution
+- `Smallest change:` the minimum patch that could satisfy the request
+- `Blast radius:` which files or surfaces are in scope, plus what is explicitly out of scope
+- `Verification:` the tests, commands, or gates that will prove the work is done
+
+Rules:
+
+- If ambiguity would materially change the implementation, ask before editing instead of silently choosing.
+- If a simpler approach exists than the heavier path implied by the prompt, say so and prefer it.
+- If you notice unrelated cleanup, create a bead or note it separately; do not fold it into the patch.
+- Every changed line should trace back to the request or to cleanup that your change made necessary.
+
 ### Step 3: Gather Context
 
 

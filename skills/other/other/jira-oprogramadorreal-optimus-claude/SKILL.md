@@ -34,9 +34,9 @@ If no issue key was provided (e.g., `/optimus:jira` with no argument), use `AskU
 
 **Enter issue key:** Use `AskUserQuestion` — header "Issue key", question "Enter the JIRA issue key:". Validate and proceed to Step 3.
 
-**My open issues:** Read `$CLAUDE_PLUGIN_ROOT/skills/jira/references/jira-context-extraction.md`, section **Search: Assigned Issues**. Execute the JQL search, present results as a numbered list (max 10). Use `AskUserQuestion` — header "Select issue", question "Which issue are you working on?" with each issue as an option (label: `KEY — Summary`, description: `[Type, Priority]`). Validate the selected issue key matches `[A-Z][A-Z0-9]+-\d+` before proceeding — reject keys that don't match this pattern. Proceed to Step 3 with the selected key.
+**My open issues:** Read `$CLAUDE_PLUGIN_ROOT/skills/jira/references/jira-context-extraction.md`, section **Search: Assigned Issues**. Execute the JQL search, present results as a numbered list (max 10). Use `AskUserQuestion` — header "Select issue", question "Which issue are you working on?" with each issue as an option (label: `KEY — Summary`, description: `[Type, Priority]`). Proceed to Step 3 with the selected key.
 
-**Search by project:** Use `AskUserQuestion` — header "Project", question "Enter the JIRA project key (e.g., PROJ):". Execute the project search from the extraction reference. Present results and let the user pick, same as above. Validate the selected issue key matches `[A-Z][A-Z0-9]+-\d+` before proceeding. Proceed to Step 3 with the selected key.
+**Search by project:** Use `AskUserQuestion` — header "Project", question "Enter the JIRA project key (e.g., PROJ):". Execute the project search from the extraction reference. Present results and let the user pick, same as above. Proceed to Step 3 with the selected key.
 
 ## Step 3: Fetch Issue Context
 

@@ -48,22 +48,15 @@ Extract from the user's arguments:
 
 Examples:
 - `/optimus:refactor` → full project, normal mode
-- `/optimus:refactor backend only` → scope to backend, normal mode
 - `/optimus:refactor "focus on auth module"` → scope to auth, normal mode
 - `/optimus:refactor testability` → full project, normal mode, focus=testability
 - `/optimus:refactor guidelines` → full project, normal mode, focus=guidelines
 - `/optimus:refactor testability "focus on src/api"` → scope to src/api, focus=testability
 - `/optimus:refactor deep` → full project, deep (8 iterations)
-- `/optimus:refactor deep 8` → full project, deep (8 iterations)
-- `/optimus:refactor deep "focus on src/api"` → scope to src/api, deep (8 iterations)
 - `/optimus:refactor deep 10 backend` → scope to backend, deep (10 iterations)
-- `/optimus:refactor deep testability` → full project, deep, focus=testability
 - `/optimus:refactor deep guidelines` → full project, deep, focus=guidelines
 - `/optimus:refactor deep harness` → harness mode, 8 iterations, full project
-- `/optimus:refactor deep harness 8` → harness mode, 8 iterations
-- `/optimus:refactor deep harness "focus on backend"` → harness mode, scoped
 - `/optimus:refactor deep harness testability` → harness mode, focus=testability
-- `/optimus:refactor deep harness guidelines` → harness mode, focus=guidelines
 
 If the iteration cap exceeds 10, clamp it to 10 and warn: "Iteration cap clamped to 10 (maximum)."
 If the iteration cap is less than 1, clamp it to 1 and warn: "Iteration cap clamped to 1 (minimum)."

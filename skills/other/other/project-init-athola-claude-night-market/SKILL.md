@@ -163,15 +163,3 @@ make help
 ```
 **Verification:** Run `pytest -v` to verify tests pass.
 User: /attune:project-init
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

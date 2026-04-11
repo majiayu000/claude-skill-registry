@@ -1,8 +1,8 @@
 {
   "category": "productivity",
   "code": "pro",
-  "count": 1945,
-  "updated_at": "2026-04-10T16:07:51.681820Z",
+  "count": 1955,
+  "updated_at": "2026-04-11T01:59:12.920806Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -12407,6 +12407,28 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "deep-research",
+      "description": "Deep research with NotebookLM + web search. Domain boost, source credibility scoring, and post-research artifact generation (podcast, video, slides, quiz).",
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "path": "SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "research",
+        "deep-research",
+        "notebooklm",
+        "perplexity",
+        "gemini",
+        "domain-boost",
+        "academic",
+        "maritime",
+        "legal"
+      ],
+      "stars": 0,
+      "install": "Chris1220-cmd/deep-research-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "environment-observer",
       "description": "Perform heuristic environment discovery beyond basic directory listing. Check installed packages, analyze folder structure, inspect running processes, and assess system state. Use proactively when sta",
       "repo": "Whamp/bond",
@@ -13672,6 +13694,22 @@
       "stars": 0,
       "install": "Wesley1600/ClaudeCodeFrameWork/.claude/skills/chain-of-thought",
       "source": "SkillsMP Synced Skills"
+    },
+    {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "skills/skill-seekers/SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
+      ],
+      "stars": 0,
+      "install": "yusufkaraaslan/Skill_Seekers/skills/skill-seekers/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "log-director-skill",
@@ -16458,6 +16496,22 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "professional-business-writing",
+      "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
+      "repo": "b33kman/professional-business-writing-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "professional-writing",
+        "business-writing",
+        "writing-assistant"
+      ],
+      "stars": 0,
+      "install": "b33kman/professional-business-writing-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "windsurf-release-automation",
       "description": "Automate release processes with semantic versioning. Activate when users mention\"release automation\", \"version bump\", \"changelog generation\", \"semantic release\",or \"publish release\". Handles release e",
       "repo": "jeremylongshore/claude-code-plugins-plus-skills",
@@ -16660,6 +16714,22 @@
       "stars": 0,
       "install": "Cloudhabil/AGI-Server/productivity/lifecycletransient-execution",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "skills/skill-seekers/SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
+      ],
+      "stars": 0,
+      "install": "yusufkaraaslan/Skill_Seekers/skills/skill-seekers/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "prompt-templates",
@@ -17551,6 +17621,28 @@
       "stars": 0,
       "install": "Cloudhabil/AGI-Server/productivity/scale-awareness",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "deep-research",
+      "description": "Deep research with NotebookLM + web search. Domain boost, source credibility scoring, and post-research artifact generation (podcast, video, slides, quiz).",
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "path": "SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "research",
+        "deep-research",
+        "notebooklm",
+        "perplexity",
+        "gemini",
+        "domain-boost",
+        "academic",
+        "maritime",
+        "legal"
+      ],
+      "stars": 0,
+      "install": "Chris1220-cmd/deep-research-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "gtd-notation",
@@ -19798,6 +19890,24 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "humanizar-texto-es",
+      "description": "Rewrite Spanish AI-generated text to sound naturally human-written using 11 simultaneous linguistic techniques.",
+      "repo": "ToniPerea/humanizar-texto-es",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "spanish",
+        "ai-detection",
+        "text-rewriting",
+        "nlp",
+        "research"
+      ],
+      "stars": 0,
+      "install": "ToniPerea/humanizar-texto-es/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "policyengine-uk",
       "description": "PolicyEngine-UK tax and benefit microsimulation patterns, situation creation, and common workflows",
       "repo": "PolicyEngine/policyengine-claude",
@@ -21443,6 +21553,22 @@
       "stars": 0,
       "install": "melodic-software/claude-code-plugins/plugins/tac/skills/agentic-kpi-tracking",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "professional-business-writing",
+      "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
+      "repo": "b33kman/professional-business-writing-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "professional-writing",
+        "business-writing",
+        "writing-assistant"
+      ],
+      "stars": 0,
+      "install": "b33kman/professional-business-writing-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "raw-workflow-creator",
@@ -23098,6 +23224,26 @@
       "stars": 0,
       "install": "phuongrealmax/code-guardian/plugins/ccg-guardian/skills/ccg-latent",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "confluence-to-agent-knowledge-base",
+      "description": "Turn any Confluence Cloud instance into a private, searchable AI knowledge base on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the Atlassian MCP connector.",
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "confluence",
+        "knowledge-base",
+        "atlassian",
+        "mcp",
+        "wiki",
+        "search",
+        "knowledge-management"
+      ],
+      "stars": 0,
+      "install": "miningstore/confluence-to-agent-knowledge-base/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "implementing-from-task",
@@ -25322,6 +25468,24 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "humanizar-texto-es",
+      "description": "Rewrite Spanish AI-generated text to sound naturally human-written using 11 simultaneous linguistic techniques.",
+      "repo": "ToniPerea/humanizar-texto-es",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "spanish",
+        "ai-detection",
+        "text-rewriting",
+        "nlp",
+        "research"
+      ],
+      "stars": 0,
+      "install": "ToniPerea/humanizar-texto-es/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "conductor-development",
       "description": "Context-Driven Development skill for projects using Conductor. Use this skill when you detect a `conductor/` directory in the project, when working on tasks defined in a `plan.md` file, or when the us",
       "repo": "fcoury/conductor",
@@ -27199,6 +27363,26 @@
       "stars": 0,
       "install": "zazu-22/ff_data_analytics/productivity/example-executor-skill-md",
       "source": "GitHub Search API"
+    },
+    {
+      "name": "confluence-to-agent-knowledge-base",
+      "description": "Turn any Confluence Cloud instance into a private, searchable AI knowledge base on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the Atlassian MCP connector.",
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "confluence",
+        "knowledge-base",
+        "atlassian",
+        "mcp",
+        "wiki",
+        "search",
+        "knowledge-management"
+      ],
+      "stars": 0,
+      "install": "miningstore/confluence-to-agent-knowledge-base/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "benchling-integration",

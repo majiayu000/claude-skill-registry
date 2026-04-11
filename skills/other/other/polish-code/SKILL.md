@@ -62,20 +62,18 @@ If any test fails, fix the issues and stage the fixes.
 
 ## Step 8: Re-run `/polish-code` Skill if Changed
 
-Check whether any file was edited during Steps 3-7. Any edit counts, regardless of how small or mechanical it seems. A one-line doc comment fix, a renamed variable, a reformatted import, a smoke test fix — all count.
+Check whether any file was edited during Steps 3-7. Any edit counts, regardless of how small or mechanical it seems.
 
-If any file was edited, run `/polish-code` again using the Skill tool. Scope the diff command to only the files modified in the previous iteration: use `git diff --cached -- <file1> <file2> ...` as the diff command for `/simplify-code` and `/review-code`. Smoke test scope remains unchanged (full feature scope, not file-narrowed). Cap at 3 total iterations (the initial run plus up to 2 additional runs) to prevent runaway loops.
+**If changes were made**, run `/polish-code` again using the Skill tool. Scope the diff command to only the files modified in the previous iteration: use `git diff --cached -- <file1> <file2> ...` as the diff command for `/simplify-code` and `/review-code`. Smoke test scope remains unchanged (full feature scope, not file-narrowed).
+
+**If changes were made but you believe re-running is unnecessary**, use `AskUserQuestion` to ask for skip permission. Do not skip silently.
+
+**If this is iteration 3 and changes were still made**, the hard cap is reached. Use `AskUserQuestion` to tell the user that 3 iterations were not enough to stabilize, summarize what is still changing, and offer two options: continue for another iteration, or escalate to `/consult-oracle` for a different perspective on the remaining issues.
 
 The re-invocation is a full, fresh run of this skill. Every step (1-8) executes with its own task tracking and skill invocations. "Scoped to modified files" only affects the diff command passed to `/simplify-code` and `/review-code`. It does not affect which steps run or whether skills are invoked.
 
-Do NOT:
-- Skip steps because the changes are "minor", "mechanical", or "cleanup"
-- Use the Agent tool to substitute for `/simplify-code`, `/review-code`, or any other skill
-- Skip task tracking because "this is just iteration 2"
-- Rationalize that review "would produce the same findings" or "has already been addressed"
-
 ## Rules
 
-- Every step must run in every iteration. No change is "self-evidently correct" or "mechanical" enough to skip review. Simplify findings do not substitute for review. Passing tests do not substitute for lint. Each step catches different issues. Context window concerns are not a reason to skip steps. Never rationalize skipping a later step because an earlier step produced thorough results — each step uses distinct agents with non-overlapping review criteria, and "the prior step covered it" is always wrong. This applies equally to iteration 1 and all subsequent iterations.
-- Never collapse steps 3–6 into fewer steps. `/simplify-code` and `/review-code` use different review agents with different focus areas — running one does NOT cover the other. `/evaluate-findings` is a judgment gate that must run before `/apply-findings` applies any changes. Each step must invoke its designated skill via the Skill tool, not be replaced by inline reasoning or agent calls that "seem equivalent."
-- Re-invocations from Step 8 are full runs, not lighter-weight passes. See Step 8 for the anti-patterns that must be avoided.
+- Every step must run in every iteration. Each step uses distinct agents with non-overlapping review criteria. `/simplify-code` and `/review-code` have different focus areas. `/evaluate-findings` is a judgment gate that must run before `/apply-findings`.
+- Each step must invoke its designated skill via the Skill tool, not be replaced by inline reasoning or agent calls.
+- Re-invocations from Step 8 are full runs with fresh task tracking and complete skill invocations.

@@ -1,12 +1,6 @@
 ---
 name: latent-space-engineering
-description: >-
-  Shape agent behavior through instruction framing,
-  not just information density. Covers emotional
-  framing, style gene transfer, and competitive review
-  patterns. Consult when composing agent dispatch
-  prompts, writing skill instructions, or dispatching
-  parallel review agents.
+description: 'Shape agent behavior through instruction framing, emotional priming, and style transfer rather than information density alone.'
 version: 1.7.1
 alwaysApply: false
 category: methodology

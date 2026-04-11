@@ -36,7 +36,7 @@ A file is a **shell** when it contains `## Produces`, `## Consumes`, and `## Cov
 
 If the resolved file is a shell, halt with:
 
-> `<path>` is a shell plan from `/create-prompt-plan`. Run `/pick-next-prompt` to expand it before refining.
+> `<path>` is a shell plan from `/draft-prompt-plan`. Run `/pick-next-prompt` to expand it before refining.
 
 State the resolved plan path before continuing.
 
@@ -60,20 +60,17 @@ Run the `/apply-findings` skill on the evaluated results. The target file is the
 
 Check whether the plan file was edited during Step 4. Any edit counts.
 
-If the plan file was edited, run `/refine-plan` again using the Skill tool, passing the resolved plan path. Cap at 3 total iterations (the initial run plus up to 2 additional runs) to prevent runaway loops.
+**If changes were made**, run `/refine-plan` again using the Skill tool, passing the resolved plan path.
+
+**If changes were made but you believe re-running is unnecessary**, use `AskUserQuestion` to ask for skip permission. Do not skip silently.
+
+**If this is iteration 3 and changes were still made**, the hard cap is reached. Use `AskUserQuestion` to tell the user that 3 iterations were not enough to stabilize, summarize what is still changing, and offer two options: continue for another iteration, or escalate to `/consult-oracle` for a different perspective on the remaining issues.
 
 The re-invocation is a full, fresh run of this skill. Every step (1-5) executes with its own task tracking and skill invocations.
 
-Do NOT:
-- Skip steps because the changes are "minor" or "mechanical"
-- Use the Agent tool to substitute for `/review-plan`, `/evaluate-findings`, or `/apply-findings`
-- Skip task tracking because "this is just iteration 2"
-- Rationalize that review "would produce the same findings" or "has already been addressed"
-
 ## Rules
 
-- Every step must run in every iteration. Each step catches different issues. Context window concerns are not a reason to skip steps. `/review-plan` and `/evaluate-findings` use different agents with non-overlapping criteria — "the prior step covered it" is always wrong.
-- Never collapse steps 2-4 into fewer steps. `/evaluate-findings` is a judgment gate that must run before `/apply-findings` touches the plan.
+- Every step must run in every iteration. `/evaluate-findings` is a judgment gate that must run before `/apply-findings` touches the plan. Each step must invoke its designated skill via the Skill tool.
 - Re-invocations from Step 5 are full runs with fresh task tracking and complete skill invocations.
 - The plan file is the only file that should change.
-- If `/review-plan` returns no findings on the first pass, report the plan as stable and stop. No iteration needed.
+- If `/review-plan` returns no findings on the first pass, report the plan as stable and stop.

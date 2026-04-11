@@ -1,10 +1,8 @@
 ---
 name: evaluation-framework
-description: Consult this skill when building evaluation or scoring systems. Use when
+description: Patterns for building evaluation and scoring systems, quality gates, rubrics, and decision frameworks. Use for any scored assessment.
 version: 1.7.1
 alwaysApply: false
-  implementing evaluation systems, creating quality gates, designing scoring rubrics,
-  building decision frameworks. Do not use when simple pass/fail without scoring needs.
 category: infrastructure
 tags:
 - evaluation
@@ -193,15 +191,3 @@ Then customize the framework for your domain:
 - [ ] Scoring guides documented for each criterion
 - [ ] Thresholds mapped to specific actions
 - [ ] Evaluation process documented and reproducible
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

@@ -79,25 +79,25 @@ The skill follows a 5-phase orchestration workflow: **Legacy Migration (optional
 
 ---
 
-### Phase 0: Legacy Migration (OPTIONAL)
+### Phase 0: Source Documentation Cleanup (OPTIONAL)
 
-**Objective**: Detect existing documentation in non-standard formats, extract valuable content, and prepare for migration.
+**Objective**: Detect non-canonical documentation, normalize any useful facts, and remove duplicate documentation paths before generation.
 
-**Trigger**: Always runs at pipeline start. User can skip if no legacy docs or wants to keep existing structure.
+**Trigger**: Runs at pipeline start when the repo already contains documentation outside the canonical layout.
 
 **Process**:
 
-**0a. Legacy Detection**:
+**0a. Non-Canonical Source Detection**:
 - Scan project for non-standard documentation using patterns from `references/legacy_detection_patterns.md`:
   - **Root .md files**: `ARCHITECTURE.md`, `REQUIREMENTS.md`, `STACK.md`, `API.md`, `DATABASE.md`, `DEPLOYMENT.md`
-  - **Legacy folders**: `documentation/`, `doc/`, `wiki/`, `docs/` with wrong structure
+  - **Non-canonical folders**: `documentation/`, `doc/`, `wiki/`, or `docs/` with wrong structure
   - **README.md sections**: `## Architecture`, `## Tech Stack`, `## Requirements`, etc.
   - **CONTRIBUTING.md sections**: `## Development`, `## Code Style`, `## Coding Standards`
-- Build `legacy_manifest`: list of { path, detected_type, target_doc, confidence }
-- If no legacy docs found -> skip to Phase 1
+- Build `source_manifest`: list of { path, detected_type, target_doc, confidence }
+- If no non-canonical docs are found -> skip to Phase 1
 
-**0b. Content Extraction**:
-- For each detected legacy file:
+**0b. Fact Extraction**:
+- For each detected source file:
   - Parse markdown structure (headers, lists, code blocks)
   - Apply type-specific extractor (**MANDATORY READ:** Load `references/legacy_detection_patterns.md`):
     - `architecture_extractor` -> { layers[], components[], diagrams[] }
@@ -109,12 +109,12 @@ The skill follows a 5-phase orchestration workflow: **Legacy Migration (optional
     - `runbook_extractor` -> { prerequisites[], install_steps[], env_vars[] }
     - `infrastructure_extractor` -> { servers[], domains[], ports[], services[], artifacts{}, cicd{} }
   - Score content quality (0.0-1.0)
-- Store in `extracted_content` object
+- Store results in `source_notes`
 
 **0c. User Confirmation**:
-- Display detected legacy files:
+- Display detected non-canonical files:
   ```
-  Legacy Documentation Detected:
+  Non-Canonical Documentation Detected:
 
   | File | Type | Confidence | Target |
   |------|------|------------|--------|
@@ -122,75 +122,74 @@ The skill follows a 5-phase orchestration workflow: **Legacy Migration (optional
   | docs/ARCHITECTURE.md | architecture | HIGH | docs/project/architecture.md |
   | CONTRIBUTING.md (## Development) | principles | MEDIUM | docs/principles.md |
 
-  Migration Options:
-  1. MIGRATE (recommended): Extract -> Inject -> Archive -> Delete
+  Cleanup Options:
+  1. NORMALIZE (recommended): Extract facts -> Archive -> Remove duplicate sources
   2. ARCHIVE ONLY: Backup without extraction
-  3. SKIP: Leave legacy as-is (may cause duplication)
+  3. SKIP: Leave non-canonical docs as-is (may cause duplication)
 
   Choose option (1/2/3): _
   ```
-- If user selects "1" (MIGRATE):
-  - Optional: "Review extracted content before injection? (yes/no)"
-  - Confirm: "Proceed with migration and archive legacy files?"
+- If user selects "1" (NORMALIZE):
+  - Optional: "Review extracted facts before folding them into the canonical context? (yes/no)"
+  - Confirm: "Proceed with cleanup and archive non-canonical files?"
 - If user selects "2" (ARCHIVE ONLY):
-  - Confirm: "Archive legacy files to .archive/? Content will NOT be extracted."
+  - Confirm: "Archive non-canonical files to .archive/? Content will NOT be normalized."
 - If user selects "3" (SKIP):
-  - Warn: "Legacy files will remain. This may cause duplication issues."
+  - Warn: "Non-canonical files will remain. This may cause duplication issues."
   - Proceed to Phase 1
 
 **0d. Backup and Archive**:
-- Create `.archive/legacy-{timestamp}/` directory
+- Create `.archive/source-docs-{timestamp}/` directory
 - Structure:
   ```
   .archive/
-  `- legacy-YYYY-MM-DD-HHMMSS/
-      |- README_migration.md        # Rollback instructions
-      |- original/                  # Exact copies of legacy files
+  `- source-docs-YYYY-MM-DD-HHMMSS/
+      |- README_cleanup.md          # Rollback instructions
+      |- original/                  # Exact copies of non-canonical files
       |  |- README.md
       |  |- ARCHITECTURE.md
       |  `- documentation/
-      `- extracted/                 # Extracted content (for reference)
+      `- extracted/                 # Extracted facts (for reference)
           |- architecture_content.md
           `- principles_content.md
   ```
-- Copy all legacy files to `original/`
-- Save extracted content to `extracted/`
-- Generate `README_migration.md` with rollback instructions
+- Copy all detected source files to `original/`
+- Save extracted facts to `extracted/`
+- Generate `README_cleanup.md` with rollback instructions
 
-**0e. Content Injection**:
-- Build `migration_context` from extracted content:
+**0e. Context Normalization**:
+- Build `SOURCE_DOC_NOTES` from extracted facts:
   ```json
   {
-    "LEGACY_CONTENT": {
-      "legacy_architecture": { "sections": [...], "diagrams": [...] },
-      "legacy_requirements": { "functional": [...] },
-      "legacy_principles": { "principles": [...] },
-      "legacy_tech_stack": { "frontend": "...", "backend": "..." },
-      "legacy_api": { "endpoints": [...] },
-      "legacy_database": { "tables": [...] },
-      "legacy_runbook": { "install_steps": [...] },
-      "legacy_infrastructure": { "servers": [...], "domains": [...], "ports": {} }
+    "SOURCE_DOC_NOTES": {
+      "architecture_notes": { "sections": [...], "diagrams": [...] },
+      "requirements_notes": { "functional": [...] },
+      "principles_notes": { "principles": [...] },
+      "tech_stack_notes": { "frontend": "...", "backend": "..." },
+      "api_notes": { "endpoints": [...] },
+      "database_notes": { "tables": [...] },
+      "runbook_notes": { "install_steps": [...] },
+      "infrastructure_notes": { "servers": [...], "domains": [...], "ports": {} }
     }
   }
   ```
-- Merge into Context Store for ln-110:
-  - `contextStore.LEGACY_CONTENT = migration_context`
-  - Workers use LEGACY_CONTENT as base content (priority over template defaults)
-- Priority order: **Legacy content > Auto-discovery > Template defaults**
+- Merge extracted facts into the coordinator input as supporting evidence only
+- Workers consume normalized context fields and current source facts directly; there is no legacy-only branch
+- Priority order: **Current source facts + normalized project documentation > template defaults**
 
-**0f. Cleanup (Legacy Files)**:
+**0f. Cleanup (Non-Canonical Files)**:
 - For root-level files (README.md, CONTRIBUTING.md):
   - Do NOT delete
-  - Remove migrated sections using Edit tool
+  - Remove duplicated sections using Edit tool
   - Add links to new locations:
     - `## Architecture` -> replace with link: `[Architecture](docs/project/architecture.md)`
     - `## Tech Stack` -> replace with link: `[Tech Stack](docs/project/tech_stack.md)`
-- For standalone legacy files (ARCHITECTURE.md, documentation/):
+- For standalone non-canonical files (ARCHITECTURE.md, documentation/):
   - Delete files (already backed up)
   - Log: "Deleted: ARCHITECTURE.md (migrated to docs/project/architecture.md)"
-- Clean empty legacy directories
+- Clean empty non-canonical directories
 
-**Output**: `migration_summary` { migrated_count, archived_count, skipped_count, legacy_content }
+**Output**: `cleanup_summary` { normalized_count, archived_count, skipped_count, source_doc_notes }
 
 ### Phase 1: User Confirmation
 
@@ -198,10 +197,10 @@ The skill follows a 5-phase orchestration workflow: **Legacy Migration (optional
 
 **Process**:
 
-0. **Migration Summary** (if Phase 0 ran):
-   - Show: "Migrated {N} legacy documents"
-   - Show: "Archived to .archive/legacy-{date}/"
-   - Show: "LEGACY_CONTENT prepared for workers"
+0. **Cleanup Summary** (if Phase 0 ran):
+   - Show: "Normalized {N} non-canonical documents"
+   - Show: "Archived to .archive/source-docs-{date}/"
+   - Show: "Coordinator input enriched with normalized source notes"
 
 1. **Pre-flight Check** (scan existing documentation):
    - Use Glob tool to check all potential files:
@@ -244,13 +243,13 @@ The skill follows a 5-phase orchestration workflow: **Legacy Migration (optional
 
 **2a. Create Root + Project Documentation**:
 - **Invocation**: `Skill(skill: "ln-110-project-docs-coordinator")` -> AUTOMATIC
-- **Input**: Pass `LEGACY_CONTENT` from Phase 0 (if migration was performed)
+- **Input**: Pass normalized source notes from Phase 0 when cleanup was performed
 - **Behavior**: Coordinator gathers context ONCE, then delegates to 5 L3 workers:
-  - ln-111-root-docs-creator -> 5 root docs (uses LEGACY_CONTENT.legacy_principles if available)
-  - ln-112-project-core-creator -> 3 core docs (uses LEGACY_CONTENT.legacy_architecture, legacy_requirements, legacy_tech_stack)
-  - ln-113-backend-docs-creator -> 2 conditional (uses LEGACY_CONTENT.legacy_api, legacy_database)
+  - ln-111-root-docs-creator -> 5 root docs
+  - ln-112-project-core-creator -> 3 core docs
+  - ln-113-backend-docs-creator -> 2 conditional
   - ln-114-frontend-docs-creator -> 1 conditional (if hasFrontend)
-  - ln-115-devops-docs-creator -> 2 docs: 1 always + 1 conditional (uses LEGACY_CONTENT.legacy_runbook, legacy_infrastructure)
+  - ln-115-devops-docs-creator -> 2 docs: 1 always + 1 conditional
 - **Output**: Root docs (`AGENTS.md` + `CLAUDE.md` + `docs/README.md` + `docs/documentation_standards.md` + `docs/principles.md`) + Project docs (`docs/project/requirements.md`, `architecture.md`, `tech_stack.md`, `infrastructure.md` + conditional: `api_spec.md`, `database_schema.md`, `design_guidelines.md`, `runbook.md`)
 - **Store**: Save `context_store` from ln-110 result (contains TECH_STACK for ln-120)
 - **Validation**: Each L3 worker validates output (SCOPE, metadata markers, top sections, Maintenance)
@@ -504,7 +503,7 @@ Links:
 **Process**:
 1. List all created files with sizes:
    - `AGENTS.md` (canonical project entry point)
-   - `CLAUDE.md` (thin Anthropic compatibility shim)
+   - `CLAUDE.md` (derived Anthropic entrypoint)
    - `docs/README.md` (root documentation hub)
    - `docs/documentation_standards.md` (60 universal requirements)
    - `docs/principles.md` (11 development principles)
@@ -541,7 +540,7 @@ Links:
 ```
 project_root/
 |- AGENTS.md                         # Canonical project entry point (map-first root)
-|- CLAUDE.md                         # Thin Anthropic compatibility shim
+|- CLAUDE.md                         # Derived Anthropic entrypoint
 |- docs/
 |  |- README.md                     # Root documentation hub (general standards)
 |  |- documentation_standards.md    # 60 universal requirements (Claude Code + industry standards)
@@ -668,7 +667,7 @@ Skill type: `planning-coordinator`. Run after all phases complete. Output to cha
 
 ## Reference Files
 
-- Legacy detection patterns: `references/legacy_detection_patterns.md`
+- Non-canonical source patterns: `references/legacy_detection_patterns.md`
 - Worker skills: `ln-110-project-docs-coordinator`, `ln-120-reference-docs-creator`, `ln-130-tasks-docs-creator`, `ln-140-test-docs-creator`
 - Shared docs-quality contract: `shared/references/docs_quality_contract.md`
 - Shared verifier CLI: `shared/scripts/docs-quality/cli.mjs`
@@ -677,16 +676,16 @@ Skill type: `planning-coordinator`. Run after all phases complete. Output to cha
 
 Before completing work, verify ALL checkpoints:
 
-**Legacy Migration (Phase 0 - if applicable):**
-- [ ] Legacy detection patterns applied (Glob + Grep)
-- [ ] Legacy manifest built: { path, type, confidence, target }
-- [ ] User selected migration option (MIGRATE / ARCHIVE / SKIP)
-- [ ] If MIGRATE: Content extracted using type-specific extractors
-- [ ] Backup created: `.archive/legacy-{timestamp}/original/`
-- [ ] Extracted content saved: `.archive/legacy-{timestamp}/extracted/`
-- [ ] README_migration.md generated with rollback instructions
-- [ ] LEGACY_CONTENT prepared for Context Store
-- [ ] Legacy files cleaned up (sections removed from README.md, standalone files deleted)
+**Source Cleanup (Phase 0 - if applicable):**
+- [ ] Non-canonical documentation patterns applied (Glob + Grep)
+- [ ] Source manifest built: { path, type, confidence, target }
+- [ ] User selected cleanup option (NORMALIZE / ARCHIVE / SKIP)
+- [ ] If NORMALIZE: facts extracted using type-specific extractors
+- [ ] Backup created: `.archive/source-docs-{timestamp}/original/`
+- [ ] Extracted facts saved: `.archive/source-docs-{timestamp}/extracted/`
+- [ ] README_cleanup.md generated with rollback instructions
+- [ ] SOURCE_DOC_NOTES prepared for coordinator input
+- [ ] Non-canonical files cleaned up (sections removed from README.md, standalone files deleted)
 
 **User Confirmation (Phase 1):**
 - [ ] Migration summary shown (if Phase 0 ran)

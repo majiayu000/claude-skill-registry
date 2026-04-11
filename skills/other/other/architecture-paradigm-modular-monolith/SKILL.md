@@ -1,14 +1,10 @@
 ---
 name: architecture-paradigm-modular-monolith
 description: 'Single deployable with enforced module boundaries for team autonomy
-  without distributed complexity.
-
-
-  Triggers: modular-monolith, module boundaries, single deployment, team autonomy
-
-  Use when: teams need autonomy without distributed overhead
-
-  DO NOT use when: already using microservices or system is small.'
+  without distributed complexity. Use when teams need autonomy without distributed
+  overhead. Do not use when already using microservices or system is small.'
+version: 1.7.1
+alwaysApply: false
 category: architectural-pattern
 tags:
 - architecture
@@ -26,9 +22,9 @@ usage_patterns:
 - monolith-modernization
 - team-scaling
 complexity: medium
+model_hint: standard
 estimated_tokens: 700
 ---
-
 # The Modular Monolith Paradigm
 
 

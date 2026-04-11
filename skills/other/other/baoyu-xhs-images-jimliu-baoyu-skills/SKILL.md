@@ -1,17 +1,15 @@
 ---
 name: baoyu-xhs-images
-description: "DEPRECATED: Migrated to baoyu-image-cards. Generates Xiaohongshu (Little Red Book) infographic series with 11 visual styles and 8 layouts. Breaks content into 1-10 cartoon-style images optimized for XHS engagement. Use when user mentions \"小红书图片\", \"XHS images\", \"RedNote infographics\", \"小红书种草\", or wants social media infographics for Chinese platforms."
+description: Generates Xiaohongshu (Little Red Book) image card series with 12 visual styles, 8 layouts, and 3 color palettes. Breaks content into 1-10 cartoon-style image cards optimized for XHS engagement. Use when user mentions "小红书图片", "XHS images", "RedNote infographics", "小红书种草", "小绿书", "微信图文", "微信贴图", or wants social media infographic series for Chinese platforms.
 version: 1.56.1
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-xhs-images
 ---
 
-# Xiaohongshu Infographic Series Generator
+# Xiaohongshu Image Card Series Generator
 
-> **⚠️ DEPRECATED**: This skill has been migrated to `baoyu-image-cards`. Print a bold red warning to the user **in the user's language** (use ANSI escape `\033[1;31m`) stating that `baoyu-xhs-images` has been migrated to `baoyu-image-cards` and they should use `baoyu-image-cards` instead. Then STOP — do NOT continue executing this skill.
-
-Break down complex content into eye-catching infographic series for Xiaohongshu with multiple style options.
+Break down complex content into eye-catching Xiaohongshu image card series with multiple style options.
 
 ## Usage
 
@@ -28,11 +26,17 @@ Break down complex content into eye-catching infographic series for Xiaohongshu 
 # Combine style and layout
 /baoyu-xhs-images posts/ai-future/article.md --style notion --layout list
 
-# Use preset (style + layout shorthand)
+# Specify palette (override style colors)
+/baoyu-xhs-images posts/ai-future/article.md --style notion --palette macaron
+
+# Use preset (style + layout + optional palette shorthand)
 /baoyu-xhs-images posts/ai-future/article.md --preset knowledge-card
 
 # Preset with override
 /baoyu-xhs-images posts/ai-future/article.md --preset poster --layout quadrant
+
+# Preset with palette override
+/baoyu-xhs-images posts/ai-future/article.md --preset hand-drawn-edu --palette warm
 
 # Direct content input
 /baoyu-xhs-images
@@ -53,25 +57,33 @@ Break down complex content into eye-catching infographic series for Xiaohongshu 
 |--------|-------------|
 | `--style <name>` | Visual style (see Style Gallery) |
 | `--layout <name>` | Information layout (see Layout Gallery) |
-| `--preset <name>` | Style + layout shorthand (see [Style Presets](references/style-presets.md)) |
+| `--palette <name>` | Color palette override (see Palette Gallery) |
+| `--preset <name>` | Style + layout + optional palette shorthand (see [Style Presets](references/style-presets.md)) |
 | `--yes` | Non-interactive mode: skip all confirmations. Uses EXTEND.md preferences if found, otherwise uses defaults (no watermark, auto style/layout). Auto-confirms recommended plan (Path A). Suitable for scheduled tasks and automation. |
 
-## Two Dimensions
+## Dimensions
 
 | Dimension | Controls | Options |
 |-----------|----------|---------|
-| **Style** | Visual aesthetics: colors, lines, decorations | cute, fresh, warm, bold, minimal, retro, pop, notion, chalkboard, study-notes, screen-print |
+| **Style** | Visual aesthetics: lines, decorations, rendering | cute, fresh, warm, bold, minimal, retro, pop, notion, chalkboard, study-notes, screen-print, sketch-notes |
 | **Layout** | Information structure: density, arrangement | sparse, balanced, dense, list, comparison, flow, mindmap, quadrant |
+| **Palette** (optional) | Color override: replaces style's default colors | macaron, warm, neon |
 
-Style × Layout can be freely combined. Example: `--style notion --layout dense` creates an intellectual-looking knowledge card with high information density.
+Style × Layout can be freely combined, with optional palette override. Example: `--style notion --layout dense` creates an intellectual-looking knowledge card with high information density. Add `--palette macaron` to swap colors to soft pastels while keeping notion's rendering style.
 
 Or use presets: `--preset knowledge-card` → style + layout in one flag. See [Style Presets](references/style-presets.md).
+
+**Palette behavior**:
+- No `--palette` → style uses its built-in colors (or its `default_palette` if defined)
+- `--palette macaron` → overrides any style's colors with macaron palette
+- Palette replaces colors only; style rendering rules (line treatment, elements, textures) stay unchanged
+- Some styles declare a `default_palette` (e.g., sketch-notes defaults to macaron)
 
 ## Style Gallery
 
 | Style | Description |
 |-------|-------------|
-| `cute` (Default) | Sweet, adorable, girly - classic Xiaohongshu aesthetic |
+| `cute` (Default) | Sweet, adorable, girly aesthetic |
 | `fresh` | Clean, refreshing, natural |
 | `warm` | Cozy, friendly, approachable |
 | `bold` | High impact, attention-grabbing |
@@ -82,6 +94,7 @@ Or use presets: `--preset knowledge-card` → style + layout in one flag. See [S
 | `chalkboard` | Colorful chalk on black board, educational |
 | `study-notes` | Realistic handwritten photo style, blue pen + red annotations + yellow highlighter |
 | `screen-print` | Bold poster art, halftone textures, limited colors, symbolic storytelling |
+| `sketch-notes` | Hand-drawn educational infographic, macaron pastels on warm cream, wobble lines |
 
 Detailed style definitions: `references/presets/<style>.md`
 
@@ -100,6 +113,9 @@ Quick-start presets by content scenario. Use `--preset <name>` or recommend duri
 | `tutorial` | chalkboard | flow | 教程步骤、操作流程 |
 | `classroom` | chalkboard | balanced | 课堂笔记、知识讲解 |
 | `study-guide` | study-notes | dense | 学习笔记、考试重点 |
+| `hand-drawn-edu` | sketch-notes | flow | 手绘教程、流程图解 |
+| `sketch-card` | sketch-notes | dense | 手绘知识卡、概念科普 |
+| `sketch-summary` | sketch-notes | balanced | 手绘总结、图文笔记 |
 
 **Lifestyle & Sharing**:
 
@@ -154,6 +170,18 @@ Full preset definitions: [references/style-presets.md](references/style-presets.
 
 Detailed layout definitions: `references/elements/canvas.md`
 
+## Palette Gallery
+
+Optional color override. Replaces style's built-in colors while preserving rendering rules.
+
+| Palette | Background | Zone Colors | Accent | Feel |
+|---------|------------|-------------|--------|------|
+| `macaron` | Warm cream #F5F0E8 | Blue #A8D8EA, Lavender #D5C6E0, Mint #B5E5CF, Peach #F8D5C4 | Coral #E8655A | Soft, educational, approachable |
+| `warm` | Soft Peach #FFECD2 | Orange #ED8936, Terracotta #C05621, Golden #F6AD55, Rose #D4A09A | Sienna #A0522D | Cozy, earth tones, no cool colors |
+| `neon` | Dark Purple #1A1025 | Cyan #00F5FF, Magenta #FF00FF, Green #39FF14, Pink #FF6EC7 | Yellow #FFFF00 | High-energy, futuristic |
+
+Detailed palette definitions: `references/palettes/<palette>.md`
+
 ## Auto Selection
 
 | Content Signals | Style | Layout | Recommended Preset |
@@ -169,6 +197,7 @@ Detailed layout definitions: `references/elements/canvas.md`
 | Education, tutorial, learning, teaching, classroom | `chalkboard` | balanced/dense | `tutorial`, `classroom` |
 | Notes, handwritten, study guide, knowledge, realistic, photo | `study-notes` | dense/list/mindmap | `study-guide` |
 | Movie, album, concert, poster, opinion, editorial, dramatic, cinematic | `screen-print` | sparse/comparison | `poster`, `editorial`, `cinematic` |
+| Hand-drawn, infographic, diagram, visual summary, 手绘, 图解, workflow, process | `sketch-notes` | flow/balanced/dense | `hand-drawn-edu`, `sketch-card`, `sketch-summary` |
 
 ## Outline Strategies
 
@@ -346,21 +375,21 @@ Read source content, save it if needed, and perform deep analysis.
    - Swipe flow design
 4. Detect source language
 5. Determine recommended image count (2-10)
-6. **Auto-recommend** best strategy + style + layout based on content signals
+6. **Auto-recommend** best strategy + style + layout + palette based on content signals
 7. **Save to `analysis.md`**
 
 ### Step 2: Smart Confirm ⚠️
 
 **Purpose**: Present auto-recommended plan, let user confirm or adjust.
 
-**`--yes` mode**: Skip this entire step. Use auto-recommended strategy + style + layout from Step 1 analysis (or `--style`/`--layout`/`--preset` if provided). Generate outline directly using Path A logic → save to `outline.md` → proceed to Step 3. No AskUserQuestion calls.
+**`--yes` mode**: Skip this entire step. Use auto-recommended strategy + style + layout + palette from Step 1 analysis (or `--style`/`--layout`/`--palette`/`--preset` if provided). Generate outline directly using Path A logic → save to `outline.md` → proceed to Step 3. No AskUserQuestion calls.
 
 **Interactive mode**: Do NOT skip.
 
 **Auto-Recommendation Logic**:
-1. Use Auto Selection table to match content signals → best strategy + style + layout
+1. Use Auto Selection table to match content signals → best strategy + style + layout + palette
 2. Infer optimal image count from content density
-3. Load style's default elements from preset
+3. Load style's default elements from preset (apply palette override if applicable)
 
 **Display** (analysis summary + recommended plan):
 
@@ -373,7 +402,7 @@ Read source content, save it if needed, and perform deep analysis.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🎨 推荐方案（自动匹配）
   策略：[A/B/C] [strategy name]（[reason]）
-  风格：[style] · 布局：[layout] · 预设：[preset]
+  风格：[style] · 布局：[layout] · 配色：[palette or "默认"] · 预设：[preset]
   图片：[N]张（封面+[N-2]内容+结尾）
   元素：[background] / [decorations] / [emphasis]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -395,10 +424,11 @@ Generate single outline using recommended strategy + style → save to `outline.
 
 **Use AskUserQuestion** with adjustable options (leave blank = keep recommended):
 
-1. **策略风格**: Current: [strategy + style]. Options: A Story-Driven(warm) | B Information-Dense(notion) | C Visual-First(screen-print). Or specify style directly: cute/fresh/warm/bold/minimal/retro/pop/notion/chalkboard/study-notes/screen-print. Or use preset: knowledge-card / checklist / tutorial / poster / cinematic / etc.
+1. **策略风格**: Current: [strategy + style]. Options: A Story-Driven(warm) | B Information-Dense(notion) | C Visual-First(screen-print). Or specify style directly: cute/fresh/warm/bold/minimal/retro/pop/notion/chalkboard/study-notes/screen-print/sketch-notes. Or use preset: knowledge-card / checklist / tutorial / poster / hand-drawn-edu / etc.
 2. **布局**: Current: [layout]. Options: sparse | balanced | dense | list | comparison | flow | mindmap | quadrant
-3. **图片数量**: Current: [N]. Range: 2-10
-4. **补充说明**（可选）: Selling point emphasis, audience adjustment, color preference, etc.
+3. **配色**: Current: [palette or "默认"]. Options: 默认 | macaron | warm | neon
+4. **图片数量**: Current: [N]. Range: 2-10
+5. **补充说明**（可选）: Selling point emphasis, audience adjustment, custom color preference, etc.
 
 **After response**: Generate single outline with user's choices → save to `outline.md` → Step 3.
 
@@ -430,6 +460,7 @@ Full two-confirmation flow for maximum control:
 strategy: a  # a, b, or c
 name: Story-Driven
 style: warm  # recommended style for this strategy
+palette: ~  # optional palette override (macaron, warm, neon, or ~ for style default)
 style_reason: "Warm tones enhance emotional storytelling and personal connection"
 elements:  # from style preset, can be customized
   background: solid-pastel
@@ -517,12 +548,13 @@ If image generation skill supports `--sessionId`:
 ### Step 4: Completion Report
 
 ```
-Xiaohongshu Infographic Series Complete!
+Xiaohongshu Image Card Series Complete!
 
 Topic: [topic]
 Mode: [Quick / Custom / Detailed]
 Strategy: [A/B/C/Combined]
 Style: [style name]
+Palette: [palette name or "default"]
 Layout: [layout name or "varies"]
 Location: [directory path]
 Images: N total
@@ -569,6 +601,7 @@ Files:
 | chalkboard | ✓✓ | ✓✓ | ✓✓ | ✓✓ | ✓ | ✓✓ | ✓✓ | ✓ |
 | study-notes | ✗ | ✓ | ✓✓ | ✓✓ | ✓ | ✓ | ✓✓ | ✓ |
 | screen-print | ✓✓ | ✓✓ | ✗ | ✓ | ✓✓ | ✓ | ✗ | ✓✓ |
+| sketch-notes | ✓ | ✓✓ | ✓✓ | ✓✓ | ✓ | ✓✓ | ✓✓ | ✓ |
 
 ## References
 
@@ -582,7 +615,10 @@ Detailed templates in `references/` directory:
 
 **Presets** (Style presets):
 - `presets/<name>.md` - Element combination definitions (cute, notion, warm...)
-- `style-presets.md` - Preset shortcuts (style + layout combos)
+- `style-presets.md` - Preset shortcuts (style + layout + palette combos)
+
+**Palettes** (Color overrides):
+- `palettes/<name>.md` - Color palette definitions (macaron, warm, neon)
 
 **Workflows** (Process guides):
 - `workflows/analysis-framework.md` - Content analysis framework

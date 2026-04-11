@@ -1,6 +1,6 @@
 ---
 name: ln-840-benchmark-compare
-description: "Runs a canonical built-in vs hex-line benchmark with scenario manifests, activation checks, and diff-based correctness. Use when measuring hex-line MCP performance against Claude built-in tools or when preparing the canonical suite for later external baselines."
+description: "Use when benchmarking hex-line MCP against Claude built-in tools with scenario manifests, activation checks, and diff-based correctness."
 license: MIT
 model: claude-haiku-4-5
 ---

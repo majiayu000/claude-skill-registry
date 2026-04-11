@@ -140,7 +140,7 @@ Write the summary to the provided artifact path or return the same envelope in s
 - [ ] Status returned
 
 ## Reference Files
-- Templates: `references/templates/api_spec_template.md`, `database_schema_template.md`
+- Templates: `references/templates/api_spec_template.md`, `references/templates/database_schema_template.md`
 - Questions: `references/questions_backend.md` (Q39-Q42)
 
 ---

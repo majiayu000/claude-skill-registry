@@ -49,23 +49,23 @@ Worker summary contract:
 
 ## Inputs
 
-**From ln-100 (via Phase 0 Legacy Migration):**
+**From ln-100 (optional source cleanup phase):**
 ```json
 {
-  "LEGACY_CONTENT": {
-    "legacy_architecture": { "sections": [...], "diagrams": [...] },
-    "legacy_requirements": { "functional": [...] },
-    "legacy_principles": { "principles": [...], "anti_patterns": [...] },
-    "legacy_tech_stack": { "frontend": "...", "backend": "...", "versions": {} },
-    "legacy_api": { "endpoints": [...], "authentication": "..." },
-    "legacy_database": { "tables": [...], "relationships": [...] },
-    "legacy_runbook": { "prerequisites": [...], "install_steps": [...], "env_vars": [...] },
-    "legacy_infrastructure": { "servers": [...], "domains": [...], "ports": {} }
+  "SOURCE_DOC_NOTES": {
+    "architecture_notes": { "sections": [...], "diagrams": [...] },
+    "requirements_notes": { "functional": [...] },
+    "principles_notes": { "principles": [...], "anti_patterns": [...] },
+    "tech_stack_notes": { "frontend": "...", "backend": "...", "versions": {} },
+    "api_notes": { "endpoints": [...], "authentication": "..." },
+    "database_notes": { "tables": [...], "relationships": [...] },
+    "runbook_notes": { "prerequisites": [...], "install_steps": [...], "env_vars": [...] },
+    "infrastructure_notes": { "servers": [...], "domains": [...], "ports": {} }
   }
 }
 ```
 
-**LEGACY_CONTENT** is passed to workers as base content. Priority: **Legacy > Auto-discovery > Template defaults**.
+`SOURCE_DOC_NOTES` enriches the standard context store before worker dispatch. Workers consume normalized context fields only; there is no legacy-specific override branch.
 
 **MANDATORY READ:** Load `shared/references/docs_quality_contract.md`.
 
@@ -157,22 +157,19 @@ ln-110-project-docs-coordinator (this skill)
 3. git log → top 3 frequent committers
 4. If all empty → `[TBD: Provide DevOps team contacts]`
 
-**1.6 Merge Legacy Content (if provided by ln-100):**
-- Check if `LEGACY_CONTENT` was passed from ln-100 Phase 0
-- If exists, merge into Context Store:
+**1.6 Merge Normalized Source Notes (if provided by ln-100):**
+- Check if `SOURCE_DOC_NOTES` was passed from ln-100 cleanup phase
+- If present, merge supporting facts into the standard Context Store:
   ```
-  contextStore.LEGACY_CONTENT = input.LEGACY_CONTENT
+  contextStore.SOURCE_DOC_NOTES = input.SOURCE_DOC_NOTES
   ```
-- Merge priority for workers:
-  - `LEGACY_CONTENT.legacy_architecture` → used by ln-112 for architecture.md
-  - `LEGACY_CONTENT.legacy_requirements` → used by ln-112 for requirements.md
-  - `LEGACY_CONTENT.legacy_tech_stack` → merged with auto-discovered TECH_STACK
-  - `LEGACY_CONTENT.legacy_principles` → used by ln-111 for principles.md
-  - `LEGACY_CONTENT.legacy_api` → used by ln-113 for api_spec.md
-  - `LEGACY_CONTENT.legacy_database` → used by ln-113 for database_schema.md
-  - `LEGACY_CONTENT.legacy_runbook` → used by ln-115 for runbook.md
-  - `LEGACY_CONTENT.legacy_infrastructure` → used by ln-115 for infrastructure.md
-- If no LEGACY_CONTENT: workers use auto-discovery + template defaults
+- Enrichment intent:
+  - architecture notes strengthen architecture evidence
+  - requirement notes strengthen requirements evidence
+  - tech-stack notes clarify versions and rationale
+  - principles, API, database, runbook, and infrastructure notes provide supplemental factual input
+- Workers always generate from normalized context + current project sources
+- If no `SOURCE_DOC_NOTES` are present: rely on direct auto-discovery + current canonical docs
 
 ### Phase 2: Delegate to Workers
 

@@ -8,6 +8,10 @@ description: 'Goal-driven fitness-scored improvement loop. Measures goals, picks
 
 > Measure what's wrong. Fix the worst thing. Measure again. Compound.
 
+**V2 command surface:** use `ao evolve` for the terminal-native loop. It is the
+top-level operator entrypoint for `ao rpi loop --supervisor`, preserving the old
+`$evolve` concept while reusing the v2 RPI loop engine.
+
 Always-on autonomous loop over `$rpi`. Work selection order:
 0. **Pinned work queue** (`--queue=<file>` or inline roadmap — see `references/pinned-queue.md`)
 1. **Harvested `.agents/rpi/next-work.jsonl` work** (freshest concrete follow-up)
@@ -283,10 +287,25 @@ These notes inform work selection throughout the evolve session. Store them in a
 
 Skip if `--skip-baseline` or `--beads-only` or baseline already exists.
 
+`ao evolve` captures this automatically before entering the RPI loop. It hashes
+the active GOALS.md or GOALS.yaml file to an era ID, then writes a snapshot
+under `.agents/evolve/fitness-baselines/goals-<hash>/` if that era directory
+does not already contain a JSON snapshot.
+
+For manual recovery or one-off capture:
+
 ```bash
-if [ ! -f .agents/evolve/fitness-0-baseline.json ]; then
+GOALS_FILE=""
+if [ -f GOALS.md ]; then
+  GOALS_FILE="GOALS.md"
+elif [ -f GOALS.yaml ]; then
+  GOALS_FILE="GOALS.yaml"
+fi
+
+if [ -n "$GOALS_FILE" ]; then
+  ERA_ID="goals-$(shasum -a 256 "$GOALS_FILE" | awk '{print substr($1, 1, 12)}')"
   bash scripts/evolve-capture-baseline.sh \
-    --label "era-$(date -u +%Y%m%dT%H%M%SZ)" \
+    --label "$ERA_ID" \
     --timeout 60
 fi
 ```

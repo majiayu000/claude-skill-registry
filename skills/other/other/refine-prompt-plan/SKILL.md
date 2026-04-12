@@ -57,11 +57,12 @@ Run the `/apply-findings` skill on the evaluated results. Target files are the i
 
 Check whether any prompt plan file (index or shells) was edited during Step 4. Any edit to any file counts.
 
-**If changes were made**, run `/refine-prompt-plan` again using the Skill tool, passing the resolved index path.
+**If changes were made**, classify what Step 4 edited:
 
-**If changes were made but you believe re-running is unnecessary**, use `AskUserQuestion` to ask for skip permission. Do not skip silently.
+- **Structural edits** (added or removed shells, changed `Produces`/`Consumes`/`Covers Spec Requirements` wiring, added or removed spec requirement coverage) — run `/refine-prompt-plan` again via the Skill tool, passing the resolved index path. If the round contains both structural and prose-only edits, treat it as structural and re-run automatically.
+- **Prose-only edits only** (reworded implementation steps in place, fixed stale examples, clarified existing text without changing meaning) — output a summary of what changed, then use `AskUserQuestion` to ask whether to run one more round or stop here. Do not silently continue or silently stop.
 
-**If this is iteration 3 and changes were still made**, the hard cap is reached. Use `AskUserQuestion` to tell the user that 3 iterations were not enough to stabilize, summarize what is still changing, and offer two options: continue for another iteration, or escalate to `/consult-oracle` for a different perspective on the remaining issues.
+**If this is iteration 3 and changes were still made**, the hard cap is reached. This replaces the classification gate above. Output a summary of what is still changing and whether it is structural or prose-only. Then use `AskUserQuestion` to offer three options: continue for another iteration, stop here and accept the prompt plan as-is, or escalate to `/consult-oracle` for a different perspective on the remaining issues.
 
 The re-invocation is a full, fresh run of this skill. Every step (1-5) executes with its own task tracking and skill invocations.
 

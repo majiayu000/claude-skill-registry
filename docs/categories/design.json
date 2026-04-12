@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9498,
-  "updated_at": "2026-04-12T01:27:46.222558Z",
+  "count": 9499,
+  "updated_at": "2026-04-12T02:11:59.301194Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -118409,6 +118409,23 @@
       "stars": 0,
       "install": "markpitt/claude-skills/design/gof-design-patterns",
       "source": "local"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "linux-philosophy",

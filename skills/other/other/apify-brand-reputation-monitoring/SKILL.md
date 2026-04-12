@@ -9,6 +9,12 @@ source: community
 
 Scrape reviews, ratings, and brand mentions from multiple platforms using Apify Actors.
 
+## When to Use
+
+- You need to monitor reviews, ratings, or brand mentions across social, travel, or map platforms.
+- The task is to select and run an Apify Actor for brand sentiment or reputation tracking.
+- You need exported monitoring results and a summary of reputation signals.
+
 ## Prerequisites
 (No need to check it upfront)
 

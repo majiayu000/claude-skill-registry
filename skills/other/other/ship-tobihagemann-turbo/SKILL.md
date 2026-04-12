@@ -40,6 +40,8 @@ If the commit fails due to a pre-commit hook (formatter, linter), fix the issues
 - **Create PR** — run the `/create-pr` skill
 - **Update PR** — run the `/update-pr` skill
 
+Check your task list for remaining tasks and proceed.
+
 ## Rules
 
 - Never stage or commit files containing secrets (`.env`, credentials, API keys). Warn if detected.

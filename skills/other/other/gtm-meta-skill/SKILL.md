@@ -332,7 +332,19 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 - User-specified values always override defaults.
 - In approval messages, list active defaults as assumptions.
 
-### 3.2 Output policy and User Interaction Pattern
+### 3.2 Working directory — set up BEFORE any file writes
+
+**NEVER write files to `/tmp/` or any absolute temp directory.** Files in system `/tmp/` are wiped on reboot — users permanently lose enriched CSVs, research outputs, and hours of paid enrichment work. This is a critical data-loss risk.
+
+Set up a descriptive project-local working directory as your first action:
+
+```bash
+WORKDIR="tmp/<descriptive-task-slug>" && mkdir -p "$WORKDIR" && echo "$WORKDIR"
+```
+
+The slug must describe the task (e.g. `tmp/yc-cmo-outbound`, `tmp/acme-email-waterfall`). Do NOT use random names like `mktemp` generates — the user needs to find these files later. See [enriching-and-researching.md](enriching-and-researching.md) for full details.
+
+### 3.3 Output policy and User Interaction Pattern
 
 - Always use `deepline enrich` for list enrichment or discovery at scale (>5 rows). It auto-opens a visual playground sheet so user can inspect rows, re-run blocks, and iterate.
 - Even for company → ICP person flows, enrich works: search and filter as part of the process, with providers like Apify to guide.
@@ -348,9 +360,9 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 
 See [enriching-and-researching.md](enriching-and-researching.md) for `deepline csv` commands, pre-flight/post-run script templates, and inspection details.
 
-### 3.3 Final file + playground check (light)
+### 3.4 Final file + playground check (light)
 
-- Keep one intended final CSV path: `FINAL_CSV="${OUTPUT_DIR:-/tmp}/<requested_filename>.csv"`
+- Keep one intended final CSV path: `FINAL_CSV="${OUTPUT_DIR:-$WORKDIR}/<requested_filename>.csv"`
 - Before finishing: use the post-run inspection script pattern from [enriching-and-researching.md](enriching-and-researching.md). Run it once instead of separate checks.
 - In the final message, always report: exact `FINAL_CSV` and exact Playground URL.
 - Before closing the session, follow the Section 7 consent step for session sharing.

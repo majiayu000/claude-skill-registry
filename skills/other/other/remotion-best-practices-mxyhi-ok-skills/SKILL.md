@@ -9,6 +9,35 @@ metadata:
 
 Use this skills whenever you are dealing with Remotion code to obtain the domain-specific knowledge.
 
+## New project setup
+
+When in an empty folder or workspace with no existing Remotion project, scaffold one using:
+
+```bash
+npx create-video@latest --yes --blank --no-tailwind my-video
+```
+
+Replace `my-video` with a suitable project name.
+
+## Starting preview
+
+Stsrt the Remotion Studio to preview a video:
+
+```bash
+npx remotion studio
+```
+
+## Optional: one-frame render check
+
+You can render a single frame with the CLI to sanity-check layout, colors, or timing.  
+Skip it for trivial edits, pure refactors, or when you already have enough confidence from Studio or prior renders.
+
+```bash
+npx remotion still [composition-id] --scale=0.25 --frame=30
+```
+
+At 30 fps, `--frame=30` is the one-second mark (`--frame` is zero-based).
+
 ## Captions
 
 When dealing with captions or subtitles, load the [./rules/subtitles.md](./rules/subtitles.md) file for more information.
@@ -17,13 +46,17 @@ When dealing with captions or subtitles, load the [./rules/subtitles.md](./rules
 
 For some video operations, such as trimming videos or detecting silence, FFmpeg should be used. Load the [./rules/ffmpeg.md](./rules/ffmpeg.md) file for more information.
 
+## Silence detection
+
+When needing to detect and trim silent segments from video or audio files, load the [./rules/silence-detection.md](./rules/silence-detection.md) file.
+
 ## Audio visualization
 
 When needing to visualize audio (spectrum bars, waveforms, bass-reactive effects), load the [./rules/audio-visualization.md](./rules/audio-visualization.md) file for more information.
 
 ## Sound effects
 
-When needing to use sound effects, load the [./rules/sound-effects.md](./rules/sound-effects.md) file for more information.
+When needing to use sound effects, load the [./rules/sfx.md](./rules/sfx.md) file for more information.
 
 ## How to use
 
@@ -51,11 +84,12 @@ Read individual rule files for detailed explanations and code examples:
 - [rules/sequencing.md](rules/sequencing.md) - Sequencing patterns for Remotion - delay, trim, limit duration of items
 - [rules/tailwind.md](rules/tailwind.md) - Using TailwindCSS in Remotion
 - [rules/text-animations.md](rules/text-animations.md) - Typography and text animation patterns for Remotion
-- [rules/timing.md](rules/timing.md) - Interpolation curves in Remotion - linear, easing, spring animations
+- [rules/timing.md](rules/timing.md) - Timing with interpolate and Bézier easing, springs
 - [rules/transitions.md](rules/transitions.md) - Scene transition patterns for Remotion
 - [rules/transparent-videos.md](rules/transparent-videos.md) - Rendering out a video with transparency
 - [rules/trimming.md](rules/trimming.md) - Trimming patterns for Remotion - cut the beginning or end of animations
 - [rules/videos.md](rules/videos.md) - Embedding videos in Remotion - trimming, volume, speed, looping, pitch
 - [rules/parameters.md](rules/parameters.md) - Make a video parametrizable by adding a Zod schema
 - [rules/maps.md](rules/maps.md) - Add a map using Mapbox and animate it
+- [rules/silence-detection.md](rules/silence-detection.md) - Adaptive silence detection using FFmpeg loudnorm and silencedetect
 - [rules/voiceover.md](rules/voiceover.md) - Adding AI-generated voiceover to Remotion compositions using ElevenLabs TTS

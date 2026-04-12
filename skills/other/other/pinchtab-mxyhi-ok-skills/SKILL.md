@@ -11,9 +11,6 @@ metadata:
         - google-chrome-stable
         - chromium
         - chromium-browser
-      env:
-        - PINCHTAB_TOKEN
-        - PINCHTAB_CONFIG
     homepage: https://github.com/pinchtab/pinchtab
     install:
       - kind: brew
@@ -33,6 +30,20 @@ Preferred tool surface:
 - Use `pinchtab` CLI commands first.
 - Use `curl` for profile-management routes or non-shell/API fallback flows.
 - Use `jq` only when you need structured parsing from JSON responses.
+
+## Agent Identity And Attribution
+
+When multiple agents share one PinchTab server, always give each agent a stable ID.
+
+- CLI flows: prefer `pinchtab --agent-id <agent-id> ...`
+- long-running shells: set `PINCHTAB_AGENT_ID=<agent-id>`
+- raw HTTP flows: send `X-Agent-Id: <agent-id>` on requests that should be attributed to that agent
+
+That identity is recorded as `agentId` in activity events and powers:
+
+- scheduler task attribution when work is dispatched on behalf of an agent
+
+If you are switching between unrelated browser tasks, do not reuse the same agent ID unless you intentionally want one combined activity trail.
 
 ## Safety Defaults
 
@@ -101,15 +112,15 @@ Use `&&` only when you do not need to inspect intermediate output before decidin
 Good:
 
 ```bash
-pinchtab nav https://example.com && pinchtab snap -i -c
+pinchtab nav https://pinchtab.com && pinchtab snap -i -c
 pinchtab click --wait-nav e5 && pinchtab snap -i -c
-pinchtab nav https://example.com --block-images && pinchtab text
+pinchtab nav https://pinchtab.com --block-images && pinchtab text
 ```
 
 Run commands separately when you must read the snapshot output first:
 
 ```bash
-pinchtab nav https://example.com
+pinchtab nav https://pinchtab.com
 pinchtab snap -i -c
 # Read refs, choose the correct e#
 pinchtab click e7
@@ -118,131 +129,21 @@ pinchtab snap -i -c
 
 ## Challenge Solving
 
-PinchTab includes a pluggable solver framework that auto-detects and resolves browser challenges (Cloudflare Turnstile, CAPTCHAs, interstitials). Use this **after navigation** when the page shows a challenge instead of the expected content.
-
-**Important:** Solvers work best with `stealthLevel: "full"` in the PinchTab config (or `instanceDefaults.stealthLevel: "full"`). Full stealth mode patches CDP detection vectors, rotates fingerprints, and masks automation signals — all of which challenge providers like Cloudflare check before and after the checkbox click. Without full stealth, the solver may click correctly but the challenge can still fail fingerprint verification.
-
-```bash
-# Auto-detect and solve any challenge on the current page
-curl -X POST http://localhost:9867/solve \
-  -H 'Content-Type: application/json' \
-  -d '{"maxAttempts": 3, "timeout": 30000}'
-
-# Use a specific solver
-curl -X POST http://localhost:9867/solve/cloudflare \
-  -H 'Content-Type: application/json' \
-  -d '{"maxAttempts": 3}'
-
-# Tab-scoped solve
-curl -X POST http://localhost:9867/tabs/TAB_ID/solve \
-  -H 'Content-Type: application/json' \
-  -d '{}'
-
-# List available solvers
-curl http://localhost:9867/solvers
-```
-
-**When to use solve:**
-
-- Page title is "Just a moment..." or similar challenge indicator
-- `pinchtab text` returns empty or challenge-page text after navigation
-- A Cloudflare Turnstile widget blocks the target content
-
-**Workflow pattern:**
-
-```bash
-pinchtab nav https://protected-site.com
-pinchtab text                    # Check if page loaded or shows challenge
-# If challenge detected:
-curl -X POST http://localhost:9867/solve \
-  -H 'Content-Type: application/json' -d '{}'
-pinchtab text                    # Verify: should now show real page content
-```
-
-**Response fields:** `solver` (which solver handled it), `solved` (bool), `challengeType` (e.g. "managed"), `attempts`, `title` (final page title).
-
-The auto-detect mode (`POST /solve` without specifying a solver) tries each registered solver in order and returns immediately with `solved: true, attempts: 0` if no challenge is present. This makes it safe to call speculatively after any navigation.
+If a page shows a challenge instead of content (e.g., "Just a moment..."), call `POST /solve` with `{"maxAttempts": 3}` to auto-detect and resolve it. Use `POST /tabs/TAB_ID/solve` for tab-scoped. Works best with `stealthLevel: "full"` in config. Safe to call speculatively — returns immediately if no challenge is present. See [api.md](./references/api.md) for full solver options.
 
 ## Handling Authentication and State
 
-Pick one of these five patterns before you start interacting with the site.
+Pick a pattern before interacting with the site:
 
-### 1. One-off public browsing
+1. **One-off browsing**: `pinchtab instance start` → use `--server http://localhost:<port>` for commands.
+2. **Reuse a profile**: `pinchtab instance start --profile work --mode headed` → switch to `--mode headless` after login is stored.
+3. **Create profile via HTTP**: `POST /profiles` with `{"name":"..."}`, then `POST /profiles/<name>/start`.
+4. **Human-assisted login**: Start headed, human signs in, agent reuses the profile headless.
+5. **HTTP-only agent**: Use `POST /instances/start`, then target the instance port with curl. Send `X-Agent-Id` for attribution.
 
-Use a temporary instance for public pages, scraping, or tasks that do not need login persistence.
+If the server is exposed beyond localhost, require a token. See [TRUST.md](./TRUST.md).
 
-```bash
-pinchtab instance start
-pinchtab instances
-# Point CLI commands at the instance port you want to use.
-pinchtab --server http://localhost:9868 nav https://example.com
-pinchtab --server http://localhost:9868 text
-```
-
-### 2. Reuse an existing named profile
-
-Use this for recurring tasks against the same authenticated site.
-
-```bash
-pinchtab profiles
-pinchtab instance start --profile work --mode headed
-pinchtab --server http://localhost:9868 nav https://mail.google.com
-```
-
-If the login is already stored in that profile, you can switch to headless later:
-
-```bash
-pinchtab instance stop inst_ea2e747f
-pinchtab instance start --profile work --mode headless
-```
-
-### 3. Create a dedicated auth profile over HTTP
-
-Use this when you need a durable profile and it does not exist yet.
-
-```bash
-curl -X POST http://localhost:9867/profiles \
-  -H "Content-Type: application/json" \
-  -d '{"name":"billing","description":"Billing portal automation","useWhen":"Use for billing tasks"}'
-
-curl -X POST http://localhost:9867/profiles/billing/start \
-  -H "Content-Type: application/json" \
-  -d '{"headless":false}'
-```
-
-Then target the returned port with `--server`.
-
-### 4. Human-assisted headed login, then agent reuse
-
-Use this for CAPTCHA, MFA, or first-time setup.
-
-```bash
-pinchtab instance start --profile work --mode headed
-# Human completes login in the visible Chrome window.
-pinchtab --server http://localhost:9868 nav https://app.example.com/dashboard
-pinchtab --server http://localhost:9868 snap -i -c
-```
-
-Once the session is stored, reuse the same profile for later tasks.
-
-### 5. Remote or non-shell agent with tokenized HTTP API
-
-Use this when the agent cannot call the CLI directly.
-
-```bash
-curl http://localhost:9867/health
-curl -X POST http://localhost:9867/profiles \
-  -H "Content-Type: application/json" \
-  -d '{"name":"work"}'
-curl -X POST http://localhost:9867/instances/start \
-  -H "Content-Type: application/json" \
-  -d '{"profileId":"work","mode":"headless"}'
-curl -X POST http://localhost:9868/action \
-  -H "Content-Type: application/json" \
-  -d '{"kind":"click","selector":"e5"}'
-```
-
-If the server is exposed beyond localhost, require a token and use a dedicated automation profile. See [TRUST.md](./TRUST.md) and [config.md](../../docs/reference/config.md).
+**Agent sessions**: Each agent can get its own revocable session token via `pinchtab session create --agent-id <id>` or `POST /sessions`. Set `PINCHTAB_SESSION=ses_...` or send `Authorization: Session ses_...`. Sessions have idle timeout (default 30m) and max lifetime (default 24h).
 
 ## Essential Commands
 
@@ -296,6 +197,7 @@ Guidance:
 - `snap -d` is the default follow-up snapshot for multi-step flows.
 - `text` is the default for reading articles, dashboards, reports, or confirmation messages.
 - `find --ref-only` is useful when the page is large and you already know the semantic target.
+- Refs from `snap -i` and full `snap` use different numbering. Do not mix them — if you snapshot with `-i`, use those refs. If you re-snapshot without `-i`, get fresh refs before acting.
 
 ### Interaction
 
@@ -320,6 +222,7 @@ Rules:
 - Prefer `type` only when the site depends on keystroke events.
 - Prefer `click --wait-nav` when a click is expected to navigate.
 - Re-snapshot immediately after `click`, `press Enter`, `select`, or `scroll` if the UI can change.
+- To discover valid dropdown values, snapshot with `filter=interactive` first — the output shows `<option>` elements with their `value` attributes. Then use `select` with the exact value.
 
 ### Export, debug, and verification
 
@@ -377,6 +280,80 @@ Use the API when:
 - profile creation or mutation is required,
 - or you need explicit instance- and tab-scoped routes.
 
+### Tab-scoped HTTP API
+
+**Important:** Each `POST /navigate` creates a new tab by default. The default (non-tab-scoped) endpoints like `/snapshot`, `/action`, `/text` operate on the *active* tab, which may not be the one you just navigated. In multi-tab workflows, always use tab-scoped routes to avoid acting on the wrong page.
+
+Get the tab ID from the navigate response or from `GET /tabs`.
+
+```bash
+# List all tabs
+curl http://localhost:9867/tabs \
+  -H "Authorization: Bearer <token>"
+
+# Navigate in a specific tab (does not create a new tab)
+curl -X POST http://localhost:9867/tabs/TAB_ID/navigate \
+  -H "Authorization: Bearer <token>" \
+  -H "Content-Type: application/json" \
+  -d '{"url":"https://example.com"}'
+
+# Snapshot a specific tab
+curl "http://localhost:9867/tabs/TAB_ID/snapshot?filter=interactive&format=compact" \
+  -H "Authorization: Bearer <token>"
+
+# Get text from a specific tab
+curl http://localhost:9867/tabs/TAB_ID/text \
+  -H "Authorization: Bearer <token>"
+
+# Perform action on a specific tab
+curl -X POST http://localhost:9867/tabs/TAB_ID/action \
+  -H "Authorization: Bearer <token>" \
+  -H "Content-Type: application/json" \
+  -d '{"kind":"click","selector":"#submit-btn"}'
+
+# Navigate back/forward in a specific tab
+curl -X POST http://localhost:9867/tabs/TAB_ID/back \
+  -H "Authorization: Bearer <token>"
+curl -X POST http://localhost:9867/tabs/TAB_ID/forward \
+  -H "Authorization: Bearer <token>"
+
+# Screenshot (GET, not POST)
+curl http://localhost:9867/tabs/TAB_ID/screenshot \
+  -H "Authorization: Bearer <token>" \
+  --output screenshot.png
+
+# PDF export (GET or POST)
+curl http://localhost:9867/tabs/TAB_ID/pdf \
+  -H "Authorization: Bearer <token>" \
+  --output page.pdf
+
+# Close a tab
+curl -X POST http://localhost:9867/tabs/TAB_ID/close \
+  -H "Authorization: Bearer <token>"
+```
+
+The default (non-tab-scoped) endpoints also support screenshots and PDF:
+
+```bash
+# Screenshot of active tab (GET)
+curl http://localhost:9867/screenshot \
+  -H "Authorization: Bearer <token>" \
+  --output screenshot.png
+
+# PDF of active tab (GET or POST)
+curl http://localhost:9867/pdf \
+  -H "Authorization: Bearer <token>" \
+  --output page.pdf
+```
+
+**Navigation with `waitNav`:** When clicking a link or button that triggers page navigation, include `"waitNav": true` in the action body. Without it, PinchTab returns a `navigation_changed` error to protect against unexpected navigation during form interactions.
+
+```json
+{"kind": "click", "selector": "#search-btn", "waitNav": true}
+```
+
+All tab-scoped routes follow the pattern `/tabs/{TAB_ID}/...` and mirror the default endpoints. The full list includes: `navigate`, `back`, `forward`, `reload`, `snapshot`, `screenshot`, `text`, `pdf`, `action`, `actions`, `dialog`, `wait`, `find`, `lock`, `unlock`, `cookies`, `metrics`, `network`, `solve`, `close`, `storage`, `evaluate`, `download`, `upload`.
+
 ## Common Patterns
 
 ### Open a page and inspect actions
@@ -399,12 +376,14 @@ pinchtab text
 ### Search, then extract the result page cheaply
 
 ```bash
-pinchtab nav https://example.com
+pinchtab nav https://example.com/search
 pinchtab snap -i -c
 pinchtab fill e2 "quarterly report"
-pinchtab press Enter
+pinchtab click e3  # Click the Search button
 pinchtab text
 ```
+
+**Form submission:** Always click the submit button — never use `press Enter`. Most HTML forms only fire their submission handler on button click, not on Enter keypress.
 
 ### Use diff snapshots in a multi-step flow
 
@@ -425,36 +404,6 @@ pinchtab fill "#search" "quarterly report"
 pinchtab click "xpath://button[@type='submit']"
 ```
 
-### Navigate through a Cloudflare-protected site
-
-```bash
-pinchtab nav https://protected-site.com
-# Page may show CF challenge ("Just a moment...")
-curl -X POST http://localhost:9867/solve \
-  -H 'Content-Type: application/json' -d '{"maxAttempts": 3}'
-# Now the real page is loaded — proceed normally
-pinchtab snap -i -c
-pinchtab text
-```
-
-### Bootstrap an authenticated profile
-
-```bash
-pinchtab profiles
-pinchtab instance start --profile work --mode headed
-# Human signs in once.
-pinchtab --server http://localhost:9868 text
-```
-
-### Run separate instances for separate sites
-
-```bash
-pinchtab instance start --profile work --mode headless
-pinchtab instance start --profile staging --mode headless
-pinchtab instances
-```
-
-Then point each command stream at its own port using `--server`.
 
 ## Security and Token Economy
 
@@ -471,24 +420,14 @@ Then point each command stream at its own port using `--server`.
 - Use `pinchtab screenshot` only when visual regressions, CAPTCHA, or layout-specific confirmation matters.
 - If a ref disappears after a change, treat that as expected and fetch fresh refs instead of retrying the stale one.
 
-## Privacy and Security
-
-PinchTab is a fully open-source, local-only browser automation tool:
-
-- **Runs on localhost only.** The server binds to `127.0.0.1` by default. No external network calls are made by PinchTab itself.
-- **No telemetry or analytics.** The binary makes zero outbound connections.
-- **Single Go binary (~16 MB).** Fully verifiable — anyone can build from source at [github.com/pinchtab/pinchtab](https://github.com/pinchtab/pinchtab).
-- **Local Chrome profiles.** Persistent profiles store cookies and sessions on your machine only. This enables agents to reuse authenticated sessions without re-entering credentials, similar to how a human reuses their browser profile.
-- **Token-efficient by design.** Uses the accessibility tree (structured text) instead of screenshots, keeping agent context windows small. Comparable to Playwright but purpose-built for AI agents.
-- **Multi-instance isolation.** Each browser instance runs in its own profile directory with tab-level locking for safe multi-agent use.
 
 ## References
 
-- Command surface: [commands.md](../../docs/commands.md)
-- CLI overview: [cli.md](../../docs/reference/cli.md)
-- Profiles: [profiles.md](../../docs/reference/profiles.md)
-- Instances: [instances.md](../../docs/reference/instances.md)
 - Full API: [api.md](./references/api.md)
 - Minimal env vars: [env.md](./references/env.md)
-- Config reference: [config.md](../../docs/reference/config.md)
+- Agent optimization: [agent-optimization.md](./references/agent-optimization.md)
+- Profiles: [profiles.md](./references/profiles.md)
+- MCP: [mcp.md](./references/mcp.md)
 - Security model: [TRUST.md](./TRUST.md)
+
+

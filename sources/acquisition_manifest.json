@@ -1,61 +1,61 @@
 {
   "version": 1,
-  "updated_at": "2026-04-12T01:16:11.437890Z",
+  "updated_at": "2026-04-12T01:59:48.087062Z",
   "total_count": 9,
   "entries": {
     "conorluddy/ios-simulator-skill": {
       "repo": "conorluddy/ios-simulator-skill",
       "branch": "main",
       "relative_path": "ios-simulator-skill/SKILL.md",
-      "updated_at": "2026-04-12T01:16:02.245786Z"
+      "updated_at": "2026-04-12T01:59:38.815075Z"
     },
     "ToniPerea/humanizar-texto-es": {
       "repo": "ToniPerea/humanizar-texto-es",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-04-12T01:16:02.253145Z"
+      "updated_at": "2026-04-12T01:59:38.815627Z"
     },
     "miningstore/confluence-to-agent-knowledge-base": {
       "repo": "miningstore/confluence-to-agent-knowledge-base",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-04-12T01:16:01.981500Z"
+      "updated_at": "2026-04-12T01:59:38.516052Z"
     },
     "b33kman/professional-business-writing-skill": {
       "repo": "b33kman/professional-business-writing-skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-04-12T01:16:02.341930Z"
+      "updated_at": "2026-04-12T01:59:38.896582Z"
     },
     "Enreign/pagerunner-skill": {
       "repo": "Enreign/pagerunner-skill",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-04-12T01:16:03.111430Z"
+      "updated_at": "2026-04-12T01:59:39.791396Z"
     },
     "Chris1220-cmd/deep-research-skill": {
       "repo": "Chris1220-cmd/deep-research-skill",
       "branch": "master",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-04-12T01:16:02.246872Z"
+      "updated_at": "2026-04-12T01:59:38.534387Z"
     },
     "alonw0/web-asset-generator": {
       "repo": "alonw0/web-asset-generator",
       "branch": "main",
       "relative_path": "skills/web-asset-generator/SKILL.md",
-      "updated_at": "2026-04-12T01:16:04.381426Z"
+      "updated_at": "2026-04-12T01:59:41.158071Z"
     },
     "varfolomejev/query-victorialogs": {
       "repo": "varfolomejev/query-victorialogs",
       "branch": "main",
       "relative_path": "SKILL.md",
-      "updated_at": "2026-04-12T01:16:04.575280Z"
+      "updated_at": "2026-04-12T01:59:41.381315Z"
     },
     "yusufkaraaslan/Skill_Seekers": {
       "repo": "yusufkaraaslan/Skill_Seekers",
       "branch": "master",
       "relative_path": "skills/skill-seekers/SKILL.md",
-      "updated_at": "2026-04-12T01:16:04.383380Z"
+      "updated_at": "2026-04-12T01:59:41.159766Z"
     }
   }
 }

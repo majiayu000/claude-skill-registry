@@ -1,0 +1,110 @@
+---
+name: launch-tier
+description: "Classify releases into launch tiers and plan go-to-market. Based on Lauchengco's Loved framework."
+---
+
+# Launch Tier Classification
+
+Every release gets classified before planning begins. Source: Lauchengco (Loved).
+
+## Tier Definitions
+
+| Tier | Type | Effort | Examples |
+|------|------|--------|---------|
+| **1** | Major | Full cross-functional | New product, major pivot, category-defining |
+| **2** | Significant | Targeted campaigns | Feature launch, positioning reinforcement |
+| **3** | Incremental | Lightweight | Bug fixes, minor improvements, release notes |
+
+## Classification Criteria
+- Does this change our positioning? -> Tier 1
+- Does this strengthen existing positioning? -> Tier 2
+- Is this an incremental improvement? -> Tier 3
+
+## Per-Tier Activities
+
+### Software (default)
+**Tier 1**: Press, events, campaigns, sales enablement, analyst briefings, customer advisory
+**Tier 2**: Blog post, targeted campaigns, sales enablement update, in-product announcement
+**Tier 3**: Release notes, changelog, in-product notification, knowledge base update
+
+### Content Products (courses, publications, media) (v0.11.0)
+**Tier 1**: Platform launch (new course on marketplace), PR/media coverage, launch webinar, guest appearances
+**Tier 2**: New module/section, cross-promotion, community announcement, guest post
+**Tier 3**: Content update, errata fix, supplementary material, minor revision
+
+### AI Tools (v0.11.0)
+**Tier 1**: Public launch, ProductHunt/HackerNews, documentation site, demo video
+**Tier 2**: New capability/model, integration partnership, case study
+**Tier 3**: Prompt improvement, model update, bug fix, eval result improvement
+
+### Service Offerings (v0.11.0)
+**Tier 1**: New service line launch, case study PR, conference talk, partnership announcement
+**Tier 2**: New package/tier, testimonial campaign, process improvement announcement
+**Tier 3**: Pricing update, workflow refinement, expanded availability
+
+## Behavioral Science in Positioning (Shotton)
+Use biases ETHICALLY to help users understand value:
+- **Social proof**: Reference customers, usage numbers (real, not inflated)
+- **Anchoring**: Frame value relative to alternatives
+- **Framing**: Position the benefit, not just the feature
+- **Never**: Confirmshaming, hidden costs, forced continuity, misdirection
+
+## Canvas Output
+Update `canvas/go-to-market.yml` with tier classification and launch plan.
+
+## Ethical Engagement Design (Eyal -- Hook Model)
+
+For products that need user retention, design engagement ethically using the Hook Canvas:
+
+### Hook Canvas
+Map the four components of habit formation:
+- **Trigger**: What prompts the user to engage? (External: notification, email. Internal: emotion, routine.)
+- **Action**: What is the simplest behavior in anticipation of reward? (Must be easier than thinking.)
+- **Variable Reward**: What reward satisfies the user's need while leaving them wanting more? (Tribe: social, Hunt: resources, Self: mastery.)
+- **Investment**: What bit of work does the user put in that improves the next cycle? (Data, content, reputation, skill.)
+
+### Manipulation Matrix (Ethical Gate — NUDGE)
+Before implementing engagement design, answer honestly:
+1. **Does it materially improve the user's life?** (Not just "engagement" — actual value.)
+2. **Would you use it yourself?** (The maker's test.)
+
+| | User Benefits | User Doesn't Benefit |
+|---|---|---|
+| **Maker Uses It** | **Facilitator** (ethical) | **Entertainer** (proceed with caution) |
+| **Maker Doesn't Use It** | **Peddler** (risky) | **Dealer** (unethical — do not build) |
+
+Only **Facilitator** products should be built without reservation. Entertainers need honest self-assessment. Peddlers and Dealers trigger anti-pattern #10 (Dark Pattern Marketing).
+
+Update `canvas/go-to-market.yml` engagement_design section with Hook Canvas results.
+
+*Source: Eyal (Hooked), with ethical framework from the Manipulation Matrix*
+
+## After Launch: The L5 -> L2 Feedback Loop
+
+**This is critical.** After launch, market feedback must flow back into discovery:
+
+1. **Capture market signals** (within 2-4 weeks post-launch).
+   Check the product-type-appropriate metrics canvas via `/dora-check`:
+
+   **Software**: feature usage, retention, conversion, support tickets, NPS/CSAT
+   **Content**: refund rate, completion rate, drop-off points, return rate, reviews, NPS
+   **AI tool**: task success rate, retention, DAU, refund rate, user feedback
+   **Service**: client satisfaction (NPS/CSAT), referral rate, retention, delivery lead time feedback
+
+2. **Evaluate against L2 assumptions**:
+   - Do the signals confirm the L2 opportunity we solved for?
+   - Are there NEW needs we didn't anticipate?
+   - Did users "hire" the product for a different job than expected? (JTBD)
+
+3. **Feed back into discovery**:
+   - If signals confirm: update confidence scores, celebrate validated learning
+   - If signals reveal NEW opportunities: **spawn a new L2 Opportunity diamond** with market evidence as the starting data
+   - If signals contradict: flag for diamond regression, update corrections.md
+
+This closes the full Mycelium loop: Purpose -> Strategy -> Discovery -> Solution -> Delivery -> **Market -> Discovery**.
+
+## Theory Citations
+- Lauchengco: Loved (launch tier classification, positioning)
+- Shotton: Choice Factory (ethical behavioral science in positioning)
+- Kim: Three Ways (Second Way -- amplify feedback loops right-to-left)
+- Torres: Continuous Discovery (market signals feed back into OST)

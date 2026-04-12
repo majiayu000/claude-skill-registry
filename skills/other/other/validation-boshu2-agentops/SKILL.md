@@ -243,11 +243,4 @@ On budget expiry: allow in-flight calls to complete, write `[TIME-BOXED]` marker
 
 ## See Also
 
-- [skills/vibe/SKILL.md](../vibe/SKILL.md) — code quality review
-- [skills/post-mortem/SKILL.md](../post-mortem/SKILL.md) — retrospective analysis
-- [skills/retro/SKILL.md](../retro/SKILL.md) — quick learning capture
-- [skills/forge/SKILL.md](../forge/SKILL.md) — transcript mining
-- [skills/crank/SKILL.md](../crank/SKILL.md) — previous phase (implementation)
-- [skills/discovery/SKILL.md](../discovery/SKILL.md) — first phase (discovery)
-- [skills/rpi/SKILL.md](../rpi/SKILL.md) — full lifecycle orchestrator
-- [skills/test/SKILL.md](../test/SKILL.md), [skills/deps/SKILL.md](../deps/SKILL.md), [skills/review/SKILL.md](../review/SKILL.md), [skills/perf/SKILL.md](../perf/SKILL.md) — lifecycle STEP 1.7 skills
+Core phases: [vibe](../vibe/SKILL.md), [post-mortem](../post-mortem/SKILL.md), [retro](../retro/SKILL.md), [forge](../forge/SKILL.md), [crank](../crank/SKILL.md), [discovery](../discovery/SKILL.md), [rpi](../rpi/SKILL.md). Lifecycle Step 1.7: [test](../test/SKILL.md), [deps](../deps/SKILL.md), [review](../review/SKILL.md), [perf](../perf/SKILL.md).

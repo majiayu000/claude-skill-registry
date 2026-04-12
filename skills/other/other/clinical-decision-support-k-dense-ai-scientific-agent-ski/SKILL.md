@@ -484,7 +484,6 @@ See the `assets/` directory for LaTeX templates:
 - `treatment_recommendation_template.tex` - Evidence-based clinical practice guidelines with GRADE grading
 - `clinical_pathway_template.tex` - TikZ decision algorithm flowcharts for treatment sequencing
 - `biomarker_report_template.tex` - Molecular subtype classification and genomic profile reports
-- `evidence_synthesis_template.tex` - Systematic evidence review and meta-analysis summaries
 
 **Template Features:**
 - 0.5in margins for compact presentation

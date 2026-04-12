@@ -20,7 +20,7 @@ context:
 metadata:
   tier: session
   stability: experimental
-output_contract: "Dream report artifacts at .agents/overnight/*/summary.{json,md} and optional scheduler assistance under .agentops/generated/dream/"
+output_contract: "Dream report artifacts at .agents/overnight/*/summary.{json,md}, per-iteration cycle history at .agents/overnight/*/<runID>/iterations/iter-<N>.json (resumed runs rehydrate from disk), and optional scheduler assistance under .agentops/generated/dream/"
 ---
 
 # Dream - Private Overnight Operator Mode

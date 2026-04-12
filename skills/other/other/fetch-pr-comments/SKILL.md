@@ -96,6 +96,8 @@ For each file with unresolved threads, show:
 - For threads with multiple comments, show each comment with its author
 - If there are zero unresolved threads and zero review body comments, say so and stop
 
+Check your task list for remaining tasks and proceed.
+
 ## Rules
 
 - If the user wants to fix or reply to comments, direct them to use `/resolve-pr-comments`.

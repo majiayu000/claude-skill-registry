@@ -25,6 +25,8 @@ Research topic: $ARGUMENTS
 > - `/research-lit "topic" — sources: zotero` — only search Zotero
 > - `/research-lit "topic" — sources: web` — only search the web (skip all local)
 > - `/research-lit "topic" — sources: web, semantic-scholar` — also search Semantic Scholar for published venue papers (IEEE, ACM, etc.)
+> - `/research-lit "topic" — sources: deepxiv` — only search via DeepXiv progressive retrieval
+> - `/research-lit "topic" — sources: all, deepxiv` — use default sources plus DeepXiv
 > - `/research-lit "topic" — arxiv download: true` — download top relevant arXiv PDFs
 > - `/research-lit "topic" — arxiv download: true, max download: 10` — download up to 10 PDFs
 
@@ -35,8 +37,8 @@ This skill checks multiple sources **in priority order**. All are optional — i
 ### Source Selection
 
 Parse `$ARGUMENTS` for a `— sources:` directive:
-- **If `— sources:` is specified**: Only search the listed sources (comma-separated). Valid values: `zotero`, `obsidian`, `local`, `web`, `semantic-scholar`, `all`.
-- **If not specified**: Default to `all` — search every available source in priority order (`semantic-scholar` is **excluded** from `all`; it must be explicitly listed).
+- **If `— sources:` is specified**: Only search the listed sources (comma-separated). Valid values: `zotero`, `obsidian`, `local`, `web`, `semantic-scholar`, `deepxiv`, `all`.
+- **If not specified**: Default to `all` — search every available source in priority order (`semantic-scholar` and `deepxiv` are **excluded** from `all`; they must be explicitly listed).
 
 Examples:
 ```
@@ -47,6 +49,8 @@ Examples:
 /research-lit "diffusion models" — sources: local                   → local PDFs only
 /research-lit "topic" — sources: obsidian, local, web               → skip Zotero
 /research-lit "topic" — sources: web, semantic-scholar              → web + S2 API (IEEE/ACM venue papers)
+/research-lit "topic" — sources: deepxiv                            → DeepXiv only
+/research-lit "topic" — sources: all, deepxiv                       → default sources + DeepXiv
 /research-lit "topic" — sources: all, semantic-scholar              → all + S2 API
 ```
 
@@ -59,6 +63,7 @@ Examples:
 | 3 | **Local PDFs** | `local` | `Glob: papers/**/*.pdf, literature/**/*.pdf` | Raw PDF content (first 3 pages) |
 | 4 | **Web search** | `web` | Always available (WebSearch) | arXiv, Semantic Scholar, Google Scholar |
 | 5 | **Semantic Scholar API** | `semantic-scholar` | `tools/semantic_scholar_fetch.py` exists | Published venue papers (IEEE, ACM, Springer) with structured metadata: citation counts, venue info, TLDR. **Only runs when explicitly requested** via `— sources: semantic-scholar` or `— sources: web, semantic-scholar` |
+| 6 | **DeepXiv CLI** | `deepxiv` | `tools/deepxiv_fetch.py` and installed `deepxiv` CLI | Progressive paper retrieval: search, brief, head, section, trending, web search. **Only runs when explicitly requested** via `— sources: deepxiv` or `— sources: all, deepxiv` |
 
 > **Graceful degradation**: If no MCP servers are configured, the skill works exactly as before (local PDFs + web search). Zotero and Obsidian are pure additions.
 
@@ -167,6 +172,31 @@ If `semantic_scholar_fetch.py` is not found, skip silently.
 - If a paper appears in both: check S2's `venue`/`publicationVenue` — if it has been published in a journal/conference (e.g. IEEE TWC, JSAC), use S2's metadata (venue, citationCount, DOI) as the authoritative version, since the published version supersedes the preprint. Keep the arXiv PDF link for download.
 - If the S2 match has no venue (still just a preprint indexed by S2): keep the arXiv version as-is.
 - S2 results without `externalIds.ArXiv` are **venue-only papers** not on arXiv — these are the unique value of this source.
+
+**DeepXiv search** (only when `deepxiv` is in sources):
+
+When the user explicitly requests `— sources: deepxiv` (or includes `deepxiv` in a combined source list), use the DeepXiv adapter for progressive retrieval:
+
+```bash
+python3 tools/deepxiv_fetch.py search "QUERY" --max 10
+```
+
+Then deepen only for the most relevant papers:
+
+```bash
+python3 tools/deepxiv_fetch.py paper-brief ARXIV_ID
+python3 tools/deepxiv_fetch.py paper-head ARXIV_ID
+python3 tools/deepxiv_fetch.py paper-section ARXIV_ID "Experiments"
+```
+
+If `tools/deepxiv_fetch.py` or the `deepxiv` CLI is unavailable, skip this source gracefully and continue with the remaining requested sources.
+
+**Why use DeepXiv?** It is useful when a broad search should be followed by staged reading rather than immediate full-paper loading. This reduces unnecessary context while still surfacing structure, TLDRs, and the most relevant sections.
+
+**De-duplication against arXiv and S2**:
+- Match by arXiv ID first, DOI second, normalized title third
+- If DeepXiv and arXiv refer to the same preprint, keep one canonical paper row and record `deepxiv` as an additional source
+- If DeepXiv overlaps with S2 on a published paper, prefer S2 venue/citation metadata in the final table, but keep DeepXiv-derived section notes when they add value
 
 **Optional PDF download** (only when `ARXIV_DOWNLOAD = true`):
 

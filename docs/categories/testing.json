@@ -1,8 +1,8 @@
 {
   "category": "testing",
   "code": "tst",
-  "count": 6722,
-  "updated_at": "2026-04-12T01:27:48.175786Z",
+  "count": 6724,
+  "updated_at": "2026-04-12T02:12:01.263704Z",
   "skills": [
     {
       "name": "frontend-testing",
@@ -35557,6 +35557,23 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "skills/playwright-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "stars": 0,
+      "install": "lackeyjb/playwright-skill/skills/playwright-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "spec-synthesis",
       "description": "Transform ambiguous requirements into precise specifications. Use before any non-trivial implementation.",
       "repo": "amattas/agentic-coding",
@@ -45748,6 +45765,24 @@
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/plugins/testing/mutation-test-runner/skills/running-mutation-tests",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "ios-simulator-skill",
+      "description": "iOS Simulator automation for testing with semantic navigation and Xcode integration",
+      "repo": "conorluddy/ios-simulator-skill",
+      "path": "ios-simulator-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "ios",
+        "simulator",
+        "xcode",
+        "testing",
+        "mobile"
+      ],
+      "stars": 0,
+      "install": "conorluddy/ios-simulator-skill/ios-simulator-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "coordinator",

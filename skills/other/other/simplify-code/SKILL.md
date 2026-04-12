@@ -65,3 +65,5 @@ Review the same changes for clarity, standards, and balance:
 Wait for all four agents to complete. Aggregate their findings, then apply each fix directly, skipping false positives.
 
 When done, briefly summarize what was fixed (or confirm the code was already clean).
+
+Check your task list for remaining tasks and proceed.

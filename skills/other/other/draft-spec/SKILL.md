@@ -12,9 +12,10 @@ Guide a collaborative discussion to explore a project idea, then synthesize the 
 At the start, use `TaskCreate` to create a task for each step:
 
 1. Capture the vision and pick a slug
-2. Deep-dive discussion
-3. Draft the spec
-4. Present and finalize
+2. Consult task-specific skills and docs
+3. Deep-dive discussion
+4. Draft the spec
+5. Present and finalize
 
 ## Step 1: Capture the Vision and Pick a Slug
 
@@ -42,7 +43,16 @@ Then use `AskUserQuestion` to ask 1-4 focused opening questions targeting the bi
 - What does the MVP look like versus the full vision?
 - Are there hard deadlines, budget limits, or team size constraints?
 
-## Step 2: Deep-Dive Discussion
+## Step 2: Consult Task-Specific Skills and Docs
+
+Ground architecture and tech-stack choices in current reality before the deep-dive discussion.
+
+1. **Scan for matching skills.** Compare the vision and opening-question answers against available skill trigger descriptions. For each unambiguous match, run the skill via the Skill tool. This loads decision-level guidance (idiomatic patterns, known pitfalls, version constraints) before architectural choices are made. If unsure, do not load.
+2. **Look up library or framework docs.** For any library, framework, or platform the user mentioned or the project clearly needs, query documentation MCP tools (or WebSearch as a fallback) when the decision hinges on current capabilities, supported versions, or known constraints.
+
+Keep findings at the decision level: what tools can do, which approaches are idiomatic, which versions to target. Do not embed specific API signatures or code snippets into the spec. Those belong in implementation-time skill loads.
+
+## Step 3: Deep-Dive Discussion
 
 Explore the project through multi-turn conversation. Cover these categories over the course of the discussion — track coverage internally but do not present them as a rigid checklist. Follow the user's energy and weave topics in naturally.
 
@@ -66,9 +76,9 @@ Explore the project through multi-turn conversation. Cover these categories over
 - If the user says "you decide" or "what do you recommend", make a clear recommendation with reasoning
 - When all categories have sufficient depth or the user signals readiness, confirm before moving to drafting
 
-## Step 3: Draft the Spec
+## Step 4: Draft the Spec
 
-Synthesize the entire discussion into `.turbo/specs/<slug>.md` using the slug picked in Step 1. Structure the document organically based on what emerged in conversation:
+Synthesize the consulted skill and doc context plus the entire discussion into `.turbo/specs/<slug>.md` using the slug picked in Step 1. Structure the document organically based on what emerged in conversation:
 
 - Include only sections with real substance — no placeholder filler
 - Use concrete details from the discussion, not vague generalizations
@@ -79,13 +89,13 @@ Synthesize the entire discussion into `.turbo/specs/<slug>.md` using the slug pi
 
 Create the `.turbo/specs/` directory if it does not exist. Accept a different output path if the user provides one.
 
-## Step 4: Present and Finalize
+## Step 5: Present and Finalize
 
 Present the draft to the user. Use `AskUserQuestion` to offer three paths:
 
 - **Approve** — spec is final
 - **Revise** — user specifies sections to change; apply edits and re-present
-- **Discuss more** — return to Step 2 for additional exploration, then re-draft
+- **Discuss more** — return to Step 3 for additional exploration, then re-draft
 
 After approval:
 
@@ -93,6 +103,6 @@ After approval:
 
 ## Rules
 
-- Never skip Step 2 — even with extensive initial context, confirm understanding and probe gaps
+- Never skip Step 3 — even with extensive initial context, confirm understanding and probe gaps
 - The spec is the only output — do not create code, scaffolding, or other project files
 - If the project is trivially small (single-file script, simple config), say so and suggest skipping the spec process

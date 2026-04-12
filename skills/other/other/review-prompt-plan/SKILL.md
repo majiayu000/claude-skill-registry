@@ -51,6 +51,8 @@ Ignore stylistic preferences. If no issues are found, state that the prompt plan
 
 Wait for both agents to complete. Aggregate their findings with attribution (reviewer: "internal" or "peer").
 
+Check your task list for remaining tasks and proceed.
+
 ## Prompt Plan Review Dimensions
 
 ### 1. Spec Coverage (No Gaps)

@@ -64,13 +64,16 @@ If any test fails, fix the issues and stage the fixes.
 
 Check whether any file was edited during Steps 3-7. Any edit counts, regardless of how small or mechanical it seems.
 
-**If changes were made**, run `/polish-code` again using the Skill tool. Scope the diff command to only the files modified in the previous iteration: use `git diff --cached -- <file1> <file2> ...` as the diff command for `/simplify-code` and `/review-code`. Smoke test scope remains unchanged (full feature scope, not file-narrowed).
+**If changes were made**, classify what Steps 3-7 edited:
 
-**If changes were made but you believe re-running is unnecessary**, use `AskUserQuestion` to ask for skip permission. Do not skip silently.
+- **Structural edits** (fixed bugs, new or removed functions, changed function signatures, moved code between files, changed control flow, added or removed dependencies, corrected a stale or wrong comment that was itself a documentation bug) — run `/polish-code` again using the Skill tool. Scope the diff command to only the files modified in the previous iteration: use `git diff --cached -- <file1> <file2> ...` as the diff command for `/simplify-code` and `/review-code`. Smoke test scope remains unchanged (full feature scope, not file-narrowed). If the round contains both structural and in-place edits, treat it as structural and re-run automatically.
+- **In-place edits only** (renamed local variables without changing behavior, reformatted, adjusted whitespace, edited neutral comments) — output a summary of what changed, then use `AskUserQuestion` to ask whether to run one more round or stop here. Do not silently continue or silently stop.
 
-**If this is iteration 3 and changes were still made**, the hard cap is reached. Use `AskUserQuestion` to tell the user that 3 iterations were not enough to stabilize, summarize what is still changing, and offer two options: continue for another iteration, or escalate to `/consult-oracle` for a different perspective on the remaining issues.
+**If this is iteration 3 and changes were still made**, the hard cap is reached. This replaces the classification gate above. Output a summary of what is still changing and whether it is structural or in-place. Then use `AskUserQuestion` to offer three options: continue for another iteration, stop here and accept the current state, or escalate to `/consult-oracle` for a different perspective on the remaining issues.
 
 The re-invocation is a full, fresh run of this skill. Every step (1-8) executes with its own task tracking and skill invocations. "Scoped to modified files" only affects the diff command passed to `/simplify-code` and `/review-code`. It does not affect which steps run or whether skills are invoked.
+
+Check your task list for remaining tasks and proceed.
 
 ## Rules
 

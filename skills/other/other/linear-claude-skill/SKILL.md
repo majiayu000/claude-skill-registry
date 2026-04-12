@@ -336,12 +336,32 @@ npm run ops -- link-initiative "Phase 11" "Q2 Goals"
 
 Choose the right tool for the task:
 
-| Tool | When to Use |
-|------|-------------|
-| **MCP (Official Server)** | Most operations - PREFERRED |
-| **Helper Scripts** | Bulk operations, when MCP unavailable |
-| **SDK scripts** | Complex operations (loops, conditionals) |
-| **GraphQL API** | Operations not supported by MCP/SDK |
+| Priority | Tool | When to Use |
+|----------|------|-------------|
+| 1 | **MCP (Official Server)** | Most operations - PREFERRED |
+| 2 | **`lin` CLI** | Fast-path for reads/status updates when installed (optional) |
+| 3 | **Helper Scripts** | Bulk operations, label taxonomy, project workflows |
+| 4 | **SDK scripts** | Complex operations (loops, conditionals) |
+| 5 | **GraphQL API** | Operations not supported by above |
+
+### `lin` CLI (Optional Fast-Path)
+
+If the [`lin`](https://github.com/aaronkwhite/linear-cli) Rust binary is installed, the skill uses it automatically for:
+- Issue status updates (`status`, `done`, `wip`)
+- Listing initiatives
+- Searching issues (`search <query>`)
+- Listing issues (`list-issues [--team X] [--state Y]`)
+- User info (`whoami`)
+
+All operations fall back silently to the SDK when `lin` is unavailable.
+
+**Install** (optional):
+```bash
+brew install aaronkwhite/tap/lin    # macOS (Homebrew)
+cargo install lincli                # Any platform with Rust
+```
+
+**Disable**: Set `LINEAR_USE_LIN=0` to skip `lin` even when installed.
 
 ### MCP Server Configuration
 

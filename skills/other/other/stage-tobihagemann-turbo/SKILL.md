@@ -26,3 +26,5 @@ git add <file1> <file2> ...
 ## Step 3: Verify
 
 Run `git status` and `git diff --cached` to verify the staging area contains exactly the intended changes.
+
+Check your task list for remaining tasks and proceed.

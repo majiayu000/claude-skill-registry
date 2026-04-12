@@ -61,6 +61,8 @@ Use `AskUserQuestion` to let the user choose: ship as a single commit/PR, or spl
 - **Ship** — run the `/ship` skill
 - **Split** — run the `/split-and-ship` skill
 
+Check your task list for remaining tasks and proceed.
+
 ## Rules
 
 - Diff size, number of files changed, passing tests, perceived user urgency, or context window concerns are not reasons to skip a phase. Each phase does work beyond what those signals cover. "The session was long" or "a prior phase was thorough" are never valid reasons to skip a later phase.

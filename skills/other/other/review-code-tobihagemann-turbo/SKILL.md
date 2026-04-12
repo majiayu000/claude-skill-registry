@@ -32,6 +32,8 @@ For the `/peer-review` agent, the Agent tool call prompt instructs the subagent 
 
 Wait for all six agents to complete. Aggregate their findings with attribution (reviewer name, file path, description).
 
+Check your task list for remaining tasks and proceed.
+
 ## Rules
 
 - If any reviewer is unavailable or returns malformed output, proceed with findings from the remaining reviewers.

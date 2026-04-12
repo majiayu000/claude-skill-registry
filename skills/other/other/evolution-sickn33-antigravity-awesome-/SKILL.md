@@ -1,7 +1,7 @@
 ---
 name: evolution
 description: "This skill enables makepad-skills to self-improve continuously during development."
-risk: unknown
+risk: critical
 source: community
 ---
 
@@ -10,6 +10,12 @@ source: community
 # Makepad Skills Evolution
 
 This skill enables makepad-skills to self-improve continuously during development.
+
+## When to Use
+
+- You are maintaining `makepad-skills` and want the skill library to improve itself during development.
+- You need the workflow for deciding when a new pattern should become a skill update or hook-driven evolution.
+- You are working on self-correction, self-validation, or version adaptation for the skill set.
 
 ## Quick Navigation
 

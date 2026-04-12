@@ -1,7 +1,6 @@
 ---
 name: note-improvement
 description: "Capture an out-of-scope improvement opportunity so it doesn't get lost. Use when the user asks to \"note improvement\", \"save improvement\", \"track this for later\", \"remember this improvement\", \"note this idea\", \"log improvement\", \"backlog this\", or \"park this idea\". Also invoke proactively when noticing something improvable during work that falls outside the current task's scope — briefly mention it to the user and offer to note it."
-argument-hint: "[improvement description]"
 ---
 
 # Note Improvement

@@ -37,6 +37,7 @@ mkdir -p .agents/rpi
 
 **Determine starting phase:**
 - default: `discovery`
+- `--from=implementation --discovery-artifact=<path>` → skip to Phase 2, use the artifact as the discovery handoff (see [Discovery Artifact Mode](#discovery-artifact-mode))
 - `--from=implementation` (aliases: `crank`) → skip to Phase 2
 - `--from=validation` (aliases: `vibe`, `post-mortem`) → skip to Phase 3
 - aliases `research`, `plan`, `pre-mortem`, `brainstorm` map to `discovery`
@@ -168,6 +169,7 @@ Read `references/error-handling.md` for failure semantics.
 | Flag | Default | Description |
 |------|---------|-------------|
 | `--from=<phase>` | `discovery` | Start from `discovery`, `implementation`, or `validation` |
+| `--discovery-artifact=<path>` | unset | With `--from=implementation`, use a pre-computed discovery artifact (e.g., a `/council` validation report or hand-written plan) as the Phase 2 handoff instead of running Phase 1. Validates the path exists, extracts scope/risks into an execution packet, and proceeds to `/crank`. See [Discovery Artifact Mode](#discovery-artifact-mode). |
 | `--interactive` | off | Human gates in discovery |
 | `--auto` | on | Fully autonomous (no human gates). Inverse of `--interactive`. Passed through to `/discovery` and `/plan`. |
 | `--loop` | off | Post-mortem FAIL triggers new cycle |
@@ -231,3 +233,4 @@ RPI runs in three runtime modes. All must produce identical phase artifacts.
 - [references/examples.md](references/examples.md)
 - [references/autonomous-execution.md](references/autonomous-execution.md)
 - [references/troubleshooting.md](references/troubleshooting.md)
+- [references/discovery-artifact-mode.md](references/discovery-artifact-mode.md)

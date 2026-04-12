@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5318,
-  "updated_at": "2026-04-12T01:27:46.562986Z",
+  "count": 5319,
+  "updated_at": "2026-04-12T02:11:59.643721Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -49353,6 +49353,24 @@
       "stars": 0,
       "install": "IzmaIkhlaque/AIDD-30-days-challenge-/task9/.claude/skills/plot-consistency-checker",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "s3-bucket-policy-generator",

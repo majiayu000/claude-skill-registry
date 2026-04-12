@@ -93,3 +93,5 @@ Where Investigated shows:
 - **Disputed: [reason]** — subagent found counter-evidence
 
 For disputed findings, add a callout below the table showing both perspectives. For each finding, indicate scope in the Issue column (e.g., "Pre-existing:" prefix).
+
+Check your task list for remaining tasks and proceed.

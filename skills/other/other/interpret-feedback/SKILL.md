@@ -93,6 +93,8 @@ After all items, add a summary:
 - Ambiguous intent: <N>
 ```
 
+Check your task list for remaining tasks and proceed.
+
 ## Rules
 
 - If either interpretation agent is unavailable or returns malformed output, proceed with results from the remaining agent.

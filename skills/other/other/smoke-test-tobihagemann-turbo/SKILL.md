@@ -100,6 +100,8 @@ Overall: X/Y passed
 
 If any test failed, include the relevant snapshot, screenshot, or output showing the failure.
 
+Check your task list for remaining tasks and proceed.
+
 ## Rules
 
 - Always clean up: close browser sessions, stop dev servers started by this skill.

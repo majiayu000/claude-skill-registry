@@ -664,19 +664,13 @@ Support for international and conference-specific poster dimensions:
 Provide ready-to-use templates for each major package. Templates available in `assets/` directory.
 
 **beamerposter Templates**:
-- `beamerposter_classic.tex` - Traditional academic style
-- `beamerposter_modern.tex` - Clean, minimal design
-- `beamerposter_colorful.tex` - Vibrant theme with blocks
+- `beamerposter_template.tex` - Customizable beamerposter template
 
 **tikzposter Templates**:
-- `tikzposter_default.tex` - Standard tikzposter layout
-- `tikzposter_rays.tex` - Modern design with ray theme
-- `tikzposter_wave.tex` - Professional wave-style theme
+- `tikzposter_template.tex` - Customizable tikzposter template
 
 **baposter Templates**:
-- `baposter_portrait.tex` - Classic portrait layout
-- `baposter_landscape.tex` - Landscape multi-column
-- `baposter_minimal.tex` - Minimalist design
+- `baposter_template.tex` - Customizable baposter template
 
 ### 6. Figure and Image Integration
 
@@ -1574,10 +1568,8 @@ tlmgr install qrcode graphics xcolor tcolorbox subcaption
 
 Helper scripts available in `scripts/` directory:
 
-- `compile_poster.sh`: Automated compilation with error handling
-- `generate_template.py`: Interactive template generator
-- `resize_images.py`: Batch image optimization for posters
-- `poster_checklist.py`: Pre-submission validation tool
+- `review_poster.sh`: Poster review and validation
+- `generate_schematic.py`: Generate scientific diagrams and schematics
 
 ## References
 

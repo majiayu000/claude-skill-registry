@@ -1,37 +1,24 @@
 ---
 name: docs-updater
 description: Provides automated documentation updates by analyzing git changes between the current branch and the last release tag. Performs git diff analysis to identify modifications, then updates README.md, CHANGELOG.md following Keep a Changelog standard, and discovers documentation folders for contextual updates. Use when preparing a release, maintaining documentation sync, or before creating a pull request. Triggers on "update docs", "update changelog", "sync documentation", "update readme", "prepare release documentation".
-allowed-tools: Read, Write, Edit, Bash, Grep, Glob
+allowed-tools: Read, Edit, Bash
 ---
 
-# Universal Documentation Auto-Updater
+# Universal Documentation Updater
 
-Automates the process of keeping project documentation synchronized with codebase changes. This skill analyzes git differences between the current working branch and the last released version, then intelligently updates relevant documentation files.
+Analyzes git changes since the latest release tag and updates the documentation files that should change with them.
 
 ## Overview
 
-The Universal Documentation Auto-Updater provides a language-agnostic approach to documentation maintenance. By leveraging git operations to identify what has changed since the last release, it generates targeted updates for README.md, CHANGELOG.md, and project documentation folders.
-
-**Key Features:**
-
-- **Universal Compatibility**: Works with any git repository regardless of programming language
-- **Dynamic Version Detection**: Automatically finds the latest release tag
-- **Comprehensive Diff Analysis**: Analyzes additions, modifications, and deletions
-- **Smart Categorization**: Groups changes by type (feature, fix, refactor, docs, etc.)
-- **Documentation Discovery**: Automatically finds and updates relevant docs folders
+Use git history to identify release-relevant changes, then update `README.md`, `CHANGELOG.md`, and any relevant documentation folders. Keep the workflow focused on explicit user approval, precise edits, and repository-specific documentation structure.
 
 ## When to Use
 
 Use this skill when:
 
-- Preparing documentation for a new release
-- The documentation has fallen behind the codebase
-- Creating a pull request and need to update docs
-- Asked to "update changelog", "update docs", "sync documentation"
-- Want to see what changed since the last release
-- Need to generate release notes
-
-**Trigger phrases:** "update docs", "update changelog", "sync documentation", "update readme", "prepare release documentation", "what changed since last release", "generate release notes"
+- Preparing release notes or an `Unreleased` changelog update
+- Syncing `README.md` or documentation after feature work lands
+- Reviewing what changed since the last release before a PR or release
 
 ## Prerequisites
 
@@ -59,35 +46,22 @@ If no tags exist, inform the user that this skill requires at least one release 
 
 **Actions:**
 
-1. Get the latest tag from the repository:
+1. Detect the comparison baseline and display it:
 
 ```bash
-# Get the most recent tag
 LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null)
 
-# If no tags found, inform the user
 if [ -z "$LATEST_TAG" ]; then
     echo "No git tags found. This skill requires at least one release tag."
     echo "Please create a release tag first (e.g., git tag -a v1.0.0 -m 'Initial release')"
     exit 1
 fi
 
-echo "Latest release tag: $LATEST_TAG"
-echo "Current branch: $(git branch --show-current)"
-```
-
-2. Extract version information for display:
-
-```bash
-# Parse version from tag (handles v1.2.3, 1.2.3, release-1.2.3 formats)
-VERSION=$(echo "$LATEST_TAG" | sed -E 's/^[^0-9]*([0-9]+\.[0-9]+\.[0-9]+).*/\1/')
-echo "Version detected: $VERSION"
-```
-
-3. Get the current branch name:
-
-```bash
 CURRENT_BRANCH=$(git branch --show-current)
+VERSION=$(echo "$LATEST_TAG" | sed -E 's/^[^0-9]*([0-9]+\.[0-9]+\.[0-9]+).*/\1/')
+
+echo "Latest release tag: $LATEST_TAG"
+echo "Version detected: $VERSION"
 echo "Comparing: $LATEST_TAG -> $CURRENT_BRANCH"
 ```
 
@@ -124,10 +98,8 @@ echo "$COMMITS"
 # Get list of changed files
 CHANGED_FILES=$(git diff --name-only ${LATEST_TAG}..HEAD)
 
-# Categorize changes by type
-ADDED_FILES=$(git diff --name-only --diff-filter=A ${LATEST_TAG}..HEAD)
-DELETED_FILES=$(git diff --name-only --diff-filter=D ${LATEST_TAG}..HEAD)
-MODIFIED_FILES=$(git diff --name-only --diff-filter=M ${LATEST_TAG}..HEAD)
+# Show add/modify/delete status for quick categorization
+git diff --name-status ${LATEST_TAG}..HEAD
 ```
 
 4. Identify component areas based on file paths:
@@ -185,13 +157,7 @@ printf '  - %s\n' "${DOC_FILES[@]}"
 
 **Actions:**
 
-1. Parse commits by conventional commit types and categorize:
-- **Added**: New features (feat, feature commits)
-- **Changed**: Changes to existing functionality
-- **Fixed**: Bug fixes (fix, bug commits)
-- **Deprecated**: Soon-to-be removed features
-- **Removed**: Features removed in this release
-- **Security**: Security vulnerability fixes
+1. Parse commits using conventional commit semantics and map them into Keep a Changelog sections such as `Added`, `Changed`, `Fixed`, `Removed`, and `Security`.
 
 2. Read the existing CHANGELOG.md to understand structure, then generate new entries following Keep a Changelog format.
 
@@ -255,7 +221,7 @@ See `references/examples.md` for detailed discovery patterns and update strategi
 
 ### Phase 8: Apply Documentation Updates
 
-**Goal**: Write the updates to the documentation files.
+**Goal**: Write the approved updates, then verify they landed correctly.
 
 **Actions:**
 
@@ -294,14 +260,21 @@ EOF
 # Use Edit tool to make precise changes
 ```
 
-4. Show git diff of changes:
+4. Validate the applied changes:
 
 ```bash
-# Show what will change
-git diff CHANGELOG.md
-git diff README.md
-git diff docs/
+# Confirm key files still exist after editing
+test -f CHANGELOG.md && echo "CHANGELOG.md present"
+test -f README.md && echo "README.md present"
+
+# Review the scope of markdown changes
+git diff --stat -- '*.md'
+
+# Spot-check the actual content written
+git diff -- '*.md' | sed -n '1,240p'
 ```
+
+5. If the repository already defines documentation or markdown validation commands, run them before finishing.
 
 ## Examples
 
@@ -338,7 +311,7 @@ See `references/examples.md` for detailed session transcripts and troubleshootin
 
 ## Best Practices
 
-1. **Always verify before writing**: Show the user what will change before applying updates
+1. **Preview before writing, verify after writing**: Show the plan first, then confirm the final diff after edits
 2. **Follow Keep a Changelog**: Maintain consistent changelog formatting
 3. **Categorize properly**: Use correct categories (Added, Changed, Fixed, etc.)
 4. **Be specific**: Include plugin/component names in changelog entries

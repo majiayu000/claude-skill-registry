@@ -39,6 +39,8 @@ Read the current Unreleased section of the changelog. Look for entries that rela
 
 Add or update entries in the Unreleased section following `/changelog-rules` conventions. Create subsection headers as needed (e.g., `### Added`).
 
+Check your task list for remaining tasks and proceed.
+
 ## Rules
 
 - Never modify released version sections. Only the Unreleased section is in scope.

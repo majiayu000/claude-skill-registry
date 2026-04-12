@@ -42,6 +42,8 @@ Do not surface findings skipped as false positives or subjective preferences. Fo
 
 Summarize what was applied, what was escalated, and what was skipped.
 
+Check your task list for remaining tasks and proceed.
+
 ## Rules
 
 - Only edit files. Do not stage, build, or test.

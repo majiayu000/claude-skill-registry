@@ -1,6 +1,6 @@
 ---
 name: gemini
-description: Provides Gemini CLI delegation workflows for large-context analysis tasks, including English prompt formulation, execution flags, and safe result handling. Use when the user explicitly asks to use Gemini for a specific task such as broad codebase analysis or long-document processing. Triggers on "use gemini", "delegate to gemini", "run gemini cli", "ask gemini", "use gemini for this task".
+description: Provides Gemini CLI delegation workflows for large-context analysis and complex reasoning using Gemini 3.0 Flash and Gemini 3.0 Pro models, including English prompt formulation, execution flags, and safe result handling. Use when the user explicitly asks to use Gemini for tasks such as broad codebase analysis, fast iterations with Gemini 3 Flash, or deep architectural reasoning with Gemini 3 Pro. Triggers on "use gemini", "delegate to gemini", "run gemini cli", "ask gemini", "use gemini for this task", "use gemini 3 flash", "use gemini 3 pro".
 allowed-tools: Bash, Read, Write
 ---
 
@@ -66,6 +66,21 @@ Before running Gemini:
 
 If scope is ambiguous, ask for clarification first.
 
+### Model Selection Guide
+
+Choose the appropriate model based on task complexity:
+
+| Model | Best For | Characteristics |
+|-------|----------|-----------------|
+| **gemini-3-flash** | Quick iterations, prototyping, cost-sensitive tasks | Fast, cost-effective, great for simple tasks and quick feedback |
+| **gemini-3-pro** | Complex reasoning, architectural design, production-quality outputs | Powerful, deeper reasoning, higher-quality output |
+
+**Selection tips**:
+- Start with `gemini-3-flash` for quick iterations and prototyping
+- Use `gemini-3-pro` for production-quality analysis and complex reasoning
+- Reserve `gemini-3-pro` for tasks where accuracy and depth are prioritized over speed
+- If unsure, default to `gemini-3-flash` for faster feedback cycles and iterate to `gemini-3-pro` if needed
+
 ### Step 2: Formulate Prompt in English
 
 Build a precise English prompt from the user request.
@@ -112,7 +127,7 @@ Examples:
 gemini -p "Analyze this codebase architecture and list refactoring opportunities by impact."
 
 # Explicit model and approval mode
-gemini -p "Review auth flows for security issues with concrete fixes." -m gemini-2.5-pro --approval-mode plan
+gemini -p "Review auth flows for security issues with concrete fixes." -m gemini-3-pro --approval-mode plan
 
 # Structured output for automation
 gemini -p "Summarize key technical debt items as JSON array." --output-format json
@@ -160,19 +175,55 @@ Use this structure when returning delegated results:
 ### Example 1: Large codebase security review
 
 ```bash
-gemini -p "Analyze this repository for security vulnerabilities. Report only high-confidence issues with file paths, severity, and patch recommendations." --approval-mode plan
+gemini -p "Analyze this repository for security vulnerabilities. Report only high-confidence issues with file paths, severity, and patch recommendations." -m gemini-3-flash --approval-mode plan
 ```
 
 ### Example 2: Documentation synthesis
 
 ```bash
-gemini -p "Read the available documentation and produce a concise architecture summary with component responsibilities and integration points." -m gemini-2.5-pro
+gemini -p "Read the available documentation and produce a concise architecture summary with component responsibilities and integration points." -m gemini-3-pro --approval-mode plan
 ```
 
 ### Example 3: Structured output for follow-up automation
 
 ```bash
-gemini -p "Return a JSON list of top 10 refactoring opportunities with fields: title, file, impact, effort." --output-format json
+gemini -p "Return a JSON list of top 10 refactoring opportunities with fields: title, file, impact, effort." -m gemini-3-flash --output-format json
+```
+
+### Example 4: Quick boilerplate generation
+
+```bash
+gemini -p "Generate a minimal Express.js REST endpoint for POST /items with input validation and a unit test. Keep the implementation concise and ready to paste." -m gemini-3-flash
+```
+
+### Example 5: Cost-effective CSV summary (fast, low-cost)
+
+```bash
+gemini -p "Summarize this CSV file's key statistics: row count, missing-value counts, and top 5 columns by variance. Provide a 6-line bullet summary suitable for quick triage." -m gemini-3-flash --output-format json --approval-mode plan
+```
+
+### Example 6: Fast iteration for microcopy prototyping
+
+```bash
+gemini -p "Provide 3 short alternative microcopy options (<=20 words each) for an onboarding tooltip that explains account recovery. Include a one-line A/B test metric proposal for each option." -m gemini-3-flash
+```
+
+### Example 7: Architectural design analysis
+
+```bash
+gemini -p "Analyze the current system architecture and propose a detailed migration strategy to a microservices architecture. Include component boundaries, communication patterns, data ownership, and estimated risks for each migration step." -m gemini-3-pro --approval-mode plan
+```
+
+### Example 8: Comprehensive security audit
+
+```bash
+gemini -p "Perform a thorough security audit of the authentication and authorization layer. Identify potential vulnerabilities, rate-limiting gaps, token handling weaknesses, and injection vectors. Provide severity ratings and specific remediation steps for each finding." -m gemini-3-pro --approval-mode plan
+```
+
+### Example 9: Production-quality module generation
+
+```bash
+gemini -p "Generate a production-ready TypeScript module for paginated API responses. Include input validation, error handling, retry logic with exponential backoff, and comprehensive unit tests with mocks. Follow best practices for error types, logging, and type safety." -m gemini-3-pro --approval-mode auto_edit
 ```
 
 ## Best Practices

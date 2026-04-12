@@ -1,12 +1,11 @@
 ---
 name: investigate
 description: "Systematically investigate bugs, test failures, build errors, performance issues, or unexpected behavior by cycling through characterize-isolate-hypothesize-test steps. Use when the user asks to \"investigate this bug\", \"debug this\", \"figure out why this fails\", \"find the root cause\", \"why is this broken\", \"troubleshoot this\", \"diagnose the issue\", \"what's causing this error\", \"look into this failure\", \"why is this test failing\", or \"track down this bug\"."
-argument-hint: "[problem description or error message]"
 ---
 
 # Investigate
 
-Systematic methodology for finding the root cause of bugs, failures, and unexpected behavior. Cycle through characterize-isolate-hypothesize-test steps, with oracle escalation for hard problems. Diagnose the root cause — do not apply fixes. Return results for the main agent to act on.
+Systematic methodology for finding the root cause of bugs, failures, and unexpected behavior. Cycle through characterize-isolate-hypothesize-test steps, with oracle escalation for hard problems. Diagnose the root cause — do not apply fixes.
 
 Optional: `$ARGUMENTS` contains the problem description or error message.
 
@@ -147,6 +146,8 @@ Hypotheses tested:
 
 Escalation: [none | oracle]
 ```
+
+Check your task list for remaining tasks and proceed.
 
 ## Rules
 

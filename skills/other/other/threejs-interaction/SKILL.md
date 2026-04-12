@@ -7,6 +7,12 @@ source: community
 
 # Three.js Interaction
 
+## When to Use
+
+- You need user interaction inside a Three.js scene.
+- The task involves raycasting, object picking, pointer handling, touch input, or camera controls.
+- You are building an interactive 3D experience rather than a passive render.
+
 ## Quick Start
 
 ```javascript
@@ -187,6 +193,18 @@ function animate() {
   controls.update(); // Required for damping and auto-rotate
   renderer.render(scene, camera);
 }
+```
+
+#### OrbitControls Programmatic Methods (r183)
+
+```javascript
+// Programmatic camera movement
+controls.dolly(1.5); // Dolly in/out (zoom for perspective cameras)
+controls.pan(deltaX, deltaY); // Pan the camera
+controls.rotate(deltaAzimuth, deltaPolar); // Rotate around target
+
+// Cursor style (r183)
+controls.cursorStyle = { orbit: "grab", pan: "move", dolly: "zoom-in" };
 ```
 
 ### FlyControls

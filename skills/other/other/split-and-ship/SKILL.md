@@ -41,6 +41,8 @@ For each group:
 2. Check out the last created branch
 3. Output a summary table: group name, branch, PR URL, and base branch
 
+Check your task list for remaining tasks and proceed.
+
 ## Rules
 
 - Never lose uncommitted work. If any step fails (commit hook, push, PR creation), stop and report the failure, which groups have been shipped, and that the stash still contains all changes for recovery.

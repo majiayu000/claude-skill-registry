@@ -517,7 +517,6 @@ python scripts/generate_schematic.py "diagram" -o out.png -v
 
 Load these files for comprehensive information on specific topics:
 
-- **`references/diagram_types.md`** - Catalog of scientific diagram types with examples
 - **`references/best_practices.md`** - Publication standards and accessibility guidelines
 
 ### External Resources

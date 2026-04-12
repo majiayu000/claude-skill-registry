@@ -256,7 +256,7 @@ ls sources/  # Check existing saved results
 | Web search (any) | `parallel_web.py search` | `python scripts/parallel_web.py search "query" -o sources/search_<topic>.md` |
 | Deep research | `parallel_web.py research` | `python scripts/parallel_web.py research "query" -o sources/research_<topic>.md` |
 | Citation verification | `parallel_web.py extract` | `python scripts/parallel_web.py extract "url" -o sources/extract_<source>.md` |
-| Academic paper search | `research_lookup.py` | Routes to Perplexity sonar-pro-search |
+| Academic paper search | `parallel_web.py search` | `python scripts/parallel_web.py search "academic query" -o sources/papers_<topic>.md` |
 | DOI/metadata lookup | `parallel_web.py extract` | Extract from DOI URLs (verification) |
 
 ### When Writing Scientific Documents

@@ -131,6 +131,8 @@ Apply approved changes in order:
 3. **Improvements** — For items routed to project improvements, run `/note-improvement` with the summary, location, and rationale for each.
 4. **New skills** — Run `/create-skill` for each new skill. Provide the trigger conditions and relevant context from the session.
 
+Check your task list for remaining tasks and proceed.
+
 ## Writing Guidelines
 
 - Match the tone and format of the target file

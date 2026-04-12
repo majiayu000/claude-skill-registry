@@ -22,6 +22,20 @@ description: 'Epic decomposition into trackable issues. Triggers: "create a plan
 
 Given `$plan <goal> [--auto]`:
 
+### Step 0: Bead-Input Pre-Flight (Stale-Scope Gate)
+
+When the input to `$plan` is a bead ID (`[a-z]{2,6}-[0-9a-z.]+`) and the plan is full-complexity, older than 7 days, or inherited from a prior session, run `ao beads verify <bead-id>` before setup or decomposition.
+
+```bash
+if [[ "$INPUT" =~ ^[a-z]{2,6}-[0-9a-z.]+$ ]]; then
+    ao beads verify "$INPUT" || true
+fi
+```
+
+If verification reports STALE citations, stop planning in interactive mode and ask for scope re-validation. In `--auto` mode, log the stale-scope evidence into the plan/execution packet and do not decompose against stale evidence until the scope is refreshed against HEAD.
+
+This implements the shared stale-scope validation rule: inherited scope estimates must be re-validated against HEAD before acting on deferred beads, handoff docs, or prior-session plans.
+
 ### Step 1: Setup
 ```bash
 mkdir -p .agents/plans
@@ -80,6 +94,8 @@ Use the tracked contracts in `docs/contracts/finding-compiler.md` and `docs/cont
   - unreadable file -> warn once and continue without findings
 
 Use the selected planning rules / active findings as hard planning context before issue decomposition. Record the applied finding IDs and how they changed the plan. These become required context for the written plan, not optional side notes.
+
+Every written plan must include an `Applied findings:` line, even when the value is `none`.
 
 **Ranked packet contract:** Treat compiled planning rules, active findings, and matching high-severity `next-work.jsonl` items as one ranked packet, not three unrelated lookups. The packet must prefer the strongest overlap in this order:
 1. literal goal-text overlap

@@ -49,6 +49,8 @@ Ignore stylistic preferences and minor wording. If no issues are found, state th
 
 Wait for both agents to complete. Aggregate their findings with attribution (reviewer: "internal" or "peer").
 
+Check your task list for remaining tasks and proceed.
+
 ## Plan Determination Criteria
 
 Flag an issue only when ALL of these hold:

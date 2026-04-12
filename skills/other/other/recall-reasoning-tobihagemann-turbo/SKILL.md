@@ -80,6 +80,8 @@ If no transcript was found:
 <fallback explanation derived from reading the commit and current code>
 ```
 
+Check your task list for remaining tasks and proceed.
+
 ## Rules
 
 - Treat excerpts as evidence, not ground truth. The implementer's intent at the time may have changed. If the current code contradicts an excerpt, note the discrepancy.

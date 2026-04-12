@@ -1,8 +1,8 @@
 {
   "category": "productivity",
   "code": "pro",
-  "count": 1960,
-  "updated_at": "2026-04-12T01:27:48.133122Z",
+  "count": 1965,
+  "updated_at": "2026-04-12T02:12:01.219957Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -12198,6 +12198,28 @@
       "source": "downloaded"
     },
     {
+      "name": "deep-research",
+      "description": "Deep research with NotebookLM + web search. Domain boost, source credibility scoring, and post-research artifact generation (podcast, video, slides, quiz).",
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "path": "SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "research",
+        "deep-research",
+        "notebooklm",
+        "perplexity",
+        "gemini",
+        "domain-boost",
+        "academic",
+        "maritime",
+        "legal"
+      ],
+      "stars": 0,
+      "install": "Chris1220-cmd/deep-research-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "ansible-playbook-generator",
       "description": "Generate Ansible playbook files for infrastructure automation and configuration management. Triggers on \"create ansible playbook\", \"generate ansible config\", \"ansible automation\", \"infrastructure play",
       "repo": "ehtbanton/ClaudeSkillsRepo",
@@ -13370,6 +13392,26 @@
       "stars": 0,
       "install": "serelon/rpg-tools/productivity/rpg-tools",
       "source": "downloaded"
+    },
+    {
+      "name": "confluence-to-agent-knowledge-base",
+      "description": "Turn any Confluence Cloud instance into a private, searchable AI knowledge base on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the Atlassian MCP connector.",
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "confluence",
+        "knowledge-base",
+        "atlassian",
+        "mcp",
+        "wiki",
+        "search",
+        "knowledge-management"
+      ],
+      "stars": 0,
+      "install": "miningstore/confluence-to-agent-knowledge-base/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "git-commit-maker",
@@ -18421,6 +18463,24 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "humanizar-texto-es",
+      "description": "Rewrite Spanish AI-generated text to sound naturally human-written using 11 simultaneous linguistic techniques.",
+      "repo": "ToniPerea/humanizar-texto-es",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "spanish",
+        "ai-detection",
+        "text-rewriting",
+        "nlp",
+        "research"
+      ],
+      "stars": 0,
+      "install": "ToniPerea/humanizar-texto-es/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "skill-seekers",
       "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
       "repo": "yusufkaraaslan/Skill_Seekers",
@@ -22528,6 +22588,22 @@
       "source": "Community Skills"
     },
     {
+      "name": "professional-business-writing",
+      "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
+      "repo": "b33kman/professional-business-writing-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "professional-writing",
+        "business-writing",
+        "writing-assistant"
+      ],
+      "stars": 0,
+      "install": "b33kman/professional-business-writing-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "vibeflow-issue-template",
       "description": "Create or refine VibeFlow issue files under issues/. Use when turning plan items into implementable tasks with clear acceptance criteria.",
       "repo": "mizkun/vibeflow",
@@ -25820,6 +25896,22 @@
       "stars": 0,
       "install": "karlmdavis/dotfiles/private_dot_claude/skills/getting-pr-artifacts",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "skills/skill-seekers/SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
+      ],
+      "stars": 0,
+      "install": "yusufkaraaslan/Skill_Seekers/skills/skill-seekers/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "computer-vision",

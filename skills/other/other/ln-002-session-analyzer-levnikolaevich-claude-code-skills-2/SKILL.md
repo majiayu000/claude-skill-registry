@@ -115,6 +115,9 @@ echo "=== SKILL/COMMAND INVOCATIONS ==="
 grep -oE '"display":\s*"/[a-z-]+' "$F" 2>/dev/null | sed 's/"display":\s*"//' | sort | uniq -c | sort -rn
 ```
 
+Treat keyword-based error counts as heuristic only.
+Confirm that reported matches come from actual tool failure/result events, not from prompts, templates, or referenced docs that contain the same strings.
+
 ### Extract token statistics from Claude JSONL
 
 Run for Claude session file (`$F`) to get real token usage:

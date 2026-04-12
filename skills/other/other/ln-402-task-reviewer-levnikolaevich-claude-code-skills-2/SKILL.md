@@ -164,6 +164,7 @@ Step 9: Update & Commit
    > **Spec-first gate:** Quick AC pre-check: scan task AC against implementation. If any AC is clearly unmet (BLOCKER-level) → immediate To Rework, skip remaining quality checks. Full AC validation still runs in Step 5.
    **MANDATORY READ:** `shared/references/clean_code_checklist.md`, `shared/references/destructive_operation_safety.md`
    - **Goal validation (Recovery Paradox):** If executor articulated a REAL GOAL (visible in task comments or implementation), validate it matches the Story's target deliverable. If executor framed the goal around a secondary subject (e.g., "implement the endpoint" instead of "enable user data export") → CONCERN: `GOAL-MISFRAME: executor goal targets secondary subject, may miss hidden constraints.`
+   - **Blueprint completion (advisory):** If executor runtime data available (`.hex-skills/runtime-artifacts/runs/` for this task), load PHASE_3 blueprint and PHASE_6 `blueprint_status` from executor checkpoints. Flag as CONCERN if: `completion_pct < 100` without justifications for skipped items, or added files exceed 50% of planned without justification. If runtime data unavailable, check `metadata.blueprint_status` from executor summary. Not a BLOCKER.
    - Approach: diff aligned with Technical Approach in Story. If different → rationale documented in code comments.
    - **Clean code:** Per checklist — verify all 4 categories. Replaced implementations fully removed. If refactoring changed API — callers updated, old signatures removed. <!-- Defense-in-depth: also checked by ln-511 MNT-DC- -->
    - **Cross-file DRY:** For each NEW function/class/handler created by task, Grep `src/` for similar names/patterns (count mode). If 3+ files contain similar logic → add CONCERN: `MNT-DRY-CROSS: {pattern} appears in {count} files — consider extracting to shared module.` This catches cross-story duplication that per-task review misses. <!-- Defense-in-depth: also checked by ln-511 MNT-DRY- -->
@@ -264,6 +265,8 @@ Shared contract:
 - emit `summary_kind=task-status`
 - standalone mode omits `runId` and `summaryArtifactPath`
 - managed mode passes both `runId` and exact `summaryArtifactPath` before the worker writes its validated review outcome
+
+**Monitor (2.1.98+):** For lint/typecheck commands expected >30s, use `Monitor`. Fallback: `Bash(run_in_background=true)`.
 
 ## Definition of Done
 - [ ] Steps 1-9 completed: task resolved, context loaded, review checks passed, AC validated, side-effect bugs created, mechanical verification passed, decision applied.

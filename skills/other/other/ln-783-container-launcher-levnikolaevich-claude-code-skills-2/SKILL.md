@@ -203,6 +203,20 @@ Provide user with cleanup commands in report.
 4. **Parse compose file for ports** - do not hardcode port numbers
 5. **Respect depends_on order** - critical for database-dependent services
 
+### Monitor Integration (Claude Code 2.1.98+)
+
+**MANDATORY READ:** Load `shared/references/monitor_integration_pattern.md`
+
+For container health verification, use `Monitor` to stream container logs:
+
+| Pattern | Command | timeout_ms |
+|---------|---------|------------|
+| Readiness signal | `docker compose logs -f 2>&1 \| grep --line-buffered -iE 'ready\|listening\|healthy\|started'` | `healthTimeout * 1000` |
+| Error watch | `docker compose logs -f 2>&1 \| grep --line-buffered -iE 'error\|fatal\|panic\|exit'` | `healthTimeout * 1000` |
+
+Use `persistent: true` if `keepRunning` is true and ongoing log monitoring is needed.
+Fallback: if Monitor is unavailable, use retry loop with `sleep` + `curl` health check.
+
 ---
 
 ## Definition of Done

@@ -7,6 +7,12 @@ source: community
 
 # Vexor CLI Skill
 
+## When to Use
+
+- You need to locate files by intent rather than exact filename or text match.
+- The repository is large enough that manual browsing or naive grep is too slow or ambiguous.
+- You want semantic discovery of where something is implemented, loaded, defined, or documented.
+
 ## Goal
 
 Find files by intent (what they do), not exact text.

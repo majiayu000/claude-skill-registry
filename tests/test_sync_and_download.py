@@ -1,5 +1,6 @@
 import importlib.util
 import sys
+from datetime import timedelta
 from pathlib import Path
 
 import pytest
@@ -130,6 +131,55 @@ def test_select_shard_skills_partition_has_no_overlap():
     for i in range(shard_count):
         for j in range(i + 1, shard_count):
             assert buckets[i].isdisjoint(buckets[j])
+
+
+def test_filter_pending_skills_prefilters_no_repo_and_cooldown():
+    module = load_module()
+    now = module.utc_now()
+    valid = {"repo": "acme/ok", "path": "skills/ok", "name": "ok", "category": "dev"}
+    missing_repo = {"repo": "", "path": "skills/missing", "name": "missing", "category": "dev"}
+    cooldown = {"repo": "acme/cool", "path": "skills/cool", "name": "cool", "category": "dev"}
+
+    negative_cache = {
+        module.skill_key(cooldown): {
+            "reason": "not_found",
+            "cooldown_until": module.to_utc_iso(now + timedelta(hours=24)),
+        }
+    }
+
+    filtered, skipped, skipped_rows = module.filter_pending_skills(
+        [valid, missing_repo, cooldown],
+        existing=set(),
+        negative_cache=negative_cache,
+        now_utc=now,
+    )
+
+    assert filtered == [valid]
+    assert skipped["no_repo"] == 1
+    assert skipped["cooldown_not_found"] == 1
+    reasons = [reason for _, reason in skipped_rows]
+    assert "no_repo_prefilter" in reasons
+    assert "cooldown_not_found" in reasons
+
+
+def test_negative_cache_helpers_prune_and_cooldown():
+    module = load_module()
+    now = module.utc_now()
+    stale = module.to_utc_iso(now - timedelta(days=40))
+    future = module.to_utc_iso(now + timedelta(days=1))
+    cache = {
+        "bad": "x",
+        "stale": {"reason": "not_found", "cooldown_until": stale},
+        "active": {"reason": "not_found", "cooldown_until": future},
+    }
+
+    removed = module.prune_negative_cache(cache, now)
+    assert removed == 2
+    assert "active" in cache
+    assert module.is_negative_cache_active(cache["active"], now) is True
+    assert module.not_found_cooldown_hours(1) == 24
+    assert module.not_found_cooldown_hours(2) == 72
+    assert module.not_found_cooldown_hours(5) == 168
 
 
 def test_main_exits_when_fail_on_empty_download_is_enabled(monkeypatch):

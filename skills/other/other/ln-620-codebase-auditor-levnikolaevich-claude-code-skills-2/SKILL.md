@@ -56,13 +56,13 @@ Phase order:
 Use the Skill tool for delegated workers. Do not inline worker logic inside the coordinator.
 
 TodoWrite format (mandatory):
-- `Config`
-- `Discovery`
-- `Research`
-- `Delegate`
-- `Aggregate`
-- `Report`
-- `Self-check`
+- `Resolve audit scope and build manifest`
+- `Load codebase structure and stack`
+- `Run best-practice research`
+- `Delegate to domain audit workers`
+- `Aggregate worker findings`
+- `Generate audit report`
+- `Verify cleanup and self-check`
 
 Representative invocations:
 

@@ -39,7 +39,23 @@ Recommended `phase_order`:
 4. `PHASE_3_WRITE_SUMMARY`
 5. `PHASE_4_SELF_CHECK`
 
-## Summary
+## Workflow
+
+### Phase 1: Load Worker Results
+
+1. Load all input worker summaries from recorded artifact paths.
+2. **Freshness check:** For each research-type summary (`summary_kind=review-research`):
+   - Parse `produced_at` from envelope.
+   - If older than `research_freshness_hours` (default: 1h), mark as `stale=true` and append to `warnings`.
+
+### Phase 2: Deduplicate and Verify
+
+1. Deduplicate findings across all worker and agent sources.
+2. Reject unsupported claims (no evidence, no source reference).
+3. Apply Merge Priority Rule (see below).
+4. Produce one verified aggregate result.
+
+### Phase 3: Write Summary
 
 Emit `summary_kind=review-merge`.
 
@@ -49,11 +65,28 @@ Payload must include:
 - `operation=merge`
 - `warnings`
 
+### Phase 4: Self-Check
+
+1. Verify all input summaries were loaded.
+2. Verify deduplication completed.
+3. Record `pass=true` only after summary write.
+
+## Merge Priority Rule
+
+When deduplicating findings from multiple sources:
+1. `code_evidence` findings take precedence over `research_claim` and `agent_inference` on the same subject.
+2. If a `research_claim` contradicts `code_evidence`, keep `code_evidence` and add contradiction warning.
+3. `agent_inference` findings without supporting `code_evidence` or `research_claim` are demoted to `severity=info` unless the agent provided a specific file:line reference.
+4. `confidence_tier` from research cards informs merge priority: `tier_1` > `tier_2` > `tier_3`.
+5. Findings without `evidence_basis` from audit workers (`summary_kind=audit-worker`) default to `code_evidence`.
+
 ## Definition of Done
 
 - [ ] Input worker summaries loaded
+- [ ] Freshness check completed
 - [ ] Duplicates removed
 - [ ] Unsupported findings rejected
+- [ ] Merge Priority Rule applied
 - [ ] `review-merge` summary written
 - [ ] Self-check passed
 

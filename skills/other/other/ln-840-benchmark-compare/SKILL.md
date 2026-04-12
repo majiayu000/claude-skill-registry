@@ -55,6 +55,15 @@ EXTRA_SETTINGS='{"disableAllHooks":true}' \
 bash skills-catalog/ln-840-benchmark-compare/scripts/run-benchmark.sh
 ```
 
+### Monitor Integration (Claude Code 2.1.98+)
+
+**MANDATORY READ:** Load `shared/references/monitor_integration_pattern.md`
+
+Stream benchmark progress:
+`Monitor(command="bash skills-catalog/ln-840-benchmark-compare/scripts/run-benchmark.sh 2>&1 | grep --line-buffered -E 'scenario|PASS|FAIL|error|session'", timeout_ms=3600000, description="benchmark run")`
+
+Fallback: `Bash(run_in_background=true)`.
+
 The runner handles:
 - syntax preflight
 - SessionStart preflight

@@ -69,7 +69,9 @@ Collect one environment snapshot:
 - MCP registration/connection state
 - hook state
 - config sync state
-- Codex skill-root discovery health: active roots, cache roots, duplicate skill names, `known_marketplaces.json` install-location drift, whether cache is visible under `~/.codex/skills`, and whether `approval_policy=never` plus `sandbox_mode=danger-full-access` are already aligned
+- Codex skill-root discovery health: active roots, cache roots, duplicate skill names, `known_marketplaces.json` install-location drift, whether cache is visible under `~/.codex/skills`, whether `~/.codex/skills` is a whole-root junction to `~/.claude/plugins`, and whether `approval_policy=never` plus `sandbox_mode=danger-full-access` are already aligned
+- graph provider dependency status: for each detected project language, check whether the corresponding graph provider binaries are installed (e.g. `basedpyright` for Python, `csharp-ls` for C#). Use `mcp__hex-graph__install_graph_providers` with `mode: "check"` if hex-graph MCP is connected
+- graph index freshness: whether hex-graph is connected and the project has been indexed in this session (detection-only, no indexing here)
 - instruction file state
 - disabled flags from `.hex-skills/environment_state.json` if present
 - task management provider detection (Linear → GitHub → file)
@@ -84,7 +86,9 @@ Checkpoint payload:
 Build selective dispatch plan. Only invoke workers that have work.
 
 Dispatch precedence:
-- If Codex discovery violation or Codex execution-default drift is present, `ln-013-config-syncer` becomes mandatory before Codex can be reported as healthy.
+
+- If Codex discovery violation (including whole-root junction) or Codex execution-default drift is present, `ln-013-config-syncer` becomes mandatory before Codex can be reported as healthy.
+- If hex-graph MCP is registered and either (a) graph provider deps are missing for detected project languages, or (b) the project has not been indexed, `ln-012-mcp-configurator` becomes mandatory even when MCP registration is already complete. ln-012 owns both graph provider dependency installation (PHASE_3) and graph indexing (PHASE_5).
 
 Workers:
 - `ln-011-agent-installer`
@@ -126,9 +130,11 @@ Run targeted verification against the post-worker state:
 - health checks
 - hook status
 - sync status
-- Codex skill discovery and execution-default status
+- Codex skill discovery and execution-default status (including whole-root junction detection)
 - instruction file quality
 - runtime dependency status (ripgrep, optional language servers)
+- graph provider dependency health (basedpyright, scip-python, etc. per project languages)
+- graph index status (indexed, skipped, or stale)
 
 Checkpoint payload:
 - `verification_summary`

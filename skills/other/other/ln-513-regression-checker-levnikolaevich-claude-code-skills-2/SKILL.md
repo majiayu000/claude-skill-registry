@@ -74,6 +74,8 @@ Invocation rules:
 - managed: pass both `runId` and exact `summaryArtifactPath`
 - always write the validated summary before terminal outcome
 
+**Monitor (2.1.98+):** For test suite commands expected >30s, use `Monitor`. Fallback: `Bash(run_in_background=true)`.
+
 ## Definition of Done
 
 - [ ] Framework detected; command executed

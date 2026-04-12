@@ -201,6 +201,8 @@ git reset HEAD~1  # If test commit was made
 
 ---
 
+**Monitor (2.1.98+):** When hook verification invokes lint/test commands expected >30s, use `Monitor`. Fallback: `Bash(run_in_background=true)`.
+
 ## Definition of Done
 
 - [ ] Hook manager installed (Husky or pre-commit)

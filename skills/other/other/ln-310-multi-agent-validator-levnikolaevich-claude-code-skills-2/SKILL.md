@@ -57,16 +57,16 @@ The coordinator uses these evaluation workers:
 Use the Skill tool for delegated workers. Do not inline worker logic inside the coordinator.
 
 TodoWrite format (mandatory):
-- `Config`
-- `Discovery`
-- `Agent launch`
-- `Evidence lanes`
-- `Docs`
-- `Repair`
-- `Merge`
-- `Refinement`
-- `Approval`
-- `Self-check`
+- `Resolve target and build runtime manifest`
+- `Load target artifacts and metadata`
+- `Launch external agents and verify health`
+- `Run research and findings workers in parallel`
+- `Generate documentation updates`
+- `Apply accepted low-risk repairs`
+- `Sync agents and merge all evidence`
+- `Run bounded refinement loop`
+- `Compute verdict and write review output`
+- `Verify runtime cleanup and self-check`
 
 Representative invocations:
 
@@ -136,6 +136,7 @@ Sequential only:
    - exact `phase_order`
    - `phase_policy`
    - report path
+   - `extra_evidence_workers` — optional list of additional read-only workers. Each entry: `{"worker": "ln-511", "lane": "code_quality", "join_group": "evidence", "depends_on": []}`. Default: empty list. Auto-selection in `mode=story`: label `security` → add `ln-621`, label `performance` → add `ln-653`.
 4. Start runtime:
 
 ```bash
@@ -186,9 +187,11 @@ node shared/scripts/evaluation-runtime/cli.mjs register-agent \
 This phase is the mandatory parallel evidence barrier.
 
 1. Build `worker_plan` with:
-   - `ln-311` lane `research`
-   - `ln-312` lane `findings`
-2. Launch both workers in parallel.
+   - `ln-311` lane `research` (mandatory)
+   - `ln-312` lane `findings` (mandatory)
+   - optional audit lanes from manifest `extra_evidence_workers`
+2. **Compatibility gate:** For each extra worker, verify it emits `evaluation-worker` or compatible summary kind. Workers on `audit-worker-runtime` must emit summaries with the `evaluation-worker` envelope fields (`worker`, `status`, `operation`, `warnings`). If a worker's summary format is unknown, skip it with warning.
+3. Launch all planned workers in parallel.
 3. While those workers run, continue local repo inspection and collect additional evidence.
 4. Sync agents opportunistically, but do not block on them until merge.
 5. Record each worker summary with:

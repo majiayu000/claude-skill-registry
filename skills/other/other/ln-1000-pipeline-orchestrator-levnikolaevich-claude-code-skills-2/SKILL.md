@@ -314,12 +314,14 @@ WHILE true:
     BREAK
 
   IF Story status = To Rework:
+    Read Stage 3 artifact `metadata.rework_hint` for blocking_categories and suggested_focus
     Bash: node $PIPELINE advance --story {id} --to STAGE_2    # guard auto-increments quality_cycles
     IF advance fails (quality_cycles >= 2):
       Bash: node $PIPELINE pause --story {id} --reason "Quality gate failed 2 times"
       ESCALATE: "Quality gate failed after max cycles. Manual review needed."
       BREAK
-    target_stage = 2    # loop back to Stage 2
+    # Pass rework focus to ln-400:
+    Skill(skill: "ln-400-story-executor", args: "{id} --rework-focus {blocking_categories}")
     CONTINUE
 
   Bash: node $PIPELINE pause --story {id} --reason "Unexpected Stage 3 outcome"

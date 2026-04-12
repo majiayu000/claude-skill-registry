@@ -30,7 +30,7 @@ import logging
 import os
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 # Add parent to path for imports
@@ -74,6 +74,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 ACQUISITION_MANIFEST_VERSION = 1
 DEFAULT_MANIFEST_PATH = ROOT_DIR / "sources" / "acquisition_manifest.json"
+DEFAULT_LEARNING_PRIORS_PATH = ROOT_DIR / "sources" / "learning" / "discovery_priors.json"
 
 
 def _source_count(path: Path) -> int:
@@ -151,6 +152,130 @@ def save_acquisition_manifest(path: Path, entries: dict[str, dict]) -> None:
     }
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def utc_now() -> datetime:
+    """Return timezone-aware UTC now."""
+    return datetime.now(timezone.utc)
+
+
+def to_utc_iso(ts: datetime) -> str:
+    """Serialize timezone-aware datetime to UTC ISO 8601 with Z suffix."""
+    return ts.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def parse_utc_iso(value: str) -> datetime | None:
+    """Parse UTC ISO string used by this pipeline."""
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
+    except Exception:
+        return None
+
+
+def load_learning_priors(path: Path) -> dict:
+    """Load learning priors JSON with minimal defaults."""
+    if path.exists():
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            if isinstance(payload, dict):
+                payload.setdefault("version", 1)
+                payload.setdefault("repo_priors", {})
+                payload.setdefault("topic_yield", {})
+                payload.setdefault("query_yield", {})
+                payload.setdefault("negative_cache", {})
+                return payload
+        except Exception as exc:
+            logger.warning("Failed to parse learning priors %s: %s", path, exc)
+
+    return {
+        "version": 1,
+        "repo_priors": {},
+        "topic_yield": {},
+        "query_yield": {},
+        "negative_cache": {},
+    }
+
+
+def save_learning_priors(path: Path, priors: dict) -> None:
+    """Persist learning priors JSON."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(priors, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def not_found_cooldown_hours(failure_count: int) -> int:
+    """Return cooldown window for repeated not_found failures."""
+    if failure_count <= 1:
+        return 24
+    if failure_count == 2:
+        return 72
+    return 168
+
+
+def is_negative_cache_active(entry: dict | None, now_utc: datetime) -> bool:
+    """True when a negative-cache entry is still inside cooldown."""
+    if not entry:
+        return False
+    reason = (entry.get("reason") or "").strip()
+    if reason != "not_found":
+        return False
+    cooldown_until = parse_utc_iso(str(entry.get("cooldown_until") or ""))
+    if not cooldown_until:
+        return False
+    return now_utc < cooldown_until
+
+
+def prune_negative_cache(negative_cache: dict, now_utc: datetime) -> int:
+    """Drop stale negative-cache entries that expired more than 30 days ago."""
+    removed = 0
+    retention_cutoff = now_utc - timedelta(days=30)
+    for key in list(negative_cache.keys()):
+        entry = negative_cache.get(key)
+        if not isinstance(entry, dict):
+            del negative_cache[key]
+            removed += 1
+            continue
+        cooldown_until = parse_utc_iso(str(entry.get("cooldown_until") or ""))
+        last_seen = parse_utc_iso(str(entry.get("last_seen_at") or ""))
+        anchor = cooldown_until or last_seen
+        if anchor and anchor < retention_cutoff:
+            del negative_cache[key]
+            removed += 1
+    return removed
+
+
+def filter_pending_skills(
+    skills: list[dict],
+    existing: set[str],
+    negative_cache: dict,
+    now_utc: datetime,
+) -> tuple[list[dict], dict[str, int], list[tuple[dict, str]]]:
+    """Filter out ineligible pending skills before download."""
+    filtered: list[dict] = []
+    skipped = {"existing": 0, "no_repo": 0, "cooldown_not_found": 0}
+    skipped_rows: list[tuple[dict, str]] = []
+
+    for skill in skills:
+        key = skill_key(skill)
+        if key in existing:
+            skipped["existing"] += 1
+            continue
+
+        repo = (skill.get("repo") or "").strip()
+        if not repo:
+            skipped["no_repo"] += 1
+            skipped_rows.append((skill, "no_repo_prefilter"))
+            continue
+
+        if is_negative_cache_active(negative_cache.get(key), now_utc):
+            skipped["cooldown_not_found"] += 1
+            skipped_rows.append((skill, "cooldown_not_found"))
+            continue
+
+        filtered.append(skill)
+
+    return filtered, skipped, skipped_rows
 
 
 def build_branch_probe_order(
@@ -329,6 +454,7 @@ async def download_skills(
     shard_index: int = 0,
     failure_report_path: Path | None = None,
     observations_output_path: Path | None = None,
+    learning_priors_path: Path | None = None,
 ) -> dict:
     """Download skills using optimized downloader."""
     logger.info("=" * 60)
@@ -375,9 +501,28 @@ async def download_skills(
 
     logger.info(f"Already downloaded: {len(existing)}")
 
-    # Filter pending by repo/path key
-    pending_all = [s for s in skills if skill_key(s) not in existing]
-    logger.info(f"To download (before sharding): {len(pending_all)}")
+    priors_file = learning_priors_path or DEFAULT_LEARNING_PRIORS_PATH
+    learning_priors = load_learning_priors(priors_file)
+    negative_cache = learning_priors.setdefault("negative_cache", {})
+    learning_state = {"dirty": False}
+
+    cache_pruned = prune_negative_cache(negative_cache, utc_now())
+    if cache_pruned:
+        learning_state["dirty"] = True
+        logger.info("Negative cache pruned: %s stale entries removed", cache_pruned)
+
+    pending_all, pending_skipped, pending_skipped_rows = filter_pending_skills(
+        skills,
+        existing,
+        negative_cache,
+        utc_now(),
+    )
+    logger.info(
+        "To download (before sharding): %s | prefilter no_repo=%s cooldown_not_found=%s",
+        len(pending_all),
+        pending_skipped["no_repo"],
+        pending_skipped["cooldown_not_found"],
+    )
     pending = select_shard_skills(pending_all, shard_count=shard_count, shard_index=shard_index)
     logger.info(
         "Shard selection: index=%s count=%s pending=%s",
@@ -392,9 +537,39 @@ async def download_skills(
 
     if not pending:
         logger.info("Nothing to download!")
+        if learning_state["dirty"] or not priors_file.exists():
+            learning_priors["updated_at"] = to_utc_iso(utc_now())
+            save_learning_priors(priors_file, learning_priors)
+            logger.info(
+                "Discovery learning priors saved: %s entries in negative cache",
+                len(learning_priors.get("negative_cache", {})),
+            )
         if observations_output_path:
             observations_output_path.parent.mkdir(parents=True, exist_ok=True)
-            observations_output_path.write_text("", encoding="utf-8")
+            with observations_output_path.open("w", encoding="utf-8") as handle:
+                for skipped_skill, skipped_reason in pending_skipped_rows:
+                    handle.write(
+                        json.dumps(
+                            {
+                                "timestamp": to_utc_iso(utc_now()),
+                                "shard_count": shard_count,
+                                "shard_index": shard_index,
+                                "name": (skipped_skill.get("name") or "").strip(),
+                                "repo": (skipped_skill.get("repo") or "").strip(),
+                                "path": (skipped_skill.get("path") or "").strip(),
+                                "category": sanitize_category(skipped_skill.get("category", "other")),
+                                "candidate_key": skill_key(skipped_skill),
+                                "outcome": "skipped",
+                                "failure_reason": skipped_reason,
+                                "attempts": 0,
+                                "manifest_hit": False,
+                                "resolved_branch": "",
+                                "resolved_relative_path": "",
+                            },
+                            ensure_ascii=False,
+                        )
+                        + "\n"
+                    )
         return {
             "downloaded": 0,
             "failed": 0,
@@ -402,6 +577,8 @@ async def download_skills(
             "shard_count": shard_count,
             "shard_index": shard_index,
             "pending_before_shard": len(pending_all),
+            "prefiltered_no_repo": pending_skipped["no_repo"],
+            "skipped_cooldown_not_found": pending_skipped["cooldown_not_found"],
         }
 
     stats = {
@@ -414,6 +591,8 @@ async def download_skills(
         "shard_count": shard_count,
         "shard_index": shard_index,
         "pending_before_shard": len(pending_all),
+        "prefiltered_no_repo": pending_skipped["no_repo"],
+        "skipped_cooldown_not_found": pending_skipped["cooldown_not_found"],
     }
     failures = defaultdict(list)
     observations: list[dict] = []
@@ -520,6 +699,9 @@ async def download_skills(
             }
         )
 
+    for skipped_skill, skipped_reason in pending_skipped_rows:
+        add_observation(skipped_skill, outcome="skipped", failure_reason=skipped_reason)
+
     async def try_download(session: aiohttp.ClientSession, skill: dict) -> bool:
         name = (skill.get("name") or "").strip() or "unknown"
         # Normalize name to prevent case conflicts on macOS/Windows
@@ -527,6 +709,7 @@ async def download_skills(
         repo = normalize_repo(skill.get("repo", ""))
         path = normalize_repo_path(skill.get("path", ""), repo)
         category = sanitize_category(skill.get("category", "other"))
+        candidate_key = skill_key(skill)
 
         if not repo:
             failures["no_repo"].append(name)
@@ -600,6 +783,9 @@ async def download_skills(
                                     }
                                     manifest_state["dirty"] = True
                                     stats["url_attempts"] += attempts
+                                    if candidate_key in negative_cache:
+                                        del negative_cache[candidate_key]
+                                        learning_state["dirty"] = True
                                     add_observation(
                                         skill,
                                         outcome="downloaded",
@@ -627,6 +813,20 @@ async def download_skills(
 
             failures["not_found"].append(name)
             stats["url_attempts"] += attempts
+            now_utc = utc_now()
+            entry = negative_cache.get(candidate_key)
+            prev_count = int((entry or {}).get("count") or 0)
+            count = prev_count + 1
+            cooldown_hours = not_found_cooldown_hours(count)
+            negative_cache[candidate_key] = {
+                "reason": "not_found",
+                "count": count,
+                "last_seen_at": to_utc_iso(now_utc),
+                "cooldown_until": to_utc_iso(now_utc + timedelta(hours=cooldown_hours)),
+                "repo": repo,
+                "path": path,
+            }
+            learning_state["dirty"] = True
             add_observation(
                 skill,
                 outcome="failed",
@@ -680,6 +880,14 @@ async def download_skills(
     logger.info(f"Failed: {stats['failed']}")
     logger.info(f"URL attempts: {stats['url_attempts']}")
     logger.info(f"Total skills: {final_count}")
+
+    if learning_state["dirty"] or not priors_file.exists():
+        learning_priors["updated_at"] = to_utc_iso(utc_now())
+        save_learning_priors(priors_file, learning_priors)
+        logger.info(
+            "Discovery learning priors saved: %s entries in negative cache",
+            len(learning_priors.get("negative_cache", {})),
+        )
 
     if observations_output_path:
         observations_output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -828,6 +1036,11 @@ def main():
         default="sources/learning/discovery_observations.jsonl",
         help="Download observation JSONL output path (relative to repo root unless absolute)",
     )
+    parser.add_argument(
+        "--learning-priors",
+        default="sources/learning/discovery_priors.json",
+        help="Learning priors JSON path (relative to repo root unless absolute)",
+    )
     args = parser.parse_args()
 
     if args.shard_count <= 0:
@@ -859,6 +1072,11 @@ def main():
         observations_output = observations_output_arg
     else:
         observations_output = registry_dir / observations_output_arg
+    learning_priors_arg = Path(args.learning_priors)
+    if learning_priors_arg.is_absolute():
+        learning_priors = learning_priors_arg
+    else:
+        learning_priors = registry_dir / learning_priors_arg
 
     github_token = os.environ.get("GITHUB_TOKEN", "")
 
@@ -914,6 +1132,7 @@ def main():
                 shard_index=args.shard_index,
                 failure_report_path=failure_report,
                 observations_output_path=observations_output,
+                learning_priors_path=learning_priors,
             )
         )
         if args.fail_on_empty_download and should_fail_on_empty_download(stats):

@@ -317,6 +317,15 @@ Standalone mode:
 - omit `runId` and `summaryArtifactPath`
 - write `.hex-skills/runtime-artifacts/runs/{run_id}/optimization-worker/ln-814--{identifier}.json`
 
+### Monitor Integration (Claude Code 2.1.98+)
+
+**MANDATORY READ:** Load `shared/references/monitor_integration_pattern.md`
+
+During multi-run optimization cycles (baseline + A/B):
+`Monitor(command="{test_command} 2>&1 | grep --line-buffered -E 'run|result|error|FAIL'", timeout_ms=600000, description="optimization run")`
+
+Fallback: if Monitor is unavailable, use `Bash(run_in_background=true)`.
+
 ## Definition of Done
 
 - [ ] Baseline established using same metric type as observed problem

@@ -72,6 +72,8 @@ Shared contract:
 - standalone mode omits `runId` and `summaryArtifactPath`
 - managed mode passes both `runId` and exact `summaryArtifactPath` before the worker writes its validated summary
 
+**Monitor (2.1.98+):** When verification commands expected >30s, use `Monitor`. Fallback: `Bash(run_in_background=true)`.
+
 ## Definition of Done
 - [ ] Task and review feedback fully read; actions mapped.
 - [ ] Fixes applied; docs/tests updated as required.

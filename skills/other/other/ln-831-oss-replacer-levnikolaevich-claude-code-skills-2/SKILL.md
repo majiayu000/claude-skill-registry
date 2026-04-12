@@ -186,6 +186,8 @@ Standalone mode:
 - omit `runId` and `summaryArtifactPath`
 - write `.hex-skills/runtime-artifacts/runs/{run_id}/modernization-worker/ln-831--{identifier}.json`
 
+**Monitor (2.1.98+):** For install + test verification loops expected >30s, use `Monitor`. Fallback: `Bash(run_in_background=true)`.
+
 ## Definition of Done
 
 - [ ] Migration plan loaded or target module analyzed

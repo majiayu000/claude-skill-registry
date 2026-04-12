@@ -17,7 +17,7 @@ Best practices for structuring Makepad applications based on the Robrix and Moly
 - **Robrix**: Matrix chat client - complex sync/async with background subscriptions
 - **Moly**: AI chat application - cross-platform (native + WASM) with streaming APIs
 
-## Triggers
+## When to Use
 
 Use this skill when:
 - Building a Makepad application with async backend integration

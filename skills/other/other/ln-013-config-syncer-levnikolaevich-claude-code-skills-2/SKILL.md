@@ -128,22 +128,59 @@ Gemini decision logic:
 
 **2b: Codex active install mapping**
 
+**Target structure:**
+
+```text
+~/.codex/skills/                                    <- real directory (NOT a junction)
+  marketplaces/
+      {marketplace-A}/                              <- junction -> ~/.claude/plugins/marketplaces/{marketplace-A}
+      {marketplace-B}/                              <- junction -> ~/.claude/plugins/marketplaces/{marketplace-B}
+  known_marketplaces.json                           <- installLocation -> ~/.codex/skills/marketplaces/{marketplace}
+```
+
+Per-marketplace junctions preserve auto-update: when Claude updates a marketplace, Codex sees changes automatically through the junction. Cache and other non-skill directories are excluded from the Codex discovery root.
+
 Codex decision logic:
 
 | Condition | Action |
 |-----------|--------|
 | `disabled: true` for this agent | SKIP, report `disabled` |
+| `~/.codex/skills` is a junction/symlink to `~/.claude/plugins` (whole-root) | Replace with real directory + per-marketplace junctions (see steps below) |
 | `~/.codex/skills/cache/**` exists | Relocate cache outside the discovery root (or report the planned move on `dry_run`) |
-| `known_marketplaces.json` points to `~/.claude/plugins/...` or another foreign root | Rewrite `installLocation` to the active Codex marketplace path |
-| Active marketplace exists under `~/.codex/skills/marketplaces/{marketplace}` and duplicate scan is clean | SKIP, report `already mapped` |
-| Active marketplace missing but an approved source exists | Create or repair the active Codex marketplace surface under `~/.codex/skills/marketplaces/{marketplace}` |
+| `known_marketplaces.json` points to `~/.claude/plugins/...` or another foreign root | Rewrite `installLocation` to the active Codex marketplace path (`~/.codex/skills/marketplaces/{marketplace}`) |
+| Active marketplace exists under `~/.codex/skills/marketplaces/{marketplace}` as junction and duplicate scan is clean | SKIP, report `already mapped` |
+| Active marketplace missing but an approved source exists | Create junction `~/.codex/skills/marketplaces/{marketplace}` -> `~/.claude/plugins/marketplaces/{marketplace}` |
 | Duplicate skill names remain under `~/.codex/skills` after relocation / repair | FAIL sync health, report discovery violation |
+
+**Whole-root junction detection:** Use `fs.lstatSync('~/.codex/skills').isSymbolicLink()`. If true and `fs.readlinkSync()` points to `~/.claude/plugins`, this is a whole-root junction that must be replaced.
+
+**Steps for whole-root junction replacement (Windows):**
+
+1. Backup `known_marketplaces.json` content (read before removing junction)
+2. Remove junction: `execSync('rmdir "<path>"', { shell: 'cmd.exe' })` -- safe for junctions, does not delete target
+3. Create real directory: `fs.mkdirSync('<path>', { recursive: true })`
+4. Create `<path>/marketplaces/`
+5. For each enabled marketplace in `~/.claude/settings.json` -> `enabledPlugins`:
+   - Create junction: `fs.symlinkSync('<claude_marketplace_path>', '<codex_marketplace_path>', 'junction')`
+6. Write `known_marketplaces.json` with `installLocation` pointing to the Codex-local marketplace path
+7. Verify: no `cache/`, junctions resolve, duplicate scan clean
+
+**Steps for whole-root junction replacement (macOS/Linux):**
+
+1. Backup `known_marketplaces.json` content
+2. Remove symlink: `rm ~/.codex/skills` (not `rm -rf` -- symlink only)
+3. Create real directory: `mkdir -p ~/.codex/skills/marketplaces`
+4. For each enabled marketplace: `ln -s ~/.claude/plugins/marketplaces/{mp} ~/.codex/skills/marketplaces/{mp}`
+5. Write `known_marketplaces.json` with Codex-local `installLocation`
+
+**Implementation note:** On Windows, use a temporary `.mjs` script file for the junction replacement sequence, not inline `node -e` or bash heredocs, because Windows path escaping is fragile in shells.
 
 Rules for Codex mapping:
 - Never symlink or junction `~/.codex/skills` itself to the Claude plugin tree.
 - Never expose cache snapshots under the Codex discovery root.
 - `known_marketplaces.json` is part of the Codex mapping contract and must agree with the active marketplace path.
-- A marketplace-level copy or junction is acceptable. A whole-root mirror of `.claude/plugins` is not.
+- A marketplace-level junction is the preferred mapping strategy. A whole-root mirror of `.claude/plugins` is not acceptable.
+- Per-marketplace junctions auto-update when Claude updates marketplaces -- no manual re-sync needed.
 
 ### Phase 3: Sync MCP Settings
 

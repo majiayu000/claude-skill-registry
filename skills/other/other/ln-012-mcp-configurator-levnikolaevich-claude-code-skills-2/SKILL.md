@@ -557,7 +557,7 @@ IDE Extension Permission Mode:
 - [ ] Missing servers registered and verified connected (Phase 2)
 - [ ] Outdated servers re-registered with latest version (Phase 2)
 - [ ] Graph-specific dependencies verified: ripgrep available, detected hex-graph providers and SCIP exporters reported (Phase 2b)
-- [ ] Hooks auto-synced after first `hex-line` startup (PreToolUse, PostToolUse, SessionStart) and `disableAllHooks: false` (Phase 3)
+- [ ] Hooks auto-synced after first `hex-line` startup (PreToolUse, PostToolUse, SessionStart, ConfigChange, PermissionDenied) and `disableAllHooks: false` (Phase 3). MCP config notes: `_meta["anthropic/maxResultSizeChars"]` up to 500K for large tool results (Claude Code 2.1.91); `MCP_CONNECTION_NONBLOCKING` env var for `-p` mode (2.1.89); `disableSkillShellExecution` setting prevents skill shell execution (2.1.91)
 - [ ] Output style installed (Phase 3)
 - [ ] Permissions granted for all configured servers (Phase 6)
 - [ ] IDE extension permission mode detected for installed Cursor / VSCode and reported with WARN if it overrides project `defaultMode` (Phase 6b). Writes only with `apply_ide_override=true` AND user consent.

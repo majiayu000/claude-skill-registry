@@ -159,6 +159,8 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 - **Timeout handling:** Set timeout for build/test commands (default 5 minutes)
 - **Environment aware:** Run in CI mode if detected (no interactive prompts)
 
+**Monitor (2.1.98+):** For build/lint/typecheck/test commands expected >30s, use `Monitor`. Fallback: `Bash(run_in_background=true)`.
+
 ## Definition of Done
 
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.

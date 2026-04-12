@@ -84,7 +84,7 @@ Treat these as structural issues, not style nits:
 - missing `**Type:**` when role-sensitive checks depend on it
 - worker independence violations in L3 workers
 - broken shared paths
-- stale root-doc assumptions after `AGENTS.md canonical / CLAUDE.md thin shim`
+- stale root-doc assumptions — CLAUDE.md or GEMINI.md that duplicate AGENTS.md content instead of using the `@AGENTS.md` import stub with a bounded harness delta
 - markdown-analysis skills missing `markdown_read_protocol.md`
 - extraction or audit skills contradicting the shared docs-quality contract
 - skills contradicting the shared skill contract

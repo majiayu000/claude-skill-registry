@@ -225,6 +225,8 @@ After generating all configs and installing tools, run `bash scripts/lint.sh --a
 
 ---
 
+**Monitor (2.1.98+):** When lint/typecheck verification commands expected >30s, use `Monitor`. Fallback: `Bash(run_in_background=true)`.
+
 ## Definition of Done
 
 - [ ] Appropriate config files created for detected stack

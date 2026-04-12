@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/motherduckdb/agent-skills",
   "dir_name": "duckdb-sql-motherduckdb-agent-skills",
-  "downloaded_at": "2026-04-12T10:36:24.669907Z",
+  "downloaded_at": "2026-04-12T14:38:58.363030Z",
   "author": "motherduckdb",
   "source_url": "https://github.com/motherduckdb/agent-skills/blob/main/plugins/motherduck-skills-claude/skills/duckdb-sql/SKILL.md",
   "license": "NOASSERTION",

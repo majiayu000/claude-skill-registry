@@ -1,6 +1,6 @@
 ---
 name: ln-014-agent-instructions-manager
-description: "Creates missing instruction files (CLAUDE.md, AGENTS.md, GEMINI.md), audits token budget, prompt cache safety, cross-agent consistency. Use after setup or when instruction files need alignment."
+description: "Creates AGENTS.md canonical and CLAUDE.md/GEMINI.md @AGENTS.md stubs; audits token budget, cache safety, import-pattern compliance. Use when instruction files need alignment."
 license: MIT
 ---
 
@@ -11,7 +11,11 @@ license: MIT
 **Type:** L3 Worker
 **Category:** 0XX Shared
 
-Creates missing instruction files and audits all (CLAUDE.md, AGENTS.md, GEMINI.md) for quality, consistency, and best practices.
+Creates missing instruction files and audits all of them (AGENTS.md, CLAUDE.md, GEMINI.md) for quality, consistency, and best practices. AGENTS.md is the single canonical source of content; CLAUDE.md and GEMINI.md are thin `@AGENTS.md` import stubs with bounded harness-specific deltas. This skill is the single owner of instruction-file creation and MCP Tool Preferences insertion or replacement.
+
+**MANDATORY READ:** Load `shared/references/coordinator_summary_contract.md`, `shared/references/environment_worker_runtime_contract.md`, and `shared/references/worker_runtime_contract.md`
+**MANDATORY READ:** Load `shared/references/mcp_tool_preferences.md`
+**MANDATORY READ:** Load `shared/references/agent_instructions_writing_guide.md` — canonical rationale for the `@AGENTS.md` import pattern, size budgets, and anti-patterns. All audit checks below trace back to this guide.
 
 ## Input / Output
 
@@ -21,6 +25,42 @@ Creates missing instruction files and audits all (CLAUDE.md, AGENTS.md, GEMINI.m
 | **Output** | Structured summary envelope with `payload.status` = `completed` / `skipped` / `error`, plus created files, audit findings, and warnings in `changes` / `detail` |
 
 If `summaryArtifactPath` is provided, write the same summary JSON there. If not provided, return the summary inline and remain fully standalone. If `runId` is not provided, generate a standalone `run_id` before emitting the summary envelope.
+
+## Runtime
+
+Runtime family: `environment-worker-runtime`
+
+Phase profile:
+1. `PHASE_0_CONFIG`
+2. `PHASE_1_DISCOVER_FILES`
+3. `PHASE_2_CREATE_MISSING_FILES`
+4. `PHASE_3_TOKEN_BUDGET_AUDIT`
+5. `PHASE_4_PROMPT_CACHE_SAFETY`
+6. `PHASE_5_CONTENT_QUALITY`
+7. `PHASE_6_IMPORT_PATTERN_COMPLIANCE`
+8. `PHASE_7_WRITE_SUMMARY`
+9. `PHASE_8_SELF_CHECK`
+
+Runtime rules:
+- emit `summary_kind=env-instructions`
+- standalone runs generate their own `run_id` and write the default worker-family artifact path
+- managed runs require both `runId` and `summaryArtifactPath` and must write the summary to the exact provided path
+- always write the validated summary artifact before terminal outcome
+
+## Output Contract
+
+Always build a structured `env-instructions` summary envelope per:
+- `shared/references/coordinator_summary_contract.md`
+- `shared/references/environment_worker_runtime_contract.md`
+
+Payload fields:
+- `files_found`
+- `files_created`
+- `quality_findings`
+- `token_budget`
+- `prompt_cache_safety`
+- `import_pattern_status`
+- `status`
 
 ## When to Use
 
@@ -34,13 +74,13 @@ If `summaryArtifactPath` is provided, write the same summary JSON there. If not 
 
 Locate instruction files in target project:
 
-| Agent | Primary | Fallback |
-|-------|---------|----------|
-| Claude | `CLAUDE.md` | `.claude/settings.local.json` |
-| Codex | `AGENTS.md` | `.codex/instructions.md` |
-| Gemini | `GEMINI.md` | `AGENTS.md` (shared with Codex) |
+| Agent | Primary | Canonical source | Fallback |
+|-------|---------|------------------|----------|
+| Claude Code | `CLAUDE.md` | imports `AGENTS.md` via `@AGENTS.md` | `.claude/settings.local.json` |
+| Codex / Cursor / Amp / Factory | `AGENTS.md` | canonical | `.codex/instructions.md` |
+| Gemini CLI | `GEMINI.md` | imports `AGENTS.md` via `@AGENTS.md` | `AGENTS.md` (shared with Codex) |
 
-Report: which files exist (`found` / `missing`), which agents share files.
+Report: which files exist (`found` / `missing`), which harnesses share `AGENTS.md` directly vs via import.
 
 ## Phase 1b: Plugin Conflict Check
 
@@ -49,8 +89,10 @@ Report: which files exist (`found` / `missing`), which agents share files.
 1. Read `~/.claude/settings.json` → parse `enabledPlugins`
 2. Filter: enabled=true AND publisher ≠ `levnikolaevich-skills-marketplace`
 3. For each external plugin:
-   - Locate cache: `~/.claude/plugins/cache/{publisher}/{plugin}/*/skills/*/SKILL.md`
-   - Read each skill description (frontmatter `description:` field)
+   - Resolve active install first: matching plugin or marketplace under `~/.claude/plugins/marketplaces/*`
+   - Read active `skills-catalog/*/SKILL.md` descriptions from that install surface
+   - Only if no active install is available, fall back to the latest cache snapshot under `~/.claude/plugins/cache/{publisher}/{plugin}/*/skills/*/SKILL.md`
+   - Treat cache as forensic fallback only. Never count multiple cache snapshots as separate active conflicts.
    - Match against conflict signal keywords:
 
 | Signal | Keywords in description | Overlap with |
@@ -63,7 +105,7 @@ Report: which files exist (`found` / `missing`), which agents share files.
 | Debugging | "systematic.*debug", "root.*cause.*phase" | problem_solving.md |
 | Git isolation | "worktree.*creat", "git.*isolat" | git_worktree_fallback.md |
 
-   - Check for `hooks/session-start` directory (competing SessionStart injection)
+   - Check for `hooks/session-start` directory in the active install surface first
 4. Score: 2+ signal categories → CONFLICT. 1 → WARN. 0 → safe
 5. CONFLICT: `"CONFLICT: {plugin} overlaps with ln-* pipeline ({signals}). Disable?"` → AskUserQuestion → if yes, set to `false` in settings.json
 6. WARN: report, continue
@@ -72,6 +114,8 @@ Report: which files exist (`found` / `missing`), which agents share files.
 
 **Skip condition:** All files exist OR `dry_run == true` (report what would be created).
 
+**Canonical model:** AGENTS.md is the single source of content. CLAUDE.md and GEMINI.md are `@AGENTS.md` import stubs with bounded harness-specific deltas. Create in this order so the stubs reference a file that already exists.
+
 ### Step 2a: Detect Project Context
 
 | Field | Source | Fallback |
@@ -79,55 +123,50 @@ Report: which files exist (`found` / `missing`), which agents share files.
 | PROJECT_NAME | `package.json` → `name` | `basename(cwd)` |
 | PROJECT_DESCRIPTION | `package.json` → `description` | `[TBD: Project description]` |
 | DATE | current date (YYYY-MM-DD) | — |
+| ENABLE_WORKFLOW_PRINCIPLES | Caller input (default `false`) | — |
 
-### Step 2b: Create CLAUDE.md (if missing)
+### Step 2b: Create AGENTS.md (if missing) — canonical
 
-1. **MANDATORY READ:** Load `skills/ln-111-root-docs-creator/references/templates/claude_md_template.md`
-2. Replace `{{PROJECT_NAME}}`, `{{PROJECT_DESCRIPTION}}`, `{{DATE}}`
-3. Mark remaining `{{...}}` as `[TBD: placeholder_name]`
-4. Write to target project root
+1. **MANDATORY READ:** Load `skills-catalog/ln-111-root-docs-creator/references/templates/agents_md_template.md`
+2. Replace `{{PROJECT_NAME}}`, `{{PROJECT_DESCRIPTION}}`, `{{DATE}}`, and `{{DEV_COMMANDS_*}}` placeholders
+3. If `ENABLE_WORKFLOW_PRINCIPLES=true`: replace `{{WORKFLOW_PRINCIPLES_BLOCK}}` with the full content of `skills-catalog/ln-111-root-docs-creator/references/templates/agents_md_workflow_principles.md`. Otherwise strip the placeholder line and its leading HTML comment.
+4. Mark remaining `{{...}}` as `[TBD: placeholder_name]`
+5. Write to target project root
 
-### Step 2c: Create AGENTS.md (if missing)
+### Step 2c: Create CLAUDE.md (if missing) — import stub
 
-Source: target project's CLAUDE.md (just created or pre-existing).
+1. **MANDATORY READ:** Load `skills-catalog/ln-111-root-docs-creator/references/templates/claude_md_template.md`
+2. Replace `{{PROJECT_NAME}}` only
+3. Write to target project root
+4. Verify the file contains exactly one `@AGENTS.md` line and is ≤50 lines total
+5. Do NOT copy any content from AGENTS.md into CLAUDE.md — the `@` import handles it at session load time
 
-| # | Transformation | Find | Replace |
-|---|---------------|------|---------|
-| 1 | Title | First H1 line | `# AGENTS.md` |
-| 2 | SCOPE | `Guides in \`docs/\`` | `Detailed guides in \`docs/\`. Skill workflows in individual \`SKILL.md\` files. Public documentation in \`README.md\`.` |
-| 3 | Agent name | `Claude Code` / `Claude` in intro line | `Codex` |
-| 4 | DAG entry | `CLAUDE.md →` | `AGENTS.md →` |
-| 5 | Add rule | After last Critical Rules row | Add: `\| **Code Comments 15-20%** \| Writing code \| WHY not WHAT. No historical notes. Task/ADR IDs as spec refs only \|` |
+### Step 2d: Create GEMINI.md (if missing) — import stub
 
-### Step 2d: Create GEMINI.md (if missing)
-
-Source: target project's AGENTS.md (just created or pre-existing).
-
-| # | Transformation | Find | Replace |
-|---|---------------|------|---------|
-| 1 | Title | First H1 line | `# GEMINI.md` |
-| 2 | Agent name | `Codex` in intro line | `Gemini CLI` |
-| 3 | DAG entry | `AGENTS.md →` | `GEMINI.md →` |
-| 4 | Compact | `during /compact:` | `during context compression:` |
-| 5 | Remove rule | `Code Comments` row | Delete row |
+1. **MANDATORY READ:** Load `skills-catalog/ln-111-root-docs-creator/references/templates/gemini_md_template.md`
+2. Replace `{{PROJECT_NAME}}` only
+3. Write to target project root
+4. Verify the file contains exactly one `@AGENTS.md` line and is ≤50 lines total
+5. Do NOT copy any content from AGENTS.md into GEMINI.md — the `@` import handles it at session load time
 
 ### Step 2e: Report Creations
 
-List each created file with its source (template / derived from CLAUDE.md / derived from AGENTS.md).
+List each created file with its source (template `agents_md_template.md`, template `claude_md_template.md` stub, template `gemini_md_template.md` stub).
 
 ## Phase 3: Token Budget Audit
 
-For each instruction file:
+Line-count budgets align with the Anthropic official target (`<200 lines per CLAUDE.md file`) and the IFScale instruction-ceiling research. See `shared/references/agent_instructions_writing_guide.md` for the full rationale.
 
 | Check | Pass | Warn | Fail |
 |-------|------|------|------|
-| Line count | ≤100 lines | 101-150 lines | >150 lines |
-| Estimated tokens | ≤2,500 tokens | 2,501-3,500 | >3,500 |
-| Sections count | ≤8 sections | 9-12 | >12 |
+| AGENTS.md line count | ≤150 | 151-200 | >200 |
+| CLAUDE.md line count (stub) | ≤20 | 21-50 | >50 |
+| GEMINI.md line count (stub) | ≤20 | 21-50 | >50 |
+| User-added imperative count in AGENTS.md | ≤100 | 101-150 | >150 |
 
-**Token estimation:** `wc -w {file}` × 1.3 (English average tokens/word ratio).
+**Imperative counter:** lines matching `^\s*- ` inside rule sections, plus any line containing `MUST\|NEVER\|ALWAYS\|DO NOT`. Cite the IFScale benchmark (arxiv 2507.11538) in WARN / FAIL messages.
 
-Report table per file with line count, word count, estimated tokens.
+Report table per file with line count and imperative count (for AGENTS.md).
 
 ## Phase 4: Prompt Cache Safety
 
@@ -145,13 +184,15 @@ Check each file for content that breaks prefix-based prompt caching:
 
 | # | Check | Pass | Fail |
 |---|-------|------|------|
-| 1 | Has build/test commands | Found `npm\|cargo\|pytest\|dotnet` commands | Missing — add essential commands |
+| 1 | Has build/test commands | Found `npm\|cargo\|pytest\|dotnet` commands in AGENTS.md | Missing — add essential commands |
 | 2 | No abstract principles | No `"write quality code"`, `"follow best practices"` | Found vague instructions |
 | 3 | No redundant docs | No API docs, no full architecture description | Found content discoverable from code |
-| 4 | Has hard boundaries | Found `NEVER\|ALWAYS\|MUST\|DO NOT` rules | Missing explicit prohibitions |
-| 5 | Compact Instructions section | `## Compact Instructions` present with preservation priorities | Missing — sessions lose decisions on /compact |
-| 6 | MCP Tool Preferences | Canonical policy section matches `shared/references/mcp_tool_preferences.md` | Missing or outdated — agents use suboptimal tools |
+| 4 | Has hard boundaries | Found `NEVER\|ALWAYS\|MUST\|DO NOT` rules in AGENTS.md | Missing explicit prohibitions |
+| 5 | Compact Instructions section | `## Compact Instructions` present in AGENTS.md with preservation priorities | Missing — sessions lose decisions on /compact |
+| 6 | MCP Tool Preferences | Canonical policy section in AGENTS.md matches `shared/references/mcp_tool_preferences.md` | Missing or outdated — agents use suboptimal tools |
 | 7 | No tool output examples | No large code blocks or command outputs | Found — bloats every turn |
+
+Checks #1–#6 evaluate AGENTS.md only because CLAUDE.md / GEMINI.md inherit that content via the `@AGENTS.md` import. Checks on the deltas themselves live in Phase 6.
 
 ### Phase 5b: Auto-fix Fixable Issues
 
@@ -165,12 +206,12 @@ For each FAIL in Phase 5, attempt auto-fix before reporting:
 
 | # | Issue | Fix | Skip when |
 |---|-------|-----|----------|
-| 5 | Missing Compact Instructions | Insert `## Compact Instructions` section before `## Navigation` | `dry_run: true` |
-| 6 | Missing or outdated MCP Tool Preferences | Insert or replace section from `shared/references/mcp_tool_preferences.md` | `dry_run: true` |
+| 5 | Missing Compact Instructions | Insert `## Compact Instructions` section before `## Navigation` in AGENTS.md | `dry_run: true` |
+| 6 | Missing or outdated MCP Tool Preferences | Insert or replace section in AGENTS.md from `shared/references/mcp_tool_preferences.md` | `dry_run: true` |
 | 1 | Missing build/test commands | WARN only (project-specific, cannot auto-generate) | -- |
 | 2 | Abstract principles found | WARN only (requires human judgment) | -- |
 
-**Compact Instructions template** (insert before `## Navigation` or after last rules section):
+**Compact Instructions template** (insert in AGENTS.md before `## Navigation` or after last rules section):
 
 ```markdown
 ## Compact Instructions
@@ -180,20 +221,30 @@ Preserve during /compact: [Critical Rules], [MCP Tool Preferences table],
 Drop examples and explanations first.
 ```
 
-Adapt per agent: GEMINI.md uses "context compression" instead of "/compact".
+Because CLAUDE.md and GEMINI.md `@AGENTS.md`, the preservation list propagates to both. The harness-specific terminology (`/compact` vs context compression) lives in each stub's delta.
 
-## Phase 6: Cross-Agent Consistency
+## Phase 6: Import Pattern Compliance
 
-Compare content across all found instruction files:
+AGENTS.md is the canonical source per `DOC_ROLE` metadata. CLAUDE.md and GEMINI.md must be thin `@AGENTS.md` import stubs with bounded harness-specific deltas.
 
-| Check | Pass | Fail |
-|-------|------|------|
-| MCP Tool Preferences | Same canonical policy section in all files | Inconsistent content across files |
-| Critical Rules | Same core rules | Divergent rules |
-| Build/test commands | Same commands | Different or missing |
-| Structural sections | Same section order | Inconsistent structure |
+| # | Check | Pass | Fail |
+|---|-------|------|------|
+| 1 | CLAUDE.md has `@AGENTS.md` import | Exactly one `@AGENTS.md` line present | Missing or multiple — FAIL |
+| 2 | GEMINI.md has `@AGENTS.md` import | Exactly one `@AGENTS.md` line present | Missing or multiple — FAIL |
+| 3 | CLAUDE.md delta bounded | Total file ≤50 lines | >50 lines — FAIL with drift report |
+| 4 | GEMINI.md delta bounded | Total file ≤50 lines | >50 lines — FAIL with drift report |
+| 5 | No content duplication | No section or rule from AGENTS.md reappears in CLAUDE.md / GEMINI.md | Duplicate found — FAIL, name the specific overlapping lines |
 
-**Sync action:** For each inconsistency, show diff and suggest which file is source of truth (usually CLAUDE.md).
+**Drift resolution rule:** AGENTS.md is the canonical source. For each inconsistency:
+- (a) If content is missing from AGENTS.md but present in CLAUDE.md / GEMINI.md → move it to AGENTS.md, then remove from the stub.
+- (b) If CLAUDE.md / GEMINI.md duplicate AGENTS.md content → replace with a single `@AGENTS.md` import line.
+- (c) If the stub delta exceeds 50 lines → split genuinely harness-specific content into `.claude/rules/*.md` (for Claude) or modular `@imports` (for Gemini); everything else moves to AGENTS.md.
+
+**Do not** "suggest which file is source of truth" based on content volume — AGENTS.md is always the source.
+
+If `.hex-skills/environment_state.json` reports `agents.codex.discovery_violation=true`, emit a WARN that Codex skill discovery is drifted and duplicate skill counts from stale cache must not be used as evidence during instruction audits until `ln-013-config-syncer` repairs the mapping.
+
+If `.hex-skills/environment_state.json` reports `agents.codex.permissions_default_ready=false`, emit a WARN that Codex CLI startup permissions are drifted from the managed default and instruction audits must not assume full-access startup semantics until `ln-013-config-syncer` repairs `~/.codex/config.toml`.
 
 ## Phase 7: Report
 
@@ -201,33 +252,38 @@ Compare content across all found instruction files:
 Agent Instructions Manager:
 
 Created:  (omit section if nothing created)
-- CLAUDE.md (from template, context from package.json)
-- AGENTS.md (derived from CLAUDE.md)
+- AGENTS.md (from template, context from package.json)
+- CLAUDE.md (import stub)
+- GEMINI.md (import stub)
 
 Audit:
-| File       | Lines | ~Tokens | Cache-safe | Quality | Issues |
-|------------|-------|---------|------------|---------|--------|
-| CLAUDE.md  | 80    | 2,100   | OK         | 7/7     | Compact Instructions added |
-| AGENTS.md  | 77    | 2,000   | OK         | 7/7     | OK |
-| GEMINI.md  | 75    | 1,950   | OK         | 7/7     | OK |
+| File       | Lines | Imperatives | Cache-safe | Quality | Import pattern | Issues |
+|------------|-------|-------------|------------|---------|----------------|--------|
+| AGENTS.md  | 118   | 47          | OK         | 7/7     | n/a            | OK |
+| CLAUDE.md  | 13    | 0           | OK         | 7/7     | OK             | OK |
+| GEMINI.md  | 12    | 0           | OK         | 7/7     | OK             | OK |
 
-Cross-agent: OK (or N inconsistencies listed)
+Import pattern: OK (or N drift issues listed)
 
 Recommendations:
-1. Run /init (ln-100) for full context-aware CLAUDE.md with project-specific rules
+1. Run /init (ln-100) for full context-aware AGENTS.md with project-specific rules
 ```
+
+**Cross-agent note:** Codex CLI 0.120 (2026-04-11) now supports `SessionStart` hook with `/clear` vs fresh/resume distinction, matching Claude Code behavior.
 
 ## Definition of Done
 
 - [ ] All instruction files discovered
-- [ ] Missing files created (CLAUDE.md from template, AGENTS/GEMINI derived)
-- [ ] Token budget within limits (≤2,500 tokens each)
+- [ ] Missing files created (AGENTS.md from template first; CLAUDE.md and GEMINI.md as `@AGENTS.md` import stubs second)
+- [ ] Token budget within limits: AGENTS.md ≤200 lines, CLAUDE.md and GEMINI.md each ≤50 lines, AGENTS.md imperative count ≤150
 - [ ] No prompt cache breakers found (or reported as WARN)
-- [ ] Content quality checks passed (or issues reported)
-- [ ] Auto-fixable issues resolved (Compact Instructions, MCP Tool Preferences) or reported if dry_run
-- [ ] Cross-agent consistency verified
-- [ ] Report generated with creation log and actionable recommendations
+- [ ] Content quality checks passed on AGENTS.md (or issues reported)
+- [ ] Auto-fixable issues resolved in AGENTS.md (Compact Instructions, MCP Tool Preferences) or reported if dry_run
+- [ ] Import pattern compliance verified: CLAUDE.md and GEMINI.md each contain exactly one `@AGENTS.md` line and no duplicated AGENTS.md content
+- [ ] Report generated with creation log, drift findings, and actionable recommendations
 - [ ] No conflicting external plugins detected (or user confirmed keep)
+- [ ] Structured summary returned
+- [ ] Summary artifact written to the managed or standalone runtime path
 
 **Critical Rule: Non-destructive file edits.** Auto-fix inserts sections at verified positions only. Never rewrite the entire instruction file. Preserve all existing content outside the inserted section.
 

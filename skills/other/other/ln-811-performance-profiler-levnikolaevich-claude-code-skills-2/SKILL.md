@@ -102,6 +102,15 @@ Run `test_command` with system-level profiling. Capture simultaneously:
 | Warm-up | 1 discarded run |
 | Output | `baseline` — multi-metric snapshot |
 
+### Monitor for Profiler Runs (Claude Code 2.1.98+)
+
+**MANDATORY READ:** Load `shared/references/monitor_integration_pattern.md`
+
+During baseline and deep profile runs:
+`Monitor(command="{test_command} 2>&1", timeout_ms=300000, description="profiler run N")`
+
+Detect crashes or infinite loops immediately. Fallback: `Bash` with `timeout`.
+
 ---
 
 ## Phase 2: Static Analysis → Instrumentation Points

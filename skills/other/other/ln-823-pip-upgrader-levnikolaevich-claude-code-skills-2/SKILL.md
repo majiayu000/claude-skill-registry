@@ -185,6 +185,8 @@ Standalone mode:
 - omit `runId` and `summaryArtifactPath`
 - write `.hex-skills/runtime-artifacts/runs/{run_id}/dependency-worker/ln-823--{identifier}.json`
 
+**Monitor (2.1.98+):** For install/audit/test commands expected >30s, use `Monitor`. Fallback: `Bash(run_in_background=true)`.
+
 ## Definition of Done
 
 - [ ] Package manager detected from project indicators

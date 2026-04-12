@@ -1,5 +1,5 @@
 ---
-name: ln-ln-612--content-auditor
+name: ln-612-semantic-content-auditor
 description: "Checks document semantic content against SCOPE and project goals, coverage gaps, off-topic content, SSOT. Use when auditing documentation relevance."
 allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline
 license: MIT
@@ -91,6 +91,16 @@ Analyze the document against stated scope and kind:
 | Excessive detail beyond scope | SCOPE_CREEP |
 | Content duplicated elsewhere | SSOT_VIOLATION |
 
+**Agent instruction file checks** (applies when the audited file is `AGENTS.md`, `CLAUDE.md`, or `GEMINI.md`):
+
+| Check | Finding Type | Severity | Recommendation |
+|-------|--------------|----------|----------------|
+| Style / formatting rules (indentation, quote style, trailing whitespace, naming conventions) | NOT_A_LINTER | WARN | Move to Biome, Prettier, Ruff, EditorConfig, or a Claude Code Stop hook. Instruction files are loaded into every session and cost tokens against the ~100-imperative budget; deterministic tools do this for free. |
+| Conditional / non-universal rules at the root (`when working on src/api/...`, `if modifying the billing service`, `for the Z service`) | NON_UNIVERSAL_RULE | WARN | Move to `.claude/rules/*.md` with a `paths:` frontmatter filter (Anthropic built-in path scoping). Non-universal rules bias Claude Code toward ignoring the entire file via the `<system-reminder>` wrapper. |
+| Self-Improvement Loop rule pointing at a manual `tasks/lessons.md` | OBSOLETE_PATTERN | WARN | Delete. Claude Code's built-in auto memory at `~/.claude/projects/<project>/memory/` already does this; a parallel hand-maintained convention wastes context. |
+
+All three WARN only — they require human judgment (intentional style rule? conditional scope that's actually project-wide?). Cite `shared/references/agent_instructions_writing_guide.md` in every finding.
+
 Read strategy:
 - header + top sections first
 - read only the body sections needed for judgment
@@ -125,7 +135,7 @@ Write JSON summary per `shared/references/audit_summary_contract.md`. In managed
 
 Write report to `{output_dir}/ln-612--{doc-slug}.md` where `doc-slug` is derived from document filename (e.g., `architecture`, `tech_stack`, `agents_md`).
 
-With `category: "Semantic Content"` and checks: scope_alignment.
+With `category: "Semantic Content"` and checks: scope_alignment, not_a_linter, non_universal_rule, obsolete_pattern (the last three fire only on AGENTS.md / CLAUDE.md / GEMINI.md targets).
 
 Return summary per `shared/references/audit_summary_contract.md`.
 

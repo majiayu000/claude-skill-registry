@@ -64,6 +64,10 @@ Each finding should prefer structured fields such as:
 - `subject`
 - `evidence`
 - `recommendation`
+- `evidence_basis` — one of:
+  - `code_evidence` — finding verified directly in code (grep, AST, test result)
+  - `research_claim` — finding from external documentation or standards (not yet verified in code)
+  - `agent_inference` — finding from agent review opinion (not independently verified)
 
 ### Phase 4: Write Summary
 

@@ -64,7 +64,10 @@ node shared/scripts/story-gate-runtime/cli.mjs advance --to PHASE_7_FINALIZATION
 ### Phase 0: Config
 
 1. Resolve `storyId` and `task_provider`.
-2. Build gate manifest:
+2. Check for prior Stage 3 artifact at `.hex-skills/runtime-artifacts/runs/*/story-quality/{storyId}.json`:
+   - If found with `verdict=FAIL`, load `payload.metadata.rework_hint` as `previous_cycle` context.
+   - Record `cycle_number` (1-based, incremented from prior artifact count).
+3. Build gate manifest:
    - `story_id`
    - `task_provider`
    - `project_root`
@@ -73,7 +76,9 @@ node shared/scripts/story-gate-runtime/cli.mjs advance --to PHASE_7_FINALIZATION
    - `fast_track_policy`
    - `nfr_policy`
    - `test_task_policy`
-3. Start runtime and checkpoint `PHASE_0_CONFIG`.
+   - `previous_cycle` (null or loaded rework_hint)
+   - `cycle_number`
+4. Start runtime and checkpoint `PHASE_0_CONFIG`.
 
 ### Phase 1: Discovery
 
@@ -104,6 +109,7 @@ node shared/scripts/story-gate-runtime/cli.mjs advance --to PHASE_7_FINALIZATION
 4. Invoke `ln-510-quality-coordinator` with managed transport inputs:
    - full mode: `Skill(skill: "ln-510-quality-coordinator", args: "{storyId} --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}")`
    - fast-track: `Skill(skill: "ln-510-quality-coordinator", args: "{storyId} --fast-track --run-id {childRunId} --summary-artifact-path {childSummaryArtifactPath}")`
+   - full mode with prior cycle: append `--previous-cycle-focus "{blocking_categories}"` when `previous_cycle` is not null
 5. Read child `story-quality` artifact only, then `record-quality`.
 6. Checkpoint `PHASE_3_QUALITY_CHECKS` with the recorded quality summary.
 7. If the quality summary already implies hard FAIL, you may jump directly to `PHASE_6_VERDICT`.
@@ -178,8 +184,9 @@ For `PASS | CONCERNS | WAIVED`:
 For `FAIL`:
 
 1. Do not finalize branch as accepted.
-2. Checkpoint `PHASE_7_FINALIZATION` with `status=skipped_by_verdict`.
-3. Record resulting Story status and follow-up task IDs.
+2. Create follow-up tasks from blocking issues.
+3. Checkpoint `PHASE_7_FINALIZATION` with `status=requires_rework`.
+4. Record resulting Story status, follow-up task IDs.
 
 After finalization, write a Stage 3 coordinator artifact with:
 - `summary_kind=pipeline-stage`
@@ -191,6 +198,10 @@ After finalization, write a Stage 3 coordinator artifact with:
 - `verdict`
 - `quality_score`
 - `warnings`
+- `metadata.rework_hint` — when verdict is FAIL, include:
+  - `rework_tasks`: list of created follow-up task IDs
+  - `blocking_categories`: list of issue categories that caused FAIL (e.g. `ac_gap`, `security`, `regression`)
+  - `suggested_focus`: concise one-line description of what the rework cycle should prioritize
 
 ### Phase 8: Self-Check
 

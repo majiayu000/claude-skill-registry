@@ -183,6 +183,8 @@ Standalone mode:
 - omit `runId` and `summaryArtifactPath`
 - write `.hex-skills/runtime-artifacts/runs/{run_id}/modernization-worker/ln-832--{identifier}.json`
 
+**Monitor (2.1.98+):** For build commands in keep/discard loop expected >30s, use `Monitor`. Fallback: `Bash(run_in_background=true)`.
+
 ## Definition of Done
 
 - [ ] Baseline bundle size established from real build output

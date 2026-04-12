@@ -18,6 +18,7 @@ Runtime-backed coordinator for Story execution. Owns task ordering, worktree lif
 | Input | Required | Source | Description |
 |-------|----------|--------|-------------|
 | `storyId` | Yes | args, git branch, kanban, user | Story to process |
+| `--rework-focus` | No | ln-1000 | Comma-separated blocking categories from prior quality gate FAIL |
 
 **Resolution:** Story Resolution Chain.  
 **Status filter:** Todo, In Progress, To Rework, To Review
@@ -103,6 +104,10 @@ Checkpoint `PHASE_3_SELECT_WORK` with:
 - fresh `processable_counts`
 
 If all processable counts are zero, skip execution and advance to `PHASE_7_STORY_TO_REVIEW`.
+
+When `rework_focus` is provided:
+- Tasks whose title or AC keywords match any `blocking_categories` entry are selected first within the same priority tier.
+- This does not override the To Review > To Rework > Todo ordering — it reorders within each tier.
 
 ### Phase 4: Task Execution
 

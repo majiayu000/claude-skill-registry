@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/wshobson/agents",
   "dir_name": "airflow-dag-patterns",
-  "downloaded_at": "2026-04-12T10:45:35.742989Z",
+  "downloaded_at": "2026-04-12T14:48:09.598200Z",
   "author": "wshobson",
   "source_url": "https://github.com/wshobson/agents/blob/main/plugins/data-engineering/skills/airflow-dag-patterns/SKILL.md",
   "license": "NOASSERTION",

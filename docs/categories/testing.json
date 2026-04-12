@@ -1,8 +1,8 @@
 {
   "category": "testing",
   "code": "tst",
-  "count": 6726,
-  "updated_at": "2026-04-12T10:59:20.746580Z",
+  "count": 6728,
+  "updated_at": "2026-04-12T15:01:54.953012Z",
   "skills": [
     {
       "name": "frontend-testing",
@@ -47537,6 +47537,24 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "ios-simulator-skill",
+      "description": "iOS Simulator automation for testing with semantic navigation and Xcode integration",
+      "repo": "conorluddy/ios-simulator-skill",
+      "path": "ios-simulator-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "ios",
+        "simulator",
+        "xcode",
+        "testing",
+        "mobile"
+      ],
+      "stars": 0,
+      "install": "conorluddy/ios-simulator-skill/ios-simulator-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "referral-program-designer",
       "description": "Design referral programs for newsletter growth. Use when: (1) Creating a newreferral program, (2) Choosing referral rewards, (3) Writing referral copy inSpanish, (4) Planning referral program launch.",
       "repo": "chekos/bns-marketplace",
@@ -48540,6 +48558,23 @@
       "stars": 0,
       "install": "nibzard/skills-marketplace/skills/pentest-toolkit",
       "source": "downloaded"
+    },
+    {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "skills/playwright-skill/SKILL.md",
+      "branch": "main",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "stars": 0,
+      "install": "lackeyjb/playwright-skill/skills/playwright-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "openspec-propose",

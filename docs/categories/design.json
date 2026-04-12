@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9500,
-  "updated_at": "2026-04-12T10:59:18.802463Z",
+  "count": 9501,
+  "updated_at": "2026-04-12T15:01:52.998161Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -110392,6 +110392,23 @@
       "stars": 0,
       "install": "Mcafee123/affolterNET.Web/plugins/affolternet-web-bff/skills/customization",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "skill-capability-matcher",

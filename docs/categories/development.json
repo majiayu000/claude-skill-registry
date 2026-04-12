@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19693,
-  "updated_at": "2026-04-11T01:59:11.134512Z",
+  "count": 19694,
+  "updated_at": "2026-04-12T01:27:46.334311Z",
   "skills": [
     {
       "name": "fix",
@@ -150771,6 +150771,24 @@
       "stars": 0,
       "install": "kanlanc/Claude-Code-Kanlanc-Marketplace/development/codex-codereview",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "my-environment",

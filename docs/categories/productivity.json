@@ -1,8 +1,8 @@
 {
   "category": "productivity",
   "code": "pro",
-  "count": 1955,
-  "updated_at": "2026-04-11T01:59:12.920806Z",
+  "count": 1960,
+  "updated_at": "2026-04-12T01:27:48.133122Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -12003,6 +12003,22 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "professional-business-writing",
+      "description": "Professional business writing assistant - removes AI patterns, maintains authority and clarity.",
+      "repo": "b33kman/professional-business-writing-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "professional-writing",
+        "business-writing",
+        "writing-assistant"
+      ],
+      "stars": 0,
+      "install": "b33kman/professional-business-writing-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "faber-coordinator",
       "description": "Coordinate FABER-DB operations within FABER workflow phases",
       "repo": "fractary/claude-plugins",
@@ -14342,6 +14358,22 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "skills/skill-seekers/SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
+      ],
+      "stars": 0,
+      "install": "yusufkaraaslan/Skill_Seekers/skills/skill-seekers/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "project-coordinator",
       "description": "Project coordination and task management",
       "repo": "violetio/violet-ai-plugins",
@@ -16056,6 +16088,24 @@
       "stars": 0,
       "install": "Dev-GOM/claude-code-marketplace/plugins/blender-toolkit/skills",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "humanizar-texto-es",
+      "description": "Rewrite Spanish AI-generated text to sound naturally human-written using 11 simultaneous linguistic techniques.",
+      "repo": "ToniPerea/humanizar-texto-es",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "spanish",
+        "ai-detection",
+        "text-rewriting",
+        "nlp",
+        "research"
+      ],
+      "stars": 0,
+      "install": "ToniPerea/humanizar-texto-es/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "project-memory-recall",
@@ -20204,6 +20254,28 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
+      "name": "deep-research",
+      "description": "Deep research with NotebookLM + web search. Domain boost, source credibility scoring, and post-research artifact generation (podcast, video, slides, quiz).",
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "path": "SKILL.md",
+      "branch": "master",
+      "category": "productivity",
+      "tags": [
+        "research",
+        "deep-research",
+        "notebooklm",
+        "perplexity",
+        "gemini",
+        "domain-boost",
+        "academic",
+        "maritime",
+        "legal"
+      ],
+      "stars": 0,
+      "install": "Chris1220-cmd/deep-research-skill/SKILL.md",
+      "source": "Community Skills"
+    },
+    {
       "name": "pre-flight-check",
       "description": "INVOKE FIRST before any code work. Validates git workflow (branch, issue, worklog) and checks approach. Use at START of every task and END before completing. Prevents skipped steps.",
       "repo": "ProfPowell/project-template",
@@ -20293,6 +20365,26 @@
       "stars": 0,
       "install": "nprbst/speck/plugins/speck/skills/speck-help",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "confluence-to-agent-knowledge-base",
+      "description": "Turn any Confluence Cloud instance into a private, searchable AI knowledge base on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the Atlassian MCP connector.",
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "productivity",
+      "tags": [
+        "confluence",
+        "knowledge-base",
+        "atlassian",
+        "mcp",
+        "wiki",
+        "search",
+        "knowledge-management"
+      ],
+      "stars": 0,
+      "install": "miningstore/confluence-to-agent-knowledge-base/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "n8n-workflow",

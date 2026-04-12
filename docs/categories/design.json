@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 9497,
-  "updated_at": "2026-04-11T01:59:11.023480Z",
+  "count": 9498,
+  "updated_at": "2026-04-12T01:27:46.222558Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -120208,6 +120208,23 @@
       "stars": 0,
       "install": "feather-lang/feather/.claude/skills/work-toward-parity",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "repo": "alonw0/web-asset-generator",
+      "path": "skills/web-asset-generator/SKILL.md",
+      "branch": "main",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "stars": 0,
+      "install": "alonw0/web-asset-generator/skills/web-asset-generator/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "supabase-architecture-variants",

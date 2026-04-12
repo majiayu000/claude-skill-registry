@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5317,
-  "updated_at": "2026-04-11T01:59:11.362284Z",
+  "count": 5318,
+  "updated_at": "2026-04-12T01:27:46.562986Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -33917,6 +33917,24 @@
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/plugins/saas-packs/openrouter-pack/skills/openrouter-upgrade-migration",
       "source": "SkillsMP + GitHub Raw"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "deploy-aws-ecs",

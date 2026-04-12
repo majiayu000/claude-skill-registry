@@ -681,7 +681,6 @@ The venue-templates skill provides:
 - `venue_writing_styles.md`: Master style comparison
 - Venue-specific guides: `nature_science_style.md`, `cell_press_style.md`, `medical_journal_styles.md`, `ml_conference_style.md`, `cs_conference_style.md`
 - `reviewer_expectations.md`: What reviewers look for at each venue
-- Writing examples in `assets/examples/`
 
 **Workflow**: First use this skill for general scientific writing principles (IMRAD, clarity, citations), then consult venue-templates for venue-specific style adaptation.
 

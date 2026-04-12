@@ -1,6 +1,6 @@
 ---
 name: evolve
-description: 'Goal-driven fitness-scored improvement loop. Measures goals, picks worst gap, runs $rpi, compounds via knowledge flywheel. Also pulls from open beads when goals all pass. Accepts ordered roadmap via --queue for sequential execution with auto-unblocking. Use when you want to "improve", "iterate", "fix issues", "work through tasks", "evolve", "check goal fitness", "run improvement loop", "pick up next work", or "run roadmap".'
+description: 'Goal-driven v2 autonomous improvement loop. Runs the post-mortem, repo analysis, next-work selection, plan/pre-mortem, implementation, validation, and repeat cadence through $rpi and ao evolve. Also pulls from open beads when goals all pass and accepts ordered roadmaps via --queue. Use when you want to "improve", "iterate", "fix issues", "work through tasks", "evolve", "check goal fitness", "run improvement loop", "pick up next work", "postmortem and continue", or "run roadmap".'
 ---
 
 
@@ -8,9 +8,16 @@ description: 'Goal-driven fitness-scored improvement loop. Measures goals, picks
 
 > Measure what's wrong. Fix the worst thing. Measure again. Compound.
 
-**V2 command surface:** use `ao evolve` for the terminal-native loop. It is the
-top-level operator entrypoint for `ao rpi loop --supervisor`, preserving the old
-`$evolve` concept while reusing the v2 RPI loop engine.
+**V2 command surface:** keep the name `evolve`. Use `ao evolve` for the
+terminal-native loop. It is the top-level operator entrypoint for
+`ao rpi loop --supervisor`, preserving the old `$evolve` concept while reusing
+the v2 RPI loop engine.
+
+**Operator cadence:** post-mortem finished work, analyze the current repo state,
+select or create the next highest-value work item, let `$rpi` handle research,
+planning, pre-mortem, implementation, and validation, then harvest follow-ups
+and repeat until a kill switch, max-cycle cap, regression breaker, or real
+dormancy stops the run.
 
 Always-on autonomous loop over `$rpi`. Work selection order:
 0. **Pinned work queue** (`--queue=<file>` or inline roadmap — see `references/pinned-queue.md`)

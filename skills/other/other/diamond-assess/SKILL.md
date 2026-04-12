@@ -38,20 +38,42 @@ Evaluate current diamond state and recommend next action.
    - For L1/L2 diamonds: also check for **system archetypes** (Senge) — Fixes That Fail, Shifting the Burden, Limits to Growth, Eroding Goals
    - At L3->L4 transitions: also run the **Design Completeness Check** (quality/CLAUDE.md) to verify all layers of the product design stack have evidence. Source: Mill, building on Garrett.
 
-6. **Check corrections.md**:
+6. **Check canvas health**:
+   - Run the `/canvas-health` checks inline: missing required files, stale confidence, inconsistent evidence types
+   - Report any critical or warning-level findings
+   - This catches silent canvas degradation before it affects progression decisions
+
+7. **Check corrections.md**:
    - Any relevant past mistakes to avoid?
 
-7. **Recommend next action**:
+8. **Coaching check** (Rother's Coaching Kata):
+   Surface these five questions in the output to prompt the human's thinking:
+   1. What is the **target condition** for this diamond? (What does "done" look like?)
+   2. What is the **actual condition** right now? (Summarize from steps 2-7 above)
+   3. What **obstacles** are preventing progress? Which one are you addressing now?
+   4. What is your **next step**? What do you **expect** will happen? (Force a prediction before acting)
+   5. When can we **check what we learned** from that step? (Commit to a review point)
+   The coach (human) should answer these, not the agent. The agent surfaces them.
+   *Source: Rother (Toyota Kata) — the 5 questions install scientific thinking as a daily habit.*
+
+9. **Recommend next action**:
    - If all gates pass and confidence meets threshold: recommend transition to next phase
    - If gates fail: recommend specific actions to address failures
    - If confidence is low: recommend evidence-gathering activities
    - If anti-patterns detected: recommend corrective actions
    - If regression needed: recommend which phase to return to and why
 
-8. **Play devil's advocate**: Before recommending progression, ask:
-   - What are we most likely wrong about?
-   - What evidence have we dismissed?
-   - Is there a simpler path we're overlooking?
+10. **Play devil's advocate**: Before recommending progression, ask:
+    - What are we most likely wrong about?
+    - What evidence have we dismissed?
+    - Is there a simpler path we're overlooking?
+
+11. **Report harness thickness** (informational):
+    - Count: total skills, active guardrails, mandatory reads, hooks, theory gates
+    - Current: 41 skills, 29 guardrails, 4 mandatory reads, 5 hook layers, 12 gates
+    - If thickness has increased since last assess, note it
+    - This is observability, not a gate — purely informational
+    - *Source: Pachaar ("scaffolding should decrease as models improve")*
 
 ## Output Format
 
@@ -83,6 +105,12 @@ Current focus: [plain-language description from status-translations.md]
 - [Key assumption to question]
 - [Evidence gap to flag]
 
+## Coaching Check (for the human)
+1. What does "done" look like for this diamond?
+2. Given what we know now, what's the biggest obstacle?
+3. What's your next step -- and what do you expect will happen?
+4. When should we check what we learned?
+
 ## Recommended Next Step
 [Plain-language recommendation with theory justification]
 
@@ -97,3 +125,4 @@ Suggested actions:
 - Cagan: Four risks assessment
 - Snowden: Cynefin classification
 - Shotton/Kahneman: Devil's advocate bias check
+- Rother: Coaching Kata (5 questions for scientific thinking)

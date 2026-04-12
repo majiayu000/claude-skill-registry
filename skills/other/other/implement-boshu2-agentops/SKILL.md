@@ -1,11 +1,20 @@
 ---
 name: implement
 description: 'Execute a single issue with full lifecycle. Triggers: "implement", "work on task", "build this", "start feature", "pick up next issue", "work on issue".'
+skill_api_version: 1
 metadata:
   tier: execution
   dependencies:
     - beads     # optional - for issue tracking via bd CLI
     - standards # loads language-specific standards
+context:
+  window: isolated
+  intent:
+    mode: task
+  sections:
+    exclude: [HISTORY]
+  intel_scope: topic
+output_contract: "code changes, test results, bead status update, behavioral spec (optional)"
 ---
 
 # Implement Skill
@@ -28,6 +37,33 @@ Given `/implement <issue-id-or-description>`:
 
 **For ratchet gate checks and pre-mortem gate details, read `skills/implement/references/gate-checks.md`.**
 
+### Step 0.5: Pull Relevant Knowledge
+
+```bash
+# Pull knowledge scoped to this issue (if ao available)
+ao lookup --bead <issue-id> --limit 3 2>/dev/null || true
+```
+
+**Apply retrieved knowledge (mandatory when results returned):**
+
+If learnings or patterns are returned, do NOT just load them as passive context. For each returned item:
+1. Check: does this learning apply to the current issue? (answer yes/no)
+2. If yes: treat it as an implementation constraint — does it warn about an approach? suggest a pattern? flag a known pitfall?
+3. Reference applicable learnings in your implementation decisions (e.g., "per learning X, avoiding approach Y")
+4. Cite applicable learnings by filename in commit messages or PR descriptions
+
+After reviewing, record each citation with the correct type:
+```bash
+# Only use "applied" when the learning actually influenced your output.
+# Use "retrieved" for items that were loaded but not referenced in your work.
+ao metrics cite "<learning-path>" --type applied 2>/dev/null || true   # influenced a decision
+ao metrics cite "<learning-path>" --type retrieved 2>/dev/null || true # loaded but not used
+```
+
+**Section evidence:** When lookup results include `section_heading`, `matched_snippet`, or `match_confidence` fields, prefer the matched section over the whole file — it pinpoints the relevant portion. Higher `match_confidence` (>0.7) means the section is a strong match; lower values (<0.4) are weaker signals. Use the `matched_snippet` as the primary context rather than reading the full file.
+
+Skip silently if ao is unavailable or returns no results.
+
 ### Step 1: Get Issue Details
 
 **If beads issue ID provided** (e.g., `gt-123`):
@@ -47,6 +83,32 @@ bd ready 2>/dev/null | head -3
 ```bash
 bd update <issue-id> --status in_progress 2>/dev/null
 ```
+
+### Step 2a: Build Context Briefing
+
+```bash
+if command -v ao &>/dev/null; then
+    ao context assemble --task='<issue title and description>'
+fi
+```
+
+This produces a 5-section briefing (GOALS, HISTORY, INTEL, TASK, PROTOCOL) at `.agents/rpi/briefing-current.md` with secrets redacted. Read it before gathering additional context.
+
+### Step 2b: Apply Behavioral Discipline
+
+Before exploring or editing, load the behavioral discipline standard from `/standards` and write a short execution frame for yourself:
+
+- `Assumptions:` what is known, what is ambiguous, and which unknowns would change the solution
+- `Smallest change:` the minimum patch that could satisfy the request
+- `Blast radius:` which files or surfaces are in scope, plus what is explicitly out of scope
+- `Verification:` the tests, commands, or gates that will prove the work is done
+
+Rules:
+
+- If ambiguity would materially change the implementation, ask before editing instead of silently choosing.
+- If a simpler approach exists than the heavier path implied by the prompt, say so and prefer it.
+- If you notice unrelated cleanup, create a bead or note it separately; do not fold it into the patch.
+- Every changed line should trace back to the request or to cleanup that your change made necessary.
 
 ### Step 3: Gather Context
 
@@ -72,6 +134,87 @@ Parameters:
     - Any risks or concerns
 ```
 
+### Step 3.5: Grep for Existing Utilities
+
+Before implementing any new function or utility, grep the codebase for existing implementations:
+
+```bash
+# Search for the function name pattern you're about to create
+grep -rn "<function-name-pattern>" --include="*.go" --include="*.py" --include="*.ts" .
+```
+
+**Why:** In context-orchestration-leverage, a worker created a duplicate `estimateTokens` function that already existed in `context.go`. A 5-second grep would have prevented the duplication and the rework needed to consolidate it.
+
+If you find an existing implementation, reuse it. If it needs modification, modify it in place rather than creating a parallel version.
+
+### Step 3.6: Write Failing Tests First (TDD-First Default)
+
+Before implementing, write tests that define the expected behavior:
+
+1. **Write tests covering:** happy path, one error path, one edge case
+2. **Run tests to confirm they FAIL** (RED confirmation)
+   - If tests pass → feature already exists or tests are wrong. Investigate before proceeding.
+3. **Proceed to Step 4** with failing tests as the implementation target
+
+```bash
+# Run tests - ALL new tests must FAIL
+# Python: pytest tests/test_<feature>.py -v
+# Go: go test ./path/to/... -run TestNew
+# Node: npm test -- --grep "new feature"
+```
+
+**Test level selection:** Classify each test by pyramid level (see the test pyramid standard (`test-pyramid.md` in the standards skill)):
+- **L0 (Contract):** Write if the issue touches spec boundaries, file existence, or registration
+- **L1 (Unit):** Write always for feature/bug issues — happy path, one error path, one edge case
+- **L2 (Integration):** Write if the change crosses module boundaries or involves multiple components
+- **L3 (Component):** Write if the change affects a full subsystem workflow (with mocked external deps)
+
+If the issue includes `test_levels` metadata from `/plan`, use those levels. Otherwise, default to L1 + any applicable higher levels from the decision tree above.
+When delegating to `/test`, carry those selected levels and any BF expectations into the request context. `--quick` is not permission to collapse to L1-only coverage.
+
+**Bug-Finding Level Selection (alongside L0–L3):**
+
+If the implementation touches external boundaries (APIs, databases, file I/O):
+- Add BF4 chaos test: mock the boundary to fail, verify graceful error handling
+- This catches the bugs that L1 unit tests mock away
+
+If the implementation includes data transformations (parse, render, serialize):
+- Add BF1 property test: randomize inputs with hypothesis/gopter/fast-check
+- This catches edge cases no human would write
+
+If the implementation generates output files (configs, reports, manifests):
+- Add BF2 golden test: generate canonical output, save as golden file, assert match
+
+Reference: the test pyramid standard in `/standards` for full tooling matrix.
+
+**RED Verification Gate (mechanical):**
+After writing tests, run the test suite and verify ALL new tests FAIL:
+- If exit code == 0 (all tests PASS before implementation): **BLOCK** with "Tests pass before implementation -- either feature already exists or tests don't test new behavior. Investigate."
+- If exit code != 0 (tests fail as expected): proceed to Step 4
+- **Skip if:** `--no-tdd` flag is set, GREEN mode is active, or issue type is `chore`, `docs`, or `ci`
+
+**Skip conditions (any of these bypasses Step 3.5):**
+- GREEN mode is active (invoked by `/crank --test-first` — tests already exist)
+- Issue type is `chore`, `docs`, or `ci`
+- `--no-tdd` flag is set
+- No test framework detected in the project
+
+**Note:** Tests written here are MUTABLE — unlike GREEN mode's immutable tests, you may adjust these tests during implementation if you discover the initial test design was wrong. The goal is to think about behavior before code, not to be rigid.
+
+### Step 3.6a: Auto-Generate Tests via /test (lifecycle integration)
+
+If skip conditions above are NOT met AND `--no-lifecycle` is NOT set:
+
+```
+Skill(skill="test", args="generate <feature-scope> --quick")
+```
+
+The generated test request must preserve the selected `test_levels` and BF expectations from Step 3.6. Review the generated tests. Adjust as needed (tests are MUTABLE in this context). If `/test` fails to produce useful output or is unavailable, fall back to manual test writing in Step 3.6 above.
+
+**Skip if:** `--no-lifecycle` flag, GREEN mode active, issue type is chore/docs/ci, or `/test` is unavailable.
+
+**CI-safe tests:** If the function under test shells out to an external CLI (`bd`, `ao`, `gh`), do NOT test the wrapper. Instead, test the underlying function that performs the testable work (event emission, state mutation, file I/O). See the Go standards (Testing section) for examples.
+
 ### Step 4: Implement the Change
 
 **GREEN Mode check:** If test files were provided (invoked by /crank --test-first):
@@ -86,6 +229,57 @@ Based on the context gathered:
 2. **Write new files** only if necessary using the Write tool
 3. **Follow existing patterns** in the codebase
 4. **Keep changes minimal** - don't over-engineer
+
+### Step 4a: Build Verification (CLI repos only)
+
+If the project has a Go `cmd/` directory or a Makefile with a `build` target, run build verification before proceeding to tests:
+
+```bash
+# Detect CLI repo
+if [ -f go.mod ] && ls cmd/*/main.go &>/dev/null; then
+    echo "CLI repo detected — running build verification..."
+
+    # Build
+    go build ./cmd/... 2>&1
+    if [ $? -ne 0 ]; then
+        echo "BUILD FAILED — fix compilation errors before proceeding"
+        # Do NOT proceed to Step 5
+    fi
+
+    # Vet
+    go vet ./cmd/... 2>&1
+
+    # Smoke test: run the binary with --help
+    BINARY=$(ls -t cmd/*/main.go | head -1 | xargs dirname | xargs basename)
+    if [ -f "bin/$BINARY" ]; then
+        ./bin/$BINARY --help > /dev/null 2>&1
+        echo "Smoke test: $BINARY --help passed"
+    fi
+fi
+```
+
+**If build fails:** Fix compilation errors and re-run before proceeding. Do NOT skip to verification with a broken build.
+
+**If not a CLI repo:** This step is a no-op — proceed directly to Step 5.
+
+### Step 4.5: Security Verification
+
+Before proceeding to functional verification, check for common security issues in modified code:
+
+| Check | What to Look For | Action |
+|-------|------------------|--------|
+| Input validation | User/external input used without validation | Add validation at entry points |
+| Output escaping | Raw data in HTML/templates (innerHTML, document.write, dangerouslySetInnerHTML) | Use framework auto-escaping or explicit sanitization |
+| Path safety | Path traversal via `..` sequences; file paths from user input without sanitization | Reject `..`, absolute paths; use `filepath.Clean()` or equivalent; verify path stays within allowed directory |
+| Auth gates | Endpoints/handlers missing authentication or authorization checks | Add middleware or guard clauses |
+| Content-Type | HTTP responses without explicit Content-Type headers | Set Content-Type to prevent MIME-sniffing attacks |
+| CORS | Overly permissive CORS configuration (`*` origin, credentials: true) | Restrict to known origins; never combine wildcard with credentials |
+| CSRF tokens | State-changing endpoints (POST/PUT/DELETE) without anti-CSRF tokens | Add anti-CSRF token validation; do not rely solely on cookies for auth |
+| Rate limiting | Authentication, API, and upload endpoints without rate limits | Add rate-limit middleware; return 429 with Retry-After header |
+
+**Skip when:** The change does not involve HTTP handlers, user-facing input, file system operations, or template rendering. Pure internal refactors, test-only changes, and documentation edits skip this step.
+
+**If issues found:** Fix before proceeding to Step 5. Log fixes in the commit message.
 
 ### Step 5: Verify the Change
 
@@ -163,7 +357,16 @@ When invoked by /crank with `--test-first`, the worker receives:
 3. **Implement ONLY enough** to make all tests pass
 4. **Do NOT modify test files** — tests are immutable in GREEN mode
 5. **Do NOT add features** beyond what tests require
-6. **BLOCKED if spec error** — if contract contradicts tests or is incomplete, write BLOCKED with reason
+6. **Diff check (mechanical):** After implementation, verify no test files were modified:
+   ```bash
+   MODIFIED_TESTS=$(git diff --name-only -- '*_test.go' '*_test.py' '*.test.ts' '*.test.js' '*.spec.ts' '*.spec.js')
+   if [ -n "$MODIFIED_TESTS" ]; then
+     echo "BLOCK: GREEN mode violation: test file modified: $MODIFIED_TESTS"
+     # Revert test changes and re-implement without modifying tests
+   fi
+   ```
+   **Opt-out:** `--allow-test-modification` flag (for cases where test fixtures need updating)
+7. **BLOCKED if spec error** — if contract contradicts tests or is incomplete, write BLOCKED with reason
 
 **Verification (GREEN Mode):**
 1. Run test suite → ALL tests must PASS
@@ -173,6 +376,100 @@ When invoked by /crank with `--test-first`, the worker receives:
 **Test Immutability Enforcement:**
 - Workers may ADD new test files but MUST NOT modify existing test files provided by the TEST WAVE
 - If a test appears wrong, write BLOCKED with the specific test and reason — do NOT fix it
+
+### Step 5b: Autonomous Quality Loop (Pre-Commit)
+
+Before committing, run a fix-verify loop on all files modified in this session (max 3 iterations):
+
+**Iteration N:**
+
+1. **List modified files:** `git diff --name-only HEAD`
+2. **Read each modified file completely** — do not skim
+3. **Check for defects:**
+   - Wrong variable references (copy-paste errors, stale names)
+   - Silent error swallowing (`_ = err` or empty catch blocks)
+   - Hardcoded values that should be configurable or constants
+   - Missing edge cases identified during implementation
+   - Inconsistencies with existing patterns in the codebase
+   - Unused imports or variables
+   - Complexity budget violations (function cyclomatic complexity >15)
+4. **Lifecycle review (once per loop, first iteration only):**
+   If `--no-lifecycle` is NOT set AND lifecycle tier is `standard` or `full` AND staged changes exist:
+   ```
+   Skill(skill="review", args="--diff --staged --quick")
+   ```
+   Merge review findings into the defect list. CRITICAL → HIGH, WARNING → MEDIUM, NIT → LOW.
+   This runs EXACTLY ONCE (first iteration only) — do NOT re-run review after fixes.
+   **Skip if:** `--no-lifecycle` flag, lifecycle tier is `minimal` or `fast`, no staged changes.
+
+4a. **Complexity-triggered refactor check (once per loop, first iteration only):**
+   If `--no-lifecycle` is NOT set AND lifecycle tier is `full` AND any modified function has cyclomatic complexity > 15:
+   ```
+   Skill(skill="refactor", args="<high-cc-function> --dry-run")
+   ```
+   Treat refactor suggestions as MEDIUM findings. Do NOT auto-apply — report only.
+   **Skip if:** `--no-lifecycle` flag, lifecycle tier is not `full`, no function exceeds CC > 15.
+
+5. **Report findings** as a numbered list with severity (HIGH/MEDIUM/LOW)
+6. **HIGH findings:** Fix immediately, re-run tests, re-sweep (next iteration)
+   - If a fix causes test regression: **revert the fix**, report as unresolvable, proceed
+7. **MEDIUM/LOW findings:** Report in commit message, proceed
+
+**Loop termination:**
+- 0 HIGH findings → exit loop, proceed to Step 6
+- 3 iterations exhausted with HIGH findings remaining → **BLOCK commit**. Report remaining HIGHs and stop. Do NOT proceed to Step 6.
+  - Override: `--force-commit` allows proceeding with documented HIGHs (explicit opt-in only)
+
+**Output:** Record iteration count, findings per iteration, and remaining items.
+
+If no modified files or sweep finds zero issues on first pass, proceed directly to Step 5c.
+
+### Step 5c: Generate Behavioral Spec (Optional)
+
+**Skip if:** `--no-spec` flag, or issue type is `docs`/`chore`/`ci`.
+
+After verification passes, produce a behavioral spec documenting what the implementation
+does. This feeds Stage 4 behavioral validation (STEP 1.8 in /validation).
+
+```bash
+mkdir -p .agents/specs
+cat > .agents/specs/<issue-id>.json <<'SPEC'
+{
+    "id": "auto-<issue-id>",
+    "version": 1,
+    "date": "<YYYY-MM-DD>",
+    "goal": "<one-line: what user outcome this implementation serves>",
+    "narrative": "<2-3 sentences: what the implementation does and how a user interacts with it>",
+    "expected_outcome": "<what a satisfied user observes when this works correctly>",
+    "acceptance_vectors": [
+        {
+            "dimension": "<name: correctness|performance|usability|security|...>",
+            "threshold": <0.0-1.0>,
+            "check": "<optional: mechanical check command>"
+        }
+    ],
+    "satisfaction_threshold": 0.7,
+    "scope": {
+        "files": ["<list of modified files>"],
+        "functions": ["<key functions added/modified>"],
+        "behaviors": ["<behavioral descriptions>"]
+    },
+    "source": "agent",
+    "status": "active"
+}
+SPEC
+```
+
+**Guidelines:**
+- `acceptance_vectors` should capture the BEHAVIORAL contract, not test assertions.
+  Example: `{"dimension": "isolation", "threshold": 1.0, "check": "echo ... | bash hook; test $? -eq 2"}`
+- Include at least 2 acceptance vectors (correctness + one other dimension).
+- `scope.files` must match the files you actually modified (not planned files).
+- The spec is validated by the evaluator council during STEP 1.8 — it is NOT
+  visible to YOU during implementation (holdout isolation applies to agent-built
+  specs the same way it applies to human-written scenarios).
+
+**If skipped:** Log "Behavioral spec skipped (reason: <flag|issue-type>)" and proceed.
 
 ### Step 6: Commit the Change
 
@@ -203,7 +500,15 @@ if command -v ao &>/dev/null; then
 
   if [ -n "$COMMIT_HASH" ]; then
     # Record successful implementation
+    # Determine TDD mode for ratchet tracking
+    # Values: red (wrote failing tests), green (GREEN mode from crank),
+    #         skipped (skip conditions met), no-tdd (explicitly disabled)
+    TDD_MODE="red"  # default when TDD was followed
+    # Override based on context:
+    # GREEN mode → "green", skip conditions → "skipped", --no-tdd → "no-tdd"
+
     ao ratchet record implement \
+      --tdd-mode "$TDD_MODE" \
       --output "$COMMIT_HASH" \
       --files "$CHANGED_FILES" \
       --issue "<issue-id>" \
@@ -246,7 +551,7 @@ if command -v ao &>/dev/null; then
 fi
 ```
 
-Tell user: "Implementation complete. Run /vibe to validate before pushing."
+Tell user: "Implementation complete. Run /validation to validate before pushing."
 
 ### Step 8: Report to User
 
@@ -273,8 +578,19 @@ Reason: <why blocked>
 Remaining: <what's left>
 ```
 
+## Lifecycle Integration Flags
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--no-lifecycle` | off | Skip ALL lifecycle skill auto-invocations (test gen, review, refactor) |
+| `--lifecycle=<tier>` | matches complexity | Controls which lifecycle skills fire: `minimal` (test only), `standard` (+review), `full` (+refactor dry-run) |
+
+Lifecycle tier defaults to matching the current complexity level. Explicit `--lifecycle=<tier>` overrides.
+
 ## Key Rules
 
+- **TDD by default** - write failing tests before implementing (skip with `--no-tdd`)
+- **Lifecycle skills fire automatically** - /test, /review, /refactor run at appropriate steps (disable with `--no-lifecycle`)
 - **Explore first** - understand before changing
 - **Edit, don't rewrite** - prefer Edit tool over Write tool
 - **Follow patterns** - match existing code style
@@ -291,19 +607,6 @@ If bd CLI not available:
 4. Report completion to user
 
 ---
-
-## Distributed Mode: Agent Mail Coordination
-
-**For full distributed mode details, read `skills/implement/references/distributed-mode.md`.**
-
-Distributed mode enhances /implement with real-time coordination via MCP Agent Mail when `--mode=distributed`, `--agent-mail`, or `$OLYMPUS_DEMIGOD_ID` is set.
-
----
-
-## References
-
-- **Agent Mail Protocol:** See `skills/shared/agent-mail-protocol.md` for message format specifications
-- **Parser (Go):** `cli/internal/agentmail/` - shared parser for all message types
 
 ## Examples
 
@@ -350,9 +653,15 @@ Distributed mode enhances /implement with real-time coordination via MCP Agent M
 
 | Problem | Cause | Solution |
 |---------|-------|----------|
-| Issue not found | Issue ID doesn't exist or beads not synced | Run `bd sync` then `bd show <id>` to verify |
+| Issue not found | Issue ID doesn't exist or local state looks stale | Run `bd show <id>` to verify; use `bd vc status` only if you need Dolt state |
 | GREEN mode violation | Edited a file not related to the issue scope | Revert unrelated changes. GREEN mode restricts edits to files relevant to the issue |
 | Verification gate fails | Tests fail or build breaks after implementation | Read the verification output, fix the specific failures, re-run verification |
 | "BLOCKED" status | Contract contradicts tests or is incomplete in GREEN mode | Write BLOCKED with specific reason, do NOT modify tests |
 | Fresh verification missing | Agent claims success without running verification command | MUST run verification command fresh with full output before claiming completion |
 | Ratchet record failed | ao CLI unavailable or chain.jsonl corrupted | Implementation still closes via bd, but ratchet chain needs manual repair |
+
+## Reference Documents
+
+- [references/gate-checks.md](references/gate-checks.md)
+- [references/resume-protocol.md](references/resume-protocol.md)
+- [test](../test/SKILL.md) — Test generation, coverage analysis, and TDD workflow

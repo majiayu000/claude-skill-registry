@@ -54,9 +54,22 @@ Before running the test, write:
 - **Failure looks like**: What would make us abandon this assumption
 - **Sample size**: How many data points needed for confidence
 
-## Step 5: Run and Interpret
+## Step 5: State Your Prediction (before running)
+
+Before running the test, write down what you **expect** will happen and why. This forces scientific thinking — if you can't state a prediction, you don't understand the assumption well enough to test it.
+
+- **I expect**: [specific outcome, e.g., "4 of 6 users will complete onboarding in under 5 minutes"]
+- **Because**: [reasoning, e.g., "the flow has only 3 steps and uses familiar patterns"]
+- **I'd be surprised if**: [what would challenge your mental model]
+
+After running, compare prediction to reality. The gap between prediction and outcome IS the learning.
+
+*Source: Rother (Toyota Kata) — stating predictions before experiments is the core scientific thinking habit.*
+
+## Step 6: Run and Interpret
 
 - Run the test
+- Compare results to your prediction from Step 5 — note where reality differed
 - Record raw results
 - Update confidence level (Gilad's meter: 0.1 -> 0.9)
 - Update ICE score for the solution

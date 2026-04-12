@@ -1,8 +1,8 @@
 {
   "category": "devops",
   "code": "ops",
-  "count": 5319,
-  "updated_at": "2026-04-12T02:11:59.643721Z",
+  "count": 5320,
+  "updated_at": "2026-04-12T10:59:19.143027Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -43345,6 +43345,24 @@
       "stars": 0,
       "install": "hkcm91/StickerNestV3/devops/exposing-apis-to-widgets",
       "source": "SkillsMP Synced Skills"
+    },
+    {
+      "name": "query-victorialogs",
+      "description": "Query and analyze logs from VictoriaLogs using LogsQL via HTTP API.",
+      "repo": "varfolomejev/query-victorialogs",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "devops",
+      "tags": [
+        "logging",
+        "victorialogs",
+        "logsql",
+        "observability",
+        "log-analysis"
+      ],
+      "stars": 0,
+      "install": "varfolomejev/query-victorialogs/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "guardrail-scorecard",

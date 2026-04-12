@@ -46,7 +46,8 @@ Map user intent to one of three lanes:
 
 | Intent | Command | Notes |
 |--------|---------|-------|
-| bootstrap, install, configure Dream | `ao overnight setup` | Default to preview. Use `--apply` only when the user explicitly wants config or scheduler artifacts persisted. |
+| bootstrap, install, configure Dream | `ao overnight setup` | Default to preview. Use `--apply` only when the user explicitly wants config or scheduler artifacts persisted. Detects Tier 1 local curator separately from Tier 2 Dream Council runners. |
+| inspect or feed local Gemma curator | `ao overnight curator status|diagnose|enqueue|compact|event` | Use for Ollama/Gemma worker health, allowlisted queue jobs, pending LOG compaction, and bounded needs-review events. |
 | run Dream now | `ao overnight start` | Include `--goal` when the user provides one. Use `--runner` and `--creative-lane` only when the user asks for multimodel or wildcard analysis. |
 | inspect a prior run | `ao overnight report` | Use `--from <dir-or-summary.json>` for non-default report paths. |
 
@@ -61,6 +62,24 @@ Anti-goals (hard constraints):
 - NEVER performs git operations (no commits, branches, push, rebase, checkout).
 - NEVER creates symlinks anywhere.
 - No swarm/gc fan-out inside iterations in the first slice (serial only).
+
+## Tier 1 Curator And Trigger Mesh
+
+Dream can expose a local Tier 1 curator through `dream.local_curator.*`. The
+first supported shape is Ollama + Gemma, backed by an operator-owned worker
+directory such as `D:\dream` and a vault such as `D:\vault`. This is not a Dream
+Council runner: Gemma drafts, lints, triages, and writes auditable queue or event
+records; Codex and Claude remain Tier 2 review/synthesis runners; humans own
+promotion into durable authored memory.
+
+Use `ao overnight curator status --json` to check the worker, queue, model, and
+Ollama endpoint. Use `ao overnight curator enqueue --kind lint-wiki|dream-seed`
+or `--kind ingest-claude-session --source <path> --chunk-start <n> --chunk-end
+<n>` only for allowlisted knowledge jobs. Use `ao overnight curator event` when
+Gemma or a local SOC signal needs Tier 2 attention. Events carry source,
+severity, desired action, escalation target, and budget; no runner should
+recursively invoke another runner without consuming an explicit event budget and
+leaving a ledger entry.
 
 ## Key Rules
 
@@ -112,6 +131,25 @@ Expected outputs:
 
 - a config preview in terminal, JSON, or YAML
 - optional generated scheduler assistance under `.agentops/generated/dream/`
+- optional `dream.local_curator` config when a supported local curator is
+  configured or detected
+
+### Step 2a: Local curator lane
+
+Use `ao overnight curator` when the user asks about Gemma, the local worker, the
+SOC trigger path, or Tier 1 drafts.
+
+```bash
+ao overnight curator status --json
+ao overnight curator diagnose
+ao overnight curator enqueue --kind lint-wiki
+ao overnight curator enqueue --kind dream-seed
+ao overnight curator compact --dry-run
+ao overnight curator event --source local-soc --severity high --desired-action "review alert cluster" --budget 1
+```
+
+Do not promote Tier 1 drafts directly into authored content. Treat draft
+promotion as Tier 2 or human review work.
 
 ### Step 3: Bedtime run lane
 

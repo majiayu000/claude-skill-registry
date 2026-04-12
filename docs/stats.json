@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-04-12T02:12:01.346386Z",
-  "archive_skill_md_count_raw": 226761,
-  "archive_metadata_count_raw": 226761,
-  "indexed_skill_count_scan_shape": 226761,
-  "registry_skill_count_dedup": 153684,
+  "updated_at": "2026-04-12T10:59:20.828054Z",
+  "archive_skill_md_count_raw": 226811,
+  "archive_metadata_count_raw": 226811,
+  "indexed_skill_count_scan_shape": 226811,
+  "registry_skill_count_dedup": 153722,
   "total_plugins": 3,
   "categories": 74,
   "featured_count": 100,
-  "index_size_bytes": 50151385,
-  "index_size_gzip_bytes": 14511390
+  "index_size_bytes": 50163537,
+  "index_size_gzip_bytes": 14514924
 }

@@ -1,11 +1,10 @@
 ---
-name: prd-taskmaster
+name: prd-taskmaster-v2
 description: >-
-  Smart PRD generator with TaskMaster integration. Detects existing PRDs and offers execute/update/replace options.
-  Generates comprehensive technical PRDs optimized for task breakdown, validates with 13 automated checks,
-  and optionally executes tasks autonomously with datetime tracking and rollback support. Use when user requests
-  "PRD", "product requirements", or mentions task-driven development. Defaults to PRD generation with
-  handoff to TaskMaster. Optionally supports autonomous execution with 4 modes.
+  Zero-config goal-to-tasks engine. Takes any goal (software, pentest, business, learning),
+  runs adaptive discovery via brainstorming, generates a validated spec, parses into TaskMaster
+  tasks, and hands off to execution. Use when user says "PRD", "product requirements",
+  "I want to build", or wants task-driven development.
 allowed-tools:
   - Read
   - Write
@@ -13,290 +12,120 @@ allowed-tools:
   - Grep
   - Glob
   - Bash
+  - Skill
   - AskUserQuestion
+  - WebSearch
 ---
 
-# PRD Generator for TaskMaster v3.0
+# prd-taskmaster-v2
 
-Smart PRD generation with deterministic operations handled by `script.py`.
-AI handles judgment (questions, content, decisions); script handles mechanics.
+Zero-config goal-to-tasks engine. AI handles discovery and content; `script.py` handles mechanics.
 
-**Script location**: `~/.claude/skills/prd-taskmaster/script.py`
-**All script commands output JSON.**
+**Script**: `~/.claude/skills/prd-taskmaster-v2/script.py` (all commands output JSON)
 
 ## When to Use
 
-Activate when user says: PRD, product requirements, taskmaster, task-driven development.
-Do NOT activate for: API docs, test specs, project timelines, PDF creation.
+Activate: PRD, product requirements, taskmaster, task-driven development, "I want to build X", any goal.
+Skip: API docs, test specs, project timelines, PDF creation.
 
-## Core Principles
+## Phase 0: Setup Gate
 
-- **Quality Over Speed**: Planning is 95% of the work
-- **Taskmaster Required**: Blocks if not detected
-- **Engineer-Focused**: Technical depth, code examples, architecture
-- **Validation-Driven**: 13 automated checks via script
-- **User Testing Checkpoints**: Every 5 tasks
+Read the phase file and follow it:
+```
+Read ~/.claude/skills/prd-taskmaster-v2/phases/SETUP.md
+```
 
----
+Verify TaskMaster is installed, initialized, and the AI pipeline works.
+Default to `claude-code` provider (zero API key for Claude Max users).
 
-## Workflow (12 Steps)
+**Gate: TaskMaster installed, project initialized, provider configured. Proceed to Preflight.**
 
-### Step 1: Preflight & Resume Detection
+## Phase 1: Zero-Config Preflight
+
+Run preflight and auto-detect everything. Ask zero setup questions.
 
 ```bash
-python3 ~/.claude/skills/prd-taskmaster/script.py preflight
+python3 ~/.claude/skills/prd-taskmaster-v2/script.py preflight
 ```
 
-Returns JSON: `has_taskmaster`, `prd_path`, `task_count`, `tasks_completed`, `tasks_pending`, `taskmaster_method`, `has_claude_md`, `has_crash_state`, `crash_state`.
+**From preflight JSON, determine the state:**
 
-**If `has_crash_state` is true**: Present resume options to user:
-1. Continue from last subtask
-2. Restart current task
-3. Resume from last checkpoint
-4. Start fresh
+| Condition | Action |
+|-----------|--------|
+| `prd_path` exists + `task_count > 0` | Ask: execute tasks / update PRD / new PRD / review |
+| `taskmaster_method == "none"` | Return to Phase 0 — setup incomplete |
+| `has_taskmaster` but no PRD | Proceed to Discovery |
+| `has_crash_state` | Offer: resume from crash point or start fresh |
 
-**Then proceed to Step 2.**
+**Gate: TaskMaster detected and environment ready. Proceed to Discovery.**
 
----
+## Phase 2: Discovery
 
-### Step 2: Detect Existing PRD
-
-Use preflight JSON: if `prd_path` is not null and `task_count > 0`, an existing PRD is found.
-
-**If existing PRD found**, use AskUserQuestion:
-- **Execute tasks** from existing PRD (skip to Step 11)
-- **Update/refine** existing PRD (edit and re-parse)
-- **Create new PRD** (replace - backup first via `script.py backup-prd --input <path>`)
-- **Review** existing PRD (display summary, then exit)
-
-**If no PRD found**: Proceed to Step 3.
-
----
-
-### Step 3: Detect Taskmaster
-
-Use preflight JSON field `taskmaster_method`: `mcp`, `cli`, or `none`.
-
-**If `none`**: Block and show installation instructions:
-- Option 1 (recommended): Install MCP Task-Master-AI
-- Option 2: `npm install -g task-master-ai`
-- Wait for user to install and confirm, then re-run: `script.py detect-taskmaster`
-
-**No proceeding without taskmaster detected.**
-
----
-
-### Step 4: Discovery Questions
-
-Ask detailed questions to build comprehensive PRD. Use AskUserQuestion for structured input.
-
-**Essential (5):**
-1. What problem does this solve? (user pain point, business impact)
-2. Who is the target user/audience?
-3. What is the proposed solution or feature?
-4. What are the key success metrics?
-5. What constraints exist? (technical, timeline, resources)
-
-**Technical (4):**
-6. Existing codebase or greenfield?
-7. Tech stack?
-8. Integration requirements?
-9. Performance/scale requirements?
-
-**TaskMaster-specific (3):**
-10. Used taskmaster before?
-11. Estimated complexity? (simple/typical/complex)
-12. Timeline expectations?
-
-**Open-ended (1):**
-13. Anything else? (edge cases, constraints, context)
-
-**Smart defaults**: If user provides minimal answers, use best guesses and document assumptions.
-
----
-
-### Step 5: Initialize Taskmaster
-
-Only if `.taskmaster/` doesn't exist (check preflight `has_taskmaster`).
-
-```bash
-python3 ~/.claude/skills/prd-taskmaster/script.py init-taskmaster --method <cli|mcp>
+Read the phase file and follow it:
+```
+Read ~/.claude/skills/prd-taskmaster-v2/phases/DISCOVER.md
 ```
 
-For MCP: use the returned params to call `mcp__task-master-ai__initialize_project`.
-For CLI: script runs `taskmaster init` directly.
+Progressive, adaptive, domain-agnostic discovery via superpowers:brainstorming.
 
----
+**Gate: Discovery complete and user approved design. Proceed to Generate.**
 
-### Step 6: Generate PRD
+## Phase 3: Generate & Validate
 
-Load template:
-```bash
-python3 ~/.claude/skills/prd-taskmaster/script.py load-template --type <comprehensive|minimal>
+Read the phase file and follow it:
+```
+Read ~/.claude/skills/prd-taskmaster-v2/phases/GENERATE.md
 ```
 
-Returns JSON with `content` field containing the template.
+Generate spec, validate quality, parse tasks. Uses TaskMaster's native tools:
+- **`analyze-complexity`**: Replaces custom enrich-tasks — TaskMaster classifies task complexity natively
+- **`expand_task`**: Decomposes each task into verifiable subtasks with optional research
 
-**AI judgment**: Fill template with user's answers from Step 4:
-- Replace placeholders with actual content
-- Expand examples with project-specific details
-- Add technical depth based on discovery answers
+**Gate: PRD validated GOOD+ and tasks parsed with subtasks. Proceed to Handoff.**
 
-Write completed PRD to `.taskmaster/docs/prd.md`.
+## Phase 4: Handoff
 
----
-
-### Step 7: Validate PRD Quality
-
-```bash
-python3 ~/.claude/skills/prd-taskmaster/script.py validate-prd --input .taskmaster/docs/prd.md
+Read the phase file and follow it:
+```
+Read ~/.claude/skills/prd-taskmaster-v2/phases/HANDOFF.md
 ```
 
-Returns JSON: `score`, `max_score`, `grade`, `checks` (13 items), `warnings`.
+Detect capabilities, recommend ONE execution mode, hand off.
 
-**Grading**: EXCELLENT (91%+), GOOD (83-90%), ACCEPTABLE (75-82%), NEEDS_WORK (<75%).
+**Gate: User chose mode and handoff complete.**
 
-**AI judgment**: If warnings exist, offer user three options:
-1. Proceed with current PRD
-2. Auto-fix warnings
-3. Review and fix manually
+## Script Commands Reference
 
-If grade is NEEDS_WORK, strongly recommend fixing before proceeding.
+| Command | Purpose |
+|---------|---------|
+| `preflight` | Detect environment state |
+| `detect-taskmaster` | Find MCP or CLI taskmaster |
+| `detect-capabilities` | Scan for available skills/tools/plugins |
+| `load-template --type comprehensive\|minimal` | Load PRD template |
+| `validate-prd --input <path>` | Quality checks + placeholder detection |
+| `calc-tasks --requirements <count>` | Recommended task count |
+| `backup-prd --input <path>` | Timestamped backup |
+| `gen-test-tasks --total <count>` | Generate USER-TEST task specs |
+| `gen-scripts --output-dir <dir>` | Create tracking scripts |
+| `log-progress --task-id T --title "..."` | Append to progress.md |
+| `init-taskmaster --method cli\|mcp` | Initialize taskmaster project |
+| `read-state` | Read crash recovery state |
 
----
+## Context
 
-### Step 8: Parse & Expand Tasks
+**In the pipeline:** atlas-start → **prd-taskmaster-v2** → atlas-plan → atlas-loop → atlas-sync
+**Standalone:** Works on its own. Takes any goal, produces spec + tasks.
+**Produces:** prd.md + tasks.json (in .taskmaster/)
+**Can invoke next:** atlas-plan (for planning), then execution mode of choice
 
-Calculate task count:
-```bash
-python3 ~/.claude/skills/prd-taskmaster/script.py calc-tasks --requirements <count>
-```
+## Critical Rules
 
-Returns `recommended` task count.
-
-**For MCP**:
-```
-mcp__task-master-ai__parse_prd: input=".taskmaster/docs/prd.md", numTasks=<recommended>, research=true
-mcp__task-master-ai__expand_all: research=true
-```
-
-**For CLI**:
-```bash
-taskmaster parse-prd --input .taskmaster/docs/prd.md --research --num-tasks <recommended>
-taskmaster expand-all --research
-```
-
----
-
-### Step 9: Insert User Test Tasks
-
-```bash
-python3 ~/.claude/skills/prd-taskmaster/script.py gen-test-tasks --total <task_count>
-```
-
-Returns array of USER-TEST task definitions with `title`, `description`, `dependencies`, `template`.
-
-**For each task in the array**:
-- MCP: `mcp__task-master-ai__add_task` with title, description, details=template, dependencies, priority=high
-- CLI: `taskmaster add-task --title="..." --description="..." --dependencies="..." --priority=high`
-
----
-
-### Step 10: Setup Tracking Scripts
-
-```bash
-python3 ~/.claude/skills/prd-taskmaster/script.py gen-scripts --output-dir .taskmaster/scripts
-```
-
-Creates 5 scripts: track-time.py, rollback.sh, learn-accuracy.py, security-audit.py, execution-state.py.
-
----
-
-### Step 10.5: Generate CLAUDE.md
-
-**Pre-check**: Use Glob to check if `./CLAUDE.md` exists. If it exists, skip.
-
-If generating:
-1. Load template: `script.py load-template` won't work here -- use Read tool on `~/.claude/skills/prd-taskmaster/templates/CLAUDE.md.template`
-2. **AI judgment**: Replace placeholders with project-specific values from discovery:
-   - `{{PROJECT_NAME}}`, `{{TECH_STACK}}`, `{{ARCHITECTURE_OVERVIEW}}`
-   - `{{KEY_DEPENDENCIES}}`, `{{TESTING_FRAMEWORK}}`, `{{DEV_ENVIRONMENT}}`, `{{TEST_COMMAND}}`
-3. Write to `./CLAUDE.md`
-4. Ask if user uses Codex -- if yes and no `codex.md`, write identical copy
-
----
-
-### Step 11: Choose Next Action
-
-Use AskUserQuestion:
-
-**Question**: "PRD and tasks ready. How to proceed?"
-- **Show TaskMaster Commands** (default): Display command reference, then exit skill
-- **Autonomous Execution**: Ask follow-up for execution mode
-
-**If Autonomous Execution selected**, ask execution mode:
-- **Sequential to Checkpoint** (recommended): Tasks one-by-one until next USER-TEST
-- **Parallel to Checkpoint**: Independent tasks in parallel until USER-TEST
-- **Full Autonomous**: All tasks parallel, skip user validation
-- **Manual Control**: User decides each task
-
-**AI judgment**: Recommend mode based on context:
-- First-time/critical: Sequential
-- Experienced/non-critical: Parallel
-- Trusted/time-critical: Full Autonomous
-- Complex/learning: Manual
-
----
-
-### Step 12: Summary & Start
-
-**If Handoff**: Display PRD location, task counts, key requirements, validation score, task phases, user test checkpoints, and TaskMaster commands. Then exit skill.
-
-**If Autonomous**: Display same summary plus execution mode, then begin execution using the selected mode's rules.
-
----
-
-## Execution Mode Rules
-
-### All Modes Include
-
-- **DateTime tracking**: `python3 .taskmaster/scripts/track-time.py start|complete <task_id> [subtask_id]`
-- **Progress logging**: `python3 ~/.claude/skills/prd-taskmaster/script.py log-progress --task-id <id> --title "..." --duration "..." --subtasks "..." --tests "..." --issues "..."`
-- **Git policy**: Branch per task (`task-{id}-{slug}`), sub-branch per subtask, merge to main with checkpoint tag
-- **Rollback**: If user says "rollback to task X", run `bash .taskmaster/scripts/rollback.sh X`
-- **State tracking**: `python3 .taskmaster/scripts/execution-state.py start|complete|checkpoint <task_id>`
-
-### Sequential to Checkpoint
-
-Execute tasks one-by-one. For each task:
-1. Start time tracking
-2. Create feature branch
-3. For each subtask: create sub-branch, implement, test, commit, merge to task branch
-4. Complete time tracking
-5. Log progress
-6. Merge to main, create checkpoint tag
-7. Stop at next USER-TEST for user validation
-
-### Parallel to Checkpoint
-
-Same as sequential but launch up to 3 concurrent independent tasks.
-Handle merge conflicts automatically. Stop at USER-TEST.
-
-### Full Autonomous
-
-Maximum parallelization (up to 5 concurrent). Auto-complete USER-TEST tasks.
-Only stop when ALL tasks complete.
-
-### Manual Control
-
-Wait for user commands: "next task", "task {id}", "status", "parallel {id1,id2}".
-
----
-
-## Tips
-
-- More detail in discovery = better PRD
-- Quantify goals: not "improve UX" but "increase NPS from 45 to 60"
-- USER-TEST checkpoints catch issues early
-- Git checkpoints allow easy rollback
-- Use `script.py validate-prd` at any time to re-check PRD quality
+1. Zero setup questions — detect everything, ask only discovery questions
+2. Phase 0 runs FIRST — verify TaskMaster before anything else
+3. Default to `claude-code` provider — zero API key for Claude Max users
+4. Discovery via superpowers:brainstorming — one question at a time, adaptive
+5. Domain-agnostic — works for any goal (app, pentest, business, anything)
+6. Use TaskMaster's native `analyze-complexity` and `expand_task` — no custom enrichment
+7. Validate PRDs catch placeholders — mustache, TBD, TODO patterns fail validation
+8. Handoff recommends ONE mode — present best fit, not 4 equal choices
+9. Phase files must be Read explicitly — they are not auto-loaded

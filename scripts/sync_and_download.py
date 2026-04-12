@@ -328,6 +328,7 @@ async def download_skills(
     shard_count: int = 1,
     shard_index: int = 0,
     failure_report_path: Path | None = None,
+    observations_output_path: Path | None = None,
 ) -> dict:
     """Download skills using optimized downloader."""
     logger.info("=" * 60)
@@ -391,6 +392,9 @@ async def download_skills(
 
     if not pending:
         logger.info("Nothing to download!")
+        if observations_output_path:
+            observations_output_path.parent.mkdir(parents=True, exist_ok=True)
+            observations_output_path.write_text("", encoding="utf-8")
         return {
             "downloaded": 0,
             "failed": 0,
@@ -412,6 +416,7 @@ async def download_skills(
         "pending_before_shard": len(pending_all),
     }
     failures = defaultdict(list)
+    observations: list[dict] = []
     preferred_branch_by_repo = {}
     manifest_state = {"dirty": False}
 
@@ -486,6 +491,35 @@ async def download_skills(
         add(".claude/SKILL.md")
         return ordered
 
+    def add_observation(
+        skill: dict,
+        *,
+        outcome: str,
+        failure_reason: str = "",
+        attempts: int = 0,
+        manifest_hit: bool = False,
+        branch: str = "",
+        relative_path: str = "",
+    ) -> None:
+        observations.append(
+            {
+                "timestamp": datetime.utcnow().isoformat() + "Z",
+                "shard_count": shard_count,
+                "shard_index": shard_index,
+                "name": (skill.get("name") or "").strip(),
+                "repo": (skill.get("repo") or "").strip(),
+                "path": (skill.get("path") or "").strip(),
+                "category": sanitize_category(skill.get("category", "other")),
+                "candidate_key": skill_key(skill),
+                "outcome": outcome,
+                "failure_reason": failure_reason,
+                "attempts": attempts,
+                "manifest_hit": manifest_hit,
+                "resolved_branch": branch,
+                "resolved_relative_path": relative_path,
+            }
+        )
+
     async def try_download(session: aiohttp.ClientSession, skill: dict) -> bool:
         name = (skill.get("name") or "").strip() or "unknown"
         # Normalize name to prevent case conflicts on macOS/Windows
@@ -496,6 +530,7 @@ async def download_skills(
 
         if not repo:
             failures["no_repo"].append(name)
+            add_observation(skill, outcome="failed", failure_reason="no_repo")
             return False
 
         manifest_key = build_manifest_key(repo, path, name, category)
@@ -565,10 +600,25 @@ async def download_skills(
                                     }
                                     manifest_state["dirty"] = True
                                     stats["url_attempts"] += attempts
+                                    add_observation(
+                                        skill,
+                                        outcome="downloaded",
+                                        attempts=attempts,
+                                        manifest_hit=manifest_entry is not None,
+                                        branch=branch,
+                                        relative_path=relative_path,
+                                    )
                                     return True
                             elif resp.status == 403:
                                 failures["rate_limited"].append(name)
                                 stats["url_attempts"] += attempts
+                                add_observation(
+                                    skill,
+                                    outcome="failed",
+                                    failure_reason="rate_limited",
+                                    attempts=attempts,
+                                    manifest_hit=manifest_entry is not None,
+                                )
                                 return False
                     except asyncio.TimeoutError:
                         continue
@@ -577,6 +627,13 @@ async def download_skills(
 
             failures["not_found"].append(name)
             stats["url_attempts"] += attempts
+            add_observation(
+                skill,
+                outcome="failed",
+                failure_reason="not_found",
+                attempts=attempts,
+                manifest_hit=manifest_entry is not None,
+            )
             return False
 
     start_time = time.time()
@@ -623,6 +680,17 @@ async def download_skills(
     logger.info(f"Failed: {stats['failed']}")
     logger.info(f"URL attempts: {stats['url_attempts']}")
     logger.info(f"Total skills: {final_count}")
+
+    if observations_output_path:
+        observations_output_path.parent.mkdir(parents=True, exist_ok=True)
+        with observations_output_path.open("w", encoding="utf-8") as handle:
+            for row in observations:
+                handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+        logger.info(
+            "Discovery observations saved to %s (%s rows)",
+            observations_output_path,
+            len(observations),
+        )
 
     # Save failure report
     failure_report = {
@@ -755,6 +823,11 @@ def main():
         default="failure_report.json",
         help="Failure report output path (relative to repo root unless absolute)",
     )
+    parser.add_argument(
+        "--observations-output",
+        default="sources/learning/discovery_observations.jsonl",
+        help="Download observation JSONL output path (relative to repo root unless absolute)",
+    )
     args = parser.parse_args()
 
     if args.shard_count <= 0:
@@ -781,6 +854,11 @@ def main():
         failure_report = failure_report_arg
     else:
         failure_report = registry_dir / failure_report_arg
+    observations_output_arg = Path(args.observations_output)
+    if observations_output_arg.is_absolute():
+        observations_output = observations_output_arg
+    else:
+        observations_output = registry_dir / observations_output_arg
 
     github_token = os.environ.get("GITHUB_TOKEN", "")
 
@@ -835,6 +913,7 @@ def main():
                 shard_count=args.shard_count,
                 shard_index=args.shard_index,
                 failure_report_path=failure_report,
+                observations_output_path=observations_output,
             )
         )
         if args.fail_on_empty_download and should_fail_on_empty_download(stats):

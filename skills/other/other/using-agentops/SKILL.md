@@ -119,6 +119,7 @@ These are the skills every user needs first. Everything else is available when y
 | Skill | Purpose |
 |-------|---------|
 | `/compile` | Active knowledge intelligence — Mine → Grow → Defrag cycle |
+| `/llm-wiki` | External reading wiki proposal — raw sources to compiled wiki |
 | `/harvest` | Cross-rig knowledge consolidation — sweep, dedup, promote to global hub |
 | `/knowledge-activation` | Operationalize a mature `.agents` corpus into beliefs, playbooks, briefings, and gap surfaces |
 | `/brainstorm` | Structured idea exploration before planning |
@@ -132,6 +133,7 @@ These are the skills every user needs first. Everything else is available when y
 | `/crank` | Autonomous epic loop (uses swarm for each wave) |
 | `/swarm` | Fresh-context parallel execution (Ralph pattern) |
 | `/evolve` | Goal-driven fitness-scored improvement loop |
+| `/autodev` | PROGRAM.md autonomous development contract setup and validation |
 | `/dream` | Interactive Dream operator surface for setup, bedtime runs, and morning reports |
 | `/doc` | Documentation generation |
 | `/retro` | Quick-capture a learning (full retro → /post-mortem) |

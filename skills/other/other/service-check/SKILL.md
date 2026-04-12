@@ -56,8 +56,10 @@ For each principle, assess: Pass / Partial / Fail / N/A
     - [ ] Works across devices and assistive technologies
 
 12. **Encourages right behaviors**: Does design nudge good outcomes?
-    - [ ] No dark patterns
+    - [ ] No dark patterns (confirmshaming, hidden costs, forced continuity, misdirection, roach motel, trick questions, bait-and-switch)
     - [ ] Default options are the safe/good ones
+    - [ ] Behavioral science used to HELP users, not exploit them (Shotton: ethical application)
+    - [ ] If dark patterns detected: flag "Dark Pattern Marketing" anti-pattern (see anti-patterns.md)
 
 13. **Responds to change**: Can it adapt?
     - [ ] Handles edge cases gracefully

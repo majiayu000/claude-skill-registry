@@ -13,6 +13,12 @@ This skill enforces Sentry's blog writing standards across every post — whethe
 
 What follows are the core principles to internalize and apply to every piece of content.
 
+## When to Use
+
+- You need to draft or edit a Sentry blog post.
+- The task involves technical storytelling, product announcements, or engineering deep-dives in Sentry's blog voice.
+- You want blog content that is opinionated, specific, and technically credible rather than generic marketing copy.
+
 ## The Sentry Voice
 
 **We sound like:** A senior developer at a conference afterparty explaining something they're genuinely excited about — smart, specific, a little irreverent, deeply knowledgeable.

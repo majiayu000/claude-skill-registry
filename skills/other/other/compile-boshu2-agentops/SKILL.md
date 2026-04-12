@@ -293,10 +293,10 @@ compiler script with your host OS:
 0 3 * * * cd /path/to/repo && AGENTOPS_COMPILE_RUNTIME=ollama bash skills-codex/compile/scripts/compile.sh --force
 ```
 
-AgentOps does **not** currently ship a first-class scheduler subcommand for this
-flow, and the CLI does **not** expose a dedicated compile subcommand. If you
-want unattended compilation today, use your host scheduler (`launchd`, `cron`,
-`systemd`, CI, etc.) to invoke `bash skills-codex/compile/scripts/compile.sh`.
+AgentOps exposes this flow through `ao compile`. If you want unattended
+compilation, use your host scheduler (`launchd`, `cron`, `systemd`, CI, etc.)
+to invoke `ao compile --force --runtime ollama` or call the lower-level
+`bash skills-codex/compile/scripts/compile.sh` directly.
 If you want the broader private overnight loop, use `ao overnight start`
 instead of inventing a parallel Dream wrapper inside `$compile`.
 

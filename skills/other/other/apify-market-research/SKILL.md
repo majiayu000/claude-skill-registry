@@ -9,6 +9,12 @@ source: community
 
 Conduct market research using Apify Actors to extract data from multiple platforms.
 
+## When to Use
+
+- You need market sizing, regional demand, pricing, trend, or consumer behavior data.
+- The task is to gather research inputs from maps, travel, Facebook, Instagram, or trend sources with Apify.
+- You need structured market data plus a synthesized view of opportunities or risks.
+
 ## Prerequisites
 (No need to check it upfront)
 

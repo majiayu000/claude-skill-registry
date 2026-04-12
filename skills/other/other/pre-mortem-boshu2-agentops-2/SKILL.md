@@ -30,6 +30,20 @@ $pre-mortem --debate path/to/PLAN.md                # two-round adversarial revi
 
 ## Execution Steps
 
+### Step 0: Bead-Input Pre-Flight (Mandatory)
+
+When the input to `$pre-mortem` is a bead ID (`[a-z]{2,6}-[0-9a-z.]+`) and the plan is full-complexity, older than 7 days, or inherited from a prior session, run `ao beads verify <bead-id>` as the first action.
+
+```bash
+if [[ "$INPUT" =~ ^[a-z]{2,6}-[0-9a-z.]+$ ]]; then
+    ao beads verify "$INPUT" || true
+fi
+```
+
+If verification reports STALE citations, stop in interactive mode and ask for scope re-validation before council review. In autonomous RPI mode, record the stale-scope evidence in the council packet and do not continue the go/no-go judgment against stale evidence.
+
+This implements the shared stale-scope validation rule: inherited scope estimates must be re-validated against HEAD before acting on deferred beads, handoff docs, or prior-session plans.
+
 ### Step 1: Find the Plan/Spec
 
 **If path provided:** Use it directly.
@@ -411,6 +425,8 @@ After the registry update, if `hooks/finding-compiler.sh` exists, run:
 ```bash
 bash hooks/finding-compiler.sh --quiet 2>/dev/null || true
 ```
+
+Every reusable finding write must include `dedup_key` and refresh compiled findings with `finding-compiler.sh` when that hook exists.
 
 This refreshes `.agents/findings/*.md`, `.agents/planning-rules/*.md`, `.agents/pre-mortem-checks/*.md`, and draft constraint metadata in the same session. `session-end-maintenance.sh` remains the idempotent backstop.
 

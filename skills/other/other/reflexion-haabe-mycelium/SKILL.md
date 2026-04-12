@@ -48,6 +48,33 @@ When max iterations reached without full resolution:
 3. Recommend: fix now (blocking) vs. fix later (non-blocking) vs. accept risk.
 4. Update corrections.md with learnings.
 
+## Verification Modes
+
+The validate step in the reflexion loop should use the appropriate verification mode:
+
+### Rules-Based (deterministic)
+- Linters, formatters, schema validators, type checkers
+- Pass/fail is unambiguous — no judgment needed
+- Always run first — fastest and cheapest
+- Examples: `eslint`, `mypy`, `yamllint`, YAML schema validation against canvas-guidance.yml
+
+### Computational (deterministic)
+- Test runners, build systems, security scanners
+- Requires executing code — slower than rules-based
+- Results are objective but may need interpretation (flaky tests)
+- Examples: `pytest`, `npm test`, `cargo clippy`, OWASP dependency check
+
+### Inferential (probabilistic)
+- LLM-as-judge, peer review, heuristic evaluation
+- Used when rules-based and computational verification are insufficient
+- Results require confidence scoring — never treat as definitive
+- Examples: `/devils-advocate`, `/usability-check`, auto-dogfood evaluation, design review
+- The auto-dogfood system is an inferential verification loop
+
+**Order**: Always attempt rules-based → computational → inferential. Only escalate to the next mode when the previous mode cannot verify the property in question.
+
+*Source: Pachaar (Anatomy of an Agent Harness — three-mode verification taxonomy)*
+
 ## Rules
 - Each iteration must show measurable improvement over the previous.
 - If the same issue recurs across iterations, investigate root cause rather than patching symptoms.

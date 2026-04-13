@@ -15,7 +15,7 @@ Structured research worker for validation, audit, and review flows.
 
 ## Mandatory Read
 
-**MANDATORY READ:** Load `shared/references/evaluation_worker_runtime_contract.md`, `shared/references/evaluation_summary_contract.md`, `shared/references/evaluation_research_contract.md`
+**MANDATORY READ:** Load `shared/references/evaluation_worker_runtime_contract.md`, `shared/references/evaluation_summary_contract.md`, `shared/references/evaluation_research_contract.md`, `shared/references/epistemic_protocol.md`
 
 ## Purpose
 
@@ -43,8 +43,9 @@ Recommended `phase_order`:
 4. `PHASE_3_MCP_REF`
 5. `PHASE_4_CONTEXT7`
 6. `PHASE_5_WEB_BEST_PRACTICES`
-7. `PHASE_6_WRITE_SUMMARY`
-8. `PHASE_7_SELF_CHECK`
+7. `PHASE_6_ANTI_HALLUCINATION`
+8. `PHASE_7_WRITE_SUMMARY`
+9. `PHASE_8_SELF_CHECK`
 
 ## Workflow
 
@@ -82,7 +83,17 @@ Recommended `phase_order`:
 2. Use current sources, not frozen heuristics.
 3. Record only evidence that changes a conclusion or adds decision value.
 
-### Phase 6: Write Summary
+### Phase 6: Anti-Hallucination Verification
+
+1. Scan target artifact for factual claims across all trigger categories per `epistemic_protocol.md` Section B.
+2. For each claim, check against research evidence gathered in Phases 2-5:
+   - Has MCP Ref/Context7/Web evidence → mark `VERIFIED`
+   - No tool evidence but claim is plausible → mark `FROM_TRAINING`
+   - Contradicts tool evidence → mark `FLAGGED` (CRITICAL)
+3. This step verifies against existing research. It does NOT run new searches.
+4. Include verification status in summary metadata.
+
+### Phase 7: Write Summary
 
 Emit `summary_kind=review-research`.
 
@@ -95,15 +106,18 @@ Payload must include:
 Prefer these fields when available:
 - `findings`
 - `metrics.research_sources`
+- `metrics.anti_hallucination_status` (VERIFIED | FLAGGED)
+- `metrics.flagged_claims_count`
 - `artifact_path`
 - `report_path`
 - `metadata`
 
-### Phase 7: Self-Check
+### Phase 8: Self-Check
 
 1. Verify all four research lanes were attempted.
-2. Verify skipped lanes are justified in machine-readable form.
-3. Record `pass=true` only after the summary is written.
+2. Verify anti-hallucination verification was executed.
+3. Verify skipped lanes are justified in machine-readable form.
+4. Record `pass=true` only after the summary is written.
 
 ## Definition of Done
 
@@ -111,6 +125,7 @@ Prefer these fields when available:
 - [ ] MCP Ref evidence recorded
 - [ ] Context7 evidence recorded or justified as not applicable
 - [ ] Current web best-practice evidence recorded
+- [ ] Anti-hallucination verification executed (claims marked VERIFIED/FROM_TRAINING/FLAGGED)
 - [ ] `review-research` summary written
 - [ ] Self-check passed
 

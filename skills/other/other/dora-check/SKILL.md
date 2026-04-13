@@ -131,6 +131,13 @@ Error budgets are the social contract: reliability earns the right to ship faste
 
 If NOT defined: "Consider defining SLIs/SLOs to balance velocity with reliability."
 
+## Decision Log (MANDATORY)
+**Always APPEND** a `### DORA Assessment` or `### Delivery Metrics Assessment` entry to `harness/decision-log.md` with:
+- Each metric assessed, current baseline, target, and classification level
+- The identified bottleneck and recommended improvements
+- Any shifting bottleneck signals (AI-era: coding faster but review slower)
+This ensures the delivery metrics gate has auditable evidence.
+
 ## Canvas Output
 **Always update** `canvas/dora-metrics.yml` with:
 - DORA metrics, classifications, and capability scores

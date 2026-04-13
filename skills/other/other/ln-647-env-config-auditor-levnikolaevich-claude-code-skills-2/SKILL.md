@@ -288,7 +288,7 @@ FOR EACH var IN code_vars WHERE var.has_default == true:
 
 4. Return summary per `shared/references/audit_summary_contract.md`.
 
-When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/evaluation-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
    Report written: {output_dir}/ln-647--{identifier}.md
    Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```

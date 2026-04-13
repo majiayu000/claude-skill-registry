@@ -139,7 +139,7 @@ With `category: "Semantic Content"` and checks: scope_alignment, not_a_linter, n
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/evaluation-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
 Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-612--architecture.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)

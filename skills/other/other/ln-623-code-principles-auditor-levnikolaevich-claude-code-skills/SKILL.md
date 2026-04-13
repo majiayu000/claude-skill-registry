@@ -60,7 +60,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `principles`, `cod
 
 ## Two-Layer Detection (MANDATORY)
 
-**MANDATORY READ:** `shared/references/two_layer_detection.md`
+**MANDATORY READ:** Load `shared/references/two_layer_detection.md`
 
 All findings require Layer 2 context analysis. Layer 1 finding without Layer 2 = NOT a valid finding. Before reporting, ask: "Is this violation intentional or justified by design?"
 
@@ -194,7 +194,7 @@ Write report to `{output_dir}/ln-623--{domain}.md` (or `623-principles.md` in gl
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/evaluation-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
 Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-623--users.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)

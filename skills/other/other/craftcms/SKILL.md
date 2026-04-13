@@ -9,7 +9,12 @@ Reference for extending Craft CMS 5 through plugins and modules. Covers everythi
 
 This skill is scoped to **extending** Craft — building plugins, modules, custom element types, field types, and backend integrations. For site/platform development (content modeling, sections, entry types, Twig templating, plugin selection), see the `craft-site` skill.
 
-For PHP coding standards and conventions, see the separate `craft-php-guidelines` skill.
+## Companion Skills — Always Load Together
+
+When this skill triggers, also load:
+
+- **`craft-php-guidelines`** — PHPDoc standards, section headers, naming conventions, class organization, ECS/PHPStan, verification checklist. Required for any PHP code.
+- **`ddev`** — All commands run through DDEV. Required for running ECS, PHPStan, scaffolding, and tests.
 
 ## Documentation
 
@@ -17,7 +22,7 @@ For PHP coding standards and conventions, see the separate `craft-php-guidelines
 - Class reference: https://docs.craftcms.com/api/v5/
 - Generator: https://craftcms.com/docs/5.x/extend/generator.html
 
-Use `web_fetch` on specific doc pages when a reference file doesn't cover enough detail.
+Use `WebFetch` on specific doc pages when a reference file doesn't cover enough detail.
 
 ## Common Pitfalls (Cross-Cutting)
 
@@ -33,7 +38,7 @@ Use `web_fetch` on specific doc pages when a reference file doesn't cover enough
 Read the relevant reference file(s) for your task. Multiple files often apply together.
 
 **Task examples:**
-- "Build a custom element type" → read `elements.md` + `element-index.md` + `fields.md` + `migrations.md`
+- "Build a custom element type" → read `elements.md` + `element-index.md` + `fields.md` + `migrations.md` + `cp.md`
 - "Add a webhook endpoint" → read `controllers.md` + `events.md`
 - "Create a queue job that syncs elements" → read `queue-jobs.md` + `elements.md` + `debugging.md`
 - "Add a settings page with form fields" → read `controllers.md` + `cp.md` + `architecture.md`
@@ -43,6 +48,13 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Expose template variables for plugin users" → read `events.md` (Twig Extensions section)
 - "Attach custom methods to entries" → read `events.md` (Behaviors section)
 - "Build a CP utility page" → read `events.md` (Utilities section) + `cp.md`
+- "Set up Vite for a plugin's CP assets" → read `plugin-vite.md`
+- "Build a headless Craft API" → read `headless.md` + `graphql.md`
+- "Configure preview for a Next.js front-end" → read `headless.md`
+- "Set up Pest tests for a plugin" → read `testing.md`
+- "Write a test for a controller action" → read `testing.md`
+- "Configure Redis for caching and sessions" → read `configuration.md`
+- "Set up environment variables for production" → read `configuration.md`
 
 | Task | Read |
 |------|------|
@@ -55,10 +67,14 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 | Queue jobs, BaseJob, TTR, retry, progress, batch jobs, site context | `references/queue-jobs.md` |
 | Console commands, arguments, options, progress bars, output helpers, resave actions | `references/console-commands.md` |
 | Debugging, performance, query strategy, profiling, Xdebug, caching, logging | `references/debugging.md` |
-| PHPStan, Pest testing, code review checklist | `references/quality.md` |
+| PHPStan, ECS, code review checklist | `references/quality.md` |
+| Testing: Pest setup, element factories, HTTP/queue/DB assertions, mocking, multi-site, console, events | `references/testing.md` |
 | Field types, native fields, BaseNativeField, field layout elements, FieldLayoutBehavior | `references/fields.md` |
 | Events: registration, lifecycle, naming conventions, custom events, behaviors, Twig extensions, utilities, widgets, filesystems, discovering events | `references/events.md` |
 | GraphQL types, queries, mutations, directives, schema components, resolvers | `references/graphql.md` |
+| Plugin Vite: VitePluginService, CP asset bundles, HMR, TypeScript, Vue in CP | `references/plugin-vite.md` |
+| Headless & hybrid: headlessMode, GraphQL API, CORS, preview tokens, front-end frameworks | `references/headless.md` |
+| Configuration: general.php, .env vars, app.php overrides, Redis, custom config, priority order | `references/configuration.md` |
 
 ## Plugin vs Module Differences
 

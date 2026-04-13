@@ -73,9 +73,10 @@ After running, compare prediction to reality. The gap between prediction and out
 - Record raw results
 - Update confidence level (Gilad's meter: 0.1 -> 0.9)
 - Update ICE score for the solution
-- If assumption validated: move to next riskiest assumption
-- If assumption invalidated: pivot the solution or explore alternatives
+- If assumption validated: move to next riskiest assumption. **Update confidence** in the relevant canvas entry (opportunities.yml, diamonds/active.yml) to reflect the validated assumption — typically +0.1 to +0.15.
+- If assumption invalidated: pivot the solution or explore alternatives. **Decrease confidence** by 0.1-0.2 to reflect the failed assumption.
 - Log in canvas/opportunities.yml under the solution's experiments
+- **Always update diamonds/active.yml** confidence to match the test outcome
 
 ## Bias Warning
 

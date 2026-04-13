@@ -30,10 +30,20 @@ For each solution:
 - Select winner(s) based on evidence
 - Log decision in decision-log.md
 
+### Leaf Bakeoff Mode
+
+When comparing competing OST leaves for the same opportunity:
+- Each worker returns a structured **scorecard** (Four Risks + ICE + assumption test result + segment fit)
+- Lead agent applies **winner selection rules**: clear winner (>20% ICE delta), close race (tiebreaker), segment split (both advance), both fail (archive and re-evaluate)
+- Losers are archived to `canvas/archived-solutions.yml` with full evidence snapshot
+
+See `.claude/orchestration/leaf-bakeoff.md` for the complete bakeoff protocol.
+
 ## Rules
 - Workers NEVER write to canvas (lead agent does)
 - Workers NEVER progress diamonds
 - Lead agent ALWAYS runs bias check on combined results
 - Minimum 2 workers for meaningful comparison
+- Maximum 3 leaves per bakeoff (respects L3 WIP ceiling)
 
-See `.claude/orchestration/fan-out-fan-in.md` for full details.
+See `.claude/orchestration/agent-teams.md` for full orchestration patterns.

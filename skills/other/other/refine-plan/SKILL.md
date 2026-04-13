@@ -26,17 +26,17 @@ Determine which plan file to refine using these rules in order:
 3. **Single file** — Glob `.turbo/plans/*.md`, excluding shell files (see shell detection below). If exactly one non-shell file exists, use it
 4. **Most recent** — If multiple non-shell files exist, use the most recently modified
 5. **Legacy fallback** — If `.turbo/plans/` does not exist but `.turbo/plan.md` exists, use it
-6. **Nothing found** — If no plan file exists, tell the user to run `/turboplan` (for a new task) or `/pick-next-prompt` (for an existing prompt plan) and stop
+6. **Nothing found** — If no plan file exists, tell the user to run `/turboplan` (for a new task) or `/pick-next-plan-shell` (for existing shells) and stop
 
 If multiple files exist and the most-recent choice is non-obvious (e.g., several plans were modified within the same minute), use `AskUserQuestion` to let the user pick from the candidates.
 
 ### Shell Detection
 
-A file is a **shell** when it contains `## Produces`, `## Consumes`, and `## Covers Spec Requirements` AND does NOT contain `## Pattern Survey`.
+Read the file's YAML frontmatter. A file is a **draft shell** when it has `type: shell` and `status: draft`.
 
-If the resolved file is a shell, halt with:
+If the resolved file is a draft shell, halt with:
 
-> `<path>` is a shell plan from `/draft-prompt-plan`. Run `/pick-next-prompt` to expand it before refining.
+> `<path>` is a draft shell that needs expansion first. Run `/pick-next-plan-shell` to expand and implement it.
 
 State the resolved plan path before continuing.
 

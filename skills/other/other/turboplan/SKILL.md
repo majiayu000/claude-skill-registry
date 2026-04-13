@@ -7,9 +7,7 @@ description: "Analyze task complexity and route to a planning mode. Produces a p
 
 Analyze task complexity and route to a planning mode.
 
-If a **shell file path** was passed (typically from `/pick-next-prompt`), read [references/shell-mode.md](references/shell-mode.md) and follow its steps.
-
-Otherwise, categorize the user-supplied task along these dimensions using subjective judgment:
+Categorize the user-supplied task along these dimensions using subjective judgment:
 
 - **Scope**: single feature / single subsystem vs multi-feature / multi-subsystem
 - **Stakes**: one-off change vs long-lived project with architectural implications

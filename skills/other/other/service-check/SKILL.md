@@ -73,6 +73,14 @@ For each principle, assess: Pass / Partial / Fail / N/A
     - [ ] Help/support clearly accessible
     - [ ] Escalation path exists
 
+## When to Run
+
+- **L3 Define** (solution design): Run a lightweight check focusing on principles 1-4, 8, 10, 11. These inform the Four Risks viability dimension — a solution that violates core service principles has viability risk. Feed results into `/ice-score`.
+- **L4 Develop→Deliver**: Run the full 15-principle check. Required REVIEW gate (G-V2).
+- **L4 Deliver→Complete**: Final validation. Required REVIEW gate.
+
+Running at L3 catches service design issues BEFORE delivery, not after. A solution that can't meet "enable completion" (P4) or "no dead ends" (P10) has a design problem, not just a quality problem.
+
 ## Output
 
 ```

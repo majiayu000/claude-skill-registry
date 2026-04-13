@@ -448,6 +448,24 @@ After computing waves, build a **cross-wave file registry** listing every file t
 
 **Why:** In na-vs9, Wave 2 agents started from pre-Wave-1 SHA. A Wave 2 test coverage issue overwrote Wave 1's `.md→.json` fix in `rpi_phased_test.go` because the worktree didn't include Wave 1's commit. The cross-wave registry makes these collisions visible during planning.
 
+#### Generated Artifact Companion Scope
+
+When a planned issue changes skill behavior, phrasing, orchestration, or UX under `skills/<name>/`, the same issue must explicitly plan the Codex runtime companion scope:
+
+- `skills-codex/<name>/` when the checked-in Codex artifact needs a body/script/reference change.
+- `skills-codex-overrides/<name>/` or `skills-codex-overrides/catalog.json` when the Codex-specific tailoring or treatment changes.
+- `skills-codex/.agentops-manifest.json` and `skills-codex/<name>/.agentops-generated.json` when artifact hashes need refresh.
+
+Record these files in the `## File-Conflict Matrix` with the source skill issue, not in a later generic cleanup wave. The issue's validation block must include:
+
+```bash
+bash scripts/refresh-codex-artifacts.sh --scope worktree
+bash scripts/validate-codex-generated-artifacts.sh --scope worktree
+bash scripts/audit-codex-parity.sh --skill <name>
+```
+
+If the skill behavior change definitely has no Codex-facing effect, write that as the matrix mitigation with evidence. Do not leave Codex artifact scope implicit.
+
 #### Validate Dependency Necessity
 
 For EACH declared dependency, verify:

@@ -99,7 +99,7 @@ Present the draft to the user. Use `AskUserQuestion` to offer three paths:
 
 After approval:
 
-> The spec is ready at the resolved spec path. To break it into implementation prompts, run `/draft-prompt-plan`.
+> The spec is ready at the resolved spec path. To break it into plan shells, run `/draft-plan-shells`.
 
 ## Rules
 

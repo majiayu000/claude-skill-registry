@@ -590,8 +590,8 @@ Skill type: `planning-coordinator`. Run after all phases complete. Output to cha
 
 ## Reference Files
 
-- **MANDATORY READ:** `shared/references/environment_state_contract.md`
-- **MANDATORY READ:** `shared/references/storage_mode_detection.md`
+- **MANDATORY READ:** Load `shared/references/environment_state_contract.md`
+- **MANDATORY READ:** Load `shared/references/storage_mode_detection.md`
 - **[MANDATORY] Problem-solving approach:** `shared/references/problem_solving.md`
 - **Orchestrator lifecycle:** `shared/references/orchestrator_pattern.md`
 - **Auto-discovery patterns:** `shared/references/auto_discovery_pattern.md`

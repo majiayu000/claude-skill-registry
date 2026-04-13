@@ -571,8 +571,8 @@ Skill type: `execution-orchestrator`. Runs after Phase 5. Pipeline-specific impl
 - **Meta-analysis:** `references/phases/phase6_meta_analysis.md` (Recovery map, trend tracking, report format)
 
 ### Core Infrastructure
-- **MANDATORY READ:** `shared/references/git_worktree_fallback.md`
-- **MANDATORY READ:** `shared/references/research_tool_fallback.md`
+- **MANDATORY READ:** Load `shared/references/git_worktree_fallback.md`
+- **MANDATORY READ:** Load `shared/references/research_tool_fallback.md`
 - **Pipeline states:** `references/pipeline_states.md`
 - **Checkpoint format:** `references/checkpoint_format.md`
 - **Kanban parsing:** `references/kanban_parser.md`

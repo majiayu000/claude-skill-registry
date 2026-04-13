@@ -51,6 +51,7 @@ Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 | 5 | **Freshness Indicators** | Detect staleness signals: dates >6 months in content, deprecated API/tool references, TODO/FIXME markers, placeholder text left in place; deep fact-checking handled by dedicated worker |
 | 6 | **Legacy Cleanup** | No history sections; no "was changed" notes; no deprecated info; current state only |
 | 7 | **Stack Adaptation** | Links/refs match project stack; no Python examples in .NET project; official docs for correct platform |
+| 8 | **Import Pattern Compliance** | When `AGENTS.md` exists at repo root, `CLAUDE.md` and `GEMINI.md` must each contain exactly one `@AGENTS.md` line and a bounded harness-specific delta (≤50 lines total per file). Any content in CLAUDE.md or GEMINI.md that duplicates AGENTS.md is drift. See `shared/references/agent_instructions_writing_guide.md` for rationale |
 
 ### Severity Mapping
 
@@ -62,6 +63,7 @@ Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 | Missing compression opportunity | LOW |
 | Legacy/history content | MEDIUM |
 | Wrong stack references | HIGH |
+| Import pattern drift (duplicated AGENTS.md content in CLAUDE.md / GEMINI.md, oversized stub, missing `@AGENTS.md` line) | HIGH |
 
 ## Scoring Algorithm
 
@@ -73,7 +75,7 @@ Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 
 Write JSON summary per `shared/references/audit_summary_contract.md`. In managed mode the caller passes both `runId` and `summaryArtifactPath`; in standalone mode the worker generates its own run-scoped artifact path per shared contract.
 
-Write report to `{output_dir}/611-structure.md` with `category: "Documentation Structure"` and checks: hierarchy_links, ssot, compression, requirements_compliance, freshness_indicators, legacy_cleanup, stack_adaptation.
+Write report to `{output_dir}/611-structure.md` with `category: "Documentation Structure"` and checks: hierarchy_links, ssot, compression, requirements_compliance, freshness_indicators, legacy_cleanup, stack_adaptation, import_pattern_compliance.
 
 Return summary per `shared/references/audit_summary_contract.md`.
 

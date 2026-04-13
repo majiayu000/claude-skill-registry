@@ -49,9 +49,9 @@ Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
 ## Workflow (concise)
 1) **Resolve taskId:** Run Task Resolution Chain per guide (status filter: [To Rework]).
 2) **Load task:** Read task (Linear: get_issue; File: Read task file), review notes, parent Story.
-2b) **Goal gate:** **MANDATORY READ:** `shared/references/goal_articulation_gate.md` — State REAL GOAL of this rework (what was actually broken, not "apply feedback"). Combine with 5 Whys (`shared/references/problem_solving.md`) to ensure root cause is articulated alongside the rework goal. NOT THE GOAL: a superficial patch that addresses the symptom, not the cause.
+2b) **Goal gate:** **MANDATORY READ:** Load `shared/references/goal_articulation_gate.md` — State REAL GOAL of this rework (what was actually broken, not "apply feedback"). Combine with 5 Whys (`shared/references/problem_solving.md`) to ensure root cause is articulated alongside the rework goal. NOT THE GOAL: a superficial patch that addresses the symptom, not the cause.
 3) **Plan fixes:** Map each comment to an action; confirm no new scope added.
-4) **Implement:** **MANDATORY READ:** `shared/references/code_efficiency_criterion.md` — Follow task plan/checkboxes; address config/hardcoded issues; update docs/tests noted in Affected Components and Existing Code Impact. Before handoff, verify 3 efficiency self-checks.
+4) **Implement:** **MANDATORY READ:** Load `shared/references/code_efficiency_criterion.md` — Follow task plan/checkboxes; address config/hardcoded issues; update docs/tests noted in Affected Components and Existing Code Impact. Before handoff, verify 3 efficiency self-checks.
 5) **Quality:** Run typecheck/lint (or project equivalents); ensure fixes reflect guides/manuals/ADRs/research.
 6) **Root Cause Analysis:** Ask "Why did the agent produce incorrect code?" Classify: missing context | wrong pattern | unclear AC | gap in docs/templates. If doc/template gap found → update the relevant file (guide, template, CLAUDE.md) to prevent recurrence.
 7) **Handoff:** Set task to To Review (Linear: update_issue; File: Edit status line); move it in kanban; add summary comment referencing resolved feedback + root cause classification.

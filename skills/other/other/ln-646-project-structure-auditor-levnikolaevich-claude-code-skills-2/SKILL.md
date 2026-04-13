@@ -270,7 +270,7 @@ IF len(test_files) > 0:
 **MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`, `shared/references/audit_scoring.md`, and `shared/templates/audit_worker_report_template.md`.
 
 When summaryArtifactPath is present, write the JSON summary to that exact path.
-When summaryArtifactPath is absent, write the standalone runtime summary under .hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json and optionally echo the same summary in structured output.
+When summaryArtifactPath is absent, write the standalone runtime summary under .hex-skills/runtime-artifacts/runs/{run_id}/evaluation-worker/{worker}--{identifier}.json and optionally echo the same summary in structured output.
 
 ```
 # 7a: Calculate score via shared formula

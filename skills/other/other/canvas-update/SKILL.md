@@ -35,6 +35,9 @@ description: "Update canvas sections with new evidence. Ensures canvas stays cur
 | AI tool delivery metrics | ai-tool-metrics.yml | v0.11.0 |
 | Service delivery metrics | service-metrics.yml | v0.11.0 |
 | Human task tracking | human-tasks.yml | v0.11.0 |
+| Archived/discarded solutions | archived-solutions.yml | v0.12.0 |
+| Leaf lifecycle calibration | cycle-history.yml | v0.12.0 |
+| Adaptive thresholds | thresholds.yml | v0.12.0 |
 
 ## Workflow
 1. Identify which canvas file(s) need updating

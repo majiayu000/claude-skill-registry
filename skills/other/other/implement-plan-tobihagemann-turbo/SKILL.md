@@ -15,7 +15,7 @@ At the start, use `TaskCreate` to create a task for each step:
 2. Run `/code-style` skill
 3. Read relevant files and load task-specific skills
 4. Execute implementation steps
-5. Run `/finalize` skill
+5. Run `/finalize` skill and update plan status
 
 ## Step 1: Resolve and Read the Plan File
 
@@ -23,20 +23,20 @@ Determine which plan file to implement using these rules in order:
 
 1. **Explicit path** — If an absolute or relative path was passed, use it
 2. **Explicit slug** — If a slug was passed (e.g., `add-image-cache`), resolve to `.turbo/plans/<slug>.md`
-3. **Single file** — Glob `.turbo/plans/*.md`, excluding shell files (see shell detection below). If exactly one non-shell file exists, use it
-4. **Most recent** — If multiple non-shell files exist, use the most recently modified
+3. **Single file** — Glob `.turbo/plans/*.md`, excluding draft shells (see shell detection below). If exactly one implementable file exists, use it
+4. **Most recent** — If multiple implementable files exist, use the most recently modified
 5. **Legacy fallback** — If `.turbo/plans/` does not exist but `.turbo/plan.md` exists, use it
-6. **Nothing found** — If no plan file exists, tell the user to run `/turboplan` (for a new task) or `/pick-next-prompt` (for an existing prompt plan) and stop
+6. **Nothing found** — If no plan file exists, tell the user to run `/turboplan` (for a new task) or `/pick-next-plan-shell` (for existing shells) and stop
 
 If multiple files exist and the most-recent choice is non-obvious (e.g., several plans were modified within the same minute), use `AskUserQuestion` to let the user pick from the candidates.
 
 ### Shell Detection
 
-A file is a **shell** when it contains `## Produces`, `## Consumes`, and `## Covers Spec Requirements` AND does NOT contain `## Pattern Survey`.
+Read the file's YAML frontmatter. A file is a **draft shell** when it has `type: shell` and `status: draft`.
 
-If the resolved file is a shell, halt with:
+If the resolved file is a draft shell, halt with:
 
-> `<path>` is a shell plan from `/draft-prompt-plan`. Shells need to be filled in before implementation. Run `/pick-next-prompt` to advance the prompt plan.
+> `<path>` is a draft shell that needs expansion first. Run `/pick-next-plan-shell` to expand and implement it.
 
 State the resolved plan path before continuing, then read the file.
 
@@ -88,6 +88,8 @@ If a step cannot be completed (blocked by a dependency, unclear requirement, or 
 ## Step 5: Run `/finalize` Skill
 
 After all Implementation Steps and the Verification section are complete, run the `/finalize` skill. `/finalize` runs polish, changelog, self-improvement, commit, and PR.
+
+After `/finalize` completes, if the plan file has YAML frontmatter with a `status` field, update it to `status: done`. This closes the loop for `/pick-next-plan-shell`'s dependency resolution.
 
 ## Rules
 

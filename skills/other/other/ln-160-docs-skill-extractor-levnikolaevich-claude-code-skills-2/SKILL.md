@@ -1,6 +1,6 @@
 ---
 name: ln-160-docs-skill-extractor
-description: "Extracts procedural content from project docs into .claude/commands skills. Use when docs contain deploy, test, or troubleshoot procedures."
+description: "Extracts procedural content from project docs into slash commands. Use when docs contain deploy, test, or troubleshoot procedures."
 license: MIT
 ---
 
@@ -12,7 +12,7 @@ license: MIT
 **Category:** 1XX Documentation Pipeline
 **Workers:** ln-161-skill-creator, ln-162-skill-reviewer
 
-Scans project documentation, identifies procedural content, and extracts it into executable `.claude/commands/*.md` files. Declarative documentation stays in markdown; this skill only routes procedural sections into command form.
+Scans project documentation, identifies procedural content, and extracts it into executable slash command files under `.claude/commands/*.md`. Declarative documentation stays in markdown; this skill only routes procedural sections into command form.
 
 ---
 

@@ -9,51 +9,76 @@ ICE scoring with integrated confidence meter.
 
 ## Workflow
 
-1. **List items to score** (opportunities, solutions, or features).
+ICE scoring is applied to **OST solution leaves**. Each leaf must have a Four Risks assessment (Torres Product Trio) before it can be scored — the risks are the inputs, ICE is the output.
 
-2. **For each item, score three dimensions (1-10)**:
+### Step 1: Verify Four Risks exist
 
-   **Impact**: How much will this move the target metric?
-   - 1-3: Marginal improvement. Nice to have.
-   - 4-6: Meaningful improvement. Moves the needle.
-   - 7-10: Transformative. Changes the game.
-   - Evidence: What data supports this impact estimate?
+For each solution leaf in `canvas/opportunities.yml`, check that `four_risks` has been assessed:
+- **Value** (product lens): Do users want/need this?
+- **Usability** (design lens): Can users figure it out?
+- **Feasibility** (engineering lens): Can we build it within constraints?
+- **Viability** (cross-cutting): Does it align with business/legal/ethical constraints?
 
-   **Confidence**: How sure are we about the impact estimate?
-   - 1-3: Gut feel. No data. Assumption.
-   - 4-6: Some evidence. Indirect signals. Analogous examples.
-   - 7-10: Strong evidence. Direct user research. Quantitative data.
-   - Evidence: What specific data points back this confidence?
+If any risk dimension is missing, assess it first. Each dimension must have its own evidence — a single combined statement fails (Torres Product Trio rule).
 
-   **Ease**: How easy is this to implement and ship?
-   - 1-3: Major effort. Multiple sprints. New capabilities needed.
-   - 4-6: Moderate effort. Known patterns. Some complexity.
-   - 7-10: Quick win. Existing patterns. Low risk.
-   - Evidence: What technical assessment supports this?
+### Step 2: Derive ICE from the Four Risks
 
-3. **Calculate ICE score**: Impact x Confidence x Ease
+For each solution, score three dimensions (1-10):
 
-4. **Rank items** by ICE score.
+**Impact** — derived from value + usability + viability risks:
+- What does the value risk assessment say about user demand?
+- What does the usability assessment say about adoption likelihood?
+- What does the viability assessment say about business alignment?
+- 1-3: Low value evidence, high usability risk, or poor viability fit
+- 4-6: Moderate value evidence, some usability unknowns
+- 7-10: Strong value evidence, low usability risk, clear viability
 
-5. **Apply bias check**: Are high-scoring items benefiting from availability bias, IKEA effect, or anchoring?
+**Confidence** — how well-tested are the risk assessments (Gilad's meter)?
+- 1-3: Risk assessments based on gut feel or desk research
+- 4-6: Some direct evidence (interviews, analogues, small tests)
+- 7-10: Strong evidence (user tests, prototypes, data). Requires test-validated evidence.
 
-6. **Output**:
-   ```
-   | Item | Impact | Confidence | Ease | ICE | Top Evidence |
-   |------|--------|-----------|------|-----|-------------|
-   | ...  | X (why) | X (why) | X (why) | XXX | [source] |
-   ```
+**Ease** — derived from feasibility risk:
+- What does the engineering assessment say about complexity?
+- What dependencies, unknowns, or technical spikes were identified?
+- 1-3: High feasibility risk. Major unknowns, new capabilities needed.
+- 4-6: Moderate feasibility risk. Known patterns, some complexity.
+- 7-10: Low feasibility risk. Quick win, existing patterns.
+
+### Step 3: Calculate and rank
+
+ICE = Impact x Confidence x Ease. Rank solution leaves by ICE score.
+
+### Step 4: Identify riskiest assumptions
+
+For the top-ranked solutions, extract the **highest-risk assumptions** from the Four Risks assessment — these are what `/assumption-test` should target first. Prioritize assumptions where importance is high but evidence is low.
+
+### Step 5: Bias check
+
+Are high-scoring items benefiting from availability bias, IKEA effect, or anchoring? Review for bias after scoring, before acting.
+
+### Output
+
+```
+| Solution | Value | Usability | Feasibility | Viability | I | C | E | ICE | Riskiest Assumption |
+|----------|-------|-----------|-------------|-----------|---|---|---|-----|---------------------|
+| ...      | risk  | risk      | risk        | risk      | X | X | X | XXX | [what to test]      |
+```
 
 ## Rules
-- Every score must have a brief justification.
-- Confidence of 7+ requires direct evidence (not analogy or assumption).
-- If all items score similarly, the scoring criteria need refinement.
+- Every ICE score must trace back to a Four Risks assessment — no scoring without risk evaluation first.
+- Each risk dimension must have separate evidence (Product Trio rule).
+- Confidence of 7+ requires test-validated evidence, not analogy or assumption.
+- If all items score similarly, the risk assessments need more depth.
 - Review for bias after scoring, before acting.
 
 ## Canvas Output
-Update `canvas/opportunities.yml` with solution ICE scores.
+Update `canvas/opportunities.yml` — write `four_risks` and `ice_score` per solution leaf.
 Update `canvas/gist.yml` with idea ICE scores and confidence levels.
 
 ## Theory Citations
 - Gilad: Evidence-Guided (confidence-backed prioritization)
+- Torres: Continuous Discovery Habits (OST leaves as unit of evaluation)
+- Torres: Product Trio (three perspectives feeding risk assessment)
+- Cagan: Inspired (Four Risks as structured evaluation)
 - Kahneman: Thinking, Fast and Slow (bias in estimation)

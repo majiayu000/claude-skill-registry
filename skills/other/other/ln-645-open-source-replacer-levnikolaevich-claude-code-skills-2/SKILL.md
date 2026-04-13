@@ -330,7 +330,7 @@ Severity mapping:
 ## Reference Files
 
 - **Scoring algorithm:** `shared/references/audit_scoring.md`
-- **MANDATORY READ:** `shared/references/research_tool_fallback.md`
+- **MANDATORY READ:** Load `shared/references/research_tool_fallback.md`
 
 ---
 **Version:** 1.0.0

@@ -19,6 +19,31 @@ Progress a diamond through phases with full theory gate validation. At delivery 
      d. Record Pass / Fail / Insufficient Evidence.
      e. If Fail: document what is missing, recommend the skill to run, and do NOT proceed.
 
+   **CRITICAL — Perspective conflict check (do this BEFORE evaluating any other gate)**:
+   Before checking any gate status, read `canvas/opportunities.yml` and inspect the Four Risks risk LEVELS for the active solution. Do NOT rely on `theory_gates_status.four_risks` in active.yml — that only records whether risks are documented, not whether they conflict. You must read the actual `value.level`, `usability.level`, `feasibility.level`, `viability.level` values.
+
+   If TWO OR MORE risk dimensions are rated HIGH, or if perspectives directly contradict each other (e.g., value says "build it" but usability/feasibility say "don't"), this is a **perspective conflict** — not a simple gate failure. STOP evaluating other gates and jump to step 2b immediately. This takes priority over all other gate checks.
+
+2b. **Resolve perspective conflict** (if detected in step 2):
+   Do NOT continue to steps 3-6. A perspective conflict must be resolved before any other gate evaluation matters. Follow this procedure:
+
+   1. **Name the conflict explicitly** in the decision log: "Perspective conflict: [type]" — use the vocabulary from `engine/perspective-resolution.md` (value-vs-feasibility, usability-vs-feasibility, value-vs-viability, usability-vs-viability, three-way).
+   2. **Classify the conflict type** per the resolution framework.
+   3. **State each perspective's position**:
+      - Product perspective: what does the value evidence say?
+      - Design perspective: what does the usability evidence say?
+      - Engineering perspective: what does the feasibility evidence say?
+   4. **Apply the resolution methods in order of preference**:
+      - Constraint-based: Can all three perspectives be satisfied within acceptable thresholds?
+      - Phased: Can we deliver in stages? (Phase 1 = MVP addressing highest risk, Phase 2 = polish)
+      - Evidence-based: Can we test the disputed dimension? (Run `/assumption-test` on the riskiest assumption)
+      - Scope reduction: Can we remove features until all perspectives align?
+   5. **Log the resolution** in decision-log.md with: the conflict type, each perspective's position, the resolution method chosen, and why.
+   6. **Block progression**: Report "Progression blocked: perspective conflict ([type]). Recommended resolution: [method]."
+   7. Do NOT proceed to step 3 or beyond. The conflict must be resolved first.
+
+   The perspective resolution framework (`engine/perspective-resolution.md`) is the authoritative reference. The anti-pattern to avoid is Perspective Suppression — resolving a conflict by ignoring one perspective.
+
 3. **Calculate confidence**:
    - Apply scoring rules from confidence-thresholds.yml.
    - Look up `project_type` and `dogfood` from `diamonds/active.yml`.
@@ -36,6 +61,13 @@ Progress a diamond through phases with full theory gate validation. At delivery 
 5. **Run bias check**: Execute bias-check for the current stage.
 
 6. **Run corrections check**: Review corrections.md for relevant entries.
+
+6b. **Check trio perspective coverage** (Torres Product Trio):
+   - For each gate evaluated in step 2, verify all three perspectives (product/design/engineering) are documented.
+   - Each perspective must have evidence or an explicit "N/A: [reason]" justification.
+   - Missing perspectives without justification = **GATE FAILED** (Perspective Skip anti-pattern).
+   - See `engine/theory-gates.md` §Trio Perspective Requirement for per-scale guidance.
+   - Note: Perspective CONFLICTS (2+ HIGH risk dimensions) are caught in step 2b, not here. This step checks for missing perspectives, not conflicting ones.
 
 7. **If transition is Deliver -> Complete: RUN EXECUTABLE DoD CHECKLIST** (see below)
 
@@ -249,6 +281,7 @@ Use when the diamond cannot be rescued via pivot or park. Example: the opportuni
    - Add `killed_at`, `killed_reason`, `learnings` fields
 5. Do NOT delete canvas artifacts associated with the killed diamond — they are learning for future work
 6. Capture the learning in `memory/patterns.md` and `memory/corrections.md` as appropriate
+7. **Record cycle in `canvas/cycle-history.yml`**: Killed diamonds are terminal states. Record predicted ICE/effort, actual outcome as "killed", reason, and phase at kill. This feeds adaptive thresholds and pattern detection.
 
 ### Dogfood Mode Modifier (from canvas-guidance.yml)
 

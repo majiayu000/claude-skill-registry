@@ -20,6 +20,7 @@ Self-correcting implementation loop from the n-trax pattern.
 
 **Step 2: Validate**
 - Software: Run tests, linter, type checker, security scan, accessibility checks (if UI).
+  - **Security validation (OWASP)**: Check input validation, output encoding, parameterized queries, no hardcoded secrets, authentication/authorization patterns, dependency vulnerabilities. Reference OWASP Top 10 for each check.
 - Content: Review against learning objectives/editorial standards, check accessibility (captions, alt text), fact-check claims.
 - AI tool: Run eval test cases, red-team testing, bias assessment.
 - Service: Walk through the service blueprint end-to-end, verify documentation completeness.

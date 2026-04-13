@@ -1,8 +1,8 @@
 {
   "category": "development",
   "code": "dev",
-  "count": 19697,
-  "updated_at": "2026-04-12T15:01:53.111017Z",
+  "count": 19698,
+  "updated_at": "2026-04-13T02:08:32.688827Z",
   "skills": [
     {
       "name": "fix",
@@ -103450,6 +103450,24 @@
       "stars": 0,
       "install": "local/development/chembl-database",
       "source": "github.com/K-Dense-AI/claude-scientific-skills"
+    },
+    {
+      "name": "pagerunner-skill",
+      "description": "Real Chrome browser automation for AI agents with authenticated sessions and PII anonymization.",
+      "repo": "Enreign/pagerunner-skill",
+      "path": "SKILL.md",
+      "branch": "main",
+      "category": "development",
+      "tags": [
+        "browser",
+        "automation",
+        "mcp",
+        "chrome",
+        "security"
+      ],
+      "stars": 0,
+      "install": "Enreign/pagerunner-skill/SKILL.md",
+      "source": "Community Skills"
     },
     {
       "name": "ousterhout-principles",

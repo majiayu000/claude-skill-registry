@@ -1,6 +1,6 @@
 ---
 name: craft-content-modeling
-description: "Craft CMS 5 content modeling — sections, entry types, fields, Matrix, relations, project config, and content architecture strategy. Covers everything editors and developers need to structure content in Craft. Triggers on: section types (single, channel, structure), entry types, field types, field layout, Matrix configuration, nested entries, relatedTo, eager loading, .with(), .eagerly(), categories, tags, globals, global sets, preloadSingles, propagation, multi-site content, URI format, project config, YAML, content architecture, content strategy, taxonomy, asset volumes, filesystems, image transforms, user groups, permissions, entries-as-taxonomy, entrify. Always use when planning content architecture, creating sections/fields, configuring Matrix, setting up relations, or making content modeling decisions."
+description: "Craft CMS 5 content modeling — sections, entry types, fields, Matrix, relations, project config, and content architecture strategy. Covers everything editors and developers need to structure content in Craft. Triggers on: section types (single, channel, structure), entry types, field types, field layout, Matrix configuration, nested entries, relatedTo, eager loading, .with(), .eagerly(), categories, tags, globals, global sets, preloadSingles, propagation, multi-site content, URI format, project config, YAML, content architecture, content strategy, taxonomy, asset volumes, filesystems, image transforms, user groups, permissions, entries-as-taxonomy, entrify, entrification, CKEditor vs Matrix, CMS editions. Always use when planning content architecture, creating sections/fields, configuring Matrix, setting up relations, or making content modeling decisions."
 ---
 
 # Craft CMS 5 — Content Modeling
@@ -10,8 +10,15 @@ relations, asset management, and strategic patterns for real projects.
 
 This skill covers **content architecture** — what goes in the CP, how it's
 organized, and how templates access it. For extending Craft with PHP
-(plugins, modules, custom element types), see the `craftcms` skill. For Twig
-template patterns, see `craft-site` and `craft-twig-guidelines`.
+(plugins, modules, custom element types), see the `craftcms` skill.
+
+## Companion Skills — Always Load Together
+
+When this skill triggers, also load:
+
+- **`craft-site`** — Template architecture, component patterns, routing. Required when content decisions affect how templates render data.
+- **`craft-twig-guidelines`** — Twig coding standards. Required when writing any Twig examples or template code alongside content modeling.
+- **`ddev`** — All commands run through DDEV. Required for running project config commands, Craft CLI, and content migrations.
 
 ## Documentation
 
@@ -24,19 +31,30 @@ template patterns, see `craft-site` and `craft-twig-guidelines`.
 - Eager loading: https://craftcms.com/docs/5.x/development/eager-loading.html
 - Project config: https://craftcms.com/docs/5.x/system/project-config.html
 
-Use `web_fetch` on specific doc pages when a reference file doesn't cover enough detail.
+Use `WebFetch` on specific doc pages when a reference file doesn't cover enough detail.
 
 ## The Craft 5 Mental Model
 
-**Everything is an entry.** Entry types are global (shared across sections and
-Matrix fields). Fields come from a global pool. Categories, tags, and globals
-are being phased out — use entries instead.
+**Everything is becoming an entry.** Entry types are global (shared across sections and
+Matrix fields). Fields come from a global pool. This is the "entrification" of Craft — categories, tags, and globals are being unified into entries over a three-version arc:
+
+- **Craft 4.4** — `entrify` CLI commands added to convert categories, tags, and globals to entries
+- **Craft 5** — Creating new category groups, tag groups, or global sets is no longer possible in the CP. Existing ones continue to work. A unified "Content" section replaces the fragmented entries view. Custom entry index pages (5.9.0) solve the sidebar organization concern.
+- **Craft 6** — Categories, tags, and global sets will be removed entirely
+
+For **new projects**, always use entries: Structure sections for hierarchical taxonomy, Channel sections for flat taxonomy, Singles for site-wide settings. For **existing projects**, migrate at your own pace using the `entrify` commands.
 
 Three decisions define your content architecture:
 
 1. **Which section type** organizes the content (Single, Channel, Structure)
 2. **Which entry types** define its shape (global, reusable across contexts)
-3. **Which relation strategy** connects content together (Entries fields, Matrix, or both)
+3. **Which relation strategy** connects content together (Entries fields, Matrix, CKEditor nested entries, or a combination)
+
+## CMS Editions
+
+Craft CMS has four editions (Solo, Team, Pro, Enterprise) that affect content modeling. The key distinction: if any section needs per-group edit/view restrictions, you need **Pro or Enterprise** (user groups and permissions are Pro+ only). See `references/users-and-permissions.md` for the full editions table and permissions architecture.
+
+Choose the edition before modeling — it determines whether you can scope content access by user group, which affects section and field architecture.
 
 ## Section Type Decision
 
@@ -48,6 +66,15 @@ Three decisions define your content architecture:
 | Hierarchical pages (docs, services) | **Structure** | `{parent.uri}/{slug}` |
 | Taxonomy (topics, categories) | **Structure** (replaces categories) | `topics/{slug}` |
 | Flat tags | **Channel** (replaces tags) | — |
+
+### Section Properties
+
+Beyond the type, sections have settings that matter for content architecture:
+
+- **`maxAuthors`** (default 1) — allows multiple authors per entry (new in 5.0.0). Set higher for collaborative content.
+- **`enableVersioning`** (default true) — version history for entries
+- **`defaultPlacement`** — `'beginning'` or `'end'` for new entries in structures
+- **`previewTargets`** — array of `{label, urlFormat}` objects defining where entries can be previewed. Default: primary entry page. Add custom targets for headless frontends, staging URLs, or PDF previews.
 
 ### Singles replace globals
 
@@ -80,27 +107,142 @@ sections and Matrix fields. One entry type can serve multiple contexts.
 Key implications:
 - Changing an entry type's field layout affects **every** section and Matrix field using it
 - Fields come from the global pool — same field definition reused everywhere
-- Local name/handle overrides per context available (5.6.0+)
+- Per-context name/handle/description overrides available (5.6.0+) — useful when the same entry type serves different purposes in different sections
 - The global pool demands careful field naming — use specific handles
 
-### Reserved handles (will collide with native attributes)
+### Entry Type Visual Identity (Craft 5 new)
 
-`title`, `slug`, `id`, `uid`, `dateCreated`, `dateUpdated`, `status`, `url`,
-`uri`, `enabled`, `archived`, `siteId`, `level`, `lft`, `rgt`, `root`,
-`postDate`, `expiryDate`
+Entry types have visual properties that improve the editorial experience:
+
+- **`icon`** — custom icon identifier, shown in entry type selectors and Matrix "+" menus
+- **`color`** — one of 20 options (red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose, white, gray, black)
+- **`description`** (5.8.0) — help text explaining what this entry type is for
+- **`group`** (5.8.0) — collapsible grouping in section/Matrix entry type assignments
+- **`uiLabelFormat`** (5.9.0) — customize the label shown in element indexes (default `'{title}'`)
+- **`hasTitleField`** / **`titleFormat`** — disable the title field and auto-generate from other fields
+- **`showSlugField`** (5.0.0) / **`showStatusField`** (4.5.0) — hide slug or status from editors
+- **`allowLineBreaksInTitles`** (5.9.0) — for long-form titles
+
+These settings are configured in Settings → Entry Types and affect all contexts where the entry type is used.
+
+### Reserved handles — check every proposed field handle against this list
+
+Craft has **83+ reserved handles** across all element types via `Field::RESERVED_HANDLES`. Validation is case-insensitive. Using any of these as a custom field handle will cause a validation error or silent template collision where the native attribute shadows the custom field.
+
+**Before proposing any field handle in a content model, check it against the lists below.** When a user asks for a field that matches a native attribute name, always use a domain-specific synonym. For example: user says "I need a title field" — the entry already has a native `title`, so use `heading`, `headline`, or `pageTitle` depending on context.
+
+**Most commonly collided (the ones you'll actually try to use):**
+
+| Reserved | Use Instead | Why |
+|----------|-------------|-----|
+| `title` | `heading`, `headline`, `label`, `pageTitle` | Native element title |
+| `slug` | `urlSlug`, `handle` | Native URL slug |
+| `status` | `state`, `phase`, `condition` | Native element status |
+| `url` | `externalUrl`, `targetUrl`, `websiteUrl` | Native element URL |
+| `link` | `targetLink`, `ctaLink`, `primaryLink` | Native `getLink()` method |
+| `icon` | `entryIcon`, `menuIcon`, `featureIcon` | Native element icon (5.0.0) |
+| `parent` | `parentEntry`, `parentItem`, `belongsTo` | Native structure parent |
+| `children` | `childEntries`, `subItems`, `nestedItems` | Native structure children |
+| `owner` | `entryOwner`, `ownerElement` | Native nested entry owner |
+| `site` | `location`, `branch`, `region` | Native site object |
+| `level` | `depth`, `tier`, `nestingLevel` | Native structure level |
+| `ancestors` | `parentChain`, `breadcrumbEntries` | Native structure ancestors |
+| `siblings` | `peerEntries`, `relatedSiblings` | Native structure siblings |
+| `enabled` | `isActive`, `isPublished`, `isVisible` | Native enabled/disabled state |
+| `language` | `locale`, `contentLanguage` | Native site language |
+| `localized` | `translations`, `localizedVersions` | Native localized entries query |
+| `next` / `prev` | `nextEntry` / `prevEntry` | Native structure navigation |
+| `ref` | `reference`, `referenceCode` | Native reference tag |
+| `type` | `entryType`, `category`, `variant` | Native entry type |
+| `author` / `authors` | `writer`, `creator`, `contributor` | Native entry author(s) |
+| `postDate` | `publishDate`, `releaseDate`, `goLiveDate` | Native entry post date |
+
+**Full list of reserved handles shared across ALL element types** (from `Field::RESERVED_HANDLES`):
+
+`ancestors`, `archived`, `attributes`, `behaviors`, `canonical`, `children`, `contentTable`, `dateCreated`, `dateDeleted`, `dateLastMerged`, `dateUpdated`, `descendants`, `draftId`, `enabled`, `enabledForSite`, `error`, `errors`, `fieldLayoutId`, `fieldValue`, `fieldValues`, `firstSave`, `icon`, `id`, `language`, `level`, `lft`, `link`, `localized`, `next`, `nextSibling`, `owner`, `parent`, `parents`, `prev`, `prevSibling`, `ref`, `revisionId`, `rgt`, `root`, `searchScore`, `siblings`, `site`, `siteId`, `siteSettingsId`, `slug`, `sortOrder`, `status`, `structureId`, `title`, `trashed`, `uid`, `uri`, `url`, `viewMode`
+
+**Additional per-element-type reserved handles:**
+
+| Element Type | Additional Reserved |
+|---|---|
+| **Entries** | `author`, `authorId`, `authorIds`, `authors`, `section`, `sectionId`, `type`, `postDate` |
+| **Assets** | `alt`, `extension`, `filename`, `folder`, `height`, `kind`, `size`, `volume`, `width` |
+| **Users** | `active`, `addresses`, `admin`, `affiliatedSiteId`, `email`, `firstName`, `friendlyName`, `fullName`, `groups`, `lastName`, `locked`, `name`, `password`, `pending`, `photo`, `suspended`, `username` |
+| **Categories** | `group` |
+| **Tags** | `group` |
+| **Addresses** | `address`, `countryCode`, `fullName`, `latLong`, `organization`, `organizationTaxId` |
+
+**Also globally reserved** (from `HandleValidator::$baseReservedWords`, applies to ALL handles): `attribute`, `attributeLabels`, `attributeNames`, `attributes`, `dateCreated`, `dateUpdated`, `errors`, `false`, `fields`, `handle`, `id`, `n`, `name`, `no`, `rules`, `this`, `true`, `uid`, `y`, `yes`
+
+## Field Instances — Reuse Over Duplication
+
+Fields are defined once globally, then **instanced** into field layouts. Each instance can override four properties without affecting the global definition:
+
+- **Label** — different display name per context
+- **Handle** — different template handle per context (5.0.0+)
+- **Instructions** — context-specific help text
+- **Required** — required in one layout, optional in another
+
+This means a single `heroImage` Assets field can be placed in a Blog Post, a Service Page, and a Project entry type — each with different labels ("Hero Image", "Banner", "Cover Photo") and different required settings. The field definition, type, and settings are shared.
+
+**The rule: reuse field definitions via instances. Only create a new field when the type or settings differ** (e.g., different allowed volumes, different source restrictions, different character limits). Don't create `blogHeroImage`, `serviceHeroImage`, `projectHeroImage` — create one `heroImage` and instance it.
+
+Multi-instance fields (most field types) can even appear **multiple times in the same layout** with different handles. Each instance stores its data independently, keyed by the layout element UID in the JSON content column.
+
+## Entrification — Migrating Legacy Content
+
+### CLI Commands
+
+```bash
+ddev craft entrify/categories <categoryGroupHandle>   # → Structure section
+ddev craft entrify/tags <tagGroupHandle>               # → Channel section
+ddev craft entrify/global-set <globalSetHandle>        # → Single section
+```
+
+All three accept `--section` and `--entry-type` to target an existing section/entry type instead of creating new ones. `entrify/categories` and `entrify/tags` also accept `--author`.
+
+As of 5.9.0, these commands are interactive — the handle argument is optional.
+
+### What the commands do
+
+- Convert the element type to entries
+- Migrate all content and field data
+- Convert Categories/Tags fields to Entries fields
+- Preserve existing relations
+- Assign newly created sections to appropriate entry index pages
+
+### Entries field for hierarchical selection
+
+When replacing a Categories field with an Entries field, enable **Maintain Hierarchy** on the Entries field. This auto-selects ancestors when a nested entry is chosen — replicating the category field behavior.
+
+### Tags replacement caveat
+
+For flat taxonomies where editors created terms on-the-fly, the on-the-fly creation UX is not yet available for Entries fields. This is the one area where the legacy Tags field still has a UX advantage. Use a Channel section and accept the two-step workflow (create entry separately, then relate it).
+
+## CKEditor vs Matrix vs Content Block
+
+Three tools for structured content within an entry — choose based on editing experience:
+
+- **Matrix** — reorderable blocks, page builders, data grids, media galleries. Multiple view modes (blocks, cards, cards-grid, index).
+- **CKEditor** with nested entries — rich text with occasional structured content inline (image blocks, code blocks, CTAs). Natural writing flow.
+- **Content Block** (5.8.0) — single non-repeatable nested entry for reusable field groups (SEO metadata, banner config).
+
+For the full decision table, nested entry type patterns, and the CKEditor chunks rendering pattern, read `references/content-patterns.md`.
 
 ## Common Pitfalls
 
 - **Over-using Matrix** — if content needs its own URL, independent querying, or permissions, it should be a separate section with an Entries relation field, not a Matrix block.
-- **Vague field handles** — `image`, `text`, `link` collide fast in the global pool. Use `blogFeaturedImage`, `serviceDescription`, `ctaLink`.
+- **Vague or reserved field handles** — `image`, `text`, `link` are too generic (and `link` is actually reserved). For every field handle in a content model, follow this check: (1) is the handle in the reserved list? If yes, use a synonym from the table. (2) Is the handle too generic for the global field pool? If yes, add domain context: `featuredImage`, `bodyContent`, `primaryLink`. (3) Don't over-specify — `blogFeaturedImage` creates a new field when you could instance `featuredImage` with a label override.
 - **Not planning multi-site from the start** — propagation method, field translation methods, and site settings must be configured before content exists. Changing propagation later resaves all entries.
-- **Using categories/tags in new projects** — they're deprecated. Use Structure sections (hierarchical taxonomy) and Channel sections (flat taxonomy) with Entries fields.
+- **Using categories/tags/globals in new projects** — new creation is disabled in Craft 5 CP and they will be removed in Craft 6. Use entries instead.
 - **Forgetting `preloadSingles`** — without it, singles aren't available as global variables and you need explicit queries.
 - **Matrix for everything** — 15+ entry types in one Matrix field is a red flag. Deeply nested Matrix hits `max_input_vars` limits and degrades CP performance.
 - **Not using `.eagerly()`** — every relational field access inside a loop should use `.eagerly()` to prevent N+1 queries.
-- **Editing project config YAML manually** — let Craft manage `config/project/`. Use `php craft project-config/rebuild` to regenerate from DB if needed.
+- **Editing project config YAML manually** — let Craft manage `config/project/`. Use `ddev craft project-config/rebuild` to regenerate from DB if needed.
 - **Using database IDs in URI formats** — IDs differ across environments. Use `{slug}`, `{canonicalUid}`, or custom fields.
 - **Not setting `allowAdminChanges => false` in production** — without this, production schema changes won't sync back to dev.
+- **Ignoring entry type visual identity** — editors navigate by icon, color, and description. Investing in these settings makes the CP usable as the content model grows.
+- **Not planning for CMS edition** — if you need per-group content permissions, you need Pro or Enterprise. This affects section and field architecture.
 
 ## Reference Files
 
@@ -112,13 +254,15 @@ Read the relevant reference file(s) for your task.
 - "Set up relatedTo queries" → read `relations-and-eager-loading.md`
 - "Configure Matrix with nested entries" → read `field-types.md` (Matrix section)
 - "Plan a multi-site content model" → read `content-patterns.md` + propagation in SKILL.md
+- "Set up users, groups, and permissions" → read `users-and-permissions.md`
 - "Understand project config workflow" → this SKILL.md covers the essentials
 
 | Reference | Scope |
 |-----------|-------|
-| `references/field-types.md` | All 26 built-in field types: settings, Twig access patterns, query syntax, gotchas. Matrix configuration, view modes, nesting. |
+| `references/field-types.md` | All built-in field types: settings, Twig access patterns, query syntax, gotchas. Matrix configuration, view modes, nesting. |
 | `references/relations-and-eager-loading.md` | relatedTo() shapes (4 forms), .with() eager loading, .eagerly() lazy eager loading, nested eager loading, native eager-loadable attributes. |
-| `references/content-patterns.md` | Strategic patterns for blog, portfolio, multi-site corporate, e-commerce. Section/field/relation architecture per pattern. Categories-to-entries migration. |
+| `references/content-patterns.md` | Strategic patterns for blog, portfolio, multi-site corporate. Section/field/relation architecture per pattern. Entrification migration. CKEditor vs Matrix decisions. |
+| `references/users-and-permissions.md` | Users, user groups, CMS editions, addresses, permissions architecture, field layout UI elements. |
 
 ## Propagation Methods (Multi-Site)
 
@@ -168,11 +312,92 @@ plugins, permissions) are stored as YAML in `config/project/`.
 - Use UIDs (not IDs) — they're stable across environments
 - After resolving Git merge conflicts in YAML: `ddev craft project-config/touch` then `ddev craft project-config/apply`
 - Use `$ENV_VAR` syntax in YAML for environment-specific values
+- **After every project config change** (whether editing `project.yaml` or any subfile in `config/project/`): run `ddev craft project-config/touch` to update the `dateModified` timestamp, then `ddev craft up` to apply. The CP auto-updates `dateModified` when changes are saved through the UI, but any change made outside the CP (Git pull, manual edit, merge conflict resolution, script) requires `project-config/touch` to signal that config has changed. Without it, `craft up` on other environments won't detect the change. This is a hard rule — never skip it.
 
-## Asset Volumes and Transforms
+## How Craft Stores Content
 
-Volumes define content organization. Filesystems define storage (local, S3,
-Google Cloud, Azure). Multiple volumes can share one filesystem.
+Understanding the storage architecture helps make better content modeling decisions.
+
+### The Five-Table Model
+
+Every element writes to multiple tables on save:
+
+1. **`elements`** — Identity registry. Stores ID, element type, enabled/archived/soft-deleted flags, timestamps. Does NOT store content.
+2. **`elements_sites`** — Per-site state. Stores URI, slug, per-site enabled status, and the **`content` JSON column** where all custom field values live.
+3. **Element-type table** (`entries`, `assets`, `users`, etc.) — Type-specific attributes. For entries: section, type, author, postDate, expiryDate.
+4. **`relations`** — Normalized source-to-target connections for relational fields. Enables bidirectional `relatedTo()` queries.
+5. **`searchindex`** — Denormalized text projection for full-text search. Rebuildable from canonical data.
+
+### Field Values Are JSON Keyed by Instance UID
+
+Custom field values are stored in `elements_sites.content` as JSON, keyed by the **field layout element UID** (not the field handle). This is why field instances work — the same field definition can appear multiple times in a layout with different handles, and each stores its data independently under its own instance UID.
+
+This matters when:
+- Debugging content in the database — look up the field layout element UID, not the handle
+- Writing migrations that move field data — reference UIDs
+- Understanding why renaming a field handle doesn't require a migration
+
+### Relations: Two Storage Layers
+
+Relational fields store data in two places:
+- **JSON** (`elements_sites.content`) — records which elements were selected and their order per field instance
+- **`relations` table** — normalized source-to-target connections that power `relatedTo()` queries in both directions
+
+This dual storage is why `relatedTo()` queries are fast (indexed `relations` table) while the field value on an element reflects the authoring context (JSON).
+
+### Nested Entries (Matrix) Are Full Elements
+
+Matrix entries are not stored in a separate content table. They are first-class elements with their own rows in `elements`, `elements_sites`, and `entries`. Parent linkage is in `elements_owners`. This means nested entries support relations, drafts, permissions, and search indexing — but also explains why deeply nested Matrix fields are expensive (many rows written per save, `max_input_vars` limits on large forms).
+
+### Structures Use Nested Sets
+
+Structure sections store hierarchy in `structureelements` using a **nested set model** (left/right boundary values). This makes ancestry and descendant queries very fast without recursion, but reordering large structures requires recalculating boundary values across many rows.
+
+### Drafts Reuse Unchanged Nested Entries
+
+When a draft is created, unchanged nested entries are not duplicated — they are reused from the canonical element. Only when a nested entry is modified in the draft does it get its own derivative element row. This minimizes storage overhead but means draft creation time scales with the number of modified blocks, not total blocks.
+
+## Asset Volumes, Filesystems, and Transforms
+
+### The Three-Layer Model
+
+1. **Filesystem** — the storage backend (local disk, S3, Google Cloud, Azure). Defined once with a handle, base URL, and settings. Plugins add cloud filesystems.
+2. **Volume** — the content layer. References a filesystem, adds a field layout for asset metadata, and controls permissions. This is what editors see.
+3. **Image Transform** — the processing layer. Named transforms (defined in Settings) or ad-hoc transforms (defined in templates). Can be stored on a separate filesystem from originals.
+
+### Filesystem Architecture Decisions
+
+| Approach | When to use |
+|----------|-------------|
+| **One filesystem, one volume** | Simple projects. Local dev with a single uploads directory. |
+| **One filesystem, multiple volumes** | When you want separate content buckets (Images, Documents, Videos) but all stored in the same S3 bucket. Each volume uses a unique `subpath` (e.g., `images/`, `documents/`). |
+| **Multiple filesystems, multiple volumes** | When storage requirements differ — images on a CDN-optimized filesystem, documents on standard storage, private files on a non-public filesystem. |
+| **Separate transform filesystem** | When you want transforms on a CDN or different storage tier. Set `transformFs` on the volume — originals stay on the primary filesystem. |
+
+**Subpath rules:** When volumes share a filesystem, each must have a unique first-level subpath directory. If Volume A uses `images/`, Volume B cannot use `images/` or `images/photos/` — but `documents/` is fine.
+
+**Environment variables:** Filesystem handles and subpaths support `$ENV_VAR` syntax via `App::parseEnv()`, so storage can differ between local/staging/production.
+
+### Volume Settings for Content Modeling
+
+Each volume has its own **field layout** — this is where you add custom metadata fields for assets. Common patterns:
+
+- **Alternative Text** (native field layout element) — always include for accessibility. Has its own translation method (`altTranslationMethod`) for multi-site.
+- **Title translation** — `titleTranslationMethod` controls whether asset titles differ per site (default: per site).
+- **Custom fields** — photographer credit, copyright notice, focal point, usage rights, expiry date.
+- **Reserved handles** on volumes: `alt`, `extension`, `filename`, `folder`, `height`, `kind`, `size`, `volume`, `width`.
+
+File type restrictions are set on the **Assets field** (per usage), not on the volume itself. The same volume can serve images in one field and documents in another.
+
+### Modeling Decisions
+
+| Question | Guidance |
+|----------|----------|
+| How many volumes? | One per logical content bucket. Separate images from documents from private files. |
+| How many filesystems? | One per storage requirement. Dev uses local, production uses S3 — same volume handle, different filesystem per environment. |
+| Should transforms use a separate filesystem? | Yes if you want transforms on a CDN or cheaper storage. Otherwise the primary filesystem works fine. |
+| Do volumes need different field layouts? | Yes — photos need credit/copyright fields, documents need version/category fields. |
+| How to handle multi-site asset metadata? | Set `altTranslationMethod` and `titleTranslationMethod` per volume. Most projects use "per site" for alt text (accessibility translations) and "not translatable" for filenames. |
 
 ### Image Transforms
 
@@ -188,5 +413,6 @@ Google Cloud, Azure). Multiple volumes can share one filesystem.
 {{ asset.getImg({ width: 300 }, ['1.5x', '2x', '3x']) }}
 ```
 
-Always add the **Alternative Text** field layout element to asset volumes for
-accessibility.
+Transform modes: `crop` (default), `fit`, `stretch`, `letterbox`. Formats: `jpg`, `png`, `webp`, `avif`. The `letterbox` mode supports a `fill` color (4.4.0+). `upscale` control (4.4.0+) prevents small images from being enlarged.
+
+**Named vs ad-hoc:** Use named transforms for consistent sizes reused across templates (hero, thumbnail, card). Use ad-hoc transforms for one-off sizes or when transforms need to be dynamic. Named transforms are stored in project config and sync across environments.

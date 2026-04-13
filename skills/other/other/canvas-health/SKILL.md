@@ -48,11 +48,37 @@ Audit the canvas knowledge base for quality, consistency, and completeness. The 
    - Canvas files that reference other canvas files (e.g., jobs-to-be-done.yml referencing opportunities.yml) -- verify the referenced file exists
    - Diamond references to canvas files -- verify they exist
 
-7. **Check for boilerplate content**:
+7. **Check evidence freshness** (evidence decay):
+   - Scan all `provenance` blocks across canvas files for `validated_at` or `captured_at` timestamps
+   - Compare against staleness thresholds from `engine/evidence-decay.md`:
+     - User needs/interviews: 90 days
+     - Competitive intelligence: 90 days
+     - Strategic assumptions: 180 days
+     - Technical feasibility: 120 days
+     - DORA/delivery metrics: 30 days
+   - Flag evidence past threshold as warning; past 3x threshold as critical
+   - Suggest refresh actions: "Evidence in [file] is [N] days old. Run `/user-interview` or `/log-evidence` to refresh."
+   - Note: corrections and patterns do NOT decay — process learnings are timeless
+
+8. **Check cross-reference integrity** (leaf lifecycle):
+   - Every GIST idea with `source_leaf_id` → verify that leaf exists in `opportunities.yml` (and not in `archived-solutions.yml` without the GIST being shelved)
+   - Every service entry with `gist_id` → verify that GIST idea exists
+   - Every threat model entry with `solution_id` → verify that solution exists
+   - Every go-to-market `feedback_loop` entry with `source_leaf_id` → verify leaf exists
+   - Flag broken references as warnings ("Zombie Solution" anti-pattern)
+
+9. **Check for boilerplate content**:
    - Flag canvas files where >50% of content matches the template defaults from canvas-guidance.yml
    - Flag files with placeholder text ("TBD", "TODO", "fill in later", "placeholder")
 
-8. **Generate health report**:
+10. **Log findings to decision-log.md** (MANDATORY):
+   - APPEND a `### Canvas Health Report` entry to `harness/decision-log.md`
+   - Include: overall status (HEALTHY/WARNINGS/CRITICAL), stale evidence found, refresh recommendations
+   - Use these words explicitly when applicable: "stale", "evidence", "refresh", "interview", "validate"
+   - Example: "Evidence in opportunities.yml is stale (183 days old, threshold 90). Refresh needed: run fresh interviews to validate opportunity assumptions."
+   - This log entry is essential for auditability and for downstream skills (e.g., `/diamond-progress`) to detect health issues
+
+11. **Generate health report**:
    - Summarize findings by severity: critical (required file missing), warning (stale, inconsistent), info (recommended file missing, meta block absent)
 
 ## Output Format

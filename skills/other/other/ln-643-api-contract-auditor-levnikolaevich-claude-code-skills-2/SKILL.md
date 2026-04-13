@@ -57,7 +57,7 @@ scan_root = scan_path IF domain_mode == "domain-aware" ELSE codebase_root
 
 ### Phase 2: Analyze Contracts (5 Rules)
 
-**MANDATORY READ:** Use detection_patterns.md for language-specific Grep patterns per rule.
+**MANDATORY READ:** Load `skills-catalog/ln-643-api-contract-auditor/references/detection_patterns.md` for language-specific Grep patterns per rule.
 
 | # | Rule | Severity | What to Check |
 |---|------|----------|---------------|

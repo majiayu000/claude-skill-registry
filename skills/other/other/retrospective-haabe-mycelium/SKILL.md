@@ -7,25 +7,75 @@ description: "Structured retrospective after completing a delivery increment or 
 
 Run after every completed delivery diamond or significant milestone. Source: Forsgren (learning culture).
 
-## Format
+## Workflow
 
-### 1. What Went Well?
+Run these steps IN ORDER. Do not skip any step. **Step 1 (cycle recording) MUST be completed FIRST — before any reflective analysis.**
+
+### Step 1. Record Cycle in `canvas/cycle-history.yml` AND Decision Log (MANDATORY — DO THIS FIRST)
+
+**This step is critical.** Without it, the learning metabolism has no data. You MUST do BOTH parts (5a and 5b).
+
+#### Step 5a. Write cycle record to `canvas/cycle-history.yml`
+
+Find the leaf_id and opportunity_id for the delivered solution (from `canvas/opportunities.yml` or `canvas/gist.yml`). Then write a cycle record:
+
+```yaml
+- cycle_id: cycle-NNN
+  leaf_id: "opp-XXX-sol-X"         # From opportunities.yml
+  opportunity_id: "opp-XXX"         # Parent opportunity
+  diamond_id: "d-XXX"               # From diamonds/active.yml
+  completed_at: "YYYY-MM-DDTHH:MM:SSZ"
+  outcome: shipped | partial | failed | discarded
+  predicted:
+    ice_score: {i: X, c: X, e: X, total: XXX}  # ICE at time of scoring
+    feasibility_risk: low | medium | high        # From four_risks
+    effort_estimate: "X days/weeks"              # Original estimate
+  actual:
+    effort: "X days/weeks"                       # How long it actually took
+    dora:                                        # From /dora-check or known metrics
+      deploy_frequency: "..."
+      lead_time: "..."
+      change_failure_rate: "..."
+      mttr: "..."
+  calibration:
+    ice_accuracy: "predicted XXX vs actual [outcome description]"
+    effort_accuracy: "predicted X days vs actual X days (delta: +/-X)"
+    risk_accuracy: "feasibility was [predicted] — actual was [description]"
+  learnings: "Key learning from this cycle"
+```
+
+Update `calibration_summary.total_cycles` count. If total_cycles reaches a multiple of 5, prompt: "5 cycles since last review. Run `/framework-health` to check calibration?"
+
+#### Step 5b. Log cycle calibration summary in decision-log.md
+
+Write a decision log entry titled "Cycle calibration record" that includes ALL of the following (use these exact words):
+
+- **cycle** number and diamond ID
+- **predicted** ICE score and effort estimate (from the original canvas)
+- **actual** outcome and effort (from what really happened)
+- **calibration** assessment: was the prediction accurate?
+- **effort** delta: if the estimate was an **underestimate** or overestimate, state the **accuracy** gap (e.g., "effort accuracy: predicted 5 days vs actual 7 days, 40% underestimate")
+- Risk dimension accuracy (e.g., "feasibility was predicted medium — actual confirmed, analytics pipeline was indeed the hardest part")
+
+This decision log entry ensures the calibration data is auditable alongside other decisions, not just buried in cycle-history.yml.
+
+### Step 2. What Went Well?
 - Which patterns from patterns.md were reused successfully?
 - What new approaches worked?
 - Where did the theory gates catch a real problem?
 
-### 2. What Didn't Go Well?
+### Step 3. What Didn't Go Well?
 - What mistakes were made? (Add to corrections.md)
 - Where did we skip a guardrail and regret it?
 - What took longer than expected and why?
 
-### 3. What Should Change?
+### Step 4. What Should Change?
 - New corrections to add
 - New patterns to capture
 - Process improvements
 - Guardrail adjustments
 
-### 4. BVSSH Dimension Check
+### Step 5. BVSSH Dimension Check
 - **Better**: Did quality improve or degrade?
 - **Value**: Did we deliver actual user value?
 - **Sooner**: Was our flow efficient?
@@ -96,3 +146,4 @@ After delivery retrospective, always ask:
 3. Update `.claude/memory/delivery-journal.md` with retrospective entry
 4. Update canvas/bvssh-health.yml if dimensions changed
 5. Log in decision-log.md
+6. Record cycle in `canvas/cycle-history.yml` (see Cycle History Recording above)

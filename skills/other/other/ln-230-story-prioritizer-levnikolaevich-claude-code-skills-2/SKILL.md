@@ -544,9 +544,9 @@ Skill type: `planning-worker`. Run after all phases complete. Output to chat usi
 
 ## Reference Files
 
-- **MANDATORY READ:** `shared/references/environment_state_contract.md`
-- **MANDATORY READ:** `shared/references/storage_mode_detection.md`
-- **MANDATORY READ:** `shared/references/research_tool_fallback.md`
+- **MANDATORY READ:** Load `shared/references/environment_state_contract.md`
+- **MANDATORY READ:** Load `shared/references/storage_mode_detection.md`
+- **MANDATORY READ:** Load `shared/references/research_tool_fallback.md`
 
 | File | Purpose |
 |------|---------|

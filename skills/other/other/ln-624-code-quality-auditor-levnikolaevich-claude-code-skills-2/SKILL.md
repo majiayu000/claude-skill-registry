@@ -231,7 +231,7 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `principles`, `cod
 **What:** Functions triggering cascading chains of external side-effects (DB writes -> notifications -> metrics -> limits).
 
 **Detection:**
-**MANDATORY READ:** `shared/references/ai_ready_architecture.md` for side-effect markers, false positive exclusions, and opaque sink rules.
+**MANDATORY READ:** Load `shared/references/ai_ready_architecture.md` for side-effect markers, false positive exclusions, and opaque sink rules.
 - Glob `**/services/**/*.{py,ts,js,cs,java}` to find service files
 - For each public function: check body for side-effect markers (per reference)
 - Recursively follow called internal functions for additional markers
@@ -268,7 +268,7 @@ Write report to `{output_dir}/ln-624--{domain}.md` (or `624-quality.md` in globa
 
 Return summary per `shared/references/audit_summary_contract.md`.
 
-When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/audit-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
+When `summaryArtifactPath` is absent, write the standalone runtime summary under `.hex-skills/runtime-artifacts/runs/{run_id}/evaluation-worker/{worker}--{identifier}.json` and optionally echo the same summary in structured output.
 ```
 Report written: .hex-skills/runtime-artifacts/runs/{run_id}/audit-report/ln-624--orders.md
 Score: X.X/10 | Issues: N (C:N H:N M:N L:N)

@@ -79,6 +79,16 @@ Update `canvas/go-to-market.yml` engagement_design section with Hook Canvas resu
 
 *Source: Eyal (Hooked), with ethical framework from the Manipulation Matrix*
 
+## Pre-Launch Bias Check
+
+Before classifying a launch tier, run `/bias-check` for L5-specific biases:
+- **Optimism bias**: Are we overweighting positive signals and ignoring negative ones?
+- **Confirmation bias**: Are we seeking validation that "it's ready to ship" rather than honestly assessing market readiness?
+- **Anchoring**: Are we fixated on the initial positioning without considering what evidence now suggests?
+- **Sunk cost fallacy**: Are we launching because we've invested too much to stop, not because the market signals are positive?
+
+If `/bias-check` reveals significant biases, address them before finalizing the launch tier.
+
 ## After Launch: The L5 -> L2 Feedback Loop
 
 **This is critical.** After launch, market feedback must flow back into discovery:
@@ -102,6 +112,19 @@ Update `canvas/go-to-market.yml` engagement_design section with Hook Canvas resu
    - If signals contradict: flag for diamond regression, update corrections.md
 
 This closes the full Mycelium loop: Purpose -> Strategy -> Discovery -> Solution -> Delivery -> **Market -> Discovery**.
+
+## Cycle History Recording
+
+After launch feedback is captured (L5 → L2 loop), update the cycle record in `canvas/cycle-history.yml`:
+
+1. Find the cycle record for this leaf (created by `/retrospective` at delivery completion)
+2. Add **actual** market outcomes: user metrics, adoption data, NPS/CSAT, revenue impact
+3. Update the calibration section: compare predicted value/usability risk against actual market reception
+4. If market signals contradict the original L2 opportunity assumptions, note this as calibration data
+
+If no cycle record exists yet (leaf went directly to market without retrospective), create one now.
+
+This closes the data loop: predicted ICE → actual delivery metrics → actual market outcomes → calibration for future scoring.
 
 ## Theory Citations
 - Lauchengco: Loved (launch tier classification, positioning)

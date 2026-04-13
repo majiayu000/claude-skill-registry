@@ -74,7 +74,7 @@ Use `hex-line` as the primary path for code files and `hex-graph` as the primary
    - Skip files in: `node_modules/`, `vendor/`, `dist/`, `build/`, `*.min.*`, generated code, test fixtures
 
 3) **Verify each finding (confidence check):**
-   **MANDATORY READ:** `shared/references/clean_code_checklist.md`
+   **MANDATORY READ:** Load `shared/references/clean_code_checklist.md`
    For each candidate fix:
    a) Read the target file at specified location
    b) Confirm the finding still exists (file may have changed since audit)

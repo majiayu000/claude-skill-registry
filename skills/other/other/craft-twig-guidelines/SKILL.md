@@ -8,6 +8,11 @@ description: "Twig coding standards and conventions for Craft CMS 5 templates. C
 Coding conventions for Twig templates in Craft CMS 5 projects. These apply to
 all Twig code — atomic components, views, layouts, builders, partials.
 
+## Companion Skills — Load as Needed
+
+- **`craft-site`** — Template architecture and component patterns. Load when creating or editing components, layouts, views, or builders.
+- **`craft-content-modeling`** — Content architecture. Load when template code involves element queries, field access, or section decisions.
+
 For Twig **architecture** patterns (atomic design, routing, builders), see the
 `craft-site` skill. For PHP coding standards, see `craft-php-guidelines`.
 
@@ -18,7 +23,7 @@ For Twig **architecture** patterns (atomic design, routing, builders), see the
 - Template functions: https://craftcms.com/docs/5.x/reference/twig/functions.html
 - Twig 3 docs: https://twig.symfony.com/doc/3.x/
 
-Use `web_fetch` on specific doc pages when something isn't covered here.
+Use `WebFetch` on specific doc pages when something isn't covered here.
 
 ## Variable Naming
 
@@ -47,15 +52,17 @@ If truly unavoidable, use snake_case over camelCase: `hero_image` over `heroImag
 
 ## Null Handling
 
-`??` only. Always. No exceptions.
+`??` is the default. Always safe, always portable.
+
+`???` (empty coalesce) is acceptable if the project already has `nystudio107/craft-empty-coalesce` or `nystudio107/craft-seomatic` installed — both provide the operator. But never install a plugin just for `???`. Check `composer.json` first.
 
 ```twig
-{# Correct #}
+{# Always correct #}
 {% set heading = entry.heading ?? '' %}
 {% set image = entry.heroImage.one() ?? null %}
 {{ props.get('label') ?? 'Default' }}
 
-{# Wrong — custom Twig extension, not portable #}
+{# OK if empty-coalesce or SEOmatic is installed — checks empty, not just null #}
 {% set heading = entry.heading ??? '' %}
 
 {# Wrong — verbose, unnecessary #}
@@ -288,7 +295,7 @@ is fine for production.
 
 ## Common Pitfalls
 
-1. **`???` operator** — custom Twig extension from older projects. Not portable. Use `??`.
+1. **`???` operator without the plugin** — requires `nystudio107/craft-empty-coalesce` or `nystudio107/craft-seomatic`. Check `composer.json` before using. Default to `??`.
 2. **camelCase variables** — `iconPosition` → just `position`. Single descriptive words.
 3. **Missing `only`** — silent variable leaking, invisible coupling.
 4. **`{%- minify -%}`** — deprecated. Use `{%-` whitespace control.

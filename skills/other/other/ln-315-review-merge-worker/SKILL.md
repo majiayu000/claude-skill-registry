@@ -14,12 +14,17 @@ license: MIT
 ## Mandatory Read
 
 **MANDATORY READ:** Load `shared/references/evaluation_worker_runtime_contract.md`, `shared/references/evaluation_summary_contract.md`
+**MANDATORY READ:** Load `shared/references/agent_delegation_pattern.md` (Critical Verification + Background Execution sections)
 
 ## Purpose
 
 - merge read-only evidence lanes after their join barrier
-- deduplicate overlap
+- deduplicate overlap against prior review history
 - produce one verified aggregate result for the coordinator
+
+## Wait/Patience Protocol
+
+Codex typically takes 10-20 minutes. Do NOT skip or declare an agent failed based on elapsed time. Only the Liveness Protocol in `agent_delegation_pattern.md` determines failure.
 
 ## Runtime
 
@@ -43,17 +48,21 @@ Recommended `phase_order`:
 
 ### Phase 1: Load Worker Results
 
-1. Load all input worker summaries from recorded artifact paths.
-2. **Freshness check:** For each research-type summary (`summary_kind=review-research`):
-   - Parse `produced_at` from envelope.
-   - If older than `research_freshness_hours` (default: 1h), mark as `stale=true` and append to `warnings`.
+1. Load all input worker summaries (ln-311, ln-312, ln-313, ln-314).
+2. Load agent findings from external agents (Codex, Gemini).
+3. Load `.hex-skills/agent-review/review_history.md` for prior review entries.
 
 ### Phase 2: Deduplicate and Verify
 
-1. Deduplicate findings across all worker and agent sources.
-2. Reject unsupported claims (no evidence, no source reference).
-3. Apply Merge Priority Rule (see below).
-4. Produce one verified aggregate result.
+1. Deduplicate current findings against:
+   - own analysis
+   - worker findings
+   - agent findings
+   - prior review history
+2. For each agent suggestion: independently verify per `agent_delegation_pattern.md` Critical Verification criteria.
+3. Mark each suggestion `AGREE` or `REJECT`.
+4. **Architecture Gate:** Before accepting any AGREE'd suggestion, verify: "Does this implement the correct architecture directly, without backward compatibility shims or legacy workarounds?" If a suggestion introduces unnecessary compat layers, convert AGREE to REJECT.
+5. Reject unsupported findings.
 
 ### Phase 3: Write Summary
 
@@ -65,28 +74,27 @@ Payload must include:
 - `operation=merge`
 - `warnings`
 
+Prefer these fields when available:
+- `merge_summary.accepted_count`
+- `merge_summary.rejected_count`
+- `merge_summary.dedup_removed`
+- `merge_summary.architecture_gate_rejections`
+
+Save updated review summary to `.hex-skills/agent-review/review_history.md`.
+
 ### Phase 4: Self-Check
 
-1. Verify all input summaries were loaded.
-2. Verify deduplication completed.
+1. Verify deduplication completed.
+2. Verify architecture gate applied to all AGREE'd suggestions.
 3. Record `pass=true` only after summary write.
-
-## Merge Priority Rule
-
-When deduplicating findings from multiple sources:
-1. `code_evidence` findings take precedence over `research_claim` and `agent_inference` on the same subject.
-2. If a `research_claim` contradicts `code_evidence`, keep `code_evidence` and add contradiction warning.
-3. `agent_inference` findings without supporting `code_evidence` or `research_claim` are demoted to `severity=info` unless the agent provided a specific file:line reference.
-4. `confidence_tier` from research cards informs merge priority: `tier_1` > `tier_2` > `tier_3`.
-5. Findings without `evidence_basis` from audit workers (`summary_kind=audit-worker`) default to `code_evidence`.
 
 ## Definition of Done
 
 - [ ] Input worker summaries loaded
-- [ ] Freshness check completed
-- [ ] Duplicates removed
-- [ ] Unsupported findings rejected
-- [ ] Merge Priority Rule applied
+- [ ] Agent results loaded and verified per Critical Verification
+- [ ] Duplicates removed (against findings + review history)
+- [ ] Architecture Gate applied to all accepted suggestions
+- [ ] Review summary saved to `review_history.md`
 - [ ] `review-merge` summary written
 - [ ] Self-check passed
 

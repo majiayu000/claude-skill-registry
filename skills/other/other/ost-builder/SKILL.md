@@ -21,15 +21,26 @@ Build and maintain Opportunity Solution Trees from research evidence.
    - Look for frequency across interviews, not just intensity in one.
 
 4. **Structure hierarchically**: Group related opportunities. Identify parent-child relationships.
+   - Before structuring, ensure each opportunity has been examined from **all three trio perspectives** (product, design, engineering). Product lens sees user value; design lens sees experience gaps; engineering lens sees technical constraints or enablers.
+   - Classify each opportunity's **Cynefin domain** (clear/complicated/complex). Complex-domain opportunities must produce probes (experiments), not fully-designed solutions. See `engine/cynefin-routing.md`.
 
 5. **For each leaf opportunity**, generate solution ideas:
    - Multiple solutions per opportunity.
    - Solutions can be simple experiments, not just features.
    - Include "do nothing" as an option when appropriate.
 
-6. **For each solution**, identify assumption tests:
-   - What must be true for this solution to work?
+6. **For each solution leaf**, assess the Four Risks (Torres Product Trio):
+   - **Value** (product lens): Is there evidence users want/need this?
+   - **Usability** (design lens): Can users figure out how to use it?
+   - **Feasibility** (engineering lens): Can we build it within constraints?
+   - **Viability** (cross-cutting): Does it align with business/legal/ethical?
+   Each risk must have its own evidence — a combined statement fails.
+   Write `four_risks` per solution in `canvas/opportunities.yml`.
+
+7. **For each solution**, identify riskiest assumptions from the Four Risks:
+   - Which risk dimension has the least evidence?
    - What is the cheapest way to test that assumption?
+   - Tag each assumption with its `risk_dimension` (value|usability|feasibility|viability).
 
 ### Updating an Existing OST
 

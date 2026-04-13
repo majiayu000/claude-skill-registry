@@ -1,6 +1,6 @@
 ---
 name: peer-review
-description: "Run an independent peer review via codex. Use when the user asks to \"peer review\", \"peer review my code\", \"peer review my plan\", \"peer review my spec\", \"peer review my prompt plan\", \"get a second opinion\", or \"independent review\"."
+description: "Run an independent peer review via codex. Use when the user asks to \"peer review\", \"peer review my code\", \"peer review my plan\", \"peer review my spec\", \"peer review my plan shells\", \"get a second opinion\", or \"independent review\"."
 ---
 
 # Peer Review

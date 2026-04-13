@@ -98,7 +98,7 @@ Mandatory research sources:
 
 ### Phase 3: Delegate
 
-Delegate applicable audit workers. Child workers may remain on `audit-worker-runtime` while the coordinator moves first.
+Delegate applicable audit workers. Child workers must use `evaluation-worker-runtime` and emit evaluation-compatible summaries.
 
 ### Phase 4: Aggregate
 

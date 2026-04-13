@@ -7,6 +7,16 @@ description: "Plan and implement improvements from the .turbo/improvements.md ba
 
 Validate and implement improvements from `.turbo/improvements.md`.
 
+## Task Tracking
+
+At the start, use `TaskCreate` to create a task for each step:
+
+1. Read the backlog
+2. Validate against current codebase
+3. Report findings
+4. Run /turboplan skill
+5. Clean up improvements backlog
+
 ## Step 1: Read the Backlog
 
 Read `.turbo/improvements.md`. If the file does not exist, tell the user there are no improvements to implement and stop.
@@ -68,4 +78,6 @@ Run the `/turboplan` skill with the confirmed active improvements as the task de
 - **Dependencies** — Order so foundational changes come first
 - **Conflicts** — Flag if two improvements contradict each other
 
-Tell turboplan that the plan must include a final implementation step: "Clean up `.turbo/improvements.md` — remove implemented and stale entries, keep skipped or deferred ones, delete the file if all entries are removed."
+## Step 5: Clean Up Improvements Backlog
+
+Remove implemented and stale entries from `.turbo/improvements.md`. Keep any entries the user chose to skip or defer. Delete the file if no entries remain.

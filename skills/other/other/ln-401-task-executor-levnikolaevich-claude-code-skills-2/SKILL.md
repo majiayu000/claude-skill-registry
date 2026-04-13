@@ -20,7 +20,7 @@ Executes a single implementation (or refactor) task from Todo to To Review using
 - Run typecheck/lint; update docs/tests/config per task instructions.
 - Not for test tasks (label "tests" goes to ln-404-test-executor).
 
-**Hex MCP acceleration (if available):** Use `inspect_path()` and `outline(path)` before reading large code files. Use `read_file()` in discovery mode for structure and targeted ranges; when you need `revision` and checksums for a follow-up edit, refresh that file with `read_file(edit_ready=true, verbosity="full")` before `edit_file()`. For edits to existing code, run `index_project(path=project_root)` once and use `analyze_edit_region(...)` before non-trivial edits. After edits: `edit_file(base_revision=rev)` -> `verify(checksums)`. Before handoff: `changes()` to review diff.
+**Hex MCP acceleration (if available):** Use narrow `inspect_path(path=<relevant dir>)` and `outline(path)` before reading large code files; avoid repo-root wildcard inventories unless you intentionally need one. Use `grep_search(output="summary")` first for search/discovery, then escalate to `output="content", edit_ready=true` only when you need canonical hunks for follow-up edits; use `allow_large_output=true` only as an explicit last resort. Use `read_file()` in discovery mode for structure and targeted ranges; when you need `revision` and checksums for a follow-up edit, refresh that file with `read_file(edit_ready=true, verbosity="full")` before `edit_file()`. For edits to existing code, run `index_project(path=project_root)` once and use `analyze_edit_region(...)` before non-trivial edits. After edits: `edit_file(base_revision=rev)` -> `verify(checksums)`. Before handoff: `changes()` to review diff.
 ## Inputs
 
 | Input | Required | Source | Description |
@@ -85,9 +85,10 @@ Step 2b: Goal Articulation Gate
   - Complete 4 questions from shared/references/goal_articulation_gate.md (<=25 tokens each)
 
 Step 2c: Implementation Blueprint
-  - From task "Affected Components": extract file paths (Glob/Grep to find actual paths)
+  - From task "Affected Components": extract file paths (Glob/Grep or narrow `inspect_path(path=<component dir>)` to find actual paths)
   - Read each file (or key sections) to understand current structure
-  - IF modifying existing code in supported languages: `index_project(path=project_root)` once, then use `find_symbols` / `inspect_symbol` for exact symbol identity and `analyze_edit_region` before editing non-trivial ranges
+  - IF modifying existing code in supported languages: `index_project(path=project_root)` once, then use path-scoped `find_symbols` / `inspect_symbol` for exact symbol identity and `analyze_edit_region` before editing non-trivial ranges
+  - IF `find_symbols` returns `truncated: true` or a broad candidate set: refine to `name + file` or `workspace_qualified_name` before planning from it
   - Output:
     ## Implementation Blueprint: {taskId}
     **Files to create:** [list with brief purpose]
@@ -98,6 +99,10 @@ Step 2c: Implementation Blueprint
     **Risks:** {shared files with parallel tasks, if any}
   - Scope: ONLY files of this task. Do not analyze other tasks.
 
+  - **Checkpoint:** Emit PHASE_3 checkpoint with structured `blueprint` payload:
+    `{ "blueprint": { "change_order": [{ "file": "...", "action": "create|modify", "reason": "..." }] } }`
+    Guard blocks PHASE_4 if blueprint is missing from the checkpoint.
+
 Step 3: Start Work
   - Set task to In Progress, update kanban
 
@@ -107,12 +112,13 @@ Step 4: Implement
   - 4b Follow task plan/AC, apply KISS/YAGNI
   - 4c Architecture Guard: IF creating service function: (1) 3+ side-effect categories in **leaf** function → split (EXCEPT orchestrator functions that delegate sequentially — these are expected to have 3+ categories);
     (2) get_*/find_*/check_* naming → verify no hidden writes; (3) 3+ service imports in **leaf** function → flatten (orchestrator imports are expected)
-    (4) **Frontend Guard (conditional):** IF affected files include `.tsx/.vue/.svelte/.html/.css` → **MANDATORY READ:** `shared/references/frontend_design_guide.md`. Load project's design_guidelines.md if exists (design tokens source of truth). Verify: one composition per viewport; max 2 typefaces + 1 accent color; cards only when interaction requires; motion max 2-3 purposeful; WCAG 2.1 AA contrast (4.5:1 text, 3:1 UI elements)
+    (4) **Frontend Guard (conditional):** IF affected files include `.tsx/.vue/.svelte/.html/.css` → **MANDATORY READ:** Load `shared/references/frontend_design_guide.md`. Load project's design_guidelines.md if exists (design tokens source of truth). Verify: one composition per viewport; max 2 typefaces + 1 accent color; cards only when interaction requires; motion max 2-3 purposeful; WCAG 2.1 AA contrast (4.5:1 text, 3:1 UI elements)
   - Update docs and existing tests if impacted
   - Execute verify: methods from task AC (test/command/inspect)
 
 Step 5: Quality
   - Run typecheck and lint (or project equivalents)
+  - 5b Blueprint Completion: compare actual changes to blueprint; emit blueprint_status in PHASE_6 checkpoint
 
 Step 6: Finish
   - Set task to To Review, update kanban
@@ -122,11 +128,11 @@ Step 6: Finish
 ## Workflow (concise)
 1) **Resolve taskId:** Run Task Resolution Chain per guide (status filter: [Todo]).
 2) **Load context:** Fetch full task description (Linear: get_issue; File: Read task file); read linked guides/manuals/ADRs/research; auto-discover team/config if needed.
-2b) **Goal gate:** **MANDATORY READ:** `shared/references/goal_articulation_gate.md` — Complete the 4-question gate (<=25 tokens each). State REAL GOAL (deliverable as subject), DONE LOOKS LIKE, NOT THE GOAL, INVARIANTS & HIDDEN CONSTRAINTS.
-2c) **Implementation Blueprint:** From task "Affected Components", find actual file paths via Glob/Grep or `inspect_path`. Read key sections of each file. If task changes existing code in supported languages, build graph context once (`index_project`) and use `find_symbols` / `inspect_symbol` for exact symbol identity plus `analyze_edit_region` before editing non-trivial ranges. Output structured plan: files to create/modify, change order (dependencies first), risks (shared files with parallel tasks, external callers, public API surfaces). Scope: this task only.
+2b) **Goal gate:** **MANDATORY READ:** Load `shared/references/goal_articulation_gate.md` — Complete the 4-question gate (<=25 tokens each). State REAL GOAL (deliverable as subject), DONE LOOKS LIKE, NOT THE GOAL, INVARIANTS & HIDDEN CONSTRAINTS.
+2c) **Implementation Blueprint:** From task "Affected Components", find actual file paths via Glob/Grep or narrow `inspect_path(path=<component dir>)`. Read key sections of each file. If task changes existing code in supported languages, build graph context once (`index_project`) and use path-scoped `find_symbols` / `inspect_symbol` for exact symbol identity plus `analyze_edit_region` before editing non-trivial ranges. If symbol discovery is truncated, refine to `name + file` or `workspace_qualified_name` before planning from it. Output structured plan: files to create/modify, change order (dependencies first), risks (shared files with parallel tasks, external callers, public API surfaces). Scope: this task only.
 3) **Start work:** Update this task to In Progress (Linear: update_issue; File: Edit status line); move it in kanban (keep Epic/Story indent).
 4) **Implement (with verification loop):** **Before writing new utilities/handlers**, Grep `src/` for existing patterns (error handling, validation, config access). Reuse if found; if not reusable, document rationale in code comment. For edits to existing functions, classes, routes, or middleware, run `analyze_edit_region` first and account for external callers, clone siblings, downstream flow, and public API risk. Follow checkboxes/plan; keep it simple; avoid hardcoded values; reuse existing components; update docs noted in Affected Components; update existing tests if impacted (no new tests here). Before creating service functions, apply Architecture Guard (cascade depth, interface honesty, flat orchestration; for frontend files: **MANDATORY READ** `shared/references/frontend_design_guide.md`, load design_guidelines.md if exists, verify composition/typography/WCAG rules). After implementation, execute `verify:` methods from task AC: test → run specified test; command → execute and check output; inspect → verify file/content exists. If any verify fails → fix before proceeding.
-5) **Quality:** Run typecheck and lint (or project equivalents); ensure instructions in Existing Code Impact are addressed.
+5) **Quality:** Run typecheck and lint (or project equivalents); ensure instructions in Existing Code Impact are addressed. **Blueprint Completion:** compare actual changes against blueprint from Step 2c — for each planned file mark completed or skipped (with justification), for each unplanned file mark added (with justification). Emit PHASE_6 checkpoint: `{ "blueprint_status": { "planned_count": N, "completed": [...], "skipped": [{"file":"...","justification":"..."}], "added": [{"file":"...","justification":"..."}], "completion_pct": N } }`. Guard blocks PHASE_7 if missing.
 6) **Finish:** Mark task To Review (Linear: update_issue; File: Edit status line); update kanban to To Review; add summary comment (what changed, tests run, docs touched).
 
 ## Pre-Submission Checklist
@@ -149,6 +155,7 @@ Before setting To Review, verify all items:
 | 7 | **Architecture guard** | Cascade depth <= 2 (leaf functions); no hidden writes in read-named functions; no service chains >= 3 in leaf functions (orchestrator imports exempt). Frontend files: composition, typography, WCAG per `shared/references/frontend_design_guide.md` |
 | 8 | **Destructive op safety** | If task has "Destructive Operation Safety" section: (1) backup step executed/planned before destructive code, (2) rollback mechanism exists in code, (3) environment guard present, (4) preview/dry-run evidence attached or referenced |
 | 9 | **Code efficiency** | No unnecessary intermediates, verbose patterns replaced by language idioms, no boilerplate framework handles (per `shared/references/code_efficiency_criterion.md`) |
+| 10 | **Blueprint complete** | All blueprint items completed or skipped with justification; `blueprint_status` emitted in PHASE_6 checkpoint |
 
 **MANDATORY READ:** Load `shared/references/destructive_operation_safety.md` for severity classification and safety requirements.
 
@@ -173,6 +180,8 @@ Shared contract:
 - emit `summary_kind=task-status`
 - standalone mode omits `runId` and `summaryArtifactPath`
 - managed mode passes both `runId` and exact `summaryArtifactPath` before the worker writes its validated summary
+
+**Monitor (2.1.98+):** When verification commands expected >30s, use `Monitor`. Fallback: `Bash(run_in_background=true)`.
 
 ## Definition of Done
 - [ ] Task selected and set to In Progress; kanban updated accordingly.

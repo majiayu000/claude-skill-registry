@@ -355,13 +355,21 @@ After all workers complete:
 ### Step 5.7: Wave Checkpoint
 
 ```bash
+FILES_CHANGED_JSON="${FILES_CHANGED_JSON:-$(git diff --name-only "${WAVE_START_SHA:-HEAD~1}..HEAD" | jq -R -s -c 'split("\n")[:-1]')}"
+GIT_SHA="$(git rev-parse HEAD)"
+
 cat > ".agents/crank/wave-${wave}-checkpoint.json" << EOF
 {
+  "schema_version": 1,
   "wave": $wave,
   "epic_id": "$EPIC_ID",
-  "completed": $COMPLETED_COUNT,
-  "failed": $FAILED_COUNT,
   "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+  "tasks_completed": ${TASKS_COMPLETED_JSON:-[]},
+  "tasks_failed": ${TASKS_FAILED_JSON:-[]},
+  "files_changed": $FILES_CHANGED_JSON,
+  "git_sha": "$GIT_SHA",
+  "acceptance_verdict": "${ACCEPTANCE_VERDICT:-WARN}",
+  "commit_strategy": "${COMMIT_STRATEGY:-wave-batch}",
   "mutations_this_wave": $(grep -c "\"wave\":${wave}" .agents/rpi/plan-mutations.jsonl 2>/dev/null || echo 0),
   "total_mutations": $(wc -l < .agents/rpi/plan-mutations.jsonl 2>/dev/null | tr -d ' '),
   "mutation_budget": {
@@ -370,7 +378,11 @@ cat > ".agents/crank/wave-${wave}-checkpoint.json" << EOF
   }
 }
 EOF
+
+bash skills-codex/crank/scripts/validate-wave-checkpoint.sh ".agents/crank/wave-${wave}-checkpoint.json"
 ```
+
+Do not copy or consume the checkpoint downstream until validation passes. The validator fails closed when `git_sha` does not resolve in the current repo, `timestamp` is invalid or more than 5 minutes in the future, or required checkpoint fields are missing/malformed.
 
 ### Step 5.8: Update Shared Task Notes
 

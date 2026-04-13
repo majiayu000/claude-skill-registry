@@ -10,10 +10,15 @@ no module dependency. Works with any Craft 5 project.
 
 This skill is scoped to **front-end template architecture** — component design,
 routing, composition, theming, and buildchain. For extending Craft (plugins,
-modules, PHP), see the `craftcms` skill. For Twig coding standards (naming,
-null handling, whitespace, helpers), see `craft-twig-guidelines`. For PHP
-standards, see `craft-php-guidelines`. For content architecture (sections,
-fields, entry types), see `craft-content-modeling`.
+modules, PHP), see the `craftcms` skill.
+
+## Companion Skills — Always Load Together
+
+When this skill triggers, also load:
+
+- **`craft-twig-guidelines`** — Twig coding standards: variable naming, null handling, whitespace control, include isolation, Craft helpers. Required for any Twig code.
+- **`craft-content-modeling`** — Sections, entry types, fields, Matrix, relations. Required when deciding what content to query or how templates access data.
+- **`ddev`** — All commands run through DDEV. Required for running Vite, npm, and Craft CLI commands.
 
 ## Documentation
 
@@ -22,7 +27,7 @@ fields, entry types), see `craft-content-modeling`.
 - Template functions: https://craftcms.com/docs/5.x/reference/twig/functions.html
 - Twig 3 docs: https://twig.symfony.com/doc/3.x/
 
-Use `web_fetch` on specific doc pages when a reference file doesn't cover enough detail.
+Use `WebFetch` on specific doc pages when a reference file doesn't cover enough detail.
 
 ## Common Pitfalls (Cross-Cutting)
 
@@ -42,9 +47,9 @@ Use `web_fetch` on specific doc pages when a reference file doesn't cover enough
 Read the relevant reference file(s) for your task. Multiple files often apply together.
 
 **Task examples:**
-- "Build a new card component" → read `atomic-patterns.md` + `component-inventory.md` + `tailwind-conventions.md`
+- "Build a new card component" → read `atomic-patterns.md` + `composition-patterns.md` + `component-inventory.md` + `tailwind-conventions.md`
 - "Set up a new project's template structure" → read `boilerplate-routing.md` + `component-inventory.md`
-- "Add a content builder for a Matrix field" → read `boilerplate-routing.md` + `atomic-patterns.md`
+- "Add a content builder for a Matrix field" → read `boilerplate-routing.md` + `composition-patterns.md`
 - "Handle responsive images" → read `image-presets.md` + `plugins/image-optimize.md`
 - "Add multi-brand theming" → read `tailwind-conventions.md`
 - "Decide between Alpine and Vue for a feature" → read `javascript-boundaries.md`
@@ -66,11 +71,20 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Run a security audit" → read `plugins/sherlock.md`
 - "Embed a YouTube/Vimeo video as an asset" → read `plugins/embedded-assets.md`
 - "Configure email delivery via SES" → read `plugins/amazon-ses.md` + `third-party-integration.md`
+- "Build a language switcher" → read `multi-site-patterns.md`
+- "Set up hreflang tags" → read `multi-site-patterns.md`
+- "Plan a multi-language site architecture" → read `multi-site-patterns.md`
+- "Add live search without JavaScript" → read `plugins/sprig.md`
+- "Build reactive filtering or load-more" → read `plugins/sprig.md`
+- "Import data from an external feed" → read `plugins/feed-me.md`
+- "Set up responsive images with Imager-X" → read `plugins/imager-x.md`
+
 
 | Reference | Scope |
 |-----------|-------|
 | `references/atomic-design.md` | Methodology: Brad Frost's atomic design principles, 5-to-3 tier compression, composability, context-agnostic naming, classification problem, decompose-downward workflow. Technology-independent. |
-| `references/atomic-patterns.md` | Craft CMS implementation: props/extends/block pattern, button/link/text/icon atoms, molecule and organism composition, structural embed pattern, include/extends/embed decision table |
+| `references/atomic-patterns.md` | Individual component construction: props/extends/block pattern, variant file mechanics, button/link/text/icon atom implementations |
+| `references/composition-patterns.md` | Component composition: molecule pattern, organism pattern, structural embed pattern, include/extends/embed decision table, calling conventions, creating new components |
 | `references/component-inventory.md` | Classification methodology: decision tree, naming conventions, file naming, props design, scaffold guidelines, tier promotion, audit checklist |
 | `references/boilerplate-routing.md` | Template chain: layout hierarchy, Craft section template paths, global variables, routers, views, content builders, directory structure |
 | `references/tailwind-conventions.md` | Class composition: named-key collections, standard key names, `utilities` prop, variant-based dark mode, spacing preference. Assumes Tailwind CSS — adapt patterns to your CSS framework. |
@@ -79,6 +93,7 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 | `references/javascript-boundaries.md` | JS decision tree: Twig → Alpine/DataStar → Vue, mount points, data handoff, coexistence rules |
 | `references/twig-collections.md` | `collect()` method reference: creating, accessing, transforming, filtering, sorting, slicing, arrow functions |
 | `references/third-party-integration.md` | Script loading order, CMP (UserCentrics/CookieBot), GTM/sGTM data layer, analytics (Fathom/Plausible), AWS SES transport, n8n webhooks, Blitz compatibility, full head template example |
+| `references/multi-site-patterns.md` | Language switchers, hreflang tags, site architectures (subfolder/domain/subdomain/multi-brand), cross-site queries, static translations, site-specific templates, multi-site forms, site detection |
 
 ### Plugin References
 
@@ -91,6 +106,7 @@ Detailed configuration, Twig API, and pitfalls for Craft plugins. Located in `re
 | `references/plugins/formie.md` | Formie (verbb) | Form rendering (one-line/granular), theme config for Tailwind, submission querying, hooks, integrations |
 | `references/plugins/image-optimize.md` | ImageOptimize (nystudio107) | OptimizedImages field, `imgTag()`/`pictureTag()` builders, loading strategies, transform methods, console commands |
 | `references/plugins/ckeditor.md` | CKEditor (craftcms) | Toolbar config, nested entries with chunk rendering, HTML Purifier, custom styles, Redactor migration |
+| `references/plugins/sprig.md` | Sprig (putyourlightson) | Reactive Twig components (htmx), live search, load more, pagination, filtering, form submissions without JS |
 | `references/plugins/colour-swatches.md` | Colour Swatches (craftpulse) | Palette config, multi-colour swatches, Tailwind class mapping, Twig model API |
 | `references/plugins/password-policy.md` | Password Policy (craftpulse) | Validation rules, HIBP check, retention/expiry, console commands, recommended settings |
 | `references/plugins/hyper.md` | Hyper (verbb) | Link types, `getLinkAttributes()`, `getText()`, single/multi-link, element access, button atom integration |
@@ -105,6 +121,9 @@ Detailed configuration, Twig API, and pitfalls for Craft plugins. Located in `re
 | `references/plugins/sherlock.md` | Sherlock (putyourlightson) | Security scanning, HTTP headers, CMS config checks, scheduled scans, IP restriction, monitoring |
 | `references/plugins/embedded-assets.md` | Embedded Assets (spicyweb) | oEmbed as first-class assets, `craft.embeddedAssets.get()`, iframe customization, GraphQL |
 | `references/plugins/amazon-ses.md` | Amazon SES (putyourlightson) | SES mail transport adapter, AWS credential config, SNS bounce tracking |
+| `references/plugins/feed-me.md` | Feed Me (craftcms) | Data import from XML/JSON/CSV, field mapping, duplicate handling, CLI automation |
+| `references/plugins/imager-x.md` | Imager-X (spacecrafttechnologies) | Advanced image transforms, batch generation, named presets, effects, optimizers, external storage |
+
 
 ## Component System Conventions
 
@@ -114,7 +133,7 @@ External link detection is derived from the URL, never passed as a prop. Compone
 
 FontAwesome is the universal icon system. Icons are passed as FA class strings.
 
-Visual variants use extends/block — base template defines structure, variant overrides classes. Never use conditional logic to switch between variant styles. For structural skeletons with content slots, use `{% embed %}` — see `atomic-patterns.md`.
+Visual variants use extends/block — base template defines structure, variant overrides classes. Never use conditional logic to switch between variant styles. For structural skeletons with content slots, use `{% embed %}` — see `composition-patterns.md`.
 
 Image handling uses a single atom with config-driven presets, not separate variant files per context.
 

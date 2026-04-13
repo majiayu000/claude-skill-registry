@@ -14,7 +14,7 @@ description: "DDEV local development environment for Craft CMS projects. Covers 
 - Additional services: https://docs.ddev.com/en/stable/users/extend/additional-services/
 - Vite integration: https://docs.ddev.com/en/stable/users/usage/developer-tools/#nodejs
 
-When unsure about a DDEV feature, `web_fetch` the relevant docs page.
+When unsure about a DDEV feature, `WebFetch` the relevant docs page.
 
 ## Common Pitfalls
 
@@ -25,7 +25,7 @@ When unsure about a DDEV feature, `web_fetch` the relevant docs page.
 - Setting `nodejs_version` but running `npm install` on the host — Node must run inside the container via `ddev npm` to match the configured version.
 - Editing `.ddev/config.yaml` while containers are running without restarting — changes to config require `ddev restart` to take effect.
 - Using `ddev import-db` without `--target-db=db` on multi-database setups — the default target is `db`, but if you've configured additional databases, be explicit.
-- Missing `#ddev-generated` comment in custom commands — without it, DDEV won't manage or update the file.
+- Adding `#ddev-generated` to custom commands you've customized — DDEV overwrites files with this comment during updates. Only use it for add-on-managed commands. Custom commands you maintain should omit it.
 
 ## Shorthand Commands
 
@@ -105,10 +105,11 @@ Place scripts in `.ddev/commands/web/` (container) or `.ddev/commands/host/` (ho
 ## Description: Run ECS code style check
 ## Usage: check-cs
 ## Example: ddev check-cs
-#ddev-generated
 
 cd /var/www/html && composer check-cs
 ```
+
+Note: omit `#ddev-generated` on custom commands you maintain — DDEV overwrites files with that comment during updates. Only add-on-managed commands should include it.
 
 ## Troubleshooting
 

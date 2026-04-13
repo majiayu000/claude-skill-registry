@@ -70,7 +70,7 @@ If `CHANGELOG.md` exists and changes are significant (not just lint/formatting f
 **Skip if:** no `CHANGELOG.md` in project, or changes are trivial (whitespace, lint auto-fixes only).
 
 ### Phase 4: Lint Check
-**MANDATORY READ:** `shared/references/ci_tool_detection.md` (Discovery Hierarchy + Command Registry)
+**MANDATORY READ:** Load `shared/references/ci_tool_detection.md` (Discovery Hierarchy + Command Registry)
 
 Discover and run project linters before committing, per ci_tool_detection.md.
 
